@@ -3,15 +3,15 @@ layout: post
 title: Project structure, lifecycle, and bundling
 authors:
   - thomassteiner
-date: 2020-09-24
-updated: 2020-09-24
+date: 2021-01-19
+# updated: 2020-09-24
 description: |
-  ToDo
+  This chapter covers the project structure, the lifecycle, and the bundling of mini apps.
 tags:
   - mini-apps
 ---
 
-### Mini app project structure
+## Mini app project structure
 
 As before with the markup languages, the styling languages, and the components, with the mini app
 project structure, too, the details like the file extensions or the default names vary, but the
@@ -44,7 +44,7 @@ developer, mini apps are thus multi page apps.
        └── other.html        # Page markup
 ```
 
-### Mini app lifecycle
+## Mini app lifecycle
 
 A mini app must be registered with the super app by calling the globally defined `App()` method.
 Referring to the project structure outlined [above](#mini-app-project-structure), this happens in
@@ -80,7 +80,7 @@ As usual, the individual details vary, but the concept is the same for
 and also
 [Quick App](https://doc.quickapp.cn/tutorial/framework/lifecycle.html#app-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F).
 
-### Page lifecycle
+## Page lifecycle
 
 Similar to the app lifecycle, the page lifecycle, too, has lifecycle events that the developer can
 listen for and react upon. These core events are `load`, `show`, `ready`, `hide`, and `unload`. Some
@@ -134,7 +134,7 @@ Page({
 });
 ```
 
-### The build process
+## The build process
 
 The build process of mini apps is abstracted away from the developer. Under the hood, it is using
 industry tools like the [Babel](https://babeljs.io/) compiler for transpilation and minification and
@@ -147,3 +147,5 @@ to the servers of the super app providers. Subpackages are meant for lazy-loadin
 does not have to be downloaded all at once. The packaging details are meant to be private and are
 not documented, but some package formats like WeChat's `wxapkg` format have been
 [reverse-engineered](https://github.com/sjatsh/unwxapkg).
+
+The next chapter provides insights on the [mini app standardization effort](/mini-app-standardization/).

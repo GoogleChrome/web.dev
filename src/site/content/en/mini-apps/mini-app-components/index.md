@@ -3,13 +3,15 @@ layout: post
 title: Mini app components
 authors:
   - thomassteiner
-date: 2020-09-24
-updated: 2020-09-24
+date: 2021-01-19
+# updated: 2020-09-24
 description: |
-  ToDo
+  This chapter provides details on the mini app components that all mini app platforms make available.
 tags:
   - mini-apps
 ---
+
+## Web components
 
 [Web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components/) have started with the
 promise of letting developers piece them together and build great apps on top of them. Examples of
@@ -29,6 +31,8 @@ frameworks like [React](https://reactjs.org/), [Vue.js](https://vuejs.org/),
 [Ember.js](https://emberjs.com/), etc. Rather than giving the developer the freedom to choose from
 any of these options (or, dependent on your viewpoint, _forcing_ them to make a technology choice),
 super app providers universally supply a set of components that developers must use.
+
+## Mini app components
 
 You can think of these components like any of the component libraries mentioned above. To get an
 overview of the available components, you can browse
@@ -185,7 +189,7 @@ Developers can jump from the documentation straight into Alipay DevTools IDE by 
 proprietary URI scheme `antdevtool-tiny://`. This allows the documentation to link directly into a
 to-be-imported mini app project, so developers can get started with the component immediately.
 
-#### Custom components
+## Custom components
 
 Apart from using the vendor-provided components, developers can also create custom components. The
 concept exists for
@@ -264,3 +268,5 @@ The custom component can then be imported in `index.json`, the key of the import
   <custom name="swanapp"></custom>
 </view>
 ```
+
+Continue reading to learn about the [project structure, lifecycle, and bundling](/project-structure-lifecycle-and-bundling/) of mini apps.

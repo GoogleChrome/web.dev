@@ -27,8 +27,16 @@
       "title": "Mini app ecosystem",
       "pathItems": [
         "mini-app-standardization",
-        "other-mini-app-platforms",
+        "other-mini-app-runtime-environments",
         "mini-app-open-source-projects"
+      ]
+    },
+    {
+      "title": "Learning from mini apps",
+      "pathItems": [
+        "programming-the-mini-app-way",
+        "an-example-project",
+        "conclusion"
       ]
     }
   ]

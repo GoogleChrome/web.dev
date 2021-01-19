@@ -11,6 +11,8 @@ tags:
   - mini-apps
 ---
 
+## Welcome to mini apps
+
 When you look at the applications on your phone, you probably have specific apps for specific tasks.
 You might have a banking app, you might have an app for buying public transit tickets, likely you
 have an app for getting directions, etc. In this post, I introduce you to the concept of a different

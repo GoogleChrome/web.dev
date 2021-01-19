@@ -3,15 +3,15 @@ layout: post
 title: Mini app open source projects
 authors:
   - thomassteiner
-date: 2020-09-24
-updated: 2020-09-24
+date: 2021-01-19
+# updated: 2020-09-24
 description: |
-  ToDo
+  This chapter presents a selection of interesting mini app open source projects.
 tags:
   - mini-apps
 ---
 
-### kbone
+## kbone
 
 The [kbone](https://wechat-miniprogram.github.io/kbone/docs/) project
 ([open source on GitHub](https://github.com/Tencent/kbone)) implements an adapter that simulates a
@@ -97,7 +97,7 @@ export default Counter;
   </figcaption>
 </figure>
 
-### kbone-ui
+## kbone-ui
 
 The [kbone-ui](https://wechat-miniprogram.github.io/kbone/docs/ui/intro/) project
 ([open source on GitHub](https://github.com/wechat-miniprogram/kbone-ui)) is a UI framework that
@@ -115,7 +115,7 @@ you explore the available components.
   </figcaption>
 </figure>
 
-### WeUI
+## WeUI
 
 [WeUI](https://github.com/Tencent/weui) is a set of basic style libraries consistent with WeChat's
 native visual experience. The official WeChat design team has tailored designs for WeChat internal
@@ -133,7 +133,7 @@ WeChat mini apps styled with WXSS (see [Styling](#styling) above),
   </figcaption>
 </figure>
 
-### Omi
+## Omi
 
 [Omi](https://tencent.github.io/omi/) is a self-proclaimed front-end cross-frameworks framework
 ([open source on GitHub](https://github.com/Tencent/omi). It merges Web Components, JSX, Virtual
@@ -178,7 +178,7 @@ define("my-counter", class extends WeElement {
 render(<my-counter />, "body");
 ```
 
-### Omiu
+## Omiu
 
 [Omiu](https://tencent.github.io/omi/components/docs/) is a cross framework UI component library
 ([open source on GitHub](https://github.com/Tencent/omi#omiu)) developed based on Omi, which outputs
@@ -191,7 +191,7 @@ custom elements of standard web components.
   </figcaption>
 </figure>
 
-### WePY
+## WePY
 
 [WePY](https://wepyjs.github.io/wepy-docs/) is a framework that allows mini apps to support
 componentized development. Through pre-compilation, developers can choose their favorite development
@@ -242,7 +242,7 @@ optimized front-end tools and framework design concepts and ideas, mostly from V
   </figcaption>
 </figure>
 
-### vConsole
+## vConsole
 
 The [vConsole](https://github.com/Tencent/vConsole) project provides a lightweight, extendable
 front-end developer tool for mobile web pages. It offers a DevTools-like debugger that can be
@@ -257,7 +257,7 @@ includes tabs for logs, system, network, elements, and storage.
   </figcaption>
 </figure>
 
-### weweb
+## weweb
 
 The [weweb](https://weidian-inc.github.io/hera/#/) project
 ([open source on GitHub](https://github.com/wdfe/weweb)) is the underlying front-end framework of
@@ -281,3 +281,5 @@ WeChat platform.
     The weweb demo mini app compiled with weweb to run in the browser.
   </figcaption>
 </figure>
+
+

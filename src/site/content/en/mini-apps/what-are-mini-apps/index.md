@@ -11,7 +11,7 @@ tags:
   - mini-apps
 ---
 
-### Building blocks and compatibility
+## Building blocks and compatibility
 
 Mini apps are small (commonly less than 4MB) apps that require a super app to run. What they have in
 common, independent of the super app, is that they are built with ("dialects" of) the Web
@@ -21,7 +21,7 @@ system, which means mini apps are cross platform. What this means is that the sa
 in the same super app, no matter if the super app runs on Android, iOS, or another OS. However, not
 all mini apps can run in all super apps, more on this [later](#standardization-of-mini-apps).
 
-### Discovery
+## Discovery
 
 Mini apps are often discovered _ad-hoc_ via branded 2d barcodes, which solves an important
 offline-to-online challenge, for example, getting from a physical restaurant menu to a payment mini
@@ -46,7 +46,7 @@ stands, or _(ii)_ virtually close, like when the user gets directions on a map s
 app. Frequently used mini apps are available in an app drawer that in many super apps can be
 accessed through a swipe down gesture or through a special section in the super app menu.
 
-### The user experience
+## The user experience
 
 All super apps have more or less the same user interface for mini apps. A themeable top bar with the
 mini app's name, and, in the upper corner of the screen, a close button on the far right preceded by
@@ -62,7 +62,7 @@ action menu opened.
   </figcaption>
 </figure>
 
-### UI paradigms
+## UI paradigms
 
 Usually there is a bottom tab bar for the mini app's main navigation. Most super app providers offer
 components (see [below](#components)) that help developers implement common UI paradigms quickly,
@@ -80,7 +80,7 @@ and Google with its [Design for Android](https://developer.android.com/design) r
   </figcaption>
 </figure>
 
-### Serving
+## Serving
 
 Rather than being served piece by piece as separate resources, mini apps are served as encrypted
 packaged apps, that is, as archives that contain all resources in just one file. Unlike regular Web
@@ -89,7 +89,7 @@ super app provider directly. They can still access APIs from the servers of the 
 but the core resources (commonly referred to as the app shell), must be served from the super app
 provider. Mini apps have to declare the origins they request additional data from.
 
-### Caching, updates, and deep-linking
+## Caching, updates, and deep-linking
 
 Mini apps are kept in the cache of the super app, so the next time the user launches a cached mini
 app, it loads almost instantly. If there is an update, a new app package is loaded. The version
@@ -106,7 +106,7 @@ crawler.
   </figcaption>
 </figure>
 
-### Security and permissions
+## Security and permissions
 
 Mini apps are reviewed by the super app provider, which means users perceive them as more secure
 than Web apps. They need to declare their potentially required permissions beforehand in a manifest
@@ -137,7 +137,7 @@ request data from.
   </figcaption>
 </figure>
 
-### Access to powerful features
+## Access to powerful features
 
 The hosting super app offers access to powerful APIs via a JavaScript bridge that gets injected into
 the WebView offered by the super app (see
@@ -161,7 +161,7 @@ barcode scanning, device memory information, and more.
   </figcaption>
 </figure>
 
-### Access to cloud services
+## Access to cloud services
 
 Many super apps also provide "serverless" access to cloud services of the super app provider that,
 apart from raw cloud computing and cloud storage, frequently also include higher-level tasks like
@@ -170,7 +170,7 @@ Machine Learning tasks. Mini apps can be monetized with ads, which are commonly 
 super apps providers. Super app platforms usually also provide cloud analytics data, so mini app
 developers can better understand how users interact with their apps.
 
-### Identity, payment, social graph
+## Identity, payment, social graph
 
 A very important feature of mini apps is the identity and social graph information that is shared
 from the super app. Super apps like Douyin or WeChat started as social networking sites in the

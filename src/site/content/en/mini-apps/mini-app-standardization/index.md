@@ -3,13 +3,15 @@ layout: post
 title: Mini app standardization
 authors:
   - thomassteiner
-date: 2020-09-24
-updated: 2020-09-24
+date: 2021-01-19
+# updated: 2020-09-24
 description: |
-  ToDo
+  This chapter introduces the standardization effort that has been started for mini apps.
 tags:
   - mini-apps
 ---
+
+## Mini app popularity
 
 Mini apps have seen tremendous growth. WeChat mini apps as of June 2020 have reached
 [830 million active users](https://www.questmobile.com.cn/research/report-new/122), Alipay mini apps
@@ -27,6 +29,8 @@ gain popularity, in the mini apps ecosystem, we can see an effort led by the
 [members](https://www.w3.org/community/miniapps/participants) from, among others, Alibaba, Baidu,
 ByteDance, Huawei, Intel, Xiaomi, China Mobile, Facebook, and Google to standardize aspects of mini
 apps.
+
+## Publications
 
 Notable publications of the group so far include a
 [whitepaper](https://w3c.github.io/miniapp/white-paper/), a
@@ -53,3 +57,5 @@ that is, not as an official group publication, but nonetheless worth the read.
     The MiniApp Standardization White Paper.
   </figcaption>
 </figure>
+
+The following chapter looks at [other mini app runtime environments](/other-mini-app-runtime-environments/) apart from mobile devices.

@@ -3,20 +3,22 @@ layout: post
 title: Mini app DevTools
 authors:
   - thomassteiner
-date: 2020-09-24
-updated: 2020-09-24
+date: 2021-01-19
+# updated: 2020-09-24
 description: |
-  ToDo
+  This chapter provides details on the DevTools experience of various mini apps platforms.
 tags:
   - mini-apps
 ---
+
+## The developer experience
 
 Now that I have covered mini apps _per se_, I want to focus on the developer experience for the
 various super app platforms. Mini app development on all platforms happens in IDEs that are provided
 for free by the super app platforms. While there are more, I want to focus on the four most popular
 ones, and a fifth for Quick App for comparison.
 
-### Mini app IDEs
+## Mini app IDEs
 
 Like the super apps, the IDEs are in the majority available in only Chinese. You actually want to
 make sure that you install the Chinese version and not a sometimes available English (or overseas)
@@ -31,7 +33,7 @@ this as
 - [ByteDance DevTools](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/developer-instrument/developer-instrument-update-and-download)
 - [Quick App DevTools](https://www.quickapp.cn/docCenter/IDEPublicity)
 
-### Mini app starter projects
+## Mini app starter projects
 
 In order to get started quickly with mini app development, all super app providers offer demo apps
 that can be downloaded and tested immediately, and that are sometimes also integrated in the "New
@@ -43,7 +45,7 @@ Project" wizards of the various IDEs.
 - [ByteDance demo](https://microapp.bytedance.com/docs/zh-CN/mini-app/introduction/plug-in/example)
 - [Quick App demo](https://github.com/quickappcn/sample)
 
-### Development flow
+## Development flow
 
 After launching the IDE and loading or creating a (demo) mini app, the first step is always to log
 in. Usually you just need to scan a QR code with the super app (where you are already logged in)
@@ -107,7 +109,7 @@ shortcut <kbd>cmd</kbd>/<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>i</kbd>.
   </figcaption>
 </figure>
 
-### Simulator and real device testing and debugging
+## Simulator and real device testing and debugging
 
 The simulator is comparable with what you might know from Chrome DevTools'
 [device mode](https://developers.google.com/web/tools/chrome-devtools/device-mode). You can simulate
@@ -152,9 +154,9 @@ DevTools window running on the computer for remote debugging.
   </figcaption>
 </figure>
 
-### Debugger
+## Debugger
 
-#### Elements debugging
+### Elements debugging
 
 The mini app debugging experience is very familiar to anyone who has ever worked with Chrome
 DevTools. There are some important differences, though, that make the workflow tailored to mini
@@ -178,7 +180,7 @@ these markup languages [below](#markup-languages).
   </figcaption>
 </figure>
 
-#### Custom elements under the hood
+### Custom elements under the hood
 
 Inspecting the WebView on a real device via [chrome://inspect/#devices](chrome://inspect/#devices)
 reveals that WeChat DevTools was deliberately lying to us. Where WeChat DevTools showed an
@@ -194,7 +196,7 @@ these components [later](#components).
   </figcaption>
 </figure>
 
-#### CSS debugging
+### CSS debugging
 
 Another difference is the new length unit `rpx` for responsive pixel in the various dialects of CSS
 (more on this unit [below](#styling)). WeChat DevTools uses device-independent CSS length units to
@@ -207,7 +209,7 @@ make developing for different device sizes more intuitive.
   </figcaption>
 </figure>
 
-#### Performance auditing
+## Performance auditing
 
 Performance is front and center for mini apps, so it is no surprise that WeChat DevTools and some
 other DevTools have a Lighthouse-inspired auditing tool integrated. The focus areas of the audits
@@ -222,7 +224,7 @@ audit tool.
   </figcaption>
 </figure>
 
-#### API mocking
+## API mocking
 
 Rather than requiring the developer to set up a separate service, mocking API responses is directly
 part of WeChat DevTools. Via an easy-to-use interface the developer can set up API endpoints and the
@@ -234,3 +236,5 @@ desired mock responses.
     WeChat DevTools' integrated API response mocking feature.
   </figcaption>
 </figure>
+
+Read on to learn about the [mark-up, styling, and scripting of mini apps](/mini-app-markup-styling-and-scripting/).

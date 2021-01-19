@@ -1,20 +1,22 @@
 ---
 layout: post
-title: Other mini app platforms
+title: Other mini app runtime environments
 authors:
   - thomassteiner
-date: 2020-09-24
-updated: 2020-09-24
+date: 2021-01-19
+# updated: 2020-09-24
 description: |
-  ToDo
+  This chapter presents a number of runtime environments for mini apps that are not mobile devices.
 tags:
   - mini-apps
 ---
 
-Apart from mobile devices, where mini apps are omnipresent and which are their natural habitat, mini
-apps have started to conquer other domains like cars and the classic desktop.
+## More than just on mobile
 
-### Mini apps in cars
+Apart from mobile devices, where mini apps are omnipresent and which are their natural habitat, mini
+apps have started to conquer other runtime environments like cars and the classic desktop.
+
+## Mini apps in cars
 
 In July 2020 the German car maker BMW Group
 [announced](https://www.press.bmwgroup.com/china/article/detail/T0313254ZH_CN/%E2%80%9C2020-%E5%AE%9D%E9%A9%AC%E7%A7%91%E6%8A%80%E6%97%A5%E2%80%9D%E5%9C%A8%E7%BA%BF%E5%8F%91%E5%B8%83%E5%A4%9A%E6%AC%BE%E8%BD%A6%E5%86%85%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81)
@@ -30,9 +32,9 @@ services to more than 110 mainstream automobile models"_.
   </figcaption>
 </figure>
 
-### Mini apps on the desktop
+## Mini apps on the desktop
 
-#### Mini apps in WeChat Desktop
+### Mini apps in WeChat Desktop
 
 Using the WeChat desktop client available for
 [macOS](https://dldir1.qq.com/weixin/mac/WeChatMac.dmg) (make sure to _not_ load the
@@ -144,7 +146,7 @@ Windows allows apps to obtain without asking for permission.
   </figcaption>
 </figure>
 
-#### Mini apps in the 360 Secure Browser
+### Mini apps in the 360 Secure Browser
 
 360 Secure Browser (360 安全浏览器) is a web browser developed by the company Qihoo. Apart from
 [iOS and Android](https://mse.360.cn/), the browser is also available for
@@ -176,12 +178,12 @@ the desktop.
   </figcaption>
 </figure>
 
-### Web-based mini apps
+## Web-based mini apps
 
 There are some mini app platforms that are Web-based, but that depend on the presence of a special
 WebView to unlock their full potential.
 
-#### LINE
+### LINE
 
 [LINE](https://line.me/) is an app for instant communications on electronic devices such as
 smartphones, tablet computers, and personal computers. In addition, LINE is a platform providing
@@ -218,7 +220,7 @@ you have a LINE account.
   </figcaption>
 </figure>
 
-#### Google Spot
+### Google Spot
 
 The [Google Spot Platform](https://developers.google.com/pay/spot) allows developers to set up a
 Spot on [Google Pay](https://pay.google.com/)—a digital storefront that they can create, brand, and
@@ -234,7 +236,7 @@ transformed into a Spot by \*"adding a few lines of JavaScript" according to the
   </figcaption>
 </figure>
 
-#### Snap Minis
+### Snap Minis
 
 [Snap Inc.](https://snap.com/) is an American camera and social media company most known for its
 chat app [Snapchat](https://www.snapchat.com/). Snap has announced
@@ -248,3 +250,5 @@ with no installation required.
    The Atom Tickets mini app running in Snapchat (Source: <a href="https://minis.snapchat.com/">Snap</a>).
   </figcaption>
 </figure>
+
+Read on to see some examples of the [mini app open source projects](/mini-app-open-source-projects/).

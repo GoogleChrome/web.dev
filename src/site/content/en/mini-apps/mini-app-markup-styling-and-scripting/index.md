@@ -3,15 +3,15 @@ layout: post
 title: Mini app markup, styling, and scripting
 authors:
   - thomassteiner
-date: 2020-09-24
-updated: 2020-09-24
+date: 2021-01-19
+# updated: 2020-09-24
 description: |
-  ToDo
+  This chapter looks at the mark-up, styling, and scripting options of various mini apps platforms.
 tags:
   - mini-apps
 ---
 
-### Markup languages
+## Markup languages
 
 As outlined before, rather than with plain HTML, mini apps are written with dialects of HTML. If you
 have ever dealt with [Vue.js](https://vuejs.org/) text interpolation and directives, you will feel
@@ -27,7 +27,7 @@ the same for all mini apps platforms, namely Alipay's
 mini app programming concept is the
 [model-view-viewmodel](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) (MVVM).
 
-#### Data Binding
+### Data Binding
 
 Data binding corresponds to Vue.js'
 [text interpolation](https://vuejs.org/v2/guide/syntax.html#Text).
@@ -46,7 +46,7 @@ Page({
 });
 ```
 
-#### List Rendering
+### List Rendering
 
 List rendering works like Vue.js [`v-for` directive](https://vuejs.org/v2/guide/list.html).
 
@@ -64,7 +64,7 @@ Page({
 });
 ```
 
-#### Conditional Rendering
+### Conditional Rendering
 
 Conditional rendering works like Vue.js'
 [`v-if` directive](https://vuejs.org/v2/guide/conditional.html).
@@ -85,7 +85,7 @@ Page({
 });
 ```
 
-#### Templates
+### Templates
 
 Rather than requiring the imperative
 [cloning of the `content` of an HTML template](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTemplateElement/content),
@@ -117,7 +117,7 @@ Page({
 });
 ```
 
-### Styling
+## Styling
 
 Styling happens with dialects of CSS. WeChat's is named
 [WXSS](https://developers.weixin.qq.com/miniprogram/en/dev/framework/quickstart/code.html#WXSS-Style).
@@ -167,7 +167,7 @@ styles can also be declared inline, including dynamic text interpolation (see
 <view style="color:{% raw %}{{color}}{% endraw %};" />
 ```
 
-### Scripting
+## Scripting
 
 Mini apps support a "safe subset" of JavaScript that includes support for modules using varying
 syntaxes that remind of [CommonJS](http://www.commonjs.org/) or [RequireJS](https://requirejs.org/).
@@ -237,7 +237,7 @@ console.log(tools.bar("logic.wxs"));
 console.log(tools.msg);
 ```
 
-#### JavaScript bridge API
+### JavaScript bridge API
 
 The JavaScript bridge that connects mini apps with the native operating system renders working with
 native capabilities possible (see [Access to powerful features](#access-to-powerful-features). It
@@ -260,3 +260,5 @@ tt.canIUse("swiper");
 // Testing if a particular field is supported.
 tt.canIUse("request.success.data");
 ```
+
+The next chapter introduces [mini app components](/mini-app-components/).
