@@ -2,9 +2,9 @@
   "slug": "mini-apps",
   "cover": "/images/collections/mini-apps.svg",
   "title": "Mini Apps",
-  "updated": "January 18, 2021",
-  "description": "ToDo",
-  "overview": "ToDo",
+  "updated": "January 19, 2021",
+  "description": "Apps built with Web technologies but not running in the browser, and what to learn from them.",
+  "overview": "Learn more about the thriving ecosystem of mini apps and what Web developers can learn from it.",
   "topics": [
     {
       "title": "Introduction",

@@ -3,10 +3,10 @@ layout: post
 title: What are super apps?
 authors:
   - thomassteiner
-date: 2020-09-24
-updated: 2020-09-24
+date: 2021-01-19
+# updated: 2021-09-24
 description: |
-  ToDo
+  This article introduces the concept of super apps and presents the major players.
 tags:
   - mini-apps
 ---
@@ -26,7 +26,7 @@ apps. Popular super apps are Tencent's [WeChat](https://weixin.qq.com/) (微信)
 search engine [Baidu](https://baidu.com/) (百度), Ant Group's (an affiliate company of the Chinese
 Alibaba Group) [Alipay](https://www.alipay.com/) (支付宝), but also ByteDance's
 [Douyin](https://www.douyin.com/) (抖音), which you might know as TikTok (蒂克托克). The first three
-are commonly also referred to as **B**(aidu)**A**(libaba)**T**(encent). Super apps have taken the
+are commonly also referred to as BAT, which stems from **B**(aidu)**A**(libaba)**T**(encent). Super apps have taken the
 Chinese market by storm, which is why a lot of the examples in this article are Chinese.
 
 ### Short characterization of each super app platform
@@ -60,9 +60,11 @@ does not have all features of a domestic account.
   [iOS](https://itunes.apple.com/cn/app/%E6%8A%96%E9%9F%B3%E7%9F%AD%E8%A7%86%E9%A2%91/id1142110895?l=zh&ls=1&mt=8)
   (CN-only), [Android](http://s.toutiao.com/UsMYE/)
 
-**💡 Tip:** Since the user interface of many super apps is Chinese-only, use the
+{% Aside %}
+Since the user interface of many super apps is Chinese-only, use the
 [Google Translate app](https://translate.google.com/intl/en/about/#!#speak-with-the-world) in camera
-mode with a secondary phone (if you have one) to understand what is going on.
+mode with a secondary phone (given you have one) to understand what is going on if you do not speak Chinese.
+{% endAside %}
 
 <figure class="w-figure">
   <img src="google-translate.png" alt="A secondary phone running Google Translate in camera mode live-translating the user interface of a Chinese mini app running on the primary phone." width="300">
@@ -70,3 +72,5 @@ mode with a secondary phone (if you have one) to understand what is going on.
     Using Google Translate in camera mode to live-translate a Chinese mini app.
   </figcaption>
 </figure>
+
+Learn more about [mini apps](http://localhost:8080/what-are-mini-apps/) in the next chapter.
