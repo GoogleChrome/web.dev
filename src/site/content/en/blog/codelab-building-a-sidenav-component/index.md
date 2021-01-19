@@ -96,11 +96,29 @@ In the main content element, add a header and an article to semantically hold th
 ```
 
 {% Aside %}
-  You can ignore the `The attribute name of [ viewBox ] must be in lowercase` error.
+  You can ignore the `The attribute name of [ viewBox ] must be in lowercase` lint error from Glitch.
 {% endAside %}
 
 The header has the menu open link. The aside has the close button. 
 We'll show and hide elements based on viewport size soon. 
+
+In the `<article>` element, we pasted a placeholder sentence. Replace `` with your own stuff, or paste the lorem provided below:
+
+```html
+<h2>Totam Header</h2>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum consectetur, necessitatibus velit officia ut impedit veritatis temporibus soluta? Totam odit cupiditate facilis nisi sunt hic necessitatibus voluptatem nihil doloribus! Enim.</p>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit rerum, amet odio explicabo voluptas eos cum libero, ex esse quasi optio incidunt soluta eligendi labore error corrupti! Dolore, cupiditate porro.</p>
+
+<h3>Subhead Totam Odit</h3>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit rerum, amet odio explicabo voluptas eos cum libero, ex esse quasi optio incidunt soluta eligendi labore error corrupti! Dolore, cupiditate porro.</p>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit rerum, amet odio explicabo voluptas eos cum libero, ex esse quasi optio incidunt soluta eligendi labore error corrupti! Dolore, cupiditate porro.</p>
+
+<h3>Subhead</h3>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit rerum, amet odio explicabo voluptas eos cum libero, ex esse quasi optio incidunt soluta eligendi labore error corrupti! Dolore, cupiditate porro.</p>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit rerum, amet odio explicabo voluptas eos cum libero, ex esse quasi optio incidunt soluta eligendi labore error corrupti! Dolore, cupiditate porro.</p>
+```
+
+This content, and it's length, are what will cause the page to be scrollable when it exceeds your viewport height.
 
 So far you've added an aside element, with a nav, links and a way to close the sidenav. 
 You also added a header, a way to open the sidenav, and an article to the main element. 
@@ -245,18 +263,17 @@ Add the following styles for the sidenav:
 }
 ```
 
-Go ahead and open the side menu after scrolling the page, 
-or try scrolling the page while the sidenav is open. What do you think?
-Add a `:target` pseudo-selector so that you only show the open and close
-buttons when on the mobile layout:
+Those styles ensure the sidenav is the viewport height, scrolls vertically 
+and contains the scroll. Very importantly, it hides the element. By default, 
+when the viewport is `540px` or smaller, hide that sidenav. Unless!
 
-```css/6-8
+Add a `:target` pseudo-selector to the `#sidenav-open` element:
+
+```css/4-6
 #sidenav-open {
-  ...
 
   @media (max-width: 540px) {
-    ...
-    
+
     &:target {
       visibility: visible;
     }
@@ -264,6 +281,9 @@ buttons when on the mobile layout:
 }
 ```
 
+When the ID of that element and the URL bar are the same, 
+set `visibility` to `visible`. Go ahead and open the side menu after scrolling the page, 
+or try scrolling the page while the sidenav is open. What do you think?
 
 Add the following CSS to the bottom of `app/sidenav.css`:
 
@@ -281,10 +301,13 @@ Add the following CSS to the bottom of `app/sidenav.css`:
 }
 ```
 
+These styles target our open and close buttons, specifies their tap and touch styles, 
+and also hides them when viewports are `540px` or larger.
+
 For some flair, let's add CSS transforms with respectful accessibility. 
 Add the following CSS to `css/sidenav.css`: 
 
-```css
+```css/1-2,9-13,17-18,21-24
 #sidenav-open {
   --easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
   --duration: .6s;
@@ -371,7 +394,7 @@ sidenav.addEventListener('transitionend', e => {
 ## Conclusion
 
 That's a wrap up for the needs I had with the component. Feel free to build upon
-it, drive it with data, and in general make it yours! There's always more to add 
+it, drive it with JavaScript state instead of the URL, and in general make it yours! There's always more to add 
 or more use cases to cover. 
 
 Open up `css/brandnav.css` to check out the non-layout related styles that I applied to 
@@ -381,5 +404,5 @@ be more learning for you there!
 
 How do you make slide out responsive sidenav components? 
 Do you ever have more than 1, like one on both sides? I'd love to feature your solution 
-in a YouTube video, make sure to tweet or comment with your code, it'll help everyone 
+in a YouTube video, make sure to [tweet at me](https://twitter.com/argyleink) or comment in YouTube with your code, it'll help everyone 
 out!
