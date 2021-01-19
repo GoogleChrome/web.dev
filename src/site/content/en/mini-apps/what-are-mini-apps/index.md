@@ -3,10 +3,10 @@ layout: post
 title: What are mini apps?
 authors:
   - thomassteiner
-date: 2020-09-24
-updated: 2020-09-24
+date: 2021-01-19
+# updated: 2020-09-24
 description: |
-  ToDo
+  This chapter introduces the concept of mini apps and provides examples of their look and feel.
 tags:
   - mini-apps
 ---
@@ -192,3 +192,5 @@ face.
 Mini apps can get highly popular by letting people share their achievements like highscores in a
 game and challenge their contacts through status updates. The mini app is then only a tap away, so
 users can enter into competition without any friction and the mini app thereby grow its reach.
+
+In the next chapter, you will learn [what sets mini apps apart from H5 apps and QuickApp](/what-are-h5-and-quickapp).

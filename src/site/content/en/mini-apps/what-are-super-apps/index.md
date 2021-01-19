@@ -6,7 +6,7 @@ authors:
 date: 2021-01-19
 # updated: 2021-09-24
 description: |
-  This article introduces the concept of super apps and presents the major players.
+  This chapter introduces the concept of super apps and presents the major players.
 tags:
   - mini-apps
 ---
@@ -73,4 +73,4 @@ mode with a secondary phone (given you have one) to understand what is going on 
   </figcaption>
 </figure>
 
-Learn more about [mini apps](http://localhost:8080/what-are-mini-apps/) in the next chapter.
+Read on to [learn more about mini apps](/what-are-mini-apps/) in the next chapter.
