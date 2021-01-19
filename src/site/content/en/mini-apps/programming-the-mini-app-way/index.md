@@ -11,3 +11,4 @@ tags:
   - mini-apps
 ---
 
+Read on the see an [example project](/an-example-project/) that puts this way of programming into practice.

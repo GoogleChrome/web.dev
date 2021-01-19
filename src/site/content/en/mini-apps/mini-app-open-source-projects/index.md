@@ -282,4 +282,4 @@ WeChat platform.
   </figcaption>
 </figure>
 
-
+In the next chapter, you will learn how to [program the mini app way](/programming-the-mini-app-way/).

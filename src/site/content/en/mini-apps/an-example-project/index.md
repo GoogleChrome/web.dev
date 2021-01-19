@@ -11,3 +11,4 @@ tags:
   - mini-apps
 ---
 
+The final chapter ends this collection on mini apps with a [conclusion](/conclusion).
