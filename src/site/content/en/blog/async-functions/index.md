@@ -17,7 +17,7 @@ feedback:
 Async functions were enabled by default in Chrome 55 and they're quite frankly
 marvelous. They allow you to write promise-based code as if it were synchronous,
 but without blocking the main thread. They make your asynchronous code less
-"clever" and more readable. If you're unfamilliar with promises, you might want to checkout [JavaScript Promises: an introduction](./promises).
+"clever" and more readable.
 
 Async functions work like this:
 
