@@ -25,7 +25,7 @@ and works across browsers. Try the [demo](https://gui-challenges.web.app/sidenav
 
 If you prefer video, here's a YouTube version of this post:
 
-{% YouTube 'ncYzTvEMCyE' %}
+{% YouTube 'uiZqDLqjGRY' %}
 
 ## Overview
 
