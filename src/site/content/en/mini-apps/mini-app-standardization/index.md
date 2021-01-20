@@ -58,4 +58,24 @@ that is, not as an official group publication, but nonetheless worth the read.
   </figcaption>
 </figure>
 
+## Formal launch of the W3C MiniApps Working Group
+
+On January 19, 2021, the [MiniApps Working Group](https://www.w3.org/2021/miniapps/) was [formally launched](https://www.w3.org/blog/2021/01/w3c-launches-the-miniapps-working-group/) in the W3C.
+The group uses the spelling "MiniApps" to distinguish the standardization effort from the technology.
+You can read the group's [charter](https://www.w3.org/2021/01/miniapps-wg-charter.html) to get a feeling of the planned work.
+Leaders of the group introduced the effort as follows:
+
+> Currently, there are many variants of MiniApps developed by different vendors with different APIs.
+  To enhance the interoperability between MiniApp platforms, mainstream MiniApp vendors including
+  Alibaba, Baidu, Huawei, and Xiaomi have been working together in the [W3C Chinese Web Interest Group](https://www.w3.org/2018/chinese-web-ig/index.html)
+  since May 2019 and published a [MiniApp Standardization White Paper](https://www.w3.org/TR/mini-app-white-paper/) in September 2019 as the initial standardization exploration for MiniApp technologies. As more global companies get interested in joining the MiniApp related discussion, the MiniApps Ecosystem Community Group launched during TPAC 2019 so that the global Web community can join the discussion.
+
+> Based on extensive standardization requirements, W3C today announced the formal establishment of the MiniApps Working Group,
+  dedicated to in-depth exploration and coordination of the diverse MiniApp ecosystem with W3C members and the public,
+  and enhancing the interoperability of different MiniApp platforms, thereby maximizing the integration of MiniApps and the Web,
+  reducing technical fragmentation and the learning cost of developers.
+
+Especially the part *"maximizing the integration of MiniApps and the Web"* sounds very interesting.
+As a curious member of the group, I look forward to seeing where this endeavor is headed.
+
 The following chapter looks at [other mini app runtime environments](/other-mini-app-runtime-environments/) apart from mobile devices.
