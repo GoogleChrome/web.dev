@@ -291,7 +291,7 @@ elements that affect LCP are:
 
 +   `<img>` elements
 +   `<image>` elements inside an `<svg>` element
-+   `<video>` elements (if specified, the
++   `<video>` elements (the
     [poster](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-poster) image is
     used to measure LCP)
 +   An element with a background image loaded via the
