@@ -4,7 +4,7 @@ subhead: Web apps can use the same system-provided share capabilities as platfor
 authors:
   - joemedley
 date: 2019-11-08
-updated: 2020-05-12
+updated: 2021-01-25
 hero: hero.png
 alt: An illustration demonstrating that web apps can use the system-provided sharing UI.
 description: |
@@ -47,8 +47,9 @@ Web share has the following capabilities and limitations:
 * It must be invoked in response to a user action such as a click. Invoking it
   through the `onload` handler is impossible.
 * It can share, URLs, text, or files.
-* As of mid 2020, it is only available on Safari and on Android in Chromium
-  forks. See
+* As of January 2021, it is available on Android in Chromium forks, Chrome OS,
+  and Chrome for Windows. Chrome for Safari on MacOS is still in development.
+  See
   [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share#Browser_compatibility)
   for details.
 
