@@ -5,7 +5,7 @@ authors:
   - adamargyle
 description: |
   Learn how to build a responsive slide out side navigation layout component.
-date: 2021-01-20
+date: 2021-01-21
 hero: hero.jpg
 thumbnail: thumb.png
 glitch: gui-challenges-sidenav-lab

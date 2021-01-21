@@ -5,7 +5,7 @@ subhead: A foundational overview of how to build a responsive slide out sidenav
 authors:
   - adamargyle
 description: A foundational overview of how to build a responsive slide out sidenav
-date: 2021-01-20
+date: 2021-01-21
 hero: hero.jpg
 thumbnail: thumb.png
 codelabs: codelab-building-a-sidenav-component
