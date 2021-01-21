@@ -66,11 +66,11 @@ The [Advanced Perceptual Contrast Algorithm (APCA)](https://w3c.github.io/silver
 
 Compared to [AA](https://www.w3.org/WAI/WCAG21/quickref/#contrast-minimum)/[AAA](https://www.w3.org/WAI/WCAG21/quickref/#contrast-enhanced) guidelines, APCA is more context-dependent.
 
-The contrast is calculated based on the text's:
+The contrast is calculated based on the following features:
 
-- spatial properties (font weight & size),
-- color (perceived lightness difference between text and background),
-- context (ambient light, surroundings, intended purpose of the text).
+- Spatial properties (font weight and text size)
+- Text color (perceived lightness difference between text and background)
+- Context (ambient light, surroundings, and intended purpose of the text)
 
 Chrome includes an [experimental feature to replace the AA/AAA contrast ratio guidelines with APCA](https://developers.google.com/web/updates/2021/01/devtools#apca).
 
