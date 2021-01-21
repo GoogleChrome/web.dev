@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything iOS/Android/desktop apps can. The members of the cross-company capabilities project want to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2021-01-06
+updated: 2021-01-21
 tags:
   - blog
   - capabilities

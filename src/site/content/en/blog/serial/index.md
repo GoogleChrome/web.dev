@@ -4,7 +4,7 @@ subhead: The Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2021-01-06
+updated: 2021-01-21
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: |
