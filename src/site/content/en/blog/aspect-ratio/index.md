@@ -169,7 +169,7 @@ With the same markup, we can replace: `padding-top: 56.25%` with `aspect-ratio: 
 Using `aspect-ratio` instead of `padding-top` is much more clear, and does not overhaul the padding
 property to do something outside of its usual scope.
 
-Now, not only is the aspect ratio much more clear, but this new property also adds the ability to
+This new property also adds the ability to
 set aspect ratio to `auto`, where "replaced elements with an intrinsic aspect ratio use that aspect
 ratio; otherwise the box has no preferred aspect ratio." If both `auto` and a `<ratio>` are
 specified together, the preferred aspect ratio is the specified ratio of `width` / `height` unless
