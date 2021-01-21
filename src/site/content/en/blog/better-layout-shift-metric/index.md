@@ -68,9 +68,9 @@ tags:
 
 [Cumulative Layout Shift](https://web.dev/cls) (CLS) is a metric that measures the visual stability of a web page. The metric is called cumulative layout shift because the score of every individual shift is summed throughout the lifespan of the page.
 
-While all layout shifts are poor user experiences, they do add up more on pages that are open longer. That’s why the Chrome Speed Metrics Team set out to improve the CLS metric to be more neutral to the time spent on a page.
+While all layout shifts are poor user experiences, they do add up more on pages that are open longer. That's why the Chrome Speed Metrics Team set out to improve the CLS metric to be more neutral to the time spent on a page.
 
-It’s important that the metric focuses on user experience through the full page lifetime, as we've found that users often have negative experiences after load, while scrolling or navigating through pages. But we've heard concerns about how this impacts long-lived pages--pages which the user generally has open for a long time. There are several different types of pages which tend to stay open longer; some of the most common are social media apps with infinite scroll and single-page applications. 
+It's important that the metric focuses on user experience through the full page lifetime, as we've found that users often have negative experiences after load, while scrolling or navigating through pages. But we've heard concerns about how this impacts long-lived pages--pages which the user generally has open for a long time. There are several different types of pages which tend to stay open longer; some of the most common are social media apps with infinite scroll and single-page applications. 
 
 An internal analysis of long-lived pages with high CLS scores found that most problems were caused by the following patterns:
 
