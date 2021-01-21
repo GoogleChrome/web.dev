@@ -68,7 +68,7 @@ within a block should fill that block:
 
 The `initial` and `fill` values re-adjust the image to fill the space. In our example, this causes
 the image to be squished and blurry, as it re-adjusts pixels. Not ideal. `object-fit: cover` uses
-the image’s smallest dimension to fill the space and crops the image to fit into it based on this
+the image's smallest dimension to fill the space and crops the image to fit into it based on this
 dimension. It "zooms in" at its lowest boundary. `object-fit: contain` ensures that the entire image
 is always visible, and so the opposite of `cover`, where it takes the size of the largest boundary
 (in our example above this is width), and resizes the image to maintain its intrinsic aspect ratio
