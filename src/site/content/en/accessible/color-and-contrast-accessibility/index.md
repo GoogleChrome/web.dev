@@ -46,12 +46,36 @@ Open DevTools, click Audits, and select Accessibility to run the report.
   <img class="w-screenshot" src="./accessibility-audit.png" alt="A screenshot of the output of an audit for color contrast.">
 </figure>
 
+Chrome also includes an experimental feature to help you [detect all the low contrast texts of your page](https://developers.google.com/web/updates/2020/10/devtools#css-overview). You can also use the [accessible color suggestion](https://developers.google.com/web/updates/2020/08/devtools#accessible-color) to fix the low contrast text.
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="./css-overview.png" alt="A screenshot of the output of the Chrome low contrast text experimental feature.">
+</figure>
+
 For a more complete report, install the [Accessibility Insights Extension](https://accessibilityinsights.io/).
 One of the checks in the Fastpass report, is color contrast.
 You will get a detailed report of any failing elements.
 
 <figure class="w-figure w-screenshot">
   <img src="./fastpass-contrast.jpg" alt="The report in Accessibility Insights">
+</figure>
+
+## Advanced Perceptual Contrast Algorithm (APCA)
+
+The [Advanced Perceptual Contrast Algorithm (APCA)](https://w3c.github.io/silver/guidelines/methods/Method-font-characteristic-contrast.html) is a new way to compute contrast based on modern research on color perception.
+
+Compared to [AA](https://www.w3.org/WAI/WCAG21/quickref/#contrast-minimum)/[AAA](https://www.w3.org/WAI/WCAG21/quickref/#contrast-enhanced) guidelines, APCA is more context-dependent.
+
+The contrast is calculated based on the following features:
+
+- Spatial properties (font weight and text size)
+- Text color (perceived lightness difference between text and background)
+- Context (ambient light, surroundings, and intended purpose of the text)
+
+Chrome includes an [experimental feature to replace the AA/AAA contrast ratio guidelines with APCA](https://developers.google.com/web/updates/2021/01/devtools#apca).
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="./apca.png" alt="A screenshot of the output of the APCA feature in Chrome.">
 </figure>
 
 ## Don't convey information with color alone
