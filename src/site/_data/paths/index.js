@@ -17,10 +17,12 @@ const progressiveWebApps = require('./progressive-web-apps.json');
 const react = require('./react.json');
 const reliable = require('./reliable.json');
 const secure = require('./secure.json');
+const animations = require('./animations.json');
 
 module.exports = {
   accessible,
   angular,
+  animations,
   devices,
   discoverable,
   fast,

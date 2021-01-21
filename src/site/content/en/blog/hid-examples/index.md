@@ -10,7 +10,7 @@ description: |
   API solves this by providing a way to implement device-specific logic in
   JavaScript.
 date: 2020-07-22
-updated: 2021-01-08
+updated: 2021-01-21
 tags:
   - blog
   - capabilities
@@ -100,7 +100,7 @@ getting started with HID.
 **Author:** Tod E. Kurt<br/>
 **Demos:** [blink(1)](https://blink1.thingm.com/) ([source](https://github.com/todbot/blink1-webhid))
 
-## Acknowledgements {: #helpful   }
+## Acknowledgements {: #acknowledgements }
 
 Thank you to [Pete LePage](https://web.dev/authors/petelepage/) and [Kayce
 Basques](https://github.com/kaycebasques) for reviews of this article.

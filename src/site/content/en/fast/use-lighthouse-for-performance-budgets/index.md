@@ -70,7 +70,7 @@ This example `budget.json` file sets five separate budgets:
 * A budget of 1000ms for First Meaningful Paint
 * A budget of 125 KB for the total amount of JavaScript on the page.
 * A budget of 300 KB for the overall size of the page.
-* A budget of 10 requests for the numer of requests made to third-party origins.
+* A budget of 10 requests for the number of requests made to third-party origins.
 
 For a complete list of supported performance metrics and resource types, refer to the [Performance Budgets](https://github.com/GoogleChrome/lighthouse/blob/master/docs/performance-budgets.md) section of the Lighthouse docs.
 

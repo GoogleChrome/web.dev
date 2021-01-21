@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything iOS/Android/desktop apps can. The members of the cross-company capabilities project want to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2021-01-08
+updated: 2021-01-21
 tags:
   - blog
   - capabilities
@@ -135,20 +135,6 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           <em>Updated August 11, 2020</em>
         </td>
       </tr>
-      <tr>
-        <td>
-          <a href="/serial/">
-            Serial API
-          </a>
-        </td>
-        <td>
-          The Serial API provides a way for websites to read from and
-          write to a serial device with scripts. The API bridges the web and
-          the physical world by allowing websites to communicate with serial
-          devices, such as microcontrollers and 3D printers.<br>
-          <em>Updated September 29, 2020</em>
-        </td>
-      </tr>
     </tbody>
   </table>
 </div>
@@ -269,6 +255,20 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
       <tr>
         <td>
+          <a href="/serial/">
+            Serial API
+          </a>
+        </td>
+        <td>
+          The Serial API provides a way for websites to read from and
+          write to a serial device with scripts. The API bridges the web and
+          the physical world by allowing websites to communicate with serial
+          devices, such as microcontrollers and 3D printers.<br>
+          <em>Updated January 6, 2021</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="/shape-detection/">Shape&nbsp;Detection (Barcode)</a>
         </td>
         <td>
@@ -292,7 +292,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           or too uncommon to be accessible by systems' device drivers. The
           WebHID API solves this by providing a way to implement
           device-specific logic in JavaScript.<br>
-          <em>Updated January 8, 2021</em>
+          <em>Updated January 21, 2021</em>
         </td>
       </tr>
       <tr>
