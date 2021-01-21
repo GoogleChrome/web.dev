@@ -29,7 +29,8 @@
       "pathItems": [
         "add-media",
         "video-and-source-tags",
-        "media-accessibility"
+        "media-accessibility",
+        "fast-playback-with-preload"
       ]
     }
   ]

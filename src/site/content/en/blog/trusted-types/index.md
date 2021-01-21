@@ -260,7 +260,7 @@ Sometimes you can't change the offending code. For example, this is the case if 
 ```javascript
 if (window.trustedTypes && trustedTypes.createPolicy) { // Feature testing
   trustedTypes.createPolicy('default', {
-    createHTML: (string, sink) => DOMPurify.sanitize(string, {RETURN_TRUSTED_TYPE: true});
+    createHTML: (string, sink) => DOMPurify.sanitize(string, {RETURN_TRUSTED_TYPE: true})
   });
 }
 ```

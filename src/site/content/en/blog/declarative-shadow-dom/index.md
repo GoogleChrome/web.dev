@@ -3,7 +3,7 @@ title: Declarative Shadow DOM
 subhead: |
   A new way to implement and use Shadow DOM directly in HTML.
 date: 2020-09-30
-updated: 2020-10-29
+updated: 2020-12-15
 hero: hero.jpg
 alt: decorative shadow dome
 authors:
@@ -302,29 +302,18 @@ closing `</template>` tag is parsed.
 Declarative Shadow DOM is a feature of the HTML parser. This means that a Declarative Shadow Root
 will only be parsed and attached for `<template>` tags with a `shadowroot` attribute that are
 present during HTML parsing. In other words, Declarative Shadow Roots can be constructed during
-initial HTML parsing, or when using `innerHTML`:
+initial HTML parsing:
 
 ```html
 <some-element>
   <template shadowroot="open">
-    shadow realm
+    shadow root content for some-element
   </template>
 </some-element>
-
-<script>
-  const div = document.createElement('div');
-  div.innerHTML = `
-    <some-element>
-      <template shadowroot="open">
-        shadow realm
-      </template>
-    </some-element>
-  `;
-</script>
 ```
 
-In all other cases, setting the `shadowroot` attribute of a `<template>` element does nothing,
-and the template remains an ordinary template element:
+Setting the `shadowroot` attribute of a `<template>` element does nothing, and the template
+remains an ordinary template element:
 
 ```js
 const div = document.createElement('div');
@@ -332,6 +321,26 @@ const template = document.createElement('template');
 template.setAttribute('shadowroot', 'open'); // this does nothing
 div.appendChild(template);
 div.shadowRoot; // null
+```
+
+To avoid some important security considerations, Declarative Shadow Roots also can't be created
+using fragment parsing APIs like `innerHTML` or `insertAdjacentHTML()`. The only way to parse
+HTML with Declarative Shadow Roots applied is to pass a new `includeShadowRoots` option to
+`DOMParser`:
+
+```html
+<script>
+  const html = `
+    <div>
+      <template shadowroot="open"></template>
+    </div>
+  `;
+  const div = document.createElement('div');
+  div.innerHTML = html; // No shadow root here
+  const fragment = new DOMParser().parseFromString(html, 'text/html', {
+    includeShadowRoots: true
+  }); // Shadow root here
+</script>
 ```
 
 ## Server-rendering with style {: #styling }
