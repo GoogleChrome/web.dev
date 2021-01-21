@@ -161,18 +161,7 @@ the DOM as new content becomes available. If any of these new elements is
 larger than the previous largest contentful element, a new `PerformanceEntry`
 will also be reported.
 
-If a page removes an element from the DOM, that element will no longer be
-considered. Similarly, if an element's associated image resource changes (e.g.
-changing `img.src` via JavaScript), then that element will stop being considered
-until the new image loads.
-
-{% Aside %}
-  In the future, elements removed from the DOM may still be considered as LCP
-  candidates. [Research is currently being
-  done](https://github.com/WICG/largest-contentful-paint/issues/41#issuecomment-583589387)
-  to assess the impact of this change. You can follow the metrics
-  [CHANGELOG](http://bit.ly/chrome-speed-metrics-changelog) to stay up-to-date.
-{% endAside %}
+If a page removes an element from the DOM, that element will still be considered.
 
 The browser will stop reporting new entries as soon as the user interacts with
 the page (via a tap, scroll, or keypress), as user interaction often changes
