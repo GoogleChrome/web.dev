@@ -5,7 +5,7 @@ authors:
   - petelepage
   - beaufortfrancois
 date: 2018-11-05
-updated: 2020-05-28
+updated: 2021-01-21
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -35,7 +35,6 @@ directory).
 {
   "short_name": "Weather",
   "name": "Weather: Do I need an umbrella?",
-  "description": "Weather forecast information",
   "icons": [
     {
       "src": "/images/icons-192.png",
@@ -67,6 +66,20 @@ directory).
       "description": "View weather information for tomorrow",
       "url": "/tomorrow?source=pwa",
       "icons": [{ "src": "/images/tomorrow.png", "sizes": "192x192" }]
+    }
+  ],
+  "description": "Weather forecast information",
+  "categories": ["weather", "news"],
+  "screenshots": [
+    {
+      "src": "/images/screenshot1.png",
+      "type": "image/png",
+      "sizes": "540x720"
+    },
+    {
+      "src": "/images/screenshot2.jpg",
+      "type": "image/jpg",
+      "sizes": "540x720"
     }
   ]
 }
@@ -211,6 +224,37 @@ the app's preview in task switchers. The `theme_color` should match the
 The `shortcuts` property is an array of [app shortcut](/app-shortcuts) objects
 whose goal is to provide quick access to key tasks within your app. Each member
 is a dictionary that contains at least a `name` and a `url`.
+
+#### `description` {: #description }
+
+The `description` property describes the purpose of your app.
+
+#### `categories` {: #categories }
+
+The `categories` property is an array of lowercase strings that describes the
+application categories to which your app belongs.
+
+The current list of known categories includes books, business, donations,
+education, entertainment, finance, fitness, food, fundraising, games,
+government, health, kids, lifestyle, magazines, medical, music, navigation,
+news, personalization, photo, politics, productivity, security, shopping,
+social, sports, travel, utilities, and weather. To add more categories, file a
+bug to the [manifest-app-info
+repository](https://github.com/w3c/manifest-app-info/issues/new).
+
+#### `screenshots` {: #screenshots }
+
+The `screenshots` property is an array of image objects, representing your app
+in common usage scenarios. Each object must include the `src`, a `sizes`
+property, and the `type` of image.
+
+In Chrome, the image dimensions must be at least 320px, and only JPEG and PNG
+image formats are supported.
+
+{% Aside 'gotchas' %}
+The `categories`, `description` and `screenshots` properties are used only on
+Android for now when a user wants to install your app.
+{% endAside %}
 
 ## Add the web app manifest to your pages {: #link-manifest }
 
