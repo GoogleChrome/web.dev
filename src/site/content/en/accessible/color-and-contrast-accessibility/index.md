@@ -66,7 +66,7 @@ The [Advanced Perceptual Contrast Algorithm (APCA)](https://w3c.github.io/silver
 
 Compared to [AA](https://www.w3.org/WAI/WCAG21/quickref/#contrast-minimum)/[AAA](https://www.w3.org/WAI/WCAG21/quickref/#contrast-enhanced) guidelines, APCA is more context-dependent.
 
-The contrast is calculated based on the text’s:
+The contrast is calculated based on the text's:
 
 - spatial properties (font weight & size),
 - color (perceived lightness difference between text and background),
