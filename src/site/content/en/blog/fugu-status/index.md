@@ -68,21 +68,6 @@ change.<a name="shape-face-text"></a>
           <em>Updated August 23, 2020</em>
         </td>
       </tr>
-      <tr>
-        <td>
-          <a href="/nfc/">Web NFC</a>
-        </td>
-        <td>
-          Web NFC provides sites the ability to read and write to NFC tags when
-          they are in close proximity to the user's device.
-          For example, museums and art galleries could display additional
-          information about a display when the user touches their device to an
-          NFC card near the exhibit; or an inventory management web app could
-          read or write data to an NFC tag on a container to update information
-          on its contents.<br>
-          <em>Updated December 1, 2020</em>
-        </td>
-      </tr>
     </tbody>
   </table>
 </div>
@@ -277,7 +262,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           write to a serial device with scripts. The API bridges the web and
           the physical world by allowing websites to communicate with serial
           devices, such as microcontrollers and 3D printers.<br>
-          <em>Updated January 6, 2021</em>
+          <em>Updated January 21, 2021</em>
         </td>
       </tr>
       <tr>
@@ -293,6 +278,21 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           for information on other shape detection APIs that are under
           development.<br>
           <em>Updated April 14, 2020</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/nfc/">Web NFC</a>
+        </td>
+        <td>
+          Web NFC provides sites the ability to read and write to NFC tags when
+          they are in close proximity to the user's device.
+          For example, museums and art galleries could display additional
+          information about a display when the user touches their device to an
+          NFC card near the exhibit; or an inventory management web app could
+          read or write data to an NFC tag on a container to update information
+          on its contents.<br>
+          <em>Updated January 21, 2021</em>
         </td>
       </tr>
       <tr>
