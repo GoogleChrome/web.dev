@@ -101,7 +101,7 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
         <td>
           Notification Triggers let you schedule notifications in advance, so
           that the operating system will deliver the notification at the right
-          time - even if there is no network connectivity, or the device is in
+          time-even if there is no network connectivity, or the device is in
           battery saver mode.<br>
           <em>Updated September 28, 2020</em>
         </td>
@@ -212,7 +212,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
         </td>
         <td>
           The Get Installed Related Apps API is a web platform API
-          that allows your web app to check to see if your iOS/Android app is
+          that allows your web app to check to see if your iOS or Android app is
           installed on the users device, and vice versa.<br>
           <em>Updated December 18, 2019</em>
         </td>
