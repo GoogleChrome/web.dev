@@ -232,7 +232,7 @@ The `description` property describes the purpose of your app.
 #### `categories` {: #categories }
 
 The `categories` property is an array of lowercase strings that describes the
-application categories to which your app belongs.
+application categories your app belongs to.
 
 The current list of known categories includes books, business, donations,
 education, entertainment, finance, fitness, food, fundraising, games,
@@ -252,8 +252,8 @@ In Chrome, the image dimensions must be at least 320px, and only JPEG and PNG
 image formats are supported.
 
 {% Aside 'gotchas' %}
-The `categories`, `description` and `screenshots` properties are used only on
-Android for now when a user wants to install your app.
+The `categories`, `description` and `screenshots` properties are for now used only on
+Android when a user wants to install your app.
 {% endAside %}
 
 ## Add the web app manifest to your pages {: #link-manifest }
