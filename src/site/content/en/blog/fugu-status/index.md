@@ -259,7 +259,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
       <tr>
         <td>
-          <a href="/wakelock/">Wake Lock API</a>
+          <a href="/wake-lock/">Wake Lock API</a>
         </td>
         <td>
           To avoid draining the battery, most devices will quickly fall asleep
