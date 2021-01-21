@@ -252,8 +252,8 @@ In Chrome, the image dimensions must be at least 320px, and only JPEG and PNG
 image formats are supported.
 
 {% Aside 'gotchas' %}
-The `categories`, `description` and `screenshots` properties are for now used only on
-Android when a user wants to install your app.
+The `categories`, `description` and `screenshots` properties are for now used
+only on Android when a user wants to install your app.
 {% endAside %}
 
 ## Add the web app manifest to your pages {: #link-manifest }
