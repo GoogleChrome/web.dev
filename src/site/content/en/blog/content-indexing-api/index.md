@@ -3,9 +3,9 @@ title: Indexing your offline-capable pages with the Content Indexing API
 subhead: Enabling service workers to tell browsers which pages work offline
 authors:
   - jeffposnick
-description: Your PWA might cache articles and media files, but how will your users know that your pages work while offline? The Content Indexing API is one answer to this question currently in an origin trial. Once the index is populated with content from your PWA, as well as any other installed PWAs, it will show up in dedicated areas of supported browsers.
+description: Your PWA might cache articles and media files, but how will your users know that your pages work while offline? The Content Indexing API is one answer to this question. Once the index is populated with content from your PWA, as well as any other installed PWAs, it will show up in dedicated areas of supported browsers.
 date: 2019-12-12
-updated: 2020-05-26
+updated: 2021-01-21
 tags:
   - blog
   - capabilities
@@ -18,6 +18,11 @@ alt: Index cards in a filing cabinet.
 feedback:
   - api
 ---
+
+{% Aside 'success' %}
+The Content Indexing API, part of the [capabilities project](/fugu-status/),
+launched in Chrome&nbsp;84 for Android.
+{% endAside %}
 
 ## What is the Content Indexing API? {: #what }
 
@@ -168,9 +173,7 @@ await registration.index.add({
   id: 'article-123',
 
   // Required; url needs to be an offline-capable HTML page.
-  // For compatibility during the Origin Trial, include launchUrl as well.
   url: '/articles/123',
-  launchUrl: '/articles/123',
 
   // Required; used in user-visible lists of content.
   title: 'Article title',
