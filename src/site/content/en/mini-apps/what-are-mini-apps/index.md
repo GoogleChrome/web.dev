@@ -193,4 +193,6 @@ Mini apps can get highly popular by letting people share their achievements like
 game and challenge their contacts through status updates. The mini app is then only a tap away, so
 users can enter into competition without any friction and the mini app thereby grow its reach.
 
-In the next chapter, you will learn [what sets mini apps apart from H5 apps and QuickApp](/what-are-h5-and-quickapp).
+{% Banner 'neutral' %}
+  In the next chapter, you will learn [what sets mini apps apart from H5 apps and QuickApp](/what-are-h5-and-quickapp).
+{% endBanner %}

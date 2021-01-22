@@ -261,4 +261,6 @@ tt.canIUse("swiper");
 tt.canIUse("request.success.data");
 ```
 
-The next chapter introduces [mini app components](/mini-app-components/).
+{% Banner 'neutral' %}
+  The next chapter introduces [mini app components](/mini-app-components/).
+{% endBanner %}

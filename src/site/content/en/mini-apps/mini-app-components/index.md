@@ -18,7 +18,7 @@ promise of letting developers piece them together and build great apps on top of
 such atomic components are GitHub's [time-elements](https://github.com/github/time-elements) Stefan
 Judis' [web-vitals-element](https://github.com/stefanjudis/web-vitals-element), or, shameless plug,
 Google's [dark mode toggle](https://github.com/GoogleChromeLabs/dark-mode-toggle/). When it comes to
-complete design systems, however, we have observed that people prefer to rely on a coherent set of
+complete design systems, however, I have observed that people prefer to rely on a coherent set of
 components from the same vendor. An incomplete list of examples includes SAP's
 [UI5 Web Components](https://sap.github.io/ui5-webcomponents/), the
 [Polymer Elements](https://www.webcomponents.org/author/PolymerElements),
@@ -269,4 +269,6 @@ The custom component can then be imported in `index.json`, the key of the import
 </view>
 ```
 
-Continue reading to learn about the [project structure, lifecycle, and bundling](/project-structure-lifecycle-and-bundling/) of mini apps.
+{% Banner 'neutral' %}
+  Continue reading to learn about the [project structure, lifecycle, and bundling](/project-structure-lifecycle-and-bundling/) of mini apps.
+{% endBanner %}

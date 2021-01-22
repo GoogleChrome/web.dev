@@ -251,4 +251,6 @@ with no installation required.
   </figcaption>
 </figure>
 
-Read on to see some examples of the [mini app open source projects](/mini-app-open-source-projects/).
+{% Banner 'neutral' %}
+  Read on to see some examples of the [mini app open source projects](/mini-app-open-source-projects/).
+{% endBanner %}

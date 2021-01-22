@@ -21,7 +21,7 @@ as of April 2019, and Baidu mini apps in the same month
 Effectively companies have traded building apps for the two operating systems iOS and Android and
 additionally the Web for building apps for three or more super apps platforms. The differences
 between each super app platform may not be as big as the differences between Android, iOS, and the
-Web, but nevertheless they exist. Where on Android, iOS, and the Web we have seen cross-platform
+Web, but nevertheless they exist. Where on Android, iOS, and the Web, we have seen cross-platform
 approaches like [Flutter](https://flutter.dev/), [Ionic](https://ionicframework.com/), and
 [React Native](https://reactnative.dev/) ([for Web](https://github.com/necolas/react-native-web))
 gain popularity, in the mini apps ecosystem, we can see an effort led by the
@@ -78,4 +78,6 @@ Leaders of the group introduced the effort as follows:
 Especially the part *"maximizing the integration of MiniApps and the Web"* sounds very interesting.
 As a curious member of the group, I look forward to seeing where this endeavor is headed.
 
-The following chapter looks at [other mini app runtime environments](/other-mini-app-runtime-environments/) apart from mobile devices.
+{% Banner 'neutral' %}
+  The following chapter looks at [other mini app runtime environments](/other-mini-app-runtime-environments/) apart from mobile devices.
+{% endBanner %}

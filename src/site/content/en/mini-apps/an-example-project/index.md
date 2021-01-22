@@ -77,6 +77,7 @@ Navbar and tabbar are realized as iframes with a `<div>` container in between th
 for the pages, out of which always one is visible, dependent on the active selection in the tabbar.
 A final iframe pointing to `about:blank` serves for dynamically created in-app pages, which are needed for modifying existing
 timers or creating new ones.
+I call this pattern multi-page single-page app (MPSPA).
 
 <figure class="w-figure">
   <img src="./html-structure.png" alt="Chrome DevTools view of the HTML structure of the app showing it consists of six iframes: one for the navbar, one for the tabbar, and three grouped ones for each page of the app, with a final placeholder iframe for dynamic pages.">
@@ -202,12 +203,46 @@ select {
   </figcaption>
 </figure>
 
+## Screen wake lock
+
+While doing a workout, the screen should not turn off.
+On browsers that support it, HIIT Time realizes this through a [screen wake lock](/wake-lock/).
+The snippet below shows how it is done.
+
+```js
+if ('wakeLock' in navigator) {
+  const requestWakeLock = async () => {
+    try {
+      page.shared.wakeLock = await navigator.wakeLock.request('screen');
+      page.shared.wakeLock.addEventListener('release', () => {
+        // Nothing.
+      });
+    } catch (err) {
+      console.error(`${err.name}, ${err.message}`);
+    }
+  };
+  // Request a screen wake lock…
+  await requestWakeLock();
+  // …and re-request it when the page becomes visible.
+  document.addEventListener('visibilitychange', async () => {
+    if (
+      page.shared.wakeLock !== null &&
+      document.visibilityState === 'visible'
+    ) {
+      await requestWakeLock();
+    }
+  });
+}
+```
+
 ## Testing the application
 
 The HIIT Time application is available on [GitHub](https://github.com/tomayac/hiit-time).
 You can play with the [demo](https://tomayac.github.io/hiit-time/) in a new window,
 or right in the iframe embed below, which simulates a mobile device.
 
-<iframe src="https://tomayac.github.io/hiit-time/" width="411" height="731" loading="lazy" frameborder="0" allow="screen-wake-lock"></iframe>
+<iframe src="https://tomayac.github.io/hiit-time/#workout" width="411" height="731" loading="lazy" frameborder="0" allow="screen-wake-lock"></iframe>
 
-The final chapter ends this collection on mini apps with a [conclusion](/conclusion).
+{% Banner 'neutral' %}
+  The final chapter ends this collection on mini apps with a [conclusion](/conclusion).
+{% endBanner %}

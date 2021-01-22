@@ -75,4 +75,6 @@ mode with a secondary phone (given you have one) to understand what is going on 
   </figcaption>
 </figure>
 
-Read on to [learn more about mini apps](/what-are-mini-apps/) in the next chapter.
+{% Banner 'neutral' %}
+  Read on to [learn more about mini apps](/what-are-mini-apps/) in the next chapter.
+{% endBanner %}

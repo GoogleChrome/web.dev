@@ -52,4 +52,6 @@ super app, but launch as seemingly self-contained full screen applications that 
 device. What happens in the background is that they are opened in a full screen view rendered by the
 operating system that provides the JavaScript bridge.
 
-The next chapter covers the [developer experience of mini apps](/mini-app-devtools/).
+{% Banner 'neutral' %}
+  The next chapter covers the [developer experience of mini apps](/mini-app-devtools/).
+{% endBanner %}

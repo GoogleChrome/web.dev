@@ -184,13 +184,13 @@ these markup languages [below](#markup-languages).
 
 Inspecting the WebView on a real device via [chrome://inspect/#devices](chrome://inspect/#devices)
 reveals that WeChat DevTools was deliberately lying to us. Where WeChat DevTools showed an
-`<image>`, the actual thing we are looking at is a custom element called `<wx-image>` with a `<div>`
+`<image>`, the actual thing I am looking at is a custom element called `<wx-image>` with a `<div>`
 as its only child. It is interesting to note that this custom element does not use
 [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM). More on
 these components [later](#components).
 
 <figure class="w-figure">
-  <img src="image-chrome-devtools.png" alt="Inspecting a WeChat mini app running on a real device with Chrome DevTools. Where WeChat DevTools reported we were looking at an `image` tag, Chrome DevTools reveals we are actually dealing with a `wx-image` custom element.">
+  <img src="image-chrome-devtools.png" alt="Inspecting a WeChat mini app running on a real device with Chrome DevTools. Where WeChat DevTools reported I am looking at an `image` tag, Chrome DevTools reveals I am actually dealing with a `wx-image` custom element.">
   <figcaption class="w-figure">
     Inspecting an <code>&lt;image&gt;</code> element with WeChat DevTools reveals that it is actually a <code>&lt;wx-image&gt;</code> custom element.
   </figcaption>
@@ -237,4 +237,6 @@ desired mock responses.
   </figcaption>
 </figure>
 
-Read on to learn about the [mark-up, styling, and scripting of mini apps](/mini-app-markup-styling-and-scripting/).
+{% Banner 'neutral' %}
+  Read on to learn about the [mark-up, styling, and scripting of mini apps](/mini-app-markup-styling-and-scripting/).
+{% endBanner %}

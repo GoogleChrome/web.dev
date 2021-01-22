@@ -11,3 +11,6 @@ tags:
   - mini-apps
 ---
 
+{% Banner 'neutral' %}
+  Congratulations, you have reached the end of the [mini apps collection](/mini-apps).
+{% endBanner %}
