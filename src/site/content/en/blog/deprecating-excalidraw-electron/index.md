@@ -13,8 +13,10 @@ authors:
   - thomassteiner
 date: 2021-01-07
 updated: 2021-01-22
+canonical: https://blog.excalidraw.com/deprecating-excalidraw-electron/
 hero: hero.jpg
-alt:
+alt: |
+  Excalidraw drawing with a stylized Electron logo.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
