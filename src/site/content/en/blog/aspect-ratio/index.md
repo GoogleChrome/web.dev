@@ -248,10 +248,37 @@ img {
   </figcaption>
 </figure>
 
+### Bonus tip: image attributes for aspect ratio
+
+Another way to set an image's aspect ratio is through [image attributes](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/). If you know the dimensions of the image ahead of time, it is a [best practice](https://web.dev/image-aspect-ratio/#check-the-image's-width-and-height-attributes-in-the-html) to
+set these dimensions as its `width` and `height`.
+
+For our example above, knowing the dimensions are 800px by 600px, the image markup would look like: `<img src="image.jpg"
+alt="..." width="800" height="600">`. If the image sent has the same aspect
+ratio, but not necessarily those exact pixel values, we could still use image
+attribute values to set the ratio, combined with a style of `width: 100%` so
+that the image takes up the proper space. All together that would look like:
+
+```markup
+<!-- Markup -->
+<img src="image.jpg" alt="..." width="8" height="6">
+```
+
+```css
+/* CSS */
+img {
+  width: 100%;
+}
+```
+
+In the end, the effect is the same as setting the `aspect-ratio` on the
+image via CSS, and cumulative layout shift is avoided ([see demo on
+Codepen](https://codepen.io/una/pen/gOwJWoz)).
+
 ## Conclusion
 
 With the new `aspect-ratio` CSS property, launching across all modern browsers, maintaining proper
-aspect ratios in your media gets a little bit more straightforward. 
+aspect ratios in your media and layout containers gets a little bit more straightforward. 
 
 
 Photos by [Amy Shamblen](https://unsplash.com/photos/TXg_38oImi0) and [Lionel
