@@ -226,4 +226,6 @@ Do you find sliding or session windows easier to understand? Are the differences
 
 ### How to give feedback
 
+You can try out the new layout shift metrics on any site using our [example JavaScript implementations](https://github.com/mmocny/web-vitals/wiki/Snippets-for-LSN-using-PerformanceObserver) or our [fork of the Core Web Vitals extension](https://github.com/mmocny/web-vitals-extension/tree/experimental-ls).
+
 Please email feedback to our **[web-vitals-feedback](https://groups.google.com/g/web-vitals-feedback)** Google group, with "[Layout Shift Metrics]" in the subject line. We're really looking forward to hearing what you think!
