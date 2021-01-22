@@ -60,11 +60,11 @@ then its memory usage grows over time and the web page appears slow and
 bloated to the users.
 
 The first step in solving this problem is measuring it. The new
-[`performance.measureUserAgentSpecificMemoryMemory()` API][explainer] allows developers to
+[`performance.measureUserAgentSpecificMemory()` API][explainer] allows developers to
 measure memory usage of their web pages in production and thus detect memory
 leaks that slip through local testing.
 
-## How is `performance.measureUserAgentSpecificMemoryMemory()` different from the legacy `performance.memory` API? {: #legacy-api }
+## How is `performance.measureUserAgentSpecificMemory()` different from the legacy `performance.memory` API? {: #legacy-api }
 
 If you are familiar with the existing non-standard `performance.memory` API,
 you might be wondering how the new API differs from it. The main difference is
@@ -138,16 +138,16 @@ results for the same browser.
 </table>
 </div>
 
-## Using `performance.measureUserAgentSpecificMemoryMemory()` {: use }
+## Using `performance.measureUserAgentSpecificMemory()` {: use }
 
 ### Enabling via chrome://flags
 
-To experiment with `performance.measureUserAgentSpecificMemoryMemory()` without an origin trial
+To experiment with `performance.measureUserAgentSpecificMemory()` without an origin trial
 token, enable the `#experimental-web-platform-features` flag in `chrome://flags`.
 
 ### Enabling support during the origin trial phase
 
-The `performance.measureUserAgentSpecificMemoryMemory()` API is available as an origin trial starting in
+The `performance.measureUserAgentSpecificMemory()` API is available as an origin trial starting in
 Chrome 83. The origin trial is expected to end in Chrome 86, in early November 2020.
 
 {% include 'content/origin-trials.njk' %}
@@ -158,7 +158,7 @@ Chrome 83. The origin trial is expected to end in Chrome 86, in early November 2
 
 ### Feature detection
 
-The `performance.measureUserAgentSpecificMemoryMemory()` function may fail with a
+The `performance.measureUserAgentSpecificMemory()` function may fail with a
 [SecurityError][security-error] if the execution environment does not fulfil
 the security requirements for preventing cross-origin information leaks.
 During the origin trial in Chrome, the API requires that [Site
@@ -167,10 +167,10 @@ Isolation][site-isolation] is enabled. When the API ships, it will rely on
 cross-origin isolation by setting [COOP+COEP headers][coop-coep].
 
 ```javascript
-if (performance.measureUserAgentSpecificMemoryMemory) {
+if (performance.measureUserAgentSpecificMemory) {
   let result;
   try {
-    result = await performance.measureUserAgentSpecificMemoryMemory();
+    result = await performance.measureUserAgentSpecificMemory();
   } catch (error) {
     if (error instanceof DOMException &&
         error.name === "SecurityError") {
@@ -209,8 +209,8 @@ page load on the main window.
 
 ```javascript
 function scheduleMeasurement() {
-  if (!performance.measureUserAgentSpecificMemoryMemory) {
-    console.log("performance.measureUserAgentSpecificMemoryMemory() is not available.");
+  if (!performance.measureUserAgentSpecificMemory) {
+    console.log("performance.measureUserAgentSpecificMemory() is not available.");
     return;
   }
   const interval = measurementInterval();
@@ -241,10 +241,10 @@ the result, and schedules the next measurement.
 
 ```javascript
 async function performMeasurement() {
-  // 1. Invoke performance.measureUserAgentSpecificMemoryMemory().
+  // 1. Invoke performance.measureUserAgentSpecificMemory().
   let result;
   try {
-    result = await performance.measureUserAgentSpecificMemoryMemory();
+    result = await performance.measureUserAgentSpecificMemory();
   } catch (error) {
     if (error instanceof DOMException &&
         error.name === "SecurityError") {
@@ -323,13 +323,13 @@ which of these entries owns the memory.
 
 The [Web Performance Community Group][webperfs] and the Chrome team would love
 to hear about your thoughts and experiences with
-`performance.measureUserAgentSpecificMemoryMemory()`.
+`performance.measureUserAgentSpecificMemory()`.
 
 ### Tell us about the API design
 
 Is there something about the API that doesn't work as expected? Or are there
 missing properties that you need to implement your idea? File a spec issue on
-the [performance.measureUserAgentSpecificMemoryMemory() GitHub repo][issues] or add your thoughts to an
+the [performance.measureUserAgentSpecificMemory() GitHub repo][issues] or add your thoughts to an
 existing issue.
 
 ### Report a problem with the implementation
@@ -342,7 +342,7 @@ the bug, and have **Components** set to `Blink>PerformanceAPIs`.
 
 ### Show support
 
-Are you planning to use `performance.measureUserAgentSpecificMemoryMemory()`? Your public support
+Are you planning to use `performance.measureUserAgentSpecificMemory()`? Your public support
 helps the Chrome team prioritize features and shows other browser vendors how
 critical it is to support them. Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) and let us know
 where and how you're using it.
