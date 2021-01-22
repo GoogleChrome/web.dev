@@ -25,7 +25,7 @@ feedback:
 
 **Updates**
 
-**January 20th, 2020**: `performance.measureUserAgentSpecificMemoryMemory` is renamed to `performance.measureUserAgentSpecificMemory`
+**January 20th, 2020**: `performance.measureMemory` is renamed to `performance.measureUserAgentSpecificMemory`
 and enabled by default in Chrome 89 for [cross-origin isolated](/coop-coep) web pages.
 The format of the result also [has changed](https://github.com/WICG/performance-measure-memory/blob/master/ORIGIN_TRIAL.md#result-differences)
 slightly compared to the Origin Trial version.

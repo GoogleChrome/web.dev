@@ -31,8 +31,8 @@ feedback:
 
 **October 15th, 2020**: `self.crossOriginIsolated` is available from Chrome 87.
 Reflecting that, `document.domain` is immutable when `self.crossOriginIsolated`
-returns `true`. `performance.measureUserAgentSpecificMemoryMemory` is ending its origin trial and is
-planned to be enabled by default in Chrome 88. Shared Array Buffer on Android
+returns `true`. `performance.measureUserAgentSpecificMemoryMemory()` is ending its origin trial and is
+enabled by default in Chrome 89. Shared Array Buffer on Android
 Chrome will be available from Chrome 88.
 
 **September 1st, 2020**: COOP Reporting is behind flags in Chrome 86. See
