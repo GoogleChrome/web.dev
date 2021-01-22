@@ -8,7 +8,7 @@ authors:
   - rowan_m
   - yoavweiss
 date: 2020-06-25
-updated: 2020-12-18
+updated: 2021-01-22
 hero: uach-hero.jpg
 thumbnail: uach-thumbnail.jpg
 alt: A variety of different footprints in the snow. A hint at who's been there.
@@ -22,22 +22,22 @@ feedback:
 
 {% YouTube 'f0YY0o2OAKA' %}
 
-Client Hints enable developers to actively request
-information about the user's device or conditions, rather than needing to parse
-it out of the User-Agent (UA) string. Providing this alternative route is the
-first step to eventually reducing User-Agent string granularity.
+Client Hints enable developers to actively request information about the user's
+device or conditions, rather than needing to parse it out of the User-Agent (UA)
+string. Providing this alternative route is the first step to eventually
+reducing User-Agent string granularity.
 
 Learn how to update your existing functionality that relies on parsing the
 User-Agent string to make use of User-Agent Client Hints instead.
 
 {% Banner 'caution', 'body' %}
-If you are already using User-Agent Client Hints, pay attention to the upcoming changes.
-The header format is changing so the `Accept-CH` tokens exactly match the 
-returned headers. Previously a site could have sent `Accept-CH: UA-Platform` to receive the
-`Sec-CH-UA-Platform` header and now that site should send `Accept-CH: Sec-CH-UA-Platform`.
-If you've already implemented User-Agent Client Hints, send both
-formats until the change has fully rolled out in stable Chromium. See [Intent to
-Remove: Rename User-Agent Client Hint ACCEPT-CH
+If you are already using User-Agent Client Hints, pay attention to the upcoming
+changes. The header format is changing so the `Accept-CH` tokens exactly match
+the returned headers. Previously a site could have sent `Accept-CH: UA-Platform`
+to receive the `Sec-CH-UA-Platform` header and now that site should send
+`Accept-CH: Sec-CH-UA-Platform`. If you've already implemented User-Agent Client
+Hints, send both formats until the change has fully rolled out in stable
+Chromium. See [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH
 tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ)
 for updates.
 {% endBanner %}
@@ -144,9 +144,8 @@ appropriate resolution.
 
 {% Aside %}
 There are ongoing discussions on enabling Client Hints on an initial request,
-but you should consider [responsive
-design](/responsive-web-design-basics) or progressive enhancement before going
-down this route.
+but you should consider [responsive design](/responsive-web-design-basics) or
+progressive enhancement before going down this route.
 {% endAside %}
 
 User-Agent Client Hints expand the range of properties with the `Sec-CH-UA`
@@ -160,8 +159,8 @@ Client Hints are **only sent over secure connections**, so make sure you have
 [migrated your site to HTTPS](/why-https-matters).
 {% endAside %}
 
-The new set of hints is available from Chromium 84, so let's explore how it
-all works.
+The new set of hints is available from Chromium 84, so let's explore how it all
+works.
 
 ## User-Agent Client Hints from Chromium 84
 
