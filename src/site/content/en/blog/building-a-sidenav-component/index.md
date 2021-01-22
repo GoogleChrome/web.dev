@@ -328,4 +328,4 @@ approaches and learn all the ways to build on the web. Create a [Glitch](https:/
 
 ## Community remixes
 
-Nothing to see here, yet!
+- [@_developit](https://twitter.com/_developit) with custom elements: [demo & code](https://glitch.com/embed/#!/app-drawer)
