@@ -50,7 +50,7 @@ can limit these calculations to moments when the user interacts with their devic
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
 | 1. Create explainer                      | [Complete][explainer]    |
-| 2. Create initial draft of specification | Not started              |
+| 2. Create initial draft of specification | [Complete][specification]|
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
 | 4. Origin trial                          | [In progress][ot]        |
 | 5. Launch                                | Not started              |
@@ -284,7 +284,8 @@ The hero image is by [Fernando Hernandez](https://unsplash.com/@_ferh97) on
 [issues]: https://github.com/samuelgoto/idle-detection/issues
 [demo]: https://idle-detection.glitch.me/
 [demo-source]: https://glitch.com/edit/#!/idle-detection
-[explainer]: https://github.com/samuelgoto/idle-detection/blob/master/README.md
+[explainer]: https://github.com/wicg/idle-detection/blob/master/README.md
+[specification]: https://wicg.github.io/idle-detection
 [wicg-discourse]: https://discourse.wicg.io/t/idle-detection-api/2959
 [cr-bug]: https://crbug.com/878979
 [cr-status]: https://chromestatus.com/feature/4590256452009984
