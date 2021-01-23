@@ -1,20 +1,22 @@
 ---
-title: Deprecating Excalidraw Electron in favor of the Web version
+title: Deprecating Excalidraw Electron in favor of the web version
 subhead: |
-  Learn why the Excalidraw project decided to deprecate their Electron wrapper in favor of the Web
+  Learn why the Excalidraw project decided to deprecate their Electron wrapper in favor of the web
   version.
 description: |
   Excalidraw is a virtual collaborative whiteboard that lets you easily sketch diagrams that
   feel hand-drawn. On the Excalidraw project, we decided to deprecate Excalidraw
-  Desktop, an Electron wrapper for Excalidraw, in favor of the Web version that you can—and always
+  Desktop, an Electron wrapper for Excalidraw, in favor of the web version that you can—and always
   could—find at excalidraw.com. After a careful analysis, we decided that Progressive Web App
   (PWA) is the future we want to build upon.
 authors:
   - thomassteiner
 date: 2021-01-07
-# updated: 2020-11-04
+updated: 2021-01-22
+canonical: https://blog.excalidraw.com/deprecating-excalidraw-electron/
 hero: hero.jpg
-alt:
+alt: |
+  Excalidraw drawing with a stylized Electron logo.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
@@ -24,7 +26,7 @@ tags:
 [Excalidraw](https://excalidraw.com/) is a virtual collaborative whiteboard that lets you easily sketch diagrams that feel hand-drawn.
 On the [Excalidraw project](https://github.com/excalidraw), we have decided to
 deprecate [Excalidraw Desktop](https://github.com/excalidraw/excalidraw-desktop), an
-[Electron](https://www.electronjs.org/) wrapper for Excalidraw, in favor of the Web version that you
+[Electron](https://www.electronjs.org/) wrapper for Excalidraw, in favor of the web version that you
 can—and always could—find at [excalidraw.com](https://excalidraw.com/). After a careful analysis, we
 have decided that [Progressive Web App](https://web.dev/pwa/) (PWA) is the future we want to build
 upon. Read on to learn why.
@@ -102,17 +104,17 @@ Electron apps with enough effort and dedication. For Excalidraw Desktop, we were
 
 ## Where Excalidraw Desktop left off
 
-Excalidraw Desktop so far is basically the Excalidraw Web app bundled as an
+Excalidraw Desktop so far is basically the Excalidraw web app bundled as an
 [`.asar`](https://github.com/electron/asar) file with an added **About Excalidraw** window. The look
-and feel of the application is almost identical to the Web version.
+and feel of the application is almost identical to the web version.
 
 <figure class="w-figure">
   <img src="excalidraw-desktop.png" alt="The Excalidraw Desktop application running in an Electron wrapper.">
-  <figcaption class="w-figcaption">Excalidraw Desktop is almost indistinguishable from the Web version</figcaption>
+  <figcaption class="w-figcaption">Excalidraw Desktop is almost indistinguishable from the web version</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img src="about-excalidraw.png" width="400" alt="The Excalidraw Desktop 'About' window displaying the version of the Electron wrapper and the Web app.">
+  <img src="about-excalidraw.png" width="400" alt="The Excalidraw Desktop 'About' window displaying the version of the Electron wrapper and the web app.">
   <figcaption class="w-figcaption">The <strong>About Excalidraw</strong> menu providing insights into the versions</figcaption>
 </figure>
 
@@ -153,9 +155,9 @@ These shortcomings and the pending work to make the experience truly native-like
 (which, again, with enough effort _is_ possible) were a strong argument for us to reconsider our
 investment in Excalidraw Desktop. The way bigger argument for us, though, was that we foresee that
 for _our_ use case, we do not need all the features Electron offers. The grown and still growing set
-of capabilities of the Web serves us equally well, if not better.
+of capabilities of the web serves us equally well, if not better.
 
-## How the Web serves us today and in the future
+## How the web serves us today and in the future
 
 Even in 2020, [jQuery](https://jquery.com/) is still
 [incredibly popular](https://almanac.httparchive.org/en/2020/javascript#libraries). For many
@@ -213,13 +215,13 @@ other browsers. You can learn more about this feature in my blog post
 Files can be dragged and dropped onto the Excalidraw window just as in native applications. On a
 browser that supports the [File System Access API](https://web.dev/file-system-access/), a dropped
 file can be immediately edited and the modifications be saved to the original file. This is so
-intuitive that you sometimes forget that you are dealing with a Web app.
+intuitive that you sometimes forget that you are dealing with a web app.
 
 ### Clipboard access
 
 Excalidraw works well with the operating system's clipboard. Entire Excalidraw drawings or also just
 individual objects can be copied and pasted in `image/png` and `image/svg+xml` formats, allowing for
-an easy integration with other native tools like [Inkscape](https://inkscape.org/) or Web-based
+an easy integration with other native tools like [Inkscape](https://inkscape.org/) or web-based
 tools like [SVGOMG](https://jakearchibald.github.io/svgomg/).
 
 <figure class="w-figure">
@@ -241,12 +243,12 @@ Excalidraw drawings can be shared by link. Here is an
 people have Excalidraw installed as a PWA, such links will not open in a browser tab, but launch a
 new standalone window. Pending implementation, this will work thanks to
 [declarative link capturing](https://github.com/WICG/sw-launch/blob/master/declarative_link_capturing.md),
-an, at the time of writing, bleeding-edge proposal for a new Web platform feature.
+an, at the time of writing, bleeding-edge proposal for a new web platform feature.
 
 ## Conclusion
 
-The Web has come a long way, with more and more features landing in browsers that only a couple of
-years or even months ago were unthinkable on the Web and exclusive to native applications.
+The web has come a long way, with more and more features landing in browsers that only a couple of
+years or even months ago were unthinkable on the web and exclusive to native applications.
 Excalidraw is at the forefront of what is possible in the browser, all while acknowledging that not
 all browsers on all platforms support each feature we use. By betting on a progressive
 enhancement strategy, we enjoy the latest and greatest wherever possible, but without leaving anyone
