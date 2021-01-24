@@ -15,7 +15,7 @@ tags:
   - web-vitals
 ---
 
-[Cumulative Layout Shift](https://web.dev/cls) (CLS) is a metric that measures the visual stability of a web page. The metric is called cumulative layout shift because the score of every individual shift is summed throughout the lifespan of the page.
+[Cumulative Layout Shift](/cls) (CLS) is a metric that measures the visual stability of a web page. The metric is called cumulative layout shift because the score of every individual shift is summed throughout the lifespan of the page.
 
 While all layout shifts are poor user experiences, they do add up more on pages that are open longer. That's why the Chrome Speed Metrics Team set out to improve the CLS metric to be more neutral to the time spent on a page.
 
@@ -52,7 +52,7 @@ Often pages have multiple layout shifts bunched closely together, because elemen
 - Sliding windows
 - Session windows
 
-In each of these examples, the page has layout shifts of varying severity over time. Each blue bar represents a single layout shift, and the length represents the [score](cls/#layout-shift-score) of that shift. The images illustrate the ways different windowing strategies group the layout shifts over time.
+In each of these examples, the page has layout shifts of varying severity over time. Each blue bar represents a single layout shift, and the length represents the [score](/cls/#layout-shift-score) of that shift. The images illustrate the ways different windowing strategies group the layout shifts over time.
 
 ### Tumbling windows
 
@@ -189,8 +189,8 @@ We'd love to get feedback from web developers on these approaches. Some things t
 
 We do want to clarify that a lot of things will not be changing with a new approach:
 
-- None of our metric ideas change the way layout shift scores for [individual frames are calculated](cls/#layout-shift-score), only the way we summarize multiple frames. This means that the [JavaScript API](cls/#measure-cls-in-javascript) for layout shifts will stay the same, and the underlying events in Chrome traces that developer tools use will also stay the same, so layout shift rects in tools like WebPageTest and Chrome DevTools will continue to work the same way.
-- We'll continue to work hard on making the metrics easy for developers to adopt, including them in the [web-vitals library](https://github.com/GoogleChrome/web-vitals), documenting on [web.dev](metrics), and reporting them in our developer tooling like Lighthouse.
+- None of our metric ideas change the way layout shift scores for [individual frames are calculated](/cls/#layout-shift-score), only the way we summarize multiple frames. This means that the [JavaScript API](/cls/#measure-cls-in-javascript) for layout shifts will stay the same, and the underlying events in Chrome traces that developer tools use will also stay the same, so layout shift rects in tools like WebPageTest and Chrome DevTools will continue to work the same way.
+- We'll continue to work hard on making the metrics easy for developers to adopt, including them in the [web-vitals library](https://github.com/GoogleChrome/web-vitals), documenting on [web.dev](/metrics), and reporting them in our developer tooling like Lighthouse.
 
 ### Trade-offs between metrics
 One of the top strategies summarizes the layout shift windows as an average, and the rest report the maximum window. For pages which are open a very long time, the average will likely report a more representative value, but in general it will likely be easier for developers to act on a single window—they can log when it occurred, the elements that shifted, and so on. We'd love feedback on which is more important to developers.
