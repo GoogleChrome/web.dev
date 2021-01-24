@@ -1,76 +1,25 @@
 ---
 title: "Feedback wanted: The road to a better layout shift metric for long-lived pages"
-subhead: Learn about our plans for improving the Cumulative Layout Shift metric and give us your feedback.
+subhead: Learn about our plans for improving the Cumulative Layout Shift metric and give us feedback.
 description: |
-  Learn about our plans for improving the Cumulative Layout Shift metric and give us your feedback.
-
-# A list of authors. Supports more than one.
+  Learn about our plans for improving the Cumulative Layout Shift metric and give us feedback.
 authors:
   - anniesullie
   - mmocny
-
 date: 2021-01-31
-# Add an updated date to your post if you edit in the future.
-# updated: 2019-11-01
-
-# Add the scheduled flag if you'd like your post to automatically go live
-# during a future date. Posts will deploy at 7am PST / 15:00 UTC.
-# Example: A post with `date: 2050-01-01`, `scheduled: true`, will go live at
-# 7am PST, January 1st, 2050.
-# If you don't use the scheduled flag then setting a future date has no effect.
-# scheduled: true
-
-# !!! IMPORTANT: If your post does not contain a hero image it will not appear
-# on the homepage.
-# Hero images should be 3200 x 960.
 hero: hero.webp
-# You can adjust the fit of your hero image with this property.
-# Values: contain | cover (default)
-# hero_fit: contain
-
-# You can adjust the position of your hero image with this property.
-# Values: top | bottom | center (default)
-# hero_position: bottom
-
-# You can provide an optional cropping of your hero image to be used as a
-# thumbnail. Note the alt text will be the same for both the thumbnail and
-# the hero.
-# thumbnail: thumbnail.jpg
-
 alt: An example windowing approach for measuring layout shift.
-
-# You can provide a custom thumbnail and description for social media cards.
-# Thumbnail images should be 896 x 480.
-# If no social thumbnail is provided then the post will attempt to fallback to
-# the post's thumbnail or hero from above. It will also reuse the alt.
-# social:
-#   google:
-#     title: A title for Google search card.
-#     description: A description for Google search card.
-#     thumbnail: google_thumbnail.jpg
-#     alt: Provide an alt for your thumbnail.
-#   facebook:
-#     title: A title for Facebook card.
-#     description: A description for Facebook card.
-#     thumbnail: facebook_thumbnail.jpg
-#     alt: Provide an alt for your thumbnail.
-#   twitter:
-#     title: A title for Twitter card.
-#     description: A description for Twitter card.
-#     thumbnail: twitter_thumbnail.jpg
-#     alt: Provide an alt for your thumbnail.
-
 tags:
-  - blog # blog is a required tag for the article to show up in the blog.
+  - blog
   - performance
-  - web vitals
+  - web-vitals
 ---
 
 [Cumulative Layout Shift](https://web.dev/cls) (CLS) is a metric that measures the visual stability of a web page. The metric is called cumulative layout shift because the score of every individual shift is summed throughout the lifespan of the page.
 
 While all layout shifts are poor user experiences, they do add up more on pages that are open longer. That's why the Chrome Speed Metrics Team set out to improve the CLS metric to be more neutral to the time spent on a page.
 
-It's important that the metric focuses on user experience through the full page lifetime, as we've found that users often have negative experiences after load, while scrolling or navigating through pages. But we've heard concerns about how this impacts long-lived pages--pages which the user generally has open for a long time. There are several different types of pages which tend to stay open longer; some of the most common are social media apps with infinite scroll and single-page applications. 
+It's important that the metric focuses on user experience through the full page lifetime, as we've found that users often have negative experiences after load, while scrolling or navigating through pages. But we've heard concerns about how this impacts long-lived pages—pages which the user generally has open for a long time. There are several different types of pages which tend to stay open longer; some of the most common are social media apps with infinite scroll and single-page applications. 
 
 An internal analysis of long-lived pages with high CLS scores found that most problems were caused by the following patterns:
 
@@ -103,7 +52,7 @@ Often pages have multiple layout shifts bunched closely together, because elemen
 - Sliding windows
 - Session windows
 
-In each of these examples, the page has layout shifts of varying severity over time. Each blue bar represents a single layout shift, and the length represents the [score](https://web.dev/cls/#layout-shift-score) of that shift. The images illustrate the ways different windowing strategies group the layout shifts over time.
+In each of these examples, the page has layout shifts of varying severity over time. Each blue bar represents a single layout shift, and the length represents the [score](cls/#layout-shift-score) of that shift. The images illustrate the ways different windowing strategies group the layout shifts over time.
 
 ### Tumbling windows
 
@@ -123,7 +72,7 @@ An approach that lets us see more possible groupings of the same length is to co
 
 If we wanted to focus on identifying areas of the page with bursts of layout shifts, we could start each window at a shift, and keep growing it until we encountered a gap of a given size between layout shifts. This approach groups the layout shifts together, and ignores most of the non-shifting user experience. One potential problem is that if there are no gaps in the layout shifts, a metric based on session windows could grow unbounded just like the current CLS metric. So we tried this out with a maximum window size as well.
 
-## Window Sizes
+## Window sizes
 
 The metric might give very different results depending on how big the windows actually are, so we tried multiple different window sizes:
 
@@ -176,7 +125,7 @@ A few windowing strategies worked well with long window sizes:
 
 These all ranked really well at both the 95th percentile and the maximum.
 
-But for such large window sizes, we were concerned about using the 95th percentile--often we were looking at only 4-6 windows, and taking the 95th percentile of that is a lot of interpolation. It's unclear what the interpolation is doing in terms of the metric value. The maximum value is a lot clearer, so we decided to move forward with checking the maximum.
+But for such large window sizes, we were concerned about using the 95th percentile—often we were looking at only 4-6 windows, and taking the 95th percentile of that is a lot of interpolation. It's unclear what the interpolation is doing in terms of the metric value. The maximum value is a lot clearer, so we decided to move forward with checking the maximum.
 
 ### Average of session windows with long gaps
 
@@ -216,11 +165,11 @@ We'd love to get feedback from web developers on these approaches. Some things t
 
 We do want to clarify that a lot of things will not be changing with a new approach:
 
-- None of our metric ideas change the way layout shift scores for [individual frames are calculated](https://web.dev/cls/#layout-shift-score), only the way we summarize multiple frames. This means that the [JavaScript API](https://web.dev/cls/#measure-cls-in-javascript) for layout shifts will stay the same, and the underlying events in Chrome traces that developer tools use will also stay the same, so layout shift rects in tools like WebPageTest and Chrome DevTools will continue to work the same way.
-- We'll continue to work hard on making the metrics easy for developers to adopt, including them in the [web-vitals library](https://github.com/GoogleChrome/web-vitals), documenting on [web.dev](https://web.dev/metrics/), and reporting them in our developer tooling like Lighthouse.
+- None of our metric ideas change the way layout shift scores for [individual frames are calculated](cls/#layout-shift-score), only the way we summarize multiple frames. This means that the [JavaScript API](cls/#measure-cls-in-javascript) for layout shifts will stay the same, and the underlying events in Chrome traces that developer tools use will also stay the same, so layout shift rects in tools like WebPageTest and Chrome DevTools will continue to work the same way.
+- We'll continue to work hard on making the metrics easy for developers to adopt, including them in the [web-vitals library](https://github.com/GoogleChrome/web-vitals), documenting on [web.dev](metrics), and reporting them in our developer tooling like Lighthouse.
 
 ### Trade-offs between metrics
-One of the top strategies summarizes the layout shift windows as an average, and the rest report the maximum window. For pages which are open a very long time, the average will likely report a more representative value, but in general it will likely be easier for developers to act on a single window--they can log when it occurred, the elements that shifted, etc. We'd love feedback on which is more important to developers.
+One of the top strategies summarizes the layout shift windows as an average, and the rest report the maximum window. For pages which are open a very long time, the average will likely report a more representative value, but in general it will likely be easier for developers to act on a single window—they can log when it occurred, the elements that shifted, and so on. We'd love feedback on which is more important to developers.
 
 Do you find sliding or session windows easier to understand? Are the differences important to you?
 
