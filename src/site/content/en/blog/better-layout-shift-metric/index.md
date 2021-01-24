@@ -160,7 +160,7 @@ Averaging the scores of all uncapped session windows with 5 second gaps between 
 
 ### High percentiles of short windows
 
-The maximum 300 ms sliding window ranked very highly, as well as the 95th percentile. For the shorter window size, there is less percentile interpolation than larger window sizes, but we were also concerned about "repeat" sliding windows--if a set of layout shifts occurs over two frames, there are multiple 300 ms windows that include them. Taking the maximum is much clearer and simpler than taking the 95th percentile one. So again we decided to move forward with checking the maximum.
+The maximum 300 ms sliding window ranked very highly, as well as the 95th percentile. For the shorter window size, there is less percentile interpolation than larger window sizes, but we were also concerned about "repeat" sliding windows—if a set of layout shifts occurs over two frames, there are multiple 300 ms windows that include them. Taking the maximum is much clearer and simpler than taking the 95th percentile one. So again we decided to move forward with checking the maximum.
 
 ## Strategies that didn't work out
 
