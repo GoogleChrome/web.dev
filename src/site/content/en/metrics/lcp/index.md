@@ -161,7 +161,9 @@ the DOM as new content becomes available. If any of these new elements is
 larger than the previous largest contentful element, a new `PerformanceEntry`
 will also be reported.
 
-If a page removes an element from the DOM, that element will still be considered.
+In order to correctly compute LCP in cases such as image carousels, the LCP algorithm 
+considers removed elements. If a page removes an element from the DOM, that element 
+will still be considered.
 
 The browser will stop reporting new entries as soon as the user interacts with
 the page (via a tap, scroll, or keypress), as user interaction often changes
