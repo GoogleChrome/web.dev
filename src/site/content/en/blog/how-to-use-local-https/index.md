@@ -117,7 +117,7 @@ The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert)
     mkcert localhost
     ```
 
-    Or if you're using a custom hostname like `mysite.example`:
+    If you're using a custom hostname like `mysite.example`, run:
 
     ```bash
     mkcert mysite.example
