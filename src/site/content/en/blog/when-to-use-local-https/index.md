@@ -82,7 +82,7 @@ But you may encounter special cases where `http://localhost` _doesn't_ behave li
 
 If you need to use HTTPS for local development, head over to [How to use HTTPS for local development](/how-to-use-local-https).
 
-## Tips if you'e using a custom hostname
+## Tips if you're using a custom hostname
 
 **If you're using a custom hostname, i.e. if you're editing your hosts file:**
 
