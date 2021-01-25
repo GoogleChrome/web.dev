@@ -31,9 +31,8 @@ module.exports = {
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
   thumbnail: '/images/social.png',
-  isBannerEnabled: true,
-  banner:
-    'We had fun hosting thousands of developers at Chrome Dev Summit 2020! You can now watch all the sessions at [goo.gle/cds20-sessions](https://goo.gle/cds20-sessions).',
+  isBannerEnabled: false,
+  banner: '',
   // Note that the imageCdn value is only used when we do a production build
   // of the site. Otherwise all image paths are local. This means you can
   // develop locally without having to mess with the CDN at all.
