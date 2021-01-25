@@ -6,7 +6,7 @@ description: |
 authors:
   - anniesullie
   - mmocny
-date: 2021-01-31
+date: 2021-01-25
 hero: hero.webp
 alt: An example windowing approach for measuring layout shift.
 tags:
