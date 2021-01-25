@@ -69,7 +69,6 @@ mkcert (and similar tools) provide several benefits:
 Many operating systems may include libraries to produce certificates, such as openssl. Unlike mkcert
 and similar tools, such libraries may not consistently produce correct certificates, may require
 complex commands to be run, and are not necessarily cross-platform.
-{% endAside %}
 
 {% Aside 'gotchas' %}
 The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert). ❌ Not [this one](https://www.npmjs.com/package/mkcert).
