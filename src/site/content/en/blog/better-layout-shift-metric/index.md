@@ -57,7 +57,6 @@ In each of these examples, the page has layout shifts of varying severity over t
 ### Tumbling windows
 
 <figure class="w-figure">
-<<<<<<< HEAD
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/tumbling-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/tumbling-window.mp4" type="video/mp4">
@@ -66,23 +65,12 @@ In each of these examples, the page has layout shifts of varying severity over t
     Example of a tumbling window.
   </figcaption>
 </figure>
-=======
-    <video controls autoplay loop muted class="w-screenshot">
-      <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/tumbling-window.webm" type="video/webm">
-      <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/tumbling-window.mp4" type="video/mp4">
-    </video>
-   <figcaption class="w-figcaption">
-      Tumbling windows.
-    </figcaption>
-  </figure>
->>>>>>> 669877be63a0c4c87267c885f65cca21ac1934f6
 
 The simplest approach is just to break the page into windows of equal-sized chunks. These are called tumbling windows. You'll notice above that the fourth bar really looks like it should be grouped into the second tumbling window, but because the windows are all a fixed size it is in the first window instead. If there are slight differences in timing of loads or user interactions on the page, the same layout shifts might fall on different sides of the tumbling window boundaries.
 
 ### Sliding windows
 
 <figure class="w-figure">
-<<<<<<< HEAD
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/sliding-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/sliding-window.mp4" type="video/mp4">
@@ -92,23 +80,11 @@ The simplest approach is just to break the page into windows of equal-sized chun
   </figcaption>
 </figure>
 
-=======
-    <video controls autoplay loop muted class="w-screenshot">
-      <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/sliding-window.webm" type="video/webm">
-      <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/sliding-window.mp4" type="video/mp4">
-    </video>
-   <figcaption class="w-figcaption">
-      Sliding windows.
-    </figcaption>
-  </figure>
-  
->>>>>>> 669877be63a0c4c87267c885f65cca21ac1934f6
 An approach that lets us see more possible groupings of the same length is to continuously update the potential window over time. The image above shows one sliding window at a time, but we could look at all possible sliding windows or a subset of them to create a metric.
 
 ### Session windows
 
 <figure class="w-figure">
-<<<<<<< HEAD
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
@@ -118,17 +94,6 @@ An approach that lets us see more possible groupings of the same length is to co
   </figcaption>
 </figure>
 
-=======
-    <video controls autoplay loop muted class="w-screenshot">
-      <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
-      <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
-    </video>
-   <figcaption class="w-figcaption">
-      Session windows.
-    </figcaption>
-  </figure>
-  
->>>>>>> 669877be63a0c4c87267c885f65cca21ac1934f6
 If we wanted to focus on identifying areas of the page with bursts of layout shifts, we could start each window at a shift, and keep growing it until we encountered a gap of a given size between layout shifts. This approach groups the layout shifts together, and ignores most of the non-shifting user experience. One potential problem is that if there are no gaps in the layout shifts, a metric based on session windows could grow unbounded just like the current CLS metric. So we tried this out with a maximum window size as well.
 
 ## Window sizes
