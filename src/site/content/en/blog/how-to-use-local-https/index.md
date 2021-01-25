@@ -107,7 +107,7 @@ The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert)
     This generates a local certificate authority (CA).
     Your mkcert-generated local CA is only trusted **locally**, on your device.
 
-1.  **Generate a certificate for your site, signed by mkcert.**
+1.  Generate a certificate for your site, signed by mkcert.
 
     In your terminal, navigate to your site's root directory or whichever directory you'd like the certificates to be located at.
 
