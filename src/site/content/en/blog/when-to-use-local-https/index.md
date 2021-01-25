@@ -53,7 +53,7 @@ On `http://localhost`, Service Workers, Sensor APIs, Authentication APIs, Paymen
 
 ## When to use HTTPS for local development
 
-But you may encounter special cases where `http://localhost` _doesn't_ behave like an HTTPS site—or you may simply want to use a custom site name that's not `http://localhost`.
+You may encounter special cases where `http://localhost` _doesn't_ behave like an HTTPS site—or you may simply want to use a custom site name that's not `http://localhost`.
 
 **In these cases, you need to use HTTPS for local development.** Here is when this can happen:
 
