@@ -26,8 +26,8 @@ _So when you see `http://localhost`, read it as `http://localhost:{port}` or `ht
 If your production website uses HTTPS, you want your local development site to behave **like an
 HTTPS site** (if your production website doesn't use HTTPS, [make it a priority to switch to HTTPS](/why-https-matters/)).
 Most of the time, you can trust `http://localhost` to behave **like an HTTPS site**. But [in some
-cases](/when-to-use-local-https), you need to run your site locally with HTTPS. **Let's take a look
-at how to do this.**
+cases](/when-to-use-local-https), you need to run your site locally with HTTPS. Let's take a look
+at how to do this.
 
 **⏩ Are you looking for quick instructions, or have you been here before?
 Skip to the [Cheatsheet](/#using-mkcert:-cheatsheet).**
