@@ -31,7 +31,7 @@ But in some cases, you'll need HTTPS:
 
 See [How to use HTTPS for local development](/how-to-use-local-https).
 
-✨ This is all you need to know. Keep reading for more details!
+✨ This is all you need to know. If you are interested in more details keep reading!
 
 ## Why your development site should behave securely
 
