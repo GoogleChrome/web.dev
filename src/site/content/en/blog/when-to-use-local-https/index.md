@@ -26,7 +26,7 @@ However, in the following cases, you'll need HTTPS for local development:
 
   <figure class="w-figure">
     <img src="./when-to-use-local-https.jpg" alt="List: when to use HTTPS for local development">
-    <figcaption class="w-figcaption">When to use HTTPS for local development</figcaption>
+    <figcaption class="w-figcaption">When to use HTTPS for local development.</figcaption>
   </figure>
 
 See [How to use HTTPS for local development](/how-to-use-local-https).
