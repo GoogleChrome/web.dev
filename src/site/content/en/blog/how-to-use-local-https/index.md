@@ -130,7 +130,7 @@ The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert)
 
     Now, your certificate is ready and signed by a certificate authority your browser trusts locally. You're almost done, but your server doesn't know about your certificate yet!
 
-1.  **Configure your server.**
+1.  Configure your server.
 
     You now need to tell your server to use HTTPS (since development servers tend to use HTTP by default) and to use the TLS certificate you've just created.
 
