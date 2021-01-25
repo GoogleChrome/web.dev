@@ -2,7 +2,7 @@
 layout: handbook
 title: web.dev content review checklists
 date: 2019-06-26
-updated: 2020-10-05
+updated: 2021-01-25
 description: |
   The official checklists for web.dev content reviews.
 ---
@@ -315,6 +315,13 @@ of the browser. In a year, `Google Chrome Stable` will refer to version 95.
 {% Compare 'better' %}
   The Keyboard API is now available in Chrome 85 and later.
 {% endCompare %}
+
+### Other people's products are used as intended
+
+If the content mentions or features other people's products, said products
+are to be used as intended. For example, an article should not advise
+to flash a "homebrew" firmware onto a commercial device, unlessed this is
+explicitly blessed by the manufacturer.
 
 ## Late-stage review checklist {: #late }
 
