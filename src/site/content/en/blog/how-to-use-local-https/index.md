@@ -208,7 +208,7 @@ Remember that different servers may use a different port for HTTPS.
 
 {% Details %}
 {% DetailsSummary %}
-Using mkcert: cheatsheet
+mkcert in short
 {% endDetailsSummary %}
 
 To run your local development site with HTTPS:
