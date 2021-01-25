@@ -100,7 +100,7 @@ The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert)
 
 1.  **Add mkcert to your local root CAs.**
 
-    In your terminal, run:
+    In your terminal, run the following command:
 
     ```bash
     mkcert -install
