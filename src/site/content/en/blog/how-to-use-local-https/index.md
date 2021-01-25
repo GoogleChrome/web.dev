@@ -288,7 +288,7 @@ You may also find techniques based on having an actual certificate authority—n
 
 A few things to keep in mind if you're considering using these techniques:
 
-- You'll have more setup work to do than when using a local CA technique like mkcert;
+- You'll have more setup work to do than when using a local CA technique like mkcert.
 - You need to use a domain name that you control and that is valid. This means that you **can't** use actual certificate authorities for:
   - `localhost` and other domain names that are [reserved](https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml), such as `example` or `test`.
   - Any domain name that you don't control.
