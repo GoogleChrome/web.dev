@@ -1,10 +1,9 @@
 ---
 title: When to use HTTPS for local development
-subhead:
+subhead: http://localhost is fie most of the time, but sometimes, you need to run your local development site with HTTPS. Here's when.
 authors:
   - maudn
-date: 2020-12-07
-updated: 2020-12-07
+date: 2021-01-25
 hero: hero.jpg
 tags:
   - blog
@@ -12,7 +11,7 @@ tags:
 ---
 
 _In this article, statements about `localhost` are valid for `127.0.0.1` and `[::1]` as well, since they both describe the local computer address, also called "loopback address". Also, to keep things simple, the port number isn't specified._
-_So when you see `http://localhost`, read it as `http://localhost:{port}` or `http://127.0.0.1:{port}`._
+_So when you see `http://localhost`, read it as `http://localhost:{PORT}` or `http://127.0.0.1:{PORT}`._
 
 ## Summary
 
@@ -96,6 +95,6 @@ If you need to use HTTPS for local development, head over to [How to use HTTPS f
 - [localhost as a secure context in Chrome](https://www.chromestatus.com/feature/6269417340010496)
 
 _With many thanks for contributions and feedback to all reviewers—especially Ryan Sleevi,
-Filippo Valsorda, Milica Mihajlija and Rowan Merewood and Jake Archibald. 🙌_
+Filippo Valsorda, Milica Mihajlija, Rowan Merewood and Jake Archibald. 🙌_
 
 _Hero image by [@moses_lee](https://unsplash.com/@moses_lee) on [Unsplash](https://unsplash.com/photos/Q2Xy_hYzrgg), edited._

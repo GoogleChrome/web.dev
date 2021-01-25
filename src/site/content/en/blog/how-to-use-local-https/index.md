@@ -3,8 +3,7 @@ title: How to use HTTPS for local development
 subhead: Sometimes, you need to run your local development site with HTTPS. Tools and tips to do this safely and quickly.
 authors:
   - maudn
-date: 2020-12-07
-updated: 2020-12-07
+date: 2021-01-25
 hero: hero.jpg
 tags:
   - blog
@@ -21,7 +20,7 @@ tags:
 <hr/>
 
 _In this article, statements about `localhost` are valid for `127.0.0.1` and `[::1]` as well, since they both describe the local computer address, also called "loopback address". Also, to keep things simple, the port number isn't specified._
-_So when you see `http://localhost`, read it as `http://localhost:{port}` or `http://127.0.0.1:{port}`._
+_So when you see `http://localhost`, read it as `http://localhost:{PORT}` or `http://127.0.0.1:{PORT}`._
 
 If your production website uses HTTPS, you want your local development site to behave **like an
 HTTPS site** (if your production website doesn't use HTTPS, [make it a priority to switch to HTTPS](/why-https-matters/)).
@@ -45,12 +44,13 @@ device and browser.
 
 One tool that helps you do this in a few commands is
 [mkcert](https://github.com/FiloSottile/mkcert). Here is how it works:
-- If you open your locally running site in your browser using HTTPS, your browser will 
-check the certificate of your local development server. 
-- Upon seeing that the certificate has been signed by the mkcert-generated certificate 
-authority, the browser checks whether it's registered as a trusted certificate authority. 
+
+- If you open your locally running site in your browser using HTTPS, your browser will
+  check the certificate of your local development server.
+- Upon seeing that the certificate has been signed by the mkcert-generated certificate
+  authority, the browser checks whether it's registered as a trusted certificate authority.
 - mkcert is listed as a trusted authority, so your browser trusts the
-certificate and creates an HTTPS connection.
+  certificate and creates an HTTPS connection.
 
 <figure class="w-figure">
   <img src="./mkcert.jpg" alt="A diagram of how mkcert works.">
@@ -72,7 +72,7 @@ and similar tools, such libraries may not consistently produce correct certifica
 complex commands to be run, and are not necessarily cross-platform.
 
 {% Aside 'gotchas' %}
-The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert). Not [this one](https://www.npmjs.com/package/mkcert). ❌ 
+The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert). Not [this one](https://www.npmjs.com/package/mkcert). ❌
 {% endAside %}
 
 ### Caution
@@ -139,39 +139,39 @@ The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert)
 
     **👩🏻‍💻 With node:**
 
-    `server.js` (replace `{path/to/certificate...}` and `{port}`):
+    `server.js` (replace `{PATH/TO/CERTIFICATE...}` and `{PORT}`):
 
     ```javascript
     const https = require('https');
     const fs = require('fs');
     const options = {
-      key: fs.readFileSync('{path/to/certificate-key-filename}.pem'),
-      cert: fs.readFileSync('{path/to/certificate-filename}.pem'),
+      key: fs.readFileSync('{PATH/TO/CERTIFICATE-KEY-FILENAME}.pem'),
+      cert: fs.readFileSync('{PATH/TO/CERTIFICATE-FILENAME}.pem'),
     };
     https
       .createServer(options, function (req, res) {
         // server code
       })
-      .listen({port});
+      .listen({PORT});
     ```
 
     **👩🏻‍💻 With [http-server](https://www.npmjs.com/package/http-server):**
 
-    Start your server as follows (replace `{path/to/certificate...}`):
+    Start your server as follows (replace `{PATH/TO/CERTIFICATE...}`):
 
     ```bash
-    http-server -S -C {path/to/certificate-filename}.pem -K {path/to/certificate-key-filename}.pem
+    http-server -S -C {PATH/TO/CERTIFICATE-FILENAME}.pem -K {PATH/TO/CERTIFICATE-KEY-FILENAME}.pem
     ```
 
     `-S` runs your server with HTTPS, while `-C` sets the certificate and `-K` sets the key.
 
     **👩🏻‍💻 With a React development server:**
 
-    Edit your `package.json` as follows, and replace `{path/to/certificate...}`:
+    Edit your `package.json` as follows, and replace `{PATH/TO/CERTIFICATE...}`:
 
     ```json
     "scripts": {
-    "start": "HTTPS=true SSL_CRT_FILE={path/to/certificate-filename}.pem SSL_KEY_KILE={path/to/certificate-key-filename}.pem react-scripts start"
+    "start": "HTTPS=true SSL_CRT_FILE={PATH/TO/CERTIFICATE-FILENAME}.pem SSL_KEY_KILE={PATH/TO/CERTIFICATE-KEY-FILENAME}.pem react-scripts start"
     ```
 
     For example, if you've created a certificate for `localhost` that is located in your site's root directory as follows:
@@ -196,12 +196,11 @@ The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert)
     - [Angular development server](https://angular.io/cli/serve)
     - [Python](https://blog.anvileight.com/posts/simple-python-http-server/)
 
-
-1.  ✨ You're done!
+1)  ✨ You're done!
     Open `https://localhost` or `https://mysite.example` in your browser: you're running your site locally with HTTPS.
     You won't see any browser warnings, because your browser trusts mkcert as a local certificate authority.
 
-{% Aside %} 
+{% Aside %}
 Remember that different servers may use a different port for HTTPS.
 {% endAside %}
 
@@ -234,13 +233,13 @@ To run your local development site with HTTPS:
 2.  Create a trusted certificate.
 
     ```bash
-    mkcert {your hostname e.g. localhost or mysite.example}
+    mkcert {YOUR HOSTNAME e.g. localhost or mysite.example}
     ```
 
     This create a valid certificate (that will be signed by `mkcert` automatically).
 
 3.  Configure your development server to use HTTPS and the certificate you've created in Step 1.
-4.  ✨ You're done! You can now access `https://{your hostname}` in your browser, without warnings
+4.  ✨ You're done! You can now access `https://{YOUR HOSTNAME}` in your browser, without warnings
 
 {% Banner 'caution' %}
 
