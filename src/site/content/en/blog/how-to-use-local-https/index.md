@@ -58,8 +58,7 @@ certificate and creates an HTTPS connection.</figcaption>
 **Note:** mkcert isn't the only way to create a TLS certificate for local development, but it's a good
 one. See [other options](#running-your-site-locally-with-https:-other-options).
 
-{% Aside %}
-Why we're recommending mkcert and similar tools:
+mkcert (and similar tools) provide several benefits:
 
 - mkcert is specialized in creating certificates that are **compliant with what browsers consider
   valid certificates**. It stays updated to match requirements and best practices. This is why you
