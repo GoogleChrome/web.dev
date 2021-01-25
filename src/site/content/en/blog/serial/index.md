@@ -1,10 +1,10 @@
 ---
-title: Read and write from a serial port
+title: Read from and write to a serial port
 subhead: The Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2021-01-21
+updated: 2021-01-25
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: |
