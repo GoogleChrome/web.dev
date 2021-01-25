@@ -1694,5 +1694,30 @@
     "descriptions": {
       "en": "Web Ecosystem Consultant"
     }
+  },
+  "anniesullie": {
+    "name": {
+      "given": "Annie",
+      "family": "Sullivan"
+    },
+    "github": "anniesullie",
+    "twitter": "anniesullie",
+    "homepage": "https://anniesullie.com",
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    }
+  },
+  "mmocny": {
+    "name": {
+      "given": "Michal",
+      "family": "Mocny"
+    },
+    "github": "mmocny",
+    "twitter": "mmocny",
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    }
   }
 }
