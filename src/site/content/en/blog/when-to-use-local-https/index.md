@@ -19,10 +19,10 @@ _So when you see `http://localhost`, read it as `http://localhost:{port}` or `ht
 When developing locally, use `http://localhost` by default. Service Workers, web authentication APIs, and more, will work.
 However, in the following cases, you'll need HTTPS for local development:
 
-- Secure cookies need HTTPS.
-- Mixed-content debugging needs HTTPS.
-- HTTP/2 and later needs HTTPS.
-- Custom hostnames need HTTPS.
+- Secure cookies
+- Mixed-content debugging
+- HTTP/2 and later
+- Custom hostnames
 
   <figure class="w-figure">
     <img src="./when-to-use-local-https.jpg" alt="List: when to use HTTPS for local development">
