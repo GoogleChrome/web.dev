@@ -3,8 +3,8 @@ layout: post
 title: Programming the mini app way
 authors:
   - thomassteiner
-date: 2021-01-19
-# updated: 2020-09-24
+date: 2021-01-25
+# updated: 2021-01-25
 description: |
   This chapter introduces the way of programming the mini app way.
 tags:
@@ -62,5 +62,5 @@ Where mini apps run in WebViews and depend on a [JavaScript bridge](/mini-app-ma
 on the Web these powerful capabilities are available directly.
 
 {% Banner 'neutral' %}
-  Read on to see an [example project](/an-example-project/) that puts this way of programming into practice.
+  👉 Read on to see an [example project](/an-example-project/) that puts this way of programming into practice.
 {% endBanner %}

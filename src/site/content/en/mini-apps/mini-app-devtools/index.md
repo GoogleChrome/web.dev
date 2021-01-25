@@ -3,8 +3,8 @@ layout: post
 title: Mini app DevTools
 authors:
   - thomassteiner
-date: 2021-01-19
-# updated: 2020-09-24
+date: 2021-01-25
+# updated: 2021-01-25
 description: |
   This chapter provides details on the DevTools experience of various mini apps platforms.
 tags:
@@ -93,7 +93,7 @@ As you can see, the fundamental components of all IDEs are very similar. You alw
 editor based on the [Monaco Editor](https://microsoft.github.io/monaco-editor/), the same project
 that also powers [VS Code](https://github.com/Microsoft/vscode). In all IDEs, there is a debugger
 based on the [Chrome DevTools front-end](https://github.com/ChromeDevTools/devtools-frontend) with
-some modifications, more on those later (see [Debugger](#debugger)). The IDEs _per se_ are
+some modifications, more on those later (see [Debugger](/mini-app-devtools/#debugger)). The IDEs _per se_ are
 implemented either as [NW.js](https://nwjs.io/) or as [Electron](https://www.electronjs.org/) apps,
 the simulators in the IDEs are realized as an
 [NW.js `<webview>`](https://docs.nwjs.io/en/latest/References/webview%20Tag/) respectively
@@ -171,7 +171,7 @@ it
 [Bxml](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/guide/mini-app-framework/view/ttml).
 Alipay names it [AXML](https://opendocs.alipay.com/mini/framework/axml), and Quick App references
 the panel simply as [UX](https://doc.quickapp.cn/tutorial/framework/for.html). I will dive into
-these markup languages [below](#markup-languages).
+these markup languages [later](/mini-app-markup-styling-and-scripting/#markup-languages).
 
 <figure class="w-figure">
   <img src="wechat-devtools-wxml.png" alt="Inspecting an image with WeChat DevTools' 'Wxml' panel. It shows that the tag in use is an `image` tag.">
@@ -187,7 +187,7 @@ reveals that WeChat DevTools was deliberately lying to us. Where WeChat DevTools
 `<image>`, the actual thing I am looking at is a custom element called `<wx-image>` with a `<div>`
 as its only child. It is interesting to note that this custom element does not use
 [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM). More on
-these components [later](#components).
+these components [later](/mini-app-components/).
 
 <figure class="w-figure">
   <img src="image-chrome-devtools.png" alt="Inspecting a WeChat mini app running on a real device with Chrome DevTools. Where WeChat DevTools reported I am looking at an `image` tag, Chrome DevTools reveals I am actually dealing with a `wx-image` custom element.">
@@ -199,7 +199,7 @@ these components [later](#components).
 ### CSS debugging
 
 Another difference is the new length unit `rpx` for responsive pixel in the various dialects of CSS
-(more on this unit [below](#styling)). WeChat DevTools uses device-independent CSS length units to
+(more on this unit [later](/mini-app-markup-styling-and-scripting/#styling)). WeChat DevTools uses device-independent CSS length units to
 make developing for different device sizes more intuitive.
 
 <figure class="w-figure">
@@ -238,5 +238,5 @@ desired mock responses.
 </figure>
 
 {% Banner 'neutral' %}
-  Read on to learn about the [mark-up, styling, and scripting of mini apps](/mini-app-markup-styling-and-scripting/).
+  👉 Read on to learn about the [mark-up, styling, and scripting of mini apps](/mini-app-markup-styling-and-scripting/).
 {% endBanner %}

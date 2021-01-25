@@ -3,8 +3,8 @@ layout: post
 title: Mini app open source projects
 authors:
   - thomassteiner
-date: 2021-01-19
-# updated: 2020-09-24
+date: 2021-01-25
+# updated: 2021-01-25
 description: |
   This chapter presents a selection of interesting mini app open source projects.
 tags:
@@ -104,7 +104,7 @@ The [kbone-ui](https://wechat-miniprogram.github.io/kbone/docs/ui/intro/) projec
 facilitates both mini app development as well as Vue.js development with kbone. The kbone-ui
 components emulate the look and feel of
 [WeChat's "native" mini app components](https://developers.weixin.qq.com/miniprogram/dev/component/)
-(also see [Components](#components) above). A
+(also see [Components](/mini-app-components/) above). A
 [demo](https://wechat-miniprogram.github.io/kboneui/ui/#/) that runs directly in the browser lets
 you explore the available components.
 
@@ -122,7 +122,7 @@ native visual experience. The official WeChat design team has tailored designs f
 web pages and WeChat mini apps to make users' perception of use more uniform. Including components
 such as `button`, `cell`, `dialog`, `progress`, `toast`, `article`, `actionsheet`, and `icon`. There
 are different versions of WeUI available like [weui-wxss](https://github.com/Tencent/weui-wxss/) for
-WeChat mini apps styled with WXSS (see [Styling](#styling) above),
+WeChat mini apps styled with WXSS (see [Styling](/mini-app-markup-styling-and-scripting/#styling) above),
 [weui.js](https://github.com/weui/weui.js/) for Web apps, and
 [react-weui](https://github.com/weui/react-weui/) for WeChat React components.
 
@@ -283,5 +283,5 @@ WeChat platform.
 </figure>
 
 {% Banner 'neutral' %}
-  In the next chapter, you will learn how to [program the mini app way](/programming-the-mini-app-way/).
+  👉 In the next chapter, you will learn how to [program the mini app way](/programming-the-mini-app-way/).
 {% endBanner %}

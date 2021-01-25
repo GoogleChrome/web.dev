@@ -3,8 +3,8 @@ layout: post
 title: Mini app markup, styling, and scripting
 authors:
   - thomassteiner
-date: 2021-01-19
-# updated: 2020-09-24
+date: 2021-01-25
+# updated: 2021-01-25
 description: |
   This chapter looks at the mark-up, styling, and scripting options of various mini apps platforms.
 tags:
@@ -155,13 +155,13 @@ is called
 }
 ```
 
-Since components (see [below](#components)) do not use shadow DOM, styles declared on a page reach
+Since components (see [later](/mini-app-components/)) do not use shadow DOM, styles declared on a page reach
 into all components. The common stylesheet file organization is to have one root stylesheet for
 global styles, and individual per-page stylesheets specific to each page of the mini app. Styles can
 be imported with an `@import` rule that behaves like the
 [`@import`](https://developer.mozilla.org/en-US/docs/Web/CSS/@import) CSS at-rule. Like in HTML,
 styles can also be declared inline, including dynamic text interpolation (see
-[above](#data-binding)).
+[before](/mini-app-markup-styling-and-scripting/#data-binding)).
 
 ```html
 <view style="color:{% raw %}{{color}}{% endraw %};" />
@@ -176,13 +176,13 @@ JavaScript code cannot be executed via `eval()` and no functions can be created 
 [JavaScriptCore](https://developer.apple.com/documentation/javascriptcore) on devices, and V8 or
 [NW.js](https://nwjs.io/) in the simulator. Coding with ES6 or newer syntax is usually possible,
 since the particular DevTools automatically transpile the code to ES5 if the build target is an
-operating system with an older WebView implementation (see [below](#the-build-process)). The
+operating system with an older WebView implementation (see [later](/project-structure-lifecycle-and-bundling/#the-build-process)). The
 documentations of the super app providers explicitly mention that their scripting languages are not
 to be confused with and are distinct from JavaScript. This statement, however, refers mostly just to
 the way modules work, that is, that they do not support standard
 [ES Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) yet.
 
-As mentioned [before](#markup-languages), the mini app programming concept is the
+As mentioned [before](/mini-app-markup-styling-and-scripting/#markup-languages), the mini app programming concept is the
 [model-view-viewmodel](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) (MVVM).
 The logic layer and the view layer run on different threads, which means the user interface does not
 get blocked by long-running operations. In Web terms, you can think of scripts running in a
@@ -240,7 +240,7 @@ console.log(tools.msg);
 ### JavaScript bridge API
 
 The JavaScript bridge that connects mini apps with the native operating system renders working with
-native capabilities possible (see [Access to powerful features](#access-to-powerful-features). It
+native capabilities possible (see [Access to powerful features](/what-are-mini-apps/#access-to-powerful-features). It
 also offers a number of convenience methods. For an overview, you can check out the different APIs
 of [WeChat](https://developers.weixin.qq.com/miniprogram/en/dev/api/),
 [Alipay](https://opendocs.alipay.com/mini/api),
@@ -262,5 +262,5 @@ tt.canIUse("request.success.data");
 ```
 
 {% Banner 'neutral' %}
-  The next chapter introduces [mini app components](/mini-app-components/).
+  👉 The next chapter introduces [mini app components](/mini-app-components/).
 {% endBanner %}

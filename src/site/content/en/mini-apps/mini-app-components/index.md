@@ -3,8 +3,8 @@ layout: post
 title: Mini app components
 authors:
   - thomassteiner
-date: 2021-01-19
-# updated: 2020-09-24
+date: 2021-01-25
+# updated: 2021-01-25
 description: |
   This chapter provides details on the mini app components that all mini app platforms make available.
 tags:
@@ -42,7 +42,7 @@ overview of the available components, you can browse
 [Baidu's](https://smartprogram.baidu.com/docs/develop/component/component/), and
 [Quick App components](https://doc.quickapp.cn/widgets/common-events.html).
 
-While I have shown [earlier](#custom-elements-under-the-hood) that, for example, WeChat's `<image>`
+While I have shown [earlier](/mini-app-devtools/#custom-elements-under-the-hood) that, for example, WeChat's `<image>`
 is a web component under the hood, not all of these components are technically web components. Some
 components, like `<map>` and `<video>`, are rendered as
 [OS-native components](https://developers.weixin.qq.com/ebook?action=get_post_info&docid=000caab39b88b06b00863ab085b80a)
@@ -51,7 +51,7 @@ they are programmed like any other component.
 
 As always, the details vary, but the overall programming concepts are the same across all super app
 providers. An important concept is data binding, as shown before in
-[Markup languages](#markup-languages). Generally, components are grouped by function, so finding the
+[Markup languages](/mini-app-markup-styling-and-scripting/#markup-languages). Generally, components are grouped by function, so finding the
 right one for the job is easier. Below is an example from Alipay's categorization, which is similar
 to the component grouping of other vendors.
 
@@ -99,7 +99,7 @@ to the component grouping of other vendors.
   - `aria-component`
 
 Below, you can see Alipay's [`<image>`](https://opendocs.alipay.com/mini/component/image) used in an
-`a:for` directive (see [List rendering](#list-rendering)) that loops over an image data array
+`a:for` directive (see [List rendering](/mini-app-markup-styling-and-scripting/#list-rendering)) that loops over an image data array
 provided in `index.js`.
 
 ```js
@@ -152,7 +152,7 @@ Page({
 
 Note the data binding of the `item.mode` to the `mode` attribute, the `src` to the `src` attribute,
 and the three event handlers `onTap`, `onError`, and `onLoad` to the functions of the same name. As
-shown [before](#custom-elements-under-the-hood), the `<image>` tag internally gets converted into a
+shown [before](/mini-app-devtools/#custom-elements-under-the-hood), the `<image>` tag internally gets converted into a
 `<div>` with a placeholder of the image's final dimensions, optional lazy-loading, a default source,
 etc.
 
@@ -223,7 +223,7 @@ The files `custom.swan` and `custom.css` contain the markup respectively the CSS
 
 The file `custom.js` contains the logic. The component lifecycle functions are `attached()`,
 `detached()`, `created()`, and `ready()`. The component can additionally also react on
-[page lifecycle events](#page-lifecycle), namely `show()` and `hide()`.
+[page lifecycle events](/project-structure-lifecycle-and-bundling/#mini-app-lifecycle), namely `show()` and `hide()`.
 
 ```js
 Component({
@@ -270,5 +270,5 @@ The custom component can then be imported in `index.json`, the key of the import
 ```
 
 {% Banner 'neutral' %}
-  Continue reading to learn about the [project structure, lifecycle, and bundling](/project-structure-lifecycle-and-bundling/) of mini apps.
+  👉 Continue reading to learn about the [project structure, lifecycle, and bundling](/project-structure-lifecycle-and-bundling/) of mini apps.
 {% endBanner %}

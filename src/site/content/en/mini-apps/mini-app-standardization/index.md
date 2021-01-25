@@ -3,8 +3,8 @@ layout: post
 title: Mini app standardization
 authors:
   - thomassteiner
-date: 2021-01-19
-# updated: 2020-09-24
+date: 2021-01-25
+# updated: 2021-01-25
 description: |
   This chapter introduces the standardization effort that has been started for mini apps.
 tags:
@@ -79,5 +79,5 @@ Especially the part *"maximizing the integration of MiniApps and the Web"* sound
 As a curious member of the group, I look forward to seeing where this endeavor is headed.
 
 {% Banner 'neutral' %}
-  The following chapter looks at [other mini app runtime environments](/other-mini-app-runtime-environments/) apart from mobile devices.
+  👉 The following chapter looks at [other mini app runtime environments](/other-mini-app-runtime-environments/) apart from mobile devices.
 {% endBanner %}

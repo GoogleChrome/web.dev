@@ -3,8 +3,8 @@ layout: post
 title: What are mini apps?
 authors:
   - thomassteiner
-date: 2021-01-19
-# updated: 2020-09-24
+date: 2021-01-25
+# updated: 2021-01-25
 description: |
   This chapter introduces the concept of mini apps and provides examples of their look and feel.
 tags:
@@ -19,7 +19,7 @@ technologies HTML, CSS, and JavaScript. The runtime of a mini app is a
 [WebView](https://research.google/pubs/pub46739/) in the super app, not the underlying operating
 system, which means mini apps are cross platform. What this means is that the same mini app can run
 in the same super app, no matter if the super app runs on Android, iOS, or another OS. However, not
-all mini apps can run in all super apps, more on this [later](#standardization-of-mini-apps).
+all mini apps can run in all super apps, more on this [later](/mini-app-standardization/).
 
 ## Discovery
 
@@ -65,7 +65,7 @@ action menu opened.
 ## UI paradigms
 
 Usually there is a bottom tab bar for the mini app's main navigation. Most super app providers offer
-components (see [below](#components)) that help developers implement common UI paradigms quickly,
+components (see [later](/mini-app-components/)) that help developers implement common UI paradigms quickly,
 like carousels, accordions, progress bars, spinners, switches, maps, etc., which also helps make the
 user experience from mini app to mini app consistent. This is actually encouraged by
 [WeChat's Mini Program Design Guidelines](https://developers.weixin.qq.com/miniprogram/en/design/),
@@ -93,7 +93,7 @@ provider. Mini apps have to declare the origins they request additional data fro
 
 Mini apps are kept in the cache of the super app, so the next time the user launches a cached mini
 app, it loads almost instantly. If there is an update, a new app package is loaded. The version
-number can be part of the launch URI (see [Discovery](#discovery)), so the super app knows early on
+number can be part of the launch URI (see [Discovery](/what-are-mini-apps/#discovery)), so the super app knows early on
 if the locally cached version is still current. The launch URI also optionally contains the desired
 page of the mini app, so deep-linking into specific pages of mini apps is possible. Via a sitemap,
 mini apps can declare which of their pages should be indexable by the super app provider's mini app
@@ -116,7 +116,7 @@ why they are, for example,
 [trying to access motion sensors](https://twitter.com/search?q=why%20website%20access%20%22motion%20sensors%22%20&src=typed_query&f=live)
 without a reason that is apparent to the user. The incentive to fingerprint the user is notably a
 lot lower compared to the Web, since the user is typically already logged in to the super app anyway
-(see [Identity, payement, and social graph](#dentity-payment-social-graph)).
+(see [Identity, payement, and social graph](/what-are-mini-apps/#identity-payment-social-graph)).
 
 Whenever a mini app performs an operation that requires a special permission, a prompt is shown to
 the user that, if enforced by the platform, also includes the usage justification, as stated by the
@@ -141,7 +141,7 @@ request data from.
 
 The hosting super app offers access to powerful APIs via a JavaScript bridge that gets injected into
 the WebView offered by the super app (see
-[Building blocks and compatibility](#building-blocks-and-compatibility)). This JavaScript bridge
+[Building blocks and compatibility](/what-are-mini-apps/#building-blocks-and-compatibility)). This JavaScript bridge
 provides hooks into the operating system's APIs. For example, a mini app JavaScript function like
 `getConnectedWifi()`—the capability of a mini app to obtain the name of the currently active Wi-Fi
 network—under the hood is facilitated through Android's
@@ -194,5 +194,5 @@ game and challenge their contacts through status updates. The mini app is then o
 users can enter into competition without any friction and the mini app thereby grow its reach.
 
 {% Banner 'neutral' %}
-  In the next chapter, you will learn [what sets mini apps apart from H5 apps and QuickApp](/what-are-h5-and-quickapp).
+  👉 In the next chapter, you will learn [what sets mini apps apart from H5 apps and QuickApp](/what-are-h5-and-quickapp).
 {% endBanner %}

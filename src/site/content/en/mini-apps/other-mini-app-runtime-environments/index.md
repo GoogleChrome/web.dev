@@ -3,8 +3,8 @@ layout: post
 title: Other mini app runtime environments
 authors:
   - thomassteiner
-date: 2021-01-19
-# updated: 2020-09-24
+date: 2021-01-25
+# updated: 2021-01-25
 description: |
   This chapter presents a number of runtime environments for mini apps that are not mobile devices.
 tags:
@@ -95,7 +95,7 @@ title is displayed correctly on Windows.
 
 Most mini apps are not optimized for desktop yet and run in a fixed, non-resizable window that
 includes the well-known UI affordances and permission prompts as on mobile (see
-[The user experience](#the-user-experience)).
+[The user experience](/what-are-mini-apps/#the-user-experience)).
 
 <figure class="w-figure">
   <img src="starbucks-macos-permission.png" alt="The Starbucks mini app running on macOS asking for the user profile permission which the user can grant via a prompt shown at the bottom." width="300">
@@ -252,5 +252,5 @@ with no installation required.
 </figure>
 
 {% Banner 'neutral' %}
-  Read on to see some examples of the [mini app open source projects](/mini-app-open-source-projects/).
+  👉 Read on to see some examples of the [mini app open source projects](/mini-app-open-source-projects/).
 {% endBanner %}

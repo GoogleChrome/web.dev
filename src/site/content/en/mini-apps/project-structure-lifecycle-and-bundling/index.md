@@ -3,8 +3,8 @@ layout: post
 title: Project structure, lifecycle, and bundling
 authors:
   - thomassteiner
-date: 2021-01-19
-# updated: 2020-09-24
+date: 2021-01-25
+# updated: 2021-01-25
 description: |
   This chapter covers the project structure, the lifecycle, and the bundling of mini apps.
 tags:
@@ -47,7 +47,7 @@ developer, mini apps are thus multi page apps.
 ## Mini app lifecycle
 
 A mini app must be registered with the super app by calling the globally defined `App()` method.
-Referring to the project structure outlined [above](#mini-app-project-structure), this happens in
+Referring to the project structure outlined [before](/project-structure-lifecycle-and-bundling/#mini-app-project-structure), this happens in
 `app.js`. The mini app lifecycle essentially consists of four events: `launch`, `show`, `hide`, and
 `error`. Handlers for these events can be passed to the `App()` method in the form of a
 configuration object, which can also contain a `globalData` property that holds data that should be
@@ -86,7 +86,7 @@ Similar to the app lifecycle, the page lifecycle, too, has lifecycle events that
 listen for and react upon. These core events are `load`, `show`, `ready`, `hide`, and `unload`. Some
 platforms offer additional events like `pulldownrefresh`. Setting up the event handlers happens in
 the `Page()` method that is defined for each page. For the `index` or the `other` pages from the
-project structure [above](#mini-app-project-structure), this would happen in `index.js` or
+project structure [before](/project-structure-lifecycle-and-bundling/#mini-app-project-structure), this would happen in `index.js` or
 `other.js` respectively.
 
 ```js
@@ -149,5 +149,5 @@ not documented, but some package formats like WeChat's `wxapkg` format have been
 [reverse-engineered](https://github.com/sjatsh/unwxapkg).
 
 {% Banner 'neutral' %}
-  The next chapter provides insights on the [mini app standardization effort](/mini-app-standardization/).
+  👉 The next chapter provides insights on the [mini app standardization effort](/mini-app-standardization/).
 {% endBanner %}
