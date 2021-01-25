@@ -45,18 +45,19 @@ device and browser.
 
 One tool that helps you do this in a few commands is
 [mkcert](https://github.com/FiloSottile/mkcert). Here is how it works:
+- If you open your locally running site in your browser using HTTPS, your browser will 
+check the certificate of your local development server. 
+- Upon seeing that the certificate has been signed by the mkcert-generated certificate 
+authority, the browser checks whether it's registered as a trusted certificate authority. 
+- mkcert is listed as a trusted authority, so your browser trusts the
+certificate and creates an HTTPS connection.
 
 <figure class="w-figure">
-  <img src="./mkcert.jpg" alt="How mkcert works: diagram">
-  <figcaption class="w-figcaption">If you open your locally running site in your browser using HTTPS, your browser will check the
-certificate of your local development server. Upon seeing that the certificate has been signed by
-the mkcert-generated certificate authority, the browser checks whether it's registered as a trusted
-certificate authority. mkcert is listed as a trusted authority, so your browser trusts the
-certificate and creates an HTTPS connection.</figcaption>
+  <img src="./mkcert.jpg" alt="A diagram of how mkcert works.">
+  <figcaption class="w-figcaption">A diagram of how mkcert works.</figcaption>
 </figure>
 
-**Note:** mkcert isn't the only way to create a TLS certificate for local development, but it's a good
-one. See [other options](#running-your-site-locally-with-https:-other-options).
+mkcert is the tool we recommend for creating a TLS certificate for local development, but it's not the only one. Check out [other options](#running-your-site-locally-with-https:-other-options) too.
 
 mkcert (and similar tools) provide several benefits:
 
@@ -71,7 +72,7 @@ and similar tools, such libraries may not consistently produce correct certifica
 complex commands to be run, and are not necessarily cross-platform.
 
 {% Aside 'gotchas' %}
-The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert). ❌ Not [this one](https://www.npmjs.com/package/mkcert).
+The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert). Not [this one](https://www.npmjs.com/package/mkcert). ❌ 
 {% endAside %}
 
 ### Caution
@@ -86,9 +87,9 @@ The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert)
 
 ### Setup
 
-1.  **Install mkcert (only once).**
+1.  Install mkcert (only once).
 
-    Install mkcert by following the [instructions](https://github.com/FiloSottile/mkcert#installation).
+    Follow the [instructions](https://github.com/FiloSottile/mkcert#installation) for installing mkcert on your operating system.
     For example, on macOS:
 
     ```bash
@@ -162,7 +163,7 @@ The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert)
     http-server -S -C {path/to/certificate-filename}.pem -K {path/to/certificate-key-filename}.pem
     ```
 
-    `-S` runs your server with HTTPS, while `-C` and `-K` set the **c**ertificate and **k**ey.
+    `-S` runs your server with HTTPS, while `-C` sets the certificate and `-K` sets the key.
 
     **👩🏻‍💻 With a React development server:**
 
@@ -183,7 +184,7 @@ The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert)
         |--...
     ```
 
-    Then your `start` script should like as follows:
+    Then your `start` script should look like this:
 
     ```json
     "scripts": {
@@ -263,16 +264,20 @@ Beware there are a few pitfalls with this approach:
 - It's not necessarily easier or faster than using a local CA.
 - If you're not using this technique in a browser context, you may need to disable certificate verification for your server. Omitting to re-enable it in production would be very problematic.
 
-**Note:** [React's](https://create-react-app.dev/docs/using-https-in-development/) and [Vue's](https://cli.vuejs.org/guide/cli-service.html#vue-cli-service-serve) development server HTTPS options create a self-signed certificate under the hood, if you don't specify any certificate. This is quick, but you'll get browser warnings and encounter other pitfalls listed above. Luckily, you can have it all (quick and without pitfalls): as showed in the [mkcert with React example](/how-to-use-local-https/#setup:~:text=With%20a%20React%20development%20server), you can use frontend frameworks' built-in HTTPS option **and** specify a locally trusted certificate created via mkcert or similar.
+{% Aside %}
+If you don't specify any certificate, [React's](https://create-react-app.dev/docs/using-https-in-development/) and [Vue's](https://cli.vuejs.org/guide/cli-service.html#vue-cli-service-serve) development server HTTPS options create a self-signed certificate under the hood. This is quick, but you'll get browser warnings and encounter other pitfalls listed above. Luckily you can use frontend frameworks' built-in HTTPS option **and** specify a locally trusted certificate created via mkcert or similar. See how to do this in the [mkcert with React example](/how-to-use-local-https/#setup:~:text=With%20a%20React%20development%20server).
+{% endAside %}
 
 {% Details %}
 {% DetailsSummary %}
-Why browsers, by default, don't trust self-signed certificates.
+Why don't browsers trust self-signed certificates?
 {% endDetailsSummary %}
 
+If you open your locally running site in your browser using HTTPS, your browser will check the certificate of your local development server. When it sees that the certificate has been signed by yourself, it checks whether you're registered as a trusted certificate authority. Because you're not, your browser can't trust the certificate; it displays a warning telling you that your connection is not secure. You may proceed at your own risk—if you do, an HTTPS connection will be created.
+
 <figure class="w-figure">
-  <img src="./selfSigned.jpg" alt="Why browsers don't trust self-signed certificates: diagram">
-  <figcaption class="w-figcaption">If you open your locally running site in your browser using HTTPS, your browser will check the certificate of your local development server. Upon seeing that the certificate has been signed by yourself, the browser checks whether you're registered as a trusted certificate authority. Because you're not, your browser can't trust the certificate; it displays a warning telling you that your connection is not secure. You may proceed at your own risk — if you do, an HTTPS connection will be created.</figcaption>
+  <img src="./selfSigned.jpg" alt="Why browsers don't trust self-signed certificates: a diagram.">
+  <figcaption class="w-figcaption">Why browsers don't trust self-signed certificates.</figcaption>
 </figure>
 
 <figure class="w-figure">
