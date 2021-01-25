@@ -74,7 +74,7 @@ You may encounter special cases where `http://localhost` _doesn't_ behave like a
 
   In this case, Chrome, Edge, Safari, and Firefox by default do _not_ consider `mysite.example` to be secure, even though it's a local site. So it won't behave like an HTTPS site.
 
-- Other cases! This is not an exhaustive list, but if you encounter a case that's not listed here, you'll know: things will break on `http://localhost`, or it won't quite behave like prod. 🙃
+- Other cases! This is not an exhaustive list, but if you encounter a case that's not listed here, you'll know: things will break on `http://localhost`, or it won't quite behave like your production site. 🙃
 
 **In all of these cases, you need to use HTTPS for local development.**
 
