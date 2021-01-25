@@ -54,7 +54,7 @@ On `http://localhost`, Service Workers, Sensor APIs, Authentication APIs, Paymen
 
 You may encounter special cases where `http://localhost` _doesn't_ behave like an HTTPS site—or you may simply want to use a custom site name that's not `http://localhost`.
 
-**In these cases, you need to use HTTPS for local development.** Here is when this can happen:
+You need to use HTTPS for local development in the following cases:
 
 - You need to debug locally an issue that only occurs on an HTTPS website but not on an HTTP site, not even `http://localhost`, such as a [mixed-content](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content) issue.
 - You need to [set a cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) locally that is `Secure`, or `SameSite:none`, or has the `__Host` prefix. `Secure` cookies are set only on HTTPS, but not on `http://localhost`. And because `SameSite:none` and `__Host` also require the cookie to be `Secure`, setting such cookies on your local development site requires HTTPS as well.
