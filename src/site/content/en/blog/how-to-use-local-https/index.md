@@ -126,7 +126,7 @@ The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert)
     The command above does two things:
 
     - Generates a certificate for the hostname you've specified
-    - Lets mkcert—that you've added as a local CA in Step 2—sign this certificate.
+    - Lets mkcert (that you've added as a local CA in Step 2) sign this certificate.
 
     Now, your certificate is ready and signed by a certificate authority your browser trusts locally. You're almost done, but your server doesn't know about your certificate yet!
 
