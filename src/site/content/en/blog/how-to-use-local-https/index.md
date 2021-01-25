@@ -66,7 +66,7 @@ mkcert (and similar tools) provide several benefits:
   certificates!
 - mkcert is a cross-platform tool. Anyone on your team can use it.
 
-Many operating systems may include libraries to produce certificates, such as openssl. Unlike mkcert
+Many operating systems may include libraries to produce certificates, such as [openssl](https://www.openssl.org/). Unlike mkcert
 and similar tools, such libraries may not consistently produce correct certificates, may require
 complex commands to be run, and are not necessarily cross-platform.
 
