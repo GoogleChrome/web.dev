@@ -195,11 +195,14 @@ The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert)
     - [Angular development server](https://angular.io/cli/serve)
     - [Python](https://blog.anvileight.com/posts/simple-python-http-server/)
 
-    **Note:** Servers may use a different port for HTTPS.
 
 1.  ✨ You're done!
     Open `https://localhost` or `https://mysite.example` in your browser: you're running your site locally with HTTPS.
     You won't see any browser warnings, because your browser trusts mkcert as a local certificate authority.
+
+{% Aside %} 
+Remember that different servers may use a different port for HTTPS.
+{% endAside %}
 
 ### Using mkcert: cheatsheet
 
