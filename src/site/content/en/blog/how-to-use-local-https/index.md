@@ -275,9 +275,8 @@ Why browsers, by default, don't trust self-signed certificates.
 </figure>
 
 <figure class="w-figure">
-  <img src="./warnings.jpg" alt="Screenshots of warnings showed by browsers when a self-signed certificate is used">
-    <figcaption class="w-figcaption">Warnings showed by browsers when a self-signed certificate is used.</figcaption>
-</figure>
+  <img src="./warnings.jpg" alt="Screenshots of the warnings browsers show when a self-signed certificate is used.">
+    <figcaption class="w-figcaption">The warnings browsers show when a self-signed certificate is used.</figcaption>
 </figure>
 
 {% endDetails %}
