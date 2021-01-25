@@ -35,7 +35,7 @@ See [How to use HTTPS for local development](/how-to-use-local-https).
 
 ## Why your development site should behave securely
 
-You want your local development site to behave as much as possible like your production website, to avoid running intro unexpected issues.
+To avoid running intro unexpected issues, you want your local development site to behave as much as possible like your production website.
 
 So, if your production website uses HTTPS, you want your local development site to behave **like an HTTPS site**.
 
