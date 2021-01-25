@@ -320,7 +320,7 @@ of the browser. In a year, `Google Chrome Stable` will refer to version 95.
 
 If the content mentions or features other people's products, said products
 are to be used as intended. For example, an article should not advise
-to flash a "homebrew" firmware onto a commercial device, unlessed this is
+to flash a "homebrew" firmware onto a commercial device, unless this is
 explicitly blessed by the manufacturer.
 
 ## Late-stage review checklist {: #late }
