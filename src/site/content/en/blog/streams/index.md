@@ -229,22 +229,25 @@ stream by creating a reader via the `getReader()` method and calling `read()` un
 `done`.
 
 ```js
-let interval = null;
+const startEnqueuing = (controller) => {
+  let interval = null;
+  interval = setInterval(() => {
+    let string = new Date().toLocaleTimeString();
+    // Add the string to the stream.
+    console.log(`Enqueued ${string}`);
+    controller.enqueue(string);
+  }, 1_000);
+
+  setTimeout(() => {
+    clearInterval(interval);
+    // Close the stream after 10s.
+    controller.close();
+  }, 10_000);
+};
 
 const stream = new ReadableStream({
   start(controller) {
-    interval = setInterval(() => {
-      let string = new Date().toLocaleTimeString();
-      // Add the string to the stream.
-      console.log(`Enqueued ${string}`);
-      controller.enqueue(string);
-    }, 1_000);
-
-    setTimeout(() => {
-      clearInterval(interval);
-      // Close the stream after 10s.
-      controller.close();
-    }, 10_000);
+    startEnqueuing(controller);
   },
 
   cancel() {
