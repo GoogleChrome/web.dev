@@ -768,6 +768,8 @@ sections respectively.
 The following code sample shows a simple transform stream in action.
 
 ```js
+// Note that `TextEncoderStream` and `TextDecoderStream` exist now.
+// This example shows how you would have done it before.
 const textEncoderStream = new TransformStream({
   async transform(chunk, controller) {
     console.log('[transform]', chunk);
