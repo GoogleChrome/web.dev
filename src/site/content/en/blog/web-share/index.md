@@ -48,7 +48,7 @@ Web share has the following capabilities and limitations:
   through the `onload` handler is not allowed.
 * It can share URLs, text, and in some browsers, files.
 * Some features are only available on specific combinations of browsers and platforms. Please see
-  the [browser support](#browser-support) section for more details.
+  the [browser support](#browser-support) section for details.
 
 <div class="w-clearfix"></div>
 
