@@ -1,6 +1,6 @@
 ---
 title: When to use HTTPS for local development
-subhead: http://localhost is fie most of the time, but sometimes, you need to run your local development site with HTTPS. Here's when.
+subhead: Using http://localhost for local development is fine most of the time, except in some special cases. This post explains when you need to run your local development site with HTTPS. 
 authors:
   - maudn
 date: 2021-01-25
