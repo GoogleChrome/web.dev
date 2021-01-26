@@ -2,13 +2,13 @@
 title: Why you need "cross-origin isolated" for powerful features
 subhead: >
   Learn why cross-origin isolation is needed to use powerful features such as
-  `SharedArrayBuffer`, `performance.measureMemory()`, and the JS Self-Profiling
+  `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`, and the JS Self-Profiling
   API.
 description: >
   Some web APIs increase the risk of side-channel attacks like Spectre. To
   mitigate that risk, browsers offer an opt-in-based isolated environment called
   cross-origin isolated. Learn why cross-origin isolation is needed to use
-  powerful features such as `SharedArrayBuffer`, `performance.measureMemory()`,
+  powerful features such as `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`,
   and the JS Self-Profiling API.
 authors:
   - agektmr
@@ -101,7 +101,7 @@ This is exactly what COOP+COEP is about.
 
 Under a cross-origin isolated state, the requesting site is considered less
 dangerous and this unlocks powerful features such as `SharedArrayBuffer`,
-`performance.measureMemory()` and the JS Self-Profiling API which could otherwise be
+`performance.measureUserAgentSpecificMemory()` and the JS Self-Profiling API which could otherwise be
 used for Spectre-like attacks. It also prevents modifying `document.domain`.
 
 ### Cross Origin Embedder Policy {: #coep }
@@ -239,7 +239,7 @@ protect your website in browsers that don't support COOP.
 ## Summary {: #summary }
 
 If you want guaranteed access to powerful features like `SharedArrayBuffer`,
-`performance.measureMemory()` or JS Self-Profiling API, just remember that your
+`performance.measureUserAgentSpecificMemory()` or JS Self-Profiling API, just remember that your
 document needs to use both COEP with the value of `require-corp` and COOP with
 the value of `same-origin`. In the absence of either, the browser will not
 guarantee sufficient isolation to safely enable those powerful features. You can
