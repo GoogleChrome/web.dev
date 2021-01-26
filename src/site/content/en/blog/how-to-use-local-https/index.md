@@ -5,6 +5,7 @@ authors:
   - maudn
 date: 2021-01-25
 hero: hero.jpg
+thumbnail: thumbnail.jpg
 tags:
   - blog
   - security
@@ -39,7 +40,7 @@ certificate](https://en.wikipedia.org/wiki/Public_key_certificate#TLS/SSL_server
 browsers won't consider just any certificate valid: your certificate needs to be **signed** by an entity that
 is trusted by your browser, called a trusted **[certificate authority (CA)](https://en.wikipedia.org/wiki/Certificate_authority)**.
 
-What you need to do is to create a certificate and sign it with a CA that is **trusted locally** by your device 
+What you need to do is to create a certificate and sign it with a CA that is **trusted locally** by your device
 and browser. [mkcert](https://github.com/FiloSottile/mkcert) is a tool that helps you do this in a few commands. Here's how it works:
 
 - If you open your locally running site in your browser using HTTPS, your browser will
