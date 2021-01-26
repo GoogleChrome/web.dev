@@ -379,6 +379,38 @@ Feature detection is mainly intended for cases where links are dynamically gener
 (for example by search engines) to avoid serving text fragments links
 to browsers that do not support them.
 
+### Styling text fragments
+
+By default, browsers style text fragments the same way they style
+[`mark`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark)
+(typically black on yellow, the CSS
+[system colors](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#system_colors)
+for `mark`).
+The user-agent stylesheet contains CSS that looks like this:
+
+```css
+:root::target-text {
+  color: MarkText;
+  background: Mark;
+}
+```
+
+As you can see, the browser exposes a pseudo selector
+[`::target-text`](https://drafts.csswg.org/css-pseudo/#selectordef-target-text)
+that you can use to customize the applied highlighting. For example, you could 
+design your text fragments to be black text on a red background.
+As always, be sure to
+[check the color contrast](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#contrast)
+so your override styling does not cause accessibility issues
+and make sure the highlighting actually visually stands out from the rest of the content.
+
+```css
+:root::target-text {
+  color: black;
+  background-color: red;
+}
+```
+
 ### Polyfillability
 
 The Text Fragments feature can be polyfilled to some extent.
