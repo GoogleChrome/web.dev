@@ -1,6 +1,6 @@
 ---
 title: When to use HTTPS for local development
-subhead: Using http://localhost for local development is fine most of the time, except in some special cases. This post explains when you need to run your local development site with HTTPS. 
+subhead: Using http://localhost for local development is fine most of the time, except in some special cases. This post explains when you need to run your local development site with HTTPS.
 authors:
   - maudn
 date: 2021-01-25
@@ -24,7 +24,7 @@ However, in the following cases, you'll need HTTPS for local development:
 - Custom hostnames
 
   <figure class="w-figure">
-    <img src="./when-to-use-local-https.jpg" alt="A list of cases when you need to use HTTPS for local development.">
+    <img src="./when-to-use-local-https.png" alt="A list of cases when you need to use HTTPS for local development.">
     <figcaption class="w-figcaption">When to use HTTPS for local development.</figcaption>
   </figure>
 
@@ -34,15 +34,11 @@ See [How to use HTTPS for local development](/how-to-use-local-https).
 
 ## Why your development site should behave securely
 
-To avoid running intro unexpected issues, you want your local development site to behave as much as possible like your production website.
-
-So, if your production website uses HTTPS, you want your local development site to behave **like an HTTPS site**.
+To avoid running intro unexpected issues, you want your local development site to behave as much as possible like your production website. So, if your production website uses HTTPS, you want your local development site to behave **like an HTTPS site**.
 
 {% Aside 'warning' %}
 If your production website doesn't use HTTPS, [make it a priority](/why-https-matters/).
 {% endAside %}
-
-What does this mean in practice? When developing locally, when can you use `http://localhost` (HTTP) and when do you need HTTPS? Let's take a look!
 
 ## Use `http://localhost` by default
 
