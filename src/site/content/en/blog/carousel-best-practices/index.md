@@ -62,8 +62,8 @@ However, you may not need JavaScript at all. The new [Scroll Snap](https://devel
 
 Here are some resources on using scroll-snap that you may find helpful:
 
-*   [Building a Stories component (web.dev)](https://web.dev/building-a-stories-component/)
-*   [Next-generation web styling: scroll snap (web.dev)](https://web.dev/next-gen-css-2019/#scroll-snap)
+*   [Building a Stories component (web.dev)](/building-a-stories-component/)
+*   [Next-generation web styling: scroll snap (web.dev)](/next-gen-css-2019/#scroll-snap)
 *   [CSS-Only Carousel (CSS Tricks)](https://css-tricks.com/css-only-carousel/)
 *   [How to Make a CSS-Only Carousel (CSS Tricks)](https://css-tricks.com/how-to-make-a-css-only-carousel/)
 
