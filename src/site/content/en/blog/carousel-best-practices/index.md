@@ -114,7 +114,7 @@ Carousel navigation controls should provide context about the total number of sl
 
 #### Support mobile gestures
 
-On mobile, swipe gestures should be supported in addition to traditional navigation controls (i.e. on screen buttons).
+On mobile, swipe gestures should be supported in addition to traditional navigation controls (such as on screen buttons).
 
 
 #### Provide alternate navigation paths
