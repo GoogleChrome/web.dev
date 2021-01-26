@@ -70,7 +70,11 @@ A writable stream represents a destination for data, into which you can write. I
 ### Transform streams
 
 A transform stream consists of a **pair of streams**: a writable stream, known as its writable side,
-and a readable stream, known as its readable side. In a manner specific to the transform stream in
+and a readable stream, known as its readable side.
+A real-world metaphor for this would be a
+[simultaneous interpreter](https://en.wikipedia.org/wiki/Simultaneous_interpretation)
+who on-the-fly translates from one language to another.
+In a manner specific to the transform stream in
 question, writes to the writable side result in new data being made available for reading from the
 readable side. Concretely, any object with a `writable` property and a `readable` property can serve
 as a transform stream. However, the standard `TransformStream` class makes it much easier to create
@@ -467,7 +471,7 @@ const reader = readableStream.getReader({ mode: 'byob' });
 
 let startingAB = new ArrayBuffer(1_024);
 const buffer = await readInto(startingAB);
-console.log('The first 1,024 bytes: ', buffer);
+console.log('The first 1,024 bytes (or less): ', buffer);
 
 async function readInto(buffer) {
   let offset = 0;
@@ -638,7 +642,7 @@ const writableStream = new WritableStream({
     // Wait for next write.
     return new Promise((resolve) => setTimeout(resolve, 1_000));
   },
-  async close(controller) {
+  close(controller) {
     console.log('[close]');
   },
   abort(reason) {
@@ -694,7 +698,7 @@ const writableStream = new WritableStream({
     // Called by constructor
     console.log('[start writable]');
   },
-  async write(chunk, controller) {
+  write(chunk, controller) {
     // Called when writer.write()
     console.log('[write]', chunk);
   },
@@ -760,7 +764,7 @@ sections respectively.
 The following code sample shows a simple transform stream in action.
 
 ```js
-const transformStream = new TransformStream({
+const textEncoderStream = new TransformStream({
   async transform(chunk, controller) {
     console.log('[transform]', chunk);
     controller.enqueue(new TextEncoder().encode(chunk));
