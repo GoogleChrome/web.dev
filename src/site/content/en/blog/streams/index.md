@@ -424,7 +424,8 @@ const readableStream = new ReadableStream({
   // Create two `ReadableStream`s.
   const [streamA, streamB] = readableStream.tee();
 
-  // Read streamA iteratively one by one.
+  // Read streamA iteratively one by one. Typically, you
+  // would not do it this way, but you certainly can.
   const readerA = streamA.getReader();
   console.log('[A]', await readerA.read()); //=> {value: "a", done: false}
   console.log('[A]', await readerA.read()); //=> {value: "b", done: false}
@@ -432,7 +433,8 @@ const readableStream = new ReadableStream({
   console.log('[A]', await readerA.read()); //=> {value: "d", done: false}
   console.log('[A]', await readerA.read()); //=> {value: undefined, done: true}
 
-  // Read streamB in a loop.
+  // Read streamB in a loop. This is the more common way
+  // to read data from the stream.
   const readerB = streamB.getReader();
   while (true) {
     const result = await readerB.read();
@@ -634,34 +636,35 @@ The code sample below shows all steps in action.
 
 ```js
 const writableStream = new WritableStream({
-  start(controller) {
+  async start(controller) {
     console.log('[start]');
   },
-  write(chunk, controller) {
+  async write(chunk, controller) {
     console.log('[write]', chunk);
     // Wait for next write.
-    return new Promise((resolve) => setTimeout(resolve, 1_000));
+    await new Promise((resolve) => setTimeout(() => {
+      document.body.textContent += chunk;
+      resolve();
+    }, 1_000));
   },
-  close(controller) {
+  async close(controller) {
     console.log('[close]');
   },
-  abort(reason) {
+  async abort(reason) {
     console.log('[abort]', reason);
   },
 });
 
-(async () => {
-  const writer = writableStream.getWriter();
-  const start = Date.now();
-  for (const char of 'abcd') {
-    // Wait to add write queue.
-    await writer.ready;
-    console.log('[ready]', Date.now() - start, 'ms');
-    // The Promise is resolved after the write finishes.
-    writer.write(char);
-  }
-  await writer.close();
-})();
+const writer = writableStream.getWriter();
+const start = Date.now();
+for (const char of 'abcdefghijklmnopqrstuvwxyz') {
+  // Wait to add write queue.
+  await writer.ready;
+  console.log('[ready]', Date.now() - start, 'ms');
+  // The Promise is resolved after the write finishes.
+  writer.write(char);
+}
+await writer.close();
 ```
 
 ### Piping a readable stream to a writable stream
