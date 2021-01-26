@@ -282,57 +282,28 @@ and uppercasing chunk by chunk. The advantage of this approach is that you do no
 the whole document to be downloaded, which can make a huge difference when dealing with large files.
 
 ```js
-self.addEventListener('fetch', (event) => {
-  // If the destination of the request is anything else
-  // than a document, return.
-  if (event.request.destination !== 'document') {
-    return;
-  }
-  event.respondWith(
-    (async () => {
-      // Create a new stream that implements the UPPERCASING.
-      const result = await shoutFetch(event.request.url);
-      // Return the newly created stream.
-      return new Response(result.stream, { headers: result.headers });
-    })(),
-  );
-});
-
-const shoutFetch = async (url) => {
-  // Chunks arrive encoded, so need to decode them.
-  const textDecoder = new TextDecoder('utf-8', { stream: true });
-  // After uppercasing, need to encode chunks again.
-  const textEncoder = new TextEncoder();
-  // Fetch the initial document and get access to the
-  // reader of the readable stream. Error handling skipped for brevity.
-  const response = await fetch(url);
-  const readableStream = response.body;
-  const reader = readableStream.getReader();
-  // Create a new stream.
-  const responseStream = new ReadableStream({
-    // Called whenever the internal queue of chunks is not full.
-    async pull(controller) {
-      // Read the next chunk.
-      let result = await reader.read();
-      // Close the stream when done.
-      if (result.done) {
-        return controller.close();
-      }
-      // Uppercase each chunk (after decoding it).
-      const upperCaseValue = textDecoder.decode(result.value).toUpperCase();
-      // Enqueue the uppercased value (afer re-encoding it).
-      controller.enqueue(textEncoder.encode(upperCaseValue));
-      return result;
-    },
-
-    // Called when the reader cancels.
-    cancel() {
-      reader.cancel();
+function upperCaseStream() {
+  return new TransformStream({
+    transform(chunk, controller) {
+      controller.enqueue(chunk.toUpperCase());
     },
   });
-  // Return the new stream with the headers of the original response.
-  return { stream: responseStream, headers: response.headers };
-};
+}
+
+function appendToDomStream(el) {
+  return new WritableStream({
+    write(chunk) {
+      el.append(chunk);
+    }
+  });
+}
+
+fetch('./lorem-ipsum.txt').then((response) =>
+  response.body
+    .pipeThrough(new TextDecoderStream())
+    .pipeThrough(upperCaseStream())
+    .pipeTo(appendToDomStream(document.body));
+);
 ```
 
 {% Aside %}
