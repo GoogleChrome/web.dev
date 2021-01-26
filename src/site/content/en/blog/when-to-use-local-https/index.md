@@ -21,7 +21,7 @@ However, in the following cases, you'll need HTTPS for local development:
 - Secure cookies
 - Mixed-content debugging
 - HTTP/2 and later
-- Custom hostnames
+- Custom hostname
 
   <figure class="w-figure">
     <img src="./when-to-use-local-https.png" alt="A list of cases when you need to use HTTPS for local development.">
@@ -34,7 +34,7 @@ See [How to use HTTPS for local development](/how-to-use-local-https).
 
 ## Why your development site should behave securely
 
-To avoid running intro unexpected issues, you want your local development site to behave as much as possible like your production website. So, if your production website uses HTTPS, you want your local development site to behave **like an HTTPS site**.
+To avoid running into unexpected issues, you want your local development site to behave as much as possible like your production website. So, if your production website uses HTTPS, you want your local development site to behave **like an HTTPS site**.
 
 {% Aside 'warning' %}
 If your production website doesn't use HTTPS, [make it a priority](/why-https-matters/).
@@ -56,7 +56,7 @@ You need to use HTTPS for local development in the following cases:
 - You need to [set a cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) locally that is `Secure`, or `SameSite:none`, or has the `__Host` prefix. `Secure` cookies are set only on HTTPS, but not on `http://localhost`. And because `SameSite:none` and `__Host` also require the cookie to be `Secure`, setting such cookies on your local development site requires HTTPS as well.
 
   {% Aside 'gotchas' %}
-  When it comes to setting `Secure` cookies locally, not all browsers behave in the same way! For example, Chrome and Safari don't set `Secure` cookies on localhost, but Firefox does. In Chrome, this is considered a bug.
+  When it comes to setting `Secure` cookies locally, not all browsers behave in the same way! For example, Chrome and Safari don't set `Secure` cookies on localhost, but Firefox does. In Chrome, this is considered a [bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1056543&q=localhost%20secure%20cookie&can=2).
   {% endAside %}
 
 - You need to locally test or reproduce a behaviour specific to HTTP/2 or newer. For example, if you need to test loading performance on HTTP/2 or newer. Insecure HTTP/2 or newer is not supported, not even on `localhost`.
