@@ -15,13 +15,13 @@ _So when you see `http://localhost`, read it as `http://localhost:{PORT}` or `ht
 
 ## Summary
 
-When developing locally, use `http://localhost` by default. Service Workers, web authentication APIs, and more, will work.
+When developing locally, use `http://localhost` by default. Service Workers, Web Authentication API, and more will work.
 However, in the following cases, you'll need HTTPS for local development:
 
-- Setting Secure cookies
-- Debugging mixed-content debugging
+- Setting Secure cookies in a consistent way across browsers
+- Debugging mixed-content issues
 - Using HTTP/2 and later
-- Using some third-party libraries or APIs
+- Using third-party libraries or APIs that require HTTPS
 - Using a custom hostname
 
   <figure class="w-figure">
@@ -31,7 +31,7 @@ However, in the following cases, you'll need HTTPS for local development:
 
 See [How to use HTTPS for local development](/how-to-use-local-https).
 
-✨ This is all you need to know. If you are interested in more details keep reading!
+✨ This is all you need to know. If you're interested in more details keep reading!
 
 ## Why your development site should behave securely
 
@@ -53,13 +53,13 @@ You may encounter special cases where `http://localhost` _doesn't_ behave like a
 
 You need to use HTTPS for local development in the following cases:
 
-- You need to debug locally an issue that only occurs on an HTTPS website but not on an HTTP site, not even `http://localhost`, such as a [mixed-content](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content) issue.
-- You need to [set a cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) locally that is `Secure`, or `SameSite:none`, or has the `__Host` prefix. `Secure` cookies are set only on HTTPS, but not on `http://localhost`. And because `SameSite:none` and `__Host` also require the cookie to be `Secure`, setting such cookies on your local development site requires HTTPS as well.
+- You need to [set a cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) locally that is `Secure`, or `SameSite:none`, or has the `__Host` prefix. `Secure` cookies are set only on HTTPS, but not on `http://localhost` for all browsers. And because `SameSite:none` and `__Host` also require the cookie to be `Secure`, setting such cookies on your local development site requires HTTPS as well.
 
   {% Aside 'gotchas' %}
   When it comes to setting `Secure` cookies locally, not all browsers behave in the same way! For example, Chrome and Safari don't set `Secure` cookies on localhost, but Firefox does. In Chrome, this is considered a [bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1056543&q=localhost%20secure%20cookie&can=2).
   {% endAside %}
 
+- You need to debug locally an issue that only occurs on an HTTPS website but not on an HTTP site, not even `http://localhost`, such as a [mixed-content](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content) issue.
 - You need to locally test or reproduce a behaviour specific to HTTP/2 or newer. For example, if you need to test loading performance on HTTP/2 or newer. Insecure HTTP/2 or newer is not supported, not even on `localhost`.
 - You need to locally test third-party libraries or APIs that require HTTPS (for example OAuth).
 - You're not using `localhost`, but a custom host name for local development, for example `mysite.example`. Typically, this means you've overridden your local hosts file:

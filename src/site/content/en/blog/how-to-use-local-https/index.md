@@ -46,8 +46,6 @@ and browser. [mkcert](https://github.com/FiloSottile/mkcert) is a tool that help
   <figcaption class="w-figcaption">A diagram of how mkcert works.</figcaption>
 </figure>
 
-mkcert is the tool we recommend for creating a TLS certificate for local development, but it's not the only one. Check out [other options](#running-your-site-locally-with-https:-other-options) too.
-
 mkcert (and similar tools) provide several benefits:
 
 - mkcert is specialized in creating certificates that are **compliant with what browsers consider
@@ -56,12 +54,14 @@ mkcert (and similar tools) provide several benefits:
   certificates!
 - mkcert is a cross-platform tool. Anyone on your team can use it.
 
+mkcert is the tool we recommend for creating a TLS certificate for local development. You can check out [other options](#running-your-site-locally-with-https:-other-options) too.
+
 Many operating systems may include libraries to produce certificates, such as [openssl](https://www.openssl.org/). Unlike mkcert
 and similar tools, such libraries may not consistently produce correct certificates, may require
 complex commands to be run, and are not necessarily cross-platform.
 
 {% Aside 'gotchas' %}
-The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert). Not [this one](https://www.npmjs.com/package/mkcert). ❌
+The mkcert we're interested in in this post is [this one](https://github.com/FiloSottile/mkcert), not [this one](https://www.npmjs.com/package/mkcert).
 {% endAside %}
 
 ### Caution
@@ -185,12 +185,12 @@ The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert)
     - [Angular development server](https://angular.io/cli/serve)
     - [Python](https://blog.anvileight.com/posts/simple-python-http-server/)
 
-1)  ✨ You're done!
+1.  ✨ You're done!
     Open `https://localhost` or `https://mysite.example` in your browser: you're running your site locally with HTTPS.
     You won't see any browser warnings, because your browser trusts mkcert as a local certificate authority.
 
 {% Aside %}
-Remember that different servers may use a different port for HTTPS.
+Your server may use a different port for HTTPS.
 {% endAside %}
 
 ### Using mkcert: cheatsheet
@@ -244,16 +244,21 @@ Do this only for **development purposes** and **never export or share** the file
 
 You may also decide to not use a local certificate authority like mkcert, and instead **sign your certificate yourself**.
 
-Beware there are a few pitfalls with this approach:
+Beware of a few pitfalls with this approach:
 
 - Browsers don't trust you as a certificate authority and they'll show warnings you'll need to bypass manually. In Chrome, you may use the flag `#allow-insecure-localhost` to bypass this warning automatically on `localhost`. It feels a bit hacky, because it is.
-- Self-signed certificates won't behave in exactly the same way as trusted certificates.
 - This is unsafe if you're working in an insecure network.
-- It's not necessarily easier or faster than using a local CA.
-- If you're not using this technique in a browser context, you may need to disable certificate verification for your server. Omitting to re-enable it in production would be very problematic.
+- Self-signed certificates won't behave in exactly the same way as trusted certificates.
+- It's not necessarily easier or faster than using a local CA like mkcert.
+- If you're not using this technique in a browser context, you may need to disable certificate verification for your server. Omitting to re-enable it in production would be dangerous.
+
+<figure class="w-figure">
+  <img src="./warnings.jpg" alt="Screenshots of the warnings browsers show when a self-signed certificate is used.">
+    <figcaption class="w-figcaption">The warnings browsers show when a self-signed certificate is used.</figcaption>
+</figure>
 
 {% Aside %}
-If you don't specify any certificate, [React's](https://create-react-app.dev/docs/using-https-in-development/) and [Vue's](https://cli.vuejs.org/guide/cli-service.html#vue-cli-service-serve) development server HTTPS options create a self-signed certificate under the hood. This is quick, but you'll get browser warnings and encounter other pitfalls listed above. Luckily you can use frontend frameworks' built-in HTTPS option **and** specify a locally trusted certificate created via mkcert or similar. See how to do this in the [mkcert with React example](/how-to-use-local-https/#setup:~:text=With%20a%20React%20development%20server).
+If you don't specify any certificate, [React's](https://create-react-app.dev/docs/using-https-in-development/) and [Vue's](https://cli.vuejs.org/guide/cli-service.html#vue-cli-service-serve) development server HTTPS options create a self-signed certificate under the hood. This is quick, but you'll get browser warnings and encounter other pitfalls related to self-signed certificates that are listed above. Luckily you can use frontend frameworks' built-in HTTPS option **and** specify a locally trusted certificate created via mkcert or similar. See how to do this in the [mkcert with React example](/#setup:~:text=a%20React%20development%20server).
 {% endAside %}
 
 {% Details %}
@@ -266,11 +271,6 @@ If you open your locally running site in your browser using HTTPS, your browser 
 <figure class="w-figure">
   <img src="./selfSigned.jpg" alt="Why browsers don't trust self-signed certificates: a diagram.">
   <figcaption class="w-figcaption">Why browsers don't trust self-signed certificates.</figcaption>
-</figure>
-
-<figure class="w-figure">
-  <img src="./warnings.jpg" alt="Screenshots of the warnings browsers show when a self-signed certificate is used.">
-    <figcaption class="w-figcaption">The warnings browsers show when a self-signed certificate is used.</figcaption>
 </figure>
 
 {% endDetails %}
@@ -293,18 +293,18 @@ Another option to access a locally running site with HTTPS is to use a [reverse 
 
 A few points to consider:
 
-- Anyone can access your local development site once you share with them a URL created with a reverse proxy. This can be very handy when demoing your project to clients. Or this can be a downside, if your project is sensitive.
+- Anyone can access your local development site once you share with them a URL created with a reverse proxy. This can be very handy when demoing your project to clients! Or this can be a downside, if your project is sensitive.
 - You may need to consider pricing.
 - New [security measures](/cors-rfc1918-feedback/) in browsers may affect the way these tools work.
 
-### Flag
+### Flag (not recommended)
 
-If you're using a custom hostname like `mysite.example`, you can use a flag in Chrome to forcefully consider `mysite.example` secure. Avoid doing this, because:
+If you're using a custom hostname like `mysite.example`, you can use a flag in Chrome to forcefully consider `mysite.example` secure. **Avoid doing this**, because:
 
 - You would need to be 100% sure that `mysite.example` always resolves to a local address, otherwise you could leak production credentials.
 - You won't be able to debug across browsers with this trick 🙀.
 
 _With many thanks for contributions and feedback to all reviewers and contributors—especially Ryan Sleevi,
-Filippo Valsorda, Milica Mihajlija, Rowan Merewood and Jake Archibald. 🙌_
+Filippo Valsorda, Milica Mihajlija and Rowan Merewood. 🙌_
 
 _Hero image background by [@anandu](https://unsplash.com/@anandu) on [Unsplash](https://unsplash.com/photos/pbxwxwfI0B4), edited._
