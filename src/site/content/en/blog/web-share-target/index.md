@@ -5,7 +5,7 @@ authors:
   - petelepage
   - joemedley
 date: 2019-11-08
-updated: 2020-08-05
+updated: 2020-01-26
 hero: hero.png
 alt: An illustration demonstrating that platform-specific apps can now share content with web apps.
 description: |
@@ -29,8 +29,6 @@ In the past, only platform-specific apps could register with the operating syste
 receive shares from other installed apps. But with the Web Share Target API,
 installed web apps can register with the underlying operating system
 as a share target to receive shared content.
-Support for text and data was added in Chrome 71, and
-support for files was added in Chrome 76.
 
 {% Aside %}
 The Web Share Target API is only half of the magic. Web apps can share data,
@@ -47,7 +45,8 @@ files, links, or text using the Web Share API. See
 
 ## See Web Share Target in action
 
-1. Using Chrome 76 or later (Android only), open the [Web Share Target demo][demo].
+1. Using Chrome 76 or later (on Android), or Chrome 89 or later (on Chrome OS) open the
+   [Web Share Target demo][demo].
 2. When prompted, click **Install** to add the app to your home screen, or
    use the Chrome menu to add it to your home screen.
 3. Open any app that supports sharing, or use the Share button
@@ -206,8 +205,8 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-Be sure to use a service worker to precache the `action` page so that it will
-load quickly and work reliably, even if the user is offline.
+Be sure to use a service worker to [precache](https://web.dev/precache-with-workbox/) the `action`
+page so that it will load quickly and work reliably, even if the user is offline.
 
 ### Processing POST shares
 
@@ -222,9 +221,10 @@ a request, the page passes it to the service worker, where you can intercept it 
 page using `postMessage()` or pass it on to the server:
 
 ```js
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', event   => {
+  // If this isn't an incoming POST request, this
+  // fetch handler doesn't need to respond.
   if (event.request.method !== 'POST') {
-    event.respondWith(fetch(event.request));
     return;
   }
 
@@ -255,6 +255,22 @@ it's not supported in Android's share system. Instead, URLs will often appear in
 the `text` field, or occasionally in the `title` field.
 
 <div class="w-clearfix"></div>
+
+## Browser support
+
+As of early 2021, the Web Share Target API is supported by:
+
+- Chrome and Edge 76+ on Android.
+- Chrome 89+ on Chrome OS.
+
+On all platforms, your web app has to be [installed][installability] before it will show up as a
+potential target for receiving shared data.
+
+## Sample applications
+
+- [Squoosh](https://github.com/GoogleChromeLabs/squoosh)
+- [Scrapbook PWA](https://github.com/GoogleChrome/samples/blob/gh-pages/web-share/README.md#web-share-demo)
+
 
 [spec]: https://wicg.github.io/web-share-target/
 [demo]: https://web-share.glitch.me/
