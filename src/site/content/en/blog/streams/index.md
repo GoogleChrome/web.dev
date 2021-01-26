@@ -256,26 +256,23 @@ const stream = new ReadableStream({
   },
 });
 
-let result = '';
-const reader = stream.getReader();
-
-const readStream = async () => {
-  // The `read()` method returns a promise that
-  // resolves when a value has been received.
-  const { done, value } = await reader.read();
-  // Result objects contain two properties:
-  // `done`  - `true` if the stream has already given you all its data.
-  // `value` - Some data. Always `undefined` when `done` is `true`.
-  if (done) {
-    return console.log(`Stream complete.\n${result}`);
+async function concatStringStream(stream) {
+  let result = '';
+  const reader = stream.getReader();
+  while (true) {
+    // The `read()` method returns a promise that
+    // resolves when a value has been received.
+    const { done, value } = await reader.read();
+    // Result objects contain two properties:
+    // `done`  - `true` if the stream has already given you all its data.
+    // `value` - Some data. Always `undefined` when `done` is `true`.
+    if (done) return result;
+    result += value;
+    console.log(`Read ${result.length} characters so far`);
+    console.log(`Most recently read chunk: ${value}`);
   }
-  result += value;
-  console.log(`Read ${result.length} characters so far`);
-  console.log(`Most recently read chunk: ${value}`);
-  // Read some more, and call this function again.
-  readStream();
-};
-readStream();
+}
+concatStringStream(stream).then((result) => console.log('Stream complete', result));
 ```
 
 The next (a bit contrived) code sample shows how you could implement a "shouting" service worker
