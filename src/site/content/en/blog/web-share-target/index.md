@@ -20,7 +20,7 @@ feedback:
   - api
 ---
 
-On a mobile device, sharing should be as simple as clicking the **Share** button,
+On a mobile device, sharing should be as straightforward as clicking the **Share** button,
 choosing an app, and choosing who to share with. For example, you may want to
 share an interesting article, either by emailing it to friends or tweeting it to
 the world.

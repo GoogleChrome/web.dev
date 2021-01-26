@@ -136,10 +136,10 @@ with games and educational experiences.
 
 In 2016, the Santa Tracker team used the Web Share API on Android.
 This API was a perfect fit for mobile.
-In previous years, the team disabled share buttons on mobile because space is
+In previous years, the team removed share buttons on mobile because space is
 at a premium, and they couldn't justify having several share targets.
 
-But with the Web Share API, they were able to present just one button,
+But with the Web Share API, they were able to present one button,
 saving precious pixels.
 They also found that users shared with Web Share around 20% more than
 users without the API enabled. Head to
