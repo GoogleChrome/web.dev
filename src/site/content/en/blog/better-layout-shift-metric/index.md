@@ -28,7 +28,7 @@ An internal analysis of long-lived pages with high CLS scores found that most pr
 
 While we encourage developers to improve those user experiences, we're also working towards improving the metric and looking for feedback on possible approaches.
 
-# How would we decide if a new metric is better?
+## How would we decide if a new metric is better?
 Before diving into metric design, we wanted to ensure that we evaluated our ideas on a wide variety of real-world web pages and use cases. To start, we designed a small user study.
 
 First, we recorded videos and [Chrome traces](https://www.chromium.org/developers/how-tos/trace-event-profiling-tool) of 34 user journeys through various websites. In selecting the user journeys, we aimed for a few things:
@@ -42,9 +42,9 @@ We asked 41 of our colleagues to watch two videos at a time, rating which of the
 
 Since we recorded Chrome traces along with the videos, we had all the details of the individual layout shifts in each user journey. We used those to compute metric values for each idea for each user journey. This allowed us to see how each metric variant ranked the user journeys, and how different each was from the ideal ranking.
 
-# What metric ideas did we test?
+## What metric ideas did we test?
 
-## Windowing strategies
+### Windowing strategies
 
 Often pages have multiple layout shifts bunched closely together, because elements can shift multiple times as new content comes in piece by piece. This prompted us to try out techniques for grouping shifts together. To accomplish that, we looked at three windowing approaches:
 
@@ -54,7 +54,7 @@ Often pages have multiple layout shifts bunched closely together, because elemen
 
 In each of these examples, the page has layout shifts of varying severity over time. Each blue bar represents a single layout shift, and the length represents the [score](/cls/#layout-shift-score) of that shift. The images illustrate the ways different windowing strategies group the layout shifts over time.
 
-### Tumbling windows
+#### Tumbling windows
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -68,7 +68,7 @@ In each of these examples, the page has layout shifts of varying severity over t
 
 The simplest approach is just to break the page into windows of equal-sized chunks. These are called tumbling windows. You'll notice above that the fourth bar really looks like it should be grouped into the second tumbling window, but because the windows are all a fixed size it is in the first window instead. If there are slight differences in timing of loads or user interactions on the page, the same layout shifts might fall on different sides of the tumbling window boundaries.
 
-### Sliding windows
+#### Sliding windows
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -82,7 +82,7 @@ The simplest approach is just to break the page into windows of equal-sized chun
 
 An approach that lets us see more possible groupings of the same length is to continuously update the potential window over time. The image above shows one sliding window at a time, but we could look at all possible sliding windows or a subset of them to create a metric.
 
-### Session windows
+#### Session windows
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -96,7 +96,7 @@ An approach that lets us see more possible groupings of the same length is to co
 
 If we wanted to focus on identifying areas of the page with bursts of layout shifts, we could start each window at a shift, and keep growing it until we encountered a gap of a given size between layout shifts. This approach groups the layout shifts together, and ignores most of the non-shifting user experience. One potential problem is that if there are no gaps in the layout shifts, a metric based on session windows could grow unbounded just like the current CLS metric. So we tried this out with a maximum window size as well.
 
-## Window sizes
+### Window sizes
 
 The metric might give very different results depending on how big the windows actually are, so we tried multiple different window sizes:
 
@@ -106,26 +106,26 @@ The metric might give very different results depending on how big the windows ac
 - 1 second
 - 5 seconds
 
-## Summarization
+### Summarization
 
 We tried out many ways to summarize the different windows.
-### Percentiles
+#### Percentiles
 
 We looked at the maximum window value, as well as the 95th percentile, 75th percentile, and median.
 
-### Average
+#### Average
 
 We looked at the mean window value.
 
-### Budgets
+#### Budgets
 
 We wondered if maybe there was some minimum layout shift score that users wouldn't notice, and we could just count layout shifts over that "budget" in the score. So for various potential "budget" values, we looked at the percentage of shifts over budget, and the total shift score over budget.
 
-## Other strategies
+### Other strategies
 
 We also looked at many strategies that didn't involve windows, like the total layout shift divided by time on page, and the average of the worst N individual shifts.
 
-# The initial results
+## The initial results
 
 Overall, we tested **145 different metric definitions** based on permutations of the above ideas. For each metric, we ranked all the user journeys by their score on the metric, and then ranked the metrics by how close they were to the ideal ranking.
 
@@ -135,11 +135,11 @@ To understand if we might be overfitting for the data set, after our analysis we
 
 A few different strategies stood out in the rankings.
 
-## Best strategies
+### Best strategies
 
 When we ranked the strategies, we found that three types of strategies topped the list. Each had roughly the same performance, so we plan to move forward with a deeper analysis on all three. We'd also like to hear developer feedback to understand if there are factors outside of user experience we should be considering when deciding between them. (See below for how to give feedback.)
 
-### High percentiles of long windows
+#### High percentiles of long windows
 
 A few windowing strategies worked well with long window sizes:
 
@@ -151,18 +151,18 @@ These all ranked really well at both the 95th percentile and the maximum.
 
 But for such large window sizes, we were concerned about using the 95th percentile—often we were looking at only 4-6 windows, and taking the 95th percentile of that is a lot of interpolation. It's unclear what the interpolation is doing in terms of the metric value. The maximum value is a lot clearer, so we decided to move forward with checking the maximum.
 
-### Average of session windows with long gaps
+#### Average of session windows with long gaps
 
 Averaging the scores of all uncapped session windows with 5 second gaps between them performed really well. This strategy has a few interesting characteristics:
 
 - If the page doesn't have gaps between layout shifts, it ends up being one long session window with the exact same score as the current CLS.
 - This metric didn't take idle time into account directly; it only looked at the shifts that happened on the page, and not at points in time when the page was not shifting.
 
-### High percentiles of short windows
+#### High percentiles of short windows
 
 The maximum 300 ms sliding window ranked very highly, as well as the 95th percentile. For the shorter window size, there is less percentile interpolation than larger window sizes, but we were also concerned about "repeat" sliding windows—if a set of layout shifts occurs over two frames, there are multiple 300 ms windows that include them. Taking the maximum is much clearer and simpler than taking the 95th percentile one. So again we decided to move forward with checking the maximum.
 
-## Strategies that didn't work out
+### Strategies that didn't work out
 
 Strategies that tried to look at the "average" experience of time spent both without layout shifts and with layout shifts did very poorly. None of the median or 75th percentile summaries of any windowing strategy ranked the sites well. Neither did the sum of layout shifts over time.
 
@@ -170,9 +170,9 @@ We evaluated a number of different "budgets" for acceptable layout shifts:
 - Percent of layout shifts above some budget. For various budgets, these all ranked quite poorly.
 - Average layout shift above some excess. Most variations on this strategy did poorly, but average excess over a long session with a large gap did almost as well as the average of session windows with long gaps. We decided to move forward with only the latter because it is simpler.
 
-# Next steps
+## Next steps
 
-## Larger-scale analysis
+### Larger-scale analysis
 
 We've implemented the top strategies listed above in Chrome, so that we can get data on real-world usage for a much larger set of websites. We plan to use a similar approach of ranking sites based on their metric scores to do the larger-scale analysis:
 
@@ -181,23 +181,23 @@ We've implemented the top strategies listed above in Chrome, so that we can get 
   - What are the largest differences between the new metric candidates? Do any of the differences stand out as advantages or disadvantages of a specific candidate?
 - Repeat the above analysis, but bucketing by time spent on each page load. Do we see an expected improvement for long-lived page loads with acceptable layout shift? Do we see any unexpected results for short-lived pages?
 
-## Feedback on our approach
+### Feedback on our approach
 
 We'd love to get feedback from web developers on these approaches. Some things to keep in mind while considering the new approaches:
 
-### What's not changing
+#### What's not changing
 
 We do want to clarify that a lot of things will not be changing with a new approach:
 
 - None of our metric ideas change the way layout shift scores for [individual frames are calculated](/cls/#layout-shift-score), only the way we summarize multiple frames. This means that the [JavaScript API](/cls/#measure-cls-in-javascript) for layout shifts will stay the same, and the underlying events in Chrome traces that developer tools use will also stay the same, so layout shift rects in tools like WebPageTest and Chrome DevTools will continue to work the same way.
 - We'll continue to work hard on making the metrics easy for developers to adopt, including them in the [web-vitals library](https://github.com/GoogleChrome/web-vitals), documenting on [web.dev](/metrics), and reporting them in our developer tooling like Lighthouse.
 
-### Trade-offs between metrics
+#### Trade-offs between metrics
 One of the top strategies summarizes the layout shift windows as an average, and the rest report the maximum window. For pages which are open a very long time, the average will likely report a more representative value, but in general it will likely be easier for developers to act on a single window—they can log when it occurred, the elements that shifted, and so on. We'd love feedback on which is more important to developers.
 
 Do you find sliding or session windows easier to understand? Are the differences important to you?
 
-### How to give feedback
+#### How to give feedback
 
 You can try out the new layout shift metrics on any site using our [example JavaScript implementations](https://github.com/mmocny/web-vitals/wiki/Snippets-for-LSN-using-PerformanceObserver) or our [fork of the Core Web Vitals extension](https://github.com/mmocny/web-vitals-extension/tree/experimental-ls).
 
