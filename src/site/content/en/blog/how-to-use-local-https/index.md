@@ -21,7 +21,7 @@ cases](/when-to-use-local-https), you need to run your site locally with HTTPS. 
 at how to do this.
 
 **⏩ Are you looking for quick instructions, or have you been here before?
-Skip to the [Cheatsheet](/#using-mkcert:-cheatsheet).**
+Skip to the [Cheatsheet](#using-mkcert:-cheatsheet).**
 
 ## Running your site locally with HTTPS using mkcert (recommended)
 
@@ -160,7 +160,7 @@ The mkcert we're interested in in this post is [this one](https://github.com/Fil
 
     ```json
     "scripts": {
-    "start": "HTTPS=true SSL_CRT_FILE={PATH/TO/CERTIFICATE-FILENAME}.pem SSL_KEY_KILE={PATH/TO/CERTIFICATE-KEY-FILENAME}.pem react-scripts start"
+    "start": "HTTPS=true SSL_CRT_FILE={PATH/TO/CERTIFICATE-FILENAME}.pem SSL_KEY_FILE={PATH/TO/CERTIFICATE-KEY-FILENAME}.pem react-scripts start"
     ```
 
     For example, if you've created a certificate for `localhost` that is located in your site's root directory as follows:
@@ -177,7 +177,7 @@ The mkcert we're interested in in this post is [this one](https://github.com/Fil
 
     ```json
     "scripts": {
-        "start": "HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_KILE=localhost-key.pem react-scripts start"
+        "start": "HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem react-scripts start"
     ```
 
     **👩🏻‍💻 Other examples:**
