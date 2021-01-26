@@ -275,8 +275,8 @@ async function concatStringStream(stream) {
 concatStringStream(stream).then((result) => console.log('Stream complete', result));
 ```
 
-The next (a bit contrived) code sample shows how you could implement a "shouting" service worker
-that uppercases all text by consuming the returned `fetch()` response promise
+The next (a bit contrived) code sample shows how you could implement a "shouting" version of `fetch()`
+that uppercases all text by consuming the returned response promise
 [as a stream](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams#consuming_a_fetch_as_a_stream)
 and uppercasing chunk by chunk. The advantage of this approach is that you do not need to wait for
 the whole document to be downloaded, which can make a huge difference when dealing with large files.
