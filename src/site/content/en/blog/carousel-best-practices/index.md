@@ -6,16 +6,19 @@ authors:
   - katiehempenius
 description:  Learn how to optimize carousels for performance and usability.
 date: 2021-01-26
-hero: hero.jpeg
+hero: hero.jpg
 tags:
   - blog
   - fast
   - performance
   - web-vitals
-  - internationalization
 ---
 
 A carousel is a UX component that displays content in slideshow-like manner. Carousels can "autoplay" or be navigated manually by users. Although carousels can be used elsewhere, they are most frequently used to display images, products, and promotions on homepages.
+
+<figure class="w-figure">
+  <img src="./carousel-example.png" alt="Image showing a carousel" class="w-screenshot">
+</figure>
 
 ## Performance
 
@@ -51,14 +54,14 @@ Optimizing the performance of a carousel entails optimizing both its technical a
 
 Carousel content should be loaded via the page's HTML markup so that it is discoverable by the browser early in the page load process. Using JavaScript to initiate the loading of carousel content is probably the single biggest performance mistake to avoid when using carousels. This delays image loading and can negatively impact LCP.
 
-An advanced carousel optimization that deviates slightly from this approach consists of loading the first slide statically, then progressively enhancing it to include navigation controls and additional content. This technique is most applicable to environments where you have a user's prolonged attention - this gives the additional content time to load. In environments like home pages, where users may only stick around for a second or two, only loading a single image may be similarly effective.
+An advanced carousel optimization that deviates slightly from this approach consists of loading the first slide statically, then progressively enhancing it to include navigation controls and additional content. This technique is most applicable to environments where you have a user's prolonged attention-this gives the additional content time to load. In environments like home pages, where users may only stick around for a second or two, only loading a single image may be similarly effective.
 
 
 #### Use modern technology
 
 Many sites use third-party JavaScript libraries to implement carousels. If you currently use older carousel tooling, you may be able to improve performance by switching to newer tooling. Newer tools tend to use more efficient APIs and are less likely to require additional dependencies like jQuery.
 
-However, you may not need JavaScript at all. The new [scroll-snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap) API makes it possible to build full-featured, native-like carousels using only HTML and CSS - no JavaScript required.
+However, you may not need JavaScript at all. The new [scroll-snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap) API makes it possible to build full-featured, native-like carousels using only HTML and CSS-no JavaScript required.
 
 Here are some resources on using scroll-snap that you may find helpful:
 
@@ -86,7 +89,7 @@ These are the key points to understanding how LCP calculation works for carousel
 
 
 
-*   LCP considers page elements as they are painted to the frame. New candidates for the LCP element are no longer considered once the user interacts (taps, scrolls, or keypresses) with the page. Thus, any slide in an autoplaying carousel has the potential to be the final LCP element - whereas in a static carousel only the first slide would be a potential LCP candidate.
+*   LCP considers page elements as they are painted to the frame. New candidates for the LCP element are no longer considered once the user interacts (taps, scrolls, or keypresses) with the page. Thus, any slide in an autoplaying carousel has the potential to be the final LCP element-whereas in a static carousel only the first slide would be a potential LCP candidate.
 *   If two equally sized images are rendered, the first image will be considered the LCP element. The LCP element is only updated when the LCP candidate is larger than the current LCP element. Thus, if all carousel elements are equally sized, the LCP element should be the first image that is displayed.
 *   When evaluating LCP candidates, LCP considers the "[the visible size or the intrinsic size, whichever is smaller](https://web.dev/lcp)." Thus, if an autoplaying carousel displays images at a consistent size, but contains images of varying [intrinsic sizes](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size) that are smaller than the display size, the LCP element may change as new slides are displayed. In this case, if all images are displayed at the same size, the image with the largest intrinsic size will be considered the LCP element. To keep LCP low, you should ensure that all items in an autoplaying carousel are the same intrinsic size.
 
@@ -95,7 +98,7 @@ These are the key points to understanding how LCP calculation works for carousel
 
 As of [Chrome 88](https://chromium.googlesource.com/chromium/src/+/master/docs/speed/metrics_changelog/2020_11_lcp.md), images that are later removed from the DOM are considered as potential largest contentful paints. Prior to Chrome 88, these images were excluded from consideration. For sites that use autoplaying carousels, this definition change will either have a neutral or positive impact on LCP scores.
 
-This change was made in response to the [observation](https://github.com/anniesullie/LCP_Examples/tree/master/removed_from_dom) that many sites implement carousel transitions by removing the previously displayed image from the DOM tree. Prior to Chrome 88, each time that a new slide was presented, the removal of the previous element would trigger an LCP update. This change only affects autoplaying carousels - by definition, potential largest contentful paints can only occur before a user first interacts with the page.
+This change was made in response to the [observation](https://github.com/anniesullie/LCP_Examples/tree/master/removed_from_dom) that many sites implement carousel transitions by removing the previously displayed image from the DOM tree. Prior to Chrome 88, each time that a new slide was presented, the removal of the previous element would trigger an LCP update. This change only affects autoplaying carousels-by definition, potential largest contentful paints can only occur before a user first interacts with the page.
 
 
 ## Other considerations
@@ -108,12 +111,12 @@ This section discusses UX and product best practices that you should keep in min
 
 #### Provide prominent navigation controls
 
-Carousel navigation controls should be easy to click and highly visible. This is something that is rarely done well - most carousels have navigation controls that are both small and subtle. Keep in mind that a single color or style of navigation control will rarely work in all situations. For example, an arrow that is clearly visible against a dark background might be difficult to see against a light background.
+Carousel navigation controls should be easy to click and highly visible. This is something that is rarely done well-most carousels have navigation controls that are both small and subtle. Keep in mind that a single color or style of navigation control will rarely work in all situations. For example, an arrow that is clearly visible against a dark background might be difficult to see against a light background.
 
 
 #### Indicate navigation progress
 
-Carousel navigation controls should provide context about the total number of slides and the user's progress through them. This information makes it easier for the user to navigate to a particular slide and understand which content has already been viewed. In some situations providing a preview of upcoming content - whether it be an excerpt of the next slide or a list of thumbnails - can also be helpful and increase engagement.
+Carousel navigation controls should provide context about the total number of slides and the user's progress through them. This information makes it easier for the user to navigate to a particular slide and understand which content has already been viewed. In some situations providing a preview of upcoming content -whether it be an excerpt of the next slide or a list of thumbnails-can also be helpful and increase engagement.
 
 
 #### Support mobile gestures
@@ -135,7 +138,7 @@ The use of autoplay creates two almost paradoxical problems: on-screen animation
 
 Thus, it's a rare scenario that autoplay is an appropriate good choice. If content is important, not using autoplay will maximize its exposure; if carousel content is not important, then the use of autoplay will detract from more important content. In addition, autoplaying carousels can be difficult to read (and annoying, too). People read at different speeds, so it's rare that a carousel consistently transitions at the "right" time.
 
-Ideally, slide navigation should be user-directed via navigation controls. If you must use autoplay, autoplay should disable on user hover. In addition, the slide transition rate should take slide content into account -  the more text that a slide contains, the longer it should be displayed on screen.
+Ideally, slide navigation should be user-directed via navigation controls. If you must use autoplay, autoplay should disable on user hover. In addition, the slide transition rate should take slide content into account-the more text that a slide contains, the longer it should be displayed on screen.
 
 
 #### Keep text and images separate
@@ -156,7 +159,7 @@ However, carousels are not always used effectively.
 
 
 
-*   Carousels, particularly if they contain promotions or advance automatically, are easily [mistaken](https://www.nngroup.com/articles/auto-forwarding/) for advertisements by users. Users tend to ignore advertisements - a phenomenon known as [banner blindness](https://www.nngroup.com/articles/banner-blindness-old-and-new-findings/).
+*   Carousels, particularly if they contain promotions or advance automatically, are easily [mistaken](https://www.nngroup.com/articles/auto-forwarding/) for advertisements by users. Users tend to ignore advertisements-a phenomenon known as [banner blindness](https://www.nngroup.com/articles/banner-blindness-old-and-new-findings/).
 *   Carousels are often used to placate multiple departments and avoid making decisions about business priorities. As a result, carousels can easily turn into a dumping ground for ineffective content.
 
 
@@ -167,4 +170,4 @@ The business impact of carousels, particularly those on homepages, should be eva
 
 #### Be relevant
 
-Carousels work best when they contain interesting and relevant content that is presented with a clear context. If content wouldn't engage a user outside of a carousel - placing it in a carousel won't make it perform any better. If you must use a carousel, prioritize content and ensure that each slide is sufficiently relevant that a user would want to click through to the subsequent slide.
+Carousels work best when they contain interesting and relevant content that is presented with a clear context. If content wouldn't engage a user outside of a carousel-placing it in a carousel won't make it perform any better. If you must use a carousel, prioritize content and ensure that each slide is sufficiently relevant that a user would want to click through to the subsequent slide.
