@@ -11,16 +11,7 @@ tags:
   - security
 ---
 
-<hr/>
-
-**Outline:**
-
-- [Running your site locally with HTTPS using mkcert (recommended)](<#running-your-site-locally-with-https-using-mkcert-(recommended)>)
-- [Running your site locally with HTTPS: other options](#running-your-site-locally-with-https:-other-options)
-
-<hr/>
-
-_In this article, statements about `localhost` are valid for `127.0.0.1` and `[::1]` as well, since they both describe the local computer address, also called "loopback address". Also, to keep things simple, the port number isn't specified._
+_In this post, statements about `localhost` are valid for `127.0.0.1` and `[::1]` as well, since they both describe the local computer address, also called "loopback address". Also, to keep things simple, the port number isn't specified._
 _So when you see `http://localhost`, read it as `http://localhost:{PORT}` or `http://127.0.0.1:{PORT}`._
 
 If your production website uses HTTPS, you want your local development site to behave **like an
