@@ -24,45 +24,43 @@ This section discusses the performance impact of carousels and best practices fo
 
 ### Impact
 
-A well-implemented carousel, in and of itself, should have very minimal or no impact on performance. That being said, carousels often contain large media assets. Large assets can impact performance regardless of whether they are displayed in a carousel or elsewhere.
+A well-implemented carousel, in and of itself, should have very minimal or no impact on performance. However, carousels often contain large media assets. Large assets can impact performance regardless of whether they are displayed in a carousel or elsewhere.
 
 
-*   **LCP**
+*   **LCP (Largest Contentful Paint)**
 
     Large, above-the-fold carousels often contain the page's LCP element, and therefore can have a significant impact on LCP. In these scenarios, optimizing the carousel may significantly improve LCP.
 
-    For an in-depth explanation of how LCP measurement works on pages containing carousels, refer to the Appendix.
+    For an in-depth explanation of how LCP measurement works on pages containing carousels, refer to the [LCP measurement for carousels](#lcp-measurement-for-carousels) section.
 
-*   **FID**
+*   **FID (First Input Delay)**
 
     Carousels have minimal JavaScript requirements and therefore should not impact page interactivity. If you discover that your site's carousel has long-running scripts, you should consider replacing your carousel tooling.
 
-*   **CLS**
+*   **CLS (Cumulative Layout Shift)**
 
-    A surprising number of carousels use janky, non-composited animations that can contribute to CLS. On pages with autoplaying carousels, this has the potential to cause infinite CLS. This  type of CLS typically isn't apparent to the human eye, which makes this issue easy to overlook. To avoid this issue, [avoid using non-composited animations](https://web.dev/non-composited-animations/) in your carousel (for example, during slide transitions).
+    A surprising number of carousels use janky, non-composited animations that can contribute to CLS. On pages with autoplaying carousels, this has the potential to cause infinite CLS. This type of CLS typically isn't apparent to the human eye, which makes the issue easy to overlook. To avoid this issue, [avoid using non-composited animations](/non-composited-animations/) in your carousel (for example, during slide transitions).
 
 
 ### Best practices
 
-Optimizing the performance of a carousel entails optimizing both its technical architecture and its content.
+Optimizing the performance of a carousel includes optimizing both its technical architecture and its content.
 
 
 #### Load carousel content using HTML
 
 Carousel content should be loaded via the page's HTML markup so that it is discoverable by the browser early in the page load process. Using JavaScript to initiate the loading of carousel content is probably the single biggest performance mistake to avoid when using carousels. This delays image loading and can negatively impact LCP.
 
-An advanced carousel optimization that deviates slightly from this approach consists of loading the first slide statically, then progressively enhancing it to include navigation controls and additional content. This technique is most applicable to environments where you have a user's prolonged attention - this gives the additional content time to load. In environments like home pages, where users may only stick around for a second or two, only loading a single image may be similarly effective.
+For advanced carousel optimization, consider loading the first slide statically, then progressively enhancing it to include navigation controls and additional content. This technique is most applicable to environments where you have a user's prolonged attention - this gives the additional content time to load. In environments like home pages, where users may only stick around for a second or two, only loading a single image may be similarly effective.
 
 
 #### Use modern technology
 
-Many sites use third-party JavaScript libraries to implement carousels. If you currently use older carousel tooling, you may be able to improve performance by switching to newer tooling. Newer tools tend to use more efficient APIs and are less likely to require additional dependencies like jQuery.
+Many sites use [third-party JavaScript](/third-party-javascript) libraries to implement carousels. If you currently use older carousel tooling, you may be able to improve performance by switching to newer tooling. Newer tools tend to use more efficient APIs and are less likely to require additional dependencies like jQuery.
 
-However, you may not need JavaScript at all. The new [scroll-snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap) API makes it possible to build full-featured, native-like carousels using only HTML and CSS - no JavaScript required.
+However, you may not need JavaScript at all. The new [Scroll Snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap) API makes it possible to build full-featured, native-like carousels using only HTML and CSS - no JavaScript required.
 
 Here are some resources on using scroll-snap that you may find helpful:
-
-
 
 *   [Building a Stories component (web.dev)](https://web.dev/building-a-stories-component/)
 *   [Next-generation web styling: scroll snap (web.dev)](https://web.dev/next-gen-css-2019/#scroll-snap)
@@ -72,10 +70,10 @@ Here are some resources on using scroll-snap that you may find helpful:
 
 #### Optimize carousel content
 
-Carousels often contain some of a site's largest images.  Thus, it can be worth your time to make sure that these images are fully optimized. Choosing the right image format and compression level, [using an image CDN](https://web.dev/image-cdns), and [using srcset to serve multiple image versions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap) are all techniques that can reduce the transfer size of images.
+Carousels often contain some of a site's largest images, so it can be worth your time to make sure that these images are fully optimized. Choosing the right image format and compression level, [using an image CDN](/image-cdns), and [using srcset to serve multiple image versions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap) are all techniques that can reduce the transfer size of images.
 
 
-## Performance Measurement
+## Performance measurement
 
 This section discusses LCP measurement as it relates to carousels. Although carousels are treated no differently than any other UX element during LCP calculation, the mechanics of calculating LCP for autoplaying carousels is a common point of confusion.
 
@@ -84,11 +82,9 @@ This section discusses LCP measurement as it relates to carousels. Although caro
 
 These are the key points to understanding how LCP calculation works for carousels:
 
-
-
 *   LCP considers page elements as they are painted to the frame. New candidates for the LCP element are no longer considered once the user interacts (taps, scrolls, or keypresses) with the page. Thus, any slide in an autoplaying carousel has the potential to be the final LCP element - whereas in a static carousel only the first slide would be a potential LCP candidate.
 *   If two equally sized images are rendered, the first image will be considered the LCP element. The LCP element is only updated when the LCP candidate is larger than the current LCP element. Thus, if all carousel elements are equally sized, the LCP element should be the first image that is displayed.
-*   When evaluating LCP candidates, LCP considers the "[the visible size or the intrinsic size, whichever is smaller](https://web.dev/lcp)." Thus, if an autoplaying carousel displays images at a consistent size, but contains images of varying [intrinsic sizes](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size) that are smaller than the display size, the LCP element may change as new slides are displayed. In this case, if all images are displayed at the same size, the image with the largest intrinsic size will be considered the LCP element. To keep LCP low, you should ensure that all items in an autoplaying carousel are the same intrinsic size.
+*   When evaluating LCP candidates, LCP considers the "[visible size or the intrinsic size, whichever is smaller](/lcp)." Thus, if an autoplaying carousel displays images at a consistent size, but contains images of varying [intrinsic sizes](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size) that are smaller than the display size, the LCP element may change as new slides are displayed. In this case, if all images are displayed at the same size, the image with the largest intrinsic size will be considered the LCP element. To keep LCP low, you should ensure that all items in an autoplaying carousel are the same intrinsic size.
 
 
 ### Changes to LCP calculation for carousels in Chrome 88
@@ -133,9 +129,9 @@ Because it's unlikely that most users will engage with all carousel content, the
 
 The use of autoplay creates two almost paradoxical problems: on-screen animations tend to distract users and move the eyes away from more important content; simultaneously, because users often associate animations with ads, they will ignore carousels that autoplay.
 
-Thus, it's a rare scenario that autoplay is an appropriate good choice. If content is important, not using autoplay will maximize its exposure; if carousel content is not important, then the use of autoplay will detract from more important content. In addition, autoplaying carousels can be difficult to read (and annoying, too). People read at different speeds, so it's rare that a carousel consistently transitions at the "right" time.
+Thus, it's a rare that autoplay is a good choice. If content is important, not using autoplay will maximize its exposure; if carousel content is not important, then the use of autoplay will detract from more important content. In addition, autoplaying carousels can be difficult to read (and annoying, too). People read at different speeds, so it's rare that a carousel consistently transitions at the "right" time for different users.
 
-Ideally, slide navigation should be user-directed via navigation controls. If you must use autoplay, autoplay should disable on user hover. In addition, the slide transition rate should take slide content into account -  the more text that a slide contains, the longer it should be displayed on screen.
+Ideally, slide navigation should be user-directed via navigation controls. If you must use autoplay, autoplay should be disabled on user hover. In addition, the slide transition rate should take slide content into account -  the more text that a slide contains, the longer it should be displayed on screen.
 
 
 #### Keep text and images separate
@@ -153,8 +149,6 @@ You only have a fraction of a second to catch a user's attention. Short, to-the-
 Carousels work well in situations where using additional vertical space to display additional content is not an option. Carousels on product pages are often a good example of this use case.
 
 However, carousels are not always used effectively.
-
-
 
 *   Carousels, particularly if they contain promotions or advance automatically, are easily [mistaken](https://www.nngroup.com/articles/auto-forwarding/) for advertisements by users. Users tend to ignore advertisements - a phenomenon known as [banner blindness](https://www.nngroup.com/articles/banner-blindness-old-and-new-findings/).
 *   Carousels are often used to placate multiple departments and avoid making decisions about business priorities. As a result, carousels can easily turn into a dumping ground for ineffective content.
