@@ -260,7 +260,7 @@ the `text` field, or occasionally in the `title` field.
 
 As of early 2021, the Web Share Target API is supported by:
 
-- Chrome and Edge 76+ on Android.
+- Chrome and Edge 76 or later on Android.
 - Chrome 89+ on Chrome OS.
 
 On all platforms, your web app has to be [installed][installability] before it will show up as a
