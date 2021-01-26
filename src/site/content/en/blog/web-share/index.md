@@ -160,7 +160,8 @@ As of early 2021, using the API to share title, text, and URL is supported by:
 
 Using the API to share files is supported by:
 
-- Chrome 75+ on Android, and 89+ on Chrome OS and Windows.
+- Chrome 75 or later on Android
+- 89 or later on Chrome OS and Windows.
 
 (Most Chromium-based browsers, like Edge, have the same support for this feature as the
 corresponding version of Chrome.)
