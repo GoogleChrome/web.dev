@@ -420,28 +420,26 @@ const readableStream = new ReadableStream({
   },
 });
 
-(async () => {
-  // Create two `ReadableStream`s.
-  const [streamA, streamB] = readableStream.tee();
+// Create two `ReadableStream`s.
+const [streamA, streamB] = readableStream.tee();
 
-  // Read streamA iteratively one by one. Typically, you
-  // would not do it this way, but you certainly can.
-  const readerA = streamA.getReader();
-  console.log('[A]', await readerA.read()); //=> {value: "a", done: false}
-  console.log('[A]', await readerA.read()); //=> {value: "b", done: false}
-  console.log('[A]', await readerA.read()); //=> {value: "c", done: false}
-  console.log('[A]', await readerA.read()); //=> {value: "d", done: false}
-  console.log('[A]', await readerA.read()); //=> {value: undefined, done: true}
+// Read streamA iteratively one by one. Typically, you
+// would not do it this way, but you certainly can.
+const readerA = streamA.getReader();
+console.log('[A]', await readerA.read()); //=> {value: "a", done: false}
+console.log('[A]', await readerA.read()); //=> {value: "b", done: false}
+console.log('[A]', await readerA.read()); //=> {value: "c", done: false}
+console.log('[A]', await readerA.read()); //=> {value: "d", done: false}
+console.log('[A]', await readerA.read()); //=> {value: undefined, done: true}
 
-  // Read streamB in a loop. This is the more common way
-  // to read data from the stream.
-  const readerB = streamB.getReader();
-  while (true) {
-    const result = await readerB.read();
-    if (result.done) break;
-    console.log('[B]', result);
-  }
-})();
+// Read streamB in a loop. This is the more common way
+// to read data from the stream.
+const readerB = streamB.getReader();
+while (true) {
+  const result = await readerB.read();
+  if (result.done) break;
+  console.log('[B]', result);
+}
 ```
 
 ## Readable byte streams
@@ -684,7 +682,7 @@ const readableStream = new ReadableStream({
     controller.enqueue('b');
     controller.enqueue('c');
   },
-  async pull(controller) {
+  pull(controller) {
     // Called when controller's queue is empty.
     console.log('[pull]');
     controller.enqueue('d');
@@ -702,8 +700,13 @@ const writableStream = new WritableStream({
     console.log('[start writable]');
   },
   write(chunk, controller) {
-    // Called when writer.write()
+    // Called upon writer.write()
     console.log('[write]', chunk);
+    // Wait for next write.
+    await new Promise((resolve) => setTimeout(() => {
+      document.body.textContent += chunk;
+      resolve();
+    }, 1_000));
   },
   close(controller) {
     console.log('[close]');
@@ -713,10 +716,8 @@ const writableStream = new WritableStream({
   },
 });
 
-(async () => {
-  await readableStream.pipeTo(writableStream);
-  console.log('[finished]');
-})();
+await readableStream.pipeTo(writableStream);
+console.log('[finished]');
 ```
 
 ## Creating a transform stream
@@ -965,7 +966,11 @@ while (true) {
 
 ## Acknowledgements
 
-This article was reviewed by [Joe Medley](https://github.com/jpmedley).
+This article was reviewed by
+[Jake Archibald](https://jakearchibald.com/),
+[François Beaufort](https://github.com/beaufortfrancois),
+[Sam Dutton](https://samdutton.com/), and
+[Joe Medley](https://github.com/jpmedley).
 [Jake Archibald](https://jakearchibald.com/)'s blog posts have helped me a lot in understanding
 streams. Some of the code samples are inspired by GitHub user
 [@bellbind](https://gist.github.com/bellbind/f6a7ba88e9f1a9d749fec4c9289163ac)'s explorations and
