@@ -963,6 +963,7 @@ while (true) {
 - [Streams polyfill](https://github.com/MattiasBuelens/web-streams-polyfill)
 - [2016—the year of web streams](https://jakearchibald.com/2016/streams-ftw/)
 - [Async iterators and generators](https://jakearchibald.com/2017/async-iterators-and-generators/)
+- [Stream Visualizer](https://surma.dev/lab/whatwg-stream-visualizer/lab.html)
 
 ## Acknowledgements
 
