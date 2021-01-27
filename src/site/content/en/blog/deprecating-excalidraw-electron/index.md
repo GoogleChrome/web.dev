@@ -204,11 +204,11 @@ it.
 
 ### File system access
 
-Excalidraw uses [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs) for
+Excalidraw uses [browser-fs-access](https://github.com/GoogleChromeLabs/browser-fs-access) for
 accessing the file system of the operating system. On supporting browsers, this allows for a true
 open→edit→save workflow and actual over-saving and "save as", with a transparent fallback for
 other browsers. You can learn more about this feature in my blog post
-[Reading and writing files and directories with the browser-nativefs library](browser-nativefs/).
+[Reading and writing files and directories with the browser-fs-access library](browser-fs-access/).
 
 ### Drag and drop support
 
