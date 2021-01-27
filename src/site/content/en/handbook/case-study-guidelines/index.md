@@ -26,11 +26,11 @@ A very effective approach for case study messaging is to highlight a correlation
 between the changes that the web developers made and a business metric
 improvement. Examples:
 
-* [Clipchamp's video editor PWA installs see a 97% monthly growth](https://web.dev/clipchamp/)
-* [PWA users are 2.5x more likely to purchase Gravit Designer PRO](https://web.dev/gravit-designer/)
-* [JD.ID improves their mobile conversion rate by 53% with caching strategies, installation, and push notifications](https://web.dev/jdid/)
-* [Rakuten 24’s investment in PWA increases user retention by 450%](https://web.dev/rakuten-24/)
-* [How focusing on web performance improved Tokopedia's click-through rate by 35%](https://web.dev/tokopedia/)
+* [Clipchamp's video editor PWA installs see a 97% monthly growth](/clipchamp/)
+* [PWA users are 2.5x more likely to purchase Gravit Designer PRO](/gravit-designer/)
+* [JD.ID improves their mobile conversion rate by 53% with caching strategies, installation, and push notifications](/jdid/)
+* [Rakuten 24's investment in PWA increases user retention by 450%](/rakuten-24/)
+* [How focusing on web performance improved Tokopedia's click-through rate by 35%](/tokopedia/)
 
 The reason this is important is because web development teams often need to
 persuade business stakeholders before they can make any significant changes
