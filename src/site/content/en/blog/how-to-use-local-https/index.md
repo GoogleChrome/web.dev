@@ -207,7 +207,7 @@ To run your local development site with HTTPS:
     If you haven't yet, install mkcert, for example on macOS:
 
     ```bash
-    mkcert -install
+    brew install mkcert
 
     ```
 
@@ -227,7 +227,7 @@ To run your local development site with HTTPS:
 
     This create a valid certificate (that will be signed by `mkcert` automatically).
 
-3.  Configure your development server to use HTTPS and the certificate you've created in Step 1.
+3.  Configure your development server to use HTTPS and the certificate you've created in Step 2.
 4.  ✨ You're done! You can now access `https://{YOUR HOSTNAME}` in your browser, without warnings
 
 {% Banner 'caution' %}
