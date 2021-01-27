@@ -13,8 +13,9 @@ tags:
   - performance
 ---
 
-*TLDR: Chromium is updating its hardware-acceleration capabilities to SVG animations,
-percentage-based transformations, and more.*
+*TLDR: Chromium is updating its hardware-acceleration capabilities automatically
+for SVG animations,
+percentage-based transformations, and soon, background-color and clip-path animations.*
 
 When it comes to web animation performance, the terms "hardware-accelerated" and "GPU-accelerated"
 animations will likely come up. But what do these even mean? Hardware-accelerated styles are those
@@ -26,6 +27,8 @@ Using the GPU to offload graphic-intensive transitions and animations means smoo
 less jank, as these animations are not affected by the main thread. By pulling them off the main
 thread, your animations bypass the crust of other active scripts running on your page, which would
 slow down your visuals and create jank. 
+
+## Enabling hardware-accelerated animations
 
 Hardware-accelerated animations are composited as layers and help developers achieve buttery-smooth
 60 FPS (frames-per-second) animations to improve visual rendering performance. There are currently a
