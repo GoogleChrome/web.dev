@@ -32,13 +32,13 @@ On the [Excalidraw project](https://github.com/excalidraw), we have decided to
 deprecate [Excalidraw Desktop](https://github.com/excalidraw/excalidraw-desktop), an
 [Electron](https://www.electronjs.org/) wrapper for Excalidraw, in favor of the web version that you
 can—and always could—find at [excalidraw.com](https://excalidraw.com/). After a careful analysis, we
-have decided that [Progressive Web App](https://web.dev/pwa/) (PWA) is the future we want to build
+have decided that [Progressive Web App](/pwa/) (PWA) is the future we want to build
 upon. Read on to learn why.
 
 ## How Excalidraw Desktop came into being
 
 Soon after [@vjeux](https://twitter.com/vjeux) created the initial version of Excalidraw in
-January 2020 and [blogged about it](reflections-on-excalidraw/), he proposed the following in
+January 2020 and [blogged about it](https://blog.excalidraw.com/reflections-on-excalidraw/), he proposed the following in
 [Issue #561](https://github.com/excalidraw/excalidraw/issues/561#issue-555138343):
 
 > Would be great to wrap Excalidraw within Electron (or equivalent) and publish it as a [platform-specific]
@@ -172,7 +172,7 @@ outline why we think we do not need Electron.
 
 ### Installable Progressive Web App
 
-Excalidraw today is an [installable](https://web.dev/installable/) Progressive Web App with a
+Excalidraw today is an [installable](/installable/) Progressive Web App with a
 [service worker](https://excalidraw.com/service-worker.js) and a
 [Web App Manifest](https://excalidraw.com/manifest.json). It caches all its resources in two caches,
 one for fonts and font-related CSS, and one for everything else.
@@ -212,12 +212,12 @@ Excalidraw uses [browser-nativefs](https://github.com/GoogleChromeLabs/browser-n
 accessing the file system of the operating system. On supporting browsers, this allows for a true
 open→edit→save workflow and actual over-saving and "save as", with a transparent fallback for
 other browsers. You can learn more about this feature in my blog post
-[Reading and writing files and directories with the browser-nativefs library](browser-nativefs/).
+[Reading and writing files and directories with the browser-nativefs library](https://blog.excalidraw.com/browser-nativefs/).
 
 ### Drag and drop support
 
 Files can be dragged and dropped onto the Excalidraw window just as in platform-specific applications. On a
-browser that supports the [File System Access API](https://web.dev/file-system-access/), a dropped
+browser that supports the [File System Access API](/file-system-access/), a dropped
 file can be immediately edited and the modifications be saved to the original file. This is so
 intuitive that you sometimes forget that you are dealing with a web app.
 
@@ -235,7 +235,7 @@ tools like [SVGOMG](https://jakearchibald.github.io/svgomg/).
 
 ### File handling
 
-Excalidraw already supports the experimental [File Handling API](https://web.dev/file-handling/),
+Excalidraw already supports the experimental [File Handling API](/file-handling/),
 which means `.excalidraw` files can be double-clicked in the operating system's file manager and
 open directly in the Excalidraw app, since Excalidraw registers as a file handler for `.excalidraw`
 files in the operating system.
@@ -260,7 +260,7 @@ behind. Best viewed in _any_ browser.
 
 Electron has served us well, but in 2020 and beyond, we can live without it. Oh, and for that
 objective of [@vjeux](https://github/com/vjeux): since the Android Play Store now accepts PWAs in a
-container format called [Trusted Web Activity](https://web.dev/using-a-pwa-in-your-android-app/) and
+container format called [Trusted Web Activity](/using-a-pwa-in-your-android-app/) and
 since the
 [Microsoft Store supports PWAs](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-edgehtml/microsoft-store),
 too, you can expect Excalidraw in these stores in the not too distant future. Meanwhile, you can
