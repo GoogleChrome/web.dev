@@ -58,7 +58,7 @@ automatically applied for SVG animations in Chromium 88+.
 
 ### Example
 
-Let’s take a look at the differences between an SVG animation with and without hardware acceleration turned on. Loading indicators are commonly-used UI elements, such as this one seen on facebook.com. These indicators hint at work being done on the server, while the user waits for a response. In the case shown here, the response would be to load additional results in the sidebar.
+Let's take a look at the differences between an SVG animation with and without hardware acceleration turned on. Loading indicators are commonly-used UI elements, such as this one seen on facebook.com. These indicators hint at work being done on the server, while the user waits for a response. In the case shown here, the response would be to load additional results in the sidebar.
 
 <figure class="w-figure">
   <img src="./fbsidebar.gif" alt="Facebook sidebar UI">
@@ -85,7 +85,7 @@ the DevTools Rendering panel, when turning on Paint flashing.
 Taking a closer look at the Performance panel, you can again see this effect,
 and how it affects the overall performance of your web property. You avoid
 rendering and painting time completely for the animation, meaning smoother
-animations and more performant applications. While Facebook won’t be shipping
+animations and more performant applications. While Facebook won't be shipping
 this SVG-based loader until browser support for hardware-accelerated SVG is
 greater, it would allow for more flexibility in terms of theming, scaling and
 resolution requirements, and easier maintenance.
