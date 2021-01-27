@@ -31,7 +31,9 @@ However, in the following cases, you'll need HTTPS for local development:
     <figcaption class="w-figcaption">When to use HTTPS for local development.</figcaption>
   </figure>
 
-If you're in this case, check **[How to use HTTPS for local development](/how-to-use-local-https)**.
+{% Aside %}
+If you need HTTPS for one of the above use cases, check out [How to use HTTPS for local development](/how-to-use-local-https).
+{% endAside %}
 
 ✨ This is all you need to know. If you're interested in more details keep reading!
 
@@ -78,7 +80,7 @@ You need to use HTTPS for local development in the following cases:
 
 ## How to use HTTPS for local development
 
-If you need to use HTTPS for local development, head over to **[How to use HTTPS for local development](/how-to-use-local-https)**.
+If you need to use HTTPS for local development, head over to [How to use HTTPS for local development](/how-to-use-local-https).
 
 ## Tips if you're using a custom hostname
 
