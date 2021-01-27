@@ -37,7 +37,7 @@ persuade business stakeholders before they can make any significant changes
 to their website or processes. Business stakeholders won't agree to these
 changes unless there is evidence that the ROI is worthwhile.
 
-## Organize your content as an inverted pyramid {: #inverted-pyramid }
+## Organize the beginning of your content as an inverted pyramid {: #inverted-pyramid }
 
 The [inverted pyramid](https://www.nngroup.com/articles/inverted-pyramid/)
 is a journalism best practice. Organize your content so that the most
@@ -82,4 +82,40 @@ Avoid the urge to talk too much about the partner. It's OK to share some context
 (1-3 sentences) so that the readers understand what the company/product does. If
 it gets too long, though, it begins to sound like a sales pitch.
 
+## General organization {: #organization }
+
+After you have optimized your title, subtitle, and introduction, we can give you
+more flexibility around how you organize the rest of your ideas. In other words,
+you don't need to strictly follow an inverted pyramid approach throughout the
+entire case study.
+
+The [Scale on web case studies][scale] use the following pattern:
+
+* Highlighting the opportunity
+* The tools they used
+* Overall business results
+
+The [BookMyShow case study](https://developers.google.com/web/showcase/2017/bookmyshow)
+demonstrates another common organization:
+
+* Challenge
+* Solution
+
+## Hero images {: #hero }
+
+A well-designed hero image is a good way to make your case study look
+attractive and professional. In general, the web.dev team doesn't have resources
+to create custom hero images for you. See [Hero images](/handbook/markup-media/#hero)
+for dimension requirements.
+
+## Examples {: #examples }
+
+The [Scale on web case studies](/tags/scale-on-web/) case studies are the best case studies
+we've produced to date, in terms of aligning with the case study guidelines.
+
+You can check out [all of our case studies](/tags/case-study/) for more ideas,
+but be aware that they may not follow the case study guidelines as
+closely as the [Scale on web case studies][scale] do.
+
 [five]: https://www.workfront.com/blog/project-management-101-the-5-ws-and-1-h-that-should-be-asked-of-every-project
+[scale]: /tags/scale-on-web/
