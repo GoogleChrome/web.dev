@@ -16,7 +16,12 @@ tags:
 The process of defining a web standard is a lengthy process that ensures usefulness, consistency and
 compatibility across browsers. Today [the W3C and
 IETF](https://www.w3.org/2021/01/pressrelease-webrtc-rec.html.en) mark the completion of perhaps one
-of the most important standards during the pandemic: WebRTC. 
+of the most important standards during the pandemic: WebRTC.
+
+{% Aside %}
+  Check out the [Real-time communication with WebRTC](https://codelabs.developers.google.com/codelabs/webrtc-web)
+  codelab for a hands-on walkthrough of implementing WebRTC.
+{% endAside %}
 
 ## History {: #history }
 
