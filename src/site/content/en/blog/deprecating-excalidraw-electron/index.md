@@ -103,7 +103,7 @@ everywhere". Distributing an app on app stores requires
 certifying app ownership. Packaging an app requires using tools like
 [electron-forge](https://github.com/electron-userland/electron-forge) and thinking about where to
 host packages for app updates. It gets complex relatively quickly, especially when the objective
-truly is cross platform support. I want to note that it is _abolutely_ possible to create stunning
+truly is cross platform support. I want to note that it is _absolutely_ possible to create stunning
 Electron apps with enough effort and dedication. For Excalidraw Desktop, we were not there.
 
 ## Where Excalidraw Desktop left off
