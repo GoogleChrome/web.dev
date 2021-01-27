@@ -1719,5 +1719,17 @@
       "name": "Google",
       "unit": "Chrome"
     }
+  },
+  "huib": {
+    "name": {
+      "given": "Huib",
+      "family": "Kleinhout"
+    },
+    "github": "huibk",
+    "twitter": "HKleinhout",
+    "org": {
+      "name": "Google",
+      "unit": "Cloud"
+    }
   }
 }
