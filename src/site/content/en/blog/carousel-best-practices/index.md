@@ -55,7 +55,7 @@ Optimizing the performance of a carousel includes optimizing both its technical 
 Carousel content should be loaded via the page's HTML markup so that it is discoverable by the browser early in the page load process. Using JavaScript to initiate the loading of carousel content is probably the single biggest performance mistake to avoid when using carousels. This delays image loading and can negatively impact LCP.
 
 
-For advanced carousel optimization, consider loading the first slide statically, then progressively enhancing it to include navigation controls and additional content. This technique is most applicable to environments where you have a user's prolonged attention-this gives the additional content time to load. In environments like home pages, where users may only stick around for a second or two, only loading a single image may be similarly effective.
+For advanced carousel optimization, consider loading the first slide statically, then progressively enhancing it to include navigation controls and additional content. This technique is most applicable to environments where you have a user's prolonged attention—this gives the additional content time to load. In environments like home pages, where users may only stick around for a second or two, only loading a single image may be similarly effective.
 
 
 #### Use modern technology
@@ -88,7 +88,7 @@ This section discusses LCP measurement as it relates to carousels. Although caro
 These are the key points to understanding how LCP calculation works for carousels:
 
 
-*   LCP considers page elements as they are painted to the frame. New candidates for the LCP element are no longer considered once the user interacts (taps, scrolls, or keypresses) with the page. Thus, any slide in an autoplaying carousel has the potential to be the final LCP element-whereas in a static carousel only the first slide would be a potential LCP candidate.
+*   LCP considers page elements as they are painted to the frame. New candidates for the LCP element are no longer considered once the user interacts (taps, scrolls, or keypresses) with the page. Thus, any slide in an autoplaying carousel has the potential to be the final LCP element—whereas in a static carousel only the first slide would be a potential LCP candidate.
 *   If two equally sized images are rendered, the first image will be considered the LCP element. The LCP element is only updated when the LCP candidate is larger than the current LCP element. Thus, if all carousel elements are equally sized, the LCP element should be the first image that is displayed.
 *   When evaluating LCP candidates, LCP considers the "[visible size or the intrinsic size, whichever is smaller](/lcp)." Thus, if an autoplaying carousel displays images at a consistent size, but contains images of varying [intrinsic sizes](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size) that are smaller than the display size, the LCP element may change as new slides are displayed. In this case, if all images are displayed at the same size, the image with the largest intrinsic size will be considered the LCP element. To keep LCP low, you should ensure that all items in an autoplaying carousel are the same intrinsic size.
 
@@ -115,7 +115,7 @@ Carousel navigation controls should be easy to click and highly visible. This is
 
 #### Indicate navigation progress
 
-Carousel navigation controls should provide context about the total number of slides and the user's progress through them. This information makes it easier for the user to navigate to a particular slide and understand which content has already been viewed. In some situations providing a preview of upcoming content -whether it be an excerpt of the next slide or a list of thumbnails-can also be helpful and increase engagement.
+Carousel navigation controls should provide context about the total number of slides and the user's progress through them. This information makes it easier for the user to navigate to a particular slide and understand which content has already been viewed. In some situations providing a preview of upcoming content—whether it be an excerpt of the next slide or a list of thumbnails-can also be helpful and increase engagement.
 
 
 #### Support mobile gestures
@@ -158,7 +158,7 @@ Carousels work well in situations where using additional vertical space to displ
 However, carousels are not always used effectively.
 
 
-*   Carousels, particularly if they contain promotions or advance automatically, are easily [mistaken](https://www.nngroup.com/articles/auto-forwarding/) for advertisements by users. Users tend to ignore advertisements-a phenomenon known as [banner blindness](https://www.nngroup.com/articles/banner-blindness-old-and-new-findings/).
+*   Carousels, particularly if they contain promotions or advance automatically, are easily [mistaken](https://www.nngroup.com/articles/auto-forwarding/) for advertisements by users. Users tend to ignore advertisements—a phenomenon known as [banner blindness](https://www.nngroup.com/articles/banner-blindness-old-and-new-findings/).
 *   Carousels are often used to placate multiple departments and avoid making decisions about business priorities. As a result, carousels can easily turn into a dumping ground for ineffective content.
 
 
@@ -169,4 +169,4 @@ The business impact of carousels, particularly those on homepages, should be eva
 
 #### Be relevant
 
-Carousels work best when they contain interesting and relevant content that is presented with a clear context. If content wouldn't engage a user outside of a carousel-placing it in a carousel won't make it perform any better. If you must use a carousel, prioritize content and ensure that each slide is sufficiently relevant that a user would want to click through to the subsequent slide.
+Carousels work best when they contain interesting and relevant content that is presented with a clear context. If content wouldn't engage a user outside of a carousel—placing it in a carousel won't make it perform any better. If you must use a carousel, prioritize content and ensure that each slide is sufficiently relevant that a user would want to click through to the subsequent slide.
