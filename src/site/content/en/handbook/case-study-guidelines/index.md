@@ -16,7 +16,7 @@ change.
 
 We understand that the partner's motivation is usually to increase awareness of
 their company or product. We believe that it's in the partner's best interest to
-not focus on themselves. By focusing on what's in it for web developers (the
+not focus on themselves too much. By focusing on what's in it for web developers (the
 people who are most likely to read our case studies), we maximize the odds that
 people actually read and share the case study.
 
@@ -73,10 +73,13 @@ began to tell in the title ([example](/betty-crocker/)).
 
 ### Introduction {: #introduction }
 
-The introduction should concisely answer the [Five Ws and How][five].
+The reader, especially business executives, expect the first paragraphs of the
+content to provide a summary of the most important information. A good way to
+ensure that you provide all important information is to systemetically answer
+the [Five Ws and How][five].
 
-Avoid the urge to talk too much about the partner company. It's OK to share some
-context (1-3 sentences) so that the readers understand what the company does.
-If it gets too long, though, it begins to sound like a sales pitch.
+Avoid the urge to talk too much about the partner. It's OK to share some context
+(1-3 sentences) so that the readers understand what the company/product does. If
+it gets too long, though, it begins to sound like a sales pitch.
 
 [five]: https://www.workfront.com/blog/project-management-101-the-5-ws-and-1-h-that-should-be-asked-of-every-project
