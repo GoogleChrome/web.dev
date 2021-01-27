@@ -161,9 +161,19 @@ the DOM as new content becomes available. If any of these new elements is
 larger than the previous largest contentful element, a new `PerformanceEntry`
 will also be reported.
 
-In order to correctly compute LCP in cases such as image carousels, the LCP algorithm 
-considers removed elements. If a page removes an element from the DOM, that element 
-will still be considered.
+If an element that is currently the largest contentful element is removed from
+the viewport (or even removed from the DOM), it will remain the largest
+contentful element unless a larger element is rendered.
+
+{% Aside %}
+  Prior to Chrome 88, removed elements were not considered as largest contentful
+  elements, and removing the current candidate would trigger a new
+  `largest-contentful-paint` entry to be dispatched. However, due to popular UI
+  patterns such as image carousels that often removed DOM elements, the metric
+  was updated to more accurately reflect what users experience. See the
+  [CHANGELOG](https://chromium.googlesource.com/chromium/src/+/master/docs/speed/metrics_changelog/2020_11_lcp.md)
+  for more details.
+{% endAside %}
 
 The browser will stop reporting new entries as soon as the user interacts with
 the page (via a tap, scroll, or keypress), as user interaction often changes
