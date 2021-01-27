@@ -12,7 +12,7 @@ description: |
 authors:
   - thomassteiner
 date: 2021-01-07
-updated: 2021-01-26
+updated: 2021-01-27
 canonical: https://blog.excalidraw.com/deprecating-excalidraw-electron/
 hero: hero.jpg
 alt: |
