@@ -11,6 +11,8 @@ tags:
   - security
 ---
 
+Also see: [When to use HTTPS for local development](/when-to-use-local-https).
+
 _In this post, statements about `localhost` are valid for `127.0.0.1` and `[::1]` as well, since they both describe the local computer address, also called "loopback address". Also, to keep things simple, the port number isn't specified._
 _So when you see `http://localhost`, read it as `http://localhost:{PORT}` or `http://127.0.0.1:{PORT}`._
 
@@ -207,7 +209,7 @@ To run your local development site with HTTPS:
     If you haven't yet, install mkcert, for example on macOS:
 
     ```bash
-    mkcert -install
+    brew install mkcert
 
     ```
 
@@ -227,7 +229,7 @@ To run your local development site with HTTPS:
 
     This create a valid certificate (that will be signed by `mkcert` automatically).
 
-3.  Configure your development server to use HTTPS and the certificate you've created in Step 1.
+3.  Configure your development server to use HTTPS and the certificate you've created in Step 2.
 4.  ✨ You're done! You can now access `https://{YOUR HOSTNAME}` in your browser, without warnings
 
 {% Banner 'caution' %}
