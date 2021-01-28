@@ -1,5 +1,5 @@
 ---
-title: 'Maintaining aspect ratio in CSS'
+title: 'New aspect-ratio CSS property supported in Chromium, Safari Technology Preview, and Firefox Nightly'
 subhead: The new CSS property that helps maintain spacing in responsive layouts.
 authors:
   - una
