@@ -206,7 +206,7 @@ with children that you want to maintain a 1:1 aspect ratio, such as a grid of sp
 
 <figure class="w-figure">
   <video controls autoplay loop muted playsinline>
-    <source src="https://storage.googleapis.com/web-dev-assets/aspect-ratio/gridimages.mp4" type="video/mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/aspect-ratio/gridimages2.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
     Images in a grid with their parent element at various aspect ratio dimensions. <a href="https://codepen.io/una/pen/PoGddaw">See demo on Codepen.</a>
