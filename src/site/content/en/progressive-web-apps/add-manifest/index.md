@@ -5,7 +5,7 @@ authors:
   - petelepage
   - beaufortfrancois
 date: 2018-11-05
-updated: 2021-01-22
+updated: 2021-01-28
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -69,7 +69,6 @@ directory).
     }
   ],
   "description": "Weather forecast information",
-  "categories": ["weather", "news"],
   "screenshots": [
     {
       "src": "/images/screenshot1.png",
@@ -229,22 +228,6 @@ is a dictionary that contains at least a `name` and a `url`.
 
 The `description` property describes the purpose of your app.
 
-#### `categories` {: #categories }
-
-The `categories` property is an array of lowercase strings that indicates the
-categories that best describe your app.
-
-The list of categories is defined in the [Web App Manifest - Application
-Information](https://w3c.github.io/manifest-app-info/#categories-member) spec,
-and include: books, business, donations, education, entertainment, finance,
-fitness, food, fundraising, games, government, health, kids, lifestyle,
-magazines, medical, music, navigation, news, personalization, photo, politics,
-productivity, security, shopping, social, sports, travel, utilities, and
-weather.
-
-To suggest the addition of new categories, file a bug in the [manifest-app-info
-GitHub repository](https://github.com/w3c/manifest-app-info/issues/new).
-
 #### `screenshots` {: #screenshots }
 
 The `screenshots` property is an array of image objects, representing your app
@@ -255,11 +238,10 @@ In Chrome, the image dimensions (width and height) must be at least 320px, and
 only JPEG and PNG image formats are supported.
 
 {% Aside 'gotchas' %}
-The `categories`, `description` and `screenshots` properties are currently used
-only in Chrome for Android when a user wants to install your app. The
-experimental flag `chrome://flags/#mobile-pwa-install-use-bottom-sheet` flag
-must be enabled in Chrome 89.
-
+The `description` and `screenshots` properties are currently used only in Chrome
+for Android when a user wants to install your app. The experimental flag
+`chrome://flags/#mobile-pwa-install-use-bottom-sheet` flag must be enabled in
+Chrome 90.
 {% endAside %}
 
 ## Add the web app manifest to your pages {: #link-manifest }
