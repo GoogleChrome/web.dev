@@ -15,11 +15,11 @@ tags:
 
 {% Aside %}
 
-TLDR: Maintaining a consistent width-to-height ratio, called an *aspect ratio*, is critical in
+Summary: Maintaining a consistent width-to-height ratio, called an *aspect ratio*, is critical in
 responsive web design and for preventing [cumulative layout shift](https://web.dev/cls/). Now,
 there's a more straightforward way to do this with the new `aspect-ratio` property launching in
 [Chromium 88](https://www.chromestatus.com/feature/5738050678161408), [Firefox
-87](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Experimental_features#property_aspect-ratio), and [Safari Technical Preview
+87](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Experimental_features#property_aspect-ratio), and [Safari Technology Preview
 118](https://developer.apple.com/safari/technology-preview/release-notes/).
 
 {% endAside %}
@@ -55,7 +55,7 @@ Some examples of where maintaining aspect ratio become important are:
 ## Object-fit
 
 Defining an aspect ratio helps us with sizing media in a responsive context. Another tool in this
-bucket the `object-fit` property, which enables users to describe how an object (such an as image)
+bucket is the `object-fit` property, which enables users to describe how an object (such an as image)
 within a block should fill that block:
 
 <figure class="w-figure">
@@ -171,7 +171,7 @@ property to do something outside of its usual scope.
 This new property also adds the ability to
 set aspect ratio to `auto`, where "replaced elements with an intrinsic aspect ratio use that aspect
 ratio; otherwise the box has no preferred aspect ratio." If both `auto` and a `<ratio>` are
-specified together, the preferred aspect ratio is the specified ratio of `width` / `height` unless
+specified together, the preferred aspect ratio is the specified ratio of `width` divided by `height` unless
 it is a [replaced element](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element) with
 an intrinsic aspect ratio, in which case that aspect ratio is used instead.
 
@@ -216,7 +216,7 @@ with children that you want to maintain a 1:1 aspect ratio, such as a grid of sp
 ## Example: preventing layout shift
 
 Another great feature of `aspect-ratio` is that it can create placeholder space to prevent
-[cumulative layout shift](/cls/) and deliver better [web vitals](/learn-web-vitals/). In this first
+[Cumulative Layout Shift](/cls/) and deliver better [Web Vitals](/learn-web-vitals/). In this first
 example, loading an asset from an API such as [Unsplash](https://source.unsplash.com/) creates a
 layout shift when the media is finished loading.
 
@@ -276,7 +276,7 @@ Codepen](https://codepen.io/una/pen/gOwJWoz)).
 
 ## Conclusion
 
-With the new `aspect-ratio` CSS property, launching across all modern browsers, maintaining proper
+With the new `aspect-ratio` CSS property, launching across multiple modern browsers, maintaining proper
 aspect ratios in your media and layout containers gets a little bit more straightforward. 
 
 
