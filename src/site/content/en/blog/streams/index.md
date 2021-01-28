@@ -131,9 +131,9 @@ of different sizes and types.
 The chunks placed in a stream are said to be **enqueued**. This means they are waiting in a queue
 ready to be read. An **internal queue** keeps track of the chunks that have not yet been read.
 
-The queue is managed by a **queuing strategy** for the stream. The strategy's **high water mark**
-defines the total number of chunks that should be contained in the internal queue before backpressure
-is applied and a **chunk size** that indicates the size to use for each chunk, in bytes.
+A **queuing strategy** is an object that determines how a stream should signal backpressure based on
+the state of its internal queue. The queuing strategy assigns a size to each chunk, and compares the
+total size of all chunks in the queue to a specified number, known as the **high water mark**.
 
 The chunks inside the stream are read by a **reader**. This reader retrieves the data one chunk at a
 time, allowing you to do whatever kind of operation you want to do on it. The reader plus the other
@@ -533,9 +533,9 @@ another writer to it.
 An **internal queue** keeps track of the chunks that have been written to the stream but not yet
 been processed by the underlying sink.
 
-The queue is managed by a **queuing strategy** for the stream. The strategy's **high water mark**
-defines the total number of chunks that can be contained in the internal queue before backpressure
-is applied and a **chunk size** that indicates the size to use for each chunk, in bytes.
+A **queuing strategy** is an object that determines how a stream should signal backpressure based on
+the state of its internal queue. The queuing strategy assigns a size to each chunk, and compares the
+total size of all chunks in the queue to a specified number, known as the **high water mark**.
 
 The final construct is called a **controller**—each writer has an associated controller that allows
 you to control the stream (for example, to abort it).
