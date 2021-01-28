@@ -185,15 +185,15 @@ The second, likewise optional, argument of the `ReadableStream()` constructor is
 It is an object that optionally defines a queuing strategy for the stream, which takes two
 parameters:
 
-- `highWaterMark`: A non-negative integer that defines the total number of chunks that can be
-  contained in the internal queue before backpressure is applied.
-- `size(chunk)`: A method containing a parameter chunk that indicates the size to use for each
-  chunk, in bytes.
+- `highWaterMark`: A non-negative number indicating the high water mark of the stream using this queuing strategy.
+- `size(chunk)`: A function that computes and returns the finite non-negative size of the given chunk value.
+  The result is used to determine backpressure, manifesting via the appropriate `ReadableStreamDefaultController.desiredSize` property.
+  It also governs when the underlying source's `pull()` method is called.
 
 {% Aside %} You could define your own custom `queuingStrategy`, or use an instance of
 [`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy)
 or [`CountQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy)
-for this object value. If no `queuingStrategy` is supplied, the default used is the same as a
+for this object's value. If no `queuingStrategy` is supplied, the default used is the same as a
 `CountQueuingStrategy` with a `highWaterMark` of `1`. {% endAside %}
 
 #### The `getReader()` and `read()` methods
@@ -493,6 +493,27 @@ function makeReadableByteStream() {
 }
 ```
 
+The second, likewise optional, argument of the `ReadableStream()` constructor is `queuingStrategy`.
+It is an object that optionally defines a queuing strategy for the stream, which takes two
+parameters:
+
+- `highWaterMark`: A non-negative number indicating the high water mark of the stream using this queuing strategy.
+- `size(chunk)`: A function that computes and returns the finite non-negative size of the given chunk value.
+  The result is used to determine backpressure, manifesting via the appropriate `ReadableByteStreamController.desiredSize` property.
+  It also governs when the underlying source's `pull()` method is called.
+
+{% Aside %} You could define your own custom `queuingStrategy`, or use an instance of
+[`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy)
+or [`CountQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy)
+for this object value. If no `queuingStrategy` is supplied, the default used is the same as a
+`CountQueuingStrategy` with a `highWaterMark` of `1`. {% endAside %}
+
+
+- `highWaterMark`: A non-negative number indicating the high water mark of the stream using this queuing strategy.
+- `size(chunk)`: A function that computes and returns the finite non-negative size of the given chunk value.
+  The result is used to determine backpressure, manifesting via the appropriate `ReadableByteStreamController.desiredSize` property.
+  It also governs when the underlying source's `pull()` method is called.
+
 ## The mechanics of a writable stream
 
 A writable stream is a destination into which you can write data, represented in JavaScript by a
@@ -567,10 +588,9 @@ The second, likewise optional, argument of the `WritableStream()` constructor is
 It is an object that optionally defines a queuing strategy for the stream, which takes two
 parameters:
 
-- `highWaterMark`: A non-negative integer that defines the total number of chunks that can be
-  contained in the internal queue before backpressure is applied.
-- `size(chunk)`: A method containing a parameter chunk that indicates the size to use for each
-  chunk, in bytes.
+- `highWaterMark`: A non-negative number indicating the high water mark of the stream using this queuing strategy.
+- `size(chunk)`: A function that computes and returns the finite non-negative size of the given chunk value.
+  The result is used to determine backpressure, manifesting via the appropriate `WritableStreamDefaultWriter.desiredSize` property.
 
 {% Aside %} You could define your own custom `queuingStrategy`, or use an instance of
 [`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy)
@@ -888,7 +908,7 @@ The [Serial API](/serial/) makes heavy use of both readable and writable streams
 // Prompt user to select any serial port.
 const port = await navigator.serial.requestPort();
 // Wait for the serial port to open.
-await port.open({ baudRate: 9600 });
+await port.open({ baudRate: 9_600 });
 const reader = port.readable.getReader();
 
 // Listen to data coming from the serial device.
