@@ -18,10 +18,9 @@ tags:
 TLDR: Maintaining a consistent width-to-height ratio, called an *aspect ratio*, is critical in
 responsive web design and for preventing [cumulative layout shift](https://web.dev/cls/). Now,
 there's a more straightforward way to do this with the new `aspect-ratio` property launching in
-[Chromium 88](https://www.chromestatus.com/feature/5738050678161408) and [Safari Technical Preview
-118](https://developer.apple.com/safari/technology-preview/release-notes/). The feature is also
-supported in [Firefox
-69](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping).
+[Chromium 88](https://www.chromestatus.com/feature/5738050678161408), [Firefox
+87](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Experimental_features#property_aspect-ratio), and [Safari Technical Preview
+118](https://developer.apple.com/safari/technology-preview/release-notes/).
 
 {% endAside %}
 
