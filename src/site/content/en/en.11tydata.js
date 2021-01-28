@@ -18,7 +18,6 @@ module.exports = function () {
     allPaths['fast'],
     allPaths['reliable'],
     allPaths['secure'],
-    allPaths['mini-apps'],
   ].filter(livePaths);
 
   return {
