@@ -3,7 +3,7 @@ title: 'Maintaining aspect ratio in CSS'
 subhead: The new CSS property that helps maintain spacing in responsive layouts.
 authors:
   - una
-date: 2021-01-27
+date: 2021-01-28
 hero: hero.jpg
 alt: Image of colorful telephones resized with the same aspect ratio.
 description: Maintaining aspect ratio within images and elements is now
