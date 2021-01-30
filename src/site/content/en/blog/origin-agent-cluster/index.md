@@ -6,7 +6,7 @@ authors:
   - domenic
 description: >
   The Origin-Agent-Cluster header cuts off synchronous access to other origins on the same domain, and hints to the browser to give your origin dedicated resources.
-date: 2021-01-11
+date: 2021-01-30
 hero: hero.jpg
 alt: A cluster of grapes
 tags:
@@ -134,13 +134,13 @@ For these reasons, it's important not to think of origin-keyed agent clusters as
 
 ## Feedback
 
-We'd love to hear from you if you're using, or considering using, the `Origin-Agent-Cluster` header. Your public interest and support helps the Chrome team prioritize features and show other browser vendors how important they are. Tweet at [@ChromiumDev](https://twitter.com/chromiumdev) and let us know your thoughts and experiences.
+Chrome love to hear from you if you're using, or considering using, the `Origin-Agent-Cluster` header. Your public interest and support helps the Chrome team prioritize features and show other browser vendors how important they are. Tweet at [@ChromiumDev](https://twitter.com/chromiumdev) and let Chrome DevRel know your thoughts and experiences.
 
 If you have more questions about the specification, or the details of how the feature works, you can file an issue on the [HTML Standard GitHub repository](https://github.com/whatwg/html). And if you encounter any issues with Chrome's implementation, you can file a bug at [new.crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Internals%3ESandbox%3ESiteIsolation) with the Components field set to `Internals>Sandbox>SiteIsolation`.
 
 ## Learn more
 
-To learn more about origi-keyed agent clusters, you can dive into the details at these links:
+To learn more about origin-keyed agent clusters, you can dive into the details at these links:
 
 - [Demo](https://origin-isolation-test.com/) and [demo source](https://github.com/domenic/origin-isolation-test.com)
 - [Explainer](https://github.com/WICG/origin-agent-cluster)
