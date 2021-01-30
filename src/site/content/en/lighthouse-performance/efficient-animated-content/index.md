@@ -49,6 +49,7 @@ run the following command in your console:
 `ffmpeg -i my-animation.gif -c vp9 -b:v 0 -crf 41 my-animation.webm`
 
 ## Replace the GIF image with a video
+
 Animated GIFs have three key traits that a video needs to replicate:
 
 - They play automatically.
@@ -63,6 +64,19 @@ Luckily, you can recreate these behaviors using the `<video>` element.
   <source src="my-animation.mp4" type="video/mp4">  
 </video>  
 ```
+
+## Use a service that converts GIFs to HTML5 videos
+
+Many [image CDNs](/image-cdns/) support GIF to HTML5 video conversion. You upload a
+GIF to the image CDN, and the image CDN returns an HTML5 video.
+
+## Stack-specific guidance
+
+### AMP
+
+For animated content, use
+[`amp-anim`](https://amp.dev/documentation/components/amp-anim/) to minimize CPU
+usage when the content is offscreen.
 
 ## Resources
 

@@ -46,6 +46,13 @@ If you're using redirects to divert mobile users to the mobile version of your p
 consider redesigning your site to use
 [Responsive Design](https://developers.google.com/web/fundamentals/design-and-ux/responsive/).
 
+## Stack-specific guidance
+
+### React
+
+If you are using React Router, minimize usage of the `<Redirect>` component for
+[route navigations](https://reacttraining.com/react-router/web/api/Redirect).
+
 ## Resources
 
 - [Source code for **Avoid multiple page redirects** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js)

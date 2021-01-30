@@ -2,14 +2,14 @@
 title: Making your website "cross-origin isolated" using COOP and COEP
 subhead: >
   Use COOP and COEP to set up a cross-origin isolated environment and enable
-  powerful features like `SharedArrayBuffer`, `performance.measureMemory()`, and
+  powerful features like `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`, and
   the JS Self-Profiling API.
 description: >
   Some web APIs increase the risk of side-channel attacks like Spectre. To
   mitigate that risk, browsers offer an opt-in-based isolated environment called
   cross-origin isolated. Use COOP and COEP to set up such an environment and
   enable powerful features like `SharedArrayBuffer`,
-  `performance.measureMemory()` or the JS Self-Profiling API.
+  `performance.measureUserAgentSpecificMemory()` or the JS Self-Profiling API.
 authors:
   - agektmr
 hero: hero.jpg
@@ -31,8 +31,8 @@ feedback:
 
 **October 15th, 2020**: `self.crossOriginIsolated` is available from Chrome 87.
 Reflecting that, `document.domain` is immutable when `self.crossOriginIsolated`
-returns `true`. `performance.measureMemory` is ending its origin trial and is
-planned to be enabled by default in Chrome 88. Shared Array Buffer on Android
+returns `true`. `performance.measureUserAgentSpecificMemory()` is ending its origin trial and is
+enabled by default in Chrome 89. Shared Array Buffer on Android
 Chrome will be available from Chrome 88.
 
 **September 1st, 2020**: COOP Reporting is behind flags in Chrome 86. See
@@ -51,7 +51,7 @@ able to use privileged features including:
   Isolation](https://www.chromium.org/Home/chromium-security/site-isolation),
   but will require the cross-origin isolated state and will be disabled by
   default.)
-* [`performance.measureMemory()`](/monitor-total-page-memory-usage/) (Ends its
+* [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/) (Ends its
   origin trial and is planned to be enabled by default in Chrome 88)
 * [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/) (Not
   available yet in Chrome)
@@ -83,7 +83,7 @@ article](/why-coop-coep) I will provide more background and context.
 
 {% Aside %}
 This article is aimed at those who would like to get their websites ready for
-using `SharedArrayBuffer`, WebAssembly Threads, `performance.measureMemory()`
+using `SharedArrayBuffer`, WebAssembly Threads, `performance.measureUserAgentSpecificMemory()`
 or the JS Self-Profiling API in a more robust manner across browser
 platforms.
 {% endAside %}
@@ -192,7 +192,7 @@ The `self.crossOriginIsolated` property returns `true` when the web page is in a
 cross-origin isolated state and all resources and windows are isolated within
 the same browsing context group. You can use this API to determine whether you
 have successfully isolated the browsing context group and gained access to
-powerful features like `performance.measureMemory()`.
+powerful features like `performance.measureUserAgentSpecificMemory()`.
 
 {% Aside 'caution' %}
 The
@@ -424,7 +424,7 @@ In upcoming releases of Chrome, this cross-origin isolated state will prevent
 `document.domain`](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy#Changing_origin)
 and will give access to powerful features such as:
 
-* [`performance.measureMemory()`](/monitor-total-page-memory-usage/)
+* [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/)
 * [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/) and more.
 
 We'll keep this post updated as new features are made available to this

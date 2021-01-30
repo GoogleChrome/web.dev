@@ -123,6 +123,21 @@ Here are some common problems:
 * The `unload` event is [considered harmful][unload]. The `pagehide` event should be used
   instead.
 
+#### Anti-patterns should be clearly labeled {: #anti-patterns }
+
+Bad web development practices should clearly be labeled as such.
+Consider using [caution](/handbook/web-dev-components/#caution-asides)
+or [warning](/handbook/web-dev-components/#warning-asides) components.
+
+### Avoid subjective statements like "it's easy" {: #subjective }
+
+Subjective statements like "it's easy" or "the process is simple" can usually be
+removed. What might be easy for some might not be easy for others.
+
+### Avoid summaries at the end of the content { #summaries }
+
+The intro of the page should already summarize the content.
+
 ### The writing is simple {: #simple }
 
 Use the simplest words available unless there is a specific reason to
@@ -179,7 +194,7 @@ removes tens or hundreds of words from a text, without changing the meaning.
 The author can use the future tense if they provide a logical rationale
 for its need.
 
-### The title follows good SEO practices {: #title }
+### The title is optimized {: #title }
 
 All web.dev titles should include all of the following elements whenever relevant:
 
@@ -209,7 +224,35 @@ All web.dev titles should include all of the following elements whenever relevan
   {% endCompareCaption %}
 {% endCompare %}
 
-### The subheading draws the reader in or provides more context {: #subhead }
+### The intro clearly summarizes the purpose of the page {: #intro }
+
+Explicitly summarize what "task" you help the user solve in your intro.
+The "task" might be something concrete, such as optimizing images, or
+something abstract, such as understanding how browsers work. The first
+or last sentence of the intro is usually a good place for the summary.
+Consider using the [objective](/handbook/web-dev-components/#objective-asides)
+component.
+
+Here is a general formula for creating a useful summary:
+
+* Mention the [content type][divio] of the page: tutorial, how-to guide,
+  reference, overview, etc. Mentioning the content type gives the reader a
+  general idea of what type of content to expect.
+* Mention the user-focused task that the page helps solve.
+
+Examples:
+
+* [Extending Workbox](/extending-workbox/)
+* [Workers overview](/workers-overview/)
+* [Building a Stories component](/building-a-stories-component/)
+* [Browser-level lazy-loading for CMSs](/browser-level-lazy-loading-for-cmss/)
+* [Measuring offline usage](/measuring-offline-usage/)
+
+Note that some of these examples use the generic term "post" or "article".
+They could be improved by replacing "post" or "article" with a more specific
+content type keyword, like guide, tutorial, etc.
+
+### The subheading (subtitle) draws the reader in or provides more context {: #subhead }
 
 See [`subhead`: add an enticing subtitle](/handbook/yaml-front-matter/#subhead).
 
@@ -271,7 +314,7 @@ Examples:
   will make the feature/API more attractive.
 {% endAside %}
 
-### References to APIs link to relevant documentation {: #api-references }
+### References to APIs link to relevant MDN documentation {: #api-references }
 
 When referencing a specific web platform API, link to the MDN reference documentation
 page for that API.
@@ -322,6 +365,29 @@ If the content mentions or features other people's products, said products
 are to be used as intended. For example, an article should not advise
 to flash a "homebrew" firmware onto a commercial device, unless this is
 explicitly blessed by the manufacturer.
+
+### Use examples liberally {: #examples }
+
+Provide more examples if a concept is unclear.
+
+### Get permission before mentioning other companies, products, etc. {: #permission }
+
+Don't mention other companies, products, services, etc. without
+that entity's permission. You can ask the content lead to make exceptions
+to this rule, which will be done on a case-by-case basis.
+
+### Avoid insensitive words {: #insensitive-words }
+
+Refer to the [GDDSG word list][gddsg] and make sure that you're not using
+any insensitive words, such as:
+
+* [blacklist](https://developers.google.com/style/word-list#blacklist)
+* [whitelist](https://developers.google.com/style/word-list#whitelist)
+* [native](https://developers.google.com/style/word-list#native)
+* [grandfathered](https://developers.google.com/style/word-list#grandfathered)
+* [hang](https://developers.google.com/style/word-list#hang)
+* [master](https://developers.google.com/style/word-list#master)
+* [slave](https://developers.google.com/style/word-list#slave)
 
 ## Late-stage review checklist {: #late }
 
@@ -401,3 +467,4 @@ and [Videos hosted on web.dev](/handbook/markup-media/#video-hosted-on-web.dev)
 [guide]: https://documentation.divio.com/how-to-guides/#how-to
 [explanation]: https://documentation.divio.com/explanation/#explanation
 [tutorial]: https://documentation.divio.com/tutorials/#tutorials
+[wordlist]: https://developers.google.com/style/word-list

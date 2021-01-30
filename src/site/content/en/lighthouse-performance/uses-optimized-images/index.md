@@ -50,6 +50,35 @@ this option is probably good enough.
 [Squoosh](https://squoosh.app/) is another option.
 Squoosh is maintained by the Google Web DevRel team.
 
+## Stack-specific guidance
+
+### Drupal
+
+Consider using [a
+module](https://www.drupal.org/project/project_module?f%5B0%5D=&f%5B1%5D=&f%5B2%5D=im_vid_3%3A123&f%5B3%5D=&f%5B4%5D=sm_field_project_type%3Afull&f%5B5%5D=&f%5B6%5D=&text=optimize+images&solrsort=iss_project_release_usage+desc&op=Search)
+that automatically optimizes and reduces the size of images uploaded through the
+site while retaining quality. Also, ensure you are using the Drupal's built-in
+[Responsive Image
+Styles](https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8)
+(available in Drupal 8 and above) for all images rendered on the site.
+
+### Joomla
+
+Consider using an [image optimization
+plugin](https://extensions.joomla.org/instant-search/?jed_live%5Bquery%5D=performance)
+that compresses your images while retaining quality.
+
+### Magento
+
+Consider using a [third-party Magento extension that optimizes
+images](https://marketplace.magento.com/catalogsearch/result/?q=optimize%20image).
+
+### WordPress
+
+Consider using an [image optimization WordPress
+plugin](https://wordpress.org/plugins/search/optimize+images/) that compresses
+your images while retaining quality.
+
 ## Resources
 
 - [Source code for **Efficiently encode images** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-optimized-images.js)
