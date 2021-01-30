@@ -359,7 +359,7 @@ of the browser. In a year, `Google Chrome Stable` will refer to version 95.
   The Keyboard API is now available in Chrome 85 and later.
 {% endCompare %}
 
-### Other people's products are used as intended
+### Other people's products are used as intended {: #intended-use }
 
 If the content mentions or features other people's products, said products
 are to be used as intended. For example, an article should not advise
