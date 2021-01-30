@@ -69,7 +69,7 @@ codecs (VP8,H264), network traversal (ICE), transport (RTP, SCTP), to media desc
 WebRTC is widely used in time-critical applications such as remote surgery, system monitoring, and
 remote control of autonomous cars, and voice or video calls built on UDP where buffering is not
 possible. Nearly all browser-based video callings services from companies such as Google, Facebook,
-Cisco, RingCentral, and Jitsi use WebRTC. Google Stadia and NVidia Geforce Now use WebRTC to get the
+Cisco, RingCentral, and Jitsi use WebRTC. Google Stadia and NVIDIA GeForce NOW use WebRTC to get the
 stream of gameplay from the cloud to the web browser without perceivable delay. 
 
 ## Pandemic puts focus on video calling performance {: #performance }
