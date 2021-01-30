@@ -49,6 +49,12 @@ Learn more about optimizing your
 [CSS](/defer-non-critical-css), and
 [web fonts](/avoid-invisible-text).
 
+## Stack-specific guidance
+
+### Magento
+
+If you are not bundling your JavaScript assets, consider using [baler](https://github.com/magento/baler).
+
 ## Resources
 
 [Source code for **Minimize critical request depth** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/critical-request-chains.js)

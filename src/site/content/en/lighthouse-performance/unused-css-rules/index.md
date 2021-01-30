@@ -51,7 +51,7 @@ To construct the render tree, a browser must walk the entire DOM tree, and check
 The more unused CSS there is,
 the more time that a browser might potentially need to spend calculating the styles for each node.
 
-## How to detect unused CSS
+## How to detect unused CSS {: #coverage }
 
 The Coverage tab of Chrome DevTools can help you discover critical and uncritical CSS.
 See [View used and unused CSS with the Coverage tab](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage).
@@ -77,6 +77,23 @@ Consider automating the process of extracting and inlining "Above the Fold" CSS
 using the [Critical tool](https://github.com/addyosmani/critical/blob/master/README.md).
 
 Learn more in [Defer non-critical CSS](/defer-non-critical-css).
+
+## Stack-specific guidance
+
+### Drupal
+
+Consider removing unused CSS rules and only attach the needed Drupal libraries
+to the relevant page or component in a page. See the [Defining a
+library](https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#library)
+for details.
+
+### Joomla
+
+Consider reducing, or switching, the number of [Joomla extensions](https://extensions.joomla.org/) loading unused CSS in your page.
+
+### WordPress
+
+Consider reducing, or switching, the number of [WordPress plugins](https://wordpress.org/plugins/) loading unused CSS in your page.
 
 ## Resources
 
