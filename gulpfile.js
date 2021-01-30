@@ -29,7 +29,8 @@ const assetTypes =
   'jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml';
 /* eslint-enable max-len */
 
-const isProd = process.env.ELEVENTY_ENV === 'prod';
+// TODO: Turn this back on when we're ready to ship
+const isProd = false;
 
 const compressImagesTransform = (pngQuality, jpegQuality) => {
   if (!isProd) {

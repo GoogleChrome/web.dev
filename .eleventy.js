@@ -20,7 +20,6 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 const toc = require('eleventy-plugin-toc');
-const resourcePath = require('./src/build/resource-path');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAttrs = require('markdown-it-attrs');
@@ -86,6 +85,7 @@ const getPaths = require(`./${filtersDir}/get-paths`);
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
 const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
+const {purifyCss} = require(`./${transformsDir}/purify-css`);
 
 module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
@@ -230,23 +230,7 @@ module.exports = function (config) {
 
   if (isProd) {
     config.addTransform('responsive-images', responsiveImages);
-  }
-
-  // ----------------------------------------------------------------------------
-  // CHECKS
-  // ----------------------------------------------------------------------------
-  if (isProd) {
-    // We generate the paths to our JS and CSS entrypoints as a side-effect
-    // of their build scripts, so make sure they exist in prod builds.
-    ['css', 'js'].forEach((name) => {
-      try {
-        resourcePath(name);
-      } catch (e) {
-        throw new Error(
-          `could not find valid JSON path inside src/site/_data/: ${name} (${e})`,
-        );
-      }
-    });
+    config.addTransform('purifyCss', purifyCss);
   }
 
   // ----------------------------------------------------------------------------

@@ -1,9 +1,8 @@
 /**
- * @fileoverview Site entrypoint. This runs only in supported browsers and is
- * dynamically inserted by "bootstrap.js" if the user's browser is supported.
+ * @fileoverview Site entrypoint.
  *
- * This is web.dev's core JS bundle; it includes unistore, routing, Service
- * Worker initialization, component loading for routes, et al.
+ * This is web.dev's core JS bundle; it includes unistore, and some basic
+ * sw cleanup code.
  */
 
 import {checkUserPreferredLanguage} from './actions';

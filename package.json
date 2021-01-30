@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "scripts": {
     "algolia": "node algolia.js",
-    "build": "npm-run-all clean sass gulp rollup eleventy sw-manifest firebase-config",
+    "build": "npm-run-all clean gulp rollup eleventy firebase-config",
     "clean": "rm -rf dist",
     "cloud-secrets": "node ./cloud-secrets.js",
     "coverage:integration": "c8 npm-run-all test:lib test:unit test:integration",
@@ -33,7 +33,6 @@
     "rollup": "node build.js",
     "snapshots": "percy exec --config ./tools/percy/.percy.conf.yml -- node tools/percy/snapshots.js",
     "start": "firebase emulators:start",
-    "sw-manifest": "node sw-manifest.js",
     "test:integration": "mocha ./test/integration",
     "test:lib": "npm-run-all clean rollup karma",
     "test:unit": "mocha ./test/unit && npm run test:lib",
