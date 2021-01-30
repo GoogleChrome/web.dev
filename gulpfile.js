@@ -15,6 +15,7 @@
  */
 
 const gulp = require('gulp');
+const sassTask = require('./gulp-tasks/sass.js');
 const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
 const imagemin = require('gulp-imagemin');
@@ -104,12 +105,6 @@ gulp.task('copy-content-assets', () => {
   );
 });
 
-gulp.task('copy-node_modules-assets', () => {
-  return gulp
-    .src(['./node_modules/@webcomponents/webcomponentsjs/bundles/*.js'])
-    .pipe(gulp.dest('./dist/lib/webcomponents/bundles/'));
-});
-
 gulp.task('copy-fonts', () => {
   return gulp.src('src/fonts/**/*').pipe(gulp.dest('dist/fonts/'));
 });
@@ -120,13 +115,26 @@ gulp.task(
     'copy-global-images',
     'copy-misc',
     'copy-content-assets',
-    'copy-node_modules-assets',
     'copy-fonts',
+    sassTask,
   ),
 );
 
 gulp.task('watch', () => {
-  gulp.watch('./src/images/**/*', gulp.series('copy-global-images'));
-  gulp.watch('./src/misc/**/*', gulp.series('copy-misc'));
-  gulp.watch('./src/site/content/**/*', gulp.series('copy-content-assets'));
+  gulp.watch(
+    './src/images/**/*',
+    {ignoreInitial: true},
+    gulp.series('copy-global-images'),
+  );
+  gulp.watch(
+    './src/misc/**/*',
+    {ignoreInitial: true},
+    gulp.series('copy-misc'),
+  );
+  gulp.watch(
+    './src/site/content/**/*',
+    {ignoreInitial: true},
+    gulp.series('copy-content-assets'),
+  );
+  gulp.watch('./src/styles/**/*.scss', {ignoreInitial: true}, sassTask);
 });
