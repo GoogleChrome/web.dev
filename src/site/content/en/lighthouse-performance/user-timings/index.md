@@ -44,6 +44,15 @@ It's just an opportunity to discover a useful API that can help you measure your
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 
+## Stack-specific guidance
+
+### React
+
+Use the [React DevTools
+Profiler](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html),
+which makes use of the Profiler API, to measure the rendering performance of
+your components.
+
 ## Resources
 
 - [Source code for **User Timing marks and measures** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/user-timings.js)

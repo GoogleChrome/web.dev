@@ -73,6 +73,16 @@ so you may need to do a bit more work to fix the invisible text problem.
   to learn how to avoid FOIT across all browsers.
 {% endAside %}
 
+## Stack-specific guidance
+
+### Drupal
+
+Specify `@font-display` when defining custom fonts in your theme.
+
+### Magento
+
+Specify `@font-display` when [defining custom fonts](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/using-fonts.html).
+
 ## Resources
 
 * [Source code for **Ensure text remains visible during webfont load** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/font-display.js)
