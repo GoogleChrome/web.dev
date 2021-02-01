@@ -10,7 +10,7 @@ description: >
   websites that have implemented COOP and COEP.
 authors:
   - kaycebasques
-date: 2021-01-13
+date: 2021-02-01
 # updated: 2020-07-22
 hero: hero.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
@@ -25,14 +25,16 @@ feedback:
 
 Here's some quick browser compatibility updates regarding [`SharedArrayBuffer`][mdn]:
 
-* Chrome recently [announced](TODO) that it's enabling `SharedArrayBuffer` in
-  Android Chrome 88. It will only be enabled for [cross-origin
-  isolated](/coop-coep/) pages.
+* In [SharedArrayBuffer updates in Android Chrome 88 and
+  Desktop Chrome 91][announcement] Chrome recently announced that
+  it's enabling `SharedArrayBuffer` in Android Chrome 88.
+  It will only be enabled for [cross-origin isolated](/coop-coep/) pages.
 * Chrome also announced that, starting in Desktop Chrome 91, it will start
   restricting `SharedArrayBuffer` to cross-origin isolated pages.
   Currently it's available for all pages. Sites that can't meet the cross-origin
   isolation requirements in time can request an origin trial to extend the
-  current behavior until Chrome 93.
+  current behavior until Chrome 93. This will break existing implementations
+  if they don't opt-in to cross-origin isolation.
 * `SharedArrayBuffer` is already supported in Firefox 79 (Desktop and Android).
   Firefox was the first browser to re-enable `SharedArrayBuffer` with the
   cross-origin isolation requirements. See [Browser compatibility][compat] for
@@ -59,3 +61,4 @@ Check out [How did we get here?](TODO) for more details on the history of
 [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer
 [workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
 [compat]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer#browser_compatibility
+[announcement]: https://developer.chrome.com/blog/enabling-shared-array-buffer/
