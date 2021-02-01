@@ -33,8 +33,9 @@ Here's some quick browser compatibility updates regarding [`SharedArrayBuffer`][
   restricting `SharedArrayBuffer` to cross-origin isolated pages.
   Currently it's available for all pages. Sites that can't meet the cross-origin
   isolation requirements in time can request an origin trial to extend the
-  current behavior until Chrome 93. This will break existing implementations
-  if they don't opt-in to cross-origin isolation.
+  current behavior until Chrome 93. In other words, any existing implementations
+  that don't opt-in to cross-origin isolation and don't request an origin trial will
+  no longer work in Chrome 91 and beyond.
 * `SharedArrayBuffer` is already supported in Firefox 79 (Desktop and Android).
   Firefox was the first browser to re-enable `SharedArrayBuffer` with the
   cross-origin isolation requirements. See [Browser compatibility][compat] for
