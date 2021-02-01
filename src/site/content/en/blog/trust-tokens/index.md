@@ -40,7 +40,7 @@ in the Chrome DevTools **Network** and **Application** tabs.
 <figure class="w-figure">
   <img src="./images/devtools-application-tab.png" alt="Screenshot showing Trust Tokens in the Chrome 
   DevTools Application tab.">
-  <figcaption class="w-figcaption">Trust Tokens in the Chrome DevTools <b>Application</b> tab</figcaption>
+  <figcaption class="w-figcaption">Trust Tokens in the Chrome DevTools <b>Application</b> tab.</figcaption>
 </figure>
 
 {% Aside %}
