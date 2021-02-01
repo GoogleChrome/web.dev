@@ -330,3 +330,4 @@ approaches and learn all the ways to build on the web. Create a [Glitch](https:/
 
 - [@_developit](https://twitter.com/_developit) with custom elements: [demo & code](https://glitch.com/embed/#!/app-drawer)
 - [@mayeedwin1](https://twitter.com/mayeedwin1) with HTML/CSS/JS: [demo & code](https://glitch.com/edit/#!/maye-gui-challenge)
+- [@a_nurella](https://twitter.com/a_nurella) with a [Glitch Remix](https://sidenav-with-adam.glitch.me)
