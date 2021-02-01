@@ -20,7 +20,7 @@ tags: []
     {% Meta locale, page, collections, renderData %}
 
     {% if process.env.NODE_ENV === 'production' %}
-      {# CSS will be injected by optimize-html plugin. #}
+      {# CSS will be injected by purify-css transform. #}
     {% else %}
       <link rel="stylesheet" href="/css/main.css">
     {% endif %}
@@ -32,8 +32,9 @@ tags: []
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
+
   </head>
-  <body class="unresolved" data-version="{{ resource.version }}">
+  <body class="unresolved">
     {#
       Make the snackbar the first item in the DOM so we don't have to steal the
       user's focus on initial visit to show them a cookie banner. Instead, the
