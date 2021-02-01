@@ -29,7 +29,7 @@ identifying the user or linking the two identities.
 
 You can try out Trust Tokens with our [demo](https://trust-token-demo.glitch.me) and, from Chrome 
 89, [inspect Trust Tokens](https://developers.google.com/web/updates/2021/01/devtools#trust-token) 
-in the Chrome DevTools Network and Application tabs.
+in the Chrome DevTools **Network** and **Application** tabs.
 
 <figure class="w-figure">
   <img src="./images/devtools-network-tab.png" alt="Screenshot showing Trust Tokens in the Chrome 
