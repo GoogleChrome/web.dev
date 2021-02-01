@@ -9,7 +9,7 @@ authors:
 description: >
   The Origin-Agent-Cluster header cuts off synchronous access to other origins on the same domain,
   and hints to the browser to give your origin dedicated resources.
-date: 2021-01-30
+date: 2021-02-01
 hero: hero.jpg
 alt: A cluster of grapes
 tags:
