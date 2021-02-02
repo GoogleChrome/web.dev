@@ -4,7 +4,7 @@ subhead: Web apps can use the same system-provided share capabilities as platfor
 authors:
   - joemedley
 date: 2019-11-08
-updated: 2020-05-12
+updated: 2020-01-26
 hero: hero.png
 alt: An illustration demonstrating that web apps can use the system-provided sharing UI.
 description: |
@@ -43,14 +43,12 @@ way as platform-specific apps.
 ### Capabilities and limitations
 
 Web share has the following capabilities and limitations:
-* It can only be used on a site that supports HTTPS.
+* It can only be used on a site that is [accessed via HTTPS](https://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features).
 * It must be invoked in response to a user action such as a click. Invoking it
-  through the `onload` handler is impossible.
-* It can share, URLs, text, or files.
-* As of mid 2020, it is only available on Safari and on Android in Chromium
-  forks. See
-  [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share#Browser_compatibility)
-  for details.
+  through the `onload` handler is not allowed.
+* It can share URLs, text, and in some browsers, files.
+* Some features are only available on specific combinations of browsers and platforms. Please see
+  the [browser support](#browser-support) section for details.
 
 <div class="w-clearfix"></div>
 
@@ -94,7 +92,7 @@ const canonicalElement = document.querySelector('link[rel=canonical]');
 if (canonicalElement !== null) {
     url = canonicalElement.href;
 }
-navigator.share({url: url});
+navigator.share({url});
 ```
 
 ### Sharing files
@@ -102,7 +100,7 @@ navigator.share({url: url});
 To share files, first test for and call `navigator.canShare()`. Then include an
 array of files in the call to `navigator.share()`:
 
-```js/0-4
+```js/0-5
 if (navigator.canShare && navigator.canShare({ files: filesArray })) {
   navigator.share({
     files: filesArray,
@@ -138,10 +136,10 @@ with games and educational experiences.
 
 In 2016, the Santa Tracker team used the Web Share API on Android.
 This API was a perfect fit for mobile.
-In previous years, the team disabled share buttons on mobile because space is
+In previous years, the team removed share buttons on mobile because space is
 at a premium, and they couldn't justify having several share targets.
 
-But with the Web Share API, they were able to present just one button,
+But with the Web Share API, they were able to present one button,
 saving precious pixels.
 They also found that users shared with Web Share around 20% more than
 users without the API enabled. Head to
@@ -149,6 +147,25 @@ users without the API enabled. Head to
 
 <div class="w-clearfix"></div>
 
+## Browser support
+
+Browser support for the Web Share API is nuanced, and it's recommended that you use feature
+detection (as described in the earlier code samples) instead of assuming that a particular method is
+supported.
+
+As of early 2021, using the API to share title, text, and URL is supported by:
+
+- Safari 12 or later on macOS and iOS.
+- Chrome 75 or later on Android, and 89 or later on Chrome OS and Windows.
+
+Using the API to share files is supported by:
+
+- Chrome 75 or later on Android, and 89 or later on Chrome OS and Windows.
+
+(Most Chromium-based browsers, like Edge, have the same support for this feature as the
+corresponding version of Chrome.)
+
 ## Helpful Links
 
-[Web Share Demos](https://w3c.github.io/web-share/demos/share-files.html)
+- [Web Share Demos](https://w3c.github.io/web-share/demos/share-files.html)
+- [Scrapbook PWA](https://github.com/GoogleChrome/samples/blob/gh-pages/web-share/README.md#web-share-demo)

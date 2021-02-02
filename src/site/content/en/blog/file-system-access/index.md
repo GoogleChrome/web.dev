@@ -396,7 +396,7 @@ It is not possible to completely polyfill the File System Access API methods.
 - The `showDirectoryPicker()` method can be somewhat emulated with the non-standard
   `<input type="file" webkitdirectory>` element.
 
-We have developed a library called [browser-nativefs](/browser-nativefs/) that uses the File
+We have developed a library called [browser-fs-access](/browser-fs-access/) that uses the File
 System Access API wherever possible and that falls back to these next best options in all other cases.
 
 ## Security and permissions {: #security-considerations }
