@@ -24,8 +24,13 @@ module.exports = (locale, page, collections, renderData = {}) => {
   const pageData = {
     ...collections.all.find((item) => item.fileSlug === page.fileSlug).data,
     ...renderData,
+    page,
   };
   const pageUrl = pageData.canonicalUrl;
+  const canonical =
+    pageData.canonical ||
+    new URL(pageData.page.url, site.url).href ||
+    new URL(pageUrl, site.url).href;
 
   /**
    * Find post meta data associated with a social media platform.
@@ -94,7 +99,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
     return html`
       <meta property="og:locale" content="${locale}" />
       <meta property="og:type" content="${type}" />
-      <meta property="og:url" content="${new URL(pageUrl, site.url).href}" />
+      <meta property="og:url" content="${canonical}" />
       <meta property="og:site_name" content="${site.title}" />
       <meta property="og:title" content="${meta.title}" />
       <meta property="og:description" content="${meta.description}" />
@@ -129,12 +134,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
   }
 
   function renderCanonicalMeta() {
-    return html`
-      <link
-        rel="canonical"
-        href="${pageData.canonical ? pageData.canonical : site.url + pageUrl}"
-      />
-    `;
+    return html` <link rel="canonical" href="${canonical}" /> `;
   }
 
   function renderRSS() {
