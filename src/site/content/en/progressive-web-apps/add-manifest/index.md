@@ -236,7 +236,7 @@ property, and the `type` of image.
 
 In Chrome, the image must respond to certain criteria:
 
-* Width and height must be at least 320px.
+* Width and height must be at least 320px and at most 3840px.
 * The maximum dimension can't be twice larger than the minimum dimension.
 * Screenshots must have the same aspect ratio.
 * Only JPEG and PNG image formats are supported. 
