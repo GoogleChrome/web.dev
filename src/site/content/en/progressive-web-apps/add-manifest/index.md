@@ -5,7 +5,7 @@ authors:
   - petelepage
   - beaufortfrancois
 date: 2018-11-05
-updated: 2021-01-29
+updated: 2021-02-01
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -234,11 +234,11 @@ The `screenshots` property is an array of image objects, representing your app
 in common usage scenarios. Each object must include the `src`, a `sizes`
 property, and the `type` of image.
 
-In Chrome, the image dimensions must respond to certain criteria:
+In Chrome, the image must respond to certain criteria:
 
-* Width and height must be at least 320px.
+* Width and height must be at least 320px and at most 3840px.
 * The maximum dimension can't be twice larger than the minimum dimension.
-* Screenshots must have the same dimensions.
+* Screenshots must have the same aspect ratio.
 * Only JPEG and PNG image formats are supported. 
 
 {% Aside 'gotchas' %}
