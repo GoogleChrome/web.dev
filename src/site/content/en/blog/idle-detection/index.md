@@ -8,7 +8,7 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2021-01-29
+updated: 2021-02-02
 tags:
   - blog
   - idle-detection
@@ -16,7 +16,7 @@ tags:
 hero: hero.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80
 alt: Abandoned computer on a bed with someone's leg next to it.
 origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/551690954352885761
+  url: https://developer.chrome.com/origintrials/#/view_trial/551690954352885761
 feedback:
   - api
 ---
@@ -67,7 +67,7 @@ To experiment with the Idle Detection API locally, without an origin trial token
 ### Enabling support during the origin trial phase
 
 Starting in Chrome 88, the Idle Detection API is available as an origin trial in Chrome.
-The origin trial is expected to end in Chrome 90 (May 18, 2021).
+The origin trial is expected to end in Chrome 90 (May 19, 2021).
 
 {% include 'content/origin-trials.njk' %}
 
@@ -293,4 +293,4 @@ The hero image is by [Fernando Hernandez](https://unsplash.com/@_ferh97) on
 [blink-component]: https://chromestatus.com/features#component%3ABlink%3EInput
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[ot]: https://developer.chrome.com/origintrials/#/trials/active
+[ot]: https://developer.chrome.com/origintrials/#/view_trial/551690954352885761
