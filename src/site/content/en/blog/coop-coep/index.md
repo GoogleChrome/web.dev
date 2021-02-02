@@ -15,7 +15,7 @@ authors:
 hero: hero.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2020-10-15
+updated: 2021-02-02
 tags:
   - blog
   - security
@@ -105,7 +105,9 @@ clearer, let's define them first:
 {% endAside %}
 
 ## Deploy COOP and COEP to make your website cross-origin isolated
+
 ### Integrate COOP and COEP
+
 #### 1. Set the `Cross-Origin-Opener-Policy: same-origin` header on the top-level document
 
 By enabling COOP on a top-level document, windows
@@ -150,8 +152,8 @@ Here is what you need to do depending on the nature of the resource:
       served with CORS.
     * Ask the owner of the resource to support either CORS or CORP.
 * For iframes, use CORP and COEP headers as follows:
-  `Cross-Origin-Resource-Policy: same-origin` and `Cross-Origin-Embedder-Policy:
-  require-corp`.
+  `Cross-Origin-Resource-Policy: same-origin` (or `same-site`, `cross-origin`
+  depending on the context) and `Cross-Origin-Embedder-Policy: require-corp`.
 
 {% Aside 'key-term' %}
 It's important that you understand the difference between "same-site" and
