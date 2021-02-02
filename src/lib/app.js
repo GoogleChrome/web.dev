@@ -14,6 +14,7 @@ import {checkUserPreferredLanguage} from './actions';
 import {store} from './store';
 import {localStorage} from './utils/storage';
 import removeServiceWorkers from './utils/sw-remove';
+import {copyLinkToClipboard} from './urls';
 import './analytics'; // side effects & named export
 // TODO: Enable this when #3836 is fixed.
 // // https://github.com/GoogleChrome/web.dev/issues/3836
@@ -62,6 +63,9 @@ function onGlobalStateChanged({isSignedIn, isPageLoading}) {
 }
 store.subscribe(onGlobalStateChanged);
 onGlobalStateChanged(store.getState());
+
+// Copy link to heading on click.
+copyLinkToClipboard();
 
 // Ensure/update the Service Worker, or remove it if unsupported (this should
 // never happen here unless the valid domains change, but left in for safety).

@@ -5,7 +5,7 @@ import lang from './utils/language';
  * @return {string} normalized URL
  */
 export function normalizeUrl(url) {
-  url = url.replace(/\/+/g, '/'); // replace any occurance of "////" with "/"
+  url = url.replace(/\/+/g, '/'); // replace any occurrence of "////" with "/"
 
   const u = new URL(url, window.location.toString());
   let pathname = u.pathname;
@@ -29,4 +29,32 @@ export function getCanonicalPath(path) {
     parts.splice(1, 1);
   }
   return parts.join('/');
+}
+
+export function copyLinkToClipboard() {
+  if (!('clipboard' in navigator)) {
+    return;
+  }
+  document.querySelector('main')
+  // ToDo: Use `:is(h1, h2, h3, h4, h5, h6)[id]` once support is better.
+  .querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]')
+  .forEach(heading => {
+    heading.addEventListener('click', (ev) => {
+      // Don't jump when the '#' is clicked.
+      if (ev.target.nodeName === 'A') {
+        ev.preventDefault();
+      }
+      try {
+        navigator.clipboard.writeText(
+            `${location.origin}${location.pathname}#${heading.id}`);
+        const temp = heading.innerHTML;
+        heading.innerHTML += '&nbsp;<small>(📋 Copied.)</small>';
+        setTimeout(() => {
+          heading.innerHTML = temp;
+        }, 2000);
+      } catch(err) {
+        console.warn(err.name, err.message);
+      }
+    });
+  });
 }
