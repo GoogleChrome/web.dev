@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-01-28
+updated: 2021-02-02
 tags:
   - blog
   - capabilities
