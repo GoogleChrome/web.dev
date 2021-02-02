@@ -44,6 +44,17 @@ This command will:
 * Add the [`theme-color`](/themed-omnibox) `<meta>` tag to `index.html`.
 * Create app icons in the `src/assets` directory.
 
+## Register the service worker at startup
+
+In `app.module.ts`, make sure the service worker starts immediately so it can serve pages when offline:
+
+```typescript
+ServiceWorkerModule.register('ngsw-worker.js', {
+  enabled: environment.production,
+  registrationStrategy: 'registerImmediately',
+}),
+```
+
 ## Customize your PWA
 
 The [Precaching with the Angular service worker](/precaching-with-the-angular-service-worker) post explains how to configure the Angular service worker. There you can find how to specify which resources you want the service worker to cache and what strategy it should use to do so.
