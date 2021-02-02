@@ -127,7 +127,7 @@ The origins that most benefit from the `Origin-Agent-Cluster` header are those t
   processes to schedule them independently and decrease their performance impact on each other.
 
 - Expect to be embedded on different-origin, same-site pages, but know themselves to be
-  resource-intensive. For example, if `https://customerservicewidget.example.com` expects to uses
+  resource-intensive. For example, if `https://customerservicewidget.example.com` expects to use
   lots of resources for video chat, and will be embedded on various origins throughout
   `https://*.example.com`, the team maintaining that widget could use the `Origin-Agent-Cluster`
   header to try to decrease their performance impact on embedders.
@@ -252,8 +252,8 @@ features](#limitations) in exchange).
 
 ## Feedback
 
-Chrome love to hear from you if you're using, or considering using, the `Origin-Agent-Cluster`
-header. Your public interest and support helps the Chrome team prioritize features and show other
+The Chrome team would love to hear from you if you're using, or considering using, the `Origin-Agent-Cluster`
+header. Your public interest and support helps us prioritize features and show other
 browser vendors how important they are. Tweet at [@ChromiumDev](https://twitter.com/chromiumdev) and
 let Chrome DevRel know your thoughts and experiences.
 
