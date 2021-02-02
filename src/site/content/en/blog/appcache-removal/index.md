@@ -5,7 +5,7 @@ authors:
   - jeffposnick
 description: Details of Chrome's and other browsers' plans to remove AppCache.
 date: 2020-05-18
-updated: 2020-02-01
+updated: 2021-02-01
 scheduled: true
 tags:
   - appcache
