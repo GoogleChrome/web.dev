@@ -16,15 +16,21 @@ tags:
   - streams
 ---
 
-The Streams API allows you to programmatically access streams of data received over the network and
-process them with JavaScript. Streaming involves breaking a resource that you want to receive down
+The Streams API allows you to programmatically access streams of data received over the network
+or created by whatever means locally and
+process them with JavaScript. Streaming involves breaking a resource that you want to receive, send, or transform down
 into small chunks, and then processing these chunks bit by bit. While streaming is something
 browsers do anyway when receiving assets like HTML or videos to be shown on webpages, this
-capability has never been available to JavaScript before.
+capability has never been available to JavaScript before `fetch` with streams was introduced in 2015.
+
+{% aside %}
+  Streaming was possible with `XMLHttpRequest`, but it
+  [really was not pretty](https://gist.github.com/igrigorik/5736866).
+{% endAside %}
 
 Previously, if you wanted to process a resource of some kind (be it a video, or a text file, etc.),
 you would have to download the entire file, wait for it to be deserialized into a suitable format,
-and then process the whole lot after it is fully received. With streams being available to
+and then process it. With streams being available to
 JavaScript, this all changes—you can now start processing raw data with JavaScript progressively as
 soon as it is available on the client-side, without needing to generate a buffer, string, or blob.
 This unlocks a number of use cases, some of which I list below:
@@ -45,7 +51,7 @@ Before I go into details on the various types of streams, let me introduce some 
 ### Chunks
 
 A chunk is a **single piece of data** that is written to or read from a stream. It can be of any
-type; streams can even contain chunks of different types. A chunk will often not be the most atomic
+type; streams can even contain chunks of different types. Most of the time, a chunk will not be the most atomic
 unit of data for a given stream. For example, a byte stream might contain chunks consisting of 16
 KiB `Uint8Array` units, instead of single bytes.
 
@@ -64,7 +70,11 @@ A writable stream represents a destination for data, into which you can write. I
 ### Transform streams
 
 A transform stream consists of a **pair of streams**: a writable stream, known as its writable side,
-and a readable stream, known as its readable side. In a manner specific to the transform stream in
+and a readable stream, known as its readable side.
+A real-world metaphor for this would be a
+[simultaneous interpreter](https://en.wikipedia.org/wiki/Simultaneous_interpretation)
+who on-the-fly translates from one language to another.
+In a manner specific to the transform stream in
 question, writes to the writable side result in new data being made available for reading from the
 readable side. Concretely, any object with a `writable` property and a `readable` property can serve
 as a transform stream. However, the standard `TransformStream` class makes it much easier to create
@@ -90,6 +100,7 @@ can process chunks is called backpressure.
 A readable stream can be teed (named after the shape of an uppercase 'T') using its `tee()` method.
 This will lock the stream, making it no longer directly usable; however, it will create **two new
 streams**, called branches, which can be consumed independently.
+Teeing also is important because streams cannot be rewound or restarted, more about this later.
 
 <figure class="w-figure">
   <img src="./streams.svg" width="2099" height="1127" alt="Diagram of a pipe chain consisting of a readable stream coming from a call to the fetch API that is then piped through a transform stream whose output is teed and then sent to the browser for the first resulting readable stream and to the service worker cache for the second resulting readable stream.">
@@ -106,23 +117,25 @@ constructor creates and returns a readable stream object from the given handlers
 types of underlying source:
 
 - **Push sources** constantly push data at you when you have accessed them, and it is up to you to
-  start, pause, or cancel access to the stream. Examples include video streams, Server-Sent Events,
+  start, pause, or cancel access to the stream. Examples include live video streams, Server-Sent Events,
   or WebSockets.
 - **Pull sources** require you to explicitly request data from them once connected to. Examples
-  include file access operations via `fetch()` or `XMLHttpRequest` calls.
+  include HTTP operations via `fetch()` or `XMLHttpRequest` calls.
 
-The data is read sequentially in small pieces called **chunks**. A chunk can be a single byte, or it
+The data is read sequentially in small pieces called **chunks**.
+Chunks can be any kind of JavaScript object, but there are streams that specialize
+in sending byte data as `Uint8Array`s. A chunk can thus be a single byte, or it
 can be something larger such as a typed array of a certain size. A single stream can contain chunks
 of different sizes and types.
 
 The chunks placed in a stream are said to be **enqueued**. This means they are waiting in a queue
 ready to be read. An **internal queue** keeps track of the chunks that have not yet been read.
 
-The queue is managed by a **queuing strategy** for the stream. The strategy's **high water mark**
-defines the total number of chunks that can be contained in the internal queue before backpressure
-is applied and a **chunk size** that indicates the size to use for each chunk, in bytes.
+A **queuing strategy** is an object that determines how a stream should signal backpressure based on
+the state of its internal queue. The queuing strategy assigns a size to each chunk, and compares the
+total size of all chunks in the queue to a specified number, known as the **high water mark**.
 
-The chunks inside the stream are read by a **reader**. This reader processes the data one chunk at a
+The chunks inside the stream are read by a **reader**. This reader retrieves the data one chunk at a
 time, allowing you to do whatever kind of operation you want to do on it. The reader plus the other
 processing code that goes along with it is called a **consumer**.
 
@@ -130,8 +143,8 @@ The next construct in this context is called a **controller**. Each reader has a
 controller that, as the name suggests, allows you to control the stream.
 
 Only one reader can read a stream at a time; when a reader is created and starts reading a stream
-(that is, becomes an **active reader**), it is **locked** to it. If you want another reader to start
-reading your stream, you typically need to **cancel** the first reader before you do anything else
+(that is, becomes an **active reader**), it is **locked** to it. If you want another reader to take over
+reading your stream, you typically need to **release** the first reader before you do anything else
 (although you can **tee** streams).
 
 ### Creating a readable stream
@@ -181,7 +194,7 @@ parameters:
 {% Aside %} You could define your own custom `queuingStrategy`, or use an instance of
 [`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy)
 or [`CountQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy)
-for this object value. If no `queuingStrategy` is supplied, the default used is the same as a
+for this object's value. If no `queuingStrategy` is supplied, the default used is the same as a
 `CountQueuingStrategy` with a `highWaterMark` of `1`. {% endAside %}
 
 #### The `getReader()` and `read()` methods
@@ -217,23 +230,25 @@ stream by creating a reader via the `getReader()` method and calling `read()` un
 `done`.
 
 ```js
-let interval = null;
+const startEnqueuing = (controller) => {
+  let interval = null;
+  interval = setInterval(() => {
+    const string = new Date().toLocaleTimeString();
+    // Add the string to the stream.
+    console.log(`Enqueued ${string}`);
+    controller.enqueue(string);
+  }, 1_000);
+
+  setTimeout(() => {
+    clearInterval(interval);
+    // Close the stream after 10s.
+    controller.close();
+  }, 10_000);
+};
 
 const stream = new ReadableStream({
   start(controller) {
-    interval = setInterval(() => {
-      // Extract just the hh:mm:ss from the date.
-      const string = new Date().toISOString().replace(/.*?T(.*?)\..*?$/, '$1 ');
-      // Add the string to the stream.
-      console.log(`Enqueued ${string}`);
-      controller.enqueue(string);
-    }, 1_000);
-
-    setTimeout(() => {
-      clearInterval(interval);
-      // Close the stream after 10s.
-      controller.close();
-    }, 10_000);
+    startEnqueuing(controller);
   },
 
   cancel() {
@@ -242,97 +257,60 @@ const stream = new ReadableStream({
   },
 });
 
-let result = '';
-const reader = stream.getReader();
-
-const readStream = async () => {
-  // The `read()` method returns a promise that
-  // resolves when a value has been received.
-  const { done, value } = await reader.read();
-  // Result objects contain two properties:
-  // `done`  - `true` if the stream has already given you all its data.
-  // `value` - Some data. Always `undefined` when `done` is `true`.
-  if (done) {
-    return console.log(`Stream complete.\n${result}`);
+async function concatStringStream(stream) {
+  let result = '';
+  const reader = stream.getReader();
+  while (true) {
+    // The `read()` method returns a promise that
+    // resolves when a value has been received.
+    const { done, value } = await reader.read();
+    // Result objects contain two properties:
+    // `done`  - `true` if the stream has already given you all its data.
+    // `value` - Some data. Always `undefined` when `done` is `true`.
+    if (done) return result;
+    result += value;
+    console.log(`Read ${result.length} characters so far`);
+    console.log(`Most recently read chunk: ${value}`);
   }
-  result += value;
-  console.log(`Read ${result.length} characters so far`);
-  console.log(`Most recently read chunk: ${value}`);
-  // Read some more, and call this function again.
-  return readStream();
-};
-readStream();
+}
+concatStringStream(stream).then((result) => console.log('Stream complete', result));
 ```
 
-The next code sample (a bit contrived) shows how you could implement a "shouting" service worker
-that uppercases all text by consuming the returned `fetch()` response promise
+The next code sample (a bit contrived) shows how you could implement a "shouting" version of `fetch()`
+that uppercases all text by consuming the returned response promise
 [as a stream](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams#consuming_a_fetch_as_a_stream)
 and uppercasing chunk by chunk. The advantage of this approach is that you do not need to wait for
 the whole document to be downloaded, which can make a huge difference when dealing with large files.
 
 ```js
-// Install immediately without waiting.
-self.addEventListener('install', (event) => {
-  self.skipWaiting();
-});
-
-// Claim all clients immediately.
-self.addEventListener('activate', (event) => {
-  clients.claim();
-});
-
-self.addEventListener('fetch', (event) => {
-  // If the destination of the request is anything else
-  // than a document, return.
-  if (event.request.destination !== 'document') {
-    return;
-  }
-  event.respondWith(
-    (async () => {
-      // Create a new stream that implements the UPPERCASING.
-      const result = await shoutFetch(event.request.url);
-      // Return the newly created stream.
-      return new Response(result.stream, { headers: result.headers });
-    })(),
-  );
-});
-
-const shoutFetch = async (url) => {
-  // Chunks arrive encoded, so need to decode them.
-  const textDecoder = new TextDecoder('utf-8', { stream: true });
-  // After uppercasing, need to encode chunks again.
-  const textEncoder = new TextEncoder();
-  // Fetch the initial document and get access to the
-  // reader of the readable stream.
-  const response = await fetch(url);
-  const readableStream = response.body;
-  const reader = readableStream.getReader();
-  // Create a new stream.
-  const responseStream = new ReadableStream({
-    // Called whenever the internal queue of chunks is not full.
-    async pull(controller) {
-      // Read the next chunk.
-      const result = await reader.read();
-      // Close the stream when done.
-      if (result.done) {
-        return controller.close();
-      }
-      // Uppercase each chunk (after decoding it).
-      const upperCaseValue = textDecoder.decode(result.value).toUpperCase();
-      // Enqueue the uppercased value (after re-encoding it).
-      controller.enqueue(textEncoder.encode(upperCaseValue));
-      return result;
-    },
-
-    // Called when the reader cancels.
-    cancel() {
-      reader.cancel();
+function upperCaseStream() {
+  return new TransformStream({
+    transform(chunk, controller) {
+      controller.enqueue(chunk.toUpperCase());
     },
   });
-  // Return the new stream with the headers of the original response.
-  return await { stream: responseStream, headers: response.headers };
-};
+}
+
+function appendToDomStream(el) {
+  return new WritableStream({
+    write(chunk) {
+      el.append(chunk);
+    }
+  });
+}
+
+fetch('./lorem-ipsum.txt').then((response) =>
+  response.body
+    .pipeThrough(new TextDecoderStream())
+    .pipeThrough(upperCaseStream())
+    .pipeTo(appendToDomStream(document.body));
+);
 ```
+
+{% Aside %}
+  This example would be much simpler as a transform stream,
+  which I will introduce further down in the article. Stay tuned!
+{% endAside %}
 
 ### Asynchronous iteration
 
@@ -346,8 +324,6 @@ for await (const chunk of stream) {
 ```
 
 {% Aside 'caution' %} Asynchronous iteration is not yet implemented in any browser. {% endAside %}
-
-#### Asynchronous iteration helper function
 
 A workaround to use asynchronous iteration today is to implement the behavior with a helper
 function. This allows you to use the feature in your code as shown in the snippet below.
@@ -397,43 +373,45 @@ will generally lock it for the duration, preventing other readers from locking i
 
 ```js
 const readableStream = new ReadableStream({
-  async start(controller) {
+  start(controller) {
     // Called by constructor.
     console.log('[start]');
     controller.enqueue('a');
     controller.enqueue('b');
     controller.enqueue('c');
   },
-  async pull(controller) {
+  pull(controller) {
     // Called read when controller's queue is empty.
     console.log('[pull]');
     controller.enqueue('d');
     controller.close();
   },
-  async cancel(reason) {
+  cancel(reason) {
     // Called when the stream is canceled.
     console.log('[cancel]', reason);
   },
 });
 
-(async () => {
-  // Create two `ReadableStream`s.
-  const [streamA, streamB] = readableStream.tee();
+// Create two `ReadableStream`s.
+const [streamA, streamB] = readableStream.tee();
 
-  // Read streamA iteratively one by one.
-  const readerA = streamA.getReader();
-  console.log('[A]', await readerA.read()); //=> {value: "a", done: false}
-  console.log('[A]', await readerA.read()); //=> {value: "b", done: false}
-  console.log('[A]', await readerA.read()); //=> {value: "c", done: false}
-  console.log('[A]', await readerA.read()); //=> {value: "d", done: false}
-  console.log('[A]', await readerA.read()); //=> {value: undefined, done: true}
+// Read streamA iteratively one by one. Typically, you
+// would not do it this way, but you certainly can.
+const readerA = streamA.getReader();
+console.log('[A]', await readerA.read()); //=> {value: "a", done: false}
+console.log('[A]', await readerA.read()); //=> {value: "b", done: false}
+console.log('[A]', await readerA.read()); //=> {value: "c", done: false}
+console.log('[A]', await readerA.read()); //=> {value: "d", done: false}
+console.log('[A]', await readerA.read()); //=> {value: undefined, done: true}
 
-  // Read streamB in a loop.
-  const readerB = streamB.getReader();
-  for (let result = await readerB.read(); !result.done; result = await readerB.read()) {
-    console.log('[B]', result);
-  }
-})();
+// Read streamB in a loop. This is the more common way
+// to read data from the stream.
+const readerB = streamB.getReader();
+while (true) {
+  const result = await readerB.read();
+  if (result.done) break;
+  console.log('[B]', result);
+}
 ```
 
 ## Readable byte streams
@@ -465,14 +443,15 @@ const reader = readableStream.getReader({ mode: 'byob' });
 
 let startingAB = new ArrayBuffer(1_024);
 const buffer = await readInto(startingAB);
-console.log('The first 1,024 bytes: ', buffer);
+console.log('The first 1,024 bytes (or less): ', buffer);
 
 async function readInto(buffer) {
   let offset = 0;
 
   while (offset < buffer.byteLength) {
-    const { value: view, done } = await reader.read(
-      new Uint8Array(buffer, offset, buffer.byteLength - offset),
+    const view = new Uint8Array(buffer, offset, buffer.byteLength - offset);
+    const { value, done } = await reader.read(view);
+    buffer = value.buffer;
     );
     buffer = view.buffer;
     if (done) {
@@ -515,6 +494,27 @@ function makeReadableByteStream() {
 }
 ```
 
+The second, likewise optional, argument of the `ReadableStream()` constructor is `queuingStrategy`.
+It is an object that optionally defines a queuing strategy for the stream, which takes two
+parameters:
+
+- `highWaterMark`: A non-negative number indicating the high water mark of the stream using this queuing strategy.
+- `size(chunk)`: A function that computes and returns the finite non-negative size of the given chunk value.
+  The result is used to determine backpressure, manifesting via the appropriate `ReadableByteStreamController.desiredSize` property.
+  It also governs when the underlying source's `pull()` method is called.
+
+{% Aside %} You could define your own custom `queuingStrategy`, or use an instance of
+[`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy)
+or [`CountQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy)
+for this object value. If no `queuingStrategy` is supplied, the default used is the same as a
+`CountQueuingStrategy` with a `highWaterMark` of `1`. {% endAside %}
+
+
+- `highWaterMark`: A non-negative number indicating the high water mark of the stream using this queuing strategy.
+- `size(chunk)`: A function that computes and returns the finite non-negative size of the given chunk value.
+  The result is used to determine backpressure, manifesting via the appropriate `ReadableByteStreamController.desiredSize` property.
+  It also governs when the underlying source's `pull()` method is called.
+
 ## The mechanics of a writable stream
 
 A writable stream is a destination into which you can write data, represented in JavaScript by a
@@ -528,15 +528,15 @@ the chunks ready for writing; the writer plus the associated code is called a **
 
 When a writer is created and starts writing to a stream (an **active writer**), it is said to be
 **locked** to it. Only one writer can write to a writable stream at one time. If you want another
-writer to start writing to your stream, you typically need to abort it, before you then attach
+writer to start writing to your stream, you typically need to release it, before you then attach
 another writer to it.
 
 An **internal queue** keeps track of the chunks that have been written to the stream but not yet
 been processed by the underlying sink.
 
-The queue is managed by a **queuing strategy** for the stream. The strategy's **high water mark**
-defines the total number of chunks that can be contained in the internal queue before backpressure
-is applied and a **chunk size** that indicates the size to use for each chunk, in bytes.
+A **queuing strategy** is an object that determines how a stream should signal backpressure based on
+the state of its internal queue. The queuing strategy assigns a size to each chunk, and compares the
+total size of all chunks in the queue to a specified number, known as the **high water mark**.
 
 The final construct is called a **controller**—each writer has an associated controller that allows
 you to control the stream (for example, to abort it).
@@ -590,10 +590,9 @@ The second, likewise optional, argument of the `WritableStream()` constructor is
 It is an object that optionally defines a queuing strategy for the stream, which takes two
 parameters:
 
-- `highWaterMark`: A non-negative integer that defines the total number of chunks that can be
-  contained in the internal queue before backpressure is applied.
-- `size(chunk)`: A method containing a parameter chunk that indicates the size to use for each
-  chunk, in bytes.
+- `highWaterMark`: A non-negative number indicating the high water mark of the stream using this queuing strategy.
+- `size(chunk)`: A function that computes and returns the finite non-negative size of the given chunk value.
+  The result is used to determine backpressure, manifesting via the appropriate `WritableStreamDefaultWriter.desiredSize` property.
 
 {% Aside %} You could define your own custom `queuingStrategy`, or use an instance of
 [`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy)
@@ -634,7 +633,10 @@ const writableStream = new WritableStream({
   async write(chunk, controller) {
     console.log('[write]', chunk);
     // Wait for next write.
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(() => {
+      document.body.textContent += chunk;
+      resolve();
+    }, 1_000));
   },
   async close(controller) {
     console.log('[close]');
@@ -644,70 +646,71 @@ const writableStream = new WritableStream({
   },
 });
 
-(async () => {
-  const writer = writableStream.getWriter();
-  const start = Date.now();
-  for (const char of 'abcd') {
-    // Wait to add write queue.
-    await writer.ready;
-    console.log('[ready]', Date.now() - start, 'ms');
-    // The Promise is resolved after the write finishes.
-    writer.write(char);
-  }
-  await writer.close();
-})();
+const writer = writableStream.getWriter();
+const start = Date.now();
+for (const char of 'abcdefghijklmnopqrstuvwxyz') {
+  // Wait to add write queue.
+  await writer.ready;
+  console.log('[ready]', Date.now() - start, 'ms');
+  // The Promise is resolved after the write finishes.
+  writer.write(char);
+}
+await writer.close();
 ```
 
 ### Piping a readable stream to a writable stream
 
 A readable stream can be piped to a writable stream through the readable stream's
 [`pipeTo()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/pipeTo) method.
-`ReadableStream.pipeTo()` pipes the current `ReadableStream`to a given`WritableStream` and returns a
+`ReadableStream.pipeTo()` pipes the current `ReadableStream`to a given `WritableStream` and returns a
 promise that fulfills when the piping process completes successfully, or rejects if any errors were
 encountered.
 
 ```js
 const readableStream = new ReadableStream({
-  async start(controller) {
+  start(controller) {
     // Called by constructor.
     console.log('[start readable]');
     controller.enqueue('a');
     controller.enqueue('b');
     controller.enqueue('c');
   },
-  async pull(controller) {
+  pull(controller) {
     // Called when controller's queue is empty.
     console.log('[pull]');
     controller.enqueue('d');
     controller.close();
   },
-  async cancel(reason) {
+  cancel(reason) {
     // Called when the stream is canceled.
     console.log('[cancel]', reason);
   },
 });
 
 const writableStream = new WritableStream({
-  async start(controller) {
+  start(controller) {
     // Called by constructor
     console.log('[start writable]');
   },
-  async write(chunk, controller) {
-    // Called when writer.write()
+  write(chunk, controller) {
+    // Called upon writer.write()
     console.log('[write]', chunk);
+    // Wait for next write.
+    await new Promise((resolve) => setTimeout(() => {
+      document.body.textContent += chunk;
+      resolve();
+    }, 1_000));
   },
-  async close(controller) {
+  close(controller) {
     console.log('[close]');
   },
-  async abort(reason) {
+  abort(reason) {
     console.log('[abort]', reason);
   },
 });
 
-(async () => {
-  await readableStream.pipeTo(writableStream);
-  console.log('[finished]');
-})();
+await readableStream.pipeTo(writableStream);
+console.log('[finished]');
 ```
 
 ## Creating a transform stream
@@ -758,7 +761,9 @@ sections respectively.
 The following code sample shows a simple transform stream in action.
 
 ```js
-const transformStream = new TransformStream({
+// Note that `TextEncoderStream` and `TextDecoderStream` exist now.
+// This example shows how you would have done it before.
+const textEncoderStream = new TransformStream({
   async transform(chunk, controller) {
     console.log('[transform]', chunk);
     controller.enqueue(new TextEncoder().encode(chunk));
@@ -906,7 +911,7 @@ The [Serial API](/serial/) makes heavy use of both readable and writable streams
 // Prompt user to select any serial port.
 const port = await navigator.serial.requestPort();
 // Wait for the serial port to open.
-await port.open({ baudRate: 9600 });
+await port.open({ baudRate: 9_600 });
 const reader = port.readable.getReader();
 
 // Listen to data coming from the serial device.
@@ -954,10 +959,16 @@ while (true) {
 - [Streams polyfill](https://github.com/MattiasBuelens/web-streams-polyfill)
 - [2016—the year of web streams](https://jakearchibald.com/2016/streams-ftw/)
 - [Async iterators and generators](https://jakearchibald.com/2017/async-iterators-and-generators/)
+- [Stream Visualizer](https://surma.dev/lab/whatwg-stream-visualizer/lab.html)
 
 ## Acknowledgements
 
-This article was reviewed by [Joe Medley](https://github.com/jpmedley).
+This article was reviewed by
+[Jake Archibald](https://jakearchibald.com/),
+[François Beaufort](https://github.com/beaufortfrancois),
+[Sam Dutton](https://samdutton.com/),
+[Surma](https://surma.dev/), and
+[Joe Medley](https://github.com/jpmedley).
 [Jake Archibald](https://jakearchibald.com/)'s blog posts have helped me a lot in understanding
 streams. Some of the code samples are inspired by GitHub user
 [@bellbind](https://gist.github.com/bellbind/f6a7ba88e9f1a9d749fec4c9289163ac)'s explorations and
