@@ -151,24 +151,25 @@ reading your stream, you typically need to **release** the first reader before y
 
 You create a readable stream by calling its constructor
 [`ReadableStream()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/ReadableStream).
-It has an optional argument called the stream's `underlyingSource`, which is an object
-containing methods and properties that define how the constructed stream instance will behave. The
-`underlyingSource` can contain the following optional, developer-defined methods:
+The constructor has an optional argument `underlyingSource`, which represents an object
+with methods and properties that define how the constructed stream instance will behave. 
 
 #### The `underlyingSource`
 
-- `start(controller)`: This method is called immediately when the object is constructed. The
-  contents of this method should aim to get access to the stream source, and do anything else
-  required to set up the stream functionality. If this process is to be done asynchronously, it can
-  return a promise to signal success or failure. A potentially existing `pull` will not be called until this promise
-  fulfills. The stream will become errored if it rejects. The `controller` parameter passed to this method is
+This can use the following optional, developer-defined methods:
+
+- `start(controller)`: Called immediately when the object is constructed. The
+  method can access the stream source, and do anything else
+  required to set up the stream functionality. If this process is to be done asynchronously, the method can
+  return a promise to signal success or failure. The `controller` parameter passed to this method is
   a
-  [`ReadableStreamDefaultController`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultController).
-- `pull(controller)`: This method can be used to control the stream as more chunks are fetched. It
-  will be called repeatedly when the stream's internal queue of chunks is not full, up until it
+  [`ReadableStreamDefaultController`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultController)
+  by default.
+- `pull(controller)`: Can be used to control the stream as more chunks are fetched. It
+  is called repeatedly as long as the stream's internal queue of chunks is not full, up until the queue
   reaches its high water mark. If `pull()` returns a promise, it will not be called again until that
   promise fulfills; if the promise rejects, the stream will become errored.
-- `cancel(reason)`: This method gets called when the stream consumer cancels the stream.
+- `cancel(reason)`: Called when the stream consumer cancels the stream.
 
 The `ReadableStreamDefaultController` supports the following methods:
 
@@ -185,10 +186,10 @@ The second, likewise optional, argument of the `ReadableStream()` constructor is
 It is an object that optionally defines a queuing strategy for the stream, which takes two
 parameters:
 
-- `highWaterMark`: A non-negative number indicating the high water mark of the stream using this queuing strategy.
-- `size(chunk)`: A function that computes and returns the finite non-negative size of the given chunk value.
-  The result is used to determine backpressure, manifesting via the appropriate `ReadableStreamDefaultController.desiredSize` property.
-  It also governs when the underlying source's `pull()` method is called.
+- `highWaterMark`: A non-negative integer that defines the total number of chunks that can be
+  contained in the internal queue before backpressure is applied.
+- `size(chunk)`: A method with a single parameter `chunk` that indicates the size to use for each
+  chunk, in bytes.
 
 {% Aside %} You could define your own custom `queuingStrategy`, or use an instance of
 [`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy)
@@ -208,9 +209,9 @@ method of the `ReadableStreamDefaultReader` interface returns a promise providin
 chunk in the stream's internal queue. It fulfills or rejects with a result depending on the state of
 the stream. The different possibilities are as follows:
 
-- If a chunk is available, the promise will be fulfilled with an object of the form
+- If a chunk is available, the promise will be fulfilled with an object of the form<br>
   `{ value: chunk, done: false }`.
-- If the stream becomes closed, the promise will be fulfilled with an object of the form
+- If the stream becomes closed, the promise will be fulfilled with an object of the form<br>
   `{ value: undefined, done: true }`.
 - If the stream becomes errored, the promise will be rejected with the relevant error.
 
@@ -222,9 +223,9 @@ property.
 
 ### Readable stream code samples
 
-The code sample below shows all the steps in action. I first create a `ReadableStream` that in its
+The code sample below shows all the steps in action. You first create a `ReadableStream` that in its
 `underlyingSource` argument defines a `start` method that tells the stream's `controller` to
-`enqueue()` the current time during 10 seconds and then to `close()` the stream. I consume this
+`enqueue()` the current time during 10 seconds and then to `close()` the stream. You consume this
 stream by creating a reader via the `getReader()` method and calling `read()` until the stream is
 `done`.
 
@@ -232,7 +233,7 @@ stream by creating a reader via the `getReader()` method and calling `read()` un
 const startEnqueuing = (controller) => {
   let interval = null;
   interval = setInterval(() => {
-    let string = new Date().toLocaleTimeString();
+    const string = new Date().toLocaleTimeString();
     // Add the string to the stream.
     console.log(`Enqueued ${string}`);
     controller.enqueue(string);
@@ -275,7 +276,7 @@ async function concatStringStream(stream) {
 concatStringStream(stream).then((result) => console.log('Stream complete', result));
 ```
 
-The next (a bit contrived) code sample shows how you could implement a "shouting" version of `fetch()`
+The next code sample (a bit contrived) shows how you could implement a "shouting" version of `fetch()`
 that uppercases all text by consuming the returned response promise
 [as a stream](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams#consuming_a_fetch_as_a_stream)
 and uppercasing chunk by chunk. The advantage of this approach is that you do not need to wait for
@@ -364,7 +365,7 @@ async function example() {
 The [`tee()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/tee) method of the
 `ReadableStream` interface tees the current readable stream, returning a two-element array
 containing the two resulting branches as new `ReadableStream` instances. This is useful for allowing
-two readers to read a stream simultaneously. You might do this for example in a service worker if
+two readers to read a stream simultaneously. You might do this, for example, in a service worker if
 you want to fetch a response from the server and stream it to the browser, but also stream it to the
 service worker cache. Since a response body cannot be consumed more than once, you need two copies
 to do this. To cancel the stream, you then need to cancel both resulting branches. Teeing a stream
@@ -547,13 +548,14 @@ the Streams API provides a standard abstraction for writing streaming data to a 
 as a sink. This object comes with built-in backpressure and queuing. You create a writable stream by
 calling its constructor
 [`WritableStream()`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream/WritableStream).
-It has an optional argument called the stream's `underlyingSink`, which represents an object
-containing methods and properties that define how the constructed stream instance will behave. The
-`underlyingSink` can contain the following optional, developer-defined methods: The `controller`
-parameter passed to some of the following methods is a
-[`WritableStreamDefaultController`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultController).
+It has an optional `underlyingSink` parameter, which represents an object
+with methods and properties that define how the constructed stream instance will behave. 
 
 #### The `underlyingSink`
+
+The `underlyingSink` can include the following optional, developer-defined methods. The `controller`
+parameter passed to some of the methods is a
+[`WritableStreamDefaultController`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultController).
 
 - `start(controller)`: This method is called immediately when the object is constructed. The
   contents of this method should aim to get access to the underlying sink. If this process is to be
@@ -603,7 +605,7 @@ for this object value. If no `queuingStrategy` is supplied, the default used is 
 In order to write to a writable stream, you need a writer, which will be a
 `WritableStreamDefaultWriter`. The `getWriter()` method of the `WritableStream` interface returns a
 new instance of `WritableStreamDefaultWriter` and locks the stream to that instance. While the
-stream is locked, no other writer can be acquired until this one is released.
+stream is locked, no other writer can be acquired until the current one is released.
 
 The [`write()`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/write)
 method of the
@@ -749,7 +751,7 @@ contain any of the following methods:
 
 ### The `writableStrategy` and `readableStrategy` queueing strategies
 
-The second and third optional argument to the `TransformStream()` constructor takes optional
+The second and third optional parameters of the `TransformStream()` constructor takes optional
 `writableStrategy` and `readableStrategy` queueing strategies. They are defined as outlined in the
 [readable](/streams/#the-queuingstrategy) and the [writable](/streams/#the-queuingstrategy-2) stream
 sections respectively.
@@ -839,7 +841,7 @@ const readableStream = new ReadableStream({
 ## Browser support and polyfill
 
 Support for the Streams API in browsers varies. Be sure to check
-[CanIUse](https://caniuse.com/streams) for detailed compatibility data. Note that some browsers only
+[Can I use](https://caniuse.com/streams) for detailed compatibility data. Note that some browsers only
 have partial implementations of certain features, so be sure to check the data thoroughly.
 
 The good news is that there is a
@@ -847,8 +849,9 @@ The good news is that there is a
 available and a [polyfill](https://github.com/MattiasBuelens/web-streams-polyfill) targeted at
 production use.
 
-{% Aside 'gotcha' %} If ever possible load the polyfill conditionally and only if the built-in
-feature is not available. {% endAside %}
+{% Aside 'gotchas' %} 
+If possible, load the polyfill conditionally and only if the built-in feature is not available. 
+{% endAside %}
 
 ## Demo
 
@@ -864,7 +867,7 @@ the [demo](https://streams-demo.glitch.me/) in its own window or view the
 There are a number of useful streams built right into the browser. You can easily create a
 `ReadableStream` from a blob. The [`Blob`](https://developer.mozilla.org/en-US/docs/Web/API/Blob)
 interface's [stream()](https://developer.mozilla.org/en-US/docs/Web/API/Blob/stream) method returns
-a `ReadableStream` which upon reading returns the data contained within the Blob. Also recall that a
+a `ReadableStream` which upon reading returns the data contained within the blob. Also recall that a
 [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object is a specific kind of a
 `Blob`, and can be used in any context that a blob can.
 
