@@ -150,7 +150,7 @@ Here is what you need to do depending on the nature of the resource:
       served with CORS.
     * Ask the owner of the resource to support either CORS or CORP.
 * For iframes, use CORP and COEP headers as follows:
-  `Cross-Origin-Resource-Policy: same-origin` (or `same-saite`, `cross-origin`
+  `Cross-Origin-Resource-Policy: same-origin` (or `same-site`, `cross-origin`
   depending on the context) and `Cross-Origin-Embedder-Policy: require-corp`.
 
 {% Aside 'key-term' %}
