@@ -105,7 +105,9 @@ clearer, let's define them first:
 {% endAside %}
 
 ## Deploy COOP and COEP to make your website cross-origin isolated
+
 ### Integrate COOP and COEP
+
 #### 1. Set the `Cross-Origin-Opener-Policy: same-origin` header on the top-level document
 
 By enabling COOP on a top-level document, windows
