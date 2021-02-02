@@ -15,7 +15,7 @@ authors:
 hero: hero.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2020-10-15
+updated: 2021-02-02
 tags:
   - blog
   - security
@@ -150,8 +150,8 @@ Here is what you need to do depending on the nature of the resource:
       served with CORS.
     * Ask the owner of the resource to support either CORS or CORP.
 * For iframes, use CORP and COEP headers as follows:
-  `Cross-Origin-Resource-Policy: same-origin` and `Cross-Origin-Embedder-Policy:
-  require-corp`.
+  `Cross-Origin-Resource-Policy: same-origin` (or `same-saite`, `cross-origin`
+  depending on the context) and `Cross-Origin-Embedder-Policy: require-corp`.
 
 {% Aside 'key-term' %}
 It's important that you understand the difference between "same-site" and
