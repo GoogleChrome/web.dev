@@ -1,18 +1,18 @@
 ---
 layout: post
-title: Reading and writing files and directories with the browser-nativefs library
+title: Reading and writing files and directories with the browser-fs-access library
 authors:
   - thomassteiner
 description: |
   All modern browsers can read local files and directories; however,
   true write access, that is, more than just downloading files,
   is limited to browsers that implement the File System Access API.
-  This post introduces a support library called browser-nativefs
+  This post introduces a support library called browser-fs-access
   that acts as an abstraction layer on top of the File System Access API
   and that transparently falls back to legacy approaches for dealing with files.
 scheduled: true
 date: 2020-07-27
-# updated: 2020-06-30
+updated: 2021-01-27
 hero: hero.jpg
 tags:
   - blog
@@ -164,7 +164,7 @@ const saveFile = async (blob) => {
 };
 ```
 
-## Introducing browser-nativefs
+## Introducing browser-fs-access
 
 As perfectly fine as the File System Access API is,
 it's [not yet  widely available](https://caniuse.com/#feat=file-system-access-api).
@@ -182,30 +182,30 @@ This is why I see the File System Access API as a [progressive enhancement](/pro
 As such, I want to use it when the browser supports it,
 and use the traditional approach if not;
 all while never punishing the user with unnecessary downloads of unsupported JavaScript code.
-The [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs)
+The [browser-fs-access](https://github.com/GoogleChromeLabs/browser-fs-access)
 library is my answer to this challenge.
 
 ### Design philosophy
 
 Since the File System Access API is still likely to change in the future,
-the browser-nativefs API is not modeled after it.
+the browser-fs-access API is not modeled after it.
 That is, the library is not a [polyfill](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill),
 but rather a [ponyfill](https://github.com/sindresorhus/ponyfill).
 You can (statically or dynamically) exclusively import whatever functionality you need to keep your app as small as possible.
 The available methods are the aptly named
-[`fileOpen()`](https://github.com/GoogleChromeLabs/browser-nativefs#opening-files),
-[`directoryOpen()`](https://github.com/GoogleChromeLabs/browser-nativefs#opening-directories), and
-[`fileSave()`](https://github.com/GoogleChromeLabs/browser-nativefs#saving-files).
+[`fileOpen()`](https://github.com/GoogleChromeLabs/browser-fs-access#opening-files),
+[`directoryOpen()`](https://github.com/GoogleChromeLabs/browser-fs-access#opening-directories), and
+[`fileSave()`](https://github.com/GoogleChromeLabs/browser-fs-access#saving-files).
 Internally, the library feature-detects if the File System Access API is supported,
 and then imports the corresponding code path.
 
-### Using the browser-nativefs library
+### Using the browser-fs-access library
 
 The three methods are intuitive to use.
 You can specify your app's accepted `mimeTypes` or file `extensions`, and set a `multiple` flag
 to allow or disallow selection of multiple files or directories.
 For full details, see the
-[browser-nativefs API documentation](https://github.com/GoogleChromeLabs/browser-nativefs#api-documentation).
+[browser-fs-access API documentation](https://github.com/GoogleChromeLabs/browser-fs-access#api-documentation).
 The code sample below shows how you can open and save image files.
 
 ```js
@@ -215,7 +215,7 @@ import {
   fileOpen,
   directoryOpen,
   fileSave,
-} from 'https://unpkg.com/browser-nativefs';
+} from 'https://unpkg.com/browser-fs-access';
 
 (async () => {
   // Open an image file.
@@ -244,12 +244,12 @@ import {
 
 ### Demo
 
-You can see the above code in action in a [demo](https://browser-nativefs.glitch.me/) on Glitch.
-Its [source code](https://glitch.com/edit/#!/browser-nativefs) is likewise available there.
+You can see the above code in action in a [demo](https://browser-fs-access.glitch.me/) on Glitch.
+Its [source code](https://glitch.com/edit/#!/browser-fs-access) is likewise available there.
 Since for security reasons cross origin sub frames are not allowed to show a file picker,
 the demo cannot be embedded in this article.
 
-## The browser-nativefs library in the wild
+## The browser-fs-access library in the wild
 
 In my free time, I contribute a tiny bit to an
 [installable PWA](https://web.dev/progressive-web-apps/#installable)
@@ -258,7 +258,7 @@ a whiteboard tool that lets you easily sketch diagrams with a hand-drawn feel.
 It is fully responsive and works well on a range of devices from small mobile phones to computers with large screens.
 This means it needs to deal with files on all the various platforms
 whether or not they support the File System Access API.
-This makes it a great candidate for the browser-nativefs library.
+This makes it a great candidate for the browser-fs-access library.
 
 I can, for example, start a drawing on my iPhone,
 save it (technically: download it, since Safari does not support the File System Access API)
@@ -298,10 +298,10 @@ modify the file, and overwrite it with my changes, or even save it as a new file
 
 ### Real life code sample
 
-Below, you can see an actual example of browser-nativefs as it is used in Excalidraw.
+Below, you can see an actual example of browser-fs-access as it is used in Excalidraw.
 This excerpt is taken from
 [`/src/data/json.ts`](https://github.com/excalidraw/excalidraw/blob/cd87bd6901b47430a692a06a8928b0f732d77097/src/data/json.ts#L24-L52).
-Of special interest is how the `saveAsJSON()` method passes either a file handle or `null` to browser-nativefs'
+Of special interest is how the `saveAsJSON()` method passes either a file handle or `null` to browser-fs-access'
 `fileSave()` method, which causes it to overwrite when a handle is given,
 or to save to a new file if not.
 
@@ -367,7 +367,7 @@ On browsers that support the File System Access API, you can make the experience
 for true saving and overwriting (not just downloading) of files and
 by letting your users create new files wherever they want,
 all while remaining functional on browsers that do not support the File System Access API.
-The [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs) makes your life easier
+The [browser-fs-access](https://github.com/GoogleChromeLabs/browser-fs-access) makes your life easier
 by dealing with the subtleties of progressive enhancement and making your code as simple as possible.
 
 ## Acknowledgements

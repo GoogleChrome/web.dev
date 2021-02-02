@@ -219,6 +219,8 @@ redirects:
 # Redirect for renamed Native File System API
 - from: /native-file-system
   to: /file-system-access
+- from: /browser-nativefs
+  to: /browser-fs-access
 
 # Redirect to follow consistent Fugu API naming scheme
 
