@@ -56,10 +56,11 @@ they were concerned that it could be used for those security exploits. Chrome
 was able to re-introduce the API on Chrome Desktop after mitigations for Spectre
 and Meltdown were in place. They're updating the Chrome Desktop behavior now for
 consistency with web standards and to achieve total cross-origin isolation.
-Check out [How did we get here?](TODO) for more details on the history of
+Check out [How did we get here?][history] for more details on the history of
 `SharedArrayBuffer`.
 
 [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer
 [workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
 [compat]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer#browser_compatibility
 [announcement]: https://developer.chrome.com/blog/enabling-shared-array-buffer/
+[history]: https://developer.chrome.com/blog/enabling-shared-array-buffer/#history
