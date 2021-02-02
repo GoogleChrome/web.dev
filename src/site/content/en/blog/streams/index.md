@@ -153,7 +153,7 @@ This can use the following optional, developer-defined methods:
   [`ReadableStreamDefaultController`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultController)
   by default.
 - `pull(controller)`: Can be used to control the stream as more chunks are fetched. It
-  is called repeatedly as long as the stream's internal queue of chunks is not full, up until queue
+  is called repeatedly as long as the stream's internal queue of chunks is not full, up until the queue
   reaches its high water mark. If `pull()` returns a promise, it will not be called again until that
   promise fulfills; if the promise rejects, the stream will become errored.
 - `cancel(reason)`: Called when the stream consumer cancels the stream.
