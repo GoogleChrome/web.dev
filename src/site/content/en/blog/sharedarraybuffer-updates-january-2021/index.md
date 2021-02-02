@@ -42,7 +42,6 @@ Here's some quick browser compatibility updates regarding [`SharedArrayBuffer`][
   updates on other browsers.
 
 ### Background {: #background }
-This is a long test line that should be deleted. I'm intentionally making it longer than 100 characters. Here's a few more just to be safe.
 By default, JavaScript runs on the main thread of your page. If you execute a
 lot of JavaScript, the general responsiveness of your page can be negatively
 affected. Offloading JavaScript work to a web worker can help with this problem
