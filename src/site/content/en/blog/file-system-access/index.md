@@ -233,7 +233,7 @@ working on. This makes it possible to keep a list of recently opened or edited f
 re-open the last file when the app is opened, etc. In the text editor, I store a list of the five
 most recent files the user has opened, making it easy to access those files again.
 
-The code snippet below shows storing and retrieving a file handle at an example.
+The code example below shows storing and retrieving a file handle.
 You can [see this in action](https://filehandle-indexeddb.glitch.me/) over on Glitch
 (I use the [idb-keyval](https://www.npmjs.com/package/idb-keyval) library for brevity).
 
