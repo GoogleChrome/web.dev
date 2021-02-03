@@ -511,12 +511,6 @@ or [`CountQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/Cou
 for this object value. If no `queuingStrategy` is supplied, the default used is the same as a
 `CountQueuingStrategy` with a `highWaterMark` of `1`. {% endAside %}
 
-
-- `highWaterMark`: A non-negative number indicating the high water mark of the stream using this queuing strategy.
-- `size(chunk)`: A function that computes and returns the finite non-negative size of the given chunk value.
-  The result is used to determine backpressure, manifesting via the appropriate `ReadableByteStreamController.desiredSize` property.
-  It also governs when the underlying source's `pull()` method is called.
-
 ## The mechanics of a writable stream
 
 A writable stream is a destination into which you can write data, represented in JavaScript by a
