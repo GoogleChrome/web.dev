@@ -324,42 +324,6 @@ async function concatStringStream(stream) {
 concatStringStream(stream).then((result) => console.log('Stream complete', result));
 ```
 
-The next code sample (a bit contrived) shows how you could implement a "shouting" version of `fetch()`
-that uppercases all text by consuming the returned response promise
-[as a stream](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams#consuming_a_fetch_as_a_stream)
-and uppercasing chunk by chunk. The advantage of this approach is that you do not need to wait for
-the whole document to be downloaded, which can make a huge difference when dealing with large files.
-
-```js
-function upperCaseStream() {
-  return new TransformStream({
-    transform(chunk, controller) {
-      controller.enqueue(chunk.toUpperCase());
-    },
-  });
-}
-
-function appendToDOMStream(el) {
-  return new WritableStream({
-    write(chunk) {
-      el.append(chunk);
-    }
-  });
-}
-
-fetch('./lorem-ipsum.txt').then((response) =>
-  response.body
-    .pipeThrough(new TextDecoderStream())
-    .pipeThrough(upperCaseStream())
-    .pipeTo(appendToDOMStream(document.body))
-);
-```
-
-{% Aside %}
-  This example already uses a writable stream and a transform stream,
-  which I will both properly introduce further down in the article. Stay tuned!
-{% endAside %}
-
 ### Asynchronous iteration
 
 Checking upon each `read()` loop iteration if the stream is `done` may not be the most convenient API.
@@ -475,6 +439,8 @@ because if a buffer detaches, it can guarantee that one does not write into the 
 hence avoiding race conditions. BYOB readers can reduce the number of times the browser needs to run
 garbage collection, because it can reuse buffers.
 
+### Creating a readable byte stream
+
 You can create a readable byte stream by passing an additional `type` parameter to the
 `ReadableStream()` constructor.
 
@@ -482,27 +448,56 @@ You can create a readable byte stream by passing an additional `type` parameter 
 new ReadableStream({ type: 'bytes' });
 ```
 
+#### The `underlyingSource`
+
+The underlying source of a readable byte stream is given a `ReadableByteStreamController` to
+manipulate. Its `ReadableByteStreamController.enqueue()` method takes a `chunk` argument whose value
+is an `ArrayBufferView`. The property `ReadableByteStreamController.byobRequest` returns the current
+BYOB pull request, or null if there is none. Finally, the `ReadableByteStreamController.desiredSize`
+property returns the desired size to fill the controlled stream's internal queue.
+
+### The `queuingStrategy`
+
+The second, likewise optional, argument of the `ReadableStream()` constructor is `queuingStrategy`.
+It is an object that optionally defines a queuing strategy for the stream, which takes two
+parameters:
+
+- `highWaterMark`: A non-negative number indicating the high water mark of the stream using this queuing strategy.
+- `size(chunk)`: A function that computes and returns the finite non-negative size of the given chunk value.
+  The result is used to determine backpressure, manifesting via the appropriate `ReadableByteStreamController.desiredSize` property.
+  It also governs when the underlying source's `pull()` method is called.
+
+{% Aside %}
+  You could define your own custom `queuingStrategy`, or use an instance of
+  [`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy)
+  or [`CountQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy)
+  for this object value. If no `queuingStrategy` is supplied, the default used is the same as a
+  `CountQueuingStrategy` with a `highWaterMark` of `1`.
+{% endAside %}
+
+#### The `getReader()` and `read()` methods
+
 You can then get access to a `ReadableStreamBYOBReader` by setting the `mode` parameter accordingly:
 `ReadableStream.getReader({ mode: "byob" })`. This allows for more precise control over buffer
 allocation in order to avoid copies. To read from the byte stream, you need to call
 `ReadableStreamBYOBReader.read(view)`, where `view` is an
 [`ArrayBufferView`](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView).
 
+#### Readable byte stream code sample
+
 ```js
-const reader = readableStream.getReader({ mode: 'byob' });
+const reader = readableStream.getReader({ mode: "byob" });
 
 let startingAB = new ArrayBuffer(1_024);
 const buffer = await readInto(startingAB);
-console.log('The first 1,024 bytes (or less): ', buffer);
+console.log("The first 1024 bytes, or less:", buffer);
 
 async function readInto(buffer) {
   let offset = 0;
 
   while (offset < buffer.byteLength) {
-    const view = new Uint8Array(buffer, offset, buffer.byteLength - offset);
-    const { value, done } = await reader.read(view);
-    buffer = value.buffer;
-    );
+    const { value: view, done } =
+        await reader.read(new Uint8Array(buffer, offset, buffer.byteLength - offset));
     buffer = view.buffer;
     if (done) {
       break;
@@ -514,15 +509,9 @@ async function readInto(buffer) {
 }
 ```
 
-The underlying source of a readable byte stream is given a `ReadableByteStreamController` to
-manipulate. Its `ReadableByteStreamController.enqueue()` method takes a `chunk` argument whose value
-is an `ArrayBufferView`. The property `ReadableByteStreamController.byobRequest` returns the current
-BYOB pull request, or null if there is none. Finally, the `ReadableByteStreamController.desiredSize`
-property returns the desired size to fill the controlled stream's internal queue.
-
-The following function returns readable byte streams that allow efficient zero-copy reading of a
+The following function returns readable byte streams that allow for efficient zero-copy reading of a
 randomly generated array. Instead of using a predetermined chunk size of 1,024, it attempts to fill
-the developer-supplied buffer, allowing full control.
+the developer-supplied buffer, allowing for full control.
 
 ```js
 const DEFAULT_CHUNK_SIZE = 1_024;
@@ -531,9 +520,10 @@ function makeReadableByteStream() {
   return new ReadableStream({
     type: 'bytes',
 
-    async pull(controller) {
-      // Even when the consumer is using the default reader, the auto-allocation
-      // feature allocates a buffer and passes it to us via byobRequest.
+    pull(controller) {
+      // Even when the consumer is using the default reader,
+      // the auto-allocation feature allocates a buffer and
+      // passes it to us via `byobRequest`.
       const view = controller.byobRequest.view;
       view = crypto.getRandomValues(view);
       controller.byobRequest.respond(view.byteLength);
@@ -543,21 +533,6 @@ function makeReadableByteStream() {
   });
 }
 ```
-
-The second, likewise optional, argument of the `ReadableStream()` constructor is `queuingStrategy`.
-It is an object that optionally defines a queuing strategy for the stream, which takes two
-parameters:
-
-- `highWaterMark`: A non-negative number indicating the high water mark of the stream using this queuing strategy.
-- `size(chunk)`: A function that computes and returns the finite non-negative size of the given chunk value.
-  The result is used to determine backpressure, manifesting via the appropriate `ReadableByteStreamController.desiredSize` property.
-  It also governs when the underlying source's `pull()` method is called.
-
-{% Aside %} You could define your own custom `queuingStrategy`, or use an instance of
-[`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy)
-or [`CountQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy)
-for this object value. If no `queuingStrategy` is supplied, the default used is the same as a
-`CountQueuingStrategy` with a `highWaterMark` of `1`. {% endAside %}
 
 ## The mechanics of a writable stream
 
@@ -619,6 +594,26 @@ parameter passed to some of the methods is a
   away. If this process is asynchronous, it can return a promise to signal success or failure. The
   `reason` parameter contains a `DOMString` describing why the stream was aborted.
 
+```js
+const writableStream = new WritableStream({
+  start(controller) {
+    /* … */
+  },
+
+  write(chunk, controller) {
+    /* … */
+  },
+
+  close(controller) {
+    /* … */
+  },
+
+  abort(reason) {
+    /* … */
+  },
+});
+```
+
 The
 [`WritableStreamDefaultController`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultController)
 interface of the Streams API represents a controller allowing control of a `WritableStream`'s state
@@ -627,6 +622,18 @@ a `WritableStream`, the underlying sink is given a corresponding `WritableStream
 instance to manipulate. The `WritableStreamDefaultController` has only one method:
 [`WritableStreamDefaultController.error()`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultController/error),
 which causes any future interactions with the associated stream to error.
+
+```js
+/* … */
+write(chunk, controller) {
+  try {
+    // Try to do something dangerous with `chunk`.
+  } catch (error) {
+    controller.error(error.message);
+  }
+},
+/* … */
+```
 
 #### The `queuingStrategy`
 
@@ -659,11 +666,21 @@ a promise that resolves to indicate the success or failure of the write operatio
 "success" means is up to the underlying sink; it might indicate that the chunk has been accepted,
 and not necessarily that it is safely saved to its ultimate destination.
 
+```js
+const writer = writableStream.getWriter();
+const resultPromise = writer.write('The first chunk!');
+```
+
 #### The `locked` property
 
 You can check if a writable stream is locked by accessing its
 [`WritableStream.locked`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream/locked)
 property.
+
+```js
+const locked = writableStream.locked;
+console.log(`The stream is ${locked ? 'indeed' : 'not'} locked.`);
+```
 
 ### Writable stream code sample
 
@@ -671,7 +688,7 @@ The code sample below shows all steps in action.
 
 ```js
 const writableStream = new WritableStream({
-  async start(controller) {
+  start(controller) {
     console.log('[start]');
   },
   async write(chunk, controller) {
@@ -682,10 +699,10 @@ const writableStream = new WritableStream({
       resolve();
     }, 1_000));
   },
-  async close(controller) {
+  close(controller) {
     console.log('[close]');
   },
-  async abort(reason) {
+  abort(reason) {
     console.log('[abort]', reason);
   },
 });
@@ -693,7 +710,7 @@ const writableStream = new WritableStream({
 const writer = writableStream.getWriter();
 const start = Date.now();
 for (const char of 'abcdefghijklmnopqrstuvwxyz') {
-  // Wait to add write queue.
+  // Wait to add to the write queue.
   await writer.ready;
   console.log('[ready]', Date.now() - start, 'ms');
   // The Promise is resolved after the write finishes.
@@ -793,11 +810,27 @@ contain any of the following methods:
   writable sides of the stream. Throwing an exception is treated the same as returning a rejected
   promise.
 
+```js
+const transformStream = new TransformStream({
+  start(controller) {
+    /* … */
+  },
+
+  transform(chunk, controller) {
+    /* … */
+  },
+
+  flush(controller) {
+    /* … */
+  },
+});
+```
+
 ### The `writableStrategy` and `readableStrategy` queueing strategies
 
-The second and third optional parameters of the `TransformStream()` constructor takes optional
+The second and third optional parameters of the `TransformStream()` constructor are optional
 `writableStrategy` and `readableStrategy` queueing strategies. They are defined as outlined in the
-[readable](/streams/#the-queuingstrategy) and the [writable](/streams/#the-queuingstrategy-2) stream
+[readable](#the-queuingstrategy) and the [writable](#the-queuingstrategy-3) stream
 sections respectively.
 
 ### Transform stream code sample
@@ -808,11 +841,11 @@ The following code sample shows a simple transform stream in action.
 // Note that `TextEncoderStream` and `TextDecoderStream` exist now.
 // This example shows how you would have done it before.
 const textEncoderStream = new TransformStream({
-  async transform(chunk, controller) {
+  transform(chunk, controller) {
     console.log('[transform]', chunk);
     controller.enqueue(new TextEncoder().encode(chunk));
   },
-  async flush(controller) {
+  flush(controller) {
     console.log('[flush]');
     controller.terminate();
   },
@@ -844,31 +877,31 @@ it for the duration of the pipe, preventing other readers from locking it.
 
 ```js
 const transformStream = new TransformStream({
-  async transform(chunk, controller) {
+  transform(chunk, controller) {
     console.log('[transform]', chunk);
     controller.enqueue(new TextEncoder().encode(chunk));
   },
-  async flush(controller) {
+  flush(controller) {
     console.log('[flush]');
     controller.terminate();
   },
 });
 
 const readableStream = new ReadableStream({
-  async start(controller) {
+  start(controller) {
     // called by constructor
     console.log('[start]');
     controller.enqueue('a');
     controller.enqueue('b');
     controller.enqueue('c');
   },
-  async pull(controller) {
+  pull(controller) {
     // called read when controller's queue is empty
     console.log('[pull]');
     controller.enqueue('d');
     controller.close(); // or controller.error();
   },
-  async cancel(reason) {
+  cancel(reason) {
     // called when rs.cancel(reason)
     console.log('[cancel]', reason);
   },
@@ -880,6 +913,37 @@ const readableStream = new ReadableStream({
     console.log('[value]', result.value);
   }
 })();
+```
+
+The next code sample (a bit contrived) shows how you could implement a "shouting" version of `fetch()`
+that uppercases all text by consuming the returned response promise
+[as a stream](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams#consuming_a_fetch_as_a_stream)
+and uppercasing chunk by chunk. The advantage of this approach is that you do not need to wait for
+the whole document to be downloaded, which can make a huge difference when dealing with large files.
+
+```js
+function upperCaseStream() {
+  return new TransformStream({
+    transform(chunk, controller) {
+      controller.enqueue(chunk.toUpperCase());
+    },
+  });
+}
+
+function appendToDOMStream(el) {
+  return new WritableStream({
+    write(chunk) {
+      el.append(chunk);
+    }
+  });
+}
+
+fetch('./lorem-ipsum.txt').then((response) =>
+  response.body
+    .pipeThrough(new TextDecoderStream())
+    .pipeThrough(upperCaseStream())
+    .pipeTo(appendToDOMStream(document.body))
+);
 ```
 
 ## Browser support and polyfill
@@ -894,7 +958,7 @@ available and a [polyfill](https://github.com/MattiasBuelens/web-streams-polyfil
 production use.
 
 {% Aside 'gotchas' %}
-If possible, load the polyfill conditionally and only if the built-in feature is not available.
+  If possible, load the polyfill conditionally and only if the built-in feature is not available.
 {% endAside %}
 
 ## Demo
