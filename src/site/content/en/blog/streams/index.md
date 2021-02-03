@@ -6,7 +6,7 @@ description: |
   network and process them as desired.
 authors:
   - thomassteiner
-date: 2021-01-18
+date: 2021-02-03
 # updated: 2021-01-18
 hero: hero.jpg
 alt: A forest stream with colored fallen leaves.
@@ -31,8 +31,8 @@ capability has never been available to JavaScript before `fetch` with streams wa
 Previously, if you wanted to process a resource of some kind (be it a video, or a text file, etc.),
 you would have to download the entire file, wait for it to be deserialized into a suitable format,
 and then process it. With streams being available to
-JavaScript, this all changes—you can now start processing raw data with JavaScript progressively as
-soon as it is available on the client-side, without needing to generate a buffer, string, or blob.
+JavaScript, this all changes. You can now process raw data with JavaScript progressively as
+soon as it is available on the client, without needing to generate a buffer, string, or blob.
 This unlocks a number of use cases, some of which I list below:
 
 - **Video effects:** piping a readable video stream through a transform stream that applies effects
@@ -46,7 +46,7 @@ This unlocks a number of use cases, some of which I list below:
 
 ## Core concepts
 
-Before I go into details on the various types of streams, let me introduce some core concepts first.
+Before I go into details on the various types of streams, let me introduce some core concepts.
 
 ### Chunks
 
@@ -57,13 +57,13 @@ KiB `Uint8Array` units, instead of single bytes.
 
 ### Readable streams
 
-A readable stream represents a source of data, from which you can read. In other words, data **comes
+A readable stream represents a source of data from which you can read. In other words, data **comes
 out** of a readable stream. Concretely, a readable stream is an instance of the `ReadableStream`
 class.
 
 ### Writable streams
 
-A writable stream represents a destination for data, into which you can write. In other words, data
+A writable stream represents a destination for data into which you can write. In other words, data
 **goes in** to a writable stream. Concretely, a writable stream is an instance of the
 `WritableStream` class.
 
@@ -74,10 +74,10 @@ and a readable stream, known as its readable side.
 A real-world metaphor for this would be a
 [simultaneous interpreter](https://en.wikipedia.org/wiki/Simultaneous_interpretation)
 who on-the-fly translates from one language to another.
-In a manner specific to the transform stream in
-question, writes to the writable side result in new data being made available for reading from the
+In a manner specific to the transform stream, writing
+to the writable side results in new data being made available for reading from the
 readable side. Concretely, any object with a `writable` property and a `readable` property can serve
-as a transform stream. However, the standard `TransformStream` class makes it much easier to create
+as a transform stream. However, the standard `TransformStream` class makes it easier to create
 such a pair that is properly entangled.
 
 ### Pipe chains
@@ -92,8 +92,7 @@ streams piped together** in this way is referred to as a pipe chain.
 Once a pipe chain is constructed, it will propagate signals regarding how fast chunks should flow
 through it. If any step in the chain cannot yet accept chunks, it propagates a signal backwards
 through the pipe chain, until eventually the original source is told to stop producing chunks so
-fast. This process of **normalizing flow** from the original source according to how fast the chain
-can process chunks is called backpressure.
+fast. This process of **normalizing flow** is called backpressure.
 
 ### Teeing
 
@@ -117,7 +116,7 @@ constructor creates and returns a readable stream object from the given handlers
 types of underlying source:
 
 - **Push sources** constantly push data at you when you have accessed them, and it is up to you to
-  start, pause, or cancel access to the stream. Examples include live video streams, Server-Sent Events,
+  start, pause, or cancel access to the stream. Examples include live video streams, server-sent events,
   or WebSockets.
 - **Pull sources** require you to explicitly request data from them once connected to. Examples
   include HTTP operations via `fetch()` or `XMLHttpRequest` calls.
@@ -167,11 +166,12 @@ This can use the following optional, developer-defined methods:
   by default.
 - `pull(controller)`: Can be used to control the stream as more chunks are fetched. It
   is called repeatedly as long as the stream's internal queue of chunks is not full, up until the queue
-  reaches its high water mark. If `pull()` returns a promise, it will not be called again until that
-  promise fulfills; if the promise rejects, the stream will become errored.
+  reaches its high water mark. If the result of calling `pull()` is a promise,
+  `pull()` will not be called again until said  promise fulfills.
+  If the promise rejects, the stream will become errored.
 - `cancel(reason)`: Called when the stream consumer cancels the stream.
 
-The `ReadableStreamDefaultController` supports the following methods:
+The `ReadableByteStreamController` supports the following methods:
 
 - [`ReadableByteStreamController.close()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableByteStreamController/close)
   closes the associated stream.
@@ -199,7 +199,7 @@ for this object's value. If no `queuingStrategy` is supplied, the default used i
 
 #### The `getReader()` and `read()` methods
 
-In order to read from a readable stream, you need a reader, which, by default, will be a
+To read from a readable stream, you need a reader, which will be a
 [`ReadableStreamDefaultReader`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader).
 The `getReader()` method of the `ReadableStream` interface creates a reader and locks the stream to
 it. While the stream is locked, no other reader can be acquired until this one is released.
@@ -225,7 +225,7 @@ property.
 
 The code sample below shows all the steps in action. You first create a `ReadableStream` that in its
 `underlyingSource` argument defines a `start` method that tells the stream's `controller` to
-`enqueue()` the current time during 10 seconds and then to `close()` the stream. You consume this
+`enqueue()` a timestamp every second during ten seconds and then to `close()` the stream. You consume this
 stream by creating a reader via the `getReader()` method and calling `read()` until the stream is
 `done`.
 
@@ -314,8 +314,8 @@ fetch('./lorem-ipsum.txt').then((response) =>
 
 ### Asynchronous iteration
 
-Checking upon each `read()` iteration if the stream is `done` may not be the most convenient API.
-Luckily there is a specified better way to do this: asynchronous iteration.
+Checking upon each `read()` loop iteration if the stream is `done` may not be the most convenient API.
+Luckily there is a better way to do this: asynchronous iteration.
 
 ```js
 for await (const chunk of stream) {
@@ -323,7 +323,9 @@ for await (const chunk of stream) {
 }
 ```
 
-{% Aside 'caution' %} Asynchronous iteration is not yet implemented in any browser. {% endAside %}
+{% Aside 'caution' %}
+  Asynchronous iteration is not yet implemented in any browser.
+{% endAside %}
 
 A workaround to use asynchronous iteration today is to implement the behavior with a helper
 function. This allows you to use the feature in your code as shown in the snippet below.
@@ -364,7 +366,7 @@ async function example() {
 
 The [`tee()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/tee) method of the
 `ReadableStream` interface tees the current readable stream, returning a two-element array
-containing the two resulting branches as new `ReadableStream` instances. This is useful for allowing
+containing the two resulting branches as new `ReadableStream` instances. This allows
 two readers to read a stream simultaneously. You might do this, for example, in a service worker if
 you want to fetch a response from the server and stream it to the browser, but also stream it to the
 service worker cache. Since a response body cannot be consumed more than once, you need two copies
@@ -420,7 +422,7 @@ For streams representing bytes, an extended version of the readable stream is pr
 bytes efficiently, in particular by minimizing copies. Byte streams allow for bring-your-own-buffer
 (BYOB) readers to be acquired. The default implementation can give a range of different outputs such
 as strings or array buffers in the case of WebSockets, whereas byte streams guarantee byte output.
-In addition to that, being able to have BYOB readers has benefits in terms of stability. This is
+In addition, BYOB readers have stability benefits. This is
 because if a buffer detaches, it can guarantee that one does not write into the same buffer twice,
 hence avoiding race conditions. BYOB readers can reduce the number of times the browser needs to run
 garbage collection, because it can reuse buffers.
@@ -538,7 +540,7 @@ A **queuing strategy** is an object that determines how a stream should signal b
 the state of its internal queue. The queuing strategy assigns a size to each chunk, and compares the
 total size of all chunks in the queue to a specified number, known as the **high water mark**.
 
-The final construct is called a **controller**—each writer has an associated controller that allows
+The final construct is called a **controller**. Each writer has an associated controller that allows
 you to control the stream (for example, to abort it).
 
 ### Creating a writable stream
@@ -571,7 +573,7 @@ parameter passed to some of the methods is a
   have succeeded.
 - `abort(reason)`: This method will be called if the app signals that it wishes to abruptly close
   the stream and put it in an errored state. It can clean up any held resources, much like
-  `close()`, but `abort()` will be called even if writes are queued up—those chunks will be thrown
+  `close()`, but `abort()` will be called even if writes are queued up. Those chunks will be thrown
   away. If this process is asynchronous, it can return a promise to signal success or failure. The
   `reason` parameter contains a `DOMString` describing why the stream was aborted.
 
@@ -602,7 +604,7 @@ for this object value. If no `queuingStrategy` is supplied, the default used is 
 
 #### The `getWriter()` and `write()` methods
 
-In order to write to a writable stream, you need a writer, which will be a
+To write to a writable stream, you need a writer, which will be a
 `WritableStreamDefaultWriter`. The `getWriter()` method of the `WritableStream` interface returns a
 new instance of `WritableStreamDefaultWriter` and locks the stream to that instance. While the
 stream is locked, no other writer can be acquired until the current one is released.
