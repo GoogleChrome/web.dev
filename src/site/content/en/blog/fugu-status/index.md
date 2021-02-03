@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything iOS/Android/desktop apps can. The members of the cross-company capabilities project want to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-12-01
+updated: 2021-01-21
 tags:
   - blog
   - capabilities
@@ -54,35 +54,6 @@ change.<a name="shape-face-text"></a>
           <em>Updated April 14, 2020</em>
         </td>
       </tr>
-      <tr>
-        <td>
-          <a href="/notification-triggers/">
-            Notification Triggers
-          </a>
-        </td>
-        <td>
-          Notification Triggers let you schedule notifications in advance, so
-          that the operating system will deliver the notification at the right
-          time - even if there is no network connectivity, or the device is in
-          battery saver mode.<br>
-          <em>Updated August 23, 2020</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="/nfc/">Web NFC</a>
-        </td>
-        <td>
-          Web NFC provides sites the ability to read and write to NFC tags when
-          they are in close proximity to the user's device.
-          For example, museums and art galleries could display additional
-          information about a display when the user touches their device to an
-          NFC card near the exhibit; or an inventory management web app could
-          read or write data to an NFC tag on a container to update information
-          on its contents.<br>
-          <em>Updated December 1, 2020</em>
-        </td>
-      </tr>
     </tbody>
   </table>
 </div>
@@ -110,20 +81,6 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
     <tbody>
       <tr>
         <td>
-          <a href="/content-indexing-api/">Content Indexing API</a>
-        </td>
-        <td>
-          Your PWA might cache articles and media files, but how will your users
-          know that your pages work while offline? The Content Indexing API is
-          one answer to this question currently in an origin trial. Once the
-          index is populated with content from your PWA, as well as any other
-          installed PWAs, it will show up in dedicated areas of supported
-          browsers.<br>
-          <em>Updated December 12, 2019</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
           <a href="/idle-detection/">Idle Detection API</a>
         </td>
         <td>
@@ -137,29 +94,16 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
       </tr>
       <tr>
         <td>
-          <a href="/serial/">
-            Serial API
+          <a href="/notification-triggers/">
+            Notification Triggers
           </a>
         </td>
         <td>
-          The Serial API provides a way for websites to read from and
-          write to a serial device with scripts. The API bridges the web and
-          the physical world by allowing websites to communicate with serial
-          devices, such as microcontrollers and 3D printers.<br>
-          <em>Updated September 29, 2020</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="/hid/">WebHID API</a>
-        </td>
-        <td>
-          There is a long tail of human interface devices (HIDs), such as
-          alternative keyboards or exotic gamepads, that are too new, too old,
-          or too uncommon to be accessible by systems' device drivers. The
-          WebHID API solves this by providing a way to implement
-          device-specific logic in JavaScript.<br>
-          <em>Updated September 15, 2020</em>
+          Notification Triggers let you schedule notifications in advance, so
+          that the operating system will deliver the notification at the right
+          time-even if there is no network connectivity, or the device is in
+          battery saver mode.<br>
+          <em>Updated September 28, 2020</em>
         </td>
       </tr>
     </tbody>
@@ -182,17 +126,15 @@ latest version of Chrome, and in many cases other Chromium based browsers.
     <tbody>
       <tr>
         <td>
-          <a href="/wakelock/">Wake Lock API</a>
+          <a href="/image-support-for-async-clipboard/">
+            Async&nbsp;Clipboard API (images)
+          </a>
         </td>
         <td>
-          To avoid draining the battery, most devices will quickly fall asleep
-          when left idle. While this is fine most of the time, there are
-          some applications that need to keep the screen or the device awake in
-          order to complete some work. The Wake Lock API provides a way to
-          prevent the device from dimming or locking the screen or prevent
-          the device from going to sleep when an application needs to keep
-          running.<br>
-          <em>Updated June 24, 2020</em>
+          The Asynchronous Clipboard API makes it possible to read and write
+          text or image data to the clipboard, without blocking the main
+          thread.<br>
+          <em>Updated February 26, 2020</em>
         </td>
       </tr>
       <tr>
@@ -206,24 +148,17 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           to subtly notify the user that there is some new activity that might
           require their attention, or it can be used to indicate a small
           amount of information, such as an unread count.<br/>
-          <div class="w-aside w-aside--note">
-          Despite a stable version of the spec shipping in Chrome 81, an origin
-          trial is running in Chrome 79 and Chrome 81 until September 15, 2020.
-          </div>
           <em>Updated March 16, 2020</em>
         </td>
       </tr>
       <tr>
         <td>
-          <a href="/image-support-for-async-clipboard/">
-            Async&nbsp;Clipboard API (images)
-          </a>
+          <a href="/camera-pan-tilt-zoom/">Camera pan, tilt, and zoom</a>
         </td>
         <td>
-          The Asynchronous Clipboard API makes it possible to read and write
-          text or image data to the clipboard, without blocking the main
-          thread.<br>
-          <em>Updated February 26, 2020</em>
+          Pan, tilt, and zoom features on cameras are accessible on the
+          web, after requesting proper user permissions.<br>
+          <em>Updated October 5, 2020</em>
         </td>
       </tr>
       <tr>
@@ -241,15 +176,15 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
       <tr>
         <td>
-          <a href="/get-installed-related-apps/">
-            Get Installed Related Apps API
-          </a>
+          <a href="/content-indexing-api/">Content Indexing API</a>
         </td>
         <td>
-          The Get Installed Related Apps API is a web platform API
-          that allows your web app to check to see if your iOS/Android app is
-          installed on the users device, and vice versa.<br>
-          <em>Updated December 18, 2019</em>
+          Your PWA might cache articles and media files, but how will your users
+          know that your pages work while offline? The Content Indexing API is
+          one answer to this question. Once the index is populated with content
+          from your PWA, as well as any other installed PWAs, it will show up in
+          dedicated areas of supported browsers.<br>
+          <em>Updated January 21, 2021</em>
         </td>
       </tr>
       <tr>
@@ -271,6 +206,19 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
       <tr>
         <td>
+          <a href="/get-installed-related-apps/">
+            Get Installed Related Apps API
+          </a>
+        </td>
+        <td>
+          The Get Installed Related Apps API is a web platform API
+          that allows your web app to check to see if your iOS or Android app is
+          installed on the users device, and vice versa.<br>
+          <em>Updated December 18, 2019</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="/periodic-background-sync/">Periodic Background Sync API</a>
         </td>
         <td>
@@ -278,6 +226,20 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           synchronize data in the background, bringing web apps closer to
           the behavior of a platform-specific app.<br>
           <em>Updated December 18, 2019</em><a name="shape-barcode"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/serial/">
+            Serial API
+          </a>
+        </td>
+        <td>
+          The Serial API provides a way for websites to read from and
+          write to a serial device with scripts. The API bridges the web and
+          the physical world by allowing websites to communicate with serial
+          devices, such as microcontrollers and 3D printers.<br>
+          <em>Updated January 21, 2021</em>
         </td>
       </tr>
       <tr>
@@ -293,6 +255,49 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           for information on other shape detection APIs that are under
           development.<br>
           <em>Updated April 14, 2020</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/wake-lock/">Wake Lock API</a>
+        </td>
+        <td>
+          To avoid draining the battery, most devices will quickly fall asleep
+          when left idle. While this is fine most of the time, there are
+          some applications that need to keep the screen or the device awake in
+          order to complete some work. The Wake Lock API provides a way to
+          prevent the device from dimming or locking the screen or prevent
+          the device from going to sleep when an application needs to keep
+          running.<br>
+          <em>Updated June 24, 2020</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/hid/">WebHID API</a>
+        </td>
+        <td>
+          There is a long tail of human interface devices (HIDs), such as
+          alternative keyboards or exotic gamepads, that are too new, too old,
+          or too uncommon to be accessible by systems' device drivers. The
+          WebHID API solves this by providing a way to implement
+          device-specific logic in JavaScript.<br>
+          <em>Updated January 21, 2021</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/nfc/">Web NFC</a>
+        </td>
+        <td>
+          Web NFC provides sites the ability to read and write to NFC tags when
+          they are in close proximity to the user's device.
+          For example, museums and art galleries could display additional
+          information about a display when the user touches their device to an
+          NFC card near the exhibit; or an inventory management web app could
+          read or write data to an NFC tag on a container to update information
+          on its contents.<br>
+          <em>Updated January 21, 2021</em>
         </td>
       </tr>
       <tr>
@@ -328,16 +333,6 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           either the Web Share API or system events, like the OS-level share
           button.<br>
           <em>Updated November 8, 2019</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="/camera-pan-tilt-zoom/">Camera pan, tilt, and zoom</a>
-        </td>
-        <td>
-          Pan, tilt, and zoom features on cameras are accessible on the
-          web, after requesting proper user permissions.<br>
-          <em>Updated October 5, 2020</em>
         </td>
       </tr>
     </tbody>

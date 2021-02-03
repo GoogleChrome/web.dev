@@ -10,7 +10,7 @@ description: |
   API solves this by providing a way to implement device-specific logic in
   JavaScript.
 date: 2020-07-22
-updated: 2021-01-15
+updated: 2021-01-25
 tags:
   - blog
   - capabilities
@@ -21,19 +21,17 @@ hero: game-controller.jpg
 alt: A generic game controller
 ---
 
-
-{% Aside %}
-The WebHID API is part of the [capabilities
-project](https://developers.google.com/web/updates/capabilities) and is
-currently in development. This post will be updated as the implementation
-progresses.
+{% Aside 'success' %}
+The [WebHID API](/hid), part of the [capabilities project](/fugu-status/),
+launched in Chrome&nbsp;89.
 {% endAside %}
 
 ## What is the WebHID API? {: #what }
 
 There is a long tail of human interface devices (HIDs) that are too new, too
-old, or too uncommon to be accessible by systems' device drivers. The WebHID API
-solves this by providing a way to implement device-specific logic in JavaScript.
+old, or too uncommon to be accessible by systems' device drivers. The [WebHID
+API](/hid) solves this by providing a way to implement device-specific logic in
+JavaScript.
 
 ### Suggested use cases for the WebHID API {: #use-cases }
 
@@ -51,30 +49,11 @@ require custom logic for specific devices. This is unsustainable and results in
 poor support for the long tail of older and uncommon devices. It also causes the
 browser to depend on quirks present in the behavior of specific devices.
 
-## Current status {: #status }
-
-<div class="w-table-wrapper">
-
-| Step                                       | Status                       |
-| ------------------------------------------ | ---------------------------- |
-| 1. Create explainer                        | [Complete][explainer]        |
-| 2. Create initial draft of specification   | [In Progress][spec]          |
-| 3. Gather feedback & iterate on design     | [In progress](#feedback)     |
-| 4. Origin trial                            | Starts in Chrome 86          |
-| 5. Launch                                  | Not started                  |
-
-</div>
-
 ## Demos, demos, demos {: #demos }
 
-One of my team members is currently working on a how-to article. Since WebHID is
-starting an origin trial in Chrome 86, some of us wanted to give you a heads up
-and share a few demos to play with. If you're curious about how any of these
-samples work, the source code for all of them is available on GitHub. [There's a
-barebones code example][example] in the explainer.
-
-To use the demos, enable the `#enable-experimental-web-platform-features` flag
-in `chrome://flags`.
+If you're curious about how any of these samples work, the source code for all
+of them is available on GitHub. [There's a barebones code example][example] in
+the explainer.
 
 ### MacBook Pro keyboard backlight
 
@@ -89,20 +68,34 @@ just peripherals.
 
 ## Game controllers
 
-Next up is something fewer of you are likely to have. Sony's DualShock 4 is a
-wireless controller for PlayStation 4 game consoles.
+### PlayStation&nbsp;4 Wireless controller
 
-The DualShock 4 Demo uses WebHID to receive the raw input reports from the
-DualShock 4 and provides a high-level API to access the controller's gyroscope,
+Next up is something fewer of you are likely to have. Sony's DualShock&nbsp;4 is a
+wireless controller for PlayStation&nbsp;4 game consoles.
+
+The DualShock&nbsp;4 Demo uses WebHID to receive the raw input reports from the
+DualShock&nbsp;4 and provides a high-level API to access the controller's gyroscope,
 accelerometer, touchpad, button, and thumbstick inputs. It also supports rumble
 and setting the color of an RGB LED housed within the controller.
 
 **Author:** TheBITLINK<br/>
-**Demo:** [DualShock 4 Demo](https://thebitlink.github.io/WebHID-DS4/) ([Source](https://github.com/TheBITLINK/WebHID-DS4))
+**Demo:** [DualShock&nbsp;4 Demo](https://thebitlink.github.io/WebHID-DS4/) ([Source](https://github.com/TheBITLINK/WebHID-DS4))
+
+### Nintendo Switch Joy-Con controllers
+
+Play the Chrome dino 🦖 offline game by actually jumping with a Nintendo Switch Joy-Con
+controller in your pants pockets. This demo is powered by
+[Joy-Con WebHID](https://github.com/tomayac/joy-con-webhid), a WebHID driver for the
+Nintendo Switch Joy-Con controllers.
+
+**Author:** [Thomas Steiner](/authors/thomassteiner/)<br/>
+**Demo:** [Chrome Dino WebHID](https://tomayac.github.io/chrome-dino-webhid/)
+([demo source](https://github.com/tomayac/chrome-dino-webhid),
+[driver source](https://github.com/tomayac/joy-con-webhid))
 
 ### The BlinkStick Strip
 
-BlinkStick Strip is a HID-compliant light strip with 8 RGB LEDs. The demo allows
+BlinkStick Strip is a HID-compliant light strip with 8&nbsp;RGB LEDs. The demo allows
 the user to select from several blink patterns including chase, blink, and
 Larson scanner (aka Cylon).
 
@@ -120,25 +113,7 @@ getting started with HID.
 **Author:** Tod E. Kurt<br/>
 **Demos:** [blink(1)](https://blink1.thingm.com/) ([source](https://github.com/todbot/blink1-webhid))
 
-## Conclusion
-
-I hope I've piqued your interest in the WebHID API. Watch this space in the
-coming weeks for updates and for Part II of the introduction which will show you
-how to use the API yourself.
-
-## Helpful links {: #helpful }
-
-* [Public explainer][explainer]
-* [Chromium tracking bug][cr-bug]
-* [ChromeStatus.com entry][cr-status]
-* Blink Component: [`Blink>HID`][blink-component]
-
-### Wanna go deeper? {: #deeper-links }
-
-* [TAG Review](https://github.com/w3ctag/design-reviews/issues/370)
-* [Intent to Prototype](https://groups.google.com/a/chromium.org/g/blink-dev/c/LoyzK8xTRME/m/yLR-K-siBQAJ)
-
-## Acknowledgements
+## Acknowledgements {: #acknowledgements }
 
 Thank you to [Pete LePage](https://web.dev/authors/petelepage/) and [Kayce
 Basques](https://github.com/kaycebasques) for reviews of this article.

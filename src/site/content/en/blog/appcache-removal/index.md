@@ -5,7 +5,7 @@ authors:
   - jeffposnick
 description: Details of Chrome's and other browsers' plans to remove AppCache.
 date: 2020-05-18
-updated: 2020-05-18
+updated: 2021-02-01
 scheduled: true
 tags:
   - appcache
@@ -74,7 +74,7 @@ A "deprecated" feature still exists, but logs warning messages discouraging use.
     <tr>
     <td>Complete removal from secure contexts for everyone, with completion of origin trial
     </td>
-    <td>Chrome 90 (<a href="https://chromiumdash.appspot.com/schedule">estimated April 2021</a>)
+    <td>Chrome 93 (<a href="https://chromiumdash.appspot.com/schedule">estimated October 2021</a>)
     </td>
     </tr>
   </table>

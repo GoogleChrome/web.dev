@@ -5,14 +5,12 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2021-01-07
+updated: 2021-01-21
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Elgato Stream Deck photo.
 description: |
   The WebHID API allows websites to access alternative auxiliary keyboards and exotic gamepads.
-origin_trial:
-    url: https://developers.chrome.com/origintrials/#/view_trial/1074108511127863297
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
@@ -21,10 +19,9 @@ feedback:
   - api
 ---
 
-{% Aside %}
-The WebHID API is part of the [Capabilities project](/fugu-status/) and is
-currently in development. This post will be updated as the implementation
-progresses.
+{% Aside 'success' %}
+The WebHID API, part of the [capabilities project](/fugu-status/), launched in
+Chrome&nbsp;89.
 {% endAside %}
 
 There is a long tail of human interface devices (HIDs), such as alternative
@@ -57,10 +54,10 @@ of specific devices.
 | Step                                         | Status                       |
 | -------------------------------------------- | ---------------------------- |
 | 1. Create explainer                          | [Complete][explainer]        |
-| 2. Create initial draft of specification     | [In Progress][spec]          |
-| **3. Gather feedback & iterate on design**   | [**In Progress**](#feedback) |
-| **4. Origin trial**                          | [**In Progress**](#ot)       |
-| 5. Launch                                    | Not started                  |
+| 2. Create initial draft of specification     | [Complete][spec]             |
+| 3. Gather feedback & iterate on design       | [Complete](#feedback)        |
+| 4. Origin trial                              | [Complete][ot]               |
+| **5. Launch**                                | **Complete**                 |
 
 </div>
 
@@ -117,25 +114,6 @@ button of a mouse. Usages are also organized into usage pages, which provide an
 indication of the high-level category of the device or report.
 
 ## Using the WebHID API {: #use }
-
-### Enabling via chrome://flags
-
-To experiment with the WebHID API locally on all desktop platforms, without an
-origin trial token, enable the `#experimental-web-platform-features` flag in
-`chrome://flags`.
-
-### Enabling support during the origin trial phase
-
-The WebHID API is available on all desktop platforms (Chrome OS, Linux, macOS,
-and Windows) as an origin trial in Chrome&nbsp;86. The origin trial is expected
-to end just before Chrome&nbsp;89 moves to stable in February 2021. The API can
-also be enabled using a flag.
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ### Feature detection {: #feature-detection }
 
@@ -375,6 +353,11 @@ where you can see all HID and USB device related events in one single place.
   <figcaption class="w-figcaption">Internal page in Chrome to debug HID.</figcaption>
 </figure>
 
+## Browser support {: #browser-support }
+
+The WebHID API is available on all desktop platforms (Chrome OS, Linux, macOS,
+and Windows) in Chrome 89.
+
 ## Demos {: #demos }
 
 Some WebHID demos are listed at [web.dev/hid-examples]. Go have a look!
@@ -436,7 +419,6 @@ where and how you're using it.
 ## Helpful links {: #helpful }
 
 * [Specification][spec]
-* [Origin Trial][ot]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
 * Blink Component: [`Blink>HID`](https://chromestatus.com/features#component%3ABlink%3EHID)

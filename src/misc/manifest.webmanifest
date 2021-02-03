@@ -24,6 +24,26 @@
       "type": "image/png"
     }
   ],
+  "description": "Get the web's modern capabilities on your own sites and apps with useful guidance and analysis from web.dev.",
+  "lang": "en",
+  "categories": ["education", "news"],
+  "screenshots": [
+    {
+      "src": "/images/screenshot1.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/screenshot2.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/screenshot3.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    }
+  ],
   "shortcuts": [
     {
       "name": "Measure",

@@ -24,8 +24,13 @@ module.exports = (locale, page, collections, renderData = {}) => {
   const pageData = {
     ...collections.all.find((item) => item.fileSlug === page.fileSlug).data,
     ...renderData,
+    page,
   };
   const pageUrl = pageData.canonicalUrl;
+  const canonical =
+    pageData.canonical ||
+    new URL(pageData.page.url, site.url).href ||
+    new URL(pageUrl, site.url).href;
 
   /**
    * Find post meta data associated with a social media platform.
@@ -94,7 +99,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
     return html`
       <meta property="og:locale" content="${locale}" />
       <meta property="og:type" content="${type}" />
-      <meta property="og:url" content="${new URL(pageUrl, site.url).href}" />
+      <meta property="og:url" content="${canonical}" />
       <meta property="og:site_name" content="${site.title}" />
       <meta property="og:title" content="${meta.title}" />
       <meta property="og:description" content="${meta.description}" />
@@ -106,21 +111,30 @@ module.exports = (locale, page, collections, renderData = {}) => {
 
   function renderTwitterMeta() {
     const meta = getMetaByPlatform('twitter');
+    /**
+     * We replace the `<` and `>` characters for Twitter because HTML tags
+     * get rendered as HTML and therefore do not show up on Twitter cards.
+     * So in order to render the tag correctly, we replace them with pointing
+     * angle quotation marks. While we considered using the HTML entities
+     * `&lt;` and `&gt;`, Twitter seems to render them as `<` and `>` anyway.
+     */
+    const htmlCharacters = [
+      {searchValue: /</g, replaceValue: '&lsaquo;'},
+      {searchValue: />/g, replaceValue: '&rsaquo;'},
+    ];
+    const title = strip(meta.title, htmlCharacters);
+    const description = strip(meta.description, htmlCharacters);
+
     return html`
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="${meta.title}" />
-      <meta name="twitter:description" content="${meta.description}" />
+      <meta name="twitter:title" content="${title}" />
+      <meta name="twitter:description" content="${description}" />
       <meta name="twitter:image" content="${meta.thumbnail}" />
     `;
   }
 
   function renderCanonicalMeta() {
-    return html`
-      <link
-        rel="canonical"
-        href="${pageData.canonical ? pageData.canonical : site.url + pageUrl}"
-      />
-    `;
+    return html` <link rel="canonical" href="${canonical}" /> `;
   }
 
   function renderRSS() {

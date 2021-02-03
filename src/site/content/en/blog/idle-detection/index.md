@@ -8,7 +8,7 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2021-01-19
+updated: 2021-02-02
 tags:
   - blog
   - idle-detection
@@ -16,7 +16,7 @@ tags:
 hero: hero.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80
 alt: Abandoned computer on a bed with someone's leg next to it.
 origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/551690954352885761
+  url: https://developer.chrome.com/origintrials/#/view_trial/551690954352885761
 feedback:
   - api
 ---
@@ -50,7 +50,7 @@ can limit these calculations to moments when the user interacts with their devic
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
 | 1. Create explainer                      | [Complete][explainer]    |
-| 2. Create initial draft of specification | Not started              |
+| 2. Create initial draft of specification | [Complete][specification]|
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
 | 4. Origin trial                          | [In progress][ot]        |
 | 5. Launch                                | Not started              |
@@ -67,7 +67,7 @@ To experiment with the Idle Detection API locally, without an origin trial token
 ### Enabling support during the origin trial phase
 
 Starting in Chrome 88, the Idle Detection API is available as an origin trial in Chrome.
-The origin trial is expected to end in Chrome 90 (May 18, 2021).
+The origin trial is expected to end in Chrome 90 (May 19, 2021).
 
 {% include 'content/origin-trials.njk' %}
 
@@ -266,6 +266,7 @@ and let us know where and how you're using it.
 ## Helpful links {: #helpful }
 
 - [Public explainer][explainer]
+- [Draft specification][specification]
 - [Idle Detection API Demo][demo] | [Idle Detection API Demo source][demo-source]
 - [Tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
@@ -284,11 +285,12 @@ The hero image is by [Fernando Hernandez](https://unsplash.com/@_ferh97) on
 [issues]: https://github.com/samuelgoto/idle-detection/issues
 [demo]: https://idle-detection.glitch.me/
 [demo-source]: https://glitch.com/edit/#!/idle-detection
-[explainer]: https://github.com/samuelgoto/idle-detection/blob/master/README.md
+[explainer]: https://github.com/wicg/idle-detection/blob/master/README.md
+[specification]: https://wicg.github.io/idle-detection
 [wicg-discourse]: https://discourse.wicg.io/t/idle-detection-api/2959
 [cr-bug]: https://crbug.com/878979
 [cr-status]: https://chromestatus.com/feature/4590256452009984
 [blink-component]: https://chromestatus.com/features#component%3ABlink%3EInput
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[ot]: https://developer.chrome.com/origintrials/#/trials/active
+[ot]: https://developer.chrome.com/origintrials/#/view_trial/551690954352885761

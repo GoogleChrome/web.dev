@@ -21,6 +21,16 @@ feedback:
   - api
 ---
 
+{% Banner 'caution', 'body' %}
+
+**Updates**
+
+**January 20th, 2020**: `performance.measureMemory` is renamed to `performance.measureUserAgentSpecificMemory`
+and enabled by default in Chrome 89 for [cross-origin isolated](/coop-coep) web pages.
+The format of the result also [has changed](https://github.com/WICG/performance-measure-memory/blob/master/ORIGIN_TRIAL.md#result-differences)
+slightly compared to the Origin Trial version.
+{% endBanner %}
+
 Browsers manage the memory of web pages automatically. Whenever a web page
 creates an object, the browser allocates a chunk of memory "under the hood" to
 store the object. Since memory is a finite resource, the browser performs
@@ -50,11 +60,11 @@ then its memory usage grows over time and the web page appears slow and
 bloated to the users.
 
 The first step in solving this problem is measuring it. The new
-[`performance.measureMemory()` API][explainer] allows developers to
+[`performance.measureUserAgentSpecificMemory()` API][explainer] allows developers to
 measure memory usage of their web pages in production and thus detect memory
 leaks that slip through local testing.
 
-## How is `performance.measureMemory()` different from the legacy `performance.memory` API? {: #legacy-api }
+## How is `performance.measureUserAgentSpecificMemory()` different from the legacy `performance.memory` API? {: #legacy-api }
 
 If you are familiar with the existing non-standard `performance.memory` API,
 you might be wondering how the new API differs from it. The main difference is
@@ -128,16 +138,16 @@ results for the same browser.
 </table>
 </div>
 
-## Using `performance.measureMemory()` {: use }
+## Using `performance.measureUserAgentSpecificMemory()` {: use }
 
 ### Enabling via chrome://flags
 
-To experiment with `performance.measureMemory()` without an origin trial
+To experiment with `performance.measureUserAgentSpecificMemory()` without an origin trial
 token, enable the `#experimental-web-platform-features` flag in `chrome://flags`.
 
 ### Enabling support during the origin trial phase
 
-The `performance.measureMemory()` API is available as an origin trial starting in
+The `performance.measureUserAgentSpecificMemory()` API is available as an origin trial starting in
 Chrome 83. The origin trial is expected to end in Chrome 86, in early November 2020.
 
 {% include 'content/origin-trials.njk' %}
@@ -148,7 +158,7 @@ Chrome 83. The origin trial is expected to end in Chrome 86, in early November 2
 
 ### Feature detection
 
-The `performance.measureMemory()` function may fail with a
+The `performance.measureUserAgentSpecificMemory()` function may fail with a
 [SecurityError][security-error] if the execution environment does not fulfil
 the security requirements for preventing cross-origin information leaks.
 During the origin trial in Chrome, the API requires that [Site
@@ -157,10 +167,10 @@ Isolation][site-isolation] is enabled. When the API ships, it will rely on
 cross-origin isolation by setting [COOP+COEP headers][coop-coep].
 
 ```javascript
-if (performance.measureMemory) {
+if (performance.measureUserAgentSpecificMemory) {
   let result;
   try {
-    result = await performance.measureMemory();
+    result = await performance.measureUserAgentSpecificMemory();
   } catch (error) {
     if (error instanceof DOMException &&
         error.name === "SecurityError") {
@@ -199,8 +209,8 @@ page load on the main window.
 
 ```javascript
 function scheduleMeasurement() {
-  if (!performance.measureMemory) {
-    console.log("performance.measureMemory() is not available.");
+  if (!performance.measureUserAgentSpecificMemory) {
+    console.log("performance.measureUserAgentSpecificMemory() is not available.");
     return;
   }
   const interval = measurementInterval();
@@ -231,10 +241,10 @@ the result, and schedules the next measurement.
 
 ```javascript
 async function performMeasurement() {
-  // 1. Invoke performance.measureMemory().
+  // 1. Invoke performance.measureUserAgentSpecificMemory().
   let result;
   try {
-    result = await performance.measureMemory();
+    result = await performance.measureUserAgentSpecificMemory();
   } catch (error) {
     if (error instanceof DOMException &&
         error.name === "SecurityError") {
@@ -259,14 +269,32 @@ The result may look as follows:
   breakdown: [
     {
       bytes: 40_000_000,
-      attribution: ["https://foo.com"],
-      userAgentSpecificTypes: ["Window", "JS"]
+      attribution: [
+        {
+          url: "https://foo.com",
+          scope: "Window",
+        },
+      ]
+      types: ["JS"]
+    },
+    {
+      bytes: 0,
+      attribution: [],
+      types: []
     },
     {
       bytes: 20_000_000,
-      attribution: ["https://foo.com/iframe"],
-      userAgentSpecificTypes: ["Window", "JS"]
-    }
+      attribution: [
+        {
+          url: "https://foo.com/iframe",
+          container: {
+            id: "iframe-id-attribute",
+            src: "redirect.html?target=iframe.html",
+          },
+        },
+      ],
+      types: ["JS"]
+    },
   ]
 }
 ```
@@ -278,31 +306,30 @@ even change between different versions of the same browser. During the origin
 trial the value includes JavaScript memory usage of the main window and all
 **same-site** iframes and related windows. When the API ships, the value will
 account for JavaScript and DOM memory of all iframes, related windows, and web
-workers.
+workers in the current process.
 
 The `breakdown` list provides further information about the used memory. Each
 entry describes some portion of the memory and attributes it to a set of
-windows, iframes, and workers identified by URLs. The `userAgentSpecificTypes`
-field  lists the implementation-specific memory types associated with the
-memory.
+windows, iframes, and workers identified by URLs. The `types` field lists
+the implementation-specific memory types associated with the memory.
 
 It is important to treat all lists in a generic way and to not hardcode
 assumptions based on a particular browser. For example, some browsers may
 return an empty `breakdown` or an empty `attribution`. Other browsers may
-return multiple URLs in `attribution` indicating they could not distinguish
-which of these URLs owns the memory.
+return multiple entries in `attribution` indicating they could not distinguish
+which of these entries owns the memory.
 
 ## Feedback {: #feedback }
 
 The [Web Performance Community Group][webperfs] and the Chrome team would love
 to hear about your thoughts and experiences with
-`performance.measureMemory()`.
+`performance.measureUserAgentSpecificMemory()`.
 
 ### Tell us about the API design
 
 Is there something about the API that doesn't work as expected? Or are there
 missing properties that you need to implement your idea? File a spec issue on
-the [performance.measureMemory() GitHub repo][issues] or add your thoughts to an
+the [performance.measureUserAgentSpecificMemory() GitHub repo][issues] or add your thoughts to an
 existing issue.
 
 ### Report a problem with the implementation
@@ -315,7 +342,7 @@ the bug, and have **Components** set to `Blink>PerformanceAPIs`.
 
 ### Show support
 
-Are you planning to use `performance.measureMemory()`? Your public support
+Are you planning to use `performance.measureUserAgentSpecificMemory()`? Your public support
 helps the Chrome team prioritize features and shows other browser vendors how
 critical it is to support them. Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) and let us know
 where and how you're using it.
