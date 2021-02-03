@@ -28,7 +28,9 @@ and the Samsung browser. Safari has partial support.
 ## Create the manifest file {: #create }
 
 The manifest file can have any name, but is commonly named `manifest.json` and
-served from the root (your website's top-level directory).
+served from the root (your website's top-level directory). The specification
+suggests the extension should be `.webmanifest`, but browsers also support
+`.json` extensions, which is may be easier for developers to understand.
 
 ```json
 {
