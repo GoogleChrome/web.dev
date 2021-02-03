@@ -76,6 +76,7 @@ More detailed guidance can be found at [Making your website "cross-origin
 isolated" using COOP and COEP](/coop-coep).
 
 ## Resources
+
 * [Deploy COOP and COEP to make your website cross-origin
   isolated](https://web.dev/coop-coep/#1.-set-the-cross-origin-opener-policy:-same-origin-header-on-the-top-level-document)
 * [SharedArrayBuffer updates in Android Chrome 88 and Desktop Chrome
