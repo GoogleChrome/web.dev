@@ -39,3 +39,4 @@ src/site/content/en/authors/ @GoogleChrome/web-dev-eng
 src/site/_data/authorsData.json @GoogleChrome/web-dev-content @GoogleChrome/web-dev-approvers
 src/site/_data/tagsData.json @GoogleChrome/web-dev-content @GoogleChrome/web-dev-approvers
 src/site/_data/paths/*.json @GoogleChrome/web-dev-content @GoogleChrome/web-dev-approvers
+src/site/content/_redirects.yaml @GoogleChrome/web-dev-content @GoogleChrome/web-dev-approvers
