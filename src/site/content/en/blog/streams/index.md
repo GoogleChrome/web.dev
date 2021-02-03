@@ -18,13 +18,13 @@ tags:
 
 The Streams API allows you to programmatically access streams of data received over the network
 or created by whatever means locally and
-process them with JavaScript. Streaming involves breaking a resource that you want to receive, send, or transform down
+process them with JavaScript. Streaming involves breaking down a resource that you want to receive, send, or transform
 into small chunks, and then processing these chunks bit by bit. While streaming is something
 browsers do anyway when receiving assets like HTML or videos to be shown on webpages, this
 capability has never been available to JavaScript before `fetch` with streams was introduced in 2015.
 
-{% aside %}
-  Streaming was possible with `XMLHttpRequest`, but it
+{% Aside %}
+  Streaming was technically possible with `XMLHttpRequest`, but it
   [really was not pretty](https://gist.github.com/igrigorik/5736866).
 {% endAside %}
 
@@ -40,8 +40,8 @@ This unlocks a number of use cases, some of which I list below:
 - **Data (de)compression:** piping a file stream through a transform stream that selectively
   (de)compresses it.
 - **Image decoding:** piping an HTTP response stream through a transform stream that decodes bytes
-  into bitmap data, and then through another transform that translates bitmaps into PNGs. If
-  installed inside the `fetch` hook of a service worker, this allows you to transparently polyfill
+  into bitmap data, and then through another transform stream that translates bitmaps into PNGs. If
+  installed inside the `fetch` handler of a service worker, this allows you to transparently polyfill
   new image formats like AVIF.
 
 ## Core concepts
@@ -73,7 +73,7 @@ A transform stream consists of a **pair of streams**: a writable stream, known a
 and a readable stream, known as its readable side.
 A real-world metaphor for this would be a
 [simultaneous interpreter](https://en.wikipedia.org/wiki/Simultaneous_interpretation)
-who on-the-fly translates from one language to another.
+who translates from one language to another on-the-fly.
 In a manner specific to the transform stream, writing
 to the writable side results in new data being made available for reading from the
 readable side. Concretely, any object with a `writable` property and a `readable` property can serve
@@ -97,7 +97,7 @@ fast. This process of **normalizing flow** is called backpressure.
 ### Teeing
 
 A readable stream can be teed (named after the shape of an uppercase 'T') using its `tee()` method.
-This will lock the stream, making it no longer directly usable; however, it will create **two new
+This will **lock** the stream, that is, make it no longer directly usable; however, it will create **two new
 streams**, called branches, which can be consumed independently.
 Teeing also is important because streams cannot be rewound or restarted, more about this later.
 
@@ -121,12 +121,7 @@ types of underlying source:
 - **Pull sources** require you to explicitly request data from them once connected to. Examples
   include HTTP operations via `fetch()` or `XMLHttpRequest` calls.
 
-The data is read sequentially in small pieces called **chunks**.
-Chunks can be any kind of JavaScript object, but there are streams that specialize
-in sending byte data as `Uint8Array`s. A chunk can thus be a single byte, or it
-can be something larger such as a typed array of a certain size. A single stream can contain chunks
-of different sizes and types.
-
+Stream data is read sequentially in small pieces called **chunks**.
 The chunks placed in a stream are said to be **enqueued**. This means they are waiting in a queue
 ready to be read. An **internal queue** keeps track of the chunks that have not yet been read.
 
@@ -151,7 +146,7 @@ reading your stream, you typically need to **release** the first reader before y
 You create a readable stream by calling its constructor
 [`ReadableStream()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/ReadableStream).
 The constructor has an optional argument `underlyingSource`, which represents an object
-with methods and properties that define how the constructed stream instance will behave. 
+with methods and properties that define how the constructed stream instance will behave.
 
 #### The `underlyingSource`
 
@@ -162,8 +157,7 @@ This can use the following optional, developer-defined methods:
   required to set up the stream functionality. If this process is to be done asynchronously, the method can
   return a promise to signal success or failure. The `controller` parameter passed to this method is
   a
-  [`ReadableStreamDefaultController`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultController)
-  by default.
+  [`ReadableStreamDefaultController`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultController).
 - `pull(controller)`: Can be used to control the stream as more chunks are fetched. It
   is called repeatedly as long as the stream's internal queue of chunks is not full, up until the queue
   reaches its high water mark. If the result of calling `pull()` is a promise,
@@ -171,14 +165,38 @@ This can use the following optional, developer-defined methods:
   If the promise rejects, the stream will become errored.
 - `cancel(reason)`: Called when the stream consumer cancels the stream.
 
-The `ReadableByteStreamController` supports the following methods:
+```js
+const readableStream = new ReadableStream({
+  start(controller) {
+    /* … */
+  },
 
-- [`ReadableByteStreamController.close()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableByteStreamController/close)
+  pull(controller) {
+    /* … */
+  },
+
+  cancel(reason) {
+    /* … */
+  },
+});
+```
+
+The `ReadableStreamDefaultController` supports the following methods:
+
+- [`ReadableStreamDefaultController.close()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultController/close)
   closes the associated stream.
-- [`ReadableByteStreamController.enqueue()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableByteStreamController/enqueue)
+- [`ReadableStreamDefaultController.enqueue()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultController/enqueue)
   enqueues a given chunk in the associated stream.
-- [`ReadableByteStreamController.error()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableByteStreamController/error)
+- [`ReadableStreamDefaultController.error()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultController/error)
   causes any future interactions with the associated stream to error.
+
+```js
+/* … */
+start(controller) {
+  controller.enqueue('The first chunk!');
+},
+/* … */
+```
 
 #### The `queuingStrategy`
 
@@ -186,10 +204,23 @@ The second, likewise optional, argument of the `ReadableStream()` constructor is
 It is an object that optionally defines a queuing strategy for the stream, which takes two
 parameters:
 
-- `highWaterMark`: A non-negative integer that defines the total number of chunks that can be
-  contained in the internal queue before backpressure is applied.
-- `size(chunk)`: A method with a single parameter `chunk` that indicates the size to use for each
-  chunk, in bytes.
+- `highWaterMark`: A non-negative number indicating the high water mark of the stream using this queuing strategy.
+- `size(chunk)`: A function that computes and returns the finite non-negative size of the given chunk value.
+  The result is used to determine backpressure, manifesting via the appropriate `ReadableStreamDefaultController.desiredSize` property.
+  It also governs when the underlying source's `pull()` method is called.
+
+```js
+const readableStream = new ReadableStream({
+    /* … */
+  },
+  {
+    highWaterMark: 10,
+    size(chunk) {
+      return chunk.length;
+    },
+  },
+);
+```
 
 {% Aside %} You could define your own custom `queuingStrategy`, or use an instance of
 [`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy)
@@ -215,11 +246,28 @@ the stream. The different possibilities are as follows:
   `{ value: undefined, done: true }`.
 - If the stream becomes errored, the promise will be rejected with the relevant error.
 
+```js
+const reader = readableStream.getReader();
+while (true) {
+  const { done, value } = await reader.read();
+  console.log('Just read a chunk:', value);
+  if (done) {
+    console.log('The stream is done.');
+    break;
+  }
+}
+```
+
 #### The `locked` property
 
 You can check if a readable stream is locked by accessing its
 [`ReadableStream.locked`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/locked)
 property.
+
+```js
+const locked = readableStream.locked;
+console.log(`The stream is ${locked ? 'indeed' : 'not'} locked.`);
+```
 
 ### Readable stream code samples
 
@@ -235,8 +283,8 @@ const startEnqueuing = (controller) => {
   interval = setInterval(() => {
     const string = new Date().toLocaleTimeString();
     // Add the string to the stream.
-    console.log(`Enqueued ${string}`);
     controller.enqueue(string);
+    console.log(`Enqueued ${string}`);
   }, 1_000);
 
   setTimeout(() => {
@@ -291,7 +339,7 @@ function upperCaseStream() {
   });
 }
 
-function appendToDomStream(el) {
+function appendToDOMStream(el) {
   return new WritableStream({
     write(chunk) {
       el.append(chunk);
@@ -303,19 +351,19 @@ fetch('./lorem-ipsum.txt').then((response) =>
   response.body
     .pipeThrough(new TextDecoderStream())
     .pipeThrough(upperCaseStream())
-    .pipeTo(appendToDomStream(document.body));
+    .pipeTo(appendToDOMStream(document.body))
 );
 ```
 
 {% Aside %}
-  This example would be much simpler as a transform stream,
-  which I will introduce further down in the article. Stay tuned!
+  This example already uses a writable stream and a transform stream,
+  which I will both properly introduce further down in the article. Stay tuned!
 {% endAside %}
 
 ### Asynchronous iteration
 
 Checking upon each `read()` loop iteration if the stream is `done` may not be the most convenient API.
-Luckily there is a better way to do this: asynchronous iteration.
+Luckily there will soon be a better way to do this: asynchronous iteration.
 
 ```js
 for await (const chunk of stream) {
@@ -383,7 +431,7 @@ const readableStream = new ReadableStream({
     controller.enqueue('c');
   },
   pull(controller) {
-    // Called read when controller's queue is empty.
+    // Called `read()` when the controller's queue is empty.
     console.log('[pull]');
     controller.enqueue('d');
     controller.close();
@@ -545,7 +593,7 @@ as a sink. This object comes with built-in backpressure and queuing. You create 
 calling its constructor
 [`WritableStream()`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream/WritableStream).
 It has an optional `underlyingSink` parameter, which represents an object
-with methods and properties that define how the constructed stream instance will behave. 
+with methods and properties that define how the constructed stream instance will behave.
 
 #### The `underlyingSink`
 
@@ -845,8 +893,8 @@ The good news is that there is a
 available and a [polyfill](https://github.com/MattiasBuelens/web-streams-polyfill) targeted at
 production use.
 
-{% Aside 'gotchas' %} 
-If possible, load the polyfill conditionally and only if the built-in feature is not available. 
+{% Aside 'gotchas' %}
+If possible, load the polyfill conditionally and only if the built-in feature is not available.
 {% endAside %}
 
 ## Demo
