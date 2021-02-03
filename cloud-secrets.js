@@ -1,3 +1,8 @@
+/**
+ * @fileoverview This file generates a `.env` file from the lastest active secrets stored
+ * in the Google Cloud Secret Manager. This is ran from the Cloud Build Deploy script.
+ */
+
 const {SecretManagerServiceClient} = require('@google-cloud/secret-manager');
 
 const client = new SecretManagerServiceClient();

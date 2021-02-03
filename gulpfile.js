@@ -93,9 +93,9 @@ gulp.task('copy-content-assets', () => {
           // Some assets are nested under directories which aren't part of
           // their url. For example, we have /en/blog/some-post/foo.jpg.
           // For these assets we need to remove the /blog/ directory so they
-          // can live at /en/some-post/foo.jpg since that's what we'll actually
+          // can live at /some-post/foo.jpg since that's what we'll actually
           // serve in production.
-          // e.g. en/blog/foo/bar.jpg -> en/foo/bar.jpg
+          // e.g. en/blog/foo/bar.jpg -> /foo/bar.jpg
           parts.splice(1, 1);
           assetPath.dirname = parts.join('/').replace(defaultLocaleRegExp, '');
         }),

@@ -81,12 +81,7 @@ function serviceWorkerIsSupported(hostname) {
   // We also check that updateViaCache is supported, which ensures that a browser checks all deps
   // included via importScripts as well as the SW itself. (This works from mid-2018 everywhere, but
   // it seems good to double-check.)
-  const allowedHostnames = [
-    'auth.web.dev',
-    'web.dev',
-    'web-dev-staging.appspot.com',
-    'localhost',
-  ];
+  const allowedHostnames = ['web.dev', 'localhost'];
   return (
     'serviceWorker' in navigator &&
     'updateViaCache' in ServiceWorkerRegistration.prototype &&

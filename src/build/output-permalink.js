@@ -46,7 +46,7 @@ module.exports = (data) => {
   }
 
   return data.page.inputPath
-    .replace(/^.\/src\/site\/content/, localization ? 'i18n/' : '')
+    .replace(/^\.\/src\/site\/content/, localization ? 'i18n/' : '')
     .replace(/index.(md|njk)$/, '')
     .replace(/(md|njk)$/, 'html')
     .replace(defaultLocaleRegExp, '/');
