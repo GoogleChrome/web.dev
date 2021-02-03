@@ -25,11 +25,12 @@ app is launched.
 Manifest files are [supported](https://developer.mozilla.org/en-US/docs/Web/Manifest#Browser_compatibility) in Chrome, Edge, Firefox, UC Browser, Opera,
 and the Samsung browser. Safari has partial support.
 
-## Create the manifest.webmanifest file {: #create }
+## Create the manifest file {: #create }
 
-The manifest file can have any name, but is commonly named
-`manifest.webmanifest` and served from the root (your website's top-level
-directory).
+The manifest file can have any name, but is commonly named `manifest.json` and
+served from the root (your website's top-level directory). The specification
+suggests the extension should be `.webmanifest`, but browsers also support
+`.json` extensions, which is may be easier for developers to understand.
 
 ```json
 {
@@ -254,7 +255,7 @@ After creating the manifest, add a `<link>` tag to all the pages of your
 Progressive Web App. For example:
 
 ```html
-<link rel="manifest" href="/manifest.webmanifest">
+<link rel="manifest" href="/manifest.json">
 ```
 
 {% Aside 'gotchas' %}
