@@ -37,8 +37,8 @@ export function copyLinkToClipboard() {
   }
   document
     .querySelector('main')
-    // ToDo: Use `:is(h1, h2, h3, h4, h5, h6)[id]` once support is better.
-    .querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]')
+    // ToDo: Use `:is(h2, h3, h4, h5, h6)[id]` once support is better.
+    .querySelectorAll('h2[id], h3[id], h4[id], h5[id], h6[id]')
     .forEach((heading) => {
       heading.addEventListener('click', (ev) => {
         // Don't jump when the '#' is clicked.
