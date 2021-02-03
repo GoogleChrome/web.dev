@@ -1,8 +1,8 @@
 steps:
-  - name: node
+  - name: node:12
     entrypoint: npm
     args: ['ci']
-  - name: node
+  - name: node:12
     entrypoint: npm
     args: ['run', 'cloud-secrets']
     env:
