@@ -22,7 +22,7 @@ const {defaultLocale} = require('../site/_data/site');
  * or take the existing permalink (a defined output for a file) and create a new permalink
  * with the path being modified based on its locale.
  *
- * If the content is in the default locale (en), we remove the default local from the path.
+ * If the content is in the default locale (en), we remove the default locale from the path.
  * If the `inputPath`/`permalink` is not of the default locale we add `i18n`
  * to the path, so that the locale's folder is in a `i18n` folder.
  *
