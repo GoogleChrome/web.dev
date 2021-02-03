@@ -41,7 +41,7 @@ Lighthouse considers the character encoding to be declared if it finds any of th
 
 ## How to pass the `charset` audit
 
-### Add a `<meta chartset>` element to your HTML {: #html }
+### Add a `<meta charset>` element to your HTML {: #html }
 
 Add a `<meta charset>` element within the first 1024 bytes of your HTML document.
 The element must be fully contained within the first 1024 bytes.
