@@ -75,7 +75,7 @@ Until recently passive mixed content was loaded in all browsers,
 as to block it would have broken many websites.
 This is now beginning to change and so it is vital to update any instances of mixed content on your site.
 
-[Chrome is currently rolling out](https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html )
+[Chrome is currently rolling out](https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html)
 automatic upgrading of passive mixed content where possible.
 Automatic upgrading means that if the asset is available over HTTPS, but has been hardcoded as HTTP,
 the browser will load the HTTPS version. If no secure version can be found the asset will not load.
@@ -86,8 +86,11 @@ to guide you on how to fix the specific issue.
 
 <figure class="w-figure">
   <img class="w-screenshot"
-      src="passive-mixed-content.jpg"
-      alt="The Issues tab in Chrome DevTools shows detailed information about the specific mixed content issue and how to fix it">
+      src="issues-mixed-content.jpg"
+      alt="The Issues Tab in Chrome DevTools shows detailed information about the specific mixed content issue and how to fix it.">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Issues in Chrome DevTools for passive mixed content.
+  </figcaption>
 </figure>
 
 ### Active mixed content
@@ -113,14 +116,26 @@ be detailed in the **Issues** tab.
 
 <figure class="w-figure">
   <img class="w-screenshot"
-      src="active-mixed-content.jpg"
-      alt="The Issues tab in Chrome DevTools shows detailed information about the specific mixed content issue and how to fix it">
+      src="console-errors-blocked-content.jpg"
+      alt="Active mixed content is blocked, generating console errors in DevTools.">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Blocked content errors in Chrome DevTools for active mixed content.
+  </figcaption>
+</figure>
+
+<figure class="w-figure">
+  <img class="w-screenshot"
+      src="issues-mixed-content.jpg"
+      alt="The Issues tab in Chrome DevTools shows detailed information about the specific mixed content issue and how to fix it.">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Issues in Chrome DevTools for active mixed content.
+  </figcaption>
 </figure>
 
 {% Aside %}
-  Browsers also highlight blocked content in their DevTools. Blocked content
-  issues are detailed in the **Issues** tab in Chromium-based browsers. Firefox
-  and Safari log messages in the console.
+Browsers also highlight blocked content in their DevTools. Blocked content
+issues are detailed in the **Issues** tab in Chromium-based browsers. Firefox
+and Safari log messages in the console.
 {% endAside %}
 
 ## The mixed content specification
