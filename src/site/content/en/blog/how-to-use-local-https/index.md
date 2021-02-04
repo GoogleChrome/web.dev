@@ -11,7 +11,7 @@ tags:
   - security
 ---
 
-{% Banner 'caution' %}
+{% Banner 'caution', 'body' %}
 Most of the time, `http://localhost` does what you need: in browsers, it mostly behaves like HTTPS 🔒. That's why some APIs that won't work on a deployed HTTP site, will work on `http://localhost`.
 
 What this means is that you need to use HTTPS locally **only in special cases** (see [When to use HTTPS for local development](/when-to-use-local-https)), like custom hostnames or Secure cookies across browsers. Keep reading if that's you!
