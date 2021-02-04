@@ -80,8 +80,8 @@ view modes, views, or images uploaded through the WYSIWYG editor.
 ### Gatsby
 
 Use the [gatsby-image](https://www.gatsbyjs.com/plugins/gatsby-image/) plugin to
-generate multiple smaller images for smartphones and tablets. It also provides the
-functionality of creating placeholders (such as image trace) for efficient lazy loading.
+generate multiple smaller images for smartphones and tablets. It can also create
+SVG image placeholders for efficient lazy loading.
 
 ### Joomla
 
