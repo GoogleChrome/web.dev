@@ -15,7 +15,7 @@ authors:
 hero: hero.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-02-02
+updated: 2021-02-03
 tags:
   - blog
   - security
