@@ -6,7 +6,10 @@ authors:
 date: 2021-01-25
 # updated: 2021-01-25
 description: |
-  This chapter provides a conclusion of the mini apps collection.
+  This chapter concludes the mini apps collection with the observation
+  that thinking outside of the box and taking input and inspiration from
+  outside of one's own bubble can definitely help when building a
+  better future on the web..
 tags:
   - mini-apps
 ---
@@ -14,7 +17,7 @@ tags:
 ## Where does this leave us?
 
 Writing and researching mini apps has been quite a ride, but one that I do not regret. On the one
-hand, the success and the popularity of mini apps seems to have proven them right. On the other
+hand, the success and the popularity of mini apps have proven their creators right about their approach. On the other
 hand, though, this success is geographically concentrated in regions where the few popular super
 apps are dominant, at least at the time of writing. What is undoubtedly true is that the ecosystem
 is highly fascinating and well worth a look. This collection of articles has provided deep-dives

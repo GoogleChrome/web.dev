@@ -42,10 +42,10 @@ always consisting of a high and a low intensity interval,
 and then select one of them for a training session.
 It is a responsive app with a navbar, a tabbar, and three pages:
 
-- **Workout:** This is the page that is active during a workout. It lets the user select one of the timers
-  and features three progress rings:  the number of sets, the active period, and the resting period.
-- **Timers:** This page serves for managing the existing timers and for creating new ones.
-- **Preferences:** This tab allows the user to toggle sound effects and to select the language and theme.
+- **Workout:** The active page during a workout. It lets the user select one of the timers
+  and features three progress rings: the number of sets, the active period, and the resting period.
+- **Timers:** Manages existing timers and lets the user create new ones.
+- **Preferences:** Allows toggling sound effects and speech output and selecting language and theme.
 
 The following screenshots give an impression of the application.
 
