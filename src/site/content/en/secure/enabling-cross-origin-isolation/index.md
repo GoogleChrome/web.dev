@@ -3,7 +3,7 @@ layout: post
 title: A guide to enable cross-origin isolation
 authors:
   - agektmr
-date: 2021-02-08
+date: 2021-02-09
 description: |
   Cross-origin isolation enables a web page to use powerful features such as
   SharedArrayBuffer. This article concisely explains how to enable cross-origin
