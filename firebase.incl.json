@@ -1,0 +1,25 @@
+{
+  "hosting": {
+    "public": "dist",
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=31536000,immutable"
+          }
+        ]
+      }
+    ],
+    "i18n": {
+      "root": "/i18n"
+    },
+    "redirects": []
+  },
+  "emulators": {
+    "hosting": {
+      "port": 8080
+    }
+  }
+}
