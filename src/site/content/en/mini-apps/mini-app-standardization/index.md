@@ -19,7 +19,9 @@ Mini apps have seen tremendous growth. WeChat mini apps as of June 2020 have rea
 as of April 2019, and Baidu mini apps in the same month
 [115 million active users](https://kr-asia.com/the-mau-of-wechat-alipay-and-baidus-mini-programs-now-add-up-to-more-than-1-billion).
 Effectively companies have traded building apps for the two operating systems iOS and Android and
-additionally the Web for building apps for three or more super apps platforms. The differences
+additionally the Web for building apps for three or more
+[super apps platforms](/what-are-super-apps/#what-are-super-apps).
+The differences
 between each super app platform may not be as big as the differences between Android, iOS, and the
 Web, but nevertheless they exist. Where on Android, iOS, and the Web, we have seen cross-platform
 approaches like [Flutter](https://flutter.dev/), [Ionic](https://ionicframework.com/), and
@@ -75,7 +77,7 @@ Leaders of the group introduced the effort as follows:
   and enhancing the interoperability of different MiniApp platforms, thereby maximizing the integration of MiniApps and the Web,
   reducing technical fragmentation and the learning cost of developers.
 
-Especially the part *"maximizing the integration of MiniApps and the Web"* sounds very interesting.
+*"Maximizing the integration of MiniApps and the Web"* in particular sounds very interesting.
 As a curious member of the group, I look forward to seeing where this endeavor is headed.
 
 {% Banner 'neutral' %}

@@ -6,14 +6,14 @@ authors:
 date: 2021-01-25
 # updated: 2021-01-25
 description: |
-  This chapter shows an example project that follows the programming the mini app way approach.
+  This chapter shows an example project that follows the "programming the mini app way" approach.
 tags:
   - mini-apps
 ---
 
 ## The app domain
 
-In order to show the mini app way of programming applied to a Web app, I needed a small but complete enough app idea.
+To show the mini app way of programming applied to a Web app, I needed a small but complete enough app idea.
 [High-intensity interval training](https://en.wikipedia.org/wiki/High-intensity_interval_training) (HIIT)
 is a cardiovascular exercise strategy of alternating sets of short periods of intense anaerobic exercise with less intense recovery periods.
 Many HIIT trainings use HIIT timers, for example, this [30&nbsp;minute online session](https://www.youtube.com/watch?v=tXOZS3AKKOw)
@@ -36,14 +36,14 @@ from [The Body Coach TV](https://www.youtube.com/user/thebodycoach1) YouTube cha
 
 ## HIIT Time example app
 
-For this chapter, I have built a baseline example of such a HIIT timer application aptly named
+For this chapter, I have built a basic example of such a HIIT timer application aptly named
 "HIIT Time" that lets the user define and manage various timers,
 always consisting of a high and a low intensity interval,
 and then select one of them for a training session.
 It is a responsive app with a navbar, a tabbar, and three pages:
 
 - **Workout:** This is the page that is active during a workout. It lets the user select one of the timers
-  and features three progress rings for the number of sets, the active period, and the resting period.
+  and features three progress rings:  the number of sets, the active period, and the resting period.
 - **Timers:** This page serves for managing the existing timers and for creating new ones.
 - **Preferences:** This tab allows the user to toggle sound effects and to select the language and theme.
 
@@ -72,15 +72,15 @@ The following screenshots give an impression of the application.
 
 ## App structure
 
-As outlined above, the app consists of a navbar, a tabbar, and three pages, arranged in a grid layout.
+As outlined above, the app consists of a navbar, a tabbar, and three pages, arranged in a grid.
 Navbar and tabbar are realized as iframes with a `<div>` container in between them with three more iframes
-for the pages, out of which always one is visible, dependent on the active selection in the tabbar.
+for the pages, out of which one is always visible and dependent on the active selection in the tabbar.
 A final iframe pointing to `about:blank` serves for dynamically created in-app pages, which are needed for modifying existing
 timers or creating new ones.
 I call this pattern multi-page single-page app (MPSPA).
 
 <figure class="w-figure">
-  <img src="./html-structure.png" alt="Chrome DevTools view of the HTML structure of the app showing it consists of six iframes: one for the navbar, one for the tabbar, and three grouped ones for each page of the app, with a final placeholder iframe for dynamic pages.">
+  <img src="./html-structure.png" alt="Chrome DevTools view of the HTML structure of the app showing that it consists of six iframes: one for the navbar, one for the tabbar, and three grouped ones for each page of the app, with a final placeholder iframe for dynamic pages.">
   <figcaption class="w-figcaption">
     The app consists of six iframes.
   </figcaption>
@@ -135,12 +135,12 @@ they work well together with lit-html, as you can see in the listing below.
 
 Each page has a corresponding `Page` class that fills the lit-html markup with life by providing implementations
 of the event handlers and providing the data for each page.
-This class also allows for the definition of lifecycle methods like `onShow()`, `onHide()`, `onLoad()`, and `onUnload()`.
+This class also supports lifecycle methods like `onShow()`, `onHide()`, `onLoad()`, and `onUnload()`.
 Pages have access to a data store that serves for sharing optionally persisted per-page state and global state.
-All strings are centrally managed, so internationalization is built right in.
-Routing is all handled by the browser essentially for free, since all the app does is toggle iframe visibility and
+All strings are centrally managed, so internationalization is built in.
+Routing is handled by the browser essentially for free, since all the app does is toggle iframe visibility and
 for dynamically created pages change the `src` attribute of the placeholder iframe.
-The listing below shows the code for closing a dynamically created page.
+The example below shows the code for closing a dynamically created page.
 
 ```js
 import Page from '../page.js';
@@ -164,14 +164,14 @@ const page = new Page({
 
 ## Styling
 
-Styling of pages happens per-page in its own, naturally scoped CSS file.
+Styling of pages happens per-page in its own scoped CSS file.
 This means elements can usually just be directly addressed by their element names,
 since no clashes with other pages can occur.
 Global styles are added to each page, so central settings like the `font-family` or the `box-sizing`
 do not need to be declared repeatedly.
 This is also where the themes and dark mode options are defined.
 The listing below shows the rules for the Preferences page that lays out the various form elements
-along a grid.
+on a grid.
 
 ```css
 main {
@@ -199,13 +199,13 @@ select {
 <figure class="w-figure">
   <img src="./preferences.png" width="500" alt="HIIT Time app preferences page showing a form in grid layout.">
   <figcaption class="w-figcaption">
-    Every page is its own world, styling happens directly with the element names.
+    Every page is its own world. Styling happens directly with the element names.
   </figcaption>
 </figure>
 
 ## Screen wake lock
 
-While doing a workout, the screen should not turn off.
+During a workout, the screen should not turn off.
 On browsers that support it, HIIT Time realizes this through a [screen wake lock](/wake-lock/).
 The snippet below shows how it is done.
 

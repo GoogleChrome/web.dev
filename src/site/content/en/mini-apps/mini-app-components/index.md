@@ -6,14 +6,14 @@ authors:
 date: 2021-01-25
 # updated: 2021-01-25
 description: |
-  This chapter provides details on the mini app components that all mini app platforms make available.
+  This chapter provides details on the components that all mini app platforms make available.
 tags:
   - mini-apps
 ---
 
 ## Web components
 
-[Web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components/) have started with the
+[Web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components/) started with the
 promise of letting developers piece them together and build great apps on top of them. Examples of
 such atomic components are GitHub's [time-elements](https://github.com/github/time-elements) Stefan
 Judis' [web-vitals-element](https://github.com/stefanjudis/web-vitals-element), or, shameless plug,
@@ -42,7 +42,7 @@ overview of the available components, you can browse
 [Baidu's](https://smartprogram.baidu.com/docs/develop/component/component/), and
 [Quick App components](https://doc.quickapp.cn/widgets/common-events.html).
 
-While I have shown [earlier](/mini-app-devtools/#custom-elements-under-the-hood) that, for example, WeChat's `<image>`
+Earlier [I showed](/mini-app-devtools/#custom-elements-under-the-hood) that while, for example, WeChat's `<image>`
 is a web component under the hood, not all of these components are technically web components. Some
 components, like `<map>` and `<video>`, are rendered as
 [OS-native components](https://developers.weixin.qq.com/ebook?action=get_post_info&docid=000caab39b88b06b00863ab085b80a)
@@ -209,7 +209,7 @@ The file `custom.json` denotes the folder contents as a custom component.
 }
 ```
 
-The files `custom.swan` and `custom.css` contain the markup respectively the CSS.
+The file `custom.swan` contains the markup and `custom.css` the CSS.
 
 ```html
 <view class="name" bindtap="tap">{% raw %}{{name}}{% endraw %} {% raw %}{{age}}{% endraw %}</view>

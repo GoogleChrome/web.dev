@@ -17,9 +17,9 @@ As before with the markup languages, the styling languages, and the components, 
 project structure, too, the details like the file extensions or the default names vary, but the
 overall idea is the same for all super app providers. The project structure always consists of a
 root file `app.js` that initializes the mini app, a configuration file `app.json` that _roughly_
-corresponds to a [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest), an
+corresponds to a [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest), an
 optional common style sheet file `app.css` with shared default styles, and a `project.config.json`
-file that contains build information. All the pages are contained as individual subfolders in a
+file that contains build information. All the pages are stored in individual subfolders in a
 `pages` folder. Each page subfolder contains a CSS file, a JS file, an HTML file, and an optional
 configuration JSON file. All files must be named like their containing folder, apart from the file
 extensions. Like that, the mini app just needs a pointer to the directory in the `app.json` file
@@ -141,7 +141,7 @@ industry tools like the [Babel](https://babeljs.io/) compiler for transpilation 
 the [postcss](https://postcss.org/) CSS transformer. The build experience is comparable to that of
 [Next.js](https://nextjs.org/) or
 [`create-react-app`](https://reactjs.org/docs/create-a-new-react-app.html), where developers, if
-they not explicitly choose to do so, never touch the build parameters. The resulting processed files
+they explicitly choose not to, never touch the build parameters. The resulting processed files
 are finally signed, encrypted, and packaged in one or several (sub)packages that then get uploaded
 to the servers of the super app providers. Subpackages are meant for lazy-loading, so a mini app
 does not have to be downloaded all at once. The packaging details are meant to be private and are

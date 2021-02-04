@@ -13,7 +13,9 @@ tags:
 
 ## Building blocks and compatibility
 
-Mini apps are small (commonly less than 4MB) apps that require a super app to run. What they have in
+Mini apps are small (commonly less than 4MB) apps that require a
+[super app](/what-are-super-apps/#what-are-super-apps)
+to run. What they have in
 common, independent of the super app, is that they are built with ("dialects" of) the Web
 technologies HTML, CSS, and JavaScript. The runtime of a mini app is a
 [WebView](https://research.google/pubs/pub46739/) in the super app, not the underlying operating
@@ -23,13 +25,13 @@ all mini apps can run in all super apps, more on this [later](/mini-app-standard
 
 ## Discovery
 
-Mini apps are often discovered _ad-hoc_ via branded 2d barcodes, which solves an important
+Mini apps are often discovered _ad-hoc_ via branded 2D barcodes, which solves an important
 offline-to-online challenge, for example, getting from a physical restaurant menu to a payment mini
 app, or from a physical e-scooter to a rental min app. The image below depicts an example of such a
 branded 2d barcode. It is for
 [WeChat's demo mini app](https://github.com/wechat-miniprogram/miniprogram-demo). When the code is
-scanned with the WeChat super app, the mini app launches directly. Super apps other than in this
-case WeChat typically will not recognize the barcode.
+scanned with the WeChat super app, the mini app launches directly.
+Other super apps will typically not be able to recognize the barcode.
 
 <figure class="w-figure">
   <img src="2d-barcode.jpg" alt="WeChat-branded 2d barcode." width="250">
@@ -41,8 +43,8 @@ case WeChat typically will not recognize the barcode.
 Mini apps can also be discovered through regular in-app search in the super app, be shared in chat
 messages, or be part of a news item in a news feed. Some super apps have the notion of verified
 accounts that can contain mini apps in their profiles. Mini apps can be highlighted when they are
-_(i)_ physically geographically close, like the mini app of a business in front of which the user
-stands, or _(ii)_ virtually close, like when the user gets directions on a map shown in the super
+(i) physically geographically close, like the mini app of a business in front of which the user
+stands, or (ii) virtually close, like when the user gets directions on a map shown in the super
 app. Frequently used mini apps are available in an app drawer that in many super apps can be
 accessed through a swipe down gesture or through a special section in the super app menu.
 

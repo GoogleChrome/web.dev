@@ -119,7 +119,7 @@ you explore the available components.
 
 [WeUI](https://github.com/Tencent/weui) is a set of basic style libraries consistent with WeChat's
 native visual experience. The official WeChat design team has tailored designs for WeChat internal
-web pages and WeChat mini apps to make users' perception of use more uniform. Including components
+web pages and WeChat mini apps to make users' perception of use more uniform. It includes components
 such as `button`, `cell`, `dialog`, `progress`, `toast`, `article`, `actionsheet`, and `icon`. There
 are different versions of WeUI available like [weui-wxss](https://github.com/Tencent/weui-wxss/) for
 WeChat mini apps styled with WXSS (see [Styling](/mini-app-markup-styling-and-scripting/#styling) above),
@@ -264,8 +264,8 @@ The [weweb](https://weidian-inc.github.io/hera/#/) project
 the [Hera](https://weidian-inc.github.io/hera/#/) mini app framework that claims to be compatible
 with the syntax of WeChat mini apps, so you can write web applications in the way of mini apps. The
 documentation promises that if you already have a mini app, you can run it in the browser thanks to
-weweb. In my experiments, this did not work reliably for current mini apps, most probably due to the
-fact that the project has not seen updates recently leading to its compiler to miss changes in the
+weweb. In my experiments, this did not work reliably for current mini apps, most probably because
+the project has not seen updates recently leading its compiler to miss changes in the
 WeChat platform.
 
 <figure class="w-figure">

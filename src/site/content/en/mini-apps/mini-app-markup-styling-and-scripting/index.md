@@ -177,7 +177,7 @@ JavaScript code cannot be executed via `eval()` and no functions can be created 
 [NW.js](https://nwjs.io/) in the simulator. Coding with ES6 or newer syntax is usually possible,
 since the particular DevTools automatically transpile the code to ES5 if the build target is an
 operating system with an older WebView implementation (see [later](/project-structure-lifecycle-and-bundling/#the-build-process)). The
-documentations of the super app providers explicitly mention that their scripting languages are not
+documentation of the super app providers explicitly mentions that their scripting languages are not
 to be confused with and are distinct from JavaScript. This statement, however, refers mostly just to
 the way modules work, that is, that they do not support standard
 [ES Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) yet.

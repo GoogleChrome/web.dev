@@ -13,8 +13,8 @@ tags:
 
 ## What has worked well for mini apps
 
-In this chapter, I want to look at lessons I took away from researching mini apps from a Web developer's point of view,
-or answer the question what it means to develop the mini app way.
+In this chapter, I want to look at lessons I learned from researching mini apps from a Web developer's point of view,
+or answer the question what does it mean to develop the mini app way.
 
 ## Components
 
@@ -22,7 +22,7 @@ Rather than reinvent the wheel and make developers build yet another implementat
 accordions, carousels, etc., mini apps just ship with a default selection of components that is extensible in case you need more.
 On the Web, there are likewise many options, some of which I have listed in the [chapter on mini app components](/mini-app-components/#web-components).
 In an ideal world, component libraries on the Web were built in a way that you could mix them freely.
-In practice, too many times, there is a certain lock-in regarding a design system you need to buy in when you use a component,
+In practice, too many times, there is a certain lock-in regarding a design system you need to buy in to when you use a component,
 or the component library is distributed in a way that it is all or nothing, but no individual components can be easily added to a project.
 There are, however, atomic components that you can use in isolation, or libraries like [generic-components](https://github.com/thepassle/generic-components)
 that are unstyled on purpose.

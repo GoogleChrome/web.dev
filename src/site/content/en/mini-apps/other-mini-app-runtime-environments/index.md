@@ -20,8 +20,8 @@ apps have started to conquer other runtime environments like cars and the classi
 
 In July 2020 the German car maker BMW Group
 [announced](https://www.press.bmwgroup.com/china/article/detail/T0313254ZH_CN/%E2%80%9C2020-%E5%AE%9D%E9%A9%AC%E7%A7%91%E6%8A%80%E6%97%A5%E2%80%9D%E5%9C%A8%E7%BA%BF%E5%8F%91%E5%B8%83%E5%A4%9A%E6%AC%BE%E8%BD%A6%E5%86%85%E6%95%B0%E5%AD%97%E4%BA%A7%E5%93%81)
-a cooperation with Tencent branded as WeScenario, which,
-[according to Tencent](https://www.tencent.com/en-us/articles/2201068.html), will be rolled to _"30
+a collaboration with Tencent branded as WeScenario, which,
+[according to Tencent](https://www.tencent.com/en-us/articles/2201068.html), will be rolled out to _"30
 leading auto companies in the world, and [bring the WeScenario] ecosystem of social, content and
 services to more than 110 mainstream automobile models"_.
 
@@ -37,14 +37,14 @@ services to more than 110 mainstream automobile models"_.
 ### Mini apps in WeChat Desktop
 
 Using the WeChat desktop client available for
-[macOS](https://dldir1.qq.com/weixin/mac/WeChatMac.dmg) (make sure to _not_ load the
-[version from the App Store](https://itunes.apple.com/cn/app/id836500024), since it is more limited)
+[macOS](https://dldir1.qq.com/weixin/mac/WeChatMac.dmg) 
 and [Windows](https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe)), it is possible to run WeChat
-mini apps on the desktop.
+mini apps on the desktop. (Make sure to _not_ load the macOS
+[version from the App Store](https://itunes.apple.com/cn/app/id836500024), since it is more limited.)
 
 To test it on macOS, share a mini app from a mobile device with yourself via the "File Transfer"
 account. This will result in a message that you can then open on the desktop client. In most cases,
-the mini app will then be directly clickable and runnable, in other cases, you have to forward the
+the mini app will then be directly clickable and runnable. In other cases, you have to forward the
 chat history to yourself again from a mobile device.
 
 <figure class="w-figure">
@@ -154,8 +154,8 @@ Windows allows apps to obtain without asking for permission.
 [Linux](https://browser.360.cn/se/linux/index.html). On Windows, it is capable of running special
 [360 mini apps](https://mp.360.cn/#/). The
 [developer documentation](https://mp.360.cn/doc/miniprogram/dev/) and the
-[API](https://mp.360.cn/doc/miniprogram/dev/#/e1487ee88399013ec06eff05007391fc) is comparable to
-that of other vendors, however, 360 does not offer dedicated DevTools. Instead, developers need to
+[API](https://mp.360.cn/doc/miniprogram/dev/#/e1487ee88399013ec06eff05007391fc) are comparable to
+those of other vendors; however, 360 does not offer dedicated DevTools. Instead, developers need to
 create their mini apps in an IDE of their own choosing and can then test them in the browser using a
 special development mode. Debugging happens through Chrome Dev Tools. A
 [demo app](https://mp.360.cn/examples/appdemo.zip) is available for getting started.
@@ -168,7 +168,7 @@ special development mode. Debugging happens through Chrome Dev Tools. A
 </figure>
 
 360 mini apps can run in fullscreen mode and do appear as separate entries in the multitasking bar.
-Via the context menu, a home screen icon can be added that allow for mini apps to be launched from
+Via the context menu, a home screen icon can be added that allows for mini apps to be launched from
 the desktop.
 
 <figure class="w-figure">
@@ -191,11 +191,11 @@ various services including digital wallet, news stream, video on demand, and dig
 distribution. The service is a subsidiary of Korean internet search engine company,
 [Naver Corporation](http://www.navercorp.com/).
 
-Since LINE [mini apps](https://developers.line.biz/en/docs/line-mini-app/quickstart/) are
-[essentially just regular Web apps](https://developers.line.biz/en/docs/line-mini-app/discover/specifications/#supported-platforms-and-versions)
-(see [sample app](https://github.com/line/line-liff-v2-starter)) that pull in the
+Since LINE [mini apps](https://developers.line.biz/en/docs/line-mini-app/quickstart/) is
+[essentially just a regular Web app](https://developers.line.biz/en/docs/line-mini-app/discover/specifications/#supported-platforms-and-versions)
+(see [sample app](https://github.com/line/line-liff-v2-starter)) that pulls in the
 [LINE Front-end Framework](https://developers.line.biz/en/docs/liff/developing-liff-apps/#developing-a-liff-app)
-(LIFF), they can also be accessed outside of the main LINE app through special
+(LIFF),  it can also be accessed outside of the main LINE app through special
 [permanent links](https://developers.line.biz/en/docs/line-mini-app/develop/permanent-links/)
 ([example](https://liff.line.me/1653544369-LP5XbPYw)). However, not all APIs are available in such
 cases. Examples of not available in the browser APIs include the
@@ -225,9 +225,9 @@ you have a LINE account.
 The [Google Spot Platform](https://developers.google.com/pay/spot) allows developers to set up a
 Spot on [Google Pay](https://pay.google.com/)—a digital storefront that they can create, brand, and
 host however they choose. It is discoverable both online as well as through physical barcodes. Users
-can easily share a Spot on their favorite messaging app or find it on Google Pay. A Spot is built
+can easily share a "Spot" (as the app calls it) on their favorite messaging app or find it on Google Pay. A Spot is built
 using HTML and JavaScript, so existing investments into mobile websites or PWAs can be easily
-transformed into a Spot by \*"adding a few lines of JavaScript" according to the announcement post.
+transformed into a Spot by "adding a few lines of JavaScript" according to the announcement post.
 
 <figure class="w-figure">
   <img src="google-spot.png" alt="The Eat.fit mini app running in the Google Pay super app showing the sign-in bottom sheet." width="300">

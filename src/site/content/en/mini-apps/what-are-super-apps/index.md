@@ -14,7 +14,7 @@ tags:
 ## Welcome to mini apps
 
 When you look at the applications on your phone, you probably have specific apps for specific tasks.
-You might have a banking app, you might have an app for buying public transit tickets, likely you
+You might have a banking app. You might have an app for buying public transit tickets. Likely you
 have an app for getting directions, etc. In this post, I introduce you to the concept of a different
 kind of app, namely mini apps, sometimes also referred to as mini programs or applets. I first
 provide some background on the various mini app platforms and their developer experience, and then
@@ -28,13 +28,13 @@ apps. Popular super apps are Tencent's [WeChat](https://weixin.qq.com/) (微信)
 search engine [Baidu](https://baidu.com/) (百度), Ant Group's (an affiliate company of the Chinese
 Alibaba Group) [Alipay](https://www.alipay.com/) (支付宝), but also ByteDance's
 [Douyin](https://www.douyin.com/) (抖音), which you might know as TikTok (蒂克托克). The first three
-are commonly also referred to as BAT, which stems from **B**(aidu)**A**(libaba)**T**(encent). Super apps have taken the
+are commonly also referred to as BAT, which derives from **B**(aidu)**A**(libaba)**T**(encent). Super apps have taken the
 Chinese market by storm, which is why a lot of the examples in this article are Chinese.
 
 ### Short characterization of each super app platform
 
 WeChat aims to make itself a one-stop shop to meet almost any need users might have in their daily
-lives. Alipay builds its platforms on top of its payment system, focusing on retail and finance
+lives. Alipay builds its platforms on top of its payment system, focusing on retail and financial
 services, including credit, loan, insurance, installment, and local life services. Baidu strives to
 transform its search engine from solely connecting people, services, and information into
 information-as-a-service through mini programs for travel, retail, ads, payment, and more. Last but
