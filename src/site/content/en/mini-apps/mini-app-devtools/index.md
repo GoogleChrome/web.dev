@@ -103,7 +103,7 @@ the IDE internals, you can oftentimes simply inspect them with Chrome DevTools w
 shortcut <kbd>cmd</kbd>/<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>i</kbd>.
 
 <figure class="w-figure">
-  <img src="baidu-devtools-inspect.png" alt="Chrome DevTools used to inspect Baidu's DevTools showing the simulator's `webview` in the Chrome DevTools' Elements panel.">
+  <img src="baidu-devtools-inspect.png" alt="Chrome DevTools used to inspect Baidu's DevTools showing the simulator's WebView in the Chrome DevTools' Elements panel.">
   <figcaption class="w-figure">
     Inspecting Baidu DevTools with Chrome DevTools reveals that the simulator is realized as an Electron <code>&lt;webview&gt;</code>.
   </figcaption>
