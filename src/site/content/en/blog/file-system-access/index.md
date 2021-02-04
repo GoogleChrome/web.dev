@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2020-11-10
+updated: 2021-02-02
 tags:
   - blog
   - capabilities
@@ -232,6 +232,37 @@ Saving file handles to IndexedDB means that you can store state, or remember whi
 working on. This makes it possible to keep a list of recently opened or edited files, offer to
 re-open the last file when the app is opened, etc. In the text editor, I store a list of the five
 most recent files the user has opened, making it easy to access those files again.
+
+The code example below shows storing and retrieving a file handle.
+You can [see this in action](https://filehandle-indexeddb.glitch.me/) over on Glitch
+(I use the [idb-keyval](https://www.npmjs.com/package/idb-keyval) library for brevity).
+
+```js
+import { get, set } from 'https://unpkg.com/idb-keyval@5.0.2/dist/esm/index.js';
+
+const pre = document.querySelector('pre');
+const button = document.querySelector('button');
+
+button.addEventListener('click', async () => {
+  try {
+    // Try retrieving the file handle.
+    const fileHandleOrUndefined = await get('file');    
+    if (fileHandleOrUndefined) {      
+      pre.textContent =
+          `Retrieved file handle "${fileHandleOrUndefined.name}" from IndexedDB.`;
+      return;
+    }
+    // This always returns an array, but we just need the first entry.
+    const [fileHandle] = await window.showOpenFilePicker();
+    // Store the file handle.
+    await set('file', fileHandle);    
+    pre.textContent =
+        `Stored file handle for "${fileHandle.name}" in IndexedDB.`;
+  } catch (error) {
+    alert(error.name, error.message);
+  }
+});
+```
 
 Since permissions currently are not persisted between sessions, you should verify whether the user
 has granted permission to the file using `queryPermission()`. If they haven't, use
