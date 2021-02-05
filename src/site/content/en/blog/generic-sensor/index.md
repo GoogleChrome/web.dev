@@ -437,8 +437,7 @@ disallow the parent frame infer user input.
 ## What's next? {: #whats-next }
 
 There is a set of already specified sensor classes to be implemented in the near
-future such as [Proximity sensor](https://w3c.github.io/proximity/) and
-[Gravity sensor](https://w3c.github.io/accelerometer/#gravitysensor-interface);
+future such as [Proximity sensor](https://w3c.github.io/proximity/);
 however thanks to the great extensibility of Generic Sensor framework we can
 anticipate appearance of even more new classes representing various sensor types.
 
