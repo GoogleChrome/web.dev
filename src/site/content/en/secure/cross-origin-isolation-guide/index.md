@@ -34,14 +34,13 @@ that.
 1. Set [`Cross-Origin-Opener-Policy-Report-Only:
    same-origin`](/coop-coep/#1.-set-the-cross-origin-opener-policy:-same-origin-header-on-the-top-level-document)
    on your top-level document. As the name indicates, this header only sends
-   reports about the impact that enabling cross-origin isolation **would** have
-   on your site. It won't actually enable cross-origin isolation yet and
-   therefore it won't affect your site's functioning.
+   reports about the impact that `COOP: same-origin` **would** have on your
+   site. Therefore, it won't actually disable communication with popup windows.
 2. Set up reporting and configure a web server to receive and save the reports.
 3. Set [`Cross-Origin-Embedder-Policy-Report-Only:
    require-corp`](/coop-coep/#3.-use-the-coep-report-only-http-header-to-assess-embedded-resources)
    on your top-level document. Again, this header lets you see the impacts of
-   enabling `COOP: require-corp` without actually affecting your site's
+   enabling `COEP: require-corp` without actually affecting your site's
    functioning yet. You can configure this header to send reports to the same
    reporting server that you set up in the last step.
 
@@ -51,6 +50,8 @@ column](https://developers.google.com/web/tools/chrome-devtools/network#informat
 in Chrome DevTools **Network** panel to get a general view of which resources
 would be impacted.
 {% endAside %}
+
+## Enable cross-origin isolation
 
 1. Set the `Cross-Origin-Embedder-Policy: require-corp` header on cross-origin
    iframes.
@@ -73,7 +74,7 @@ would be impacted.
    document. If you had set `Cross-Origin-Embedder-Policy-Report-Only:
    require-corp`, replace it. This will block the loading of cross-origin
    resources that are not opted-in.
-6. Check that `self.crossOriginIsolated` returns `true` in console to verify
+7. Check that `self.crossOriginIsolated` returns `true` in console to verify
    that your page is cross-origin isolated.
 
 ## Resources
