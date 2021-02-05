@@ -3,7 +3,7 @@ layout: post
 title: Mini app markup, styling, and scripting
 authors:
   - thomassteiner
-date: 2021-01-25
+date:  2021-02-05
 # updated: 2021-01-25
 description: |
   This chapter looks at the mark-up, styling, and scripting options of various mini apps platforms.
@@ -264,3 +264,11 @@ tt.canIUse("request.success.data");
 {% Banner 'neutral' %}
   👉 The next chapter introduces [mini app components](/mini-app-components/).
 {% endBanner %}
+
+## Acknowledgements
+
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley),
+[Kayce Basques](https://github.com/kaycebasques),
+Keith Gu,
+and [Alan Kent](https://github.com/alankent).

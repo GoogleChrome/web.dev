@@ -3,7 +3,7 @@ layout: post
 title: An example project
 authors:
   - thomassteiner
-date: 2021-01-25
+date:  2021-02-05
 # updated: 2021-01-25
 description: |
   This chapter shows an example project that follows the "programming the mini app way" approach.
@@ -246,3 +246,11 @@ or right in the iframe embed below, which simulates a mobile device.
 {% Banner 'neutral' %}
   👉 The final chapter ends this collection on mini apps with a [conclusion](/conclusion).
 {% endBanner %}
+
+## Acknowledgements
+
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley),
+[Kayce Basques](https://github.com/kaycebasques),
+Keith Gu,
+and [Alan Kent](https://github.com/alankent).

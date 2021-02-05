@@ -3,7 +3,7 @@ layout: post
 title: Mini app components
 authors:
   - thomassteiner
-date: 2021-01-25
+date:  2021-02-05
 # updated: 2021-01-25
 description: |
   This chapter provides details on the components that all mini app platforms make available.
@@ -272,3 +272,11 @@ The custom component can then be imported in `index.json`, the key of the import
 {% Banner 'neutral' %}
   👉 Continue reading to learn about the [project structure, lifecycle, and bundling](/project-structure-lifecycle-and-bundling/) of mini apps.
 {% endBanner %}
+
+## Acknowledgements
+
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley),
+[Kayce Basques](https://github.com/kaycebasques),
+Keith Gu,
+and [Alan Kent](https://github.com/alankent).

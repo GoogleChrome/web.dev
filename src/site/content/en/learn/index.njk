@@ -71,4 +71,17 @@ date: 2018-11-05
       {% endfor %}
     </div>
   </section>
+  <section class="w-grid">
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
+      <h3 id="exploration" class="w-learn-heading">
+        Explorations
+        <a class="w-headline-link" href="#explorations" aria-hidden="true">#</a>
+      </h3>
+    </div>
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+      {% for exploration in learn.explorations %}
+        {% PathCard exploration, lang %}
+      {% endfor %}
+    </div>
+  </section>
 </div>

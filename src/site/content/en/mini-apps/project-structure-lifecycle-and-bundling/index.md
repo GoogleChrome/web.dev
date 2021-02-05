@@ -3,7 +3,7 @@ layout: post
 title: Project structure, lifecycle, and bundling
 authors:
   - thomassteiner
-date: 2021-01-25
+date:  2021-02-05
 # updated: 2021-01-25
 description: |
   This chapter covers the project structure, the lifecycle, and the bundling of mini apps.
@@ -151,3 +151,11 @@ not documented, but some package formats like WeChat's `wxapkg` format have been
 {% Banner 'neutral' %}
   👉 The next chapter provides insights on the [mini app standardization effort](/mini-app-standardization/).
 {% endBanner %}
+
+## Acknowledgements
+
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley),
+[Kayce Basques](https://github.com/kaycebasques),
+Keith Gu,
+and [Alan Kent](https://github.com/alankent).

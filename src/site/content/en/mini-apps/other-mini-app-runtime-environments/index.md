@@ -3,7 +3,7 @@ layout: post
 title: Other mini app runtime environments
 authors:
   - thomassteiner
-date: 2021-01-25
+date:  2021-02-05
 # updated: 2021-01-25
 description: |
   This chapter presents a number of runtime environments for mini apps that are not mobile devices.
@@ -37,7 +37,7 @@ services to more than 110 mainstream automobile models"_.
 ### Mini apps in WeChat Desktop
 
 Using the WeChat desktop client available for
-[macOS](https://dldir1.qq.com/weixin/mac/WeChatMac.dmg) 
+[macOS](https://dldir1.qq.com/weixin/mac/WeChatMac.dmg)
 and [Windows](https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe)), it is possible to run WeChat
 mini apps on the desktop. (Make sure to _not_ load the macOS
 [version from the App Store](https://itunes.apple.com/cn/app/id836500024), since it is more limited.)
@@ -254,3 +254,11 @@ with no installation required.
 {% Banner 'neutral' %}
   👉 Read on to see some examples of the [mini app open source projects](/mini-app-open-source-projects/).
 {% endBanner %}
+
+## Acknowledgements
+
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley),
+[Kayce Basques](https://github.com/kaycebasques),
+Keith Gu,
+and [Alan Kent](https://github.com/alankent).

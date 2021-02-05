@@ -3,7 +3,7 @@ layout: post
 title: Mini app standardization
 authors:
   - thomassteiner
-date: 2021-01-25
+date:  2021-02-05
 # updated: 2021-01-25
 description: |
   This chapter introduces the standardization effort that has been started for mini apps.
@@ -83,3 +83,11 @@ As a curious member of the group, I look forward to seeing where this endeavor i
 {% Banner 'neutral' %}
   👉 The following chapter looks at [other mini app runtime environments](/other-mini-app-runtime-environments/) apart from mobile devices.
 {% endBanner %}
+
+## Acknowledgements
+
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley),
+[Kayce Basques](https://github.com/kaycebasques),
+Keith Gu,
+and [Alan Kent](https://github.com/alankent).

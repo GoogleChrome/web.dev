@@ -3,7 +3,7 @@ layout: post
 title: What are H5 and QuickApp?
 authors:
   - thomassteiner
-date: 2021-01-25
+date:  2021-02-05
 # updated: 2021-01-25
 description: |
   This chapter provides background on H5 apps and QuickApp, which are both distinct from mini apps.
@@ -55,3 +55,11 @@ operating system that provides the JavaScript bridge.
 {% Banner 'neutral' %}
   👉 The next chapter covers the [developer experience of mini apps](/mini-app-devtools/).
 {% endBanner %}
+
+## Acknowledgements
+
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley),
+[Kayce Basques](https://github.com/kaycebasques),
+Keith Gu,
+and [Alan Kent](https://github.com/alankent).

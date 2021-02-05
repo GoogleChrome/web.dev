@@ -3,7 +3,7 @@ layout: post
 title: Mini app open source projects
 authors:
   - thomassteiner
-date: 2021-01-25
+date:  2021-02-05
 # updated: 2021-01-25
 description: |
   This chapter presents a selection of interesting mini app open source projects.
@@ -285,3 +285,11 @@ WeChat platform.
 {% Banner 'neutral' %}
   👉 In the next chapter, you will learn how to [program the mini app way](/programming-the-mini-app-way/).
 {% endBanner %}
+
+## Acknowledgements
+
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley),
+[Kayce Basques](https://github.com/kaycebasques),
+Keith Gu,
+and [Alan Kent](https://github.com/alankent).

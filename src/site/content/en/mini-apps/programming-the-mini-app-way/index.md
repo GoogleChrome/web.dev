@@ -3,7 +3,7 @@ layout: post
 title: Programming the mini app way
 authors:
   - thomassteiner
-date: 2021-01-25
+date:  2021-02-05
 # updated: 2021-01-25
 description: |
   This chapter introduces the way of programming the mini app way.
@@ -64,3 +64,11 @@ on the Web these powerful capabilities are available directly.
 {% Banner 'neutral' %}
   👉 Read on to see an [example project](/an-example-project/) that puts this way of programming into practice.
 {% endBanner %}
+
+## Acknowledgements
+
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley),
+[Kayce Basques](https://github.com/kaycebasques),
+Keith Gu,
+and [Alan Kent](https://github.com/alankent).

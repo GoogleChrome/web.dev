@@ -3,7 +3,7 @@ layout: post
 title: Mini app DevTools
 authors:
   - thomassteiner
-date: 2021-01-25
+date:  2021-02-05
 # updated: 2021-01-25
 description: |
   This chapter provides details on the DevTools experience of various mini apps platforms.
@@ -96,16 +96,16 @@ based on the [Chrome DevTools front-end](https://github.com/ChromeDevTools/devto
 some modifications, more on those later (see [Debugger](/mini-app-devtools/#debugger)). The IDEs _per se_ are
 implemented either as [NW.js](https://nwjs.io/) or as [Electron](https://www.electronjs.org/) apps,
 the simulators in the IDEs are realized as an
-[NW.js `<webview>`](https://docs.nwjs.io/en/latest/References/webview%20Tag/) or
+[NW.js `<webview>` tag](https://docs.nwjs.io/en/latest/References/webview%20Tag/) or
 [Electron `<webview>` tag](https://www.electronjs.org/docs/api/webview-tag), which in turn are based on
 a [Chromium `<webview>` tag](https://www.electronjs.org/docs/api/webview-tag). If you are interested in
 the IDE internals, you can oftentimes simply inspect them with Chrome DevTools with the keyboard
 shortcut <kbd>cmd</kbd>/<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>i</kbd>.
 
 <figure class="w-figure">
-  <img src="baidu-devtools-inspect.png" alt="Chrome DevTools used to inspect Baidu's DevTools showing the simulator's WebView in the Chrome DevTools' Elements panel.">
+  <img src="baidu-devtools-inspect.png" alt="Chrome DevTools used to inspect Baidu's DevTools showing the simulator's webview tag in the Chrome DevTools' Elements panel.">
   <figcaption class="w-figure">
-    Inspecting Baidu DevTools with Chrome DevTools reveals that the simulator is realized as an Electron <code>&lt;webview&gt;</code>.
+    Inspecting Baidu DevTools with Chrome DevTools reveals that the simulator is realized as an Electron <code>&lt;webview&gt;</code> tag.
   </figcaption>
 </figure>
 
@@ -240,3 +240,11 @@ desired mock responses.
 {% Banner 'neutral' %}
   👉 Read on to learn about the [mark-up, styling, and scripting of mini apps](/mini-app-markup-styling-and-scripting/).
 {% endBanner %}
+
+## Acknowledgements
+
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley),
+[Kayce Basques](https://github.com/kaycebasques),
+Keith Gu,
+and [Alan Kent](https://github.com/alankent).

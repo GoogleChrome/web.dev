@@ -3,7 +3,7 @@ layout: post
 title: What are mini apps?
 authors:
   - thomassteiner
-date: 2021-01-25
+date:  2021-02-05
 # updated: 2021-01-25
 description: |
   This chapter introduces the concept of mini apps and provides examples of their look and feel.
@@ -198,3 +198,11 @@ users can enter into competition without any friction and the mini app thereby g
 {% Banner 'neutral' %}
   👉 In the next chapter, you will learn [what sets mini apps apart from H5 apps and QuickApp](/what-are-h5-and-quickapp).
 {% endBanner %}
+
+## Acknowledgements
+
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley),
+[Kayce Basques](https://github.com/kaycebasques),
+Keith Gu,
+and [Alan Kent](https://github.com/alankent).

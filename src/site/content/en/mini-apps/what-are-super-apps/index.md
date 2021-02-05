@@ -3,7 +3,7 @@ layout: post
 title: What are super apps?
 authors:
   - thomassteiner
-date: 2021-01-25
+date:  2021-02-05
 # updated: 2021-01-25
 description: |
   This chapter introduces the concept of super apps and presents the major players.
@@ -78,3 +78,11 @@ mode with a secondary phone (given you have one) to understand what is going on 
 {% Banner 'neutral' %}
   👉 Read on to [learn more about mini apps](/what-are-mini-apps/) in the next chapter.
 {% endBanner %}
+
+## Acknowledgements
+
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley),
+[Kayce Basques](https://github.com/kaycebasques),
+Keith Gu,
+and [Alan Kent](https://github.com/alankent).

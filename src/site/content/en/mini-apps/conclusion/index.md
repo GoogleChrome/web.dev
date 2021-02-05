@@ -3,7 +3,7 @@ layout: post
 title: Conclusion
 authors:
   - thomassteiner
-date: 2021-01-25
+date:  2021-02-05
 # updated: 2021-01-25
 description: |
   This chapter concludes the mini apps collection with the observation
@@ -61,3 +61,11 @@ own bubble can definitely help when building a better future on the web.
 {% Banner 'neutral' %}
   👉 Congratulations, you have reached the end of the [mini apps collection](/mini-apps/).
 {% endBanner %}
+
+## Acknowledgements
+
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley),
+[Kayce Basques](https://github.com/kaycebasques),
+Keith Gu,
+and [Alan Kent](https://github.com/alankent).
