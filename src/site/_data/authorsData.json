@@ -407,6 +407,15 @@
       "en": "Web DevRel @ Google"
     }
   },
+  "pozdnyakov": {
+    "name": {
+      "given": "Mikhail",
+      "family": "Pozdnyakov"
+    },
+    "descriptions": {
+      "en": "Mikhail is an Engineer at Intel"
+    }
+  },
   "demianrenzulli": {
     "name": {
       "given": "Demian",
@@ -415,6 +424,15 @@
     "twitter": "drenzulli",
     "github": "demianrenzulli",
     "glitch": "demianrenzulli"
+  },
+  "alexshalamov": {
+    "name": {
+      "given": "Alex",
+      "family": "Shalamov"
+    },
+    "descriptions": {
+      "en": "Alex is an Engineer at Intel"
+    }
   },
   "rsolomakhin": {
     "name": {
@@ -1680,7 +1698,7 @@
       "name": "Corel",
       "unit": "Online Graphics"
     }
-  }, 
+  },
   "antoinebisch": {
     "name": {
       "given": "Antoine",
