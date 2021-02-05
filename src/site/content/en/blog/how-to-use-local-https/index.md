@@ -72,7 +72,7 @@ The mkcert we're interested in in this post is [this one](https://github.com/Fil
 
 ### Caution
 
-{% Banner 'caution' %}
+{% Banner 'caution', 'body' %}
 
 - Never export or share the file `rootCA-key.pem` mkcert creates automatically when you run `mkcert -install`. **An attacker getting hold of this file can create on-path attacks for any site you may be visiting**. They could intercept secure requests from your machine to any site—your bank, healthcare provider, or social networks. If you need to know where `rootCA-key.pem` is located to make sure it's safe, run `mkcert -CAROOT`.
 - Only use mkcert for **development purposes**—and by extension, never ask end-users to run mkcert commands.
