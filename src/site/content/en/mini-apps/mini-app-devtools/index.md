@@ -97,8 +97,8 @@ some modifications, more on those later (see [Debugger](/mini-app-devtools/#debu
 implemented either as [NW.js](https://nwjs.io/) or as [Electron](https://www.electronjs.org/) apps,
 the simulators in the IDEs are realized as an
 [NW.js `<webview>`](https://docs.nwjs.io/en/latest/References/webview%20Tag/) or
-[Electron `<webview>`](https://www.electronjs.org/docs/api/webview-tag), which in turn are based on
-a [Chromium `<webview>`](https://www.electronjs.org/docs/api/webview-tag). If you are interested in
+[Electron `<webview>` tag](https://www.electronjs.org/docs/api/webview-tag), which in turn are based on
+a [Chromium `<webview>` tag](https://www.electronjs.org/docs/api/webview-tag). If you are interested in
 the IDE internals, you can oftentimes simply inspect them with Chrome DevTools with the keyboard
 shortcut <kbd>cmd</kbd>/<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>i</kbd>.
 
