@@ -141,6 +141,17 @@ excluding the contribution of a gravity force. When a device is at rest, for
 instance, lying flat on the table, the sensor would measure ≈ 0 m/s<sup>2</sup>
 acceleration on three axes.
 
+### Gravity sensor {: #gravity-sensor }
+
+It is already possible for users to manually derive readings close to those of a gravity sensor
+by manually inspecting `Accelerometer` and `LinearAccelerometer` readings, but this can be
+cumbersome and depend on the accuracy of the values provided by those sensors.
+Platforms such as Android can provide gravity readings as part of the operating system,
+which should be cheaper in terms of computation, provide more accurate values depending
+on the user's hardware, and be easier to use in terms of API ergonomics. The
+[`GravitySensor`](https://w3c.github.io/accelerometer/#gravitysensor-interface) returns
+the effect of acceleration along the device's X, Y, and Z axis due to gravity.
+
 ### Gyroscope {: #gyroscope-sensor }
 
 <div class="w-figure w-figure--inline-right" style="max-width:50%">
