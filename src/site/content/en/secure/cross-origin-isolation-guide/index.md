@@ -51,30 +51,40 @@ in Chrome DevTools **Network** panel to get a general view of which resources
 would be impacted.
 {% endAside %}
 
-## Enable cross-origin isolation
+## Mitigate the impact of cross-origin isolation
+
+After you have determined which resources will be affected by cross-origin
+isolation, here are general guidelines for how you actually opt-in those
+cross-origin resources:
 
 1. Set the `Cross-Origin-Embedder-Policy: require-corp` header on cross-origin
-   iframes.
+   resources loaded into iframes.
 2. Set the [`Cross-Origin-Resource-Policy:
    cross-origin`](https://resourcepolicy.fyi) header on cross-origin resources :
    images, scripts, stylesheets, iframes, etc.
-3. Set the crossorigin attribute in the HTML tag if the resource is served with
-   [CORS](/cross-origin-resource-sharing/) (for example, `<img src="****"
-   crossorigin>`).
+3. Set the crossorigin attribute in the HTML tag on top-level document if the
+   resource is served with [CORS](/cross-origin-resource-sharing/) (for example,
+   `<img src="****" crossorigin>`).
 4. Make sure there are no cross-origin popup windows that require communication
    through `postMessage()`. There's no way to keep them working when
    cross-origin isolation is enabled. You can move the communication to another
    document that isn't cross-origin isolated, or use a different communication
    method.
-5. Set the `Cross-Origin-Opener-Policy: same-origin` header on your top-level
+
+## Enable cross-origin isolation
+
+After you have mitigated the impact by cross-origin isolation, here are general
+guidelines to enable cross-origin isolation:
+
+1. Set the `Cross-Origin-Opener-Policy: same-origin` header on your top-level
    document. If you had set `Cross-Origin-Opener-Policy-Report-Only:
    same-origin`, replace it. This blocks communication between your top-level
    document and its popup windows.
-6. Set the `Cross-Origin-Embedder-Policy: require-corp` header on your top-level
+2. Set the `Cross-Origin-Embedder-Policy: require-corp` header on your top-level
    document. If you had set `Cross-Origin-Embedder-Policy-Report-Only:
    require-corp`, replace it. This will block the loading of cross-origin
    resources that are not opted-in.
-7. Check that `self.crossOriginIsolated` returns `true` in console to verify
+3. Check that `self.crossOriginIsolated` returns `true` in console to verify
    that your page is cross-origin isolated.
 
 ## Resources
