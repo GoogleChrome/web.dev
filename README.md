@@ -21,7 +21,7 @@ proposal.
 
 ## Building the site 🏗
 
-You'll need a recent version of [Node](https://nodejs.org/): v12.10 or higher.
+You'll need a recent version of [Node](https://nodejs.org/): v12.10 or higher..
 
 ### Clone the repo
 
