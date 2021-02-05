@@ -403,7 +403,7 @@ so let's briefly list them.
 Because Generic Sensor API is a powerful feature, Chrome only allows it on
 secure contexts.
 In practice it means that to use Generic Sensor API you'll need to access your
-page through HTTPS. During development you can do so via http://localhost but
+page through HTTPS. During development you can do so via [http://localhost](http://localhost) but
 for production
 you'll need to have HTTPS on your server. See the [Safe and secure](/secure/)
 collection for best practices and guidelines.
