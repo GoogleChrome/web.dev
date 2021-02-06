@@ -11,7 +11,7 @@ tags:
   - security
 ---
 
-{% Banner 'caution' %}
+{% Banner 'caution', 'body' %}
 Most of the time, `http://localhost` does what you need: in browsers, it mostly behaves like HTTPS 🔒. That's why some APIs that won't work on a deployed HTTP site, will work on `http://localhost`.
 
 What this means is that you need to use HTTPS locally **only in special cases** (see [When to use HTTPS for local development](/when-to-use-local-https)), like custom hostnames or Secure cookies across browsers. Keep reading if that's you!
@@ -236,7 +236,7 @@ To run your local development site with HTTPS:
 3.  Configure your development server to use HTTPS and the certificate you've created in Step 2.
 4.  ✨ You're done! You can now access `https://{YOUR HOSTNAME}` in your browser, without warnings
 
-{% Banner 'caution' %}
+{% Banner 'caution', 'body' %}
 
 Do this only for **development purposes** and **never export or share** the file `rootCA-key.pem` (if you need to know where this file is located to make sure it's safe, run `mkcert -CAROOT`).
 
