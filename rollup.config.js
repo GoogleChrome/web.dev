@@ -101,7 +101,6 @@ const testConfig = {
     nodeResolve(),
     commonjs(),
     postcss(),
-    istanbul(),
   ],
 };
 
@@ -121,6 +120,7 @@ export default () => {
   if (process.env.NODE_ENV === 'production') {
     return productionConfig;
   } else if (process.env.NODE_ENV === 'test') {
+    console.log('node env is test');
     return testConfig;
   }
   return devConfig;

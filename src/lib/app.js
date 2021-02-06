@@ -10,6 +10,10 @@ import {store} from './store';
 import {localStorage} from './utils/storage';
 import removeServiceWorkers from './utils/sw-remove';
 
+// This hides a legacy browser warning that can appear on the /measure page
+// See .unsupported-notice in _page-header.scss
+document.body.classList.remove('unresolved');
+
 // Read preferred language from the url, a cookie or browser settings.
 checkUserPreferredLanguage();
 
