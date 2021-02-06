@@ -29,7 +29,6 @@ const virtualImports = {
     version: 'v' + new Date().toISOString().replace(/[\D]/g, '').slice(0, 12),
     firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
   },
-  webdev_entrypoint: null,
 };
 
 /**

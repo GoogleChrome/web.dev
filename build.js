@@ -17,11 +17,7 @@
 require('dotenv').config();
 const isProd = process.env.ELEVENTY_ENV === 'prod';
 
-const fs = require('fs').promises;
-const path = require('path');
 const log = require('fancy-log');
-const rollupPluginReplace = require('rollup-plugin-replace');
-const OMT = require('@surma/rollup-plugin-off-main-thread');
 const rollupPluginNodeResolve = require('rollup-plugin-node-resolve');
 const rollupPluginCJS = require('rollup-plugin-commonjs');
 const rollupPluginPostCSS = require('rollup-plugin-postcss');
@@ -30,7 +26,6 @@ const rollupPluginIstanbul = require('rollup-plugin-istanbul');
 const rollup = require('rollup');
 const buildVirtualJSON = require('./src/build/virtual-json');
 const minifySource = require('./src/build/minify-js');
-const {hashForFiles} = require('./src/build/hash');
 
 process.on('unhandledRejection', (reason, p) => {
   log.error('Build had unhandled rejection', reason, p);
@@ -57,11 +52,7 @@ async function build() {
     postcssConfig.minimize = true;
   }
 
-  // Rollup "app.js" to generate graph of source needs. This eventually uses
-  // dynamic import to bring in code required for each page (see router). In
-  // Rollup's nonmenclature, this is the site entrypoint. We generated it with
-  // a dynamic hash, and is imported via "bootstrap.js" (which is run in all
-  // browsers via regular script tag).
+  // Rollup "app.js" to generate graph of source needs.
   const appBundle = await rollup.rollup({
     input: 'src/lib/app.js',
     external: disallowExternal,
@@ -79,76 +70,11 @@ async function build() {
     },
   });
   const appGenerated = await appBundle.write({
-    entryFileNames: '[name]-[hash].js',
-    sourcemap: true,
-    dir: 'dist',
+    sourcemap: !isProd,
+    dir: 'dist/js',
     format: 'esm',
   });
   const outputFiles = appGenerated.output.map(({fileName}) => fileName);
-
-  // Save the "app.js" entrypoint (which has a hashed name) for the all-browser
-  // loader code.
-  const entrypoints = appGenerated.output.filter(({isEntry}) => isEntry);
-  if (entrypoints.length !== 1) {
-    throw new Error(
-      `expected single Rollup entrypoint, was: ${entrypoints.length}`,
-    );
-  }
-  virtualImports.webdev_entrypoint = entrypoints[0].fileName;
-
-  // Rollup basic to generate the top-level script run by all browsers (even
-  // ancient ones). This runs Analytics and imports the entrypoint generated
-  // above (in supported module browsers).
-  const libPrefix = path.join(__dirname, '/src/lib/');
-  const utilsPrefix = path.join(libPrefix, 'utils');
-  const bootstrapBundle = await rollup.rollup({
-    input: 'src/lib/bootstrap.js',
-    plugins: buildDefaultPlugins(),
-    external: disallowExternal,
-    manualChunks: (id) => {
-      // This overloads Rollup's manualChunks feature to catch disallowed code.
-      // Bootstrap should only import:
-      //   * virtual imports (config only)
-      //   * itself (Rollup calls us for 'ourself')
-      //   * code inside `src/lib/utils`.
-      // Otherwise, we risk leaking core site code into this ES5-only, fast
-      // bootstrap chunk.
-      if (id in virtualImports || !path.isAbsolute(id)) {
-        return; // ok
-      }
-      if (id === path.join(libPrefix, 'bootstrap.js')) {
-        return undefined; // self, allowed
-      }
-      if (path.relative(utilsPrefix, id).startsWith('../')) {
-        // This looks for code outside the utils folder, which is disallowed.
-        throw new TypeError(
-          `can't import non-utils JS code in bootstrap: ${id}`,
-        );
-      }
-    },
-  });
-  const bootstrapGenerated = await bootstrapBundle.write({
-    entryFileNames: '[name].js',
-    sourcemap: true,
-    dir: 'dist',
-    format: 'iife',
-  });
-  if (bootstrapGenerated.output.length !== 1) {
-    throw new Error(
-      `bootstrap generated more than one file: ${bootstrapGenerated.output.length}`,
-    );
-  }
-  const bootstrapPath = bootstrapGenerated.output[0].fileName;
-  outputFiles.push(bootstrapPath);
-
-  const hash = hashForFiles(path.join('dist', bootstrapPath));
-  const resourceName = `${bootstrapPath}?v=${hash}`;
-
-  // Write the bundle entrypoint to a known file for Eleventy to read.
-  await fs.writeFile(
-    'src/site/_data/resourceJS.json',
-    JSON.stringify({path: `/${resourceName}`}),
-  );
 
   // Compress the generated source here, as we need the final files and hashes for the Service
   // Worker manifest.
@@ -156,46 +82,6 @@ async function build() {
     const ratio = await minifySource(outputFiles);
     log(`Minified site code is ${(ratio * 100).toFixed(2)}% of source`);
   }
-  log(`Built site JS! '${resourceName}', total ${outputFiles.length} files`);
-}
-
-async function buildServiceWorker() {
-  const swBundle = await rollup.rollup({
-    input: 'src/lib/sw.js',
-    external: disallowExternal,
-    manualChunks: (id) => {
-      if (id.includes('/node_modules/idb-keyval')) {
-        return 'sw-idb-keyval';
-      }
-      if (/\/node_modules\/workbox-.*\//.exec(id)) {
-        return 'sw-workbox';
-      }
-    },
-    plugins: [
-      // This variable is defined by Webpack (and some other tooling), but not by Rollup. Set it to
-      // "production" if we're in prod, which will hide all of Workbox's log messages.
-      // Note that Terser below will actually remove the conditionals (this replace will generate
-      // lots of `if ("production" !== "production")` statements).
-      rollupPluginReplace({
-        'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : ''),
-      }),
-      ...buildDefaultPlugins(),
-      OMT(),
-    ],
-  });
-
-  const swGenerated = await swBundle.write({
-    sourcemap: true,
-    dir: 'dist',
-    format: 'amd',
-  });
-
-  const swOutputFiles = swGenerated.output.map(({fileName}) => fileName);
-  if (isProd) {
-    const ratio = await minifySource(swOutputFiles);
-    log(`Minified service worker is ${(ratio * 100).toFixed(2)}% of source`);
-  }
-  log(`Built Service Worker JS, total ${swOutputFiles.length} files`);
 }
 
 /**
@@ -221,7 +107,6 @@ async function buildTest() {
 
 (async function () {
   await build();
-  await buildServiceWorker();
   if (!isProd) {
     await buildTest();
   }
