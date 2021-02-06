@@ -113,7 +113,7 @@ The following is adapted from
 [sample code in the API explainer](https://github.com/WICG/trust-token-api#sample-api-usage).
 
 {% Aside 'caution' %}
-The code in this post uses version 2 of the API.
+The code in this post uses updated syntax available since Chrome 88.
 {% endAside %}
 
 Imagine that a user visits a news website (`publisher.example`) which embeds
@@ -165,7 +165,7 @@ document:
 fetch('foo.example/get-content', {
   trustToken: {
     type: 'send-redemption-record',
-    issuer: 'https://issuer.example'
+    issuers: ['https://issuer.example']
   }
 });
 ```
@@ -197,8 +197,7 @@ If the user is deemed to be trustworthy by a trust token issuer such as
 ```js
 fetch('issuer.example/.well-known/trust-token', {
   trustToken: {
-    type: 'token-request',
-    issuer: <issuer>
+    type: 'token-request'
   }
 }).then(...)
 ```
@@ -235,7 +234,6 @@ fetch('issuer.example/.well-known/trust-token', {
   ...
   trustToken: {
     type: 'token-redemption',
-    issuer: 'issuer.example',
     refreshPolicy: 'none'
   }
   ...
@@ -250,7 +248,7 @@ fetch('<url>', {
   ...
   trustToken: {
     type: 'send-redemption-record',
-    issuer: <issuer>,
+    issuers: [<issuer>, ...]
   }
   ...
 }).then(...);
