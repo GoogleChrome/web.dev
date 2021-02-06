@@ -6,7 +6,6 @@ import {html} from 'lit-element';
 import {unsafeHTML} from 'lit-html/directives/unsafe-html';
 import {BaseElement} from '../BaseElement';
 import {store} from '../../store';
-import * as router from '../../utils/router';
 import {debounce} from '../../utils/debounce';
 import {trackError} from '../../analytics';
 import 'focus-visible';
@@ -401,14 +400,11 @@ class Search extends BaseElement {
   }
 
   /**
-   * Tells the router to navigate to the specified URL.
-   * Because this closes the search box, it has the side effect of blurring
-   * focus.
+   * Tells the page to navigate to the url.
    * @param {{url:string}} url A URL data object.
    */
   navigateToHit({url}) {
-    router.route(url);
-    /** @type HTMLElement */ (document.activeElement).blur();
+    window.location.href = url;
   }
 
   /**
