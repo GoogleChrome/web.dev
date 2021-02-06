@@ -15,6 +15,9 @@ const {terser} = require('rollup-plugin-terser');
 // A Rollup plugin to import CSS and inject it into the <head>
 const postcss = require('rollup-plugin-postcss');
 
+// A Rollup plugin to mark modules for Istanbul code coverage.
+const istanbul = require('rollup-plugin-istanbul');
+
 // A Rollup plugin which loads virtual modules from memory.
 const virtual = require('@rollup/plugin-virtual');
 
@@ -86,6 +89,22 @@ const productionConfig = {
   ],
 };
 
+const testConfig = {
+  input: 'test/unit/src/lib/index.js',
+  output: {
+    dir: 'dist/test',
+    format: 'iife',
+    name: 'test',
+  },
+  plugins: [
+    virtual(buildVirtualJSON(virtualImports)),
+    nodeResolve(),
+    commonjs(),
+    postcss(),
+    istanbul(),
+  ],
+};
+
 /**
  * Determine which rollup config to return based on the environment.
  *
@@ -101,6 +120,8 @@ const productionConfig = {
 export default () => {
   if (process.env.NODE_ENV === 'production') {
     return productionConfig;
+  } else if (process.env.NODE_ENV === 'test') {
+    return testConfig;
   }
   return devConfig;
 };

@@ -34,7 +34,7 @@
     "snapshots": "percy exec --config ./tools/percy/.percy.conf.yml -- node tools/percy/snapshots.js",
     "start": "firebase emulators:start",
     "test:integration": "mocha ./test/integration",
-    "test:lib": "npm-run-all clean rollup karma",
+    "test:lib": "NODE_ENV=test npm-run-all clean rollup karma",
     "test:unit": "mocha ./test/unit && npm run test:lib",
     "test": "npm run test:unit && npm run test:lib && npm run test:integration",
     "translated": "node ./tools/update-translated/index.js",
