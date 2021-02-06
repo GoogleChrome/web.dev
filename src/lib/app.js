@@ -10,8 +10,6 @@ import {store} from './store';
 import {localStorage} from './utils/storage';
 import removeServiceWorkers from './utils/sw-remove';
 
-console.log('app.js loaded');
-
 // Read preferred language from the url, a cookie or browser settings.
 checkUserPreferredLanguage();
 

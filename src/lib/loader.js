@@ -39,7 +39,7 @@ async function loadEntrypoint(url) {
       return import('./pages/newsletter.js');
   }
 
-  return import('./pages/default.js');
+  return import('./pages/content.js');
 }
 
 /**
