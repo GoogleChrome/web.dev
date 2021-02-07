@@ -11,9 +11,11 @@ describe('Build test', function () {
     // eslint-disable-next-line
     this.timeout(0);
 
-    console.log('Running npm run build...');
+    console.log('Running npm run build:test...');
     try {
-      await exec('ELEVENTY_ENV=prod npm run build');
+      // This copies everything except for images because gulp will try to
+      // optimize those during a prod build which slows things right down.
+      await exec('ELEVENTY_ENV=prod npm run build:test');
     } catch (err) {
       assert.fail(err);
     }
@@ -24,16 +26,12 @@ describe('Build test', function () {
       'index.html',
       path.join('authors', 'addyosmani', 'feed.xml'),
       path.join('tags', 'progressive-web-apps', 'feed.xml'),
-      path.join('images', 'favicon.ico'),
-      path.join('images', 'lockup.svg'),
-      'app.css',
+      path.join('css', 'app.css'),
       'algolia.json',
-      'bootstrap.js',
       'manifest.webmanifest',
       'nuke-sw.js',
       'robots.txt',
       'sitemap.xml',
-      'sw.js',
     ].forEach((file) =>
       assert.ok(
         fs.existsSync(path.join(dist, file)),
@@ -41,15 +39,18 @@ describe('Build test', function () {
       ),
     );
 
-    const contents = fs.readdirSync(dist);
-
-    // Check that there's a Rollup-generated file with the given name that looks
-    // like `[name]-[hash].js`.
-    ['app', 'measure', 'newsletter', 'default'].forEach((chunked) => {
-      const re = new RegExp(`^${chunked}-\\w+\\.js$`);
+    const contents = fs.readdirSync(path.join(dist, 'js'));
+    // Check that there's a Rollup-generated file for all of our entrypoints.
+    [
+      'app.js',
+      'measure.js',
+      'newsletter.js',
+      'default.js',
+      'content.js',
+    ].forEach((file) => {
       assert(
-        contents.find((file) => re.test(file)),
-        `Could not find Rollup output: ${chunked}`,
+        contents.find((item) => item === file),
+        `Could not find Rollup output: ${file}`,
       );
     });
 

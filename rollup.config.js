@@ -42,9 +42,9 @@ const virtualImports = {
 };
 
 // Each page type has an entrypoint js file which imports all of the custom
-// elements for that page.
-// Most pages use the default.js entrypoint, but some special pages like
-// /measure, /newsletter, etc. are special and require additional elements.
+// elements for that page. Most pages use the default.js entrypoint, but some
+// pages like /measure, /newsletter, etc. are special and require additional
+// elements.
 const pagesDir = './src/lib/pages/';
 const pages = fs.readdirSync(pagesDir, 'utf-8').map((p) => join(pagesDir, p));
 
@@ -101,6 +101,7 @@ const testConfig = {
     nodeResolve(),
     commonjs(),
     postcss(),
+    istanbul(),
   ],
 };
 

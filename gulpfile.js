@@ -29,8 +29,7 @@ const assetTypes =
   'jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml';
 /* eslint-enable max-len */
 
-// TODO: Turn this back on when we're ready to ship
-const isProd = false;
+const isProd = process.env.ELEVENTY_ENV === 'prod';
 
 const compressImagesTransform = (pngQuality, jpegQuality) => {
   if (!isProd) {
@@ -109,6 +108,8 @@ gulp.task('copy-content-assets', () => {
 gulp.task('copy-fonts', () => {
   return gulp.src('src/fonts/**/*').pipe(gulp.dest('dist/fonts/'));
 });
+
+gulp.task('sass', sassTask);
 
 gulp.task(
   'build',
