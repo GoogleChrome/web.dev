@@ -86,6 +86,7 @@ const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
 const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
 const {purifyCss} = require(`./${transformsDir}/purify-css`);
+const {minifyHtml} = require(`./${transformsDir}/minify-html`);
 
 module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
@@ -231,6 +232,7 @@ module.exports = function (config) {
   if (isProd) {
     config.addTransform('responsive-images', responsiveImages);
     config.addTransform('purifyCss', purifyCss);
+    config.addTransform('minifyHtml', minifyHtml);
   }
 
   // ----------------------------------------------------------------------------

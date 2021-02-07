@@ -6,8 +6,8 @@ const src = './src/styles/main.scss';
 const dest = './dist/css/main.css';
 
 // Flags whether we generate sourcemaps
-// TODO: d.c.c. uses NODE_EVN but we use ELEVENTY_ENV a lot in web.dev.
-const isProduction = process.env.NODE_ENV === 'production';
+// TODO: d.c.c. uses NODE_ENV but we use ELEVENTY_ENV a lot in web.dev.
+const isProduction = process.env.ELEVENTY_ENV === 'prod';
 
 // Techincally we're rendering synchronously so we don't need an async function,
 // but gulp requires all tasks to return a promise.

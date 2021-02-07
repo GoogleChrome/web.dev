@@ -7,7 +7,7 @@ const crypto = require('crypto');
 const fs = require('fs');
 
 const hashLength = 8;
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.ELEVENTY_ENV === 'prod';
 
 function generateAndValidateHash(c) {
   const hash = c.digest('hex').substr(0, hashLength);

@@ -117,10 +117,9 @@ const testConfig = {
  * Learn more @ https://rollupjs.org/guide/en/
  */
 export default () => {
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.ELEVENTY_ENV === 'prod') {
     return productionConfig;
-  } else if (process.env.NODE_ENV === 'test') {
-    console.log('node env is test');
+  } else if (process.env.ELEVENTY_ENV === 'test') {
     return testConfig;
   }
   return devConfig;

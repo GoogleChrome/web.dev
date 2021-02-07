@@ -19,7 +19,7 @@ tags: []
 
     {% Meta locale, page, collections, renderData %}
 
-    {% if process.env.NODE_ENV === 'production' %}
+    {% if process.env.ELEVENTY_ENV === 'prod' %}
       {# CSS will be injected by purify-css transform. #}
     {% else %}
       <link rel="stylesheet" href="/css/main.css">
