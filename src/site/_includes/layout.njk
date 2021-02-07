@@ -8,6 +8,19 @@ tags: []
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if process.env.ELEVENTY_ENV === 'prod' %}
+      {# CSS will be injected by purify-css transform. #}
+      <!-- __PURGECSS_INJECT -->
+    {% else %}
+      <link rel="stylesheet" href="/css/main.css">
+    {% endif %}
+
+    {# We only preload Material Icons because the site can't render properly without them. #}
+    {# For Google Sans we use font-display: swap because preloading too many fonts can hurt performance. #}
+    {# https://www.zachleat.com/web/preload/ #}
+    <link rel="preload" as="font" crossorigin href="/fonts/material-icons/regular.woff2">
+
     <meta name="theme-color" content="#fff"/>
 
     {% if noindex or draft -%}
@@ -18,12 +31,6 @@ tags: []
     {%- endif %}
 
     {% Meta locale, page, collections, renderData %}
-
-    {% if process.env.ELEVENTY_ENV === 'prod' %}
-      {# CSS will be injected by purify-css transform. #}
-    {% else %}
-      <link rel="stylesheet" href="/css/main.css">
-    {% endif %}
 
     <link rel="manifest" href="/manifest.webmanifest" />
     {# Include default icon even though we have a manifest #}

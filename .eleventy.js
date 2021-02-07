@@ -230,7 +230,7 @@ module.exports = function (config) {
   }
 
   if (isProd) {
-    config.addTransform('responsive-images', responsiveImages);
+    // config.addTransform('responsive-images', responsiveImages);
     config.addTransform('purifyCss', purifyCss);
     config.addTransform('minifyHtml', minifyHtml);
   }
