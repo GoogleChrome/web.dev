@@ -112,7 +112,7 @@ websites from tracking users through them.</p>
 The following is adapted from
 [sample code in the API explainer](https://github.com/WICG/trust-token-api#sample-api-usage).
 
-{% Aside 'caution' %}
+{% Aside %}
 The code in this post uses updated syntax available since Chrome 88.
 {% endAside %}
 
