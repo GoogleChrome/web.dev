@@ -25,23 +25,18 @@ feedback:
   - api
 ---
 
-{% Banner 'caution', 'body' %}
 
 **Updates**
 
-**February 3rd, 2020**: Added an instruction [how to set up a reporting
+- **February 3rd, 2020**: Added an instruction [how to set up a reporting
 endpoint](#set-up-reporting-endpoint).
-
-**October 15th, 2020**: `self.crossOriginIsolated` is available from Chrome 87.
+- **October 15th, 2020**: `self.crossOriginIsolated` is available from Chrome 87.
 Reflecting that, `document.domain` is immutable when `self.crossOriginIsolated`
 returns `true`. `performance.measureUserAgentSpecificMemory()` is ending its origin trial and is
 enabled by default in Chrome 89. Shared Array Buffer on Android
 Chrome will be available from Chrome 88.
-
-**September 1st, 2020**: COOP Reporting is behind flags in Chrome 86. See
+- **September 1st, 2020**: COOP Reporting is behind flags in Chrome 86. See
 [Enable Chrome flags](#flags).
-
-{% endBanner %}
 
 Some web APIs increase the risk of side-channel attacks like Spectre. To
 mitigate that risk, browsers offer an opt-in-based isolated environment called
