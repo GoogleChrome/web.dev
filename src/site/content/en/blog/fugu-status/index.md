@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything iOS/Android/desktop apps can. The members of the cross-company capabilities project want to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2021-01-21
+updated: 2021-02-03
 tags:
   - blog
   - capabilities
@@ -230,20 +230,6 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
       <tr>
         <td>
-          <a href="/serial/">
-            Serial API
-          </a>
-        </td>
-        <td>
-          The Serial API provides a way for websites to read from and
-          write to a serial device with scripts. The API bridges the web and
-          the physical world by allowing websites to communicate with serial
-          devices, such as microcontrollers and 3D printers.<br>
-          <em>Updated January 21, 2021</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
           <a href="/shape-detection/">Shape&nbsp;Detection (Barcode)</a>
         </td>
         <td>
@@ -274,19 +260,6 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
       <tr>
         <td>
-          <a href="/hid/">WebHID API</a>
-        </td>
-        <td>
-          There is a long tail of human interface devices (HIDs), such as
-          alternative keyboards or exotic gamepads, that are too new, too old,
-          or too uncommon to be accessible by systems' device drivers. The
-          WebHID API solves this by providing a way to implement
-          device-specific logic in JavaScript.<br>
-          <em>Updated January 21, 2021</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
           <a href="/nfc/">Web NFC</a>
         </td>
         <td>
@@ -297,6 +270,20 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           NFC card near the exhibit; or an inventory management web app could
           read or write data to an NFC tag on a container to update information
           on its contents.<br>
+          <em>Updated January 21, 2021</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/serial/">
+            Web Serial API
+          </a>
+        </td>
+        <td>
+          The Web Serial API provides a way for websites to read from and
+          write to a serial device with scripts. The API bridges the web and
+          the physical world by allowing websites to communicate with serial
+          devices, such as microcontrollers and 3D printers.<br>
           <em>Updated January 21, 2021</em>
         </td>
       </tr>
@@ -333,6 +320,19 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           either the Web Share API or system events, like the OS-level share
           button.<br>
           <em>Updated November 8, 2019</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/hid/">WebHID API</a>
+        </td>
+        <td>
+          There is a long tail of human interface devices (HIDs), such as
+          alternative keyboards or exotic gamepads, that are too new, too old,
+          or too uncommon to be accessible by systems' device drivers. The
+          WebHID API solves this by providing a way to implement
+          device-specific logic in JavaScript.<br>
+          <em>Updated January 21, 2021</em>
         </td>
       </tr>
     </tbody>
