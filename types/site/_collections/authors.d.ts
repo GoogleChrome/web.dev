@@ -19,7 +19,6 @@ declare global {
     data: {
       alt?: string;
       hero?: string;
-      canonicalUrl: string;
       subhead: string;
       title: string;
     };
@@ -28,6 +27,7 @@ declare global {
     href: string;
     key: string;
     title: string;
+    url: string;
   }
   export interface Authors {
     [key: string]: AuthorsItem;

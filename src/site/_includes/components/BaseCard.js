@@ -38,7 +38,7 @@ class BaseCard {
     this.collectionItem.data = this.collectionItem.data || {};
     this.featured = featured;
     this.className = className;
-    this.url = this.collectionItem.data.canonicalUrl;
+    this.url = this.collectionItem.url;
     this.data = this.collectionItem.data;
     this.displayedTags = [];
 

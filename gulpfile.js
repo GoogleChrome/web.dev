@@ -21,6 +21,8 @@ const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
 const through2 = require('through2');
 
+const {defaultLocale} = require('./src/site/_data/site');
+
 /* eslint-disable max-len */
 const assetTypes =
   'jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml';
@@ -67,7 +69,12 @@ gulp.task('copy-content-assets', () => {
       // they belong to.
       .pipe(
         rename((assetPath) => {
+          const defaultLocaleRegExp = new RegExp(`^${defaultLocale}/`);
           const parts = assetPath.dirname.split('/');
+          assetPath.dirname = assetPath.dirname.replace(
+            defaultLocaleRegExp,
+            '',
+          );
           // Landing pages should keep their assets.
           // e.g. en/vitals, en/about
           if (parts.length <= 2) {
@@ -86,11 +93,11 @@ gulp.task('copy-content-assets', () => {
           // Some assets are nested under directories which aren't part of
           // their url. For example, we have /en/blog/some-post/foo.jpg.
           // For these assets we need to remove the /blog/ directory so they
-          // can live at /en/some-post/foo.jpg since that's what we'll actually
+          // can live at /some-post/foo.jpg since that's what we'll actually
           // serve in production.
-          // e.g. en/blog/foo/bar.jpg -> en/foo/bar.jpg
+          // e.g. en/blog/foo/bar.jpg -> /foo/bar.jpg
           parts.splice(1, 1);
-          assetPath.dirname = parts.join('/');
+          assetPath.dirname = parts.join('/').replace(defaultLocaleRegExp, '');
         }),
       )
       .pipe(gulp.dest('./dist/'))

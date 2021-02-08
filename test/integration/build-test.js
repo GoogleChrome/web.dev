@@ -20,13 +20,12 @@ describe('Build test', function () {
     console.log('Build completed. Starting tests.');
 
     [
-      path.join('en', 'feed.xml'),
-      path.join('en', 'index.html'),
-      path.join('en', 'authors', 'addyosmani', 'feed.xml'),
-      path.join('en', 'tags', 'progressive-web-apps', 'feed.xml'),
+      'feed.xml',
+      'index.html',
+      path.join('authors', 'addyosmani', 'feed.xml'),
+      path.join('tags', 'progressive-web-apps', 'feed.xml'),
       path.join('images', 'favicon.ico'),
       path.join('images', 'lockup.svg'),
-      '_redirects.yaml',
       'app.css',
       'algolia.json',
       'bootstrap.js',
@@ -57,11 +56,11 @@ describe('Build test', function () {
     // Check that there's NOT a web.dev/LIVE partial. We confirm that partials
     // are generally created above, in the list of common checks.
     assert(
-      !fs.existsSync(path.join(dist, 'en/live/index.json')),
+      !fs.existsSync(path.join(dist, 'live/index.json')),
       'web.dev/LIVE partial should not exist',
     );
     assert(
-      fs.existsSync(path.join(dist, 'en/live/index.html')),
+      fs.existsSync(path.join(dist, 'live/index.html')),
       'web.dev/LIVE page should exist',
     );
   });
