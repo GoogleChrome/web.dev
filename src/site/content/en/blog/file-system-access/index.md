@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-02-02
+updated: 2021-02-08
 tags:
   - blog
   - capabilities
@@ -393,19 +393,19 @@ elem.addEventListener('drop', async (e) => {
 });
 ```
 
-### Accessing the origin-private file system
+### Accessing the origin private file system
 
-The origin-private file system is a storage endpoint that, as the name suggests, is private to the
+The origin private file system is a storage endpoint that, as the name suggests, is private to the
 origin of the page. While browsers will typically implement this by persisting the contents of this
-origin-private file system to disk somewhere, it is _not_ intended that the contents be easily user
+origin private file system to disk somewhere, it is _not_ intended that the contents be easily user
 accessible. Similarly, there is _no_ expectation that files or directories with names matching the
-names of children of the origin-private file system exist.
+names of children of the origin private file system exist.
 While the browser might make it seem that there are files, internally—since this is an
-origin-private file system—the browser might store these "files" in a database or any
+origin private file system—the browser might store these "files" in a database or any
 other data structure.
 Essentially: what you create with this API, do _not_ expect to find it 1:1 somewhere on the hard disk.
 You can operate as usual on the
-origin-private file system once you have access to the root `FileSystemDirectoryHandle`.
+origin private file system once you have access to the root `FileSystemDirectoryHandle`.
 
 ```js
 const root = await navigator.storage.getDirectory();
