@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2020-11-16
+updated: 2021-02-08
 tags:
   - blog
   - capabilities
@@ -413,7 +413,6 @@ Happy copying and pasting!
 ## Related links
 
 * [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API)
-* [Raw Clipboard Access Design Doc](https://docs.google.com/document/d/1XDOtTv8DtwTi4GaszwRFIJCOuzAEA4g9Tk0HrasQAdE/edit?usp=sharing)
 
 ## Acknowledgements
 
