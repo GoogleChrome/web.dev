@@ -1,14 +1,17 @@
 ---
 title: Sensors for the web
-subhead: Use the Generic Sensor API to enable advanced features of your app
+subhead: |
+  Use the Generic Sensor API to get access to on-device sensors like accelerometers,
+  gyroscopes, and magentometers.
 authors:
   - alexshalamov
   - pozdnyakov
   - thomassteiner
 description: |
-  Sensors are used in many platform-specific applications to enable advanced features.
-  Wouldn't it be nice to bridge the gap between platform-specific apps and the web?
-  You can do it with Generic Sensor API, which is enabled by default as of Chrome 67.
+  Sensors are used in many applications to enable advanced features
+  like games that take the orientation or the acceleration of the device
+  they run on into account. The Generic Sensor API provides a generic interface
+  for accessing such sensor data on the web.
 date: 2017-09-18
 updated: 2021-02-05
 tags:
