@@ -13,7 +13,7 @@ description: |
   they run on into account. The Generic Sensor API provides a generic interface
   for accessing such sensor data on the web.
 date: 2017-09-18
-updated: 2021-02-05
+updated: 2021-02-09
 tags:
   - blog
   - sensors
@@ -79,7 +79,8 @@ Comparing to the existing interfaces, Generic Sensor API provides a great number
 
 The Generic Sensor API is supported by Google Chrome as of version 67. Most Chromium-derived
 browsers like Microsoft Edge, Opera, or Samsung Internet support this API as well. For other
-browsers, see [Can I use](https://caniuse.com/mdn-api_sensor).
+browsers, see [Can I use](https://caniuse.com/mdn-api_sensor). Note that the Generic Sensor API can
+be [polyfilled](#polyfill).
 
 ## Available generic sensor APIs {: #available-generic-sensor-apis }
 
@@ -99,13 +100,12 @@ At the time of writing, there are several sensors that you can experiment with.
 - `AmbientLightSensor`
 - `Magnetometer`
 
-## Feature detection
+## Feature detection {: #feature-detection }
 
 Feature detection of hardware APIs is tricky, since you need to detect both whether the browser
 supports the interface in question, _and_ whether the device has the corresponding sensor. Checking
-whether the browser supports an interface is straightforward.
-(Replace `Accelerometer` with any of the other interfaces mentioned
-[above](#available-generic-sensor-apis).)
+whether the browser supports an interface is straightforward. (Replace `Accelerometer` with any of
+the other interfaces mentioned [above](#available-generic-sensor-apis).)
 
 ```js
 if ('Accelerometer' in window) {
@@ -141,6 +141,21 @@ try {
     throw error;
   }
 }
+```
+
+## Polyfill
+
+For browsers that do not support the Generic Sensor API, a
+[polyfill](https://github.com/kenchris/sensor-polyfills) is available. The polyfill allows you to
+load only the relevant sensors' implementations.
+
+```js
+// Import the objects you need.
+import { Gyroscope, AbsoluteOrientationSensor } from './src/motion-sensors.js';
+
+// And they're ready for use!
+const gyroscope = new Gyroscope({ frequency: 15 });
+const orientation = new AbsoluteOrientationSensor({ frequency: 60 });
 ```
 
 ## What are all these sensors? How can I use them? {: #what-are-sensors-how-to-use-them }
