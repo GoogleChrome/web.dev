@@ -313,7 +313,7 @@ header to any document that is served with a COEP or COOP HTTP header. The
 reports. For example:
 
 ```http
-Report-To: { group: 'coep_report', max_age: 86400, endpoints: [{ url: 'https://first-party-test.glitch.me/report'}]},{ group: 'coop_report', max_age: 86400, endpoints: [{ url: 'https://first-party-test.glitch.me/report'}]}
+Report-To: { group: 'coep_report', max_age: 86400, endpoints: [{ url: 'https://reporting-endpoint.glitch.me/post'}]},{ group: 'coop_report', max_age: 86400, endpoints: [{ url: 'https://reporting-endpoint.glitch.me/post'}]}
 ```
 
 The parameters object has three properties:
