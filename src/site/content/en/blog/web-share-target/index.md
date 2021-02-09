@@ -5,7 +5,7 @@ authors:
   - petelepage
   - joemedley
 date: 2019-11-08
-updated: 2020-01-26
+updated: 2020-02-09
 hero: hero.png
 alt: An illustration demonstrating that platform-specific apps can now share content with web apps.
 description: |
@@ -45,8 +45,8 @@ files, links, or text using the Web Share API. See
 
 ## See Web Share Target in action
 
-1. Using Chrome 76 or later (on Android), or Chrome 89 or later (on Chrome OS) open the
-   [Web Share Target demo][demo].
+1. Using either Chrome 76 or later for Android, or Chrome 89 or later on
+   desktop, open the [Web Share Target demo][demo].
 2. When prompted, click **Install** to add the app to your home screen, or
    use the Chrome menu to add it to your home screen.
 3. Open any app that supports sharing, or use the Share button
