@@ -99,6 +99,50 @@ At the time of writing, there are several sensors that you can experiment with.
 - `AmbientLightSensor`
 - `Magnetometer`
 
+## Feature detection
+
+Feature detection of hardware APIs is tricky, since you need to detect both whether the browser
+supports the interface in question, _and_ whether the device has the corresponding sensor. Checking
+whether the browser supports an interface is straightforward.
+(Replace `Accelerometer` with any of the other interfaces mentioned
+[above](#available-generic-sensor-apis).)
+
+```js
+if ('Accelerometer' in window) {
+  // The `Accelerometer` interface is supported by the browser.
+  // Does the device have an accelerometer, though?
+}
+```
+
+For an actually meaningful feature detection result, you need to try to connect to the sensor, too.
+This example illustrates how to do that.
+
+```js
+let accelerometer = null;
+try {
+  accelerometer = new Accelerometer({ frequency: 10 });
+  accelerometer.addEventListener('error', (event) => {
+    // Handle runtime errors.
+    if (event.error.name === 'NotAllowedError') {
+      console.log('Permission to access sensor was denied.');
+    } else if (event.error.name === 'NotReadableError') {
+      console.log('Cannot connect to the sensor.');
+    }
+  });
+  accelerometer.addEventListener('reading', () => reloadOnShake(accelerometer));
+  accelerometer.start();
+} catch (error) {
+  // Handle construction errors.
+  if (error.name === 'SecurityError') {
+    console.log('Sensor construction was blocked by the Permissions Policy.');
+  } else if (error.name === 'ReferenceError') {
+    console.log('Sensor is not supported by the User Agent.');
+  } else {
+    throw error;
+  }
+}
+```
+
 ## What are all these sensors? How can I use them? {: #what-are-sensors-how-to-use-them }
 
 Sensors is an area that might need a brief introduction. If you are familiar with sensors, you can
