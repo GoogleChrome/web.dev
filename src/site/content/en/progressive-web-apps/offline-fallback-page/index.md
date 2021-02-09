@@ -4,14 +4,14 @@ title: Create an offline fallback page
 authors:
   - thomassteiner
 date: 2020-09-24
-# updated: 2020-09-14
+updated: 2021-02-09
 description: Learn how to create a simple offline experience for your app.
 tags:
   - progressive-web-apps
 ---
 
 What do the Google Assistant app, the Slack app, the Zoom app, and almost
-any other native app on your phone or computer have in common? Right, they always at least give you *something*.
+any other platform-specific app on your phone or computer have in common? Right, they always at least give you *something*.
 Even when you do not have a network connection, you can still open the Assistant app, or enter
 Slack, or launch Zoom. You might not get anything particularly meaningful or even
 be unable to achieve what you wanted to achieve, but at least you get _something_ and the app is in
@@ -41,7 +41,7 @@ control.
   </figure>
 
   <figcaption class="w-figcaption" id="fig-apps-wrapper">
-    With native apps, even when you do not have a network connection, you never get nothing.
+    With platform-specific apps, even when you do not have a network connection, you never get nothing.
   </figcaption>
 
 </figure>
