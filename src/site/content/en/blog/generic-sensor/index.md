@@ -82,9 +82,15 @@ number of advantages:
   available for `Accelerometer`, `Gyroscope`, `LinearAccelerationSensor`, `AbsoluteOrientationSensor`,
   `RelativeOrientationSensor` and `Magnetometer`.
 
-## Generic Sensor APIs in Chrome {: #generic-sensor-api-in-chrome }
+## Browser compatibility
 
-At the time of writing, Chrome supports several sensors that you can experiment with.
+The Generic Sensor API is supported by Google Chrome as of version 67.
+Most Chromium-derived browsers like Microsoft Edge, Opera, or Samsung Internet support this API as
+well. For other browsers, see [Can I use](https://caniuse.com/mdn-api_sensor).
+
+## Available generic sensor APIs {: #available-generic-sensor-apis }
+
+At the time of writing, there are several sensors that you can experiment with.
 
 **Motion sensors:**
 
@@ -93,16 +99,12 @@ At the time of writing, Chrome supports several sensors that you can experiment 
 - `LinearAccelerationSensor`
 - `AbsoluteOrientationSensor`
 - `RelativeOrientationSensor`
+- `GravitySensor`
 
 **Environmental sensors:**
 
 - `AmbientLightSensor`
 - `Magnetometer`
-
-The Generic Sensor-based motion sensor classes are enabled by default in Chrome
-starting from Chrome 67, and in Chromium forks such as Edge or Samsung Internet.
-You can find more information on browser implementation status by searching for
-["sensor" on caniuse](https://caniuse.com/?search=sensor).
 
 ## What are all these sensors? How can I use them? {: #what-are-sensors-how-to-use-them }
 
@@ -301,10 +303,6 @@ const sensorRelDevice = new RelativeOrientationSensor();
 const sensorRelScreen = new RelativeOrientationSensor({referenceFrame: "screen"});
 ```
 
-{% Aside %}
-  The `referenceFrame` sensor option is supported in Chrome 66 or later.
-{% endAside %}
-
 ## Let's code! {: #lets-code }
 
 The Generic Sensor API is very simple and easy-to-use! The Sensor interface has
@@ -412,14 +410,14 @@ Chrome DevTools has great support for
 ## Privacy and security {: #privacy-and-security }
 
 Sensor readings are sensitive data which can be subject to various attacks from
-malicious web pages. Chrome's implementation of Generic Sensor APIs enforces
+malicious web pages. Implementations of Generic Sensor APIs enforce
 a few limitations to mitigate the possible security and privacy risks. These
 limitations must be taken into account by developers who intend to use the API,
 so let's briefly list them.
 
 ### Only HTTPS
 
-Because Generic Sensor API is a powerful feature, Chrome only allows it on
+Because Generic Sensor API is a powerful feature, the browser only allows it on
 secure contexts.
 In practice it means that to use Generic Sensor API you'll need to access your
 page through HTTPS. During development you can do so via [http://localhost](http://localhost) but
@@ -477,6 +475,7 @@ as well as [bugs](https://bugs.chromium.org/p/chromium/issues/entry)
 for the Chrome implementation.
 
 ## Resources
+
 - Demo projects: [https://intel.github.io/generic-sensor-demos/](https://intel.github.io/generic-sensor-demos/)
 - Generic Sensor API specification: [https://w3c.github.io/sensors/](https://w3c.github.io/sensors/)
 - Specification issues: [https://github.com/w3c/sensors/issues](https://github.com/w3c/sensors/issues)
