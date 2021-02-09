@@ -5,7 +5,7 @@ authors:
   - petelepage
   - joemedley
 date: 2019-11-08
-updated: 2020-01-26
+updated: 2020-02-09
 hero: hero.png
 alt: An illustration demonstrating that platform-specific apps can now share content with web apps.
 description: |
