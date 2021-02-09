@@ -137,8 +137,9 @@ redirects:
 - source: /secure/:part
   destination: /:part
 
-- source: /en/handbook/:part
-  destination: /handbook/:part
+# Some Google search results indexed the page with `en/`, so we'll redirect it for now
+- source: /en/:part
+  destination: /:part
 
 # Redirect duplicative /discoverable URLs to /lighthouse-seo
 
