@@ -15,7 +15,7 @@
       ]
     },
     {
-      "title": "Installable",
+      "title": "Make it installable",
       "pathItems": [
         "install-criteria",
         "define-install-strategy"
@@ -40,18 +40,26 @@
       ]
     },
     {
-      "title": "Capable",
+      "title": "Create an app like user experience",
       "pathItems": [
         "app-like-pwas",
         "progressively-enhance-your-pwa"
       ],
       "subtopics": [
         {
-          "title": "Improve your experience with PWA-exclusive features",
+          "title": "PWA-exclusive features",
           "pathItems": [
             "app-shortcuts",
             "badging-api",
-            "web-share-target"
+            "web-share-target",
+            "maskable-icon",
+            "periodic-background-sync"
+          ]
+        }, {
+          "title": "More ways to improve your user experience",
+          "pathItems": [
+            "get-installed-related-apps",
+            "web-share"
           ]
         }
       ]
@@ -60,7 +68,21 @@
       "title": "Advanced topics",
       "pathItems": [
         "manifest-updates",
-        "multi-origin-pwas"
+        "multi-origin-pwas",
+        "offline-ux-design-guidelines"
+      ]
+    },
+    {
+      "title": "Case studies",
+      "pathItems": [
+        "deprecating-excalidraw-electron",
+        "clipchamp",
+        "gravit-designer",
+        "jdid",
+        "rakuten-24",
+        "zdf",
+        "goibibo",
+        "building-a-pwa-at-google-part-1"
       ]
     }
   ]

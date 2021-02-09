@@ -4,7 +4,7 @@ title: How to provide your own in-app install experience
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2021-01-05
+updated: 2021-02-09
 description: |
   Use the beforeinstallprompt event to provide a custom, seamless, in-app
   install experience for your users.
@@ -69,6 +69,7 @@ event, and update your user interface to indicate that the user can install
 your PWA. This is highlighted below.
 
 ```js
+// Create deferredPrompt for use later to show browser install prompt.
 let deferredPrompt;
 
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -78,6 +79,8 @@ window.addEventListener('beforeinstallprompt', (e) => {
   deferredPrompt = e;
   // Update UI notify the user they can install the PWA
   showInstallPromotion();
+  // Optionally, send analytics event that PWA install promo was shown.
+  console.log(`'beforeinstallprompt' event was fired.`);
 });
 ```
 
@@ -97,19 +100,17 @@ in the `deferredPrompt` variable). It shows the user a modal install dialog,
 asking them to confirm they want to install your PWA.
 
 ```js
-buttonInstall.addEventListener('click', (e) => {
+buttonInstall.addEventListener('click', async () => {
   // Hide the app provided install promotion
-  hideMyInstallPromotion();
+  hideInstallPromotion();
   // Show the install prompt
   deferredPrompt.prompt();
   // Wait for the user to respond to the prompt
-  deferredPrompt.userChoice.then((choiceResult) => {
-    if (choiceResult.outcome === 'accepted') {
-      console.log('User accepted the install prompt');
-    } else {
-      console.log('User dismissed the install prompt');
-    }
-  });
+  const { outcome } = await deferredPrompt.userChoice;
+  // Optionally, send analytics event with outcome of user choice
+  console.log(`User response to the install prompt: ${outcome}`);
+  // We've used the prompt, and can't use it again, throw it away
+  deferredPrompt = null;
 });
 ```
 
@@ -133,9 +134,13 @@ whenever your PWA is installed, no matter what mechanism is used to install
 your PWA.
 
 ```js
-window.addEventListener('appinstalled', (evt) => {
-  // Log install to analytics
-  console.log('INSTALL: Success');
+window.addEventListener('appinstalled', () => {
+  // Hide the app provided install promotion
+  hideInstallPromotion();
+  // Clear the deferredPrompt so it can be gc'ed
+  deferredPrompt = null;
+  // Optionally, send analytics event to indicate successful install
+  console.log('PWA was installed');
 });
 ```
 
@@ -155,17 +160,15 @@ this yet, so you must check `navigator.standalone`, it returns a boolean
 indicating whether the browser is running in standalone mode.
 
 ```js
-window.addEventListener('DOMContentLoaded', () => {
-  let displayMode = 'browser tab';
-  if (navigator.standalone) {
-    displayMode = 'standalone-ios';
+function getPWADisplayMode() {
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+  if (document.referrer.startsWith('android-app://')) {
+    return 'twa';
+  } else if (navigator.standalone || isStandalone) {
+    return 'standalone';
   }
-  if (window.matchMedia('(display-mode: standalone)').matches) {
-    displayMode = 'standalone';
-  }
-  // Log launch display mode to analytics
-  console.log('DISPLAY_MODE_LAUNCH:', displayMode);
-});
+  return 'browser';
+}
 ```
 
 ### Track when the display mode changes
@@ -174,15 +177,13 @@ To track if the user changes between `standalone`, and `browser tab`, listen for
 changes to the `display-mode` media query.
 
 ```js
-window.addEventListener('DOMContentLoaded', () => {
-  window.matchMedia('(display-mode: standalone)').addListener((evt) => {
-    let displayMode = 'browser tab';
-    if (evt.matches) {
-      displayMode = 'standalone';
-    }
-    // Log display mode change to analytics
-    console.log('DISPLAY_MODE_CHANGED', displayMode);
-  });
+window.matchMedia('(display-mode: standalone)').addEventListener((evt) => {
+  let displayMode = 'browser';
+  if (evt.matches) {
+    displayMode = 'standalone';
+  }
+  // Log display mode change to analytics
+  console.log('DISPLAY_MODE_CHANGED', displayMode);
 });
 ```
 
@@ -201,16 +202,6 @@ PWA, use conditional CSS:
 
 ## Updating your app's icon and name
 
-### Chrome on Android
-
-On Android, when your PWA is launched, Chrome will check the currently
-installed manifest against the live manifest. If an update is required, it
-will be [queued and updated][update-flow] once the device is plugged in and
-connected to Wi-Fi.
-
-### Chrome on Desktop
-
-On Desktop, the manifest is not automatically updated, but this is planned for
-a future update.
-
-[update-flow]: https://developers.google.com/web/fundamentals/integration/webapks#update-webapk
+What if you need to update your app name, or provide new icons?
+Check out [How Chrome handles updates to the web app manifest](/manifest-updates/)
+to see when and how are those changes reflected in Chrome.
