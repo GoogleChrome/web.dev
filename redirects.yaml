@@ -137,6 +137,7 @@ redirects:
 - source: /secure/:part
   destination: /:part
 
+# Some Google search results indexed the page with `en/`, so we'll redirect it for now
 - source: /en/:part
   destination: /:part
 
