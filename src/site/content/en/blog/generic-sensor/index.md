@@ -112,7 +112,7 @@ each supported sensor in detail.
   <figure>
     <img  src="accelerometer.gif"
          alt="Accelerometer sensor measurements">
-    <figcaption class="w-figcaption"><b>Figure 1</b>: Accelerometer sensor measurements</figcaption>
+    <figcaption class="w-figcaption">Accelerometer sensor measurements</figcaption>
   </figure>
 </div>
 
