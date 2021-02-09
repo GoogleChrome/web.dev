@@ -1,5 +1,5 @@
 ---
-title: Sensors For The Web
+title: Sensors for the web
 subhead: Use the Generic Sensor API to enable advanced features of your app
 authors:
   - alexshalamov
