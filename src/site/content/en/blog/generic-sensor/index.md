@@ -21,44 +21,46 @@ alt: # ⚠️ [TODO] Add alt text!
 
 Today, sensor data is used in many platform-specific applications to enable use cases such
 as immersive gaming, fitness tracking, and augmented or virtual reality. Wouldn't
-it be cool to bridge the gap between platform-specific and web applications? The [Generic Sensor
+it be cool to bridge the gap between platform-specific and web applications? Enter the [Generic Sensor
 API](https://www.w3.org/TR/generic-sensor/), for the web!
 
 ## What is the Generic Sensor API? {: #what-is-generic-sensor-api }
 
 The [Generic Sensor API](https://www.w3.org/TR/generic-sensor/) is a set of
 interfaces which expose sensor devices to the web platform. The API consists
-of the base [Sensor](https://w3c.github.io/sensors/#the-sensor-interface)
+of the base [`Sensor`](https://w3c.github.io/sensors/#the-sensor-interface)
 interface and a set of concrete sensor classes built on top. Having a base
 interface simplifies the implementation and specification process for the
 concrete sensor classes. For instance, take a look at the
-[Gyroscope](https://w3c.github.io/gyroscope/#gyroscope-interface)
-class, it is super tiny! The core functionality is specified by the base
-interface, and Gyroscope merely extends it with three attributes representing
+[`Gyroscope`](https://w3c.github.io/gyroscope/#gyroscope-interface)
+class. It is super tiny! The core functionality is specified by the base
+interface, and `Gyroscope` merely extends it with three attributes representing
 angular velocity.
 
-Typically a concrete sensor class represents an actual sensor on the platform,
-e.g., accelerometer or gyroscope. However, in some cases, implementation of a
-sensor class [fuses](https://w3c.github.io/sensors/#sensor-fusion) data from
-several platform sensors and exposes the result in a convenient way to the user.
+Some sensor classes interface to actual hardware sensors such as, for example,
+the accelerometer or gyroscope classes. These are referred to as low-level
+sensors. Other sensors, referred to as [fusion
+sensors](https://w3c.github.io/sensors/#sensor-fusion), merge data from several
+low level sensors to expose information a script would otherwise need to
+calculate.
 For example, the
-[AbsoluteOrientation](https://www.w3.org/TR/orientation-sensor/#absoluteorientationsensor)
-sensor provides a ready-to-use 4×4 rotation matrix based on the data obtained
+[`AbsoluteOrientation`](https://www.w3.org/TR/orientation-sensor/#absoluteorientationsensor)
+sensor provides a ready-to-use four-by-four rotation matrix based on the data obtained
 from the accelerometer, gyroscope, and magnetometer.
 
 You might think that the web platform already provides sensor data and you are
-absolutely right! For instance, [DeviceMotion](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent)
-and [DeviceOrientation](https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent)
-events expose motion sensor data. So why do we need new API?
+absolutely right! For instance, [`DeviceMotion`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent)
+and [`DeviceOrientation`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent)
+events expose motion sensor data. So why do we need a new API?
 
-Comparing to the existing interfaces, Generic Sensor API provides great
+Comparing to the existing interfaces, Generic Sensor API provides a great
 number of advantages:
 
 - Generic Sensor API is a sensor framework that can be easily extended
   with new sensor classes and each of these classes will keep the generic
   interface. The client code written for one sensor type can be
   reused for another one with very few modifications!
-- You can configure the sensor, for example, set the sampling frequency suitable for your
+- You can configure the sensor, for example, to set the sampling frequency suitable for your
   application needs.
 - You can detect whether a sensor is available on the platform.
 - Sensor readings have high precision timestamps, enabling better
