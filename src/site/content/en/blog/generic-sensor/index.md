@@ -67,13 +67,13 @@ number of advantages:
   synchronization with other activities in your application.
 - Sensor data models and coordinate systems are clearly defined, allowing
   browser vendors to implement interoperable solutions.
-- The Generic Sensor based interfaces are not bound to the DOM (neither
-  `navigator` nor `window` objects), and it opens up future opportunities of using
-  the same API within service workers or implementing Generic Sensor API in headless
-  JS runtimes, for instance, on embedded devices.
+- The Generic Sensor based interfaces are not bound to the DOM (meaning they are neither
+  `navigator` nor `window` objects), and this opens up future opportunities for using
+  the API within service workers or implementing it in headless
+  JavaScript runtimes such as, for instance, on embedded devices.
 - [Security and privacy](#privacy-and-security) aspects are the top priority
-  for the Generic Sensor API and provide much better security level compared to
-  older sensor APIs. There is integration with Permissions API.
+  for the Generic Sensor API and provide much better security as compared to
+  older sensor APIs. There is integration with the Permissions API.
 - Automatic [synchronization with screen coordinates](#synchronization-with-screen-coordinates) is
   available for `Accelerometer`, `Gyroscope`, `LinearAccelerationSensor`, `AbsoluteOrientationSensor`,
   `RelativeOrientationSensor` and `Magnetometer`.
@@ -96,19 +96,13 @@ At the time of writing, Chrome supports several sensors that you can experiment 
 - `Magnetometer`
 
 The Generic Sensor-based motion sensor classes are enabled by default in Chrome
-starting from Chrome 67.
-
-You can enable environmental sensors for development purposes by turning on a
-feature flag. Go to
-[chrome://flags/#enable-generic-sensor-extra-classes](chrome://flags/#enable-generic-sensor-extra-classes)
-to enable environmental sensors. Restart Chrome and you should be good to go.
-
-More information on browser implementation status can be found on
-[chromestatus.com](https://www.chromestatus.com/features/5698781827825664?embed)
+starting from Chrome 67, and in Chromium forks such as Edge or Samsung Internet.
+You can find more information on browser implementation status by searching for
+["sensor" on caniuse](https://caniuse.com/?search=sensor).
 
 ## What are all these sensors? How can I use them? {: #what-are-sensors-how-to-use-them }
 
-Sensors is a quite specific area which might need a brief introduction. If you are familiar with
+Sensors is an area that might need a brief introduction. If you are familiar with
 sensors, you can jump right to the [hands-on coding section](#lets-code). Otherwise, let's look at
 each supported sensor in detail.
 
@@ -122,7 +116,7 @@ each supported sensor in detail.
   </figure>
 </div>
 
-The [`Accelerometer`](https://www.w3.org/TR/accelerometer/#intro) sensor measures
+The [`Accelerometer`](https://developer.mozilla.org/en-US/docs/Web/API/Accelerometer) sensor measures
 acceleration of a device hosting the sensor on three axes (X, Y, and Z). This
 sensor is an inertial sensor, meaning that when the device is in linear free
 fall, the total measured acceleration would be 0 m/s<sup>2</sup>, and when a
@@ -134,13 +128,13 @@ if the device is accelerated from the right toward the left.
 
 Accelerometers can be used for things like: step counting, motion sensing, or
 simple device orientation. Quite often, accelerometer measurements are combined
-with data from other sources in order to create fusion sensors, such as,
+with data from other sources to create fusion sensors, such as,
 orientation sensors.
 
-The [`LinearAccelerationSensor`](https://w3c.github.io/accelerometer/#linearaccelerationsensor-interface)
+The [`LinearAccelerationSensor`](https://developer.mozilla.org/en-US/docs/Web/API/LinearAccelerationSensor)
 measures acceleration that is applied to the device hosting the sensor,
-excluding the contribution of a gravity force. When a device is at rest, for
-instance, lying flat on the table, the sensor would measure ≈ 0 m/s<sup>2</sup>
+excluding the contribution of gravity. When a device is at rest, for
+instance lying flat on the table, the sensor would measure ≈ 0 m/s<sup>2</sup>
 acceleration on three axes.
 
 ### Gravity sensor {: #gravity-sensor }
@@ -154,6 +148,12 @@ on the user's hardware, and be easier to use in terms of API ergonomics. The
 [`GravitySensor`](https://w3c.github.io/accelerometer/#gravitysensor-interface) returns
 the effect of acceleration along the device's X, Y, and Z axis due to gravity.
 
+{% Aside %}
+  As of February 2021, GravitySensor is still
+  [under development](https://bugs.chromium.org/p/chromium/issues/detail?id=1163993)
+  with no estimated release date.
+{% endAside %}
+
 ### Gyroscope {: #gyroscope-sensor }
 
 <div class="w-figure w-figure--inline-right" style="max-width:50%">
@@ -164,8 +164,8 @@ the effect of acceleration along the device's X, Y, and Z axis due to gravity.
   </figure>
 </div>
 
-The [`Gyroscope`](https://w3c.github.io/gyroscope/#intro) sensor measures angular
-velocity in rad/s around the device's local X, Y, and Z axis. Most of the
+The [`Gyroscope`](https://developer.mozilla.org/en-US/docs/Web/API/Gyroscope) sensor measures angular
+velocity in radians per second around the device's local X, Y, and Z axis. Most
 consumer devices have mechanical
 ([MEMS](https://en.wikipedia.org/wiki/Microelectromechanical_systems))
 gyroscopes, which are inertial sensors that measure rotation rate based on
@@ -185,18 +185,20 @@ consume more power compared to other sensors.
   </figure>
 </div>
 
-The [`AbsoluteOrientationSensor`](https://w3c.github.io/orientation-sensor/#orientationsensor-interface)
+The [`AbsoluteOrientationSensor`](https://developer.mozilla.org/en-US/docs/Web/API/AbsoluteOrientationSensor)
 is a fusion sensor that measures rotation of a device in relation to the
 Earth's coordinate system, while the
-[`RelativeOrientationSensor`](https://w3c.github.io/orientation-sensor/#relativeorientationsensor-interface)
+[`RelativeOrientationSensor`](https://developer.mozilla.org/en-US/docs/Web/API/RelativeOrientationSensor)
 provides data representing rotation of a device hosting motion sensors in
 relation to a stationary reference coordinate system.
 
 All modern 3D JavaScript frameworks support [quaternions](https://en.wikipedia.org/wiki/Quaternion)
 and [rotation matrices](https://en.wikipedia.org/wiki/Rotation_matrix)
 to represent rotation; however, if you use WebGL directly,
-the [`OrientationSensor`](https://w3c.github.io/orientation-sensor/#orientationsensor-populatematrix)
-interface has convenient methods for WebGL compatible rotation matrices.
+the `OrientationSensor` conveniently has both a
+[`quaternion` property](https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensor/quaternion)
+and a
+[`populateMatrix()` method](https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensor/populateMatrix).
 Here are few snippets:
 
 **[three.js](https://threejs.org/docs/index.html#api/core/Object3D.quaternion)**
@@ -248,7 +250,7 @@ Orientation sensors enable various use cases, such as immersive gaming,
 augmented and virtual reality.
 
 For more information about motion sensors, advanced use cases, and requirements,
-please check the [motion sensors explainer](https://www.w3.org/TR/motion-sensors/)
+check out the [motion sensors explainer](https://w3c.github.io/motion-sensors/)
 document.
 
 ## Synchronization with screen coordinates {: #synchronization-with-screen-coordinates }
@@ -260,7 +262,7 @@ account.
 <figure class="w-figure">
   <img  src="device_coordinate_system.png"
        alt="Device coordinate system">
-  <figcaption class="w-figcaption"><b>Figure 4</b>: Device coordinate system</figcaption>
+  <figcaption class="w-figcaption">Device coordinate system</figcaption>
 </figure>
 
 However, many use cases like games or augmented and virtual reality require sensor readings to be
@@ -274,7 +276,7 @@ resolved in a coordinate system that is instead bound to the screen orientation.
 
 Previously, remapping of sensor readings to screen coordinates had to be implemented in JavaScript.
 This approach is inefficient and it also quite significantly increases the complexity of the web
-application code: the web application must watch screen orientation changes and perform coordinates
+application code; the web application must watch screen orientation changes and perform coordinates
 transformations for sensor readings, which is not a trivial thing to do for Euler angles or
 quaternions.
 
@@ -424,7 +426,7 @@ collection for best practices and guidelines.
 ### Permissions Policy integration
 
 The [Permissions Policy integration](https://w3c.github.io/webappsec-permissions-policy/)
-in Generic Sensor API is used to control access to sensors data for a frame.
+in Generic Sensor API controls access to sensors data for a frame.
 
 By default the `Sensor` objects can be created only within a main frame or
 same-origin subframes, thus preventing cross-origin iframes from unsanctioned
@@ -437,21 +439,21 @@ cross-origin iframe, meaning that now `Accelerometer` or
 `LinearAccelerationSensor` objects can be created there.
 
 ```html
-`<iframe src="https://third-party.com" allow="accelerometer"/>`
+<iframe src="https://third-party.com" allow="accelerometer"/>
 ```
 
 ### Sensor readings delivery can be suspended
 
 Sensor readings are only accessible by a visible web page, i.e., when the user
 is actually interacting with it. Moreover, sensor data would not be provided
-to the parent frame if the user focuses to a cross-origin subframe in order to
-disallow the parent frame infer user input.
+to the parent frame if the user focus changes to a cross-origin subframe. This
+prevents the parent frame infering user input.
 
 ## What's next? {: #whats-next }
 
 There is a set of already specified sensor classes to be implemented in the near
 future such as [Proximity sensor](https://w3c.github.io/proximity/);
-however thanks to the great extensibility of Generic Sensor framework we can
+however, thanks to the great extensibility of Generic Sensor framework we can
 anticipate appearance of even more new classes representing various sensor types.
 
 Another important area for future work is improving the Generic Sensor API
@@ -478,3 +480,9 @@ for the Chrome implementation.
 - Chrome Feature Status: [https://www.chromestatus.com/feature/5698781827825664](https://www.chromestatus.com/feature/5698781827825664)
 - Implementation bugs: [http://crbug.com?q=component:Blink>Sensor](http://crbug.com?q=component:Blink>Sensor)
 - Sensors-Dev Google group: [https://groups.google.com/a/chromium.org/forum/#!forum/sensors-dev](https://groups.google.com/a/chromium.org/forum/#!forum/sensors-dev)
+
+## Acknowledgements
+
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley) and
+[Kayce Basques](https://github.com/kaycebasques).
