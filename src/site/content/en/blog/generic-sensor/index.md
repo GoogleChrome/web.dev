@@ -14,6 +14,7 @@ updated: 2021-02-05
 tags:
   - blog
   - sensors
+  - devices
   - capabilities
 hero: # ⚠️ [TODO] Fix hero, old hero was "/web/updates/images/generic/screen-rotation.png"!
 alt: # ⚠️ [TODO] Add alt text!
@@ -160,7 +161,7 @@ the effect of acceleration along the device's X, Y, and Z axis due to gravity.
   <figure>
     <img  src="gyroscope.gif"
         alt="Gyroscope sensor measurements">
-    <figcaption class="w-figcaption"><b>Figure 2</b>: Gyroscope sensor measurements</figcaption>
+    <figcaption class="w-figcaption">Gyroscope sensor measurements</figcaption>
   </figure>
 </div>
 
@@ -181,7 +182,7 @@ consume more power compared to other sensors.
   <figure>
     <img  src="orientation.gif"
          alt="AbsoluteOrientation sensor measurements">
-    <figcaption class="w-figcaption"><b>Figure 3</b>: AbsoluteOrientation sensor measurements</figcaption>
+    <figcaption class="w-figcaption">AbsoluteOrientation sensor measurements</figcaption>
   </figure>
 </div>
 
@@ -271,7 +272,7 @@ resolved in a coordinate system that is instead bound to the screen orientation.
 <figure class="w-figure">
   <img  src="screen_coordinate_system.png"
        alt="Screen coordinate system">
-  <figcaption class="w-figcaption"><b>Figure 5</b>: Screen coordinate system</figcaption>
+  <figcaption class="w-figcaption">Screen coordinate system</figcaption>
 </figure>
 
 Previously, remapping of sensor readings to screen coordinates had to be implemented in JavaScript.
@@ -349,7 +350,7 @@ The device's orientation will be reflected in 3D `model` rotation within the Web
 <figure class="w-figure">
   <img  src="orientation_phone.png"
     alt="Sensor updates 3D model's orientation">
-  <figcaption class="w-figcaption"><b>Figure 6</b>: Sensor updates orientation of a 3D model</figcaption>
+  <figcaption class="w-figcaption">Sensor updates orientation of a 3D model</figcaption>
 </figure>
 
 ### Punchmeter
@@ -390,7 +391,7 @@ acceleration function.
 <figure class="w-figure">
   <img  src="punchmeter.png"
     alt="Demo web application for punch speed measurement">
-  <figcaption class="w-figcaption"><b>Figure 7</b>: Measurement of a punch speed</figcaption>
+  <figcaption class="w-figcaption">Measurement of a punch speed</figcaption>
 </figure>
 
 ## Debugging and sensor overriding with Chrome DevTools
@@ -402,7 +403,7 @@ Chrome DevTools has great support for
 <figure class="w-figure">
   <img  src="orientation-model.png"
     alt="Chrome DevTools used to override the custom orientation data of a virtual phone.">
-  <figcaption class="w-figcaption"><b>Figure 8</b>: Simulating device orientation with Chrome DevTools</figcaption>
+  <figcaption class="w-figcaption">Simulating device orientation with Chrome DevTools</figcaption>
 </figure>
 
 ## Privacy and security {: #privacy-and-security }
