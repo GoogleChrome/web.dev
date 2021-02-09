@@ -7,7 +7,7 @@ authors:
   - thomassteiner
 description: |
   Sensors are used in many platform-specific applications to enable advanced features.
-  Wouldn't it be nice to bridge the gap between native and the web?
+  Wouldn't it be nice to bridge the gap between platform-specific apps and the web?
   You can do it with Generic Sensor API, which is enabled by default as of Chrome 67.
 date: 2017-09-18
 updated: 2021-02-05
