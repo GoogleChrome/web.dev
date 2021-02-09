@@ -57,7 +57,7 @@ Comparing to the existing interfaces, Generic Sensor API provides a great number
 - Generic Sensor API is a sensor framework that can be easily extended with new sensor classes and
   each of these classes will keep the generic interface. The client code written for one sensor type
   can be reused for another one with very few modifications!
-- You can configure the sensor, for example, to set the sampling frequency suitable for your
+- You can configure the sensor. For example, you can set the sampling frequency suitable for your
   application needs.
 - You can detect whether a sensor is available on the platform.
 - Sensor readings have high precision timestamps, enabling better synchronization with other
@@ -66,7 +66,7 @@ Comparing to the existing interfaces, Generic Sensor API provides a great number
   implement interoperable solutions.
 - The Generic Sensor based interfaces are not bound to the DOM (meaning they are neither `navigator`
   nor `window` objects), and this opens up future opportunities for using the API within service
-  workers or implementing it in headless JavaScript runtimes such as, for instance, on embedded
+  workers or implementing it in headless JavaScript runtimes, such as embedded
   devices.
 - [Security and privacy](#privacy-and-security) aspects are the top priority for the Generic Sensor
   API and provide much better security as compared to older sensor APIs. There is integration with
