@@ -16,8 +16,8 @@ tags:
   - sensors
   - devices
   - capabilities
-hero: # ⚠️ [TODO] Fix hero, old hero was "/web/updates/images/generic/screen-rotation.png"!
-alt: # ⚠️ [TODO] Add alt text!
+hero: hero.jpg
+alt: A simple gyroscope.
 ---
 
 Today, sensor data is used in many platform-specific applications to enable use cases such
@@ -487,3 +487,5 @@ for the Chrome implementation.
 This article was reviewed by
 [Joe Medley](https://github.com/jpmedley) and
 [Kayce Basques](https://github.com/kaycebasques).
+Hero image by [Misko](https://www.flickr.com/photos/msk13/) via
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Simple_Gyroscope.jpg).
