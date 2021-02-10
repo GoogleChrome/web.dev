@@ -7,7 +7,7 @@ authors:
   - samdutton
 hero: hero.jpg
 date: 2020-10-06
-updated: 2020-10-06
+updated: 2020-02-10
 tags:
   - blog
   - privacy
