@@ -135,7 +135,7 @@ your PWA.
 
 ```js
 window.addEventListener('appinstalled', () => {
-  // Hide the app provided install promotion
+  // Hide the app-provided install promotion
   hideInstallPromotion();
   // Clear the deferredPrompt so it can be gc'ed
   deferredPrompt = null;
@@ -204,4 +204,4 @@ PWA, use conditional CSS:
 
 What if you need to update your app name, or provide new icons?
 Check out [How Chrome handles updates to the web app manifest](/manifest-updates/)
-to see when and how are those changes reflected in Chrome.
+to see when and how are those changes are reflected in Chrome.
