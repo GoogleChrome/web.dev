@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Sign-up form best practices
 subhead: Help your users sign up, log in and manage their account details with a minimum of fuss.
 authors:
