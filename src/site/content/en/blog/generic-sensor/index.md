@@ -97,8 +97,8 @@ At the time of writing, there are several sensors that you can experiment with.
 
 **Environmental sensors:**
 
-- `AmbientLightSensor`
-- `Magnetometer`
+- `AmbientLightSensor` (Behind the `#enable-generic-sensor-extra-classes` flag.)
+- `Magnetometer` (Behind the `#enable-generic-sensor-extra-classes` flag.)
 
 ## Feature detection {: #feature-detection }
 
