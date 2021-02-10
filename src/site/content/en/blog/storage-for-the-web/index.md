@@ -111,7 +111,7 @@ device.
   is reached, Safari will prompt the user, increasing the limit in 200MB
   increments. I was unable to find any official documentation on this.
   * If a PWA is added to the home screen on mobile Safari, it appears to
-    create a new storage container, and nothing is shared between the PWA and
+    create a new storage container, and nothing is shared between the PWA
     and mobile Safari. Once the quota has been hit for an installed PWA, there
     doesn't appear to be any way to request additional storage.
 
@@ -164,7 +164,7 @@ During development, you can use your browser's DevTools to inspect the
 different storage types, and easily clear all stored data.
 
 A new feature was added in Chrome 88 that lets you override the storage quota
-site in teh Storage Pane. This feature gives you the ability to simulate
+site in the Storage Pane. This feature gives you the ability to simulate
 different devices and test the behavior of your apps in low disk availability
 scenarios. Go to **Application** &gt; **Storage**, enable the
 **Simulate custom storage quota** checkbox, and enter any valid number to
