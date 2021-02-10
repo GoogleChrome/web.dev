@@ -163,10 +163,10 @@ of stored cross origin resources.
 During development, you can use your browser's DevTools to inspect the
 different storage types, and easily clear all stored data.
 
-A new feature was added in Chrome 88 that lets you override the storage quota
-site in the Storage Pane. This feature gives you the ability to simulate
+A new feature was added in Chrome 88 that lets you override the site's storage
+quota in the Storage Pane. This feature gives you the ability to simulate
 different devices and test the behavior of your apps in low disk availability
-scenarios. Go to **Application** &gt; **Storage**, enable the
+scenarios. Go to **Application** then **Storage**, enable the
 **Simulate custom storage quota** checkbox, and enter any valid number to
 simulate the storage quota.
 
