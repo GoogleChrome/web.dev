@@ -27,6 +27,7 @@ module.exports = {
     'lit-a11y/no-invalid-change-handler': 0,
     'new-cap': 0,
     'no-case-declarations': 0,
+    'node/no-extraneous-require': 0,
     'node/no-unpublished-import': 0,
     'node/no-unpublished-require': 0,
     'node/no-unsupported-features/es-syntax': 0,
