@@ -1,18 +1,6 @@
 /**
- * @fileoveriew Entrypoint for default content pages on web.dev.
+ * @fileoveriew Minimal entrypoint for a page on web.dev.
+ * This will include things like the SideNav, Search, Header, etc.
  */
-
-import '../components/ShareAction';
-import '../components/AssessmentQuestion';
-import '../components/Codelab';
-import '../components/Assessment';
-import '../components/ResponseMultipleChoice';
-import '../components/ResponseThinkAndCheck';
-import '../components/SelectGroup';
-import '../components/TableOfContents';
-import '../components/TableOfContentsButton';
-import '../components/Tabs';
-import '../components/CopyCode';
-import '../components/Feedback';
 
 import '../components/base';

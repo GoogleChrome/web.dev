@@ -38,7 +38,6 @@ module.exports = {
           'layout-template',
           'webdev_analytics',
           'webdev_config',
-          'webdev_entrypoint',
         ],
       },
     ],
