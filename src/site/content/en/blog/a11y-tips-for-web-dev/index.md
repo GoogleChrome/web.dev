@@ -519,4 +519,4 @@ To learn more about accessibility fundamentals and help improve those statistics
 I recommend the [Accessible to all](/accessible/) docs on web.dev.
 There's much we can do to build experiences that are more accessible for everyone.
 
-{% Img src="image/admin/iMaXm08LsbVKpkNCZEwA.jpg", alt="Screenshot of the web.dev "Accessible to all" collection page.", width="800", height="513" %}
+{% Img src="image/admin/iMaXm08LsbVKpkNCZEwA.jpg", alt="Screenshot of the web.dev 'Accessible to all' collection page.", width="800", height="513" %}
