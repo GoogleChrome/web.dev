@@ -5,7 +5,7 @@ authors:
   - maudn
 hero: hero.jpg
 date: 2020-11-12
-updated: 2020-12-27
+updated: 2020-02-10
 tags:
   - blog
   - privacy
@@ -26,18 +26,20 @@ simple end-to-end implementation example.
 
 The Event Conversion Measurement API is supported:
 
-- As an [origin trial](/origin-trials/), from Chrome 87 (November 2020) to Chrome 88 (February 2021) and possibly 89 (March 2021). Origin trials enable the API for **all visitors** of a given
-  [origin](/same-site-same-origin/#origin). **You need to register your origin for the origin trial
-  in order to try the API with end users**.
-- Or by turning on flags, in Chrome 86 and later. Flags enable the API on a **single user**'s
-  browser. **Flags are useful when [developing locally](#develop-locally)**.
+- As an [origin trial](/origin-trials/), from Chrome 86 beta until Chrome 91 (April 2021). Origin
+  trials enable the API for **all visitors** of a given [origin](/same-site-same-origin/#origin).
+  **You need to register your origin for the origin trial in order to try the API with end users**.
+- Or by turning on flags, in Chrome 86 and later. Flags enable the API on a **single user**'s browser.
+  **Flags are useful when [developing locally](#develop-locally)**.
 
 See details about the Chrome versions where the API is active on the [Chrome feature
 entry](https://chromestatus.com/feature/6412002824028160).
 
 ## Experiment with end users
 
-To experiment with the API with end users, you need to:
+## Experiment with the API, with end users
+
+To test the API with end users, you'll need to:
 
 1. Design your experiment.
 2. Set it up.
