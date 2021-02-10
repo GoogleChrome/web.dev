@@ -69,7 +69,7 @@ event, and update your user interface to indicate that the user can install
 your PWA. This is highlighted below.
 
 ```js
-// Create deferredPrompt for use later to show browser install prompt.
+// Initialize deferredPrompt for use later to show browser install prompt.
 let deferredPrompt;
 
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -137,7 +137,7 @@ your PWA.
 window.addEventListener('appinstalled', () => {
   // Hide the app-provided install promotion
   hideInstallPromotion();
-  // Clear the deferredPrompt so it can be gc'ed
+  // Clear the deferredPrompt so it can be garbage collected
   deferredPrompt = null;
   // Optionally, send analytics event to indicate successful install
   console.log('PWA was installed');
