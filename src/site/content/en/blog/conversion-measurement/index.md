@@ -349,7 +349,7 @@ In Chrome, report scheduling works as follows:
       <tr>
         <td><code>impressionexpiry</code> is under 2 days</td>
         <td>
-            2 days after ad click
+          <li>2 days after ad click</li>
         </td>
         <td>1</td>
       </tr>
