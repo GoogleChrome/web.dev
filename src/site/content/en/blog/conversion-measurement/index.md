@@ -416,14 +416,15 @@ This code specifies the following:
       <tr>
         <td><code>impressiondata</code> (required): a <b>64-bit</b> identifier to attach to an ad click.</td>
         <td>(no default)</td>
-        <td>A dynamically generated click ID  such as a hex-encoded 64-bit integer:
+        <td>A dynamically generated click ID  such as a 64-bit integer:
           <code>776f09351f5809c5</code>
         </td>
       </tr>
       <tr>
-        <td><code>conversiondestination</code> (required): the <b>origin</b> where a conversion is expected for this ad.</td>
+        <td><code>conversiondestination</code> (required): the <b><a href="https://web.dev/same-site-same-origin/#site" noopener>eTLD+1</a></b> where a conversion is expected for this ad.</td>
         <td>(no default)</td>
-        <td><code>https://advertiser.example</code></td>
+        <td><code>https://advertiser.example</code>.<br/>If the <code>conversiondestination</code> is <code>https://advertiser.example</code>, conversions on both <code>https://advertiser.example</code> and <code>https://shop.advertiser.example</code> will be attributed.<br/>The same happens if the <code>conversiondestination</code> is <code>https://shop.advertiser.example</code>: conversions on both <code>https://advertiser.example</code> and <code>https://shop.advertiser.example</code> will be attributed. 
+        </td>
       </tr>
       <tr>
         <td><code>impressionexpiry</code> (optional): in milliseconds, the cutoff time for when conversions can be attributed to this ad.</td>
@@ -453,9 +454,9 @@ Some notes about the example:
 
 - You will find the term "impression" used in the attributes of the API or in the API proposal, even
   though only clicks are supported for now. Names may be updated in future iterations of the API.
-- The conversion destination is an [origin](/same-site-same-origin/#origin). This may change in the
-  future to specify just an [eTLD+1](/same-site-same-origin/#site).
-- The ad doesn't have to be in an iframe, but this is what this example is based on. {% endAside %}
+- The ad doesn't have to be in an iframe, but this is what this example is based on.
+
+{% endAside %}
 
 {% Aside 'gotchas' %}
 
@@ -476,9 +477,6 @@ committed, the browser stores an object that includes `impressiondata`, `convers
   "impression-expiry": 864000000
 }
 ```
-
-{% Aside %} In the demo and in this example, the 64-bit impression data (click ID) is encoded as a
-hexadecimal string. {% endAside %}
 
 ### Conversion and report scheduling (steps 6 to 9)
 
@@ -627,8 +625,6 @@ it](#share-your-feedback). {% endAside %}
 - API and attribute naming may evolve.
 - Click data and conversion data may not require encoding.
 - The 3-bit limit for conversion data may be increased or decreased.
-- The conversion destination may become an eTLD+1; right now, it's an
-  [origin](/same-site-same-origin/#origin).
 - [More features may be added](#what-is-not-supported-yet), and **more privacy protections** (noise / fewer bits /
   other limitations) if needed to support these new features.
 
