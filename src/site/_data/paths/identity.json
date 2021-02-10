@@ -1,0 +1,53 @@
+{
+    "slug": "identity",
+    "cover": "/images/collections/identity.svg",
+    "title": "Identity",
+    "updated": "February 12, 2021",
+    "description": "Understand and build advanced authentication systems.",
+    "overview": "A curated collection of high-quality resources that will help you understand authentication basics, and how to build and debug your own authentication systems with modern APIs.",
+    "topics": [
+      {
+        "title": "Understand authentication basics",
+        "pathItems": [
+          "sign-in-form-best-practices",
+          "sign-up-form-best-practices"
+        ]
+      },
+      {
+        "title": "Strenghten security with two-factor authentication and two-step verification",
+        "pathItems": [
+            "sms-otp-form"   
+        ]
+      },
+      {
+        "title": "Build advanced authentication systems",
+        "pathItems": [
+          {
+            "title": "Your First WebAuthn",
+            "url": "https://developers.google.com/codelabs/webauthn-reauth/#0"
+          }
+        ]
+      },
+      {
+        "title": "Build authentication with identity federation",
+        "pathItems": [
+          {
+            "title": "Using OAuth 2.0 to Access Google APIs",
+            "url": "https://developers.google.com/identity/protocols/oauth2"
+          },
+          {
+            "title": "OpenID Connect",
+            "url": "https://developers.google.com/identity/protocols/oauth2/openid-connect"
+          }
+        ]
+      },
+      {
+        "title": "Learn authentication related APIs",
+        "pathItems": [
+            "web-otp",
+            "change-password-url"
+        ]
+      }
+    ]
+  }
+  

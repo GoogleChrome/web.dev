@@ -20,6 +20,7 @@ module.exports = function () {
     allPaths['media'],
     allPaths['devices'],
     allPaths['animations'],
+    allPaths['identity'],
   ].filter(livePaths);
 
   const performance = [
