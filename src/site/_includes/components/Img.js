@@ -3,7 +3,7 @@ const ImgixClient = require('imgix-core-js');
 const {imgix: domain} = require('../../_data/site');
 
 const client = new ImgixClient({domain, includeLibraryParam: false});
-const MAX_WIDTH = 748;
+const MAX_WIDTH = 800;
 
 /**
  * Generates src URL of image from imgix path or URL.
