@@ -48,6 +48,12 @@ const virtualImports = {
 const pagesDir = './src/lib/pages/';
 const pages = fs.readdirSync(pagesDir, 'utf-8').map((p) => join(pagesDir, p));
 
+// Plugins that are common to every bundle.
+const plugins = [
+  virtual(buildVirtualJSON(virtualImports)),
+  nodeResolve(),
+  commonjs(),
+];
 const devConfig = {
   input: ['./src/lib/app.js', ...pages],
   output: {
@@ -58,12 +64,7 @@ const devConfig = {
     // By default rollup clears the console on every build. This disables that.
     clearScreen: false,
   },
-  plugins: [
-    virtual(buildVirtualJSON(virtualImports)),
-    nodeResolve(),
-    commonjs(),
-    postcss(),
-  ],
+  plugins: [...plugins, postcss()],
 };
 
 const productionConfig = {
@@ -73,9 +74,7 @@ const productionConfig = {
     format: 'esm',
   },
   plugins: [
-    virtual(buildVirtualJSON(virtualImports)),
-    nodeResolve(),
-    commonjs(),
+    ...plugins,
     postcss({
       minimize: true,
     }),
@@ -96,13 +95,7 @@ const testConfig = {
     format: 'iife',
     name: 'test',
   },
-  plugins: [
-    virtual(buildVirtualJSON(virtualImports)),
-    nodeResolve(),
-    commonjs(),
-    postcss(),
-    istanbul(),
-  ],
+  plugins: [...plugins, postcss(), istanbul()],
 };
 
 /**
