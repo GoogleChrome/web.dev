@@ -154,10 +154,9 @@ timing](#report-timing)).
 
 The Event Conversion Measurement API can be supported:
 
-- As an [origin trial](/origin-trials/), from Chrome 86 beta and Chrome 87 (stable from mid-November
-  2020), to Chrome 88 (February 2021). Origin trials enable the API for **all visitors** of a given
+- As an [origin trial](/origin-trials/). Origin trials enable the API for **all visitors** of a given
   [origin](/same-site-same-origin/#origin). **You need to register your origin for the origin trial
-  in order to try the API with end users**.
+  in order to try the API with end users**. See [Using the conversion measurement API](/using-conversion-measurement) for details about the origin trial.
 - By turning on flags, in Chrome 86 and later. Flags enable the API on a **single user**'s browser.
   **Flags are useful when developing locally**.
 
@@ -390,7 +389,7 @@ attributes:
 ```html
 <a
   id="ad"
-  impressiondata="776f09351f5809c5"
+  impressiondata="200400600"
   conversiondestination="https://advertiser.example"
   reportingorigin="https://adtech.example"
   impressionexpiry="864000000"
@@ -417,7 +416,7 @@ This code specifies the following:
         <td><code>impressiondata</code> (required): a <b>64-bit</b> identifier to attach to an ad click.</td>
         <td>(no default)</td>
         <td>A dynamically generated click ID  such as a 64-bit integer:
-          <code>776f09351f5809c5</code>
+          <code>200400600</code>
         </td>
       </tr>
       <tr>
@@ -471,7 +470,7 @@ committed, the browser stores an object that includes `impressiondata`, `convers
 
 ```json
 {
-  "impression-data": "776f09351f5809c5",
+  "impression-data": "200400600",
   "conversion-destination": "https://advertiser.example",
   "reporting-origin": "https://adtech.example",
   "impression-expiry": 864000000
@@ -553,7 +552,7 @@ Once the scheduled time to send the report is reached, the browser sends the **c
 it sends an HTTP POST to the reporting origin that was specified in the `<a>` element
 (`adtech.example`). For example:
 
-`https://adtech.example/.well-known/register-conversion?impression-data=776f09351f5809c5&conversion-data=2&credit=100`
+`https://adtech.example/.well-known/register-conversion?impression-data=200400600&conversion-data=2&credit=100`
 
 Included as parameters are:
 
@@ -567,7 +566,7 @@ As the adtech server receives this request, it can pull the `impression-data` an
 from it, i.e. the conversion report:
 
 ```json
-{"impression-data": "776f09351f5809c5", "conversion-data": 3, "credit": 100}
+{"impression-data": "200400600", "conversion-data": 3, "credit": 100}
 ```
 
 ### Subsequent conversions and expiry
