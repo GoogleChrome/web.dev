@@ -55,8 +55,8 @@ relationship between the two, you can check if the app is installed.
   <table class="w-table--top-align">
     <thead>
       <tr>
-        <th>Can check for your</th>
-        <th>Can check from</th>
+        <th>App type</th>
+        <th>Checkable from</th>
       </tr>
     </thead>
     <tbody>
@@ -387,7 +387,7 @@ only available when served over **HTTPS**.
 
 ## Still have questions? {: #questions }
 
-Still have questions? Check [`getInstalledRelatedApps` on StackOverflow][so-gira]
+Still have questions? Check the [`getInstalledRelatedApps` tag on StackOverflow][so-gira]
 to see if anyone else has had similar questions. If not, ask your
 [question][so-ask-question] there, and be sure to tag it with the
 [`progressive-web-apps`][so-tagged-pwa] tag. Our team frequently monitors
