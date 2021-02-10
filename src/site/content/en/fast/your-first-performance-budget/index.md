@@ -33,7 +33,7 @@ Using a Guest window gives you a clean testing environment without any Chrome
 extensions that could interfere with the audit.
 {% endAside %}
 
-![Lighthouse panel in Chrome DevTools](./lighthouse-audits-panel.png)
+{% Img src="image/admin/VUtkCadH9vjnKSzGzd0S.png", alt="Lighthouse panel in Chrome DevTools", width="800", height="637" %}
 
 Let's take a highly specialized search engine, doggos.io, as an example. Doggos.io aims to index all dog-related things on the internet, and its most important pages are the home and results pages. Here are the FCP and TTI numbers measured for the site on desktop and mobile.
 

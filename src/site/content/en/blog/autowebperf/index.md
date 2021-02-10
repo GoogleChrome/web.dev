@@ -77,7 +77,7 @@ local CSV file), runs performance audits through selected gatherers (such as
 PageSpeed Insights), and writes results to the output connector (for example,
 Google Sheets).
 
-![A diagram of AWP's architecture.](architecture.png)
+{% Img src="image/admin/GqufPfzbuslrT4st1FmP.png", alt="A diagram of AWP's architecture.", width="800", height="439" %}
 
 AWP comes with a number of pre-implemented gatherers and connectors:
 

@@ -79,7 +79,7 @@ To enable pre-configured linting provided by CRA:
 
 Some common accessibility issues will now show up.
 
-![Image accessibility warning in linter](./img-a11y-lint.png)
+{% Img src="image/admin/n8Da1iOU3XCpu7avccaS.png", alt="Image accessibility warning in linter", width="800", height="500" %}
 
 To check for even more accessibility rules, modify the file to automatically
 include all the recommended rules by the plugin:
@@ -98,7 +98,7 @@ If you would like an even stricter subset of rules, switch to strict mode:
 }
 ```
 
-![Label accessibility error in linter](./label-a11y-lint.png)
+{% Img src="image/admin/LVsEpuH55MeHaY7RIpl3.png", alt="Label accessibility error in linter", width="800", height="500" %}
 
 The project
 [documentation](https://github.com/evcohen/eslint-plugin-jsx-a11y#difference-between-recommended-and-strict-mode)

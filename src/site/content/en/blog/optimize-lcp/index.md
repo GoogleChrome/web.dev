@@ -214,7 +214,7 @@ For more details, refer to the [Minify CSS](/minify-css/) guide.
 Use the [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) tab in Chrome
 DevTools to find any unused CSS on your web page.
 
-![Coverage tab in Chrome DevTools](./coverage-panel-css.png)
+{% Img src="image/admin/wjS4NrU5EsJeCuvK0zhn.png", alt="Coverage tab in Chrome DevTools", width="800", height="559" %}
 
 To optimize:
 
@@ -528,14 +528,14 @@ A number of tools are available to measure and debug LCP:
 +   [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) includes support for
     measuring LCP in a lab setting.
 
-    ![Lighthouse 6.0](./lighthouse.jpg)
+    {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 
 +   The **Timings** section of the
     [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance)
     panel in Chrome DevTools includes a LCP marker and shows you which element is associated with
     LCP when you hover over the **Related Node** field.
 
-    ![LCP in Chrome DevTools](./lcp-chrome-devtools.png)
+    {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="LCP in Chrome DevTools", width="800", height="509" %}
 
 +   [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
     provides real-world LCP values aggregated at the origin-level

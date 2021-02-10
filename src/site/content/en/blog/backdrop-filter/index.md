@@ -54,7 +54,7 @@ CSS `backdrop-filter` applies one or more effects to an element that is transluc
 
 <div class="w-columns">
 {% Compare 'worse', 'No foreground transparency' %}
-![A triangle superimposed on a circle. The circle can't be seen through the triangle.](./transparency-off.png)
+{% Img src="image/admin/LOqxvB3qqVkbZBmxMmKS.png", alt="A triangle superimposed on a circle. The circle can't be seen through the triangle.", width="480", height="283" %}
 ```css
 .frosty-glass-pane {
   backdrop-filter: blur(2px);
@@ -63,7 +63,7 @@ CSS `backdrop-filter` applies one or more effects to an element that is transluc
 {% endCompare %}
 
 {% Compare 'better', 'Foreground transparency' %}
-![A triangle superimposed on a circle. The triangle is translucent, allowing the circle to be seen through it.](./transparency-on.png)
+{% Img src="image/admin/VbyjpS6Td39E4FudeiVg.png", alt="A triangle superimposed on a circle. The triangle is translucent, allowing the circle to be seen through it.", width="480", height="283" %}
 ```css/1
 .frosty-glass-pane {
   opacity: .9;

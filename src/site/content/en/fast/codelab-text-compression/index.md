@@ -20,7 +20,7 @@ This codelab explores how both minifying and compressing the JavaScript
 bundle for the following application improves page performance by reducing
 the app's request size.
 
-![App screenshot](./app-screenshot.png)
+{% Img src="image/admin/Ga0pUShY7cQ0BDAPgPuh.png", alt="App screenshot", width="800", height="535" %}
 
 ## Measure
 

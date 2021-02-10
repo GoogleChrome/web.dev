@@ -25,7 +25,7 @@ To see it in action, here's an app that counts the days left until New Year's.
 It's built with [React](https://reactjs.org/) and [moment.js](https://momentjs.com/).
 (Just like real-world apps that increasingly rely on frameworks and libraries. 😉)
 
-![An app that counts the days left until New Year's day](countdown-app.png)
+{% Img src="image/admin/xG1cKnEmDUJk6Dd4892x.png", alt="An app that counts the days left until New Year's day", width="800", height="459" %}
 
 ## Measure
 

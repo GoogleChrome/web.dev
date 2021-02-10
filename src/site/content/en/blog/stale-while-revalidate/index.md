@@ -101,7 +101,7 @@ revalidation will depend on getting a response back from the network.
 Here's a breakdown of those three distinct states, along with the window of time
 in which each of them apply for our example:
 
-![A diagram illustrating the information from the previous section.](s-w-r-diagram.svg)
+{% Img src="image/admin/C8lg2FSEqhTKR6WmYky3.svg", alt="A diagram illustrating the information from the previous section.", width="719", height="370" %}
 
 ## What are the common use cases?
 
