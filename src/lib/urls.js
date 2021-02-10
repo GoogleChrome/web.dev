@@ -54,7 +54,7 @@ export function copyLinkToClipboard() {
             `${location.origin}${location.pathname}#${heading.id}`,
           );
           const temp = heading.innerHTML;
-          heading.innerHTML += '&nbsp;<small>(📋 Copied.)</small>';
+          heading.innerHTML += '&nbsp;<small>(📋 Copied)</small>';
           heading.dataset.toasted = 'toasted';
           setTimeout(() => {
             heading.innerHTML = temp;
