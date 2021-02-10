@@ -20,7 +20,6 @@ const secure = require('./secure.json');
 const animations = require('./animations.json');
 const identity = require('./identity.json');
 
-
 module.exports = {
   accessible,
   angular,
