@@ -43,6 +43,7 @@ const EventTable = require(`./${componentsDir}/EventTable`);
 const Glitch = require(`./${componentsDir}/Glitch`);
 const Hero = require(`./${componentsDir}/Hero`);
 const IFrame = require(`./${componentsDir}/IFrame`);
+const {Img} = require(`./${componentsDir}/Img`);
 const Instruction = require(`./${componentsDir}/Instruction`);
 const Label = require(`./${componentsDir}/Label`);
 const Meta = require(`./${componentsDir}/Meta`);
@@ -50,6 +51,7 @@ const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
 const SignPosts = require(`./${componentsDir}/SignPosts`);
 const Tooltip = require(`./${componentsDir}/Tooltip`);
+const {Video} = require(`./${componentsDir}/Video`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
 const collectionsDir = 'src/site/_collections';
@@ -209,6 +211,7 @@ module.exports = function (config) {
   config.addShortcode('Glitch', Glitch);
   config.addShortcode('Hero', Hero);
   config.addShortcode('IFrame', IFrame);
+  config.addShortcode('Img', Img);
   config.addShortcode('Instruction', Instruction);
   config.addPairedShortcode('Label', Label);
   config.addShortcode('Meta', Meta);
@@ -216,6 +219,7 @@ module.exports = function (config) {
   config.addShortcode('PostCard', PostCard);
   config.addShortcode('SignPosts', SignPosts);
   config.addShortcode('Tooltip', Tooltip);
+  config.addShortcode('Video', Video);
   config.addShortcode('YouTube', YouTube);
 
   // This table is used for the web.dev/LIVE event, and should be taken down
