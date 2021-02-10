@@ -4,7 +4,7 @@ title: What does it take to be installable?
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2020-12-07
+updated: 2021-02-09
 description: |
   Progressive Web App installability criteria.
 tags:
@@ -63,11 +63,12 @@ promotion:
   * `icons` - must include a 192px and a 512px icon
   * `start_url`
   * `display` - must be one of `fullscreen`, `standalone`, or `minimal-ui`
-  * Note: `prefer_related_applications` must not be present, or be `false`
-* Registers a service worker with a functional `fetch` handler
-  * Starting in mid-2021, the service worker must return a valid response
-    when the device is offline, for example an
-    [offline fallback page][offline-fallback]
+  * `prefer_related_applications` must not be present, or be `false`
+* Registers a service worker with a `fetch` handler
+  * Starting in mid-2021, Chrome will require that the `fetch` event handler
+    return a valid response when the device is offline, see
+    [Improving Progressive Web App offline support detection][new-offline-detection]
+    for complete details and timelines.
 
 Other browsers have similar criteria for installation, though there may be
 minor differences. Check the respective sites for full details:
@@ -88,3 +89,4 @@ instead.
 
 [add-manifest]: /add-manifest/
 [offline-fallback]: /offline-fallback-page/
+[new-offline-detection]: https://developer.chrome.com/blog/improved-pwa-offline-detection/
