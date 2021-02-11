@@ -167,7 +167,7 @@ sensor in detail.
 ### Accelerometer and linear acceleration sensor {: #acceleration-and-linear-accelerometer-sensor }
 
  <figure class="w-figure">
-  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/FCf9iuCaNASEB3V0x8Ld.mp4" %}
+  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/FCf9iuCaNASEB3V0x8Ld.mp4", width="800" %}
   <figcaption class="w-figcaption">
     Accelerometer sensor measurements
   </figcaption>
