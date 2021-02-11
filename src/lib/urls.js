@@ -40,7 +40,7 @@ export function copyLinkToClipboard() {
     // ToDo: Use `:is(h2, h3, h4, h5, h6)[id]` once support is better.
     .querySelectorAll('h2[id], h3[id], h4[id], h5[id], h6[id]')
     .forEach((heading) => {
-      heading.addEventListener('click', (ev) => {
+      heading.addEventListener('click', (e) => {
         // Don't jump when the '#' is clicked.
         if (ev.target.nodeName === 'A') {
           ev.preventDefault();
