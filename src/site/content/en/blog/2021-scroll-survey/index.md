@@ -25,6 +25,7 @@ evaluated, and synthesized into a new, follow-up survey with more precise
 questions about issues related to these topics. 
 
 ## 2021 Scroll Survey
+
 We believe that there are many ways to improve scrolling on the web for 
 developers, designers, and users alike. We've created a survey which we 
 hope is respectful of your time. It should take no more than 10 minutes 
