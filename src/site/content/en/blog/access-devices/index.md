@@ -6,8 +6,8 @@ description: |
   This article helps Web developers pick the right hardware API based on a given device.
 authors:
   - beaufortfrancois
-date: 2021-01-19
-updated: 2021-01-19
+date: 2021-02-11
+updated: 2021-02-11
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A woman sitting in front of a wooden desk photo.
@@ -17,145 +17,204 @@ tags:
   - devices
 ---
 
-My goal is to help you, web developer, pick the appropriate API to communicate
-with a hardware device of your choice (e.g., a webcam, a microphone, a mouse, a
-keyboard, a stylus, an NFC tag, a Bluetooth device, or an exotic hardware
-device).
+The goal of this guide is to help you pick the best API to communicate with a
+hardware device (e.g. webcam, microphone, etc.) on the web. By "best" I mean it
+gives you everything you need with the shortest amount of work. In other words,
+you know the general use case you want to solve (e.g. accessing video) but you
+don't know what API to use or wonder if there's another way to achieve it.
 
-There are many APIs to choose from. By answering a few questions on this device, you
-should find out the API to use and have some documentation to get started
-accessing this device.
+One problem that I commonly see web developers fall into is jumping into
+low-level APIs without learning about the higher-level APIs that are easier to
+implement and provide a better UX. Therefore, this guide starts by recommending
+higher-level APIs first, but also mentions lower-level APIs in case you have
+determined that the higher-level API doesn't meet your needs.
 
-## 1. Do you want to access video stream from this device? {: #video }
+## 🕹 Receive input events from this device {: #input }
 
-If so, use [`MediaDevices.getUserMedia()`] to get a live video stream from this
-device and learn about [capturing video]. You can also [control the camera's
-pan, tilt, and zoom], and other camera settings such as [brightness and
-contrast], and even [take still images].
+Try listening for [Keyboard] and [Pointer] events. If this device is a game
+controller, use the [Gamepad API] to know which buttons are being pressed and
+which axes moved.
 
-## 2. Do you want to access audio streams from this device? {: #audio }
+If none of these options work for you, a low-level API may be the solution.
+Check out [Discover how to communicate with your device] to start your journey.
 
-If so, use [`MediaDevices.getUserMedia()`] to get a live audio stream from this
-device and learn about [capturing audio]. You can also use [Web Audio] to add
-effects to audio, create audio visualizations, or apply spatial effects (such as
+## 📸 Access audio and video from this device {: #audio-video }
+
+Use [MediaDevices.getUserMedia()] to get live audio and video streams from this
+device and learn about [capturing audio and video]. You can also [control the
+camera's pan, tilt, and zoom], and other camera settings such as [brightness and
+contrast], and even [take still images]. [Web Audio] can be used to add effects
+to audio, create audio visualizations, or apply spatial effects (such as
 panning). Check out [how to profile the performance of Web Audio apps] in Chrome
 as well.
 
-## 3. Do you want to receive input events from this device? {: #input }
+If none of these options work for you, a low-level API may be the solution.
+Check out [Discover how to communicate with your device] to start your journey.
 
-If so, try listening for [Keyboard] and [Pointer] events. If this device is a
-game controller, use the [Gamepad] API to know which buttons are being pressed
-and which axes moved.
+## 🖨 Print to this device {: #print }
 
-## 4. Is this device an NFC tag? {: #nfc }
+Use [window.print()] to open a browser dialog that lets the user pick this
+device as a destination to print the current document.
 
-Then, try [Web NFC] to read and write to this device when it's in close
-proximity to the user's device (usually 5-10 cm, 2-4 inches).
+If this doesn't work for you, a low-level API may be the solution. Check out
+[Discover how to communicate with your device] to start your journey.
 
-## 5. Is this a Bluetooth device? {: #bluetooth }
+## 🔐 Authenticate with this device {: #auth }
 
-Click the button below and see if you can spot a nearby Bluetooth device that
-may be of interest to you. Note that this device may need to be in a special
-mode to be visible.
+Use [WebAuthn] to create a strong, attested, and origin-scoped public-key
+credential with this hardware security device to authenticate users. It supports
+the use of Bluetooth, NFC, and USB-roaming U2F or FIDO2 authenticators —also
+known as security keys— as well as a platform authenticator, which lets users
+authenticate with their fingerprints or screen locks. Check out [Build your
+first WebAuthn app].
 
-<div class="w-text--center">
-<button class="w-button w-button--secondary w-button--with-icon"
-data-icon="bluetooth" onclick="navigator?.bluetooth?.requestDevice({ acceptAllDevices:true })
-|| alert('This browser does not support Web Bluetooth. Try Chrome.')">
-Request bluetooth device
-</button>
-</div>
+If this device is another type of hardware security device (e.g. a
+cryptocurrency wallet), a low-level API may be the solution. Check out [Discover
+how to communicate with your device] to start your journey.
 
-If so, try [Web Bluetooth] to connect to this device over a Bluetooth Low Energy
-connection. It should be pretty easy to communicate with when it uses
-standardized Bluetooth GATT services (such as the battery service) as their
-behavior is [well-documented]. If not, at this point, you either have to find
-some hardware documentation for this device or reverse-engineer it. See the
-[Reverse-Engineering a Bluetooth Lightbulb] article from Uri Shaked for an
-example on how to do that.
+## 🗄 Access files on this device {: #files }
 
-## 6. Does this device expose HID interfaces? {: #hid }
+Use the [File System Access API] to read from and save changes directly to files
+and folders on the user's device. If not available, use the [File API] to ask
+the user to select local files from a browser dialog and then read the contents
+of those files.
 
-Click the button below and see if you can spot a HID device that may be of
-interest to you. Note that security-sensitive HID devices (such as FIDO HID
-devices used for stronger authentication) are not accessible in Chrome.
+If none of these options work for you, a low-level API may be the solution.
+Check out [Discover how to communicate with your device] to start your journey.
 
-<div class="w-text--center">
-<button class="w-button w-button--secondary w-button--with-icon"
-data-icon="videogame_asset" onclick="navigator?.hid?.requestDevice({ filters: [] })
-|| alert('This browser does not support WebHID. Try Chrome on desktop.')">
-Request HID device
-</button>
-</div>
+## 🧲 Access sensors on this device {: #sensors }
 
-If so, try [WebHID] to open a HID connection to this device. The next step is to
-understand HID reports and report descriptors through [collections]. This can be
-really hard without vendor documentation for this device. Reverse-engineering it
-is also a possibility with tools like [Wireshark].
+Use the [Generic Sensor API] to read raw sensor values from motion sensors (e.g.
+accelerometer or gyroscope) and environmental sensors (e.g. ambient light,
+magnetometer). If not available, use the [DeviceMotion and DeviceOrientation]
+events to get access to the built-in accelerometer, gyroscope, and compass in
+mobile devices.
 
-## 7. Does this device expose USB interfaces? {: #usb }
+If it doesn't work for you, a low-level API may be the solution. Check out
+[Discover how to communicate with your device] to start your journey.
 
-Click the button below and see if you can spot a USB device that may be of
-interest to you.
+## 🛰 Access GPS coordinates on this device {: #gps }
 
-<div class="w-text--center">
-<button class="w-button w-button--secondary w-button--with-icon"
-data-icon="usb" onclick="navigator?.usb?.requestDevice({ filters: [] })
-|| alert('This browser does not support WebUSB. Try Chrome.')">
-Request USB device
-</button>
-</div>
+Use the [Geolocation API] to get the latitude and longitude of the user's
+current position on this device.
 
-If so, try [WebUSB] to communicate with this device over the USB port. Without
-clear documentation for this device and what USB commands this device supports,
-it's really hard **but** still possible with lucky guessing. Watch [Exploring
-WebUSB and its exciting potential] talk from Suz Hinton for instance. With tools
-like [Wireshark], you can also reverse-engineer this device by capturing raw USB
-traffic to understand it better.
+If it doesn't work for you, a low-level API may be the solution. Check out
+[Discover how to communicate with your device] to start your journey.
 
-## 8. Does this device expose serial ports? {: #serial }
+## 🔋 Check the battery on this device {: #batttery }
 
-Click the button below and see if you can spot a serial port that may be of
-interest to you.
+Use the [Battery API] to get host information about the battery charge level and
+be notified when the battery level or charging status change.
 
-<div class="w-text--center">
-<button class="w-button w-button--secondary w-button--with-icon"
-data-icon="developer_board" onclick="navigator?.serial?.requestPort({ filters: [] })
-|| alert('This browser does not support the Serial API. Try Chrome on desktop.')">
-Request serial port
-</button>
-</div>
+If it doesn't work for you, a low-level API may be the solution. Check out
+[Discover how to communicate with your device] to start your journey.
 
-If so, try the [Serial API] to read from and write to this device. Without clear
-vendor documentation for this device though, you'll need some dedicated tools to
-help you inspect serial traffic and understand it.
+## 📞 Communicate with this device over the network {: #network }
 
-## Acknowledgements {: #helpful }
+In the local network, use the [Remote Playback API] to broadcast audio and/or
+video on a remote playback device (e.g. a smart TV or a wireless speaker) or use
+the [Presentation API] to render a web page on a second screen (e.g. a secondary
+display connected with an HDMI cable or a smart TV connected wirelessly).
 
-Thank you to [Reilly Grant](https://github.com/reillyeon) and [Thomas
-Steiner](/authors/thomassteiner/) for reviewing this article.
+If this device exposes a web server, use the [Fetch API] and/or [WebSockets] to
+fetch some data from this device by hitting appropriate endpoints. While TCP and
+UDP sockets are not available on the web, check out [WebTransport] to handle
+interactive, bidirectional, and multiplexed network connections. Note that
+[WebRTC] can also be used to communicate data in real-time with other browsers
+using a peer-to-peer protocol.
 
-Photo by [Darya Tryfanava](https://unsplash.com/@darya_tryfanava) on
-[Unsplash](https://unsplash.com/photos/uZBGDkYkvhM).
+## 🧱 Discover how to communicate with your device {: #discover }
 
-[`MediaDevices.getUserMedia()`]: https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
-[capturing video]: https://www.html5rocks.com/en/tutorials/getusermedia/intro/
+The decision of what low-level API you should use is determined by the nature of
+your physical connection to the device. If it is wireless, check out Web NFC for
+very short-range wireless connections and Web Bluetooth for nearby wireless
+devices.
+
+- With [Web NFC], read and write to this device when it's in close proximity to
+  the user's device (usually 5–10 cm, 2–4 inches). Tools like [NFC TagInfo by
+  NXP] allow you to browse the content of this device for reverse-engineering
+  purposes.
+
+- With [Web Bluetooth], connect to this device over a Bluetooth Low Energy
+  connection. It should be pretty easy to communicate with when it uses
+  standardized Bluetooth GATT services (such as the battery service) as their
+  behavior is [well-documented]. If not, at this point, you either have to find
+  some hardware documentation for this device or reverse-engineer it. You can
+  use external tools like [nRF Connect for Mobile] and built-in browser tools
+  such as the internal page `about://bluetooth-internals` in Chromium-based
+  browsers for that. Check out [Reverse-Engineering a Bluetooth Lightbulb] from
+  Uri Shaked. Note that HID and serial devices may also be using Bluetooth.
+
+If wired, check out these APIs in this specific order: 
+
+1. With [WebHID], understanding HID reports and report descriptors through
+   [collections] is key to your comprehension of this device. This can be
+   challenging without vendor documentation for this device. Tools like
+   [Wireshark] can help you reverse-engineering it.
+
+2. With [Web Serial], without vendor documentation for this device and what
+   commands this device supports, it's hard but still possible with lucky
+   guessing. Reverse-engineering this device can be done by capturing raw USB
+   traffic with tools like [Wireshark]. You can also use the [Serial Terminal
+   web app] to experiment with this device if it uses a human-readable protocol.
+
+3. With [WebUSB], without clear documentation for this device and what USB
+   commands this device supports, it's hard but still possible with lucky
+   guessing. Watch [Exploring WebUSB and its exciting potential] from Suz
+   Hinton. You can also reverse-engineer this device by capturing raw USB
+   traffic and inspecting [USB descriptors] with external tools like Wireshark
+   and built-in browser tools such as the internal page `about://usb-internals`
+   in Chromium-based browsers.
+
+## Acknowledgements {: #acknowledgements }
+
+Thanks to [Reilly Grant], [Thomas Steiner], and [Kayce Basques] for reviewing this article.
+
+Photo by [Darya Tryfanava] on [Unsplash].
+
+
+[Keyboard]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
+[Pointer]: https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events
+[Gamepad API]: /gamepad/
+[MediaDevices.getUserMedia()]: https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+[capturing audio and video]: https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 [control the camera's pan, tilt, and zoom]: /camera-pan-tilt-zoom/
 [brightness and contrast]: https://developers.google.com/web/updates/2016/12/imagecapture
 [take still images]: https://beaufortfrancois.github.io/sandbox/image-capture/playground
-[capturing audio]: https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 [Web Audio]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
 [how to profile the performance of Web Audio apps]: /profiling-web-audio-apps-in-chrome/
-[Keyboard]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
-[Pointer]: https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events
-[Gamepad]: /gamepad/
-[Web NFC]: /nfc/
+[window.print()]: https://developer.mozilla.org/en-US/docs/Web/API/Window/print
+[WebAuthn]: https://webauthn.io/
+[Build your first WebAuthn app]: https://codelabs.developers.google.com/codelabs/webauthn-reauth/
+[File System Access API]: /file-system-access/
+[File API]: https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications
+[Generic Sensor API]: https://developers.google.com/web/updates/2017/09/sensors-for-the-web
+[DeviceMotion and DeviceOrientation]: https://developers.google.com/web/fundamentals/native-hardware/device-orientation
+[Geolocation API]: https://developers.google.com/web/fundamentals/native-hardware/user-location
+[Battery API]: https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API
+[Remote Playback API]: https://www.chromestatus.com/feature/5778318691401728
+[Presentation API]: https://developers.google.com/web/updates/2018/04/present-web-pages-to-secondary-attached-displays
+[Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+[WebSockets]: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+[WebTransport]: /webtransport/
+[WebRTC]: /webrtc-standard-announcement/
+[Web NFC]: /nfc
+[NFC TagInfo by NXP]: https://play.google.com/store/apps/details?id=com.nxp.taginfolite
 [Web Bluetooth]: /bluetooth/
 [well-documented]: https://www.bluetooth.com/specifications/gatt/
+[nRF Connect for Mobile]: https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp
 [Reverse-Engineering a Bluetooth Lightbulb]: https://urish.medium.com/reverse-engineering-a-bluetooth-lightbulb-56580fcb7546
 [WebHID]: /hid/
 [collections]: https://webhid-collections.glitch.me/
 [Wireshark]: https://gitlab.com/wireshark/wireshark/-/wikis/CaptureSetup/USB
+[Web Serial]: /serial/
+[Serial Terminal web app]: https://googlechromelabs.github.io/serial-terminal/
 [WebUSB]: /usb/
 [Exploring WebUSB and its exciting potential]: https://www.youtube.com/watch?v=IpfZ8Nj3uiE
-[Serial API]: /serial/
+[USB descriptors]: https://www.beyondlogic.org/usbnutshell/usb5.shtml
+[Reilly Grant]: https://github.com/reillyeon
+[Thomas Steiner]: /authors/thomassteiner/
+[Kayce Basques]: /authors/kaycebasques/
+[Darya Tryfanava]: https://unsplash.com/@darya_tryfanava
+[Unsplash]: https://unsplash.com/photos/uZBGDkYkvhM
+[Discover how to communicate with your device]: #discover
