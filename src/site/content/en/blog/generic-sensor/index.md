@@ -13,7 +13,7 @@ description: |
   they run on into account. The Generic Sensor API provides a generic interface
   for accessing such sensor data on the web.
 date: 2017-09-18
-updated: 2021-02-09
+updated: 2021-02-11
 tags:
   - blog
   - sensors
