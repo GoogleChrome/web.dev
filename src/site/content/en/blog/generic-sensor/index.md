@@ -325,10 +325,7 @@ However, many use cases like games or augmented and virtual reality require sens
 resolved in a coordinate system that is instead bound to the screen orientation.
 
 <figure class="w-figure">
-  <img  src="screen_coordinate_system.png"
-       alt="Screen coordinate system"
-       width="500"
-  >
+  {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/x1PUlYnAXb9QkqwLV04g.png", alt="Screen coordinate system", width="800", height="520" %}
   <figcaption class="w-figcaption">Screen coordinate system</figcaption>
 </figure>
 
@@ -401,10 +398,7 @@ function initSensor() {
 The device's orientation will be reflected in 3D `model` rotation within the WebGL scene.
 
 <figure class="w-figure">
-  <img  src="orientation_phone.png"
-    alt="Sensor updates 3D model's orientation"
-    class="w-screenshot"
-  >
+  {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/CdYXzmhv0ZNBvETuC6SX.png", alt="Sensor updates 3D model's orientation", width="338", height="368" %}
   <figcaption class="w-figcaption">Sensor updates orientation of a 3D model</figcaption>
 </figure>
 
@@ -443,10 +437,7 @@ this.accel.addEventListener('reading', onreading);
 The current velocity is calculated as an approximation to the integral of the acceleration function.
 
 <figure class="w-figure">
-  <img  src="punchmeter.png"
-    alt="Demo web application for punch speed measurement"
-    class="w-screenshot"
-  >
+  {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/37a9DYv1huOcraAMfXpO.png", alt="Demo web application for punch speed measurement", width="338", height="347" %}
   <figcaption class="w-figcaption">Measurement of a punch speed</figcaption>
 </figure>
 
