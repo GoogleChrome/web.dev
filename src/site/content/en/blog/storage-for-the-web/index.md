@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: There are many different options for storing data in the browser. Which one is best for your needs?
 date: 2020-04-27
-updated: 2021-02-09
+updated: 2021-02-11
 tags:
   - blog
   - progressive-web-apps
@@ -170,7 +170,7 @@ scenarios. Go to **Application** then **Storage**, enable the
 **Simulate custom storage quota** checkbox, and enter any valid number to
 simulate the storage quota.
 
-<img class="w-screenshot w-screenshot-filled" alt="DevTools Storage pane." src="devtools-storage-panel.png">
+{% Img src="image/0g2WvpbGRGdVs0aAPc6ObG7gkud2/tYlbklNwF6DFKNV2cY0D.png", alt="DevTools Storage pane.", width="800", height="567" %}
 
 While working on this article, I wrote a [simple tool][glitch-storage] to
 attempt to quickly use as much storage as possible. It's a quick and easy way
