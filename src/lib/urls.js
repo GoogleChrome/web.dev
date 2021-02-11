@@ -35,6 +35,7 @@ export function copyLinkToClipboard() {
   if (!('clipboard' in navigator)) {
     return;
   }
+
   document
     .querySelector('main')
     // ToDo: Use `:is(h2, h3, h4, h5, h6)[id]` once support is better.
