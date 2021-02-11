@@ -19,7 +19,7 @@ tags:
   - sensors
   - devices
   - capabilities
-hero: hero.jpg
+hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/A1I0bhVyN1dQxVAFUx9c.jpg
 alt: A simple gyroscope.
 ---
 
@@ -121,15 +121,15 @@ This example illustrates how to do that.
 let accelerometer = null;
 try {
   accelerometer = new Accelerometer({ frequency: 10 });
-  accelerometer.addEventListener('error', (event) => {
+  accelerometer.onerror = (event) => {
     // Handle runtime errors.
     if (event.error.name === 'NotAllowedError') {
       console.log('Permission to access sensor was denied.');
     } else if (event.error.name === 'NotReadableError') {
       console.log('Cannot connect to the sensor.');
     }
-  });
-  accelerometer.addEventListener('reading', () => reloadOnShake(accelerometer));
+  };
+  accelerometer.onreading = () => reloadOnShake(accelerometer);
   accelerometer.start();
 } catch (error) {
   // Handle construction errors.
@@ -167,9 +167,7 @@ sensor in detail.
 ### Accelerometer and linear acceleration sensor {: #acceleration-and-linear-accelerometer-sensor }
 
  <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="accelerometer.mp4" type="video/mp4">
-  </video>
+  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/FCf9iuCaNASEB3V0x8Ld.mp4" %}
   <figcaption class="w-figcaption">
     Accelerometer sensor measurements
   </figcaption>
@@ -212,9 +210,7 @@ release date. {% endAside %}
 ### Gyroscope {: #gyroscope-sensor }
 
  <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="gyroscope.mp4" type="video/mp4">
-  </video>
+  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/7VItzZMC9Rb2QglsE3s5.mp4", width="800" %}
   <figcaption class="w-figcaption">
     Gyroscope sensor measurements
   </figcaption>
@@ -232,9 +228,7 @@ therefore, might consume more power compared to other sensors.
 ### Orientation sensors {: #orientation-sensors }
 
 <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="orientation.mp4" type="video/mp4">
-  </video>
+  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/rhpW784mCvR78nwg6rd1.mp4", width="800" %}
   <figcaption class="w-figcaption">
     Absolute orientation sensor measurements
   </figcaption>
@@ -314,10 +308,7 @@ in a local coordinate system that is bound to the device and does not take scree
 account.
 
 <figure class="w-figure">
-  <img  src="device_coordinate_system.png"
-       alt="Device coordinate system"
-       width="500"
-  >
+  {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/xI2V6To5gx5WbXunpOBh.png", alt="Device coordinate system", width="800", height="520" %}
   <figcaption class="w-figcaption">Device coordinate system</figcaption>
 </figure>
 
@@ -415,7 +406,9 @@ this.vx = 0;
 this.ax = 0;
 this.t = 0;
 
-function onreading() {
+/* … */
+
+this.accel.onreading = () => {
   let dt = (this.accel.timestamp - this.t) * 0.001; // In seconds.
   this.vx += ((this.accel.x + this.ax) / 2) * dt;
 
@@ -427,11 +420,7 @@ function onreading() {
 
   this.t = this.accel.timestamp;
   this.ax = this.accel.x;
-}
-
-/* … */
-
-this.accel.addEventListener('reading', onreading);
+};
 ```
 
 The current velocity is calculated as an approximation to the integral of the acceleration function.
@@ -448,8 +437,7 @@ has great support for
 [simulating device orientation](https://developers.google.com/web/tools/chrome-devtools/device-mode/orientation).
 
 <figure class="w-figure">
-  <img  src="orientation-model.png"
-    alt="Chrome DevTools used to override the custom orientation data of a virtual phone.">
+  {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/OWhCoZXMZllhI7fN7BMR.png", alt="Chrome DevTools used to override the custom orientation data of a virtual phone", width="800", height="648" %}
   <figcaption class="w-figcaption">Simulating device orientation with Chrome DevTools</figcaption>
 </figure>
 
@@ -494,7 +482,8 @@ focus changes to a cross-origin subframe. This prevents the parent frame inferin
 ## What's next? {: #whats-next }
 
 There is a set of already specified sensor classes to be implemented in the near future such as
-[Proximity sensor](https://w3c.github.io/proximity/); however, thanks to the great extensibility of
+[Ambient Light Sensor](https://w3c.github.io/ambient-light/) or
+[Proximity Sensor](https://w3c.github.io/proximity/); however, thanks to the great extensibility of
 Generic Sensor framework we can anticipate appearance of even more new classes representing various
 sensor types.
 
@@ -525,8 +514,6 @@ as [bugs](https://bugs.chromium.org/p/chromium/issues/entry) for the Chrome impl
   [https://www.chromestatus.com/feature/5698781827825664](https://www.chromestatus.com/feature/5698781827825664)
 - Implementation bugs:
   [http://crbug.com?q=component:Blink>Sensor](http://crbug.com?q=component:Blink>Sensor)
-- Sensors-Dev Google group:
-  [https://groups.google.com/a/chromium.org/forum/#!forum/sensors-dev](https://groups.google.com/a/chromium.org/forum/#!forum/sensors-dev)
 
 ## Acknowledgements
 
