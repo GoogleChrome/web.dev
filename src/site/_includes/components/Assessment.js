@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+const cheerio = require('cheerio');
 const {html} = require('common-tags');
 const md = require('markdown-it')();
 const mdBlock = require('../../_filters/md-block');
@@ -21,6 +22,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const site = require('../../_data/site');
+const {generateSrc} = require('./Img');
 
 // Renders the set leader at the top of the self-assessment
 function headerTemplate(assessment) {
@@ -72,11 +74,23 @@ function questionTemplate(question, assessment) {
     ? `question-height="${assessment.height}"`
     : '';
 
-  return html`
+  const content = html`
     <web-question ${height} data-label="${assessment.tabLabel}">
       ${stimulus} ${responsesTemplate(question)}
     </web-question>
   `;
+  const $ = cheerio.load(content);
+  $('img').each(function () {
+    // @ts-ignore
+    const oldSrc = $(this).attr('src');
+    if (/image\/(.*)\/(.*)\.([a-z]{1,4})$/.test(oldSrc)) {
+      const src = generateSrc(oldSrc);
+      // @ts-ignore
+      $(this).attr('src', src);
+    }
+  });
+
+  return html`${$.html()}`;
 }
 
 // If a question has no components,
