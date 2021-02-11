@@ -1,16 +1,16 @@
 ---
 title: Read from and write to a serial port
-subhead: The Serial API allows websites to communicate with serial devices.
+subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2021-01-25
+updated: 2021-02-03
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: |
   Old modems, routers, network equipment. Serial, phone, audio, ethernet connectors.
 description: |
-  The Serial API bridges the web and the physical world by allowing websites to communicate with serial devices.
+  The Web Serial API bridges the web and the physical world by allowing websites to communicate with serial devices.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
@@ -20,21 +20,21 @@ feedback:
 ---
 
 {% Aside 'success' %}
-The Serial API, part of the [capabilities project](/fugu-status/), launched in
-Chrome&nbsp;89.
+The Web Serial API, part of the [capabilities project](/fugu-status/), launched
+in Chrome&nbsp;89.
 {% endAside %}
 
-## What is the Serial API? {: #what }
+## What is the Web Serial API? {: #what }
 
 A serial port is a bidirectional communication interface that allows sending and
 receiving data byte by byte.
 
-The Serial API provides a way for websites to read from and write to a serial
-device with JavaScript. Serial devices are connected either through a serial
-port on the user's system or through removable USB and Bluetooth devices that
-emulate a serial port.
+The Web Serial API provides a way for websites to read from and write to a
+serial device with JavaScript. Serial devices are connected either through a
+serial port on the user's system or through removable USB and Bluetooth devices
+that emulate a serial port.
 
-In other words, the Serial API bridges the web and the physical world by
+In other words, the Web Serial API bridges the web and the physical world by
 allowing websites to communicate with serial devices, such as microcontrollers
 and 3D printers.
 
@@ -77,21 +77,21 @@ communication between the website and the device that it is controlling.
 
 </div>
 
-## Using the Serial API {: #use }
+## Using the Web Serial API {: #use }
 
 ### Feature detection {: #feature-detection }
 
-To check if the Serial API is supported, use:
+To check if the Web Serial API is supported, use:
 
 ```js
 if ("serial" in navigator) {
-  // The Serial API is supported.
+  // The Web Serial API is supported.
 }
 ```
 
 ### Open a serial port {: #open-port }
 
-The Serial API is asynchronous by design. This prevents the website UI from
+The Web Serial API is asynchronous by design. This prevents the website UI from
 blocking when awaiting input, which is important because serial data can be
 received at any time, requiring a way to listen to it.
 
@@ -164,7 +164,7 @@ options are optional and have convenient [default values].
 
 ### Read from a serial port {: #read-port }
 
-Input and output streams in the Serial API are handled by the Streams API.
+Input and output streams in the Web Serial API are handled by the Streams API.
 
 {% Aside %}
 If streams are new to you, check out [Streams API
@@ -487,22 +487,23 @@ const [appReadable, devReadable] = port.readable.tee();
 
 ## Dev Tips {: #dev-tips }
 
-Debugging the Serial API in Chrome is easy with the internal page, `chrome://device-log`
-where you can see all serial device related events in one single place.
+Debugging the Web Serial API in Chrome is easy with the internal page,
+`chrome://device-log` where you can see all serial device related events in one
+single place.
 
 <figure class="w-figure">
-  <img src="./device-log-page-screenshot.jpg" class="w-screenshot" alt="Screenshot of the internal page for debugging the Serial API.">
-  <figcaption class="w-figcaption">Internal page in Chrome for debugging the Serial API.</figcaption>
+  <img src="./device-log-page-screenshot.jpg" class="w-screenshot" alt="Screenshot of the internal page for debugging the Web Serial API.">
+  <figcaption class="w-figcaption">Internal page in Chrome for debugging the Web Serial API.</figcaption>
 </figure>
 
 ## Codelab {: #codelab }
 
-In the [Google Developer codelab], you'll use the Serial API to interact with a
-[BBC micro:bit] board to show images on its 5x5 LED matrix.
+In the [Google Developer codelab], you'll use the Web Serial API to interact
+with a [BBC micro:bit] board to show images on its 5x5 LED matrix.
 
 ## Browser support {: #browser-support }
 
-The Serial API is available on all desktop platforms (Chrome OS, Linux, macOS,
+The Web Serial API is available on all desktop platforms (Chrome OS, Linux, macOS,
 and Windows) in Chrome 89.
 
 ## Polyfill {: #polyfill }
@@ -514,7 +515,7 @@ been claimed by a built-in device driver.
 
 ## Security and privacy {: #security-privacy }
 
-The spec authors have designed and implemented the Serial API using the core
+The spec authors have designed and implemented the Web Serial API using the core
 principles defined in [Controlling Access to Powerful Web Platform Features],
 including user control, transparency, and ergonomics. The ability to use this
 API is primarily gated by a permission model that grants access to only a single
@@ -522,20 +523,20 @@ serial device at a time. In response to a user prompt, the user must take active
 steps to select a particular serial device.
 
 To understand the security tradeoffs, check out the [security] and [privacy]
-sections of the Serial API Explainer.
+sections of the Web Serial API Explainer.
 
 ## Feedback {: #feedback }
 
 The Chrome team would love to hear about your thoughts and experiences with the
-Serial API.
+Web Serial API.
 
 ### Tell us about the API design
 
 Is there something about the API that doesn't work as expected? Or are there
 missing methods or properties that you need to implement your idea?
 
-File a spec issue on the [Serial API GitHub repo][issues] or add your thoughts
-to an existing issue.
+File a spec issue on the [Web Serial API GitHub repo][issues] or add your
+thoughts to an existing issue.
 
 ### Report a problem with the implementation
 
@@ -549,7 +550,7 @@ sharing quick and easy repros.
 
 ### Show support
 
-Are you planning to use the Serial API? Your public support helps the Chrome
+Are you planning to use the Web Serial API? Your public support helps the Chrome
 team prioritize features and shows other browser vendors how critical it is to
 support them.
 

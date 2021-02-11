@@ -77,6 +77,12 @@ Styles](https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8
 feature (available in Drupal 8 and above) when rendering image fields through
 view modes, views, or images uploaded through the WYSIWYG editor.
 
+### Gatsby
+
+Use the [gatsby-image](https://www.gatsbyjs.com/plugins/gatsby-image/) plugin to
+generate multiple smaller images for smartphones and tablets. It can also create
+SVG image placeholders for efficient lazy loading.
+
 ### Joomla
 
 Consider using a [responsive images

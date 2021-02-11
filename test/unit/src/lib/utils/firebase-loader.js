@@ -1,5 +1,5 @@
 const {assert} = require('../assert');
-const loadFirebase = require('../../../../../src/lib/utils/firebase-loader');
+const {loadFirebase} = require('../../../../../src/lib/utils/firebase-loader');
 
 // TODO(samthor): This test doesn't clear the internal cache between tests, as
 // it uses a singleton loading cache. Add a reset for test method.

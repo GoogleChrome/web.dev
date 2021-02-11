@@ -199,7 +199,7 @@ export const checkUserPreferredLanguage = store.action(
       // Or check in the url.
       lang.getLanguageFromPath(location.pathname) ||
       // Or check in a cookie.
-      cookies.get('preferred_lang') ||
+      cookies.get('firebase-language-override') ||
       // Or check in the browser setting.
       navigator.language.split('-')[0];
     if (!lang.isValidLanguage(userPreferredLanguage)) {
@@ -214,7 +214,7 @@ export const setLanguage = store.action((state, preferredLanguage) => {
     expires: 10 * 365, // 10 years
     samesite: 'strict',
   };
-  cookies.set('preferred_lang', preferredLanguage, options);
+  cookies.set('firebase-language-override', preferredLanguage, options);
   if (preferredLanguage !== state.userPreferredLanguage) {
     location.pathname = getCanonicalPath(location.pathname);
   }

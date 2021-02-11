@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,21 @@
  * limitations under the License.
  */
 
-declare module 'webdev_entrypoint' {
-  const value: string;
-  export default value;
+declare global {
+  export interface VideoArgs {
+    autoplay?: boolean;
+    autoPictureInPicture?: boolean;
+    className?: string;
+    disablePictureInPicture?: boolean;
+    height?: number;
+    loop?: boolean;
+    muted?: boolean;
+    poster?: string;
+    preload?: 'none' | 'metadata' | 'auto';
+    src: string | string[];
+    width?: number;
+  }
 }
+
+// empty export to keep file a module
+export {};
