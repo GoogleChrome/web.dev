@@ -374,7 +374,7 @@ Chrome on desktop displays email suggestions, shows the password manager, and au
   <figcaption class="w-figcaption">Autocomplete sign-in flow in Chrome 84.</figcaption>
 </figure>
 
-{% Aside 'caution' %}
+
 Browser password and autofill systems are not simple. The algorithms for
 guessing, storing and displaying values are not standardized, and vary from
 platform to platform. For example, as pointed out by [Hidde de
@@ -382,7 +382,6 @@ Vries](https://hiddedevries.nl/en/blog/2018-01-13-making-password-managers-play-
 "Firefox's password manager complements [its
 heuristics](https://dxr.mozilla.org/firefox/source/toolkit/components/passwordmgr/src/nsLoginManager.js#626)
 with a [recipe system](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454)."
-{% endAside %}
 
 [Autofill: What web devs should know, but
 don't](https://cloudfour.com/thinks/autofill-what-web-devs-should-know-but-dont)
@@ -390,6 +389,10 @@ has a lot more information about using `name` and `autocomplete`. The [HTML
 spec](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#inappropriate-for-the-control)
 lists all 59 possible values.
 
+{% Aside %}
+You can help password managers by using different `name` and `id` values in sign-up and sign-in 
+forms, for the `form` element itself, as well as any `input`, `select` and `textarea` elements.
+{% endAside %}
 
 ### Enable the browser to suggest a strong password {: #password-suggestions }
 
