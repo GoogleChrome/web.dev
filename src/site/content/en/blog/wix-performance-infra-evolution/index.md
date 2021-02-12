@@ -1,0 +1,340 @@
+---
+layout: post
+title: How Wix Improved Websites Performance by Evolving Their Infrastructure
+subhead: |
+  An overview of some major changes introduced at Wix to improve website loading performance for
+  millions of sites, clearing the path to receive good PSI and Core Web Vital scores.
+authors:
+  - alonko
+description: |
+  This case study explains how Wix improved their platform and sites performance, by evolving
+  their infrastructure over the years and supporting newer standards, while continuously supporting
+  millions of existing sites.
+date: 2021-03-07
+hero: ./hero.jpg
+alt: Fast Train (https://unsplash.com/photos/60VrGk-bfeA)
+tags:
+  - blog
+  - fast
+  - performance
+  - web-vitals
+  - case-study
+  - wix-engineering
+---
+
+This is the tale of some major changes we introduced at Wix over the years to improve site loading
+performance through leveraging industry standards, cloud providers, and CDN capabilities.
+
+These changes, combined with a major rewrite of our website runtime, have resulted in more sites
+reaching good Core Web Vitals scores.
+According to data from [CrUX](https://developers.google.com/web/tools/chrome-user-experience-report) and
+[HTTPArchive](https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data),
+the percentage of Wix sites reaching good CWV have more than tripled year over year.
+
+Performance remains a very important focus for us across the company, and many improvements are
+still under development or are gradually rolling out to users.
+These efforts are part of our performance oriented culture, and we will continue with ongoing efforts to
+further improve all performance KPIs, and as a result expect to see the number of CWV eligible sites
+grow in the future.
+
+## Overview
+
+The world of performance is beautifully complex, with many variables and intricacies.
+Nowadays, it's widely known that website speed has a direct impact on conversion rates and revenues
+for businesses.
+In recent years, the industry has put more emphasis on performance visibility and
+[making the web faster](https://developers.google.com/speed).
+Google is even planning to start including performance as a part of
+[page experience](https://developers.google.com/search/docs/guides/page-experience) in their SEO
+ranking algorithms in May 2021.
+
+At Wix, we have a unique challenge; supporting **millions** of sites, some of which were built
+_many years ago_ and have not been updated since.
+We have various [tools and articles](https://support.wix.com/en/the-wix-editor/site-performance) to
+assist our users on what they can do to analyze and improve the performance of their sites.
+
+Unlike many hosted solutions which usually run on a single dedicated server, Wix is a managed
+environment and not everything is in the hands of the user.
+Sharing common infrastructures presents many challenges for all these sites, but also opens
+opportunities for major enhancements across the board, i.e. leveraging the economies of scale.
+
+{% Aside%} _In this post I will focus on enhancements done around serving the initial HTML, which
+initiates the page loading process._ {% endAside %}
+
+
+### Speaking in a common language
+
+One of the core difficulties with performance is finding a common terminology to discuss different
+aspects of the user experience,
+while considering both the technical and perceived performance. Using a well-defined, common
+language within the organization enabled us to easily discuss and categorize the different
+technical parts and trade-offs, clarified our performance reports and tremendously helped to
+understand what aspects we should focus on improving first.
+
+We adjusted all our monitoring and internal discussions to include industry standard metrics such
+as [Web Vitals](https://web.dev/vitals/), which mainly include:
+
+<figure class="w-figure">
+  <img src="./image2.jpg" alt="Core Web Vitals" width="800">
+  <figcaption class="w-figcaption">Core Web Vitals</figcaption>
+</figure>
+
+* [Largest Contentful Paint](https://web.dev/lcp/) (Core Web Vital)
+* [First Input Delay](https://web.dev/fid/) (Core Web Vital)
+* [Cumulative Layout Shift](https://web.dev/cls/) (Core Web Vital)
+* [First Contentful Paint](https://web.dev/fcp/)
+* [Total Blocking Time](https://web.dev/tbt/)
+* [Time to Interactive](https://web.dev/tti/)
+
+
+### Site Complexity and Performance Scores
+
+It's pretty easy to build a [very simple site](https://justinjackson.ca/words.html) using only
+HTML, serve it via a CDN, and it will load almost instantly.
+
+<figure class="w-figure w-figure--inline-left">
+  <img class="w-screenshot" src="./image3.jpg" alt="PageSpeed Insights Example" width="600">
+</figure>
+
+However, the reality is that sites are getting more and more complex and sophisticated, operating
+more like applications rather than documents, and supporting functionalities such as blogs, e-commerce solutions, custom code, etc.
+
+Wix offers a very large [variety of templates](https://www.wix.com/website/templates), enabling
+its users to easily build a site with many business capabilities - and those additional features
+often come with _some_ performance costs.
+
+
+## The Journey
+
+### In the beginning, there was HTML
+
+Every time a webpage is loaded, it always starts with an initial request to a URL in order to
+retrieve the HTML document. This HTML response triggers all the additional client requests and
+browser logic to run and render your site. This is the most important part of the page loading,
+because nothing happens until the beginning of the response arrives (known as TTFB - time to
+first byte).
+
+<figure class="w-figure">
+  <img src="./image4.jpg" alt="WebPageTest First View" width="1600">
+  <figcaption class="w-figcaption">WebPageTest First View</figcaption>
+</figure>
+
+#### The Past: Client-Side Rendering (CSR)
+
+When operating large scale systems, you always have trade-offs you need to consider, such as
+performance, reliability and costs. Up to a few years ago, Wix used Client-Side Rendering (CSR),
+in which the actual HTML content was generated on the client side (i.e. in the browser)
+allowing us to support a high scale of sites without having huge backend operational costs.
+
+CSR enabled us to use a common HTML document, which was essentially empty.
+All it did was trigger the download of the required code and data which was then used to generate
+the full HTML on the client device.
+
+#### Today: Server-Side Rendering (SSR)
+
+A few years ago we transitioned to use Server-Side Rendering (SSR) instead, as that was beneficial
+both to SEO and performance, improving initial page visibility times and ensuring better indexing
+for search engines that do not have full support for running JavaScript.
+
+This approach improved the visibility experience, especially on slower devices/connections, and
+opened the door for further performance optimizations. However, it also meant that for each web
+page request, a unique HTML response was generated on the fly, which is **far** from optimal,
+especially for sites with a high amount of visitors.
+
+
+### Introducing caching - in multiple locations
+
+The HTML for each site was mostly static, but it had a few caveats:
+
+1. It frequently changes - each time a user edits their site, or makes changes in site data,
+such as on the website store inventory.
+2. It had certain data and cookies that were (and are) **visitor specific**,
+meaning two people visiting the same site would see a somewhat different HTML - for example,
+to support products we use various methods, like remembering what items a visitor put in the cart
+, or the chat the visitor started with the business earlier, and more.
+3. Not all pages are cacheable - for example a page with custom user code on it,
+that displays the current time as part of the document, is not eligible for caching.
+
+Initially, we took the relatively safe approach of caching the HTML
+<span style="text-decoration:underline;">without</span> visitor data, and then only modified
+specific parts of the HTML response on the fly for each visitor, for each cache hit.
+
+#### In-house CDN Solution
+
+We did this by deploying an in-house solution: Using
+[Varnish HTTP Cache](https://varnish-cache.org/) for proxying and caching,
+Kafka for invalidation messages, and a Scala/Netty based service which proxies these HTML responses,
+but mutates the HTML and adds visitor-specific data and cookies to the cached response.
+
+This solution enabled us to deploy these **slim** components in many more geographic locations
+and multiple cloud provider regions, which are spread across the world. In 2019, we introduced
+**over 15 new regions**, and gradually enabled caching for over 90% of our page views that were
+eligible for caching. Serving sites from additional locations reduced the
+[network latency](https://www.cloudping.co/grid) between the clients and the servers serving
+the HTML response, by bringing the content closer to the website's visitors.
+
+We also started caching certain read-only API responses by using the same solution and invalidating
+the cache on any change to the site content - for example the list of blog posts on the site is
+cached and invalidated when a post is published/modified.
+
+#### Reducing Complexities
+
+Implementing caching improved performance substantially, mostly on the
+[TTFB](https://web.dev/time-to-first-byte/) and [FCP](https://web.dev/fcp/) phases, and improved our
+reliability by serving the content from a location closer to the end user.
+
+However, the need to modify the HTML for each response introduced an unnecessary complexity that,
+if removed, presented an opportunity for further performance improvements.
+
+### Browser Caching (and preparations for CDNs)
+
+The next step was to actually remove this visitor-specific data from the HTML
+<span style="text-decoration:underline;">entirely</span>, and retrieve it from a separate endpoint,
+called by the client for this purpose, after the HTML has arrived.
+
+We carefully migrated this data and cookies to a new endpoint, which is called on each page load,
+but returns a slim JSON, which is required only for the
+[hydration process](https://reactjs.org/docs/react-dom.html#hydrate), to reach full page
+interactivity.
+
+This allowed us to enable browser caching of the HTML, which means that browsers now save the HTML
+response for repeating visits, and only call the server to validate that the content hasn't changed.
+This is done using [HTTP ETag](https://en.wikipedia.org/wiki/HTTP_ETag), which is basically an
+identifier assigned to a specific version of an HTML resource. If the content is still the same,
+a [304 Not Modified](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304) response is sent
+by our servers to the client, without a body. Around 12% of HTML requests are served from the
+browser cache, saving much bandwidth and reducing loading times for repeat views.
+
+<figure class="w-figure">
+  <img src="./image5.jpg" alt="WebPageTest Repeat View" width="1600">
+  <figcaption class="w-figcaption">WebPageTest Repeat View</figcaption>
+</figure>
+
+In addition, this change means that our HTML is no longer visitor-specific and contains no cookies -
+so it can basically be cached anywhere, opening the door to using CDN providers that have much
+better geo presence in hundreds of locations around the world.
+
+
+### DNS, SSL and HTTP/2
+
+With caching enabled, wait times were reduced and other important parts of the initial
+connection became more substantial. Enhancing our networking infrastructure and monitoring
+enabled us to improve our DNS, Connection and SSL times.
+
+<figure class="w-figure w-figure--inline-right">
+  <img class="w-screenshot" src="./image6.jpg" alt="A response time graph." width="600">
+</figure>
+
+[HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) was enabled for all user domains, reducing both the
+amount of connections required and the overhead that comes with each new connection.
+This was a relatively easy change to deploy, while taking advantage of the
+[performance and resilience benefits](https://developers.google.com/web/fundamentals/performance/http2)
+that come with HTTP/2.
+
+
+### Brotli Compression (vs Gzip)
+
+<div class="w-figure">
+  <div class="w-stats">
+    <div class="w-stat">
+     <p class="w-stat__figure">21 - 25<sub class="w-stat__sub">%</sub></p>
+     <p class="w-stat__desc">Reduce of median file transfer size</p>
+    </div>
+  </div>
+</div>
+
+Traditionally, all our files were compressed using
+[gzip compression](https://en.wikipedia.org/wiki/Gzip), which is the most prevalent on the web for
+HTML compression. This compression protocol was initially implemented almost 30 years ago!
+
+<figure class="w-figure w-figure--inline-right">
+  <img src="./image7.jpg" alt="Brotli Compression" width="350">
+        <figcaption class="w-figcaption">
+        <a href="https://tools.paulcalvano.com/compression.php">Brotli Compression Level Estimator</a>
+        </figcaption>
+</figure>
+
+
+The newer [Brotli compression](https://en.wikipedia.org/wiki/Brotli) introduces compression
+improvements with almost no trade-offs, and is slowly becoming more popular, as described in the
+yearly Web Almanac [Compression chapter](https://almanac.httparchive.org/en/2020/compression#what-type-of-content-should-we-compress).
+It has been supported by [all the major browsers](https://caniuse.com/brotli) for a while.
+
+We enabled Brotli support on our nginx proxies in the edges, for all clients that support it.
+
+Moving to use Brotli compression reduced our median file transfer sizes by **21% - 25%** resulting
+in a reduced bandwidth usage and improved loading times.
+
+<figure class="w-figure">
+  <img src="./image8.jpg" alt="Mobile and Desktop Median Response Sizes" width="1600">
+  <figcaption class="w-figcaption">Median Response Sizes</figcaption>
+</figure>
+
+## Content Delivery Networks
+
+### Dynamic CDN selection
+
+At Wix, we have always used [CDNs](https://web.dev/content-delivery-networks/) to serve all the
+JavaScript code and images on user websites.
+
+Recently, we integrated with a solution by our DNS provider, to automatically select the best
+performing CDN according to the client's network and origin. This enabled us to serve the static
+files from the best location for each visitor, and prevent availability issues on a certain CDN.
+
+### Coming Soon… User Domains served by CDNs
+
+The final piece of the puzzle is serving the last, and most critical part, through a CDN - the HTML
+from the user domain.
+
+As described above, we created our own in-house solution to cache and serve the site-specific
+HTML and API results.
+Maintaining this solution in so many new regions also has its operational costs, and adding new
+locations becomes a process we need to manage and continually optimize.
+
+We are currently integrating with various Content Delivery Network providers to support serving the
+entire Wix site directly from CDN locations to improve the distribution of our servers across the
+globe and thus further improve response times. This is a challenge due to the large amount of
+domains we serve, which require SSL termination at the edge.
+
+Integrating with CDNs brings Wix websites closer than ever to the customer and comes with more
+improvements to the loading experience, including newer technologies such as HTTP/3 without added
+effort on our side.
+
+<hr>
+
+## Conclusion
+
+### A few words on performance monitoring
+
+Readers of this post will probably wonder how this translates to your Wix site performance results,
+and how we compare against other website platforms.
+
+Most of the work done above has been deployed in the past year, and some is still being rolled out.
+
+The Web Almanac by HTTPArchive recently published the
+[2020 edition](https://almanac.httparchive.org/en/2020) which includes an excellent chapter on
+[CMS user experience](https://almanac.httparchive.org/en/2020/cms).
+Keep in mind that many of the numbers described in this article are from the middle of 2020.
+
+We look forward to seeing the updated report in 2021, and are actively monitoring
+[CrUX](https://developers.google.com/web/tools/chrome-user-experience-report/)
+reports for our sites as well as our internal performance metrics.
+
+We are committed to continuously improve loading times and provide our users with a platform
+where they can build sites as they imagine, without compromising on performance.
+
+<figure class="w-figure">
+  <img src="./image9.jpg" alt="LCP, Speed Index and FCP for a Mobile site over time" width="1600">
+  <figcaption class="w-figcaption">LCP, Speed Index and FCP for a Mobile site over time</figcaption>
+</figure>
+
+DebugBear recently released a very interesting
+[Website Builder Performance Review](https://www.debugbear.com/blog/website-builder-performance-review),
+which touches on some of the areas I mentioned above and examines the performance of very simple
+sites built on each platform. This [site](https://matt05041.wixsite.com/bizsolutions) was built
+almost two years ago, and not modified since, but the platform is continually improving, and the
+site performance along with it, which can be witnessed by
+[viewing its data](https://www.debugbear.com/project/175/pageLoad/873/overview?dateRange=2019-03-31T21%3A00Z-to-2021-02-10T21%3A59Z)
+over the past year and a half.
+
+## So, how does **your** recent Wix site performance look like?
