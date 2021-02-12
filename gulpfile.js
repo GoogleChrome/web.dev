@@ -15,11 +15,14 @@
  */
 
 const gulp = require('gulp');
+const sassTask = require('./gulp-tasks/sass.js');
 const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
 const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
 const through2 = require('through2');
+
+const {defaultLocale} = require('./src/site/_data/site');
 
 /* eslint-disable max-len */
 const assetTypes =
@@ -67,7 +70,12 @@ gulp.task('copy-content-assets', () => {
       // they belong to.
       .pipe(
         rename((assetPath) => {
+          const defaultLocaleRegExp = new RegExp(`^${defaultLocale}/`);
           const parts = assetPath.dirname.split('/');
+          assetPath.dirname = assetPath.dirname.replace(
+            defaultLocaleRegExp,
+            '',
+          );
           // Landing pages should keep their assets.
           // e.g. en/vitals, en/about
           if (parts.length <= 2) {
@@ -86,26 +94,22 @@ gulp.task('copy-content-assets', () => {
           // Some assets are nested under directories which aren't part of
           // their url. For example, we have /en/blog/some-post/foo.jpg.
           // For these assets we need to remove the /blog/ directory so they
-          // can live at /en/some-post/foo.jpg since that's what we'll actually
+          // can live at /some-post/foo.jpg since that's what we'll actually
           // serve in production.
-          // e.g. en/blog/foo/bar.jpg -> en/foo/bar.jpg
+          // e.g. en/blog/foo/bar.jpg -> /foo/bar.jpg
           parts.splice(1, 1);
-          assetPath.dirname = parts.join('/');
+          assetPath.dirname = parts.join('/').replace(defaultLocaleRegExp, '');
         }),
       )
       .pipe(gulp.dest('./dist/'))
   );
 });
 
-gulp.task('copy-node_modules-assets', () => {
-  return gulp
-    .src(['./node_modules/@webcomponents/webcomponentsjs/bundles/*.js'])
-    .pipe(gulp.dest('./dist/lib/webcomponents/bundles/'));
-});
-
 gulp.task('copy-fonts', () => {
   return gulp.src('src/fonts/**/*').pipe(gulp.dest('dist/fonts/'));
 });
+
+gulp.task('sass', sassTask);
 
 gulp.task(
   'build',
@@ -113,13 +117,26 @@ gulp.task(
     'copy-global-images',
     'copy-misc',
     'copy-content-assets',
-    'copy-node_modules-assets',
     'copy-fonts',
+    sassTask,
   ),
 );
 
 gulp.task('watch', () => {
-  gulp.watch('./src/images/**/*', gulp.series('copy-global-images'));
-  gulp.watch('./src/misc/**/*', gulp.series('copy-misc'));
-  gulp.watch('./src/site/content/**/*', gulp.series('copy-content-assets'));
+  gulp.watch(
+    './src/images/**/*',
+    {ignoreInitial: true},
+    gulp.series('copy-global-images'),
+  );
+  gulp.watch(
+    './src/misc/**/*',
+    {ignoreInitial: true},
+    gulp.series('copy-misc'),
+  );
+  gulp.watch(
+    './src/site/content/**/*',
+    {ignoreInitial: true},
+    gulp.series('copy-content-assets'),
+  );
+  gulp.watch('./src/styles/**/*.scss', {ignoreInitial: true}, sassTask);
 });

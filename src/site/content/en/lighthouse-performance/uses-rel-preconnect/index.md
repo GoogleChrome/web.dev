@@ -67,6 +67,20 @@ You use it the exact same way:
 <link rel="dns-prefetch" href="https://example.com">.
 ```
 
+## Stack-specific guidance
+
+### Drupal
+
+Use [a module that supports user agent resource
+hints](https://www.drupal.org/project/project_module?f%5B0%5D=&f%5B1%5D=&f%5B2%5D=&f%5B3%5D=&f%5B4%5D=sm_field_project_type%3Afull&f%5B5%5D=&f%5B6%5D=&text=dns-prefetch&solrsort=iss_project_release_usage+desc&op=Search)
+so that you can install and configure preconnect or DNS prefetch resource hints.
+
+### Magento
+
+[Modify your themes's
+layout](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)
+and add preconnect or DNS prefetch resource hints.
+
 ## Resources
 
 - [Source code for **Preconnect to required origins** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preconnect.js)

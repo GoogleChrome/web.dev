@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2020-11-10
+updated: 2021-02-08
 tags:
   - blog
   - capabilities
@@ -233,6 +233,37 @@ working on. This makes it possible to keep a list of recently opened or edited f
 re-open the last file when the app is opened, etc. In the text editor, I store a list of the five
 most recent files the user has opened, making it easy to access those files again.
 
+The code example below shows storing and retrieving a file handle.
+You can [see this in action](https://filehandle-indexeddb.glitch.me/) over on Glitch
+(I use the [idb-keyval](https://www.npmjs.com/package/idb-keyval) library for brevity).
+
+```js
+import { get, set } from 'https://unpkg.com/idb-keyval@5.0.2/dist/esm/index.js';
+
+const pre = document.querySelector('pre');
+const button = document.querySelector('button');
+
+button.addEventListener('click', async () => {
+  try {
+    // Try retrieving the file handle.
+    const fileHandleOrUndefined = await get('file');    
+    if (fileHandleOrUndefined) {      
+      pre.textContent =
+          `Retrieved file handle "${fileHandleOrUndefined.name}" from IndexedDB.`;
+      return;
+    }
+    // This always returns an array, but we just need the first entry.
+    const [fileHandle] = await window.showOpenFilePicker();
+    // Store the file handle.
+    await set('file', fileHandle);    
+    pre.textContent =
+        `Stored file handle for "${fileHandle.name}" in IndexedDB.`;
+  } catch (error) {
+    alert(error.name, error.message);
+  }
+});
+```
+
 Since permissions currently are not persisted between sessions, you should verify whether the user
 has granted permission to the file using `queryPermission()`. If they haven't, use
 `requestPermission()` to (re-)request it.
@@ -362,19 +393,19 @@ elem.addEventListener('drop', async (e) => {
 });
 ```
 
-### Accessing the origin-private file system
+### Accessing the origin private file system
 
-The origin-private file system is a storage endpoint that, as the name suggests, is private to the
+The origin private file system is a storage endpoint that, as the name suggests, is private to the
 origin of the page. While browsers will typically implement this by persisting the contents of this
-origin-private file system to disk somewhere, it is _not_ intended that the contents be easily user
+origin private file system to disk somewhere, it is _not_ intended that the contents be easily user
 accessible. Similarly, there is _no_ expectation that files or directories with names matching the
-names of children of the origin-private file system exist.
+names of children of the origin private file system exist.
 While the browser might make it seem that there are files, internally—since this is an
-origin-private file system—the browser might store these "files" in a database or any
+origin private file system—the browser might store these "files" in a database or any
 other data structure.
 Essentially: what you create with this API, do _not_ expect to find it 1:1 somewhere on the hard disk.
 You can operate as usual on the
-origin-private file system once you have access to the root `FileSystemDirectoryHandle`.
+origin private file system once you have access to the root `FileSystemDirectoryHandle`.
 
 ```js
 const root = await navigator.storage.getDirectory();
@@ -396,7 +427,7 @@ It is not possible to completely polyfill the File System Access API methods.
 - The `showDirectoryPicker()` method can be somewhat emulated with the non-standard
   `<input type="file" webkitdirectory>` element.
 
-We have developed a library called [browser-nativefs](/browser-nativefs/) that uses the File
+We have developed a library called [browser-fs-access](/browser-fs-access/) that uses the File
 System Access API wherever possible and that falls back to these next best options in all other cases.
 
 ## Security and permissions {: #security-considerations }

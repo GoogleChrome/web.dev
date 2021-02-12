@@ -274,7 +274,7 @@ the currently used JavaScript heap size from the [`performance.memory` API][perf
 
 The `performance.memory` API only provides information about the JavaScript heap size, which means
 it doesn't include memory used by the popup's document and resources. To get the full picture, we'd
-need to use the new [`performance.measureMemory()` API][performance-measurememory] currently being
+need to use the new [`performance.measureUserAgentSpecificMemory()` API][performance-measurememory] currently being
 trialled in Chrome.
 
 ## Solutions for avoiding detached window leaks {: #solutions }

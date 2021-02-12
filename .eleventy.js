@@ -20,7 +20,6 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 const toc = require('eleventy-plugin-toc');
-const resourcePath = require('./src/build/resource-path');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAttrs = require('markdown-it-attrs');
@@ -44,6 +43,7 @@ const EventTable = require(`./${componentsDir}/EventTable`);
 const Glitch = require(`./${componentsDir}/Glitch`);
 const Hero = require(`./${componentsDir}/Hero`);
 const IFrame = require(`./${componentsDir}/IFrame`);
+const {Img} = require(`./${componentsDir}/Img`);
 const Instruction = require(`./${componentsDir}/Instruction`);
 const Label = require(`./${componentsDir}/Label`);
 const Meta = require(`./${componentsDir}/Meta`);
@@ -51,6 +51,7 @@ const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
 const SignPosts = require(`./${componentsDir}/SignPosts`);
 const Tooltip = require(`./${componentsDir}/Tooltip`);
+const {Video} = require(`./${componentsDir}/Video`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
 const collectionsDir = 'src/site/_collections';
@@ -86,6 +87,8 @@ const getPaths = require(`./${filtersDir}/get-paths`);
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
 const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
+const {purifyCss} = require(`./${transformsDir}/purify-css`);
+const {minifyHtml} = require(`./${transformsDir}/minify-html`);
 
 module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
@@ -208,6 +211,7 @@ module.exports = function (config) {
   config.addShortcode('Glitch', Glitch);
   config.addShortcode('Hero', Hero);
   config.addShortcode('IFrame', IFrame);
+  config.addShortcode('Img', Img);
   config.addShortcode('Instruction', Instruction);
   config.addPairedShortcode('Label', Label);
   config.addShortcode('Meta', Meta);
@@ -215,6 +219,7 @@ module.exports = function (config) {
   config.addShortcode('PostCard', PostCard);
   config.addShortcode('SignPosts', SignPosts);
   config.addShortcode('Tooltip', Tooltip);
+  config.addShortcode('Video', Video);
   config.addShortcode('YouTube', YouTube);
 
   // This table is used for the web.dev/LIVE event, and should be taken down
@@ -230,23 +235,8 @@ module.exports = function (config) {
 
   if (isProd) {
     config.addTransform('responsive-images', responsiveImages);
-  }
-
-  // ----------------------------------------------------------------------------
-  // CHECKS
-  // ----------------------------------------------------------------------------
-  if (isProd) {
-    // We generate the paths to our JS and CSS entrypoints as a side-effect
-    // of their build scripts, so make sure they exist in prod builds.
-    ['css', 'js'].forEach((name) => {
-      try {
-        resourcePath(name);
-      } catch (e) {
-        throw new Error(
-          `could not find valid JSON path inside src/site/_data/: ${name} (${e})`,
-        );
-      }
-    });
+    config.addTransform('purifyCss', purifyCss);
+    config.addTransform('minifyHtml', minifyHtml);
   }
 
   // ----------------------------------------------------------------------------

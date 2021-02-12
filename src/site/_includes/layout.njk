@@ -1,8 +1,6 @@
 ---
 show_banner: true
 tags: []
-eleventyComputed:
-  canonicalUrl: "/{{page.fileSlug}}/"
 ---
 
 <!DOCTYPE html>
@@ -10,6 +8,19 @@ eleventyComputed:
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if process.env.ELEVENTY_ENV === 'prod' %}
+      {# CSS will be injected by purify-css transform. #}
+      <!-- __PURGECSS_INJECT -->
+    {% else %}
+      <link rel="stylesheet" href="/css/main.css">
+    {% endif %}
+
+    {# We only preload Material Icons because the site can't render properly without them. #}
+    {# For Google Sans we use font-display: swap because preloading too many fonts can hurt performance. #}
+    {# https://www.zachleat.com/web/preload/ #}
+    <link rel="preload" as="font" crossorigin href="/fonts/material-icons/regular.woff2">
+
     <meta name="theme-color" content="#fff"/>
 
     {% if noindex or draft -%}
@@ -21,19 +32,6 @@ eleventyComputed:
 
     {% Meta locale, page, collections, renderData %}
 
-    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
-    <link rel="preconnect" href="//www.google-analytics.com" crossorigin="" />
-    <link rel="preconnect" href="//firebaseremoteconfig.googleapis.com" crossorigin="" />
-    <link rel="preconnect" href="//firebaseinstallations.googleapis.com" crossorigin="" />
-    <link rel="preconnect" href="//webdev.imgix.net" crossorigin="" />
-
-    <link rel="preload" as="style" href="{{ resourceCSS.path | stripQueryParamsDev }}" />
-    {# We only preload Material Icons because the site can't render properly without them. #}
-    {# For Google Sans we use font-display: swap because preloading too many fonts can hurt performance. #}
-    {# https://www.zachleat.com/web/preload/ #}
-    <link rel="preload" as="font" crossorigin href="/fonts/material-icons/regular.woff2">
-
-    <link rel="stylesheet" href="{{ resourceCSS.path | stripQueryParamsDev }}" />
     <link rel="manifest" href="/manifest.webmanifest" />
     {# Include default icon even though we have a manifest #}
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -41,10 +39,17 @@ eleventyComputed:
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
-    <script async src="//www.google-analytics.com/analytics.js"></script>
-    <script defer src="{{ resourceJS.path | stripQueryParamsDev }}"></script>
+    <script type="module" src="{{ helpers.hashForProd('/js/app.js') }}"></script>
+    {# Add a facility for pages to declare an array of script paths. #}
+    {# If no scripts are declared we will use the default page script. #}
+    {# default.js loads the basic set of custom elements that all pages need. #}
+    {% for item in pageScripts %}
+      <script type="module" src="{{ helpers.hashForProd(item) }}"></script>
+    {% else %}
+      <script type="module" src="{{ helpers.hashForProd('/js/default.js') }}"></script>
+    {% endfor %}
   </head>
-  <body class="unresolved" data-version="{{ resource.version }}">
+  <body class="unresolved">
     {#
       Make the snackbar the first item in the DOM so we don't have to steal the
       user's focus on initial visit to show them a cookie banner. Instead, the
@@ -162,5 +167,6 @@ eleventyComputed:
       </div>
     </main>
     {% include 'partials/footer.njk' %}
+    {% include 'partials/analytics.njk' %}
   </body>
 </html>

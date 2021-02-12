@@ -94,6 +94,18 @@ for updates.
 See [Tooling.Report's Preloading Assets](https://bundlers.tooling.report/non-js-resources/html/preload-assets/?utm_source=web.dev&utm_campaign=lighthouse&utm_medium=uses-rel-preload)
 page.
 
+## Stack-specific guidance
+
+### Angular
+
+[Preload routes](/route-preloading-in-angular/) ahead of time to speed up navigation.
+
+### Magento
+
+[Modify your themes's
+layout](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)
+and add `<link rel=preload>` tags.
+
 ## Resources
 
 - [Source code for **Preload key requests** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preload.js)

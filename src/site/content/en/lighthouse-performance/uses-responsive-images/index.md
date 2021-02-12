@@ -52,6 +52,53 @@ can help automate the process of converting an image into multiple formats.
 There are also image CDNs which let you generate multiple versions,
 either when you upload an image, or request it from your page.
 
+## Stack-specific guidance
+
+### AMP
+
+Use the
+[`amp-img`](https://amp.dev/documentation/components/amp-img/?format=websites)
+component's support for
+[`srcset`](https://web.dev/use-srcset-to-automatically-choose-the-right-image/)
+to specify which image assets to use based on the screen size. See
+also [Responsive images with srcset, sizes &
+heights](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction/).
+
+### Angular
+
+Consider using the [`BreakpointObserver`
+utility](https://material.angular.io/cdk/layout/overview) in the Component Dev
+Kit (CDK) to manage image breakpoints.
+
+### Drupal
+
+Use the built-in [Responsive Image
+Styles](https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8)
+feature (available in Drupal 8 and above) when rendering image fields through
+view modes, views, or images uploaded through the WYSIWYG editor.
+
+### Gatsby
+
+Use the [gatsby-image](https://www.gatsbyjs.com/plugins/gatsby-image/) plugin to
+generate multiple smaller images for smartphones and tablets. It can also create
+SVG image placeholders for efficient lazy loading.
+
+### Joomla
+
+Consider using a [responsive images
+plugin](https://extensions.joomla.org/instant-search/?jed_live%5Bquery%5D=responsive%20images).
+
+### WordPress
+
+Upload images directly through the [media
+library](https://wordpress.org/support/article/media-library-screen/) to ensure
+that the required image sizes are available, and then insert them from the media
+library or use the image widget to ensure the optimal image sizes are used
+(including those for the responsive breakpoints). Avoid using `Full Size` images
+unless the dimensions are adequate for their usage. See [Inserting images into
+posts and
+pages](https://wordpress.org/support/article/inserting-images-into-posts-and-pages/).
+
 ## Resources
 
 - [Source code for **Properly size images** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-responsive-images.js)

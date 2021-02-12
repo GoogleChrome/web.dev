@@ -106,7 +106,7 @@ worldwide](http://gs.statcounter.com/platform-market-share/desktop-mobile-tablet
 it's important to bear in mind that many of these users access the web through
 mobile LTE, 4G, 3G, and even 2G networks.
 As Ben Schwarz of Calibre points out in
-[this study of real world performance](https://building.calibreapp.com/beyond-the-bubble-real-world-performance-9c991dcd5342),
+[this study of real world performance](https://calibreapp.com/blog/beyond-the-bubble),
 the cost of prepaid data plans is decreasing,
 which in turn is making access to the internet more affordable in places where it once wasn't.
 Mobile devices and internet access are no longer luxuries.

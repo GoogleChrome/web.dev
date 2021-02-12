@@ -13,7 +13,7 @@ ol:not([class]) {
   counter-reset: ol-step-counter;
   list-style: none;
   margin: 32px 0;
-  padding-left: 48px;
+  padding-left: 32px;
   position: relative;
 }
 
@@ -51,7 +51,7 @@ ol:not([class]) > li::before {
 ul:not([class]) {
   list-style: none;
   margin: 32px 0;
-  padding-left: 48px;
+  padding-left: 24px;
   position: relative;
 }
 

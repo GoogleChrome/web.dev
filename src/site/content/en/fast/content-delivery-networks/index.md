@@ -144,7 +144,7 @@ Most CDNs will provide cache analytics. In addition, tools like [WebPageTest](ht
 At a minimum, one of these headers typically needs to be set in order for a resource to be cached by a CDN:
 
 *   `Cache-Control: max-age=`
-*   `Cache-Control: s-max-age=`
+*   `Cache-Control: s-maxage=`
 *   `Expires`
 
 In addition, although it does not impact if or how a resource is cached by a CDN, it is good practice to also set the [`Cache-Control: immutable`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Revalidation_and_reloading) directive.`Cache-Control: immutable` indicates that a resource "will not be updated during its freshness lifetime". As a result, the browser will not revalidate the resource when serving it from the browser cache, thereby eliminating an unnecessary server request. Unfortunately, this directive is only [supported](https://caniuse.com/#feat=mdn-http_headers_cache-control_immutable) by Firefox and Safari - it is not supported by Chromium-based browsers. This [issue](https://bugs.chromium.org/p/chromium/issues/detail?id=611416) tracks Chromium support for `Cache-Control: immutable`. Starring this issue can help encourage support for this feature.

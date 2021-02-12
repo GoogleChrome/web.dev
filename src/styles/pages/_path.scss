@@ -70,3 +70,11 @@
   margin: 0;
   padding: 0;
 }
+
+.w-path-link--external::after {
+  @include font-material-icon();
+  content: 'launch';
+  display: inline-block;
+  font-size: 1em;
+  vertical-align: middle;
+}

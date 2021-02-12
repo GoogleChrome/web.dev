@@ -1,0 +1,23 @@
+steps:
+  - name: node:12
+    entrypoint: npm
+    args: ['ci']
+  - name: node:12
+    entrypoint: npm
+    args: ['run', 'cloud-secrets']
+    env:
+    - 'PROJECT_ID=$PROJECT_ID'
+  - name: node:12
+    entrypoint: npm
+    args: ['run', 'build']
+    env:
+    - 'ELEVENTY_ENV=prod'
+  - name: node:12
+    entrypoint: npm
+    args: ['run', 'firebase-config']
+  - name: 'gcr.io/$PROJECT_ID/firebase'
+    args: ['deploy']
+  - name: node:12
+    entrypoint: npm
+    args: ['run', 'algolia']
+timeout: 1800s

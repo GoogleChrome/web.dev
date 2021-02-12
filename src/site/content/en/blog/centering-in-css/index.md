@@ -359,4 +359,4 @@ me](https://twitter.com/argyleink) your version, and I'll add it to the
 
 ## Community remixes
 
-Nothing to see here, yet!
+- [CSS Tricks](https://css-tricks.com/) with a [blog post](https://css-tricks.com/centering-in-css/)

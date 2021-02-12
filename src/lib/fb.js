@@ -1,7 +1,8 @@
 import {firebaseConfig} from 'webdev_config';
 import {store} from './store';
 import {clearSignedInState} from './actions';
-import loadFirebase from './utils/firebase-loader';
+import * as firebaseLoader from './utils/firebase-loader';
+const {loadFirebase} = firebaseLoader;
 import {trackError} from './analytics';
 
 const firebasePromise = loadFirebase('app', 'auth', 'performance').then(

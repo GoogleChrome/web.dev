@@ -5,7 +5,7 @@ authors:
   - petelepage
   - beaufortfrancois
 date: 2018-11-05
-updated: 2020-05-28
+updated: 2021-02-01
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -25,17 +25,17 @@ app is launched.
 Manifest files are [supported](https://developer.mozilla.org/en-US/docs/Web/Manifest#Browser_compatibility) in Chrome, Edge, Firefox, UC Browser, Opera,
 and the Samsung browser. Safari has partial support.
 
-## Create the manifest.webmanifest file {: #create }
+## Create the manifest file {: #create }
 
-The manifest file can have any name, but is commonly named
-`manifest.webmanifest` and served from the root (your website's top-level
-directory).
+The manifest file can have any name, but is commonly named `manifest.json` and
+served from the root (your website's top-level directory). The specification
+suggests the extension should be `.webmanifest`, but browsers also support
+`.json` extensions, which is may be easier for developers to understand.
 
 ```json
 {
   "short_name": "Weather",
   "name": "Weather: Do I need an umbrella?",
-  "description": "Weather forecast information",
   "icons": [
     {
       "src": "/images/icons-192.png",
@@ -67,6 +67,19 @@ directory).
       "description": "View weather information for tomorrow",
       "url": "/tomorrow?source=pwa",
       "icons": [{ "src": "/images/tomorrow.png", "sizes": "192x192" }]
+    }
+  ],
+  "description": "Weather forecast information",
+  "screenshots": [
+    {
+      "src": "/images/screenshot1.png",
+      "type": "image/png",
+      "sizes": "540x720"
+    },
+    {
+      "src": "/images/screenshot2.jpg",
+      "type": "image/jpg",
+      "sizes": "540x720"
     }
   ]
 }
@@ -212,13 +225,37 @@ The `shortcuts` property is an array of [app shortcut](/app-shortcuts) objects
 whose goal is to provide quick access to key tasks within your app. Each member
 is a dictionary that contains at least a `name` and a `url`.
 
+#### `description` {: #description }
+
+The `description` property describes the purpose of your app.
+
+#### `screenshots` {: #screenshots }
+
+The `screenshots` property is an array of image objects, representing your app
+in common usage scenarios. Each object must include the `src`, a `sizes`
+property, and the `type` of image.
+
+In Chrome, the image must respond to certain criteria:
+
+* Width and height must be at least 320px and at most 3840px.
+* The maximum dimension can't be twice larger than the minimum dimension.
+* Screenshots must have the same aspect ratio.
+* Only JPEG and PNG image formats are supported. 
+
+{% Aside 'gotchas' %}
+The `description` and `screenshots` properties are currently used only in Chrome
+for Android when a user wants to install your app. The experimental flag
+`chrome://flags/#mobile-pwa-install-use-bottom-sheet` flag must be enabled in
+Chrome 90.
+{% endAside %}
+
 ## Add the web app manifest to your pages {: #link-manifest }
 
 After creating the manifest, add a `<link>` tag to all the pages of your
 Progressive Web App. For example:
 
 ```html
-<link rel="manifest" href="/manifest.webmanifest">
+<link rel="manifest" href="/manifest.json">
 ```
 
 {% Aside 'gotchas' %}
