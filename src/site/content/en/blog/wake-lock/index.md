@@ -229,7 +229,7 @@ your computer from sleeping. The video below shows the macOS
 [Activity Monitor](https://support.apple.com/guide/activity-monitor/welcome/mac)
 indicating that Chrome has an active Screen Wake Lock that keeps the system awake.
 
-{% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/lSzssKSOAsAOe6VFfPUf.m4v", autplay="true" %}
+{% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/lSzssKSOAsAOe6VFfPUf.m4v", autplay="true", loop="true", width="800" %}
 
 ## Feedback {: #feedback }
 
