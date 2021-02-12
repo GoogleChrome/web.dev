@@ -4,7 +4,7 @@ title: Make it installable
 authors:
   - petelepage
 date: 2018-11-05
-updated: 2021-02-11
+updated: 2021-02-12
 description: |
   In this codelab, learn how to make a site installable using the
   beforeinstallprompt event.
@@ -26,7 +26,7 @@ It also has an install button that is hidden by default.
 When the browser fires the `beforeinstallprompt` event, that's the indication
 that the Progressive Web App can be installed and an install button can be shown
 to the user. The `beforeinstallprompt` event is fired when the PWA meets [the
-criteria for installability](/install-criteria/).
+installability criteria](/install-criteria/).
 
 {% Instruction 'remix', 'ol' %}
 1. Add a `beforeinstallprompt` event handler to the `window` object.
@@ -108,5 +108,5 @@ Congratulations, you app is now installable!
 
 Here are some additional things that you can do:
 
-+  [Detecting if your app is launched from the home screen](/customize-install/#detect-mode)
-+  [How to show the native app install prompt instead](https://developers.google.com/web/fundamentals/app-install-banners/native)
++  [Detect if your app is launched from the home screen](/customize-install/#detect-mode)
++  [Show the native app install prompt instead](https://developers.google.com/web/fundamentals/app-install-banners/native)
