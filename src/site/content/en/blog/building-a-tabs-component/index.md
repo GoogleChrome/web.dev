@@ -33,7 +33,7 @@ works across browsers. Try the [demo](https://gui-challenges.web.app/tabs/dist/)
 
 If you prefer video, here's a YouTube version of this post:
 
-<!-- {% YouTube 'PzvdREGR0Xw' %} -->
+{% YouTube 'PzvdREGR0Xw' %}
 
 ## Overview
 
@@ -64,14 +64,16 @@ appropriate scroll stop positions
 for browser handled in-page scroll anchoring and sharing support
 - Screen reader support with `<a>` and `id="#hash"` element markup
 - `prefers-reduced-motion` for enabling crossfade transitions and instant in-page scrolling
-- The in draft `@scroll-timeline` web feature for dynamically underlining the selected tab
+- The in draft `@scroll-timeline` web feature for dynamically underlining and color changing 
+the selected tab
 
 ### The HTML {: #markup }
 
 Fundamentally, the UX here is: click a link, have the URL represent the nested page state, 
 and then see the content area update as the browser scrolls to the matching element. 
+
 There are some structural content members in there: links and `:target`s. 
-We need a list of links, which a `<nav>` is great for, and a list of  
+We need a list of links, which a `<nav>` is great for, and a list of 
 `<article>` elements, which a `<section>` is great for. Each link hash will 
 match a section, letting the browser scroll things via anchoring.
 
@@ -145,8 +147,8 @@ There are 3 different types of scroll areas in this component:
 </figure>
 
 There's 2 different types of elements involved with scrolling:
-1. **A window.** A box with defined dimensions that has the `overflow` property style. 
-1. **An oversized surface.** In this layout, it's the list containers: nav links, 
+1. **A window** <br>A box with defined dimensions that has the `overflow` property style. 
+1. **An oversized surface** <br>In this layout, it's the list containers: nav links, 
 section articles, and article contents.
 
 #### `<snap-tabs>` layout {: #tabs-layout }
@@ -192,11 +194,11 @@ snap-tabs {
 {% endCompare %}
 
 Pointing back to the colorful 3-scroll diagram: 
-- `<header>` is now prepared to be the <b style="color: #FF00E2;">(pink)</b> scroll container, and 
+- `<header>` is now prepared to be the <b style="color: #FF00E2;">(pink)</b> scroll container. 
 - `<section>` is prepared to be the <b style="color: #008CFF;">(blue)</b> scroll container. 
 
 The frames I've highlighted below with [VisBug](https://a.nerdy.dev/gimme-visbug) 
-help us see the windows the scroll containers have created. 
+help us see the **windows** the scroll containers have created. 
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./header-section-layout.png" alt="">
@@ -553,7 +555,9 @@ At the time of writing this, the [browser support for `@scroll-timeline`](https:
 It's a [draft spec](https://drafts.csswg.org/scroll-animations-1/) with only experimental implementations. 
 It has a polyfill though, which I use in this demo. 
 
-##### `new ScrollTimeline()`
+##### ` ScrollTimeline`
+While CSS and JavaScript can both create scroll timelines, I opted into Javascript so I could 
+use live element measurements in the animation.
 
 ```js
 const sectionScrollTimeline = new ScrollTimeline({
@@ -584,8 +588,6 @@ Before I get into the keyframes of the animation, I think it's important to poin
 follower of the scrolling, `tabindicator`, will be animated based on a custom timeline, 
 our section's scroll. This completes the linkage, but is missing the final ingredient, 
 stateful points to animate between, also known as keyframes.
-
-[video: looping video where i'm hovering over variables in a breakpoint]
 
 #### Dynamic keyframes
 There's a really powerful pure declarative CSS way to animate with `@scroll-timeline`, 
@@ -618,6 +620,7 @@ used as a keyframe value.
 Here's example output, based on my fonts and browser preferences:
 
 TranslateX Keyframes:
+
 ```js
 [...tabnavitems].map(({offsetLeft}) => 
   `translateX(${offsetLeft}px)`)
@@ -627,6 +630,7 @@ TranslateX Keyframes:
 ```
 
 Width Keyframes:
+
 ```js
 [...tabnavitems].map(({offsetWidth}) => 
   `${offsetWidth}px`)
@@ -640,7 +644,7 @@ on the scroll snap position of the section scroller. The snap points create clea
 delineation between our keyframes and really add to the synchronized feel of the animation.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./both-tabs-contrast.png" alt="">
+  <img class="w-screenshot" src="./both-tabs-proper-contrast.png" style="max-inline-size: 50ch;" alt="">
 </figure>
 
 The user drives the animation with their interaction, seeing the width and 
