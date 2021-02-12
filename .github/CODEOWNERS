@@ -6,13 +6,13 @@
 * @GoogleChrome/web-dev-eng
 
 # Learn and blog
-src/site/content/ @GoogleChrome/web-dev-content @GoogleChrome/web-dev-approvers
-src/images/authors/ @GoogleChrome/web-dev-content @GoogleChrome/web-dev-approvers
+src/site/content/ @GoogleChrome/web-dev-content
+src/images/authors/ @GoogleChrome/web-dev-content
 
 # Learning paths
 # Add individual owners here if they are not members of web-dev-content or web-dev-approvers
-src/site/content/en/angular/ @mgechev @GoogleChrome/web-dev-content @GoogleChrome/web-dev-approvers
-src/site/content/en/react/ @housseindjirdeh @GoogleChrome/web-dev-content @GoogleChrome/web-dev-approvers
+src/site/content/en/angular/ @mgechev @GoogleChrome/web-dev-content
+src/site/content/en/react/ @housseindjirdeh @GoogleChrome/web-dev-content
 
 # Newsletter
 src/site/content/en/newsletter/ @GoogleChrome/web-dev-eng
@@ -36,7 +36,7 @@ src/site/content/en/authors/ @GoogleChrome/web-dev-eng
 *.sh @GoogleChrome/web-dev-eng
 
 # Exceptions
-src/site/_data/authorsData.json @GoogleChrome/web-dev-content @GoogleChrome/web-dev-approvers
-src/site/_data/tagsData.json @GoogleChrome/web-dev-content @GoogleChrome/web-dev-approvers
-src/site/_data/paths/*.json @GoogleChrome/web-dev-content @GoogleChrome/web-dev-approvers
-redirects.yaml @GoogleChrome/web-dev-content @GoogleChrome/web-dev-approvers
+src/site/_data/authorsData.json @GoogleChrome/web-dev-content
+src/site/_data/tagsData.json @GoogleChrome/web-dev-content
+src/site/_data/paths/*.json @GoogleChrome/web-dev-content
+redirects.yaml @GoogleChrome/web-dev-content
