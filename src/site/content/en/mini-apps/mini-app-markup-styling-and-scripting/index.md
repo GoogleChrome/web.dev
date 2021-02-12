@@ -176,7 +176,7 @@ JavaScript code cannot be executed via `eval()` and no functions can be created 
 [JavaScriptCore](https://developer.apple.com/documentation/javascriptcore) on devices, and V8 or
 [NW.js](https://nwjs.io/) in the simulator. Coding with ES6 or newer syntax is usually possible,
 since the particular DevTools automatically transpile the code to ES5 if the build target is an
-operating system with an older WebView implementation (see [later](/project-structure-lifecycle-and-bundling/#the-build-process)). The
+operating system with an older WebView implementation (see [later](/mini-app-project-structure-lifecycle-and-bundling/#the-build-process)). The
 documentation of the super app providers explicitly mentions that their scripting languages are not
 to be confused with and are distinct from JavaScript. This statement, however, refers mostly just to
 the way modules work, that is, that they do not support standard
@@ -240,7 +240,7 @@ console.log(tools.msg);
 ### JavaScript bridge API
 
 The JavaScript bridge that connects mini apps with the native operating system renders working with
-native capabilities possible (see [Access to powerful features](/what-are-mini-apps/#access-to-powerful-features). It
+native capabilities possible (see [Access to powerful features](/mini-app-about/#access-to-powerful-features). It
 also offers a number of convenience methods. For an overview, you can check out the different APIs
 of [WeChat](https://developers.weixin.qq.com/miniprogram/en/dev/api/),
 [Alipay](https://opendocs.alipay.com/mini/api),

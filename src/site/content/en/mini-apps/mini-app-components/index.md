@@ -223,7 +223,7 @@ The file `custom.swan` contains the markup and `custom.css` the CSS.
 
 The file `custom.js` contains the logic. The component lifecycle functions are `attached()`,
 `detached()`, `created()`, and `ready()`. The component can additionally also react on
-[page lifecycle events](/project-structure-lifecycle-and-bundling/#mini-app-lifecycle), namely `show()` and `hide()`.
+[page lifecycle events](/mini-app-project-structure-lifecycle-and-bundling/#mini-app-lifecycle), namely `show()` and `hide()`.
 
 ```js
 Component({
@@ -270,7 +270,7 @@ The custom component can then be imported in `index.json`, the key of the import
 ```
 
 {% Banner 'neutral' %}
-  👉 Continue reading to learn about the [project structure, lifecycle, and bundling](/project-structure-lifecycle-and-bundling/) of mini apps.
+  👉 Continue reading to learn about the [project structure, lifecycle, and bundling](/mini-app-project-structure-lifecycle-and-bundling/) of mini apps.
 {% endBanner %}
 
 ## Acknowledgements

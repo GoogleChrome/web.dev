@@ -283,7 +283,7 @@ WeChat platform.
 </figure>
 
 {% Banner 'neutral' %}
-  👉 In the next chapter, you will learn how to [program the mini app way](/programming-the-mini-app-way/).
+  👉 In the next chapter, you will learn how to [program the mini app way](/mini-app-programming-way/).
 {% endBanner %}
 
 ## Acknowledgements

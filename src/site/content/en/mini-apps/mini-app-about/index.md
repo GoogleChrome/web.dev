@@ -14,7 +14,7 @@ tags:
 ## Building blocks and compatibility
 
 Mini apps are small (commonly less than 4MB) apps that require a
-[super app](/for-mini-apps-you-need-super-apps/#for-mini-apps-you-need-super-apps)
+[super app](/mini-app-super-apps/#for-mini-apps-you-need-super-apps)
 to run. What they have in
 common, independent of the super app, is that they are built with ("dialects" of) the web
 technologies HTML, CSS, and JavaScript. The runtime of a mini app is a
@@ -95,7 +95,7 @@ provider. Mini apps have to declare the origins they request additional data fro
 
 Mini apps are kept in the cache of the super app, so the next time the user launches a cached mini
 app, it loads almost instantly. If there is an update, a new app package is loaded. The version
-number can be part of the launch URI (see [Discovery](/what-are-mini-apps/#discovery)), so the super app knows early on
+number can be part of the launch URI (see [Discovery](/mini-app-about/#discovery)), so the super app knows early on
 if the locally cached version is still current. The launch URI also optionally contains the desired
 page of the mini app, so deep-linking into specific pages of mini apps is possible. Via a sitemap,
 mini apps can declare which of their pages should be indexable by the super app provider's mini app
@@ -118,7 +118,7 @@ why they are, for example,
 [trying to access motion sensors](https://twitter.com/search?q=why%20website%20access%20%22motion%20sensors%22%20&src=typed_query&f=live)
 without a reason that is apparent to the user. The incentive to fingerprint the user is notably a
 lot lower compared to the web, since the user is typically already logged in to the super app anyway
-(see [Identity, payement, and social graph](/what-are-mini-apps/#identity-payment-social-graph)).
+(see [Identity, payement, and social graph](/mini-app-about/#identity-payment-social-graph)).
 
 Whenever a mini app performs an operation that requires a special permission, a prompt is shown to
 the user that, if enforced by the platform, also includes the usage justification, as stated by the
@@ -143,7 +143,7 @@ request data from.
 
 The hosting super app offers access to powerful APIs via a JavaScript bridge that gets injected into
 the WebView offered by the super app (see
-[Building blocks and compatibility](/what-are-mini-apps/#building-blocks-and-compatibility)). This JavaScript bridge
+[Building blocks and compatibility](/mini-app-about/#building-blocks-and-compatibility)). This JavaScript bridge
 provides hooks into the operating system's APIs. For example, a mini app JavaScript function like
 `getConnectedWifi()`—the capability of a mini app to obtain the name of the currently active Wi-Fi
 network—under the hood is facilitated through Android's
@@ -196,7 +196,7 @@ game and challenge their contacts through status updates. The mini app is then o
 users can enter into competition without any friction and the mini app thereby grow its reach.
 
 {% Banner 'neutral' %}
-  👉 In the next chapter, you will learn [what sets mini apps apart from H5 apps and QuickApp](/what-are-h5-and-quickapp).
+  👉 In the next chapter, you will learn [what sets mini apps apart from H5 apps and QuickApp](/mini-app-what-are-h5-and-quickapp).
 {% endBanner %}
 
 ## Acknowledgements

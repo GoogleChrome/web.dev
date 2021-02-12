@@ -95,7 +95,7 @@ title is displayed correctly on Windows.
 
 Most mini apps are not optimized for desktop yet and run in a fixed, non-resizable window that
 includes the well-known UI affordances and permission prompts as on mobile (see
-[The user experience](/what-are-mini-apps/#the-user-experience)).
+[The user experience](/mini-app-about/#the-user-experience)).
 
 <figure class="w-figure">
   <img src="starbucks-macos-permission.png" alt="The Starbucks mini app running on macOS asking for the user profile permission which the user can grant via a prompt shown at the bottom." width="300">

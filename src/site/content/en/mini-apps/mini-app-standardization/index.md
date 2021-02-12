@@ -20,7 +20,7 @@ as of April 2019, and Baidu mini apps in the same month
 [115 million active users](https://kr-asia.com/the-mau-of-wechat-alipay-and-baidus-mini-programs-now-add-up-to-more-than-1-billion).
 Effectively companies have traded building apps for the two operating systems iOS and Android and
 additionally the web for building apps for three or more
-[super apps platforms](/for-mini-apps-you-need-super-apps/#for-mini-apps-you-need-super-apps).
+[super apps platforms](/mini-app-super-apps/#for-mini-apps-you-need-super-apps).
 The differences
 between each super app platform may not be as big as the differences between Android, iOS, and the
 web, but nevertheless they exist. Where on Android, iOS, and the web, we have seen cross-platform
@@ -81,7 +81,7 @@ Leaders of the group introduced the effort as follows:
 As a curious member of the group, I look forward to seeing where this endeavor is headed.
 
 {% Banner 'neutral' %}
-  👉 The following chapter looks at [other mini app runtime environments](/other-mini-app-runtime-environments/) apart from mobile devices.
+  👉 The following chapter looks at [alternative mini app runtime environments](/mini-app-alternative-runtime-environments/) apart from mobile devices.
 {% endBanner %}
 
 ## Acknowledgements

@@ -44,7 +44,7 @@ project's demo.
 - [China Mobile Terminal Corporation](https://www.chinamobileltd.com/tc/global/home.php)
 
 While the technology of Quick App is comparable to "regular" mini apps (see
-[Building blocks and compatibility](/what-are-mini-apps/#building-blocks-and-compatibility)), the discovery of Quick App
+[Building blocks and compatibility](/mini-app-about/#building-blocks-and-compatibility)), the discovery of Quick App
 is different. They are meant to be listed in stores, which come pre-installed on devices of the
 manufacturers in the alliance, but can also be shared by means of a deep link (see the
 [Quick App showcase](https://www.quickapp.cn/quickAppShow)). They do not run in the context of a

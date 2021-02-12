@@ -34,7 +34,7 @@ The [model–view–viewmodel](/mini-app-markup-styling-and-scripting/#markup-la
 separation of the development of the graphical user interface (the view) via a markup language from
 the development of the back-end logic (the model)—means the view is not dependent on any specific model platform.
 While there are some documented [disadvantages](https://docs.microsoft.com/en-us/archive/blogs/johngossman/advantages-and-disadvantages-of-m-v-vm) of the pattern, in general it works really well for applications of the complexity of mini apps.
-It can shine especially with rich templating libraries (see [next chapter](/an-example-project/)).
+It can shine especially with rich templating libraries (see [next chapter](mini-app-example-project/)).
 
 ## Page-wise thinking
 
@@ -46,7 +46,7 @@ Most importantly, building this way means you get code-splitting for free. Each 
 
 ## Build process
 
-Mini apps have [no visible build process](/project-structure-lifecycle-and-bundling/#the-build-process).
+Mini apps have [no visible build process](/mini-app-project-structure-lifecycle-and-bundling/#the-build-process).
 On the web, modern build tools like [Snowpack](https://www.snowpack.dev/) leverage JavaScript's native
 [module system](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 (known as ESM) to avoid unnecessary work and stay fast no matter how big a project grows.
@@ -62,7 +62,7 @@ Where mini apps run in WebViews and depend on a [JavaScript bridge](/mini-app-ma
 on the web these powerful capabilities are available directly.
 
 {% Banner 'neutral' %}
-  👉 Read on to see an [example project](/an-example-project/) that puts this way of programming into practice.
+  👉 Read on to see an [example project](mini-app-example-project/) that puts this way of programming into practice.
 {% endBanner %}
 
 ## Acknowledgements

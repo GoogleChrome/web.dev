@@ -27,11 +27,11 @@ into many of the aspects that make a difference when using and creating mini app
 [styling](/mini-app-markup-styling-and-scripting/#styling), and
 [scripting](/mini-app-markup-styling-and-scripting/#scripting) approaches, over to the
 [component model](/mini-app-components/), and finally to the overall
-[architecture](/project-structure-lifecycle-and-bundling/); mini apps provide learning and
+[architecture](/mini-app-project-structure-lifecycle-and-bundling/); mini apps provide learning and
 inspiration opportunities for app developers, and even so for those who purely aim for the web.
 
 My initial experiments with
-[building a web application the mini app way](/an-example-project/) were
+[building a web application the mini app way](mini-app-example-project/) were
 successful. Future work will show to what extent this model is performant and flexible enough to
 cater for the many shapes that web apps can take. My current _ad-hoc_ approach can be formalized by
 packaging up the relevant pieces of code in a dedicated library, `mini-app.js` if you will. What is
@@ -41,7 +41,7 @@ is about applications and not documents.
 I see great potential for improvement with the entire web development experience by taking
 inspiration from the various mini apps DevTools. From the easy
 [(remote) on-device testing feature](/mini-app-devtools/#simulator-and-real-device-testing-and-debugging)
-to the packaging and [building](/project-structure-lifecycle-and-bundling/#the-build-process)
+to the packaging and [building](/mini-app-project-structure-lifecycle-and-bundling/#the-build-process)
 experience; the integration of the [IDE](/mini-app-devtools/#mini-app-ides) with the DevTools
 environment offers a lot of starting points for making developers' lives easier.
 
