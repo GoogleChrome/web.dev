@@ -58,7 +58,7 @@ does not have all features of a domestic account.
 
 - **WeChat:** [iOS](https://apps.apple.com/us/app/wechat/id414478124),
   [Android](https://weixin.qq.com/cgi-bin/readtemplate?uin=&stype=&promote=&fr=&lang=zh_CN&ADTAG=&check=false&t=weixin_download_method&sys=android&loc=weixin,android,web,0),
-  [macOS](https://mac.weixin.qq.com/), [Windows](https://pc.weixin.qq.com/))
+  [macOS](https://mac.weixin.qq.com/), [Windows](https://pc.weixin.qq.com/)
 - **Baidu:** [iOS](https://apps.apple.com/us/app/%E7%99%BE%E5%BA%A6/id382201985),
   [Android](https://play.google.com/store/apps/details?id=com.baidu.searchbox&hl=en)
 - **Alipay:** [iOS](https://itunes.apple.com/app/id333206289?mt=8),
