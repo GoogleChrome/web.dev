@@ -9,7 +9,6 @@ authors:
 date: 2021-02-12
 updated: 2021-02-12
 hero: hero.jpg
-thumbnail: thumbnail.jpg
 alt: A woman sitting in front of a wooden desk photo.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -146,7 +145,7 @@ devices.
   Uri Shaked. Note that Bluetooth devices may also speak the HID or serial
   protocols.
 
-If wired, check out these APIs in this specific order: 
+If wired, check out these APIs in this specific order:
 
 1. With [WebHID], understanding HID reports and report descriptors through
    [collections] is key to your comprehension of this device. This can be
