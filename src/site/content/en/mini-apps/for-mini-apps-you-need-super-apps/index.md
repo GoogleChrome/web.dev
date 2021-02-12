@@ -18,7 +18,7 @@ You might have a banking app. You might have an app for buying public transit ti
 have an app for getting directions, etc. In this post, I introduce you to the concept of a different
 kind of app, namely mini apps, sometimes also referred to as mini programs or applets. I first
 provide some background on the various mini app platforms and their developer experience, and then
-focus on things the Web can learn from mini apps. But before I start writing about mini apps, I
+focus on things the web can learn from mini apps. But before I start writing about mini apps, I
 first need to talk about super apps.
 
 ## What are super apps?

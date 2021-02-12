@@ -14,9 +14,9 @@ tags:
 ## Building blocks and compatibility
 
 Mini apps are small (commonly less than 4MB) apps that require a
-[super app](/what-are-super-apps/#what-are-super-apps)
+[super app](/for-mini-apps-you-need-super-apps/#for-mini-apps-you-need-super-apps)
 to run. What they have in
-common, independent of the super app, is that they are built with ("dialects" of) the Web
+common, independent of the super app, is that they are built with ("dialects" of) the web
 technologies HTML, CSS, and JavaScript. The runtime of a mini app is a
 [WebView](https://research.google/pubs/pub46739/) in the super app, not the underlying operating
 system, which means mini apps are cross platform. What this means is that the same mini app can run
@@ -85,7 +85,7 @@ and Google with its [Design for Android](https://developer.android.com/design) r
 ## Serving
 
 Rather than being served piece by piece as separate resources, mini apps are served as encrypted
-packaged apps, that is, as archives that contain all resources in just one file. Unlike regular Web
+packaged apps, that is, as archives that contain all resources in just one file. Unlike regular web
 apps, they are also not served from the particular origin of the mini app creator, but from the
 super app provider directly. They can still access APIs from the servers of the mini app creator,
 but the core resources (commonly referred to as the app shell), must be served from the super app
@@ -111,13 +111,13 @@ crawler.
 ## Security and permissions
 
 Mini apps are reviewed by the super app provider, which means users perceive them as more secure
-than Web apps. They need to declare their potentially required permissions beforehand in a manifest
+than web apps. They need to declare their potentially required permissions beforehand in a manifest
 or mini app configuration file, which, for some providers, also requires explanations for why each
 permission is needed. Mini apps can of course still lie, but they would have a hard time justifying
 why they are, for example,
 [trying to access motion sensors](https://twitter.com/search?q=why%20website%20access%20%22motion%20sensors%22%20&src=typed_query&f=live)
 without a reason that is apparent to the user. The incentive to fingerprint the user is notably a
-lot lower compared to the Web, since the user is typically already logged in to the super app anyway
+lot lower compared to the web, since the user is typically already logged in to the super app anyway
 (see [Identity, payement, and social graph](/what-are-mini-apps/#identity-payment-social-graph)).
 
 Whenever a mini app performs an operation that requires a special permission, a prompt is shown to

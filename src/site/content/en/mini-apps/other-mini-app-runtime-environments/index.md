@@ -180,7 +180,7 @@ the desktop.
 
 ## Web-based mini apps
 
-There are some mini app platforms that are Web-based, but that depend on the presence of a special
+There are some mini app platforms that are web-based, but that depend on the presence of a special
 WebView to unlock their full potential.
 
 ### LINE
@@ -192,7 +192,7 @@ distribution. The service is a subsidiary of Korean internet search engine compa
 [Naver Corporation](http://www.navercorp.com/).
 
 Since LINE [mini apps](https://developers.line.biz/en/docs/line-mini-app/quickstart/) is
-[essentially just a regular Web app](https://developers.line.biz/en/docs/line-mini-app/discover/specifications/#supported-platforms-and-versions)
+[essentially just a regular web app](https://developers.line.biz/en/docs/line-mini-app/discover/specifications/#supported-platforms-and-versions)
 (see [sample app](https://github.com/line/line-liff-v2-starter)) that pulls in the
 [LINE Front-end Framework](https://developers.line.biz/en/docs/liff/developing-liff-apps/#developing-a-liff-app)
 (LIFF),  it can also be accessed outside of the main LINE app through special
@@ -214,9 +214,9 @@ you have a LINE account.
 </figure>
 
 <figure class="w-figure">
-  <img src="line-playground-web.png" alt="The LINE Playground demo app running in the Web browser showing `liff.getOS()` returning 'web'.">
+  <img src="line-playground-web.png" alt="The LINE Playground demo app running in the web browser showing `liff.getOS()` returning 'web'.">
   <figcaption class="w-figure">
-   The LINE Playground demo app running in the Web browser.
+   The LINE Playground demo app running in the web browser.
   </figcaption>
 </figure>
 

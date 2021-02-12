@@ -23,7 +23,7 @@ file that contains build information. All the pages are stored in individual sub
 `pages` folder. Each page subfolder contains a CSS file, a JS file, an HTML file, and an optional
 configuration JSON file. All files must be named like their containing folder, apart from the file
 extensions. Like that, the mini app just needs a pointer to the directory in the `app.json` file
-(the manifest-like file), and can find all subresources dynamically. From the perspective of a Web
+(the manifest-like file), and can find all subresources dynamically. From the perspective of a web
 developer, mini apps are thus multi page apps.
 
 ```bash

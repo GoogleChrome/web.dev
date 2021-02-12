@@ -13,15 +13,15 @@ tags:
 
 ## What has worked well for mini apps
 
-In this chapter, I want to look at lessons I learned from researching mini apps from a Web developer's point of view,
-or answer the question what does it mean to develop the mini app way.
+In this chapter, I want to look at lessons I learned from researching mini apps from a web
+developer's point of view, or answer the question what does it mean to develop the mini app way.
 
 ## Components
 
 Rather than reinvent the wheel and make developers build yet another implementation of common UI paradigms like tabs,
 accordions, carousels, etc., mini apps just ship with a default selection of components that is extensible in case you need more.
-On the Web, there are likewise many options, some of which I have listed in the [chapter on mini app components](/mini-app-components/#web-components).
-In an ideal world, component libraries on the Web were built in a way that you could mix them freely.
+On the web, there are likewise many options, some of which I have listed in the [chapter on mini app components](/mini-app-components/#web-components).
+In an ideal world, component libraries on the web were built in a way that you could mix them freely.
 In practice, too many times, there is a certain lock-in regarding a design system you need to buy in to when you use a component,
 or the component library is distributed in a way that it is all or nothing, but no individual components can be easily added to a project.
 There are, however, atomic components that you can use in isolation, or libraries like [generic-components](https://github.com/thepassle/generic-components)
@@ -47,7 +47,7 @@ Most importantly, building this way means you get code-splitting for free. Each 
 ## Build process
 
 Mini apps have [no visible build process](/project-structure-lifecycle-and-bundling/#the-build-process).
-On the Web, modern build tools like [Snowpack](https://www.snowpack.dev/) leverage JavaScript's native
+On the web, modern build tools like [Snowpack](https://www.snowpack.dev/) leverage JavaScript's native
 [module system](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 (known as ESM) to avoid unnecessary work and stay fast no matter how big a project grows.
 While it is early days for technologies like [Web Bundles](/web-bundles/), it is something that can be easily added
@@ -55,11 +55,11 @@ to the build process.
 
 ## Powerful capabilities
 
-The Web platform has gained many [new capabilities](/tags/capabilities/) recently.
+The web platform has gained many [new capabilities](/tags/capabilities/) recently.
 Access to [devices](/tags/devices/) via [Bluetooth](/bluetooth/), [USB](/usb/), [HID](/hid/), [serial](/serial/),
 and [NFC](/nfc/) is all possible now.
 Where mini apps run in WebViews and depend on a [JavaScript bridge](/mini-app-markup-styling-and-scripting/#javascript-bridge-api),
-on the Web these powerful capabilities are available directly.
+on the web these powerful capabilities are available directly.
 
 {% Banner 'neutral' %}
   👉 Read on to see an [example project](/an-example-project/) that puts this way of programming into practice.

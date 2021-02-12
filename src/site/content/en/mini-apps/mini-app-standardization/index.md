@@ -19,11 +19,11 @@ Mini apps have seen tremendous growth. WeChat mini apps as of June 2020 have rea
 as of April 2019, and Baidu mini apps in the same month
 [115 million active users](https://kr-asia.com/the-mau-of-wechat-alipay-and-baidus-mini-programs-now-add-up-to-more-than-1-billion).
 Effectively companies have traded building apps for the two operating systems iOS and Android and
-additionally the Web for building apps for three or more
-[super apps platforms](/what-are-super-apps/#what-are-super-apps).
+additionally the web for building apps for three or more
+[super apps platforms](/for-mini-apps-you-need-super-apps/#for-mini-apps-you-need-super-apps).
 The differences
 between each super app platform may not be as big as the differences between Android, iOS, and the
-Web, but nevertheless they exist. Where on Android, iOS, and the Web, we have seen cross-platform
+web, but nevertheless they exist. Where on Android, iOS, and the web, we have seen cross-platform
 approaches like [Flutter](https://flutter.dev/), [Ionic](https://ionicframework.com/), and
 [React Native](https://reactnative.dev/) ([for Web](https://github.com/necolas/react-native-web))
 gain popularity, in the mini apps ecosystem, we can see an effort led by the

@@ -185,7 +185,7 @@ the way modules work, that is, that they do not support standard
 As mentioned [before](/mini-app-markup-styling-and-scripting/#markup-languages), the mini app programming concept is the
 [model-view-viewmodel](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) (MVVM).
 The logic layer and the view layer run on different threads, which means the user interface does not
-get blocked by long-running operations. In Web terms, you can think of scripts running in a
+get blocked by long-running operations. In web terms, you can think of scripts running in a
 [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers).
 
 WeChat's scripting language is called

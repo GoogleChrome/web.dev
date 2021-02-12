@@ -15,17 +15,17 @@ tags:
 
 The [kbone](https://wechat-miniprogram.github.io/kbone/docs/) project
 ([open source on GitHub](https://github.com/Tencent/kbone)) implements an adapter that simulates a
-browser environment in the adaptation layer, so that code written for the Web can run without
+browser environment in the adaptation layer, so that code written for the web can run without
 changes in a mini app. Several starter templates (among them
 [Vue](https://github.com/wechat-miniprogram/kbone-template-vue),
 [React](https://github.com/wechat-miniprogram/kbone-template-react), and
 [Preact](https://github.com/wechat-miniprogram/kbone-template-preact)) exist that make the
-onboarding experience for Web developers coming from these frameworks easier.
+onboarding experience for web developers coming from these frameworks easier.
 
 A new project can be created with the `kbone-cli` tool. A wizard asks what framework to initiate the
 project with. The code snippet below shows the Preact demo. In the code snippet below, the `mp`
-command builds the mini app, the `web` command builds the Web app, and `build` creates the
-production Web app.
+command builds the mini app, the `web` command builds the web app, and `build` creates the
+production web app.
 
 ```bash
 npx kbone-cli init my-app
@@ -36,7 +36,7 @@ npm run build
 ```
 
 The code snippet below shows a simple counter component that then gets isomorphically rendered in a
-mini app and a Web app. The overhead of the mini app is significant, purely judging from the DOM
+mini app and a web app. The overhead of the mini app is significant, purely judging from the DOM
 structure.
 
 ```js
@@ -84,16 +84,16 @@ export default Counter;
 ```
 
 <figure class="w-figure">
-  <img src="preact-wechat.png" alt="The Preact kbone template demo app opened in WeChat DevTools. Inspecting the DOM structure shows a significant overhead compared to the Web app.">
+  <img src="preact-wechat.png" alt="The Preact kbone template demo app opened in WeChat DevTools. Inspecting the DOM structure shows a significant overhead compared to the web app.">
   <figcaption class="w-figure">
    The Preact kbone template demo app opened in WeChat DevTools. Note the complex DOM structure and how the plus and minus buttons are actually not <code>&lt;button&gt;</code> elements.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img src="preact-web.png" alt="The Preact kbone template demo app opened in the Web browser. Inspecting the DOM structure shows the to-be-expected markup based on the Preact component code.">
+  <img src="preact-web.png" alt="The Preact kbone template demo app opened in the web browser. Inspecting the DOM structure shows the to-be-expected markup based on the Preact component code.">
   <figcaption class="w-figure">
-   The Preact kbone template demo app opened in the Web browser. Note the DOM structure.
+   The Preact kbone template demo app opened in the web browser. Note the DOM structure.
   </figcaption>
 </figure>
 
@@ -123,7 +123,7 @@ web pages and WeChat mini apps to make users' perception of use more uniform. It
 such as `button`, `cell`, `dialog`, `progress`, `toast`, `article`, `actionsheet`, and `icon`. There
 are different versions of WeUI available like [weui-wxss](https://github.com/Tencent/weui-wxss/) for
 WeChat mini apps styled with WXSS (see [Styling](/mini-app-markup-styling-and-scripting/#styling) above),
-[weui.js](https://github.com/weui/weui.js/) for Web apps, and
+[weui.js](https://github.com/weui/weui.js/) for web apps, and
 [react-weui](https://github.com/weui/react-weui/) for WeChat React components.
 
 <figure class="w-figure">
@@ -246,7 +246,7 @@ optimized front-end tools and framework design concepts and ideas, mostly from V
 
 The [vConsole](https://github.com/Tencent/vConsole) project provides a lightweight, extendable
 front-end developer tool for mobile web pages. It offers a DevTools-like debugger that can be
-injected directly into Web apps and mini apps. A
+injected directly into web apps and mini apps. A
 [demo](http://wechatfe.github.io/vconsole/demo.html) showcases the opportunities. The vConsole
 includes tabs for logs, system, network, elements, and storage.
 

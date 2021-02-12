@@ -19,7 +19,7 @@ set apart two technologies that come up in the context of mini apps, H5 and Quic
 ## H5
 
 H5 apps (or pages) are commonly seen as the predecessor of mini apps. What people mean by H5 is
-essentially a well-designed mobile Web app (or page) that can be shared easily on chat applications.
+essentially a well-designed mobile web app (or page) that can be shared easily on chat applications.
 H5 is a reference to the HTML5 umbrella of technologies that includes responsive design, snappy CSS
 animations, multimedia content, etc. The Chinese Wikipedia actually
 [redirects](https://zh.wikipedia.org/wiki/H5) from H5 to HTML5. A good example of a representative
