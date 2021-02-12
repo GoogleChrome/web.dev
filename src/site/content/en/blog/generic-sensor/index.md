@@ -97,8 +97,8 @@ At the time of writing, there are several sensors that you can experiment with.
 
 **Environmental sensors:**
 
-- `AmbientLightSensor` (Behind the `#enable-generic-sensor-extra-classes` flag.)
-- `Magnetometer` (Behind the `#enable-generic-sensor-extra-classes` flag.)
+- `AmbientLightSensor` (Behind the `#enable-generic-sensor-extra-classes` flag in Chromium.)
+- `Magnetometer` (Behind the `#enable-generic-sensor-extra-classes` flag in Chromium.)
 
 ## Feature detection {: #feature-detection }
 
@@ -129,7 +129,9 @@ try {
       console.log('Cannot connect to the sensor.');
     }
   };
-  accelerometer.onreading = () => reloadOnShake(accelerometer);
+  accelerometer.onreading = (e) => {
+    console.log(e);
+  };
   accelerometer.start();
 } catch (error) {
   // Handle construction errors.
@@ -167,7 +169,7 @@ sensor in detail.
 ### Accelerometer and linear acceleration sensor {: #acceleration-and-linear-accelerometer-sensor }
 
  <figure class="w-figure">
-  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/FCf9iuCaNASEB3V0x8Ld.mp4", width="800" %}
+  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/FCf9iuCaNASEB3V0x8Ld.mp4", width="800", autoplay="true" %}
   <figcaption class="w-figcaption">
     Accelerometer sensor measurements
   </figcaption>
@@ -210,7 +212,7 @@ release date. {% endAside %}
 ### Gyroscope {: #gyroscope-sensor }
 
  <figure class="w-figure">
-  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/7VItzZMC9Rb2QglsE3s5.mp4", width="800" %}
+  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/7VItzZMC9Rb2QglsE3s5.mp4", width="800", autoplay="true" %}
   <figcaption class="w-figcaption">
     Gyroscope sensor measurements
   </figcaption>
@@ -228,7 +230,7 @@ therefore, might consume more power compared to other sensors.
 ### Orientation sensors {: #orientation-sensors }
 
 <figure class="w-figure">
-  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/rhpW784mCvR78nwg6rd1.mp4", width="800" %}
+  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/rhpW784mCvR78nwg6rd1.mp4", width="800", autoplay="true" %}
   <figcaption class="w-figcaption">
     Absolute orientation sensor measurements
   </figcaption>
