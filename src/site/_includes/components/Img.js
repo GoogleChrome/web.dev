@@ -54,8 +54,10 @@ const Img = function (args) {
   params = {auto: 'format', ...params};
   // https://github.com/imgix/imgix-core-js#imgixclientbuildsrcsetpath-params-options
   options = {
-    minWidth: 200,
-    maxWidth: 1600,
+    // Use the image width as the lower bound, or 200px.
+    minWidth: Math.min(200, widthAsNumber),
+    // Use image width as the upper bound, maxed out at 1,600px.
+    maxWidth: Math.min(1600, widthAsNumber),
     widthTolerance: 0.07,
     ...options,
   };
