@@ -38,6 +38,8 @@ Chrome will be available from Chrome 88.
 - **September 1, 2020**: COOP Reporting is behind flags in Chrome 86. See
 [Enable Chrome flags](#flags).
 
+{% YouTube 'XLNJYhjA-0c' %}
+
 Some web APIs increase the risk of side-channel attacks like Spectre. To
 mitigate that risk, browsers offer an opt-in-based isolated environment called
 cross-origin isolated. With a cross-origin isolated state, the webpage will be
@@ -103,6 +105,11 @@ clearer, let's define them first:
 {% endAside %}
 
 ## Deploy COOP and COEP to make your website cross-origin isolated
+
+{% Aside 'gotchas' %}
+Learn practical steps to enable cross-origin isolation at [A guide to
+enable cross-origin isolation](/cross-origin-isolation-guide/).
+{% endAside %}
 
 ### Integrate COOP and COEP
 
@@ -201,6 +208,8 @@ property is available in Chrome from version 87.
 {% endAside %}
 
 ### Debug issues using Chrome DevTools
+
+{% YouTube 'D5DLVo_TlEA' %}
 
 For resources that are rendered on the screen such as images, it's fairly easy
 to detect COEP issues because the request will be blocked and the page will
