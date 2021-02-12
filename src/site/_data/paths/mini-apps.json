@@ -3,8 +3,8 @@
   "cover": "/images/collections/mini-apps.svg",
   "title": "Mini Apps",
   "updated": "January 19, 2021",
-  "description": "Apps built with Web technologies but not running in the browser, and what to learn from them.",
-  "overview": "Learn more about the thriving ecosystem of mini apps and what Web developers can learn from it.",
+  "description": "A web developer's exploration into mini apps, which are apps that are built with web technologies but that do not run in browsers.",
+  "overview": "Learn more about the thriving ecosystem of mini apps and what web developers can learn from it.",
   "topics": [
     {
       "title": "Introduction",

@@ -43,7 +43,7 @@ entertainment and shopping platform.
 
 ### Installing super apps
 
-Super apps are available on multiple operating systems. Please note that the versions available in
+Super apps are available on multiple operating systems. Note that the versions available in
 the official app stores may not always contain all features or be available in all locales. The
 links below point to links that work universally, but that may require loading from untrusted
 sources, so download and install the apps **at your own risk**. You typically need to create an
