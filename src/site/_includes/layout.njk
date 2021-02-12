@@ -48,6 +48,9 @@ tags: []
     {% else %}
       <script type="module" src="{{ helpers.hashForProd('/js/default.js') }}"></script>
     {% endfor %}
+    {% if process.env.ELEVENTY_ENV === 'prod' %}
+      <script async src="https://www.google-analytics.com/analytics.js"></script>
+    {% endif %}
   </head>
   <body class="unresolved">
     {#
