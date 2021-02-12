@@ -25,6 +25,7 @@ declare global {
     className?: string;
     params?: object;
     options?: ImgixOptions;
+    linkTo?: boolean;
   }
 
   export interface ImgixOptions {

@@ -21,8 +21,8 @@ const generateSrc = (src, params) => client.buildURL(src, params);
  * @return {string}
  */
 const Img = function (args) {
-  // eslint-disable-next-line prefer-const
-  let {src, alt, width, height, sizes, lazy, className, params, options} = args;
+  const {src, alt, width, height, className, linkTo} = args;
+  let {lazy, params, options, sizes} = args;
   // @ts-ignore: `this` has type of `any`
   const checkHereIfError = `ERROR IN ${this.page.inputPath}, IMG ${src}`;
 
@@ -61,7 +61,7 @@ const Img = function (args) {
     widthTolerance: 0.07,
     ...options,
   };
-
+  const fullSrc = generateSrc(src, params);
   const srcset = client.buildSrcSet(src, params, options);
   if (sizes === undefined) {
     if (widthAsNumber >= MAX_WIDTH) {
@@ -78,8 +78,8 @@ const Img = function (args) {
   // written at all—which _is_ an accessibility violation.
 
   /* eslint-disable lit-a11y/alt-text */
-  return html` <img
-    src="${generateSrc(src, params)}"
+  let imgTag = html` <img
+    src="${fullSrc}"
     srcset="${srcset}"
     sizes="${sizes}"
     height="${heightAsNumber}"
@@ -88,6 +88,12 @@ const Img = function (args) {
     ${className ? `class="${className}"` : ''}
     ${lazy ? 'loading="lazy"' : ''}
   />`.replace(/\n/g, '');
+
+  if (linkTo) {
+    imgTag = html`<a href="${fullSrc}">${imgTag}</a>`;
+  }
+
+  return imgTag;
 };
 
 module.exports = {Img, generateSrc};
