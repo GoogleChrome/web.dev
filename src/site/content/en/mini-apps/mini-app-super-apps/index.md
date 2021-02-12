@@ -33,7 +33,7 @@ Chinese market by storm, which is why a lot of the examples in this article are 
 
 <figure class="w-figure">
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/UKmUgG231MtQ2nEo1P0K.PNG", alt="List of recently launched mini apps in the WeChat super app.", width=300, height=649 %}
-  <figcaption class="w-figcaption">The WeChat super app recently launched mini apps.</figcaption>
+  <figcaption class="w-figcaption">The WeChat super app showing recently launched mini apps.</figcaption>
 </figure>
 
 ### Short characterization of each super app platform
