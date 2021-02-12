@@ -9,7 +9,7 @@ authors:
 date: 2021-02-12
 updated: 2021-02-12
 hero: hero.jpg
-thumbnail: thumbnail.jpg
+thumbnail: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/B1fq4VnPfJT6X4oN7tAv.jpg
 alt: A woman sitting in front of a wooden desk photo.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
