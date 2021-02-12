@@ -31,9 +31,9 @@ Alibaba Group) [Alipay](https://www.alipay.com/) (支付宝), but also ByteDance
 are commonly also referred to as BAT, which derives from **B**(aidu)**A**(libaba)**T**(encent). Super apps have taken the
 Chinese market by storm, which is why a lot of the examples in this article are Chinese.
 
-<figure>
-  {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/UKmUgG231MtQ2nEo1P0K.PNG", alt="List of recently launched mini apps in the WeChat super app.", width="300" %}
-  <figcaption>The WeChat super app recently launched mini apps.</figcaption>
+<figure class="w-figure">
+  {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/UKmUgG231MtQ2nEo1P0K.PNG", alt="List of recently launched mini apps in the WeChat super app.", width=300, height=649 %}
+  <figcaption class="w-figcaption">The WeChat super app recently launched mini apps.</figcaption>
 </figure>
 
 ### Short characterization of each super app platform
