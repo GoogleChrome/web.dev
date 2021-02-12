@@ -50,7 +50,9 @@ Fetch Metadata request headers are a new web platform security feature designed 
 Requests originating from sites served by your own server (same-origin) will continue to work.
 {% endCompareCaption %}
 
-{% Img src="image/admin/aRsy2xULTR4TM2sMMsbQ.png", alt="A fetch request from site.example for the resource site.example/foo.json in JavaScript causes the browser to send the HTTP request header 'Sec Fetch-Site: same-origin'.", width="800", height="176" %}
+<!--lint disable no-literal-urls-->
+{% Img src="image/admin/aRsy2xULTR4TM2sMMsbQ.png", alt="A fetch request from https://site.example for the resource https://site.example/foo.json in JavaScript causes the browser to send the HTTP request header 'Sec Fetch-Site: same-origin'.", width="800", height="176" %}
+<!--lint enable no-literal-urls-->
 
 {% endCompare %}
 
@@ -60,7 +62,9 @@ Requests originating from sites served by your own server (same-origin) will con
 Malicious cross-site requests can be rejected by the server because of the additional context in the HTTP request provided by `Sec-Fetch-*` headers.
 {% endCompareCaption %}
 
-{% Img src="image/admin/xY4yB36JqsVw62wNMIWt.png", alt="An image on evil.example that has set the src attribute of an img element to '//site.example/foo.json' causes the browser to send the HTTP request header 'Sec-Fetch-Site: cross-site'.", width="800", height="171" %}
+<!--lint disable no-literal-urls-->
+{% Img src="image/admin/xY4yB36JqsVw62wNMIWt.png", alt="An image on https://evil.example that has set the src attribute of an img element to '//site.example/foo.json' causes the browser to send the HTTP request header 'Sec-Fetch-Site: cross-site'.", width="800", height="171" %}
+<!--lint enable no-literal-urls-->
 
 {% endCompare %}
 

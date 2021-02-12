@@ -99,7 +99,7 @@ something else.
 
 Consider the following timeline of a typical web page load:
 
-[{% Img src="image/admin/9tm3f6pwlHMqNKuFvaP0.svg", alt="Example page load trace](fid-base.svg)", width="800", height="260" %}
+{% Img src="image/admin/9tm3f6pwlHMqNKuFvaP0.svg", alt="Example page load trace", width="800", height="260", linkTo=true %}
 
 The above visualization shows a page that's making a couple of network requests
 for resources (most likely CSS and JS files), and&mdash;after those resources
@@ -115,7 +115,7 @@ Long first input delays typically occur between [First Contentful Paint
 rendered some of its content but isn't yet reliably interactive. To illustrate
 how this can happen, FCP and TTI have been added to the timeline:
 
-[{% Img src="image/admin/24Y3T5sWNuZD9fKhkuER.svg", alt="Example page load trace with FCP and TTI](fid-fcp-tti.svg)", width="800", height="340" %}
+{% Img src="image/admin/24Y3T5sWNuZD9fKhkuER.svg", alt="Example page load trace with FCP and TTI", width="800", height="340", linkTo=true %}
 
 You may have noticed that there's a fair amount of time (including three [long
 tasks](/custom-metrics/#long-tasks-api)) between FCP and TTI, if a user tries to
@@ -126,7 +126,7 @@ respond.
 Consider what would happen if a user tried to interact with the page near the
 beginning of the longest task:
 
-[{% Img src="image/admin/krOoeuQ4TWCbt9t6v5Wf.svg", alt="Example page load trace with FCP, TTI, and FID](fid-full.svg)", width="800", height="380" %}
+{% Img src="image/admin/krOoeuQ4TWCbt9t6v5Wf.svg", alt="Example page load trace with FCP, TTI, and FID", width="800", height="380", linkTo=true %}
 
 Because the input occurs while the browser is in the middle of running a task,
 it has to wait until the task completes before it can respond to the input. The
