@@ -18,7 +18,7 @@ tags:
 In this codelab, improve the performance of the following application by
 removing any unused and unneeded dependencies.
 
-![App screenshot](./kitties.png)
+{% Img src="image/admin/A6WweLPrgyud8VNCP3Dc.png", alt="App screenshot", width="800", height="567" %}
 
 ## Measure
 
@@ -125,7 +125,7 @@ module.exports = {
 When the application reloads, you should see a visualization of the entire
 bundle instead of the app itself.
 
-![Webpack Bundle Analyzer](./bundle-visualization.png)
+{% Img src="image/admin/QhYbNr23tGbcHwFZGKIQ.png", alt="Webpack Bundle Analyzer", width="800", height="468" %}
 
 Not as cute as seeing some kittens 🐱, but incredibly helpful nonetheless.
 Hovering over any of the packages shows its size represented in three

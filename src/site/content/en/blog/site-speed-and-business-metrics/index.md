@@ -231,7 +231,7 @@ Example
 Example of AB testing  performance changes on a given product detail page (PDP)
 via server-side testing:
 
-![Server side testing diagram](test-server-side.jpg)
+{% Img src="image/admin/xQWUEAAfowEg0wjmVsrm.jpg", alt="Server side testing diagram", width="800", height="230" %}
 
 The request goes to the backend, which distributes the users to the two
 different versions of the page. While this is in general a good setup, it often
@@ -240,7 +240,7 @@ needs IT resources to set up the server-side split.
 Here is an example of a client side testing setup, using the prior page (the
 homepage in the diagram below) to run the testing JavaScript:
 
-![Client side testing diagram](test-client-side.jpg)
+{% Img src="image/admin/tX6XL3IoZBVdJXCPAE1E.jpg", alt="Client side testing diagram", width="800", height="337" %}
 
 The testing JavaScript manipulates the outgoing link to give the two test groups
 of users links to the two versions of the PDP in question. This is easy to setup

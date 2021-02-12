@@ -63,7 +63,7 @@ This is when they learned about
 [Project Fugu](https://developers.google.com/web/updates/capabilities) and the
 [Wake Lock API](https://web.dev/wakelock/).
 
-![A person kneading dough on a kitchen table covered in flour](doughy-fingers.jpg)
+{% Img src="image/admin/Yoj65m20XpoPdaL8ejAv.jpg", alt="A person kneading dough on a kitchen table covered in flour", width="800", height="533" %}
 
 The Wake Lock API provides a way to prevent the device
 from dimming or locking the screen.

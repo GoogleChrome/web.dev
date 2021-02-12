@@ -63,7 +63,7 @@ Use Chrome DevTools to verify that `margherita.js` is prefetched:
 When you load `index.js`, the **Network** tab shows that `margherita.js` is
 downloaded too:
 
-![DevTools Network tab with margherita.js highlighted.](network1.png)
+{% Img src="image/admin/ajJKWGvPidRa1nvqzXKL.png", alt="DevTools Network tab with margherita.js highlighted.", width="800", height="639" %}
 
 ## How automatic prefetching works
 
@@ -115,7 +115,7 @@ To inspect the network activity, follow the steps from the first example. When
 you load `index.js`, the DevTools **Network** tab shows that `margherita.js` is
 downloaded, but `pineapple-pizza.js` is not:
 
-![DevTools Network tab with margherita.js highlighted.](network2.png)
+{% Img src="image/admin/8YTg0ym7vJbQm9oCVQYz.png", alt="DevTools Network tab with margherita.js highlighted.", width="800", height="639" %}
 
 ## Prefetching with custom routing
 
@@ -173,7 +173,7 @@ and to `false` on `/pineapple-pizza`.
 When you load `index.js`, the **Network** tab shows that `margherita.js` is
 downloaded and `pineapple-pizza.js` is not:
 
-![DevTools Network tab with margherita.js highlighted.](network3.png)
+{% Img src="image/admin/MWPy8nvBJCnzy4zGVRln.png", alt="DevTools Network tab with margherita.js highlighted.", width="800", height="639" %}
 
 When you click on either link, the **Console** logs "Having fun with Next.js."
 and navigates to the new route:

@@ -162,13 +162,13 @@ To ensure that their users weren't spammed and to increase the probability that 
 
 The team decided to show an installation banner when a user completes a task or is on high-traffic pages but idle (that is, not taking an action, such as scrolling or filling out a form). This approach allowed them to avoid interrupting the user's activity.
 
-![Screenshots of Truebil Lite's installation banner.](default-banners.png)
+{% Img src="image/admin/geEMVQf4YjnkVr9HPRzt.png", alt="Screenshots of Truebil Lite's installation banner.", width="800", height="549" %}
 
 #### Contextual prompts for mature users
 
 For users who had interacted with the app for a while, the team used highly contextual custom messages to show the value of installing the app to the home screen:
 
-![Screenshots of Truebil Lite's contextual installation prompts for mature users.](contextual-prompts.png)
+{% Img src="image/admin/uPxqbyldE0kNurRPsk2S.png", alt="Screenshots of Truebil Lite's contextual installation prompts for mature users.", width="800", height="514" %}
 
 #### A custom banner for time-based prompts
 

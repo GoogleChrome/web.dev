@@ -186,7 +186,7 @@ and then include all question data _except_ the stimulus in each component objec
 
 Here's an example:
 ```yaml
-- stimulus: "![Webby](./webby.png)"
+- stimulus: "![Webby](image/admin/Iz4mJkLrJrLk9Ntem871.png)"
   components:
     - type: multiple-choice
       cardinality: "1"

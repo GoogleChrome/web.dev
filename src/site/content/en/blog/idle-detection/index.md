@@ -205,7 +205,7 @@ You can see the Idle Detection API in action with the [Ephemeral Canvas demo][de
 contents after 60 seconds of inactivity. You could imagine this being deployed in a department
 store for kids to doodle on.
 
-![Ephemeral Canvas demo](demo.png)
+{% Img src="image/admin/n0ysuaHUCcrRRf4b7pU0.png", alt="Ephemeral Canvas demo", width="800", height="953" %}
 
 ### Polyfilling
 

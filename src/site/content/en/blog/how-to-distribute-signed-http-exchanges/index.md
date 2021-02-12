@@ -77,11 +77,11 @@ For example, suppose `index.html.sxg` from `https://website.test/index.html` has
 The browser can fetch `https://website.test/app.js` directly on actual access, but it should not be done in the preload phase to preserve privacy.
 If the resource was fetched during the preload phase, it would be possible for the content creator (`website.test`) to be able to detect which content distributor (`distributor.test`) is requesting the resource.
 
-![The link to app.js in distributor.test/index.html.sxg points to website.test/app.js.](linking.png)
+{% Img src="image/admin/1wbVnJkocJ9cv3lR2wZv.png", alt="The link to app.js in distributor.test/index.html.sxg points to website.test/app.js.", width="800", height="214" %}
 
 If the distributor wants to serve `app.js.sxg` from their own service and tries to modify `https://website.test/app.js` to be the distributor's version of that subresource (such as `https://distributor.test/website.test/app.js.sxg`), it will cause a signature mismatch and make the SXG invalid.
 
-![An attempt to link the reference to app.js in distributor.test/index.html.sxg to distributor.test/app.js causes a signature mismatch.](rewritten.png)
+{% Img src="image/admin/IRRFoXyhnmwVXwiDgeny.png", alt="An attempt to link the reference to app.js in distributor.test/index.html.sxg to distributor.test/app.js causes a signature mismatch.", width="592", height="258" %}
 
 To solve this problem, there's an experimental SXG subresource prefetching feature in Chrome now.
 You can enable it at: `chrome://flags/#enable-sxg-subresource-prefetching`.
@@ -90,7 +90,7 @@ To use subresource prefetching the following conditions must be met:
 - The publisher must embed a response header entry in SXG, such as: `link: <https://website.test/app.js>;rel="preload";as="script",<https://website.test/app.js>;rel="allowed-alt-sxg";header-integrity="sha256-h6GuCtTXe2nITIHHpJM+xCxcKrYDpOFcIXjihE4asxk="`. This specifies the subresource that can be substituted with the SXG's specific integrity hash.
 - The distributor must attach a response header when serving the SXG, such as: `link: <https://distributor.test/website.test/app.js.sxg>;rel="alternate";type="application/signed-exchange;v=b3";anchor="https://website.test/app.js"`. This specifies the path of `app.js` and corresponds to the subresource.
 
-![anchor](anchor.png)
+{% Img src="image/admin/zsSl4DBys5jv8i5bQ6AT.png", alt="anchor", width="800", height="244" %}
 
 The first one is relatively easy because [`nginx-sxg-module`](https://github.com/google/nginx-sxg-module) can calculate integrity hashes and embed them into link headers from upstream responses. But the second one is more difficult because the content distributor must be aware of the specified subresources in the SXG.
 

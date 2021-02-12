@@ -119,7 +119,7 @@ window (`https://b.example`), the opener window and the popup window share the
 same browsing context and they have access to each other via DOM APIs such as
 `window.opener`.
 
-![Browsing Context Group](browsing-context-group.png)
+{% Img src="image/admin/g42eZMpIKNbUL0cN6yjC.png", alt="Browsing Context Group", width="470", height="469" %}
 
 As of Chrome 83, dedicated DevTools support is not yet available for COOP.
 However, you can examine `window.opener === null` from the opened window, or

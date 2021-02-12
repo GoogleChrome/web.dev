@@ -128,7 +128,7 @@ Here's a sample of just a few disabilities your users may have:
 tools displays a tooltip of CSS properties
 that includes a quick check for color contrast ratio.
 
-![Screenshot of the Chrome DevTools Inspect Element tooltip.](./inspect-element.jpg)
+{% Img src="image/admin/avwZaOjEWT7pES1OqUly.jpg", alt="Screenshot of the Chrome DevTools Inspect Element tooltip.", width="800", height="370" %}
 
 I personally live with low vision, and I often find myself zooming in on sites,
 their DevTools, and the terminal.
@@ -143,7 +143,7 @@ it can make a world of difference to users like me.🤓
 - Test that your UI components are still functional
   [without sound](http://www.w3.org/TR/2008/REC-WCAG20-20081211/#content-structure-separation-understanding).
 
-![Screenshot of the ChromeVox screen reader reading a web page.](screen-reader.jpg)
+{% Img src="image/admin/ZIbJHF5vyMxmKAN9juO1.jpg", alt="Screenshot of the ChromeVox screen reader reading a web page.", width="800", height="500" %}
 
 **Mobility issues** can include the inability to operate a mouse, a keyboard, or a touch screen.
 
@@ -188,7 +188,7 @@ and then improving the accessibility of your UI components.
 [accessibility dos and don'ts digital posters](https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility/)
 to spread awareness of best practices in your team:
 
-![Digital posters showing accessibility dos and don'ts.](dos-donts.jpg)
+{% Img src="image/admin/lmcS2dTmBHuUo3j0ERCp.jpg", alt="Digital posters showing accessibility dos and don'ts.", width="800", height="721" %}
 
 ## Are your UI components accessible?
 
@@ -245,11 +245,11 @@ depending on how complex your component is).
 **Tip:** Most browser developer tools support inspecting the accessibility tree of a page.
 In Chrome DevTools, this is available via the **Accessibility** tab in the **Elements** panel:
 
-![Screenshot of the accessibility tree view in Chrome DevTools.](./a11y-tree-chrome.png)
+{% Img src="image/admin/FcpD3oNA1C39KbQuNinf.png", alt="Screenshot of the accessibility tree view in Chrome DevTools.", width="800", height="486" %}
 
 Firefox also has an **Accessibility** panel:
 
-![Screenshot of the accessibility tree view in FireFox DevTools.](./a11y-tree-ff.jpg)
+{% Img src="image/admin/DRqDC9mtfcejAIjLImdR.jpg", alt="Screenshot of the accessibility tree view in FireFox DevTools.", width="800", height="500" %}
 
 Safari exposes accessibility information in the **Elements** panel's **Node** tab.
 
@@ -462,7 +462,7 @@ debugging the accessibility of your visual components.
   based on [Axe user impact assessments](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md).
   For monitoring accessibility via continuous integration, see [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci).
 
-![Screenshot of the Lighthouse accessibility audit.](./lh-a11y-audit.png)
+{% Img src="image/admin/Bft9DABqWge4ZRpF6wzK.png", alt="Screenshot of the Lighthouse accessibility audit.", width="800", height="649" %}
 
 - [Tenon.io](https://tenon.io/) is useful for testing common accessibility problems.
   Tenon has strong integration support across build tools, browsers (via extensions), and even text editors.
@@ -472,12 +472,12 @@ debugging the accessibility of your visual components.
   explains how to use [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
   to highlight accessibility issues for React components in your editor:
 
-  ![Screenshot of a code editor with an accessibility issue flagged by eslint-plugin-jsx-a11y.](./react-a11y-testing.png)
+  {% Img src="image/admin/9bAOYq7Cr11vzf4P04d2.png", alt="Screenshot of a code editor with an accessibility issue flagged by eslint-plugin-jsx-a11y.", width="800", height="500" %}
 
   If you use Angular, [codelyzer](/accessible-angular-with-codelyzer)
   provides in-editor accessibility audits too:
 
-  ![Screenshot of a code editor with an accessibility issue flagged by codelyzer.](./angular-a11y-testing.png)
+  {% Img src="image/admin/Ca3rCQlJ53C7ILx3hwot.png", alt="Screenshot of a code editor with an accessibility issue flagged by codelyzer.", width="800", height="433" %}
 
 - You can examine the way that assistive technologies see web content by using
   [Accessibility Inspector](https://developer.apple.com/library/archive/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html#//apple_ref/doc/uid/TP40001078-CH210-SW1) (Mac)
@@ -501,7 +501,7 @@ debugging the accessibility of your visual components.
 - [ChromeLens](http://chromelens.xyz/) helps develop for the visually impaired.
   It also has great support for visualizing keyboard navigation paths.
 
-  ![Screenshot of ChromeLens.](./chromelens.jpg)
+  {% Img src="image/admin/RcDZ95ALFvNeDdpdv2Mo.jpg", alt="Screenshot of ChromeLens.", width="800", height="514" %}
 
 - [ChromeVox](http://www.chromevox.com/) is a screen reader available as a Chrome extension and built into ChromeOS devices.
 
@@ -519,4 +519,4 @@ To learn more about accessibility fundamentals and help improve those statistics
 I recommend the [Accessible to all](/accessible/) docs on web.dev.
 There's much we can do to build experiences that are more accessible for everyone.
 
-![Screenshot of the web.dev "Accessible to all" collection page.](./web-dev-a11y.jpg)
+{% Img src="image/admin/iMaXm08LsbVKpkNCZEwA.jpg", alt="Screenshot of the web.dev 'Accessible to all' collection page.", width="800", height="513" %}

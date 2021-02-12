@@ -106,7 +106,7 @@ mobile report spreadsheet.
 **Step 4:** To calculate the Rel mCvR, create a new column titled _Relative Mobile Conversion Rate (Rel mCvR)_.
 Then add a formula to divide the mobile conversion rate by the desktop conversion rate.
 <br><br>
-![Screenshot: spreadsheet cells showing relative rate formula](relative-rate-formula.jpg)
+{% Img src="image/admin/KbvjNjgpqtARDXZfqpbU.jpg", alt="Screenshot: spreadsheet cells showing relative rate formula", width="800", height="318" %}
 <br><br>
 
 **Step 5:** Create a chart based on the _Mobile Avg. Page Load Time (sec)_ and
@@ -125,7 +125,7 @@ Sheets:
   and the left and right _y_-axis labels.
 
 You should now have a chart that looks something like this:
-![Chart: mobile load time versus relative mobile conversion rate](mobile-versus-relative-chart.jpg)
+{% Img src="image/admin/OhUs82wmJCmuD98c6IKI.jpg", alt="Chart: mobile load time versus relative mobile conversion rate", width="800", height="495" %}
 <br><br>
 
 **Step 6:** Using the chart, identify a period before the speed optimization

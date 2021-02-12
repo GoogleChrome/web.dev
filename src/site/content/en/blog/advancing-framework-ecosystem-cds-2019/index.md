@@ -59,7 +59,7 @@ Frameworks commonly used to build and structure web pages fall into two categori
     with opinionated features built-in, such as server-side rendering. These frameworks usually
     leverage a UI framework or library for the view layer.
 
-![A spectrum of UI frameworks and libaries versus Web frameworks](./framework-types.png)
+{% Img src="image/admin/OI4rF5fAQJ5PYP2f6AA6.png", alt="A spectrum of UI frameworks and libaries versus Web frameworks", width="800", height="455" %}
 
 Developers can choose not to use frameworks but by piecing together a view layer library, router,
 styling system, server renderer and so forth, they often end up creating their own type of a
@@ -193,7 +193,7 @@ to older syntax to avoid browser bugs, `preset-modules` fixes each specific bug 
 closest possible non-broken modern syntax. This results in modern code that can be delivered *nearly
 unmodified* to most browsers.
 
-![A new babel preset to provide better polyfilling for browsers](./babel-preset-env.png)
+{% Img src="image/admin/8qG6cuXyjKvE89du82Ki.png", alt="A new babel preset to provide better polyfilling for browsers", width="800", height="453" %}
 
 Developers who already use `preset-env` will also benefit from these optimizations without having to
 do anything, as they'll soon be incorporated into `preset-env` too.
