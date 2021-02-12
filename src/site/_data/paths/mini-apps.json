@@ -7,15 +7,15 @@
   "overview": "Learn more about the thriving ecosystem of mini apps and what web developers can learn from it.",
   "topics": [
     {
-      "title": "Introduction",
+      "title": "Welcome to the world of mini apps",
       "pathItems": [
-        "what-are-super-apps",
+        "for-mini-apps-you-need-super-apps",
         "what-are-mini-apps",
         "what-are-h5-and-quickapp"
       ]
     },
     {
-      "title": "Developer experience",
+      "title": "The developer experience of mini apps",
       "pathItems": [
         "mini-app-devtools",
         "mini-app-markup-styling-and-scripting",
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "title": "Mini app ecosystem",
+      "title": "The wider mini apps ecosystem",
       "pathItems": [
         "mini-app-standardization",
         "other-mini-app-runtime-environments",
