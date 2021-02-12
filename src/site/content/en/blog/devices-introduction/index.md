@@ -6,8 +6,8 @@ description: |
   This article helps Web developers pick the right hardware API based on a given device.
 authors:
   - beaufortfrancois
-date: 2021-02-11
-updated: 2021-02-11
+date: 2021-02-12
+updated: 2021-02-12
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A woman sitting in front of a wooden desk photo.
@@ -143,7 +143,8 @@ devices.
   use external tools like [nRF Connect for Mobile] and built-in browser tools
   such as the internal page `about://bluetooth-internals` in Chromium-based
   browsers for that. Check out [Reverse-Engineering a Bluetooth Lightbulb] from
-  Uri Shaked. Note that HID and serial devices may also be using Bluetooth.
+  Uri Shaked. Note that Bluetooth devices may also speak the HID or serial
+  protocols.
 
 If wired, check out these APIs in this specific order: 
 

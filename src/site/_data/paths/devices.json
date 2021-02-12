@@ -2,7 +2,7 @@
   "slug": "devices",
   "cover": "/images/collections/devices.svg",
   "title": "Devices",
-  "updated": "February 11, 2021",
+  "updated": "February 12, 2021",
   "description": "Connecting hardware devices to the web",
   "overview": "Learn to communicate with hardware devices over Bluetooth, USB, NFC, Serial, and HID from a website.",
   "youtubeId": "ZIZqmXfrRLI",
@@ -10,7 +10,7 @@
     {
       "title": "Introduction",
       "pathItems": [
-        "access-devices"
+        "devices-introduction"
       ]
     },
     {
