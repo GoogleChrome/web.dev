@@ -9,9 +9,9 @@
     {
       "title": "Welcome to the world of mini apps",
       "pathItems": [
-        "for-mini-apps-you-need-super-apps",
-        "what-are-mini-apps",
-        "what-are-h5-and-quickapp"
+        "mini-app-super-apps",
+        "mini-app-about",
+        "mini-app-what-are-h5-and-quickapp"
       ]
     },
     {
@@ -20,23 +20,23 @@
         "mini-app-devtools",
         "mini-app-markup-styling-and-scripting",
         "mini-app-components",
-        "project-structure-lifecycle-and-bundling"
+        "mini-app-project-structure-lifecycle-and-bundling"
       ]
     },
     {
       "title": "The wider mini apps ecosystem",
       "pathItems": [
         "mini-app-standardization",
-        "other-mini-app-runtime-environments",
+        "mini-app-alternative-runtime-environments",
         "mini-app-open-source-projects"
       ]
     },
     {
       "title": "Learning from mini apps",
       "pathItems": [
-        "programming-the-mini-app-way",
-        "an-example-project",
-        "conclusion"
+        "mini-app-programming-way",
+        "mini-app-example-project",
+        "mini-app-conclusion"
       ]
     }
   ]

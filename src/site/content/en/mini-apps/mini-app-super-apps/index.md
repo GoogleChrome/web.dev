@@ -1,6 +1,6 @@
 ---
 layout: post
-title: For mini apps you need super apps
+title: Mini apps and super apps
 authors:
   - thomassteiner
 date:  2021-02-05
