@@ -169,7 +169,7 @@ sensor in detail.
 ### Accelerometer and linear acceleration sensor {: #acceleration-and-linear-accelerometer-sensor }
 
  <figure class="w-figure">
- {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/FCf9iuCaNASEB3V0x8Ld.mp4", width="800", autoplay="true", loop="true" %}
+ {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/FCf9iuCaNASEB3V0x8Ld.mp4", width="800", autoplay="true", loop="true", muted="true" %}
   <figcaption class="w-figcaption">
     Accelerometer sensor measurements
   </figcaption>
@@ -212,7 +212,7 @@ release date. {% endAside %}
 ### Gyroscope {: #gyroscope-sensor }
 
  <figure class="w-figure">
-  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/7VItzZMC9Rb2QglsE3s5.mp4", width="800", autoplay="true", loop="true" %}
+  {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/7VItzZMC9Rb2QglsE3s5.mp4", width="800", autoplay="true", loop="true", muted="true" %}
   <figcaption class="w-figcaption">
     Gyroscope sensor measurements
   </figcaption>
@@ -230,7 +230,7 @@ therefore, might consume more power compared to other sensors.
 ### Orientation sensors {: #orientation-sensors }
 
 <figure class="w-figure">
-{% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/rhpW784mCvR78nwg6rd1.mp4", width="800", autoplay="true", loop="true" %}
+{% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/rhpW784mCvR78nwg6rd1.mp4", width="800", autoplay="true", loop="true", muted="true" %}
   <figcaption class="w-figcaption">
     Absolute orientation sensor measurements
   </figcaption>
