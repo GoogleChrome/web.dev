@@ -106,7 +106,7 @@ clearer, let's define them first:
 
 ## Deploy COOP and COEP to make your website cross-origin isolated
 
-{% Aside 'gotchas' %}
+{% Aside %}
 Learn practical steps to enable cross-origin isolation at [A guide to
 enable cross-origin isolation](/cross-origin-isolation-guide/).
 {% endAside %}
