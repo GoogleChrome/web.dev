@@ -135,7 +135,7 @@ in separate browsing context groups.
 
 {% Aside 'codelab' %}
 [See the impact of different COOP
-params](https://first-party-test.glitch.me/coop).
+parameters](https://first-party-test.glitch.me/coop).
 {% endAside %}
 
 #### 2. Ensure resources have CORP or CORS enabled
