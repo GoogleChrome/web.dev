@@ -193,26 +193,27 @@ mode, they fall back to the next display mode in the chain. This inflexible beha
 problematic in rare cases, for example, a developer cannot request `"minimal-ui"` without being
 forced back into the `"browser"` display mode in case `"minimal-ui"` is not supported by a given
 browser. Another problem is that the current behavior makes it impossible to introduce new display
-modes in a backward compatible way.
+modes in a backward compatible way, since explorations like tabbed application mode don't have a
+natural place in the fallback chain.
 
-This is a problem solved by the `display_override` property, which the browser considers *before*
+These problems are solved by the `display_override` property, which the browser considers *before*
 the `display` property. Its value is a sequence of strings that are considered in-order, and the
 first supported display mode is applied. If none are supported, the browser falls back to evaluating
 the `display` field.
 
 In the example below, the display mode fallback chain would be as follows.
-(The details of `"window-control-overlay"` are out-of-scope of this article.)
+(The details of `"window-control-overlay"` are out-of-scope for this article.)
 
 1. `"window-control-overlay"` (First, look at `display_override`.)
 1. `"minimal-ui"`
 1. `"standalone"` (When `display_override` is exhausted, evaluate `display`.)
-1. `"minimal-ui"` (Finally, use the fallback chain.)
+1. `"minimal-ui"` (Finally, use the `display` fallback chain.)
 1. `"browser"`
 
 ```json
 {
-  "display": "standalone",
   "display_override": ["window-control-overlay", "minimal-ui"],
+  "display": "standalone",
 }
 ```
 
