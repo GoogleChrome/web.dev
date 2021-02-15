@@ -187,7 +187,7 @@ be made to launch full screen.
 Web apps can choose how they are displayed by setting a `display` mode in their manifest as
 [explained above](#display). Browsers are *not* required to support all display modes, but they
 *are* required to support the spec-defined fallback chain
-(`"fullscreen"` -> `"standalone"` -> `"minimal-ui"` -> `"browser"`). If they don't support a given
+(`"fullscreen"` → `"standalone"` → `"minimal-ui"` → `"browser"`). If they don't support a given
 mode, they fall back to the next display mode in the chain. This inflexible behavior can be
 problematic in rare cases, for example, a developer cannot request `"minimal-ui"` without being
 forced back into the `"browser"` display mode in case `"minimal-ui"` is not supported by a given
