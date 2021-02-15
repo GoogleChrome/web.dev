@@ -345,5 +345,7 @@ you can provide additional icons for pixel perfection.
 There are several additional properties that can be added to the web app
 manifest. Refer to the [MDN Web App Manifest documentation][mdn-manifest]
 for more information.
+You can learn more about `display_override` in the
+[explainer](https://github.com/WICG/display-override/blob/master/explainer.md).
 
 [mdn-manifest]: https://developer.mozilla.org/en-US/docs/Web/Manifest
