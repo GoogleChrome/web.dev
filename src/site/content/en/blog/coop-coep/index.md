@@ -15,7 +15,7 @@ authors:
 hero: hero.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2020-10-15
+updated: 2021-02-09
 tags:
   - blog
   - security
@@ -25,20 +25,18 @@ feedback:
   - api
 ---
 
-{% Banner 'caution', 'body' %}
 
 **Updates**
 
-**October 15th, 2020**: `self.crossOriginIsolated` is available from Chrome 87.
+- **February 9, 2021**: Added an instruction [how to set up a reporting
+endpoint](#set-up-reporting-endpoint).
+- **October 15, 2020**: `self.crossOriginIsolated` is available from Chrome 87.
 Reflecting that, `document.domain` is immutable when `self.crossOriginIsolated`
 returns `true`. `performance.measureUserAgentSpecificMemory()` is ending its origin trial and is
 enabled by default in Chrome 89. Shared Array Buffer on Android
 Chrome will be available from Chrome 88.
-
-**September 1st, 2020**: COOP Reporting is behind flags in Chrome 86. See
+- **September 1, 2020**: COOP Reporting is behind flags in Chrome 86. See
 [Enable Chrome flags](#flags).
-
-{% endBanner %}
 
 Some web APIs increase the risk of side-channel attacks like Spectre. To
 mitigate that risk, browsers offer an opt-in-based isolated environment called
@@ -105,7 +103,9 @@ clearer, let's define them first:
 {% endAside %}
 
 ## Deploy COOP and COEP to make your website cross-origin isolated
+
 ### Integrate COOP and COEP
+
 #### 1. Set the `Cross-Origin-Opener-Policy: same-origin` header on the top-level document
 
 By enabling COOP on a top-level document, windows
@@ -119,7 +119,7 @@ window (`https://b.example`), the opener window and the popup window share the
 same browsing context and they have access to each other via DOM APIs such as
 `window.opener`.
 
-![Browsing Context Group](browsing-context-group.png)
+{% Img src="image/admin/g42eZMpIKNbUL0cN6yjC.png", alt="Browsing Context Group", width="470", height="469" %}
 
 As of Chrome 83, dedicated DevTools support is not yet available for COOP.
 However, you can examine `window.opener === null` from the opened window, or
@@ -150,8 +150,8 @@ Here is what you need to do depending on the nature of the resource:
       served with CORS.
     * Ask the owner of the resource to support either CORS or CORP.
 * For iframes, use CORP and COEP headers as follows:
-  `Cross-Origin-Resource-Policy: same-origin` and `Cross-Origin-Embedder-Policy:
-  require-corp`.
+  `Cross-Origin-Resource-Policy: same-origin` (or `same-site`, `cross-origin`
+  depending on the context) and `Cross-Origin-Embedder-Policy: require-corp`.
 
 {% Aside 'key-term' %}
 It's important that you understand the difference between "same-site" and
@@ -249,7 +249,8 @@ both APIs during the transition.
 
 #### Enable the Reporting API
 
-You can try the COOP Reporting API in Chrome 86 and later by doing one of the following:
+While COEP reporting is already fully available on Chrome, you need to do one of
+the followings to enable COOP Reporting API on Chrome until its version 89.
 
 1. Enabling Chrome flags
 2. Registering for an origin trial
@@ -272,6 +273,38 @@ To use COOP Reporting API, the token must be served as an HTTP header instead of
 a `<meta>` tag.
 {% endAside %}
 
+#### Set up a server to receive reports {: #set-up-reporting-endpoint}
+
+A server with reporting endpoints needs to be set up in order to receive reports
+from your COOP/COEP. There are two options:
+
+* Use a solution that accepts reports.
+* Build your own server that accepts reports.
+
+##### Use a solution that accepts reports
+
+We are aware of one solution that accepts reports from the browser's COOP/COEP reporting functionality.
+
+* [https://uriports.com](https://uriports.com)
+
+If there's any other solutions that accept reports, [please let us know to
+update this post](https://github.com/GoogleChrome/web.dev).
+
+##### Build your own server that accepts reports
+
+Building your own server that receives reports isn't that trivial. We have [a
+lightweight sample implementation of a reporting endpoint on
+glitch.com](https://reporting-endpoint.glitch.me/). ["Remix Project" to
+clone](https://glitch.com/edit/#!/reporting-endpoint) and customize for your own
+purposes.
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot-filled" src="reporting-endpoint.png" alt="Build your own reporting endpoint by forking a lightweight sample implementation on glitch.com.">
+</figure>
+
+All you have to do is to put the URL indicated in the page as the reporting
+endpoint of COOP and COEP. See below to learn how to configure.
+
 #### `Report-To`
 
 To specify where the browser should send reports, append the `Report-To` HTTP
@@ -280,7 +313,7 @@ header to any document that is served with a COEP or COOP HTTP header. The
 reports. For example:
 
 ```http
-Report-To: { group: 'coep_report', max_age: 86400, endpoints: [{ url: 'https://first-party-test.glitch.me/report'}]},{ group: 'coop_report', max_age: 86400, endpoints: [{ url: 'https://first-party-test.glitch.me/report'}]}
+Report-To: { group: 'coep_report', max_age: 86400, endpoints: [{ url: 'https://reporting-endpoint.glitch.me/post'}]},{ group: 'coop_report', max_age: 86400, endpoints: [{ url: 'https://reporting-endpoint.glitch.me/post'}]}
 ```
 
 The parameters object has three properties:

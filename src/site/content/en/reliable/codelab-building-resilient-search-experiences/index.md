@@ -33,7 +33,7 @@ In the new tab that just opened, check how the website behaves when going offlin
 
 The standard browser error page is shown:
 
-![A screenshot of the default offline UX in the browser.](offline-ux-default.png)
+{% Img src="image/admin/g4Naxj1RnipuqxqzC62x.png", alt="A screenshot of the default offline UX in the browser.", width="800", height="465" %}
 
 ## Provide a fallback response
 
@@ -96,7 +96,7 @@ To test this functionality:
 
 The fallback HTML page is shown:
 
-![A screenshot of the custom offline UX in the browser.](offline-ux-custom.png)
+{% Img src="image/admin/2o0feM6Ib4GnLdKQqV9G.png", alt="A screenshot of the custom offline UX in the browser.", width="800", height="456" %}
 
 ## Request notification permission
 
@@ -226,7 +226,7 @@ self.addEventListener('notificationclick', function(event) {
 
 Once the connection is back a notification will be shown:
 
-![A screenshot of the full offline flow.](offline-ux-flow.png)
+{% Img src="image/admin/kvnl2PlazBdppGF4eMi0.png", alt="A screenshot of the full offline flow.", width="800", height="315" %}
 
 ## Conclusion
 

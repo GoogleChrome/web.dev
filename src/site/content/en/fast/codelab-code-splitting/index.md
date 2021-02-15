@@ -23,7 +23,7 @@ improves page performance.
 This codelab shows how to use **code splitting** to improve the performance of a
 simple application that sorts three numbers.
 
-![A browser window shows an application titled Magic Sorter with three fields for inputting numbers and a sort button.](./codelab-code-splitting-1.png)
+{% Img src="image/admin/1lb0XbGP6M4eShkmYaQW.png", alt="A browser window shows an application titled Magic Sorter with three fields for inputting numbers and a sort button.", width="800", height="504" %}
 
 ## Measure
 

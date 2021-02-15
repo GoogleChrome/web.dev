@@ -34,7 +34,7 @@ To run a Lighthouse audit on this site:
 1. Select the **Clear Storage** checkbox. With this option selected, Lighthouse will not load resources from the cache, which simulates how first-time visitors would experience the page.
 1. Click **Run Audits**.
 
-![Audits panel of Chrome DevTools, powered by Lighthouse](lighthouse-audits.png)
+{% Img src="image/admin/bk0impRv9Mo0yDpbuIQi.png", alt="Audits panel of Chrome DevTools, powered by Lighthouse", width="800", height="1068" %}
 
 When you run an audit on your machine, the exact results may vary, but in the filmstrip view, you'll notice the app has a blank screen for quite a while before finally rendering the content. This is why [First Contentful Paint (FCP)](/first-contentful-paint/) is high and why overall performance score is not great.
 

@@ -197,7 +197,7 @@ For comparison, here is version 5 scoring:
 </tbody>
 </table>
 
-![Lighthouse scoring changes between versions 5 and 6.](lighthouse-weight-changes.png)
+{% Img src="image/admin/gJnkac5fOfjOvmeLXdPO.png", alt="Lighthouse scoring changes between versions 5 and 6.", width="800", height="165" %}
 
 Some highlights of scoring changes between Lighthouse versions 5 and 6:
 

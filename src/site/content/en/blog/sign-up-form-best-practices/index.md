@@ -205,7 +205,9 @@ devices.
 This makes it extremely important to code sign-up forms correctly, in particular to use the correct 
 autocomplete values. For sign-up forms use `autocomplete="new-password"` for new passwords, and add 
 correct autocomplete values to other form fields wherever possible, such as `autocomplete="email"` 
-and `autocomplete="tel"`.
+and `autocomplete="tel"`. You can also help password managers by using different `name` and `id` 
+values in sign-up and sign-in forms, for the `form` element itself, as well as any `input`, `select` 
+and `textarea` elements.
 
 You should also use the appropriate [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email) 
 to provide the right keyboard on mobile and enable basic built-in validation by the browser. 

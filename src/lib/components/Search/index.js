@@ -6,9 +6,9 @@ import {html} from 'lit-element';
 import {unsafeHTML} from 'lit-html/directives/unsafe-html';
 import {BaseElement} from '../BaseElement';
 import {store} from '../../store';
-import * as router from '../../utils/router';
 import {debounce} from '../../utils/debounce';
 import {trackError} from '../../analytics';
+import {allowHtml, escapeHtml} from '../../../lib/utils/escape-html';
 import 'focus-visible';
 import './_styles.scss';
 
@@ -223,8 +223,19 @@ class Search extends BaseElement {
     // This is intentional because focus needs to stay in the input field.
     // When the user is pressing arrow keys, we use a virtual cursor and
     // aria-activedescendant to indicate the active anchor.
-    return this.hits.map(
-      (hit, idx) => html`
+    return this.hits.map((hit, idx) => {
+      if (!hit._highlightResult.title || !hit._highlightResult.title.value) {
+        return html``;
+      }
+
+      let title = hit._highlightResult.title.value;
+      // Escape any html entities in the title except for <strong> tags.
+      // Algolia sends back <strong> tags in the title which help highlight
+      // the characters that match what the user has typed.
+      title = allowHtml(escapeHtml(title), 'strong');
+      // Strip backticks as they look a bit ugly in the results.
+      title = title.replace(/`/g, '');
+      return html`
         <li class="web-search-popout__item">
           <a
             id="web-search-popout__link--${idx}"
@@ -234,13 +245,11 @@ class Search extends BaseElement {
             aria-selected="${idx === this.cursor}"
             tabindex="-1"
             href="${hit.url}"
-            >${unsafeHTML(
-              hit._highlightResult.title && hit._highlightResult.title.value,
-            )}</a
+            >${unsafeHTML(title)}</a
           >
         </li>
-      `,
-    );
+      `;
+    });
   }
   /* eslint-enable indent */
 
@@ -401,14 +410,11 @@ class Search extends BaseElement {
   }
 
   /**
-   * Tells the router to navigate to the specified URL.
-   * Because this closes the search box, it has the side effect of blurring
-   * focus.
+   * Tells the page to navigate to the url.
    * @param {{url:string}} url A URL data object.
    */
   navigateToHit({url}) {
-    router.route(url);
-    /** @type HTMLElement */ (document.activeElement).blur();
+    window.location.href = url;
   }
 
   /**

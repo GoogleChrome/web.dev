@@ -58,7 +58,7 @@ const algolia = (collections) => {
   const tagsCollection = collections.tags;
 
   // Convert 11ty-posts to a flat, indexable format.
-  const posts = eleventyPosts.map(({data, template}) => {
+  const posts = eleventyPosts.map(({data, template, url}) => {
     const fulltext = removeMarkdown(template.frontMatter.content);
 
     // Algolia has a limit of ~10k JSON on its records. For now, just trim fulltext to the nearest
@@ -75,7 +75,7 @@ const algolia = (collections) => {
       objectID: data.page.url,
       lang: data.lang,
       title: data.title,
-      url: data.canonicalUrl,
+      url,
       description: data.description,
       fulltext: limited,
       authors: authors,
@@ -89,14 +89,14 @@ const algolia = (collections) => {
         objectID: author.href,
         lang,
         title: author.title,
-        url: author.data.canonicalUrl,
+        url: author.url,
         description: author.description,
         fulltext: limitText(author.description),
       };
     },
   );
 
-  const newsletters = newslettersCollection.map(({data, template}) => {
+  const newsletters = newslettersCollection.map(({data, template, url}) => {
     const fulltext = removeMarkdown(template.frontMatter.content);
     const limited = limitText(fulltext);
 
@@ -104,7 +104,7 @@ const algolia = (collections) => {
       objectID: data.page.url,
       lang,
       title: data.title,
-      url: data.canonicalUrl,
+      url,
       description: data.description,
       fulltext: limited,
     };
@@ -115,7 +115,7 @@ const algolia = (collections) => {
       objectID: tag.href,
       lang,
       title: tag.title,
-      url: tag.data.canonicalUrl,
+      url: tag.url,
       description: tag.description,
       fulltext: limitText(tag.description),
     };

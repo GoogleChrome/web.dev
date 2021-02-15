@@ -19,7 +19,7 @@ In this codelab, improve the performance of this simple application that allows
 users to rate random cats. Learn how to optimize the JavaScript bundle by
 minizming how much code is transpiled.
 
-![App screenshot](./app-screenshot.png)
+{% Img src="image/admin/E8nNmPiUnD9unvl0ydwT.png", alt="App screenshot", width="800", height="681" %}
 
 In the sample app,
 you can select a word or emoji to convey how much you like each cat.

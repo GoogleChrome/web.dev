@@ -129,7 +129,7 @@ performance of a single site while modifying the maximum number of parallel requ
 [`maxInitialRequests`](https://webpack.js.org/plugins/split-chunks-plugin/#splitchunksmaxinitialrequests)
 property.
 
-![Page load performance with increased number of requests](./performance-num-requests-1.png)
+{% Img src="image/admin/Psq42HGvyk1hiaCdEJxc.png", alt="Page load performance with increased number of requests", width="800", height="495" %}
 
 In an average of three runs of multiple trials on a single web page, the
 [`load`](https://developer.mozilla.org/docs/Web/API/Window/load_event),
@@ -138,7 +138,7 @@ and [First Contentful Paint](/fcp) times all remained about the same when varyin
 request count (from 5 to 15). Interestingly enough, we noticed a slight performance overhead only
 after splitting aggressively to hundreds of requests.
 
-![Page load performance with hundreds of requests](./performance-num-requests-2.png)
+{% Img src="image/admin/Ykz3Zm35JUVmtqX1U6cI.png", alt="Page load performance with hundreds of requests", width="800", height="495" %}
 
 This showed that staying under a reliable threshold (20~25 requests) struck the right balance
 between loading performance and caching efficiency. After some baseline testing, 25 was selected as
@@ -148,7 +148,7 @@ Modifying the maximum number of requests that happen in parallel resulted in mor
 shared bundle, and separating them appropriately for each entry point significantly reduced the
 amount of unneeded code for the same page.
 
-![JavaScript payload reductions with increased chunking](./js-payload-num-requests.png)
+{% Img src="image/admin/z2yOSP2fpfu51OEpyTGS.png", alt="JavaScript payload reductions with increased chunking", width="800", height="495" %}
 
 This experiment was only about modifying the number of requests to see if there would be any
 negative effect on page load performance. The results suggest that setting `maxInitialRequests` to

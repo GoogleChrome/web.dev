@@ -40,6 +40,6 @@ function internalLoad(library) {
  * @param {...string} names to load
  * @return {Promise<void[]>}
  */
-export default function loadFirebase(...names) {
+export function loadFirebase(...names) {
   return Promise.all(names.map(internalLoad));
 }

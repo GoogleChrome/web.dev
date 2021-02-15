@@ -12,7 +12,7 @@ tags:
 ---
 
 In this post find out how some popular animations found on CodePen have been created.
-THese animations all use the performant techniques discussed in other articles in this section.
+These animations all use the performant techniques discussed in other articles in this section.
 
 See [Why are some animations slow?](/animations-overview/) to learn the theory behind
 these recommendations, and the [Animations Guide](/animations-guide) for practical tips.

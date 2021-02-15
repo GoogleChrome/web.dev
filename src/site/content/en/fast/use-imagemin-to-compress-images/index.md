@@ -45,7 +45,7 @@ to the average user.
 Run Lighthouse to check for opportunities to improve page load by compressing images.
 These opportunities are listed under "Efficiently encode images":
 
-![image](./efficient-encoding.png)
+{% Img src="image/admin/LnIukPEZHuVJwBtuJ7mc.png", alt="image", width="800", height="552" %}
 
 {% Aside %}
 Lighthouse currently reports on opportunities to compress images in JPEG format

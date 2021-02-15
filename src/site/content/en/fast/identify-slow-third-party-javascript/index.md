@@ -35,7 +35,7 @@ To run an audit:
 1. Select the **Clear Storage** checkbox.
 1. Click **Run audits**.
 
-![Screenshot of the Chrome DevTools Audits panel.](./audits-panel.png)
+{% Img src="image/admin/XLNFxdEOc7739bcIwERq.png", alt="Screenshot of the Chrome DevTools Audits panel.", width="800", height="1068" %}
 
 ### Third-party usage
 
