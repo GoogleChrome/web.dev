@@ -246,3 +246,8 @@ redirects:
   destination: /aria-name
 - source: /aria-input-field-name
   destination: /aria-name
+
+# Temporary redirect for CORS-RFC1918 guidance on DevTools.
+# Remove once the actual article is published.
+- source: /cors-rfc1918-guide
+  destination: /cors-rfc1918-feedback
