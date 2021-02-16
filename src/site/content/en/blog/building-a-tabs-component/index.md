@@ -33,7 +33,7 @@ Try the [demo](https://gui-challenges.web.app/tabs/dist/).
 
 If you prefer video, here's a YouTube version of this post:
 
-{% YouTube 'PzvdREGR0Xw' %}
+{% YouTube 'mMBcHcvxuuA' %}
 
 ## Overview
 
