@@ -48,7 +48,12 @@ content areas share the same space, but are conditionally presented based on the
 button selected in the navigation.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./tabs-variety.png" alt="">
+  {% Img 
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/eAaQ44VAmzVOO9Cy5Wc8.png", 
+    alt="ALT_TEXT_HERE", 
+    className="w-screenshot", 
+    width="800", height="500"
+  %}
   <figcaption class="w-figcaption">
     A collage of tab component web design styles from over the past 10 years
   </figcaption>
@@ -151,7 +156,12 @@ There are 3 different types of scroll areas in this component:
   scrollable.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./3-scrollers.png" alt="">
+  {% Img 
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qVmUKMwbeoCBffP0aY55.png", 
+    alt="ALT_TEXT_HERE", 
+    className="w-screenshot",
+    width="800", height="450"
+  %}
 </figure>
 
 There's 2 different types of elements involved with scrolling:
@@ -213,7 +223,12 @@ The frames I've highlighted below with
 scroll containers have created. 
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./header-section-layout.png" alt="">
+  {% Img 
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fyl0rTuETjORBigkIBx5.png", 
+    alt="ALT_TEXT_HERE", 
+    className="w-screenshot", 
+    width="800", height="620" 
+  %}
 </figure>
 
 #### Tabs `<header>` layout {: #tabs-header }
@@ -248,7 +263,12 @@ The `.snap-indicator` should travel horizontally with the group of links, and
 this header layout helps set that stage. No absolute positioned elements here! 
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./header-layout.png" alt="">
+  {% Img 
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/EGNIrpw4gEzIZEcsAt5R.png", 
+    alt="ALT_TEXT_HERE", 
+    className="w-screenshot", 
+    width="800", height="368" 
+  %}
 </figure>
 
 Next, the scroll styles. It turns out that we can share the scroll styles
@@ -323,7 +343,12 @@ fun as the indicator adjusts its width to the new target. Depending on how many
 elements are in here, the browser will render a scrollbar or not.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./nav-layout.png" alt="">
+  {% Img 
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/P7Vm3EvhO1wrTK1boU6y.png", 
+    alt="ALT_TEXT_HERE", 
+    className="w-screenshot", 
+    width="800", height="327" 
+  %}
 </figure>
 
 #### Tabs `<section>` layout {: #tabs-section }
@@ -368,7 +393,12 @@ expansion push), which sets the row height for a set of full height columns. The
 line, no wrapping, exactly what we want; to overflow the parent window.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./section-layout.png" alt="">
+  {% Img 
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/FYroCMocutCGg1X8kfdG.png", 
+    alt="ALT_TEXT_HERE", 
+    className="w-screenshot", 
+    width="800", height="512" 
+  %}
 </figure>
 
 I find these difficult to wrap my head around sometimes! This section element is
@@ -417,7 +447,12 @@ of their respective scroll containers. It looks and feels like a harmonious
 relationship. 
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./article-layout.png" alt="">
+  {% Img 
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/O8gJp7AxBty8yND4fFGr.png", 
+    alt="ALT_TEXT_HERE",  
+    className="w-screenshot", 
+    width="800", height="808" 
+  %}
 </figure>
 
 The article is a grid child, and it's size is predetermined to be the viewport
@@ -433,7 +468,12 @@ it's doubly important for the layout to work with this setting turned on, as it
 is for me to review the layout and the scroll orchestration.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./show-scrollbars.png" style="max-inline-size: 50ch;" alt="">
+  {% Img 
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/6I6TI9PI4rvrJ9lr8T99.png", 
+    alt="ALT_TEXT_HERE",  
+    className="w-screenshot", 
+    width="500", height="607" 
+  %}
 </figure>
 
 I think seeing the scrollbar gutter in this component helps clearly show where
@@ -444,7 +484,12 @@ grid parents to a layout.
 DevTools can help us visualize this:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./3-scroll-areas.png" alt="">
+  {% Img 
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GFJwc3IggHY4G5fBMiu9.png", 
+    alt="ALT_TEXT_HERE",  
+    className="w-screenshot", 
+    width="800", height="455" 
+  %}
   <figcaption class="w-figure">
     Chromium Devtools, showing the flexbox nav element layout full of anchor elements, 
     the grid section layout full of article elements, and the article 
@@ -679,7 +724,12 @@ create clear delineation between our keyframes and really add to the
 synchronized feel of the animation.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./both-tabs-proper-contrast.png" style="max-inline-size: 50ch;" alt="">
+  {% Img 
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jV5X2JMkgUQSIpcivvTJ.png", 
+    alt="ALT_TEXT_HERE", 
+    className="w-screenshot", 
+    width="540", height="400" 
+  %}
 </figure>
 
 The user drives the animation with their interaction, seeing the width and
