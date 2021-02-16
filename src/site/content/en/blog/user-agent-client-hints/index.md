@@ -8,7 +8,7 @@ authors:
   - rowan_m
   - yoavweiss
 date: 2020-06-25
-updated: 2021-01-22
+updated: 2021-02-12
 hero: uach-hero.jpg
 thumbnail: uach-thumbnail.jpg
 alt: A variety of different footprints in the snow. A hint at who's been there.
@@ -207,7 +207,7 @@ are used for representing lists and booleans.
 | `Sec-CH-UA-Full-Version`                    | `"84.0.4143.2"`                                  | The complete version for the browser.                                                                                                                                        |
 | `Sec-CH-UA-Platform`                        | `"Android"`                                      | The platform for the device, usually the operating system (OS).                                                                                                              |
 | `Sec-CH-UA-Platform-Version`                | `"10"`                                           | The version for the platform or OS.                                                                                                                                          |
-| `Sec-CH-UA-Arch`                            | `"ARM64"`                                        | The underlying architecture for the device. While this may not be relevant to displaying the page, the site may want to offer a download which defaults to the right format. |
+| `Sec-CH-UA-Arch`                            | `"arm"`                                        | The underlying architecture for the device. While this may not be relevant to displaying the page, the site may want to offer a download which defaults to the right format. |
 | `Sec-CH-UA-Model`                           | `"Pixel 3"`                                      | The device model.                                                                                                                                                            |
 
 {% Aside 'gotchas' %}
