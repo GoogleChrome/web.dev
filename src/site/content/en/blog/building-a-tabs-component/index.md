@@ -38,7 +38,7 @@ If you prefer video, here's a YouTube version of this post:
 ## Overview
 
 Tabs are a common component of design systems but can take many shapes and
-forms. First there were desktop tabs built on `<frames>`, and now we have
+forms. First there were desktop tabs built on `<frame>` element, and now we have
 buttery mobile components that animate content based on physics properties.
 They're all trying to do the same thing: save space. 
 
@@ -65,7 +65,7 @@ few critical web platform features:
 - Screen reader support with `<a>` and `id="#hash"` element markup
 - `prefers-reduced-motion` for enabling crossfade transitions and instant
   in-page scrolling
-- The in draft `@scroll-timeline` web feature for dynamically underlining and
+- The in-draft `@scroll-timeline` web feature for dynamically underlining and
   color changing the selected tab
 
 ### The HTML {: #markup }
@@ -277,7 +277,7 @@ class, `.scroll-snap-x`.
 
 Each needs overflow on the x axis, scroll containment to trap overscroll, hidden
 scrollbars for touch devices and lastly scroll-snap for locking content
-presentation areas. Our keyboard tab order is nice and any interactions guide
+presentation areas. Our keyboard tab order is accessible and any interactions guide
 focus naturally. Scroll snap containers also get a nice carousel style
 interaction from their keyboard.
 
@@ -461,7 +461,7 @@ Scroll snapped children maintain their locked position during resize. This means
 JavaScript won't need to bring anything into view on device rotate or browser
 resize. Try it out in Chromium DevTools [Device
 Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode) by
-selecting any mode other than Responsive, and then resizing the device frame.
+selecting any mode other than **Responsive**, and then resizing the device frame.
 Notice the element stays in view and locked with its content. This has been
 available since Chromium updated their implementation to match the spec. Here's
 a [blog post](https://web.dev/snap-after-layout/) about it.
@@ -555,7 +555,7 @@ only has a brand underline highlight, but it's text color also is darker. The
 active element has higher text color contrast and a bright underlight accent.
 
 Just a few extra lines of CSS will make someone feel seen (in the sense that
-we're thoughtfully respecting their motion preferences), love it.
+we're thoughtfully respecting their motion preferences). I love it.
 
 #### `@scroll-timeline` {: #scroll-timeline }
 
@@ -719,7 +719,7 @@ tabnavitems.forEach(navitem => {
 ```
 
 Each tab nav link needs this new color animation, tracking the same scroll
-timeline as the underline indicator. I use the same timeline as before:, since
+timeline as the underline indicator. I use the same timeline as before: since
 it's role is to emit a tick on scroll, we can use that tick in any type of
 animation we want. As I did before, I create 4 keyframes in the loop, and return
 colors.
@@ -757,7 +757,7 @@ available.
 
 Deep links are more of a mobile term, but I think the intent of the deep link is
 met here with tabs in that you can share a URL directly to a tab's contents. The
-browser will in-page navigate to the ID that is matched in the URL hash.I found
+browser will in-page navigate to the ID that is matched in the URL hash. I found
 this `onload` handler made the effect across platforms.
 
 ```js
@@ -775,7 +775,6 @@ window.onload = () => {
 Our users aren't always clicking or using a keyboard, sometimes they're just
 free scrolling, as they should be able to. When the section scroller stops
 scrolling, wherever it lands needs to be matched in the top navigation bar.
-Here's how I wait for scroll end.
 
 <figure class="w-figure">
   <video playsinline controls autoplay loop muted class="w-screenshot">
@@ -783,6 +782,7 @@ Here's how I wait for scroll end.
   </video>
 </figure>
 
+Here's how I wait for scroll end:
 ```js
 tabsection.addEventListener('scroll', () => {
   clearTimeout(tabsection.scrollEndTimer);
