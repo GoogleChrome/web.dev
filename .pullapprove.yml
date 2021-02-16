@@ -1,8 +1,9 @@
 version: 3
 
 groups:
-  # Engineering team
-  eng:
+  # Code
+  # Handles any changes to programmatic files.
+  code:
     reviewers:
       teams:
       - web-dev-eng
@@ -23,10 +24,15 @@ groups:
           '*.yml',
           '*.yaml',
           '*.toml',
-          '*.sh'
+          '*.sh',
+          '!src/site/_data/authorsData.json',
+          '!src/site/_data/tagsData.json',
+          '!src/site/_data/paths/*.json',
+          '!redirects.yaml'
         ])
   
-  # Content team
+  # Content
+  # Handles any changes related to site content.
   content:
     reviewers:
       teams:
@@ -38,7 +44,20 @@ groups:
       - >
         contains_any_globs(files, [
           'src/site/content/**',
-          'src/images/authors/**',
+          'src/images/authors/**'
+        ])
+  
+  # Shared
+  # Files that can be approved by either the content or the engineering team.
+  shared:
+    reviewers:
+      teams:
+      - web-dev-content
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    conditions:
+      - >
+        contains_any_globs(files, [
           'src/site/_data/authorsData.json',
           'src/site/_data/tagsData.json',
           'src/site/_data/paths/*.json',
