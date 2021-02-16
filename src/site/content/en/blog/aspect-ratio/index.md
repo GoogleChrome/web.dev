@@ -30,16 +30,11 @@ Aspect ratio is most commonly expressed as two integers and a colon in the dimen
 width:height, or x:y. The most common aspect ratios for photography are 4:3 and 3:2, while video,
 and more recent consumer cameras, tend to have a 16:9 aspect ratio.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="aspect-ratio.jpg" alt="Two images with the same aspect ratio. One is 634 x 951px while the other is 200 x 300px. Both have a 2:3 aspect ratio.">
-  <figcaption class="w-figcaption">
-    Two images with the same aspect ratio. One is 634 x 951px while the other is 200 x 300px. Both have a 2:3 aspect ratio.
-  </figcaption>
-</figure>
+{% Img src="image/admin/od54hUUe21UABpbWxSFG.jpg", alt="Two images with the same aspect ratio. One is 634 x 951px while the other is 200 x 300px. Both have a 2:3 aspect ratio.", width="800", height="526", className="w-screenshot", caption="Two images with the same aspect ratio. One is 634 x 951px while the other is 200 x 300px. Both have a 2:3 aspect ratio." %}
 
 With the advent of responsive design, maintaining aspect ratio has been increasingly important for
 web developers, especially as image dimensions differ and element sizes shift based on available
-space. 
+space.
 
 Some examples of where maintaining aspect ratio become important are:
 
@@ -58,12 +53,9 @@ Defining an aspect ratio helps us with sizing media in a responsive context. Ano
 bucket is the `object-fit` property, which enables users to describe how an object (such an as image)
 within a block should fill that block:
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="coffees.jpg" alt="Object-fit demo visualization">
-  <figcaption class="w-figcaption">
-    Showcasing various <code>object-fit</code> values. See <a href="https://codepen.io/una/pen/mdrLGjR">demo on Codepen</a>.
-  </figcaption>
-</figure>
+<!--lint disable no-literal-urls-->
+{% Img src="image/admin/A7uj6u5MULodlw4lVsI2.jpg", alt="Object-fit demo visualization", width="800", height="236", className="w-screenshot", caption="Showcasing various <code>object-fit</code> values. See <a href=\"https://codepen.io/una/pen/mdrLGjR\">demo on Codepen</a>." %}
+<!--lint enable no-literal-urls-->
 
 The `initial` and `fill` values re-adjust the image to fill the space. In our example, this causes
 the image to be squished and blurry, as it re-adjusts pixels. Not ideal. `object-fit: cover` uses
@@ -76,7 +68,7 @@ while fitting into the space. The `object-fit: none` case shows the image croppe
 
 `object-fit: cover` tends to work in most situations to ensure a nice uniform interface when dealing
 with images of varying dimensions, however, you lose information this way (the image is cropped at
-its longest edges). 
+its longest edges).
 
 If these details are important (for example, when working with a flat lay of beauty products),
 cropping important content is not acceptable. So the ideal scenario would be responsive images of
@@ -84,12 +76,7 @@ varying sizes that fit the UI space without cropping.
 
 ## The old hack: maintaining aspect ratio with `padding-top`
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="aspectratio-current.jpg" alt="Using padding-top to set a 1:1 aspect ratio on post preview images within a carousel.">
-  <figcaption class="w-figcaption">
-    Using <code>padding-top</code> to set a 1:1 aspect ratio on post preview images within a carousel.
-  </figcaption>
-</figure>
+{% Img src="image/admin/j3YJicINXjly349uEEUt.jpg", alt="Using padding-top to set a 1:1 aspect ratio on post preview images within a carousel.", width="800", height="296", className="w-screenshot", caption=" Using <code>padding-top</code> to set a 1:1 aspect ratio on post preview images within a carousel." %}
 
 In order to make these more responsive, we can use aspect ratio. This allows for us to set a
 specific ratio size and base the rest of the media on an individual axis (height or width).
@@ -130,12 +117,7 @@ We could then write the following CSS:
 
 ## Maintaining aspect ratio with `aspect-ratio`
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="aspectratio-future.jpg" alt="Using aspect-ratio to set a 1:1 aspect ratio on post preview images within a carousel.">
-  <figcaption class="w-figcaption">
-    Using <code>aspect-ratio</code> to set a 1:1 aspect ratio on post preview images within a carousel.
-  </figcaption>
-</figure>
+{% Img src="image/admin/XT8PbPiYx1IJq3Pvmanz.jpg", alt="Using aspect-ratio to set a 1:1 aspect ratio on post preview images within a carousel.", width="800", height="296", className="w-screenshot", caption="Using <code>aspect-ratio</code> to set a 1:1 aspect ratio on post preview images within a carousel." %}
 
 Unfortunately, calculating these `padding-top` values is not very intuitive, and requires some
 additional overhead and positioning. With the new intrinsic `aspect-ratio` [CSS
@@ -277,7 +259,7 @@ Codepen](https://codepen.io/una/pen/gOwJWoz)).
 ## Conclusion
 
 With the new `aspect-ratio` CSS property, launching across multiple modern browsers, maintaining proper
-aspect ratios in your media and layout containers gets a little bit more straightforward. 
+aspect ratios in your media and layout containers gets a little bit more straightforward.
 
 
 Photos by [Amy Shamblen](https://unsplash.com/photos/TXg_38oImi0) and [Lionel

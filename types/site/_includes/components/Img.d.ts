@@ -16,16 +16,49 @@
 
 declare global {
   export interface ImgArgs {
+    /**
+     * Pathname of image hosted by Imigix.
+     */
     src: string;
+    /**
+     * Defines an alternative text description of the image.
+     */
     alt: string;
+    /**
+     * The intrinsic width of the image in pixels. Must be an integer without a unit.
+     */
     width: string;
+    /**
+     * The intrinsic height of the image, in pixels. Must be an integer without a unit.
+     */
     height: string;
+    /**
+     * One or more strings separated by commas, indicating a set of source sizes. If value is not provided one is generated dynamically.
+     */
     sizes?: string;
+    /**
+     * Flag to dictate if loading of image is deffered until it reaches a calulated distance from the viewport. `true` by default.
+     */
     lazy?: boolean;
+    /**
+     * A space-separated list of the classes of the element.
+     */
     className?: string;
     params?: object;
     options?: ImgixOptions;
+    /**
+     * Flag to wrap image in `a` tag pointing to the image. `false` by default.
+     */
     linkTo?: boolean;
+    /**
+     * Caption to place under image. If set to `true` it will use the `alt` text. When in use automatically enables `figure`.
+     */
+    caption?: true | string;
+    /**
+     * Flag to wrap image in a `figure` tag. If `true` passed in then it will default to `figure.w-figure`,
+     * if a `string` is passes in then it'll be `figure.w-figure.w-figure--{YOUR_STRING_HERE}`.
+     */
+    figure?: true | string;
   }
 
   export interface ImgixOptions {

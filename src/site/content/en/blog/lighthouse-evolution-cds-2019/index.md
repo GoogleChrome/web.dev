@@ -54,9 +54,7 @@ blended](/performance-scoring/#weightings) to form the 0-100 Performance score:
 Paint](/first-meaningful-paint/), [Time to Interactive](/interactive/), and
 [First CPU Idle](/first-cpu-idle/).
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./lighthouse-performance-score.png" alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.">
-</figure>
+{% Img src="image/admin/X0u1YQC63JaPfE0DWgz8.png", alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.", width="800", height="211", className="w-screenshot", figure=true %}
 
 See [Lighthouse performance scoring](https://web.dev/performance-scoring/) for detailed
 information.
@@ -113,9 +111,7 @@ or [contact the Lighthouse team](https://github.com/GoogleChrome/lighthouse-stac
 
 ## Coming soon: Lighthouse plugins as Chrome Extensions
 
-<figure class="w-figure">
-  <img src="./lighthouse-plugin-icon.png" alt="Lighthouse plugin icon." width="250">
-</figure>
+{% Img src="image/admin/pPFz27fWWNVyT42ptr7a.png", alt="Lighthouse plugin icon.", width="250", height="220", figure=true %}
 
 [Lighthouse
 Plugins](https://github.com/GoogleChrome/lighthouse/blob/master/docs/plugins.md)
@@ -130,10 +126,7 @@ only work in [Lighthouse
 CLI](https://developers.google.com/web/tools/lighthouse#cli), but the goal is to
 enable running them in the DevTools **Audits** panel too.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./lighthouse-plugin-devtools.png" alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience." width="400">
-  <figcaption class="w-figcaption">Community Plugins in DevTools Audits panel (beta)</figcaption>
-</figure>
+{% Img src="image/admin/I6WOZkh3Wdbb6vk2sE4z.png", alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience.", width="400", height="753", caption="Community Plugins in DevTools Audits panel (beta)", className="w-screenshot" %}
 
 When users install Lighthouse plugin extensions from the [Chrome Web
 Store](https://chrome.google.com/webstore/category/extensions), DevTools will

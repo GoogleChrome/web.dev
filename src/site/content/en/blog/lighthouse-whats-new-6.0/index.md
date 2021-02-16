@@ -26,7 +26,7 @@ Lighthouse 6.0 is available immediately on npm and in [Chrome
 Canary](https://www.google.com/chrome/canary/). Other Google services that leverage Lighthouse will
 get the update by the end of the month. It will land in Chrome Stable in Chrome 84 (mid-July).
 
-To try the Lighthouse Node CLI, use the following commands:  
+To try the Lighthouse Node CLI, use the following commands:
 ```bash
 npm install -g lighthouse
 lighthouse https://www.example.com --view
@@ -50,9 +50,7 @@ the highlights in this article.
 
 ## New metrics {: #new-metrics }
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="lighthouse-new-metrics.png" alt="Lighthouse 6.0 metrics." width="600">
-</figure>
+{% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Lighthouse 6.0 metrics.", width="600", height="251", className="w-screenshot", figure=true %}
 
 Lighthouse 6.0 introduces three new metrics to the report. Two of these new metrics–Largest
 Contentful Paint (LCP) and Cumulative Layout Shift (CLS)–are lab implementations of [Core Web
@@ -245,7 +243,7 @@ performance score. While the average performance score of the test corpus in ver
 Bug fixes to the underlying metric computation can result in different scores. This affects
 relatively few sites but can have sizable impact in certain situations. Overall, about 8% of sites
 experienced a score improvement due to metric implementation changes and about 4% of sites saw a score
-decrease due to metric implementation changes. Approximately 88% of sites were unaffected by these fixes. 
+decrease due to metric implementation changes. Approximately 88% of sites were unaffected by these fixes.
 
 Individual score curve changes also impacted the overall score shifts although very slightly. We
 periodically ensure that the score curve aligns with the observed metrics in the [HTTPArchive
@@ -260,10 +258,9 @@ you explore performance scoring. The calculator also gives you a comparison betw
 6 scores. When you run an audit with Lighthouse 6.0, the report comes with a link to the calculator
 with your results populated.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="lighthouse-scorecalc.png" alt="Lighthouse Score Calculator." width="600">
-  <figcaption class="w-figcaption">Huge thanks to <a href="https://twitter.com/anatudor">Ana Tudor</a> for the gauge upgrade!</figcaption>
-</figure>
+<!--lint disable no-literal-urls-->
+{% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Lighthouse Score Calculator.", width="600", height="319", caption="Huge thanks to <a href=\"https://twitter.com/anatudor\">Ana Tudor</a> for the gauge upgrade!", className="w-screenshot" %}
+<!--lint enable no-literal-urls-->
 
 ## New audits {: #new-audits }
 
@@ -330,21 +327,11 @@ Start using Lighthouse CI on your project today by following our
 }
 </style>
 
-<figure class="w-figure w-figure--inline-left">
-  <a href="lighthouse-ci-1.png" target="_blank">
-    <img class="w-screenshot" src="lighthouse-ci-1.png" alt="Lighthouse CI." width="600">
-  </a>
-</figure>
-<figure class="w-figure w-figure--inline-left">
-  <a href="lighthouse-ci-2.png" target="_blank">
-    <img class="w-screenshot" src="lighthouse-ci-2.png" alt="Lighthouse CI." width="600">
-  </a>
-</figure>
-<figure class="w-figure">
-  <a href="lighthouse-ci-3.png" target="_blank">
-    <img class="w-screenshot" src="lighthouse-ci-3.png" alt="Lighthouse CI." width="600">
-  </a>
-</figure>
+{% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="Lighthouse CI.", width="600", height="413", linkTo=true, className="w-screenshot", figure="inline-left" %}
+
+{% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="Lighthouse CI.", width="600", height="412", linkTo=true, className="w-screenshot", figure="inline-left" %}
+
+{% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="Lighthouse CI.", width="600", height="354", linkTo=true, className="w-screenshot", figure=true %}
 
 ## Renamed Chrome DevTools panel {: #devtools }
 
@@ -354,7 +341,7 @@ Depending on your DevTools window size, the panel is probably behind the `»` bu
 the tab to change the order.
 
 To quickly reveal the panel with the [Command
-menu](https://developers.google.com/web/tools/chrome-devtools/command-menu): 
+menu](https://developers.google.com/web/tools/chrome-devtools/command-menu):
 
 1. {% Instruction 'devtools', 'none' %}
 1. {% Instruction 'devtools-command', 'none' %}
@@ -383,8 +370,8 @@ but here are all the changes detectable by a webpage:
 As of Chrome 81, Moto G4 is also available in the Chrome DevTools device emulation list.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" 
-       src="lighthouse-motog4.png" 
+  <img class="w-screenshot w-screenshot--filled"
+       src="lighthouse-motog4.png"
        alt="Chrome DevTools device emulation list with Moto G4 included.">
 </figure>
 
@@ -453,16 +440,11 @@ Lighthouse has begun experimenting with collecting source maps to power new feat
 -  Treemap visualizations highlighting the modules that require action.
 -  Displaying the original source code for report items with a "source location".
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="lighthouse-sourcemaps-unusedjs.png" alt="Unused JavaScript showing modules from source maps." width="600">
-  <figcaption class="w-caption">
-    The Unused JavaScript audit using source maps to show unused code in specific bundled modules.
-  </figcaption>
-</figure>
+{% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="Unused JavaScript showing modules from source maps.", width="600", height="566", className="w-screenshot", caption="The Unused JavaScript audit using source maps to show unused code in specific bundled modules." %}
 
 These features will be enabled by default in a future version of Lighthouse. For now, you can view
-Lighthouse's experimental audits with the following CLI flag:  
-  
+Lighthouse's experimental audits with the following CLI flag:
+
 ```bash
 lighthouse https://web.dev --view --preset experimental
 ```

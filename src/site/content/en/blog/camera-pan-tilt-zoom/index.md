@@ -52,10 +52,7 @@ To request camera PTZ access, call `navigator.mediaDevices.getUserMedia()` with
 the PTZ constraints as shown below. This will prompt the user to grant both
 regular camera and camera with PTZ permissions.
 
-<figure class="w-figure">
-  <img src="./camera-ptz-user-prompt.jpg" class="w-screenshot" alt="Screenshot of a camera PTZ user prompt in Chrome for macOS.">
-  <figcaption class="w-figcaption">Camera PTZ user prompt.</figcaption>
-</figure>
+{% Img src="image/admin/WmkzmVeiplCoh3HesJS5.jpg", alt="Screenshot of a camera PTZ user prompt in Chrome for macOS.", width="800", height="382", className="w-screenshot", caption="Camera PTZ user prompt." %}
 
 The returned promise will resolve with a [`MediaStream`] object used to show the
 camera video stream to the user. If the camera does not support PTZ, the user
@@ -108,10 +105,7 @@ To know whether a Chromium-based browser supports PTZ for a camera, go to the
 internal `about://media-internals` page and check out the "Pan-Tilt-Zoom" column
 in the "Video Capture" tab.
 
-<figure class="w-figure">
-  <img src="./media-internals-page.jpg" class="w-screenshot" alt="Screenshot of the internal page in Chrome OS to debug PTZ camera support.">
-  <figcaption class="w-figcaption">Internal page to debug PTZ camera support.</figcaption>
-</figure>
+{% Img src="image/admin/TbU7mM3pfq0bNTkgiOnZ.jpg", alt="Screenshot of the internal page in Chrome OS to debug PTZ camera support.", width="800", height="500", className="w-screenshot", caption="Internal page to debug PTZ camera support." %}
 
 ### Control camera PTZ {: #control }
 

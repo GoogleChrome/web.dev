@@ -124,10 +124,7 @@ the model. Annotations also work in AR.
 <!-- Hide until model-viewer's iframe bug is fixed -->
 <!-- <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://modelviewer.dev/webdotdev/annotations.html" frameborder="0" allowfullscreen></iframe> -->
 
-<figure class="w-figure w-figure--inline-right">
-  <img src="./annotation.png" alt="A space suit with an annotation.">
-  <figcaption class="w-figcaption">A space suit with an annotation.</figcaption>
-</figure>
+{% Img src="image/admin/CG1JQXZP9Gncr7qLz5JZ.png", alt="A space suit with an annotation.", width="800", height="839", caption=true, figure="inline-right" %}
 
 See the [annotations documentation
 page](https://modelviewer.dev/examples/annotations.html) for more information.
@@ -159,10 +156,7 @@ recent improvements.
 <!-- Hide until model-viewer's iframe bug is fixed -->
 <!-- <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://modelviewer.dev/webdotdev/rendering.html" frameborder="0" allowfullscreen></iframe> -->
 
-<figure class="w-figure w-figure--inline-right">
-  <img src="./helmet.png" alt="A 3D model of a well-worn  helmet.">
-  <figcaption class="w-figcaption">A 3D model of a well-worn  helmet.</figcaption>
-</figure>
+{% Img src="image/admin/ZAID4J5TsJTcJs3qPNTp.png", alt="A 3D model of a well-worn  helmet.", width="800", height="809", caption=true, figure="inline-right" %}
 
 ### Stability
 

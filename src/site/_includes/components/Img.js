@@ -21,7 +21,7 @@ const generateSrc = (src, params) => client.buildURL(src, params);
  * @return {string}
  */
 const Img = function (args) {
-  const {src, alt, width, height, className, linkTo} = args;
+  const {src, alt, width, height, className, linkTo, caption, figure} = args;
   let {lazy, params, options, sizes} = args;
   // @ts-ignore: `this` has type of `any`
   const checkHereIfError = `ERROR IN ${this.page.inputPath}, IMG ${src}`;
@@ -76,7 +76,6 @@ const Img = function (args) {
   // the image (useful for purely decorative images). If we just did alt ? ...
   // the emptry string would evaluate as falsey and no alt attribute would be
   // written at all—which _is_ an accessibility violation.
-
   /* eslint-disable lit-a11y/alt-text */
   let imgTag = html` <img
     src="${fullSrc}"
@@ -91,6 +90,21 @@ const Img = function (args) {
 
   if (linkTo) {
     imgTag = html`<a href="${fullSrc}">${imgTag}</a>`;
+  }
+
+  if (caption) {
+    imgTag = html`${imgTag}
+      <figcaption class="w-figcaption">
+        ${caption === true ? alt : caption}
+      </figcaption>`;
+  }
+
+  if (figure || caption) {
+    imgTag = html`<figure
+      class="w-figure ${figure === true ? '' : `w-figure--${figure}`}"
+    >
+      ${imgTag}
+    </figure>`;
   }
 
   return imgTag;

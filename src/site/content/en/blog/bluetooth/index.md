@@ -1,6 +1,6 @@
 ---
 title: Communicating with Bluetooth devices over JavaScript
-subhead: | 
+subhead: |
   The Web Bluetooth API allows websites to communicate with Bluetooth devices.
 authors:
   - beaufortfrancois
@@ -9,7 +9,7 @@ updated: 2020-10-19
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A Bluetooth chip on a coin
-description: | 
+description: |
   The Web Bluetooth API allows websites to communicate with Bluetooth devices.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -440,10 +440,7 @@ A **Bluetooth Internals** page is available in Chrome at
 `chrome://bluetooth-internals` so that you can inspect everything about nearby
 Bluetooth devices: status, services, characteristics, and descriptors.
 
-<figure class="w-figure">
-  <img src="./bluetooth-internals.jpg" class="w-screenshot" alt="Screenshot of the internal page to debug Bluetooth in Chrome">
-  <figcaption class="w-figcaption">Internal page in Chrome for debugging Bluetooth devices.</figcaption>
-</figure>
+{% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="Screenshot of the internal page to debug Bluetooth in Chrome", width="800", height="572", className="w-screenshot", caption="Internal page in Chrome for debugging Bluetooth devices." %}
 
 I also recommend checking out the official [How to file Web Bluetooth bugs]
 page as debugging Bluetooth can be hard sometimes.
@@ -492,7 +489,7 @@ Hero image by [SparkFun Electronics from Boulder, USA].
 [Bluetooth device gets disconnected]: #disconnect
 [read and write to Bluetooth descriptors]: #descriptors
 [Browser compatibility]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API#Browser_compatibility
-[origin trial]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md 
+[origin trial]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
 [Web Bluetooth Security Model]: https://medium.com/@jyasskin/the-web-bluetooth-security-model-666b4e7eed2
 [secure contexts]: https://w3c.github.io/webappsec-secure-contexts/#intro
 [TLS]: https://en.wikipedia.org/wiki/Transport_Layer_Security

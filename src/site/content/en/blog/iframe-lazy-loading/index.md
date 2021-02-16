@@ -22,7 +22,7 @@ feedback:
 [Standardized lazy-loading for images](/native-lazy-loading) landed in Chrome 76 via
 the `loading` attribute and later came to Firefox. We are happy to share that
 **browser-level lazy-loading for iframes** is now
-[standardized](https://github.com/whatwg/html/pull/5579) and is also 
+[standardized](https://github.com/whatwg/html/pull/5579) and is also
 supported in Chrome and Chromium-based browsers.
 
 ```html/1
@@ -87,21 +87,21 @@ Using the `loading` attribute on iframes works as follows:
 
 ```html
 <!-- Lazy-load the iframe -->
-<iframe src="https://example.com" 
-        loading="lazy" 
-        width="600" 
+<iframe src="https://example.com"
+        loading="lazy"
+        width="600"
         height="400"></iframe>
 
 <!-- Eagerly load the iframe -->
-<iframe src="https://example.com" 
-        width="600" 
+<iframe src="https://example.com"
+        width="600"
         height="400"></iframe>
 
-<!-- or use loading="eager" to opt out of automatic 
+<!-- or use loading="eager" to opt out of automatic
 lazy-loading in Lite Mode -->
-<iframe src="https://example.com" 
-        loading="eager" 
-        width="600" 
+<iframe src="https://example.com"
+        loading="eager"
+        width="600"
         height="400"></iframe>
 ```
 
@@ -149,13 +149,13 @@ Lazy-loading YouTube video embeds (saves ~500KB on initial page load):
 
 ```html/1
 <iframe src="https://www.youtube.com/embed/YJGCZCaIZkQ"
-        loading="lazy" 
-        width="560" 
-        height="315" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; 
-        encrypted-media; gyroscope; 
-        picture-in-picture" 
+        loading="lazy"
+        width="560"
+        height="315"
+        frameborder="0"
+        allow="accelerometer; autoplay;
+        encrypted-media; gyroscope;
+        picture-in-picture"
         allowfullscreen></iframe>
 ```
 
@@ -187,18 +187,18 @@ lazy-loading of their iframe.
 **Lazy-loading Spotify embeds (saves 514KB on initial load):**
 
 ```html
-<iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" 
+<iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3"
         loading="lazy"
-        width="300" 
-        height="380" 
-        frameborder="0" 
-        allowtransparency="true" 
+        width="300"
+        height="380"
+        frameborder="0"
+        allowtransparency="true"
         allow="encrypted-media"></iframe>
 ```
 
 Although the above embeds illustrate the potential benefits to lazy-loading
 iframes for media content, there's the potential to also see these benefits for
-ads.  
+ads.
 
 ### Case study: Lazy-loading the Facebook's social plugins
 
@@ -212,9 +212,7 @@ which is JavaScript. In many cases, the plugin may appear at the end of an
 article or near the end of a page, so loading it eagerly when it's offscreen
 may be suboptimal.
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="./fblike.png" alt="Facebook Like Button">
-</figure>
+{% Img src="image/admin/fdy8o61jxPN560IkF2Ne.png", alt="Facebook Like Button", width="800", height="71", className="w-screenshot", figure=true %}
 
 Thanks to engineer Stoyan Stefanov, [all of Facebook's social plugins now
 support standardized iframe
@@ -231,7 +229,7 @@ lazy-loading in production.
 They certainly can. In Chrome 77, Chrome added support for automatically
 lazy-loading offscreen images and iframes when a user has opted into
 [Lite Mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html)
-(Data Saver mode) in Chrome for Android. 
+(Data Saver mode) in Chrome for Android.
 
 Lite Mode is commonly used in regions of the world where network connection
 quality and data plans are not the greatest. Every byte matters and so
@@ -338,4 +336,4 @@ And, in case you missed it, check out web.dev's [image and video lazy-loading
 collection](/fast/#lazy-load-images-and-video) for more lazy-loading ideas.
 
 _With thanks to Dom Farolino, Scott Little, Houssein Djirdeh, Simon Pieters, Kayce Basques, Joe Medley and Stoyan
-Stefanov for their reviews._ 
+Stefanov for their reviews._

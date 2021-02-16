@@ -220,15 +220,11 @@ there's an issue with COEP, you should see
 `(blocked:NotSameOriginAfterDefaultedToSameOriginByCoep)` in the **Status**
 column.
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot-filled" src="devtools1.jpg" alt="COEP issues in the Status column of the Network panel.">
-</figure>
+{% Img src="image/admin/iGwe4M1EgHzKb2Tvt5bl.jpg", alt="COEP issues in the Status column of the Network panel.", width="800", height="444", className="w-screenshot w-screenshot-filled", figure=true %}
 
 You can then click the entry to see more details.
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot-filled" src="devtools2.jpg" alt="Details of the COEP issue are shown in the Headers tab after clicking a network resource in the Network panel.">
-</figure>
+{% Img src="image/admin/1oTBjS9q8KGHWsWYGq1N.jpg", alt="Details of the COEP issue are shown in the Headers tab after clicking a network resource in the Network panel.", width="800", height="241", className="w-screenshot w-screenshot-filled", figure=true %}
 
 {% Aside %}
 While COEP debugging is already available, COOP debugging in Chrome
@@ -307,9 +303,7 @@ glitch.com](https://reporting-endpoint.glitch.me/). ["Remix Project" to
 clone](https://glitch.com/edit/#!/reporting-endpoint) and customize for your own
 purposes.
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot-filled" src="reporting-endpoint.png" alt="Build your own reporting endpoint by forking a lightweight sample implementation on glitch.com.">
-</figure>
+{% Img src="image/admin/8Fh5mUULtCRK5K0738Ss.png", alt="Build your own reporting endpoint by forking a lightweight sample implementation on glitch.com.", width="800", height="496", className="w-screenshot w-screenshot-filled", figure=true %}
 
 All you have to do is to put the URL indicated in the page as the reporting
 endpoint of COOP and COEP. See below to learn how to configure.
