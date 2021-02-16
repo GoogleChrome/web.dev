@@ -13,17 +13,17 @@ groups:
     conditions:
       - >
         contains_any_globs(files, [
-          *.js,
-          *.json,
-          *.css,
-          *.scss,
-          *.html,
-          *.htm,
-          *.njk,
-          *.yml,
-          *.yaml,
-          *.toml,
-          *.sh
+          '*.js',
+          '*.json',
+          '*.css',
+          '*.scss',
+          '*.html',
+          '*.htm',
+          '*.njk',
+          '*.yml',
+          '*.yaml',
+          '*.toml',
+          '*.sh'
         ])
   
   # Content team
@@ -37,10 +37,10 @@ groups:
     conditions:
       - >
         contains_any_globs(files, [
-          src/site/content/**,
-          src/images/authors/**,
-          src/site/_data/authorsData.json,
-          src/site/_data/tagsData.json,
-          src/site/_data/paths/*.json,
-          redirects.yaml
+          'src/site/content/**',
+          'src/images/authors/**',
+          'src/site/_data/authorsData.json',
+          'src/site/_data/tagsData.json',
+          'src/site/_data/paths/*.json',
+          'redirects.yaml'
         ])
