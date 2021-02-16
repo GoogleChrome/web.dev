@@ -587,6 +587,7 @@ experimental implementations. It has a polyfill though, which I use in this
 demo. 
 
 ##### ` ScrollTimeline`
+
 While CSS and JavaScript can both create scroll timelines, I opted into
 Javascript so I could use live element measurements in the animation.
 
@@ -622,6 +623,7 @@ missing the final ingredient, stateful points to animate between, also known as
 keyframes.
 
 #### Dynamic keyframes
+
 There's a really powerful pure declarative CSS way to animate with
 `@scroll-timeline`, but the animation I chose to do was too dynamic. There's no
 way to transition between `auto` width, and there's no way to dynamically create
