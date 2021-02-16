@@ -1,0 +1,46 @@
+version: 3
+
+groups:
+  # Engineering team
+  eng:
+    reviewers:
+      teams:
+      - web-dev-eng
+    reviews:
+      # The number of people who should be requested for review at any given
+      # time. Default is 1.
+      request: 2
+    conditions:
+      - >
+        contains_any_globs(files, [
+          *.js,
+          *.json,
+          *.css,
+          *.scss,
+          *.html,
+          *.htm,
+          *.njk,
+          *.yml,
+          *.yaml,
+          *.toml,
+          *.sh
+        ])
+  
+  # Content team
+  content:
+    reviewers:
+      teams:
+      - web-dev-content
+      # Prefix a username or team with ~ to include them in the reviewer pool
+      # but skip them when sending review requests.
+      - ~web-dev-approvers
+    conditions:
+      - >
+        contains_any_globs(files, [
+          src/site/content/**,
+          src/images/authors/**,
+          src/site/_data/authorsData.json,
+          src/site/_data/tagsData.json,
+          src/site/_data/paths/*.json,
+          redirects.yaml
+        ])
