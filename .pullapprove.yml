@@ -37,6 +37,9 @@ groups:
       # Prefix a username or team with ~ to include them in the reviewer pool
       # but skip them when sending review requests.
       - ~web-dev-approvers
+    reviews:
+      # Assign everyone on the content team for reviews.
+      request: 3
     conditions:
       - >
         contains_any_globs(files, [
