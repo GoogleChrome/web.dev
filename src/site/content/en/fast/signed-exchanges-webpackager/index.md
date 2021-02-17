@@ -15,9 +15,11 @@ tags:
   - performance
 ---
 
-The following instructions explain how to set up Signed Exchanges (SXGs) using
-Web Packager. Instructions are included for both self-signed and
-`CanSignHttpExchanges` certificates.
+A [signed exchange (SXG)](/signed-exchanges) is a delivery mechanism that makes it 
+possible to authenticate the origin of a resource independently of how it was delivered. 
+The following instructions explain how to set up Signed Exchanges using
+[Web Packager](https://github.com/google/webpackager). Instructions are included for 
+both self-signed and `CanSignHttpExchanges` certificates.
 
 
 ## Serve SXGs using a self-signed certificate
