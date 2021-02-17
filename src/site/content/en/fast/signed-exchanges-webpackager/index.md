@@ -198,9 +198,9 @@ used with signed exchanges.
         `URL doesn't match the fetch targets`.
     *   (Optional) To preload subresources, change the line `#PreloadCSS
         = false` to `PreloadCSS = true`. In addition, change the line `#PreloadJS =
-        false` to `PreloadJS = true`. More information about subresource
-        substitution can be found
-        [here](https://github.com/WICG/webpackage/blob/master/explainers/signed-exchange-subresource-substitution.md).
+        false` to `PreloadJS = true`. For more information about subresource
+        substitution, check out
+        [the explainer](https://github.com/WICG/webpackage/blob/master/explainers/signed-exchange-subresource-substitution.md).
 
 4. Start `webpkgserver`.
 
