@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine most of the time, there are some applications that need to keep the screen awake in order to complete some work. The Screen Wake Lock API provides a way to prevent the device from dimming or locking the screen when an application needs to keep running.
 date: 2018-12-18
-updated: 2021-02-12
+updated: 2021-02-17
 hero: hero.jpg
 hero_position: center
 alt: |
@@ -227,7 +227,7 @@ or apps.
 You can use your operating system's task manager to see if an application is preventing
 your computer from sleeping. The video below shows the macOS
 [Activity Monitor](https://support.apple.com/guide/activity-monitor/welcome/mac)
-indicating that Chrome has an active Screen Wake Lock that keeps the system awake.
+indicating that Chrome has an active screen wake lock that keeps the system awake.
 
 {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/YDlxREcGrnBUGC8plN15.mp4", autplay="true", loop="true", width="800" %}
 
