@@ -99,7 +99,7 @@ used with signed exchanges.
     openssl x509 -req -days 90 -in cert.csr -signkey priv.key -out cert.pem -extfile &lt;(echo -e "1.3.6.1.4.1.11129.2.1.22 = ASN1:NULL\nsubjectAltName=DNS:example.com")
     ```
 
-    This command uses the private key and CSR created in steps 1 and 2 to create the
+    This command uses the private key and the CSR created in steps 1 and 2 to create the
     certificate file `cert.pem`. The `-extfile` flag associates the certificate with
     the `CanSignHttpExchanges` certificate extension (`1.3.6.1.4.1.11129.2.1.22` is
     the [object
