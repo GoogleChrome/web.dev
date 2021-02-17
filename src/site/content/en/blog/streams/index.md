@@ -102,7 +102,8 @@ streams**, called branches, which can be consumed independently.
 Teeing also is important because streams cannot be rewound or restarted, more about this later.
 
 <figure class="w-figure">
-  <img src="./streams.svg" width="2099" height="1127" alt="Diagram of a pipe chain consisting of a readable stream coming from a call to the fetch API that is then piped through a transform stream whose output is teed and then sent to the browser for the first resulting readable stream and to the service worker cache for the second resulting readable stream.">
+  <!-- Original source file located at https://drive.google.com/file/d/17apgoyo6E5RAA_nwwM5Xg4FGiMr8y3mk/view?usp=sharing -->
+    <img src="./streams.svg" width="2099" height="1127" alt="Diagram of a pipe chain consisting of a readable stream coming from a call to the fetch API that is then piped through a transform stream whose output is teed and then sent to the browser for the first resulting readable stream and to the service worker cache for the second resulting readable stream.">
   <figcaption class="w-figcaption">A pipe chain.</figcaption>
 </figure>
 
