@@ -12,6 +12,7 @@ groups:
       # time. Default is 1.
       request: 2
     conditions:
+      # The engineering team is the default owner for any code related files.
       - >
         contains_any_globs(files, [
           '*.js',
@@ -24,12 +25,13 @@ groups:
           '*.yml',
           '*.yaml',
           '*.toml',
-          '*.sh',
-          '!src/site/_data/authorsData.json',
-          '!src/site/_data/tagsData.json',
-          '!src/site/_data/paths/*.json',
-          '!redirects.yaml'
+          '*.sh'
         ])
+      # Exclude files that should be approved by the content team instead.
+      - files.exclude('src/site/_data/authorsData.json')
+      - files.exclude('src/site/_data/tagsData.json')
+      - files.exclude('src/site/_data/paths/*.json')
+      - files.exclude('redirects.yaml')
   
   # Content
   # Handles any changes related to site content.
