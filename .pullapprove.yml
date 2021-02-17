@@ -15,23 +15,18 @@ groups:
       # The engineering team is the default owner for any code related files.
       - >
         contains_any_globs(files, [
-          '*.js',
-          '*.json',
-          '*.css',
-          '*.scss',
-          '*.html',
-          '*.htm',
-          '*.njk',
-          '*.yml',
-          '*.yaml',
-          '*.toml',
-          '*.sh'
-        ])
-      # Exclude files that should be approved by the content team instead.
-      - files.exclude('src/site/_data/authorsData.json')
-      - files.exclude('src/site/_data/tagsData.json')
-      - files.exclude('src/site/_data/paths/*.json')
-      - files.exclude('redirects.yaml')
+          '**/*.js',
+          '**/*.css',
+          '**/*.scss',
+          '**/*.html',
+          '**/*.htm',
+          '**/*.njk',
+          '**/*.yml',
+          '**/*.toml',
+          '**/*.sh'
+        ]) or
+        files.include('*.yaml').exclude('redirects.yaml') or
+        files.include('*.json').exclude('src/site/_data/authorsData.json').exclude('src/site/_data/tagsData.json').exclude('src/site/_data/paths/*.json')
   
   # Content
   # Handles any changes related to site content.
