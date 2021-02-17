@@ -286,9 +286,8 @@ used with signed exchanges.
   {% Aside %}
   `webpkgserver` can be configured to use a locally-hosted
   certificate. For information on this configuration option,
-  refer to the `CertURLBase` option in `webpkgserver.toml`. This 
-  [article](https://web.dev/how-to-use-local-https/) explains how to 
-  use HTTPS for local development.
+  refer to the `CertURLBase` option in `webpkgserver.toml`. 
+  Learn more about [how to use HTTPS for local development](/how-to-use-local-https).
   {% endAside %}
 
 
