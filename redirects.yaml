@@ -246,3 +246,7 @@ redirects:
   destination: /aria-name
 - source: /aria-input-field-name
   destination: /aria-name
+
+# Test redirect
+- source: /extensions
+  destination: /
