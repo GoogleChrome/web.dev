@@ -9,6 +9,9 @@ tags:
   - security
 ---
 
+Use this document to remind yourself of important security headers and check
+if you have examined whether they should be applied or not.
+
 {% Details %}
 {% DetailsSummary %}
 Content Security Policy (CSP)
@@ -16,15 +19,12 @@ A content security policy primarily helps to mitigate
 [XSS](https://owasp.org/www-community/attacks/xss/) attacks.
 {% endDetailsSummary %}
 
+A content security policy primarily helps to mitigate
+[XSS](https://owasp.org/www-community/attacks/xss/) attacks.
+
 {% Aside %}
 A CSP can be an **extra** protection against XSS attacks; you should still make
 sure to escape (and sanitize) user input.
-{% endAside %}
-
-{% Aside %}
-Wait, what about the other benefits of using a CSP?
-* To protect your site from  clickjacking—a risk that arises if you allow untrusted sites to embed yours—use [X-Frame-Options](#xfo) or [CORP](#corp). If you need a more advanced configuration to only allow specific origins as embedders, the CSP directive called [frame-ancestors](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) is what you need.
-* You may have used a CSP to ensure that all of your site's resources are loaded over HTTPS. This has become less relevant: nowadays, most browsers block [mixed-content](/what-is-mixed-content/).
 {% endAside %}
 
 ### Recommended for:
@@ -44,7 +44,7 @@ A nonce is a random number used only once. A nonce-based CSP is only secure if y
 
 Determine the script nonces on the server side and set the following header:
 
-`server configuration file`
+{% Label %}server configuration file{% endLabel %}
 
 ```http
 Content-Security-Policy:
@@ -56,7 +56,7 @@ Note: `https:` is a fallback for Safari and `unsafe-inline` is a fallback for ve
 
 In HTML, in order to load the scripts, use the same `{RANDOM1}` string as the `nonce` attributes.
 
-`index.html`
+{% Label %}index.html{% endLabel %}
 
 ```html
 <script nonce="{RANDOM1}" src="https://example.com/script1.js"></script>
@@ -65,7 +65,8 @@ In HTML, in order to load the scripts, use the same `{RANDOM1}` string as the `n
 
 #### Protect your site from XSS with a hash-based CSP:
 
-`server configuration file`
+{% Label %}server configuration file{% endLabel %}
+
 ```http
 Content-Security-Policy:
   script-src 'sha256-{HASH1}' 'sha256-{HASH2}' 'strict-dynamic' https: 'unsafe-inline';
@@ -76,7 +77,7 @@ Note: `https:` is a fallback for Safari and `unsafe-inline` is a fallback for ve
 
 In HTML, you'll need to inline your scripts in order to apply a hash-based policy, because [most browsers don't support hashing external scripts]( https://wpt.fyi/results/content-security-policy/script-src/script-src-sri_hash.sub.html?label=master&label=experimental&aligned). 
 
-`index.html`
+{% Label %}index.html{% endLabel %}
 
 ```html
 <script>
@@ -87,12 +88,19 @@ In HTML, you'll need to inline your scripts in order to apply a hash-based polic
 </script>
 ```
 
-### Supported in:
+{% Aside %}
+Wait, what about the other benefits of using a CSP?
+* To protect your site from  clickjacking—a risk that arises if you allow untrusted sites to embed yours—use [X-Frame-Options](#xfo) or [CORP](#corp). If you need a more advanced configuration to only allow specific origins as embedders, the CSP directive called [frame-ancestors](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) is what you need.
+* You may have used a CSP to ensure that all of your site's resources are loaded over HTTPS. This has become less relevant: nowadays, most browsers block [mixed-content](/what-is-mixed-content/).
+{% endAside %}
 
-* Chrome
-* Firefox
-* Edge
-* Safari. Note: Safari does *not* support `strict-dynamic` yet. But a strict CSP like in the examples above is safer than an allowlist CSP (and much safer than no CSP at all) for all of your users. Even in Safari, a strict CSP protects your site from some types of XSS attacks, because the presence of the CSP disallows certain unsafe patterns.
+### Supported browsers:
+
+Chrome, Firefox, Edge, Safari
+
+{% Aside 'gotchas' %}
+Safari does *not* support `strict-dynamic` yet. But a strict CSP like in the examples above is safer than an allowlist CSP (and much safer than no CSP at all) for all of your users. Even in Safari, a strict CSP protects your site from some types of XSS attacks, because the presence of the CSP disallows certain unsafe patterns.
+{% endAside %}
 
 Other things to note about this header:
 
@@ -113,19 +121,21 @@ Trusted Types
 Trusted Types is one of CSP's directives that can prevent XSS on DOM manipulation. You can define policies that enforce sanitization to a given string before being applied to a DOM.
 {% endDetailsSummary %}
 
-### Recommended for:
+Trusted Types is one of CSP's directives that can prevent XSS on DOM manipulation. You can define policies that enforce sanitization to a given string before being applied to a DOM.
 
-Websites with sensitive information.
+### Recommended usage:
 
-### Example usage:
+Websites with sensitive information should use Trusted Types.
 
-CSP and Trusted Types header:
+Declare that the trusted types is a requirement:
+
+{% Label %}CSP and Trusted Types header:{% endLabel %}
 
 ```http
-Content-Security-Policy: require-trusted-types-for 'script'; trusted-types htmlPolicy
+Content-Security-Policy: require-trusted-types-for 'script';
 ```
 
-Define a policy:
+{% Label %}Define a policy:{% endLabel %}
 
 ```javascript
 // Feature detection
@@ -138,7 +148,7 @@ if (window.trustedTypes && trustedTypes.createPolicy) {
 }
 ```
 
-Usage of the policy:
+{% Label %}Use the policy:{% endLabel %}
 
 ```javascript
 const escaped = policy.createHTML('<img src=x onerror=alert(1)>');
@@ -147,14 +157,7 @@ el.innerHTML = escaped;  // '&lt;img src=x onerror=alert(1)&gt;'
 
 ### Supported browsers:
 
-* Chrome
-* Edge
-
-### Supports:
-
-* Reporting API: true
-* Report-Only mode: true
-* meta tag: true
+Chrome, Edge
 
 ### Learn more:
 * [DEMO](https://www.compass-demo.com/trusted-types/) (Open Inspector and see what is happening)
@@ -167,12 +170,18 @@ el.innerHTML = escaped;  // '&lt;img src=x onerror=alert(1)&gt;'
 {% DetailsSummary %}
 X-Content-Type-Options
 
-Inform that MIME types advertised in the `Content-Type` headers should not be changed and be followed.
+`X-Content-Type-Options` informs the browser that MIME types advertised in the
+`Content-Type` headers should not be changed and be followed.
+
 {% endDetailsSummary %}
+
+`X-Content-Type-Options` informs the browser that MIME types advertised in the
+`Content-Type` headers should not be changed and be followed.
 
 ### Recommended for:
 
-All subresources.
+Appending `X-Content-Type-Options: nosniff` is recommended for all resources
+unless their MIME type is explicitly expected to be altered by the browser.
 
 ### Example usage:
 
@@ -182,16 +191,7 @@ X-Content-Type-Options: nosniff
 
 ### Supported browsers:
 
-* Chrome
-* Firefox
-* Safari
-* Edge
-
-### Supports:
-
-* Reporting API: false
-* Report-Only mode: false
-* meta tag: N/A
+Chrome, Firefox, Safari and Edge
 
 ### Learn more:
 
