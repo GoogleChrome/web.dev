@@ -50,15 +50,6 @@ declare global {
      * Flag to wrap image in `a` tag pointing to the image. `false` by default.
      */
     linkTo?: boolean;
-    /**
-     * Caption to place under image. If set to `true` it will use the `alt` text. When in use automatically enables `figure`.
-     */
-    caption?: true | string;
-    /**
-     * Flag to wrap image in a `figure` tag. If `true` passed in then it will default to `figure.w-figure`,
-     * if a `string` is passes in then it'll be `figure.w-figure.w-figure--{YOUR_STRING_HERE}`.
-     */
-    figure?: true | string;
   }
 
   export interface ImgixOptions {
