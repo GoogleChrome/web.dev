@@ -66,7 +66,9 @@ cross-origin resources:
    impact analysis.
 2. On cross-origin resources such as images, scripts, stylesheets, iframes, and
    others, set the [`Cross-Origin-Resource-Policy:
-   cross-origin`](https://resourcepolicy.fyi) header.
+   cross-origin`](https://resourcepolicy.fyi/#cross-origin) header. On same-site
+   resources, set [`Cross-Origin-Resource-Policy:
+   same-site`](https://resourcepolicy.fyi/#same-origin) header.
 3. Set the `crossorigin` attribute in the HTML tag on top-level document if the
    resource is served with [CORS](/cross-origin-resource-sharing/) (for example,
    `<img src="example.jpg" crossorigin>`).
