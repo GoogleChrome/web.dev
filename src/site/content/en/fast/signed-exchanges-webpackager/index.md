@@ -309,12 +309,12 @@ used with signed exchanges.
    to regenerate the SXG using a different certificate, the **Certificate URL**
    listed in the **Signature** would be different.
 
-  {% Img
-    src="image/j2RDdG43oidUy6AL6LovThjeX9c2/K1caujHPlyCURA1pxYXz.png",
-    alt="Screenshot showing the hash that corresponds to the certificate.",
-    width="800",
-    height="229"
-  %}
+    {% Img
+        src="image/j2RDdG43oidUy6AL6LovThjeX9c2/K1caujHPlyCURA1pxYXz.png",
+        alt="Screenshot showing the hash that corresponds to the certificate.",
+        width="800",
+        height="229"
+    %}
 
 2. Create a copy of `cert.pem`. The filename of the new version should match the
    hash you just copied—for example,
