@@ -301,16 +301,17 @@ used with signed exchanges.
 
 
 
-1. In DevTools, locate the **Certificate URL** indicated in the
-   **Signature** of the SXG. Copy the hash that is located at the end of this string.
+1. In DevTools, locate the **Certificate URL** indicated in the **Signature** of
+   the SXG. Copy the hash that is located at the end of this string.
 
-  This hash is an identifier that corresponds to the certificate. If you were to
-  regenerate the SXG using a different certificate, the **Certificate URL**
-  listed in the **Signature** would be different.
+   This hash is an identifier that corresponds to the certificate. If you were
+   to regenerate the SXG using a different certificate, the **Certificate URL**
+   listed in the **Signature** would be different.
 
   {% Img
     src="image/j2RDdG43oidUy6AL6LovThjeX9c2/K1caujHPlyCURA1pxYXz.png",
-    alt="Screenshot showing the hash that corresponds to the certificate.",     width="800",
+    alt="Screenshot showing the hash that corresponds to the certificate.",
+    width="800",
     height="229"
   %}
 
