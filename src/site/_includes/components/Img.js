@@ -3,7 +3,10 @@ const ImgixClient = require('imgix-core-js');
 const {imgix: domain} = require('../../_data/site');
 
 const client = new ImgixClient({domain, includeLibraryParam: false});
+const MIN_WIDTH = 200;
 const MAX_WIDTH = 800;
+// The highest device pixel ratio we'll generate srcsets for.
+const MAX_DPR = 2; // @2x
 
 /**
  * Generates src URL of image from imgix path or URL.
@@ -54,10 +57,11 @@ const Img = function (args) {
   params = {auto: 'format', ...params};
   // https://github.com/imgix/imgix-core-js#imgixclientbuildsrcsetpath-params-options
   options = {
-    // Use the image width as the lower bound, or 200px.
-    minWidth: Math.min(200, widthAsNumber),
-    // Use image width as the upper bound, maxed out at 1,600px.
-    maxWidth: Math.min(1600, widthAsNumber),
+    // Use the image width as the lower bound.
+    // Note this may be smaller than MIN_WIDTH.
+    minWidth: Math.min(MIN_WIDTH, widthAsNumber),
+    // Use image width * dpr as the upper bound, maxed out at 1,600px.
+    maxWidth: Math.min(MAX_WIDTH * MAX_DPR, widthAsNumber * MAX_DPR),
     widthTolerance: 0.07,
     ...options,
   };
