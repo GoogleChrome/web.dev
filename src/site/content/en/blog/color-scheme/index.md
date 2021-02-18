@@ -187,7 +187,7 @@ Honoring the `color-scheme` CSS property requires the CSS to be first downloaded
 (if it is referenced via `<link rel="stylesheet">`) and to be parsed.
 To aid user agents in rendering the page background with the desired color scheme *immediately*,
 a `color-scheme` value can also be provided in a
-[`<meta name="color-scheme">`](https://drafts.csswg.org/css-color-adjust/#color-scheme-meta)
+[`<meta name="color-scheme">`](https://html.spec.whatwg.org/multipage/semantics.html#meta-color-scheme)
 element.
 
 ```html
