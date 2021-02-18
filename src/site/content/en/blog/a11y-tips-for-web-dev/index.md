@@ -403,7 +403,7 @@ you can allow users of assistive technology to interact with the element,
 change its value, and even cause the element's visual presentation to change accordingly.
 
 <figure class="w-figure">
-  {% Img src="image/admin/BD2bS6XEEUlORVOGHwhe.png", alt="A screenshot of a slider.", width="159", height="56, class="w-screenshot" %}
+  {% Img src="image/admin/BD2bS6XEEUlORVOGHwhe.png", alt="A screenshot of a slider.", width="159", height="56", class="w-screenshot" %}
   <figcaption class="w-figcaption">A range slider component.</figcaption>
 </figure>
 
