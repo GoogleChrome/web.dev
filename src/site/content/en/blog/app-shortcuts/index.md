@@ -41,12 +41,12 @@ The app shortcuts menu is invoked by right-clicking the app icon in the taskbar
 launcher icon on Android.
 
 <figure class="w-figure">
-  {% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Screenshot of an app shortcuts menu opened on Android", width="800", height="420" %}
+  {% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Screenshot of an app shortcuts menu opened on Android", width="800", height="420", class="w-screenshot" %}
   <figcaption class="w-figcaption">App shortcuts menu opened on Android</figcaption>
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="Screenshot of an app shortcuts menu opened on Windows", width="800", height="420" %}
+  {% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="Screenshot of an app shortcuts menu opened on Windows", width="800", height="420", class="w-screenshot" %}
   <figcaption class="w-figcaption">App shortcuts menu opened on Windows</figcaption>
 </figure>
 

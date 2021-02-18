@@ -32,8 +32,8 @@ physical motion, slow or fast, results in the same rotation. This results in a
 better gaming experience and higher accuracy according to professional gamers.
 
 <figure class="w-figure">
-  {% Img src="image/admin/4x9YZ7nC3SJMN9FI46zN.png", alt="Screenshot of the pointer motion control in Windows 10 settings.", width="800", height="260" %}
-  <figcaption class="w-figcaption">Screenshot of the pointer motion control in Windows 10 settings.", className="w-screenshot</figcaption>
+  {% Img src="image/admin/4x9YZ7nC3SJMN9FI46zN.png", alt="Screenshot of the pointer motion control in Windows 10 settings.", width="800", height="260", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Pointer motion control in Windows 10 settings.</figcaption>
 </figure>
 
 Starting in Chrome 88, web apps can switch back and forth between accelerated

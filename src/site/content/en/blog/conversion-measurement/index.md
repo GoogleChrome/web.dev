@@ -83,7 +83,9 @@ address in a privacy-preserving way the use cases that third-party cookies solve
   clients](https://github.com/WICG/conversion-measurement-api/blob/master/SERVICE.md).
 - [Trust Tokens](/trust-tokens/) help combat fraud and distinguish bots from humans.
 
-{% Img src="image/admin/vs7VtXlG4d6wHjZ1Tmwi.jpg", alt="Overview of some privacy sandbox APIs: trust tokens and conversion measurement (aggregate and event)", width="800", height="254", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/vs7VtXlG4d6wHjZ1Tmwi.jpg", alt="Overview of some privacy sandbox APIs: trust tokens and conversion measurement (aggregate and event)", width="800", height="254" %}
+</figure>
 
 **How does the Event Conversion Measurement API compare to third-party cookies?**
 
@@ -214,7 +216,7 @@ just `news.example` and `shoes.example`—a user's behavior can be tracked acros
 
 <figure class="w-figure">
   {% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="Diagram: how the API enables conversion measurement without cross-site user recognition", width="800", height="643" %}
-  <figcaption class="w-figcaption">\"Ad ID\" on the cookies diagram and \"Click ID\" are both identifiers that enable mapping to detailed data. On this diagram, it's called \"Click ID\" because only click-through conversion measurement is supported.</figcaption>
+  <figcaption class="w-figcaption">"Ad ID" on the cookies diagram and "Click ID" are both identifiers that enable mapping to detailed data. On this diagram, it's called "Click ID" because only click-through conversion measurement is supported.</figcaption>
 </figure>
 
 `adtech.example` can't use a cross-site identifier and hence **can't recognize a user across

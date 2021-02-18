@@ -188,7 +188,7 @@ and [COEP issues](/coop-coep/). Watch the web.dev LIVE session on [finding and f
 problems with the Issues tab](https://youtu.be/1TbkSxQb4bI) to get started.
 
 <figure class="w-figure">
-  {% Img src="image/admin/G7AmzK1btOMBUPEhnFhV.png", alt="A screenshot of the Issues tab.", width="800", height="535", className="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/G7AmzK1btOMBUPEhnFhV.png", alt="A screenshot of the Issues tab.", width="800", height="535", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 Moreover, with the [Core Web Vitals](/vitals/#core-web-vitals) becoming one of the

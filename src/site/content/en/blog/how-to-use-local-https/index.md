@@ -276,7 +276,7 @@ If you open your locally running site in your browser using HTTPS, your browser 
 
 <figure class="w-figure">
   {% Img src="image/admin/V2SAcIzuofqzUuestOOX.jpg", alt="Why browsers don't trust self-signed certificates: a diagram.", width="800", height="833" %}
-  <figcaption class="w-figcaption">Why browsers don't trust self-signed certificates: a diagram.</figcaption>
+  <figcaption class="w-figcaption">Why browsers don't trust self-signed certificates.</figcaption>
 </figure>
 
 {% endDetails %}

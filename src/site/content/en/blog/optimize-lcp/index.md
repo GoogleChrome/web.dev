@@ -242,7 +242,7 @@ For more details, refer to the [Defer non-critical CSS](/defer-non-critical-css/
 Inline any critical-path CSS used for above-the-fold content by including it directly in `<head>.`
 
 <figure class="w-figure">
-  {% Img src="image/admin/m0n0JsLpH9JsNnXywSwz.png", alt="Critical CSS inlined", width="800", height="325", className="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/m0n0JsLpH9JsNnXywSwz.png", alt="Critical CSS inlined", width="800", height="325", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">Critical CSS inlined</figcaption>
 </figure>
 

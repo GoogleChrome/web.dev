@@ -30,7 +30,7 @@ article.
 
 <figure class="w-figure">
   {% Img src="image/admin/qwTz64KKq4rq7WeA3rlT.jpg", alt="Screenshots of Media Session contexts", width="800", height="330" %}
-  <figcaption class="w-figcaption">Screenshots of Media Session contexts</figcaption>
+  <figcaption class="w-figcaption">Media hub on desktop, media notification on mobile, and a wearable device</figcaption>
 </figure>
 
 ## Cross-browser support
@@ -180,7 +180,7 @@ media notification.
 
 <figure class="w-figure">
   {% Img src="image/admin/9rN4x5GXdhg4qjC0ZEmk.jpg", alt="Screenshot of a media notification in Windows 10", width="800", height="450" %}
-  <figcaption class="w-figcaption">>Customized media notification in Windows 10</figcaption>
+  <figcaption class="w-figcaption">Customized media notification in Windows 10</figcaption>
 </figure>
 
 Because some media session actions may not be supported, it is recommended to

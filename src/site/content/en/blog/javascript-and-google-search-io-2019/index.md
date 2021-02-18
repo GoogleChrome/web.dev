@@ -46,10 +46,8 @@ Googlebot now uses a modern Chromium engine to render websites for Google Search
 Googlebot is a pipeline with several components. Let's take a look to understand how Googlebot indexes pages for Google Search.
 
 <figure class="w-figure w-figure--fullbleed">
-  <figure class="w-figure">
   {% Img src="image/admin/zu4wDqHHxpU0dbwSajqA.png", alt="A diagram showing a URL moving from a crawling queue to a processing step that extracts linked URLs and adds them to the crawling queue, a rendering queue that feeds into a renderer which produces HTML. The processor uses this HTML to extract linked URLs again and index the content.", width="800", height="446" %}
   <figcaption class="w-figcaption">Googlebot's pipeline for crawling, rendering, and indexing a page.</figcaption>
-</figure>
 </figure>
 
 The process works like this:

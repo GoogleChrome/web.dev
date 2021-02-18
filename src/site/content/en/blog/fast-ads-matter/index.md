@@ -84,7 +84,10 @@ rate.
 With 1&nbsp;s of added delay, impressions decreased by 1.1% for mobile traffic
 and 1.9% for desktop traffic:
 
-{% Img src="image/admin/upKhjFZogtlvQGtTfwrX.svg", alt="Chart showing latency injected vs. impressions change", width="800", height="600", captioin="Source: Google Internal Data, December 2016 to January 2017." %}
+<figure class="w-figure">
+  {% Img src="image/admin/upKhjFZogtlvQGtTfwrX.svg", alt="Chart showing latency injected vs. impressions change", width="800", height="600" %}
+  <figcaption class="w-figcaption">Source: Google Internal Data, December 2016 to January 2017.</figcaption>
+</figure>
 
 With 1&nbsp;s of added delay, viewability rate decreased by 3.6% for mobile
 traffic and 2.9% for desktop traffic:

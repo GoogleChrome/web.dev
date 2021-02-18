@@ -97,7 +97,7 @@ come in many forms and fashions, as stickers, credit cards, arm wrists, etc.
 
 <figure class="w-figure">
   {% Img src="image/admin/uUBxSkSc3MJBG8Lw52fV.jpg", alt="Photo of a transparent NFC tag", width="800", height="450" %}
-  <figcaption class="w-figcaption">Photo of a transparent NFC tag</figcaption>
+  <figcaption class="w-figcaption">A transparent NFC tag</figcaption>
 </figure>
 
 The `NDEFReader` object is the entry point in Web NFC that exposes functionality
@@ -279,7 +279,7 @@ control over NFC use.
 
 <figure class="w-figure">
   {% Img src="image/admin/PjUcOk4zbtOFJLXfSeSD.png", alt="Screenshot of a Web NFC prompt on a website", width="800", height="407" %}
-  <figcaption class="w-figcaption">Screenshot of a Web NFC prompt on a website</figcaption>
+  <figcaption class="w-figcaption">Web NFC user prompt</figcaption>
 </figure>
 
 Web NFC is only available to top-level frames and secure browsing contexts (HTTPS

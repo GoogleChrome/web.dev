@@ -56,9 +56,9 @@ By adopting these best practices, the team was able to cut the average page load
 
 ## Improving re-engagement
 
-<figure class="w-figure">
+<figure class="w-figure w-figure--inline-right">
   {% Img src="image/admin/U97z7PSx8CgKACjMnLkO.png", alt="A smartphone displaying OpenSooq notifications.", width="284", height="549", class="w-screenshot" %}
-  <figcaption class="w-figcaption">OpenSooq's meaningful user notifications.", figure="inline-right</figcaption>
+  <figcaption class="w-figcaption">OpenSooq's meaningful user notifications.</figcaption>
 </figure>
 
 Having built a performant and reliable experience, the OpenSooq team wanted to make sure their users stayed engaged with the product. To do that, they enabled users to install the [PWA to their home screen](https://developers.google.com/web/fundamentals/app-install-banners/promoting-install-mobile) and added support for [meaningful notifications](https://developers.google.com/web/fundamentals/push-notifications/). This allowed the site to notify buyers about seller interaction on queries and sellers about ad activation and expiration.

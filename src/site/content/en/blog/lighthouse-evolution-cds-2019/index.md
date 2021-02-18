@@ -131,8 +131,8 @@ CLI](https://developers.google.com/web/tools/lighthouse#cli), but the goal is to
 enable running them in the DevTools **Audits** panel too.
 
 <figure class="w-figure">
-  {% Img src="image/admin/I6WOZkh3Wdbb6vk2sE4z.png", alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience.", width="400", height="753" %}
-  <figcaption class="w-figcaption">Community Plugins in DevTools Audits panel (beta)", class="w-screenshot</figcaption>
+  {% Img src="image/admin/I6WOZkh3Wdbb6vk2sE4z.png", alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience.", width="400", height="753", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Community Plugins in DevTools Audits panel (beta)</figcaption>
 </figure>
 
 When users install Lighthouse plugin extensions from the [Chrome Web

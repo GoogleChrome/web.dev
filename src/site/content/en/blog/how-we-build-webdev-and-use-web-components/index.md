@@ -162,7 +162,7 @@ Each `-container` element connects to our global state (provided by [unistore](h
 
 <figure class="w-figure">
   {% Img src="image/admin/0vvvEFtKSNNvD79QS2i2.png", alt="A diagram that shows the relationship between global state and HTML elements that use it.", width="640", height="220" %}
-  <figcaption class="w-figcaption">A diagram that shows the relationship between global state and HTML elements that use it.</figcaption>
+  <figcaption class="w-figcaption">Global state and a Web Component</figcaption>
 </figure>
 
 Our most complex Web Components exist to visualize global actions and state.

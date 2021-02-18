@@ -220,7 +220,7 @@ to (`device`), and the 8-bit report ID associated with the input report
 
 <figure class="w-figure">
   {% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="Red and blue nintendo switch photo.", width="800", height="575", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Red and blue nintendo switch photo.</figcaption>
+  <figcaption class="w-figcaption">Nintendo Switch Joy-Con devices.</figcaption>
 </figure>
 
 Continuing with the previous example, the code below shows you how to detect
@@ -277,7 +277,7 @@ sent by the application on a regular basis.
 
 <figure class="w-figure">
   {% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="Black and silver laptop computer photo.", width="800", height="575", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Black and silver laptop computer photo.</figcaption>
+  <figcaption class="w-figcaption">Laptop keyboard</figcaption>
 </figure>
 
 To send a feature report to a HID device, pass the 8-bit report ID associated
@@ -349,7 +349,7 @@ where you can see all HID and USB device related events in one single place.
 
 <figure class="w-figure">
   {% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="Screenshot of the internal page to debug HID.", width="800", height="575", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Screenshot of the internal page to debug HID.</figcaption>
+  <figcaption class="w-figcaption">Internal page in Chrome to debug HID.</figcaption>
 </figure>
 
 ## Browser support {: #browser-support }

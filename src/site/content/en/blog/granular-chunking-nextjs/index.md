@@ -32,7 +32,7 @@ result in a better loading performance.
 This pattern became popular with many single-page application frameworks adopting an entrypoint and
 bundle configuration that looked like this:
 
-{% Img src="image/admin/r4QB67AXzmPMgxcxgbQF.png", alt="Common entrypoint and bundle configuration", width="800", height="569", className="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/r4QB67AXzmPMgxcxgbQF.png", alt="Common entrypoint and bundle configuration", width="800", height="569", class="w-screenshot w-screenshot--filled" %}
 
 Although practical, the concept of bundling all shared module code into a single chunk has its
 limitations. Modules not shared in every entry point can be downloaded for routes that do not use it
@@ -179,8 +179,7 @@ getDependencies (route) {
 ```
 
 <figure class="w-figure">
-  <img class="w-screenshot-filled" src="outputted-chunks.png"
-       alt="Output of multiple shared chunks in a Next.js application.">
+  <img class="w-screenshot-filled" src="outputted-chunks.png" alt="Output of multiple shared chunks in a Next.js application.">
 </figure>
 
 This newer granular chunking strategy was first rolled out in Next.js behind a flag, where it was tested on a

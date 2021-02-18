@@ -76,7 +76,7 @@ The Angular team has shipped a number of improvements to version 8 of the framew
     default to minimize unneeded polyfills for newer browsers.
 
 <figure class="w-figure">
-  {% Img src="image/admin/kPQFf4eoaz1wcUZULmbZ.png", alt="Graph showing bundle size reduction of angular.io with and without differential builds", width="800", height="463" %}
+  {% Img src="image/admin/kPQFf4eoaz1wcUZULmbZ.png", alt="Graph showing bundle size reduction of angular.io with and without differential builds", width="800", height="463", class="w-screenshot" %}
   <figcaption class="w-figcaption">Bundle size reduction for angular.io with differential builds (from <a href="https://blog.angular.io/version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem-af0261112a27">Version 8 of Angular</a>)</figcaption>
 </figure>
 
@@ -122,7 +122,7 @@ for comments (RFCs) and pull requests (PRs):
     ([PR](https://github.com/zeit/next.js/pull/8069)).
 
 <figure class="w-figure">
-  {% Img src="image/admin/5QA6KNYCwQ4aLdowLGNS.png", alt="Homepage of Barnebys.com", width="800", height="543" %}
+  {% Img src="image/admin/5QA6KNYCwQ4aLdowLGNS.png", alt="Homepage of Barnebys.com", width="800", height="543", class="w-screenshot-filled" %}
   <figcaption class="w-figcaption"><a href="https://www.barnebys.com/">Barnebys.com</a>, a large search engine for antiques and collectibles, saw a 23% reduction in total JavaScript after enabling granular chunking</figcaption>
 </figure>
 
@@ -134,7 +134,7 @@ Next.js, such as:
     surface better errors and warnings ([RFC](https://github.com/zeit/next.js/issues/9310)).
 
 <figure class="w-figure">
-  {% Img src="image/admin/LoKCHqIIpGkQIUjxZlre.png", alt="Example of a conformance build error in Next.js", width="800", height="367" %}
+  {% Img src="image/admin/LoKCHqIIpGkQIUjxZlre.png", alt="Example of a conformance build error in Next.js", width="800", height="367", class="w-screenshot-filled" %}
   <figcaption class="w-figcaption">An example of a conformance build error in Next.js (prototype)</figcaption>
 </figure>
 

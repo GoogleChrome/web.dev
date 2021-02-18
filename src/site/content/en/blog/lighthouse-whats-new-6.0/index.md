@@ -261,8 +261,8 @@ you explore performance scoring. The calculator also gives you a comparison betw
 with your results populated.
 
 <figure class="w-figure">
-  {% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Lighthouse Score Calculator.", width="600", height="319" %}
-  <figcaption class="w-figcaption">Huge thanks to <a href="https://twitter.com/anatudor">Ana Tudor</a> for the gauge upgrade!", className="w-screenshot</figcaption>
+  {% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Lighthouse Score Calculator.", width="600", height="319", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Huge thanks to <a href="https://twitter.com/anatudor">Ana Tudor</a> for the gauge upgrade!</figcaption>
 </figure>
 
 ## New audits {: #new-audits }

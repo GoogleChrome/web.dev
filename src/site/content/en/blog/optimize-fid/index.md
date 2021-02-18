@@ -166,7 +166,7 @@ responding to user input.
 The [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) tab in Chrome
 DevTools can tell you how much JavaScript is not being used on your web page.
 
-{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="The Coverage tab.", width="800", height="559", className="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="The Coverage tab.", width="800", height="559", class="w-screenshot w-screenshot--filled" %}
 
 To cut down on unused JavaScript:
 

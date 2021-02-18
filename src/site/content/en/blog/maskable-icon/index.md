@@ -70,8 +70,8 @@ icons will be trimmed so that only the safe area is visible. If your logo is vis
 safe area, you're good to go.
 
 <figure class="w-figure">
-  {% Img src="image/admin/UeKTJM2SE0SQhgnnyaQG.png", alt="Applications panel in DevTools displaying PWA icons with edges cropped", width="762", height="423" %}
-  <figcaption class="w-figcaption">The Applications panel", className="w-screenshot</figcaption>
+  {% Img src="image/admin/UeKTJM2SE0SQhgnnyaQG.png", alt="Applications panel in DevTools displaying PWA icons with edges cropped", width="762", height="423", class="w-screenshot" %}
+  <figcaption class="w-figcaption">The Applications panel</figcaption>
 </figure>
 
 To test your maskable icon with the variety of Android shapes, use the
@@ -86,8 +86,8 @@ If you want to create a maskable icon based on your existing icon, you can use t
 then export the image.
 
 <figure class="w-figure">
-  {% Img src="image/admin/MDXDwH3RWyj4po6daeXw.png", alt="Maskable.app Editor screenshot", width="670", height="569" %}
-  <figcaption class="w-figcaption">Creating icons in Maskable.app Editor", className="w-screenshot</figcaption>
+  {% Img src="image/admin/MDXDwH3RWyj4po6daeXw.png", alt="Maskable.app Editor screenshot", width="670", height="569", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Creating icons in Maskable.app Editor</figcaption>
 </figure>
 
 Once you've created a maskable icon image and tested it out in DevTools, you'll need to update your
