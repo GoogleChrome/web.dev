@@ -239,46 +239,51 @@ Strict-Transport-Security: max-age=3600
 {% DetailsSummary %}
 Cross-Origin Resource Policy (CORP)
 
-Allow or restrict the resource to be loaded from cross-site, same-site or same-origin.
+With the `Cross-Origin-Resource-Policy` header, you can inform the browser which domain context it can load the resource, from cross-origin, same-site or same-origin.
 {% endDetailsSummary %}
 
-### Recommended for:
+With the `Cross-Origin-Resource-Policy` header, you can inform the browser which domain context it can load the resource, from cross-origin, same-site or same-origin.
 
-All resources served by content delivery network services or resources that are loaded by third party services.
-Sites that opt-in to cross-origin isolated state must load all cross-origin resources with `Cross-Origin-Resource-Policy: cross-site` or using Cross-Origin Resource Sharing.
+This is a robust defense against attacks like Spectre, as it allows browsers to
+block a given response before it enters an attacker's process. It is a
+requirement for the resource to explicitly allow being loaded into the context
+with CORP or CORS so that the page can enable [cross-origin
+isolation](/coop-coep) and use the features such as SharedArrayBuffer,
+`performance.measureUserAgentSpecificMemory()`, etc.
 
-### Example usage:
+### Recommended usages:
+It is recommended that **all** resources are served with one of the following three headers.
 
-#### Allow the resource to be loaded cross-site.
+#### Allow the resource to be loaded `cross-origin`
+
+`cross-origin` is recommended to be applied by CDN-like services whose resources are assumed to be loaded by cross-origin pages unless they are already served through CORS. When a website adopts cross-origin isolation, they will not be able to load the cross-origin resources without applying this header or CORS.
 
 ```http
-Cross-Origin-Resource-Policy: cross-site
+Cross-Origin-Resource-Policy: cross-origin
 ```
 
-#### Restrict the resource only to be loaded from the same-site.
+#### Limit the resource to be loaded from the `same-origin`
 
-```http
-Cross-Origin-Resource-Policy: same-site
-```
+`same-origin` is recommended to be applied to resources that are intended to be loaded only by same-origin pages. You may apply this to a resource that includes sensitive information about the user, or response of an API that is intended for the same origin.
 
-#### Restrict the resource only to be loaded from the same-origin.
+Beware that even with this header the resource is still accessible from random requests so don't consider this as an ACL. It's just the browser will not load it on a cross-origin context. By "load" here means either the browser renders the content on the page or the JavaScript can read the content.
 
 ```http
 Cross-Origin-Resource-Policy: same-origin
 ```
 
+#### Limit the resource to be loaded from the `same-site`
+
+`same-site` is recommended to be applied to resources similar to above but are intended to be loaded by same-site pages.
+
+```http
+Cross-Origin-Resource-Policy: same-site
+```
+
+Learn the difference between same-origin and same-site at [Understanding "same-site" and "same-origin" "same-site"](/same-site-same-origin/).
+
 ### Supported browsers:
-
-* Chrome
-* Firefox
-* Safari
-* Edge
-
-### Supports:
-
-* Reporting API: false
-* Report-Only mode: false
-* meta tag: N/A
+Chrome, Firefox, Safari, Edge
 
 ### Learn more:
 
