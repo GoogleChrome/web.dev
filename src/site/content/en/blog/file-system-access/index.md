@@ -283,7 +283,7 @@ button2.addEventListener("click", async () => {
 ### Stored file or directory handles and permissions
 
 Since permissions currently are not persisted between sessions, you should verify whether the user
-has granted permission to the file using `queryPermission()`. If they haven't, use
+has granted permission to the file or directory using `queryPermission()`. If they haven't, use
 `requestPermission()` to (re-)request it.
 
 In the text editor, I created a `verifyPermission()` method that checks if the user has already
