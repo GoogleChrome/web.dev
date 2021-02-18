@@ -15,9 +15,11 @@ tags:
   - performance
 ---
 
-The following instructions explain how to set up Signed Exchanges (SXGs) using
-Web Packager. Instructions are included for both self-signed and
-`CanSignHttpExchanges` certificates.
+A [signed exchange (SXG)](/signed-exchanges) is a delivery mechanism that makes it 
+possible to authenticate the origin of a resource independently of how it was delivered. 
+The following instructions explain how to set up Signed Exchanges using
+[Web Packager](https://github.com/google/webpackager). Instructions are included for 
+both self-signed and `CanSignHttpExchanges` certificates.
 
 
 ## Serve SXGs using a self-signed certificate
@@ -97,7 +99,7 @@ used with signed exchanges.
     openssl x509 -req -days 90 -in cert.csr -signkey priv.key -out cert.pem -extfile &lt;(echo -e "1.3.6.1.4.1.11129.2.1.22 = ASN1:NULL\nsubjectAltName=DNS:example.com")
     ```
 
-    This command uses the private key and CSR created in steps 1 and 2 to create the
+    This command uses the private key and the CSR created in steps 1 and 2 to create the
     certificate file `cert.pem`. The `-extfile` flag associates the certificate with
     the `CanSignHttpExchanges` certificate extension (`1.3.6.1.4.1.11129.2.1.22` is
     the [object
@@ -196,9 +198,9 @@ used with signed exchanges.
         `URL doesn't match the fetch targets`.
     *   (Optional) To preload subresources, change the line `#PreloadCSS
         = false` to `PreloadCSS = true`. In addition, change the line `#PreloadJS =
-        false` to `PreloadJS = true`. More information about subresource
-        substitution can be found
-        [here](https://github.com/WICG/webpackage/blob/master/explainers/signed-exchange-subresource-substitution.md).
+        false` to `PreloadJS = true`. For more information about subresource
+        substitution, check out
+        [the explainer](https://github.com/WICG/webpackage/blob/master/explainers/signed-exchange-subresource-substitution.md).
 
 4. Start `webpkgserver`.
 
@@ -284,9 +286,8 @@ used with signed exchanges.
   {% Aside %}
   `webpkgserver` can be configured to use a locally-hosted
   certificate. For information on this configuration option,
-  refer to the `CertURLBase` option in `webpkgserver.toml`. This 
-  [article](https://web.dev/how-to-use-local-https/) explains how to 
-  use HTTPS for local development.
+  refer to the `CertURLBase` option in `webpkgserver.toml`. 
+  Learn more about [how to use HTTPS for local development](/how-to-use-local-https).
   {% endAside %}
 
 
