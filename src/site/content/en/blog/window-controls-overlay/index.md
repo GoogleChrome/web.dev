@@ -29,22 +29,35 @@ Window Controls Overlay consists of four sub-features:
 1. A mechanism to query for and work around the window controls region via the new
    `windowControlsOverlay` member of `window.navigator`.
 1. The new CSS environment variables `titlebar-area-inset-left`, `titlebar-area-inset-right`,
-   `titlebar-area-inset-top`, and ``titlebar-area-inset-bottom`.
+   `titlebar-area-inset-top`, and `titlebar-area-inset-bottom`.
 1. The standardization of the previously proprietary CSS property `-webkit-app-region` as
    `app-region` to define draggable regions in web content.
 
-<!--
+## What is Window Controls Overlay
 
 The title bar area refers to the space to the left or right of the window controls (minimize,
-maximize, close etc.) and often contains the title of the application.
-This proposed feature enables developers to create progressive web applications (PWAs) with a native feel by swapping the existing full-width title bar for a small overlay containing the window controls (minimize, maximize/restore, close). This allows the developer to place custom content in what was previously the UA-controlled title bar area.
+maximize, close, etc.) and often contains the title of the application.
+This proposed feature enables developers to create Progressive Web Applications (PWAs) with an
+app-like feel by swapping the existing full-width title bar for a small overlay containing the
+window controls. This allows developers to place custom content in what was previously the
+browser-controlled title bar area.
 
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/stdHUeVy2g3pCQ56iMUn.png", alt="ALT_TEXT_HERE", width="619", height="208" %}
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/SqYQ9F07oLqpUEHmKLY1.png", alt="ALT_TEXT_HERE", width="800", height="144" %}
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/pxU6bnq3L8tif4WPIVcb.png", alt="ALT_TEXT_HERE", width="800", height="139" %}
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/b92OE7aYzyNQfQdsIxdj.png", alt="ALT_TEXT_HERE", width="800", height="241" %}
+
+<!--
 A progressive web app can opt-in to the window controls overlay by adding window-controls-overlay as the primary display_override member in the manifest.
 The window controls overlay will be visible only when all the following are satisfied:
 Opened in a PWA (not the browser)
 Manifest includes “display_override”: [“window-controls-overlay”, ...]
 PWA is not running on Android or iOS
 The current origin matches the origin for which the PWA was installed
+
 
 navigating to a different origin within the PWA will cause it to fall back to the normal standalone title bar, even if it meets the above criteria and is launched with the window controls overlay. This is to accommodate the black bar that appears on navigation to a different origin. After navigating back to the original origin, the window controls overlay will be used again.
 
