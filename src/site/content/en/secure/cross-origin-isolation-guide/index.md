@@ -75,7 +75,7 @@ cross-origin resources:
 4. If cross-origin resources loaded into iframes involve another layer of
    iframes, recursively apply steps described in this section before moving
    forward.
-5. Once you confirm that all cross-origin resources are opt-in, set the
+5. Once you confirm that all cross-origin resources are opted-in, set the
    `Cross-Origin-Embedder-Policy: require-corp` header on the cross-origin
    resources loaded into iframes.
 6. Make sure there are no cross-origin popup windows that require communication
