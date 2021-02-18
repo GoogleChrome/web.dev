@@ -15,17 +15,9 @@ tags: []
       snackbar will be the first stop for the screen reader / focus.
     #}
     <web-snackbar-container></web-snackbar-container>
-    {% include 'partials/header.njk' %}
-    {% include 'partials/side-nav.njk' %}
-    <main>
-      <div id="content">
-        {% if show_banner %}
-          {% include 'partials/banner.njk' %}
-        {% endif %}
-        {% include 'partials/translation-disclaimer.njk' %}
-        {{ content | safe }}
-      </div>
-    </main>
+
+    {{ content | safe }}
+
     {% include 'partials/footer.njk' %}
     {% include 'partials/analytics.njk' %}
   </body>
