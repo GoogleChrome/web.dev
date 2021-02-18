@@ -387,7 +387,7 @@ landing page URL that the browser can direct the user to when your device is
 plugged in.
 
 <figure class="w-figure">
-  {% Img src="image/admin/KBZaQNlDcishHiu3XkPU.png", alt="Screenshot of the WebUSB notification in Chrome", width="800", height="450", className="w-screenshot" %}
+  {% Img src="image/admin/KBZaQNlDcishHiu3XkPU.png", alt="Screenshot of the WebUSB notification in Chrome", width="800", height="450", class="w-screenshot" %}
   <figcaption class="w-figcaption">WebUSB notification.</figcaption>
 </figure>
 

@@ -421,9 +421,10 @@ provide labels and values for each slice
 so users who have visual impairments can understand the information
 even if they can't tell where the slices begin and end:
 
-<!--lint disable no-literal-urls-->
-{% Img src="image/admin/4DlbNfCX7AYYrPSpQg4L.png", alt="A pie chart with labels and values to ensure accessibility.", width="500", height="442", caption="An accessible pie chart. (From the <a href=\"https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Informational_Graphic_Contrast_(Minimum)\" rel=\"noopener\">W3C Web Accessibility Initiative</a>.)" %}
-<!--lint enable no-literal-urls-->
+<figure class="w-figure">
+  {% Img src="image/admin/4DlbNfCX7AYYrPSpQg4L.png", alt="A pie chart with labels and values to ensure accessibility.", width="500", height="442" %}
+  <figcaption class="w-figcaption">An accessible pie chart. (From the <a href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Informational_Graphic_Contrast_(Minimum)" rel="noopener">W3C Web Accessibility Initiative</a>.)</figcaption>
+</figure>
 
 ### Is there sufficient contrast between text and images and their background?
 

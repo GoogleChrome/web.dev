@@ -136,20 +136,20 @@ The easiest way to do a quick check of a page is the [Mobile-Friendly Test](http
 You can also find out if there are resource loading issues or JavaScript errors.
 
 <figure class="w-figure">
-  {% Img src="image/admin/22ttektRnHrbGT0zvbHK.png", alt="The Mobile-Friendly Test shows JavaScript errors and a stack trace.", width="800", height="414", className="w-screenshot" %}
+  {% Img src="image/admin/22ttektRnHrbGT0zvbHK.png", alt="The Mobile-Friendly Test shows JavaScript errors and a stack trace.", width="800", height="414", class="w-screenshot" %}
 </figure>
 
 It's recommended to verify your domain in [Google Search Console](https://g.co/searchconsole) so you can use the URL inspection tool to find out more about the crawling and indexing state of a URL, receive messages when Search Console detects issues and find out more details of how your site performs in Google Search.
 
 <figure class="w-figure">
-  {% Img src="image/admin/JYsPy8FXL3E86gCzekQ3.png", alt="The URL inspection tool showing a page that is indexed with information on discovery, crawling and indexing for one URL", width="800", height="655", className="w-screenshot" %}
+  {% Img src="image/admin/JYsPy8FXL3E86gCzekQ3.png", alt="The URL inspection tool showing a page that is indexed with information on discovery, crawling and indexing for one URL", width="800", height="655", class="w-screenshot" %}
   <figcaption class="w-figcaption">The URL Inspection Tool in Search Console shows the status of a page in crawling, rendering, and indexing.</figcaption>
 </figure>
 
 For general SEO tips and guidance, you can use the SEO audits in Lighthouse. To integrate SEO audits into your testing suite, use the [Lighthouse CLI](https://github.com/GoogleChrome/lighthouse/tree/master/lighthouse-cli) or the [Lighthouse CI bot](https://github.com/GoogleChromeLabs/lighthousebot).
 
 <figure class="w-figure">
-  {% Img src="image/admin/ctch0ql8UQZiaKaWy34u.png", alt="A lighthouse SEO report with a score of 44 and warnings about mobile-friendliness as well as warnings about content best practices", width="800", height="443", className="w-screenshot" %}
+  {% Img src="image/admin/ctch0ql8UQZiaKaWy34u.png", alt="A lighthouse SEO report with a score of 44 and warnings about mobile-friendliness as well as warnings about content best practices", width="800", height="443", class="w-screenshot" %}
   <figcaption class="w-figcaption">Lighthouse shows general SEO recommendations for a page.</figcaption>
 </figure>
 

@@ -21,7 +21,7 @@ const generateSrc = (src, params) => client.buildURL(src, params);
  * @return {string}
  */
 const Img = function (args) {
-  const {src, alt, width, height, className, linkTo} = args;
+  const {src, alt, width, height, class: className, linkTo} = args;
   let {lazy, params, options, sizes} = args;
   // @ts-ignore: `this` has type of `any`
   const checkHereIfError = `ERROR IN ${this.page.inputPath}, IMG ${src}`;

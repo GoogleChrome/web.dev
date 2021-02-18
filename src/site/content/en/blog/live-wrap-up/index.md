@@ -84,7 +84,7 @@ web development best practices. We worked with the build tool authors to
 make sure we used their tools correctly and represented them fairly.
 
 <figure class="w-figure">
-  {% Img src="image/admin/awFmvfMqFv3gvbpIICJY.png", alt="A screenshot of the tooling.report UI.", width="800", height="316", className="w-screenshot" %}
+  {% Img src="image/admin/awFmvfMqFv3gvbpIICJY.png", alt="A screenshot of the tooling.report UI.", width="800", height="316", class="w-screenshot" %}
 </figure>
 
 The initial release of tooling.report covers webpack v4, Rollup v2, Parcel v2, and Browserify with Gulp,

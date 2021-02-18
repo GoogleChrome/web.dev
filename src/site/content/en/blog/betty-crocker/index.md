@@ -129,17 +129,17 @@ so they were able to implement the component once, and deploy it everywhere,
 as shown in the screenshots below.
 
 <figure class="w-figure">
-  {% Img src="image/admin/I9y4AIPEK9P4V0JFn4y1.png", alt="BettyCrocker.com wake lock toggle", width="600", height="170", className="w-screenshot" %}
+  {% Img src="image/admin/I9y4AIPEK9P4V0JFn4y1.png", alt="BettyCrocker.com wake lock toggle", width="600", height="170", class="w-screenshot" %}
   <figcaption class="w-figcaption">BettyCrocker.com wake lock toggle</figcaption>
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/admin/PXS7bnWxYiLKtmLekulr.png", alt="Pillsbury.com wake lock toggle", width="600", height="152", className="w-screenshot" %}
+  {% Img src="image/admin/PXS7bnWxYiLKtmLekulr.png", alt="Pillsbury.com wake lock toggle", width="600", height="152", class="w-screenshot" %}
   <figcaption class="w-figcaption">Pillsbury.com wake lock toggle</figcaption>
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/admin/S5NQabO9qJTwlidx2eZo.png", alt="Tablespoon.com wake lock toggle", width="600", height="152", className="w-screenshot" %}
+  {% Img src="image/admin/S5NQabO9qJTwlidx2eZo.png", alt="Tablespoon.com wake lock toggle", width="600", height="152", class="w-screenshot" %}
   <figcaption class="w-figcaption">Tablespoon.com wake lock toggle</figcaption>
 </figure>
 

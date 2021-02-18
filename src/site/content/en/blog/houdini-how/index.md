@@ -86,7 +86,7 @@ candidate recommendation. It is currently enabled in all Chromium-based browsers
 supported in Safari, and is under consideration for Firefox.
 
 <figure class="w-figure">
-  {% Img src="image/admin/vL8Z5YEwk2g2QJ6T6IWp.png", alt="Caniuse support", width="800", height="176", className="w-screenshot" %}
+  {% Img src="image/admin/vL8Z5YEwk2g2QJ6T6IWp.png", alt="Caniuse support", width="800", height="176", class="w-screenshot" %}
   <figcaption class="w-figcaption">The CSS Painting API is currently supported on Chromium-based browsers.</figcaption>
 </figure>
 
@@ -99,7 +99,7 @@ implementations, as well as to provide a resource and worklet library, my team b
 ## Houdini.how
 
 <figure class="w-figure">
-  {% Img src="image/admin/UKenhKMvDWI9PvWGcTG4.png", alt="Worklet page screenshot.", width="800", height="833", className="w-screenshot" %}
+  {% Img src="image/admin/UKenhKMvDWI9PvWGcTG4.png", alt="Worklet page screenshot.", width="800", height="833", class="w-screenshot" %}
   <figcaption class="w-figcaption">Screenshot from the <a href="https://houdini.how">Houdini.how</a> homepage.</figcaption>
 </figure>
 

@@ -26,7 +26,7 @@ Website performance is not just about load time. It is critical to provide a fas
 
 AirSHIFT is a desktop web application that helps store owners, like restaurants and cafes, to manage the shift work of their staff members. Built with React, the single page application provides rich client features including various grid tables of shift schedules organized by day, week, month and more.
 
-{% Img src="image/admin/q7g5sY2ix1oTwoPJX7qX.png", alt="A screenshot of the AirSHIFT web app.", width="800", height="626", className="w-screenshot" %}
+{% Img src="image/admin/q7g5sY2ix1oTwoPJX7qX.png", alt="A screenshot of the AirSHIFT web app.", width="800", height="626", class="w-screenshot" %}
 
 As the Recruit Technologies engineering team added new features to the
 AirSHIFT app, they started seeing more feedback around slow performance.
@@ -286,7 +286,7 @@ can't be planned. They require experimentation and a trial-and-error mindset.
 AirSHIFT is now conducting internal 1-day performance hackathons to let engineers focus only on performance related work. In these hackathons they remove all constraints and respect the engineers' creativity, meaning any implementation that contributes to speed is worth considering. To accelerate the hackathon, AirSHIFT splits the group into small teams and each team competes to see who can get the biggest [Lighthouse](https://developers.google.com/web/tools/lighthouse) performance score improvement.
 The teams get very competitive! 🔥
 
-{% Img src="image/admin/A1nus9lmROXOGm9rpCsO.png", alt="Photos of the hackathon.", width="800", height="462", className="w-screenshot" %}
+{% Img src="image/admin/A1nus9lmROXOGm9rpCsO.png", alt="Photos of the hackathon.", width="800", height="462", class="w-screenshot" %}
 
 ### Results
 

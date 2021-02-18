@@ -185,7 +185,10 @@ The rest of this blog post explains how `system-ui` broke in Chromium 80 and how
 
 This story starts with a different bug: [#1005969](https://crbug.com/1005969). This was reported against macOS 10.15 because the `system-ui` font spacing looked narrow and crammed.
 
-{% Img src="image/admin/f0xi5DBj1M6v72VcKNUx.jpg", alt="A comparison of two paragraphs from a Facebook group page. On the left is Chrome and the right is Safari, and Chrome is subtle but slightly tighter in spacing", width="800", height="417", caption="Chrome on left (tighter tracking), Safari on right (better optical spacing)" %}
+<figure class="w-figure">
+  {% Img src="image/admin/f0xi5DBj1M6v72VcKNUx.jpg", alt="A comparison of two paragraphs from a Facebook group page. On the left is Chrome and the right is Safari, and Chrome is subtle but slightly tighter in spacing", width="800", height="417" %}
+  <figcaption class="w-figcaption">Chrome on left (tighter tracking), Safari on right (better optical spacing)</figcaption>
+</figure>
 
 ### Background
 

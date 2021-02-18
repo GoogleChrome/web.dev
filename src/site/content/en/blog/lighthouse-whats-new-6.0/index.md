@@ -51,7 +51,7 @@ the highlights in this article.
 ## New metrics {: #new-metrics }
 
 <figure class="w-figure">
-  {% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Lighthouse 6.0 metrics.", width="600", height="251", className="w-screenshot" %}
+  {% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Lighthouse 6.0 metrics.", width="600", height="251", class="w-screenshot" %}
 </figure>
 
 Lighthouse 6.0 introduces three new metrics to the report. Two of these new metrics–Largest
@@ -331,15 +331,15 @@ Start using Lighthouse CI on your project today by following our
 </style>
 
 <figure class="w-figure w-figure--inline-left">
-  {% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="Lighthouse CI.", width="600", height="413", linkTo=true, className="w-screenshot" %}
+  {% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="Lighthouse CI.", width="600", height="413", linkTo=true, class="w-screenshot" %}
 </figure>
 
 <figure class="w-figure w-figure--inline-left">
-  {% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="Lighthouse CI.", width="600", height="412", linkTo=true, className="w-screenshot" %}
+  {% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="Lighthouse CI.", width="600", height="412", linkTo=true, class="w-screenshot" %}
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="Lighthouse CI.", width="600", height="354", linkTo=true, className="w-screenshot" %}
+  {% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="Lighthouse CI.", width="600", height="354", linkTo=true, class="w-screenshot" %}
 </figure>
 
 ## Renamed Chrome DevTools panel {: #devtools }
@@ -450,7 +450,7 @@ Lighthouse has begun experimenting with collecting source maps to power new feat
 -  Displaying the original source code for report items with a "source location".
 
 <figure class="w-figure">
-  {% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="Unused JavaScript showing modules from source maps.", width="600", height="566", className="w-screenshot" %}
+  {% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="Unused JavaScript showing modules from source maps.", width="600", height="566", class="w-screenshot" %}
   <figcaption class="w-figcaption">The Unused JavaScript audit using source maps to show unused code in specific bundled modules.</figcaption>
 </figure>
 

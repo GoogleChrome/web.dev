@@ -55,7 +55,7 @@ Paint](/first-meaningful-paint/), [Time to Interactive](/interactive/), and
 [First CPU Idle](/first-cpu-idle/).
 
 <figure class="w-figure">
-  {% Img src="image/admin/X0u1YQC63JaPfE0DWgz8.png", alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.", width="800", height="211", className="w-screenshot" %}
+  {% Img src="image/admin/X0u1YQC63JaPfE0DWgz8.png", alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.", width="800", height="211", class="w-screenshot" %}
 </figure>
 
 See [Lighthouse performance scoring](https://web.dev/performance-scoring/) for detailed
@@ -130,7 +130,10 @@ only work in [Lighthouse
 CLI](https://developers.google.com/web/tools/lighthouse#cli), but the goal is to
 enable running them in the DevTools **Audits** panel too.
 
-{% Img src="image/admin/I6WOZkh3Wdbb6vk2sE4z.png", alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience.", width="400", height="753", caption="Community Plugins in DevTools Audits panel (beta)", className="w-screenshot" %}
+<figure class="w-figure">
+  {% Img src="image/admin/I6WOZkh3Wdbb6vk2sE4z.png", alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience.", width="400", height="753" %}
+  <figcaption class="w-figcaption">Community Plugins in DevTools Audits panel (beta)", class="w-screenshot</figcaption>
+</figure>
 
 When users install Lighthouse plugin extensions from the [Chrome Web
 Store](https://chrome.google.com/webstore/category/extensions), DevTools will

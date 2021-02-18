@@ -73,7 +73,7 @@ potential JavaScript bloat (loading and executing more than a user may need righ
 Splitting up long tasks can reduce input delay on your site.
 
 <figure class="w-figure">
-  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Long Tasks in Chrome DevTools", width="800", height="132", className="w-screenshot" %}
+  {% Img src="image/admin/THLKu0sOPhSghNr0XkP1.png", alt="Long Tasks in Chrome DevTools", width="800", height="132", class="w-screenshot" %}
   <figcaption class="w-figcaption">Chrome DevTools <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">visualizes Long Tasks</a> in the Performance Panel</figcaption>
 </figure>
 
@@ -261,7 +261,7 @@ A number of tools are available to measure and debug FID:
   Time](/tbt/) (TBT) can be used as a proxy. Optimizations that improve TBT should
   also improve FID in the field.
 
-  {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309", className="w-screenshot" %}
+  {% Img src="image/admin/FRM9kHWmsDv9dddGMgwu.jpg", alt="Lighthouse 6.0.", width="800", height="309", class="w-screenshot" %}
 
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
   provides real-world FID values aggregated at the origin-level

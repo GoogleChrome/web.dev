@@ -441,7 +441,7 @@ A **Bluetooth Internals** page is available in Chrome at
 Bluetooth devices: status, services, characteristics, and descriptors.
 
 <figure class="w-figure">
-  {% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="Screenshot of the internal page to debug Bluetooth in Chrome", width="800", height="572", className="w-screenshot" %}
+  {% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="Screenshot of the internal page to debug Bluetooth in Chrome", width="800", height="572", class="w-screenshot" %}
   <figcaption class="w-figcaption">Internal page in Chrome for debugging Bluetooth devices.</figcaption>
 </figure>
 

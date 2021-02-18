@@ -265,20 +265,23 @@ save it (technically: download it, since Safari does not support the File System
 to my iPhone Downloads folder, open the file on my desktop (after transferring it from my phone),
 modify the file, and overwrite it with my changes, or even save it as a new file.
 
-{% Img src="image/admin/u1Gwxp5MxS39wl8PW2vz.png", alt="An Excalidraw drawing on an iPhone.", width="300", height="649", className="w-screenshot", caption="Starting an Excalidraw drawing on an iPhone where the File System Access API is not supported, but where a file can be saved (downloaded) to the Downloads folder." %}
+<figure class="w-figure">
+  {% Img src="image/admin/u1Gwxp5MxS39wl8PW2vz.png", alt="An Excalidraw drawing on an iPhone.", width="300", height="649", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Starting an Excalidraw drawing on an iPhone where the File System Access API is not supported, but where a file can be saved (downloaded) to the Downloads folder.</figcaption>
+</figure>
 
 <figure class="w-figure">
-  {% Img src="image/admin/W1lt36DtKuveBJJTzonC.png", alt="The modified Excalidraw drawing on Chrome on the desktop.", width="800", height="592", className="w-screenshot" %}
+  {% Img src="image/admin/W1lt36DtKuveBJJTzonC.png", alt="The modified Excalidraw drawing on Chrome on the desktop.", width="800", height="592", class="w-screenshot" %}
   <figcaption class="w-figcaption">Opening and modifying the Excalidraw drawing on the desktop where the File System Access API is supported and thus the file can be accessed via the API.</figcaption>
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/admin/srqhiMKy2i9UygEP4t8e.png", alt="Overwriting the original file with the modifications.", width="800", height="585", className="w-screenshot" %}
+  {% Img src="image/admin/srqhiMKy2i9UygEP4t8e.png", alt="Overwriting the original file with the modifications.", width="800", height="585", class="w-screenshot" %}
   <figcaption class="w-figcaption">Overwriting the original file with the modifications to the original Excalidraw drawing file. The browser shows a dialog asking me whether this is fine.</figcaption>
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/admin/FLzOZ4eXZ1lbdQaA4MQi.png", alt="Saving the modifications to a new Excalidraw drawing file.", width="800", height="592", className="w-screenshot" %}
+  {% Img src="image/admin/FLzOZ4eXZ1lbdQaA4MQi.png", alt="Saving the modifications to a new Excalidraw drawing file.", width="800", height="592", class="w-screenshot" %}
   <figcaption class="w-figcaption">Saving the modifications to a new Excalidraw file. The original file remains untouched.</figcaption>
 </figure>
 
@@ -333,12 +336,12 @@ The screenshots below show the difference between Excalidraw's responsive main a
 Note how on iPhone the **Save As** button is missing.
 
 <figure class="w-figure">
-  {% Img src="image/admin/c2sjjj86zh53VDrPIo6M.png", alt="Excalidraw app toolbar on iPhone with just a 'Save' button.", width="300", height="226", className="w-screenshot" %}
+  {% Img src="image/admin/c2sjjj86zh53VDrPIo6M.png", alt="Excalidraw app toolbar on iPhone with just a 'Save' button.", width="300", height="226", class="w-screenshot" %}
   <figcaption class="w-figcaption">Excalidraw app toolbar on iPhone with just a <strong>Save</strong> button.</figcaption>
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/admin/unUUghwH5mG2hLnaViHK.png", alt="Excalidraw app toolbar on Chrome desktop with a 'Save' and a 'Save As' button.", width="300", height="66", className="w-screenshot" %}
+  {% Img src="image/admin/unUUghwH5mG2hLnaViHK.png", alt="Excalidraw app toolbar on Chrome desktop with a 'Save' and a 'Save As' button.", width="300", height="66", class="w-screenshot" %}
   <figcaption class="w-figcaption">Excalidraw app toolbar on Chrome  with a <strong>Save</strong> and a focused <strong>Save As</strong> button.</figcaption>
 </figure>
 

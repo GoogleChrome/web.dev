@@ -41,7 +41,7 @@ To ensure that the site would be fast and easily indexable by search engines, th
 By adopting these best practices, the team was able to cut the average page load time ([Time to Interactive](/interactive)) from 4 seconds to less than 2 seconds. And they used [Lighthouse](https://developers.google.com/web/tools/lighthouse/) to make sure the site _stayed_ that fast. Those efforts helped OpenSooq hit over 1.8 billion pageviews a month.
 
 <figure class="w-figure">
-  {% Img src="image/admin/ItUJANptPfn2KooyDyq4.png", alt="A screenshot of the Lighthouse performance metrics for the OpenSooq PWA.", width="800", height="509", className="w-screenshot" %}
+  {% Img src="image/admin/ItUJANptPfn2KooyDyq4.png", alt="A screenshot of the Lighthouse performance metrics for the OpenSooq PWA.", width="800", height="509", class="w-screenshot" %}
   <figcaption class="w-figcaption">OpenSooq's Lighthouse performance metrics.</figcaption>
 </figure>
 
@@ -57,7 +57,7 @@ By adopting these best practices, the team was able to cut the average page load
 ## Improving re-engagement
 
 <figure class="w-figure">
-  {% Img src="image/admin/U97z7PSx8CgKACjMnLkO.png", alt="A smartphone displaying OpenSooq notifications.", width="284", height="549", className="w-screenshot" %}
+  {% Img src="image/admin/U97z7PSx8CgKACjMnLkO.png", alt="A smartphone displaying OpenSooq notifications.", width="284", height="549", class="w-screenshot" %}
   <figcaption class="w-figcaption">OpenSooq's meaningful user notifications.", figure="inline-right</figcaption>
 </figure>
 

@@ -43,7 +43,7 @@ declare global {
     /**
      * A space-separated list of the classes of the element.
      */
-    className?: string;
+    class?: string;
     params?: object;
     options?: ImgixOptions;
     /**
