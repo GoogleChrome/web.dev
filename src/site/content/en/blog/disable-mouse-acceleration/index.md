@@ -31,7 +31,10 @@ used to control camera rotation without an acceleration adjustment. The same
 physical motion, slow or fast, results in the same rotation. This results in a
 better gaming experience and higher accuracy according to professional gamers.
 
-{% Img src="image/admin/4x9YZ7nC3SJMN9FI46zN.png", alt="Screenshot of the pointer motion control in Windows 10 settings.", width="800", height="260", caption="Screenshot of the pointer motion control in Windows 10 settings.", className="w-screenshot" %}
+<figure class="w-figure">
+  {% Img src="image/admin/4x9YZ7nC3SJMN9FI46zN.png", alt="Screenshot of the pointer motion control in Windows 10 settings.", width="800", height="260" %}
+  <figcaption class="w-figcaption">Screenshot of the pointer motion control in Windows 10 settings.", className="w-screenshot</figcaption>
+</figure>
 
 Starting in Chrome 88, web apps can switch back and forth between accelerated
 and non-accelerated mouse movement data thanks to the [updated Pointer Lock

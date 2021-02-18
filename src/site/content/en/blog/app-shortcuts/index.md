@@ -40,9 +40,15 @@ The app shortcuts menu is invoked by right-clicking the app icon in the taskbar
 (Windows) or dock (macOS) on the user's desktop, or long pressing the app's
 launcher icon on Android.
 
-{% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Screenshot of an app shortcuts menu opened on Android", width="800", height="420", caption="App shortcuts menu opened on Android" %}
+<figure class="w-figure">
+  {% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Screenshot of an app shortcuts menu opened on Android", width="800", height="420" %}
+  <figcaption class="w-figcaption">App shortcuts menu opened on Android</figcaption>
+</figure>
 
-{% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="Screenshot of an app shortcuts menu opened on Windows", width="800", height="420", caption="App shortcuts menu opened on Windows" %}
+<figure class="w-figure">
+  {% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="Screenshot of an app shortcuts menu opened on Windows", width="800", height="420" %}
+  <figcaption class="w-figcaption">App shortcuts menu opened on Windows</figcaption>
+</figure>
 
 The app shortcuts menu is shown only for [Progressive Web Apps] that are
 installed on the user's desktop or mobile device. Check out [What does it take
@@ -144,7 +150,10 @@ must be at least 72 by 72 pixels. (This is derived from the
 To verify your app shortcuts are setup correctly, use the **Manifest** pane in the
 **Application** panel of DevTools.
 
-{% Img src="image/admin/rEL0r8lEfYHlsj0ylLSL.png", alt="Screenshot of app shortcuts in DevTools", width="800", height="534", caption="App shortcuts shown in DevTools" %}
+<figure class="w-figure">
+  {% Img src="image/admin/rEL0r8lEfYHlsj0ylLSL.png", alt="Screenshot of app shortcuts in DevTools", width="800", height="534" %}
+  <figcaption class="w-figcaption">App shortcuts shown in DevTools</figcaption>
+</figure>
 
 This pane provides a human-readable version of many of your manifest's
 properties, including app shortcuts. It makes it easy to verify that all of the

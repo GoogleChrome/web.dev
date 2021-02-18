@@ -189,7 +189,10 @@ consistent. No new selectors, no new media queries, just space.
 With these updates come changes to Chromium DevTools, notice how the **Styles**
 pane handles `grid-gap` and `gap` now 👍
 
-{% Img src="image/admin/7ZxgySczxUR1qxuD8cbC.png", alt="An office with two people working at a table.", width="400", height="273", caption="Devtools shows the both <code>grid-gap<code> and <code>gap</code>, with <code>gap</code> shown used below <code>grid-gap</code> as to let the cascade use the latest syntax." %}
+<figure class="w-figure">
+  {% Img src="image/admin/7ZxgySczxUR1qxuD8cbC.png", alt="An office with two people working at a table.", width="400", height="273" %}
+  <figcaption class="w-figcaption">Devtools shows the both <code>grid-gap<code> and <code>gap</code>, with <code>gap</code> shown used below <code>grid-gap</code> as to let the cascade use the latest syntax.</figcaption>
+</figure>
 
 DevTools supports both `grid-gap` and `gap`, this is because `gap` is essentially
 an alias to the previous syntaxes.

@@ -440,7 +440,10 @@ A **Bluetooth Internals** page is available in Chrome at
 `chrome://bluetooth-internals` so that you can inspect everything about nearby
 Bluetooth devices: status, services, characteristics, and descriptors.
 
-{% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="Screenshot of the internal page to debug Bluetooth in Chrome", width="800", height="572", className="w-screenshot", caption="Internal page in Chrome for debugging Bluetooth devices." %}
+<figure class="w-figure">
+  {% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="Screenshot of the internal page to debug Bluetooth in Chrome", width="800", height="572", className="w-screenshot" %}
+  <figcaption class="w-figcaption">Internal page in Chrome for debugging Bluetooth devices.</figcaption>
+</figure>
 
 I also recommend checking out the official [How to file Web Bluetooth bugs]
 page as debugging Bluetooth can be hard sometimes.

@@ -386,7 +386,10 @@ descriptors indicating support for WebUSB. For example, you can specify a
 landing page URL that the browser can direct the user to when your device is
 plugged in.
 
-{% Img src="image/admin/KBZaQNlDcishHiu3XkPU.png", alt="Screenshot of the WebUSB notification in Chrome", width="800", height="450", className="w-screenshot", caption="WebUSB notification." %}
+<figure class="w-figure">
+  {% Img src="image/admin/KBZaQNlDcishHiu3XkPU.png", alt="Screenshot of the WebUSB notification in Chrome", width="800", height="450", className="w-screenshot" %}
+  <figcaption class="w-figcaption">WebUSB notification.</figcaption>
+</figure>
 
 The Binary device Object Store (BOS) is a concept introduced in USB 3.0 but has
 also been backported to USB 2.0 devices as part of version 2.1. Declaring

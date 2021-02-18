@@ -54,7 +54,9 @@ blended](/performance-scoring/#weightings) to form the 0-100 Performance score:
 Paint](/first-meaningful-paint/), [Time to Interactive](/interactive/), and
 [First CPU Idle](/first-cpu-idle/).
 
-{% Img src="image/admin/X0u1YQC63JaPfE0DWgz8.png", alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.", width="800", height="211", className="w-screenshot", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/X0u1YQC63JaPfE0DWgz8.png", alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.", width="800", height="211", className="w-screenshot" %}
+</figure>
 
 See [Lighthouse performance scoring](https://web.dev/performance-scoring/) for detailed
 information.
@@ -111,7 +113,9 @@ or [contact the Lighthouse team](https://github.com/GoogleChrome/lighthouse-stac
 
 ## Coming soon: Lighthouse plugins as Chrome Extensions
 
-{% Img src="image/admin/pPFz27fWWNVyT42ptr7a.png", alt="Lighthouse plugin icon.", width="250", height="220", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/pPFz27fWWNVyT42ptr7a.png", alt="Lighthouse plugin icon.", width="250", height="220" %}
+</figure>
 
 [Lighthouse
 Plugins](https://github.com/GoogleChrome/lighthouse/blob/master/docs/plugins.md)

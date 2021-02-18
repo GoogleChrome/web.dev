@@ -65,13 +65,19 @@ for information on optimizing your images.
 
 A few examples illustrate this. The following shows the default behavior when cutting an image's display size in half.
 
-{% Img src="image/admin/QR01OUN3VXTbOhhSOZBz.png", alt="The default resizing behavior.", width="326", height="401", caption=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/QR01OUN3VXTbOhhSOZBz.png", alt="The default resizing behavior.", width="326", height="401" %}
+  <figcaption class="w-figcaption">The default resizing behavior.</figcaption>
+</figure>
 
 If I apply the following feature policy, I get a placeholder image instead.
 
 `Feature-Policy: oversized-images *(2);`
 
-{% Img src="image/admin/NErIMVS4qsSVHek2UtDZ.png", alt="When the image is too large for the container.", width="326", height="401", caption=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/NErIMVS4qsSVHek2UtDZ.png", alt="When the image is too large for the container.", width="326", height="401" %}
+  <figcaption class="w-figcaption">When the image is too large for the container.</figcaption>
+</figure>
 
 I get similar results if I lower only the width or the height.
 
@@ -147,13 +153,19 @@ optimizing your images.
 
 The following shows the default browser behavior. Without the feature policy an unoptimized lossy image can be displayed just the same as an optimized image.
 
-{% Img src="image/admin/kxabc5874fW5IvPnqR9E.png", alt="Comparing an optimized image with an unoptimized image.", width="326", height="401", caption=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/kxabc5874fW5IvPnqR9E.png", alt="Comparing an optimized image with an unoptimized image.", width="326", height="401" %}
+  <figcaption class="w-figcaption">Comparing an optimized image with an unoptimized image.</figcaption>
+</figure>
 
 If I apply the following feature policy, I get a placeholder image instead.
 
 `Feature-Policy: unoptimized-lossy-images *(0.5);`
 
-{% Img src="image/admin/Y0cCIEuFI1M3DaKfxBkI.png", alt="When the image is not optimized.", width="326", height="401", caption=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/Y0cCIEuFI1M3DaKfxBkI.png", alt="When the image is not optimized.", width="326", height="401" %}
+  <figcaption class="w-figcaption">When the image is not optimized.</figcaption>
+</figure>
 
 #### How to use
 

@@ -50,7 +50,9 @@ the highlights in this article.
 
 ## New metrics {: #new-metrics }
 
-{% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Lighthouse 6.0 metrics.", width="600", height="251", className="w-screenshot", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Lighthouse 6.0 metrics.", width="600", height="251", className="w-screenshot" %}
+</figure>
 
 Lighthouse 6.0 introduces three new metrics to the report. Two of these new metrics–Largest
 Contentful Paint (LCP) and Cumulative Layout Shift (CLS)–are lab implementations of [Core Web
@@ -258,9 +260,10 @@ you explore performance scoring. The calculator also gives you a comparison betw
 6 scores. When you run an audit with Lighthouse 6.0, the report comes with a link to the calculator
 with your results populated.
 
-<!--lint disable no-literal-urls-->
-{% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Lighthouse Score Calculator.", width="600", height="319", caption="Huge thanks to <a href=\"https://twitter.com/anatudor\">Ana Tudor</a> for the gauge upgrade!", className="w-screenshot" %}
-<!--lint enable no-literal-urls-->
+<figure class="w-figure">
+  {% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Lighthouse Score Calculator.", width="600", height="319" %}
+  <figcaption class="w-figcaption">Huge thanks to <a href="https://twitter.com/anatudor">Ana Tudor</a> for the gauge upgrade!", className="w-screenshot</figcaption>
+</figure>
 
 ## New audits {: #new-audits }
 
@@ -327,11 +330,17 @@ Start using Lighthouse CI on your project today by following our
 }
 </style>
 
-{% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="Lighthouse CI.", width="600", height="413", linkTo=true, className="w-screenshot", figure="inline-left" %}
+<figure class="w-figure w-figure--inline-left">
+  {% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="Lighthouse CI.", width="600", height="413", linkTo=true, className="w-screenshot" %}
+</figure>
 
-{% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="Lighthouse CI.", width="600", height="412", linkTo=true, className="w-screenshot", figure="inline-left" %}
+<figure class="w-figure w-figure--inline-left">
+  {% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="Lighthouse CI.", width="600", height="412", linkTo=true, className="w-screenshot" %}
+</figure>
 
-{% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="Lighthouse CI.", width="600", height="354", linkTo=true, className="w-screenshot", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="Lighthouse CI.", width="600", height="354", linkTo=true, className="w-screenshot" %}
+</figure>
 
 ## Renamed Chrome DevTools panel {: #devtools }
 
@@ -440,7 +449,10 @@ Lighthouse has begun experimenting with collecting source maps to power new feat
 -  Treemap visualizations highlighting the modules that require action.
 -  Displaying the original source code for report items with a "source location".
 
-{% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="Unused JavaScript showing modules from source maps.", width="600", height="566", className="w-screenshot", caption="The Unused JavaScript audit using source maps to show unused code in specific bundled modules." %}
+<figure class="w-figure">
+  {% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="Unused JavaScript showing modules from source maps.", width="600", height="566", className="w-screenshot" %}
+  <figcaption class="w-figcaption">The Unused JavaScript audit using source maps to show unused code in specific bundled modules.</figcaption>
+</figure>
 
 These features will be enabled by default in a future version of Lighthouse. For now, you can view
 Lighthouse's experimental audits with the following CLI flag:

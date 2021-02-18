@@ -267,7 +267,10 @@ First, ensure that you have a sensible focus target for each component.
 For example, a complex component like a menu may be one focus target within a page
 but should then manage focus within itself so that the active menu item always takes focus.
 
-{% Img src="image/admin/8zpJMaaY0DuAHdugbSr3.png", alt="A screenshot of a menu and submenu that requires focus management.", width="800", height="377", caption="Managing focus within a complex element." %}
+<figure class="w-figure">
+  {% Img src="image/admin/8zpJMaaY0DuAHdugbSr3.png", alt="A screenshot of a menu and submenu that requires focus management.", width="800", height="377" %}
+  <figcaption class="w-figcaption">Managing focus within a complex element.</figcaption>
+</figure>
 
 ### Using tabindex
 The `tabindex` attribute allows elements and UI components to be focused using the keyboard. Keyboard-only and assistive technology users both need to be able to place keyboard focus on elements to interact with them. Built-in interactive elements (like `<button>`) are implicitly focusable, so they don't need a `tabindex` attribute unless you wish to change their position in the tab order.
@@ -330,7 +333,9 @@ to automate running keyboard accessibility tests for toggling UI states.
 [WalkMe Engineering](https://medium.com/walkme-engineering/web-accessibility-testing-d499a7f7a032)
 has a great guide on this I recommend reading.
 
-{% Img src="image/admin/3lZosaL1YXafLn4ZRINl.gif", alt="WalkMe state toggle test.", width="441", height="400", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/3lZosaL1YXafLn4ZRINl.gif", alt="WalkMe state toggle test.", width="441", height="400" %}
+</figure>
 
 ```js
 // Example for expanding and collapsing a category with the Space key
@@ -397,7 +402,10 @@ By binding these attributes to the relevant properties on your custom component,
 you can allow users of assistive technology to interact with the element,
 change its value, and even cause the element's visual presentation to change accordingly.
 
-{% Img src="image/admin/BD2bS6XEEUlORVOGHwhe.png", alt="A screenshot of a slider.", width="159", height="56", caption="A range slider component." %}
+<figure class="w-figure">
+  {% Img src="image/admin/BD2bS6XEEUlORVOGHwhe.png", alt="A screenshot of a slider.", width="159", height="56" %}
+  <figcaption class="w-figcaption">A range slider component.</figcaption>
+</figure>
 
 ```html
 <fancy-slider role="slider" aria-valuemin="1" aria-valuemax="5" aria-valuenow="2.5"></fancy-slider>

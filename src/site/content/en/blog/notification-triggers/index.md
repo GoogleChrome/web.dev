@@ -184,9 +184,10 @@ You can see Notification Triggers in action in the [demo][demo], which allows yo
 notifications, list scheduled notifications, and cancel them. The source code is available on
 [Glitch][demo-source].
 
-<!--lint disable no-literal-urls-->
-{% Img src="image/admin/WVlem3Tf2GEEFwNVA2L1.png", alt="A screenshot of the Notification Triggers demo web app.", width="800", height="525", caption="The Notification Triggers <a href=\"https://notification-triggers.glitch.me/\">demo</a>.", figure="fullbleed" %}
-<!--lint enable no-literal-urls-->
+<figure class="w-figure">
+  {% Img src="image/admin/WVlem3Tf2GEEFwNVA2L1.png", alt="A screenshot of the Notification Triggers demo web app.", width="800", height="525" %}
+  <figcaption class="w-figcaption">The Notification Triggers <a href="https://notification-triggers.glitch.me/">demo</a>.", figure="fullbleed</figcaption>
+</figure>
 
 ## Security and permissions
 

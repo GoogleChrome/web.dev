@@ -19,7 +19,9 @@ CSS [Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini) is an umbrel
 describes a series of low-level browser APIs that give developers much more control and power over
 the styles they write.
 
-{% Img src="image/admin/KgTxiRodgp6kFwHGHvqA.jpg", alt="Houdini layer", width="800", height="599", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/KgTxiRodgp6kFwHGHvqA.jpg", alt="Houdini layer", width="800", height="599" %}
+</figure>
 
 Houdini enables more semantic CSS with the [Typed Object
 Model](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API/Guide). Developers can
@@ -83,7 +85,10 @@ The CSS Painting API is currently one of the best-supported Houdini APIs, its sp
 candidate recommendation. It is currently enabled in all Chromium-based browsers, partially
 supported in Safari, and is under consideration for Firefox.
 
-{% Img src="image/admin/vL8Z5YEwk2g2QJ6T6IWp.png", alt="Caniuse support", width="800", height="176", className="w-screenshot", caption="The CSS Painting API is currently supported on Chromium-based browsers." %}
+<figure class="w-figure">
+  {% Img src="image/admin/vL8Z5YEwk2g2QJ6T6IWp.png", alt="Caniuse support", width="800", height="176", className="w-screenshot" %}
+  <figcaption class="w-figcaption">The CSS Painting API is currently supported on Chromium-based browsers.</figcaption>
+</figure>
 
 But even without full browser support, you can still get creative with the Houdini Paint API and see
 your styles work across all modern browsers with the [CSS Paint
@@ -93,9 +98,10 @@ implementations, as well as to provide a resource and worklet library, my team b
 
 ## Houdini.how
 
-<!--lint disable no-literal-urls-->
-{% Img src="image/admin/UKenhKMvDWI9PvWGcTG4.png", alt="Worklet page screenshot.", width="800", height="833", className="w-screenshot", caption="Screenshot from the <a href=\"https://houdini.how\">Houdini.how</a> homepage." %}
-<!--lint enable no-literal-urls-->
+<figure class="w-figure">
+  {% Img src="image/admin/UKenhKMvDWI9PvWGcTG4.png", alt="Worklet page screenshot.", width="800", height="833", className="w-screenshot" %}
+  <figcaption class="w-figcaption">Screenshot from the <a href="https://houdini.how">Houdini.how</a> homepage.</figcaption>
+</figure>
 
 [Houdini.how](https://houdini.how) is a library and reference for Houdini worklets and resources. It
 provides everything you need to know about CSS Houdini: browser support, an

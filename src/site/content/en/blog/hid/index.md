@@ -168,7 +168,10 @@ const [device] = await navigator.hid.requestDevice({ filters });
 const devices = await navigator.hid.getDevices();
 ```
 
-{% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Screenshot of a HID device prompt on a website.", width="800", height="513", className="w-screenshot", caption="User prompt for selecting a Nintendo Switch Joy-Con." %}
+<figure class="w-figure">
+  {% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Screenshot of a HID device prompt on a website.", width="800", height="513", className="w-screenshot" %}
+  <figcaption class="w-figcaption">User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
+</figure>
 
 A `HIDDevice` object contains USB vendor and product identifiers for device
 identification. Its `collections` attribute is initialized with a hierarchical
@@ -215,7 +218,10 @@ contains the HID data as a [`DataView`] object (`data`), the HID device it belon
 to (`device`), and the 8-bit report ID associated with the input report
 (`reportId`).
 
-{% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="Red and blue nintendo switch photo.", width="800", height="575", className="w-screenshot", caption="Red and blue nintendo switch photo." %}
+<figure class="w-figure">
+  {% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="Red and blue nintendo switch photo.", width="800", height="575", className="w-screenshot" %}
+  <figcaption class="w-figcaption">Red and blue nintendo switch photo.</figcaption>
+</figure>
 
 Continuing with the previous example, the code below shows you how to detect
 which button the user has pressed on a Joy-Con Right device so that you can
@@ -269,7 +275,10 @@ directions. They allow HID devices and applications to exchange non standardized
 HID data. Unlike input and output reports, feature reports are not received or
 sent by the application on a regular basis.
 
-{% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="Black and silver laptop computer photo.", width="800", height="575", className="w-screenshot", caption=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="Black and silver laptop computer photo.", width="800", height="575", className="w-screenshot" %}
+  <figcaption class="w-figcaption">Black and silver laptop computer photo.</figcaption>
+</figure>
 
 To send a feature report to a HID device, pass the 8-bit report ID associated
 with the feature report (`reportId`) and bytes as a [`BufferSource`] (`data`) to
@@ -338,7 +347,10 @@ navigator.hid.addEventListener("disconnect", event => {
 Debugging HID in Chrome is easy with the internal page, `chrome://device-log`
 where you can see all HID and USB device related events in one single place.
 
-{% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="Screenshot of the internal page to debug HID.", width="800", height="575", className="w-screenshot", caption="Screenshot of the internal page to debug HID." %}
+<figure class="w-figure">
+  {% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="Screenshot of the internal page to debug HID.", width="800", height="575", className="w-screenshot" %}
+  <figcaption class="w-figcaption">Screenshot of the internal page to debug HID.</figcaption>
+</figure>
 
 ## Browser support {: #browser-support }
 

@@ -212,7 +212,9 @@ which is JavaScript. In many cases, the plugin may appear at the end of an
 article or near the end of a page, so loading it eagerly when it's offscreen
 may be suboptimal.
 
-{% Img src="image/admin/fdy8o61jxPN560IkF2Ne.png", alt="Facebook Like Button", width="800", height="71", className="w-screenshot", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/fdy8o61jxPN560IkF2Ne.png", alt="Facebook Like Button", width="800", height="71", className="w-screenshot" %}
+</figure>
 
 Thanks to engineer Stoyan Stefanov, [all of Facebook's social plugins now
 support standardized iframe

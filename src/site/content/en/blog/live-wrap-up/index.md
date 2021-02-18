@@ -51,7 +51,9 @@ Vitals](/vitals/#core-web-vitals) metrics as its foundation.
 The three pillars of the 2020 Core Web Vitals are loading, interactivity, and visual stability of
 page content, which are captured by the following metrics:
 
-{% Img src="image/admin/kzOdl2pRyEEPEQI0U2lQ.png", alt="An illustration of the Core Web Vitals.", width="800", height="232", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/kzOdl2pRyEEPEQI0U2lQ.png", alt="An illustration of the Core Web Vitals.", width="800", height="232" %}
+</figure>
 
 + [Largest Contentful Paint](/lcp/) measures perceived load speed and
   marks the point in the page load timeline when a page's main content has likely loaded.
@@ -81,7 +83,9 @@ We designed a suite of tests to determine which build tools allow you to follow
 web development best practices. We worked with the build tool authors to
 make sure we used their tools correctly and represented them fairly.
 
-{% Img src="image/admin/awFmvfMqFv3gvbpIICJY.png", alt="A screenshot of the tooling.report UI.", width="800", height="316", className="w-screenshot", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/awFmvfMqFv3gvbpIICJY.png", alt="A screenshot of the tooling.report UI.", width="800", height="316", className="w-screenshot" %}
+</figure>
 
 The initial release of tooling.report covers webpack v4, Rollup v2, Parcel v2, and Browserify with Gulp,
 which appear to be the most popular build tools right now. We built tooling.report with the
@@ -183,7 +187,9 @@ critical issues to start with: [cookie problems](/samesite-cookies-explained),
 and [COEP issues](/coop-coep/). Watch the web.dev LIVE session on [finding and fixing
 problems with the Issues tab](https://youtu.be/1TbkSxQb4bI) to get started.
 
-{% Img src="image/admin/G7AmzK1btOMBUPEhnFhV.png", alt="A screenshot of the Issues tab.", width="800", height="535", className="w-screenshot w-screenshot--filled", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/G7AmzK1btOMBUPEhnFhV.png", alt="A screenshot of the Issues tab.", width="800", height="535", className="w-screenshot w-screenshot--filled" %}
+</figure>
 
 Moreover, with the [Core Web Vitals](/vitals/#core-web-vitals) becoming one of the
 most critical sets of metrics for web developers to track and measure, DevTools wants to ensure

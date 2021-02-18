@@ -108,7 +108,9 @@ proposal](https://github.com/WICG/conversion-measurement-api#privacy-considerati
 
 ### How it works
 
-{% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="Diagram: overview of the conversion measurement API steps", width="800", height="496", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="Diagram: overview of the conversion measurement API steps", width="800", height="496" %}
+</figure>
 
 This API can be used with two types of links (`<a>` elements) used for advertising:
 
@@ -194,7 +196,9 @@ How much can `adtech.example` learn about web users?
 
 #### With third-party cookies
 
-{% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="Diagram: how third-party cookies enable cross-site user recognition", width="800", height="860", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="Diagram: how third-party cookies enable cross-site user recognition", width="800", height="860" %}
+</figure>
 
 `adtech.example` relies on a **a third-party cookie used as a unique cross-site identifier** to
 **recognize a user across sites**. In addition, `adtech.example` can access **both** detailed click-
@@ -208,7 +212,10 @@ just `news.example` and `shoes.example`—a user's behavior can be tracked acros
 
 #### With the Event Conversion Measurement API
 
-{% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="Diagram: how the API enables conversion measurement without cross-site user recognition", width="800", height="643", caption="\"Ad ID\" on the cookies diagram and \"Click ID\" are both identifiers that enable mapping to detailed data. On this diagram, it's called \"Click ID\" because only click-through conversion measurement is supported." %}
+<figure class="w-figure">
+  {% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="Diagram: how the API enables conversion measurement without cross-site user recognition", width="800", height="643" %}
+  <figcaption class="w-figcaption">\"Ad ID\" on the cookies diagram and \"Click ID\" are both identifiers that enable mapping to detailed data. On this diagram, it's called \"Click ID\" because only click-through conversion measurement is supported.</figcaption>
+</figure>
 
 `adtech.example` can't use a cross-site identifier and hence **can't recognize a user across
 sites**.
@@ -344,7 +351,9 @@ In Chrome, report scheduling works as follows:
   </table>
 </div>
 
-{% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="Chronology of what reports are sent when", width="800", height="462", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="Chronology of what reports are sent when", width="800", height="462" %}
+</figure>
 
 See [Sending Scheduled
 Reports](https://github.com/WICG/conversion-measurement-api#sending-scheduled-reports) for more
@@ -362,7 +371,9 @@ would work with the current API. Future iterations of this API [may be different
 
 ### Ad click (steps 1 to 5)
 
-{% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="Diagram: ad click and click storage", width="800", height="694", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="Diagram: ad click and click storage", width="800", height="694" %}
+</figure>
 
 An `<a>` ad element is loaded on a publisher site by `adtech.example` within an iframe.
 
@@ -462,7 +473,9 @@ committed, the browser stores an object that includes `impressiondata`, `convers
 
 ### Conversion and report scheduling (steps 6 to 9)
 
-{% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="Diagram: conversion and report scheduling", width="800", height="639", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="Diagram: conversion and report scheduling", width="800", height="639" %}
+</figure>
 
 Either directly after clicking the ad, or later on—for example, on the next day—the user visits
 `advertiser.example`, browses sports shoes, finds a pair they want to purchase, and proceeds to
@@ -525,7 +538,9 @@ the two-day-after-click mark if the browser is running.
 
 ### Sending the report (steps 10 and 11)
 
-{% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="Diagram: browser sending the report", width="800", height="533", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="Diagram: browser sending the report", width="800", height="533" %}
+</figure>
 
 Once the scheduled time to send the report is reached, the browser sends the **conversion report**:
 it sends an HTTP POST to the reporting origin that was specified in the `<a>` element

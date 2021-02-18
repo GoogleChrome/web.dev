@@ -16,7 +16,9 @@ tags:
 
 A carousel is a UX component that displays content in slideshow-like manner. Carousels can "autoplay" or be navigated manually by users. Although carousels can be used elsewhere, they are most frequently used to display images, products, and promotions on homepages.
 
-{% Img src="image/admin/u2FlXalClwBeDOBBiwxu.png", alt="Image showing a carousel", width="629", height="420", className="w-screenshot", figure=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/u2FlXalClwBeDOBBiwxu.png", alt="Image showing a carousel", width="629", height="420", className="w-screenshot" %}
+</figure>
 
 ## Performance
 

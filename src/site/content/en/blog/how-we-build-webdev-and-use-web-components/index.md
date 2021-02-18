@@ -160,7 +160,10 @@ Importantly, these elements are just part of [our regular Markdown source code](
 Our Web Components most commonly utilize the [Container Component](https://flaviocopes.com/react-presentational-vs-container-components/) model, made popular by React, although this model [is now a bit passé](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0).
 Each `-container` element connects to our global state (provided by [unistore](https://github.com/developit/unistore)), and then renders a visual element, which in turn goes on to render actual DOM nodes that have styling or other built-in functionality.
 
-{% Img src="image/admin/0vvvEFtKSNNvD79QS2i2.png", alt="A diagram that shows the relationship between global state and HTML elements that use it.", width="640", height="220", caption=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/0vvvEFtKSNNvD79QS2i2.png", alt="A diagram that shows the relationship between global state and HTML elements that use it.", width="640", height="220" %}
+  <figcaption class="w-figcaption">A diagram that shows the relationship between global state and HTML elements that use it.</figcaption>
+</figure>
 
 Our most complex Web Components exist to visualize global actions and state.
 For example, web.dev lets you audit your favourite site and then navigate away from the Measure page.

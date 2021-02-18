@@ -121,11 +121,10 @@ content has changed.
 
 The following chart shows how LCP distributions have been reduced on a site using this pattern:
 
-<!--lint disable no-literal-urls-->
-
-{% Img src="image/admin/uB0Sm56R88MRF16voQ1k.png", alt="Largest Contentful Paint distributions before and after HTML caching", width="800", height="495", caption="Largest Contentful Paint distribution, for page loads with and without a service worker - <a href=\"https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/\">philipwalton.com</a>" %}
-
-<!--lint enable no-literal-urls-->
+<figure class="w-figure">
+  {% Img src="image/admin/uB0Sm56R88MRF16voQ1k.png", alt="Largest Contentful Paint distributions before and after HTML caching", width="800", height="495" %}
+  <figcaption class="w-figcaption">Largest Contentful Paint distribution, for page loads with and without a service worker - <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a></figcaption>
+</figure>
 
 The chart shows the distribution for LCP from a single site over the last 28 days, segmented by
 service worker state. Notice how far more page loads have a faster LCP value after cache-first HTML
@@ -201,7 +200,10 @@ every build:
 - For Gulp: [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css)
 - For Rollup: [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter)
 
-{% Img src="image/admin/vQXSKrY1Eq3CKkNbu9Td.png", alt="Example of LCP improvement: Before and after minifying CSS", width="800", height="139", caption=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/vQXSKrY1Eq3CKkNbu9Td.png", alt="Example of LCP improvement: Before and after minifying CSS", width="800", height="139" %}
+  <figcaption class="w-figcaption">Example of LCP improvement: Before and after minifying CSS</figcaption>
+</figure>
 
 {% Aside %}
 For more details, refer to the [Minify CSS](/minify-css/) guide.
@@ -226,7 +228,10 @@ To optimize:
       <link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
       ```
 
-  {% Img src="image/admin/2fcwrkXQRQrM8w1qyy3P.png", alt="Example of LCP improvement: Before and after deferring non-critical CSS", width="800", height="139", caption=true %}
+  <figure class="w-figure">
+    {% Img src="image/admin/2fcwrkXQRQrM8w1qyy3P.png", alt="Example of LCP improvement: Before and after deferring non-critical CSS", width="800", height="139" %}
+    <figcaption class="w-figcaption">Example of LCP improvement: Before and after deferring non-critical CSS</figcaption>
+  </figure>
 
 {% Aside %}
 For more details, refer to the [Defer non-critical CSS](/defer-non-critical-css/) guide.
@@ -236,7 +241,10 @@ For more details, refer to the [Defer non-critical CSS](/defer-non-critical-css/
 
 Inline any critical-path CSS used for above-the-fold content by including it directly in `<head>.`
 
-{% Img src="image/admin/m0n0JsLpH9JsNnXywSwz.png", alt="Critical CSS inlined", width="800", height="325", caption=true, className="w-screenshot w-screenshot--filled" %}
+<figure class="w-figure">
+  {% Img src="image/admin/m0n0JsLpH9JsNnXywSwz.png", alt="Critical CSS inlined", width="800", height="325", className="w-screenshot w-screenshot--filled" %}
+  <figcaption class="w-figcaption">Critical CSS inlined</figcaption>
+</figure>
 
 Inlining important styles eliminates the need to make a round-trip request to fetch critical CSS.
 Deferring the rest minimizes CSS blocking time.
@@ -251,7 +259,10 @@ examples:
 - [Critters](https://github.com/GoogleChromeLabs/critters) is a webpack plugin that inlines
   critical CSS and lazy-loads the rest
 
-{% Img src="image/admin/L8sc51bd3ckxwnUfczC4.png", alt="Example of LCP improvement: Before and after inlining critical CSS", width="800", height="175", caption=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/L8sc51bd3ckxwnUfczC4.png", alt="Example of LCP improvement: Before and after inlining critical CSS", width="800", height="175" %}
+  <figcaption class="w-figcaption">Example of LCP improvement: Before and after inlining critical CSS</figcaption>
+</figure>
 
 {% Aside %}
 Take a look at the [Extract critical CSS](/extract-critical-css/) guide to learn more.
@@ -380,7 +391,10 @@ LCP.
     process instead of on-the-fly as they are requested by the browser. This minimizes server
     overhead and prevents delays when requests are made, especially when using high compression ratios.
 
-{% Img src="image/admin/Ckh2Jjkoh7ojLj5Wxeqc.png", alt="Example of LCP improvement: Before and after Brotli compression ", width="800", height="139", caption=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/Ckh2Jjkoh7ojLj5Wxeqc.png", alt="Example of LCP improvement: Before and after Brotli compression ", width="800", height="139" %}
+  <figcaption class="w-figcaption">Example of LCP improvement: Before and after Brotli compression </figcaption>
+</figure>
 
 {% Aside %}
 For more details, refer to the [Minify and compress
@@ -498,7 +512,10 @@ With pre-rendering, TTI is still negatively impacted but server response times a
 they would be with a server-side rendering solution that dynamically renders each page only after
 it's requested.
 
-{% Img src="image/admin/sm9s16UHfh8a5MDEWjxa.png", alt="Example of LCP improvement: Before and after pre-rendering", width="800", height="139", caption=true %}
+<figure class="w-figure">
+  {% Img src="image/admin/sm9s16UHfh8a5MDEWjxa.png", alt="Example of LCP improvement: Before and after pre-rendering", width="800", height="139" %}
+  <figcaption class="w-figcaption">Example of LCP improvement: Before and after pre-rendering</figcaption>
+</figure>
 
 {% Aside %}
 For a deeper dive into different server-rendering architectures, take a look at [Rendering on the

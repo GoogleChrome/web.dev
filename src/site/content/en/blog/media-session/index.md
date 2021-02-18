@@ -28,7 +28,10 @@ in several contexts including desktop media hubs, media notifications on mobile,
 and even on wearable devices. I'll describe these customizations in this
 article.
 
-{% Img src="image/admin/qwTz64KKq4rq7WeA3rlT.jpg", alt="Screenshots of Media Session contexts", width="800", height="330", caption="Screenshots of Media Session contexts" %}
+<figure class="w-figure">
+  {% Img src="image/admin/qwTz64KKq4rq7WeA3rlT.jpg", alt="Screenshots of Media Session contexts", width="800", height="330" %}
+  <figcaption class="w-figcaption">Screenshots of Media Session contexts</figcaption>
+</figure>
 
 ## Cross-browser support
 
@@ -71,7 +74,10 @@ playing. The second is how you tell `MediaSession` what needs to be controlled.
 To illustrate, the image below shows how these interfaces relate to specific
 media controls, in this case a media notification on mobile.
 
-{% Img src="image/admin/eiavbbCE6TlI8osR1tYT.jpg", alt="Media Session interfaces illustration", width="800", height="353", caption="Anatomy of a media notification on mobile" %}
+<figure class="w-figure">
+  {% Img src="image/admin/eiavbbCE6TlI8osR1tYT.jpg", alt="Media Session interfaces illustration", width="800", height="353" %}
+  <figcaption class="w-figcaption">Anatomy of a media notification on mobile</figcaption>
+</figure>
 
 ## Let users know what's playing
 
@@ -172,7 +178,10 @@ implemented by setting handlers on an appropriate object, an instance of
 buttons from a headset, another remote device, a keyboard, or interact with a
 media notification.
 
-{% Img src="image/admin/9rN4x5GXdhg4qjC0ZEmk.jpg", alt="Screenshot of a media notification in Windows 10", width="800", height="450", caption=">Customized media notification in Windows 10" %}
+<figure class="w-figure">
+  {% Img src="image/admin/9rN4x5GXdhg4qjC0ZEmk.jpg", alt="Screenshot of a media notification in Windows 10", width="800", height="450" %}
+  <figcaption class="w-figcaption">>Customized media notification in Windows 10</figcaption>
+</figure>
 
 Because some media session actions may not be supported, it is recommended to
 use a `try…catch` block when setting them.
@@ -379,7 +388,10 @@ as setting the position state at an appropriate time as shown below. The
 position state is a combination of the media playback rate, duration, and
 current time.
 
-{% Img src="image/admin/Rlw13wMoaJrDziraXgUc.jpg", alt="Screenshot of lock screen media controls in Chrome OS", width="800", height="450", caption="Lock screen media controls in Chrome OS" %}
+<figure class="w-figure">
+  {% Img src="image/admin/Rlw13wMoaJrDziraXgUc.jpg", alt="Screenshot of lock screen media controls in Chrome OS", width="800", height="450" %}
+  <figcaption class="w-figcaption">Lock screen media controls in Chrome OS</figcaption>
+</figure>
 
 The duration must be provided and positive. The position must be positive and
 less than the duration. The playback rate must be greater than 0.
