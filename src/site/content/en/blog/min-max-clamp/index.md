@@ -4,7 +4,7 @@ subhead: Learn how to control element sizing, maintain proper spacing, and imple
 authors:
   - una
 date: 2020-10-14
-hero: hero.jpg
+hero: image/admin/aVL3BEXD3AF9fFzPGKMf.jpg
 alt: Set of tools on a desk.
 description: Min, max, and clamp provide some powerful CSS capabilities that enable more responsive styling with fewer liens of code. This post goes over how to control element sizing, maintain proper spacing, and implement fluid typography using these well-supported CSS math functions.
 tags:

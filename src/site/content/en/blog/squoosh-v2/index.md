@@ -6,8 +6,8 @@ description: |
 date: 2020-12-09
 authors:
   - kosamari
-hero: hero.jpg
-thumbnail: thumb.jpg
+hero: image/admin/T6HOx3Tl5ns0H9sTolsh.jpg
+thumbnail: image/admin/NybFYj3T4ZRfNOzNoH5A.jpg
 alt: A screen capture of the new Squoosh homepage
 tags:
   - blog

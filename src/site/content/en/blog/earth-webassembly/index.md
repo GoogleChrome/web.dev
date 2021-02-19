@@ -5,7 +5,7 @@ subhead: |
 date: 2019-06-20
 authors:
   - jormears
-hero: hero.jpg
+hero: image/admin/W2buTZDHpZeTqiO1pbCQ.jpg
 alt: A globe with code overlaid
 description: |
   Improving cross-browser access to Google Earth with WebAssembly

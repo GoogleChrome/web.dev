@@ -18,7 +18,7 @@ tags:
   - capabilities
   - file
   - file-system
-hero: hero.jpg
+hero: image/admin/qn7E0q1EWJUqdzsuHwx4.jpg
 alt: Image of hard disk platters
 feedback:
   - api

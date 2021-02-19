@@ -5,8 +5,8 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-11-26
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+hero: image/admin/8cpTXMJGUfcdNXLc6obE.jpg
+thumbnail: image/admin/kA7qbVPt0ovuNzReFanO.jpg
 alt: Gamer girl is playing FPS online video game on her computer
 description: |
   Web apps can now disable mouse acceleration when capturing pointer events.

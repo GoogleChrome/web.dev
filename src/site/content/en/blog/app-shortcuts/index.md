@@ -6,7 +6,7 @@ authors:
   - jungkees
 date: 2020-05-20
 updated: 2020-11-16
-hero: hero.jpg
+hero: image/admin/1ekafMZjtzcd0G3TLQJ4.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
 tags:

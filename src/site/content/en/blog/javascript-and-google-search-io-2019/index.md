@@ -5,7 +5,7 @@ authors:
   - martinsplitt
   - ekharvey
 date: 2019-06-05
-hero: hero.png
+hero: image/admin/k1FlFDvBm4ERrbUiVws4.png
 alt: A pile of gears.
 description: |
   We introduced a new Googlebot at Google I/O and took the opportunity to discuss improvements and best practices for making JavaScript web apps work well with Google Search.

@@ -5,8 +5,8 @@ authors:
   - samdutton
 date: 2020-06-22
 updated: 2020-10-18
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+hero: image/admin/ES4AQvk6hKt7IRIHlhod.jpg
+thumbnail: image/admin/xnaYaKRWxVxFXZrDagog.jpg
 alt: Pipette with purple liquid
 tags:
   - blog

@@ -5,7 +5,7 @@ subhead: >
 authors:
   - maudn
   - samdutton
-hero: hero.jpg
+hero: image/admin/wRrDtHNikUNqgdDewvYG.jpg
 date: 2020-10-06
 updated: 2020-02-10
 tags:

@@ -7,7 +7,7 @@ authors:
   - thomassteiner
 date: 2020-04-08
 updated: 2020-06-16
-hero: hero.jpg
+hero: image/admin/rOe3wxcy28m5DCKcHv7E.jpg
 alt: Pigeons on a wall with a sharp black and white contrast in the background.
 description: |
   The color-scheme CSS property and the corresponding meta tag

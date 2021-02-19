@@ -5,7 +5,7 @@ authors:
   - houssein
 date: 2020-05-05
 updated: 2020-08-20
-hero: hero2.jpg
+hero: image/admin/qqTKhxUFqdLXnST2OFWN.jpg
 alt: Optimize LCP banner
 description: |
   Largest Contentful Paint (LCP) can be used to determine when the main content of the page has

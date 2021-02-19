@@ -22,7 +22,7 @@ date: 2019-10-31
 # !!! IMPORTANT: If your post does not contain a hero image it will not appear
 # on the homepage.
 # Hero images should be 3200 x 960.
-hero: hero.jpg
+hero: image/admin/jAI014ZfN96soXr2QZRQ.jpg
 # You can adjust the fit of your hero image with this property.
 # Values: contain | cover (default)
 # hero_fit: contain

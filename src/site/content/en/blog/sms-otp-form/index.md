@@ -5,7 +5,7 @@ authors:
   - agektmr
 date: 2020-12-09
 updated: 2020-12-09
-hero: hero.jpg
+hero: image/admin/J3XT84NDBPLlsRN0PhLl.jpg
 alt: A neon chat bubble sign.
 
 description: |

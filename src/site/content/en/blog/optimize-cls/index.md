@@ -5,7 +5,7 @@ authors:
   - addyosmani
 date: 2020-05-05
 updated: 2020-08-20
-hero: hero.png
+hero: image/admin/74TRx6aETydsBGa2IZ7R.png
 description: |
   Cumulative Layout Shift (CLS) is a metric that quantifies how often users experience sudden shifts in page content. In this guide, we'll cover optimizing common causes of CLS such as images and iframes without dimensions or dynamic content.
 alt: Layout shifts can suddenly push the content you are reading or are about to click further down the page, leading to a poor user-experience. Reserving space for dynamic content causing layout shifts leads to a more delightful user experience.

@@ -14,7 +14,7 @@ authors:
 date: 2021-01-07
 updated: 2021-01-27
 canonical: https://blog.excalidraw.com/deprecating-excalidraw-electron/
-hero: hero.jpg
+hero: image/admin/qfK9zbKBQalqq5zdr1P1.jpg
 alt: |
   Excalidraw drawing with a stylized Electron logo.
 tags:

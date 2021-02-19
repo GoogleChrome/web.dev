@@ -6,8 +6,8 @@ authors:
   - beaufortfrancois
 date: 2020-09-15
 updated: 2021-01-21
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
+thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
 description: |
   The WebHID API allows websites to access alternative auxiliary keyboards and exotic gamepads.

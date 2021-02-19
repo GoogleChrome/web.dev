@@ -12,7 +12,7 @@ description: >
   `performance.measureUserAgentSpecificMemory()` or the JS Self-Profiling API.
 authors:
   - agektmr
-hero: hero.jpg
+hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
 updated: 2021-02-09

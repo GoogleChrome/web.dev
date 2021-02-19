@@ -5,7 +5,7 @@ authors:
   - surma
 date: 2020-07-07
 # updated: 2020-06-24
-hero: pixels.jpg
+hero: image/admin/t9UnR0miKBlEuPbvPdPH.jpg
 alt: A closeup image of a computer screen.
 description: Since Chrome 84, ResizeObserver supports a new box measurement called device-pixel-content-box, that measures the element's dimension in physical pixels. This is crucial for rendering pixel-perfect graphics, especially in the context of high-density screens.
 tags:

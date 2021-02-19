@@ -6,8 +6,8 @@ authors:
   - beaufortfrancois
 date: 2015-07-21
 updated: 2020-10-19
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+hero: image/admin/CME5IVhdn0pngs7jAlFX.jpg
+thumbnail: image/admin/1J1OTu90a2oH8wFogKnF.jpg
 alt: A Bluetooth chip on a coin
 description: |
   The Web Bluetooth API allows websites to communicate with Bluetooth devices.

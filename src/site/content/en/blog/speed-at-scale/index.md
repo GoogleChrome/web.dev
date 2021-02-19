@@ -5,7 +5,7 @@ authors:
   - katiehempenius
   - addyosmani
 date: 2019-05-24
-hero: scale-header.jpg
+hero: image/admin/3ewq4uJrMKiYvuXxkQGI.jpg
 alt: Speedometer on a retro car
 description: |
   For Google I/O 2019, we introduced three new Web Performance initiatives that we hope will lead to better user experiences for everyone.

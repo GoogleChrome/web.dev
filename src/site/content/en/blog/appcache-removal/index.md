@@ -15,7 +15,7 @@ tags:
   - origin-trial
   - removal
   - service-worker
-hero: hero.jpg
+hero: image/admin/YDs2H4gLPhIwPMjPtc8o.jpg
 alt: An old-fashioned storage container.
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/1776670052997660673

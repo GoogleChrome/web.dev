@@ -10,7 +10,7 @@ authors:
   - thomassteiner
 date: 2019-12-19
 updated: 2020-09-16
-hero: hero.png
+hero: image/admin/lzLo9JCh6bcehH2nSH0n.png
 alt: Icons contained inside white circles compared to icons covering its entire circle
 tags:
   - blog

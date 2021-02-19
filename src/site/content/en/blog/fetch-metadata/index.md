@@ -5,7 +5,7 @@ authors:
   - lwe
 date: 2020-06-04
 updated: 2020-06-10
-hero: hero.jpg
+hero: image/admin/El8ytnIgMDWVzdsglcfv.jpg
 alt: A screenshot of Python code related to Resource Isolation Policy.
 description: |
   Fetch Metadata is a new web platform feature designed to allow servers to protect themselves from cross-origin attacks.

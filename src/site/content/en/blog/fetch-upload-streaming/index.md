@@ -10,7 +10,7 @@ origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/-7680889164480380927
 date: 2020-07-22
 updated: 2020-07-22
-hero: hero.jpg
+hero: image/admin/9U7u4C7WCGbrdHm3181W.jpg
 alt: A canoe pointed up stream.
 tags:
   - blog

@@ -5,7 +5,7 @@ authors:
   - una
 date: 2020-07-21
 # updated: 2020-07-22
-hero: hero.jpg
+hero: image/admin/Iajld9FPY089XWDAZVQ4.jpg
 alt: A sparkler.
 description: Learn how to implement CSS custom properties with semantic typing, a fallback value, and more, directly in your CSS file.
 tags:

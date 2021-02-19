@@ -10,7 +10,7 @@ description: |
 authors:
   - agektmr
 date: 2020-11-09
-hero: hero.jpg
+hero: image/admin/OPuAZvdfh0W5fLAvB5Rv.jpg
 alt: A router with ethernet cables connected.
 tags:
   - blog

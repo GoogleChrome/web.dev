@@ -7,8 +7,8 @@ description: >
 authors:
   - jeffposnick
 date: 2020-12-10
-thumbnail: thumbnail.png
-hero: hero.png
+thumbnail: image/admin/XwmqHMJ27IY2gatiI6Ly.png
+hero: image/admin/KW5Rgyo01HyimeALdCZD.png
 alt: The Workbox logo.
 tags:
   - blog

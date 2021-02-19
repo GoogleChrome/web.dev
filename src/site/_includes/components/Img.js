@@ -26,8 +26,11 @@ const generateSrc = (src, params) => client.buildURL(src, params);
 const Img = function (args) {
   const {src, alt, width, height, class: className, linkTo} = args;
   let {lazy, params, options, sizes} = args;
-  // @ts-ignore: `this` has type of `any`
-  const checkHereIfError = `ERROR IN ${this.page.inputPath}, IMG ${src}`;
+
+  const checkHereIfError = `ERROR IN ${
+    // @ts-ignore: `this` has type of `any`
+    this.page ? this.page.inputPath : 'UNKNOWN'
+  }, IMG ${src}`;
 
   if (src === undefined || typeof src !== 'string') {
     throw new Error(`${checkHereIfError}: src is a required argument`);

@@ -9,8 +9,8 @@ authors:
   - jimper
   - robhazan
   - thebengeu
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+hero: image/admin/xw8W0H84I776HdSNR1NJ.jpg
+thumbnail: image/admin/qcam8u4RQMmc8rod7UXm.jpg
 alt: |
     A long-exposure shot of a moving subway train and advertisement posters at
     the station photo.

@@ -6,7 +6,7 @@ date: 2019-05-06
 updated: 2021-02-15
 authors:
   - uskay
-hero: hero.png
+hero: image/admin/7hJbSWnhhE1lRVHJOWI9.png
 alt: A logo of Portals
 description: |
   The newly proposed Portals API helps keep your front-end simple while allowing seamless navigations

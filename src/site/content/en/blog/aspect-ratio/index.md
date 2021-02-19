@@ -4,7 +4,7 @@ subhead: The new CSS property that helps maintain spacing in responsive layouts.
 authors:
   - una
 date: 2021-01-28
-hero: hero.jpg
+hero: image/admin/I14dS86oJT2f0uHaDLEM.jpg
 alt: Image of colorful telephones resized with the same aspect ratio.
 description: Maintaining aspect ratio within images and elements is now
     easier to achieve with the new aspect-ratio CSS property.

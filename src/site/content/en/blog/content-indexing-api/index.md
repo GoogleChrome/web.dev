@@ -13,7 +13,7 @@ tags:
   - chrome80
   - index
   - caching
-hero: hero.jpg
+hero: image/admin/tuIkBEm2DdHBYy62dDac.jpg
 alt: Index cards in a filing cabinet.
 feedback:
   - api

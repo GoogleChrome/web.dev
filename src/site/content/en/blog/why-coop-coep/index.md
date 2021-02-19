@@ -13,7 +13,7 @@ description: >
 authors:
   - agektmr
   - domenic
-hero: hero.jpg
+hero: image/admin/h8g1TQjkfkJSpWJrPakB.jpg
 date: 2020-05-04
 updated: 2020-10-19
 tags:

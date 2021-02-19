@@ -7,7 +7,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-03-27
-hero: hero.jpg
+hero: image/admin/8SrIq5at2bH6i98stCgs.jpg
 alt: A fire hose with water dripping out of it.
 description: |
   WebSocketStream integrates streams with the WebSocket API.

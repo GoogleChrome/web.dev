@@ -9,7 +9,7 @@ authors:
   - bpj 
 date: 2020-07-17
 # updated: 2020-07-17
-hero: hero.jpeg
+hero: image/admin/YwyFi7zlQ4LjXilIiD3y.jpeg
 tags:
   - blog
   - performance

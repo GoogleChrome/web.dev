@@ -6,8 +6,8 @@ authors:
   - beaufortfrancois
 date: 2020-10-05
 updated: 2020-11-18
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+hero: image/admin/wbcUb7ooaR1nCeYnSiCV.jpg
+thumbnail: image/admin/eBugU3Spjq9df1qb5l0b.jpg
 alt: Five persons in a conference room photo.
 description: |
   Pan, tilt, and zoom features on cameras are finally controllable on the web.
