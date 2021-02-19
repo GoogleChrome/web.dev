@@ -492,7 +492,7 @@ Debugging the Web Serial API in Chrome is easy with the internal page,
 single place.
 
 <figure class="w-figure">
-  {% Img src="image/admin/p2T9gxxLsDWsS1GaqoXj.jpg", alt="Screenshot of the internal page for debugging the Web Serial API.", width="800", height="547" class="w-screenshot" %}
+  {% Img src="image/admin/p2T9gxxLsDWsS1GaqoXj.jpg", alt="Screenshot of the internal page for debugging the Web Serial API.", width="800", height="547", class="w-screenshot" %}
   <figcaption class="w-figcaption">Internal page in Chrome for debugging the Web Serial API.</figcaption>
 </figure>
 
