@@ -20,6 +20,7 @@ const setdefault = require('../_utils/setdefault');
 
 /** @type Authors */
 let processedCollection;
+const PLACEHOLDER_IMG = 'image/admin/1v5F1SOBl46ZghbHQMle.svg';
 
 /**
  * Generate map the posts by author's username/key
@@ -129,7 +130,7 @@ module.exports = (collections) => {
     }
 
     if (!author.image) {
-      author.image = 'image/admin/1v5F1SOBl46ZghbHQMle.svg';
+      author.image = PLACEHOLDER_IMG;
     }
     author.data.hero = author.image;
     author.data.alt = author.title;
