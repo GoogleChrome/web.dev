@@ -5,8 +5,8 @@ subhead: |
   Learn how to serve signed exchanges (SXGs) using Web Packager.
 authors:
   - katiehempenius
-date: 2020-02-16
-hero: hero.jpg
+date: 2020-02-19
+hero: image/admin/f7TRFlVQv5w58A2Cbpg7.jpg
 alt: Abstract photo
 description: |
   Learn how to serve signed exchanges (SXGs) using Web Packager.
