@@ -27,7 +27,7 @@ the same for all mini apps platforms, namely Alipay's
 mini app programming concept is the
 [model-view-viewmodel](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) (MVVM).
 
-### Data Binding
+### Data binding
 
 Data binding corresponds to Vue.js'
 [text interpolation](https://vuejs.org/v2/guide/syntax.html#Text).
@@ -46,7 +46,7 @@ Page({
 });
 ```
 
-### List Rendering
+### List rendering
 
 List rendering works like Vue.js [`v-for` directive](https://vuejs.org/v2/guide/list.html).
 
@@ -64,7 +64,7 @@ Page({
 });
 ```
 
-### Conditional Rendering
+### Conditional rendering
 
 Conditional rendering works like Vue.js'
 [`v-if` directive](https://vuejs.org/v2/guide/conditional.html).
@@ -239,8 +239,8 @@ console.log(tools.msg);
 
 ### JavaScript bridge API
 
-The JavaScript bridge that connects mini apps with the native operating system renders working with
-native capabilities possible (see [Access to powerful features](/mini-app-about/#access-to-powerful-features). It
+The JavaScript bridge that connects mini apps with the operating system makes it possible
+to use OS capabilities (see [Access to powerful features](/mini-app-about/#access-to-powerful-features). It
 also offers a number of convenience methods. For an overview, you can check out the different APIs
 of [WeChat](https://developers.weixin.qq.com/miniprogram/en/dev/api/),
 [Alipay](https://opendocs.alipay.com/mini/api),

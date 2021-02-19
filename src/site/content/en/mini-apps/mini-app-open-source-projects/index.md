@@ -118,7 +118,7 @@ you explore the available components.
 ## WeUI
 
 [WeUI](https://github.com/Tencent/weui) is a set of basic style libraries consistent with WeChat's
-native visual experience. The official WeChat design team has tailored designs for WeChat internal
+default visual experience. The official WeChat design team has tailored designs for WeChat internal
 web pages and WeChat mini apps to make users' perception of use more uniform. It includes components
 such as `button`, `cell`, `dialog`, `progress`, `toast`, `article`, `actionsheet`, and `icon`. There
 are different versions of WeUI available like [weui-wxss](https://github.com/Tencent/weui-wxss/) for
@@ -135,7 +135,7 @@ WeChat mini apps styled with WXSS (see [Styling](/mini-app-markup-styling-and-sc
 
 ## Omi
 
-[Omi](https://tencent.github.io/omi/) is a self-proclaimed front-end cross-frameworks framework
+[Omi](https://tencent.github.io/omi/) is a self-proclaimed frontend cross-frameworks framework
 ([open source on GitHub](https://github.com/Tencent/omi). It merges Web Components, JSX, Virtual
 DOM, functional style, observer or Proxy into one framework with tiny size and high performance. Its
 aim is to let developers write components once and use them everywhere, such as Omi, React, Preact,
@@ -198,7 +198,7 @@ componentized development. Through pre-compilation, developers can choose their 
 style to develop mini apps. The detailed optimization of the framework and the introduction of
 Promises and async functions all make the development of mini app projects easier and more
 efficient. At the same time, WePY is also a growing framework, which has largely absorbed some
-optimized front-end tools and framework design concepts and ideas, mostly from Vue.js.
+optimized frontend tools and framework design concepts and ideas, mostly from Vue.js.
 
 ```html
 <style lang="less">
@@ -245,7 +245,7 @@ optimized front-end tools and framework design concepts and ideas, mostly from V
 ## vConsole
 
 The [vConsole](https://github.com/Tencent/vConsole) project provides a lightweight, extendable
-front-end developer tool for mobile web pages. It offers a DevTools-like debugger that can be
+frontend developer tool for mobile web pages. It offers a DevTools-like debugger that can be
 injected directly into web apps and mini apps. A
 [demo](http://wechatfe.github.io/vconsole/demo.html) showcases the opportunities. The vConsole
 includes tabs for logs, system, network, elements, and storage.
@@ -260,7 +260,7 @@ includes tabs for logs, system, network, elements, and storage.
 ## weweb
 
 The [weweb](https://weidian-inc.github.io/hera/#/) project
-([open source on GitHub](https://github.com/wdfe/weweb)) is the underlying front-end framework of
+([open source on GitHub](https://github.com/wdfe/weweb)) is the underlying frontend framework of
 the [Hera](https://weidian-inc.github.io/hera/#/) mini app framework that claims to be compatible
 with the syntax of WeChat mini apps, so you can write web applications in the way of mini apps. The
 documentation promises that if you already have a mini app, you can run it in the browser thanks to

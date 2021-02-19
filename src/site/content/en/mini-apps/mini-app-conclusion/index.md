@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Conclusion
+title: Concluding thoughts about mini apps from a web developer
 authors:
   - thomassteiner
 date:  2021-02-05
@@ -47,7 +47,8 @@ environment offers a lot of starting points for making developers' lives easier.
 
 ## Closing thoughts
 
-From a features point of view, the web is catching up with mini apps. The ever-growing
+From a features point of view, the web is becoming more and more powerful
+with each release of essentially _any_ browser. The ever-growing
 [list of capabilities](/fugu-status/) makes use cases possible on the web that were unthinkable a
 mere year ago. At the same time, the need for
 [mini apps standardization](/mini-app-standardization/) shows that developers are not willing or

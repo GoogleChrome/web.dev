@@ -13,13 +13,17 @@ tags:
 
 ## Mini app project structure
 
-As before with the markup languages, the styling languages, and the components, with the mini app
-project structure, too, the details like the file extensions or the default names vary, but the
-overall idea is the same for all super app providers. The project structure always consists of a
-root file `app.js` that initializes the mini app, a configuration file `app.json` that _roughly_
-corresponds to a [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest), an
-optional common style sheet file `app.css` with shared default styles, and a `project.config.json`
-file that contains build information. All the pages are stored in individual subfolders in a
+As before with the markup languages, the styling languages, and the components; with the mini app
+project structure, too, the details like the file extensions or the default names vary. The
+overall idea, though, is the same for all super app providers. The project structure always consists of:
+
+- A root file `app.js` that initializes the mini app.
+- A configuration file `app.json` that _roughly_ corresponds to a
+  [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest).
+- An optional common style sheet file `app.css` with shared default styles.
+- A `project.config.json` file that contains build information.
+
+All the pages are stored in individual subfolders in a
 `pages` folder. Each page subfolder contains a CSS file, a JS file, an HTML file, and an optional
 configuration JSON file. All files must be named like their containing folder, apart from the file
 extensions. Like that, the mini app just needs a pointer to the directory in the `app.json` file

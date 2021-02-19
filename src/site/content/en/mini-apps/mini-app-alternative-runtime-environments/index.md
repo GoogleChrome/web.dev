@@ -13,6 +13,7 @@ tags:
 
 ## More than just on mobile
 
+In countries like China, mini apps have taken the market by storm.
 Apart from mobile devices, where mini apps are omnipresent and which are their natural habitat, mini
 apps have started to conquer other runtime environments like cars and the classic desktop.
 

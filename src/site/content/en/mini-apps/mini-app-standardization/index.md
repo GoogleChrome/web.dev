@@ -63,8 +63,8 @@ that is, not as an official group publication, but nonetheless worth the read.
 ## Formal launch of the W3C MiniApps Working Group
 
 On January 19, 2021, the [MiniApps Working Group](https://www.w3.org/2021/miniapps/) was [formally launched](https://www.w3.org/blog/2021/01/w3c-launches-the-miniapps-working-group/) in the W3C.
-The group uses the spelling "MiniApps" to distinguish the standardization effort from the technology.
-You can read the group's [charter](https://www.w3.org/2021/01/miniapps-wg-charter.html) to get a feeling of the planned work.
+The group uses the spelling and capitalization "MiniApps" to distinguish the standardization effort from the technology.
+You can read the group's [charter](https://www.w3.org/2021/01/miniapps-wg-charter.html) to get a feel for the planned work.
 Leaders of the group introduced the effort as follows:
 
 > Currently, there are many variants of MiniApps developed by different vendors with different APIs.

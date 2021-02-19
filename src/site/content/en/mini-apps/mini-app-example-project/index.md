@@ -1,6 +1,6 @@
 ---
 layout: post
-title: An example project
+title: Applying the mini app programming principles to an example project
 authors:
   - thomassteiner
 date:  2021-02-05
@@ -244,7 +244,7 @@ or right in the iframe embed below, which simulates a mobile device.
 <iframe src="https://tomayac.github.io/hiit-time/#workout" width="411" height="731" loading="lazy" frameborder="0" allow="screen-wake-lock"></iframe>
 
 {% Banner 'neutral' %}
-  👉 The final chapter ends this collection on mini apps with a [conclusion](mini-app-conclusion).
+  👉 The final chapter ends this collection on mini apps with a [conclusion](/mini-app-conclusion).
 {% endBanner %}
 
 ## Acknowledgements
