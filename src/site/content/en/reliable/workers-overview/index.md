@@ -1,17 +1,17 @@
 ---
-layout: post 
-title: "Workers overview" 
+layout: post
+title: "Workers overview"
 subhead: >
   How web workers and service workers can improve the performance
   of your site, and when to use a web worker versus a service worker.
 authors:
   - demianrenzulli
-  - andrewguan 
+  - andrewguan
 date: 2020-12-08
-description: | 
-    How web workers and service workers can improve the performance of your website, and when to use a web worker versus a service worker. 
-hero: image/admin/Gfdeo856rHPAXJbXvPDi.jpeg 
-thumbnail: hero.jpeg 
+description: |
+    How web workers and service workers can improve the performance of your website, and when to use a web worker versus a service worker.
+hero: image/admin/Gfdeo856rHPAXJbXvPDi.jpeg
+thumbnail: image/admin/Gfdeo856rHPAXJbXvPDi.jpeg
 tags:
   - blog
   - service-worker
