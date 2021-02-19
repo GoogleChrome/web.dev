@@ -231,7 +231,7 @@ directory handle to IndexedDB, or call `postMessage()` to send them between the 
 Saving file or directory handles to IndexedDB means that you can store state, or remember which files
 or directories a user was
 working on. This makes it possible to keep a list of recently opened or edited files, offer to
-re-open the last file when the app is opened, restore the previous working directory, etc.
+re-open the last file when the app is opened, restore the previous working directory, and more.
 In the text editor, I store a list of the five
 most recent files the user has opened, making it easy to access those files again.
 
