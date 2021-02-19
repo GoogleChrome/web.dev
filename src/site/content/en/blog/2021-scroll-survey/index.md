@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2021 Scroll Survey
+title: Take the 2021 scroll survey to help improve scrolling on the web
 subhead: An introduction to the 2021 Scroll Survey from the Chrome team
 authors:
   - adamargyle
