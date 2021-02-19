@@ -15,7 +15,7 @@ authors:
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-02-09
+updated: 2021-02-19
 tags:
   - blog
   - security
@@ -28,6 +28,8 @@ feedback:
 
 **Updates**
 
+- **February 19, 2021**: Added a note about feature policy
+  `allow="cross-origin-isolated"` and debugging functionality on DevTools.
 - **February 9, 2021**: Added an instruction [how to set up a reporting
 endpoint](#set-up-reporting-endpoint).
 - **October 15, 2020**: `self.crossOriginIsolated` is available from Chrome 87.
