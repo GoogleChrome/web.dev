@@ -179,7 +179,7 @@ one for fonts and font-related CSS, and one for everything else.
 
 <figure class="w-figure">
   {% Img src="image/admin/tTo7miHIREZRySv8aoBd.png", alt="Chrome DevTools Application tab showing the two Excalidraw caches.", width="800", height="569" %}
-  <figcaption class="w-figcaption">Excalidraw's caches contents</figcaption>
+  <figcaption class="w-figcaption">Excalidraw's cache contents</figcaption>
 </figure>
 
 This means the application is fully offline-capable and can run without a network connection.

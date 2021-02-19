@@ -94,45 +94,21 @@ such as dings don't show notifications.
 
 ```js
 // After media (video or audio) starts playing
-await document.querySelector('video').play();
+await document.querySelector("video").play();
 
-if ('mediaSession' in navigator) {
+if ("mediaSession" in navigator) {
   navigator.mediaSession.metadata = new MediaMetadata({
     title: 'Never Gonna Give You Up',
     artist: 'Rick Astley',
     album: 'Whenever You Need Somebody',
     artwork: [
-      {
-        src: 'https://via.placeholder.com/96',
-        sizes: '96x96',
-        type: 'image/png',
-      },
-      {
-        src: 'https://via.placeholder.com/128',
-        sizes: '128x128',
-        type: 'image/png',
-      },
-      {
-        src: 'https://via.placeholder.com/192',
-        sizes: '192x192',
-        type: 'image/png',
-      },
-      {
-        src: 'https://via.placeholder.com/256',
-        sizes: '256x256',
-        type: 'image/png',
-      },
-      {
-        src: 'https://via.placeholder.com/384',
-        sizes: '384x384',
-        type: 'image/png',
-      },
-      {
-        src: 'https://via.placeholder.com/512',
-        sizes: '512x512',
-        type: 'image/png',
-      },
-    ],
+      { src: 'https://via.placeholder.com/96',   sizes: '96x96',   type: 'image/png' },
+      { src: 'https://via.placeholder.com/128', sizes: '128x128', type: 'image/png' },
+      { src: 'https://via.placeholder.com/192', sizes: '192x192', type: 'image/png' },
+      { src: 'https://via.placeholder.com/256', sizes: '256x256', type: 'image/png' },
+      { src: 'https://via.placeholder.com/384', sizes: '384x384', type: 'image/png' },
+      { src: 'https://via.placeholder.com/512', sizes: '512x512', type: 'image/png' },
+    ]
   });
 
   // TODO: Update playback state.
@@ -188,54 +164,14 @@ use a `try…catch` block when setting them.
 
 ```js
 const actionHandlers = [
-  [
-    'play',
-    () => {
-      /* ... */
-    },
-  ],
-  [
-    'pause',
-    () => {
-      /* ... */
-    },
-  ],
-  [
-    'previoustrack',
-    () => {
-      /* ... */
-    },
-  ],
-  [
-    'nexttrack',
-    () => {
-      /* ... */
-    },
-  ],
-  [
-    'stop',
-    () => {
-      /* ... */
-    },
-  ],
-  [
-    'seekbackward',
-    (details) => {
-      /* ... */
-    },
-  ],
-  [
-    'seekforward',
-    (details) => {
-      /* ... */
-    },
-  ],
-  [
-    'seekto',
-    (details) => {
-      /* ... */
-    },
-  ],
+  ['play',          () => { /* ... */ }],
+  ['pause',         () => { /* ... */ }],
+  ['previoustrack', () => { /* ... */ }],
+  ['nexttrack',     () => { /* ... */ }],
+  ['stop',          () => { /* ... */ }],
+  ['seekbackward',  (details) => { /* ... */ }],
+  ['seekforward',   (details) => { /* ... */ }],
+  ['seekto',        (details) => { /* ... */ }],
 ];
 
 for (const [action, handler] of actionHandlers) {

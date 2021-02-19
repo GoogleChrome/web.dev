@@ -129,7 +129,7 @@ install the worklet. Unpkg will resolve to the worklet.js as the main script, or
 yourself. Unpkg will not cause CORS issues, as it is served over HTTPS.
 
 ```html
-CSS.paintWorklet.addModule("https://unpkg.com/<package-name>");</package-name>
+CSS.paintWorklet.addModule("https://unpkg.com/<package-name>");
 ```
 
 Note that this does not register the custom properties for syntax and fallback values. Instead, they

@@ -179,7 +179,7 @@ getDependencies (route) {
 ```
 
 <figure class="w-figure">
-  <img class="w-screenshot-filled" src="outputted-chunks.png" alt="Output of multiple shared chunks in a Next.js application.">
+  <img class="w-screenshot w-screenshot--filled" src="outputted-chunks.png" alt="Output of multiple shared chunks in a Next.js application.">
 </figure>
 
 This newer granular chunking strategy was first rolled out in Next.js behind a flag, where it was tested on a

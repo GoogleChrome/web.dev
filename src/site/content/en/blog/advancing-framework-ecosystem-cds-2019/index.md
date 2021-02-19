@@ -122,7 +122,7 @@ for comments (RFCs) and pull requests (PRs):
     ([PR](https://github.com/zeit/next.js/pull/8069)).
 
 <figure class="w-figure">
-  {% Img src="image/admin/5QA6KNYCwQ4aLdowLGNS.png", alt="Homepage of Barnebys.com", width="800", height="543", class="w-screenshot-filled" %}
+  {% Img src="image/admin/5QA6KNYCwQ4aLdowLGNS.png", alt="Homepage of Barnebys.com", width="800", height="543", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption"><a href="https://www.barnebys.com/">Barnebys.com</a>, a large search engine for antiques and collectibles, saw a 23% reduction in total JavaScript after enabling granular chunking</figcaption>
 </figure>
 
@@ -134,7 +134,7 @@ Next.js, such as:
     surface better errors and warnings ([RFC](https://github.com/zeit/next.js/issues/9310)).
 
 <figure class="w-figure">
-  {% Img src="image/admin/LoKCHqIIpGkQIUjxZlre.png", alt="Example of a conformance build error in Next.js", width="800", height="367", class="w-screenshot-filled" %}
+  {% Img src="image/admin/LoKCHqIIpGkQIUjxZlre.png", alt="Example of a conformance build error in Next.js", width="800", height="367", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">An example of a conformance build error in Next.js (prototype)</figcaption>
 </figure>
 
