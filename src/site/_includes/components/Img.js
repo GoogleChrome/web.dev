@@ -7,6 +7,7 @@ const MIN_WIDTH = 200;
 const MAX_WIDTH = 800;
 // The highest device pixel ratio we'll generate srcsets for.
 const MAX_DPR = 2; // @2x
+const DEFAULT_PARAMS = {auto: 'format'};
 
 /**
  * Generates src URL of image from imgix path or URL.
@@ -15,7 +16,8 @@ const MAX_DPR = 2; // @2x
  * @param {Object} params Imgix API params.
  * @return {string}
  */
-const generateSrc = (src, params) => client.buildURL(src, params);
+const generateSrc = (src, params = DEFAULT_PARAMS) =>
+  client.buildURL(src, params);
 
 /**
  * Takes an imgix url or path and generates an `<img>` element with `srcset`.
@@ -57,7 +59,7 @@ const Img = function (args) {
   }
 
   // https://docs.imgix.com/apis/rendering
-  params = {auto: 'format', ...params};
+  params = {...DEFAULT_PARAMS, ...params};
   // https://github.com/imgix/imgix-core-js#imgixclientbuildsrcsetpath-params-options
   options = {
     // Use the image width as the lower bound.
