@@ -391,6 +391,7 @@ less I have to see the infuriating camel-casing of `XMLHttpRequest`, the happier
 transform values or run additional async actions one after another.
 
 ### Transforming values
+
 You can transform values simply by returning the new value:
 
 ```js
@@ -567,6 +568,7 @@ Follow the blue lines for promises that fulfill, or the red for ones that
 reject.
 
 ### JavaScript exceptions and promises
+
 Rejections happen when a promise is explicitly rejected, but also implicitly
 if an error is thrown in the constructor callback:
 
@@ -725,6 +727,7 @@ they download, which is basically how Pulp Fiction was written. This isn't
 Pulp Fiction, so let's fix it.
 
 ### Creating a sequence
+
 We want to turn our `chapterUrls` array into a sequence of promises. We can do that using `then()`:
 
 ```js
