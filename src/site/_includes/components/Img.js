@@ -16,8 +16,8 @@ const DEFAULT_PARAMS = {auto: 'format'};
  * @param {Object} params Imgix API params.
  * @return {string}
  */
-const generateSrc = (src, params = DEFAULT_PARAMS) =>
-  client.buildURL(src, params);
+const generateSrc = (src, params = {}) =>
+  client.buildURL(src, {...DEFAULT_PARAMS, ...params});
 
 /**
  * Takes an imgix url or path and generates an `<img>` element with `srcset`.
@@ -26,8 +26,8 @@ const generateSrc = (src, params = DEFAULT_PARAMS) =>
  * @return {string}
  */
 const Img = function (args) {
-  const {src, alt, width, height, class: className, linkTo} = args;
-  let {lazy, params, options, sizes} = args;
+  const {src, alt, width, height, class: className, linkTo, params} = args;
+  let {lazy, options, sizes} = args;
 
   const checkHereIfError = `ERROR IN ${
     // @ts-ignore: `this` has type of `any`
@@ -58,8 +58,6 @@ const Img = function (args) {
     lazy = true;
   }
 
-  // https://docs.imgix.com/apis/rendering
-  params = {...DEFAULT_PARAMS, ...params};
   // https://github.com/imgix/imgix-core-js#imgixclientbuildsrcsetpath-params-options
   options = {
     // Use the image width as the lower bound.
@@ -70,6 +68,7 @@ const Img = function (args) {
     widthTolerance: 0.07,
     ...options,
   };
+  // https://docs.imgix.com/apis/rendering
   const fullSrc = generateSrc(src, params);
   const srcset = client.buildSrcSet(src, params, options);
   if (sizes === undefined) {
