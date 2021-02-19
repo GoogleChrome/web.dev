@@ -6,7 +6,7 @@ authors:
   - andreban
 date: 2020-07-30
 updated: 2020-08-05
-hero: hero.svg
+hero: image/admin/874Rka3L44UJd5zLIyR5.svg
 alt: Android robot
 description: |
   Learn how different components can be used to render web content inside Android apps.

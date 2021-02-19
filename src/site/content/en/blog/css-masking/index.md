@@ -11,7 +11,7 @@ description: >
 authors:
   - rachelandrew
 date: 2020-09-14
-hero: hero.jpg
+hero: image/admin/uNWkHLVFNcTDk09OplrA.jpg
 alt: A teddy bear wearing a facemask.
 tags:
   - blog

@@ -3,7 +3,7 @@ layout: post
 title: 'Performance budgets with the Angular CLI'
 subhead: |
   Monitor the sizes of your bundles over time to make sure your application stays fast.
-hero: performance-budgets-with-the-angular-cli.jpg
+hero: image/admin/dDEEMFg0WKylKvlOwlQ3.jpg
 alt: A closeup photo of a calculator.
 date: 2019-07-02
 description: |

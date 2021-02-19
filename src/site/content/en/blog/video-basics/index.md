@@ -4,7 +4,7 @@ subhead: Learn basic video. Increase engagement.
 authors:
   - dougsillars
 date: 2019-09-03
-hero: hero.jpg
+hero: image/admin/ZzDrBdBMFxBtALr0uCz6.jpg
 alt: A description of the hero image for screen reader users.
 description: |
   Research shows that web video lead to higher engagement and sales. Even if you haven't added video to your sites yet, it's just a matter of time until you do.

@@ -7,7 +7,7 @@ authors:
   - joemedley
 date: 2019-11-10
 updated: 2020-08-18
-hero: hero.jpg
+hero: image/admin/Bz7MndcsUGPLAnQwIMfJ.jpg
 alt: Colorful airplanes flying in sync
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/4048736065006075905

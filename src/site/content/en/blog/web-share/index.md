@@ -5,7 +5,7 @@ authors:
   - joemedley
 date: 2019-11-08
 updated: 2020-02-09
-hero: hero.png
+hero: image/admin/ruvEms3AeSZvlEI01DKo.png
 alt: An illustration demonstrating that web apps can use the system-provided sharing UI.
 description: |
   With the Web Share API, web apps are able to use the same system-provided

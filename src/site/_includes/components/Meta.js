@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const path = require('path');
+const {generateSrc} = require('./Img');
 const site = require('../../_data/site');
 const strip = require('../../_filters/strip');
 const {html} = require('common-tags');
@@ -62,7 +62,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
     if (!thumbnail) {
       thumbnail = new URL(site.thumbnail, site.imageCdn);
     } else {
-      thumbnail = new URL(path.join(pageUrl, thumbnail), site.imageCdn);
+      thumbnail = new URL(generateSrc(thumbnail));
     }
     thumbnail.searchParams.set('auto', 'format');
     thumbnail.searchParams.set('fit', 'max');

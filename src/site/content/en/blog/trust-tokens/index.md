@@ -5,8 +5,8 @@ authors:
   - samdutton
 date: 2020-06-22
 updated: 2021-02-01
-hero: images/hero.jpg
-thumbnail: images/thumbnail.jpg
+hero: image/admin/okxi2ttRG3h1Z4F3cylI.jpg
+thumbnail: image/admin/cTo0l2opcfNxg1TEjxSg.jpg
 alt: Black and white photograph of hand holding token
 tags:
   - blog
@@ -27,18 +27,18 @@ in other contexts to evaluate the user's authenticity.
 The Trust Token API enables trust of a user in one context to be conveyed to another context without
 identifying the user or linking the two identities.
 
-You can try out Trust Tokens with our [demo](https://trust-token-demo.glitch.me) and, from Chrome 
-89, [inspect Trust Tokens](https://developers.google.com/web/updates/2021/01/devtools#trust-token) 
+You can try out Trust Tokens with our [demo](https://trust-token-demo.glitch.me) and, from Chrome
+89, [inspect Trust Tokens](https://developers.google.com/web/updates/2021/01/devtools#trust-token)
 in the Chrome DevTools **Network** and **Application** tabs.
 
 <figure class="w-figure">
-  <img src="./images/devtools-network-tab.jpg" alt="Screenshot showing Trust Tokens in the Chrome 
+  <img src="./images/devtools-network-tab.jpg" alt="Screenshot showing Trust Tokens in the Chrome
   DevTools Network tab.">
   <figcaption class="w-figcaption">Trust Tokens in the Chrome DevTools <b>Network</b> tab.</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img src="./images/devtools-application-tab.jpg" alt="Screenshot showing Trust Tokens in the Chrome 
+  <img src="./images/devtools-application-tab.jpg" alt="Screenshot showing Trust Tokens in the Chrome
   DevTools Application tab.">
   <figcaption class="w-figcaption">Trust Tokens in the Chrome DevTools <b>Application</b> tab.</figcaption>
 </figure>

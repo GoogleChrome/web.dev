@@ -3,7 +3,7 @@ title: Threading the web with module workers
 subhead: |
   Moving heavy lifting into background threads is now easier with JavaScript modules in web workers.
 date: 2019-12-17
-hero: hero.jpg
+hero: image/admin/I7oZWRPOJABk1YBGGisK.jpg
 alt: Computer processor graphic
 authors:
   - developit

@@ -11,7 +11,7 @@ authors:
   - roeln
 date: 2018-02-19
 updated: 2020-08-17
-hero: hero.jpg
+hero: image/admin/SHy7jOlEVPU1lsyfgvlG.jpg
 tags:
   - blog
   - fonts

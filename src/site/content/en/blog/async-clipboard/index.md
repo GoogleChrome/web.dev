@@ -12,7 +12,7 @@ tags:
   - capabilities
   - input
   - clipboard
-hero: hero.jpg
+hero: image/admin/aA9eqo0ZZNHFcFJGUGQs.jpg
 alt: Clipboard with shopping list
 feedback:
   - api

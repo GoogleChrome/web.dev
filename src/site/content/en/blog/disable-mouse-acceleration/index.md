@@ -5,8 +5,8 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-11-26
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+hero: image/admin/8cpTXMJGUfcdNXLc6obE.jpg
+thumbnail: image/admin/kA7qbVPt0ovuNzReFanO.jpg
 alt: Gamer girl is playing FPS online video game on her computer
 description: |
   Web apps can now disable mouse acceleration when capturing pointer events.
@@ -32,7 +32,7 @@ physical motion, slow or fast, results in the same rotation. This results in a
 better gaming experience and higher accuracy according to professional gamers.
 
 <figure class="w-figure">
-  <img src="./mouse-properties-dialog.png" class="w-screenshot" alt="Screenshot of the pointer motion control in Windows 10 settings.">
+  {% Img src="image/admin/4x9YZ7nC3SJMN9FI46zN.png", alt="Screenshot of the pointer motion control in Windows 10 settings.", width="800", height="260", class="w-screenshot" %}
   <figcaption class="w-figcaption">Pointer motion control in Windows 10 settings.</figcaption>
 </figure>
 

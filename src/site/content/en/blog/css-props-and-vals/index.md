@@ -6,7 +6,7 @@ authors:
 date: 2019-09-19
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-06-27
-hero: hero.jpg
+hero: image/admin/H6F7W8nUez3vaOv8hD8i.jpg
 alt: A black screen shows development work..
 
 description:

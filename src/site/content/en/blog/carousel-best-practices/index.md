@@ -6,7 +6,7 @@ authors:
   - katiehempenius
 description:  Learn how to optimize carousels for performance and usability.
 date: 2021-01-26
-hero: hero.jpg
+hero: image/admin/i7tjE04MYo7xJOZKkyQI.jpg
 tags:
   - blog
   - fast
@@ -17,7 +17,7 @@ tags:
 A carousel is a UX component that displays content in slideshow-like manner. Carousels can "autoplay" or be navigated manually by users. Although carousels can be used elsewhere, they are most frequently used to display images, products, and promotions on homepages.
 
 <figure class="w-figure">
-  <img src="./carousel-example.png" alt="Image showing a carousel" class="w-screenshot">
+  {% Img src="image/admin/u2FlXalClwBeDOBBiwxu.png", alt="Image showing a carousel", width="629", height="420", class="w-screenshot" %}
 </figure>
 
 ## Performance

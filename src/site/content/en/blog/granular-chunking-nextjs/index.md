@@ -4,9 +4,9 @@ subhead: A newer webpack chunking strategy in Next.js and Gatsby minimizes dupli
 authors:
   - houssein
 date: 2020-04-29
-hero: hero.png
-alt: Jigsaw pieces connecting 
-description: | 
+hero: image/admin/G5NYXIUQZ3hUfbyOnt0r.png
+alt: Jigsaw pieces connecting
+description: |
   Learn how both Next.js and Gatsby have improved their build output to minimize duplicate code and improve page load performance
 tags:
   - blog
@@ -32,7 +32,7 @@ result in a better loading performance.
 This pattern became popular with many single-page application frameworks adopting an entrypoint and
 bundle configuration that looked like this:
 
-<img class="w-screenshot w-screenshot--filled" src="./commons-pattern-diagram.png" alt="Common entrypoint and bundle configuration">
+{% Img src="image/admin/r4QB67AXzmPMgxcxgbQF.png", alt="Common entrypoint and bundle configuration", width="800", height="569", class="w-screenshot w-screenshot--filled" %}
 
 Although practical, the concept of bundling all shared module code into a single chunk has its
 limitations. Modules not shared in every entry point can be downloaded for routes that do not use it
@@ -45,7 +45,7 @@ one: [`SplitChunksPlugin`](https://webpack.js.org/plugins/split-chunks-plugin/).
 
 The default settings for `SplitChunksPlugin`  works well for most users. Multiple split chunks are
 created depending on a number of [conditions](https://webpack.js.org/plugins/split-chunks-plugin/#defaults)
-to prevent fetching duplicated code across multiple routes. 
+to prevent fetching duplicated code across multiple routes.
 
 However, many web frameworks that use this plugin still follow a "single-commons" approach to chunk
 splitting. Next.js, for example, would generate a `commons` bundle that contained any module that is
@@ -142,7 +142,7 @@ after splitting aggressively to hundreds of requests.
 
 This showed that staying under a reliable threshold (20~25 requests) struck the right balance
 between loading performance and caching efficiency. After some baseline testing, 25 was selected as
-the `maxInitialRequest` count. 
+the `maxInitialRequest` count.
 
 Modifying the maximum number of requests that happen in parallel resulted in more than a single
 shared bundle, and separating them appropriately for each entry point significantly reduced the
@@ -179,8 +179,7 @@ getDependencies (route) {
 ```
 
 <figure class="w-figure">
-  <img class="w-screenshot-filled" src="outputted-chunks.png" 
-       alt="Output of multiple shared chunks in a Next.js application.">
+  <img class="w-screenshot w-screenshot--filled" src="outputted-chunks.png" alt="Output of multiple shared chunks in a Next.js application.">
 </figure>
 
 This newer granular chunking strategy was first rolled out in Next.js behind a flag, where it was tested on a

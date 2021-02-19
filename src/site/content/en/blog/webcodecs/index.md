@@ -5,7 +5,7 @@ description: |
   Work with components of a video stream, such as frames and unmuxed chunks of encoded video or audio.
 date: 2020-10-13
 updated: 2020-10-16
-hero: hero.jpg
+hero: image/admin/I09h0la9qLPSRLZs1ruB.jpg
 alt: A roll of film.
 authors:
  - djuffin

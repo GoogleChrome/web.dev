@@ -17,7 +17,7 @@ updated: 2020-11-01
 
 # !!! IMPORTANT: If your post does not contain a hero image it will not appear
 # on the homepage.
-hero: hero.jpg
+hero: image/admin/t8pdBQKAaLW8lDp4UqfO.jpg
 # You can adjust the fit of your hero image with this property.
 # Values: contain | cover (default)
 # hero_fit: contain

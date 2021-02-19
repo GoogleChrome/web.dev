@@ -15,7 +15,7 @@ description: >
   TrueType/OpenType tables.
 date: 2020-08-24
 updated: 2020-11-19
-hero: hero.jpg
+hero: image/admin/oeXwG1zSwnivzpvcUJly.jpg
 alt: Page of a font book.
 feedback:
   - api

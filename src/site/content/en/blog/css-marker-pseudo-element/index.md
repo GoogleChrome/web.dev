@@ -11,8 +11,8 @@ tags:
 date: 2020-09-02
 updated: 2020-09-02
 scheduled: true
-hero: hero.png
-thumbnail: thumb.png
+hero: image/admin/GPGTyXJOh0cH0wa1PvXH.png
+thumbnail: image/admin/jbdOq0tGGzobMtaBsajn.png
 alt: Showing the anatomy of a single list item by putting separate boxes around the bullet and the text
 feedback:
   - api

@@ -11,7 +11,7 @@ updated: 2020-11-02
 tags:
   - blog
   - file-handling
-hero: hero.jpg
+hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
 origin_trial:
   url:

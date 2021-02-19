@@ -9,7 +9,7 @@ authors:
   - thomassteiner
 date: 2020-06-17
 updated: 2021-02-02
-hero: hero.jpg
+hero: image/admin/Y4NLEbOwgTWdMNoxRYXw.jpg
 alt:
 description: |
   Text Fragments let you specify a text snippet in the URL fragment.

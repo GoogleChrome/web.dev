@@ -6,7 +6,7 @@ authors:
   - yoavweiss
 description: |
   Learn about new and exciting possibilities for preloading responsive images to ensure great user experience.
-hero: hero.jpg
+hero: image/admin/QDCTiiyXE11bYSZMP3Yt.jpg
 alt: A wall with a bunch of image frames in different sizes.
 date: 2019-09-30
 tags:

@@ -5,7 +5,7 @@ authors:
   - agektmr
 date: 2019-10-07
 updated: 2020-12-09
-hero: hero.png
+hero: image/admin/iVHsQYbBj8qNYZeSZKwK.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
 description: |

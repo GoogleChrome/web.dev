@@ -6,7 +6,7 @@ authors:
 date: 2019-07-03
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-06-27
-hero: hero.jpg
+hero: image/admin/AxbQe1JfE7WXPUzhFw9I.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom
@@ -41,10 +41,8 @@ To ensure that the site would be fast and easily indexable by search engines, th
 By adopting these best practices, the team was able to cut the average page load time ([Time to Interactive](/interactive)) from 4 seconds to less than 2 seconds. And they used [Lighthouse](https://developers.google.com/web/tools/lighthouse/) to make sure the site _stayed_ that fast. Those efforts helped OpenSooq hit over 1.8 billion pageviews a month.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="lh-performance.png" alt="A screenshot of the Lighthouse performance metrics for the OpenSooq PWA.">
-  <figcaption class="w-figcaption">
-    OpenSooq's Lighthouse performance metrics.
-  </figcaption>
+  {% Img src="image/admin/ItUJANptPfn2KooyDyq4.png", alt="A screenshot of the Lighthouse performance metrics for the OpenSooq PWA.", width="800", height="509", class="w-screenshot" %}
+  <figcaption class="w-figcaption">OpenSooq's Lighthouse performance metrics.</figcaption>
 </figure>
 
 <blockquote>
@@ -59,10 +57,8 @@ By adopting these best practices, the team was able to cut the average page load
 ## Improving re-engagement
 
 <figure class="w-figure w-figure--inline-right">
-  <img class="w-screenshot" src="notifications.png" alt="A smartphone displaying OpenSooq notifications." style="max-width: 284px;">
-  <figcaption class="w-figcaption">
-    OpenSooq's meaningful user notifications.
-  </figcaption>
+  {% Img src="image/admin/U97z7PSx8CgKACjMnLkO.png", alt="A smartphone displaying OpenSooq notifications.", width="284", height="549", class="w-screenshot" %}
+  <figcaption class="w-figcaption">OpenSooq's meaningful user notifications.</figcaption>
 </figure>
 
 Having built a performant and reliable experience, the OpenSooq team wanted to make sure their users stayed engaged with the product. To do that, they enabled users to install the [PWA to their home screen](https://developers.google.com/web/fundamentals/app-install-banners/promoting-install-mobile) and added support for [meaningful notifications](https://developers.google.com/web/fundamentals/push-notifications/). This allowed the site to notify buyers about seller interaction on queries and sellers about ad activation and expiration.

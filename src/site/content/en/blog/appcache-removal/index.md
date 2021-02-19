@@ -15,7 +15,7 @@ tags:
   - origin-trial
   - removal
   - service-worker
-hero: hero.jpg
+hero: image/admin/YDs2H4gLPhIwPMjPtc8o.jpg
 alt: An old-fashioned storage container.
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/1776670052997660673
@@ -23,8 +23,8 @@ origin_trial:
 
 Following up on [previous announcements](https://blog.chromium.org/2020/01/appcache-scope-restricted.html), support for [AppCache](https://developer.mozilla.org/docs/Web/HTML/Using_the_application_cache) will be removed from Chrome and other Chromium-based browsers. We encourage developers to migrate off of AppCache now, rather than waiting any longer.
 
-[Service workers](https://developers.google.com/web/fundamentals/primers/service-workers), 
-which are widely supported in current browsers, offer an alternative to providing the offline 
+[Service workers](https://developers.google.com/web/fundamentals/primers/service-workers),
+which are widely supported in current browsers, offer an alternative to providing the offline
 experience that AppCache had offered. See [Migration strategies](#migration-strategies).
 
 ## Timeline
@@ -153,7 +153,7 @@ While the "reverse" origin trial officially starts with Chrome 84, you can [sign
 Once you've added a token to your AppCache manifest, visit `chrome://appcache-internals` to confirm that your local instance of Chrome (version 84 or later) has properly associated the origin trial token with your manifest's cached entries. If your origin trial is recognized, you should see a field with `Token Expires: Tue Apr 06 2021...` on that page, associated with your manifest:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="appcache-token.jpg" alt="chrome://appcache-internals interface showing a recognized token." width="550">
+  {% Img src="image/admin/Xid94kdPT5yGbQzBL4at.jpg", alt="chrome://appcache-internals interface showing a recognized token.", width="550", height="203", class="w-screenshot" %}
 </figure>
 
 ## Testing prior to removal

@@ -4,7 +4,7 @@ subhead: How to think when thinking about service workers.
 authors:
   - geddski
 date: 2019-06-04
-hero: hero.jpg
+hero: image/admin/7cjkg6ggaRsRNwZ0C2Vf.jpg
 hero_position: center
 alt: Service workers lining up.
 description: |

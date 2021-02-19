@@ -13,7 +13,7 @@ authors:
 date: 2019-12-05
 updated: 2020-09-24
 
-hero: hero.png
+hero: image/admin/FRL8ZuF0ng2d37BufMOj.png
 # You can adjust the fit of your hero image with this property.
 # Values: contain | cover (default)
 hero_fit: contain

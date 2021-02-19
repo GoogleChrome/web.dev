@@ -10,7 +10,7 @@ tags:
   - blog
   - capabilities
   - contacts
-hero: hero.jpg
+hero: image/admin/K1IN7zWIjFLjZzJ4Us3J.jpg
 alt: Telephone on yellow background.
 feedback:
   - api

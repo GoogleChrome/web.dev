@@ -5,7 +5,7 @@ subhead: Learn how to improve render times with critical CSS technique.
 authors:
   - mihajlija
 date: 2019-05-29
-hero: hero.jpg
+hero: image/admin/ZC6iWHhgnrSZtPJMfwMh.jpg
 alt: A flatlay photo of wrenches and screwdrivers.
 description: |
   Learn how to improve render times with critical CSS technique and how to choose the best tool for your project.
