@@ -169,7 +169,7 @@ async function getResponseSize(url) {
 
 All the "smart" is gone. The asynchronous loop that made me feel so smug is
 replaced with a trusty, boring, while-loop. Much better. In future, you'll get
-[async iterators](https://github.com/tc39/proposal-async-iteration){: .external},
+[async iterators](https://github.com/tc39/proposal-async-iteration),
 which would
 [replace the `while` loop with a for-of loop](https://gist.github.com/jakearchibald/0b37865637daf884943cf88c2cba1376){: .external}, making it even neater.
 
