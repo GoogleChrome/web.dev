@@ -6,7 +6,7 @@ subhead: |
 authors:
   - katiehempenius
 date: 2020-02-19
-hero: image/admin/f7TRFlVQv5w58A2Cbpg7.jpg
+hero: image/j2RDdG43oidUy6AL6LovThjeX9c2/f7TRFlVQv5w58A2Cbpg7.jpg
 alt: Abstract photo
 description: |
   Learn how to serve signed exchanges (SXGs) using Web Packager.
