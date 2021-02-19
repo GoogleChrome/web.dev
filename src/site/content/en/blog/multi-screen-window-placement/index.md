@@ -130,7 +130,7 @@ The iPad next to my MacBook Air is connected to the laptop via
 iPad into a second screen.
 
 <figure class="w-figure">
-  <img src="./desk.jpg" alt="School bench on two chairs. On top of the school bench are shoe boxes supporting a laptop and two iPads surrounding it.">
+  {% Img src="image/admin/Qt3SlHOLDzxpZ3l3bN5t.jpg", alt="School bench on two chairs. On top of the school bench are shoe boxes supporting a laptop and two iPads surrounding it.", width="558", height="520" %}
   <figcaption class="w-figcaption">A multi-screen setup.</figcaption>
 </figure>
 
@@ -318,7 +318,7 @@ the markets in all life situations, such as from the comfort of my bed, where I 
 single-screen setup.
 
 <figure class="w-figure">
-  <img src="./tv.jpg" alt="Massive TV screen at the end of a bed with the author's legs partly visible. On the screen, a fake crypto currency trading desk. ">
+  {% Img src="image/admin/sSLkcAMHuqBaj4AmT5eP.jpg", alt="Massive TV screen at the end of a bed with the author's legs partly visible. On the screen, a fake crypto currency trading desk. ", width="800", height="863" %}
   <figcaption class="w-figcaption">Relaxing and watching the markets.</figcaption>
 </figure>
 
@@ -330,7 +330,7 @@ It caught me completely off-guard and left me
 [with my hands on my face](https://www.buzzfeednews.com/article/gavon/brokers-with-hands-on-their-faces).
 
 <figure class="w-figure">
-  <img src="./panik.jpg" alt="The author with his hands on his panicking face staring at the fake crypto currency trading desk.">
+  {% Img src="image/admin/wFu8TBzOAqaKCgcERr3z.jpg", alt="The author with his hands on his panicking face staring at the fake crypto currency trading desk.", width="800", height="600" %}
   <figcaption class="w-figcaption">Panicky, witnessing the YCY bloodbath.</figcaption>
 </figure>
 

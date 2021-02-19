@@ -67,10 +67,8 @@ Chrome rolled out `stale-while-revalidate` in version 75 to 99% of all traffic, 
 - 1.1% increase in successful ad script loads overall.
 
 <figure class="w-figure">
-  <img src="./change-in-number-of-ad-script-loads-vs-ad-script-load-time.svg" alt="Percentage point change in number of ad script loads vs. Time from page load start to ad script load (ms)">
-  <figcaption class="w-figcaption">
-    Source: Google Internal Data, June to July 2019.
-  </figcaption>
+  {% Img src="image/admin/ZRKz2IHKdGNTDM3WdsvX.svg", alt="Percentage point change in number of ad script loads vs. Time from page load start to ad script load (ms)", width="800", height="600" %}
+  <figcaption class="w-figcaption">Source: Google Internal Data, June to July 2019.</figcaption>
 </figure>
 
 As shown in the chart above, the results of this experiment can be attributed to an increase in successful ad script loads, with a majority occurring early in the page load process.

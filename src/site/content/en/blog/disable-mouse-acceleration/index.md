@@ -32,7 +32,7 @@ physical motion, slow or fast, results in the same rotation. This results in a
 better gaming experience and higher accuracy according to professional gamers.
 
 <figure class="w-figure">
-  <img src="./mouse-properties-dialog.png" class="w-screenshot" alt="Screenshot of the pointer motion control in Windows 10 settings.">
+  {% Img src="image/admin/4x9YZ7nC3SJMN9FI46zN.png", alt="Screenshot of the pointer motion control in Windows 10 settings.", width="800", height="260", class="w-screenshot" %}
   <figcaption class="w-figcaption">Pointer motion control in Windows 10 settings.</figcaption>
 </figure>
 

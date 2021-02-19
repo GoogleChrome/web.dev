@@ -161,7 +161,7 @@ Our Web Components most commonly utilize the [Container Component](https://flavi
 Each `-container` element connects to our global state (provided by [unistore](https://github.com/developit/unistore)), and then renders a visual element, which in turn goes on to render actual DOM nodes that have styling or other built-in functionality.
 
 <figure class="w-figure">
-  <img src="./state-and-elements.png" alt="A diagram that shows the relationship between global state and HTML elements that use it.">
+  {% Img src="image/admin/0vvvEFtKSNNvD79QS2i2.png", alt="A diagram that shows the relationship between global state and HTML elements that use it.", width="640", height="220" %}
   <figcaption class="w-figcaption">Global state and a Web Component</figcaption>
 </figure>
 
@@ -178,4 +178,4 @@ The web.dev engineering team ([Rob](https://twitter.com/rob_dodson), [Ewa](https
 We hope hearing about how we do things gave you some ideas for your own projects.
 Hit us up on Twitter if you've got questions or topic requests for this blog!
 
-<!-- Test content change --> 
+<!-- Test content change -->

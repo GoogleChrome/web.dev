@@ -35,7 +35,7 @@ The current scope is limited to NFC Data Exchange Format (NDEF), a lightweight
 binary message format that works across different tag formats.
 
 <figure class="w-figure">
-  <img src="./nfc-operation-diagram.png" alt="Phone powering up an NFC tag to exchange data">
+  {% Img src="image/admin/jWmCabXZCB6zNwQIR90I.png", alt="Phone powering up an NFC tag to exchange data", width="800", height="489" %}
   <figcaption class="w-figcaption">Diagram of an NFC operation</figcaption>
 </figure>
 
@@ -57,7 +57,7 @@ Examples of sites that may use Web NFC include:
   mode.
 
 <figure class="w-figure">
-  <img src="./nfc-inventory-management.png" alt="Phone scanning several NFC tags">
+  {% Img src="image/admin/zTEXhIx9nDWtbKrIPN0x.png", alt="Phone scanning several NFC tags", width="800", height="383" %}
   <figcaption class="w-figcaption">NFC inventory management illustrated</figcaption>
 </figure>
 
@@ -96,7 +96,7 @@ induction when an active NFC device (.e.g a phone) is in proximity. NFC tags
 come in many forms and fashions, as stickers, credit cards, arm wrists, etc.
 
 <figure class="w-figure">
-  <img src="./nfc-tag.jpg" alt="Photo of a transparent NFC tag">
+  {% Img src="image/admin/uUBxSkSc3MJBG8Lw52fV.jpg", alt="Photo of a transparent NFC tag", width="800", height="450" %}
   <figcaption class="w-figcaption">A transparent NFC tag</figcaption>
 </figure>
 
@@ -117,7 +117,7 @@ URL, smart poster, MIME type, absolute URL, external type, unknown, and local
 type.
 
 <figure class="w-figure">
-  <img src="./ndef-message-diagram.png" alt="Diagram of an NDEF message">
+  {% Img src="image/admin/50clBWSJbKkyumsxrioB.png", alt="Diagram of an NDEF message", width="800", height="243" %}
   <figcaption class="w-figcaption">Diagram of an NDEF message</figcaption>
 </figure>
 
@@ -278,7 +278,7 @@ websites, the availability of NFC is restricted to maximize users' awareness and
 control over NFC use.
 
 <figure class="w-figure">
-  <img src="./nfc-prompt.png" alt="Screenshot of a Web NFC prompt on a website">
+  {% Img src="image/admin/PjUcOk4zbtOFJLXfSeSD.png", alt="Screenshot of a Web NFC prompt on a website", width="800", height="407" %}
   <figcaption class="w-figcaption">Web NFC user prompt</figcaption>
 </figure>
 

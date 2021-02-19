@@ -130,7 +130,7 @@ auto-rotate poster="assets/poster2.png"></model-viewer>
     const posters = ['poster.png', 'poster2.png'];
     let i = 0;
     setInterval(() =>
-        document.querySelector('#toggle-poster').setAttribute('poster', 
+        document.querySelector('#toggle-poster').setAttribute('poster',
             `assets/${posters[i++ % 2]}`), 2000);
 </script>
 ```
@@ -144,7 +144,7 @@ Observer](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver)
 to conserve battery power and GPU cycles when a model isn't visible.
 
 <figure class="w-figure">
-  <img src="./responsive-spacesuit.png" alt="Multiple spacesuit images representing responsiveness.">
+  {% Img src="image/admin/8jXl21iFxh7O3QeEeL0k.png", alt="Multiple spacesuit images representing responsiveness.", width="800", height="453" %}
   <figcaption class="w-figcaption">Multiple spacesuit images representing responsiveness.</figcaption>
 </figure>
 
