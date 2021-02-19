@@ -100,7 +100,8 @@ the simulators in the IDEs are realized as an
 [Electron `<webview>` tag](https://www.electronjs.org/docs/api/webview-tag), which in turn are based on
 a [Chromium `<webview>` tag](https://www.electronjs.org/docs/api/webview-tag). If you are interested in
 the IDE internals, you can oftentimes simply inspect them with Chrome DevTools with the keyboard
-shortcut <kbd>cmd</kbd>/<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>i</kbd>.
+shortcut <kbd>Control</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd> (or
+<kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> on Mac).
 
 <figure class="w-figure">
   <img src="baidu-devtools-inspect.png" alt="Chrome DevTools used to inspect Baidu's DevTools showing the simulator's webview tag in the Chrome DevTools' Elements panel.">
