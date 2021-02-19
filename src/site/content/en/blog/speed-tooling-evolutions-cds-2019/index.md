@@ -7,7 +7,7 @@ date: 2019-12-16
 description: |
   Read about the latest developments in speed tooling including new performance metrics, updates to PageSpeed Insights and Chrome User Experience Report (CrUX), and insights from Web Almanac analysis of the web ecosystem.
 hero: image/admin/lWKSX0b7pvSUX1BDd3IH.jpg
-thumbnail: thumbnail.png
+thumbnail: image/admin/NhCeOuBEiIGJHYIS9TxB.png
 alt: Chrome User Experience logo, PageSpeed Insights logo, and a metrics chart.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.

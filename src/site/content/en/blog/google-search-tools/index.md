@@ -6,7 +6,7 @@ authors:
   - martinsplitt
 date: 2020-06-25
 hero: image/admin/yUVYFuA1d5E33nfvT0fs.png
-thumbnail: thumbnail.png
+thumbnail: image/admin/AsANZF0n2e4eNv11AwJH.png
 alt: A screenshot of the Core Web Vitals report.
 description: >
   How to debug SEO issues on individual pages or across an entire site.

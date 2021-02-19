@@ -20,7 +20,7 @@ tags:
   - progressive-web-apps
 hero: image/admin/0uSwSmGHmPXimU3dz8Xa.jpg
 alt: An image of a fish.
-thumbnail: thumbnail.jpg
+thumbnail: image/admin/X84uooDup0B9OYWY4ZKh.jpg
 ---
 
 {% YouTube 'NXCT3htg9nk' %}

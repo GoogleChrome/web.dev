@@ -8,7 +8,7 @@ description: >
   sales per customer, and conversions.
 date: 2020-11-17
 hero: image/admin/tQYdZJzfseUxfjtvK3bL.png
-thumbnail: thumbnail.png
+thumbnail: image/admin/JdmKiaCrxFsayexQWPXk.png
 alt: An illustration of an e-commerce app next to the text 'SCALE ON WEB'.
 tags:
   - blog

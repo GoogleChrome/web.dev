@@ -5,7 +5,7 @@ subhead: >
   homepage to achieve business success.
 date: 2020-10-13
 hero: image/admin/MaUpfoZXyw4uhTEBLuV1.png
-thumbnail: thumbnail.png
+thumbnail: image/admin/SI5jNv7NqnjkfIIXyZOa.png
 alt: An illustration of e-commerce icons next to the text "Scale on web"
 description: >
   Creating a web performance dashboard and optimizing JavaScript, resources, and the

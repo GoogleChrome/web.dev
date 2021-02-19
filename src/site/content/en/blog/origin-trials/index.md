@@ -6,7 +6,7 @@ authors:
 date: 2020-06-22
 updated: 2020-10-18
 hero: image/admin/ES4AQvk6hKt7IRIHlhod.jpg
-thumbnail: thumbnail.jpg
+thumbnail: image/admin/xnaYaKRWxVxFXZrDagog.jpg
 alt: Pipette with purple liquid
 tags:
   - blog

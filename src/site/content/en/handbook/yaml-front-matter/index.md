@@ -298,7 +298,7 @@ Make sure tags added to the page are listed in
 ```yaml
 ---
 …
-thumbnail: thumbnail.jpg
+thumbnail: image/admin/mYe7bng2PtwB9ohv8vYa.jpg
 …
 ---
 ```

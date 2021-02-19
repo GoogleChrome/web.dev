@@ -6,7 +6,7 @@ authors:
 date: 2020-03-06
 updated: 2021-01-15
 hero: image/admin/IhujMvzGa5Mf0aNWYRXW.jpg
-thumbnail: thumbnail.jpg
+thumbnail: image/admin/Q6CqQNLucogBCxGMsSU2.jpg
 description: |
   Web developers can customize media notifications and respond to media
   related events such as seeking or track changing with the Media Session API.

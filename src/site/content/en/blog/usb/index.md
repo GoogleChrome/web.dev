@@ -7,7 +7,7 @@ authors:
 date: 2016-03-30
 updated: 2020-10-19
 hero: image/admin/hhnhxiNuRWMfGqy4NSaH.jpg
-thumbnail: thumbnail.jpg
+thumbnail: image/admin/RyaGPB8fHCuuXUc9Wj9Z.jpg
 alt: A photo of an Arduino Micro board
 description: | 
   The WebUSB API makes USB safer and easier to use by bringing it to the Web.

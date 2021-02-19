@@ -5,7 +5,7 @@ authors:
   - maudn
 date: 2021-01-25
 hero: image/admin/ZvW6VM0GEScldWHBvXJ4.jpg
-thumbnail: thumbnail.jpg
+thumbnail: image/admin/OG8YksgOnzGfnurzncWO.jpg
 tags:
   - blog
   - security

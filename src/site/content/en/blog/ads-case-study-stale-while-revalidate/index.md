@@ -7,7 +7,7 @@ authors:
   - thebengeu
   - jimper
 hero: image/admin/CYbrrEv8KBJtPHCvLV4Y.jpg
-thumbnail: thumbnail.jpg
+thumbnail: image/admin/KriMXq0cv6h8IhzVjyst.jpg
 alt: Dew on a thin leaf in macro
 description: |
     This case study explains how Google increased key ads business metrics by

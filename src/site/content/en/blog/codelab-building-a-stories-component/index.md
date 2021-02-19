@@ -7,7 +7,7 @@ description: |
   Learn how to build an experience similar to Instagram Stories on the web.
 date: 2020-11-25
 hero: hero.jpg
-thumbnail: thumb.jpg
+thumbnail: image/admin/0nRwu5FF7f5tHsgT9PgE.jpg
 glitch: gui-challenges-stories-codelab
 glitch_path: app/index.html
 related_post: building-a-stories-component

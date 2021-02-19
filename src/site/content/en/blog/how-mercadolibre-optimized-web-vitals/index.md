@@ -8,7 +8,7 @@ authors:
   - joanbaca
 date: 2020-09-21
 hero: image/admin/YTkCg2CmNZVG1djjVnvu.jpg
-thumbnail: thumbnail.jpg
+thumbnail: image/admin/dSiMshQ9MRT9zgDybdmJ.jpg
 description: Summary of the work done by Mercado Libre's frontend architecture team to optimize FID, using TBT as a proxy metric.
 tags:
   - blog

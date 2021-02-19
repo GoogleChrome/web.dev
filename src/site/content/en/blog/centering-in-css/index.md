@@ -7,7 +7,7 @@ authors:
 description: Follow 5 centering techniques as they go through a series of tests to see which one is the most resilient to change.
 date: 2020-12-16
 hero: image/admin/uz0bDoJvK4kbtjozekGA.png
-thumbnail: thumb.png
+thumbnail: image/admin/4NFENgpVrXHi2O42mv0K.png
 codelabs: codelab-centering-in-css
 tags:
   - blog

@@ -10,7 +10,7 @@ hero: image/admin/fRR1RuZTZdMm95ibKQu4.png
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom
-thumbnail: thumbnail.png
+thumbnail: image/admin/7aqJGgqNmVMxuRYk5DUt.png
 alt: The Truebil logo and a screenshot of the Truebil Lite web app.
 description: |
   This case study explains how the Truebil team increased conversions and

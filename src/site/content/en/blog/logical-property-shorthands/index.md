@@ -8,7 +8,7 @@ description: New logical property shorthands and new inset properties for Chromi
 date: 2020-10-13
 # updated: 2020-10-06
 hero: image/admin/GjMb0QfIM77KF22nEHcX.png
-thumbnail: thumb.png
+thumbnail: image/admin/Z9HOiqX3EYqcrvyyX2DA.png
 alt: An inline flow arrow (right) and a block flow arrow (down)
 tags:
   - blog

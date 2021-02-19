@@ -6,7 +6,7 @@ authors:
 date: 2020-08-12
 updated: 2021-02-03
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
-thumbnail: thumbnail.jpg
+thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
   Old modems, routers, network equipment. Serial, phone, audio, ethernet connectors.
 description: |

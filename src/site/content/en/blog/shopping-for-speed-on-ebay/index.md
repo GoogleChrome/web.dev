@@ -5,7 +5,7 @@ authors:
   - addyosmani
 date: 2020-01-22
 hero: image/admin/UMFt6kc3YZIaF2Qzqd0d.png
-thumbnail: thumbnail.png
+thumbnail: image/admin/58uctmJLRxZK0KKV2igl.png
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom

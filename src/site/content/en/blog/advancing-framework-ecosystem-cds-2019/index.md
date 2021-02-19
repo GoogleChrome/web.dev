@@ -8,7 +8,7 @@ date: 2020-01-08
 description: |
   Learn about how Chrome is investing efforts in a number of open-source tools to advance the JavaScript ecosystem
 hero: image/admin/prKYY6a0bcDxDvuiWvWk.jpg
-thumbnail: thumbnail.jpg
+thumbnail: image/admin/c8D4Cj94qLbosd7ptE7Q.jpg
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance

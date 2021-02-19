@@ -10,7 +10,7 @@ description: |
   Learn about adaptive loading pattern, how to implement it, and how Facebook, Tinder, eBay, and
   other companies use adaptive loading in production.
 hero: image/admin/KVRAyvGzRVa1vS8filbH.png
-thumbnail: thumbnail.png
+thumbnail: image/admin/kQJs9KCpVXDSWTtmZO5g.png
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance

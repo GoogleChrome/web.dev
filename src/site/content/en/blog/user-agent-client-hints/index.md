@@ -10,7 +10,7 @@ authors:
 date: 2020-06-25
 updated: 2021-02-12
 hero: image/admin/xlg4t3uiTp0L5TBThFHQ.jpg
-thumbnail: uach-thumbnail.jpg
+thumbnail: image/admin/hgxRNa56Vb9o3QRwIrm9.jpg
 alt: A variety of different footprints in the snow. A hint at who's been there.
 tags:
   - blog

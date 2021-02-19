@@ -6,7 +6,7 @@ authors:
 date: 2020-02-12
 updated: 2021-01-21
 hero: image/admin/TqG3qb5MiLGNTnAgKtqO.jpg
-thumbnail: thumbnail.jpg
+thumbnail: image/admin/8tWkeYbKLxSd2YgTUSGv.jpg
 alt: A photo of NFC tags
 description: |
   Reading and writing to NFC tags is now possible on Chrome for Android.

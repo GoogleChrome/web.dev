@@ -7,7 +7,7 @@ description: |
   Learn 5 different centering techniques with CSS.
 date: 2020-12-16
 hero: image/admin/wKAhovrYm23nFtqFqYbE.png
-thumbnail: thumb.png
+thumbnail: image/admin/tYvAWgtTaUOxXe9Pxacm.png
 glitch: gui-challenges-centering-codelab
 glitch_path: app/index.html
 related_post: centering-in-css

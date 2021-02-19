@@ -9,7 +9,7 @@ description: >
   3-day online community event, and a reminder about upcoming regional events.
 date: 2020-07-06
 hero: image/admin/H60ns6FN1VtNrlx8e3EU.png
-thumbnail: thumbnail.png
+thumbnail: image/admin/d2asSQy3UHgqRF8sx1Xk.png
 alt: The web.dev LIVE logo.
 tags:
   - blog

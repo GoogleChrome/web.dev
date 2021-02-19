@@ -3,7 +3,7 @@ title: How Goibibo's PWA improved conversions by 60%
 subhead: Bridging the gap between web and iOS/Android experiences to delight users.
 date: 2020-09-29
 hero: image/admin/373gEGS1WasAvqbvVoH9.png
-thumbnail: thumbnail.png
+thumbnail: image/admin/i2nyfqyVr4XWqilOxPrY.png
 alt: An illustration of a smartphone next to the text "Scale on web"
 description: >
   Learn how Goibibo, India’s top online travel company, achieved a 60% increase in
