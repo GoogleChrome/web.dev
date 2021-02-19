@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-02-08
+updated: 2021-02-19
 tags:
   - blog
   - capabilities
@@ -223,50 +223,71 @@ file at a specific position, or resize the file.
   calling `close()` or when the stream is automatically closed by the pipe.
 {% endAside %}
 
-### Storing file handles in IndexedDB
+### Storing file handles or directory handles in IndexedDB
 
-File handles are serializable, which means that you can save a file handle to IndexedDB, or call
-`postMessage()` to send them between the same top-level origin.
+File handles and directory handles are serializable, which means that you can save a file or
+directory handle to IndexedDB, or call `postMessage()` to send them between the same top-level origin.
 
-Saving file handles to IndexedDB means that you can store state, or remember which files a user was
+Saving file or directory handles to IndexedDB means that you can store state, or remember which files
+or directories a user was
 working on. This makes it possible to keep a list of recently opened or edited files, offer to
-re-open the last file when the app is opened, etc. In the text editor, I store a list of the five
+re-open the last file when the app is opened, restore the previous working directory, and more.
+In the text editor, I store a list of the five
 most recent files the user has opened, making it easy to access those files again.
 
-The code example below shows storing and retrieving a file handle.
-You can [see this in action](https://filehandle-indexeddb.glitch.me/) over on Glitch
+The code example below shows storing and retrieving a file handle and a directory handle.
+You can [see this in action](https://filehandle-directoryhandle-indexeddb.glitch.me/) over on Glitch
 (I use the [idb-keyval](https://www.npmjs.com/package/idb-keyval) library for brevity).
 
 ```js
-import { get, set } from 'https://unpkg.com/idb-keyval@5.0.2/dist/esm/index.js';
+import { get, set } from "https://unpkg.com/idb-keyval@5.0.2/dist/esm/index.js";
 
-const pre = document.querySelector('pre');
-const button = document.querySelector('button');
+const pre1 = document.querySelector("pre.file");
+const pre2 = document.querySelector("pre.directory");
+const button1 = document.querySelector("button.file");
+const button2 = document.querySelector("button.directory");
 
-button.addEventListener('click', async () => {
+// File handle
+button1.addEventListener("click", async () => {
   try {
-    // Try retrieving the file handle.
-    const fileHandleOrUndefined = await get('file');    
-    if (fileHandleOrUndefined) {      
-      pre.textContent =
-          `Retrieved file handle "${fileHandleOrUndefined.name}" from IndexedDB.`;
+    const fileHandleOrUndefined = await get("file");
+    if (fileHandleOrUndefined) {
+      pre1.textContent = `Retrieved file handle "${fileHandleOrUndefined.name}" from IndexedDB.`;
       return;
     }
-    // This always returns an array, but we just need the first entry.
     const [fileHandle] = await window.showOpenFilePicker();
-    // Store the file handle.
-    await set('file', fileHandle);    
-    pre.textContent =
-        `Stored file handle for "${fileHandle.name}" in IndexedDB.`;
+    await set("file", fileHandle);
+    pre1.textContent = `Stored file handle for "${fileHandle.name}" in IndexedDB.`;
+  } catch (error) {
+    alert(error.name, error.message);
+  }
+});
+
+// Directory handle
+button2.addEventListener("click", async () => {
+  try {
+    const directoryHandleOrUndefined = await get("directory");
+    if (directoryHandleOrUndefined) {
+      pre2.textContent = `Retrieved directroy handle "${directoryHandleOrUndefined.name}" from IndexedDB.`;
+      return;
+    }
+    const directoryHandle = await window.showDirectoryPicker();
+    await set("directory", directoryHandle);
+    pre2.textContent = `Stored directory handle for "${directoryHandle.name}" in IndexedDB.`;
   } catch (error) {
     alert(error.name, error.message);
   }
 });
 ```
 
+### Stored file or directory handles and permissions
+
 Since permissions currently are not persisted between sessions, you should verify whether the user
-has granted permission to the file using `queryPermission()`. If they haven't, use
+has granted permission to the file or directory using `queryPermission()`. If they haven't, use
 `requestPermission()` to (re-)request it.
+This works the same for file and directory handles. You need to run
+`fileOrDirectoryHandle.requestPermission(descriptor)` or
+`fileOrDirectoryHandle.queryPermission(descriptor)` respectively.
 
 In the text editor, I created a `verifyPermission()` method that checks if the user has already
 granted permission, and if required, makes the request.
