@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-02-18
+updated: 2021-02-19
 tags:
   - blog
   - capabilities
@@ -285,6 +285,9 @@ button2.addEventListener("click", async () => {
 Since permissions currently are not persisted between sessions, you should verify whether the user
 has granted permission to the file or directory using `queryPermission()`. If they haven't, use
 `requestPermission()` to (re-)request it.
+This works the same for file and directory handles. You need to run
+`fileOrDirectoryHandle.requestPermission(descriptor)` or
+`fileOrDirectoryHandle.queryPermission(descriptor)` respectively.
 
 In the text editor, I created a `verifyPermission()` method that checks if the user has already
 granted permission, and if required, makes the request.
