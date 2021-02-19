@@ -48,7 +48,7 @@ While the technology of Quick App is comparable to "regular" mini apps (see
 is different. They are meant to be listed in stores, which come pre-installed on devices of the
 manufacturers in the alliance, but can also be shared by means of a deep link (see the
 [Quick App showcase](https://www.quickapp.cn/quickAppShow)). They do not run in the context of a
-super app, but launch as seemingly self-contained full screen applications that feel native to the
+super app, but launch as seemingly self-contained full screen applications that feel deeply integrated into
 device. What happens in the background is that they are opened in a full screen view rendered by the
 operating system that provides the JavaScript bridge.
 
