@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-const path = require('path');
 const {html} = require('common-tags');
+const {Img} = require('./Img');
 const md = require('../../_filters/md');
 const constants = require('../../_utils/constants');
-const getSrcsetRange = require('../../_utils/get-srcset-range');
 const tagsCollection = require('../../_collections/tags')();
 
 const AuthorsDate = require('./AuthorsDate');
@@ -62,28 +61,18 @@ class BaseCard {
     return this.data.draft ? 'w-card--draft' : '';
   }
 
-  renderThumbnail(url, img, alt) {
-    const imagePath = path.isAbsolute(img) ? img : path.join(url, img);
-
-    const srcsetRange = getSrcsetRange(240, 768);
+  renderThumbnail(_, src, alt) {
+    const img = Img({
+      src,
+      alt,
+      height: '240',
+      width: '354',
+      class: 'w-card-base__image',
+    });
 
     return html`
       <figure class="w-card-base__figure">
-        <img
-          class="w-card-base__image"
-          srcset="
-            ${srcsetRange.map(
-              (width) => html`
-                ${imagePath}?auto=format&fit=max&w=${width} ${width}w,
-              `,
-            )}
-          "
-          src="${imagePath}"
-          alt="${alt}"
-          width="100%"
-          height="240"
-          loading="lazy"
-        />
+        ${img}
       </figure>
     `;
   }
