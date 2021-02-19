@@ -8,7 +8,7 @@ authors:
   - thomassteiner
 date: 2021-02-19
 # updated: 2021-02-19
-hero: hero.jpg
+hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/TuciUuOQOd3u7uMgDZBi.jpg
 alt: A forest stream with colored fallen leaves.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -103,7 +103,7 @@ Teeing also is important because streams cannot be rewound or restarted, more ab
 
 <figure class="w-figure">
   <!-- Original source file located at https://drive.google.com/file/d/17apgoyo6E5RAA_nwwM5Xg4FGiMr8y3mk/view?usp=sharing -->
-    <img src="./streams.svg" width="2099" height="1127" alt="Diagram of a pipe chain consisting of a readable stream coming from a call to the fetch API that is then piped through a transform stream whose output is teed and then sent to the browser for the first resulting readable stream and to the service worker cache for the second resulting readable stream.">
+  {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/M70SLIvXhMkYfxDm5b98.svg", alt="Diagram of a pipe chain consisting of a readable stream coming from a call to the fetch API that is then piped through a transform stream whose output is teed and then sent to the browser for the first resulting readable stream and to the service worker cache for the second resulting readable stream.", width="800", height="430" %}
   <figcaption class="w-figcaption">A pipe chain.</figcaption>
 </figure>
 
