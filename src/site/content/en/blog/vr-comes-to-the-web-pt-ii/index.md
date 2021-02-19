@@ -4,7 +4,7 @@ subhead: All about the frame loop
 authors:
   - joemedley
 date: 2020-02-13
-hero: hero.jpg
+hero: image/admin/2OEKtIp4RJNtX0stioZF.jpg
 alt: A person using a virtual reality headset.
 description:
   Virtual reality came to the web in Chrome 79. Based on the WebXR Device API,

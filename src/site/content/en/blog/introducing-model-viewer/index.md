@@ -12,7 +12,7 @@ description: |
   hosting. <model-viewer> 1.1 makes these tasks as easy as writing HTML.
 date: 2020-09-03
 updated: 2020-09-03
-hero: hero.jpg
+hero: image/admin/shbwwMBKANGHEy6TtBV7.jpg
 alt: A 3D image of a shark.
 tags:
   - blog

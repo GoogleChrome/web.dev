@@ -8,7 +8,7 @@ authors:
   - yosuke_furukawa
   - satoshi_arai
   - kento_tsuji
-hero: hero.png
+hero: image/admin/LD0Xn6rMjbIo8nCziZhK.png
 alt: AirSHIFT's logo.
 thumbnail: thumbnail.png
 description: |

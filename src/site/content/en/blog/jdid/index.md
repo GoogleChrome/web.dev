@@ -9,7 +9,7 @@ description: >
   How JD.ID increased its overall mobile conversion rate (mCVR) by 53%, mCVR
   for installed users by 200%, and daily active users by 26%.
 date: 2020-11-24
-hero: hero.png
+hero: image/admin/WubpgpQSHBG8nMqJ7ms4.png
 thumbnail: thumbnail.png
 alt: Various icons related to the concept of an e-commerce site.
 tags:

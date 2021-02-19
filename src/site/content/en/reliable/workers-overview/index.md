@@ -10,7 +10,7 @@ authors:
 date: 2020-12-08
 description: | 
     How web workers and service workers can improve the performance of your website, and when to use a web worker versus a service worker. 
-hero: hero.jpeg 
+hero: image/admin/Gfdeo856rHPAXJbXvPDi.jpeg 
 thumbnail: hero.jpeg 
 tags:
   - blog

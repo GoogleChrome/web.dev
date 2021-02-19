@@ -7,7 +7,7 @@ authors:
 date: 2019-08-14
 # Add an updated date to your post if you edit in the future.
 # updated: 2020-04-29
-hero: hero.jpg
+hero: image/admin/8ZJRM6xxTNs8wBPph7ZO.jpg
 alt: Inspecting a laptop with a magnifying glass.
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)

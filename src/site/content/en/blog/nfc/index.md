@@ -5,7 +5,7 @@ authors:
   - beaufortfrancois
 date: 2020-02-12
 updated: 2021-01-21
-hero: hero.jpg
+hero: image/admin/TqG3qb5MiLGNTnAgKtqO.jpg
 thumbnail: thumbnail.jpg
 alt: A photo of NFC tags
 description: |

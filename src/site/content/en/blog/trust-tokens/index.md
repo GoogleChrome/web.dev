@@ -5,7 +5,7 @@ authors:
   - samdutton
 date: 2020-06-22
 updated: 2021-02-01
-hero: images/hero.jpg
+hero: image/admin/okxi2ttRG3h1Z4F3cylI.jpg
 thumbnail: images/thumbnail.jpg
 alt: Black and white photograph of hand holding token
 tags:

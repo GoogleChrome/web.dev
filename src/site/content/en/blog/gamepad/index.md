@@ -7,7 +7,7 @@ authors:
   - thomassteiner
 date: 2020-11-03
 updated: 2020-11-04
-hero: hero.jpg
+hero: image/admin/nnmBquEmUtTIh89pkhvp.jpg
 alt: The hands of a person playing the Chrome dino game on a game console.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.

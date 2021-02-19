@@ -6,7 +6,7 @@ authors:
 date: 2019-05-31
 codelabs:
   - codelab-serve-images-webp
-hero: pankaj-patel-721645-unsplash.jpg
+hero: image/admin/OHtpn2oJuumNzReNNI6f.jpg
 alt: A description of the hero image for screen reader users.
 description: |
   Images take up a significant amount of visual space and make up the

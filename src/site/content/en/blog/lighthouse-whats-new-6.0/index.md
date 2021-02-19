@@ -4,7 +4,7 @@ subhead: New metrics, Performance score update, new audits, and more.
 authors:
   - cjamcl
 date: 2020-05-19
-hero: lighthouse-logo.svg
+hero: image/admin/93kZL2w49CLIc514qojJ.svg
 alt: Lighthouse logo.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.

@@ -6,7 +6,7 @@ authors:
   - beaufortfrancois
 date: 2016-03-30
 updated: 2020-10-19
-hero: hero.jpg
+hero: image/admin/hhnhxiNuRWMfGqy4NSaH.jpg
 thumbnail: thumbnail.jpg
 alt: A photo of an Arduino Micro board
 description: | 

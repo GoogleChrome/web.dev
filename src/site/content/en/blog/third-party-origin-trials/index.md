@@ -5,7 +5,7 @@ authors:
   - samdutton
 date: 2020-10-01
 updated: 2020-10-07
-hero: hero.jpg
+hero: image/admin/YCJ38YPL2YlvllSTbOUO.jpg
 thumbnail: thumbnail.jpg
 alt: Person wearing medical gloves pouring purple liquid from glass beaker into flask. Bristol Robotics Laboratory, UK.
 tags:

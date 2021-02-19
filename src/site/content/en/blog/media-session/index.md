@@ -5,7 +5,7 @@ authors:
   - beaufortfrancois
 date: 2020-03-06
 updated: 2021-01-15
-hero: hero.jpg
+hero: image/admin/IhujMvzGa5Mf0aNWYRXW.jpg
 thumbnail: thumbnail.jpg
 description: |
   Web developers can customize media notifications and respond to media

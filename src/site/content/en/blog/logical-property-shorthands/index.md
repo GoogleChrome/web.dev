@@ -7,7 +7,7 @@ authors:
 description: New logical property shorthands and new inset properties for Chromium.
 date: 2020-10-13
 # updated: 2020-10-06
-hero: hero.png
+hero: image/admin/GjMb0QfIM77KF22nEHcX.png
 thumbnail: thumb.png
 alt: An inline flow arrow (right) and a block flow arrow (down)
 tags:

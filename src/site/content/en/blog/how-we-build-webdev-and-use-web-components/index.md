@@ -7,7 +7,7 @@ authors:
 description: |
   In this first post from the web.dev engineering team, learn about how we build the site—including
   our use of Eleventy and Web Components.
-hero: hero.jpg
+hero: image/admin/TzR3470Au1W5XGK2BH5M.jpg
 alt: Wind turbines on a hill
 tags:
 - blog # to show up in blog

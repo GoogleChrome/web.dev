@@ -4,7 +4,7 @@ subhead: Using http://localhost for local development is fine most of the time, 
 authors:
   - maudn
 date: 2021-01-25
-hero: hero.jpg
+hero: image/admin/rIRKS6XfdH4ZU6N1y4zE.jpg
 tags:
   - blog
   - security

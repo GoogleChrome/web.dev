@@ -5,7 +5,7 @@ authors:
   - una
   - vladimirlevin
 date: 2020-08-05
-hero: hero.jpg
+hero: image/admin/lrAkOWYTyGkK2BKXoF9y.jpg
 alt: Stylized photo of a half-hidden person.
 description: >
     The CSS content-visibility property enables web content rendering

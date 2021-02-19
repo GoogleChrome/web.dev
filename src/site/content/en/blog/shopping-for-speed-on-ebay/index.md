@@ -4,7 +4,7 @@ subhead: Optimizing the performance of eBay's sites and apps for a faster user e
 authors:
   - addyosmani
 date: 2020-01-22
-hero: hero.png
+hero: image/admin/UMFt6kc3YZIaF2Qzqd0d.png
 thumbnail: thumbnail.png
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)

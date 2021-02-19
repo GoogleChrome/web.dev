@@ -4,7 +4,7 @@ subhead: >
   How PWAs, WebAssembly, and Chrome OS are helping a web-based video editor
   deliver better performance and a more engaging experience to 12M users.
 date: 2020-12-08
-hero: hero.jpg
+hero: image/admin/i9GBgCAOS5eWVBXvOT84.jpg
 thumbnail: thumbnail.jpg
 alt: Clipchamp's logo.
 description: >

@@ -10,7 +10,7 @@ tags:
   - blog
   - storage
   - progressive-web-apps
-hero: hero.jpg
+hero: image/admin/0TWeS0GZhDTpPzQVhDVS.jpg
 alt: Printed circuit board
 feedback:
   - api

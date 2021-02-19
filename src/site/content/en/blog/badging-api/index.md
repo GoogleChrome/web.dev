@@ -12,7 +12,7 @@ tags:
   - progressive-web-apps
   - badging
   - notifications
-hero: hero-2.jpg
+hero: image/admin/AFvb0uBtN7ZX9qToptEo.jpg
 alt: Neon sign with heart and zero
 feedback:
   - api

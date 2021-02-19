@@ -5,7 +5,7 @@ authors:
   - maudn
 date: 2020-07-30
 updated: 2020-09-23
-hero: hero.jpg
+hero: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
 thumbnail: hero.jpg
 description: |
   Consider setting a referrer policy of `strict-origin-when-cross-origin`. It retains much of the referrer's usefulness, while mitigating the risk of leaking data cross-origins.

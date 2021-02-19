@@ -18,7 +18,7 @@ tags:
   - capabilities
   - fugu
   - progressive-web-apps
-hero: hero.jpg
+hero: image/admin/0uSwSmGHmPXimU3dz8Xa.jpg
 alt: An image of a fish.
 thumbnail: thumbnail.jpg
 ---

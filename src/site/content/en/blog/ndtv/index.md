@@ -4,7 +4,7 @@ subhead: >
   NDTV enhanced user experience and thus retention by optimizing for Web Vitals.
 date: 2020-10-27
 updated: 2020-10-28
-hero: hero.png
+hero: image/admin/55a7gPUzz2ORKgMIfodA.png
 thumbnail: thumbnail.png
 alt: An illustration of icons related to website performance and the text 'scale on web' and 'NDTV'.
 description: >

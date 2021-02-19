@@ -10,7 +10,7 @@ authors:
   - jonchen
   - gilbertococchi
   - antoinebisch
-hero: hero.jpg
+hero: image/admin/XEdZ5JBzgWLES21OvPjE.jpg
 thumbnail: thumbnail.jpg
 tags:
   - blog

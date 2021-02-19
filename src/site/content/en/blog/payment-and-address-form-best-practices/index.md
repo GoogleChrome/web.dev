@@ -7,7 +7,7 @@ scheduled: true
 date: 2020-12-09
 updated: 2021-01-15
 description: Maximize conversions by helping your users complete address and payment forms as quickly and easily as possible.
-hero: images/hero.jpg
+hero: image/admin/dbYeeV2PCRZNY6RRvQd2.jpg
 thumbnail: images/thumbnail.jpg
 alt: Businessman using a payment card to make a payment on a laptop computer.
 tags:

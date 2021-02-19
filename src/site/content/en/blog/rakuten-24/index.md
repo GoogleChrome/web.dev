@@ -7,7 +7,7 @@ description: >
   Making their web app installable resulted in increased traffic, visitor retention,
   sales per customer, and conversions.
 date: 2020-11-17
-hero: hero.png
+hero: image/admin/tQYdZJzfseUxfjtvK3bL.png
 thumbnail: thumbnail.png
 alt: An illustration of an e-commerce app next to the text 'SCALE ON WEB'.
 tags:

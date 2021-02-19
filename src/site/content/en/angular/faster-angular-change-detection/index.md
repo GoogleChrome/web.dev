@@ -3,7 +3,7 @@ layout: post
 title: "Optimize Angular's change detection"
 subhead: |
   Implement faster change detection for better user experience.
-hero: change-detection.jpg
+hero: image/admin/gzvMgZD2uXO7L49EWuIV.jpg
 alt: An array of light bulbs with a single bulb turned on.
 date: 2019-07-09
 description: |

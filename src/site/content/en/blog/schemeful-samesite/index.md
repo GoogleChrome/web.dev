@@ -12,7 +12,7 @@ authors:
   - bingler
   - rowan_m
 date: 2020-11-20
-hero: schemeful-samesite-hero.jpg
+hero: image/admin/UMxBPy0AKAfbzxwgTroV.jpg
 thumbnail: schemeful-samesite-thumbnail.jpg
 alt: Two separate plates of cookies. The plates represent the different
   schemes, HTTP and HTTPS. The cookies represent cookies.

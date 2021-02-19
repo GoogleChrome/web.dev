@@ -7,7 +7,7 @@ authors:
   - philipwalton
 date: 2020-11-10
 updated: 2020-11-10
-hero: hero.png
+hero: image/admin/Qoeb8x3a11BdGgRzYJbY.png
 alt: Back and forward buttons
 tags:
   - blog # blog is a required tag for the article to show up in the blog.

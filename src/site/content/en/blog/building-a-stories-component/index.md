@@ -7,7 +7,7 @@ authors:
   - adamargyle
 description: A foundational overview of how to build an experience similar to Instagram Stories on the web.
 date: 2020-11-25
-hero: hero.jpg
+hero: image/admin/OghwTxMrgwyEpzqQeuCa.jpg
 thumbnail: thumb.jpg
 codelabs: codelab-building-a-stories-component
 tags:

@@ -8,7 +8,7 @@ authors:
   - mathiasbynens
 date: 2019-08-06
 updated: 2020-07-16
-hero: hero.png
+hero: image/admin/F6VE4QkpCsomiJilTFNG.png
 alt: Phone outline with loading image and assets
 description: |
   This post covers the loading attribute and how it can be used

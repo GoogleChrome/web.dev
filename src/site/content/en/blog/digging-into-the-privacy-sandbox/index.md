@@ -5,7 +5,7 @@ authors:
   - samdutton
 date: 2020-04-08
 updated: 2020-12-21
-hero: hero.jpg
+hero: image/admin/5F89q0kLUOLWvYtNJeWZ.jpg
 thumbnail: thumbnail.jpg
 alt: A black-on-white printed sign saying Private, on a wooden wall.
 description: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback.

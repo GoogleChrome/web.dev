@@ -4,7 +4,7 @@ subhead: A newer webpack chunking strategy in Next.js and Gatsby minimizes dupli
 authors:
   - houssein
 date: 2020-04-29
-hero: hero.png
+hero: image/admin/G5NYXIUQZ3hUfbyOnt0r.png
 alt: Jigsaw pieces connecting
 description: |
   Learn how both Next.js and Gatsby have improved their build output to minimize duplicate code and improve page load performance
