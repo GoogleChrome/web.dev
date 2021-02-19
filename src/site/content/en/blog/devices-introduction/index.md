@@ -188,7 +188,7 @@ Photo by [Darya Tryfanava] on [Unsplash].
 [Build your first WebAuthn app]: https://codelabs.developers.google.com/codelabs/webauthn-reauth/
 [File System Access API]: /file-system-access/
 [File API]: https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications
-[Generic Sensor API]: https://developers.google.com/web/updates/2017/09/sensors-for-the-web
+[Generic Sensor API]: /generic-sensor/
 [DeviceMotion and DeviceOrientation]: https://developers.google.com/web/fundamentals/native-hardware/device-orientation
 [Geolocation API]: https://developers.google.com/web/fundamentals/native-hardware/user-location
 [Battery API]: https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API
