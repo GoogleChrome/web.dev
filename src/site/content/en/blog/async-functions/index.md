@@ -5,7 +5,7 @@ subhead: >
 description: >
   Async functions allow you to write promise-based code as if it were synchronous.
 date: 2016-10-20
-updated: 2021-01-18
+updated: 2021-02-22
 tags:
   - javascript
 authors:
@@ -14,10 +14,10 @@ feedback:
   - api
 ---
 
-Async functions were enabled by default in Chrome 55 and they're quite frankly
-marvelous. They allow you to write promise-based code as if it were synchronous,
-but without blocking the main thread. They make your asynchronous code less
-"clever" and more readable.
+Async functions are enabled by default in Chrome, Edge, Firefox, and Safari, and
+they're quite frankly marvelous. They allow you to write promise-based code as
+if it were synchronous, but without blocking the main thread. They make your
+asynchronous code less "clever" and more readable.
 
 Async functions work like this:
 
@@ -169,13 +169,13 @@ async function getResponseSize(url) {
 
 All the "smart" is gone. The asynchronous loop that made me feel so smug is
 replaced with a trusty, boring, while-loop. Much better. In future, you'll get
-[async iterators](https://github.com/tc39/proposal-async-iteration){: .external},
+[async iterators](https://github.com/tc39/proposal-async-iteration),
 which would
-[replace the `while` loop with a for-of loop](https://gist.github.com/jakearchibald/0b37865637daf884943cf88c2cba1376){: .external}, making it even neater.
+[replace the `while` loop with a for-of loop](https://gist.github.com/jakearchibald/0b37865637daf884943cf88c2cba1376), making it even neater.
 
 {% Aside %}
 I'm sort-of in love with streams. If you're unfamiliar with streaming,
-[check out my guide](https://jakearchibald.com/2016/streams-ftw/#streams-the-fetch-api){: .external}.
+[check out my guide](https://jakearchibald.com/2016/streams-ftw/#streams-the-fetch-api).
 {% endAside %}
 
 ## Other async function syntax
@@ -290,7 +290,7 @@ smart*. But this is a bit of *so smart* coding you're better off without.
 However, when converting the above to an async function, it's tempting to go
 *too sequential*:
 
-<span class="compare-worse">Not recommended</span> - too sequential
+{% Compare 'worse', 'Not recommended - too sequential' %}
 
 ```js
 async function logInOrder(urls) {
@@ -301,11 +301,15 @@ async function logInOrder(urls) {
 }
 ```
 
+{% CompareCaption %}
 Looks much neater, but my second fetch doesn't begin until my first fetch has
 been fully read, and so on. This is much slower than the promises example that
-performs the fetches in parallel. Thankfully there's an ideal middle-ground:
+performs the fetches in parallel. Thankfully there's an ideal middle-ground.
+{% endCompareCaption %}
 
-<span class="compare-better">Recommended</span> - nice and parallel
+{% endCompare %}
+
+{% Compare 'better', 'Recomm ended - nice and parallel' %}
 
 ```js
 async function logInOrder(urls) {
@@ -320,26 +324,30 @@ async function logInOrder(urls) {
     console.log(await textPromise);
   }
 }
-```
 
+```
+{% CompareCaption %}
 In this example, the URLs are fetched and read in parallel, but the "smart"
 `reduce` bit is replaced with a standard, boring, readable for-loop.
+{% endCompareCaption %}
+
+{% endCompare %}
 
 ## Browser support and workarounds
 
-At the time of writing, async functions are enabled by default in Chrome, Edge,
-Firefox, and Safari.
+Async functions are enabled by default in most major browsers. If your site
+still needs to support older browsers without async, here are a few workarounds.
 
 ### Workaround: generators
 
 If you're targeting browsers that support generators (which includes
-[the latest version of every major browser](http://kangax.github.io/compat-table/es6/#test-generators){: .external}
+[the latest version of every major browser](http://kangax.github.io/compat-table/es6/#test-generators)
 ) you can sort-of polyfill async functions.
 
-[Babel](https://babeljs.io/){: .external} will do this for you,
-[here's an example via the Babel REPL](https://goo.gl/0Cg1Sq){: .external}
+[Babel](https://babeljs.io/) will do this for you,
+[here's an example via the Babel REPL](https://goo.gl/0Cg1Sq)
 - note how similar the transpiled code is. This transformation is part of
-[Babel's es2017 preset](http://babeljs.io/docs/plugins/preset-es2017/){: .external}.
+[Babel's es2017 preset](http://babeljs.io/docs/plugins/preset-es2017/).
 
 {% Aside %}
 Babel REPL is fun to say. Try it.
@@ -348,7 +356,7 @@ Babel REPL is fun to say. Try it.
 I recommend the transpiling approach, because you can just turn it off once your
 target browsers support async functions, but if you *really* don't want to use a
 transpiler, you can take
-[Babel's polyfill](https://gist.github.com/jakearchibald/edbc78f73f7df4f7f3182b3c7e522d25){: .external}
+[Babel's polyfill](https://gist.github.com/jakearchibald/edbc78f73f7df4f7f3182b3c7e522d25)
 and use it yourself. Instead of:
 
 ```js
@@ -358,7 +366,7 @@ async function slowEcho(val) {
 }
 ```
 
-…you'd include [the polyfill](https://gist.github.com/jakearchibald/edbc78f73f7df4f7f3182b3c7e522d25){: .external}
+…you'd include [the polyfill](https://gist.github.com/jakearchibald/edbc78f73f7df4f7f3182b3c7e522d25)
 and write:
 
 ```js
@@ -375,8 +383,8 @@ and use `yield` instead of `await`. Other than that it works the same.
 
 If you're targeting older browsers, Babel can also transpile generators,
 allowing you to use async functions all the way down to IE8. To do this you need
-[Babel's es2017 preset](http://babeljs.io/docs/plugins/preset-es2017/){: .external}
-*and* the [es2015 preset](http://babeljs.io/docs/plugins/preset-es2015/){: .external}.
+[Babel's es2017 preset](http://babeljs.io/docs/plugins/preset-es2017/)
+*and* the [es2015 preset](http://babeljs.io/docs/plugins/preset-es2015/).
 
 The [output is not as pretty](https://goo.gl/jlXboV), so watch out for
 code-bloat.
@@ -388,5 +396,5 @@ promise-returning function! Not only do they make your code tidier, but it makes
 sure that function will *always* return a promise.
 
 I got really excited about async functions [back in
-2014](https://jakearchibald.com/2014/es7-async-functions/){: .external}, and
+2014](https://jakearchibald.com/2014/es7-async-functions/), and
 it's great to see them land, for real, in browsers. Whoop!
