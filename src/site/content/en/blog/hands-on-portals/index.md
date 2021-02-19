@@ -3,7 +3,7 @@ title: 'Hands-on with Portals: seamless navigation on the web'
 subhead: |
   Learn how the proposed Portals API can improve your navigation UX.
 date: 2019-05-06
-updated: 2020-07-13
+updated: 2021-02-15
 authors:
   - uskay
 hero: hero.png
@@ -12,8 +12,6 @@ description: |
   The newly proposed Portals API helps keep your front-end simple while allowing seamless navigations
   with custom transitions. In this article, get hands-on experience using
   Portals to improve user experience across your site.
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/-7680889164480380927
 tags:
   - blog
   - portals
@@ -29,9 +27,6 @@ they move between pages.
 A new web platform API proposal called [Portals](https://github.com/WICG/portals) aims to
 help with this by streamlining the experience as users navigate _across_ your
 site.
-
-Portals are currently experimental, but you can use them on your site today by
-taking part in the [origin trial]({{origin_trial.url}}).
 
 See Portals in action:
 
@@ -59,7 +54,7 @@ but unlike an `<iframe>`,
 they also come with features to navigate to their content.
 
 Seeing is believing:
-please first check out what we showcased at Chrome Dev Summit last year:
+please first check out what we showcased at Chrome Dev Summit 2018:
 
 {% YouTube 'Ai4aZ9Jbsys', '1081' %}
 
@@ -72,21 +67,12 @@ Before Portals, we could have rendered another page using an `<iframe>`. We coul
 
 ## Try out Portals
 
-### Enabling support during the origin trial phase
-
-Portals will be available an origin trial in Chrome 85. The origin trial is
-expected to end in Chrome 86.
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
-
 ### Enabling via chrome://flags {: #enable-flags }
 
-Try out Portals in Chrome 85 or 86 by flipping an experimental flag:
-`chrome://flags/#enable-portals`.
+Try out Portals in Chrome 85 and later versions by flipping an experimental flag:
+- Enable the `chrome://flags/#enable-portals` flag for same-origin navigations.
+- For testing out cross-origin navigations, enable the `chrome://flags/#enable-portals-cross-origin` flag in addition.
+
 During this early phase of the Portals experiment,
 we also recommend using a completely separate user data directory for your tests
 by setting the
@@ -110,8 +96,12 @@ document.body.appendChild(portal);
 
 // When the user touches the preview (embedded portal):
 // do fancy animation, e.g. expand …
-// and finish by doing the actual transition
-portal.activate();
+// and finish by doing the actual transition.
+// For the sake of simplicity, this snippet will navigate
+// on the `onload` event of the Portals element.
+portal.addEventListener('load', (evt) => {
+   portal.activate();
+});
 ```
 
 It's that simple. Try this code in the DevTools console, the wikipedia page should open up.
@@ -188,7 +178,7 @@ if ('HTMLPortalElement' in window) {
 
 If you want to quickly experience what Portals feel like, try using
 [uskay-portals-demo.glitch.me](https://uskay-portals-demo.glitch.me).
-Be sure you access it with Chrome 85 or 86 and turn on the [experimental flag](#enable-flags)!
+Be sure you access it with Chrome 85 or later versions and turn on the [experimental flag](#enable-flags)!
 
 1. Enter a URL you want to preview.
 1. The page will then be embedded as a `<portal>` element.
@@ -298,4 +288,4 @@ Another important thing to know is that Portals can be used in cross-origin navi
 
 ## Feedback welcome
 
-Portals are ready for experimentation in Chrome 85 and 86 and via the [origin trial]({{origin_trial.url}}). Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! If you have any feature requests or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
+Portals are ready for experimentation in Chrome 85 and later versions. Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! If you have any feature requests or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
