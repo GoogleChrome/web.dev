@@ -245,13 +245,13 @@ expand "top" to see the breakdown of the resource structure.
 You can check the iframe's status such as availability of SharedArrayBuffer, etc.
 
 <figure class="w-figure">
-{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframe inspector", width="800", height="480", className="w-screenshot w-screenshot-filled" %}
+{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframe inspector", width="800", height="480", class="w-screenshot w-screenshot-filled" %}
 </figure>
 
 You can also check the popup windows's status such as whether it's cross-origin isolated.
 
 <figure class="w-figure">
-{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Chrome DevTools popup window inspector", width="800", height="480", className="w-screenshot w-screenshot-filled" %}
+{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Chrome DevTools popup window inspector", width="800", height="480", class="w-screenshot w-screenshot-filled" %}
 </figure>
 
 {% Aside %}

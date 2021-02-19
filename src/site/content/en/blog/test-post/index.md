@@ -87,7 +87,7 @@ sapien et, tincidunt orci. Aenean sed tellus aliquam, consectetur metus in,
 tempus enim.
 
 <figure class="w-figure w-figure--fullbleed">
-  ![](a.jpg)
+  <img src="a.jpg" alt="">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Large image.
   </figcaption>
@@ -102,7 +102,7 @@ ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
 <figure class="w-figure">
-  ![](image-small.png)
+  <img src="image-small.png" alt="" width="400">
   <figcaption class="w-figcaption">
     Small image.
   </figcaption>
@@ -127,7 +127,7 @@ quam sem.
 ## Image, Inline
 
 <figure class="w-figure w-figure--inline-right">
-  ![](image-inline.png)
+  <img class="w-screenshot" src="image-inline.png" alt="" width="200">
   <figcaption class="w-figcaption">
     Inline right, outlined image.
   </figcaption>
@@ -148,7 +148,7 @@ aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
 velit. Morbi at quam sem.
 
 <figure class="w-figure w-figure--inline-left">
-  ![](image-inline.png)
+  <img class="w-screenshot" src="image-inline.png" alt="" width="200">
   <figcaption class="w-figcaption">
     Inline left, outlined image.
   </figcaption>
@@ -169,7 +169,7 @@ aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
 velit. Morbi at quam sem.
 
 <figure class="w-figure">
-  ![](image-screenshot.png)
+  <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
   <figcaption class="w-figcaption">
     Filled screenshot.
   </figcaption>
@@ -262,7 +262,7 @@ quam sem.
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
   <figure class="w-figure">
-    ![](image-screenshot.png)
+    <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
     <figcaption class="w-figcaption">
       Filled screenshot.
     </figcaption>
@@ -309,7 +309,7 @@ quam sem.
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
   <figure class="w-figure">
-    ![](image-screenshot.png)
+    <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
     <figcaption class="w-figcaption">
       Filled screenshot.
     </figcaption>

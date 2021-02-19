@@ -27,7 +27,7 @@ At Google I/O 2019, Kevin Schaaf of the Polymer Project and Caridy Patiño of Sa
 If you've used the web today, you've probably used web components. By our count, somewhere between 5% and 8% of all page loads today use one or more web components. That makes web components one of the most successful new web platform features shipped in the last five years.
 
 <figure class="w-figure w-figure--fullbleed">
-  {% Img src="image/admin/RYVwr119hwQIps5UL0u4.png", alt="A graph showing that 8% of sites use v1 custom elements. This figure eclipses the 5% highpoint for v0 custom elements.", width="800", height="493" %}
+  {% Img src="image/admin/RYVwr119hwQIps5UL0u4.png", alt="A graph showing that 8% of sites use v1 custom elements. This figure eclipses the 5% highpoint for v0 custom elements.", width="800", height="493", class="w-screenshot" %}
 </figure>
 
 You can find web components on sites you probably use every day, like YouTube and GitHub. They're also used on many news and publishing sites built with [AMP](http://amp.dev)—AMP components are also web components. And many enterprises are also adopting web components.

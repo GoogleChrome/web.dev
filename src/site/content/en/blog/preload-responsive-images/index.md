@@ -24,7 +24,7 @@ This article gives me an opportunity to discuss two of my favorite things: respo
 Suppose you're browsing the web on a screen that's 300 pixels wide, and the page just requested an image that's 1500 pixels wide. That page just wasted a lot of your cellular data because your screen can't do anything with all of that extra resolution. Ideally, the browser should fetch a version of the image that's just a *little* wider than your screen size, say 325 pixels. This ensures a high-resolution image without wasting data. And, even better, the image will load faster. [Responsive images](/serve-responsive-images/#serve-multiple-image-versions) enable browsers to fetch different image resources to different devices. If you don't use an [image CDN](/image-cdns/) you need to save multiple dimensions for each image and specify them in the `srcset` attribute. The `w` value tells the browser the width of each version. Depending on the device, the browser can choose the appropriate one:
 
 ```html
-![…](small.jpg)
+<img src="small.jpg" srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w" alt="…">
 ```
 
 ## Preload overview
@@ -54,7 +54,7 @@ To preload responsive images, new attributes were recently added to the `<link>`
 For example, if you want to preload a responsive image specified with:
 
  ```html
- ![A rad wolf](wolf.jpg)
+ <img src="wolf.jpg" srcset="wolf_400px.jpg 400w, wolf_800px.jpg 800w, wolf_1600px.jpg 1600w" sizes="50vw" alt="A rad wolf">
  ```
 
 You can do that by adding the following to your HTML's `<head>`:

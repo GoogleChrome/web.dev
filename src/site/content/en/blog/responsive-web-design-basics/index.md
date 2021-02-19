@@ -164,7 +164,7 @@ Once the viewport becomes smaller than the total width of the columns, we have t
 to see the content.
 
 <figure class="w-figure">
-  {% Img src="image/admin/exFCZNQLUveUnpMFjvcj.jpg", alt="Screenshot of a two-column layout with most of the second column outside the viewport", width="800", height="504" %}
+  {% Img src="image/admin/exFCZNQLUveUnpMFjvcj.jpg", alt="Screenshot of a two-column layout with most of the second column outside the viewport", width="800", height="504", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     A floated layout using pixels. <a href="https://layout-floats-px.glitch.me/">See this example on Glitch</a>.
   </figcaption>
@@ -369,7 +369,7 @@ Let's work through the example we saw at the beginning: the weather forecast.
 The first step is to make the forecast look good on a small screen.
 
 <figure class="w-figure">
-  {% Img src="image/admin/3KPWtKzDFCwImLyHprRP.png", alt="Screenshot of a weather app at a mobile width", width="800", height="1334" %}
+  {% Img src="image/admin/3KPWtKzDFCwImLyHprRP.png", alt="Screenshot of a weather app at a mobile width", width="400", height="667", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The app at a narrow width.
   </figcaption>
@@ -380,7 +380,7 @@ and the forecast simply doesn't look as good.
 The decision is somewhat subjective, but above `600px` is certainly too wide.
 
 <figure class="w-figure">
-  {% Img src="image/admin/sh1P84rvjvviENlVFED4.png", alt="Screenshot of a weather app with wide gaps between items", width="800", height="480" %}
+  {% Img src="image/admin/sh1P84rvjvviENlVFED4.png", alt="Screenshot of a weather app with wide gaps between items", width="400", height="240", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The app at a point where we feel we should tweak the design.
   </figcaption>
@@ -466,14 +466,14 @@ Thus, each time the width of a text block grows past about 10 words,
 consider adding a breakpoint.
 
 <figure class="w-figure">
-  {% Img src="image/admin/C4IGJw9hbPXKnTSovEXS.jpg", alt="Screenshot of a a page of text on a mobile device", width="692", height="845" %}
+  {% Img src="image/admin/C4IGJw9hbPXKnTSovEXS.jpg", alt="Screenshot of a a page of text on a mobile device", width="400", height="488", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The text as read on a mobile device.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/admin/rmsa1EB5FpvWV0vFIpTF.jpg", alt="Screenshot of a a page of text on a desktop browser", width="800", height="377" %}
+  {% Img src="image/admin/rmsa1EB5FpvWV0vFIpTF.jpg", alt="Screenshot of a a page of text on a desktop browser", width="800", height="377", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The text as read on a desktop browser with a breakpoint added to constrain the line length.
   </figcaption>
@@ -517,14 +517,14 @@ but Chrome DevTools has a built-in feature that makes it easy to see how a page 
 under different breakpoints.
 
 <figure class="w-figure">
-  {% Img src="image/admin/DhaeCbVo5AmzZ0CyLtVp.png", alt="Screenshot of DevTools with our weather app open and a width of 822 pixels selected.", width="800", height="522" %}
+  {% Img src="image/admin/DhaeCbVo5AmzZ0CyLtVp.png", alt="Screenshot of DevTools with our weather app open and a width of 822 pixels selected.", width="800", height="522", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     DevTools showing the weather app as it looks at a wider viewport size.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/admin/35IEQnhGox93PHvbeglM.png", alt="Screenshot of DevTools with our weather app open and a width of 436 pixels selected.", width="800", height="521" %}
+  {% Img src="image/admin/35IEQnhGox93PHvbeglM.png", alt="Screenshot of DevTools with our weather app open and a width of 436 pixels selected.", width="800", height="521", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     DevTools showing the weather app as it looks at a narrower viewport size.
   </figcaption>

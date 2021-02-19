@@ -36,7 +36,7 @@ feedback:
 ### Dark mode before *Dark Mode*
 
 <figure class="w-figure w-figure--inline-right">
-  {% Img src="image/admin/fmdRPm6K5SXiIRLgyz4y.jpg", alt="Green screen computer monitor", width="640", height="480" %}
+  {% Img src="image/admin/fmdRPm6K5SXiIRLgyz4y.jpg", alt="Green screen computer monitor", width="233", height="175" %}
   <figcaption class="w-figcaption">Green screen (<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">Source</a>)</figcaption>
 </figure>
 
@@ -49,7 +49,7 @@ Because text was displayed in green and the rest of the screen was black, these 
 [green screens](https://commons.wikimedia.org/wiki/File:Schneider_CPC6128_with_green_monitor_GT65,_start_screen.jpg).
 
 <figure class="w-figure w-figure--inline-left">
-  {% Img src="image/admin/l9oDlIO59oyJiXVegxIV.jpg", alt="Dark-on-white word processing", width="698", height="551" %}
+  {% Img src="image/admin/l9oDlIO59oyJiXVegxIV.jpg", alt="Dark-on-white word processing", width="222", height="175" %}
   <figcaption class="w-figcaption">Dark-on-white (<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">Source</a>)</figcaption>
 </figure>
 
@@ -61,7 +61,7 @@ With the advent of more sophisticated <abbr title="What You See Is What You Get"
 the idea of making the virtual document resemble a physical sheet of paper became popular.
 
 <figure class="w-figure w-figure--inline-right">
-  {% Img src="image/admin/lnuLLcQzIF7r08lt479k.png", alt="Dark-on-white webpage in the WorldWideWeb browser", width="800", height="600" %}
+  {% Img src="image/admin/lnuLLcQzIF7r08lt479k.png", alt="Dark-on-white webpage in the WorldWideWeb browser", width="233", height="175" %}
   <figcaption class="w-figcaption">The WorldWideWeb browser (<a href="https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png">Source</a>)</figcaption>
 </figure>
 
@@ -81,7 +81,7 @@ on a light background, a baseline assumption that is also hard-coded in user age
 [Chrome's](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css).
 
 <figure class="w-figure w-figure--inline-left">
-  {% Img src="image/admin/zCdyRdnAnbrB7aAB0TQi.jpg", alt="Smartphone used while lying in bed", width="500", height="334" %}
+  {% Img src="image/admin/zCdyRdnAnbrB7aAB0TQi.jpg", alt="Smartphone used while lying in bed", width="262", height="175" %}
   <figcaption class="w-figcaption">Smartphone used in bed (Source: Unsplash)</figcaption>
 </figure>
 
@@ -115,7 +115,7 @@ is an aesthetic one for most users, and might not relate to ambient lighting con
 {% endAside %}
 
 <figure class="w-figure w-figure--inline-right">
-  {% Img src="image/admin/WZ9I5g1YGG6S1TjygEIq.png", alt="CloseView in Mac OS System 7 with \\", width="531", height="618" %}
+  {% Img src="image/admin/WZ9I5g1YGG6S1TjygEIq.png", alt="CloseView in Mac OS System 7 with \"White on Black\" mode", width="193", height="225" %}
   <figcaption class="w-figcaption">System&nbsp;7 CloseView (<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">Source</a>)</figcaption>
 </figure>
 
@@ -178,7 +178,7 @@ Now that I have covered the background of why dark mode is such a big deal for m
 let's review how you can support it.
 
 <figure class="w-figure w-figure--inline-left">
-  {% Img src="image/admin/Yh6SEoWDK1SbqcGjlL6d.png", alt="Android Q dark mode settings", width="610", height="700" %}
+  {% Img src="image/admin/Yh6SEoWDK1SbqcGjlL6d.png", alt="Android Q dark mode settings", width="218", height="250" %}
   <figcaption class="w-figcaption">Android&nbsp;Q dark theme settings</figcaption>
 </figure>
 
@@ -430,11 +430,20 @@ so that they never compete with resources that are needed by the site right now.
   [why browsers download stylesheets with non-matching media queries](https://blog.tomayac.com/2018/11/08/why-browsers-download-stylesheets-with-non-matching-media-queries-180513).
 {% endAside %}
 
-{% Img src="image/admin/flTdLliru6GmqqlOKjNx.png", alt="Network loading diagram showing how in light mode the dark mode CSS gets loaded with lowest priority", width="800", height="417", caption="Network loading diagram showing how in light mode the dark mode CSS gets loaded with lowest priority" %}
+<figure class="w-figure">
+  {% Img src="image/admin/flTdLliru6GmqqlOKjNx.png", alt="Network loading diagram showing how in light mode the dark mode CSS gets loaded with lowest priority", width="800", height="417" %}
+  <figcaption class="w-figcaption">Site in light mode loads the dark mode CSS with lowest priority.</figcaption>
+</figure>
 
-{% Img src="image/admin/IDs6Le0VBhHu9QEDdxL6.png", alt="Network loading diagram showing how in dark mode the light mode CSS gets loaded with lowest priority", width="800", height="417", caption="Network loading diagram showing how in dark mode the light mode CSS gets loaded with lowest priority" %}
+<figure class="w-figure">
+  {% Img src="image/admin/IDs6Le0VBhHu9QEDdxL6.png", alt="Network loading diagram showing how in dark mode the light mode CSS gets loaded with lowest priority", width="800", height="417" %}
+  <figcaption class="w-figcaption">Site in dark mode loads the light mode CSS with lowest priority.</figcaption>
+</figure>
 
-{% Img src="image/admin/zJqu5k3TIgcZf1OHWWIq.png", alt="Network loading diagram showing how in default light mode the dark mode CSS gets loaded with lowest priority", width="800", height="417", caption="Network loading diagram showing how in default light mode the dark mode CSS gets loaded with lowest priority" %}
+<figure class="w-figure">
+  {% Img src="image/admin/zJqu5k3TIgcZf1OHWWIq.png", alt="Network loading diagram showing how in default light mode the dark mode CSS gets loaded with lowest priority", width="800", height="417" %}
+  <figcaption class="w-figcaption">Site in default light mode on a browser that doesn't support <code>prefers-color-scheme</code> loads the dark mode CSS with lowest priority.</figcaption>
+</figure>
 
 ### Reacting on dark mode changes
 

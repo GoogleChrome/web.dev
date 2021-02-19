@@ -97,7 +97,10 @@ let bitmap = await createImageBitmap(cnv);
 let frame_from_bitmap = new VideoFrame(bitmap, { timestamp: 0 });
 ```
 
-{% Img src="image/admin/7LNdjNlwCUB1csF9DDl8.png", alt="The path from ImageBitmap to the network or to storage.", width="800", height="291", caption="The path from ImageBitmap to the network or to storage." %}
+<figure class="w-figure">
+  {% Img src="image/admin/7LNdjNlwCUB1csF9DDl8.png", alt="The path from ImageBitmap to the network or to storage.", width="800", height="291" %}
+  <figcaption class="w-figcaption">The path from <code>ImageBitmap</code> to the network or to storage.</figcaption>
+</figure>
 
 The second is to use `VideoTrackReader` to set a function that will be called
 each time a new frame appears in a
@@ -114,7 +117,10 @@ vtr.start((frame) => {
 });
 ```
 
-{% Img src="image/admin/f3IxThFMnEnfj4aBExHk.png", alt="The path from MediaStreamTrack to the network or to storage.", width="800", height="389", caption="The path from MediaStreamTrack to the network or to storage." %}
+<figure class="w-figure">
+  {% Img src="image/admin/f3IxThFMnEnfj4aBExHk.png", alt="The path from MediaStreamTrack to the network or to storage.", width="800", height="389" %}
+  <figcaption class="w-figcaption">The path from <code>MediaStreamTrack</code> to the network or to storage.</figcaption>
+</figure>
 
 No matter where they are coming from, frames can be encoded into
 `EncodedVideoChunk` objects with a `VideoEncoder`.
@@ -257,7 +263,10 @@ for (let i = 0; i < responses.length; i++) {
 await decoder.flush();
 ```
 
-{% Img src="image/admin/dOekoTYsgE2j6WrHi4TV.png", alt="The path from the network or storage to an ImageBitmap.", width="675", height="295", caption="The path from the network or storage to an ImageBitmap." %}
+<figure class="w-figure">
+  {% Img src="image/admin/dOekoTYsgE2j6WrHi4TV.png", alt="The path from the network or storage to an ImageBitmap.", width="675", height="295" %}
+  <figcaption class="w-figcaption">The path from the network or storage to an <code>ImageBitmap</code>.</figcaption>
+</figure>
 
 Now it's time to show how a freshly decoded frame can be shown on the page. It's
 better to make sure that the decoder output callback  (`handleFrame()`)

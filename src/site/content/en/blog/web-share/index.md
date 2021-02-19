@@ -34,7 +34,7 @@ way as platform-specific apps.
 ## Concepts and usage
 
 <figure class="w-figure w-figure--inline-right">
-  {% Img src="image/admin/cCXNoHbXAfkAQzTTuS0Z.png", alt="System-level share target picker with an installed PWA as an option.", width="800", height="754" %}
+  {% Img src="image/admin/cCXNoHbXAfkAQzTTuS0Z.png", alt="System-level share target picker with an installed PWA as an option.", width="370", height="349" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     System-level share target picker with an installed PWA as an option.
   </figcaption>

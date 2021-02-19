@@ -57,7 +57,7 @@ chrome.com [improved Time To Interactive](https://twitter.com/addyosmani/status/
 Due to versioned dependencies, you sometimes end up in a situation where you know you'll be requesting a resource from a particular CDN, but not the exact path for it.
 
 <figure class="w-figure">
-{% Img src="image/admin/PsP4qymb1gIp8Ip2sD9W.png", alt="A url of a script with the version name.", width="800", height="89" %}
+{% Img src="image/admin/PsP4qymb1gIp8Ip2sD9W.png", alt="A url of a script with the version name.", width="450", height="50" %}
 <figcaption>An example of a versioned URL.</figcaption>
 </figure>
 
