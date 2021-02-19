@@ -16,7 +16,7 @@ tags:
 As outlined before, rather than with plain HTML, mini apps are written with dialects of HTML. If you
 have ever dealt with [Vue.js](https://vuejs.org/) text interpolation and directives, you will feel
 immediately at home, but similar concepts existed way before that in XML Transformations
-([XSLT](https://www.w3.org/TR/xslt-30/). Below, you can see code samples from WeChat's
+([XSLT](https://www.w3.org/TR/xslt-30/)). Below, you can see code samples from WeChat's
 [WXML](https://developers.weixin.qq.com/miniprogram/en/dev/framework/view/wxml/), but the concept is
 the same for all mini apps platforms, namely Alipay's
 [AXML](https://opendocs.alipay.com/mini/framework/axml), Baidu's
