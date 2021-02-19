@@ -17,7 +17,7 @@ tags:
   - network
   - service-worker
   - metrics
-hero: hero.jpg
+hero: image/admin/NvPzgpuXtjuz5oE54SWn.jpg
 alt: People on a subway.
 ---
 

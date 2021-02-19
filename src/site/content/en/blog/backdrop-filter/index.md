@@ -7,7 +7,7 @@ updated: 2019-08-29
 authors:
   - adamargyle
   - joemedley
-hero: hero.jpg
+hero: image/admin/ltK4SNRultTnkbimOySm.jpg
 alt: A view through a rain-covered foggy window.
 description: |
   Learn how to add background effects like blurring and transparency to UI

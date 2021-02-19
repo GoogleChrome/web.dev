@@ -7,7 +7,7 @@ authors:
 date: 2020-05-28
 description: |
   Read about the newly announced Core Web Vitals measurement support across popular web developer tools like Lighthouse, PageSpeed Insights, Chrome UX Report, and many others.
-hero: hero.png
+hero: image/admin/wNtXgv1OE2OETdiSzi8l.png
 thumbnail: thumbnail.png
 alt: Chrome User Experience logo, PageSpeed Insights logo, Lighthouse logo, Search Console logo, Chrome DevTools logo, Web Vitals extension logo.
 tags:

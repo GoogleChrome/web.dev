@@ -6,7 +6,7 @@ date: 2020-03-05
 authors:
   - thebengeu
   - jimper
-hero: hero.jpg
+hero: image/admin/CYbrrEv8KBJtPHCvLV4Y.jpg
 thumbnail: thumbnail.jpg
 alt: Dew on a thin leaf in macro
 description: |

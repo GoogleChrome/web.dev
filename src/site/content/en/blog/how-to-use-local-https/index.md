@@ -4,7 +4,7 @@ subhead: Sometimes, you need to run your local development site with HTTPS. Tool
 authors:
   - maudn
 date: 2021-01-25
-hero: hero.jpg
+hero: image/admin/ZvW6VM0GEScldWHBvXJ4.jpg
 thumbnail: thumbnail.jpg
 tags:
   - blog

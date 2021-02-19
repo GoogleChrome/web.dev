@@ -13,7 +13,7 @@ tags:
   - blog
   - idle-detection
   - capabilities
-hero: hero.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80
+hero: image/admin/FXoKxeVCmPgEStieWKm2.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80
 alt: Abandoned computer on a bed with someone's leg next to it.
 origin_trial:
   url: https://developer.chrome.com/origintrials/#/view_trial/551690954352885761

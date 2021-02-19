@@ -8,7 +8,7 @@ updated: 2020-10-19
 date: 2020-04-13
 authors:
   - ulan
-hero: hero.jpg
+hero: image/admin/Ne2U4cUtHG6bJ0YeIkt5.jpg
 alt: >
   Green RAM stick. Photo by Harrison Broadbent on Unsplash.
 origin_trial:

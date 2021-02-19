@@ -5,7 +5,7 @@ subhead: >
 authors:
   - martinsplitt
 date: 2020-06-25
-hero: hero.png
+hero: image/admin/yUVYFuA1d5E33nfvT0fs.png
 thumbnail: thumbnail.png
 alt: A screenshot of the Core Web Vitals report.
 description: >

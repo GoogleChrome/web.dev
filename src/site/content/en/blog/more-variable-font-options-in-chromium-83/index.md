@@ -7,7 +7,7 @@ authors:
 description: Chromium 80 had a system-ui font weight regression on macOS. The reason it broke, and the new super powers post-resolution, are worth the wait in Chromium 83.
 date: 2020-05-21
 updated: 2020-05-26
-hero: hero.jpg
+hero: image/admin/RgpA9x73j3OnnrC8z97g.jpg
 thumbnail: thumb.jpg
 alt: A bright pink and purple gradient with "macOS Catalina system-ui" going from thin to think from left to right, demonstrating some of the new variation settings
 tags:

@@ -13,7 +13,7 @@ tags:
   - shape-detection
   - progressive-web-apps
   - webapp
-hero: hero.jpg
+hero: image/admin/pcEIwc0D09iF7BPo3TT1.jpg
 alt: QR code being scanned by a mobile phone
 origin-trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919

@@ -8,7 +8,7 @@ description: >
   A summary of the major news and updates that were announced during our
   3-day online community event, and a reminder about upcoming regional events.
 date: 2020-07-06
-hero: hero.png
+hero: image/admin/H60ns6FN1VtNrlx8e3EU.png
 thumbnail: thumbnail.png
 alt: The web.dev LIVE logo.
 tags:

@@ -5,7 +5,7 @@ authors:
   - joemedley
 date: 2019-02-06
 updated: 2020-08-21
-hero: hero.jpg
+hero: image/admin/MY2KWQPCX2P9kDNLX69Q.jpg
 description: |
   Adding 3D models to a website is tricky for a variety of reasons including
   the hosting issues and the high bar of 3D programming. That's why we're

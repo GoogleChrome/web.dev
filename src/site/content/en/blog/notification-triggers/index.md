@@ -10,7 +10,7 @@ description:
   a network connection, which makes them ideal for use cases like calendar apps.
 date: 2019-10-24
 updated: 2020-09-28
-hero: hero.jpg
+hero: image/admin/6ZuVN2HFiIqTVrmjN5XC.jpg
 hero_position: center
 tags:
   - blog

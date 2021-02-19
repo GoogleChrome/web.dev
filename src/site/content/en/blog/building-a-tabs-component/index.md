@@ -6,7 +6,7 @@ authors:
   - adamargyle
 description: A foundational overview of how to build a tabs component similar to those found in iOS and Android apps.
 date: 2021-02-17
-hero: hero.png
+hero: image/admin/sq79nDAthaQGcdQkqazJ.png
 tags:
   - blog
   - css

@@ -10,7 +10,7 @@ description: |
 authors:
   - addyosmani
 date: 2019-12-06
-hero: hero.jpg
+hero: image/admin/whvrlDQbdAnmwbnZH7qX.jpg
 alt: Illustration showing images of common disabilities pinned to a corkboard.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.

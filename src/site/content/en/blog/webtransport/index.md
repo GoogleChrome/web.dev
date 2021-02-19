@@ -6,7 +6,7 @@ authors:
 description: WebTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
 date: 2020-06-08
 updated: 2020-11-10
-hero: hero.jpg
+hero: image/admin/Wh6q6ughWxUYcu4iOutU.jpg
 hero_position: center
 alt: |
   Photo of fast-moving traffic.

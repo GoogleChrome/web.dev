@@ -2,7 +2,7 @@
 layout: post
 title: Web Vitals
 description: Essential metrics for a healthy site
-hero: web-vitals-hero.png
+hero: image/admin/BHaoqqR73jDWe6FL2kfw.png
 authors:
   - philipwalton
 date: 2020-04-30

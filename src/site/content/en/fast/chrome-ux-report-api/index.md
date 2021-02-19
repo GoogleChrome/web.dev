@@ -7,7 +7,7 @@ subhead: >
 authors:
   - rviscomi
   - exterkamp
-hero: hero.png
+hero: image/admin/TQ4U8BZanGFSfJI973xn.png
 description: |
   Learn how to use the Chrome UX Report API to get easy, RESTful access to 
   real-user experience data across millions of websites.

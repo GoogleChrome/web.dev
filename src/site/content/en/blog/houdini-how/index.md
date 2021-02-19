@@ -4,7 +4,7 @@ subhead: 'Supercharging your CSS with Houdini paint worklets is just a few click
 authors:
   - una
 date: 2020-12-10
-hero: hero.jpg
+hero: image/admin/qphHgunn2LamPL1qODh5.jpg
 alt: A sparkler.
 description: Learn how to implement cross-browser Houdini Paint API's and explore a world of Houdini worklets with Houdini.how.
 tags:

@@ -7,7 +7,7 @@ authors:
 date: 2019-12-16
 description: |
   Read about the latest Lighthouse updates announced at Chrome Developer Summit 2019.
-hero: lighthouse-logo.svg
+hero: image/admin/mQ77SlZ6Y8ailMClzaCs.svg
 alt: Lighthouse logo.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.

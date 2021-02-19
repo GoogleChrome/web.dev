@@ -19,7 +19,7 @@ tags:
   - sensors
   - devices
   - capabilities
-hero: hero.jpg
+hero: image/admin/2AGc7aV66zc69fiqNJBZ.jpg
 alt: A simple gyroscope.
 ---
 

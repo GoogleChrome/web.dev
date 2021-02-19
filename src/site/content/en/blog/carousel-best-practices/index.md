@@ -6,7 +6,7 @@ authors:
   - katiehempenius
 description:  Learn how to optimize carousels for performance and usability.
 date: 2021-01-26
-hero: hero.jpg
+hero: image/admin/i7tjE04MYo7xJOZKkyQI.jpg
 tags:
   - blog
   - fast

@@ -159,7 +159,7 @@ glitch: gif-to-video
 ```yaml
 ---
 …
-hero: hero.jpg
+hero: image/admin/tyBs8QP5pbMVpY3yp1dM.jpg
 …
 ---
 ```

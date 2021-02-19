@@ -11,7 +11,7 @@ updated: 2020-09-15
 tags:
   - blog
   - capabilities
-hero: hero.jpg
+hero: image/admin/9wQYJACMKOM6aUA0BPsW.jpg
 alt: Simulated trading desk showing multiple fake cryptocurrencies and their price charts.
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/1411878483180650497

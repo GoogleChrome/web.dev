@@ -6,7 +6,7 @@ authors:
 description: |
   Learn how to build a responsive slide out side navigation layout component.
 date: 2021-01-21
-hero: hero.jpg
+hero: image/admin/x4Mq5JQd3PjBnenub8mG.jpg
 thumbnail: thumb.png
 glitch: gui-challenges-sidenav-lab
 glitch_path: app/index.html
