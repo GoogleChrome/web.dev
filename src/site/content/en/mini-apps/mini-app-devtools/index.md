@@ -92,7 +92,7 @@ paragraph above.
 As you can see, the fundamental components of all IDEs are very similar. You always have a code
 editor based on the [Monaco Editor](https://microsoft.github.io/monaco-editor/), the same project
 that also powers [VS Code](https://github.com/Microsoft/vscode). In all IDEs, there is a debugger
-based on the [Chrome DevTools front-end](https://github.com/ChromeDevTools/devtools-frontend) with
+based on the [Chrome DevTools frontend](https://github.com/ChromeDevTools/devtools-frontend) with
 some modifications, more on those later (see [Debugger](/mini-app-devtools/#debugger)). The IDEs _per se_ are
 implemented either as [NW.js](https://nwjs.io/) or as [Electron](https://www.electronjs.org/) apps,
 the simulators in the IDEs are realized as an
