@@ -40,7 +40,8 @@ Using the WeChat desktop client available for
 [macOS](https://dldir1.qq.com/weixin/mac/WeChatMac.dmg)
 and [Windows](https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe)), it is possible to run WeChat
 mini apps on the desktop. (Make sure to _not_ load the macOS
-[version from the App Store](https://itunes.apple.com/cn/app/id836500024), since it is more limited.)
+[version from the App Store](https://itunes.apple.com/cn/app/id836500024)
+if you are doing research and want the full experience, since it is more limited.)
 
 To test it on macOS, share a mini app from a mobile device with yourself via the "File Transfer"
 account. This will result in a message that you can then open on the desktop client. In most cases,

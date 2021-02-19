@@ -15,7 +15,7 @@ tags:
 
 [Web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components/) started with the
 promise of letting developers piece them together and build great apps on top of them. Examples of
-such atomic components are GitHub's [time-elements](https://github.com/github/time-elements) Stefan
+such atomic components are GitHub's [time-elements](https://github.com/github/time-elements), Stefan
 Judis' [web-vitals-element](https://github.com/stefanjudis/web-vitals-element), or, shameless plug,
 Google's [dark mode toggle](https://github.com/GoogleChromeLabs/dark-mode-toggle/). When it comes to
 complete design systems, however, I have observed that people prefer to rely on a coherent set of
