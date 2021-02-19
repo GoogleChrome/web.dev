@@ -24,7 +24,7 @@ This article gives me an opportunity to discuss two of my favorite things: respo
 Suppose you're browsing the web on a screen that's 300 pixels wide, and the page just requested an image that's 1500 pixels wide. That page just wasted a lot of your cellular data because your screen can't do anything with all of that extra resolution. Ideally, the browser should fetch a version of the image that's just a *little* wider than your screen size, say 325 pixels. This ensures a high-resolution image without wasting data. And, even better, the image will load faster. [Responsive images](/serve-responsive-images/#serve-multiple-image-versions) enable browsers to fetch different image resources to different devices. If you don't use an [image CDN](/image-cdns/) you need to save multiple dimensions for each image and specify them in the `srcset` attribute. The `w` value tells the browser the width of each version. Depending on the device, the browser can choose the appropriate one:
 
 ```html
-<img src="small.jpg" srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w" alt="…">
+![…](small.jpg)
 ```
 
 ## Preload overview
@@ -54,7 +54,7 @@ To preload responsive images, new attributes were recently added to the `<link>`
 For example, if you want to preload a responsive image specified with:
 
  ```html
- <img src="wolf.jpg" srcset="wolf_400px.jpg 400w, wolf_800px.jpg 800w, wolf_1600px.jpg 1600w" sizes="50vw" alt="A rad wolf">
+ ![A rad wolf](wolf.jpg)
  ```
 
 You can do that by adding the following to your HTML's `<head>`:
@@ -84,7 +84,7 @@ You can inspect this issue on a website with a dynamically-loaded image gallery:
 1. Reload the page.
 
 <figure class="w-figure">
-<img src="./example-1-before.png" alt="Screenshot of Chrome DevTools Network panel.">
+{% Img src="image/admin/cyocwRmB3XlfY26vUZ5h.png", alt="Screenshot of Chrome DevTools Network panel.", width="800", height="481" %}
 <figcaption class="w-figcaption">This waterfall shows that the images only start loading after the browser has finished running the script, introducing unnecessary delay to the time the image is initially displayed to the user.</figcaption>
 </figure>
 
@@ -92,7 +92,7 @@ Using `preload` helps here because the image starts loading ahead of time and is
 
 
 <figure class="w-figure">
-<img src="./example-1-after.png" alt="Screenshot of Chrome DevTools Network panel.">
+{% Img src="image/admin/rIRdFypLWf1ljMaXCVCs.png", alt="Screenshot of Chrome DevTools Network panel.", width="800", height="481" %}
 <figcaption class="w-figcaption">This waterfall shows that the first image started loading at the same time as the script, avoiding unnecessary delays and resulting in faster displaying images.</figcaption>
 </figure>
 
@@ -121,7 +121,7 @@ The problem with CSS background images is that they are discovered by the browse
 You can inspect this issue on an example website with [responsive background image](https://responsive-preload.glitch.me/background_no_preload.html).
 
 <figure class="w-figure">
-<img src="./example-2-before.png" alt="Screenshot of Chrome DevTools Network panel.">
+{% Img src="image/admin/7sjFt1RsoEOKn5zlS5zb.png", alt="Screenshot of Chrome DevTools Network panel.", width="800", height="451" %}
 <figcaption class="w-figcaption">In this example, the image download doesn't start until the CSS is fully downloaded, resulting in unnecessary lag to the image's display.</figcaption>
 </figure>
 
@@ -134,7 +134,7 @@ Responsive image preloading provides a simple and hack-free way to load those im
 You can inspect how the previous example behaves with [preloaded responsive background image](https://responsive-preload.glitch.me/background_preload.html).
 
 <figure class="w-figure">
-<img src="./example-2-after.png" alt="Screenshot of Chrome DevTools Network panel.">
+{% Img src="image/admin/dOI6EmChfahBujnZOke7.png", alt="Screenshot of Chrome DevTools Network panel.", width="800", height="439" %}
 <figcaption class="w-figcaption">Here the image and CSS start downloading at the same time, avoiding delays and resulting in a faster loading image.</figcaption>
 </figure>
 
@@ -148,7 +148,7 @@ That gave me the following results for [no preload](https://www.webpagetest.org/
 
 Of course, nothing captures the visual difference quite like a filmstrip comparison:
 <figure class="w-figure">
-<img src="./example-3.png" alt="Screenshot of WebPageTest filmstrip comparison showing preloaded images are displayed about 1.5 seconds faster.">
+{% Img src="image/admin/sXyZOvsNoAY0K2NRqT4U.png", alt="Screenshot of WebPageTest filmstrip comparison showing preloaded images are displayed about 1.5 seconds faster.", width="800", height="328" %}
 <figcaption class="w-figcaption">The filmstrip shows that images arrive significantly faster when preloaded, resulting in a hugely-improved user experience.</figcaption>
 </figure>
 

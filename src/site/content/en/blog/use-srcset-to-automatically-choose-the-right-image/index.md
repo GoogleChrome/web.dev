@@ -64,11 +64,11 @@ larger than the other.
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img class="w-screenshot" src="kittens-1000.jpg" alt="Little Puss and Lias: two ten week old tabby kittens." width="300">
+    {% Img src="image/admin/IHpM8DG6qiNlRcbfxnt8.jpg", alt="Little Puss and Lias: two ten week old tabby kittens.", width="800", height="534" %}
     <figcaption class="w-figcaption">Saved width 1000 px, file size 184 KB</figcaption>
   </figure>
   <figure class="w-figure">
-    <img class="w-screenshot" src="kittens-300.jpg" alt="Little Puss and Lias: two ten week old tabby kittens." width="300">
+    {% Img src="image/admin/XThwdsYxfx6KHkMxgbYI.jpg", alt="Little Puss and Lias: two ten week old tabby kittens.", width="300", height="200" %}
     <figcaption class="w-figcaption">Saved width 300 px, file size 16 KB</figcaption>
   </figure>
 </div>

@@ -129,10 +129,7 @@ const port = await navigator.serial.requestPort({ filters });
 const { usbProductId, usbVendorId } = port.getInfo();
 ```
 
-<figure class="w-figure">
-  <img src="./serial-port-prompt.jpg" class="w-screenshot" alt="Screenshot of a serial port prompt on a website">
-  <figcaption class="w-figcaption">User prompt for selecting a BBC micro:bit</figcaption>
-</figure>
+{% Img src="image/admin/BT9OxLREXfb0vcnHlYu8.jpg", alt="Screenshot of a serial port prompt on a website", width="800", height="513", caption="Screenshot of a serial port prompt on a website" %}
 
 Calling `requestPort()` prompts the user to select a device and returns a
 `SerialPort` object. Once you have a `SerialPort` object, calling `port.open()`
@@ -426,10 +423,7 @@ assembly line: as a widget comes down the line, each step in the line modifies
 the widget, so that by the time it gets to its final destination, it's a fully
 functioning widget.
 
-<figure class="w-figure">
-  <img src="./aeroplane-factory.jpg" alt="Photo of an aeroplane factory">
-  <figcaption class="w-figcaption">World War II Castle Bromwich Aeroplane Factory</figcaption>
-</figure>
+{% Img src="image/admin/seICV1jfxA6NfFRt9iVL.jpg", alt="Photo of an aeroplane factory", width="800", height="519", caption="Photo of an aeroplane factory" %}
 
 For example, consider how to create a transform stream class that consumes a
 stream and chunks it based on line breaks. Its `transform()` method is called
@@ -491,10 +485,7 @@ Debugging the Web Serial API in Chrome is easy with the internal page,
 `chrome://device-log` where you can see all serial device related events in one
 single place.
 
-<figure class="w-figure">
-  <img src="./device-log-page-screenshot.jpg" class="w-screenshot" alt="Screenshot of the internal page for debugging the Web Serial API.">
-  <figcaption class="w-figcaption">Internal page in Chrome for debugging the Web Serial API.</figcaption>
-</figure>
+{% Img src="image/admin/p2T9gxxLsDWsS1GaqoXj.jpg", alt="Screenshot of the internal page for debugging the Web Serial API.", width="800", height="547", caption="Screenshot of the internal page for debugging the Web Serial API." %}
 
 ## Codelab {: #codelab }
 

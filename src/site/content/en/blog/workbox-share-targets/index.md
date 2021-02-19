@@ -32,7 +32,7 @@ that lives entirely inside your [service worker](/service-workers-cache-storage/
 single-page apps serve as share targets without a dedicated server endpoint.
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="./wst-send.png" style="max-width: 400px;" alt="Android phone with the 'Share via' drawer open."/>
+  {% Img src="image/admin/mp2bdiP2gVeMQ4UX12vd.png", alt="Android phone with the 'Share via' drawer open.", width="800", height="754" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     System-level share target picker with an installed PWA called
     <code>Share Target Test</code> as an option.

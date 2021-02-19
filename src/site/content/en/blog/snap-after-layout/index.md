@@ -53,7 +53,7 @@ overcome the issues of imprecise scrolling. In other words, scroll snapping:
 Paginated articles and image carousels are two common use cases for scroll
 snaps.
 <figure class="w-figure">
-  <img src="./css-scroll-snap-example.png" alt="Example of CSS scroll snap.">
+  {% Img src="image/admin/MzdzDJ2j4jJtfAYgg9e6.png", alt="Example of CSS scroll snap.", width="800", height="356" %}
   <figcaption class="w-figcaption">Example of CSS scroll snap. At the end of
     scrolling an image's horizontal center is aligned with the horizontal center
     of the scroll container.
