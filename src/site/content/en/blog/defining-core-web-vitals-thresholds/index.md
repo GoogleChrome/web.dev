@@ -6,7 +6,7 @@ authors:
 description: The research and methodology behind Core Web Vitals thresholds
 date: 2020-05-21
 updated: 2020-05-27
-hero: image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WNrgCVjmp8Gyc8EbZ9Jv.png
+hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: The research and methodology behind Core Web Vitals thresholds
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
