@@ -29,7 +29,8 @@ pagination:
         height="192",
         width="192",
         class="w-author-page__image",
-        sizes="(min-width: 481px) 192px, 128px"
+        sizes="(min-width: 481px) 192px, 128px",
+        options={minWidth: 128}
       %}
       <h1 class="w-page-header__headline w-author-page-header__headline">{{ renderData.title }}</h1>
       <p class="w-page-header__copy">{{ renderData.description | safe }}</p>
