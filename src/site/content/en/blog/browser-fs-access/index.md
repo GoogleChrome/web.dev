@@ -174,7 +174,7 @@ it's [not yet  widely available](https://caniuse.com/#feat=file-system-access-ap
        alt="Browser support table for the File System Access API. All browsers are marked as 'no support' or 'behind a flag'.">
   <figcaption class="w-figcaption">
     Browser support table for the File System Access API.
-    (<a href="https://caniuse.com/#feat=file-system-access-api">Source</a>)
+    (<a href="https://caniuse.com/?search=file%20system%20access%20api">Source</a>)
   </figcaption>
 </figure>
 
