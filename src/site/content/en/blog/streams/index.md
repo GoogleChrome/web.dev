@@ -460,20 +460,18 @@ property returns the desired size to fill the controlled stream's internal queue
 ### The `queuingStrategy`
 
 The second, likewise optional, argument of the `ReadableStream()` constructor is `queuingStrategy`.
-It is an object that optionally defines a queuing strategy for the stream, which takes two
-parameters:
+It is an object that optionally defines a queuing strategy for the stream, which takes one
+parameter:
 
-- `highWaterMark`: A non-negative number indicating the high water mark of the stream using this queuing strategy.
-- `size(chunk)`: A function that computes and returns the finite non-negative size of the given chunk value.
-  The result is used to determine backpressure, manifesting via the appropriate `ReadableByteStreamController.desiredSize` property.
+- `highWaterMark`: A non-negative number of bytes indicating the high water mark of the stream using this queuing strategy.
+  This is used to determine backpressure, manifesting via the appropriate `ReadableByteStreamController.desiredSize` property.
   It also governs when the underlying source's `pull()` method is called.
 
+Note that a queuing strategy for a readable byte stream does not have a `size(chunk)` function.
+The size of each chunk is always determined by its `byteLength` property.
+
 {% Aside %}
-  You could define your own custom `queuingStrategy`, or use an instance of
-  [`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy)
-  or [`CountQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy)
-  for this object value. If no `queuingStrategy` is supplied, the default used is the same as a
-  `CountQueuingStrategy` with a `highWaterMark` of `1`.
+  If no `queuingStrategy` is supplied, the default used is one with a `highWaterMark` of `0`.
 {% endAside %}
 
 #### The `getReader()` and `read()` methods
