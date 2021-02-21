@@ -251,11 +251,11 @@ the stream. The different possibilities are as follows:
 const reader = readableStream.getReader();
 while (true) {
   const { done, value } = await reader.read();
-  console.log('Just read a chunk:', value);
   if (done) {
     console.log('The stream is done.');
     break;
   }
+  console.log('Just read a chunk:', value);
 }
 ```
 
