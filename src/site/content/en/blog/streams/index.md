@@ -134,7 +134,7 @@ The chunks inside the stream are read by a **reader**. This reader retrieves the
 time, allowing you to do whatever kind of operation you want to do on it. The reader plus the other
 processing code that goes along with it is called a **consumer**.
 
-The next construct in this context is called a **controller**. Each reader has an associated
+The next construct in this context is called a **controller**. Each readable stream has an associated
 controller that, as the name suggests, allows you to control the stream.
 
 Only one reader can read a stream at a time; when a reader is created and starts reading a stream
@@ -558,8 +558,8 @@ A **queuing strategy** is an object that determines how a stream should signal b
 the state of its internal queue. The queuing strategy assigns a size to each chunk, and compares the
 total size of all chunks in the queue to a specified number, known as the **high water mark**.
 
-The final construct is called a **controller**. Each writer has an associated controller that allows
-you to control the stream (for example, to abort it).
+The final construct is called a **controller**. Each writable stream has an associated controller that
+allows you to control the stream (for example, to abort it).
 
 ### Creating a writable stream
 
