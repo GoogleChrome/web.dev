@@ -116,10 +116,10 @@ needed to save changes back to the file, or to perform any other file operations
 Now that you have a handle to a file, you can get the file's properties, or access the file itself.
 For now, I'll simply read its contents. Calling `handle.getFile()` returns a
 [`File`][file-api-spec] object, which contains a blob. To get the data from the blob, call one of
-[its methods][blob-methods]
+[its methods][blob-methods],
 ([`slice()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/slice),
 [`stream()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/stream),
-[`text()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/text), and
+[`text()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/text), or
 [`arrayBuffer()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer)).
 
 ```js
