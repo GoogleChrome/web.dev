@@ -279,32 +279,31 @@ stream by creating a reader via the `getReader()` method and calling `read()` un
 `done`.
 
 ```js
-const startEnqueuing = (controller) => {
-  let interval = null;
-  interval = setInterval(() => {
-    const string = new Date().toLocaleTimeString();
-    // Add the string to the stream.
-    controller.enqueue(string);
-    console.log(`Enqueued ${string}`);
-  }, 1_000);
+class TimestampSource {
+  #interval
 
-  setTimeout(() => {
-    clearInterval(interval);
-    // Close the stream after 10s.
-    controller.close();
-  }, 10_000);
-};
-
-const stream = new ReadableStream({
   start(controller) {
-    startEnqueuing(controller);
-  },
+    this.#interval = setInterval(() => {
+      const string = new Date().toLocaleTimeString();
+      // Add the string to the stream.
+      controller.enqueue(string);
+      console.log(`Enqueued ${string}`);
+    }, 1_000);
+
+    setTimeout(() => {
+      clearInterval(this.#interval);
+      // Close the stream after 10s.
+      controller.close();
+    }, 10_000);
+  }
 
   cancel() {
     // This is called if the reader cancels.
-    clearInterval(interval);
-  },
-});
+    clearInterval(this.#interval);
+  }
+}
+
+const stream = new ReadableStream(new TimestampSource());
 
 async function concatStringStream(stream) {
   let result = '';
