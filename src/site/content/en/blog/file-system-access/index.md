@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-02-19
+updated: 2021-02-22
 tags:
   - blog
   - capabilities
@@ -116,12 +116,22 @@ needed to save changes back to the file, or to perform any other file operations
 Now that you have a handle to a file, you can get the file's properties, or access the file itself.
 For now, I'll simply read its contents. Calling `handle.getFile()` returns a
 [`File`][file-api-spec] object, which contains a blob. To get the data from the blob, call one of
-[its methods][blob-methods] (`slice()`, `stream()`, `text()`, `arrayBuffer()`).
+[its methods][blob-methods]
+([`slice()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/slice),
+[`stream()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/stream),
+[`text()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/text), and
+[`arrayBuffer()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer)).
 
 ```js
 const file = await fileHandle.getFile();
 const contents = await file.text();
 ```
+
+{% Aside %}
+  For the majority of use cases, you can read files in _sequential_ order with the
+  `stream()`, `text()`, or `arrayBuffer()` methods.
+  For getting _random access_ to a file's contents, use the `slice()` method.
+{% endAside %}
 
 The `File` object returned by `FileSystemFileHandle.getFile()` is only readable as long as the
 underlying file on disk hasn't changed. If the file on disk is modified, the `File` object becomes
