@@ -467,8 +467,10 @@ parameter:
   This is used to determine backpressure, manifesting via the appropriate `ReadableByteStreamController.desiredSize` property.
   It also governs when the underlying source's `pull()` method is called.
 
-Note that a queuing strategy for a readable byte stream does not have a `size(chunk)` function.
-The size of each chunk is always determined by its `byteLength` property.
+{% Aside %}
+  A queuing strategy for a readable byte stream does not have a `size(chunk)` function.
+  The size of each chunk is always determined by its `byteLength` property.
+{% endAside %}  
 
 {% Aside %}
   If no `queuingStrategy` is supplied, the default used is one with a `highWaterMark` of `0`.
