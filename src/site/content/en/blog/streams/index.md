@@ -1076,6 +1076,7 @@ This article was reviewed by
 [Jake Archibald](https://jakearchibald.com/),
 [François Beaufort](https://github.com/beaufortfrancois),
 [Sam Dutton](https://samdutton.com/),
+[Mattias Buelens](https://github.com/MattiasBuelens),
 [Surma](https://surma.dev/), and
 [Joe Medley](https://github.com/jpmedley).
 [Jake Archibald](https://jakearchibald.com/)'s blog posts have helped me a lot in understanding
