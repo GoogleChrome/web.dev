@@ -3,7 +3,7 @@ layout: post
 title: Create an offline fallback page
 authors:
   - thomassteiner
-  - petele
+  - petelepage
 date: 2020-09-24
 updated: 2021-02-22
 description: Learn how to create a simple offline experience for your app.
