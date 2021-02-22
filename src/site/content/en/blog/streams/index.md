@@ -7,7 +7,7 @@ description: |
 authors:
   - thomassteiner
 date: 2021-02-19
-# updated: 2021-02-19
+updated: 2021-02-22
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/TuciUuOQOd3u7uMgDZBi.jpg
 alt: A forest stream with colored fallen leaves.
 tags:
@@ -273,7 +273,8 @@ console.log(`The stream is ${locked ? 'indeed' : 'not'} locked.`);
 ### Readable stream code samples
 
 The code sample below shows all the steps in action. You first create a `ReadableStream` that in its
-`underlyingSource` argument defines a `start` method that tells the stream's `controller` to
+`underlyingSource` argument (that is, the `TimestampSource` class) defines a `start` method
+that tells the stream's `controller` to
 `enqueue()` a timestamp every second during ten seconds and then to `close()` the stream. You consume this
 stream by creating a reader via the `getReader()` method and calling `read()` until the stream is
 `done`.
