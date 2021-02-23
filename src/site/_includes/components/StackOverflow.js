@@ -23,8 +23,8 @@ module.exports = (tag) => {
       <a href="https://stackoverflow.com/questions/ask?tags=${tag}"
         >asking a question on Stack Overflow</a
       >, or
-      <a href="https://stackoverflow.com/search?q=%${tag}%5D+is%3Aquestion"
-        >browse a list of questions</a
+      <a href="https://stackoverflow.com/search?q=%5B${tag}%5D+is%3Aquestion"
+        >browsing a list of questions</a
       >
       asked by other developers.
     </div>

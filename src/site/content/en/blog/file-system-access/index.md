@@ -22,6 +22,7 @@ hero: image/admin/qn7E0q1EWJUqdzsuHwx4.jpg
 alt: Image of hard disk platters
 feedback:
   - api
+stack_overflow_tag: native-file-system-api-js
 ---
 
 ## What is the File System Access API? {: #what-is-it }

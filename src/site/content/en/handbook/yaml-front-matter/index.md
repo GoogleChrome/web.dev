@@ -226,9 +226,10 @@ stack_overflow_tag: service-worker
 ---
 ```
 
-Sometimes, a post is related to technologies that have "official" tags on Stack Overflow
-(e.g. `service-worker`). When used, an "Ask on Stack Overflow" note will be shown at the end
-of the post.
+Sometimes, a post is related to technologies that have
+["official" tags on Stack Overflow](https://stackoverflow.com/tags)
+(e.g. [`service-worker`](https://stackoverflow.com/questions/tagged/service-worker)).
+When used, an "Ask on Stack Overflow" note will be shown at the end of the post.
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled"
