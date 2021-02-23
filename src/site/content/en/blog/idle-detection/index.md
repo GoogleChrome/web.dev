@@ -8,7 +8,7 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2021-02-02
+updated: 2021-02-23
 tags:
   - blog
   - idle-detection
@@ -260,7 +260,8 @@ Are you planning to use the Idle Detection API? Your public support helps the Ch
 prioritize features and shows other browser vendors how critical it is to support them.
 
 Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
-Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#idledetection` hashtag
+Send a tweet to [@ChromiumDev][cr-dev-twitter] with the
+[`#IdleDetection`](https://twitter.com/search?q=%23IdleDetection&src=typed_query&f=live) hashtag
 and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }

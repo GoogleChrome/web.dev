@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-02-19
+updated: 2021-02-23
 tags:
   - blog
   - capabilities
@@ -584,8 +584,9 @@ Planning to use the File System Access API on your site? Your public support hel
 features, and shows other browser vendors how critical it is to support them.
 
 - Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
-- Send a Tweet to [@ChromiumDev][cr-dev-twitter] with `#filesystemaccess` and let us know where and how
-  you're using it.
+- Send a tweet to [@ChromiumDev][cr-dev-twitter] with hashtag
+  [`#FileSystemAccess`](https://twitter.com/search?q=%23FileSystemAccess&src=typed_query&f=live)
+  and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 

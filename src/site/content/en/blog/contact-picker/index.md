@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: Access to the user's contacts has been a feature of iOS/Android apps since (almost) the dawn of time. The Contact Picker API is an on-demand API  that allows users to select an entry or entries from their contact list and share limited details of the selected contact(s) with a website. It allows users to share only what they want, when they want, and makes it easier for users to reach and connect with their friends and family.
 date: 2019-08-07
-updated: 2020-07-30
+updated: 2021-02-23
 tags:
   - blog
   - capabilities
@@ -136,7 +136,7 @@ properties are available. For example: `['name', 'email', 'tel', 'address']`.
 You can pass these values to `select()`.
 
 Remember, properties are not always available, and new properties may be
-added. In the future, other platforms and contact sources may restrict 
+added. In the future, other platforms and contact sources may restrict
 which properties are be shared.
 
 ### Handling the results
@@ -267,7 +267,8 @@ Chrome team to prioritize features, and shows other browser vendors how
 critical it is to support them.
 
 * Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
-* Send a Tweet to [@ChromiumDev][cr-dev-twitter] with `#contactpicker` and
+* Send a tweet to [@ChromiumDev][cr-dev-twitter] with the hashtag
+  [`#ContactPicker`](https://twitter.com/search?q=%23ContactPicker&src=typed_query&f=live) and
   let us know where and how you're using it.
 
 ## Helpful links {: #helpful }

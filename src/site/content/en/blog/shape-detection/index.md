@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 description: The Shape Detection API detects faces, barcodes, and text in images.
 date: 2019-01-07
-updated: 2020-12-14
+updated: 2021-02-23
 tags:
   - blog
   - capabilities
@@ -357,8 +357,9 @@ helps us to prioritize features, and shows other browser vendors how
 critical it is to support them.
 
 * Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
-* Send a Tweet to [@ChromiumDev][cr-dev-twitter] with `#shapedetection` and
-  let us know where and how you're using it.
+* Send a tweet to [@ChromiumDev][cr-dev-twitter] with the hashtag
+  [`#ShapeDetection`](https://twitter.com/search?q=%23ShapeDetection&src=typed_query&f=live)
+  and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 

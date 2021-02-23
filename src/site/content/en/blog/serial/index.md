@@ -4,7 +4,7 @@ subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2021-02-03
+updated: 2021-02-23
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
 thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
@@ -151,7 +151,7 @@ const port = await navigator.serial.requestPort();
 // Wait for the serial port to open.
 await port.open({ baudRate: 9600 });
 ```
- 
+
 You can also specify any of the options below when opening a serial port. These
 options are optional and have convenient [default values].
 
@@ -554,7 +554,7 @@ Are you planning to use the Web Serial API? Your public support helps the Chrome
 team prioritize features and shows other browser vendors how critical it is to
 support them.
 
-Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the hashtag
+Send a tweet to [@ChromiumDev][cr-dev-twitter] with the hashtag
 [`#SerialAPI`](https://twitter.com/search?q=%23SerialAPI&src=typed_query&f=live)
 and let us know where and how you're using it.
 
@@ -582,7 +582,7 @@ Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 [Betaflight Configurator]: https://github.com/betaflight/betaflight-configurator
 [Espruino Web IDE]: http://espruino.com/ide
 [Microsoft MakeCode]: https://www.microsoft.com/en-us/makecode
-[explainer]: https://github.com/reillyeon/serial/blob/gh-pages/EXPLAINER.md  
+[explainer]: https://github.com/reillyeon/serial/blob/gh-pages/EXPLAINER.md
 [spec]: https://reillyeon.github.io/serial/
 [default values]: https://reillyeon.github.io/serial/#dom-serialoptions
 [Streams API concepts]: https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts

@@ -399,8 +399,9 @@ Chrome team to prioritize features and shows other browser vendors how critical
 it is to support them.
 
 Send emails to [media-dev@chromium.org](mailto:media-dev@chromium.org) or tweet
-to [@ChromiumDev][cr-dev-twitter] with the `#webcodecs` hashtag and let us know
-where and how you're using it.
+to [@ChromiumDev][cr-dev-twitter] with the
+[`#WebCodecs`](https://twitter.com/search?q=%23WebCodecs&src=typed_query&f=live)
+hashtag and let us know where and how you're using it.
 
 [Hero image](https://unsplash.com/photos/8eQOBtgn9Qo) by
 [Denise Jans](https://unsplash.com/@dmjdenise)
