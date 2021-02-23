@@ -63,6 +63,10 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - accessibility
   - ux
+
+# You can provide an optional Stack Overflow tag to be used at the end of the
+# post in a "Ask on Stack Overflow" note.
+# stack_overflow_tag: service-worker
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa

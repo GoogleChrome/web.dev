@@ -17,6 +17,7 @@ tags:
   - devices
 feedback:
   - api
+stack_overflow_tag: webusb
 ---
 
 If I said plainly and simply "USB", there is a good chance that you will

@@ -87,6 +87,10 @@
 
     {{ content | safe }}
 
+    {% if stack_overflow_tag %}
+      {% StackOverflow stack_overflow_tag %}
+    {% endif %}
+
     <div class="w-chips">
       {% for tag in tags | findTags %}
         <a class="w-chip" href="{{ tag.href }}">{{ tag.title }}</a>
