@@ -352,7 +352,7 @@ Most folks (including me) call `globalThis` the global object, but this isn't 10
 {% endAside %}
 
 {% Aside 'warning' %}
-Avoid using `this` to reference the global (yes, I'm still calling it that). Instead, use [`globalThis`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis), which is much more explicit.
+Avoid using `this` to reference the global object (yes, I'm still calling it that). Instead, use [`globalThis`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis), which is much more explicit.
 {% endAside %}
 
 ## Phew!
