@@ -1,0 +1,34 @@
+.course-layout {
+  display: grid;
+  grid-template-areas:
+    'nav'
+    'app-bar'
+    'content';
+  
+  @include bp(md) {
+    grid-template-columns: minmax(auto, 350px) 3fr;
+    grid-template-areas:
+      'nav app-bar'
+      'nav content';
+  }
+}
+
+.course-nav {
+  grid-area: nav;
+}
+
+.course-app-bar {
+  grid-area: app-bar;
+}
+
+.course-content {
+  grid-area: content;
+  display: flex;
+  max-width: 1008px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.course-toc {
+  order: 1;
+}

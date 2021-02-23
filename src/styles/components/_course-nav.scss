@@ -1,0 +1,6 @@
+.course-nav {
+  @include bp(md) {
+    border-right: 1px solid $GREY_300;
+    padding: 24px 16px;
+  }
+}

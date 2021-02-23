@@ -4,43 +4,45 @@ layout: base
 
 <a class="skip-link w-button" href="#main">Skip to main</a>
 
-<nav class="course-nav" aria-label="primary navigation">
-  <ul>
-    <li>
-      <a href="#">Introduction</a>
-    </li>
-    <li>
-      <a href="#">Flexbox</a>
-    </li>
-  </ul>
-</nav>
-
-<nav class="course-app-bar" aria-label="breadcrumbs">
-  <ul>
-    <li>
-      <a href="/">web.dev</a>
-    </li>
-    <li>
-      <a href="/learn/">Learn</a>
-    </li>
-    <li>
-      <a href="/learn/css/">CSS</a>
-    </li>
-  </ul>
-</nav>
-
-<div class="course-content">
-  <nav class="course-toc" aria-label="table of contents">
+<div class="course-layout">
+  <nav class="course-nav" aria-label="primary navigation">
     <ul>
       <li>
-        <a href="#">First heading</a>
+        <a href="#">Introduction</a>
       </li>
       <li>
-        <a href="#">Second heading</a>
+        <a href="#">Flexbox</a>
       </li>
     </ul>
   </nav>
-  <main id="main">
-    {{ content | safe }}
-  </main>
+
+  <nav class="course-app-bar app-bar" aria-label="breadcrumbs">
+    <ul class="app-bar__list">
+      <li class="app-bar__item">
+        <a href="/">web.dev</a>
+      </li>
+      <li class="app-bar__item">
+        <a href="/learn/">Learn</a>
+      </li>
+      <li class="app-bar__item">
+        <a href="/learn/css/">Learn CSS!</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="course-content">
+    <nav class="course-toc" aria-label="table of contents">
+      <ul class="course-toc__list">
+        <li class="course-toc__item">
+          <a href="#">First heading</a>
+        </li>
+        <li class="course-toc__item">
+          <a href="#">Second heading</a>
+        </li>
+      </ul>
+    </nav>
+    <main id="main" class="w-mt--non w-pb--non">
+      {{ content | safe }}
+    </main>
+  </div>
 </div>
