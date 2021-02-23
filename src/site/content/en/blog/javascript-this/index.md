@@ -35,7 +35,7 @@ const arrowFunction = () => {
 };
 ```
 
-In this case, the value of `this` will _always_ be the same as `this` in the parent scope:
+In this case, the value of `this` is _always_ the same as `this` in the parent scope:
 
 ```js
 const outerThis = this;
@@ -260,9 +260,9 @@ I avoid using `this` in cases like above, and instead:
 
 ```js
 element.addEventListener('click', (event) => {
-  // Grab it from the parent scope:
+  // Ideally, grab it from a parent scope:
   console.log(element);
-  // Or from the event object:
+  // But if you can't do that, get it from the event object:
   console.log(event.currentTarget);
 });
 ```
@@ -312,6 +312,8 @@ const $ = document.querySelector.bind(document);
 const $ = (...args) => document.querySelector(...args);
 ```
 
+Fun fact: Not all APIs use `this` internally. Console methods like `console.log` were changed to avoid `this` references, so `log` doesn't need to be bound to `console`.
+
 {% Aside 'warning' %}
 Don't transplant a function onto an object just to set `this` to some value unrelated to the parent object; it's usually unexpected and it's why `this` gets such a bad reputation. Consider passing the value as an argument instead; it's more explicit, and works with arrow functions.
 {% endAside %}
@@ -328,7 +330,7 @@ function someFunction() {
 console.log(someFunction() === undefined);
 ```
 
-In this case, the value of `this` is undefined. `'use strict'` isn't needed in the function if the parent scope is in [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
+In this case, the value of `this` is undefined. `'use strict'` isn't needed in the function if the parent scope is in [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) (and all modules are in strict mode).
 
 {% Aside 'warning' %}
 Don't rely on this. I mean, there are easier ways to get an `undefined` value 😀.
@@ -345,12 +347,18 @@ function someFunction() {
 console.log(someFunction() === globalThis);
 ```
 
-In this case, the value of `this` is the global object.
+In this case, the value of `this` is the same as `globalThis`.
+
+{% Aside %}
+Most folks (including me) call `globalThis` the global object, but this isn't 100% technically correct. Here's [Mathias Bynens with the details](https://mathiasbynens.be/notes/globalthis#terminology), including why it's called `globalThis` rather than simply `global`.
+{% endAside %}
 
 {% Aside 'warning' %}
-Avoid using `this` to reference the global object. Instead, use [`globalThis`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis), which is much more explicit.
+Avoid using `this` to reference the global (yes, I'm still calling it that). Instead, use [`globalThis`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis), which is much more explicit.
 {% endAside %}
 
 ## Phew!
 
 And that's it! That's everything I know about `this`. Any questions? Something I've missed? Feel free to [tweet at me](https://twitter.com/jaffathecake).
+
+Thanks to [Mathias Bynens](https://twitter.com/mathias) and [Ingvar Stepanyan](https://twitter.com/RReverser) for reviewing.
