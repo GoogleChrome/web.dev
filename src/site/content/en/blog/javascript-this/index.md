@@ -4,10 +4,10 @@ subhead: "Figuring out the value of `this` can be tricky in JavaScript, here's h
 description: "Figuring out the value of `this` can be tricky in JavaScript, here's how to do it…"
 authors:
   - jakearchibald
-date: 2021-02-22
+date: 2021-02-23
 # updated: 2021-02-19
-hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/TuciUuOQOd3u7uMgDZBi.jpg
-alt: A forest stream with colored fallen leaves.
+hero: image/CZmpGM8Eo1dFe0KNhEO9SGO8Ok23/cePCOGeXNFT6WCy85gb4.png
+alt: this 🤔
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - javascript
