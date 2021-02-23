@@ -13,8 +13,6 @@ tags:
   - javascript
 ---
 
-TODO: date & image
-
 JavaScript's `this` is the butt of many jokes, and that's because, well, it's pretty complicated. However, I've seen developers do much-more-complicated and domain-specific things to avoid dealing with this `this`. If you're unsure about `this`, hopefully this will help. This is my `this` guide.
 
 I'm going to start with the most specific situation, and end with the least-specific. This article is kinda like a big `if (…) … else if () … else if (…) …`, so you can go straight to the first section that matches the code you're looking at.
