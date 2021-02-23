@@ -1,5 +1,6 @@
 .app-bar {
   background-color: rgba($WHITE, 0.96);
+  display: flex;
   padding: 20px 24px;
 
   @include bp(md) {

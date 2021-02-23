@@ -24,11 +24,25 @@
 .course-content {
   grid-area: content;
   display: flex;
-  max-width: 1008px;
   margin-left: auto;
   margin-right: auto;
 }
 
+.course-content > main {
+  max-width: 768px;
+  margin: 0 36px 0;
+  padding: 0;
+}
+
 .course-toc {
+  // Since flex box elements default to stretch, all the elements are the same
+  // height, which can't be scrolled against. Adding align-self: flex-start to
+  // the sticky element set the height to auto, which allowed scrolling, and
+  // fixed it.
+  align-self: flex-start;
   order: 1;
+  position: sticky;
+  // The sticky top position needs to equal the height of the app-bar on
+  // desktop.
+  top: 64px;
 }

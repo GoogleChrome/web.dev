@@ -5,3 +5,12 @@
 .course-toc__list {
   list-style: none;
 }
+
+.course-toc__item {
+  font-size: 14px;
+  width: 240px;
+}
+
+.course-toc__item > a {
+  color: $GREY_700;
+}
