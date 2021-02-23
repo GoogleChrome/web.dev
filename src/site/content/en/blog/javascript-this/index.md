@@ -302,7 +302,7 @@ const $ = document.querySelector;
 const el = $('.some-element');
 ```
 
-This breaks because the implementation of `querySelector` looks it its own `this` value and expects it to be a DOM node of sorts, and the above breaks that connection. To achieve the above correctly:
+This breaks because the implementation of `querySelector` looks at its own `this` value and expects it to be a DOM node of sorts, and the above breaks that connection. To achieve the above correctly:
 
 ```js
 const $ = document.querySelector.bind(document);
