@@ -22,7 +22,7 @@ I'm going to start with the most specific situation, and end with the least-spec
 1. [If the function is defined as an arrow function](#arrow-functions)
 1. [Otherwise, if the function/class is called with `new`](#new)
 1. [Otherwise, if the function has a 'bound' `this` value](#bound)
-1. [Otherwise, if `this` is set all call-time](#call-apply)
+1. [Otherwise, if `this` is set at call-time](#call-apply)
 1. [Otherwise, if the function is called via a parent object (`parent.func()`)](#object-member)
 1. [Otherwise, if the function or parent scope is in strict mode](#strict)
 1. [Otherwise](#otherwise)
