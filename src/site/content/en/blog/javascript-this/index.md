@@ -359,4 +359,4 @@ Avoid using `this` to reference the global object (yes, I'm still calling it tha
 
 And that's it! That's everything I know about `this`. Any questions? Something I've missed? Feel free to [tweet at me](https://twitter.com/jaffathecake).
 
-Thanks to [Mathias Bynens](https://twitter.com/mathias) and [Ingvar Stepanyan](https://twitter.com/RReverser) for reviewing.
+Thanks to [Mathias Bynens](https://twitter.com/mathias), [Ingvar Stepanyan](https://twitter.com/RReverser), and [Thomas Steiner](https://twitter.com/tomayac) for reviewing.
