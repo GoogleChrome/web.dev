@@ -6,19 +6,22 @@
     'content';
   
   @include bp(md) {
-    grid-template-columns: minmax(auto, 350px) 3fr;
+    grid-template-columns: 360px minmax(0, 1fr);
     grid-template-areas:
       'nav app-bar'
       'nav content';
   }
+  // display: flex;
 }
 
 .course-nav {
   grid-area: nav;
+  background: pink;
 }
 
 .course-app-bar {
   grid-area: app-bar;
+  background-color: lightgreen;
 }
 
 .course-content {
@@ -26,23 +29,16 @@
   display: flex;
   margin-left: auto;
   margin-right: auto;
+  min-width: 0;
 }
 
 .course-content > main {
-  max-width: 768px;
+  flex-grow: 1;
+  min-width: 0;
   margin: 0 36px 0;
   padding: 0;
 }
 
 .course-toc {
-  // Since flex box elements default to stretch, all the elements are the same
-  // height, which can't be scrolled against. Adding align-self: flex-start to
-  // the sticky element set the height to auto, which allowed scrolling, and
-  // fixed it.
-  align-self: flex-start;
-  order: 1;
-  position: sticky;
-  // The sticky top position needs to equal the height of the app-bar on
-  // desktop.
-  top: 64px;
+  background-color: lightsalmon;
 }
