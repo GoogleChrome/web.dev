@@ -273,7 +273,7 @@ console.log(`The stream is ${locked ? 'indeed' : 'not'} locked.`);
 ### Readable stream code samples
 
 The code sample below shows all the steps in action. You first create a `ReadableStream` that in its
-`underlyingSource` argument (that is, the `TimestampSource` class) defines a `start` method
+`underlyingSource` argument (that is, the `TimestampSource` class) defines a `start()` method
 that tells the stream's `controller` to
 `enqueue()` a timestamp every second during ten seconds and then to `close()` the stream. You consume this
 stream by creating a reader via the `getReader()` method and calling `read()` until the stream is
