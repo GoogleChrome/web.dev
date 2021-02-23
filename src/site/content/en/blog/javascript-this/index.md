@@ -183,7 +183,7 @@ const boundObject = {hello: 'world'};
 const boundFunction = someFunction.bind(boundObject);
 ```
 
-Whenever `boundFunction` is called, its `this` value will be the object passed to `bind`, `{foo: 'bar'}`.
+Whenever `boundFunction` is called, its `this` value will be the object passed to `bind` (`boundObject`).
 
 ```js
 // Logs `false`:
