@@ -219,7 +219,7 @@ const obj = {boundFunction};
 console.log(obj.boundFunction() === boundObject);
 ```
 
-## Otherwise, if `this` is set all call-time: {: #call-apply }
+## Otherwise, if `this` is set at call-time: {: #call-apply }
 
 ```js
 function someFunction() {
