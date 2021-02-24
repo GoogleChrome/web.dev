@@ -47,7 +47,7 @@ menu.
 
 In addition, when the criteria is met, many browsers will fire a
 `beforeinstallprompt` event, allowing you to provide a custom in-app UX that
-that will trigger the install flow within your app.
+then will trigger the install flow within your app.
 
 ## Install criteria {: #criteria }
 
