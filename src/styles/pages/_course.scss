@@ -1,35 +1,37 @@
 .course-layout {
-  display: grid;
-  grid-template-areas:
-    'nav'
-    'app-bar'
-    'content';
-  
+  display: flex;
+  flex-direction: column;
   @include bp(md) {
-    grid-template-columns: 360px minmax(0, 1fr);
-    grid-template-areas:
-      'nav app-bar'
-      'nav content';
+    flex-direction: row;
   }
-  // display: flex;
 }
 
 .course-nav {
-  grid-area: nav;
-  background: pink;
+  background-color: pink;
+  @include bp(md) {
+    align-self: flex-start;
+    border-right: 1px solid $GREY_300;
+    flex: 0 0 360px;
+    padding: 24px 16px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+}
+
+.course-body {
+  flex: 1;
+  min-width: 0;
 }
 
 .course-app-bar {
-  grid-area: app-bar;
   background-color: lightgreen;
 }
 
 .course-content {
-  grid-area: content;
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  min-width: 0;
+  margin: 24px auto;
+  max-width: 1080px;
 }
 
 .course-content > main {
@@ -40,5 +42,34 @@
 }
 
 .course-toc {
-  background-color: lightsalmon;
+  display: none;
+  @include bp(lg) {
+    // Since flex box elements default to stretch, all the elements are the same
+    // height, which can't be scrolled against. Adding align-self: flex-start to
+    // the sticky element set the height to auto, which allowed scrolling, and
+    // fixed it.
+    // https://stackoverflow.com/questions/44446671/my-position-sticky-element-isnt-sticky-when-using-flexbox
+    align-self: flex-start;
+    background-color: lightsalmon;
+    display: block;
+    flex: 0 0 240px;
+    order: 1;
+    padding: 16px;
+    position: sticky;
+    // The sticky top position needs to equal the height of the app-bar on
+    // desktop + the top margin of the content element.
+    top: calc(64px + 24px);
+  }
+}
+
+.course-toc__list {
+  list-style: none;
+}
+
+.course-toc__item {
+  font-size: 14px;
+}
+
+.course-toc__item > a {
+  color: $GREY_700;
 }
