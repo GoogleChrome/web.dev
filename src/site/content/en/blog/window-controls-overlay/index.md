@@ -4,7 +4,7 @@ title:
 subhead:
 authors:
   - thomassteiner
-date: 2021-02-16
+date: 2021-02-24
 description: |
 
 hero: hero.jpg
@@ -16,12 +16,18 @@ tags:
 
 If you remember my article [Make your PWA feel more like an app](/app-like-pwas/), you may recall
 how I mentioned [customizing the title bar of your app](/app-like-pwas/#customized-title-bar) as a
-strategy for creating a more app-like experience. Here is an example showing the macOS Podcasts app
-for how this can look like.
+strategy for creating a more app-like experience. Here is an example of how this can look like
+showing the macOS Podcasts app.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/o5gZ3GSKyUZOPhFxX7js.png", alt="macOS Podcasts app title bar showing media control buttons and metadata about the currently playing podcast.", width="800", height="63" %}
 
-The Window Controls Overlay feature lets you create a similar user interface for your PWA.
+Now you may be tempted to object by saying that Podcasts is a platform-specific macOS app
+that does not run in a browser and therefore does not have to play by its rules.
+True, but the good news is that the Window Controls Overlay feature, which is the topic of this
+very article, soon lets you create similar user interfaces for your PWA.
+
+## Window Controls Overlay components
+
 Window Controls Overlay consists of four sub-features:
 
 1. The new `"window-controls-overlay"` value for the [`display_override`](/display-override/) field
@@ -30,17 +36,46 @@ Window Controls Overlay consists of four sub-features:
    `windowControlsOverlay` member of `window.navigator`.
 1. The new CSS environment variables `titlebar-area-inset-left`, `titlebar-area-inset-right`,
    `titlebar-area-inset-top`, and `titlebar-area-inset-bottom`.
-1. The standardization of the previously proprietary CSS property `-webkit-app-region` as
-   `app-region` to define draggable regions in web content.
+1. The standardization of the previously proprietary CSS property `-webkit-app-region` as the new
+   `app-region` property to define draggable regions in web content.
 
 ## What is Window Controls Overlay
 
-The title bar area refers to the space to the left or right of the window controls (minimize,
-maximize, close, etc.) and often contains the title of the application.
-This proposed feature enables developers to create Progressive Web Applications (PWAs) with an
-app-like feel by swapping the existing full-width title bar for a small overlay containing the
+The title bar area refers to the space to the left or right of the window controls (that is, the
+buttons to minimize, maximize, close, etc.) and often contains the title of the application.
+Window Controls Overlay lets Progressive Web Applications (PWAs)
+provide a more app-like feel by swapping the existing full-width title bar for a small overlay containing the
 window controls. This allows developers to place custom content in what was previously the
 browser-controlled title bar area.
+
+## Current status {: #status }
+
+<div class="w-table-wrapper">
+
+| Step                                       | Status                       |
+| ------------------------------------------ | ---------------------------- |
+| 1. Create explainer                        | [Complete][explainer]        |
+| 2. Create initial draft of specification   | [In Progress][spec]          |
+| 3. Gather feedback & iterate on design     | [In progress](#feedback)     |
+| 4. Origin trial                            | Not started                  |
+| 5. Launch                                  | Not started                  |
+
+</div>
+
+### Enabling via chrome://flags
+
+To experiment with Window Controls Overlay locally, without an origin trial token, enable the `#TODO` flag in `chrome://flags`.
+
+### Enabling support during the origin trial phase
+
+Starting in Chrome XX, Window Controls Overlay will be available as an origin trial in Chrome. The origin trial is expected to end in Chrome XX (TODO exact date).
+
+{% include 'content/origin-trials.njk' %}
+
+### Register for the origin trial {: #register-for-ot }
+
+{% include 'content/origin-trial-register.njk' %}
+
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/stdHUeVy2g3pCQ56iMUn.png", alt="ALT_TEXT_HERE", width="619", height="208" %}
 
@@ -50,22 +85,29 @@ browser-controlled title bar area.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/b92OE7aYzyNQfQdsIxdj.png", alt="ALT_TEXT_HERE", width="800", height="241" %}
 
-<!--
-A progressive web app can opt-in to the window controls overlay by adding window-controls-overlay as the primary display_override member in the manifest.
+## How to use Window Controls Overlay
+
+### Adding `window-controls-overlay` to the Web App Manifest
+
+A progressive web app can opt-in to the window controls overlay by adding `window-controls-overlay`
+as the primary display_override member in the manifest.
 The window controls overlay will be visible only when all the following are satisfied:
-Opened in a PWA (not the browser)
-Manifest includes “display_override”: [“window-controls-overlay”, ...]
-PWA is not running on Android or iOS
-The current origin matches the origin for which the PWA was installed
 
+1. The app is _not_ opened in the browser, but in a separate PWA window.
+1. The manifest includes `"display_override": ["window-controls-overlay"]"`.
+   (Other values are allowed thereafter.)
+1. The PWA is running on a desktop operating system.
+1. The current origin matches the origin for which the PWA was installed.
 
-navigating to a different origin within the PWA will cause it to fall back to the normal standalone title bar, even if it meets the above criteria and is launched with the window controls overlay. This is to accommodate the black bar that appears on navigation to a different origin. After navigating back to the original origin, the window controls overlay will be used again.
+### Querying the window controls region with `windowControlsOverlay`
 
 query the bounding rects and visibility of the UA provided window controls region which will overlay into the web content area through a new object on the window.navigator property called windowControlsOverlay with two members:
 navigator.windowControlsOverlay.getBoundingClientRect(): returns a DOMRect that represents the area under the window controls overlay, or an empty rect if not visible. Interactive web content should not be displayed beneath the overlay
 navigator.windowControlsOverlay.visible: a boolean to determine if the window controls overlay has been rendered
 When the overlay changes size, position, or visibility, a geometrychange event will be fired against the windowControlsOverlay object to notify the application that it should update to accommodate the changes.
 For security and privacy, this information will only be exposed to the top-level frame. All sub-frames will see visible returns false and getBoundingClientRect() returns an empty rect.
+
+### Using environment variables to describe the window controls region
 
 CSS environment variables will be added to describe the window controls overlay area:
 env(titlebar-area-inset-top)
@@ -74,10 +116,12 @@ env(titlebar-area-inset-left)
 env(titlebar-area-inset-right)
 These variables will only be exposed to the top-level frame and will be undefined for all sub-frames.
 
+### Standardizing `-webkit-app-region` as `app-region`
+
 The existing CSS property -webkit-app-region which defines draggable regions in web content will be standardized to app-region and enabled in the top-level frame of PWAs that satisfy the criteria specified in 2.1.1.
 By default, the frameless window is non-draggable. Apps need to specify -webkit-app-region: drag in CSS to tell Electron which regions are draggable (like the OS's standard titlebar), and apps can also use -webkit-app-region: no-drag to exclude the non-draggable area from the draggable region. Note that only rectangular shapes are currently supported.
 
-
+```json
 {
   "name": "Example PWA",
   "display": "standalone",
@@ -86,8 +130,9 @@ By default, the frameless window is non-draggable. Apps need to specify -webkit-
   ],
   "theme_color": "#254B85"
 }
+```
 
-
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -108,7 +153,9 @@ By default, the frameless window is non-draggable. Apps need to specify -webkit-
     <div id="mainContent"></div>
   </body>
 </html>
+```
 
+```css
 :root {
   --fallback-title-bar-height: 40px;
 }
@@ -171,7 +218,7 @@ body {
               calc(100% - var(--fallback-title-bar-height)));
   overflow-y: scroll;
 }
-
+```
 
 In style.css, The draggable regions are set using app-region: drag and app-region: no-drag.
 On the body, margins are set to 0 to ensure the title bar reaches to the edges of the window.
@@ -191,11 +238,50 @@ For RTL configured browsers, there must be enough padding to the right of the or
 Enabling the window controls overlay and draggable regions do not pose considerable privacy concerns other than feature detection. However, due to differing sizes and positions of the window control buttons across operating systems, the JavaScript API for navigator.windowControlsOverlay.getBoundingClientRect() will return a rect whose position and dimensions will reveal information about the operating system upon which the browser is running. Currently, developers can already discover the OS from the user agent string, but due to fingerprinting concerns there is discussion about freezing the UA string and unifying OS versions. We would like to work with the community to understand how frequently the size of the window controls overlay changes across platforms, as we believe that these are fairly stable across OS versions and thus would not be useful for observing minor OS versions.
 Although this is a potential fingerprinting issue, it only applies to installed PWAs that use the custom title bar feature and does not apply to general browser usage. Additionally, the windowControlsOverlay API will not be available to iframes embedded inside of a PWA.
 
--->
+Navigating to a different origin within the PWA will cause it to fall back to the normal standalone title bar, even if it meets the above criteria and is launched with the window controls overlay. This is to accommodate the black bar that appears on navigation to a different origin. After navigating back to the original origin, the window controls overlay will be used again.
 
-## Useful links
+## Security and permissions
+
+The Chrome team has designed and implemented the API_NAME API using the core principles defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user control, transparency, and ergonomics.
+
+### User control
+
+TODO: How does a user enable or disable this API? Will they be prompted for permission before it's enabled? Is it on by default, can they turn it off?
+
+### Transparency
+
+TODO: Is there any indication that the API is in use? Is there an icon in the address bar, or tab? How does a user know that the site is using the API?
+
+### Permission persistence
+TODO: Is the permission persisted between visits? Or when they come back, do they need to give permission again?
+
+## Feedback {: #feedback }
+
+The Chrome team wants to hear about your experiences with the API_NAME API.
+
+### Tell us about the API design
+
+Is there something about the API that doesn't work like you expected? Or are there missing methods or properties that you need to implement your idea? Have a question or comment on the security model?
+File a spec issue on the corresponding [GitHub repo][issues], or add your thoughts to an existing issue.
+
+### Report a problem with the implementation
+
+Did you find a bug with Chrome's implementation? Or is the implementation different from the spec?
+File a bug at [new.crbug.com](https://new.crbug.com). Be sure to include as much detail as you can, simple instructions for reproducing, and enter `TODO` in the **Components** box. [Glitch](https://glitch.com/) works great for sharing quick and easy repros.
+
+### Show support for the API
+
+Are you planning to use the API_NAME API? Your public support helps the Chrome team to prioritize features and shows other browser vendors how critical it is to support them.
+
+Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
+Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the [`#WindowControlsOverlay`](https://twitter.com/search?q=%23WindowControlsOverlay&src=recent_search_click&f=live) hashtag and let us know where and how you're using it.
+
+## Helpful links {: #helpful }
 
 - [Explainer](https://github.com/WICG/window-controls-overlay/blob/master/explainer.md)
 - [Chromium bug](https://crbug.com/937121)
 - [Chrome Platform Status entry](https://chromestatus.com/feature/5741247866077184)
 - [TAG review](https://github.com/w3ctag/design-reviews/issues/481)
+
+## Acknowledgements
+
