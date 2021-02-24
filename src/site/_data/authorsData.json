@@ -1891,5 +1891,32 @@
       "unit": "Cloud"
     },
     "image": "image/admin/ljpewM8syhxW7SBleO58.jpg"
+  },
+  "sisidovski": {
+    "name": {
+      "given": "Shunya",
+      "family": "Shishido"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "descriptions": {
+      "en": "Web Ecosystem Consultant"
+    },
+    "country": "JP",
+    "github": "sisidovski",
+    "twitter": "sisidovski",
+    "homepage": "https://sisidov.ski/"
+  },
+  "gladenjoy": {
+    "name": {
+      "given": "Tomoki",
+      "family": "Kiraku"
+    },
+    "org": {
+      "name": "Yahoo Japan Corporation"
+    },
+    "country": "JP",
+    "twitter": "gladenjoy"
   }
 }
