@@ -9,7 +9,7 @@ authors:
   - joemedley
   - jeffposnick
 date: 2019-12-19
-hero: hero2.jpg
+hero: image/admin/Cos9WFMqJGVZjBdQHcMU.jpg
 alt: Two pairs of hands holding a cup of tomatoes.
 tags:
   - blog

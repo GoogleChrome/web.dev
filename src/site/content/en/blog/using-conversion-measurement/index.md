@@ -3,7 +3,7 @@ title: Using the Event Conversion Measurement API
 subhead: Must-dos and tips to use the Event Conversion Measurement API.
 authors:
   - maudn
-hero: hero.jpg
+hero: image/admin/fyXjSb1sdmnCw3SoXUs2.jpg
 date: 2020-11-12
 updated: 2020-02-10
 tags:

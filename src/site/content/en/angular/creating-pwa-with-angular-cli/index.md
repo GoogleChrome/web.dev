@@ -3,7 +3,7 @@ layout: post
 title: "Create a Progressive Web App with the Angular CLI"
 subhead: |
   You want to make your Angular app installable? Wait no more!
-hero: installable.jpg
+hero: image/admin/8lEoUW3i1nEU1q10N1YK.jpg
 alt: Network cables.
 date: 2019-08-15
 description: |

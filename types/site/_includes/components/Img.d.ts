@@ -16,15 +16,39 @@
 
 declare global {
   export interface ImgArgs {
+    /**
+     * Pathname of image hosted by Imigix.
+     */
     src: string;
+    /**
+     * Defines an alternative text description of the image.
+     */
     alt: string;
+    /**
+     * The intrinsic width of the image in pixels. Must be an integer without a unit.
+     */
     width: string;
+    /**
+     * The intrinsic height of the image, in pixels. Must be an integer without a unit.
+     */
     height: string;
+    /**
+     * One or more strings separated by commas, indicating a set of source sizes. If value is not provided one is generated dynamically.
+     */
     sizes?: string;
+    /**
+     * Flag to dictate if loading of image is deffered until it reaches a calulated distance from the viewport. `true` by default.
+     */
     lazy?: boolean;
-    className?: string;
+    /**
+     * A space-separated list of the classes of the element.
+     */
+    class?: string;
     params?: object;
     options?: ImgixOptions;
+    /**
+     * Flag to wrap image in `a` tag pointing to the image. `false` by default.
+     */
     linkTo?: boolean;
   }
 

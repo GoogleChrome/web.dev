@@ -5,7 +5,7 @@ authors:
   - jeffposnick
 date: 2019-07-18
 description: stale-while-revalidate helps developers balance between immediacy—loading cached content right away—and freshness—ensuring updates to the cached content are used in the future.
-hero: hero.jpg
+hero: image/admin/skgQgcT3q8fdBGGNL3o1.jpg
 alt: A photograph of a half-painted wall.
 tags:
   - blog

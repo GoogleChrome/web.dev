@@ -10,7 +10,7 @@ description: |
 authors:
   - samthor
 date: 2020-12-11
-hero: hero.jpg
+hero: image/admin/VKYTBR0Ri5I7Jz7Ob2Fa.jpg
 alt: Overhead power line for a train with a number "2"
 tags:
   - blog

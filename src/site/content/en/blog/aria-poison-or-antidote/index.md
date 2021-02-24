@@ -11,7 +11,7 @@ description: |
 tags:
   - blog
   - accessibility
-hero: hero.jpg
+hero: image/admin/avB7jubYxhJr1dHQzl6c.jpg
 alt: >
   Man lying on the floor covered in post-it notes with empty checkboxes and messages 
   such as off line, overthink, $, chill, take a break, and zzzz. 

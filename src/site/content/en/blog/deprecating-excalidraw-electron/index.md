@@ -14,7 +14,7 @@ authors:
 date: 2021-01-07
 updated: 2021-01-27
 canonical: https://blog.excalidraw.com/deprecating-excalidraw-electron/
-hero: hero.jpg
+hero: image/admin/qfK9zbKBQalqq5zdr1P1.jpg
 alt: |
   Excalidraw drawing with a stylized Electron logo.
 tags:
@@ -113,13 +113,13 @@ Excalidraw Desktop so far is basically the Excalidraw web app bundled as an
 and feel of the application is almost identical to the web version.
 
 <figure class="w-figure">
-  <img src="excalidraw-desktop.png" alt="The Excalidraw Desktop application running in an Electron wrapper.">
+  {% Img src="image/admin/oR9usELiRYTSu8V7i7vj.png", alt="The Excalidraw Desktop application running in an Electron wrapper.", width="800", height="601" %}
   <figcaption class="w-figcaption">Excalidraw Desktop is almost indistinguishable from the web version</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img src="about-excalidraw.png" width="400" alt="The Excalidraw Desktop 'About' window displaying the version of the Electron wrapper and the web app.">
-  <figcaption class="w-figcaption">The <strong>About Excalidraw</strong> menu providing insights into the versions</figcaption>
+  {% Img src="image/admin/y9d4nWR3p0VjvHcnP0iq.png", alt="The Excalidraw Desktop 'About' window displaying the version of the Electron wrapper and the web app.", width="400", height="330" %}
+  <figcaption class="w-figcaption">The <strong>About Excalibur</strong> menu providing insights into the versions</figcaption>
 </figure>
 
 On macOS, there is now a system-level menu at the top of the application, but since none of the menu
@@ -128,7 +128,7 @@ is, in its current state, pretty useless. Meanwhile, all actions can of course b
 regular Excalidraw toolbars and the context menu.
 
 <figure class="w-figure">
-  <img src="menu.png" alt="The Excalidraw Desktop menu bar on macOS with the 'File', 'Close Window' menu item selected.">
+  {% Img src="image/admin/akQQgmMKo66quqeVDdAH.png", alt="The Excalidraw Desktop menu bar on macOS with the 'File', 'Close Window' menu item selected.", width="736", height="138" %}
   <figcaption class="w-figcaption">The menu bar of Excalidraw Desktop on macOS</figcaption>
 </figure>
 
@@ -178,7 +178,7 @@ Excalidraw today is an [installable](/installable/) Progressive Web App with a
 one for fonts and font-related CSS, and one for everything else.
 
 <figure class="w-figure">
-  <img src="excalidraw-cache.png" alt="Chrome DevTools Application tab showing the two Excalidraw caches.">
+  {% Img src="image/admin/tTo7miHIREZRySv8aoBd.png", alt="Chrome DevTools Application tab showing the two Excalidraw caches.", width="800", height="569" %}
   <figcaption class="w-figcaption">Excalidraw's cache contents</figcaption>
 </figure>
 
@@ -187,7 +187,7 @@ Chromium-based browsers on both desktop and mobile prompt the user to install th
 You can see the installation prompt in the screenshot below.
 
 <figure class="w-figure">
-  <img src="install-excalidraw.png" width="400" alt="Excalidraw prompting the user to install the app in Chrome on macOS.">
+  {% Img src="image/admin/be3EQLezj3776w6SHLPi.png", alt="Excalidraw prompting the user to install the app in Chrome on macOS.", width="400", height="258" %}
   <figcaption class="w-figcaption">The Excalidraw install dialog in Chrome</figcaption>
 </figure>
 
@@ -197,12 +197,12 @@ gets its own app icon on the home screen, Dock, or task bar; depending on the pl
 it.
 
 <figure class="w-figure">
-  <img src="excalidraw-pwa.png" alt="Excalidraw running in its own window.">
+  {% Img src="image/admin/MbMgQlGSBeNcX7Y362jV.png", alt="Excalidraw running in its own window.", width="800", height="584" %}
   <figcaption class="w-figcaption">The Excalidraw PWA in a standalone window</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img src="excalidraw-icon.png" width="400" alt="Excalidraw icon on the macOS Dock.">
+  {% Img src="image/admin/7ncf98ZQZcg4g3UP2s7F.png", alt="Excalidraw icon on the macOS Dock.", width="400", height="167" %}
   <figcaption class="w-figcaption">The Excalidraw icon on the macOS Dock</figcaption>
 </figure>
 
@@ -229,7 +229,7 @@ an easy integration with other platform-specific tools like [Inkscape](https://i
 tools like [SVGOMG](https://jakearchibald.github.io/svgomg/).
 
 <figure class="w-figure">
-  <img src="clipboard.png" alt="Excalidraw context menu showing the 'copy to clipboard as SVG' and 'copy to clipboard as PNG' menu items.">
+  {% Img src="image/admin/90gLbYTtkKtDfun4fiRM.png", alt="Excalidraw context menu showing the 'copy to clipboard as SVG' and 'copy to clipboard as PNG' menu items.", width="800", height="746" %}
   <figcaption class="w-figcaption">The Excalidraw context menu offering clipboard actions</figcaption>
 </figure>
 

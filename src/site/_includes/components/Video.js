@@ -42,7 +42,7 @@ const Video = (args) => {
   } = args;
 
   return html`<video
-    ${autoplay ? 'autoplay' : ''}
+    ${autoplay ? 'autoplay playsinline' : ''}
     ${autoPictureInPicture ? 'autoPictureInPicture' : ''}
     ${className ? `class="${className}"` : ''}
     controls

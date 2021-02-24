@@ -5,7 +5,7 @@ authors:
   - katiehempenius
 date: 2020-05-27
 updated: 2020-05-27
-hero: hero.png
+hero: image/admin/QxMJKZcue9RS5u05XxTE.png
 alt: Monthly graph overlayed with stopwatches labeled LCP, FID, and CLS.
 description: |
   Learn how to measure your site's Web Vitals in both real-world and lab environments.

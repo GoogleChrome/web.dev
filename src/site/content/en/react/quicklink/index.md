@@ -4,7 +4,7 @@ title: Speed up navigations in React with Quicklink
 subhead: |
   Automatically prefetch in-viewport links with quicklink for React single page applications.
 date: 2020-06-08
-hero: hero.png
+hero: image/admin/S4BkwUJKPdL9ijtgtEJA.png
 description: |
   quicklink is a library to achieve faster subsequent page-loads by prefetching in-viewport links during idle time.
 authors:

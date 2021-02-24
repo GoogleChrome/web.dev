@@ -5,7 +5,7 @@ authors:
   - lwe
 date: 2020-06-04
 updated: 2020-06-10
-hero: hero.jpg
+hero: image/admin/El8ytnIgMDWVzdsglcfv.jpg
 alt: A screenshot of Python code related to Resource Isolation Policy.
 description: |
   Fetch Metadata is a new web platform feature designed to allow servers to protect themselves from cross-origin attacks.
@@ -63,7 +63,7 @@ Malicious cross-site requests can be rejected by the server because of the addit
 {% endCompareCaption %}
 
 <!--lint disable no-literal-urls-->
-{% Img src="image/admin/xY4yB36JqsVw62wNMIWt.png", alt="An image on https://evil.example that has set the src attribute of an img element to '//site.example/foo.json' causes the browser to send the HTTP request header 'Sec-Fetch-Site: cross-site'.", width="800", height="171" %}
+{% Img src="image/admin/xY4yB36JqsVw62wNMIWt.png", alt="An image on https://evil.example that has set the src attribute of an img element to 'https://site.example/foo.json' causes the browser to send the HTTP request header 'Sec-Fetch-Site: cross-site'.", width="800", height="171" %}
 <!--lint enable no-literal-urls-->
 
 {% endCompare %}

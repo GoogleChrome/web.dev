@@ -7,7 +7,7 @@ subhead: |
 authors:
   - katiehempenius
 date: 2020-10-14
-hero: hero.jpg
+hero: image/admin/6ll3P8MYWxvtb1ZjXIzb.jpg
 alt: A pile of envelopes.
 description: |
   An SXG is a delivery mechanism that makes it possible to authenticate the

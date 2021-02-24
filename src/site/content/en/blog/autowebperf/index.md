@@ -10,8 +10,8 @@ authors:
   - jonchen
   - gilbertococchi
   - antoinebisch
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+hero: image/admin/XEdZ5JBzgWLES21OvPjE.jpg
+thumbnail: image/admin/I9vVFD2ldSQc9vBfTc3i.jpg
 tags:
   - blog
   - performance

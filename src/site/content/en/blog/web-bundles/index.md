@@ -3,7 +3,7 @@ title: Get started with Web Bundles
 subhead: |
   Share websites as a single file over Bluetooth and run them offline in your origin's context
 date: 2019-11-11
-hero: hero.png
+hero: image/admin/Z9ZE5FjAFT4R6eOaCWPl.png
 alt: The Web Bundle logo
 authors:
   - uskay

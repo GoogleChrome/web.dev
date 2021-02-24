@@ -4,7 +4,7 @@ subhead: Building games for the modern web.
 authors:
   - tomgreenaway
 date: 2019-08-21
-hero: hero.jpg
+hero: image/admin/d14lKdJ4iYwr1wI8AgA3.jpg
 hero_position: center
 hero_fit: contain
 alt: Game design, business and tools for modern web games.

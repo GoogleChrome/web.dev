@@ -3,7 +3,7 @@ layout: post
 title: 'Precaching with the Angular service worker'
 subhead: |
   Use the Angular service worker to make your app faster and more reliable on networks with poor connectivity.
-hero: precaching-with-the-angular-service-worker.jpg
+hero: image/admin/r1NlrtasqQuMo11wlSva.jpg
 alt: Sparks flying off a metal grinder.
 date: 2019-07-02
 description: |

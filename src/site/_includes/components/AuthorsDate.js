@@ -21,6 +21,7 @@
  */
 
 const {html} = require('common-tags');
+const {Img} = require('./Img');
 const authorsCollectionFn = require('../../_collections/authors');
 const prettyDate = require('../../_filters/pretty-date');
 
@@ -41,18 +42,18 @@ const renderAuthorImages = (limit, pairs) => {
   }
 
   const inner = pairs
-    .map(({id, info}) => {
+    .map(({info}) => {
+      const img = Img({
+        src: info.image,
+        alt: info.title,
+        width: '40',
+        height: '40',
+        class: 'w-author__image w-author__image--small',
+      });
       return html`
         <div class="w-author__image--row-item">
           <a href="${info.href}">
-            <img
-              class="w-author__image w-author__image--small"
-              src="/images/authors/${id}.jpg"
-              alt="${info.title}"
-              width="40"
-              height="40"
-              loading="lazy"
-            />
+            ${img}
           </a>
         </div>
       `;

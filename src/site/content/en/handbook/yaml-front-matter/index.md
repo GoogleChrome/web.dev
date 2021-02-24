@@ -159,7 +159,7 @@ glitch: gif-to-video
 ```yaml
 ---
 …
-hero: hero.jpg
+hero: image/admin/tyBs8QP5pbMVpY3yp1dM.jpg
 …
 ---
 ```
@@ -298,7 +298,7 @@ Make sure tags added to the page are listed in
 ```yaml
 ---
 …
-thumbnail: thumbnail.jpg
+thumbnail: image/admin/mYe7bng2PtwB9ohv8vYa.jpg
 …
 ---
 ```

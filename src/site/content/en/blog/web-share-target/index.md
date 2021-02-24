@@ -6,7 +6,7 @@ authors:
   - joemedley
 date: 2019-11-08
 updated: 2020-02-09
-hero: hero.png
+hero: image/admin/RfxdrfKdh5Fp8camulRt.png
 alt: An illustration demonstrating that platform-specific apps can now share content with web apps.
 description: |
   On a mobile device, sharing should be as simple as clicking the Share button,

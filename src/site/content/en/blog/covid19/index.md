@@ -8,7 +8,7 @@ description: >
   available, accessible, secure, usable, discoverable, and fast.
 date: 2020-04-03
 updated: 2020-04-06
-hero: hero.jpg
+hero: image/admin/LH3VwpI4GW1lW51Ns5ab.jpg
 tags:
   - blog
   - accessibility

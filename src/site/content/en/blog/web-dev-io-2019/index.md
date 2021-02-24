@@ -2,7 +2,7 @@
 title: web.dev at I/O 2019
 subhead: New look. New docs. New blog!
 date: 2019-05-04
-hero: hero.jpg
+hero: image/admin/fQkZjpeFbi9CZ9xHlsdu.jpg
 alt: A group of colorful hot air balloons launching into the sky.
 description: |
   For Google I/O 2019, the folks on the web.dev team have shipped a number of

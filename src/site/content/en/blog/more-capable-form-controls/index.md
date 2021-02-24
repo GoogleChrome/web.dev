@@ -4,7 +4,7 @@ subhead: With a new event, and custom elements APIs, participating in forms just
 authors:
   - arthurevans
 date: 2019-08-08
-hero: hero.jpg
+hero: image/admin/53I7AEmEaedcAo6hOlBK.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom

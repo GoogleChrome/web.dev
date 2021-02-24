@@ -5,7 +5,7 @@ subhead: Challenges and workarounds for building Progressive Web Apps in multi-o
 authors:
   - demianrenzulli
 date: 2019-08-19
-hero: hero.jpg
+hero: image/admin/4bvbhJ3F0uGKvw5DLTMy.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom

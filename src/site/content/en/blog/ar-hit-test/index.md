@@ -5,7 +5,7 @@ authors:
   - joemedley
 date: 2020-02-13
 updated: 2020-06-04
-hero: hero.jpg
+hero: image/admin/7wUhOX8bWoohQObJO6lL.jpg
 alt: A virtual object in a real-world view.
 description:
   The WebXR Hit Test API is an enhancement to the web's augmented reality that

@@ -1,6 +1,6 @@
 ---
 title: Building a device for WebUSB
-subhead: | 
+subhead: |
   Build a device to take full advantage of the WebUSB API.
 authors:
   - reillyg
@@ -387,7 +387,7 @@ landing page URL that the browser can direct the user to when your device is
 plugged in.
 
 <figure class="w-figure">
-  <img src="./notification.png" class="w-screenshot" alt="Screenshot of the WebUSB notification in Chrome">
+  {% Img src="image/admin/KBZaQNlDcishHiu3XkPU.png", alt="Screenshot of the WebUSB notification in Chrome", width="800", height="450", class="w-screenshot" %}
   <figcaption class="w-figcaption">WebUSB notification.</figcaption>
 </figure>
 
@@ -740,7 +740,7 @@ normally be included in the INF file.
 Once you have WebUSB descriptors set up it is easy to add Microsoft's OS
 compatibility descriptors as well. First extend the BOS descriptor with this
 additional platform capability descriptor. Make sure to update `wTotalLength`
-and `bNumDeviceCaps` to account for it. 
+and `bNumDeviceCaps` to account for it.
 
 <div class="w-table-wrapper">
   <table>

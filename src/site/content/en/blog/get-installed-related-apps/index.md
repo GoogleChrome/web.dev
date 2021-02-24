@@ -14,7 +14,7 @@ updated: 2021-02-09
 tags:
   - blog
   - capabilities
-hero: hero.jpg
+hero: image/admin/v9t93rXITPqFe3L0qlTN.jpg
 alt: mobile device with app panel open
 feedback:
   - api

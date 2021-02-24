@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Accessibility auditing with react-axe and eslint-plugin-jsx-a11y
-hero: hero-accessibility-auditing-react.jpg
+hero: image/admin/CYDdWUK4iah3Xe8yEfoR.jpg
 subhead: |
   Your React site is not progressive if it's not accessible. Auditing during development can help you spot any issues.
 date: 2019-04-29

@@ -5,7 +5,7 @@ subhead: Understand why performance matters when it comes to conversion.
 authors:
   - martinschierle
 date: 2019-05-05
-hero: hero.jpg
+hero: image/admin/1bX6ydHTmi5UrEFx3PDc.jpg
 alt: Image of laptop with mouse pointing to checkout button on a web page
 description: |
   Learn what impact website performance has on different parts of the e-commerce funnel
