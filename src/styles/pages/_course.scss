@@ -37,7 +37,7 @@
 .course-content > main {
   flex-grow: 1;
   min-width: 0;
-  margin: 0 36px 0;
+  margin: 0 36px;
   padding: 0;
 }
 
@@ -72,4 +72,23 @@
 
 .course-toc__item > a {
   color: $GREY_700;
+}
+
+.course-pagination {
+  display: flex;
+}
+
+.course-pagination-control {
+  border-top: 1px solid $GREY_300;
+  display: block;
+  padding: 24px;
+
+  &:first-of-type {
+    flex: 4;
+    border-right: 1px solid $GREY_300;
+  }
+
+  &:last-of-type  {
+    flex: 6;
+  }
 }

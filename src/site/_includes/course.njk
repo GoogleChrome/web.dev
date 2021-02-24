@@ -7,12 +7,11 @@ layout: base
 <div class="course-layout">
   <nav class="course-nav" aria-label="primary navigation">
     <ul>
-      <li>
-        <a href="#">Introduction</a>
-      </li>
-      <li>
-        <a href="#">Flexbox</a>
-      </li>
+      {% for i in range(0, 10) -%}
+        <li>
+          <a href="#">Flexbox</a>
+        </li>
+      {%- endfor %}
     </ul>
   </nav>
 
@@ -58,5 +57,16 @@ layout: base
         {{ content | safe }}
       </main>
     </div>
+
+    <nav class="course-pagination" aria-label="pagination">
+      <a href="#" class="course-pagination-control">
+        Introduction
+      </a>
+      <a href="#" class="course-pagination-control">
+        Selectors
+      </a>
+    </nav>
+
+    {% include 'partials/footer.njk' %}
   </div>
 </div>

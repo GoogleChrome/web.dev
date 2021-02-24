@@ -1,4 +1,5 @@
 ---
+permalink: false
 layout: course
 title: Ten modern layouts in one line of CSS
 subhead: This post highlights a few powerful lines of CSS that do some serious heavy lifting and help you build robust modern layouts.
