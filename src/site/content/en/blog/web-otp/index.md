@@ -426,7 +426,7 @@ Did you find a bug with Chrome's implementation?
 
 Are you planning to use the Web OTP API? Your public support helps us prioritize
 features, and shows other browser vendors how critical it is to support them.
-Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with the hashtag
+Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
 [`#WebOTP`](https://twitter.com/search?q=%23WebOTP&src=typed_query&f=live)
 and let us know where and how you're using it.
 

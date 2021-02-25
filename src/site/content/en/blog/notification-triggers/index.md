@@ -240,7 +240,7 @@ for sharing quick and easy bug reproductions.
 
 Planning to use Notification Triggers on your site? Your public support helps us to prioritize
 features and shows other browser vendors how critical it is to support them. Send a tweet to
-[@ChromiumDev](https://twitter.com/chromiumdev) with the hashtag
+[@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
 [`#NotificationTriggers`](https://twitter.com/search?q=%23NotificationTriggers&src=typed_query&f=live)
 and let us know where and how you're using it.
 

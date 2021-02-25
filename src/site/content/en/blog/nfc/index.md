@@ -779,7 +779,7 @@ Are you planning to use Web NFC? Your public support helps the Chrome team
 prioritize features and shows other browser vendors how critical it is to
 support them.
 
-Send a tweet to [@ChromiumDev][cr-dev-twitter] with the hashtag
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
 [`#WebNFC`](https://twitter.com/search?q=%23WebNFC&src=typed_query&f=live)
 and let us know where and how you're using it.
 

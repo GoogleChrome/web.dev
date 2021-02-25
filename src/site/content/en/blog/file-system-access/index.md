@@ -583,8 +583,8 @@ Did you find a bug with Chrome's implementation? Or is the implementation differ
 Planning to use the File System Access API on your site? Your public support helps us to prioritize
 features, and shows other browser vendors how critical it is to support them.
 
-- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
-- Send a tweet to [@ChromiumDev][cr-dev-twitter] with hashtag
+- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
+- Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
   [`#FileSystemAccess`](https://twitter.com/search?q=%23FileSystemAccess&src=typed_query&f=live)
   and let us know where and how you're using it.
 

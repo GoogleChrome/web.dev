@@ -324,7 +324,7 @@ File a bug at [https://new.crbug.com](https://new.crbug.com). Include as much de
 Your public support helps Chrome prioritize features, and shows other browser vendors how critical it is to support them.
 
 - Be sure you have signed up for the [origin trial](https://developers.chrome.com/origintrials/#/view_trial/-6744140441987317759) to show your interest and provide your domain and contact info.
-- Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with the hashtag
+- Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
   [`#WebTransport`](https://twitter.com/search?q=%23WebTransport&src=typed_query&f=live)
   and details on where and how you're using it.
 

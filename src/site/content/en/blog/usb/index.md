@@ -332,7 +332,9 @@ of an INF file.
 - WICG Mailing list: [https://lists.w3.org/Archives/Public/public-wicg/](https://lists.w3.org/Archives/Public/public-wicg/)
 - WebLight project: [https://github.com/sowbug/weblight](https://github.com/sowbug/weblight)
 
-Please share your WebUSB demos with the [#webusb] hashtag.
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebUSB`](https://twitter.com/search?q=%23WebUSB&src=typed_query&f=live)
+and let us know where and how you're using it.
 
 ## Acknowledgements
 

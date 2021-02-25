@@ -259,10 +259,10 @@ simple instructions for reproducing, and enter `Blink>Input` in the **Components
 Are you planning to use the Idle Detection API? Your public support helps the Chrome team to
 prioritize features and shows other browser vendors how critical it is to support them.
 
-Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
-Send a tweet to [@ChromiumDev][cr-dev-twitter] with the
-[`#IdleDetection`](https://twitter.com/search?q=%23IdleDetection&src=typed_query&f=live) hashtag
-and let us know where and how you're using it.
+- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
+- Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+  [`#IdleDetection`](https://twitter.com/search?q=%23IdleDetection&src=typed_query&f=live)
+  and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 

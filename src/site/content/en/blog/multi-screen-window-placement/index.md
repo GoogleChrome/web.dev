@@ -398,10 +398,10 @@ Did you find a bug with Chrome's implementation? Or is the implementation differ
 Are you planning to use the Multi-Screen Window Placement API? Your public support helps the Chrome
 team to prioritize features and shows other browser vendors how critical it is to support them.
 
-- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
-- Send a tweet to [@ChromiumDev][cr-dev-twitter] with the
+- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
+- Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
   [`#WindowPlacement`](https://twitter.com/search?q=%23WindowPlacement&src=typed_query&f=live)
-  hashtag and let us know where and how you are using it.
+  and let us know where and how you are using it.
 - Ask other browser vendors to implement the API.
 
 ## Helpful links {: #helpful }

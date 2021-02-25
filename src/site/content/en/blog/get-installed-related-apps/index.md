@@ -410,9 +410,9 @@ support helps the Chrome team to prioritize features and shows other
 browser vendors how critical it is to support them.
 
 * Share how you plan to use the API on the [WICG Discourse thread][wicg-discourse].
-* Send a tweet to [@ChromiumDev][cr-dev-twitter] with the
-[`#getInstalledRelatedApps`](https://twitter.com/search?q=%23getInstalledRelatedApps&src=typed_query&f=live)
-hashtag and let us know where and how you're using it.
+* Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+  [`#getInstalledRelatedApps`](https://twitter.com/search?q=%23getInstalledRelatedApps&src=typed_query&f=live)
+  and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 

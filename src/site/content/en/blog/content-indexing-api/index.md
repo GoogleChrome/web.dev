@@ -307,7 +307,7 @@ Planning to use the Content Indexing API in your web app? Your public support
 helps Chrome prioritize features, and shows other browser vendors how critical it is
 to support them.
 
-- Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with the hashtag
+- Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
   [`#ContentIndexingAPI`](https://twitter.com/search?q=%23ContentIndexingAPI&src=typed_query&f=live)
   and details on where and how you're using it.
 

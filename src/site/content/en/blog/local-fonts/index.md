@@ -331,9 +331,9 @@ File a bug at [new.crbug.com](https://new.crbug.com). Be sure to include as much
 
 Are you planning to use the Local Font Access API? Your public support helps the Chrome team to prioritize features and shows other browser vendors how critical it is to support them.
 
-Send a tweet to [@ChromiumDev][cr-dev-twitter] with the
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
 [`#LocalFontAccess`](https://twitter.com/search?q=%23LocalFontAccess&src=typed_query&f=live)
-hashtag and let us know where and how you're using it.
+and let us know where and how you're using it.
 
 ## Helpful links
 

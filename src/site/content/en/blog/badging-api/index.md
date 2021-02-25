@@ -210,7 +210,7 @@ Planning to use the App Badging API on your site? Your public support helps the
 Chrome team to prioritize features, and shows other browser vendors how critical
 it is to support them.
 
-* Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) tagged with the hashtag
+* Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
   [`#BadgingAPI`](https://twitter.com/search?q=%23BadgingAPI&src=typed_query&f=live)
   and let us know where and how you're using it.
 

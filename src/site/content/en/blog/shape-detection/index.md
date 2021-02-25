@@ -356,8 +356,8 @@ Planning to use the Shape Detection API on your site? Your public support
 helps us to prioritize features, and shows other browser vendors how
 critical it is to support them.
 
-* Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
-* Send a tweet to [@ChromiumDev][cr-dev-twitter] with the hashtag
+* Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
+* Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
   [`#ShapeDetection`](https://twitter.com/search?q=%23ShapeDetection&src=typed_query&f=live)
   and let us know where and how you're using it.
 
