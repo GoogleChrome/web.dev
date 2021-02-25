@@ -8,7 +8,7 @@ date: 2021-02-25
 description: |
   Tabbed application mode allows Progressive Web App developers to add a tabbed document interface
   to their standalone PWAs.
-hero: hero.jpg
+hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/N08W5skJmcYgS7346DBS.jpg
 alt: Dictionary thumb index.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
