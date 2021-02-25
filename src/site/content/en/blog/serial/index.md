@@ -130,7 +130,7 @@ const { usbProductId, usbVendorId } = port.getInfo();
 ```
 
 <figure class="w-figure">
-  <img src="./serial-port-prompt.jpg" class="w-screenshot" alt="Screenshot of a serial port prompt on a website">
+  {% Img src="image/admin/BT9OxLREXfb0vcnHlYu8.jpg", alt="Screenshot of a serial port prompt on a website", width="800", height="513", class="w-screenshot" %}
   <figcaption class="w-figcaption">User prompt for selecting a BBC micro:bit</figcaption>
 </figure>
 
@@ -427,7 +427,7 @@ the widget, so that by the time it gets to its final destination, it's a fully
 functioning widget.
 
 <figure class="w-figure">
-  <img src="./aeroplane-factory.jpg" alt="Photo of an aeroplane factory">
+  {% Img src="image/admin/seICV1jfxA6NfFRt9iVL.jpg", alt="Photo of an aeroplane factory", width="800", height="519" %}
   <figcaption class="w-figcaption">World War II Castle Bromwich Aeroplane Factory</figcaption>
 </figure>
 
@@ -492,7 +492,7 @@ Debugging the Web Serial API in Chrome is easy with the internal page,
 single place.
 
 <figure class="w-figure">
-  <img src="./device-log-page-screenshot.jpg" class="w-screenshot" alt="Screenshot of the internal page for debugging the Web Serial API.">
+  {% Img src="image/admin/p2T9gxxLsDWsS1GaqoXj.jpg", alt="Screenshot of the internal page for debugging the Web Serial API.", width="800", height="547", class="w-screenshot" %}
   <figcaption class="w-figcaption">Internal page in Chrome for debugging the Web Serial API.</figcaption>
 </figure>
 

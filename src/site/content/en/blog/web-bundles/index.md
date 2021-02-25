@@ -161,7 +161,7 @@ To try out a Web Bundle:
 1. Set the **Web Bundles** flag to **Enabled**.
 
    <figure class="w-figure">
-     <img src="chromeflag.png" alt="A screenshot of chrome://flags" style="max-width: 75%">
+     {% Img src="image/admin/tt32OXyh9PdrKK9KnMto.png", alt="A screenshot of chrome://flags", width="800", height="315" %}
      <figcaption class="w-figcaption">
        Enabling Web Bundles in <code>chrome://flags</code>
      </figcaption>
