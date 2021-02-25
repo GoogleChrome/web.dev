@@ -13,6 +13,7 @@ alt: Web App Manifest source code excerpt.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - progressive-web-apps
+  - web-app-manifest
 ---
 
 A [Web App Manifest](/add-manifest/) is a JSON file that tells the browser about your Progressive
