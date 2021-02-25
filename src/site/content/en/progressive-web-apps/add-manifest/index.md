@@ -191,13 +191,13 @@ Web apps can choose how they are displayed by setting a `display` mode in their 
 (`"fullscreen"` → `"standalone"` → `"minimal-ui"` → `"browser"`). If they don't support a given
 mode, they fall back to the next display mode in the chain. This inflexible behavior can be
 problematic in rare cases, for example, a developer cannot request `"minimal-ui"` without being
-forced back into the `"browser"` display mode in case `"minimal-ui"` is not supported by a given
-browser. Another problem is that the current behavior makes it impossible to introduce new display
+forced back into the `"browser"` display mode when `"minimal-ui"` is not supported.
+Another problem is that the current behavior makes it impossible to introduce new display
 modes in a backward compatible way, since explorations like tabbed application mode don't have a
 natural place in the fallback chain.
 
 These problems are solved by the `display_override` property, which the browser considers *before*
-the `display` property. Its value is a sequence of strings that are considered in-order, and the
+the `display` property. Its value is a sequence of strings that are considered in the listed order, and the
 first supported display mode is applied. If none are supported, the browser falls back to evaluating
 the `display` field.
 

@@ -19,7 +19,7 @@ A [Web App Manifest](/add-manifest/) is a JSON file that tells the browser about
 Web App and how it should behave when installed on the user's desktop or mobile device.
 Via the [`display`](/add-manifest/#display) property, you can customize what browser UI is shown when your app is launched. For example, you can hide the
 address bar and browser chrome. Games can even be made to launch full screen.
-As a quick recap, below are the display modes that are currently specified.
+As a quick recap, below are the display modes that are specified at the time this article was written.
 
 <div class="w-table-wrapper">
   <table id="display-params">
@@ -79,7 +79,7 @@ natural place in the fallback chain.
 
 {% Aside %}
   The `display_override` property is meant to solve special corner cases. In almost all
-  circumstances the regular `display` property is what developers should reach out for.
+  circumstances the regular `display` property is what developers should reach for.
 {% endAside %}
 
 These problems are solved by the `display_override` property, which the browser considers *before*
@@ -113,13 +113,13 @@ Browsers that do not support `display_override` fall back to the `display` prope
 `display_override` as an unknown Web App Manifest property.
 
 {% Aside %}
-  The `display_override` property is defined independent from its potential values.
+  The `display_override` property is defined independently from its potential values.
 {% endAside %}
 
 ## Browser compatibility
 
 The `display_override` property is supported as of Chromium&nbsp;89. Other browsers support the
-`display` property, which caters for the majority of display mode use cases.
+`display` property, which caters to the majority of display mode use cases.
 
 ## Useful links
 
