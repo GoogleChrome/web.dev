@@ -8,7 +8,7 @@ date: 2021-02-25
 description: |
   The display_override property allows developers to define a customized fallback chain of modes
   their PWAs should be displayed in.
-hero: hero.jpg
+hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/woTD625c2X9tODE58koK.jpg
 alt: Web App Manifest source code excerpt.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
