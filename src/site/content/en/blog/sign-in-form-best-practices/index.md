@@ -562,7 +562,7 @@ implementation](https://twitter.com/sw12/status/1251191795377156099). You'll
 need to use JavaScript instead.
 
 <figure class="w-figure">
-  ![Google sign-in form showing Show password icon.](./show-password-google.png)
+  <img class="w-screenshot" src="./show-password-google.png" alt="Google sign-in form showing Show password icon." width="350">
   <figcaption class="w-figcaption">Google sign-in form: with <strong>Show password</strong> icon and <strong>Forgot password</strong> link.</figcaption>
 </figure>
 

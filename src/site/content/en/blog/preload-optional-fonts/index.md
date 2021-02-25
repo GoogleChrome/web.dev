@@ -70,7 +70,7 @@ occurs.
 
 <figure class="w-figure">
   {% Img src="image/admin/WHLORYEu864QRRveFQUz.png", alt="Diagram showing previous optional font behavior when font fails to load", width="800", height="340" %}
-  <figcaption class="w-figcaption">>Previous <code>font-display: optional</code> behavior in Chrome when font is downloaded <b>after</b> the 100ms block period</figcaption>
+  <figcaption class="w-figcaption">Previous <code>font-display: optional</code> behavior in Chrome when font is downloaded <b>after</b> the 100ms block period</figcaption>
 </figure>
 
 However, in the case that the font is downloaded before the 100ms block period completes, the custom
@@ -95,7 +95,7 @@ future to optimize performance.
 
 <figure class="w-figure">
   {% Img src="image/admin/zLldiq9J3duBTaeRN88e.png", alt="Diagram showing new preloaded optional font behavior when font fails to load", width="800", height="353" %}
-  <figcaption class="w-figcaption">>New <code>font-display: optional</code> behavior in Chrome when fonts are preloaded and font is downloaded <b>after</b> the 100ms block period (no flash of invisible text)</figcaption>
+  <figcaption class="w-figcaption">New <code>font-display: optional</code> behavior in Chrome when fonts are preloaded and font is downloaded <b>after</b> the 100ms block period (no flash of invisible text)</figcaption>
 </figure>
 
 <figure class="w-figure">

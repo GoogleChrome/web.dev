@@ -92,7 +92,7 @@ Developers can query for an origin or URL and segment results by different form 
 Below is a [demo](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started) using the CrUX API to visualize the Core Web Vitals metrics with distributions for **good**, **needs improvement**, and **poor**:
 
 <figure class="w-figure">
-  {% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Chrome User Experience Report API demo showing Core Web Vitals metrics", width="800", height="523", class="w-screenshot w-screenshot-filled" %}
+  {% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Chrome User Experience Report API demo showing Core Web Vitals metrics", width="800", height="523", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 In future releases, we plan to expand the API to enable access to additional CrUX dataset dimensions and metrics.
