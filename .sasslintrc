@@ -20,13 +20,6 @@
     "attribute-quotes": 2,
     "brace-style": 2,
     "border-zero": 2,
-    "class-name-format": [
-      2,
-      {
-        "convention": "^(w|web)-.+",
-        "convention-explanation": "Classes must be namedspaced with w-* or web-* prefix."
-      }
-    ],
     "declarations-before-nesting": 2,
     "empty-line-between-blocks": 2,
     "final-newline": 2,
