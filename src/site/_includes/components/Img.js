@@ -8,6 +8,10 @@ const MAX_WIDTH = 800;
 // The highest device pixel ratio we'll generate srcsets for.
 const MAX_DPR = 2; // @2x
 const DEFAULT_PARAMS = {auto: 'format'};
+const IS_UPLOADED_IMG = (src) =>
+  /^image\/[A-Za-z0-9]*\/[A-Za-z0-9]*\.(gif|jpe?g|tiff?|png|webp|bmp|svg|ico)$/.test(
+    src,
+  );
 
 /**
  * Generates src URL of image from imgix path or URL.
@@ -36,6 +40,12 @@ const Img = function (args) {
 
   if (src === undefined || typeof src !== 'string') {
     throw new Error(`${checkHereIfError}: src is a required argument`);
+  }
+
+  if (!IS_UPLOADED_IMG(src)) {
+    throw new Error(
+      `${checkHereIfError}: src does not appear to have been added via uploader`,
+    );
   }
 
   if (alt === undefined || typeof alt !== 'string') {
