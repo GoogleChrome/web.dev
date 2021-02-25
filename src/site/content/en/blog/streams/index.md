@@ -1079,8 +1079,9 @@ This article was reviewed by
 [François Beaufort](https://github.com/beaufortfrancois),
 [Sam Dutton](https://samdutton.com/),
 [Mattias Buelens](https://github.com/MattiasBuelens),
-[Surma](https://surma.dev/), and
-[Joe Medley](https://github.com/jpmedley).
+[Surma](https://surma.dev/),
+[Joe Medley](https://github.com/jpmedley), and
+[Adam Rice](https://github.com/ricea).
 [Jake Archibald](https://jakearchibald.com/)'s blog posts have helped me a lot in understanding
 streams. Some of the code samples are inspired by GitHub user
 [@bellbind](https://gist.github.com/bellbind/f6a7ba88e9f1a9d749fec4c9289163ac)'s explorations and
