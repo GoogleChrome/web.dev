@@ -19,7 +19,7 @@ to run. What they have in
 common, independent of the super app, is that they are built with ("dialects" of) the web
 technologies HTML, CSS, and JavaScript. The runtime of a mini app is a
 [WebView](https://research.google/pubs/pub46739/) in the super app, not the underlying operating
-system, which means mini apps are cross platform. What this means is that the same mini app can run
+system, which makes mini apps cross platform. The same mini app can run
 in the same super app, no matter if the super app runs on Android, iOS, or another OS. However, not
 all mini apps can run in all super apps, more on this [later](/mini-app-standardization/).
 
@@ -27,8 +27,8 @@ all mini apps can run in all super apps, more on this [later](/mini-app-standard
 
 Mini apps are often discovered _ad-hoc_ via branded 2D barcodes, which solves an important
 offline-to-online challenge, for example, getting from a physical restaurant menu to a payment mini
-app, or from a physical e-scooter to a rental min app. The image below depicts an example of such a
-branded 2d barcode. It is for
+app, or from a physical e-scooter to a rental min app. The image below shows an example of such a
+branded 2D barcode for
 [WeChat's demo mini app](https://github.com/wechat-miniprogram/miniprogram-demo). When the code is
 scanned with the WeChat super app, the mini app launches directly.
 Other super apps will typically not be able to recognize the barcode.
@@ -42,9 +42,9 @@ Other super apps will typically not be able to recognize the barcode.
 
 Mini apps can also be discovered through regular in-app search in the super app, be shared in chat
 messages, or be part of a news item in a news feed. Some super apps have the notion of verified
-accounts that can contain mini apps in their profiles. Mini apps can be highlighted when they are
-(i) physically geographically close, like the mini app of a business in front of which the user
-stands, or (ii) virtually close, like when the user gets directions on a map shown in the super
+accounts that can contain mini apps in their profiles. Mini apps can be highlighted when they are 
+physically geographically close, like the mini app of a business in front of which the user
+stands, or virtually close, like when the user gets directions on a map shown in the super
 app. Frequently used mini apps are available in an app drawer that in many super apps can be
 accessed through a swipe down gesture or through a special section in the super app menu.
 
