@@ -23,7 +23,7 @@ tags:
 {% endAside %}
 
 In the world of computing, the [desktop metaphor](https://en.wikipedia.org/wiki/Desktop_metaphor) is
-an interface metaphor which is a set of unifying concepts used by graphical user interfaces (GUI) to
+an interface metaphor that is a set of unifying concepts used by graphical user interfaces (GUI) to
 help users interact more easily with the computer. In keeping with the desktop metaphor, GUI tabs
 are modeled after traditional card tabs inserted in books, paper files, or card indexes. A _tabbed
 document interface_ (TDI) or tab is a graphical control element that allows multiple documents or
