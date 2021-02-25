@@ -85,7 +85,7 @@ The image below shows the CSS Grid example in that tool.
 You can see how the focus has to jump around the layout.
 
 <figure class="w-figure" style="max-width: 600px">
-  <img class="w-screenshot" src="./a11y-insights.jpg" alt="A screenshot of the Accessibility Insights Tool demonstrating the confusing order of items.">
+  {% Img src="image/admin/n0i0TJf3OdZYvwswrHDV.jpg", alt="A screenshot of the Accessibility Insights Tool demonstrating the confusing order of items.", width="800", height="919", class="w-screenshot" %}
 </figure>
 
 ## Content reordering and responsive web design
