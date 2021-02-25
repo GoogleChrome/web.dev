@@ -13,6 +13,7 @@ description: |
   device or desktop.
 tags:
   - progressive-web-apps
+  - web-app-manifest
 feedback:
   - api
 ---
