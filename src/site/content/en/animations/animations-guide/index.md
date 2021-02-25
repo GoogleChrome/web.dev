@@ -269,7 +269,9 @@ If you see entries for [**Recalculate Style**](https://developer.mozilla.org/en-
 then the browser is having to begin at the start of the [rendering waterfall](https://developer.mozilla.org/en-US/docs/Tools/Performance/Scenarios/Animating_CSS_properties).
 
 <figure>
-  ![The Waterfall panel shows many entries for Recalculate Style.](waterfall-before.jpg), class="w-screenshot w-screenshot--filled" %}
+  <img class="w-screenshot w-screenshot--filled"
+       src="waterfall-before.jpg"
+       alt="The Waterfall panel shows many entries for Recalculate Style.">
   <figcaption>
     The <a href="https://animation-with-top-left.glitch.me/">animation-with-top-left</a>
     example causes style recalculation.
@@ -277,7 +279,9 @@ then the browser is having to begin at the start of the [rendering waterfall](ht
 </figure>
 
 <figure>
-  ![The Waterfall panel shows no entries for Recalculate Style.](waterfall-after.jpg), class="w-screenshot w-screenshot--filled" %}
+  <img class="w-screenshot w-screenshot--filled"
+       src="waterfall-after.jpg"
+       alt="The Waterfall panel shows no entries for Recalculate Style.">
   <figcaption>
     The <a href="https://animation-with-transform.glitch.me/">animation-with-transform</a>
     example does not cause style recalculation.
