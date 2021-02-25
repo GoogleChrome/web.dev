@@ -42,12 +42,14 @@ Debugging mini apps shows that they are essentially multi-page applications (MPA
 This has many advantages, like, for example, it allows for trivial routing and conflict-free per-page styling.
 People have [successfully applied MPA architectures](https://medium.com/elemefe/upgrading-ele-me-to-progressive-web-app-2a446832e509) to Progressive Web Apps.
 Thinking in pages also helps manage resources like each page's CSS and JavaScript files, and other assets like images and videos.
-Most importantly, building this way means you get code-splitting for free. Each page by definition strictly only loads what it needs to function.
+Most importantly, building this way means you get route-based code splitting for free
+if you do not load anything else.
+In that case, each page by definition strictly only loads what it needs to function.
 
 ## Build process
 
 Mini apps have [no visible build process](/mini-app-project-structure-lifecycle-and-bundling/#the-build-process).
-On the web, modern build tools like [Snowpack](https://www.snowpack.dev/) leverage JavaScript's native
+On the web, modern build tools like [Snowpack](https://www.snowpack.dev/) leverage JavaScript's built-in
 [module system](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 (known as ESM) to avoid unnecessary work and stay fast no matter how big a project grows.
 While it is early days for technologies like [Web Bundles](/web-bundles/), it is something that can be easily added
@@ -62,7 +64,7 @@ Where mini apps run in WebViews and depend on a [JavaScript bridge](/mini-app-ma
 on the web these powerful capabilities are available directly.
 
 {% Banner 'neutral' %}
-  👉 Read on to see an [example project](mini-app-example-project/) that puts this way of programming into practice.
+  👉 Read on to see an [example project](/mini-app-example-project/) that puts this way of programming into practice.
 {% endBanner %}
 
 ## Acknowledgements

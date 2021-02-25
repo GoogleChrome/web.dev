@@ -92,7 +92,7 @@ paragraph above.
 As you can see, the fundamental components of all IDEs are very similar. You always have a code
 editor based on the [Monaco Editor](https://microsoft.github.io/monaco-editor/), the same project
 that also powers [VS Code](https://github.com/Microsoft/vscode). In all IDEs, there is a debugger
-based on the [Chrome DevTools front-end](https://github.com/ChromeDevTools/devtools-frontend) with
+based on the [Chrome DevTools frontend](https://github.com/ChromeDevTools/devtools-frontend) with
 some modifications, more on those later (see [Debugger](/mini-app-devtools/#debugger)). The IDEs _per se_ are
 implemented either as [NW.js](https://nwjs.io/) or as [Electron](https://www.electronjs.org/) apps,
 the simulators in the IDEs are realized as an
@@ -100,7 +100,8 @@ the simulators in the IDEs are realized as an
 [Electron `<webview>` tag](https://www.electronjs.org/docs/api/webview-tag), which in turn are based on
 a [Chromium `<webview>` tag](https://www.electronjs.org/docs/api/webview-tag). If you are interested in
 the IDE internals, you can oftentimes simply inspect them with Chrome DevTools with the keyboard
-shortcut <kbd>cmd</kbd>/<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>i</kbd>.
+shortcut <kbd>Control</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd> (or
+<kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> on Mac).
 
 <figure class="w-figure">
   <img src="baidu-devtools-inspect.png" alt="Chrome DevTools used to inspect Baidu's DevTools showing the simulator's webview tag in the Chrome DevTools' Elements panel.">
