@@ -3,7 +3,7 @@ layout: post
 title: 'Route-level code splitting in Angular'
 subhead: |
   Improve the performance of your app by using route-level code splitting!
-hero: route-level-code-splitting.jpg
+hero: image/admin/WVwZbWEEXUfXzVTtAlha.jpg
 date: 2019-06-24
 description: |
   Learn how to make your initial app bundle smaller by using route-level code splitting.

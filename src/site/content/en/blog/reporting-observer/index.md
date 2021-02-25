@@ -5,7 +5,7 @@ authors:
   - ericbidelman
 date: 2019-08-21
 updated: 2020-05-27
-hero: hero.jpg
+hero: image/admin/LbRdd1MCPC2zKv6ptamD.jpg
 alt: Apollo Mission Control Center.
 description: |
   `ReportingObserver` lets you know when your site uses a deprecated API or runs

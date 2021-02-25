@@ -11,7 +11,7 @@ description: >
 authors:
   - rachelandrew
 date: 2020-09-14
-hero: hero.jpg
+hero: image/admin/Pl4AScfj5y8ovHD1pi64.jpg
 alt: Scissors hanging on a wall.
 tags:
   - blog

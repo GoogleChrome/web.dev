@@ -8,7 +8,7 @@ authors:
   - scottfriesen
   - martinschierle
 date: 2020-10-07
-hero: hero.jpg
+hero: image/admin/8NYB8FoRFfEIIurhIwsS.jpg
 alt: A person looking at the ZDF PWA on a smartphone.
 description: >
   Learn how ZDF created a progressive web app (PWA) with modern features

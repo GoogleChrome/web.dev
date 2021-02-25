@@ -13,8 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const fs = require('fs');
-const path = require('path');
 /** @type AuthorsData */
 const authorsData = require('../_data/authorsData.json');
 const {livePosts} = require('../_filters/live-posts');
@@ -22,6 +20,7 @@ const setdefault = require('../_utils/setdefault');
 
 /** @type Authors */
 let processedCollection;
+const PLACEHOLDER_IMG = 'image/admin/1v5F1SOBl46ZghbHQMle.svg';
 
 /**
  * Generate map the posts by author's username/key
@@ -130,17 +129,10 @@ module.exports = (collections) => {
       invalidAuthors.push(key);
     }
 
-    let authorsImage = path.join('/images', 'authors', `${key}@2x.jpg`);
-    if (process.env.ELEVENTY_ENV === 'prod') {
-      const authorsImageExists = fs.existsSync(path.join('src', authorsImage));
-      if (!authorsImageExists) {
-        console.warn(
-          `No 2x image was found for ${author.title} (${author.key}), replacing with placeholder.`,
-        );
-        authorsImage = path.join('/images', 'authors', 'no-photo.svg');
-      }
+    if (!author.image) {
+      author.image = PLACEHOLDER_IMG;
     }
-    author.data.hero = authorsImage;
+    author.data.hero = author.image;
     author.data.alt = author.title;
 
     if (process.env.PERCY) {

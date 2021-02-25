@@ -5,7 +5,7 @@ subhead: Strategies to measure performance at each stage in the purchase funnel.
 authors:
   - martinschierle
 date: 2019-05-31
-hero: hero.jpg
+hero: image/admin/7DmRrgsxnlS4GNPCyW0Q.jpg
 alt: A row of shopping carts.
 description: |
   Learn what impact website performance has on different parts of the e-commerce funnel

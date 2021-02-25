@@ -4,7 +4,7 @@ subhead: How we used code splitting, code inlining, and server-side rendering in
 authors:
   - surma
 date: 2019-09-23
-hero: hero.jpg
+hero: image/admin/14VzGmCgR470nlhPy3Fv.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 hero_position: center

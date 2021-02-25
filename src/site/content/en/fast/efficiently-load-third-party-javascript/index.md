@@ -7,7 +7,7 @@ authors:
 date: 2019-08-14
 description: |
   Learn how to avoid the common pitfalls of using third-party scripts to improve load times and user experience.
-hero: hero.jpg
+hero: image/admin/udp7L9LSo5mfI3F0tvNY.jpg
 alt: Aerial view of shipping containers.
 codelabs: codelab-optimize-third-party-javascript
 tags:
@@ -50,13 +50,13 @@ The difference between `async` and `defer` is when they start executing the scri
 
 Scripts with the `async` attribute execute at the first opportunity after they finish downloading and before the window's [load](https://developer.mozilla.org/en-US/docs/Web/Events/load) event. This means it's possible (and likely) that `async` scripts will not be executed in the order in which they appear in the HTML. It also means they can interrupt DOM building if they finish downloading while the parser is still at work.
 
-![Diagram of parser blocking script with async attribute](async@2x.png)
+{% Img src="image/admin/tCqsJ3E7m4lpKOprXu5B.png", alt="Diagram of parser blocking script with async attribute", width="800", height="252" %}
 
 ### `defer`
 
 Scripts with the `defer` attribute execute after HTML parsing is completely finished, but before the [`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) event. `defer` guarantees scripts will be executed in the order they appear in the HTML and will not block the parser.
 
-![Diagram of parser flow with a script with defer attribute](defer@2x.png)
+{% Img src="image/admin/Eq0mcvDALKibHe15HspN.png", alt="Diagram of parser flow with a script with defer attribute", width="800", height="253" %}
 
 * Use `async` if it's important to have the script run earlier in the loading process.
 

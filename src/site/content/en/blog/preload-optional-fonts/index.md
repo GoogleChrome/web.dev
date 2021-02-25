@@ -4,7 +4,7 @@ subhead: 'Starting in Chrome 83, link rel="preload" and font-display: optional c
 authors:
   - houssein
 date: 2020-03-18
-hero: hero.jpg
+hero: image/admin/wv5DLtYiAhHm4lNemN1E.jpg
 alt: A large letter A from a type set sitting on a white table.
 description: |
   By optimizing rendering cycles, Chrome 83 eliminates layout shifting when

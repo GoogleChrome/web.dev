@@ -3,7 +3,7 @@ layout: post
 title: "Audit your Angular app's accessibility with codelyzer"
 subhead: |
   Want to make your Angular site accessible for everyone? This is the right place!
-hero: accessible.jpg
+hero: image/admin/NxNmK1G1YjhB7tU6yVQa.jpg
 alt: Gondolas.
 date: 2019-07-03
 description: |

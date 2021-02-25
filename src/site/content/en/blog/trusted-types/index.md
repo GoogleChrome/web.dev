@@ -6,7 +6,7 @@ authors:
 date: 2020-03-25
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-06-27
-hero: hero.png
+hero: image/admin/3Mgu37qU0P4fVdI4NTxM.png
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom
@@ -32,7 +32,7 @@ give you the tools to write, security
 review, and maintain applications free of DOM XSS vulnerabilities by making the dangerous web API
 functions secure by default. Trusted Types are supported in Chrome 83, and
 a [polyfill](https://github.com/w3c/webappsec-trusted-types#polyfill) is available
-for other browsers. See [Browser compatibility](https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types#Browser_compatibility) for up-to-date
+for other browsers. See [Browser compatibility](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types#browser_compatibility) for up-to-date
 cross-browser support information.
 
 {% Aside 'key-term' %}

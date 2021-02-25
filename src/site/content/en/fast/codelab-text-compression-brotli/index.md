@@ -22,7 +22,7 @@ compared to other compression algorithms like `gzip`, this codelab explores how
 Brotli compression can further reduce compression ratios and your app's overall
 size.
 
-![App screenshot](./app-screenshot.png)
+{% Img src="image/admin/k94QI9lhJ39aXpwUrMNk.png", alt="App screenshot", width="800", height="535" %}
 
 ## Measure
 

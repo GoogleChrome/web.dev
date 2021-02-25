@@ -95,7 +95,7 @@ questions:
         rationale: Laying it on kinda thick with the wide-eyed childlike wonder, no?
       - content: "![Grover](./grover.jpg)"
         rationale: The OG monster. Never forget it.
-  - stimulus: "![Webby](./webby.png)"
+  - stimulus: "![Webby](image/admin/Iz4mJkLrJrLk9Ntem871.png)"
     components:
       - type: multiple-choice
         cardinality: "1"

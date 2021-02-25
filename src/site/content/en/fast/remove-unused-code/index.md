@@ -68,7 +68,7 @@ can use to analyze your bundle.
 Reloading the application with this plugin included shows a zoomable treemap of
 your entire bundle.
 
-![Webpack Bundle Analyzer](./bundle-view.png)
+{% Img src="image/admin/pLAHEtl5C011wTk2IJij.png", alt="Webpack Bundle Analyzer", width="800", height="468" %}
 
 Using this visualization allows you to inspect which parts of your bundle are
 larger than others, as well as get a better idea of all the libraries that

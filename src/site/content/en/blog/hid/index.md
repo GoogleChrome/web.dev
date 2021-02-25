@@ -5,9 +5,9 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2021-01-21
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+updated: 2021-02-23
+hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
+thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
 description: |
   The WebHID API allows websites to access alternative auxiliary keyboards and exotic gamepads.
@@ -169,9 +169,8 @@ const devices = await navigator.hid.getDevices();
 ```
 
 <figure class="w-figure">
-  <img src="./webhid-prompt.jpg" class="w-screenshot" alt="Screenshot of a HID device prompt on a website.">
-  <figcaption class="w-figcaption">User prompt for selecting a Nintendo Switch Joy-Con.
-</figcaption>
+  {% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Screenshot of a HID device prompt on a website.", width="800", height="513", class="w-screenshot" %}
+  <figcaption class="w-figcaption">User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
 </figure>
 
 A `HIDDevice` object contains USB vendor and product identifiers for device
@@ -220,7 +219,7 @@ to (`device`), and the 8-bit report ID associated with the input report
 (`reportId`).
 
 <figure class="w-figure">
-  <img src="./joycon-switch-photo.jpg" class="w-screenshot" alt="Red and blue nintendo switch photo.">
+  {% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="Red and blue nintendo switch photo.", width="800", height="575", class="w-screenshot" %}
   <figcaption class="w-figcaption">Nintendo Switch Joy-Con devices.</figcaption>
 </figure>
 
@@ -277,7 +276,7 @@ HID data. Unlike input and output reports, feature reports are not received or
 sent by the application on a regular basis.
 
 <figure class="w-figure">
-  <img src="./laptop-keyboard-photo.jpg" class="w-screenshot" alt="Black and silver laptop computer photo.">
+  {% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="Black and silver laptop computer photo.", width="800", height="575", class="w-screenshot" %}
   <figcaption class="w-figcaption">Laptop keyboard</figcaption>
 </figure>
 
@@ -349,7 +348,7 @@ Debugging HID in Chrome is easy with the internal page, `chrome://device-log`
 where you can see all HID and USB device related events in one single place.
 
 <figure class="w-figure">
-  <img src="./device-log-page-screenshot.jpg" class="w-screenshot" alt="Screenshot of the internal page to debug HID.">
+  {% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="Screenshot of the internal page to debug HID.", width="800", height="575", class="w-screenshot" %}
   <figcaption class="w-figcaption">Internal page in Chrome to debug HID.</figcaption>
 </figure>
 
@@ -413,7 +412,8 @@ Are you planning to use the WebHID API? Your public support helps the Chrome
 team prioritize features and shows other browser vendors how critical it is to
 support them.
 
-Send a Tweet to [@ChromiumDev][cr-dev-twitter] with `#WebHID` and let us know
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebHID`](https://twitter.com/search?q=%23WebHID&src=typed_query&f=live) and let us know
 where and how you're using it.
 
 ## Helpful links {: #helpful }

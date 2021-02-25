@@ -3,7 +3,11 @@ const ImgixClient = require('imgix-core-js');
 const {imgix: domain} = require('../../_data/site');
 
 const client = new ImgixClient({domain, includeLibraryParam: false});
+const MIN_WIDTH = 200;
 const MAX_WIDTH = 800;
+// The highest device pixel ratio we'll generate srcsets for.
+const MAX_DPR = 2; // @2x
+const DEFAULT_PARAMS = {auto: 'format'};
 
 /**
  * Generates src URL of image from imgix path or URL.
@@ -12,7 +16,8 @@ const MAX_WIDTH = 800;
  * @param {Object} params Imgix API params.
  * @return {string}
  */
-const generateSrc = (src, params) => client.buildURL(src, params);
+const generateSrc = (src, params = {}) =>
+  client.buildURL(src, {...DEFAULT_PARAMS, ...params});
 
 /**
  * Takes an imgix url or path and generates an `<img>` element with `srcset`.
@@ -21,10 +26,13 @@ const generateSrc = (src, params) => client.buildURL(src, params);
  * @return {string}
  */
 const Img = function (args) {
-  // eslint-disable-next-line prefer-const
-  let {src, alt, width, height, sizes, lazy, className, params, options} = args;
-  // @ts-ignore: `this` has type of `any`
-  const checkHereIfError = `ERROR IN ${this.page.inputPath}, IMG ${src}`;
+  const {src, alt, width, height, class: className, linkTo, params} = args;
+  let {lazy, options, sizes} = args;
+
+  const checkHereIfError = `ERROR IN ${
+    // @ts-ignore: `this` has type of `any`
+    this.page ? this.page.inputPath : 'UNKNOWN'
+  }, IMG ${src}`;
 
   if (src === undefined || typeof src !== 'string') {
     throw new Error(`${checkHereIfError}: src is a required argument`);
@@ -50,16 +58,18 @@ const Img = function (args) {
     lazy = true;
   }
 
-  // https://docs.imgix.com/apis/rendering
-  params = {auto: 'format', ...params};
   // https://github.com/imgix/imgix-core-js#imgixclientbuildsrcsetpath-params-options
   options = {
-    minWidth: 200,
-    maxWidth: 1600,
+    // Use the image width as the lower bound.
+    // Note this may be smaller than MIN_WIDTH.
+    minWidth: Math.min(MIN_WIDTH, widthAsNumber),
+    // Use image width * dpr as the upper bound, maxed out at 1,600px.
+    maxWidth: Math.min(MAX_WIDTH * MAX_DPR, widthAsNumber * MAX_DPR),
     widthTolerance: 0.07,
     ...options,
   };
-
+  // https://docs.imgix.com/apis/rendering
+  const fullSrc = generateSrc(src, params);
   const srcset = client.buildSrcSet(src, params, options);
   if (sizes === undefined) {
     if (widthAsNumber >= MAX_WIDTH) {
@@ -74,10 +84,9 @@ const Img = function (args) {
   // the image (useful for purely decorative images). If we just did alt ? ...
   // the emptry string would evaluate as falsey and no alt attribute would be
   // written at all—which _is_ an accessibility violation.
-
   /* eslint-disable lit-a11y/alt-text */
-  return html` <img
-    src="${generateSrc(src, params)}"
+  let imgTag = html` <img
+    src="${fullSrc}"
     srcset="${srcset}"
     sizes="${sizes}"
     height="${heightAsNumber}"
@@ -86,6 +95,12 @@ const Img = function (args) {
     ${className ? `class="${className}"` : ''}
     ${lazy ? 'loading="lazy"' : ''}
   />`.replace(/\n/g, '');
+
+  if (linkTo) {
+    imgTag = html`<a href="${fullSrc}">${imgTag}</a>`;
+  }
+
+  return imgTag;
 };
 
 module.exports = {Img, generateSrc};

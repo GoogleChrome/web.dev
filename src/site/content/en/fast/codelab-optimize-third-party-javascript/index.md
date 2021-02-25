@@ -117,7 +117,7 @@ The sample app has a YouTube video embedded in an [iframe](https://developer.moz
 1. Select *Fast 3G* in the **Throttling** dropdown menu.
 {% Instruction 'reload-page', 'ol' %}
 
-![Screenshot of DevTools Network panel.](network.png)
+{% Img src="image/admin/DjnRutx27trV4YkYcKhr.png", alt="Screenshot of DevTools Network panel.", width="783", height="618" %}
 
 The **Network** panel reveals that the page made a total of 28 requests and transferred almost 1 MB of compressed resources.
 
@@ -242,7 +242,7 @@ Adding the `rel=preconnect` attribute to a link tells the browser to establish a
 
 The Lighthouse audit you ran in the first step suggested in **Preconnect to required origins** that you can save around 400 ms by [establishing early connections](/preconnect-and-dns-prefetch/) to staticxx.facebook.com and youtube.com:
 
-![Preconnect to required origins audit with the staticxx.facebook.com domain highlighted.](preconnect.png)
+{% Img src="image/admin/k4PDdjh77dXS1ZdGBSko.png", alt="Preconnect to required origins audit with the staticxx.facebook.com domain highlighted.", width="720", height="279" %}
 
 Since the YouTube video is now lazy-loaded, that leaves only staticxx.facebook.com, the source of the social media sharing widget. Establishing an early connection to this domain is as simple as adding a `<link>` tag to the document's `<head>`:
 
@@ -254,7 +254,7 @@ Since the YouTube video is now lazy-loaded, that leaves only staticxx.facebook.c
 
 Here's the state of the page [after optimization](https://glitch.com/~3rd-party-optimizations). Follow the steps from the [Measure performance](#measure-performance) section of the codelab to run another Lighthouse audit.
 
-![Lighthouse audit showing 1 second FCP and the performance score of 99.](success.png)
+{% Img src="image/admin/Iv12shtGoURq2CTqO6jN.png", alt="Lighthouse audit showing 1 second FCP and the performance score of 99.", width="727", height="511" %}
 
 {% Aside 'success' %}
 You should see that FCP and the performance score have improved! 🎉 The page now loads faster and consumes less data⁠—and all without negatively affecting the user-experience. 🤝

@@ -5,7 +5,7 @@ authors:
   - jeffposnick
 date: 2019-07-18
 description: stale-while-revalidate helps developers balance between immediacy—loading cached content right away—and freshness—ensuring updates to the cached content are used in the future.
-hero: hero.jpg
+hero: image/admin/skgQgcT3q8fdBGGNL3o1.jpg
 alt: A photograph of a half-painted wall.
 tags:
   - blog
@@ -101,7 +101,7 @@ revalidation will depend on getting a response back from the network.
 Here's a breakdown of those three distinct states, along with the window of time
 in which each of them apply for our example:
 
-![A diagram illustrating the information from the previous section.](s-w-r-diagram.svg)
+{% Img src="image/admin/C8lg2FSEqhTKR6WmYky3.svg", alt="A diagram illustrating the information from the previous section.", width="719", height="370" %}
 
 ## What are the common use cases?
 

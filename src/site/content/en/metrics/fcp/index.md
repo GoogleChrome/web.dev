@@ -29,7 +29,7 @@ starts loading to when any part of the page's content is rendered on the screen.
 For this metric, "content" refers to text, images (including background images),
 `<svg>` elements, or non-white `<canvas>` elements.
 
-[![FCP timeline from google.com](fcp-filmstrip.png)](fcp-filmstrip.png)
+{% Img src="image/admin/3UhlOxRc0j8Vc4DGd4dt.png", alt="FCP timeline from google.com", width="800", height="311", linkTo=true %}
 
 In the above load timeline, FCP happens in the second
 frame, as that's when the first text and image elements are rendered to the

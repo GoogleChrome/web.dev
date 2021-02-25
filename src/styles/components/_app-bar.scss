@@ -1,0 +1,31 @@
+.app-bar {
+  background-color: rgba($WHITE, .96);
+  display: flex;
+  padding: 20px 24px;
+
+  @include bp(md) {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+}
+
+.app-bar__list,
+.app-bar__item {
+  align-items: center;
+  display: flex;
+}
+
+.app-bar__item + .app-bar__item {
+  margin-left: 16px;
+}
+
+.app-bar__item:not(:last-of-type)::after {
+  display: block;
+  content: '';
+  width: 6px;
+  height: 10px;
+  // sass-lint:disable quotes
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.47334 9.47333L0.526672 8.52667L4.06001 5L0.526672 1.47333L1.47334 0.526667L5.94001 5L1.47334 9.47333Z' fill='%235F6368'/%3E%3C/svg%3E");
+  margin-left: 16px;
+}

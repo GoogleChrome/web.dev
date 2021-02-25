@@ -4,7 +4,7 @@ subhead: |
   A new way to implement and use Shadow DOM directly in HTML.
 date: 2020-09-30
 updated: 2020-12-15
-hero: hero.jpg
+hero: image/admin/IIPe5m8edvp0XMPpzrz9.jpg
 alt: decorative shadow dome
 authors:
   - developit

@@ -18,7 +18,7 @@ tags:
 In this codelab, the performance of the following web page is improved
 by preloading and prefetching a few resources:
 
-![App Screenshot](./san-francisco.png)
+{% Img src="image/admin/Ln5Oxy5vp8QWTn0GoOFh.png", alt="App Screenshot", width="800", height="578" %}
 
 ## Measure
 
@@ -155,7 +155,7 @@ a lower priority than other important assets needed for the current page.
 In this website, clicking the image takes you to a separate `details/`
 route.
 
-![Details route](./details.png)
+{% Img src="image/admin/KLzVOClmdtwTZ3nhzGz5.png", alt="Details route", width="800", height="585" %}
 
 A separate CSS file, `details.css`, contains all the styles needed for this
 simple page. Add a link element to `index.html` to prefetch this resource.
@@ -241,7 +241,7 @@ Once the application is reloaded, webpack injects a prefetch tag for the
 resource into the head of the document. This can be seen in the **Elements**
 panel in DevTools.
 
-![Elements panel with prefetch tag](./devtools-elements.png)
+{% Img src="image/admin/5Zs5L6UMnkUJXyfwtru7.png", alt="Elements panel with prefetch tag", width="800", height="520" %}
 
 Observing the requests in the **Network** panel also shows that this chunk is
 fetched with a low priority after all other resources have been requested.

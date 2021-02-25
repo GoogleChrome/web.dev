@@ -255,14 +255,14 @@ name.
 <button>Book Room</button>
 ```
 
-![A mobile form with a 'Book Room' button.](./button-label.png)
+{% Img src="image/admin/tcIDzNpCHS9AlfwflQjI.png", alt="A mobile form with a 'Book Room' button.", width="800", height="269" %}
 
 One common exception to this rule is icon buttons. An icon button may use an
 image or an icon font to provide the text content for the button. For example,
 the buttons used in a What You See Is What You Get (WYSIWYG) editor to format
 text are typically just graphic symbols:
 
-![A left align icon button.](./icon-button.png)
+{% Img src="image/admin/ZmQ77kLPbqd5iFOmn4SU.png", alt="A left align icon button.", width="800", height="269" %}
 
 When working with icon buttons, it can be helpful to give them an explicit
 accessible name using the `aria-label` attribute. `aria-label` overrides any

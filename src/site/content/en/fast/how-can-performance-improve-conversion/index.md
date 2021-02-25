@@ -5,7 +5,7 @@ subhead: Optimize your site's performance and improve conversions.
 authors:
   - martinschierle
 date: 2019-06-11
-hero: hero.jpg
+hero: image/admin/jL9cdglp5D9NPKiANa2u.jpg
 alt: A man at a whiteboard draws a flow diagram depicting shopping cart abandonment.
 description: |
   Learn what impact website performance has on different parts of the e-commerce funnel

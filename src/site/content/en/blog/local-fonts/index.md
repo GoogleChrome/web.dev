@@ -14,13 +14,13 @@ description: >
   fonts and provides low-level access to the various
   TrueType/OpenType tables.
 date: 2020-08-24
-updated: 2020-11-19
-hero: hero.jpg
+updated: 2021-02-23
+hero: image/admin/oeXwG1zSwnivzpvcUJly.jpg
 alt: Page of a font book.
 feedback:
   - api
 origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/-7289075996899147775  
+  url: https://developers.chrome.com/origintrials/#/view_trial/-7289075996899147775
 ---
 
 {% Aside %}
@@ -331,7 +331,9 @@ File a bug at [new.crbug.com](https://new.crbug.com). Be sure to include as much
 
 Are you planning to use the Local Font Access API? Your public support helps the Chrome team to prioritize features and shows other browser vendors how critical it is to support them.
 
-Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#LocalFontAccess` hashtag and let us know where and how you're using it.
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#LocalFontAccess`](https://twitter.com/search?q=%23LocalFontAccess&src=typed_query&f=live)
+and let us know where and how you're using it.
 
 ## Helpful links
 

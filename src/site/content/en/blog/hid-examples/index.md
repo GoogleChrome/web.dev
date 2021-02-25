@@ -17,7 +17,7 @@ tags:
   - hid
   - games
   - devices
-hero: game-controller.jpg
+hero: image/admin/8TCwHOfb8SUWaVEtCx6j.jpg
 alt: A generic game controller
 ---
 

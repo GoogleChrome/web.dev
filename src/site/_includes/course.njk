@@ -1,0 +1,72 @@
+---
+layout: base
+---
+
+<a class="skip-link w-button" href="#main">Skip to main</a>
+
+<div class="course-layout">
+  <nav class="course-nav" aria-label="primary navigation">
+    <ul>
+      {% for i in range(0, 10) -%}
+        <li>
+          <a href="#">Flexbox</a>
+        </li>
+      {%- endfor %}
+    </ul>
+  </nav>
+
+  <div class="course-body">
+    <nav class="course-app-bar app-bar" aria-label="breadcrumbs">
+      <ul class="app-bar__list">
+        <li class="app-bar__item">
+          <a href="/">web.dev</a>
+        </li>
+        <li class="app-bar__item">
+          <a href="/learn/">Learn</a>
+        </li>
+        <li class="app-bar__item">
+          <a href="/learn/css/">Learn CSS!</a>
+        </li>
+      </ul>
+      <button class="w-ml--auto">Share</button>
+    </nav>
+
+    <div class="course-content">
+      <nav class="course-toc" aria-label="table of contents">
+        <ul class="course-toc__list">
+          <li class="course-toc__item">
+            <a href="#">What can you do with a flex layout?</a>
+          </li>
+          <li class="course-toc__item">
+            <a href="#">The main axis and the cross axis</a>
+          </li>
+        </ul>
+      </nav>
+      <main id="main">
+        {# Hide this TOC on desktop and show it on mobile #}
+        {# <nav class="course-toc" aria-label="table of contents">
+          <ul class="course-toc__list">
+            <li class="course-toc__item">
+              <a href="#">First heading</a>
+            </li>
+            <li class="course-toc__item">
+              <a href="#">Second heading</a>
+            </li>
+          </ul>
+        </nav> #}
+        {{ content | safe }}
+      </main>
+    </div>
+
+    <nav class="course-pagination" aria-label="pagination">
+      <a href="#" class="course-pagination-control">
+        Introduction
+      </a>
+      <a href="#" class="course-pagination-control">
+        Selectors
+      </a>
+    </nav>
+
+    {% include 'partials/footer.njk' %}
+  </div>
+</div>

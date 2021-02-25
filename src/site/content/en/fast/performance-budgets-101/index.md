@@ -76,7 +76,7 @@ You should have a budget in place for different types of pages on your site sinc
 
 ## Add performance budgets to your build process
 
-![Webpack, bundlesize and Lighthouse logos](./performance-budgeting-tools.png)
+{% Img src="image/admin/YKJcgI9Yd8qEZM0nzPuv.png", alt="Webpack, bundlesize and Lighthouse logos", width="800", height="267" %}
 
 Choosing a tool for this will depend a lot on the scale of your project and resources that you can dedicate to the task. There are a few open-source tools that can help you add budgeting to your build process:
 

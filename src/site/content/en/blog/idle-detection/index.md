@@ -8,12 +8,12 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2021-02-02
+updated: 2021-02-23
 tags:
   - blog
   - idle-detection
   - capabilities
-hero: hero.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80
+hero: image/admin/FXoKxeVCmPgEStieWKm2.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80
 alt: Abandoned computer on a bed with someone's leg next to it.
 origin_trial:
   url: https://developer.chrome.com/origintrials/#/view_trial/551690954352885761
@@ -205,7 +205,7 @@ You can see the Idle Detection API in action with the [Ephemeral Canvas demo][de
 contents after 60 seconds of inactivity. You could imagine this being deployed in a department
 store for kids to doodle on.
 
-![Ephemeral Canvas demo](demo.png)
+{% Img src="image/admin/n0ysuaHUCcrRRf4b7pU0.png", alt="Ephemeral Canvas demo", width="800", height="953" %}
 
 ### Polyfilling
 
@@ -259,9 +259,10 @@ simple instructions for reproducing, and enter `Blink>Input` in the **Components
 Are you planning to use the Idle Detection API? Your public support helps the Chrome team to
 prioritize features and shows other browser vendors how critical it is to support them.
 
-Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
-Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#idledetection` hashtag
-and let us know where and how you're using it.
+- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
+- Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+  [`#IdleDetection`](https://twitter.com/search?q=%23IdleDetection&src=typed_query&f=live)
+  and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 

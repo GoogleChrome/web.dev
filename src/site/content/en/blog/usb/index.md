@@ -1,15 +1,15 @@
 ---
 title: Access USB Devices on the Web
-subhead: | 
+subhead: |
   The WebUSB API makes USB safer and easier to use by bringing it to the Web.
 authors:
   - beaufortfrancois
 date: 2016-03-30
-updated: 2020-10-19
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+updated: 2021-02-23
+hero: image/admin/hhnhxiNuRWMfGqy4NSaH.jpg
+thumbnail: image/admin/RyaGPB8fHCuuXUc9Wj9Z.jpg
 alt: A photo of an Arduino Micro board
-description: | 
+description: |
   The WebUSB API makes USB safer and easier to use by bringing it to the Web.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -332,7 +332,9 @@ of an INF file.
 - WICG Mailing list: [https://lists.w3.org/Archives/Public/public-wicg/](https://lists.w3.org/Archives/Public/public-wicg/)
 - WebLight project: [https://github.com/sowbug/weblight](https://github.com/sowbug/weblight)
 
-Please share your WebUSB demos with the [#webusb] hashtag.
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebUSB`](https://twitter.com/search?q=%23WebUSB&src=typed_query&f=live)
+and let us know where and how you're using it.
 
 ## Acknowledgements
 
@@ -362,5 +364,5 @@ Thanks to [Joe Medley] for reviewing this article.
 [member]: https://wiki.debian.org/SystemGroups
 [Shared Worker]: https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker
 [Service Worker]: https://jakearchibald.github.io/isserviceworkerready/resources.html
-[#webusb]: https://twitter.com/search?q=webusb
+[#webusb]: https://twitter.com/search?q=%23webusb&src=typed_query&f=live
 [Joe Medley]: https://github.com/jpmedley

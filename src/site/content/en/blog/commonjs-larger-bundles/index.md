@@ -5,7 +5,7 @@ authors:
   - mgechev
 date: 2020-05-08
 updated: 2020-05-26
-hero: hero.jpg
+hero: image/admin/S5JWmwRRW3rEXKwJR0JA.jpg
 alt: How CommonJS is making your bundles larger
 description:
   CommonJS modules are very dynamic, which prevents JavaScript

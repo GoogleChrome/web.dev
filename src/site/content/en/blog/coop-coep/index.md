@@ -12,10 +12,10 @@ description: >
   `performance.measureUserAgentSpecificMemory()` or the JS Self-Profiling API.
 authors:
   - agektmr
-hero: hero.jpg
+hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-02-09
+updated: 2021-02-19
 tags:
   - blog
   - security
@@ -28,6 +28,8 @@ feedback:
 
 **Updates**
 
+- **February 19, 2021**: Added a note about feature policy
+  `allow="cross-origin-isolated"` and debugging functionality on DevTools.
 - **February 9, 2021**: Added an instruction [how to set up a reporting
 endpoint](#set-up-reporting-endpoint).
 - **October 15, 2020**: `self.crossOriginIsolated` is available from Chrome 87.
@@ -37,6 +39,8 @@ enabled by default in Chrome 89. Shared Array Buffer on Android
 Chrome will be available from Chrome 88.
 - **September 1, 2020**: COOP Reporting is behind flags in Chrome 86. See
 [Enable Chrome flags](#flags).
+
+{% YouTube 'XLNJYhjA-0c' %}
 
 Some web APIs increase the risk of side-channel attacks like Spectre. To
 mitigate that risk, browsers offer an opt-in-based isolated environment called
@@ -104,6 +108,11 @@ clearer, let's define them first:
 
 ## Deploy COOP and COEP to make your website cross-origin isolated
 
+{% Aside %}
+Learn practical steps to enable cross-origin isolation at [A guide to
+enable cross-origin isolation](/cross-origin-isolation-guide/).
+{% endAside %}
+
 ### Integrate COOP and COEP
 
 #### 1. Set the `Cross-Origin-Opener-Policy: same-origin` header on the top-level document
@@ -119,7 +128,7 @@ window (`https://b.example`), the opener window and the popup window share the
 same browsing context and they have access to each other via DOM APIs such as
 `window.opener`.
 
-![Browsing Context Group](browsing-context-group.png)
+{% Img src="image/admin/g42eZMpIKNbUL0cN6yjC.png", alt="Browsing Context Group", width="470", height="469" %}
 
 As of Chrome 83, dedicated DevTools support is not yet available for COOP.
 However, you can examine `window.opener === null` from the opened window, or
@@ -128,7 +137,7 @@ in separate browsing context groups.
 
 {% Aside 'codelab' %}
 [See the impact of different COOP
-params](https://first-party-test.glitch.me/coop).
+parameters](https://first-party-test.glitch.me/coop).
 {% endAside %}
 
 #### 2. Ensure resources have CORP or CORS enabled
@@ -152,6 +161,12 @@ Here is what you need to do depending on the nature of the resource:
 * For iframes, use CORP and COEP headers as follows:
   `Cross-Origin-Resource-Policy: same-origin` (or `same-site`, `cross-origin`
   depending on the context) and `Cross-Origin-Embedder-Policy: require-corp`.
+
+{% Aside 'gotchas' %}
+You can enable cross-origin isolation on a document embedded within an iframe by
+applying `allow="cross-origin-isolated"` feature policy to the `<iframe>` tag
+and meeting the same conditions described in this document.
+{% endAside %}
 
 {% Aside 'key-term' %}
 It's important that you understand the difference between "same-site" and
@@ -202,6 +217,8 @@ property is available in Chrome from version 87.
 
 ### Debug issues using Chrome DevTools
 
+{% YouTube 'D5DLVo_TlEA' %}
+
 For resources that are rendered on the screen such as images, it's fairly easy
 to detect COEP issues because the request will be blocked and the page will
 indicate a missing image. However, for resources that don't
@@ -212,13 +229,29 @@ there's an issue with COEP, you should see
 column.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot-filled" src="devtools1.jpg" alt="COEP issues in the Status column of the Network panel.">
+  {% Img src="image/admin/iGwe4M1EgHzKb2Tvt5bl.jpg", alt="COEP issues in the Status column of the Network panel.", width="800", height="444", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 You can then click the entry to see more details.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot-filled" src="devtools2.jpg" alt="Details of the COEP issue are shown in the Headers tab after clicking a network resource in the Network panel.">
+  {% Img src="image/admin/1oTBjS9q8KGHWsWYGq1N.jpg", alt="Details of the COEP issue are shown in the Headers tab after clicking a network resource in the Network panel.", width="800", height="241", class="w-screenshot w-screenshot--filled" %}
+</figure>
+
+You can also determine the status of iframes and popup windows through the
+**Application** panel. Go to the "Frames" section on the left hand side and
+expand "top" to see the breakdown of the resource structure.
+
+You can check the iframe's status such as availability of SharedArrayBuffer, etc.
+
+<figure class="w-figure">
+{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframe inspector", width="800", height="480", className="w-screenshot w-screenshot-filled" %}
+</figure>
+
+You can also check the popup windows's status such as whether it's cross-origin isolated.
+
+<figure class="w-figure">
+{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Chrome DevTools popup window inspector", width="800", height="480", className="w-screenshot w-screenshot-filled" %}
 </figure>
 
 {% Aside %}
@@ -299,7 +332,7 @@ clone](https://glitch.com/edit/#!/reporting-endpoint) and customize for your own
 purposes.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot-filled" src="reporting-endpoint.png" alt="Build your own reporting endpoint by forking a lightweight sample implementation on glitch.com.">
+  {% Img src="image/admin/8Fh5mUULtCRK5K0738Ss.png", alt="Build your own reporting endpoint by forking a lightweight sample implementation on glitch.com.", width="800", height="496", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 All you have to do is to put the URL indicated in the page as the reporting

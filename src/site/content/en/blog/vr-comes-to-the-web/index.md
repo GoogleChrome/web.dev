@@ -5,7 +5,7 @@ authors:
   - joemedley
 date: 2019-10-31
 updated: 2020-03-02
-hero: hero.jpg
+hero: image/admin/5TAFoyhWvniJzDchNzPT.jpg
 alt: A person using a virtual reality headset.
 description:
   Virtual reality came to the web in Chrome 79. Based on the WebXR Devicer API,

@@ -4,7 +4,7 @@ subhead: Web components at I/O 2019
 authors:
   - arthurevans
 date: 2019-06-18
-hero: hero.jpg
+hero: image/admin/WPxFy8Y2JsLcTD9xKHIH.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom

@@ -10,11 +10,11 @@ description: |
   to check whether your iOS/Android/desktop app or PWA is installed on the
   user's device.
 date: 2018-12-20
-updated: 2021-02-09
+updated: 2021-02-23
 tags:
   - blog
   - capabilities
-hero: hero.jpg
+hero: image/admin/v9t93rXITPqFe3L0qlTN.jpg
 alt: mobile device with app panel open
 feedback:
   - api
@@ -410,8 +410,9 @@ support helps the Chrome team to prioritize features and shows other
 browser vendors how critical it is to support them.
 
 * Share how you plan to use the API on the [WICG Discourse thread][wicg-discourse].
-* Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#getInstalledRelatedApps`
-  hashtag and let us know where and how you're using it.
+* Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+  [`#getInstalledRelatedApps`](https://twitter.com/search?q=%23getInstalledRelatedApps&src=typed_query&f=live)
+  and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 

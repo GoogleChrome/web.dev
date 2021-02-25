@@ -3,8 +3,9 @@ layout: post
 title: Create an offline fallback page
 authors:
   - thomassteiner
+  - petelepage
 date: 2020-09-24
-updated: 2021-02-09
+updated: 2021-02-22
 description: Learn how to create a simple offline experience for your app.
 tags:
   - progressive-web-apps
@@ -110,7 +111,7 @@ all other cases:
 
 ```js
 /*
-Copyright 2015, 2019, 2020 Google LLC. All Rights Reserved.
+Copyright 2015, 2019, 2020, 2021 Google LLC. All Rights Reserved.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -201,6 +202,9 @@ self.addEventListener("fetch", (event) => {
 
 The `offline.html` file is where you can get creative and adapt it to your needs and add your
 branding. The example below shows the bare minimum of what is possible.
+It demonstrates both manual reload based on a button press as well as automatic reload
+based on the [`online` event](https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event)
+and regular server polling.
 
 {% Aside 'gotchas' %} You need to cache all resources required by your offline page. One
 way to deal with this is to inline everything, so the offline page is self-contained. This is what I
@@ -216,7 +220,7 @@ do in the example below. {% endAside %}
 
     <title>You are offline</title>
 
-    <!-- inline the webpage's stylesheet -->
+    <!-- Inline the page's stylesheet. -->
     <style>
       body {
         font-family: helvetica, arial, sans-serif;
@@ -243,11 +247,37 @@ do in the example below. {% endAside %}
     <p>Click the button below to try reloading.</p>
     <button type="button">⤾ Reload</button>
 
-    <!-- inline the webpage's javascript file -->
+    <!-- Inline the page's JavaScript file. -->
     <script>
+      // Manual reload feature.
       document.querySelector("button").addEventListener("click", () => {
         window.location.reload();
       });
+      
+      // Listen to changes in the network state, reload when online.
+      // This handles the case when the device is completely offline.
+      window.addEventListener('online', () => {
+        window.location.reload();
+      });
+
+      // Check if the server is responding and reload the page if it is.
+      // This handles the case when the device is online, but the server
+      // is offline or misbehaving.
+      async function checkNetworkAndReload() {
+        try {
+          const response = await fetch('.');
+          // Verify we get a valid response from the server
+          if (response.status >= 200 && response.status < 500) {
+            window.location.reload();
+            return;
+          }
+        } catch {
+          // Unable to connect to the server, ignore.
+        }
+        window.setTimeout(checkNetworkAndReload, 2500);
+      }
+
+      checkNetworkAndReload();
     </script>
   </body>
 </html>

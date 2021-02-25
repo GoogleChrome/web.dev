@@ -236,6 +236,9 @@
   "webassembly": {
     "title": "WebAssembly"
   },
+  "web-app-manifest": {
+    "title": "Web App Manifest"
+  },
   "web-bundles": {
     "title": "Web Bundles"
   },

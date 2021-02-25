@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 date: 2019-06-27
 updated: 2020-06-09
-hero: hero.jpg
+hero: image/admin/dgDcIJUyuWB5xNn9CODd.jpg
 hero_position: bottom
 alt: |
   Silhouette photo of a mountain during nighttime, photo by Nathan Anderson on Unsplash.
