@@ -151,7 +151,7 @@ instructions for reproducing, and enter `UI>Browser>WebAppInstalls` in the **Com
 Are you planning to use tabbed application mode? Your public support helps the Chrome team
 prioritize features and shows other browser vendors how critical it is to support them.
 
-Send a Tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
 [`#TabbedApplicationMode`](https://twitter.com/search?q=%23TabbedApplicationMode&src=typed_query&f=live)
 and let us
 know where and how you are using it.
