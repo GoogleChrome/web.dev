@@ -4,7 +4,7 @@ title: Preparing for the display modes of tomorrow
 subhead: PWAs can use the "display_override" property to deal with special display modes.
 authors:
   - thomassteiner
-date: 2021-02-16
+date: 2021-02-25
 description: |
   The display_override property allows developers to define a customized fallback chain of modes
   their PWAs should be displayed in.
