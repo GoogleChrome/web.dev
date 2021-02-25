@@ -39,8 +39,7 @@ Here's what it looks like:
 
 
 <figure class="w-figure">
-    <img src="./res-prio-priorities.png" class="w-screenshot"
-    alt="An example of how priorities are displayed in Chrome Developer Tools">
+    {% Img src="image/admin/oqcdfVAVj2RajVWfs6ap.png", alt="An example of how priorities are displayed in Chrome Developer Tools", width="800", height="249" %}, class="w-screenshot" %}
   <figcaption>
     The <b>Priority</b> column, which is hidden by default (see
     <a href="https://developers.google.com/web/tools/chrome-devtools/network/reference#columns">

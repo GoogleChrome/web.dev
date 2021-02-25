@@ -70,7 +70,7 @@ still fetched as soon as possible.
 In Chrome 76+, you can use the `loading` attribute to completely defer the loading of offscreen images that can be reached by scrolling:
 
 ```html
-<img src="image.png" loading="lazy" alt="…" width="200" height="200">
+![…](image.png)
 ```
 
 Here are the supported values for the `loading` attribute:
@@ -131,13 +131,13 @@ You can find a comparison between the old vs. new distance-from-viewport thresho
 Old thresholds. vs new thresholds:
 
 <figure class="w-figure">
-  <img src="./better-thresholds.png" alt="The new and improved thresholds for image lazy-loading, reducing the distance-from-viewport thresholds for fast connections from 3000px down to 1250px">
+  {% Img src="image/admin/xSZMqpbioBRwRTnenK8f.png", alt="The new and improved thresholds for image lazy-loading, reducing the distance-from-viewport thresholds for fast connections from 3000px down to 1250px", width="800", height="460" %}
 </figure>
 
 and the new thresholds vs. LazySizes (a popular JS lazy-loading library):
 
 <figure class="w-figure">
-  <img src="./lazysizes-threshold.png" alt="The new  distance-from-viewport thresholds in Chrome loading 90KB of images compared to LazySizes loading in 70KB under the same network conditions">
+  {% Img src="image/admin/oHMFvflk9aesT7r0iJbx.png", alt="The new  distance-from-viewport thresholds in Chrome loading 90KB of images compared to LazySizes loading in 70KB under the same network conditions", width="800", height="355" %}
 </figure>
 
 
@@ -152,13 +152,13 @@ We are committed to working with the web standards community to explore better a
 While the browser loads an image, it does not immediately know the image's dimensions, unless these are explicitly specified. To enable the browser to reserve sufficient space on a page for images, it is recommended that all `<img>` tags include both `width` and `height` attributes. Without dimensions specified, [layout shifts](/cls) can occur, which are more noticeable on pages that take some time to load.
 
 ```html
-<img src="image.png" loading="lazy" alt="…" width="200" height="200">
+![…](image.png)
 ```
 
 Alternatively, specify their values directly in an inline style:
 
 ```html
-<img src="image.png" loading="lazy" alt="…" style="height:200px; width:200px;">
+![…](image.png)
 ```
 
 The best practice of setting dimensions applies to `<img>` tags regardless of whether or not they are being loaded lazily. With lazy-loading, this can become more relevant. Setting `width` and `height` on images in modern browsers also allows browsers to infer their intrinsic size.
@@ -198,14 +198,14 @@ Generally, any images within the viewport should be loaded eagerly using the bro
 
 ```html
 <!-- visible in the viewport -->
-<img src="product-1.jpg" alt="..." width="200" height="200">
-<img src="product-2.jpg" alt="..." width="200" height="200">
-<img src="product-3.jpg" alt="..." width="200" height="200">
+![...](product-1.jpg)
+![...](product-2.jpg)
+![...](product-3.jpg)
 
 <!-- offscreen images -->
-<img src="product-4.jpg" loading="lazy" alt="..." width="200" height="200">
-<img src="product-5.jpg" loading="lazy" alt="..." width="200" height="200">
-<img src="product-6.jpg" loading="lazy" alt="..." width="200" height="200">
+![...](product-4.jpg)
+![...](product-5.jpg)
+![...](product-6.jpg)
 ```
 
 ## Graceful degradation
@@ -277,12 +277,12 @@ library only when `loading` isn't supported. This works as follows:
 
 ```html
 <!-- Let's load this in-viewport image normally -->
-<img src="hero.jpg" alt="…">
+![…](hero.jpg)
 
 <!-- Let's lazy-load the rest of these images -->
-<img data-src="unicorn.jpg" alt="…" loading="lazy" class="lazyload">
-<img data-src="cats.jpg" alt="…" loading="lazy" class="lazyload">
-<img data-src="dogs.jpg" alt="…" loading="lazy" class="lazyload">
+![…](unicorn.jpg)
+![…](cats.jpg)
+![…](dogs.jpg)
 
 <script>
   if ('loading' in HTMLImageElement.prototype) {

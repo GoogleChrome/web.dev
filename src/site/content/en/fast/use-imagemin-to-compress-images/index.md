@@ -27,11 +27,11 @@ to the average user.
     <thead>
       <tr>
         <th>
-          <p><img src=./20kb.jpg width="100%"></p>
+          <p>{% Img src="image/admin/LRE2JJAuShXTjQF5ZSaR.jpg", alt="", width="300", height="200" %}</p>
           20 KB
         </th>
         <th>
-          <p><img src=./12kb.jpg width="100%"></p>
+          <p>{% Img src="image/admin/u9hncwN4TsT7zw2ObU10.jpg", alt="", width="300", height="200" %}</p>
           12 KB
         </th>
       </tr>

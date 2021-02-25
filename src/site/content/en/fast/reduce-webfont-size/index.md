@@ -34,7 +34,7 @@ the complexity of the vector paths of each glyph and the number of glyphs in a p
 For example, Open Sans, which is one of the most popular WebFonts,
 contains 897 glyphs, which include Latin, Greek, and Cyrillic characters.
 
-<img src="./glyphs.png"  alt="Font glyph table">
+{% Img src="image/admin/B92rhiBJD9sx88a5CvVy.png", alt="Font glyph table", width="800", height="309" %}
 
 When picking a font, it's important to consider which character sets are supported.
 If you need to localize your page content to multiple languages,
@@ -264,7 +264,7 @@ Each font family is composed of multiple stylistic variants
 each of which, in turn, may contain very different glyph shapes&mdash;for example,
 different spacing, sizing, or a different shape altogether.
 
-<img src="./font-weights.png"  alt="Font weights">
+{% Img src="image/admin/FNtAc2xRmx2MuUt2MADj.png", alt="Font weights", width="697", height="127" %}
 
 For example, the above diagram illustrates a font family that offers three different bold weights:
 400 (regular), 700 (bold), and 900 (extra bold).
@@ -319,7 +319,7 @@ or sets the font-style property to italic?
 - If no stylistic match is found (for example, no italic variants were declared in the example above),
 then the browser synthesizes its own font variant.
 
-<img src="./font-synthesis.png"  alt="Font synthesis">
+{% Img src="image/admin/a8Jo2cIO1tPsj71AzftS.png", alt="Font synthesis", width="800", height="356" %}
 
 {% Aside 'warning' %}
 Be aware that synthesized approaches may not be suitable for scripts like Cyrillic,

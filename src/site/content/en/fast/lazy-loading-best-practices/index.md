@@ -159,10 +159,10 @@ using `<noscript>` elements to serve images if JavaScript is turned off:
 
 ```html
 <!-- An image that eventually gets lazy-loaded by JavaScript -->
-<img class="lazy" src="placeholder-image.jpg" data-src="image-to-lazy-load.jpg" alt="I'm an image!">
+![I'm an image!](image-to-lazy-load.jpg), class="lazy" %}
 <!-- An image that is shown if JavaScript is turned off -->
 <noscript>
-  <img src="image-to-lazy-load.jpg" alt="I'm an image!">
+  ![I'm an image!](image-to-lazy-load.jpg)
 </noscript>
 ```
 

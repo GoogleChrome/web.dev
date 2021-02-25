@@ -63,12 +63,12 @@ your pages:
 
 **Before:**
 ```html
-<img src="flower.jpg" alt="">
+![](flower.jpg)
 ```
 
 **After:**
 ```html
-<img data-src="flower.jpg" class="lazyload" alt="">
+![](flower.jpg)
 ```
 
 When you update the `<img>` tag you make two changes:
@@ -86,7 +86,7 @@ When you update the `<img>` tag you make two changes:
 <picture>
   <source type="image/webp" srcset="flower.webp">
   <source type="image/jpeg" srcset="flower.jpg">
-  <img src="flower.jpg" alt="">
+  ![](flower.jpg)
 </picture>
 ```
 
@@ -95,7 +95,7 @@ When you update the `<img>` tag you make two changes:
 <picture>
   <source type="image/webp" data-srcset="flower.webp">
   <source type="image/jpeg" data-srcset="flower.jpg">
-  <img data-src="flower.jpg" class="lazyload" alt="">
+  ![](flower.jpg)
 </picture>
 ```
 
