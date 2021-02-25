@@ -7,7 +7,7 @@ description: |
 authors:
   - thomassteiner
 date: 2021-02-19
-# updated: 2021-02-19
+updated: 2021-02-25
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/TuciUuOQOd3u7uMgDZBi.jpg
 alt: A forest stream with colored fallen leaves.
 tags:
@@ -134,7 +134,7 @@ The chunks inside the stream are read by a **reader**. This reader retrieves the
 time, allowing you to do whatever kind of operation you want to do on it. The reader plus the other
 processing code that goes along with it is called a **consumer**.
 
-The next construct in this context is called a **controller**. Each reader has an associated
+The next construct in this context is called a **controller**. Each readable stream has an associated
 controller that, as the name suggests, allows you to control the stream.
 
 Only one reader can read a stream at a time; when a reader is created and starts reading a stream
@@ -251,11 +251,11 @@ the stream. The different possibilities are as follows:
 const reader = readableStream.getReader();
 while (true) {
   const { done, value } = await reader.read();
-  console.log('Just read a chunk:', value);
   if (done) {
     console.log('The stream is done.');
     break;
   }
+  console.log('Just read a chunk:', value);
 }
 ```
 
@@ -273,38 +273,39 @@ console.log(`The stream is ${locked ? 'indeed' : 'not'} locked.`);
 ### Readable stream code samples
 
 The code sample below shows all the steps in action. You first create a `ReadableStream` that in its
-`underlyingSource` argument defines a `start` method that tells the stream's `controller` to
-`enqueue()` a timestamp every second during ten seconds and then to `close()` the stream. You consume this
+`underlyingSource` argument (that is, the `TimestampSource` class) defines a `start()` method.
+This method tells the stream's `controller` to
+`enqueue()` a timestamp every second during ten seconds.
+Finally, it tells the controller to `close()` the stream. You consume this
 stream by creating a reader via the `getReader()` method and calling `read()` until the stream is
 `done`.
 
 ```js
-const startEnqueuing = (controller) => {
-  let interval = null;
-  interval = setInterval(() => {
-    const string = new Date().toLocaleTimeString();
-    // Add the string to the stream.
-    controller.enqueue(string);
-    console.log(`Enqueued ${string}`);
-  }, 1_000);
+class TimestampSource {
+  #interval
 
-  setTimeout(() => {
-    clearInterval(interval);
-    // Close the stream after 10s.
-    controller.close();
-  }, 10_000);
-};
-
-const stream = new ReadableStream({
   start(controller) {
-    startEnqueuing(controller);
-  },
+    this.#interval = setInterval(() => {
+      const string = new Date().toLocaleTimeString();
+      // Add the string to the stream.
+      controller.enqueue(string);
+      console.log(`Enqueued ${string}`);
+    }, 1_000);
+
+    setTimeout(() => {
+      clearInterval(this.#interval);
+      // Close the stream after 10s.
+      controller.close();
+    }, 10_000);
+  }
 
   cancel() {
     // This is called if the reader cancels.
-    clearInterval(interval);
-  },
-});
+    clearInterval(this.#interval);
+  }
+}
+
+const stream = new ReadableStream(new TimestampSource());
 
 async function concatStringStream(stream) {
   let result = '';
@@ -460,20 +461,21 @@ property returns the desired size to fill the controlled stream's internal queue
 ### The `queuingStrategy`
 
 The second, likewise optional, argument of the `ReadableStream()` constructor is `queuingStrategy`.
-It is an object that optionally defines a queuing strategy for the stream, which takes two
-parameters:
+It is an object that optionally defines a queuing strategy for the stream, which takes one
+parameter:
 
-- `highWaterMark`: A non-negative number indicating the high water mark of the stream using this queuing strategy.
-- `size(chunk)`: A function that computes and returns the finite non-negative size of the given chunk value.
-  The result is used to determine backpressure, manifesting via the appropriate `ReadableByteStreamController.desiredSize` property.
+- `highWaterMark`: A non-negative number of bytes indicating the high water mark of the stream using this queuing strategy.
+  This is used to determine backpressure, manifesting via the appropriate `ReadableByteStreamController.desiredSize` property.
   It also governs when the underlying source's `pull()` method is called.
 
 {% Aside %}
-  You could define your own custom `queuingStrategy`, or use an instance of
-  [`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy)
-  or [`CountQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy)
-  for this object value. If no `queuingStrategy` is supplied, the default used is the same as a
-  `CountQueuingStrategy` with a `highWaterMark` of `1`.
+  Unlike queuing strategies for other stream types, a queuing strategy for a readable byte stream
+  does not have a `size(chunk)` function. The size of each chunk is always determined by its
+  `byteLength` property.
+{% endAside %}  
+
+{% Aside %}
+  If no `queuingStrategy` is supplied, the default used is one with a `highWaterMark` of `0`.
 {% endAside %}
 
 #### The `getReader()` and `read()` methods
@@ -558,8 +560,8 @@ A **queuing strategy** is an object that determines how a stream should signal b
 the state of its internal queue. The queuing strategy assigns a size to each chunk, and compares the
 total size of all chunks in the queue to a specified number, known as the **high water mark**.
 
-The final construct is called a **controller**. Each writer has an associated controller that allows
-you to control the stream (for example, to abort it).
+The final construct is called a **controller**. Each writable stream has an associated controller that
+allows you to control the stream (for example, to abort it).
 
 ### Creating a writable stream
 
@@ -1076,8 +1078,10 @@ This article was reviewed by
 [Jake Archibald](https://jakearchibald.com/),
 [François Beaufort](https://github.com/beaufortfrancois),
 [Sam Dutton](https://samdutton.com/),
-[Surma](https://surma.dev/), and
-[Joe Medley](https://github.com/jpmedley).
+[Mattias Buelens](https://github.com/MattiasBuelens),
+[Surma](https://surma.dev/),
+[Joe Medley](https://github.com/jpmedley), and
+[Adam Rice](https://github.com/ricea).
 [Jake Archibald](https://jakearchibald.com/)'s blog posts have helped me a lot in understanding
 streams. Some of the code samples are inspired by GitHub user
 [@bellbind](https://gist.github.com/bellbind/f6a7ba88e9f1a9d749fec4c9289163ac)'s explorations and
