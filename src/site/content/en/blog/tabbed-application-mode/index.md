@@ -4,7 +4,7 @@ title: Tabbed application mode for PWAs
 subhead: Work on more than one document at a time with tabs in your Progressive Web App
 authors:
   - thomassteiner
-date: 2021-02-16
+date: 2021-02-25
 description: |
   Tabbed application mode allows Progressive Web App developers to add a tabbed document interface
   to their standalone PWAs.
