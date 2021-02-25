@@ -77,15 +77,15 @@ natural place in the fallback chain.
 
 ## The `display_override` property
 
-{% Aside %}
-  The `display_override` property is meant to solve special corner cases. In almost all
-  circumstances the regular `display` property is what developers should reach for.
-{% endAside %}
-
 These problems are solved by the `display_override` property, which the browser considers *before*
 the `display` property. Its value is a sequence of strings that are considered in-order, and the
 first supported display mode is applied. If none are supported, the browser falls back to evaluating
 the `display` field.
+
+{% Aside %}
+  The `display_override` property is meant to solve special corner cases. In almost all
+  circumstances the regular `display` property is what developers should reach for.
+{% endAside %}
 
 In the example below, the display mode fallback chain would be as follows.
 (The details of `"window-control-overlay"` are out-of-scope for this article.)
