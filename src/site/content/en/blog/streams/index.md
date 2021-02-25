@@ -469,8 +469,9 @@ parameter:
   It also governs when the underlying source's `pull()` method is called.
 
 {% Aside %}
-  A queuing strategy for a readable byte stream does not have a `size(chunk)` function.
-  The size of each chunk is always determined by its `byteLength` property.
+  Unlike queuing strategies for other stream types, a queuing strategy for a readable byte stream
+  does not have a `size(chunk)` function. The size of each chunk is always determined by its
+  `byteLength` property.
 {% endAside %}  
 
 {% Aside %}
