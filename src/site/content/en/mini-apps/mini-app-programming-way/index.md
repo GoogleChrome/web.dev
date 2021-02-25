@@ -3,8 +3,8 @@ layout: post
 title: Programming the mini app way
 authors:
   - thomassteiner
-date:  2021-02-05
-# updated: 2021-01-25
+date: 2021-02-25
+# updated: 2021-02-25
 description: |
   This chapter introduces the way of programming the mini app way.
 tags:

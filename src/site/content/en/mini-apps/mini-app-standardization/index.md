@@ -3,8 +3,8 @@ layout: post
 title: Mini app standardization
 authors:
   - thomassteiner
-date:  2021-02-05
-# updated: 2021-01-25
+date: 2021-02-25
+# updated: 2021-02-25
 description: |
   This chapter introduces the standardization effort that has been started for mini apps.
 tags:

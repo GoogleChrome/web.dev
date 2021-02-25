@@ -3,8 +3,8 @@ layout: post
 title: Mini app markup, styling, and scripting
 authors:
   - thomassteiner
-date:  2021-02-05
-# updated: 2021-01-25
+date: 2021-02-25
+# updated: 2021-02-25
 description: |
   This chapter looks at the mark-up, styling, and scripting options of various mini apps platforms.
 tags:

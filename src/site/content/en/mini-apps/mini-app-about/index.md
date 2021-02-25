@@ -3,8 +3,8 @@ layout: post
 title: What are mini apps?
 authors:
   - thomassteiner
-date:  2021-02-05
-# updated: 2021-01-25
+date: 2021-02-25
+# updated: 2021-02-25
 description: |
   This chapter introduces the concept of mini apps and provides examples of their look and feel.
 tags:
