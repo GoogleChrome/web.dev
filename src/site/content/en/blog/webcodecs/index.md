@@ -398,9 +398,10 @@ Are you planning to use the WebCodecs API? Your public support helps the
 Chrome team to prioritize features and shows other browser vendors how critical
 it is to support them.
 
-Send emails to [media-dev@chromium.org](mailto:media-dev@chromium.org) or tweet
-to [@ChromiumDev][cr-dev-twitter] with the `#webcodecs` hashtag and let us know
-where and how you're using it.
+Send emails to [media-dev@chromium.org](mailto:media-dev@chromium.org) or send a tweet
+to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebCodecs`](https://twitter.com/search?q=%23WebCodecs&src=typed_query&f=live)
+and let us know where and how you're using it.
 
 [Hero image](https://unsplash.com/photos/8eQOBtgn9Qo) by
 [Denise Jans](https://unsplash.com/@dmjdenise)

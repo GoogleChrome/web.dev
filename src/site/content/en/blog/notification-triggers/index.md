@@ -9,7 +9,7 @@ description:
   The Notification Triggers API allows developers to schedule local notifications that don't require
   a network connection, which makes them ideal for use cases like calendar apps.
 date: 2019-10-24
-updated: 2020-09-28
+updated: 2021-02-23
 hero: image/admin/6ZuVN2HFiIqTVrmjN5XC.jpg
 hero_position: center
 tags:
@@ -239,9 +239,10 @@ for sharing quick and easy bug reproductions.
 ### Planning to use the API?
 
 Planning to use Notification Triggers on your site? Your public support helps us to prioritize
-features and shows other browser vendors how critical it is to support them. Send a Tweet to
-[@ChromiumDev](https://twitter.com/chromiumdev) with `#notificationtriggers` and let us know where
-and how you're using it.
+features and shows other browser vendors how critical it is to support them. Send a tweet to
+[@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
+[`#NotificationTriggers`](https://twitter.com/search?q=%23NotificationTriggers&src=typed_query&f=live)
+and let us know where and how you're using it.
 
 ## Helpful Links {: #helpful }
 

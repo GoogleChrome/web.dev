@@ -5,7 +5,7 @@ authors:
   - jeffposnick
 description: Your PWA might cache articles and media files, but how will your users know that your pages work while offline? The Content Indexing API is one answer to this question. Once the index is populated with content from your PWA, as well as any other installed PWAs, it will show up in dedicated areas of supported browsers.
 date: 2019-12-12
-updated: 2021-01-21
+updated: 2021-02-23
 tags:
   - blog
   - capabilities
@@ -307,8 +307,9 @@ Planning to use the Content Indexing API in your web app? Your public support
 helps Chrome prioritize features, and shows other browser vendors how critical it is
 to support them.
 
-- Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with
-  `#ContentIndexingAPI` and details on where and how you're using it.
+- Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
+  [`#ContentIndexingAPI`](https://twitter.com/search?q=%23ContentIndexingAPI&src=typed_query&f=live)
+  and details on where and how you're using it.
 
 ## What are some security and privacy implications of content indexing? {: #security-privacy }
 
