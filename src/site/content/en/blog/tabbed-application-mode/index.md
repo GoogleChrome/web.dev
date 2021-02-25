@@ -46,7 +46,7 @@ window. Tabbed application mode closes this gap.
 {% Aside %}
   This feature is about having a standalone app window with multiple tabs (containing
   separate documents inside the app scope) inside it. It is not to be confused with
-  `"display": "browser"`, which does already exist and has a separate meaning (specifically, that
+  the existing `"display": "browser"`, which has a separate meaning (specifically, that
   the app is opened in a regular browser tab).
 {% endAside %}
 
@@ -55,8 +55,8 @@ window. Tabbed application mode closes this gap.
 Examples of sites that may use tabbed application mode include:
 
 - Productivity apps that let the user edit more than one document (or file) at the same time.
-- Communication apps can let the user have conversations in different rooms per tab.
-- Reading apps can open article links in new in-app tabs.
+- Communication apps that let the user have conversations in different rooms per tab.
+- Reading apps that open article links in new in-app tabs.
 
 ### Differences to developer-built tabs
 
@@ -99,7 +99,7 @@ window.
 
 ## Using tabbed application mode
 
-To use tabbed application mode, developers need to opt in their apps by setting a specific display
+To use tabbed application mode, developers need to opt their apps in by setting a specific display
 mode value in the Web App Manifest.
 
 ```json
@@ -122,7 +122,7 @@ You can try tabbed application mode on Chrome&nbsp;OS devices running Chrome&nbs
 1. Install any web app that runs in `standalone` mode, for example,
    [Excalidraw](https://excalidraw.com/).
 1. Pin the app icon to the shelf, right click the icon, and select "New tabbed window" from the
-   contextmenu.
+   context menu.
 1. Open the app and interact with the tab strip.
 
 The video below shows the current iteration of the feature in action. There is no need to make any
@@ -148,7 +148,7 @@ instructions for reproducing, and enter `UI>Browser>WebAppInstalls` in the **Com
 
 ### Show support for the API
 
-Are you planning to use tabbed application mode? Your public support helps the Chrome team to
+Are you planning to use tabbed application mode? Your public support helps the Chrome team
 prioritize features and shows other browser vendors how critical it is to support them.
 
 Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#TabbedApplicationMode` hashtag and let us
