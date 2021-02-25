@@ -38,12 +38,12 @@ To run a Lighthouse audit on this site:
 
 When you run an audit on your machine, the exact results may vary, but in the filmstrip view, you'll notice the app has a blank screen for quite a while before finally rendering the content. This is why [First Contentful Paint (FCP)](/first-contentful-paint/) is high and why overall performance score is not great.
 
-{% Img src="image/admin/otfxnEjhjP9cNpSF8W4o.png", alt="Lighthouse audit showing performance score of 84, FCP 3 seconds and a filmstrip view of loading the app", width="710", height="356" %}, class="w-screenshot" %}
+{% Img src="image/admin/otfxnEjhjP9cNpSF8W4o.png", alt="Lighthouse audit showing performance score of 84, FCP 3 seconds and a filmstrip view of loading the app", width="710", height="356", class="w-screenshot" %}
 
 Lighthouse is here to help you fix performance issues, so look for solutions in the **Opportunities** section. **Eliminate render-blocking resources** is listed as an opportunity and that's where Critical shines!
 
 
-{% Img src="image/admin/L0i6jb8G1eT0vr2V45vH.png", alt="Lighthouse audit 'Opportunities' section listing 'Eliminate render-blocking resources'", width="743", height="449" %}, class="w-screenshot" %}
+{% Img src="image/admin/L0i6jb8G1eT0vr2V45vH.png", alt="Lighthouse audit 'Opportunities' section listing 'Eliminate render-blocking resources'", width="743", height="449", class="w-screenshot" %}
 
 ## Optimize
 
@@ -188,7 +188,7 @@ Now in the `<head>` tag of `index.html`, generated critical CSS is inlined betwe
 
 Follow the steps from the beginning of the codelab to run Lighthouse performance audit again. The results you get will look similar to this:
 
- {% Img src="image/admin/7be1SdC4JpavF7338VuT.png", alt="Lighthouse audit showing performance score of 100, FCP 0.9 seconds and improved filmstrip view of loading the app", width="716", height="407" %}, class="w-screenshot" %}
+ {% Img src="image/admin/7be1SdC4JpavF7338VuT.png", alt="Lighthouse audit showing performance score of 100, FCP 0.9 seconds and improved filmstrip view of loading the app", width="716", height="407", class="w-screenshot" %}
 
 {% Aside 'success' %}
 The filmstrip view shows that content is rendered much sooner and this is reflected in improved paint metrics. And "Eliminate render-blocking resources" has been eliminated! 🎉

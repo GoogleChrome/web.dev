@@ -80,7 +80,7 @@ that's left to do is to decide what to do when an element is visible.
 Let's assume this basic markup pattern for your lazily loaded `<img>` elements:
 
 ```html
-![I'm an image!](image-to-lazy-load-1x.jpg), class="lazy" %}
+<img class="lazy" src="placeholder-image.jpg" data-src="image-to-lazy-load-1x.jpg" data-srcset="image-to-lazy-load-2x.jpg 2x, image-to-lazy-load-1x.jpg 1x" alt="I'm an image!">
 ```
 
 There are three relevant pieces of this markup that you should focus on:

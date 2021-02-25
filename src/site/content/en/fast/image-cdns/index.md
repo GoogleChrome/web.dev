@@ -25,7 +25,7 @@ Image CDNs specialize in the transformation, optimization, and delivery of image
 
 
 <figure class="w-figure">
-  {% Img src="image/admin/OIF2VcXp8P6O7tQvw53B.jpg", alt="Shows the request/response flow between the image CDN and the client. Parameters like size and format are used to request variations of the same image.", width="800", height="408" %}, class="w-screenshot" %}
+  {% Img src="image/admin/OIF2VcXp8P6O7tQvw53B.jpg", alt="Shows the request/response flow between the image CDN and the client. Parameters like size and format are used to request variations of the same image.", width="800", height="408", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Examples of transformations image CDNs can perform based on parameters in image URLs.
   </figcaption>

@@ -36,7 +36,7 @@ To see it in action, here's an app bundled with
 kitty](https://glitch.com/edit/#!/scarce-pixie).
 
 <a href="https://glitch.com/edit/#!/scarce-pixie">
-  {% Img src="image/admin/DGSSFfpAMIaFqX8MwWss.png", alt="Cat voting app", width="800", height="567" %}, class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/DGSSFfpAMIaFqX8MwWss.png", alt="Cat voting app", width="800", height="567", class="w-screenshot w-screenshot--filled" %}
 </a>
 
 ## Set the performance budget

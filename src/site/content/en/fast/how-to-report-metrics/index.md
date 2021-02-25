@@ -53,7 +53,7 @@ to map performance metrics to user engagement, conversions and transaction value
 For example, a custom report to do so looks like this in Google Analytics:
 
 <figure class="w-figure">
-  {% Img src="image/admin/YI31t9fE82uEhrrYKTVg.png", alt="A Google Analytics dashboard shows a number of fields being added to a custom report.", width="800", height="430" %}, class="w-screenshot" %}
+  {% Img src="image/admin/YI31t9fE82uEhrrYKTVg.png", alt="A Google Analytics dashboard shows a number of fields being added to a custom report.", width="800", height="430", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--center">
     Fig 1: Custom report in Google Analytics to analyze the impact of speed on conversions and engagement.
   </figcaption>
@@ -167,7 +167,7 @@ Some ways to handle third party content with respect to performance:
     and widgets. This can easily be done via [Ghostery Extension](https://chrome.google.com/webstore/detail/ghostery-%E2%80%93-privacy-ad-blo/mlomiejdfkolichcflejclcbmpeaniij?hl=en) or tools like [WhatRuns](https://chrome.google.com/webstore/detail/whatruns/cmkdbmfndkfgebldhnkbfhlneefdaaip?hl=en):
 
 <figure class="w-figure">
-  {% Img src="image/admin/w2xb4mUJ7kDpt254fq0k.png", alt="A Ghostery report showing all loaded trackers.", width="800", height="710" %}, class="w-screenshot" %}
+  {% Img src="image/admin/w2xb4mUJ7kDpt254fq0k.png", alt="A Ghostery report showing all loaded trackers.", width="800", height="710", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--center">
     A Ghostery report showing all loaded trackers
   </figcaption>

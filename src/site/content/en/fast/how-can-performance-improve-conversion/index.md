@@ -42,7 +42,7 @@ Make sure to use appropriate tools as described in [Fast Load Times](/fast) to o
 After getting users to your site, you need to keep them engaged with your content, which you can verify in your analytics of choice by looking at session length, time-on-page, pages-per-session and general [user flows](https://support.google.com/analytics/answer/1709395?hl=en).
 
 <figure class="w-figure">
-  {% Img src="image/admin/Apz0cUkUGVR7m9gKepkt.png", alt="A Google Analytics dashboard shows the number of users that drop off from starting page to first and second interactions.", width="800", height="416" %}, class="w-screenshot" %}
+  {% Img src="image/admin/Apz0cUkUGVR7m9gKepkt.png", alt="A Google Analytics dashboard shows the number of users that drop off from starting page to first and second interactions.", width="800", height="416", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     A user flow through the funnel as seen by Google Analytics.
   </figcaption>

@@ -48,7 +48,7 @@ tend to affect both desktop and mobile, and makes it easier to see whether any
 increases in the mobile site's effectiveness were actually caused by the speed
 improvements.
 
-{% Img src="image/admin/dvh7qY6J9CVxn46SYULP.jpg", alt="Table showing comparison of mobile/desktop conversion rate and relative mobile conversion rate", width="800", height="450" %}, class="w-screenshot" %}
+{% Img src="image/admin/dvh7qY6J9CVxn46SYULP.jpg", alt="Table showing comparison of mobile/desktop conversion rate and relative mobile conversion rate", width="800", height="450", class="w-screenshot" %}
 
 {% Aside 'caution' %}
 Rel mCvR is influenced not only by speed, but also by other site
@@ -76,22 +76,22 @@ and skip steps 1–3.
   drop-down list, and click **Create**.
   * Once the report has been generated, click **Select a metric > Metric Group > Ecommerce Conversion Rate**.
     <br><br>
-    {% Img src="image/admin/SOyIrgxHglmF1CDNeOg5.png", alt="Screenshot of Google Analytics: select a metric, Metric Group, Ecommerce Conversion Rate", width="424", height="368" %}, class="w-screenshot" %}
+    {% Img src="image/admin/SOyIrgxHglmF1CDNeOg5.png", alt="Screenshot of Google Analytics: select a metric, Metric Group, Ecommerce Conversion Rate", width="424", height="368", class="w-screenshot" %}
     <br><br>
   * Select the **Week** view for the dataset.
     <br><br>
-    {% Img src="image/admin/VPlPn0FOeefl4HjEAcKp.jpg", alt="Screenshot of Google Analytics: select a week", width="800", height="105" %}, class="w-screenshot" %}
+    {% Img src="image/admin/VPlPn0FOeefl4HjEAcKp.jpg", alt="Screenshot of Google Analytics: select a week", width="800", height="105", class="w-screenshot" %}
     <br><br>
   * Select a time period that covers 2–3 months before the speed
   optimization and 2–3 months after. (In our example, that's January 2018
   through October 2018.)
     <br><br>
-    {% Img src="image/admin/LJBUo9MvBXlG0iM28ZOK.jpg", alt="Screenshot of Google Analytics: select a start date", width="800", height="214" %}, class="w-screenshot" %}
+    {% Img src="image/admin/LJBUo9MvBXlG0iM28ZOK.jpg", alt="Screenshot of Google Analytics: select a start date", width="800", height="214", class="w-screenshot" %}
     <br><br>
   * Export the report to [Google Sheets](http://sheets.google.com) or
   your preferred spreadsheet application.
     <br><br>
-    {% Img src="image/admin/cHSMbqdKcS4tMomPOuSx.jpg", alt="Screenshot of Google Analytics: export to Google Sheets", width="800", height="489" %}, class="w-screenshot" %}
+    {% Img src="image/admin/cHSMbqdKcS4tMomPOuSx.jpg", alt="Screenshot of Google Analytics: export to Google Sheets", width="800", height="489", class="w-screenshot" %}
     <br><br>
 
 **Step 2:** Now get the speed and conversion data for the desktop site. Open

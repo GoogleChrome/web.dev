@@ -182,7 +182,7 @@ an eye on this though, and a great lab test tool for repeat visits is
 direct repeat visit:
 
 <figure class="w-figure">
-  {% Img src="image/admin/6eHzqWl6gaKjL39n8Dwh.png", alt="The WebPageTest homepage form for auditing a site. The repeat view option is highlighted.", width="800", height="650" %}, class="w-screenshot" %}
+  {% Img src="image/admin/6eHzqWl6gaKjL39n8Dwh.png", alt="The WebPageTest homepage form for auditing a site. The repeat view option is highlighted.", width="800", height="650", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--center">
     Webpagetest offers options to test first load and repeat load as well
   </figcaption>
@@ -193,7 +193,7 @@ analytics package of choice to segment your performance metrics by user type.
 Here is an example of such a report in Google Analytics:
 
 <figure class="w-figure">
-  {% Img src="image/admin/pSxM9xuJKho7RjOn4aDK.png", alt="A Google Analytics dashboard shows a number of fields being added to a custom report.", width="800", height="444" %}, class="w-screenshot" %}
+  {% Img src="image/admin/pSxM9xuJKho7RjOn4aDK.png", alt="A Google Analytics dashboard shows a number of fields being added to a custom report.", width="800", height="444", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--center">
     A Google Analytics custom report can be used to report speed metrics for new and returning users.
   </figcaption>

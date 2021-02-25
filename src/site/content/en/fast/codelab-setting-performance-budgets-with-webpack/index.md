@@ -49,7 +49,7 @@ while 1 KB is 1000 bytes.
 {% endAside %}
 
 <figure class="w-figure">
-  {% Img src="image/admin/MpeaVZE4nJHOAAnlQ8Sz.png", alt="Webpack output showing bundle size of 323 KiB", width="640", height="59" %}, class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/MpeaVZE4nJHOAAnlQ8Sz.png", alt="Webpack output showing bundle size of 323 KiB", width="640", height="59", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     Webpack warning you about bulky JS bundle ⚠️
   </figcaption>
@@ -61,7 +61,7 @@ and the default threshold is **244 KiB uncompressed**, for both assets and
 (the combination of all assets used during the initial load of a page).
 
 <figure class="w-figure">
-  {% Img src="image/admin/tXgrsOqdJAzf6LTelr0v.png", alt="Webpack warning that the asset exceeds the recommended size limit", width="642", height="108" %}, class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/tXgrsOqdJAzf6LTelr0v.png", alt="Webpack warning that the asset exceeds the recommended size limit", width="642", height="108", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     Webpack warning you about bulky JS bundle ⚠️
   </figcaption>
@@ -72,7 +72,7 @@ how to downsize your bundles. You can learn more about the recommended technique
 [Web Fundamentals](https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching#lazy-loading).
 
 <figure class="w-figure">
-  {% Img src="image/admin/pygtt0At7nmByNKm38hr.png", alt="Webpack performance optimization recommendation", width="641", height="96" %}, class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/admin/pygtt0At7nmByNKm38hr.png", alt="Webpack performance optimization recommendation", width="641", height="96", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">Webpack performance optimization recommendation 💁</figcaption>
 </figure>
 
@@ -177,7 +177,7 @@ again to build the optimized bundle.
 
 Ta-da! You have shaved off 223 KiB (230KB) and the app is under budget.🎉
 
-{% Img src="image/admin/A6TIDToLthjRrHvxluND.png", alt="Webpack bundle size output after optimization is 97.7 KiB", width="473", height="58" %}, class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/admin/A6TIDToLthjRrHvxluND.png", alt="Webpack bundle size output after optimization is 97.7 KiB", width="473", height="58", class="w-screenshot w-screenshot--filled" %}
 
 ## Monitor
 

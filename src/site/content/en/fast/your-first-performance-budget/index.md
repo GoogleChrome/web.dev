@@ -97,7 +97,7 @@ If you are not sure which sites to look at, here are a few tools to try:
 2. [Alexa's similar sites](https://www.alexa.com/find-similar-sites) feature
 3. [SimilarWeb](https://www.similarweb.com)
 
-{% Img src="image/admin/EzpGvSgVJYC2y3rsnHRk.png", alt="Screenshot of Google search with the related keyword", width="775", height="336" %}, class="w-screenshot" %}
+{% Img src="image/admin/EzpGvSgVJYC2y3rsnHRk.png", alt="Screenshot of Google search with the related keyword", width="775", height="336", class="w-screenshot" %}
 
 
 For a realistic picture, try to **find 10 or so competitors**.
@@ -144,7 +144,7 @@ Create a chart with FCP and TTI times for all the similar websites and highlight
 </div>
 
 <figure>
-  {% Img src="image/admin/Mfzr0dmMxHij9KrJraHD.jpg", alt="Doggo at a computer", width="800", height="600" %}, class="w-screenshot" %}
+  {% Img src="image/admin/Mfzr0dmMxHij9KrJraHD.jpg", alt="Doggo at a computer", width="800", height="600", class="w-screenshot" %}
   <figcaption>
     Doggos.io seems to be doing okay on the FCP metric but seriously lagging behind in TTI
   </figcaption>
