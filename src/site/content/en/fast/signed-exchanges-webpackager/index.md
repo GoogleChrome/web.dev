@@ -208,7 +208,7 @@ used with signed exchanges.
         false` to `PreloadJS = true`.
 
         As an alternative to using this configuration option, you can instead
-        add the `Link: rel=preload` header or `<link rel=preload>` tag to a
+        add the `Link: rel="preload"` header or `<link rel="preload">` tag to a
         page's HTML.
 
     *   By default, `webpkgserver` replaces existing `<link rel="preload">` tags
@@ -255,7 +255,7 @@ used with signed exchanges.
     possible to test SXGs using a test certificate.
 
     When you launch Chrome, you should see the warning `You are using an unsupported
-    command-line flag` displayed below the address bar. This can be ignored.
+    command-line flag` displayed below the address bar. This warning can be ignored.
 
     If DevTools displays the SXG error `Certificate verification error:
     ERR_CERT_INVALID`, it is likely that you forgot to start Chrome using this
