@@ -22,8 +22,9 @@ Intersection Observer&nbsp;v1 is one of those APIs that's probably universally l
 it's also finally universally usable in all major browsers. For a quick refresher of the API,
 I recommend watching [Surma](../../../resources/contributors/surma)'s
 [Supercharged Microtip](https://www.youtube.com/embed/kW_atFXMG98) on Intersection
-Observer&nbsp;v1—also embedded below for your viewing pleasure—or reading Surma's in-depth
-[article](../../2016/04/intersectionobserver).
+Observer&nbsp;v1 that is embedded below.
+You can also read Surma's in-depth
+[article](https://developers.google.com/web/updates/2016/04/intersectionobserver).
 People have used Intersection Observer&nbsp;v1 for a wide range of use cases like
 [lazy loading of images and videos](../../../fundamentals/performance/lazy-loading-guidance/images-and-video/),
 [being notified when elements reach `position: sticky`](../../2017/09/sticky-headers),
