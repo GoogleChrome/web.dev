@@ -61,10 +61,11 @@ by any other page content (that is, when the element is occluded) or whether
 the element's visual display has been modified by visual effects like `transform`, `opacity`,
 `filter`, etc., which *effectively* can make it invisible.
 
-Now while for an element in the top-level document this information can be determined by analyzing
+For an element in the top-level document, this information can be determined by analyzing
 the DOM via JavaScript, for example via
 [`DocumentOrShadowRoot.elementFromPoint()`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/elementFromPoint)
-and then digging deeper, the same information cannot be obtained if the element in question is
+and then digging deeper.
+In contrast, the same information cannot be obtained if the element in question is
 located in a third-party iframe.
 
 ## Why is actual visibility such a big deal?
@@ -93,8 +94,8 @@ element as a human being would define it.
 By setting an option in the
 [`IntersectionObserver` constructor](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver),
 intersecting
-[`IntersectionObserverEntry`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry)s
-(pardon the wrong plural ending here) will then contain a new boolean field named `isVisible`.
+[`IntersectionObserverEntry`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry)
+instances will then contain a new boolean field named `isVisible`.
 A `true` value for `isVisible` is a strong guarantee from the underlying implementation
 that the target element is completely unoccluded by other content
 and has no visual effects applied that would alter or distort its display on screen.
@@ -104,8 +105,8 @@ An important detail of the
 [spec](https://w3c.github.io/IntersectionObserver/v2/#calculate-visibility-algo)
 is that the implementation *is permitted* to report *false negatives* (that is, setting `isVisible`
 to `false` even when the target element is completely visible and unmodified).
-For performance or other reasons, implementations should limit themselves to working with bounding
-boxes and rectilinear geometry; they shouldn't try to achieve pixel-perfect results for
+For performance or other reasons, browsers limit themselves to working with bounding
+boxes and rectilinear geometry; they don't try to achieve pixel-perfect results for
 modifications like `border-radius`.
 
 That said, *false positives* are *not permitted* under any circumstances (that is, setting
@@ -115,7 +116,8 @@ That said, *false positives* are *not permitted* under any circumstances (that i
   Visibility is *much more expensive* to compute than intersection. For that reason,
   Intersection Observer&nbsp;v2 is *not intended to be used broadly* in the way that
   Intersection Observer&nbsp;v1 is. Intersection Observer&nbsp;v2 is focused on combatting fraud
-  and should be used only when Intersection Observer&nbsp;v1 functionality is *truly* insufficient.
+  and should be used only when the visibility information is needed and
+  when Intersection Observer&nbsp;v1 functionality is therefore insufficient.
 {% endAside %}
 
 ## What does the new code look like in practice?
