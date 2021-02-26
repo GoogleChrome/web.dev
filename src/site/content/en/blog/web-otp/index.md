@@ -4,7 +4,7 @@ subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
-updated: 2020-12-09
+updated: 2021-02-23
 hero: image/admin/iVHsQYbBj8qNYZeSZKwK.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
@@ -195,7 +195,7 @@ Using the Web OTP API consists of three parts:
 
 * A properly annotated `<input>` tag
 * JavaScript in your web app
-* Formatted message text sent via SMS. 
+* Formatted message text sent via SMS.
 
 I'll cover the `<input>` tag first.
 
@@ -426,8 +426,9 @@ Did you find a bug with Chrome's implementation?
 
 Are you planning to use the Web OTP API? Your public support helps us prioritize
 features, and shows other browser vendors how critical it is to support them.
-Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with
-`#webotp` and let us know where and how you're using it.
+Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
+[`#WebOTP`](https://twitter.com/search?q=%23WebOTP&src=typed_query&f=live)
+and let us know where and how you're using it.
 
 ### What are the differences with the SMS Receiver API? {: #differences }
 

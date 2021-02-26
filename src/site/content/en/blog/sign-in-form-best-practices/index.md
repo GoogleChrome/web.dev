@@ -147,7 +147,7 @@ enables quicker scanning by users. You get full width labels and inputs, and you
 don't need to adjust label and input width to fit the label text.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./label-position.png" alt="Screenshot showing form input label position on mobile: next to input and above input." width="500">
+  {% Img src="image/admin/k0ioJa9CqnMI8vyAvQPS.png", alt="Screenshot showing form input label position on mobile: next to input and above input.", width="500", height="253", class="w-screenshot" %}
   <figcaption class="w-figcaption">Label and input width is limited when both are on the same line.</figcaption>
 </figure>
 
@@ -219,7 +219,7 @@ it clear where to start and, on desktop at least, means users don't have to
 select the input to start typing.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./autofocus.png" alt="Screenshot showing form input with autofocus." width="500">
+  {% Img src="image/admin/27x2icJSXCMdfWOjVAdR.png", alt="Screenshot showing form input with autofocus.", width="500", height="451", class="w-screenshot" %}
   <figcaption class="w-figcaption">Autofocus provides clear visual focus on desktop.</figcaption>
 </figure>
 
@@ -235,7 +235,7 @@ text they've entered—and don't forget to add a **Forgot password** link. See
 [Enable password display](#password-display).
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./show-password-google.png" alt="Google sign-in form showing Show password icon." width="300">
+  {% Img src="image/admin/58suVe0HnSLaJvNjKY53.png", alt="Google sign-in form showing Show password icon.", width="300", height="107", class="w-screenshot" %}
   <figcaption class="w-figcaption">Password input from the Google sign-in form: with <strong>Show password</strong> icon and <strong>Forgot password</strong> link.</figcaption>
 </figure>
 
@@ -264,14 +264,14 @@ worse, partially obstruct the **Sign in** button. Users may give up before
 realizing what has happened.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./keyboard-not-ok.png" alt="Two screenshots of a sign-in form on an Android phone: one showing how the Submit button is obscured by the phone keyboard." width="400">
+  {% Img src="image/admin/rLo5sW9LBpTcJU7KNnb7.png", alt="Two screenshots of a sign-in form on an Android phone: one showing how the Submit button is obscured by the phone keyboard.", width="400", height="360", class="w-screenshot" %}
   <figcaption class="w-figcaption">The <b>Sign in</b> button: now you see it, now you don't.</figcaption>
 </figure>
 
 Where possible, avoid this by displaying only the email/phone and password inputs and **Sign in** button at the top of your sign-in page. Put other content below.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./keyboard-ok.png" alt="Screenshot of a sign-in form on an Android phone: the Sign in button is not obscured by the phone keyboard." width="200">
+  {% Img src="image/admin/0OebKiAP4sTgaXbcbvYx.png", alt="Screenshot of a sign-in form on an Android phone: the Sign in button is not obscured by the phone keyboard.", width="200", height="342", class="w-screenshot" %}
   <figcaption class="w-figcaption">The keyboard doesn't obstruct the <b>Sign in</b> button.</figcaption>
 </figure>
 
@@ -284,7 +284,7 @@ and browsers.
 
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./iphone-keyboard.png" alt="Screenshots of a sign-in form on iPhone 7, 8 and 11. On iPhone 7 and 8 the Sign in button is obscured by the phone keyboard, but not on iPhone 11">
+  {% Img src="image/admin/jToMlWgjS3J2WKmjs1hx.png", alt="Screenshots of a sign-in form on iPhone 7, 8 and 11. On iPhone 7 and 8 the Sign in button is obscured by the phone keyboard, but not on iPhone 11", width="800", height="522", class="w-screenshot" %}
   <figcaption class="w-figcaption">The <b>Sign in</b> button: obscured on iPhone 7 and 8, but not on iPhone 11.</figcaption>
 </figure>
 
@@ -295,7 +295,7 @@ email/phone and password on two pages. This approach also simplifies the
 experience: the user is only tasked with one thing at a time.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./amazon-signin-mobile.png" alt="Screenshot of a sign-in form on the Amazon website: email/phone and password on two separate 'pages'." width="400">
+  {% Img src="image/admin/CxpObjYZMs0MMFo66f4P.png", alt="Screenshot of a sign-in form on the Amazon website: email/phone and password on two separate 'pages'.", width="400", height="385", class="w-screenshot" %}
   <figcaption class="w-figcaption">Two-stage sign-in: email or phone, then password.</figcaption>
 </figure>
 
@@ -363,14 +363,14 @@ for example, the password manager is displayed, and then biometric
 authentication (fingerprint or facial recognition) is used if available.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./safari-signin-desktop.png" alt="Screenshots of three stages of sign-in process in Safari on desktop: password manager, biometric authentication, autofill.">
+  {% Img src="image/admin/UjBRRYaLbX9bh3LDFcAM.png", alt="Screenshots of three stages of sign-in process in Safari on desktop: password manager, biometric authentication, autofill.", width="800", height="234", class="w-screenshot" %}
   <figcaption class="w-figcaption">Sign-in with autocomplete—no text entry required!</figcaption>
 </figure>
 
 Chrome on desktop displays email suggestions, shows the password manager, and autofills the password.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./chrome-signin-desktop.png" alt="Screenshots of four stages of sign-in process in Chrome on desktop: email completion, email suggestion, password manager, autofill on selection.">
+  {% Img src="image/admin/mDm1cstWZB9jJDzMmzgE.png", alt="Screenshots of four stages of sign-in process in Chrome on desktop: email completion, email suggestion, password manager, autofill on selection.", width="800", height="232", class="w-screenshot" %}
   <figcaption class="w-figcaption">Autocomplete sign-in flow in Chrome 84.</figcaption>
 </figure>
 
@@ -390,7 +390,7 @@ spec](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#in
 lists all 59 possible values.
 
 {% Aside %}
-You can help password managers by using different `name` and `id` values in sign-up and sign-in 
+You can help password managers by using different `name` and `id` values in sign-up and sign-in
 forms, for the `form` element itself, as well as any `input`, `select` and `textarea` elements.
 {% endAside %}
 
@@ -402,7 +402,7 @@ suggest a strong password.
 Here's how Safari does it on desktop.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./safari-password-suggestion.png" alt="Screenshot of Firefox password manager on desktop.">
+  {% Img src="image/admin/B1DlZK0CllVjrOUbb5xB.png", alt="Screenshot of Firefox password manager on desktop.", width="800", height="229", class="w-screenshot" %}
   <figcaption class="w-figcaption">Password suggestion flow in Safari.</figcaption>
 </figure>
 
@@ -430,7 +430,7 @@ Modern browsers automatically prompt and set focus for missing data.
 No JavaScript required!
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./missing-field-firefox-android.png" alt="Screenshot of desktop Firefox and Chrome for Android showing 'Please fill out this field' prompt for missing data." width="600">
+  {% Img src="image/admin/n5Nr290upVmQGvlc263U.png", alt="Screenshot of desktop Firefox and Chrome for Android showing 'Please fill out this field' prompt for missing data.", width="600", height="392", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Prompt and focus for missing data on Firefox for desktop (version 76)
     and Chrome for Android (version 83).
@@ -484,7 +484,7 @@ As with size and padding, the default browser font size for input elements and
 buttons is too small, particularly on mobile.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./unstyled-form-text.png" alt="Screenshot of unstyled form in Chrome on desktop and on Android.">
+  {% Img src="image/admin/EeIsqWhLbot15p4SYpo2.png", alt="Screenshot of unstyled form in Chrome on desktop and on Android.", width="800", height="494", class="w-screenshot" %}
   <figcaption class="w-figcaption">Default styling on desktop and mobile: input text is too small to be legible for many users.</figcaption>
 </figure>
 
@@ -521,7 +521,7 @@ As well as padding, add a border: on a white background, a good general rule is
 to use `#ccc` or darker.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./styled-signin-form.png" alt="Screenshot of styled form in Chrome on Android." width="250">
+  {% Img src="image/admin/OgDJ5V2N7imHXSBkN4pr.png", alt="Screenshot of styled form in Chrome on Android.", width="250", height="525", class="w-screenshot" %}
   <figcaption class="w-figcaption">Legible text, visible input borders, adequate padding and margins.</figcaption>
 </figure>
 
@@ -533,7 +533,7 @@ Browsers have built-in features to do basic form validation for inputs with a
 and set focus on the problematic input.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./invalid-email.png" alt="Screenshot of a sign-in form in Chrome on desktop showing browser prompt and focus for an invalid email value." width="300">
+  {% Img src="image/admin/Phf9m5J66lIX9x5brzOL.png", alt="Screenshot of a sign-in form in Chrome on desktop showing browser prompt and focus for an invalid email value.", width="300", height="290" %}
   <figcaption class="w-figcaption">Basic built-in validation by the browser.</figcaption>
 </figure>
 
@@ -623,7 +623,7 @@ function togglePassword() {
 Here's the end result:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./show-password.png" alt="Screenshots of sign-in form with Show password text 'button', in Safari on Mac and on iPhone 7." width="800" class="w-screenshot">
+  {% Img src="image/admin/x4NP9JMf1KI8PapQ9JFh.png", alt="Screenshots of sign-in form with Show password text 'button', in Safari on Mac and on iPhone 7.", width="800", height="468", class="w-screenshot" %}
   <figcaption class="w-figcaption">Sign-in form with <strong>Show password</strong> text 'button', in Safari on Mac and iPhone 7.</figcaption>
 </figure>
 

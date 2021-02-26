@@ -5,7 +5,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2021-01-21
+updated: 2021-02-23
 hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
 thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
@@ -412,7 +412,8 @@ Are you planning to use the WebHID API? Your public support helps the Chrome
 team prioritize features and shows other browser vendors how critical it is to
 support them.
 
-Send a Tweet to [@ChromiumDev][cr-dev-twitter] with `#WebHID` and let us know
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebHID`](https://twitter.com/search?q=%23WebHID&src=typed_query&f=live) and let us know
 where and how you're using it.
 
 ## Helpful links {: #helpful }

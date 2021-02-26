@@ -288,7 +288,7 @@ You should also provide your users with access to their account login history, s
 and when a login happened.
 
 <figure class="w-figure">
-  <img src="images/gmail-activity.jpg" alt="Gmail account activity page">
+  ![Gmail account activity page](images/gmail-activity.jpg)
   <figcaption class="w-figcaption"><a href="https://support.google.com/mail/answer/45938?hl=en-GB"
     title="Find out how to view Gmail account activity.">Gmail account activity page</a>.</figcaption>
 </figure>
@@ -321,7 +321,7 @@ However, you should also enable users to log in via a third party identity provi
 federated login.
 
 <figure class="w-figure">
-  <img src="images/federated-login.jpg" alt="WordPress login page">
+  ![WordPress login page](images/federated-login.jpg)
   <figcaption class="w-figcaption">WordPress login page, with Google and Apple login options.</figcaption>
 </figure>
 
@@ -351,7 +351,7 @@ Many users share devices and swap between accounts using the same browser. Wheth
 federated login or not, you should make account switching simple.
 
 <figure class="w-figure">
-  <img src="images/gmail-account-switching.jpg" alt="Gmail, showing account switching">
+  ![Gmail, showing account switching](images/gmail-account-switching.jpg)
   <figcaption class="w-figcaption">Account switching on Gmail.</figcaption>
 </figure>
 

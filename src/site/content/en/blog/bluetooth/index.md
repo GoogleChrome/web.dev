@@ -5,7 +5,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2015-07-21
-updated: 2020-10-19
+updated: 2021-02-26
 hero: image/admin/CME5IVhdn0pngs7jAlFX.jpg
 thumbnail: image/admin/1J1OTu90a2oH8wFogKnF.jpg
 alt: A Bluetooth chip on a coin
@@ -463,6 +463,15 @@ future:
   event will fire when any characteristic and/or descriptor gets added or
   removed from a Bluetooth GATT Service.
 
+### Show support for the API
+
+Are you planning to use the Web Bluetooth API? Your public support helps the Chrome team
+prioritize features and shows other browser vendors how critical it is to support them.
+
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebBluetooth`](https://twitter.com/search?q=%23WebBluetooth&src=typed_query&f=live)
+and let us know where and how you are using it.
+
 ## Resources
 
 - Stack Overflow: [https://stackoverflow.com/questions/tagged/web-bluetooth](https://stackoverflow.com/questions/tagged/web-bluetooth)
@@ -528,3 +537,4 @@ Hero image by [SparkFun Electronics from Boulder, USA].
 [browser and platform implementation status]: https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md
 [Kayce Basques]: https://github.com/kaycebasques
 [SparkFun Electronics from Boulder, USA]: https://commons.wikimedia.org/wiki/File:Bluetooth_4.0_Module_-_BR-LE_4.0-S2A_(16804031059).jpg
+[cr-dev-twitter]: https://twitter.com/ChromiumDev

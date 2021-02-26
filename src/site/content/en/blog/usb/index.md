@@ -1,15 +1,15 @@
 ---
 title: Access USB Devices on the Web
-subhead: | 
+subhead: |
   The WebUSB API makes USB safer and easier to use by bringing it to the Web.
 authors:
   - beaufortfrancois
 date: 2016-03-30
-updated: 2020-10-19
+updated: 2021-02-23
 hero: image/admin/hhnhxiNuRWMfGqy4NSaH.jpg
 thumbnail: image/admin/RyaGPB8fHCuuXUc9Wj9Z.jpg
 alt: A photo of an Arduino Micro board
-description: | 
+description: |
   The WebUSB API makes USB safer and easier to use by bringing it to the Web.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -127,7 +127,7 @@ The `classCode`, `protocolCode`, `serialNumber`, and `subclassCode` keys can
 also be defined there as well.
 
 <figure class="w-figure">
-  <img src="./usb-device-chooser.png" class="w-screenshot" alt="Screenshot of the USB device user prompt in Chrome">
+  {% Img src="image/admin/KIbPwUfEqgZZLxugxBOY.png", alt="Screenshot of the USB device user prompt in Chrome", width="800", height="533", class="w-screenshot" %}
   <figcaption class="w-figcaption">USB device user prompt.</figcaption>
 </figure>
 
@@ -157,7 +157,7 @@ defining a landing page URL, Chrome will show a persistent notification when the
 USB device is plugged in. Clicking this notification will open the landing page.
 
 <figure class="w-figure">
-  <img src="./web-usb-notification.png" class="w-screenshot" alt="Screenshot of the WebUSB notification in Chrome">
+  {% Img src="image/admin/1gRIz2wY4LYofeFq5cc3.png", alt="Screenshot of the WebUSB notification in Chrome", width="800", height="450", class="w-screenshot" %}
   <figcaption class="w-figcaption">WebUSB notification.</figcaption>
 </figure>
 
@@ -288,7 +288,7 @@ Debugging USB in Chrome is easier with the internal page `chrome://device-log`
 where you can see all USB device related events in one single place.
 
 <figure class="w-figure">
-  <img src="./web-usb-device-log-page.png" class="w-screenshot"  alt="Screenshot of the device log page to debug WebUSB in Chrome">
+  {% Img src="image/admin/ssq2mMZmxpWtALortfZx.png", alt="Screenshot of the device log page to debug WebUSB in Chrome", width="800", height="442", class="w-screenshot" %}
   <figcaption class="w-figcaption">Device log page in Chrome for debugging the WebUSB API.</figcaption>
 </figure>
 
@@ -297,7 +297,7 @@ to simulate connection and disconnection of virtual WebUSB devices.
 This is be useful for doing UI testing without for real hardware.
 
 <figure class="w-figure">
-  <img src="./web-usb-internals-page.png" class="w-screenshot" alt="Screenshot of the internal page to debug WebUSB in Chrome">
+  {% Img src="image/admin/KB5z4p7fZRsvkfhVTNkb.png", alt="Screenshot of the internal page to debug WebUSB in Chrome", width="800", height="294",  class="w-screenshot" %}
   <figcaption class="w-figcaption">Internal page in Chrome for debugging the WebUSB API.</figcaption>
 </figure>
 
@@ -332,7 +332,9 @@ of an INF file.
 - WICG Mailing list: [https://lists.w3.org/Archives/Public/public-wicg/](https://lists.w3.org/Archives/Public/public-wicg/)
 - WebLight project: [https://github.com/sowbug/weblight](https://github.com/sowbug/weblight)
 
-Please share your WebUSB demos with the [#webusb] hashtag.
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebUSB`](https://twitter.com/search?q=%23WebUSB&src=typed_query&f=live)
+and let us know where and how you're using it.
 
 ## Acknowledgements
 
@@ -362,5 +364,5 @@ Thanks to [Joe Medley] for reviewing this article.
 [member]: https://wiki.debian.org/SystemGroups
 [Shared Worker]: https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker
 [Service Worker]: https://jakearchibald.github.io/isserviceworkerready/resources.html
-[#webusb]: https://twitter.com/search?q=webusb
+[#webusb]: https://twitter.com/search?q=%23webusb&src=typed_query&f=live
 [Joe Medley]: https://github.com/jpmedley

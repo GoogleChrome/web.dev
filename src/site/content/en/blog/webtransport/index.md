@@ -5,7 +5,7 @@ authors:
   - jeffposnick
 description: WebTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
 date: 2020-06-08
-updated: 2020-11-10
+updated: 2021-02-23
 hero: image/admin/Wh6q6ughWxUYcu4iOutU.jpg
 hero_position: center
 alt: |
@@ -324,7 +324,9 @@ File a bug at [https://new.crbug.com](https://new.crbug.com). Include as much de
 Your public support helps Chrome prioritize features, and shows other browser vendors how critical it is to support them.
 
 - Be sure you have signed up for the [origin trial](https://developers.chrome.com/origintrials/#/view_trial/-6744140441987317759) to show your interest and provide your domain and contact info.
-- Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with `#QuicTransport` and details on where and how you're using it.
+- Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
+  [`#WebTransport`](https://twitter.com/search?q=%23WebTransport&src=typed_query&f=live)
+  and details on where and how you're using it.
 
 ### General discussion
 
