@@ -463,12 +463,21 @@ used with signed exchanges.
 
 
 
-1. Follow steps 1 and 2 of [Setup the Web Packager Server for
-   testing](/signed-exchanges-webpackager/#setup-the-web-packager-server-for-testing).
+1. Create a PEM file by concatenating your site's SXG certificate and your
+   site's CA certificate. More instructions on this can be found
+   [here](https://www.digicert.com/kb/ssl-support/pem-ssl-creation.html).
+
+   [PEM](https://en.wikipedia.org/wiki/X.509#Certificate_filename_extensions) is
+   a file format that is commonly used as a "container" for storing multiple
+   certificates.
 
 2. Open `webpkgserver.toml` with the editor of your choice and make the
    following changes:
-    *   Change the line `PEMFile = cert.pem` to `PEMFile = cert.cbor`.
+    *   Update the line `PEMFile = cert.pem` to reflect the location of your PEM file.
+    *   (Optional) To have `webpkgserver` auto-renew the SXG certificate every
+        90 days, in the `[SXG.ACME]` section of `webpkgserver.toml`, change
+        `#Enable = false` to `Enable = true`. This option only applies to sites
+        with a DigiCert ACME account setup.
 
 
 ### Upload the `CanSignHttpExchanges` certificate
