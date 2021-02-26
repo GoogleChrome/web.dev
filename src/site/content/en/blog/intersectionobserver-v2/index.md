@@ -20,14 +20,14 @@ alt: Eye of a cat looking through a gap in a fence.
 Intersection Observer&nbsp;v1 is one of those APIs that's probably universally loved, and, now that
 [Safari supports it](https://webkit.org/blog/8582/intersectionobserver-in-webkit/) as well,
 it's also finally universally usable in all major browsers. For a quick refresher of the API,
-I recommend watching [Surma](../../../resources/contributors/surma)'s
-[Supercharged Microtip](https://www.youtube.com/embed/kW_atFXMG98) on Intersection
+I recommend watching [Surma](/authors/surma/)'s
+[Supercharged Microtip](https://www.youtube.com/watch?v=kW_atFXMG98) on Intersection
 Observer&nbsp;v1 that is embedded below.
 You can also read Surma's in-depth
 [article](https://developers.google.com/web/updates/2016/04/intersectionobserver).
 People have used Intersection Observer&nbsp;v1 for a wide range of use cases like
-[lazy loading of images and videos](../../../fundamentals/performance/lazy-loading-guidance/images-and-video/),
-[being notified when elements reach `position: sticky`](../../2017/09/sticky-headers),
+[lazy loading of images and videos](https://web.dev/fast/#lazy-load-images-and-video),
+[being notified when elements reach `position: sticky`](https://developers.google.com/web/updates/2017/09/sticky-headers),
 [firing analytics events](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/visibility-manager.js),
 and many more.
 
