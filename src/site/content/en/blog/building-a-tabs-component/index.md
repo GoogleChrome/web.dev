@@ -910,4 +910,4 @@ section below.
 
 ## Community remixes
 
-Nothing to see here yet
+- [@devnook](https://twitter.com/devnook), [@rob_dodson](https://twitter.com/rob_dodson), & [@DasSurma](https://twitter.com/DasSurma) with Web Components: [article](https://developers.google.com/web/fundamentals/web-components/examples/howto-tabs)
