@@ -1,11 +1,15 @@
 ---
-title: Trust is Good, Observation is Better—Intersection Observer v2 {: .page-title}
-subhead: Intersection Observer v2 adds the capability to not only observe intersections per se, but to also detect if the intersecting element was visible at the time of intersection.
+title: Trust is Good, Observation is Better—Intersection Observer v2
+subhead: |
+  Intersection Observer v2 adds the capability to not only observe intersections per se, but to also
+  detect if the intersecting element was visible at the time of intersection.
 authors:
   - thomassteiner
-description: Intersection Observer v2 adds the capability to not only observe intersections per se, but to also detect if the intersecting element was visible at the time of intersection.
+description: |
+  Intersection Observer v2 adds the capability to not only observe intersections per se, but to also
+  detect if the intersecting element was visible at the time of intersection.
 date: 2019-02-15
-updated: 2019-02-15
+updated: 2021-02-26
 tags:
   - blog
   - intersectionobserver
