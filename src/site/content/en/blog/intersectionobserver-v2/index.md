@@ -13,8 +13,8 @@ updated: 2021-02-26
 tags:
   - blog
   - intersectionobserver
-hero: # ⚠️ [TODO] Fix hero, old hero was "/web/updates/images/generic/timeline.png"!
-alt: # ⚠️ [TODO] Add alt text!
+hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/wUCO2CgK5UOz6URpXEtd.jpeg
+alt: Eye of a cat looking through a gap in a fence.
 ---
 
 Intersection Observer&nbsp;v1 is one of those APIs that's probably universally loved, and, now that
@@ -30,9 +30,7 @@ People have used Intersection Observer&nbsp;v1 for a wide range of use cases lik
 [fire analytics events](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/visibility-manager.js),
 and many more.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kW_atFXMG98" frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+{% YouTube 'kW_atFXMG98' %}
 
 For the full details, check out the
 [Intersection Observer docs on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API),
@@ -85,9 +83,7 @@ and ☑️ activate "trick mode").
 You will notice that the ad in the iframe "thinks" it received legitimate clicks, even if it was
 completely transparent when you (pretendedly involuntarily) clicked it.
 
-<img src="../../images/2019/02/trick-ad-click.png" alt="Tricking a user into clicking an ad by
-    styling it transparent and overlaying it on top of something attractive"
-    intrinsicsize="1000x666">
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/oSQhudX6lenD4Pld7PJD.png", alt="Tricking a user into clicking an ad by styling it transparent and overlaying it on top of something attractive.", width="800", height="533" %}
 
 ## How does Intersection Observer&nbsp;v2 fix this?
 
@@ -114,7 +110,7 @@ modifications like `border-radius`.
 That said, *false positives* are *not permitted* under any circumstances (that is, setting
 `isVisible` to `true` when the target element is not completely visible and unmodified).
 
-{% Aside warning %}
+{% Aside 'warning' %}
   Visibility is *much more expensive* to compute than intersection. For that reason,
   Intersection Observer&nbsp;v2 is *not intended to be used broadly* in the way that
   Intersection Observer&nbsp;v1 is. Intersection Observer&nbsp;v2 is focused on combatting fraud
@@ -172,9 +168,7 @@ This time, Intersection Observer&nbsp;v2 has our back! 🎉
   kind of clickjacking attacks, you *must not* `unobserve` the element after the first intersection.
 {% endAside %}
 
-<img src="../../images/2019/02/intersectionobserver-v2.png"
-    alt="Intersection Observer v2 preventing an unintended click on an ad."
-    intrinsicsize="612x876">
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/6n5a6quLhExtwlFoNVdr.png", alt="Intersection Observer v2 preventing an unintended click on an ad.", width="612", height="876" %}
 
 ```html
 <!DOCTYPE html>
@@ -243,3 +237,4 @@ Thanks to [Simeon Vincent](https://twitter.com/dotproto),
 [Yoav Weiss](https://twitter.com/yoavweiss), and [Mathias Bynens](https://twitter.com/mathias)
 for reviewing this article, as well as [Stefan Zager](https://twitter.com/stefanzager) likewise
 for reviewing and for implementing the feature in Chrome.
+Hero image by Sergey Semin on [Unsplash](https://unsplash.com/photos/ZuXDaoIx_Bc).
