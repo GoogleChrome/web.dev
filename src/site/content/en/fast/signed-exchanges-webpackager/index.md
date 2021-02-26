@@ -241,10 +241,27 @@ used with signed exchanges.
     enable the `Allow Signed HTTP Exchange certificates without extension` flag in 
     Chrome.
 
+5. Launch Chrome using the following command:
+    ```shell
+    /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
+    --user-data-dir=/tmp/udd \
+    --ignore-certificate-errors-spki-list=`openssl x509 -noout -pubkey -in cert.pem | openssl pkey -pubin -outform der | openssl dgst -sha256 -binary | base64`
+    ```
+    {% Aside 'caution' %} You will need to adjust this command slightly to
+    reflect the location of Chrome on your machine, as well as the location of
+    `cert.pem`. {% endAside %}
 
-5. Open Chrome, go to `chrome://flags`, and then set `Allow Signed HTTP Exchange
-   certificates without extension` to **Enabled**. Then click the **Relaunch**
-   button to have these changes take effect.
+    This command instructs Chrome to ignore certificate errors and makes it
+    possible to test SXGs using a test certificate.
+
+    When you launch Chrome, you should see the warning `You are using an unsupported
+    command-line flag` displayed below the address bar. This can be ignored.
+
+    If DevTools displays the SXG error `Certificate verification error:
+    ERR_CERT_INVALID`, it is likely that you forgot to start Chrome using this
+    command.
+
+
 
 6. Open the DevTools **Network** tab, then visit the following URL: 
    `http://localhost:8080/priv/doc/https://example.com`.
@@ -407,60 +424,9 @@ used with signed exchanges.
   the CAs that offer this type of certificate.
 
 
-### Generate a `CanSignHttpExchanges` certificate
-
-
-#### Prerequisites
-
-
-
-1. Install the
-   [`gen-certurl`](https://github.com/WICG/webpackage/blob/master/go/signedexchange/README.md)
-   tool.
-
-    ```shell
-    go get -v -u github.com/WICG/webpackage/go/signedexchange/cmd/gen-certurl
-    ```
-
-    `gen-certurl` is a tool that converts certificates to the certificate format
-    used by signed exchanges.
-
-
-
-2. Verify that `gen-certurl` has been installed correctly.
-
-    ```shell
-    gen-certurl --help
-    ```
-
-    This command should return information about its usage.
 
 
 #### Instructions
-
-
-
-1. Follow the steps 1 through 3 of [Generate a self-signed
-   certificate](/signed-exchanges-webpackager/#generate-a-self-signed-certificate).
-2. Convert `cert.pem` to the `application/cert-chain+cbor` format. 
-
-    ```shell
-    gen-certurl -pem cert.pem -ocsp &lt;(echo ocsp) > cert.cbor
-    ```
-
-    Certificates come in many formats. `cert.pem` is in the [PEM
-    format](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail). Certificates for
-    signed exchanges must be in the `application/cert-chain+cbor` format.
-
-    When using a self-signed certificate, `webpkgserver` automatically converts
-    the certificate indicated by the `PEMFile` option in `webpkgserver.toml` to
-    the `application/cert-chain+cbor` format. However, if you are using a
-    `CanSignHttpExchanges` certificate, you must generate the CBOR-encoded
-    certificate yourself.  
-
-
-### Setup up Web Packager for production use
-
 
 
 1. Create a PEM file by concatenating your site's SXG certificate and your
@@ -479,23 +445,7 @@ used with signed exchanges.
         `#Enable = false` to `Enable = true`. This option only applies to sites
         with a DigiCert ACME account setup.
 
-
-### Upload the `CanSignHttpExchanges` certificate
-
-
-
-1.  Follow steps 1 through 4 of [Upload the self-signed
-    certificate](/signed-exchanges-webpackager/#upload-the-self-signed-certificate) to upload `cert.cbor`. 
-
-3. Adjust your server config to serve `cert.cbor` using the `Content-Type:
-   application/cert-chain+cbor` response header.
-
-    If this header is not set, you will see the following error when you inspect the
-    SXG in DevTools: `Content type of cert-url must be application/cert-chain+cbor.
-    Actual content type: text/html`.
-
-4. Restart `webpkgserver`.
-
-    ```shell
-    webpkgserver
-    ```
+3.  Configure your edge server to forward traffic to the `webpkgserver` instance
+    as well as serve the SXG certificate. For more information, see [Running behind
+    front-end edge
+    server](https://github.com/google/webpackager/blob/e8814274abbe55e8a8083fc01d2394aa7c077b8d/cmd/webpkgserver/README.md#running-behind-front-end-edge-server).
