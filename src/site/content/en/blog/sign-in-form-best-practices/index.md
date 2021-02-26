@@ -54,10 +54,10 @@ Here is an example of a simple sign-in form that demonstrates all of the best pr
 between page loads or website deployments.
 * Put sign-in [in its own &lt;form&gt; element](#single-form).
 * [Ensure successful form submission](#submission).
-* Use [`autocomplete="new-password"`](#new-password) for the password input
-  in a sign-up form, and for the new password in a reset-password form.
-* Use [`autocomplete="current-password"`](#current-password) for a sign-in
-  password input.
+* Use [`autocomplete="new-password"`](#new-password) and [`id="new-password"`](#new-password) for 
+the password input in a sign-up form, and for the new password in a reset-password form.
+* Use [`autocomplete="current-password"`](#current-password) and [`id="current-password"`](#current-password) 
+for a sign-in password input.
 * Provide [Show password](#show-password) functionality.
 * [Use `aria-label` and `aria-describedby`](#accessible-password-inputs) for
   password inputs.
@@ -66,7 +66,7 @@ between page loads or website deployments.
   buttons](#keyboard-obstruction).
 * Ensure forms are usable on mobile: use [legible text](#size-text-correctly),
   and make sure inputs and buttons are [large enough to work as touch targets](#tap-targets).
-* [Maintain branding and style](#branding) on your sign-up and sign-in pages.
+* [Maintain branding and style](#general-guidelines) on your sign-up and sign-in pages.
 * [Test in the field as well as the lab](#analytics): build page analytics,
   interaction analytics, and user-centric performance measurement into your
   sign-up and sign-in flow.
@@ -328,31 +328,30 @@ For email inputs use `autocomplete="username"`, since `username` is recognized
 by password managers in modern browsers—even though you should use `type="email"`
 and you may want to use `id="email"` and `name="email"`.
 
-For password inputs, use the appropriate `autocomplete` value to help browsers
+For password inputs, use the appropriate `autocomplete` and `id` values to help browsers
 differentiate between new and current passwords.
 
-### Use `autocomplete="new-password"` for a new password {: #new-password }
+### Use `autocomplete="new-password"` and `id="new-password"` for a new password {: #new-password }
 
-* Use `autocomplete="new-password"` for the password input in a sign-up form, or the new
-  password in a change-password form.
+* Use `autocomplete="new-password"` and `id="new-password"` for the password input in a sign-up 
+form, or the new password in a change-password form.
 
-### Use `autocomplete="current-password"` for an existing password {: #current-password }
+### Use `autocomplete="current-password"` and `id="current-password"` for an existing password {: #current-password }
 
-* Use `autocomplete="current-password"` for the password input in a sign-in form, or the
-  input for the user's old password in a change-password form. This tells the
-  browser that you want it to use the current password that it has stored for
-  the site.
+* Use `autocomplete="current-password"` and `id="current-password"` for the password input in a 
+  sign-in form, or the input for the user's old password in a change-password form. This tells the
+  browser that you want it to use the current password that it has stored for the site.
 
 For a sign-up form:
 
 ```html
-<input type="password" autocomplete="new-password" …>
+<input type="password" autocomplete="new-password" id="new-password" …>
 ```
 
 For sign-in:
 
 ```html
-<input type="password" autocomplete="current-password" …>
+<input type="password" autocomplete="current-password" id="current-password" …>
 ```
 
 {% Aside %}
@@ -389,9 +388,8 @@ Browser password and autofill systems are not simple. The algorithms for
 guessing, storing and displaying values are not standardized, and vary from
 platform to platform. For example, as pointed out by [Hidde de
 Vries](https://hiddedevries.nl/en/blog/2018-01-13-making-password-managers-play-ball-with-your-login-form):
-"Firefox's password manager complements [its
-heuristics](https://dxr.mozilla.org/firefox/source/toolkit/components/passwordmgr/src/nsLoginManager.js#626)
-with a [recipe system](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454)."
+"Firefox's password manager complements its heuristics with a 
+[recipe system](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454)."
 
 [Autofill: What web devs should know, but
 don't](https://cloudfour.com/thinks/autofill-what-web-devs-should-know-but-dont)
@@ -664,7 +662,7 @@ inadvertently reveal passwords.
 You can see both ARIA features in action in the following Glitch:
 
 {% Glitch {
-  id: 'signin-form',
+  id: 'sign-in-form',
   path: 'index.html',
   height: 480
 } %}
@@ -682,7 +680,7 @@ Client-side validation helps users enter data and can avoid unnecessary server
 load, but you must always validate and sanitize data on your backend.
 {% endAside %}
 
-[Step 5](https://glitch.com/edit/#!/signin-form-codelab-5) of the sign-in form
+[Step 5](https://glitch.com/edit/#!/sign-in-form-codelab-5) of the sign-in form
 codelab uses the [Constraint Validation
 API](https://html.spec.whatwg.org/multipage/forms.html#constraints) (which is
 [widely supported](https://caniuse.com/#feat=constraint-validation)) to add
