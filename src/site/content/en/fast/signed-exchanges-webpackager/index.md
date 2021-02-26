@@ -76,7 +76,7 @@ used with signed exchanges.
    request](https://en.wikipedia.org/wiki/Certificate_signing_request) (CSR).
 
     ```shell
-    openssl req -new -sha256 -key priv.key -out cert.csr -subj '/O=Web Packager Demo /CN=example.com'
+    openssl req -new -sha256 -key priv.key -out cert.csr -subj '/O=Web Packager Demo/CN=example.com'
     ```
 
     A certificate signing request is a block of encoded text that conveys the
@@ -96,7 +96,7 @@ used with signed exchanges.
 3. Create a certificate that has the `CanSignHttpExchanges` extension.
 
     ```shell
-    openssl x509 -req -days 90 -in cert.csr -signkey priv.key -out cert.pem -extfile &lt;(echo -e "1.3.6.1.4.1.11129.2.1.22 = ASN1:NULL\nsubjectAltName=DNS:example.com")
+    openssl x509 -req -days 90 -in cert.csr -signkey priv.key -out cert.pem -extfile <(echo -e "1.3.6.1.4.1.11129.2.1.22 = ASN1:NULL\nsubjectAltName=DNS:example.com")
     ```
 
     This command uses the private key and the CSR created in steps 1 and 2 to create the
