@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-06-29
-updated: 2021-01-15
+updated: 2021-02-26
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 hero: image/admin/pErOjllBUXhnj68qOhfr.jpg
 alt: A person holding a phone.
