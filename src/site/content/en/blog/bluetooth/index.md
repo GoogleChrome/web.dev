@@ -537,3 +537,4 @@ Hero image by [SparkFun Electronics from Boulder, USA].
 [browser and platform implementation status]: https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md
 [Kayce Basques]: https://github.com/kaycebasques
 [SparkFun Electronics from Boulder, USA]: https://commons.wikimedia.org/wiki/File:Bluetooth_4.0_Module_-_BR-LE_4.0-S2A_(16804031059).jpg
+[cr-dev-twitter]: https://twitter.com/ChromiumDev
