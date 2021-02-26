@@ -1,5 +1,5 @@
 ---
-title: Trust is Good, Observation is Better—Intersection Observer v2
+title: "Trust is good, observation is better: Intersection Observer v2"
 subhead: |
   Intersection Observer v2 adds the capability to not only observe intersections per se, but to also
   detect if the intersecting element was visible at the time of intersection.
@@ -27,7 +27,7 @@ Observer&nbsp;v1—also embedded below for your viewing pleasure—or reading Su
 People have used Intersection Observer&nbsp;v1 for a wide range of use cases like
 [lazy loading of images and videos](../../../fundamentals/performance/lazy-loading-guidance/images-and-video/),
 [being notified when elements reach `position: sticky`](../../2017/09/sticky-headers),
-[fire analytics events](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/visibility-manager.js),
+[firing analytics events](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/visibility-manager.js),
 and many more.
 
 {% YouTube 'kW_atFXMG98' %}
@@ -54,7 +54,7 @@ observer.observe(document.querySelector('#some-target'));
 
 To be clear, Intersection Observer&nbsp;v1 is great, but it's not perfect. There are
 some corner cases where the API falls short. Let's have a closer look!
-The Intersection Observer&nbsp;v1 API can perfectly tell you when an element is scrolled into the
+The Intersection Observer&nbsp;v1 API can tell you when an element is scrolled into the
 window's viewport, but it *doesn't* tell you whether the element is covered
 by any other page content (that is, when the element is occluded) or whether
 the element's visual display has been modified by visual effects like `transform`, `opacity`,
@@ -68,7 +68,7 @@ located in a third-party iframe.
 
 ## Why is actual visibility such a big deal?
 
-The Internet is, unfortunately, a place that attracts bad actors with even worse intentions.
+The Internet is, unfortunately, a place that attracts bad actors with worse intentions.
 For example, a shady publisher that serves pay-per-click ads on a content site might be incentivized
 to trick people into clicking their ads to increase the publisher's ad payout (at least
 for a short period, until the ad network catches them).
@@ -78,10 +78,10 @@ completely transparent by applying a CSS rule `iframe { opacity: 0; }` and overl
 on top of something attractive, like a cute cat video that users would actually want to click.
 This is called *clickjacking*.
 You can see such a clickjacking attack in action in the upper section of this
-[demo](https://trick-ad-click.glitch.me/) (try "watching" the 🐈 cat video
-and ☑️ activate "trick mode").
+[demo](https://trick-ad-click.glitch.me/) (try "watching" the cat video
+and activate "trick mode").
 You will notice that the ad in the iframe "thinks" it received legitimate clicks, even if it was
-completely transparent when you (pretendedly involuntarily) clicked it.
+completely transparent when you (pretend-involuntarily) clicked it.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/oSQhudX6lenD4Pld7PJD.png", alt="Tricking a user into clicking an ad by styling it transparent and overlaying it on top of something attractive.", width="800", height="533" %}
 
@@ -126,10 +126,10 @@ the observer for a given target.
 The `trackVisibility` is a boolean indicating whether the observer will track changes in a target's
 visibility.
 
-⚠️ It's important to note here that when `trackVisibility` is `true`, `delay` is required to be at
+It's important to note here that when `trackVisibility` is `true`, `delay` is required to be at
 least `100` (that is, no more than one notification every 100ms).
 As noted before, visibility is expensive to calculate, and this requirement is a precaution against
-performance degradation (and battery consumption). The responsible developer will use the
+performance degradation and battery consumption. The responsible developer will use the
 *largest tolerable value* for delay.
 
 According to the current
@@ -156,16 +156,16 @@ For example, applying an almost unnoticeable grayscale filter like `filter: gray
 or setting an almost invisible transparency with `opacity: 0.99` would all render the element
 invisible.
 
-Below is a short code sample that illustrates the new API features. You can see this click tracking
+Below is a short code sample that illustrates the new API features. You can see its click tracking
 logic in action in the second section of the [demo](https://trick-ad-click.glitch.me/)
-(but now, try "watching" the 🐶 puppy video). Be sure to activate "trick mode" again to immediately
+(but now, try "watching" the puppy video). Be sure to activate "trick mode" again to immediately
 convert yourself into a shady publisher and see how Intersection Observer&nbsp;v2 prevents
 non-legitimate ad clicks from being tracked.
 This time, Intersection Observer&nbsp;v2 has our back! 🎉
 
 {% Aside %}
-  Different from typical lazy-loading code, if you use Intersection Observer to prevent this
-  kind of clickjacking attacks, you *must not* `unobserve` the element after the first intersection.
+  In contrast to typical lazy-loading code, if you use Intersection Observer to prevent this
+  kind of clickjacking attack, you *must not* `unobserve` the element after the first intersection.
 {% endAside %}
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/6n5a6quLhExtwlFoNVdr.png", alt="Intersection Observer v2 preventing an unintended click on an ad.", width="612", height="876" %}
