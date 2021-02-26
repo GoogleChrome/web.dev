@@ -50,7 +50,7 @@ These instructions use the following architecture to serve SXGs:
 %}
 
 
-Following these instructions verbatim will setup a `webpackager` instance that
+Following these instructions verbatim will setup a `webpackager` HTTP server instance that
 packages and serves content from `example.com` as a SXG. To generate SXGs for a
 different site, replace the mentions of `example.com` in these instructions with
 the site of your choice. In production environments you will only be able to
@@ -196,11 +196,40 @@ used with signed exchanges.
         you try to fetch pages from a different domain without updating
         `webpkgserver.toml`, the `webpkgserver` logs will show the error message
         `URL doesn't match the fetch targets`.
-    *   (Optional) To preload subresources, change the line `#PreloadCSS
-        = false` to `PreloadCSS = true`. In addition, change the line `#PreloadJS =
-        false` to `PreloadJS = true`. For more information about subresource
-        substitution, check out
-        [the explainer](https://github.com/WICG/webpackage/blob/master/explainers/signed-exchange-subresource-substitution.md).
+
+    **Optional**
+
+    If you want to enable or disable subresource preloading, the following
+    `webpkgserver.toml` configuration options are relevant:
+
+    *   To have `webpkgserver` insert `Link:` headers for preloading stylesheet
+        and script subresources as SXGs, change the line `#PreloadCSS = false`
+        to `PreloadCSS = true`. In addition, change the line `#PreloadJS =
+        false` to `PreloadJS = true`.
+
+        `Link:` headers for preloading SXG resources look like this:
+        ```
+        Link: <https://feed.example/sxg.publisher.example/lib.js.sxg>;
+        rel="alternate";
+        type="application/signed-exchange;v=b3";
+        anchor="https://cdn.publisher.example/lib.js"
+        ```
+
+    *   By default, `webpkgserver` replaces existing `<link rel="preload">` tags
+        with the equivalent `<link>` tags necessary for fetching this content as
+        SXG. In doing so, `webpkgserver` will set the
+        [`allowed-alt-sxg`](https://github.com/WICG/webpackage/blob/main/explainers/signed-exchange-subresource-substitution.md#use-cases)
+        and
+        [`header-integrity`](https://github.com/WICG/webpackage/blob/main/explainers/signed-exchange-subresource-substitution.md#use-cases)
+        directives as needed—HTML authors do not need to add these by hand. To
+        override this behavior and keep existing non-SXG preloads, change
+        `#KeepNonSXGPreloads (default = false)` to `KeepNonSXGPreloads = true`.
+        Keep in mind that enabling this option may make the SXG ineligible for
+        the Google SXG cache per these
+        [requirements](https://github.com/google/webpackager/blob/master/docs/cache_requirements.md).
+
+    For more information about subresource preloading, check out [the
+    explainer](https://github.com/WICG/webpackage/blob/master/explainers/signed-exchange-subresource-substitution.md).
 
 4. Start `webpkgserver`.
 
