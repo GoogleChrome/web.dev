@@ -441,9 +441,9 @@ used with signed exchanges.
    following changes:
     *   Update the line `PEMFile = cert.pem` to reflect the location of your PEM file.
     *   (Optional) To have `webpkgserver` auto-renew the SXG certificate every
-        90 days, in the `[SXG.ACME]` section of `webpkgserver.toml`, change
-        `#Enable = false` to `Enable = true`. This option only applies to sites
-        with a DigiCert ACME account setup.
+        90 days, configure the options in the `[SXG.ACME]` section of
+        `webpkgserver.toml`. This option only applies to sites with a DigiCert
+        ACME account setup.
 
 3.  Configure your edge server to forward traffic to the `webpkgserver` instance
     as well as serve the SXG certificate. For more information, see [Running behind
