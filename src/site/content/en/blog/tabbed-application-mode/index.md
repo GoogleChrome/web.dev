@@ -5,6 +5,7 @@ subhead: Work on more than one document at a time with tabs in your Progressive 
 authors:
   - thomassteiner
 date: 2021-02-25
+updated: 2021-02-26
 description: |
   Tabbed application mode allows Progressive Web App developers to add a tabbed document interface
   to their standalone PWAs.
@@ -13,6 +14,7 @@ alt: Dictionary thumb index.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - progressive-web-apps
+  - capabilities
 ---
 
 {% Aside %}
