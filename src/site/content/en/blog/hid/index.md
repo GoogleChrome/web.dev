@@ -214,7 +214,7 @@ await device.open();
 
 Once the HID connection has been established, you can handle incoming input
 reports by listening to the `"inputreport"` events from the device. Those events
-contains the HID data as a [`DataView`] object (`data`), the HID device it belongs
+contain the HID data as a [`DataView`] object (`data`), the HID device it belongs
 to (`device`), and the 8-bit report ID associated with the input report
 (`reportId`).
 
