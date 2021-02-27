@@ -7,7 +7,7 @@ layout: base
 <div class="course-layout">
   <nav class="course-nav" aria-label="primary navigation">
     <ul>
-      {% for i in range(0, 10) -%}
+      {% for i in range(0, 40) -%}
         <li>
           <a href="#">Flexbox</a>
         </li>
@@ -34,12 +34,11 @@ layout: base
     <div class="course-content">
       <nav class="course-toc" aria-label="table of contents">
         <ul class="course-toc__list">
-          <li class="course-toc__item">
-            <a href="#">What can you do with a flex layout?</a>
-          </li>
-          <li class="course-toc__item">
-            <a href="#">The main axis and the cross axis</a>
-          </li>
+          {% for i in range(0, 40) -%}
+            <li class="course-toc__item">
+              <a href="#">What can you do with a flex layout?</a>
+            </li>
+          {%- endfor %}
         </ul>
       </nav>
       <main id="main">
