@@ -374,7 +374,7 @@ To understand the security tradeoffs, check out the [Security and Privacy
 Considerations] section of the WebHID spec.
 
 On top of this, Chrome inspects the usage of each top-level collection and if a
-top-level collection has a protected usage (.e.g. generic keyboard, mouse), then
+top-level collection has a protected usage (e.g. generic keyboard, mouse), then
 a website won't be able to send and receive any reports defined in that
 collection. The full list of protected usages is [publicly available].
 
