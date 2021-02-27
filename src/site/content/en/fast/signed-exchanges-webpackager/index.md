@@ -429,9 +429,9 @@ used with signed exchanges.
 #### Instructions
 
 
-1. Create a PEM file by concatenating your site's SXG certificate and your
-   site's CA certificate. More instructions on this can be found
-   [here](https://www.digicert.com/kb/ssl-support/pem-ssl-creation.html).
+1. Create a PEM file by concatenating your site's SXG certificate followed by
+   your site's CA certificate. More instructions on this can be found
+   [here](https://www.digicert.com/kb/ssl-support/pem-ssl-creation.htm).
 
    [PEM](https://en.wikipedia.org/wiki/X.509#Certificate_filename_extensions) is
    a file format that is commonly used as a "container" for storing multiple
@@ -448,4 +448,4 @@ used with signed exchanges.
 3.  Configure your edge server to forward traffic to the `webpkgserver` instance
     as well as serve the SXG certificate. For more information, see [Running behind
     front-end edge
-    server](https://github.com/google/webpackager/blob/e8814274abbe55e8a8083fc01d2394aa7c077b8d/cmd/webpkgserver/README.md#running-behind-front-end-edge-server).
+    server](https://github.com/google/webpackager/blob/master/cmd/webpkgserver/README.md#running-behind-front-end-edge-server).
