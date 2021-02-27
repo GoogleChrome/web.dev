@@ -5,7 +5,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2021-02-23
+updated: 2021-02-27
 hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
 thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
@@ -426,7 +426,7 @@ where and how you're using it.
 ## Acknowledgements
 
 Thanks to [Matt Reynolds] and [Joe Medley] for their reviews of this article.
-Red and blue nintendo switch photo by [Sara Kurfeß], and black and silver laptop
+Red and blue Nintendo Switch photo by [Sara Kurfeß], and black and silver laptop
 computer photo by [Athul Cyriac Ajay] on Unsplash.
 
 [Capabilities project]: /fugu-status/
