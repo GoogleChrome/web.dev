@@ -5,7 +5,7 @@ layout: base
 <a class="skip-link w-button" href="#main">Skip to main</a>
 
 <div class="course-layout">
-  <nav class="course-nav" aria-label="primary navigation">
+  <nav class="course-nav scrollbar" aria-label="primary navigation">
     <ul>
       {% for i in range(0, 40) -%}
         <li>
@@ -32,7 +32,7 @@ layout: base
     </nav>
 
     <div class="course-content">
-      <nav class="course-toc" aria-label="table of contents">
+      <nav class="course-toc scrollbar" aria-label="table of contents">
         <ul class="course-toc__list">
           {% for i in range(0, 40) -%}
             <li class="course-toc__item">
