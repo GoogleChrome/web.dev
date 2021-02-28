@@ -255,7 +255,7 @@ used with signed exchanges.
     possible to test SXGs using a test certificate.
 
     When you launch Chrome, you should see the warning `You are using an unsupported
-    command-line flag` displayed below the address bar. This warning can be ignored.
+    command-line flag` displayed below the address bar. You can ignore this warning.
 
     If DevTools displays the SXG error `Certificate verification error:
     ERR_CERT_INVALID`, it is likely that you forgot to start Chrome using this
