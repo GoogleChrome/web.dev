@@ -13,7 +13,7 @@ tags:
 
 ## Welcome to mini apps
 
-When you look at the applications on your phone, you probably have specific apps for specific tasks.
+When you look at applications on your phone, you probably have specific apps for specific tasks.
 You might have a banking app. You might have an app for buying public transit tickets. Likely you
 have an app for getting directions, etc. In this post, I introduce you to the concept of a different
 kind of app, namely mini apps, sometimes also referred to as mini programs or applets. I first
