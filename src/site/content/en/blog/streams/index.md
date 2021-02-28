@@ -855,8 +855,8 @@ const textEncoderStream = new TransformStream({
 });
 
 (async () => {
-  const readStream = transformStream.readable;
-  const writeStream = transformStream.writable;
+  const readStream = textEncoderStream.readable;
+  const writeStream = textEncoderStream.writable;
 
   const writer = writeStream.getWriter();
   for (const char of 'abc') {
