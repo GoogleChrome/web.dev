@@ -6,7 +6,7 @@ authors:
 date: 2021-02-25
 # updated: 2021-02-25
 description: |
-  This chapter introduces the concept of super apps and presents the major players.
+  This chapter introduces the concept of super apps and presents the major super app providers.
 tags:
   - mini-apps
 ---
