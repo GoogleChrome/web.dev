@@ -61,7 +61,9 @@ The web platform has gained many [new capabilities](/tags/capabilities/) recentl
 Access to [devices](/tags/devices/) via [Bluetooth](/bluetooth/), [USB](/usb/), [HID](/hid/), [serial](/serial/),
 and [NFC](/nfc/) is all possible now.
 Where mini apps run in WebViews and depend on a [JavaScript bridge](/mini-app-markup-styling-and-scripting/#javascript-bridge-api),
-on the web these powerful capabilities are available directly.
+on the web, these powerful capabilities are available directly,
+so you do not program against an API provided by the JavaScript bridge,
+but against the browser API without an intermediate actor.
 
 {% Banner 'neutral' %}
   👉 Read on to see an [example project](/mini-app-example-project/) that puts this way of programming into practice.

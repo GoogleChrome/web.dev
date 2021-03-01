@@ -13,7 +13,8 @@ tags:
 
 ## The app domain
 
-To show the mini app way of programming applied to a web app, I needed a small but complete enough app idea.
+To show the [mini app way of programming](/mini-app-programming-way/)
+applied to a web app, I needed a small but complete enough app idea.
 [High-intensity interval training](https://en.wikipedia.org/wiki/High-intensity_interval_training) (HIIT)
 is a cardiovascular exercise strategy of alternating sets of short periods of intense anaerobic exercise with less intense recovery periods.
 Many HIIT trainings use HIIT timers, for example, this [30&nbsp;minute online session](https://www.youtube.com/watch?v=tXOZS3AKKOw)

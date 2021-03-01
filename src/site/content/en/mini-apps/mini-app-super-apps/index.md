@@ -23,20 +23,19 @@ first need to talk about super apps.
 
 ## What are super apps?
 
-Super apps are apps that are hosts to other apps that run within the super app: the so-called mini
-apps. Popular super apps are Tencent's [WeChat](https://weixin.qq.com/) (微信), the app of the
-search engine [Baidu](https://baidu.com/) (百度), Ant Group's (an affiliate company of the Chinese
-Alibaba Group) [Alipay](https://www.alipay.com/) (支付宝), but also ByteDance's
-[Douyin](https://www.douyin.com/) (抖音), which you might know as TikTok (蒂克托克). The first three
-are commonly also referred to as BAT, which derives from **B**(aidu)**A**(libaba)**T**(encent). Super apps have taken the
-Chinese market by storm, which is why a lot of the examples in this article are Chinese.
+Super apps serve as hosts to other apps that run within them: the so-called mini apps. Popular super apps are 
+[WeChat](https://weixin.qq.com/) (微信) by Tencent, [Alipay](https://www.alipay.com/) (支付宝) by Ant Group 
+(an affiliate company of the Chinese Alibaba Group), the app of the search engine [Baidu](https://baidu.com/) (百度), 
+as well as ByteDance's [Douyin](https://www.douyin.com/) (抖音), which you might know as TikTok (蒂克托克). 
+The first three are commonly also referred to as BAT, derived from **B**(aidu)**A**(libaba)**T**(encent). 
+Super apps have taken the Chinese market by storm, which is why a lot of the examples in this article are Chinese.
 
 <figure class="w-figure">
   {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/UKmUgG231MtQ2nEo1P0K.PNG", alt="List of recently launched mini apps in the WeChat super app.", width=300, height=649 %}
   <figcaption class="w-figcaption">The WeChat super app showing recently launched mini apps.</figcaption>
 </figure>
 
-### Short characterization of each super app platform
+### A few words about super app platforms
 
 WeChat aims to make itself a one-stop shop to meet almost any need users might have in their daily
 lives. Alipay builds its platforms on top of its payment system, focusing on retail and financial

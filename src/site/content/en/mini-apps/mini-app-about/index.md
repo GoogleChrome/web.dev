@@ -66,12 +66,12 @@ action menu opened.
 
 ## UI paradigms
 
-Usually there is a bottom tab bar for the mini app's main navigation. Most super app providers offer
-components (see [later](/mini-app-components/)) that help developers implement common UI paradigms quickly,
-like carousels, accordions, progress bars, spinners, switches, maps, etc., which also helps make the
-user experience from mini app to mini app consistent. This is actually encouraged by
-[WeChat's Mini Program Design Guidelines](https://developers.weixin.qq.com/miniprogram/en/design/),
-similar to what Apple incentivizes with its
+Usually there is a bottom tab bar for the mini app's main navigation. Most [super app providers offer
+components](/mini-app-components/) that help developers quickly implement common UI paradigms,
+such as carousels, accordions, progress bars, spinners, switches, maps, and so on. This also helps make the
+user experience between different mini apps consistent, which is encouraged by
+[WeChat's Mini Program Design Guidelines](https://developers.weixin.qq.com/miniprogram/en/design/).
+This is similar to what Apple incentivizes with its
 [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/),
 and Google with its [Design for Android](https://developer.android.com/design) recommendations.
 
