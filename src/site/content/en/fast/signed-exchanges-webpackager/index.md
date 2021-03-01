@@ -129,7 +129,7 @@ used with signed exchanges.
 3. Verify that `webpkgserver` has been installed correctly.
 
     ```shell
-    webpkgserver --help
+    ./webpkgserver --help
     ```
 
     This command should return information about the usage of `webpkgserver`. If
@@ -221,11 +221,20 @@ used with signed exchanges.
 4. Start `webpkgserver`.
 
     ```shell
-    webpkgserver
+    ./webpkgserver
     ```
 
-    If the server has started successfully, you should see the message `Listening at
-    127.0.0.1:8080`. If you do not see this message, a good first troubleshooting
+    If the server has started successfully, you should see the following log messages:
+    ```shell
+    Listening at 127.0.0.1:8080
+    Successfully retrieved valid OCSP.
+    Writing to cache in /private/tmp/webpkg
+    ```
+
+    Your log messages may look slightly different. In particular, the directory
+    that `webpkgserver` uses to cache certificates varies by operating system.
+
+    If you do not see these messages, a good first troubleshooting
     step is to double-check `webpkgserver.toml`.
 
     If you update `webpkgserver.toml` you should restart `webpkgserver`.
@@ -359,6 +368,7 @@ used with signed exchanges.
     By default, `webpkgserver` serves the SXG certificate at
     `/webpkg/cert/$CERT_HASH`—for example,
     `/webpkg/cert/-0QmE0gvoedn92gtwI3s7On9zPevJGm5pn2RYhpZxgY`.
-    To determine the hash corresponding to your SXG certificate, look in the cache
-    directory (that is, `/tmp/webpkg`). The filenames of the certificates in
-    this directory follow the convention `$CERT_HASH.pem` and `$CERT_HASH.ocsp`.
+    To generate `$CERT_HASH`, run the following command:
+    ```shell
+    openssl base64 -in cert.pem -d | openssl dgst -sha256 -binary | base64 | tr /+ _- | tr -d =
+    ```
