@@ -6,6 +6,7 @@ subhead: |
 authors:
   - katiehempenius
 date: 2020-02-19
+update: 2020-02-28
 hero: image/j2RDdG43oidUy6AL6LovThjeX9c2/f7TRFlVQv5w58A2Cbpg7.jpg
 alt: Abstract photo
 description: |
@@ -35,26 +36,6 @@ To follow these instructions you will need to have
 [openssl](https://github.com/openssl/openssl#build-and-install) and
 [Go](https://golang.org/doc/install) installed in your development environment.
 You will also need an existing HTTPS site.
-
-
-### Architecture
-
-These instructions use the following architecture to serve SXGs:
-
-{% Img 
-  src="image/j2RDdG43oidUy6AL6LovThjeX9c2/cyV0pNmlTB4PTCc5YQe3.png",
-  alt="Signed Exchanges are loaded from a Web Packager instance running 
-  on localhost:8080",
-  width="800",
-  height="436"
-%}
-
-
-Following these instructions verbatim will setup a `webpackager` HTTP server instance that
-packages and serves content from `example.com` as a SXG. To generate SXGs for a
-different site, replace the mentions of `example.com` in these instructions with
-the site of your choice. In production environments you will only be able to
-generate SXGs for sites that you own.
 
 
 ### Generate a self-signed certificate
@@ -161,7 +142,7 @@ used with signed exchanges.
 
 
 
-1. Navigate to the `webpackager` directory (you might already be in this
+1. Navigate to the `webpkgserver` directory (you might already be in this
    directory).
 
     ```shell
@@ -183,32 +164,45 @@ used with signed exchanges.
 3. Open `webpkgserver.toml` with an editor of your choice and make the following
    changes:
     *   Change the line `#AllowTestCert = false` to `AllowTestCert = true`.
-    *   Change the line `PEMFile = 'path/to/your.pem'` to reflect the path to the
-        PEM certificate, `cert.pem`, that you created. Do not change the line
-        mentioning `TLS.PEMFile`—this is a different configuration option.
-    *   Change the line `KeyFile = 'priv.key'` to reflect the path of the private
-        key, `priv.key`, that you created. Do not change the line mentioning
-        `TLS.KeyFile`—this is a different configuration option.
+    *   Change the line `PEMFile = 'path/to/your.pem'` to reflect the path to
+        the PEM certificate, `cert.pem`, that you created. Do not change the
+        line mentioning `TLS.PEMFile`—this is a different configuration option.
+    *   Change the line `KeyFile = 'priv.key'` to reflect the path of the
+        private key, `priv.key`, that you created. Do not change the line
+        mentioning `TLS.KeyFile`—this is a different configuration option.
+    *   Change the line `#CertURLBase = '/webpkg/cert'` to `CertURLBase =
+        'data:'`. `CertURLBase` indicates the serving location of the SXG
+        certificate. This information is used to set the `cert-url` parameter in
+        the
+        [`Signature`](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html#name-the-signature-header)
+        header of the SXG. In production environments, `CertURLBase` is used
+        like this: `CertURLBase = 'https://mysite.com/'`. However, for local
+        testing, `CertURLBase = 'data:'` can be used to instruct `webpkgserver`
+        to use a [data
+        URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)
+        to inline the certificate in the `cert-url` field. For local testing,
+        this is the most conveninent way to serve the SXG certificate.
     *   Change the line `Domain = 'example.org'` to reflect the domain that you
         created a certificate for. If you have followed the instructions in this
-        article verbatim, this should be changed to `example.com`. `webpkgserver`
-        will only fetch content from the domain indicated by `webpkgserver.toml`. If
-        you try to fetch pages from a different domain without updating
-        `webpkgserver.toml`, the `webpkgserver` logs will show the error message
-        `URL doesn't match the fetch targets`.
+        article verbatim, this should be changed to `example.com`.
+        `webpkgserver` will only fetch content from the domain indicated by
+        `webpkgserver.toml`. If you try to fetch pages from a different domain
+        without updating `webpkgserver.toml`, the `webpkgserver` logs will show
+        the error message `URL doesn't match the fetch targets`.
 
     **Optional**
 
-    If you want to enable or disable subresource preloading, the following
-    `webpkgserver.toml` configuration options are relevant:
+    If you want to enable or disable [subresource
+    preloading](https://github.com/WICG/webpackage/blob/master/explainers/signed-exchange-subresource-substitution.md),
+    the following `webpkgserver.toml` configuration options are relevant:
 
     *   To have `webpkgserver` insert directives for preloading stylesheet
         and script subresources as SXGs, change the line `#PreloadCSS = false`
         to `PreloadCSS = true`. In addition, change the line `#PreloadJS =
         false` to `PreloadJS = true`.
 
-        As an alternative to using this configuration option, you can instead
-        add the `Link: rel="preload"` header or `<link rel="preload">` tag to a
+        As an alternative to using this configuration option, you can manually
+        add `Link: rel="preload"` headers and `<link rel="preload">` tags to a
         page's HTML.
 
     *   By default, `webpkgserver` replaces existing `<link rel="preload">` tags
@@ -224,9 +218,6 @@ used with signed exchanges.
         the Google SXG cache per these
         [requirements](https://github.com/google/webpackager/blob/master/docs/cache_requirements.md).
 
-    For more information about subresource preloading, check out [the
-    explainer](https://github.com/WICG/webpackage/blob/master/explainers/signed-exchange-subresource-substitution.md).
-
 4. Start `webpkgserver`.
 
     ```shell
@@ -237,9 +228,7 @@ used with signed exchanges.
     127.0.0.1:8080`. If you do not see this message, a good first troubleshooting
     step is to double-check `webpkgserver.toml`.
 
-    Next, in order to test SXGs that use a self-signed certificate, you will need to 
-    enable the `Allow Signed HTTP Exchange certificates without extension` flag in 
-    Chrome.
+    If you update `webpkgserver.toml` you should restart `webpkgserver`.
 
 5. Launch Chrome using the following command:
     ```shell
@@ -247,20 +236,24 @@ used with signed exchanges.
     --user-data-dir=/tmp/udd \
     --ignore-certificate-errors-spki-list=`openssl x509 -noout -pubkey -in cert.pem | openssl pkey -pubin -outform der | openssl dgst -sha256 -binary | base64`
     ```
-    {% Aside 'caution' %} You will need to adjust this command slightly to
-    reflect the location of Chrome on your machine, as well as the location of
-    `cert.pem`. {% endAside %}
 
-    This command instructs Chrome to ignore certificate errors and makes it
-    possible to test SXGs using a test certificate.
+    This command instructs Chrome to ignore the certificate errors associated
+    with `cert.pem`. This makes it possible to test SXGs using a test
+    certificate. If Chrome is launched without this command, inspecting the SXG
+    in DevTools will display the error `Certificate verification error:
+    ERR_CERT_INVALID`.
 
-    When you launch Chrome, you should see the warning `You are using an unsupported
-    command-line flag` displayed below the address bar. This warning can be ignored.
+    **Note:**
 
-    If DevTools displays the SXG error `Certificate verification error:
-    ERR_CERT_INVALID`, it is likely that you forgot to start Chrome using this
-    command.
+    You may need to adjust this command to reflect the location of Chrome on
+    your machine, as well as the location of `cert.pem`. If you've done this
+    correctly, you should see a warning displayed below the address bar. The
+    warning should be similar to this: `You are using an unsupported
+    command-line flag:
+    --ignore-certificate-errors-spki-list=9uxADcgc6/ho0mJLRMBcOjfBaN21k0sOInoMchr9CMY=.`
 
+    If the warning does not include a hash string, you have not correctly
+    indicated the location of the SXG certificate.
 
 
 6. Open the DevTools **Network** tab, then visit the following URL: 
@@ -272,135 +265,30 @@ used with signed exchanges.
    `webpackager`.
 
   {% Img
-    src="image/j2RDdG43oidUy6AL6LovThjeX9c2/kaDNW11a2fmfzbsPqzPY.png",
-    alt="Screenshot of the DevTools Network tab showing a SXG with errors.",
+    src="image/j2RDdG43oidUy6AL6LovThjeX9c2/DPw05KcHLdWOgHYiDsgf.png",
+    alt="Screenshot of the DevTools Network tab showing a SXG and its certificate.",
     width="800",
-    height="550"
+    height="236"
   %}
 
-  A resource with the type `signed-exchange` should be listed in the **Network**
-  tab. If you don't see this resource, try clearing the cache, then reloading
-  `http://localhost:8080/priv/doc/https://example.com`.
+  The following resources are listed in the **Network** tab:
+  * A resource with the type `signed-exchange`. This is the SXG.
+  * A resource with the type `cert-chain+cbor`. This the SXG certificate. SXG certificates must use the `application/cert-chain+cbor` format.
+  * A resource with the type `document`. This is the content that has been delivered via SXG.
 
-  DevTools highlights the SXG in red because the SXG has errors associated with
-  it. To view these errors and other information about the SXG, click on the SXG,
-  then click **Preview**.
+  If you don't see these resources, try clearing the browser cache, then
+  reloading `http://localhost:8080/priv/doc/https://example.com`.
 
 
+  Click on the **Preview** tab to see more information about the Signed Exchange
+  and its signature.
 
   {% Img
-    src="image/j2RDdG43oidUy6AL6LovThjeX9c2/MKsFQIvvWrfBj8C3Ce7K.png",
-    alt="Screenshot of the Preview tab showing a SXG with errors",
+    src="image/j2RDdG43oidUy6AL6LovThjeX9c2/x9hfT6ZJ8OuB4M1ImWic.png",
+    alt="Screenshot of the Preview tab showing a SXG",
     width="800",
-    height="727"
+    height="541"
   %}
-
-  The **Preview** tab displays information about the Signed Exchange and its
-  signature. At the top of the **Preview** tab you should see the error `Failed
-  to fetch certificate`. The browser displays this error when it is unable to
-  load a certificate from the **Certificate URL** indicated in the signature. The
-  next section explains how to fix this error by uploading a certificate.
-
-  Without the certificate, the browser is unable to authenticate the SXG and it
-  falls back to loading the resource without using SXG. This is why there is an
-  additional request to `example.com` listed in the **Network** panel.
-
-
-
-  {% Img
-    src="image/j2RDdG43oidUy6AL6LovThjeX9c2/bU5xNjhvVKr9eSg4RqEZ.png",
-    alt="Screenshot of the DevTools Network tab loading 'example.com' 
-    without using SXG.",
-    width="800",
-    height="192"
-  %}
-
-
-### Upload the self-signed certificate
-
-  To establish the authenticity of a SXG, the browser must be able to load the
-  certificate that was used to sign the SXG from the **Certificate URL** indicated in
-  the signature. If the browser is unable to load this certificate, it will
-  request that the content be delivered without using SXG.
-
-  These instructions explain how to serve a certificate from an existing HTTPS   environment. 
-
-  {% Aside %}
-  `webpkgserver` can be configured to use a locally-hosted
-  certificate. For information on this configuration option,
-  refer to the `CertURLBase` option in `webpkgserver.toml`. 
-  Learn more about [how to use HTTPS for local development](/how-to-use-local-https).
-  {% endAside %}
-
-
-#### Prerequisites
-
-  The instructions in this section assume that you have the ability to upload a
-  certificate to an existing HTTPS site. In addition, you should be comfortable
-  adjusting the server configuration of this site.
-
-
-#### Instructions
-
-
-
-1. In DevTools, locate the **Certificate URL** indicated in the **Signature** of
-   the SXG. Copy the hash that is located at the end of this string.
-
-   This hash is an identifier that corresponds to the certificate. If you were
-   to regenerate the SXG using a different certificate, the **Certificate URL**
-   listed in the **Signature** would be different.
-
-    {% Img
-        src="image/j2RDdG43oidUy6AL6LovThjeX9c2/K1caujHPlyCURA1pxYXz.png",
-        alt="Screenshot showing the hash that corresponds to the certificate.",
-        width="800",
-        height="229"
-    %}
-
-2. Create a copy of `cert.pem`. The filename of the new version should match the
-   hash you just copied—for example,
-   `dKqTlYij_pSjvADDzlMTv4MBF6lUcGR2vaY1ZbfNKww`.
-
-    ```shell
-    cp cert.pem dKqTlYij_pSjvADDzlMTv4MBF6lUcGR2vaY1ZbfNKww
-    ```
-
-3. Upload the renamed certificate to your site. The particular directory that
-   you upload the certificate to does not matter.
-
-4. Open `webpkgserver.toml` with the editor of your choice and make the
-   following changes:
-    *   Uncomment and change the line `#CertURLBase = '/webpkg/cert'` to match the
-        deployed location of your certificate.  For most people, this location will
-        be similar to `https://mysite.com/`. If you get the error `CertURLBase: must
-        be set non-empty` after starting `webpkgserver`, try adding a `/` at the end
-        of the URL.
-    *   Uncomment and change `#CertPath = '/webpkg/cert'` to match the deployed
-        location of your certificate. For example, if the certificate will be served
-        from your root directory, change this value to `/`.
-
-5. Restart `webpkgserver`.
-
-    ```shell
-    webpkgserver
-    ```
-
-6. Visit `http://localhost:8080/priv/doc/https://example.com`
-
-  The **Network** panel shows that the SXG and its certificate were loaded with no
-  errors.
-
-
-
-  {% Img
-    src="image/j2RDdG43oidUy6AL6LovThjeX9c2/eSGbG9uGU0NXxXuHOtw7.png",
-    alt="Screenshot of the DevTools Network panel showing that the SXG 
-    and its certificate were loaded with no errors.",
-    width="696",
-    height="201"
-  %}
-
 
 
 ## Serve signed exchanges using a `CanSignHttpExchanges` certificate
@@ -409,19 +297,26 @@ used with signed exchanges.
   `CanSignHttpExchanges` certificate. Production use of SXGs requires a
   `CanSignHttpExchanges` certificate.
 
-  These instructions are fairly similar to those for serving SXGs with a
-  self-signed certificate. For the sake of brevity, these instructions are
-  written with the assumption that you understand the concepts discussed in the
-  [Setup Signed Exchanges using a self-signed
+  For the sake of brevity, these instructions are written with the assumption
+  that you understand the concepts discussed in the [Setup Signed Exchanges
+  using a self-signed
   certificate](/signed-exchanges-webpackager/#serve-sxgs-using-a-self-signed-certificate)
   section.
 
 
 ### Prerequisites
 
-  You have a `CanSignHttpExchanges` certificate. This
-  [page](https://github.com/google/webpackager/wiki/Certificate-Authorities) lists
-  the CAs that offer this type of certificate.
+*  You have a `CanSignHttpExchanges` certificate. This
+     [page](https://github.com/google/webpackager/wiki/Certificate-Authorities)
+     lists the CAs that offer this type of certificate.
+*  Although not a requirement, it is strongly recommended that you run
+   `webpkgserver` behind an edge server. If you do not use an edge server, you
+   will need to configure the `TLS.PEMFile` and `TLS.KeyFile` options in
+   `webpkgserver.toml`. By default, `webpkgserver` runs over HTTP. However, SXG
+   certificates must be served over HTTPS to be considered valid by the browser.
+   Configuring `TLS.PEMFile` and `TLS.KeyFile` allows `webpkgserver` to use
+   HTTPS and therefore serve the SXG certificate directly to the browser.
+
 
 
 
@@ -439,13 +334,31 @@ used with signed exchanges.
 
 2. Open `webpkgserver.toml` with the editor of your choice and make the
    following changes:
-    *   Update the line `PEMFile = cert.pem` to reflect the location of your PEM file.
+    *   Change the line `PEMFile = cert.pem` to reflect the location of the PEM
+        file containing your full certificate chain.
+    *   Change the line `KeyFile = 'priv.key'` to reflect the location of the
+        private key corresponding to your PEM File.
+    *   Change the line `Domain = 'example.org'` to reflect your site.
     *   (Optional) To have `webpkgserver` auto-renew the SXG certificate every
         90 days, configure the options in the `[SXG.ACME]` section of
         `webpkgserver.toml`. This option only applies to sites with a DigiCert
         ACME account setup.
 
-3.  Configure your edge server to forward traffic to the `webpkgserver` instance
-    as well as serve the SXG certificate. For more information, see [Running behind
-    front-end edge
+3.  Configure your edge server to forward traffic to the `webpkgserver`
+    instance.
+
+    There are two primary types of requests handled by `webpkgserver`: requests
+    for SXGs (which are served by the `/priv/doc/` endpoint) and requests for
+    the SXG certificate (which are served by the `/webpkg/cert/` endpoint). The
+    URL rewriting rules for each of these request types varies slightly. For
+    more information, see [Running behind front end edge
     server](https://github.com/google/webpackager/blob/master/cmd/webpkgserver/README.md#running-behind-front-end-edge-server).
+
+    **Note:**
+
+    By default, `webpkgserver` serves the SXG certificate at
+    `/webpkg/cert/$CERT_HASH`—for example,
+    `/webpkg/cert/-0QmE0gvoedn92gtwI3s7On9zPevJGm5pn2RYhpZxgY`.
+    To determine the hash corresponding to your SXG certificate, look in the cache
+    directory (that is, `/tmp/webpkg`). The filenames of the certificates in
+    this directory follow the convention `$CERT_HASH.pem` and `$CERT_HASH.ocsp`.
