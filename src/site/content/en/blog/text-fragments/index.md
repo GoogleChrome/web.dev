@@ -320,7 +320,7 @@ contains both an element fragment (`HTML1`), as well as a text fragment
 (`text=Give%20us%20feedback%20in%20our%20Product%20Forums.`):
 
 <figure class="w-figure">
-  <img src="text-feedback.png" alt="" class="w-screenshot" width="237">
+   <img src="text-feedback.png" alt="" class="w-screenshot" width="237">
   <figcaption class="w-figcaption">Linking with both element fragment and text fragment.</figcaption>
 </figure>
 

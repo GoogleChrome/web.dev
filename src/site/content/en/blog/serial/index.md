@@ -4,7 +4,7 @@ subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2021-02-03
+updated: 2021-02-23
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
 thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
@@ -130,7 +130,7 @@ const { usbProductId, usbVendorId } = port.getInfo();
 ```
 
 <figure class="w-figure">
-  <img src="./serial-port-prompt.jpg" class="w-screenshot" alt="Screenshot of a serial port prompt on a website">
+  {% Img src="image/admin/BT9OxLREXfb0vcnHlYu8.jpg", alt="Screenshot of a serial port prompt on a website", width="800", height="513", class="w-screenshot" %}
   <figcaption class="w-figcaption">User prompt for selecting a BBC micro:bit</figcaption>
 </figure>
 
@@ -151,7 +151,7 @@ const port = await navigator.serial.requestPort();
 // Wait for the serial port to open.
 await port.open({ baudRate: 9600 });
 ```
- 
+
 You can also specify any of the options below when opening a serial port. These
 options are optional and have convenient [default values].
 
@@ -427,7 +427,7 @@ the widget, so that by the time it gets to its final destination, it's a fully
 functioning widget.
 
 <figure class="w-figure">
-  <img src="./aeroplane-factory.jpg" alt="Photo of an aeroplane factory">
+  {% Img src="image/admin/seICV1jfxA6NfFRt9iVL.jpg", alt="Photo of an aeroplane factory", width="800", height="519" %}
   <figcaption class="w-figcaption">World War II Castle Bromwich Aeroplane Factory</figcaption>
 </figure>
 
@@ -492,7 +492,7 @@ Debugging the Web Serial API in Chrome is easy with the internal page,
 single place.
 
 <figure class="w-figure">
-  <img src="./device-log-page-screenshot.jpg" class="w-screenshot" alt="Screenshot of the internal page for debugging the Web Serial API.">
+  {% Img src="image/admin/p2T9gxxLsDWsS1GaqoXj.jpg", alt="Screenshot of the internal page for debugging the Web Serial API.", width="800", height="547", class="w-screenshot" %}
   <figcaption class="w-figcaption">Internal page in Chrome for debugging the Web Serial API.</figcaption>
 </figure>
 
@@ -554,7 +554,7 @@ Are you planning to use the Web Serial API? Your public support helps the Chrome
 team prioritize features and shows other browser vendors how critical it is to
 support them.
 
-Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the hashtag
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
 [`#SerialAPI`](https://twitter.com/search?q=%23SerialAPI&src=typed_query&f=live)
 and let us know where and how you're using it.
 
@@ -582,7 +582,7 @@ Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 [Betaflight Configurator]: https://github.com/betaflight/betaflight-configurator
 [Espruino Web IDE]: http://espruino.com/ide
 [Microsoft MakeCode]: https://www.microsoft.com/en-us/makecode
-[explainer]: https://github.com/reillyeon/serial/blob/gh-pages/EXPLAINER.md  
+[explainer]: https://github.com/reillyeon/serial/blob/gh-pages/EXPLAINER.md
 [spec]: https://reillyeon.github.io/serial/
 [default values]: https://reillyeon.github.io/serial/#dom-serialoptions
 [Streams API concepts]: https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts

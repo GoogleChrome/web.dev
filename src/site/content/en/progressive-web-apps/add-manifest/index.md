@@ -4,14 +4,16 @@ title: Add a web app manifest
 authors:
   - petelepage
   - beaufortfrancois
+  - thomassteiner
 date: 2018-11-05
-updated: 2021-02-01
+updated: 2021-02-25
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
   device or desktop.
 tags:
   - progressive-web-apps
+  - web-app-manifest
 feedback:
   - api
 ---
@@ -181,6 +183,45 @@ be made to launch full screen.
   </table>
 </div>
 
+#### `display_override` {: #display-override }
+
+Web apps can choose how they are displayed by setting a `display` mode in their manifest as
+[explained above](#display). Browsers are *not* required to support all display modes, but they
+*are* required to support the
+[spec-defined fallback chain](https://w3c.github.io/manifest/#dfn-fallback-display-mode)
+(`"fullscreen"` → `"standalone"` → `"minimal-ui"` → `"browser"`). If they don't support a given
+mode, they fall back to the next display mode in the chain. This inflexible behavior can be
+problematic in rare cases, for example, a developer cannot request `"minimal-ui"` without being
+forced back into the `"browser"` display mode when `"minimal-ui"` is not supported.
+Another problem is that the current behavior makes it impossible to introduce new display
+modes in a backward compatible way, since explorations like tabbed application mode don't have a
+natural place in the fallback chain.
+
+These problems are solved by the `display_override` property, which the browser considers *before*
+the `display` property. Its value is a sequence of strings that are considered in the listed order, and the
+first supported display mode is applied. If none are supported, the browser falls back to evaluating
+the `display` field.
+
+In the example below, the display mode fallback chain would be as follows.
+(The details of `"window-control-overlay"` are out-of-scope for this article.)
+
+1. `"window-control-overlay"` (First, look at `display_override`.)
+1. `"minimal-ui"`
+1. `"standalone"` (When `display_override` is exhausted, evaluate `display`.)
+1. `"minimal-ui"` (Finally, use the `display` fallback chain.)
+1. `"browser"`
+
+```json
+{
+  "display_override": ["window-control-overlay", "minimal-ui"],
+  "display": "standalone",
+}
+```
+
+{% Aside %}
+  The browser will not consider `display_override` unless `display` is also present.
+{% endAside %}
+
 #### `scope` {: #scope }
 
 The `scope` defines the set of URLs that the browser considers to be within your
@@ -240,7 +281,7 @@ In Chrome, the image must respond to certain criteria:
 * Width and height must be at least 320px and at most 3840px.
 * The maximum dimension can't be twice larger than the minimum dimension.
 * Screenshots must have the same aspect ratio.
-* Only JPEG and PNG image formats are supported. 
+* Only JPEG and PNG image formats are supported.
 
 {% Aside 'gotchas' %}
 The `description` and `screenshots` properties are currently used only in Chrome
@@ -307,5 +348,7 @@ you can provide additional icons for pixel perfection.
 There are several additional properties that can be added to the web app
 manifest. Refer to the [MDN Web App Manifest documentation][mdn-manifest]
 for more information.
+You can learn more about `display_override` in the
+[explainer](https://github.com/WICG/display-override/blob/master/explainer.md).
 
 [mdn-manifest]: https://developer.mozilla.org/en-US/docs/Web/Manifest

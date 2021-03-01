@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine most of the time, there are some applications that need to keep the screen awake in order to complete some work. The Screen Wake Lock API provides a way to prevent the device from dimming or locking the screen when an application needs to keep running.
 date: 2018-12-18
-updated: 2021-02-17
+updated: 2021-02-23
 hero: image/admin/zMncl9cgWdAc8W24yav3.jpg
 hero_position: center
 alt: |
@@ -262,8 +262,9 @@ Chrome team prioritize features and shows other browser vendors how
 critical it is to support them.
 
 * Share how you plan to use the API on the [WICG Discourse thread][wicg-discourse].
-* Send a Tweet to [@ChromiumDev][cr-dev-twitter] with `#wakelock` and
-  let us know where and how you're using it.
+* Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+  [`#WakeLock`](https://twitter.com/search?q=%23WakeLock&src=typed_query&f=live)
+  and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 

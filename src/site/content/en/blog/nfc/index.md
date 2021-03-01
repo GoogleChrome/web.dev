@@ -4,7 +4,7 @@ subhead: Reading and writing to NFC tags is now possible.
 authors:
   - beaufortfrancois
 date: 2020-02-12
-updated: 2021-01-21
+updated: 2021-02-23
 hero: image/admin/TqG3qb5MiLGNTnAgKtqO.jpg
 thumbnail: image/admin/8tWkeYbKLxSd2YgTUSGv.jpg
 alt: A photo of NFC tags
@@ -779,8 +779,9 @@ Are you planning to use Web NFC? Your public support helps the Chrome team
 prioritize features and shows other browser vendors how critical it is to
 support them.
 
-Send a Tweet to [@ChromiumDev][cr-dev-twitter] and let us know where and how
-you're using it.
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebNFC`](https://twitter.com/search?q=%23WebNFC&src=typed_query&f=live)
+and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 
