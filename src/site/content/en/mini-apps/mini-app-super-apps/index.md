@@ -15,11 +15,11 @@ tags:
 
 When you look at applications on your phone, you probably have specific apps for specific tasks.
 You might have a banking app. You might have an app for buying public transit tickets. Likely you
-have an app for getting directions, etc. In this post, I introduce you to the concept of a different
-kind of app, namely mini apps, sometimes also referred to as mini programs or applets. I first
-provide some background on the various mini app platforms and their developer experience, and then
-focus on things the web can learn from mini apps. But before I start writing about mini apps, I
-first need to talk about super apps.
+have an app for getting directions, and many more specialized apps. This post introduces you to the 
+concept of a different kind of apps—mini apps—sometimes also called mini programs or applets. 
+You will first learn about the background of various mini app platforms and their developer experience, and 
+then focus on things the web can learn from mini apps. But before learning about mini apps, you first 
+need to learn about super apps.
 
 ## What are super apps?
 
