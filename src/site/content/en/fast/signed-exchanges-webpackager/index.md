@@ -35,7 +35,6 @@ environments and should not be served to crawlers.
 To follow these instructions you will need to have
 [openssl](https://github.com/openssl/openssl#build-and-install) and
 [Go](https://golang.org/doc/install) installed in your development environment.
-You will also need an existing HTTPS site.
 
 
 ### Generate a self-signed certificate
