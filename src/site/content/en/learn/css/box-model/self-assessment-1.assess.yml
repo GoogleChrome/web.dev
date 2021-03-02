@@ -1,0 +1,11 @@
+setLeader: Test your knowledge of the box model
+height: 25rem
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: How wide do you think this box will be?
+    options:
+      - content: 260px 
+      - content: 200px 

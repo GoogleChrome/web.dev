@@ -144,7 +144,7 @@ Let's take a look at some example code:
 }
 ```
 
-[SELF ASSESSMENT: “How wide do you think this box will be?”. OPTIONS: 200px or 260px] \
+{% Assessment page, 'self-assessment-1' %}
 
 The actual width of this box will be 260px. As the CSS uses the default `box-sizing: content-box`, the applied width is the width of the content, `padding` and `border` on both sides are added to that. So 200px for the content + 40px of padding + 20px of border makes a total visible width of 260px.
 
