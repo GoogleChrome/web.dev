@@ -68,7 +68,7 @@ By default, this element has a set `width` and `height`—both `400px`. These di
 
 {% Aside "key-term" %}
 
-When content is too big for the box it is in, we call this **overflow**. You can manage how an element handles **overflow **content, using the [`overflow` property](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow).
+When content is too big for the box it is in, we call this **overflow**. You can manage how an element handles **overflow** content, using the [`overflow` property](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow).
 
 {% endAside %}
 
@@ -159,7 +159,7 @@ You _can_ control this, though, by making the following modification to use the 
 }
 ```
 
-This alternative box model tells CSS to apply the `width` to the **border box instead of the content box **. This means that our `border` and `padding` get _pushed in_, and as a , when you set `.my-box` to be `200px` wide: it actually renders at `200px` wide.
+This alternative box model tells CSS to apply the `width` to the **border box instead of the content box**. This means that our `border` and `padding` get _pushed in_, and as a , when you set `.my-box` to be `200px` wide: it actually renders at `200px` wide.
 
 Check out how this works in the following interactive demo. Notice that when you toggle the `box-sizing` value: it shows— via a blue background—which CSS is being applied _inside_ our box.
 
