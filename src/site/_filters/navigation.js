@@ -20,6 +20,11 @@ const {join} = require('path');
  */
 function buildTree(toc, map) {
   const tree = [];
+  // The list array is a convenience tool that we use so we can append next/prev
+  // references to each item once the tree is built.
+  // Using an array here avoids us needing to do a second recursive tree walk
+  // just to add those properties.
+  const list = [];
   for (const entry of toc) {
     if (entry.url) {
       const clone = {...entry};
@@ -27,6 +32,10 @@ function buildTree(toc, map) {
       // to ensure our urls have it if we want to use them as keys.
       clone.url = join(clone.url, '/');
       tree.push(clone);
+      // Only push nodes with urls into the list array.
+      // When we're navigating by next/prev we don't want to land on section
+      // headings.
+      list.push(clone);
       map.set(clone.url, clone);
     } else if (entry.title) {
       const children = buildTree(entry.sections, map);
@@ -36,6 +45,11 @@ function buildTree(toc, map) {
       });
     }
   }
+
+  list.forEach((item, idx) => {
+    item.prev = list[idx - 1] || null;
+    item.next = list[idx + 1] || null;
+  });
 
   return tree;
 }

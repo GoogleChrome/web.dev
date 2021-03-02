@@ -4,7 +4,7 @@ module.exports = function () {
     // The key is used to look up the data for the course in _data.
     // e.g. A course with a key of 'a11y' would have a corresponding
     // _data/courses/a11y directory.
-    toc: 'css',
+    projectKey: 'css',
     eleventyComputed: {
       permalink: (data) => {
         if (process.env.ELEVENTY_ENV === 'prod') {

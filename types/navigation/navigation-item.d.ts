@@ -20,6 +20,8 @@ declare global {
     title?: string,
     children?: NavigationItem[],
     page?: EleventyCollectionItem,
+    prev?: EleventyCollectionItem | null,
+    next?: EleventyCollectionItem | null,
   }
 }
 
