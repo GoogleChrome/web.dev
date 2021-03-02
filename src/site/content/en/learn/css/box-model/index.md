@@ -30,7 +30,7 @@ foundation of CSS and understanding how it works, how it is affected
 by other aspects of CSS and importantly, how you can control it will
 help you to write more predictable CSS.
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Learn CSS - Box model intro" src="https://codepen.io/piccalilli/embed/0c03f5dc8a83ccaa2f48fcc115e1ec54?height=500&theme-id=38982&default-tab=result," frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Learn CSS - Box model intro" src="https://codepen.io/piccalilli/embed/0c03f5dc8a83ccaa2f48fcc115e1ec54?height=500&theme-id=38982&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/piccalilli/pen/0c03f5dc8a83ccaa2f48fcc115e1ec54'>Learn CSS - Box model intro</a> by Piccalilli
   (<a href='https://codepen.io/piccalilli'>@piccalilli</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -56,8 +56,8 @@ sizing**.
 
 Let's quickly look at the difference, using a demo to help us.
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Learn CSS - Box model intro" src="https://codepen.io/piccalilli/embed/5cbda8499e19245d7b48cac8d796dda5?height=500&theme-id=38982&default-tab=result," frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/piccalilli/pen/0c03f5dc8a83ccaa2f48fcc115e1ec54'>Learn CSS - Box model intro</a> by Piccalilli
+<iframe height="500" style="width: 100%;" scrolling="no" title="Learn CSS - Box model intro" src="https://codepen.io/piccalilli/embed/5cbda8499e19245d7b48cac8d796dda5?height=500&theme-id=38982&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/piccalilli/pen/5cbda8499e19245d7b48cac8d796dda5'>Learn CSS - Box model intro</a> by Piccalilli
   (<a href='https://codepen.io/piccalilli'>@piccalilli</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -80,7 +80,7 @@ to fit around “CSS is awesome”, perfectly.
 Let's look at something more complex to see the impact of different
 sizing on real content:
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Learn CSS - Box model intro" src="https://codepen.io/piccalilli/embed/5cbda8499e19245d7b48cac8d796dda5?height=500&theme-id=38982&default-tab=result," frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Learn CSS - Box model intro" src="https://codepen.io/piccalilli/embed/cdd8b9e93b8e90e9e8e432aea596ec55?height=500&theme-id=38982&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/piccalilli/pen/cdd8b9e93b8e90e9e8e432aea596ec55'>Learn CSS - Box model intro</a> by Piccalilli
   (<a href='https://codepen.io/piccalilli'>@piccalilli</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -141,7 +141,7 @@ be visible in the space that it creates. If our box has overflow rules
 set, such as `overflow: auto` or `overflow: scroll` set, the
 scrollbars will occupy this space too.
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Learn CSS - Box model intro" src="https://codepen.io/argyleink/embed/bGNmgGW?height=500&theme-id=38982&default-tab=result," frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Learn CSS - Box model intro" src="https://codepen.io/argyleink/embed/bGNmgGW?height=500&theme-id=38982&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/argyleink/pen/bGNmgGW'>Learn CSS - Box model intro</a> by Piccalilli
   (<a href='https://codepen.io/piccalilli'>@piccalilli</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -165,7 +165,7 @@ affect the size of our box. You could have an `outline-width` of
 `200px` on our box and everything **inside and including the border
 box would be exactly the same size**.
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Learn CSS - Box model intro" src="https://codepen.io/piccalilli/embed/5cbda8499e19245d7b48cac8d796dda5?height=500&theme-id=38982&default-tab=result," frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Learn CSS - Box model intro" src="https://codepen.io/piccalilli/embed/3a29b4a7d35ef7e1bd205be9ac65e25e?height=500&theme-id=38982&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/piccalilli/pen/3a29b4a7d35ef7e1bd205be9ac65e25e'>Learn CSS - Box model intro</a> by Piccalilli
   (<a href='https://codepen.io/piccalilli'>@piccalilli</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -276,8 +276,8 @@ Check out how this works in the following interactive demo. Notice
 that when you toggle the `box-sizing` value: it shows— via a blue
 background—which CSS is being applied _inside_ our box.
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Learn CSS - Box model intro" src="https://codepen.io/piccalilli/embed/1caa55efb0ee6a6b3ed48196b9c36d52?height=500&theme-id=38982&default-tab=result," frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/piccalilli/pen/0c03f5dc8a83ccaa2f48fcc115e1ec54'>Learn CSS - Box model intro</a> by Piccalilli
+<iframe height="500" style="width: 100%;" scrolling="no" title="Learn CSS - Box model intro" src="https://codepen.io/piccalilli/embed/1caa55efb0ee6a6b3ed48196b9c36d52?height=500&theme-id=38982&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/piccalilli/pen/1caa55efb0ee6a6b3ed48196b9c36d52'>Learn CSS - Box model intro</a> by Piccalilli
   (<a href='https://codepen.io/piccalilli'>@piccalilli</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
