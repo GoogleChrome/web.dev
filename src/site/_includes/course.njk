@@ -2,14 +2,22 @@
 layout: base
 ---
 
+
+{#
+  Grab the navigation data for the course. The toc key is defined in the
+  11tydata.js file at the root of the course.
+#}
+{% set navigationToC = courses[toc] %}
+{% set pageNavigation = collections.all | navigation(navigationToC) %}
+
 <a class="skip-link w-button" href="#main">Skip to main</a>
 
 <div class="course-layout">
   <nav class="course-nav scrollbar" aria-label="primary navigation">
     <ul>
-      {% for i in range(0, 40) -%}
+      {% for item in pageNavigation -%}
         <li>
-          <a href="#">Flexbox</a>
+          <a href="{{item.url}}">{{item.page.data.title}}</a>
         </li>
       {%- endfor %}
     </ul>

@@ -18,6 +18,7 @@ const path = require('path');
 const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const yaml = require('js-yaml');
 
 const toc = require('eleventy-plugin-toc');
 const markdownIt = require('markdown-it');
@@ -83,6 +84,7 @@ const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripQueryParamsDev = require(`./${filtersDir}/strip-query-params-dev`);
 const getPaths = require(`./${filtersDir}/get-paths`);
+const navigation = require(`./${filtersDir}/navigation`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
@@ -182,6 +184,7 @@ module.exports = function (config) {
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('imigix', imigxFilter);
   config.addFilter('md', md);
+  config.addFilter('navigation', navigation);
   config.addFilter('pagedNavigation', pagedNavigation);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
@@ -246,6 +249,9 @@ module.exports = function (config) {
   // https://www.11ty.io/docs/config/#data-deep-merge
   config.setDataDeepMerge(true);
   config.setUseGitIgnore(false);
+
+  // Make .yml files work in the _data directory.
+  config.addDataExtension('yml', (contents) => yaml.safeLoad(contents));
 
   // https://www.11ty.io/docs/config/#configuration-options
   const targetLang = process.env.ELEVENTY_LANG || '';
