@@ -1920,5 +1920,18 @@
     "country": "JP",
     "twitter": "gladenjoy",
     "image": "image/iEYkFAI5LNQv7oLlIBv9DuB265a2/o8ixW7QKSWR02r9ZUOFP.jpg"
+  },
+  "andybell": {
+    "name": {
+      "given": "Andy",
+      "family": "Bell"
+    },
+    "descriptions": {
+      "en": "Freelance designer and educator"
+    },
+    "homepage": "https://piccalil.li/",
+    "github": "hankchizljaw",
+    "twitter": "piccalilli_",
+    "image": "image/admin/c4bzyDkOZ9MhBaqp0HfW.jpg"
   }
 }
