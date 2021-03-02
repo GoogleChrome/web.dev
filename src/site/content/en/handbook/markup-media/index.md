@@ -91,3 +91,29 @@ directly.
 ```typescript
 {% include '../../../../../../types/site/_includes/components/Video.d.ts' %}
 ```
+## Captions
+
+To include a caption along with an image, use `<figure>` with `<figcaption>` and 
+place the shortcode snippet inside:
+
+```md
+<figure class="w-figure">
+{% raw %}{% Img
+  src="image/foR0vJZKULb5AGJExlazy1xYDgI2/iuwBXAyKJMz4b7oRyIdI.jpg",
+  alt="ALT_TEXT_HERE",
+  width="380",
+  height="240",
+%}{% endraw%}
+  <figcaption class="w-figcaption">
+    A good boy.
+  </figcaption>
+</figure>
+```
+
+<figure class="w-figure">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", 
+alt="ALT_TEXT_HERE", width="380", height="240" %}
+  <figcaption class="w-figcaption">
+    A good boy.
+  </figcaption>
+</figure>
