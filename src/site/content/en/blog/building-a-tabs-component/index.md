@@ -49,7 +49,7 @@ button selected in the navigation.
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/eAaQ44VAmzVOO9Cy5Wc8.png",
-    alt="ALT_TEXT_HERE",
+    alt="the collage is quite chaotic due to the huge diversity of styles the web has applied to the component concept",
     class="w-screenshot",
     width="800", height="500"
   %}
@@ -157,7 +157,7 @@ There are 3 different types of scroll areas in this component:
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qVmUKMwbeoCBffP0aY55.png",
-    alt="ALT_TEXT_HERE",
+    alt="3 colorful boxes with color matching directional arrows which outline the scroll areas and show the direction they'll scroll.",
     class="w-screenshot",
     width="800", height="450"
   %}
@@ -224,7 +224,7 @@ scroll containers have created.
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fyl0rTuETjORBigkIBx5.png",
-    alt="ALT_TEXT_HERE",
+    alt="the header and section elements have hotpink overlays on them, outlining the space they take up in the component",
     class="w-screenshot",
     width="800", height="620"
   %}
@@ -264,7 +264,7 @@ this header layout helps set that stage. No absolute positioned elements here!
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/EGNIrpw4gEzIZEcsAt5R.png",
-    alt="ALT_TEXT_HERE",
+    alt="the nav and span.indicator elements have hotpink overlays on them, outlining the space they take up in the component",
     class="w-screenshot",
     width="800", height="368"
   %}
@@ -344,7 +344,7 @@ elements are in here, the browser will render a scrollbar or not.
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/P7Vm3EvhO1wrTK1boU6y.png",
-    alt="ALT_TEXT_HERE",
+    alt="the a elements of the nav have hotpink overlays on them, outlining the space they take up in the component as well as where they overflow",
     class="w-screenshot",
     width="800", height="327"
   %}
@@ -394,7 +394,7 @@ line, no wrapping, exactly what we want; to overflow the parent window.
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/FYroCMocutCGg1X8kfdG.png",
-    alt="ALT_TEXT_HERE",
+    alt="the article elements have hotpink overlays on them, outlining the space they take up in the component and where they overflow",
     class="w-screenshot",
     width="800", height="512"
   %}
@@ -448,7 +448,7 @@ relationship.
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/O8gJp7AxBty8yND4fFGr.png",
-    alt="ALT_TEXT_HERE",
+    alt="the article element and it's child elements have hotpink overlays on them, outlining the space they take up in the component and the direction they overflow",
     class="w-screenshot",
     width="800", height="808"
   %}
@@ -469,7 +469,7 @@ is for me to review the layout and the scroll orchestration.
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/6I6TI9PI4rvrJ9lr8T99.png",
-    alt="ALT_TEXT_HERE",
+    alt="the 3 scrollbars are set to show, now consuming layout space, and our component still looks great",
     class="w-screenshot",
     width="500", height="607"
   %}
@@ -485,7 +485,7 @@ DevTools can help us visualize this:
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GFJwc3IggHY4G5fBMiu9.png",
-    alt="ALT_TEXT_HERE",
+    alt="the scroll areas have grid and flexbox tool overlays, outlining the space they take up in the component and the direction they overflow",
     class="w-screenshot",
     width="800", height="455"
   %}
@@ -725,7 +725,7 @@ synchronized feel of the animation.
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jV5X2JMkgUQSIpcivvTJ.png",
-    alt="ALT_TEXT_HERE",
+    alt="active tab and inactive tab are shown with VisBug overlays which show passing contrast scores for both",
     class="w-screenshot",
     width="540", height="400"
   %}
