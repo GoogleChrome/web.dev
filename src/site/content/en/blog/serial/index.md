@@ -4,7 +4,7 @@ subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2021-03-01
+updated: 2021-03-02
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
 thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
@@ -323,18 +323,19 @@ async function readUntilClosed() {
     }
   }
 
-  await port.close();
+  return port.close();
 }
 
-const closed = readUntilClosed();
+const closedPromise = readUntilClosed();
 
-
-// Sometimes later...
-keepReading = false;
-// Force reader.read() to resolve immediately and subsequently
-// call reader.releaseLock() in the loop example above.
-reader.cancel();
-await closed;
+document.querySelector('button').addEventListener('click', async () => {
+  // User clicked a button to close the serial port.
+  keepReading = false;
+  // Force reader.read() to resolve immediately and subsequently
+  // call reader.releaseLock() in the loop example above.
+  reader.cancel();
+  await closedPromise;
+});
 ```
 
 Closing a serial port is more complicated when using [transform streams] (like
