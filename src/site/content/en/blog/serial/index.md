@@ -4,7 +4,7 @@ subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2021-03-02
+updated: 2021-03-03
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
 thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
@@ -323,7 +323,7 @@ async function readUntilClosed() {
     }
   }
 
-  return port.close();
+  await port.close();
 }
 
 const closedPromise = readUntilClosed();
