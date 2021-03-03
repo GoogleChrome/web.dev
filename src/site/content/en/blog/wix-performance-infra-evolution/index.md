@@ -2,8 +2,8 @@
 layout: post
 title: How Wix Improved Websites Performance by Evolving Their Infrastructure
 subhead: |
-  An overview of some major changes introduced at Wix to improve website loading performance for
-  millions of sites, clearing the path to receive good PSI and Core Web Vital scores.
+  An overview of some major changes introduced at Wix to improve website loading performance for millions of sites,
+  clearing the path to receive good PSI and Core Web Vital scores.
 authors:
   - alonko
 description: |
@@ -22,44 +22,38 @@ tags:
   - wix-engineering
 ---
 
-This is the tale of some major changes we introduced at Wix over the years to improve site loading
-performance through leveraging industry standards, cloud providers, and CDN capabilities.
+Thanks to leveraging industry standards, cloud providers, and CDN capabilities, combined with a major rewrite of our
+website runtime, the percentage of Wix sites reaching good 75th percentile scores on all CWV metrics
+**more than tripled** year over year, according to data from
+[CrUX](https://developers.google.com/web/tools/chrome-user-experience-report) and
+[HTTPArchive](https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data).
 
-These changes, combined with a major rewrite of our website runtime, have resulted in more sites
-reaching good Core Web Vitals scores.
-According to data from [CrUX](https://developers.google.com/web/tools/chrome-user-experience-report) and
-[HTTPArchive](https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data),
-the percentage of Wix sites reaching good CWV have more than tripled year over year.
-
-Performance remains a very important focus for us across the company, and many improvements are
-still under development or are gradually rolling out to users.
-These efforts are part of our performance oriented culture, and we will continue with ongoing efforts to
-further improve all performance KPIs, and as a result expect to see the number of CWV eligible sites
-grow in the future.
+Wix adopted a performance-oriented culture, and further improvements will continue rolling out to users.
+As we focus on performance KPIs, we expect to see the number of sites passing CWV thresholds grow.
 
 ## Overview
 
-The world of performance is beautifully complex, with many variables and intricacies.
-Nowadays, it's widely known that website speed has a direct impact on conversion rates and revenues
+The world of performance is [beautifully complex](https://youtu.be/ctavZT87syI), with many variables and intricacies.
+Research shows that site [speed has a direct impact on conversion rates and revenues](https://web.dev/milliseconds-make-millions)
 for businesses.
 In recent years, the industry has put more emphasis on performance visibility and
-[making the web faster](https://developers.google.com/speed).
-Google is even planning to start including performance as a part of
-[page experience](https://developers.google.com/search/docs/guides/page-experience) in their SEO
-ranking algorithms in May 2021.
+[making the web faster](https://web.dev/fast).
+Starting in May 2021, [page experience signals](https://developers.google.com/search/blog/2020/11/timing-for-page-experience)
+will be included in Google Search ranking.
 
-At Wix, we have a unique challenge; supporting **millions** of sites, some of which were built
+The unique challenge at Wix is supporting **millions** of sites, some of which were built
 _many years ago_ and have not been updated since.
 We have various [tools and articles](https://support.wix.com/en/the-wix-editor/site-performance) to
 assist our users on what they can do to analyze and improve the performance of their sites.
 
-Unlike many hosted solutions which usually run on a single dedicated server, Wix is a managed
-environment and not everything is in the hands of the user.
+Wix is a managed environment and not everything is in the hands of the user.
 Sharing common infrastructures presents many challenges for all these sites, but also opens
 opportunities for major enhancements across the board, i.e. leveraging the economies of scale.
 
-{% Aside%} _In this post I will focus on enhancements done around serving the initial HTML, which
-initiates the page loading process._ {% endAside %}
+{% Aside%}
+_In this post I will focus on enhancements done around serving the initial HTML, which
+initiates the page loading process._
+{% endAside %}
 
 
 ### Speaking in a common language
@@ -72,7 +66,7 @@ technical parts and trade-offs, clarified our performance reports and tremendous
 understand what aspects we should focus on improving first.
 
 We adjusted all our monitoring and internal discussions to include industry standard metrics such
-as [Web Vitals](https://web.dev/vitals/), which mainly include:
+as [Web Vitals](https://web.dev/vitals/), which include:
 
 <figure class="w-figure">
   <img src="./image2.jpg" alt="Core Web Vitals" width="800">
@@ -132,7 +126,7 @@ the full HTML on the client device.
 
 #### Today: Server-Side Rendering (SSR)
 
-A few years ago we transitioned to use Server-Side Rendering (SSR) instead, as that was beneficial
+A few years ago we transitioned to Server-Side Rendering (SSR), as that was beneficial
 both to SEO and performance, improving initial page visibility times and ensuring better indexing
 for search engines that do not have full support for running JavaScript.
 
@@ -150,8 +144,8 @@ The HTML for each site was mostly static, but it had a few caveats:
 such as on the website store inventory.
 2. It had certain data and cookies that were (and are) **visitor specific**,
 meaning two people visiting the same site would see a somewhat different HTML - for example,
-to support products we use various methods, like remembering what items a visitor put in the cart
-, or the chat the visitor started with the business earlier, and more.
+to support products we use various methods, like remembering what items a visitor put in the cart,
+or the chat the visitor started with the business earlier, and more.
 3. Not all pages are cacheable - for example a page with custom user code on it,
 that displays the current time as part of the document, is not eligible for caching.
 
@@ -188,6 +182,16 @@ if removed, presented an opportunity for further performance improvements.
 
 ### Browser Caching (and preparations for CDNs)
 
+<div class="w-figure">
+  <div class="w-stats">
+    <div class="w-stat">
+     <p class="w-stat__figure">~ 13<sub class="w-stat__sub">%</sub></p>
+     <p class="w-stat__desc">HTML requests served directly from the browser cache,
+     saving much bandwidth and reducing loading times for repeat views</p>
+    </div>
+  </div>
+</div>
+
 The next step was to actually remove this visitor-specific data from the HTML
 <span style="text-decoration:underline;">entirely</span>, and retrieve it from a separate endpoint,
 called by the client for this purpose, after the HTML has arrived.
@@ -202,8 +206,7 @@ response for repeating visits, and only call the server to validate that the con
 This is done using [HTTP ETag](https://en.wikipedia.org/wiki/HTTP_ETag), which is basically an
 identifier assigned to a specific version of an HTML resource. If the content is still the same,
 a [304 Not Modified](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304) response is sent
-by our servers to the client, without a body. Around 12% of HTML requests are served from the
-browser cache, saving much bandwidth and reducing loading times for repeat views.
+by our servers to the client, without a body.
 
 <figure class="w-figure">
   <img src="./image5.jpg" alt="WebPageTest Repeat View" width="1600">
@@ -238,7 +241,7 @@ that come with HTTP/2.
   <div class="w-stats">
     <div class="w-stat">
      <p class="w-stat__figure">21 - 25<sub class="w-stat__sub">%</sub></p>
-     <p class="w-stat__desc">Reduce of median file transfer size</p>
+     <p class="w-stat__desc">Reduction of median file transfer size</p>
     </div>
   </div>
 </div>
@@ -278,8 +281,8 @@ At Wix, we have always used [CDNs](https://web.dev/content-delivery-networks/) t
 JavaScript code and images on user websites.
 
 Recently, we integrated with a solution by our DNS provider, to automatically select the best
-performing CDN according to the client's network and origin. This enabled us to serve the static
-files from the best location for each visitor, and prevent availability issues on a certain CDN.
+performing CDN according to the client's network and origin. This enables us to serve the static
+files from the best location for each visitor, and avoid availability issues on a certain CDN.
 
 ### Coming Soon… User Domains served by CDNs
 
@@ -301,8 +304,6 @@ improvements to the loading experience, including newer technologies such as HTT
 effort on our side.
 
 <hr>
-
-## Conclusion
 
 ### A few words on performance monitoring
 
@@ -336,5 +337,19 @@ almost two years ago, and not modified since, but the platform is continually im
 site performance along with it, which can be witnessed by
 [viewing its data](https://www.debugbear.com/project/175/pageLoad/873/overview?dateRange=2019-03-31T21%3A00Z-to-2021-02-10T21%3A59Z)
 over the past year and a half.
+
+## Conclusion
+We hope our experience inspires you to adopt a performance-oriented culture at your organisation and that the
+details above are helpful and applicable to your platform or site.
+
+To sum up:
+* Pick a set of metrics that you can track consistently using tools endorsed by the industry. We recommend Core Web Vitals.
+* Leverage browser caching and CDNs.
+* Migrate to HTTP/2 (or HTTP/3 if possible).
+* Use Brotli compression.
+Thanks for learning our story and we invite you to ask questions,
+share ideas on [Twitter](https://twitter.com/alonkochba) and [GitHub](https://github.com/alonkochba) and join the
+Web Performance conversation on your favorite channels.
+
 
 ## So, how does **your** recent Wix site performance look like?
