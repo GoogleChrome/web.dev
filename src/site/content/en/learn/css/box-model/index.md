@@ -68,7 +68,7 @@ out of the box's bounds. This makes the word, “awesome”, overflow.]
 The demo has the words, “CSS is awesome” in a box with fixed
 dimensions, with a thick border. The box has a width, so is
 **extrinsically sized**, so it tries to control the sizing of its
-child content. The problem with this though, is that the word“awesome”
+child content. The problem with this though, is that the word “awesome”
 is **too large for the box**, so it overflows outside of the parent
 box's **border box** (more on this later in the lesson). To mitigate
 this overflow, you allow the box to be **intrinsically sized** by
