@@ -7,6 +7,7 @@ subhead: |
 authors:
   - katiehempenius
 date: 2020-10-14
+updated: 2021-03-02
 hero: image/admin/6ll3P8MYWxvtb1ZjXIzb.jpg
 alt: A pile of envelopes.
 description: |
@@ -122,25 +123,22 @@ SXGs are the first part of the Web Packaging spec that Chromium-based browsers w
 Initially, the primary use case of SXGs will likely be as a delivery mechanism
 for a page's main document. For this use case, a SXG could be referenced using
 the `<link>` or `<a>` tags, as well as the [`Link`
-header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link).
+header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link). Like
+other resources, a SXG can be loaded by entering its URL in the browser's
+address bar.
 
 ```html
-<a href="https://example.com/sxg">
+<a href="https://example.com/article.html.sxg">
 ```
 
 ```html
-<link rel="prefetch" as="document" href="https://example.com/sxg">
+<link rel="prefetch" as="document" href="https://example.com/article.html.sxg">
 ```
 
-Although a SXG could theoretically be referenced using a `<script>` or `<img>`
-tag, this is not the recommended approach to loading
-[subresources](https://whatpr.org/html/4288/infrastructure.html#resources) using
-SXG. Tooling support for the SXG subresource loading is less mature, and
-therefore this use case is not covered in this document - however, you can read
-more about it in [Signed Exchange subresource
-substitution](https://github.com/WICG/webpackage/blob/master/explainers/signed-exchange-subresource-subtitution-explainer.md).
+SXGs can also be used to deliver subresources. For more information, refer to
+[Signed Exchange subresource
+substitution](https://github.com/WICG/webpackage/blob/main/explainers/signed-exchange-subresource-substitution.md).
 
-Like other resources, a SXG can be loaded by entering its URL in the browser's address bar.
 
 ## Serving SXGs
 
@@ -272,7 +270,8 @@ webpackager \
 ```
 
 Once the SXG file has been generated, upload it to your server and serve it with
-the `application/signed-exchange;v=b3` MIME type.
+the `application/signed-exchange;v=b3` MIME type. In addition, you will need to
+serve the SXG certificate as `application/cert-chain+cbor`.
 
 ### Web Packager Server
 
@@ -281,17 +280,9 @@ server](https://github.com/google/webpackager/blob/master/cmd/webpkgserver/READM
 `webpkgserver`, acts as a [reverse
 proxy](https://en.wikipedia.org/wiki/Reverse_proxy) for serving SXGs. Given a
 URL, `webpkgserver` will fetch the URL's contents, package them as an SXG, and
-serve the SXG in response.
-
-This is the server's default interface:
-`https://localhost:8080/priv/doc/https://example.com`.
-
-In the above example, an instance of `webpkgserver` running on `localhost:8080`
-would return the contents of `https://example.com` as an SXG. `/priv/doc/` is
-the default name of the `webpkgserver` endpoint. Use the `webpkgserver`
-[configuration
-file](https://github.com/google/webpackager/blob/master/cmd/webpkgserver/webpkgserver.example.toml)
-to customize the name of this endpoint, as well as many other settings. 
+serve the SXG in response. For instructions on setting up the Web Packager
+server, see [How to set up signed exchanges using Web
+Packager](http://web.dev/signed-exchanges-webpackager).
 
 In production, `webpkgserver` should not use a public endpoint. Instead, the
 frontend web server should forward SXG requests to `webpkgserver`. These
@@ -300,6 +291,10 @@ contain more information on running `webpkgserver` behind a frontend edge
 server.
 
 ### Other tooling
+
+This section lists tooling alternatives to Web Packager. In addition to these
+options, you can also choose to build your own SXG generator.
+
 
 - NGINX SXG Module
 
@@ -310,6 +305,15 @@ server.
   The NGINX SXG module only works with `CanSignHttpExchanges` certificates.
   Setup instructions can be found
   [here](https://web.dev/how-to-set-up-signed-http-exchanges/). 
+
+
+- `libsxg`
+
+  [`libsxg`](https://github.com/google/libsxg) is a minimal, C-based library for
+  generating SXGs. `libsxg` can be used to build an SXG generator that
+  integrates into other pluggable servers. The NGINX SXG module is built on top
+  of `libsxg`.
+
 
 - `gen-signedexchange`
 
@@ -324,3 +328,5 @@ server.
 
 *   [Spec draft](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html)
 *   [Explainer](https://github.com/WICG/webpackage/blob/master/explainer.md)
+*   [How to set up Signed Exchanges using Web Packager](https://web.dev/signed-exchanges-webpackager)
+*   [Demo of Signed Exchanges](https://signed-exchange-testing.dev/)
