@@ -139,6 +139,7 @@
     "sass-lint": "^1.12.1",
     "scroll-to-bottomjs": "^1.1.0",
     "slugify": "^1.4.5",
+    "striptags": "^3.1.1",
     "through2": "^3.0.1",
     "typescript": "^3.9.7",
     "unified-lint-rule": "^1.0.5",

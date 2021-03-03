@@ -9,6 +9,10 @@ const fs = require('fs');
 const hashLength = 8;
 const isProduction = process.env.ELEVENTY_ENV === 'prod';
 
+function randomHash() {
+  return Math.random().toString(16).substring(2);
+}
+
 function generateAndValidateHash(c) {
   const hash = c.digest('hex').substr(0, hashLength);
   if (hash.length !== hashLength) {
@@ -41,13 +45,15 @@ const hashForProdCache = {};
 /**
  * Hashes the passed file from within the dist dir if in production mode,
  * returning the file with an appended `?v=<hash>`.
+ * In dev mode it will return the file with an appended `?v=<randomHash>` to
+ * avoid caching.
  *
  * @param {string} file
  * @return {string}
  */
 function hashForProd(file) {
   if (!isProduction) {
-    return file;
+    return `${file}?v=${randomHash()}`;
   }
 
   let hash = hashForProdCache[file];
@@ -68,4 +74,5 @@ function hashForProd(file) {
 
 module.exports = {
   hashForProd,
+  randomHash,
 };

@@ -1,0 +1,14 @@
+{# This is used inline with body contents as the TOC on small screens. #}
+{% if tocContents %}
+  {% from 'macros/icon.njk' import icon with context %}
+
+  <div class="toc-container display-block xl:display-none">
+    <details class="toc" role="navigation" aria-label="{{ 'i18n.common.toc' | i18n(locale) }}">
+      <summary class="surface display-inline-flex align-center color-secondary-text user-select-none">
+        <div class="type--h6">{{ 'i18n.common.toc' | i18n(locale) }}</div>
+        <span class="toc__icon">{{ icon('arrow-right') }}</span>
+      </summary>
+      <div class="toc__wrapper">{{ tocContents | safe }}</div>
+    </details>
+  </div>
+{% endif %}
