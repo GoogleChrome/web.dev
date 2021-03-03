@@ -38,12 +38,15 @@ module.exports = function () {
     allPaths['lighthouse-seo'],
   ].filter(livePaths);
 
+  const explorations = [allPaths['mini-apps']].filter(livePaths);
+
   return {
     learn: {
       paths,
       performance,
       frameworks,
       audits,
+      explorations,
     },
   };
 };
