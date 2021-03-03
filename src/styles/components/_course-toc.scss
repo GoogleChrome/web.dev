@@ -20,16 +20,22 @@
   }
 }
 
+// A recursive owl selector which will give every item in the toc top margin.
+.course-toc * + * {
+  margin-top: 12px;
+}
+
 .course-toc ul {
   list-style: none;
 }
 
-.course-toc li {
-  font-size: 14px;
+.course-toc ul ul {
+  border-left: 1px solid $GREY_300;
+  padding-left: 16px;
 }
 
-.course-toc li + li {
-  margin-top: 12px;
+.course-toc li {
+  font-size: 14px;
 }
 
 .course-toc li > a {
