@@ -12,10 +12,11 @@
     align-self: flex-start;
     border-right: 1px solid $GREY_300;
     flex: 0 0 360px;
+    height: 100vh;
+    overflow-y: auto;
     padding: 24px 16px;
     position: sticky;
     top: 0;
-    height: 100vh;
   }
 }
 
@@ -54,11 +55,13 @@
     display: block;
     flex: 0 0 240px;
     order: 1;
+    overflow-y: auto;
     padding: 16px;
     position: sticky;
     // The sticky top position needs to equal the height of the app-bar on
     // desktop + the top margin of the content element.
     top: calc(64px + 24px);
+    height: calc(100vh - 64px - 24px);
   }
 }
 

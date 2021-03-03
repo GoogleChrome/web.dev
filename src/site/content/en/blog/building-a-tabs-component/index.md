@@ -39,7 +39,7 @@ If you prefer video, here's a YouTube version of this post:
 Tabs are a common component of design systems but can take many shapes and
 forms. First there were desktop tabs built on `<frame>` element, and now we have
 buttery mobile components that animate content based on physics properties.
-They're all trying to do the same thing: save space. 
+They're all trying to do the same thing: save space.
 
 Today, the essentials of a tabs user experience is a button navigation area
 which toggles the visibility of content in a display frame. Many different
@@ -47,10 +47,10 @@ content areas share the same space, but are conditionally presented based on the
 button selected in the navigation.
 
 <figure class="w-figure">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/eAaQ44VAmzVOO9Cy5Wc8.png", 
-    alt="ALT_TEXT_HERE", 
-    className="w-screenshot", 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/eAaQ44VAmzVOO9Cy5Wc8.png",
+    alt="the collage is quite chaotic due to the huge diversity of styles the web has applied to the component concept",
+    class="w-screenshot",
     width="800", height="500"
   %}
   <figcaption class="w-figcaption">
@@ -76,7 +76,7 @@ few critical web platform features:
 
 Fundamentally, the UX here is: click a link, have the URL represent the nested
 page state, and then see the content area update as the browser scrolls to the
-matching element. 
+matching element.
 
 There are some structural content members in there: links and `:target`s. We
 need a list of links, which a `<nav>` is great for, and a list of `<article>`
@@ -95,7 +95,7 @@ letting the browser scroll things via anchoring.
 For example, clicking a link automatically focuses the `:target` article in
 Chrome 89, no JS required. The user can then scroll the article content with
 their input device as always. It's complimentary content, as indicated in the
-markup. 
+markup.
 
 I used the following markup to organize the tabs:
 
@@ -155,17 +155,17 @@ There are 3 different types of scroll areas in this component:
   scrollable.
 
 <figure class="w-figure">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qVmUKMwbeoCBffP0aY55.png", 
-    alt="ALT_TEXT_HERE", 
-    className="w-screenshot",
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qVmUKMwbeoCBffP0aY55.png",
+    alt="3 colorful boxes with color matching directional arrows which outline the scroll areas and show the direction they'll scroll.",
+    class="w-screenshot",
     width="800", height="450"
   %}
 </figure>
 
 There's 2 different types of elements involved with scrolling:
 1. **A window** <br>A box with defined dimensions that has the `overflow`
-   property style. 
+   property style.
 1. **An oversized surface** <br>In this layout, it's the list containers: nav
    links, section articles, and article contents.
 
@@ -211,28 +211,28 @@ snap-tabs {
 ```
 {% endCompare %}
 
-Pointing back to the colorful 3-scroll diagram: 
+Pointing back to the colorful 3-scroll diagram:
 - `<header>` is now prepared to be the <b style="color: #FF00E2;">(pink)</b>
-  scroll container. 
+  scroll container.
 - `<section>` is prepared to be the <b style="color: #008CFF;">(blue)</b> scroll
-  container. 
+  container.
 
 The frames I've highlighted below with
 [VisBug](https://a.nerdy.dev/gimme-visbug) help us see the **windows** the
-scroll containers have created. 
+scroll containers have created.
 
 <figure class="w-figure">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fyl0rTuETjORBigkIBx5.png", 
-    alt="ALT_TEXT_HERE", 
-    className="w-screenshot", 
-    width="800", height="620" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fyl0rTuETjORBigkIBx5.png",
+    alt="the header and section elements have hotpink overlays on them, outlining the space they take up in the component",
+    class="w-screenshot",
+    width="800", height="620"
   %}
 </figure>
 
 #### Tabs `<header>` layout {: #tabs-header }
 
-The next layout is nearly the same: I use flex to create vertical ordering. 
+The next layout is nearly the same: I use flex to create vertical ordering.
 
 <div class="w-columns">
 {% Compare 'better', 'HTML' %}
@@ -259,20 +259,20 @@ header {
 </div>
 
 The `.snap-indicator` should travel horizontally with the group of links, and
-this header layout helps set that stage. No absolute positioned elements here! 
+this header layout helps set that stage. No absolute positioned elements here!
 
 <figure class="w-figure">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/EGNIrpw4gEzIZEcsAt5R.png", 
-    alt="ALT_TEXT_HERE", 
-    className="w-screenshot", 
-    width="800", height="368" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/EGNIrpw4gEzIZEcsAt5R.png",
+    alt="the nav and span.indicator elements have hotpink overlays on them, outlining the space they take up in the component",
+    class="w-screenshot",
+    width="800", height="368"
   %}
 </figure>
 
 Next, the scroll styles. It turns out that we can share the scroll styles
 between our 2 horizontal scroll areas (header and section), so I made a utility
-class, `.scroll-snap-x`. 
+class, `.scroll-snap-x`.
 
 ```css
 .scroll-snap-x {
@@ -282,7 +282,7 @@ class, `.scroll-snap-x`.
   overscroll-behavior-x: contain;
   /* scrolling should snap children on x */
   scroll-snap-type: x mandatory;
-  
+
   @media (hover: none) {
     scrollbar-width: none;
 
@@ -342,11 +342,11 @@ fun as the indicator adjusts its width to the new target. Depending on how many
 elements are in here, the browser will render a scrollbar or not.
 
 <figure class="w-figure">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/P7Vm3EvhO1wrTK1boU6y.png", 
-    alt="ALT_TEXT_HERE", 
-    className="w-screenshot", 
-    width="800", height="327" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/P7Vm3EvhO1wrTK1boU6y.png",
+    alt="the a elements of the nav have hotpink overlays on them, outlining the space they take up in the component as well as where they overflow",
+    class="w-screenshot",
+    width="800", height="327"
   %}
 </figure>
 
@@ -392,11 +392,11 @@ expansion push), which sets the row height for a set of full height columns. The
 line, no wrapping, exactly what we want; to overflow the parent window.
 
 <figure class="w-figure">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/FYroCMocutCGg1X8kfdG.png", 
-    alt="ALT_TEXT_HERE", 
-    className="w-screenshot", 
-    width="800", height="512" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/FYroCMocutCGg1X8kfdG.png",
+    alt="the article elements have hotpink overlays on them, outlining the space they take up in the component and where they overflow",
+    class="w-screenshot",
+    width="800", height="512"
   %}
 </figure>
 
@@ -443,14 +443,14 @@ article {
 I chose to have the articles snap within their parent scroller. I really like
 how the navigation link items and the article elements snap to the inline-start
 of their respective scroll containers. It looks and feels like a harmonious
-relationship. 
+relationship.
 
 <figure class="w-figure">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/O8gJp7AxBty8yND4fFGr.png", 
-    alt="ALT_TEXT_HERE",  
-    className="w-screenshot", 
-    width="800", height="808" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/O8gJp7AxBty8yND4fFGr.png",
+    alt="the article element and it's child elements have hotpink overlays on them, outlining the space they take up in the component and the direction they overflow",
+    class="w-screenshot",
+    width="800", height="808"
   %}
 </figure>
 
@@ -467,11 +467,11 @@ it's doubly important for the layout to work with this setting turned on, as it
 is for me to review the layout and the scroll orchestration.
 
 <figure class="w-figure">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/6I6TI9PI4rvrJ9lr8T99.png", 
-    alt="ALT_TEXT_HERE",  
-    className="w-screenshot", 
-    width="500", height="607" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/6I6TI9PI4rvrJ9lr8T99.png",
+    alt="the 3 scrollbars are set to show, now consuming layout space, and our component still looks great",
+    class="w-screenshot",
+    width="500", height="607"
   %}
 </figure>
 
@@ -483,15 +483,15 @@ grid parents to a layout.
 DevTools can help us visualize this:
 
 <figure class="w-figure">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GFJwc3IggHY4G5fBMiu9.png", 
-    alt="ALT_TEXT_HERE",  
-    className="w-screenshot", 
-    width="800", height="455" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GFJwc3IggHY4G5fBMiu9.png",
+    alt="the scroll areas have grid and flexbox tool overlays, outlining the space they take up in the component and the direction they overflow",
+    class="w-screenshot",
+    width="800", height="455"
   %}
   <figcaption class="w-figure">
-    Chromium Devtools, showing the flexbox nav element layout full of anchor elements, 
-    the grid section layout full of article elements, and the article 
+    Chromium Devtools, showing the flexbox nav element layout full of anchor elements,
+    the grid section layout full of article elements, and the article
     elements full of paragraphs and a heading element.
   </figcaption>
 </figure>
@@ -556,7 +556,7 @@ instead of blink there?
 Since we're introducing motion here, and motion that the user doesn't control
 (like scrolling), we only apply this style if the user has no preference in
 their operating system around reduced motion. This way, we only introduce scroll
-motion for folks who are OK with it. 
+motion for folks who are OK with it.
 
 #### Tabs indicator {: #tabs-indicator }
 
@@ -606,7 +606,7 @@ we're thoughtfully respecting their motion preferences). I love it.
 In the above section I showed you how I handle the reduced motion crossfade
 styles, and in this section I'll show you how I linked the indicator and a
 scroll area together. This is some fun experimental stuff up next. I hope you're
-as excited as me. 
+as excited as me.
 
 ```js
 const { matches:motionOK } = window.matchMedia(
@@ -616,7 +616,7 @@ const { matches:motionOK } = window.matchMedia(
 
 I first check the user's motion preference from JavaScript. If the result of
 this is `false`, meaning the user prefers reduced motion, then we'll not run any
-of the scroll linking motion effects. 
+of the scroll linking motion effects.
 
 ```js
 if (motionOK) {
@@ -628,7 +628,7 @@ At the time of writing this, the [browser support for
 `@scroll-timeline`](https://caniuse.com/css-scroll-timeline) is none. It's a
 [draft spec](https://drafts.csswg.org/scroll-animations-1/) with only
 experimental implementations. It has a polyfill though, which I use in this
-demo. 
+demo.
 
 ##### ` ScrollTimeline`
 
@@ -638,7 +638,7 @@ Javascript so I could use live element measurements in the animation.
 ```js
 const sectionScrollTimeline = new ScrollTimeline({
   scrollSource: tabsection,  // snap-tabs > section
-  orientation: 'inline',     // scroll in the direction letters flow 
+  orientation: 'inline',     // scroll in the direction letters flow
   fill: 'both',              // bi-directional linking
 });
 ```
@@ -649,7 +649,7 @@ Normally an animation on the web runs against a global time frame tick, but with
 a custom `sectionScrollTimeline` in memory, I can change all that.
 
 ```js
-tabindicator.animate({ 
+tabindicator.animate({
     transform: ...,
     width: ...,
   }, {
@@ -677,10 +677,10 @@ JavaScript knows how to get that information though, so we'll iterate over the
 children ourselves and grab the computed values at runtime:
 
 ```js
-tabindicator.animate({ 
-    transform: [...tabnavitems].map(({offsetLeft}) => 
+tabindicator.animate({
+    transform: [...tabnavitems].map(({offsetLeft}) =>
       `translateX(${offsetLeft}px)`),
-    width: [...tabnavitems].map(({offsetWidth}) => 
+    width: [...tabnavitems].map(({offsetWidth}) =>
       `${offsetWidth}px`)
   }, {
     duration: 1000,
@@ -693,14 +693,14 @@ tabindicator.animate({
 For each `tabnavitem`, destructure the `offsetLeft` position and return a string
 that uses it as a `translateX` value. This creates 4 transform keyframes for the
 animation. The same is done for width, each is asked what its dynamic width is
-and then it's used as a keyframe value. 
+and then it's used as a keyframe value.
 
 Here's example output, based on my fonts and browser preferences:
 
 TranslateX Keyframes:
 
 ```js
-[...tabnavitems].map(({offsetLeft}) => 
+[...tabnavitems].map(({offsetLeft}) =>
   `translateX(${offsetLeft}px)`)
 
 // results in 4 array items, which represent 4 keyframe states
@@ -710,7 +710,7 @@ TranslateX Keyframes:
 Width Keyframes:
 
 ```js
-[...tabnavitems].map(({offsetWidth}) => 
+[...tabnavitems].map(({offsetWidth}) =>
   `${offsetWidth}px`)
 
 // results in 4 array items, which represent 4 keyframe states
@@ -723,11 +723,11 @@ create clear delineation between our keyframes and really add to the
 synchronized feel of the animation.
 
 <figure class="w-figure">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jV5X2JMkgUQSIpcivvTJ.png", 
-    alt="ALT_TEXT_HERE", 
-    className="w-screenshot", 
-    width="540", height="400" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jV5X2JMkgUQSIpcivvTJ.png",
+    alt="active tab and inactive tab are shown with VisBug overlays which show passing contrast scores for both",
+    class="w-screenshot",
+    width="540", height="400"
   %}
 </figure>
 
@@ -747,14 +747,14 @@ highlighted navigation item becomes selected.
 The unselected lighter grey appears even more pushed back when the highlighted
 item has more contrast. It's common to transition color for text, like on hover
 and when selected, but it's next-level to transition that color on scroll,
-synchronized with the underline indicator. 
+synchronized with the underline indicator.
 
 Here's how I did it:
 
 ```js
 tabnavitems.forEach(navitem => {
   navitem.animate({
-      color: [...tabnavitems].map(item => 
+      color: [...tabnavitems].map(item =>
         item === navitem
           ? `var(--text-active-color)`
           : `var(--text-color)`)
@@ -774,16 +774,16 @@ animation we want. As I did before, I create 4 keyframes in the loop, and return
 colors.
 
 ```js
-[...tabnavitems].map(item => 
+[...tabnavitems].map(item =>
   item === navitem
     ? `var(--text-active-color)`
     : `var(--text-color)`)
 
 // results in 4 array items, which represent 4 keyframe states
 // [
-  "var(--text-active-color)", 
-  "var(--text-color)", 
-  "var(--text-color)", 
+  "var(--text-active-color)",
+  "var(--text-color)",
+  "var(--text-color)",
   "var(--text-color)",
 ]
 ```
@@ -802,7 +802,7 @@ It's worth a reminder that the core of what I'm showing you here works without
 JavaScript. With that said, let's see how we can enhance it when JS is
 available.
 
-#### Deep links 
+#### Deep links
 
 Deep links are more of a mobile term, but I think the intent of the deep link is
 met here with tabs in that you can share a URL directly to a tab's contents. The
@@ -819,7 +819,7 @@ window.onload = () => {
 }
 ```
 
-#### Scroll end synchronization 
+#### Scroll end synchronization
 
 Our users aren't always clicking or using a keyboard, sometimes they're just
 free scrolling, as they should be able to. When the section scroller stops
@@ -848,7 +848,7 @@ out where the user stopped.
 const determineActiveTabSection = () => {
   const i = tabsection.scrollLeft / tabsection.clientWidth;
   const matchingNavItem = tabnavitems[i];
-  
+
   matchingNavItem && setActiveTab(matchingNavItem);
 };
 ```
@@ -863,7 +863,7 @@ const setActiveTab = tabbtn => {
   tabnav
     .querySelector(':scope a[active]')
     .removeAttribute('active');
-  
+
   tabbtn.setAttribute('active', '');
   tabbtn.scrollIntoView();
 };
@@ -910,4 +910,4 @@ section below.
 
 ## Community remixes
 
-Nothing to see here yet
+- [@devnook](https://twitter.com/devnook), [@rob_dodson](https://twitter.com/rob_dodson), & [@DasSurma](https://twitter.com/DasSurma) with Web Components: [article](https://developers.google.com/web/fundamentals/web-components/examples/howto-tabs)

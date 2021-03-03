@@ -119,7 +119,7 @@ corresponds to the viewer's device and the other corresponds to the web page.
 `WebGLFramebuffer` and `XRViewport` are passed from the former to the latter.
 
 <figure class="w-figure">
-  <img src="./players.png" style="max-width: 100%;" alt="The relationship between XRWebGLLayer and WebGLRenderingContext"/>
+  {% Img src="image/admin/ZdH8cIApe8jUr7F1WNgC.png", alt="The relationship between XRWebGLLayer and WebGLRenderingContext", width="711", height="94" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The relationship between <code>XRWebGLLayer</code> and <code>WebGLRenderingContext</code>
   </figcaption>

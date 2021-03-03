@@ -1,0 +1,13 @@
+// In order to let screen readers read content we want to hide, pulled from:
+// https://css-tricks.com/small-tweaks-can-make-huge-impact-websites-accessibility/#article-header-id-2
+.w-visually-hidden {
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(1px);
+  display: block;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

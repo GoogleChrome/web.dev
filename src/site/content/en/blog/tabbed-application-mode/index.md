@@ -5,14 +5,16 @@ subhead: Work on more than one document at a time with tabs in your Progressive 
 authors:
   - thomassteiner
 date: 2021-02-25
+updated: 2021-02-26
 description: |
   Tabbed application mode allows Progressive Web App developers to add a tabbed document interface
   to their standalone PWAs.
-hero: hero.jpg
+hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/N08W5skJmcYgS7346DBS.jpg
 alt: Dictionary thumb index.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - progressive-web-apps
+  - capabilities
 ---
 
 {% Aside %}
@@ -151,7 +153,9 @@ instructions for reproducing, and enter `UI>Browser>WebAppInstalls` in the **Com
 Are you planning to use tabbed application mode? Your public support helps the Chrome team
 prioritize features and shows other browser vendors how critical it is to support them.
 
-Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#TabbedApplicationMode` hashtag and let us
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#TabbedApplicationMode`](https://twitter.com/search?q=%23TabbedApplicationMode&src=typed_query&f=live)
+and let us
 know where and how you are using it.
 
 ## Useful links
