@@ -3,8 +3,8 @@ layout: post
 title: Mini apps and super apps
 authors:
   - thomassteiner
-date: 2021-02-25
-# updated: 2021-02-25
+date: 2021-03-03
+# updated: 2021-03-03
 description: |
   This chapter introduces the concept of super apps and presents the major super app providers.
 tags:
@@ -15,19 +15,19 @@ tags:
 
 When you look at applications on your phone, you probably have specific apps for specific tasks.
 You might have a banking app. You might have an app for buying public transit tickets. Likely you
-have an app for getting directions, and many more specialized apps. This post introduces you to the 
-concept of a different kind of apps—mini apps—sometimes also called mini programs or applets. 
-You will first learn about the background of various mini app platforms and their developer experience, and 
-then focus on things the web can learn from mini apps. But before learning about mini apps, you first 
+have an app for getting directions, and many more specialized apps. This post introduces you to the
+concept of a different kind of apps—mini apps—sometimes also called mini programs or applets.
+You will first learn about the background of various mini app platforms and their developer experience, and
+then focus on things the web can learn from mini apps. But before learning about mini apps, you first
 need to learn about super apps.
 
 ## What are super apps?
 
-Super apps serve as hosts to other apps that run within them: the so-called mini apps. Popular super apps are 
-[WeChat](https://weixin.qq.com/) (微信) by Tencent, [Alipay](https://www.alipay.com/) (支付宝) by Ant Group 
-(an affiliate company of the Chinese Alibaba Group), the app of the search engine [Baidu](https://baidu.com/) (百度), 
-as well as ByteDance's [Douyin](https://www.douyin.com/) (抖音), which you might know as TikTok (蒂克托克). 
-The first three are commonly also referred to as BAT, derived from **B**(aidu)**A**(libaba)**T**(encent). 
+Super apps serve as hosts to other apps that run within them: the so-called mini apps. Popular super apps are
+[WeChat](https://weixin.qq.com/) (微信) by Tencent, [Alipay](https://www.alipay.com/) (支付宝) by Ant Group
+(an affiliate company of the Chinese Alibaba Group), the app of the search engine [Baidu](https://baidu.com/) (百度),
+as well as ByteDance's [Douyin](https://www.douyin.com/) (抖音), which you might know as TikTok (蒂克托克).
+The first three are commonly also referred to as BAT, derived from **B**(aidu)**A**(libaba)**T**(encent).
 Super apps have taken the Chinese market by storm, which is why a lot of the examples in this article are Chinese.
 
 <figure class="w-figure">
@@ -88,5 +88,6 @@ mode with a secondary phone (given you have one) to understand what is going on 
 This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
+[Milica Mihajlija](https://github.com/mihajlija),
 Keith Gu,
 and [Alan Kent](https://github.com/alankent).

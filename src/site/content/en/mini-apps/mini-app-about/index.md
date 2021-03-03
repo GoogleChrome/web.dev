@@ -3,8 +3,8 @@ layout: post
 title: What are mini apps?
 authors:
   - thomassteiner
-date: 2021-02-25
-# updated: 2021-02-25
+date: 2021-03-03
+# updated: 2021-03-03
 description: |
   This chapter introduces the concept of mini apps and provides examples of their look and feel.
 tags:
@@ -42,7 +42,7 @@ Other super apps will typically not be able to recognize the barcode.
 
 Mini apps can also be discovered through regular in-app search in the super app, be shared in chat
 messages, or be part of a news item in a news feed. Some super apps have the notion of verified
-accounts that can contain mini apps in their profiles. Mini apps can be highlighted when they are 
+accounts that can contain mini apps in their profiles. Mini apps can be highlighted when they are
 physically geographically close, like the mini app of a business in front of which the user
 stands, or virtually close, like when the user gets directions on a map shown in the super
 app. Frequently used mini apps are available in an app drawer that in many super apps can be
@@ -204,5 +204,6 @@ users can enter into competition without any friction and the mini app thereby g
 This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
+[Milica Mihajlija](https://github.com/mihajlija),
 Keith Gu,
 and [Alan Kent](https://github.com/alankent).

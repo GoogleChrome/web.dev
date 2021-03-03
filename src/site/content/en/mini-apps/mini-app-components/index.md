@@ -3,8 +3,8 @@ layout: post
 title: Mini app components
 authors:
   - thomassteiner
-date: 2021-02-25
-# updated: 2021-02-25
+date: 2021-03-03
+# updated: 2021-03-03
 description: |
   This chapter provides details on the components that all mini app platforms make available.
 tags:
@@ -278,5 +278,6 @@ The custom component can then be imported in `index.json`, the key of the import
 This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
+[Milica Mihajlija](https://github.com/mihajlija),
 Keith Gu,
 and [Alan Kent](https://github.com/alankent).

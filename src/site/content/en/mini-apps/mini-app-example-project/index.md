@@ -3,8 +3,8 @@ layout: post
 title: Applying the mini app programming principles to an example project
 authors:
   - thomassteiner
-date: 2021-02-25
-# updated: 2021-02-25
+date: 2021-03-03
+# updated: 2021-03-03
 description: |
   This chapter shows an example project that follows the "programming the mini app way" approach.
 tags:
@@ -253,5 +253,6 @@ or right in the iframe embed below, which simulates a mobile device.
 This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
+[Milica Mihajlija](https://github.com/mihajlija),
 Keith Gu,
 and [Alan Kent](https://github.com/alankent).

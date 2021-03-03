@@ -3,8 +3,8 @@ layout: post
 title: Programming the mini app way
 authors:
   - thomassteiner
-date: 2021-02-25
-# updated: 2021-02-25
+date: 2021-03-03
+# updated: 2021-03-03
 description: |
   This chapter introduces the way of programming the mini app way.
 tags:
@@ -74,5 +74,6 @@ but against the browser API without an intermediate actor.
 This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
+[Milica Mihajlija](https://github.com/mihajlija),
 Keith Gu,
 and [Alan Kent](https://github.com/alankent).

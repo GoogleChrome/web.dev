@@ -3,8 +3,8 @@ layout: post
 title: Other mini app runtime environments
 authors:
   - thomassteiner
-date: 2021-02-25
-# updated: 2021-02-25
+date: 2021-03-03
+# updated: 2021-03-03
 description: |
   This chapter presents a number of runtime environments for mini apps that are not mobile devices.
 tags:
@@ -262,5 +262,6 @@ with no installation required.
 This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
+[Milica Mihajlija](https://github.com/mihajlija),
 Keith Gu,
 and [Alan Kent](https://github.com/alankent).
