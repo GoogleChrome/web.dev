@@ -1,6 +1,5 @@
 ---
-layout: course
-title: Ten modern layouts in one line of CSS
+title: Overview
 subhead: This post highlights a few powerful lines of CSS that do some serious heavy lifting and help you build robust modern layouts.
 authors:
   - una
@@ -9,7 +8,6 @@ date: 2020-07-07
 hero: image/admin/B07IzuMeRRGRLH9UQkwd.png
 alt: Holy grail layout.
 tags:
-  - blog # blog is a required tag for the article to show up in the blog.
   - css
   - layout
   - mobile
