@@ -3,7 +3,7 @@ layout: handbook
 title: YAML front matter
 subhead: |
   Reference documentation for web.dev's YAML front matter properties.
-date: 2021-02-23
+date: 2021-03-03
 description: |
   Reference documentation for web.dev's YAML front matter properties.
 ---
