@@ -11,6 +11,11 @@ tags:
   - mini-apps
 ---
 
+{% Aside %}
+  This post is part of an article collection where each article builds upon previous articles.
+  If you just landed here, you may want to start reading from the [beginning](/mini-app-super-apps/).
+{% endAside %}
+
 ## Building blocks and compatibility
 
 Mini apps are small (commonly less than 4MB) apps that require a
@@ -195,9 +200,9 @@ Mini apps can get highly popular by letting people share their achievements like
 game and challenge their contacts through status updates. The mini app is then only a tap away, so
 users can enter into competition without any friction and the mini app thereby grow its reach.
 
-{% Banner 'neutral' %}
-  👉 In the next chapter, you will learn [what sets mini apps apart from H5 apps and QuickApp](/mini-app-what-are-h5-and-quickapp).
-{% endBanner %}
+{% Aside 'success' %}
+  In the next chapter, you will learn [what sets mini apps apart from H5 apps and QuickApp](/mini-app-what-are-h5-and-quickapp).
+{% endAside %}
 
 ## Acknowledgements
 
@@ -205,5 +210,5 @@ This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
-Keith Gu,
-and [Alan Kent](https://github.com/alankent).
+[Alan Kent](https://github.com/alankent),
+and Keith Gu.

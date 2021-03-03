@@ -11,6 +11,11 @@ tags:
   - mini-apps
 ---
 
+{% Aside %}
+  This post is part of an article collection where each article builds upon previous articles.
+  If you just landed here, you may want to start reading from the [beginning](/mini-app-super-apps/).
+{% endAside %}
+
 ## The developer experience
 
 Now that I have covered mini apps _per se_, I want to focus on the developer experience for the
@@ -238,9 +243,9 @@ desired mock responses.
   </figcaption>
 </figure>
 
-{% Banner 'neutral' %}
-  👉 Read on to learn about the [mark-up, styling, and scripting of mini apps](/mini-app-markup-styling-and-scripting/).
-{% endBanner %}
+{% Aside 'success' %}
+  Read on to learn about the [mark-up, styling, and scripting of mini apps](/mini-app-markup-styling-and-scripting/).
+{% endAside %}
 
 ## Acknowledgements
 
@@ -248,5 +253,5 @@ This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
-Keith Gu,
-and [Alan Kent](https://github.com/alankent).
+[Alan Kent](https://github.com/alankent),
+and Keith Gu.

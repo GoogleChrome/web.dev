@@ -11,6 +11,11 @@ tags:
   - mini-apps
 ---
 
+{% Aside %}
+  This post is part of an article collection where each article builds upon previous articles.
+  If you just landed here, you may want to start reading from the [beginning](/mini-app-super-apps/).
+{% endAside %}
+
 ## What mini apps are not
 
 Before I go into more detail on the developer experience of mini apps, I want to briefly mention and
@@ -52,9 +57,9 @@ super app, but launch as seemingly self-contained full screen applications that 
 device. What happens in the background is that they are opened in a full screen view rendered by the
 operating system that provides the JavaScript bridge.
 
-{% Banner 'neutral' %}
-  👉 The next chapter covers the [developer experience of mini apps](/mini-app-devtools/).
-{% endBanner %}
+{% Aside 'success' %}
+  The next chapter covers the [developer experience of mini apps](/mini-app-devtools/).
+{% endAside %}
 
 ## Acknowledgements
 
@@ -62,5 +67,5 @@ This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
-Keith Gu,
-and [Alan Kent](https://github.com/alankent).
+[Alan Kent](https://github.com/alankent),
+and Keith Gu.

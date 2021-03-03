@@ -14,6 +14,11 @@ tags:
   - mini-apps
 ---
 
+{% Aside %}
+  This post is part of an article collection where each article builds upon previous articles.
+  If you just landed here, you may want to start reading from the [beginning](/mini-app-super-apps/).
+{% endAside %}
+
 ## Where does this leave us?
 
 Writing and researching mini apps has been quite a ride, but one that I do not regret. On the one
@@ -59,9 +64,9 @@ what they choose to implement and what not. Concluding, I am looking forward to 
 this is headed. Thinking outside of the box and taking input and inspiration from outside of one's
 own bubble can definitely help when building a better future on the web.
 
-{% Banner 'neutral' %}
-  👉 Congratulations, you have reached the end of the [mini apps collection](/mini-apps/).
-{% endBanner %}
+{% Aside 'success' %}
+  Congratulations, you have reached the end of the [mini apps collection](/mini-apps/).
+{% endAside %}
 
 ## Acknowledgements
 
@@ -69,5 +74,5 @@ This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
-Keith Gu,
-and [Alan Kent](https://github.com/alankent).
+[Alan Kent](https://github.com/alankent),
+and Keith Gu.

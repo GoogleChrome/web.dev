@@ -11,6 +11,11 @@ tags:
   - mini-apps
 ---
 
+{% Aside %}
+  This post is part of an article collection where each article builds upon previous articles.
+  If you just landed here, you may want to start reading from the [beginning](/mini-app-super-apps/).
+{% endAside %}
+
 ## The app domain
 
 To show the [mini app way of programming](/mini-app-programming-way/)
@@ -244,9 +249,9 @@ or right in the iframe embed below, which simulates a mobile device.
 
 <iframe src="https://tomayac.github.io/hiit-time/#workout" width="411" height="731" loading="lazy" frameborder="0" allow="screen-wake-lock"></iframe>
 
-{% Banner 'neutral' %}
-  👉 The final chapter ends this collection on mini apps with a [conclusion](/mini-app-conclusion).
-{% endBanner %}
+{% Aside 'success' %}
+  The final chapter ends this collection on mini apps with a [conclusion](/mini-app-conclusion).
+{% endAside %}
 
 ## Acknowledgements
 
@@ -254,5 +259,5 @@ This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
-Keith Gu,
-and [Alan Kent](https://github.com/alankent).
+[Alan Kent](https://github.com/alankent),
+and Keith Gu.

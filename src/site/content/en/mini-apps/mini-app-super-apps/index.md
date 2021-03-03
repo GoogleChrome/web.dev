@@ -79,9 +79,9 @@ mode with a secondary phone (given you have one) to understand what is going on 
   </figcaption>
 </figure>
 
-{% Banner 'neutral' %}
-  👉 Read on to [learn more about mini apps](/mini-app-about/) in the next chapter.
-{% endBanner %}
+{% Aside 'success' %}
+  Read on to [learn more about mini apps](/mini-app-about/) in the next chapter.
+{% endAside %}
 
 ## Acknowledgements
 
@@ -89,5 +89,5 @@ This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
-Keith Gu,
-and [Alan Kent](https://github.com/alankent).
+[Alan Kent](https://github.com/alankent),
+and Keith Gu.

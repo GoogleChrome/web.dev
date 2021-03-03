@@ -11,6 +11,11 @@ tags:
   - mini-apps
 ---
 
+{% Aside %}
+  This post is part of an article collection where each article builds upon previous articles.
+  If you just landed here, you may want to start reading from the [beginning](/mini-app-super-apps/).
+{% endAside %}
+
 ## kbone
 
 The [kbone](https://wechat-miniprogram.github.io/kbone/docs/) project
@@ -282,9 +287,9 @@ WeChat platform.
   </figcaption>
 </figure>
 
-{% Banner 'neutral' %}
-  👉 In the next chapter, you will learn how to [program the mini app way](/mini-app-programming-way/).
-{% endBanner %}
+{% Aside 'success' %}
+  In the next chapter, you will learn how to [program the mini app way](/mini-app-programming-way/).
+{% endAside %}
 
 ## Acknowledgements
 
@@ -292,5 +297,5 @@ This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
-Keith Gu,
-and [Alan Kent](https://github.com/alankent).
+[Alan Kent](https://github.com/alankent),
+and Keith Gu.

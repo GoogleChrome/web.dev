@@ -11,6 +11,11 @@ tags:
   - mini-apps
 ---
 
+{% Aside %}
+  This post is part of an article collection where each article builds upon previous articles.
+  If you just landed here, you may want to start reading from the [beginning](/mini-app-super-apps/).
+{% endAside %}
+
 ## Web components
 
 [Web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components/) started with the
@@ -269,9 +274,9 @@ The custom component can then be imported in `index.json`, the key of the import
 </view>
 ```
 
-{% Banner 'neutral' %}
-  👉 Continue reading to learn about the [project structure, lifecycle, and bundling](/mini-app-project-structure-lifecycle-and-bundling/) of mini apps.
-{% endBanner %}
+{% Aside 'success' %}
+  Continue reading to learn about the [project structure, lifecycle, and bundling](/mini-app-project-structure-lifecycle-and-bundling/) of mini apps.
+{% endAside %}
 
 ## Acknowledgements
 
@@ -279,5 +284,5 @@ This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
-Keith Gu,
-and [Alan Kent](https://github.com/alankent).
+[Alan Kent](https://github.com/alankent),
+and Keith Gu.

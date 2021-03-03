@@ -11,6 +11,11 @@ tags:
   - mini-apps
 ---
 
+{% Aside %}
+  This post is part of an article collection where each article builds upon previous articles.
+  If you just landed here, you may want to start reading from the [beginning](/mini-app-super-apps/).
+{% endAside %}
+
 ## What has worked well for mini apps
 
 In this chapter, I want to look at lessons I learned from researching mini apps from a web
@@ -65,9 +70,9 @@ on the web, these powerful capabilities are available directly,
 so you do not program against an API provided by the JavaScript bridge,
 but against the browser API without an intermediate actor.
 
-{% Banner 'neutral' %}
-  👉 Read on to see an [example project](/mini-app-example-project/) that puts this way of programming into practice.
-{% endBanner %}
+{% Aside 'success' %}
+  Read on to see an [example project](/mini-app-example-project/) that puts this way of programming into practice.
+{% endAside %}
 
 ## Acknowledgements
 
@@ -75,5 +80,5 @@ This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
-Keith Gu,
-and [Alan Kent](https://github.com/alankent).
+[Alan Kent](https://github.com/alankent),
+and Keith Gu.

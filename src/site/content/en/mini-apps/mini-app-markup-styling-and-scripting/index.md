@@ -11,6 +11,11 @@ tags:
   - mini-apps
 ---
 
+{% Aside %}
+  This post is part of an article collection where each article builds upon previous articles.
+  If you just landed here, you may want to start reading from the [beginning](/mini-app-super-apps/).
+{% endAside %}
+
 ## Markup languages
 
 As outlined before, rather than with plain HTML, mini apps are written with dialects of HTML. If you
@@ -261,9 +266,9 @@ tt.canIUse("swiper");
 tt.canIUse("request.success.data");
 ```
 
-{% Banner 'neutral' %}
-  👉 The next chapter introduces [mini app components](/mini-app-components/).
-{% endBanner %}
+{% Aside 'success' %}
+  The next chapter introduces [mini app components](/mini-app-components/).
+{% endAside %}
 
 ## Acknowledgements
 
@@ -271,5 +276,5 @@ This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
-Keith Gu,
-and [Alan Kent](https://github.com/alankent).
+[Alan Kent](https://github.com/alankent),
+and Keith Gu.

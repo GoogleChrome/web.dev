@@ -11,6 +11,11 @@ tags:
   - mini-apps
 ---
 
+{% Aside %}
+  This post is part of an article collection where each article builds upon previous articles.
+  If you just landed here, you may want to start reading from the [beginning](/mini-app-super-apps/).
+{% endAside %}
+
 ## Mini app project structure
 
 As before with the markup languages, the styling languages, and the components; with the mini app
@@ -152,9 +157,9 @@ does not have to be downloaded all at once. The packaging details are meant to b
 not documented, but some package formats like WeChat's `wxapkg` format have been
 [reverse-engineered](https://github.com/sjatsh/unwxapkg).
 
-{% Banner 'neutral' %}
-  👉 The next chapter provides insights on the [mini app standardization effort](/mini-app-standardization/).
-{% endBanner %}
+{% Aside 'success' %}
+  The next chapter provides insights on the [mini app standardization effort](/mini-app-standardization/).
+{% endAside %}
 
 ## Acknowledgements
 
@@ -162,5 +167,5 @@ This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
-Keith Gu,
-and [Alan Kent](https://github.com/alankent).
+[Alan Kent](https://github.com/alankent),
+and Keith Gu.

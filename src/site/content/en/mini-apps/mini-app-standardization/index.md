@@ -11,6 +11,11 @@ tags:
   - mini-apps
 ---
 
+{% Aside %}
+  This post is part of an article collection where each article builds upon previous articles.
+  If you just landed here, you may want to start reading from the [beginning](/mini-app-super-apps/).
+{% endAside %}
+
 ## Mini app popularity
 
 Mini apps have seen tremendous growth. WeChat mini apps as of June 2020 have reached
@@ -80,9 +85,9 @@ Leaders of the group introduced the effort as follows:
 *"Maximizing the integration of MiniApps and the Web"* in particular sounds very interesting.
 As a curious member of the group, I look forward to seeing where this endeavor is headed.
 
-{% Banner 'neutral' %}
-  👉 The following chapter looks at [alternative mini app runtime environments](/mini-app-alternative-runtime-environments/) apart from mobile devices.
-{% endBanner %}
+{% Aside 'success' %}
+  The following chapter looks at [alternative mini app runtime environments](/mini-app-alternative-runtime-environments/) apart from mobile devices.
+{% endAside %}
 
 ## Acknowledgements
 
@@ -90,5 +95,5 @@ This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
-Keith Gu,
-and [Alan Kent](https://github.com/alankent).
+[Alan Kent](https://github.com/alankent),
+and Keith Gu.

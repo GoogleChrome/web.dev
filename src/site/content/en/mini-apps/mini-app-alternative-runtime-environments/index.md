@@ -11,6 +11,11 @@ tags:
   - mini-apps
 ---
 
+{% Aside %}
+  This post is part of an article collection where each article builds upon previous articles.
+  If you just landed here, you may want to start reading from the [beginning](/mini-app-super-apps/).
+{% endAside %}
+
 ## More than just on mobile
 
 In countries like China, mini apps have taken the market by storm.
@@ -253,9 +258,9 @@ with no installation required.
   </figcaption>
 </figure>
 
-{% Banner 'neutral' %}
-  👉 Read on to see some examples of the [mini app open source projects](/mini-app-open-source-projects/).
-{% endBanner %}
+{% Aside 'success' %}
+  Read on to see some examples of the [mini app open source projects](/mini-app-open-source-projects/).
+{% endAside %}
 
 ## Acknowledgements
 
@@ -263,5 +268,5 @@ This article was reviewed by
 [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques),
 [Milica Mihajlija](https://github.com/mihajlija),
-Keith Gu,
-and [Alan Kent](https://github.com/alankent).
+[Alan Kent](https://github.com/alankent),
+and Keith Gu.
