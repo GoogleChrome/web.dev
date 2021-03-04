@@ -53,8 +53,8 @@ and prioritize the images that the user is going to encounter soon.
 For example, the changes for `flower3.png` would look like this:
 
 ```html/1/0
-![](images/flower3.png)
-![](images/flower3.png)
+<img src="images/flower3.png" alt="">
+<img data-src="images/flower3.png" class="lazyload" alt="">
 ```
 
 For this example, try lazy loading `flower3.png`, `flower4.jpg`, and

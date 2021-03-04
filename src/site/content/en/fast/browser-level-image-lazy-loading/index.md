@@ -70,7 +70,7 @@ still fetched as soon as possible.
 In Chrome 76+, you can use the `loading` attribute to completely defer the loading of offscreen images that can be reached by scrolling:
 
 ```html
-![…](image.png)
+<img src="image.png" loading="lazy" alt="…" width="200" height="200">
 ```
 
 Here are the supported values for the `loading` attribute:
@@ -152,13 +152,13 @@ We are committed to working with the web standards community to explore better a
 While the browser loads an image, it does not immediately know the image's dimensions, unless these are explicitly specified. To enable the browser to reserve sufficient space on a page for images, it is recommended that all `<img>` tags include both `width` and `height` attributes. Without dimensions specified, [layout shifts](/cls) can occur, which are more noticeable on pages that take some time to load.
 
 ```html
-![…](image.png)
+<img src="image.png" loading="lazy" alt="…" width="200" height="200">
 ```
 
 Alternatively, specify their values directly in an inline style:
 
 ```html
-![…](image.png)
+<img src="image.png" loading="lazy" alt="…" style="height:200px; width:200px;">
 ```
 
 The best practice of setting dimensions applies to `<img>` tags regardless of whether or not they are being loaded lazily. With lazy-loading, this can become more relevant. Setting `width` and `height` on images in modern browsers also allows browsers to infer their intrinsic size.
@@ -198,14 +198,14 @@ Generally, any images within the viewport should be loaded eagerly using the bro
 
 ```html
 <!-- visible in the viewport -->
-![...](product-1.jpg)
-![...](product-2.jpg)
-![...](product-3.jpg)
+<img src="product-1.jpg" alt="..." width="200" height="200">
+<img src="product-2.jpg" alt="..." width="200" height="200">
+<img src="product-3.jpg" alt="..." width="200" height="200">
 
 <!-- offscreen images -->
-![...](product-4.jpg)
-![...](product-5.jpg)
-![...](product-6.jpg)
+<img src="product-4.jpg" loading="lazy" alt="..." width="200" height="200">
+<img src="product-5.jpg" loading="lazy" alt="..." width="200" height="200">
+<img src="product-6.jpg" loading="lazy" alt="..." width="200" height="200">
 ```
 
 ## Graceful degradation
@@ -277,12 +277,12 @@ library only when `loading` isn't supported. This works as follows:
 
 ```html
 <!-- Let's load this in-viewport image normally -->
-![…](hero.jpg)
+<img src="hero.jpg" alt="…">
 
 <!-- Let's lazy-load the rest of these images -->
-![…](unicorn.jpg)
-![…](cats.jpg)
-![…](dogs.jpg)
+<img data-src="unicorn.jpg" alt="…" loading="lazy" class="lazyload">
+<img data-src="cats.jpg" alt="…" loading="lazy" class="lazyload">
+<img data-src="dogs.jpg" alt="…" loading="lazy" class="lazyload">
 
 <script>
   if ('loading' in HTMLImageElement.prototype) {

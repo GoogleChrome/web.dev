@@ -130,7 +130,7 @@ Luckily, you can recreate these behaviors using the `<video>` element.
 - In the `index.html` file, replace the line with the `<img>` with:
 
 ```html/1/0
-![Cowboys herding cats.](/images/cat-herd.gif)
+<img src="/images/cat-herd.gif" alt="Cowboys herding cats.">
 <video autoplay loop muted playsinline></video>
 ```
 
