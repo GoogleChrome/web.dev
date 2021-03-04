@@ -1,5 +1,6 @@
 .course-toc {
   display: none;
+
   @include bp(lg) {
     // Since flex box elements default to stretch, all the elements are the same
     // height, which can't be scrolled against. Adding align-self: flex-start to
@@ -8,38 +9,51 @@
     // https://stackoverflow.com/questions/44446671/my-position-sticky-element-isnt-sticky-when-using-flexbox
     align-self: flex-start;
     display: block;
-    flex: 0 0 240px;
+    flex: 0 0 px-to-rem(240px);
     order: 1;
     overflow-y: auto;
-    padding: 16px;
+    padding: get-size(300);
     position: sticky;
+    // TODO: Move these into variables
     // The sticky top position needs to equal the height of the app-bar on
     // desktop + the top margin of the content element.
     top: calc(64px + 24px);
     height: calc(100vh - 64px - 24px);
   }
+
+  &__heading {
+    @include apply-utility('font', 'google-sans');
+    @include apply-utility('weight', 'medium');
+    font-size: px-to-rem(14px);
+  }
 }
 
 // A recursive owl selector which will give every item in the toc top margin.
 .course-toc * + * {
-  margin-top: 12px;
+  margin-top: px-to-rem(12px);
 }
 
-.course-toc ul {
+.toc__list {
   list-style: none;
 }
 
-.course-toc ul ul {
+.toc__list .toc__list {
   border-left: 1px solid $GREY_300;
-  padding-left: 16px;
+  padding-left: get-size(300);
 }
 
-.course-toc li {
-  font-size: 14px;
+.toc__listitem {
+  font-size: px-to-rem(14px);
 }
 
-.course-toc li > a {
+.toc__anchor {
+  display: block;
   color: $GREY_700;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 //

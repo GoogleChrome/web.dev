@@ -46,10 +46,10 @@ const trailingHashRe = /\s+#$/;
 // An options object which provides some defaults but can be overriden
 // by user provided values.
 let options = {
-  listClass: '',
-  listItemClass: '',
-  anchorClass: '',
-  spanClass: 'type--small',
+  listClass: 'toc__list',
+  listItemClass: 'toc__listitem',
+  anchorClass: 'toc__anchor',
+  spanClass: 'toc__span',
 };
 
 /**
@@ -93,7 +93,7 @@ const renderChildren = (toplevel) => {
  */
 const toc = (raw, opts) => {
   // Merge user configuration into top level options.
-  options = {options, ...opts};
+  options = {...options, ...opts};
 
   /** @type {TocNodeType[]} */
   let toplevel = [];

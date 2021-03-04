@@ -15,7 +15,7 @@ layout: base
   the word 'toc' is a bit overloaded :P
 #}
 {% set tocContents %}
-  {{- content | courseToc({ listClass: 'toc__list', listItemClass: 'toc__listitem' }) | safe -}}
+  {{- content | courseToc | safe -}}
 {% endset %}
 
 <a class="skip-link w-button" href="#main">Skip to main</a>
