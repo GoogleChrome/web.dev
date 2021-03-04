@@ -2,9 +2,9 @@
   "slug": "media",
   "cover": "/images/collections/media.svg",
   "title": "Media",
-  "updated": "June 19, 2020",
+  "updated": "March 3, 2021",
   "description": "Add audio and video to your web sites",
-  "overview": "Learn to add media capabilities to your website using either basic markdown or a media framework such as Google's Shaka Player, JW Player or Video.js.",
+  "overview": "Learn to add media capabilities to your site using either basic HTML markup or a media framework such as Shaka Player, JW Player or Video.js.",
   "topics": [
     {
       "title": "Concepts",
@@ -12,6 +12,8 @@
         "media-experience",
         "media-file-basics",
         "media-application-basics",
+        "media-metrics-basics",
+        "media-streaming-basics",
         "media-cheat-sheet"
       ]
     },
@@ -21,7 +23,9 @@
         "prepare-media",
         "containers-and-codecs",
         "bitrate",
-        "resolution"
+        "resolution",
+        "media-encryption",
+        "media-conversion"
       ]
     },
     {
@@ -30,7 +34,10 @@
         "add-media",
         "video-and-source-tags",
         "media-accessibility",
-        "fast-playback-with-preload"
+        "autoplay-best-practices",
+        "fast-playback-with-preload",
+        "using-media-frameworks",
+        "offline-media-experience"
       ]
     }
   ]
