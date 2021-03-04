@@ -43,7 +43,7 @@ will be included in Google Search ranking.
 
 The unique challenge at Wix is supporting **millions** of sites, some of which were built
 _many years ago_ and have not been updated since.
-We have various [tools and articles](https://support.wix.com/en/the-wix-editor/site-performance) to
+We have various [tools and articles](https://support.wix.com/en/performance-and-technical-issues/site-performance) to
 assist our users on what they can do to analyze and improve the performance of their sites.
 
 Wix is a managed environment and not everything is in the hands of the user.
