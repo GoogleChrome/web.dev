@@ -133,7 +133,7 @@ for search engines that do not have full support for running JavaScript.
 This approach improved the visibility experience, especially on slower devices/connections, and
 opened the door for further performance optimizations. However, it also meant that for each web
 page request, a unique HTML response was generated on the fly, which is **far** from optimal,
-especially for sites with a high amount of visitors.
+especially for sites with a large amount of views.
 
 
 ### Introducing caching - in multiple locations
@@ -142,9 +142,9 @@ The HTML for each site was mostly static, but it had a few caveats:
 
 1. It frequently changes - each time a user edits their site, or makes changes in site data,
 such as on the website store inventory.
-2. It had certain data and cookies that were (and are) **visitor specific**,
+2. It had certain data and cookies that were **visitor specific**,
 meaning two people visiting the same site would see a somewhat different HTML - for example,
-to support products we use various methods, like remembering what items a visitor put in the cart,
+to support products features such as remembering what items a visitor put in the cart,
 or the chat the visitor started with the business earlier, and more.
 3. Not all pages are cacheable - for example a page with custom user code on it,
 that displays the current time as part of the document, is not eligible for caching.
@@ -347,6 +347,7 @@ To sum up:
 * Leverage browser caching and CDNs.
 * Migrate to HTTP/2 (or HTTP/3 if possible).
 * Use Brotli compression.
+
 Thanks for learning our story and we invite you to ask questions,
 share ideas on [Twitter](https://twitter.com/alonkochba) and [GitHub](https://github.com/alonkochba) and join the
 Web Performance conversation on your favorite channels.
