@@ -1920,5 +1920,22 @@
     "country": "JP",
     "twitter": "gladenjoy",
     "image": "image/iEYkFAI5LNQv7oLlIBv9DuB265a2/o8ixW7QKSWR02r9ZUOFP.jpg"
+  },
+  "derekherman": {
+    "name": {
+      "given": "Derek",
+      "family": "Herman"
+    },
+    "org": {
+      "name": "XWP"
+    },
+    "description": {
+      "en": "CTO at XWP"
+    },
+    "country": "US",
+    "github": "derekherman",
+    "twitter": "derekherman",
+    "homepage": "https://xwp.co",
+    "image": ""
   }
 }

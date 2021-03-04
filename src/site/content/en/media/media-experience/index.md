@@ -3,11 +3,12 @@ layout: post
 title: What is a media experience?
 authors:
   - joemedley
+  - derekherman
 description: |
   Videos can be fun and informative. For a good user experience, videos need to
   meet a number of technical requirements.
 date: 2017-06-30
-updated: 2020-08-27
+updated: 2021-03-03
 tags:
   - media
   - video
@@ -17,44 +18,65 @@ Users like media, especially videos; they can be fun and informative. On mobile
 devices, videos can be an easier way to consume information than text. For a
 good user experience, videos should not need more than the available bandwidth.
 Users should be able to use them no matter what device they're viewing them
-with. Users should never need to wait for download. Who likes it when they press
-play and nothing happens?
+with. Users should never need to wait for media to download—nobody likes it when
+they press play and nothing happens.
 
-You've no doubt consumed video on your own device. Which means that nothing in
+You've no doubt consumed video on your own device, which means that nothing in
 that last paragraph surprises you. Now you need to learn how to put a video or
-other media file on your own website. The technical requirements of that work
-should be in service to the user experience. Those technical requirements are:
+other media file on your own website. The technical requirements of adding media
+should be in service to the user experience.
+
+The technical requirements are:
 
 * Versions of a media file in common web-friendly formats containing both audio
   and video streams.
 * A resolution appropriate for your users' devices.
 * A bitrate that doesn't overload your users' network bandwidth.
-* (Optional) Encryption.
 * Viewable on all major browsers using appropriate technologies.
+* Encryption (Optional).
 
 Our [media](/media) collection will help you achieve these technical
 requirements. Don't worry if you don't know what these technical requirements
-mean. I'll explain them.
+mean. We'll explain them.
 
-There are four approaches you can take displaying video on a site.
+There are four approaches you can take when displaying video on a site.
 
-* Upload your content to a hosting site such as
-  [YouTube](https://www.youtube.com/) or [Vimeo](https://vimeo.com/). These
-  options do not preclude displaying from within your website.
-* Basic embedding using the HTML `<video>` and `<audio>` elements.
-* More full-featured embedding using a video library such as [Google's Shaka
-  Player](https://github.com/google/shaka-player), [JW
-  Player](https://developer.jwplayer.com/), or [Video.js](http://videojs.com/).
-* Building your own media streaming application.
+* Upload your videos to a media hosting provider such as [YouTube] or [Vimeo].
+  These options require you to embed their players within your site.
+* Basic self-hosted embedding using the HTML `<video>` and `<audio>` elements.
+* More full-featured embedding using a video library such as
+  [Shaka Player][ShakaPlayer], [JW Player][JWPlayer], or
+  [Video.js][VideoJS].
+* Building your own media server and streaming application.
 
-This site only covers the second option, at least for now. The last item,
-building a media streaming application is beyond the scope of this site.
-Frankly, it requires a team of expert programmers and thousands of human-hours
-of work. Unless your goal is to enter that market as a competitor, you're better
-off using one of the other methods.
+This site mainly covers the basics of embedding media. However, we do cover
+some more advanced topics to get you started on the path towards building your
+own media streaming application. The effort to do this is not trivial, so we've
+built a [Media PWA][MediaPWA] with offline support to use as a reference, which
+should both help us show you ways this can be accomplished and just how much
+effort it requires. The application is by no means a production ready offering
+or competitor to services like YouTube or Vimeo, but it will provide you with a
+starting point to learn something challenging and new.
 
-This site has three parts. In the first, I'll provide information prerequisite
-to adding media to your site. This includes explaining how media files are put
-together and basics about the applications you'll need to prepare your files for
-the web. The second section explains how to prepare your files. In the last, I
-show how to embed a media file in a web page and make it accessible.
+Frankly, building a competitor to hosted media services would require a team
+of expert engineers and thousands of human-hours of work. Unless your goal is
+to enter that market as a competitor, you're better off using one of the other
+methods. It's good to understand the technology and while you may not rollout
+your own application or video player, there is utility in understanding the
+technology and experimenting on the cutting edge or using existing video
+libraries.
+
+The media collection has three parts. In the first, we'll provide concepts and
+prerequisite information to adding media to your site. This includes explaining
+how media files are put together and basics about the applications you'll need
+to prepare your files for the web. The second section explains how to prepare
+your files and convert them to various formats and optionally add encryption.
+Then, in the last section, we show you how to embed a media file in a web page,
+take videos offline, and make them accessible.
+
+[YouTube]: https://www.youtube.com/ "YouTube"
+[Vimeo]: https://vimeo.com/ "Vimeo"
+[ShakaPlayer]: https://github.com/google/shaka-player "Shaka Player"
+[JWPlayer]: https://developer.jwplayer.com/ "JW Player"
+[VideoJS]: http://videojs.com/ "Video.js"
+[MediaPWA]: https://github.com/xwp/web-dev-media "Media PWA"
