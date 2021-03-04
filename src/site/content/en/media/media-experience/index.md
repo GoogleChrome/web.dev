@@ -35,11 +35,13 @@ should be in service to the user experience.
 * Viewable on all major browsers using appropriate technologies.
 * Encryption (Optional).
 
-Our [media](/media/) collection will help you achieve these technical
-requirements. Don't worry if you don't know what these technical requirements
-mean. We'll explain them.
+The [media](/media/) collection will help you achieve these technical
+requirements. Don't worry if these concepts are still a bit abstract. We'll
+explain them progressively throughout all the articles. First looking at the
+concepts, then learning how to use them, and finally the practical application
+of using them on the web.
 
-## Displaying video
+## Displaying video on the web
 
 There are four approaches you can take when displaying video on a site.
 
@@ -63,13 +65,13 @@ Frankly, building a competitor to hosted media services would require a team
 of expert engineers and thousands of human-hours of work. Unless your goal is
 to enter that market as a competitor, you're better off using one of the other
 methods. It's good to understand the technology and while you may not rollout
-your own application or video player, there is utility in understanding the
-technology and experimenting on the cutting edge of browser support, or at the
-very least using one of the existing video libraries.
+your own application or video player, there is utility in exploring and
+experimenting on the cutting edge of browser support, or at the very least
+using one of the existing video libraries.
 
 ## What we're going to learn
 
-Our [media](/media/) collection has three parts. In this first section, we'll
+The [media](/media/) collection has three parts. In this first section, we'll
 provide concepts and prerequisite information to adding media to your site.
 This includes explaining how media files are put together, basics about the
 applications you'll need to prepare your files for the web, and streaming
