@@ -35,7 +35,7 @@ The technical requirements are:
 * Viewable on all major browsers using appropriate technologies.
 * Encryption (Optional).
 
-Our [media](/media) collection will help you achieve these technical
+Our [media](/media/) collection will help you achieve these technical
 requirements. Don't worry if you don't know what these technical requirements
 mean. We'll explain them.
 
@@ -44,15 +44,14 @@ There are four approaches you can take when displaying video on a site.
 * Upload your videos to a media hosting provider such as [YouTube] or [Vimeo].
   These options require you to embed their players within your site.
 * Basic self-hosted embedding using the HTML `<video>` and `<audio>` elements.
-* More full-featured embedding using a video library such as
-  [Shaka Player][ShakaPlayer], [JW Player][JWPlayer], or
-  [Video.js][VideoJS].
+* More full-featured embedding using a video library such as [Shaka Player],
+  [JW Player], or [Video.js].
 * Building your own media server and streaming application.
 
 This site mainly covers the basics of embedding media. However, we do cover
 some more advanced topics to get you started on the path towards building your
 own media streaming application. The effort to do this is not trivial, so we've
-built a [Media PWA][MediaPWA] with offline support to use as a reference, which
+built a [Media PWA] with offline support to use as a reference, which
 should both help us show you ways this can be accomplished and just how much
 effort it requires. The application is by no means a production ready offering
 or competitor to services like YouTube or Vimeo, but it will provide you with a
@@ -63,20 +62,23 @@ of expert engineers and thousands of human-hours of work. Unless your goal is
 to enter that market as a competitor, you're better off using one of the other
 methods. It's good to understand the technology and while you may not rollout
 your own application or video player, there is utility in understanding the
-technology and experimenting on the cutting edge or using existing video
-libraries.
+technology and experimenting on the cutting edge of browser support, or at the
+very least using one of the existing video libraries.
 
-The media collection has three parts. In the first, we'll provide concepts and
-prerequisite information to adding media to your site. This includes explaining
-how media files are put together and basics about the applications you'll need
-to prepare your files for the web. The second section explains how to prepare
-your files and convert them to various formats and optionally add encryption.
-Then, in the last section, we show you how to embed a media file in a web page,
-take videos offline, and make them accessible.
+The media collection has three parts. In this first section, we'll provide
+concepts and prerequisite information to adding media to your site. This
+includes explaining how media files are put together, basics about the
+applications you'll need to prepare your files for the web, and streaming
+concepts. The second section explains how to prepare your files and convert
+them to various formats and optionally add encryption. In the last section,
+we'll show you how to embed a media file in a web page, discuss autoplay best
+practices, using media frameworks, taking videos offline, and making you videos
+accessible. There's a lot of ground to cover, so let's start with [Media file
+basics](/media-file-basics/).
 
-[YouTube]: https://www.youtube.com/ "YouTube"
-[Vimeo]: https://vimeo.com/ "Vimeo"
-[ShakaPlayer]: https://github.com/google/shaka-player "Shaka Player"
-[JWPlayer]: https://developer.jwplayer.com/ "JW Player"
-[VideoJS]: http://videojs.com/ "Video.js"
-[MediaPWA]: https://github.com/xwp/web-dev-media "Media PWA"
+[YouTube]: https://www.youtube.com/
+[Vimeo]: https://vimeo.com/
+[Shaka Player]: https://github.com/google/shaka-player
+[JW Player]: https://developer.jwplayer.com/
+[Video.js]: http://videojs.com/
+[Media PWA]: https://github.com/xwp/web-dev-media
