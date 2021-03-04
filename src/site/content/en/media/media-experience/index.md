@@ -26,7 +26,7 @@ that last paragraph surprises you. Now you need to learn how to put a video or
 other media file on your own website. The technical requirements of adding media
 should be in service to the user experience.
 
-The technical requirements are:
+## The technical requirements
 
 * Versions of a media file in common web-friendly formats containing both audio
   and video streams.
@@ -38,6 +38,8 @@ The technical requirements are:
 Our [media](/media/) collection will help you achieve these technical
 requirements. Don't worry if you don't know what these technical requirements
 mean. We'll explain them.
+
+## Displaying video
 
 There are four approaches you can take when displaying video on a site.
 
@@ -65,15 +67,19 @@ your own application or video player, there is utility in understanding the
 technology and experimenting on the cutting edge of browser support, or at the
 very least using one of the existing video libraries.
 
-The media collection has three parts. In this first section, we'll provide
-concepts and prerequisite information to adding media to your site. This
-includes explaining how media files are put together, basics about the
+## What we're going to learn
+
+Our [media](/media/) collection has three parts. In this first section, we'll
+provide concepts and prerequisite information to adding media to your site.
+This includes explaining how media files are put together, basics about the
 applications you'll need to prepare your files for the web, and streaming
 concepts. The second section explains how to prepare your files and convert
 them to various formats and optionally add encryption. In the last section,
 we'll show you how to embed a media file in a web page, discuss autoplay best
 practices, using media frameworks, taking videos offline, and making you videos
-accessible. There's a lot of ground to cover, so let's start with [Media file
+accessible.
+
+There's a lot of ground to cover, so let's get started with [Media file
 basics](/media-file-basics/).
 
 [YouTube]: https://www.youtube.com/
