@@ -15,8 +15,7 @@ feedback:
 
 Not every byte that is sent down the wire to the browser has the same degree of importance,
 and the browser knows this.
-Browsers have heuristics that attempt to make a best-guess at the most important resources to load first
-— such as CSS before scripts and images.
+Browsers have heuristics that attempt to make a best-guess at the most important resources to load first—such as CSS before scripts and images.
 
 That said, as with any heuristic, it doesn't always work out;
 the browser might make the wrong decision,

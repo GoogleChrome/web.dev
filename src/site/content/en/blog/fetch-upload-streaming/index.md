@@ -204,7 +204,7 @@ arbitrary data using gzip.
 If you provide a body object that the browser doesn't specifically handle, it
 will call `toString()` on the object and use the result as the body. If the
 browser doesn't support request streams, that means the request body becomes
-`"[object ReadableStream]"` – probably not what you want to send to the server.
+`"[object ReadableStream]"`–probably not what you want to send to the server.
 To avoid this, use feature detection:
 
 ```js
