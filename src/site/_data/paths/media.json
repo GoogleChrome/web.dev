@@ -24,8 +24,8 @@
         "containers-and-codecs",
         "bitrate",
         "resolution",
-        "media-encryption",
-        "media-conversion"
+        "media-conversion",
+        "media-encryption"
       ]
     },
     {
@@ -33,11 +33,11 @@
       "pathItems": [
         "add-media",
         "video-and-source-tags",
-        "media-accessibility",
         "autoplay-best-practices",
+        "media-accessibility",
+        "media-frameworks",
         "fast-playback-with-preload",
-        "using-media-frameworks",
-        "offline-media-experience"
+        "pwa-with-offline-streaming"
       ]
     }
   ]

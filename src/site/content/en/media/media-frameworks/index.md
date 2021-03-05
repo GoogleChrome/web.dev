@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Offline media experience
+title: Media frameworks
 authors:
   - derekherman
 description: |

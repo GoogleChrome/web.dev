@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using media frameworks
+title: PWA with offline streaming
 authors:
   - derekherman
 description: |
