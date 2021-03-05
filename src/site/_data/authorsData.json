@@ -771,7 +771,15 @@
     "github": "argyleink",
     "twitter": "argyleink",
     "glitch": "argyleink",
-    "image": "image/admin/jdQIxAJrGuFOtwmuDfIn.jpg"
+    "image": "image/admin/jdQIxAJrGuFOtwmuDfIn.jpg",
+    "connect": {
+      "url": "#test",
+      "topics": [
+        "CSS",
+        "UI",
+        "UX"
+      ]
+    }
   },
   "lunalu": {
     "name": {
@@ -1090,7 +1098,14 @@
     "homepage": "https://una.im/",
     "github": "una",
     "twitter": "una",
-    "image": "image/admin/c4bzyDkOZ9MhBaqp0HfW.jpg"
+    "image": "image/admin/c4bzyDkOZ9MhBaqp0HfW.jpg",
+    "connect": {
+      "url": "#test",
+      "topics": [
+        "CSS",
+        "Houdini"
+      ]
+    }
   },
   "phillipkriegel": {
     "name": {
