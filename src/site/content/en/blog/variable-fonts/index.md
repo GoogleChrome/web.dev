@@ -547,7 +547,7 @@ hosted. This will make sure the browser knows early on where to get the fonts
 when it comes across them in the CSS:
 
 ```html
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
 ```
 
 Find more performance tips for loading Google Fonts in [The Fastest
