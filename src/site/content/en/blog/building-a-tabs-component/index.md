@@ -25,7 +25,6 @@ Try the [demo](https://gui-challenges.web.app/tabs/dist/).
   {% Video 
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IBDNCMVCysfM9fYC9bnP.mp4",
     className="w-screenshot", 
-    playsinline="true", 
     autoplay="true", 
     loop="true", 
     muted="true" 
@@ -92,7 +91,6 @@ letting the browser scroll things via anchoring.
   {% Video 
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pr8BrPDjq8ga9NyoHLJk.mp4",
     className="w-screenshot", 
-    playsinline="true", 
     autoplay="true", 
     loop="true", 
     muted="true" 
@@ -540,7 +538,6 @@ few great places to be considerate!
   {% Video 
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D4zfhetqvhqlcPdTRtLZ.mp4",
     className="w-screenshot", 
-    playsinline="true", 
     autoplay="true", 
     loop="true", 
     muted="true" 
@@ -566,7 +563,6 @@ instead of blink there?
   {% Video 
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q4JDplhM9gEd4PoiXqs6.mp4",
     className="w-screenshot", 
-    playsinline="true", 
     autoplay="true", 
     loop="true", 
     muted="true" 
@@ -592,7 +588,6 @@ different transition styles. I had a ton of fun building this.
   {% Video 
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/NVoLHgjGjf7fZw5HFpF6.mp4",
     className="w-screenshot", 
-    playsinline="true", 
     autoplay="true", 
     loop="true", 
     muted="true" 
@@ -767,7 +762,6 @@ highlighted navigation item becomes selected.
   {% Video 
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qoxGO8SR2t6GPuCWhwvu.mp4",
     className="w-screenshot", 
-    playsinline="true", 
     autoplay="true", 
     loop="true", 
     muted="true" 
@@ -859,7 +853,6 @@ scrolling, wherever it lands needs to be matched in the top navigation bar.
   {% Video 
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/syltOES9Gxc0ihOsgTIV.mp4",
     className="w-screenshot", 
-    playsinline="true", 
     autoplay="true", 
     loop="true", 
     muted="true" 
@@ -912,7 +905,6 @@ has a fun interaction with CSS that is worth noting.
   {% Video 
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nsiyMgZ2QGF2fx9gVRgu.mp4",
     className="w-screenshot", 
-    playsinline="true", 
     autoplay="true", 
     loop="true", 
     muted="true" 
