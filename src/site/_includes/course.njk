@@ -9,6 +9,15 @@ layout: base
 {% set navigationToC = courses[projectKey].toc %}
 {% set pageNavigation = collections.all | navigation(navigationToC) %}
 
+{#
+  Grab the ToC contents for headings ToC. This powers the list of headings
+  that appears on the right-hand side of the page. Unfortunately our use of
+  the word 'toc' is a bit overloaded :P
+#}
+{% set tocContents %}
+  {{- content | courseToc | safe -}}
+{% endset %}
+
 <a class="skip-link w-button" href="#main">Skip to main</a>
 
 <div class="course-layout">
@@ -46,27 +55,11 @@ layout: base
     </nav>
 
     <div class="course-content">
-      <nav class="course-toc scrollbar" aria-label="table of contents">
-        <ul class="course-toc__list">
-          {% for i in range(0, 40) -%}
-            <li class="course-toc__item">
-              <a href="#">What can you do with a flex layout?</a>
-            </li>
-          {%- endfor %}
-        </ul>
-      </nav>
+
+      {% include 'partials/toc-side.njk' %}
+
       <main id="main">
-        {# Hide this TOC on desktop and show it on mobile #}
-        {# <nav class="course-toc" aria-label="table of contents">
-          <ul class="course-toc__list">
-            <li class="course-toc__item">
-              <a href="#">First heading</a>
-            </li>
-            <li class="course-toc__item">
-              <a href="#">Second heading</a>
-            </li>
-          </ul>
-        </nav> #}
+        {% include 'partials/toc-inner.njk' %}
         {{ content | safe }}
       </main>
     </div>
