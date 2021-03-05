@@ -14,9 +14,11 @@ const DEFAULT_PARAMS = {auto: 'format'};
  */
 const IS_UPLOADED_IMG = (src) => {
   const splitSrc = src.split('.');
-  if (splitSrc.length > 0) {
-    splitSrc.push(splitSrc.pop().toLowerCase());
+  if (splitSrc.length < 2) {
+    return false;
   }
+  splitSrc.push(splitSrc.pop().toLowerCase());
+
   return /^image\/[A-Za-z0-9]*\/[A-Za-z0-9]*\.(gif|jpe?g|tiff?|png|webp|bmp|svg|ico)$/.test(
     splitSrc.join('.'),
   );
@@ -53,7 +55,7 @@ const Img = function (args) {
 
   if (!IS_UPLOADED_IMG(src)) {
     throw new Error(
-      `${checkHereIfError}: src does not appear to have been added via uploader`,
+      `${checkHereIfError}: invalid src provided, was this added via uploader?`,
     );
   }
 
