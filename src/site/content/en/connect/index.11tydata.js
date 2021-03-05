@@ -15,11 +15,8 @@
  */
 
 const authors = require('../../../_data/authorsData.json');
-
-const willmeet = Object.values(authors)
-  .filter(author => 
-    author?.connect);;
+const willmeet = Object.values(authors).filter((author) => author?.connect);
 
 module.exports = {
-  meetable_devrel: willmeet
+  meetable_devrel: willmeet,
 };
