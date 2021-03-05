@@ -85,7 +85,7 @@ support](https://caniuse.com/mdn-api_messagechannel_port1) this API has.
 ## Using Browser APIs {: #using-browser-apis }
 
 If the Workbox library is not enough for your needs, there are several lower-level APIs available to
-implement **“two-way”** communication between pages and service workers. They have some similarities
+implement **"two-way"** communication between pages and service workers. They have some similarities
 and differences:
 
 Similarities:

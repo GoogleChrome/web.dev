@@ -114,10 +114,10 @@ form.addEventListener("submit", e => {
 });
 ```
 
-This tells webpack to inject the `<link rel=”prefetch”>` tag into the HTML document:
+This tells webpack to inject the `<link rel="prefetch">` tag into the HTML document:
 
 ```html
-<link rel="prefetch" as=”script” href=”1.bundle.js”>
+<link rel="prefetch" as="script" href="1.bundle.js">
 ```
 
 ### Smart prefetching with quicklink and Guess.js

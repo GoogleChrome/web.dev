@@ -151,7 +151,7 @@ Use straight quotation marks and apostrophes, not smart (curly).
 <div class="w-columns">
 <!-- lint disable no-smart-quotes -->
 {% Compare 'worse' %}
-The “Accessible to all” collection
+The "Accessible to all" collection
 {% endCompare %}
 <!-- lint enable no-smart-quotes -->
 
