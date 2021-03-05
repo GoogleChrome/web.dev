@@ -42,41 +42,6 @@
   padding: 0;
 }
 
-.course-toc {
-  display: none;
-  @include bp(lg) {
-    // Since flex box elements default to stretch, all the elements are the same
-    // height, which can't be scrolled against. Adding align-self: flex-start to
-    // the sticky element set the height to auto, which allowed scrolling, and
-    // fixed it.
-    // https://stackoverflow.com/questions/44446671/my-position-sticky-element-isnt-sticky-when-using-flexbox
-    align-self: flex-start;
-    background-color: lightsalmon;
-    display: block;
-    flex: 0 0 240px;
-    order: 1;
-    overflow-y: auto;
-    padding: 16px;
-    position: sticky;
-    // The sticky top position needs to equal the height of the app-bar on
-    // desktop + the top margin of the content element.
-    top: calc(64px + 24px);
-    height: calc(100vh - 64px - 24px);
-  }
-}
-
-.course-toc__list {
-  list-style: none;
-}
-
-.course-toc__item {
-  font-size: 14px;
-}
-
-.course-toc__item > a {
-  color: $GREY_700;
-}
-
 .course-pagination {
   display: flex;
 }

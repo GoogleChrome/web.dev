@@ -5,7 +5,8 @@
   {# CSS will be injected by purify-css transform. #}
   <!-- __PURGECSS_INJECT -->
 {% else %}
-  <link rel="stylesheet" href="/css/main.css">
+  {# hashForProd() will cache bust the css in dev with a random string. #}
+  <link rel="stylesheet" href="{{ helpers.hashForProd('/css/main.css') }}">
 {% endif %}
 
 {# We only preload Material Icons because the site can't render properly without them. #}
