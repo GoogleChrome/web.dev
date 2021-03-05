@@ -98,8 +98,8 @@ Follow the file type links to view the browsers that support them.
 
 | File type | Video Codec | Audio Codec |
 | ---- | ----- | ---- |
-| [MP4] | [AV1], [AVC (H.264)]*, [VP9] | [aac] |
-| [WebM] | [AV1], [VP9]* | [vorbis], [opus] |
+| [MP4] | [AV1], [AVC (H.264)]*, [VP9] | [AAC] |
+| [WebM] | [AV1], [VP9]* | [Vorbis], [Opus] |
 
 &#42; Indicates the preferred video codec.
 
@@ -128,6 +128,6 @@ and FFmpeg.
 [AV1]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1
 [AVC (H.264)]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AVC_H.264
 [VP9]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9
-[aac]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#AAC
-[vorbis]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Vorbis
-[opus]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Opus
+[AAC]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#AAC
+[Vorbis]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Vorbis
+[Opus]: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Opus
