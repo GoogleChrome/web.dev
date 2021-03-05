@@ -526,25 +526,23 @@ These animations will have to happen directly on `font-variation-settings`.
 OpenType variable fonts allow us to store multiple variations of a type family
 into a single font file.
 [Monotype](https://medium.com/@monotype/part-2-from-truetype-gx-to-variable-fonts-4c28b16997c3)
-ran an experiment by combining 12 input fonts to generate eight weights, across
-three widths, across both the Italic and Roman styles. Storing 48 individual
-fonts in a single variable font file meant a _88% reduction in file size_.
+ran an experiment by combining 12 input fonts to generate eight weights,
+across three widths, across both the Italic and Roman styles. Storing 48
+individual fonts in a single variable font file meant a _88% reduction in file
+size_.
 
-On the flip side, if you are animating the font between settings, this may cause
-the browser performance issues. Learn more about this in
-[Variable Fonts - Supercharged](https://www.youtube.com/watch?v=B42rUMdcB7c).
-
-With variable fonts, app and website makers can offer really rich typography
-experiences that express each brand, without the previous bandwidth and latency
-costs. However, if you are using a single font such as Roboto Regular and
-nothing else, you might see a net gain in font size if you were to switch to a
+However, if you are using a single font such as Roboto Regular and nothing
+else, you might see a net gain in font size if you were to switch to a
 variable font with many axes. As always, it depends on your use-case.
+
+On the flip side, if you are animating the font between settings, this may
+cause the browser performance issues. Learn more about this in [Variable Fonts
+- Supercharged](https://www.youtube.com/watch?v=B42rUMdcB7c).
 
 Speaking of performance: if you're using Google Fonts, it's a good idea to
 [preconnect](/preconnect-and-dns-prefetch/) to `https://fonts.gstatic.com`,
-the domain where Google's fonts are
-hosted. This will make sure the browser knows early on where to get the fonts
-when it comes across them in the CSS:
+the domain where Google's fonts are hosted. This will make sure the browser
+knows early on where to get the fonts when it comes across them in the CSS:
 
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com" />
