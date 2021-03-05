@@ -28,7 +28,8 @@ feedback:
 
 **Updates**
 
-- **March 5, 2021**: Removed many conditionals required before Chrome 89.
+- **March 5, 2021**: Removed limitations for SharedArrayBuffer, debugging
+  functionalities, etc. They are now fully enabled in Chrome 89.
 - **February 19, 2021**: Added a note about feature policy
   `allow="cross-origin-isolated"` and debugging functionality on DevTools.
 - **February 9, 2021**: Added an instruction [how to set up a reporting
@@ -38,8 +39,6 @@ Reflecting that, `document.domain` is immutable when `self.crossOriginIsolated`
 returns `true`. `performance.measureUserAgentSpecificMemory()` is ending its origin trial and is
 enabled by default in Chrome 89. Shared Array Buffer on Android
 Chrome will be available from Chrome 88.
-- **September 1, 2020**: COOP Reporting is behind flags in Chrome 86. See
-[Enable Chrome flags](#flags).
 
 {% YouTube 'XLNJYhjA-0c' %}
 
@@ -86,6 +85,17 @@ able to use privileged features including:
         </td>
         <td>
           Not available in any browsers yet.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://crbug.com/1180178">
+          <code>performance.now()</code>, <code>performance.timeOrigin</code></a>
+        </td>
+        <td>
+          Both are available on many browsers, but the resolution is limited to
+          100 microseconds or higher. With cross-origin isolation, the
+          resolution can be 5 microseconds or higher.
         </td>
       </tr>
     </tbody>
