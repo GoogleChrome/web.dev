@@ -1,0 +1,7 @@
+.flow > * + * {
+  margin-top: var(--flow-space);
+}
+
+.flow-recursive * + * {
+  margin-top: var(--flow-space);
+}

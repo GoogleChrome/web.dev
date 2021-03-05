@@ -61,7 +61,7 @@ They use a mixed approach to decide which items to prefetch:
   add the resulting response objects to the cache.
 - For the remaining items, they listen to the [`mouseover`
   ](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event) event, so that, when a
-  user moves the cursor on top of an item, they can trigger a fetch for the resource on “demand”.
+  user moves the cursor on top of an item, they can trigger a fetch for the resource on "demand".
 
 They use the [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) to store JSON
 responses:

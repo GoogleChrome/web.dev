@@ -22,9 +22,13 @@ that is responsive, supports multiple device inputs, and works across browsers.
 Try the [demo](https://gui-challenges.web.app/tabs/dist/).
 
 <figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/mouse-and-keyboard.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IBDNCMVCysfM9fYC9bnP.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
   <figcaption class="w-figure">
     <a href="https://gui-challenges.web.app/tabs/dist/">Demo</a>
   </figcaption>
@@ -84,9 +88,13 @@ elements, which a `<section>` is great for. Each link hash will match a section,
 letting the browser scroll things via anchoring.
 
 <figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/toggling-2.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pr8BrPDjq8ga9NyoHLJk.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
   <figcaption class="w-figure">
     A link button is clicked, sliding in focused content
   </figcaption>
@@ -527,9 +535,13 @@ We'll be checking the user's motion preference from both CSS and JS. There's a
 few great places to be considerate!
 
 <figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/toggling.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D4zfhetqvhqlcPdTRtLZ.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
 </figure>
 
 #### Scroll behavior {: #scroll-behavior }
@@ -548,9 +560,13 @@ instead of blink there?
 ```
 
 <figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/scroll-behavior-smooth.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q4JDplhM9gEd4PoiXqs6.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
 </figure>
 
 Since we're introducing motion here, and motion that the user doesn't control
@@ -569,9 +585,13 @@ In Chromium Devtools, I can toggle the preference and demonstrate the 2
 different transition styles. I had a ton of fun building this.
 
 <figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/prefer-reduced-motion-toggle-mini.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/NVoLHgjGjf7fZw5HFpF6.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
 </figure>
 
 ```css
@@ -739,9 +759,13 @@ You may not have noticed, but I'm very proud of the transition of color as the
 highlighted navigation item becomes selected.
 
 <figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/scroll-color.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qoxGO8SR2t6GPuCWhwvu.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
 </figure>
 
 The unselected lighter grey appears even more pushed back when the highlighted
@@ -826,9 +850,13 @@ free scrolling, as they should be able to. When the section scroller stops
 scrolling, wherever it lands needs to be matched in the top navigation bar.
 
 <figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/scrollend-sync.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/syltOES9Gxc0ihOsgTIV.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
 </figure>
 
 Here's how I wait for scroll end:
@@ -874,9 +902,13 @@ the incoming nav item the active state attribute. The call to `scrollIntoView()`
 has a fun interaction with CSS that is worth noting.
 
 <figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/scroll-behavior-smooth.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nsiyMgZ2QGF2fx9gVRgu.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
 </figure>
 
 ```css

@@ -28,7 +28,7 @@ and [UX research on how users perceive
 delays](https://www.nngroup.com/articles/response-times-3-important-limits/).
 
 <figure class="w-figure">
-  <img src="./rail.png" alt="The 4 parts of the RAIL performance model: response, animation, idle, and load.">
+  {% Img src="image/admin/uc1IWVOW2wEhIY6z4KjJ.png", alt="The 4 parts of the RAIL performance model: response, animation, idle, and load.", width="800", height="290" %}
   <figcaption class="w-figcaption">The 4 parts of the RAIL performance model
 </figcaption>
 </figure>
@@ -119,7 +119,7 @@ shows how input received during an idle task is queued, reducing the available
 processing time:
 
 <figure class="w-figure">
-  <img src="./rail-response-details.png" alt="Diagram showing how input received during an idle task is queued, reducing available input processing time to 50ms">
+  {% Img src="image/admin/I7HDZ9qGxe0jAzz6PxNq.png", alt="Diagram showing how input received during an idle task is queued, reducing available input processing time to 50ms", width="800", height="400" %}
   <figcaption class="w-figcaption">How idle tasks affect input response budget.</figcaption>
 </figure>
 
@@ -154,7 +154,7 @@ UI effects. Each of these interactions are considered animations:
 * Scrolling. This includes flinging, which is when the user starts scrolling,
   then lets go, and the page continues scrolling.
 * Dragging. Animations often follow user interactions, such as panning a map or
-  pinching to zoom. {% endAside %}    
+  pinching to zoom. {% endAside %}
 
 ## Idle: maximize idle time
 
@@ -187,9 +187,9 @@ viewability](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/re
   capabilities of your users. Currently, a good target for first loads is to
   load the page and be [interactive](https://web.dev/interactive/) in [5 seconds
   or less on mid-range mobile devices with slow 3G
-  connections](https://web.dev/performance-budgets-101/#establish-a-baseline). 
+  connections](https://web.dev/performance-budgets-101/#establish-a-baseline).
 
-* For subsequent loads, a good target is to load the page in under 2 seconds. 
+* For subsequent loads, a good target is to load the page in under 2 seconds.
 
 {% Aside %}
 
@@ -300,7 +300,7 @@ Chrome DevTools,  at [web.dev/measure](https://web.dev/measure/), as a
 Chrome Extension, as a Node.js module, and within WebPageTest. You give it a
 URL, it simulates a mid-range device with a slow 3G connection, runs a series of
 audits on the page, and then gives you a report on load performance, as well as
-suggestions on how to improve. 
+suggestions on how to improve.
 
 The following audits are especially relevant:
 
@@ -315,7 +315,7 @@ The following audits are especially relevant:
 
 * [Total Blocking Time](https://web.dev/lighthouse-total-blocking-time/).
   Measures the total amount of time that a page is blocked from responding to
-  user input, such as mouse clicks, screen taps, or keyboard presses. 
+  user input, such as mouse clicks, screen taps, or keyboard presses.
 
 * [Time To
   Interactive](https://developers.google.com/web/tools/lighthouse/audits/consistently-interactive).
@@ -341,7 +341,7 @@ The following audits are especially relevant:
   images that are significantly larger than the size that's rendered in the
   mobile viewport.
 
-* [Avoid chaining critical requests](https://web.dev/critical-request-chains/). 
+* [Avoid chaining critical requests](https://web.dev/critical-request-chains/).
 
 * [Does not use HTTP/2 for all of its resources](https://web.dev/uses-http2/).
 
