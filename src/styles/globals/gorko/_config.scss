@@ -1,24 +1,28 @@
 @import '../../settings/type';
 @import '../../tools/breakpoints';
 
+// Sasslint seems to complain about the indentatin of our sass maps in this file
+// but I don't see the problem so I'm just disabling the rule for being flaky.
+// sass-lint:disable indentation
+
 // This sets up our gorko helper classes.
 // Read more @ https://github.com/hankchizljaw/gorko#configuration
 
-/**
- * BASE SIZE
- * All calculations are based on this. It's recommended that
- * you keep it at 1rem because that is the root font size. You
- * can set it to whatever you like and whatever unit you like.
- */
+
+// BASE SIZE
+// All calculations are based on this. It's recommended that
+// you keep it at 1rem because that is the root font size. You
+// can set it to whatever you like and whatever unit you like.
+
 $gorko-base-size: 1rem;
 
-/**
-* SIZE SCALE
-* This is a linear scale that powers all the utilities that
-* it is relevant for (margin, padding, etc.). All items are
-* calcuated off the base size, so change that and cascade across
-* your whole project.
-*/
+
+// SIZE SCALE
+// This is a linear scale that powers all the utilities that
+// it is relevant for (margin, padding, etc.). All items are
+// calcuated off the base size, so change that and cascade across
+// your whole project.
+
 $gorko-size-scale: (
   0:  0,                          // 0
   50: $gorko-base-size * 0.125,   // 2px
@@ -34,11 +38,11 @@ $gorko-size-scale: (
   1000: $gorko-base-size * 4.5,   // 72px
 );
 
-/**
-* CORE CONFIG
-* This powers everything from utility class generation to breakpoints
-* to enabling/disabling pre-built components/utilities.
-*/
+
+// CORE CONFIG
+// This powers everything from utility class generation to breakpoints
+// to enabling/disabling pre-built components/utilities.
+
 $gorko-config: (
   'align': (
     'items': (

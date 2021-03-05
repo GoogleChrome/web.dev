@@ -1,18 +1,22 @@
 .course-toc {
-  display: none;
+  --flow-space: #{px-to-rem(12px)};
 
-  @include bp(lg) {
+  width: 240px;
+  max-width: 100%;
+
+  // These styles are unique to the toc that's pinned to the side of the screen.
+  &[data-type='side'] {
     // Since flex box elements default to stretch, all the elements are the same
     // height, which can't be scrolled against. Adding align-self: flex-start to
     // the sticky element set the height to auto, which allowed scrolling, and
     // fixed it.
     // https://stackoverflow.com/questions/44446671/my-position-sticky-element-isnt-sticky-when-using-flexbox
     align-self: flex-start;
-    display: block;
-    flex: 0 0 px-to-rem(240px);
+    flex-grow: 0;
+    flex-shrink: 0;
     order: 1;
     overflow-y: auto;
-    padding: get-size(300);
+    padding: 0 get-size(300);
     position: sticky;
     // TODO: Move these into variables
     // The sticky top position needs to equal the height of the app-bar on
@@ -21,16 +25,35 @@
     height: calc(100vh - 64px - 24px);
   }
 
+  > summary {
+    transition: background-color $TRANSITION_SPEED;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  > summary:hover {
+    background-color: $GREY_200;
+  }
+
   &__heading {
-    @include apply-utility('font', 'google-sans');
-    @include apply-utility('weight', 'medium');
     font-size: px-to-rem(14px);
   }
 }
 
-// A recursive owl selector which will give every item in the toc top margin.
-.course-toc * + * {
-  margin-top: px-to-rem(12px);
+
+.toc__icon {
+  margin-left: get-size(200);
+
+  > svg {
+    display: flex;
+    transform: rotate(90deg);
+  }
+}
+
+.toc[open] .toc__icon > svg {
+  transform: rotate(270deg);
 }
 
 .toc__list {
@@ -55,69 +78,3 @@
     text-decoration: none;
   }
 }
-
-//
-
-// .toc-container {
-//   max-width: 100%;
-//   width: px-to-rem(240px);
-  
-//   @include media-query('xl') {
-//     margin-right: auto;
-//   }
-// }
-
-// .toc > summary {
-//   list-style: none;
-
-//   &::-webkit-details-marker {
-//     display: none;
-//   }
-// }
-
-// .toc__icon {
-//   margin-left: get-size(200);
-
-//   > svg {
-//     display: flex;
-//     transform: rotate(90deg);
-//   }
-// }
-
-// .toc[open] .toc__icon > svg {
-//   transform: rotate(270deg);
-// }
-
-// // The eleventy-plugin-toc doesn't let us put classes on ul/ol or li children
-// // so we have to style them all with descendant selectors.
-// .toc__wrapper {
-//   a {
-//     @extend %type--small;
-//     text-decoration: none;
-//   }
-
-//   li {
-//     line-height: 1.2;
-
-//     &::before {
-//       display: none;
-//     }
-//   }
-
-//   li + li {
-//     margin-top: get-size(200);
-//   }
-
-//   ul,
-//   ol {
-//     list-style-type: none;
-//     margin: get-size(200) 0;
-//     padding: 0;
-
-//     ul,
-//     ol {
-//       border-left: 1px solid var(--color-hairline);
-//       padding-left: get-size(300);
-//     }
-//   }
-// }

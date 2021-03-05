@@ -85,16 +85,19 @@ const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripQueryParamsDev = require(`./${filtersDir}/strip-query-params-dev`);
 const getPaths = require(`./${filtersDir}/get-paths`);
 const navigation = require(`./${filtersDir}/navigation`);
-// TODO: We should migrate all of our ToCs over to using this filter which we
-// wrote for d.c.c. Currently we're also using eleventy-plugin-toc on articles
-// but this one seems to work better.
-const {toc: courseToc} = require(`./${filtersDir}/toc`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
 const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
 const {purifyCss} = require(`./${transformsDir}/purify-css`);
 const {minifyHtml} = require(`./${transformsDir}/minify-html`);
+
+// Shared dependencies between web.dev and developer.chrome.com
+const {updateSvgForInclude} = require('webdev-infra/filters/svg');
+// TODO: We should migrate all of our ToCs over to using this filter which we
+// wrote for d.c.c. Currently we're also using eleventy-plugin-toc on articles
+// but this one seems to work better.
+const {toc: courseToc} = require('webdev-infra/filters/toc');
 
 module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
@@ -199,6 +202,7 @@ module.exports = function (config) {
   config.addFilter('getPaths', getPaths);
   config.addFilter('strip', strip);
   config.addFilter('courseToc', courseToc);
+  config.addFilter('updateSvgForInclude', updateSvgForInclude);
 
   // ----------------------------------------------------------------------------
   // SHORTCODES

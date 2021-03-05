@@ -6,12 +6,12 @@ Hey we're talking about borders here!
 
 ## Super centered: place-items: center
 
-### What happens if super center doesn't work?
+### What happens if super center doesn't work
 
-### Here's another heading that's shorter.
+### Here's another heading that's shorter
 
 ## OK, back to regular headings
 
 ## Yet more headings
 
-### Here's another smol boi.
+### Here's another smol boi
