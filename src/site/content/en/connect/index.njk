@@ -1,0 +1,65 @@
+---
+layout: default
+title: Connect
+description: |
+  TODO
+date: 2021-03-04
+---
+<div class="connect-landing-page">
+  <header class="w-masthead-about">
+    <div class="w-masthead-about__container">
+      <div class="w-masthead-about__left">
+        <h1 class="w-headline--two w-font-weight--medium w-mt--non">
+          Connect
+        </h1>
+        <p>
+          TODO:
+        </p>
+      </div>
+      <div class="w-masthead-about__right">
+        <img class="w-masthead-about__image" src="/images/headers/about.svg" alt="">
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="w-layout-container w-pb--non">
+      <header class="w-text--center">
+        <h2 class="w-headline--two-faded w-mt--non">
+          Meet DevRel
+        </h2>
+      </header>
+    </div>
+
+    <div class="w-grid w-pb--std">
+      <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--two" role="list">
+        {% for dev in meetable_devrel %}
+          <div class="w-path-card">
+            <div class="w-path-card__cover">
+              <img
+                class="w-path-card__cover-image w-path-card__cover-image--fill"
+                src="{{ dev.image }}"
+                alt=""
+                loading="lazy"
+                width="100%"
+                height="240"
+              />
+            </div>
+            <div class="w-path-card__desc">
+              <h2 class="w-path-card__headline">{{ dev.name.given }} {{ dev.name.family }}</h2>
+              {# <a href="{{ dev.connect.url }}">Book</a> #}
+              <a class="w-button w-button--primary" href="{{ dev.connect.url }}">
+                Book
+              </a>
+              <div class="w-card__chips w-chips">
+                {% for topic in dev.connect.topics %}
+                  <span class="w-chip">{{ topic }}</span>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
