@@ -131,13 +131,13 @@ You can find a comparison between the old vs. new distance-from-viewport thresho
 Old thresholds. vs new thresholds:
 
 <figure class="w-figure">
-  <img src="./better-thresholds.png" alt="The new and improved thresholds for image lazy-loading, reducing the distance-from-viewport thresholds for fast connections from 3000px down to 1250px">
+  {% Img src="image/admin/xSZMqpbioBRwRTnenK8f.png", alt="The new and improved thresholds for image lazy-loading, reducing the distance-from-viewport thresholds for fast connections from 3000px down to 1250px", width="800", height="460" %}
 </figure>
 
 and the new thresholds vs. LazySizes (a popular JS lazy-loading library):
 
 <figure class="w-figure">
-  <img src="./lazysizes-threshold.png" alt="The new  distance-from-viewport thresholds in Chrome loading 90KB of images compared to LazySizes loading in 70KB under the same network conditions">
+  {% Img src="image/admin/oHMFvflk9aesT7r0iJbx.png", alt="The new  distance-from-viewport thresholds in Chrome loading 90KB of images compared to LazySizes loading in 70KB under the same network conditions", width="800", height="355" %}
 </figure>
 
 

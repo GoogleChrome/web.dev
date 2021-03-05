@@ -82,9 +82,7 @@ On slower connections, however, users are forced to wait.
 Users may experience more problems as page resources slowly trickle in.
 
 <figure class="w-figure">
-  <img src="speed-comparison.png" alt="A comparison of two filmstrip reels
-of a page loading. The first shows a page loading on a slow connection, while
-the second shows the same page loading on a fast connection.">
+  {% Img src="image/admin/W0ctiX3cMOfWnNF6AQMg.png", alt="A comparison of two filmstrip reels of a page loading. The first shows a page loading on a slow connection, while the second shows the same page loading on a fast connection.", width="800", height="264" %}
   <figcaption>A comparison of page load on a very slow connection
 (top) versus a faster connection (bottom).</figcaption>
 </figure>

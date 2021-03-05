@@ -20,7 +20,7 @@ to improve performance](/what-should-you-measure-to-improve-performance/), and
 [how to measure and report metrics to build a performance culture](/how-to-report-metrics/).
 
 <figure class="w-figure">
-  <img src="https://web.dev/what-should-you-measure-to-improve-performance/funnel.png" alt="A conversion funnel going from discover to engage to convert to re-engage." style="max-width: 600px; width: 100%;">
+  {% Img src="image/admin/tRFlwIEQJcf52vGBEoDp.png", alt="A conversion funnel going from discover to engage to convert to re-engage.", width="800", height="399" %}
   <figcaption class="w-figcaption">
     A conversion funnel.
   </figcaption>
@@ -42,7 +42,7 @@ Make sure to use appropriate tools as described in [Fast Load Times](/fast) to o
 After getting users to your site, you need to keep them engaged with your content, which you can verify in your analytics of choice by looking at session length, time-on-page, pages-per-session and general [user flows](https://support.google.com/analytics/answer/1709395?hl=en).
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./ga_flow.png" alt="A Google Analytics dashboard shows the number of users that drop off from starting page to first and second interactions.">
+  {% Img src="image/admin/Apz0cUkUGVR7m9gKepkt.png", alt="A Google Analytics dashboard shows the number of users that drop off from starting page to first and second interactions.", width="800", height="416", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     A user flow through the funnel as seen by Google Analytics.
   </figcaption>
@@ -65,7 +65,7 @@ Make sure to optimize for fast repeat loads and smooth UX flows to increase chan
 E-commerce sites always strive for conversions, which are at the end of a purchase funnel. Every step along the funnel needs to be optimized for website speed to minimize bounce rates and drop-offs, and for each step there are different things to optimize, different pitfalls and culprits:
 
 <figure class="w-figure">
-  <img src="https://web.dev/what-should-you-measure-to-improve-performance/funnel.png" alt="A conversion funnel going from discover to engage to convert to re-engage." style="max-width: 600px; width: 100%;">
+  {% Img src="image/admin/tRFlwIEQJcf52vGBEoDp.png", alt="A conversion funnel going from discover to engage to convert to re-engage.", width="800", height="399" %}
   <figcaption class="w-figcaption">
     An e-commerce funnel showing which metric to optimize in which step.
   </figcaption>

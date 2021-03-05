@@ -22,8 +22,7 @@ Have you ever seen an animated GIF on a service like Imgur or Gfycat, inspected
 it in your dev tools, only to find out that GIF was really a video? There's a
 good reason for that. Animated GIFs can be downright _huge_.
 
-<img class="w-screenshot w-screenshot--filled" src="./animated-gif.png"
-  alt="DevTools network panel showing a 13.7 MB gif.">
+{% Img src="image/admin/3UZ0b9dDotVIXWQT5Auk.png", alt="DevTools network panel showing a 13.7 MB gif.", width="800", height="155", class="w-screenshot w-screenshot--filled" %}
 
 Thankfully, this is one of those areas of loading performance where you can do
 relatively little work to realize huge gains! **By converting large GIFs to
@@ -37,8 +36,7 @@ Lighthouse and check the report.
 If you have any GIFs that can be converted, you should see a suggestion to "Use
 video formats for animated content":
 
-<img class="w-screenshot" src="./use-video-format.png" alt="A failing Lighthouse
-audit, use video formats for animated content.">
+{% Img src="image/admin/KOSr9IivnkyaFk6RJ5u1.png", alt="A failing Lighthouse audit, use video formats for animated content.", width="800", height="173", class="w-screenshot" %}
 
 ## Create MPEG videos
 
@@ -79,8 +77,7 @@ ffmpeg -i my-animation.gif -c vp9 -b:v 0 -crf 41 my-animation.webm
 
 The cost savings between a GIF and a video can be pretty significant.
 
-<img class="w-screenshot" src="./cost-savings.png" alt="File size comparison
-showing 3.7 MB for the gif, 551 KB for the mp4 and 341 KB for the webm.">
+{% Img src="image/admin/LWzvOWaOdMnNLTPWjayt.png", alt="File size comparison showing 3.7 MB for the gif, 551 KB for the mp4 and 341 KB for the webm.", width="800", height="188", class="w-screenshot" %}
 
 In this example, the initial GIF is 3.7 MB, compared to the MP4 version, which
 is 551 KB, and the WebM version, which is only 341 KB!
