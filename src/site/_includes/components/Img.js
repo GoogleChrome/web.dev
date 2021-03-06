@@ -55,7 +55,7 @@ const Img = function (args) {
 
   if (!IS_UPLOADED_IMG(src)) {
     throw new Error(
-      `${checkHereIfError}: invalid src provided, was this added via uploader?`,
+      `${checkHereIfError}: invalid src provided (was this added via the uploader?)`,
     );
   }
 
