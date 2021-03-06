@@ -23,7 +23,7 @@ crawl. An invalid `robots.txt` configuration can cause two types of problems:
 `robots.txt` files:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot" src="robots-txt.png" alt="Lighthouse audit showing invalid robots.txt">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/X29ztochZPiUVwPo2rg3.png", alt="Lighthouse audit showing invalid robots.txt", width="800", height="203", class="w-screenshot w-screenshot" %}
 </figure>
 
 {% Aside %}

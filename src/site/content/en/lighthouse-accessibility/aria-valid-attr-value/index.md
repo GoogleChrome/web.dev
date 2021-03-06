@@ -28,7 +28,7 @@ to interact with it as the developer intended.
 flags ARIA attributes with invalid values:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="aria-valid-attr-value.png" alt="Lighthouse audit showing aria-checked without the value 'true'">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d3U3jGziH67BYcWPa1T4.png", alt="Lighthouse audit showing aria-checked without the value 'true'", width="800", height="185", class="w-screenshot" %}
 </figure>
 
 Lighthouse uses the

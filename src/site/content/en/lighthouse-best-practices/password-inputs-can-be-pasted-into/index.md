@@ -25,7 +25,7 @@ to remember.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags code that prevents users from pasting into password fields:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="password-inputs-can-be-pasted-into.png" alt="Lighthouse audit shows page stops users from pasting into password fields">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0tAkhHny7nQu4pYJ9m9E.png", alt="Lighthouse audit shows page stops users from pasting into password fields", width="800", height="163", class="w-screenshot" %}
 </figure>
 
 Lighthouse gathers all `<input type="password">` elements,

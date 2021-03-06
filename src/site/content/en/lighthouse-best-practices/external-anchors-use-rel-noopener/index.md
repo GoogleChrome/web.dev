@@ -34,7 +34,7 @@ including Edge Legacy and Internet Explorer.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags unsafe links to cross-origin destinations:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="external-anchors-use-rel-noopener.png" alt="Lighthouse audit showing unsafe links to cross-origin destinations">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ztiQKS8eOfdzONC7bocp.png", alt="Lighthouse audit showing unsafe links to cross-origin destinations", width="800", height="213", class="w-screenshot" %}
 </figure>
 
 Lighthouse uses the following process to identify links as unsafe:

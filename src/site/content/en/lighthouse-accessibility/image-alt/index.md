@@ -18,7 +18,7 @@ Decorative elements can be ignored with an empty alt attribute.
 Lighthouse flags `<img>` elements that don't have `alt` attributes:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="image-alt.png" alt="Lighthouse audit showing <img> elements do not have alt attributes">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hb8ypHK5xwmtUZwdxyQG.png", alt="Lighthouse audit showing <img> elements do not have alt attributes", width="800", height="206", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
