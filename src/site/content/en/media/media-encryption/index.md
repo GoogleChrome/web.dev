@@ -66,7 +66,7 @@ openssl rand -hex 16
 ```
 
 {% Aside %}
-Make a note of the output, you’ll need this later.
+Make a note of the output, you'll need this later.
 {% endAside %}
 
 ### Encrypt with Clear Key
@@ -149,7 +149,7 @@ to decrypt content.
 Most of the examples in this article used Clear Key encryption. However, for Widevine you
 will want to replace the following options.
 
-```
+```bash
 --enable_fixed_key_encryption \
 --enable_fixed_key_decryption \
 --keys label=:key=INSERT_KEY_HERE:key_id=INSERT_KEY_ID_HERE
