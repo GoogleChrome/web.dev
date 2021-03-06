@@ -260,7 +260,7 @@ module.exports = function (config) {
   config.setUseGitIgnore(false);
 
   // Make .yml files work in the _data directory.
-  config.addDataExtension('yml', (contents) => yaml.safeLoad(contents));
+  config.addDataExtension('yml', (contents) => yaml.load(contents));
 
   // https://www.11ty.io/docs/config/#configuration-options
   const targetLang = process.env.ELEVENTY_LANG || '';
