@@ -17,7 +17,7 @@ const IS_UPLOADED_IMG = (src) => {
    * Because file extensions may be upper case, we split the string based on
    * a `.`, which we expect to signify the files extension. We then check if
    * new array has a length less than 2. If it does then there was no `.` and
-   * therefore there was not extension. Then we lower case the last element
+   * therefore there was no extension. Then we lower case the last element
    * of the array (what we believe to be the extension). We merge the array
    * back into a string and test that string.
    */
