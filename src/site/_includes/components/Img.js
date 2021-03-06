@@ -8,6 +8,30 @@ const MAX_WIDTH = 800;
 // The highest device pixel ratio we'll generate srcsets for.
 const MAX_DPR = 2; // @2x
 const DEFAULT_PARAMS = {auto: 'format'};
+/**
+ * @param {string} src
+ * @returns {boolean}
+ */
+const IS_UPLOADED_IMG = (src) => {
+  /**
+   * Because file extensions may be upper case, we split the string based on
+   * a `.`, which we expect to signify the files extension. We then check if
+   * new array has a length less than 2. If it does then there was no `.` and
+   * therefore there was no extension. Then we lower case the last element
+   * of the array (what we believe to be the extension). We merge the array
+   * back into a string and test that string.
+   */
+  const splitSrc = src.split('.');
+  if (splitSrc.length < 2) {
+    return false;
+  }
+  splitSrc.push(splitSrc.pop().toLowerCase());
+  src = splitSrc.join('.');
+
+  return /^image\/[A-Za-z0-9]*\/[A-Za-z0-9]*\.(gif|jpe?g|tiff?|png|webp|bmp|svg|ico)$/.test(
+    src,
+  );
+};
 
 /**
  * Generates src URL of image from imgix path or URL.
@@ -36,6 +60,12 @@ const Img = function (args) {
 
   if (src === undefined || typeof src !== 'string') {
     throw new Error(`${checkHereIfError}: src is a required argument`);
+  }
+
+  if (!IS_UPLOADED_IMG(src)) {
+    throw new Error(
+      `${checkHereIfError}: invalid src provided (was this added via the uploader?)`,
+    );
   }
 
   if (alt === undefined || typeof alt !== 'string') {
