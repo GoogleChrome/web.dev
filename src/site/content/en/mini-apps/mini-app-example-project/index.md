@@ -27,13 +27,13 @@ from [The Body Coach TV](https://www.youtube.com/user/thebodycoach1) YouTube cha
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img src="./body-coach-green.png" alt="HIIT training online session with green high intensity timer.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tUl2jNm2bFqGBAFF5s63.png", alt="HIIT training online session with green high intensity timer.", width="800", height="450" %}
     <figcaption class="w-figcaption">
       Active period.
     </figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="./body-coach-red.png"  alt="HIIT training online session with red low intensity timer.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMUgX3WJ4ZfQX38zHP75.png", alt="HIIT training online session with red low intensity timer.", width="800", height="450" %}
     <figcaption class="w-figcaption">
       Resting period.
     </figcaption>
@@ -56,21 +56,21 @@ It is a responsive app with a navbar, a tabbar, and three pages:
 The following screenshots give an impression of the application.
 
 <figure class="w-figure">
-  <img src="./workout-portrait.svg" alt="HIIT Time example app in portrait mode.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9RYkQ17tlEy79NlAIFfP.svg", alt="HIIT Time example app in portrait mode.", width="800", height="450" %}
   <figcaption class="w-figcaption">
     HIIT Time "Workout" tab in portrait mode.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img src="./workout-landscape.svg" alt="HIIT Time example app in landscape mode.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SNHMWFvHtCYHEfC9SHPl.svg", alt="HIIT Time example app in landscape mode.", width="800", height="450" %}
   <figcaption class="w-figcaption">
     HIIT Time "Workout" tab in landscape mode.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img src="./timer.svg" alt="HIIT Time example app showing management of a timer.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/f7uqTk1PNMVaHob7FDzA.svg", alt="HIIT Time example app showing management of a timer.", width="800", height="450" %}
   <figcaption class="w-figcaption">
     HIIT Time timer management.
   </figcaption>
@@ -86,7 +86,7 @@ timers or creating new ones.
 I call this pattern multi-page single-page app (MPSPA).
 
 <figure class="w-figure">
-  <img src="./html-structure.png" alt="Chrome DevTools view of the HTML structure of the app showing that it consists of six iframes: one for the navbar, one for the tabbar, and three grouped ones for each page of the app, with a final placeholder iframe for dynamic pages.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rv14TNs1kU0bpW5kv5bq.png", alt="Chrome DevTools view of the HTML structure of the app showing that it consists of six iframes: one for the navbar, one for the tabbar, and three grouped ones for each page of the app, with a final placeholder iframe for dynamic pages.", width="800", height="244" %}
   <figcaption class="w-figcaption">
     The app consists of six iframes.
   </figcaption>
@@ -131,7 +131,7 @@ they work well together with lit-html, as you can see in the listing below.
 ```
 
 <figure class="w-figure">
-  <img src="./buttons-progress-ring.png" width="300" alt="Three buttons and a progress ring.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Toz6JmkCQVt7WLscSnlP.png", alt="Three buttons and a progress ring.", width="649", height="528" %}
   <figcaption class="w-figcaption">
     Rendered section of the page corresponding to the mark-up above.
   </figcaption>
@@ -162,7 +162,7 @@ const page = new Page({
 ```
 
 <figure class="w-figure">
-  <img src="./iframe.png" width="500" alt="In-app page realized as an iframe.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y82LVHSxUVAehgQlDbsb.png", alt="In-app page realized as an iframe.", width="800", height="435" %}
   <figcaption class="w-figcaption">
     Navigation happens from iframe to iframe.
   </figcaption>
@@ -203,7 +203,7 @@ select {
 ```
 
 <figure class="w-figure">
-  <img src="./preferences.png" width="500" alt="HIIT Time app preferences page showing a form in grid layout.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/z3Op4O7OM5NQ1zz8Uah8.png", alt="HIIT Time app preferences page showing a form in grid layout.", width="739", height="461" %}
   <figcaption class="w-figcaption">
     Every page is its own world. Styling happens directly with the element names.
   </figcaption>

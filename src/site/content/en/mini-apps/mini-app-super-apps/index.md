@@ -73,7 +73,7 @@ mode with a secondary phone (given you have one) to understand what is going on 
 {% endAside %}
 
 <figure class="w-figure">
-  <img src="google-translate.png" alt="A secondary phone running Google Translate in camera mode live-translating the user interface of a Chinese mini app running on the primary phone." width="300">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kSLjHjkFgscBC2j2d6j9.png", alt="A secondary phone running Google Translate in camera mode live-translating the user interface of a Chinese mini app running on the primary phone.", width="745", height="1291" %}
   <figcaption class="w-figure">
     Using Google Translate in camera mode to live-translate a Chinese mini app.
   </figcaption>
