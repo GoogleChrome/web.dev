@@ -29,6 +29,12 @@ and [Apple FairPlay], but we will not be covering all of them in this article.
 However, if you are targeting all the modern browsers you are likely going
 to be using all three DRM services.
 
+Conversion and encryption is done with these applications:
+
+* [Shaka Packager](https://github.com/google/shaka-packager) ([on Stack Overflow](https://stackoverflow.com/questions/tagged/shaka))
+* [FFmpeg](https://ffmpeg.org/download.html), ([on Stack Overflow](https://stackoverflow.com/questions/tagged/ffmpeg))
+* [OpenSSL](https://www.openssl.org/)  ([on Stack Overflow](https://stackoverflow.com/questions/tagged/openssl))
+
 ## Clear Key encryption
 
 First, lets get a good understanding on what Clear Key is and isn't before we
@@ -82,8 +88,8 @@ generated above.
 
 ```bash
 packager \
-  input=myvideo.mp4,stream=audio,output=glocka.m4a \
-  input=myvideo.mp4,stream=video,output=glockv.mp4 \
+  input=glocken.mp4,stream=audio,output=glockena.m4a \
+  input=glocken.mp4,stream=video,output=glockenv.mp4 \
   --enable_fixed_key_encryption \
   --keys label=:key=INSERT_KEY_HERE:key_id=INSERT_KEY_ID_HERE
 ```
@@ -175,7 +181,7 @@ Packager documentation on using the [Widevine Key Server] for more examples.
       --aes_signing_iv "d58ce954203b7c9a9a9d467f59839249"
     ```
 
-2. Remux (recombine) the audio and video streams. If you're using a video
+2. Remux (combine) the audio and video streams. If you're using a video
    framework, you may not need to do this.
 
    ```bash
@@ -230,7 +236,7 @@ when needed.
       --mpd_output glocken_webm_vod.mpd
     ```
 
-4. Remux (recombine) the audio and video streams. If you're using a video
+4. Remux (combine) the audio and video streams. If you're using a video
    framework, you may not need to do this.
 
    ```bash
@@ -264,7 +270,7 @@ when needed.
       --mpd_output glocken_mp4_vod.mpd
     ```
 
-4. Remux (recombine) the audio and video streams. If you're using a video
+4. Remux (combine) the audio and video streams. If you're using a video
    framework, you may not need to do this.
 
    ```bash
