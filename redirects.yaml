@@ -251,3 +251,8 @@ redirects:
 # Remove once the actual article is published.
 - source: /cors-rfc1918-guide
   destination: /cors-rfc1918-feedback
+
+# Media
+
+- source: /media-cheat-sheet
+  destination: /media-conversion
