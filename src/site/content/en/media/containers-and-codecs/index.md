@@ -90,7 +90,7 @@ and HLS respectively.
 
 | Codec | Extension    | Library    |
 | ----- | ------------ | ---------- |
-| av1   | WebM<br/>mkv | libaom-av1 |
+| av1   | WebM, mkv    | libaom-av1 |
 | h264  | MP4          | libx264    |
 | vp9   | WebM         | libvpx-vp9 |
 
