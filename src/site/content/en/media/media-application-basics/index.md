@@ -185,9 +185,9 @@ provided the instructions to get you set up quickly.
 1. Create `/media-tools/docker/Dockerfile`, and add the following build instructions:
 
     ```dockerfile
-    FROM google/shaka-packager:release-v2.4.3 as builder
+    FROM google/shaka-packager:release-v2.4.3 as packager
     FROM jrottenberg/ffmpeg:4.3.2-alpine38
-    COPY --from=builder /usr/bin /usr/bin
+    COPY --from=packager /usr/bin /usr/bin
     ENTRYPOINT  ["sh"]
     ```
 
