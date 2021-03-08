@@ -28,19 +28,21 @@ feedback:
 
 **Updates**
 
-- **March 5, 2021**: Removed limitations for `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`, and debugging
-  functionalities, which are now fully enabled in Chrome 89. Added
-  upcoming capabilities, `performance.now()` and `performance.timeOrigin`,
-  that will have higher precision.
+- **March 5, 2021**: Removed limitations for `SharedArrayBuffer`,
+  `performance.measureUserAgentSpecificMemory()`, and debugging functionalities,
+  which are now fully enabled in Chrome 89. Added upcoming capabilities,
+  `performance.now()` and `performance.timeOrigin`, that will have higher
+  precision.
 - **February 19, 2021**: Added a note about feature policy
   `allow="cross-origin-isolated"` and debugging functionality on DevTools.
 - **February 9, 2021**: Added an instruction [how to set up a reporting
-endpoint](#set-up-reporting-endpoint).
+  endpoint](#set-up-reporting-endpoint).
 - **October 15, 2020**: `self.crossOriginIsolated` is available from Chrome 87.
-Reflecting that, `document.domain` is immutable when `self.crossOriginIsolated`
-returns `true`. `performance.measureUserAgentSpecificMemory()` is ending its origin trial and is
-enabled by default in Chrome 89. Shared Array Buffer on Android
-Chrome will be available from Chrome 88.
+  Reflecting that, `document.domain` is immutable when
+  `self.crossOriginIsolated` returns `true`.
+  `performance.measureUserAgentSpecificMemory()` is ending its origin trial and
+  is enabled by default in Chrome 89. Shared Array Buffer on Android Chrome will
+  be available from Chrome 88.
 
 {% YouTube 'XLNJYhjA-0c' %}
 
@@ -283,7 +285,8 @@ You can also determine the status of iframes and popup windows through the
 expand "top" to see the breakdown of the resource structure.
 
 <span id="devtools-coep-iframe">
-You can check the iframe's status such as availability of SharedArrayBuffer, etc.
+You can check the iframe's status such as availability of `SharedArrayBuffer`,
+etc.
 </span>
 
 <figure class="w-figure">
@@ -291,7 +294,8 @@ You can check the iframe's status such as availability of SharedArrayBuffer, etc
 </figure>
 
 <span id="devtools-coop">
-You can also check the popup windows's status such as whether it's cross-origin isolated.
+You can also check the popup windows's status such as whether it's cross-origin
+isolated.
 </span>
 
 <figure class="w-figure">
@@ -328,7 +332,8 @@ from your COOP/COEP. There are two options:
 
 ##### Use a solution that accepts reports
 
-We are aware of one solution that accepts reports from the browser's COOP/COEP reporting functionality.
+We are aware of one solution that accepts reports from the browser's COOP/COEP
+reporting functionality.
 
 * [https://uriports.com](https://uriports.com)
 
@@ -402,11 +407,11 @@ different browsing context groups try to access each other, but only in
 #### `max_age`
 
 The `max_age` property specifies the time in seconds after which unsent reports
-are to be dropped. The browser doesn't send the reports right away.
-Instead, it transmits them out-of-band whenever there aren't any other higher
-priority tasks. The `max_age` prevents the browser from sending reports that are
-too stale to be useful. For example, `max_age: 86400` means that reports older
-than twenty-four hours will not be sent.
+are to be dropped. The browser doesn't send the reports right away. Instead, it
+transmits them out-of-band whenever there aren't any other higher priority
+tasks. The `max_age` prevents the browser from sending reports that are too
+stale to be useful. For example, `max_age: 86400` means that reports older than
+twenty-four hours will not be sent.
 
 #### `endpoints`
 
@@ -496,8 +501,8 @@ When different browsing context groups try to access each other (only on
 
 Use a combination of COOP and COEP HTTP headers to opt a web page into a special
 cross-origin isolated state. You will be able to examine
-`self.crossOriginIsolated` to determine whether a web page is in a
-cross-origin isolated state.
+`self.crossOriginIsolated` to determine whether a web page is in a cross-origin
+isolated state.
 
 We'll keep this post updated as new features are made available to this
 cross-origin isolated state, and further improvements are made to DevTools
