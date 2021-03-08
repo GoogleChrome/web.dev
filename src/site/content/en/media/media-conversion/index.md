@@ -39,54 +39,61 @@ different output for the same media.
 ### Characteristics using Shaka Packager
 
 ```bash
-packager input=Big_Buck_Bunny_4K.webm --dump_stream_info
+packager input=glocken.mp4 --dump_stream_info
 ```
 
 The output looks like:
 
 ```bash
-File "Big_Buck_Bunny_4K.webm":
+File "glocken.mp4":
 Found 2 stream(s).
-Stream [0] type: Audio
- codec_string: vorbis
- time_scale: 1000000
- duration: 634553000 (634.6 seconds)
+Stream [0] type: Video
+ codec_string: avc1.640028
+ time_scale: 30000
+ duration: 300300 (10.0 seconds)
  is_encrypted: false
- codec: Vorbis
- sample_bits: 16
- num_channels: 6
- sampling_frequency: 48000
- language: und
-
-Stream [1] type: Video
- codec_string: vp08.00.10.08.01.02.02.02.00
- time_scale: 1000000
- duration: 634553000 (634.6 seconds)
- is_encrypted: false
- codec: VP8
- width: 4000
- height: 2250
+ codec: H264
+ width: 1920
+ height: 1080
  pixel_aspect_ratio: 1:1
  trick_play_factor: 0
- nalu_length_size: 0
+ nalu_length_size: 4
+
+Stream [1] type: Audio
+ codec_string: mp4a.40.2
+ time_scale: 48000
+ duration: 481280 (10.0 seconds)
+ is_encrypted: false
+ codec: AAC
+ sample_bits: 16
+ num_channels: 2
+ sampling_frequency: 48000
+ language: eng
+ seek_preroll_ns: 20833
 ```
 
 ### Characteristics using FFmpeg
 
 ```bash
-ffmpeg -i Big_Buck_Bunny_4K.webm
+ffmpeg -i glocken.mp4
 ```
 
 The output looks like:
 
 ```bash
-Input #0, matroska,webm, from 'Big_Buck_Bunny_4K.webm':
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'glocken.mp4':
   Metadata:
-    title           : Big Buck Bunny, Sunflower version
-    encoder         : Lavf54.20.4
-  Duration: 00:10:34.55, start: 0.000000, bitrate: 37378 kb/s
-    Stream #0:0: Video: vp8, yuv420p(progressive), 4000x2250, SAR 1:1 DAR 16:9, 30k fps, 60 tbr, 1k tbn, 1k tbc (default)
-    Stream #0:1: Audio: vorbis, 48000 Hz, 5.1, fltp (default)
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf57.83.100
+  Duration: 00:00:10.03, start: 0.000000, bitrate: 8063 kb/s
+    Stream #0:0(eng): Video: h264 (High) (avc1 / 0x31637661), yuvj420p(pc), 1920x1080, 7939 kb/s, 29.97 fps, 29.97 tbr, 30k tbn, 59.94 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 127 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
 At least one output file must be specified
 ```
 
