@@ -4,7 +4,7 @@ subhead: "Figuring out the value of `this` can be tricky in JavaScript, here's h
 description: "Figuring out the value of `this` can be tricky in JavaScript, here's how to do it…"
 authors:
   - jakearchibald
-date: 2021-02-23
+date: 2021-03-08
 # updated: 2021-02-19
 hero: image/CZmpGM8Eo1dFe0KNhEO9SGO8Ok23/cePCOGeXNFT6WCy85gb4.png
 alt: this 🤔
@@ -13,9 +13,13 @@ tags:
   - javascript
 ---
 
-JavaScript's `this` is the butt of many jokes, and that's because, well, it's pretty complicated. However, I've seen developers do much-more-complicated and domain-specific things to avoid dealing with this `this`. If you're unsure about `this`, hopefully this will help. This is my `this` guide.
+JavaScript's `this` is the butt of many jokes, and that's because, well, it's pretty complicated.
+However, I've seen developers do much-more-complicated and domain-specific things to avoid dealing
+with this `this`. If you're unsure about `this`, hopefully this will help. This is my `this` guide.
 
-I'm going to start with the most specific situation, and end with the least-specific. This article is kinda like a big `if (…) … else if () … else if (…) …`, so you can go straight to the first section that matches the code you're looking at.
+I'm going to start with the most specific situation, and end with the least-specific. This article
+is kinda like a big `if (…) … else if () … else if (…) …`, so you can go straight to the first
+section that matches the code you're looking at.
 
 1. [If the function is defined as an arrow function](#arrow-functions)
 1. [Otherwise, if the function/class is called with `new`](#new)
@@ -44,7 +48,8 @@ const arrowFunction = () => {
 };
 ```
 
-Arrow functions are great because the inner value of `this` can't be changed, it's _always_ the same as the outer `this`.
+Arrow functions are great because the inner value of `this` can't be changed, it's _always_ the same
+as the outer `this`.
 
 ### Other examples
 
@@ -64,7 +69,8 @@ arrowFunction.call({foo: 'bar'});
 arrowFunction.apply({foo: 'bar'});
 ```
 
-With arrow functions, the value of `this` _can't_ be changed by calling the function as a member of another object:
+With arrow functions, the value of `this` _can't_ be changed by calling the function as a member of
+another object:
 
 ```js
 const obj = {arrowFunction};
@@ -72,7 +78,8 @@ const obj = {arrowFunction};
 obj.arrowFunction();
 ```
 
-With arrow functions, the value of `this` _can't_ be changed by calling the function as a constructor:
+With arrow functions, the value of `this` _can't_ be changed by calling the function as a
+constructor:
 
 ```js
 // TypeError: arrowFunction is not a constructor
@@ -81,7 +88,9 @@ new arrowFunction();
 
 ### 'Bound' instance methods
 
-With instance methods, if you want to ensure `this` always refers to the class instance, the best way is to use arrow functions and [class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields):
+With instance methods, if you want to ensure `this` always refers to the class instance, the best
+way is to use arrow functions and [class
+fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields):
 
 ```js
 class Whatever {
@@ -92,9 +101,12 @@ class Whatever {
 }
 ```
 
-This pattern is really useful when using instance methods as event listeners in components (such as React components, or web components).
+This pattern is really useful when using instance methods as event listeners in components (such as
+React components, or web components).
 
-The above might feel like it's breaking the "`this` will be the same as `this` in the parent scope" rule, but it starts to make sense if you think of class fields as syntactic sugar for setting things in the constructor:
+The above might feel like it's breaking the "`this` will be the same as `this` in the parent scope"
+rule, but it starts to make sense if you think of class fields as syntactic sugar for setting things
+in the constructor:
 
 ```js
 class Whatever {
@@ -126,7 +138,8 @@ class Whatever {
 new Whatever();
 ```
 
-The above will call `Whatever` (or its constructor function if it's a class) with `this` set to the result of `Object.create(Whatever.prototype)`.
+The above will call `Whatever` (or its constructor function if it's a class) with `this` set to the
+result of `Object.create(Whatever.prototype)`.
 
 ```js
 class MyClass {
@@ -164,7 +177,8 @@ const BoundMyClass = MyClass.bind({foo: 'bar'});
 new BoundMyClass();
 ```
 
-When called with `new`, the value of `this` _can't_ be changed by calling the function as a member of another object:
+When called with `new`, the value of `this` _can't_ be changed by calling the function as a member
+of another object:
 
 ```js
 const obj = {MyClass};
@@ -183,7 +197,8 @@ const boundObject = {hello: 'world'};
 const boundFunction = someFunction.bind(boundObject);
 ```
 
-Whenever `boundFunction` is called, its `this` value will be the object passed to `bind` (`boundObject`).
+Whenever `boundFunction` is called, its `this` value will be the object passed to `bind`
+(`boundObject`).
 
 ```js
 // Logs `false`:
@@ -193,14 +208,18 @@ console.log(boundFunction() === boundObject);
 ```
 
 {% Aside 'warning' %}
-Avoid using `bind` to bind a function to its outer `this`. Instead, use [arrow functions](#arrow-functions), as they make `this` clear from the function declaration, rather than something that happens later in the code.
+Avoid using `bind` to bind a function to its outer `this`. Instead, use [arrow
+functions](#arrow-functions), as they make `this` clear from the function declaration, rather than
+something that happens later in the code.
 
-Don't use `bind` to set `this` to some value unrelated to the parent object; it's usually unexpected and it's why `this` gets such a bad reputation. Consider passing the value as an argument instead; it's more explicit, and works with arrow functions.
-{% endAside %}
+Don't use `bind` to set `this` to some value unrelated to the parent object; it's usually unexpected
+and it's why `this` gets such a bad reputation. Consider passing the value as an argument instead;
+it's more explicit, and works with arrow functions. {% endAside %}
 
 ### Other examples
 
-When calling a bound function, the value of `this` _can't_ be changed with [`call` or `apply`](#call-apply):
+When calling a bound function, the value of `this` _can't_ be changed with [`call` or
+`apply`](#call-apply):
 
 ```js
 // Logs `true` - called `this` value is ignored:
@@ -209,7 +228,8 @@ console.log(boundFunction().call({foo: 'bar'}) === boundObject);
 console.log(boundFunction().apply({foo: 'bar'}) === boundObject);
 ```
 
-When calling a bound function, the value of `this` _can't_ be changed by calling the function as a member of another object:
+When calling a bound function, the value of `this` _can't_ be changed by calling the function as a
+member of another object:
 
 ```js
 const obj = {boundFunction};
@@ -234,11 +254,12 @@ console.log(someFunction.apply(someObject) === someObject);
 
 The value of `this` is the object passed to `call`/`apply`.
 
-{% Aside 'warning' %}
-Don't use `call`/`apply` to set `this` to some value unrelated to the parent object; it's usually unexpected and it's why `this` gets such a bad reputation. Consider passing the value as an argument instead; it's more explicit, and works with arrow functions.
-{% endAside %}
+{% Aside 'warning' %} Don't use `call`/`apply` to set `this` to some value unrelated to the parent
+object; it's usually unexpected and it's why `this` gets such a bad reputation. Consider passing the
+value as an argument instead; it's more explicit, and works with arrow functions. {% endAside %}
 
-Unfortunately `this` is set to some other value by things like DOM event listeners, and using it can result in difficult-to-understand code:
+Unfortunately `this` is set to some other value by things like DOM event listeners, and using it can
+result in difficult-to-understand code:
 
 {% Compare 'worse' %}
 
@@ -280,7 +301,9 @@ const obj = {
 console.log(obj.someMethod() === obj);
 ```
 
-In this case the function is called as a member of `obj`, so `this` will be `obj`. This happens at call-time, so the link is broken if the function is called without its parent object, or with a different parent object:
+In this case the function is called as a member of `obj`, so `this` will be `obj`. This happens at
+call-time, so the link is broken if the function is called without its parent object, or with a
+different parent object:
 
 ```js
 const {someMethod} = obj;
@@ -294,7 +317,8 @@ console.log(anotherObj.someMethod() === obj);
 console.log(anotherObj.someMethod() === anotherObj);
 ```
 
-`someMethod() === obj` is false because `someMethod` _isn't_ called as a member of `obj`. You might have encountered this gotcha when trying something like this:
+`someMethod() === obj` is false because `someMethod` _isn't_ called as a member of `obj`. You might
+have encountered this gotcha when trying something like this:
 
 ```js
 const $ = document.querySelector;
@@ -302,7 +326,8 @@ const $ = document.querySelector;
 const el = $('.some-element');
 ```
 
-This breaks because the implementation of `querySelector` looks at its own `this` value and expects it to be a DOM node of sorts, and the above breaks that connection. To achieve the above correctly:
+This breaks because the implementation of `querySelector` looks at its own `this` value and expects
+it to be a DOM node of sorts, and the above breaks that connection. To achieve the above correctly:
 
 ```js
 const $ = document.querySelector.bind(document);
@@ -310,10 +335,13 @@ const $ = document.querySelector.bind(document);
 const $ = (...args) => document.querySelector(...args);
 ```
 
-Fun fact: Not all APIs use `this` internally. Console methods like `console.log` were changed to avoid `this` references, so `log` doesn't need to be bound to `console`.
+Fun fact: Not all APIs use `this` internally. Console methods like `console.log` were changed to
+avoid `this` references, so `log` doesn't need to be bound to `console`.
 
-{% Aside 'warning' %}
-Don't transplant a function onto an object just to set `this` to some value unrelated to the parent object; it's usually unexpected and it's why `this` gets such a bad reputation. Consider passing the value as an argument instead; it's more explicit, and works with arrow functions.
+{% Aside 'warning' %} Don't transplant a function onto an object just to set `this` to some value
+unrelated to the parent object; it's usually unexpected and it's why `this` gets such a bad
+reputation. Consider passing the value as an argument instead; it's more explicit, and works with
+arrow functions.
 {% endAside %}
 
 ## Otherwise, if the function or parent scope is in strict mode: {: #strict }
@@ -328,7 +356,10 @@ function someFunction() {
 console.log(someFunction() === undefined);
 ```
 
-In this case, the value of `this` is undefined. `'use strict'` isn't needed in the function if the parent scope is in [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) (and all modules are in strict mode).
+In this case, the value of `this` is undefined. `'use strict'` isn't needed in the function if the
+parent scope is in [strict
+mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) (and all
+modules are in strict mode).
 
 {% Aside 'warning' %}
 Don't rely on this. I mean, there are easier ways to get an `undefined` value 😀.
@@ -347,16 +378,21 @@ console.log(someFunction() === globalThis);
 
 In this case, the value of `this` is the same as `globalThis`.
 
-{% Aside %}
-Most folks (including me) call `globalThis` the global object, but this isn't 100% technically correct. Here's [Mathias Bynens with the details](https://mathiasbynens.be/notes/globalthis#terminology), including why it's called `globalThis` rather than simply `global`.
-{% endAside %}
+{% Aside %} Most folks (including me) call `globalThis` the global object, but this isn't 100%
+technically correct. Here's [Mathias Bynens with the
+details](https://mathiasbynens.be/notes/globalthis#terminology), including why it's called
+`globalThis` rather than simply `global`. {% endAside %}
 
-{% Aside 'warning' %}
-Avoid using `this` to reference the global object (yes, I'm still calling it that). Instead, use [`globalThis`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis), which is much more explicit.
-{% endAside %}
+{% Aside 'warning' %} Avoid using `this` to reference the global object (yes, I'm still calling it
+that). Instead, use
+[`globalThis`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis),
+which is much more explicit. {% endAside %}
 
 ## Phew!
 
-And that's it! That's everything I know about `this`. Any questions? Something I've missed? Feel free to [tweet at me](https://twitter.com/jaffathecake).
+And that's it! That's everything I know about `this`. Any questions? Something I've missed? Feel
+free to [tweet at me](https://twitter.com/jaffathecake).
 
-Thanks to [Mathias Bynens](https://twitter.com/mathias), [Ingvar Stepanyan](https://twitter.com/RReverser), and [Thomas Steiner](https://twitter.com/tomayac) for reviewing.
+Thanks to [Mathias Bynens](https://twitter.com/mathias), [Ingvar
+Stepanyan](https://twitter.com/RReverser), and [Thomas Steiner](https://twitter.com/tomayac) for
+reviewing.
