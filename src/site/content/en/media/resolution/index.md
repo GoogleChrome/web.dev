@@ -52,14 +52,12 @@ to get it set up with Docker.
 
     ```bash
     /media # ffmpeg -i glocken.mov -b:v 350k -b:a 64k -s 1280x720 glocken_3g_720p.mp4
-    /media # ffmpeg -i glocken.mov -b:v 350k -b:a 64k -s 640x360 glocken_3g_360p.mp4
     ```
 
 1. WebM
 
     ```bash
     /media # ffmpeg -i glocken.mov -b:v 350k -b:a 64k -s 1280x720 glocken_3g_720p.webm
-    /media # ffmpeg -i glocken.mov -b:v 350k -b:a 64k -s 640x360 glocken_3g_360p.webm
     ```
 
 We should now have the following files created:
@@ -69,10 +67,8 @@ We should now have the following files created:
 -rw-r--r-- 1 root root  12080306 Mar  7 12:16 glocken.mov
 -rwx------ 1 root root    531117 Mar  7 13:42 glocken_3g.mp4
 -rwx------ 1 root root    706119 Mar  7 13:46 glocken_3g.webm
--rwx------ 1 root root    527956 Mar  8 14:16 glocken_3g_360p.mp4
--rwx------ 1 root root    690804 Mar  8 14:18 glocken_3g_360p.webm
 -rwx------ 1 root root    539414 Mar  7 14:15 glocken_3g_720p.mp4
--rwx------ 1 root root    735930 Mar  7 14:17 glocken_3g_720p.webm
+-rwx------ 1 root root    735930 Mar  7 14:19 glocken_3g_720p.webm
 ```
 
 It's worth reiterating that you should start from the highest resolution and
