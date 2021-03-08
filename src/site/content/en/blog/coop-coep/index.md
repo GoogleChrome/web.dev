@@ -29,7 +29,9 @@ feedback:
 **Updates**
 
 - **March 5, 2021**: Removed limitations for SharedArrayBuffer, debugging
-  functionalities, etc. They are now fully enabled in Chrome 89.
+  functionalities, etc. They are now fully enabled in Chrome 89. Added
+  `performance.now()` and `performance.timeOrigin` as the upcoming capability
+  that will have better precision.
 - **February 19, 2021**: Added a note about feature policy
   `allow="cross-origin-isolated"` and debugging functionality on DevTools.
 - **February 9, 2021**: Added an instruction [how to set up a reporting
