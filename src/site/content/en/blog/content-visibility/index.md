@@ -49,10 +49,6 @@ prototyping"](https://github.com/mozilla/standards-positions/issues/135) for
 Firefox), the Containment Spec is supported in [most modern
 browsers](https://caniuse.com/#feat=css-containment).
 
-{% Aside 'caution' %}
-Adjusting `content-vibility` may potentially cause [degraded accessibility](https://marcysutton.com/content-visibility-accessible-semantics) on sections of content such as headings and semantic structure in Chromium 85-89. This has since been fixed in Chromium 90.
-{% endAside %}
-
 ## CSS Containment {: #containment }
 
 The key and overarching goal of CSS containment is to enable rendering
@@ -117,6 +113,14 @@ and layout of the element's subtree are skipped.
 As the element approaches the viewport, the browser no longer adds the `size`
 containment and starts painting and hit-testing the element's content. This
 enables the rendering work to be done just in time to be seen by the user.
+
+## A note on accessibility
+
+One of the features of `content-visibility: auto` is that the off-screen content remains available in the document object model and therefore, the accessibility tree (unlike with `visibility: hidden`). This means, that content can be searched for on the page, and navigated to, without sacrificing rendering performance.
+
+{% Aside 'caution' %}
+In Chromium 85-89, a bug caused [degraded accessibility](https://marcysutton.com/content-visibility-accessible-semantics) on sections of content such as headings and semantic structure. This has since been fixed in Chromium 90.
+{% endAside %}
 
 ## Example: a travel blog {: #example }
 
