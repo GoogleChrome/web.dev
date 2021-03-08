@@ -95,7 +95,7 @@ able to use privileged features including:
           <code>performance.now()</code>, <code>performance.timeOrigin</code></a>
         </td>
         <td>
-          Both are available on many browsers, but the resolution is limited to
+          Currently available in many browsers with the resolution limited to
           100 microseconds or higher. With cross-origin isolation, the
           resolution can be 5 microseconds or higher.
         </td>
