@@ -238,6 +238,81 @@ and which values they can have, it is essential to find out what each font
 offers. The font's documentation should provide this, or you can inspect the
 font using a tool like [Wakamai Fondue](https://wakamaifondue.com).
 
+## Use cases and benefits
+
+Setting the axes values comes down to personal taste and applying typographic
+best practices. The danger with any new technology is possible misuse, and
+settings that are overly artistic or exploratory could also decrease legibility
+of the actual text. For titles, exploring different axes to create great
+artistic designs are exciting, but for body copy this risks making the text
+illegible.
+
+### Exciting expression
+
+<figure class="w-figure">
+  <img src="grass-mandy.png"
+  alt="Grass example by Mandy Michael">
+</figure>
+
+One great example of artistic expression is shown above, an exploration of the
+typeface
+[Decovar](https://www.typenetwork.com/brochure/decovar-a-decorative-variable-font-by-david-berlow)
+by Mandy Michael.
+
+You can view the working example and source code for the above sample
+[here](https://codepen.io/mandymichael/pen/YYaWop).
+
+### Animation
+
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/axis-praxis.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    Typeface Zycon, designed for animation by David Berlow, type designer and
+    typographer at Font Bureau.
+  </figcaption>
+</figure>
+
+There is also a possibility to explore animating characters with variable fonts.
+Above is an example of different axes being used with the typeface Zycon. See
+the live [animation example on Axis
+Praxis](https://www.axis-praxis.org/specimens/zycon).
+
+[Anicons](https://typogram.github.io/Anicons) is the world's first animated
+color icon font, based on Material Design Icons. Anicons is an experiment that
+combines two cutting edge font technologies: variable fonts and color fonts.
+
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/anicons-animation.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    A few examples of hover animations from Anicon's color icon font
+  </figcaption>
+</figure>
+
+### Finesse
+
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/larger-widths.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    Amstelvar using little bits of XTRA in opposite directions so the words' widths are evened out
+  </figcaption>
+</figure>
+
+Roboto Flex and Amstelvar offer a set of "Parametric Axes." In these axes, the
+letters are deconstructed into 4 fundamental aspects of form: black or
+positive shapes, white or negative shapes, and the x and y dimensions. In the
+same way that primary colors can be blended with any other color to adjust it,
+these 4 aspects can be used to fine tune any other axis.
+
+The XTRA axis in Amstelvar allows you to adjust the "white" per mille value,
+as shown above. Using little bits of XTRA in opposite directions, the words'
+widths are evened out.
+
 ## Variable fonts in CSS
 
 ### Loading variable font files
@@ -639,81 +714,6 @@ will have every weight between 200 and 700 available. Older browsers will get
 served individual static fonts for every weight. In this case, this means
 they'll download 6 font files: one for weight 200, one for weight 300, and so
 on.
-
-## Use cases and benefits
-
-Setting the axes values comes down to personal taste and applying typographic
-best practices. The danger with any new technology is possible misuse, and
-settings that are overly artistic or exploratory could also decrease legibility
-of the actual text. For titles, exploring different axes to create great
-artistic designs are exciting, but for body copy this risks making the text
-illegible.
-
-### Exciting expression
-
-<figure class="w-figure">
-  <img src="grass-mandy.png"
-  alt="Grass example by Mandy Michael">
-</figure>
-
-One great example of artistic expression is shown above, an exploration of the
-typeface
-[Decovar](https://www.typenetwork.com/brochure/decovar-a-decorative-variable-font-by-david-berlow)
-by Mandy Michael.
-
-You can view the working example and source code for the above sample
-[here](https://codepen.io/mandymichael/pen/YYaWop).
-
-### Animation
-
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/axis-praxis.mp4" type="video/mp4">
-  </video>
-  <figcaption class="w-figcaption">
-    Typeface Zycon, designed for animation by David Berlow, type designer and
-    typographer at Font Bureau.
-  </figcaption>
-</figure>
-
-There is also a possibility to explore animating characters with variable fonts.
-Above is an example of different axes being used with the typeface Zycon. See
-the live [animation example on Axis
-Praxis](https://www.axis-praxis.org/specimens/zycon).
-
-[Anicons](https://typogram.github.io/Anicons) is the world's first animated
-color icon font, based on Material Design Icons. Anicons is an experiment that
-combines two cutting edge font technologies: variable fonts and color fonts.
-
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/anicons-animation.mp4" type="video/mp4">
-  </video>
-  <figcaption class="w-figcaption">
-    A few examples of hover animations from Anicon's color icon font
-  </figcaption>
-</figure>
-
-### Finesse
-
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/larger-widths.mp4" type="video/mp4">
-  </video>
-  <figcaption class="w-figcaption">
-    Amstelvar using little bits of XTRA in opposite directions so the words' widths are evened out
-  </figcaption>
-</figure>
-
-Roboto Flex and Amstelvar offer a set of "Parametric Axes." In these axes, the
-letters are deconstructed into 4 fundamental aspects of form: black or
-positive shapes, white or negative shapes, and the x and y dimensions. In the
-same way that primary colors can be blended with any other color to adjust it,
-these 4 aspects can be used to fine tune any other axis.
-
-The XTRA axis in Amstelvar allows you to adjust the "white" per mille value,
-as shown above. Using little bits of XTRA in opposite directions, the words'
-widths are evened out.
 
 ## Thanks
 
