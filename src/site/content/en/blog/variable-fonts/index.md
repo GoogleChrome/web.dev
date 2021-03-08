@@ -535,11 +535,34 @@ However, if you are using a single font such as Roboto Regular and nothing
 else, you might see a net gain in font size if you were to switch to a
 variable font with many axes. As always, it depends on your use-case.
 
-On the flip side, if you are animating the font between settings, this may
-cause the browser performance issues. Learn more about this in [Variable Fonts
-- Supercharged](https://www.youtube.com/watch?v=B42rUMdcB7c).
+On the flip side, animating the font between settings may cause performance
+issues. Although this will improve once variable font support in browsers gets
+more mature, these can be reduced somewhat by only animating fonts that are
+currently on screen. This handy snippet by
+[Dinamo](https://abcdinamo.com/news/using-variable-fonts-on-the-web) pauses
+animations in elements with the class `vf-animation`, when they're not on
+screen:
 
-Speaking of performance: if you're using Google Fonts, it's a good idea to
+```javascript
+var observer = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(function(entry) {
+    // Pause/Play the animation
+    if (entry.isIntersecting) entry.target.style.animationPlayState = "running"
+    else entry.target.style.animationPlayState = "paused"
+  });
+});
+
+var variableTexts = document.querySelectorAll(".vf-animation");
+variableTexts.forEach(function(el) { observer.observe(el); });
+```
+
+If your font responds to user interaction, it's a good idea to [throttle or
+debounce](https://css-tricks.com/debouncing-throttling-explained-examples/)
+input events. This will prevent the browser from rendering instances of the
+variable font that changed so little from the previous instance the human eye
+wouldn't see the difference.
+
+If you're using Google Fonts, it's a good idea to
 [preconnect](/preconnect-and-dns-prefetch/) to `https://fonts.gstatic.com`,
 the domain where Google's fonts are hosted. This will make sure the browser
 knows early on where to get the fonts when it comes across them in the CSS:
@@ -547,6 +570,9 @@ knows early on where to get the fonts when it comes across them in the CSS:
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 ```
+
+This tip works for other CDNs as well: the sooner you let the browser set up a
+network connection, the sooner it can download your fonts.
 
 Find more performance tips for loading Google Fonts in [The Fastest
 Google Fonts](https://csswizardry.com/2020/05/the-fastest-google-fonts/).
