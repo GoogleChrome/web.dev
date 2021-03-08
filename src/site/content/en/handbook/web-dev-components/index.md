@@ -342,13 +342,13 @@ by wrapping them in a `<div class="w-columns">` element:
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img src="./image-small.png" alt="">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
     <figcaption class="w-figcaption">
       Small image.
     </figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="./image-small.png" alt="">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
     <figcaption class="w-figcaption">
       Small image.
     </figcaption>
@@ -830,7 +830,7 @@ for unordered lists.
    sit amet ullamcorper.
 
    <figure class="w-figure">
-     <img class="w-screenshot w-screenshot--filled" src="./image-screenshot.png" alt="">
+     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O8cewP6LpV9OrdhZvDdy.png", alt="", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
      <figcaption class="w-figcaption">
        Filled screenshot.
      </figcaption>
