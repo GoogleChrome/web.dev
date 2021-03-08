@@ -15,7 +15,7 @@ authors:
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-02-19
+updated: 2021-03-08
 tags:
   - blog
   - security
@@ -28,17 +28,21 @@ feedback:
 
 **Updates**
 
+- **March 5, 2021**: Removed limitations for `SharedArrayBuffer`,
+  `performance.measureUserAgentSpecificMemory()`, and debugging functionalities,
+  which are now fully enabled in Chrome 89. Added upcoming capabilities,
+  `performance.now()` and `performance.timeOrigin`, that will have higher
+  precision.
 - **February 19, 2021**: Added a note about feature policy
   `allow="cross-origin-isolated"` and debugging functionality on DevTools.
 - **February 9, 2021**: Added an instruction [how to set up a reporting
-endpoint](#set-up-reporting-endpoint).
+  endpoint](#set-up-reporting-endpoint).
 - **October 15, 2020**: `self.crossOriginIsolated` is available from Chrome 87.
-Reflecting that, `document.domain` is immutable when `self.crossOriginIsolated`
-returns `true`. `performance.measureUserAgentSpecificMemory()` is ending its origin trial and is
-enabled by default in Chrome 89. Shared Array Buffer on Android
-Chrome will be available from Chrome 88.
-- **September 1, 2020**: COOP Reporting is behind flags in Chrome 86. See
-[Enable Chrome flags](#flags).
+  Reflecting that, `document.domain` is immutable when
+  `self.crossOriginIsolated` returns `true`.
+  `performance.measureUserAgentSpecificMemory()` is ending its origin trial and
+  is enabled by default in Chrome 89. Shared Array Buffer on Android Chrome will
+  be available from Chrome 88.
 
 {% YouTube 'XLNJYhjA-0c' %}
 
@@ -47,16 +51,62 @@ mitigate that risk, browsers offer an opt-in-based isolated environment called
 cross-origin isolated. With a cross-origin isolated state, the webpage will be
 able to use privileged features including:
 
-* [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
-  (required for WebAssembly Threads. This is available from Android Chrome 88.
-  Desktop version is currently enabled by default with the help of [Site
-  Isolation](https://www.chromium.org/Home/chromium-security/site-isolation),
-  but will require the cross-origin isolated state and will be disabled by
-  default.)
-* [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/) (Ends its
-  origin trial and is planned to be enabled by default in Chrome 88)
-* [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/) (Not
-  available yet in Chrome)
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>API</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer">
+          <code>SharedArrayBuffer</code></a>
+        </td>
+        <td>
+          Required for WebAssembly Threads. This is available from Android
+          Chrome 88. Desktop version is currently enabled by default with the
+          help of <a href="https://www.chromium.org/Home/chromium-security/site-isolation">
+          Site Isolation</a>, but will require the cross-origin isolated state
+          and will be disabled by default in Chrome 91.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/monitor-total-page-memory-usage/">
+          <code>performance.measureUserAgentSpecificMemory()</code></a>
+        </td>
+        <td>
+          Available from Chrome 89.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://wicg.github.io/js-self-profiling/">
+          JS Self-Profiling API</a>
+        </td>
+        <td>
+          Not available in any browsers yet.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://crbug.com/1180178">
+          <code>performance.now()</code>, <code>performance.timeOrigin</code></a>
+        </td>
+        <td>
+          Currently available in many browsers with the resolution limited to
+          100 microseconds or higher. With cross-origin isolation, the
+          resolution can be 5 microseconds or higher.
+        </td>
+      </tr>
+    </tbody>
+    <caption>Features that will be available behind cross-origin isolated
+    state.</caption>
+  </table>
+</div>
 
 The cross-origin isolated state also prevents modifications of
 `document.domain`. (Being able to alter `document.domain` allows communication
@@ -130,10 +180,8 @@ same browsing context and they have access to each other via DOM APIs such as
 
 {% Img src="image/admin/g42eZMpIKNbUL0cN6yjC.png", alt="Browsing Context Group", width="470", height="469" %}
 
-As of Chrome 83, dedicated DevTools support is not yet available for COOP.
-However, you can examine `window.opener === null` from the opened window, or
-`openedWindow.closed === true` from the opener window to determine if they are
-in separate browsing context groups.
+You can check if the window opener and its openee are in separate browsing
+context groups [from DevTools](#devtools-coop).
 
 {% Aside 'codelab' %}
 [See the impact of different COOP
@@ -209,12 +257,6 @@ the same browsing context group. You can use this API to determine whether you
 have successfully isolated the browsing context group and gained access to
 powerful features like `performance.measureUserAgentSpecificMemory()`.
 
-{% Aside 'caution' %}
-The
-[`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated)
-property is available in Chrome from version 87.
-{% endAside %}
-
 ### Debug issues using Chrome DevTools
 
 {% YouTube 'D5DLVo_TlEA' %}
@@ -242,23 +284,23 @@ You can also determine the status of iframes and popup windows through the
 **Application** panel. Go to the "Frames" section on the left hand side and
 expand "top" to see the breakdown of the resource structure.
 
-You can check the iframe's status such as availability of SharedArrayBuffer, etc.
+<span id="devtools-coep-iframe">
+You can check the iframe's status such as availability of `SharedArrayBuffer`,
+etc.
+</span>
 
 <figure class="w-figure">
 {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9titfaieIs0gwSKnkL3S.png", alt="Chrome DevTools iframe inspector", width="800", height="480", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
-You can also check the popup windows's status such as whether it's cross-origin isolated.
+<span id="devtools-coop">
+You can also check the popup windows's status such as whether it's cross-origin
+isolated.
+</span>
 
 <figure class="w-figure">
 {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/kKvPUo2ZODZu8byK7gTB.png", alt="Chrome DevTools popup window inspector", width="800", height="480", class="w-screenshot w-screenshot--filled" %}
 </figure>
-
-{% Aside %}
-While COEP debugging is already available, COOP debugging in Chrome
-DevTools is still [being worked
-on](https://bugs.chromium.org/p/chromium/issues/detail?id=1051466).
-{% endAside %}
 
 ### Observe issues using the Reporting API
 
@@ -280,32 +322,6 @@ API](https://bugzilla.mozilla.org/show_bug.cgi?id=1620573). You may want to use
 both APIs during the transition.
 {% endAside %}
 
-#### Enable the Reporting API
-
-While COEP reporting is already fully available on Chrome, you need to do one of
-the followings to enable COOP Reporting API on Chrome until its version 89.
-
-1. Enabling Chrome flags
-2. Registering for an origin trial
-
-##### Enable via Chrome flags {: #flags }
-
-1. Go to `chrome://flags`
-1. Enable **Cross Origin Opener Policy reporting** (`chrome://flags/#cross-origin-opener-policy-reporting`)
-1. Enable **Cross Origin Opener Policy access reporting**
-   (`chrome://flags/#cross-origin-opener-policy-access-reporting`)
-
-##### Register for an origin trial
-
-{% include 'content/origin-trials.njk' %}
-
-{% include 'content/origin-trial-register.njk' %}
-
-{% Aside 'caution' %}
-To use COOP Reporting API, the token must be served as an HTTP header instead of
-a `<meta>` tag.
-{% endAside %}
-
 #### Set up a server to receive reports {: #set-up-reporting-endpoint}
 
 A server with reporting endpoints needs to be set up in order to receive reports
@@ -316,7 +332,8 @@ from your COOP/COEP. There are two options:
 
 ##### Use a solution that accepts reports
 
-We are aware of one solution that accepts reports from the browser's COOP/COEP reporting functionality.
+We are aware of one solution that accepts reports from the browser's COOP/COEP
+reporting functionality.
 
 * [https://uriports.com](https://uriports.com)
 
@@ -390,11 +407,11 @@ different browsing context groups try to access each other, but only in
 #### `max_age`
 
 The `max_age` property specifies the time in seconds after which unsent reports
-are to be dropped. The browser doesn't send the reports right away.
-Instead, it transmits them out-of-band whenever there aren't any other higher
-priority tasks. The `max_age` prevents the browser from sending reports that are
-too stale to be useful. For example, `max_age: 86400` means that reports older
-than twenty-four hours will not be sent.
+are to be dropped. The browser doesn't send the reports right away. Instead, it
+transmits them out-of-band whenever there aren't any other higher priority
+tasks. The `max_age` prevents the browser from sending reports that are too
+stale to be useful. For example, `max_age: 86400` means that reports older than
+twenty-four hours will not be sent.
 
 #### `endpoints`
 
@@ -402,8 +419,9 @@ The `endpoints` property specifies the URLs of one or more reporting endpoints.
 The endpoint must accept CORS if it's hosted on a different origin. The browser
 will send reports with a Content-Type of `application/reports+json`.
 
-An example COEP report payload when cross-origin resource is blocked looks like
-this:
+An example [COEP
+report](https://html.spec.whatwg.org/multipage/origin.html#coep-report-type)
+payload when cross-origin resource is blocked looks like this:
 
 ```json
 [{
@@ -426,8 +444,9 @@ this:
 eventually](https://github.com/whatwg/html/pull/5848).
 {% endAside %}
 
-An example COOP report payload when a popup window is opened isolated looks like
-this:
+An example [COOP
+report](https://html.spec.whatwg.org/multipage/origin.html#reporting) payload
+when a popup window is opened isolated looks like this:
 
 ```json
 [{
@@ -482,16 +501,8 @@ When different browsing context groups try to access each other (only on
 
 Use a combination of COOP and COEP HTTP headers to opt a web page into a special
 cross-origin isolated state. You will be able to examine
-`self.crossOriginIsolated` to determine whether a web page is in a
-cross-origin isolated state.
-
-In upcoming releases of Chrome, this cross-origin isolated state will prevent
-[altering
-`document.domain`](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy#Changing_origin)
-and will give access to powerful features such as:
-
-* [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/)
-* [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/) and more.
+`self.crossOriginIsolated` to determine whether a web page is in a cross-origin
+isolated state.
 
 We'll keep this post updated as new features are made available to this
 cross-origin isolated state, and further improvements are made to DevTools
