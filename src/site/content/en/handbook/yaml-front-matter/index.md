@@ -231,7 +231,12 @@ Sometimes, a post is related to technologies that have
 (e.g. [`service-worker`](https://stackoverflow.com/questions/tagged/service-worker)).
 When used, an "Ask on Stack Overflow" note will be shown at the end of the post.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/2yLZ1UAjLELFzlvgVRwx.jpg", alt="An example of a page with a Stack Overflow tag.", width="800", height="490" %}
+{% Img
+  src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/2yLZ1UAjLELFzlvgVRwx.jpg",
+  alt="An example of a page with a Stack Overflow tag.",
+  width="800",
+  height="490"
+%}
 
 ## `subhead`: add an enticing subtitle {: #subhead }
 
