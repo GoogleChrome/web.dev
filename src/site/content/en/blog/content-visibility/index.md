@@ -49,6 +49,10 @@ prototyping"](https://github.com/mozilla/standards-positions/issues/135) for
 Firefox), the Containment Spec is supported in [most modern
 browsers](https://caniuse.com/#feat=css-containment).
 
+{% Aside 'caution' %}
+Adjusting `content-vibility` may potentially cause [degraded accessibility](https://marcysutton.com/content-visibility-accessible-semantics) on sections of content such as headings and semantic structure in Chromium 85-89. This has since been fixed in Chromium 90.
+{% endAside %}
+
 ## CSS Containment {: #containment }
 
 The key and overarching goal of CSS containment is to enable rendering
