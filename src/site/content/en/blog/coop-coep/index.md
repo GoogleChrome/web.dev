@@ -77,7 +77,7 @@ able to use privileged features including:
           <code>performance.measureUserAgentSpecificMemory()</code></a>
         </td>
         <td>
-          Available in from Chrome 89.
+          Available from Chrome 89.
         </td>
       </tr>
       <tr>
