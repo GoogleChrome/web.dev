@@ -171,18 +171,18 @@ required tools manually, or take the easy path and use [Docker]. We suggest usin
 Docker, because this is going to save you a lot of time. On top of that we've
 provided the instructions to get you set up quickly.
 
-1. Start by creating a new directory somewhere on your computer named `video-tools`;
+1. Start by creating a new directory somewhere on your computer named `media-tools`;
    you can use whatever name you like, just note that the following instructions
-   assume you are using `video-tools` as the directory name.
+   assume you are using `media-tools` as the directory name.
 
-1. Create a `docker` and `media` directory inside of `video-tools`.
+1. Create a `docker` and `media` directory inside of `media-tools`.
    This will keep your `media` directory out of the build context. This is important
    because `media` is where files are stored that we plan to do operation on, and
    some of them could be quite large. Putting the `Dockerfile` directly in
-   `video-tools` would slow down building the image if you ever rebuild it down the
+   `media-tools` would slow down building the image if you ever rebuild it down the
    road—perhaps to change the versions installed.
 
-1. Create `/video-tools/docker/Dockerfile`, and add the following build instructions:
+1. Create `/media-tools/docker/Dockerfile`, and add the following build instructions:
 
     ```dockerfile
     FROM google/shaka-packager:release-v2.4.3 as builder
@@ -194,18 +194,18 @@ provided the instructions to get you set up quickly.
 1. Build the image:
 
     ```bash
-    docker build -t video-tools ./docker
+    docker build -t media-tools ./docker
     ```
 
 1. Run the image as an interactive shell:
 
     ```bash
-    docker run -v ${PWD}/media:/media -it --rm video-tools
+    docker run -v ${PWD}/media:/media -it --rm media-tools
     / #
     ```
 
 {% Aside 'gotchas' %}
-Make sure you run the previous `docker` commands from inside the `video-tools`
+Make sure you run the previous `docker` commands from inside the `media-tools`
 directory.
 {% endAside %}
 
