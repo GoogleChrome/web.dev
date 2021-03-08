@@ -26,7 +26,7 @@ specification solves this problem.
 flags pages that do not specify their character encoding:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="charset.png" alt="The failing character encoding audit.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IERR919vogl1HyYwxvVZ.png", alt="The failing character encoding audit.", width="800", height="110", class="w-screenshot" %}
 </figure>
 
 Lighthouse considers the character encoding to be declared if it finds any of the following:

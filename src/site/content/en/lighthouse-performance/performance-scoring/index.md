@@ -48,7 +48,7 @@ The metric scores are not visible in the report, but are calculated under the ho
 
 <figure class="w-figure">
   <a href="https://googlechrome.github.io/lighthouse/scorecalc/">
-    <img src="./score-calc.png" alt="Lighthouse scoring calculator webapp">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rLftIdSA8JJYruHOHrOn.png", alt="Lighthouse scoring calculator webapp", width="600", height="414" %}
   </a>
   <figcaption class="w-figcaption">
     Explore scoring with the <a href="https://googlechrome.github.io/lighthouse/scorecalc/">Lighthouse scoring calculator</a>
@@ -148,7 +148,7 @@ Going a bit deeper, the Lighthouse scoring curve model uses HTTPArchive data to 
 
 
 <figure class="w-figure">
-  <img src="./scoring-curve.png" alt="Image of the scoring curve for TTI">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y321cWrLLbuY4SHlvYCc.png", alt="Image of the scoring curve for TTI", width="600", height="329" %}
   <figcaption class="w-figcaption">
     <a href="https://www.desmos.com/calculator/o98tbeyt1t">Explore the scoring curve for TTI</a>.
   </figcaption>

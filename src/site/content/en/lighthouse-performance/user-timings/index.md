@@ -33,7 +33,7 @@ you'll see them in your
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) report:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="user-timings.png" alt="A screenshot of the Lighthouse User Timing marks and measures audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PWzo7o0AN7SpBeGKG2OD.png", alt="A screenshot of the Lighthouse User Timing marks and measures audit", width="800", height="408", class="w-screenshot" %}
 </figure>
 
 Lighthouse extracts User Timing data from

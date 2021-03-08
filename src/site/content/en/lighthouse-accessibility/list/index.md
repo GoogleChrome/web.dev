@@ -21,7 +21,7 @@ They can also contain script supporting elements (`<script>` and `<template>`).
 Lighthouse flags lists that contain content elements that shouldn't be in a list:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="list.png" alt="Lighthouse audit showing lists contain content elements that shouldn't be within the lists">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xtmwFU4ntCqAou16qd88.png", alt="Lighthouse audit showing lists contain content elements that shouldn't be within the lists", width="800", height="206", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

@@ -34,7 +34,7 @@ data from the network to be reparsed.
 calls to `document.write()` that weren't blocked by Chrome:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="no-document-write.png" alt="Lighthouse audit showing usage of document.write">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5YbEaKuzO2kzulClv1qj.png", alt="Lighthouse audit showing usage of document.write", width="800", height="213", class="w-screenshot" %}
 </figure>
 
 For the most problematic uses,

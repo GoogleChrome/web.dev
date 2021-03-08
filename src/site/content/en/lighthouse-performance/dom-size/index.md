@@ -39,7 +39,7 @@ A large DOM tree can slow down your page performance in multiple ways:
 reports the total DOM elements for a page, the page's maximum DOM depth,
 and its maximum child elements:
 <figure class="w-figure">
-  <img class="w-screenshot" src="dom-size.png" alt="A screenshot of the Lighthouse Avoids an excessive DOM size audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="A screenshot of the Lighthouse Avoids an excessive DOM size audit", width="800", height="363", class="w-screenshot" %}
 </figure>
 
 Lighthouse flags pages with DOM trees that:

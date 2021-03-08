@@ -26,7 +26,7 @@ flags pages that don't respond with an
 when offline:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="works-offline.png" alt="Lighthouse audit showing page doesn't respond with a 200 when offline">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kpkiosw2MD8u8wfq4AJU.png", alt="Lighthouse audit showing page doesn't respond with a 200 when offline", width="800", height="95", class="w-screenshot" %}
 </figure>
 
 Lighthouse emulates an offline connection using the [Chrome Remote Debugging Protocol](https://github.com/ChromeDevTools/devtools-protocol)
