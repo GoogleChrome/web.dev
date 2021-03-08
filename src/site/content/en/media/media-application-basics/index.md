@@ -164,7 +164,7 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'glocken.mp4':
 At least one output file must be specified
 ```
 
-## Installing applications
+## Installing applications with Docker
 
 If you plan to follow along and try out our commands you could either install the
 required tools manually, or take the easy path and use [Docker]. We suggest using
