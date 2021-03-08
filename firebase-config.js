@@ -2,7 +2,7 @@ const yaml = require('js-yaml');
 const fs = require('fs');
 
 const redirectsYaml = fs.readFileSync('./redirects.yaml', 'utf8');
-const {redirects: parsedRedirects} = yaml.safeLoad(redirectsYaml);
+const {redirects: parsedRedirects} = yaml.load(redirectsYaml);
 
 const firebaseJson = require('./firebase.incl.json');
 firebaseJson.hosting.redirects = parsedRedirects.reduce(

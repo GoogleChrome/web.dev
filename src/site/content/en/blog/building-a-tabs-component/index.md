@@ -468,7 +468,7 @@ styles here, I just need to define how it overflows. I set overflow-y to auto,
 and then also trap the scroll interactions with the handy overscroll-behavior
 property.
 
-#### 3 scroll areas recap {: #overscroll }
+#### 3 scroll areas recap {: #scroll-areas-recap }
 
 Below I've chosen in my system settings to "always show scrollbars". I think
 it's doubly important for the layout to work with this setting turned on, as it
