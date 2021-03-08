@@ -200,8 +200,8 @@ provided the instructions to get you set up quickly.
 1. Run the image as an interactive shell:
 
     ```bash
-    docker run -v ${PWD}/media:/media -it --rm media-tools
-    / #
+    docker run -w /media -v ${PWD}/media:/media -it --rm media-tools
+    /media #
     ```
 
 {% Aside 'gotchas' %}
@@ -214,7 +214,7 @@ to validate everything was successful by running `ffmpeg -version` and
 `packager --version`. The output should look like this:
 
 ```bash
-/ # ffmpeg -version
+/media # ffmpeg -version
 ffmpeg version 4.3.2 Copyright (c) 2000-2021 the FFmpeg developers
 built with gcc 6.4.0 (Alpine 6.4.0)
 configuration: --disable-debug --disable-doc --disable-ffplay --enable-shared --enable-avresample --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-gpl --enable-libass --enable-fontconfig --enable-libfreetype --enable-libvidstab --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libxcb --enable-libx265 --enable-libxvid --enable-libx264 --enable-nonfree --enable-openssl --enable-libfdk_aac --enable-postproc --enable-small --enable-version3 --enable-libbluray --enable-libzmq --extra-libs=-ldl --prefix=/opt/ffmpeg --enable-libopenjpeg --enable-libkvazaar --enable-libaom --extra-libs=-lpthread --enable-libsrt --enable-libaribb24 --extra-cflags=-I/opt/ffmpeg/include --extra-ldflags=-L/opt/ffmpeg/lib
@@ -230,7 +230,7 @@ libpostproc    55.  7.100 / 55.  7.100
 ```
 
 ```bash
-/ # packager --version
+/media # packager --version
 packager version v2.4.3-dd9870075f-release
 ```
 
