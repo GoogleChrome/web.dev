@@ -17,6 +17,7 @@ tags:
   - devices
 feedback:
   - api
+stack_overflow_tag: web-bluetooth
 ---
 
 What if I told you websites could communicate with nearby Bluetooth devices

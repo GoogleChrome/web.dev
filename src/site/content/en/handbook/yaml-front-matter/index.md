@@ -3,7 +3,7 @@ layout: handbook
 title: YAML front matter
 subhead: |
   Reference documentation for web.dev's YAML front matter properties.
-date: 2020-08-06
+date: 2021-03-03
 description: |
   Reference documentation for web.dev's YAML front matter properties.
 ---
@@ -215,6 +215,28 @@ example.
        src="related-post.jpg"
        alt="An example of a page with a related post.">
 </figure>
+
+## `stack_overflow_tag`: add an "Ask on Stack Overflow" note {: #stack_overflow_tag }
+
+```yaml
+---
+…
+stack_overflow_tag: service-worker
+…
+---
+```
+
+Sometimes, a post is related to technologies that have
+["official" tags on Stack Overflow](https://stackoverflow.com/tags)
+(e.g. [`service-worker`](https://stackoverflow.com/questions/tagged/service-worker)).
+When used, an "Ask on Stack Overflow" note will be shown at the end of the post.
+
+{% Img
+  src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/2yLZ1UAjLELFzlvgVRwx.jpg",
+  alt="An example of a page with a Stack Overflow tag.",
+  width="800",
+  height="490"
+%}
 
 ## `subhead`: add an enticing subtitle {: #subhead }
 
