@@ -132,6 +132,20 @@ class Whatever {
 }
 ```
 
+Alternative pattens involve binding an existing function in the constructor, or assigning the
+function in the constructor. If you can't use class fields for some reason, assigning functions in
+the constructor is a reasonable alternative:
+
+```js
+class Whatever {
+  constructor() {
+    this.someMethod = () => {
+      // …
+    };
+  }
+}
+```
+
 ## Otherwise, if the function/class is called with `new`: {: #new }
 
 ```js
