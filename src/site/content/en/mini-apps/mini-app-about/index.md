@@ -32,7 +32,7 @@ all mini apps can run in all super apps, more on this [later](/mini-app-standard
 
 Mini apps are often discovered _ad-hoc_ via branded 2D barcodes, which solves an important
 offline-to-online challenge, for example, getting from a physical restaurant menu to a payment mini
-app, or from a physical e-scooter to a rental min app. The image below shows an example of such a
+app, or from a physical e-scooter to a rental mini app. The image below shows an example of such a
 branded 2D barcode for
 [WeChat's demo mini app](https://github.com/wechat-miniprogram/miniprogram-demo). When the code is
 scanned with the WeChat super app, the mini app launches directly.
