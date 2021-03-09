@@ -3,13 +3,13 @@ layout: post
 title: How Wix improved website performance by evolving their infrastructure
 subhead: >
   A case study of some major changes introduced at Wix to improve website loading
-  performance for millions of sites, clearing the path for them to receive good PSI and
+  performance for millions of sites, clearing the path for them to receive good PageSpeed Insights and
   Core Web Vitals scores.
 authors:
   - alonko
 description: >
   A case study of some major changes introduced at Wix to improve website loading
-  performance for millions of sites, clearing the path for them to receive good PSI and
+  performance for millions of sites, clearing the path for them to receive good PageSpeed Insights and
   Core Web Vitals scores.
 date: 2021-03-09
 hero: image/BrQidfK9jaQyIHwdw91aVpkPiib2/HNGPDotyTYOuPE0YxLQ9.jpg
