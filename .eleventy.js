@@ -38,6 +38,7 @@ const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
 const CodelabsCallout = require(`./${componentsDir}/CodelabsCallout`);
 const Compare = require(`./${componentsDir}/Compare`);
 const CompareCaption = require(`./${componentsDir}/CompareCaption`);
+const ConnectCard = require(`./${componentsDir}/ConnectCard`);
 const Details = require(`./${componentsDir}/Details`);
 const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
 const EventTable = require(`./${componentsDir}/EventTable`);
@@ -210,6 +211,7 @@ module.exports = function (config) {
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addPairedShortcode('Compare', Compare);
   config.addPairedShortcode('CompareCaption', CompareCaption);
+  config.addShortcode('ConnectCard', ConnectCard);
   config.addPairedShortcode('Details', Details);
   config.addPairedShortcode('DetailsSummary', DetailsSummary);
   config.addShortcode('Glitch', Glitch);
