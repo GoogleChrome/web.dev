@@ -30,7 +30,7 @@ of the resource by hundreds of milliseconds.
 flags pages that have multiple redirects:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="redirects.png" alt="">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uGOmnhqZoJnMoBgAiFJj.png", alt="", width="800", height="276", class="w-screenshot" %}
 </figure>
 
 A page fails this audit when it has two or more redirects.
@@ -45,6 +45,13 @@ required for your [Critical Rendering Path](https://developers.google.com/web/fu
 If you're using redirects to divert mobile users to the mobile version of your page,
 consider redesigning your site to use
 [Responsive Design](https://developers.google.com/web/fundamentals/design-and-ux/responsive/).
+
+## Stack-specific guidance
+
+### React
+
+If you are using React Router, minimize usage of the `<Redirect>` component for
+[route navigations](https://reacttraining.com/react-router/web/api/Redirect).
 
 ## Resources
 

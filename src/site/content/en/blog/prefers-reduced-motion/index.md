@@ -12,7 +12,7 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - media-queries
   - css
-hero: hero.jpg
+hero: image/admin/LI2vYKZwQ98w3MLtUF8V.jpg
 alt: Time-lapse of woman in a train
 feedback:
   - api
@@ -32,7 +32,7 @@ many moving targets, I fail to focus on anything, and end up lost and with a fee
 visual overload, almost like staring at an anthill 🐜.
 
 <figure>
-  <img src="ice-skating.jpg" width="580" height="320" alt="Throng of feet of ice skating people">
+  {% Img src="image/admin/JA5v1s8gSBk70eJBB8xW.jpg", alt="Throng of feet of ice skating people", width="580", height="320" %}
   <figcaption>Visual overload in real life.</figcaption>
 </figure>
 

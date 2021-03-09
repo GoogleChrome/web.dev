@@ -11,7 +11,7 @@ authors:
   - joemedley
 date: 2019-12-18
 updated: 2020-07-17
-hero: hero.jpg
+hero: image/admin/DF5rqLYGcuCpQZv1vXKS.jpg
 alt: Roadblock barricades
 tags:
   - blog

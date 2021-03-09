@@ -18,7 +18,7 @@ tags:
 In this codelab, improve the performance of the following application by
 removing any unused and unneeded dependencies.
 
-![App screenshot](./kitties.png)
+{% Img src="image/admin/A6WweLPrgyud8VNCP3Dc.png", alt="App screenshot", width="800", height="567" %}
 
 ## Measure
 
@@ -42,7 +42,7 @@ synchronized with every other person using the application. 🐈
 {% Instruction 'disable-cache', 'ol' %}
 {% Instruction 'reload-app', 'ol' %}
 
-<img class="w-screenshot" src="./main-bundle.png" alt="Original bundle size of 992 KB">
+{% Img src="image/admin/GnvBzXKQwy2az8Gyxl6D.png", alt="Original bundle size of 992 KB", width="800", height="169", class="w-screenshot" %}
 
 Almost 1 MB worth of JavaScript is being shipped to load this simple application!
 
@@ -52,11 +52,11 @@ Take a look at the project warnings in DevTools.
 - Make sure that `Warnings` is enabled in the levels dropdown next to the
   `Filter` input.
 
-<img class="screenshot" src="./warnings.png" alt="Warnings filter">
+{% Img src="image/admin/DMdUUxzxNMEGZ6HsTd3P.png", alt="Warnings filter", width="800", height="244", class="screenshot" %}
 
 - Take a look at the displayed warning.
 
-<img class="screenshot" src="./displayed-warning.png" alt="Console warning">
+{% Img src="image/admin/QGn9dHsaWNjTpMCwc0Rc.png", alt="Console warning", width="800", height="295", class="screenshot" %}
 
 Firebase, which is one of the libraries used in this application, is being a
 good samaritan by providing a warning to let developers know to not import its
@@ -125,7 +125,7 @@ module.exports = {
 When the application reloads, you should see a visualization of the entire
 bundle instead of the app itself.
 
-![Webpack Bundle Analyzer](./bundle-visualization.png)
+{% Img src="image/admin/QhYbNr23tGbcHwFZGKIQ.png", alt="Webpack Bundle Analyzer", width="800", height="468" %}
 
 Not as cute as seeing some kittens 🐱, but incredibly helpful nonetheless.
 Hovering over any of the packages shows its size represented in three
@@ -211,7 +211,7 @@ import 'firebase/database';
 Now when the app reloads, the DevTools warning does not show. Opening the
 DevTools **Network** panel also shows a _nice_ reduction in bundle size:
 
-<img class="screenshot" src="./reduced-main-bundle.png" alt="Bundle size reduced to 480 KB">
+{% Img src="image/admin/8agHvjw7351Yj8U1rIla.png", alt="Bundle size reduced to 480 KB", width="800", height="152", class="screenshot" %}
 
 More than half the bundle size was removed. Firebase provides many different
 services and gives developers the option to only include those that are actually
@@ -235,7 +235,7 @@ easily, but maybe it can be removed entirely?
 The birthday of each cute kitten is stored in **Unix** format (milliseconds) in
 the Firebase database.
 
-<img class="screenshot" src="./kitty-birthdays.png" alt="Birthdates stored in Unix format">
+{% Img src="image/admin/D1ufo1PdyzW3wFSu9sE1.png", alt="Birthdates stored in Unix format", width="560", height="236", class="screenshot" %}
 
 This is a timestamp of a particular date and time represented by the number of
 milliseconds that have elapsed since January 1, 1970 00:00 UTC. If the current
@@ -302,7 +302,7 @@ favoritesRef.on("value", (snapshot) => {
 
 Now reload the application and take a look at the **Network** panel once more.
 
-<img class="screenshot" src="./smallest-bundle.png" alt="Bundle size reduced to 225 KB">
+{% Img src="image/admin/ixTpGQBkJimzUmEFBMsR.png", alt="Bundle size reduced to 225 KB", width="800", height="154", class="screenshot" %}
 
 The size of our bundle was reduced by more than half again!
 

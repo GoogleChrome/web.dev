@@ -4,7 +4,7 @@ subhead: A game of proximity, inspired by minesweeper.
 authors:
   - kosamari
 date: 2019-05-09
-hero: hero.jpg
+hero: image/admin/cQAxElnaPyIPqlB9wkrb.jpg
 alt: a logo image of PROXX.
 description: |
   PROXX as a minesweeper-like game built as a PWA. It works on a vast variety

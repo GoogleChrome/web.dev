@@ -11,7 +11,7 @@ description: >
   The Keyboard Lock API allows websites to capture keys that are normally reserved by the underlying operating system. It is intended for web applications that provide a full screen immersive experience (like games or remote access apps).
 date: 2020-07-28
 # updated:
-hero: hero.jpg
+hero: image/admin/UypqCqH1QwndHuE6xFfg.jpg
 feedback:
   - api
 ---

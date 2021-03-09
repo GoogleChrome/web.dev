@@ -136,7 +136,7 @@ Fortunately, you can do this in your browser developer tools. In Chrome, for
 instance, it's in the [Network
 panel](https://developers.google.com/web/tools/chrome-devtools/?utm_source=devtools#network).
 Look for the `Accept-Ranges` header is and verify that it says `bytes`. In a the
-image, I've drawn a red box  around this header. If you do not see `butes` as
+image, I've drawn a red box  around this header. If you do not see `bytes` as
 the value, you'll need to contact your hosting provider.
 
 <figure class="w-figure">

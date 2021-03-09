@@ -14,7 +14,7 @@ the time that it takes for a user's browser
 to receive the first byte of page content:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="time-to-first-byte.png" alt="A screenshot of the Lighthouse Server response times are low (TTFB) audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V0P3MeqXSwGIL7fJbBRj.png", alt="A screenshot of the Lighthouse Server response times are low (TTFB) audit", width="800", height="95", class="w-screenshot" %}
 </figure>
 
 ## Slow server response times affect performance
@@ -44,6 +44,34 @@ There are many possible causes of slow server responses, and therefore many poss
 - Optimize the server's application logic to prepare pages faster. If you use a server framework, the framework may have recommendations on how to do this.
 - Optimize how your server queries databases, or migrate to faster database systems.
 - Upgrade your server hardware to have more memory or CPU.
+
+## Stack-specific guidance
+
+### Drupal
+
+Themes, modules, and server specifications all contribute to server response
+time. Consider finding a more optimized theme, carefully selecting an
+optimization module, or upgrading your server. Your hosting servers should make
+use of PHP opcode caching, memory caching systems like memcached or Redis to
+reduce database query times, as well as optimized application logic to prepare
+pages faster.
+
+### Magento
+
+Use Magento's [Varnish integration](https://devdocs.magento.com/guides/v2.3/config-guide/varnish/config-varnish.html).
+
+### React
+
+If you are server-side rendering any React components, consider using
+[`renderToNodeStream()`](https://reactjs.org/docs/react-dom-server.html#rendertonodestream)
+or `renderToStaticNodeStream()` to allow the client to receive and hydrate
+different parts of the markup instead of all at once.
+
+### WordPress
+
+Themes, plugins, and server specifications all contribute to server response
+time. Consider finding a more optimized theme, carefully selecting an
+optimization plugin, and/or upgrading your server.
 
 ## Resources
 

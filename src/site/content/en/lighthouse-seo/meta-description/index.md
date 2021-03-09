@@ -20,7 +20,7 @@ traffic.
 without a meta description:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot" src="meta-description.png" alt="Lighthouse audit showing the document doesn't have a meta description">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="Lighthouse audit showing the document doesn't have a meta description", width="800", height="74", class="w-screenshot w-screenshot" %}
 </figure>
 
 The audit fails if:

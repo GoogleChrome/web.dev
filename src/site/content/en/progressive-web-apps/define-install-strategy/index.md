@@ -158,9 +158,9 @@ Finally, create your own logic to map this information to device categories, and
 
 ```javascript
 if (isDeviceMidOrLowEnd()) {
-   // show “Lite app” install banner or PWA A2HS prompt
+   // show "Lite app" install banner or PWA A2HS prompt
 } else {
-  // show “Core app” install banner
+  // show "Core app" install banner
 }
 ```
 

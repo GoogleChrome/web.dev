@@ -5,7 +5,7 @@ authors:
   - agektmr
 date: 2020-09-01
 updated: 2020-09-24
-hero: hero.jpg
+hero: image/admin/IOO23TBT2cCBNmsm9HKf.jpg
 alt: Neon lights shaped into various symbols that are commonly used in passwords.
 description: |
   By redirecting requests to /.well-known/change-password to the change password URL, you can let users update their passwords easier than before.

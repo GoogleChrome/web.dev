@@ -5,9 +5,9 @@ subhead: >
 authors:
   - maudn
   - samdutton
-hero: hero.jpg
+hero: image/admin/wRrDtHNikUNqgdDewvYG.jpg
 date: 2020-10-06
-updated: 2020-10-06
+updated: 2020-02-10
 tags:
   - blog
   - privacy
@@ -84,7 +84,7 @@ address in a privacy-preserving way the use cases that third-party cookies solve
 - [Trust Tokens](/trust-tokens/) help combat fraud and distinguish bots from humans.
 
 <figure class="w-figure">
-  <img src="./all-apis.jpg" alt="Overview of some privacy sandbox APIs: trust tokens and conversion measurement (aggregate and event)">
+  {% Img src="image/admin/vs7VtXlG4d6wHjZ1Tmwi.jpg", alt="Overview of some privacy sandbox APIs: trust tokens and conversion measurement (aggregate and event)", width="800", height="254" %}
 </figure>
 
 **How does the Event Conversion Measurement API compare to third-party cookies?**
@@ -111,7 +111,7 @@ proposal](https://github.com/WICG/conversion-measurement-api#privacy-considerati
 ### How it works
 
 <figure class="w-figure">
-  <img src="./diagram-overview.jpg" alt="Diagram: overview of the conversion measurement API steps">
+  {% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="Diagram: overview of the conversion measurement API steps", width="800", height="496" %}
 </figure>
 
 This API can be used with two types of links (`<a>` elements) used for advertising:
@@ -154,10 +154,9 @@ timing](#report-timing)).
 
 The Event Conversion Measurement API can be supported:
 
-- As an [origin trial](/origin-trials/), from Chrome 86 beta and Chrome 87 (stable from mid-November
-  2020), to Chrome 88 (February 2021). Origin trials enable the API for **all visitors** of a given
+- As an [origin trial](/origin-trials/). Origin trials enable the API for **all visitors** of a given
   [origin](/same-site-same-origin/#origin). **You need to register your origin for the origin trial
-  in order to try the API with end users**.
+  in order to try the API with end users**. See [Using the conversion measurement API](/using-conversion-measurement) for details about the origin trial.
 - By turning on flags, in Chrome 86 and later. Flags enable the API on a **single user**'s browser.
   **Flags are useful when developing locally**.
 
@@ -200,7 +199,7 @@ How much can `adtech.example` learn about web users?
 #### With third-party cookies
 
 <figure class="w-figure">
-  <img src="./with-cookies.jpg" alt="Diagram: how third-party cookies enable cross-site user recognition">
+  {% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="Diagram: how third-party cookies enable cross-site user recognition", width="800", height="860" %}
 </figure>
 
 `adtech.example` relies on a **a third-party cookie used as a unique cross-site identifier** to
@@ -216,12 +215,8 @@ just `news.example` and `shoes.example`—a user's behavior can be tracked acros
 #### With the Event Conversion Measurement API
 
 <figure class="w-figure">
-  <img src="./with-api.jpg" alt="Diagram: how the API enables conversion measurement without cross-site user recognition">
-    <figcaption class="w-figcaption">
-    "Ad ID" on the cookies diagram and "Click ID" are both identifiers that enable mapping
-    to detailed data. On this diagram, it's called "Click ID" because only click-through conversion
-    measurement is supported.
-  </figcaption>
+  {% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="Diagram: how the API enables conversion measurement without cross-site user recognition", width="800", height="643" %}
+  <figcaption class="w-figcaption">"Ad ID" on the cookies diagram and "Click ID" are both identifiers that enable mapping to detailed data. On this diagram, it's called "Click ID" because only click-through conversion measurement is supported.</figcaption>
 </figure>
 
 `adtech.example` can't use a cross-site identifier and hence **can't recognize a user across
@@ -350,7 +345,7 @@ In Chrome, report scheduling works as follows:
       <tr>
         <td><code>impressionexpiry</code> is under 2 days</td>
         <td>
-            2 days after ad click
+          <li>2 days after ad click</li>
         </td>
         <td>1</td>
       </tr>
@@ -359,7 +354,7 @@ In Chrome, report scheduling works as follows:
 </div>
 
 <figure class="w-figure">
-  <img src="./report-timing.jpg" alt="Chronology of what reports are sent when">
+  {% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="Chronology of what reports are sent when", width="800", height="462" %}
 </figure>
 
 See [Sending Scheduled
@@ -379,7 +374,7 @@ would work with the current API. Future iterations of this API [may be different
 ### Ad click (steps 1 to 5)
 
 <figure class="w-figure">
-  <img src="./steps-1.jpg" alt="Diagram: ad click and click storage">
+  {% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="Diagram: ad click and click storage", width="800", height="694" %}
 </figure>
 
 An `<a>` ad element is loaded on a publisher site by `adtech.example` within an iframe.
@@ -390,7 +385,7 @@ attributes:
 ```html
 <a
   id="ad"
-  impressiondata="776f09351f5809c5"
+  impressiondata="200400600"
   conversiondestination="https://advertiser.example"
   reportingorigin="https://adtech.example"
   impressionexpiry="864000000"
@@ -416,14 +411,15 @@ This code specifies the following:
       <tr>
         <td><code>impressiondata</code> (required): a <b>64-bit</b> identifier to attach to an ad click.</td>
         <td>(no default)</td>
-        <td>A dynamically generated click ID  such as a hex-encoded 64-bit integer:
-          <code>776f09351f5809c5</code>
+        <td>A dynamically generated click ID  such as a 64-bit integer:
+          <code>200400600</code>
         </td>
       </tr>
       <tr>
-        <td><code>conversiondestination</code> (required): the <b>origin</b> where a conversion is expected for this ad.</td>
+        <td><code>conversiondestination</code> (required): the <b><a href="https://web.dev/same-site-same-origin/#site" noopener>eTLD+1</a></b> where a conversion is expected for this ad.</td>
         <td>(no default)</td>
-        <td><code>https://advertiser.example</code></td>
+        <td><code>https://advertiser.example</code>.<br/>If the <code>conversiondestination</code> is <code>https://advertiser.example</code>, conversions on both <code>https://advertiser.example</code> and <code>https://shop.advertiser.example</code> will be attributed.<br/>The same happens if the <code>conversiondestination</code> is <code>https://shop.advertiser.example</code>: conversions on both <code>https://advertiser.example</code> and <code>https://shop.advertiser.example</code> will be attributed.
+        </td>
       </tr>
       <tr>
         <td><code>impressionexpiry</code> (optional): in milliseconds, the cutoff time for when conversions can be attributed to this ad.</td>
@@ -453,9 +449,9 @@ Some notes about the example:
 
 - You will find the term "impression" used in the attributes of the API or in the API proposal, even
   though only clicks are supported for now. Names may be updated in future iterations of the API.
-- The conversion destination is an [origin](/same-site-same-origin/#origin). This may change in the
-  future to specify just an [eTLD+1](/same-site-same-origin/#site).
-- The ad doesn't have to be in an iframe, but this is what this example is based on. {% endAside %}
+- The ad doesn't have to be in an iframe, but this is what this example is based on.
+
+{% endAside %}
 
 {% Aside 'gotchas' %}
 
@@ -470,20 +466,17 @@ committed, the browser stores an object that includes `impressiondata`, `convers
 
 ```json
 {
-  "impression-data": "776f09351f5809c5",
+  "impression-data": "200400600",
   "conversion-destination": "https://advertiser.example",
   "reporting-origin": "https://adtech.example",
   "impression-expiry": 864000000
 }
 ```
 
-{% Aside %} In the demo and in this example, the 64-bit impression data (click ID) is encoded as a
-hexadecimal string. {% endAside %}
-
 ### Conversion and report scheduling (steps 6 to 9)
 
 <figure class="w-figure">
-  <img src="./steps-2.jpg" alt="Diagram: conversion and report scheduling">
+  {% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="Diagram: conversion and report scheduling", width="800", height="639" %}
 </figure>
 
 Either directly after clicking the ad, or later on—for example, on the next day—the user visits
@@ -548,14 +541,14 @@ the two-day-after-click mark if the browser is running.
 ### Sending the report (steps 10 and 11)
 
 <figure class="w-figure">
-  <img src="./steps-3.jpg" alt="Diagram: browser sending the report">
+  {% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="Diagram: browser sending the report", width="800", height="533" %}
 </figure>
 
 Once the scheduled time to send the report is reached, the browser sends the **conversion report**:
 it sends an HTTP POST to the reporting origin that was specified in the `<a>` element
 (`adtech.example`). For example:
 
-`https://adtech.example/.well-known/register-conversion?impression-data=776f09351f5809c5&conversion-data=2&credit=100`
+`https://adtech.example/.well-known/register-conversion?impression-data=200400600&conversion-data=2&credit=100`
 
 Included as parameters are:
 
@@ -569,7 +562,7 @@ As the adtech server receives this request, it can pull the `impression-data` an
 from it, i.e. the conversion report:
 
 ```json
-{"impression-data": "776f09351f5809c5", "conversion-data": 3, "credit": 100}
+{"impression-data": "200400600", "conversion-data": 3, "credit": 100}
 ```
 
 ### Subsequent conversions and expiry
@@ -627,8 +620,6 @@ it](#share-your-feedback). {% endAside %}
 - API and attribute naming may evolve.
 - Click data and conversion data may not require encoding.
 - The 3-bit limit for conversion data may be increased or decreased.
-- The conversion destination may become an eTLD+1; right now, it's an
-  [origin](/same-site-same-origin/#origin).
 - [More features may be added](#what-is-not-supported-yet), and **more privacy protections** (noise / fewer bits /
   other limitations) if needed to support these new features.
 

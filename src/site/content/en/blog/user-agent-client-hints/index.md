@@ -8,9 +8,9 @@ authors:
   - rowan_m
   - yoavweiss
 date: 2020-06-25
-updated: 2020-08-20
-hero: uach-hero.jpg
-thumbnail: uach-thumbnail.jpg
+updated: 2021-02-12
+hero: image/admin/xlg4t3uiTp0L5TBThFHQ.jpg
+thumbnail: image/admin/hgxRNa56Vb9o3QRwIrm9.jpg
 alt: A variety of different footprints in the snow. A hint at who's been there.
 tags:
   - blog
@@ -22,13 +22,25 @@ feedback:
 
 {% YouTube 'f0YY0o2OAKA' %}
 
-Client Hints enable developers to actively request
-information about the user's device or conditions, rather than needing to parse
-it out of the User-Agent (UA) string. Providing this alternative route is the
-first step to eventually reducing User-Agent string granularity.
+Client Hints enable developers to actively request information about the user's
+device or conditions, rather than needing to parse it out of the User-Agent (UA)
+string. Providing this alternative route is the first step to eventually
+reducing User-Agent string granularity.
 
 Learn how to update your existing functionality that relies on parsing the
 User-Agent string to make use of User-Agent Client Hints instead.
+
+{% Banner 'caution', 'body' %}
+If you are already using User-Agent Client Hints, pay attention to the upcoming
+changes. The header format is changing so the `Accept-CH` tokens exactly match
+the returned headers. Previously a site could have sent `Accept-CH: UA-Platform`
+to receive the `Sec-CH-UA-Platform` header and now that site should send
+`Accept-CH: Sec-CH-UA-Platform`. If you've already implemented User-Agent Client
+Hints, send both formats until the change has fully rolled out in stable
+Chromium. See [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH
+tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ)
+for updates.
+{% endBanner %}
 
 ## Background
 
@@ -131,35 +143,34 @@ The server can choose to vary its responses, for example by serving images at an
 appropriate resolution.
 
 {% Aside %}
-  There are ongoing discussions on enabling Client Hints on an initial request,
-  but you should be considering [responsive
-  design](/responsive-web-design-basics) or progressive enhancement before going
-  down this route.
+There are ongoing discussions on enabling Client Hints on an initial request,
+but you should consider [responsive design](/responsive-web-design-basics) or
+progressive enhancement before going down this route.
 {% endAside %}
 
-User-Agent Client Hints expand the range of properties that can be specified via
-the `Accept-CH` server response header. When the browser returns information it
-will use the `Sec-CH-UA` prefix. For all the details, start with [the
+User-Agent Client Hints expand the range of properties with the `Sec-CH-UA`
+prefix that can be specified via the `Accept-CH` server response header. For all
+the details, start with [the
 explainer](https://github.com/WICG/ua-client-hints/blob/master/README.md) and
 then dive into the [full proposal](https://wicg.github.io/ua-client-hints/).
 
 {% Aside %}
-  Client Hints are **only sent over secure connections**, so make sure you have
-  [migrated your site to HTTPS](https://web.dev/why-https-matters/).
+Client Hints are **only sent over secure connections**, so make sure you have
+[migrated your site to HTTPS](/why-https-matters).
 {% endAside %}
 
-The new set of hints is available from Chromium 84, so let's explore how it
-all works.
+The new set of hints is available from Chromium 84, so let's explore how it all
+works.
 
-## User-Agent Client Hints in Chromium 84
+## User-Agent Client Hints from Chromium 84
 
 User-Agent Client Hints will only be enabled gradually on Chrome Stable as
 [compatibility
 concerns](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285) are
-resolved. To force the functionality on for testing, ensure you:
+resolved. To force the functionality on for testing:
 
-  * are on Chrome 84 **beta** or equivalent
-  * enable the `chrome://flags/#enable-experimental-web-platform-features` flag
+- Use Chrome 84 **beta** or equivalent.
+- Enable the `chrome://flags/#enable-experimental-web-platform-features` flag.
 
 By default, the browser returns the browser brand, significant / major version,
 and an indicator if the client is a mobile device:
@@ -172,38 +183,37 @@ Sec-CH-UA-Mobile: ?0
 ```
 
 {% Aside 'caution' %}
-  These properties are more complex than just a single value, so [Structured
-  Headers](https://httpwg.org/http-extensions/draft-ietf-httpbis-header-structure.html)
-  are used for representing lists and booleans.
+These properties are more complex than just a single value, so [Structured
+Headers](https://httpwg.org/http-extensions/draft-ietf-httpbis-header-structure.html)
+are used for representing lists and booleans.
 {% endAside %}
 
 ### User-Agent response and request headers
 
 <style>
-.w-table-wrapper th:nth-of-type(4) {
+.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
     width: 28ch;
 }
 
 .w-table-wrapper td {
-  font-size: 88%;
   padding: 4px 8px 4px 0;
 }
 </style>
 
-| ⬇️ Response<br>`Accept-CH` | ⬆️ Request<br>header         | ⬆️ Request<br>Example value                      | <br>Description                                                                                                                                                              |
-| -------------------------- | ---------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `UA`                       | `Sec-CH-UA`                  | `"Chromium";v="84",`<br>`"Google Chrome";v="84"` | List of browser brands and their significant version.                                                                                                                        |
-| `UA-Mobile`                | `Sec-CH-UA-Mobile`           | `?1`                                             | Boolean indicating if the browser is on a mobile device (`?1` for true) or not (`?0` for false).                                                                             |
-| `UA-Full-Version`          | `Sec-CH-UA-Full-Version`     | `"84.0.4143.2"`                                  | The complete version for the browser.                                                                                                                                        |
-| `UA-Platform`              | `Sec-CH-UA-Platform`         | `"Android"`                                      | The platform for the device, usually the operating system (OS).                                                                                                              |
-| `UA-Platform-Version`      | `Sec-CH-UA-Platform-Version` | `"10"`                                           | The version for the platform or OS.                                                                                                                                          |
-| `UA-Arch`                  | `Sec-CH-UA-Arch`             | `"ARM64"`                                        | The underlying architecture for the device. While this may not be relevant to displaying the page, the site may want to offer a download which defaults to the right format. |
-| `UA-Model`                 | `Sec-CH-UA-Model`            | `"Pixel 3"`                                      | The device model.                                                                                                                                                            |
+| ⬇️ Response `Accept-CH`<br>⬆️ Request header | ⬆️ Request<br>Example value                         | Description                                                                                                                                                                  |
+| ------------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Sec-CH-UA`                                 | `"Chromium";v="84",`<br>`"Google Chrome";v="84"` | List of browser brands and their significant version.                                                                                                                        |
+| `Sec-CH-UA-Mobile`                          | `?1`                                             | Boolean indicating if the browser is on a mobile device (`?1` for true) or not (`?0` for false).                                                                             |
+| `Sec-CH-UA-Full-Version`                    | `"84.0.4143.2"`                                  | The complete version for the browser.                                                                                                                                        |
+| `Sec-CH-UA-Platform`                        | `"Android"`                                      | The platform for the device, usually the operating system (OS).                                                                                                              |
+| `Sec-CH-UA-Platform-Version`                | `"10"`                                           | The version for the platform or OS.                                                                                                                                          |
+| `Sec-CH-UA-Arch`                            | `"arm"`                                        | The underlying architecture for the device. While this may not be relevant to displaying the page, the site may want to offer a download which defaults to the right format. |
+| `Sec-CH-UA-Model`                           | `"Pixel 3"`                                      | The device model.                                                                                                                                                            |
 
 {% Aside 'gotchas' %}
-  Privacy and compatibility considerations mean the value may be blank, not
-  returned, or populated with a varying value. This is referred to as
-  [GREASE](https://wicg.github.io/ua-client-hints/#grease).
+Privacy and compatibility considerations mean the value may be blank, not
+returned, or populated with a varying value. This is referred to as
+[GREASE](https://wicg.github.io/ua-client-hints/#grease).
 {% endAside %}
 
 ### Example exchange
@@ -226,7 +236,7 @@ asks for the full browser version and the platform.
 
 ```text
 HTTP/1.1 200 OK
-Accept-CH: UA-Full-Version, UA-Platform
+Accept-CH: Sec-CH-UA-Full-Version, Sec-CH-UA-Platform
 ```
 
 ⬆️ _Subsequent requests_<br> The browser grants the server access to the
@@ -303,15 +313,9 @@ navigator
 You can try out both the headers and the JavaScript API on your own device at
 [user-agent-client-hints.glitch.me](https://user-agent-client-hints.glitch.me).
 
-{% Glitch {
-  id: 'user-agent-client-hints',
-  path: 'README.md',
-  height: 600
-} %}
-
 {% Aside %}
-  Ensure you're using Chrome 84 Beta or equivalent with
-  `chrome://flags/#enable-experimental-web-platform-features` enabled.
+Ensure you're using Chrome 84 Beta or equivalent with
+`chrome://flags/#enable-experimental-web-platform-features` enabled.
 {% endAside %}
 
 ### Hint life-time and resetting
@@ -324,7 +328,7 @@ That means if the server sends:
 ⬇️ _Response_
 
 ```text
-Accept-CH: UA-Full-Version
+Accept-CH: Sec-CH-UA-Full-Version
 ```
 
 Then the browser will send the `Sec-CH-UA-Full-Version` header on all requests
@@ -342,7 +346,7 @@ replace** the current hints the browser is sending.
 ⬇️ _Response_
 
 ```text
-Accept-CH: UA-Platform
+Accept-CH: Sec-CH-UA-Platform
 ```
 
 ⬆️ _Subsequent requests_
@@ -359,9 +363,9 @@ for all the subresources on that page. While hints will persist to the next
 navigation, the site should not rely or assume they will be delivered.
 
 {% Aside 'success' %}
-  Always ensure you can still deliver a meaningful experience without this
-  information. This is to enhance the user experience, not define it. That's why
-  they're called "hints" and not "answers" or "requirements"!
+Always ensure you can still deliver a meaningful experience without this
+information. This is to enhance the user experience, not define it. That's why
+they're called "hints" and not "answers" or "requirements"!
 {% endAside%}
 
 You can also use this to effectively clear all hints being sent by the browser
@@ -380,15 +384,15 @@ want to optimize are on `https://downloads.example.com` they **will not**
 receive any hints.
 
 To allow hints on cross-origin requests each hint and origin must be specified
-by a `Feature-Policy` header. This specifies each hint (prefixed with `ch-`) and
-the allowlist of origins that should receive the hint. For example:
+by a `Feature-Policy` header. To apply this to a User-Agent Client Hint, you
+need to lowercase the hint and remove the `sec-` prefix. For example:
 
 ⬇️ _Response from `example.com`_
 
 ```text
-Accept-CH: UA-Platform, DPR
-Feature-Policy: ch-UA-Platform downloads.example.com;
-                ch-DPR cdn.provider img.example.com
+Accept-CH: Sec-CH-UA-Platform, DPR
+Feature-Policy: ch-ua-platform downloads.example.com;
+                ch-dpr cdn.provider img.example.com
 ```
 
 ⬆️ _Request to `downloads.example.com`_

@@ -1,5 +1,5 @@
 ---
-layout: layout
+layout: default
 title: Offline
 description: |
   Network Offline

@@ -87,7 +87,7 @@ Once the web app has a location to work with, clicking **Find Nearby
 Wikipedia Entries** results in several additional network requests. You
 should see something like this:
 
-![image](./network-requests.png)
+{% Img src="image/admin/Y9EAf75LBCkkpXyatG3f.png", alt="image", width="800", height="567" %}
 
 ## Interpret the new entries
 

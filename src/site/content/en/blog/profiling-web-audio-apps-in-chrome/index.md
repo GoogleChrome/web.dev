@@ -14,7 +14,7 @@ tags:
   - memory
 authors:
   - hongchanchoi
-hero: hero.jpg
+hero: image/admin/uXHdcVy0A8BFAdNr8bXu.jpg
 alt: Artistic image of microphone and pop filter
 ---
 

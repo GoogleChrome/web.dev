@@ -16,7 +16,7 @@ by inlining critical resources, deferring non-critical resources,
 and removing anything unused.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="blocking-resources.png" alt="A screenshot of the Lighthouse Eliminate render-blocking resources audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8xAmOUQsM8sfEAgzLBis.png", alt="A screenshot of the Lighthouse Eliminate render-blocking resources audit", width="800", height="271", class="w-screenshot" %}
 </figure>
 
 
@@ -47,7 +47,7 @@ When you load or run a page, the tab tells you how much code was used,
 versus how much was loaded:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="coverage.png" alt="Chrome DevTools: Coverage tab">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y2Yc8DMcBYMknz5y0Are.png", alt="Chrome DevTools: Coverage tab", width="800", height="407", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     Chrome DevTools: Coverage tab.
   </figcaption>
@@ -94,6 +94,33 @@ the browser only blocks the first paint to retrieve the stylesheets that match t
 Finally, you'll want to minify your CSS to remove any extra whitespace or
 characters (see [Minify CSS](/minify-css)).
 This ensures that you're sending the smallest possible bundle to your users.
+
+## Stack-specific guidance
+
+### AMP
+
+Use tools such as [AMP Optimizer](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer)
+to [server-side render AMP layouts](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/server-side-rendering/).
+
+### Drupal
+
+Consider using a module to inline critical CSS and JavaScript, or potentially
+load assets asynchronously via JavaScript such as the [Advanced CSS/JS
+Aggregation](https://www.drupal.org/project/advagg) module.
+
+### Joomla
+
+There are a number of Joomla plugins that can help you [inline critical
+assets](https://extensions.joomla.org/instant-search/?jed_live%5Bquery%5D=performance)
+or [defer less important
+resources](https://extensions.joomla.org/instant-search/?jed_live%5Bquery%5D=performance).
+
+### WordPress
+
+There are a number of WordPress plugins that can help you [inline critical
+assets](https://wordpress.org/plugins/search/critical+css/) or [defer less
+important
+resources](https://wordpress.org/plugins/search/defer+css+javascript/).
 
 ## Resources
 

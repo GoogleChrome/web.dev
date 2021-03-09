@@ -12,16 +12,17 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2020-11-10
+updated: 2021-02-25
 tags:
   - blog
   - capabilities
   - file
   - file-system
-hero: hero.jpg
+hero: image/admin/qn7E0q1EWJUqdzsuHwx4.jpg
 alt: Image of hard disk platters
 feedback:
   - api
+stack_overflow_tag: native-file-system-api-js
 ---
 
 ## What is the File System Access API? {: #what-is-it }
@@ -116,12 +117,22 @@ needed to save changes back to the file, or to perform any other file operations
 Now that you have a handle to a file, you can get the file's properties, or access the file itself.
 For now, I'll simply read its contents. Calling `handle.getFile()` returns a
 [`File`][file-api-spec] object, which contains a blob. To get the data from the blob, call one of
-[its methods][blob-methods] (`slice()`, `stream()`, `text()`, `arrayBuffer()`).
+[its methods][blob-methods],
+([`slice()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/slice),
+[`stream()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/stream),
+[`text()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/text), or
+[`arrayBuffer()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer)).
 
 ```js
 const file = await fileHandle.getFile();
 const contents = await file.text();
 ```
+
+{% Aside %}
+  For the majority of use cases, you can read files in _sequential_ order with the
+  `stream()`, `text()`, or `arrayBuffer()` methods.
+  For getting _random access_ to a file's contents, use the `slice()` method.
+{% endAside %}
 
 The `File` object returned by `FileSystemFileHandle.getFile()` is only readable as long as the
 underlying file on disk hasn't changed. If the file on disk is modified, the `File` object becomes
@@ -223,19 +234,71 @@ file at a specific position, or resize the file.
   calling `close()` or when the stream is automatically closed by the pipe.
 {% endAside %}
 
-### Storing file handles in IndexedDB
+### Storing file handles or directory handles in IndexedDB
 
-File handles are serializable, which means that you can save a file handle to IndexedDB, or call
-`postMessage()` to send them between the same top-level origin.
+File handles and directory handles are serializable, which means that you can save a file or
+directory handle to IndexedDB, or call `postMessage()` to send them between the same top-level origin.
 
-Saving file handles to IndexedDB means that you can store state, or remember which files a user was
+Saving file or directory handles to IndexedDB means that you can store state, or remember which files
+or directories a user was
 working on. This makes it possible to keep a list of recently opened or edited files, offer to
-re-open the last file when the app is opened, etc. In the text editor, I store a list of the five
+re-open the last file when the app is opened, restore the previous working directory, and more.
+In the text editor, I store a list of the five
 most recent files the user has opened, making it easy to access those files again.
 
+The code example below shows storing and retrieving a file handle and a directory handle.
+You can [see this in action](https://filehandle-directoryhandle-indexeddb.glitch.me/) over on Glitch
+(I use the [idb-keyval](https://www.npmjs.com/package/idb-keyval) library for brevity).
+
+```js
+import { get, set } from "https://unpkg.com/idb-keyval@5.0.2/dist/esm/index.js";
+
+const pre1 = document.querySelector("pre.file");
+const pre2 = document.querySelector("pre.directory");
+const button1 = document.querySelector("button.file");
+const button2 = document.querySelector("button.directory");
+
+// File handle
+button1.addEventListener("click", async () => {
+  try {
+    const fileHandleOrUndefined = await get("file");
+    if (fileHandleOrUndefined) {
+      pre1.textContent = `Retrieved file handle "${fileHandleOrUndefined.name}" from IndexedDB.`;
+      return;
+    }
+    const [fileHandle] = await window.showOpenFilePicker();
+    await set("file", fileHandle);
+    pre1.textContent = `Stored file handle for "${fileHandle.name}" in IndexedDB.`;
+  } catch (error) {
+    alert(error.name, error.message);
+  }
+});
+
+// Directory handle
+button2.addEventListener("click", async () => {
+  try {
+    const directoryHandleOrUndefined = await get("directory");
+    if (directoryHandleOrUndefined) {
+      pre2.textContent = `Retrieved directroy handle "${directoryHandleOrUndefined.name}" from IndexedDB.`;
+      return;
+    }
+    const directoryHandle = await window.showDirectoryPicker();
+    await set("directory", directoryHandle);
+    pre2.textContent = `Stored directory handle for "${directoryHandle.name}" in IndexedDB.`;
+  } catch (error) {
+    alert(error.name, error.message);
+  }
+});
+```
+
+### Stored file or directory handles and permissions
+
 Since permissions currently are not persisted between sessions, you should verify whether the user
-has granted permission to the file using `queryPermission()`. If they haven't, use
+has granted permission to the file or directory using `queryPermission()`. If they haven't, use
 `requestPermission()` to (re-)request it.
+This works the same for file and directory handles. You need to run
+`fileOrDirectoryHandle.requestPermission(descriptor)` or
+`fileOrDirectoryHandle.queryPermission(descriptor)` respectively.
 
 In the text editor, I created a `verifyPermission()` method that checks if the user has already
 granted permission, and if required, makes the request.
@@ -362,19 +425,19 @@ elem.addEventListener('drop', async (e) => {
 });
 ```
 
-### Accessing the origin-private file system
+### Accessing the origin private file system
 
-The origin-private file system is a storage endpoint that, as the name suggests, is private to the
+The origin private file system is a storage endpoint that, as the name suggests, is private to the
 origin of the page. While browsers will typically implement this by persisting the contents of this
-origin-private file system to disk somewhere, it is _not_ intended that the contents be easily user
+origin private file system to disk somewhere, it is _not_ intended that the contents be easily user
 accessible. Similarly, there is _no_ expectation that files or directories with names matching the
-names of children of the origin-private file system exist.
+names of children of the origin private file system exist.
 While the browser might make it seem that there are files, internally—since this is an
-origin-private file system—the browser might store these "files" in a database or any
+origin private file system—the browser might store these "files" in a database or any
 other data structure.
 Essentially: what you create with this API, do _not_ expect to find it 1:1 somewhere on the hard disk.
 You can operate as usual on the
-origin-private file system once you have access to the root `FileSystemDirectoryHandle`.
+origin private file system once you have access to the root `FileSystemDirectoryHandle`.
 
 ```js
 const root = await navigator.storage.getDirectory();
@@ -396,7 +459,7 @@ It is not possible to completely polyfill the File System Access API methods.
 - The `showDirectoryPicker()` method can be somewhat emulated with the non-standard
   `<input type="file" webkitdirectory>` element.
 
-We have developed a library called [browser-nativefs](/browser-nativefs/) that uses the File
+We have developed a library called [browser-fs-access](/browser-fs-access/) that uses the File
 System Access API wherever possible and that falls back to these next best options in all other cases.
 
 ## Security and permissions {: #security-considerations }
@@ -531,9 +594,10 @@ Did you find a bug with Chrome's implementation? Or is the implementation differ
 Planning to use the File System Access API on your site? Your public support helps us to prioritize
 features, and shows other browser vendors how critical it is to support them.
 
-- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
-- Send a Tweet to [@ChromiumDev][cr-dev-twitter] with `#filesystemaccess` and let us know where and how
-  you're using it.
+- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
+- Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+  [`#FileSystemAccess`](https://twitter.com/search?q=%23FileSystemAccess&src=typed_query&f=live)
+  and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 

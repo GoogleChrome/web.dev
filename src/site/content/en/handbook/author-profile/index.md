@@ -37,7 +37,7 @@ description: |
     ```
 
     <figure class="w-figure">
-      <img class="w-screenshot" src="./lockup.png" alt="Screenshot of an author lockup">
+      {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wwUATUCfC4NdWk61UmrV.png", alt="Screenshot of an author lockup", width="267", height="95", class="w-screenshot" %}
     </figure>
 
 1. You can also add supplemental info, but it's not currently displayed on web.dev.

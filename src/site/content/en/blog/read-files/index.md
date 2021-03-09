@@ -159,7 +159,7 @@ under development and only available as an origin trial in Chrome. To learn
 more about it, see the [File System Access API][file-system-access] article.
 
 Since the File System Access API is not compatible with all browsers yet,
-check out [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs),
+check out [browser-fs-access](https://github.com/GoogleChromeLabs/browser-fs-access),
 a helper library that uses the new API wherever it is available, but falls
 back to legacy approaches when it is not.
 

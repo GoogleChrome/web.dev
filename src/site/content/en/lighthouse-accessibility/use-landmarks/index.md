@@ -48,8 +48,7 @@ You can also use tools like Microsoft's
 to visualize your page structure and catch sections that aren't contained in landmarks:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="landmark-highlights.png"
-    alt="Screenshot of web.dev with landmarks highlighted by the Accessibility Insights extension">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EUH3Yz64EbuAI0GKQoWa.png", alt="Screenshot of web.dev with landmarks highlighted by the Accessibility Insights extension", width="800", height="534", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 ## How to use landmarks effectively

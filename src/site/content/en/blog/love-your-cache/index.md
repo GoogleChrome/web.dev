@@ -10,7 +10,7 @@ description: |
 authors:
   - samthor
 date: 2020-12-11
-hero: hero.jpg
+hero: image/admin/VKYTBR0Ri5I7Jz7Ob2Fa.jpg
 alt: Overhead power line for a train with a number "2"
 tags:
   - blog
@@ -130,7 +130,7 @@ great coverage, but not for those folks who might be on slower mobile
 connections or using poor infrastructure.
 
 Regardless, this is a modern approach that
-[is the default on a popular CDN, Netlify](https://www.netlify.com/blog/2017/02/23/better-living-through-caching/https://www.netlify.com/blog/2017/02/23/better-living-through-caching/),
+[is the default on a popular CDN, Netlify](https://www.netlify.com/blog/2017/02/23/better-living-through-caching/),
 but can be configured on nearly any CDN. For Firebase Hosting, you can include
 this header
 [in the hosting section](https://firebase.google.com/docs/hosting/full-config#headers)

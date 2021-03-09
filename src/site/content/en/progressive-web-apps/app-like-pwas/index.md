@@ -243,7 +243,7 @@ Other storage mechanisms than files are referenced in the [offline content](#off
   How to do this on the web
 {% endDetailsSummary %}
   The <a href="https://web.dev/file-system-access/">File System Access API</a> enables developers to get access to the local file system
-  of the device. You can use it directly or via the <a href="https://github.com/GoogleChromeLabs/browser-nativefs">browser-nativefs</a>
+  of the device. You can use it directly or via the <a href="https://github.com/GoogleChromeLabs/browser-fs-access">browser-fs-access</a>
   support library that transparently provides a fallback for browsers that do not support the API.
   For security reasons, system directories are not web-accessible.
 {% endDetails %}
@@ -589,8 +589,8 @@ The table below shows a compact overview of all features and provides a list of 
           <ul>
             <li><a href="https://web.dev/file-system-access/">File System Access API</a></li>
             <li>
-              <a href="https://github.com/GoogleChromeLabs/browser-nativefs"
-                >browser-nativefs library</a
+              <a href="https://github.com/GoogleChromeLabs/browser-fs-access"
+                >browser-fs-access library</a
               >
             </li>
           </ul>

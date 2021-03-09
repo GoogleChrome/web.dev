@@ -29,7 +29,7 @@ Most browsers support passive event listeners. See
 flags event listeners that may delay page scrolling:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="uses-passive-event-listeners.png" alt="Lighthouse audit shows page doesn't use passive event listeners to improve scrolling performance">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a59Rk7aCUDvyKNqqoYRJ.png", alt="Lighthouse audit shows page doesn't use passive event listeners to improve scrolling performance", width="800", height="213", class="w-screenshot" %}
 </figure>
 
 Lighthouse uses the following process

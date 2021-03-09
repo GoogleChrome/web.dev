@@ -3,7 +3,6 @@ import {saveUserUrl} from './fb';
 import {runLighthouse, fetchReports} from './lighthouse-service';
 import lang from './utils/language';
 import {localStorage} from './utils/storage';
-import {getCanonicalPath} from './urls';
 import cookies from 'js-cookie';
 import {trackEvent} from './analytics';
 
@@ -191,35 +190,20 @@ export const setUserAcceptsCookies = store.action(() => {
   };
 });
 
-export const checkUserPreferredLanguage = store.action(
-  ({userPreferredLanguage}) => {
-    userPreferredLanguage =
-      // Use currently set language.
-      userPreferredLanguage ||
-      // Or check in the url.
-      lang.getLanguageFromPath(location.pathname) ||
-      // Or check in a cookie.
-      cookies.get('preferred_lang') ||
-      // Or check in the browser setting.
-      navigator.language.split('-')[0];
-    if (!lang.isValidLanguage(userPreferredLanguage)) {
-      userPreferredLanguage = '';
-    }
-    return {userPreferredLanguage};
-  },
-);
-
-export const setLanguage = store.action((state, preferredLanguage) => {
+export const setLanguage = store.action((state, language) => {
+  if (!lang.isValidLanguage(language)) {
+    return state;
+  }
   const options = {
     expires: 10 * 365, // 10 years
     samesite: 'strict',
   };
-  cookies.set('preferred_lang', preferredLanguage, options);
-  if (preferredLanguage !== state.userPreferredLanguage) {
-    location.pathname = getCanonicalPath(location.pathname);
+  cookies.set('firebase-language-override', language, options);
+  if (language !== state.currentLanguage) {
+    location.reload();
   }
   return {
-    userPreferredLanguage: preferredLanguage,
+    currentLanguage: language,
   };
 });
 

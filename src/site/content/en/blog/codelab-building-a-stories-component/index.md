@@ -7,7 +7,7 @@ description: |
   Learn how to build an experience similar to Instagram Stories on the web.
 date: 2020-11-25
 hero: hero.jpg
-thumbnail: thumb.jpg
+thumbnail: image/admin/0nRwu5FF7f5tHsgT9PgE.jpg
 glitch: gui-challenges-stories-codelab
 glitch_path: app/index.html
 related_post: building-a-stories-component
@@ -60,7 +60,7 @@ Add a `<div>` element to your `<body>`:
 Add some `<section>` elements to represent friends:
 
 ```html/1-4
-<div class="stories"> 
+<div class="stories">
   <section class="user"></section>
   <section class="user"></section>
   <section class="user"></section>
@@ -73,7 +73,7 @@ Add some `<article>` elements to represent stories:
 <!--
 
 Each friend has some pictures. We'll call each picture a `.story`.
-Next, let's dig into how and where we'll put pictures in this component. 
+Next, let's dig into how and where we'll put pictures in this component.
 
 ### Placeholder loading technique
 
@@ -87,9 +87,9 @@ layer with the loading placeholder.
 -->
 
 ```html/2-3,6,9,12-14
-<div class="stories"> 
+<div class="stories">
   <section class="user">
-    <article class="story" style="--bg: url(https://picsum.photos/480/840);"></article> 
+    <article class="story" style="--bg: url(https://picsum.photos/480/840);"></article>
     <article class="story" style="--bg: url(https://picsum.photos/480/841);"></article>
   </section>
   <section class="user">
@@ -125,15 +125,13 @@ We can achieve this by:
 * Making the width of each child the width of a mobile device viewport
 
 Grid will continue placing new `100vw`-wide columns to the right of the previous
-one, until it's placed all the HTML elements in your markup. 
+one, until it's placed all the HTML elements in your markup.
 
 <!-- TODO(kayce): Resize this screenshot so there's less whitespace -->
 
 <figure class="w-figure">
-  <img src="./horizontal-scroll-with-grid.png" alt="Chrome and DevTools open with a grid visual showing the full width layout">
-  <figcaption class="w-figcaption">
-    Chrome DevTools showing grid column overflow, making a horizontal scroller.
-  </figcaption>
+  {% Img src="image/admin/oLbxOrfO2rUqmxnnleXw.png", alt="Chrome and DevTools open with a grid visual showing the full width layout", width="800", height="465" %}
+  <figcaption class="w-figcaption">Chrome DevTools showing grid column overflow, making a horizontal scroller.</figcaption>
 </figure>
 
 Add the following CSS to the bottom of `app/css/index.css`:
@@ -239,7 +237,7 @@ Earlier we mentioned that the `style` attribute on each `<article>` element is p
 placeholder loading technique:
 
 ```html
-<article class="story" style="--bg: url(https://picsum.photos/480/840);"></article> 
+<article class="story" style="--bg: url(https://picsum.photos/480/840);"></article>
 ```
 
 We're going to use CSS's `background-image` property, which allows us to specify
@@ -256,8 +254,8 @@ once it's done loading. Add the highlighted code to your `.story` ruleset:
   grid-area: story;
 
   background-size: cover;
-  background-image: 
-    var(--bg), 
+  background-image:
+    var(--bg),
     linear-gradient(to top, lch(98 0 0), lch(90 0 0));
 }
 ```
@@ -272,7 +270,7 @@ enables us to pull a neat CSS web trick called the *loading tombstone*:
 
 CSS will automatically replace the gradient with the image, once the image is done downloading.
 
-Next we'll add some CSS to remove some behavior, freeing up the browser to move faster. 
+Next we'll add some CSS to remove some behavior, freeing up the browser to move faster.
 Add the highlighted code to your `.story` ruleset:
 
 ```css/8-9
@@ -280,8 +278,8 @@ Add the highlighted code to your `.story` ruleset:
   grid-area: story;
 
   background-size: cover;
-  background-image: 
-    var(--bg), 
+  background-image:
+    var(--bg),
     linear-gradient(to top, lch(98 0 0), lch(90 0 0));
 
   user-select: none;
@@ -302,8 +300,8 @@ highlighted code to your `.story` ruleset:
   grid-area: story;
 
   background-size: cover;
-  background-image: 
-    var(--bg), 
+  background-image:
+    var(--bg),
     linear-gradient(to top, lch(98 0 0), lch(90 0 0));
 
   user-select: none;
@@ -385,7 +383,7 @@ const state = {
 
 ### Listeners
 
-We have enough logic now to start listening for user events and directing them. 
+We have enough logic now to start listening for user events and directing them.
 
 #### Mouse
 
@@ -401,12 +399,12 @@ const state = {
 }
 
 stories.addEventListener('click', e => {
-  if (e.target.nodeName !== 'ARTICLE') 
+  if (e.target.nodeName !== 'ARTICLE')
     return
-  
+
   navigateStories(
-    e.clientX > median 
-      ? 'next' 
+    e.clientX > median
+      ? 'next'
       : 'prev')
 })
 ```
@@ -434,12 +432,12 @@ const state = {
 }
 
 stories.addEventListener('click', e => {
-  if (e.target.nodeName !== 'ARTICLE') 
+  if (e.target.nodeName !== 'ARTICLE')
     return
-  
+
   navigateStories(
-    e.clientX > median 
-      ? 'next' 
+    e.clientX > median
+      ? 'next'
       : 'prev')
 })
 
@@ -456,11 +454,11 @@ document.addEventListener('keydown', ({key}) => {
 
 Time to tackle the unique business logic of stories and the UX they've become
 famous for. This looks chunky and tricky, but I think if you take it line by
-line, you'll find it's quite digestible. 
+line, you'll find it's quite digestible.
 
 Upfront, we stash some selectors that help us decide whether to scroll to a
 friend or show/hide a story. Since the HTML is where we're working, we'll be
-querying it for presence of friends (users) or stories (story). 
+querying it for presence of friends (users) or stories (story).
 
 These variables will help us answer questions like, "given story x, does "next"
 mean move to another story from this same friend or to a different friend?" I did it by using the tree
@@ -474,7 +472,7 @@ const navigateStories = direction => {
   const lastItemInUserStory = story.parentNode.firstElementChild
   const firstItemInUserStory = story.parentNode.lastElementChild
   const hasNextUserStory = story.parentElement.nextElementSibling
-  const hasPrevUserStory = story.parentElement.previousElementSibling 
+  const hasPrevUserStory = story.parentElement.previousElementSibling
 }
 ```
 
@@ -495,7 +493,7 @@ const navigateStories = direction => {
   const firstItemInUserStory = story.parentNode.lastElementChild
   const hasNextUserStory = story.parentElement.nextElementSibling
   const hasPrevUserStory = story.parentElement.previousElementSibling
-  
+
   if (direction === 'next') {
     if (lastItemInUserStory === story && !hasNextUserStory)
       return
@@ -534,4 +532,4 @@ const navigateStories = direction => {
 ## Conclusion
 
 That's a wrap up for the needs I had with the component. Feel free to build upon
-it, drive it with data, and in general make it yours! 
+it, drive it with data, and in general make it yours!

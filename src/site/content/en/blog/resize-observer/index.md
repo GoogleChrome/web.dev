@@ -6,7 +6,7 @@ authors:
   - joemedley
 date: 2016-10-07
 updated: 2020-05-26
-hero: hero.jpg
+hero: image/admin/WJ69aw9UMPwsc7ShYvif.jpg
 alt: Growing plants in boxes.
 description: |
   `ResizeObserver` notifies you  when an element’s content rectangle changes

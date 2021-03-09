@@ -4,9 +4,9 @@ subhead: Reading and writing to NFC tags is now possible.
 authors:
   - beaufortfrancois
 date: 2020-02-12
-updated: 2020-12-14
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+updated: 2021-02-23
+hero: image/admin/TqG3qb5MiLGNTnAgKtqO.jpg
+thumbnail: image/admin/8tWkeYbKLxSd2YgTUSGv.jpg
 alt: A photo of NFC tags
 description: |
   Reading and writing to NFC tags is now possible on Chrome for Android.
@@ -16,13 +16,12 @@ tags:
   - devices
 feedback:
   - api
+stack_overflow_tag: webnfc
 ---
 
-{% Aside %}
-Web apps should be able to do anything platform-specific apps can. The [Capabilities
-project](/fugu-status/), of which Web NFC is only a part, aims to do just that.
-To learn about other capabilities and to keep up with their progress, follow
-[Unlocking new capabilities for the web](/fugu-status/).
+{% Aside 'success' %}
+Web NFC, part of the [capabilities project](/fugu-status/), launched in
+Chrome&nbsp;89 for Android.
 {% endAside %}
 
 ## What is Web NFC? {: #what }
@@ -37,7 +36,7 @@ The current scope is limited to NFC Data Exchange Format (NDEF), a lightweight
 binary message format that works across different tag formats.
 
 <figure class="w-figure">
-  <img src="./nfc-operation-diagram.png" alt="Phone powering up an NFC tag to exchange data">
+  {% Img src="image/admin/jWmCabXZCB6zNwQIR90I.png", alt="Phone powering up an NFC tag to exchange data", width="800", height="489" %}
   <figcaption class="w-figcaption">Diagram of an NFC operation</figcaption>
 </figure>
 
@@ -59,7 +58,7 @@ Examples of sites that may use Web NFC include:
   mode.
 
 <figure class="w-figure">
-  <img src="./nfc-inventory-management.png" alt="Phone scanning several NFC tags">
+  {% Img src="image/admin/zTEXhIx9nDWtbKrIPN0x.png", alt="Phone scanning several NFC tags", width="800", height="383" %}
   <figcaption class="w-figcaption">NFC inventory management illustrated</figcaption>
 </figure>
 
@@ -71,30 +70,13 @@ Examples of sites that may use Web NFC include:
 | ------------------------------------------ | ---------------------------- |
 | 1. Create explainer                        | [Complete][explainer]        |
 | 2. Create initial draft of specification   | [Complete][spec]             |
-| **3. Gather feedback and iterate design**  | [**In Progress**](#feedback) |
-| 4. Origin trial                            | Complete                     |
-| 5. Launch                                  | Not Started                  |
+| 3. Gather feedback & iterate on design     | [Complete](#feedback)        |
+| 4. Origin trial                            | [Complete][ot]               |
+| **5. Launch**                              | **Complete**                 |
 
 </div>
 
-{% Aside %}
-  During the origin trial phase, there was an `NDEFWriter` object that has been
-  merged into `NDEFReader`. There were a number of other
-  [changes](https://github.com/w3c/web-nfc/blob/gh-pages/EXPLAINER.md#changes-done-after-origin-trial-ot)
-  that you can read up on.
-{% endAside %}
-
 ## Using Web NFC {: #use }
-
-### Enabling via chrome://flags
-
-To experiment with Web NFC on Android, enable the
-`#experimental-web-platform-features` flag in `chrome://flags`.
-
-<figure class="w-figure">
-  <img src="./chrome-flag.jpg" alt="Screenshot of the chrome://flags internal page to enable for Web NFC on Android">
-  <figcaption class="w-figcaption">Experimental flag for Web NFC on Android</figcaption>
-</figure>
 
 ### Feature detection {: #feature-detection }
 
@@ -115,7 +97,7 @@ induction when an active NFC device (.e.g a phone) is in proximity. NFC tags
 come in many forms and fashions, as stickers, credit cards, arm wrists, etc.
 
 <figure class="w-figure">
-  <img src="./nfc-tag.jpg" alt="Photo of a transparent NFC tag">
+  {% Img src="image/admin/uUBxSkSc3MJBG8Lw52fV.jpg", alt="Photo of a transparent NFC tag", width="800", height="450" %}
   <figcaption class="w-figcaption">A transparent NFC tag</figcaption>
 </figure>
 
@@ -136,7 +118,7 @@ URL, smart poster, MIME type, absolute URL, external type, unknown, and local
 type.
 
 <figure class="w-figure">
-  <img src="./ndef-message-diagram.png" alt="Diagram of an NDEF message">
+  {% Img src="image/admin/50clBWSJbKkyumsxrioB.png", alt="Diagram of an NDEF message", width="800", height="243" %}
   <figcaption class="w-figcaption">Diagram of an NDEF message</figcaption>
 </figure>
 
@@ -297,7 +279,7 @@ websites, the availability of NFC is restricted to maximize users' awareness and
 control over NFC use.
 
 <figure class="w-figure">
-  <img src="./nfc-prompt.png" alt="Screenshot of a Web NFC prompt on a website">
+  {% Img src="image/admin/PjUcOk4zbtOFJLXfSeSD.png", alt="Screenshot of a Web NFC prompt on a website", width="800", height="407" %}
   <figcaption class="w-figcaption">Web NFC user prompt</figcaption>
 </figure>
 
@@ -727,6 +709,10 @@ const ndef = new NDEFReader();
 await ndef.write({ records: [emptyRecord] });
 ```
 
+## Browser support {: #browser-support }
+
+Web NFC is available on Android in Chrome 89.
+
 ## Dev Tips
 
 Here's a list of things I wish I had known when I started playing with Web NFC:
@@ -794,8 +780,9 @@ Are you planning to use Web NFC? Your public support helps the Chrome team
 prioritize features and shows other browser vendors how critical it is to
 support them.
 
-Send a Tweet to [@ChromiumDev][cr-dev-twitter] and let us know where and how
-you're using it.
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebNFC`](https://twitter.com/search?q=%23WebNFC&src=typed_query&f=live)
+and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 
@@ -814,6 +801,7 @@ contributors deserve special recognition!
 
 [explainer]: https://github.com/w3c/web-nfc/blob/gh-pages/EXPLAINER.md#web-nfc-explained
 [spec]: https://w3c.github.io/web-nfc/
+[ot]: https://developers.chrome.com/origintrials/#/view_trial/236438980436951041
 [issues]: https://github.com/w3c/web-nfc/issues
 [demo]: https://web-nfc-demo.glitch.me/
 [demo-source]: https://glitch.com/edit/#!/web-nfc-demo?path=script.js:1:0

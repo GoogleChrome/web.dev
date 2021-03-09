@@ -23,6 +23,7 @@ declare global {
     github?: string;
     glitch?: string;
     homepage?: string;
+    image: string;
     name: {
       given: string;
       family: string;

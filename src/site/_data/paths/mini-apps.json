@@ -1,0 +1,43 @@
+{
+  "slug": "mini-apps",
+  "cover": "/images/collections/mini-apps.svg",
+  "title": "Mini apps",
+  "updated": "March 3, 2021",
+  "description": "A web developer's exploration into mini apps—apps that are built with web technologies but that do not run in browsers.",
+  "overview": "Learn more about the thriving ecosystem of mini apps and what web developers can learn from it.",
+  "topics": [
+    {
+      "title": "Welcome to the world of mini apps",
+      "pathItems": [
+        "mini-app-super-apps",
+        "mini-app-about",
+        "mini-app-what-are-h5-and-quickapp"
+      ]
+    },
+    {
+      "title": "The developer experience of mini apps",
+      "pathItems": [
+        "mini-app-devtools",
+        "mini-app-markup-styling-and-scripting",
+        "mini-app-components",
+        "mini-app-project-structure-lifecycle-and-bundling"
+      ]
+    },
+    {
+      "title": "The wider mini apps ecosystem",
+      "pathItems": [
+        "mini-app-standardization",
+        "mini-app-alternative-runtime-environments",
+        "mini-app-open-source-projects"
+      ]
+    },
+    {
+      "title": "Learning from mini apps",
+      "pathItems": [
+        "mini-app-programming-way",
+        "mini-app-example-project",
+        "mini-app-conclusion"
+      ]
+    }
+  ]
+}

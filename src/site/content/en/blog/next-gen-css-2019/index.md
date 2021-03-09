@@ -13,7 +13,7 @@ authors:
 date: 2019-12-05
 updated: 2020-09-24
 
-hero: hero.png
+hero: image/admin/FRL8ZuF0ng2d37BufMOj.png
 # You can adjust the fit of your hero image with this property.
 # Values: contain | cover (default)
 hero_fit: contain
@@ -140,7 +140,7 @@ For example, if you have a dropdown menu with several items, the menu should rem
 }
 ```
 
-![An illustration showing the difference in behavior between focus and focus-within.](./menu-focus.png)
+{% Img src="image/admin/NmLEz3wQMUv0QYIuhv2c.png", alt="An illustration showing the difference in behavior between focus and focus-within.", width="800", height="559" %}
 
 Try tabbing through the focusable elements in the demo below. You'll notice that the menus remain visible as you focus on the menu items:
 
@@ -153,7 +153,7 @@ Try tabbing through the focusable elements in the demo below. You'll notice that
 
 [New media queries](https://drafts.csswg.org/mediaqueries-5/#environment-blending) give us powerful ways to adjust the user experience of our apps based on a user's device preferences. Basically, the browser serves as a proxy for system-level preferences that we can respond to in our CSS using the `prefers-*` group of media queries:
 
-![A diagram showing media queries interpreting system-level user preferences.](./prefers-media-queries.png)
+{% Img src="image/admin/f5Y9OhN3VMQz8nZMcZar.png", alt="A diagram showing media queries interpreting system-level user preferences.", width="800", height="400" %}
 
 Here are the new queries we think developers will be most excited about:
 
@@ -185,7 +185,7 @@ In Chrome Canary, you can test CSS that uses `prefers-reduced-motion` or `prefer
 
 [Logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties) solve a problem that has gained visibility as more developers tackle internationalization. Many layout properties like `margin` and `padding` assume a language that is read top-to-bottom and left-to-right.
 
-![A diagram showing traditional CSS layout properties.](./legacy-layout.png)
+{% Img src="image/admin/mLz4eB2iG7yGUJ92DA0D.png", alt="A diagram showing traditional CSS layout properties.", width="800", height="559" %}
 
 When designing pages for multiple languages with varying writing modes, developers have had to adjust all those properties individually across multiple elements, which quickly becomes a maintainability nightmare.
 
@@ -196,7 +196,7 @@ Logical properties let you maintain layout integrity across translations and wri
 
 These dimension names apply to all logical layout properties. So, for example, in English, `block-start` is the same as `top`, and `inline-end` is the same as `right`.
 
-![A diagram showing new CSS logical layout properties.](./logical-layout.png)
+{% Img src="image/admin/NcIz3jADhMnRMqRTUPKr.png", alt="A diagram showing new CSS logical layout properties.", width="800", height="559" %}
 
 With logical properties, you can automatically update your layout for other languages by simply changing the `writing-mode` and `direction` properties for your page rather than updating dozens of layout properties on individual elements.
 
@@ -305,7 +305,7 @@ article > :is(h1,h2,h3,h4,h5,h6) {
 
 [CSS grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) has had [`gap`](https://developer.mozilla.org/en-US/docs/Web/CSS/gap) (previously `grid-gap`) for some time. By specifying the internal spacing of a containing element rather than the spacing around child elements, `gap` solves many common layout issues. For example, with gap, you don't have to worry about margins on child elements causing unwanted whitespace around the edges of a containing element:
 
-![Illustration showing how the gap property avoids unintended spacing around edges of a container element.](./gap.png)
+{% Img src="image/admin/Jzlzz2MdQmMGudZxcvZk.png", alt="Illustration showing how the gap property avoids unintended spacing around edges of a container element.", width="800", height="846" %}
 
 Even better news: `gap` is coming to flexbox, bringing all the same spacing perks that grid has:
 
@@ -330,7 +330,7 @@ Right now, only FireFox supports `gap` in flex layouts, but play around with thi
 *   It's easier to separate rendering concerns from application logic.
 *   It's more performant than the CSS polyfilling we currently do with JavaScript since the browser will no longer have to parse scripts and do a second rendering cycle; Houdini code is parsed in the first rendering cycle.
 
-![Illustration showing how Houdini works compared to traditional JavaScript polyfills.](houdini.png)
+{% Img src="image/admin/Lh9zGq0HWW4amjfHbpRQ.png", alt="Illustration showing how Houdini works compared to traditional JavaScript polyfills.", width="800", height="599" %}
 
 Houdini is an umbrella name for [several APIs](https://developer.mozilla.org/en-US/docs/Web/Houdini#The_Houdini_APIs). If you want more information about them and their current status, take a look at [Is Houdini Ready Yet?](https://ishoudinireadyyet.com/) In our talk, we covered the Properties and Values API, the Paint API, and the Animation Worklet because they're currently the most supported. We could easily dedicate a full post to each of these exciting APIs, but, for now, check out our talk for an overview and some cool demos that start to give a sense of what you can do with the APIs.
 

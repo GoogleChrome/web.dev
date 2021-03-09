@@ -7,7 +7,7 @@ authors:
 date: 2019-08-14
 # Add an updated date to your post if you edit in the future.
 # updated: 2020-04-29
-hero: hero.jpg
+hero: image/admin/8ZJRM6xxTNs8wBPph7ZO.jpg
 alt: Inspecting a laptop with a magnifying glass.
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
@@ -35,14 +35,14 @@ To run an audit:
 1. Select the **Clear Storage** checkbox.
 1. Click **Run audits**.
 
-![Screenshot of the Chrome DevTools Audits panel.](./audits-panel.png)
+{% Img src="image/admin/XLNFxdEOc7739bcIwERq.png", alt="Screenshot of the Chrome DevTools Audits panel.", width="800", height="1068" %}
 
 ### Third-party usage
 
 The Lighthouse **Third-party usage** audit shows a list of the third-party providers a page uses. This overview can help you better understand the big picture and identify redundant third-party code. The audit is available in the [Lighthouse extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) and will soon be added to DevTools in Chrome 77.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./third-party-usage.png" alt='Screenshot showing that 51 third-parties were found and a list of imaginary startups.'>
+  {% Img src="image/admin/4JXHK0FkgJIfKED16BnF.png", alt="Screenshot showing that 51 third-parties were found and a list of imaginary startups.", width="728", height="646", class="w-screenshot" %}
   <figcaption class="w-figcaption">
   Third-party provider names generated with <a href="http://tiffzhang.com/startup/?s=641553836036">Startup generator</a>. Any similarity to actual startups, living or dead, is purely coincidental.
   </figcaption>
@@ -51,12 +51,12 @@ The Lighthouse **Third-party usage** audit shows a list of the third-party provi
 ### Reduce JavaScript execution time
 The Lighthouse [Reduce JavaScript execution time](/bootup-time) audit highlights scripts that take a long time to parse, compile, or evaluate. Select the **Show 3rd-party resources** checkbox to discover CPU-intensive third-party scripts.
 
-<img class="w-screenshot" src="./show-third-party.png" alt='Screenshot showing that the "Show third-party resources" checkbox is checked.'>
+{% Img src="image/admin/O7vN1En6dtbL3Q8TbufC.png", alt="Screenshot showing that the 'Show third-party resources' checkbox is checked.", width="800", height="981", class="w-screenshot" %}
 
 ### Avoid enormous network payloads
 The Lighthouse [Avoid enormous network payloads](/total-byte-weight) audit identifies network requests—including those from third-parties—that may slow down page load time. The audit fails when your network payload exceeds 4,000 KB.
 
-<img class="w-screenshot" src="./network-payloads.png" alt='Screenshot of the Chrome DevTools "Avoid enormous network payloads" audit.'>
+{% Img src="image/admin/9Pnoz73MLeNzooUQLuam.png", alt="Screenshot of the Chrome DevTools 'Avoid enormous network payloads' audit.", width="799", height="631", class="w-screenshot" %}
 
 ## Block network requests in Chrome DevTools
 
@@ -67,7 +67,7 @@ To enable request blocking:
 1. Right-click any request in the **Network** panel.
 1. Select **Block request URL**.
 
-<img class="w-screenshot" src="./request-blocking.png" alt='A screenshot of the context menu in the Chrome DevTools Performance panel. The "Block request URL" option is highlighted.'>
+{% Img src="image/admin/UbedvjrtP9si1l0X2QVA.png", alt="A screenshot of the context menu in the Chrome DevTools Performance panel. The 'Block request URL' option is highlighted.", width="800", height="529", class="w-screenshot" %}
 
 A **Request blocking** tab will appear in the DevTools drawer. You can manage which requests have been blocked there.
 

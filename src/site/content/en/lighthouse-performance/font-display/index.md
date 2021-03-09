@@ -20,7 +20,7 @@ causing a [flash of invisible text (FOIT)](/avoid-invisible-text).
 flags any font URLs that may flash invisible text:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="font-display.png" alt="A screenshot of the Lighthouse Ensure text remains visible during webfont loads audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="A screenshot of the Lighthouse Ensure text remains visible during webfont loads audit", width="800", height="430", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
@@ -72,6 +72,16 @@ so you may need to do a bit more work to fix the invisible text problem.
   Check out the [Avoid flash of invisible text codelab](/codelab-avoid-invisible-text)
   to learn how to avoid FOIT across all browsers.
 {% endAside %}
+
+## Stack-specific guidance
+
+### Drupal
+
+Specify `@font-display` when defining custom fonts in your theme.
+
+### Magento
+
+Specify `@font-display` when [defining custom fonts](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/using-fonts.html).
 
 ## Resources
 

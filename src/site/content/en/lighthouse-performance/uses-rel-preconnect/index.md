@@ -13,7 +13,7 @@ The Opportunities section of your Lighthouse report lists all key requests
 that aren't yet prioritizing fetch requests with `<link rel=preconnect>`:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="uses-rel-preconnect.png" alt="A screenshot of the Lighthouse Preconnect to required origins audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K5TLz5LOyRjffxJ6J9zl.png", alt="A screenshot of the Lighthouse Preconnect to required origins audit", width="800", height="226", class="w-screenshot" %}
 </figure>
 
 ## Browser compatibility
@@ -66,6 +66,20 @@ You use it the exact same way:
 ```html
 <link rel="dns-prefetch" href="https://example.com">.
 ```
+
+## Stack-specific guidance
+
+### Drupal
+
+Use [a module that supports user agent resource
+hints](https://www.drupal.org/project/project_module?f%5B0%5D=&f%5B1%5D=&f%5B2%5D=&f%5B3%5D=&f%5B4%5D=sm_field_project_type%3Afull&f%5B5%5D=&f%5B6%5D=&text=dns-prefetch&solrsort=iss_project_release_usage+desc&op=Search)
+so that you can install and configure preconnect or DNS prefetch resource hints.
+
+### Magento
+
+[Modify your themes's
+layout](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)
+and add preconnect or DNS prefetch resource hints.
 
 ## Resources
 

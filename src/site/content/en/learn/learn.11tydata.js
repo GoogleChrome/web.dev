@@ -19,6 +19,7 @@ module.exports = function () {
     allPaths['payments'],
     allPaths['media'],
     allPaths['devices'],
+    allPaths['animations'],
   ].filter(livePaths);
 
   const performance = [
@@ -37,12 +38,15 @@ module.exports = function () {
     allPaths['lighthouse-seo'],
   ].filter(livePaths);
 
+  const explorations = [allPaths['mini-apps']].filter(livePaths);
+
   return {
     learn: {
       paths,
       performance,
       frameworks,
       audits,
+      explorations,
     },
   };
 };

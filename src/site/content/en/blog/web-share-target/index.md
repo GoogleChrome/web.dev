@@ -5,8 +5,8 @@ authors:
   - petelepage
   - joemedley
 date: 2019-11-08
-updated: 2020-08-05
-hero: hero.png
+updated: 2020-02-09
+hero: image/admin/RfxdrfKdh5Fp8camulRt.png
 alt: An illustration demonstrating that platform-specific apps can now share content with web apps.
 description: |
   On a mobile device, sharing should be as simple as clicking the Share button,
@@ -20,7 +20,7 @@ feedback:
   - api
 ---
 
-On a mobile device, sharing should be as simple as clicking the **Share** button,
+On a mobile device, sharing should be as straightforward as clicking the **Share** button,
 choosing an app, and choosing who to share with. For example, you may want to
 share an interesting article, either by emailing it to friends or tweeting it to
 the world.
@@ -29,8 +29,6 @@ In the past, only platform-specific apps could register with the operating syste
 receive shares from other installed apps. But with the Web Share Target API,
 installed web apps can register with the underlying operating system
 as a share target to receive shared content.
-Support for text and data was added in Chrome 71, and
-support for files was added in Chrome 76.
 
 {% Aside %}
 The Web Share Target API is only half of the magic. Web apps can share data,
@@ -39,7 +37,7 @@ files, links, or text using the Web Share API. See
 {% endAside %}
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="./wst-send.png" style="max-width: 400px;" alt="Android phone with the 'Share via' drawer open."/>
+  {% Img src="image/admin/Q4nuOQMpsQrTilpXA3fL.png", alt="Android phone with the 'Share via' drawer open.", width="400", height="377" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     System-level share target picker with an installed PWA as an option.
   </figcaption>
@@ -47,7 +45,8 @@ files, links, or text using the Web Share API. See
 
 ## See Web Share Target in action
 
-1. Using Chrome 76 or later (Android only), open the [Web Share Target demo][demo].
+1. Using either Chrome 76 or later for Android, or Chrome 89 or later on
+   desktop, open the [Web Share Target demo][demo].
 2. When prompted, click **Install** to add the app to your home screen, or
    use the Chrome menu to add it to your home screen.
 3. Open any app that supports sharing, or use the Share button
@@ -206,8 +205,10 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-Be sure to use a service worker to precache the `action` page so that it will
-load quickly and work reliably, even if the user is offline.
+Be sure to use a service worker to [precache](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker) the `action`
+page so that it will load quickly and work reliably, even if the user is offline.
+[Workbox](https://developers.google.com/web/tools/workbox/) is a tool that can help you
+[implement precaching](https://web.dev/precache-with-workbox/) in your service worker.
 
 ### Processing POST shares
 
@@ -223,24 +224,25 @@ page using `postMessage()` or pass it on to the server:
 
 ```js
 self.addEventListener('fetch', event => {
-  if (event.request.method !== 'POST') {
-    event.respondWith(fetch(event.request));
-    return;
+  const url = new URL(event.request.url);
+  // If this is an incoming POST request for the
+  // registered "action" URL, respond to it.
+  if (event.request.method === 'POST' &&
+      url.pathname === '/bookmark') {
+    event.respondWith((async () => {
+      const formData = await event.request.formData();
+      const link = formData.get('link') || '';
+      const responseUrl = await saveBookmark(link);
+      return Response.redirect(responseUrl, 303);
+    })());
   }
-
-  event.respondWith((async () => {
-    const formData = await event.request.formData();
-    const link = formData.get('link') || '';
-    const responseUrl = await saveBookmark(link);
-    return Response.redirect(responseUrl, 303);
-  })());
 });
 ```
 
 ### Verifying shared content
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="./wst-receive.png" style="max-width: 400px;" alt="An Android phone displaying the demo app with shared content."/>
+  {% Img src="image/admin/hSwbgPk8IFgPC81oJbxZ.png", alt="An Android phone displaying the demo app with shared content.", width="400", height="280" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The sample sharing target app.
   </figcaption>
@@ -255,6 +257,22 @@ it's not supported in Android's share system. Instead, URLs will often appear in
 the `text` field, or occasionally in the `title` field.
 
 <div class="w-clearfix"></div>
+
+## Browser support
+
+As of early 2021, the Web Share Target API is supported by:
+
+- Chrome and Edge 76 or later on Android.
+- Chrome 89 or later on Chrome OS.
+
+On all platforms, your web app has to be [installed][installability] before it will show up as a
+potential target for receiving shared data.
+
+## Sample applications
+
+- [Squoosh](https://github.com/GoogleChromeLabs/squoosh)
+- [Scrapbook PWA](https://github.com/GoogleChrome/samples/blob/gh-pages/web-share/README.md#web-share-demo)
+
 
 [spec]: https://wicg.github.io/web-share-target/
 [demo]: https://web-share.glitch.me/

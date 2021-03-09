@@ -22,7 +22,7 @@ therefore, there should only be one table header per column.
 Lighthouse flags tables that have more than one table header per column:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="td-headers-attr.png" alt="Lighthouse audit showing there's more than one table header for a single column">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/RI3y7LU6YECI6AdOw5GC.png", alt="Lighthouse audit showing there's more than one table header for a single column", width="800", height="227", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

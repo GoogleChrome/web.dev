@@ -1,0 +1,66 @@
+version: 3
+
+groups:
+  # Code
+  # Handles any changes to programmatic files.
+  code:
+    reviewers:
+      teams:
+      - web-dev-eng
+    reviews:
+      # The number of people who should be requested for review at any given
+      # time. Default is 1.
+      request: 2
+    conditions:
+      # The engineering team is the default owner for any code related files.
+      - >
+        contains_any_globs(files, [
+          '**/*.js',
+          '**/*.css',
+          '**/*.scss',
+          '**/*.html',
+          '**/*.htm',
+          '**/*.njk',
+          '**/*.yml',
+          '**/*.toml',
+          '**/*.sh'
+        ]) or
+        files.include('*.yaml').exclude('redirects.yaml') or
+        files.include('*.json').exclude('src/site/_data/authorsData.json').exclude('src/site/_data/tagsData.json').exclude('src/site/_data/paths/*.json')
+  
+  # Content
+  # Handles any changes related to site content.
+  content:
+    reviewers:
+      teams:
+      - web-dev-content
+      # Prefix a username or team with ~ to include them in the reviewer pool
+      # but skip them when sending review requests.
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    reviews:
+      # Assign everyone on the content team for reviews.
+      request: 99
+    conditions:
+      - >
+        contains_any_globs(files, [
+          'src/site/content/**',
+          'src/images/authors/**'
+        ])
+  
+  # Shared
+  # Files that can be approved by either the content or the engineering team.
+  shared:
+    reviewers:
+      teams:
+      - web-dev-content
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    conditions:
+      - >
+        contains_any_globs(files, [
+          'src/site/_data/authorsData.json',
+          'src/site/_data/tagsData.json',
+          'src/site/_data/paths/*.json',
+          'redirects.yaml'
+        ])

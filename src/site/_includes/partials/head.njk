@@ -1,0 +1,46 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% if process.env.ELEVENTY_ENV === 'prod' %}
+  {# CSS will be injected by purify-css transform. #}
+  <!-- __PURGECSS_INJECT -->
+{% else %}
+  {# hashForProd() will cache bust the css in dev with a random string. #}
+  <link rel="stylesheet" href="{{ helpers.hashForProd('/css/main.css') }}">
+{% endif %}
+
+{# We only preload Material Icons because the site can't render properly without them. #}
+{# For Google Sans we use font-display: swap because preloading too many fonts can hurt performance. #}
+{# https://www.zachleat.com/web/preload/ #}
+<link rel="preload" as="font" crossorigin href="/fonts/material-icons/regular.woff2">
+
+<meta name="theme-color" content="#fff"/>
+
+{% if noindex or draft -%}
+  <meta name="robots" content="noindex" />
+{%- endif %}
+{% if offline %}
+  <meta name="offline" content="true" />
+{%- endif %}
+
+{% Meta locale, page, collections, renderData %}
+
+<link rel="manifest" href="/manifest.webmanifest" />
+{# Include default icon even though we have a manifest #}
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
+<script type="module" src="{{ helpers.hashForProd('/js/app.js') }}"></script>
+{# Add a facility for pages to declare an array of script paths. #}
+{# If no scripts are declared we will use the default page script. #}
+{# default.js loads the basic set of custom elements that all pages need. #}
+{% for item in pageScripts %}
+  <script type="module" src="{{ helpers.hashForProd(item) }}"></script>
+{% else %}
+  <script type="module" src="{{ helpers.hashForProd('/js/default.js') }}"></script>
+{% endfor %}
+{% if process.env.ELEVENTY_ENV === 'prod' %}
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+{% endif %}

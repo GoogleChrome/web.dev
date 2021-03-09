@@ -11,7 +11,7 @@ authors:
   - roeln
 date: 2018-02-19
 updated: 2020-08-17
-hero: hero.jpg
+hero: image/admin/SHy7jOlEVPU1lsyfgvlG.jpg
 tags:
   - blog
   - fonts
@@ -47,7 +47,7 @@ Before variable fonts, each style was implemented as a separate font file. With
 variable fonts, all styles can be contained in a single file.
 
 <figure class="w-figure">
-  <img src="roboto-family-specimen.png" alt="A specimen composition and list of different styles of the Roboto family">
+  {% Img src="image/admin/RbhgXwS81Y9PVRJnTjPX.png", alt="A specimen composition and list of different styles of the Roboto family", width="800", height="600" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Left: a specimen of the Roboto typeface family. Right: named styles within the family.
   </figcaption>
@@ -265,7 +265,7 @@ the upcoming syntax, it will use the first declaration. If it supports variable
 fonts and the current syntax, it will use the second declaration. They both
 point to the same font file.
 
-<!-- TODO 2021 Q1 revisit this, based on progress in 
+<!-- TODO 2021 Q1 revisit this, based on progress in
      https://www.w3.org/TR/css-fonts-4/#font-face-src-requirement-types
      to allow removing the 2nd src -->
 

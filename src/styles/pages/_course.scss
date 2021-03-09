@@ -1,0 +1,62 @@
+.course-layout {
+  display: flex;
+  flex-direction: column;
+  @include bp(md) {
+    flex-direction: row;
+  }
+}
+
+.course-nav {
+  background-color: pink;
+  @include bp(md) {
+    align-self: flex-start;
+    border-right: 1px solid $GREY_300;
+    flex: 0 0 360px;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 24px 16px;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.course-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.course-app-bar {
+  background-color: lightgreen;
+}
+
+.course-content {
+  display: flex;
+  margin: 24px auto;
+  max-width: 1080px;
+}
+
+.course-content > main {
+  flex-grow: 1;
+  min-width: 0;
+  margin: 0 36px;
+  padding: 0;
+}
+
+.course-pagination {
+  display: flex;
+}
+
+.course-pagination-control {
+  border-top: 1px solid $GREY_300;
+  display: block;
+  padding: 24px;
+
+  &:first-of-type {
+    flex: 4;
+    border-right: 1px solid $GREY_300;
+  }
+
+  &:last-of-type  {
+    flex: 6;
+  }
+}

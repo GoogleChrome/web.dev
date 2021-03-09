@@ -24,7 +24,7 @@ the browser uses its local copy rather than getting it from the network.
 flags all static resources that aren't cached:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="uses-long-cache-ttl.png" alt="A screenshot of the Lighthouse Serve static assets with an efficient cache policy audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vtRp9i6zzD8EDlHYkHtQ.png", alt="A screenshot of the Lighthouse Serve static assets with an efficient cache policy audit", width="800", height="490", class="w-screenshot" %}
 </figure>
 
 Lighthouse considers a resource cacheable
@@ -106,7 +106,7 @@ open the **Network** tab in Chrome DevTools:
 The **Size** column in Chrome DevTools can help you verify that a resource has been cached:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="size.png" alt="The Size column.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dc7QffBFDTcTHyUNNevi.png", alt="The Size column.", width="800", height="565", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 Chrome serves the most requested resources from the memory cache, which is very fast,
@@ -119,11 +119,27 @@ check its HTTP header data:
 1. Click the **Headers** tab.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="cache-control-header.png" alt="Inspecting the Cache-Control header via the Headers tab">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dGDjkwsoUBwFVLYM0sVy.png", alt="Inspecting the Cache-Control header via the Headers tab", width="800", height="597", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     Inspecting the <code>Cache-Control</code> header via the <b>Headers</b> tab.
   </figcaption>
 </figure>
+
+## Stack-specific guidance
+
+### Drupal
+
+Set the **Browser and proxy cache maximum age** in the **Administration** >
+**Configuration** > **Development** page. See [Drupal performance
+resources](https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview#s-drupal-performance-resources).
+
+### Joomla
+
+See [Cache](https://docs.joomla.org/Cache).
+
+### WordPress
+
+See [Browser Caching](https://wordpress.org/support/article/optimization/#browser-caching).
 
 ## Resources
 

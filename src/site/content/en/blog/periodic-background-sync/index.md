@@ -7,7 +7,7 @@ authors:
   - joemedley
 date: 2019-11-10
 updated: 2020-08-18
-hero: hero.jpg
+hero: image/admin/Bz7MndcsUGPLAnQwIMfJ.jpg
 alt: Colorful airplanes flying in sync
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/4048736065006075905
@@ -363,7 +363,7 @@ background sync, and unregistering. To obtain information about these events,
 click **Start recording**.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="1-record.png" alt="The record button in DevTools" style="max-width: 75%">
+  {% Img src="image/admin/wcl5Bm6Pe9xn5Dps6IN6.png", alt="The record button in DevTools", width="708", height="90", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The record button in DevTools
   </figcaption>

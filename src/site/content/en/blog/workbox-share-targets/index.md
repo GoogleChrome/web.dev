@@ -9,7 +9,7 @@ authors:
   - joemedley
   - jeffposnick
 date: 2019-12-19
-hero: hero2.jpg
+hero: image/admin/Cos9WFMqJGVZjBdQHcMU.jpg
 alt: Two pairs of hands holding a cup of tomatoes.
 tags:
   - blog
@@ -32,7 +32,7 @@ that lives entirely inside your [service worker](/service-workers-cache-storage/
 single-page apps serve as share targets without a dedicated server endpoint.
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="./wst-send.png" style="max-width: 400px;" alt="Android phone with the 'Share via' drawer open."/>
+  {% Img src="image/admin/mp2bdiP2gVeMQ4UX12vd.png", alt="Android phone with the 'Share via' drawer open.", width="400", height="377" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     System-level share target picker with an installed PWA called
     <code>Share Target Test</code> as an option.

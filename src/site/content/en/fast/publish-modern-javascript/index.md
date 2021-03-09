@@ -2,7 +2,7 @@
 layout: post
 title: Publish, ship, and install modern JavaScript for faster applications
 subhead: Improve performance by turning on modern JavaScript dependencies and output.
-hero: hero.jpg
+hero: image/admin/UQbMiPKbXL1EDjtWsLju.jpg
 authors:
   - houssein
   - developit
@@ -28,9 +28,7 @@ a simple web-based tool that calculates the size and performance improvement a
 site could achieve by delivering modern JavaScript syntax.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="./estimator-screenshot.png"
-       alt="EStimator.dev analysis showing a website could be 9% faster with modern JavaScript."
-       width="800">
+  {% Img src="image/admin/FHHnXqdjdsC6PNSSnnC4.png", alt="EStimator.dev analysis showing a website could be 9% faster with modern JavaScript.", width="800", height="785" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     EStimator.dev
   </figcaption>

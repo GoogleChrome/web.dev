@@ -1,0 +1,253 @@
+# Master redirects file for web.dev. This mirrors the old DevSite file.
+# There are two types of redirects:
+#
+#  (1) Simple redirects, e.g., "from: /foo"
+#      - These don't match subpaths, like "/foo/bar"
+#      - But it will match similar URLs "/foo", "/foo/" and "/foo/index.html"
+#
+#  (2) Group redirects, e.g., "from: /foo/:part", which will match the top-level
+#      path (with the same rules as (1)) as well as any descendant paths
+#
+# WARNING! Redirects DO NOT take priority over static content.
+# For example, if you try to redirect "/foo" but the site contains a static file
+# "/foo/index.html", the static file will always win.
+
+redirects:
+
+# Policies
+
+- source: /policies
+  destination: https://policies.google.com/
+
+# Newsletter
+
+- source: /subscribe
+  destination: /newsletter
+
+# Pre-v1 redirects
+
+- source: /fast/using-lighthouse-ci-to-set-a-performance-budget
+  destination: /fast/using-lighthouse-bot-to-set-a-performance-budget
+
+- source: /fast/defer-unused-css
+  destination: /fast/defer-non-critical-css
+
+# Pre-v1 codelabs
+
+- source: /reliable/http-cache/codelab-http-cache
+  destination: /codelab-http-cache
+
+- source: /fast/serve-images-webp/codelab-serve-images-webp
+  destination: /codelab-serve-images-webp
+
+- source: /fast/remove-unused-code/codelab-remove-unused-code
+  destination: /codelab-remove-unused-code
+
+- source: /fast/serve-responsive-images/codelab-art-direction
+  destination: /codelab-art-direction
+
+- source: /fast/serve-responsive-images/codelab-art-direction
+  destination: /codelab-art-direction
+
+- source: /secure/same-origin-policy/codelab-same-origin-fetch
+  destination: /codelab-same-origin-fetch
+
+- source: /secure/same-origin-policy/codelab-same-origin-iframe
+  destination: /codelab-same-origin-iframe
+
+- source: /fast/avoid-invisible-text/codelab-avoid-invisible-text
+  destination: /codelab-avoid-invisible-text
+
+- source: /fast/preload-critical-assets/codelab-preload-web-fonts
+  destination: /codelab-preload-web-fonts
+
+- source: /fast/serve-responsive-images/codelab-density-descriptors
+  destination: /codelab-density-descriptors
+
+- source: /discoverable/fix-http-status-codes/codelab-fix-sneaky-404
+  destination: /codelab-fix-sneaky-404
+
+- source: /installable/discover-installable/codelab-make-installable
+  destination: /codelab-make-installable
+
+- source: /fast/use-imagemin-to-compress-images/codelab-imagemin-gulp
+  destination: /codelab-imagemin-gulp
+
+- source: /fast/use-imagemin-to-compress-images/codelab-imagemin-grunt
+  destination: /codelab-imagemin-grunt
+
+- source: /fast/preload-critical-assets/codelab-preload-critical-assets
+  destination: /codelab-preload-critical-assets
+
+- source: /fast/replace-gifs-with-videos/codelab-replace-gifs-with-video
+  destination: /codelab-replace-gifs-with-video
+
+- source: /fast/use-imagemin-to-compress-images/codelab-imagemin-webpack
+  destination: /codelab-imagemin-webpack
+
+- source: /reliable/service-workers-cache-storage/codelab-service-workers
+  destination: /codelab-service-workers
+
+- source: /fast/serve-modern-code-to-modern-browsers/codelab-serve-modern-code
+  destination: /codelab-serve-modern-code
+
+- source: /fast/serve-responsive-images/codelab-specifying-multiple-slot-widths
+  destination: /codelab-specifying-multiple-slot-widths
+
+- source: /fast/reduce-javascript-payloads-with-code-splitting/codelab-code-splitting
+  destination: /codelab-code-splitting
+
+- source: /reliable/identify-resources-via-network-panel/codelab-explore-network-panel
+  destination: /codelab-explore-network-panel
+
+- source: /fast/reduce-network-payloads-using-text-compression/codelab-text-compression
+  destination: /codelab-text-compression
+
+- source: /fast/use-lazysizes-to-lazyload-images/codelab-use-lazysizes-to-lazyload-images
+  destination: /codelab-use-lazysizes-to-lazyload-images
+
+- source: /fast/serve-images-with-correct-dimensions/codelab-serve-images-correct-dimensions
+  destination: /codelab-serve-images-correct-dimensions
+
+- source: /fast/reduce-network-payloads-using-text-compression/codelab-text-compression-brotli
+  destination: /codelab-text-compression-brotli
+
+- source: /fast/incorporate-performance-budgets-into-your-build-tools/codelab-setting-performance-budgets-with-webpack
+  destination: /codelab-setting-performance-budgets-with-webpack
+
+# Redirect all pre-v1 paths to the project root.
+# Before: web.dev/fast/remove-unused-code
+# After: web.dev/remove-unused-code
+
+- source: /accessible/:part
+  destination: /:part
+
+- source: /discoverable/:part
+  destination: /:part
+
+- source: /fast/:part
+  destination: /:part
+
+- source: /installable/:part
+  destination: /:part
+
+- source: /reliable/:part
+  destination: /:part
+
+- source: /secure/:part
+  destination: /:part
+
+# Some Google search results indexed the page with `en/`, so we'll redirect it for now
+- source: /en/:part
+  destination: /:part
+
+# Redirect duplicative /discoverable URLs to /lighthouse-seo
+
+- source: /write-descriptive-text
+  destination: /lighthouse-seo
+
+- source: /tell-search-translated-pages-equal
+  destination: /hreflang
+
+- source: /tell-search-engine-canonical-url
+  destination: /canonical
+
+- source: /remove-code-blocking-indexing
+  destination: /is-crawlable
+
+- source: /fix-http-status-codes
+  destination: /http-status-code
+
+- source: /remove-browser-plugins
+  destination: /plugins
+
+- source: /fix-robot-errors
+  destination: /robots-txt
+
+- source: /fix-small-fonts
+  destination: /font-size
+
+- source: /fix-viewport-tag
+  destination: /viewport
+
+# Redirect older metrics docs
+
+- source: /layout-instability-api
+  destination: /cls
+
+- source: /largest-contentful-paint
+  destination: /lcp
+
+- source: /web-vitals
+  destination: /vitals
+
+# Redirects Progressive Web App content
+
+- source: /pwa
+  destination: /progressive-web-apps/
+
+- source: /installable
+  destination: /progressive-web-apps/#installable
+
+- source: /discover-installable
+  destination: /progressive-web-apps/#installable
+
+# Redirect for spec name changes
+
+- source: /sms-receiver-api-announcement
+  destination: /web-otp
+
+# Redirect /payments content
+
+- source: /android-payment-apps-overview
+  destination: /android-payment-app-developers-guide
+
+# Redirect for misconfigured Lighthouse report
+
+- source: /image-size-responsive
+  destination: /image-aspect-ratio
+
+# Redirects for Handbook refactors
+
+- source: /handbook/tags
+  destination: /handbook/yaml-front-matter/#tags
+
+# Redirect to unified clipobard article
+
+- source: /image-support-for-async-clipboard
+  destination: /async-clipboard
+
+# Redirect for renamed Native File System API
+- source: /native-file-system
+  destination: /file-system-access
+- source: /browser-nativefs
+  destination: /browser-fs-access
+
+# Redirect to follow consistent Fugu API naming scheme
+
+- source: /wakelock
+  destination: /wake-lock
+
+# Redirects for performance content
+
+- source: /native-lazy-loading
+  destination: /browser-level-image-lazy-loading
+
+# Redirects for vanity URLs
+- source: /scale-on-web
+  destination: /tags/scale-on-web
+
+# Redirect for the renamed WebTransport API.
+- source: /quictransport
+  destination: /webtransport
+
+# Redirect for consolidated Lighthouse audit for a11y names.
+- source: /aria-toggle-field-name
+  destination: /aria-name
+- source: /aria-input-field-name
+  destination: /aria-name
+
+# Temporary redirect for CORS-RFC1918 guidance on DevTools.
+# Remove once the actual article is published.
+- source: /cors-rfc1918-guide
+  destination: /cors-rfc1918-feedback

@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-15
+updated: 2021-01-18
 description: |
   This post introduces the First Contentful Paint (FCP) metric and explains
   how to measure it
@@ -29,7 +29,7 @@ starts loading to when any part of the page's content is rendered on the screen.
 For this metric, "content" refers to text, images (including background images),
 `<svg>` elements, or non-white `<canvas>` elements.
 
-[![FCP timeline from google.com](fcp-filmstrip.png)](fcp-filmstrip.png)
+{% Img src="image/admin/3UhlOxRc0j8Vc4DGd4dt.png", alt="FCP timeline from google.com", width="800", height="311", linkTo=true %}
 
 In the above load timeline, FCP happens in the second
 frame, as that's when the first text and image elements are rendered to the
@@ -37,7 +37,7 @@ screen.
 
 You'll notice that though some of the content has rendered, not all of it has
 rendered. This is an important distinction to make between _First_ Contentful
-Paint (FCP) and _[Largest Contentful Paint (FCP)](/Fcp/)_
+Paint (FCP) and _[Largest Contentful Paint (LCP)](/lcp/)_
 &mdash;which aims to measure when the page's main contents have finished
 loading.
 
@@ -129,13 +129,6 @@ for a complete example of how to measure FCP in JavaScript.
   [limitations](https://github.com/GoogleChrome/web-vitals#limitations) section
   of the `web-vitals` library for details.
 {% endAside %}
-
-## What is a good FCP score?
-
-To provide a good user experience, sites should strive to have First Contentful
-Paint occur within **1 second** of the page starting to load. To ensure you're
-hitting this target for most of your users, a good threshold to measure is the
-**75th percentile** of page loads, segmented across mobile and desktop devices.
 
 ## How to improve FCP
 

@@ -46,7 +46,6 @@ module.exports = (collections) => {
     const tag = {
       ...tagsData[key],
       data: {
-        canonicalUrl: href,
         subhead: description,
         title,
       },
@@ -55,6 +54,7 @@ module.exports = (collections) => {
       href,
       key,
       title,
+      url: href,
     };
 
     if (collections) {

@@ -161,17 +161,18 @@ the DOM as new content becomes available. If any of these new elements is
 larger than the previous largest contentful element, a new `PerformanceEntry`
 will also be reported.
 
-If a page removes an element from the DOM, that element will no longer be
-considered. Similarly, if an element's associated image resource changes (e.g.
-changing `img.src` via JavaScript), then that element will stop being considered
-until the new image loads.
+If an element that is currently the largest contentful element is removed from
+the viewport (or even removed from the DOM), it will remain the largest
+contentful element unless a larger element is rendered.
 
 {% Aside %}
-  In the future, elements removed from the DOM may still be considered as LCP
-  candidates. [Research is currently being
-  done](https://github.com/WICG/largest-contentful-paint/issues/41#issuecomment-583589387)
-  to assess the impact of this change. You can follow the metrics
-  [CHANGELOG](http://bit.ly/chrome-speed-metrics-changelog) to stay up-to-date.
+  Prior to Chrome 88, removed elements were not considered as largest contentful
+  elements, and removing the current candidate would trigger a new
+  `largest-contentful-paint` entry to be dispatched. However, due to popular UI
+  patterns such as image carousels that often removed DOM elements, the metric
+  was updated to more accurately reflect what users experience. See the
+  [CHANGELOG](https://chromium.googlesource.com/chromium/src/+/master/docs/speed/metrics_changelog/2020_11_lcp.md)
+  for more details.
 {% endAside %}
 
 The browser will stop reporting new entries as soon as the user interacts with
@@ -221,9 +222,9 @@ it's removed from the DOM or if its associated image resource changes.
 Here are some examples of when the Largest Contentful Paint occurs on a few
 popular websites:
 
-![Largest Contentful Paint timeline from cnn.com](lcp-cnn-filmstrip.png)
+{% Img src="image/admin/bsBm8poY1uQbq7mNvVJm.png", alt="Largest Contentful Paint timeline from cnn.com", width="800", height="311" %}
 
-![Largest Contentful Paint timeline from techcrunch.com](lcp-techcrunch-filmstrip.png)
+{% Img src="image/admin/xAvLL1u2KFRaqoZZiI71.png", alt="Largest Contentful Paint timeline from techcrunch.com", width="800", height="311" %}
 
 In both of the timelines above, the largest element changes as content loads.
 In the first example, new content is added to the DOM and that changes what
@@ -234,9 +235,9 @@ While it's often the case that late-loading content is larger than content
 already on the page, that's not necessarily the case. The next two examples
 show the Largest Contentful Paint occurring before the page fully loads.
 
-![Largest Contentful Paint timeline from instagram.com](lcp-instagram-filmstrip.png)
+{% Img src="image/admin/uJAGswhXK3bE6Vs4I5bP.png", alt="Largest Contentful Paint timeline from instagram.com", width="800", height="311" %}
 
-![Largest Contentful Paint timeline from google.com](lcp-google-filmstrip.png)
+{% Img src="image/admin/e0O2woQjZJ92aYlPOJzT.png", alt="Largest Contentful Paint timeline from google.com", width="800", height="311" %}
 
 In the first example, the Instagram logo is loaded relatively early and it
 remains the largest element even as other content is progressively shown. In

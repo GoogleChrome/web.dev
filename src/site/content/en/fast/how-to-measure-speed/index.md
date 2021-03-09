@@ -18,7 +18,7 @@ Real-world performance is highly variable due to differences in users' devices, 
 
 ## Lab data vs Field data
 
-<img src="./measure-speed-cover.png" alt="Speed tools graphics">
+{% Img src="image/admin/6OMEfvIKRuDWWSiVDto4.png", alt="Speed tools graphics", width="800", height="232" %}
 
 **Lab data** is performance data collected within a controlled environment with predefined device and network settings, while **Field data** is performance data collected from real page loads experienced by your users in the wild. Each type has its own strengths and limitations.
 
