@@ -11,7 +11,7 @@ description: |
   their infrastructure over the years and supporting newer standards, while continuously supporting
   millions of existing sites.
 date: 2021-03-07
-hero: ./hero.jpg
+hero: image/BrQidfK9jaQyIHwdw91aVpkPiib2/HNGPDotyTYOuPE0YxLQ9.jpg
 alt: Fast Train (https://unsplash.com/photos/60VrGk-bfeA)
 tags:
   - blog
@@ -69,7 +69,7 @@ We adjusted all our monitoring and internal discussions to include industry stan
 as [Web Vitals](https://web.dev/vitals/), which include:
 
 <figure class="w-figure">
-  <img src="./image2.jpg" alt="Core Web Vitals" width="800">
+  {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/PLF62sx8lHkpKbnvYKKR.jpg", alt="Core Web Vitals", width="800", height="215" %}
   <figcaption class="w-figcaption">Core Web Vitals</figcaption>
 </figure>
 
@@ -87,7 +87,7 @@ It's pretty easy to build a [very simple site](https://justinjackson.ca/words.ht
 HTML, serve it via a CDN, and it will load almost instantly.
 
 <figure class="w-figure w-figure--inline-left">
-  <img class="w-screenshot" src="./image3.jpg" alt="PageSpeed Insights Example" width="600">
+  {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/xMUN9CUVvgnHofImPcV5.jpg", alt="PageSpeed Insights Example", width="800", height="647" %}
 </figure>
 
 However, the reality is that sites are getting more and more complex and sophisticated, operating
@@ -109,7 +109,7 @@ because nothing happens until the beginning of the response arrives (known as TT
 first byte).
 
 <figure class="w-figure">
-  <img src="./image4.jpg" alt="WebPageTest First View" width="1600">
+  {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/b1KKSlUQQTuNCDj4ndyJ.jpg", alt="WebPageTest First View", width="800", height="411" %}
   <figcaption class="w-figcaption">WebPageTest First View</figcaption>
 </figure>
 
@@ -209,7 +209,7 @@ a [304 Not Modified](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/30
 by our servers to the client, without a body.
 
 <figure class="w-figure">
-  <img src="./image5.jpg" alt="WebPageTest Repeat View" width="1600">
+  {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/hr1xnQccJEkHTBGxS5wF.jpg", alt="ALT_TEXT_HERE", width="800", height="410" %}
   <figcaption class="w-figcaption">WebPageTest Repeat View</figcaption>
 </figure>
 
@@ -225,7 +225,7 @@ connection became more substantial. Enhancing our networking infrastructure and 
 enabled us to improve our DNS, Connection and SSL times.
 
 <figure class="w-figure w-figure--inline-right">
-  <img class="w-screenshot" src="./image6.jpg" alt="A response time graph." width="600">
+  {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/Uuvh9xTItQ8wMA9s13RP.jpg", alt="A response time graph.", width="800", height="441" %}
 </figure>
 
 [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) was enabled for all user domains, reducing both the
@@ -251,10 +251,10 @@ Traditionally, all our files were compressed using
 HTML compression. This compression protocol was initially implemented almost 30 years ago!
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="./image7.jpg" alt="Brotli Compression" width="350">
-        <figcaption class="w-figcaption">
-        <a href="https://tools.paulcalvano.com/compression.php">Brotli Compression Level Estimator</a>
-        </figcaption>
+  {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/h7KzeAfg2THMdDGMYvlR.jpg", alt="Brotli compression", width="800", height="805" %}
+  <figcaption class="w-figcaption">
+    <a href="https://tools.paulcalvano.com/compression.php">Brotli Compression Level Estimator</a>
+  </figcaption>
 </figure>
 
 
@@ -269,7 +269,7 @@ Moving to use Brotli compression reduced our median file transfer sizes by **21%
 in a reduced bandwidth usage and improved loading times.
 
 <figure class="w-figure">
-  <img src="./image8.jpg" alt="Mobile and Desktop Median Response Sizes" width="1600">
+  {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/392RWYamrwkdFozk91LC.jpg", alt="Mobile and Desktop Median Response Sizes", width="800", height="173" %}
   <figcaption class="w-figcaption">Median Response Sizes</figcaption>
 </figure>
 
@@ -325,7 +325,7 @@ We are committed to continuously improve loading times and provide our users wit
 where they can build sites as they imagine, without compromising on performance.
 
 <figure class="w-figure">
-  <img src="./image9.jpg" alt="LCP, Speed Index and FCP for a Mobile site over time" width="1600">
+  {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/AADz7d1yVOWZlq0iSb6P.jpg", alt="LCP, Speed Index and FCP for a Mobile site over time", width="800", height="259" %}
   <figcaption class="w-figcaption">LCP, Speed Index and FCP for a Mobile site over time</figcaption>
 </figure>
 
@@ -339,6 +339,7 @@ site performance along with it, which can be witnessed by
 over the past year and a half.
 
 ## Conclusion
+
 We hope our experience inspires you to adopt a performance-oriented culture at your organisation and that the
 details above are helpful and applicable to your platform or site.
 
