@@ -116,6 +116,7 @@ gulp.task('default-locale', () => {
       .src(['./dist/**/*.html', '!./dist/i18n/**/*.html'])
       .pipe(gulp.dest(`./dist/i18n/${defaultLocale}`));
   }
+  return Promise.resolve();
 });
 
 gulp.task('sass', sassTask);
