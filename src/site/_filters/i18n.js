@@ -28,11 +28,11 @@ const defaultLocale = 'en';
  * @param {string} dir A directory
  * @return {object}
  */
-const walk = dir => {
+const walk = (dir) => {
   const results = {};
   const files = fs.readdirSync(dir);
   files
-    .filter(file => {
+    .filter((file) => {
       // Only allow directories and yaml files.
       const ext = path.extname(file);
       // !ext implies a directory
@@ -42,7 +42,7 @@ const walk = dir => {
 
       return false;
     })
-    .forEach(file => {
+    .forEach((file) => {
       file = path.join(dir, file);
       const ext = path.extname(file);
       const name = path.basename(file, ext);
