@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-const authors = require('../../../_data/authorsData.json');
-const willmeet = Object.values(authors).filter((author) => author?.connect);
+const {index} = require('../../../_collections/hooks/authors');
 
 module.exports = {
-  meetable_devrel: willmeet,
+  pagination: {
+    before: (authors) => index(authors.filter(author => author?.connect)),
+  },
 };
