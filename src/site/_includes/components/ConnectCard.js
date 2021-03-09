@@ -64,17 +64,25 @@ class ConnectCard extends BaseCard {
     `;
   }
 
+  /*eslint-disable */
   renderChips() {
-    if (!this.collectionItem.connect) return;
+    if (!this.collectionItem.connect) {
+      return;
+    }
 
     return html`
       <div class="w-card__chips w-chips">
         ${this.collectionItem.connect.topics.map((displayedTag) => {
-          return html` <a href="#" class="w-chip">${displayedTag}</a> `;
+          return html`
+            <span class="w-chip">
+              ${displayedTag}
+            </span>
+          `;
         })}
       </div>
     `;
   }
+  /*eslint-enable */
 }
 
 module.exports = (args) => new ConnectCard(args).render();
