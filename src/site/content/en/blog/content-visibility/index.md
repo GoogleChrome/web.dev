@@ -116,10 +116,12 @@ enables the rendering work to be done just in time to be seen by the user.
 
 ## A note on accessibility
 
-One of the features of `content-visibility: auto` is that the off-screen content remains available in the document object model and therefore, the accessibility tree (unlike with `visibility: hidden`). This means, that content can be searched for on the page, and navigated to, without sacrificing rendering performance.
+One of the features of `content-visibility: auto` is that the off-screen content remains available in the document object model and therefore, the accessibility tree (unlike with `visibility: hidden`). This means, that content can be searched for on the page, and navigated to, without waiting for it to load or sacrificing rendering performance.
+
+The flip-side of this, however, is that elements with style features, such as `display: none` or `visibility: hidden` will also appear in the accessibility tree when off-screen, since the browser will not render these styles until they enter the viewport. This could potentially cause clutter and other side effects in the accessibility tree.
 
 {% Aside 'caution' %}
-In Chromium 85-89, a bug caused [degraded accessibility](https://marcysutton.com/content-visibility-accessible-semantics) on sections of content such as headings and semantic structure. This has since been fixed in Chromium 90.
+In Chromium 85-89, off-screen content was [not available in the accessibility tree](https://marcysutton.com/content-visibility-accessible-semantics). An update was made in Chromium 90 to include this content.
 {% endAside %}
 
 ## Example: a travel blog {: #example }
