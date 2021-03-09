@@ -1,6 +1,9 @@
 ---
 title: How CLS optimizations increased Yahoo! JAPAN News's page views per session by 15%
-subhead: How to get your PWA to show up next to platform-specific apps in system-level sharing UIs
+subhead: >
+  Optimizing CLS by 0.2 led to a 15% increase in page
+  views per session, 13% longer session durations, and a 1.72
+  percentage point decrease in bounce rate.
 description: |
     Using Search Console and Lighthouse to monitor Core Web Vitals, they discovered
     opportunities for optimizing CLS score by 0.2 which led to 15% increase in page
@@ -20,7 +23,7 @@ tags:
   - web-vitals
 ---
 
-[Yahoo! JAPAN](https://www.yahoo.co.jp) is one of the largest media in Japan,
+[Yahoo! JAPAN](https://www.yahoo.co.jp) is one of the largest media companies in Japan,
 providing over 79 billion page views per month. Their news platform, [Yahoo!
 JAPAN News](https://news.yahoo.co.jp) has more than 22 billion page views per
 month and an engineering team dedicated to improving the user experience. 
@@ -141,9 +144,9 @@ implement images that also meet the following requirements:
 -  Display images at 100% width of the parent element. However, images with
    height over 300 px will be scaled down to 300 px height while preserving the
    aspect ratio.
--  Images can have links and be clickable.
+-  Make images clickable and support links.
 -  Support not only modern browsers, but also browsers installed in
-   relatively old OS such as iOS 9.
+   relatively old operating systems such as iOS 9.
 
 They used [Aspect Ratio Boxes](https://css-tricks.com/aspect-ratio-boxes/)—a
 method which uses markup to reserve the space on the page before the image is
