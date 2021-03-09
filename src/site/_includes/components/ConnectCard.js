@@ -50,16 +50,10 @@ class ConnectCard extends BaseCard {
 
     return html`
       <a
-        class="w-button w-button--primary w-masthead-home__button--primary"
+        class="w-button w-button--primary"
         href="${this.collectionItem.connect.url}"
       >
         Book a meeting
-      </a>
-      <a
-        class="w-button w-button--secondary w-masthead-home__button--primary"
-        href="${this.url}"
-      >
-        Author's Posts
       </a>
     `;
   }
@@ -71,7 +65,7 @@ class ConnectCard extends BaseCard {
     }
 
     return html`
-      <div class="w-card__chips w-chips">
+      <div class="w-card__chips w-chips" style="justify-content: center;">
         ${this.collectionItem.connect.topics.map((displayedTag) => {
           return html`
             <span class="w-chip">
