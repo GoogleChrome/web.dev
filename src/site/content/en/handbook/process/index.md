@@ -1,6 +1,6 @@
 ---
 layout: handbook
-title: Content processes
+title: Content process guide
 date: 2021-03-07
 description: >
   Process guidelines for reviewing, prioritizing, and tracking proposals and drafts.
