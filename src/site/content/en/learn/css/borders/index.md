@@ -15,3 +15,10 @@ Hey we're talking about borders here!
 ## Yet more headings
 
 ### Here's another smol boi
+
+### Example Codepen embed
+
+{% Codepen {
+  user: 'devnook',
+  id: 'WNoYvpg'
+}%}
