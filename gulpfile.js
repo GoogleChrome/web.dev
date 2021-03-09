@@ -109,6 +109,15 @@ gulp.task('copy-fonts', () => {
   return gulp.src('src/fonts/**/*').pipe(gulp.dest('dist/fonts/'));
 });
 
+// Copies content default locale into it's own folder on prod.
+gulp.task('default-locale', () => {
+  if (isProd) {
+    return gulp
+      .src(['./dist/**/*.html', '!./dist/i18n/**/*.html'])
+      .pipe(gulp.dest(`./dist/i18n/${defaultLocale}`));
+  }
+});
+
 gulp.task('sass', sassTask);
 
 gulp.task(
