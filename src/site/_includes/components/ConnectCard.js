@@ -49,27 +49,32 @@ class ConnectCard extends BaseCard {
     }
 
     return html`
-      <a class="w-button w-button--primary w-masthead-home__button--primary" href="${this.collectionItem.connect.url}">
+      <a
+        class="w-button w-button--primary w-masthead-home__button--primary"
+        href="${this.collectionItem.connect.url}"
+      >
         Book a meeting
       </a>
-      <a class="w-button w-button--secondary w-masthead-home__button--primary" href="${this.url}">
+      <a
+        class="w-button w-button--secondary w-masthead-home__button--primary"
+        href="${this.url}"
+      >
         Author's Posts
       </a>
     `;
   }
 
   renderChips() {
-    if (!this.collectionItem.connect) return
+    if (!this.collectionItem.connect) return;
 
     return html`
       <div class="w-card__chips w-chips">
         ${this.collectionItem.connect.topics.map((displayedTag) => {
-          return html`
-            <a class="w-chip">${displayedTag}</a>
-          `;
+          return html` <a href="#" class="w-chip">${displayedTag}</a> `;
         })}
       </div>
     `;
   }
 }
+
 module.exports = (args) => new ConnectCard(args).render();

@@ -18,6 +18,6 @@ const {index} = require('../../../_collections/hooks/authors');
 
 module.exports = {
   pagination: {
-    before: (authors) => index(authors.filter(author => author?.connect)),
+    before: (authors) => index(authors.filter((author) => author?.connect)),
   },
 };
