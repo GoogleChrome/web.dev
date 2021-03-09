@@ -520,6 +520,25 @@ As `GRAD` is a custom axis, with a range of -1 to 1, we need to address it with
 }
 ```
 
+### Variable fonts on Google Fonts
+
+Google Fonts has expanded their catalog with [variable
+fonts](https://fonts.google.com/?vfonly=true), and adding new ones regularly.
+The interface is currently aimed at picking single instances from the font:
+you select the variation you want, click "Select this style", and it will be
+added to the `<link>` element that fetches the CSS and fonts from Google Fonts.
+
+If you want to use all the available axes, or ranges of values instead of a
+single value, you will have to [manually
+compose](https://developers.google.com/fonts/docs/css2) the URL to the Google
+Fonts API. To know which axes are in the fonts, head over to the [variable
+fonts overview](https://fonts.google.com/variablefonts) where all axes and
+values are listed.
+
+You can also use a tool like [Google Variable Fonts
+Links](https://github.com/RoelN/google-variable-fonts-links) to get the
+latests URLs for the full variable fonts.
+
 ## Font-variation-settings inheritance
 
 While all registered axes will soon be supported through existing CSS
