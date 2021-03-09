@@ -131,7 +131,7 @@ they work well together with lit-html, as you can see in the listing below.
 ```
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Toz6JmkCQVt7WLscSnlP.png", alt="Three buttons and a progress ring.", width="649", height="528" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Toz6JmkCQVt7WLscSnlP.png", alt="Three buttons and a progress ring.", width="300", height="244" %}
   <figcaption class="w-figcaption">
     Rendered section of the page corresponding to the mark-up above.
   </figcaption>
@@ -162,7 +162,7 @@ const page = new Page({
 ```
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y82LVHSxUVAehgQlDbsb.png", alt="In-app page realized as an iframe.", width="800", height="435" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y82LVHSxUVAehgQlDbsb.png", alt="In-app page realized as an iframe.", width="500", height="272" %}
   <figcaption class="w-figcaption">
     Navigation happens from iframe to iframe.
   </figcaption>
@@ -203,7 +203,7 @@ select {
 ```
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/z3Op4O7OM5NQ1zz8Uah8.png", alt="HIIT Time app preferences page showing a form in grid layout.", width="739", height="461" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/z3Op4O7OM5NQ1zz8Uah8.png", alt="HIIT Time app preferences page showing a form in grid layout.", width="500", height="312" %}
   <figcaption class="w-figcaption">
     Every page is its own world. Styling happens directly with the element names.
   </figcaption>

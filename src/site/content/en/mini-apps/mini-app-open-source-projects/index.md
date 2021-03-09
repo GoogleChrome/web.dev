@@ -114,7 +114,7 @@ components emulate the look and feel of
 you explore the available components.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wEA4Hr2JyVfKgdHnpb5o.png", alt="Demo of the kbone-ui framework showing form-related components like radio buttons, switches, inputs, and labels.", width="800", height="1233" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wEA4Hr2JyVfKgdHnpb5o.png", alt="Demo of the kbone-ui framework showing form-related components like radio buttons, switches, inputs, and labels.", width="320", height="438" %}
   <figcaption class="w-figure">
    The kbone-ui demo showing form-related components.
   </figcaption>
@@ -132,7 +132,7 @@ WeChat mini apps styled with WXSS (see [Styling](/mini-app-markup-styling-and-sc
 [react-weui](https://github.com/weui/react-weui/) for WeChat React components.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V0xswCD3MJltrxALmy8n.png", alt="Demo of the WeUI framework showing form-related components, namely switches.", width="800", height="703" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V0xswCD3MJltrxALmy8n.png", alt="Demo of the WeUI framework showing form-related components, namely switches.", width="450", height="395" %}
   <figcaption class="w-figure">
    The WeUI demo app showing switches.
   </figcaption>
@@ -281,7 +281,7 @@ WeChat platform.
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/C7ZpPrFE4geW0dylRpZ2.png", alt="The weweb demo mini app compiled with weweb to run in the browser showing form elements.", width="800", height="1146" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/C7ZpPrFE4geW0dylRpZ2.png", alt="The weweb demo mini app compiled with weweb to run in the browser showing form elements.", width="300", height="429" %}
   <figcaption class="w-figure">
     The weweb demo mini app compiled with weweb to run in the browser.
   </figcaption>

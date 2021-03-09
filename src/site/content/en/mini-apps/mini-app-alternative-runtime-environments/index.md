@@ -105,14 +105,14 @@ includes the well-known UI affordances and permission prompts as on mobile (see
 [The user experience](/mini-app-about/#the-user-experience)).
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uorcciuZIL8sadxTjXbv.png", alt="The Starbucks mini app running on macOS asking for the user profile permission which the user can grant via a prompt shown at the bottom.", width="800", height="1290" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uorcciuZIL8sadxTjXbv.png", alt="The Starbucks mini app running on macOS asking for the user profile permission which the user can grant via a prompt shown at the bottom.", width="300", height="484" %}
   <figcaption class="w-figure">
     The Starbucks mini app running on macOS asking for the user profile permission.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UGufvRnoaAGm8A3qQG4a.png", alt="The Starbucks mini app running on macOS showing the home screen of the app.", width="800", height="1290" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UGufvRnoaAGm8A3qQG4a.png", alt="The Starbucks mini app running on macOS showing the home screen of the app.", width="300", height="484" %}
   <figcaption class="w-figure">
     The Starbucks mini app running on macOS in a fixed, non-resizable window.
   </figcaption>
@@ -129,14 +129,14 @@ a wider window that on macOS is currently still fixed, but that on Windows is fl
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rPbojIjBGKbNtDviB0MJ.png", alt="The WeChat components demo app in a narrow window showing three boxes A, B, and C stacked on top of each other.", width="736", height="1506" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rPbojIjBGKbNtDviB0MJ.png", alt="The WeChat components demo app in a narrow window showing three boxes A, B, and C stacked on top of each other.", width="300", height="614" %}
   <figcaption class="w-figure">
     The WeChat components demo app in a narrow app window.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xnlacc8Xm1eNMCuajYYL.png", alt="The WeChat components demo app in a wide window showing three boxes A, B, and C with A stacked on top of B and C on the side.", width="800", height="753" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xnlacc8Xm1eNMCuajYYL.png", alt="The WeChat components demo app in a wide window showing three boxes A, B, and C with A stacked on top of B and C on the side.", width="600", height="565" %}
   <figcaption class="w-figure">
     The WeChat components demo app in a wide app window.
   </figcaption>
@@ -147,7 +147,7 @@ seem to be possible and the location reported by the demo app appears to be the 
 Windows allows apps to obtain without asking for permission.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rHyiTGbMauqbSFWBFlMW.png", alt="The WeChat components demo app running on macOS showing two checkboxes for the location and user info permission.", width="800", height="614" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rHyiTGbMauqbSFWBFlMW.png", alt="The WeChat components demo app running on macOS showing two checkboxes for the location and user info permission.", width="500", height="384" %}
   <figcaption class="w-figure">
     WeChat mini app settings on macOS.
   </figcaption>
@@ -214,7 +214,7 @@ To get a feel for the platform, you can test the
 you have a LINE account.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YIlFjXgZhq8ROMrPA1BO.png", alt="The LINE Playground demo app running on an iOS device showing `liff.getOS()` returning 'ios'.", width="800", height="1731" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YIlFjXgZhq8ROMrPA1BO.png", alt="The LINE Playground demo app running on an iOS device showing `liff.getOS()` returning 'ios'.", width="300", height="649" %}
   <figcaption class="w-figure">
    The LINE Playground demo app running on an iOS device.
   </figcaption>
@@ -237,7 +237,7 @@ using HTML and JavaScript, so existing investments into mobile websites or PWAs 
 transformed into a Spot by "adding a few lines of JavaScript" according to the announcement post.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/T4OLZX8PIFjFq3gVzUmo.png", alt="The Eat.fit mini app running in the Google Pay super app showing the sign-in bottom sheet.", width="424", height="900" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/T4OLZX8PIFjFq3gVzUmo.png", alt="The Eat.fit mini app running in the Google Pay super app showing the sign-in bottom sheet.", width="300", height="637" %}
   <figcaption class="w-figure">
    The Eat.fit mini app running in the Google Pay super app (Source: <a href="https://developers.google.com/pay/spot">Google</a>).
   </figcaption>
@@ -252,7 +252,7 @@ HTML5, so they are easy to develop. Plus, they work for all Snapchatters, on any
 with no installation required.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vM5d0wK5fCQSV0VyP7HA.png", alt="The Atom Tickets mini app running in Snapchat showing three snapchat users reserving their seats in a movie theater.", width="800", height="1176" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vM5d0wK5fCQSV0VyP7HA.png", alt="The Atom Tickets mini app running in Snapchat showing three snapchat users reserving their seats in a movie theater.", width="320", height="470" %}
   <figcaption class="w-figure">
    The Atom Tickets mini app running in Snapchat (Source: <a href="https://minis.snapchat.com/">Snap</a>).
   </figcaption>

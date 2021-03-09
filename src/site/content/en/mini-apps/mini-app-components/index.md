@@ -184,7 +184,7 @@ Each component also has a QR code that can be scanned with the Alipay app that o
 example in a self-contained minimal example.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gaWqLG5GqeqqfbhWz8D1.png", alt="Alipay's `image` component previewed on a real device after scanning a QR code in the documentation.", width="800", height="1731" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gaWqLG5GqeqqfbhWz8D1.png", alt="Alipay's `image` component previewed on a real device after scanning a QR code in the documentation.", width="300", height="649" %}
   <figcaption class="w-figure">
     Preview of the Alipay <code>&lt;image&gt;</code> component on a real device after following a <a href="https://qr.alipay.com/s6x01278ucjhjyknjd5ow53">QR code link</a> from the docs.
   </figcaption>
