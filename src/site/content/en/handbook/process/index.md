@@ -132,25 +132,50 @@ The following considerations can help determine priority:
 * The content has an upcoming hard deadline. One situation to (gently) pushback on,
   however, is when a proposal is submitted at the last minute when the
   proposal submitter presumably has known about the need for the content
-  for a long time. Note that the automation script sends out an email along
-  the lines of "failure to plan on your part is not an emergency on ours" when
-  it detects a deadline less than 2 weeks from when the proposal was submitted.
-* The content is related to a top priority area. The top priority areas
-  for Q1 2021 are Web Vitals and Privacy Sandbox.
-* The proposal submitter gave us a generous amount of notice on when
-  they need to publish something. In that case we should pay back
-  their courteousness and make sure we help them publish on time.
+  for a long time.
+* The content is related to a [top priority area][priorities].
+* The proposal submitter gave us a generous amount of notice on when they need
+  to publish something. A month or more is a "generous" amount. In this scenario we
+  should pay back their courteousness and make sure we help them publish on
+  time.
 * The content is extremely well-aligned with web.dev's goals
   (see [Acceptance criteria](#criteria)) or has high potential impact.
   A guide for a new Lighthouse audit related to Web Vitals is an example
   of content that is very aligned with our goals and has high impact because
-  it's actionable, is related to a top priority area, etc.
+  it's actionable, is related to a top priority area (as of Q1 2021), etc.
 
 ## Checklists {: #checklists }
 
-TODO
+### Proposal review checklist {: #proposal-checklist }
+
+* Make sure that someone has submitted `go/chrome-devrel-content-proposal`
+  before reviewing any content.
+* Reply to the automated email within 1 business day, even if it's just to let
+  the proposal submitter know that you can't review the proposal until a later date.
+* Check the list of people that have been CC'd in the automated email. Is there
+  anyone that doesn't need to be on the email thread? Is there anyone missing?
+* Use the [acceptance criteria](#criteria) to determine whether the content
+  is well-suited for web.dev.
+* If the content does not meet the acceptance criteria, communicate the issues
+  by replying to the automated email. You can link to the acceptance criteria
+  section as rationale. You can either work with the author to rework the
+  content so that it meets the criteria, bring more people into the discussion
+  for further perspective, ask to postpone the content until a later date,
+  or tell the author that the content is not aligned to web.dev's goals (if
+  it's clearly outside the scope of the site).
+
+### Work tracking checklist {: #tracking-checklist }
+
+Do the following after accepting a proposal:
+
+* Add the tracking issue (listed at the bottom of the automated email) to the
+  [*Content* project board][project].
+* Assign a [priority](#prioritization) to the tracking issue.
+* Set the **assignee** of the tracking issue to the person on the Chrome DevRel
+  content team who will be reviewing the content.
 
 [issue]: https://github.com/GoogleChrome/web.dev/issues/new?assignees=kaycebasques&labels=new+content&template=propose-new-content.md&title=content%3A+TODO
 [project]: https://github.com/GoogleChrome/web.dev/projects/23
 [spreadsheet]: https://docs.google.com/spreadsheets/d/1plMunpJHlQZuEJDRRTBmpC3UQef5dXFN5i6Ux4utR_I/edit#gid=1251362433
 [reference]: https://documentation.divio.com/reference/
+[priorities]: https://docs.google.com/document/d/1hpg3o5k-SWOaROKZt0qEi-LtKcDByXr9yDYNT5foGEk/edit?resourcekey=0-LQ3W5lm-aZcalWhd-qlPFg#
