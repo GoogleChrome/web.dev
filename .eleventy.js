@@ -67,6 +67,7 @@ const tags = require(`./${collectionsDir}/tags`);
 
 const filtersDir = 'src/site/_filters';
 const consoleDump = require(`./${filtersDir}/console-dump`);
+const {i18n} = require(`./${filtersDir}/i18n`);
 const {memoize, findByUrl} = require(`./${filtersDir}/find-by-url`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
@@ -182,6 +183,7 @@ module.exports = function (config) {
   // FILTERS
   // ----------------------------------------------------------------------------
   config.addFilter('consoleDump', consoleDump);
+  config.addFilter('i18n', i18n);
   config.addFilter('findByUrl', findByUrl);
   config.addFilter('findTags', findTags);
   config.addFilter('pathSlug', pathSlug);
