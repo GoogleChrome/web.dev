@@ -42,3 +42,5 @@ GDDSGWL, use the spelling that you see here.
 * webpack
 * website
 * Wi-Fi
+
+[list]: https://developers.google.com/style/word-list

@@ -18,16 +18,9 @@
     {
       "title": "Content guidelines",
       "pathItems": [
-        "handbook/content-types",
         "handbook/case-study-guidelines",
         "handbook/quality",
         "handbook/voice",
-        "handbook/audience",
-        "handbook/grammar",
-        "handbook/inclusion-and-accessibility",
-        "handbook/effective-instruction",
-        "handbook/write-code-samples",
-        "handbook/use-media",
         "handbook/word-list",
         "handbook/tooling-and-libraries",
         "handbook/reviews",
