@@ -1,6 +1,6 @@
 ---
 layout: handbook
-title: Content lifecycle processes
+title: Content processes
 date: 2021-03-07
 description: >
   Process guidelines for reviewing, prioritizing, and tracking proposals and drafts.
@@ -17,7 +17,7 @@ The recommended way to use this page is to read it from top-to-bottom
 to understand the context about how we do things, and then to use
 the [checklists](#checklists) at the bottom when actually reviewing proposals or drafts.
 
-## Proposal reviews
+## Proposal reviews {: #proposals }
 
 Before any new content is published to web.dev it should go through our
 standard proposal review process. The goals of the proposal review process are
