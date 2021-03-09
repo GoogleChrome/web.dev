@@ -5,6 +5,7 @@ authors:
   - una
   - vladimirlevin
 date: 2020-08-05
+updated: 2021-03-09
 hero: hero.jpg
 alt: Stylized photo of a half-hidden person.
 description: >
@@ -120,8 +121,10 @@ One of the features of `content-visibility: auto` is that the off-screen content
 
 The flip-side of this, however, is that elements with style features, such as `display: none` or `visibility: hidden` will also appear in the accessibility tree when off-screen, since the browser will not render these styles until they enter the viewport. This could potentially cause clutter and other side effects in the accessibility tree.
 
+
+
 {% Aside 'caution' %}
-In Chromium 85-89, off-screen content was [not available in the accessibility tree](https://marcysutton.com/content-visibility-accessible-semantics). An update was made in Chromium 90 to include this content.
+In Chromium 85-89, off-screen children within `content-visibility: auto` were marked as invisible. In particular, [headings](https://marcysutton.com/content-visibility-accessible-semantics) were not exposed to accessibility tools. In Chromium 90 this was updated so that headings are exposed.
 {% endAside %}
 
 ## Example: a travel blog {: #example }
