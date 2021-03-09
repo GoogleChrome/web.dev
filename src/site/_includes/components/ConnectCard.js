@@ -43,6 +43,21 @@ class ConnectCard extends BaseCard {
     `;
   }
 
+  renderSubhead(subhead) {
+    if (!subhead) {
+      return;
+    }
+
+    return html`
+      <a class="w-button w-button--primary w-masthead-home__button--primary" href="${this.collectionItem.connect.url}">
+        Book a meeting
+      </a>
+      <a class="w-button w-button--secondary w-masthead-home__button--primary" href="${this.url}">
+        Author's Posts
+      </a>
+    `;
+  }
+
   renderChips() {
     if (!this.collectionItem.connect) return
 
