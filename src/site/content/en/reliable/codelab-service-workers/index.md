@@ -124,8 +124,7 @@ Now that you've got the code added to `register-sw.js` and `service-worker.js`
 files, it's time to visit the Live version of your sample project, and observe
 the service worker in action.
 
-{% Instruction 'preview' %}
-{% Instruction 'devtools' %}
+{% Instruction 'preview' %}i
 {% Instruction 'devtools-console', 'ul' %}
 
 You should see something like the following log messages,
