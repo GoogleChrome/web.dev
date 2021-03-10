@@ -121,9 +121,12 @@ create the hairline borders between elements. No tricky border solution!
 .grid {
   display: grid;
 
-  & > .fieldset-item:not(:last-child) {
+  & > .fieldset-item {
     background: var(--bg-surface-2);
-    border-bottom: 1px solid var(--bg-surface-1);
+    
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--bg-surface-1);
+    }
   }
 }
 ```
@@ -456,7 +459,7 @@ that is through colorful UI interactions.
 1. UI feedback that it's accepting input
 
 There are many layers of UI feedback and interaction in the above video, all of
-which give the interface a tangibility, a personality and responsive to the
+which give the interface a tangibility, a personality and responsivity to
 interaction. Color specifically is assisting in so much with so little. CSS is
 using the `:focus-within` pseudo class to change the appearance of various
 elements, let's break down the `.fieldset-item`, it's super interesting:
@@ -486,13 +489,284 @@ fills white, and the `<picture>` containing the svg icon fills with a background
 color and expands it's `clip-path `to a full circle. 
 
 ## Custom Range
-- preseve-3d translateZ
-- transform order matters
-- box-shadow trick
-- gradient syntax
+
+Given the following HTML input element, I'll show you how I customized it's
+appearance:
+
+```html
+<input type="range">
+```
+
+There's 3 parts to this element we need to customize:
+1. [Range element / container](#range-element-styles)
+1. [Track](#track-styles)
+1. [Thumb](#thumb-styles)
+
+### Range element styles
+```css
+input[type="range"] {
+  /* style setting variables */
+  --track-height: .5ex;
+  --track-fill: 0%;
+  --thumb-size: 3ex;
+  --thumb-offset: -1.25ex;
+  --thumb-highlight-size: 0px;
+
+  appearance: none;         /* clear styles, make way for mine */
+  display: block;
+  inline-size: 100%;        /* fill container */
+  margin: 1ex 0;            /* ensure thumb isn't colliding with sibling content */
+  background: transparent;  /* bg is in the track */
+  outline-offset: 5px;      /* focus styles have space */
+}
+```
+
+The first few lines of CSS are the custom parts of the styles, and I hope that
+clearly labeling them helps. The rest of the styles are mostly reset styles, to
+provide a consistent foundation for building the tricky parts of the component.
+
+### Track styles
+
+```css
+input[type="range"]::-webkit-slider-runnable-track {
+  appearance: none; /* clear styles, make way for mine */
+  block-size: var(--track-height);
+  border-radius: 5ex;
+  background: 
+    /* hard stop gradient: 
+        - half transparent (where colorful fill we be)
+        - half dark track fill
+        - 1st background image is on top
+    */
+    linear-gradient(
+      to right, 
+      transparent var(--track-fill), 
+      var(--surface1) 0%
+    ),
+    /* colorful fill effect, behind track surface fill */
+    var(--brand-bg-gradient) fixed;
+}
+```
+
+The trick to this is "revealing" the vibrant fill color. This is done with the
+hard stop gradient on top, it's transparent up to the fill percentage, and after
+that it's the unfilled track surface color. Behind that unfilled surface, is a
+full width color, waiting for transparency to reveal it.
+
+{% Video 
+  src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/aiAL28AkDRZvaAZNEbW8.mp4",
+  className="w-screenshot", 
+  autoplay="true", 
+  loop="true", 
+  muted="true" 
+%}
+
+My solution did require Javascript though, in order to maintain the fill style:
+
+```js
+/* grab sliders on page */
+const sliders = document.querySelectorAll('input[type="range"]')
+
+/* take a slider element, return a percentage string for use in CSS */
+const rangeToPercent = slider => {
+  const max = slider.getAttribute('max') || 10;
+  const percent = slider.value / max * 100;
+
+  return `${parseInt(percent)}%`;
+};
+
+/* on page load, set the fill amount */
+sliders.forEach(slider => {
+  slider.style.setProperty('--track-fill', rangeToPercent(slider));
+
+  /* when a slider changes, update the fill prop */
+  slider.addEventListener('input', e => {
+    e.target.style.setProperty('--track-fill', rangeToPercent(e.target));
+  })
+})
+```
+
+I think this makes for a nice visual upgrade. The slider works great without
+Javascript, the `--track-fill` prop is not required. If it's important to the
+design though, server side components could set the property on the html,
+allowing Javascript to hydrate the value while also observing any user changes. 
+
+There are easier to manage solutions for custom track fill colors, but the style
+I wanted necessitated some Javascript. [Here's a great
+post](https://css-tricks.com/sliding-nightmare-understanding-range-input/) on
+[CSS-Tricks](https://css-tricks.com/) by [Ana
+Tudor](https://twitter.com/anatudor), that demonstrates a CSS only solution for
+track fill.
+
+### Thumb styles
+
+```css
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none; /* clear styles, make way for mine */
+  cursor: ew-resize; /* cursor style to support drag direction */
+  border: 3px solid var(--surface3);
+  block-size: var(--thumb-size);
+  inline-size: var(--thumb-size);
+  margin-top: var(--thumb-offset);
+  border-radius: 50%;
+  background: var(--brand-bg-gradient) fixed;
+}
+```
+
+The majority of these styles are around making a nice tangible looking circle
+element. Again you see the fixed background gradient there that unifies the
+dynamic colors of the thumbs, tracks and associated SVG elements.
+
+I separated the styles for the interaction to help isolate the `box-shadow`
+technique being user for the hover highlight:
+
+```css
+::-webkit-slider-thumb {
+  …
+
+  /* shadow spread is initally 0 */
+  box-shadow: 0 0 0 var(--thumb-highlight-size) var(--thumb-highlight-color);
+  
+  /* if motion is OK, transition the box-shadow change */
+  @media (prefers-reduced-motion: no-preference) {
+    & {
+      transition: box-shadow .1s ease;
+    }
+  }
+
+  /* on hover/active state of parent, increase size prop */
+  @nest input[type="range"]:is(:hover,:active) & {
+    --thumb-highlight-size: 10px;
+  }
+}
+```
+
+The goal was a nice painted highlight on the user interactive element. By using
+a box shadow that's not blurred and matches the circular shape of the thumb
+element, we can change and transition it's spread size, resulting in an easy to
+manage visual highlight effect. 
+
+{% Video 
+  src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/s835RbH88L5bxjl5bMFl.mp4",
+  className="w-screenshot", 
+  autoplay="true", 
+  loop="true", 
+  muted="true" 
+%}
+
+If only the highlight effect was so easy on checkboxes…
+
+### Cross browser selectors
+
+I found I needed these `-webkit-` and `-moz-` selectors to achieve cross browser
+consistency:
+
+```css
+input[type="range"] {
+  &::-webkit-slider-runnable-track {}
+  &::-moz-range-track {}
+  &::-webkit-slider-thumb {}
+  &::-moz-range-thumb {}
+}
+```
+
+{% Aside 'gotchas' %} 
+[Josh Comeau](https://twitter.com/JoshWComeau) outlines
+why the above examples don't simply use a comma between selectors for cross
+browser styling, see the [Twitter
+thread](https://twitter.com/JoshWComeau/status/1359213591602335752?s=20) for
+more information. 
+{% endAside %}
 
 ## Custom Checkbox
+
+Given the following HTML input element, I'll show you how I customized it's
+appearance:
+
+```html
+<input type="checkbox">
+```
+
+There's 3 parts to this element we need to customize:
+1. [Checkbox element](#checkbox-element)
+1. [Associated labels](#checkbox-labels)
+1. [Highlight effect](#checkbox-highlight)
+
+### Checkbox element
+
+```css
+input[type="checkbox"] {
+  inline-size: var(--space-sm);
+  block-size: var(--space-sm);
+  margin: 0;
+  outline-offset: 5px;
+  accent-color: var(--brand);
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+```
+
+### Checkbox labels
 - display contents label
+
+<div class="w-columns">
+{% Compare 'better', 'input' %}
+
+```html
+<input 
+  type="checkbox" 
+  id="text-notifications" 
+  name="text-notifications"
+>
+```
+
+{% endCompare %}
+
+{% Compare 'better', 'label' %}
+
+```html
+<label for="text-notifications">
+  <h3>Text Messages</h3>
+  <small>Get notified about all text messages sent to your device</small>
+</label>
+```
+{% endCompare %}
+</div>
+
+### Checkbox highlight
+- preseve-3d translateZ
+- transform order matters
+
+```css
+input[type="checkbox"]::before {
+  --thumb-scale: .01;
+  --thumb-highlight-size: var(--space-xl);
+
+  content: "";
+  inline-size: var(--thumb-highlight-size);
+  block-size: var(--thumb-highlight-size);
+  clip-path: circle(50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--thumb-highlight-color);
+  transform-origin: center center;
+  transform: 
+    translateX(-50%) 
+    translateY(-50%) 
+    translateZ(-1px) 
+    scale(var(--thumb-scale))
+  ;
+  will-change: transform;
+
+  @media (--motionOK) {
+    & {
+      transition: transform .2s ease;
+    }
+  }
+}
+```
 
 ## Accessibility
 
@@ -510,4 +784,4 @@ to the [Community remixes](#community-remixes) section below!
 
 ## Community remixes
 
-<i>awaiting submissions</i>
+<i>awaiting submissions!</i>
