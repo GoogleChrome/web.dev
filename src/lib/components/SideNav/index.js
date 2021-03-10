@@ -63,7 +63,6 @@ class SideNav extends BaseElement {
     this.closeBtn = this.querySelector('[data-nav-close-button]');
     this.addEventListeners();
     this.onStateChanged();
-    this.classList.remove('unresolved');
   }
 
   addEventListeners() {
