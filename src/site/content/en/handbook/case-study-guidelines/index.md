@@ -20,11 +20,11 @@ not focus on themselves too much. By focusing on what's in it for web developers
 people who are most likely to read our case studies), we maximize the odds that
 people actually read and share the case study.
 
-## Find a compelling correlation {: #correlation }
+## Success metrics {: #metrics }
 
-A very effective approach for case study messaging is to highlight a correlation
-between the changes that the web developers made and a business metric
-improvement. Examples:
+A key part of case study messaging is to highlight a business metric
+improvement that was (ideally) [caused by or at least correlated
+to](#experimental-design) the web development changes. Examples:
 
 * [Clipchamp's video editor PWA installs see a 97% monthly growth](/clipchamp/)
 * [PWA users are 2.5x more likely to purchase Gravit Designer PRO](/gravit-designer/)
@@ -36,6 +36,15 @@ The reason this is important is because web development teams often need to
 persuade business stakeholders before they can make any significant changes
 to their website or processes. Business stakeholders won't agree to these
 changes unless there is evidence that the ROI is worthwhile.
+
+### Experimental design {: #experimental-design }
+
+In general, if you introduce multiple changes at once, it's hard
+to conclusively say that one of the particular changes led to
+the improved business outcome. For that reason, we prefer case studies
+where a well-designed experiment was run under controlled conditions.
+An A/B test that measures a single change with all traffic coming from
+the same channel(s) is ideal.
 
 ## Organize the beginning of your content as an inverted pyramid {: #inverted-pyramid }
 
