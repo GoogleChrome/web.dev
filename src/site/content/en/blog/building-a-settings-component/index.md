@@ -621,6 +621,8 @@ I separated the styles for the interaction to help isolate the `box-shadow`
 technique being user for the hover highlight:
 
 ```css
+@custom-media --motionOK (prefers-reduced-motion: no-preference);
+
 ::-webkit-slider-thumb {
   …
 
@@ -628,7 +630,7 @@ technique being user for the hover highlight:
   box-shadow: 0 0 0 var(--thumb-highlight-size) var(--thumb-highlight-color);
   
   /* if motion is OK, transition the box-shadow change */
-  @media (prefers-reduced-motion: no-preference) {
+  @media (--motionOK) {
     & {
       transition: box-shadow .1s ease;
     }
@@ -696,19 +698,37 @@ There's 3 parts to this element we need to customize:
 
 ```css
 input[type="checkbox"] {
-  inline-size: var(--space-sm);
-  block-size: var(--space-sm);
+  inline-size: var(--space-sm);   /* increase width */
+  block-size: var(--space-sm);    /* increase height */
+  outline-offset: 5px;            /* focus style enhancement */
+  accent-color: var(--brand);     /* tint the input */
+  position: relative;             /* prepare for an absolute pseudo element */
+  transform-style: preserve-3d;   /* create a 3d z-space stacking context */
   margin: 0;
-  outline-offset: 5px;
-  accent-color: var(--brand);
-  position: relative;
-  transform-style: preserve-3d;
   cursor: pointer;
 }
 ```
 
+Besides the pseudo element `transform-style` and `position` styles, it's mostly
+minor opinionated style stuff from me. I like the cursor to be pointer, I like
+outline offsets, default checkboxes are too tiny, and if `accent-color` is
+[supported](https://drafts.csswg.org/css-ui-4/#widget-accent), bring these
+checkboxes into the brand color scheme.
+
 ### Checkbox labels
-- display contents label
+
+It's important to provide labels for checkboxes for 2 reasons. The first is to
+represent what the checkbox value is used for, to answer "on or off for what?".
+Second is for UX, web user's have become accustomed to interacting with
+checkbox's via their associated labels.
+
+{% Video 
+  src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/7GYIFNjNCBdj13juFO7S.mp4",
+  className="w-screenshot", 
+  autoplay="true", 
+  loop="true", 
+  muted="true" 
+%}
 
 <div class="w-columns">
 {% Compare 'better', 'input' %}
@@ -734,43 +754,148 @@ input[type="checkbox"] {
 {% endCompare %}
 </div>
 
+On your label, put a `for` attribute that points to a checkbox by ID: `<label
+for="text-notifications">`. On your checkbox, double up both the name and id to
+ensure it's found with varying tools and tech, like a mouse or screenreader:
+`<input type="checkbox" id="text-notifications" name="text-notifications">`.
+`:hover`, `:active` and more come for free with the connection, increasing the
+ways your form can be interacted with.
+
 ### Checkbox highlight
-- preseve-3d translateZ
-- transform order matters
+
+I want to keep my interfaces consistent, and the slider element has a nice
+thumbnail highlight that I'd like to use with the checkbox. The thumbnail was
+able to use `box-shadow` and it's `spread` property to scale a shadow up and
+down, but that effect doesn't work here because our checkboxes are, [and should
+be!](https://twitter.com/argyleink/status/1329230409784291328?s=20), square.
+
+I was able to achieve the same visual effect with a pseudo element, and an
+unfortunate amount of tricky CSS:
 
 ```css
+@custom-media --motionOK (prefers-reduced-motion: no-preference);
+
 input[type="checkbox"]::before {
-  --thumb-scale: .01;
+  --thumb-scale: .01;                        /* initial scale of highlight */
   --thumb-highlight-size: var(--space-xl);
 
   content: "";
   inline-size: var(--thumb-highlight-size);
   block-size: var(--thumb-highlight-size);
-  clip-path: circle(50%);
-  position: absolute;
-  top: 50%;
+  clip-path: circle(50%);                     /* circle shape */
+  position: absolute;                         /* this is why position relative on parent */
+  top: 50%;                                   /* pop and plop technique (https://web.dev/centering-in-css/#5.-pop-and-plop) */
   left: 50%;
   background: var(--thumb-highlight-color);
-  transform-origin: center center;
-  transform: 
-    translateX(-50%) 
-    translateY(-50%) 
-    translateZ(-1px) 
-    scale(var(--thumb-scale))
+  transform-origin: center center;            /* goal is a centered scaling circle */
+  transform:                                  /* order here matters!! */
+    translateX(-50%)                          /* counter balances left: 50% */
+    translateY(-50%)                          /* counter balances top: 50% */
+    translateZ(-1px)                          /* PUTS IT BEHIND THE CHECKBOX */
+    scale(var(--thumb-scale))                 /* value we toggle for animation */
   ;
   will-change: transform;
 
-  @media (--motionOK) {
+  @media (--motionOK) {                       /* transition only if motion is OK */
     & {
       transition: transform .2s ease;
     }
   }
 }
+
+/* on hover, set scale custom property to "in" state */
+input[type="checkbox"]:hover::before {
+  --thumb-scale: 1;
+}
 ```
+
+Creating a circle psuedo element is straightforward work, but **placing it
+behind the element it's attached to**, that's what took work. Here's before and
+after I fixed it:
+
+{% Video 
+  src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Spdpw5P1MD8ceazneRXo.mp4",
+  className="w-screenshot", 
+  autoplay="true", 
+  loop="true", 
+  muted="true" 
+%}
+
+It's definitely a microinteraction, but important to me to keep the visual
+consistency. The animation scaling technique is the same as we've been using in
+other places, we set a custom property to a new value and let CSS transition it
+based on motion preferences, but it's special feature is `translateZ(-1px)`. The
+parent created a 3D space and this speudo element child tapped into it by
+placing itself slightly back in z-space.
 
 ## Accessibility
 
+The YouTube video does a great demonstration of the mouse, keyboard and
+screenreader interactions for this settings component. I'll call out some of the
+details here.
+
+### HTML Element Choices
+
+```html
+<form>
+<header>
+<fieldset>
+<picture>
+<label>
+<input>
+```
+
+Each of these holds hints and tips to the user's browsing tool. Some elements
+provide interaction hints, some connect interactivity, and some help shape the
+acccessibility tree that a screenreader navigates. 
+
+### HTML Attributes
+
+The icon next to the slider in my form, that's not useful to a screenreader,
+let's help it hide that from the flow. The label is also not needed for
+screenreaders, let's remove it from that flow as well:
+
+```html
+<picture aria-hidden="true">
+<label aria-hidden="true">
+```
+
+The SVG is a bunch of math, let's add a `<title>` element for a free mouse hover
+title and a human readable comment about what the math is creating:
+
+```html
+<svg viewBox="0 0 24 24">
+  <title>A note icon</title>
+  <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+</svg>
+```
+
+Other than that, we've used enough clearly marked HTML, that the form tests
+really well across mouse, keyboard, video game controllers and screenreaders.
+
 ## JavaScript
+
+I've [already covered](#track-styles) how the track fill color was being managed from JavaScript,
+so let's look at the `<form>` related JavaScript now:
+
+```js
+const form = document.querySelector('form');
+
+form.addEventListener('input', event => {
+  const formData = Object.fromEntries(new FormData(form));
+  console.table(formData);
+})
+```
+
+Everytime the form is interacted with and changed, the console logs the form as
+an object into a table for easy review before submitting to a server.
+
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/hFAyIOpOSdiczdf4AtIj.png",
+  alt="A screenshot of the console.table() results, where the form data is shown in a table",
+  class="w-screenshot",
+  width="800", height="285"
+%}
 
 ## Conclusion
 
