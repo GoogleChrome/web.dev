@@ -23,7 +23,7 @@ tags:
 ---
 
 {% Aside %}
-  Alon leads the backend team at Wix.
+  Alon leads the core backend team at [Wix](https://www.wix.com).
 {% endAside %}
 
 Thanks to leveraging industry standards, cloud providers, and CDN capabilities,
@@ -291,8 +291,8 @@ for a while.
 We enabled Brotli support on our nginx proxies in the edges, for all clients
 that support it.
 
-Moving to use Brotli compression reduced our median file transfer sizes by **21%
-- 25%** resulting in a reduced bandwidth usage and improved loading times.
+Moving to use Brotli compression reduced our median file transfer sizes by
+**21% to 25%** resulting in a reduced bandwidth usage and improved loading times.
 
 <figure class="w-figure">
   {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/392RWYamrwkdFozk91LC.jpg", alt="Mobile and Desktop Median Response Sizes", width="800", height="173" %}
@@ -368,7 +368,7 @@ performance of very simple sites built on each platform. This
 [site](https://matt05041.wixsite.com/bizsolutions) was built almost two years
 ago, and not modified since, but the platform is continually improving, and the
 site performance along with it, which can be witnessed by [viewing its
-data](https://www.debugbear.com/project/175/pageLoad/873/overview?dateRange=2019-03-31T21%3A00Z-to-2021-02-10T21%3A59Z)
+data](https://www.debugbear.com/project/175/pageLoad/873/overview?dateRange=2019-03-31T21%3A00Z-to-2021-03-31T21%3A59Z)
 over the past year and a half.
 
 ## Conclusion
