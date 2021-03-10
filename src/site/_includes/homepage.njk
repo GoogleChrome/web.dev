@@ -4,35 +4,7 @@ title: web.dev
 show_banner: false
 ---
 <div>
-  {#
-    TODO: Convert w-masthead-home back to a <header> when this campaign ends.
-    For a11y you're supposed to only use one <header> element per page.
-  #}
-  <style>
-  .w-hero-banner {
-    color: white;
-  }
-  .w-hero-banner__inner {
-    background-color: black;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 16px;
-    text-align: center;
-  }
-  @media (min-width: 865px) {
-    .w-hero-banner__inner {
-      padding: 20px 24px;
-    }
-  }
-  .w-hero-banner__inner a {
-    color: white;
-    text-decoration: underline;
-  }
-  .w-hero-banner__inner a:hover {
-    text-decoration: none;
-  }
-  </style>
+
   <header class="w-hero-banner">
     <div class="w-hero-banner__inner">
       {{ i18n.banner_blm_html | safe }}
