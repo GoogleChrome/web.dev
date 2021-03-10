@@ -90,9 +90,8 @@ The `autoplay`, `muted`, and `loop` attributes are self-explanatory.
 [`playsinline` is necessary for autoplaying to occur in
 iOS](https://webkit.org/blog/6784/new-video-policies-for-ios/). Now you have a
 serviceable video-as-GIF replacement that works across platforms. But how to go
-about lazy-loading it? [Chrome will lazy-load video for
-you](https://www.google.com/url?q=https://developers.google.com/web/updates/2017/03/chrome-58-media-updates%23offscreen&sa=D&ust=1521096956530000&usg=AFQjCNHPv7wM_yxmkOWKA0sZ-MXYKUdUXg),
-but you can't count on all browsers to provide this optimized behavior.
+about lazy-loading it? [Chrome will pause autoplaying](https://www.google.com/url?q=https://developers.google.com/web/updates/2017/03/chrome-58-media-updates%23offscreen&sa=D&ust=1521096956530000&usg=AFQjCNHPv7wM_yxmkOWKA0sZ-MXYKUdUXg)
+but won't lazy-load the video.
 Depending on your audience and application requirements, you may need to take
 matters into your own hands. To start, modify your `<video>` markup accordingly:
 
