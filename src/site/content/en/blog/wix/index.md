@@ -11,7 +11,7 @@ description: >
   A case study of some major changes introduced at Wix to improve website loading
   performance for millions of sites, clearing the path for them to receive good PageSpeed Insights and
   Core Web Vitals scores.
-date: 2021-03-09
+date: 2021-03-10
 hero: image/BrQidfK9jaQyIHwdw91aVpkPiib2/HNGPDotyTYOuPE0YxLQ9.jpg
 alt: "A fast train (source: https://unsplash.com/photos/60VrGk-bfeA)"
 tags:
