@@ -141,7 +141,7 @@ export const openModal = store.action(() => {
   /** @type {HTMLElement} */
   const footer = document.querySelector('.w-footer');
 
-  document.documentElement.classList.add('web-modal__overflow-hidden');
+  document.documentElement.classList.add('overflow-hidden');
   main.inert = true;
   header.inert = true;
   footer.inert = true;
@@ -155,7 +155,7 @@ export const closeModal = store.action(() => {
   /** @type {HTMLElement} */
   const footer = document.querySelector('.w-footer');
 
-  document.documentElement.classList.remove('web-modal__overflow-hidden');
+  document.documentElement.classList.remove('overflow-hidden');
   main.inert = false;
   header.inert = false;
   footer.inert = false;

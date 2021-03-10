@@ -20,10 +20,6 @@
 @import '../../../styles/tools/breakpoints';
 @import '../../../styles/tools/mixins';
 
-body.web-side-nav--expanded {
-  overflow: hidden;
-}
-
 web-side-nav {
   position: fixed;
   left: 0;
