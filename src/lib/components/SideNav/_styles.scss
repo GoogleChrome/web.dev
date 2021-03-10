@@ -35,13 +35,6 @@ web-side-nav {
   z-index: 300;
 }
 
-// Prevent FOUC by hiding children until after firstUpdated(), as children are
-// reparented within .web-side-nav__container before use
-// This isn't ":not(:defined)" because firstUpdated occurs after a frame.
-web-side-nav.unresolved * {
-  display: none !important;
-}
-
 web-side-nav::before {
   content: '';
   display: block;
@@ -65,7 +58,7 @@ web-side-nav[expanded]::before {
   opacity: 1;
 }
 
-.web-side-nav__container {
+[data-nav-container] {
   position: relative;
   width: 90%;
   max-width: 268px;
@@ -78,80 +71,14 @@ web-side-nav[expanded]::before {
   will-change: transform;
 }
 
-web-side-nav[expanded] .web-side-nav__container {
+web-side-nav[expanded] [data-nav-container] {
   transform: none;
 }
 
-web-side-nav[animatable] .web-side-nav__container {
+web-side-nav[animatable] [data-nav-container] {
   transition: transform $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
 }
 
-web-side-nav[expanded][animatable] .web-side-nav__container {
+web-side-nav[expanded][animatable] [data-nav-container] {
   transition: transform $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
-}
-
-.web-side-nav__header {
-  align-items: center;
-  display: flex;
-  padding: 16px;
-  border-bottom: 1px solid $GREY_300;
-}
-
-.web-side-nav__logo {
-  height: 30px;
-  width: 125px;
-}
-
-.web-side-nav__hide {
-  height: 2.75rem;
-  margin: 0 10px 0 -6px;
-  width: 2.75rem;
-  color: $GREY_700;
-}
-
-.web-side-nav__content {
-  padding-top: 32px;
-  flex: 1;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.web-side-nav__link {
-  border-bottom: 1px solid $GREY_300;
-  color: $GREY_700;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 16px 24px;
-
-  &[active] {
-    -webkit-box-shadow: 0 -2px 0 $WEB_PRIMARY_COLOR inset;
-    box-shadow: 0 -2px 0 $WEB_PRIMARY_COLOR inset;
-  }
-}
-
-.web-side-nav__link:hover,
-.web-side-nav__link:focus,
-.web-side-nav__link:active {
-  text-decoration: none;
-  outline: 0;
-}
-
-.web-side-nav__link:hover {
-  background-color: rgba($PRIMARY_TEXT_COLOR, .04);
-}
-
-.web-side-nav__link:focus {
-  background-color: rgba($PRIMARY_TEXT_COLOR, .12);
-}
-
-.web-side-nav__link:active {
-  background-color: rgba($PRIMARY_TEXT_COLOR, .16);
-}
-
-.web-side-nav__link[data-active] {
-  color: $WEB_PRIMARY_COLOR;
 }

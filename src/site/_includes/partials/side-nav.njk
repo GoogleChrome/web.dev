@@ -1,11 +1,12 @@
 {% from 'macros/icon.njk' import icon with context %}
 
 <web-side-nav class="unresolved">
-  <nav class="web-side-nav__container">
-    <div class="web-side-nav__header">
+  <nav data-nav-container>
+
+    <div class="default-nav__header">
       <button
-        data-close-button
-        class="web-side-nav__hide w-button--svg w-button--round"
+        data-nav-close-button
+        class="default-nav__hide w-button--svg w-button--round"
         aria-label="Close"
       >
         {{ icon('close') }}
@@ -18,7 +19,7 @@
         data-label="Site logo"
       >
         <img
-          class="web-side-nav__logo"
+          class="default-nav__logo"
           src="/images/lockup.svg"
           alt="web.dev"
         />
@@ -26,7 +27,7 @@
     </div>
     <a
       href="/learn/"
-      class="web-side-nav__link gc-analytics-event"
+      class="default-nav__link gc-analytics-event"
       data-category="Site-Wide Custom Events"
       data-label="SideNav: Learn"
     >
@@ -34,7 +35,7 @@
     </a>
     <a
       href="/measure/"
-      class="web-side-nav__link gc-analytics-event"
+      class="default-nav__link gc-analytics-event"
       data-category="Site-Wide Custom Events"
       data-label="SideNav: Measure"
     >
@@ -42,7 +43,7 @@
     </a>
     <a
       href="/blog/"
-      class="web-side-nav__link gc-analytics-event"
+      class="default-nav__link gc-analytics-event"
       data-category="Site-Wide Custom Events"
       data-label="SideNav: Blog"
     >
@@ -50,7 +51,7 @@
     </a>
     <a
       href="/live/"
-      class="web-side-nav__link gc-analytics-event"
+      class="default-nav__link gc-analytics-event"
       data-category="Site-Wide Custom Events"
       data-label="SideNav: Live"
     >
@@ -58,11 +59,12 @@
     </a>
     <a
       href="/about/"
-      class="web-side-nav__link gc-analytics-event"
+      class="default-nav__link gc-analytics-event"
       data-category="Site-Wide Custom Events"
       data-label="SideNav: About"
     >
       {{ 'i18n.header.about' | i18n(locale) }}
     </a>
+
   </nav>
 </web-side-nav>

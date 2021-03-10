@@ -1,0 +1,67 @@
+@import '../settings/colors';
+
+.default-nav__header {
+  align-items: center;
+  display: flex;
+  padding: 16px;
+  border-bottom: 1px solid $GREY_300;
+}
+
+.default-nav__logo {
+  height: 30px;
+  width: 125px;
+}
+
+.default-nav__hide {
+  height: 2.75rem;
+  margin: 0 10px 0 -6px;
+  width: 2.75rem;
+  color: $GREY_700;
+}
+
+.default-nav__content {
+  padding-top: 32px;
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.default-nav__link {
+  border-bottom: 1px solid $GREY_300;
+  color: $GREY_700;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 16px 24px;
+
+  &[active] {
+    -webkit-box-shadow: 0 -2px 0 $WEB_PRIMARY_COLOR inset;
+    box-shadow: 0 -2px 0 $WEB_PRIMARY_COLOR inset;
+  }
+}
+
+.default-nav__link:hover,
+.default-nav__link:focus,
+.default-nav__link:active {
+  text-decoration: none;
+  outline: 0;
+}
+
+.default-nav__link:hover {
+  background-color: rgba($PRIMARY_TEXT_COLOR, .04);
+}
+
+.default-nav__link:focus {
+  background-color: rgba($PRIMARY_TEXT_COLOR, .12);
+}
+
+.default-nav__link:active {
+  background-color: rgba($PRIMARY_TEXT_COLOR, .16);
+}
+
+.default-nav__link[data-active] {
+  color: $WEB_PRIMARY_COLOR;
+}
