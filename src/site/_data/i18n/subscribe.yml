@@ -1,0 +1,29 @@
+subscribe:
+  en: subscribe
+
+no_javascript:
+  en: It seems like you have JavaScript disabled or it failed to load. After you submit the form, press the back button to return to the site.
+
+first_name:
+  en: First Name
+
+last_name:
+  en: Last Name
+
+your_email:
+  en: Your Email
+
+country:
+  en: Country
+
+language:
+  en: Language
+
+notice:
+  en: Don't worry, no spam here! Your information will only be used for web.dev and Chrome related updates and our emails are typically no more than 1-2 times a month. You can unsubscribe anytime.
+
+add_me:
+  en: Add me to the web.dev mailing list.
+
+i_accept_terms:
+  en: I accept Google's <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms and Conditions</a> and acknowledge that my information will be used in accordance with Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.
