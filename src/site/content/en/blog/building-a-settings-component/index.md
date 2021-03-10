@@ -100,6 +100,7 @@ create the hairline borders between elements. No tricky border solution!
 
 <div class="w-columns">
 {% Compare 'better', 'Filled gap' %}
+
 ```css
 .grid {
   display: grid;
@@ -115,7 +116,8 @@ create the hairline borders between elements. No tricky border solution!
 {% endCompare %}
 
 {% Compare 'worse', 'Border trick' %}
-```css/2-3
+
+```css
 .grid {
   display: grid;
 
@@ -125,7 +127,6 @@ create the hairline borders between elements. No tricky border solution!
   }
 }
 ```
-
 {% endCompare %}
 </div>
 
@@ -223,7 +224,7 @@ many repetitions it can fit into the space. While it seems obvious that the
 space is "full width", per the CSS grid spec, a definite size or max-size must
 be provided. I've provided a max-size.
 
-The bug part of this is, why `89vw`? Because "it worked" for my layout.. We're
+The bug part of this is, why `89vw`? Because "it worked" for my layout… We're
 internally investigating why a more reasonable value, like `100vw` isn't
 sufficient. I learned a lot from this layout requirement.
 
