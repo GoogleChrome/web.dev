@@ -55,14 +55,6 @@ web-header {
     color: rgba($BLACK, .87);
   }
 
-  .web-header__hamburger-btn::before {
-    @include font-material-icon();
-    content: 'menu';
-    display: inline-block;
-    height: 26px;
-    width: 24px;
-  }
-
   .web-header__logo {
     height: 30px;
     width: 125px;

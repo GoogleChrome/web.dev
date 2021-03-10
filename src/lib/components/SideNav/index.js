@@ -16,7 +16,6 @@
 
 /* eslint lit-a11y/click-events-have-key-events: 0 */
 
-import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
 import {store} from '../../store';
 import 'wicg-inert';
@@ -26,7 +25,6 @@ import './_styles.scss';
 class SideNav extends BaseElement {
   static get properties() {
     return {
-      logo: {type: String},
       animatable: {type: Boolean, reflect: true},
       expanded: {type: Boolean, reflect: true},
     };
@@ -36,13 +34,11 @@ class SideNav extends BaseElement {
     super();
 
     this.inert = true;
-    this.logo = '';
     this.animatable = false;
     this.expanded_ = false;
     this.startX_ = 0;
     this.currentX_ = 0;
     this.touchingSideNav_ = false;
-    this.prerenderedChildren_ = null;
 
     this.onCloseSideNav = this.onCloseSideNav.bind(this);
     this.onTouchStart = this.onTouchStart.bind(this);
@@ -54,45 +50,6 @@ class SideNav extends BaseElement {
     this.onKeyUp = this.onKeyUp.bind(this);
   }
 
-  render() {
-    if (!this.prerenderedChildren_) {
-      this.prerenderedChildren_ = [];
-      for (const child of this.children) {
-        this.prerenderedChildren_.push(child);
-      }
-    }
-    return html`
-      <nav @click="${this.onBlockClicks}" class="web-side-nav__container">
-        <div class="web-side-nav__header">
-          <button
-            @click="${this.onCloseSideNav}"
-            data-icon="close"
-            class="w-button--icon w-button--round web-side-nav__hide"
-            aria-label="Close"
-          >
-            <span class="w-tooltip">Close</span>
-          </button>
-          ${this.logo &&
-          html`
-            <a
-              href="/"
-              class="gc-analytics-event"
-              data-category="Site-Wide Custom Events"
-              data-label="Site logo"
-            >
-              <img
-                class="web-side-nav__logo"
-                src="${this.logo}"
-                alt="web.dev"
-              />
-            </a>
-          `}
-        </div>
-        ${this.prerenderedChildren_}
-      </nav>
-    `;
-  }
-
   connectedCallback() {
     super.connectedCallback();
     this.tabIndex = -1;
@@ -102,12 +59,16 @@ class SideNav extends BaseElement {
   firstUpdated() {
     /** @type HTMLElement */
     this.sideNavContainerEl = this.querySelector('.web-side-nav__container');
+    /** @type HTMLElement */
+    this.closeBtn = this.querySelector('[data-close-button]');
     this.addEventListeners();
     this.onStateChanged();
     this.classList.remove('unresolved');
   }
 
   addEventListeners() {
+    this.sideNavContainerEl.addEventListener('click', this.onBlockClicks);
+    this.closeBtn.addEventListener('click', this.onCloseSideNav);
     this.addEventListener('click', this.onCloseSideNav);
     this.addEventListener('touchstart', this.onTouchStart, {passive: true});
     this.addEventListener('touchmove', this.onTouchMove, {passive: true});

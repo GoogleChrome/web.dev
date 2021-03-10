@@ -1,42 +1,68 @@
-<web-side-nav class="unresolved" logo="/images/lockup.svg">
-  <a
-    href="/learn/"
-    class="web-side-nav__link gc-analytics-event"
-    data-category="Site-Wide Custom Events"
-    data-label="SideNav: Learn"
-  >
-    {{ 'i18n.header.learn' | i18n(locale) }}
-  </a>
-  <a
-    href="/measure/"
-    class="web-side-nav__link gc-analytics-event"
-    data-category="Site-Wide Custom Events"
-    data-label="SideNav: Measure"
-  >
-    {{ 'i18n.header.measure' | i18n(locale) }}
-  </a>
-  <a
-    href="/blog/"
-    class="web-side-nav__link gc-analytics-event"
-    data-category="Site-Wide Custom Events"
-    data-label="SideNav: Blog"
-  >
-    {{ 'i18n.header.blog' | i18n(locale) }}
-  </a>
-  <a
-    href="/live/"
-    class="web-side-nav__link gc-analytics-event"
-    data-category="Site-Wide Custom Events"
-    data-label="SideNav: Live"
-  >
-    {{ 'i18n.header.live' | i18n(locale) }}
-  </a>
-  <a
-    href="/about/"
-    class="web-side-nav__link gc-analytics-event"
-    data-category="Site-Wide Custom Events"
-    data-label="SideNav: About"
-  >
-    {{ 'i18n.header.about' | i18n(locale) }}
-  </a>
+{% from 'macros/icon.njk' import icon with context %}
+
+<web-side-nav class="unresolved">
+  <nav class="web-side-nav__container">
+    <div class="web-side-nav__header">
+      <button
+        data-close-button
+        class="web-side-nav__hide w-button--svg w-button--round"
+        aria-label="Close"
+      >
+        {{ icon('close') }}
+        <span class="w-tooltip">Close</span>
+      </button>
+      <a
+        href="/"
+        class="gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Site logo"
+      >
+        <img
+          class="web-side-nav__logo"
+          src="/images/lockup.svg"
+          alt="web.dev"
+        />
+      </a>
+    </div>
+    <a
+      href="/learn/"
+      class="web-side-nav__link gc-analytics-event"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Learn"
+    >
+      {{ 'i18n.header.learn' | i18n(locale) }}
+    </a>
+    <a
+      href="/measure/"
+      class="web-side-nav__link gc-analytics-event"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Measure"
+    >
+      {{ 'i18n.header.measure' | i18n(locale) }}
+    </a>
+    <a
+      href="/blog/"
+      class="web-side-nav__link gc-analytics-event"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Blog"
+    >
+      {{ 'i18n.header.blog' | i18n(locale) }}
+    </a>
+    <a
+      href="/live/"
+      class="web-side-nav__link gc-analytics-event"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: Live"
+    >
+      {{ 'i18n.header.live' | i18n(locale) }}
+    </a>
+    <a
+      href="/about/"
+      class="web-side-nav__link gc-analytics-event"
+      data-category="Site-Wide Custom Events"
+      data-label="SideNav: About"
+    >
+      {{ 'i18n.header.about' | i18n(locale) }}
+    </a>
+  </nav>
 </web-side-nav>

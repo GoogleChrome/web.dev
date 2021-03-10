@@ -21,22 +21,17 @@ layout: base
 <a class="skip-link w-button" href="#main">Skip to main</a>
 
 <div class="course-layout">
-  <nav class="course-nav scrollbar" aria-label="primary navigation">
+  {# <nav class="course-nav scrollbar" aria-label="primary navigation">
     <ul>
-      {#
-        TODO: This does not yet support walking the recursive navigation tree
-        and rendering section headings. It should be easy enough to add that
-        using a macro similar to the one shown here for rendering unlimited
-        child levels.
-        https://www.11ty.dev/docs/plugins/navigation/#copy-and-paste-templates
-      #}
       {% for item in pageNavigation -%}
         <li {% if item.url === page.url %} data-active aria-current="page" {% endif %}>
           <a href="{{ item.url }}">{{ item.page.data.title }}</a>
         </li>
       {%- endfor %}
     </ul>
-  </nav>
+  </nav> #}
+
+  {% include 'partials/side-nav.njk' %}
 
   <div class="course-body">
     <nav class="course-app-bar app-bar" aria-label="breadcrumbs">

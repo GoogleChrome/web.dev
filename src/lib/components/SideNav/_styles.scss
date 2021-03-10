@@ -106,11 +106,7 @@ web-side-nav[expanded][animatable] .web-side-nav__container {
   height: 2.75rem;
   margin: 0 10px 0 -6px;
   width: 2.75rem;
-}
-
-.web-side-nav__hide::before {
-  @include font-material-icon();
-  content: 'close';
+  color: $GREY_700;
 }
 
 .web-side-nav__content {
