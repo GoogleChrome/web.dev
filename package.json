@@ -57,6 +57,7 @@
     "js-cookie": "^2.2.1",
     "lit-element": "^2.2.0",
     "lit-html": "^1.2.1",
+    "lodash.get": "^4.4.2",
     "pretty-ms": "^7.0.0",
     "terser": "^4.6.4",
     "unistore": "^3.4.1",
