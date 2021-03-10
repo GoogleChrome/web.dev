@@ -109,7 +109,15 @@ gulp.task('copy-fonts', () => {
   return gulp.src('src/fonts/**/*').pipe(gulp.dest('dist/fonts/'));
 });
 
-// Copies content default locale into it's own folder on prod.
+/**
+ * Copies content of the default locale (en) into its own folder
+ * on prod builds.
+ *
+ * This is done for when we deploy to Firebase we need an `i18n/en`
+ * folder for users who have English as their primary language,
+ * and a second language that is supported by us. Firebase hosting
+ * will serve the secondary language as it tries to host i81n content first.
+ */
 gulp.task('default-locale', () => {
   if (isProd) {
     return gulp
