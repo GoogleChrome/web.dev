@@ -72,11 +72,11 @@ When running this script be aware that:
     mind when inspecting the console logs. An initial glut of layout shifts can
     reflect a reporting backlog, rather than the sudden occurrence of numerous
     layout shifts.
-*   To avoid impacting performance, the PerformanceObserver waits until the main
+*   To avoid impacting performance, the `PerformanceObserver` waits until the main
     thread is idle to report on layout shifts. As a result, depending on how
     busy the main thread is, there may be a slight delay between when a layout
     shift occurs and when it is logged in the console.
-*   This script ignores layout shifts that occurred within 500ms of user input
+*   This script ignores layout shifts that occurred within 500&nbsp;ms of user input
     and therefore do not count towards CLS.
 
 
@@ -272,7 +272,7 @@ out this [Glitch](https://desert-righteous-router.glitch.me/).
 
 The **Experience** pane of the DevTools **Performance** panel displays all
 layout shifts that occur during a given performance trace—even if they occur
-within 500ms of a user interaction and therefore don't count towards CLS.
+within 500&nbsp;ms of a user interaction and therefore don't count towards CLS.
 Hovering over a particular layout shift in the **Experience** panel highlights
 the affected DOM element.
 
@@ -290,7 +290,7 @@ To view more information about the layout shift, click on the layout shift, then
 open the **Summary** drawer. Changes to the element's dimensions are listed
 using the format `[width, height]`; changes to the element's position are listed
 using the format `[x,y]`. The **Had recent input** property indicates whether a
-layout shift occurred within 500ms of a user interaction.
+layout shift occurred within 500&nbsp;ms of a user interaction.
 
 
 
