@@ -25,7 +25,7 @@ Lighthouse gathers all resources requested by the page
 and checks the HTTP protocol version of each. There are some
 cases where non-HTTP/2 requests will be ignored in the audit
 results. [See the implementation](https://github.com/GoogleChrome/lighthouse/blob/9fad007174f240982546887a7e97f452e0eeb1d1/lighthouse-core/audits/dobetterweb/uses-http2.js#L138)
-for more.
+for more details.
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
