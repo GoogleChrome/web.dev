@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-const {oneLine} = require('common-tags');
-const md = require('markdown-it')();
-
-/* eslint-disable require-jsdoc */
-
+ /**
+ * @param {string} content Markdown with the content for the compare element.
+ * @return {string}
+ */
 module.exports = (content) => {
-  return oneLine`
+  return `
     <figcaption class="w-compare__caption">
-      <p>${md.renderInline(content)}</p>
+      ${content}
     </figcaption>
   `;
 };
