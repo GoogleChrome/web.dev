@@ -49,8 +49,7 @@ function Aside(content, type = 'note') {
       return `
         <div class="w-aside w-aside--${type}"><strong>${prefix}</strong>
           ${content}</div>
-      `
-      break;
+      `;
   }
 
   return `
@@ -59,6 +58,6 @@ function Aside(content, type = 'note') {
 ${prefix} ${content}
 </div>
   `;
-};
+}
 
 module.exports = Aside;
