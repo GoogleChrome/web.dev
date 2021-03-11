@@ -372,7 +372,7 @@ considering other preceding and nearby elements.
 
 In addition, the direction and distance of a layout shift can provide hints
 about root cause. For example, a large downward shift often indicates the
-insertion of a DOM element, whereas a 1px or 2px layout shift often indicates
+insertion of a DOM element, whereas a 1&nbsp;px or 2&nbsp;px layout shift often indicates
 the application of conflicting CSS styles or the loading and application of a
 web font.
 
