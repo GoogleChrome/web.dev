@@ -268,7 +268,7 @@ out this [Glitch](https://desert-righteous-router.glitch.me/).
 ### DevTools
 
 
-#### Performance Panel
+#### Performance panel
 
 The **Experience** pane of the DevTools **Performance** panel displays all
 layout shifts that occur during a given performance trace—even if they occur
@@ -320,7 +320,7 @@ The duration of a layout shift can also be approximated by looking in the
 The duration of a layout shift has no impact on its layout shift score.
 {% endAside %}
 
-For more information on using the Performance Panel, refer to [Performance
+For more information on using the **Performance** panel, refer to [Performance
 Analysis
 Reference](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference).
 
