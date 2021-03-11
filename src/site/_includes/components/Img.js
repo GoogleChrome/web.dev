@@ -37,10 +37,21 @@ const IS_UPLOADED_IMG = (src) => {
  * Generates src URL of image from imgix path or URL.
  *
  * @param {string} src Path (or URL) for image.
- * @param {Object} params Imgix API params.
+ * @param {Object} params? Imgix API params.
  * @return {string}
  */
-const generateSrc = (src, params = {}) => client.buildURL(src, params);
+const generateSrc = (src, params) => {
+  /**
+   * Only apply `DEFAULT_PARAMS` if a user wants to use params.
+   * Params can cause SVGs to be rasterized, so if we didn't want it rasterized
+   * we wouldn't pass in any params, and we wouldn't want any params added to it.
+   */
+  if (params) {
+    params = {...DEFAULT_PARAMS, ...params};
+  }
+
+  return client.buildURL(src, params || {});
+};
 
 /**
  * Takes an imgix url or path and generates an `<img>` element with `srcset`.
@@ -139,4 +150,4 @@ const Img = function (args) {
   return imgTag.replace(/\n/g, '');
 };
 
-module.exports = {Img, generateSrc, DEFAULT_PARAMS};
+module.exports = {Img, generateSrc};
