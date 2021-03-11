@@ -104,7 +104,7 @@ const Img = function (args) {
     ...options,
   };
   // https://docs.imgix.com/apis/rendering
-  const fullSrc = isSimpleImg ? generateSrc(src, params) : generateSrc(src);
+  const fullSrc = isSimpleImg ? generateSrc(src) : generateSrc(src, params);
   const srcset = client.buildSrcSet(src, params, options);
   if (sizes === undefined) {
     if (widthAsNumber >= MAX_WIDTH) {
