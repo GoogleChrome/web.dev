@@ -1,13 +1,13 @@
 {
   "slug": "mini-apps",
   "cover": "/images/collections/mini-apps.svg",
-  "title": "Mini apps",
+  "title": "i18n.paths.mini_apps.title",
   "updated": "March 3, 2021",
-  "description": "A web developer's exploration into mini apps—apps that are built with web technologies but that do not run in browsers.",
-  "overview": "Learn more about the thriving ecosystem of mini apps and what web developers can learn from it.",
+  "description": "i18n.paths.mini_apps.description",
+  "overview": "i18n.paths.mini_apps.overview",
   "topics": [
     {
-      "title": "Welcome to the world of mini apps",
+      "title": "i18n.paths.mini_apps.topics.welcome",
       "pathItems": [
         "mini-app-super-apps",
         "mini-app-about",
@@ -15,7 +15,7 @@
       ]
     },
     {
-      "title": "The developer experience of mini apps",
+      "title": "i18n.paths.mini_apps.topics.the_developer_experience_of_mini_apps",
       "pathItems": [
         "mini-app-devtools",
         "mini-app-markup-styling-and-scripting",
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "title": "The wider mini apps ecosystem",
+      "title": "i18n.paths.mini_apps.topics.the_wider_mini_apps_ecosystem",
       "pathItems": [
         "mini-app-standardization",
         "mini-app-alternative-runtime-environments",
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "title": "Learning from mini apps",
+      "title": "i18n.paths.mini_apps.topics.learning_from_mini_apps",
       "pathItems": [
         "mini-app-programming-way",
         "mini-app-example-project",

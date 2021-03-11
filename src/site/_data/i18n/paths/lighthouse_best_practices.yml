@@ -1,0 +1,27 @@
+title:
+  en: Best Practices audits
+
+description:
+  en: Improve code health of your web page following these best practices
+
+overview:
+  en: These checks highlight opportunities to improve the overall code health of your web app.
+
+topics:
+  general_best_practices:
+    en: General best practices
+
+  make_your_page_fast:
+    en: Make your page fast
+
+  make_your_page_secure:
+    en: Make your page secure
+
+  create_a_good_user_experience:
+    en: Create a good user experience
+
+  avoid_deprecated_technologies:
+    en: Avoid deprecated technologies
+
+  diagnostic_audits:
+    en: Diagnostic audits

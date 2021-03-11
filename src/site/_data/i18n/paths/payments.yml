@@ -1,0 +1,18 @@
+title:
+  en: Web Payments
+
+description:
+  en: Build the next generation of payments on the web.
+
+overview:
+  en: Web Payments aims to provide frictionless payment experience on the web. Learn how it works, its benefits, and get ready to integrate your payment app with Web Payments.
+
+topics:
+  integrate_web_payments_into_your_payment_app:
+    en: Integrate Web Payments into your payment app
+
+  build_an_android_payment_app:
+    en: Build an Android payment app
+
+  build_a_web_based_payment_app:
+    en: Build a web-based payment app

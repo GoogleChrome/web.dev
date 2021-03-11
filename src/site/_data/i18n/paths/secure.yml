@@ -1,0 +1,24 @@
+title:
+  en: Safe and secure
+
+description:
+  en: Ensure your site and your users' data is secure.
+
+overview:
+  en: Every website is vulnerable to attack—not just those handling sensitive data. In this section you'll learn simple techniques to keep your users, your content and your business secure.
+
+topics:
+  understand_security_basics:
+    en: Understand security basics
+
+  secure_connections_with_https:
+    en: Secure connections with HTTPS
+
+  prevent_info_leaks:
+    en: Prevent info leaks
+
+  protect_websites_from_xss:
+    en: Protect websites from XSS
+
+  protect_users_from_tracking:
+    en: Protect users from tracking
