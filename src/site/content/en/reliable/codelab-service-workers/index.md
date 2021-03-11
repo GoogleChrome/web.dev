@@ -125,7 +125,6 @@ files, it's time to visit the Live version of your sample project, and observe
 the service worker in action.
 
 {% Instruction 'preview' %}
-{% Instruction 'devtools' %}
 {% Instruction 'devtools-console', 'ul' %}
 
 You should see something like the following log messages,

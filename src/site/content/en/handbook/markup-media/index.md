@@ -2,7 +2,7 @@
 layout: handbook
 title: Images and video
 date: 2019-06-26
-updated: 2021-02-10
+updated: 2021-03-11
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
@@ -12,6 +12,12 @@ description: |
 Visit [the image uploader page](https://web-dev-uploads.web.app/) and
 sign-in using your Google corporate account. Note that this page only allows
 Googlers access, so signing in with a personal account will fail.
+
+{% Aside 'caution' %}
+There are different uploaders for web.dev and developer.chrome.com:
+* [web.dev uploader](https://web-dev-uploads.web.app/uploader)
+* [developer.chrome.com uploader](https://chrome-gcs-uploader.web.app/)
+{% endAside %}
 
 ## Choose a file
 

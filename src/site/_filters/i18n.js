@@ -77,7 +77,10 @@ const i18n = (path, locale = 'en') => {
 };
 
 /**
- * Infer the page locale using page's filePathStem.
+ * Infer the page locale using page's filePathStem. Usually for 11ty pages
+ * the locale is defined as a part of the data cascade and can be accessed
+ * via this.locale. This function is helpful if this.locale is not available,
+ * e.g. inside 11ty shortcodes.
  * @param {string} path filePathStem property, e.g. /en/docs/hosted_apps/index
  * @return {string}
  */
