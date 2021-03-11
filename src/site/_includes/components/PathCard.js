@@ -19,7 +19,6 @@ const removeDrafts = require('../../_filters/remove-drafts');
 
 const {i18n} = require('../../_filters/i18n');
 
-
 /* eslint-disable max-len */
 
 /**
