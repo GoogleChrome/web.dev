@@ -280,6 +280,7 @@ the affected DOM element.
 {% Img
   src="image/j2RDdG43oidUy6AL6LovThjeX9c2/Uug2fnJT8mOc2YQmxo2l.png",
   alt="Screenshot of a layout shift displayed in the DevTools Network panel",
+  class="w-screenshot",
   width="724",
   height="629"
  %}
@@ -296,6 +297,7 @@ layout shift occurred within 500ms of a user interaction.
 {% Img
   src="image/j2RDdG43oidUy6AL6LovThjeX9c2/AfVjsH9Nl9w0lJwQZEjR.png",
   alt="Screenshot of the DevTools 'Summary' tab for a layout shift",
+  class="w-screenshot",
   width="612",
   height="354"
  %}
@@ -309,6 +311,7 @@ The duration of a layout shift can also be approximated by looking in the
 {% Img
   src="image/j2RDdG43oidUy6AL6LovThjeX9c2/124Dm7vV3EGM7M9fiugs.png",
   alt="Screenshot of the DevTools 'Event Log' tab for a layout shift",
+  class="w-screenshot",
   width="612",
   height="354"
  %}
