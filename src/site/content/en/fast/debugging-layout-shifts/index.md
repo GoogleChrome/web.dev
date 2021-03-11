@@ -338,7 +338,7 @@ Areas of layout shift will be briefly highlighted in purple.
 
 ## Thought Process
 
-The steps listed below can be used to identify the cause of layout shifts
+You can use the steps below to identify the cause of layout shifts
 regardless of when or how the layout shift occurs. These steps can be
 supplemented with running Lighthouse—however, keep in mind that Lighthouse can
 only identify layout shifts that occurred during the initial page load. In
@@ -437,8 +437,8 @@ Layout Instability API to report on layout shifts.
 
 For hard to locate layout shifts, consider repeating this exercise with
 different devices and connection speeds. In particular, using a slower
-connection speed can make it easier to identify layout shifts. In addition, a
-`debugger` statement can be used to make it easier to step through layout
+connection speed can make it easier to identify layout shifts. In addition,
+you can use a `debugger` statement to make it easier to step through layout
 shifts.
 
 ```javascript
