@@ -5,7 +5,7 @@ authors:
   - lwe
 date: 2021-03-15
 # updated: 
-hero: csp.jpg
+hero: image/3lmWcR1VGYVMicNlBh4aZWBTcSg1/mhE0NYvP3JFyvNyiQ1dj.jpg
 alt: A screenshot of JavaScript code setting a strict Content Security Policy.
 tags:
   - blog
