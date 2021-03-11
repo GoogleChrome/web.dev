@@ -4,7 +4,7 @@ title: Debugging layout shifts
 authors:
   - katiehempenius
 date: 2021-03-11
-hero: image/admin/oaM41OYL7mFtGcpIN8KF.png
+hero: image/j2RDdG43oidUy6AL6LovThjeX9c2/N65l8ccOUEDESpnnEkje.png
 alt: Picture of a layout shift.
 description: |
   Learn how to identify and fix layout shifts.
@@ -136,6 +136,12 @@ debugging layout shifts:
     interface, refer to the
     [spec](https://w3c.github.io/performance-timeline/#the-performanceentry-interface).
 
+{% Aside %}
+The [Web Vitals
+Extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma)
+can log layout shift info to the console. To enable this feature, go to
+**Options > Console Logging**.
+{% endAside %}
 
 #### LayoutShiftAttribution
 
@@ -151,7 +157,7 @@ downward shift of the `<div id='banner'>` DOM element from `y: 76` to
 // ...
   "sources": [
     {
-      "node": div#banner,
+      "node": "div#banner",
       "previousRect": {
         "x": 311,
         "y": 76,
@@ -208,8 +214,12 @@ This layout shift would be reported with one source: element B. However, the
 root cause of this layout shift is the change in size of element A.
 
 
-
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/oaM41OYL7mFtGcpIN8KF.png", alt="Example showing a layout shift caused by a change in element dimensions", width="800", height="452" %}
+{% Img
+  src="image/j2RDdG43oidUy6AL6LovThjeX9c2/oaM41OYL7mFtGcpIN8KF.png",
+  alt="Example showing a layout shift caused by a change in element dimensions",
+  width="800",
+  height="452"
+ %}
 
 
 **Example #2**
@@ -218,7 +228,12 @@ The layout shift in this example would be reported with two sources: element A
 and element B. The root cause of this layout shift is the change in position of
 element A.
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/AhaslIEWb5fFMMgiZcI2.png", alt="Example showing a layout shift caused by a change in element position", width="800", height="451" %}
+{% Img
+  src="image/j2RDdG43oidUy6AL6LovThjeX9c2/AhaslIEWb5fFMMgiZcI2.png",
+  alt="Example showing a layout shift caused by a change in element position",
+  width="800",
+  height="451"
+ %}
 
 
 **Example #3**
@@ -227,13 +242,23 @@ The layout shift in this example would be reported with one source: element B.
 Changing the position of element B resulted in this layout shift.
 
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/6zKjd4Ua6YJ94LMlqiMR.png, alt="Example showing a layout shift caused by a change in element position", width="800", height="451" %}
+{% Img
+  src="image/j2RDdG43oidUy6AL6LovThjeX9c2/6zKjd4Ua6YJ94LMlqiMR.png",
+  alt="Example showing a layout shift caused by a change in element position",
+  width="800",
+  height="451"
+ %}
 
 **Example #4**
 
 Although element B changes size, there is no layout shift in this example.
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/ZujHWxsXI3C7tupe42oD.png", alt="Example showing a element changing size but not causing a layout shift", width="800", height="446" %}
+{% Img
+  src="image/j2RDdG43oidUy6AL6LovThjeX9c2/ZujHWxsXI3C7tupe42oD.png",
+  alt="Example showing a element changing size but not causing a layout shift",
+  width="800",
+  height="446"
+ %}
 
 
 For a demo of how DOM changes are reported by the Layout Instability API, check
@@ -252,7 +277,12 @@ Hovering over a particular layout shift in the **Experience** panel highlights
 the affected DOM element.
 
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/AfVjsH9Nl9w0lJwQZEjR.png", alt="Screenshot of a layout shift displayed in the DevTools Network panel", width="724", height="629" %}
+{% Img
+  src="image/j2RDdG43oidUy6AL6LovThjeX9c2/Uug2fnJT8mOc2YQmxo2l.png",
+  alt="Screenshot of a layout shift displayed in the DevTools Network panel",
+  width="724",
+  height="629"
+ %}
 
 
 To view more information about the layout shift, click on the layout shift, then
@@ -263,7 +293,12 @@ layout shift occurred within 500ms of a user interaction.
 
 
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/AfVjsH9Nl9w0lJwQZEjR.png", alt="Screenshot of the DevTools 'Summary' tab for a layout shift", width="612", height="354" %}
+{% Img
+  src="image/j2RDdG43oidUy6AL6LovThjeX9c2/AfVjsH9Nl9w0lJwQZEjR.png",
+  alt="Screenshot of the DevTools 'Summary' tab for a layout shift",
+  width="612",
+  height="354"
+ %}
 
 
 For information on the duration of a layout shift, open the **Event Log** tab.
@@ -271,7 +306,12 @@ The duration of a layout shift can also be approximated by looking in the
 **Experience** pane for the length of the red layout shift rectangle.
 
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/124Dm7vV3EGM7M9fiugs.png", alt="Screenshot of the DevTools 'Event Log' tab for a layout shift", width="612", height="354" %}
+{% Img
+  src="image/j2RDdG43oidUy6AL6LovThjeX9c2/124Dm7vV3EGM7M9fiugs.png",
+  alt="Screenshot of the DevTools 'Event Log' tab for a layout shift",
+  width="612",
+  height="354"
+ %}
 
 {% Aside %}
 The duration of a layout shift has no impact on its layout shift score.
@@ -333,7 +373,18 @@ insertion of a DOM element, whereas a 1px or 2px layout shift often indicates
 the application of conflicting CSS styles or the loading and application of a
 web font.
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png", alt="Diagram showing a layout shift caused by a font swap", width="800", height="452" %}
+<figure class="w-figure">
+  {% Img
+    src="image/j2RDdG43oidUy6AL6LovThjeX9c2/g0892nhvz3SnSaasaO1b.png",
+    alt="Diagram showing a layout shift caused by a font swap",
+    width="800",
+    height="452"
+  %}
+  <figcaption class="w-figcaption">
+    In this example, font swapping caused page elements to shift upwards by five pixels.
+  </figcaption>
+</figure>
+
 
 
 These are some of the specific behaviors that most frequently cause layout shift
