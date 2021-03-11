@@ -190,7 +190,11 @@ header.
 tags don't support report-only mode.
 
 
-### Option A: Nonce-based CSP
+{% Details %}
+
+{% DetailsSummary %}
+Option A: Nonce-based CSP
+{% endDetailsSummary %}
 
 Set the following `Content-Security-Policy` HTTP response header in your application:
 ```text
@@ -223,11 +227,9 @@ const app = express();
 app.get('/', function(request, response) {
     // Generate a new random nonce value for every response.
     const nonce = crypto.randomBytes(16).toString("base64");
-
     // Set the strict nonce-based CSP response header
     const csp = `script-src 'nonce-${nonce}' 'strict-dynamic' https:; object-src 'none'; base-uri 'none';`;
     response.set("Content-Security-Policy", csp);
-
     // Every <script> tag in your application should set the `nonce` attribute to this value.
     response.render(template, { nonce: nonce });  
   });
@@ -269,7 +271,13 @@ dynamically added to the page, as long as they were loaded by a safe, already-tr
 (see the [specification](https://www.w3.org/TR/CSP3/#strict-dynamic-usage)).
 {% endAside %}
 
-### Option B: Hash-based CSP Response Header
+{% endDetails %}
+
+{% Details %}
+
+{% DetailsSummary %}
+Option B: Hash-based CSP Response Header
+{% endDetailsSummary %}
 
 Set the following `Content-Security-Policy` HTTP response header in your application:
 ```text
@@ -359,7 +367,7 @@ start downloading early enough), you can use [preload tags](https://developer.mo
 script at the time you want to run it.
 {% endDetails %}
 
-
+{% endDetails %}
 
 ### Step 3:  Refactor HTML templates and client-side code to remove patterns incompatible with CSP
 
