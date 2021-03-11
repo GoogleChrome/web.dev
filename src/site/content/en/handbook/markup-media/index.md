@@ -16,7 +16,7 @@ Googlers access, so signing in with a personal account will fail.
 {% Aside 'caution' %}
 There are different uploaders for web.dev and developer.chrome.com:
 * [web.dev uploader](https://web-dev-uploads.web.app/uploader)
-* [developer.chrome.com uploader](https://chrome-gcs-uploader.web.app/uploads)
+* [developer.chrome.com uploader](https://chrome-gcs-uploader.web.app/)
 {% endAside %}
 
 ## Choose a file
