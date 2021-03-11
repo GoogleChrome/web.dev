@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
- /**
+/**
  * @param {string} content Markdown with the content for the compare element.
  * @return {string}
  */
