@@ -40,8 +40,7 @@ const IS_UPLOADED_IMG = (src) => {
  * @param {Object} params Imgix API params.
  * @return {string}
  */
-const generateSrc = (src, params = {}) =>
-  client.buildURL(src, {...DEFAULT_PARAMS, ...params});
+const generateSrc = (src, params = {}) => client.buildURL(src, params);
 
 /**
  * Takes an imgix url or path and generates an `<img>` element with `srcset`.
@@ -50,8 +49,8 @@ const generateSrc = (src, params = {}) =>
  * @return {string}
  */
 const Img = function (args) {
-  const {src, alt, width, height, class: className, linkTo, params} = args;
-  let {lazy, options, sizes} = args;
+  const {src, alt, width, height, class: className, linkTo} = args;
+  let {lazy, options, sizes, params} = args;
 
   const checkHereIfError = `ERROR IN ${
     // @ts-ignore: `this` has type of `any`
@@ -88,6 +87,12 @@ const Img = function (args) {
     lazy = true;
   }
 
+  params = {...DEFAULT_PARAMS, ...params};
+
+  // Check if image is an SVG, if it is we don't need or want to process it
+  // If we do imgix will rasterize the image.
+  const isSimpleImg = /\.svg$/.test(src) && !params.fm;
+
   // https://github.com/imgix/imgix-core-js#imgixclientbuildsrcsetpath-params-options
   options = {
     // Use the image width as the lower bound.
@@ -99,7 +104,7 @@ const Img = function (args) {
     ...options,
   };
   // https://docs.imgix.com/apis/rendering
-  const fullSrc = generateSrc(src, params);
+  const fullSrc = isSimpleImg ? generateSrc(src, params) : generateSrc(src);
   const srcset = client.buildSrcSet(src, params, options);
   if (sizes === undefined) {
     if (widthAsNumber >= MAX_WIDTH) {
@@ -117,20 +122,21 @@ const Img = function (args) {
   /* eslint-disable lit-a11y/alt-text */
   let imgTag = html` <img
     src="${fullSrc}"
-    srcset="${srcset}"
-    sizes="${sizes}"
     height="${heightAsNumber}"
     width="${widthAsNumber}"
+    ${isSimpleImg ? '' : `srcset="${srcset}"`}
+    ${isSimpleImg ? '' : `sizes="${sizes}"`}
     ${alt ? `alt="${safeHtml`${alt}`}"` : ''}
     ${className ? `class="${className}"` : ''}
     ${lazy ? 'loading="lazy"' : ''}
-  />`.replace(/\n/g, '');
+  />`;
+  /* eslint-enable lit-a11y/alt-text */
 
   if (linkTo) {
     imgTag = html`<a href="${fullSrc}">${imgTag}</a>`;
   }
 
-  return imgTag;
+  return imgTag.replace(/\n/g, '');
 };
 
-module.exports = {Img, generateSrc};
+module.exports = {Img, generateSrc, DEFAULT_PARAMS};

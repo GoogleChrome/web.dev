@@ -22,7 +22,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const site = require('../../_data/site');
-const {generateSrc} = require('./Img');
+const {generateSrc, DEFAULT_PARAMS} = require('./Img');
 
 // Renders the set leader at the top of the self-assessment
 function headerTemplate(assessment) {
@@ -84,7 +84,7 @@ function questionTemplate(question, assessment) {
     // @ts-ignore
     const oldSrc = $(this).attr('src');
     if (/image\/(.*)\/(.*)\.([a-z]{1,4})$/.test(oldSrc)) {
-      const src = generateSrc(oldSrc);
+      const src = generateSrc(oldSrc, DEFAULT_PARAMS);
       // @ts-ignore
       $(this).attr('src', src);
     }
