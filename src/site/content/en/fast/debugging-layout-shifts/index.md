@@ -63,11 +63,11 @@ When running this script be aware that:
 
 
 *   The `buffered: true` option indicates that the
-    [PerformanceObserver](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+    [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
     should check the browser's [performance entry
     buffer](https://www.w3.org/TR/performance-timeline-2/#dfn-performance-entry-buffer)
     for performance entries that were created before the observer's
-    initialization. As a result, the PerformanceObserver will report layout
+    initialization. As a result, the `PerformanceObserver` will report layout
     shifts that happened both before and after it was initialized. Keep this in
     mind when inspecting the console logs. An initial glut of layout shifts can
     reflect a reporting backlog, rather than the sudden occurrence of numerous
