@@ -76,4 +76,13 @@ const i18n = (path, locale = 'en') => {
   }
 };
 
-module.exports = {i18n};
+/**
+ * Infer the page locale using page's filePathStem.
+ * @param {string} path filePathStem property, e.g. /en/docs/hosted_apps/index
+ * @return {string}
+ */
+function getLocaleFromPath(path) {
+  return path ? path.split('/')[1] : defaultLocale;
+}
+
+module.exports = {i18n, getLocaleFromPath};
