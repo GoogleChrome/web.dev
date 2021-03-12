@@ -48,14 +48,9 @@ function Compare(content, type, labelOverride) {
     }
   }
 
-  return `
-    <figure class="w-compare">
-      <p class="w-compare__label w-compare__label--${type}">
-        ${label}
-      </p>
-      ${content}
-    </figure>
-  `;
+  return `<figure class="w-compare"><p class="w-compare__label w-compare__label--${type}">${label}</p>
+
+${content}</figure>`;
 }
 
 module.exports = Compare;
