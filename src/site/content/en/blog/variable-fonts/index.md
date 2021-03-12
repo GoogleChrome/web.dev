@@ -644,7 +644,11 @@ You can view the working example and source code for the above sample
 
 <figure class="w-figure">
   {% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/2Du2L0Ii5nUqz8n6S3Vz.mp4",
-  class="w-screenshot"
+  class="w-screenshot",
+  controls=false,
+  autoplay=true,
+  loop=true,
+  muted=true
   %}
   <figcaption class="w-figcaption">
     Typeface Zycon, designed for animation by David Berlow, type designer and
