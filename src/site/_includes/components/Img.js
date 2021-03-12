@@ -38,7 +38,7 @@ const IS_UPLOADED_IMG = (src) => {
  * @param {Object} [params]
  * @returns {boolean}
  */
-const IS_SIMPLE_IMG = (src, params = {}) => /\.svg$/.test(src) && !params.fm;
+const isSimpleImg = (src, params = {}) => /\.svg$/.test(src) && !params.fm;
 
 /**
  * Generates src URL of image from imgix path or URL.
@@ -52,9 +52,9 @@ const generateSrc = (src, params = {}) => {
 
   // Check if image is an SVG, if it is we don't need or want to process it
   // If we do imgix will rasterize the image.
-  const isSimpleImg = IS_SIMPLE_IMG(src, params);
+  const doNotUseParams = isSimpleImg(src, params);
 
-  return client.buildURL(src, isSimpleImg ? {} : params);
+  return client.buildURL(src, doNotUseParams ? {} : params);
 };
 
 /**
@@ -102,7 +102,7 @@ const Img = function (args) {
     lazy = true;
   }
 
-  const isSimpleImg = IS_SIMPLE_IMG(src, params);
+  const doNotUseSrcset = isSimpleImg(src, params);
 
   // https://github.com/imgix/imgix-core-js#imgixclientbuildsrcsetpath-params-options
   options = {
@@ -135,8 +135,8 @@ const Img = function (args) {
     src="${fullSrc}"
     height="${heightAsNumber}"
     width="${widthAsNumber}"
-    ${isSimpleImg ? '' : `srcset="${srcset}"`}
-    ${isSimpleImg ? '' : `sizes="${sizes}"`}
+    ${doNotUseSrcset ? '' : `srcset="${srcset}"`}
+    ${doNotUseSrcset ? '' : `sizes="${sizes}"`}
     ${alt ? `alt="${safeHtml`${alt}`}"` : ''}
     ${className ? `class="${className}"` : ''}
     ${lazy ? 'loading="lazy"' : ''}
