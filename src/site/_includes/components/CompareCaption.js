@@ -19,9 +19,5 @@
  * @return {string}
  */
 module.exports = (content) => {
-  return `
-    <figcaption class="w-compare__caption">
-      ${content}
-    </figcaption>
-  `;
+  return `<figcaption class="w-compare__caption">${content}</figcaption>`;
 };
