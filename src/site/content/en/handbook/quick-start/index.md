@@ -24,7 +24,7 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
 1. Read the [Content guidelines](/handbook/#content-guidelines) to understand how to create high-quality
    content. The higher the quality of your content, the less time and energy you'll have to spend
    incorporating feedback.
-1. **After your content proposal is approved**, create a copy of the 
+1. **After your content proposal is approved**, create a copy of the
    [web.dev content template][template] to draft your content.
 1. Self-review your content with the [web.dev content checklist](/handbook/content-checklist) to find and fix
    common problems. The more of these problems you fix yourself, the faster your review will go.
@@ -38,6 +38,18 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
    In particular, check out the [web.dev components](https://web.dev/handbook/web-dev-components/) guide
    to discover UI elements that can make your content more engaging or aesthetically pleasing.
 1. Once your PR is merged, the content will be deployed to the site immediately.
+
+## Organizing content
+
+Posts in collections in the *Learn* section are organized thematically within *learning paths*.
+Each collection is defined in the `site/_data/paths` directory as a `json` object.
+
+1. To add a new collection, add a `<collection_name>.json` file to the `site/_data/paths` directory.
+
+1. In the collection's `.json` file, define fields like *title*, *description*, *overview* and *topic titles* as i18n paths, to allow their translation into many languages (e.g. `i18n.paths.newpathname.title`).
+
+1. Add the content of these fields to the `site/_data/i18n/paths` directory (under `en` key).
+If applicable, launch translation process for this content by emailing web.dev@.
 
 {% Aside %}
   Googlers: Check out [web.dev process](https://docs.google.com/document/d/1Vxgrgxtz4OeJcrYJF5lpK9bVhTcGpXOXeeL4GZCV8KY)
