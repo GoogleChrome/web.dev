@@ -379,28 +379,28 @@ web font.
 These are some of the specific behaviors that most frequently cause layout shift
 events:
 
-#### Changes to the position of an element (that aren't due to the movement of another element)…
+#### Changes to the position of an element (that aren't due to the movement of another element)
 
-Are often the result of:
-*   Stylesheets that are loaded late or overwrite previously declared styles
-*   Animation and transition effects
+This type of change is often a result of:
+*   Stylesheets that are loaded late or overwrite previously declared styles.
+*   Animation and transition effects.
 
-#### Changes to the dimensions of an element…
+#### Changes to the dimensions of an element
 
-Are often the result of:
-*   Stylesheets that are loaded late or overwrite previously declared styles
+This type of change is often a result of:
+*   Stylesheets that are loaded late or overwrite previously declared styles.
 *   Images and iframes without `width` and `height` attributes that load after
-    their "slot" has been rendered
+    their "slot" has been rendered.
 *   Text blocks without `width` or `height` attributes that swap fonts after the
-    text has been rendered
+    text has been rendered.
 
-#### The insertion or removal of DOM elements…
+#### The insertion or removal of DOM elements
 
-Is often the result of:
-*   Insertion of ads and other third-party embeds
-*   Insertion of banners, alerts, and modals
+This is often the result of:
+*   Insertion of ads and other third-party embeds.
+*   Insertion of banners, alerts, and modals.
 *   Infinite scroll and other UX patterns that load additional content above
-    existing content
+    existing content.
 
 #### Animations that trigger layout
 
