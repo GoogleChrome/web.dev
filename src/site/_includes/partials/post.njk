@@ -81,7 +81,7 @@
 
     {% if draft and site.env === 'dev' %}
       <div class="w-banner w-banner--warning w-banner--body">
-        🚨 This post is a draft! 🚨
+        {{ 'i18n.post.is_draft' | i18n(locale) }}
       </div>
     {% endif %}
 
@@ -100,15 +100,15 @@
     <div class="w-post-github-link w-mt--l w-mb--l">
       <span class="w-mr--sm">
         {% if updated %}
-        Last updated: <time>{{ updated | prettyDate }}</time>
+        {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ updated | prettyDate }}</time>
         {% else %}
-        Last updated: <time>{{ date | prettyDate }}</time>
+        {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ date | prettyDate }}</time>
         {% endif %}
       </span>
       <a
         href="{{ page.inputPath | githubLink }}"
       >
-        Improve article
+        {{ 'i18n.post.improve_article' | i18n(locale) }}
       </a>
       {# Hide suggest translation for now. #} {#
       <a href="#">Suggest translation</a> #}
