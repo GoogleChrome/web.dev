@@ -1,6 +1,6 @@
 <div class="w-topic">
   <h2 id="{{ topic.title | slug }}" class="no-link w-headline--three w-topic__header">
-    {{ topic.title }}
+    {{ topic.title | i18n(locale)}}
     <a class="w-headline-link" href="#{{ topic.title | slug }}" aria-hidden="true">#</a>
   </h2>
   <ul class="w-path-list">
@@ -12,7 +12,7 @@
   {% if topic.subtopics %}
     {% for section in topic.subtopics %}
       <h3 id="{{ section.title | slug }}" class="no-link w-headline--four w-topic__subtopic-header">
-        {{ section.title }}
+        {{ section.title | i18n(locale) }}
         <a class="w-headline-link" href="#{{ section.title | slug }}" aria-hidden="true">#</a>
       </h3>
       <ul class="w-path-list">

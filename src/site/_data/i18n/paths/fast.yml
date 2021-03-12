@@ -1,0 +1,45 @@
+title:
+  en: Fast load times
+
+description:
+  en: Techniques for improving site performance.
+
+overview:
+  en: When you're building a modern web experience, it's important to measure, optimize, and monitor if you're to get fast and stay fast. Performance plays a significant role in the success of any online venture, as high performing sites engage and retain users better than poorly performing ones. Sites should focus on optimizing for user-centric happiness metrics. Tools like Lighthouse (baked into web.dev!) highlight these metrics and help you take the right steps toward improving your performance. To "stay fast", set and enforce performance budgets to help your team work within the constraints needed to continue loading fast and keeping users happy after your site has launched.
+
+topics:
+  introduction:
+    en: Introduction
+
+  set_performance_budgets:
+    en: Set performance budgets
+
+  optimize_your_images:
+    en: Optimize your images
+
+  lazy_load_images_and_video:
+    en: Lazy-load images and video
+
+  optimize_your_javascript:
+    en: Optimize your JavaScript
+
+  optimize_your_resource_delivery:
+    en: Optimize your resource delivery
+
+  optimize_your_css:
+    en: Optimize your CSS
+
+  optimize_your_third_party_resources:
+    en: Optimize your third-party resources
+
+  optimize_webfonts:
+    en: Optimize WebFonts
+
+  optimize_for_network_quality:
+    en: Optimize for network quality
+
+  measure_performance_in_the_field:
+    en: Measure performance in the field
+
+  build_a_performance_culture:
+    en: Build a performance culture

@@ -1,0 +1,24 @@
+title:
+  en: Network reliability
+
+description:
+  en: See consistent, reliable performance regardless of network quality.
+
+overview:
+  en: The modern web gives you access to a diverse global audience with a range of devices and network connections. In this section you'll learn how to provide a consistently reliable experience to all your users, wherever and however they access the internet.
+
+topics:
+  how_to_measure_network_reliability:
+    en: How to measure network reliability
+
+  the_options_in_your_caching_toolbox:
+    en: The options in your caching toolbox
+
+  how_caching_strategies_work:
+    en: How caching strategies work
+
+  advanced_patterns:
+    en: Advanced patterns
+
+  communicate_with_workers:
+    en: Communicate with workers
