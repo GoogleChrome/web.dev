@@ -48,6 +48,7 @@ function Compare(content, type, labelOverride) {
     }
   }
 
+  // prettier-ignore
   return `<figure class="w-compare"><p class="w-compare__label w-compare__label--${type}">${label}</p>
 
 ${content}</figure>`;
