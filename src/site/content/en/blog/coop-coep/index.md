@@ -216,6 +216,8 @@ applying `allow="cross-origin-isolated"` feature policy to the `<iframe>` tag
 and meeting the same conditions described in this document.
 {% endAside %}
 
+<br>
+
 {% Aside 'key-term' %}
 It's important that you understand the difference between "same-site" and
 "same-origin". Learn about the difference at [Understanding same-site and
