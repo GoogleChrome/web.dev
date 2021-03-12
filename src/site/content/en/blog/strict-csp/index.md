@@ -18,9 +18,9 @@ tags:
 to inject malicious scripts into a web application—has been one of the biggest web security vulnerabilities for over a decade.
 
 [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is an added layer of security that helps to mitigate XSS. Configuring a CSP involves adding the Content-Security-Policy HTTP header to a web page
-and giving it values to control what resources the user agent is allowed to load for that page.
+and setting values to control what resources the user agent is allowed to load for that page.
 This article explains how to use a CSP based on nonces or hashes to mitigate XSS instead of
-the commonly used host allowlist based CSPs which often leave the page exposed to XSS as they can be [bypassed in most configurations](https://research.google.com/pubs/pub45542.html).
+the commonly used host-allowlist-base CSPs which often leave the page exposed to XSS as they can be [bypassed in most configurations](https://research.google.com/pubs/pub45542.html).
 
 {% Aside 'key-term' %}
 A _nonce_ is a random number used only once that can be used to mark a `<script>` tag as
@@ -29,7 +29,7 @@ trusted.
 
 {% Aside 'key-term' %}
 A hash function is a mathematical function that converts an input value into a compressed
-numerical value–a hash. A _hash_ (e.g. sha256) can be used to mark an inline `<script>` tag as
+numerical value—a hash. A _hash_ (e.g. sha256) can be used to mark an inline `<script>` tag as
 trusted.
 {% endAside %}
 
@@ -54,7 +54,7 @@ avoiding (and promptly fixing) XSS bugs.
 
 If your site already has a CSP that looks like this:
 `script-src www.googleapis.com`,
-it may not be effective against cross-site scripting! This type of CSP is called allowlist CSP and
+it may not be effective against cross-site scripting! This type of CSP is called an allowlist CSP and
 it has a couple of downsides:
  - It requires a lot of customization.
  - It can be [bypassed in most configurations](https://research.google.com/pubs/pub45542.html).
@@ -177,7 +177,7 @@ When setting a CSP, you have a few options:
 - Report-only mode (`Content-Security-Policy-Report-Only`) or enforcement mode
 (`Content-Security-Policy`). In report-only, the CSP won't block resources yet—nothing will
 break—but you'll be able to see errors and receive reports for what would have been blocked.
-Locally when you're in the process of setting a CSP, this doesn't really matter, because both
+Locally, when you're in the process of setting a CSP, this doesn't really matter, because both
 modes will show you the errors in the browser console. If anything, enforcement mode will make
 it even easier for you to see blocked resources and tweak your CSP, since your page will look
 broken. Report-only mode becomes most useful later in the process (see Step 5). 
@@ -212,13 +212,13 @@ server response** (see next section).
 #### Generate a nonce for CSP
 
 A nonce is a random number used only once per page load. A nonce-based CSP can only
-mitigate XSS, if the nonce value is **not guessable** by an attacker. Therefore a nonce for CSP
+mitigate XSS if the nonce value is **not guessable** by an attacker. Therefore a nonce for CSP
 needs to be:
 - A cryptographically **strong random** value (ideally 128+ bits in length),
 - Newly **generated for every response** and
 - base64 encoded.
 
-Here are some examples on how to add a CSP nonce in a server-side frameworks:
+Here are some examples on how to add a CSP nonce in server-side frameworks:
 - [Django (python)](https://django-csp.readthedocs.io/en/latest/nonce.html)
 - Express (javascript):
 ```javascript
@@ -458,7 +458,7 @@ without support for `'strict-dynamic'`. By doing so:
   - All browsers that support `'strict-dynamic'` will ignore the `https:` fallback, so this won't reduce
 the strength of the policy.
   -  In Safari, externally sourced scripts will be allowed to load only if they come from an HTTPS
-origin. This is less secure than a strict CSP - it's a fallback - but would still prevent certain
+origin. This is less secure than a strict CSP–it's a fallback–but would still prevent certain
 common XSS causes like injections of `javascript:` URIs because `'unsafe-inline'` is not present
 or ignored in presence of a hash or nonce. 
 
@@ -473,7 +473,7 @@ Content-Security-Policy:
 ```
 
 Note: `https:` and `unsafe-inline` don't make your policy less safe because they will be ignored
-by browsers who support `strict-dynamic`.
+by browsers which support `strict-dynamic`.
 
 ### Step 5:  Deploy your CSP
 
@@ -490,7 +490,7 @@ violation reports when patterns incompatible with CSP are encountered (so you ca
 would have broken for your end-users). 
 1. Once you're confident that your CSP won't induce breakage for your end-users, deploy your
 CSP using the `Content-Security-Policy` response header. **Only once you've completed this
-step, CSP will begin to protect your application from XSS**. Setting your CSP via a HTTP
+step, will CSP begin to protect your application from XSS**. Setting your CSP via a HTTP
 header server-side is more secure than setting it as a meta tag; use a header if you can.
 
 
@@ -507,26 +507,27 @@ due to browser extensions and malware.
 
 ## Limitations
 
-Generally speaking a strict CSP provides a strong added layer of security that helps to mitigate
+Generally speaking, a strict CSP provides a strong added layer of security that helps to mitigate
 XSS.
-However, while CSP is reducing the attack surface significantly (e.g. dangerous patterns like
-`javascript:` URIs are completely turned off), based on the type of CSP you're using (nones,
-hashes, with or without `'strict-dynamic'`) there are cases where CSP doesn't protect you (more
-details can be found [here](https://static.sched.com/hosted_files/locomocosec2019/db/CSP%20-%20A%20Successful%20Mess%20Between%20Hardening%20and%20Mitigation%20%281%29.pdf#page=27)):
+In most cases, CSP reduces the attack surface significantly (e.g. dangerous patterns like javascript: 
+URIs are completely turned off). However, based on the type of CSP you're using (nonces, hashes, with
+or without `'strict-dynamic'`), there are cases where CSP doesn't protect:
 - If you nonce a script, but there's an injection directly into the body or into the `src` parameter of
 that `<script>` element. 
-- Injections into the locations of dynamically created scripts (`document.createElement('script')`),
+- If there are injections into the locations of dynamically created scripts (`document.createElement('script')`),
 including into any library functions which create `script` DOM nodes based on the value of their
 arguments. This includes some common APIs such as jQuery's `.html()`, as well as `.get()` and
 `.post()` in jQuery < 3.0.
-- Template injections in old AngularJS applications. An attacker who can inject an AngularJS
+- If there are template injections in old AngularJS applications. An attacker who can inject an AngularJS
 template can use it to [execute arbitrary
 JavaScript](https://sites.google.com/site/bughunteruniversity/nonvuln/angularjs-expression-sandbox-bypass).
 - If the policy contains `'unsafe-eval'`, injections into `eval()`, `setTimeout()` and a few other
 rarely used APIs.
 
 Developers and security engineers should pay particular attention to such patterns during code
-reviews and security audits.
+reviews and security audits. You can find more details on the cases described above
+[here](https://static.sched.com/hosted_files/locomocosec2019/db/CSP%20-%20A%20Successful%20Mess%20Between%20Hardening%20and%20Mitigation%20%281%29.pdf#page=27)).
+
 
 {% Aside %}
 Trusted Types complements strict CSP very well and can efficiently protect against some of the
