@@ -441,6 +441,5 @@ new PerformanceObserver((entryList) => {
 
 Lastly, for layout issues that aren't reproducible in development, consider
 using the Layout Instability API in conjunction with your front-end logging tool
-of choice to collect more information on these issues. For example, this
-[code](https://github.com/GoogleChromeLabs/web-vitals-report/blob/71b0879334798c732f460945ded5267cab5a36bf/src/js/analytics.js#L104-L118)
-shows how to track the largest shifted element on a page.
+of choice to collect more information on these issues. Check out
+the example [code for how to track the largest shifted element on a page](https://github.com/GoogleChromeLabs/web-vitals-report/blob/71b0879334798c732f460945ded5267cab5a36bf/src/js/analytics.js#L104-L118).
