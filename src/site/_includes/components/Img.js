@@ -34,23 +34,27 @@ const IS_UPLOADED_IMG = (src) => {
 };
 
 /**
+ * @param {string} src
+ * @param {Object} [params]
+ * @returns {boolean}
+ */
+const IS_SIMPLE_IMG = (src, params = {}) => /\.svg$/.test(src) && !params.fm;
+
+/**
  * Generates src URL of image from imgix path or URL.
  *
  * @param {string} src Path (or URL) for image.
- * @param {Object} params? Imgix API params.
+ * @param {Object} [params] Imgix API params.
  * @return {string}
  */
-const generateSrc = (src, params) => {
-  /**
-   * Only apply `DEFAULT_PARAMS` if a user wants to use params.
-   * Params can cause SVGs to be rasterized, so if we didn't want it rasterized
-   * we wouldn't pass in any params, and we wouldn't want any params added to it.
-   */
-  if (params) {
-    params = {...DEFAULT_PARAMS, ...params};
-  }
+const generateSrc = (src, params = {}) => {
+  params = {...DEFAULT_PARAMS, ...params};
 
-  return client.buildURL(src, params || {});
+  // Check if image is an SVG, if it is we don't need or want to process it
+  // If we do imgix will rasterize the image.
+  const isSimpleImg = IS_SIMPLE_IMG(src, params);
+
+  return client.buildURL(src, isSimpleImg ? {} : params);
 };
 
 /**
@@ -60,8 +64,8 @@ const generateSrc = (src, params) => {
  * @return {string}
  */
 const Img = function (args) {
-  const {src, alt, width, height, class: className, linkTo} = args;
-  let {lazy, options, sizes, params} = args;
+  const {src, alt, width, height, class: className, linkTo, params} = args;
+  let {lazy, options, sizes} = args;
 
   const checkHereIfError = `ERROR IN ${
     // @ts-ignore: `this` has type of `any`
@@ -98,11 +102,7 @@ const Img = function (args) {
     lazy = true;
   }
 
-  params = {...DEFAULT_PARAMS, ...params};
-
-  // Check if image is an SVG, if it is we don't need or want to process it
-  // If we do imgix will rasterize the image.
-  const isSimpleImg = /\.svg$/.test(src) && !params.fm;
+  const isSimpleImg = IS_SIMPLE_IMG(src, params);
 
   // https://github.com/imgix/imgix-core-js#imgixclientbuildsrcsetpath-params-options
   options = {
@@ -115,7 +115,7 @@ const Img = function (args) {
     ...options,
   };
   // https://docs.imgix.com/apis/rendering
-  const fullSrc = isSimpleImg ? generateSrc(src) : generateSrc(src, params);
+  const fullSrc = generateSrc(src, params);
   const srcset = client.buildSrcSet(src, params, options);
   if (sizes === undefined) {
     if (widthAsNumber >= MAX_WIDTH) {

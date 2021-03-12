@@ -84,7 +84,7 @@ function questionTemplate(question, assessment) {
     // @ts-ignore
     const oldSrc = $(this).attr('src');
     if (/image\/(.*)\/(.*)\.([a-z]{1,4})$/.test(oldSrc)) {
-      const src = generateSrc(oldSrc, {});
+      const src = generateSrc(oldSrc);
       // @ts-ignore
       $(this).attr('src', src);
     }
