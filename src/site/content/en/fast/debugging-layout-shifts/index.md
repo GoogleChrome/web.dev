@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Debugging layout shifts
+subhead: |
+  Learn how to identify and fix layout shifts.
 authors:
   - katiehempenius
 date: 2021-03-11
@@ -112,29 +114,13 @@ debugging layout shifts:
 
 
 
-*   `sources`: The `sources` property lists the DOM elements that moved during
-    the layout shift. This array can contain up to five sources. In the event
-    that there are more than five elements impacted by the layout shift, the
-    five largest (as measured by impact on layout stability) sources of layout
-    shift are reported. This information is reported using the LayoutShift
-    Attribution interface (explained in more detail below).
-*   `value`: The `value` property reports the [layout shift
-    score](https://web.dev/cls/#layout-shift-score) for a particular layout
-    shift.
-*   `hadRecentInput`: The `hadRecentInput` property indicates whether a layout
-    shift occurred within 500 milliseconds of user input.
-*   `startTime`: The `startTime` property indicates when a layout shift
-    occurred. `startTime` is indicated in milliseconds and is measured relative
-    to the [time that the page load was
-    initiated](https://www.w3.org/TR/hr-time-2/#sec-time-origin).
-*   `duration`: The `duration` property will always be set to `0`. This property
-    is inherited from the
-    [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)
-    interface (the `LayoutShift` interface extends the `PerformanceEntry`
-    interface). However, the concept of duration does not apply to layout shift
-    events, so it is set to `0`. For information on the `PerformanceEntry`
-    interface, refer to the
-    [spec](https://w3c.github.io/performance-timeline/#the-performanceentry-interface).
+| Property | Description |
+|----------|-------------|
+|`sources`| The `sources` property lists the DOM elements that moved during the layout shift. This array can contain up to five sources. In the event that there are more than five elements impacted by the layout shift, the five largest (as measured by impact on layout stability) sources of layout shift are reported. This information is reported using the LayoutShiftAttribution interface (explained in more detail below).|
+|`value`| The `value` property reports the [layout shift score](https://web.dev/cls/#layout-shift-score) for a particular layout shift.|
+|`hadRecentInput`| The `hadRecentInput` property indicates whether a layout shift occurred within 500 milliseconds of user input.|
+|`startTime`| The `startTime` property indicates when a layout shift occurred. `startTime` is indicated in milliseconds and is measured relative to the [time that the page load was initiated](https://www.w3.org/TR/hr-time-2/#sec-time-origin).|
+|`duration`| The `duration` property will always be set to `0`. This property is inherited from the [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry) interface (the `LayoutShift` interface extends the `PerformanceEntry` interface). However, the concept of duration does not apply to layout shift events, so it is set to `0`. For information on the `PerformanceEntry` interface, refer to the [spec](https://w3c.github.io/performance-timeline/#the-performanceentry-interface).|
 
 {% Aside %}
 The [Web Vitals
@@ -440,7 +426,7 @@ connection speed can make it easier to identify layout shifts. In addition,
 you can use a `debugger` statement to make it easier to step through layout
 shifts.
 
-```javascript
+```javascript/4
 new PerformanceObserver((entryList) => {
   for (const entry of entryList.getEntries()) {
     if (!entry.hadRecentInput) {
