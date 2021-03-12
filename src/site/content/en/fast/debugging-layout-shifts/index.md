@@ -336,7 +336,7 @@ Rendering > Layout Shift Regions** then refresh the page that you wish to debug.
 Areas of layout shift will be briefly highlighted in purple.
 
 
-## Thought Process
+## Thought process for identifying the cause of layout shifts
 
 You can use the steps below to identify the cause of layout shifts
 regardless of when or how the layout shift occurs. These steps can be
