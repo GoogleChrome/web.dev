@@ -261,8 +261,7 @@ Although element B changes size, there is no layout shift in this example.
  %}
 
 
-For a demo of how DOM changes are reported by the Layout Instability API, check
-out this [Glitch](https://desert-righteous-router.glitch.me/).
+Check out a [demo of how DOM changes are reported by the Layout Instability API](https://desert-righteous-router.glitch.me/).
 
 
 ### DevTools
