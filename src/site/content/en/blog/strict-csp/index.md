@@ -526,13 +526,13 @@ rarely used APIs.
 
 Developers and security engineers should pay particular attention to such patterns during code
 reviews and security audits. You can find more details on the cases described above
-[here](https://static.sched.com/hosted_files/locomocosec2019/db/CSP%20-%20A%20Successful%20Mess%20Between%20Hardening%20and%20Mitigation%20%281%29.pdf#page=27)).
+[here](https://static.sched.com/hosted_files/locomocosec2019/db/CSP%20-%20A%20Successful%20Mess%20Between%20Hardening%20and%20Mitigation%20%281%29.pdf#page=27).
 
 
 {% Aside %}
 Trusted Types complements strict CSP very well and can efficiently protect against some of the
 limitations listed above. To learn more about how to use Trusted Types read
-[web.dev/trusted-types](http://web.dev/trusted-types)
+[web.dev/trusted-types](http://web.dev/trusted-types).
 {% endAside %}
 
 
