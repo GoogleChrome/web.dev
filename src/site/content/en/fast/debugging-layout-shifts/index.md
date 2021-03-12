@@ -14,8 +14,8 @@ tags:
 ---
 
 
-The first part of this article discusses tooling for debugging layout shifts;
-the second part of this article discusses the thought process to use when
+The first part of this article discusses tooling for debugging layout shifts,
+while the second part discusses the thought process to use when
 identifying the cause of a layout shift.
 
 
