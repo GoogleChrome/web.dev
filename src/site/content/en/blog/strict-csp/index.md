@@ -10,7 +10,6 @@ alt: A screenshot of JavaScript code setting a strict Content Security Policy.
 tags:
   - blog
   - security
-  - csp
 ---
 
 ## Why should you deploy a strict Content Security Policy (CSP)?
