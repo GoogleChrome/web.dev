@@ -1467,6 +1467,20 @@
     },
     "image": "image/admin/fbCJc4uifsZ4d5KolJ7j.jpg"
   },
+  "foolip": {
+    "name": {
+      "given": "Philip",
+      "family": "Jägenstedt"
+    },
+    "github": "foolip",
+    "twitter": "foolip",
+    "homepage": "https://foolip.org/",
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "image": "TODO"
+  },
   "olgademidova": {
     "name": {
       "given": "Olga",
