@@ -13,6 +13,7 @@ description: |
 tags:
   - blog
   - performance
+  - web-vitals
 ---
 
 
