@@ -409,8 +409,8 @@ layout](https://gist.github.com/paulirish/5d52fb081b3570c81e3a). A common
 example of this is when DOM elements are 'animated' by incrementing properties
 like `top` or `left` rather than using CSS's
 [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
-property. This [article](https://web.dev/animations-guide/) has more information
-on creating performant CSS animations.
+property. Read [How to create high-performance CSS animations](https://web.dev/animations-guide/)
+for more information.
 
 
 ### Reproducing layout shifts
