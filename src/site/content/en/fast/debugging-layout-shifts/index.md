@@ -343,7 +343,7 @@ regardless of when or how the layout shift occurs. These steps can be
 supplemented with running Lighthouse—however, keep in mind that Lighthouse can
 only identify layout shifts that occurred during the initial page load. In
 addition, Lighthouse also can only provide suggestions for some causes of layout
-shifts—for example, image elements do not have explicit width and height.
+shifts—for example, image elements that do not have explicit width and height.
 
 
 ### Identifying the cause of a layout shift
