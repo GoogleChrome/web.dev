@@ -40,10 +40,10 @@ non-Chromium browsers.
 
 #### Usage
 
-The same code [snippet](https://web.dev/cls/#measure-cls-in-javascript) that is
-used to measure [cumulative layout shift (CLS)](https://web.dev/cls/) can also
-be used to debug layout shifts. The snippet below logs information about layout
-shifts to the console. Inspecting this information will provide you information
+The same code [snippet](https://web.dev/cls/#measure-cls-in-javascript) that
+measures [Cumulative Layout Shift (CLS)](https://web.dev/cls/) can also
+serve to debug layout shifts. The snippet below logs information about layout
+shifts to the console. Inspecting this log will provide you information
 about when, where, and how a layout shift occurred.
 
 ```javascript
