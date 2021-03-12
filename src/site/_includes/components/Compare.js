@@ -27,7 +27,8 @@ function Compare(content, type, labelOverride) {
 
   if (!type) {
     throw new Error(
-      "Can't create Compare component without a type. Did you forget to pass the type as a string?",
+      `Can't create Compare component without a type in ${this.page.inputPath}.
+      Did you forget to pass the type as a string?`,
     );
   }
 
