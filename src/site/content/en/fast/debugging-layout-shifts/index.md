@@ -206,7 +206,7 @@ that the element has shifted out of view.
 One of the most important things to understand when interpreting these outputs
 is that elements listed as _sources_ are the elements that shifted during the
 layout shift. However, it's possible that these elements are only indirectly
-related to the 'root cause' of layout instability. For example…
+related to the "root cause" of layout instability. Here are a few examples.
 
 **Example #1**
 
