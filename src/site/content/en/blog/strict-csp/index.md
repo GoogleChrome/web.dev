@@ -18,7 +18,7 @@ tags:
 [Cross-site scripting (XSS)](https://www.google.com/about/appsecurity/learning/xss/)—the ability
 to inject malicious scripts into a web application—has been one of the biggest web security vulnerabilities for over a decade.
 
-Content Security Policy (CSP) is an added layer of security that helps to mitigate XSS. Configuring a CSP involves adding the Content-Security-Policy HTTP header to a web page
+[Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is an added layer of security that helps to mitigate XSS. Configuring a CSP involves adding the Content-Security-Policy HTTP header to a web page
 and giving it values to control what resources the user agent is allowed to load for that page.
 This article explains how to use a CSP based on nonces or hashes to mitigate XSS instead of
 the commonly used host allowlist based CSPs which often leave the page exposed to XSS as they can be [bypassed in most configurations](https://research.google.com/pubs/pub45542.html).
@@ -34,7 +34,7 @@ numerical value–a hash. A _hash_ (e.g. sha256) can be used to mark an inline `
 trusted.
 {% endAside %}
 
-A [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) based on
+A Content Security Policy based on
 nonces or hashes is often called a *strict CSP*. When an application uses a strict CSP,
 attackers who find HTML injection flaws will generally not be able to use them to force the
 browser to execute malicious scripts in the context of the vulnerable document. This is because
@@ -545,4 +545,3 @@ Security Policy](https://research.google/pubs/pub45542/)
 mitigation](https://static.sched.com/hosted_files/locomocosec2019/db/CSP%20-%20A%20Successful%20Mess%20Between%20Hardening%20and%20Mitigation%20%281%29.pdf)
 - [Google I/O talk: Securing Web Apps with Modern Platform
 Features](https://webappsec.dev/assets/pub/Google_IO-Securing_Web_Apps_with_Modern_Platform_Features.pdf)
-
