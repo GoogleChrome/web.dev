@@ -33,6 +33,9 @@
   &__links {
     height: calc(100vh - #{$header-height} - #{$search-heigh});
     overflow-y: auto;
+    // Give a little bottom margin so when we scroll to the bottom the last link
+    // clearly scrolls into view.
+    padding-bottom: 40px;
   }
 
   &__link {
