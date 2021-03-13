@@ -25,19 +25,18 @@
  }
 
  // This is the scrim that appears behind the side-nav when it's expanded.
-//  web-side-nav::before {
-//    content: '';
-//    display: block;
-//    position: absolute;
-//    left: 0;
-//    top: 0;
-//    width: 100%;
-//    height: 100%;
-//    background: rgba($BLACK, .4);
-//    opacity: 0;
-//    will-change: opacity;
-//    transition: opacity $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
-//  }
+ web-side-nav::before {
+   content: '';
+   display: block;
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba($BLACK, .4);
+   opacity: 0;
+   transition: opacity $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
+ }
  
  // The side nav has two primary modes, standard and modal.
  // 
@@ -53,19 +52,32 @@
  // the screen’s layout grid.
  
  web-side-nav[standard] {
-    // position: fixed;
-    // left: 0;
-    // top: 0;
-    // width: 100%;
-    // height: 100%;
-    // overflow: hidden;
-    // pointer-events: none;
-    // z-index: 300;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 300;
+
+    [data-nav-container] {
+      box-shadow: 2px 0 12px rgba($BLACK, .4);
+      position: relative;
+      transform: translateX(-110%);
+      width: fit-content;
+    }
 
     @include bp(md) {
       align-self: flex-start;
       position: sticky;
+      pointer-events: auto;
       top: 0;
+      width: auto;
+      z-index: auto;
+
+      [data-nav-container] {
+        box-shadow: none;
+        transform: none;
+      }
    }
  }
  
