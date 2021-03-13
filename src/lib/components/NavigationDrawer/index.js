@@ -65,8 +65,8 @@ export class NavigationDrawer extends BaseElement {
     this.currentX_ = 0;
     this.touchingSideNav_ = false;
 
-    this.onCloseSideNav = this.onCloseSideNav.bind(this);
-    this.onCollapseSideNav = this.onCollapseSideNav.bind(this);
+    this.onCloseSideNav = this.onClose.bind(this);
+    this.onCollapseSideNav = this.onDismiss.bind(this);
     this.onTouchStart = this.onTouchStart.bind(this);
     this.onTouchMove = this.onTouchMove.bind(this);
     this.onTouchEnd = this.onTouchEnd.bind(this);
@@ -92,9 +92,9 @@ export class NavigationDrawer extends BaseElement {
     /** @type HTMLElement */
     this.drawerContainer = this.querySelector('[data-drawer-container]');
     /** @type HTMLElement */
-    this.closeBtn = this.querySelector('[data-nav-close-button]');
+    this.closeBtn = this.querySelector('[data-drawer-close-button]');
     /** @type HTMLElement */
-    // this.collapseBtn = this.querySelector('[data-nav-collapse-button]');
+    this.dismissBtn = this.querySelector('[data-drawer-dismiss-button]');
 
     this.addEventListeners();
     store.subscribe(this.onStateChanged);
@@ -103,9 +103,9 @@ export class NavigationDrawer extends BaseElement {
 
   addEventListeners() {
     this.drawerContainer.addEventListener('click', this.onBlockClicks);
-    this.closeBtn.addEventListener('click', this.onCloseSideNav);
-    // this.collapseBtn.addEventListener('click', this.onCollapseSideNav);
-    this.addEventListener('click', this.onCloseSideNav);
+    this.closeBtn.addEventListener('click', this.onClose);
+    this.dismissBtn.addEventListener('click', this.onDismiss);
+    this.addEventListener('click', this.onClose);
     this.addEventListener('touchstart', this.onTouchStart, {passive: true});
     this.addEventListener('touchmove', this.onTouchMove, {passive: true});
     this.addEventListener('touchend', this.onTouchEnd);
@@ -118,6 +118,12 @@ export class NavigationDrawer extends BaseElement {
     } = store.getState();
 
     this.open = isNavigationDrawerOpen;
+
+    console.log(
+      'is dismissible?',
+      this.type === NAVIGATION_DRAWER_TYPE.dismissible,
+      isNavigationDrawerDismissed,
+    );
 
     if (this.type === NAVIGATION_DRAWER_TYPE.dismissible) {
       this.dismissed = isNavigationDrawerDismissed;
@@ -179,7 +185,7 @@ export class NavigationDrawer extends BaseElement {
     this.drawerContainer.style.transform = '';
 
     if (translateX < 0) {
-      this.onCloseSideNav();
+      this.onClose();
     }
   }
 
@@ -236,17 +242,16 @@ export class NavigationDrawer extends BaseElement {
     this.removeEventListener('transitionend', this.onTransitionEnd);
   }
 
-  onCloseSideNav() {
+  onClose() {
     // It's important to call the closeNavigationDrawer() action here instead of
     // just setting expanded = false. The closeNavigationDrawer() action will
     // inform other page elements that they should un-inert themselves.
     closeNavigationDrawer();
   }
 
-  onCollapseSideNav() {
+  onDismiss() {
     // Tells a dismissible NavigationDrawer to hide itself.
     dismissNavigationDrawer();
-    this.setAttribute('collapsed', '');
   }
 
   onKeyUp(e) {

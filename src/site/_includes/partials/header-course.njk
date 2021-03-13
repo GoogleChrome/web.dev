@@ -1,0 +1,8 @@
+{% from 'macros/icon.njk' import icon with context %}
+
+<web-header class="display-block md:display-none">
+  <button data-open-drawer-button class="w-button--svg w-button--round" aria-label="Open menu">
+    {{ icon('menu') }}
+    <span class="w-tooltip w-tooltip--left">Open menu</span>
+  </button>
+</web-header>

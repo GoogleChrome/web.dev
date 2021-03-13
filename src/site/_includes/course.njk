@@ -2,8 +2,6 @@
 layout: base
 ---
 
-{% from 'macros/icon.njk' import icon with context %}
-
 {#
   Grab the navigation data for the course. The projectKey is defined in the
   11tydata.js file at the root of the course in /learn/[course].
@@ -24,13 +22,7 @@ layout: base
 
 <div class="course-layout">
 
-  <web-header class="display-block md:display-none">
-    <button class="w-button--svg w-button--round" data-menu-button aria-label="Open menu">
-      {{ icon('menu') }}
-      <span class="w-tooltip w-tooltip--left">Open menu</span>
-    </button>
-  </web-header>
-
+  {% include 'partials/header-course.njk' %}
   {% include 'partials/navigation-drawer-course.njk' %}
 
   <div class="course-body">

@@ -53,7 +53,7 @@ web-navigation-drawer::before {
 // with a scrim. They are elevated above most of the app’s UI and don’t affect
 // the screen’s layout grid.
  
-web-navigation-drawer[type='dismissable'] {
+web-navigation-drawer[type='dismissible'] {
   left: 0;
   pointer-events: none;
   position: fixed;

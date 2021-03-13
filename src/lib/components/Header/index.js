@@ -21,7 +21,7 @@
  */
 
 import {store} from '../../store';
-import {openNavigationDrawer} from '../../actions';
+import {openNavigationDrawer, recallNavigationDrawer} from '../../actions';
 import {BaseElement} from '../BaseElement';
 
 export class Header extends BaseElement {
@@ -32,14 +32,29 @@ export class Header extends BaseElement {
 
   firstUpdated() {
     /** @type HTMLButtonElement */
-    this.menuBtn = this.querySelector('[data-menu-button]');
-    this.menuBtn.addEventListener('click', openNavigationDrawer);
+    this.openDrawerBtn = this.querySelector('[data-open-drawer-button]');
+    if (this.openDrawerBtn) {
+      this.openDrawerBtn.addEventListener('click', openNavigationDrawer);
+    }
+
+    /** @type HTMLButtonElement */
+    this.recallDrawerBtn = this.querySelector('[data-recall-drawer-button]');
+    if (this.recallDrawerBtn) {
+      this.recallDrawerBtn.addEventListener('click', recallNavigationDrawer);
+    }
 
     store.subscribe(this.onStateChanged);
   }
 
   disconnectedCallback() {
-    this.menuBtn.removeEventListener('click', openNavigationDrawer);
+    if (this.openDrawerBtn) {
+      this.openDrawerBtn.removeEventListener('click', openNavigationDrawer);
+    }
+
+    if (this.recallDrawerBtn) {
+      this.recallDrawerBtn.removeEventListener('click', recallNavigationDrawer);
+    }
+
     store.unsubscribe(this.onStateChanged);
   }
 
@@ -70,12 +85,14 @@ export class Header extends BaseElement {
   }
 
   /**
-   * This is called by the SideNav to return focus to this control when the
-   * user closes the SideNav.
+   * This is called by the NavigationDrawer to return focus to this control when
+   * the user closes the NavigationDrawer.
    * This is important for accessibility.
    */
   manageFocus() {
-    this.menuBtn.focus();
+    if (this.openDrawerBtn) {
+      this.openDrawerBtn.focus();
+    }
   }
 }
 
