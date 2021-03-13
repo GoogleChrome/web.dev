@@ -1,23 +1,27 @@
 {% from 'macros/icon.njk' import icon with context %}
 
-<web-side-nav>
-  <nav data-nav-container>
+<div class="course-nav flow flow-space-300">
 
-    <div>
-      <button
-        data-nav-close-button
-        class="default-nav__hide w-button--svg w-button--round"
-        aria-label="Close"
-      >
-        {{ icon('close') }}
-        <span class="w-tooltip">Close</span>
-      </button>
-    </div>
+  <div class="course-nav__header">
+    <button data-nav-close-button class="default-nav__hide w-button--svg w-button--round" aria-label="Close">
+      {{ icon('close') }}
+      <span class="w-tooltip">Close</span>
+    </button>
 
-    <a href="/learn/">Learn</a>
-    <a href="/learn/">Learn</a>
-    <a href="/learn/">Learn</a>
-    <a href="/learn/">Learn</a>
+    <div class="course-nav__title">Learn CSS!</div>
+  </div>
 
-  </nav>
-</web-side-nav>
+  <div class="course-nav__search">
+    <div class="input"></div>
+  </div>
+
+  <div class="course-nav__links">
+    {% for i in range(0, 40) %}
+    <a class="course-nav__link" {% if i == 2 %} data-active {% endif %} {% if i == 4 %} data-complete {% endif %} href="/learn/">
+      <span class="course-nav__link-counter font-mono">012</span>
+      <span class="course-nav__link-title gap-left-400">Learn borders and shadows</span>
+      {{ icon('done', 'course-nav__link-check gap-left-auto') }}
+    </a>
+    {% endfor %}
+  </div>
+</div>

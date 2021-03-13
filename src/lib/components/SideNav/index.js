@@ -20,9 +20,8 @@ import {BaseElement} from '../BaseElement';
 import {store} from '../../store';
 import 'wicg-inert';
 import {collapseSideNav} from '../../actions';
-import './_styles.scss';
 
-class SideNav extends BaseElement {
+export class SideNav extends BaseElement {
   static get properties() {
     return {
       animatable: {type: Boolean, reflect: true},
@@ -33,7 +32,6 @@ class SideNav extends BaseElement {
   constructor() {
     super();
 
-    this.inert = true;
     this.animatable = false;
     this.expanded_ = false;
     this.startX_ = 0;
@@ -52,6 +50,9 @@ class SideNav extends BaseElement {
 
   connectedCallback() {
     super.connectedCallback();
+    if (this.hasAttribute('modal')) {
+      this.inert = true;
+    }
     this.tabIndex = -1;
     store.subscribe(this.onStateChanged);
   }

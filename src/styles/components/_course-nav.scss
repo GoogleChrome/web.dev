@@ -1,0 +1,79 @@
+.course-nav {
+  $header-height: 144px;
+  $search-heigh: 48px;
+
+  border-right: 1px solid $GREY_300;
+  height: 100vh;
+  width: 360px;
+
+  &__header {
+    display: flex;
+    height: 144px;
+    padding: 24px 16px 0;
+  }
+
+  &__title {
+    @include apply-utility('font', 'google-sans');
+    @include apply-utility('weight', 'medium');
+    margin-top: auto;
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  &__search {
+    padding: 0 16px;
+    height: 48px;
+
+    > .input {
+      border: 1px solid $GREY_300;
+      height: 48px;
+    }
+  }
+
+  &__links {
+    height: calc(100vh - #{$header-height} - #{$search-heigh});
+    overflow-y: auto;
+  }
+
+  &__link {
+    --counter-color: #{$GREY_700};
+    --check-display: none;
+    @include apply-utility('weight', 'medium');
+    align-items: baseline;
+    color: $PRIMARY_TEXT_COLOR;
+    display: flex;
+    min-height: 48px;
+    padding: 16px 24px;
+
+    &[data-complete] {
+      --check-display: block;
+      color: $GREY_700;
+      background-color: rgba($GREY_800, .03);
+    }
+
+    &:hover,
+    &[data-active] {
+      --counter-color: #{$WEB_PRIMARY_COLOR};
+      background: $BLUE_50;
+      color: $WEB_PRIMARY_COLOR;
+      text-decoration: none;
+    }
+  }
+
+  &__link-counter {
+    color: var(--counter-color);
+    font-size: px-to-rem(11px);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  &__link-title {
+    font-size: px-to-rem(14px);
+    line-height: 1.5;
+  }
+
+  &__link-check {
+    display: var(--check-display);
+    height: px-to-rem(14px);
+  }
+}

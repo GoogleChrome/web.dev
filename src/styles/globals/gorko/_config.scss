@@ -128,27 +128,27 @@ $gorko-config: (
     'property': 'font-family',
   ),
   'gap': (
-    'items': $gorko-size-scale,
+    'items': map-merge($gorko-size-scale, ('auto': 'auto')),
     'output': 'responsive',
     'property': 'margin',
   ),
   'gap-top': (
-    'items': $gorko-size-scale,
+    'items': map-merge($gorko-size-scale, ('auto': 'auto')),
     'output': 'responsive',
     'property': 'margin-top',
   ),
   'gap-right': (
-    'items': $gorko-size-scale,
+    'items': map-merge($gorko-size-scale, ('auto': 'auto')),
     'output': 'responsive',
     'property': 'margin-right',
   ),
   'gap-bottom': (
-    'items': $gorko-size-scale,
+    'items': map-merge($gorko-size-scale, ('auto': 'auto')),
     'output': 'responsive',
     'property': 'margin-bottom',
   ),
   'gap-left': (
-    'items': $gorko-size-scale,
+    'items': map-merge($gorko-size-scale, ('auto': 'auto')),
     'output': 'responsive',
     'property': 'margin-left',
   ),
