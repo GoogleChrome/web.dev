@@ -129,9 +129,13 @@ export const expandSideNav = store.action(() => {
   return {isSideNavExpanded: true};
 });
 
-export const collapseSideNav = store.action(() => {
+export const closeSideNav = store.action(() => {
   closeModal();
   return {isSideNavExpanded: false};
+});
+
+export const collapseSideNav = store.action(() => {
+  return {sideNavState: 'collapsed'};
 });
 
 export const openModal = store.action(() => {

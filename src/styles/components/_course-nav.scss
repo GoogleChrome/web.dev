@@ -82,3 +82,27 @@
     height: px-to-rem(14px);
   }
 }
+
+web-side-nav {
+  [data-nav-collapse-button] {
+    display: none;
+  }
+
+  &[collapsed] {
+    [data-nav-collapse-button] {
+      display: none;
+    }
+  }
+
+  @include bp(md) {
+    &:not([collapsed]) {
+      [data-nav-collapse-button] {
+        display: inline-flex;
+      }
+
+      [data-nav-close-button] {
+        display: none;
+      }
+    }
+  }
+}

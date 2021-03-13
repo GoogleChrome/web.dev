@@ -19,7 +19,7 @@
 import {BaseElement} from '../BaseElement';
 import {store} from '../../store';
 import 'wicg-inert';
-import {collapseSideNav} from '../../actions';
+import {closeSideNav, collapseSideNav} from '../../actions';
 
 export class SideNav extends BaseElement {
   static get properties() {
@@ -39,6 +39,7 @@ export class SideNav extends BaseElement {
     this.touchingSideNav_ = false;
 
     this.onCloseSideNav = this.onCloseSideNav.bind(this);
+    this.onCollapseSideNav = this.onCollapseSideNav.bind(this);
     this.onTouchStart = this.onTouchStart.bind(this);
     this.onTouchMove = this.onTouchMove.bind(this);
     this.onTouchEnd = this.onTouchEnd.bind(this);
@@ -62,6 +63,7 @@ export class SideNav extends BaseElement {
     this.sideNavContainerEl = this.querySelector('[data-nav-container]');
     /** @type HTMLElement */
     this.closeBtn = this.querySelector('[data-nav-close-button]');
+    this.collapseBtn = this.querySelector('[data-nav-collapse-button]');
     this.addEventListeners();
     this.onStateChanged();
   }
@@ -69,6 +71,7 @@ export class SideNav extends BaseElement {
   addEventListeners() {
     this.sideNavContainerEl.addEventListener('click', this.onBlockClicks);
     this.closeBtn.addEventListener('click', this.onCloseSideNav);
+    this.collapseBtn.addEventListener('click', this.onCollapseSideNav);
     this.addEventListener('click', this.onCloseSideNav);
     this.addEventListener('touchstart', this.onTouchStart, {passive: true});
     this.addEventListener('touchmove', this.onTouchMove, {passive: true});
@@ -193,12 +196,18 @@ export class SideNav extends BaseElement {
     // setting expanded = false.
     // The closeSideNav() action will inform other page elements that they
     // should un-inert themselves.
+    closeSideNav();
+  }
+
+  onCollapseSideNav() {
+    // Tells a standard SideNav to hide itself.
     collapseSideNav();
+    this.setAttribute('collapsed', '');
   }
 
   onKeyUp(e) {
     if (e.key === 'Escape') {
-      collapseSideNav();
+      closeSideNav();
       document.removeEventListener('keyup', this.onKeyUp);
     }
   }

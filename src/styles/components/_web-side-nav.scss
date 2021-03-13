@@ -67,16 +67,18 @@
     }
 
     @include bp(md) {
-      align-self: flex-start;
-      position: sticky;
-      pointer-events: auto;
-      top: 0;
-      width: auto;
-      z-index: auto;
-
-      [data-nav-container] {
-        box-shadow: none;
-        transform: none;
+      &:not([collapsed]) {
+        align-self: flex-start;
+        position: sticky;
+        pointer-events: auto;
+        top: 0;
+        width: auto;
+        z-index: auto;
+  
+        [data-nav-container] {
+          box-shadow: none;
+          transform: none;
+        }
       }
    }
  }
