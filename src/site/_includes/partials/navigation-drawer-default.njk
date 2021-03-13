@@ -1,7 +1,7 @@
 {% from 'macros/icon.njk' import icon with context %}
 
-<web-side-nav modal>
-  <nav data-nav-container>
+<web-navigation-drawer type="modal">
+  <nav data-drawer-container>
 
     <div class="default-nav__header">
       <button
@@ -10,7 +10,7 @@
         aria-label="Close"
       >
         {{ icon('close') }}
-        <span class="w-tooltip">Close</span>
+        {# <span class="w-tooltip">Close</span> #}
       </button>
       <a
         href="/"
@@ -67,4 +67,4 @@
     </a>
 
   </nav>
-</web-side-nav>
+</web-navigation-drawer>

@@ -19,21 +19,48 @@
 import {BaseElement} from '../BaseElement';
 import {store} from '../../store';
 import 'wicg-inert';
-import {closeSideNav, collapseSideNav} from '../../actions';
+import {closeNavigationDrawer, dismissNavigationDrawer} from '../../actions';
 
-export class SideNav extends BaseElement {
+export const NAVIGATION_DRAWER_TYPE = {
+  dismissible: 'dismissible',
+  modal: 'modal',
+};
+
+export class NavigationDrawer extends BaseElement {
   static get properties() {
     return {
-      animatable: {type: Boolean, reflect: true},
-      expanded: {type: Boolean, reflect: true},
+      type: {type: String, reflect: true},
+      open: {type: Boolean, reflect: true},
+      animating: {type: Boolean, reflect: true},
+      dismissed: {type: Boolean, reflect: true},
     };
+  }
+
+  set open(val) {
+    if (this._open === val) {
+      return;
+    }
+
+    const oldVal = this._open;
+    this._open = val;
+    this.animating = true;
+    if (this._open) {
+      document.addEventListener('keyup', this.onKeyUp);
+    }
+    this.addEventListener('transitionend', this.onTransitionEnd);
+    this.requestUpdate('open', oldVal);
+  }
+
+  get open() {
+    return this._open;
   }
 
   constructor() {
     super();
 
-    this.animatable = false;
-    this.expanded_ = false;
+    this.type = null;
+    this._open = false;
+    this.animating = false;
     this.startX_ = 0;
     this.currentX_ = 0;
     this.touchingSideNav_ = false;
@@ -51,27 +78,33 @@ export class SideNav extends BaseElement {
 
   connectedCallback() {
     super.connectedCallback();
-    if (this.hasAttribute('modal')) {
+
+    this.tabIndex = -1;
+
+    if (this.type === NAVIGATION_DRAWER_TYPE.modal) {
       this.inert = true;
     }
-    this.tabIndex = -1;
-    store.subscribe(this.onStateChanged);
-  }
 
-  firstUpdated() {
+    if (this.type === NAVIGATION_DRAWER_TYPE.dismissible) {
+      this.dismissed = false;
+    }
+
     /** @type HTMLElement */
-    this.sideNavContainerEl = this.querySelector('[data-nav-container]');
+    this.drawerContainer = this.querySelector('[data-drawer-container]');
     /** @type HTMLElement */
     this.closeBtn = this.querySelector('[data-nav-close-button]');
-    this.collapseBtn = this.querySelector('[data-nav-collapse-button]');
+    /** @type HTMLElement */
+    // this.collapseBtn = this.querySelector('[data-nav-collapse-button]');
+
     this.addEventListeners();
+    store.subscribe(this.onStateChanged);
     this.onStateChanged();
   }
 
   addEventListeners() {
-    this.sideNavContainerEl.addEventListener('click', this.onBlockClicks);
+    this.drawerContainer.addEventListener('click', this.onBlockClicks);
     this.closeBtn.addEventListener('click', this.onCloseSideNav);
-    this.collapseBtn.addEventListener('click', this.onCollapseSideNav);
+    // this.collapseBtn.addEventListener('click', this.onCollapseSideNav);
     this.addEventListener('click', this.onCloseSideNav);
     this.addEventListener('touchstart', this.onTouchStart, {passive: true});
     this.addEventListener('touchmove', this.onTouchMove, {passive: true});
@@ -79,12 +112,17 @@ export class SideNav extends BaseElement {
   }
 
   onStateChanged({currentUrl} = {currentUrl: null}) {
-    const {isSideNavExpanded} = store.getState();
-    if (isSideNavExpanded === this.expanded) {
-      return;
+    const {
+      isNavigationDrawerOpen,
+      isNavigationDrawerDismissed,
+    } = store.getState();
+
+    this.open = isNavigationDrawerOpen;
+
+    if (this.type === NAVIGATION_DRAWER_TYPE.dismissible) {
+      this.dismissed = isNavigationDrawerDismissed;
     }
 
-    this.expanded = isSideNavExpanded;
     if (currentUrl) {
       // Ensure that the "active" attribute is applied to any matching header
       // link, or to none (for random subpages or articles).
@@ -111,7 +149,7 @@ export class SideNav extends BaseElement {
   }
 
   onTouchStart(e) {
-    if (!this.expanded) {
+    if (!this.open || this.animating) {
       return;
     }
 
@@ -138,7 +176,7 @@ export class SideNav extends BaseElement {
     this.touchingSideNav_ = false;
 
     const translateX = Math.min(0, this.currentX_ - this.startX_);
-    this.sideNavContainerEl.style.transform = '';
+    this.drawerContainer.style.transform = '';
 
     if (translateX < 0) {
       this.onCloseSideNav();
@@ -153,82 +191,69 @@ export class SideNav extends BaseElement {
     requestAnimationFrame(this.drag);
 
     const translateX = Math.min(0, this.currentX_ - this.startX_);
-    this.sideNavContainerEl.style.transform = `translateX(${translateX}px)`;
+    this.drawerContainer.style.transform = `translateX(${translateX}px)`;
   }
 
   onBlockClicks(e) {
-    // When the SideNav is expanded we use a ::before element to render the
-    // overlay. Because the ::before element is a child of SideNav, and covers
-    // the entire page, we add a listener to SideNav to see if it was clicked
-    // on.
-    // If a link within the SideNav was clicked, we allow the click to happen so
-    // the router can know about it.
-    // If the SideNav's .web-side-nav__container was clicked, we block the click
-    // so the SideNav won't collapse.
+    // When the NavigationDrawer is expanded we use a ::before element to render
+    // the overlay. Because the ::before element is a child of NavigationDrawer,
+    // and covers the entire page, we add a listener to NavigationDrawer to see
+    // if it was clicked on.
+    // If a link within the NavigationDrawer was clicked, we allow the click to
+    // happen so the router can know about it.
+    // If the NavigationDrawer's container was clicked, we block the click so
+    // the NavigationDrawer won't collapse.
     // If the click was outside of the container/on the overlay, we close the
-    // SideNav.
+    // NavigationDrawer.
     const link = e.target.closest('a');
     if (!link) {
       e.stopPropagation();
     }
   }
 
-  onTransitionEnd() {
-    this.animatable = false;
-    // If the SideNav is expanded we need to move focus into the element so
+  onTransitionEnd(e) {
+    if (e.target !== this) {
+      return;
+    }
+
+    this.animating = false;
+    // If the NavigationDrawer is expanded we need to move focus into the element so
     // folks using a screen reader or switch can access it.
-    if (this.expanded_) {
+    if (this.open) {
       this.focus();
     } else {
-      // When the SideNav is collapsed, we need to restore focus to the
+      // When the NavigationDrawer is collapsed, we need to restore focus to the
       // hamburger button in the header. It might be more techincally pure to
       // use a unistore action for this, but it feels like a lot of ceremony
       // for a small behavior.
       /** @type {import('../Header').Header} */
       const webHeader = document.querySelector('web-header');
-      webHeader.manageFocus();
+      if (webHeader) {
+        webHeader.manageFocus();
+      }
     }
-    this.inert = !this.expanded_;
+    this.inert = !this.open;
+    this.removeEventListener('transitionend', this.onTransitionEnd);
   }
 
   onCloseSideNav() {
-    // It's important to call the closeSideNav() action here instead of just
-    // setting expanded = false.
-    // The closeSideNav() action will inform other page elements that they
-    // should un-inert themselves.
-    closeSideNav();
+    // It's important to call the closeNavigationDrawer() action here instead of
+    // just setting expanded = false. The closeNavigationDrawer() action will
+    // inform other page elements that they should un-inert themselves.
+    closeNavigationDrawer();
   }
 
   onCollapseSideNav() {
-    // Tells a standard SideNav to hide itself.
-    collapseSideNav();
+    // Tells a dismissible NavigationDrawer to hide itself.
+    dismissNavigationDrawer();
     this.setAttribute('collapsed', '');
   }
 
   onKeyUp(e) {
     if (e.key === 'Escape') {
-      closeSideNav();
+      closeNavigationDrawer();
       document.removeEventListener('keyup', this.onKeyUp);
     }
-  }
-
-  set expanded(val) {
-    if (this.expanded_ === val) {
-      return;
-    }
-
-    const oldVal = this.expanded_;
-    this.expanded_ = val;
-    this.animatable = true;
-    if (this.expanded_) {
-      document.addEventListener('keyup', this.onKeyUp);
-    }
-    this.addEventListener('transitionend', this.onTransitionEnd, {once: true});
-    this.requestUpdate('expanded', oldVal);
-  }
-
-  get expanded() {
-    return this.expanded_;
   }
 
   disconnectedCallback() {
@@ -237,4 +262,4 @@ export class SideNav extends BaseElement {
   }
 }
 
-customElements.define('web-side-nav', SideNav);
+customElements.define('web-navigation-drawer', NavigationDrawer);

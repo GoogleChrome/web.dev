@@ -1,0 +1,132 @@
+/**
+ *
+ * Copyright 2019 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '../settings/colors';
+@import '../settings/global';
+@import '../tools/breakpoints';
+@import '../tools/mixins';
+ 
+web-navigation-drawer {
+  display: block;
+}
+
+// The scrim that appears behind the navigation drawer when it is expanded.
+web-navigation-drawer::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($BLACK, .4);
+  opacity: 0;
+  transition: opacity $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
+}
+ 
+// The side nav has two primary modes, dismissible and modal.
+// 
+// dismissible
+// --------
+// Dismissible navigation drawers allow interaction with both screen content
+// and the drawer at the same time. The user can toggle the dismissed state
+// of the drawer. When the drawer is in the dismissed state it acts as a modal
+// drawer.
+// 
+// modal
+// -----
+// Modal navigation drawers block interaction with the rest of an app’s content
+// with a scrim. They are elevated above most of the app’s UI and don’t affect
+// the screen’s layout grid.
+ 
+web-navigation-drawer[type='dismissable'] {
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 300;
+
+  [data-drawer-container] {
+    box-shadow: 2px 0 12px rgba($BLACK, .4);
+    position: relative;
+    transform: translateX(-110%);
+    width: fit-content;
+  }
+
+  @include bp(md) {
+    &:not([dismissed]) {
+      align-self: flex-start;
+      position: sticky;
+      pointer-events: auto;
+      top: 0;
+      width: auto;
+      z-index: auto;
+
+      [data-drawer-container] {
+        box-shadow: none;
+        transform: none;
+      }
+    }
+  }
+}
+
+web-navigation-drawer[type='modal'] {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 300;
+
+  [data-drawer-container] {
+    position: relative;
+    width: 90%;
+    max-width: 268px;
+    background: $WHITE;
+    height: 100%;
+    box-shadow: 2px 0 12px rgba($BLACK, .4);
+    transform: translateX(-110%);
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+  }
+}
+
+web-navigation-drawer[open] {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+web-navigation-drawer[open]::before {
+  opacity: 1;
+}
+
+web-navigation-drawer[open] [data-drawer-container] {
+  transform: none;
+}
+
+web-navigation-drawer[animating] [data-drawer-container] {
+  transition: transform $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
+}
+
+web-navigation-drawer[open][animating] [data-drawer-container] {
+  transition: transform $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
+}
+ 

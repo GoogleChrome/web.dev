@@ -15,33 +15,31 @@
  */
 
 /**
- * @fileoverview A responsive header that can trigger a side-nav.
+ * @fileoverview A responsive header that can trigger a navigation drawer.
  *
  * This does not inherit from BaseStateElement as it is not a LitElement.
  */
 
 import {store} from '../../store';
-import {expandSideNav} from '../../actions';
+import {openNavigationDrawer} from '../../actions';
+import {BaseElement} from '../BaseElement';
 
-export class Header extends HTMLElement {
+export class Header extends BaseElement {
   constructor() {
     super();
-
     this.onStateChanged = this.onStateChanged.bind(this);
   }
 
-  connectedCallback() {
+  firstUpdated() {
     /** @type HTMLButtonElement */
-    this.hamburgerBtn = this.querySelector('[data-menu-button]');
-    this.hamburgerBtn.classList.remove('unresolved');
-    this.hamburgerBtn.addEventListener('click', expandSideNav);
+    this.menuBtn = this.querySelector('[data-menu-button]');
+    this.menuBtn.addEventListener('click', openNavigationDrawer);
 
     store.subscribe(this.onStateChanged);
   }
 
   disconnectedCallback() {
-    this.hamburgerBtn.removeEventListener('click', expandSideNav);
-
+    this.menuBtn.removeEventListener('click', openNavigationDrawer);
     store.unsubscribe(this.onStateChanged);
   }
 
@@ -77,7 +75,7 @@ export class Header extends HTMLElement {
    * This is important for accessibility.
    */
   manageFocus() {
-    this.hamburgerBtn.focus();
+    this.menuBtn.focus();
   }
 }
 

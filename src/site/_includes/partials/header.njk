@@ -1,9 +1,9 @@
 {% from 'macros/icon.njk' import icon with context %}
 
 <web-header role="navigation">
-  <button class="w-button--svg w-button--round web-header__hamburger-btn unresolved" data-menu-button aria-label="Open menu">
+  <button data-menu-button class="w-button--svg w-button--round web-header__hamburger-btn" aria-label="Open menu">
     {{ icon('menu') }}
-    <span class="w-tooltip w-tooltip--left">Open menu</span>
+    {# <span class="w-tooltip w-tooltip--left">Open menu</span> #}
   </button>
 
   <a

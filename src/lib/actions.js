@@ -124,45 +124,59 @@ export const requestFetchReports = store.action((_, url, startDate) => {
   });
 });
 
-export const expandSideNav = store.action(() => {
-  openModal();
-  return {isSideNavExpanded: true};
-});
-
-export const closeSideNav = store.action(() => {
-  closeModal();
-  return {isSideNavExpanded: false};
-});
-
-export const collapseSideNav = store.action(() => {
-  return {sideNavState: 'collapsed'};
-});
-
-export const openModal = store.action(() => {
-  const main = document.querySelector('main');
-  /** @type import('./components/Header').Header */
-  const header = document.querySelector('web-header');
-  /** @type {HTMLElement} */
-  const footer = document.querySelector('.w-footer');
+const disablePage = () => {
+  /** @type {HTMLElement|object} */
+  const main = document.querySelector('main') || {};
+  /** @type {HTMLElement|object} */
+  const header = document.querySelector('web-header') || {};
+  /** @type {HTMLElement|object} */
+  const footer = document.querySelector('.w-footer') || {};
 
   document.documentElement.classList.add('overflow-hidden');
   main.inert = true;
   header.inert = true;
   footer.inert = true;
-  return {isModalOpen: true};
-});
+};
 
-export const closeModal = store.action(() => {
-  const main = document.querySelector('main');
-  /** @type import('./components/Header').Header */
-  const header = document.querySelector('web-header');
-  /** @type {HTMLElement} */
-  const footer = document.querySelector('.w-footer');
+const enablePage = () => {
+  /** @type {HTMLElement|object} */
+  const main = document.querySelector('main') || {};
+  /** @type {HTMLElement|object} */
+  const header = document.querySelector('web-header') || {};
+  /** @type {HTMLElement|object} */
+  const footer = document.querySelector('.w-footer') || {};
 
   document.documentElement.classList.remove('overflow-hidden');
   main.inert = false;
   header.inert = false;
   footer.inert = false;
+};
+
+export const openNavigationDrawer = store.action(() => {
+  disablePage();
+  return {isNavigationDrawerOpen: true};
+});
+
+export const closeNavigationDrawer = store.action(() => {
+  enablePage();
+  return {isNavigationDrawerOpen: false};
+});
+
+export const dismissNavigationDrawer = store.action(() => {
+  return {isNavigationDrawerDismissed: true};
+});
+
+export const recallNavigationDrawer = store.action(() => {
+  return {isNavigationDrawerDismissed: false};
+});
+
+export const openModal = store.action(() => {
+  disablePage();
+  return {isModalOpen: true};
+});
+
+export const closeModal = store.action(() => {
+  enablePage();
   return {isModalOpen: false};
 });
 
