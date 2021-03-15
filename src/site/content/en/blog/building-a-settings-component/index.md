@@ -224,9 +224,9 @@ many repetitions it can fit into the space. While it seems obvious that the
 space is "full width", per the CSS grid spec, a definite size or max-size must
 be provided. I've provided a max-size.
 
-The bug part of this is, why `89vw`? Because "it worked" for my layout… We're
-internally investigating why a more reasonable value, like `100vw` isn't
-sufficient. I learned a lot from this layout requirement.
+The bug part of this is, why `89vw`? Because "it worked" for my layout… Me and a
+couple other Chrome folks internally investigating why a more reasonable value,
+like `100vw` isn't sufficient. I learned a lot from this layout requirement.
 
 ### Spacing
 
