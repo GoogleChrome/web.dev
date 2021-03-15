@@ -845,9 +845,8 @@ acccessibility tree that a screenreader navigates.
 
 ### HTML Attributes
 
-The icon next to the slider in my form, that's not useful to a screenreader,
-let's help it hide that from the flow. The label is also not needed for
-screenreaders, let's remove it from that flow as well:
+We can hide elements that are not needed by screenreaders, 
+in this case the icon next to the slider and the label:
 
 ```html
 <picture aria-hidden="true">
