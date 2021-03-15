@@ -584,7 +584,10 @@ full width color, waiting for transparency to reveal it.
   muted="true" 
 %}
 
-My solution did require Javascript though, in order to maintain the fill style:
+#### Track fill style
+My design **does require Javascript** in order to maintain the fill style. There
+are CSS only strategies but they require the thumb element to be the same height
+as the track, and I wasn't able to find a harmony within those limits.
 
 ```js
 /* grab sliders on page */
@@ -610,16 +613,17 @@ sliders.forEach(slider => {
 ```
 
 I think this makes for a nice visual upgrade. The slider works great without
-Javascript, the `--track-fill` prop is not required. If it's important to the
-design though, server side components could set the property on the html,
-allowing Javascript to hydrate the value while also observing any user changes. 
+Javascript, the `--track-fill` prop is not required, it simply will not have a
+fill style if not present. If Javascript is available, populate the custom
+property while also observing any user changes, syncing the custom property with
+the value. 
 
-There are easier to manage solutions for custom track fill colors, but the style
-I wanted necessitated some Javascript. [Here's a great
+[Here's a great
 post](https://css-tricks.com/sliding-nightmare-understanding-range-input/) on
 [CSS-Tricks](https://css-tricks.com/) by [Ana
 Tudor](https://twitter.com/anatudor), that demonstrates a CSS only solution for
-track fill.
+track fill. I also found this [Native UI
+range](https://app.native-elements.dev/editor/elements/range) very inspiring.
 
 ### Thumb styles
 
