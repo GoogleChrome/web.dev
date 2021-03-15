@@ -405,6 +405,14 @@ There's [more to
 learn](https://lea.verou.me/2020/04/lch-colors-in-css-what-why-and-how/) about
 color spaces and `lch()` if you're interested. It's coming!
 
+{% Blockquote 'Lea Verou' %} 
+CSS right now **cannot access these colors at all**.
+Let me repeat: **We have no access to one third of the colors in most modern
+monitors.** And these are not just any colors, but the **most vivid colors the
+screen can display**. Our websites are washed out because monitor hardware evolved
+faster than CSS specs and browser implementations.
+{% endBlockquote %}
+
 ### Adaptive form controls with color-scheme
 
 Many browsers ship dark theme controls, currently Safari and Chromium, but you
