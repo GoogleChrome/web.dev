@@ -55,7 +55,7 @@ The CSS snippets below assume PostCSS with
 [PostCSS Preset Env](https://preset-env.cssdb.org/features). 
 Intent is to practice early and often with syntax in early drafts or 
 experimentally available in browsers. Or as the plugin likes to say, 
-"Use tomorrow’s CSS today".
+"Use tomorrow's CSS today".
 {% endAside %}
 
 ## Layouts
