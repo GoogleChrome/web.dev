@@ -1935,5 +1935,23 @@
     "country": "JP",
     "twitter": "gladenjoy",
     "image": "image/iEYkFAI5LNQv7oLlIBv9DuB265a2/o8ixW7QKSWR02r9ZUOFP.jpg"
+  },
+  "dotproto": {
+    "name": {
+      "given": "Simeon",
+      "family": "Vincent"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
+    "descriptions": {
+      "en": "Extensions whisperer"
+    },
+    "country": "USA",
+    "twitter": "dotproto",
+    "github": "dotproto",
+    "glitch": "dotproto",
+    "image": "image/WlD8wC6g8khYWPJUsQceQkhXSlv1/ET2qKakhhrDt1sqjazmy.jpg"
   }
 }
