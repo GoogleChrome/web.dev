@@ -29,7 +29,7 @@ JAPAN News](https://news.yahoo.co.jp) has more than 22 billion page views per
 month and an engineering team dedicated to improving the user experience. 
 
 By continuously monitoring Core Web Vitals (CWV), they correlated the site's
-improved [Cumulative Layout Shift (CLS)](https://web.dev/cls) score with a 15%
+improved [Cumulative Layout Shift (CLS)](/cls) score with a 15%
 increase in page views per session and 13% increase in session duration.
 
 
@@ -49,7 +49,7 @@ increase in page views per session and 13% increase in session duration.
 </div>
 
 {% Aside `keyterm` %}  
-[Cumulative Layout Shift](https://web.dev/cls) measures how visually stable a
+[Cumulative Layout Shift](/cls) measures how visually stable a
 website is—it helps quantify how often users experience unexpected layout
 shifts.  
 {% endAside %} 
@@ -70,7 +70,7 @@ Monitoring Core Web Vitals, including CLS, is crucial in catching issues and
 identifying where they're coming from. At Yahoo! JAPAN News, [Search
 Console](https://search.google.com/search-console/about) provided a great
 overview of groups of pages with performance issues and
-[Lighthouse](https://web.dev/learn/#lighthouse) helped identify per-page
+[Lighthouse](/learn/#lighthouse) helped identify per-page
 opportunities to improve page experience. Using these tools, they discovered
 that the article detail page had poor CLS.
 
@@ -94,13 +94,13 @@ Shift—the score is captured through the entire page lifecycle. In the
 real-world, the score can include shifts that happen as a result of user
 interactions such as scrolling a page or tapping a button. To collect CLS scores
 from the [field
-data](https://web.dev/how-to-measure-speed/#lab-data-vs-field-data), the team
+data](/how-to-measure-speed/#lab-data-vs-field-data), the team
 integrated [web-vitals](https://github.com/GoogleChrome/web-vitals/) JavaScript
 library reporting.
 
 {% Aside %}  
 As a part of performance monitoring strategy, they're also working on building
-an internal tool with [Lighthouse CI](https://web.dev/lighthouse-ci/) to
+an internal tool with [Lighthouse CI](/lighthouse-ci/) to
 continuously audit performance across businesses in the company.  
 {% endAside %}
 
@@ -135,18 +135,10 @@ In the example above, when the image finishes loading, the text gets pushed down
 
 For fixed-size images, layout shifts can be prevented by specifying the `width`
 and `height` attributes in the `img` element and using the CSS
-[aspect-ratio](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/aspect-ratio)
+[aspect-ratio](aspect-ratio)
 property available in modern browsers. However, Yahoo! JAPAN News needed to
-implement images that also meet the following requirements:
-
--  Prevent the aspect ratio from collapsing.
--  Display images of various sizes (such as portraits and landscapes).
--  Display images at 100% width of the parent element. However, images with
-   height over 300 px will be scaled down to 300 px height while preserving the
-   aspect ratio.
--  Make images clickable and support links.
--  Support not only modern browsers, but also browsers installed in
-   relatively old operating systems such as iOS 9.
+support not only modern browsers, but also browsers installed in relatively old 
+operating systems such as iOS 9.
 
 They used [Aspect Ratio Boxes](https://css-tricks.com/aspect-ratio-boxes/)—a
 method which uses markup to reserve the space on the page before the image is
