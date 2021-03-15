@@ -140,7 +140,7 @@ system between `<main>` and `<form>`.
 A common learning moment with CSS layout is distinguishing centering of `items`
 vs `content`. Flexbox and grid both provide abilities to `align-items` or
 `align-content`, and when dealing with wrapping elements, `content` layout
-features are what you should reach for.
+alignments will distribute space amongst the children as a group. 
 
 ```css
 main {
@@ -150,9 +150,10 @@ main {
 }
 ```
 
-The main element is using `place-content: center` so that regardless of a 2 or 1
-column layout, the children should be centered vertically and horizontally,
-together as a group.
+The main element is using `place-content: center` [alignment
+shorthand](https://developer.mozilla.org/en-US/docs/Web/CSS/place-content) so
+that regardless of a 2 or 1 column layout, the children should be centered
+vertically and horizontally, together as a group.
 
 {% Video 
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IQI2PofA6gpNFUkDrvKo.mp4",
