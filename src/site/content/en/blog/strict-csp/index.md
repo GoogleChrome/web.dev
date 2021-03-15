@@ -140,7 +140,7 @@ CSP.
 1. Add fallbacks to support Safari and older browsers.
 1. Deploy your CSP.
 
-You can use [Lighthouse](https://github.com/GoogleChrome/lighthouse) throughout this process to check whether your site has a CSP,
+You can use [Lighthouse](https://developers.google.com/web/tools/lighthouse) throughout this process to check whether your site has a CSP,
 and whether it's strict enough to be effective against XSS.
 
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/DAt65SsdOKxEHmtNFEKX.png", alt="Lighthouse report warning that no CSP is found in enforcement mode.", width="800", height="174", class="w-screenshot" %}
