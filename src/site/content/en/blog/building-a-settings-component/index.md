@@ -313,10 +313,12 @@ minimal. I do it like this:
 }
 ```
 
-{% Aside 'gotchas' %} [PostCSS `lab()` and `lch()`
+{% Aside 'key-term' %} 
+[PostCSS `lab()` and `lch()`
 plugin](https://github.com/csstools/postcss-lab-function) is part of [PostCSS
 Preset Env](https://preset-env.cssdb.org/features#lch-function), and will output
-`rgb()` colors. Author within CIElab, output supported color. {% endAside %}
+`rgb()` colors. 
+{% endAside %}
 
 I name my surface and text colors with numbers as opposed to names like
 `surface-dark` and `surface-darker` because in a media query, I'll be flipping
@@ -341,6 +343,12 @@ I flip them in a preference media query like this:
   }
 }
 ```
+
+{% Aside 'key-term' %} 
+[PostCSS `@nest` plugin](https://github.com/csstools/postcss-nesting) is part of [PostCSS
+Preset Env](https://preset-env.cssdb.org/features), and will expand selectors to a syntax 
+browsers support today. 
+{% endAside %}
 
 It's important to get a quick glimpse at the overall picture and strategy before
 we dive into color syntax details. But, since I've gotten a bit ahead of myself,
@@ -649,10 +657,17 @@ technique being used for the hover highlight:
 }
 ```
 
-The goal was a nice painted highlight on the user interactive element. By using
-a box shadow that's not blurred and matches the circular shape of the thumb
-element, we can change and transition it's spread size, resulting in an easy to
-manage visual highlight effect. 
+{% Aside 'key-term' %} 
+[@custom-media](https://drafts.csswg.org/mediaqueries-5/#custom-mq) 
+is a Level 5 spec addition that
+[PostCSS Custom Media](https://github.com/postcss/postcss-custom-media), part of
+[PostCSS Preset Env](https://preset-env.cssdb.org/features). 
+{% endAside %}
+
+The goal was an easy to manage and animated visual highlight for user feedback.
+By using a box shadow I can prevent effecting layout with the effect. I do this
+by creating a shadow that's not blurred and matches the circular shape of the
+thumb element. Then I change and transition it's spread size on hover.
 
 {% Video 
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/s835RbH88L5bxjl5bMFl.mp4",
