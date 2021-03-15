@@ -29,7 +29,7 @@ trusted.
 
 {% Aside 'key-term' %}
 A hash function is a mathematical function that converts an input value into a compressed
-numerical value—a hash. A _hash_ (e.g. sha256) can be used to mark an inline `<script>` tag as
+numerical value—a hash. A _hash_ (such as [SHA-256](https://en.wikipedia.org/wiki/SHA-2)) can be used to mark an inline `<script>` tag as
 trusted.
 {% endAside %}
 
@@ -124,7 +124,7 @@ need to be customized for your application.
 
 To adopt a strict CSP, you need to:
 1. Decide if your application should set a nonce- or hash-based CSP.
-1. Copy the CSP from the "[What is a strict Content Security Policy](#what-is-a-strict-content-security-policy)" section and set it as a response header across
+1. Copy the CSP from the [What is a strict Content Security Policy](#what-is-a-strict-content-security-policy) section and set it as a response header across
 your application. 
 1. Refactor HTML templates and client-side code to remove patterns that are incompatible with
 CSP.
@@ -135,7 +135,7 @@ CSP.
 
 ### Step 1: Decide if you need a nonce- or hash-based CSP
 
-There are two types of strict CSPs, nonce- and hash-based, and here's how they work:
+There are two types of strict CSPs, nonce- and hash-based. Here's how they work:
 - **Nonce-based CSP**: You generate a random number *at runtime*, include it in your CSP,
 and associate it with every script tag in your page. An attacker can't include and run a malicious
 script in your page, because they would need to guess the correct random number for that
@@ -180,8 +180,8 @@ break—but you'll be able to see errors and receive reports for what would have
 Locally, when you're in the process of setting a CSP, this doesn't really matter, because both
 modes will show you the errors in the browser console. If anything, enforcement mode will make
 it even easier for you to see blocked resources and tweak your CSP, since your page will look
-broken. Report-only mode becomes most useful later in the process (see Step 5). 
-- Header or HTML meta tag. For local development, a meta tag may be more convenient for
+broken. Report-only mode becomes most useful later in the process (see [Step 5](#step-5:-deploy-your-csp). 
+- Header or HTML `<meta>` tag. For local development, a `<meta>` tag may be more convenient for
 tweaking your CSP and quickly seeing how it affects your site. However:
   - Later on, when deploying your CSP in production, it is recommended to set it as an HTTP
 header.
@@ -206,21 +206,21 @@ Content-Security-Policy:
 {% Aside 'caution' %}
 
 Replace the `{RANDOM}` placeholder with a *random* nonce that is regenerated  **on every
-server response** (see next section).
+server response**.
 {% endAside %}
 
 #### Generate a nonce for CSP
 
 A nonce is a random number used only once per page load. A nonce-based CSP can only
-mitigate XSS if the nonce value is **not guessable** by an attacker. Therefore a nonce for CSP
+mitigate XSS if the nonce value is **not guessable** by an attacker. A nonce for CSP
 needs to be:
-- A cryptographically **strong random** value (ideally 128+ bits in length),
-- Newly **generated for every response** and
-- base64 encoded.
+- A cryptographically **strong random** value (ideally 128+ bits in length)
+- Newly **generated for every response**
+- Base64 encoded
 
 Here are some examples on how to add a CSP nonce in server-side frameworks:
 - [Django (python)](https://django-csp.readthedocs.io/en/latest/nonce.html)
-- Express (javascript):
+- Express (JavaScript):
 ```javascript
 const app = express();
 app.get('/', function(request, response) {
@@ -253,11 +253,11 @@ CSP will block these scripts, because they don't have `nonce` attributes.
 
 {% Compare 'better', 'Allowed by CSP' %}
 ```html
-<script nonce="${nonce}" src="/path/to/script.js"></script>
-<script nonce="${nonce}">foo()</script>
+<script nonce="${NONCE}" src="/path/to/script.js"></script>
+<script nonce="${NONCE}">foo()</script>
 ```
 {% CompareCaption %}
-CSP will allow the execution of these scripts if `${nonce}` is replaced with a value matching the
+CSP will allow the execution of these scripts if `${NONCE}` is replaced with a value matching the
 nonce in the CSP response header. Note that some browsers will hide the `nonce` attribute
 when inspecting the page source.
 {% endCompareCaption %}
@@ -441,7 +441,7 @@ refactor such instances to `JSON.parse()`, which is also
 If you cannot remove all uses of `eval()`, you can still set a strict nonce-based CSP, but you will
 have to use the `'unsafe-eval'` CSP keyword which will make your policy slightly less secure.
 
-You can find these and more examples of such refactoring in our strict CSP Codelab:
+You can find these and more examples of such refactoring in this strict CSP Codelab:
 {% Glitch {
   id: 'strict-csp-codelab',
   path: 'demo/solution_nonce_csp.html',
@@ -471,16 +471,17 @@ Content-Security-Policy:
   object-src 'none';
   base-uri 'none';
 ```
-
-Note: `https:` and `unsafe-inline` don't make your policy less safe because they will be ignored
+{% Aside %}
+`https:` and `unsafe-inline` don't make your policy less safe because they will be ignored
 by browsers which support `strict-dynamic`.
+{% endAside %}
 
 ### Step 5:  Deploy your CSP
 
 After confirming that no legitimate scripts are being blocked by CSP in your local development
 environment, you can proceed with deploying your CSP to your (staging, then) production
 environment:
-1. (optional) Deploy your CSP in report-only mode using the
+1. (Optional) Deploy your CSP in report-only mode using the
 `Content-Security-Policy-Report-Only` header. Learn more about the [Reporting
 API](https://developers.google.com/web/updates/2018/09/reportingapi). Report-only mode is
 handy to test a potentially breaking change like a new CSP in production, before actually
@@ -491,11 +492,11 @@ would have broken for your end-users).
 1. Once you're confident that your CSP won't induce breakage for your end-users, deploy your
 CSP using the `Content-Security-Policy` response header. **Only once you've completed this
 step, will CSP begin to protect your application from XSS**. Setting your CSP via a HTTP
-header server-side is more secure than setting it as a meta tag; use a header if you can.
+header server-side is more secure than setting it as a `<meta>` tag; use a header if you can.
 
 
 {% Aside 'gotchas' %}
-You should make sure that the CSP you're using is "strict" by checking it with the [CSP
+Make sure that the CSP you're using is "strict" by checking it with the [CSP
 Evaluator](https://csp-evaluator.withgoogle.com) or Lighthouse. This is very important, as even
 small changes to a policy can significantly reduce its security.
 {% endAside %}
@@ -509,7 +510,7 @@ due to browser extensions and malware.
 
 Generally speaking, a strict CSP provides a strong added layer of security that helps to mitigate
 XSS.
-In most cases, CSP reduces the attack surface significantly (e.g. dangerous patterns like javascript: 
+In most cases, CSP reduces the attack surface significantly (dangerous patterns like `javascript:` 
 URIs are completely turned off). However, based on the type of CSP you're using (nonces, hashes, with
 or without `'strict-dynamic'`), there are cases where CSP doesn't protect:
 - If you nonce a script, but there's an injection directly into the body or into the `src` parameter of
@@ -525,14 +526,14 @@ JavaScript](https://sites.google.com/site/bughunteruniversity/nonvuln/angularjs-
 rarely used APIs.
 
 Developers and security engineers should pay particular attention to such patterns during code
-reviews and security audits. You can find more details on the cases described above
-[here](https://static.sched.com/hosted_files/locomocosec2019/db/CSP%20-%20A%20Successful%20Mess%20Between%20Hardening%20and%20Mitigation%20%281%29.pdf#page=27).
+reviews and security audits. You can find more details on the cases described above in
+[this CSP presentation](https://static.sched.com/hosted_files/locomocosec2019/db/CSP%20-%20A%20Successful%20Mess%20Between%20Hardening%20and%20Mitigation%20%281%29.pdf#page=27).
 
 
 {% Aside %}
 Trusted Types complements strict CSP very well and can efficiently protect against some of the
-limitations listed above. To learn more about how to use Trusted Types read
-[web.dev/trusted-types](http://web.dev/trusted-types).
+limitations listed above. Learn more about [how to use Trusted Types at
+web.dev](http://web.dev/trusted-types).
 {% endAside %}
 
 
