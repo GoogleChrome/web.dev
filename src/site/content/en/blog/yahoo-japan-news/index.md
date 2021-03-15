@@ -136,7 +136,7 @@ In the example above, when the image finishes loading, the text gets pushed down
 
 For fixed-size images, layout shifts can be prevented by specifying the `width`
 and `height` attributes in the `img` element and using the CSS
-[aspect-ratio](aspect-ratio)
+[aspect-ratio](/aspect-ratio)
 property available in modern browsers. However, Yahoo! JAPAN News needed to
 support not only modern browsers, but also browsers installed in relatively old 
 operating systems such as iOS 9.
