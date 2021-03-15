@@ -45,15 +45,15 @@ I've broken out the aspects of this component into the following sections:
 
 1. [Layouts](#layouts)
 1. [Color](#color)
-1. [Custom Range Input](#custom-range)
-1. [Custom Checkbox Input](#custom-checkbox)
-1. [Accessibility Considerations](#accessibility)
+1. [Custom range input](#custom-range)
+1. [Custom checkbox input](#custom-checkbox)
+1. [Accessibility considerations](#accessibility)
 1. [JavaScript](#javascript)
 
 ## Layouts
 
-This is the first GUI Challenge demo to be **all CSS Grid**! Here's all of them
-turned on with the [Chrome DevTools for grid](https://goo.gle/devtools-grid):
+This is the first GUI Challenge demo to be **all CSS Grid**! Here's each grid 
+highlighted with the [Chrome DevTools for grid](https://goo.gle/devtools-grid):
 
 {% Img
   src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/h6LZhScslprBcFol4gGp.png",
@@ -63,14 +63,14 @@ turned on with the [Chrome DevTools for grid](https://goo.gle/devtools-grid):
 %}
 
 {% Banner 'neutral' %}
-I captured the above picture by:
-1. Opening the Chrome DevTools with `cmd+opt+i` or `ctrl+alt+i`
+To highlight your grid layouts:
+1. Open Chrome DevTools with `cmd+opt+i` or `ctrl+alt+i`
 1. Select the Layout tab next to the Styles tab
 1. Under the Grid layouts section, check on all the layouts
 1. Change all the layout's colors
 {% endBanner %}
 
-### Just For Gap
+### Just for gap
 
 The most common layout:
 
@@ -81,10 +81,7 @@ foo {
 }
 ```
 
-I call it "just for gap" because the default layout of the web is in blocks, so
-setting `display: grid` doesn't have much of an initial effect. Then we add
-`gap` and it all becomes clear. We're just using grid for it's gap in the block
-axis. 
+I call this layout "just for gap" because it only uses grid to add gaps between blocks. 
 
 `5` layouts use this strategy, here's all of them displayed:
 
@@ -170,9 +167,8 @@ has occurred.
 
 #### Repeat auto-fit minmax
 
-The adaptive grid layout which naturally goes to 2 columns based on available
-space is a powerful and tricky layout to master. The `<form>` uses it to layout
-each of it's sections. 
+The `<form>` uses an adaptive grid layout for each section. 
+This layout switches from one to two columns based on available space.
 
 ```css
 form {
@@ -184,11 +180,11 @@ form {
 }
 ```
 
-This grid has a separate row gap (--space-xl) than the column gap (--space-xxl)
+This grid has a different value for `row-gap` (--space-xl) than `column-gap` (--space-xxl)
 to put that custom touch on the responsive layout. When the columns stack, we
 want a large gap, but not as large as if we're on a wide screen.
 
-The template columns is using 3 CSS functions: `repeat()`, `minmax()` and
+The `grid-template-columns` property uses 3 CSS functions: `repeat()`, `minmax()` and
 `min()`. [Una Kravets](#) has a [great layout blog
 post](https://web.dev/one-line-layouts/) about this, calling it
 [RAM](https://web.dev/one-line-layouts/#07.-ram-(repeat-auto-minmax):-grid-template-columns(auto-fit-minmax(lessbasegreater-1fr))).
@@ -222,7 +218,7 @@ the style applied:
 What's happening? When `max-width` is specified, it's providing context,
 explicit sizing or [definite
 sizing](https://drafts.csswg.org/css-sizing-3/#definite) for the [`auto-fit`
-layout algorythym](https://drafts.csswg.org/css-grid/#auto-repeat) to know how
+layout algorithm](https://drafts.csswg.org/css-grid/#auto-repeat) to know how
 many repetitions it can fit into the space. While it seems obvious that the
 space is "full width", per the CSS grid spec, a definite size or max-size must
 be provided. I've provided a max-size.
@@ -394,7 +390,7 @@ coming!
 ### Adaptive form controls with color-scheme
 
 Many browsers ship dark theme controls, currently Safari and Chromium, but you
-have to specify in your styles or HTML that your design wants them.
+have to specify in CSS or HTML that your design uses them.
 
 {% Video 
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/0VVtEAWM6jHeIxahqnFy.mp4",
@@ -405,14 +401,14 @@ have to specify in your styles or HTML that your design wants them.
 %}
 
 The above is demonstrating the effect of the property from the Styles panel of
-DevTools, but the demo ships with the HTML tag, which in my opinion is generally
+DevTools. The demo uses the HTML tag, which in my opinion is generally
 a better location:
 
 ```html
 <meta name="color-scheme" content="dark light">
 ```
 
-Learn all about it in [this `color-scheme`
+Learn all about it in this [`color-scheme`
 article](https://web.dev/color-scheme/) by [Thomas
 Steiner](https://web.dev/authors/thomassteiner/). There's a lot more to gain
 than dark checkbox inputs!
@@ -424,7 +420,7 @@ activity](https://twitter.com/argyleink/status/1360022120810483715?s=20) around
 `accent-color` on form elements, being a single CSS style that can change the
 tint color used in the browsers input element. Read more about it [here on
 GitHub](https://github.com/w3c/csswg-drafts/issues/5187). I've included it in my
-styles for this component, and as browsers support it, my checkboxes will be
+styles for this component. As browsers support it, my checkboxes will be
 more on theme with the pink and purple color pops.
 
 ```css
@@ -458,10 +454,9 @@ that is through colorful UI interactions.
 1. UI feedback of "how full" the value is in the range
 1. UI feedback that it's accepting input
 
-There are many layers of UI feedback and interaction in the above video, all of
-which give the interface a tangibility, a personality and responsivity to
-interaction. Color specifically is assisting in so much with so little. CSS is
-using the `:focus-within` pseudo class to change the appearance of various
+There are many layers of UI feedback and interaction in the above video, 
+which help give personality to the interaction. 
+Here, CSS is using the `:focus-within` pseudo class to change the appearance of various
 elements, let's break down the `.fieldset-item`, it's super interesting:
 
 ```css
@@ -484,13 +479,13 @@ elements, let's break down the `.fieldset-item`, it's super interesting:
 ```
 
 `@nest` syntax sure makes this centeralized and easy to manage doesn't it? The
-`.fieldset-item` itself get a higher contrast surface color applied, the `svg`
+`.fieldset-item` itself has a higher contrast surface color applied, the `svg`
 fills white, and the `<picture>` containing the svg icon fills with a background
 color and expands it's `clip-path `to a full circle. 
 
-## Custom Range
+## Custom range
 
-Given the following HTML input element, I'll show you how I customized it's
+Given the following HTML input element, I'll show you how I customized its
 appearance:
 
 ```html
@@ -549,8 +544,8 @@ input[type="range"]::-webkit-slider-runnable-track {
 ```
 
 The trick to this is "revealing" the vibrant fill color. This is done with the
-hard stop gradient on top, it's transparent up to the fill percentage, and after
-that it's the unfilled track surface color. Behind that unfilled surface, is a
+hard stop gradient on top. The gradient is transparent up to the fill percentage, and after
+that uses the unfilled track surface color. Behind that unfilled surface, is a
 full width color, waiting for transparency to reveal it.
 
 {% Video 
@@ -613,12 +608,11 @@ input[type="range"]::-webkit-slider-thumb {
 }
 ```
 
-The majority of these styles are around making a nice tangible looking circle
-element. Again you see the fixed background gradient there that unifies the
+The majority of these styles are to make a nice circle. 
+Again you see the fixed background gradient there that unifies the
 dynamic colors of the thumbs, tracks and associated SVG elements.
-
 I separated the styles for the interaction to help isolate the `box-shadow`
-technique being user for the hover highlight:
+technique being used for the hover highlight:
 
 ```css
 @custom-media --motionOK (prefers-reduced-motion: no-preference);
@@ -682,7 +676,7 @@ more information.
 
 ## Custom Checkbox
 
-Given the following HTML input element, I'll show you how I customized it's
+Given the following HTML input element, I'll show you how I customized its
 appearance:
 
 ```html
@@ -719,7 +713,7 @@ checkboxes into the brand color scheme.
 
 It's important to provide labels for checkboxes for 2 reasons. The first is to
 represent what the checkbox value is used for, to answer "on or off for what?".
-Second is for UX, web user's have become accustomed to interacting with
+Second is for UX, web users have become accustomed to interacting with
 checkbox's via their associated labels.
 
 {% Video 
