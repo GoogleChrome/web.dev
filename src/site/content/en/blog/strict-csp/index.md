@@ -75,8 +75,6 @@ which avoids the pitfalls outlined above.
 {% endCompare %}
 </div>
 
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/vHFNHgJMpLsoX433ySEh.jpg", alt="", width="400", height="197", class="w-screenshot" %}
-
 
 ## What is a strict Content Security Policy?
 
