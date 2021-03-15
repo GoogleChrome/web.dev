@@ -1,6 +1,9 @@
 ---
 title: Mitigate cross-site scripting (XSS) with a strict Content Security Policy (CSP)
 subhead: How to deploy a CSP based on script nonces or hashes as a defense-in-depth against cross-site scripting.
+description: |
+    Learn how to deploy a CSP based on script nonces or hashes as a defense-in-depth 
+    against cross-site scripting.
 authors:
   - lwe
 date: 2021-03-15
