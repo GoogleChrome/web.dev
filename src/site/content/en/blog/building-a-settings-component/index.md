@@ -892,6 +892,21 @@ in this case the icon next to the slider and the label:
 <label aria-hidden="true">
 ```
 
+{% Video 
+  src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/fVjqHRZHQixAaxjeAvDP.mp4",
+  className="w-screenshot", 
+  autoplay="true", 
+  loop="true", 
+  muted="true",
+  width="480px" 
+%}
+
+The above video demonstrates the screenreader flow on Mac OS. Notice how input
+focus is straight from one slider to the next, this is because we've hidden the
+elements that may have otherwise been stops along the way to the next element.
+Without these attributes a user would need to stop, listen and move past the
+picture and duplicative label element.
+
 The SVG is a bunch of math, let's add a `<title>` element for a free mouse hover
 title and a human readable comment about what the math is creating:
 
