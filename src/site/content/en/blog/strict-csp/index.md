@@ -63,6 +63,18 @@ This makes allowlist CSPs generally ineffective at preventing attackers from exp
 That's why it's recommended to use a strict CSP based on cryptographic nonces or hashes,
 which avoids the pitfalls outlined above.
 
+<div class="w-columns">
+{% Compare 'worse', 'Allowlist CSP' %}
+- Doesn't effectively protect your site. ❌
+- Must be highly customized. 😓
+{% endCompare %}
+
+{% Compare 'better', 'Strict CSP' %}
+- Effectively protects your site. ✅
+- Always has the same structure. 😌
+{% endCompare %}
+</div>
+
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/vHFNHgJMpLsoX433ySEh.jpg", alt="", width="400", height="197", class="w-screenshot" %}
 
 
