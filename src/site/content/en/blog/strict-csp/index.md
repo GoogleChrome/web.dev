@@ -83,7 +83,7 @@ cryptographic nonces or hashes, which avoids the pitfalls outlined above.
 {% Compare 'better', 'Strict CSP' %}
 - Effectively protects your site. ✅
 - Always has the same structure. 😌 
-- {% endCompare %}
+{% endCompare %}
 </div>
 
 
