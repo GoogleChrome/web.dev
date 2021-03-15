@@ -88,6 +88,7 @@ Content-Security-Policy:
   base-uri 'none';
 
 ```
+
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/er4BaGCJzBwDaESFKfZd.jpg", alt="", width="800", height="279" %}
 
 
@@ -229,6 +230,7 @@ needs to be:
 Here are some examples on how to add a CSP nonce in server-side frameworks:
 - [Django (python)](https://django-csp.readthedocs.io/en/latest/nonce.html)
 - Express (JavaScript):
+
 ```javascript
 const app = express();
 app.get('/', function(request, response) {
@@ -287,12 +289,14 @@ Option B: Hash-based CSP Response Header
 {% endDetailsSummary %}
 
 Set the following `Content-Security-Policy` HTTP response header in your application:
+
 ```text
 Content-Security-Policy:
   script-src 'sha256-{HASHED_INLINE_SCRIPT}' 'strict-dynamic';
   object-src 'none';
   base-uri 'none';
 ```
+
 For several inline scripts, the syntax is as follows: `'sha256-{HASHED_INLINE_SCRIPT_1}'  'sha256-{HASHED_INLINE_SCRIPT_2}'`.
 
 {% Aside 'caution' %}
@@ -341,8 +345,8 @@ scripts.forEach(function(scriptUrl) {
 To allow execution of this script, the hash of the inline script must be calculated and added to
 the CSP response header, replacing the `{HASHED_INLINE_SCRIPT}` placeholder. To reduce
 the amount of hashes, you can optionally merge all inline scripts into a single script.
-To see this in action take a look at this
-[example](https://strict-csp-codelab.glitch.me/solution_hash_csp#) ([code](https://glitch.com/edit/#!/strict-csp-codelab?path=demo%2Fsolution_hash_csp.html%3A1%3A))
+To see this in action checkout the
+[example](https://strict-csp-codelab.glitch.me/solution_hash_csp#) and examine the [code](https://glitch.com/edit/#!/strict-csp-codelab?path=demo%2Fsolution_hash_csp.html%3A1%3A).
 {% endCompareCaption %}
 {% endCompare %}
 
@@ -386,6 +390,7 @@ safer alternatives.
 
 If you enabled CSP in the previous step, you'll be able to see CSP violations in the console
 every time CSP blocks an incompatible pattern.
+
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/mRWfNxAhQXzInOLCgtv8.jpg", alt="CSP violation reports in the Chrome developer console.", class="w-screenshot", width="800", height="235" %}
 
 In most cases, the fix is straightforward:
