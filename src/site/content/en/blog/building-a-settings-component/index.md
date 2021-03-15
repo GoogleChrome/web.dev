@@ -385,8 +385,9 @@ good about a `%` change to it, that it will be perceptually and consistently
 that `%` different. `hsl()` for example is [not as
 reliable](https://twitter.com/argyleink/status/1201908189257555968).
 
-There's more to learn about color spaces and `lch()` if you're interested. It's
-coming!
+There's [more to
+learn](https://lea.verou.me/2020/04/lch-colors-in-css-what-why-and-how/) about
+color spaces and `lch()` if you're interested. It's coming!
 
 ### Adaptive form controls with color-scheme
 
@@ -455,10 +456,11 @@ that is through colorful UI interactions.
 1. UI feedback of "how full" the value is in the range
 1. UI feedback that it's accepting input
 
-There are many layers of UI feedback and interaction in the above video, 
-which help give personality to the interaction. 
-Here, CSS is using the `:focus-within` pseudo class to change the appearance of various
-elements, let's break down the `.fieldset-item`, it's super interesting:
+There are many layers of UI feedback and interaction in the above video, which
+help give personality to the interaction. Here, CSS is using the
+[`:focus-within`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within)
+pseudo class to change the appearance of various elements, let's break down the
+`.fieldset-item`, it's super interesting:
 
 ```css
 .fieldset-item {
@@ -479,10 +481,11 @@ elements, let's break down the `.fieldset-item`, it's super interesting:
 }
 ```
 
-`@nest` syntax sure makes this centeralized and easy to manage doesn't it? The
-`.fieldset-item` itself has a higher contrast surface color applied, the `svg`
-fills white, and the `<picture>` containing the svg icon fills with a background
-color and expands it's `clip-path `to a full circle. 
+When this element has focus is within of one of it's children:
+1. `.fieldset-item` background is assigned a higher contrast surface color
+1. The nested `svg` is filled white for higher contrast
+1. The nested `<picture>` `clip-path` expands to a full circle and the
+   background is filled with the bright fixed gradient
 
 ## Custom range
 
