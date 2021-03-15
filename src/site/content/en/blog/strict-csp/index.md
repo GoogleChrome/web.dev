@@ -63,9 +63,7 @@ This makes allowlist CSPs generally ineffective at preventing attackers from exp
 That's why it's recommended to use a strict CSP based on cryptographic nonces or hashes,
 which avoids the pitfalls outlined above.
 
-
-![Allowlist CSP vs Strict CSP](strict-vs-allowlist.jpg)
-
+{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/vHFNHgJMpLsoX433ySEh.jpg", alt="", width="400", height="197", class="w-screenshot" %}
 
 
 ## What is a strict Content Security Policy?
@@ -80,7 +78,7 @@ Content-Security-Policy:
   base-uri 'none';
 
 ```
-![Strict CSP](strict_csp.jpg)
+{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/er4BaGCJzBwDaESFKfZd.jpg", alt="", width="800", height="279" %}
 
 
 - **Hash-based strict CSP**
@@ -305,8 +303,7 @@ because CSP hashes are supported across browsers only for inline scripts (hashes
 scripts are [not well-supported across
 browsers](https://wpt.fyi/results/content-security-policy/script-src/script-src-sri_hash.sub.html?label=master&label=experimental&aligned)). 
 
-
-![TODO](hash-based-refactoring.jpg)
+{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/B2YsfJDYw8PRI6kJI7Bs.jpg", alt="", width="800", height="333" %}
 
 {% Compare 'worse', 'Blocked by CSP' %}
 ```html
@@ -379,7 +376,7 @@ safer alternatives.
 
 If you enabled CSP in the previous step, you'll be able to see CSP violations in the console
 every time CSP blocks an incompatible pattern.
-![CSP violation reports in the Chrome developer console](csp-violations.jpg)
+{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/mRWfNxAhQXzInOLCgtv8.jpg", alt="CSP violation reports in the Chrome developer console.", class="w-screenshot", width="800", height="235" %}
 
 In most cases, the fix is straightforward:
 
