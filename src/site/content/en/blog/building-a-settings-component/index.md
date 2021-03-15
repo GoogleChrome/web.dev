@@ -50,6 +50,14 @@ I've broken out the aspects of this component into the following sections:
 1. [Accessibility considerations](#accessibility)
 1. [JavaScript](#javascript)
 
+{% Aside 'gotchas' %} 
+The CSS snippets below assume PostCSS with 
+[PostCSS Preset Env](https://preset-env.cssdb.org/features). 
+Intent is to practice early and often with syntax in early drafts or 
+experimentally available in browsers. Or as the plugin likes to say, 
+"Use tomorrow’s CSS today".
+{% endAside %}
+
 ## Layouts
 
 This is the first GUI Challenge demo to be **all CSS Grid**! Here's each grid 
