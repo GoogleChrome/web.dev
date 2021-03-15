@@ -218,7 +218,7 @@ When setting a CSP, you have a few options:
   the errors in the browser console. If anything, enforcement mode will make it
   even easier for you to see blocked resources and tweak your CSP, since your
   page will look broken. Report-only mode becomes most useful later in the
-  process (see [Step 5](#step-5:-deploy-your-csp). 
+  process (see [Step 5](#step-5:-deploy-your-csp)). 
 - Header or HTML `<meta>` tag. For local development, a `<meta>` tag may be more
   convenient for tweaking your CSP and quickly seeing how it affects your site.
   However:
