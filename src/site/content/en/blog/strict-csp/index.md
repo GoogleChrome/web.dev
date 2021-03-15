@@ -20,7 +20,7 @@ to inject malicious scripts into a web application—has been one of the biggest
 [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is an added layer of security that helps to mitigate XSS. Configuring a CSP involves adding the Content-Security-Policy HTTP header to a web page
 and setting values to control what resources the user agent is allowed to load for that page.
 This article explains how to use a CSP based on nonces or hashes to mitigate XSS instead of
-the commonly used host-allowlist-base CSPs which often leave the page exposed to XSS as they can be [bypassed in most configurations](https://research.google.com/pubs/pub45542.html).
+the commonly used host-allowlist-based CSPs which often leave the page exposed to XSS as they can be [bypassed in most configurations](https://research.google.com/pubs/pub45542.html).
 
 {% Aside 'key-term' %}
 A _nonce_ is a random number used only once that can be used to mark a `<script>` tag as
@@ -169,7 +169,7 @@ Criteria for choosing a strict CSP approach:
     <tbody>
       <tr>
         <th>Hash-based CSP</th>
-        <td>For HTML pages served statically or that need to be cached. For example,
+        <td>For HTML pages served statically or those that need to be cached. For example,
 single-page web applications built with frameworks such as Angular, React or others, that are
 statically served without server-side rendering.</td>
       </tr>
