@@ -540,7 +540,7 @@ reviews and security audits. You can find more details on the cases described ab
 {% Aside %}
 Trusted Types complements strict CSP very well and can efficiently protect against some of the
 limitations listed above. Learn more about [how to use Trusted Types at
-web.dev](http://web.dev/trusted-types).
+web.dev](/trusted-types).
 {% endAside %}
 
 
