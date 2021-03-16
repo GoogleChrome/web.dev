@@ -530,16 +530,12 @@ The interface is currently aimed at picking single instances from the font:
 you select the variation you want, click "Select this style", and it will be
 added to the `<link>` element that fetches the CSS and fonts from Google Fonts.
 
-If you want to use all the available axes, or ranges of values instead of a
-single value, you will have to [manually
+To use all the available axes, or ranges of values, you will have to [manually
 compose](https://developers.google.com/fonts/docs/css2) the URL to the Google
-Fonts API. To know which axes are in the fonts, head over to the [variable
-fonts overview](https://fonts.google.com/variablefonts) where all axes and
-values are listed.
+Fonts API. The [variable fonts overview](https://fonts.google.com/variablefonts) lists all axes and values.
 
-You can also use a tool like [Google Variable Fonts
-Links](https://github.com/RoelN/google-variable-fonts-links) to get the
-latests URLs for the full variable fonts.
+The [Google Variable Fonts Links](https://github.com/RoelN/google-variable-fonts-links) 
+tool can also give you the latest URLs for the full variable fonts.
 
 ## Font-variation-settings inheritance
 
@@ -633,7 +629,7 @@ variable font with many axes. As always, it depends on your use-case.
 
 On the flip side, animating the font between settings may cause performance
 issues. Although this will improve once variable font support in browsers gets
-more mature, these can be reduced somewhat by only animating fonts that are
+more mature, the problem can be reduced somewhat by only animating fonts that are
 currently on screen. This handy snippet by
 [Dinamo](https://abcdinamo.com/news/using-variable-fonts-on-the-web) pauses
 animations in elements with the class `vf-animation`, when they're not on
