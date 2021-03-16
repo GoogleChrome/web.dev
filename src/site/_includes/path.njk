@@ -11,8 +11,8 @@ layout: default
   <header class="w-masthead-path">
     <div class="w-masthead-path__container">
       <div class="w-masthead-path__left">
-        <h1 class="w-masthead-path__headline no-link">{{path.title}}</h1>
-        <p class="w-masthead-path__description">{{path.description}}</p>
+        <h1 class="w-masthead-path__headline no-link">{{path.title | i18n(locale)}}</h1>
+        <p class="w-masthead-path__description">{{path.description | i18n(locale)}}</p>
       </div>
       <div class="w-masthead-path__right">
         <img class="w-masthead-path__image" src="{{path.cover}}" alt="">
@@ -29,7 +29,7 @@ layout: default
   <section class="w-layout-container w-path-intro">
     <div class="w-path-intro__overview">
       <h2 class="w-headline--three no-link">Overview</h2>
-      <div>{{path.overview}}</div>
+      <div>{{path.overview | i18n(locale)}}</div>
       {% if path.youtubeId %}
         <figure class="w-figure">
           {% YouTube path.youtubeId %}
@@ -41,7 +41,7 @@ layout: default
       <ul class="w-icon-list">
         {% for topic in topics %}
           <li class="w-icon-list__item w-icon-list__item--check">
-            <a class="w-path-link" href="#{{ topic.title | slug }}">{{ topic.title }}</a>
+            <a class="w-path-link" href="#{{ topic.title | slug }}">{{topic.title | i18n(locale)}}</a>
           </li>
 	      {% endfor %}
       </ul>

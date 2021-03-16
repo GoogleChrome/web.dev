@@ -137,7 +137,7 @@ The returned promise will resolve if successful. Otherwise it will reject if
 either:
 - the camera with PTZ permission is not granted.
 - the camera hardware does not support the PTZ constraint.
-- the page is not visible to the user. Use the [Page Visibilty API] to detect
+- the page is not visible to the user. Use the [Page Visibility API] to detect
   page visibility changes.
 
 ```js

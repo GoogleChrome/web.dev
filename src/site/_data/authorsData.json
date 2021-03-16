@@ -367,8 +367,8 @@
   },
   "pjmclachlan": {
     "name": {
-      "given": "PJ",
-      "family": "Mclachlan"
+      "given": "Penny",
+      "family": "McLachlan"
     },
     "org": {
       "name": "Google",
@@ -377,7 +377,7 @@
     "country": "CA",
     "twitter": "b1tr0t",
     "descriptions": {
-      "en": "PJ is a Product Manager on the Chrome Web Platform team responsible for Chrome permissions, notifications, and progressive web apps."
+      "en": "Penny is a Product Manager on the Chrome Web Platform team responsible for Chrome permissions, notifications, and progressive web apps."
     },
     "image": "image/admin/Y7BI31UZhmuEqgrPpXOJ.jpg"
   },
@@ -1920,5 +1920,19 @@
     "country": "JP",
     "twitter": "gladenjoy",
     "image": "image/iEYkFAI5LNQv7oLlIBv9DuB265a2/o8ixW7QKSWR02r9ZUOFP.jpg"
+  },
+  "alonko": {
+    "name": {
+      "given": "Alon",
+      "family": "Kochba"
+    },
+    "github": "alonkochba",
+    "twitter": "alonkochba",
+    "org": {
+      "name": "Wix",
+      "unit": "Infrastructure"
+    },
+    "country": "IL",
+    "image": "image/BrQidfK9jaQyIHwdw91aVpkPiib2/9zVJ5KLkDStLNSz2ZxPE.jpg"
   }
 }

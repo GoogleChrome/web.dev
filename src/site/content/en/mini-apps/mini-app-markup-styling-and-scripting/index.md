@@ -141,7 +141,7 @@ is called
 [density-independent pixel](https://developer.android.com/training/multiscreen/screendensities#TaskUseDP).
 
 <figure class="w-figure">
-  <img src="px-chrome-devtools.png" alt="Inspecting a view with Chrome DevTools whose responsive pixel padding was specified with `200rpx` shows that it is actually `104px` on a Pixel 3a device.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/n26ptkMoSfiTDanfFh5F.png", alt="Inspecting a view with Chrome DevTools whose responsive pixel padding was specified with `200rpx` shows that it is actually `104px` on a Pixel 3a device.", width="800", height="385" %}
   <figcaption class="w-figure">
     Inspecting the actual padding on a Pixel 3a device with Chrome DevTools.
   </figcaption>

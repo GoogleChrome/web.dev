@@ -17,6 +17,8 @@
 const {html} = require('common-tags');
 const removeDrafts = require('../../_filters/remove-drafts');
 
+const {i18n} = require('../../_filters/i18n');
+
 /* eslint-disable max-len */
 
 /**
@@ -93,9 +95,9 @@ module.exports = (path, lang) => {
           />
         </div>
         <div class="w-path-card__desc">
-          <h2 class="w-path-card__headline">${path.title}</h2>
+          <h2 class="w-path-card__headline">${i18n(path.title, lang)}</h2>
           <p class="w-path-card__subhead">
-            ${path.description}
+            ${i18n(path.description, lang)}
           </p>
         </div>
       </div>

@@ -163,7 +163,7 @@ App shortcuts may not be available right away to all users because Progressive
 Web App updates are capped to once a day.  Find out more about
 [how Chrome handles updates to the web app manifest].
 
-## Best practises
+## Best practices
 
 ### Order app shortcuts by priority
 

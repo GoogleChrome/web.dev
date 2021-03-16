@@ -39,7 +39,7 @@ scanned with the WeChat super app, the mini app launches directly.
 Other super apps will typically not be able to recognize the barcode.
 
 <figure class="w-figure">
-  <img src="2d-barcode.jpg" alt="WeChat-branded 2d barcode." width="250">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SOisfOqKQWr0GZZvUaqn.jpg", alt="WeChat-branded 2d barcode.", width="250", height="250" %}
   <figcaption class="w-figure">
     Scanning this 2d barcode with the WeChat app launches a demo mini app.
   </figcaption>
@@ -63,7 +63,7 @@ screenshot below shows a shopping mini app running in the context of the Alipay 
 action menu opened.
 
 <figure class="w-figure">
-  <img src="super-app-ui.jpg" alt="The Alipay super app running a shopping mini app with highlighted top bar, action menu button, and close button. The action menu is opened." width="300">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PkjzF8AyxDVIAMZmhVrr.jpg", alt="The Alipay super app running a shopping mini app with highlighted top bar, action menu button, and close button. The action menu is opened.", width="300", height="649" %}
   <figcaption class="w-figure">
     Opened action menu of a shopping mini app running in the Alipay super app.
   </figcaption>
@@ -81,7 +81,7 @@ This is similar to what Apple incentivizes with its
 and Google with its [Design for Android](https://developer.android.com/design) recommendations.
 
 <figure class="w-figure">
-  <img src="ui-components.png" alt="The Douyin demo mini app showcasing the Douyin slider (carousel) component with toggles for auto-advance, dot indicators, etc." width="300">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nFVCU3HqKERzl7Lops6Q.png", alt="The Douyin demo mini app showcasing the Douyin slider (carousel) component with toggles for auto-advance, dot indicators, etc.", width="300", height="617" %}
   <figcaption class="w-figure">
     Douyin's slider (carousel) component with various options.
   </figcaption>
@@ -107,7 +107,7 @@ mini apps can declare which of their pages should be indexable by the super app 
 crawler.
 
 <figure class="w-figure">
-  <img src="wxapkg-cache.png" alt="macOS Finder showing a folder containing cached WeChat mini app `.wxapkg` files.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZKLNvNnm3Rr6aBmYbons.png", alt="macOS Finder showing a folder containing cached WeChat mini app `.wxapkg` files.", width="800", height="465" %}
   <figcaption class="w-figure">
     Mini apps are cached as encrypted packaged apps.
   </figcaption>
@@ -138,7 +138,7 @@ Mini apps also have to declare beforehand the origins of all servers that they p
 request data from.
 
 <figure class="w-figure">
-  <img src="douyin-permission.png" alt="The Douyin demo mini app showing a geolocation prompt with two options: 'Not Allowed' and 'Allowed'." width="300">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8To8DiUqnP4qqFfpPNqk.png", alt="The Douyin demo mini app showing a geolocation prompt with two options: 'Not Allowed' and 'Allowed'.", width="300", height="617" %}
   <figcaption class="w-figure" >
     The Douyin demo mini app asking for the geolocation permission.
   </figcaption>
@@ -162,7 +162,7 @@ camera and microphone access, screen recording and screenshot creation, network 
 barcode scanning, device memory information, and more.
 
 <figure class="w-figure">
-  <img src="screen-brightness.png" alt="The WeChat demo mini app showing a slider that controls the screen brightness of the device moved all the way to the maximum." width="300">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HNEKyoLVeq3IUKGXEZEZ.png", alt="The WeChat demo mini app showing a slider that controls the screen brightness of the device moved all the way to the maximum.", width="300", height="649" %}
   <figcaption class="w-figure">
     The WeChat demo mini app setting the device's screen brightness to the maximum.
   </figcaption>
@@ -190,7 +190,7 @@ Walmart mini app running in WeChat, opened for the very first time, greeting me 
 face.
 
 <figure class="w-figure">
-  <img src="walmart.png" alt="The Walmart mini app showing the author's face and name on the 'Me' tab." width="300">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HzPx6ZSqQWvsUDT04ex2.png", alt="The Walmart mini app showing the author's face and name on the 'Me' tab.", width="300", height="649" %}
   <figcaption class="w-figure">
     The Walmart mini app with a personalized "Me" view on the first visit.
   </figcaption>
