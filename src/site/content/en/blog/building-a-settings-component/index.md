@@ -886,7 +886,7 @@ acccessibility tree that a screenreader navigates.
 ### HTML Attributes
 
 We can hide elements that are not needed by screenreaders, 
-in this case the icon next to the slider and the label:
+in this case the icon next to the slider:
 
 ```html
 <picture aria-hidden="true">
@@ -902,10 +902,10 @@ in this case the icon next to the slider and the label:
 %}
 
 The above video demonstrates the screenreader flow on Mac OS. Notice how input
-focus moves straight from one slider to the next. This is because we've hidden the
-elements that may have become stops on the way to the next element.
-Without these attributes a user would need to stop, listen and move past the
-picture and duplicate label element.
+focus moves straight from one slider to the next. This is because we've hidden
+the icon that may have been a stop on the way to the next slider. Without this
+attribute, a user would need to stop, listen and move past the picture which
+they may not be able to see.
 
 {% Aside 'gotchas' %} 
 Ensure to cross browser test screenreader interactions.
