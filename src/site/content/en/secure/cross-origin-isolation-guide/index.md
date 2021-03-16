@@ -23,16 +23,19 @@ isolation is required if you want to use
 [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/),
 or the JS Self-Profiling API.
 
-{% Aside 'objective' %}
-If you landed this page by a SharedArrayBuffer deprecation message, it's likely
-either your website or one of the resources you emebed to your website is using
-SharedArrayBuffer. When Chrome hits 91, the functionality that has been
-available through SharedArrayBuffer will no longer work without cross-origin
-isolation. Take one of the following actions to fix the issue in advance.
+{% Banner 'info', 'body' %}
+Starting in Chrome 91, functionalities that use `SharedArrayBuffer` will no longer 
+work without cross-origin isolation. If you landed on this page due to a 
+`SharedArrayBuffer` deprecation message, it's likely either your website or one of 
+the resources embedded on it is using `SharedArrayBuffer`. To ensure nothing breaks 
+on your website due to deprecation, follow the steps in this post.
+{% endBanner %}
 
-* Turn on the cross-origin isolation to keep using SharedArrayBuffer.
-* Notify the third-party vendor/provider that actually uses SharedArrayBuffer to
-  take action.
+
+{% Aside 'objective' %}
+* Turn on cross-origin isolation to keep using `SharedArrayBuffer`.
+* If you rely on third-party code that uses `SharedArrayBuffer`, notify the third-party 
+  provider to take action.
 {% endAside %}
 
 ## Determine where in your website a SharedArrayBuffer is used
