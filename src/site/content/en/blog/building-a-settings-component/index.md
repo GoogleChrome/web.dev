@@ -676,7 +676,8 @@ is a Level 5 spec addition that
 {% endAside %}
 
 The goal was an easy to manage and animated visual highlight for user feedback.
-By using a box shadow I can prevent effecting layout with the effect. I do this
+By using a box shadow I can avoid [triggering
+layout](https://web.dev/animations-guide/#triggers) with the effect. I do this
 by creating a shadow that's not blurred and matches the circular shape of the
 thumb element. Then I change and transition it's spread size on hover.
 
