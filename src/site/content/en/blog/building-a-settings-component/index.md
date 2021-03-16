@@ -37,7 +37,7 @@ browsers. Try the [demo](https://gui-challenges.web.app/settings/dist/).
 If you prefer video, or want a UI/UX preview of what we're building, here's a
 shorter walkthrough on YouTube:
 
-{% YouTube 'mMBcHcvxuuA' %}
+{% YouTube 'dm7gnp6eh3Q' %}
 
 ## Overview
 
