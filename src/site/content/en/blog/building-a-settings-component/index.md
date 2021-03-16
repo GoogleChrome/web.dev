@@ -72,10 +72,10 @@ highlighted with the [Chrome DevTools for grid](https://goo.gle/devtools-grid):
 
 {% Banner 'neutral' %}
 To highlight your grid layouts:
-1. Open Chrome DevTools with `cmd+opt+i` or `ctrl+alt+i`
-1. Select the Layout tab next to the Styles tab
-1. Under the Grid layouts section, check on all the layouts
-1. Change all the layout's colors
+1. Open Chrome DevTools with `cmd+opt+i` or `ctrl+alt+i`.
+1. Select the Layout tab next to the Styles tab.
+1. Under the Grid layouts section, check on all the layouts.
+1. Change the colors of all layouts.
 {% endBanner %}
 
 ### Just for gap
@@ -91,7 +91,7 @@ foo {
 
 I call this layout "just for gap" because it only uses grid to add gaps between blocks. 
 
-`5` layouts use this strategy, here's all of them displayed:
+Five layouts use this strategy, here's all of them displayed:
 
 {% Img 
   src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/zYWSVLzdtrh1K8p8yUuA.png", 
@@ -145,8 +145,7 @@ system between `<main>` and `<form>`.
 
 #### Centering wrapping content
 
-A common learning moment with CSS layout is distinguishing centering of `items`
-vs `content`. Flexbox and grid both provide abilities to `align-items` or
+Flexbox and grid both provide abilities to `align-items` or
 `align-content`, and when dealing with wrapping elements, `content` layout
 alignments will distribute space amongst the children as a group. 
 
@@ -160,8 +159,7 @@ main {
 
 The main element is using `place-content: center` [alignment
 shorthand](https://developer.mozilla.org/en-US/docs/Web/CSS/place-content) so
-that regardless of a 2 or 1 column layout, the children should be centered
-vertically and horizontally, together as a group.
+that the children are centered vertically and horizontally in both one and two column layouts.
 
 {% Video 
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IQI2PofA6gpNFUkDrvKo.mp4",
@@ -200,9 +198,9 @@ post](https://web.dev/one-line-layouts/) about this, calling it
 
 There's 3 special additions in our layout, if you compare it to Una's:
 
-1. We passed an extra `min()` function
-1. We specify `align-items: flex-start`
-1. There's a `max-width: 89vw` style?
+- We pass an extra `min()` function.
+- We specify `align-items: flex-start`.
+- There's a `max-width: 89vw` style.
 
 The extra `min()` function is well described by Evan Minto on their blog in the
 post [Intrinsically Responsive CSS Grid with minmax() and
@@ -212,9 +210,8 @@ remove the default stretching effect, so that the children of this layout don't
 need to have equal heights, they can have natural, intrinsic heights. The
 YouTube video has a quick breakdown of this alignment addition.
 
-`max-width: 89vw` is worth a small breakdown in this post. It's partly a
-bug, and partly a learning moment. Let me show you the layout with and without
-the style applied:
+`max-width: 89vw` is worth a small breakdown in this post. 
+Let me show you the layout with and without the style applied:
 
 {% Video 
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/gdldf7hyaBrHWwxQbSaT.mp4",
@@ -232,9 +229,9 @@ many repetitions it can fit into the space. While it seems obvious that the
 space is "full width", per the CSS grid spec, a definite size or max-size must
 be provided. I've provided a max-size.
 
-The bug part of this is, why `89vw`? Because "it worked" for my layout… Me and a
-couple other Chrome folks internally investigating why a more reasonable value,
-like `100vw` isn't sufficient. I learned a lot from this layout requirement.
+So, why `89vw`? Because "it worked" for my layout. 
+Me and a couple of other Chrome folks are investigating why a more reasonable value,
+like `100vw` isn't sufficient, and if this is in fact a bug.
 
 ### Spacing
 
@@ -358,7 +355,7 @@ let me back up a bit.
 
 Without getting too deep into color theory land, LCH is a human oriented syntax,
 that caters to how we percieve color, not how we measure color with math (like
-255). This gives it a distinct advantage, humans can write it easier and other
+255). This gives it a distinct advantage as humans can write it more easily and other
 humans will be in tune with these adjustments.
 
 <figure class="w-figure w-screenshot">
@@ -373,7 +370,7 @@ humans will be in tune with these adjustments.
   </figcaption>
 </figure>
 
-For today, in this demo, let's focus on the syntax and what values I'm flipping
+For today, in this demo, let's focus on the syntax and the values I'm flipping
 to make light and dark. Let's look at 1 surface and 1 text color:
 
 ```css
@@ -476,12 +473,13 @@ that is through colorful UI interactions.
   width="480px"
 %}
 
-1. Highlight context
-1. UI feedback of "how full" the value is in the range
-1. UI feedback that it's accepting input
-
 There are many layers of UI feedback and interaction in the above video, which
-help give personality to the interaction. Here, CSS is using the
+help give personality to the interaction by:
+- Highlighting context.
+- Providing UI feedback of "how full" the value is in the range.
+- Providing UI feedback that a field is accepting input.
+
+To provide feedback when an element is being interacted with, CSS is using the
 [`:focus-within`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within)
 pseudo class to change the appearance of various elements, let's break down the
 `.fieldset-item`, it's super interesting:
@@ -505,11 +503,11 @@ pseudo class to change the appearance of various elements, let's break down the
 }
 ```
 
-When this element has focus is within of one of it's children:
-1. `.fieldset-item` background is assigned a higher contrast surface color
-1. The nested `svg` is filled white for higher contrast
+When one of the children of this element has focus-within:
+1. The `.fieldset-item` background is assigned a higher contrast surface color.
+1. The nested `svg` is filled white for higher contrast.
 1. The nested `<picture>` `clip-path` expands to a full circle and the
-   background is filled with the bright fixed gradient
+   background is filled with the bright fixed gradient.
 
 ## Custom range
 
@@ -742,7 +740,8 @@ input[type="checkbox"] {
 }
 ```
 
-Besides the pseudo element `transform-style` and `position` styles, it's mostly
+The `transform-style` and `position` styles prepare for the pseudo-element we will introduce later 
+to style the highlight. Otherwise, it's mostly
 minor opinionated style stuff from me. I like the cursor to be pointer, I like
 outline offsets, default checkboxes are too tiny, and if `accent-color` is
 [supported](https://drafts.csswg.org/css-ui-4/#widget-accent), bring these
@@ -751,9 +750,9 @@ checkboxes into the brand color scheme.
 ### Checkbox labels
 
 It's important to provide labels for checkboxes for 2 reasons. The first is to
-represent what the checkbox value is used for, to answer "on or off for what?".
+represent what the checkbox value is used for, to answer "on or off for what?"
 Second is for UX, web users have become accustomed to interacting with
-checkbox's via their associated labels.
+checkboxes via their associated labels.
 
 {% Video 
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/7GYIFNjNCBdj13juFO7S.mp4",
@@ -799,8 +798,8 @@ ways your form can be interacted with.
 I want to keep my interfaces consistent, and the slider element has a nice
 thumbnail highlight that I'd like to use with the checkbox. The thumbnail was
 able to use `box-shadow` and it's `spread` property to scale a shadow up and
-down, but that effect doesn't work here because our checkboxes are, [and should
-be!](https://twitter.com/argyleink/status/1329230409784291328?s=20), square.
+down. However, that effect doesn't work here because our checkboxes are, [and should
+be](https://twitter.com/argyleink/status/1329230409784291328?s=20), square.
 
 I was able to achieve the same visual effect with a pseudo element, and an
 unfortunate amount of tricky CSS:
@@ -842,8 +841,8 @@ input[type="checkbox"]:hover::before {
 }
 ```
 
-Creating a circle psuedo element is straightforward work, but **placing it
-behind the element it's attached to**, that's what took work. Here's before and
+Creating a circle psuedo-element is straightforward work, but **placing it
+behind the element it's attached to** was harder. Here's before and
 after I fixed it:
 
 {% Video 
@@ -854,11 +853,11 @@ after I fixed it:
   muted="true" 
 %}
 
-It's definitely a microinteraction, but important to me to keep the visual
+It's definitely a micro interaction, but important to me to keep the visual
 consistency. The animation scaling technique is the same as we've been using in
-other places, we set a custom property to a new value and let CSS transition it
-based on motion preferences, but it's special feature is `translateZ(-1px)`. The
-parent created a 3D space and this speudo element child tapped into it by
+other places. We set a custom property to a new value and let CSS transition it
+based on motion preferences. The key feature here is `translateZ(-1px)`. The
+parent created a 3D space and this pseudo-element child tapped into it by
 placing itself slightly back in z-space.
 
 ## Accessibility
@@ -902,10 +901,10 @@ in this case the icon next to the slider and the label:
 %}
 
 The above video demonstrates the screenreader flow on Mac OS. Notice how input
-focus is straight from one slider to the next, this is because we've hidden the
-elements that may have otherwise been stops along the way to the next element.
+focus moves straight from one slider to the next. This is because we've hidden the
+elements that may have become stops on the way to the next element.
 Without these attributes a user would need to stop, listen and move past the
-picture and duplicative label element.
+picture and duplicate label element.
 
 The SVG is a bunch of math, let's add a `<title>` element for a free mouse hover
 title and a human readable comment about what the math is creating:
