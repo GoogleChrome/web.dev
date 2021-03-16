@@ -105,6 +105,7 @@ module.exports = function (config) {
     ul: true,
     flat: true,
   });
+  config.addPlugin(require('./src/site/_utils/apply-csp.js'));
 
   // ----------------------------------------------------------------------------
   // MARKDOWN

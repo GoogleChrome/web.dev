@@ -112,9 +112,8 @@ const safetyHandler = (req, res, next) => {
     req.url = '/nuke-sw.js';
   }
 
-  // TODO: This should also be included in a CSP header like:
-  //   "Content-Security-Policy: frame-ancestors 'self'"
   res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  // res.setHeader('Content-Security-Policy-Report-Only', `frame-ancestors 'self'; default-src 'self'; img-src https://*; child-src 'none';`);
 
   return next();
 };
