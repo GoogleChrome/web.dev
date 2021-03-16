@@ -4,7 +4,7 @@ title: A guide to enable cross-origin isolation
 authors:
   - agektmr
 date: 2021-02-09
-updated: 2021-03-19
+updated: 2021-03-16
 subhead: |
   Cross-origin isolation enables a web page to use powerful features such as
   SharedArrayBuffer. This article explains how to enable cross-origin
@@ -27,11 +27,12 @@ or the JS Self-Profiling API.
 If you landed this page by a SharedArrayBuffer deprecation message, it's likely
 either your website or one of the resources you emebed to your website is using
 SharedArrayBuffer. When Chrome hits 91, the functionality that has been
-available through SharedArrayBuffer will no longer work. take one of the
-following actions to fix the issue in advance.
+available through SharedArrayBuffer will no longer work without cross-origin
+isolation. Take one of the following actions to fix the issue in advance.
 
 * Turn on the cross-origin isolation to keep using SharedArrayBuffer.
-* Notify the third-party that actually uses SharedArrayBuffer to take action.
+* Notify the third-party vendor/provider that actually uses SharedArrayBuffer to
+  take action.
 {% endAside %}
 
 ## Determine where in your website a SharedArrayBuffer is used
@@ -39,13 +40,13 @@ following actions to fix the issue in advance.
 If you are not sure where in your site a SharedArrayBuffer is used, there are
 two ways:
 
-* Using Chrome DevTools
-* Using Deprecation Reporting
+* [Basic] Using Chrome DevTools
+* [Advanced] Using Deprecation Reporting
 
 Skip to [Do an impact analysis](:analysis) if you already know where you are
 using SharedArrayBuffer.
 
-### Using Chrome DevTools
+### [Basic] Using Chrome DevTools
 
 Chrome has a tool for developers to inspect the website. You can identify the
 issue using it.
@@ -70,7 +71,7 @@ issue using it.
    </figcaption>
 </figure>
 
-### Using Deprecation Reporting
+### [Advanced] Using Deprecation Reporting
 
 Some browsers have [a reporting functionality of deprecating
 APIs](https://wicg.github.io/deprecation-reporting/) to a specified endpoint.
