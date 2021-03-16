@@ -303,11 +303,13 @@ combines two cutting edge font technologies: variable fonts and color fonts.
   </figcaption>
 </figure>
 
-Roboto Flex and Amstelvar offer a set of "Parametric Axes." In these axes, the
-letters are deconstructed into 4 fundamental aspects of form: black or
-positive shapes, white or negative shapes, and the x and y dimensions. In the
-same way that primary colors can be blended with any other color to adjust it,
-these 4 aspects can be used to fine tune any other axis.
+[Roboto Flex](https://github.com/TypeNetwork/Roboto-Flex) and
+[Amstelvar](https://github.com/TypeNetwork/Amstelvar) offer a set of
+"Parametric Axes." In these axes, the letters are deconstructed into 4
+fundamental aspects of form: black or positive shapes, white or negative
+shapes, and the x and y dimensions. In the same way that primary colors can be
+blended with any other color to adjust it, these 4 aspects can be used to fine
+tune any other axis.
 
 The XTRA axis in Amstelvar allows you to adjust the "white" per mille value,
 as shown above. Using little bits of XTRA in opposite directions, the words'
