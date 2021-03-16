@@ -7,6 +7,7 @@ authors:
 description: A foundational overview of how to build a settings component of sliders and checkboxes.
 date: 2021-03-17
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/SUaxDTgOYvv2JXxaErBP.png
+thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/zkv1FlI6dn82rJ104yBV.png
 tags:
   - blog
   - css
