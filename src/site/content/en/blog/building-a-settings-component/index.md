@@ -890,7 +890,6 @@ in this case the icon next to the slider and the label:
 
 ```html
 <picture aria-hidden="true">
-<label aria-hidden="true">
 ```
 
 {% Video 
@@ -907,6 +906,14 @@ focus moves straight from one slider to the next. This is because we've hidden t
 elements that may have become stops on the way to the next element.
 Without these attributes a user would need to stop, listen and move past the
 picture and duplicate label element.
+
+{% Aside 'gotchas' %} 
+Ensure to cross browser test screenreader interactions.
+The original demo included `<label>` in the list of elements with
+`aria-hidden="true"`, but it's been since removed after [Twitter
+conversation](https://twitter.com/rob_dodson/status/1371859386210029568)
+revealed cross browser differences. 
+{% endAside %}
 
 The SVG is a bunch of math, let's add a `<title>` element for a free mouse hover
 title and a human readable comment about what the math is creating:
