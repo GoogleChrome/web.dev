@@ -4,7 +4,7 @@ title: A guide to enable cross-origin isolation
 authors:
   - agektmr
 date: 2021-02-09
-updated: 2021-02-19
+updated: 2021-03-19
 subhead: |
   Cross-origin isolation enables a web page to use powerful features such as
   SharedArrayBuffer. This article explains how to enable cross-origin
@@ -18,11 +18,78 @@ tags:
 ---
 
 This guide shows you how to enable cross-origin isolation. Cross-origin
-isolation is required if you want to use SharedArrayBuffer,
+isolation is required if you want to use
+[SharedArrayBuffer](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer),
 [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/),
 or the JS Self-Profiling API.
 
-## Do an impact analysis
+{% Aside 'objective' %}
+If you landed this page by a SharedArrayBuffer deprecation message, it's likely
+either your website or one of the resources you emebed to your website is using
+SharedArrayBuffer. When Chrome hits 91, the functionality that has been
+available through SharedArrayBuffer will no longer work. take one of the
+following actions to fix the issue in advance.
+
+* Turn on the cross-origin isolation to keep using SharedArrayBuffer.
+* Notify the third-party that actually uses SharedArrayBuffer to take action.
+{% endAside %}
+
+## Determine where in your website a SharedArrayBuffer is used
+
+If you are not sure where in your site a SharedArrayBuffer is used, there are
+two ways:
+
+* Using Chrome DevTools
+* Using Deprecation Reporting
+
+Skip to [Do an impact analysis](:analysis) if you already know where you are
+using SharedArrayBuffer.
+
+### Using Chrome DevTools
+
+Chrome has a tool for developers to inspect the website. You can identify the
+issue using it.
+
+1. [Open the Chrome
+   DevTools](https://developers.google.com/web/tools/chrome-devtools/open) on
+   the page you suspect it might be using a SharedArrayBuffer.
+2. Select the **Console** panel.
+3. The following message will show up if SharedArrayBuffer is used:
+      ```text
+      [Deprecation] SharedArrayBuffer will require cross-origin isolation as of M91, around May 2021. See https://developer.chrome.com/blog/enabling-shared-array-buffer/ for more details. common-bundle.js:535
+      ```
+4. The filename and the line number indicates where the SharedArrayBuffer comes
+   from. If it's a third-party library, please contact the developer to fix the
+   issue. If it's implemented as part of your website, follow the guide below to
+   enable cross-origin isolation.
+
+<figure class="w-figure">
+{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="DevToools Console warning when SharedArrayBuffer is used without cross-origin isolation", width="800", height="163" %}
+   <figcaption>
+      DevToools Console warning when SharedArrayBuffer is used without cross-origin isolation
+   </figcaption>
+</figure>
+
+### Using Deprecation Reporting
+
+Some browsers have [a reporting functionality of deprecating
+APIs](https://wicg.github.io/deprecation-reporting/) to a specified endpoint.
+
+1. [Set up a deprecation report server and get the reporting
+   URL](/coop-coep/#set-up-reporting-endpoint). You can achieve this by either
+   finding a public service or building one by yourself.
+2. Using the URL, set the following HTTP header to pages that are potentially
+   serving SharedArrayBuffer usage.
+      ```http
+      Report-To: {"group":"default","max_age":86400,"endpoints":[{"url":"THE_DEPRECATION_ENDPOINT_URL"}]}
+      ```
+3. Once the header starts to propagate, the endpoint you registered to should
+   start collecting deprecation reports.
+
+See an example implementation here:
+[https://first-party-test.glitch.me](https://first-party-test.glitch.me)
+
+## Do an impact analysis {: #analysis}
 
 Wouldn't it be great if you could assess the impact that enabling cross-origin
 isolation would have on your site without actually breaking anything? The
