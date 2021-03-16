@@ -38,52 +38,52 @@ on your website due to deprecation, follow the steps in this post.
   provider to take action.
 {% endAside %}
 
-## Determine where in your website a SharedArrayBuffer is used
+## Determine where in your website `SharedArrayBuffer` is used
 
-If you are not sure where in your site a SharedArrayBuffer is used, there are
-two ways:
+If you are not sure where in your site a `SharedArrayBuffer` is used, there are
+two ways find out:
 
-* [Basic] Using Chrome DevTools
-* [Advanced] Using Deprecation Reporting
+* Using Chrome DevTools
+* (Advanced) Using Deprecation Reporting
 
-Skip to [Do an impact analysis](:analysis) if you already know where you are
-using SharedArrayBuffer.
+If you already know where you are using `SharedArrayBuffer`, skip to 
+[Do an impact analysis](:analysis).
 
-### [Basic] Using Chrome DevTools
+### Using Chrome DevTools
 
-Chrome has a tool for developers to inspect the website. You can identify the
-issue using it.
+[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open)
+allows developers to inspect websites. 
 
 1. [Open the Chrome
    DevTools](https://developers.google.com/web/tools/chrome-devtools/open) on
-   the page you suspect it might be using a SharedArrayBuffer.
+   the page you suspect might be using `SharedArrayBuffer`.
 2. Select the **Console** panel.
-3. The following message will show up if SharedArrayBuffer is used:
+3. If the page is using `SharedArrayBuffer`, the following message will show up:
       ```text
       [Deprecation] SharedArrayBuffer will require cross-origin isolation as of M91, around May 2021. See https://developer.chrome.com/blog/enabling-shared-array-buffer/ for more details. common-bundle.js:535
       ```
-4. The filename and the line number indicates where the SharedArrayBuffer comes
-   from. If it's a third-party library, please contact the developer to fix the
-   issue. If it's implemented as part of your website, follow the guide below to
-   enable cross-origin isolation.
+4. The filename and the line number at the end of the message (for example, `common-bundle.js:535`) 
+   indicate where the `SharedArrayBuffer` is coming from. If it's a third-party library, 
+   contact the developer to fix the issue. If it's implemented as part of your website, follow 
+   the guide below to enable cross-origin isolation.
 
 <figure class="w-figure">
-{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="DevToools Console warning when SharedArrayBuffer is used without cross-origin isolation", width="800", height="163" %}
+{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="DevToools Console warning when SharedArrayBuffer is used without cross-origin isolation", width="800", height="163", class="w-screenshot" %}
    <figcaption>
-      DevToools Console warning when SharedArrayBuffer is used without cross-origin isolation
+      DevToools Console warning when `SharedArrayBuffer` is used without cross-origin isolation.
    </figcaption>
 </figure>
 
-### [Advanced] Using Deprecation Reporting
+### (Advanced) Using Deprecation Reporting
 
 Some browsers have [a reporting functionality of deprecating
 APIs](https://wicg.github.io/deprecation-reporting/) to a specified endpoint.
 
 1. [Set up a deprecation report server and get the reporting
    URL](/coop-coep/#set-up-reporting-endpoint). You can achieve this by either
-   finding a public service or building one by yourself.
+   using a public service or building one yourself.
 2. Using the URL, set the following HTTP header to pages that are potentially
-   serving SharedArrayBuffer usage.
+   serving `SharedArrayBuffer`.
       ```http
       Report-To: {"group":"default","max_age":86400,"endpoints":[{"url":"THE_DEPRECATION_ENDPOINT_URL"}]}
       ```
@@ -91,9 +91,9 @@ APIs](https://wicg.github.io/deprecation-reporting/) to a specified endpoint.
    start collecting deprecation reports.
 
 See an example implementation here:
-[https://first-party-test.glitch.me](https://first-party-test.glitch.me)
+[https://first-party-test.glitch.me](https://first-party-test.glitch.me).
 
-## Do an impact analysis {: #analysis}
+## Analyze the impact of cross-origin isolation  {: #analysis}
 
 Wouldn't it be great if you could assess the impact that enabling cross-origin
 isolation would have on your site without actually breaking anything? The
