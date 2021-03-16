@@ -19,7 +19,7 @@ tags:
 
 This guide shows you how to enable cross-origin isolation. Cross-origin
 isolation is required if you want to use
-[SharedArrayBuffer](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer),
+[`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer),
 [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/),
 or the JS Self-Profiling API.
 
@@ -70,7 +70,7 @@ allows developers to inspect websites.
 <figure class="w-figure">
 {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/GOgkyjAabePTc8AG22F7.png", alt="DevToools Console warning when SharedArrayBuffer is used without cross-origin isolation", width="800", height="163", class="w-screenshot" %}
    <figcaption>
-      DevToools Console warning when `SharedArrayBuffer` is used without cross-origin isolation.
+      DevToools Console warning when SharedArrayBuffer is used without cross-origin isolation.
    </figcaption>
 </figure>
 
