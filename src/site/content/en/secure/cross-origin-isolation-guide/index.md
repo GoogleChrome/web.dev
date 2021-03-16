@@ -47,7 +47,7 @@ two ways find out:
 * (Advanced) Using Deprecation Reporting
 
 If you already know where you are using `SharedArrayBuffer`, skip to 
-[Do an impact analysis](:analysis).
+[Analyze the impact of cross-origin isolation](:analysis).
 
 ### Using Chrome DevTools
 
@@ -97,9 +97,9 @@ See an example implementation here:
 
 Wouldn't it be great if you could assess the impact that enabling cross-origin
 isolation would have on your site without actually breaking anything? The
-`Cross-Origin-Opener-Policy-Report-Only` and
-`Cross-Origin-Embedder-Policy-Report-Only` HTTP headers allow you to do just
-that.
+[`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) and
+[`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) 
+HTTP headers allow you to do just that.
 
 1. Set [`Cross-Origin-Opener-Policy-Report-Only:
    same-origin`](/coop-coep/#1.-set-the-cross-origin-opener-policy:-same-origin-header-on-the-top-level-document)
@@ -133,24 +133,21 @@ After you have determined which resources will be affected by cross-origin
 isolation, here are general guidelines for how you actually opt-in those
 cross-origin resources:
 
-1. On cross-origin resources loaded into iframes, set the
-   `Cross-Origin-Embedder-Policy-Report-Only: require-corp` header to do an
-   impact analysis.
-2. On cross-origin resources such as images, scripts, stylesheets, iframes, and
+1. On cross-origin resources such as images, scripts, stylesheets, iframes, and
    others, set the [`Cross-Origin-Resource-Policy:
    cross-origin`](https://resourcepolicy.fyi/#cross-origin) header. On same-site
    resources, set [`Cross-Origin-Resource-Policy:
    same-site`](https://resourcepolicy.fyi/#same-origin) header.
-3. Set the `crossorigin` attribute in the HTML tag on top-level document if the
+2. Set the `crossorigin` attribute in the HTML tag on top-level document if the
    resource is served with [CORS](/cross-origin-resource-sharing/) (for example,
    `<img src="example.jpg" crossorigin>`).
-4. If cross-origin resources loaded into iframes involve another layer of
+3. If cross-origin resources loaded into iframes involve another layer of
    iframes, recursively apply steps described in this section before moving
    forward.
-5. Once you confirm that all cross-origin resources are opted-in, set the
+4. Once you confirm that all cross-origin resources are opted-in, set the
    `Cross-Origin-Embedder-Policy: require-corp` header on the cross-origin
    resources loaded into iframes.
-6. Make sure there are no cross-origin popup windows that require communication
+5. Make sure there are no cross-origin popup windows that require communication
    through `postMessage()`. There's no way to keep them working when
    cross-origin isolation is enabled. You can move the communication to another
    document that isn't cross-origin isolated, or use a different communication
