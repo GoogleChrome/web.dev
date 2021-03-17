@@ -332,8 +332,8 @@ from your COOP/COEP. There are two options:
 
 ##### Use a solution that accepts reports
 
-We are aware of one solution that accepts reports from the browser's COOP/COEP
-reporting functionality.
+There are a couple of solutions that accept reports from the browser's COOP/COEP
+reporting functionality:
 
 * [https://report-uri.com](https://report-uri.com)
 * [https://uriports.com](https://uriports.com)
