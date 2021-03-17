@@ -338,7 +338,7 @@ reporting functionality:
 * [https://report-uri.com](https://report-uri.com)
 * [https://uriports.com](https://uriports.com)
 
-If there's any other solutions that accept reports, [please let us know to
+If there are any other solutions that accept reports, [let us know to
 update this post](https://github.com/GoogleChrome/web.dev).
 
 ##### Build your own server that accepts reports
