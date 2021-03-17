@@ -4,7 +4,7 @@ title: Mini app components
 authors:
   - thomassteiner
 date: 2021-03-03
-# updated: 2021-03-03
+updated: 2021-03-17
 description: |
   This chapter provides details on the components that all mini app platforms make available.
 tags:
@@ -37,7 +37,7 @@ frameworks like [React](https://reactjs.org/), [Vue.js](https://vuejs.org/),
 any of these options (or, dependent on your viewpoint, _forcing_ them to make a technology choice),
 super app providers universally supply a set of components that developers must use.
 
-## Mini app components
+## Components in mini apps
 
 You can think of these components like any of the component libraries mentioned above. To get an
 overview of the available components, you can browse
