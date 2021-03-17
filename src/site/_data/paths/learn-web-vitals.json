@@ -47,7 +47,7 @@
             "pathItems": [
                 "carousel-best-practices",
                 {
-                    "title": "Infinite scroll",
+                    "title": "Infinite scroll without layout shifts",
                     "url": "https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/"
                 }
             ]
