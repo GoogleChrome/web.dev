@@ -3,11 +3,6 @@ layout: default
 title: Connect
 description: |
   TODO
-pagination:
-  data: collections.authors
-  size: 1
-  alias: paged
-  resolve: values
 ---
 <div class="connect-landing-page">
   <header class="w-masthead-about">
@@ -37,12 +32,12 @@ pagination:
 
     <section class="w-grid">
       <div class="w-grid__columns w-grid__columns--three" role="list">
-        {% for element in paged.elements %}
-          {% ConnectCard element %}
+        {% for key, author in authorsData %}
+          {% if author.connect %}
+            {% ConnectCard author %}
+          {% endif %}
         {% endfor %}
       </div>
     </section>
   </section>
-
-  {% include 'pagination.njk' %}
 </div>

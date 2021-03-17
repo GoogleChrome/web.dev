@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +14,19 @@
  * limitations under the License.
  */
 const {html} = require('common-tags');
-const BaseCard = require('./BaseCard');
 const {Img} = require('./Img');
 
 /**
+ * @typedef {{image: string, name:{given: string, family: string}, connect: {url: string, topics: string[]}}} Author
+ */
+
+/**
  * ConnectCard used to present authors you can meet.
- * @param {Object} collectionItem An eleventy collection item with post data.
+ * @param {Author} author
  * @return {string}
  */
-class ConnectCard extends BaseCard {
-  constructor(collectionItem) {
-    super(collectionItem, 'w-card-author');
-  }
-
-  renderThumbnail(_, src, alt) {
+module.exports = function (author) {
+  function renderThumbnail(src, alt) {
     const img = Img({
       src,
       alt,
@@ -36,47 +35,35 @@ class ConnectCard extends BaseCard {
       class: 'w-card-author__image',
     });
 
+    /* eslint-disable indent */
     return html`
       <figure class="w-card-base__figure w-card-author__figure">
         ${img}
       </figure>
     `;
+    /* eslint-enable indent */
   }
 
-  renderSubhead(subhead) {
-    if (!subhead) {
-      return;
-    }
-
-    return html`
-      <a
-        class="w-button w-button--primary"
-        href="${this.collectionItem.connect.url}"
-      >
-        Book a meeting
-      </a>
-    `;
-  }
-
-  /*eslint-disable */
-  renderChips() {
-    if (!this.collectionItem.connect) {
-      return;
-    }
-
-    return html`
-      <div class="w-card__chips w-chips" style="justify-content: center;">
-        ${this.collectionItem.connect.topics.map((displayedTag) => {
-          return html`
-            <span class="w-chip">
-              ${displayedTag}
-            </span>
-          `;
-        })}
-      </div>
-    `;
-  }
-  /*eslint-enable */
-}
-
-module.exports = (args) => new ConnectCard(args).render();
+  return html`
+    <div class="w-card w-card-author" role="listitem">
+      <article class="w-card-base">
+        <div class="w-card-base__cover w-card-base__cover--with-image">
+          ${renderThumbnail(author.image, '')}
+        </div>
+        <h2 class="w-card-base__headline--with-image">
+          ${author.name.given + ' ' + author.name.family}
+        </h2>
+        <a
+          class="w-button w-button--primary gap-bottom-300"
+          href="${author.connect.url}"
+        >
+          Book a meeting
+        </a>
+        <div>
+          <strong>Topics:</strong>
+          ${author.connect.topics.join(', ')}
+        </div>
+      </article>
+    </div>
+  `;
+};
