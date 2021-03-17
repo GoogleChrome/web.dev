@@ -10,7 +10,7 @@ description: >
   Vodafone found that a 31% improvement in LCP led to 8% more sales,
   a 15% improvement in their lead to visit rate, and a 11% improvement
   in their cart to visit rate.
-date: 2021-03-09
+date: 2021-03-17
 hero: image/BrQidfK9jaQyIHwdw91aVpkPiib2/EEaOcO1E9B4ZI4hHgJAb.png
 # thumbnail: image/admin/i2nyfqyVr4XWqilOxPrY.png
 alt: An illustration of an A/B test.
