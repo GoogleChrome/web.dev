@@ -756,7 +756,7 @@ const writableStream = new WritableStream({
     // Called by constructor
     console.log('[start writable]');
   },
-  write(chunk, controller) {
+  async write(chunk, controller) {
     // Called upon writer.write()
     console.log('[write]', chunk);
     // Wait for next write.
