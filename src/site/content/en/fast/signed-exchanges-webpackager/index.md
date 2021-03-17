@@ -346,7 +346,8 @@ used with signed exchanges.
         file containing your full certificate chain.
     *   Change the line `KeyFile = 'priv.key'` to reflect the location of the
         private key corresponding to your PEM File.
-    *   Change the line `Domain = 'example.org'` to reflect your site.
+    *   Change the lines `Domain = 'example.org'` and `CertURLBase = 'data:'`
+        to reflect your site.
     *   (Optional) To have `webpkgserver` auto-renew the SXG certificate every
         90 days, configure the options in the `[SXG.ACME]` section of
         `webpkgserver.toml`. This option only applies to sites with a DigiCert
