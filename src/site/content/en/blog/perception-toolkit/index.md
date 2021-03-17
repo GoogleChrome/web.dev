@@ -99,7 +99,7 @@ The file itself looks something like this:
 ## The user experience
 
 What if you want more than the default user experience? The toolkit gives you
-livecycle events, Card and Button objects for crafting the user experience
+lifecycle events, Card and Button objects for crafting the user experience
 around those events, and an easy way to style the cards. I'm going to show a
 little of this with code based losely on our [Getting
 Started](https://perceptiontoolkit.dev/getting-started/) guide.

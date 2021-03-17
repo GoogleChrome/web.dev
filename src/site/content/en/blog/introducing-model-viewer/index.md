@@ -34,7 +34,7 @@ site. The `<model-viewer>` web component, [introduced in early
 2019](/model-viewer), seeks to make putting 3D models on the web as easy as
 writing a few lines of HTML. Since then, the team has been working to address
 feedback and requests from the community. The culmination of that work was
-`<model-viewer>` version 1.0, relesed earlier this year. We're now announcing
+`<model-viewer>` version 1.0, released earlier this year. We're now announcing
 the release of `<model-viewer>` 1.1. You can [read the release
 notes](https://github.com/google/model-viewer/releases/tag/v1.1.0) in GitHub.
 

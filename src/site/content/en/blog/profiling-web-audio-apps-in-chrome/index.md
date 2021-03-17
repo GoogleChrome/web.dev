@@ -1,7 +1,7 @@
 ---
 title: Profiling Web Audio apps in Chrome
 subhead: >
-  Learn how to profile the performance of Web Audio apps in Chrome using 
+  Learn how to profile the performance of Web Audio apps in Chrome using
   `chrome://tracing` and the **WebAudio** tab in DevTools.
 description: >
   Learn how to profile the performance of Web Audio apps in Chrome using
@@ -210,7 +210,7 @@ This tab shows information about running instances of `BaseAudioContext`.
 Use it to see how the web audio renderer is performing on the page.
 
 Since a page can have multiple `BaseAudioContext` instances, the **Context Selector**
-(which is the drop-down menu that says `realtime (4e1073)` in the last screenshot), 
+(which is the drop-down menu that says `realtime (4e1073)` in the last screenshot),
 allows you to choose what you want to inspect. The inspector
 view shows the properties (e.g. sample rate, buffer size, channel count, and
 context state) of a `BaseAudioContext` instance that you select, and it
@@ -231,7 +231,7 @@ information:
   gets close to 100 percent, it means that the renderer is doing too much for a
   given render budget, so you should consider doing less in the web audio code.
 
-You can manullay trigger a garbage collector by clicking the trash can icon.
+You can manually trigger a garbage collector by clicking the trash can icon.
 
 ## Conclusion
 
