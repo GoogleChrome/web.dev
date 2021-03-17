@@ -15,7 +15,7 @@ authors:
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-03-08
+updated: 2021-03-17
 tags:
   - blog
   - security
@@ -335,6 +335,7 @@ from your COOP/COEP. There are two options:
 We are aware of one solution that accepts reports from the browser's COOP/COEP
 reporting functionality.
 
+* [https://report-uri.com](https://report-uri.com)
 * [https://uriports.com](https://uriports.com)
 
 If there's any other solutions that accept reports, [please let us know to
