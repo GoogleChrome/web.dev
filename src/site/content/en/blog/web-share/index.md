@@ -118,7 +118,7 @@ if (navigator.canShare && navigator.canShare({ files: filesArray })) {
 ```
 
 Notice that the sample handles feature detection by testing for
-`naviagator.canShare()` rather than for `navigator.share()`.
+`navigator.canShare()` rather than for `navigator.share()`.
 The data object passed to `canShare()` only supports the `files` property.
 Image, video, audio, and text files can be shared. (See
 [Permitted File Extensions in Chromium](https://docs.google.com/document/d/1tKPkHA5nnJtmh2TgqWmGSREUzXgMUFDL6yMdVZHqUsg/edit?usp=sharing).)

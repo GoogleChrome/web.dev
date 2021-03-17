@@ -538,7 +538,7 @@ To use all the available axes, or ranges of values, you will have to [manually
 compose](https://developers.google.com/fonts/docs/css2) the URL to the Google
 Fonts API. The [variable fonts overview](https://fonts.google.com/variablefonts) lists all axes and values.
 
-The [Google Variable Fonts Links](https://github.com/RoelN/google-variable-fonts-links) 
+The [Google Variable Fonts Links](https://github.com/RoelN/google-variable-fonts-links)
 tool can also give you the latest URLs for the full variable fonts.
 
 ## Font-variation-settings inheritance
@@ -678,7 +678,7 @@ Google Fonts](https://csswizardry.com/2020/05/the-fastest-google-fonts/).
 All modern browsers [support variable
 fonts](https://caniuse.com/#feat=variable-fonts). In case you need to support
 older browsers, you can choose to build your site with static fonts, and use
-variable fonts as progessive enhancement:
+variable fonts as progressive enhancement:
 
 ```css
 /* Set up Roboto for old browsers, only regular + bold */

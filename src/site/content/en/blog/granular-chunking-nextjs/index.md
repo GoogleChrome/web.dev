@@ -81,7 +81,7 @@ _half of pages_ isn't very effective. Modifying this ratio would only result in 
 
 To solve this problem, Next.js adopted a [different
 configuration](https://github.com/zeit/next.js/pull/7696) for`SplitChunksPlugin` that reduces
-unecessary code for any route.
+unnecessary code for any route.
 
 +   Any sufficiently large third-party module (greater than 160 KB) is split into its own individual
     chunk
