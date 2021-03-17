@@ -47,7 +47,7 @@ two ways find out:
 * (Advanced) Using Deprecation Reporting
 
 If you already know where you are using `SharedArrayBuffer`, skip to 
-[Analyze the impact of cross-origin isolation](:analysis).
+[Analyze the impact of cross-origin isolation](#analysis).
 
 ### Using Chrome DevTools
 
