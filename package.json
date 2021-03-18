@@ -35,7 +35,7 @@
     "percy": "PERCY=true npm-run-all build --parallel --race start snapshots",
     "rollup": "rollup -c",
     "snapshots": "percy exec --config ./tools/percy/.percy.conf.yml -- node tools/percy/snapshots.js",
-    "start": "firebase emulators:start",
+    "start": "firebase emulators:start --project web-dev-production-1",
     "test:integration": "mocha ./test/integration",
     "test:lib": "ELEVENTY_ENV=test npm-run-all clean rollup karma",
     "test:unit": "mocha ./test/unit && npm run test:lib",
