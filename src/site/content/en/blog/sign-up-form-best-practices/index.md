@@ -31,8 +31,8 @@ Each bounce could mean a lost and disgruntled user—not just a missed sign-up
 opportunity.
 
 {% Aside 'codelab' %}
-  If you would prefer to learn these best practices with a hands-on tutorial,
-  check out the [Sign-up form best practices codelab](/codelab-sign-up-form-best-practices).
+If you would prefer to learn these best practices with a hands-on tutorial,
+check out the [Sign-up form best practices codelab](/codelab-sign-up-form-best-practices).
 {% endAside %}
 
 Here is an example of a very simple sign-up form that demonstrates all of the best practices:
@@ -58,25 +58,23 @@ account, authorization and password management](https://cloud.google.com/blog/pr
 
 ## Checklist
 
-* [Avoid sign-in if you can](#no-forced-sign-in).
-* [Make it obvious how to create an account](#obvious-account-creation).
-* [Make it obvious how to access account details](#obvious-account-details).
-* [Cut form clutter](#cut-clutter).
-* [Consider session length](#session-length).
-* [Help password managers securely suggest and store passwords](#help-password-managers).
-* [Don't allow compromised passwords](#no-compromised-passwords).
-* [Do allow password pasting](#allow-password-pasting).
-* [Never store or transmit passwords in plain text](#salt-and-hash).
-* [Don't force password updates](#no-forced-password-updates).
-* [Make it simple to change or reset passwords](#password-change).
-* [Enable federated login](#federated-login).
-* [Make account switching simple](#account-switching).
-* [Consider offering multi-factor authentication](#multi-factor-authentication).
-* [Take care with usernames](#username).
-* [Test in the field as well as the lab](#analytics-rum).
-* [Test on a range of browsers, devices and platforms](#test-platforms).
-
-
+- [Avoid sign-in if you can](#no-forced-sign-in).
+- [Make it obvious how to create an account](#obvious-account-creation).
+- [Make it obvious how to access account details](#obvious-account-details).
+- [Cut form clutter](#cut-clutter).
+- [Consider session length](#session-length).
+- [Help password managers securely suggest and store passwords](#help-password-managers).
+- [Don't allow compromised passwords](#no-compromised-passwords).
+- [Do allow password pasting](#allow-password-pasting).
+- [Never store or transmit passwords in plain text](#salt-and-hash).
+- [Don't force password updates](#no-forced-password-updates).
+- [Make it simple to change or reset passwords](#password-change).
+- [Enable federated login](#federated-login).
+- [Make account switching simple](#account-switching).
+- [Consider offering multi-factor authentication](#multi-factor-authentication).
+- [Take care with usernames](#username).
+- [Test in the field as well as the lab](#analytics-rum).
+- [Test on a range of browsers, devices and platforms](#test-platforms).
 
 ## Avoid sign-in if you can {: #no-forced-sign-in }
 
@@ -105,9 +103,7 @@ convince others on your web team, use [analytics](#analytics-rum) to show the im
 options.
 
 <figure class="w-figure">
-  <img src="images/obvious-sign-in.jpg" alt="Two screenshots of a mockup
-  ecommerce website viewed on an Android phone. The one on the left uses an icon for the
-  sign-in link that's somewhat ambiguous; the one on the right simply says 'Sign in'">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KeztoU8KgAqrQ5CKBSWw.jpg", alt="Two screenshots of a mockup ecommerce website viewed on an Android phone. The one on the left uses an icon for the sign-in link that's somewhat ambiguous; the one on the right simply says 'Sign in'", width="800", height="737" %}
   <figcaption class="w-figcaption">Make sign-in obvious. An icon may be ambiguous, but a <b>Sign
   in</b> button or link is obvious.</figcaption>
 </figure>
@@ -121,8 +117,7 @@ common pattern now, and your users are likely to understand it, but you can use
 {% endAside %}
 
 <figure class="w-figure">
-  <img src="images/gmail-sign-up-create-account.jpg" alt="Screenshots of sign-in for Gmail: one page,
-  showing Sign in button, when clicked leads to form that also has a Create account link.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WUgCNqhEgvoWEVwGjfrA.jpg", alt="Screenshots of sign-in for Gmail: one page, showing Sign in button, when clicked leads to form that also has a Create account link.", width="800", height="545" %}
   <figcaption class="w-figcaption">The Gmail sign-in page has a link to create an account.<br>
     At window sizes larger than shown here, Gmail displays a <b>Sign in</b> link and a <b>Create an
   account</b> button.</figcaption>
@@ -139,14 +134,12 @@ if (auth2.isSignedIn.get()) {
   var profile = auth2.currentUser.get().getBasicProfile();
   console.log(`Email: ${profile.getEmail()}`);
 }
-
 ```
 
 {: #obvious-account-details}
 
 Once a user has signed in, make it clear how to access account details. In particular, make it
 obvious how to [change or reset passwords](#password-change).
-
 
 ## Cut form clutter {: #cut-clutter}
 
@@ -266,7 +259,7 @@ Some sites don't allow text to be pasted into password inputs.
 Disallowing password pasting annoys users, encourages passwords that are memorable (and therefore
 may be easier to compromise) and, according to organizations such as the UK National
 Cyber Security Centre, may actually [reduce security](https://www.ncsc.gov.uk/blog-post/let-them-paste-passwords).
-Users only become aware that pasting is disallowed *after* they try to paste their password, so
+Users only become aware that pasting is disallowed _after_ they try to paste their password, so
 [disallowing password pasting doesn't avoid clipboard vulnerabilities](https://github.com/OWASP/owasp-masvs/issues/106).
 
 ## Never store or transmit passwords in plain text {: #salt-and-hash}
@@ -275,7 +268,7 @@ Make sure to [salt and hash](https://cheatsheetseries.owasp.org/cheatsheets/Pass
 
 ## Don't force password updates {: #no-forced-password-updates}
 
-[Don't force users to update their passwords arbitrarily.](https://pages.nist.gov/800-63-3/sp800-63b.html#-5112-memorized-secret-verifiers:~:text=Verifiers%20SHOULD%20NOT%20require%20memorized%20secrets%20to%20be%20changed%20arbitrarily%20(e.g.%2C%20periodically).)
+[Don't force users to update their passwords arbitrarily.](<https://pages.nist.gov/800-63-3/sp800-63b.html#-5112-memorized-secret-verifiers:~:text=Verifiers%20SHOULD%20NOT%20require%20memorized%20secrets%20to%20be%20changed%20arbitrarily%20(e.g.%2C%20periodically).>)
 
 Forcing password updates can be costly for IT departments, annoying to users, and [doesn't have much
 impact on security](https://pages.nist.gov/800-63-FAQ/#q-b05). It's also likely to encourage people
@@ -288,7 +281,7 @@ You should also provide your users with access to their account login history, s
 and when a login happened.
 
 <figure class="w-figure">
-  ![Gmail account activity page](images/gmail-activity.jpg)
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zZXmhWc9bZ1GtvrE5Ooq.jpg", alt="Gmail account activity page", width="800", height="469" %}
   <figcaption class="w-figcaption"><a href="https://support.google.com/mail/answer/45938?hl=en-GB"
     title="Find out how to view Gmail account activity.">Gmail account activity page</a>.</figcaption>
 </figure>
@@ -313,7 +306,6 @@ implement this.
 
 You should also make it simple for users to delete their account if that's what they want.
 
-
 ## Offer login via third-party identity providers {: #federated-login}
 
 Many users prefer to log in to websites using an email address and password sign-up form.
@@ -321,7 +313,7 @@ However, you should also enable users to log in via a third party identity provi
 federated login.
 
 <figure class="w-figure">
-  ![WordPress login page](images/federated-login.jpg)
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jubgwX1shLB7qAIiioTU.jpg", alt="WordPress login page", width="800", height="513" %}
   <figcaption class="w-figcaption">WordPress login page, with Google and Apple login options.</figcaption>
 </figure>
 
@@ -351,7 +343,7 @@ Many users share devices and swap between accounts using the same browser. Wheth
 federated login or not, you should make account switching simple.
 
 <figure class="w-figure">
-  ![Gmail, showing account switching](images/gmail-account-switching.jpg)
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sPDZJIY5Vo2ijqyuofCy.jpg", alt="Gmail, showing account switching", width="800", height="494" %}
   <figcaption class="w-figcaption">Account switching on Gmail.</figcaption>
 </figure>
 
@@ -399,13 +391,13 @@ to understand how users experience your sign-up forms. Analytics and [Real User 
 load, which UI components users interact with (or not) and how long it takes users to complete
 sign-up.
 
-* **Page analytics**: [page views, bounce rates and exits](https://analytics.google.com/analytics/academy/course/6) for every page in your sign-up flow.
-* **Interaction analytics**: [goal funnels](https://support.google.com/analytics/answer/6180923?hl=en)
-and [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events)
-indicate where users abandon the sign-up flow and what proportion of users click buttons,
-links, and other components of your sign-up pages.
-* **Website performance**: [user-centric metrics](/user-centric-performance-metrics)
-can tell you if your sign-up flow is slow to load or [visually unstable](/cls).
+- **Page analytics**: [page views, bounce rates and exits](https://analytics.google.com/analytics/academy/course/6) for every page in your sign-up flow.
+- **Interaction analytics**: [goal funnels](https://support.google.com/analytics/answer/6180923?hl=en)
+  and [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events)
+  indicate where users abandon the sign-up flow and what proportion of users click buttons,
+  links, and other components of your sign-up pages.
+- **Website performance**: [user-centric metrics](/user-centric-performance-metrics)
+  can tell you if your sign-up flow is slow to load or [visually unstable](/cls).
 
 Small changes can make a big difference to completion rates for sign-up forms. Analytics and RUM
 enable you to optimize and prioritize changes, and monitor your site for problems that aren't
@@ -413,13 +405,13 @@ exposed by local testing.
 
 ## Keep learning {: #resources }
 
-* [Sign-in form best practices](/sign-in-form-best-practices)
-* [Payment and address form best practices](/payment-and-address-form-best-practices)
-* [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
-* [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
-* [More capable form controls](/more-capable-form-controls)
-* [Creating Accessible Forms](https://webaim.org/techniques/forms/)
-* [Streamlining the Sign-up Flow Using Credential Management API](https://developers.google.com/web/updates/2016/04/credential-management-api)
-* [Verify phone numbers on the web with the Web OTP API](/web-otp)
+- [Sign-in form best practices](/sign-in-form-best-practices)
+- [Payment and address form best practices](/payment-and-address-form-best-practices)
+- [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
+- [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
+- [More capable form controls](/more-capable-form-controls)
+- [Creating Accessible Forms](https://webaim.org/techniques/forms/)
+- [Streamlining the Sign-up Flow Using Credential Management API](https://developers.google.com/web/updates/2016/04/credential-management-api)
+- [Verify phone numbers on the web with the Web OTP API](/web-otp)
 
 Photo by [@ecowarriorprincess](https://unsplash.com/@ecowarriorprincess) on [Unsplash](https://unsplash.com/photos/lUShu7PHIGA).
