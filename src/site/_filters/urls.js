@@ -14,8 +14,15 @@
  * limitations under the License.
  */
 
-const {hashForProd} = require('./lib/hash');
+/**
+ * Removes any i18n data from a URL to determine the default URL.
+ *
+ * @param {string} url URL with possible i18n folder and locale in prefix.
+ * @returns {string} URL without any i18n information.
+ */
+const getDefaultUrl = (url) =>
+  url.replace(/^\/i18n\/[a-z]{2}(-[A-Z]{2})?\//, '/');
 
 module.exports = {
-  hashForProd,
+  getDefaultUrl,
 };

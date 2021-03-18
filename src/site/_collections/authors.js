@@ -67,7 +67,7 @@ const maybeUpdateAuthorHref = (author, allAuthorPosts) => {
 /**
  * Returns all authors with their posts.
  *
- * @param {any} [collections] Eleventy collection object
+ * @param {EleventyCollectionObject} [collections] Eleventy collection object
  * @return {Authors}
  */
 module.exports = (collections) => {
@@ -81,7 +81,7 @@ module.exports = (collections) => {
     // Find all posts, sort and key by author. Don't yet filter to live posts.
     allPosts = collections
       .getFilteredByGlob('**/*.md')
-      .sort((a, b) => b.date - a.date);
+      .sort((a, b) => b.date.getTime() - a.date.getTime());
   }
 
   const authorsPosts = findAuthorsPosts(allPosts);
