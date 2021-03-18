@@ -33,8 +33,8 @@ is called #Compat2021.
 You can follow along with the process in the Compat 2021 dashboard to see how
 each major browser engine are doing in the 5 areas:
 
-<iframe src="https://wpt.fyi/compat2021?embedded" width="800" height="1000"
-frameborder="0"></iframe>
+<iframe src="https://wpt.fyi/compat2021?embedded" 
+frameborder="0" style="height: 800px; width: 100%;"></iframe>
 
 The dashboard and all related bugs are listed at
 [https://wpt.fyi/compat2021](https://wpt.fyi/compat2021).
