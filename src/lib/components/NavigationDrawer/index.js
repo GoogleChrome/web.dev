@@ -22,6 +22,7 @@ import 'wicg-inert';
 import {closeNavigationDrawer, dismissNavigationDrawer} from '../../actions';
 
 export const NAVIGATION_DRAWER_TYPE = {
+  standard: 'standard',
   dismissible: 'dismissible',
   modal: 'modal',
 };
@@ -93,8 +94,11 @@ export class NavigationDrawer extends BaseElement {
     this.drawerContainer = this.querySelector('[data-drawer-container]');
     /** @type HTMLElement */
     this.closeBtn = this.querySelector('[data-drawer-close-button]');
-    /** @type HTMLElement */
-    this.dismissBtn = this.querySelector('[data-drawer-dismiss-button]');
+
+    if (this.type === NAVIGATION_DRAWER_TYPE.dismissible) {
+      /** @type HTMLElement */
+      this.dismissBtn = this.querySelector('[data-drawer-dismiss-button]');
+    }
 
     this.addEventListeners();
     store.subscribe(this.onStateChanged);
@@ -104,7 +108,7 @@ export class NavigationDrawer extends BaseElement {
   addEventListeners() {
     this.drawerContainer.addEventListener('click', this.onBlockClicks);
     this.closeBtn.addEventListener('click', this.onClose);
-    this.dismissBtn.addEventListener('click', this.onDismiss);
+    this.dismissBtn?.addEventListener('click', this.onDismiss);
     this.addEventListener('click', this.onClose);
     this.addEventListener('touchstart', this.onTouchStart, {passive: true});
     this.addEventListener('touchmove', this.onTouchMove, {passive: true});
@@ -118,12 +122,6 @@ export class NavigationDrawer extends BaseElement {
     } = store.getState();
 
     this.open = isNavigationDrawerOpen;
-
-    console.log(
-      'is dismissible?',
-      this.type === NAVIGATION_DRAWER_TYPE.dismissible,
-      isNavigationDrawerDismissed,
-    );
 
     if (this.type === NAVIGATION_DRAWER_TYPE.dismissible) {
       this.dismissed = isNavigationDrawerDismissed;
