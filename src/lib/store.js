@@ -39,6 +39,7 @@ const initialState = {
   currentLanguage: document.documentElement.getAttribute('lang'),
   isOffline: Boolean(getMeta('offline')),
   isNavigationDrawerOpen: false,
+  isNavigationDrawerDismissed: false,
   isModalOpen: false,
   isSearchExpanded: false,
 

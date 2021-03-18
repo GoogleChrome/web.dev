@@ -58,7 +58,8 @@ export class Header extends BaseElement {
     store.unsubscribe(this.onStateChanged);
   }
 
-  onStateChanged({isSearchExpanded, currentUrl}) {
+  onStateChanged({isNavigationDrawerDismissed, isSearchExpanded, currentUrl}) {
+    this.classList.toggle('force-show', isNavigationDrawerDismissed);
     this.classList.toggle('web-header--has-expanded-search', isSearchExpanded);
 
     // Ensure that the "active" attribute is applied to any matching header

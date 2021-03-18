@@ -76,7 +76,27 @@ web-navigation-drawer[type='dismissible'] {
         transform: none;
       }
     }
+
+    &[dismissed] {
+      [data-drawer-dismiss-button] {
+        display: flex;
+      }
+  
+      [data-drawer-close-button] {
+        display: none;
+      }
+    }
   }
+
+  // &[dismissed] {
+  //   [data-drawer-dismiss-button] {
+  //     display: none;
+  //   }
+
+  //   [data-drawer-close-button] {
+  //     display: flex;
+  //   }
+  // }
 }
 
 // This is the scrim that appears behind the navigation drawer when it is
