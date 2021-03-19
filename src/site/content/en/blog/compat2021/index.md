@@ -100,6 +100,26 @@ differently between browsers:
         </figcaption>
 </figure>
 
+<div class="w-columns">
+    <figure class="w-figure" style="display: flex; flex-direction: column;">
+{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/NziooCD0D5VBX4vao3Mi.jpg", alt="ALT_TEXT_HERE", width="401", height="354" %}
+        <figcaption class="w-figcaption" style="margin-bottom: auto;">
+            The issues with auto-height flex container in <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=721123">Chromium</a>
+            and <a href="https://bugs.webkit.org/show_bug.cgi?id=209983">WebKit</a> used
+            to have bugs, leading to incorrectly sized images.
+        </figcaption>
+    </figure>
+    <figure class="w-figure" style="display: flex; flex-direction: column;">
+{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/28DdLD3B1VlWgHsJLwP2.jpg", alt="ALT_TEXT_HERE", width="401", height="354" %}
+        <figcaption class="w-figcaption" style="margin-bottom: auto;">
+            Correctly sized image. <br>
+            (Photo by <a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza
+            Mahmoudi</a>.)
+        </figcaption>
+    </figure>
+</div>
+
+
 
 [Igalia's Flexbox Cats](https://blogs.igalia.com/svillar/2021/01/20/flexbox-cats-a-k-a-fixing-images-in-flexbox/)
 blog post dives deeper into these issues with many more examples.
