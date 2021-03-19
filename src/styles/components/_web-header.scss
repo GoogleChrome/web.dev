@@ -23,13 +23,27 @@ web-header {
   font-size: 14px;
   height: $WEB_HEADER_HEIGHT;
   padding: 0 24px;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 200;
 
   @media print {
     display: none;
+  }
+
+  [data-recall-drawer-button] {
+    display: none;
+
+    @include bp(md) {
+      display: flex;
+    }
+  }
+
+  [data-open-drawer-button] {
+    @include bp(md) {
+      display: none;
+    }
   }
 
   .web-header__hamburger-btn {

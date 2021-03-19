@@ -19,7 +19,11 @@
 import {BaseElement} from '../BaseElement';
 import {store} from '../../store';
 import 'wicg-inert';
-import {closeNavigationDrawer, dismissNavigationDrawer} from '../../actions';
+import {
+  closeNavigationDrawer,
+  dismissNavigationDrawer,
+  recallNavigationDrawer,
+} from '../../actions';
 
 export const NAVIGATION_DRAWER_TYPE = {
   standard: 'standard',
@@ -66,8 +70,6 @@ export class NavigationDrawer extends BaseElement {
     this.currentX_ = 0;
     this.touchingSideNav_ = false;
 
-    this.onCloseSideNav = this.onClose.bind(this);
-    this.onCollapseSideNav = this.onDismiss.bind(this);
     this.onTouchStart = this.onTouchStart.bind(this);
     this.onTouchMove = this.onTouchMove.bind(this);
     this.onTouchEnd = this.onTouchEnd.bind(this);
@@ -98,6 +100,8 @@ export class NavigationDrawer extends BaseElement {
     if (this.type === NAVIGATION_DRAWER_TYPE.dismissible) {
       /** @type HTMLElement */
       this.dismissBtn = this.querySelector('[data-drawer-dismiss-button]');
+      /** @type HTMLElement */
+      this.recallBtn = this.querySelector('[data-drawer-recall-button]');
     }
 
     this.addEventListeners();
@@ -107,9 +111,14 @@ export class NavigationDrawer extends BaseElement {
 
   addEventListeners() {
     this.drawerContainer.addEventListener('click', this.onBlockClicks);
-    this.closeBtn.addEventListener('click', this.onClose);
-    this.dismissBtn?.addEventListener('click', this.onDismiss);
-    this.addEventListener('click', this.onClose);
+    this.closeBtn.addEventListener('click', closeNavigationDrawer);
+    if (this.dismissBtn) {
+      this.dismissBtn.addEventListener('click', dismissNavigationDrawer);
+    }
+    if (this.recallBtn) {
+      this.recallBtn.addEventListener('click', recallNavigationDrawer);
+    }
+    this.addEventListener('click', closeNavigationDrawer);
     this.addEventListener('touchstart', this.onTouchStart, {passive: true});
     this.addEventListener('touchmove', this.onTouchMove, {passive: true});
     this.addEventListener('touchend', this.onTouchEnd);
@@ -183,7 +192,7 @@ export class NavigationDrawer extends BaseElement {
     this.drawerContainer.style.transform = '';
 
     if (translateX < 0) {
-      this.onClose();
+      closeNavigationDrawer();
     }
   }
 
@@ -238,18 +247,6 @@ export class NavigationDrawer extends BaseElement {
     }
     this.inert = !this.open;
     this.removeEventListener('transitionend', this.onTransitionEnd);
-  }
-
-  onClose() {
-    // It's important to call the closeNavigationDrawer() action here instead of
-    // just setting expanded = false. The closeNavigationDrawer() action will
-    // inform other page elements that they should un-inert themselves.
-    closeNavigationDrawer();
-  }
-
-  onDismiss() {
-    // Tells a dismissible NavigationDrawer to hide itself.
-    dismissNavigationDrawer();
   }
 
   onKeyUp(e) {

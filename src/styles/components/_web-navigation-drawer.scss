@@ -62,6 +62,18 @@ web-navigation-drawer {
 
 web-navigation-drawer[type='standard'],
 web-navigation-drawer[type='dismissible'] {
+  [data-drawer-dismiss-button] {
+    display: none;
+  }
+
+  [data-drawer-recall-button] {
+    display: none;
+  }
+
+  [data-drawer-close-button] {
+    display: flex;
+  }
+
   @include bp(md) {
     &:not([dismissed]) {
       align-self: flex-start;
@@ -70,33 +82,39 @@ web-navigation-drawer[type='dismissible'] {
       top: 0;
       width: auto;
       z-index: auto;
-
+      
       [data-drawer-container] {
         box-shadow: none;
         transform: none;
       }
-    }
 
-    &[dismissed] {
       [data-drawer-dismiss-button] {
         display: flex;
+      }
+
+      [data-drawer-recall-button] {
+        display: none;
       }
   
       [data-drawer-close-button] {
         display: none;
       }
     }
+    
+    &[dismissed] {
+      [data-drawer-dismiss-button] {
+        display: none;
+      }
+
+      [data-drawer-recall-button] {
+        display: flex;
+      }
+
+      [data-drawer-close-button] {
+        display: none;
+      }
+    }
   }
-
-  // &[dismissed] {
-  //   [data-drawer-dismiss-button] {
-  //     display: none;
-  //   }
-
-  //   [data-drawer-close-button] {
-  //     display: flex;
-  //   }
-  // }
 }
 
 // This is the scrim that appears behind the navigation drawer when it is
