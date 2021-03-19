@@ -25,10 +25,8 @@ async function internalLoadAlgoliaLibrary() {
   );
   // Create an algolia client so we can get search results.
   // These keys are safe to be public.
-  // const applicationID = '2JPAZHQ6K7';
-  // const apiKey = '01ca870a3f1cad9984ed72419a12577c';
-  const applicationID = '6DCJXBKBQ5';
-  const apiKey = '9cd5016873ae87fdcc190c59e990097c';
+  const applicationID = '2JPAZHQ6K7';
+  const apiKey = '01ca870a3f1cad9984ed72419a12577c';
   const indexName = 'prod_web_dev';
   const client = algoliasearch(applicationID, apiKey);
   const index = client.initIndex(indexName);
@@ -81,7 +79,6 @@ class Search extends BaseStateElement {
 
   onStateChanged({currentLanguage}) {
     this.locale = currentLanguage;
-    console.log(this.locale);
   }
 
   connectedCallback() {

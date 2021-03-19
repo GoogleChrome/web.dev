@@ -70,11 +70,16 @@ module.exports = (collections) => {
     };
   }} */
   const algoliaCollectionProcessing = {};
-  // if (process.env.ELEVENTY_ENV !== 'prod') {
-  //   return algoliaCollection;
-  // }
+
+  if (process.env.ELEVENTY_ENV !== 'prod') {
+    return algoliaCollection;
+  }
 
   /**
+   * This just adds an `AlgoliaCollectionItem` to the `algoliaCollectionProcessing`.
+   * It checks to see if the URL exists on the object, if not it'll add it then add the
+   * `AlgoliaCollectionItem` to the `algoliaCollectionProcessing`.
+   *
    * @param {AlgoliaCollectionItem} algoliaCollectionItem
    */
   const addToCollection = (algoliaCollectionItem) => {
@@ -87,14 +92,16 @@ module.exports = (collections) => {
     ] = algoliaCollectionItem;
   };
 
-  const allSorted = collections.getAllSorted().filter((item) => {
-    return item.data.title && item.data.page.url && livePosts(item);
-  });
+  // All Author and Tag items
   /** @type Array<AuthorsItem|TagsItem> */
   const virtualCollections = [
     ...Object.values(AuthorsCollection(collections)),
     ...Object.values(TagsCollection(collections)),
   ];
+  // All posts
+  const allSorted = collections.getAllSorted().filter((item) => {
+    return item.data.title && item.data.page.url && livePosts(item);
+  });
 
   for (const item of allSorted) {
     if (item.data.disable_algolia || item.data.noindex) {
@@ -142,8 +149,24 @@ module.exports = (collections) => {
 
   /**
    * Fix up stuff for multiple languages
-   * ie: add default text to non default locale
+   * ie: add default text to non default locale so that you can search in default locale while lang set to different locale
+   * For example you can search in english if you're lang is set to polish.
+   * ```
+   * fr: {
+   *   title: 'Bonjour',
+   *   default_title: 'Hello',
+   *   locales: ['fr'],
+   * }
+   * ```
+   *
    * ie: add all other locales that dont exist to default's locales
+   * For example if there isn't a version of the page in french then the english version will show up.
+   * ```
+   * en: {
+   *   title: 'Hello',
+   *   locales: ['en', 'fr'],
+   * }
+   * ```
    */
   for (const url in algoliaCollectionProcessing) {
     const urlItem = algoliaCollectionProcessing[url];
