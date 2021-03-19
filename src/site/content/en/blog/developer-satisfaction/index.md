@@ -33,8 +33,24 @@ is called #Compat2021.
 You can follow along with the process in the Compat 2021 dashboard to see how
 each major browser engine are doing in the 5 areas:
 
+
 <iframe src="https://wpt.fyi/compat2021?embedded" 
 frameborder="0" style="height: 800px; width: 100%;"></iframe>
+
+
+<!-- <div style="
+    position: relative;
+    overflow: hidden;
+    padding-top: 80%">
+<iframe src="https://wpt.fyi/compat2021?embedded" 
+frameborder="0" style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;"></iframe>
+</div> -->
 
 The dashboard and all related bugs are listed at
 [https://wpt.fyi/compat2021](https://wpt.fyi/compat2021).
@@ -42,8 +58,8 @@ The dashboard and all related bugs are listed at
 ### The 5 top compat focus areas in 2021
 
 Here are the areas which are committed to being fixed in 2021, and they are
-outlined in more detail in [web.dev blog post "Compat2021: eliminating 5 top
-compatibility pain points on the web"].
+outlined in more detail in [Compat2021: Eliminating five top
+compatibility pain points on the web](/compat2021).
 
 +   CSS Flexbox
 +   CSS Grid

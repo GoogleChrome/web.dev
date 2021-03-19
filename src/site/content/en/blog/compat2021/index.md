@@ -90,9 +90,9 @@ example, images as flex items have often been stretched incorrectly and
 differently between browsers:
 
 <div class="w-columns">
-    <figure class="w-figure">
+    <figure class="w-figure" style="display: flex; flex-direction: column;">
     {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/qmKoKHkZga5hgBeiHuBz.png", alt="ALT_TEXT_HERE", width="800", height="400" %}
-        <figcaption class="w-figcaption">
+        <figcaption class="w-figcaption" style="margin-top: auto">
             The issues with auto-height flex container in <a
             href="https://bugs.chromium.org/p/chromium/issues/detail?id=721123">Chromium</a>
             and <a
@@ -100,11 +100,10 @@ differently between browsers:
             to have bugs, leading to incorrectly sized images.
         </figcaption>
     </figure>
-    <figure class="w-figure">
+    <figure class="w-figure" style="display: flex; flex-direction: column;">
         {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/0ruhCiZKRP9jBhnN70Xh.png", alt="ALT_TEXT_HERE", width="800", height="800" %}
-        <figcaption class="w-figcaption">
-            Correctly sized image.<br>
-            <br>
+        <figcaption class="w-figcaption" style="margin-top: auto">
+            Correctly sized image.
             By <a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza
             Mahmoudi</a>
         </figcaption>
