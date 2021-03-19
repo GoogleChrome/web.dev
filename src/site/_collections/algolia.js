@@ -151,7 +151,7 @@ module.exports = (collections) => {
 
     // Get all languages used for url
     const languagesForUrl = Object.keys(urlItem);
-    // Fins supported languages that dont have a page
+    // Finds supported languages that dont have a page
     const noPostInLanguages = supportedLocales.filter(
       (lang) => !languagesForUrl.includes(lang),
     );
