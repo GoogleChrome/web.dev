@@ -35,7 +35,7 @@ each major browser engine are doing in the 5 areas:
 
 
 <iframe src="https://wpt.fyi/compat2021?embedded" 
-frameborder="0" style="height: 800px; width: 100%;"></iframe>
+frameborder="0" style="height: 1000px; width: 100%;"></iframe>
 
 
 <!-- <div style="
