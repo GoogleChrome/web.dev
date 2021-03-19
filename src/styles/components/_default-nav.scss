@@ -14,19 +14,19 @@
     padding: 16px;
     border-bottom: 1px solid $GREY_300;
   }
-  
+
   &__logo {
     height: 30px;
     width: 125px;
   }
-  
+
   &__hide {
     height: 2.75rem;
     margin: 0 10px 0 -6px;
     width: 2.75rem;
     color: $GREY_700;
   }
-  
+
   &__content {
     padding-top: 32px;
     flex: 1;
@@ -37,14 +37,14 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
-  
+
   &__link {
     border-bottom: 1px solid $GREY_300;
     color: $GREY_700;
     font-size: 14px;
     font-weight: 500;
     padding: 16px 24px;
-  
+
     &[active] {
       -webkit-box-shadow: 0 -2px 0 $WEB_PRIMARY_COLOR inset;
       box-shadow: 0 -2px 0 $WEB_PRIMARY_COLOR inset;
@@ -64,11 +64,11 @@
     &:hover {
       background-color: rgba($PRIMARY_TEXT_COLOR, .04);
     }
-    
+
     &:focus {
       background-color: rgba($PRIMARY_TEXT_COLOR, .12);
     }
-    
+
     &:active {
       background-color: rgba($PRIMARY_TEXT_COLOR, .16);
     }
