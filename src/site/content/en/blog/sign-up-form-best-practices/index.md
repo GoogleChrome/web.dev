@@ -268,7 +268,7 @@ Make sure to [salt and hash](https://cheatsheetseries.owasp.org/cheatsheets/Pass
 
 ## Don't force password updates {: #no-forced-password-updates}
 
-[Don't force users to update their passwords arbitrarily.](<https://pages.nist.gov/800-63-3/sp800-63b.html#-5112-memorized-secret-verifiers:~:text=Verifiers%20SHOULD%20NOT%20require%20memorized%20secrets%20to%20be%20changed%20arbitrarily%20(e.g.%2C%20periodically).>)
+[Don't force users to update their passwords arbitrarily.](https://pages.nist.gov/800-63-3/sp800-63b.html#-5112-memorized-secret-verifiers:~:text=Verifiers%20SHOULD%20NOT%20require%20memorized%20secrets%20to%20be%20changed%20arbitrarily%20(e.g.%2C%20periodically).)
 
 Forcing password updates can be costly for IT departments, annoying to users, and [doesn't have much
 impact on security](https://pages.nist.gov/800-63-FAQ/#q-b05). It's also likely to encourage people
