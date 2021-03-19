@@ -164,9 +164,9 @@ You can use [Lighthouse](https://developers.google.com/web/tools/lighthouse)
 whether your site has a CSP, and whether it's strict enough to be effective
 against XSS.
 
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/DAt65SsdOKxEHmtNFEKX.png",
+{% Img src="image/9B7J9oWjgsWbuE84mmxDaY37Wpw2/42a4iEEKsD4T3yU47vNQ.png",
 alt="Lighthouse report warning that no CSP is found in enforcement mode.",
-width="800", height="174", class="w-screenshot" %}
+width="730", height="78", class="w-screenshot" %}
 
 ### Step 1: Decide if you need a nonce- or hash-based CSP
 
