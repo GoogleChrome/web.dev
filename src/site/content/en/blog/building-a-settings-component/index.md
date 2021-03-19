@@ -964,7 +964,7 @@ to the [Community remixes](#community-remixes) section below!
 
 ## Community remixes
 
-- [@tomayac](https://twitter.com/tomayac) with a taste expression regardings the
+- [@tomayac](https://twitter.com/tomayac) with their style regarding the
   hover area for the checkbox labels! This version has no hover gap between
   elements: [demo](https://tomayac.github.io/gui-challenges/settings/dist/) and
   [source](https://github.com/tomayac/gui-challenges).
