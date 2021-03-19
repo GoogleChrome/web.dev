@@ -2,8 +2,8 @@
 title: "Compat2021: Eliminating five top compatibility pain points on the web"
 subhead: 
 authors:
-  - foolip
   - robertnyman
+  - foolip
 description: 
 date: 2021-03-22
 tags:
@@ -89,26 +89,16 @@ on the web and there are still some major challenges for developers. For
 example, images as flex items have often been stretched incorrectly and
 differently between browsers:
 
-<div class="w-columns">
-    <figure class="w-figure" style="display: flex; flex-direction: column;">
-    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/qmKoKHkZga5hgBeiHuBz.png", alt="ALT_TEXT_HERE", width="800", height="400" %}
-        <figcaption class="w-figcaption" style="margin-top: auto">
-            The issues with auto-height flex container in <a
-            href="https://bugs.chromium.org/p/chromium/issues/detail?id=721123">Chromium</a>
-            and <a
-            href="https://bugs.webkit.org/show_bug.cgi?id=209983">WebKit</a> used
-            to have bugs, leading to incorrectly sized images.
+<figure class="w-figure">
+    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/gTmkyumzaJUxBbNH57uy.jpg", alt="ALT_TEXT_HERE", width="800", height="354" %}
+    <figcaption class="w-figcaption">
+        Left: The issues with auto-height flex container in <a
+        href="https://bugs.chromium.org/p/chromium/issues/detail?id=721123">Chromium</a>
+        and <a href="https://bugs.webkit.org/show_bug.cgi?id=209983">WebKit</a> used
+        to have bugs, leading to incorrectly sized images. Right: Correctly sized image.
+        (Images by <a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza Mahmoudi</a>.)
         </figcaption>
-    </figure>
-    <figure class="w-figure" style="display: flex; flex-direction: column;">
-        {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/0ruhCiZKRP9jBhnN70Xh.png", alt="ALT_TEXT_HERE", width="800", height="800" %}
-        <figcaption class="w-figcaption" style="margin-top: auto">
-            Correctly sized image.
-            By <a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza
-            Mahmoudi</a>
-        </figcaption>
-    </figure>
-</div>
+</figure>
 
 
 [Igalia's Flexbox Cats](https://blogs.igalia.com/svillar/2021/01/20/flexbox-cats-a-k-a-fixing-images-in-flexbox/)
@@ -309,8 +299,9 @@ There will be regular updates about the progress here on web.dev and you can
 also follow the progress for each focus area in the [Compat 2021
 Dashboard](https://wpt.fyi/compat2021).
 
+<a href="https://wpt.fyi/compat2021">
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/9E5bMCRuPdQlGbFHZmuz.png", alt="Compat 2021 dashboard", width="800", height="778", class="w-screenshot" %}
-
+</a>
 
 We hope this concerted effort among browser vendors to improve reliability and
 interoperability will help you go build amazing things on the web!
