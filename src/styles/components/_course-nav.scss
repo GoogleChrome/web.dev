@@ -1,3 +1,10 @@
+:root {
+  --sideBarWidth: 360px;
+  --numWidth: 3ch;
+  --transitionDur: 0.15s;
+  --counterPadding: 32px;
+}
+
 .course-nav {
   $header-height: 144px;
   $search-heigh: 48px;
@@ -5,8 +12,13 @@
   background-color: $WHITE;
   border-right: 1px solid $GREY_300;
   height: 100vh;
-  width: 360px;
+  // width: 360px;
   max-width: 90vw;
+  font-size: px-to-rem(11px); // need this to match the ch size of the counter
+
+  width: var(--sideBarWidth);
+  transition-duration: var(--transitionDur);
+  transform: translateX(calc((var(--sideBarWidth) - var(--numWidth) - var(--counterPadding)) * -1));
 
   &__header {
     display: flex;
@@ -48,7 +60,8 @@
     color: $PRIMARY_TEXT_COLOR;
     display: flex;
     min-height: 48px;
-    padding: 16px 24px;
+    // padding: 16px 24px;
+    padding: 16px 0;
 
     &[data-complete] {
       --check-display: block;
@@ -70,16 +83,42 @@
     font-size: px-to-rem(11px);
     font-weight: 600;
     line-height: 1.5;
+    // gross. need to force this down to match the baseline of the title.
+    // TODO: How will this work cross platform if the fonts are different?
+    margin-top: 4px;
+    position: absolute;
+    transform: translateX(calc(var(--sideBarWidth) - var(--numWidth) - var(--counterPadding) / 2));
+    transition-duration: var(--transitionDur);
   }
 
   &__link-title {
     font-size: px-to-rem(14px);
     line-height: 1.5;
+    margin-left: calc(var(--numWidth) + var(--counterPadding));
+    opacity: 0;
+    transition-duration: var(--transitionDur);
+    padding-right: calc(var(--counterPadding) / 2);
   }
 
   &__link-check {
     display: var(--check-display);
     height: px-to-rem(14px);
+  }
+}
+
+// On animate open:
+
+.course-nav:hover,
+.course-nav:focus,
+.course-nav:active {
+  transform: translateX(0);
+  
+  .course-nav__link-title {
+    opacity: 1;
+  }
+  
+  .course-nav__link-counter {
+    transform: translateX(calc(var(--counterPadding) / 2));
   }
 }
 

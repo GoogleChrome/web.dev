@@ -31,7 +31,11 @@
         {% for i in range(0, 40) %}
         <a class="course-nav__link" {% if i == 2 %} data-active {% endif %} {% if i == 4 %} data-complete {% endif %} href="/learn/">
           <span class="course-nav__link-counter font-mono">{{ i | padStart(3, '0') }}</span>
-          <span class="course-nav__link-title gap-left-400">Learn borders and shadows</span>
+          {% if i % 2 == 0 %}
+          <span class="course-nav__link-title gap-left-400">Flexbox</span>
+          {% else %}
+          <span class="course-nav__link-title gap-left-400">Learn borders and shadows and this is pretty long</span>
+          {% endif %}
           {{ icon('done', 'course-nav__link-check gap-left-auto') }}
         </a>
         {% endfor %}
