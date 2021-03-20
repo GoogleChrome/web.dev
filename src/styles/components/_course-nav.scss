@@ -17,6 +17,8 @@
 
   width: var(--sideBarWidth);
   transition-duration: var(--transitionDur);
+  // TODO: This value also needs to be shared with the page layout so it knows
+  // how much left margin to apply once the drawer is position fixed.
   transform: translateX(calc((var(--sideBarWidth) - var(--numWidth) - var(--counterPadding)) * -1));
 
   &__header {
@@ -31,9 +33,17 @@
   &__title {
     @include apply-utility('font', 'google-sans');
     @include apply-utility('weight', 'medium');
-    margin-top: auto;
+    color: $GREY_800;
     font-size: 28px;
     line-height: 40px;
+    margin: auto 0 20px 40px;
+  }
+
+  &__gradient {
+    background: linear-gradient(96.46deg, #B323F4 5.23%, #2BA1FF 33.16%, #02E895 68.79%, #6DDB00 90.93%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
   }
 
   &__search {
