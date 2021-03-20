@@ -94,6 +94,7 @@
 
   &__link-counter {
     color: var(--counter-color);
+    background-color: inherit;
     font-size: px-to-rem(11px);
     font-weight: 600;
     line-height: 1.5;
@@ -117,6 +118,7 @@
   &__link-check {
     display: var(--check-display);
     height: px-to-rem(14px);
+    margin-right: 16px;
   }
 }
 
@@ -158,4 +160,13 @@ web-navigation-drawer {
       }
     }
   }
+}
+
+
+.course-nav__links.scrollbar {
+  @include scrollbars(6px, transparent);
+}
+
+.course-nav__links.scrollbar:hover {
+  @include scrollbars(6px, $GREY_600);
 }
