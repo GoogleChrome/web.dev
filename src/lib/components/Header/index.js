@@ -21,7 +21,7 @@
  */
 
 import {store} from '../../store';
-import {openNavigationDrawer, recallNavigationDrawer} from '../../actions';
+import {openNavigationDrawer} from '../../actions';
 import {BaseElement} from '../BaseElement';
 
 export class Header extends BaseElement {
@@ -37,12 +37,6 @@ export class Header extends BaseElement {
       this.openDrawerBtn.addEventListener('click', openNavigationDrawer);
     }
 
-    /** @type HTMLButtonElement */
-    this.recallDrawerBtn = this.querySelector('[data-recall-drawer-button]');
-    if (this.recallDrawerBtn) {
-      this.recallDrawerBtn.addEventListener('click', recallNavigationDrawer);
-    }
-
     store.subscribe(this.onStateChanged);
   }
 
@@ -51,15 +45,10 @@ export class Header extends BaseElement {
       this.openDrawerBtn.removeEventListener('click', openNavigationDrawer);
     }
 
-    if (this.recallDrawerBtn) {
-      this.recallDrawerBtn.removeEventListener('click', recallNavigationDrawer);
-    }
-
     store.unsubscribe(this.onStateChanged);
   }
 
-  onStateChanged({isNavigationDrawerDismissed, isSearchExpanded, currentUrl}) {
-    this.classList.toggle('force-show', isNavigationDrawerDismissed);
+  onStateChanged({isSearchExpanded, currentUrl}) {
     this.classList.toggle('web-header--has-expanded-search', isSearchExpanded);
 
     // Ensure that the "active" attribute is applied to any matching header

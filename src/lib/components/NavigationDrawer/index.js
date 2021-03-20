@@ -19,14 +19,9 @@
 import {BaseElement} from '../BaseElement';
 import {store} from '../../store';
 import 'wicg-inert';
-import {
-  closeNavigationDrawer,
-  dismissNavigationDrawer,
-  recallNavigationDrawer,
-} from '../../actions';
+import {closeNavigationDrawer} from '../../actions';
 
 export const NAVIGATION_DRAWER_TYPE = {
-  standard: 'standard',
   dismissible: 'dismissible',
   modal: 'modal',
 };
@@ -97,13 +92,6 @@ export class NavigationDrawer extends BaseElement {
     /** @type HTMLElement */
     this.closeBtn = this.querySelector('[data-drawer-close-button]');
 
-    if (this.type === NAVIGATION_DRAWER_TYPE.dismissible) {
-      /** @type HTMLElement */
-      this.dismissBtn = this.querySelector('[data-drawer-dismiss-button]');
-      /** @type HTMLElement */
-      this.recallBtn = this.querySelector('[data-drawer-recall-button]');
-    }
-
     this.addEventListeners();
     store.subscribe(this.onStateChanged);
     this.onStateChanged();
@@ -112,12 +100,6 @@ export class NavigationDrawer extends BaseElement {
   addEventListeners() {
     this.drawerContainer.addEventListener('click', this.onBlockClicks);
     this.closeBtn.addEventListener('click', closeNavigationDrawer);
-    if (this.dismissBtn) {
-      this.dismissBtn.addEventListener('click', dismissNavigationDrawer);
-    }
-    if (this.recallBtn) {
-      this.recallBtn.addEventListener('click', recallNavigationDrawer);
-    }
     this.addEventListener('click', closeNavigationDrawer);
     this.addEventListener('touchstart', this.onTouchStart, {passive: true});
     this.addEventListener('touchmove', this.onTouchMove, {passive: true});
@@ -125,16 +107,9 @@ export class NavigationDrawer extends BaseElement {
   }
 
   onStateChanged({currentUrl} = {currentUrl: null}) {
-    const {
-      isNavigationDrawerOpen,
-      isNavigationDrawerDismissed,
-    } = store.getState();
+    const {isNavigationDrawerOpen} = store.getState();
 
     this.open = isNavigationDrawerOpen;
-
-    if (this.type === NAVIGATION_DRAWER_TYPE.dismissible) {
-      this.dismissed = isNavigationDrawerDismissed;
-    }
 
     if (currentUrl) {
       // Ensure that the "active" attribute is applied to any matching header

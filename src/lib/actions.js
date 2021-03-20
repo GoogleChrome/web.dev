@@ -164,20 +164,6 @@ export const closeNavigationDrawer = store.action(() => {
   return {isNavigationDrawerOpen: false};
 });
 
-export const dismissNavigationDrawer = store.action(() => {
-  document.documentElement.classList.add('js-navigation-drawer-dismissed');
-  return {isNavigationDrawerDismissed: true};
-});
-
-export const recallNavigationDrawer = store.action(() => {
-  document.documentElement.classList.remove('js-navigation-drawer-dismissed');
-  // It's possible for someone to dismiss the drawer, shrink the screen, open
-  // the drawer, then expand the screen and click the recall button.
-  // So we need to be sure to always enable the page again.
-  enablePage();
-  return {isNavigationDrawerDismissed: false};
-});
-
 export const openModal = store.action(() => {
   disablePage();
   return {isModalOpen: true};

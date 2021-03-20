@@ -12,7 +12,6 @@
   background-color: $WHITE;
   border-right: 1px solid $GREY_300;
   height: 100vh;
-  // width: 360px;
   max-width: 90vw;
   font-size: px-to-rem(11px); // need this to match the ch size of the counter
 
@@ -24,6 +23,9 @@
     display: flex;
     height: 144px;
     padding: 24px 16px 0;
+    background-image: url('/images/courses/learn-css.svg');
+    background-repeat: no-repeat;
+    background-position: right;
   }
 
   &__title {
@@ -62,6 +64,7 @@
     min-height: 48px;
     // padding: 16px 24px;
     padding: 16px 0;
+    position: relative; // this ensures the counters scroll with the link and don't blow out the container
 
     &[data-complete] {
       --check-display: block;
