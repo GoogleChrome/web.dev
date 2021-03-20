@@ -13,18 +13,29 @@
 .course-body {
   flex: 1;
   min-width: 0;
+  @include bp(md) {
+    // TODO: This is pretty gross.
+    // These values come from the course-nav which uses relative ch units.
+    // 53px is pretty close to the final computed size of the course-nav but
+    // the font-size changes on different operating systems so it's only 53px
+    // on macOS. It'll be slightly different on other platforms but it might
+    // not be noticeable...
+    margin-left: 53px;
+  }
 }
 
 .course-content {
   display: flex;
+  justify-content: center;
   margin: 24px auto;
   max-width: 1080px;
 }
 
 .course-content > main {
   flex-grow: 1;
-  min-width: 0;
   margin: 0 36px;
+  max-width: 80ch;
+  min-width: 0;
   padding: 0;
 }
 

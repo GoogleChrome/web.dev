@@ -1,4 +1,22 @@
 .header-course {
-  display: flex;
-  align-items: center;
+  background-image: url('/images/courses/learn-css.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 136px;
+
+  &__title {
+    @include apply-utility('font', 'google-sans');
+    @include apply-utility('weight', 'medium');
+    color: $GREY_800;
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: 32px;
+  }
+
+  &__gradient {
+    background: linear-gradient(96.46deg, #B323F4 5.23%, #2BA1FF 33.16%, #02E895 68.79%, #6DDB00 90.93%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
 }

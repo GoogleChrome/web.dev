@@ -73,11 +73,13 @@ web-navigation-drawer[type='dismissible'] {
   @include bp(md) {
     &:not([dismissed]) {
       align-self: flex-start;
-      position: sticky;
+      // position: sticky;
+      position: fixed;
       pointer-events: auto;
       top: 0;
       width: auto;
-      z-index: auto;
+      // z-index: auto;
+      z-index: 300;
 
       [data-drawer-container] {
         box-shadow: none;

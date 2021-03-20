@@ -13,7 +13,8 @@
   border-right: 1px solid $GREY_300;
   height: 100vh;
   max-width: 90vw;
-  font-size: px-to-rem(11px); // need this to match the ch size of the counter
+  // This needs to match the ch size of the counter
+  font-size: px-to-rem(11px);
 
   width: var(--sideBarWidth);
   transition-duration: var(--transitionDur);

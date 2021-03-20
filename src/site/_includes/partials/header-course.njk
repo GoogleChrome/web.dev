@@ -1,14 +1,14 @@
 {% from 'macros/icon.njk' import icon with context %}
 
-<web-header class="display-flex md:display-none">
-  <div class="header-course">
-    <button data-recall-drawer-button class="w-button--svg w-button--round" aria-label="Expand menu">
-      {{ icon('menu') }}
-      <span class="w-tooltip w-tooltip--left">Expand menu</span>
-    </button>
-    <button data-open-drawer-button class="w-button--svg w-button--round" aria-label="Open menu">
-      {{ icon('menu') }}
-      <span class="w-tooltip w-tooltip--left">Open menu</span>
-    </button>
-  </div>
+<web-header class="header-course display-flex md:display-none">
+  <button data-recall-drawer-button class="w-button--svg w-button--round" aria-label="Expand menu">
+    {{ icon('menu') }}
+    <span class="w-tooltip w-tooltip--left">Expand menu</span>
+  </button>
+  <button data-open-drawer-button class="w-button--svg w-button--round" aria-label="Open menu">
+    {{ icon('menu') }}
+    <span class="w-tooltip w-tooltip--left">Open menu</span>
+  </button>
+
+  <div class="header-course__title">Learn <span class="header-course__gradient">CSS!</span></div>
 </web-header>
