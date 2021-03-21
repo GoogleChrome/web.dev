@@ -52,9 +52,9 @@ const renderAuthorImages = (limit, pairs) => {
       });
       return html`
         <div class="w-author__image--row-item">
-          <a href="${info.href}">
+          <span>
             ${img}
-          </a>
+          </span>
         </div>
       `;
     })
@@ -74,9 +74,7 @@ const renderAuthorNames = (pairs) => {
 
   const inner = pairs
     .map(({info}) => {
-      return html`
-        <a class="w-author__name-link" href="${info.href}">${info.title}</a>
-      `;
+      return html` <span class="w-author__name-link"> ${info.title}</span> `;
     })
     .join(', ');
 

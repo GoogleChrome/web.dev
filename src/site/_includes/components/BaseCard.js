@@ -83,11 +83,9 @@ class BaseCard {
     }
 
     return html`
-      <a class="w-card-base__link" tabindex="-1" href="${this.url}">
-        <p class="w-card-base__subhead">
-          ${md(subhead)}
-        </p>
-      </a>
+      <p class="w-card-base__subhead">
+        ${md(subhead)}
+      </p>
     `;
   }
 
@@ -99,9 +97,9 @@ class BaseCard {
       <div class="w-card__chips w-chips">
         ${this.displayedTags.map((displayedTag) => {
           return html`
-            <a class="w-chip" href="${displayedTag.href}"
-              >${displayedTag.title}</a
-            >
+            <div class="w-chip" href="${displayedTag.href}">
+              ${displayedTag.title}
+            </div>
           `;
         })}
       </div>
@@ -113,7 +111,7 @@ class BaseCard {
 
     // prettier-ignore
     return html`
-      <div class="w-card ${this.className} ${this.isDraft()}" role="listitem">
+      <a href="${this.url}" class="w-card class="w-card ${this.className} ${this.isDraft()}"" role="listitem">
         <article
           class="w-card-base ${this.featured ? 'w-card-base--featured' : ''}"
         >
@@ -121,26 +119,17 @@ class BaseCard {
             class="w-card-base__cover ${this.thumbnail &&
               'w-card-base__cover--with-image'}"
           >
-            <a
-              class="w-card-base__link"
-              tabindex="-1"
-              href="${this.url}"
-              aria-hidden="true"
-            >
-              ${this.thumbnail &&
-                this.renderThumbnail(this.url, this.thumbnail, this.alt)}
-            </a>
+            ${this.thumbnail &&
+            this.renderThumbnail(this.url, this.thumbnail, this.alt)}
           </div>
           <div class="w-card-base__blurb">
-            <a class="w-card-base__link" href="${this.url}">
-              <h2
-                class="${this.thumbnail
-                  ? 'w-card-base__headline--with-image'
-                  : 'w-card-base__headline'}"
-              >
-                ${md(this.data.title)}
-              </h2>
-            </a>
+            <h2
+              class="${this.thumbnail
+                ? 'w-card-base__headline--with-image'
+                : 'w-card-base__headline'}"
+            >
+              ${md(this.data.title)}
+            </h2>
             ${AuthorsDate({authors, date: this.collectionItem.date})}
             <div
               class="w-card-base__desc ${this.className &&
@@ -151,7 +140,7 @@ class BaseCard {
             </div>
           </div>
         </article>
-      </div>
+      </a>
     `;
   }
 }
