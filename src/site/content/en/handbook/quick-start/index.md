@@ -41,6 +41,8 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
 
 ## Organizing content
 
+### Collections (learning paths)
+
 Posts in collections in the *Learn* section are organized thematically within *learning paths*.
 Each collection is defined in the `site/_data/paths` directory as a `json` object.
 
@@ -50,6 +52,18 @@ Each collection is defined in the `site/_data/paths` directory as a `json` objec
 
 1. Add the content of these fields to the `site/_data/i18n/paths` directory (under `en` key).
 If applicable, launch translation process for this content by emailing web.dev@.
+
+### Tags
+
+Tags are used to categorize articles and also to generate [web.dev/tags](https://web.dev/tags/) pages.
+The canonical list of tags is published in [tagsData.json](https://github.com/GoogleChrome/web.dev/blob/main/src/site/_data/tagsData.json) on Github.
+
+- to add a new tag, add it first to `tagsData.json`
+- to use an existing tag, add it to your article's `fromtmatter`:
+```bash
+tags:
+  - accessibility
+```
 
 {% Aside %}
   Googlers: Check out [web.dev process](https://docs.google.com/document/d/1Vxgrgxtz4OeJcrYJF5lpK9bVhTcGpXOXeeL4GZCV8KY)
