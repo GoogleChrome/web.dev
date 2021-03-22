@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Web Developer Satisfaction
 description: 
   Web Developer Satisfaction is a Google project to gather information about 
@@ -6,9 +7,6 @@ description:
   interoperable web platform, enabling developers to invest in and trust it, 
   and adopt and use new features to grow the platform and their business.
 date: 2021-03-22
-tags:
-  - blog
-draft: true
 ---
 
 Web Developer Satisfaction, shortened DevSAT, is a Google project to gather
@@ -71,9 +69,9 @@ and
 [2020](https://insights.developer.mozilla.org/reports/mdn-web-developer-needs-assessment-2020.html),
 testing across browsers stood out among the top pain points. To understand this
 area better, we're collaborating with MDN on further research. The results of
-this will be published on
-[https://insights.developer.mozilla.org/](https://insights.developer.mozilla.org/)
-at the end of March 2021.
+this will be published on the
+[Web DNA Report](https://insights.developer.mozilla.org/)
+page at the end of March 2021.
 
 We're already working together with all browser vendors on [WebDriver
 BiDi](https://w3c.github.io/webdriver-bidi/), a new protocol for browser
