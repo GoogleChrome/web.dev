@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-const path = require('path');
 const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
@@ -269,14 +268,12 @@ module.exports = function (config) {
   // Make .yml files work in the _data directory.
   config.addDataExtension('yml', (contents) => yaml.safeLoad(contents));
 
-  // https://www.11ty.io/docs/config/#configuration-options
-  const targetLang = process.env.ELEVENTY_LANG || '';
   return {
     dir: {
-      input: path.join('src/site/content/', targetLang),
+      input: 'src/site/content/', // we use a string path with the forward slash since windows doesn't like the paths generated from path.join
       output: 'dist',
-      data: targetLang ? '../../_data' : '../_data',
-      includes: targetLang ? '../../_includes' : '../_includes',
+      data: '../_data',
+      includes: '../_includes',
     },
     templateFormats: ['njk', 'md'],
     htmlTemplateEngine: 'njk',
