@@ -9,7 +9,7 @@ description:
 date: 2021-03-22
 ---
 
-Web Developer Satisfaction, shortened DevSAT, is a Google project to gather
+Web Developer Satisfaction, or DevSAT, is a Google project to gather
 information about the needs of web developers. Our goal is to make sure
 developers are being heard, know what's happening with their feedback and see
 issues being addressed. DevSAT is how we ensure we are focusing on the right
