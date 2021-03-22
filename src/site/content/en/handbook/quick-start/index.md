@@ -60,7 +60,7 @@ The canonical list of tags is published in [tagsData.json](https://github.com/Go
 
 - to add a new tag, add it first to `tagsData.json`
 - to use an existing tag, add it to your article's `fromtmatter`:
-```
+```bash
 tags:
   - accessibility
 ```
