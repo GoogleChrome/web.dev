@@ -16,6 +16,7 @@
 
 const {html} = require('common-tags');
 const capitalize = require('../../_filters/capitalize');
+const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
 
 /**
  * A component to help DRY up common lists of instructions.
@@ -25,9 +26,10 @@ const capitalize = require('../../_filters/capitalize');
  * @param {string} listStyle The list style to use. Defaults to 'ul'.
  * @return {string} A list of instructions.
  */
-module.exports = (type, listStyle = 'ul') => {
+function Instruction(type, listStyle = 'ul') {
+  const locale = getLocaleFromPath(this.page && this.page.filePathStem);
+
   let instruction;
-  let substitution;
   let bullet;
 
   switch (listStyle) {
@@ -49,30 +51,28 @@ module.exports = (type, listStyle = 'ul') => {
       );
   }
 
-  // Common phrases shared across multiple instructions.
-  const shared = {
-    devtools: `${bullet}Press \`Control+Shift+J\` (or \`Command+Option+J\` on Mac) to open DevTools.`,
-  };
+  function getInstruction(instruction) {
+    return `${bullet}${i18n(`i18n.instructions.${instruction}`, locale)}`;
+  }
 
   switch (type) {
     case 'remix':
-      instruction = `${bullet}Click **Remix to Edit** to make the project editable.`;
+      instruction = getInstruction('remix');
       break;
 
     // prettier-ignore
     case 'console':
       instruction = html`
-        ${bullet}Click **Tools**.
-        ${bullet}Click **Logs**.
-        ${bullet}Click **Console**.
+        ${getInstruction('console.click_logs')}
+        ${getInstruction('console.click_console')}
       `;
       break;
 
     // prettier-ignore
     case 'create':
       instruction = html`
-        ${bullet}Click **New File** and give it a name.
-        ${bullet}Click **Add This File**.
+        ${getInstruction('create.click_new_file')}
+        ${getInstruction('create.click_add_file')}
       `;
       break;
 
@@ -82,8 +82,7 @@ module.exports = (type, listStyle = 'ul') => {
       // used by this component so it's a bit easier to keep everything
       // contained in this one file.
       instruction = html`
-        ${bullet}To preview the site, press **View&nbsp;App**. Then press
-        **Fullscreen**
+        ${getInstruction('preview')}
         <img
           src="/images/glitch/fullscreen.svg"
           alt="fullscreen"
@@ -94,25 +93,25 @@ module.exports = (type, listStyle = 'ul') => {
 
     case 'source':
       instruction = html`
-        ${bullet}To view the source, press **View&nbsp;Source**.
+        ${getInstruction('source')}
       `;
       break;
 
     case 'disable-cache':
-      instruction = html`${bullet}Select the **Disable cache** checkbox.`;
+      instruction = getInstruction('disable_cache');
       break;
 
     case 'reload-app':
-      instruction = html`${bullet}Reload the app.`;
+      instruction = getInstruction('reload_app');
       break;
 
     case 'reload-page':
-      instruction = html`${bullet}Reload the page.`;
+      instruction = getInstruction('reload_page');
       break;
 
     case 'start-profiling':
       instruction = html`
-        ${bullet}Click **Start profiling and reload page**
+        ${getInstruction('start_profiling')}
         <img
           src="/images/icons/reload.svg"
           alt="reload"
@@ -122,10 +121,7 @@ module.exports = (type, listStyle = 'ul') => {
       break;
 
     case 'devtools-command':
-      instruction = html`
-        ${bullet}Press \`Control+Shift+P\` (or \`Command+Shift+P\` on Mac) to
-        open the **Command** menu.
-      `;
+      instruction = getInstruction('devtools.command')
       break;
 
     case 'devtools':
@@ -138,13 +134,16 @@ module.exports = (type, listStyle = 'ul') => {
     case 'devtools-application':
     case 'devtools-security':
     case 'devtools-lighthouse':
-      instruction = html`${shared.devtools}`;
-      substitution = type.substring('devtools-'.length);
-      if (substitution) {
+      instruction = getInstruction('devtools.open');
+      const tab = type.substring('devtools-'.length);
+      if (tab) {
         // prettier-ignore
         instruction = html`
-          ${instruction}
-          ${bullet}Click the **${capitalize(substitution)}** tab.
+          ${getInstruction('devtools.open')}
+          ${getInstruction('devtools.open_tab').replace(
+            /<TAB>/g,
+            capitalize(tab)
+          )}
         `;
       }
       break;
@@ -154,22 +153,22 @@ module.exports = (type, listStyle = 'ul') => {
     case 'audit-accessibility':
     case 'audit-pwa':
     case 'audit-best-practices':
-      substitution = type.split('-').slice(1).join(' ');
-      if (substitution === 'seo') {
-        substitution = substitution.toUpperCase();
-      } else if (substitution === 'pwa') {
-        substitution = 'Progressive Web App';
+      let audit = type.split('-').slice(1).join(' ');
+      if (audit === 'seo') {
+        audit = audit.toUpperCase();
+      } else if (audit === 'pwa') {
+        audit = 'Progressive Web App';
       } else {
         // Note: DevTools uses title case for Progressive Web App but
         // only capitalizes "Best practices"
-        substitution = capitalize(substitution);
+        audit = capitalize(audit);
       }
       // prettier-ignore
       instruction = html`
-        ${shared.devtools}
-        ${bullet}Click the **Lighthouse** tab.
-        ${bullet}Make sure the **${substitution}** checkbox is selected in the *Categories* list.
-        ${bullet}Click the **Generate report** button.
+        ${getInstruction('devtools.open')}
+        ${getInstruction('lighthouse.open_tab')}
+        ${getInstruction('lighthouse.select_audit').replace(/<AUDIT>/g, audit)}
+        ${getInstruction('lighthouse.generate_report')}
       `;
       break;
 
@@ -178,3 +177,5 @@ module.exports = (type, listStyle = 'ul') => {
   }
   return instruction;
 };
+
+module.exports = Instruction;

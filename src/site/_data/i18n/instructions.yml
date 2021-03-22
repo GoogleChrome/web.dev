@@ -1,0 +1,60 @@
+remix:
+  en: Click **Remix to Edit** to make the project editable.
+
+console:
+  click_tools:
+    en: Click **Tools**.
+
+  click_logs:
+    en: Click **Logs**.
+
+  click_console:
+    en: Click **Console**.
+
+create:
+  click_new_file:
+    en: Click **New File** and give it a name.
+
+  click_add_file:
+    en: Click **Add This File**.
+
+preview:
+  en: To preview the site, press **View&nbsp;App**. Then press **Fullscreen**
+
+source:
+  en: To view the source, press **View&nbsp;Source**.
+
+disable_cache:
+  en: Select the **Disable cache** checkbox.
+
+reload_app:
+  en: Reload the app.
+
+reload_page:
+  en: Reload the page.
+
+start_profiling:
+  en: Click **Start profiling and reload page**
+
+devtools:
+  open:
+    en: Press `Control+Shift+J` (or `Command+Option+J` on Mac) to open DevTools.
+
+  command:
+    en: Press `Control+Shift+P` (or `Command+Shift+P` on Mac) to
+        open the **Command** menu.
+
+  open_tab:
+    en: Click the **<TAB>** tab.
+
+lighthouse:
+  open_tab:
+    en: Click the **Lighthouse** tab.
+
+  select_audit:
+    en: Make sure the **<AUDIT>** checkbox is selected in the *Categories* list.
+
+  generate_report:
+    en: Click the **Generate report** button.
+
+
