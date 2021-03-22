@@ -15,6 +15,7 @@ authors:
 hero: "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/KQ5oNcLGKdBSuUM8pFPx.jpeg"
 alt: "A puzzle with a missing piece."
 date: 2021-03-22
+updated: 2021-03-22
 tags:
   - blog
   - CSS
@@ -45,7 +46,7 @@ surveys.
 
 The goal in 2021 is to eliminate browser compatibility problems in five key focus
 areas so developers can confidently build on them as reliable foundations. This
-effort is called #**Compat2021**.
+effort is called [**#Compat2021**](https://twitter.com/search?q=%23compat2021&src=typed_query&f=live).
 
 ## Choosing what to focus on
 
