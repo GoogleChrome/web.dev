@@ -22,6 +22,7 @@ const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
  * A component to help DRY up common lists of instructions.
  * This helps ensure consistency in our docs and makes it easy
  * to respond when Glitch changes their UI.
+ * @this {EleventyPage}
  * @param {string} type The type of instruction to print.
  * @param {string} listStyle The list style to use. Defaults to 'ul'.
  * @return {string} A list of instructions.
@@ -63,6 +64,7 @@ function Instruction(type, listStyle = 'ul') {
     // prettier-ignore
     case 'console':
       instruction = html`
+        ${getInstruction('console.click_tools')}
         ${getInstruction('console.click_logs')}
         ${getInstruction('console.click_console')}
       `;
@@ -92,6 +94,7 @@ function Instruction(type, listStyle = 'ul') {
       break;
 
     case 'source':
+      // prettier-ignore
       instruction = html`
         ${getInstruction('source')}
       `;
@@ -121,7 +124,7 @@ function Instruction(type, listStyle = 'ul') {
       break;
 
     case 'devtools-command':
-      instruction = getInstruction('devtools.command')
+      instruction = getInstruction('devtools.command');
       break;
 
     case 'devtools':
@@ -135,15 +138,12 @@ function Instruction(type, listStyle = 'ul') {
     case 'devtools-security':
     case 'devtools-lighthouse':
       instruction = getInstruction('devtools.open');
-      const tab = type.substring('devtools-'.length);
+      let tab = type.substring('devtools-'.length);
       if (tab) {
-        // prettier-ignore
+        tab = capitalize(tab);
         instruction = html`
           ${getInstruction('devtools.open')}
-          ${getInstruction('devtools.open_tab').replace(
-            /<TAB>/g,
-            capitalize(tab)
-          )}
+          ${getInstruction('devtools.open_tab').replace(/<TAB>/g, tab)}
         `;
       }
       break;
@@ -176,6 +176,6 @@ function Instruction(type, listStyle = 'ul') {
       throw new Error(`Could not find Instruction with type: ${type}`);
   }
   return instruction;
-};
+}
 
 module.exports = Instruction;
