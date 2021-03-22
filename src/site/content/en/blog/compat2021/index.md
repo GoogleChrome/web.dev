@@ -232,7 +232,7 @@ demo</a> by Rob Flack.
 ### CSS aspect-ratio property
 
 The new
-`[aspect-ratio](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio)`
+[`aspect-ratio`](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio)
 CSS property makes it easy to maintain a consistent width-to-height ratio for
 elements, removing the need for the well-known
 [`padding-top` hack](https://web.dev/aspect-ratio/#the-old-hack:-maintaining-aspect-ratio-with-padding-top):
