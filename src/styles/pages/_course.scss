@@ -22,6 +22,10 @@
     // not be noticeable...
     margin-left: 53px;
   }
+
+  @include bp(lg) {
+    margin-left: 0;
+  }
 }
 
 .course-content {
