@@ -4,7 +4,7 @@
 
 import {html} from 'lit-element';
 import {unsafeHTML} from 'lit-html/directives/unsafe-html';
-import {BaseElement} from '../BaseElement';
+import {BaseStateElement} from '../BaseStateElement';
 import {store} from '../../store';
 import {debounce} from '../../utils/debounce';
 import {trackError} from '../../analytics';
@@ -27,7 +27,7 @@ async function internalLoadAlgoliaLibrary() {
   // These keys are safe to be public.
   const applicationID = '2JPAZHQ6K7';
   const apiKey = '01ca870a3f1cad9984ed72419a12577c';
-  const indexName = 'webdev';
+  const indexName = 'prod_web_dev';
   const client = algoliasearch(applicationID, apiKey);
   const index = client.initIndex(indexName);
   return index;
@@ -35,10 +35,10 @@ async function internalLoadAlgoliaLibrary() {
 
 /**
  * An Algolia search box.
- * @extends {BaseElement}
+ * @extends {BaseStateElement}
  * @final
  */
-class Search extends BaseElement {
+class Search extends BaseStateElement {
   static get properties() {
     return {
       // Manages the expanded/collapsed state of the UI.
@@ -50,6 +50,8 @@ class Search extends BaseElement {
       // Indicates which search result should be highlighted in the popout.
       // Primarily used for keyboard behavior.
       cursor: {type: Number},
+      // Locale to use for search
+      locale: {type: String},
     };
   }
 
@@ -61,6 +63,7 @@ class Search extends BaseElement {
     this.query = '';
     this.timeout;
     this.expanded = false;
+    this.locale = 'en';
 
     // On smaller screens we don't do an animation so it's ok for us to fire off
     // actions immediately. On larger screens we need to wait for the searchbox
@@ -72,6 +75,10 @@ class Search extends BaseElement {
     // Debounce the method we use to search Algolia so we don't waste calls
     // while the user is typing.
     this.search = debounce(this.search.bind(this), 200);
+  }
+
+  onStateChanged({currentLanguage}) {
+    this.locale = currentLanguage;
   }
 
   connectedCallback() {
@@ -359,6 +366,7 @@ class Search extends BaseElement {
         attributesToRetrieve: ['url'],
         highlightPreTag: '<strong>',
         highlightPostTag: '</strong>',
+        facetFilters: [`locales:${this.locale}`],
       });
       if (this.query === query) {
         this.hits = hits;

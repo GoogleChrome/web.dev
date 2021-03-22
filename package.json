@@ -49,7 +49,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "algoliasearch": "^4.1.0",
+    "algoliasearch": "^4.8.6",
     "babel-eslint": "^10.0.3",
     "focus-visible": "^5.0.2",
     "idb-keyval": "^3.2.0",
@@ -60,6 +60,8 @@
     "lit-html": "^1.2.1",
     "lodash.get": "^4.4.2",
     "pretty-ms": "^7.0.0",
+    "sizeof": "^1.0.0",
+    "strip-comments": "^2.0.1",
     "terser": "^4.6.4",
     "unistore": "^3.4.1",
     "web-vitals": "^0.2.4",

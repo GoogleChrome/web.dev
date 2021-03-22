@@ -56,15 +56,17 @@ const Tooltip = require(`./${componentsDir}/Tooltip`);
 const {Video} = require(`./${componentsDir}/Video`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
-const collectionsDir = 'src/site/_collections';
-const authors = require(`./${collectionsDir}/authors`);
-const blogPostsDescending = require(`./${collectionsDir}/blog-posts-descending`);
-const newsletters = require(`./${collectionsDir}/newsletters`);
+// Collections
+const algolia = require('./src/site/_collections/algolia');
+const authors = require(`./src/site/_collections/authors`);
+const blogPostsDescending = require(`./src/site/_collections/blog-posts-descending`);
+const newsletters = require(`./src/site/_collections/newsletters`);
 const {
   postsWithLighthouse,
-} = require(`./${collectionsDir}/posts-with-lighthouse`);
-const tags = require(`./${collectionsDir}/tags`);
+} = require(`./src/site/_collections/posts-with-lighthouse`);
+const tags = require(`./src/site/_collections/tags`);
 
+// Filters
 const filtersDir = 'src/site/_filters';
 const consoleDump = require(`./${filtersDir}/console-dump`);
 const {i18n} = require(`./${filtersDir}/i18n`);
@@ -168,6 +170,7 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // COLLECTIONS
   // ----------------------------------------------------------------------------
+  config.addCollection('algolia', algolia);
   config.addCollection('authors', authors);
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('newsletters', newsletters);

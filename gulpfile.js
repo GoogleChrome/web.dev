@@ -38,6 +38,7 @@ const compressImagesTransform = (pngQuality, jpegQuality) => {
     return through2.obj();
   }
   return imagemin([
+    // @ts-ignore
     pngquant({quality: [pngQuality, pngQuality]}),
     mozjpeg({quality: jpegQuality * 100}),
   ]);
