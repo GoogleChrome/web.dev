@@ -137,36 +137,3 @@
     transform: translateX(calc(var(--counterPadding) / 2));
   }
 }
-
-web-navigation-drawer {
-  [data-nav-collapse-button] {
-    display: none;
-  }
-
-  &[collapsed] {
-    [data-nav-collapse-button] {
-      display: none;
-    }
-  }
-
-  @include bp(md) {
-    &:not([collapsed]) {
-      [data-nav-collapse-button] {
-        display: inline-flex;
-      }
-
-      [data-drawer-close-button] {
-        display: none;
-      }
-    }
-  }
-}
-
-
-.course-nav__links.scrollbar {
-  @include scrollbars(6px, transparent);
-}
-
-.course-nav__links.scrollbar:hover {
-  @include scrollbars(6px, $GREY_600);
-}
