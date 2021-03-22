@@ -81,7 +81,7 @@ It can also be configured to bypass the checks when exceptions are needed.
 
 ## Automated Speed Governance (ASG) process flow
 
-### Spinnaker:
+### Spinnaker
 
 Start point. A developer merges their code into a pre-production environment.
 
@@ -90,13 +90,13 @@ Start point. A developer merges their code into a pre-production environment.
 1. Run a [Docker](https://www.docker.com/)
 container to start building the ASG application or send a notification (in the event of deployment failure).
 
-### Jenkins and Lighthouse:
+### Jenkins and Lighthouse
 
 1. Build the ASG application with [Jenkins](https://www.jenkins.io/).
 1. Run a custom Docker container that has Chrome and Lighthouse installed.
 Pull `lighthouserc.json` from the SSG app and run `lhci autorun --collect-url=https://example.com`.
 
-### Jenkins and SSG app:
+### Jenkins and SSG app
 
 1. Extract `assertion-results.json` from lhci and compare it to predefined budgets in `budgets.json`.
 Save the output as a text file and upload it to [Nexus](https://www.sonatype.com/nexus/repository-oss) for future comparisons.
