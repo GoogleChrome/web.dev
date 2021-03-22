@@ -19,10 +19,13 @@ const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
 
 function StackOverflow(tag) {
   const locale = getLocaleFromPath(this.page && this.page.filePathStem);
-
+  const text = i18n(`i18n.stackoverflow.ask_question`, locale).replace(
+    /<TAG>/g,
+    tag,
+  );
   return html`
-    <div class="w-aside w-aside--note">kkkk
-      ${i18n(`i18n.stackoverflow.ask_question`, locale)}
+    <div class="w-aside w-aside--note">
+      ${text}
     </div>
   `;
 }
