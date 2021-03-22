@@ -1,7 +1,10 @@
 ---
 title: Web Developer Satisfaction
-subhead: 
 description: 
+  Web Developer Satisfaction is a Google project to gather information about 
+  the needs of web developers. The goal is a more reliable, predictable and 
+  interoperable web platform, enabling developers to invest in and trust it, 
+  and adopt and use new features to grow the platform and their business.
 date: 2021-03-22
 tags:
   - blog
@@ -26,36 +29,21 @@ their business.
 ## 2021 focus on compatibility
 
 Compatibility on the web has always been a big challenge for developers. The
-goal in 2021 is to eliminate browser compatibility problems in 5 key focus areas
+goal in 2021 is to eliminate browser compatibility problems in five key focus areas
 so developers can confidently rely on these areas not having bugs. This effort
 is called #Compat2021.
 
 You can follow along with the process in the Compat 2021 dashboard to see how
-each major browser engine are doing in the 5 areas:
+each major browser engine are doing in the five areas:
 
 
 <iframe src="https://wpt.fyi/compat2021?embedded" 
 frameborder="0" style="height: 1000px; width: 100%;"></iframe>
 
-
-<!-- <div style="
-    position: relative;
-    overflow: hidden;
-    padding-top: 80%">
-<iframe src="https://wpt.fyi/compat2021?embedded" 
-frameborder="0" style="
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;"></iframe>
-</div> -->
-
 The dashboard and all related bugs are listed at
 [https://wpt.fyi/compat2021](https://wpt.fyi/compat2021).
 
-### The 5 top compat focus areas in 2021
+### The five top compat focus areas in 2021
 
 Here are the areas which are committed to being fixed in 2021, and they are
 outlined in more detail in [Compat2021: Eliminating five top

@@ -1,10 +1,19 @@
 ---
 title: "Compat2021: Eliminating five top compatibility pain points on the web"
 subhead: 
+    "Google is partnering with other browser vendors and industry partners to fix the
+    top five browser compatibility pain points for web developers: CSS Flexbox, 
+    CSS Grid, `position: sticky`, `aspect-ratio`, and CSS transforms."
+description:
+    "Learn more about how Google is partnering with other browser vendors and 
+    industry partners to fix the top five browser compatibility pain points for 
+    web developers: CSS Flexbox, CSS Grid, position: sticky, aspect-ratio, 
+    and CSS transforms."     
 authors:
   - robertnyman
   - foolip
-description: 
+hero: "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/KQ5oNcLGKdBSuUM8pFPx.jpeg"
+alt: "A puzzle with a missing piece."
 date: 2021-03-22
 tags:
   - blog
@@ -25,7 +34,7 @@ Microsoft, have set out to learn more about the top pain points for web
 developers, to drive our work and prioritization to make the situation better.
 This project is connected to [Google's Developer
 Satisfaction](https://web.dev/developer-satisfaction) (DevSAT) work, and it
-started on a larger scale with the creation ofco-creating the
+started on a larger scale with the creation of the
 [MDN DNA (Developer Needs Assessment) surveys](https://insights.developer.mozilla.org/)
 in 2019 and 2020, and a deep-dive research effort presented in the
 [MDN Browser Compatibility Report 2020](https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html).
@@ -33,7 +42,7 @@ Additional research has been done in various channels, such as the [State of
 CSS](https://stateofcss.com/) and [State of JS](https://stateofjs.com/)
 surveys.
 
-The goal in 2021 is to eliminate browser compatibility problems in 5 key focus
+The goal in 2021 is to eliminate browser compatibility problems in five key focus
 areas so developers can confidently build on them as reliable foundations. This
 effort is called #**Compat2021**.
 
@@ -72,10 +81,10 @@ prioritize, and some are:
 In 2020, Chromium started work addressing the top areas outlined in
 [Improving Chromium's browser compatibility in 2020](https://blog.chromium.org/2020/06/improving-chromiums-browser.html).
 In 2021, we are beginning a dedicated effort to go even further. Google and
-Microsoft are working together on addressing top issues in Chromium, along with 
-[Igalia](https://www.igalia.com/). Igalia, who are regular contributors to Chromium and
-WebKit, and maintainers of the official WebKit port for embedded devices, have
-been very supportive and engaged in these compatibility efforts, and will be
+[Microsoft are working together on addressing top issues in Chromium](https://blogs.windows.com/msedgedev/2021/03/22/better-compatibility-compat2021/)
+, along with [Igalia](https://www.igalia.com/). Igalia, who are regular contributors 
+to Chromium and WebKit, and maintainers of the official WebKit port for embedded devices, 
+have been very supportive and engaged in these compatibility efforts, and will be
 helping tackle and track the identified issues.
 
 Here are the areas which are committed to being fixed in 2021.
@@ -87,38 +96,26 @@ is
 [widely used](https://www.chromestatus.com/metrics/feature/timeline/popularity/1692)
 on the web and there are still some major challenges for developers. For
 example, images as flex items have often been stretched incorrectly and
-differently between browsers:
-
-<figure class="w-figure">
-    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/gTmkyumzaJUxBbNH57uy.jpg", alt="ALT_TEXT_HERE", width="800", height="354" %}
-    <figcaption class="w-figcaption">
-        Left: The issues with auto-height flex container in <a
-        href="https://bugs.chromium.org/p/chromium/issues/detail?id=721123">Chromium</a>
-        and <a href="https://bugs.webkit.org/show_bug.cgi?id=209983">WebKit</a> used
-        to have bugs, leading to incorrectly sized images. Right: Correctly sized image.
-        (Images by <a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza Mahmoudi</a>.)
-        </figcaption>
-</figure>
+differently between browsers. The issues with `auto-height` flex container in 
+[Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=721123) and [WebKit](https://bugs.webkit.org/show_bug.cgi?id=209983)
+used to have bugs, leading to incorrectly sized images.
 
 <div class="w-columns">
     <figure class="w-figure" style="display: flex; flex-direction: column;">
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/NziooCD0D5VBX4vao3Mi.jpg", alt="ALT_TEXT_HERE", width="401", height="354" %}
-        <figcaption class="w-figcaption" style="margin-bottom: auto;">
-            The issues with auto-height flex container in <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=721123">Chromium</a>
-            and <a href="https://bugs.webkit.org/show_bug.cgi?id=209983">WebKit</a> used
-            to have bugs, leading to incorrectly sized images.
+    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/qmKoKHkZga5hgBeiHuBz.png", alt="Stretched photo of a chessboard.", width="800", height="400" %}
+        <figcaption class="w-figcaption" style="margin-top: auto">
+            Incorrectly sized image due to bugs. 
         </figcaption>
     </figure>
     <figure class="w-figure" style="display: flex; flex-direction: column;">
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/28DdLD3B1VlWgHsJLwP2.jpg", alt="ALT_TEXT_HERE", width="401", height="354" %}
-        <figcaption class="w-figcaption" style="margin-bottom: auto;">
+        {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/0ruhCiZKRP9jBhnN70Xh.png", alt="Chessboard.", width="800", height="800" %}
+        <figcaption class="w-figcaption" style="margin-top: auto">
             Correctly sized image. <br>
-            (Photo by <a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza
-            Mahmoudi</a>.)
+            Photo by <a href="https://unsplash.com/photos/ab5OK9mx8do">Alireza
+            Mahmoudi.</a>
         </figcaption>
     </figure>
 </div>
-
 
 
 [Igalia's Flexbox Cats](https://blogs.igalia.com/svillar/2021/01/20/flexbox-cats-a-k-a-fixing-images-in-flexbox/)
@@ -134,7 +131,7 @@ blog post dives deeper into these issues with many more examples.
 +   Usage:
     [75%](https://www.chromestatus.com/metrics/feature/timeline/popularity/1692)
     of page views, growing strongly in [HTTP
-    Archive](https://almanac.httparchive.org/en/2020/css#layout).
+    Archive](https://almanac.httparchive.org/en/2020/css#layout)
 
 ### CSS Grid
 
@@ -172,11 +169,11 @@ effects like this are made possible:
 +   Usage:
     [8% and growing steady](https://www.chromestatus.com/metrics/feature/timeline/popularity/1693),
     slight growth in [HTTP
-    Archive](https://almanac.httparchive.org/en/2020/css#layout).
+    Archive](https://almanac.httparchive.org/en/2020/css#layout)
 
 {% Aside %}
 While a newer feature like
-[Subgrid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid)
+[subgrid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid)
 is important for developers, it isn't a part of this specific effort. To follow
 along, see
 [Subgrid compat on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid#browser_compatibility).
@@ -185,7 +182,7 @@ along, see
 ### CSS position: sticky
 
 [Sticky positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/position#sticky_positioning)
-allows content to stick to the edge of the viewport/screen and is commonly used
+allows content to stick to the edge of the viewport and is commonly used
 for headers that are always visible at the top of the viewport. While supported
 in all browsers, there are common use cases where it doesn't work as intended.
 For example,
@@ -196,19 +193,19 @@ the results are inconsistent across browsers:
 
 <div class="w-columns">
     <figure class="w-figure">
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/DtNtuWCZUNwi7GGSBPvA.png", alt="ALT_TEXT_HERE", width="250", height="350" %}
+        {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/DtNtuWCZUNwi7GGSBPvA.png", alt="", width="250", height="350" %}
         <figcaption class="w-figcaption">
             Chromium with "TablesNG"
         </figcaption>
     </figure>
     <figure class="w-figure">
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/hJwLpLeJNfG6kVBUK9Yn.png", alt="ALT_TEXT_HERE", width="250", height="350" %}
+        {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/hJwLpLeJNfG6kVBUK9Yn.png", alt="", width="250", height="350" %}
         <figcaption class="w-figcaption">
             Gecko
         </figcaption>
     </figure>
     <figure class="w-figure">
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/od1YyD2BoBqfrnkzynUK.png", alt="ALT_TEXT_HERE", width="250", height="350" %}
+        {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/od1YyD2BoBqfrnkzynUK.png", alt="", width="250", height="350" %}
         <figcaption class="w-figcaption">
             WebKit
         </figcaption>
@@ -216,7 +213,7 @@ the results are inconsistent across browsers:
 </div>
 
 
-<a href="https://output.jsbin.com/xunosud">Sticky table headers
+Check out the <a href="https://output.jsbin.com/xunosud">sticky table headers
 demo</a> by Rob Flack.
 
 #### Why it is prioritized
@@ -224,7 +221,7 @@ demo</a> by Rob Flack.
 +   Surveys: Highly known/used in [State of
     CSS](https://2020.stateofcss.com/en-US/features/) and was brought up
     multiple times in
-    [MDN Browser Compatibility Report](https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html).
+    [MDN Browser Compatibility Report](https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html)
 +   Tests:
     [66% pass](https://wpt.fyi/results/css/css-position/sticky?label=master&label=experimental&product=chrome&product=firefox&product=safari&aligned&q=%28status%3A%21missing%26status%3A%21pass%26status%3A%21ok%29)
     in all browsers
