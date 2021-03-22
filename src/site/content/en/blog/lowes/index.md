@@ -8,6 +8,13 @@ description: >
   By building an automated performance testing and monitoring system,
   the Lowe's Site Speed Team test pull requests against performance budgets,
   and prevent performance regressions going into production.
+authors:
+  - choudhuryashish
+  - dinakarchandolu
+  - abhimanyuraibahadur
+  - dhilipvenkateshuvarajan
+  - safwans
+  - gmimani
 date: 2021-03-22
 hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/U0Xrfy2kVLEb3JSiPS5C.png
 alt: The Lowes logo.

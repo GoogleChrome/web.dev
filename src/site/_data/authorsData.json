@@ -1948,5 +1948,45 @@
     },
     "country": "IL",
     "image": "image/BrQidfK9jaQyIHwdw91aVpkPiib2/9zVJ5KLkDStLNSz2ZxPE.jpg"
+  },
+  "choudhuryashish": {
+    "name": {
+      "given": "Ashish",
+      "family": "Choudhury"
+    },
+    "linkedin": "https://www.linkedin.com/in/choudhuryashish/",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/urBoPCVFLFNYxcA4rWBO.jpg"
+  },
+  "dinakarchandolu": {
+    "name": {
+      "given": "Dinakar",
+      "family": "Chandolu"
+    },
+    "linkedin": "https://www.linkedin.com/in/dinakarchandolu/",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/E0gT4HrFyUImA5COXOme.jpg"
+  },
+  "abhimanyuraibahadur": {
+    "name": {
+      "given": "Abhimanyu",
+      "family": "Raibahadur"
+    },
+    "linkedin": "https://www.linkedin.com/in/abhimanyuraibahadur/",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/D36izBJ4CpCDjAxWhUe6.jpg"
+  },
+  "dhilipvenkateshuvarajan": {
+    "name": {
+      "given": "Dhilip venkatesh",
+      "family": "Uvarajan"
+    },
+    "linkedin": "https://www.linkedin.com/in/dhilip-venkatesh-uvarajan-16914624/",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/5FvsHblPdOVKpC5Pdru2.jpg"
+  },
+  "safwans": {
+    "name": {
+      "given": "Safwan",
+      "family": "Samla"
+    },
+    "linkedin": "https://www.linkedin.com/in/safwansamla/",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/lR8Vo8IDNt6AnLSVvObk.jpg"
   }
 }
