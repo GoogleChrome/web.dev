@@ -81,8 +81,7 @@ prioritize, and some are:
 In 2020, Chromium started work addressing the top areas outlined in
 [Improving Chromium's browser compatibility in 2020](https://blog.chromium.org/2020/06/improving-chromiums-browser.html).
 In 2021, we are beginning a dedicated effort to go even further. Google and
-[Microsoft are working together on addressing top issues in Chromium](https://blogs.windows.com/msedgedev/2021/03/22/better-compatibility-compat2021/)
-, along with [Igalia](https://www.igalia.com/). Igalia, who are regular contributors 
+[Microsoft are working together on addressing top issues in Chromium](https://blogs.windows.com/msedgedev/2021/03/22/better-compatibility-compat2021/), along with [Igalia](https://www.igalia.com/). Igalia, who are regular contributors 
 to Chromium and WebKit, and maintainers of the official WebKit port for embedded devices, 
 have been very supportive and engaged in these compatibility efforts, and will be
 helping tackle and track the identified issues.
@@ -146,7 +145,7 @@ effects like this are made possible:
 
 <figure class="w-figure">
 {% Video src="video/vgdbNJBYHma2o62ZqYmcnkq3j0o1/Ovs6wg9o5AJUG4IIoVvj.mp4",
-  class="w-screenshot",
+  height="400",
   controls=false,
   autoplay=true,
   loop=true,

@@ -41,7 +41,7 @@ each major browser engine are doing in the five areas:
 frameborder="0" style="height: 1000px; width: 100%;"></iframe>
 
 The dashboard and all related bugs are listed at
-[https://wpt.fyi/compat2021](https://wpt.fyi/compat2021).
+[wpt.fyi/compat2021](https://wpt.fyi/compat2021).
 
 ### The five top compat focus areas in 2021
 
@@ -51,8 +51,8 @@ compatibility pain points on the web](/compat2021).
 
 +   CSS Flexbox
 +   CSS Grid
-+   CSS position: sticky
-+   CSS aspect-ratio property
++   CSS `position: sticky`
++   CSS `aspect-ratio` property
 +   CSS transforms
 
 ### Contributing and following along
