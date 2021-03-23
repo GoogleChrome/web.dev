@@ -6,6 +6,7 @@ description:
   interoperable web platform, enabling developers to invest in and trust it, 
   and adopt and use new features to grow the platform and their business.
 date: 2021-03-22
+updated: 2021-03-23
 tags:
   - blog
 draft: true
@@ -13,11 +14,11 @@ draft: true
 
 Web Developer Satisfaction, shortened DevSAT, is a Google project to gather
 information about the needs of web developers. Our goal is to make sure
-developers are being heard, know what's happening with their feedback and see
+developers are being heard, know what's happening with their feedback, and see
 issues being addressed. DevSAT is how we ensure we are focusing on the right
 areas with our Engineering and Developer Relations work. The goal is a more
-reliable, predictable and interoperable web platform, enabling developers to
-invest in and trust it, and adopt and use new features to grow the platform and
+reliable, predictable, and interoperable web platform, enabling developers to
+invest in and trust it, and to adopt and use new features to grow the platform and
 their business.
 
 ## Ongoing research to understand developer needs
@@ -31,11 +32,10 @@ their business.
 Compatibility on the web has always been a big challenge for developers. The
 goal in 2021 is to eliminate browser compatibility problems in five key focus areas
 so developers can confidently rely on these areas not having bugs. This effort
-is called #Compat2021.
+is called [#Compat2021](https://twitter.com/search?q=%23compat2021&src=typed_query&f=live).
 
 You can follow along with the process in the Compat 2021 dashboard to see how
-each major browser engine are doing in the five areas:
-
+each major browser engine is doing in the five areas:
 
 <iframe src="https://wpt.fyi/compat2021?embedded" 
 frameborder="0" style="height: 1000px; width: 100%;"></iframe>
