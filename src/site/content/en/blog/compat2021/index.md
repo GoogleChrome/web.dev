@@ -95,11 +95,10 @@ Here are the areas which are committed to being fixed in 2021.
 [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout)
 is
 [widely used](https://www.chromestatus.com/metrics/feature/timeline/popularity/1692)
-on the web and there are still some major challenges for developers. For
-example, images as flex items have often been stretched incorrectly and
-differently between browsers. The issues with `auto-height` flex container in 
-[Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=721123) and [WebKit](https://bugs.webkit.org/show_bug.cgi?id=209983)
-used to have bugs, leading to incorrectly sized images.
+on the web and there are still some major challenges for developers. For example,
+both [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=721123) and
+[WebKit](https://bugs.webkit.org/show_bug.cgi?id=209983)
+have had issues with `auto-height` flex containers leading to incorrectly sized images.
 
 <div class="w-columns">
     <figure class="w-figure" style="display: flex; flex-direction: column;">
