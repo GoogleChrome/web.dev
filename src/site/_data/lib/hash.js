@@ -62,9 +62,9 @@ const hashForProdCache = {};
  * @return {string}
  */
 function hashForProd(file) {
-  if (!isProduction) {
+  /*if (!isProduction) {
     return `${file}?v=${randomHash()}`;
-  }
+  }*/
 
   let hash = hashForProdCache[file];
   if (hash === undefined) {

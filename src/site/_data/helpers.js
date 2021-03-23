@@ -18,14 +18,13 @@ const {algolia} = require('./lib/algolia');
 const {hashForProd} = require('./lib/hash');
 const {sha256base64} = require('../_data/lib/hash');
 
-var cspList = [];
+const hashList = new Set();
 
 /**
  * @param {string[]|undefined} urls
- * @param {string} fileSlug
  * @return {string}
  */
-function generateScriptLoader(urls, fileSlug) {
+function generateScriptLoader(urls) {
   let loader = `function loadScript(url, type, async) {
     const s = document.createElement('script');
     s.async = async;
@@ -46,20 +45,32 @@ function generateScriptLoader(urls, fileSlug) {
   if (process.env.ELEVENTY_ENV === 'prod') {
     loader += `loadScript('https://www.google-analytics.com/analytics.js', null, true);`
   }
-  cspList.push({
-    source: `**/${fileSlug}`,
-    headers: [{
-      key: 'Content-Security-Policy',
-      value: `script-src 'sha256-${sha256base64(loader)}' 'sha256-oLlXvYrAXNpxsHIJR8GYvfGt1KpMzunKX0gK0ScuHk0=' 'strict-dynamic' 'unsafe-inline' http: https:; object-src 'none'; base-uri 'self'`,
-      loader,
-    }]
-  })
+  hashList.add(`'sha256-${sha256base64(loader)}'`);
   return loader;
+}
+
+function generateAnalyticsScript(prod, trackingVersion, version) {
+  const script = `
+    window.ga =
+      window.ga ||
+      function () {
+        (ga.q = ga.q || []).push(arguments);
+      };
+    ga.l = +new Date();
+    ga('create', '${prod}');
+    ga('set', 'transport', 'beacon');
+    ga('set', 'page', window.location.pathname);
+    ga('set', '${trackingVersion}', '${version}');
+    ga('send', 'pageview');
+  `
+  hashList.add(`'sha256-${sha256base64(script)}'`);
+  return script;
 }
 
 module.exports = {
   algolia,
   hashForProd,
   generateScriptLoader,
-  cspList,
+  generateAnalyticsScript,
+  hashList,
 };

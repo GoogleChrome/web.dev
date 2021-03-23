@@ -258,8 +258,8 @@ module.exports = function (config) {
   }
 
   config.on('afterBuild', () => {
-    const {cspList} = require('./src/site/_data/helpers');
-    fs.writeFileSync('csp-list.json', JSON.stringify(cspList));
+    const {hashList} = require('./src/site/_data/helpers');
+    fs.writeFileSync('script-hash-list.json', JSON.stringify([...hashList]));
   })
 
   // ----------------------------------------------------------------------------
