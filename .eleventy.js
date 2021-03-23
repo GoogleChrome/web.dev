@@ -19,6 +19,7 @@ const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const yaml = require('js-yaml');
+const fs = require('fs');
 
 const toc = require('eleventy-plugin-toc');
 const markdownIt = require('markdown-it');
@@ -255,6 +256,11 @@ module.exports = function (config) {
     config.addTransform('purifyCss', purifyCss);
     config.addTransform('minifyHtml', minifyHtml);
   }
+
+  config.on('afterBuild', () => {
+    const {cspList} = require('./src/site/_data/helpers');
+    fs.writeFileSync('csp-list.json', JSON.stringify(cspList));
+  })
 
   // ----------------------------------------------------------------------------
   // ELEVENTY OPTIONS
