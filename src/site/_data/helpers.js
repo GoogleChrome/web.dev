@@ -34,16 +34,18 @@ function generateScriptLoader(urls) {
     }
     document.head.appendChild(s);
   }`;
-  loader += `loadScript('${hashForProd('/js/app.js')}', 'module', false);`
+  loader += `loadScript('${hashForProd('/js/app.js')}', 'module', false);`;
   if (urls && urls.length) {
     for (const url of urls) {
-      loader += `loadScript('${hashForProd(url)}', 'module', false);`
+      loader += `loadScript('${hashForProd(url)}', 'module', false);`;
     }
   } else {
-    loader += `loadScript('${hashForProd('/js/default.js')}', 'module', false);`
+    loader += `loadScript('${hashForProd(
+      '/js/default.js',
+    )}', 'module', false);`;
   }
   if (process.env.ELEVENTY_ENV === 'prod') {
-    loader += `loadScript('https://www.google-analytics.com/analytics.js', null, true);`
+    loader += `loadScript('https://www.google-analytics.com/analytics.js', null, true);`;
   }
   hashList.add(`'sha256-${sha256base64(loader)}'`);
   return loader;
@@ -62,7 +64,7 @@ function generateAnalyticsScript(prod, trackingVersion, version) {
     ga('set', 'page', window.location.pathname);
     ga('set', '${trackingVersion}', '${version}');
     ga('send', 'pageview');
-  `
+  `;
   hashList.add(`'sha256-${sha256base64(script)}'`);
   return script;
 }

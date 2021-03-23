@@ -260,7 +260,7 @@ module.exports = function (config) {
   config.on('afterBuild', () => {
     const {hashList} = require('./src/site/_data/helpers');
     fs.writeFileSync('script-hash-list.json', JSON.stringify([...hashList]));
-  })
+  });
 
   // ----------------------------------------------------------------------------
   // ELEVENTY OPTIONS

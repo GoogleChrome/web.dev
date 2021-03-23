@@ -2,7 +2,8 @@ const yaml = require('js-yaml');
 const fs = require('fs');
 
 const redirectsYaml = fs.readFileSync('./redirects.yaml', 'utf8');
-const hashList = JSON.parse(fs.readFileSync('./script-hash-list.json', 'utf-8'));
+const hashListJson = fs.readFileSync('./script-hash-list.json', 'utf-8');
+const hashList = JSON.parse(hashListJson);
 const {redirects: parsedRedirects} = yaml.safeLoad(redirectsYaml);
 
 const firebaseJson = require('./firebase.incl.json');
@@ -19,11 +20,11 @@ firebaseJson.hosting.redirects = parsedRedirects.reduce(
   },
   [],
 );
-firebaseJson.hosting.headers[0].headers.push(
-  {
-    key: 'Content-Security-Policy',
-    value: `script-src 'strict-dynamic' ${hashList.join(' ')} 'unsafe-inline' http: https:; object-src 'none'; base-uri 'self'`
-  }
-);
+firebaseJson.hosting.headers[0].headers.push({
+  key: 'Content-Security-Policy',
+  value:
+    `script-src 'strict-dynamic' ${hashList.join(' ')} ` +
+    `'unsafe-inline' http: https:; object-src 'none'; base-uri 'self'`,
+});
 
 fs.writeFileSync('./firebase.json', JSON.stringify(firebaseJson, null, 2));
