@@ -378,7 +378,7 @@ to this rule, which will be done on a case-by-case basis.
 
 ### Avoid insensitive words {: #insensitive-words }
 
-Refer to the [GDDSG word list][gddsg] and make sure that you're not using
+Refer to the [GDDSG word list][wordlist] and make sure that you're not using
 any insensitive words, such as:
 
 * [blacklist](https://developers.google.com/style/word-list#blacklist)
