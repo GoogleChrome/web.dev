@@ -25,12 +25,13 @@ tags:
   - performance
 ---
 
+{% Aside %}
 This post was authored by [Ashish Choudhury](https://www.linkedin.com/in/choudhuryashish/),
 [Dinakar Chandolu](https://www.linkedin.com/in/dinakarchandolu/),
 [Abhimanyu Raibahadur](https://www.linkedin.com/in/abhimanyuraibahadur/),
 [Dhilipvenkatesh Uvarajan](https://www.linkedin.com/in/dhilip-venkatesh-uvarajan-16914624/),
-[Safwan Samla](https://www.linkedin.com/in/safwansamla/),
-[Garima Mimani](https://www.linkedin.com/in/garimamimani/).
+[Safwan Samla](https://www.linkedin.com/in/safwansamla/) from Lowe's.
+{% endAside %}
 
 [Lowe's](https://www.lowes.com/) is a nearly $90B home improvement retailer
 that operates about 2,200 stores and employs more than 300,000 associates.
