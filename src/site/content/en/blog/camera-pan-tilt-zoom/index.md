@@ -106,7 +106,7 @@ try {
 
 To know whether a Chromium-based browser supports PTZ for a camera, go to the
 internal `about://media-internals` page and check out the "Pan-Tilt-Zoom" column
-in the "Video Capture" tab: "pan tilt" and "zoom" respectively mean the camera supports
+in the "Video Capture" tab; "pan tilt" and "zoom" respectively mean the camera supports
 the "PanTilt (Absolute)" and "Zoom (Absolute)" [UVC controls]. The "PanTilt (Relative)"
 and "Zoom (Relative)" UVC controls are not supported in Chromium-based browsers.
 
