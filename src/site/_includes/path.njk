@@ -1,9 +1,9 @@
 ---
 layout: default
 renderData:
-  title: "{{ paths[pathName].title }}"
-  description: "{{ paths[pathName].description }}"
-  hero: "{{ paths[pathName].cover }}"
+  title: "{{paths[pathName].title | i18n(locale)}}"
+  description: "{{paths[pathName].description | i18n(locale)}}"
+  hero: "{{paths[pathName].cover}}"
 ---
 
 {% set path = paths[pathName] %}
