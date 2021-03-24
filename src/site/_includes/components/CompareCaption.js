@@ -14,10 +14,16 @@
  * limitations under the License.
  */
 
+// Need markdown-it for nested shortcodes to render as expected
+const md = require('markdown-it')();
+const {html} = require('common-tags');
+
 /**
  * @param {string} content Markdown with the content for the compare element.
  * @return {string}
  */
 module.exports = (content) => {
-  return `<figcaption class="w-compare__caption">${content}</figcaption>`;
+  return html`<figcaption class="w-compare__caption">
+    ${md.renderInline(content)}
+  </figcaption>`;
 };
