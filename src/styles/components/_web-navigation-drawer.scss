@@ -58,27 +58,21 @@ web-navigation-drawer {
 }
 
 web-navigation-drawer[type='dismissible'] {
-  @include bp(md) {
+  @include bp(lg) {
     align-self: flex-start;
-    position: fixed;
+    position: sticky;
     pointer-events: auto;
     top: 0;
     width: auto;
-    z-index: 300;
-    
+
     [data-drawer-container] {
       box-shadow: none;
       transform: none;
     }
-    
+
     [data-drawer-close-button] {
       display: none;
     }
-  }
-  
-  @include bp(lg) {
-    position: sticky;
-    z-index: auto;
   }
 }
 

@@ -345,6 +345,7 @@ $gorko-config: (
     'sm': '(min-width: #{$BREAKPOINT_VALUE_SMALL})',
     'md': '(min-width: #{$BREAKPOINT_VALUE_MEDIUM})',
     'lg': '(min-width: #{$BREAKPOINT_VALUE_LARGE})',
+    'xl': '(min-width: #{$BREAKPOINT_VALUE_XLARGE})',
   ),
 );
 
