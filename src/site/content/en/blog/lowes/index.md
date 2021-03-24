@@ -28,9 +28,9 @@ tags:
 {% Aside %}
 This post was authored by [Ashish Choudhury](https://www.linkedin.com/in/choudhuryashish/),
 [Dinakar Chandolu](https://www.linkedin.com/in/dinakarchandolu/),
-[Abhimanyu Raibahadur](https://www.linkedin.com/in/abhimanyuraibahadur/),
-[Dhilipvenkatesh Uvarajan](https://www.linkedin.com/in/dhilip-venkatesh-uvarajan-16914624/),
-[Safwan Samla](https://www.linkedin.com/in/safwansamla/) from Lowe's.
+[Abhimanyu Raibahadur](https://www.linkedin.com/in/abhimanyuraibahadur/), and
+[Dhilipvenkatesh Uvarajan](https://www.linkedin.com/in/dhilip-venkatesh-uvarajan-16914624/) 
+from Lowe's.
 {% endAside %}
 
 [Lowe's](https://www.lowes.com/) is a nearly $90B home improvement retailer
