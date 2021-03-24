@@ -1,11 +1,11 @@
 ---
 title: "Compat2021: Eliminating five top compatibility pain points on the web"
 subhead: 
-    "Google is partnering with other browser vendors and industry partners to fix the
+    "Google is working with other browser vendors and industry partners to fix the
     top five browser compatibility pain points for web developers: CSS Flexbox, 
     CSS Grid, `position: sticky`, `aspect-ratio`, and CSS transforms."
 description:
-    "Learn more about how Google is partnering with other browser vendors and 
+    "Learn more about how Google is working with other browser vendors and 
     industry partners to fix the top five browser compatibility pain points for 
     web developers: CSS Flexbox, CSS Grid, position: sticky, aspect-ratio, 
     and CSS transforms."     
@@ -22,7 +22,7 @@ tags:
 ---
 
 
-Google is partnering with other browser vendors and industry partners to fix the
+Google is working with other browser vendors and industry partners to fix the
 top five browser compatibility pain points for web developers. The areas of focus
 are CSS Flexbox, CSS Grid, `position: sticky`, `aspect-ratio`, and CSS
 transforms. Check out [How you can contribute and follow along](#contribute) to
