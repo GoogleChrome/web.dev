@@ -32,4 +32,27 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
-<script>{{ helpers.generateScriptLoader(pageScripts)|safe }}</script>
+{% set scriptLoader %}
+function loadScript(url, type, async) {
+  const s = document.createElement('script');
+  s.async = async;
+  s.src = url;
+  if (type) {
+    s.type = type;
+  }
+  document.head.appendChild(s);
+}
+loadScript('{{ helpers.hashForProd('/js/app.js') }}', 'module', false);
+{# Add a facility for pages to declare an array of script paths. #}
+{# If no scripts are declared we will use the default page script. #}
+{# default.js loads the basic set of custom elements that all pages need. #}
+{% for item in pageScripts %}
+  loadScript('{{ helpers.hashForProd(item) }}', 'module', false);
+{% else %}
+  loadScript('{{ helpers.hashForProd('/js/default.js') }}', 'module', false);
+{% endfor %}
+{% if process.env.ELEVENTY_ENV === 'prod' %}
+  loadScript('https://www.google-analytics.com/analytics.js', null, true);
+{% endif %}
+{% endset %}
+<script>{{ scriptLoader|cspHash|safe }}</script>

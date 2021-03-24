@@ -95,6 +95,8 @@ const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
 const {purifyCss} = require(`./${transformsDir}/purify-css`);
 const {minifyHtml} = require(`./${transformsDir}/minify-html`);
 
+const {sha256base64} = require('./src/site/_data/lib/hash');
+
 // Shared dependencies between web.dev and developer.chrome.com
 const {updateSvgForInclude} = require('webdev-infra/filters/svg');
 // TODO: We should migrate all of our ToCs over to using this filter which we
@@ -208,6 +210,13 @@ module.exports = function (config) {
   config.addFilter('courseToc', courseToc);
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
 
+  const hashList = new Set();
+  config.addFilter('cspHash', (raw) => {
+    const hash = `'sha256-${sha256base64(raw)}'`;
+    hashList.add(hash);
+    return raw;
+  });
+
   // ----------------------------------------------------------------------------
   // SHORTCODES
   // ----------------------------------------------------------------------------
@@ -258,7 +267,6 @@ module.exports = function (config) {
   }
 
   config.on('afterBuild', () => {
-    const {hashList} = require('./src/site/_data/helpers');
     fs.writeFileSync('script-hash-list.json', JSON.stringify([...hashList]));
   });
 
