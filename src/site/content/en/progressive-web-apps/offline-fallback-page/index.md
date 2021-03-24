@@ -5,7 +5,7 @@ authors:
   - thomassteiner
   - petelepage
 date: 2020-09-24
-updated: 2021-03-23
+updated: 2021-03-24
 description: Learn how to create a simple offline experience for your app.
 tags:
   - progressive-web-apps
