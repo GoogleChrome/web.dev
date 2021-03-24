@@ -15,8 +15,7 @@
  */
 
 const {algolia} = require('./lib/algolia');
-const {hashForProd} = require('./lib/hash');
-const {sha256base64} = require('../_data/lib/hash');
+const {hashForProd, sha256base64} = require('./lib/hash');
 
 const hashList = new Set();
 
