@@ -25,8 +25,4 @@ i18n:
     Learn more about a topic, and practice your skills with a hands-on
     codelab.
   see_topics: See all topics
-  save_cta: Save your progress
-  save_subheadline: |
-    See how your website performs over time, and keep track as you learn on
-    your own schedule.
 ---
