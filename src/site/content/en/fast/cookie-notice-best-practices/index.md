@@ -162,7 +162,7 @@ notices:
     are implemented, they can cause layout shifts. For more information, see
     [Debugging layout shifts](https://web.dev/debugging-layout-shifts/).
 *   **Fonts**: Late-loading fonts can block render and or cause layout shifts.
-    This phenomena is typically more appararent on slow connections.
+    This phenomena is more apparent on slow connections.
 
 #### Advanced loading optimizations
 
@@ -214,7 +214,7 @@ category of cookies when asking for user consent.
 Without custom configuration, most synthetic tools will only measure the
 experience of a first-time user who has not responded to a cookie consent
 notice. However, not only do variations in cache state (for example, an initial
-visit versus a repeat visit) need to be considered when collection performance
+visit versus a repeat visit) need to be considered when collecting performance
 data, but also variations in cookie acceptance state—accepted, rejected, or
 unresponded.
 
