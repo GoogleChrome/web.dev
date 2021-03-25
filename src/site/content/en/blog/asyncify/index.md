@@ -201,7 +201,7 @@ This is where [Asyncify](https://emscripten.org/docs/porting/asyncify.html) come
 compile-time feature supported by Emscripten, that allows pausing the entire program and
 asynchronously resuming it later.
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/VSMrdTiQ7PubW6vfE6WZ.svg", alt="ALT_TEXT_HERE",
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/VSMrdTiQ7PubW6vfE6WZ.svg", alt="A call graph describing a JavaScript -> WebAssembly -> Web API -> async task invocation, where Asyncify connects the result of the async task back into WebAssembly",
 width="800", height="200" %}
 
 ### Usage in C / C++ with Emscripten
@@ -456,7 +456,7 @@ different modes and so on. It tries to modify only functions marked as asynchron
 line, as well as any of their potential callers, but that still might result in ~50% overhead to the
 uncompressed code size.
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/Im4hmQOYRHFcsg8UTfTR.png", alt="ALT_TEXT_HERE",
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/Im4hmQOYRHFcsg8UTfTR.png", alt="A graph showing code size overhead for various benchmarks, from near-0% under fine-tuned conditions to over 100% in worst cases",
 width="800", height="494" %}
 
 It's not ideal, but in many cases acceptable when the alternative is not having the functionality
@@ -506,7 +506,7 @@ USB devices—to a [WebUSB API](https://web.dev/usb/), which gives asynchronous 
 on the Web. Once mapped and compiled, I got standard libusb tests and examples to run against chosen
 devices right in the sandbox of a Web page.
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/2rscL8dyhOVMacuq54Ad.jpg", alt="ALT_TEXT_HERE",
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/2rscL8dyhOVMacuq54Ad.jpg", alt="Screenshot of libusb debug output on a Web page, showing information about the connected Canon camera",
 width="375", height="548" %}
 
 It's probably a story for another blog post though.
