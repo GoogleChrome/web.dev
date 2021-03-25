@@ -7,10 +7,10 @@
         <button
           data-drawer-close-button
           class="default-nav__hide w-button--svg w-button--round"
-          aria-label="Close"
+          aria-label="{{ 'i18n.common.close' | i18n(locale) }}"
         >
           {{ icon('close') }}
-          {# <span class="w-tooltip">Close</span> #}
+          <span class="w-tooltip">{{ 'i18n.common.close' | i18n(locale) }}</span>
         </button>
         <a
           href="/"
