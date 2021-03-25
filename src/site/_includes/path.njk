@@ -1,5 +1,9 @@
 ---
 layout: default
+renderData:
+  title: "{{paths[pathName].title | i18n(locale)}}"
+  description: "{{paths[pathName].description | i18n(locale)}}"
+  hero: "{{paths[pathName].cover}}"
 ---
 
 {% set path = paths[pathName] %}
@@ -15,7 +19,15 @@ layout: default
         <p class="w-masthead-path__description">{{path.description | i18n(locale)}}</p>
       </div>
       <div class="w-masthead-path__right">
-        <img class="w-masthead-path__image" src="{{path.cover}}" alt="">
+        {% if path.cover %}
+          {% Img
+            height=220,
+            width=330,
+            src=path.cover,
+            alt="Collection cover image",
+            class="w-masthead-path__image"
+          %}
+        {% endif %}
       </div>
     </div>
   </header>

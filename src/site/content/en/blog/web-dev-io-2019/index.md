@@ -27,7 +27,7 @@ plan to ship in the coming months, but we hope you like this new visual style ðŸ
 ## Improved Lighthouse support
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="/images/collections/lighthouse-performance.svg" alt="" width="200">
+  {% Img src="image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/wpGZrgY08B0x6jbLnWPU.svg", alt="Lighthouse performance cover", width="330", height="220" %}
 </figure>
 
 In the Learn section, we've rolled out
