@@ -1,7 +1,8 @@
 ---
-layout: course
 title: Box Model
 description:
+authors:
+  - andybell
 date: 2021-03-25
 tags:
   - css
@@ -35,7 +36,9 @@ how you can control it will help you to write more predictable CSS.
 
 https://codepen.io/web-dot-dev/pen/WNRemxN
 
-A really important thing to remember when writing CSS—or working on the web as a whole—is that everything displayed by CSS is a box.
+A really important thing to remember when writing CSS,
+or working on the web as a whole,
+is that everything displayed by CSS is a box.
 Whether that's a box that uses `border-radius` to look like a circle, or even just some text:
 the key thing to remember is that it's all boxes.
 
@@ -81,10 +84,10 @@ there's a limit of how much content you can add before it overflows out of the e
 but this isn't the case when intrinsic sizing is toggled on.
 
 By default, this element has a set `width` and `height`—both `400px`.
-These dimensions give **strict bounds to everything inside the element**,
+These dimensions give strict bounds to everything inside the element,
 which will be honoured unless the content is too large for the box in which case visible overflow will happen.
 You can see this in action by changing the content of the caption,
-under the flower picture to something that **exceeds the height of the box**, which is a few lines of content.
+under the flower picture to something that exceeds the height of the box, which is a few lines of content.
 
 {% Aside "key-term" %}
 When content is too big for the box it is in, we call this overflow.
@@ -104,7 +107,7 @@ intrinsic sizing provides the most flexibility, most of the time.
 
 Boxes are made up of distinct box model areas that all do a specific job.
 
-<figure>
+<figure class='w-figure'>
 {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/PJfvU46GbvkmIYD5ueTb.png", alt="A diagram showing the four main areas of the box model - content box, padding box, border box and margin box", width="800", height="547" %}
   <figcaption>The four main areas of the box model: content box, padding box, border box and margin box.</figcaption>
 </figure>
@@ -142,7 +145,7 @@ https://codepen.io/web-dot-dev/pen/XWprGea
 The box model is complex to understand,
 so let's recap what you've learned with an analogy.
 
-<figure>
+<figure class='w-figure'>
 {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg", alt="Three photo frames", width="800", height="562" %}
 </figure>
 
@@ -152,11 +155,11 @@ The diagram has labels that associate elements of the frame with the box model.
 
 To break this analogy down:
 
-* The content box is the artwork
-* The padding box is the white matte, between the frame and the artwork
-* The border box is the the frame, providing a literal border for the artwork
-* The margin box is the space between each frame
-* The shadow occupies the same space as the margin box
+* The content box is the artwork.
+* The padding box is the white matte, between the frame and the artwork.
+* The border box is the the frame, providing a literal border for the artwork.
+* The margin box is the space between each frame.
+* The shadow occupies the same space as the margin box.
 
 ## Debugging the box model
 
@@ -170,7 +173,9 @@ Go ahead and try this in your own browser:
 1. [Select an element](https://developers.google.com/web/tools/chrome-devtools/css/reference#select)
 1. Show the box model debugger
 
+<figure class='w-figure'>
 {% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4" %}
+</figure>
 
 ## Controlling the box model
 
@@ -196,14 +201,14 @@ whereas a `inline` and `inline-block` elements will only be as large as their co
 
 Alongside an understanding of how user agent styles affect each box,
 you also need to understand `box-sizing`,
-which tells our box **how to calculate its box size**.
+which tells our box how to calculate its box size.
 By default, all elements have the following user agent style: `box-sizing: content-box;`.
 
 Having `content-box` as the value of `box-sizing` means that when you set dimensions,
 such as a `width` and `height`,
 they will be applied to the **content box**.
 If you then set `padding` and `border`,
-these values will be **added to the content box's size**.
+these values will be added to the content box's size.
 
 Let's take a look at some example code:
 
@@ -241,7 +246,8 @@ and as a result,
 when you set `.my-box` to be `200px` wide: it actually renders at `200px` wide.
 
 Check out how this works in the following interactive demo.
-Notice that when you toggle the `box-sizing` value it shows—via a blue background—which CSS is being applied *inside* our box.
+Notice that when you toggle the `box-sizing` value
+it shows—via a blue background—which CSS is being applied *inside* our box.
 
 [DEMO: https://codepen.io/web-dot-dev/pen/oNBvVpM]
 
@@ -263,11 +269,11 @@ developers often add this rule to resets and normalizers,
 
 ## Resources
 
-* Introduction to the box model
-* What are browser developer tools?
+* [Introduction to the box model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+* [What are browser developer tools?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)
 
 ### User agent stylesheets
 
-* Chromium
-* Firefox
-* Webkit
+* [Chromium](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css)
+* [Firefox](https://searchfox.org/mozilla-central/source/layout/style/res/html.css)
+* [Webkit](https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css)
