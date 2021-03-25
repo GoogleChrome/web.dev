@@ -153,23 +153,7 @@ show_banner: false
 
   <hr>
 
-  <section class="w-layout-container w-text--center">
-    <h2 class="w-headline--two-faded">
-      {{ i18n.save_cta }}
-    </h2>
-    <p>
-      {{ i18n.save_subheadline }}
-    </p>
-    <div>
-      <a
-        class="w-button w-button--primary gc-analytics-event"
-        data-category="web.dev"
-        data-label="home, create profile"
-        data-action="click"
-        href="/measure"
-      >
-        {{ i18n.test_cta }}
-      </a>
-    </div>
+  <section class="w-layout-container">
+    {% include 'partials/subscribe.njk' %}
   </section>
 </div>
