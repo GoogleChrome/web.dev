@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-const {algolia} = require('./lib/algolia');
 const {hashForProd} = require('./lib/hash');
 
 module.exports = {
-  algolia,
   hashForProd,
 };

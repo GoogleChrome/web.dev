@@ -118,7 +118,7 @@ Before using it, make sure that:
 
 ## Concepts and usage
 
-Periodic background sync lets you show fresh content when a progessive web app
+Periodic background sync lets you show fresh content when a progressive web app
 or service worker-backed page is launched. It does this by downloading data in
 the background when the app or page is not being used. This prevents the app's
 content from refreshing after launch while it's being viewed. Better yet, it

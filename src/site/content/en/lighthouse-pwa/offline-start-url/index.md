@@ -45,7 +45,6 @@ guide for more information.
 
 ## Resources
 
-- [Source code for **`start_url` does not respond with a 200 when offline** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/offline-start-url.js)
 - [What is network reliability and how do you measure it?](/network-connections-unreliable/)
 - [Add a web app manifest](/add-manifest/)
 - [Workbox: Your high-level service worker toolkit](/workbox/)

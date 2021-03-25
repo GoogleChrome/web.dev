@@ -169,7 +169,7 @@ easiest way to make sure that your `lighthouserc.js` is configured correctly.
     [`target`](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/configuration.md#target)
     property to the `ci.upload` object and set the value to
     `'temporary-public-storage'`. The Lighthouse report(s) collected by
-    Lighthouese CI will be uploaded to temporary public storage. The report will
+    Lighthouse CI will be uploaded to temporary public storage. The report will
     remain there for seven days and then be automatically deleted. This setup
     guide uses the "temporary public storage" upload option because it is quick
     to setup. For information on other ways of storing Lighthouse reports, refer

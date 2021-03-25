@@ -4,7 +4,7 @@ title: Mini app components
 authors:
   - thomassteiner
 date: 2021-03-03
-# updated: 2021-03-03
+updated: 2021-03-17
 description: |
   This chapter provides details on the components that all mini app platforms make available.
 tags:
@@ -37,7 +37,7 @@ frameworks like [React](https://reactjs.org/), [Vue.js](https://vuejs.org/),
 any of these options (or, dependent on your viewpoint, _forcing_ them to make a technology choice),
 super app providers universally supply a set of components that developers must use.
 
-## Mini app components
+## Components in mini apps
 
 You can think of these components like any of the component libraries mentioned above. To get an
 overview of the available components, you can browse
@@ -167,14 +167,14 @@ The available configuration options of the component are all listed in the
 makes the code immediately tangible.
 
 <figure class="w-figure">
-  <img src="alipay-editor.png" alt="Alipay component documentation with embedded component preview, showing a code editor with simulator that shows the component rendered on a simulated iPhone 6.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t2Y6WWsRhp6LjThxROUo.png", alt="Alipay component documentation with embedded component preview, showing a code editor with simulator that shows the component rendered on a simulated iPhone 6.", width="800", height="510" %}
   <figcaption class="w-figure">
     Alipay component documentation with embedded component preview.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img src="alipay-component-preview.png" alt="Alipay component preview running in a separate browser tab showing a code editor with simulator that shows the component rendered on a simulated iPhone 6.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xu2F51XL9Z0M3Z9n6n2O.png", alt="Alipay component preview running in a separate browser tab showing a code editor with simulator that shows the component rendered on a simulated iPhone 6.", width="800", height="514" %}
   <figcaption class="w-figure">
     Alipay component preview popped out into its own tab.
   </figcaption>
@@ -184,7 +184,7 @@ Each component also has a QR code that can be scanned with the Alipay app that o
 example in a self-contained minimal example.
 
 <figure class="w-figure">
-  <img src="alipay-image.png" alt="Alipay's `image` component previewed on a real device after scanning a QR code in the documentation." width="300">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gaWqLG5GqeqqfbhWz8D1.png", alt="Alipay's `image` component previewed on a real device after scanning a QR code in the documentation.", width="300", height="649" %}
   <figcaption class="w-figure">
     Preview of the Alipay <code>&lt;image&gt;</code> component on a real device after following a <a href="https://qr.alipay.com/s6x01278ucjhjyknjd5ow53">QR code link</a> from the docs.
   </figcaption>

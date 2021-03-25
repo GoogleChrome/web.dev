@@ -1,0 +1,19 @@
+title:
+  en: Media
+
+description:
+  en: Add audio and video to your web sites
+
+overview:
+  en: Learn to add media capabilities to your website using either basic markdown or a media framework such as Google's Shaka Player, JW Player or Video.js.
+
+topics:
+  concepts:
+    en: Concepts
+
+  prepare_media_files_for_the_web:
+    en: Prepare media files for the web
+
+  add_media_to_a_web_page:
+    en: Add media to a web page
+

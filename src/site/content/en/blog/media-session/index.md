@@ -4,7 +4,7 @@ subhead: How to integrate with hardware media keys, customize media notification
 authors:
   - beaufortfrancois
 date: 2020-03-06
-updated: 2021-01-15
+updated: 2022-03-25
 hero: image/admin/IhujMvzGa5Mf0aNWYRXW.jpg
 thumbnail: image/admin/Q6CqQNLucogBCxGMsSU2.jpg
 description: |
@@ -199,6 +199,16 @@ This is similar to the event listener pattern except that handling an event
 means that the browser stops doing any default behavior and uses this as a
 signal that the website supports the media action. Hence, media action controls
 won't be shown unless the proper action handler is set.
+
+<figure class="w-figure">
+  {% Img
+    src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/WBZAf1ymhtXInsWumHtw.jpg",
+    alt="Screenshot of the Now Playing widget in macOS Big Sur",
+    width="800",
+    height="450"
+  %}
+  <figcaption class="w-figcaption">Now Playing widget in macOS Big Sur</figcaption>
+</figure>
 
 ### Play / pause
 

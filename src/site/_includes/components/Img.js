@@ -34,14 +34,28 @@ const IS_UPLOADED_IMG = (src) => {
 };
 
 /**
+ * @param {string} src
+ * @param {Object} [params]
+ * @returns {boolean}
+ */
+const isSimpleImg = (src, params = {}) => /\.svg$/.test(src) && !params.fm;
+
+/**
  * Generates src URL of image from imgix path or URL.
  *
  * @param {string} src Path (or URL) for image.
- * @param {Object} params Imgix API params.
+ * @param {Object} [params] Imgix API params.
  * @return {string}
  */
-const generateSrc = (src, params = {}) =>
-  client.buildURL(src, {...DEFAULT_PARAMS, ...params});
+const generateSrc = (src, params = {}) => {
+  params = {...DEFAULT_PARAMS, ...params};
+
+  // Check if image is an SVG, if it is we don't need or want to process it
+  // If we do imgix will rasterize the image.
+  const doNotUseParams = isSimpleImg(src, params);
+
+  return client.buildURL(src, doNotUseParams ? {} : params);
+};
 
 /**
  * Takes an imgix url or path and generates an `<img>` element with `srcset`.
@@ -88,6 +102,8 @@ const Img = function (args) {
     lazy = true;
   }
 
+  const doNotUseSrcset = isSimpleImg(src, params);
+
   // https://github.com/imgix/imgix-core-js#imgixclientbuildsrcsetpath-params-options
   options = {
     // Use the image width as the lower bound.
@@ -117,20 +133,21 @@ const Img = function (args) {
   /* eslint-disable lit-a11y/alt-text */
   let imgTag = html` <img
     src="${fullSrc}"
-    srcset="${srcset}"
-    sizes="${sizes}"
     height="${heightAsNumber}"
     width="${widthAsNumber}"
+    ${doNotUseSrcset ? '' : `srcset="${srcset}"`}
+    ${doNotUseSrcset ? '' : `sizes="${sizes}"`}
     ${alt ? `alt="${safeHtml`${alt}`}"` : ''}
     ${className ? `class="${className}"` : ''}
     ${lazy ? 'loading="lazy"' : ''}
-  />`.replace(/\n/g, '');
+  />`;
+  /* eslint-enable lit-a11y/alt-text */
 
   if (linkTo) {
     imgTag = html`<a href="${fullSrc}">${imgTag}</a>`;
   }
 
-  return imgTag;
+  return imgTag.replace(/\n/g, '');
 };
 
 module.exports = {Img, generateSrc};

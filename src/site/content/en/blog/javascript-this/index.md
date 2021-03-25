@@ -237,9 +237,9 @@ When calling a bound function, the value of `this` _can't_ be changed with [`cal
 
 ```js
 // Logs `true` - called `this` value is ignored:
-console.log(boundFunction().call({foo: 'bar'}) === boundObject);
+console.log(boundFunction.call({foo: 'bar'}) === boundObject);
 // Logs `true` - applied `this` value is ignored:
-console.log(boundFunction().apply({foo: 'bar'}) === boundObject);
+console.log(boundFunction.apply({foo: 'bar'}) === boundObject);
 ```
 
 When calling a bound function, the value of `this` _can't_ be changed by calling the function as a

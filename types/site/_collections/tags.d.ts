@@ -19,6 +19,7 @@ declare global {
     data: {
       subhead: string;
       title: string;
+      tags: string[];
     };
     description: string;
     elements: TODO[];
