@@ -124,6 +124,10 @@ export const requestFetchReports = store.action((_, url, startDate) => {
   });
 });
 
+/**
+ * Inert the page so scrolling and pointer events are disabled.
+ * This is used when we open the navigation drawer or show a modal dialog.
+ */
 const disablePage = () => {
   /** @type {HTMLElement|object} */
   const main = document.querySelector('main') || {};
@@ -138,6 +142,9 @@ const disablePage = () => {
   footer.inert = true;
 };
 
+/**
+ * Uninert the page so scrolling and pointer events work again.
+ */
 const enablePage = () => {
   /** @type {HTMLElement|object} */
   const main = document.querySelector('main') || {};
@@ -154,13 +161,11 @@ const enablePage = () => {
 
 export const openNavigationDrawer = store.action(() => {
   disablePage();
-  document.documentElement.classList.add('js-navigation-drawer-open');
   return {isNavigationDrawerOpen: true};
 });
 
 export const closeNavigationDrawer = store.action(() => {
   enablePage();
-  document.documentElement.classList.remove('js-navigation-drawer-open');
   return {isNavigationDrawerOpen: false};
 });
 

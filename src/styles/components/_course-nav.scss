@@ -1,6 +1,6 @@
 .course-nav {
   $header-height: 144px;
-  $search-heigh: 48px;
+  $search-height: 48px;
 
   background-color: $WHITE;
   border-right: 1px solid $GREY_300;
@@ -26,13 +26,6 @@
     margin: auto 0 20px 40px;
   }
 
-  &__gradient {
-    background: linear-gradient(96.46deg, #B323F4 5.23%, #2BA1FF 33.16%, #02E895 68.79%, #6DDB00 90.93%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-
   &__search {
     padding: 0 16px;
     height: 48px;
@@ -44,7 +37,7 @@
   }
 
   &__links {
-    height: calc(100vh - #{$header-height} - #{$search-heigh});
+    height: calc(100vh - #{$header-height} - #{$search-height});
     overflow-y: auto;
     // Give a little bottom margin so when we scroll to the bottom the last link
     // clearly scrolls into view.

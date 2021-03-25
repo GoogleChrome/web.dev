@@ -2,17 +2,25 @@
 layout: base
 ---
 
+{% set courseData = courses[projectKey] %}
+{% set courseTitle = courseData.meta.title | i18n(locale) %}
+
 {#
-  Grab the navigation data for the course. The projectKey is defined in the
-  11tydata.js file at the root of the course in /learn/[course].
+  Grab the navigation data for the course. These are the link that will appear
+  in the navigatino drawer.
+  The projectKey is defined in the 11tydata.js file at the root of the course
+  in /learn/[course].
 #}
-{% set navigationToC = courses[projectKey].toc %}
-{% set pageNavigation = collections.all | navigation(navigationToC) %}
+{% set pageNavigation = collections.all | navigation(courseData.toc) %}
 
 {#
   Grab the ToC contents for headings ToC. This powers the list of headings
   that appears on the right-hand side of the page. Unfortunately our use of
   the word 'toc' is a bit overloaded :P
+  TODO: The courseToc filter is only used to define the ToC for courses, but
+  it's basically the same thing we use on developer.chrome.com and it would be
+  nice to use it for articles as well. Currently we have a different toc design
+  for those but it's a bit clunky and we should replace it with this.
 #}
 {% set tocContents %}
   {{- content | courseToc | safe -}}

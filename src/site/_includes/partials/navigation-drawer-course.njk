@@ -1,6 +1,6 @@
 {% from 'macros/icon.njk' import icon with context %}
 
-<web-navigation-drawer type="dismissible">
+<web-navigation-drawer type="standard">
   <nav data-drawer-container>
 
     <div class="course-nav flow flow-space-300">
@@ -10,7 +10,9 @@
           <span class="w-tooltip">Close</span>
         </button>
 
-        <div class="course-nav__title">Learn <span class="course-nav__gradient">CSS!</span></div>
+        <div class="course-nav__title">
+          {% include 'partials/course-gradient-title.njk' %}
+        </div>
       </div>
 
       <div class="course-nav__search">
