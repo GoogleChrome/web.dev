@@ -1988,5 +1988,18 @@
     },
     "linkedin": "https://www.linkedin.com/in/safwansamla/",
     "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/lR8Vo8IDNt6AnLSVvObk.jpg"
+  },
+  "andybell": {
+    "name": {
+      "given": "Andy",
+      "family": "Bell"
+    },
+    "descriptions": {
+      "en": "Freelance designer and educator"
+    },
+    "homepage": "https://piccalil.li/",
+    "github": "hankchizljaw",
+    "twitter": "piccalilli_",
+    "image": "image/admin/c4bzyDkOZ9MhBaqp0HfW.jpg"
   }
 }
