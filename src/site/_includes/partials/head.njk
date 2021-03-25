@@ -33,26 +33,33 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
 {% set scriptLoader %}
-function loadScript(url, type, async) {
+function loadScript(url, type) {
   const s = document.createElement('script');
-  s.async = async;
   s.src = url;
-  if (type) {
-    s.type = type;
+  if (type) s.type = type;
+  if (type === 'module') {
+    const pre = document.createElement('link');
+    pre.rel = 'modulepreload';
+    pre.href = url;
+    document.head.appendChild(pre);
+    window.addEventListener('DOMContentLoaded', () => {
+      document.head.appendChild(s);
+    })
+  } else {
+    document.head.appendChild(s);
   }
-  document.head.appendChild(s);
 }
-loadScript('{{ helpers.hashForProd('/js/app.js') }}', 'module', false);
+loadScript('{{ helpers.hashForProd('/js/app.js') }}', 'module');
 {# Add a facility for pages to declare an array of script paths. #}
 {# If no scripts are declared we will use the default page script. #}
 {# default.js loads the basic set of custom elements that all pages need. #}
 {% for item in pageScripts %}
-  loadScript('{{ helpers.hashForProd(item) }}', 'module', false);
+  loadScript('{{ helpers.hashForProd(item) }}', 'module');
 {% else %}
-  loadScript('{{ helpers.hashForProd('/js/default.js') }}', 'module', false);
+  loadScript('{{ helpers.hashForProd('/js/default.js') }}', 'module');
 {% endfor %}
 {% if process.env.ELEVENTY_ENV === 'prod' %}
-  loadScript('https://www.google-analytics.com/analytics.js', null, true);
+  loadScript('https://www.google-analytics.com/analytics.js', null);
 {% endif %}
 {% endset %}
 <script>{{ scriptLoader|cspHash|safe }}</script>

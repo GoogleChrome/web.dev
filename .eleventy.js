@@ -214,7 +214,10 @@ module.exports = function (config) {
 
   const hashList = new Set();
   config.addFilter('cspHash', (raw) => {
-    raw = raw.trim();
+    raw = raw
+      .split(/\s/)
+      .filter((s) => s)
+      .join(' ');
     if (isProd) {
       const hash = `'sha256-${sha256base64(raw)}'`;
       hashList.add(hash);
