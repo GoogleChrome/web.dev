@@ -1,5 +1,5 @@
 .header-course {
-  background-image: url('/images/courses/learn-css.svg');
+  background-image: var(--header-course-background);
   background-repeat: no-repeat;
   background-position: right;
   background-size: 136px;

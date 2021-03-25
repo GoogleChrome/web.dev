@@ -14,7 +14,7 @@
     display: flex;
     height: 144px;
     padding: 24px 16px 0;
-    background-image: url('/images/courses/learn-css.svg');
+    background-image: var(--drawer-course-background);
     background-repeat: no-repeat;
     background-position: right;
   }
