@@ -1,10 +1,10 @@
 .drawer-course {
-  $header-height: 144px;
-  $search-height: 48px;
 
   &__contents {
     background-color: $WHITE;
     border-right: 1px solid $GREY_300;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     max-width: 90vw;
     width: 360px;
@@ -39,11 +39,8 @@
   }
 
   &__links {
-    height: calc(100vh - #{$header-height} - #{$search-height});
+    flex: 1;
     overflow-y: auto;
-    // Give a little bottom margin so when we scroll to the bottom the last link
-    // clearly scrolls into view.
-    padding-bottom: 40px;
   }
 
   &__link {
