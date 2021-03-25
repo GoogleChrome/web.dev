@@ -20,5 +20,8 @@ Hey we're talking about borders here!
 
 {% Codepen {
   user: 'devnook',
-  id: 'WNoYvpg'
+  id: 'WNoYvpg',
+  height: 700,
+  theme: 'dark',
+  tab: 'html'
 } %}

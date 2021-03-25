@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,21 +18,23 @@ const {html} = require('common-tags');
 const {escape, stringify} = require('querystring');
 const iframe = require('./IFrame');
 
-/** @type {string} */
-const THEME = 'light';
-
-/** @type {string} */
-const DEFAULT_TAB = 'result';
-
 /**
- *
- * @param {string | CodepenParam} param
+ * @this {EleventyPage}
+ * @param {CodepenParam} param
  * @return string
  */
-module.exports = (param) => {
-  const {id, user} = param;
+function Codepen(param) {
+  const {
+    id,
+    user,
+    tab = 'result',
+    theme = 'light',
+    height = 500,
+    width = '100%',
+  } = param;
   if (!id || !user) {
-    return;
+    throw new Error(`${this.page.inputPath} has a Codepen with missing
+      arguments. id: ${id}, user: ${user}`);
   }
 
   const allow = [
@@ -43,20 +45,24 @@ module.exports = (param) => {
     'geolocation',
     'microphone',
     'midi',
-  ];
+  ].join('; ');
+
+  const frameWidth = typeof width === 'number' ? width + 'px' : width;
 
   const title = param.title || `Pen ${id} by ${user} on Codepen`;
   const url = `https://codepen.io/${escape(user)}/embed/${escape(id)}`;
   const queryParams = {
-    height: 500,
-    'theme-id': THEME,
-    'default-tab': DEFAULT_TAB,
+    height: height,
+    'theme-id': theme,
+    'default-tab': tab,
   };
   const src = `${url}?${stringify(queryParams)}`;
 
   return html`
-    <div style="height: ${queryParams.height}px; width: 100%;">
+    <div style="height: ${queryParams.height}px; width: ${frameWidth}">
       ${iframe({src, title: `${title}`, allow})}
     </div>
   `;
-};
+}
+
+module.exports = Codepen;

@@ -17,8 +17,11 @@
 declare global {
   export interface CodepenParam {
     height?: number;
+    tab?: string;
+    theme?: string;
     title?: string,
     user: string,
+    width?: string | number;
     id: string,
   }
 }
