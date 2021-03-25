@@ -58,7 +58,7 @@ browser can't respond to user interactions while the main thread is busy. To imp
 
 - [Break up Long Tasks](#long-tasks)
 - [Optimize your page for interaction readiness](#optimize-interaction-readiness)
-- [Use a web worker](#web-worker)
+- [Use a web worker](#use-a-web-worker)
 - [Reduce JavaScript execution time](#reduce-javascript-execution)
 
 ## Break up Long Tasks {: #long-tasks }

@@ -628,7 +628,7 @@ individual fonts in a single variable font file meant a _88% reduction in file
 size_.
 
 However, if you are using a single font such as Roboto Regular and nothing
-else, you might see a net gain in font size if you were to switch to a
+else, you might not see a net gain in font size if you were to switch to a
 variable font with many axes. As always, it depends on your use-case.
 
 On the flip side, animating the font between settings may cause performance

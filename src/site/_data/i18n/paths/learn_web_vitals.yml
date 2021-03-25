@@ -19,3 +19,9 @@ topics:
 
   improve_web_vitals:
     en: Improve Web Vitals
+
+  debug_web_vitals:
+    en: Debug Web Vitals
+
+  best_practices:
+    en: Best Practices

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
+const {html} = require('common-tags');
 const {generateSrc} = require('./Img');
 const site = require('../../_data/site');
 const strip = require('../../_filters/strip');
-const {html} = require('common-tags');
 
 module.exports = (locale, page, collections, renderData = {}) => {
   const forbiddenCharacters = [{searchValue: /"/g, replaceValue: '&quot;'}];

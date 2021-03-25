@@ -14,20 +14,15 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
-const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
+/**
+ * Removes any i18n data from a URL to determine the default URL.
+ *
+ * @param {string} url URL with possible i18n folder and locale in prefix.
+ * @returns {string} URL without any i18n information.
+ */
+const getDefaultUrl = (url) =>
+  url.replace(/^\/i18n\/[a-z]{2}(-[A-Z]{2})?\//, '/');
 
-function StackOverflow(tag) {
-  const locale = getLocaleFromPath(this.page && this.page.filePathStem);
-  const text = i18n(`i18n.stackoverflow.ask_question`, locale).replace(
-    /<TAG>/g,
-    tag,
-  );
-  return html`
-    <div class="w-aside w-aside--note">
-      ${text}
-    </div>
-  `;
-}
-
-module.exports = StackOverflow;
+module.exports = {
+  getDefaultUrl,
+};

@@ -21,7 +21,11 @@ proposal.
 
 ## Building the site 🏗
 
-You'll need a recent version of [Node](https://nodejs.org/): v12.10 or higher.
+You'll need a recent version of [Node](https://nodejs.org/): v14 (LTS) or higher.
+To check your node version run `node -v` in your terminal.
+
+If you don't have node, or if you need to upgrade, we recommend using the [Node
+Version Manager (nvm)](https://github.com/nvm-sh/nvm).
 
 ### Clone the repo
 

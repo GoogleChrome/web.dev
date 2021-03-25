@@ -52,6 +52,7 @@ const pages = fs.readdirSync(pagesDir, 'utf-8').map((p) => join(pagesDir, p));
 const plugins = [
   virtual(buildVirtualJSON(virtualImports)),
   nodeResolve(),
+  // @ts-ignore
   commonjs(),
 ];
 const devConfig = {

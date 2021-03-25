@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-const path = require('path');
 const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
@@ -57,15 +56,17 @@ const Tooltip = require(`./${componentsDir}/Tooltip`);
 const {Video} = require(`./${componentsDir}/Video`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
-const collectionsDir = 'src/site/_collections';
-const authors = require(`./${collectionsDir}/authors`);
-const blogPostsDescending = require(`./${collectionsDir}/blog-posts-descending`);
-const newsletters = require(`./${collectionsDir}/newsletters`);
+// Collections
+const algolia = require('./src/site/_collections/algolia');
+const authors = require(`./src/site/_collections/authors`);
+const blogPostsDescending = require(`./src/site/_collections/blog-posts-descending`);
+const newsletters = require(`./src/site/_collections/newsletters`);
 const {
   postsWithLighthouse,
-} = require(`./${collectionsDir}/posts-with-lighthouse`);
-const tags = require(`./${collectionsDir}/tags`);
+} = require(`./src/site/_collections/posts-with-lighthouse`);
+const tags = require(`./src/site/_collections/tags`);
 
+// Filters
 const filtersDir = 'src/site/_filters';
 const consoleDump = require(`./${filtersDir}/console-dump`);
 const {i18n} = require(`./${filtersDir}/i18n`);
@@ -171,6 +172,7 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // COLLECTIONS
   // ----------------------------------------------------------------------------
+  config.addCollection('algolia', algolia);
   config.addCollection('authors', authors);
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('newsletters', newsletters);
@@ -286,14 +288,12 @@ module.exports = function (config) {
     });
   }
 
-  // https://www.11ty.io/docs/config/#configuration-options
-  const targetLang = process.env.ELEVENTY_LANG || '';
   return {
     dir: {
-      input: path.join('src/site/content/', targetLang),
+      input: 'src/site/content/', // we use a string path with the forward slash since windows doesn't like the paths generated from path.join
       output: 'dist',
-      data: targetLang ? '../../_data' : '../_data',
-      includes: targetLang ? '../../_includes' : '../_includes',
+      data: '../_data',
+      includes: '../_includes',
     },
     templateFormats: ['njk', 'md'],
     htmlTemplateEngine: 'njk',
