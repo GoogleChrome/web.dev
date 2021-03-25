@@ -202,7 +202,7 @@ compile-time feature supported by Emscripten, that allows pausing the entire pro
 asynchronously resuming it later.
 
 {% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/VSMrdTiQ7PubW6vfE6WZ.svg", alt="ALT_TEXT_HERE",
-width="300", height="75" %}
+width="800", height="200" %}
 
 ### Usage in C / C++ with Emscripten
 
