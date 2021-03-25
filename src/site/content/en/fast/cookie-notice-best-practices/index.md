@@ -268,7 +268,7 @@ cookie header to the **Custom headers** field:
 
 
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/qSccrAxF0H4yoSzYRYdh.png", alt="Screeshot showing the 'Custom headers' field in WebPageTest", width="800", height="181" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/qSccrAxF0H4yoSzYRYdh.png", alt="Screeshot showing the 'Custom headers' field in WebPageTest", width="800", height="181", class="w-screenshot" %}
 
 
 #### Change the test location
@@ -278,7 +278,7 @@ dropdown located on the **Advanced Testing** tab.
 
 
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/J27NcDQ5LTtXYloaA1DN.png", alt="Screenshot of the 'Test Location' dropdown in WebPageTest", width="800", height="267" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/J27NcDQ5LTtXYloaA1DN.png", alt="Screenshot of the 'Test Location' dropdown in WebPageTest", width="800", height="267", class="w-screenshot" %}
 
 
 
@@ -297,7 +297,7 @@ the **Clear Storage** option in the **Lighthouse** settings panel.
 
 
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/nmNDeSoGEQUVKeTP7q7R.png", alt="Screenshot higlighting the Lighthouse 'Clear Storage' option", width="800", height="304" %}
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/nmNDeSoGEQUVKeTP7q7R.png", alt="Screenshot higlighting the Lighthouse 'Clear Storage' option", width="800", height="304", class="w-screenshot" %}
 
 
 
