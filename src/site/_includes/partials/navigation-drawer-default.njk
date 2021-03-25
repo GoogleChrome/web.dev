@@ -1,12 +1,12 @@
 {% from 'macros/icon.njk' import icon with context %}
 
-<web-navigation-drawer type="modal">
+<web-navigation-drawer class="drawer-default" type="modal">
   <nav data-drawer-container>
-    <div class="default-nav">
-      <div class="default-nav__header">
+    <div class="drawer-default__contents">
+      <div class="drawer-default__header">
         <button
           data-drawer-close-button
-          class="default-nav__hide w-button--svg w-button--round"
+          class="drawer-default__hide w-button--svg w-button--round"
           aria-label="{{ 'i18n.common.close' | i18n(locale) }}"
         >
           {{ icon('close') }}
@@ -19,7 +19,7 @@
           data-label="Site logo"
         >
           <img
-            class="default-nav__logo"
+            class="drawer-default__logo"
             src="/images/lockup.svg"
             alt="web.dev"
           />
@@ -27,7 +27,7 @@
       </div>
       <a
         href="/learn/"
-        class="default-nav__link gc-analytics-event"
+        class="drawer-default__link gc-analytics-event"
         data-category="Site-Wide Custom Events"
         data-label="SideNav: Learn"
       >
@@ -35,7 +35,7 @@
       </a>
       <a
         href="/measure/"
-        class="default-nav__link gc-analytics-event"
+        class="drawer-default__link gc-analytics-event"
         data-category="Site-Wide Custom Events"
         data-label="SideNav: Measure"
       >
@@ -43,7 +43,7 @@
       </a>
       <a
         href="/blog/"
-        class="default-nav__link gc-analytics-event"
+        class="drawer-default__link gc-analytics-event"
         data-category="Site-Wide Custom Events"
         data-label="SideNav: Blog"
       >
@@ -51,7 +51,7 @@
       </a>
       <a
         href="/about/"
-        class="default-nav__link gc-analytics-event"
+        class="drawer-default__link gc-analytics-event"
         data-category="Site-Wide Custom Events"
         data-label="SideNav: About"
       >

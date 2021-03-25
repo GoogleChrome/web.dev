@@ -65,7 +65,7 @@ web-navigation-drawer[type='standard'] {
     }
 
     [data-drawer-close-button] {
-      display: none;
+      visibility: hidden;
     }
   }
 }
