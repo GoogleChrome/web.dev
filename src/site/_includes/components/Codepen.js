@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
 const {escape, stringify} = require('querystring');
 const iframe = require('./IFrame');
 
@@ -48,9 +47,8 @@ function Codepen(param) {
     'midi',
   ];
 
-  const frameAllow = Array.from(new Set([...defaultAllow, ...allow])).join(
-    '; ',
-  );
+  const frameAllow =
+    Array.from(new Set([...defaultAllow, ...allow])).join('; ') + ';';
 
   const frameWidth = typeof width === 'number' ? width + 'px' : width;
 
@@ -61,13 +59,11 @@ function Codepen(param) {
     'theme-id': theme,
     'default-tab': tab,
   };
+
   const src = `${url}?${stringify(queryParams)}`;
 
-  return html`
-    <div style="height: ${height}px; width: ${frameWidth}">
-      ${iframe({src, title, allow: frameAllow})}
-    </div>
-  `;
+  return `<div style="height: ${height}px; width: ${frameWidth}">
+${iframe({src, title, allow: frameAllow})}</div>`;
 }
 
 module.exports = Codepen;

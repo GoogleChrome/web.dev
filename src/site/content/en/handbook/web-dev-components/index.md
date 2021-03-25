@@ -22,6 +22,7 @@ guidance about how to use them effectively.
 1. [Buttons](#buttons)
 1. [Callouts](#callouts)
 1. [Checkbox](#checkbox)
+1. [Codepen](#codepen)
 1. [Columns](#columns)
 1. [Code](#code)
 1. [Compare](#compare)
@@ -316,6 +317,36 @@ element, and add the `w-ml--l` class to the label. See below:
   <input id="sub-newsletter" name="WebDevNewsletter" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
   <label for="sub-newsletter" class="w-ml--l">Add me to the web.dev mailing list.</label>
 </div>
+```
+
+## Codepen {: #codepen }
+
+If you don't want to use your personal account, you can use the
+**web-dev-codepen-external** account to create a Codepen. Speak to a member of
+the tech writing team to get access to the login and password.
+
+```md
+{% raw %}{% Codepen {
+  user: 'robdodson',
+  id: 'GRroyyX',
+  height: 300,
+  theme: 'dark',
+  tab: 'css,result',
+  allow: ['geolocation']
+} %}{% endraw %}
+```
+
+{% Codepen {
+  user: 'robdodson',
+  id: 'GRroyyX',
+  height: 300,
+  theme: 'dark',
+  tab: 'css,result',
+  allow: ['geolocation']
+} %}
+
+```typescript
+{% include '../../../../../../types/site/_includes/components/Codepen.d.ts' %}
 ```
 
 ## Columns
