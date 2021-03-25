@@ -7,7 +7,7 @@ const crypto = require('crypto');
 const fs = require('fs');
 
 const hashLength = 8;
-// const isProduction = process.env.ELEVENTY_ENV === 'prod';
+const isProduction = process.env.ELEVENTY_ENV === 'prod';
 
 function randomHash() {
   return Math.random().toString(16).substring(2);
@@ -62,9 +62,9 @@ const hashForProdCache = {};
  * @return {string}
  */
 function hashForProd(file) {
-  /*if (!isProduction) {
+  if (!isProduction) {
     return `${file}?v=${randomHash()}`;
-  }*/
+  }
 
   let hash = hashForProdCache[file];
   if (hash === undefined) {

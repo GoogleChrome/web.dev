@@ -20,11 +20,13 @@ firebaseJson.hosting.redirects = parsedRedirects.reduce(
   },
   [],
 );
-firebaseJson.hosting.headers[0].headers.push({
-  key: 'Content-Security-Policy-Report-Only',
-  value:
-    `script-src 'strict-dynamic' ${hashList.join(' ')} ` +
-    `'unsafe-inline' http: https:; object-src 'none'; base-uri 'self'`,
-});
+if (process.env.ELEVENTY_ENV === 'prod') {
+  firebaseJson.hosting.headers[0].headers.push({
+    key: 'Content-Security-Policy-Report-Only',
+    value:
+      `script-src 'strict-dynamic' ${hashList.join(' ')} ` +
+      `'unsafe-inline' http: https:; object-src 'none'; base-uri 'self'`,
+  });
+}
 
 fs.writeFileSync('./firebase.json', JSON.stringify(firebaseJson, null, 2));

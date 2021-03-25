@@ -212,8 +212,11 @@ module.exports = function (config) {
 
   const hashList = new Set();
   config.addFilter('cspHash', (raw) => {
-    const hash = `'sha256-${sha256base64(raw)}'`;
-    hashList.add(hash);
+    raw = raw.trim();
+    if (isProd) {
+      const hash = `'sha256-${sha256base64(raw)}'`;
+      hashList.add(hash);
+    }
     return raw;
   });
 
@@ -266,10 +269,6 @@ module.exports = function (config) {
     config.addTransform('minifyHtml', minifyHtml);
   }
 
-  config.on('afterBuild', () => {
-    fs.writeFileSync('script-hash-list.json', JSON.stringify([...hashList]));
-  });
-
   // ----------------------------------------------------------------------------
   // ELEVENTY OPTIONS
   // ----------------------------------------------------------------------------
@@ -279,6 +278,13 @@ module.exports = function (config) {
 
   // Make .yml files work in the _data directory.
   config.addDataExtension('yml', (contents) => yaml.safeLoad(contents));
+
+  // Make CSP hashes accessible to firebase config.
+  if (isProd) {
+    config.on('afterBuild', () => {
+      fs.writeFileSync('script-hash-list.json', JSON.stringify([...hashList]));
+    });
+  }
 
   // https://www.11ty.io/docs/config/#configuration-options
   const targetLang = process.env.ELEVENTY_LANG || '';
