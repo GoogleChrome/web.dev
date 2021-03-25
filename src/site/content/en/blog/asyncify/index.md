@@ -239,7 +239,7 @@ passing `-s ASYNCIFY` as well as [`-s ASYNCIFY_IMPORTS=[func1,
 func2]`](https://emscripten.org/docs/porting/asyncify.html#more-on-asyncify-imports) with a
 comma-separated list of functions that might be asynchronous.
 
-```bash
+```shell
 emcc -O2 \
     -s ASYNCIFY \
     -s ASYNCIFY_IMPORTS=[async_sleep] \
@@ -340,8 +340,8 @@ println!("Answer is {}", answer);
 
 And compile your code to WebAssembly:
 
-```bash
-$ cargo build --target wasm32-unknown-unknown
+```shell
+cargo build --target wasm32-unknown-unknown
 ```
 
 Now you need to instrument the WebAssembly file with code for storing/restoring the stack. For C /
@@ -352,8 +352,8 @@ WebAssembly files, no matter which compiler it's produced by. The transform is p
 as part of the `wasm-opt` optimiser from the [Binaryen
 toolchain](https://github.com/WebAssembly/binaryen) and can be invoked like this:
 
-```bash
-$ wasm-opt -O2 --asyncify \
+```shell
+wasm-opt -O2 --asyncify \
       --pass-arg=asyncify-imports@env.get_answer \
       [...]
 ```
