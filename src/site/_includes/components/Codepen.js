@@ -31,13 +31,14 @@ function Codepen(param) {
     theme = 'light',
     height = 500,
     width = '100%',
+    allow = [],
   } = param;
   if (!id || !user) {
     throw new Error(`${this.page.inputPath} has a Codepen with missing
       arguments. id: ${id}, user: ${user}`);
   }
 
-  const allow = [
+  const defaultAllow = [
     'camera',
     'clipboard-read',
     'clipboard-write',
@@ -45,7 +46,11 @@ function Codepen(param) {
     'geolocation',
     'microphone',
     'midi',
-  ].join('; ');
+  ];
+
+  const frameAllow = Array.from(new Set([...defaultAllow, ...allow])).join(
+    '; ',
+  );
 
   const frameWidth = typeof width === 'number' ? width + 'px' : width;
 
@@ -59,8 +64,8 @@ function Codepen(param) {
   const src = `${url}?${stringify(queryParams)}`;
 
   return html`
-    <div style="height: ${queryParams.height}px; width: ${frameWidth}">
-      ${iframe({src, title: `${title}`, allow})}
+    <div style="height: ${height}px; width: ${frameWidth}">
+      ${iframe({src, title, allow: frameAllow})}
     </div>
   `;
 }

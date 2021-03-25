@@ -23,5 +23,6 @@ Hey we're talking about borders here!
   id: 'WNoYvpg',
   height: 700,
   theme: 'dark',
-  tab: 'html'
+  tab: 'html',
+  allow: ['geolocation']
 } %}

@@ -23,6 +23,7 @@ declare global {
     user: string,
     width?: string | number;
     id: string,
+    allow?: Array.<string>,
   }
 }
 
