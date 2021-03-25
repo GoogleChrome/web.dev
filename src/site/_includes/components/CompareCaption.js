@@ -19,5 +19,8 @@
  * @return {string}
  */
 module.exports = (content) => {
-  return `<figcaption class="w-compare__caption">${content}</figcaption>`;
+  // Whitespace is intentional to allow markdown parser to kick back in.
+  return `<figcaption class="w-compare__caption">
+
+${content}</figcaption>`;
 };
