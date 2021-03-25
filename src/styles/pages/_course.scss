@@ -9,10 +9,6 @@
 .course-body {
   flex: 1;
   min-width: 0;
-
-  @include bp(lg) {
-    margin-left: 0;
-  }
 }
 
 .course-content {
