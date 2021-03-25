@@ -19,7 +19,7 @@ const {escape, stringify} = require('querystring');
 const iframe = require('./IFrame');
 
 /** @type {string} */
-const THEME_ID = '38982';
+const THEME = 'light';
 
 /** @type {string} */
 const DEFAULT_TAB = 'result';
@@ -49,7 +49,7 @@ module.exports = (param) => {
   const url = `https://codepen.io/${escape(user)}/embed/${escape(id)}`;
   const queryParams = {
     height: 500,
-    'theme-id': THEME_ID,
+    'theme-id': THEME,
     'default-tab': DEFAULT_TAB,
   };
   const src = `${url}?${stringify(queryParams)}`;
