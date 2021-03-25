@@ -35,6 +35,7 @@ const Banner = require(`./${componentsDir}/Banner`);
 const Blockquote = require(`./${componentsDir}/Blockquote`);
 const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
 const CodelabsCallout = require(`./${componentsDir}/CodelabsCallout`);
+const Codepen = require(`./${componentsDir}/Codepen`);
 const Compare = require(`./${componentsDir}/Compare`);
 const CompareCaption = require(`./${componentsDir}/CompareCaption`);
 const Details = require(`./${componentsDir}/Details`);
@@ -222,6 +223,7 @@ module.exports = function (config) {
   config.addPairedShortcode('Blockquote', Blockquote);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
+  config.addShortcode('Codepen', Codepen);
   config.addPairedShortcode('Compare', Compare);
   config.addPairedShortcode('CompareCaption', CompareCaption);
   config.addPairedShortcode('Details', Details);
