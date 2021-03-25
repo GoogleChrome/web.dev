@@ -26,13 +26,13 @@
 // affect the screen’s layout grid. They can be used on tablet and desktop only.
 // On mobile, they switch to a modal behavior.
 //
-// modal
+// modal (default)
 // -----
 // Modal navigation drawers block interaction with the rest of an app’s content
 // with a scrim. They are elevated above most of the app’s UI and don’t affect
 // the screen’s layout grid.
 
-web-navigation-drawer[type='modal'] {
+web-navigation-drawer {
   display: block;
   height: 100%;
   left: 0;

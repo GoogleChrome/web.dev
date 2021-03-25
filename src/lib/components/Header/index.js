@@ -22,22 +22,20 @@
 
 import {store} from '../../store';
 import {openNavigationDrawer} from '../../actions';
-import {BaseElement} from '../BaseElement';
+import {BaseStateElement} from '../BaseStateElement';
 
-export class Header extends BaseElement {
+export class Header extends BaseStateElement {
   constructor() {
     super();
-    this.onStateChanged = this.onStateChanged.bind(this);
   }
 
-  firstUpdated() {
+  connectedCallback() {
+    super.connectedCallback();
     /** @type HTMLButtonElement */
     this.openDrawerBtn = this.querySelector('[data-open-drawer-button]');
     if (this.openDrawerBtn) {
       this.openDrawerBtn.addEventListener('click', openNavigationDrawer);
     }
-
-    store.subscribe(this.onStateChanged);
   }
 
   disconnectedCallback() {

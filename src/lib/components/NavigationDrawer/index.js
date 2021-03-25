@@ -16,23 +16,21 @@
 
 /* eslint lit-a11y/click-events-have-key-events: 0 */
 
-import {BaseElement} from '../BaseElement';
-import {store} from '../../store';
+import {BaseStateElement} from '../BaseStateElement';
 import 'wicg-inert';
 import {closeNavigationDrawer} from '../../actions';
 
 export const NAVIGATION_DRAWER_TYPE = {
-  dismissible: 'dismissible',
+  standard: 'standard',
   modal: 'modal',
 };
 
-export class NavigationDrawer extends BaseElement {
+export class NavigationDrawer extends BaseStateElement {
   static get properties() {
     return {
       type: {type: String, reflect: true},
       open: {type: Boolean, reflect: true},
       animating: {type: Boolean, reflect: true},
-      dismissed: {type: Boolean, reflect: true},
     };
   }
 
@@ -70,21 +68,14 @@ export class NavigationDrawer extends BaseElement {
     this.onTouchEnd = this.onTouchEnd.bind(this);
     this.onTransitionEnd = this.onTransitionEnd.bind(this);
     this.drag = this.drag.bind(this);
-    this.onStateChanged = this.onStateChanged.bind(this);
     this.onKeyUp = this.onKeyUp.bind(this);
   }
 
   connectedCallback() {
-    super.connectedCallback();
-
     this.tabIndex = -1;
 
     if (this.type === NAVIGATION_DRAWER_TYPE.modal) {
       this.inert = true;
-    }
-
-    if (this.type === NAVIGATION_DRAWER_TYPE.dismissible) {
-      this.dismissed = false;
     }
 
     /** @type HTMLElement */
@@ -93,8 +84,7 @@ export class NavigationDrawer extends BaseElement {
     this.closeBtn = this.querySelector('[data-drawer-close-button]');
 
     this.addEventListeners();
-    store.subscribe(this.onStateChanged);
-    this.onStateChanged();
+    super.connectedCallback();
   }
 
   addEventListeners() {
@@ -106,9 +96,7 @@ export class NavigationDrawer extends BaseElement {
     this.addEventListener('touchend', this.onTouchEnd);
   }
 
-  onStateChanged({currentUrl} = {currentUrl: null}) {
-    const {isNavigationDrawerOpen} = store.getState();
-
+  onStateChanged({isNavigationDrawerOpen, currentUrl}) {
     this.open = isNavigationDrawerOpen;
 
     if (currentUrl) {
@@ -229,11 +217,6 @@ export class NavigationDrawer extends BaseElement {
       closeNavigationDrawer();
       document.removeEventListener('keyup', this.onKeyUp);
     }
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    store.unsubscribe(this.onStateChanged);
   }
 }
 

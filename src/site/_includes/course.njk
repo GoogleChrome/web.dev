@@ -2,14 +2,16 @@
 layout: base
 ---
 
+{#
+  Grab the data for the course using the projectKey defined in the 11tydata.js
+  file at the root of the course in /learn/[course]
+#}
 {% set courseData = courses[projectKey] %}
 {% set courseTitle = courseData.meta.title | i18n(locale) %}
 
 {#
   Grab the navigation data for the course. These are the link that will appear
   in the navigatino drawer.
-  The projectKey is defined in the 11tydata.js file at the root of the course
-  in /learn/[course].
 #}
 {% set pageNavigation = collections.all | navigation(courseData.toc) %}
 
