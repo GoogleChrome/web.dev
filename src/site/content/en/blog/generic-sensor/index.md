@@ -205,9 +205,7 @@ terms of API ergonomics. The
 [`GravitySensor`](https://w3c.github.io/accelerometer/#gravitysensor-interface) returns the effect
 of acceleration along the device's X, Y, and Z axis due to gravity.
 
-{% Aside %} As of February 2021, GravitySensor is still
-[under development](https://bugs.chromium.org/p/chromium/issues/detail?id=1163993) with no estimated
-release date. {% endAside %}
+{% Aside %} GravitySensor is expected to start shipping in Chrome 91. {% endAside %}
 
 ### Gyroscope {: #gyroscope-sensor }
 
