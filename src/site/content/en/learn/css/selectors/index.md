@@ -1,6 +1,8 @@
 ---
 title: Selectors
 description:
+authors:
+  - andybell
 date: 2021-03-25
 tags:
   - css
@@ -31,7 +33,10 @@ CSS provides you with a lot of options to select elements and apply rules to the
 ranging from very simple to very complex,
 to help solve situations like this.
 
-https://codepen.io/web-dot-dev/pen/XWprGYz
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'XWprGYz'
+} %}
 
 ## The parts of a CSS rule
 
@@ -53,7 +58,7 @@ A CSS rule can have as many declarations and selectors as you like.
 ## Simple selectors
 
 The most straightforward group of selectors target HTML elements plus
-classes, ids, and other attributes which may be added to an HTML tag.
+classes, IDs, and other attributes which may be added to an HTML tag.
 
 ### Universal selector
 
@@ -119,7 +124,7 @@ rather than matching that class exactly.
 
 ### ID selector
 
-An HTML element with an `id` attribute should be the only element on a page with that id value.
+An HTML element with an `id` attribute should be the only element on a page with that ID value.
 You select elements with an
 [ID selector](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) like this:
 
@@ -215,10 +220,14 @@ you have access to operators that match portions of strings inside attribute val
 }
 ```
 
-[DEMO: https://codepen.io/web-dot-dev/pen/BapBbOy]
-
-In this demo, the `$` operator in our attribute selector gets the filetype from the `href` attribute.
-This makes it possible to prefix the label—based on that filetype—using a pseudo-element.
+<figure class="w-figure">
+  {% Codepen {
+    user: 'web-dot-dev',
+    id: 'BapBbOy'
+  } %}
+  <figcaption class="w-figcaption">In this demo, the `$` operator in our attribute selector gets the filetype from the `href` attribute.
+  This makes it possible to prefix the label—based on that filetype—using a pseudo-element.</figcaption>
+</figure>
 
 ### Grouping selectors
 
@@ -358,10 +367,14 @@ A combinator selector like this is **recursive**.
 This means that in the above snippet, all strong elements,
 regardless of their depth, will have blue text.
 
-[DEMO: https://codepen.io/web-dot-dev/pen/BapBbGN]
-
-[CAPTION: Because the descendant combinator is recursive,
-the padding added to each child element applies, resulting in a staggered effect.]
+<figure class="w-figure">
+  {% Codepen {
+    user: 'web-dot-dev',
+    id: 'BapBbGN'
+  } %}
+  <figcaption class="w-figcaption">Because the descendant combinator is recursive,
+the padding added to each child element applies, resulting in a staggered effect.</figcaption>
+</figure>
 
 This effect is better visualised in the above example,
 using the combinator selector, `.top div`.
@@ -378,7 +391,10 @@ have `<div>` child elements.
 You can look for an element that immediately follows another element
 by using a `+` character in your selector.
 
-[DEMO: https://codepen.io/web-dot-dev/pen/JjEPzwB]
+{% Codepen {
+    user: 'web-dot-dev',
+    id: 'JjEPzwB'
+} %}
 
 To add space between stacked elements,
 use the next sibling combinator to add space
@@ -409,9 +425,13 @@ use a `~` character.
 How this differs is that an element just has to follow another element with the same parent,
 rather than being the next element with the same parent.
 
-[DEMO: https://codepen.io/web-dot-dev/pen/ZELzPPX]
-
-[CAPTION: Use a subsequent selector along with a `:checked` pseudo class to create a pure CSS switch element.]
+<figure class="w-figure">
+  {% Codepen {
+    user: 'web-dot-dev',
+    id: 'ZELzPPX'
+  } %}
+  <figcaption class="w-figcaption">Use a subsequent selector along with a `:checked` pseudo class to create a pure CSS switch element.</figcaption>
+</figure>
 
 This subsequent combinator provides a little less rigidity,
 which is useful in contexts like the above sample,
@@ -428,13 +448,19 @@ The space is added to each **next sibling**,
 but if one of those elements also has **next sibling elements** as children,
 it can result in undesirable, extra spacing.
 
-[DEMO: https://codepen.io/web-dot-dev/pen/ExZYMJL]
+{% Codepen {
+    user: 'web-dot-dev',
+    id: 'ExZYMJL'
+} %}
 
 To alleviate this problem,
 change the **next sibling selector** to incorporate a child combinator: `> * + *`.
 The rule will now **only** apply to direct children of `.top`.
 
-[DEMO: https://codepen.io/web-dot-dev/pen/dyNbrEr]
+{% Codepen {
+    user: 'web-dot-dev',
+    id: 'dyNbrEr'
+} %}
 
 ### Compound selectors
 
