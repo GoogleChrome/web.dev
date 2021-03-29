@@ -57,8 +57,7 @@ but the engineering team didn't realize how expensive the scripts were because t
 were developing and testing on rich spec computers with fast Wi-Fi connections.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="main-thread-break-down.png"
-       alt="A chart that shows the app's runtime activity.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/RAi3zG4JngSi0UlSMi0a.png", alt="A chart that shows the app's runtime activity.", width="800", height="476", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     When loading the shift table, around 80% of the load time was consumed by running scripts.
   </figcaption>
@@ -101,16 +100,14 @@ In this case, AirSHIFT used [react-virtualized](https://github.com/bvaughn/react
 Virtualizing the table alone reduced scripting time by 6 seconds (on a 4x CPU slowdown + Fast 3G throttled Macbook Pro environment). This was the most impactful performance improvement in the refactoring project.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="virtualize_results_before.png"
-       alt="An annotated screenshot of a Chrome DevTools Performance panel recording.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pRX1ap7tVOdAoTo35MWj.png", alt="An annotated screenshot of a Chrome DevTools Performance panel recording.", width="800", height="289", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Before: Around 10 seconds of scripting after user input.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="virtualize_results_after.png"
-       alt="Another annotated screenshot of a Chrome DevTools Performance panel recording.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCy17DjlhMWXSsN1cFAZ.png", alt="Another annotated screenshot of a Chrome DevTools Performance panel recording.", width="800", height="358", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     After: 4 seconds of scripting after user input.
   </figcaption>
@@ -134,8 +131,7 @@ of Chrome DevTools. AirSHIFT used the Timings section to find
 unnecessary logic running in React lifecycle events.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="user_timing.png" style="max-width: 75%;"
-       alt="The Timings section of the Performance panel of Chrome DevTools.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zTvUhCKRSCvZzo9mlkte.png", alt="The Timings section of the Performance panel of Chrome DevTools.", width="800", height="388", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     React's User Timing events.
   </figcaption>

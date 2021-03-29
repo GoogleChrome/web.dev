@@ -109,9 +109,7 @@ e.g. clicking a link to go to a different site. However something like a
 `<form>` submission via POST to a different site would not include cookies.
 
 <figure class="w-figure">
-  <img src="safe-navigation.png"
-      alt="Diagram of a request moving from one page to another."
-      style="max-width: 35vw;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vddDg7f9Gp93OgaqWwHu.png", alt="Diagram of a request moving from one page to another.", width="719", height="382" %}
   <figcaption class="w-figcaption">
     If the incoming request uses a "safe" method then the cookies will be sent.
   </figcaption>

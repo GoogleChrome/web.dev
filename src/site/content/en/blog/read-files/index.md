@@ -115,8 +115,7 @@ only want part of the window to be a drop surface, or potentially the entire
 window.
 
 <figure class="w-figure">
-  <img src="squoosh.png" class="w-screenshot w-screenshot--filled"
-       alt="A screenshot of Squoosh, an image compression web app.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xX8UXdqkLmZXu3Ad1Z2q.png", alt="A screenshot of Squoosh, an image compression web app.", width="800", height="589" %}
   <figcaption class="w-figcaption">
     Squoosh makes the entire window a drop zone.
   </figcaption>

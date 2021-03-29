@@ -111,9 +111,7 @@ process of improving user experience.
     <a href="/content-delivery-networks/">CDN</a>" improved to an A grade.
   </p>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="cls.png"
-        alt="0.05 CLS score.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WSQ9ATmLBzHmNtTWBIf8.png", alt="0.05 CLS score.", width="800", height="370", class="w-screenshot" %}
   </figure>
 </div>
 
@@ -148,9 +146,7 @@ few weeks of kicking off their optimization work.
     </li>
   </ul>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="bounce-rate.png"
-        alt="55% improvement in LCP. 50% reduction in bounce rate. Increased engagement and consumption.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lN46T0iOTj45lSOkE8mo.png", alt="55% improvement in LCP. 50% reduction in bounce rate. Increased engagement and consumption.", width="800", height="825", class="w-screenshot" %}
   </figure>
 </div>
 

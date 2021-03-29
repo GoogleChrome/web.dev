@@ -48,8 +48,7 @@ application:
   - Consistent 60fps animation
 
 <figure class="w-figure w-figure--fullbleed">
-  <img class="w-screenshot" src="pixelbook.jpg"
-       alt="A pixelbook running PROXX" class="screenshot">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ka9f7OrsFGjsulY1QoYe.jpg", alt="A pixelbook running PROXX", width="800", height="445", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     PROXX on a pixelbook.
   </figcaption>
@@ -107,8 +106,7 @@ different input interface (d-pad and number keys, no touchscreen), we also
 implemented key-based interface.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="featurephone.jpg"
-       alt="A man playing PROXX on a yellow feature phone" class="screenshot">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zk0lWvjbZ0V2Shz53d42.jpg", alt="A man playing PROXX on a yellow feature phone", width="800", height="512" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     PROXX on a feature phone.
   </figcaption>

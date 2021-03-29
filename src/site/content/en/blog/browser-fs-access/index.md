@@ -170,8 +170,7 @@ As perfectly fine as the File System Access API is,
 it's [not yet  widely available](https://caniuse.com/#feat=file-system-access-api).
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="caniuse.png"
-       alt="Browser support table for the File System Access API. All browsers are marked as 'no support' or 'behind a flag'.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/G1jsSjCBR871W1uKQWeN.png", alt="Browser support table for the File System Access API. All browsers are marked as 'no support' or 'behind a flag'.", width="800", height="224", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Browser support table for the File System Access API.
     (<a href="https://caniuse.com/?search=file%20system%20access%20api">Source</a>)

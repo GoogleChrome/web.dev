@@ -36,9 +36,7 @@ apps, Goibibo achieved a 60% increase in conversions (compared to their previous
 In their journey to improve user experience, Goibibo noticed a few trends:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled w-figure--inline-right"
-      src="mobile.png" 
-      alt="Goibibo's PWA.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0dmwrJViuhgA3I4IDCkj.png", alt="Goibibo's PWA.", width="800", height="1624", class="w-screenshot w-screenshot--filled w-figure--inline-right" %}
 </figure>
 
 * With users either already shifted or quickly shifting to mobile, their initial strategy
@@ -65,9 +63,7 @@ In their journey to improve user experience, Goibibo noticed a few trends:
     in forms on behalf of others hassle-free.
   </p>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="seamless.png"
-        alt="Impact: 20% of users chose the seamless Goibibo experience.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Pdqx8qyXbwzzS8ivNS3l.png", alt="Impact: 20% of users chose the seamless Goibibo experience.", width="800", height="360", class="w-screenshot" %}
   </figure>
 </div>
 
@@ -96,9 +92,7 @@ In their journey to improve user experience, Goibibo noticed a few trends:
     details, train availability, and so on.
   </p>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="web-share.png" 
-        alt="Impact: 5% of new sessions came from Web Share API.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u5pl2i6MHBkDZESQRHXR.png", alt="Impact: 5% of new sessions came from Web Share API.", width="800", height="356", class="w-screenshot" %}
   </figure>
 </div>
 
@@ -111,9 +105,7 @@ In their journey to improve user experience, Goibibo noticed a few trends:
     customized content.
   </p>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="conversions.png" 
-        alt="Impact: Retargeted users converted 4x more compared to normal user base.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/baFHO5RXsOVdE6qiT0AR.png", alt="Impact: Retargeted users converted 4x more compared to normal user base.", width="800", height="414", class="w-screenshot" %}
   </figure>
 </div>
 

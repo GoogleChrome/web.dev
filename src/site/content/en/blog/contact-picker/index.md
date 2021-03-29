@@ -178,9 +178,7 @@ This ensures that a site can't show the picker on page load, or randomly show
 the picker without any context.
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="contact-picker-user-choice.jpg" class="w-screenshot"
-       alt="Screen shot, users can choose which properties to share."
-       width="550">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EiHIOYdno52DZ6TNHcfI.jpg", alt="Screen shot, users can choose which properties to share.", width="800", height="639" %}
   <figcaption class="w-figcaption">
     Users can choose not to share some properties. In this screenshot, the
     user has unchecked the 'Phone numbers' button. Even though the site
@@ -206,16 +204,14 @@ telephone numbers.
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img src="contact-picker-left.jpg" class="w-screenshot"
-        alt="Screen shot of picker for site requesting all properties.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ig9SBKtJPlSE3mCjR2Go.jpg", alt="Screen shot of picker for site requesting all properties.", width="800", height="639" %}
     <figcaption class="w-figcaption">
       Picker, site requesting <code>name</code>, <code>email</code>, and
       <code>tel</code>, one contact selected.
     </figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="contact-picker-right.jpg" class="w-screenshot"
-        alt="Screen shot of picker for site requesting only phone numbers.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vOB2nPSrfi1GnmtitElf.jpg", alt="Screen shot of picker for site requesting only phone numbers.", width="800", height="639" %}
     <figcaption class="w-figcaption">
       Picker, site requesting only <code>tel</code>, one contact selected.
     </figcaption>
@@ -225,9 +221,7 @@ telephone numbers.
 <div class="w-clearfix"></div>
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="contact-picker-long-press.jpg" class="w-screenshot"
-       alt="Screen shot of picker when a contact is long-pressed."
-       width="550">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qLxdnKZwW0e4teyw2OOU.jpg", alt="Screen shot of picker when a contact is long-pressed.", width="800", height="389" %}
   <figcaption class="w-figcaption">
     The result of a long press on a contact.
   </figcaption>

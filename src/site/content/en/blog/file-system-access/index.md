@@ -472,8 +472,7 @@ control and transparency, and user ergonomics.
 
 <figure class="w-figure w-figure--inline-right">
   <a href="fs-open.jpg">
-    <img src="fs-open.jpg"
-         alt="File picker to open a file for reading">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BtrU36qfJoC5M9AgRumF.jpg", alt="File picker to open a file for reading", width="800", height="577" %}
   </a>
   <figcaption class="w-figcaption">
     A file picker used to open an existing file for reading.
@@ -490,8 +489,7 @@ picker and the site does not get access to anything. This is the same behavior a
 
 <figure class="w-figure w-figure--inline-left">
   <a href="fs-save.jpg">
-    <img src="fs-save.jpg"
-         alt="File picker to save a file to disk.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DZFcgVmVFVyfddL8PdSx.jpg", alt="File picker to save a file to disk.", width="800", height="577" %}
   </a>
   <figcaption class="w-figcaption">
     A file picker used to save a file to disk.
@@ -520,8 +518,7 @@ A web app cannot modify a file on disk without getting explicit permission from 
 
 <figure class="w-figure w-figure--inline-right">
   <a href="fs-save-permission.jpg">
-    <img src="fs-save-permission-crop.jpg" class="w-screenshot"
-         alt="Permission prompt shown prior to saving a file.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1Ycrs0DnLzZY2egNYzk2.jpg", alt="Permission prompt shown prior to saving a file.", width="800", height="281" %}
   </a>
   <figcaption class="w-figcaption">
     Prompt shown to users before the browser is granted write
@@ -547,8 +544,7 @@ example by providing a way to ["download" the file][download-file], saving data 
 
 <figure class="w-figure w-figure--inline-right">
   <a href="fs-save-icon.jpg">
-    <img src="fs-save-icon.jpg" class="w-screenshot"
-         alt="Omnibox icon">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/14mRo309FodD4T3OL0J6.jpg", alt="Omnibox icon", width="282", height="162" %}
   </a>
   <figcaption class="w-figcaption">
     Omnibox icon indicating the user has granted the website permission to

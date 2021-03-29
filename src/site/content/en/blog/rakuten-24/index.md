@@ -68,8 +68,7 @@ For users who weren't able to install the PWA from the banner, they created a
 both Android and iOS devices.
 
 <figure class="w-figure">
-  <img src="a2hs.png"
-       alt="Screenshots of the custom installation instructions.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/APDhzk6SjyxQTgxVidFR.png", alt="Screenshots of the custom installation instructions.", width="800", height="480" %}
 </figure>
 
 ### Workbox for service workers {: #workbox }

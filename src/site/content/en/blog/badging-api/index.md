@@ -21,8 +21,7 @@ feedback:
 ## What is the App Badging API? {: #what }
 
 <figure class="w-figure">
-  <img  src="badges-on-windows.jpg" class="w-screenshot"
-        alt="Example of Twitter with eight notifications and another app showing a flag type badge.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t7XqI06whZr4oJe0yawc.jpg", alt="Example of Twitter with eight notifications and another app showing a flag type badge.", width="600", height="189" %}
   <figcaption class="w-figcaption">
     Example of Twitter with eight notifications and another app showing a flag
     type badge.

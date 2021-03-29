@@ -373,8 +373,7 @@ While recording, entries will appear in DevTools corresponding to events, with
 context and metadata logged for each.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="2-record-result.png" alt="An example of recorded periodic background sync data"
-       style="max-width: 75%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m92Art0OwiM0VyI7czFB.png", alt="An example of recorded periodic background sync data", width="800", height="357", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     An example of recorded periodic background sync data
   </figcaption>
@@ -410,7 +409,5 @@ Starting in Chrome 81, you'll see a **Periodic Background Sync** section in the
 DevTools *Application* panel.
 
    <figure class="w-figure">
-     <img class="w-screenshot" src="7-panel.png"
-          alt="The Application panel showing the Periodic Background Sync section"
-          style="max-width: 75%">
+     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="The Application panel showing the Periodic Background Sync section", width="382", height="253", class="w-screenshot" %}
    </figure>

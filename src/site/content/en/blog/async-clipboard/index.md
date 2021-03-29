@@ -247,8 +247,7 @@ Imagine a web page that silently copies `rm -rf /` or a
 to your clipboard.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./prompt.png"
-       alt="Browser prompt asking the user for the clipboard permission.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dt4QpuEuik9ja970Zos1.png", alt="Browser prompt asking the user for the clipboard permission.", width="800", height="338", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The permission prompt for the Clipboard API.
   </figcaption>

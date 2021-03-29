@@ -32,8 +32,7 @@ seamlessly alongside the new expressive syntax for asserting *any* Lighthouse
 audit or category result.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./lighthouse-ci.png" alt="Lighthouse CI report."
-       width="400">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xvyxLU5J0bap6s0LdrD3.png", alt="Lighthouse CI report.", width="576", height="512", class="w-screenshot" %}
 </figure>
 
 Lighthouse CI supports [Travis CI](https://travis-ci.com/), [Circle
@@ -102,8 +101,7 @@ recommendations, curated by community experts (like you!), on top of Lighthouse
 report core audits.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./lighthouse-stack-packs.png"
-       alt="Lighthouse report recommendation for deferring offscreen images in React applications.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qdhyyYLFj0avPPHgx8in.png", alt="Lighthouse report recommendation for deferring offscreen images in React applications.", width="800", height="194", class="w-screenshot" %}
 </figure>
 
 At the moment, there are Stack Packs for Angular, WordPress, Magento, React, and

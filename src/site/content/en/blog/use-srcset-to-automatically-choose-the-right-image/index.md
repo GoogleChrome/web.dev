@@ -43,11 +43,7 @@ attribute to enable the browser to choose the smallest.
 The `w` value tells the browser the width of each version:
 
 ```html/1
-<img src="small.jpg"
-     srcset="small.jpg 500w,
-             medium.jpg 1000w,
-             large.jpg 1500w"
-     alt="…">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/scLPehGom3IZLxPJiPPF.jpg", alt="…", width="500", height="334" %}
 ```
 
 
@@ -103,9 +99,7 @@ This is where `srcset` comes in handy. You save images at different sizes, then
 tell the browser the width of each version:
 
 ``` html/1
-<img src="small.jpg"
-     srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
-     alt="…">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/scLPehGom3IZLxPJiPPF.jpg", alt="…", width="500", height="334" %}
 ```
 
 The `w` values show the width of each image in pixels. For example,
@@ -127,10 +121,7 @@ Then use the Network panel of your browser tools to check which image was used.
 (You'll need to do that in an Incognito or Private window, otherwise the
 original image file will be cached.)
 
-<img
-  src="small.jpg"
-  srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
-  alt="Lias and Little Puss: two ten week old grey tabby kittens">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/scLPehGom3IZLxPJiPPF.jpg", alt="Lias and Little Puss: two ten week old grey tabby kittens", width="500", height="334" %}
 
 ## How can I create multiple image sizes?
 
@@ -205,10 +196,7 @@ In the example below, `sizes="50vw"` tells the browser that this image will be
 displayed at 50% of the viewport width.
 
 ``` html/2
-<img src="small.jpg"
-     srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
-     sizes="50vw"
-     alt="…">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/scLPehGom3IZLxPJiPPF.jpg", alt="…", width="500", height="334" %}
 ```
 
 You can see this in action at

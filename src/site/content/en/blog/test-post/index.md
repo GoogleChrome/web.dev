@@ -87,7 +87,7 @@ sapien et, tincidunt orci. Aenean sed tellus aliquam, consectetur metus in,
 tempus enim.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="a.jpg" alt="">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Z77AxApfjYjrUlRWwWdW.jpg", alt="", width="800", height="533" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Large image.
   </figcaption>
@@ -102,7 +102,7 @@ ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
 <figure class="w-figure">
-  <img src="image-small.png" alt="" width="400">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wBf0W2V9bVA7Clh01Rf7.png", alt="", width="800", height="155" %}
   <figcaption class="w-figcaption">
     Small image.
   </figcaption>
@@ -127,7 +127,7 @@ quam sem.
 ## Image, Inline
 
 <figure class="w-figure w-figure--inline-right">
-  <img class="w-screenshot" src="image-inline.png" alt="" width="200">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="800", height="1224", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Inline right, outlined image.
   </figcaption>
@@ -148,7 +148,7 @@ aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
 velit. Morbi at quam sem.
 
 <figure class="w-figure w-figure--inline-left">
-  <img class="w-screenshot" src="image-inline.png" alt="" width="200">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="800", height="1224", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Inline left, outlined image.
   </figcaption>
@@ -169,7 +169,7 @@ aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
 velit. Morbi at quam sem.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     Filled screenshot.
   </figcaption>
@@ -262,7 +262,7 @@ quam sem.
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
   <figure class="w-figure">
-    <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
     <figcaption class="w-figcaption">
       Filled screenshot.
     </figcaption>
@@ -309,7 +309,7 @@ quam sem.
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
   <figure class="w-figure">
-    <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/V9sy0IErc3V19nrodKb1.png", alt="", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
     <figcaption class="w-figcaption">
       Filled screenshot.
     </figcaption>

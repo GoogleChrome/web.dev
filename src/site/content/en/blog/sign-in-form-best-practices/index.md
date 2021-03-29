@@ -459,8 +459,7 @@ The default size and padding for inputs and buttons is too small on desktop and
 even worse on mobile.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./unstyled-form.png"
-       alt="Screenshot of unstyled form in Chrome for desktop and Chrome for Android.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lJNO6w2dOyp4cYKl5b3y.png", alt="Screenshot of unstyled form in Chrome for desktop and Chrome for Android.", width="800", height="434", class="w-screenshot" %}
 </figure>
 
 

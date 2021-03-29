@@ -86,9 +86,7 @@ performance.
     </ul>
   </div>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="controller.png" 
-        alt="Script controller library improved TTI by 4 seconds">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/G8s0LNl7BwXuNJkCsPwV.png", alt="Script controller library improved TTI by 4 seconds", width="800", height="707", class="w-screenshot" %}
   </figure>
 </div>
 
