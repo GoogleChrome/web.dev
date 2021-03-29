@@ -238,6 +238,11 @@ the cookie consent banner while collecting a trace.
 Add a script by going to the **Script** tab. The script below navigates to the URL
 to be tested and then clicks the DOM element with the id `cookieButton`. 
 
+{% Aside 'caution' %}
+WebPageTest scripts are
+[tab-delimited](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md#scripting).
+{% endAside %}
+
 ```shell
 combineSteps
 navigate    %URL%
@@ -252,14 +257,16 @@ When using this script be aware that:
     easy to see whether resources were loaded before or after cookie acceptance.
 *   `%URL%` is a WebPageTest convention that refers to the URL that is being
     tested.
-*   clickAndWait follows the format `clickAndWait attribute=Value`.
+*   `clickAndWait` follows the format `clickAndWait attribute=Value`.
+    `clickAndWait` tells WebPageTest to click on the element indicated by
+    `attribute=value` and wait for the subsequent browser activity to complete.
 
 
 If you've configured this script correctly, the screenshot taken by WebPageTest
 should not show a cookie notice (the cookie notice has been accepted).
 
 For more information on WebPageTest scripting, check out [WebPageTest 
-documentation](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md).
+documentation](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md).
 
 #### Set cookies
 
