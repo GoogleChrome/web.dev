@@ -199,7 +199,7 @@ requirement for performance measurement. The
 [web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript library is
 an example of a library that does not use cookies.
 
-It's also worth noting that depending on how your site uses cookies to collect
+Depending on how your site uses cookies to collect
 performance data (that is, whether the cookies contain personal information), as
 well as the legislation in question, the use of cookies for performance
 measurement might not be subject to the same legislative requirements as some of
