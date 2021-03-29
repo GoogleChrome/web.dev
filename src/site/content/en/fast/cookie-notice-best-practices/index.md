@@ -171,9 +171,9 @@ loading of cookie notice scripts:
 
 *   Caching and serving third-party cookie notice scripts from your own servers
     can improve the delivery speed of these resources.
-*   [Service
+*   Using [service
     workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
-    can be used to have more control over the [fetching and caching of
+    can allow you more control over the [fetching and caching of
     third-party
     scripts](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)
     such as cookie notice scripts.
