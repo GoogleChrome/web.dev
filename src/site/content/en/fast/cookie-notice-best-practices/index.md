@@ -284,7 +284,7 @@ dropdown located on the **Advanced Testing** tab.
 
 ### Testing cookie notices with Lighthouse
 
-Setting cookies on a Lighthouse run can be used as a mechanism for getting a
+Setting cookies on a Lighthouse run can serve as a mechanism for getting a
 page into a particular state for testing by Lighthouse. Lighthouse's cookie
 behavior varies slightly by context (DevTools, CLI, or PageSpeed Insights).
 
