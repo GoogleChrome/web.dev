@@ -258,8 +258,8 @@ When using this script be aware that:
 If you've configured this script correctly, the screenshot taken by WebPageTest
 should not show a cookie notice (the cookie notice has been accepted).
 
-For more information on WebPageTest scripting, check out the
-[documentation](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md).
+For more information on WebPageTest scripting, check out [WebPageTest 
+documentation](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md).
 
 #### Set cookies
 
