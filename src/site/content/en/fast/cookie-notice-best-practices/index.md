@@ -211,7 +211,7 @@ category of cookies when asking for user consent.
 ### Synthetic monitoring
 
 
-Without custom configuration, most synthetic tools will only measure the
+Without custom configuration, most synthetic tools (such as Lighthouse and WebPageTest) will only measure the
 experience of a first-time user who has not responded to a cookie consent
 notice. However, not only do variations in cache state (for example, an initial
 visit versus a repeat visit) need to be considered when collecting performance
