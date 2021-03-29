@@ -303,7 +303,7 @@ the **Clear Storage** option in the **Lighthouse** settings panel.
 
 #### CLI
 
-Running Lighthouse from the CLI uses a fresh Chrome instance. Thus, no cookies
+Running Lighthouse from the CLI uses a fresh Chrome instance, so no cookies
 are set by default. To run Lighthouse from the CLI with a particular cookie set,
 use the following
 [command](https://github.com/GoogleChrome/lighthouse#cli-options):
