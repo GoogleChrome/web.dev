@@ -324,7 +324,7 @@ not set any cookies. PageSeed Insights cannot be configured to set particular
 cookies.
 
 
-## Other considerations
+## User experience
 
 The user experience (UX) of different cookie consent notices is primarily the
 result of two decisions: the location of the cookie notice within the page and
