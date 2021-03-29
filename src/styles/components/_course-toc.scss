@@ -58,6 +58,9 @@
 
 .toc__list {
   list-style: none;
+  // Give a little bottom margin so when we scroll to the bottom the last link
+  // clearly scrolls into view.
+  padding-bottom: 16px;
 }
 
 .toc__list .toc__list {

@@ -1,0 +1,11 @@
+{# The course can define a gradient to apply on the last word in its title. #}
+{# This splits the title into an array of words and only applies the gradient #}
+{# If we're on the last word. #}
+{% set courseTitleWords = courseTitle.split(' ') %}
+{% for word in courseTitleWords %}
+  {% if loop.last %}
+  <span class="gradient-text" style="--gradient-text-linear: {{ courseData.meta.gradient }}">{{ word }}</span>
+  {% else %}
+    {{word}}
+  {% endif %}
+{% endfor %}

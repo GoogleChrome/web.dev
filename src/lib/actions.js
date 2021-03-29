@@ -124,41 +124,58 @@ export const requestFetchReports = store.action((_, url, startDate) => {
   });
 });
 
-export const expandSideNav = store.action(() => {
-  openModal();
-  return {isSideNavExpanded: true};
-});
+/**
+ * Inert the page so scrolling and pointer events are disabled.
+ * This is used when we open the navigation drawer or show a modal dialog.
+ */
+const disablePage = () => {
+  /** @type {HTMLElement|object} */
+  const main = document.querySelector('main') || {};
+  /** @type {HTMLElement|object} */
+  const header = document.querySelector('web-header') || {};
+  /** @type {HTMLElement|object} */
+  const footer = document.querySelector('.w-footer') || {};
 
-export const collapseSideNav = store.action(() => {
-  closeModal();
-  return {isSideNavExpanded: false};
-});
-
-export const openModal = store.action(() => {
-  const main = document.querySelector('main');
-  /** @type import('./components/Header').Header */
-  const header = document.querySelector('web-header');
-  /** @type {HTMLElement} */
-  const footer = document.querySelector('.w-footer');
-
-  document.documentElement.classList.add('web-modal__overflow-hidden');
+  document.documentElement.classList.add('overflow-hidden');
   main.inert = true;
   header.inert = true;
   footer.inert = true;
+};
+
+/**
+ * Uninert the page so scrolling and pointer events work again.
+ */
+const enablePage = () => {
+  /** @type {HTMLElement|object} */
+  const main = document.querySelector('main') || {};
+  /** @type {HTMLElement|object} */
+  const header = document.querySelector('web-header') || {};
+  /** @type {HTMLElement|object} */
+  const footer = document.querySelector('.w-footer') || {};
+
+  document.documentElement.classList.remove('overflow-hidden');
+  main.inert = false;
+  header.inert = false;
+  footer.inert = false;
+};
+
+export const openNavigationDrawer = store.action(() => {
+  disablePage();
+  return {isNavigationDrawerOpen: true};
+});
+
+export const closeNavigationDrawer = store.action(() => {
+  enablePage();
+  return {isNavigationDrawerOpen: false};
+});
+
+export const openModal = store.action(() => {
+  disablePage();
   return {isModalOpen: true};
 });
 
 export const closeModal = store.action(() => {
-  const main = document.querySelector('main');
-  /** @type import('./components/Header').Header */
-  const header = document.querySelector('web-header');
-  /** @type {HTMLElement} */
-  const footer = document.querySelector('.w-footer');
-
-  document.documentElement.classList.remove('web-modal__overflow-hidden');
-  main.inert = false;
-  header.inert = false;
-  footer.inert = false;
+  enablePage();
   return {isModalOpen: false};
 });
 

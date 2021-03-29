@@ -1,0 +1,107 @@
+// Copyright 2021 Google Inc. All rights reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+@import '../settings/colors';
+@import '../settings/global';
+@import '../tools/breakpoints';
+@import '../tools/mixins';
+
+// The navigation drawer has two types: standard and modal.
+//
+// standard
+// --------
+// Standard navigation drawers allow users to simultaneously access drawer
+// destinations and app content. They are often co-planar with app content and
+// affect the screen’s layout grid. They can be used on tablet and desktop only.
+// On mobile, they switch to a modal behavior.
+//
+// modal (default)
+// -----
+// Modal navigation drawers block interaction with the rest of an app’s content
+// with a scrim. They are elevated above most of the app’s UI and don’t affect
+// the screen’s layout grid.
+
+web-navigation-drawer {
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 300;
+
+  [data-drawer-container] {
+    box-shadow: 2px 0 12px rgba($BLACK, .4);
+    // position: relative is needed here to keep the drawer above the scrim
+    position: relative;
+    transform: translateX(-110%);
+    width: fit-content;
+  }
+}
+
+web-navigation-drawer[type='standard'] {
+  @include bp(lg) {
+    align-self: flex-start;
+    position: sticky;
+    pointer-events: auto;
+    top: 0;
+    width: auto;
+
+    [data-drawer-container] {
+      box-shadow: none;
+      transform: none;
+    }
+
+    [data-drawer-close-button] {
+      visibility: hidden;
+    }
+  }
+}
+
+// This is the scrim that appears behind the navigation drawer when it is
+// expanded.
+web-navigation-drawer::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($BLACK, .4);
+  opacity: 0;
+  transition: opacity $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
+}
+
+web-navigation-drawer[open] {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+web-navigation-drawer[open]::before {
+  opacity: 1;
+}
+
+web-navigation-drawer[open] [data-drawer-container] {
+  transform: none;
+}
+
+web-navigation-drawer[animating] [data-drawer-container] {
+  transition: transform $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
+}
+
+web-navigation-drawer[open][animating] [data-drawer-container] {
+  transition: transform $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
+}
