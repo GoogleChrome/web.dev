@@ -471,9 +471,7 @@ control and transparency, and user ergonomics.
 ### Opening a file or saving a new file
 
 <figure class="w-figure w-figure--inline-right">
-  <a href="fs-open.jpg">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BtrU36qfJoC5M9AgRumF.jpg", alt="File picker to open a file for reading", width="800", height="577" %}
-  </a>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BtrU36qfJoC5M9AgRumF.jpg", alt="File picker to open a file for reading", width="800", height="577", linkTo=true %}
   <figcaption class="w-figcaption">
     A file picker used to open an existing file for reading.
   </figcaption>
@@ -488,9 +486,7 @@ picker and the site does not get access to anything. This is the same behavior a
 <div class="w-clearfix"></div>
 
 <figure class="w-figure w-figure--inline-left">
-  <a href="fs-save.jpg">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DZFcgVmVFVyfddL8PdSx.jpg", alt="File picker to save a file to disk.", width="800", height="577" %}
-  </a>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DZFcgVmVFVyfddL8PdSx.jpg", alt="File picker to save a file to disk.", width="800", height="577", linkTo=true %}
   <figcaption class="w-figcaption">
     A file picker used to save a file to disk.
   </figcaption>
@@ -517,9 +513,7 @@ A web app cannot modify a file on disk without getting explicit permission from 
 #### Permission prompt
 
 <figure class="w-figure w-figure--inline-right">
-  <a href="fs-save-permission.jpg">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1Ycrs0DnLzZY2egNYzk2.jpg", alt="Permission prompt shown prior to saving a file.", width="800", height="281" %}
-  </a>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1Ycrs0DnLzZY2egNYzk2.jpg", alt="Permission prompt shown prior to saving a file.", width="800", height="281", linkTo=true %}
   <figcaption class="w-figcaption">
     Prompt shown to users before the browser is granted write
     permission on an existing file.
@@ -543,9 +537,7 @@ example by providing a way to ["download" the file][download-file], saving data 
 ### Transparency
 
 <figure class="w-figure w-figure--inline-right">
-  <a href="fs-save-icon.jpg">
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/14mRo309FodD4T3OL0J6.jpg", alt="Omnibox icon", width="282", height="162" %}
-  </a>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/14mRo309FodD4T3OL0J6.jpg", alt="Omnibox icon", width="282", height="162", linkTo=true %}
   <figcaption class="w-figcaption">
     Omnibox icon indicating the user has granted the website permission to
     save to a local file.

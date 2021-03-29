@@ -7,7 +7,7 @@ thumbnail: image/admin/i2nyfqyVr4XWqilOxPrY.png
 alt: An illustration of a smartphone next to the text "Scale on web"
 description: >
   Learn how Goibibo, India’s top online travel company, achieved a 60% increase in
-  conversions by building reliable user experiences between their PWA and iOS/Android apps. 
+  conversions by building reliable user experiences between their PWA and iOS/Android apps.
 tags:
   - blog
   - case-study
@@ -46,7 +46,7 @@ In their journey to improve user experience, Goibibo noticed a few trends:
 
 * There were significant drop offs at the payment stage of the PWA compared to their
   iOS/Android apps. This was when they decided to invest in their PWA with the goal of letting
-  users experience the same UX on their PWA as on their iOS/Android apps.  
+  users experience the same UX on their PWA as on their iOS/Android apps.
 
 * They also noticed nearly 20% of their users were starting a session on the web and
   converting on the app. This reiterated their belief that a chunk of users will go untapped
@@ -76,10 +76,7 @@ In their journey to improve user experience, Goibibo noticed a few trends:
     to reduce sign-in friction on their PWA.
   </p>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="logins.png" 
-        alt="Impact: 20% increase in their mobile web logged-in users;
-              25% drop in OTP retry API calls during sign up.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Nf0NeE3sSFOrYleAsxVd.png", alt="Impact: 20% increase in their mobile web logged-in users; 25% drop in OTP retry API calls during sign up.", width="800", height="526", class="w-screenshot" %}
   </figure>
 </div>
 
@@ -120,13 +117,7 @@ In their journey to improve user experience, Goibibo noticed a few trends:
 </style>
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="funnel.png"
-       id="funnel"
-       alt="1. Web Share improved returning user percentage
-            2. Contact Picker enhanced user experience, making it easier for guests to book
-            3. Web OTP reduced friction during transactions, resulting in less time spent on OTP screen and less retry API calls
-            4. Push notifications improved conversions of retargeted users">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rsENPcTITCviudxIhPU1.png", alt="1. Web Share improved returning user percentage 2. Contact Picker enhanced user experience, making it easier for guests to book 3. Web OTP reduced friction during transactions, resulting in less time spent on OTP screen and less retry API calls 4. Push notifications improved conversions of retargeted users", width="711", height="627", class="w-screenshot" %}
 </figure>
 
 ## Overall business results {: #results }

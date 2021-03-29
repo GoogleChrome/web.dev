@@ -223,9 +223,7 @@ information about objects, including their size and a list of the variables and 
 reference them.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./heap-snapshot.png" width="762"
-       alt="A screenshot of a heap snapshot in Chrome DevTools showing the references that retain
-       a large object.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4tBcZ7lZEqkmonijrOGa.png", alt="A screenshot of a heap snapshot in Chrome DevTools showing the references that retain a large object.", width="800", height="440", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     A heap snapshot showing the references that retain a large object.
   </figcaption>

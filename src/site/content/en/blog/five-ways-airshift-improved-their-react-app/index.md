@@ -76,18 +76,14 @@ Displaying the shift table required multiple expensive steps: constructing the v
 To reduce the cost of this operation, AirSHIFT virtualized the shift table. The app now only mounts the components within the viewport and unmounts the off-screen components.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="virtualize_before.png"
-       alt="An annotated screenshot that demonstrates that AirSHIFT used to render
-            content outside of the viewport.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QOVmOQa0Jryhg8tKPBFs.png", alt="An annotated screenshot that demonstrates that AirSHIFT used to render content outside of the viewport.", width="800", height="306", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Before: Rendering all the shift table cells.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="virtualize_after.png"
-       alt="An annotated screenshot that demonstrates that AirSHIFT now only renders content
-            that's visible in the viewport.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/NLSdFKj1gpGBO82pfNNO.png", alt="An annotated screenshot that demonstrates that AirSHIFT now only renders content that's visible in the viewport.", width="800", height="307", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     After: Only rendering the cells within the viewport.
   </figcaption>
@@ -230,9 +226,7 @@ Related article: [React + Redux + Comlink = Off-main-thread](https://dassur.ma/t
 Despite the limited amount of logic they workerized as a trial, AirSHIFT shifted around 100 ms of
 their JavaScript from the main thread to the worker thread (simulated with 4x CPU throttling).
 
-<img class="w-screenshot" src="worker.png"
-     alt="A screenshot of a Chrome DevTools Performance panel recording that shows that
-          scripting is now occurring on a web worker rather than the main thread.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cFIFNeEKqbyWGBEuPCy2.png", alt="A screenshot of a Chrome DevTools Performance panel recording that shows that scripting is now occurring on a web worker rather than the main thread.", width="800", height="99", class="w-screenshot" %}
 
 AirSHIFT is currently exploring whether they can lazy load other components
 and offload more logic to web workers to further reduce jank.
@@ -255,10 +249,7 @@ the 75th percentile users. This is an unenforced budget for now but they are con
 via Elasticsearch when they exceed their budget.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="kibana.png"
-       alt="A chart showing that the 75th percentile completes in around 2500 ms,
-            the 50th percentile in around 1250 ms, the 25th percentile in around 750 ms,
-            and the 10th percentile in around 500 ms.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pSRqSKpmHKYGg8jalEr7.png", alt="A chart showing that the 75th percentile completes in around 2500 ms, the 50th percentile in around 1250 ms, the 25th percentile in around 750 ms, and the 10th percentile in around 500 ms.", width="800", height="549", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The Kibana dashboard showing daily performance data by percentiles.
   </figcaption>

@@ -74,7 +74,7 @@ When loaded over 3G, the user sees 4 seconds of white nothingness. **Over 2G the
 <figure class="w-figure">
   <picture>
     <source srcset="proxx-first-render.webp" type="image/webp">
-    <img src="proxx-first-render.jpg">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/i4XeWT6YeUlcMbEiDaBO.jpg", alt="", width="800", height="450" %}
   </picture>
   <figcaption class="w-figcaption">
 
@@ -94,7 +94,7 @@ Now that we know _what_ the user sees, we need to figure out the _why_. For this
 
 <figure class="w-figure">
   <picture>
-    <img src="waterfall_opt.png">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Vcd5JU5MJNr0IHyMMtAU.png", alt="", width="800", height="345" %}
   </picture>
   <figcaption class="w-figcaption">
     The waterfall gives insight into which resources are loading when and how long they take.
@@ -180,7 +180,7 @@ Another metric that both DevTools and WebPageTest give us is [Time To First Byte
 
 <figure class="w-figure">
   <picture>
-    <img src="ttfb.svg">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J86O71iJ9OPjlginvwrp.svg", alt="", width="800", height="171" %}
   </picture>
   <figcaption class="w-figcaption">
     The light section of a request signifies the request is waiting to receive the first byte of the response.
@@ -219,7 +219,7 @@ Yes, our `index.html` contains everything that is needed to become interactive. 
 <figure class="w-figure">
   <picture>
     <source srcset="proxx-loaded.webp" type="image/webp">
-    <img src="proxx-loaded.jpg">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4VqYAIUVSFQdEMI5nfD8.jpg", alt="", width="800", height="450" %}
   </picture>
   <figcaption class="w-figcaption">
     The landing page of PROXX. Only critical components are used here.
@@ -230,7 +230,7 @@ To understand where our bundle size is coming from we can use a [source map expl
 
 <figure class="w-figure">
   <picture>
-    <img src="sourcemap.svg">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4j3GRcHylDnIuwhH8iKT.svg", alt="", width="700", height="700" %}
   </picture>
   <figcaption class="w-figcaption">
     Analyzing the contents of PROXX's `index.html` shows a lot of unneeded resources. Critical resources are highlighted.
