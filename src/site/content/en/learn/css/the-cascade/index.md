@@ -90,6 +90,7 @@ regardless of its position, unless a declaration has `!important` defined.
 
 Position also applies in the order of your in a CSS rule.
 In this example, the element will have a purple background because `background: purple` was declared last.
+Because the green background was declared before the purple background, it is now ignored by the browser.
 
 ```css
 .my-element {
