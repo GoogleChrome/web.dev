@@ -9,7 +9,7 @@ description: |
 Self-assessments provide opportunities for users
 to check their understanding of concepts covered in your post.
 
-{% Assessment page, 'self-assessment' %}
+{% Assessment 'self-assessment' %}
 
 1. [Start a self-assessment](#start-a-self-assessment)
 1. [Question set parameters](#question-set-parameters)
@@ -25,7 +25,7 @@ to check their understanding of concepts covered in your post.
 To include a self-assessment in your post:
 1. Add this short code to your post where you want the self-assessment to appear:
     ```html
-    {% raw %}{% Assessment page, 'my-first-self-assessment' %}{% endraw %}
+    {% raw %}{% Assessment 'my-first-self-assessment' %}{% endraw %}
     ```
 1. Copy `my-first-self-assessment.assess.yml` in `src/site/_drafts/_template-self-assessment`
    to your post's directory.
@@ -229,6 +229,6 @@ You can add as many assessments as you want as long as each has a unique name.
 For example:
 
 ```html
-{% raw %}{% Assessment page, 'first-assessment' %}
-{% Assessment page, 'second-assessment' %}{% endraw %}
+{% raw %}{% Assessment 'first-assessment' %}
+{% Assessment 'second-assessment' %}{% endraw %}
 ```
