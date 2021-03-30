@@ -3,7 +3,7 @@ title: Using asynchronous Web APIs from WebAssembly
 description: Learn how to invoke asynchronous Web APIs when compiling traditionally synchronous languages to WebAssembly.
 date: # TODO
 hero: image/9oK23mr86lhFOwKaoYZ4EySNFp02/3XqfQyjjfxEw8T3azz0W.jpg
-alt: A crosswalk signal asking to wait.
+alt: A crosswalk signal asking pedestrians to wait.
 authors:
   - rreverser
 tags:
@@ -38,27 +38,27 @@ int main() {
 }
 ```
 
-While it doesn't do much, it already demonstrates something you'll find in an application of any
+While the example doesn't do much, it already demonstrates something you'll find in an application of any
 size: it reads some inputs from the external world, processes them internally and writes outputs
 back to the external world. All such interaction with the outside world happens via a few functions
-- commonly called input-output functions, also shortened to I/O.
+commonly called input-output functions, also shortened to I/O.
 
-In order to read the name from C, you need at least two crucial I/O calls: `fopen`, to open the
-file, and `fread` to read the data from it. Once you retrieve the data, you can use another I/O
+To read the name from C, you need at least two crucial I/O calls: `fopen`, to open the
+file, and `fread` to read data from it. Once you retrieve the data, you can use another I/O
 function `printf` to print the result to the console.
 
-Those functions look quite simple at first glance and you don't have to think twice about all the
-machinery involved in order to read or write data. However, depending on the environment, there can
+Those functions look quite simple at first glance and you don't have to think twice about the
+machinery involved to read or write data. However, depending on the environment, there can
 be quite a lot going on inside:
 
   - If the input file is located on a local drive, the application needs to perform a series of
     memory and disk accesses to locate the file, check permissions, open it for reading, and then
     read block by block until the requested number of bytes is retrieved. This can be pretty slow,
     depending on the speed of your disk and the requested size.
-  - Or, the input file might be located on a mounted network location—in which case the network
+  - Or, the input file might be located on a mounted network location, in which case, the network
     stack will now be involved too, increasing the complexity, latency and number of potential
     retries for each operation.
-  - Finally, even printf is not guaranteed to print things to the console and might be redirected to
+  - Finally, even `printf` is not guaranteed to print things to the console and might be redirected to
     a file or a network location, in which case it would have to go via the same steps above.
 
 Long story short, I/O can be slow and you can't predict how long a particular call will take by a
@@ -68,7 +68,7 @@ and unresponsive to the user.
 This is not limited to C or C++ either. Most system languages present all the I/O in a form of
 synchronous APIs. For example, if you translate the example to Rust, the API might look simpler, but
 the same principles apply. You just make a call and synchronously wait for it to return the result,
-while it performs all the expensive operations and eventually returns the result back to you in a
+while it performs all the expensive operations and eventually returns the result in a
 single invocation:
 
 ```rust
@@ -116,8 +116,8 @@ a single thread.
 
 The important thing to remember about this mechanism is that, while your custom JavaScript (or
 WebAssembly) code executes, the event loop is blocked and, while it is, there is no way to react to
-any external handlers, events, I/O etc. The only way to get the I/O results back is to register a
-callback, finish executing your code, and give the control back to the browser so that it could keep
+any external handlers, events, I/O, etc. The only way to get the I/O results back is to register a
+callback, finish executing your code, and give the control back to the browser so that it can keep
 processing any pending tasks. Once I/O is finished, your handler will become one of those tasks and
 will get executed.
 
@@ -132,7 +132,7 @@ async function main() {
 }
 ```
 
-However, even though it looks synchronous, under the hood each `await` is essentially a syntax sugar
+Even though it looks synchronous, under the hood each `await` is essentially syntax sugar
 for callbacks:
 
 ```js
@@ -145,17 +145,17 @@ function main() {
 
 From the desugared example, it's a bit clearer that it starts a request and subscribes to the
 response with the first callback. Once the browser receives the initial response—just the HTTP
-headers—it asynchronously invokes this callback. The callback stars reading the body as text using
+headers—it asynchronously invokes this callback. The callback starts reading the body as text using
 `response.text()`, and subscribes to the result with another callback. Finally, once `fetch` has
 retrieved all the contents, it invokes the last callback, which prints "Hello, (username)!" to the
 console.
 
 Thanks to the asynchronous nature of those steps, the original function can return control to the
 browser as soon as the I/O has been scheduled, and leave the entire UI responsive and available for
-other tasks, including rendering, scrolling and so on while the I/O is executing in background.
+other tasks, including rendering, scrolling and so on, while the I/O is executing in background.
 
-As another final example, even simple APIs like "sleep" that allow to wait a specified number of
-seconds, are also a form of an I/O:
+As a final example, even simple APIs like "sleep", which makes an application wait a specified number of
+seconds, are also a form of an I/O operation:
 
 ```cpp
 #include <stdio.h>
@@ -180,7 +180,7 @@ console.log("B");
 but that's very inefficient, will block the entire UI, won't allow any other events to get handled
 meanwhile, and, generally, don't do that in production code :)
 
-Instead, a more idiomatic version of such "sleep" in JavaScript would involve calling
+Instead, a more idiomatic version of "sleep" in JavaScript would involve calling
 `setTimeout()`, and subscribing with a handler:
 
 ```js
@@ -190,15 +190,15 @@ setTimeout(() => {
 }, 1000);
 ```
 
-What's common for all those different examples and APIs? In each case, the idiomatic code in the
+What's common to all these examples and APIs? In each case, the idiomatic code in the
 original systems language uses a blocking API for the I/O, whereas an equivalent example for the Web
 uses an asynchronous API instead. When compiling to the Web, you need to somehow transform between
-those two execution models, and WebAssembly has no built-in capability to do so just yet.
+those two execution models, and WebAssembly has no built-in ability to do so just yet.
 
 ## Bridging the gap with Asyncify
 
 This is where [Asyncify](https://emscripten.org/docs/porting/asyncify.html) comes in. Asyncify is a
-compile-time feature supported by Emscripten, that allows pausing the entire program and
+compile-time feature supported by Emscripten that allows pausing the entire program and
 asynchronously resuming it later.
 
 {% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/VSMrdTiQ7PubW6vfE6WZ.svg", alt="A call graph describing a JavaScript -> WebAssembly -> Web API -> async task invocation, where Asyncify connects the result of the async task back into WebAssembly",
@@ -224,7 +224,7 @@ async_sleep(1);
 puts("B");
 ```
 
-Here, [`EM_JS`](https://emscripten.org/docs/api_reference/emscripten.h.html?highlight=em_js#c.EM_JS)
+[`EM_JS`](https://emscripten.org/docs/api_reference/emscripten.h.html?highlight=em_js#c.EM_JS)
 is a macro that allows defining JavaScript snippets as if they were C functions. Inside, use a
 function
 [`Asyncify.handleSleep()`](https://emscripten.org/docs/porting/asyncify.html#making-async-web-apis-behave-as-if-they-were-synchronous)
@@ -247,7 +247,7 @@ emcc -O2 \
 ```
 
 This lets Emscripten know that any calls to those functions might require saving and restoring the
-state, so the compiler will inject a supporting code around such calls.
+state, so the compiler will inject supporting code around such calls.
 
 Now, when you execute this
 code in the browser you'll see a seamless output log like you'd expect, with B coming after a short
@@ -260,7 +260,7 @@ B
 
 You can [return values from
 Asyncify](https://emscripten.org/docs/porting/asyncify.html#returning-values) functions too. What
-you need to do is return the result of `handleSleep`, and pass the result to the `wakeUp()`
+you need to do is return the result of `handleSleep()`, and pass the result to the `wakeUp()`
 callback. For example, if, instead of reading from a file, you want to fetch some numeric answer
 from a remote resource, you can use a snippet like below to issue a request, suspend the C code, and
 resume once the response body is retrieved—all done seamlessly as if the call was synchronous.
@@ -278,7 +278,7 @@ int answer = get_answer();
 printf("Answer is %d\n", answer);
 ```
 
-In fact, for Promise-based APIs like `fetch()`, you can even combine Asyncify with JavaScript
+In fact, for Promise-based APIs like `fetch()`, you can even combine Asyncify with JavaScript's
 async-await feature instead of using the callback-based API. For that, instead of
 `Asyncify.handleSleep()`, call `Asyncify.handleAsync()`. Then, instead of having to schedule a
 `wakeUp()` callback, you can pass an `async` JavaScript function and use `await` and `return`
@@ -303,7 +303,7 @@ But this example still limits you only to numbers. What if you want to implement
 example, where we tried to get a user's name from a file as a string? Well, you can do that too!
 
 Emscripten provides a feature called
-[Embind](https://emscripten.org/docs/porting/connecting_cpp_and_javascript/embind.html), that allows
+[Embind](https://emscripten.org/docs/porting/connecting_cpp_and_javascript/embind.html) that allows
 you to handle conversions between JavaScript and C++ values. It has support for Asyncify as well, so
 you can call `.await()` on external `Promise`s and it will act just like `await` in an async-await
 JavaScript code:
@@ -322,10 +322,10 @@ Okay, so this all works great in Emscripten. What about other toolchains and lan
 
 ### Usage from other languages
 
-Let's say you have a similar synchronous call somewhere in our Rust code that you want to map to an
+Say that you have a similar synchronous call somewhere in your Rust code that you want to map to an
 async API on the Web. Turns out, you can do that too!
 
-First of all, you need to define such a function as a regular import via `extern` block (or your
+First, you need to define such a function as a regular import via `extern` block (or your
 chosen language's syntax for foreign functions).
 
 ```rust
@@ -368,7 +368,7 @@ that.
 
 You can find it on Github at
 [https://github.com/GoogleChromeLabs/asyncify](https://github.com/GoogleChromeLabs/asyncify) or npm
-under the name [`asyncify-wasm](https://www.npmjs.com/package/asyncify-wasm)`.
+under the name [`asyncify-wasm`](https://www.npmjs.com/package/asyncify-wasm).
 
 It simulates a standard [WebAssembly instantiation
 API](https://developer.mozilla.org/en-US/docs/WebAssembly), but under its own namespace. The only
@@ -389,13 +389,13 @@ let … = await Asyncify.instantiateStreaming(fetch('app.wasm'), {
 await instance.exports.main();
 ```
 
-Once you try to call such asynchronous function - like `get_answer()` in the example above - from
+Once you try to call such an asynchronous function - like `get_answer()` in the example above - from
 the WebAssembly side, the library will detect the returned `Promise`, suspend and save the state of
 the WebAssembly application, subscribe to the promise completion, and later, once it's resolved,
 seamlessly restore the call stack and state and continue execution as if nothing has happened.
 
 Since any function in the module might make an asynchronous call, all the exports become potentially
-asynchronous, too, so they get wrapped as well. You might have noticed in the example above that you
+asynchronous too, so they get wrapped as well. You might have noticed in the example above that you
 need to `await` the result of `instance.exports.main()` to know when the execution is truly
 finished.
 
@@ -403,7 +403,7 @@ finished.
 
 When Asyncify detects a call to one of the `ASYNCIFY_IMPORTS` functions, it starts an asynchronous
 operation, saves the entire state of the application, including the call stack and any temporary
-locals, and later, when that operation is finished, restores all the memory and call stack and and
+locals, and later, when that operation is finished, restores all the memory and call stack and
 resumes from the exact same place and with the exact same state as if the program has never stopped.
 
 This is quite similar to async-await feature in JavaScript that I showed earlier, but, unlike the
@@ -513,4 +513,4 @@ It's probably a story for another blog post though.
 
 Those examples demonstrate just how powerful Asyncify can be for bridging the gap and porting all
 sorts of applications to the Web, allowing you to gain cross-platform access, sandboxing, and better
-security, all without losing in functionality.
+security, all without losing functionality.
