@@ -41,7 +41,8 @@ compare it against the local copy.
 
 If select properties in the manifest have changed (see list below), Chrome
 queues the new manifest, and after all windows have been closed, installs it.
-Once installed, all fields from the new manifest (except `name`, `short_name`,  `start_url` and `icons`) are updated. 
+Once installed, all fields from the new manifest (except `name`, `short_name`,
+`start_url` and `icons`) are updated. 
 
 ### Which properties will trigger an update? {: #cr-desktop-trigger }
 
@@ -105,7 +106,6 @@ used.
 * `start_url`
 * `theme_color`
 * `web_share_target`
-* `maskable` value of primary icon has changed
 
 If Chrome is unable to get an updated manifest from the server, it may
 increase the time between checks to 30 days.
