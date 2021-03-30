@@ -1,6 +1,6 @@
 ---
 title: What is Federated Learning of Cohorts (FLoC)?
-subhead: FLoC enables ad selection without revealing the browsing behaviour of individual users.
+subhead: FLoC enables ad selection without sharing the browsing behaviour of individual users.
 authors:
   - samdutton
 date: 2021-03-30
@@ -23,7 +23,7 @@ FLoC provides a privacy-preserving mechanism for interest-based ad selection.
 
 As a user moves around the web, their browser uses the FLoC algorithm to work out its "interest 
 cohort", which will be the same for thousands of browsers with a similar recent browsing history. 
-The browser recalculates its cohort once every seven days, on the user's device, without sharing 
+The browser recalculates its cohort periodically, on the user's device, without sharing 
 individual browsing data with the browser vendor or anyone else.
 
 Advertisers (sites that pay for advertisements) can include code on their own websites in order to 
@@ -55,12 +55,13 @@ Many businesses rely on advertising to drive traffic to their sites, and many pu
 fund content by selling advertising inventory. People generally prefer to see ads that are 
 relevant and useful to them, and relevant ads also bring more business to advertisers and 
 [more revenue to the websites that host them](https://services.google.com/fh/files/misc/disabling_third-party_cookies_publisher_revenue.pdf). In other words, ad space is more valuable when 
-it displays relevant ads. Thus, selecting relevant ads increases revenue for ad-supported websites.
+it displays relevant ads. Thus, selecting relevant ads increases revenue for ad-supported websites. 
+That, in turn, means that relevant ads help fund content creation that benefits users.
 
 However, many people are concerned about the privacy implications of tailored advertising, which 
-currently relies on techniques such as tracking cookies and device fingerprinting which can reveal 
-your browsing history to advertisers or ad platforms. The FLoC proposal aims to allow more effective 
-ad selection without compromising privacy.
+currently relies on techniques such as tracking cookies and device fingerprinting which are used to 
+track individual browsing behavior. The FLoC proposal aims to allow more effective ad selection 
+without compromising privacy.
 
 ## What can FLoC be used for?
 
@@ -85,6 +86,11 @@ retailer: <br>
 
 * The **adtech platform** (which provides software and tools to deliver advertising) is: <br>
 **<u>adnetwork.example</u>**
+
+{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/P3F4PUB0jrRcU0vC4XSM.png", 
+  alt="Diagram showing, step by step, the different roles in selecting and delivering an ad using 
+  FLoC: FLoC service, Browser, Advertisers, Publisher (to observe cohorts), Adtech, 
+  Publisher (to display ads)", width="800", height="359" %}
 
 In this example we've called the users **Yoshi** and **Alex**. Initially their browsers both belong
 to the same cohort, 1354.
@@ -143,8 +149,9 @@ the publisher <u>dailynews.example</u> and the advertiser <u>shoestore.example</
 1. <u>dailynews.example</u> displays the ad 🥾.
 
 {% Aside %}
-Current techniques for ad selection rely on techniques such as tracking cookies and device
-fingerprinting, which can reveal individual browsing behaviour to third parties such as advertisers.
+Current techniques for ad selection rely on techniques such as tracking cookies and device 
+fingerprinting, which are used by third parties such as advertisers to track individual browsing 
+behavior.
 
 With FLoC the browser **does not share** its browsing history with the FLoC service or anyone else. 
 The browser, on the user's device, works out which cohort it belongs to. The user's browsing history 
@@ -198,7 +205,7 @@ example below, Yoshi's browser moves to cohort 1101 and Alex's browser moves to 
 people's browsers will move into and out of cohorts as their browsing interests change.
 
 <figure style="text-align: center">
-{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/8K5IZ2utOb8lt8ZcnsZb.png", alt="Diagram of the 
+{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/LMkb62V3iJTqkOrFACnM.png", alt="Diagram of the 
 'browsing history space' created by a FLoC server, showing multiple segments, each with a cohort 
 number. The diagram shows browsers belonging to users Yoshi and Alex moving from one cohort to 
 another as their browsing interests change over time.", width="800", height="533" %}
@@ -260,10 +267,10 @@ greater-than-typical number of people who visit sites in a sensitive category, t
 removed. Negative financial status and mental health are among the sensitive categories covered by 
 this analysis. 
 
-Websites opt out of FLoC by setting the [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction) header `interest-cohort=()`. During the [FLoC origin trial](https://developer.chrome.com/origintrials/#/trials/active), 
-websites that don't opt out will be included in the FLoC calculation if Chrome detects that 
-they are sites which load ads. ([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) explains how Chrome's ad detection mechanism works.) Websites can 
-also, of course, simply not access or record the cohort IDs of their visitors.
+Websites opt out of FLoC by setting the [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction) 
+header `interest-cohort=()`. For the [FLoC origin trial](https://developer.chrome.com/origintrials/#/trials/active) 
+in Chrome 89, websites that don't opt out will be included in the FLoC calculation if Chrome detects 
+that they are sites which load ads. ([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) explains how Chrome's ad detection mechanism works.) Websites can also, of course, simply not access or record the cohort IDs of their visitors.
 
 
 ## Can a user opt out of having a cohort assigned to their browser?
@@ -310,32 +317,6 @@ explains how to do this for different operating systems.
 2. Make sure third-party cookies are not blocked and that no ad blocker is running.
 3. View the demo at [floc.glitch.me](https://floc.glitch.me/).
 
-<!-- You can also register for the [FLoC origin trial](https://developer.chrome.com/origintrials/#/trials/active) 
-and observe the cohort IDs of visitors to your site.  -->
-
-You can also try out the user settings for opting out of Privacy Sandbox trials including FLoC.
-
-
-1. Follow the instructions above to try out the FLoC demo. 
-
-1. Enable **Privacy Sandbox Settings** from the Chrome flags page: `chrome://flags/#privacy-sandbox-settings`.
-
-    <figure class="w-figure" style="border: 1px solid #eee; padding: 10px">
-    {% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/v8FWBUpww26j4wgJ0ABX.png", 
-      alt="Screenshot of Privacy Sandbox settings flag in Chrome", width="800", height="50" %}
-    </figure>
-
-1. Navigate to the Privacy Sandbox settings page: `chrome://settings/privacySandbox`.
-
-1. Disable FLoC by turning off **Privacy Sandbox trials**.
-
-    <figure class="w-figure">
-    {% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/bTkIEb17peWEyXdHHjtu.png", 
-      alt="Screenshot of Privacy Sandbox settings page in Chrome", width="800", height="325" %}
-    </figure>
-
-1. Try the demo again: you should see a message that browser settings don't allow FLoC.
-
 
 ## How can websites opt out of the FLoC computation?
 
@@ -360,7 +341,6 @@ on the [FLoC Explainer](https://github.com/WICG/floc) repository.
 
 ## Find out more
 
-<!-- * [How to take part in the FLoC origin trial](/floc-origin-trial) -->
 * [FLoC demo](https://floc.glitch.me)
 * [Digging in to the Privacy Sandbox](https://web.dev/digging-into-the-privacy-sandbox/)
 * [FLoC Explainer](https://github.com/WICG/floc)
