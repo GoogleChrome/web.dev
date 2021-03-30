@@ -370,8 +370,6 @@ also be displayed on top of page content using a modal or served as an
 
 #### Header, footer, and inline cookie notices
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/hSoQr8jdRCKbP5qvPSMt.png", alt="Diagram showing examples of cookie notices displayed in the header and footer", width="800", height="710" %}
-
 Cookie notices are commonly placed in the header or footer. Of these two
 options, the footer placement is generally preferable because it is unobtrusive,
 does not compete for attention with banner ads or notifications, and typically
@@ -381,10 +379,7 @@ policies and terms of use.
 Although inline cookie notices are an option, they can be difficult to integrate
 into existing user interfaces, and therefore are uncommon.
 
-
 #### Modals
-
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/Y0enBSnYuH0ALUP9dQa0.png", alt="Diagram showing examples of cookie notices displayed in modals", width="800", height="724" %}
 
 Modals are cookie consent notices that are displayed on top of page content.
 Modals can look and perform quite differently depending on their size.
@@ -420,29 +415,27 @@ they accept.
 
 #### No configurability
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/RlAg8DCjBC0bX7Ki5MuE.png", alt="Diagram showing examples of cookie notices with no cookie configurability", width="800", height="518" %}
-
 These notice-style cookie banners do not present users with direct UX controls
 for opting out of cookies. Instead, they typically include a link to the site's
 cookie policy which may provide users with information about managing cookies
 using their web browser. These notices typically include either a "dismiss" and/or
 "Accept" button.
 
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/RlAg8DCjBC0bX7Ki5MuE.png", alt="Diagram showing examples of cookie notices with no cookie configurability", width="800", height="518" %}
 
 #### Some configurability
-
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/MOl8u9NcnyjCWogxzjdz.png", alt="Diagram showing examples of cookie notices with some cookie configurability", width="800", height="508" %}
 
 These cookie notices give the user the option of declining cookies but do not
 support more granular controls. This approach to cookie notices is less common.
 
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/MOl8u9NcnyjCWogxzjdz.png", alt="Diagram showing examples of cookie notices with some cookie configurability", width="800", height="508" %}
 
 #### Full configurability
 
-{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/QfFoqkkmdKHAYlftIH0n.png", alt="Diagram showing examples of chookie notices with full cookie configurability", width="800", height="467" %}
-
 These cookie notices provide users with more fine-grained controls for
 configuring the cookie usage that they accept.
+
+{% Img src="image/j2RDdG43oidUy6AL6LovThjeX9c2/QfFoqkkmdKHAYlftIH0n.png", alt="Diagram showing examples of chookie notices with full cookie configurability", width="800", height="467" %}
 
 *  **UX:**
     Controls for configuring cookie usage are most commonly displayed using a
