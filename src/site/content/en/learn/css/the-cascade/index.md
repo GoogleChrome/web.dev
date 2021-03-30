@@ -11,7 +11,7 @@ tags:
 # The cascade
 
 CSS stands for Cascading Stylesheets.
-The cascade is the algorithm for solving conflicts where multiple conflicting CSS rules apply to an HTML element.
+The cascade is the algorithm for solving conflicts where multiple CSS rules apply to an HTML element.
 It's the reason that the text of the button styled with the following CSS will be blue.
 
 ```css
