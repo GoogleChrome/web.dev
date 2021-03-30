@@ -122,6 +122,14 @@ even if they have several other classes, like this:
 This is because CSS looks for a `class` attribute that _contains_ the defined class,
 rather than matching that class exactly.
 
+{% Aside %}
+
+A class attribute can be whatever you want it to be, mostly, but one thing that could trip
+you up is that you can't start either with a number, such as `.1element`.
+You can read more [in the specification](https://www.w3.org/TR/CSS21/syndata.html#characters).
+
+{% endAside %}
+
 ### ID selector
 
 An HTML element with an `id` attribute should be the only element on a page with that ID value.
@@ -130,7 +138,7 @@ You select elements with an
 
 ```css
 #rad {
-	border: 1px solid blue;
+  border: 1px solid blue;
 }
 ```
 
