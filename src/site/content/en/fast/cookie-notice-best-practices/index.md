@@ -257,9 +257,9 @@ When using this script be aware that:
     easy to see whether resources were loaded before or after cookie acceptance.
 *   `%URL%` is a WebPageTest convention that refers to the URL that is being
     tested.
-*   `clickAndWait` follows the format `clickAndWait attribute=Value`.
-    `clickAndWait` tells WebPageTest to click on the element indicated by
+*   `clickAndWait` tells WebPageTest to click on the element indicated by
     `attribute=value` and wait for the subsequent browser activity to complete.
+    It follows the format `clickAndWait attribute=Value`.
 
 
 If you've configured this script correctly, the screenshot taken by WebPageTest
