@@ -339,12 +339,11 @@ on the [FLoC Explainer](https://github.com/WICG/floc) repository.
 ## Find out more
 
 * [FLoC demo](https://floc.glitch.me)
+* [How to take part in the FLoC origin trial](https://developer.chrome.com/blog/floc)
 * [Digging in to the Privacy Sandbox](https://web.dev/digging-into-the-privacy-sandbox/)
 * [FLoC Explainer](https://github.com/WICG/floc)
 * [Evaluation of cohort Algorithms for the FLoC API](https://github.com/google/ads-privacy/blob/master/proposals/FLoC/README.md)
 
 ---
-
-Thanks to all those who helped with writing and reviewing this post.
 
 Photo by [Rhys Kentish](https://unsplash.com/@rhyskentish) on [Unsplash](https://unsplash.com/photos/I5AYxsxSuVA).
