@@ -20,7 +20,7 @@ comment in [issue #4038](https://github.com/GoogleChrome/web.dev/issues/4038).
 When a PWA is installed, the browser uses information from the web app
 manifest for the app name, the icons the app should use, and the URL that
 should be opened when the app is launched. But what if you need to update
-your app name, or provide new icons? When and how are those changes reflected
+information in your manifest file? When and how are those changes reflected
 in the browser?
 
 {% Aside 'caution' %}
@@ -41,19 +41,14 @@ compare it against the local copy.
 
 If select properties in the manifest have changed (see list below), Chrome
 queues the new manifest, and after all windows have been closed, installs it.
-Once installed, all fields from the new manifest (except `name`, `short_name`
-and `start_url`) are updated. If the PWA has been added to the dock on macOS,
-the icon will not update until the PWA is launched from the dock again.
+Once installed, all fields from the new manifest (except `name`, `short_name`,  `start_url` and `icons`) are updated. 
 
 ### Which properties will trigger an update? {: #cr-desktop-trigger }
 
 * `display` (see below)
-* `icons`
 * `scope`
 * `shortcuts`
 * `theme_color`
-* Pixel changes to primary icon file
-* Pixel changes to splash icon file
 
 {% Aside 'caution' %}
 Changes to `name`, `short_name`, and `start_url` are **not** currently
@@ -104,18 +99,13 @@ used.
 
 * `background_color`
 * `display`
-* `icons`
-* `name`
 * `orientation`
 * `scope`
 * `shortcuts`
-* `short_name`
 * `start_url`
 * `theme_color`
 * `web_share_target`
 * `maskable` value of primary icon has changed
-* File hash changes to the primary icon file
-* File hash changes to the splash icon file
 
 If Chrome is unable to get an updated manifest from the server, it may
 increase the time between checks to 30 days.
