@@ -263,7 +263,7 @@ Browser DevTools will typically show all CSS that could match an element,
 with those which are not being used crossed out.
 
 <figure class="w-figure">
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/LA0lZUYkptGrwrDsLEe1.png",
+{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/Z6aLsqcqjGAUsWzq7DZs.png",
 alt="An image of browser DevTools with overwritten CSS crossed out", width="800", height="446" %}
 </figure>
 
