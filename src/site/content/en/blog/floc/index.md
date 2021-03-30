@@ -273,14 +273,6 @@ in Chrome 89, websites that don't opt out will be included in the FLoC calculati
 that they are sites which load ads. ([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) explains how Chrome's ad detection mechanism works.) Websites can also, of course, simply not access or record the cohort IDs of their visitors.
 
 
-## Can a user opt out of having a cohort assigned to their browser?
-
-Chrome will provide a setting to opt out of FLoC. If a user chooses to opt out, 
-their browser will not be assigned a cohort ID and the browser will provide a no-cohort indicator
-if requested. During the Privacy Sandbox [origin trials](https://developer.chrome.com/origintrials/#/trials/active), 
-Chrome will provide a setting to opt out of Privacy Sandbox features including FLoC. 
-
-
 ## As a web developer how can I try out FLoC?
 
 The FLoC API is very simple: just a single method that returns a promise that resolves to an object 
