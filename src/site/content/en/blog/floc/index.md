@@ -309,6 +309,11 @@ explains how to do this for different operating systems.
 2. Make sure third-party cookies are not blocked and that no ad blocker is running.
 3. View the demo at [floc.glitch.me](https://floc.glitch.me/).
 
+{% Aside %}
+[How to take part in the FLoC origin trial](https://developer.chrome.com/blog/floc) explains how 
+to try out FLoC in both first and third-party contexts.
+{% endAside%}
+
 
 ## How can websites opt out of the FLoC computation?
 
