@@ -19,11 +19,16 @@ to check their understanding of concepts covered in your post.
     - [Think-and-checks](#think-and-checks)
     - [Composite questions](#composite-questions)
 1. [Multiple sets in one post](#multiple-sets-in-one-post)
+1. [Example assessment](#example-assessment)
+1. [Types](#types)
+    - [TargetAssessment](#targetassessment)
+    - [TargetAssessmentQuestion](#targetassessmentquestion)
+    - [TargetAssessmentOption](#targetassessmentoption)
 
 ## Start a self-assessment
 
 To include a self-assessment in your post:
-1. Add this short code to your post where you want the self-assessment to appear:
+1. Add this shortcode to your post where you want the self-assessment to appear:
     ```html
     {% raw %}{% Assessment 'my-first-self-assessment' %}{% endraw %}
     ```
@@ -231,4 +236,29 @@ For example:
 ```html
 {% raw %}{% Assessment 'first-assessment' %}
 {% Assessment 'second-assessment' %}{% endraw %}
+```
+
+## Example assessment
+
+```yml
+{% include '../../../../_drafts/_template-self-assessment/my-first-self-assessment.assess.yml' %}
+```
+
+## Types
+
+The `*.assess.yml` file can be broken down into the following types:
+
+### TargetAssessment
+```typescript
+{% include '../../../../../../types/site/_includes/components/Assessment/TargetAssessment.d.ts' %}
+```
+
+### TargetAssessmentQuestion
+```typescript
+{% include '../../../../../../types/site/_includes/components/Assessment/TargetAssessmentQuestion.d.ts' %}
+```
+
+### TargetAssessmentOption
+```typescript
+{% include '../../../../../../types/site/_includes/components/Assessment/TargetAssessmentOption.d.ts' %}
 ```

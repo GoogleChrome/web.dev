@@ -207,7 +207,7 @@ function rationaleTemplate(option) {
  * Gets the assessment object from the YAML file passed in the shortcode
  * and passes it to the template functions above.
  * @this {EleventyPage}
- * @param {*} targetAssessment
+ * @param {TargetAssessment} targetAssessment
  * @returns
  */
 module.exports = function (targetAssessment) {
