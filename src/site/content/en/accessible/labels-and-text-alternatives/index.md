@@ -334,4 +334,4 @@ promotional offers?" like in the VoiceOver example below:
   {% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="VoiceOver text output showing 'Receive promotional offers?'", width="640", height="174", class="w-screenshot" %}
 </figure>
 
-{% Assessment page, 'self-assessment' %}
+{% Assessment 'self-assessment' %}
