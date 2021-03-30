@@ -22,12 +22,12 @@ measurement, and user experience.
 
 ## Performance
 
-Cookie notices can have a significant impact on overall page performance due to
+Cookie notices can have a significant impact on page performance due to
 the fact that they are typically loaded early in the page load process, are
 shown to all users, and can potentially influence the loading of ads and other
 page content.
 
-Here's how cookie notices typically impact Web Vitals metrics:
+Here's how cookie notices can impact Web Vitals metrics:
 
 
 
@@ -35,7 +35,7 @@ Here's how cookie notices typically impact Web Vitals metrics:
     Most cookie consent notices are fairly small and therefore typically don't
     contain a page's LCP element. However, this can happen—particularly on mobile
     devices. On mobile devices, a cookie notice typically takes up a larger portion
-    of the screen. This most commonly occurs when a cookie notice contains a large
+    of the screen. This usually occurs when a cookie notice contains a large
     block of text (text blocks can be LCP elements too).
 
 *  **First Input Delay (FID):**
@@ -43,7 +43,7 @@ Here's how cookie notices typically impact Web Vitals metrics:
     minimal impact on FID—cookie consent requires little JavaScript execution.
     However, the technologies that these cookies enable—namely advertising and
     tracking scripts—may have a significant impact on page interactivity. Delaying
-    these scripts until cookie acceptance can be used as a technique to decrease
+    these scripts until cookie acceptance can serve as a technique to decrease
     First Input Delay (FID).
 
 *  **Cumulative Layout Shift (CLS):**
