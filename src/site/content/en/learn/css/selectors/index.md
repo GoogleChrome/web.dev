@@ -16,7 +16,7 @@ how do you do that?
 ```html
 <article>
   <p>I want to be red and larger than the other text.</p>
-  <p>I want to be normal sized and the default colour.</p>
+  <p>I want to be normal sized and the default color.</p>
 </article>
 ```
 
@@ -279,11 +279,13 @@ p:nth-child(even) {
 }
 ```
 
-We cover pseudo-classes in more detail in a later lesson.
+For more on pseudo-classes, check out lesson 15.
+
+@@TO DO link up to lesson 15
 
 ### Pseudo-element
 
-Pseudo-elements differ from pseudo-classes because instead of responding to platform state,
+Pseudo-elements differ from pseudo-classes because instead of responding to the platform state,
 they act as if they are inserting a new element with CSS.
 Pseudo-elements are also syntactically different from pseudo-classes,
 because instead of using a single colon (`:`), we use a double colon (`::`).
@@ -326,7 +328,9 @@ You can also use `::selection` to style the content that has been highlighted by
 }
 ```
 
-You can find out more about pseudo-elements in a later lesson.
+For more on pseudo-elements, check out lesson 14.
+
+@@TO DO link up to lesson 14
 
 ## Complex selectors
 
@@ -368,11 +372,7 @@ p strong {
 ```
 
 This snippet selects all `<strong>` elements
-that are child elements of `<p>` elements only and makes them blue.
-
-A combinator selector like this is **recursive**.
-This means that in the above snippet, all strong elements,
-regardless of their depth, will have blue text.
+that are child elements of `<p>` elements only and makes them blue, recursively.
 
 <figure class="w-figure">
   {% Codepen {
@@ -442,7 +442,7 @@ rather than being the next element with the same parent.
 
 This subsequent combinator provides a little less rigidity,
 which is useful in contexts like the above sample,
-where we change the colour of a custom switch when its associated checkbox has the `:checked` state.
+where we change the color of a custom switch when its associated checkbox has the `:checked` state.
 
 #### Child combinator
 
@@ -481,9 +481,11 @@ a.my-class {
 }
 ```
 
-This wouldn't apply a red colour to all links
-and it would also only apply the red colour to `.my-class` **if** it was on an `<a>` element.
-We touch more on this in the lesson on specificity.
+This wouldn't apply a red color to all links
+and it would also only apply the red color to `.my-class` **if** it was on an `<a>` element.
+For more on specificity, see module 3.
+
+@@TO DO link
 
 ## Resources
 
