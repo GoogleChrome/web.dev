@@ -35,15 +35,15 @@ Understanding the cascade algorithm helps you understand how the browser resolve
 The cascade algorithm is split into 4 distinct stages.
 
 1. **Position and order of appearance**: the order of which your CSS rules appear
-2. **Specificity**: an algorithm which determines which CSS selector is the most specific
+2. **Specificity**: an algorithm which determines which CSS selector has the strongest match
 3. **Origin**: the order of when CSS appears and where it comes from, whether that is a browser style,
    CSS from a browser extension, or your authored CSS
-4. **Importance**: some CSS rules are treated with more importance than others,
+4. **Importance**: some CSS rules are weighted more heavily than others,
    especially with the `!important` rule type
 
 ## Position and order of appearance
 
-The order in which your CSS rules appear and how they appear is taken into consideration by the cascade,
+The order in which your CSS rules appear and how they appear is taken into consideration by the cascade
 while it calculates conflict resolution.
 
 The demo right at the start of this lesson is the most straightforward example of position.
@@ -122,8 +122,8 @@ the initial declaration will be honored, and the font-size will be 1.5rem
 
 {% Aside %}
 This approach of declaring the same property twice works because browsers ignore values they don't understand.
-As far as the browser is concerned,
-the value it doesn't support is invalid and therefore ignored.
+Unlike some other programming languages, CSS will not throw an error or break your program when it detects a line it
+cannot parse—the value it cannot parse is invalid and therefore ignored.
 The browser then continues to process the rest of the CSS without breaking stuff it already understands.
 {% endAside %}
 
