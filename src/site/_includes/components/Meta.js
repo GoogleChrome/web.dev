@@ -136,6 +136,9 @@ module.exports = (locale, page, collections, renderData = {}) => {
   }
 
   function renderHreflangMeta() {
+    if (!pageUrl) {
+      return;
+    }
     const url = pageUrl.startsWith('/i18n/')
       ? pageUrl.replace(i18nRegex, '')
       : pageUrl;
