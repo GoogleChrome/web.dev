@@ -37,14 +37,14 @@ The cascade algorithm is split into 4 distinct stages.
 1. **Position and order of appearance**: the order of which your CSS rules appear
 2. **Specificity**: an algorithm which determines which CSS selector is the most specific
 3. **Origin**: the order of when CSS appears and where it comes from, whether that is a browser style,
-CSS from a browser extension, or your authored CSS
+   CSS from a browser extension, or your authored CSS
 4. **Importance**: some CSS rules are treated with more importance than others,
-especially with the `!important` rule type
+   especially with the `!important` rule type
 
 ## Position and order of appearance
 
 The order in which your CSS rules appear and how they appear is taken into consideration by the cascade,
- while it calculates conflict resolution.
+while it calculates conflict resolution.
 
 The demo right at the start of this lesson is the most straightforward example of position.
 There are two rules that have selectors of identical specificity,
@@ -53,10 +53,10 @@ so the last one to be declared won.
 Styles can come from various sources on an HTML page,
 such as a `<link>` tag,
 an embedded `<style>` tag,
- and inline CSS as defined in an element's `style` attribute.
+and inline CSS as defined in an element's `style` attribute.
 
-If you have a `<link />` that includes CSS at the top of your HTML page,
-then another `<link />` that includes CSS at the bottom of your page: the bottom `<link />` will have the most specificity.
+If you have a `<link>` that includes CSS at the top of your HTML page,
+then another `<link>` that includes CSS at the bottom of your page: the bottom `<link>` will have the most specificity.
 The same thing happens with embedded `<style>` elements, too.
 They get more specific, the further down the page they are.
 
@@ -72,7 +72,7 @@ They get more specific, the further down the page they are.
 </figure>
 
 This ordering also applies to embedded `<style>` elements.
-If they are declared before a `<link />`,
+If they are declared before a `<link>`,
 the linked stylesheet's CSS will have the most specificity.
 
 <figure class="w-figure">
@@ -93,8 +93,8 @@ In this example, the element will have a purple background because `background: 
 
 ```css
 .my-element {
-	background: green;
-	background: purple;
+  background: green;
+  background: purple;
 }
 ```
 
@@ -108,8 +108,8 @@ the initial declaration will be honored, and the font-size will be 1.5rem
 
 ```css
 .my-element {
-	font-size: 1.5rem;
-	font-size: clamp(1.5rem, calc(1rem + 3vw), 2rem);
+  font-size: 1.5rem;
+  font-size: clamp(1.5rem, calc(1rem + 3vw), 2rem);
 }
 ```
 
@@ -134,18 +134,18 @@ If you have the following HTML on your page:
 
 ```html
 <!DOCTYPE html>
-	<html lang="en">
-	<head>
-	  <link rel="stylesheet" href="styles.css" />
-	</head>
-	<body>
-	  <button>I am a button</button>
-	  <style>
-		  button {
-			  background: pink;
-		  }
-	  </style>
-	</body>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <button>I am a button</button>
+    <style>
+      button {
+        background: pink;
+      }
+    </style>
+  </body>
 </html>
 ```
 
@@ -153,7 +153,7 @@ Inside `styles.css`, is the following CSS rule:
 
 ```css
 button {
-	background: yellow;
+  background: yellow;
 }
 ```
 
@@ -218,15 +218,15 @@ The **order of specificity of these origins**, from least specific, to most spec
 
 1. **User agent base styles**. These are the styles that your browser applies to HTML elements by default.
 2. **Local user styles**. These can come from the operating system level, such as a base font size,
-or a preference of reduced motion.
-They can also come from browser extensions,
-such as a browser extension that allows a user to write their own custom CSS for a webpage.
+   or a preference of reduced motion.
+   They can also come from browser extensions,
+   such as a browser extension that allows a user to write their own custom CSS for a webpage.
 3. **Authored CSS**. The CSS that you author.
 4. **Authored `!important`**. Any `!important` that you add to your authored declarations.
 5. **Local user styles `!important`**. Any `!important` that come from the operating system level,
-or browser extension level CSS.
+   or browser extension level CSS.
 6. **User agent `!important`**. Any `!important` that are defined in the default CSS,
-provided by the browser.
+   provided by the browser.
 
 <figure class="w-figure">
 {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/rjZMVAC5lNATzCErbyeI.png",
@@ -270,7 +270,6 @@ If the CSS you expected to apply doesn't appear at all,
 then it didn't match the element.
 In that case you need to look elsewhere,
 perhaps for a typo in a class or element name or some invalid CSS.
-
 
 ## Resources
 
