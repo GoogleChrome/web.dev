@@ -15,8 +15,8 @@ how do you do that?
 
 ```html
 <article>
-	<p>I want to be red and larger than the other text.</p>
-	<p>I want to be normal sized and the default colour.</p>
+  <p>I want to be red and larger than the other text.</p>
+  <p>I want to be normal sized and the default colour.</p>
 </article>
 ```
 
@@ -24,8 +24,8 @@ You use a CSS selector to find that specific element and apply a CSS rule, like 
 
 ```css
 article p:first-of-type {
-	color: red;
-	font-size: 1.5em;
+  color: red;
+  font-size: 1.5em;
 }
 ```
 
@@ -51,7 +51,7 @@ containing one or more selectors and one or more declarations.
 
 In this CSS rule, the **selector** is `.my-css-rule`,
 which finds all elements with a class of `my-css-rule` on the page.
-There are three declarations, within the curly brackets.
+There are three declarations within the curly brackets.
 A declaration is a property and value pair which applies styles to the elements matched by the selectors.
 A CSS rule can have as many declarations and selectors as you like.
 
@@ -62,12 +62,11 @@ classes, IDs, and other attributes which may be added to an HTML tag.
 
 ### Universal selector
 
-A [universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors
-)—also known as a wildcard—matches any element.
+A [universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors)—also known as a wildcard—matches any element.
 
 ```css
 * {
-	color: hotpink;
+  color: hotpink;
 }
 ```
 
@@ -80,7 +79,7 @@ matches a HTML element directly.
 
 ```css
 section {
-	padding: 2em;
+  padding: 2em;
 }
 ```
 
@@ -103,7 +102,7 @@ Any element that has the class applied to it will get colored red:
 
 ```css
 .my-class {
-	color: red;
+  color: red;
 }
 ```
 
@@ -167,8 +166,8 @@ using the [attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/
 Instruct CSS to look for attributes by wrapping the selector with square brackets (`[ ]`).
 
 ```css
-[data-type="primary"] {
-	color: red;
+[data-type='primary'] {
+  color: red;
 }
 ```
 
@@ -183,7 +182,7 @@ you can also look for elements with the attribute present, regardless of its val
 
 ```css
 [data-type] {
-	color: red;
+  color: red;
 }
 ```
 
@@ -198,8 +197,8 @@ You can use case-sensitive attribute selectors
 by adding an `s` operator to your attribute selector.
 
 ```css
-[data-type="primary" s] {
-	color: red;
+[data-type='primary' s] {
+  color: red;
 }
 ```
 
@@ -211,20 +210,19 @@ Along with case operators,
 you have access to operators that match portions of strings inside attribute values.
 
 ```css
-
 /* A href that contains “example.com” */
-[href*="example.com"] {
-	color: red;
+[href*='example.com'] {
+  color: red;
 }
 
 /* A href that starts with https */
-[href^="https"] {
-	color: green;
+[href^='https'] {
+  color: green;
 }
 
 /* A href that ends with .com */
-[href$=".com"] {
-	color: blue;
+[href$='.com'] {
+  color: blue;
 }
 ```
 
@@ -243,8 +241,11 @@ A selector doesn't have to match only a single element.
 You can group multiple selectors—separating them with commas—like this:
 
 ```css
-strong, em, .my-element, [lang] {
-	color: red;
+strong,
+em,
+.my-element,
+[lang] {
+  color: red;
 }
 ```
 
@@ -263,18 +264,18 @@ either because they are interacted with,
 or one of their child elements is in a certain state.
 
 For example, an HTML element could be hovered with the mouse pointer by a user
-*or* a child element could also be hovered by the user.
+_or_ a child element could also be hovered by the user.
 For those situations, use the `:hover` pseudo-class.
 
 ```css
 /* Our link is hovered */
 a:hover {
-	outline: 1px dotted green;
+  outline: 1px dotted green;
 }
 
 /* Sets all even paragraphs to have a different background */
 p:nth-child(even) {
-	background: floralwhite;
+  background: floralwhite;
 }
 ```
 
@@ -296,7 +297,7 @@ such as `:before` and `:after` to help with backwards compatibility with older b
 
 ```css
 .my-element::before {
-	content: "Prefix - ";
+  content: 'Prefix - ';
 }
 ```
 
@@ -312,7 +313,7 @@ Use `::marker` to style each bullet point (or number) in the list
 ```css
 /* Your list will now either have red dots, or red numbers */
 li::marker {
-	color: red;
+  color: red;
 }
 ```
 
@@ -320,8 +321,8 @@ You can also use `::selection` to style the content that has been highlighted by
 
 ```css
 ::selection {
-	background: black;
-	color: white;
+  background: black;
+  color: white;
 }
 ```
 
@@ -330,11 +331,11 @@ You can find out more about pseudo-elements in a later lesson.
 ## Complex selectors
 
 You have already seen a vast array of selectors,
-but sometimes, you will need more *fine-grained control* with your CSS.
+but sometimes, you will need more _fine-grained control_ with your CSS.
 This is where complex selectors step in to help.
 
 It's worth remembering at this point that although the following selectors give us more power,
-we can only  **cascade downwards**, selecting child elements.
+we can only **cascade downwards**, selecting child elements.
 We are not able to target upwards and select a parent element.
 We cover what the cascade is and how it works in a later lesson.
 
@@ -350,9 +351,7 @@ To understand descendant combinators,
 you need to first understand parent and child elements.
 
 ```html
-<p>
-  A paragraph  of text with some <strong>bold text for emphasis</strong>.
-</p>
+<p>A paragraph of text with some <strong>bold text for emphasis</strong>.</p>
 ```
 
 The parent element is the `<p>` which contains text.
@@ -364,7 +363,7 @@ This uses a space (` `) to instruct the browser to look for child elements:
 
 ```css
 p strong {
-	color: blue
+  color: blue;
 }
 ```
 
@@ -406,14 +405,14 @@ by using a `+` character in your selector.
 
 To add space between stacked elements,
 use the next sibling combinator to add space
-*only* if an element is a **next sibling** of a child element of `.top`.
+_only_ if an element is a **next sibling** of a child element of `.top`.
 
 You could add margin to all child elements of `.top`,
 using the following selector:
 
 ```css
 .top * {
-	margin-top: 1em;
+  margin-top: 1em;
 }
 ```
 
@@ -478,7 +477,7 @@ that also have a class of `.my-class`, write the following:
 
 ```css
 a.my-class {
-	color: red;
+  color: red;
 }
 ```
 
@@ -488,7 +487,7 @@ We touch more on this in the lesson on specificity.
 
 ## Resources
 
-* [CSS selectors reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
-* [Interactive selectors game](https://flukeout.github.io/)
-* [Pseudo-class and pseudo-elements reference](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements)
-* [A tool that translates CSS selectors into plain-english explainers](https://hugogiraudel.github.io/selectors-explained/)
+- [CSS selectors reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+- [Interactive selectors game](https://flukeout.github.io/)
+- [Pseudo-class and pseudo-elements reference](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements)
+- [A tool that translates CSS selectors into plain-english explainers](https://hugogiraudel.github.io/selectors-explained/)
