@@ -123,7 +123,7 @@ resource hint to load their cookie notice script. The `preload` resource hint
 informs the browser to initiate an early request for the specified resource.
 
 ```html
-<link rel="prefetch" href="https://www.cookie-notice.com/cookie-script.js">
+<link rel="preload" href="https://www.cookie-notice.com/cookie-script.js">
 ```
 
 `preload` is most powerful when its usage is limited to fetching a couple key
