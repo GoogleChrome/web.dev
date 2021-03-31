@@ -1,0 +1,113 @@
+.header-default {
+  [data-open-drawer-button] {
+    margin: 0 8px 0 -8px;
+
+    @include bp(md) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    height: 30px;
+    width: 125px;
+  }
+
+  &__middle {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    /// This is used by web-search during its animation.
+    /// web-search is >200% the width of its parent. When focused it will
+    /// transition to completely fill the width of .header-default__middle.
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__links {
+    display: none;
+    flex: 1;
+    height: 100%;
+    line-height: 20px;
+    min-width: 50%;
+    padding-left: 48px;
+
+    @include bp(md) {
+      display: flex;
+    }
+  }
+
+  &__link {
+    align-items: center;
+    color: $PRIMARY_TEXT_COLOR;
+    display: flex;
+    font-weight: 500;
+    margin: 0;
+    padding: 0 16px;
+    position: relative;
+
+    &[active] {
+      box-shadow: 0 -2px 0 $WEB_PRIMARY_COLOR inset;
+    }
+
+    @include bp(lg) {
+      padding: 0 24px;
+    }
+  }
+
+  &__link:hover,
+  &__link:focus,
+  &__link:active {
+    outline: 0;
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    background-color: rgba($PRIMARY_TEXT_COLOR, .04);
+  }
+
+  &__link:focus {
+    background-color: rgba($PRIMARY_TEXT_COLOR, .12);
+  }
+
+  &__link:active {
+    background-color: rgba($PRIMARY_TEXT_COLOR, .16);
+  }
+
+  &__link[data-active]::after {
+    background: $WEB_PRIMARY_COLOR;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  web-search {
+    flex: 1;
+  }
+}
+
+web-header.web-header--has-expanded-search {
+  .header-default__logo-link {
+    display: none;
+
+    @include bp(md) {
+      display: inline;
+    }
+  }
+
+  .header-default__middle {
+    overflow: visible;
+  }
+
+  web-profile-switcher-container {
+    display: none;
+
+    @include bp(md) {
+      display: flex;
+    }
+  }
+}

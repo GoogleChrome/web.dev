@@ -15,32 +15,33 @@
  */
 
 /**
- * @fileoverview A responsive header that can trigger a side-nav.
+ * @fileoverview A responsive header that can trigger a navigation drawer.
  *
  * This does not inherit from BaseStateElement as it is not a LitElement.
  */
 
 import {store} from '../../store';
-import {expandSideNav} from '../../actions';
+import {openNavigationDrawer} from '../../actions';
+import {BaseStateElement} from '../BaseStateElement';
 
-export class Header extends HTMLElement {
+export class Header extends BaseStateElement {
   constructor() {
     super();
-
-    this.onStateChanged = this.onStateChanged.bind(this);
   }
 
   connectedCallback() {
+    super.connectedCallback();
     /** @type HTMLButtonElement */
-    this.hamburgerBtn = this.querySelector('.web-header__hamburger-btn');
-    this.hamburgerBtn.classList.remove('unresolved');
-    this.hamburgerBtn.addEventListener('click', expandSideNav);
-
-    store.subscribe(this.onStateChanged);
+    this.openDrawerBtn = this.querySelector('[data-open-drawer-button]');
+    if (this.openDrawerBtn) {
+      this.openDrawerBtn.addEventListener('click', openNavigationDrawer);
+    }
   }
 
   disconnectedCallback() {
-    this.hamburgerBtn.removeEventListener('click', expandSideNav);
+    if (this.openDrawerBtn) {
+      this.openDrawerBtn.removeEventListener('click', openNavigationDrawer);
+    }
 
     store.unsubscribe(this.onStateChanged);
   }
@@ -72,12 +73,14 @@ export class Header extends HTMLElement {
   }
 
   /**
-   * This is called by the SideNav to return focus to this control when the
-   * user closes the SideNav.
+   * This is called by the NavigationDrawer to return focus to this control when
+   * the user closes the NavigationDrawer.
    * This is important for accessibility.
    */
   manageFocus() {
-    this.hamburgerBtn.focus();
+    if (this.openDrawerBtn) {
+      this.openDrawerBtn.focus();
+    }
   }
 }
 

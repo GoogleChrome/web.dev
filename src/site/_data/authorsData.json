@@ -2001,5 +2001,22 @@
     "github": "hankchizljaw",
     "twitter": "piccalilli_",
     "image": "image/foR0vJZKULb5AGJExlazy1xYDgI2/KgpVYUM3YJiVTASm4RTB.jpeg"
+  },
+  "ajara": {
+    "name": {
+      "given": "Adriana",
+      "family": "Jara"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
+    "country": "US",
+    "twitter": "tropicadri",
+    "github": "tropicadri",
+    "descriptions": {
+      "en": "Adriana is a Developer Relations Engineer"
+    },
+    "image": "image/SeARmcA1EicLXagFnVOe0ou9cqK2/4KNPR11Y1YYxUi6ASIE1.jpg"
   }
 }
