@@ -4,7 +4,7 @@ subhead: How to integrate with hardware media keys, customize media notification
 authors:
   - beaufortfrancois
 date: 2020-03-06
-updated: 2022-03-25
+updated: 2021-03-31
 hero: image/admin/IhujMvzGa5Mf0aNWYRXW.jpg
 thumbnail: image/admin/Q6CqQNLucogBCxGMsSU2.jpg
 description: |
@@ -207,7 +207,7 @@ won't be shown unless the proper action handler is set.
     width="800",
     height="450"
   %}
-  <figcaption class="w-figcaption">Now Playing widget in macOS Big Sur</figcaption>
+  <figcaption class="w-figcaption">Now Playing widget in macOS Big Sur (requires Chrome 91)</figcaption>
 </figure>
 
 ### Play / pause
