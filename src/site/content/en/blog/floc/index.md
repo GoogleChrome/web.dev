@@ -27,10 +27,10 @@ The browser recalculates its cohort periodically, on the user's device, without 
 individual browsing data with the browser vendor or anyone else.
 
 Advertisers (sites that pay for advertisements) can include code on their own websites in order to 
-gather and provide cohort data to their ad-tech platforms (companies that provide software and tools 
-to deliver advertising). For example, an ad-tech platform might learn from an online shoe store that 
+gather and provide cohort data to their adtech platforms (companies that provide software and tools 
+to deliver advertising). For example, an adtech platform might learn from an online shoe store that 
 browsers from cohorts 1101 and 1354 seem interested in the store's hiking gear. From other 
-advertisers, the ad-tech platform learns about other interests of those cohorts. 
+advertisers, the adtech platform learns about other interests of those cohorts. 
 
 Subsequently, the ad platform can use this data to select relevant ads (such as an ad for hiking 
 boots from the shoe store) when a browser from one of those cohorts requests a page from a site that 
@@ -82,12 +82,12 @@ retailer: <br>
 * The **publisher** (a site that sells ad space) in the example is a news site: <br>
 **<u>dailynews.example</u>**
 
-* The **ad-tech platform** (which provides software and tools to deliver advertising) is: <br>
+* The **adtech platform** (which provides software and tools to deliver advertising) is: <br>
 **<u>adnetwork.example</u>**
 
 {% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/P3F4PUB0jrRcU0vC4XSM.png", 
   alt="Diagram showing, step by step, the different roles in selecting and delivering an ad using 
-  FLoC: FLoC service, Browser, Advertisers, Publisher (to observe cohorts), Ad-tech, 
+  FLoC: FLoC service, Browser, Advertisers, Publisher (to observe cohorts), Adtech, 
   Publisher (to display ads)", width="800", height="359" %}
 
 In this example we've called the users **Yoshi** and **Alex**. Initially their browsers both belong
@@ -95,7 +95,7 @@ to the same cohort, 1354.
 
 {% Aside %}
 We've called the users here Yoshi and Alex, but this is only for the purpose of the example. Names 
-and individual identities are not revealed to the advertiser, publisher, or ad-tech platform with 
+and individual identities are not revealed to the advertiser, publisher, or adtech platform with 
 FLoC.   
 
 Don't think of a cohort as a collection of people. Instead, think of a cohort as a grouping of 
@@ -125,17 +125,17 @@ different from Yoshi's, but similar enough that their browsers both belong to co
 1. The site later records additional interest in its products from cohort 1354, as well as from other
 cohorts.
 1. The site periodically aggregates and shares information about cohorts and product interests with
-its ad-tech platform <u>adnetwork.example</u>. 
+its adtech platform <u>adnetwork.example</u>. 
 
 Now it's Alex's turn.
 
 ### 4. Publisher: <span style="font-weight:normal">dailynews.example</span> 
 1. Alex visits <u>dailynews.example</u>.
 1. The site asks Alex's browser for its cohort.
-1. The site then makes a request for an ad to its ad-tech platform, <u>adnetwork.example</u>, including 
+1. The site then makes a request for an ad to its adtech platform, <u>adnetwork.example</u>, including 
 Alex's browser's cohort: 1354.
 
-### 5. Ad-tech platform: <span style="font-weight:normal">adnetwork.example</span>
+### 5. Adtech platform: <span style="font-weight:normal">adnetwork.example</span>
 1. <u>adnetwork.example</u> can select an ad suitable for Alex by combining the data it has from 
 the publisher <u>dailynews.example</u> and the advertiser <u>shoestore.example</u>: 
 	- Alex's browser's cohort (1354) provided by <u>dailynews.example</u>.
@@ -164,7 +164,7 @@ cluster of thousands of similar browsing histories. These groupings aren't based
 any actual browsing histories; they're simply based on picking random centers in "cohort space" or
 cutting up the space with random lines.
 1. Each segment is given a cohort number.
-1. The web browser gets this data describing the "cohort space" from its FLoC service.
+1. The web browser gets this data describing "cohort space" from its FLoC service.
 1. As a user moves around the web, their browser [uses an algorithm](#floc-algorithm) to 
 periodically calculate the region in "cohort space" that corresponds most closely to its own 
 browsing history.
