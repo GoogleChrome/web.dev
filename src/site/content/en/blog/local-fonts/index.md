@@ -255,7 +255,7 @@ TrueType, OpenType, Web Open Font Format (WOFF) fonts and others.
 ```js
 try {
   const pickedFonts = await navigator.fonts.query();
-  for (const metadata of fonts) {
+  for (const metadata of pickedFonts) {
     // We're only interested in a particular font.
     if (metadata.family !== 'Comic Sans MS') {
       continue;
