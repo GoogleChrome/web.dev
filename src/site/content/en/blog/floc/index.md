@@ -260,7 +260,7 @@ this analysis.
 Websites opt out of FLoC by setting the [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction) 
 header `interest-cohort=()`. For the [FLoC origin trial](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561) 
 in Chrome 89, websites that don't opt out will be included in the FLoC calculation if Chrome detects 
-that they are sites which load ads. ([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) explains how Chrome's ad detection mechanism works.) Websites can also, of course, simply not access or record the cohort IDs of their visitors.
+that they are sites [which load ads or ads-related resources](https://github.com/WICG/floc/issues/82). ([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) explains how Chrome's ad detection mechanism works.) Websites can also, of course, simply not access or record the cohort IDs of their visitors.
 
 ## As a web developer how can I try out FLoC?
 
@@ -277,7 +277,7 @@ The cohort data made available looks like this:
 
 ```js
 {
-	id: "1415926",
+	id: "14159",
 	version: "chrome.1.0"
 }
 ```
