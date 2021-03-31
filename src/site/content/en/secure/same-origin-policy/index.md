@@ -101,7 +101,7 @@ cross-origin resource is blocked.
 [See how the same-origin policy works when accessing data inside an iframe](/codelab-same-origin-iframe).
 {% endAside %}
 
-{% Assessment page, 'self-assessment' %}
+{% Assessment 'self-assessment' %}
 
 ### How to prevent Clickjacking
 

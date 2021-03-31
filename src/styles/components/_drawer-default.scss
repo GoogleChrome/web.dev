@@ -1,0 +1,67 @@
+@import '../settings/colors';
+
+.drawer-default {
+  &__contents {
+    background: $WHITE;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 268px;
+    max-width: 90vw;
+  }
+
+  &__header {
+    align-items: center;
+    display: flex;
+    padding: 16px;
+    border-bottom: 1px solid $GREY_300;
+  }
+
+  &__logo {
+    height: 30px;
+    width: 125px;
+  }
+
+  &__hide {
+    height: 2.75rem;
+    margin: 0 10px 0 -6px;
+    width: 2.75rem;
+    color: $GREY_700;
+  }
+
+  &__link {
+    border-bottom: 1px solid $GREY_300;
+    color: $GREY_700;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 16px 24px;
+
+    &[active] {
+      -webkit-box-shadow: 0 -2px 0 $WEB_PRIMARY_COLOR inset;
+      box-shadow: 0 -2px 0 $WEB_PRIMARY_COLOR inset;
+    }
+
+    &[data-active] {
+      color: $WEB_PRIMARY_COLOR;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+      outline: 0;
+    }
+
+    &:hover {
+      background-color: rgba($PRIMARY_TEXT_COLOR, .04);
+    }
+
+    &:focus {
+      background-color: rgba($PRIMARY_TEXT_COLOR, .12);
+    }
+
+    &:active {
+      background-color: rgba($PRIMARY_TEXT_COLOR, .16);
+    }
+  }
+}

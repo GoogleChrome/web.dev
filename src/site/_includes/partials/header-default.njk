@@ -1,22 +1,25 @@
-<web-header role="navigation">
-  <button class="w-button--icon w-button--round web-header__hamburger-btn unresolved" aria-label="Open menu">
-    <span class="w-tooltip w-tooltip--left">Open menu</span>
+{% from 'macros/icon.njk' import icon with context %}
+
+<web-header class="header-default" role="navigation">
+  <button data-open-drawer-button class="w-button--svg w-button--round" aria-label="{{ 'i18n.header.open_menu' | i18n(locale) }}">
+    {{ icon('menu') }}
+    <span class="w-tooltip w-tooltip--left">{{ 'i18n.header.open_menu' | i18n(locale) }}</span>
   </button>
 
   <a
     href="/"
-    class="web-header__logo-link gc-analytics-event"
+    class="header-default__logo-link gc-analytics-event"
     data-category="Site-Wide Custom Events"
     data-label="Site logo"
   >
-    <img class="web-header__logo" src="/images/lockup.svg" alt="web.dev" />
+    <img class="header-default__logo" src="/images/lockup.svg" alt="web.dev" />
   </a>
 
-  <div class="web-header__middle">
-    <div class="web-header__links">
+  <div class="header-default__middle">
+    <div class="header-default__links">
       <a
         href="/learn/"
-        class="web-header__link gc-analytics-event"
+        class="header-default__link gc-analytics-event"
         data-category="Site-Wide Custom Events"
         data-label="Tab: Learn"
       >
@@ -25,7 +28,7 @@
 
       <a
         href="/measure/"
-        class="web-header__link gc-analytics-event"
+        class="header-default__link gc-analytics-event"
         data-category="Site-Wide Custom Events"
         data-label="Tab: Measure"
       >
@@ -34,7 +37,7 @@
 
       <a
         href="/blog/"
-        class="web-header__link gc-analytics-event"
+        class="header-default__link gc-analytics-event"
         data-category="Site-Wide Custom Events"
         data-label="Tab: Blog"
       >
@@ -43,7 +46,7 @@
 
       <a
         href="/about/"
-        class="web-header__link gc-analytics-event"
+        class="header-default__link gc-analytics-event"
         data-category="Site-Wide Custom Events"
         data-label="Tab: About"
       >

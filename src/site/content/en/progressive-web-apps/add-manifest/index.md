@@ -6,7 +6,7 @@ authors:
   - beaufortfrancois
   - thomassteiner
 date: 2018-11-05
-updated: 2021-02-25
+updated: 2021-03-30
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -279,7 +279,8 @@ property, and the `type` of image.
 In Chrome, the image must respond to certain criteria:
 
 * Width and height must be at least 320px and at most 3840px.
-* The maximum dimension can't be twice larger than the minimum dimension.
+* The maximum dimension can't be more than 2.3 times as long as the minimum
+  dimension.
 * Screenshots must have the same aspect ratio.
 * Only JPEG and PNG image formats are supported.
 
