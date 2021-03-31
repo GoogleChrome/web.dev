@@ -206,7 +206,7 @@ terms of API ergonomics. The
 of acceleration along the device's X, Y, and Z axis due to gravity.
 
 {% Aside %}
-  `GravitySensor` is expected to start shipping in Chrome&nbsp;91.
+  `GravitySensor` is expected to ship in Chrome&nbsp;91.
 {% endAside %}
 
 ### Gyroscope {: #gyroscope-sensor }
