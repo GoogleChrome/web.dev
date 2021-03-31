@@ -46,6 +46,7 @@
             "title": "i18n.paths.learn_web_vitals.topics.best_practices",
             "pathItems": [
                 "carousel-best-practices",
+                "cookie-notice-best-practices",
                 {
                     "title": "Infinite scroll without layout shifts",
                     "url": "https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/"
