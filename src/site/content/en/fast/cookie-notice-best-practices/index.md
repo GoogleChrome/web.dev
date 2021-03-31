@@ -266,7 +266,7 @@ If you've configured this script correctly, the screenshot taken by WebPageTest
 should not show a cookie notice (the cookie notice has been accepted).
 
 For more information on WebPageTest scripting, check out [WebPageTest 
-documentation](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md).
+documentation](https://docs.webpagetest.org/scripting/).
 
 #### Set cookies
 
