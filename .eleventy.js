@@ -18,6 +18,7 @@ const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const yaml = require('js-yaml');
+const fs = require('fs');
 
 const toc = require('eleventy-plugin-toc');
 const markdownIt = require('markdown-it');
@@ -96,6 +97,8 @@ const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
 const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
 const {purifyCss} = require(`./${transformsDir}/purify-css`);
 const {minifyHtml} = require(`./${transformsDir}/minify-html`);
+
+const {sha256base64} = require('./src/site/_data/lib/hash');
 
 // Shared dependencies between web.dev and developer.chrome.com
 const {updateSvgForInclude} = require('webdev-infra/filters/svg');
@@ -212,6 +215,19 @@ module.exports = function (config) {
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
   config.addFilter('padStart', padStart);
 
+  const hashList = new Set();
+  config.addFilter('cspHash', (raw) => {
+    raw = raw
+      .split(/\s/)
+      .filter((s) => s)
+      .join(' ');
+    if (isProd) {
+      const hash = `'sha256-${sha256base64(raw)}'`;
+      hashList.add(hash);
+    }
+    return raw;
+  });
+
   // ----------------------------------------------------------------------------
   // SHORTCODES
   // ----------------------------------------------------------------------------
@@ -271,6 +287,13 @@ module.exports = function (config) {
 
   // Make .yml files work in the _data directory.
   config.addDataExtension('yml', (contents) => yaml.safeLoad(contents));
+
+  // Make CSP hashes accessible to firebase config.
+  if (isProd) {
+    config.on('afterBuild', () => {
+      fs.writeFileSync('script-hash-list.json', JSON.stringify([...hashList]));
+    });
+  }
 
   return {
     dir: {

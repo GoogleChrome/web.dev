@@ -1,4 +1,4 @@
-<script>
+{% set analyticsScript %}
 window.ga =
   window.ga ||
   function () {
@@ -10,4 +10,5 @@ ga('set', 'transport', 'beacon');
 ga('set', 'page', window.location.pathname);
 ga('set', '{{ site.analytics.dimensions.TRACKING_VERSION }}', '{{ site.analytics.version}}');
 ga('send', 'pageview');
-</script>
+{% endset %}
+<script>{{ analyticsScript|cspHash|safe }}</script>

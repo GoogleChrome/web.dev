@@ -2,6 +2,8 @@ const yaml = require('js-yaml');
 const fs = require('fs');
 
 const redirectsYaml = fs.readFileSync('./redirects.yaml', 'utf8');
+const hashListJson = fs.readFileSync('./script-hash-list.json', 'utf-8');
+const hashList = JSON.parse(hashListJson);
 const {redirects: parsedRedirects} = yaml.safeLoad(redirectsYaml);
 
 const firebaseJson = require('./firebase.incl.json');
@@ -18,5 +20,13 @@ firebaseJson.hosting.redirects = parsedRedirects.reduce(
   },
   [],
 );
+if (process.env.ELEVENTY_ENV === 'prod') {
+  firebaseJson.hosting.headers[0].headers.push({
+    key: 'Content-Security-Policy-Report-Only',
+    value:
+      `script-src 'strict-dynamic' ${hashList.join(' ')} ` +
+      `'unsafe-inline' http: https:; object-src 'none'; base-uri 'self'`,
+  });
+}
 
 fs.writeFileSync('./firebase.json', JSON.stringify(firebaseJson, null, 2));

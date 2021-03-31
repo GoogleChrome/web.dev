@@ -85,3 +85,4 @@ entrypoint.hashmanifest.json
 .tmp
 .firebase
 firebase.json
+script-hash-list.json
