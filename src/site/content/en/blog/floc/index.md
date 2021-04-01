@@ -294,8 +294,8 @@ explains how to do this for different operating systems.
 1. Start Chrome with the following flags: <br>
 
     ```text
-    --enable-blink-features=InterestCohortAPI  
-    --enable-features="FederatedLearningOfCohorts:update_interval/10s/minimum_history_domain_size_required/1"
+    --enable-blink-features=InterestCohortAPI 
+    --enable-features="FederatedLearningOfCohorts:update_interval/10s/minimum_history_domain_size_required/1,FlocIdSortingLshBasedComputation,InterestCohortFeaturePolicy"
     ```
 2. Make sure third-party cookies are not blocked and that no ad blocker is running.
 3. View the demo at [floc.glitch.me](https://floc.glitch.me/).
