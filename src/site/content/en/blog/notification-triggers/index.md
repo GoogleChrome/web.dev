@@ -78,7 +78,7 @@ To experiment with the Notification Triggers API locally, without an origin tria
 `#enable-experimental-web-platform-features` flag in `chrome://flags`.
 
 {% Aside %} Two earlier origin trials for the feature, which gave developers a chance to try out the
-proposed API, ran from Chrome&nbsp;80 to&nbsp;83 and from Chrome&nbsp:86 to&nbsp;88. You can read
+proposed API, ran from Chrome&nbsp;80 to&nbsp;83 and from Chrome&nbsp;86 to&nbsp;88. You can read
 the summary of the
 [feedback obtained](https://docs.google.com/document/d/1Nl1emEqxjTzPLNIAPiS26Vtq3mBdNyCxfMY6QwaD45s/edit)
 so far. {% endAside %}
