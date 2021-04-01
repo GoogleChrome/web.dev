@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Debugging Web Vitals in the field
+title: Debug Web Vitals in the field
 subhead: |
   Learn how to attribute your Web Vitals data with debug information
   to help you identify and fix real-user issues with analytics
@@ -80,17 +80,17 @@ But even if you understand that user interaction affects field data, you still
 need to know what elements on the page are shifting to result in a score of 0.45
 at the 75th percentile.
 
-The [LayoutShiftAttribution](/debugging-layout-shifts/#layoutshiftattribution)
+The [LayoutShiftAttribution](/debug-layout-shifts/#layoutshiftattribution)
 interface makes that possible.
 
 #### Get layout shift attribution
 
-The [LayoutShiftAttribution](/debugging-layout-shifts/#layoutshiftattribution)
+The [LayoutShiftAttribution](/debug-layout-shifts/#layoutshiftattribution)
 interface is exposed on each `layout-shift` entry that [Layout Instability
 API](https://wicg.github.io/layout-instability) emmits.
 
-For a detailed explanation of both of these interfaces, see [Debugging Layout
-Shifts](/debugging-layout-shifts/#layoutshiftattribution). For the purposes of
+For a detailed explanation of both of these interfaces, see [Debug layout
+shifts](/debug-layout-shifts/#layoutshiftattribution). For the purposes of
 this post, the main thing you need to know is that, as a developer, you are able
 to observe every layout shift that happens on the page as well as what elements
 are shifting.

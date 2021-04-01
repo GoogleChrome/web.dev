@@ -251,3 +251,7 @@ redirects:
 # Remove once the actual article is published.
 - source: /cors-rfc1918-guide
   destination: /cors-rfc1918-feedback
+
+# Redirect for style guide alignment
+- source: /debugging-layout-shifts
+  destination: /debug-layout-shifts
