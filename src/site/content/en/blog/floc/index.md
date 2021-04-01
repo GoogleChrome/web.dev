@@ -85,7 +85,7 @@ retailer: <br>
 * The **adtech platform** (which provides software and tools to deliver advertising) is: <br>
 **<u>adnetwork.example</u>**
 
-{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/P3F4PUB0jrRcU0vC4XSM.png", 
+{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/0l0SjpSJ2YIfS0BKX80N.png", 
   alt="Diagram showing, step by step, the different roles in selecting and delivering an ad using 
   FLoC: FLoC service, Browser, Advertisers, Publisher (to observe cohorts), Adtech, 
   Publisher (to display ads)", width="800", height="359" %}
@@ -258,9 +258,9 @@ removed. Negative financial status and mental health are among the sensitive cat
 this analysis. 
 
 Websites opt out of FLoC by setting the [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction) 
-header `interest-cohort=()`. For the [FLoC origin trial](https://developer.chrome.com/origintrials/#/trials/active) 
+header `interest-cohort=()`. For the [FLoC origin trial](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561) 
 in Chrome 89, websites that don't opt out will be included in the FLoC calculation if Chrome detects 
-that they are sites which load ads. ([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) explains how Chrome's ad detection mechanism works.) Websites can also, of course, simply not access or record the cohort IDs of their visitors.
+that they are sites [which load ads or ads-related resources](https://github.com/WICG/floc/issues/82). ([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) explains how Chrome's ad detection mechanism works.) Websites can also, of course, simply not access or record the cohort IDs of their visitors.
 
 ## As a web developer how can I try out FLoC?
 
@@ -277,7 +277,7 @@ The cohort data made available looks like this:
 
 ```js
 {
-	id: "1415926",
+	id: "14159",
 	version: "chrome.1.0"
 }
 ```
@@ -294,8 +294,8 @@ explains how to do this for different operating systems.
 1. Start Chrome with the following flags: <br>
 
     ```text
-    --enable-blink-features=InterestCohortAPI  
-    --enable-features="FederatedLearningOfCohorts:update_interval/10s/minimum_history_domain_size_required/1"
+    --enable-blink-features=InterestCohortAPI 
+    --enable-features="FederatedLearningOfCohorts:update_interval/10s/minimum_history_domain_size_required/1,FlocIdSortingLshBasedComputation,InterestCohortFeaturePolicy"
     ```
 2. Make sure third-party cookies are not blocked and that no ad blocker is running.
 3. View the demo at [floc.glitch.me](https://floc.glitch.me/).
