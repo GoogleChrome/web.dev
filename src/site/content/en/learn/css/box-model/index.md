@@ -258,7 +258,7 @@ by making the following modification to use the alternative box model, `border-b
 
 ```css/1
 .my-box {
-box-sizing: border-box;
+  box-sizing: border-box;
 	width: 200px;
 	border: 10px solid;
 	padding: 20px;
