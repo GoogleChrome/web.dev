@@ -9,8 +9,8 @@ description: |
   to help you identify and fix real-user issues with analytics
 authors:
   - philipwalton
-date: 2021-03-31
-updated: 2021-03-31
+date: 2021-04-01
+updated: 2021-04-01
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/pOHexwZOflz5RGf6FT4P.jpg
 alt: Laptop screen showing an analytics interface
 tags:
