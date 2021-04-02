@@ -170,7 +170,7 @@ so everything in the overall rule (selector and properties) does not get the sam
 }
 ```
 
-@@TO DO: Add a self-assessment
+@@TODO: self-assessment 1
 
 ## Specificity in context
 
@@ -226,10 +226,12 @@ a.my-class.another-class[href]:hover {
 }
 ```
 
-## Visualising specificity
+@@TODO: self-assessment 2
+
+## Visualizing specificity
 
 In diagrams and specificity calculators,
-the specificity is often visualised like this:
+the specificity is often visualized like this:
 
 {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/d1q5VKbFOQG2TBXoBtgm.png", alt="A diagram demonstrating most specific to least specific selectors", width="800", height="474" %}
 
@@ -245,7 +247,7 @@ a.my-class.another-class[href]:hover {
 }
 ```
 
-@@TODO convert the above into a self assessment
+@@TODO: self-assessment 3
 
 ## Pragmatically increasing specificity
 
