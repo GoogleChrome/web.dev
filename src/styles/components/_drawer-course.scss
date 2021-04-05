@@ -41,6 +41,7 @@
   &__links {
     flex: 1;
     overflow-y: auto;
+    overscroll-behavior: contain; // sass-lint:disable-line no-misspelled-properties
   }
 
   &__link {

@@ -136,7 +136,7 @@ const disablePage = () => {
   /** @type {HTMLElement|object} */
   const footer = document.querySelector('.w-footer') || {};
 
-  document.documentElement.classList.add('overflow-hidden');
+  document.body.classList.add('overflow-hidden');
   main.inert = true;
   header.inert = true;
   footer.inert = true;
@@ -153,7 +153,7 @@ const enablePage = () => {
   /** @type {HTMLElement|object} */
   const footer = document.querySelector('.w-footer') || {};
 
-  document.documentElement.classList.remove('overflow-hidden');
+  document.body.classList.remove('overflow-hidden');
   main.inert = false;
   header.inert = false;
   footer.inert = false;

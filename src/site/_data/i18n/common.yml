@@ -30,3 +30,9 @@ dont:
 
 close:
   en: Close
+
+next:
+  en: Next
+
+prev:
+  en: Prev # Short for "previous"

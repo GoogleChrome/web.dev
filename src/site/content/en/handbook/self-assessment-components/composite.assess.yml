@@ -1,0 +1,30 @@
+setLeader: Test your knowledge of web.dev
+height: unset
+tabLabel: question
+questions:
+  - stimulus: "![Webby](image/admin/Iz4mJkLrJrLk9Ntem871.png)"
+    components:
+      - type: multiple-choice
+        cardinality: "1"
+        correctAnswers: "1"
+        stem: Who's this Webby I've heard so much about?
+        options:
+          - content: A sentient system icon run amok
+            rationale: Like this helpful little being would ever go amok.
+          - content: The best darn mascot you could hope for
+            rationale: Webby is _everything_.
+          - content: Spiderman's lesser known sidekick
+            rationale: |
+              I really don't see Webby swinging around
+              on those small (but _adorable_) arms.
+      - type: multiple-choice
+        cardinality: "1"
+        correctAnswers: "2"
+        stem: How awesome is Webby?
+        options:
+          - content: Pretty awesome
+            rationale: Nope.
+          - content: The awesomest
+            rationale: Close but no.
+          - content: OMG 🤯
+            rationale: It was always you, Webby.

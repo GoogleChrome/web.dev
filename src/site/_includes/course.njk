@@ -1,5 +1,7 @@
 ---
 layout: base
+pageScripts:
+  - '/js/content.js'
 ---
 
 {#
@@ -61,24 +63,7 @@ layout: base
       </main>
     </div>
 
-    <nav class="course-pagination" aria-label="pagination">
-      {% for item in pageNavigation %}
-        {% if item.url === page.url %}
-          {% if item.prev %}
-            {% set prev = item.prev %}
-            <a href="{{ prev.url }}" class="course-pagination-control">
-              {{ prev.page.data.title }}
-            </a>
-          {% endif %}
-          {% if item.next %}
-            {% set next = item.next %}
-            <a href="{{ next.url }}" class="course-pagination-control">
-              {{ next.page.data.title }}
-            </a>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    </nav>
+    {% include 'partials/course-pagination.njk' %}
 
     {% include 'partials/footer.njk' %}
   </div>

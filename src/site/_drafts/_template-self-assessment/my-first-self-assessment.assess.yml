@@ -1,5 +1,5 @@
 setLeader: Test your knowledge of resource optimization
-height: 25rem
+height: unset
 tabLabel: question
 questions:
   - type: multiple-choice
