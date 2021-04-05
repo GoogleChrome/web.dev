@@ -6,7 +6,7 @@ authors:
   - petelepage
   - ajara
 date: 2020-10-14
-updated: 2020-10-14
+updated: 2021-04-05
 description: What it takes to change icons, shortcuts, colors, and other metadata in your web app manifest for your PWA.
 tags:
   - progressive-web-apps
