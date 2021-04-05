@@ -4,6 +4,7 @@ title: How Chrome handles updates to the web app manifest
 subhead: What it takes to change icons, shortcuts, colors, and other metadata for your PWA
 authors:
   - petelepage
+  - ajara
 date: 2020-10-14
 updated: 2020-10-14
 description: What it takes to change icons, shortcuts, colors, and other metadata in your web app manifest for your PWA.
@@ -20,8 +21,8 @@ comment in [issue #4038](https://github.com/GoogleChrome/web.dev/issues/4038).
 When a PWA is installed, the browser uses information from the web app
 manifest for the app name, the icons the app should use, and the URL that
 should be opened when the app is launched. But what if you need to update
-information in your manifest file? When and how are those changes reflected
-in the browser?
+app shortcuts or try a new theme color? When and how are those changes
+reflected in the browser?
 
 {% Aside 'caution' %}
 Do not change the name or location of your web app manifest file, doing so
@@ -42,7 +43,7 @@ compare it against the local copy.
 If select properties in the manifest have changed (see list below), Chrome
 queues the new manifest, and after all windows have been closed, installs it.
 Once installed, all fields from the new manifest (except `name`, `short_name`,
-`start_url` and `icons`) are updated. 
+`start_url` and `icons`) are updated.
 
 ### Which properties will trigger an update? {: #cr-desktop-trigger }
 
@@ -52,8 +53,8 @@ Once installed, all fields from the new manifest (except `name`, `short_name`,
 * `theme_color`
 
 {% Aside 'caution' %}
-Changes to `name`, `short_name`, and `start_url` are **not** currently
-supported on desktop Chrome, though work is underway to support them.
+Changes to `name`, `short_name`, `icons` and `start_url` are **not**
+currently supported on desktop Chrome, though work is underway to support them.
 {% endAside %}
 
 <!-- CrBug for name/shortname https://crbug.com/1088338 -->
@@ -109,6 +110,11 @@ used.
 
 If Chrome is unable to get an updated manifest from the server, it may
 increase the time between checks to 30 days.
+
+{% Aside 'caution' %}
+Changes to `name`, `short_name` and `icons` are **not** currently supported
+on Android Chrome, though work is underway to support them.
+{% endAside %}
 
 ### Testing manifest updates {: #cr-android-test }
 
