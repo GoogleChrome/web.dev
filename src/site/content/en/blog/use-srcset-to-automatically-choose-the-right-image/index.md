@@ -29,7 +29,7 @@ typical mobile web page weighs over 2.6 MB, and more than two thirds of that
 weight is images. That's a great opportunity for optimization!
 
 <figure class="w-figure">
-  <img src="http-archive.svg">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8A7JasX5JOADmB1XkjMC.svg", alt="", width="700", height="320" %}
   <figcaption class="w-figcaption">
     <a href="https://mobile.httparchive.org/">Average mobile page bytes by content type</a>
   </figcaption>
@@ -43,7 +43,11 @@ attribute to enable the browser to choose the smallest.
 The `w` value tells the browser the width of each version:
 
 ```html/1
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/scLPehGom3IZLxPJiPPF.jpg", alt="…", width="500", height="334" %}
+<img src="small.jpg"
+     srcset="small.jpg 500w,
+             medium.jpg 1000w,
+             large.jpg 1500w"
+     alt="…">
 ```
 
 
@@ -99,11 +103,13 @@ This is where `srcset` comes in handy. You save images at different sizes, then
 tell the browser the width of each version:
 
 ``` html/1
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/scLPehGom3IZLxPJiPPF.jpg", alt="…", width="500", height="334" %}
+<img src="small.jpg"
+     srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
+     alt="…">
 ```
 
 The `w` values show the width of each image in pixels. For example,
-`small.jpg 500w` tells the browser that <a href="small.jpg">small.jpg</a> is 500
+`small.jpg 500w` tells the browser that <a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/scLPehGom3IZLxPJiPPF.jpg' | imgix }}">small.jpg</a> is 500
 pixels wide. This enables the browser to choose the smallest possible image,
 depending on the screen type and the viewport size—without having to
 download images to check their size.
@@ -161,8 +167,7 @@ delivered to browsers that support WebP, without changing the `.jpg` file
 extension.
 {% endAside %}
 
-<img class="w-screenshot" src="devtools-headers-for-cloudinary-image.png" alt="Chrome
-DevTools showing WebP content-type header for file served by Cloudinary">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y0ra5DLlntYoLV46uU1f.png", alt="Chrome DevTools showing WebP content-type header for file served by Cloudinary", width="800", height="146", class="w-screenshot" %}
 
 
 ## What if the image doesn't look right at different sizes?

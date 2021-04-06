@@ -154,7 +154,9 @@ to `chrome://settings/passwords` users can run **Check passwords** against store
 passwords, and see a list of passwords that are recommended for update.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2qTEnaWJhxDcvX6hfgrY.png", alt="", width="1478" height="845", class="w-screenshot" %}
+
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2qTEnaWJhxDcvX6hfgrY.png", alt="", width="1478", height="845", class="w-screenshot" %}
+
   <figcaption class="w-figcaption">
     Chrome's <b>Check passwords</b> functionality
   </figcaption>

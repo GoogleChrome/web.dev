@@ -73,7 +73,7 @@ When loaded over 3G, the user sees 4 seconds of white nothingness. **Over 2G the
 
 <figure class="w-figure">
   <picture>
-    <source srcset="proxx-first-render.webp" type="image/webp">
+    <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CwGKJEpvyPw9UmvJf3su.webp" | imgix }}" type="image/webp">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/i4XeWT6YeUlcMbEiDaBO.jpg", alt="", width="800", height="450" %}
   </picture>
   <figcaption class="w-figcaption">
@@ -218,7 +218,7 @@ Yes, our `index.html` contains everything that is needed to become interactive. 
 
 <figure class="w-figure">
   <picture>
-    <source srcset="proxx-loaded.webp" type="image/webp">
+    <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PDjREt9PrWz9oqayT3CE.webp" | imgix }}" type="image/webp">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4VqYAIUVSFQdEMI5nfD8.jpg", alt="", width="800", height="450" %}
   </picture>
   <figcaption class="w-figcaption">

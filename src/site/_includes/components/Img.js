@@ -64,7 +64,16 @@ const generateSrc = (src, params = {}) => {
  * @return {string}
  */
 const Img = function (args) {
-  const {src, alt, width, height, class: className, linkTo, params} = args;
+  const {
+    src,
+    alt,
+    width,
+    height,
+    class: className,
+    linkTo,
+    params,
+    style,
+  } = args;
   let {lazy, options, sizes} = args;
 
   const checkHereIfError = `ERROR IN ${
@@ -140,6 +149,7 @@ const Img = function (args) {
     ${alt ? `alt="${safeHtml`${alt}`}"` : ''}
     ${className ? `class="${className}"` : ''}
     ${lazy ? 'loading="lazy"' : ''}
+    ${style ? `style="${style}"` : ''}
   />`;
   /* eslint-enable lit-a11y/alt-text */
 

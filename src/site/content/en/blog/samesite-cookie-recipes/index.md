@@ -82,10 +82,7 @@ general preferences, enable statistics, or personalize content for users with
 existing accounts.
 
 <figure class="w-figure">
-  <img src="iframe.png"
-      alt="Diagram of a browser window where the URL of embedded content does
-        not match the URL of the page."
-      style="max-width: 35vw;">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fTUQP4SffHHcexSipvlz.png", alt="Diagram of a browser window where the URL of embedded content does not match the URL of the page.", width="468", height="383" %}
   <figcaption class="w-figcaption">
     If the embedded content doesn't come from the same site as the top-level
     browsing context, it's third-party content.

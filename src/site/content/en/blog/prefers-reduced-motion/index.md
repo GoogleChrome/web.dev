@@ -203,7 +203,7 @@ reveal animations are gone, and just the regular scrolling motion is left. The s
 shows the demo in action:
 
 <figure>
-  <video muted playsinline controls poster="prefers-reduced-motion.png">
+  <video muted playsinline controls poster="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CQAw3Ee43Dcv0JOsm9fl.png" | imgix }}">
     <source src="https://storage.googleapis.com/web-dev-assets/prefers-reduced-motion/prefers-reduced-motion.mp4" type="video/mp4">
   </video>
   <figcaption>Video of the

@@ -83,7 +83,7 @@ browser.
 <!-- Use it like any other HTML element -->
 <model-viewer id="mv-demo" shadow-intensity="1" src="./spacesuit.glb"
 alt="A 3D model of an astronaut" auto-rotate camera-controls
-poster="./spacesuit.jpg"></model-viewer>
+poster="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/emwX3KWs0BcmuNPiJPjM.jpg" | imgix }}"></model-viewer>
 ```
 
 That code renders like this:
@@ -117,7 +117,7 @@ attribute does.
 
 ```html
 <model-viewer src="assets/Astronaut.glb" controls auto-rotate
-poster="./spacesuit.jpg">
+poster="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/emwX3KWs0BcmuNPiJPjM.jpg" | imgix }}">
 ```
 
 To show your users that it's a 3D model, and not just an image, you can provide

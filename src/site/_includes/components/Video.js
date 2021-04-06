@@ -30,7 +30,8 @@ const Video = (args) => {
   const {
     autoplay,
     autoPictureInPicture,
-    className,
+    class: className,
+    controls,
     disablePictureInPicture,
     height,
     loop,
@@ -45,7 +46,7 @@ const Video = (args) => {
     ${autoplay ? 'autoplay playsinline' : ''}
     ${autoPictureInPicture ? 'autoPictureInPicture' : ''}
     ${className ? `class="${className}"` : ''}
-    controls
+    ${controls ? 'controls' : ''}
     ${disablePictureInPicture ? 'disablePictureInPicture' : ''}
     ${height ? `height="${height}"` : ''}
     ${loop ? 'loop' : ''}

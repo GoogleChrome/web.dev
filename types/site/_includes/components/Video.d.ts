@@ -18,7 +18,8 @@ declare global {
   export interface VideoArgs {
     autoplay?: boolean;
     autoPictureInPicture?: boolean;
-    className?: string;
+    class?: string;
+    controls?: boolean;
     disablePictureInPicture?: boolean;
     height?: number;
     loop?: boolean;

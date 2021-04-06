@@ -17,7 +17,7 @@
 declare global {
   export interface ImgArgs {
     /**
-     * Pathname of image hosted by Imigix.
+     * Pathname of image hosted by imgix.
      */
     src: string;
     /**
@@ -36,6 +36,10 @@ declare global {
      * One or more strings separated by commas, indicating a set of source sizes. If value is not provided one is generated dynamically.
      */
     sizes?: string;
+    /**
+     * A string containing CSS styling declarations to be applied to the element.
+     */
+    style?: string;
     /**
      * Flag to dictate if loading of image is deffered until it reaches a calulated distance from the viewport. `true` by default.
      */

@@ -26,7 +26,7 @@ more. The team's main goal over the last year was to improve mobile customer
 retention and re-engagement. By making their web app
 [installable](https://web.dev/define-install-strategy/), they saw a 450% jump in
 visitor retention rate as compared to the previous mobile web flow over a
-1-month timeframe. 
+1-month timeframe.
 
 ## Highlighting the opportunity {: #opportunity }
 
@@ -105,12 +105,7 @@ images that don't change frequently.
     </div>
   </div>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="impact.png"
-        alt="310% increase in visit frequency per user. 
-             450% increase in visitor retention rate.
-             150% increase in sales per customer.
-             200% increase in conversion rate.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l49plmwrrFO3V953MQZD.png", alt="310% increase in visit frequency per user.  450% increase in visitor retention rate. 150% increase in sales per customer.200% increase in conversion rate.", width="800", height="1074", class="w-screenshot" %}
   </figure>
 </div>
 
@@ -118,10 +113,10 @@ images that don't change frequently.
 
 * **Brand Awareness:** Since users can directly access Rakuten 24 from
   their home screen, it helped both users and Rakuten separate Rakuten 24
-  from Rakuten-Ichiba. 
+  from Rakuten-Ichiba.
 * **Efficiency:** Rakuten 24 was able to drive these results without
   spending significant time and money building platform-specific apps for iOS
-  and Android. 
+  and Android.
 
 <blockquote>
   <p style="font-style: italic; font-size: 1.5rem;">
@@ -134,9 +129,9 @@ images that don't change frequently.
   <cite>Masashi Watanabe, General Manager, Group Marketing Department, Rakuten Inc.</cite>
 </blockquote>
 
-{% Aside %}  
+{% Aside %}
   Previously the concept of installability was known as _add to homescreen_
-  (A2HS).  
+  (A2HS).
 {% endAside %}
 
 Check out the [Scale on web case studies](https://web.dev/scale-on-web) page for

@@ -398,9 +398,7 @@ event to use, and to trigger it as many times as you'd like.
 {% endAside %}
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="3-sw-panel.png"
-       alt="The 'Service Workers' section of the Application panel shows a 'Periodic Sync'
-            text field and button." style="max-width: 90%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ5QdjwaRDP42cHqW98W.png", alt="The 'Service Workers' section of the Application panel shows a 'Periodic Sync' text field and button.", width="800", height="321", class="w-screenshot" %}
 </figure>
 
 ## Using the DevTools interface
@@ -408,6 +406,6 @@ event to use, and to trigger it as many times as you'd like.
 Starting in Chrome 81, you'll see a **Periodic Background Sync** section in the
 DevTools *Application* panel.
 
-   <figure class="w-figure">
-     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="The Application panel showing the Periodic Background Sync section", width="382", height="253", class="w-screenshot" %}
-   </figure>
+<figure class="w-figure">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="The Application panel showing the Periodic Background Sync section", width="382", height="253", class="w-screenshot" %}
+</figure>

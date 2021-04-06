@@ -202,12 +202,7 @@ Chrome&nbsp;80 release blog post as my example? The answer is that in this relea
 were introduced:
 
 <figure class="w-figure">
-  <img src="text-fragments.png" alt="Blog post text: Text URL Fragments.
-    Users or authors can now link to a specific portion of a page
-    using a text fragment provided in a URL.
-    When the page is loaded, the browser highlights the text and scrolls the fragment into view.
-    For example, the URL below loads a wiki page for 'Cat'
-    and scrolls to the content listed in the `text` parameter." class="w-screenshot" width="80%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yA1p3CijeDbTRwMys9Hq.png", alt="Blog post text: Text URL Fragments. Users or authors can now link to a specific portion of a page using a text fragment provided in a URL. When the page is loaded, the browser highlights the text and scrolls the fragment into view. For example, the URL below loads a wiki page for 'Cat' and scrolls to the content listed in the `text` parameter.", width="800", height="200" %}
   <figcaption class="w-figcaption">Text Fragments announcement blog post excerpt.</figcaption>
 </figure>
 

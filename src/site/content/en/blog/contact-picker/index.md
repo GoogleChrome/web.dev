@@ -25,7 +25,7 @@ feedback:
 <figure class="w-figure w-figure--inline-right">
   <a href="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.mp4">
     <video id="video-demo" loop autoplay muted
-          poster="contact-picker-demo.jpg"
+          poster="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg" | imgix }}"
           class="w-screenshot">
       <source type="video/webm"
               src="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.webm">

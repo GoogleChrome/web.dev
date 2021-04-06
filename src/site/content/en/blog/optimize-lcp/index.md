@@ -36,11 +36,8 @@ viewport becomes visible. It can be used to determine when the main content of t
 rendering on the screen.
 
 <picture>
-  <source srcset="../vitals/lcp_8x2.svg" media="(min-width: 640px)">
-  <img class="w-screenshot w-screenshot--filled"
-      src="../vitals/lcp_4x3.svg"
-      alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0
-            seconds and anything in between needs improvement">
+  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="200", height="150", class="w-screenshot w-screenshot--filled" %}
 </picture>
 
 The most common causes of a poor LCP are:
@@ -316,7 +313,7 @@ For many sites, images are the largest element in view when the page has finishe
 images, large carousels or banner images are all common examples of this.
 
 <figure class="w-figure">
-  <img width="300" src="./image-largest-element.png">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/unWra6cq0hPJJJT7Y3ye.png", alt="", width="459", height="925" %}
   <figcaption>Image as the largest page element: <a href="https://design.google/">design.google</a></figcaption>
 </figure>
 
