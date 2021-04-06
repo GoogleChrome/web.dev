@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Debugging layout shifts
+title: Debug layout shifts
 subhead: |
   Learn how to identify and fix layout shifts.
 authors:
@@ -173,7 +173,7 @@ The `node` property identifies the HTML element that shifted. Hovering on this
 property in DevTools highlights the corresponding page element.
 
 The `previousRect` and `currentRect` properties report the size and position of
-the node. 
+the node.
 
 
 

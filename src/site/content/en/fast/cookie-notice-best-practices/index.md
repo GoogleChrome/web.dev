@@ -123,7 +123,7 @@ resource hint to load their cookie notice script. The `preload` resource hint
 informs the browser to initiate an early request for the specified resource.
 
 ```html
-<link rel="prefetch" href="https://www.cookie-notice.com/cookie-script.js">
+<link rel="preload" href="https://www.cookie-notice.com/cookie-script.js">
 ```
 
 `preload` is most powerful when its usage is limited to fetching a couple key
@@ -266,7 +266,7 @@ If you've configured this script correctly, the screenshot taken by WebPageTest
 should not show a cookie notice (the cookie notice has been accepted).
 
 For more information on WebPageTest scripting, check out [WebPageTest 
-documentation](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md).
+documentation](https://docs.webpagetest.org/scripting/).
 
 #### Set cookies
 

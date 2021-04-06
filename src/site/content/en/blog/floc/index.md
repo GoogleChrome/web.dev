@@ -4,7 +4,7 @@ subhead: FLoC enables ad selection without sharing the browsing behaviour of ind
 authors:
   - samdutton
 date: 2021-03-30
-updated: 2021-03-30
+updated: 2021-03-31
 hero: image/80mq7dk16vVEg8BBhsVe42n6zn82/GA543wiVTwpbwp6Zmw0H.jpg
 thumbnail: image/80mq7dk16vVEg8BBhsVe42n6zn82/OuORgPSvN06ntXT5xOii.jpg
 alt: Murmuration of starlings over Brighton pier
@@ -27,15 +27,14 @@ The browser recalculates its cohort periodically, on the user's device, without 
 individual browsing data with the browser vendor or anyone else.
 
 Advertisers (sites that pay for advertisements) can include code on their own websites in order to 
-gather and provide cohort data to their ad-tech platforms (companies that provide software and tools 
-to deliver advertising). For example, an ad-tech platform might learn from an online shoe store that 
+gather and provide cohort data to their adtech platforms (companies that provide software and tools 
+to deliver advertising). For example, an adtech platform might learn from an online shoe store that 
 browsers from cohorts 1101 and 1354 seem interested in the store's hiking gear. From other 
-advertisers, the ad-tech platform learns about other interests of those cohorts. 
+advertisers, the adtech platform learns about other interests of those cohorts. 
 
 Subsequently, the ad platform can use this data to select relevant ads (such as an ad for hiking 
 boots from the shoe store) when a browser from one of those cohorts requests a page from a site that 
 displays ads, such as a news website.
-
 
 {% Aside %}
 The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party 
@@ -47,7 +46,6 @@ issue](https://github.com/WICG/floc/issues/new) on the [FLoC Explainer](https://
 repository.  If you have feedback on Chrome's experiment with this proposal, please post a reply on 
 the [Intent to Experiment](https://groups.google.com/a/chromium.org/g/blink-dev/c/MmijXrmwrJs).
 {% endAside %}
-
 
 ## Why do we need FLoC?
 
@@ -70,7 +68,7 @@ advertiser's site or shows interest in relevant topics.
 * Use machine learning models to predict the probability a user will convert based on their cohort, 
 in order to inform ad auction bidding behavior.
 * Recommend content to users. For example, suppose a news site observes that their sports podcast 
-page has become especially popular with ∂visitors from cohorts 1234 and 7. They can recommend that 
+page has become especially popular with visitors from cohorts 1234 and 7. They can recommend that 
 content to other visitors from those cohorts.
 
 ## How does FLoC work?
@@ -87,7 +85,7 @@ retailer: <br>
 * The **adtech platform** (which provides software and tools to deliver advertising) is: <br>
 **<u>adnetwork.example</u>**
 
-{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/P3F4PUB0jrRcU0vC4XSM.png", 
+{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/0l0SjpSJ2YIfS0BKX80N.png", 
   alt="Diagram showing, step by step, the different roles in selecting and delivering an ad using 
   FLoC: FLoC service, Browser, Advertisers, Publisher (to observe cohorts), Adtech, 
   Publisher (to display ads)", width="800", height="359" %}
@@ -131,7 +129,6 @@ its adtech platform <u>adnetwork.example</u>.
 
 Now it's Alex's turn.
 
-
 ### 4. Publisher: <span style="font-weight:normal">dailynews.example</span> 
 1. Alex visits <u>dailynews.example</u>.
 1. The site asks Alex's browser for its cohort.
@@ -142,22 +139,21 @@ Alex's browser's cohort: 1354.
 1. <u>adnetwork.example</u> can select an ad suitable for Alex by combining the data it has from 
 the publisher <u>dailynews.example</u> and the advertiser <u>shoestore.example</u>: 
 	- Alex's browser's cohort (1354) provided by <u>dailynews.example</u>.
-	- Data about cohorts and product interests from <u>shoestore.example</u>: 'Browsers from cohort 1354 
-	might be interested in hiking boots.'
+	- Data about cohorts and product interests from <u>shoestore.example</u>: "Browsers from cohort 1354 
+	might be interested in hiking boots."
 1. <u>adnetwork.example</u> selects an ad appropriate to Alex: an ad for hiking boots on
 <u>shoestore.example</u>.
 1. <u>dailynews.example</u> displays the ad 🥾.
 
 {% Aside %}
-Current techniques for ad selection rely on techniques such as tracking cookies and device 
+Current approaches for ad selection rely on techniques such as tracking cookies and device 
 fingerprinting, which are used by third parties such as advertisers to track individual browsing 
 behavior.
 
-With FLoC the browser **does not share** its browsing history with the FLoC service or anyone else. 
+With FLoC, the browser **does not share** its browsing history with the FLoC service or anyone else. 
 The browser, on the user's device, works out which cohort it belongs to. The user's browsing history 
 never leaves the device.
 {% endAside %}
-
 
 ## How does the FLoC service enable the browser to work out its cohort? {: #floc-server }
 
@@ -187,19 +183,18 @@ any third party. The browser's cohort is calculated by the browser, on the user'
 user data is acquired or stored by the FLoC service.
 {% endAside %}
 
-
 ## Can a browser's cohort change?
 
-YES! A browser's cohort definitely can change! You probably don't visit the same websites every 
+_Yes_! A browser's cohort definitely can change! You probably don't visit the same websites every 
 week, and your browser's cohort will reflect that.
 
 A cohort represents a cluster of browsing activity, not a collection of people. The activity 
 characteristics of a cohort are generally consistent over time, and cohorts are useful for ad selection 
-because they group similar recent browsing behaviour. Individual people's browsers will float in and 
+because they group similar recent browsing behavior. Individual people's browsers will float in and 
 out of a cohort as their browsing behavior changes. Initially, we expect the browser to recalculate 
 its cohort every seven days.
 
-In the example above, both Yoshi and Alex's browser's cohort is 1354. In the future Yoshi's 
+In the example above, both Yoshi and Alex's browser's cohort is 1354. In the future, Yoshi's 
 browser and Alex's browser may move to a different cohort if their interests change. In the
 example below, Yoshi's browser moves to cohort 1101 and Alex's browser moves to cohort 1378. Other
 people's browsers will move into and out of cohorts as their browsing interests change.
@@ -217,14 +212,12 @@ change.</figcaption>
 A cohort defines a grouping of browsing activity, not a group of people. Browsers will move in and out of a cohort as their activity changes.
 {% endAside %}
 
-
 ## How does the browser work out its cohort? {: #floc-algorithm }
 
 As described above, the user's browser gets data from its FLoC service that describes the 
 mathematical model for cohorts: a multi-dimensional space that represents the browsing activity of
 all users. The browser then uses an algorithm to work out which region of this "cohort space" (that 
-is, which cohort) most closely matches its own recent browsing behaviour.
-
+is, which cohort) most closely matches its own recent browsing behavior.
 
 ## How does FLoC work out the right size of cohort?
 
@@ -233,9 +226,8 @@ There will be thousands of browsers in each cohort.
 A smaller cohort size might be more useful for personalizing ads, but is less likely to stop user 
 tracking—and vice versa. A mechanism for assigning browsers to cohorts needs to make a trade off 
 between privacy and utility. The Privacy Sandbox uses [k-anonymity](https://en.wikipedia.org/wiki/K-anonymity) 
-to allow a user to 'hide in a crowd'. A cohort is k-anonymous if it is shared by at least k users. The higher the k 
+to allow a user to "hide in a crowd". A cohort is k-anonymous if it is shared by at least k users. The higher the k 
 number, the more privacy-preserving the cohort. 
-
 
 ## Can FLoC be used to group people based on sensitive categories?
 
@@ -244,7 +236,6 @@ cohort may be correlated with sensitive categories, without learning why a categ
 Cohorts that might reveal sensitive categories such as race, sexuality, or medical history will be 
 blocked. In other words, when working out its cohort, a browser will only be choosing between 
 cohorts that won't reveal sensitive categories. 
-
 
 ## Is FLoC just another way of categorizing people online?
 
@@ -255,7 +246,6 @@ to distinguish an individual within a cohort. In addition, the information about
 that is used to work out a browser's cohort is kept local on the browser or device, and is not 
 uploaded elsewhere. The browser may further leverage other anonymization methods, such as 
 [differential privacy](https://en.wikipedia.org/wiki/Differential_privacy). 
-
 
 ## Do websites have to participate and share information?
 
@@ -268,10 +258,9 @@ removed. Negative financial status and mental health are among the sensitive cat
 this analysis. 
 
 Websites opt out of FLoC by setting the [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction) 
-header `interest-cohort=()`. For the [FLoC origin trial](https://developer.chrome.com/origintrials/#/trials/active) 
+header `interest-cohort=()`. For the [FLoC origin trial](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561) 
 in Chrome 89, websites that don't opt out will be included in the FLoC calculation if Chrome detects 
-that they are sites which load ads. ([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) explains how Chrome's ad detection mechanism works.) Websites can also, of course, simply not access or record the cohort IDs of their visitors.
-
+that they are sites [which load ads or ads-related resources](https://github.com/WICG/floc/issues/82). ([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) explains how Chrome's ad detection mechanism works.) Websites can also, of course, simply not access or record the cohort IDs of their visitors.
 
 ## As a web developer how can I try out FLoC?
 
@@ -279,21 +268,23 @@ The FLoC API is very simple: just a single method that returns a promise that re
 providing the cohort `id` and `version`:
 
 ```javascript
-document.interestCohort()
+const { id, version } = await document.interestCohort();
+console.log('FLoC ID:', id);
+console.log('FLoC version:', version);
 ```
 
 The cohort data made available looks like this:
 
-```json
+```js
 {
-	"id": "1415926",
-	"version": "chrome.1.0"
+	id: "14159",
+	version: "chrome.1.0"
 }
 ```
 
 The `version` value enables sites using FLoC to know which browser and which FLoC model the cohort 
-ID refers to.  As described below, the promise returned by `document.interestCohort()` will reject 
-for any frame that is not allowed `interest-cohort` permission. 
+ID refers to. As described below, the promise returned by `document.interestCohort()` will reject 
+for any frame that is not allowed the `interest-cohort` permission. 
 
 The FLoC API is available in Chrome 89 and above, but if you are not taking part in the origin 
 trial, you will need to set flags and run Chrome from the command line. 
@@ -303,38 +294,35 @@ explains how to do this for different operating systems.
 1. Start Chrome with the following flags: <br>
 
     ```text
-    --enable-blink-features=InterestCohortAPI  
-    --enable-features="FederatedLearningOfCohorts:update_interval/10s/minimum_history_domain_size_required/1"
+    --enable-blink-features=InterestCohortAPI 
+    --enable-features="FederatedLearningOfCohorts:update_interval/10s/minimum_history_domain_size_required/1,FlocIdSortingLshBasedComputation,InterestCohortFeaturePolicy"
     ```
 2. Make sure third-party cookies are not blocked and that no ad blocker is running.
 3. View the demo at [floc.glitch.me](https://floc.glitch.me/).
 
 {% Aside %}
 [How to take part in the FLoC origin trial](https://developer.chrome.com/blog/floc) explains how 
-to try out FLoC in both first and third-party contexts.
+to try out FLoC in both first- and third-party contexts.
 {% endAside%}
-
 
 ## How can websites opt out of the FLoC computation?
 
 The `interest-cohort` permissions policy enables a site to declare that it does not want to be 
 included in the user's list of sites for cohort calculation. The policy will be `allow` by default. 
 The promise returned by `document.interestCohort()` will reject for any frame that is not allowed 
-`interest-cohort` permission. If the main frame does not have `interest-cohort permission` then the 
-page visit will not be included in interest cohort calculation.
+`interest-cohort` permission. If the main frame does not have the `interest-cohort` permission, then the 
+page visit will not be included in the interest cohort calculation.
 
-For example, a site can opt out of all FLoC cohort calculation by sending the HTTP response header:
+For example, a site can opt out of all FLoC cohort calculation by sending the following HTTP response header:
 
 ```text
   Permissions-Policy: interest-cohort=()
 ```
 
-
 ## How can I make suggestions or provide feedback?
 
 If you have comments on the API, please [create an issue](https://github.com/WICG/floc/issues/new)
 on the [FLoC Explainer](https://github.com/WICG/floc) repository.
-
 
 ## Find out more
 
