@@ -304,7 +304,7 @@ li::marker {
 Chrome DevTools is ready to help you inspect, debug and modify the styles applying to `::marker` pseudo elements.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevTools open and showing styles from the user agent and the user styles", width="776", height="574", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PYKVXEzycrMhQujXsNxQ.png", alt="DevTools open and showing styles from the user agent and the user styles", width="776", height="574", class="w-screenshot", style="max-inline-size: 480px" %}
 </figure>
 
 ### Future Pseudo-element styling

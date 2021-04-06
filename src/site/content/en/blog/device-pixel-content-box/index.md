@@ -43,7 +43,7 @@ will not exactly measure 1cm in size on most displays.
 Finally, dPR can also be affected by your browser's zoom feature. If you zoom in, the browser increases the reported dPR, causing everything to render bigger. If you check `devicePixelRatio` in a DevTools Console while zooming, you can see fractional values appear.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ko6ehWmACBrUcPrl4AGO.png", alt="", width="800", height="419" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ko6ehWmACBrUcPrl4AGO.png", alt="", width="600", height="314" %}
   <figcaption class="w-figcaption">DevTools showing a variety of fractional <code>devicePixelRatio</code> due to zooming.</figcaption>
 </figure>
 
@@ -87,7 +87,7 @@ CSS pixels are purely virtual, so having fractions of a pixel is okay in theory,
 The part of the unit conversion process that takes care of aligning elements with physical pixels is called "pixel snapping", and it does what it says on the tin: It snaps fractional pixel values to integer, physical pixel values. How exactly this happens is different from browser to browser. If we have an element with a width of `791.984px` on a display where dPR is 1, one browser might render the element at `792px` physical pixels, while another browser might render it at `791px`. That's just a single pixel off, but a single pixel can be detrimental to renderings that need to be pixel-perfect. This can lead to blurriness or even more visible artifacts like the [Moiré effect].
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/11FeCvp9aKLnDk05vYwY.png", alt="", width="303", height="405" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/11FeCvp9aKLnDk05vYwY.png", alt="", width="600", height="802" %}
   <figcaption class="w-figcaption">The top image is a raster of differently colored pixels. The bottom image is the same as above, but the width and height have been reduced by one pixel using bilinear scaling. The emerging pattern is called the Moiré effect.<br>(You might have to open this image in a new tab to see it without any scaling applied to it.)</figcaption>
 </figure>
 

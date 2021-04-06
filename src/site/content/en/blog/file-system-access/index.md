@@ -513,7 +513,7 @@ A web app cannot modify a file on disk without getting explicit permission from 
 #### Permission prompt
 
 <figure class="w-figure w-figure--inline-right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1Ycrs0DnLzZY2egNYzk2.jpg", alt="Permission prompt shown prior to saving a file.", width="800", height="281", linkTo=true %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1Ycrs0DnLzZY2egNYzk2.jpg", alt="Permission prompt shown prior to saving a file.", width="800", height="281", class="w-screenshot", linkTo=true %}
   <figcaption class="w-figcaption">
     Prompt shown to users before the browser is granted write
     permission on an existing file.
@@ -537,7 +537,7 @@ example by providing a way to ["download" the file][download-file], saving data 
 ### Transparency
 
 <figure class="w-figure w-figure--inline-right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/14mRo309FodD4T3OL0J6.jpg", alt="Omnibox icon", width="282", height="162", linkTo=true %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/14mRo309FodD4T3OL0J6.jpg", alt="Omnibox icon", width="282", height="162", class="w-screenshot", linkTo=true %}
   <figcaption class="w-figcaption">
     Omnibox icon indicating the user has granted the website permission to
     save to a local file.

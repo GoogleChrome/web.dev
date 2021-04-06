@@ -23,7 +23,7 @@ feedback:
 ## What is the getInstalledRelatedApps() API? {: #what }
 
 <figure class="w-figure w-figure--inline-right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vjamv2uyz6NxBPxPIm11.jpg", alt="", width="800", height="707" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vjamv2uyz6NxBPxPIm11.jpg", alt="", width="550", height="486" %}
   <figcaption class="w-figcaption">
     A website using <code>getInstalledRelatedApps()</code> to determine if its
     Android app is already installed.

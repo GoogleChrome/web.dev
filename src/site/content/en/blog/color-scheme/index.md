@@ -276,7 +276,7 @@ in the developer-provided inline stylesheet on the page.
 It is either `gainsboro` or `darkslategray`.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kSgOIiGRqjw2PvRlVCaV.png", alt="A page in light mode.", width="800", height="322" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kSgOIiGRqjw2PvRlVCaV.png", alt="A page in light mode.", width="800", height="322", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     <strong>Light mode:</strong> Styles specified by the developer and the user agent.
     The text is black and the background is white as per the user agent stylesheet.
@@ -286,7 +286,7 @@ It is either `gainsboro` or `darkslategray`.
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qqkHz83kerktbDIGCJeG.png", alt="A page in dark mode.", width="800", height="322" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qqkHz83kerktbDIGCJeG.png", alt="A page in dark mode.", width="800", height="322", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     <strong>Dark mode:</strong> Styles specified by the developer and the user agent.
     The text is white and the background is black as per the user agent stylesheet.
@@ -302,7 +302,7 @@ system color, and its `background-color` and the four `border-color`s are set to
 [`ButtonFace`](https://drafts.csswg.org/css-color/#valdef-system-color-buttonface).
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lSNFROIe1P94DlhoVtoV.png", alt="A light mode page that uses the ButtonFace property.", width="800", height="322" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lSNFROIe1P94DlhoVtoV.png", alt="A light mode page that uses the ButtonFace property.", width="800", height="322", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     <strong>Light mode:</strong> The <code>background-color</code> and the various
     <code>border-color</code>s are set to the <a href="https://drafts.csswg.org/css-color/#valdef-system-color-buttonface">ButtonFace</a>
@@ -318,7 +318,7 @@ The same applies for the `<button>` element's `color`
 that is set to the corresponding system color `ButtonText`.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IogmyIzUhokJgnnxUkPi.png", alt="Showing that the computed color values match ButtonFace.", width="800", height="322" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IogmyIzUhokJgnnxUkPi.png", alt="Showing that the computed color values match ButtonFace.", width="800", height="322", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     <strong>Light mode:</strong> The computed values of the <code>border-top-color</code>
     and the <code>border-bottom-color</code> that are both set to <code>ButtonFace</code>
@@ -327,7 +327,7 @@ that is set to the corresponding system color `ButtonText`.
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3sU1uZyt3zNhEgw3gpZJ.png", alt="Showing that the computed color values still match ButtonFace while in dark mode.", width="800", height="322" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3sU1uZyt3zNhEgw3gpZJ.png", alt="Showing that the computed color values still match ButtonFace while in dark mode.", width="800", height="322", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     <strong>Dark mode:</strong> The computed values of the <code>border-top-color</code>
     and the <code>border-bottom-color</code> that are both set to <code>ButtonFace</code>
@@ -345,7 +345,7 @@ with the link colors mentioned in the
 [warning above](#using-color-scheme-in-practice).
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bqXapQKcNbyE3uwEOELO.png", alt="The demo while in light mode.", width="800", height="982" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bqXapQKcNbyE3uwEOELO.png", alt="The demo while in light mode.", width="800", height="982", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     The <a href="https://color-scheme-demo.glitch.me/">demo</a>
     toggled to <code>color-scheme: light</code>.
@@ -353,7 +353,7 @@ with the link colors mentioned in the
 </figure>
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9G4hFdtSSwPLOm57zedD.png", alt="The demo while in dark mode.", width="800", height="982" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9G4hFdtSSwPLOm57zedD.png", alt="The demo while in dark mode.", width="800", height="982", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     The <a href="https://color-scheme-demo.glitch.me/">demo</a>
     toggled to <code>color-scheme: dark</code>.

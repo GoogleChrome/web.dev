@@ -127,7 +127,7 @@ of Chrome DevTools. AirSHIFT used the Timings section to find
 unnecessary logic running in React lifecycle events.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zTvUhCKRSCvZzo9mlkte.png", alt="The Timings section of the Performance panel of Chrome DevTools.", width="800", height="388", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zTvUhCKRSCvZzo9mlkte.png", alt="The Timings section of the Performance panel of Chrome DevTools.", width="800", height="388", class="w-screenshot", style="max-width: 75%;" %}
   <figcaption class="w-figcaption">
     React's User Timing events.
   </figcaption>

@@ -88,10 +88,10 @@ unnecessary animations.
 
 <div class="w-columns">
   <figure>
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KwuLNPefeDzUfR17EUtr.png", alt="A screenshot of the macOS settings screen with the 'Reduce motion' checkbox checked.", width="780", height="588" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KwuLNPefeDzUfR17EUtr.png", alt="A screenshot of the macOS settings screen with the 'Reduce motion' checkbox checked.", width="398", height="300" %}
   </figure>
   <figure>
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qed7yE6FKVQ5YXHn0TbJ.png", alt="A screenshot of the Android settings screen with the 'Remove animations' checkbox checked.", width="472", height="493" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qed7yE6FKVQ5YXHn0TbJ.png", alt="A screenshot of the Android settings screen with the 'Remove animations' checkbox checked.", width="287", height="300" %}
   </figure>
 </div>
 

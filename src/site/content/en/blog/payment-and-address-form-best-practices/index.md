@@ -304,7 +304,7 @@ On form submission, browsers automatically set focus on fields with problematic 
 values. No JavaScript required!
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="Screenshot of a sign-in form in Chrome on desktop showing browser prompt and focus for an invalid email value.", width="800", height="773", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="Screenshot of a sign-in form in Chrome on desktop showing browser prompt and focus for an invalid email value.", width="500", height="483", class="w-screenshot" %}
   <figcaption class="w-figcaption">Basic built-in validation by the browser.</figcaption>
 </figure>
 
@@ -431,7 +431,7 @@ Many successful retailers even remove navigation and search from checkout.
 Keep the journey focused. This is not the time to tempt users to do something else!
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="Screenshot of checkout page on mobile showing distracting promotion for FREE STICKERS.", width="700", height="1433", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="Screenshot of checkout page on mobile showing distracting promotion for FREE STICKERS.", width="350", height="735", class="w-screenshot" %}
   <figcaption class="w-figcaption">Don't distract customers from completing their purchase.</figcaption>
 </figure>
 
@@ -440,7 +440,7 @@ see. For example: display the delivery address in plain text (not in a form) and
 change it via a link.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="Screenshot of 'Review order' section of checkout page, showing text in plain text, with links to change delivery address, payment method and billing address, which are not displayed.", width="800", height="389", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="Screenshot of 'Review order' section of checkout page, showing text in plain text, with links to change delivery address, payment method and billing address, which are not displayed.", width="450", height="219", class="w-screenshot" %}
   <figcaption class="w-figcaption">Hide data customers don't need to see.</figcaption>
 </figure>
 

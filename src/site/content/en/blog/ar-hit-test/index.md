@@ -66,7 +66,7 @@ point, regardless of where you tapped the screen. The reticle continues to move
 with your device.
 
 <figure class="w-figure  w-figure--right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/42fbB0q2WTa9ytTm8NZN.png", alt="A reticle rendered on a wall, Lax, or Strict depending on their context", width="800", height="1422" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/42fbB0q2WTa9ytTm8NZN.png", alt="A reticle rendered on a wall, Lax, or Strict depending on their context", width="800", height="1422", style="max-width: 60vw;" %}
   <figcaption class="w-figcaption">
     The reticle is a temporary image that aids in placing an object in augmented reality.
   </figcaption>

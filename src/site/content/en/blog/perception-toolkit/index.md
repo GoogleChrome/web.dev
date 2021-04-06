@@ -59,7 +59,7 @@ for yourself using our [artifact-map
 demo](https://github.com/GoogleChromeLabs/perception-toolkit/tree/master/demo/artifact-map).
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UD5t3RD9HZ7OIHVaAg31.png", alt="The default interface is available by using just the linked data.", width="800", height="1381", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UD5t3RD9HZ7OIHVaAg31.png", alt="The default interface is available by using just the linked data.", width="300", height="518", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--center">
     The default interface.
   </figcaption>

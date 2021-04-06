@@ -45,7 +45,7 @@ images, or stylesheets.
  proposal.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nIq4lyKZAV6XgbgDgNSk.png", alt="A figure demonstrating that a Web Bundle is a collection of web resources.", width="800", height="466" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nIq4lyKZAV6XgbgDgNSk.png", alt="A figure demonstrating that a Web Bundle is a collection of web resources.", width="800", height="466", style="max-width: 75%" %}
   <figcaption class="w-figcaption">
     How Web Bundles work
   </figcaption>

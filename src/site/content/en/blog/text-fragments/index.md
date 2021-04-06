@@ -34,7 +34,7 @@ announced through a
 Chromium blog. You can see an excerpt of the blog post in the screenshot below.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/egsW6tkKWYI8IHE6JyMZ.png", alt="", width="800", height="1255" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/egsW6tkKWYI8IHE6JyMZ.png", alt="", width="400", height="628" %}
   <figcaption class="w-figcaption">Chromium blog post with red boxes around elements with an <code>id</code> attribute.</figcaption>
 </figure>
 
@@ -58,7 +58,7 @@ As you can see in the Elements panel of the Developer Tools, the element in ques
 attribute with the value `HTML1`.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/whVXhhrYwA55S3i4J3l5.png", alt="", width="800", height="129" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/whVXhhrYwA55S3i4J3l5.png", alt="", width="600", height="97" %}
   <figcaption class="w-figcaption">Dev Tools showing the <code>id</code> of an element.</figcaption>
 </figure>
 
@@ -95,7 +95,7 @@ have an `id` attribute, meaning there is no way I can link to this heading. This
 Text Fragments solve.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1g4rTS1q5LKHEHnDoF9o.png", alt="", width="800", height="94" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1g4rTS1q5LKHEHnDoF9o.png", alt="", width="600", height="71" %}
   <figcaption class="w-figcaption">Dev Tools showing a heading without an <code>id</code>.</figcaption>
 </figure>
 
@@ -148,7 +148,7 @@ If you click the link in a supporting browser like Chrome, the text fragment is 
 scrolls into view:
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="800", height="415" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="400", height="208" %}
   <figcaption class="w-figcaption">Text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
@@ -172,7 +172,7 @@ by `ES%20Modules%20in%20Web%20Workers.` as `textEnd`. When you click through on 
 like Chrome, the whole section is highlighted and scrolled into view:
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2yTYmKnjHTnqXkcmHF1F.png", alt="", width="800", height="686" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2yTYmKnjHTnqXkcmHF1F.png", alt="", width="400", height="343" %}
   <figcaption class="w-figcaption">Text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
@@ -190,7 +190,7 @@ intended to highlight. The problem is that the desired section is not uniquely i
 current one-word `textStart` and `textEnd` values:
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GGbbtHBpsoFyubnISyZw.png", alt="", width="800", height="684" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GGbbtHBpsoFyubnISyZw.png", alt="", width="400", height="342" %}
   <figcaption class="w-figcaption">Non-intended text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
@@ -202,7 +202,7 @@ Chrome&nbsp;80 release blog post as my example? The answer is that in this relea
 were introduced:
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yA1p3CijeDbTRwMys9Hq.png", alt="Blog post text: Text URL Fragments. Users or authors can now link to a specific portion of a page using a text fragment provided in a URL. When the page is loaded, the browser highlights the text and scrolls the fragment into view. For example, the URL below loads a wiki page for 'Cat' and scrolls to the content listed in the `text` parameter.", width="800", height="200" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yA1p3CijeDbTRwMys9Hq.png", alt="Blog post text: Text URL Fragments. Users or authors can now link to a specific portion of a page using a text fragment provided in a URL. When the page is loaded, the browser highlights the text and scrolls the fragment into view. For example, the URL below loads a wiki page for 'Cat' and scrolls to the content listed in the `text` parameter.", width="800", height="200", class="w-screenshot" %}
   <figcaption class="w-figcaption">Text Fragments announcement blog post excerpt.</figcaption>
 </figure>
 
@@ -315,7 +315,7 @@ contains both an element fragment (`HTML1`), as well as a text fragment
 (`text=Give%20us%20feedback%20in%20our%20Product%20Forums.`):
 
 <figure class="w-figure">
-   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JRKCM6Ihrq8sgRZRiymr.png", alt="", width="474", height="242" %}
+   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JRKCM6Ihrq8sgRZRiymr.png", alt="", width="237", height="121" %}
   <figcaption class="w-figcaption">Linking with both element fragment and text fragment.</figcaption>
 </figure>
 

@@ -223,7 +223,7 @@ information about objects, including their size and a list of the variables and 
 reference them.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4tBcZ7lZEqkmonijrOGa.png", alt="A screenshot of a heap snapshot in Chrome DevTools showing the references that retain a large object.", width="800", height="440", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4tBcZ7lZEqkmonijrOGa.png", alt="A screenshot of a heap snapshot in Chrome DevTools showing the references that retain a large object.", width="762", height="419", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     A heap snapshot showing the references that retain a large object.
   </figcaption>
@@ -261,7 +261,7 @@ but taking a heap snapshot is a manual process. Another way to check for memory 
 the currently used JavaScript heap size from the [`performance.memory` API][performance-memory-api]:
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIypz58ucRgAnnNu1LwR.png", alt="A screenshot of a section of the Chrome DevTools user interface.", width="800", height="508" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIypz58ucRgAnnNu1LwR.png", alt="A screenshot of a section of the Chrome DevTools user interface.", width="621", height="394" %}
   <figcaption class="w-figcaption">
     Checking the used JS heap size in DevTools as a popup is created, closed and unreferenced.
   </figcaption>

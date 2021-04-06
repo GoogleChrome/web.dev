@@ -32,7 +32,7 @@ seamlessly alongside the new expressive syntax for asserting *any* Lighthouse
 audit or category result.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xvyxLU5J0bap6s0LdrD3.png", alt="Lighthouse CI report.", width="576", height="512", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xvyxLU5J0bap6s0LdrD3.png", alt="Lighthouse CI report.", width="400", height="356", class="w-screenshot" %}
 </figure>
 
 Lighthouse CI supports [Travis CI](https://travis-ci.com/), [Circle

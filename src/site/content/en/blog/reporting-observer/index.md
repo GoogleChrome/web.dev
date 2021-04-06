@@ -69,7 +69,7 @@ existing APIs. When your site uses a deprecated API or runs up against a
 them:
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VJmhfngEVxQBSc9im0pg.png", alt="DevTools Console warnings for deprecations and interventions.", width="800", height="79" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VJmhfngEVxQBSc9im0pg.png", alt="DevTools Console warnings for deprecations and interventions.", width="800", height="79", class="w-screenshot" %}
   <figcaption>Browser-initiated warnings in the DevTools Console.</figcaption>
 </figure>
 
@@ -201,7 +201,7 @@ that goes wrong in your app:
 - [W3c spec][reportingobserver]
 - [chromestatus.com entry][chromestatus]
 
-[Hero image](https://unsplash.com/photos/6SyrBaRjLJ4) by 
+[Hero image](https://unsplash.com/photos/6SyrBaRjLJ4) by
 [Sieuwert Otterloo](https://unsplash.com/@sieuwert)
 on [Unsplash](https://unsplash.com).
 

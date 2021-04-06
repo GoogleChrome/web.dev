@@ -117,7 +117,7 @@ attribute does.
 
 ```html
 <model-viewer src="assets/Astronaut.glb" controls auto-rotate
-poster="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/emwX3KWs0BcmuNPiJPjM.jpg" | imgix }}">
+poster="./spacesuit.jpg">
 ```
 
 To show your users that it's a 3D model, and not just an image, you can provide

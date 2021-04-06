@@ -102,7 +102,7 @@ ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wBf0W2V9bVA7Clh01Rf7.png", alt="", width="800", height="155" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wBf0W2V9bVA7Clh01Rf7.png", alt="", width="400", height="78" %}
   <figcaption class="w-figcaption">
     Small image.
   </figcaption>
@@ -127,7 +127,7 @@ quam sem.
 ## Image, Inline
 
 <figure class="w-figure w-figure--inline-right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="800", height="1224", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="200", height="306", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Inline right, outlined image.
   </figcaption>
@@ -148,7 +148,7 @@ aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
 velit. Morbi at quam sem.
 
 <figure class="w-figure w-figure--inline-left">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="800", height="1224", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WHh2eQoyBxylhgPdYOis.png", alt="", width="200", height="306", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Inline left, outlined image.
   </figcaption>

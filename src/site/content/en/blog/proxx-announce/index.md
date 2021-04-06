@@ -106,7 +106,7 @@ different input interface (d-pad and number keys, no touchscreen), we also
 implemented key-based interface.
 
 <figure class="w-figure w-figure--fullbleed">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zk0lWvjbZ0V2Shz53d42.jpg", alt="A man playing PROXX on a yellow feature phone", width="800", height="512" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zk0lWvjbZ0V2Shz53d42.jpg", alt="A man playing PROXX on a yellow feature phone", width="800", height="512", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     PROXX on a feature phone.
   </figcaption>

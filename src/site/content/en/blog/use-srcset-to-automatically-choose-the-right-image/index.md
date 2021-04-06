@@ -201,7 +201,10 @@ In the example below, `sizes="50vw"` tells the browser that this image will be
 displayed at 50% of the viewport width.
 
 ``` html/2
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/scLPehGom3IZLxPJiPPF.jpg", alt="…", width="500", height="334" %}
+<img src="small.jpg"
+     srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
+     sizes="50vw"
+     alt="…">
 ```
 
 You can see this in action at

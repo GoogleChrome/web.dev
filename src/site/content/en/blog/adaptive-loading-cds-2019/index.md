@@ -173,7 +173,7 @@ as users swipe. After implementing these optimizations, they've seen significant
 improvements in average swipe count in countries such as Indonesia.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/N1xJkEMQ9rE513TNm8va.png", alt="A screenshot of two versions of Tinder chat: with autoplaying video and with a video with play button overlay. A screenshot of a Tinder profile with caption 'Limit carousel images on Data Saver or 3G'. A code snippet for prefetching in-viewport videos only on 4G.", width="800", height="445" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/N1xJkEMQ9rE513TNm8va.png", alt="A screenshot of two versions of Tinder chat: with autoplaying video and with a video with play button overlay. A screenshot of a Tinder profile with caption 'Limit carousel images on Data Saver or 3G'. A code snippet for prefetching in-viewport videos only on 4G.", width="800", height="445", style="max-width: 75%" %}
 </figure>
 
 ### Adaptive loading at Facebook
