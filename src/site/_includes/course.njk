@@ -4,6 +4,8 @@ pageScripts:
   - '/js/content.js'
 ---
 
+{% from 'macros/audio-player.njk' import audioPlayer with context %}
+
 {#
   Grab the data for the course using the projectKey defined in the 11tydata.js
   file at the root of the course in /learn/[course]
@@ -57,8 +59,9 @@ pageScripts:
 
       {% include 'partials/toc-side.njk' %}
 
-      <main id="main">
+      <main id="main" class="flow">
         {% include 'partials/toc-inner.njk' %}
+        {{ audioPlayer() }}
         {{ content | safe }}
       </main>
     </div>
