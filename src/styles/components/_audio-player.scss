@@ -29,28 +29,3 @@
     max-width: 100%;
   }
 }
-
-.audio-player[data-type='fixed'] {
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  width: 100%;
-
-  .audio-player__inner,
-  .audio-player__element {
-    width: 100%;
-  }
-
-  @include bp(sm) {
-    bottom: 24px;
-    right: 24px;
-    left: auto;
-    width: -moz-fit-content;
-    width: fit-content;
-
-    .audio-player__inner,
-    .audio-player__element {
-      width: 300px;
-    }
-  }
-}

@@ -1,10 +1,11 @@
 ---
 layout: base
 pageScripts:
-  - '/js/content.js'
+  - '/js/course.js'
 ---
 
-{% from 'macros/audio-player.njk' import audioPlayer with context %}
+{% from 'macros/audio-fab.njk' import audioFab %}
+{% from 'macros/audio-player.njk' import audioPlayer %}
 
 {#
   Grab the data for the course using the projectKey defined in the 11tydata.js
@@ -61,7 +62,10 @@ pageScripts:
 
       <main id="main" class="flow">
         {% include 'partials/toc-inner.njk' %}
-        {{ audioPlayer() }}
+        {% if audio %}
+          {{ audioFab(audio.thumbnail) }}
+          {{ audioPlayer(audio.title, audio.src, audio.thumbnail) }}
+        {% endif %}
         {{ content | safe }}
       </main>
     </div>

@@ -1,10 +1,9 @@
-{% macro audioPlayer(type='fixed', thumbnail, title, url) %}
-<div class="audio-player" {% if type %}data-type="{{ type }}"{% endif %}>
-  <img class="audio-player__thumbnail" src="https://user-images.githubusercontent.com/1066253/113629579-7835b080-961b-11eb-8d8b-53adfc767814.png" alt="CSS Podcast">
-
+{% macro audioPlayer(title, src, thumbnail, id="audio-player") %}
+<div class="audio-player">
+  {% Img src=thumbnail, alt="", width="80", height="80" %}
   <div class="audio-player__inner">
-    <div class="audio-player__title">The CSS Podcast - 001: Flexbox</div>
-    <audio class="audio-player__element" src="https://traffic.libsyn.com/secure/thecsspodcast/TCP035_v2.mp3?dest-id=1891556" controls></audio>
+    <div class="audio-player__title">{{ title }}</div>
+    <audio id="{{ id }}" class="audio-player__element" src="{{ src }}" controls></audio>
   </div>
 </div>
 {% endmacro %}
