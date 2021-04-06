@@ -1,0 +1,33 @@
+{% from 'macros/icon.njk' import icon with context %}
+
+<nav class="course-pagination" aria-label="pagination">
+  {% for item in pageNavigation %}
+    {% if item.url === page.url %}
+      {% if item.prev %}
+        {% set prev = item.prev %}
+        <a href="{{ prev.url }}" class="course-pagination-control" data-prev>
+          <div class="course-pagination-control__top display-flex align-center">
+            {{ icon('arrow-back') }}
+            <span class="font-mono display-none md:display-inline case-upper">{{ 'i18n.common.prev' | i18n(locale) }}</span>
+            <span class="font-mono">{{ (loop.index0 - 1) | padStart(3, '0') }}</span>
+          </div>
+
+          <div class="course-pagination-control__title">{{ prev.page.data.title }}</div>
+        </a>
+      {% endif %}
+      {% if item.next %}
+        {% set next = item.next %}
+        <a href="{{ next.url }}" class="course-pagination-control" data-next>
+          <div class="course-pagination-control__top display-flex align-center">
+            <span class="font-mono case-upper">{{ 'i18n.common.next' | i18n(locale) }}</span>
+            <span class="font-mono">{{ loop.index0 | padStart(3, '0') }}</span>
+            {{ icon('arrow-forward') }}
+          </div>
+
+          <div class="course-pagination-control__title">{{ next.page.data.title }}</div>
+          <div class="course-pagination-control__desc">{{ next.page.data.description }}</div>
+        </a>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</nav>

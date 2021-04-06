@@ -16,6 +16,7 @@
     flex-shrink: 0;
     order: 1;
     overflow-y: auto;
+    overscroll-behavior: contain; // sass-lint:disable-line no-misspelled-properties
     padding: 0 get-size(300);
     position: sticky;
     // TODO: Move these into variables

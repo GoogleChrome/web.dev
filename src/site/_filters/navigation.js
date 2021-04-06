@@ -46,7 +46,7 @@ function buildTree(toc, map) {
     }
   }
 
-  list.forEach((item, idx) => {
+  list.forEach((/** @type {NavigationItem} */ item, idx) => {
     item.prev = list[idx - 1] || null;
     item.next = list[idx + 1] || null;
   });

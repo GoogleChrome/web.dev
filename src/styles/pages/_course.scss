@@ -25,22 +25,3 @@
   min-width: 0;
   padding: 0;
 }
-
-.course-pagination {
-  display: flex;
-}
-
-.course-pagination-control {
-  border-top: 1px solid $GREY_300;
-  display: block;
-  padding: 24px;
-
-  &:first-of-type {
-    flex: 4;
-    border-right: 1px solid $GREY_300;
-  }
-
-  &:last-of-type  {
-    flex: 6;
-  }
-}
