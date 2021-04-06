@@ -36,17 +36,20 @@
 function loadScript(url, type) {
   const s = document.createElement('script');
   s.src = url;
-  if (type) s.type = type;
+  if (type) {
+    s.type = type;
+  }
   if (type === 'module') {
     const pre = document.createElement('link');
     pre.rel = 'modulepreload';
     pre.href = url;
-    document.head.appendChild(pre);
+    document.head.append(pre);
+    {# We use DOMContentLoaded as the loader script is running sync, and inserting a module script here doesn't defer. This brings back normal type="module" behavior. #}
     window.addEventListener('DOMContentLoaded', () => {
-      document.head.appendChild(s);
-    })
+      document.head.append(s);
+    });
   } else {
-    document.head.appendChild(s);
+    document.head.append(s);
   }
 }
 loadScript('{{ helpers.hashForProd('/js/app.js') }}', 'module');
@@ -62,4 +65,4 @@ loadScript('{{ helpers.hashForProd('/js/app.js') }}', 'module');
   loadScript('https://www.google-analytics.com/analytics.js', null);
 {% endif %}
 {% endset %}
-<script>{{ scriptLoader|cspHash|safe }}</script>
+<script>{{ scriptLoader|minifyJs|cspHash|safe }}</script>

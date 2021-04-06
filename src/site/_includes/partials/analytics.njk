@@ -12,4 +12,4 @@ ga('set', 'page', window.location.pathname);
 ga('set', '{{ site.analytics.dimensions.TRACKING_VERSION }}', '{{ site.analytics.version}}');
 ga('send', 'pageview');
 {% endset %}
-<script>{{ analyticsScript|cspHash|safe }}</script>
+<script>{{ analyticsScript|minifyJs|cspHash|safe }}</script>

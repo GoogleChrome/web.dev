@@ -91,6 +91,7 @@ const stripQueryParamsDev = require(`./${filtersDir}/strip-query-params-dev`);
 const getPaths = require(`./${filtersDir}/get-paths`);
 const navigation = require(`./${filtersDir}/navigation`);
 const padStart = require(`./${filtersDir}/pad-start`);
+const {minifyJs} = require(`./${filtersDir}/minify-js`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
@@ -214,13 +215,10 @@ module.exports = function (config) {
   config.addFilter('courseToc', courseToc);
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
   config.addFilter('padStart', padStart);
+  config.addFilter('minifyJs', minifyJs);
 
   const hashList = new Set();
   config.addFilter('cspHash', (raw) => {
-    raw = raw
-      .split(/\s/)
-      .filter((s) => s)
-      .join(' ');
     if (isProd) {
       const hash = `'sha256-${sha256base64(raw)}'`;
       hashList.add(hash);
@@ -291,7 +289,10 @@ module.exports = function (config) {
   // Make CSP hashes accessible to firebase config.
   if (isProd) {
     config.on('afterBuild', () => {
-      fs.writeFileSync('script-hash-list.json', JSON.stringify([...hashList]));
+      fs.writeFileSync(
+        'dist/script-hash-list.json',
+        JSON.stringify([...hashList]),
+      );
     });
   }
 
