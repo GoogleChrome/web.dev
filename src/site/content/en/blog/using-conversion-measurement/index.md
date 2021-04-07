@@ -60,8 +60,8 @@ follows:
 
 - Track conversions.
 - Look at the aggregate count of conversions you're receiving.
-- Recover the corrected count of conversions. See how in [Recover the corrected conversion
-  count](<#(optional)-recover-the-corrected-conversion-count>).
+- Recover the corrected count of conversions. See how in [Recover the corrected attribution
+  count](<#(optional)-recover-the-corrected-attribution-count>).
 - Optionally, if you want to try something more advanced: tweak the noise correction script. For
   example, try different groupings to see what sizes are necessary for the noise to be negligible.
 - Compare the corrected count of conversions with source-of-truth data (cookie-based conversion
@@ -118,9 +118,9 @@ origin trial to check whether the API can be used.
 
 You're now ready to run your experiment.
 
-#### (Optional) Recover the corrected conversion count
+#### (Optional) Recover the corrected attribution count
 
-Even though the conversion data is [noised](/conversion-measurement/#noising-of-conversion-data),
+Even though the conversion data is [noised](/conversion-measurement/#noising-of-attribution-trigger-data),
 the reporting endpoint can recover the true count of reports that have a specific conversion value.
 See how in this [noise corrector example
 script](https://github.com/WICG/conversion-measurement-api/blob/master/noise_corrector.py).
