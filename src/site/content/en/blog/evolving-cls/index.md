@@ -15,7 +15,7 @@ tags:
 ---
 We (the Chrome Speed Metrics Team) recently outlined our initial research into
 [options for making the CLS metric more fair to pages that are open for a long
-time](https://web.dev/better-layout-shift-metric/). We've received a lot of very
+time](better-layout-shift-metric/). We've received a lot of very
 helpful feedback and after completing the large-scale analysis, we've finalized
 the change we plan to make to the metric: **maximum session window with 1 second
 gap, capped at 5 seconds**.
@@ -74,7 +74,7 @@ current definition of CLS, the scores of each shift are added up, so that each
 window's score is the sum of its individual layout shifts.
 
 Based on the [initial
-research](https://web.dev/better-layout-shift-metric/#best-strategies), we chose
+research](/better-layout-shift-metric/#best-strategies), we chose
 a 1 second gap between session windows, and that gap worked well in our
 large-scale analysis. So the "Session Gap" shown in the example above is 1
 second.
@@ -82,7 +82,7 @@ second.
 ### Why the maximum session window?
 
 We narrowed the [summarization
-strategies](https://web.dev/better-layout-shift-metric/#summarization) down to
+strategies](/better-layout-shift-metric/#summarization) down to
 two options in our initial research:
 
 * The **average** score of all the session windows, for very large session
