@@ -15,7 +15,6 @@
  */
 
 const {livePosts} = require('../_filters/live-posts');
-const {sortByDate} = require('../_utils/sort-by-date');
 
 /**
  * @param {EleventyCollectionObject} collection
@@ -23,5 +22,5 @@ const {sortByDate} = require('../_utils/sort-by-date');
  */
 module.exports = (collection) => {
   const tag = process.env.PERCY ? 'test-post' : 'blog';
-  return collection.getFilteredByTag(tag).filter(livePosts).sort(sortByDate);
+  return collection.getFilteredByTag(tag).filter(livePosts).reverse();
 };
