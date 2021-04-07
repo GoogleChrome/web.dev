@@ -133,7 +133,7 @@ Later on, the user may visit the advertiser's website and perform an action that
 their adtech provider categorizes as a **conversion**. If this happens, the ad click and the
 conversion event are matched by the user's browser.
 
-The browser finally schedules a **conversion report** to be sent to the endpoint specified in the
+The browser finally schedules an **attribution report** to be sent to the endpoint specified in the
 `<a>` element's attributes. This report includes data about the ad click that led to this
 conversion, as a well as data about the conversion.
 
@@ -149,10 +149,10 @@ timing](#report-timing)).
 
 The Attribution Reporting API can be supported:
 
-- As an [origin trial](/origin-trials/), from Chrome 86 beta and Chrome 87 (stable from mid-November
-  2020), to Chrome 88 (February 2021). Origin trials enable the API for **all visitors** of a given
-  [origin](/same-site-same-origin/#origin). **You need to register your origin for the origin trial
-  in order to try the API with end users**.
+- As an [origin trial](/origin-trials/). Origin trials enable the API for **all visitors** of a
+  given [origin](/same-site-same-origin/#origin). **You need to register your origin for the origin
+  trial in order to try the API with end users**. See [Using the conversion measurement
+  API](/using-conversion-measurement) for details about the origin trial.
 - By turning on flags, in Chrome 86 and later. Flags enable the API on a **single user**'s browser.
   **Flags are useful when developing locally**.
 
@@ -282,7 +282,7 @@ If several conversions are registered for a given ad click, **a corresponding re
 each conversion, up to a maximum of three per click**.
 
 To prevent conversion time from being used to get more information from the conversion side and
-hence hinder users' privacy, this API specifies that conversion reports aren't sent immediately
+hence hinder users' privacy, this API specifies that attribution reports aren't sent immediately
 after a conversion happens. After the initial ad click, a schedule of **reporting windows**
 associated with this click begins. Each reporting window has a deadline, and conversions registered
 before that deadline will be sent at the end of that window.
@@ -301,7 +301,7 @@ In Chrome, report scheduling works as follows:
     <thead>
       <tr>
         <th><code>attributionexpiry</code></th>
-        <th>Depending on conversion time, a conversion report is sent (if the browser is open)...</th>
+        <th>Depending on conversion time, an attribution report is sent (if the browser is open)...</th>
         <th>Number of reporting windows</th>
       </tr>
     </thead>
@@ -381,7 +381,7 @@ attributes:
 ```html
 <a
   id="ad"
-  attributionsourceeventid="776f09351f5809c5"
+  attributionsourceeventid="200400600"
   attributiondestination="https://advertiser.example"
   attributionreportto="https://adtech.example"
   attributionexpiry="864000000"
@@ -407,14 +407,15 @@ This code specifies the following:
       <tr>
         <td><code>attributionsourceeventid</code> (required): a <b>64-bit</b> identifier to attach to an ad click.</td>
         <td>(no default)</td>
-        <td>A dynamically generated click ID  such as a hex-encoded 64-bit integer:
-          <code>776f09351f5809c5</code>
+        <td>A dynamically generated click ID such as a 64-bit integer:
+          <code>200400600</code>
         </td>
       </tr>
       <tr>
-        <td><code>attributiondestination</code> (required): where a conversion is expected for this ad.</td>
+        <td><code>attributiondestination</code> (required): the <b><a href="https://web.dev/same-site-same-origin/#site" noopener>eTLD+1</a></b> where a conversion is expected for this ad.</td>
         <td>(no default)</td>
-        <td><code>https://advertiser.example</code></td>
+<td><code>https://advertiser.example</code>.<br/>If the <code>conversiondestination</code> is <code>https://advertiser.example</code>, conversions on both <code>https://advertiser.example</code> and <code>https://shop.advertiser.example</code> will be attributed.<br/>The same happens if the <code>conversiondestination</code> is <code>https://shop.advertiser.example</code>: conversions on both <code>https://advertiser.example</code> and <code>https://shop.advertiser.example</code> will be attributed. 
+        </td>
       </tr>
       <tr>
         <td><code>attributionexpiry</code> (optional): in milliseconds, the cutoff time for when conversions can be attributed to this ad.</td>
@@ -439,16 +440,7 @@ This code specifies the following:
   </table>
 </div>
 
-{% Aside %} Some notes about the example:
-
-- The ad doesn't have to be in an iframe, but this is what this example is based on. {% endAside %}
-
-{% Aside 'gotchas' %}
-
-- Flows based on navigating via `window.open` or `window.location` won't be eligible for
-  attribution.
-
-{% endAside %}
+{% Aside %} Note about the example: the ad doesn't have to be in an iframe, but this is what this example is based on. {% endAside %}
 
 When the user taps or clicks the ad, they navigate to the advertiser's site. Once the navigation is
 committed, the browser stores an object that includes `attributionsourceeventid`, `attributiondestination`,
@@ -489,7 +481,7 @@ app.get('/conversion', (req, res) => {
   const conversionData = conversionValues[req.query.conversiontype];
   res.redirect(
     302,
-    `/.well-known/register-conversion?conversion-data=${conversionData}`,
+    `/.well-known/attribution-reporting/trigger-attribution?data=${conversionData}`,
   );
 });
 ```
@@ -497,10 +489,10 @@ app.get('/conversion', (req, res) => {
 {% Aside %} `.well-known` URLs are special URLs. They make it easy for software tools and servers to
 discover commonly-needed information or resources for a site—for example, on what page a user can
 [change their password](/change-password-url/). Here, `.well-known` is only used so that the browser
-recognizes this as a special conversion request. This request is actually cancelled internally by
+recognizes this as a special request. This request is actually cancelled internally by
 the browser. {% endAside %}
 
-The browser receives this request. Upon detecting `.well-known/register-conversion`, the browser:
+The browser receives this request. Upon detecting `/.well-known/attribution-reporting/trigger-attribution`, the browser:
 
 - Looks up all ad clicks in storage that match this `attributiondestination` (because it's receiving
   this conversion on a URL that has been registered as a `attributiondestination` URL when the user
@@ -514,7 +506,7 @@ Now, the browser knows that it needs to inform the adtech server of this convers
 specifically, the browser must inform the `attributionreportto` endpoint that is specified in both the `<a>`
 element and in the pixel request (`adtech.example`).
 
-To do so, the browser schedules to send a **conversion report**, a blob of data containing the click
+To do so, the browser schedules to send an **attribution report**, a blob of data containing the click
 data (from the publisher's site) and the conversion data (from the advertiser's). For this example,
 the user converted one day after click. So the report is scheduled to be sent on the next day, at
 the two-day-after-click mark if the browser is running.
@@ -526,26 +518,27 @@ the two-day-after-click mark if the browser is running.
 </figure>
 
 
-Once the scheduled time to send the report is reached, the browser sends the **conversion report**:
-it sends an HTTP POST to the reporting endpoint that was specified in the `<a>` element
-(`adtech.example`). For example:
+Once the scheduled time to send the report is reached, the browser sends the **attribution report**: 
+it sends an HTTP POST to the reporting endpoint that was specified in the `<a>` element (`adtech.example` in our case). The report data is included in the request body as a JSON object with the following structure:
 
-`https://adtech.example/.well-known/register-conversion?impression-data=776f09351f5809c5&conversion-data=2&credit=100`
+```JSON
+{
+  source_event_id: 200400600,
+  trigger_data: 3,
+  credit: 100
+}
+```
 
-Included as parameters are:
+This includes:
 
-- The data associated with the original ad click (`impression-data`).
-- The data associated with a conversion, [potentially noised](#noising-of-conversion-data).
-- The conversion credit attributed to the click. This API follows a **last-click attribution**
+- `source_event_id`: 64-bit event id set on the attribution source
+
+- `trigger_data`: 3-bit attribution trigger data, [potentially noised](#noising-of-conversion-data).
+
+- `credit`: an integer of value 0 or 100. This API follows a **last-click attribution**
   model: the most recent matching ad click is given a credit of 100, all other matching ad clicks
   are given a credit of 0.
 
-As the adtech server receives this request, it can pull the `impression-data` and `conversion-data`
-from it, i.e. the conversion report:
-
-```json
-{"impression-data": "776f09351f5809c5", "conversion-data": 3, "credit": 100}
-```
 
 ### Subsequent conversions and expiry
 
