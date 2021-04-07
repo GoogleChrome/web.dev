@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +14,16 @@
  * limitations under the License.
  */
 
-const {livePosts} = require('../_filters/live-posts');
-const {sortByDate} = require('../_utils/sort-by-date');
-
 /**
- * @param {EleventyCollectionObject} collection
- * @returns {EleventyCollectionItem[]}
+ * @param {EleventyCollectionItem} a An eleventy post object.
+ * @param {EleventyCollectionItem} b An eleventy post object.
+ * @return {number} The difference in their date's.
  */
-module.exports = (collection) => {
-  const tag = process.env.PERCY ? 'test-post' : 'blog';
-  return collection.getFilteredByTag(tag).filter(livePosts).sort(sortByDate);
-};
+function sortByDate(a, b) {
+  const aTime = a.data.updated ? a.data.updated.getTime() : a.date.getTime();
+  const bTime = b.data.updated ? b.data.updated.getTime() : b.date.getTime();
+
+  return bTime - aTime;
+}
+
+module.exports = {sortByDate};

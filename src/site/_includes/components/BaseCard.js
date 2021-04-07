@@ -26,15 +26,15 @@ const AuthorsDate = require('./AuthorsDate');
 
 /**
  * BaseCard used to preview collection items.
- * @param {Object} collectionItem An eleventy collection item with additional data.
+ * @param {EleventyCollectionItem} collectionItem An eleventy collection item with additional data.
  * @param {string} className CSS class to apply to `div.w-card`
  * @param {boolean} featured If card is a featured card.
  * @return {string}
  */
 class BaseCard {
   constructor(collectionItem, className = '', featured = false) {
+    /** @type {EleventyCollectionItem} */
     this.collectionItem = collectionItem;
-    this.collectionItem.data = this.collectionItem.data || {};
     this.featured = featured;
     this.className = className;
     this.url = this.collectionItem.url;
@@ -141,7 +141,7 @@ class BaseCard {
                 ${md(this.data.title)}
               </h2>
             </a>
-            ${AuthorsDate({authors, date: this.collectionItem.date})}
+            ${AuthorsDate({authors, date: this.collectionItem.date, updated: this.data.updated, locale: this.data.locale})}
             <div
               class="w-card-base__desc ${this.className &&
                 `${this.className}__desc`}"

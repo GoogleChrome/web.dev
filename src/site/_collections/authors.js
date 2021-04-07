@@ -17,6 +17,7 @@
 const authorsData = require('../_data/authorsData.json');
 const {livePosts} = require('../_filters/live-posts');
 const setdefault = require('../_utils/setdefault');
+const {sortByDate} = require('../_utils/sort-by-date');
 
 /** @type Authors */
 let processedCollection;
@@ -79,9 +80,7 @@ module.exports = (collections) => {
 
   if (collections) {
     // Find all posts, sort and key by author. Don't yet filter to live posts.
-    allPosts = collections
-      .getFilteredByGlob('**/*.md')
-      .sort((a, b) => b.date.getTime() - a.date.getTime());
+    allPosts = collections.getFilteredByGlob('**/*.md').sort(sortByDate);
   }
 
   const authorsPosts = findAuthorsPosts(allPosts);
