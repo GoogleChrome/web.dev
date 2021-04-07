@@ -257,10 +257,16 @@ greater-than-typical number of people who visit sites in a sensitive category, t
 removed. Negative financial status and mental health are among the sensitive categories covered by 
 this analysis. 
 
-Websites opt out of FLoC by setting the [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction) 
-header `interest-cohort=()`. For the [FLoC origin trial](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561) 
-in Chrome 89, websites that don't opt out will be included in the FLoC calculation if Chrome detects 
-that they are sites [which load ads or ads-related resources](https://github.com/WICG/floc/issues/82). ([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) explains how Chrome's ad detection mechanism works.) Websites can also, of course, simply not access or record the cohort IDs of their visitors.
+Websites can exclude a page from the FLoC calculation by setting a [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction) header `interest-cohort=()` for that page. For pages that haven't 
+been excluded, a page visit will be included in the FLoC calculation during the 
+[FLoC origin trial](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561) 
+if `document.interestCohort()` is used on the page, or if Chrome detects that the page 
+[load ads or ads-related resources](https://github.com/WICG/floc/issues/82). 
+([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) 
+explains how Chrome's ad detection mechanism works.) 
+
+Pages served from private IP addresses, such as intranet pages, won't be part of the FLoC 
+computation.
 
 ## As a web developer how can I try out FLoC?
 
