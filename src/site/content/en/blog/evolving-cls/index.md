@@ -63,14 +63,14 @@ To review session windows, here's an example:
   </figcaption>
 </figure>
 
-In the example above, many layout shifts occur over time as the user views the 
-page. Each is represented by a blue bar. You'll notice above that the blue bars 
-have different heights; those represent the [score](/cls/#layout-shift-score) of 
-each individual layout shift. A session window starts with the first layout shift 
-and continues to expand until there is a gap with no layout shifts. When the next 
-layout shift occurs, a new session window starts. Since there are three gaps with 
-no layout shifts, there are three session windows in the example. Similar to the 
-current definition of CLS, the scores of each shift are added up, so that each 
+In the example above, many layout shifts occur over time as the user views the
+page. Each is represented by a blue bar. You'll notice above that the blue bars
+have different heights; those represent the [score](/cls/#layout-shift-score) of
+each individual layout shift. A session window starts with the first layout shift
+and continues to expand until there is a gap with no layout shifts. When the next
+layout shift occurs, a new session window starts. Since there are three gaps with
+no layout shifts, there are three session windows in the example. Similar to the
+current definition of CLS, the scores of each shift are added up, so that each
 window's score is the sum of its individual layout shifts.
 
 Based on the [initial
@@ -133,14 +133,14 @@ window size.
 Since this update caps the CLS of a page, **no page will have a higher score**
 as a result of this change.
 
-And based on our analysis, **55% of origins will not see a change in CLS value
-at all at the 75th percentile**. This is because their pages either do not
-currently have any layout shifts or the shifts they do have are already confined
-to a single session window.
+And based on our analysis, **55% of origins will not see a change in CLS at all
+at the 75th percentile**. This is because their pages either do not currently
+have any layout shifts or the shifts they do have are already confined to a
+single session window.
 
 **The rest of the origins will see improved scores at the 75th percentile with
 this change.** Most will only see a slight improvement, but about 3% will see
-their scores improve from having a "needs improvement" or "poor" ratings to
+their scores improve from having a "needs improvement" or "poor" rating to
 having a "good" rating. These pages tend to use infinite scrollers or have many
 slow UI updates, as described in our [earlier
 post](/better-layout-shift-metric/).
