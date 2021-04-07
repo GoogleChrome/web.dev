@@ -15,7 +15,7 @@ tags:
 ---
 We (the Chrome Speed Metrics Team) recently outlined our initial research into
 [options for making the CLS metric more fair to pages that are open for a long
-time](better-layout-shift-metric/). We've received a lot of very
+time](/better-layout-shift-metric/). We've received a lot of very
 helpful feedback and after completing the large-scale analysis, we've finalized
 the change we plan to make to the metric: **maximum session window with 1 second
 gap, capped at 5 seconds**.
