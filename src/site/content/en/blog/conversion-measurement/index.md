@@ -20,10 +20,6 @@ Attribution Reporting API enables the correlation of an event on a publisher's w
 subsequent conversion on an advertiser site without involving mechanisms that can be used to
 recognize a user across sites.
 
-{% Banner 'info', 'body' %} **This proposal needs your feedback!** If you have comments, please
-[create an issue](https://github.com/WICG/conversion-measurement-api/issues/) in the API proposal's
-repository. {% endBanner %}
-
 {% Aside %} This API is part of the Privacy Sandbox, a series of proposals to satisfy third-party
 use cases without third-party cookies or other cross-site tracking mechanisms. See [Digging into the
 Privacy Sandbox](/digging-into-the-privacy-sandbox) for an overview of all the proposals. {%
@@ -50,96 +46,110 @@ endAside %}
   may similarly be interested in using this API to replace existing techniques.
 - **Advertisers and publishers relying on adtech platforms for advertising or conversion
   measurement** don't need to use the API directly, but the [rationale for this
-  API](#why-is-this-needed) may be of interest, particularly if you are working with adtech
+  API](#appendix:-why-is-this-needed) may be of interest, particularly if you are working with adtech
   platforms that may integrate the API.
 
-## API overview
-
-### Why is this needed?
-
-Today, ad conversion measurement often relies on [third-party
-cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies). **But
-browsers are restricting access to these.**
-
-Chrome plans on [phasing out support for third-party
-cookies](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html) and [offers
-ways for users to block them if they
-choose](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en). Safari
-[blocks third-party
-cookies](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/), Firefox [blocks
-known third-party tracking
-cookies](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default),
-and Edge [offers tracking
-prevention](https://support.microsoft.com/en-us/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention).
-
-Third-party cookies are becoming a legacy solution. **New purpose-built APIs are emerging** to
-address in a privacy-preserving way the use cases that third-party cookies solved. To name a few:
-
-- The Attribution Reporting API helps measure ad conversions.
-- [Trust Tokens](/trust-tokens/) help combat fraud and distinguish bots from humans.
-
-<figure class="w-figure">
-  {% Img src="image/admin/vs7VtXlG4d6wHjZ1Tmwi.jpg", alt="Overview of some privacy sandbox APIs: Trust Tokens and Attribution Reporting", width="800", height="254" %}
-</figure>
-
-**How does the Attribution Reporting API compare to third-party cookies?**
-
-- It's **purpose-built** to measure conversions, unlike cookies. This in turn can enable browsers to
-  apply more enhanced privacy protections.
-- It's **more private**: it makes it difficult to recognize a user across two different top-level
-  sites, for example to link publisher-side and advertiser-side user profiles. See how in [How this
-  API preserves user privacy](#how-this-api-preserves-user-privacy).
-
-### A first iteration
-
-This API is at an **early experimental stage**. What's available as an origin trial is the **first
-iteration** of the API. Things may change substantially in [future iterations](#use-cases).
-
-### Only clicks
-
-At the moment, this API only supports **click-through conversion measurement** but view-through conversion measurement
-is under exploration.
+## Overview
 
 ### How it works
 
+{% Banner 'info', 'body' %}
+**This proposal needs
+your feedback!** Discussion of additional possible features takes place in the open. [Create an issue](https://github.com/WICG/conversion-measurement-api/issues/) on the API proposal's repository if you have comments, or
+watch the repository 👁 to follow the discussions.<br/>
+
+This API is at an early experimental stage, it may change substantially in future
+iterations.
+
+{% endBanner %}
+
+This API can be used with two types of `<a>` elements used for advertising: links in a **first-party** context (such as ads on a social network or a search engine results
+page) and links in a **third-party iframe** (such as on a publisher site that uses a third-party adtech
+provider).
+
+With this API, what happens on the ad side (publisher side) is referred to as **_attribution source_**. What happens when a conversion takes place (advertiser side) is referred to as an **_attribution trigger_**.
+
+- Outbound links (`<a>` elements) can be configured with special attributes, such as a custom event ID (the **_source event ID_**), the destination for which a conversion is expected for this ad, and an endpoint to send attribution reports to later on.
+- When the user clicks an ad, the browser—on the user's local device—records this event, alongside the custom event ID.
+- Later on, the user visits the advertiser's website and perform an action that the advertiser or
+  their adtech provider categorizes as a **conversion**. If this happens, the attribution is **_triggered_**: the adtech or advertiser asks the browser to record an attribution and can attach some data to it.
+- The user's browser matches the custom event ID with this conversion-side data, and schedules an **attribution report** to be sent to the endpoint specified in the
+  `<a>` element's attributes.
+- After a delay, the browser sends the report that includes data about the ad click that led to this conversion, as a well as conversion-time data (**_trigger data_**).
+
 <figure class="w-figure">
-  {% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="Diagram: overview of the Attribution Reporting API steps", width="800", height="496" %}
+  {% Img src="image/O2RNUyVSLubjvENAT3e7JSdqSOx1/CAU1Cu0um34h1P23Ogjf.jpg", alt="Diagram: overview of the Attribution Reporting API steps", width="800", height="496" %}
 </figure>
 
-This API can be used with two types of links (`<a>` elements) used for advertising:
+### Must-know features and limitations
 
-- Links in a **first-party** context, such as ads on a social network or a search engine results
-  page;
-- Links in a **third-party iframe**, such as on a publisher site that uses a third-party adtech
-  provider.
+{% Banner 'caution', 'body' %}
+👋 Make sure to check these features, they impact how you'll work with this API as a developer.
+{% endBanner %}
 
-With this API, such outbound links can be configured with attributes that are specific to ad
-conversions and attribution reporting:
+To ensure that this API can't be worked around to hinder user privacy, it's designed as follows:
 
-- Custom data to attach to an ad click on the publisher's side, for example a click ID or campaign
-  ID.
-- The website for which a conversion is expected for this ad.
-- The reporting endpoint that should be notified of attributions.
-- The cut-off date and time for when attributions can no longer be counted for this ad.
+- If several attributions are registered for a given ad click, as many corresponding reports are scheduled to be sent, **up to a maximum of three per ad click**.
+- **Attribution reports are delayed**: they're sent days or sometimes weeks after conversion. See details in [Report
+  timing](#report-timing)).
+- The custom source event ID (click time) is a **64 bit-identifier**. But at conversion time, only **3 bits** of data can be attached to the attribution trigger event. 3 bits can fit an integer
+  value from 0 to 7.
+- Attribution trigger data is **noised**. In Chrome's implementation, data noising works as follows: 5% of the time, the API
+  reports a random 3-bit value instead of the actual data. It's possible to [recover the corrected attribution
+  count](</using-conversion-measurement/#(optional)-recover-the-corrected-attribution-count>).
 
-When the user clicks an ad, the browser—on the user's local device—records this event, alongside
-reporting configuration and click data specified by Attribution Reporting attributes on the `<a>`
-element.
+Summing up custom event ID and attribution trigger data:
 
-Later on, the user may visit the advertiser's website and perform an action that the advertiser or
-their adtech provider categorizes as a **conversion**. If this happens, the adtech asks the browser
-to record an attribution, and the ad click and conversion-side data are matched by the user's
-browser.
+<div class="w-table-wrapper">
+  <table class="w-table--top-align">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Size</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Click ID (<code>attributionsourceeventid</code>)</td>
+        <td>64 bits</td>
+        <td>An ad ID or click ID</td>
+      </tr>
+      <tr>
+        <td>Attribution trigger data, conversion side (<code>attributiontriggerdata</code>)</td>
+        <td>3 bits, noised</td>
+        <td>An integer from 0 to 7 that can map to a conversion type (e.g. signup, complete checkout)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-The browser finally schedules an **attribution report** to be sent to the endpoint specified in the
-`<a>` element's attributes. This report includes data about the ad click that led to this
-conversion, as a well as conversion-time data.
+### Use cases
 
-If several attributions are registered for a given ad click, as many corresponding reports are
-scheduled to be sent (up to a maximum of three per ad click).
+**Currently supported:**
 
-Reports are sent after a delay: days or sometimes weeks after conversion (see why in [Reports
-timing](#report-timing)).
+- Click-through conversion measurement: determine which ad clicks lead to conversions, and access
+  coarse information about the conversion.
+- Data gathering to optimize ad selection, for example by training machine learning models.
+
+**Under exploration:**
+
+- View-through conversion measurement.
+- [App-to-web
+  conversions](https://github.com/WICG/conversion-measurement-api/blob/main/app_to_web.md), i.e. is
+  web conversions that started in an iOS/Android app.
+
+**Not supported yet:**
+
+- [Multiple reporting endpoints](https://github.com/WICG/conversion-measurement-api/issues/29).
+- Conversion lift measurement / incrementality, i.e. measuring causal differences in conversion
+  behavior, by measuring the difference between a test group that saw an ad and a control group that
+  didn't.
+- Attribution models that are not last-click.
+- Use cases that require larger amounts of information about the conversion event. For example,
+  granular purchase values or product categories.
+
+Before these features and more can be supported, **more privacy protections** may need to be added (noise, fewer bits, or other limitations).
 
 ## Browser support and similar APIs
 
@@ -168,7 +178,273 @@ WebKit, the web browser engine used by Safari, has a proposal with similar goals
 Measurement](https://github.com/privacycg/private-click-measurement). It's being worked on within
 the Privacy Community Group ([PrivacyCG](https://www.w3.org/community/privacycg/)).
 
-## How this API preserves user privacy
+## Example
+
+{% Banner 'info', 'body' %} To see this in action, try out the
+[demo](http://goo.gle/demo-attribution-reporting) ⚡️ and see the corresponding
+[code](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement). {%
+endBanner %}
+
+Here's how the API records and reports an attribution. Note that this is how a click-to-convert flow
+would work with the current API. Future iterations of this API [may be different](#use-cases).
+
+### Ad click (steps 1 to 5)
+
+<figure class="w-figure">
+{% Img src="image/O2RNUyVSLubjvENAT3e7JSdqSOx1/OBAwmLi64aTnNy8HlwDb.jpg", alt="Diagram: ad click and storage", width="800", height="667" %}
+</figure>
+
+An `<a>` ad element is loaded on a publisher site by `adtech.example` within an iframe.
+
+This `<a>` element is configured with Attribution Reporting attributes:
+
+```html
+<a
+  id="ad"
+  attributionsourceeventid="200400600"
+  attributiondestination="https://advertiser.example"
+  attributionreportto="https://adtech.example"
+  attributionexpiry="864000000"
+  href="https://advertiser.example/shoes07"
+  target="_parent"
+>
+  <img src="/images/shoe.jpg" alt="shoe" />
+</a>
+```
+
+This code specifies the following:
+
+<div class="w-table-wrapper">
+  <table class="w-table--top-align">
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Default value, maximum, minimum</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>attributionsourceeventid</code> (required): a <b>64-bit</b> identifier to attach to an ad click.</td>
+        <td>(no default)</td>
+        <td>A dynamically generated click ID such as a 64-bit integer:
+          <code>200400600</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>attributiondestination</code> (required): the <b><a href="https://web.dev/same-site-same-origin/#site" noopener>eTLD+1</a></b> where a conversion is expected for this ad.</td>
+        <td>(no default)</td>
+<td><code>https://advertiser.example</code>.<br/>If the <code>attributiondestination</code> is <code>https://advertiser.example</code>, conversions on both <code>https://advertiser.example</code> and <code>https://shop.advertiser.example</code> will be attributed.<br/>The same happens if the <code>attributiondestination</code> is <code>https://shop.advertiser.example</code>: conversions on both <code>https://advertiser.example</code> and <code>https://shop.advertiser.example</code> will be attributed. 
+        </td>
+      </tr>
+      <tr>
+        <td><code>attributionexpiry</code> (optional): in milliseconds, the cutoff time for when attributions can be recorded for this ad.</td>
+        <td>
+          <code>2592000000</code> = 30 days (in milliseconds).<br/><br/>
+          Maximum: 30 days (in milliseconds).<br/><br/>
+          Minimum: 2 days (in milliseconds).
+        </td>
+        <td>Ten days after click: <code>864000000</code></td>
+      </tr>
+      <tr>
+        <td><code>attributionreportto</code> (optional): where to send attribution reports to.</td>
+        <td>Top-level origin of the page where the link element is added.</td>
+        <td><code>https://adtech.example</code></td>
+      </tr>
+      <tr>
+        <td><code>href</code>: the intended navigation destination for the ad click.</td>
+        <td><code>/</code></td>
+        <td><code>https://advertiser.example/shoes07</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+{% Aside %} Note about the example: the ad doesn't have to be in an iframe, but this is what this example is based on. {% endAside %}
+
+When the user taps or clicks the ad, they navigate to the advertiser's site. Once the navigation is
+committed, the browser stores an object that includes `attributionsourceeventid`, `attributiondestination`,
+`attributionreportto`, and `attributionexpiry`.
+
+### Attribution trigger and report scheduling (steps 6 to 9)
+
+<figure class="w-figure">
+{% Img src="image/O2RNUyVSLubjvENAT3e7JSdqSOx1/JDRmlGaUiBW1sN1ItQET.jpg", alt="Diagram: attribution trigger and report scheduling", width="800", height="623" %}
+</figure>
+
+Either directly after clicking the ad, or later on—for example, on the next day—the user visits
+`advertiser.example`, browses sports shoes, finds a pair they want to purchase, and proceeds to
+checkout. `advertiser.example` has included a pixel on the checkout page:
+
+```html
+<img
+  height="1"
+  width="1"
+  src="https://adtech.example/attribution?model=shoe07&type=checkout&…"
+/>
+```
+
+`adtech.example` receives this request, and decides that it qualifies as a conversion. They now need
+to ask the browser to record an attribution. `adtech.example` compresses all of
+the attribution trigger data into 3 bits—an integer between 0 and 7, for example they might map a
+**Checkout** action to a attribution trigger data value of 2.
+
+`adtech.example` then sends a specific redirect to the browser:
+
+```js
+const conversionValues = {
+  signup: 1,
+  checkout: 2,
+};
+
+app.get('/attribution', (req, res) => {
+  const attributionTriggerData = conversionValues[req.query.conversiontype];
+  res.redirect(
+    302,
+    `/.well-known/attribution-reporting/trigger-attribution?data=${attributionTriggerData}`,
+  );
+});
+```
+
+{% Aside %} `.well-known` URLs are special URLs. They make it easy for software tools and servers to
+discover commonly-needed information or resources for a site—for example, on what page a user can
+[change their password](/change-password-url/). Here, `.well-known` is only used so that the browser
+recognizes this as a special request. This request is actually cancelled internally by
+the browser. {% endAside %}
+
+The browser receives this request. Upon detecting `/.well-known/attribution-reporting/trigger-attribution`, the browser:
+
+- Looks up all ad clicks in storage that match this `attributiondestination` (because it's receiving
+  this attribution request on a URL that has been registered as a `attributiondestination` URL when the user
+  clicked the ad). It finds the ad click that happened on the publisher's site one day before.
+- Registers an attribution for this ad click.
+
+Several ad clicks can match an attribution—the user may have clicked an ad for `shoes.example` on both
+`news.example` and `weather.example`. In this case, several attribution triggers are registered.
+
+Now, the browser knows that it needs to inform the adtech server about this—more
+specifically, the browser must inform the `attributionreportto` endpoint that is specified in both the `<a>`
+element and in the pixel request (`adtech.example`).
+
+To do so, the browser schedules to send an **attribution report**. For this example,
+the user converted one day after click. So the report is scheduled to be sent on the next day, at
+the two-day-after-click mark if the browser is running.
+
+### Sending the report (steps 10 and 11)
+
+<figure class="w-figure">
+{% Img src="image/O2RNUyVSLubjvENAT3e7JSdqSOx1/etdhYASKY7ZJk0YsmrMs.jpg", alt="Diagram: report sending", width="800", height="535" %}
+</figure>
+
+Once the scheduled time to send the report is reached, the browser sends the **attribution report**
+to the reporting endpoint that was specified in the `<a>` element (`adtech.example` in our case). Note that reports are [delayed](#report-timing).
+
+It sends an HTTP POST to
+`https://adtech.example/.well-known/attribution-reporting/report-attribution`.
+
+The report data is included in the request body as a JSON object with the following structure:
+
+```json
+{
+  "source_event_id": 200400600,
+  "trigger_data": 2,
+  "credit": 100
+}
+```
+
+This includes:
+
+- `source_event_id`: 64-bit event id set on the attribution source (from the publisher's site).
+
+- `trigger_data`: 3-bit attribution trigger data from the advertiser's site, [potentially noised](#noising-of-trigger-data).
+
+- `credit`: an integer of value 0 or 100. This API follows a **last-click attribution**
+  model: the most recent matching ad click is given a credit of 100, all other matching ad clicks
+  are given a credit of 0.
+
+### Subsequent attributions and expiry
+
+Later on, the user may convert again—for example by purchasing a tennis racket on
+`advertiser.example` to go alongside their shoes. A similar flow takes place:
+
+- The adtech server sends an attribution request to the browser.
+- The browser matches this with the ad click, schedules a report, and later on it sends the report
+  to the specified endpoint (`adtech.example` in our case).
+
+After `attributionexpiry`, conversions for this ad click stop being counted and the ad click is
+deleted from browser storage.
+
+## Try it out
+
+### Demo
+
+Try out the [demo](https://goo.gle/demo-attribution-reporting). Make sure to follow
+the "Before you start" instructions.
+
+Tweet [@maudnals](https://twitter.com/maudnals?lang=en) or
+[@ChromiumDev](https://twitter.com/ChromiumDev) for any question about the demo!
+
+### Experiment with the API
+
+If you're planning to experiment with the API (locally or with end users), see [Using the Attribution Reporting API](/using-conversion-measurement).
+
+### Share your feedback
+
+**Your feedback is crucial**, so that this API can support your use cases and
+provide a good developer experience.
+
+- To report a bug on the Chrome implementation, [open a
+  bug](https://bugs.chromium.org/p/chromium/issues/entry?status=Unconfirmed&components=Internals>ConversionMeasurement&description=Chrome%20Version%3A%20%28copy%20from%20chrome%3A%2F%2Fversion%29%0AOS%3A%20%28e.g.%20Win10%2C%20MacOS%2010.12%2C%20etc...%29%0AURLs%20%28if%20applicable%29%20%3A%0A%0AWhat%20steps%20will%20reproduce%20the%20problem%3F%0A%281%29%0A%282%29%0A%283%29%0A%0AWhat%20is%20the%20expected%20result%3F%0A%0A%0AWhat%20happens%20instead%3F%0A%0AIf%20applicable%2C%20include%20screenshots%2Finfo%20from%20chrome%3A%2F%2Fconversion-internals%20or%20relevant%20devtools%20errors.%0A).
+- To share feedback and discuss use cases on the Chrome API, create a new issue or engage in
+  existing ones on the [API proposal
+  repository](https://github.com/WICG/conversion-measurement-api/issues). Similarly, you can discuss
+  the WebKit/Safari API and its use cases on the [API proposal
+  repository](https://github.com/privacycg/private-click-measurement/issues).
+- To discuss advertising use cases and exchange views with industry experts: join the [Improving Web
+  Advertising Business Group](https://www.w3.org/community/web-adv/). Join the [Privacy Community
+  Group](https://www.w3.org/community/privacycg/) for discussions around the WebKit/Safari API.
+
+### Keep an eye out
+
+As developer feedback and use cases are gathered, the Attribution Reporting API will evolve over
+time. Watch the proposal's [GitHub
+repository](https://github.com/WICG/conversion-measurement-api/).
+
+_With many thanks for contributions and feedback to all reviewers—especially Charlie Harrison, John
+Delaney, Michael Kleber and Kayce Basques._
+
+_Hero image by William Warby / @wawarby on [Unsplash](https://unsplash.com/photos/WahfNoqbYnM),
+edited._
+
+## Appendix: why is this needed?
+
+Today, ad conversion measurement often relies on [third-party
+cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies). **But
+browsers are restricting access to these.**
+
+Chrome plans on [phasing out support for third-party
+cookies](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html) and [offers
+ways for users to block them if they
+choose](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en). Safari
+[blocks third-party
+cookies](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/), Firefox [blocks
+known third-party tracking
+cookies](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default),
+and Edge [offers tracking
+prevention](https://support.microsoft.com/en-us/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention).
+
+Third-party cookies are becoming a legacy solution. **New purpose-built APIs are emerging** to
+address in a privacy-preserving way the use cases that third-party cookies solved.
+
+**How does the Attribution Reporting API compare to third-party cookies?**
+
+- It's **purpose-built** to measure conversions, unlike cookies. This in turn can enable browsers to
+  apply more enhanced privacy protections.
+- It's **more private**: it makes it difficult to recognize a user across two different top-level
+  sites, for example to link publisher-side and advertiser-side user profiles. See how in [How this
+  API preserves user privacy](#appendix:-how-this-api-preserves-user-privacy).
+
+## Appendix: how does this API preserve user privacy?
 
 With this API, conversions can be measured while protecting users' privacy: users can't be
 recognized across sites. This is made possible by **data limits**, **noising of attribution trigger data**,
@@ -191,10 +467,6 @@ How much can `adtech.example` learn about web users?
 
 #### With third-party cookies
 
-<figure class="w-figure">
-  {% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="Diagram: how third-party cookies enable cross-site user recognition", width="800", height="860" %}
-</figure>
-
 `adtech.example` relies on a **a third-party cookie used as a unique cross-site identifier** to
 **recognize a user across sites**. In addition, `adtech.example` can access **both** detailed click-
 or view-time data and detailed conversion-time data—and link them.
@@ -205,13 +477,11 @@ view, click, and conversion.
 Because `adtech.example` is likely present on a large number of publisher and advertiser sites—not
 just `news.example` and `shoes.example`—a user's behavior can be tracked across the web.
 
-#### With the Attribution Reporting API
-
 <figure class="w-figure">
-  {% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="Diagram: how the API enables conversion measurement without cross-site user recognition", width="800", height="643" %}
-  <figcaption class="w-figcaption">"Ad ID" on the cookies diagram and "Click ID" are both identifiers that enable mapping
-    to detailed data. On this diagram, it's called "Click ID".</figcaption>
+  {% Img src="image/O2RNUyVSLubjvENAT3e7JSdqSOx1/dLpOFEcQuqTF0nAUhNuY.jpg", alt="Diagram: how third-party cookies enable cross-site user recognition", width="800", height="860" %}
 </figure>
+
+#### With the Attribution Reporting API
 
 `adtech.example` can't use a cross-site identifier and hence **can't recognize a user across
 sites**.
@@ -224,6 +494,12 @@ sites**.
 
 {% Aside %} The click ID and conversion-side data are never exposed to a JavaScript environment in the
 same context. {% endAside %}
+
+<figure class="w-figure">
+  {% Img src="image/O2RNUyVSLubjvENAT3e7JSdqSOx1/Sq6rUtjBJPSfYCTrYn0L.jpg", alt="Diagram: how the API enables conversion measurement without cross-site user recognition", width="800", height="643" %}
+  <figcaption class="w-figcaption">"Ad ID" on the cookies diagram and "Click ID" are both identifiers that enable mapping
+    to detailed data. On this diagram, it's called "Click ID".</figcaption>
+</figure>
 
 #### Without an alternative to third-party cookies
 
@@ -248,36 +524,7 @@ types of attacks more complicated.
 Note that it's possible to [recover the corrected attribution
 count](</using-conversion-measurement/#(optional)-recover-the-corrected-attribution-count>).
 
-Summing up click ID and attribution trigger data:
-
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
-    <thead>
-      <tr>
-        <th>Data</th>
-        <th>Size</th>
-        <th>Example</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Click ID (<code>attributionsourceeventid</code>)</td>
-        <td>64 bits</td>
-        <td>An ad ID or click ID</td>
-      </tr>
-      <tr>
-        <td>Attribution trigger data, conversion side (<code>attributiontriggerdata</code>)</td>
-        <td>3 bits, noised</td>
-        <td>An integer from 0 to 7 that can map to a conversion type (e.g. signup, complete checkout)</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
 ### Report timing
-
-If several attributions are registered for a given ad click, **a corresponding report is sent for
-each attribution, up to a maximum of three per click**.
 
 To prevent attribution time from being used to get more information from the attribution side (advertiser's side) and
 hence hinder users' privacy, this API specifies that attribution reports aren't sent immediately
@@ -348,296 +595,9 @@ In Chrome, report scheduling works as follows:
 </div>
 
 <figure class="w-figure">
-  {% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="Chronology of report sending", width="800", height="462" %}
+  {% Img src="image/O2RNUyVSLubjvENAT3e7JSdqSOx1/qAaml4Ie0ZEvNAZrged4.jpg", alt="Chronology of report sending", width="800", height="462" %}
 </figure>
 
 See [Sending Scheduled
 Reports](https://github.com/WICG/conversion-measurement-api#sending-scheduled-reports) for more
 details on timing.
-
-## Example
-
-{% Banner 'info', 'body' %} To see this in action, try out the
-[demo](http://goo.gle/demo-attribution-reporting) ⚡️ and see the corresponding
-[code](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement). {%
-endBanner %}
-
-Here's how the API records and reports an attribution. Note that this is how a click-to-convert flow
-would work with the current API. Future iterations of this API [may be different](#use-cases).
-
-### Ad click (steps 1 to 5)
-
-<figure class="w-figure">
-  {% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="Diagram: ad click and click storage", width="800", height="694" %}
-</figure>
-
-An `<a>` ad element is loaded on a publisher site by `adtech.example` within an iframe.
-
-The adtech platform developers have configured the `<a>` element with Attribution Reporting
-attributes:
-
-```html
-<a
-  id="ad"
-  attributionsourceeventid="200400600"
-  attributiondestination="https://advertiser.example"
-  attributionreportto="https://adtech.example"
-  attributionexpiry="864000000"
-  href="https://advertiser.example/shoes07"
-  target="_blank"
->
-  <img src="/images/shoe.jpg" alt="shoe" />
-</a>
-```
-
-This code specifies the following:
-
-<div class="w-table-wrapper">
-  <table class="w-table--top-align">
-    <thead>
-      <tr>
-        <th>Attribute</th>
-        <th>Default value, maximum, minimum</th>
-        <th>Example</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>attributionsourceeventid</code> (required): a <b>64-bit</b> identifier to attach to an ad click.</td>
-        <td>(no default)</td>
-        <td>A dynamically generated click ID such as a 64-bit integer:
-          <code>200400600</code>
-        </td>
-      </tr>
-      <tr>
-        <td><code>attributiondestination</code> (required): the <b><a href="https://web.dev/same-site-same-origin/#site" noopener>eTLD+1</a></b> where a conversion is expected for this ad.</td>
-        <td>(no default)</td>
-<td><code>https://advertiser.example</code>.<br/>If the <code>attributiondestination</code> is <code>https://advertiser.example</code>, conversions on both <code>https://advertiser.example</code> and <code>https://shop.advertiser.example</code> will be attributed.<br/>The same happens if the <code>attributiondestination</code> is <code>https://shop.advertiser.example</code>: conversions on both <code>https://advertiser.example</code> and <code>https://shop.advertiser.example</code> will be attributed. 
-        </td>
-      </tr>
-      <tr>
-        <td><code>attributionexpiry</code> (optional): in milliseconds, the cutoff time for when attributions can be recorded for this ad.</td>
-        <td>
-          <code>2592000000</code> = 30 days (in milliseconds).<br/><br/>
-          Maximum: 30 days (in milliseconds).<br/><br/>
-          Minimum: 2 days (in milliseconds).
-        </td>
-        <td>Ten days after click: <code>864000000</code></td>
-      </tr>
-      <tr>
-        <td><code>attributionreportto</code> (optional): where to send attribution reports to.</td>
-        <td>Top-level origin of the page where the link element is added.</td>
-        <td><code>https://adtech.example</code></td>
-      </tr>
-      <tr>
-        <td><code>href</code>: the intended navigation destination for the ad click.</td>
-        <td><code>/</code></td>
-        <td><code>https://advertiser.example/shoes07</code></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-{% Aside %} Note about the example: the ad doesn't have to be in an iframe, but this is what this example is based on. {% endAside %}
-
-When the user taps or clicks the ad, they navigate to the advertiser's site. Once the navigation is
-committed, the browser stores an object that includes `attributionsourceeventid`, `attributiondestination`,
-`attributionreportto`, and `attributionexpiry`.
-
-### Attribution trigger and report scheduling (steps 6 to 9)
-
-<figure class="w-figure">
-  {% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="Diagram: attribution trigger and report scheduling", width="800", height="639" %}
-</figure>
-
-Either directly after clicking the ad, or later on—for example, on the next day—the user visits
-`advertiser.example`, browses sports shoes, finds a pair they want to purchase, and proceeds to
-checkout. `advertiser.example` has included a pixel on the checkout page:
-
-```html
-<img
-  height="1"
-  width="1"
-  src="https://adtech.example/attribution?model=shoe07&type=checkout&…"
-/>
-```
-
-`adtech.example` receives this request, and decides that it qualifies as a conversion. They now need
-to ask the browser to record an attribution. `adtech.example` compresses all of
-the attribution trigger data into 3 bits—an integer between 0 and 7, for example they might map a
-**Checkout** action to a attribution trigger data value of 2.
-
-`adtech.example` then sends a specific redirect to the browser:
-
-```js
-const conversionValues = {
-  signup: 1,
-  checkout: 2,
-};
-
-app.get('/attribution', (req, res) => {
-  const attributionTriggerData = conversionValues[req.query.conversiontype];
-  res.redirect(
-    302,
-    `/.well-known/attribution-reporting/trigger-attribution?data=${attributionTriggerData}`,
-  );
-});
-```
-
-{% Aside %} `.well-known` URLs are special URLs. They make it easy for software tools and servers to
-discover commonly-needed information or resources for a site—for example, on what page a user can
-[change their password](/change-password-url/). Here, `.well-known` is only used so that the browser
-recognizes this as a special request. This request is actually cancelled internally by
-the browser. {% endAside %}
-
-The browser receives this request. Upon detecting `/.well-known/attribution-reporting/trigger-attribution`, the browser:
-
-- Looks up all ad clicks in storage that match this `attributiondestination` (because it's receiving
-  this attribution request on a URL that has been registered as a `attributiondestination` URL when the user
-  clicked the ad). It finds the ad click that happened on the publisher's site one day before.
-- Registers an attribution for this ad click.
-
-Several ad clicks can match an attribution—the user may have clicked an ad for `shoes.example` on both
-`news.example` and `weather.example`. In this case, several attribution triggers are registered.
-
-Now, the browser knows that it needs to inform the adtech server about this—more
-specifically, the browser must inform the `attributionreportto` endpoint that is specified in both the `<a>`
-element and in the pixel request (`adtech.example`).
-
-To do so, the browser schedules to send an **attribution report**. For this example,
-the user converted one day after click. So the report is scheduled to be sent on the next day, at
-the two-day-after-click mark if the browser is running.
-
-### Sending the report (steps 10 and 11)
-
-<figure class="w-figure">
-  {% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="Diagram: browser sending the report", width="800", height="533" %}
-</figure>
-
-Once the scheduled time to send the report is reached, the browser sends the **attribution report**
-to the reporting endpoint that was specified in the `<a>` element (`adtech.example` in our case).
-
-It sends an HTTP POST to
-`https://adtech.example/.well-known/attribution-reporting/report-attribution`. 
-
-The report data is included in the request body as a JSON object with the following structure:
-
-```JSON
-{
-  "source_event_id": 200400600,
-  "trigger_data": 2,
-  "credit": 100
-}
-```
-
-This includes:
-
-- `source_event_id`: 64-bit event id set on the attribution source (from the publisher's site)
-
-- `trigger_data`: 3-bit attribution trigger data from the advertiser's site, [potentially noised](#noising-of-trigger-data) 
-
-- `credit`: an integer of value 0 or 100. This API follows a **last-click attribution**
-  model: the most recent matching ad click is given a credit of 100, all other matching ad clicks
-  are given a credit of 0.
-
-
-### Subsequent attributions and expiry
-
-Later on, the user may convert again—for example by purchasing a tennis racket on
-`advertiser.example` to go alongside their shoes. A similar flow takes place:
-
-- The adtech server sends an attribution request to the browser.
-- The browser matches this with the ad click, schedules a report, and later on it sends the report
-  to the specified endpoint (`adtech.example` in our case).
-
-After `attributionexpiry`, conversions for this ad click stop being counted and the ad click is
-deleted from browser storage.
-
-## Use cases
-
-### What is currently supported
-
-- Measure click-through conversions: determine which ad clicks lead to conversions, and access
-  coarse information about the conversion.
-- Gather data to optimize ad selection, for example by training machine learning models.
-
-### What is not supported yet
-
-The following features aren't supported yet, but may be in future iterations of this API:
-
-- View-through conversion measurement.
-- [Multiple reporting endpoints](https://github.com/WICG/conversion-measurement-api/issues/29).
-- Conversion lift measurement / incrementality (measurement of causal differences in conversion
-  behavior, by measuring the difference between a test group that saw an ad and a control group that
-  didn't).
-- Attribution models that are not last-click.
-- Use cases that require larger amounts of information about the conversion event. For example,
-  granular purchase values or product categories.
-- [App-to-web conversions](https://github.com/WICG/conversion-measurement-api/blob/main/app_to_web.md), i.e. is web conversions that started in an iOS/Android
-  app.
-
-Before these features and more can be supported, **more privacy protections** (noise, fewer bits, or
-other limitations) must be added to the API.
-
-Discussion of additional possible features takes place in the open, in the [**Issues** of the API
-proposal repository](https://github.com/WICG/conversion-measurement-api/issues).
-
-{% Aside %} Is your use case missing? Do you have feedback on the API? [Share
-it](#share-your-feedback). {% endAside %}
-
-### What else may change in future iterations
-
-- This API is at an early, experimental stage. In future iterations, this API may undergo
-  substantial changes including but not limited to the ones listed below. Its goal is to measure
-  conversions while preserving user privacy, and any change that would help better address this use
-  case will be made.
-- API and attribute naming may evolve.
-- The 3-bit limit for attribution trigger data may be increased or decreased.
-- [More features may be added](#what-is-not-supported-yet), and **more privacy protections** (noise
-  / fewer bits / other limitations) if needed to support these new features.
-
-To follow and participate in discussions on new features, watch the proposal's [GitHub
-repository](https://github.com/WICG/conversion-measurement-api/issues) and submit ideas.
-
-## Try it out
-
-### Demo
-
-Try out the [demo](https://goo.gle/demo-attribution-reporting). Make sure to follow
-the "Before you start" instructions.
-
-Tweet [@maudnals](https://twitter.com/maudnals?lang=en) or
-[@ChromiumDev](https://twitter.com/ChromiumDev) for any question about the demo!
-
-### Experiment with the API
-
-If you're planning to experiment with the API (locally or with end users), see [Using the Attribution Reporting API](/using-conversion-measurement).
-
-### Share your feedback
-
-**Your feedback is crucial**, so that this API can support your use cases and
-provide a good developer experience.
-
-- To report a bug on the Chrome implementation, [open a
-  bug](https://bugs.chromium.org/p/chromium/issues/entry?status=Unconfirmed&components=Internals>ConversionMeasurement&description=Chrome%20Version%3A%20%28copy%20from%20chrome%3A%2F%2Fversion%29%0AOS%3A%20%28e.g.%20Win10%2C%20MacOS%2010.12%2C%20etc...%29%0AURLs%20%28if%20applicable%29%20%3A%0A%0AWhat%20steps%20will%20reproduce%20the%20problem%3F%0A%281%29%0A%282%29%0A%283%29%0A%0AWhat%20is%20the%20expected%20result%3F%0A%0A%0AWhat%20happens%20instead%3F%0A%0AIf%20applicable%2C%20include%20screenshots%2Finfo%20from%20chrome%3A%2F%2Fconversion-internals%20or%20relevant%20devtools%20errors.%0A).
-- To share feedback and discuss use cases on the Chrome API, create a new issue or engage in
-  existing ones on the [API proposal
-  repository](https://github.com/WICG/conversion-measurement-api/issues). Similarly, you can discuss
-  the WebKit/Safari API and its use cases on the [API proposal
-  repository](https://github.com/privacycg/private-click-measurement/issues).
-- To discuss advertising use cases and exchange views with industry experts: join the [Improving Web
-  Advertising Business Group](https://www.w3.org/community/web-adv/). Join the [Privacy Community
-  Group](https://www.w3.org/community/privacycg/) for discussions around the WebKit/Safari API.
-
-### Keep an eye out
-
-As developer feedback and use cases are gathered, the Attribution Reporting API will evolve over
-  time. Watch the proposal's [GitHub
-  repository](https://github.com/WICG/conversion-measurement-api/).
-
-
-_With many thanks for contributions and feedback to all reviewers—especially Charlie Harrison, John
-Delaney, Michael Kleber and Kayce Basques._
-
-_Hero image by William Warby / @wawarby on [Unsplash](https://unsplash.com/photos/WahfNoqbYnM),
-edited._
