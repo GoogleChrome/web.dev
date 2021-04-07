@@ -130,7 +130,7 @@ window size.
 
 ## How will this affect my page's CLS score?
 
-Since this update caps the CLS of a page, **no page will have a higher score**
+Since this update caps the CLS of a page, **no page will have a worse score**
 as a result of this change.
 
 And based on our analysis, **55% of origins will not see a change in CLS at all
