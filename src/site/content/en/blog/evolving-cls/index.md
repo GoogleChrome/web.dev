@@ -1,7 +1,7 @@
 ---
 title: "Evolving the CLS metric"
-subhead: "We're planning an improvement to the CLS metric to be more fair to long-lived pages."
-description: "We're planning an improvement to the CLS metric to be more fair to long-lived pages."
+subhead: "Plans for improving the CLS metric to be more fair to long-lived pages."
+description: "Plans for improving the CLS metric to be more fair to long-lived pages."
 authors:
   - anniesullie
   - hbsong
@@ -28,7 +28,7 @@ We reviewed all the feedback received from the developer community and took it
 into account.
 
 We also implemented the [top
-options](https://web.dev/better-layout-shift-metric/#best-strategies) in Chrome
+options](/better-layout-shift-metric/#best-strategies) in Chrome
 and did a large-scale analysis of the metrics over millions of web pages. We
 checked what types of sites each option improved, and how the options compared,
 especially looking into the sites which were scored differently by different
@@ -43,9 +43,9 @@ options. Overall, we found that:
 
 ### Why a session window?
 
-In our [earlier post]((https://web.dev/better-layout-shift-metric/)), we covered
+In our [earlier post](/better-layout-shift-metric/), we covered
 [a few different windowing
-strategies](https://web.dev/better-layout-shift-metric/#windowing-strategies)
+strategies](/better-layout-shift-metric/#windowing-strategies)
 for grouping together layout shifts while ensuring the score doesn't grow
 unbounded. The feedback we received from developers overwhelmingly favored the
 session window strategy because it groups the layout shifts together most
@@ -62,9 +62,18 @@ To review session windows, here's an example:
     Example of a session window.
   </figcaption>
 </figure>
-In the example above, many layout shifts occur over time as the user views the page. Each is represented by a blue bar. You'll notice above that the blue bars have different heights; those represent the [score](https://web.dev/cls/#layout-shift-score) of each individual layout shift. A session window starts with the first layout shift and continues to expand until there is a gap with no layout shifts. When the next layout shift occurs, a new session window starts. Since there are three gaps with no layout shifts, there are three session windows in the example. Similar to the current definition of CLS, the scores of each shift are added up, so that each window's score is the sum of its individual layout shifts.
 
-Based on our [initial
+In the example above, many layout shifts occur over time as the user views the 
+page. Each is represented by a blue bar. You'll notice above that the blue bars 
+have different heights; those represent the [score](/cls/#layout-shift-score) of 
+each individual layout shift. A session window starts with the first layout shift 
+and continues to expand until there is a gap with no layout shifts. When the next 
+layout shift occurs, a new session window starts. Since there are three gaps with 
+no layout shifts, there are three session windows in the example. Similar to the 
+current definition of CLS, the scores of each shift are added up, so that each 
+window's score is the sum of its individual layout shifts.
+
+Based on the [initial
 research](https://web.dev/better-layout-shift-metric/#best-strategies), we chose
 a 1 second gap between session windows, and that gap worked well in our
 large-scale analysis. So the "Session Gap" shown in the example above is 1
@@ -93,7 +102,7 @@ On the bottom right, you can see there is only a single, tiny layout shift in
 Session Window 2, giving it a very low score. That means that the average score
 is pretty low. But what if the developer fixes that tiny layout shift? Then the
 score is calculated just on Session Window 1, which means that the page's score
-**nearly doubles**. It would be really confusing and discouraging to developers
+*nearly doubles*. It would be really confusing and discouraging to developers
 to improve their layout shifts only to find that the score got worse. And
 removing this small layout shift is obviously slightly better for the user
 experience, so it shouldn't worsen the score.
@@ -134,7 +143,7 @@ this change.** Most will only see a slight improvement, but about 3% will see
 their scores improve from having a "needs improvement" or "poor" ratings to
 having a "good" rating. These pages tend to use infinite scrollers or have many
 slow UI updates, as described in our [earlier
-post](https://web.dev/better-layout-shift-metric/).
+post](/better-layout-shift-metric/).
 
 ## How can I try it out?
 
