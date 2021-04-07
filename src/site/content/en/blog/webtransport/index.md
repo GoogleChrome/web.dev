@@ -24,7 +24,7 @@ feedback:
 
 ### What's WebTransport?
 
-[WebTransport](https://wicg.github.io/web-transport/) is a web API that uses the [HTTP/3](https://quicwg.org/base-drafts/draft-ietf-quic-http.html) protocol as a bidirectional transport. It's intended for two-way communications between a web client and an HTTP/3 server. It supports sending data both unreliably via its [datagram APIs](#datagram), and reliably via its [streams APIs](#stream).
+[WebTransport](https://w3c.github.io/webtransport/) is a web API that uses the [HTTP/3](https://quicwg.org/base-drafts/draft-ietf-quic-http.html) protocol as a bidirectional transport. It's intended for two-way communications between a web client and an HTTP/3 server. It supports sending data both unreliably via its [datagram APIs](#datagram), and reliably via its [streams APIs](#stream).
 
 [Datagrams](https://tools.ietf.org/html/draft-ietf-quic-datagram-00) are ideal for sending and receiving data that do not need strong delivery guarantees. Individual packets of data are limited in size by the [maximum transmission unit (MTU)](https://en.wikipedia.org/wiki/Maximum_transmission_unit) of the underlying connection, and may or may not be transmitted successfully, and if they are transferred, they may arrive in an arbitrary order. These characteristics make the datagram APIs ideal for low-latency, best-effort data transmission. You can think of datagrams as [user datagram protocol (UDP)](https://en.wikipedia.org/wiki/User_Datagram_Protocol) messages, but encrypted and congestion-controlled.
 
@@ -52,8 +52,8 @@ WebTransport helps with similar use cases as QuicTransport, with the primary dif
 
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
-| 1. Create explainer                        | [Complete](https://github.com/WICG/web-transport/blob/master/explainer.md) |
-| 2. Create initial draft of specification   | [Complete](https://wicg.github.io/web-transport/) |
+| 1. Create explainer                        | [Complete](https://github.com/w3c/webtransport/blob/main/explainer.md) |
+| 2. Create initial draft of specification   | [Complete](https://w3c.github.io/webtransport/) |
 | **3. Gather feedback and iterate design**  | [**In Progress**](#feedback) |
 | **4. Origin trial**                        | [**In Progress**](#register-for-ot) |
 | 5. Launch                                  | Not Started |
