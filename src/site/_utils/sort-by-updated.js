@@ -19,11 +19,11 @@
  * @param {EleventyCollectionItem} b An eleventy post object.
  * @return {number} The difference in their date's.
  */
-function sortByDate(a, b) {
+function sortByUpdated(a, b) {
   const aTime = a.data.updated ? a.data.updated.getTime() : a.date.getTime();
   const bTime = b.data.updated ? b.data.updated.getTime() : b.date.getTime();
 
   return bTime - aTime;
 }
 
-module.exports = {sortByDate};
+module.exports = {sortByUpdated};

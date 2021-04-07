@@ -16,7 +16,7 @@
 /** @type TagsData */
 const tagsData = require('../_data/tagsData.json');
 const {livePosts} = require('../_filters/live-posts');
-const {sortByDate} = require('../_utils/sort-by-date');
+const {sortByUpdated} = require('../_utils/sort-by-updated');
 
 /** @type Tags */
 let processedCollection;
@@ -63,7 +63,7 @@ module.exports = (collections) => {
       tag.elements = collections
         .getFilteredByTag(tag.key)
         .filter(livePosts)
-        .sort(sortByDate);
+        .sort(sortByUpdated);
     }
 
     if (tag.elements.length > 0 || !collections) {
