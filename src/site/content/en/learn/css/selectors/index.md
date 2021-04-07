@@ -254,8 +254,9 @@ It's also extended to a class named `.my-class`,and an element that has a `lang`
 
 ## Pseudo-classes and pseudo-elements
 
-CSS provides useful selector types that focus on specific platform state,
-like when an element is hovered, structures _inside_ an element, or parts of an element.
+CSS provides useful selector types that enabling the styling of
+specific platform states, like when an element is hovered.
+You can also style parts of that element.
 
 ### Pseudo-classes
 
@@ -373,6 +374,7 @@ p strong {
 
 This snippet selects all `<strong>` elements
 that are child elements of `<p>` elements only and makes them blue, recursively.
+The `p strong` selector is a combinator selector. The combinator is the space character.
 
 <figure class="w-figure">
   {% Codepen {
@@ -482,8 +484,8 @@ a.my-class {
 ```
 
 This wouldn't apply a red color to all links
-and it would also only apply the red color to `.my-class` **if** it was on an `<a>` element.
-For more on specificity, see module 3.
+and it would also only apply the red color to any `<a>` elements (links) with a class of `.my-class`.
+For more on specificity, see module 4.
 
 @@TO DO link
 
