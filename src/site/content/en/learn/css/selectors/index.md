@@ -49,7 +49,7 @@ containing one or more selectors and one or more declarations.
 {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/Vh2pt6e50XaObt1lEjEv.png", alt="An image of a CSS rule with the selector .my-css-rule", width="800", height="427" %}
 </figure>
 
-In this CSS rule, the **selector** is `.my-css-rule`,
+In this CSS rule, the **selector** is `.my-css-rule`
 which finds all elements with a class of `my-css-rule` on the page.
 There are three declarations within the curly brackets.
 A declaration is a property and value pair which applies styles to the elements matched by the selectors.
@@ -122,11 +122,10 @@ This is because CSS looks for a `class` attribute that _contains_ the defined cl
 rather than matching that class exactly.
 
 {% Aside %}
-
-A class attribute can be whatever you want it to be, mostly, but one thing that could trip
-you up is that you can't start either with a number, such as `.1element`.
+The value of a class attribute can be almost anything you want it to be.
+One thing that could trip you up, is that you can't start a class (or an ID) with a number,
+such as `.1element`.
 You can read more [in the specification](https://www.w3.org/TR/CSS21/syndata.html#characters).
-
 {% endAside %}
 
 ### ID selector
@@ -238,7 +237,7 @@ you have access to operators that match portions of strings inside attribute val
 ### Grouping selectors
 
 A selector doesn't have to match only a single element.
-You can group multiple selectors—separating them with commas—like this:
+You can group multiple selectors by separating them with commas:
 
 ```css
 strong,
@@ -254,9 +253,8 @@ It's also extended to a class named `.my-class`,and an element that has a `lang`
 
 ## Pseudo-classes and pseudo-elements
 
-CSS provides useful selector types that enabling the styling of
-specific platform states, like when an element is hovered.
-You can also style parts of that element.
+CSS provides useful selector types that focus on specific platform state,
+like when an element is hovered, structures _inside_ an element, or parts of an element.
 
 ### Pseudo-classes
 
@@ -373,8 +371,7 @@ p strong {
 ```
 
 This snippet selects all `<strong>` elements
-that are child elements of `<p>` elements only and makes them blue, recursively.
-The `p strong` selector is a combinator selector. The combinator is the space character.
+that are child elements of `<p>` elements only, making them blue recursively.
 
 <figure class="w-figure">
   {% Codepen {
@@ -484,8 +481,8 @@ a.my-class {
 ```
 
 This wouldn't apply a red color to all links
-and it would also only apply the red color to any `<a>` elements (links) with a class of `.my-class`.
-For more on specificity, see module 4.
+and it would also only apply the red color to `.my-class` **if** it was on an `<a>` element.
+For more on specificity, see module 3.
 
 @@TO DO link
 
