@@ -20,9 +20,7 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const yaml = require('js-yaml');
 
 const toc = require('eleventy-plugin-toc');
-const markdownIt = require('markdown-it');
-const markdownItAnchor = require('markdown-it-anchor');
-const markdownItAttrs = require('markdown-it-attrs');
+const markdown = require('./src/site/_plugins/markdown');
 
 const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
@@ -126,42 +124,7 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // MARKDOWN
   // ----------------------------------------------------------------------------
-  const markdownItOptions = {
-    html: true,
-  };
-  const markdownItAnchorOptions = {
-    level: 2,
-    permalink: true,
-    permalinkClass: 'w-headline-link',
-    permalinkSymbol: '#',
-    slugify,
-  };
-  const markdownItAttrsOpts = {
-    leftDelimiter: '{:',
-    rightDelimiter: '}',
-    allowedAttributes: ['id', 'class', /^data-.*$/],
-  };
-
-  const mdLib = markdownIt(markdownItOptions)
-    .use(markdownItAnchor, markdownItAnchorOptions)
-    .use(markdownItAttrs, markdownItAttrsOpts)
-    .disable('code');
-
-  // custom renderer rules
-  const fence = mdLib.renderer.rules.fence;
-
-  const rules = {
-    fence: (tokens, idx, options, env, slf) => {
-      const fenced = fence(tokens, idx, options, env, slf);
-      return `<web-copy-code>${fenced}</web-copy-code>`;
-    },
-    table_close: () => '</table>\n</div>',
-    table_open: () => '<div class="w-table-wrapper">\n<table>\n',
-  };
-
-  mdLib.renderer.rules = {...mdLib.renderer.rules, ...rules};
-
-  config.setLibrary('md', mdLib);
+  config.setLibrary('md', markdown);
 
   // ----------------------------------------------------------------------------
   // NON-11TY FILES TO WATCH

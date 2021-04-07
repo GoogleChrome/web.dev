@@ -98,6 +98,15 @@ li > ol:not([class]) {
 }
 
 // Definition lists
+dt {
+  font-weight: $FONT_WEIGHT_BOLD;
+  margin-left: 1em;
+}
+
 dd {
-  margin-bottom: 16px;
+  margin-left: 2em;
+}
+
+dd + dt {
+  margin-top: .5em;
 }
