@@ -1,5 +1,5 @@
 ---
-title: A more private way to measure ad conversions, the Event Conversion Measurement API
+title: A more private way to measure ad conversions, the Attribution Reporting API
 subhead: >
   A new web API available as an origin trial measures when an ad click leads to a conversion, without using cross-site identifiers.
 authors:
@@ -7,7 +7,7 @@ authors:
   - samdutton
 hero: image/admin/wRrDtHNikUNqgdDewvYG.jpg
 date: 2020-10-06
-updated: 2020-02-10
+updated: 2021-04-07
 tags:
   - blog
   - privacy
@@ -15,8 +15,8 @@ tags:
 
 In order to measure the effectiveness of ad campaigns, advertisers and publishers need to know when
 an ad click or view leads to a [conversion](/digging-into-the-privacy-sandbox/#conversion), such as
-a purchase or sign-up. Historically, this has been done with **third-party cookies**. Now, the Event
-Conversion Measurement API enables the correlation of an event on a publisher's website with a
+a purchase or sign-up. Historically, this has been done with **third-party cookies**. Now, the
+Attribution Reporting API enables the correlation of an event on a publisher's website with a
 subsequent conversion on an advertiser site without involving mechanisms that can be used to
 recognize a user across sites.
 
@@ -36,8 +36,8 @@ endAside %}
 - **Advertisers**: companies paying for advertising.
 - **Publishers**: companies that display ads on their websites.
 - **Click-through conversion**: conversion that is attributed to an ad click.
-- **View-through conversion**: conversion that is attributed to an ad impression (if the user
-  doesn't interact with the ad, then later converts).
+- **View-through conversion**: conversion that is attributed to an ad impression, that is, if the
+  user doesn't interact with the ad then later converts.
 
 ## Who needs to know about this API: adtech platforms, advertisers, and publishers
 
@@ -75,25 +75,20 @@ prevention](https://support.microsoft.com/en-us/help/4533959/microsoft-edge-lear
 Third-party cookies are becoming a legacy solution. **New purpose-built APIs are emerging** to
 address in a privacy-preserving way the use cases that third-party cookies solved. To name a few:
 
-- The Event Conversion Measurement API helps measure click-through conversions for now, and maybe
-  view-through conversions in future iterations.
-- The [Aggregate Conversion Measurement
-  API](https://github.com/WICG/conversion-measurement-api/blob/master/AGGREGATE.md) provides rich
-  reports to advertisers by [aggregating conversions from multiple
-  clients](https://github.com/WICG/conversion-measurement-api/blob/master/SERVICE.md).
+- The Attribution Reporting API helps measure ad conversions.
 - [Trust Tokens](/trust-tokens/) help combat fraud and distinguish bots from humans.
 
 <figure class="w-figure">
-  {% Img src="image/admin/vs7VtXlG4d6wHjZ1Tmwi.jpg", alt="Overview of some privacy sandbox APIs: trust tokens and conversion measurement (aggregate and event)", width="800", height="254" %}
+  {% Img src="image/admin/vs7VtXlG4d6wHjZ1Tmwi.jpg", alt="Overview of some privacy sandbox APIs: Trust Tokens and Attribution Reporting", width="800", height="254" %}
 </figure>
 
-**How does the Event Conversion Measurement API compare to third-party cookies?**
+**How does the Attribution Reporting API compare to third-party cookies?**
 
 - It's **purpose-built** to measure conversions, unlike cookies. This in turn can enable browsers to
   apply more enhanced privacy protections.
 - It's **more private**: it makes it difficult to recognize a user across two different top-level
-  sites, for example to link publisher-side and advertiser-side user profiles. See how in [How
-  this API preserves user privacy](#how-this-api-preserves-user-privacy).
+  sites, for example to link publisher-side and advertiser-side user profiles. See how in [How this
+  API preserves user privacy](#how-this-api-preserves-user-privacy).
 
 ### A first iteration
 
@@ -111,18 +106,18 @@ proposal](https://github.com/WICG/conversion-measurement-api#privacy-considerati
 ### How it works
 
 <figure class="w-figure">
-  {% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="Diagram: overview of the conversion measurement API steps", width="800", height="496" %}
+  {% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="Diagram: overview of the Attribution Reporting API steps", width="800", height="496" %}
 </figure>
 
 This API can be used with two types of links (`<a>` elements) used for advertising:
 
-- Links in a **first-party** context, such as ads on a social network or a search
-  engine results page;
-- Links in a **third-party iframe**, such as on a publisher site that uses a
-  third-party adtech provider.
+- Links in a **first-party** context, such as ads on a social network or a search engine results
+  page;
+- Links in a **third-party iframe**, such as on a publisher site that uses a third-party adtech
+  provider.
 
-With this API, such outbound links can be configured with attributes that are
-specific to ad conversions:
+With this API, such outbound links can be configured with attributes that are specific to ad
+conversions:
 
 - Custom data to attach to an ad click on the publisher's side, for example a click ID or campaign
   ID.
@@ -131,7 +126,7 @@ specific to ad conversions:
 - The cut-off date and time for when conversions can no longer be counted for this ad.
 
 When the user clicks an ad, the browser—on the user's local device—records this event, alongside
-conversion configuration and click data specified by Conversion Measurement attributes on the `<a>`
+conversion configuration and click data specified by Attribution Reporting attributes on the `<a>`
 element.
 
 Later on, the user may visit the advertiser's website and perform an action that the advertiser or
@@ -152,11 +147,12 @@ timing](#report-timing)).
 
 ### Browser support
 
-The Event Conversion Measurement API can be supported:
+The Attribution Reporting API can be supported:
 
-- As an [origin trial](/origin-trials/). Origin trials enable the API for **all visitors** of a given
+- As an [origin trial](/origin-trials/), from Chrome 86 beta and Chrome 87 (stable from mid-November
+  2020), to Chrome 88 (February 2021). Origin trials enable the API for **all visitors** of a given
   [origin](/same-site-same-origin/#origin). **You need to register your origin for the origin trial
-  in order to try the API with end users**. See [Using the conversion measurement API](/using-conversion-measurement) for details about the origin trial.
+  in order to try the API with end users**.
 - By turning on flags, in Chrome 86 and later. Flags enable the API on a **single user**'s browser.
   **Flags are useful when developing locally**.
 
@@ -171,9 +167,8 @@ This API is being designed in the open, in the Web Platform Incubator Community 
 ### Similar APIs
 
 WebKit, the web browser engine used by Safari, has a proposal with similar goals, the [Private Click
-Measurement](https://github.com/privacycg/private-click-measurement).
-It's being worked on within the Privacy Community Group
-([PrivacyCG](https://www.w3.org/community/privacycg/)).
+Measurement](https://github.com/privacycg/private-click-measurement). It's being worked on within
+the Privacy Community Group ([PrivacyCG](https://www.w3.org/community/privacycg/)).
 
 ## How this API preserves user privacy
 
@@ -212,11 +207,12 @@ view, click, and conversion.
 Because `adtech.example` is likely present on a large number of publisher and advertiser sites—not
 just `news.example` and `shoes.example`—a user's behavior can be tracked across the web.
 
-#### With the Event Conversion Measurement API
+#### With the Attribution Reporting API
 
 <figure class="w-figure">
   {% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="Diagram: how the API enables conversion measurement without cross-site user recognition", width="800", height="643" %}
-  <figcaption class="w-figcaption">"Ad ID" on the cookies diagram and "Click ID" are both identifiers that enable mapping to detailed data. On this diagram, it's called "Click ID" because only click-through conversion measurement is supported.</figcaption>
+  <figcaption class="w-figcaption">"Ad ID" on the cookies diagram and "Click ID" are both identifiers that enable mapping
+    to detailed data. On this diagram, it's called "Click ID".</figcaption>
 </figure>
 
 `adtech.example` can't use a cross-site identifier and hence **can't recognize a user across
@@ -233,12 +229,12 @@ same context. {% endAside %}
 
 #### Without an alternative to third-party cookies
 
-Without an alternative to third-party cookies such as the Event Conversion Measurement API,
-conversions can't be attributed: if `adtech.example` is present on both the publisher's and
-advertiser's site, it may access click-time or conversion-time data but it can't link them at all.
+Without an alternative to third-party cookies such as the Attribution Reporting API, conversions
+can't be attributed: if `adtech.example` is present on both the publisher's and advertiser's site,
+it may access click-time or conversion-time data but it can't link them at all.
 
 In this case, user privacy is preserved but advertisers can't optimize their ad spend. This is why
-an alternative like the Event Conversion Measurement API is needed.
+an alternative like the Attribution Reporting API is needed.
 
 ### Noising of conversion data
 
@@ -267,7 +263,7 @@ Summing up click data and conversion data:
     </thead>
     <tbody>
       <tr>
-        <td>Click data (<code>impressiondata</code> attribute)</td>
+        <td>Click data (<code>attributionsourceeventid</code> attribute)</td>
         <td>64 bits</td>
         <td>An ad ID or click ID</td>
       </tr>
@@ -292,10 +288,10 @@ associated with this click begins. Each reporting window has a deadline, and con
 before that deadline will be sent at the end of that window.
 
 Reports may not be exactly sent at these scheduled dates and times: if the browser isn't running
-when a report is scheduled to be sent, the report is sent at browser startup—which could be days
-or weeks after the scheduled time.
+when a report is scheduled to be sent, the report is sent at browser startup—which could be days or
+weeks after the scheduled time.
 
-After expiry (click time + `impressionexpiry`), no conversion is counted—`impressionexpiry` is the
+After expiry (click time + `attributionexpiry`), no conversion is counted—`attributionexpiry` is the
 cut-off date and time for when conversions can no longer be counted for this ad.
 
 In Chrome, report scheduling works as follows:
@@ -304,7 +300,7 @@ In Chrome, report scheduling works as follows:
   <table class="w-table--top-align">
     <thead>
       <tr>
-        <th><code>impressionexpiry</code></th>
+        <th><code>attributionexpiry</code></th>
         <th>Depending on conversion time, a conversion report is sent (if the browser is open)...</th>
         <th>Number of reporting windows</th>
       </tr>
@@ -316,36 +312,36 @@ In Chrome, report scheduling works as follows:
           <ul>
             <li>2 days after the ad was clicked</li>
             <li>or 7 days after ad click</li>
-            <li>or <code>impressionexpiry</code> = 30 days after ad click.</li>
+            <li>or <code>attributionexpiry</code> = 30 days after ad click.</li>
           </ul>
         </td>
         <td>3</td>
       </tr>
       <tr>
-        <td><code>impressionexpiry</code> is between 7 and 30 days</td>
+        <td><code>attributionexpiry</code> is between 7 and 30 days</td>
         <td>
           <ul>
             <li>2 days after ad click</li>
             <li>or 7 days after ad click</li>
-            <li>or <code>impressionexpiry</code> after ad click.</li>
+            <li>or <code>attributionexpiry</code> after ad click.</li>
           </ul>
         </td>
         <td>3</td>
       </tr>
       <tr>
-        <td><code>impressionexpiry</code> is between 2 and 7 days</td>
+        <td><code>attributionexpiry</code> is between 2 and 7 days</td>
         <td>
           <ul>
             <li>2 days after ad click</li>
-            <li>or <code>impressionexpiry</code> after ad click.</li>
+            <li>or <code>attributionexpiry</code> after ad click.</li>
           </ul>
         </td>
         <td>2</td>
       </tr>
       <tr>
-        <td><code>impressionexpiry</code> is under 2 days</td>
+        <td><code>attributionexpiry</code> is under 2 days</td>
         <td>
-          <li>2 days after ad click</li>
+            2 days after ad click
         </td>
         <td>1</td>
       </tr>
@@ -354,7 +350,7 @@ In Chrome, report scheduling works as follows:
 </div>
 
 <figure class="w-figure">
-  {% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="Chronology of what reports are sent when", width="800", height="462" %}
+  {% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="Chronology of report sending", width="800", height="462" %}
 </figure>
 
 See [Sending Scheduled
@@ -379,16 +375,16 @@ would work with the current API. Future iterations of this API [may be different
 
 An `<a>` ad element is loaded on a publisher site by `adtech.example` within an iframe.
 
-The adtech platform developers have configured the `<a>` element with conversion measurement
+The adtech platform developers have configured the `<a>` element with Attribution Reporting
 attributes:
 
 ```html
 <a
   id="ad"
-  impressiondata="200400600"
-  conversiondestination="https://advertiser.example"
-  reportingorigin="https://adtech.example"
-  impressionexpiry="864000000"
+  attributionsourceeventid="776f09351f5809c5"
+  attributiondestination="https://advertiser.example"
+  attributionreportto="https://adtech.example"
+  attributionexpiry="864000000"
   href="https://advertiser.example/shoes07"
   target="_blank"
 >
@@ -409,20 +405,19 @@ This code specifies the following:
     </thead>
     <tbody>
       <tr>
-        <td><code>impressiondata</code> (required): a <b>64-bit</b> identifier to attach to an ad click.</td>
+        <td><code>attributionsourceeventid</code> (required): a <b>64-bit</b> identifier to attach to an ad click.</td>
         <td>(no default)</td>
-        <td>A dynamically generated click ID  such as a 64-bit integer:
-          <code>200400600</code>
+        <td>A dynamically generated click ID  such as a hex-encoded 64-bit integer:
+          <code>776f09351f5809c5</code>
         </td>
       </tr>
       <tr>
-        <td><code>conversiondestination</code> (required): the <b><a href="https://web.dev/same-site-same-origin/#site" noopener>eTLD+1</a></b> where a conversion is expected for this ad.</td>
+        <td><code>attributiondestination</code> (required): where a conversion is expected for this ad.</td>
         <td>(no default)</td>
-        <td><code>https://advertiser.example</code>.<br/>If the <code>conversiondestination</code> is <code>https://advertiser.example</code>, conversions on both <code>https://advertiser.example</code> and <code>https://shop.advertiser.example</code> will be attributed.<br/>The same happens if the <code>conversiondestination</code> is <code>https://shop.advertiser.example</code>: conversions on both <code>https://advertiser.example</code> and <code>https://shop.advertiser.example</code> will be attributed.
-        </td>
+        <td><code>https://advertiser.example</code></td>
       </tr>
       <tr>
-        <td><code>impressionexpiry</code> (optional): in milliseconds, the cutoff time for when conversions can be attributed to this ad.</td>
+        <td><code>attributionexpiry</code> (optional): in milliseconds, the cutoff time for when conversions can be attributed to this ad.</td>
         <td>
           <code>2592000000</code> = 30 days (in milliseconds).<br/><br/>
           Maximum: 30 days (in milliseconds).<br/><br/>
@@ -431,12 +426,12 @@ This code specifies the following:
         <td>Ten days after click: <code>864000000</code></td>
       </tr>
       <tr>
-        <td><code>reportingorigin</code> (optional): the destination for reporting confirmed conversions.</td>
+        <td><code>attributionreportto</code> (optional): where to send attribution reports to.</td>
         <td>Top-level origin of the page where the link element is added.</td>
         <td><code>https://adtech.example</code></td>
       </tr>
       <tr>
-        <td><code>href</code>: the intended destination of the ad click.</td>
+        <td><code>href</code>: the intended navigation destination for the ad click.</td>
         <td><code>/</code></td>
         <td><code>https://advertiser.example/shoes07</code></td>
       </tr>
@@ -444,14 +439,9 @@ This code specifies the following:
   </table>
 </div>
 
-{% Aside %}
-Some notes about the example:
+{% Aside %} Some notes about the example:
 
-- You will find the term "impression" used in the attributes of the API or in the API proposal, even
-  though only clicks are supported for now. Names may be updated in future iterations of the API.
-- The ad doesn't have to be in an iframe, but this is what this example is based on.
-
-{% endAside %}
+- The ad doesn't have to be in an iframe, but this is what this example is based on. {% endAside %}
 
 {% Aside 'gotchas' %}
 
@@ -461,17 +451,8 @@ Some notes about the example:
 {% endAside %}
 
 When the user taps or clicks the ad, they navigate to the advertiser's site. Once the navigation is
-committed, the browser stores an object that includes `impressiondata`, `conversiondestination`,
-`reportingorigin`, and `impressionexpiry`:
-
-```json
-{
-  "impression-data": "200400600",
-  "conversion-destination": "https://advertiser.example",
-  "reporting-origin": "https://adtech.example",
-  "impression-expiry": 864000000
-}
-```
+committed, the browser stores an object that includes `attributionsourceeventid`, `attributiondestination`,
+`attributionreportto`, and `attributionexpiry`.
 
 ### Conversion and report scheduling (steps 6 to 9)
 
@@ -521,8 +502,8 @@ the browser. {% endAside %}
 
 The browser receives this request. Upon detecting `.well-known/register-conversion`, the browser:
 
-- Looks up all ad clicks in storage that match this `conversiondestination` (because it's receiving
-  this conversion on a URL that has been registered as a `conversiondestination` URL when the user
+- Looks up all ad clicks in storage that match this `attributiondestination` (because it's receiving
+  this conversion on a URL that has been registered as a `attributiondestination` URL when the user
   clicked the ad). It finds the ad click that happened on the publisher's site one day before.
 - Registers a conversion for this ad click.
 
@@ -530,7 +511,7 @@ Several ad clicks can match a conversion—the user may have clicked an ad for `
 `news.example` and `weather.example`. In this case, several conversions are registered.
 
 Now, the browser knows that it needs to inform the adtech server of this conversion—more
-specifically, the browser must inform the `reportingorigin` that is specified in both the `<a>`
+specifically, the browser must inform the `attributionreportto` endpoint that is specified in both the `<a>`
 element and in the pixel request (`adtech.example`).
 
 To do so, the browser schedules to send a **conversion report**, a blob of data containing the click
@@ -544,11 +525,12 @@ the two-day-after-click mark if the browser is running.
   {% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="Diagram: browser sending the report", width="800", height="533" %}
 </figure>
 
+
 Once the scheduled time to send the report is reached, the browser sends the **conversion report**:
-it sends an HTTP POST to the reporting origin that was specified in the `<a>` element
+it sends an HTTP POST to the reporting endpoint that was specified in the `<a>` element
 (`adtech.example`). For example:
 
-`https://adtech.example/.well-known/register-conversion?impression-data=200400600&conversion-data=2&credit=100`
+`https://adtech.example/.well-known/register-conversion?impression-data=776f09351f5809c5&conversion-data=2&credit=100`
 
 Included as parameters are:
 
@@ -562,7 +544,7 @@ As the adtech server receives this request, it can pull the `impression-data` an
 from it, i.e. the conversion report:
 
 ```json
-{"impression-data": "200400600", "conversion-data": 3, "credit": 100}
+{"impression-data": "776f09351f5809c5", "conversion-data": 3, "credit": 100}
 ```
 
 ### Subsequent conversions and expiry
@@ -574,7 +556,7 @@ Later on, the user may convert again—for example by purchasing a tennis racket
 - The browser matches this conversion with the ad click, schedules a report, and sends it to the
   adtech server later on.
 
-After `impressionexpiry`, conversions for this ad click stop being counted and the ad click is
+After `attributionexpiry`, conversions for this ad click stop being counted and the ad click is
 deleted from browser storage.
 
 ## Use cases
@@ -587,20 +569,18 @@ deleted from browser storage.
 
 ### What is not supported yet
 
-The following features aren't supported yet, but may be in future iterations of this API, or in the
-[Aggregate Conversion Measurement
-API](https://github.com/WICG/conversion-measurement-api/blob/master/AGGREGATE.md):
+The following features aren't supported yet, but may be in future iterations of this API:
 
 - View-through conversion measurement.
 - [Multiple reporting endpoints](https://github.com/WICG/conversion-measurement-api/issues/29).
-- [Web conversions that started in an iOS/Android
-  app](https://github.com/WICG/conversion-measurement-api/issues/54).
-- Conversion lift measurement / incrementality: measurement of causal differences in conversion
+- Conversion lift measurement / incrementality (measurement of causal differences in conversion
   behavior, by measuring the difference between a test group that saw an ad and a control group that
-  didn't.
+  didn't).
 - Attribution models that are not last-click.
 - Use cases that require larger amounts of information about the conversion event. For example,
   granular purchase values or product categories.
+- [App-to-web conversions, that is web conversions that started in an iOS/Android
+  app](https://github.com/WICG/conversion-measurement-api/blob/main/app_to_web.md)
 
 Before these features and more can be supported, **more privacy protections** (noise, fewer bits, or
 other limitations) must be added to the API.
@@ -620,8 +600,8 @@ it](#share-your-feedback). {% endAside %}
 - API and attribute naming may evolve.
 - Click data and conversion data may not require encoding.
 - The 3-bit limit for conversion data may be increased or decreased.
-- [More features may be added](#what-is-not-supported-yet), and **more privacy protections** (noise / fewer bits /
-  other limitations) if needed to support these new features.
+- [More features may be added](#what-is-not-supported-yet), and **more privacy protections** (noise
+  / fewer bits / other limitations) if needed to support these new features.
 
 To follow and participate in discussions on new features, watch the proposal's [GitHub
 repository](https://github.com/WICG/conversion-measurement-api/issues) and submit ideas.
@@ -643,7 +623,7 @@ measurement API](/using-conversion-measurement).
 
 ### Share your feedback
 
-**Your feedback is crucial**, so that new conversion measurement APIs can support your use cases and
+**Your feedback is crucial**, so that this API can support your use cases and
 provide a good developer experience.
 
 - To report a bug on the Chrome implementation, [open a
@@ -659,14 +639,13 @@ provide a good developer experience.
 
 ### Keep an eye out
 
-- As developer feedback and use cases are gathered, the Event Conversion Measurement API will evolve
-  over time. Watch the proposal's [GitHub
+As developer feedback and use cases are gathered, the Attribution Reporting API will evolve over
+  time. Watch the proposal's [GitHub
   repository](https://github.com/WICG/conversion-measurement-api/).
-- Follow along the evolution of the [Aggregate Conversion Measurement
-  API](https://github.com/WICG/conversion-measurement-api/blob/master/AGGREGATE.md) that will
-  complement this API.
 
-_With many thanks for contributions and feedback to all reviewers—especially Charlie Harrison,
-John Delaney, Michael Kleber and Kayce Basques._
 
-_Hero image by William Warby / @wawarby on [Unsplash](https://unsplash.com/photos/WahfNoqbYnM), edited._
+_With many thanks for contributions and feedback to all reviewers—especially Charlie Harrison, John
+Delaney, Michael Kleber and Kayce Basques._
+
+_Hero image by William Warby / @wawarby on [Unsplash](https://unsplash.com/photos/WahfNoqbYnM),
+edited._
