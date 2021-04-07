@@ -128,7 +128,7 @@ element.
 
 Later on, the user may visit the advertiser's website and perform an action that the advertiser or
 their adtech provider categorizes as a **conversion**. If this happens, the adtech asks the browser
-to record an attribution, and the ad click and conversion-time data are matched by the user's
+to record an attribution, and the ad click and conversion-side data are matched by the user's
 browser.
 
 The browser finally schedules an **attribution report** to be sent to the endpoint specified in the
@@ -222,7 +222,7 @@ sites**.
   decisions about where to spend their advertising budget in the future (for example by training
   data models).
 
-{% Aside %} The click data and conversion data are never exposed to a JavaScript environment in the
+{% Aside %} The click ID and conversion-side data are never exposed to a JavaScript environment in the
 same context. {% endAside %}
 
 #### Without an alternative to third-party cookies
@@ -248,7 +248,7 @@ types of attacks more complicated.
 Note that it's possible to [recover the corrected attribution
 count](</using-conversion-measurement/#(optional)-recover-the-corrected-attribution-count>).
 
-Summing up click data and attribution trigger data:
+Summing up click ID and attribution trigger data:
 
 <div class="w-table-wrapper">
   <table class="w-table--top-align">
@@ -261,12 +261,12 @@ Summing up click data and attribution trigger data:
     </thead>
     <tbody>
       <tr>
-        <td>Click data (<code>attributionsourceeventid</code> attribute)</td>
+        <td>Click ID (<code>attributionsourceeventid</code>)</td>
         <td>64 bits</td>
         <td>An ad ID or click ID</td>
       </tr>
       <tr>
-        <td>Attribution trigger data (conversion side)</td>
+        <td>Attribution trigger data, conversion side (<code>attributiontriggerdata</code>)</td>
         <td>3 bits, noised</td>
         <td>An integer from 0 to 7 that can map to a conversion type (e.g. signup, complete checkout)</td>
       </tr>
