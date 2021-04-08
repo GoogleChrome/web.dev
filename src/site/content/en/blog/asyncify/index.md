@@ -20,7 +20,7 @@ Asyncify.
 
 ## I/O in system languages
 
-Let's start by taking a look at a simple example in C. Let's say, you want to read user's name from
+I'll start with a simple example in C. Say, you want to read the user's name from
 a file, and greet them with a "Hello, (username)!" message:
 
 ```cpp
@@ -74,7 +74,7 @@ single invocation:
 ```rust
 fn main() {
     let s = std::fs::read_to_string("name.txt");
-    println!("Hello, {}!", s);
+    println!("Hello, {}!", s);
 }
 ```
 
@@ -85,7 +85,7 @@ need to read data from some storage.
 ## Asynchronous model of the web
 
 The web has a variety of different storage options you could map to, such as in-memory storage (JS
-objects), localStorage, IndexedDB, server-side storage, and a new [File System Access
+objects), [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), server-side storage, and a new [File System Access
 API](https://web.dev/file-system-access/).
 
 However, only two of those APIs—the in-memory storage and the localStorage—can be used
@@ -177,7 +177,7 @@ console.log("B");
 
 …and, in fact, that's exactly what Emscripten does in [its default implementation of
 "sleep",](https://github.com/emscripten-core/emscripten/blob/16d5755a3f71f27d0c67b8d7752f94844e56ef7c/src/library_pthread_stub.js#L47-L52)
-but that's very inefficient, will block the entire UI, won't allow any other events to get handled
+but that's very inefficient, will block the entire UI, won't allow any other events to be handled
 meanwhile, and, generally, don't do that in production code :)
 
 Instead, a more idiomatic version of "sleep" in JavaScript would involve calling
@@ -206,7 +206,7 @@ width="800", height="200" %}
 
 ### Usage in C / C++ with Emscripten
 
-If you wanted to use it to implement an asynchronous sleep for the last example, you could do it
+If you wanted to use Asyncify to implement an asynchronous sleep for the last example, you could do it
 like this:
 
 ```cpp
@@ -229,9 +229,9 @@ is a macro that allows defining JavaScript snippets as if they were C functions.
 function
 [`Asyncify.handleSleep()`](https://emscripten.org/docs/porting/asyncify.html#making-async-web-apis-behave-as-if-they-were-synchronous)
 which tells Emscripten to suspend the program and provides a `wakeUp()` handler that should be
-called when the asynchronous operation has finished. In the example above, we pass that handler to
-`setTimeout()`, but it could be used in any other context that accepts callbacks. Finally, we call
-the `async_sleep()` function anywhere we want just like regular `sleep()` or any other synchronous
+called once the asynchronous operation has finished. In the example above, the handler is passed to
+`setTimeout()`, but it could be used in any other context that accepts callbacks. Finally, you can call
+`async_sleep()` anywhere you want just like regular `sleep()` or any other synchronous
 API.
 
 When compiling such code, you need to tell Emscripten to activate the Asyncify feature. Do that by
@@ -261,8 +261,8 @@ B
 You can [return values from
 Asyncify](https://emscripten.org/docs/porting/asyncify.html#returning-values) functions too. What
 you need to do is return the result of `handleSleep()`, and pass the result to the `wakeUp()`
-callback. For example, if, instead of reading from a file, you want to fetch some numeric answer
-from a remote resource, you can use a snippet like below to issue a request, suspend the C code, and
+callback. For example, if, instead of reading from a file, you want to fetch a number
+from a remote resource, you can use a snippet like the one below to issue a request, suspend the C code, and
 resume once the response body is retrieved—all done seamlessly as if the call was synchronous.
 
 ```js
@@ -299,8 +299,8 @@ int answer = get_answer();
 
 #### Awaiting complex values
 
-But this example still limits you only to numbers. What if you want to implement our original
-example, where we tried to get a user's name from a file as a string? Well, you can do that too!
+But this example still limits you only to numbers. What if you want to implement the original
+example, where I tried to get a user's name from a file as a string? Well, you can do that too!
 
 Emscripten provides a feature called
 [Embind](https://emscripten.org/docs/porting/connecting_cpp_and_javascript/embind.html) that allows
@@ -376,7 +376,7 @@ difference is that, under a regular WebAssembly API you can only provide synchro
 imports, while under the Asyncify wrapper, you can provide asynchronous imports as well:
 
 ```js
-let … = await Asyncify.instantiateStreaming(fetch('app.wasm'), {
+const { instance } = await Asyncify.instantiateStreaming(fetch('app.wasm'), {
     env: {
         async get_answer() {
             let response = await fetch("answer.txt");
@@ -437,14 +437,14 @@ puts("B");
 ```
 
 Initially `mode` is set to `NORMAL_EXECUTION`. Correspondingly, the first time such transformed code
-is executed, only the part leading up to "async_sleep" will get evaluated. As soon as the
+is executed, only the part leading up to `async_sleep()` will get evaluated. As soon as the
 asynchronous operation is scheduled, Asyncify saves all the locals, and unwinds the stack by
 returning from each function all the way to the top, this way giving control back to the browser
 event loop.
 
 Then, once `async_sleep()` resolves, Asyncify support code will change `mode` to `REWINDING`, and
-call our function again. This time, the "normal execution" branch is skipped - since it already did
-the job last time and we want to avoid printing "A" twice - and instead it comes straight to the
+call the function again. This time, the "normal execution" branch is skipped - since it already did
+the job last time and I want to avoid printing "A" twice - and instead it comes straight to the
 "rewinding" branch. Once it's reached, it restores all the stored locals, changes mode back to
 "normal" and continues the execution as if the code was never stopped in the first place.
 
@@ -459,7 +459,7 @@ uncompressed code size.
 {% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/Im4hmQOYRHFcsg8UTfTR.png", alt="A graph showing code size overhead for various benchmarks, from near-0% under fine-tuned conditions to over 100% in worst cases",
 width="800", height="494" %}
 
-It's not ideal, but in many cases acceptable when the alternative is not having the functionality
+This isn't ideal, but in many cases acceptable when the alternative is not having the functionality
 altogether or having to make significant rewrites to the original code.
 
 Make sure to always enable optimizations for the final builds to avoid it going even higher. You can
@@ -471,20 +471,20 @@ to the cost of the actual work, it's usually negligible.
 
 ## Real-world demos
 
-Now that we've looked at the simple examples, let's move on to more complicated scenarios.
+Now that you've looked at the simple examples, I'll move on to more complicated scenarios.
 
 As mentioned in the beginning of the article, one of the storage options on the web is an
 asynchronous [File System Access API](https://web.dev/file-system-access/). It provides access to a
 real host filesystem from a web application.
 
-On the other hand, there is a de-facto standard—[WASI](https://github.com/WebAssembly/WASI) - for
+On the other hand, there is a de-facto standard called [WASI](https://github.com/WebAssembly/WASI)  for
 WebAssembly I/O in the console and the server-side. It was designed as a compilation target for
 system languages, and exposes all sorts of filesystem and other operations in a traditional
 synchronous form.
 
 What if we could map one to another? Then we could compile any application in any source language
 with any toolchain supporting the WASI target, and run it in a sandbox on the web, while still
-allowing it to operate on real user files! With Asyncify, we can do just that.
+allowing it to operate on real user files! With Asyncify, you can do just that.
 
 In this demo, I've compiled Rust [coreutils](https://github.com/RReverser/coreutils) crate with a
 few minor patches to WASI, passed via Asyncify transform and implemented asynchronous
