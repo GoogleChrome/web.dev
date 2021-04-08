@@ -489,7 +489,7 @@ allowing it to operate on real user files! With Asyncify, we can do just that.
 In this demo, I've compiled Rust [coreutils](https://github.com/RReverser/coreutils) crate with a
 few minor patches to WASI, passed via Asyncify transform and implemented asynchronous
 [bindings](https://github.com/GoogleChromeLabs/wasi-fs-access/blob/main/src/bindings.ts) from WASI
-to File System Access API on the JavaScript side. Once combined with xterm.js, this provides a
+to File System Access API on the JavaScript side. Once combined with [Xterm.js](https://xtermjs.org/) terminal component, this provides a
 realistic shell running in the browser tab and operating on real user files - just like an actual
 terminal.
 
