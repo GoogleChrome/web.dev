@@ -102,7 +102,7 @@ WebAssembly to be able to start a "file read" operation and block everything els
 or, in the past, the entire browser—for a range from milliseconds to a few seconds, until it's over.
 
 Instead, code is only allowed to schedule an I/O operation together with a callback to be executed
-once it's finished. Such callbacks are then executed as part of the browser's event loop. I won't be
+once it's finished. Such callbacks are executed as part of the browser's event loop. I won't be
 going into details here, but if you're interested in learning how event loop works under the hood,
 check out Jake Archibald's
 [article](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/) which explains this
