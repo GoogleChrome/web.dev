@@ -28,7 +28,15 @@ At Google I/O 2019 Mariko, Jake, and I shipped [PROXX], a modern Minesweeper-clo
 But they run a modern browser and are very affordable. For this reason, feature phones are making a resurgence in emerging markets. Their price point allows a whole new audience, who previously couldn't afford it, to come online and make use of the modern web. **[For 2019 it is projected that around 400 million feature phones will be sold in India alone][400mil]**, so users on feature phones might become a significant portion of your audience. In addition to that, connection speeds akin to 2G are the norm in emerging markets. How did we manage to make PROXX work well under feature phone conditions?
 
 <figure class="w-figure">
-  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/0Z2YqHWp5ToNzqlU40ng.mp4", preload="metadata", class="w-screenshot", poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FuAyD4tBgrjLsbXuFs5l.jpg", controls=true, loop=true, muted=true %}
+  {% Video
+    src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/0Z2YqHWp5ToNzqlU40ng.mp4",
+    preload="metadata",
+    class="w-screenshot",
+    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FuAyD4tBgrjLsbXuFs5l.jpg",
+    controls=true,
+    loop=true,
+    muted=true
+  %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     PROXX gameplay.
   </figcaption>
@@ -51,7 +59,14 @@ Testing your loading performance on a _real_ device is critical. If you don't ha
 That being said, we're going to focus on 2G in this article because PROXX is explicitly targeting feature phones and emerging markets in its target audience. Once WebPageTest has run its test, you get a waterfall (similar to what you see in DevTools) as well as a filmstrip at the top. The film strip shows what your user sees while your app is loading. On 2G, the loading experience of the unoptimized version of PROXX is pretty bad:
 
 <figure class="w-figure">
-  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/BXNCRVkyZeVHPWJ9WGcI.mp4", src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CuprSULvVI7IKyS35eCA.jpg", controls=true, muted=true, preload="metadata", class="w-screenshot" %}
+  {% Video
+    src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/BXNCRVkyZeVHPWJ9WGcI.mp4",
+    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CuprSULvVI7IKyS35eCA.jpg",
+    controls=true,
+    muted=true,
+    preload="metadata",
+    class="w-screenshot"
+  %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The filmstrip video shows what the user sees when PROXX is loading on a real, low-end device over an emulated 2G connection.
   </figcaption>
@@ -110,7 +125,14 @@ Looking at the waterfall, we can see that once the first JavaScript file is done
 Let's take a look at what our changes have achieved. It's important to not change any other variables in our test setup that could skew the results, so we will be using [WebPageTest's simple setup][wpt simple] for the rest of this article and look at the filmstrip:
 
 <figure class="w-figure">
-  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/v76UWV9zidMILuFlLpaX.mp4", src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjJ410ZPSr99njy4KMoh.jpg", controls=true, muted=true, preload="metadata", class="w-screenshot" %}
+  {% Video
+    src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/v76UWV9zidMILuFlLpaX.mp4",
+    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjJ410ZPSr99njy4KMoh.jpg",
+    controls=true,
+    muted=true,
+    preload="metadata",
+    class="w-screenshot"
+  %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     We use WebPageTest's filmstrip to see what our changes have achieved.
   </figcaption>
@@ -137,7 +159,14 @@ There are many ways to implement a prerenderer. In PROXX we chose to use [Puppet
 With this in place, we can expect an improvement for our FMP. We still need to load and execute the same amount of JavaScript as before, so we shouldn't expect TTI to change much. If anything, our `index.html` has gotten bigger and might push back our TTI a bit. There's only one way to find out: running WebPageTest.
 
 <figure class="w-figure">
-  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/kkHfcTZnTgdSAuWlYFfj.mp4", src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lzm3LUZs6FPr7hxZsWO8.jpg", controls=true, muted=true, preload="metadata", class="w-screenshot" %}
+  {% Video
+    src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/kkHfcTZnTgdSAuWlYFfj.mp4",
+    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lzm3LUZs6FPr7hxZsWO8.jpg",
+    controls=true,
+    muted=true,
+    preload="metadata",
+    class="w-screenshot"
+  %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The filmstrip shows a clear improvement for our FMP metric. TTI is mostly unaffected.
   </figcaption>
@@ -167,7 +196,14 @@ Our critical CSS is already inlined thanks to CSS Modules and our Puppeteer-base
 {% endAside %}
 
 <figure class="w-figure">
-  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/kkHfcTZnTgdSAuWlYFfj.mp4", src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lzm3LUZs6FPr7hxZsWO8.jpg", controls=true, muted=true, preload="metadata", class="w-screenshot" %}
+  {% Video
+    src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/kkHfcTZnTgdSAuWlYFfj.mp4",
+    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lzm3LUZs6FPr7hxZsWO8.jpg",
+    controls=true,
+    muted=true,
+    preload="metadata",
+    class="w-screenshot"
+  %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     With the inlining of our JavaScript we have reduced our TTI from 8.5s to 7.2s.
   </figcaption>
@@ -241,7 +277,14 @@ return (
 With all of this in place, we reduced our `index.html` to a mere 20 KB, less than half of the original size. What effect does this have on FMP and TTI? WebPageTest will tell!
 
 <figure class="w-figure">
-  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/byNSMGzFX0aSXRBmI1HM.mp4", src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d2y6ZrlYkcfHTsmaP4m5.jpg", controls=true, muted=true, preload="metadata", class="w-screenshot" %}
+  {% Video
+    src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/byNSMGzFX0aSXRBmI1HM.mp4",
+    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d2y6ZrlYkcfHTsmaP4m5.jpg",
+    controls=true,
+    muted=true,
+    preload="metadata",
+    class="w-screenshot"
+  %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The filmstrip confirms: Our TTI is now at 5.4s. A drastic improvement from our original 11s.
   </figcaption>

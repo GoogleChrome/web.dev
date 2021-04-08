@@ -23,7 +23,16 @@ feedback:
 </style>
 
 <figure class="w-figure w-figure--inline-right">
-  {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZYR1SBlPglRDE69Xt2xl.mp4", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RbG1WcYhSLn0MQoQjZe.webm"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg", loop=true, autoplay=true, muted=true, class="w-screenshot", linkTo=true, id="video-demo" %}
+  {% Video
+    src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZYR1SBlPglRDE69Xt2xl.mp4", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RbG1WcYhSLn0MQoQjZe.webm"],
+    poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg",
+    loop=true,
+    autoplay=true,
+    muted=true,
+    class="w-screenshot",
+    linkTo=true,
+    id="video-demo"
+  %}
 </figure>
 
 Access to the user's contacts on a mobile device has been a feature of iOS/Android apps since
