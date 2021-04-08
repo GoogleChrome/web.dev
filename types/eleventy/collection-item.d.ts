@@ -92,6 +92,14 @@ declare global {
        * Tells search engines not to index page (this includes algolia)
        */
       noindex?: boolean;
+      /**
+       * When the post was last updated.
+       */
+      updated?: Date;
+      /**
+       * If post is a draft.
+       */
+      draft?: boolean;
     };
     /**
      * The rendered content of this template. This does not include layout wrappers.
