@@ -25,7 +25,7 @@ This causes problems for users who have installed the app to their devices.
 flags web apps whose start URL doesn't respond with a 200 when offline:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="offline-start-url.png" alt="Lighthouse audit showing start URL doesn't respond with 200 when offline">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZR8gYzKNpBkrXEgQQnbl.png", alt="Lighthouse audit showing start URL doesn't respond with 200 when offline", width="800", height="76", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
@@ -45,7 +45,6 @@ guide for more information.
 
 ## Resources
 
-- [Source code for **`start_url` does not respond with a 200 when offline** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/offline-start-url.js)
 - [What is network reliability and how do you measure it?](/network-connections-unreliable/)
 - [Add a web app manifest](/add-manifest/)
 - [Workbox: Your high-level service worker toolkit](/workbox/)

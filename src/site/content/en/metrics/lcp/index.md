@@ -50,7 +50,8 @@ of a page is loaded is to look at when the largest element was rendered.
 
 The Largest Contentful Paint (LCP) metric reports the render time of the largest
 [image or text block](#what-elements-are-considered) visible within the
-viewport.
+viewport, relative to when the page [first started
+loading](https://w3c.github.io/hr-time/#timeorigin-attribute).
 
 <picture>
   <source srcset="../vitals/lcp_8x2.svg" media="(min-width: 640px)">
@@ -63,10 +64,9 @@ viewport.
 ### What is a good LCP score?
 
 To provide a good user experience, sites should strive to have Largest
-Contentful Paint occur within the first **2.5 seconds** of the page starting to
-load. To ensure you're hitting this target for most of your users, a good
-threshold to measure is the **75th percentile** of page loads, segmented across
-mobile and desktop devices.
+Contentful Paint of **2.5 seconds** or less. To ensure you're hitting this
+target for most of your users, a good threshold to measure is the **75th
+percentile** of page loads, segmented across mobile and desktop devices.
 
 {% Aside %}
   To learn more about the research and methodology behind this recommendation,

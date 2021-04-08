@@ -5,6 +5,7 @@
 @import 'article-header';
 @import 'article-navigation';
 @import 'asides';
+@import 'audio-player';
 @import 'author';
 @import 'banner';
 @import 'breadcrumbs';
@@ -16,11 +17,19 @@
 @import 'callouts';
 @import 'checkbox';
 @import 'columns';
+@import 'course-pagination';
+@import 'course-toc';
 @import 'compare';
 @import 'cross-links';
 @import 'details';
+@import 'drawer-course';
+@import 'drawer-default';
 @import 'footer';
-@import 'header';
+@import 'gradient-text';
+@import 'header-course';
+@import 'header-default';
+@import 'hero-banner';
+@import 'icon';
 @import 'icon-list';
 @import 'images';
 @import 'layouts';
@@ -41,4 +50,7 @@
 @import 'topic';
 @import 'type';
 @import 'tooltips';
+@import 'web-audio-fab';
+@import 'web-header';
+@import 'web-navigation-drawer';
 @import 'youtube';

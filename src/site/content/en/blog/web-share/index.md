@@ -4,7 +4,7 @@ subhead: Web apps can use the same system-provided share capabilities as platfor
 authors:
   - joemedley
 date: 2019-11-08
-updated: 2020-02-09
+updated: 2021-03-10
 hero: image/admin/ruvEms3AeSZvlEI01DKo.png
 alt: An illustration demonstrating that web apps can use the system-provided sharing UI.
 description: |
@@ -17,6 +17,7 @@ tags:
   - capabilities
 feedback:
   - api
+stack_overflow_tag: web-share
 ---
 
 With the Web Share API, web apps are able to use the same system-provided share
@@ -117,7 +118,7 @@ if (navigator.canShare && navigator.canShare({ files: filesArray })) {
 ```
 
 Notice that the sample handles feature detection by testing for
-`naviagator.canShare()` rather than for `navigator.share()`.
+`navigator.canShare()` rather than for `navigator.share()`.
 The data object passed to `canShare()` only supports the `files` property.
 Image, video, audio, and text files can be shared. (See
 [Permitted File Extensions in Chromium](https://docs.google.com/document/d/1tKPkHA5nnJtmh2TgqWmGSREUzXgMUFDL6yMdVZHqUsg/edit?usp=sharing).)

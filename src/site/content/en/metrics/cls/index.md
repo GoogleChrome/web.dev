@@ -86,8 +86,8 @@ shift scores](#layout-shift-score) are calculated.)
 ### What is a good CLS score?
 
 To provide a good user experience, sites should strive to have a CLS score of
-less than **0.1**. To ensure you're hitting this target for most of your users,
-a good threshold to measure is the **75th percentile** of page loads, segmented
+**0.1** or less. To ensure you're hitting this target for most of your users, a
+good threshold to measure is the **75th percentile** of page loads, segmented
 across mobile and desktop devices.
 
 {% Aside %}

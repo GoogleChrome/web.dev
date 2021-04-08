@@ -29,7 +29,7 @@ flags pages that keep the main thread busy for longer than 4&nbsp;seconds
 during load:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="mainthread-work-breakdown.png" alt="A screenshot of the Lighthouse Minimize main thread work audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kcHYoy1vfoJX76JVyM9T.png", alt="A screenshot of the Lighthouse Minimize main thread work audit", width="800", height="408", class="w-screenshot" %}
 </figure>
 
 To help you identify the sources of main thread load,

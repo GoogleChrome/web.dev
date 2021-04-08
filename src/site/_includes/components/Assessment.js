@@ -203,22 +203,22 @@ function rationaleTemplate(option) {
   `;
 }
 
-// Gets the assessment object from the YAML file passed in the shortcode
-// and passes it to the template functions above.
-module.exports = (page, targetAssessment) => {
-  if (!page) {
-    throw new Error(
-      `Can't create Assessment component without the page argument.`,
-    );
-  }
-
+/**
+ * Gets the assessment object from the YAML file passed in the shortcode
+ * and passes it to the template functions above.
+ * @this {EleventyPage}
+ * @param {TargetAssessment} targetAssessment
+ * @returns
+ */
+module.exports = function (targetAssessment) {
   if (!targetAssessment) {
     throw new Error(`
       Can't create Assessment component without a target assessment.
       Pass the file name, without ".assess.yml", of the desired assessment as a string.
     `);
   }
-  const filePath = page.filePathStem.replace(/index$/, '');
+
+  const filePath = this.page.filePathStem.replace(/index$/, '');
   const source = path.join(
     site.contentDir,
     filePath,

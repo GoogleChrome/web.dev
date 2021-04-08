@@ -10,6 +10,7 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
   - devices
+stack_overflow_tag: webusb
 ---
 
 This article explains how to build a device to take full advantage of the

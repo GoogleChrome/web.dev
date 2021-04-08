@@ -291,7 +291,7 @@ accessible across a range of devices and platforms? (The `<select>` element does
   large number of items, but at least it's usable on virtually all browsers and assistive devices!)
   
   The blog post 
-  [&lt;input type=”country” /&gt;](https://shkspr.mobi/blog/2017/11/input-type-country/) discusses 
+  [&lt;input type="country" /&gt;](https://shkspr.mobi/blog/2017/11/input-type-country/) discusses 
   the complexity of standardizing a country selector. Localization of country names can also be 
   problematic. [Countries Lists](http://www.countries-list.info/Download-List) has a tool for 
   downloading country codes and names in multiple languages, in multiple formats. 

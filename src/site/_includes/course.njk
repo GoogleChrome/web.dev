@@ -1,19 +1,44 @@
 ---
 layout: base
+pageScripts:
+  - '/js/course.js'
 ---
+
+{% from 'macros/audio-fab.njk' import audioFab %}
+{% from 'macros/audio-player.njk' import audioPlayer %}
+
+{#
+  Grab the data for the course using the projectKey defined in the 11tydata.js
+  file at the root of the course in /learn/[course]
+#}
+{% set courseData = courses[projectKey] %}
+{% set courseTitle = courseData.meta.title | i18n(locale) %}
+
+{#
+  Grab the navigation data for the course. These are the link that will appear
+  in the navigatino drawer.
+#}
+{% set pageNavigation = collections.all | navigation(courseData.toc) %}
+
+{#
+  Grab the ToC contents for headings ToC. This powers the list of headings
+  that appears on the right-hand side of the page. Unfortunately our use of
+  the word 'toc' is a bit overloaded :P
+  TODO: The courseToc filter is only used to define the ToC for courses, but
+  it's basically the same thing we use on developer.chrome.com and it would be
+  nice to use it for articles as well. Currently we have a different toc design
+  for those but it's a bit clunky and we should replace it with this.
+#}
+{% set tocContents %}
+  {{- content | courseToc | safe -}}
+{% endset %}
 
 <a class="skip-link w-button" href="#main">Skip to main</a>
 
 <div class="course-layout">
-  <nav class="course-nav" aria-label="primary navigation">
-    <ul>
-      {% for i in range(0, 10) -%}
-        <li>
-          <a href="#">Flexbox</a>
-        </li>
-      {%- endfor %}
-    </ul>
-  </nav>
+
+  {% include 'partials/header-course.njk' %}
+  {% include 'partials/navigation-drawer-course.njk' %}
 
   <div class="course-body">
     <nav class="course-app-bar app-bar" aria-label="breadcrumbs">
@@ -32,40 +57,20 @@ layout: base
     </nav>
 
     <div class="course-content">
-      <nav class="course-toc" aria-label="table of contents">
-        <ul class="course-toc__list">
-          <li class="course-toc__item">
-            <a href="#">What can you do with a flex layout?</a>
-          </li>
-          <li class="course-toc__item">
-            <a href="#">The main axis and the cross axis</a>
-          </li>
-        </ul>
-      </nav>
-      <main id="main">
-        {# Hide this TOC on desktop and show it on mobile #}
-        {# <nav class="course-toc" aria-label="table of contents">
-          <ul class="course-toc__list">
-            <li class="course-toc__item">
-              <a href="#">First heading</a>
-            </li>
-            <li class="course-toc__item">
-              <a href="#">Second heading</a>
-            </li>
-          </ul>
-        </nav> #}
+
+      {% include 'partials/toc-side.njk' %}
+
+      <main id="main" class="flow">
+        {% include 'partials/toc-inner.njk' %}
+        {% if audio %}
+          {{ audioFab(audio.thumbnail) }}
+          {{ audioPlayer(audio.title, audio.src, audio.thumbnail) }}
+        {% endif %}
         {{ content | safe }}
       </main>
     </div>
 
-    <nav class="course-pagination" aria-label="pagination">
-      <a href="#" class="course-pagination-control">
-        Introduction
-      </a>
-      <a href="#" class="course-pagination-control">
-        Selectors
-      </a>
-    </nav>
+    {% include 'partials/course-pagination.njk' %}
 
     {% include 'partials/footer.njk' %}
   </div>

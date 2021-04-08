@@ -22,7 +22,7 @@ because the label text makes a larger click target.
 Lighthouse flags form elements that don't have associated labels:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="label.png" alt="Lighthouse audit showing form elements do not have associated labels">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FMWt5UyiUUskhKHUcYoN.png", alt="Lighthouse audit showing form elements do not have associated labels", width="800", height="185", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

@@ -4,7 +4,7 @@ subhead: How to integrate with hardware media keys, customize media notification
 authors:
   - beaufortfrancois
 date: 2020-03-06
-updated: 2021-01-15
+updated: 2021-03-31
 hero: image/admin/IhujMvzGa5Mf0aNWYRXW.jpg
 thumbnail: image/admin/Q6CqQNLucogBCxGMsSU2.jpg
 description: |
@@ -30,7 +30,7 @@ article.
 
 <figure class="w-figure">
   {% Img src="image/admin/qwTz64KKq4rq7WeA3rlT.jpg", alt="Screenshots of Media Session contexts", width="800", height="330" %}
-  <figcaption class="w-figcaption">Media hub on desktop, media notification on mobile, and a wearable device</figcaption>
+  <figcaption class="w-figcaption">Media hub on desktop, media notification on mobile, and a wearable device.</figcaption>
 </figure>
 
 ## Cross-browser support
@@ -76,7 +76,7 @@ media controls, in this case a media notification on mobile.
 
 <figure class="w-figure">
   {% Img src="image/admin/eiavbbCE6TlI8osR1tYT.jpg", alt="Media Session interfaces illustration", width="800", height="353" %}
-  <figcaption class="w-figcaption">Anatomy of a media notification on mobile</figcaption>
+  <figcaption class="w-figcaption">Anatomy of a media notification on mobile.</figcaption>
 </figure>
 
 ## Let users know what's playing
@@ -156,7 +156,7 @@ media notification.
 
 <figure class="w-figure">
   {% Img src="image/admin/9rN4x5GXdhg4qjC0ZEmk.jpg", alt="Screenshot of a media notification in Windows 10", width="800", height="450" %}
-  <figcaption class="w-figcaption">Customized media notification in Windows 10</figcaption>
+  <figcaption class="w-figcaption">Customized media notification in Windows 10.</figcaption>
 </figure>
 
 Because some media session actions may not be supported, it is recommended to
@@ -199,6 +199,16 @@ This is similar to the event listener pattern except that handling an event
 means that the browser stops doing any default behavior and uses this as a
 signal that the website supports the media action. Hence, media action controls
 won't be shown unless the proper action handler is set.
+
+<figure class="w-figure">
+  {% Img
+    src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/WBZAf1ymhtXInsWumHtw.jpg",
+    alt="Screenshot of the Now Playing widget in macOS Big Sur",
+    width="800",
+    height="450"
+  %}
+  <figcaption class="w-figcaption">Now Playing widget in macOS Big Sur (requires Chrome 91).</figcaption>
+</figure>
 
 ### Play / pause
 
@@ -326,7 +336,7 @@ current time.
 
 <figure class="w-figure">
   {% Img src="image/admin/Rlw13wMoaJrDziraXgUc.jpg", alt="Screenshot of lock screen media controls in Chrome OS", width="800", height="450" %}
-  <figcaption class="w-figcaption">Lock screen media controls in Chrome OS</figcaption>
+  <figcaption class="w-figcaption">Lock screen media controls in Chrome OS.</figcaption>
 </figure>
 
 The duration must be provided and positive. The position must be positive and
@@ -391,7 +401,7 @@ Check out some [Media Session samples] featuring [Blender Foundation] and
     <source src="https://storage.googleapis.com/webfundamentals-assets/videos/media-hub-desktop-720.mp4" type="video/mp4; codecs=h264">
   </video>
   <figcaption class="w-figcaption">
-    A screencast illustrating the Media Session API
+    A screencast illustrating the Media Session API.
   </figcaption>
 </figure>
 

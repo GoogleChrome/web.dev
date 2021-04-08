@@ -23,7 +23,7 @@ Consumers are also more demanding than they've ever been,
 and when they weigh the experience on your site, they aren't just comparing you with your competitors,
 they're rating you against the best-in-class services they use every day.
 
-This post rounds up some of the research that has been done on the relationship between performance and busines success.
+This post rounds up some of the research that has been done on the relationship between performance and business success.
 
 ## Performance is about retaining users
 
@@ -82,9 +82,7 @@ On slower connections, however, users are forced to wait.
 Users may experience more problems as page resources slowly trickle in.
 
 <figure class="w-figure">
-  <img src="speed-comparison.png" alt="A comparison of two filmstrip reels
-of a page loading. The first shows a page loading on a slow connection, while
-the second shows the same page loading on a fast connection.">
+  {% Img src="image/admin/W0ctiX3cMOfWnNF6AQMg.png", alt="A comparison of two filmstrip reels of a page loading. The first shows a page loading on a slow connection, while the second shows the same page loading on a fast connection.", width="800", height="264" %}
   <figcaption>A comparison of page load on a very slow connection
 (top) versus a faster connection (bottom).</figcaption>
 </figure>

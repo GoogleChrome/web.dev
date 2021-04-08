@@ -44,7 +44,7 @@ declare global {
      * A space-separated list of the classes of the element.
      */
     class?: string;
-    params?: object;
+    params?: {[param: string]: TODO};
     options?: ImgixOptions;
     /**
      * Flag to wrap image in `a` tag pointing to the image. `false` by default.

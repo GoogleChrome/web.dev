@@ -4,7 +4,7 @@ subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2021-02-23
+updated: 2021-03-03
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
 thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
@@ -296,26 +296,46 @@ case, calling `reader.cancel()` will force `reader.read()` to resolve
 immediately with `{ value: undefined, done: true }` and therefore allowing the
 loop to call `reader.releaseLock()`.
 
-```js/15-18
+```js
 // Without transform streams.
 
-const reader = port.readable.getReader();
+let keepReading = true;
+let reader;
 
-// Listen to data coming from the serial device.
-while (true) {
-  const { value, done } = await reader.read();
-  if (done) {
-    reader.releaseLock();
-    break;
+async function readUntilClosed() {
+  while (port.readable && keepReading) {
+    reader = port.readable.getReader();
+    try {
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) {
+          // reader.cancel() has been called.
+          break;
+        }
+        // value is a Uint8Array.
+        console.log(value);
+      }
+    } catch (error) {
+      // Handle error...
+    } finally {
+      // Allow the serial port to be closed later.
+      reader.releaseLock();
+    }
   }
-  // value is a Uint8Array.
-  console.log(value);
+
+  await port.close();
 }
 
-// Force reader.read() to resolve immediately and subsequently
-// call reader.releaseLock() in the loop example above.
-await reader.cancel();
-await port.close();
+const closedPromise = readUntilClosed();
+
+document.querySelector('button').addEventListener('click', async () => {
+  // User clicked a button to close the serial port.
+  keepReading = false;
+  // Force reader.read() to resolve immediately and subsequently
+  // call reader.releaseLock() in the loop example above.
+  reader.cancel();
+  await closedPromise;
+});
 ```
 
 Closing a serial port is more complicated when using [transform streams] (like

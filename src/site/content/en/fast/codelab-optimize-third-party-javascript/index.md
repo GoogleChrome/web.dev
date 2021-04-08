@@ -33,7 +33,7 @@ The included sample app features a simple web page with three features coming fr
 * A social media sharing widget
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./app.png" alt="Screenshot of the page with third-party resources highlighted.">
+  {% Img src="image/admin/cuWcC16X6oKRbXJXIIt7.png", alt="Screenshot of the page with third-party resources highlighted.", width="800", height="1294", class="w-screenshot" %}
   <figcaption class="w-figcaption">Third-party resources in the sample app.</figcaption>
 </figure>
 
@@ -57,7 +57,7 @@ Run a [Lighthouse](https://developers.google.com/web/tools/lighthouse/) [perform
 When you run an audit on your machine, [the exact results may vary](https://developers.google.com/web/tools/lighthouse/variability), but you should notice that the [First Contentful Paint (FCP)](/first-contentful-paint) time is pretty high, and that Lighthouse suggests two opportunities to investigate: **Eliminate render-blocking resources** and **Preconnect to required origins**. (Even if the metrics are all in the green, optimizations will still yield improvements.)
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./lighthouse-audit.png" alt="Screenshot of Lighthouse audit showing 2.4 second FCP and two opportunities: Eliminate render-blocking resources and Preconnect to required origins.">
+  {% Img src="image/admin/gIkIJM2OaocxImjLLjev.png", alt="Screenshot of Lighthouse audit showing 2.4 second FCP and two opportunities: Eliminate render-blocking resources and Preconnect to required origins.", width="741", height="700", class="w-screenshot" %}
 </figure>
 
 ## Defer third-party JavaScript
@@ -65,7 +65,7 @@ When you run an audit on your machine, [the exact results may vary](https://deve
 The **Eliminate render-blocking resources** audit identified that you can save some time by deferring a script coming from d3js.org:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./render-blocking.png" alt="Screenshot of Eliminate render-blocking resources audit with the d3.v3.min.js script highlighted.">
+  {% Img src="image/admin/P9ejh4JMzdpu8N3aZ7bC.png", alt="Screenshot of Eliminate render-blocking resources audit with the d3.v3.min.js script highlighted.", width="718", height="337", class="w-screenshot" %}
 </figure>
 
 [D3.js](https://d3js.org/) is a JavaScript library for creating data visualizations. The `script.js` file in the sample app uses D3 utility functions to create the SVG line chart and append it to the page. The order of operations here matters: `script.js` has to run after the document is parsed and the D3 library has loaded, which is why it's included right before the closing `</body>` tag in `index.html`.
@@ -73,7 +73,7 @@ The **Eliminate render-blocking resources** audit identified that you can save s
 However, the D3 script is included in the page's `<head>`, which blocks the parsing of the rest document:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./index.png" alt="Screenshot of index.html with highlighted script tag in the head.">
+  {% Img src="image/admin/vRP2oYmijq0sVyLRb2nU.png", alt="Screenshot of index.html with highlighted script tag in the head.", width="718", height="265", class="w-screenshot" %}
 </figure>
 
 Two magic attributes can unblock the parser when added to the script tag:

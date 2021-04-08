@@ -5,7 +5,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2021-02-23
+updated: 2021-02-27
 hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
 thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
@@ -17,6 +17,7 @@ tags:
   - devices
 feedback:
   - api
+stack_overflow_tag: webhid
 ---
 
 {% Aside 'success' %}
@@ -214,7 +215,7 @@ await device.open();
 
 Once the HID connection has been established, you can handle incoming input
 reports by listening to the `"inputreport"` events from the device. Those events
-contains the HID data as a [`DataView`] object (`data`), the HID device it belongs
+contain the HID data as a [`DataView`] object (`data`), the HID device it belongs
 to (`device`), and the 8-bit report ID associated with the input report
 (`reportId`).
 
@@ -374,7 +375,7 @@ To understand the security tradeoffs, check out the [Security and Privacy
 Considerations] section of the WebHID spec.
 
 On top of this, Chrome inspects the usage of each top-level collection and if a
-top-level collection has a protected usage (.e.g. generic keyboard, mouse), then
+top-level collection has a protected usage (e.g. generic keyboard, mouse), then
 a website won't be able to send and receive any reports defined in that
 collection. The full list of protected usages is [publicly available].
 
@@ -426,7 +427,7 @@ where and how you're using it.
 ## Acknowledgements
 
 Thanks to [Matt Reynolds] and [Joe Medley] for their reviews of this article.
-Red and blue nintendo switch photo by [Sara Kurfeß], and black and silver laptop
+Red and blue Nintendo Switch photo by [Sara Kurfeß], and black and silver laptop
 computer photo by [Athul Cyriac Ajay] on Unsplash.
 
 [Capabilities project]: /fugu-status/

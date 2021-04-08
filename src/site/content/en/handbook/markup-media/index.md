@@ -2,7 +2,7 @@
 layout: handbook
 title: Images and video
 date: 2019-06-26
-updated: 2021-02-10
+updated: 2021-03-11
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
@@ -12,6 +12,12 @@ description: |
 Visit [the image uploader page](https://web-dev-uploads.web.app/) and
 sign-in using your Google corporate account. Note that this page only allows
 Googlers access, so signing in with a personal account will fail.
+
+{% Aside 'caution' %}
+There are different uploaders for web.dev and developer.chrome.com:
+* [web.dev uploader](https://web-dev-uploads.web.app/uploader)
+* [developer.chrome.com uploader](https://chrome-gcs-uploader.web.app/)
+{% endAside %}
 
 ## Choose a file
 
@@ -91,3 +97,29 @@ directly.
 ```typescript
 {% include '../../../../../../types/site/_includes/components/Video.d.ts' %}
 ```
+## Captions
+
+To include a caption along with an image, use `<figure>` with `<figcaption>` and 
+place the shortcode snippet inside:
+
+```md
+<figure class="w-figure">
+{% raw %}{% Img
+  src="image/foR0vJZKULb5AGJExlazy1xYDgI2/iuwBXAyKJMz4b7oRyIdI.jpg",
+  alt="ALT_TEXT_HERE",
+  width="380",
+  height="240",
+%}{% endraw%}
+  <figcaption class="w-figcaption">
+    A good boy.
+  </figcaption>
+</figure>
+```
+
+<figure class="w-figure">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", 
+alt="ALT_TEXT_HERE", width="380", height="240" %}
+  <figcaption class="w-figcaption">
+    A good boy.
+  </figcaption>
+</figure>

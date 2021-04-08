@@ -1,0 +1,15 @@
+.header-course {
+  background-image: var(--header-course-background);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 136px;
+
+  &__title {
+    @include apply-utility('font', 'google-sans');
+    @include apply-utility('weight', 'medium');
+    color: $GREY_800;
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: 32px;
+  }
+}

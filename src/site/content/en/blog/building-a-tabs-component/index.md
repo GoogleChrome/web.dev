@@ -22,9 +22,13 @@ that is responsive, supports multiple device inputs, and works across browsers.
 Try the [demo](https://gui-challenges.web.app/tabs/dist/).
 
 <figure class="w-figure w-figure--fullbleed">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/mouse-and-keyboard.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IBDNCMVCysfM9fYC9bnP.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
   <figcaption class="w-figure">
     <a href="https://gui-challenges.web.app/tabs/dist/">Demo</a>
   </figcaption>
@@ -49,7 +53,7 @@ button selected in the navigation.
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/eAaQ44VAmzVOO9Cy5Wc8.png",
-    alt="ALT_TEXT_HERE",
+    alt="the collage is quite chaotic due to the huge diversity of styles the web has applied to the component concept",
     class="w-screenshot",
     width="800", height="500"
   %}
@@ -84,9 +88,13 @@ elements, which a `<section>` is great for. Each link hash will match a section,
 letting the browser scroll things via anchoring.
 
 <figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/toggling-2.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pr8BrPDjq8ga9NyoHLJk.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
   <figcaption class="w-figure">
     A link button is clicked, sliding in focused content
   </figcaption>
@@ -157,7 +165,7 @@ There are 3 different types of scroll areas in this component:
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qVmUKMwbeoCBffP0aY55.png",
-    alt="ALT_TEXT_HERE",
+    alt="3 colorful boxes with color matching directional arrows which outline the scroll areas and show the direction they'll scroll.",
     class="w-screenshot",
     width="800", height="450"
   %}
@@ -224,7 +232,7 @@ scroll containers have created.
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Fyl0rTuETjORBigkIBx5.png",
-    alt="ALT_TEXT_HERE",
+    alt="the header and section elements have hotpink overlays on them, outlining the space they take up in the component",
     class="w-screenshot",
     width="800", height="620"
   %}
@@ -264,7 +272,7 @@ this header layout helps set that stage. No absolute positioned elements here!
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/EGNIrpw4gEzIZEcsAt5R.png",
-    alt="ALT_TEXT_HERE",
+    alt="the nav and span.indicator elements have hotpink overlays on them, outlining the space they take up in the component",
     class="w-screenshot",
     width="800", height="368"
   %}
@@ -344,7 +352,7 @@ elements are in here, the browser will render a scrollbar or not.
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/P7Vm3EvhO1wrTK1boU6y.png",
-    alt="ALT_TEXT_HERE",
+    alt="the a elements of the nav have hotpink overlays on them, outlining the space they take up in the component as well as where they overflow",
     class="w-screenshot",
     width="800", height="327"
   %}
@@ -394,7 +402,7 @@ line, no wrapping, exactly what we want; to overflow the parent window.
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/FYroCMocutCGg1X8kfdG.png",
-    alt="ALT_TEXT_HERE",
+    alt="the article elements have hotpink overlays on them, outlining the space they take up in the component and where they overflow",
     class="w-screenshot",
     width="800", height="512"
   %}
@@ -448,7 +456,7 @@ relationship.
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/O8gJp7AxBty8yND4fFGr.png",
-    alt="ALT_TEXT_HERE",
+    alt="the article element and it's child elements have hotpink overlays on them, outlining the space they take up in the component and the direction they overflow",
     class="w-screenshot",
     width="800", height="808"
   %}
@@ -469,7 +477,7 @@ is for me to review the layout and the scroll orchestration.
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/6I6TI9PI4rvrJ9lr8T99.png",
-    alt="ALT_TEXT_HERE",
+    alt="the 3 scrollbars are set to show, now consuming layout space, and our component still looks great",
     class="w-screenshot",
     width="500", height="607"
   %}
@@ -485,7 +493,7 @@ DevTools can help us visualize this:
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/GFJwc3IggHY4G5fBMiu9.png",
-    alt="ALT_TEXT_HERE",
+    alt="the scroll areas have grid and flexbox tool overlays, outlining the space they take up in the component and the direction they overflow",
     class="w-screenshot",
     width="800", height="455"
   %}
@@ -527,9 +535,13 @@ We'll be checking the user's motion preference from both CSS and JS. There's a
 few great places to be considerate!
 
 <figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/toggling.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D4zfhetqvhqlcPdTRtLZ.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
 </figure>
 
 #### Scroll behavior {: #scroll-behavior }
@@ -548,9 +560,13 @@ instead of blink there?
 ```
 
 <figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/scroll-behavior-smooth.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q4JDplhM9gEd4PoiXqs6.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
 </figure>
 
 Since we're introducing motion here, and motion that the user doesn't control
@@ -569,9 +585,13 @@ In Chromium Devtools, I can toggle the preference and demonstrate the 2
 different transition styles. I had a ton of fun building this.
 
 <figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/prefer-reduced-motion-toggle-mini.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/NVoLHgjGjf7fZw5HFpF6.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
 </figure>
 
 ```css
@@ -725,7 +745,7 @@ synchronized feel of the animation.
 <figure class="w-figure">
   {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jV5X2JMkgUQSIpcivvTJ.png",
-    alt="ALT_TEXT_HERE",
+    alt="active tab and inactive tab are shown with VisBug overlays which show passing contrast scores for both",
     class="w-screenshot",
     width="540", height="400"
   %}
@@ -739,9 +759,13 @@ You may not have noticed, but I'm very proud of the transition of color as the
 highlighted navigation item becomes selected.
 
 <figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/scroll-color.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qoxGO8SR2t6GPuCWhwvu.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
 </figure>
 
 The unselected lighter grey appears even more pushed back when the highlighted
@@ -826,9 +850,13 @@ free scrolling, as they should be able to. When the section scroller stops
 scrolling, wherever it lands needs to be matched in the top navigation bar.
 
 <figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/scrollend-sync.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/syltOES9Gxc0ihOsgTIV.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
 </figure>
 
 Here's how I wait for scroll end:
@@ -874,9 +902,13 @@ the incoming nav item the active state attribute. The call to `scrollIntoView()`
 has a fun interaction with CSS that is worth noting.
 
 <figure class="w-figure">
-  <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-tabs/scroll-behavior-smooth.mp4">
-  </video>
+  {% Video 
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nsiyMgZ2QGF2fx9gVRgu.mp4",
+    className="w-screenshot", 
+    autoplay="true", 
+    loop="true", 
+    muted="true" 
+  %}
 </figure>
 
 ```css

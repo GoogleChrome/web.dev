@@ -39,7 +39,7 @@ before it knows which font resources it needs in order to render the text.
 As a result, font requests are delayed well after other critical resources,
 and the browser may be blocked from rendering text until the resource is fetched.
 
-<img src="./font-crp.png"  alt="Font critical rendering path">
+{% Img src="image/admin/NgSTa9SirmikQAq1G5fN.png", alt="Font critical rendering path", width="800", height="303" %}
 
 1. The browser requests the HTML document.
 1. The browser begins parsing the HTML response and constructing the DOM.

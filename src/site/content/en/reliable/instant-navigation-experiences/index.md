@@ -30,7 +30,7 @@ In this guide we'll explore different ways in which [service workers](https://de
 
 ## Production cases
 
-[MercadoLibre](https://www.mercadolibre.com.ar/) is the biggest e-commerce site in Latin America. To speed up navigations, they dynamically inject `<link rel=”prefetch”>` tags in some parts of the flow. For example, in listing pages, they fetch the next result page as soon as the user scrolls to the bottom of the listing:
+[MercadoLibre](https://www.mercadolibre.com.ar/) is the biggest e-commerce site in Latin America. To speed up navigations, they dynamically inject `<link rel="prefetch">` tags in some parts of the flow. For example, in listing pages, they fetch the next result page as soon as the user scrolls to the bottom of the listing:
 
 <figure class="w-figure">
   <img src="mercadolibre-prefetch.png"

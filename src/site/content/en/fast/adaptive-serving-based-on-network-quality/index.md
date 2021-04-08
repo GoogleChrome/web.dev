@@ -48,7 +48,7 @@ the resolution during streaming. When Gmail is loading, it provides users with a
 link to "load basic HTML (for slow connections)".
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./loading_gmail_slow_connection.png" alt="A link to load basic HTML version of Gmail when users are on slow connections">
+  {% Img src="image/admin/zSTd1IMrb3UJfefdeRAt.png", alt="A link to load basic HTML version of Gmail when users are on slow connections", width="528", height="236", class="w-screenshot" %}
 </figure>
 
 ## How it works
@@ -87,7 +87,7 @@ connection. Its properties are explained in the table bellow.
 
 Here's what this looks like when you run it in the browser's console:
 
-<img class="w-screenshot" src="./network_information_in_console.jpg" alt="Chrome DevTools console displaying the values of navigator.connection object's properties">
+{% Img src="image/admin/ayW8uxhh3S6I4MTipr0m.jpg", alt="Chrome DevTools console displaying the values of navigator.connection object's properties", width="800", height="523", class="w-screenshot" %}
 
 The `effectiveType` values are also available via
 [Client Hints](https://www.chromestatus.com/feature/5407907378102272)

@@ -142,6 +142,10 @@
   "metrics": {
     "title": "Metrics"
   },
+  "mini-apps": {
+    "title": "Mini apps",
+    "description": "Apps built with Web technologies but not running in the browser."
+  },
   "mobile": {
     "title": "Mobile"
   },

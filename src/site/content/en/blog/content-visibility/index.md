@@ -5,6 +5,7 @@ authors:
   - una
   - vladimirlevin
 date: 2020-08-05
+updated: 2021-03-09
 hero: image/admin/lrAkOWYTyGkK2BKXoF9y.jpg
 alt: Stylized photo of a half-hidden person.
 description: >
@@ -111,6 +112,16 @@ and layout of the element's subtree are skipped.
 As the element approaches the viewport, the browser no longer adds the `size`
 containment and starts painting and hit-testing the element's content. This
 enables the rendering work to be done just in time to be seen by the user.
+
+## A note on accessibility
+
+One of the features of `content-visibility: auto` is that the off-screen content remains available in the document object model and therefore, the accessibility tree (unlike with `visibility: hidden`). This means, that content can be searched for on the page, and navigated to, without waiting for it to load or sacrificing rendering performance.
+
+The flip-side of this, however, is that [landmark](https://www.w3.org/TR/wai-aria-1.1/#landmark_roles) elements with style features such as `display: none` or `visibility: hidden` will also appear in the accessibility tree when off-screen, since the browser will not render these styles until they enter the viewport. To prevent these from being visible in the accessibility tree, potentially causing clutter, be sure to also add `aria-hidden="true"`.
+
+{% Aside 'caution' %}
+In Chromium 85-89, off-screen children within `content-visibility: auto` were marked as invisible. In particular, [headings](https://marcysutton.com/content-visibility-accessible-semantics) and landmark roles were not exposed to accessibility tools. In Chromium 90 this was updated so that they are exposed.
+{% endAside %}
 
 ## Example: a travel blog {: #example }
 

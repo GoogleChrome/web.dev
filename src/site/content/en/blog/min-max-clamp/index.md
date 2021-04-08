@@ -141,7 +141,7 @@ card itself is getting clamped:
 
 You could break this up with just the `min()` or `max()` function. If you want
 the element to always be at `50%` width, and not exceed `75ch` in width (i.e. on
-larger screens), write: `width: min(75ch, 50%);`. This essentially sets a “max”
+larger screens), write: `width: min(75ch, 50%);`. This essentially sets a "max"
 size by using the `min()` function.
 
 <figure class="w-figure">
@@ -169,8 +169,8 @@ be at _least_ `45ch` or larger.
 
 ## Padding management
 
-Using the same concept as above, where the `min()` function can set a “max”
-value and `max()` sets a “min” value, you can use `max()` to set a minimum
+Using the same concept as above, where the `min()` function can set a "max"
+value and `max()` sets a "min" value, you can use `max()` to set a minimum
 padding size. This example comes from [CSS
 Tricks](https://css-tricks.com/using-max-for-an-inner-element-max-width/), where
 reader Caluã de Lacerda Pataca shared this idea: The idea is to enable an

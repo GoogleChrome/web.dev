@@ -14,6 +14,7 @@ const metrics = require('./metrics.json');
 const notifications = require('./notifications.json');
 const payments = require('./payments.json');
 const progressiveWebApps = require('./progressive-web-apps.json');
+const miniApps = require('./mini-apps.json');
 const react = require('./react.json');
 const reliable = require('./reliable.json');
 const secure = require('./secure.json');
@@ -40,4 +41,5 @@ module.exports = {
   react,
   reliable,
   secure,
+  'mini-apps': miniApps,
 };

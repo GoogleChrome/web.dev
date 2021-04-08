@@ -1,0 +1,39 @@
+title:
+  en: Accessibility audits
+
+description:
+  en: Can all users access content and navigate your site effectively?
+
+overview:
+  en: These checks highlight opportunities to improve the accessibility of your web app. Only a subset of accessibility issues can be automatically detected so manual testing is also encouraged.
+
+topics:
+  audit_scoring:
+    en: Audit scoring
+
+  navigation:
+    en: Navigation
+
+  aria:
+    en: ARIA
+
+  names_and_labels:
+    en: Names and labels
+
+  contrast:
+    en: Contrast
+
+  tables_and_lists:
+    en: Tables and lists
+
+  best_practices:
+    en: Best practices
+
+  audio_and_video:
+    en: Audio and video
+
+  internationalization_and_localization:
+    en: Internationalization and localization
+
+  additional_items_to_manually_check:
+    en: Additional items to manually check

@@ -23,7 +23,7 @@ nothing happens.
 Lighthouse displays TTI in seconds:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="interactive.png" alt="A screenshot of the Lighthouse Time to Interactive audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MOXhGOQxWpolq6nhBleq.png", alt="A screenshot of the Lighthouse Time to Interactive audit", width="800", height="588", class="w-screenshot" %}
 </figure>
 
 ## What TTI measures

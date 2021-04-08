@@ -1,0 +1,38 @@
+note:
+  en: Note
+
+caution:
+  en: Caution
+
+warning:
+  en: Warning
+
+success:
+  en: Success
+
+objective:
+  en: Objective
+
+try_it:
+  en: Try it
+
+key_term:
+  en: Key Term
+
+gotchas:
+  en: Gotchas
+
+do:
+  en: Do
+
+dont:
+  en: Don't
+
+close:
+  en: Close
+
+next:
+  en: Next
+
+prev:
+  en: Prev # Short for "previous"

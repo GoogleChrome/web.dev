@@ -5,7 +5,7 @@ authors:
   - thomassteiner
   - petelepage
 date: 2020-09-24
-updated: 2021-02-22
+updated: 2021-03-24
 description: Learn how to create a simple offline experience for your app.
 tags:
   - progressive-web-apps
@@ -125,6 +125,9 @@ Copyright 2015, 2019, 2020, 2021 Google LLC. All Rights Reserved.
 
 // Incrementing OFFLINE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
+// This variable is intentionally declared and unused.
+// Add a comment for your linter if you want:
+// eslint-disable-next-line no-unused-vars
 const OFFLINE_VERSION = 1;
 const CACHE_NAME = "offline";
 // Customize this with a different URL if needed.
