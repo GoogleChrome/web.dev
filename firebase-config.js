@@ -25,7 +25,8 @@ if (process.env.ELEVENTY_ENV === 'prod') {
     key: 'Content-Security-Policy-Report-Only',
     value:
       `script-src 'strict-dynamic' ${hashList.join(' ')} ` +
-      `'unsafe-inline' http: https:; object-src 'none'; base-uri 'self'`,
+      `'unsafe-inline' http: https:; object-src 'none'; base-uri 'self'; ` +
+      `report-uri https://csp.withgoogle.com/csp/webdev`,
   });
 }
 
