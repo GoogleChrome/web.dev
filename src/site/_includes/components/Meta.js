@@ -15,6 +15,7 @@
  */
 
 const {html} = require('common-tags');
+const path = require('path');
 const {generateSrc} = require('./Img');
 const site = require('../../_data/site');
 const strip = require('../../_filters/strip');
@@ -137,6 +138,8 @@ module.exports = (locale, page, collections, renderData = {}) => {
 
   function renderHreflangMeta() {
     if (!pageUrl) {
+      // This can happen when a page is not intended to be included in the final
+      // output, e.g. has a permalink: false.
       return;
     }
     const url = pageUrl.startsWith('/i18n/')
@@ -145,7 +148,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
 
     // Find i18n equivalents of the current url and heck if they exist.
     const langhrefs = i18nLocales
-      .map((locale) => [locale, `/i18n/${locale}${url}`])
+      .map((locale) => [locale, path.join('/', 'i18n', locale, url)])
       .filter((langhref) => findByUrl(langhref[1]))
       .map((langhref) => {
         const href = new URL(langhref[1], site.url).href;
