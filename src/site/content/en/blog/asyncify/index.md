@@ -13,10 +13,8 @@ tags:
 ---
 
 The I/O APIs on the web are asynchronous, but they're synchronous in most system languages. When
-compiling code to WebAssembly, you need to bridge one kind of APIs to another - and this bridge is
-Asyncify.
-
----
+compiling code to WebAssembly, you need to bridge one kind of APIs to another—and this bridge is
+Asyncify. In this post, you'll learn when and how to use Asyncify and how it works under the hood.
 
 ## I/O in system languages
 
