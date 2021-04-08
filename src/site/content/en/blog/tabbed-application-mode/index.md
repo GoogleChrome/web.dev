@@ -5,7 +5,7 @@ subhead: Work on more than one document at a time with tabs in your Progressive 
 authors:
   - thomassteiner
 date: 2021-02-25
-updated: 2021-02-26
+updated: 2021-04-07
 description: |
   Tabbed application mode allows Progressive Web App developers to add a tabbed document interface
   to their standalone PWAs.
@@ -38,6 +38,8 @@ and `browser`. These display modes follow a
 [well-defined fallback chain](https://w3c.github.io/manifest/#dfn-fallback-display-mode)
 (`"fullscreen"` → `"standalone"` → `"minimal-ui"` → `"browser"`). If a browser does not support a
 given mode, it falls back to the next display mode in the chain.
+Via the [`"display_override"`](/display-override/) property, developers can specify their own
+fallback chain if they need to.
 
 ## What is tabbed application mode
 
@@ -101,19 +103,23 @@ window.
 
 ## Using tabbed application mode
 
-To use tabbed application mode, developers need to opt their apps in by setting a specific display
-mode value in the Web App Manifest.
+To use tabbed application mode, developers need to opt their apps in by setting a specific
+[`"display_override"`](/display-override/) mode value in the Web App Manifest.
 
 ```json
 {
   …
-  "display": "tabbed",
+  "display": "standalone",
+  "display_override": ["tabbed"],
   …
 }
 ```
 
 {% Aside 'warning' %}
-  The details of the `display` property's value (currently `"tabbed"`) are not final.
+  The details of the potential `display_override` property's value (currently `"tabbed"`) are not final.
+  While you can try tabbed mode behind a flag, it will blindly apply to all sites and does not
+  currently care about the manifest. When you set `"display_override": ["tabbed"]`, it will just
+  be treated the same as `"display": "browser"`.
 {% endAside %}
 
 ### Trying tabbed application mode

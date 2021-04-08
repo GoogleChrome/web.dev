@@ -2018,5 +2018,18 @@
       "en": "Adriana is a Developer Relations Engineer"
     },
     "image": "image/SeARmcA1EicLXagFnVOe0ou9cqK2/4KNPR11Y1YYxUi6ASIE1.jpg"
+  },
+  "hbsong": {
+    "name": {
+      "given": "Hongbo",
+      "family": "Song"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "twitter": "HongboSong",
+    "github": "debugtive0517",
+    "image": "image/MZfwZ8oVW8U6tzo5CXffcER0jR83/ieAP4AO0so7own9kFVW4.png"
   }
 }
