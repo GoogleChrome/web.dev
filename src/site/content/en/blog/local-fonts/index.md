@@ -100,9 +100,7 @@ identifying. A lot of companies have their own corporate fonts that are installe
 laptops. For example, Google has a corporate font called _Google Sans_.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled"
-       src="google-sans.png"
-       alt="The macOS Font Book app showing a preview of the Google Sans font.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xivl6c1xM2VlqFf9GvgQ.png", alt="The macOS Font Book app showing a preview of the Google Sans font.", width="800", height="420", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     The Google Sans font installed on a Google employee's laptop.
   </figcaption>

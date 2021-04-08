@@ -2,10 +2,10 @@
 layout: post
 title: Push notifications overview
 subhead: >
-  An overview of what push notifications are, why you might use them, 
+  An overview of what push notifications are, why you might use them,
   and how they work.
 description: >
-  An overview of what push notifications are, why you might use them, 
+  An overview of what push notifications are, why you might use them,
   and how they work.
 authors:
   - kaycebasques
@@ -40,8 +40,7 @@ notifications to tell users about important, time-sensitive events, or actions
 the user needs to take. The look and feel of notifications varies between platforms:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="examples.png" 
-       alt="Examples of notifications on macOS and Android.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yC2ZZRuLFnnYGGmPUu9h.png", alt="Examples of notifications on macOS and Android.", width="800", height="361", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">Examples of notifications on macOS and Android.</figcaption>
 </figure>
 
@@ -51,7 +50,7 @@ they're not actively using your website. Notifications is the technology for
 displaying the pushed information on the user's device. It's possible to use
 notifications without push messaging. One day it may also be possible to use
 push messages without user-facing notifications (**silent push**) but browsers
-currently don't allow that. In practice they're usually used together. 
+currently don't allow that. In practice they're usually used together.
 A non-technical user probably won't understand the difference between push
 messages and notifications. In this collection when
 we say **push notifications** we mean the combination of pushing a message
@@ -64,7 +63,7 @@ we're referring to notification technology on its own.
 * For users, push notifications are a way to receive **timely**, **relevant**,
   and **precise** information.
 * For you (a website owner), push notifications are a way to increase user
-  engagement. 
+  engagement.
 
 {% Aside 'warning' %}
   If you try to use push notifications for content that your users don't find
@@ -108,8 +107,8 @@ object. You'll need to store this data long-term.
 Usually this is done by sending the information to a server that you control,
 and then having the server store it in a database.
 
-![Get permission to send push messages. Get PushSubscription. Send
-PushSubscription to your server.](browser-to-server.svg)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/F7gyVwzozw0eYkbTBChu.svg", alt="Get permission to send push messages. Get PushSubscription. Send
+PushSubscription to your server.", width="800", height="213" %}
 
 ### Send a push message {: #send }
 
@@ -123,7 +122,7 @@ web push protocol request should include:
 * What data to include in the message.
 * What client to send the message to.
 * Instructions on how the push service should deliver the message. For example, you
-  can specify that the push service should stop attempting to send the message 
+  can specify that the push service should stop attempting to send the message
   after 10 minutes.
 
 Normally you make the web push protocol request through a server that you control.
@@ -132,8 +131,7 @@ itself. There are libraries that can handle that for you, such as the
 [web-push-libs](https://github.com/web-push-libs/). But the underlying mechanism is
 a web service request over HTTP.
 
-![Your server sends a web push protocol request to the push service and the push
-service sends to the message to the user's device.](server-to-push-service.svg)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BD7hUXHhprQfUgWWGsMk.svg", alt="Your server sends a web push protocol request to the push service and the push service sends to the message to the user's device.", width="800", height="220" %}
 
 The push service receives your request, authenticates it, and routes the push
 message to the appropriate client. If the client's browser is offline, the push
@@ -141,7 +139,7 @@ service queues the push message until the browser comes online.
 
 Each browser uses whatever push service it wants. You as a website developer
 have no control over that. This isn't a problem because the web push protocol
-request is [standardized](https://tools.ietf.org/html/draft-ietf-webpush-protocol). 
+request is [standardized](https://tools.ietf.org/html/draft-ietf-webpush-protocol).
 In other words, you don't have to care which push service the browser vendor is
 using. You just need to make sure that your web push protocol request follows the spec.
 Among other things, the spec states that the request must include certain headers
@@ -189,11 +187,11 @@ This workflow involves a private key and public key that are unique to your
 application. The authentication process roughly works like this:
 
 * You generate the private and public key as a one-off task. The combination
-  of the private and public key is known as the 
+  of the private and public key is known as the
   **application server keys**. You might also see them called the **VAPID
   keys**. [VAPID](https://tools.ietf.org/html/draft-thomson-webpush-vapid-02) is
   the spec that defines this authentication process.
-* When you subscribe a client to push notifications from your JavaScript code, 
+* When you subscribe a client to push notifications from your JavaScript code,
   you provide your public key. When the push service generates an `endpoint`
   for the device, it associates the provided public key with the `endpoint`.
 * When you send a web push protocol request, you sign some JSON information
@@ -232,8 +230,7 @@ isn't open or the browser is closed. In your service worker's `push` event
 handler you call `ServiceWorkerRegistration.showNotification()` to display the information
 as a notification.
 
-![Message arrives on device. Browser wakes up service worker. Push event is
-dispatched.](push-service-to-sw-event.svg)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2pLZ4T0vVrG3nqitaAeH.svg", alt="Message arrives on device. Browser wakes up service worker. Push event is dispatched.", width="800", height="238" %}
 
 ## Next steps {: #next-steps }
 

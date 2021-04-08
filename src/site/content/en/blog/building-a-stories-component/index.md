@@ -54,8 +54,7 @@ multi-dimensional array as opposed to a single-dimensional array. It's as if the
 each carousel. 🤯 
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./carousel-of-carousels.png" 
-       alt="Visualized multi-dimensional array using cards. Left to right is a stack of purple borders cards, and inside each card is 1-many cyan bordered cards. List in a list.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0yVm8NC0TiAsl6hcDxys.png", alt="Visualized multi-dimensional array using cards. Left to right is a stack of purple borders cards, and inside each card is 1-many cyan bordered cards. List in a list.", width="716", height="255", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     <span style="width: 1rem; height: 1rem; background: #EB00FF; display: inline-block; border-radius: 3px; position: relative; top: .2em;"></span> 1st carousel of friends
     <br><span style="width: 1rem; height: 1rem; background: #00D8FF; display: inline-block; border-radius: 3px; position: relative; top: .2em;"></span> 2nd "stacked" carousel of stories

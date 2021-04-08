@@ -35,7 +35,7 @@ and active monitoring of web pages is becoming increasingly important. The
 engineers behind this tool have been doing performance audits for years and they
 created AWP to automate a manual, recurring, and time consuming part of their
 daily activities. Today, AWP has reached a level of maturity and it's ready to
-be shared broadly so anyone can benefit from the automation it brings. 
+be shared broadly so anyone can benefit from the automation it brings.
 
 The tool is accessible on the
 [AutoWebPerf](https://github.com/GoogleChromeLabs/AutoWebPerf) public repository
@@ -66,11 +66,11 @@ results in Data Studio](#data-studio) below for more details).
 
 ## Architecture overview
 
-AWP is a modular-based library with three different types of modules: 
+AWP is a modular-based library with three different types of modules:
 
 * the **engine**
 * **connector** modules
-* **gatherer** modules 
+* **gatherer** modules
 
 The engine takes a list of tests from a connector (for example, from a
 local CSV file), runs performance audits through selected gatherers (such as
@@ -126,14 +126,14 @@ like below:
 ```
 
 The command below reads the list of audit tests from the local JSON file, runs
-audits on a local machine, then outputs results to a local CSV file: 
+audits on a local machine, then outputs results to a local CSV file:
 
 ```shell
 PSI_APIKEY=<YOUR_KEY> ./awp run json:tests.json csv:output.csv
 ```
 
 To run audits every day as a background service continuously, you can use the
-command below instead: 
+command below instead:
 
 ```shell
 PSI_APIKEY=<YOUR_KEY> ./awp continue json:tests.json csv:output.csv
@@ -168,8 +168,7 @@ would want to prioritize the efforts to analyze the underlying issues of these
 pages.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="data-studio.png" 
-       alt="A screenshot of Core Web Vitals results in Data Studio.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Cpi7NkLvKyvf2xYzFwAn.png", alt="A screenshot of Core Web Vitals results in Data Studio.", width="800", height="904", class="w-screenshot" %}
 </figure>
 
 To simplify the end-to-end process from data collection to visualization, you

@@ -56,10 +56,7 @@ page. Despite this, users pay the cost of downloading data and costly
 JavaScript for each frame, even if they don't scroll to it.
 
 <figure class="w-figure">
-<img src="./iframe-lazyloading.png" alt="Data-savings from using iframe
-lazy-loading for an iframe. Eager loading pulls in 3MB in this example, while
-lazy-loading does not pull in this code until the user scrolls closer to the
-iframe.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xqZMRuULxbz6DVXNP8ea.png", alt="Data-savings from using iframe lazy-loading for an iframe. Eager loading pulls in 3MB in this example, while lazy-loading does not pull in this code until the user scrolls closer to the iframe.", width="800", height="460" %}
 </figure>
 
 Based off Chrome's research into [automatically lazy-loading offscreen iframes
@@ -165,9 +162,7 @@ devices. I have opened an internal bug with YouTube to discuss adding
 `loading=lazy` to its embed code.
 
 <figure class="w-figure">
-<img src="./iframe-chromecom.png" alt="Chrome.com achieved a 10 second
-reduction in Time To Interactive by lazy-loading offscreen iframes for their
-YouTube video embed">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HQkwBgEoyiZsiOaPyz8v.png", alt="Chrome.com achieved a 10 second reduction in Time To Interactive by lazy-loading offscreen iframes for their YouTube video embed", width="800", height="460" %}
 </figure>
 
 {% Aside %}

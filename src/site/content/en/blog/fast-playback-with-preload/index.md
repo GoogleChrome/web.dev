@@ -117,7 +117,7 @@ while the very different `load` event will be fired when resource
 has actually been fetched.
 
 <figure>
-  <img src="./video-preload.svg">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/De8tMHJUn3XyzFfosVLb.svg", alt="", width="800", height="234" %}
 </figure>
 
 Setting the `preload` attribute to `metadata` indicates that the user is not
@@ -192,7 +192,7 @@ video, audio, etc.). It should be used to warm up the browser cache for current
 sessions.
 
 <figure>
-  <img src="./link-preload.svg">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/g5fQKJMivvcsHajmMmi2.svg", alt="", width="800", height="234" %}
 </figure>
 
 ### Preload full video

@@ -379,9 +379,7 @@ but here are all the changes detectable by a webpage:
 As of Chrome 81, Moto G4 is also available in the Chrome DevTools device emulation list.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled"
-       src="lighthouse-motog4.png"
-       alt="Chrome DevTools device emulation list with Moto G4 included.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wMyHDbxs49CTJ831UBp7.png", alt="Chrome DevTools device emulation list with Moto G4 included.", width="800", height="653", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 ## Browser extension {: #extension }

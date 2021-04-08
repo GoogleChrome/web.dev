@@ -23,12 +23,12 @@ web that is responsive, supports multiple device inputs, and works across
 browsers. Try the [demo](https://gui-challenges.web.app/settings/dist/).
 
 <figure class="w-figure w-figure--fullbleed">
-  {% Video 
+  {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/WuIwd9jPb30KmmnjJn75.mp4",
-    className="w-screenshot", 
-    autoplay="true", 
-    loop="true", 
-    muted="true" 
+    class="w-screenshot",
+    autoplay="true",
+    loop="true",
+    muted="true"
   %}
   <figcaption class="w-figure">
     <a href="https://gui-challenges.web.app/settings/dist/">Demo</a>
@@ -51,17 +51,17 @@ I've broken out the aspects of this component into the following sections:
 1. [Accessibility considerations](#accessibility)
 1. [JavaScript](#javascript)
 
-{% Aside 'gotchas' %} 
-The CSS snippets below assume PostCSS with 
-[PostCSS Preset Env](https://preset-env.cssdb.org/features). 
-Intent is to practice early and often with syntax in early drafts or 
-experimentally available in browsers. Or as the plugin likes to say, 
+{% Aside 'gotchas' %}
+The CSS snippets below assume PostCSS with
+[PostCSS Preset Env](https://preset-env.cssdb.org/features).
+Intent is to practice early and often with syntax in early drafts or
+experimentally available in browsers. Or as the plugin likes to say,
 "Use tomorrow's CSS today".
 {% endAside %}
 
 ## Layouts
 
-This is the first GUI Challenge demo to be **all CSS Grid**! Here's each grid 
+This is the first GUI Challenge demo to be **all CSS Grid**! Here's each grid
 highlighted with the [Chrome DevTools for grid](https://goo.gle/devtools-grid):
 
 {% Img
@@ -90,15 +90,15 @@ foo {
 }
 ```
 
-I call this layout "just for gap" because it only uses grid to add gaps between blocks. 
+I call this layout "just for gap" because it only uses grid to add gaps between blocks.
 
 Five layouts use this strategy, here's all of them displayed:
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/zYWSVLzdtrh1K8p8yUuA.png", 
-  alt="Vertical grid layouts highlighted with outlines and filled in gaps", 
-  width="800", 
-  height="568" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/zYWSVLzdtrh1K8p8yUuA.png",
+  alt="Vertical grid layouts highlighted with outlines and filled in gaps",
+  width="800",
+  height="568"
 %}
 
 The `fieldset` element, which contains each input group (`.fieldset-item`), is using `gap: 1px` to
@@ -129,7 +129,7 @@ create the hairline borders between elements. No tricky border solution!
 
   & > .fieldset-item {
     background: var(--bg-surface-2);
-    
+
     &:not(:last-child) {
       border-bottom: 1px solid var(--bg-surface-1);
     }
@@ -142,13 +142,13 @@ create the hairline borders between elements. No tricky border solution!
 ### Natural grid wrapping
 
 The most complex layout ended up being the macro layout, the logical layout
-system between `<main>` and `<form>`. 
+system between `<main>` and `<form>`.
 
 #### Centering wrapping content
 
 Flexbox and grid both provide abilities to `align-items` or
 `align-content`, and when dealing with wrapping elements, `content` layout
-alignments will distribute space amongst the children as a group. 
+alignments will distribute space amongst the children as a group.
 
 ```css
 main {
@@ -162,12 +162,12 @@ The main element is using `place-content: center` [alignment
 shorthand](https://developer.mozilla.org/en-US/docs/Web/CSS/place-content) so
 that the children are centered vertically and horizontally in both one and two column layouts.
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IQI2PofA6gpNFUkDrvKo.mp4",
-  className="w-screenshot", 
-  autoplay="true", 
-  loop="true", 
-  muted="true" 
+  class="w-screenshot",
+  autoplay="true",
+  loop="true",
+  muted="true"
 %}
 
 Watch in the above video how the "content" stays centered, even though wrapping
@@ -175,7 +175,7 @@ has occurred.
 
 #### Repeat auto-fit minmax
 
-The `<form>` uses an adaptive grid layout for each section. 
+The `<form>` uses an adaptive grid layout for each section.
 This layout switches from one to two columns based on available space.
 
 ```css
@@ -211,15 +211,15 @@ remove the default stretching effect, so that the children of this layout don't
 need to have equal heights, they can have natural, intrinsic heights. The
 YouTube video has a quick breakdown of this alignment addition.
 
-`max-width: 89vw` is worth a small breakdown in this post. 
+`max-width: 89vw` is worth a small breakdown in this post.
 Let me show you the layout with and without the style applied:
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/gdldf7hyaBrHWwxQbSaT.mp4",
-  className="w-screenshot", 
-  autoplay="true", 
-  loop="true", 
-  muted="true" 
+  class="w-screenshot",
+  autoplay="true",
+  loop="true",
+  muted="true"
 %}
 
 What's happening? When `max-width` is specified, it's providing context,
@@ -230,14 +230,14 @@ many repetitions it can fit into the space. While it seems obvious that the
 space is "full width", per the CSS grid spec, a definite size or max-size must
 be provided. I've provided a max-size.
 
-So, why `89vw`? Because "it worked" for my layout. 
+So, why `89vw`? Because "it worked" for my layout.
 Me and a couple of other Chrome folks are investigating why a more reasonable value,
 like `100vw` isn't sufficient, and if this is in fact a bug.
 
 ### Spacing
 
 A majority of the harmony of this layout is from a limited palette of spacing, 7
-to be exact. 
+to be exact.
 
 ```css
 :root {
@@ -262,14 +262,14 @@ main {
   padding: var(--space-sm);
 
   @media (width >= 540px) {
-    & { 
-      padding: var(--space-lg); 
+    & {
+      padding: var(--space-lg);
     }
   }
 
   @media (width >= 800px) {
-    & { 
-      padding: var(--space-xl); 
+    & {
+      padding: var(--space-xl);
     }
   }
 }
@@ -311,16 +311,16 @@ minimal. I do it like this:
 }
 ```
 
-{% Aside 'key-term' %} 
+{% Aside 'key-term' %}
 [PostCSS `lab()` and `lch()`
 plugin](https://github.com/csstools/postcss-lab-function) is part of [PostCSS
 Preset Env](https://preset-env.cssdb.org/features#lch-function), and will output
-`rgb()` colors. 
+`rgb()` colors.
 {% endAside %}
 
 I name my surface and text colors with numbers as opposed to names like
 `surface-dark` and `surface-darker` because in a media query, I'll be flipping
-them, and light and dark won't be meaningful. 
+them, and light and dark won't be meaningful.
 
 I flip them in a preference media query like this:
 
@@ -342,15 +342,15 @@ I flip them in a preference media query like this:
 }
 ```
 
-{% Aside 'key-term' %} 
+{% Aside 'key-term' %}
 [PostCSS `@nest` plugin](https://github.com/csstools/postcss-nesting) is part of [PostCSS
-Preset Env](https://preset-env.cssdb.org/features), and will expand selectors to a syntax 
-browsers support today. 
+Preset Env](https://preset-env.cssdb.org/features), and will expand selectors to a syntax
+browsers support today.
 {% endAside %}
 
 It's important to get a quick glimpse at the overall picture and strategy before
 we dive into color syntax details. But, since I've gotten a bit ahead of myself,
-let me back up a bit. 
+let me back up a bit.
 
 ### LCH?
 
@@ -360,11 +360,11 @@ that caters to how we percieve color, not how we measure color with math (like
 humans will be in tune with these adjustments.
 
 <figure class="w-figure w-screenshot">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/160dWLSrMhFISwWMVd4w.png", 
-    alt="A screenshot of pod.link/csspodcast webpage, with Color 2: Perception episode pulled up", 
-    width="800", 
-    height="329" 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/160dWLSrMhFISwWMVd4w.png",
+    alt="A screenshot of pod.link/csspodcast webpage, with Color 2: Perception episode pulled up",
+    width="800",
+    height="329"
   %}
   <figcaption class="w-figure">
     Learn about perceptual color (and more!) on the <a href="https://pod.link/thecsspodcast">CSS Podcast</a>
@@ -392,7 +392,7 @@ to make light and dark. Let's look at 1 surface and 1 text color:
 very dark colorless gray. Then, in the media query for light mode, the lightness
 is flipped to `90%` with `--surface1: lch(90 0 0);`. And that's the gist of the
 strategy. Start by just changing lightness between the 2 themes, maintaining the
-contrast ratios the design calls for or what can maintain accessibility. 
+contrast ratios the design calls for or what can maintain accessibility.
 
 The bonus with `lch()` here is that lightness is human oriented, and we can feel
 good about a `%` change to it, that it will be perceptually and consistently
@@ -403,7 +403,7 @@ There's [more to
 learn](https://lea.verou.me/2020/04/lch-colors-in-css-what-why-and-how/) about
 color spaces and `lch()` if you're interested. It's coming!
 
-{% Blockquote 'Lea Verou' %} 
+{% Blockquote 'Lea Verou' %}
 CSS right now **cannot access these colors at all**.
 Let me repeat: **We have no access to one third of the colors in most modern
 monitors.** And these are not just any colors, but the **most vivid colors the
@@ -416,12 +416,12 @@ faster than CSS specs and browser implementations.
 Many browsers ship dark theme controls, currently Safari and Chromium, but you
 have to specify in CSS or HTML that your design uses them.
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/0VVtEAWM6jHeIxahqnFy.mp4",
-  className="w-screenshot", 
-  autoplay="true", 
-  loop="true", 
-  muted="true" 
+  class="w-screenshot",
+  autoplay="true",
+  loop="true",
+  muted="true"
 %}
 
 The above is demonstrating the effect of the property from the Styles panel of
@@ -453,23 +453,23 @@ input[type="checkbox"] {
 }
 ```
 
-{% Img 
-  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/J9pbhB0ImoDzbsXkBGtG.png", 
-  alt="A screenshot from Chromium on Linux of pink checkboxes", 
-  width="800", 
-  height="406" 
+{% Img
+  src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/J9pbhB0ImoDzbsXkBGtG.png",
+  alt="A screenshot from Chromium on Linux of pink checkboxes",
+  width="800",
+  height="406"
 %}
 
 ### Color pops with fixed gradients and focus-within
 
 Color pops most when it's used sparingly, and one of the ways I like to achieve
-that is through colorful UI interactions. 
+that is through colorful UI interactions.
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pm75QwVToKkiqedqPtmm.mp4",
-  className="w-screenshot", 
-  autoplay="true", 
-  loop="true", 
+  class="w-screenshot",
+  autoplay="true",
+  loop="true",
   muted="true",
   width="480px"
 %}
@@ -488,7 +488,7 @@ pseudo class to change the appearance of various elements, let's break down the
 ```css
 .fieldset-item {
   ...
-  
+
   &:focus-within {
     background: var(--surface2);
 
@@ -554,15 +554,15 @@ input[type="range"]::-webkit-slider-runnable-track {
   appearance: none; /* clear styles, make way for mine */
   block-size: var(--track-height);
   border-radius: 5ex;
-  background: 
-    /* hard stop gradient: 
+  background:
+    /* hard stop gradient:
         - half transparent (where colorful fill we be)
         - half dark track fill
         - 1st background image is on top
     */
     linear-gradient(
-      to right, 
-      transparent var(--track-fill), 
+      to right,
+      transparent var(--track-fill),
       var(--surface1) 0%
     ),
     /* colorful fill effect, behind track surface fill */
@@ -575,12 +575,12 @@ hard stop gradient on top. The gradient is transparent up to the fill percentage
 that uses the unfilled track surface color. Behind that unfilled surface, is a
 full width color, waiting for transparency to reveal it.
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/aiAL28AkDRZvaAZNEbW8.mp4",
-  className="w-screenshot", 
-  autoplay="true", 
-  loop="true", 
-  muted="true" 
+  class="w-screenshot",
+  autoplay="true",
+  loop="true",
+  muted="true"
 %}
 
 #### Track fill style
@@ -615,7 +615,7 @@ I think this makes for a nice visual upgrade. The slider works great without
 Javascript, the `--track-fill` prop is not required, it simply will not have a
 fill style if not present. If Javascript is available, populate the custom
 property while also observing any user changes, syncing the custom property with
-the value. 
+the value.
 
 [Here's a great
 post](https://css-tricks.com/sliding-nightmare-understanding-range-input/) on
@@ -639,7 +639,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 ```
 
-The majority of these styles are to make a nice circle. 
+The majority of these styles are to make a nice circle.
 Again you see the fixed background gradient there that unifies the
 dynamic colors of the thumbs, tracks and associated SVG elements.
 I separated the styles for the interaction to help isolate the `box-shadow`
@@ -653,7 +653,7 @@ technique being used for the hover highlight:
 
   /* shadow spread is initally 0 */
   box-shadow: 0 0 0 var(--thumb-highlight-size) var(--thumb-highlight-color);
-  
+
   /* if motion is OK, transition the box-shadow change */
   @media (--motionOK) {
     & {
@@ -668,11 +668,11 @@ technique being used for the hover highlight:
 }
 ```
 
-{% Aside 'key-term' %} 
-[@custom-media](https://drafts.csswg.org/mediaqueries-5/#custom-mq) 
+{% Aside 'key-term' %}
+[@custom-media](https://drafts.csswg.org/mediaqueries-5/#custom-mq)
 is a Level 5 spec addition that
 [PostCSS Custom Media](https://github.com/postcss/postcss-custom-media), part of
-[PostCSS Preset Env](https://preset-env.cssdb.org/features). 
+[PostCSS Preset Env](https://preset-env.cssdb.org/features).
 {% endAside %}
 
 The goal was an easy to manage and animated visual highlight for user feedback.
@@ -681,12 +681,12 @@ layout](https://web.dev/animations-guide/#triggers) with the effect. I do this
 by creating a shadow that's not blurred and matches the circular shape of the
 thumb element. Then I change and transition it's spread size on hover.
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/s835RbH88L5bxjl5bMFl.mp4",
-  className="w-screenshot", 
-  autoplay="true", 
-  loop="true", 
-  muted="true" 
+  class="w-screenshot",
+  autoplay="true",
+  loop="true",
+  muted="true"
 %}
 
 If only the highlight effect was so easy on checkboxes…
@@ -705,12 +705,12 @@ input[type="range"] {
 }
 ```
 
-{% Aside 'gotchas' %} 
+{% Aside 'gotchas' %}
 [Josh Comeau](https://twitter.com/JoshWComeau) outlines
 why the above examples don't simply use a comma between selectors for cross
 browser styling, see the [Twitter
 thread](https://twitter.com/JoshWComeau/status/1359213591602335752?s=20) for
-more information. 
+more information.
 {% endAside %}
 
 ## Custom Checkbox
@@ -742,7 +742,7 @@ input[type="checkbox"] {
 }
 ```
 
-The `transform-style` and `position` styles prepare for the pseudo-element we will introduce later 
+The `transform-style` and `position` styles prepare for the pseudo-element we will introduce later
 to style the highlight. Otherwise, it's mostly
 minor opinionated style stuff from me. I like the cursor to be pointer, I like
 outline offsets, default checkboxes are too tiny, and if `accent-color` is
@@ -756,21 +756,21 @@ represent what the checkbox value is used for, to answer "on or off for what?"
 Second is for UX, web users have become accustomed to interacting with
 checkboxes via their associated labels.
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/7GYIFNjNCBdj13juFO7S.mp4",
-  className="w-screenshot", 
-  autoplay="true", 
-  loop="true", 
-  muted="true" 
+  class="w-screenshot",
+  autoplay="true",
+  loop="true",
+  muted="true"
 %}
 
 <div class="w-columns">
 {% Compare 'better', 'input' %}
 
 ```html
-<input 
-  type="checkbox" 
-  id="text-notifications" 
+<input
+  type="checkbox"
+  id="text-notifications"
   name="text-notifications"
 >
 ```
@@ -847,12 +847,12 @@ Creating a circle psuedo-element is straightforward work, but **placing it
 behind the element it's attached to** was harder. Here's before and
 after I fixed it:
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Spdpw5P1MD8ceazneRXo.mp4",
-  className="w-screenshot", 
-  autoplay="true", 
-  loop="true", 
-  muted="true" 
+  class="w-screenshot",
+  autoplay="true",
+  loop="true",
+  muted="true"
 %}
 
 It's definitely a micro interaction, but important to me to keep the visual
@@ -881,24 +881,24 @@ details here.
 
 Each of these holds hints and tips to the user's browsing tool. Some elements
 provide interaction hints, some connect interactivity, and some help shape the
-acccessibility tree that a screenreader navigates. 
+acccessibility tree that a screenreader navigates.
 
 ### HTML Attributes
 
-We can hide elements that are not needed by screenreaders, 
+We can hide elements that are not needed by screenreaders,
 in this case the icon next to the slider:
 
 ```html
 <picture aria-hidden="true">
 ```
 
-{% Video 
+{% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/fVjqHRZHQixAaxjeAvDP.mp4",
-  className="w-screenshot", 
-  autoplay="true", 
-  loop="true", 
+  class="w-screenshot",
+  autoplay="true",
+  loop="true",
   muted="true",
-  width="480px" 
+  width="480px"
 %}
 
 The above video demonstrates the screenreader flow on Mac OS. Notice how input
@@ -907,12 +907,12 @@ the icon that may have been a stop on the way to the next slider. Without this
 attribute, a user would need to stop, listen and move past the picture which
 they may not be able to see.
 
-{% Aside 'gotchas' %} 
+{% Aside 'gotchas' %}
 Ensure to cross browser test screenreader interactions.
 The original demo included `<label>` in the list of elements with
 `aria-hidden="true"`, but it's been since removed after [Twitter
 conversation](https://twitter.com/rob_dodson/status/1371859386210029568)
-revealed cross browser differences. 
+revealed cross browser differences.
 {% endAside %}
 
 The SVG is a bunch of math, let's add a `<title>` element for a free mouse hover
