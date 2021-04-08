@@ -177,8 +177,8 @@ console.log("B");
 
 …and, in fact, that's exactly what Emscripten does in [its default implementation of
 "sleep",](https://github.com/emscripten-core/emscripten/blob/16d5755a3f71f27d0c67b8d7752f94844e56ef7c/src/library_pthread_stub.js#L47-L52)
-but that's very inefficient, will block the entire UI, won't allow any other events to be handled
-meanwhile, and, generally, don't do that in production code :)
+but that's very inefficient, will block the entire UI and won't allow any other events to be handled
+meanwhile. Generally, don't do that in production code.
 
 Instead, a more idiomatic version of "sleep" in JavaScript would involve calling
 `setTimeout()`, and subscribing with a handler:
