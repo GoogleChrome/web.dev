@@ -146,7 +146,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
       ? pageUrl.replace(i18nRegex, '')
       : pageUrl;
 
-    // Find i18n equivalents of the current url and heck if they exist.
+    // Find i18n equivalents of the current url and check if they exist.
     const langhrefs = i18nLocales
       .map((locale) => [locale, path.join('/', 'i18n', locale, url)])
       // Filter out i18n urls that do not have an existing translated file.
