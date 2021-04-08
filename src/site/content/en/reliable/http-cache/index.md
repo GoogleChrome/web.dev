@@ -304,7 +304,7 @@ If you have more time, here are further ways that you can optimize your usage of
 
 ## Appendix: `Cache-Control` flowchart {: #flowchart }
 
-![Flowchart](flowchart.png)
+{% Img src="image/admin/htXr84PI8YR0lhgLPiqZ.png", alt="Flowchart", width="595", height="600" %}
 
 ## Appendix: `Cache-Control` examples {: #examples }
 

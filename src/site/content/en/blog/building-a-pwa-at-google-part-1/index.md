@@ -8,7 +8,7 @@ authors:
   - joelriley
   - douglasparker
   - msdikla
-hero: hero.jpg
+hero: image/admin/mgB3j6NZa6F1CkoD9YI4.jpg
 alt: A group of people working on their computers at a table.
 description: |
   What the Bulletin team learned about service workers while developing a PWA.

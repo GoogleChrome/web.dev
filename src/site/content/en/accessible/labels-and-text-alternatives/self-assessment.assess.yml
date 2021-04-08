@@ -3,10 +3,7 @@ setLeader: |
 height: unset
 tabLabel: sample
 questions:
-  - stimulus: |
-      ```html
-      <img src="temp.svg" alt="temp">
-      ```
+  - stimulus: "![temp](image/user/temp.svg)"
     type: think-and-check
     stem: Does this image have an accessible name?
     options:

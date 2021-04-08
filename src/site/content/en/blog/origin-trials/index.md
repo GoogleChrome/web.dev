@@ -5,8 +5,8 @@ authors:
   - samdutton
 date: 2020-06-22
 updated: 2020-10-18
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+hero: image/admin/ES4AQvk6hKt7IRIHlhod.jpg
+thumbnail: image/admin/xnaYaKRWxVxFXZrDagog.jpg
 alt: Pipette with purple liquid
 tags:
   - blog
@@ -60,7 +60,7 @@ Find out more: [What are third-party origin trials?](/third-party-origin-trials)
 1. Submit feedback. Do this through the origin trial site. This feedback is 
    not public and is available only to a limited group of people on the Chrome
    team. Each trial also provides a link for spontaneous community feedback.
-   This typically points to the the feature on GitHub or some other public
+   This typically points to the feature on GitHub or some other public
    channel.
 1. When your token expires, you will get an email with a renewal link.
    To do so, you are again asked to submit feedback.

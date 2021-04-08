@@ -2,7 +2,7 @@
 renderData:
   metadata:
     author: "{{ paged.title }}"
-    icon: "{{ paged.data.hero or '/images/social.png' }}"
+    icon: "{{ paged.data.hero | imigix }}"
     id: https://web.dev/
     logo: https://web.dev/images/shared/rss-banner.png
     subtitle: "{{ paged.description }}"
@@ -26,12 +26,12 @@ pagination:
   </author>
   <link href="{{ renderData.metadata.url }}" rel="self"/>
   <link href="{{ renderData.metadata.id }}"/>
-  <icon>https://web.dev{{ renderData.metadata.icon }}</icon>
+  <icon>{{ renderData.metadata.icon }}</icon>
   <logo>{{ renderData.metadata.logo }}</logo>
   <subtitle>{{ renderData.metadata.subtitle }}</subtitle>
   {% for post in paged.elements -%}
   {#  absoluteUrl comes from 11ty RSS Plugin (@see https://www.11ty.dev/docs/plugins/rss/) #}
-  {% set absolutePostUrl -%}{{ post.data.canonicalUrl | url | absoluteUrl(renderData.metadata.url) }}{%- endset %}
+  {% set absolutePostUrl -%}{{ post.url | url | absoluteUrl(renderData.metadata.url) }}{%- endset %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>

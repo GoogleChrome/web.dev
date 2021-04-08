@@ -31,19 +31,19 @@ DevTools makes it easy to see the size of all network requests:
 {% Instruction 'disable-cache', 'ol' %}
 {% Instruction 'reload-page', 'ol' %}
 
-<img class="w-screenshot" src="./bundle.png" alt="Network panel with bundle request">
+{% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="Network panel with bundle request", width="800", height="169", class="w-screenshot" %}
 
 The [Coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
 tab in DevTools will also tell you how much CSS and JS code in your application
 is unused.
 
-<img class="w-screenshot w-screenshot--filled" src="./devtools-sources.png" alt="Code Coverage in DevTools">
+{% Img src="image/admin/xlPdOMaeykJhYqGcaMJr.png", alt="Code Coverage in DevTools", width="800", height="562", class="w-screenshot w-screenshot--filled" %}
 
 By specifying a full Lighthouse configuration through its Node CLI, an "Unused
 JavaScript" audit can also be used to trace how much unused code is being
 shipped with your application.
 
-<img class="w-screenshot" src="./unused-js.png" alt="Lighthouse Unused JS Audit">
+{% Img src="image/admin/tdC0d65gEIiHZy6eyo82.png", alt="Lighthouse Unused JS Audit", width="800", height="347", class="w-screenshot" %}
 
 If you happen to be using [webpack](https://webpack.js.org/) as your bundler,
 [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
@@ -68,7 +68,7 @@ can use to analyze your bundle.
 Reloading the application with this plugin included shows a zoomable treemap of
 your entire bundle.
 
-![Webpack Bundle Analyzer](./bundle-view.png)
+{% Img src="image/admin/pLAHEtl5C011wTk2IJij.png", alt="Webpack Bundle Analyzer", width="800", height="468" %}
 
 Using this visualization allows you to inspect which parts of your bundle are
 larger than others, as well as get a better idea of all the libraries that

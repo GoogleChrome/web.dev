@@ -1,0 +1,9 @@
+{% macro audioPlayer(title, src, thumbnail, id="audio-player") %}
+<div class="audio-player">
+  {% Img src=thumbnail, alt="", width="80", height="80" %}
+  <div class="audio-player__inner">
+    <div class="audio-player__title">{{ title }}</div>
+    <audio id="{{ id }}" class="audio-player__element" src="{{ src }}" controls></audio>
+  </div>
+</div>
+{% endmacro %}

@@ -39,7 +39,7 @@ A large DOM tree can slow down your page performance in multiple ways:
 reports the total DOM elements for a page, the page's maximum DOM depth,
 and its maximum child elements:
 <figure class="w-figure">
-  <img class="w-screenshot" src="dom-size.png" alt="A screenshot of the Lighthouse Avoids an excessive DOM size audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SUCUejhAE77m6k2WyI6D.png", alt="A screenshot of the Lighthouse Avoids an excessive DOM size audit", width="800", height="363", class="w-screenshot" %}
 </figure>
 
 Lighthouse flags pages with DOM trees that:
@@ -69,6 +69,26 @@ If you can't avoid a large DOM tree,
 another approach for improving rendering performance is simplifying your CSS selectors.
 See Google's [Reduce the Scope and Complexity of Style Calculations](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
 for more information.
+
+## Stack-specific guidance
+
+### Angular
+
+If you're rendering large lists, use [virtual scrolling](/virtualize-lists-with-angular-cdk/)
+with the Component Dev Kit (CDK).
+
+### React
+
+* Use a "windowing" library like
+  [`react-window`](/virtualize-long-lists-react-window/) to minimize the number
+  of DOM nodes created if you are rendering many repeated elements on the page.
+* Minimize unnecessary re-renders using
+  [`shouldComponentUpdate`](https://reactjs.org/docs/optimizing-performance.html#shouldcomponentupdate-in-action),
+  [`PureComponent`](https://reactjs.org/docs/react-api.html#reactpurecomponent),
+  or [`React.memo`](https://reactjs.org/docs/react-api.html#reactmemo).
+* [Skip effects](https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects)
+  only until certain dependencies have changed if you are using the `Effect`
+  hook to improve runtime performance.
 
 ## Resources
 

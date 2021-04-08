@@ -15,6 +15,7 @@
  */
 const {html} = require('common-tags');
 const BaseCard = require('./BaseCard');
+const {Img} = require('./Img');
 
 /**
  * AuthorCard used to preview authors.
@@ -26,15 +27,18 @@ class AuthorCard extends BaseCard {
     super(collectionItem, 'w-card-author');
   }
 
-  renderThumbnail(_, img, alt) {
+  renderThumbnail(_, src, alt) {
+    const img = Img({
+      src,
+      alt,
+      width: '192',
+      height: '192',
+      class: 'w-card-author__image',
+    });
+
     return html`
       <figure class="w-card-base__figure w-card-author__figure">
-        <img
-          class="w-card-author__image"
-          src="${img}"
-          alt="${alt}"
-          loading="lazy"
-        />
+        ${img}
       </figure>
     `;
   }

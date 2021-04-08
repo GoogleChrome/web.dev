@@ -4,7 +4,7 @@ subhead: Learn to diagnose costly work preventing user interaction.
 authors:
   - addyosmani
 date: 2019-05-29
-hero: long-tasks.jpg
+hero: image/admin/QvWXvBSXsRKtpGOcakb5.jpg
 alt: An hourglass with sand pouring through it
 description: |
   Long Tasks can keep the main thread busy, delaying user interaction. Chrome DevTools can now visualize Long Tasks, making it easier to see tasks to optimize.

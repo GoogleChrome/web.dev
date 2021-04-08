@@ -16,6 +16,7 @@
 
 const {html} = require('common-tags');
 const AuthorInfo = require('./AuthorInfo');
+const {Img} = require('./Img');
 
 module.exports = ({id, author, showSocialMedia = false, small = false}) => {
   if (!author) {
@@ -33,15 +34,17 @@ module.exports = ({id, author, showSocialMedia = false, small = false}) => {
       )}`,
     );
   }
-
+  const img = Img({
+    src: author.image,
+    alt: author.title,
+    width: '64',
+    height: '64',
+    class: `w-author__image${small ? ' w-author__image--small' : ''}`,
+  });
   return html`
     <div class="w-author">
       <a href="/authors/${id}">
-        <img
-          class="w-author__image ${small && 'w-author__image--small'}"
-          src="/images/authors/${id}.jpg"
-          alt="${author.title}"
-        />
+        ${img}
       </a>
       ${AuthorInfo({author, id, showSocialMedia})}
     </div>

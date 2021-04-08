@@ -4,8 +4,8 @@ subhead: Optimizing the performance of eBay's sites and apps for a faster user e
 authors:
   - addyosmani
 date: 2020-01-22
-hero: hero.png
-thumbnail: thumbnail.png
+hero: image/admin/UMFt6kc3YZIaF2Qzqd0d.png
+thumbnail: image/admin/58uctmJLRxZK0KKV2igl.png
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom
@@ -55,7 +55,7 @@ significant improvements to site speed.
 …and their Chrome User Experience Report data highlights these improvements, too.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="dev-content1.png" alt="Screenshots of PageSpeed Insights view of Chrome User Experience Report data highlighting fast FCP of 70% and fast FID of 88% for eBay.com">
+  {% Img src="image/admin/YeJPjxdDBrdbgLxcbl7E.png", alt="Screenshots of PageSpeed Insights view of Chrome User Experience Report data highlighting fast FCP of 70% and fast FID of 88% for eBay.com", width="800", height="237", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Chrome User Experience Report data for <a href="https://web.dev/fcp/">First Contentful Paint</a> and <a href="https://web.dev/fid/">First Input Delay</a> for the eBay.com origin.
   </figcaption>
@@ -111,7 +111,7 @@ results page is the most image-heavy page at eBay, and they were already using W
 consistent pattern.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="dev-content2.png" alt="Screenshots of the DevTools network panel filtered to show WebP image requests from eBay.com">
+  {% Img src="image/admin/wxY64wQbCvgdEuI8DlUY.png", alt="Screenshots of the DevTools network panel filtered to show WebP image requests from eBay.com", width="800", height="506", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     WebP images being served to supported browsers on eBay.com.
   </figcaption>
@@ -222,7 +222,7 @@ More importantly, eBay observed that there was a blocking third-party analytics 
 All the performance "cuts" eBay made collectively contributed towards moving the needle, and it happened over a period of time. The releases were phased in throughout the year, with each release shaving off tens of milliseconds, ultimately reaching the point where eBay is now:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="dev-content6.png" alt="Screenshots of Chrome UX Report showing field data improvements for eBay.com." loading="lazy">
+  {% Img src="image/admin/GxKfB8GHUd9cQWLb0Pkj.png", alt="Screenshots of Chrome UX Report showing field data improvements for eBay.com.", width="800", height="529", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The impact of eBay's speed efforts on their field metrics over time, as illustrated by the <a href="https://g.co/chromeuxdash">Chrome UX Report Dashboard</a>.
   </figcaption>

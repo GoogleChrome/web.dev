@@ -4,9 +4,9 @@ subhead: How to integrate with hardware media keys, customize media notification
 authors:
   - beaufortfrancois
 date: 2020-03-06
-updated: 2021-01-15
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+updated: 2021-03-31
+hero: image/admin/IhujMvzGa5Mf0aNWYRXW.jpg
+thumbnail: image/admin/Q6CqQNLucogBCxGMsSU2.jpg
 description: |
   Web developers can customize media notifications and respond to media
   related events such as seeking or track changing with the Media Session API.
@@ -29,8 +29,8 @@ and even on wearable devices. I'll describe these customizations in this
 article.
 
 <figure class="w-figure">
-  <img src="./contexts.jpg" alt="Screenshots of Media Session contexts">
-  <figcaption class="w-figcaption">Media hub on desktop, media notification on mobile, and a wearable device</figcaption>
+  {% Img src="image/admin/qwTz64KKq4rq7WeA3rlT.jpg", alt="Screenshots of Media Session contexts", width="800", height="330" %}
+  <figcaption class="w-figcaption">Media hub on desktop, media notification on mobile, and a wearable device.</figcaption>
 </figure>
 
 ## Cross-browser support
@@ -75,8 +75,8 @@ To illustrate, the image below shows how these interfaces relate to specific
 media controls, in this case a media notification on mobile.
 
 <figure class="w-figure">
-  <img src="./tldr.jpg" alt="Media Session interfaces illustration">
-  <figcaption class="w-figcaption">Anatomy of a media notification on mobile</figcaption>
+  {% Img src="image/admin/eiavbbCE6TlI8osR1tYT.jpg", alt="Media Session interfaces illustration", width="800", height="353" %}
+  <figcaption class="w-figcaption">Anatomy of a media notification on mobile.</figcaption>
 </figure>
 
 ## Let users know what's playing
@@ -124,8 +124,7 @@ changes to make sure relevant information is shown in the media notification.
 There are a few things to note about the media metadata.
 
 - Notification artwork array supports blob URLs and data URLs.
-- If no artwork is defined and there is an icon image (specified using `<link
-  rel=icon>`) at a desirable size, media notifications will use it.
+- If no artwork is defined and there is an icon image (specified using `<link rel=icon>`) at a desirable size, media notifications will use it.
 - Notification artwork target size in Chrome for Android is `512x512`. For
   low-end devices, it is `256x256`.
 - The `title` attribute of the media HTML element is used in the "Now playing"
@@ -156,8 +155,8 @@ buttons from a headset, another remote device, a keyboard, or interact with a
 media notification.
 
 <figure class="w-figure">
-  <img src="./windows-10-media-notification.jpg" alt="Screenshot of a media notification in Windows 10">
-  <figcaption class="w-figcaption">Customized media notification in Windows 10</figcaption>
+  {% Img src="image/admin/9rN4x5GXdhg4qjC0ZEmk.jpg", alt="Screenshot of a media notification in Windows 10", width="800", height="450" %}
+  <figcaption class="w-figcaption">Customized media notification in Windows 10.</figcaption>
 </figure>
 
 Because some media session actions may not be supported, it is recommended to
@@ -189,7 +188,7 @@ Unsetting a media session action handler is as easy as setting it to `null`.
 ```js
 try {
   // Unset the "nexttrack" action handler at the end of a playlist.
-  navigator.mediaSession.setActionHandler("nexttrack", null);
+  navigator.mediaSession.setActionHandler('nexttrack', null);
 } catch (error) {
   console.log(`The media session action "nexttrack" is not supported yet.`);
 }
@@ -200,6 +199,16 @@ This is similar to the event listener pattern except that handling an event
 means that the browser stops doing any default behavior and uses this as a
 signal that the website supports the media action. Hence, media action controls
 won't be shown unless the proper action handler is set.
+
+<figure class="w-figure">
+  {% Img
+    src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/WBZAf1ymhtXInsWumHtw.jpg",
+    alt="Screenshot of the Now Playing widget in macOS Big Sur",
+    width="800",
+    height="450"
+  %}
+  <figcaption class="w-figcaption">Now Playing widget in macOS Big Sur (requires Chrome 91).</figcaption>
+</figure>
 
 ### Play / pause
 
@@ -216,16 +225,16 @@ loading for instance. In this case, override this behavior by setting
 the website UI stays in sync with media notification controls.
 
 ```js
-navigator.mediaSession.setActionHandler("play", async () => {
+navigator.mediaSession.setActionHandler('play', async () => {
   // Resume playback
-  await document.querySelector("video").play();
-  navigator.mediaSession.playbackState = "playing";
+  await document.querySelector('video').play();
+  navigator.mediaSession.playbackState = 'playing';
 });
 
-navigator.mediaSession.setActionHandler("pause", () => {
+navigator.mediaSession.setActionHandler('pause', () => {
   // Pause active playback
-  document.querySelector("video").pause();
-  navigator.mediaSession.playbackState = "paused";
+  document.querySelector('video').pause();
+  navigator.mediaSession.playbackState = 'paused';
 });
 ```
 
@@ -237,7 +246,7 @@ beginning, or move to the previous item in the playlist if the media playback
 has a notion of a playlist.
 
 ```js
-navigator.mediaSession.setActionHandler("previoustrack", () => {
+navigator.mediaSession.setActionHandler('previoustrack', () => {
   // Play previous track.
 });
 ```
@@ -248,7 +257,7 @@ The `"nexttrack"` action indicates that the user wants to move media playback to
 the next item in the playlist if the media playback has a notion of a playlist.
 
 ```js
-navigator.mediaSession.setActionHandler("nexttrack", () => {
+navigator.mediaSession.setActionHandler('nexttrack', () => {
   // Play next track.
 });
 ```
@@ -259,7 +268,7 @@ The `"stop"` action indicates that the user wants to stop the media playback and
 clear the state if appropriate.
 
 ```js
-navigator.mediaSession.setActionHandler("stop", () => {
+navigator.mediaSession.setActionHandler('stop', () => {
   // Stop playback and clear state if appropriate.
 });
 ```
@@ -276,16 +285,16 @@ move the media playback time by. If it is not provided (for example `undefined`)
 you should use a sensible time (for example 10-30 seconds).
 
 ```js
-const video = document.querySelector("video");
+const video = document.querySelector('video');
 const defaultSkipTime = 10; /* Time to skip in seconds by default */
 
-navigator.mediaSession.setActionHandler("seekbackward", (details) => {
+navigator.mediaSession.setActionHandler('seekbackward', (details) => {
   const skipTime = details.seekOffset || defaultSkipTime;
   video.currentTime = Math.max(video.currentTime - skipTime, 0);
   // TODO: Update playback state.
 });
 
-navigator.mediaSession.setActionHandler("seekforward", (details) => {
+navigator.mediaSession.setActionHandler('seekforward', (details) => {
   const skipTime = details.seekOffset || defaultSkipTime;
   video.currentTime = Math.min(video.currentTime + skipTime, video.duration);
   // TODO: Update playback state.
@@ -305,10 +314,10 @@ being called multiple times as part of a sequence and this is not the last call
 in that sequence.
 
 ```js
-const video = document.querySelector("video");
+const video = document.querySelector('video');
 
-navigator.mediaSession.setActionHandler("seekto",(details) => {
-  if (details.fastSeek && "fastSeek" in video) {
+navigator.mediaSession.setActionHandler('seekto', (details) => {
+  if (details.fastSeek && 'fastSeek' in video) {
     // Only use fast seek if supported.
     video.fastSeek(details.seekTime);
     return;
@@ -326,22 +335,22 @@ position state is a combination of the media playback rate, duration, and
 current time.
 
 <figure class="w-figure">
-  <img src="./chrome-os-lock-screen-media-controls.jpg" alt="Screenshot of lock screen media controls in Chrome OS">
-  <figcaption class="w-figcaption">Lock screen media controls in Chrome OS</figcaption>
+  {% Img src="image/admin/Rlw13wMoaJrDziraXgUc.jpg", alt="Screenshot of lock screen media controls in Chrome OS", width="800", height="450" %}
+  <figcaption class="w-figcaption">Lock screen media controls in Chrome OS.</figcaption>
 </figure>
 
 The duration must be provided and positive. The position must be positive and
 less than the duration. The playback rate must be greater than 0.
 
 ```js
-const video = document.querySelector("video");
+const video = document.querySelector('video');
 
 function updatePositionState() {
-  if ("setPositionState" in navigator.mediaSession) {
+  if ('setPositionState' in navigator.mediaSession) {
     navigator.mediaSession.setPositionState({
       duration: video.duration,
       playbackRate: video.playbackRate,
-      position: video.currentTime
+      position: video.currentTime,
     });
   }
 }
@@ -351,25 +360,25 @@ await video.play();
 updatePositionState();
 
 // When user wants to seek backward, update position.
-navigator.mediaSession.setActionHandler("seekbackward", details => {
+navigator.mediaSession.setActionHandler('seekbackward', (details) => {
   /* ... */
   updatePositionState();
 });
 
 // When user wants to seek forward, update position.
-navigator.mediaSession.setActionHandler("seekforward", details => {
+navigator.mediaSession.setActionHandler('seekforward', (details) => {
   /* ... */
   updatePositionState();
 });
 
 // When user wants to seek to a specific time, update position.
-navigator.mediaSession.setActionHandler("seekto", details => {
+navigator.mediaSession.setActionHandler('seekto', (details) => {
   /* ... */
   updatePositionState();
 });
 
 // When video playback rate changes, update position state.
-video.addEventListener("ratechange", event => {
+video.addEventListener('ratechange', (event) => {
   updatePositionState();
 });
 ```
@@ -392,25 +401,25 @@ Check out some [Media Session samples] featuring [Blender Foundation] and
     <source src="https://storage.googleapis.com/webfundamentals-assets/videos/media-hub-desktop-720.mp4" type="video/mp4; codecs=h264">
   </video>
   <figcaption class="w-figcaption">
-    A screencast illustrating the Media Session API
+    A screencast illustrating the Media Session API.
   </figcaption>
 </figure>
 
 ## Resources
 
 - Media Session Spec:
-[wicg.github.io/mediasession](https://wicg.github.io/mediasession)
+  [wicg.github.io/mediasession](https://wicg.github.io/mediasession)
 - Spec Issues:
-[github.com/WICG/mediasession/issues](https://github.com/WICG/mediasession/issues)
+  [github.com/WICG/mediasession/issues](https://github.com/WICG/mediasession/issues)
 - Chrome Bugs:
-[crbug.com](https://crbug.com/?q=component:Internals>Media>Session)
+  [crbug.com](https://crbug.com/?q=component:Internals>Media>Session)
 
 [media hub]: https://blog.google/products/chrome/manage-audio-and-video-in-chrome/
-[Chrome OS]: https://www.blog.google/products/chromebooks/whats-new-december2019/
+[chrome os]: https://www.blog.google/products/chromebooks/whats-new-december2019/
 [at least 5 seconds]: https://chromium.googlesource.com/chromium/src/+/5d8eab739eb23c4fd27ba6a18b0e1afc15182321/media/base/media_content_type.cc#10
-[Cache API]: /web/fundamentals/instant-and-offline/web-storage/offline-for-pwa
-[Media Session samples]: https://googlechrome.github.io/samples/media-session/
-[Web Audio API]: /web/updates/2012/02/HTML5-audio-and-the-Web-Audio-API-are-BFFs
-[Blender Foundation]: http://www.blender.org/
-[Jan Morgenstern's work]: http://www.wavemage.com/category/music/
-[PiP window controls]: https://developers.google.com/web/updates/2018/10/watch-video-using-picture-in-picture#show_canvas_element_in_picture-in-picture_window
+[cache api]: /web/fundamentals/instant-and-offline/web-storage/offline-for-pwa
+[media session samples]: https://googlechrome.github.io/samples/media-session/
+[web audio api]: /web/updates/2012/02/HTML5-audio-and-the-Web-Audio-API-are-BFFs
+[blender foundation]: http://www.blender.org/
+[jan morgenstern's work]: http://www.wavemage.com/category/music/
+[pip window controls]: https://developers.google.com/web/updates/2018/10/watch-video-using-picture-in-picture#show_canvas_element_in_picture-in-picture_window

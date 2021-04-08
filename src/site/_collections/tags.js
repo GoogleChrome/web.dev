@@ -23,7 +23,7 @@ let processedCollection;
 /**
  * Returns all tags with their posts.
  *
- * @param {any} [collections] Eleventy collection object
+ * @param {EleventyCollectionObject} [collections] Eleventy collection object
  * @return {Tags}
  */
 module.exports = (collections) => {
@@ -46,22 +46,23 @@ module.exports = (collections) => {
     const tag = {
       ...tagsData[key],
       data: {
-        canonicalUrl: href,
         subhead: description,
         title,
+        tags: [key],
       },
       description,
       elements: [],
       href,
       key,
       title,
+      url: href,
     };
 
     if (collections) {
       tag.elements = collections
         .getFilteredByTag(tag.key)
         .filter(livePosts)
-        .sort((a, b) => b.date - a.date);
+        .sort((a, b) => b.date.getTime() - a.date.getTime());
     }
 
     if (tag.elements.length > 0 || !collections) {

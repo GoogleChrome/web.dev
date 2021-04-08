@@ -1,0 +1,12 @@
+{# This is used inline with body contents as the TOC on small screens. #}
+{% if tocContents %}
+  {% from 'macros/icon.njk' import icon with context %}
+
+  <details class="course-toc toc flow display-block xl:display-none" data-type="inner" role="navigation" aria-label="Table of contents">
+    <summary class="display-inline-flex align-center user-select-none">
+      <div class="course-toc__heading font-google-sans weight-medium">{{ 'i18n.toc.table_of_contents' | i18n(locale) }}</div>
+      <span class="toc__icon">{{ icon('arrow-right') }}</span>
+    </summary>
+    <div class="toc__wrapper flow-recursive">{{ tocContents | safe }}</div>
+  </details>
+{% endif %}

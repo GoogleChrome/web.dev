@@ -1,20 +1,20 @@
 {
   "slug": "lighthouse-pwa",
-  "cover": "/images/collections/lighthouse-pwa.svg",
-  "title": "PWA audits",
-  "description": "Measure if your site is fast, reliable and installable.",
-  "overview": "These checks validate the aspects of a Progressive Web App.",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/rLOdIP2q5ASla8qjoclm.svg",
+  "title": "i18n.paths.lighthouse_pwa.title",
+  "description": "i18n.paths.lighthouse_pwa.description",
+  "overview": "i18n.paths.lighthouse_pwa.overview",
   "topics": [
     {
-      "title": "Fast and reliable",
+      "title": "i18n.paths.lighthouse_pwa.topics.fast_and_reliable",
       "pathItems": ["load-fast-enough-for-pwa","works-offline","offline-start-url"]
     },
     {
-      "title": "Installable",
+      "title": "i18n.paths.lighthouse_pwa.topics.installable",
       "pathItems": ["is-on-https","service-worker","installable-manifest"]
     },
     {
-      "title": "PWA optimized",
+      "title": "i18n.paths.lighthouse_pwa.topics.pwa_optimized",
       "pathItems": [
         "redirects-http",
         "splash-screen",
@@ -26,7 +26,7 @@
       ]
     },
     {
-      "title": "Additional items to manually check",
+      "title": "i18n.paths.lighthouse_pwa.topics.additional_items_to_manually_check",
       "pathItems": ["pwa-cross-browser","pwa-page-transitions","pwa-each-page-has-url"]
     }
   ]

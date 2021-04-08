@@ -24,8 +24,7 @@ which can cause confusion.
 flags focusable elements that have parents with the `aria-hidden="true"` attribute:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="aria-hidden-focus.png"
-  alt="Lighthouse audit showing focusable elements that have parents with the aria-hidden attribute">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqhdHogcBrLR4W0uiECZ.png", alt="Lighthouse audit showing focusable elements that have parents with the aria-hidden attribute", width="800", height="206", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/focusable-els.njk' %}

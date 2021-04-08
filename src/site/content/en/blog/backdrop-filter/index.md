@@ -7,7 +7,7 @@ updated: 2019-08-29
 authors:
   - adamargyle
   - joemedley
-hero: hero.jpg
+hero: image/admin/ltK4SNRultTnkbimOySm.jpg
 alt: A view through a rain-covered foggy window.
 description: |
   Learn how to add background effects like blurring and transparency to UI
@@ -22,10 +22,8 @@ feedback:
 Translucence, blurring, and other effects are useful ways of creating depth while keeping the context of the background content. They support a host of use cases such as frosted glass, video overlays, translucent navigation headers, inappropriate image censoring, image loading, and so on. You may recognize these effects from two popular operating systems: [Windows 10](https://i.kinja-img.com/gawker-media/image/upload/s--9RLXARU4--/c_scale,dpr_2.0,f_auto,fl_progressive,q_80,w_800/trgz8yivyyqrpcnwscu5.png) and [iOS](https://static.businessinsider.com/image/51fd2822eab8eae16e00000b-750.jpg).
 
 <figure class="w-figure">
-  <img src="weather_app.jpg" alt="An example of a frosted glass effect.">
-  <figcaption class="w-figcaption">
-    An example of a frosted glass effect. <a href="https://dribbble.com/shots/733714-Weather-App?list=tags&tag=android" target="_blank" rel="noopener noreferrer">Source</a>.
-  </figcaption>
+  {% Img src="image/admin/mEc6bdwB2ZX6VSXvyJEn.jpg", alt="An example of a frosted glass effect.", width="400", height="300" %}
+  <figcaption class="w-figcaption">An example of a frosted glass effect. <a href="https://dribbble.com/shots/733714-Weather-App?list=tags&tag=android" target="_blank" rel="noopener noreferrer">Source</a>.</figcaption>
 </figure>
 
 Historically, these techniques were difficult to implement on the web, requiring less than perfect [hacks or workarounds](https://stackoverflow.com/questions/38145368/css-workaround-to-backdrop-filter). In recent years both [Safari](https://webkit.org/blog/3632/introducing-backdrop-filters/) and Edge have provided these capabilities through the `background-filter` (and alternatively, the `-webkit-backdrop-filter`) property, which dynamically blends foreground and background colors based on filter functions. Now Chrome supports `background-filter`, starting in version 76.
@@ -54,7 +52,8 @@ CSS `backdrop-filter` applies one or more effects to an element that is transluc
 
 <div class="w-columns">
 {% Compare 'worse', 'No foreground transparency' %}
-![A triangle superimposed on a circle. The circle can't be seen through the triangle.](./transparency-off.png)
+{% Img src="image/admin/LOqxvB3qqVkbZBmxMmKS.png", alt="A triangle superimposed on a circle. The circle can't be seen through the triangle.", width="480", height="283" %}
+
 ```css
 .frosty-glass-pane {
   backdrop-filter: blur(2px);
@@ -63,7 +62,8 @@ CSS `backdrop-filter` applies one or more effects to an element that is transluc
 {% endCompare %}
 
 {% Compare 'better', 'Foreground transparency' %}
-![A triangle superimposed on a circle. The triangle is translucent, allowing the circle to be seen through it.](./transparency-on.png)
+{% Img src="image/admin/VbyjpS6Td39E4FudeiVg.png", alt="A triangle superimposed on a circle. The triangle is translucent, allowing the circle to be seen through it.", width="480", height="283" %}
+
 ```css/1
 .frosty-glass-pane {
   opacity: .9;
@@ -168,7 +168,7 @@ This example shows how to blur a semi-transparent background to make text readab
 
 ### Text contrast on dynamic backgrounds
 
-As stated earlier, `backdrop-filter` allows performant effects that would be difficult or impossible on the web. An example of this is changing a background in respone to an animation. In this example, `backdrop-filter` maintains the high contrast between the text and its background in spite of what's going on behind the text. It starts with the default background color `darkslategray` and uses `backdrop-filter` to invert the colors after the transformation.
+As stated earlier, `backdrop-filter` allows performant effects that would be difficult or impossible on the web. An example of this is changing a background in response to an animation. In this example, `backdrop-filter` maintains the high contrast between the text and its background in spite of what's going on behind the text. It starts with the default background color `darkslategray` and uses `backdrop-filter` to invert the colors after the transformation.
 
 ```css
 .container::before {

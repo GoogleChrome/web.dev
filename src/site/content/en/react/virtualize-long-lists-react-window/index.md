@@ -3,7 +3,7 @@ layout: post
 title: Virtualize large lists with react-window
 subhead: |
   Super large tables and lists can slow down your site's performance signficantly. Virtualization can help!
-hero: hero-virtualize-long-lists-react-window.jpg
+hero: image/admin/CVkKShuaQw4CfZBg3Eub.jpg
 date: 2019-04-29
 description: |
   react-window is a library that allows large lists to be rendered efficiently.

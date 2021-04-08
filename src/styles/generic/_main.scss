@@ -7,11 +7,9 @@
 // =============================================================================
 
 main {
-  margin-top: 64px;
   padding-bottom: 64px;
 
   @media print {
-    margin-top: 0;
     padding-bottom: 0;
   }
 }

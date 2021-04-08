@@ -1,0 +1,23 @@
+---
+show_banner: true
+tags: []
+---
+
+<!DOCTYPE html>
+<html lang="{{lang}}">
+  <head>
+    {% include 'partials/head.njk' %}
+  </head>
+  <body class="unresolved">
+    {#
+      Make the snackbar the first item in the DOM so we don't have to steal the
+      user's focus on initial visit to show them a cookie banner. Instead, the
+      snackbar will be the first stop for the screen reader / focus.
+    #}
+    <web-snackbar-container></web-snackbar-container>
+
+    {{ content | safe }}
+
+    {% include 'partials/analytics.njk' %}
+  </body>
+</html>

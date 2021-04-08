@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: There are many different options for storing data in the browser. Which one is best for your needs?
 date: 2020-04-27
-updated: 2020-05-07
+updated: 2021-02-11
 tags:
   - blog
   - progressive-web-apps
@@ -13,7 +13,7 @@ tags:
   - indexeddb
   - cachestorage
   - memory
-hero: hero.jpg
+hero: image/admin/c8u2hKEFoFfgTsmcKeuK.jpg
 alt: Stack of shipping containers
 feedback:
   - api
@@ -107,9 +107,13 @@ device.
   [may use up to 2GB][ff-usage-limits]. You can use the
   [StorageManager API](#check-available) to determine how much space is still
   available.
-* Safari (both desktop and mobile) appears to allow up to 1GB. When the limit
+* Safari (both desktop and mobile) appears to allow about 1GB. When the limit
   is reached, Safari will prompt the user, increasing the limit in 200MB
   increments. I was unable to find any official documentation on this.
+  * If a PWA is added to the home screen on mobile Safari, it appears to
+    create a new storage container, and nothing is shared between the PWA
+    and mobile Safari. Once the quota has been hit for an installed PWA, there
+    doesn't appear to be any way to request additional storage.
 
 In the past, if a site exceeded a certain threshold of data stored, the
 browser would prompt the user to grant permission to use more data. For
@@ -159,7 +163,14 @@ of stored cross origin resources.
 During development, you can use your browser's DevTools to inspect the
 different storage types, and easily clear all stored data.
 
-<img class="w-screenshot w-screenshot-filled" alt="Storage test tool." src="storage-test-tool.png">
+A new feature was added in Chrome 88 that lets you override the site's storage
+quota in the Storage Pane. This feature gives you the ability to simulate
+different devices and test the behavior of your apps in low disk availability
+scenarios. Go to **Application** then **Storage**, enable the
+**Simulate custom storage quota** checkbox, and enter any valid number to
+simulate the storage quota.
+
+{% Img src="image/0g2WvpbGRGdVs0aAPc6ObG7gkud2/tYlbklNwF6DFKNV2cY0D.png", alt="DevTools Storage pane.", width="800", height="567" %}
 
 While working on this article, I wrote a [simple tool][glitch-storage] to
 attempt to quickly use as much storage as possible. It's a quick and easy way
@@ -286,7 +297,6 @@ into Safari to figure out its storage limits.
 
 The hero image is by Guillaume Bolduc on
 [Unsplash](https://unsplash.com/photos/uBe2mknURG4).
-
 
 [mdn-sessionstorage]: https://developer.mozilla.org/en/docs/Web/API/Window/sessionStorage
 [mdn-localstorage]: https://developer.mozilla.org/en/docs/Web/API/Window/localStorage

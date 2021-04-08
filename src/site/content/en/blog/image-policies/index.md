@@ -6,7 +6,7 @@ authors:
 date: 2019-05-31
 codelabs:
   - codelab-serve-images-webp
-hero: pankaj-patel-721645-unsplash.jpg
+hero: image/admin/OHtpn2oJuumNzReNNI6f.jpg
 alt: A description of the hero image for screen reader users.
 description: |
   Images take up a significant amount of visual space and make up the
@@ -17,6 +17,7 @@ tags:
   - images
   - origin-trials
 ---
+
 Images often take up a significant amount of visual space and make up the
 majority of the downloaded bytes on a website. Optimizing images can improve
 loading performance and reduce network traffic.
@@ -43,13 +44,13 @@ reports. (See [Report-only mode in the wild](#report-only-mode-in-the-wild),
 below for details.)
 
 ### oversized-images
+
 The `oversized-images` feature policy restricts the intrinsic dimensions
 of an image in relation to its container size.
 
 When a document uses the `oversized-images` policy, any `<img>` element
 whose intrinsic resolution is more than X times larger than the container size
 in either dimension will be replaced with a placeholder image.
-
 
 #### Why?
 
@@ -65,10 +66,8 @@ for information on optimizing your images.
 A few examples illustrate this. The following shows the default behavior when cutting an image's display size in half.
 
 <figure class="w-figure">
-  <img src="./default-100x100.png" alt="The default resizing behavior" style="max-width: 326px;">
-  <figcaption class="w-figcaption">
-    The default resizing behavior.
-  </figcaption>
+  {% Img src="image/admin/QR01OUN3VXTbOhhSOZBz.png", alt="The default resizing behavior.", width="326", height="401" %}
+  <figcaption class="w-figcaption">The default resizing behavior.</figcaption>
 </figure>
 
 If I apply the following feature policy, I get a placeholder image instead.
@@ -76,17 +75,15 @@ If I apply the following feature policy, I get a placeholder image instead.
 `Feature-Policy: oversized-images *(2);`
 
 <figure class="w-figure">
-  <img src="./resize-both-dimensions.png" alt="When the image is too large for the container" style="max-width: 326px;">
-  <figcaption class="w-figcaption">
-    When the image is too large for the container.
-  </figcaption>
+  {% Img src="image/admin/NErIMVS4qsSVHek2UtDZ.png", alt="When the image is too large for the container.", width="326", height="401" %}
+  <figcaption class="w-figcaption">When the image is too large for the container.</figcaption>
 </figure>
 
 I get similar results if I lower only the width or the height.
 
 <figure class="w-figure">
-  <img src="./resize-width.png" alt="Resized width" style="max-width: 326px;">
-  <img src="./resize-height.png" alt="Resized height" style="max-width: 326px;">
+  {% Img src="image/admin/S11HV1w6uqkXq6GDRKVx.png", alt="Resized width", width="326", height="401" %}
+  {% Img src="image/admin/dMPfyFsJ5qexNSj0Q8Ia.png", alt="Resized height", width="326", height="401" %}
   <figcaption class="w-figcaption">
     Resize width and height.
   </figcaption>
@@ -96,14 +93,14 @@ I get similar results if I lower only the width or the height.
 
 To summarize, `oversized-images` policy can be specified through either:
 
-* `Feature-Policy` HTTP header
-* `<iframe>` `allow` attribute
+- `Feature-Policy` HTTP header
+- `<iframe>` `allow` attribute
 
 To declare the `oversized-images` policy, you need to provide:
 
-* The feature name, `oversized-images` (Required)
-* A list of origins (Optional)
-* The threshold values (i.e., the downscaling ratio X) for the origins, specified in
+- The feature name, `oversized-images` (Required)
+- A list of origins (Optional)
+- The threshold values (i.e., the downscaling ratio X) for the origins, specified in
   parenthesis (Optional)
 
 We recommend a downscaling ratio of 2.0 or lower. Consider using
@@ -126,6 +123,7 @@ browsing contexts will only render normally if the downscaling ratio is less
 than or equal to 1.5. `<img>` elements everywhere else will render normally.
 
 ### unoptimized-{lossy,lossless}-images
+
 The `unoptimized-lossy-images`, `unoptimized-lossless-images`,
 `unoptimized-lossless-images-strict` feature policies restrict the file
 size of an image in relation to its intrinsic resolution:
@@ -156,10 +154,8 @@ optimizing your images.
 The following shows the default browser behavior. Without the feature policy an unoptimized lossy image can be displayed just the same as an optimized image.
 
 <figure class="w-figure">
-  <img src="./unoptimized-lossy.png" alt="Comparing an optimized image with an unoptimized image" style="max-width: 326px;">
-  <figcaption class="w-figcaption">
-    Comparing an optimized image with an unoptimized image.
-  </figcaption>
+  {% Img src="image/admin/kxabc5874fW5IvPnqR9E.png", alt="Comparing an optimized image with an unoptimized image.", width="326", height="401" %}
+  <figcaption class="w-figcaption">Comparing an optimized image with an unoptimized image.</figcaption>
 </figure>
 
 If I apply the following feature policy, I get a placeholder image instead.
@@ -167,10 +163,8 @@ If I apply the following feature policy, I get a placeholder image instead.
 `Feature-Policy: unoptimized-lossy-images *(0.5);`
 
 <figure class="w-figure">
-  <img src="./lossy-image-excluded.png" alt="When the image is not optimized" style="max-width: 326px;">
-  <figcaption class="w-figcaption">
-    When the image is not optimized.
-  </figcaption>
+  {% Img src="image/admin/Y0cCIEuFI1M3DaKfxBkI.png", alt="When the image is not optimized.", width="326", height="401" %}
+  <figcaption class="w-figcaption">When the image is not optimized.</figcaption>
 </figure>
 
 #### How to use
@@ -182,15 +176,15 @@ more details.
 To summarize, `unoptimized-{lossy,lossless}-images` policies can be either
 specified through:
 
-* `Feature-Policy` HTTP header
-* `<iframe>` `allow` attribute
+- `Feature-Policy` HTTP header
+- `<iframe>` `allow` attribute
 
 To declare an `unoptimized-{lossy,lossless}-images` policy, you will need to
 provide:
 
-* The feature name, for example, `unoptimized-lossy-images` (Required)
-* A list of origins (Optional)
-* The threshold values (i.e., byte-per-pixel ratio X) for the origins, specified
+- The feature name, for example, `unoptimized-lossy-images` (Required)
+- A list of origins (Optional)
+- The threshold values (i.e., byte-per-pixel ratio X) for the origins, specified
   in parenthesis (Optional)
 
 We recommend a byte-per-pixel ratio of 0.5 or lower for
@@ -204,8 +198,8 @@ if none of thes formats work.
 
 If you are using WebP formats, try with stricter thresholds:
 
-* 0.2 for WEBPV8
-* 0.5 for WEBPL
+- 0.2 for WEBPV8
+- 0.5 for WEBPL
 
 #### More examples
 
@@ -253,8 +247,8 @@ would like to have policies supported on broader contents, please let us know.
 
 I've talked quite a bit about optimizing your images, but haven't said how to do it. That topic is out of scope for this article, but you can learn more from the links below and from the codelabs listed at the end of the article.
 
-* [Optimizing images](/fast#optimize-your-images)
-* [Serve images with correct dimensions](/serve-images-with-correct-dimensions/)
+- [Optimizing images](/fast#optimize-your-images)
+- [Serve images with correct dimensions](/serve-images-with-correct-dimensions/)
 
 ## Experiment with the policies in origin trials
 
@@ -265,15 +259,15 @@ To participate:
 1. [request a token](https://developers.chrome.com/origintrials/#/view_trial/2562548187973812225)
 
 1. Add the token on any pages in your origin using an `Origin-Trial` HTTP
-  header:<br/>
-  <br/>
-  `Origin-Trial: **token as provided in the developer console**`
+   header:<br/>
+   <br/>
+   `Origin-Trial: **token as provided in the developer console**`
 
 1. Specify an image policy via HTTP header Feature-Policy header:<br/>
    <br/>
-  `Feature-Policy: **image policies specified here**`
+   `Feature-Policy: **image policies specified here**`
 
-Check out  [Origin Trials Guide for Web
+Check out [Origin Trials Guide for Web
 Developers](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)
 for more details.
 

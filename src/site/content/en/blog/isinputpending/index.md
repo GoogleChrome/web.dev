@@ -7,7 +7,7 @@ description: >
   A new JavaScript API that may help you avoid the trade-off between
   load performance and input responsiveness.
 date: 2020-11-19
-hero: hero.jpg
+hero: image/admin/Jlg1NJbRJnJN4VgubXh4.jpg
 alt: A traffic sign that says 'GIVE WAY'.
 tags:
   - blog

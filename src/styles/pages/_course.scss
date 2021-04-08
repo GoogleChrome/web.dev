@@ -1,0 +1,27 @@
+.course-layout {
+  display: flex;
+  flex-direction: column;
+  @include bp(lg) {
+    flex-direction: row;
+  }
+}
+
+.course-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.course-content {
+  display: flex;
+  justify-content: center;
+  margin: 24px auto;
+  max-width: 1080px;
+}
+
+.course-content > main {
+  flex-grow: 1;
+  margin: 0 36px;
+  max-width: 80ch;
+  min-width: 0;
+  padding: 0;
+}

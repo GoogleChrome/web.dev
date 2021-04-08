@@ -4,9 +4,9 @@ subhead: Trust Tokens is a new API to help combat fraud and distinguish bots fro
 authors:
   - samdutton
 date: 2020-06-22
-updated: 2020-12-09
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+updated: 2021-02-01
+hero: image/admin/okxi2ttRG3h1Z4F3cylI.jpg
+thumbnail: image/admin/cTo0l2opcfNxg1TEjxSg.jpg
 alt: Black and white photograph of hand holding token
 tags:
   - blog
@@ -27,7 +27,21 @@ in other contexts to evaluate the user's authenticity.
 The Trust Token API enables trust of a user in one context to be conveyed to another context without
 identifying the user or linking the two identities.
 
-You can try out Trust Tokens with our [demo](https://trust-token-demo.glitch.me).
+You can try out Trust Tokens with our [demo](https://trust-token-demo.glitch.me) and, from Chrome
+89, [inspect Trust Tokens](https://developers.google.com/web/updates/2021/01/devtools#trust-token)
+in the Chrome DevTools **Network** and **Application** tabs.
+
+<figure class="w-figure">
+  <img src="./images/devtools-network-tab.jpg" alt="Screenshot showing Trust Tokens in the Chrome
+  DevTools Network tab.">
+  <figcaption class="w-figcaption">Trust Tokens in the Chrome DevTools <b>Network</b> tab.</figcaption>
+</figure>
+
+<figure class="w-figure">
+  <img src="./images/devtools-application-tab.jpg" alt="Screenshot showing Trust Tokens in the Chrome
+  DevTools Application tab.">
+  <figcaption class="w-figcaption">Trust Tokens in the Chrome DevTools <b>Application</b> tab.</figcaption>
+</figure>
 
 {% Aside %}
 The Privacy Sandbox is a series of proposals to satisfy third-party use cases
@@ -98,8 +112,8 @@ websites from tracking users through them.</p>
 The following is adapted from
 [sample code in the API explainer](https://github.com/WICG/trust-token-api#sample-api-usage).
 
-{% Aside 'caution' %}
-The code in this post uses version 2 of the API.
+{% Aside %}
+The code in this post uses updated syntax available since Chrome 88.
 {% endAside %}
 
 Imagine that a user visits a news website (`publisher.example`) which embeds
@@ -151,7 +165,7 @@ document:
 fetch('foo.example/get-content', {
   trustToken: {
     type: 'send-redemption-record',
-    issuer: 'https://issuer.example'
+    issuers: ['https://issuer.example']
   }
 });
 ```
@@ -183,8 +197,7 @@ If the user is deemed to be trustworthy by a trust token issuer such as
 ```js
 fetch('issuer.example/.well-known/trust-token', {
   trustToken: {
-    type: 'token-request',
-    issuer: <issuer>
+    type: 'token-request'
   }
 }).then(...)
 ```
@@ -221,7 +234,6 @@ fetch('issuer.example/.well-known/trust-token', {
   ...
   trustToken: {
     type: 'token-redemption',
-    issuer: 'issuer.example',
     refreshPolicy: 'none'
   }
   ...
@@ -236,7 +248,7 @@ fetch('<url>', {
   ...
   trustToken: {
     type: 'send-redemption-record',
-    issuer: <issuer>,
+    issuers: [<issuer>, ...]
   }
   ...
 }).then(...);

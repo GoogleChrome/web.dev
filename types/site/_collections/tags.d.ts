@@ -17,15 +17,16 @@
 declare global {
   export interface TagsItem {
     data: {
-      canonicalUrl: string;
       subhead: string;
       title: string;
+      tags: string[];
     };
     description: string;
     elements: TODO[];
     href: string;
     key: string;
     title: string;
+    url: string;
   }
   export interface Tags {
     [key: string]: TagsItem;

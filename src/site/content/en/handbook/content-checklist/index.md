@@ -2,7 +2,7 @@
 layout: handbook
 title: web.dev content review checklists
 date: 2019-06-26
-updated: 2020-10-05
+updated: 2021-01-25
 description: |
   The official checklists for web.dev content reviews.
 ---
@@ -359,6 +359,13 @@ of the browser. In a year, `Google Chrome Stable` will refer to version 95.
   The Keyboard API is now available in Chrome 85 and later.
 {% endCompare %}
 
+### Other people's products are used as intended {: #intended-use }
+
+If the content mentions or features other people's products, said products
+are to be used as intended. For example, an article should not advise
+to flash a "homebrew" firmware onto a commercial device, unless this is
+explicitly blessed by the manufacturer.
+
 ### Use examples liberally {: #examples }
 
 Provide more examples if a concept is unclear.
@@ -371,7 +378,7 @@ to this rule, which will be done on a case-by-case basis.
 
 ### Avoid insensitive words {: #insensitive-words }
 
-Refer to the [GDDSG word list][gddsg] and make sure that you're not using
+Refer to the [GDDSG word list][wordlist] and make sure that you're not using
 any insensitive words, such as:
 
 * [blacklist](https://developers.google.com/style/word-list#blacklist)

@@ -18,9 +18,9 @@ tags:
   - capabilities
   - fugu
   - progressive-web-apps
-hero: hero.jpg
+hero: image/admin/0uSwSmGHmPXimU3dz8Xa.jpg
 alt: An image of a fish.
-thumbnail: thumbnail.jpg
+thumbnail: image/admin/X84uooDup0B9OYWY4ZKh.jpg
 ---
 
 {% YouTube 'NXCT3htg9nk' %}
@@ -144,7 +144,7 @@ The MDN Web Docs Glossary [defines](https://developer.mozilla.org/en-US/docs/Glo
 the concept as follows:
 
 {% Blockquote 'MDN contributors' %}
-Progressive enhancement is a design philosophy that povides a baseline of
+Progressive enhancement is a design philosophy that provides a baseline of
 essential content and functionality to as many users as possible, while
 delivering the best possible experience only to users of the most modern
 browsers that can run all the required code.

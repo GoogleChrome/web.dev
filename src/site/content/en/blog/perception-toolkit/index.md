@@ -4,7 +4,7 @@ subhead: Easy to use real-world interactivity.
 authors:
   - joemedley
 date: 2019-05-07
-hero: hero.png
+hero: image/admin/SJQDe005xR0Cvu9JPt78.png
 alt: A series of screens shows a phone camera scanning an image and generating a link.
 description: |
   Wouldn't it be great if users could search your site using their camera?
@@ -99,7 +99,7 @@ The file itself looks something like this:
 ## The user experience
 
 What if you want more than the default user experience? The toolkit gives you
-livecycle events, Card and Button objects for crafting the user experience
+lifecycle events, Card and Button objects for crafting the user experience
 around those events, and an easy way to style the cards. I'm going to show a
 little of this with code based losely on our [Getting
 Started](https://perceptiontoolkit.dev/getting-started/) guide.

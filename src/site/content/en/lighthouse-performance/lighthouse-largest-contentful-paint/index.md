@@ -16,8 +16,7 @@ Each metric captures some aspect of page load speed.
 Lighthouse displays LCP in seconds:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="largest-contentful-paint.png"
-       alt="A screenshot of the Lighthouse Largest Contentful Paint audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ptlIzgrai0ufjmZQv5Gz.png", alt="A screenshot of the Lighthouse Largest Contentful Paint audit", width="800", height="594", class="w-screenshot" %}
 </figure>
 
 ## What LCP measures

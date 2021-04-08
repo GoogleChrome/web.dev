@@ -3,7 +3,7 @@ layout: post
 title: 'Precaching with the Angular service worker'
 subhead: |
   Use the Angular service worker to make your app faster and more reliable on networks with poor connectivity.
-hero: precaching-with-the-angular-service-worker.jpg
+hero: image/admin/r1NlrtasqQuMo11wlSva.jpg
 alt: Sparks flying off a metal grinder.
 date: 2019-07-02
 description: |
@@ -62,7 +62,7 @@ Now start an HTTP server in the directory containing your app's production asset
 
 Note that the network tab has a bunch of static assets directly downloaded in the background by the `ngsw-worker.js` script:
 
-![Sample app](sample-app.png "Sample app")
+{% Img src="image/admin/XL0o6p4YbQiBJmWW8Kw4.png", alt="Sample app", width="800", height="599" %}
 
 This is the Angular service worker precaching the static assets specified in the generated `ngsw.json` manifest file.
 

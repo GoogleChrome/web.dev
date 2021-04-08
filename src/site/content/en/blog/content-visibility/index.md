@@ -5,7 +5,8 @@ authors:
   - una
   - vladimirlevin
 date: 2020-08-05
-hero: hero.jpg
+updated: 2021-03-09
+hero: image/admin/lrAkOWYTyGkK2BKXoF9y.jpg
 alt: Stylized photo of a half-hidden person.
 description: >
     The CSS content-visibility property enables web content rendering
@@ -34,10 +35,8 @@ initial user load much faster. It also allows for faster interactions with the
 on-screen content. Pretty neat.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="demo.jpg" alt="demo with figures representing network results">
-  <figcaption class="w-figcaption">
-    In our article demo, applying <code>content-visibility: auto</code> to chunked content areas gives a <b>7x</b> rendering performance boost on initial load. Read on to learn more.</a>
-  </figcaption>
+  {% Img src="image/admin/v6WcSx9Fq76lCD0iqFCQ.jpg", alt="demo with figures representing network results", width="800", height="554", class="w-screenshot" %}
+  <figcaption class="w-figcaption">In our article demo, applying <code>content-visibility: auto</code> to chunked content areas gives a <b>7x</b> rendering performance boost on initial load. Read on to learn more.</figcaption>
 </figure>
 
 ## Browser support {: #support }
@@ -92,7 +91,7 @@ best](https://developers.google.com/web/updates/2016/06/css-containment), or you
 can use another CSS property called `content-visibility` to apply the needed
 containment automatically. `content-visibility` ensures that you get the largest
 performance gains the browser can provide with minimal effort from you as a
-developer. 
+developer.
 
 The content-visibility property accepts several values, but `auto` is the one
 that provides immediate performance improvements. An element that has
@@ -113,6 +112,16 @@ and layout of the element's subtree are skipped.
 As the element approaches the viewport, the browser no longer adds the `size`
 containment and starts painting and hit-testing the element's content. This
 enables the rendering work to be done just in time to be seen by the user.
+
+## A note on accessibility
+
+One of the features of `content-visibility: auto` is that the off-screen content remains available in the document object model and therefore, the accessibility tree (unlike with `visibility: hidden`). This means, that content can be searched for on the page, and navigated to, without waiting for it to load or sacrificing rendering performance.
+
+The flip-side of this, however, is that [landmark](https://www.w3.org/TR/wai-aria-1.1/#landmark_roles) elements with style features such as `display: none` or `visibility: hidden` will also appear in the accessibility tree when off-screen, since the browser will not render these styles until they enter the viewport. To prevent these from being visible in the accessibility tree, potentially causing clutter, be sure to also add `aria-hidden="true"`.
+
+{% Aside 'caution' %}
+In Chromium 85-89, off-screen children within `content-visibility: auto` were marked as invisible. In particular, [headings](https://marcysutton.com/content-visibility-accessible-semantics) and landmark roles were not exposed to accessibility tools. In Chromium 90 this was updated so that they are exposed.
+{% endAside %}
 
 ## Example: a travel blog {: #example }
 
@@ -140,10 +149,8 @@ the elements that may have shifted as a result of new updates. This is rendering
 work. This takes time.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="travelblog.jpg" alt="A screenshot of a travel blog.">
-  <figcaption class="w-figcaption">
-    An example of a travel blog. See <a href="https://codepen.io/una/pen/rNxEWLo">Demo on Codepen</a>
-  </figcaption>
+  {% Img src="image/admin/57Zh2hjcXJjJIBSE648j.jpg", alt="A screenshot of a travel blog.", width="800", height="563", class="w-screenshot" %}
+  <figcaption class="w-figcaption">An example of a travel blog. See <a href="https://codepen.io/una/pen/rNxEWLo">Demo on Codepen</a></figcaption>
 </figure>
 
 Now consider what happens if you put `content-visibility: auto` on each of the
@@ -166,10 +173,8 @@ What is the work that you need to do in order to reap these benefits? First, we
 chunk the content into sections:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="travelblog-chunked.jpg" alt="An annotated screenshot of chunking content into sections with a CSS class.">
-  <figcaption class="w-figcaption">
-    Example of chunking content into sections with the <code>story</code> class applied, to receive <code>content-visibility: auto</code>. See <a href="https://codepen.io/vmpstr/pen/xxZoyMb">Demo on Codepen</a>
-  </figcaption>
+  {% Img src="image/admin/29uexe2kBwIsrAuILPnp.jpg", alt="An annotated screenshot of chunking content into sections with a CSS class.", width="800", height="563", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Example of chunking content into sections with the <code>story</code> class applied, to receive <code>content-visibility: auto</code>. See <a href="https://codepen.io/vmpstr/pen/xxZoyMb">Demo on Codepen</a></figcaption>
 </figure>
 
 Then, we apply the following style rule to the sections:
@@ -192,7 +197,7 @@ In order to realize the potential benefits of `content-visibility`, the browser
 needs to apply size containment to ensure that the rendering results of contents
 do not affect the size of the element in any way. This means that the element
 will lay out as if it was empty. If the element does not have a height specified
-in a regular block layout, then it will be of 0 height. 
+in a regular block layout, then it will be of 0 height.
 
 This might not be ideal, since the size of the scrollbar will shift, being
 reliant on each story having a non-zero height.
@@ -215,10 +220,10 @@ is on-screen, while leveraging the benefits of cached rendering state? Enter:
 The `content-visibility: hidden` property gives you all of the same benefits of
 unrendered content and cached rendering state as `content-visibility: auto` does
 off-screen. However, unlike with `auto`, it does not automatically start to
-render on-screen. 
+render on-screen.
 
 This gives you more control, allowing you to hide an element's contents and
-later unhide them quickly. 
+later unhide them quickly.
 
 Compare it to other common ways of hiding element's contents:
 

@@ -7,7 +7,7 @@ authors:
   - thomassteiner
 date: 2020-06-29
 updated: 2020-08-17
-hero: hero.jpg
+hero: image/admin/gpmA4LxerS1wqYgY19W7.jpg
 alt: Film roll.
 description: |
   The requestVideoFrameCallback() method allows web authors to register a callback

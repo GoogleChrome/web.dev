@@ -4,11 +4,11 @@
 
 import {html} from 'lit-element';
 import {unsafeHTML} from 'lit-html/directives/unsafe-html';
-import {BaseElement} from '../BaseElement';
+import {BaseStateElement} from '../BaseStateElement';
 import {store} from '../../store';
-import * as router from '../../utils/router';
 import {debounce} from '../../utils/debounce';
 import {trackError} from '../../analytics';
+import {allowHtml, escapeHtml} from '../../../lib/utils/escape-html';
 import 'focus-visible';
 import './_styles.scss';
 
@@ -27,7 +27,7 @@ async function internalLoadAlgoliaLibrary() {
   // These keys are safe to be public.
   const applicationID = '2JPAZHQ6K7';
   const apiKey = '01ca870a3f1cad9984ed72419a12577c';
-  const indexName = 'webdev';
+  const indexName = 'prod_web_dev';
   const client = algoliasearch(applicationID, apiKey);
   const index = client.initIndex(indexName);
   return index;
@@ -35,10 +35,10 @@ async function internalLoadAlgoliaLibrary() {
 
 /**
  * An Algolia search box.
- * @extends {BaseElement}
+ * @extends {BaseStateElement}
  * @final
  */
-class Search extends BaseElement {
+class Search extends BaseStateElement {
   static get properties() {
     return {
       // Manages the expanded/collapsed state of the UI.
@@ -50,6 +50,8 @@ class Search extends BaseElement {
       // Indicates which search result should be highlighted in the popout.
       // Primarily used for keyboard behavior.
       cursor: {type: Number},
+      // Locale to use for search
+      locale: {type: String},
     };
   }
 
@@ -61,6 +63,7 @@ class Search extends BaseElement {
     this.query = '';
     this.timeout;
     this.expanded = false;
+    this.locale = 'en';
 
     // On smaller screens we don't do an animation so it's ok for us to fire off
     // actions immediately. On larger screens we need to wait for the searchbox
@@ -72,6 +75,10 @@ class Search extends BaseElement {
     // Debounce the method we use to search Algolia so we don't waste calls
     // while the user is typing.
     this.search = debounce(this.search.bind(this), 200);
+  }
+
+  onStateChanged({currentLanguage}) {
+    this.locale = currentLanguage;
   }
 
   connectedCallback() {
@@ -223,8 +230,19 @@ class Search extends BaseElement {
     // This is intentional because focus needs to stay in the input field.
     // When the user is pressing arrow keys, we use a virtual cursor and
     // aria-activedescendant to indicate the active anchor.
-    return this.hits.map(
-      (hit, idx) => html`
+    return this.hits.map((hit, idx) => {
+      if (!hit._highlightResult.title || !hit._highlightResult.title.value) {
+        return html``;
+      }
+
+      let title = hit._highlightResult.title.value;
+      // Escape any html entities in the title except for <strong> tags.
+      // Algolia sends back <strong> tags in the title which help highlight
+      // the characters that match what the user has typed.
+      title = allowHtml(escapeHtml(title), 'strong');
+      // Strip backticks as they look a bit ugly in the results.
+      title = title.replace(/`/g, '');
+      return html`
         <li class="web-search-popout__item">
           <a
             id="web-search-popout__link--${idx}"
@@ -234,13 +252,11 @@ class Search extends BaseElement {
             aria-selected="${idx === this.cursor}"
             tabindex="-1"
             href="${hit.url}"
-            >${unsafeHTML(
-              hit._highlightResult.title && hit._highlightResult.title.value,
-            )}</a
+            >${unsafeHTML(title)}</a
           >
         </li>
-      `,
-    );
+      `;
+    });
   }
   /* eslint-enable indent */
 
@@ -350,6 +366,7 @@ class Search extends BaseElement {
         attributesToRetrieve: ['url'],
         highlightPreTag: '<strong>',
         highlightPostTag: '</strong>',
+        facetFilters: [`locales:${this.locale}`],
       });
       if (this.query === query) {
         this.hits = hits;
@@ -401,14 +418,11 @@ class Search extends BaseElement {
   }
 
   /**
-   * Tells the router to navigate to the specified URL.
-   * Because this closes the search box, it has the side effect of blurring
-   * focus.
+   * Tells the page to navigate to the url.
    * @param {{url:string}} url A URL data object.
    */
   navigateToHit({url}) {
-    router.route(url);
-    /** @type HTMLElement */ (document.activeElement).blur();
+    window.location.href = url;
   }
 
   /**

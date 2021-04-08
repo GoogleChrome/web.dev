@@ -20,7 +20,7 @@ iframes.
 
 ## Origin
 
-![Origin](same-origin.png)
+{% Img src="image/admin/PX5HrIMPlgcbzYac3FHV.png", alt="Origin", width="680", height="100" %}
 
 "Origin" is a combination of a
 [scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Scheme_or_protocol)
@@ -82,7 +82,7 @@ considered "same-origin". Everything else is considered "cross-origin".
 
 ## Site
 
-![Site](same-site.png)
+{% Img src="image/admin/oSRJzCJIr4OjGzUhcNDP.png", alt="Site", width="680", height="142" %}
 
 Top-level domains (TLDs) such as `.com` and `.org` are listed in the [Root Zone
 Database](https://www.iana.org/domains/root/db). In the example above, "site" is
@@ -103,7 +103,7 @@ The whole site name is known as the eTLD+1. For example, given a URL of
 `my-project.github.io`, which is considered a "site". In other words, the eTLD+1
 is the effective TLD and the part of the domain just before it.
 
-![eTLD+1](eTLD+1.png)
+{% Img src="image/admin/qmr35hpnIvpouOe9591g.png", alt="eTLD+1", width="695", height="136" %}
 
 ### "same-site" and "cross-site" {: #same-site-cross-site }
 
@@ -151,7 +151,7 @@ have a different eTLD+1 are "cross-site".
 
 ### "schemeful same-site"
 
-![schemeful same-site](schemeful-same-site.png)
+{% Img src="image/admin/Y9LbVyxYzg4k6mwSEqyE.png", alt="schemeful same-site", width="677", height="105" %}
 
 The definition of "same-site" is evolving to consider the URL scheme as part of
 the site in order to prevent HTTP being used as [a weak

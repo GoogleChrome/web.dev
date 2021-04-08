@@ -3,8 +3,9 @@ layout: post
 title: Add a web app manifest with Create React App
 subhead: |
   A web app manifest is included into Create React App by default and allows anyone to install your React application on their device.
-hero: hero-add-manifest-react.jpg
+hero: image/admin/pOjpReVK54kUJP6nZMwn.jpg
 date: 2019-04-29
+updated: 2021-02-18
 description: |
   Create React App includes a web app manifest by default. Modifying this file
   will allow you to change how your application is displayed when installed on
@@ -29,9 +30,9 @@ on the user's device.
 ## Why is this useful?
 
 Web app manifest files provide the capability to change how an installed
-application will look like on a device home screen. By modifying properties in
-the JSON file, you can modify a number of details in your application, including
-its:
+application will look like on the user's desktop or mobile device. By modifying
+properties in the JSON file, you can modify a number of details in your
+application, including its:
 
 * Name
 * Description
@@ -54,6 +55,16 @@ In CRA, a default manifest file, `/public/manifest.json` is included automatical
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
@@ -63,7 +74,7 @@ In CRA, a default manifest file, `/public/manifest.json` is included automatical
 }
 ```
 
-This allows anybody to install the device to their home screen and see some
+This allows anybody to install the application on their device and see some
 default details of the application. The HTML file, `public/index.html`, also
 includes a `<link>` element to load the manifest.
 

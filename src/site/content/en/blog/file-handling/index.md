@@ -11,7 +11,7 @@ updated: 2020-11-02
 tags:
   - blog
   - file-handling
-hero: hero.jpg
+hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
 origin_trial:
   url:
@@ -254,9 +254,10 @@ Did you find a bug with Chrome's implementation? Or is the implementation differ
 Are you planning to use the File Handling API? Your public support helps the Chrome team to
 prioritize features and shows other browser vendors how critical it is to support them.
 
-Share how you plan to use it on the [WICG Discourse thread][wicg-discourse] Send a Tweet to
-[@ChromiumDev][cr-dev-twitter] with the `#FileHandling` hashtag and let us know where and how you
-are using it.
+- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
+- Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+  [`#FileHandling`](https://twitter.com/search?q=%23FileHandling&src=typed_query&f=live)
+  and let us know where and how you are using it.
 
 ## Helpful links {: #helpful }
 

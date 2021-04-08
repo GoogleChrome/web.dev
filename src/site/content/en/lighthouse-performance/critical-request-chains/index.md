@@ -19,7 +19,7 @@ the more significant the impact on page load performance.
 reports critical requests loaded with a high priority:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="critical-request-chains.png" alt="A screenshot of the Lighthouse Minimize critical request depth audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/apWYFAWSuxf9tQHuogSN.png", alt="A screenshot of the Lighthouse Minimize critical request depth audit", width="800", height="452", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
@@ -48,6 +48,12 @@ Learn more about optimizing your
 [JavaScript](/apply-instant-loading-with-prpl),
 [CSS](/defer-non-critical-css), and
 [web fonts](/avoid-invisible-text).
+
+## Stack-specific guidance
+
+### Magento
+
+If you are not bundling your JavaScript assets, consider using [baler](https://github.com/magento/baler).
 
 ## Resources
 

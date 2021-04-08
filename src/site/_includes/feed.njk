@@ -13,7 +13,7 @@
   <logo>{{ metadata.logo }}</logo>
   {% for post in collections.blogPosts -%}
   {#  absoluteUrl comes from 11ty RSS Plugin (@see https://www.11ty.dev/docs/plugins/rss/) #}
-  {% set absolutePostUrl -%}{{ post.data.canonicalUrl | url | absoluteUrl(metadata.url) }}{%- endset %}
+  {% set absolutePostUrl -%}{{ post.url | url | absoluteUrl(metadata.url) }}{%- endset %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>

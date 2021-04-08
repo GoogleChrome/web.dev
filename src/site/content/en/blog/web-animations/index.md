@@ -5,7 +5,7 @@ authors:
   - una
   - kevinellis
 date: 2020-05-27
-hero: hero.jpg
+hero: image/admin/FHGNLoi8kcbaHlFTYb4H.jpg
 alt: Option screen with illustrated characters and a moving blue target.
 description: Wrangling your web animations is about to get much easier.
 tags:

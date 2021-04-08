@@ -6,8 +6,8 @@ authors:
   - adamargyle
 description: A foundational overview of how to build a responsive slide out sidenav
 date: 2021-01-21
-hero: hero.jpg
-thumbnail: thumb.png
+hero: image/admin/Zo1KkESK9CfEIYpbWzap.jpg
+thumbnail: image/admin/pVZO6FsC9tF3H6QIWpY2.png
 codelabs: codelab-building-a-sidenav-component
 tags:
   - blog
@@ -328,5 +328,7 @@ approaches and learn all the ways to build on the web. Create a [Glitch](https:/
 
 ## Community remixes
 
-- [@_developit](https://twitter.com/_developit) with custom elements: [demo & code](https://glitch.com/embed/#!/app-drawer)
+- [@_developit](https://twitter.com/_developit) with custom elements: [demo & code](https://glitch.com/edit/#!/app-drawer)
 - [@mayeedwin1](https://twitter.com/mayeedwin1) with HTML/CSS/JS: [demo & code](https://glitch.com/edit/#!/maye-gui-challenge)
+- [@a_nurella](https://twitter.com/a_nurella) with a Glitch Remix: [demo & code](https://glitch.com/edit/#!/sidenav-with-adam)
+- [@EvroMalarkey](https://twitter.com/EvroMalarkey) with HTML/CSS/JS: [demo & code](https://evromalarkey.github.io/scrollsnap-drawer/index.html)

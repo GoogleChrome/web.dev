@@ -5,6 +5,6 @@
 import './ProfileSwitcherContainer';
 import './Header';
 import './LanguageSelect';
-import './SideNav';
+import './NavigationDrawer';
 import './SnackbarContainer';
 import './Search';

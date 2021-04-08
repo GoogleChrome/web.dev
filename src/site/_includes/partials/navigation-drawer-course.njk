@@ -1,0 +1,34 @@
+{% from 'macros/icon.njk' import icon with context %}
+
+<web-navigation-drawer class="drawer-course" type="standard">
+  <nav data-drawer-container>
+
+    <div class="drawer-course__contents flow flow-space-300">
+      <div class="drawer-course__header" style="--drawer-course-background: {{ courseData.meta.background }}">
+        <button data-drawer-close-button class="w-button--svg w-button--round" aria-label="{{ 'i18n.common.close' | i18n(locale) }}">
+          {{ icon('close') }}
+          <span class="w-tooltip">{{ 'i18n.common.close' | i18n(locale) }}</span>
+        </button>
+
+        <div class="drawer-course__title">
+          {% include 'partials/course-gradient-title.njk' %}
+        </div>
+      </div>
+
+      <div class="drawer-course__search">
+        <div class="input"></div>
+      </div>
+
+      <div class="drawer-course__links scrollbar">
+        {% for item in pageNavigation %}
+        <a class="drawer-course__link" href="{{ item.url }}">
+          <span class="drawer-course__link-counter font-mono">{{ loop.index0 | padStart(3, '0') }}</span>
+          <span class="drawer-course__link-title gap-left-400">{{ item.page.data.title }}</span>
+          {{ icon('done', 'drawer-course__link-check gap-left-auto') }}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+
+  </nav>
+</web-navigation-drawer>

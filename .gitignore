@@ -83,3 +83,5 @@ entrypoint.hashmanifest.json
 
 # Temporary files
 .tmp
+.firebase
+firebase.json

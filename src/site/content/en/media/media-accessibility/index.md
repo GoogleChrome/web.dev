@@ -29,7 +29,7 @@ engines understand what's in a video. Those capabilities are outside the scope
 of this article.
 
 <figure class="w-figure  w-figure--inline-right">
-  <img src="./chrome-android-track-landscape-5x3.jpg" alt="Screenshot showing captions displayed using the track element in Chrome on Android">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vbNDp5R05MwQmsxZ0RLI.jpg", alt="Screenshot showing captions displayed using the track element in Chrome on Android", width="800", height="480" %}
   <figcaption class="w-figcaption">Screenshot showing captions displayed using the
 track element in Chrome on Android</figcaption>
 </figure>

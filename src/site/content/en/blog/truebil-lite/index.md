@@ -6,11 +6,11 @@ authors:
 date: 2019-08-16
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-06-27
-hero: hero.png
+hero: image/admin/fRR1RuZTZdMm95ibKQu4.png
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom
-thumbnail: thumbnail.png
+thumbnail: image/admin/7aqJGgqNmVMxuRYk5DUt.png
 alt: The Truebil logo and a screenshot of the Truebil Lite web app.
 description: |
   This case study explains how the Truebil team increased conversions and
@@ -62,10 +62,8 @@ To lazy-load non-critical resources, they used their framework-level lazy-loadin
 To remove any JavaScript bundle bottlenecks, the team [reduced payloads via code splitting](/reduce-javascript-payloads-with-code-splitting). They used component- and route-based chunking to to reduce main bundle size and **improve their loading time by 44%,** with TTI falling from 6 seconds to about 5 seconds and [First Meaningful Paint (FMP)](/first-meaningful-paint) from 4.1 seconds to 3.6 seconds.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="chunking.png" alt="Screenshots of Chrome DevTools showing Truebil Lite's build size before and after code splitting.">
-  <figcaption class="w-figcaption">
-    Impact of reducing chunk size.
-  </figcaption>
+  {% Img src="image/admin/BHIhtRrQcc2Ec22vLYtT.png", alt="Screenshots of Chrome DevTools showing Truebil Lite's build size before and after code splitting.", width="800", height="350", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Impact of reducing chunk size.</figcaption>
 </figure>
 
 #### Inline critical CSS
@@ -73,10 +71,8 @@ To remove any JavaScript bundle bottlenecks, the team [reduced payloads via code
 To further improve FMP, the team used Lighthouse to find opportunities for and validate the impact of performance optimizations. Lighthouse indicated that reducing render blocking CSS would have the biggest effect, so Truebil inlined all critical CSS and [deferred non-critical CSS](/defer-non-critical-css). This technique **reduced FMP by around 2 seconds**.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="first-meaningful-paint.png" alt="Screenshots of Chrome DevTools showing Truebil Lite's time to First Meaningful Paint before and after inlining CSS.">
-  <figcaption class="w-figcaption">
-    Impact of inlining critical CSS.
-  </figcaption>
+  {% Img src="image/admin/GnQDJz27SuLuLgdvM6Q3.png", alt="Screenshots of Chrome DevTools showing Truebil Lite's time to First Meaningful Paint before and after inlining CSS.", width="800", height="496", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Impact of inlining critical CSS.</figcaption>
 </figure>
 
 #### Avoid multiple, costly round trips to any origin
@@ -84,10 +80,8 @@ To further improve FMP, the team used Lighthouse to find opportunities for and v
 To mitigate overhead from DNS and TLS, Truebil used [`<link rel="preconnect">`](/uses-rel-preconnect) and `<link rel="dns-prefetch">`. This approach causes the browser to complete the TLS handshake as soon as possible on page load and pre-resolve cross-origin domain names, allowing for a secure, snappy user experience.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="preconnect.png" alt="Screenshots of Chrome DevTools showing the effect of rel=preconnect.">
-  <figcaption class="w-figcaption">
-    Impact of adding <code>&#60;link rel=preconnect&#62;</code>.
-  </figcaption>
+  {% Img src="image/admin/e1taLW99INISJAsEP0xe.png", alt="Screenshots of Chrome DevTools showing the effect of rel=preconnect.", width="800", height="350", class="w-screenshot" %}
+  <figcaption class="w-figcaption">Impact of adding <code>&#60;link rel=preconnect&#62;</code>.</figcaption>
 </figure>
 
 #### Dynamically prefetch the next page
@@ -95,10 +89,8 @@ To mitigate overhead from DNS and TLS, Truebil used [`<link rel="preconnect">`](
 By analyzing their data, the team identified the most common user journeys that they could optimize for. In these cases, the app dynamically downloads the next page resource by using `<link rel=prefetch>` to ensure smooth navigation for users. While the team manually identifies the links to prefetch, they use webpack to bundle the JS for those links.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="prefetch.png" alt="Screenshots of the Truebil Lit app and Chrome DevTools showing that network requests aren't needed on common navigations because the assets have already been prefetched.">
-  <figcaption class="w-figcaption">
-    The effect of prefetching assets for common user journeys.
-  </figcaption>
+  {% Img src="image/admin/fuxD2hQlNcTPKUHMQpN2.png", alt="Screenshots of the Truebil Lit app and Chrome DevTools showing that network requests aren't needed on common navigations because the assets have already been prefetched.", width="800", height="1006", class="w-screenshot" %}
+  <figcaption class="w-figcaption">The effect of prefetching assets for common user journeys.</figcaption>
 </figure>
 
 #### Optimize images and fonts
@@ -132,7 +124,7 @@ Even though a large part of Truebil's content is highly dynamic—cars can be ad
 Using [service workers](/service-workers-cache-storage/), the team was able to cache both static data and the dynamic data that a user has already interacted with so that the user can view it offline. To make sure users know that content might change when they come back online, the team changed the UI to grayscale to indicate offline mode. Browsing product pages is a critical part of the Truebil user journey. Users who have visited the PWA at least once can browse listings and product pages that they have visited before but won't be able to see any updates to the listing or the product.
 
 <figure class="w-figure">
-  <img src="grayscale.png" alt="A screenshot of the Truebil Lite app in offline mode.">
+  {% Img src="image/admin/XMJug442wdtUbxe86r2h.png", alt="A screenshot of the Truebil Lite app in offline mode.", width="800", height="384" %}
   <figcaption class="w-figcaption">
     Truebil Lite in offline mode.
   </figcaption>
@@ -162,20 +154,20 @@ To ensure that their users weren't spammed and to increase the probability that 
 
 The team decided to show an installation banner when a user completes a task or is on high-traffic pages but idle (that is, not taking an action, such as scrolling or filling out a form). This approach allowed them to avoid interrupting the user's activity.
 
-![Screenshots of Truebil Lite's installation banner.](default-banners.png)
+{% Img src="image/admin/geEMVQf4YjnkVr9HPRzt.png", alt="Screenshots of Truebil Lite's installation banner.", width="800", height="549" %}
 
 #### Contextual prompts for mature users
 
 For users who had interacted with the app for a while, the team used highly contextual custom messages to show the value of installing the app to the home screen:
 
-![Screenshots of Truebil Lite's contextual installation prompts for mature users.](contextual-prompts.png)
+{% Img src="image/admin/uPxqbyldE0kNurRPsk2S.png", alt="Screenshots of Truebil Lite's contextual installation prompts for mature users.", width="800", height="514" %}
 
 #### A custom banner for time-based prompts
 
 Finally, the team built in a non-intrusive banner with a notification-like design that's triggered at specific events, such as opening a listing page or after the user has spent a set amount of time spent in the app:
 
 <figure class="w-figure">
-  <img src="notification.png" alt="A screenshot of Truebil Lite's time-based installation prompt banner.">
+  {% Img src="image/admin/5UN2g9g7NWq85CMVoRYf.png", alt="A screenshot of Truebil Lite's time-based installation prompt banner.", width="452", height="868" %}
 </figure>
 
 Because of these improvements, Truebil's conversion and engagement rates have grown significantly with **26% longer user sessions** and **61% more conversions**, which is significant for their business given the high transaction value of each conversion.

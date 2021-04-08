@@ -20,8 +20,7 @@ all of your page's functionality.
 flags focusable elements that have duplicate IDs:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="duplicate-id-active.png"
-    alt="Lighthouse audit showing focusable elements with duplicate IDs">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hAevzwng1erk5DYZjLyq.png", alt="Lighthouse audit showing focusable elements with duplicate IDs", width="800", height="185", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/focusable-els.njk' %}

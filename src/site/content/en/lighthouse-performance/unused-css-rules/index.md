@@ -15,7 +15,7 @@ Remove the unused CSS
 to reduce unnecessary bytes consumed by network activity:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="unused-css-rules.png" alt="A screenshot of the Lighthouse Remove unused CSS audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m3WfvnCGJgrC5wqyvyyQ.png", alt="A screenshot of the Lighthouse Remove unused CSS audit", width="800", height="235", class="w-screenshot" %}
 </figure>
 
 
@@ -51,13 +51,13 @@ To construct the render tree, a browser must walk the entire DOM tree, and check
 The more unused CSS there is,
 the more time that a browser might potentially need to spend calculating the styles for each node.
 
-## How to detect unused CSS
+## How to detect unused CSS {: #coverage }
 
 The Coverage tab of Chrome DevTools can help you discover critical and uncritical CSS.
 See [View used and unused CSS with the Coverage tab](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage).
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="coverage.png" alt="Chrome DevTools: Coverage tab">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ydgzuclRCAlY2nzrpDmk.png", alt="Chrome DevTools: Coverage tab", width="800", height="407", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     Chrome DevTools: Coverage tab.
   </figcaption>
@@ -77,6 +77,23 @@ Consider automating the process of extracting and inlining "Above the Fold" CSS
 using the [Critical tool](https://github.com/addyosmani/critical/blob/master/README.md).
 
 Learn more in [Defer non-critical CSS](/defer-non-critical-css).
+
+## Stack-specific guidance
+
+### Drupal
+
+Consider removing unused CSS rules and only attach the needed Drupal libraries
+to the relevant page or component in a page. See the [Defining a
+library](https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#library)
+for details.
+
+### Joomla
+
+Consider reducing, or switching, the number of [Joomla extensions](https://extensions.joomla.org/) loading unused CSS in your page.
+
+### WordPress
+
+Consider reducing, or switching, the number of [WordPress plugins](https://wordpress.org/plugins/) loading unused CSS in your page.
 
 ## Resources
 

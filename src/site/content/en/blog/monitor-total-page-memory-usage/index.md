@@ -1,5 +1,5 @@
 ---
-title: Monitor your web page's total memory usage with `measureMemory()`
+title: Monitor your web page's total memory usage with `measureUserAgentSpecificMemory()`
 subhead: >
   Learn how to measure memory usage of your web page in production to detect regressions.
 description: >
@@ -8,7 +8,7 @@ updated: 2020-10-19
 date: 2020-04-13
 authors:
   - ulan
-hero: hero.jpg
+hero: image/admin/Ne2U4cUtHG6bJ0YeIkt5.jpg
 alt: >
   Green RAM stick. Photo by Harrison Broadbent on Unsplash.
 origin_trial:

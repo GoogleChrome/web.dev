@@ -49,7 +49,7 @@ The image below illustrates this structure. On the left is the basic structure.
 On the right are the specifics of that structure for a single WebM file.
 
 <figure class="w-figure  w-figure--inline-right">
-  <img src="./media-container-onion.png" alt="Comparing media file structure with a hypothetical media file.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QwNEBBa8LEMpedJh5imG.png", alt="Comparing media file structure with a hypothetical media file.", width="560", height="250" %}
   <figcaption class="w-figcaption">Parts of a media file.</figcaption>
 </figure>
 
@@ -76,7 +76,7 @@ types and the codecs they may use. Follow the links for browser support lists.
 | ---- | ----- | ---- |
 | [MP4](https://caniuse.com/#search=mp4)  | [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1), [AVC (H.264)](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AVC_H.264)*, [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9) | [aac](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#AAC) |
 | [WebM](https://caniuse.com/#feat=webm) | [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1), [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9)* | [vorbis](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Vorbis), [opus](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Opus) |
-&#42; Indicates the the preferred video codec.
+&#42; Indicates the preferred video codec.
 
 _Bitrate_ is the maximum number of bits used to encode one second of a stream.
 The more bits used to encode a second of stream, the higher the potential

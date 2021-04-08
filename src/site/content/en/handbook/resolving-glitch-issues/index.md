@@ -27,20 +27,20 @@ If you see a "Project has been suspended" message when opening a new project, co
 their public forum or by emailing `support@glitch.com`. You should receive a reply soon with steps
 you can take to fix your project.
 
-<img class="w-screenshot w-screenshot-filled" src="suspended-project.png" alt="Suspended-project">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FZdKu2XfMTu9XNWaljfJ.png", alt="Suspended-project", width="800", height="453", class="w-screenshot w-screenshot--filled" %}
 
 ## Exceeding disk usage
 
 If you see an App Status warning with exceeded disk limits, you'll need to clear up some space
 before you can edit and use the project.
 
-![Disk limit exceeded](./disk-limit.png)
+{% Img src="image/admin/iszxjOlALJHJnvo10kMl.png", alt="Disk limit exceeded", width="800", height="429" %}
 
 * Remove any unnecessary dependencies from `package.json`
 * In the terminal, run `git gc` and `git prune` to remove unneeded files
 * Run `du -hd1` to to see which directories are taking up disk space
 
-![Directories disk usage](./directories.png)
+{% Img src="image/admin/tsPeskkc1It3QeYkCJ5I.png", alt="Directories disk usage", width="363", height="433" %}
 
 If an unneeded directory is bloating up on every build and taking up disk space:
 
@@ -60,7 +60,7 @@ If the `.git` directory is taking up disk space:
   being committed to history (note: this will still include files previously committed even if they
   are now in `.gitignore`)
 
-![Committed files](./git-committed-files.png)
+{% Img src="image/admin/kghTObtD4BjdUV950To5.png", alt="Committed files", width="713", height="89" %}
 
 * If you see any directories committed many times that shouldn't be, add them to `.gitignore`
 * If you don't need `.git` history, remove the `.git` folder (`rm -rf .git`)

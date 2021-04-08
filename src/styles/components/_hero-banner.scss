@@ -1,0 +1,26 @@
+.w-hero-banner {
+  color: white;
+}
+
+.w-hero-banner__inner {
+  background-color: black;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 16px;
+  text-align: center;
+}
+
+@media (min-width: 865px) {
+  .w-hero-banner__inner {
+    padding: 20px 24px;
+  }
+}
+
+.w-hero-banner__inner a {
+  color: white;
+  text-decoration: underline;
+}
+
+.w-hero-banner__inner a:hover {
+  text-decoration: none;
+}

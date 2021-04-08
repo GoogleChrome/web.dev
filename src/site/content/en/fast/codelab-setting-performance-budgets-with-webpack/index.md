@@ -25,7 +25,7 @@ To see it in action, here's an app that counts the days left until New Year's.
 It's built with [React](https://reactjs.org/) and [moment.js](https://momentjs.com/).
 (Just like real-world apps that increasingly rely on frameworks and libraries. 😉)
 
-![An app that counts the days left until New Year's day](countdown-app.png)
+{% Img src="image/admin/xG1cKnEmDUJk6Dd4892x.png", alt="An app that counts the days left until New Year's day", width="800", height="459" %}
 
 ## Measure
 
@@ -49,7 +49,7 @@ while 1 KB is 1000 bytes.
 {% endAside %}
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./webpack-bundle-sizes.png" alt="Webpack output showing bundle size of 323 KiB">
+  {% Img src="image/admin/MpeaVZE4nJHOAAnlQ8Sz.png", alt="Webpack output showing bundle size of 323 KiB", width="640", height="59", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     Webpack warning you about bulky JS bundle ⚠️
   </figcaption>
@@ -61,7 +61,7 @@ and the default threshold is **244 KiB uncompressed**, for both assets and
 (the combination of all assets used during the initial load of a page).
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./webpack-warning.png" alt="Webpack warning that the asset exceeds the recommended size limit">
+  {% Img src="image/admin/tXgrsOqdJAzf6LTelr0v.png", alt="Webpack warning that the asset exceeds the recommended size limit", width="642", height="108", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     Webpack warning you about bulky JS bundle ⚠️
   </figcaption>
@@ -72,7 +72,7 @@ how to downsize your bundles. You can learn more about the recommended technique
 [Web Fundamentals](https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching#lazy-loading).
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="webpack-performance-recommendation.png" alt="Webpack performance optimization recommendation">
+  {% Img src="image/admin/pygtt0At7nmByNKm38hr.png", alt="Webpack performance optimization recommendation", width="641", height="96", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">Webpack performance optimization recommendation 💁</figcaption>
 </figure>
 
@@ -120,7 +120,7 @@ Possible values for **hints** are:
 3. **`false`**: No warnings or errors are shown.
 
 <figure class="w-figure">
-  <img src="webpack-error.png" alt="Webpack performance error in red font" class="w-screenshot w-screenshot--filled">
+  {% Img src="image/admin/ZFP0SZfO4zzD0lyD29Vk.png", alt="Webpack performance error in red font", width="606", height="107" %}
   <figcaption class="w-figcaption">Webpack performance hint "error" 🚨</figcaption>
 </figure>
 
@@ -177,7 +177,7 @@ again to build the optimized bundle.
 
 Ta-da! You have shaved off 223 KiB (230KB) and the app is under budget.🎉
 
-<img class="w-screenshot w-screenshot--filled" src="./optimized-webpack-bundle-size.png" alt="Webpack bundle size output after optimization is 97.7 KiB">
+{% Img src="image/admin/A6TIDToLthjRrHvxluND.png", alt="Webpack bundle size output after optimization is 97.7 KiB", width="473", height="58", class="w-screenshot w-screenshot--filled" %}
 
 ## Monitor
 

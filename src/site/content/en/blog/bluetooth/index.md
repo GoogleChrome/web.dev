@@ -1,15 +1,15 @@
 ---
 title: Communicating with Bluetooth devices over JavaScript
-subhead: | 
+subhead: |
   The Web Bluetooth API allows websites to communicate with Bluetooth devices.
 authors:
   - beaufortfrancois
 date: 2015-07-21
-updated: 2020-10-19
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+updated: 2021-02-26
+hero: image/admin/CME5IVhdn0pngs7jAlFX.jpg
+thumbnail: image/admin/1J1OTu90a2oH8wFogKnF.jpg
 alt: A Bluetooth chip on a coin
-description: | 
+description: |
   The Web Bluetooth API allows websites to communicate with Bluetooth devices.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -17,6 +17,7 @@ tags:
   - devices
 feedback:
   - api
+stack_overflow_tag: web-bluetooth
 ---
 
 What if I told you websites could communicate with nearby Bluetooth devices
@@ -441,7 +442,7 @@ A **Bluetooth Internals** page is available in Chrome at
 Bluetooth devices: status, services, characteristics, and descriptors.
 
 <figure class="w-figure">
-  <img src="./bluetooth-internals.jpg" class="w-screenshot" alt="Screenshot of the internal page to debug Bluetooth in Chrome">
+  {% Img src="image/admin/nPX2OfcQKwKtU9xBNhMe.jpg", alt="Screenshot of the internal page to debug Bluetooth in Chrome", width="800", height="572", class="w-screenshot" %}
   <figcaption class="w-figcaption">Internal page in Chrome for debugging Bluetooth devices.</figcaption>
 </figure>
 
@@ -462,6 +463,15 @@ future:
   while `serviceremoved` event will track removed ones. A new `servicechanged`
   event will fire when any characteristic and/or descriptor gets added or
   removed from a Bluetooth GATT Service.
+
+### Show support for the API
+
+Are you planning to use the Web Bluetooth API? Your public support helps the Chrome team
+prioritize features and shows other browser vendors how critical it is to support them.
+
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebBluetooth`](https://twitter.com/search?q=%23WebBluetooth&src=typed_query&f=live)
+and let us know where and how you are using it.
 
 ## Resources
 
@@ -492,7 +502,7 @@ Hero image by [SparkFun Electronics from Boulder, USA].
 [Bluetooth device gets disconnected]: #disconnect
 [read and write to Bluetooth descriptors]: #descriptors
 [Browser compatibility]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API#Browser_compatibility
-[origin trial]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md 
+[origin trial]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
 [Web Bluetooth Security Model]: https://medium.com/@jyasskin/the-web-bluetooth-security-model-666b4e7eed2
 [secure contexts]: https://w3c.github.io/webappsec-secure-contexts/#intro
 [TLS]: https://en.wikipedia.org/wiki/Transport_Layer_Security
@@ -528,3 +538,4 @@ Hero image by [SparkFun Electronics from Boulder, USA].
 [browser and platform implementation status]: https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md
 [Kayce Basques]: https://github.com/kaycebasques
 [SparkFun Electronics from Boulder, USA]: https://commons.wikimedia.org/wiki/File:Bluetooth_4.0_Module_-_BR-LE_4.0-S2A_(16804031059).jpg
+[cr-dev-twitter]: https://twitter.com/ChromiumDev

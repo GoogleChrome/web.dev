@@ -10,17 +10,16 @@ description: |
   API solves this by providing a way to implement device-specific logic in
   JavaScript.
 date: 2020-07-22
-updated: 2021-01-21
+updated: 2021-01-25
 tags:
   - blog
   - capabilities
   - hid
   - games
   - devices
-hero: game-controller.jpg
+hero: image/admin/8TCwHOfb8SUWaVEtCx6j.jpg
 alt: A generic game controller
 ---
-
 
 {% Aside 'success' %}
 The [WebHID API](/hid), part of the [capabilities project](/fugu-status/),
@@ -69,20 +68,34 @@ just peripherals.
 
 ## Game controllers
 
-Next up is something fewer of you are likely to have. Sony's DualShock 4 is a
-wireless controller for PlayStation 4 game consoles.
+### PlayStation&nbsp;4 Wireless controller
 
-The DualShock 4 Demo uses WebHID to receive the raw input reports from the
-DualShock 4 and provides a high-level API to access the controller's gyroscope,
+Next up is something fewer of you are likely to have. Sony's DualShock&nbsp;4 is a
+wireless controller for PlayStation&nbsp;4 game consoles.
+
+The DualShock&nbsp;4 Demo uses WebHID to receive the raw input reports from the
+DualShock&nbsp;4 and provides a high-level API to access the controller's gyroscope,
 accelerometer, touchpad, button, and thumbstick inputs. It also supports rumble
 and setting the color of an RGB LED housed within the controller.
 
 **Author:** TheBITLINK<br/>
-**Demo:** [DualShock 4 Demo](https://thebitlink.github.io/WebHID-DS4/) ([Source](https://github.com/TheBITLINK/WebHID-DS4))
+**Demo:** [DualShock&nbsp;4 Demo](https://thebitlink.github.io/WebHID-DS4/) ([Source](https://github.com/TheBITLINK/WebHID-DS4))
+
+### Nintendo Switch Joy-Con controllers
+
+Play the Chrome dino 🦖 offline game by actually jumping with a Nintendo Switch Joy-Con
+controller in your pants pockets. This demo is powered by
+[Joy-Con WebHID](https://github.com/tomayac/joy-con-webhid), a WebHID driver for the
+Nintendo Switch Joy-Con controllers.
+
+**Author:** [Thomas Steiner](/authors/thomassteiner/)<br/>
+**Demo:** [Chrome Dino WebHID](https://tomayac.github.io/chrome-dino-webhid/)
+([demo source](https://github.com/tomayac/chrome-dino-webhid),
+[driver source](https://github.com/tomayac/joy-con-webhid))
 
 ### The BlinkStick Strip
 
-BlinkStick Strip is a HID-compliant light strip with 8 RGB LEDs. The demo allows
+BlinkStick Strip is a HID-compliant light strip with 8&nbsp;RGB LEDs. The demo allows
 the user to select from several blink patterns including chase, blink, and
 Larson scanner (aka Cylon).
 

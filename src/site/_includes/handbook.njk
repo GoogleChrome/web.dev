@@ -1,9 +1,9 @@
 ---
-layout: layout
+layout: default
 noindex: true
 permalink: "/{{lang}}/handbook/{{page.fileSlug}}/index.html"
-eleventyComputed:
-  canonicalUrl: "/handbook/{{page.fileSlug}}/"
+pageScripts:
+  - '/js/content.js'
 ---
 
 {% include 'partials/post.njk' %}

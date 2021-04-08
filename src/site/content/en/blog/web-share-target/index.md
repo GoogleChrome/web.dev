@@ -5,8 +5,8 @@ authors:
   - petelepage
   - joemedley
 date: 2019-11-08
-updated: 2020-01-26
-hero: hero.png
+updated: 2020-02-09
+hero: image/admin/RfxdrfKdh5Fp8camulRt.png
 alt: An illustration demonstrating that platform-specific apps can now share content with web apps.
 description: |
   On a mobile device, sharing should be as simple as clicking the Share button,
@@ -37,7 +37,7 @@ files, links, or text using the Web Share API. See
 {% endAside %}
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="./wst-send.png" style="max-width: 400px;" alt="Android phone with the 'Share via' drawer open."/>
+  {% Img src="image/admin/Q4nuOQMpsQrTilpXA3fL.png", alt="Android phone with the 'Share via' drawer open.", width="400", height="377" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     System-level share target picker with an installed PWA as an option.
   </figcaption>
@@ -45,8 +45,8 @@ files, links, or text using the Web Share API. See
 
 ## See Web Share Target in action
 
-1. Using Chrome 76 or later (on Android), or Chrome 89 or later (on Chrome OS) open the
-   [Web Share Target demo][demo].
+1. Using either Chrome 76 or later for Android, or Chrome 89 or later on
+   desktop, open the [Web Share Target demo][demo].
 2. When prompted, click **Install** to add the app to your home screen, or
    use the Chrome menu to add it to your home screen.
 3. Open any app that supports sharing, or use the Share button
@@ -242,7 +242,7 @@ self.addEventListener('fetch', event => {
 ### Verifying shared content
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="./wst-receive.png" style="max-width: 400px;" alt="An Android phone displaying the demo app with shared content."/>
+  {% Img src="image/admin/hSwbgPk8IFgPC81oJbxZ.png", alt="An Android phone displaying the demo app with shared content.", width="400", height="280" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The sample sharing target app.
   </figcaption>

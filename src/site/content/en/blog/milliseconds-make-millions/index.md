@@ -10,7 +10,7 @@ authors:
   - olgademidova
 scheduled: true
 date: 2020-06-24
-hero: hero.png
+hero: image/admin/Ml6J6Ljjj2EjsbfSDFUt.png
 alt: An illustration of a person using a phone.
 tags:
   - blog
