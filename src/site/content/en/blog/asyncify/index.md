@@ -362,7 +362,7 @@ Pass `--asyncify` to enable the transform, and then use `--pass-arg=…` to prov
 list of asynchronous functions, where the program state should be suspended and later resumed.
 
 All that's left is to provide supporting runtime code that will actually do that—suspend and resume
-our code. Again, in the C / C++ case this would be included by Emscripten, but now we need custom
+WebAssembly code. Again, in the C / C++ case this would be included by Emscripten, but now you need custom
 JavaScript glue code that would handle arbitrary WebAssembly files. We've created a library just for
 that.
 
@@ -410,7 +410,7 @@ This is quite similar to async-await feature in JavaScript that I showed earlier
 JavaScript one, doesn't require any special syntax or runtime support from the language, and instead
 works by transforming plain synchronous functions at compile-time.
 
-For simplicity, let's take our asynchronous sleep example:
+When compiling the earlier shown asynchronous sleep example:
 
 ```js
 puts("A");
@@ -418,7 +418,7 @@ async_sleep(1);
 puts("B");
 ```
 
-Asyncify takes this code and transforms it to roughly like the following (pseudo-code, real
+Asyncify takes this code and transforms it to roughly like the following one (pseudo-code, real
 transformation is more involved than this):
 
 ```js
@@ -482,7 +482,7 @@ WebAssembly I/O in the console and the server-side. It was designed as a compila
 system languages, and exposes all sorts of filesystem and other operations in a traditional
 synchronous form.
 
-What if we could map one to another? Then we could compile any application in any source language
+What if you could map one to another? Then you could compile any application in any source language
 with any toolchain supporting the WASI target, and run it in a sandbox on the web, while still
 allowing it to operate on real user files! With Asyncify, you can do just that.
 
