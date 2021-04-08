@@ -44,7 +44,7 @@ function loadScript(url, type) {
     pre.rel = 'modulepreload';
     pre.href = url;
     document.head.append(pre);
-    {# We use DOMContentLoaded as the loader script is running sync, and inserting a module script here doesn't defer. This brings back normal type="module" behavior. #}
+    // We use DOMContentLoaded as the loader script is running sync, and inserting a module script here doesn't defer. This brings back normal type="module" behavior.
     window.addEventListener('DOMContentLoaded', () => {
       document.head.append(s);
     });

@@ -21,6 +21,9 @@ const {minify} = require('terser');
  * @return {string}
  */
 function minifyJs(rawCode) {
+  if (process.env.ELEVENTY_ENV !== 'prod') {
+    return rawCode;
+  }
   return minify(rawCode).code;
 }
 
