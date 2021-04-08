@@ -149,7 +149,8 @@ module.exports = (locale, page, collections, renderData = {}) => {
     // Find i18n equivalents of the current url and heck if they exist.
     const langhrefs = i18nLocales
       .map((locale) => [locale, path.join('/', 'i18n', locale, url)])
-      .filter((langhref) => findByUrl(langhref[1]))
+      // Filter out i18n urls that do not have an existing translated file.
+      .filter((langhref) => !!findByUrl(langhref[1]))
       .map((langhref) => {
         const href = new URL(langhref[1], site.url).href;
         return `<link rel="alternate" hreflang="${langhref[0]}" href="${href}" />`;
