@@ -211,12 +211,14 @@ Some sites may find collapsing the slot initially can reduce layout shifts if th
   </figure>
 
   <figure class="w-figure">
-      <!-- % Video src=[], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true, class="w-screenshot" % -->
-      <!-- the below video is broken/missing, add vids above when fixing and use video shortcode instead, see issue #5050 -->
-    <video controls loop muted class="w-screenshot" poster="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZzGB6CsKF7cmiIcVLlCA.jpg" | imgix }}">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/top-ad-after.webm" type="video/webm">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/top-ad-after.mp4" type="video/mp4">
-    </video>
+      {% Video
+        src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tyUFKrue5vI9o5qKjP42.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/hVxty51kdN1w5BuUvj2O.mp4"],
+        poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg",
+        controls=true,
+        loop=true,
+        muted=true,
+        class="w-screenshot"
+      %}
    <figcaption class="w-figcaption">
       Ads with sufficient space reserved.
     </figcaption>
