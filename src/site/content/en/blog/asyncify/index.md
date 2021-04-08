@@ -1,6 +1,6 @@
 ---
-title: Using asynchronous Web APIs from WebAssembly
-description: Learn how to invoke asynchronous Web APIs when compiling traditionally synchronous languages to WebAssembly.
+title: Using asynchronous web APIs from WebAssembly
+description: Learn how to invoke asynchronous web APIs when compiling traditionally synchronous languages to WebAssembly.
 date: # TODO
 hero: image/9oK23mr86lhFOwKaoYZ4EySNFp02/3XqfQyjjfxEw8T3azz0W.jpg
 alt: A crosswalk signal asking pedestrians to wait.
@@ -12,7 +12,7 @@ tags:
   - file-system
 ---
 
-The I/O APIs on the Web are asynchronous, but they're synchronous in most system languages. When
+The I/O APIs on the web are asynchronous, but they're synchronous in most system languages. When
 compiling code to WebAssembly, you need to bridge one kind of APIs to another - and this bridge is
 Asyncify.
 
@@ -79,12 +79,12 @@ fn main() {
 ```
 
 But what happens when you try to compile any of those samples to WebAssembly and translate them to
-the Web? Or, to provide a specific example, what could "file read" operation translate to? It would
+the web? Or, to provide a specific example, what could "file read" operation translate to? It would
 need to read data from some storage.
 
-## Asynchronous model of the Web
+## Asynchronous model of the web
 
-The Web has a variety of different storage options you could map to, such as in-memory storage (JS
+The web has a variety of different storage options you could map to, such as in-memory storage (JS
 objects), localStorage, IndexedDB, server-side storage, and a new [File System Access
 API](https://web.dev/file-system-access/).
 
@@ -92,10 +92,10 @@ However, only two of those APIs—the in-memory storage and the localStorage—c
 synchronously, and both are the most limiting options in what you can store and for how long. All
 the other options provide only asynchronous APIs.
 
-This is one of the core properties of executing code on the Web: any time-consuming operation, which
+This is one of the core properties of executing code on the web: any time-consuming operation, which
 includes any I/O, has to be asynchronous.
 
-The reason is that the Web is historically single-threaded, and any user code that touches the UI,
+The reason is that the web is historically single-threaded, and any user code that touches the UI,
 has to run on the same thread as the UI. It has to compete with the other important tasks like
 layout, rendering and event handling for the CPU time. You wouldn't want a piece of JavaScript or
 WebAssembly to be able to start a "file read" operation and block everything else—the entire tab,
@@ -191,8 +191,8 @@ setTimeout(() => {
 ```
 
 What's common to all these examples and APIs? In each case, the idiomatic code in the
-original systems language uses a blocking API for the I/O, whereas an equivalent example for the Web
-uses an asynchronous API instead. When compiling to the Web, you need to somehow transform between
+original systems language uses a blocking API for the I/O, whereas an equivalent example for the web
+uses an asynchronous API instead. When compiling to the web, you need to somehow transform between
 those two execution models, and WebAssembly has no built-in ability to do so just yet.
 
 ## Bridging the gap with Asyncify
@@ -201,7 +201,7 @@ This is where [Asyncify](https://emscripten.org/docs/porting/asyncify.html) come
 compile-time feature supported by Emscripten that allows pausing the entire program and
 asynchronously resuming it later.
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/VSMrdTiQ7PubW6vfE6WZ.svg", alt="A call graph describing a JavaScript -> WebAssembly -> Web API -> async task invocation, where Asyncify connects the result of the async task back into WebAssembly",
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/VSMrdTiQ7PubW6vfE6WZ.svg", alt="A call graph describing a JavaScript -> WebAssembly -> web API -> async task invocation, where Asyncify connects the result of the async task back into WebAssembly",
 width="800", height="200" %}
 
 ### Usage in C / C++ with Emscripten
@@ -323,7 +323,7 @@ Okay, so this all works great in Emscripten. What about other toolchains and lan
 ### Usage from other languages
 
 Say that you have a similar synchronous call somewhere in your Rust code that you want to map to an
-async API on the Web. Turns out, you can do that too!
+async API on the web. Turns out, you can do that too!
 
 First, you need to define such a function as a regular import via `extern` block (or your
 chosen language's syntax for foreign functions).
@@ -473,9 +473,9 @@ to the cost of the actual work, it's usually negligible.
 
 Now that we've looked at the simple examples, let's move on to more complicated scenarios.
 
-As mentioned in the beginning of the article, one of the storage options on the Web is an
+As mentioned in the beginning of the article, one of the storage options on the web is an
 asynchronous [File System Access API](https://web.dev/file-system-access/). It provides access to a
-real host filesystem from a Web application.
+real host filesystem from a web application.
 
 On the other hand, there is a de-facto standard—[WASI](https://github.com/WebAssembly/WASI) - for
 WebAssembly I/O in the console and the server-side. It was designed as a compilation target for
@@ -483,7 +483,7 @@ system languages, and exposes all sorts of filesystem and other operations in a 
 synchronous form.
 
 What if we could map one to another? Then we could compile any application in any source language
-with any toolchain supporting the WASI target, and run it in a sandbox on the Web, while still
+with any toolchain supporting the WASI target, and run it in a sandbox on the web, while still
 allowing it to operate on real user files! With Asyncify, we can do just that.
 
 In this demo, I've compiled Rust [coreutils](https://github.com/RReverser/coreutils) crate with a
@@ -498,19 +498,19 @@ terminal.
 Check it out live at [https://wasi.rreverser.com/](https://wasi.rreverser.com/).
 
 It's not limited just to timers and filesystems, either. You can go further and use more niche APIs
-on the Web.
+on the web.
 
 For example, also with the help of Asyncify, it's possible to map
 [libusb](https://github.com/libusb/libusb)—probably the most popular native library for working with
 USB devices—to a [WebUSB API](https://web.dev/usb/), which gives asynchronous access to such devices
-on the Web. Once mapped and compiled, I got standard libusb tests and examples to run against chosen
-devices right in the sandbox of a Web page.
+on the web. Once mapped and compiled, I got standard libusb tests and examples to run against chosen
+devices right in the sandbox of a web page.
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/2rscL8dyhOVMacuq54Ad.jpg", alt="Screenshot of libusb debug output on a Web page, showing information about the connected Canon camera",
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/2rscL8dyhOVMacuq54Ad.jpg", alt="Screenshot of libusb debug output on a web page, showing information about the connected Canon camera",
 width="375", height="548" %}
 
 It's probably a story for another blog post though.
 
 Those examples demonstrate just how powerful Asyncify can be for bridging the gap and porting all
-sorts of applications to the Web, allowing you to gain cross-platform access, sandboxing, and better
+sorts of applications to the web, allowing you to gain cross-platform access, sandboxing, and better
 security, all without losing functionality.
