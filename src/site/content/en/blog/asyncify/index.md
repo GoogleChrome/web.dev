@@ -25,9 +25,8 @@ them with a "Hello, (username)!" message:
 #include <stdio.h>
 
 int main() {
+    FILE *stream = fopen("name.txt", "r");
     char name[20+1];
-    FILE * stream;
-    stream = fopen("name.txt", "r");
     size_t len = fread(&name, 1, 20, stream);
     name[len] = '\0';
     fclose(stream);
