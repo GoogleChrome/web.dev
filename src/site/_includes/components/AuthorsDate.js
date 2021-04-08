@@ -24,18 +24,43 @@ const {html} = require('common-tags');
 const {Img} = require('./Img');
 const authorsCollectionFn = require('../../_collections/authors');
 const prettyDate = require('../../_filters/pretty-date');
+const {i18n} = require('../../_filters/i18n');
 
-const renderDate = (date) => {
+/**
+ *
+ * @param {string} locale
+ * @param {Date} date
+ * @param {Date} [updated]
+ * @returns {string}
+ */
+const renderDate = (locale, date, updated) => {
+  let result = '';
+
   // nb. +date checks for valid dates, not just non-null dates
-  return +date
-    ? html`
-        <div class="w-author__published">
-          <time>${prettyDate(date)}</time>
-        </div>
-      `
-    : '';
+  if (+updated) {
+    result += html`
+      <div class="w-author__updated">
+        <time
+          >${i18n('i18n.common.updated', locale)}: ${prettyDate(updated)}</time
+        >
+      </div>
+    `;
+  } else if (+date) {
+    result += html`
+      <div class="w-author__published">
+        <time>${prettyDate(date)}</time>
+      </div>
+    `;
+  }
+  return result;
 };
 
+/**
+ *
+ * @param {number} limit
+ * @param {Array<TODO>} pairs
+ * @returns {string}
+ */
 const renderAuthorImages = (limit, pairs) => {
   if (!pairs.length || pairs.length > limit) {
     return ''; // don't render images if we have none, or too many
@@ -90,12 +115,12 @@ const renderAuthorNames = (pairs) => {
 /**
  * Render an authors card, including any number of authors and an optional date.
  *
- * @param {{authors: Array<string>, date?: Date, images?: number}} arg
+ * @param {{authors: Array<string>, date?: Date, images?: number, updated?: Date, locale: string}} arg
  * @param {Authors} [authorsCollectionArg]
  * @return {string}
  */
 const renderAuthorsDate = (
-  {authors, date, images = 2},
+  {authors, date, images = 2, updated, locale},
   authorsCollectionArg,
 ) => {
   const authorsCollection = authorsCollectionArg
@@ -129,7 +154,7 @@ const renderAuthorsDate = (
     <div class="w-authors__card">
       ${renderAuthorImages(images, pairs)}
       <div class="w-authors__card--holder">
-        ${renderAuthorNames(pairs)} ${renderDate(date)}
+        ${renderAuthorNames(pairs)} ${renderDate(locale, date, updated)}
       </div>
     </div>
   `;
