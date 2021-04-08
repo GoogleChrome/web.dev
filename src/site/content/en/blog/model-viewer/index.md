@@ -83,7 +83,7 @@ browser.
 <!-- Use it like any other HTML element -->
 <model-viewer id="mv-demo" shadow-intensity="1" src="./spacesuit.glb"
 alt="A 3D model of an astronaut" auto-rotate camera-controls
-poster="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/emwX3KWs0BcmuNPiJPjM.jpg" | imgix }}"></model-viewer>
+poster="./spacesuit.jpg"></model-viewer>
 ```
 
 That code renders like this:

@@ -23,16 +23,7 @@ feedback:
 </style>
 
 <figure class="w-figure w-figure--inline-right">
-  <a href="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.mp4">
-    <video id="video-demo" loop autoplay muted
-          poster="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg" | imgix }}"
-          class="w-screenshot">
-      <source type="video/webm"
-              src="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.webm">
-      <source type="video/mp4"
-              src="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.mp4">
-    </video>
-  </a>
+  {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZYR1SBlPglRDE69Xt2xl.mp4", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RbG1WcYhSLn0MQoQjZe.webm"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rif9Fh8w8SR78PcVXCO1.jpg", loop=true, autoplay=true, muted=true, class="w-screenshot", linkTo=true, id="video-demo" %}
 </figure>
 
 Access to the user's contacts on a mobile device has been a feature of iOS/Android apps since

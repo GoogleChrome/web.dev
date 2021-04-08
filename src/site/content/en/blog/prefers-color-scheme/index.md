@@ -184,11 +184,11 @@ let's review how you can support it.
 
 Operating systems that support a dark mode or dark theme
 typically have an option to activate it somewhere in the settings.
-On macOS&nbsp;X, it's in the system preference's *General* section and called *Appearance* <a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lUAnDhiGiZxigDbCqfn1.png' | imgix }}">screenshot</a>,
-and on Windows&nbsp;10, it's in the *Colors* section and called *Choose your color* <a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ahr8nkFttRPCe4RH8IEk.png' | imgix }}">screenshot</a>.
-For Android&nbsp;Q, you can find it under *Display* as a *Dark Theme* toggle switch <a href="{{ 'image/admin/Yh6SEoWDK1SbqcGjlL6d.png' | imgix }}">screenshot</a>,
+On macOS&nbsp;X, it's in the system preference's *General* section and called *Appearance* (<a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lUAnDhiGiZxigDbCqfn1.png' | imgix }}">screenshot</a>),
+and on Windows&nbsp;10, it's in the *Colors* section and called *Choose your color* (<a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ahr8nkFttRPCe4RH8IEk.png' | imgix }}">screenshot</a>).
+For Android&nbsp;Q, you can find it under *Display* as a *Dark Theme* toggle switch (<a href="{{ 'image/admin/Yh6SEoWDK1SbqcGjlL6d.png' | imgix }}">screenshot</a>),
 and on iOS&nbsp;13, you can change the *Appearance* in the *Display &amp; Brightness*
-section of the settings <a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K0QTu4Elw1ETabtoJjZ1.jpg' | imgix }}">screenshot</a>.
+section of the settings (<a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K0QTu4Elw1ETabtoJjZ1.jpg' | imgix }}">screenshot</a>).
 
 <div class="w-clearfix"></div>
 

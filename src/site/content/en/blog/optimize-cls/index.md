@@ -27,7 +27,7 @@ In this guide, we'll cover optimizing common causes of layout shifts.
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="200", height="150", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled" %}
 </picture>
 
 The most common causes of a poor CLS are:
@@ -43,20 +43,14 @@ The most common causes of a poor CLS are:
 **Summary:** Always include `width` and `height` size attributes on your images and video elements. Alternatively, reserve the required space with [CSS aspect ratio boxes](https://css-tricks.com/aspect-ratio-boxes/). This approach ensures that the browser can allocate the correct amount of space in the document while the image is loading.
 
   <figure class="w-figure">
-    <video controls loop muted class="w-screenshot" poster="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg" | imgix }}">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions.webm" type="video/webm">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions.mp4" type="video/mp4">
-    </video>
+    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/10TEOBGBqZm1SEXE7KiC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}
    <figcaption class="w-figcaption">
       Images without width and height specified.
     </figcaption>
   </figure>
 
   <figure class="w-figure">
-    <video controls loop muted class="w-screenshot" poster="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg" | imgix }}">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions-fixed.webm" type="video/webm">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions-fixed.mp4" type="video/mp4">
-    </video>
+    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/38UiHViz44OWqlKFe1VC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/sFxDb36aEMvTPIyZHz1O.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wm4VqJtKvove6qjiIjic.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}
    <figcaption class="w-figcaption">
       Images with width and height specified.
     </figcaption>
@@ -189,16 +183,15 @@ The good news is that it's possible for sites to follow best practices to reduce
 Some sites may find collapsing the slot initially can reduce layout shifts if the ad slot is unlikely to fill. There isn't an easy way to choose the exact size each time, unless you control the ad serving yourself.
 
   <figure class="w-figure">
-    <video controls loop muted class="w-screenshot" poster="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg" | imgix }}">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/final_ads_no_dimensions.webm" type="video/webm">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/final_ads_no_dimensions.mp4" type="video/mp4">
-    </video>
+    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bmxqj3kZyplh0ncMAt7x.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/60c4T7aYOsKtZlaWBndS.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}
    <figcaption class="w-figcaption">
       Ads without sufficient space reserved.
     </figcaption>
   </figure>
 
   <figure class="w-figure">
+      <!-- % Video src=[], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rW77UoJQBHHehihkw2Rd.jpg", controls=true, loop=true, muted=true, class="w-screenshot" % -->
+      <!-- the below video is broken/missing, add vids above when fixing and use video shortcode instead, see issue #5050 -->
     <video controls loop muted class="w-screenshot" poster="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZzGB6CsKF7cmiIcVLlCA.jpg" | imgix }}">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/top-ad-after.webm" type="video/webm">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/top-ad-after.mp4" type="video/mp4">
@@ -236,20 +229,14 @@ Embeddable widgets allow you to embed portable web content in your page (for exa
 These embeds often aren't aware in advance just how large an embed will be (for example, in the case of a social media post - does it have an embedded image? video? multiple rows of text?). As a result, platforms offering embeds do not always reserve enough space for their embeds and can cause layout shifts when they finally load.
 
   <figure class="w-figure">
-    <video controls loop muted class="w-screenshot" poster="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg" | imgix }}">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embed-iframe.webm" type="video/webm">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embed-iframe.mp4" type="video/mp4">
-    </video>
+    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/NRhY88MbNJxe4o0F52eS.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/PzOpQnPH88Ymbe3MCH7B.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0TM1JilKPQktQgb94un.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}
    <figcaption class="w-figcaption">
       Embed without space reserved.
     </figcaption>
   </figure>
 
   <figure class="w-figure">
-    <video controls loop muted class="w-screenshot" poster="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg" | imgix }}">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embeds-with-dimensions.webm" type="video/webm">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embeds-with-dimensions.mp4" type="video/mp4">
-    </video>
+    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}
    <figcaption class="w-figcaption">
       Embed with space reserved.
     </figcaption>
@@ -282,10 +269,7 @@ You've probably experienced layout shifts due to UI that pops-in at the top or b
 - "GDPR notice"
 
   <figure class="w-figure">
-    <video controls loop muted class="w-screenshot" poster="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg" | imgix }}">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/related-articles-dynamic-content.webm" type="video/webm">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/related-articles-dynamic-content.mp4" type="video/mp4">
-    </video>
+    {% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}
    <figcaption class="w-figcaption">
       Dynamic content without space reserved.
     </figcaption>
