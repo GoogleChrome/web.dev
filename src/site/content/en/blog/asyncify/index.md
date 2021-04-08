@@ -20,8 +20,8 @@ Asyncify.
 
 ## I/O in system languages
 
-I'll start with a simple example in C. Say, you want to read the user's name from
-a file, and greet them with a "Hello, (username)!" message:
+I'll start with a simple example in C. Say, you want to read the user's name from a file, and greet
+them with a "Hello, (username)!" message:
 
 ```cpp
 #include <stdio.h>
@@ -38,18 +38,18 @@ int main() {
 }
 ```
 
-While the example doesn't do much, it already demonstrates something you'll find in an application of any
-size: it reads some inputs from the external world, processes them internally and writes outputs
-back to the external world. All such interaction with the outside world happens via a few functions
-commonly called input-output functions, also shortened to I/O.
+While the example doesn't do much, it already demonstrates something you'll find in an application
+of any size: it reads some inputs from the external world, processes them internally and writes
+outputs back to the external world. All such interaction with the outside world happens via a few
+functions commonly called input-output functions, also shortened to I/O.
 
-To read the name from C, you need at least two crucial I/O calls: `fopen`, to open the
-file, and `fread` to read data from it. Once you retrieve the data, you can use another I/O
-function `printf` to print the result to the console.
+To read the name from C, you need at least two crucial I/O calls: `fopen`, to open the file, and
+`fread` to read data from it. Once you retrieve the data, you can use another I/O function `printf`
+to print the result to the console.
 
 Those functions look quite simple at first glance and you don't have to think twice about the
-machinery involved to read or write data. However, depending on the environment, there can
-be quite a lot going on inside:
+machinery involved to read or write data. However, depending on the environment, there can be quite
+a lot going on inside:
 
   - If the input file is located on a local drive, the application needs to perform a series of
     memory and disk accesses to locate the file, check permissions, open it for reading, and then
@@ -58,8 +58,8 @@ be quite a lot going on inside:
   - Or, the input file might be located on a mounted network location, in which case, the network
     stack will now be involved too, increasing the complexity, latency and number of potential
     retries for each operation.
-  - Finally, even `printf` is not guaranteed to print things to the console and might be redirected to
-    a file or a network location, in which case it would have to go via the same steps above.
+  - Finally, even `printf` is not guaranteed to print things to the console and might be redirected
+    to a file or a network location, in which case it would have to go via the same steps above.
 
 Long story short, I/O can be slow and you can't predict how long a particular call will take by a
 quick glance at the code. While that operation is running, your whole application will appear frozen
@@ -68,8 +68,8 @@ and unresponsive to the user.
 This is not limited to C or C++ either. Most system languages present all the I/O in a form of
 synchronous APIs. For example, if you translate the example to Rust, the API might look simpler, but
 the same principles apply. You just make a call and synchronously wait for it to return the result,
-while it performs all the expensive operations and eventually returns the result in a
-single invocation:
+while it performs all the expensive operations and eventually returns the result in a single
+invocation:
 
 ```rust
 fn main() {
@@ -85,8 +85,9 @@ need to read data from some storage.
 ## Asynchronous model of the web
 
 The web has a variety of different storage options you could map to, such as in-memory storage (JS
-objects), [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), server-side storage, and a new [File System Access
-API](https://web.dev/file-system-access/).
+objects), [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage),
+[IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), server-side storage,
+and a new [File System Access API](https://web.dev/file-system-access/).
 
 However, only two of those APIs—the in-memory storage and the localStorage—can be used
 synchronously, and both are the most limiting options in what you can store and for how long. All
@@ -132,8 +133,8 @@ async function main() {
 }
 ```
 
-Even though it looks synchronous, under the hood each `await` is essentially syntax sugar
-for callbacks:
+Even though it looks synchronous, under the hood each `await` is essentially syntax sugar for
+callbacks:
 
 ```js
 function main() {
@@ -154,8 +155,8 @@ Thanks to the asynchronous nature of those steps, the original function can retu
 browser as soon as the I/O has been scheduled, and leave the entire UI responsive and available for
 other tasks, including rendering, scrolling and so on, while the I/O is executing in background.
 
-As a final example, even simple APIs like "sleep", which makes an application wait a specified number of
-seconds, are also a form of an I/O operation:
+As a final example, even simple APIs like "sleep", which makes an application wait a specified
+number of seconds, are also a form of an I/O operation:
 
 ```cpp
 #include <stdio.h>
@@ -180,8 +181,8 @@ console.log("B");
 but that's very inefficient, will block the entire UI and won't allow any other events to be handled
 meanwhile. Generally, don't do that in production code.
 
-Instead, a more idiomatic version of "sleep" in JavaScript would involve calling
-`setTimeout()`, and subscribing with a handler:
+Instead, a more idiomatic version of "sleep" in JavaScript would involve calling `setTimeout()`, and
+subscribing with a handler:
 
 ```js
 console.log("A");
@@ -190,10 +191,10 @@ setTimeout(() => {
 }, 1000);
 ```
 
-What's common to all these examples and APIs? In each case, the idiomatic code in the
-original systems language uses a blocking API for the I/O, whereas an equivalent example for the web
-uses an asynchronous API instead. When compiling to the web, you need to somehow transform between
-those two execution models, and WebAssembly has no built-in ability to do so just yet.
+What's common to all these examples and APIs? In each case, the idiomatic code in the original
+systems language uses a blocking API for the I/O, whereas an equivalent example for the web uses an
+asynchronous API instead. When compiling to the web, you need to somehow transform between those two
+execution models, and WebAssembly has no built-in ability to do so just yet.
 
 ## Bridging the gap with Asyncify
 
@@ -201,13 +202,14 @@ This is where [Asyncify](https://emscripten.org/docs/porting/asyncify.html) come
 compile-time feature supported by Emscripten that allows pausing the entire program and
 asynchronously resuming it later.
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/VSMrdTiQ7PubW6vfE6WZ.svg", alt="A call graph describing a JavaScript -> WebAssembly -> web API -> async task invocation, where Asyncify connects the result of the async task back into WebAssembly",
-width="800", height="200" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/VSMrdTiQ7PubW6vfE6WZ.svg", alt="A call graph
+describing a JavaScript -> WebAssembly -> web API -> async task invocation, where Asyncify connects
+the result of the async task back into WebAssembly", width="800", height="200" %}
 
 ### Usage in C / C++ with Emscripten
 
-If you wanted to use Asyncify to implement an asynchronous sleep for the last example, you could do it
-like this:
+If you wanted to use Asyncify to implement an asynchronous sleep for the last example, you could do
+it like this:
 
 ```cpp
 #include <stdio.h>
@@ -224,15 +226,13 @@ async_sleep(1);
 puts("B");
 ```
 
-[`EM_JS`](https://emscripten.org/docs/api_reference/emscripten.h.html?highlight=em_js#c.EM_JS)
-is a macro that allows defining JavaScript snippets as if they were C functions. Inside, use a
-function
+[`EM_JS`](https://emscripten.org/docs/api_reference/emscripten.h.html?highlight=em_js#c.EM_JS) is a
+macro that allows defining JavaScript snippets as if they were C functions. Inside, use a function
 [`Asyncify.handleSleep()`](https://emscripten.org/docs/porting/asyncify.html#making-async-web-apis-behave-as-if-they-were-synchronous)
 which tells Emscripten to suspend the program and provides a `wakeUp()` handler that should be
 called once the asynchronous operation has finished. In the example above, the handler is passed to
-`setTimeout()`, but it could be used in any other context that accepts callbacks. Finally, you can call
-`async_sleep()` anywhere you want just like regular `sleep()` or any other synchronous
-API.
+`setTimeout()`, but it could be used in any other context that accepts callbacks. Finally, you can
+call `async_sleep()` anywhere you want just like regular `sleep()` or any other synchronous API.
 
 When compiling such code, you need to tell Emscripten to activate the Asyncify feature. Do that by
 passing `-s ASYNCIFY` as well as [`-s ASYNCIFY_IMPORTS=[func1,
@@ -249,9 +249,8 @@ emcc -O2 \
 This lets Emscripten know that any calls to those functions might require saving and restoring the
 state, so the compiler will inject supporting code around such calls.
 
-Now, when you execute this
-code in the browser you'll see a seamless output log like you'd expect, with B coming after a short
-delay after A.
+Now, when you execute this code in the browser you'll see a seamless output log like you'd expect,
+with B coming after a short delay after A.
 
 ```text
 A
@@ -261,8 +260,8 @@ B
 You can [return values from
 Asyncify](https://emscripten.org/docs/porting/asyncify.html#returning-values) functions too. What
 you need to do is return the result of `handleSleep()`, and pass the result to the `wakeUp()`
-callback. For example, if, instead of reading from a file, you want to fetch a number
-from a remote resource, you can use a snippet like the one below to issue a request, suspend the C code, and
+callback. For example, if, instead of reading from a file, you want to fetch a number from a remote
+resource, you can use a snippet like the one below to issue a request, suspend the C code, and
 resume once the response body is retrieved—all done seamlessly as if the call was synchronous.
 
 ```js
@@ -325,8 +324,8 @@ Okay, so this all works great in Emscripten. What about other toolchains and lan
 Say that you have a similar synchronous call somewhere in your Rust code that you want to map to an
 async API on the web. Turns out, you can do that too!
 
-First, you need to define such a function as a regular import via `extern` block (or your
-chosen language's syntax for foreign functions).
+First, you need to define such a function as a regular import via `extern` block (or your chosen
+language's syntax for foreign functions).
 
 ```rust
 extern {
@@ -362,9 +361,9 @@ Pass `--asyncify` to enable the transform, and then use `--pass-arg=…` to prov
 list of asynchronous functions, where the program state should be suspended and later resumed.
 
 All that's left is to provide supporting runtime code that will actually do that—suspend and resume
-WebAssembly code. Again, in the C / C++ case this would be included by Emscripten, but now you need custom
-JavaScript glue code that would handle arbitrary WebAssembly files. We've created a library just for
-that.
+WebAssembly code. Again, in the C / C++ case this would be included by Emscripten, but now you need
+custom JavaScript glue code that would handle arbitrary WebAssembly files. We've created a library
+just for that.
 
 You can find it on Github at
 [https://github.com/GoogleChromeLabs/asyncify](https://github.com/GoogleChromeLabs/asyncify) or npm
@@ -456,8 +455,9 @@ different modes and so on. It tries to modify only functions marked as asynchron
 line, as well as any of their potential callers, but that still might result in ~50% overhead to the
 uncompressed code size.
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/Im4hmQOYRHFcsg8UTfTR.png", alt="A graph showing code size overhead for various benchmarks, from near-0% under fine-tuned conditions to over 100% in worst cases",
-width="800", height="494" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/Im4hmQOYRHFcsg8UTfTR.png", alt="A graph showing code
+size overhead for various benchmarks, from near-0% under fine-tuned conditions to over 100% in worst
+cases", width="800", height="494" %}
 
 This isn't ideal, but in many cases acceptable when the alternative is not having the functionality
 altogether or having to make significant rewrites to the original code.
@@ -477,8 +477,8 @@ As mentioned in the beginning of the article, one of the storage options on the 
 asynchronous [File System Access API](https://web.dev/file-system-access/). It provides access to a
 real host filesystem from a web application.
 
-On the other hand, there is a de-facto standard called [WASI](https://github.com/WebAssembly/WASI)  for
-WebAssembly I/O in the console and the server-side. It was designed as a compilation target for
+On the other hand, there is a de-facto standard called [WASI](https://github.com/WebAssembly/WASI)
+for WebAssembly I/O in the console and the server-side. It was designed as a compilation target for
 system languages, and exposes all sorts of filesystem and other operations in a traditional
 synchronous form.
 
@@ -489,16 +489,16 @@ allowing it to operate on real user files! With Asyncify, you can do just that.
 In this demo, I've compiled Rust [coreutils](https://github.com/RReverser/coreutils) crate with a
 few minor patches to WASI, passed via Asyncify transform and implemented asynchronous
 [bindings](https://github.com/GoogleChromeLabs/wasi-fs-access/blob/main/src/bindings.ts) from WASI
-to File System Access API on the JavaScript side. Once combined with [Xterm.js](https://xtermjs.org/) terminal component, this provides a
-realistic shell running in the browser tab and operating on real user files - just like an actual
-terminal.
+to File System Access API on the JavaScript side. Once combined with
+[Xterm.js](https://xtermjs.org/) terminal component, this provides a realistic shell running in the
+browser tab and operating on real user files - just like an actual terminal.
 
 {% Video src="video/9oK23mr86lhFOwKaoYZ4EySNFp02/4244yB6c9RbMCjGjP8ZW.mp4" %}
 
 Check it out live at [https://wasi.rreverser.com/](https://wasi.rreverser.com/).
 
-Asyncify use-cases are not limited just to timers and filesystems, either. You can go further and use more niche APIs
-on the web.
+Asyncify use-cases are not limited just to timers and filesystems, either. You can go further and
+use more niche APIs on the web.
 
 For example, also with the help of Asyncify, it's possible to map
 [libusb](https://github.com/libusb/libusb)—probably the most popular native library for working with
@@ -506,8 +506,9 @@ USB devices—to a [WebUSB API](https://web.dev/usb/), which gives asynchronous 
 on the web. Once mapped and compiled, I got standard libusb tests and examples to run against chosen
 devices right in the sandbox of a web page.
 
-{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/2rscL8dyhOVMacuq54Ad.jpg", alt="Screenshot of libusb debug output on a web page, showing information about the connected Canon camera",
-width="375", height="548" %}
+{% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/2rscL8dyhOVMacuq54Ad.jpg", alt="Screenshot of libusb
+debug output on a web page, showing information about the connected Canon camera", width="375",
+height="548" %}
 
 It's probably a story for another blog post though.
 
