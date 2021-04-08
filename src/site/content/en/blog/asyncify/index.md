@@ -497,7 +497,7 @@ terminal.
 
 Check it out live at [https://wasi.rreverser.com/](https://wasi.rreverser.com/).
 
-It's not limited just to timers and filesystems, either. You can go further and use more niche APIs
+Asyncify use-cases are not limited just to timers and filesystems, either. You can go further and use more niche APIs
 on the web.
 
 For example, also with the help of Asyncify, it's possible to map
