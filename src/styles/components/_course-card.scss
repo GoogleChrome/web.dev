@@ -1,5 +1,4 @@
 .course-card {
-  color: $GREY_700;
   padding: 24px;
 
   @include bp(sm) {
@@ -17,5 +16,24 @@
     height: 192px;
     padding-left: 24px;
     width: auto;
+
+    @include bp(md) {
+      height: 240px;
+    }
+  }
+
+  &__description {
+    color: $GREY_700;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.course-card[data-dense] {
+  .course-card__cover {
+    height: 192px;
   }
 }

@@ -40,6 +40,10 @@
 
 .auto-fit-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-min), var(--grid-max)));
   grid-gap: var(--grid-gap);
+  grid-template-columns: 1fr;
+
+  @include bp(md) {
+    grid-template-columns: repeat(auto-fit, minmax(var(--grid-min), var(--grid-max)));
+  }
 }

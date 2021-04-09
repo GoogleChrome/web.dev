@@ -21,27 +21,33 @@ date: 2018-11-05
   </div>
 
   <div class="sm:pad-left-500 sm:pad-right-500">
-    <div class="learn-section auto-fit-grid gap-left-auto gap-right-auto" style="--grid-gap: 0;">
-      {% from 'macros/icon.njk' import svg with context %}
-      {# Convert the courses object into an array of objects. #}
-      {% set coursesArr = helpers.values(courses) %}
-      {# Sort courses by descending date order (most recent comes first) #}
-      {% for course in coursesArr|sort(true, false, 'meta.date') %}
-        <div class="course-card w-card">
-          <a href="/learn/css">
-            <div class="course-card__cover" style="--course-background: {{ course.meta.background }}">
-              {{ svg(course.meta.logo) }}
-            </div>
-          </a>
-          <a href="/learn/css" class="display-block gap-top-400">
-            <div>{{ course.meta.description | i18n(locale) }}</div>
-          </a>
-        </div>
-      {% endfor %}
+    <div class="learn-section gap-left-auto gap-right-auto">
+      <h3 id="courses" class="w-learn-heading">
+        Courses
+        <a class="w-headline-link" href="#courses" aria-hidden="true">#</a>
+      </h3>
+      <div class="auto-fit-grid" style="--grid-min: 400px; --grid-gap: 0;">
+        {% from 'macros/icon.njk' import svg with context %}
+        {# Convert the courses object into an array of objects. #}
+        {% set coursesArr = helpers.values(courses) %}
+        {# Sort courses by descending date order (most recent comes first) #}
+        {% for course in coursesArr|sort(true, false, 'meta.date') %}
+          <div class="course-card w-card" {% if loop.length >= 3 %} data-dense {% endif %}>
+            <a href="/learn/css">
+              <div class="course-card__cover" style="--course-background: {{ course.meta.background }}">
+                {{ svg(course.meta.logo) }}
+              </div>
+            </a>
+            <a href="/learn/css" class="course-card__description display-block gap-top-400">
+              {{ course.meta.description | i18n(locale) }}
+            </a>
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 
-  <hr>
+  <hr class="gap-top-400 gap-bottom-700">
 
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
