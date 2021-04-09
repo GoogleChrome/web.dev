@@ -1,4 +1,7 @@
-date: 2021-05-01 # Used to organize the courses on the /learn page
+# Used to organize the courses on the /learn page
+date: 2021-05-01
 title: i18n.courses.learn_css.title
 description: i18n.courses.learn_css.description
+# This path should be relative to the _include folder.
+logo: '../../../images/courses/css/logo.svg'
 background: "url('/images/courses/css/background.svg')"

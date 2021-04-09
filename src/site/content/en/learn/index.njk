@@ -21,12 +21,20 @@ date: 2018-11-05
   </div>
 
   <div class="auto-fit-grid">
+    {% from 'macros/icon.njk' import svg with context %}
     {# Convert the courses object into an array of objects. #}
     {% set coursesArr = helpers.values(courses) %}
     {# Sort courses by descending date order (most recent comes first) #}
     {% for course in coursesArr|sort(true, false, 'meta.date') %}
       <div class="w-card">
-        {{ course.meta.description | i18n(locale) }}
+        <a href="/learn/css">
+          <div class="course-card__cover" style="--course-background: {{ course.meta.background }}">
+            {{ svg(course.meta.logo) }}
+          </div>
+        </a>
+        <a href="/learn/css">
+          <div>{{ course.meta.description | i18n(locale) }}</div>
+        </a>
       </div>
     {% endfor %}
   </div>

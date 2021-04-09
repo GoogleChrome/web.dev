@@ -1,5 +1,0 @@
-date: 2021-12-01 # Used to organize the courses on the /learn page
-title: i18n.courses.learn_b.title
-description: i18n.courses.learn_css.description
-gradient: "96.46deg, #B323F4 5.23%, #2BA1FF 33.16%, #02E895 68.79%, #6DDB00 90.93%"
-background: "url('/images/courses/learn-css.svg')"

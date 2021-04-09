@@ -11,12 +11,13 @@
   }
 
   &__header {
+    background-image: var(--course-background);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 294px;
     display: flex;
     height: 144px;
     padding: 24px 16px 0;
-    background-image: var(--drawer-course-background);
-    background-repeat: no-repeat;
-    background-position: right;
   }
 
   &__title {

@@ -5,14 +5,14 @@
   <nav data-drawer-container>
 
     <div class="drawer-course__contents flow flow-space-300">
-      <div class="drawer-course__header" style="--drawer-course-background: {{ courseData.meta.background }}">
+      <div class="drawer-course__header" style="--course-background: {{ courseData.meta.background }}">
         <button data-drawer-close-button class="w-button--svg w-button--round" aria-label="{{ 'i18n.common.close' | i18n(locale) }}">
           {{ icon('close') }}
           <span class="w-tooltip">{{ 'i18n.common.close' | i18n(locale) }}</span>
         </button>
 
         <div class="drawer-course__title">
-          {{ svg('../../../images/courses/css/logo.svg', 'Learn CSS') }}
+          {{ svg(courseData.meta.logo, 'Learn CSS') }}
         </div>
       </div>
 
