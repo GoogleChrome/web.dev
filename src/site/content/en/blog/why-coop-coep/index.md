@@ -3,13 +3,13 @@ title: Why you need "cross-origin isolated" for powerful features
 subhead: >
   Learn why cross-origin isolation is needed to use powerful features such as
   `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`, high
-  resolution timer with a better precision and the JS Self-Profiling API.
+  resolution timer with better precision and the JS Self-Profiling API.
 description: >
   Some web APIs increase the risk of side-channel attacks like Spectre. To
   mitigate that risk, browsers offer an opt-in-based isolated environment called
   cross-origin isolated. Learn why cross-origin isolation is needed to use
   powerful features such as `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`,
-  high resolution timer with a better precision and the JS Self-Profiling API.
+  high resolution timer with better precision and the JS Self-Profiling API.
 authors:
   - agektmr
   - domenic
@@ -104,7 +104,7 @@ This is exactly what COOP+COEP is about.
 Under a cross-origin isolated state, the requesting site is considered less
 dangerous and this unlocks powerful features such as `SharedArrayBuffer`,
 `performance.measureUserAgentSpecificMemory()`, [high resolution
-timers](https://www.w3.org/TR/hr-time/) with a better precision and the JS
+timers](https://www.w3.org/TR/hr-time/) with better precision and the JS
 Self-Profiling API which could otherwise be used for Spectre-like attacks. It
 also prevents modifying `document.domain`.
 
@@ -244,7 +244,7 @@ protect your website in browsers that don't support COOP.
 
 If you want guaranteed access to powerful features like `SharedArrayBuffer`,
 `performance.measureUserAgentSpecificMemory()`, [high resolution
-timers](https://www.w3.org/TR/hr-time/) with a better precision or JS
+timers](https://www.w3.org/TR/hr-time/) with better precision or JS
 Self-Profiling API, just remember that your document needs to use both COEP with
 the value of `require-corp` and COOP with the value of `same-origin`. In the
 absence of either, the browser will not guarantee sufficient isolation to safely
