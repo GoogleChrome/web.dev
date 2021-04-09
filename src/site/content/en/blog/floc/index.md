@@ -257,7 +257,7 @@ greater-than-typical number of people who visit sites in a sensitive category, t
 removed. Negative financial status and mental health are among the sensitive categories covered by 
 this analysis. 
 
-Websites can exclude a page from the FLoC calculation by setting a [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction) header `interest-cohort=()` for that page. For pages that haven't 
+Websites [can exclude a page from the FLoC calculation](https://github.com/WICG/floc#opting-out-of-computation) by setting a [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction) header `interest-cohort=()` for that page. For pages that haven't 
 been excluded, a page visit will be included in the FLoC calculation during the 
 [FLoC origin trial](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561) 
 if `document.interestCohort()` is used on the page, or if Chrome detects that the page 
