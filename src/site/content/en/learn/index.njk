@@ -20,23 +20,25 @@ date: 2018-11-05
     </header>
   </div>
 
-  <div class="auto-fit-grid">
-    {% from 'macros/icon.njk' import svg with context %}
-    {# Convert the courses object into an array of objects. #}
-    {% set coursesArr = helpers.values(courses) %}
-    {# Sort courses by descending date order (most recent comes first) #}
-    {% for course in coursesArr|sort(true, false, 'meta.date') %}
-      <div class="w-card">
-        <a href="/learn/css">
-          <div class="course-card__cover" style="--course-background: {{ course.meta.background }}">
-            {{ svg(course.meta.logo) }}
-          </div>
-        </a>
-        <a href="/learn/css">
-          <div>{{ course.meta.description | i18n(locale) }}</div>
-        </a>
-      </div>
-    {% endfor %}
+  <div class="sm:pad-left-500 sm:pad-right-500">
+    <div class="learn-section auto-fit-grid gap-left-auto gap-right-auto" style="--grid-gap: 0;">
+      {% from 'macros/icon.njk' import svg with context %}
+      {# Convert the courses object into an array of objects. #}
+      {% set coursesArr = helpers.values(courses) %}
+      {# Sort courses by descending date order (most recent comes first) #}
+      {% for course in coursesArr|sort(true, false, 'meta.date') %}
+        <div class="course-card w-card">
+          <a href="/learn/css">
+            <div class="course-card__cover" style="--course-background: {{ course.meta.background }}">
+              {{ svg(course.meta.logo) }}
+            </div>
+          </a>
+          <a href="/learn/css" class="display-block gap-top-400">
+            <div>{{ course.meta.description | i18n(locale) }}</div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 
   <hr>

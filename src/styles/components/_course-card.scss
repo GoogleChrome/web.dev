@@ -1,0 +1,21 @@
+.course-card {
+  color: $GREY_700;
+  padding: 24px;
+
+  @include bp(sm) {
+    padding: 32px;
+  }
+
+  &__cover {
+    align-items: center;
+    background-image: var(--course-background);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 1px solid $GREY_300;
+    display: flex;
+    height: 192px;
+    padding-left: 24px;
+    width: auto;
+  }
+}
