@@ -1,4 +1,5 @@
 {% from 'macros/icon.njk' import icon with context %}
+{% from 'macros/icon.njk' import svg with context %}
 
 <web-header class="header-course lg:display-none" role="navigation" style="--header-course-background: {{ courseData.meta.background }}">
   <button data-open-drawer-button class="w-button--svg w-button--round" aria-label="{{ 'i18n.header.open_menu' | i18n(locale) }}">
@@ -7,7 +8,6 @@
   </button>
 
   <div class="header-course__title">
-    <span class="w-visually-hidden">{{ courseTitle }}</span>
-    {{ icon('learn-css') }}
+    {{ svg('../../../images/courses/css/logo.svg', 'Learn CSS') }}
   </div>
 </web-header>

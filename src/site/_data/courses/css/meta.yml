@@ -1,4 +1,4 @@
 date: 2021-05-01 # Used to organize the courses on the /learn page
 title: i18n.courses.learn_css.title
 description: i18n.courses.learn_css.description
-background: "url('/images/courses/learn-css.svg')"
+background: "url('/images/courses/css/background.svg')"

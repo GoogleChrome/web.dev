@@ -8,3 +8,14 @@
 {%- endset %}
 {{ svg | updateSvgForInclude('icon ' + className) | safe }}
 {% endmacro %}
+
+{#
+  Finds an icon in the _includes/icons folder.
+  Adds a class="icon" to the icon, as well as any additional classes passed in.
+#}
+{% macro svg(path, label, className = '') %}
+{% set rawSvg -%}
+  {% include path %}
+{%- endset %}
+{{ rawSvg | updateSvgForInclude(className) | safe }}
+{% endmacro %}
