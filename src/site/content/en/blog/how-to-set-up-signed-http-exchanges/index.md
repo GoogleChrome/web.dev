@@ -123,13 +123,14 @@ The `nginx` plugin allows you to generate SXG dynamically instead of statically 
 
 ### Option 1: Install the plugin from a Debian package {: #step-3-option-1 }
 
-The [SXG module for `nginx`](https://github.com/kumagi/nginx-sxg-module) is distributed on GitHub.
+The [SXG module for `nginx`](https://github.com/google/nginx-sxg-module) is distributed on GitHub.
 On Debian-based systems, you can install it as a binary package:
 
 ```bash
 sudo apt install -y nginx
-wget https://github.com/google/nginx-sxg-module/releases/download/v0.1/libnginx-mod-http-sxg-filter_1.15.9-0ubuntu1.1_amd64.deb
-sudo dpkg -i libnginx-mod-http-sxg-filter_1.15.9-0ubuntu1.1_amd64.deb
+wget https://github.com/google/nginx-sxg-module/releases/download/v4.5/libnginx-sxg-bionic.zip
+unzip -j libnginx-sxg-bionic.zip
+sudo dpkg -i libnginx-mod-http-sxg-filter_1.14.0-0ubuntu1.7_amd64.deb
 ```
 
 ### Option 2: Build plugin manually {: #step-3-option-2 }
@@ -139,10 +140,10 @@ You can get the tarball and build it along with the SXG dynamic module using the
 
 ```bash
 git clone https://github.com/google/nginx-sxg-module
-wget https://nginx.org/download/nginx-1.17.5.tar.gz
-tar xvf nginx-1.17.5.tar.gz
-cd nginx-1.17.5
-./configure --prefix=/opt/nginx --add-dynamic-module=../nginx-sxg-module --without-http_rewrite_module --with-http_ssl_module
+wget https://nginx.org/download/nginx-1.19.9.tar.gz
+tar xvf nginx-1.19.9.tar.gz
+cd nginx-1.19.9
+./configure --prefix=/opt/nginx --add-dynamic-module=../nginx-sxg-module
 make
 sudo make install
 ```
