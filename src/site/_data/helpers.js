@@ -18,4 +18,5 @@ const {hashForProd} = require('./lib/hash');
 
 module.exports = {
   hashForProd,
+  values: Object.values,
 };

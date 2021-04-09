@@ -19,6 +19,18 @@ date: 2018-11-05
       </p>
     </header>
   </div>
+
+  <div class="auto-fit-grid">
+    {# Convert the courses object into an array of objects. #}
+    {% set coursesArr = helpers.values(courses) %}
+    {# Sort courses by descending date order (most recent comes first) #}
+    {% for course in coursesArr|sort(true, false, 'meta.date') %}
+      {{course.meta.title}}<br>
+    {% endfor %}
+  </div>
+
+  <hr>
+
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
       <h3 id="frameworks" class="w-learn-heading">
