@@ -16,25 +16,20 @@ tags:
 
 A carousel is a UX component that displays content in slideshow-like manner. Carousels can "autoplay" or be navigated manually by users. Although carousels can be used elsewhere, they are most frequently used to display images, products, and promotions on homepages.
 
+This article discusses performance and UX best practices for carousels.
+
 <figure class="w-figure">
   {% Img src="image/admin/u2FlXalClwBeDOBBiwxu.png", alt="Image showing a carousel", width="629", height="420", class="w-screenshot" %}
 </figure>
 
 ## Performance
 
-This section discusses the performance impact of carousels and best practices for building performant carousels.
-
-
-### Impact
-
 A well-implemented carousel, in and of itself, should have very minimal or no impact on performance. However, carousels often contain large media assets. Large assets can impact performance regardless of whether they are displayed in a carousel or elsewhere.
 
 
 *   **LCP (Largest Contentful Paint)**
 
-    Large, above-the-fold carousels often contain the page's LCP element, and therefore can have a significant impact on LCP. In these scenarios, optimizing the carousel may significantly improve LCP.
-
-    For an in-depth explanation of how LCP measurement works on pages containing carousels, refer to the [LCP measurement for carousels](#lcp-measurement-for-carousels) section.
+    Large, above-the-fold carousels often contain the page's LCP element, and therefore can have a significant impact on LCP. In these scenarios, optimizing the carousel may significantly improve LCP. For an in-depth explanation of how LCP measurement works on pages containing carousels, refer to the [LCP measurement for carousels](#lcp-measurement-for-carousels) section.
 
 *   **FID (First Input Delay)**
 
@@ -45,27 +40,70 @@ A well-implemented carousel, in and of itself, should have very minimal or no im
     A surprising number of carousels use janky, non-composited animations that can contribute to CLS. On pages with autoplaying carousels, this has the potential to cause infinite CLS. This type of CLS typically isn't apparent to the human eye, which makes the issue easy to overlook. To avoid this issue, [avoid using non-composited animations](/non-composited-animations/) in your carousel (for example, during slide transitions).
 
 
-### Best practices
+## Performance best practices
 
-Optimizing the performance of a carousel includes optimizing both its technical architecture and its content.
-
-
-#### Load carousel content using HTML
+### Load carousel content using HTML
 
 Carousel content should be loaded via the page's HTML markup so that it is discoverable by the browser early in the page load process. Using JavaScript to initiate the loading of carousel content is probably the single biggest performance mistake to avoid when using carousels. This delays image loading and can negatively impact LCP.
 
 
+{% Compare 'better' %}
+```html
+<div class="slides">
+  <img src="https://example.com/cat1.jpg">
+  <img src="https://example.com/cat2.jpg">
+  <img src="https://example.com/cat3.jpg">
+</div>
+```
+
+{% endCompare %}
+
+{% Compare 'worse' %}
+```javascript
+const slides = document.querySelector(".slides");
+const newSlide = document.createElement("img");
+newSlide.src = "htttp://example.com/cat1.jpg";
+slides.appendChild(newSlide);
+```
+
+{% endCompare %}
+
 For advanced carousel optimization, consider loading the first slide statically, then progressively enhancing it to include navigation controls and additional content. This technique is most applicable to environments where you have a user's prolonged attention—this gives the additional content time to load. In environments like home pages, where users may only stick around for a second or two, only loading a single image may be similarly effective.
 
 
-#### Use modern technology
+### Avoid layout shifts
+
+{% Aside %}
+
+Chrome 88-90 shipped a variety of [bug fixes](https://chromium.googlesource.com/chromium/src/+/master/docs/speed/metrics_changelog/cls.md) related to how layout shifts are calculated. Many of these bug fixes are relevant to carousels. As a result of these fixes, sites should expect to see lower carousel-related layout shift scores in later versions of Chrome.
+
+{% endAside %}
+
+
+Slide transitions and navigation controls are the two most common sources of layout shifts in carousels:
+
+
+- **Slide transitions:** Layout shifts that occur during slide transitions are usually caused by updating the layout-inducing properties of DOM elements. Examples of some of these properties include: `left`, `top`, `width`, and `marginTop`. To avoid layout shifts, instead use the CSS [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) property to transition these elements. This [demo](https://glitch.com/~basic-carousel) shows how to use `transform` to build a basic carousel.
+
+- **Navigation controls:** Moving or adding/removing carousel navigation controls from the DOM can cause layout shifts depending on how these changes are implemented. Carousels that exhibit this behavior typically do so in response to user hover.
+
+These are some of the common points of confusion regarding CLS measurement for carousels:
+
+- **Autoplay carousels:** Slide transitions are the most common source of carousel-related layout shifts. In a non-autoplay carousel these layout shifts typically occur within 500ms of a user interaction and [therefore do not count towards Cumulative Layout Shift (CLS)](https://web.dev/cls/#expected-vs.-unexpected-layout-shifts). However, for autoplay carousels, not only can these layout shifts potentially count towards CLS - but they can also repeat indefinitely. Thus, it is particularly important to verify that an autoplay carousel is not a source of layout shifts.
+
+- **Scrolling:** Some carousels allow users to use scrolling to navigate through carousel slides. If an element's start position changes but its scroll offset (that is, [`scrollLeft`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft) or [`scrollTop`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop)) changes by the same amount (but in the opposite direction) this is not considered a layout shift provided that they occur in the same frame.
+
+For more information on layout shifts, see [Debug layout shifts](https://web.dev/debug-layout-shifts/#identifying-the-cause-of-a-layout-shift).
+
+
+### Use modern technology
 
 Many sites use [third-party JavaScript](/third-party-javascript) libraries to implement carousels. If you currently use older carousel tooling, you may be able to improve performance by switching to newer tooling. Newer tools tend to use more efficient APIs and are less likely to require additional dependencies like jQuery.
 
 
-However, you may not need JavaScript at all. The new [Scroll Snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap) API makes it possible to build full-featured, native-like carousels using only HTML and CSS-no JavaScript required.
+However, dependng on the type of carousel you are building, you may not need JavaScript at all. The new [Scroll Snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap) API makes it possible to implement carousel-like transitions using only HTML and CSS.
 
-Here are some resources on using scroll-snap that you may find helpful:
+Here are some resources on using `scroll-snap` that you may find helpful:
 
 *   [Building a Stories component (web.dev)](/building-a-stories-component/)
 *   [Next-generation web styling: scroll snap (web.dev)](/next-gen-css-2019/#scroll-snap)
@@ -73,7 +111,7 @@ Here are some resources on using scroll-snap that you may find helpful:
 *   [How to Make a CSS-Only Carousel (CSS Tricks)](https://css-tricks.com/how-to-make-a-css-only-carousel/)
 
 
-#### Optimize carousel content
+### Optimize carousel content
 
 Carousels often contain some of a site's largest images, so it can be worth your time to make sure that these images are fully optimized. Choosing the right image format and compression level, [using an image CDN](/image-cdns), and [using srcset to serve multiple image versions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap) are all techniques that can reduce the transfer size of images.
 
