@@ -180,6 +180,10 @@ or the `label`. Only the `input` element is interactive so the search query can 
 
 
 
+### Compatibility when running in tab and non-supporting browsers
+
+
+
 ## Security considerations
 
 Giving sites partial control of the title bar leaves room for developers to spoof content in what was previously a trusted, UA-controlled region.
