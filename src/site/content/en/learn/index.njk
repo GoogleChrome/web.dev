@@ -25,7 +25,9 @@ date: 2018-11-05
     {% set coursesArr = helpers.values(courses) %}
     {# Sort courses by descending date order (most recent comes first) #}
     {% for course in coursesArr|sort(true, false, 'meta.date') %}
-      {{course.meta.title}}<br>
+      <div class="w-card">
+        {{ course.meta.description | i18n(locale) }}
+      </div>
     {% endfor %}
   </div>
 

@@ -7,6 +7,7 @@
   </button>
 
   <div class="header-course__title">
-    {% include 'partials/course-gradient-title.njk' %}
+    <span class="w-visually-hidden">{{ courseTitle }}</span>
+    {{ icon('learn-css') }}
   </div>
 </web-header>
