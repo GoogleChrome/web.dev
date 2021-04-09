@@ -1,17 +1,18 @@
 ---
 layout: post
-title:
+title: Customize the window controls overlay of your PWA's title bar
 subhead:
 authors:
   - thomassteiner
-date: 2021-02-24
+date: 2021-04-08
 description: |
 
-hero: hero.jpg
+# hero: hero.jpg
 alt:
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - progressive-web-apps
+  - capabilities
 ---
 
 If you remember my article [Make your PWA feel more like an app](/app-like-pwas/), you may recall
@@ -22,7 +23,7 @@ showing the macOS Podcasts app.
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/o5gZ3GSKyUZOPhFxX7js.png", alt="macOS Podcasts app title bar showing media control buttons and metadata about the currently playing podcast.", width="800", height="63" %}
 
 Now you may be tempted to object by saying that Podcasts is a platform-specific macOS app
-that does not run in a browser and therefore does not have to play by its rules.
+that does not run in a browser and therefore can do what it wants without having to play by the browser's rules.
 True, but the good news is that the Window Controls Overlay feature, which is the topic of this
 very article, soon lets you create similar user interfaces for your PWA.
 
@@ -30,14 +31,14 @@ very article, soon lets you create similar user interfaces for your PWA.
 
 Window Controls Overlay consists of four sub-features:
 
-1. The new `"window-controls-overlay"` value for the [`display_override`](/display-override/) field
+1. The `"window-controls-overlay"` value for the [`"display_override"`](/display-override/) field
    in the web app manifest.
-1. A mechanism to query for and work around the window controls region via the new
-   `windowControlsOverlay` member of `window.navigator`.
-1. The new CSS environment variables `titlebar-area-inset-left`, `titlebar-area-inset-right`,
-   `titlebar-area-inset-top`, and `titlebar-area-inset-bottom`.
-1. The standardization of the previously proprietary CSS property `-webkit-app-region` as the new
+1. The CSS environment variables `titlebar-area-x`, `titlebar-area-y`,
+   `titlebar-area-width`, and `titlebar-area-height`.
+1. The standardization of the previously proprietary CSS property `-webkit-app-region` as the
    `app-region` property to define draggable regions in web content.
+1. A mechanism to query for and work around the window controls region via the
+   `windowControlsOverlay` member of `window.navigator`.
 
 ## What is Window Controls Overlay
 
@@ -55,7 +56,7 @@ browser-controlled title bar area.
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
 | 1. Create explainer                        | [Complete][explainer]        |
-| 2. Create initial draft of specification   | [In Progress][spec]          |
+| 2. Create initial draft of specification   | Not started                  |
 | 3. Gather feedback & iterate on design     | [In progress](#feedback)     |
 | 4. Origin trial                            | Not started                  |
 | 5. Launch                                  | Not started                  |
@@ -64,7 +65,7 @@ browser-controlled title bar area.
 
 ### Enabling via chrome://flags
 
-To experiment with Window Controls Overlay locally, without an origin trial token, enable the `#TODO` flag in `chrome://flags`.
+To experiment with Window Controls Overlay locally, without an origin trial token, enable the `#enable-desktop-pwas-window-controls-overlay` flag in `chrome://flags`.
 
 ### Enabling support during the origin trial phase
 
@@ -76,22 +77,22 @@ Starting in Chrome XX, Window Controls Overlay will be available as an origin tr
 
 {% include 'content/origin-trial-register.njk' %}
 
-
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/stdHUeVy2g3pCQ56iMUn.png", alt="ALT_TEXT_HERE", width="619", height="208" %}
-
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/SqYQ9F07oLqpUEHmKLY1.png", alt="ALT_TEXT_HERE", width="800", height="144" %}
-
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/pxU6bnq3L8tif4WPIVcb.png", alt="ALT_TEXT_HERE", width="800", height="139" %}
-
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/b92OE7aYzyNQfQdsIxdj.png", alt="ALT_TEXT_HERE", width="800", height="241" %}
-
 ## How to use Window Controls Overlay
 
 ### Adding `window-controls-overlay` to the Web App Manifest
 
-A progressive web app can opt-in to the window controls overlay by adding `window-controls-overlay`
-as the primary display_override member in the manifest.
-The window controls overlay will be visible only when all the following are satisfied:
+A progressive web app can opt-in to the window controls overlay by adding `"window-controls-overlay"`
+as the primary `"display_override"` member in the web app manifest:
+
+```json
+{
+  …
+  "display_override": ["window-controls-overlay"],
+  …
+}
+```
+
+The window controls overlay will be visible only when all of the following conditions are satisfied:
 
 1. The app is _not_ opened in the browser, but in a separate PWA window.
 1. The manifest includes `"display_override": ["window-controls-overlay"]"`.
@@ -99,133 +100,87 @@ The window controls overlay will be visible only when all the following are sati
 1. The PWA is running on a desktop operating system.
 1. The current origin matches the origin for which the PWA was installed.
 
-### Querying the window controls region with `windowControlsOverlay`
+The result of this is an empty title bar area with the regular window controls on the left or the
+right, depending on the operating system.
 
-query the bounding rects and visibility of the UA provided window controls region which will overlay into the web content area through a new object on the window.navigator property called windowControlsOverlay with two members:
-navigator.windowControlsOverlay.getBoundingClientRect(): returns a DOMRect that represents the area under the window controls overlay, or an empty rect if not visible. Interactive web content should not be displayed beneath the overlay
-navigator.windowControlsOverlay.visible: a boolean to determine if the window controls overlay has been rendered
-When the overlay changes size, position, or visibility, a geometrychange event will be fired against the windowControlsOverlay object to notify the application that it should update to accommodate the changes.
-For security and privacy, this information will only be exposed to the top-level frame. All sub-frames will see visible returns false and getBoundingClientRect() returns an empty rect.
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/7slf2HkHYGyhhLzdBz9Q.png", alt="App window with an empty titlebar with the window controls on the right.", width="800", height="112" %}
 
-### Using environment variables to describe the window controls region
+### Moving content into the title bar
 
-CSS environment variables will be added to describe the window controls overlay area:
-env(titlebar-area-inset-top)
-env(titlebar-area-inset-bottom)
-env(titlebar-area-inset-left)
-env(titlebar-area-inset-right)
-These variables will only be exposed to the top-level frame and will be undefined for all sub-frames.
-
-### Standardizing `-webkit-app-region` as `app-region`
-
-The existing CSS property -webkit-app-region which defines draggable regions in web content will be standardized to app-region and enabled in the top-level frame of PWAs that satisfy the criteria specified in 2.1.1.
-By default, the frameless window is non-draggable. Apps need to specify -webkit-app-region: drag in CSS to tell Electron which regions are draggable (like the OS's standard titlebar), and apps can also use -webkit-app-region: no-drag to exclude the non-draggable area from the draggable region. Note that only rectangular shapes are currently supported.
-
-```json
-{
-  "name": "Example PWA",
-  "display": "standalone",
-  "display_override": [
-    "window-controls-overlay"
-  ],
-  "theme_color": "#254B85"
-}
-```
+Now that there is space in the title bar, I can move something there.
+For this article, I have built a Chuck Norris jokes PWA. A useful feature for this app may be a
+search for words in jokes. Fun fact: Chuck Norris has installed this PWA on his iPhone and has let
+me know he loves the push notifications he receives whenever a new joke is submitted.
+The HTML for the search feature looks like this:
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Example PWA</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="./manifest.webmanifest">
-  </head>
-  <body>
-    <div id="titleBarContainer">
-      <div id="titleBar" class=" draggable">
-        <span class="draggable">Example PWA</span>
-        <input class="nonDraggable" type="text"
-               placeholder="Search"></input>
-      </div>
-    </div>
-    <div id="mainContent"></div>
-  </body>
-</html>
+<div class="search">
+  <img src="chuck-norris.png" alt="Chuck Norris" width="32" height="32">
+  <label>
+    <input type="search">
+    Search words in jokes
+  </label>
+</div>
 ```
 
-```css
-:root {
-  --fallback-title-bar-height: 40px;
-}
+To move this `div` up into the title bar, some CSS is needed:
 
-.draggable {
+```css
+.search {
+   /* Make sure the `div` stays there, even when scrolling. */
+  position: fixed;
+  /**
+   * Gradient, because why not. Endless opportunities.
+   * The gradient ends in maroon, which happens to be the app's
+   * `<meta name="theme-color" content="maroon">`.
+   */
+  background-image: linear-gradient(90deg, #131313, 33%, maroon);
+  /* Use the environment variable for the left anchoring with a fallback. */
+  left: env(titlebar-area-x, 0);
+  /* Use the environment variable for the top anchoring with a fallback. */
+  top: env(titlebar-area-y, 0);
+  /* Use the environment variable for setting the width with a fallback. */
+  width: env(titlebar-area-width, 100%);
+  /* Use the environment variable for setting the height with a fallback. */
+  height: env(titlebar-area-height, 33px);
+}
+```
+
+You can see the effect of this code in the screenshot below. The title bar is fully responsive.
+When I resize the PWA window, the title bar reacts as if it were composed of regular HTML content,
+which, in fact, it is.
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/5dc2j3CfrKczvTaASvKE.png", alt="App window with a search bar in the title bar.", width="800", height="112" %}
+
+### Determining which parts of the title bar are draggable
+
+While the screenshot above suggests that I am done, I am not done quite yet. The PWA window is no longer
+draggable, since the window controls buttons are no drag areas, and the rest of the title bar consists of the
+search widget. This can be fixed by leveraging the `app-region` CSS property with a value of `drag`.
+In the concrete case it is fine to make everything besides the `input` element draggable.
+
+```css
+/* The entire search `div` is draggable… */
+.search {
+  -webkit-app-region: drag;
   app-region: drag;
 }
 
-.nonDraggable {
+/* …except for the `input`. */
+input {
+  -webkit-app-region: no-drag;
   app-region: no-drag;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-}
-
-#titleBarContainer {
-  position: absolute;
-  top: env(titlebar-area-inset-top, 0);
-  bottom: env(titlebar-area-inset-bottom,
-              calc(100% - var(--fallback-title-bar-height)));
-  width: 100%;
-  background-color:#254B85;
-}
-
-#titleBar {
-  position: absolute;
-  top: 0;
-  display: flex;
-  user-select: none;
-  height: 100%;
-  left: env(titlebar-area-inset-left, 0);
-  right: env(titlebar-area-inset-right, 0);
-
-  color: #FFFFFF;
-  font-weight: bold;
-  text-align: center;
-}
-
-#titleBar > span {
-  margin: auto;
-  padding: 0px 16px 0px 16px;
-}
-
-#titleBar > input {
-  flex: 1;
-  margin: 8px;
-  border-radius: 5px;
-  border: none;
-  padding: 8px;
-}
-
-#mainContent {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: env(titlebar-area-inset-bottom,
-              calc(100% - var(--fallback-title-bar-height)));
-  overflow-y: scroll;
 }
 ```
 
-In style.css, The draggable regions are set using app-region: drag and app-region: no-drag.
-On the body, margins are set to 0 to ensure the title bar reaches to the edges of the window.
-The titleBarContainer uses position: absolute and sets the top to titlebar-area-inset-top, fixing the container to the top of the page. The bottom is set to titlebar-area-inset-bottom or to fall back to 100% - var(--fallback-title-bar-height) if the window controls overlay is not visible. The background color of the titleBarContainer is the same as the theme_color. The width is set to 100% so that the div fills the width of the page, and flows under the overlay when it is visible for a seamless appearance.
-The titleBar also uses position: absolute and top: titlebar-area-inset-top to pin it to the top of the window. By default, it consumes the full width of the window. The left and right edges are set to titlebar-area-inset-left and titlebar-area-inset-right respectively, both falling back to 0 when these values aren't set. It also sets user-select: none to prevent any attempts at dragging the window to be consumed instead by highlighting text inside of the div.
-The container for the mainContent of the webpage is also fixed in place with position: absolute and is anchored to the bottom of the page. The height is set to titlebar-area-inset-bottom, or to fall back to 100% - var(--fallback-titlebar-height), filling in the remaining space below the title bar. It sets overflow-y: scroll to allow its contents to scroll vertically within the container.
-For cases where the browser does not support the window control overlay, a CSS variable is added to set a fallback title bar height. The bounds of the titleBarContainer and mainContent are initially set to fill the entire client area, and do not need to be changed if the overlay is not supported.
+With this CSS in place, the user can drag the app window as usual by dragging the `div`, the `img`,
+or the `label`. Only the `input` element is interactive so the search query can be entered.
+
+### Querying the window controls region with `windowControlsOverlay`
+
+
+
+## Security considerations
 
 Giving sites partial control of the title bar leaves room for developers to spoof content in what was previously a trusted, UA-controlled region.
 Currently in Chromium browsers, standalone mode includes a title bar which on initial launch displays the title of the webpage on the left, and the origin of the page on the right (followed by the "settings and more" button and the window controls). After a few seconds, the origin text disappears.
@@ -233,7 +188,6 @@ In RTL configured browsers, this layout is flipped such that the origin text is 
 
 The plan is to keep this origin text so that users know what the origin of the app is and can ensure that it matches their expectations, i.e. their banking app has the origin “bankofamerica.com”, not “myquestionableapp.com”.
 For RTL configured browsers, there must be enough padding to the right of the origin text to prevent a malicious website from appending the unsafe origin with a trusted origin.
-
 
 Enabling the window controls overlay and draggable regions do not pose considerable privacy concerns other than feature detection. However, due to differing sizes and positions of the window control buttons across operating systems, the JavaScript API for navigator.windowControlsOverlay.getBoundingClientRect() will return a rect whose position and dimensions will reveal information about the operating system upon which the browser is running. Currently, developers can already discover the OS from the user agent string, but due to fingerprinting concerns there is discussion about freezing the UA string and unifying OS versions. We would like to work with the community to understand how frequently the size of the window controls overlay changes across platforms, as we believe that these are fairly stable across OS versions and thus would not be useful for observing minor OS versions.
 Although this is a potential fingerprinting issue, it only applies to installed PWAs that use the custom title bar feature and does not apply to general browser usage. Additionally, the windowControlsOverlay API will not be available to iframes embedded inside of a PWA.
@@ -278,10 +232,12 @@ Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the [`#WindowControlsOverlay
 
 ## Helpful links {: #helpful }
 
-- [Explainer](https://github.com/WICG/window-controls-overlay/blob/master/explainer.md)
+- [Explainer][explainer]
 - [Chromium bug](https://crbug.com/937121)
 - [Chrome Platform Status entry](https://chromestatus.com/feature/5741247866077184)
 - [TAG review](https://github.com/w3ctag/design-reviews/issues/481)
 
 ## Acknowledgements
+
+[explainer]: https://github.com/WICG/window-controls-overlay/blob/master/explainer.md
 
