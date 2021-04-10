@@ -91,8 +91,7 @@ considered for Largest Contentful Paint are:
   elements containing text nodes or other inline-level text elements children.
 
 Note, restricting the elements to this limited set was intentional in order to
-keep things simple in the beginning. Additional elements (e.g. `<svg>`,
-`<video>`) may be added in the future as more research is conducted.
+keep things simple in the beginning. Additional elements (e.g. `<svg>`) may be added in the future as more research is conducted.
 
 ### How is an element's size determined?
 
