@@ -1,6 +1,12 @@
 header:
   en: "Explore our structured learning paths to discover everything you need to know about building for the modern web."
 
+resources:
+  en: resources
+
+course:
+  en: Course
+
 courses:
   en: Courses
 

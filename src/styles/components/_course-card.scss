@@ -5,6 +5,17 @@
     padding: 32px;
   }
 
+  &__info {
+    color: $GREY_700;
+    font-size: 14px;
+
+    > :first-child {
+      color: $WEB_PRIMARY_COLOR;
+      border-top: 2px solid $WEB_PRIMARY_COLOR;
+      padding-top: 10px;
+    }
+  }
+
   &__cover {
     align-items: center;
     background-image: var(--course-background);
@@ -19,6 +30,15 @@
 
     @include bp(md) {
       height: 240px;
+    }
+
+    > svg {
+      width: 174px;
+      height: 64px;
+
+      @include bp(lg) {
+        width: 249px;
+      }
     }
   }
 
