@@ -123,7 +123,7 @@ position. WebVTT defines settings to do that, and more, directly inside the
 `.vtt` file. Take note on how the caption placement is defined by adding
 settings after the time interval definitions.
 
-```
+```text
 WEBVTT
 
 00:00:05.000 --> 00:00:10.000 line:0 position:20% size:60% align:start
