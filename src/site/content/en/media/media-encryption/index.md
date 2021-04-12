@@ -31,9 +31,9 @@ to be using all three DRM services.
 
 Conversion and encryption is done with these applications:
 
-* [Shaka Packager](https://github.com/google/shaka-packager) ([on Stack Overflow](https://stackoverflow.com/questions/tagged/shaka))
-* [FFmpeg](https://ffmpeg.org/download.html), ([on Stack Overflow](https://stackoverflow.com/questions/tagged/ffmpeg))
-* [OpenSSL](https://www.openssl.org/)  ([on Stack Overflow](https://stackoverflow.com/questions/tagged/openssl))
+* [Shaka Packager] ([#shaka on Stack Overflow])
+* [FFmpeg] ([#ffmpeg on Stack Overflow])
+* [OpenSSL] ([#openssl on Stack Overflow])
 
 ## Clear Key encryption
 
@@ -316,6 +316,11 @@ your site.
 [DRM]: https://en.wikipedia.org/wiki/Digital_rights_management
 [Microsoft PlayReady]: https://www.microsoft.com/playready/
 [Apple FairPlay]: https://developer.apple.com/streaming/fps/
+[Shaka Packager]: https://github.com/google/shaka-packager
+[#shaka on Stack Overflow]: https://stackoverflow.com/questions/tagged/shaka
+[FFmpeg]: https://ffmpeg.org/download.html
+[#ffmpeg on Stack Overflow]: https://stackoverflow.com/questions/tagged/ffmpeg
 [OpenSSL]: https://www.openssl.org/
+[#openssl on Stack Overflow]: https://stackoverflow.com/questions/tagged/openssl
 [Shaka Packager with raw keys]: https://google.github.io/shaka-packager/html/tutorials/raw_key.html
 [Widevine Key Server]: https://google.github.io/shaka-packager/html/tutorials/widevine.html
