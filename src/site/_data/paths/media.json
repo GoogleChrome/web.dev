@@ -32,9 +32,9 @@
       "pathItems": [
         "add-media",
         "video-and-source-tags",
-        "autoplay-best-practices",
         "media-accessibility",
         "media-frameworks",
+        "autoplay-best-practices",
         "fast-playback-with-preload",
         "pwa-with-offline-streaming"
       ]
