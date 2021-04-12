@@ -88,7 +88,10 @@ This all changed with
 makes any data that is loaded to the same browsing context group as your code
 potentially readable. By measuring the time certain operations take, attackers
 can guess the contents of the CPU caches, and through that, the contents of the
-process' memory. If `evil.com` embeds a cross-origin image, they can use a
+process' memory. Such timing attacks are possible with low-granularity timers
+that exist in the platform, but can be sped up with high-granularity timers,
+both explicit (like `performance.now()`) and implicit (like
+`SharedArrayBuffer`s). If `evil.com` embeds a cross-origin image, they can use a
 Spectre attack to read its pixel data, which makes protections relying on
 "opaqueness" ineffective.
 
