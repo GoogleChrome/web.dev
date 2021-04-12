@@ -163,7 +163,7 @@ form is submitted without the user needing to press **Continue**.
 The whole process is diagrammed in the image below.
 
 <figure class="w-figure">
-  <img src="./diagram.png" width="494" height="391" />
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GrFHzEg98jxCOguAQwHe.png", alt="", width="494", height="391" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Web OTP API diagram
   </figcaption>

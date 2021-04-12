@@ -161,9 +161,7 @@ implemented with [React.lazy() and Suspense](/code-splitting-suspense/) on a
 [demo eBay product
 page](https://github.com/GoogleChromeLabs/adaptive-loading/tree/master/react-ebay-network-aware-code-splitting).
 
-![A diagram of modules shipped for a product page on low-end and high-end
-devices: both versions include "image viewer", while the high-end version
-includes additional "zoom" and "carousel" modules.](adaptive-code-splitting.png)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gdXBknVxIdd8FcSvIrxw.png", alt="A diagram of modules shipped for a product page on low-end and high-end devices: both versions include \"image viewer\", while the high-end version includes additional \"zoom\" and \"carousel\" modules.", width="800", height="446" %}
 
 Tinder is using a number of adaptive loading patterns in its
 [web](https://medium.com/@addyosmani/a-tinder-progressive-web-app-performance-case-study-78919d98ece0)
@@ -175,11 +173,7 @@ as users swipe. After implementing these optimizations, they've seen significant
 improvements in average swipe count in countries such as Indonesia.
 
 <figure class="w-figure">
-  <img src="tinder.png" style="max-width: 75%"
-       alt="A screenshot of two versions of Tinder chat: with autoplaying video and
-            with a video with play button overlay. A screenshot of a Tinder profile with
-            caption 'Limit carousel images on Data Saver or 3G'.
-            A code snippet for prefetching in-viewport videos only on 4G.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/N1xJkEMQ9rE513TNm8va.png", alt="A screenshot of two versions of Tinder chat: with autoplaying video and with a video with play button overlay. A screenshot of a Tinder profile with caption 'Limit carousel images on Data Saver or 3G'. A code snippet for prefetching in-viewport videos only on 4G.", width="800", height="445", style="max-width: 75%" %}
 </figure>
 
 ### Adaptive loading at Facebook

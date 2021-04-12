@@ -38,9 +38,7 @@ Progressive enhancement in 2020 and beyond is about using
 [modern browser capabilities](https://web.dev/fugu-status/).
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="100002010000053C000003E8B978FE17E590BC9A.png"
-       alt="Inclusive web design for the future with progressive enhancement. Title slide from Finck and Champeon's original presentation.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IEOd4MT9BqnbeXQ7z0vC.png", alt="Inclusive web design for the future with progressive enhancement. Title slide from Finck and Champeon's original presentation.", width="800", height="597", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Slide: Inclusive Web Design for the Future With Progressive Enhancement.
     (<a href="http://www.hesketh.com/publications/inclusive_web_design_for_the_future/">Source</a>)
@@ -57,9 +55,7 @@ default parameters, generators, the destructuring assignment, rest and spread, `
 [All are supported](https://caniuse.com/#feat=es6).
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000000000009C40000039EF0A6FE5C50E42DEA.png"
-       alt="The CanIUse support table for ES6 features showing support across all major browsers.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sYcABrEPMr01C2ilp4B0.png", alt="The CanIUse support table for ES6 features showing support across all major browsers.", width="800", height="296", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The ECMAScript 2015 (ES6) browser support table. (<a href="https://caniuse.com/#feat=es6">Source</a>)
   </figcaption>
@@ -72,9 +68,7 @@ The `async` and `await` keywords enable asynchronous, promise-based behavior
 to be written in a cleaner style, avoiding the need to explicitly configure promise chains.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000000000009C400000304A19EF0FF1D72987D.png"
-       alt="The CanIUse support table for async functions showing support across all major browsers.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0WFlQTFFTlqXKvpROMu9.png", alt="The CanIUse support table for async functions showing support across all major browsers.", width="800", height="247", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The Async functions browser support table. (<a href="https://caniuse.com/#feat=async-functions">Source</a>)
   </figcaption>
@@ -101,8 +95,7 @@ console.log(0 ?? 42);
 ```
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="1000020100000640000003E810E16D93C747B2D5.png"
-       alt="The iconic Windows XP green grass background image.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/v1nhcTV9aaqPKd9oRvYz.png", alt="The iconic Windows XP green grass background image.", width="800", height="500" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The grass is green when it comes to core JavaScript features.
     (Microsoft product screenshot, used with
@@ -129,9 +122,7 @@ to a device's home screen and integrates seamlessly with the operating system
 as a stand-alone application.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000006A2F58B840608CEA761.png"
-       alt="Fugu Greetings PWA with a drawing that resembles the PWA community logo.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/w0id013BKBF2z7m70TrX.png", alt="Fugu Greetings PWA with a drawing that resembles the PWA community logo.", width="800", height="543", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The <a href="https://tomayac.github.io/fugu-greetings/public/">Fugu Greetings</a> sample app.
   </figcaption>
@@ -254,18 +245,14 @@ On browsers that currently don't support the File System Access API, I load the 
 You can see the network tabs of Firefox and Safari below.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="100002010000058C000000CA65613FEC1D7FB3E2.png"
-       alt="Safari Web Inspector showing the legacy files getting loaded.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rnPL8xIMt6HJEUbDfrez.png", alt="Safari Web Inspector showing the legacy files getting loaded.", width="800", height="114", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Safari Web Inspector network tab.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000005800000012430B7B8786BF315DD.png"
-       alt="Firefox Developer Tools showing the legacy files getting loaded.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bui4rcv0jvlVLHI3jBoo.png", alt="Firefox Developer Tools showing the legacy files getting loaded.", width="800", height="166", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Firefox Developer Tools network tab.
   </figcaption>
@@ -278,9 +265,7 @@ This is made elegantly possible thanks to
 As I said earlier, the grass is pretty green these days.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000006FC0000021AD16A28BA8F5CBF1A.png"
-       alt="Chrome DevTools showing the modern files getting loaded.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/plf6kGtFE8g9Fjogv8ia.png", alt="Chrome DevTools showing the modern files getting loaded.", width="800", height="241", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Chrome DevTools network tab.
   </figcaption>
@@ -357,27 +342,21 @@ where I can choose the name and storage location of the file.
 Now the file is ready to be preserved for eternity.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000005DB39851711E3CB3BF0.png"
-       alt="Fugu Greetings app with a file open dialog.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEKHbetFMURVWh4QPRJw.png", alt="Fugu Greetings app with a file open dialog.", width="800", height="480", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The file open dialog.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000005DB01941257D7BE6A85.png"
-       alt="Fugu Greetings app now with an imported image.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tls52mkxDB513SzzcfNj.png", alt="Fugu Greetings app now with an imported image.", width="800", height="480", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The imported image.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000005DBCBE1B58EC828BB29.png"
-       alt="Fugu Greetings app with the modified image.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3LwHvtROaN1bHJN1El5D.png", alt="Fugu Greetings app with the modified image.", width="800", height="480", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Saving the modified image to a new file.
   </figcaption>
@@ -396,10 +375,7 @@ When you click the **Share Article** button, you can share a link to the article
 example, via the macOS Messages app.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="1000020100000356000001C434F5DD5D64721768.png"
-       alt="Desktop Safari's share sheet on macOS triggered from an article's Share button"
-       width="600">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sinRHRHFgSgwAC7x8dIZ.png", alt="Desktop Safari's share sheet on macOS triggered from an article's Share button", width="800", height="423", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Web Share API on desktop Safari on macOS.
   </figcaption>
@@ -474,20 +450,14 @@ image attached.
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img class="w-screenshot"
-        src="10000201000003E4000008004D3AEA65DB2ABA6C.png"
-        alt="OS-level share sheet showing various apps to share the image to."
-        width="300">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/szInJQl908kv9GEU8EJf.png", alt="OS-level share sheet showing various apps to share the image to.", width="800", height="1645", class="w-screenshot" %}
     <figcaption class="w-figcaption">
       Choosing an app to share the file to.
     </figcaption>
   </figure>
 
   <figure class="w-figure">
-    <img class="w-screenshot"
-        src="10000201000003E400000800D873C982E6D44C89.png"
-        alt="Gmail's email compose widget with the image attached."
-        width="300">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mKmdg1OMGpWDukmfSSOl.png", alt="Gmail's email compose widget with the image attached.", width="800", height="1645", class="w-screenshot" %}
     <figcaption class="w-figcaption">
       The file gets attached to a new email in Gmail's composer.
     </figcaption>
@@ -545,20 +515,14 @@ Their names are then drawn onto my greeting card.
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img class="w-screenshot"
-        src="10000201000003E400000800AD376E3B4B3386C6.png"
-        alt="Contacts picker showing the names of two contacts in the address book."
-        width="300">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/T5gmSr1XGiVIV9Pw1HbC.png", alt="Contacts picker showing the names of two contacts in the address book.", width="800", height="1645", class="w-screenshot" %}
     <figcaption class="w-figcaption">
       Selecting two names with the contact picker from the address book.
     </figcaption>
   </figure>
 
   <figure class="w-figure">
-    <img class="w-screenshot"
-        src="1000000000000438000008AC945569E52CE934FA.png"
-        alt="The names of the two previously picked contacts drawn on the greeting card."
-        width="300">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ioMOCEHwvwdyzS7DX5L8.png", alt="The names of the two previously picked contacts drawn on the greeting card.", width="800", height="1644", class="w-screenshot" %}
     <figcaption class="w-figcaption">
       The two names then get drawn onto the greeting card.
     </figcaption>
@@ -641,9 +605,7 @@ When I click **Paste**, the Fugu Greetings app then asks me
 whether I want to allow the app to see text and images on the clipboard.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000006A2FE8CEB5EE2FB3F83.png"
-       alt="Fugu Greetings app showing the clipboard permission prompt.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EO9BemEDnDtO3SvLl8u5.png", alt="Fugu Greetings app showing the clipboard permission prompt.", width="800", height="543", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The clipboard permission prompt.
   </figcaption>
@@ -656,9 +618,7 @@ When I then open Preview and click **File** and then **New from Clipboard**,
 the greeting card gets pasted into a new untitled image.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000005A941A3287F1A5052A8.png"
-       alt="The macOS Preview app with an untitled, just pasted image.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VAkvEYWsQsJ0VJ8IjEs1.png", alt="The macOS Preview app with an untitled, just pasted image.", width="800", height="464", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     An image pasted into the macOS Preview app.
   </figcaption>
@@ -702,19 +662,14 @@ per number.
 The badge counter on the icon is now at seven.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000005DBE9BF427ABD63947A.png"
-       alt="The numbers from one to seven drawn onto the greeting card, each with just one pen stroke.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uKurKxYeRlLCLXJYhX9I.png", alt="The numbers from one to seven drawn onto the greeting card, each with just one pen stroke.", width="800", height="480", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Drawing the numbers from 1 to 7, using seven pen strokes.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000002E6000001C0855AA2DF1E30228C.png"
-       alt="Badge icon on the Fugu Greetings app showing the number 7."
-       width="300">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5uOcN2MdjKVnWXRyTmCG.png", alt="Badge icon on the Fugu Greetings app showing the number 7.", width="742", height="448", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The pen strokes counter in the form of the app icon badge.
   </figcaption>
@@ -800,9 +755,7 @@ In Fugu Greetings, pressing the **Wallpaper** button reveals the greeting card i
 that is updated every day via the Periodic Background Sync API.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000005E0B042853D0E77C224.png"
-       alt="Fugu Greetings app with a new greeting card image of the day.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YdSHSI4pZcTPyVv8CVx8.png", alt="Fugu Greetings app with a new greeting card image of the day.", width="800", height="481", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Pressing the <strong>Wallpaper</strong> button displays the image of the day.
   </figcaption>
@@ -846,9 +799,7 @@ When I check the **Reminder** checkbox in Fugu Greetings, a prompt asks
 me when I want to be reminded to finish my greeting card.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000005DB0D42F493ACFD1B53.png"
-       alt="Fugu Greetings app with a prompt asking the user when they want to be reminded to finish their greeting card.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xtD7PtIIBO0Yn1ISFSyz.png", alt="Fugu Greetings app with a prompt asking the user when they want to be reminded to finish their greeting card.", width="800", height="480", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Scheduling a local notification to be reminded to finish a greeting card.
   </figcaption>
@@ -859,10 +810,7 @@ it is shown just like any other notification, but as I wrote before,
 it didn't require a network connection.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000005E0B042853D0E77C225.png"
-       alt="macOS Notification Center showing a triggered notification from Fugu Greetings."
-       width="300">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/e1FJA11UE3lrL1d4mCCo.png", alt="macOS Notification Center showing a triggered notification from Fugu Greetings.", width="300", height="172", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The triggered notification appears in the macOS Notification Center.
   </figcaption>
@@ -914,9 +862,7 @@ In Fugu Greetings, there's an **Insomnia** checkbox that, when checked, keeps th
 screen awake.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000005DBCD9D10DD0A745315.png"
-       alt="The insomnia checkbox, if checked, keeps the screen awake.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kB5LkdV3cVKaJ0Xze76v.png", alt="The insomnia checkbox, if checked, keeps the screen awake.", width="800", height="480", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The <strong>Insomnia</strong> checkbox keeps app awake.
   </figcaption>
@@ -972,9 +918,7 @@ In the Fugu Greetings app, the canvas clears when the **Ephemeral** checkbox is
 checked and the user is idle for for too long.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000005DBB930B1D3F8F5D1DA.png"
-       alt="Fugu Greetings app with a cleared canvas after the user has been idle for too long.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yq3IsOqp01AZTw7nvfnB.png", alt="Fugu Greetings app with a cleared canvas after the user has been idle for too long.", width="800", height="480", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     When the <strong>Ephemeral</strong> checkbox is checked and the user has been idle for too long, the canvas is cleared.
   </figcaption>
@@ -991,9 +935,7 @@ applications,
 although you might want to consider a bundler for really large apps.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000006E8D776365D6B538C9A.png"
-       alt="Chrome DevTools Network panel showing only requests for files with code that the current browser supports.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DOnuk7CHPsnbTdlqOHXM.png", alt="Chrome DevTools Network panel showing only requests for files with code that the current browser supports.", width="800", height="566", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Chrome DevTools Network tab showing only requests for files with code that the current browser supports.
   </figcaption>
@@ -1005,30 +947,21 @@ Note that these capabilities may change even in one and the same browser,
 depending on whether the app is running as an installed app or in a browser tab.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="android.png"
-       alt="Fugu Greetings running on Android Chrome, showing many available features."
-       width="500">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LmUW0CZpH5eXIoHTZ6kH.png", alt="Fugu Greetings running on Android Chrome, showing many available features.", width="500", height="243", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> running on Android Chrome.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="safari.png"
-       alt="Fugu Greetings running on desktop Safari, showing fewer available features."
-       width="500">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BOcbAW4FCi10d9cGdeNW.png", alt="Fugu Greetings running on desktop Safari, showing fewer available features.", width="500", height="403", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> running on desktop Safari.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="chrome.png"
-       alt="Fugu Greetings running on desktop Chrome, showing many available features."
-       width="500">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7zT4BEUzxTkjg8e08OJU.png", alt="Fugu Greetings running on desktop Chrome, showing many available features.", width="500", height="348", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> running on desktop Chrome.
   </figcaption>
@@ -1038,9 +971,7 @@ If you're interested in the [Fugu Greetings](https://tomayac.github.io/fugu-gree
 go find and [fork it on GitHub](https://github.com/tomayac/fugu-greetings).
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000005FB1EF077CDF01B8588.png"
-       alt="Fugu Greetings repo on GitHub.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l260mtBzRi8OxdV8gXSg.png", alt="Fugu Greetings repo on GitHub.", width="800", height="490", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> app on GitHub.
   </figcaption>

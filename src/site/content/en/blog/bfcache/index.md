@@ -527,7 +527,7 @@ web APIs.
     polyfill](https://github.com/GoogleChromeLabs/first-input-delay)) in the
     `pageshow` event, and report FID as the delay of the first input after the
     bfcache restore.
-*   For [Cumulative Layout Shift (CLS)](/fid/), you can continue to keep using
+*   For [Cumulative Layout Shift (CLS)](/cls/), you can continue to keep using
     your existing Performance Observer; all you have to do is reset the current
     CLS value to 0.
 

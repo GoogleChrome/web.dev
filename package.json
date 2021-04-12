@@ -68,7 +68,7 @@
     "wicg-inert": "^3.0.1"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@google-cloud/secret-manager": "^3.2.3",
@@ -118,6 +118,7 @@
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",
     "markdown-it-attrs": "^3.0.0",
+    "markdown-it-deflist": "^2.1.0",
     "mocha": "^6.2.0",
     "moment": "^2.24.0",
     "move-file": "^2.0.0",

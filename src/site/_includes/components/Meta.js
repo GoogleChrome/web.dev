@@ -15,9 +15,15 @@
  */
 
 const {html} = require('common-tags');
+const path = require('path');
 const {generateSrc} = require('./Img');
 const site = require('../../_data/site');
 const strip = require('../../_filters/strip');
+const {findByUrl} = require('../../_filters/find-by-url');
+const {supportedLocales} = require('../../../../shared/locale');
+
+const i18nLocales = supportedLocales.filter((locale) => locale !== 'en');
+const i18nRegex = /i18n\/\w+\//;
 
 module.exports = (locale, page, collections, renderData = {}) => {
   const forbiddenCharacters = [{searchValue: /"/g, replaceValue: '&quot;'}];
@@ -130,6 +136,34 @@ module.exports = (locale, page, collections, renderData = {}) => {
     `;
   }
 
+  function renderHreflangMeta() {
+    if (!pageUrl) {
+      // This can happen when a page is not intended to be included in the final
+      // output, e.g. has a permalink: false.
+      return;
+    }
+    const url = pageUrl.startsWith('/i18n/')
+      ? pageUrl.replace(i18nRegex, '')
+      : pageUrl;
+
+    // Find i18n equivalents of the current url and check if they exist.
+    const langhrefs = i18nLocales
+      .map((locale) => [locale, path.join('/', 'i18n', locale, url)])
+      // Filter out i18n urls that do not have an existing translated file.
+      .filter((langhref) => !!findByUrl(langhref[1]))
+      .map((langhref) => {
+        const href = new URL(langhref[1], site.url).href;
+        return `<link rel="alternate" hreflang="${langhref[0]}" href="${href}" />`;
+      });
+
+    // If some i18n equivalents are found, add also the default language (en).
+    if (langhrefs.length) {
+      const enHref = new URL(url, site.url).href;
+      langhrefs.push(`<link rel="alternate" hreflang="en" href="${enHref}" />`);
+    }
+    return langhrefs.join('');
+  }
+
   function renderCanonicalMeta() {
     return html` <link rel="canonical" href="${canonical}" /> `;
   }
@@ -158,6 +192,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
       || (pageData.path && pageData.path.description), forbiddenCharacters)}" />
 
     ${renderCanonicalMeta()}
+    ${renderHreflangMeta()}
     ${renderGoogleMeta()}
     ${renderFacebookMeta()}
     ${renderTwitterMeta()}

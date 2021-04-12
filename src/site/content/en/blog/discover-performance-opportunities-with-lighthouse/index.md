@@ -105,7 +105,7 @@ explains how each metric score contributes to the overall score.
 Hover over a metric to learn more about it. Click **Learn more** to read
 documentation about it.
 
-<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-5.png" alt="">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jnSx7PT4NXRW6c88vVjj.png", alt="", width="800", height="504", class="w-screenshot w-screenshot--filled" %}
 
 Below your metrics scores you see screenshots of how the page looked while it
 loaded.
@@ -115,7 +115,7 @@ loaded.
 Below the screenshots you see opportunities for improving the page's
 performance.
 
-<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-7.png" alt="">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xn9EDUNnxVhdD5FcfAMA.png", alt="", width="800", height="504", class="w-screenshot w-screenshot--filled" %}
 
 Click an opportunity to learn more about it.
 

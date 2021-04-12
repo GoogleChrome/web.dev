@@ -32,14 +32,12 @@ You can try out Trust Tokens with our [demo](https://trust-token-demo.glitch.me)
 in the Chrome DevTools **Network** and **Application** tabs.
 
 <figure class="w-figure">
-  <img src="./images/devtools-network-tab.jpg" alt="Screenshot showing Trust Tokens in the Chrome
-  DevTools Network tab.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/krrI292OLd6awb4dxkN0.jpg", alt="Screenshot showing Trust Tokens in the Chrome DevTools Network tab.", width="800", height="584" %}
   <figcaption class="w-figcaption">Trust Tokens in the Chrome DevTools <b>Network</b> tab.</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img src="./images/devtools-application-tab.jpg" alt="Screenshot showing Trust Tokens in the Chrome
-  DevTools Application tab.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cwR9JdoVo1M4VDovP2oM.jpg", alt="Screenshot showing Trust Tokens in the Chrome DevTools Application tab.", width="800", height="584" %}
   <figcaption class="w-figcaption">Trust Tokens in the Chrome DevTools <b>Application</b> tab.</figcaption>
 </figure>
 

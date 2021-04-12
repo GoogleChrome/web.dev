@@ -71,11 +71,10 @@ product detail pages had a poor FID. Based on that information, they decided to 
 on improving the interactivity for product pages in the site.
 
 <figure class="w-figure">
-  <img src="meli-pdp.png" class="w-screenshot"
-       alt="Mobile and Desktop versions of a Mercado Libre product detail page.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gg8ohXTbFgr6Msacklt0.png", alt="Mobile and Desktop versions of a Mercado Libre product detail page.", width="800", height="346", class="w-screenshot" %}
    <figcaption class="w-figcaption">
       Mobile and Desktop versions of a Mercado Libre product detail page.
-  </figcaption>     
+  </figcaption>
 </figure>
 
 These pages allow the user to perform complex interactions, so the goal was interactivity
@@ -91,8 +90,7 @@ In the following trace, for example, while the **total time** spent running task
 is 560 ms, only 345 ms of that time is considered **total blocking time** (the sum of the portions
 of each task that exceeds 50ms):
 
-[![A tasks timeline on the main thread showing blocking
-time](tbt-blocking-time.svg)](tbt-blocking-time.svg)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/us8USZRiCh9sg1X2zEpN.svg", alt="A tasks timeline on the main thread showing blocking time", width="800", height="156", linkTo=true %}
 
 Mercado Libre took TBT as a proxy metric in the lab, in order to measure and improve the
 interactivity of product detail pages in the real world.
@@ -122,11 +120,10 @@ observing the main thread view of WPT, Mercado Libre found that there were sever
 tasks blocking the main thread for 2 seconds:
 
 <figure class="w-figure">
-  <img src="main-thread-unoptimized.png" class="w-screenshot"
-       alt="Main thread view of Mercado Libre's product detail pages.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/NbVmhDK9MLvyvEBbBYAZ.png", alt="Main thread view of Mercado Libre's product detail pages.", width="800", height="188", class="w-screenshot" %}
    <figcaption class="w-figcaption">
       Main thread view of Mercado Libre's product detail pages.
-  </figcaption>     
+  </figcaption>
 </figure>
 
 Analyzing the corresponding waterfall they found that a considerable part of those two seconds came
@@ -134,11 +131,10 @@ from their analytics module. The main bundle size of the application was large (
 long time to parse, compile, and execute.
 
 <figure class="w-figure">
-  <img src="waterfall-unoptimized.png" class="w-screenshot"
-       alt="Waterfall view of product detail pages.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7QHKOutyGzfXN52hPOOz.png", alt="Waterfall view of product detail pages.", width="800", height="363", class="w-screenshot" %}
    <figcaption class="w-figcaption">
       Waterfall view of Mercado Libre's product detail pages.
-  </figcaption>     
+  </figcaption>
 </figure>
 
 ## Use Lighthouse to determine Max Potential FID
@@ -150,8 +146,7 @@ When running Lighthouse on product detail pages, Mercado Libre found that the **
 was the only metric marked in red, with a value of **1710ms**.
 
 <figure class="w-figure">
-  <img src="lighthouse-unoptimized.png" 
-       alt="Lighthouse metrics in a PSI report for Mercado Libre's product detail pages.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rufTQY4scq1V3ghVIQPy.png", alt="Lighthouse metrics in a PSI report for Mercado Libre's product detail pages.", width="800", height="235" %}
 </figure>
 
 Based on this, Mercado Libre set a goal to improve their Max Potential FID score in a laboratory
@@ -201,18 +196,16 @@ As a result of these optimizations, the bundle size was reduced **by approximate
 The changes lowered Mercado Libre's consecutive long tasks **from two seconds to one second**:
 
 <figure class="w-figure">
-  <img src="main-thread-iteration-1.png" class="w-screenshot"
-       alt="Main thread view of Mercado Libre's product detail pages after first round of optimizations.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/17At96aKcPrvNTWgb3FU.png", alt="Main thread view of Mercado Libre's product detail pages after first round of optimizations.", width="800", height="315", class="w-screenshot" %}
    <figcaption class="w-figcaption">
       In the top waterfall of WPT there’s a long red bar (in the <b>Page is Interactive</b> row) between seconds 3 and 5. In the bottom waterfall, the bar has been broken into smaller pieces, occupying the main thread for shorter periods of time.
-  </figcaption>     
+  </figcaption>
 </figure>
 
 Lighthouse showed a **57% reduction** in Max Potential First Input Delay:
 
 <figure class="w-figure">
-  <img src="lighthouse-iteration-1.png" 
-       alt="Lighthouse metrics in a PSI report for Mercado Libre's product detail pages after first round of optimizations.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Sxa1wKCXVfsHZNbfQ1ZZ.png", alt="Lighthouse metrics in a PSI report for Mercado Libre's product detail pages after first round of optimizations.", width="800", height="252" %}
 </figure>
 
 ## Second iteration
@@ -220,11 +213,10 @@ Lighthouse showed a **57% reduction** in Max Potential First Input Delay:
 The team continued digging into long tasks in order to find subsequent improvements.
 
 <figure class="w-figure">
-  <img src="main-thread-iteration-1-detail.png" class="w-screenshot"
-       alt="Detailed view of main thread view of Mercado Libre's product detail pages after first round of optimizations.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tlMIQRWDAeEY7UV4cFQo.png", alt="Detailed view of main thread view of Mercado Libre's product detail pages after first round of optimizations.", width="800", height="259", class="w-screenshot" %}
    <figcaption class="w-figcaption">
       The Waterfall (not pictured) helped Mercado Libre identify which libraries were using the main thread heavily (<b>Browser Main Thread</b> row) and the <b>Page is Interactive</b> row clearly shows that this main thread activity is blocking interactivity.
-  </figcaption>     
+  </figcaption>
 </figure>
 
 Based on that information they decided to implement the following changes:
@@ -244,15 +236,13 @@ Based on that information they decided to implement the following changes:
 The resulting WebPageTest trace showed even smaller chunks of JS execution:
 
 <figure class="w-figure">
-  <img src="main-thread-iteration-2.png" class="w-screenshot"
-       alt="Main thread view of Mercado Libre's product detail pages after secoond round of optimizations.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gAvo2VXimablQ8OhFDdn.png", alt="Main thread view of Mercado Libre's product detail pages after secoond round of optimizations.", width="800", height="150", class="w-screenshot" %}
 </figure>
 
 And their Max Potential FID time in Lighthouse was reduced **by an additional 60%**:
 
 <figure class="w-figure">
-  <img src="lighthouse-iteration-2.png" class="w-screenshot"
-       alt="Lighthouse metrics in a PSI report for Mercado Libre's product detail pages after first round of optimizations.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7W672LOor2SgqZsmK3BL.png", alt="Lighthouse metrics in a PSI report for Mercado Libre's product detail pages after first round of optimizations.", width="800", height="345", class="w-screenshot" %}
 </figure>
 
 ## Visualize progress for real users
@@ -273,11 +263,10 @@ dashboard](https://datastudio.google.com/c/datasources/create?connectorId=AKfycb
 is an easy way to visualize the progress of core metrics:
 
 <figure class="w-figure">
-  <img src="crux-progress.png"
-       alt=".">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3bUj9l2ISMr3mojaUG4o.png", alt=".", width="800", height="163" %}
     <figcaption class="w-figcaption">
       Mercado Libre's FID progress between Jan 2020 and April 2020. Before the optimization project, 82% of the users were perceiving FID as fast (below 100ms). After, more than 91% of the users were perceiving the metric as fast.
-    </figcaption>     
+    </figcaption>
 </figure>
 
 ## Next steps
@@ -287,7 +276,7 @@ optimizations bring to their users. While they continue applying several optimiz
 site, including [prefetching](https://web.dev/instant-navigation-experiences/#production-cases) in
 product listing pages, image optimizations, and others, they continue adding improvements to product
 listing pages to reduce Total Blocking Time (TBT), and by proxy FID, even more. These optimizations
-include: 
+include:
 
 - Iterating on the code splitting solution.
 - Improving the execution of third-party scripts.
