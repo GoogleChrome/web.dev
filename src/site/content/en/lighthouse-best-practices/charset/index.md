@@ -26,7 +26,7 @@ specification solves this problem.
 flags pages that do not specify their character encoding:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="charset.png" alt="The failing character encoding audit.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IERR919vogl1HyYwxvVZ.png", alt="The failing character encoding audit.", width="800", height="110", class="w-screenshot" %}
 </figure>
 
 Lighthouse considers the character encoding to be declared if it finds any of the following:
@@ -41,7 +41,7 @@ Lighthouse considers the character encoding to be declared if it finds any of th
 
 ## How to pass the `charset` audit
 
-### Add a `<meta chartset>` element to your HTML {: #html }
+### Add a `<meta charset>` element to your HTML {: #html }
 
 Add a `<meta charset>` element within the first 1024 bytes of your HTML document.
 The element must be fully contained within the first 1024 bytes.

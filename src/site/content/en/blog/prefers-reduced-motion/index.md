@@ -88,12 +88,10 @@ unnecessary animations.
 
 <div class="w-columns">
   <figure>
-    <img src="macos-reduce-motion.png" width="398" height="300"
-         alt="A screenshot of the macOS settings screen with the 'Reduce motion' checkbox checked.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KwuLNPefeDzUfR17EUtr.png", alt="A screenshot of the macOS settings screen with the 'Reduce motion' checkbox checked.", width="398", height="300" %}
   </figure>
   <figure>
-    <img src="android-remove-animations.png" width="287" height="300"
-         alt="A screenshot of the Android settings screen with the 'Remove animations' checkbox checked.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qed7yE6FKVQ5YXHn0TbJ.png", alt="A screenshot of the Android settings screen with the 'Remove animations' checkbox checked.", width="287", height="300" %}
   </figure>
 </div>
 
@@ -205,9 +203,7 @@ reveal animations are gone, and just the regular scrolling motion is left. The s
 shows the demo in action:
 
 <figure>
-  <video muted playsinline controls poster="prefers-reduced-motion.png">
-    <source src="https://storage.googleapis.com/web-dev-assets/prefers-reduced-motion/prefers-reduced-motion.mp4" type="video/mp4">
-  </video>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/zWs45QPPI9C8CjF813Zx.mp4", muted=true, playsinline=true, controls=true, poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CQAw3Ee43Dcv0JOsm9fl.png" %}
   <figcaption>Video of the
     <a href="https://prefers-reduced-motion.glitch.me"><code>prefers-reduced-motion</code> demo</a>
     app

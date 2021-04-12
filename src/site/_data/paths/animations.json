@@ -1,19 +1,19 @@
 {
   "slug": "animations",
-  "cover": "/images/collections/animations.svg",
-  "title": "Animations",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/khlZd1T1VU3FjmklZY2b.svg",
+  "title": "i18n.paths.animations.title",
   "updated": "September 25, 2020",
-  "description": "Techniques for developing high-performance animations.",
-  "overview": "A curated collection of high-quality resources that will help you understand why some animations are slow, and how to build and debug your own animations with CSS or JavaScript.",
+  "description": "i18n.paths.animations.description",
+  "overview": "i18n.paths.animations.overview",
   "topics": [
     {
-      "title": "How browsers render animations",
+      "title": "i18n.paths.animations.topics.how_browsers_render_animations",
       "pathItems": [
         "animations-overview"
       ]
     },
     {
-      "title": "Build animations with CSS",
+      "title": "i18n.paths.animations.topics.build_animations_with_css",
       "pathItems": [
         {
           "title": "CSS animations API guide",
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "title": "Build animations with JavaScript",
+      "title": "i18n.paths.animations.topics.build_animations_with_javascript",
       "pathItems": [
         {
           "title": "Web Animations API overview",

@@ -17,6 +17,7 @@
 const authorsData = require('../_data/authorsData.json');
 const {livePosts} = require('../_filters/live-posts');
 const setdefault = require('../_utils/setdefault');
+const {sortByUpdated} = require('../_utils/sort-by-updated');
 
 /** @type Authors */
 let processedCollection;
@@ -67,7 +68,7 @@ const maybeUpdateAuthorHref = (author, allAuthorPosts) => {
 /**
  * Returns all authors with their posts.
  *
- * @param {any} [collections] Eleventy collection object
+ * @param {EleventyCollectionObject} [collections] Eleventy collection object
  * @return {Authors}
  */
 module.exports = (collections) => {
@@ -79,9 +80,7 @@ module.exports = (collections) => {
 
   if (collections) {
     // Find all posts, sort and key by author. Don't yet filter to live posts.
-    allPosts = collections
-      .getFilteredByGlob('**/*.md')
-      .sort((a, b) => b.date - a.date);
+    allPosts = collections.getFilteredByGlob('**/*.md').sort(sortByUpdated);
   }
 
   const authorsPosts = findAuthorsPosts(allPosts);

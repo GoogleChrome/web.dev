@@ -83,10 +83,10 @@ const responsiveImages = (content, outputPath) => {
     }
   });
   // TODO: Create a generic function that takes other elements than img.
-  const originalLogo = $('web-side-nav').attr('logo');
+  const originalLogo = $('web-navigation-drawer').attr('logo');
   if (originalLogo) {
     const newLogo = determineImagePath(originalLogo, outputPath).src;
-    $('web-side-nav').attr('logo', newLogo);
+    $('web-navigation-drawer').attr('logo', newLogo);
   }
   return $.html();
 };

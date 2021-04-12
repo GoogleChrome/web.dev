@@ -18,15 +18,14 @@ and with less data moving over the wire.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) lists all resources not served over HTTP/2:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="uses-http2.png" alt="Lighthouse audit shows resources not served over HTTP/2 ">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Gs0J63479ELUkMeI8MRS.png", alt="Lighthouse audit shows resources not served over HTTP/2 ", width="800", height="191", class="w-screenshot" %}
 </figure>
 
-Lighthouse gathers all resources from the same host as the page
-and checks the HTTP protocol version of each resource.
-
-Lighthouse doesn't check resources from other hosts
-because it assumes that you have no control
-over how third-party resources are served.
+Lighthouse gathers all resources requested by the page
+and checks the HTTP protocol version of each. There are some
+cases where non-HTTP/2 requests will be ignored in the audit
+results. [See the implementation](https://github.com/GoogleChrome/lighthouse/blob/9fad007174f240982546887a7e97f452e0eeb1d1/lighthouse-core/audits/dobetterweb/uses-http2.js#L138)
+for more details.
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 

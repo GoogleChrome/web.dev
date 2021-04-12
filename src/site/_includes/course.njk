@@ -1,18 +1,33 @@
 ---
 layout: base
+pageScripts:
+  - '/js/course.js'
 ---
 
+{% from 'macros/audio-fab.njk' import audioFab %}
+{% from 'macros/audio-player.njk' import audioPlayer %}
+
 {#
-  Grab the navigation data for the course. The projectKey is defined in the
-  11tydata.js file at the root of the course in /learn/[course].
+  Grab the data for the course using the projectKey defined in the 11tydata.js
+  file at the root of the course in /learn/[course]
 #}
-{% set navigationToC = courses[projectKey].toc %}
-{% set pageNavigation = collections.all | navigation(navigationToC) %}
+{% set courseData = courses[projectKey] %}
+{% set courseTitle = courseData.meta.title | i18n(locale) %}
+
+{#
+  Grab the navigation data for the course. These are the link that will appear
+  in the navigatino drawer.
+#}
+{% set pageNavigation = collections.all | navigation(courseData.toc) %}
 
 {#
   Grab the ToC contents for headings ToC. This powers the list of headings
   that appears on the right-hand side of the page. Unfortunately our use of
   the word 'toc' is a bit overloaded :P
+  TODO: The courseToc filter is only used to define the ToC for courses, but
+  it's basically the same thing we use on developer.chrome.com and it would be
+  nice to use it for articles as well. Currently we have a different toc design
+  for those but it's a bit clunky and we should replace it with this.
 #}
 {% set tocContents %}
   {{- content | courseToc | safe -}}
@@ -21,22 +36,9 @@ layout: base
 <a class="skip-link w-button" href="#main">Skip to main</a>
 
 <div class="course-layout">
-  <nav class="course-nav scrollbar" aria-label="primary navigation">
-    <ul>
-      {#
-        TODO: This does not yet support walking the recursive navigation tree
-        and rendering section headings. It should be easy enough to add that
-        using a macro similar to the one shown here for rendering unlimited
-        child levels.
-        https://www.11ty.dev/docs/plugins/navigation/#copy-and-paste-templates
-      #}
-      {% for item in pageNavigation -%}
-        <li {% if item.url === page.url %} data-active aria-current="page" {% endif %}>
-          <a href="{{ item.url }}">{{ item.page.data.title }}</a>
-        </li>
-      {%- endfor %}
-    </ul>
-  </nav>
+
+  {% include 'partials/header-course.njk' %}
+  {% include 'partials/navigation-drawer-course.njk' %}
 
   <div class="course-body">
     <nav class="course-app-bar app-bar" aria-label="breadcrumbs">
@@ -58,30 +60,17 @@ layout: base
 
       {% include 'partials/toc-side.njk' %}
 
-      <main id="main">
+      <main id="main" class="flow">
         {% include 'partials/toc-inner.njk' %}
+        {% if audio %}
+          {{ audioFab(audio.thumbnail) }}
+          {{ audioPlayer(audio.title, audio.src, audio.thumbnail) }}
+        {% endif %}
         {{ content | safe }}
       </main>
     </div>
 
-    <nav class="course-pagination" aria-label="pagination">
-      {% for item in pageNavigation %}
-        {% if item.url === page.url %}
-          {% if item.prev %}
-            {% set prev = item.prev %}
-            <a href="{{ prev.url }}" class="course-pagination-control">
-              {{ prev.page.data.title }}
-            </a>
-          {% endif %}
-          {% if item.next %}
-            {% set next = item.next %}
-            <a href="{{ next.url }}" class="course-pagination-control">
-              {{ next.page.data.title }}
-            </a>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    </nav>
+    {% include 'partials/course-pagination.njk' %}
 
     {% include 'partials/footer.njk' %}
   </div>

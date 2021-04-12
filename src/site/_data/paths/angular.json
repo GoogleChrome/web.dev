@@ -1,19 +1,19 @@
 {
   "slug": "angular",
-  "cover": "/images/collections/angular.svg",
-  "title": "Angular",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/8VpJZiVck4X4bBXXGMsU.svg",
+  "title": "i18n.paths.angular.title",
   "updated": "June 24, 2019",
-  "description": "Build performant and progressive Angular applications.",
-  "overview": "In this collection you’ll learn practical tips and tricks to make your Angular applications faster, more reliable, more accessible, and generally awesome.",
+  "description": "i18n.paths.angular.description",
+  "overview": "i18n.paths.angular.overview",
   "topics": [
     {
-      "title": "Introduction",
+      "title": "i18n.paths.angular.topics.introduction",
       "pathItems": [
         "get-started-optimize-angular"
       ]
     },
     {
-      "title": "Fast",
+      "title": "i18n.paths.angular.topics.fast",
       "pathItems": [
         "route-level-code-splitting-in-angular",
         "route-preloading-in-angular",
@@ -23,19 +23,19 @@
       ]
     },
     {
-      "title": "Reliable",
+      "title": "i18n.paths.angular.topics.reliable",
       "pathItems": [
         "precaching-with-the-angular-service-worker"
       ]
     },
     {
-      "title": "Installable",
+      "title": "i18n.paths.angular.topics.installable",
       "pathItems": [
         "creating-pwa-with-angular-cli"
       ]
     },
     {
-      "title": "Accessible",
+      "title": "i18n.paths.angular.topics.accessible",
       "pathItems": [
         "accessible-angular-with-codelyzer"
       ]

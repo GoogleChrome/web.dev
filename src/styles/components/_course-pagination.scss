@@ -1,0 +1,87 @@
+.course-pagination {
+  display: flex;
+  flex-direction: column;
+
+  @include bp(md) {
+    flex-direction: row;
+  }
+}
+
+.course-pagination-control {
+  border-top: 1px solid $GREY_300;
+  display: block;
+  padding: 24px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    background-color: $GREY_50;
+
+    .course-pagination-control__title {
+      text-decoration: underline;
+    }
+  }
+
+  &:first-of-type {
+    flex: 4;
+    border-right: 1px solid $GREY_300;
+  }
+
+  &:last-of-type  {
+    flex: 6;
+    order: -1;
+
+    @include bp(md) {
+      order: initial;
+    }
+  }
+}
+
+.course-pagination-control__top {
+  color: $WEB_PRIMARY_COLOR;
+  font-size: px-to-rem(11px);
+
+  > * + * {
+    margin-left: 20px;
+  }
+
+  svg {
+    color: $GREY_800;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.course-pagination-control[data-next] > .course-pagination-control__top {
+  > svg {
+    @include bp(md) {
+      margin-left: 0;
+      margin-right: 20px;
+      order: -1;
+    }
+  }
+}
+
+.course-pagination-control__title {
+  @include apply-utility('font', 'google-sans');
+  color: $PRIMARY_TEXT_COLOR;
+  font-size: px-to-rem(20px);
+  line-height: px-to-rem(40px);
+  margin-top: px-to-rem(12px);
+}
+
+.course-pagination-control[data-next] > .course-pagination-control__title {
+  font-size: px-to-rem(28px);
+}
+
+.course-pagination-control__desc {
+  color: $GREY_700;
+  font-size: px-to-rem(14px);
+  line-height: px-to-rem(20px);
+  margin-top: px-to-rem(8px);
+}
+
+.course-pagination-control__title,
+.course-pagination-control__desc {
+  max-width: 80ch;
+}

@@ -17,6 +17,7 @@ tags:
   - devices
 feedback:
   - api
+stack_overflow_tag: webhid
 ---
 
 {% Aside 'success' %}

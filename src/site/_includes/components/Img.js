@@ -8,16 +8,54 @@ const MAX_WIDTH = 800;
 // The highest device pixel ratio we'll generate srcsets for.
 const MAX_DPR = 2; // @2x
 const DEFAULT_PARAMS = {auto: 'format'};
+/**
+ * @param {string} src
+ * @returns {boolean}
+ */
+const IS_UPLOADED_IMG = (src) => {
+  /**
+   * Because file extensions may be upper case, we split the string based on
+   * a `.`, which we expect to signify the files extension. We then check if
+   * new array has a length less than 2. If it does then there was no `.` and
+   * therefore there was no extension. Then we lower case the last element
+   * of the array (what we believe to be the extension). We merge the array
+   * back into a string and test that string.
+   */
+  const splitSrc = src.split('.');
+  if (splitSrc.length < 2) {
+    return false;
+  }
+  splitSrc.push(splitSrc.pop().toLowerCase());
+  src = splitSrc.join('.');
+
+  return /^image\/[A-Za-z0-9]*\/[A-Za-z0-9]*\.(gif|jpe?g|tiff?|png|webp|bmp|svg|ico)$/.test(
+    src,
+  );
+};
+
+/**
+ * @param {string} src
+ * @param {Object} [params]
+ * @returns {boolean}
+ */
+const isSimpleImg = (src, params = {}) => /\.svg$/.test(src) && !params.fm;
 
 /**
  * Generates src URL of image from imgix path or URL.
  *
  * @param {string} src Path (or URL) for image.
- * @param {Object} params Imgix API params.
+ * @param {Object} [params] Imgix API params.
  * @return {string}
  */
-const generateSrc = (src, params = {}) =>
-  client.buildURL(src, {...DEFAULT_PARAMS, ...params});
+const generateSrc = (src, params = {}) => {
+  params = {...DEFAULT_PARAMS, ...params};
+
+  // Check if image is an SVG, if it is we don't need or want to process it
+  // If we do imgix will rasterize the image.
+  const doNotUseParams = isSimpleImg(src, params);
+
+  return client.buildURL(src, doNotUseParams ? {} : params);
+};
 
 /**
  * Takes an imgix url or path and generates an `<img>` element with `srcset`.
@@ -26,8 +64,18 @@ const generateSrc = (src, params = {}) =>
  * @return {string}
  */
 const Img = function (args) {
-  const {src, alt, width, height, class: className, linkTo, params} = args;
-  let {lazy, options, sizes} = args;
+  const {
+    alt,
+    class: className,
+    height,
+    id,
+    linkTo,
+    src,
+    style,
+    width,
+    params,
+  } = args;
+  let {lazy, sizes, options} = args;
 
   const checkHereIfError = `ERROR IN ${
     // @ts-ignore: `this` has type of `any`
@@ -36,6 +84,12 @@ const Img = function (args) {
 
   if (src === undefined || typeof src !== 'string') {
     throw new Error(`${checkHereIfError}: src is a required argument`);
+  }
+
+  if (!IS_UPLOADED_IMG(src)) {
+    throw new Error(
+      `${checkHereIfError}: invalid src provided (was this added via the uploader?)`,
+    );
   }
 
   if (alt === undefined || typeof alt !== 'string') {
@@ -57,6 +111,8 @@ const Img = function (args) {
   if (lazy === undefined) {
     lazy = true;
   }
+
+  const doNotUseSrcset = isSimpleImg(src, params);
 
   // https://github.com/imgix/imgix-core-js#imgixclientbuildsrcsetpath-params-options
   options = {
@@ -86,21 +142,24 @@ const Img = function (args) {
   // written at all—which _is_ an accessibility violation.
   /* eslint-disable lit-a11y/alt-text */
   let imgTag = html` <img
-    src="${fullSrc}"
-    srcset="${srcset}"
-    sizes="${sizes}"
-    height="${heightAsNumber}"
-    width="${widthAsNumber}"
     ${alt ? `alt="${safeHtml`${alt}`}"` : ''}
     ${className ? `class="${className}"` : ''}
+    height="${heightAsNumber}"
+    ${id ? `id="${id}"` : ''}
     ${lazy ? 'loading="lazy"' : ''}
-  />`.replace(/\n/g, '');
+    ${doNotUseSrcset ? '' : `sizes="${sizes}"`}
+    src="${fullSrc}"
+    ${doNotUseSrcset ? '' : `srcset="${srcset}"`}
+    ${style ? `style="${style}"` : ''}
+    width="${widthAsNumber}"
+  />`;
+  /* eslint-enable lit-a11y/alt-text */
 
   if (linkTo) {
     imgTag = html`<a href="${fullSrc}">${imgTag}</a>`;
   }
 
-  return imgTag;
+  return imgTag.replace(/\n/g, '');
 };
 
 module.exports = {Img, generateSrc};

@@ -14,16 +14,13 @@
  * limitations under the License.
  */
 
-const path = require('path');
 const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const yaml = require('js-yaml');
 
 const toc = require('eleventy-plugin-toc');
-const markdownIt = require('markdown-it');
-const markdownItAnchor = require('markdown-it-anchor');
-const markdownItAttrs = require('markdown-it-attrs');
+const markdown = require('./src/site/_plugins/markdown');
 
 const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
@@ -36,6 +33,7 @@ const Banner = require(`./${componentsDir}/Banner`);
 const Blockquote = require(`./${componentsDir}/Blockquote`);
 const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
 const CodelabsCallout = require(`./${componentsDir}/CodelabsCallout`);
+const Codepen = require(`./${componentsDir}/Codepen`);
 const Compare = require(`./${componentsDir}/Compare`);
 const CompareCaption = require(`./${componentsDir}/CompareCaption`);
 const Details = require(`./${componentsDir}/Details`);
@@ -51,21 +49,25 @@ const Meta = require(`./${componentsDir}/Meta`);
 const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
 const SignPosts = require(`./${componentsDir}/SignPosts`);
+const StackOverflow = require(`./${componentsDir}/StackOverflow`);
 const Tooltip = require(`./${componentsDir}/Tooltip`);
 const {Video} = require(`./${componentsDir}/Video`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
-const collectionsDir = 'src/site/_collections';
-const authors = require(`./${collectionsDir}/authors`);
-const blogPostsDescending = require(`./${collectionsDir}/blog-posts-descending`);
-const newsletters = require(`./${collectionsDir}/newsletters`);
+// Collections
+const algolia = require('./src/site/_collections/algolia');
+const authors = require(`./src/site/_collections/authors`);
+const blogPostsDescending = require(`./src/site/_collections/blog-posts-descending`);
+const newsletters = require(`./src/site/_collections/newsletters`);
 const {
   postsWithLighthouse,
-} = require(`./${collectionsDir}/posts-with-lighthouse`);
-const tags = require(`./${collectionsDir}/tags`);
+} = require(`./src/site/_collections/posts-with-lighthouse`);
+const tags = require(`./src/site/_collections/tags`);
 
+// Filters
 const filtersDir = 'src/site/_filters';
 const consoleDump = require(`./${filtersDir}/console-dump`);
+const {i18n} = require(`./${filtersDir}/i18n`);
 const {memoize, findByUrl} = require(`./${filtersDir}/find-by-url`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
@@ -85,6 +87,7 @@ const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripQueryParamsDev = require(`./${filtersDir}/strip-query-params-dev`);
 const getPaths = require(`./${filtersDir}/get-paths`);
 const navigation = require(`./${filtersDir}/navigation`);
+const padStart = require(`./${filtersDir}/pad-start`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
@@ -121,42 +124,7 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // MARKDOWN
   // ----------------------------------------------------------------------------
-  const markdownItOptions = {
-    html: true,
-  };
-  const markdownItAnchorOptions = {
-    level: 2,
-    permalink: true,
-    permalinkClass: 'w-headline-link',
-    permalinkSymbol: '#',
-    slugify,
-  };
-  const markdownItAttrsOpts = {
-    leftDelimiter: '{:',
-    rightDelimiter: '}',
-    allowedAttributes: ['id', 'class', /^data-.*$/],
-  };
-
-  const mdLib = markdownIt(markdownItOptions)
-    .use(markdownItAnchor, markdownItAnchorOptions)
-    .use(markdownItAttrs, markdownItAttrsOpts)
-    .disable('code');
-
-  // custom renderer rules
-  const fence = mdLib.renderer.rules.fence;
-
-  const rules = {
-    fence: (tokens, idx, options, env, slf) => {
-      const fenced = fence(tokens, idx, options, env, slf);
-      return `<web-copy-code>${fenced}</web-copy-code>`;
-    },
-    table_close: () => '</table>\n</div>',
-    table_open: () => '<div class="w-table-wrapper">\n<table>\n',
-  };
-
-  mdLib.renderer.rules = {...mdLib.renderer.rules, ...rules};
-
-  config.setLibrary('md', mdLib);
+  config.setLibrary('md', markdown);
 
   // ----------------------------------------------------------------------------
   // NON-11TY FILES TO WATCH
@@ -166,6 +134,7 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // COLLECTIONS
   // ----------------------------------------------------------------------------
+  config.addCollection('algolia', algolia);
   config.addCollection('authors', authors);
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('newsletters', newsletters);
@@ -181,6 +150,7 @@ module.exports = function (config) {
   // FILTERS
   // ----------------------------------------------------------------------------
   config.addFilter('consoleDump', consoleDump);
+  config.addFilter('i18n', i18n);
   config.addFilter('findByUrl', findByUrl);
   config.addFilter('findTags', findTags);
   config.addFilter('pathSlug', pathSlug);
@@ -189,7 +159,7 @@ module.exports = function (config) {
   config.addFilter('githubLink', githubLink);
   config.addFilter('gitlocalizeLink', gitlocalizeLink);
   config.addFilter('htmlDateString', htmlDateString);
-  config.addFilter('imigix', imigxFilter);
+  config.addFilter('imgix', imigxFilter);
   config.addFilter('md', md);
   config.addFilter('navigation', navigation);
   config.addFilter('pagedNavigation', pagedNavigation);
@@ -203,6 +173,7 @@ module.exports = function (config) {
   config.addFilter('strip', strip);
   config.addFilter('courseToc', courseToc);
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
+  config.addFilter('padStart', padStart);
 
   // ----------------------------------------------------------------------------
   // SHORTCODES
@@ -217,6 +188,7 @@ module.exports = function (config) {
   config.addPairedShortcode('Blockquote', Blockquote);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
+  config.addShortcode('Codepen', Codepen);
   config.addPairedShortcode('Compare', Compare);
   config.addPairedShortcode('CompareCaption', CompareCaption);
   config.addPairedShortcode('Details', Details);
@@ -231,6 +203,7 @@ module.exports = function (config) {
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
   config.addShortcode('SignPosts', SignPosts);
+  config.addShortcode('StackOverflow', StackOverflow);
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('Video', Video);
   config.addShortcode('YouTube', YouTube);
@@ -262,14 +235,12 @@ module.exports = function (config) {
   // Make .yml files work in the _data directory.
   config.addDataExtension('yml', (contents) => yaml.safeLoad(contents));
 
-  // https://www.11ty.io/docs/config/#configuration-options
-  const targetLang = process.env.ELEVENTY_LANG || '';
   return {
     dir: {
-      input: path.join('src/site/content/', targetLang),
+      input: 'src/site/content/', // we use a string path with the forward slash since windows doesn't like the paths generated from path.join
       output: 'dist',
-      data: targetLang ? '../../_data' : '../_data',
-      includes: targetLang ? '../../_includes' : '../_includes',
+      data: '../_data',
+      includes: '../_includes',
     },
     templateFormats: ['njk', 'md'],
     htmlTemplateEngine: 'njk',

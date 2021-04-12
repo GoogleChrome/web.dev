@@ -23,7 +23,7 @@ Consumers are also more demanding than they've ever been,
 and when they weigh the experience on your site, they aren't just comparing you with your competitors,
 they're rating you against the best-in-class services they use every day.
 
-This post rounds up some of the research that has been done on the relationship between performance and busines success.
+This post rounds up some of the research that has been done on the relationship between performance and business success.
 
 ## Performance is about retaining users
 

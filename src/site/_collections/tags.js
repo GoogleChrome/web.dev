@@ -16,6 +16,7 @@
 /** @type TagsData */
 const tagsData = require('../_data/tagsData.json');
 const {livePosts} = require('../_filters/live-posts');
+const {sortByUpdated} = require('../_utils/sort-by-updated');
 
 /** @type Tags */
 let processedCollection;
@@ -23,7 +24,7 @@ let processedCollection;
 /**
  * Returns all tags with their posts.
  *
- * @param {any} [collections] Eleventy collection object
+ * @param {EleventyCollectionObject} [collections] Eleventy collection object
  * @return {Tags}
  */
 module.exports = (collections) => {
@@ -48,6 +49,7 @@ module.exports = (collections) => {
       data: {
         subhead: description,
         title,
+        tags: [key],
       },
       description,
       elements: [],
@@ -61,7 +63,7 @@ module.exports = (collections) => {
       tag.elements = collections
         .getFilteredByTag(tag.key)
         .filter(livePosts)
-        .sort((a, b) => b.date - a.date);
+        .sort(sortByUpdated);
     }
 
     if (tag.elements.length > 0 || !collections) {

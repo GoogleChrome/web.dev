@@ -17,7 +17,7 @@ after all critical resources have finished loading
 to lower [Time to Interactive](/interactive):
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="offscreen-images.png" alt="A screenshot of the Lighthouse Defer offscreen images audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/agMyJtIarLruD8iuz0Mt.png", alt="A screenshot of the Lighthouse Defer offscreen images audit", width="800", height="416", class="w-screenshot" %}
 </figure>
 
 See also [Lazy load offscreen images with lazysizes codelab](/codelab-use-lazysizes-to-lazyload-images).

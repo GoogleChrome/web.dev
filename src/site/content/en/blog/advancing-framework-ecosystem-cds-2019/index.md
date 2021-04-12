@@ -59,7 +59,7 @@ Frameworks commonly used to build and structure web pages fall into two categori
     with opinionated features built-in, such as server-side rendering. These frameworks usually
     leverage a UI framework or library for the view layer.
 
-{% Img src="image/admin/OI4rF5fAQJ5PYP2f6AA6.png", alt="A spectrum of UI frameworks and libaries versus Web frameworks", width="800", height="455" %}
+{% Img src="image/admin/OI4rF5fAQJ5PYP2f6AA6.png", alt="A spectrum of UI frameworks and libraries versus Web frameworks", width="800", height="455" %}
 
 Developers can choose not to use frameworks but by piecing together a view layer library, router,
 styling system, server renderer and so forth, they often end up creating their own type of a

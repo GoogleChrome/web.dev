@@ -19,7 +19,7 @@ and may require users to zoom in to display text at a comfortable reading size.
 with font sizes that are too small to read easily on mobile:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="font-size.png" alt="Lighthouse audit showing page has illegible font sizes">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ky2VDt8ZtedleWFLn1Gt.png", alt="Lighthouse audit showing page has illegible font sizes", width="800", height="225", class="w-screenshot" %}
 </figure>
 
 Lighthouse flags pages on which 60% or more of the text has a font size smaller

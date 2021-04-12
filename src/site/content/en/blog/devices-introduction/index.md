@@ -100,7 +100,7 @@ current position on this device.
 If it doesn't work for you, a low-level API may be the solution. Check out
 [Discover how to communicate with your device] to start your journey.
 
-## 🔋 Check the battery on this device {: #batttery }
+## 🔋 Check the battery on this device {: #battery }
 
 Use the [Battery API] to get host information about the battery charge level and
 be notified when the battery level or charging status change.

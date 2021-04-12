@@ -136,7 +136,7 @@ today](https://caniuse.com/page-transition-events).
 The newer [Page
 Lifecycle](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
 events—`freeze` and `resume`—are also dispatched when pages go in or out of the
-bfcache, as well as in some other situations. For, example when a background tab
+bfcache, as well as in some other situations. For example when a background tab
 gets frozen to minimize CPU usage. Note, the Page Lifecycle events are currently
 only supported in Chromium-based browsers.
 
@@ -527,7 +527,7 @@ web APIs.
     polyfill](https://github.com/GoogleChromeLabs/first-input-delay)) in the
     `pageshow` event, and report FID as the delay of the first input after the
     bfcache restore.
-*   For [Cumulative Layout Shift (CLS)](/fid/), you can continue to keep using
+*   For [Cumulative Layout Shift (CLS)](/cls/), you can continue to keep using
     your existing Performance Observer; all you have to do is reset the current
     CLS value to 0.
 

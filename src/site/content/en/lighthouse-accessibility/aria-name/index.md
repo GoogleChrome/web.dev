@@ -28,8 +28,7 @@ flags custom ARIA items whose names
 aren't accessible to assistive technologies:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="aria-toggle-field-name.png"
-    alt="Lighthouse audit showing custom toggle elements without accessible names">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dnruhkr4IKtq0Pi9Pgny.png", alt="Lighthouse audit showing custom toggle elements without accessible names", width="800", height="259", class="w-screenshot" %}
 </figure>
 
 There are 7 audits that check for accessible names, each one covers a different

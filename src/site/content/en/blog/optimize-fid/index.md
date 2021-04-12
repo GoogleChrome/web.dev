@@ -58,7 +58,7 @@ browser can't respond to user interactions while the main thread is busy. To imp
 
 - [Break up Long Tasks](#long-tasks)
 - [Optimize your page for interaction readiness](#optimize-interaction-readiness)
-- [Use a web worker](#web-worker)
+- [Use a web worker](#use-a-web-worker)
 - [Reduce JavaScript execution time](#reduce-javascript-execution)
 
 ## Break up Long Tasks {: #long-tasks }
@@ -106,8 +106,7 @@ Below are the TBT scores before and after optimizing first-party script loading 
 application. By moving costly script loading (and execution) for a non-essential component off the
 critical path, users were able to interact with the page much sooner.
 
-<img class="w-screenshot" src="tbt-before-after-first-party.png"
-     alt="Improvements in TBT score in Lighthouse after optimizing the first-party script.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="Improvements in TBT score in Lighthouse after optimizing the first-party script.", width="800", height="148", class="w-screenshot" %}
 
 ### Data-fetching can impact many aspects of interaction readiness
 

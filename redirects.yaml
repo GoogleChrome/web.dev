@@ -252,7 +252,10 @@ redirects:
 - source: /cors-rfc1918-guide
   destination: /cors-rfc1918-feedback
 
-# Media
+# Redirect for style guide alignment
+- source: /debugging-layout-shifts
+  destination: /debug-layout-shifts
 
+# Redirects for Media content
 - source: /media-cheat-sheet
   destination: /media-conversion

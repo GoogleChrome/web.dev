@@ -14,7 +14,7 @@ all animated GIFs, along with estimated savings in seconds
 achieved by converting these GIFs to video:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="efficient-animated-content.png" alt="A screenshot of the Lighthouse Use video formats for animated content audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MTfWMspCIMjREn2rpwlG.png", alt="A screenshot of the Lighthouse Use video formats for animated content audit", width="800", height="235", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}

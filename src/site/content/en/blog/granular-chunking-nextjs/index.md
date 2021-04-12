@@ -81,7 +81,7 @@ _half of pages_ isn't very effective. Modifying this ratio would only result in 
 
 To solve this problem, Next.js adopted a [different
 configuration](https://github.com/zeit/next.js/pull/7696) for`SplitChunksPlugin` that reduces
-unecessary code for any route.
+unnecessary code for any route.
 
 +   Any sufficiently large third-party module (greater than 160 KB) is split into its own individual
     chunk
@@ -179,7 +179,7 @@ getDependencies (route) {
 ```
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="outputted-chunks.png" alt="Output of multiple shared chunks in a Next.js application.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3XG4VlLQEQ724fvhynvM.png", alt="Output of multiple shared chunks in a Next.js application.", width="800", height="488", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 This newer granular chunking strategy was first rolled out in Next.js behind a flag, where it was tested on a

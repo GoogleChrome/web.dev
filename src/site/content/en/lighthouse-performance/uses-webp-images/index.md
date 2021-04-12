@@ -16,7 +16,7 @@ in older image formats,
 showing potential savings gained by serving WebP versions of those images:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="uses-webp-images.png" alt="A screenshot of the Lighthouse Serve images in next-gen formats audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VmK3YIRiXNjbzEXxx1Ix.png", alt="A screenshot of the Lighthouse Serve images in next-gen formats audit", width="800", height="306", class="w-screenshot" %}
 </figure>
 
 ## Why serve images in WebP format

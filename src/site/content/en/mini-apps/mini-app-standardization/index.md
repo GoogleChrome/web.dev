@@ -59,7 +59,7 @@ W3C member and group participant Fuqiao Xue (W3C) has further published a
 that is, not as an official group publication, but nonetheless worth the read.
 
 <figure class="w-figure">
-  <img src="miniapps-whitepaper.png" alt="The header of the MiniApp Standardization White Paper in a browser window.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/NW2O3YZ3kxJPPeFr4Jw6.png", alt="The header of the MiniApp Standardization White Paper in a browser window.", width="800", height="540" %}
   <figcaption class="w-figure">
     The MiniApp Standardization White Paper.
   </figcaption>

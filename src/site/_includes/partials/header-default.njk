@@ -1,0 +1,60 @@
+{% from 'macros/icon.njk' import icon with context %}
+
+<web-header class="header-default" role="navigation">
+  <button data-open-drawer-button class="w-button--svg w-button--round" aria-label="{{ 'i18n.header.open_menu' | i18n(locale) }}">
+    {{ icon('menu') }}
+    <span class="w-tooltip w-tooltip--left">{{ 'i18n.header.open_menu' | i18n(locale) }}</span>
+  </button>
+
+  <a
+    href="/"
+    class="header-default__logo-link gc-analytics-event"
+    data-category="Site-Wide Custom Events"
+    data-label="Site logo"
+  >
+    <img class="header-default__logo" src="/images/lockup.svg" alt="web.dev" />
+  </a>
+
+  <div class="header-default__middle">
+    <div class="header-default__links">
+      <a
+        href="/learn/"
+        class="header-default__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Tab: Learn"
+      >
+        {{ 'i18n.header.learn' | i18n(locale) }}
+      </a>
+
+      <a
+        href="/measure/"
+        class="header-default__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Tab: Measure"
+      >
+        {{ 'i18n.header.measure' | i18n(locale) }}
+      </a>
+
+      <a
+        href="/blog/"
+        class="header-default__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Tab: Blog"
+      >
+        {{ 'i18n.header.blog' | i18n(locale) }}
+      </a>
+
+      <a
+        href="/about/"
+        class="header-default__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Tab: About"
+      >
+        {{ 'i18n.header.about' | i18n(locale) }}
+      </a>
+    </div>
+    <web-search></web-search>
+  </div>
+
+  <web-profile-switcher-container></web-profile-switcher-container>
+</web-header>

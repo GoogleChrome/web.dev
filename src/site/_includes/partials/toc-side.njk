@@ -1,5 +1,5 @@
-<nav class="course-toc toc flow scrollbar display-none lg:display-block" data-type="side" aria-label="table of contents">
-  <div class="course-toc__heading font-google-sans weight-medium">Table of contents</div>
+<nav class="course-toc toc flow scrollbar display-none xl:display-block" data-type="side" aria-label="{{ 'i18n.toc.table_of_contents' | i18n(locale) }}">
+  <div class="course-toc__heading font-google-sans weight-medium">{{ 'i18n.toc.table_of_contents' | i18n(locale) }}</div>
   <div class="toc__wrapper flow-recursive">
     {{ tocContents | safe }}
   </div>

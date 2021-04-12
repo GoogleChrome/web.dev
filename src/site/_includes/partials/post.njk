@@ -61,7 +61,7 @@
       {% if date %}
         <div class="w-author__published">
           <time>{{date | prettyDate}}</time>
-          {% if updated %} <span class="w-author__separator">•</span> Updated <time>{{ updated | prettyDate }}</time> {% endif %}
+          {% if updated %} <span class="w-author__separator">•</span> {{ 'i18n.common.updated' | i18n((locale)) }} <time>{{ updated | prettyDate }}</time> {% endif %}
         </div>
       {% endif %}
       {% SignPosts page.fileSlug %}
@@ -81,11 +81,15 @@
 
     {% if draft and site.env === 'dev' %}
       <div class="w-banner w-banner--warning w-banner--body">
-        🚨 This post is a draft! 🚨
+        {{ 'i18n.post.is_draft' | i18n(locale) }}
       </div>
     {% endif %}
 
     {{ content | safe }}
+
+    {% if stack_overflow_tag %}
+      {% StackOverflow stack_overflow_tag %}
+    {% endif %}
 
     <div class="w-chips">
       {% for tag in tags | findTags %}
@@ -96,15 +100,15 @@
     <div class="w-post-github-link w-mt--l w-mb--l">
       <span class="w-mr--sm">
         {% if updated %}
-        Last updated: <time>{{ updated | prettyDate }}</time>
+        {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ updated | prettyDate }}</time>
         {% else %}
-        Last updated: <time>{{ date | prettyDate }}</time>
+        {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ date | prettyDate }}</time>
         {% endif %}
       </span>
       <a
         href="{{ page.inputPath | githubLink }}"
       >
-        Improve article
+        {{ 'i18n.post.improve_article' | i18n(locale) }}
       </a>
       {# Hide suggest translation for now. #} {#
       <a href="#">Suggest translation</a> #}

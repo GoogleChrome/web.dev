@@ -367,8 +367,8 @@
   },
   "pjmclachlan": {
     "name": {
-      "given": "PJ",
-      "family": "Mclachlan"
+      "given": "Penny",
+      "family": "McLachlan"
     },
     "org": {
       "name": "Google",
@@ -377,7 +377,7 @@
     "country": "CA",
     "twitter": "b1tr0t",
     "descriptions": {
-      "en": "PJ is a Product Manager on the Chrome Web Platform team responsible for Chrome permissions, notifications, and progressive web apps."
+      "en": "Penny is a Product Manager on the Chrome Web Platform team responsible for Chrome permissions, notifications, and progressive web apps."
     },
     "image": "image/admin/Y7BI31UZhmuEqgrPpXOJ.jpg"
   },
@@ -1467,6 +1467,20 @@
     },
     "image": "image/admin/fbCJc4uifsZ4d5KolJ7j.jpg"
   },
+  "foolip": {
+    "name": {
+      "given": "Philip",
+      "family": "Jägenstedt"
+    },
+    "github": "foolip",
+    "twitter": "foolip",
+    "homepage": "https://foolip.org/",
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "image": "image/i1D3fea4SShlOWR9GvCYL83Xw822/PAm8xSnqRZyu7qaDzyTO.jpg"
+  },
   "olgademidova": {
     "name": {
       "given": "Olga",
@@ -1920,6 +1934,103 @@
     "country": "JP",
     "twitter": "gladenjoy",
     "image": "image/iEYkFAI5LNQv7oLlIBv9DuB265a2/o8ixW7QKSWR02r9ZUOFP.jpg"
+  },
+  "alonko": {
+    "name": {
+      "given": "Alon",
+      "family": "Kochba"
+    },
+    "github": "alonkochba",
+    "twitter": "alonkochba",
+    "org": {
+      "name": "Wix",
+      "unit": "Infrastructure"
+    },
+    "country": "IL",
+    "image": "image/BrQidfK9jaQyIHwdw91aVpkPiib2/9zVJ5KLkDStLNSz2ZxPE.jpg"
+  },
+  "choudhuryashish": {
+    "name": {
+      "given": "Ashish",
+      "family": "Choudhury"
+    },
+    "linkedin": "https://www.linkedin.com/in/choudhuryashish/",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/urBoPCVFLFNYxcA4rWBO.jpg"
+  },
+  "dinakarchandolu": {
+    "name": {
+      "given": "Dinakar",
+      "family": "Chandolu"
+    },
+    "linkedin": "https://www.linkedin.com/in/dinakarchandolu/",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/E0gT4HrFyUImA5COXOme.jpg"
+  },
+  "abhimanyuraibahadur": {
+    "name": {
+      "given": "Abhimanyu",
+      "family": "Raibahadur"
+    },
+    "linkedin": "https://www.linkedin.com/in/abhimanyuraibahadur/",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/D36izBJ4CpCDjAxWhUe6.jpg"
+  },
+  "dhilipvenkateshuvarajan": {
+    "name": {
+      "given": "Dhilip venkatesh",
+      "family": "Uvarajan"
+    },
+    "linkedin": "https://www.linkedin.com/in/dhilip-venkatesh-uvarajan-16914624/",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/5FvsHblPdOVKpC5Pdru2.jpg"
+  },
+  "safwans": {
+    "name": {
+      "given": "Safwan",
+      "family": "Samla"
+    },
+    "linkedin": "https://www.linkedin.com/in/safwansamla/",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/lR8Vo8IDNt6AnLSVvObk.jpg"
+  },
+  "andybell": {
+    "name": {
+      "given": "Andy",
+      "family": "Bell"
+    },
+    "descriptions": {
+      "en": "Freelance designer and educator"
+    },
+    "homepage": "https://piccalil.li/",
+    "github": "hankchizljaw",
+    "twitter": "piccalilli_",
+    "image": "image/foR0vJZKULb5AGJExlazy1xYDgI2/KgpVYUM3YJiVTASm4RTB.jpeg"
+  },
+  "ajara": {
+    "name": {
+      "given": "Adriana",
+      "family": "Jara"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
+    "country": "US",
+    "twitter": "tropicadri",
+    "github": "tropicadri",
+    "descriptions": {
+      "en": "Adriana is a Developer Relations Engineer"
+    },
+    "image": "image/SeARmcA1EicLXagFnVOe0ou9cqK2/4KNPR11Y1YYxUi6ASIE1.jpg"
+  },
+  "hbsong": {
+    "name": {
+      "given": "Hongbo",
+      "family": "Song"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "twitter": "HongboSong",
+    "github": "debugtive0517",
+    "image": "image/MZfwZ8oVW8U6tzo5CXffcER0jR83/ieAP4AO0so7own9kFVW4.png"
   },
   "derekherman": {
     "name": {

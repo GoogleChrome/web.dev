@@ -1,18 +1,18 @@
 {
   "slug": "lighthouse-accessibility",
-  "cover": "/images/collections/lighthouse-accessibility.svg",
-  "title": "Accessibility audits",
-  "description": "Can all users access content and navigate your site effectively?",
-  "overview": "These checks highlight opportunities to improve the accessibility of your web app. Only a subset of accessibility issues can be automatically detected so manual testing is also encouraged.",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/84Wscf0ndzfe8Ri59fsW.svg",
+  "title": "i18n.paths.lighthouse_accessibility.title",
+  "description": "i18n.paths.lighthouse_accessibility.description",
+  "overview": "i18n.paths.lighthouse_accessibility.overview",
   "topics": [
     {
-      "title": "Audit scoring",
+      "title": "i18n.paths.lighthouse_accessibility.topics.audit_scoring",
       "pathItems": [
         "accessibility-scoring"
       ]
     },
     {
-      "title": "Navigation",
+      "title": "i18n.paths.lighthouse_accessibility.topics.navigation",
       "pathItems": [
         "accesskeys",
         "bypass",
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "title": "ARIA",
+      "title": "i18n.paths.lighthouse_accessibility.topics.aria",
       "pathItems": [
         "aria-allowed-attr",
         "aria-hidden-body",
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "title": "Names and labels",
+      "title": "i18n.paths.lighthouse_accessibility.topics.names_and_labels",
       "pathItems": [
         "button-name",
         "document-title",
@@ -53,13 +53,13 @@
       ]
     },
     {
-      "title": "Contrast",
+      "title": "i18n.paths.lighthouse_accessibility.topics.contrast",
       "pathItems": [
         "color-contrast"
       ]
     },
     {
-      "title": "Tables and lists",
+      "title": "i18n.paths.lighthouse_accessibility.topics.tables_and_lists",
       "pathItems": [
         "definition-list",
         "dlitem",
@@ -71,14 +71,14 @@
       ]
     },
     {
-      "title": "Best practices",
+      "title": "i18n.paths.lighthouse_accessibility.topics.best_practices",
       "pathItems": [
         "meta-refresh",
         "meta-viewport"
       ]
     },
     {
-      "title": "Audio and video",
+      "title": "i18n.paths.lighthouse_accessibility.topics.audio_and_video",
       "pathItems": [
         "audio-caption",
         "video-caption",
@@ -86,7 +86,7 @@
       ]
     },
     {
-      "title": "Internationalization and localization",
+      "title": "i18n.paths.lighthouse_accessibility.topics.internationalization_and_localization",
       "pathItems": [
         "html-has-lang",
         "html-lang-valid",
@@ -94,7 +94,7 @@
       ]
     },
     {
-      "title": "Additional items to manually check",
+      "title": "i18n.paths.lighthouse_accessibility.topics.additional_items_to_manually_check",
       "pathItems": [
         "logical-tab-order",
         "focusable-controls",

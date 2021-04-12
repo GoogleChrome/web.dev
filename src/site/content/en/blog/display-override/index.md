@@ -89,9 +89,9 @@ the `display` field.
 {% endAside %}
 
 In the example below, the display mode fallback chain would be as follows.
-(The details of `"window-control-overlay"` are out-of-scope for this article.)
+(The details of `"window-controls-overlay"` are out-of-scope for this article.)
 
-1. `"window-control-overlay"` (First, look at `display_override`.)
+1. `"window-controls-overlay"` (First, look at `display_override`.)
 1. `"minimal-ui"`
 1. `"standalone"` (When `display_override` is exhausted, evaluate `display`.)
 1. `"minimal-ui"` (Finally, use the `display` fallback chain.)
@@ -99,7 +99,7 @@ In the example below, the display mode fallback chain would be as follows.
 
 ```json
 {
-  "display_override": ["window-control-overlay", "minimal-ui"],
+  "display_override": ["window-controls-overlay", "minimal-ui"],
   "display": "standalone",
 }
 ```

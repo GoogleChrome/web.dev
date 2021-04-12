@@ -340,7 +340,13 @@ used with signed exchanges.
    a file format that is commonly used as a "container" for storing multiple
    certificates.
 
-2. Open `webpkgserver.toml` with the editor of your choice and make the
+2. Create a fresh `webpkgsever.toml` file by copying the example.
+
+    ```shell
+    cp ./webpkgserver.example.toml ./webpkgserver.toml
+    ```
+
+3. Open `webpkgserver.toml` with the editor of your choice and make the
    following changes:
     *   Change the line `PEMFile = cert.pem` to reflect the location of the PEM
         file containing your full certificate chain.
