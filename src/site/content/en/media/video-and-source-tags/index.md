@@ -194,16 +194,22 @@ controls.
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img src="./chrome-android-portrait-video-unstyled.png" alt="Android Chrome screenshot, portrait: unstyled video element overflows
-    viewport.">
-    <figcaption class="w-figcaption">Android Chrome screenshot, portrait: unstyled video element overflows
-    viewport.</figcaption>
+    <img
+      src="./chrome-android-portrait-video-unstyled.png"
+      alt="Android Chrome screenshot, portrait: unstyled video element overflows viewport."
+    >
+    <figcaption class="w-figcaption">
+      Android Chrome screenshot, portrait: unstyled video element overflows viewport.
+    </figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="./chrome-android-landscape-video-unstyled.png" alt="Android Chrome screenshot, landscape: unstyled video element overflows
-    viewport.">
-    <figcaption class="w-figcaption">Android Chrome screenshot, landscape: unstyled video element overflows
-    viewport.</figcaption>
+    <img
+      src="./chrome-android-landscape-video-unstyled.png"
+      alt="Android Chrome screenshot, landscape: unstyled video element overflows viewport."
+    >
+    <figcaption class="w-figcaption">
+      Android Chrome screenshot, landscape: unstyled video element overflows viewport.
+    </figcaption>
   </figure>
 </div>
 
@@ -255,9 +261,12 @@ different from the original video. Squashed or stretched videos looks bad.
 
 ```html
 <div class="video-container">
-  <iframe src="//www.youtube.com/embed/l-BA9Ee2XuM"
-          frameborder="0" width="560" height="315">
-  </iframe>
+  <iframe
+    src="//www.youtube.com/embed/l-BA9Ee2XuM"
+    frameborder="0"
+    width="560"
+    height="315"
+  ></iframe>
 </div>
 ```
 
