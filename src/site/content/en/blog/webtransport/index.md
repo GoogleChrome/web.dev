@@ -43,7 +43,7 @@ As part of the origin trial process, we're interested in [hearing more](#feedbac
 {% Aside %}
 Many of the concepts in this proposal were previously experimented with as part of the earlier [QuicTransport](https://chromestatus.com/feature/4854144902889472) origin trial, which did not end up being released as part of Chrome.
 
-WebTransport helps with similar use cases as QuicTransport, with the primary difference being that [HTTP/3](https://quicwg.org/base-drafts/draft-ietf-quic-http.html) is used as the underlying transport protocol, instead of using [QUIC](https://www.chromium.org/quic) directly.
+WebTransport helps with similar use cases as QuicTransport, with the primary difference being that [HTTP/3](https://quicwg.org/base-drafts/draft-ietf-quic-http.html) instead of [QUIC](https://www.chromium.org/quic) is the underlying transport protocol.
 {% endAside %}
 
 ## Current status {: #status }
