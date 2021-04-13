@@ -69,8 +69,8 @@ To experiment with Window Controls Overlay locally, without an origin trial toke
 
 ### Enabling support during the origin trial phase
 
-Starting in Chrome XX, Window Controls Overlay will be available as an origin trial in Chrome. The
-origin trial is expected to end in Chrome XX (TODO exact date).
+Starting in Chrome&nbsp;92, Window Controls Overlay will be available as an origin trial in Chrome.
+The origin trial is expected to end in Chrome&nbsp;94 (July 2021).
 
 {% include 'content/origin-trials.njk' %}
 
@@ -319,6 +319,20 @@ for example, `"standalone"`.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/MMgzCRS0207kFpQnNwgb.png", alt="PWA running in standalone mode with the window controls overlay displayed in the body.", width="800", height="99" %}
 
+## Demo
+
+I have created a [demo](https://window-controls-overlay.glitch.me/) that you can play with in
+different supporting and non-supporting browsers and in the installed and non-installed state. For
+the actual Window Controls Overlay experience, you need to install the app and set the
+[flag](#enabling-via-chrome:flags). You can see two screenshots of what to expect below. The
+[source code](https://glitch.com/edit/#!/window-controls-overlay) of the app is available on Glitch.
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/lbwvSfjfLzPUSCDfDFDE.png", alt="Chuck Norris jokes demo app with Window Controls Overlay.", width="400", height="312" %}
+
+The search feature in the window controls overlay is fully functional:
+
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/KpJcvlSpdiVw4wG9zPt3.png", alt="Chuck Norris jokes demo app with Window Controls Overlay and active search for the term 'canyon' highlighting one of the jokes with the matched term.", width="400", height="312" %}
+
 ## Security considerations
 
 ### Spoofing
@@ -341,7 +355,7 @@ text to prevent a malicious website from appending the unsafe origin with a trus
 Enabling the window controls overlay and draggable regions do not pose considerable privacy concerns
 other than feature detection. However, due to differing sizes and positions of the window controls
 buttons across operating systems, the JavaScript API for
-`navigator.windowControlsOverlay.getBoundingClientRect()` will return a
+<code>navigator.<wbr>windowControlsOverlay.<wbr>getBoundingClientRect()</code> will return a
 [`DOMRect`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect) whose position and dimensions
 will reveal information about the operating system upon which the browser is running. Currently,
 developers can already discover the OS from the user agent string, but due to fingerprinting
@@ -351,7 +365,8 @@ overlay changes across platforms, as the current assumption is that these are fa
 OS versions and thus would not be useful for observing minor OS versions. Although this is a
 potential fingerprinting issue, it only applies to installed PWAs that use the custom title bar
 feature and does not apply to general browser usage. Additionally, the
-`navigator.windowControlsOverlay` API will not be available to iframes embedded inside of a PWA.
+<code>navigator.<wbr>windowControlsOverlay</code> API will not be available to iframes embedded
+inside of a PWA.
 
 ### Navigation
 
@@ -406,11 +421,11 @@ hashtag and let us know where and how you're using it.
 
 Window Controls Overlay was implemented and specified by
 [Amanda Baker](https://www.linkedin.com/in/amanda-baker-20a2b962/) from the Microsoft Edge team.
-Amanda has also reviewed this article.
-Further reviewers were [Joe Medley](https://github.com/jpmedley)
-and [Kayce Basques](https://kaycebasques).
+Amanda has also reviewed this article. Further reviewers were
+[Joe Medley](https://github.com/jpmedley) and [Kayce Basques](https://kaycebasques).
 
 [explainer]: https://github.com/WICG/window-controls-overlay/blob/master/explainer.md
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [issues]: https://github.com/WICG/window-controls-overlay/issues
-[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[powerful-apis]:
+  https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
