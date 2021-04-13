@@ -15,12 +15,12 @@
         {% set pages = collections.all | navigation(course.toc) %}
         <span>{{ pages.length }} {{ 'i18n.learn.resources' | i18n(locale) }}</span>
       </div>
-      <a href="/learn/css">
+      <a href="{{ course.meta.url }}">
         <div class="course-card__cover" style="--course-background: {{ course.meta.background }}">
           {{ svg(course.meta.logo) }}
         </div>
       </a>
-      <a href="/learn/css" class="course-card__description display-block gap-top-400">
+      <a href="{{ course.meta.url }}" class="course-card__description display-block gap-top-400">
         {{ course.meta.description | i18n(locale) }}
       </a>
     </div>
