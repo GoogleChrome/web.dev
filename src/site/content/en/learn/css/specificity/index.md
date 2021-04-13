@@ -33,7 +33,7 @@ Understanding the CSS specification's algorithm about specificity
 is the key to understanding how CSS decides between competing rules.
 
 Specificity is one of the four distinct stages of the cascade,
-which you learned about in the last module.
+which was covered in the last module, on [the cascade](/learn/css/the-cascade/).
 
 <figure class="w-figure">
 {% Codepen {
