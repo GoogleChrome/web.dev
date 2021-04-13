@@ -38,7 +38,7 @@ This a small list of possible ways developers might use WebTransport.
 - Receiving media streams pushed from a server with minimal latency, independent of other data streams.
 - Receiving notifications pushed from a server while a web page is open.
 
-As part of the origin trial process, we're interested in [hearing more](#feedback) about how you plan on using WebTransport!
+As part of the origin trial process, we're interested in [hearing more](#feedback) about how you plan to use WebTransport.
 
 {% Aside %}
 Many of the concepts in this proposal were previously experimented with as part of the earlier [QuicTransport](https://chromestatus.com/feature/4854144902889472) Origin Trial, which did not end up being released as part of Chrome.
