@@ -41,7 +41,7 @@ This a small list of possible ways developers might use WebTransport.
 As part of the origin trial process, we're interested in [hearing more](#feedback) about how you plan to use WebTransport.
 
 {% Aside %}
-Many of the concepts in this proposal were previously experimented with as part of the earlier [QuicTransport](https://chromestatus.com/feature/4854144902889472) Origin Trial, which did not end up being released as part of Chrome.
+Many of the concepts in this proposal were previously experimented with as part of the earlier [QuicTransport](https://chromestatus.com/feature/4854144902889472) origin trial, which did not end up being released as part of Chrome.
 
 WebTransport helps with similar use cases as QuicTransport, with the primary difference being that [HTTP/3](https://quicwg.org/base-drafts/draft-ietf-quic-http.html) is used as the underlying transport protocol, instead of using [QUIC](https://www.chromium.org/quic) directly.
 {% endAside %}
