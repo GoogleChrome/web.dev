@@ -142,13 +142,11 @@ First, create a flowchart for each inventory type to visualize how the various
 dependencies interact in order to load and display an ad. Desktop leaderboard
 inventory may look like this:
 
-![An example workflow for the desktop leaderboard inventory
-type.](./desktop-leaderboard.svg)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Kj5Vv9SffxhrfWmNtptm.svg", alt="An example workflow for the desktop leaderboard inventory type.", width="800", height="92" %}
 
 While a more complex inventory type, such as mobile banner, may look like this:
 
-![An example workflow for the mobile banner inventory
-type.](./mobile-banner.svg)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lzFgP8eaVWqLIlpBibyX.svg", alt="An example workflow for the mobile banner inventory type.", width="800", height="287" %}
 
 Then, use this information to create a simple table like the one below, which
 maps each inventory type to its dependencies in an easily digestible format.

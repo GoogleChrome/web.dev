@@ -7,6 +7,10 @@ description: This post highlights a few powerful lines of CSS that do some serio
 date: 2020-07-07
 hero: image/admin/B07IzuMeRRGRLH9UQkwd.png
 alt: Holy grail layout.
+audio:
+  title: 'The CSS Podcast - 001: Flexbox'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP035_v2.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 tags:
   - css
   - layout
@@ -54,7 +58,7 @@ This enables the content to be perfectly centered within the parent, regardless 
   </video>
 </figure>
 
-Next we have the deconstructed pancake! This is a common layout for marketing sites, for example, which may have a row of 3 items, usually with an image, title, and then some text, describing some features of a product. On mobile, we'll want those to stack nicely, and expand as we increase the screen size. 
+Next we have the deconstructed pancake! This is a common layout for marketing sites, for example, which may have a row of 3 items, usually with an image, title, and then some text, describing some features of a product. On mobile, we'll want those to stack nicely, and expand as we increase the screen size.
 
 By using Flexbox for this effect, you won't need media queries to adjust the placement of these elements when the screen resizes.
 
@@ -123,7 +127,7 @@ Unlike the Deconstructed Pancake, this example does not wrap its children when t
 
 Adding `display: grid` to the component will give you a single column grid, however the main area will only be as tall as the content with the footer below it.
 
-To make the footer stick to the bottom,  add: 
+To make the footer stick to the bottom,  add:
 
 ```css/2
 .parent {
@@ -286,9 +290,9 @@ This is a great technique to ensure legibility with a minimum and maximum size v
 
 And finally, this last layout tool is the most experimental of the bunch. It was recently introduced to Chrome Canary in Chromium 84, and there is active effort from Firefox in getting this implemented, but it is not currently in any stable browser editions.
 
-I do want to mention this, though, because it is such a frequently met problem. And that is just simply maintaining the aspect ratio of an image. 
+I do want to mention this, though, because it is such a frequently met problem. And that is just simply maintaining the aspect ratio of an image.
 
-With the `aspect-ratio` property, as I resize the card, the green visual block maintains this 16 x 9 aspect ratio. We are Respecting the Aspect Ratio with `aspect-ratio: 16 / 9`. 
+With the `aspect-ratio` property, as I resize the card, the green visual block maintains this 16 x 9 aspect ratio. We are Respecting the Aspect Ratio with `aspect-ratio: 16 / 9`.
 
 ```css/1
 .video {

@@ -204,8 +204,7 @@ can learn more about this and many other features in the [What's new in
 DevTools](https://youtu.be/6yrJZHqJe2k) session.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="emulator.png"
-       alt="A screenshot of the vision deficiencies emulator.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/3gTvVdPvTN3IUyhSN8gn.png", alt="A screenshot of the vision deficiencies emulator.", width="800", height="509", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 ### Lighthouse 6.0: New metrics, Core Web Vitals lab measurements, an updated Performance score, and new audits
@@ -238,8 +237,7 @@ audits](/lighthouse-whats-new-6.0/#new-audits), with a focus on JavaScript analy
 and accessibility.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="audits.png"
-       alt="A list of the new audits.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qAVFUVHR7Ad0tm05J1d3.png", alt="A list of the new audits.", width="800", height="450", class="w-screenshot" %}
 </figure>
 
 Learn more by watching the [What's new in speed tooling](https://youtu.be/yDHfrhCGFQw)

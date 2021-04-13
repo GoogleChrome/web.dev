@@ -49,10 +49,14 @@ padding that the browser can later crop into the desired shape and size. It's be
 any particular shape, since the ultimately chosen shape can vary by browser and per platform.
 
 <figure class="w-figure w-figure--inline-right">
-  <video class="w-screenshot" autoplay loop muted playsinline aria-label="Different masks applied to a maskable icon">
-    <source src="fugu-mask.webm" type="video/webm; codecs=vp8">
-    <source src="fugu-mask.mp4" type="video/mp4; codecs=h264">
-  </video>
+  {% Video
+    src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/mx1PEstODUy6b5TXjo4S.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/tw7QbXq9SBjGL3UYW0Fq.mp4"],
+    class="w-screenshot",
+    autoplay=true,
+    loop=true,
+    muted=true,
+    playsinline=true
+  %}
   <figcaption class="w-figcaption">
     Different platform specific shapes
   </figcaption>

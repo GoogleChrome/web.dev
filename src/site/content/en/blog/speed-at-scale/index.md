@@ -56,8 +56,7 @@ for the [loading](https://addyosmani.com/blog/lazy-loading/) attribute which
 brings standardized `<img>` and `<iframe>` lazy-loading to the web.
 
 <figure class="w-figure">
-<img src="./Speed-at1.png" alt="Browser-level lazy-loading highlighting offscreen
-content being loaded on-demand" loading="lazy">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5W51sHaRUB0NEuN0MaFh.png", alt="Browser-level lazy-loading highlighting offscreen content being loaded on-demand", width="800", height="450" %}
 </figure>
 
 The `loading` attribute allows a browser to defer loading offscreen images and

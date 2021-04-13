@@ -61,7 +61,7 @@ I've provided some visual color hinting to help you keep some meta information
 in context:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./legend.png" alt="">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4K35cL1tVpEsGqb4FgKp.png", alt="", width="800", height="438", class="w-screenshot" %}
   <figcaption class="w-figcaption"></figcaption>
 </figure>
 

@@ -1998,7 +1998,7 @@
       "en": "Freelance designer and educator"
     },
     "homepage": "https://piccalil.li/",
-    "github": "hankchizljaw",
+    "github": "andy-piccalilli",
     "twitter": "piccalilli_",
     "image": "image/foR0vJZKULb5AGJExlazy1xYDgI2/KgpVYUM3YJiVTASm4RTB.jpeg"
   },
@@ -2048,6 +2048,18 @@
     "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/IycLA5UeiU6yGAlwrkQ0.jpg",
     "descriptions": {
       "en": "Engineering Manager"
-    }
+    },
+  "hbsong": {
+    "name": {
+      "given": "Hongbo",
+      "family": "Song"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "twitter": "HongboSong",
+    "github": "debugtive0517",
+    "image": "image/MZfwZ8oVW8U6tzo5CXffcER0jR83/ieAP4AO0so7own9kFVW4.png"
   }
 }
