@@ -114,14 +114,14 @@ These cause the CI pipeline to fail if they do not meet the performance threshol
 with a link to the detailed Lighthouse reports as shown in the following images.
 
 <figure class="w-figure">
-  {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/vPqK9LEp3dKrHSSqULRe.png", alt="Image of GitHub UI showing lines of successful checks.", width="800", height="126" %}
+  {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/vPqK9LEp3dKrHSSqULRe.png", alt="Image of GitHub UI showing lines of successful checks.", width="800", height="126", class="w-screenshot" %}
   <figcaption>Lighthouse CI GitHub status checks make it easy for developers
     to understand the regression and address it before it reaches production.</figcaption>
 </figure>
 
 
 <figure class="w-figure">
-  {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/PRQBzVBLG7wG1Ftngp6B.png", alt="Comparison image in Lighthouse CI showing how the commit compares to master", width="800", height="370" %}
+  {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/PRQBzVBLG7wG1Ftngp6B.png", alt="Comparison image in Lighthouse CI showing how the commit compares to master", width="800", height="370", class="w-screenshot" %}
   <figcaption>Lighthouse CI detailed commit report compared to master.</figcaption>
 </figure>
 
