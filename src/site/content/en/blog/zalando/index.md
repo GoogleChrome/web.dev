@@ -5,11 +5,19 @@ subhead: |
   The web team at Zalando found that integrating Lighthouse CI enabled a proactive approach to performance,
   with automated status checks able to compare the current commit to master to prevent performance regressions.
 description: |
-  to do.
+  The web team at Zalando found that integrating Lighthouse CI enabled a proactive approach to performance,
+  with automated status checks able to compare the current commit to master to prevent performance regressions.
 authors:
   - jcolin
   - jbrockmeyer
-date: 2021-04-05
+date: 2021-04-13
+hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/D3aV6VLiccC31BJIwo3z.jpg
+alt: Zalando web store on laptop, phone, and tablet.
+thumbnail: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/CWMTBHzJ9UCpZ89fNcxJ.jpg
+tags:
+  - blog
+  - web-vitals
+  - case-study
 ---
 
 {% Aside %}
@@ -18,7 +26,6 @@ date: 2021-04-05
 
 With more than 35 million active customers,
 [Zalando](https://www.zalando.com) is Europe's leading online fashion platform.
-Our fashion store carries more than 3,000 brands which we deliver to 17 countries.
 In this post we explain why we started to use Lighthouse CI,
 the ease of implementation,
 and the advantages to our team.
@@ -31,29 +38,42 @@ conversion rates, and revenue per user.
 The results were clear.
 A 100 milliseconds page load time improvement led to increased engagement with lower bounce rate and a 0.7% uplift in revenue per session.
 
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">100<sub class="w-stat__sub">ms</sub></p>
+    <p class="w-stat__desc">Page load time improvement</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">0.7<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Increased revenue per session</p>
+  </div>
+</div>
+
 ## Company buy-in does not always translate to performance
 
-Despite this strong performance buy-in inside the company,
-when we were ready to release a redesign of our website and app in September 2020,
-early adopter metrics revealed that this new version was slower.
+Despite the strong performance buy-in inside the company,
+if performance is not set as a product delivery criteria
+it can easily slip away. When we were redesigning Zalando website in 2020
+we focused on delivering
+[new features](https://corporate.zalando.com/en/newsroom/news-stories/zalando-sets-out-revolutionize-pre-owned-fashion-europe)
+while  maintaining excellent user experience and applying a facelift 
+to the website with custom fonts and more vibrant colors.
+However, when the redesigned website and app were ready for release,
+early adopter metrics revealed that the new version was slower.
 First Contentful Paint was up to 53% slower,
 and our measured Time to Interactive reported up to 59% slower.
-We focused on delivering
-[new features](https://corporate.zalando.com/en/newsroom/news-stories/zalando-sets-out-revolutionize-pre-owned-fashion-europe)
-while also applying a facelift to our website with custom fonts and more vibrant colors.
-Performance was not a product delivery criteria in order to release the new website,
-maintaining excellent user experience was.
 
 ## The web at Zalando
 
 The Zalando website is created by a core team developing a framework,
 [with over 15 feature teams contributing frontend microservices](https://engineering.zalando.com/posts/2021/03/micro-frontends-part1.html).
 While supporting the new release,
-we also transitioned part of our website to this more centralized architecture.
+we also transitioned part of our website to a more centralized architecture.
 
 The previous architecture called [Mosaic](https://www.mosaic9.org/)
-included a way to page performance with in-house metrics.
-However, it was difficult to compare performance metrics prior to rolling out to real users as we lacked internal lab performance monitoring tools.
+included a way to measure page performance with in-house metrics.
+However, it was difficult to compare performance metrics prior to rolling out to real users 
+as we lacked internal lab performance monitoring tools.
 Despite deploying every day,
 there was a feedback loop of around one day for developers working on performance improvements.
 
@@ -61,15 +81,16 @@ there was a feedback loop of around one day for developers working on performanc
 
 We were not entirely satisfied with our in-house metrics as they did not adapt well to our new setup.
 More importantly, they were not centered on customer experience.
-We landed on [Core Web Vitals](/vitals/)
+We switched to [Core Web Vitals](/vitals/)
 as they provided a condensed, yet comprehensive and user-centric set of metrics.
 
-In order to save our release,
+In order to improve the performance before the release,
 we needed to create a proper
-[lab environment](https://web.dev/how-to-measure-speed/#lab-data-vs-field-data).
+[lab environment](/how-to-measure-speed/#lab-data-vs-field-data).
 This provided reproducible measurements,
 in addition to testing conditions representing our 90th percentile of field data.
-Now, engineers working on performance improvements knew where to focus to make the biggest impact.
+Now, engineers working on performance improvements knew where to focus their
+efforts to make the biggest impact.
 We were already using Lighthouse audit reports locally.
 So our first iteration was to develop a service based on [Lighthouse node module](https://github.com/GoogleChrome/lighthouse#using-the-node-module),
 where changes could be tested from our staging environment.
@@ -80,11 +101,11 @@ which enabled us to bring the performance on par and save our release!
 
 We did not want to stop there,
 as we wanted to take the opportunity to not only be reactive towards performance but also proactive.
-Making the jump from Lighthouse node module to [Lighthouse CI (LHCI) server](https://web.dev/lighthouse-ci/)
+Making the jump from Lighthouse node module to [Lighthouse CI (LHCI) server](/lighthouse-ci/)
 was not too difficult.
 We opted for the self hosted solution in order to give us a a better integration with our existing company services.
 Our LHCI server application gets built as a Docker image,
-it's then deployed to our Kubernetes cluster together with a PostgreSQL database, and reports to our Github.
+which is then deployed to our Kubernetes cluster together with a PostgreSQL database, and reports to our GitHub.
 
 Our framework was already providing some performance feedback to developers&mdash;
 component bundle sizes were being compared to threshold values on every commit.
@@ -107,10 +128,10 @@ with a link to the detailed Lighthouse reports as shown in the following images.
 ## Extending the performance coverage
 
 We started with a very pragmatic approach.
-At the present time Lighthouse only runs on two of our most important pages:
-our Home page and Product Detail page.
+Currently Lighthouse only runs on two of our most important pages:
+the home page and product detail page.
 Fortunately, Lighthouse CI makes it easy to extend the run configurations.
-Feature teams working on specific pages of our website are able to set up its matching URL pattern and assertions.
+Feature teams working on specific pages of our website are able to set up their matching URL pattern and assertions.
 With this in place, we are pretty confident that our performance coverage will increase.
 
 We are now much more confident when building larger releases,
