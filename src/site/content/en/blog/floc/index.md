@@ -85,7 +85,7 @@ retailer: <br>
 * The **adtech platform** (which provides software and tools to deliver advertising) is: <br>
 **<u>adnetwork.example</u>**
 
-{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/0l0SjpSJ2YIfS0BKX80N.png", 
+{% Img src="image/80mq7dk16vVEg8BBhsVe42n6zn82/wnJ1fSECf5STngywgE7V.png", 
   alt="Diagram showing, step by step, the different roles in selecting and delivering an ad using 
   FLoC: FLoC service, Browser, Advertisers, Publisher (to observe cohorts), Adtech, 
   Publisher (to display ads)", width="800", height="359" %}
