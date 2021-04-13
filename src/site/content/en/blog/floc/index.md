@@ -4,7 +4,7 @@ subhead: FLoC enables ad selection without sharing the browsing behaviour of ind
 authors:
   - samdutton
 date: 2021-03-30
-updated: 2021-04-07
+updated: 2021-04-12
 hero: image/80mq7dk16vVEg8BBhsVe42n6zn82/GA543wiVTwpbwp6Zmw0H.jpg
 thumbnail: image/80mq7dk16vVEg8BBhsVe42n6zn82/OuORgPSvN06ntXT5xOii.jpg
 alt: Murmuration of starlings over Brighton pier
@@ -155,6 +155,12 @@ The browser, on the user's device, works out which cohort it belongs to. The use
 never leaves the device.
 {% endAside %}
 
+## Who runs the back-end service that creates the FLoC model?
+
+Every browser vendor will need to make their own choice of how to group browsers into cohorts. 
+Chrome is running its own FLoC service; other browsers might choose to implement FLoC with a 
+different clustering approach, and would run their own service to do so.
+
 ## How does the FLoC service enable the browser to work out its cohort? {: #floc-server }
 
 1. The FLoC service used by the browser creates a multi-dimensional mathematical representation 
@@ -257,9 +263,10 @@ greater-than-typical number of people who visit sites in a sensitive category, t
 removed. Negative financial status and mental health are among the sensitive categories covered by 
 this analysis. 
 
-Websites [can exclude a page from the FLoC calculation](https://github.com/WICG/floc#opting-out-of-computation) by setting a [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction) header `interest-cohort=()` for that page. For pages that haven't 
-been excluded, a page visit will be included in the FLoC calculation during the 
-[FLoC origin trial](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561) 
+Websites [can exclude a page from the FLoC calculation](https://github.com/WICG/floc#opting-out-of-computation) 
+by setting a [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction) header 
+`interest-cohort=()` for that page. For pages that haven't been excluded, a page visit will be 
+included in the FLoC calculation during the [FLoC origin trial](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561) 
 if `document.interestCohort()` is used on the page, or if Chrome detects that the page 
 [load ads or ads-related resources](https://github.com/WICG/floc/issues/82). 
 ([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) 
