@@ -2019,6 +2019,36 @@
     },
     "image": "image/SeARmcA1EicLXagFnVOe0ou9cqK2/4KNPR11Y1YYxUi6ASIE1.jpg"
   },
+  "jbrockmeyer": {
+    "name": {
+      "given": "Jan",
+      "family": "Brockmeyer"
+    },
+    "twitter": "jan_brockmeyer",
+    "github": "jabro86",
+    "org": {
+      "name": "Zalando",
+      "unit": "Client Engineering"
+    },
+    "country": "DE",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/OKm64vE60MFeWq62TFBh.jpg"
+  },
+  "jcolin": {
+    "name": {
+      "given": "Jeremy",
+      "family": "Colin"
+    },
+    "twitter": "jee_colin",
+    "github": "jeremycolin",
+    "org": {
+      "name": "Zalando",
+      "unit": "Client Engineering"
+    },
+    "country": "DE",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/IycLA5UeiU6yGAlwrkQ0.jpg",
+    "descriptions": {
+      "en": "Engineering Manager"
+    },
   "hbsong": {
     "name": {
       "given": "Hongbo",
