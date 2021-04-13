@@ -1,4 +1,7 @@
 .header-default {
+  position: fixed;
+  top: 0;
+
   [data-open-drawer-button] {
     margin: 0 8px 0 -8px;
 
@@ -110,4 +113,9 @@ web-header.web-header--has-expanded-search {
       display: flex;
     }
   }
+}
+
+// Move main down 64px to account for the fixed positioning of the header.
+.header-default ~ main {
+  margin-top: $WEB_HEADER_HEIGHT;
 }
