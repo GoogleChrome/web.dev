@@ -23,7 +23,7 @@ Optimize these images so that the page loads faster and consumes less data:
 Lighthouse collects all the JPEG or BMP images on the page,
 sets each image's compression level to 85,
 and then compares the original version with the compressed version.
-If the potential savings are 4KiB or greater, Lighthouse flags the image as optimizable.
+If the potential savings are 4KiB or less, Lighthouse flags the image as optimizable.
 
 ## How to optimize images
 
