@@ -84,7 +84,7 @@ third-party identity services as well as its content.
 
 There are also two relatively new APIs not covered in this article which can
 help you build a better sign-in experience:
-*  [**Web OTP**](https://web.dev/web-otp/): to deliver one-time passcodes or
+*  [**WebOTP**](https://web.dev/web-otp/): to deliver one-time passcodes or
 PIN numbers via SMS to mobile phones. This can allow users to select a phone
 number as an identifier (no need to enter an email address!) and also enables
 two-step verification for sign-in and one-time codes for payment confirmation.
@@ -748,6 +748,6 @@ Well designed UI and UX can reduce sign-in form abandonment:
 * [More capable form controls](/more-capable-form-controls)
 * [Creating Accessible Forms](https://webaim.org/techniques/forms/)
 * [Streamlining the Sign-in Flow Using Credential Management API](https://developers.google.com/web/updates/2016/04/credential-management-api)
-* [Verify phone numbers on the web with the Web OTP API](https://web.dev/web-otp/)
+* [Verify phone numbers on the web with the WebOTP API](https://web.dev/web-otp/)
 
 Photo by [Meghan Schiereck](https://unsplash.com/photos/_XFObcM_7KU) on [Unsplash](https://unsplash.com).
