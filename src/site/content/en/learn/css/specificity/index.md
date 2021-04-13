@@ -52,7 +52,7 @@ With specificity in a real project,
 the balancing act is making sure the CSS rules you expect to apply, actually *do apply,*
 while generally keeping scores low to prevent complexity.
 The score should only be as high as we need it to be,
-rather than going for the highest score possible.
+rather than aiming for the highest score possible.
 In the future, some genuinely more important CSS might need to be applied.
 If you go for the highest score, you'll make that job hard.
 
