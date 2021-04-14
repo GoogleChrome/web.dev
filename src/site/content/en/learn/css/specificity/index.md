@@ -63,7 +63,8 @@ You add all of these points up to calculate a selector's overall specificity.
 
 ### Universal selector
 
-A universal selector (`*`) has **no specificity** and gets **0 points**.
+A [universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) (`*`)
+has **no specificity** and gets **0 points**.
 This means that any rule with 1 or more points will override it
 
 ```css
@@ -74,7 +75,9 @@ This means that any rule with 1 or more points will override it
 
 ### Element or pseudo-element selector
 
-An element (type) or pseudo-element selector gets **1 point of specificity** .
+An [element](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) (type)
+or [pseudo-element](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
+selector gets **1 point of specificity** .
 
 #### Type selector
 
@@ -94,7 +97,8 @@ div {
 
 ### Class, attribute or pseudo-class selector
 
-A class or pseudo-class selector gets **10 points of specificity**.
+A [class](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) or
+[pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) selector gets **10 points of specificity**.
 
 #### Class selector
 
@@ -121,7 +125,8 @@ A class or pseudo-class selector gets **10 points of specificity**.
 ```
 
 
-The `:not()` pseudo-class itself adds nothing to the specificity calculation.
+The [`:not()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:not)
+pseudo-class itself adds nothing to the specificity calculation.
 However, the selectors passed in as arguments do get added to the specificity calculation.
 
 ```css
@@ -135,7 +140,8 @@ because it has one type selector (`div`) and one class _inside_ the `:not()`.
 
 ### ID selector
 
-An ID selector gets **100 points of specificity**,
+An [ID](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors)
+selector gets **100 points of specificity**,
 as long as you use an ID selector (`#myID`) and not an attribute selector (`[id="myID"]`).
 
 ```css
@@ -306,6 +312,13 @@ button[onclick] {
 
 Now, the button will have a blue background,
 because the new selector gets a specificity score of **20 points** (`0-2-0`).
+
+{% Aside 'caution' %}
+If you find that you are needing to boost specificity like this frequently,
+it may indicate that you are writing overly specific selectors.
+Consider whether you can refactor your CSS to reduce the specificity of other selectors
+to avoid this problem.
+{% endAside %}
 
 ## A matching specificity score sees the newest instance win
 
