@@ -131,6 +131,7 @@ would go about developing your own basic streaming media website that provides
 offline media playback using just the simple `<video>` element. There are plans
 in our roadmap to support frameworks and digital right management, among other
 features. So check back for updates from time to time, or request a feature.
+Read more about it in the [PWA with offline streaming] article.
 
 ## Media chunks format
 
@@ -160,4 +161,5 @@ though before we get to far ahead you will first need to learn how to
 [Shaka Player]: https://github.com/google/shaka-player
 [JW Player]: https://developer.jwplayer.com/
 [Video.js]: http://videojs.com/
+[PWA with offline streaming]: /pwa-with-offline-streaming/
 [Prepare media files for the web]: /prepare-media/
