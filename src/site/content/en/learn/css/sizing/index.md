@@ -389,6 +389,10 @@ this preference will be ignored.
 
 ## Miscellaneous units
 
+There are some other units which have been specified to deal with particular types of values.
+
+### Angle units
+
 In the [color module](/learn/css/color/),
 we looked at **angle units**,
 which are helpful for defining degree values,
@@ -423,7 +427,10 @@ div {
 }
 ```
 
-Lastly, the `dpi` stands for **dots per inch**.
+### Resolution units
+
+In the previous example the value of `min-resolution` is `192dpi`.
+The `dpi` unit stands for **dots per inch**.
 A useful context for this is detecting very high resolution screens,
 such as Retina displays in a media query and serving up a higher resolution image.
 
