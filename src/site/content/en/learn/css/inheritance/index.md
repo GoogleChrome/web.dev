@@ -318,7 +318,7 @@ If you change the `aside p` rule to `all: unset` instead,
 it doesn't matter what global styles are applied to `p` in the future,
 they will always be unset.
 
-```css/4/2-3
+```css/2-3
 aside p {
 	margin: unset;
 	color: unset;
