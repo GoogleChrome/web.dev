@@ -96,7 +96,7 @@ div {
 
 A class or pseudo-class selector gets **10 points of specificity**.
 
-Class selector:
+#### Class selector
 
 ```css
 .my-class {
