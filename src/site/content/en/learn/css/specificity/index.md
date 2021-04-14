@@ -104,7 +104,7 @@ A class or pseudo-class selector gets **10 points of specificity**.
 }
 ```
 
-Pseudo-class selector:
+#### Pseudo-class selector
 
 ```css
 :hover {
