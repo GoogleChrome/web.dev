@@ -84,7 +84,7 @@ div {
 }
 ```
 
-### Pseudo-element selector
+#### Pseudo-element selector
 
 ```css
 ::selection {
