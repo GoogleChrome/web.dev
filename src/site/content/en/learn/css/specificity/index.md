@@ -76,7 +76,7 @@ This means that any rule with 1 or more points will override it
 
 An element (type) or pseudo-element selector gets **1 point of specificity** .
 
-### Type selector
+#### Type selector
 
 ```css
 div {
