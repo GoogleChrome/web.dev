@@ -5,7 +5,7 @@ subhead: |
   Make use of the title bar area next to the window controls to make your PWA feel more like an app.
 authors:
   - thomassteiner
-date: 2021-04-08
+date: 2021-04-14
 description: |
   With the Window Controls Overlay feature, developers can customize the title bar of installed PWAs
   so that their PWAs feel more like apps.
