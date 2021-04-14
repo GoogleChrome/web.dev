@@ -41,7 +41,7 @@ a number is representative of a ratio if you define it without a supporting unit
 ```css
 p {
 	font-size: 24px;
-line-height: 1.5;
+	line-height: 1.5;
 }
 ```
 
