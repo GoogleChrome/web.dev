@@ -2048,5 +2048,21 @@
     "twitter": "derekherman",
     "homepage": "https://xwp.co",
     "image": ""
+  },
+  "dero": {
+    "name": {
+      "given": "Jaroslav",
+      "family": "Polakovič"
+    },
+    "org": {
+      "name": "XWP"
+    },
+    "description": {
+      "en": "Software Engineer"
+    },
+    "country": "CZ",
+    "github": "dero",
+    "twitter": "dero_name",
+    "image": ""
   }
 }
