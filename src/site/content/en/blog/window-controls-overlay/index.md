@@ -70,7 +70,7 @@ To experiment with Window Controls Overlay locally, without an origin trial toke
 ### Enabling support during the origin trial phase
 
 Starting in Chrome&nbsp;92, Window Controls Overlay will be available as an origin trial in Chrome.
-The origin trial is expected to end in Chrome&nbsp;94 (July 2021).
+The origin trial is expected to end in Chrome&nbsp;94 (expected in July 2021).
 
 {% include 'content/origin-trials.njk' %}
 
