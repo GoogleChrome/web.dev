@@ -1,14 +1,16 @@
 ---
 layout: post
 title: Customize the window controls overlay of your PWA's title bar
-subhead:
+subhead: |
+  Make use of the title bar area next to the window controls to make your PWA feel more like an app.
 authors:
   - thomassteiner
 date: 2021-04-08
 description: |
-
-# hero: hero.jpg
-alt:
+  With the Window Controls Overlay feature, developers can customize the title bar of installed PWAs
+  so that their PWAs feel more like apps.
+hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/KEHQXWqr6s7VnEfTqVOC.jpeg
+alt: Kid drawing, crafting, and painting rocks.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - progressive-web-apps
@@ -335,6 +337,10 @@ The search feature in the window controls overlay is fully functional:
 
 ## Security considerations
 
+The Chromium team has designed and implemented the Window Controls Overlay API using the core
+principles defined in [Controlling Access to Powerful Web Platform Features][powerful-apis],
+including user control, transparency, and ergonomics.
+
 ### Spoofing
 
 Giving sites partial control of the title bar leaves room for developers to spoof content in what
@@ -377,12 +383,6 @@ navigating back to the original origin, the window controls overlay will be used
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/8Yn3rH0FirYKgiHKUCA7.png", alt="Black URL bar for out-of-origin navigation.", width="800", height="169" %}
 
-## Security and permissions
-
-The Chromium team has designed and implemented the Window Controls Overlay API using the core
-principles defined in [Controlling Access to Powerful Web Platform Features][powerful-apis],
-including user control, transparency, and ergonomics.
-
 ## Feedback {: #feedback }
 
 The Chromium team wants to hear about your experiences with the Window Controls Overlay API.
@@ -423,9 +423,10 @@ Window Controls Overlay was implemented and specified by
 [Amanda Baker](https://www.linkedin.com/in/amanda-baker-20a2b962/) from the Microsoft Edge team.
 Amanda has also reviewed this article. Further reviewers were
 [Joe Medley](https://github.com/jpmedley) and [Kayce Basques](https://kaycebasques).
+Hero image by [Sigmund](https://unsplash.com/@sigmund) on
+[Unsplash](https://unsplash.com/photos/OV44gxH71DU).
 
 [explainer]: https://github.com/WICG/window-controls-overlay/blob/master/explainer.md
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [issues]: https://github.com/WICG/window-controls-overlay/issues
-[powerful-apis]:
-  https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
