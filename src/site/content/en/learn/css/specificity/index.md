@@ -112,7 +112,7 @@ A class or pseudo-class selector gets **10 points of specificity**.
 }
 ```
 
-Attribute selector:
+#### Attribute selector
 
 ```css
 [href="#"] {
