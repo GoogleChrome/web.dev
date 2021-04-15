@@ -6,7 +6,7 @@ authors:
   - adamargyle
   - samdutton
 description: An introduction to the 2021 Scroll Survey from the Chrome team
-date: 2021-02-11
+date: 2021-04-15
 tags:
   - blog
   - css
@@ -32,4 +32,4 @@ hope is respectful of your time. It should take no more than 10 minutes
 to complete. The results will help browser vendors and standards groups 
 understand how to make scrolling better. 
 
-You can take part in the survey at [2021 Web Scrolling Survey](#).
+You can take part in the survey at [2021 Web Scrolling Survey](https://google.qualtrics.com/jfe/form/SV_bjbaTccU1lpPlVX).
