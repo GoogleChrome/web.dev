@@ -144,7 +144,7 @@ you can still use commas to define `rgb()` and `hsl()`.
 
 ```css
 h1 {
-	color: hsl(344 79% 40%)
+	color: hsl(344, 79%, 40%)
 }
 ```
 
