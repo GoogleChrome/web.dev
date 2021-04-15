@@ -5,7 +5,7 @@ subhead: |
   Make use of the title bar area next to the window controls to make your PWA feel more like an app.
 authors:
   - thomassteiner
-date: 2021-04-14
+date: 2021-04-15
 description: |
   With the Window Controls Overlay feature, developers can customize the title bar of installed PWAs
   so that their PWAs feel more like apps.
@@ -422,7 +422,7 @@ hashtag and let us know where and how you're using it.
 Window Controls Overlay was implemented and specified by
 [Amanda Baker](https://www.linkedin.com/in/amanda-baker-20a2b962/) from the Microsoft Edge team.
 Amanda has also reviewed this article. Further reviewers were
-[Joe Medley](https://github.com/jpmedley) and [Kayce Basques](https://kaycebasques).
+[Joe Medley](https://github.com/jpmedley) and [Kenneth Rohde Christiansen](https://github.com/kenchris).
 Hero image by [Sigmund](https://unsplash.com/@sigmund) on
 [Unsplash](https://unsplash.com/photos/OV44gxH71DU).
 
