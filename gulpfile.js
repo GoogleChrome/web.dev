@@ -22,9 +22,10 @@ const copyGlobalImages = require('./gulp-tasks/copy-global-images.js');
 const copyMisc = require('./gulp-tasks/copy-misc.js');
 const sassTask = require('./gulp-tasks/sass.js');
 
-gulp.task('sass', sassTask);
-
+gulp.task('copy-content-assets', copyContentAssets);
 gulp.task('default-locale', copyDefaultLocale);
+gulp.task('copy-misc', copyMisc);
+gulp.task('sass', sassTask);
 
 gulp.task(
   'build',
