@@ -257,7 +257,7 @@ control overlay when there is enough space.
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/Unm5S2dB3szfFF2YCcFO.png", alt="Window controls overlay area on wide window displaying an additional joke (which reads Chuck Norris can find a word that rhymes with orange.)", width="800", height="73" %}
 
 You can be notified of geometry changes by subscribing to
-`navigator.windowControlsOverlay.ongemometrychange` or by setting up an event listener for the
+`navigator.windowControlsOverlay.ongeometrychange` or by setting up an event listener for the
 `geometrychange` event. This event will only fire when the window controls overlay is visible, that
 is, when `navigator.windowControlsOverlay.visible` is `true`.
 
