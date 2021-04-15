@@ -412,6 +412,6 @@ exposed by local testing.
 - [More capable form controls](/more-capable-form-controls)
 - [Creating Accessible Forms](https://webaim.org/techniques/forms/)
 - [Streamlining the Sign-up Flow Using Credential Management API](https://developers.google.com/web/updates/2016/04/credential-management-api)
-- [Verify phone numbers on the web with the Web OTP API](/web-otp)
+- [Verify phone numbers on the web with the WebOTP API](/web-otp)
 
 Photo by [@ecowarriorprincess](https://unsplash.com/@ecowarriorprincess) on [Unsplash](https://unsplash.com/photos/lUShu7PHIGA).

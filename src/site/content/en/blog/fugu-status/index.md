@@ -289,11 +289,11 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
       <tr>
         <td>
-          <a href="/sms-receiver-api-announcement/">Web OTP API</a>
+          <a href="/sms-receiver-api-announcement/">WebOTP API</a>
         </td>
         <td>
           Finding, memorizing, and typing OTPs sent via SMS is cumbersome.
-          The Web OTP API (formerly the SMS Receiver API) simplifies the OTP
+          The WebOTP API (formerly the SMS Receiver API) simplifies the OTP
           workflow for users.<br>
           <em>Updated March 26, 2020</em>
         </td>

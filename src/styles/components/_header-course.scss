@@ -3,6 +3,7 @@
   background-repeat: no-repeat;
   background-position: right;
   background-size: 136px;
+  position: sticky;
 
   &__title {
     @include apply-utility('font', 'google-sans');
