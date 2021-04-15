@@ -36,7 +36,7 @@ In the case of this button, it **inherited** the `color` from this CSS:
 
 ```css
 article a {
-  color: #7c3626;
+  color: maroon;
 }
 ```
 
