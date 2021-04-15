@@ -21,7 +21,7 @@ Say you just wrote some CSS to make elements look like a button.
   display: inline-block;
   padding: 1rem 2rem;
   text-decoration: none;
-  background: #eabdb3;
+  background: pink;
   font: inherit;
   text-align: center;
 }
