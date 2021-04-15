@@ -113,7 +113,7 @@ so 255 would be equivalent to 100%, and 0 to 0%.
 
 To set black in RGB, define it as `rgb(0 0 0)`,
 which is zero red, zero green and zero blue.
-Black can also be defined as `rgb(0% 0% 0%)`.
+Black can also be defined as `rgb(0%, 0%, 0%)`.
 White is the exact opposite: `rgb(255 255 255)` or `rgb(100% 100% 100%)`.
 
 An alpha is set in `rgb()` in one of two ways.
