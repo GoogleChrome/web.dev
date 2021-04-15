@@ -1,16 +1,17 @@
 .header-course {
-  background-image: var(--header-course-background);
+  background-image: var(--course-background);
   background-repeat: no-repeat;
   background-position: right;
   background-size: 136px;
   position: sticky;
 
   &__title {
-    @include apply-utility('font', 'google-sans');
-    @include apply-utility('weight', 'medium');
-    color: $GREY_800;
-    font-size: 20px;
-    line-height: 40px;
+    height: 30px;
     margin-left: 32px;
+
+    > svg {
+      height: 100%;
+      width: auto;
+    }
   }
 }
