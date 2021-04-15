@@ -4,7 +4,7 @@ subhead: FLoC enables ad selection without sharing the browsing behaviour of ind
 authors:
   - samdutton
 date: 2021-03-30
-updated: 2021-04-13
+updated: 2021-04-15
 hero: image/80mq7dk16vVEg8BBhsVe42n6zn82/GA543wiVTwpbwp6Zmw0H.jpg
 thumbnail: image/80mq7dk16vVEg8BBhsVe42n6zn82/OuORgPSvN06ntXT5xOii.jpg
 alt: Murmuration of starlings over Brighton pier
