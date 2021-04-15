@@ -16,29 +16,14 @@
     }
   }
 
-  &__cover {
-    align-items: center;
-    background-image: var(--course-background);
-    background-position: top right;
-    background-repeat: no-repeat;
-    background-size: contain;
+  &__thumbnail {
+    object-fit: cover;
+    width: 100%;
     border: 1px solid $GREY_300;
-    display: flex;
     height: 192px;
-    padding-left: 24px;
-    width: auto;
 
     @include bp(md) {
       height: 240px;
-    }
-
-    > svg {
-      width: 174px;
-      height: 64px;
-
-      @include bp(lg) {
-        width: 249px;
-      }
     }
   }
 
@@ -53,7 +38,7 @@
 }
 
 .course-card[data-dense] {
-  .course-card__cover {
+  .course-card__thumbnail {
     height: 192px;
   }
 }
