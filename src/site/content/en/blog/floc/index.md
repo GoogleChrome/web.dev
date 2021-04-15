@@ -268,7 +268,7 @@ by setting a [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#in
 `interest-cohort=()` for that page. For pages that haven't been excluded, a page visit will be included 
 in the browser's FLoC calculation if `document.interestCohort()` is used on the page. During the current 
 [FLoC origin trial](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561), a 
-page will also be included in the cohort calculation if Chrome detects that the page 
+page will also be included in the calculation if Chrome detects that the page 
 [load ads or ads-related resources](https://github.com/WICG/floc/issues/82). 
 ([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) 
 explains how Chrome's ad detection mechanism works.) 
