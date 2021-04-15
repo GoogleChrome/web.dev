@@ -51,7 +51,7 @@ for more information.)
 
 ### Preload web fonts
 
-Use `<link rel="preload">` to fetch your font files earlier. Learn more:
+Use `<link rel="preload" as="font">` to fetch your font files earlier. Learn more:
 
 * [Preload web fonts to improve loading speed (codelab)](/codelab-preload-web-fonts/)
 * [Prevent layout shifting and flashes of invisibile text (FOIT) by preloading optional fonts](/preload-optional-fonts/)
