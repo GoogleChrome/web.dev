@@ -19,17 +19,19 @@ date: 2018-11-05
     </header>
   </div>
 
-  <div class="sm:pad-left-500 sm:pad-right-500">
-    <div class="learn-section gap-left-auto gap-right-auto">
-      <h3 id="courses" class="w-learn-heading">
-        {{ 'i18n.learn.courses' | i18n(locale) }}
-        <a class="w-headline-link" href="#courses" aria-hidden="true">#</a>
-      </h3>
-      {% include 'partials/course-cards.njk' %}
+  {% if site.areCoursesEnabled %}
+    <div class="sm:pad-left-500 sm:pad-right-500">
+      <div class="learn-section gap-left-auto gap-right-auto">
+        <h3 id="courses" class="w-learn-heading">
+          {{ 'i18n.learn.courses' | i18n(locale) }}
+          <a class="w-headline-link" href="#courses" aria-hidden="true">#</a>
+        </h3>
+        {% include 'partials/course-cards.njk' %}
+      </div>
     </div>
-  </div>
 
-  <hr class="gap-top-400 gap-bottom-700">
+    <hr class="gap-top-400 gap-bottom-700">
+  {% endif %}
 
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">

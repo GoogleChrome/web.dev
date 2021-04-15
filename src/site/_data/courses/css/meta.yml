@@ -1,6 +1,7 @@
 # Used to organize the courses on the /learn page
 date: 2021-05-01
 url: /learn/css/
+draft: true
 title: i18n.courses.learn_css.title
 description: i18n.courses.learn_css.description
 # This path should be relative to the _include folder.
