@@ -6,7 +6,7 @@
   {# Sort courses by descending date order (most recent comes first) #}
   {% for course in coursesArr|sort(true, false, 'meta.date') %}
     {# If we have 3 or more courses set the grid to use a more dense styling. #}
-    {# This makes the cover images, and logos smaller. #}
+    {# This makes the thumbnails smaller. #}
     <div class="course-card w-card" data-dense>
       <div class="course-card__info gap-bottom-400">
         <span class="font-google-sans weight-medium">{{ 'i18n.learn.course' | i18n(locale) }}</span>
