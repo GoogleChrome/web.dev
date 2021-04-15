@@ -12,7 +12,7 @@
         </button>
 
         <div class="drawer-course__title">
-          {{ svg(courseData.meta.logo, 'Learn CSS') }}
+          {{ svg(courseData.meta.logo, courseData.meta.title | i18n(locale)) }}
         </div>
       </div>
 
