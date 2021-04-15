@@ -22,10 +22,10 @@ feedback:
   - api
 ---
 
-SMS OTPs are commonly used to authenticate a user, to constitute a second step,
-or to verify payment on the web. However, switching between the browser and the
-SMS app, making a copy / remembering the OTP and pasting / entering it causes
-mistakes and frictions to end users.
+SMS OTPs are commonly used to verify phone numbers, for example as a second step
+in authentication, or to verify payments on the web. However, switching between
+the browser and the SMS app, making a copy / remembering the OTP and pasting /
+entering it causes mistakes and friction to end users.
 
 The [WebOTP API](/web-otp) gives such websites the ability to programmatically
 obtain the one-time password (OTP) from a SMS message and enter them
@@ -46,9 +46,9 @@ WebOTP API itself is simple enough:
 
 ```js
 …
-  navigator.credentials.get({
+  const otp = await navigator.credentials.get({
     otp: { transport:['sms'] }
-  }).then(otp => {
+  });
 …
 ```
 
