@@ -100,7 +100,7 @@ To add alpha, then `#a4e8` would expand to `#aa44ee88`.
 
 ```css
 h1 {
-	color: rgb(183 21 64)
+	color: rgb(183, 21, 64)
 }
 ```
 
