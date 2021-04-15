@@ -19,9 +19,9 @@ tags:
 ---
 
 {% Aside %}
-  An update to this post was published to the [developer.chrome.com
+  CORS-RFC1918 has been renamed to Private Network Access for clarity.
+  An update to this post is published at [developer.chrome.com
   blog](https://developer.chrome.com/blog/private-network-access-update).
-  CORS-RFC1918 has also been renamed to Private Network Access for clarity.
 {% endAside %}
 
 Malicious websites making requests to devices and servers hosted on a private
