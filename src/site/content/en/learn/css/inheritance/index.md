@@ -236,12 +236,12 @@ You learned earlier that every property has a default value in CSS.
 The `initial` keyword sets a property back to that initial, default value.
 
 ```css
-strong {
+aside strong {
   font-weight: initial;
 }
 ```
 
-This snippet will remove the bold weight from all `<strong>` elements and instead,
+This snippet will remove the bold weight from all `<strong>` elements inside an `<aside>` element and instead,
 make them normal weight, which is the initial value.
 
 <figure class="w-figure">
@@ -266,14 +266,14 @@ but `margin` isn't, so you can write this:
 ```css
 /* Global color styles for paragraph in authored CSS */
 p {
-	margin-top: 2em;
-	color: goldenrod;
+  margin-top: 2em;
+  color: goldenrod;
 }
 
 /* The p needs to be reset in asides, so you can use unset */
 aside p {
-	margin: unset;
-	color: unset;
+  margin: unset;
+  color: unset;
 }
 ```
 
