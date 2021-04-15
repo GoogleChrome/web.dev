@@ -96,7 +96,7 @@ A progressive web app can opt-in to the window controls overlay by adding
 The window controls overlay will be visible only when all of the following conditions are satisfied:
 
 1. The app is _not_ opened in the browser, but in a separate PWA window.
-1. The manifest includes `"display_override": ["window-controls-overlay"]"`. (Other values are
+1. The manifest includes `"display_override": ["window-controls-overlay"]`. (Other values are
    allowed thereafter.)
 1. The PWA is running on a desktop operating system.
 1. The current origin matches the origin for which the PWA was installed.
