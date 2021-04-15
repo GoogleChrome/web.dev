@@ -121,7 +121,7 @@ Either add a `/` **after** the red, green and blue parameters,
 or use the [`rgba()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/rgba()) function.
 The alpha can be defined with a percentage or a decimal between 0 and 1.
 For example, to set a 50% alpha black in modern browsers,  write: `rgb(0 0 0 / 50%)` or `rgb(0 0 0 / 0.5)`.
-Using the `rgba()` function,
+For wider support, using the `rgba()` function,
 write: `rgba(0, 0, 0, 50%)` or `rgba(0, 0, 0, 0.5)`.
 
 <figure class="w-figure">
