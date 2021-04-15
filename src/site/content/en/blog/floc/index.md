@@ -4,7 +4,7 @@ subhead: FLoC enables ad selection without sharing the browsing behaviour of ind
 authors:
   - samdutton
 date: 2021-03-30
-updated: 2021-04-13
+updated: 2021-04-15
 hero: image/80mq7dk16vVEg8BBhsVe42n6zn82/GA543wiVTwpbwp6Zmw0H.jpg
 thumbnail: image/80mq7dk16vVEg8BBhsVe42n6zn82/OuORgPSvN06ntXT5xOii.jpg
 alt: Murmuration of starlings over Brighton pier
@@ -265,9 +265,10 @@ this analysis.
 
 Websites [can exclude a page from the FLoC calculation](https://github.com/WICG/floc#opting-out-of-computation) 
 by setting a [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#introduction) header 
-`interest-cohort=()` for that page. For pages that haven't been excluded, a page visit will be 
-included in the FLoC calculation during the [FLoC origin trial](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561) 
-if `document.interestCohort()` is used on the page, or if Chrome detects that the page 
+`interest-cohort=()` for that page. For pages that haven't been excluded, a page visit will be included 
+in the browser's FLoC calculation if `document.interestCohort()` is used on the page. During the current 
+[FLoC origin trial](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561), a 
+page will also be included in the calculation if Chrome detects that the page 
 [load ads or ads-related resources](https://github.com/WICG/floc/issues/82). 
 ([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md) 
 explains how Chrome's ad detection mechanism works.) 
