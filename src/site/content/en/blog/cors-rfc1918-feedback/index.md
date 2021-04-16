@@ -18,6 +18,12 @@ tags:
   - cors
 ---
 
+{% Aside %}
+  CORS-RFC1918 has been renamed to Private Network Access for clarity.
+  An update to this post is published at [developer.chrome.com
+  blog](https://developer.chrome.com/blog/private-network-access-update).
+{% endAside %}
+
 Malicious websites making requests to devices and servers hosted on a private
 network have long been a threat. Attackers may, for example, change a wireless
 router's configuration to enable
