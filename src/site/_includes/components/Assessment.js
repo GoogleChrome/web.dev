@@ -184,9 +184,7 @@ function optionContentTemplate(option) {
     return;
   }
   return html`
-    <span data-role="option">
-      ${md.renderInline(option.content)}
-    </span>
+    <span data-role="option">${md.renderInline(option.content)}</span>
   `;
 }
 
@@ -197,9 +195,7 @@ function rationaleTemplate(option) {
     return;
   }
   return html`
-    <div data-role="rationale">
-      ${md.render(option.rationale)}
-    </div>
+    <div data-role="rationale">${md.render(option.rationale)}</div>
   `;
 }
 

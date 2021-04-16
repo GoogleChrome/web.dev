@@ -48,9 +48,7 @@ module.exports = ({id, author, showSocialMedia = false, small = false}) => {
   });
   return html`
     <div class="w-author">
-      <a href="/authors/${id}">
-        ${img}
-      </a>
+      <a href="/authors/${id}">${img}</a>
       ${AuthorInfo({author, id, showSocialMedia})}
     </div>
   `;

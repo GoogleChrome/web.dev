@@ -42,9 +42,7 @@ class AuthorCard extends BaseCard {
     });
 
     return html`
-      <figure class="w-card-base__figure w-card-author__figure">
-        ${img}
-      </figure>
+      <figure class="w-card-base__figure w-card-author__figure">${img}</figure>
     `;
   }
 }
