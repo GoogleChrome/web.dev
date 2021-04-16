@@ -377,7 +377,7 @@ and include all subfolders and the therein contained files.
 
 ```js
 // Delete a file.
-await directoryHandle.removeEntry('Abandoned Masterplan.txt');
+await directoryHandle.removeEntry('Abandoned Projects.txt');
 // Recursively delete a folder.
 await directoryHandle.removeEntry('Old Stuff', { recursive: true });
 ```
