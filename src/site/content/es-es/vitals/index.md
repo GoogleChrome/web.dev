@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Web Vitals
-subhead: Essential metrics for a healthy site
-description: Essential metrics for a healthy site
+subhead: Métricas esenciales para un sitio saludable
+description: Métricas esenciales para un sitio saludable
 authors:
   - philipwalton
 date: 30-04-2020
@@ -16,7 +16,7 @@ tags:
 
 Optimizar la calidad de la experiencia del usuario es un factor clave para el éxito a largo plazo de cualquier sitio web. Tanto si es propietario de un negocio, especialista de marketing o desarrollador, los Web Vitals pueden ayudarle a cuantificar la experiencia de su sitio e identificar oportunidades para mejorar.
 
-## Overview
+## Descripción general
 
 Web Vitals es una iniciativa de Google para proporcionar una guía unificada de indicadores de calidad que son esenciales para brindar una excelente experiencia de usuario en la web.
 
@@ -30,13 +30,15 @@ Los Core Web Vitals son el subconjunto de Web Vitals que se aplica a todas las p
 
 Las métricas que componen los Core Web Vitals [evolucionarán](#evolving-web-vitals) con el tiempo. El conjunto actual para 2020 se centra en tres aspectos de la experiencia del usuario: *carga* , *interactividad* y *estabilidad visual*, e incluye las siguientes métricas (y sus respectivos umbrales):
 
-<div class="w-stack w-stack--center w-stack--md">   <img src="lcp_ux.svg" width="400px" height="350px" alt="Largest Contentful Paint threshold recommendations">   <img src="fid_ux.svg" width="400px" height="350px" alt="First Input Delay threshold recommendations">   <img src="cls_ux.svg" width="400px" height="350px" alt="Cumulative Layout Shift threshold recommendations"> </div>
+<div class="w-stack w-stack--center w-stack--md">
+<img src="lcp_ux.svg" width="400px" height="350px" alt="Las recomendaciones de umbral de pintura con contenido más grandes"><img src="fid_ux.svg" width="400px" height="350px" alt="Recomendaciones de umbral de retardo de primera entrada"><img src="cls_ux.svg" width="400px" height="350px" alt="Recomendaciones de umbral de cambio de diseño acumulativo">
+</div>
 
 - **[Largest Contentful Paint (LCP)](/lcp/)** : mide el rendimiento de *carga.* Para proporcionar una buena experiencia de usuario, el LCP debe producirse dentro de los **2,5 segundos desde** que la página comienza a cargarse.
 - **[First Input Delay (FID)](/fid/)**: mide la *interactividad*. Para proporcionar una buena experiencia de usuario, las páginas deben tener un FID de menos de **100 milisegundos**.
 - **[Cumulative Layout Shift (CLS)](/cls/)**: mide *la estabilidad visual*. Para proporcionar una buena experiencia de usuario, las páginas deben mantener un CLS de menos de **0,1.**
 
-For each of the above metrics, to ensure you're hitting the recommended target for most of your users, a good threshold to measure is the **75th percentile** of page loads, segmented across mobile and desktop devices.
+Para cada una de las métricas anteriores, para asegurarse de que está alcanzando el objetivo recomendado para la mayoría de sus usuarios, un buen umbral para medir es el **percentil 75** de cargas de página, segmentado en dispositivos móviles y de escritorio.
 
 Las herramientas que evalúan el cumplimiento de los Core Web Vitals deben considerar la aprobación de una página si cumple con los objetivos recomendados en el percentil 75 para las tres métricas anteriores.
 
@@ -65,7 +67,7 @@ El [Chrome User Experience Report (Informe de experiencia del usuario de Chrome)
       <td>✔</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/speed/pagespeed/insights/">         PageSpeed Insights</a></td>
+      <td><a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
@@ -85,11 +87,11 @@ Los datos proporcionados por el Chrome User Experience Report ofrecen una forma 
 
 #### Medir los Core Web Vitals en JavaScript
 
-Each of the Core Web Vitals can be measured in JavaScript using standard web APIs.
+Cada uno de los Core Web Vitals se puede medir en JavaScript utilizando API web estándar.
 
 La forma más sencilla de medir todos los Core Web Vitals es utilizar la biblioteca de JavaScript de [web-vitals](https://github.com/GoogleChrome/web-vitals), una pequeña envoltura alrededor de las API web subyacentes lista para la producción que mide cada métrica de una manera que coincide con la forma en que son informadas por todas las herramientas de Google enumeradas anteriormente.
 
-With the [web-vitals](https://github.com/GoogleChrome/web-vitals) library, measuring each metric is as simple as calling a single function (see the documentation for complete [usage](https://github.com/GoogleChrome/web-vitals#usage) and [API](https://github.com/GoogleChrome/web-vitals#api) details):
+Con la [biblioteca web-vitals](https://github.com/GoogleChrome/web-vitals) , medir cada métrica es tan simple como llamar a una sola función (consulte la documentación para conocer el [uso](https://github.com/GoogleChrome/web-vitals#usage) completo y los detalles de la [API):](https://github.com/GoogleChrome/web-vitals#api)
 
 ```js
 import {getCLS, getFID, getLCP} from 'web-vitals';
@@ -108,7 +110,7 @@ getLCP(sendToAnalytics);
 
 También puede informar sobre cada uno de los Core Web Vitals sin escribir ningún código utilizando la [Extensión para Chrome de Web Vitals](https://github.com/GoogleChrome/web-vitals-extension). Esta extensión utiliza la biblioteca de [web-vitals](https://github.com/GoogleChrome/web-vitals) para medir cada una de estas métricas y mostrarlas a los usuarios mientras navegan por la web.
 
-This extension can be helpful in understanding the performance of your own sites, your competitor's sites, and the web at large.
+Esta extensión puede resultar útil para comprender el rendimiento de sus propios sitios, los de la competencia y la web en general.
 
 <div class="w-table-wrapper">
   <table>
@@ -128,7 +130,7 @@ This extension can be helpful in understanding the performance of your own sites
         <td>✔</td>
       </tr>
       <tr>
-        <td><a href="https://github.com/GoogleChrome/web-vitals-extension">           Web Vitals Extension</a></td>
+        <td><a href="https://github.com/GoogleChrome/web-vitals-extension">Extensión Web Vitals</a></td>
         <td>✔</td>
         <td>✔</td>
         <td>✔</td>
@@ -139,19 +141,19 @@ This extension can be helpful in understanding the performance of your own sites
 
 Como alternativa, los desarrolladores que prefieren medir estas métricas directamente a través de las API web subyacentes pueden consultar estas guías de métricas para obtener detalles de implementación:
 
-- [Measure LCP in JavaScript](/lcp/#measure-lcp-in-javascript)
-- [Measure FID in JavaScript](/fid/#measure-fid-in-javascript)
-- [Measure CLS in JavaScript](/cls/#measure-cls-in-javascript)
+- [Medir LCP en JavaScript](/lcp/#measure-lcp-in-javascript)
+- [Medir FID en JavaScript](/fid/#measure-fid-in-javascript)
+- [Medir CLS en JavaScript](/cls/#measure-cls-in-javascript)
 
 {% Aside %} Para obtener orientación adicional sobre cómo medir estas métricas mediante servicios de análisis populares (o sus propias herramientas de análisis internas), consulte: [Prácticas recomendadas para medir Web Vitals sobre el terreno](/vitals-field-measurement-best-practices/) {% endAside %}
 
-#### Lab tools to measure Core Web Vitals
+#### Herramientas de laboratorio para medir Core Web Vitals
 
 Si bien todos los Core Web Vitals son, ante todo, métricas sobre el terreno, muchas de ellas también se pueden medir en el laboratorio.
 
 La medición en el laboratorio es la mejor manera de probar el rendimiento de las funciones durante el desarrollo, antes de que se publiquen a los usuarios. También es la mejor forma de detectar las regresiones de rendimiento antes de que sucedan.
 
-The following tools can be used to measure the Core Web Vitals in a lab environment:
+Las siguientes herramientas se pueden utilizar para medir los Core Web Vitals en un entorno de laboratorio:
 
 <div class="w-table-wrapper">
   <table>
@@ -165,15 +167,15 @@ The following tools can be used to measure the Core Web Vitals in a lab environm
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/chrome-devtools">           Chrome DevTools</a></td>
+        <td><a href="https://developers.google.com/web/tools/chrome-devtools">DevTools de Chrome</a></td>
         <td>✔</td>
-        <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>
+        <td>✘ (use <a href="/tbt/">TBT</a> en su lugar)</td>
         <td>✔</td>
       </tr>
       <tr>
         <td><a href="https://developers.google.com/web/tools/lighthouse">           Lighthouse</a></td>
         <td>✔</td>
-        <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>
+        <td>✘ (use <a href="/tbt/">TBT</a> en su lugar)</td>
         <td>✔</td>
       </tr>
     </tbody>
@@ -188,17 +190,17 @@ El rendimiento de un sitio puede variar drásticamente según las capacidades de
 
 ### Recomendaciones para mejorar sus puntuaciones
 
-Once you've measured the Core Web Vitals and identified areas for improvement, the next step is to optimize. The following guides offer specific recommendations for how to optimize your pages for each of the Core Web Vitals:
+Una vez que haya medido los Core Web Vitals e identificado las áreas de mejora, el siguiente paso es optimizar. Las siguientes guías ofrecen recomendaciones específicas sobre cómo optimizar sus páginas para cada uno de los Core Web Vitals:
 
-- [Optimize LCP](/optimize-lcp/)
-- [Optimize FID](/optimize-fid/)
-- [Optimize CLS](/optimize-cls/)
+- [Optimizar LCP](/optimize-lcp/)
+- [Optimizar FID](/optimize-fid/)
+- [Optimizar CLS](/optimize-cls/)
 
 ## Otros Web Vitals
 
-While the Core Web Vitals are the critical metrics for understanding and delivering a great user experience, there are other vital metrics as well.
+Si bien los Core Web Vitals son las métricas críticas para comprender y brindar una excelente experiencia de usuario, también existen otras métricas vitales.
 
-These other Web Vitals often serve as proxy or supplemental metrics for the Core Web Vitals, to help capture a larger part of the experience or to aid in diagnosing a specific issue.
+Estos otros Web Vitals a menudo sirven como métricas proxy o suplementarias para los Core Web Vitals, para ayudar a capturar una mayor parte de la experiencia o para ayudar a diagnosticar un problema específico.
 
 Por ejemplo, las métricas [Time to First Byte (TTFB)](/time-to-first-byte/) y [First Contentful Paint (FCP)](/fcp/) son aspectos vitales de la *experiencia de carga* y son útiles para diagnosticar problemas con LCP ([tiempos de respuesta del servidor](/overloaded-server/) lentos o [recursos de bloqueo de renderizado](/render-blocking-resources/), respectivamente).
 
