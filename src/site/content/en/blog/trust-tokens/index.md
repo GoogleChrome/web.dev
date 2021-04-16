@@ -44,7 +44,7 @@ in the Chrome DevTools **Network** and **Application** tabs.
 {% Aside %}
 The Privacy Sandbox is a series of proposals to satisfy third-party use cases
 without third-party cookies or other tracking mechanisms. See
-[Digging into the Privacy Sandbox](http://web.dev/digging-into-the-privacy-sandbox)
+[Digging into the Privacy Sandbox](/digging-into-the-privacy-sandbox)
 for an overview of all the proposals.
 
 **This proposal needs your feedback!** If you have comments, please [create an
@@ -299,7 +299,7 @@ Trust Token [explainer repository](https://github.com/WICG/trust-token-api).
 ## Find out more
 
 -  [Trust Tokens demo](https://trust-token-demo.glitch.me)
--  [Digging in to the Privacy Sandbox](https://web.dev/digging-into-the-privacy-sandbox/)
+-  [Digging in to the Privacy Sandbox](/digging-into-the-privacy-sandbox/)
 -  [Trust Token API Explainer](https://github.com/WICG/trust-token-api)
 -  [Chromium Projects: Trust Token API](https://sites.google.com/a/chromium.org/dev/updates/trust-token)
 -  [Intent to Implement: Trust Token API](https://groups.google.com/a/chromium.org/g/blink-dev/c/X9sF2uLe9rA/m/1xV5KEn2DgAJ)

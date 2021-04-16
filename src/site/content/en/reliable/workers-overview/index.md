@@ -109,7 +109,7 @@ thread, to avoid blocking the UI.
 
 - **Example:** the team that built the videogame [PROXX](https://proxx.app/) wanted to leave the
   main thread as free as possible to take care of user input and animations. To achieve that, they
-  [used web workers](https://web.dev/proxx-announce/#web-workers) to run the game logic and state
+  [used web workers](/proxx-announce/#web-workers) to run the game logic and state
   maintenance on a separate thread.
 
 <figure class="w-figure">
@@ -181,4 +181,4 @@ The rest of this series focuses on patterns for window and service worker commun
   (e.g. a heavy download), and keeping the page informed on the progress.
 
 For patterns of window and web worker communication check out: [Use web workers to run JavaScript
-off the browser's main thread](https://web.dev/off-main-thread/).
+off the browser's main thread](/off-main-thread/).

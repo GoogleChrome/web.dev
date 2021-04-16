@@ -393,7 +393,7 @@ policy (and a malicious actor could even spoof the referrer).
 Use [CSRF
 tokens](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation)
 as your primary protection. For extra protection, use
-[SameSite](https://web.dev/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)—and instead
+[SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)—and instead
 of `Referer`, use headers such as
 [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) (available on POST and
 CORS requests) and
@@ -480,7 +480,7 @@ David Van Cleve, Mike West, Sam Dutton, Rowan Merewood, Jxck and Kayce Basques._
 
 ## Resources
 
-- [Understanding "same-site" and "same-origin"](https://web.dev/same-site-same-origin/)
+- [Understanding "same-site" and "same-origin"](/same-site-same-origin/)
 - [A new security header: Referrer Policy
   (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
 - [Referrer-Policy on

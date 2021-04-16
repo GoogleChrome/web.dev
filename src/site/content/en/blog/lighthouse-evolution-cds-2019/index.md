@@ -57,7 +57,7 @@ Paint](/first-meaningful-paint/), [Time to Interactive](/interactive/), and
   {% Img src="image/admin/X0u1YQC63JaPfE0DWgz8.png", alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.", width="800", height="211", class="w-screenshot" %}
 </figure>
 
-See [Lighthouse performance scoring](https://web.dev/performance-scoring/) for detailed
+See [Lighthouse performance scoring](/performance-scoring/) for detailed
 information.
 
 In Lighthouse version 6, new metrics, [Largest Contentful Paint (LCP)](/lcp/)

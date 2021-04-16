@@ -83,7 +83,7 @@ bundling](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/themes/js-b
 ### React
 
 If you are not server-side rendering, [split your JavaScript
-bundles](https://web.dev/code-splitting-suspense/) with `React.lazy()`.
+bundles](/code-splitting-suspense/) with `React.lazy()`.
 Otherwise, code-split using a third-party library such as
 [loadable-components](https://www.smooth-code.com/open-source/loadable-components/docs/getting-started/).
 

@@ -61,7 +61,7 @@ Betty Crocker asked themselves how they could port the killer feature of their i
 over to the web app.
 This is when they learned about
 [Project Fugu](https://developers.google.com/web/updates/capabilities) and the
-[Wake Lock API](https://web.dev/wakelock/).
+[Wake Lock API](/wakelock/).
 
 {% Img src="image/admin/Yoj65m20XpoPdaL8ejAv.jpg", alt="A person kneading dough on a kitchen table covered in flour", width="800", height="533" %}
 
@@ -346,7 +346,7 @@ Other examples are boarding pass or ticket apps that need to keep the screen on
 until the barcode has been scanned, kiosk-style apps that keep the screen on continuously,
 or web-based presentation apps that prevent the screen from sleeping during a presentation.
 
-We have compiled [everything you need to know about the Wake Lock API](https://web.dev/wakelock/)
+We have compiled [everything you need to know about the Wake Lock API](/wakelock/)
 in a comprehensive article on this very site.
 Happy reading, and happy cooking!
 

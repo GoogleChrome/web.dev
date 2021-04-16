@@ -45,7 +45,7 @@ improve user experience and engagement, and also showed the impact of performanc
 patterns and APIs.
 
 {% Aside %}
-Check out web.dev's [Build a performance culture](https://web.dev/fast/#build-a-performance-culture)
+Check out web.dev's [Build a performance culture](/fast/#build-a-performance-culture)
 collection for tips on how to persuade your cross-functional stakeholders to focus on website
 performance.
 {% endAside %}

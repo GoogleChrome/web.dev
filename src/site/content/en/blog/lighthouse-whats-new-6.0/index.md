@@ -19,7 +19,7 @@ helps developers with opportunities and diagnostics to improve the user experien
 It's available in Chrome DevTools, npm (as a Node module and a CLI), or as a browser extension (in
 [Chrome](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) and
 [Firefox](https://addons.mozilla.org/en-US/firefox/addon/google-lighthouse/)). It powers many Google
-services, including [web.dev/measure](https://web.dev/measure/) and [PageSpeed
+services, including [web.dev/measure](/measure/) and [PageSpeed
 Insights](https://developers.google.com/speed/pagespeed/insights/).
 
 Lighthouse 6.0 is available immediately on npm and in [Chrome
@@ -56,7 +56,7 @@ the highlights in this article.
 
 Lighthouse 6.0 introduces three new metrics to the report. Two of these new metrics–Largest
 Contentful Paint (LCP) and Cumulative Layout Shift (CLS)–are lab implementations of [Core Web
-Vitals](https://web.dev/vitals/).
+Vitals](/vitals/).
 
 ### Largest Contentful Paint (LCP) {: #lcp }
 
@@ -89,12 +89,12 @@ TBT measures the total amount of time between First Contentful Paint (FCP) and T
 (TTI). It is a companion metric to TTI and it brings more nuance to quantifying main thread activity
 that blocks a user's ability to interact with your page.
 
-Additionally, TBT correlates well with the field metric [First Input Delay](https://web.dev/fid/)
+Additionally, TBT correlates well with the field metric [First Input Delay](/fid/)
 (FID), which is a Core Web Vital.
 
 ## Performance score update  {: #score }
 
-The [performance score in Lighthouse](https://web.dev/performance-scoring/) is calculated from a
+The [performance score in Lighthouse](/performance-scoring/) is calculated from a
 weighted blend of multiple metrics to summarize a page's speed. The 6.0 performance score formula
 follows.
 
@@ -271,7 +271,7 @@ with your results populated.
 
 We are leveraging [DevTools code
 coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) in a new audit: [**Unused
-JavaScript**](https://web.dev/remove-unused-code/).
+JavaScript**](/remove-unused-code/).
 
 This audit isn't _entirely_ new: it was [added in
 mid-2017](https://github.com/GoogleChrome/lighthouse/issues/1852#issuecomment-306900595), but
@@ -284,24 +284,24 @@ it by default.
 Lighthouse uses the wonderful [axe-core](https://github.com/dequelabs/axe-core) library to power the
 accessibility category. In Lighthouse 6.0, we've added the following audits:
 
--  [aria-hidden-body](https://web.dev/aria-hidden-body/)
--  [aria-hidden-focus](https://web.dev/aria-hidden-focus/)
--  [aria-input-field-name](https://web.dev/aria-input-field-name/)
--  [aria-toggle-field-name](https://web.dev/aria-toggle-field-name/)
--  [form-field-multiple-labels](https://web.dev/form-field-multiple-labels/)
--  [heading-order](https://web.dev/heading-order/)
--  [duplicate-id-active](https://web.dev/duplicate-id-active/)
--  [duplicate-id-aria](https://web.dev/duplicate-id-aria/)
+-  [aria-hidden-body](/aria-hidden-body/)
+-  [aria-hidden-focus](/aria-hidden-focus/)
+-  [aria-input-field-name](/aria-input-field-name/)
+-  [aria-toggle-field-name](/aria-toggle-field-name/)
+-  [form-field-multiple-labels](/form-field-multiple-labels/)
+-  [heading-order](/heading-order/)
+-  [duplicate-id-active](/duplicate-id-active/)
+-  [duplicate-id-aria](/duplicate-id-aria/)
 
 ### Maskable icon {: #maskable-icon }
 
-[Maskable icons](https://web.dev/maskable-icon/) is a new icon format that makes icons for your PWA
+[Maskable icons](/maskable-icon/) is a new icon format that makes icons for your PWA
 look great across all types of devices. To help your PWA look as good as possible, we've introduced
 a new audit to check if your manifest.json supports this new format.
 
 ### Charset declaration {: #charset }
 
-The [meta charset element](https://web.dev/charset/) declares what character encoding should be used
+The [meta charset element](/charset/) declares what character encoding should be used
 to interpret an HTML document. If this element is missing, or if it is declared late in the
 document, browsers employ a number of heuristics to guess which encoding should be used. If a
 browser guesses incorrectly, and a late meta charset element is found, the parser generally throws
@@ -310,7 +310,7 @@ audit verifies the page has a valid character encoding and it's defined early an
 
 ## Lighthouse CI {: #ci }
 
-At [CDS last November](https://web.dev/lighthouse-evolution-cds-2019/#lighthouse-ci-alpha-release)
+At [CDS last November](/lighthouse-evolution-cds-2019/#lighthouse-ci-alpha-release)
 we announced [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci), the open source Node
 CLI and server that tracks Lighthouse results on every commit in your continuous integration
 pipeline, and we've come a long way since the alpha release. Lighthouse CI now has support
@@ -410,7 +410,7 @@ extension](https://addons.mozilla.org/en-US/firefox/addon/google-lighthouse/)!
 
 ## Budgets {: #budgets }
 
-Lighthouse 5.0 introduced [performance budgets](https://web.dev/performance-budgets-101/) which
+Lighthouse 5.0 introduced [performance budgets](/performance-budgets-101/) which
 supported adding thresholds for
 [how much of each resource type](https://github.com/GoogleChrome/lighthouse/blob/master/docs/performance-budgets.md#resource-budgets)
 (such as scripts, images, or css) a page can serve.
@@ -471,7 +471,7 @@ What can you do next?
 -  Use the Node CLI: `npm install -g lighthouse && lighthouse https://yoursite.com --view`.
 -  Get [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci#lighthouse-ci) running with
    your project.
--  Review the [Lighthouse audit documentation](https://web.dev/learn/#lighthouse).
+-  Review the [Lighthouse audit documentation](/learn/#lighthouse).
 -  Have fun making the web better!
 
 We're passionate about the web and we love working with the developer community to build tooling to

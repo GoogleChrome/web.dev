@@ -16,7 +16,7 @@ tags:
 {% Aside %}
 
 Summary: Maintaining a consistent width-to-height ratio, called an *aspect ratio*, is critical in
-responsive web design and for preventing [cumulative layout shift](https://web.dev/cls/). Now,
+responsive web design and for preventing [cumulative layout shift](/cls/). Now,
 there's a more straightforward way to do this with the new `aspect-ratio` property launching in
 [Chromium 88](https://www.chromestatus.com/feature/5738050678161408), [Firefox
 87](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Experimental_features#property_aspect-ratio), and [Safari Technology Preview
@@ -241,7 +241,7 @@ img {
 
 ### Bonus tip: image attributes for aspect ratio
 
-Another way to set an image's aspect ratio is through [image attributes](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/). If you know the dimensions of the image ahead of time, it is a [best practice](https://web.dev/image-aspect-ratio/#check-the-image's-width-and-height-attributes-in-the-html) to
+Another way to set an image's aspect ratio is through [image attributes](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/). If you know the dimensions of the image ahead of time, it is a [best practice](/image-aspect-ratio/#check-the-image's-width-and-height-attributes-in-the-html) to
 set these dimensions as its `width` and `height`.
 
 For our example above, knowing the dimensions are 800px by 600px, the image markup would look like: `<img src="image.jpg"

@@ -14,9 +14,9 @@ Thanks for letting us know! Please [file an issue](https://github.com/GoogleChro
 ## Authoring content ✍️
 
 Before you start writing take a moment to look over the [web.dev
-handbook](https://web.dev/handbook) and familiarize yourself with the process.
+handbook](/handbook) and familiarize yourself with the process.
 When you're ready, follow the steps in the
-[Quickstart](https://web.dev/handbook/quick-start/) to create your content
+[Quickstart](/handbook/quick-start/) to create your content
 proposal.
 
 ## Building the site 🏗
