@@ -23,14 +23,14 @@ tags:
 [AutoWebPerf](https://github.com/GoogleChromeLabs/AutoWebPerf) (AWP) is a
 modular tool that enables automatic gathering of performance data from multiple
 sources. Currently there are [many tools
-available](https://web.dev/vitals-tools/) to measure website performance for
+available](/vitals-tools/) to measure website performance for
 different scopes ([lab and
-field](https://web.dev/how-to-measure-speed/#lab-data-vs-field-data)), such as
+field](/how-to-measure-speed/#lab-data-vs-field-data)), such as
 Chrome UX Report, PageSpeed Insights, or WebPageTest. AWP offers integration
 with various audit tools with a simple setup so you can continuously monitor the
 site performance in one place.
 
-The release of [Web Vitals](https://web.dev/vitals/) guidance means that close
+The release of [Web Vitals](/vitals/) guidance means that close
 and active monitoring of web pages is becoming increasingly important. The
 engineers behind this tool have been doing performance audits for years and they
 created AWP to automate a manual, recurring, and time consuming part of their
@@ -47,14 +47,14 @@ Although several tools and APIs are available to monitor the performance of web
 pages, most of them expose data measured at a specific time. To adequately
 monitor a website and maintain good performance of key pages, it's recommended
 to continuously take measurements of [Core Web
-Vitals](https://web.dev/vitals/#core-web-vitals) over time and observe trends.
+Vitals](/vitals/#core-web-vitals) over time and observe trends.
 
 AWP makes that easier by providing an engine and pre-built API integrations
 which can be programmatically configured to automate recurrent queries to
 various performance monitoring APIs.
 
 For example, with AWP, you can set a daily test on your home page to capture the
-field data from [CrUX API](https://web.dev/chrome-ux-report-api/) and lab data
+field data from [CrUX API](/chrome-ux-report-api/) and lab data
 from a
 [Lighthouse report from PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/).
 This data can be written and stored over time, for example, in [Google
@@ -82,8 +82,8 @@ Google Sheets).
 AWP comes with a number of pre-implemented gatherers and connectors:
 
 * Pre-implemented gatherers:
-  * [CrUX API](https://web.dev/chrome-ux-report-api/)
-  * [CrUX BigQuery](https://web.dev/chrome-ux-report-bigquery/)
+  * [CrUX API](/chrome-ux-report-api/)
+  * [CrUX BigQuery](/chrome-ux-report-bigquery/)
   * [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started)
   * [WebPageTest API](https://www.webpagetest.org/getkey.php)
 * Pre-implemented connectors:

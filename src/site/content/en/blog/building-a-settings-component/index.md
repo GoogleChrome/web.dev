@@ -194,8 +194,8 @@ want a large gap, but not as large as if we're on a wide screen.
 
 The `grid-template-columns` property uses 3 CSS functions: `repeat()`, `minmax()` and
 `min()`. [Una Kravets](#) has a [great layout blog
-post](https://web.dev/one-line-layouts/) about this, calling it
-[RAM](https://web.dev/one-line-layouts/#07.-ram-(repeat-auto-minmax):-grid-template-columns(auto-fit-minmax(lessbasegreater-1fr))).
+post](/one-line-layouts/) about this, calling it
+[RAM](/one-line-layouts/#07.-ram-(repeat-auto-minmax):-grid-template-columns(auto-fit-minmax(lessbasegreater-1fr))).
 
 There's 3 special additions in our layout, if you compare it to Una's:
 
@@ -433,8 +433,8 @@ a better location:
 ```
 
 Learn all about it in this [`color-scheme`
-article](https://web.dev/color-scheme/) by [Thomas
-Steiner](https://web.dev/authors/thomassteiner/). There's a lot more to gain
+article](/color-scheme/) by [Thomas
+Steiner](/authors/thomassteiner/). There's a lot more to gain
 than dark checkbox inputs!
 
 ### CSS `accent-color`
@@ -677,7 +677,7 @@ is a Level 5 spec addition that
 
 The goal was an easy to manage and animated visual highlight for user feedback.
 By using a box shadow I can avoid [triggering
-layout](https://web.dev/animations-guide/#triggers) with the effect. I do this
+layout](/animations-guide/#triggers) with the effect. I do this
 by creating a shadow that's not blurred and matches the circular shape of the
 thumb element. Then I change and transition it's spread size on hover.
 

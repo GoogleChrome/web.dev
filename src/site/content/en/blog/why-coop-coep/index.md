@@ -24,7 +24,7 @@ feedback:
 ---
 ## Introduction
 In [Making your website "cross-origin isolated" using COOP and
-COEP](https://web.dev/coop-coep/) we explained how to adopt to "cross-origin
+COEP](/coop-coep/) we explained how to adopt to "cross-origin
 isolated" state using COOP and COEP. This is a companion article that explains
 why cross-origin isolation is required to enable powerful features on the browser.
 
@@ -47,7 +47,7 @@ clearer, let's define them:
 ## Background
 
 The web is built on the [same-origin
-policy](https://web.dev/same-origin-policy/): a security feature that restricts
+policy](/same-origin-policy/): a security feature that restricts
 how documents and scripts can interact with resources from another origin. This
 principle restricts the ways websites can access cross-origin resources. For
 example, a document from `https://a.example` is prevented from accessing data
@@ -257,7 +257,7 @@ checking if
 returns `true`.
 
 Learn the steps to implement this at [Making your website "cross-origin
-isolated" using COOP and COEP](https://web.dev/coop-coep/).
+isolated" using COOP and COEP](/coop-coep/).
 
 ## Resources
 * [COOP and COEP

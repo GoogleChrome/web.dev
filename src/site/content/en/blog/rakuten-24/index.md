@@ -24,7 +24,7 @@ one of the largest e-commerce companies in Japan. It provides a wide selection
 of everyday items including grocery, medicine, healthcare, kitchen utensils, and
 more. The team's main goal over the last year was to improve mobile customer
 retention and re-engagement. By making their web app
-[installable](https://web.dev/define-install-strategy/), they saw a 450% jump in
+[installable](/define-install-strategy/), they saw a 450% jump in
 visitor retention rate as compared to the previous mobile web flow over a
 1-month timeframe.
 
@@ -46,8 +46,8 @@ identified the following areas of opportunities:
 ### Installability {: #installability }
 
 To capture the two opportunities identified above, Rakuten 24 decided to build
-[Progressive Web App](https://web.dev/pwa) (PWA) features on an incremental
-basis, starting with [installability](https://web.dev/define-install-strategy/).
+[Progressive Web App](/pwa) (PWA) features on an incremental
+basis, starting with [installability](/define-install-strategy/).
 Implementing installability resulted in increased traffic, visitor retention,
 sales per customer, and conversions.
 
@@ -78,14 +78,14 @@ The Rakuten 24 team used
 [workbox-webpack-plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin)
 to be precise) to ensure their PWA worked well even when the user was offline or
 on a bad network.  Workbox's APIs for controlling
-[the cache](https://web.dev/service-workers-cache-storage/#the-cache-storage-api)
+[the cache](/service-workers-cache-storage/#the-cache-storage-api)
 worked significantly better than Rakuten 24's previous in-house script.
 Moreover, with workbox-webpack-plugin (and Babel), was able to automate the
 process of supporting a wider range of browsers. To further build network
 resilience, they implemented a
 [cache-first strategy](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker)
 for their CSS and JS assets, and used
-[stale-while-revalidate](https://web.dev/stale-while-revalidate/) for their
+[stale-while-revalidate](/stale-while-revalidate/) for their
 images that don't change frequently.
 
 ## Overall business results {: #results }
@@ -134,5 +134,5 @@ images that don't change frequently.
   (A2HS).
 {% endAside %}
 
-Check out the [Scale on web case studies](https://web.dev/scale-on-web) page for
+Check out the [Scale on web case studies](/scale-on-web) page for
 more success stories from India and Asia.

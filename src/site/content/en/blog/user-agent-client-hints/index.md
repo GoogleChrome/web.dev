@@ -417,7 +417,7 @@ or `navigator.platform`) to make use of User-Agent Client Hints instead.
 Taking this a step further, you should re-examine your use of User-Agent
 information, and replace it with other methods whenever possible. Often, you can
 accomplish the same goal by making use of progressive enhancement, feature
-detection, or [responsive design](https://web.dev/responsive-web-design-basics).
+detection, or [responsive design](/responsive-web-design-basics).
 The base problem with relying on the User-Agent data is that you are always
 maintaining a mapping between the property you're inspecting and the behavior it
 enables. It's a maintenance overhead to ensure that your detection is

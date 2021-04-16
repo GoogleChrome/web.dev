@@ -136,7 +136,7 @@ The decision to scale compute resources should be made carefully. Although it is
 
 #### Diagnose
 
-A high [Time To First Byte](https://web.dev/time-to-first-byte/) (TTFB) can be a sign that a server is nearing its capacity. You can find this information in the Lighthouse [Reduce server response times (TTFB)](https://developers.google.com/web/tools/lighthouse/audits/ttfb) audit.
+A high [Time To First Byte](/time-to-first-byte/) (TTFB) can be a sign that a server is nearing its capacity. You can find this information in the Lighthouse [Reduce server response times (TTFB)](https://developers.google.com/web/tools/lighthouse/audits/ttfb) audit.
 
 To investigate further, use a monitoring tool to assess CPU usage. If current or anticipated CPU usage exceeds 80% you should consider increasing your servers.
 
@@ -177,9 +177,9 @@ Lighthouse has a variety of audits that flag potential image optimizations. Alte
 Relevant Lighthouse audits:
 *   [Properly size images](https://developers.google.com/web/tools/lighthouse/audits/oversized-images)
 *   [Defer offscreen images](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images)
-*   [Efficiently encode images](https://web.dev/uses-optimized-images/)
+*   [Efficiently encode images](/uses-optimized-images/)
 *   [Serve images in next-gen formats](https://developers.google.com/web/tools/lighthouse/audits/webp)
-*   [Use video formats for animated content](https://web.dev/efficient-animated-content/)
+*   [Use video formats for animated content](/efficient-animated-content/)
 
 Chrome DevTools workflow:
 - [Log network activity](https://developers.google.com/web/tools/chrome-devtools/network#load)
@@ -195,14 +195,14 @@ Focus your time on Identifying large and frequently loaded images and manually o
 Things to keep in mind:
 *   Size: Images should be no larger than necessary.
 *   Compression: Generally speaking, a quality level of 80-85 will have a minimal effect on image quality while yielding a 30-40% reduction in file size.
-*   Format: Use JPEGs for photos rather than PNG; use MP4 for [animated content](https://web.dev/replace-gifs-with-videos/) rather than GIF.
+*   Format: Use JPEGs for photos rather than PNG; use MP4 for [animated content](/replace-gifs-with-videos/) rather than GIF.
 
 *If you have more time…*
 
 Consider setting up an image CDN if images make up a substantial portion of your site. Image CDNs are designed for serving and optimizing images and they will offload image serving from the origin server. Setting up an image CDN is straightforward but requires updating existing image URLs to point at the image CDN.
 
 Further reading:
-*   [Use image CDNs to optimize images](https://web.dev/image-cdns/#optimize-your-images)
+*   [Use image CDNs to optimize images](/image-cdns/#optimize-your-images)
 *   [images.guide](https://images.guide/)
 
 
@@ -212,13 +212,13 @@ Minification removes unnecessary characters from JavaScript and CSS.
 
 #### Diagnose
 
-Use the [Minify CSS](https://developers.google.com/web/tools/lighthouse/audits/minify-css) and [Minify JavaScript](https://web.dev/unminified-javascript/) Lighthouse audits to identify resources that are in need of minification.
+Use the [Minify CSS](https://developers.google.com/web/tools/lighthouse/audits/minify-css) and [Minify JavaScript](/unminified-javascript/) Lighthouse audits to identify resources that are in need of minification.
 
 #### Fix
 
 If you have limited time, focus on minifying your JavaScript. Most sites have more JavaScript than CSS, so this will be more impactful.
-*   [Minify JavaScript](https://web.dev/reduce-network-payloads-using-text-compression/)
-*   [Minify CSS](https://web.dev/minify-css/)
+*   [Minify JavaScript](/reduce-network-payloads-using-text-compression/)
+*   [Minify CSS](/minify-css/)
 
 
 ## Monitor

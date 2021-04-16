@@ -26,7 +26,7 @@ Observer&nbsp;v1 that is embedded below.
 You can also read Surma's in-depth
 [article](https://developers.google.com/web/updates/2016/04/intersectionobserver).
 People have used Intersection Observer&nbsp;v1 for a wide range of use cases like
-[lazy loading of images and videos](https://web.dev/fast/#lazy-load-images-and-video),
+[lazy loading of images and videos](/fast/#lazy-load-images-and-video),
 [being notified when elements reach `position: sticky`](https://developers.google.com/web/updates/2017/09/sticky-headers),
 [firing analytics events](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/visibility-manager.js),
 and many more.

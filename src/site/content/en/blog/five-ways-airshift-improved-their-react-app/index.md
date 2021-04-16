@@ -152,7 +152,7 @@ a 1 second total reduction in scripting time.
 
 AirSHIFT has a built-in chat application. Many store owners communicate with their staff members via the chat while looking at the shift table, which means that a user might be typing a message while the table is loading. If the main thread is occupied with scripts that are rendering the table, user input could be janky.
 
-To improve this experience, AirSHIFT now uses [React.lazy and Suspense](https://web.dev/code-splitting-suspense/) to show placeholders for table contents while lazily loading the actual components.
+To improve this experience, AirSHIFT now uses [React.lazy and Suspense](/code-splitting-suspense/) to show placeholders for table contents while lazily loading the actual components.
 
 The AirSHIFT team also migrated some of the expensive business logic
 within the lazily loaded components to
@@ -256,7 +256,7 @@ via Elasticsearch when they exceed their budget.
 </figure>
 
 {% Aside %}
-Related article: [Performance budgets 101](https://web.dev/performance-budgets-101)
+Related article: [Performance budgets 101](/performance-budgets-101)
 {% endAside %}
 
 ### Results

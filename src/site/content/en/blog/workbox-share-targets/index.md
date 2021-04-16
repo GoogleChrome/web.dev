@@ -20,7 +20,7 @@ feedback:
   - api
 ---
 
-The [Web Share Target API](https://web.dev/web-share-target/) lets you display
+The [Web Share Target API](/web-share-target/) lets you display
 your [Progressive Web App](https://developers.google.com/web/progressive-web-apps/checklist) in a
 user's system-level share [sheet] after it's been installed. While it works great if you have a server
 available to receive the request, it's much harder to get working if you don't.
@@ -42,7 +42,7 @@ single-page apps serve as share targets without a dedicated server endpoint.
 ## On the same page
 
 If you're unfamiliar with how Web Share Target Works, [Receiving shared data with the Web Share
-Target API](https://web.dev/web-share-target/) gives you an in-depth introduction.
+Target API](/web-share-target/) gives you an in-depth introduction.
 Here's a quick review.
 
 There are two parts to implementing web share target functionality. First,
@@ -125,7 +125,7 @@ code](https://github.com/chromeos/bridging-the-native-app-gap/blob/master/fugu-j
 
 One common thing you might do is hold shared resources until better network
 connections are available. Workbox also supports [periodic background
-sync](https://web.dev/periodic-background-sync/).
+sync](/periodic-background-sync/).
 
 ## Conclusion
 

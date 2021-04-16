@@ -217,7 +217,7 @@ clusters.
 ## Origin-keying is not a security feature
 
 While using an origin-keyed agent cluster does isolate your origin from synchronous access from
-same-site cross-origin pages, it does not give the [protection](https://web.dev/why-coop-coep/) of
+same-site cross-origin pages, it does not give the [protection](/why-coop-coep/) of
 security-related headers like
 [`Cross-Origin-Resource-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))
 and

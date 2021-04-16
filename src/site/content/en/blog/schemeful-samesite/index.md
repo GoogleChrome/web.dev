@@ -36,7 +36,7 @@ Same-Site](https://mikewest.github.io/cookie-incrementalism/draft-west-cookie-in
 modifies the definition of a (web)site from just the registrable domain to the
 scheme + registrable domain. You can find more details and examples in
 [Understanding "same-site" and
-"same-origin"](https://web.dev/same-site-same-origin/#%22schemeful-same-site%22).
+"same-origin"](/same-site-same-origin/#%22schemeful-same-site%22).
 
 {% Aside 'key-term' %}
 This means that the insecure HTTP version of a site, for example,

@@ -402,7 +402,7 @@ simplified events aligned with the
 [Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API).
 Because of potential risks Chrome is
 treading carefully. To stay up to date on Chrome's progress, watch this article
-and our [blog](https://web.dev/blog/) for updates.
+and our [blog](/blog/) for updates.
 
 For now, support for the Clipboard API is available in
 [a number of browsers](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard#Browser_compatibility).

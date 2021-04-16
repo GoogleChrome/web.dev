@@ -62,7 +62,7 @@ Browsers that implement CORS check with target
 resources whether they are okay being loaded from a different origin. This is
 accomplished either with extra headers inline describing the access or by using
 a mechanism called preflight requests, depending on the complexity. Read [Cross
-Origin Resource Sharing](https://web.dev/cross-origin-resource-sharing/)
+Origin Resource Sharing](/cross-origin-resource-sharing/)
 to learn more.
 
 With [CORS-RFC1918](https://wicg.github.io/cors-rfc1918/) the browser will block
