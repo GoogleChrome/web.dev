@@ -109,7 +109,7 @@ topic in-depth.
 The short version is that the browser runs all the pieces of code in sort of an infinite loop, by
 taking them from the queue one by one. When some event is triggered, the browser queues the
 corresponding handler, and on the next loop iteration it's taken out from the queue and executed.
-This mechanism allows to simulate concurrency and run lots of parallel operations while still using
+This mechanism allows simulating concurrency and running lots of parallel operations while using only
 a single thread.
 
 The important thing to remember about this mechanism is that, while your custom JavaScript (or
@@ -232,8 +232,8 @@ call `async_sleep()` anywhere you want just like regular `sleep()` or any other 
 
 When compiling such code, you need to tell Emscripten to activate the Asyncify feature. Do that by
 passing `-s ASYNCIFY` as well as [`-s ASYNCIFY_IMPORTS=[func1,
-func2]`](https://emscripten.org/docs/porting/asyncify.html#more-on-asyncify-imports) with a
-comma-separated list of functions that might be asynchronous.
+func2]`](https://emscripten.org/docs/porting/asyncify.html#more-on-asyncify-imports) with an
+array-like list of functions that might be asynchronous.
 
 ```shell
 emcc -O2 \
@@ -258,7 +258,7 @@ Asyncify](https://emscripten.org/docs/porting/asyncify.html#returning-values) fu
 you need to do is return the result of `handleSleep()`, and pass the result to the `wakeUp()`
 callback. For example, if, instead of reading from a file, you want to fetch a number from a remote
 resource, you can use a snippet like the one below to issue a request, suspend the C code, and
-resume once the response body is retrieved—all done seamlessly as if the call was synchronous.
+resume once the response body is retrieved—all done seamlessly as if the call were synchronous.
 
 ```js
 EM_JS(int, get_answer, (), {
