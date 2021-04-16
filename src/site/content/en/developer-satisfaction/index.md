@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Web Developer Satisfaction
-description: 
-  Web Developer Satisfaction is a Google project to gather information about 
-  the needs of web developers. The goal is a more reliable, predictable and 
-  interoperable web platform, enabling developers to invest in and trust it, 
+description:
+  Web Developer Satisfaction is a Google project to gather information about
+  the needs of web developers. The goal is a more reliable, predictable and
+  interoperable web platform, enabling developers to invest in and trust it,
   and adopt and use new features to grow the platform and their business.
 date: 2021-03-22
 updated: 2021-03-23
@@ -35,7 +35,7 @@ is called [#Compat2021](https://twitter.com/search?q=%23compat2021&src=typed_que
 You can follow along with the process in the Compat 2021 dashboard to see how
 each major browser engine is doing in the five areas:
 
-<iframe src="https://wpt.fyi/compat2021?embedded" 
+<iframe src="https://wpt.fyi/compat2021?embedded"
 frameborder="0" style="height: 1000px; width: 100%;"></iframe>
 
 The dashboard and all related bugs are listed at
@@ -57,7 +57,7 @@ compatibility pain points on the web](/compat2021).
 
 Follow any updates on [@ChromiumDev](https://twitter.com/ChromiumDev) or through
 the [Compat 2021 public mailing list](https://groups.google.com/g/compat2021).
-Make sure bugs exist, or [file them](https://web.dev/how-to-file-a-good-bug/)
+Make sure bugs exist, or [file them](/how-to-file-a-good-bug/)
 for issues you have been experiencing, and if there's anything missing, reach
 out through the above channels.
 

@@ -158,7 +158,7 @@ Try tabbing through the focusable elements in the demo below. You'll notice that
 Here are the new queries we think developers will be most excited about:
 
 *   [prefers-reduced-motion](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion)
-*   [prefers-color-scheme](https://web.dev/prefers-color-scheme/)
+*   [prefers-color-scheme](/prefers-color-scheme/)
 *   [prefers-contrast](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast)
 *   [prefers-reduced-transparency](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-transparency)
 *   [forced-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors)
@@ -261,7 +261,7 @@ For example, this demo uses `backdrop-filter` to achieve OS-style blurring:
   (<a href='https://codepen.io/una'>@una</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-We already have a [great post about `backdrop-filter`](https://web.dev/backdrop-filter/), so head there for more info.
+We already have a [great post about `backdrop-filter`](/backdrop-filter/), so head there for more info.
 
 ## `:is()`
 

@@ -30,8 +30,8 @@ monitor performance and apply optimizations across different parts of the site.
 This article summarizes the work done by [Guille Paz](https://twitter.com/pazguille), [Pablo
 Carminatti](https://www.linkedin.com/in/pcarminatti/), and [Oleh
 Burkhay](https://twitter.com/oburkhay) from Mercado Libre's frontend architecture team to optimize
-one of the Core Web Vitals: [First Input Delay (FID)](https://web.dev/fid/) and its lab proxy,
-[Total Blocking Time (TBT)](https://web.dev/tbt/).
+one of the Core Web Vitals: [First Input Delay (FID)](/fid/) and its lab proxy,
+[Total Blocking Time (TBT)](/tbt/).
 
 <div class="w-stats">
   <div class="w-stat">
@@ -46,7 +46,7 @@ one of the Core Web Vitals: [First Input Delay (FID)](https://web.dev/fid/) and 
 
 ## Long tasks, First Input Delay, and Total Blocking Time
 
-Running expensive Javascript code can lead to [long tasks](https://web.dev/long-tasks-devtools/),
+Running expensive Javascript code can lead to [long tasks](/long-tasks-devtools/),
 which are those that run for more than **50ms** in the browser's main thread.
 
 FID (First Input Delay) measures the time from when a user first interacts with a page (e.g. when
@@ -83,7 +83,7 @@ optimization, without interfering with valuable functionality.
 ## Measure interactivity of product detail pages
 
 FID requires a real user and thus cannot be measured in the lab. However, the [Total Blocking Time
-(TBT)](https://web.dev/tbt/) metric is lab-measurable, correlates well with FID in the field, and
+(TBT)](/tbt/) metric is lab-measurable, correlates well with FID in the field, and
 also captures issues that affect interactivity.
 
 In the following trace, for example, while the **total time** spent running tasks on the main thread
@@ -101,12 +101,12 @@ Here's the general approach they took:
   the main thread busy on a real device.
 - Use [Lighthouse](https://developers.google.com/web/tools/lighthouse) to determine the impact of
   the changes in [Max Potential First Input Delay (Max Potential
-  FID)](https://web.dev/lighthouse-max-potential-fid/).
+  FID)](/lighthouse-max-potential-fid/).
 
 {% Aside %} During this project Mercado Libre used [Max Potential
-FID](https://web.dev/lighthouse-max-potential-fid/) in Lighthouse because that was the tool's main
+FID](/lighthouse-max-potential-fid/) in Lighthouse because that was the tool's main
 metric for measuring interactivity at that time. Lighthouse now recommends using [Total Blocking
-Time](https://web.dev/tbt/) instead. {% endAside %}
+Time](/tbt/) instead. {% endAside %}
 
 ## Use WebPageTest to visualize long tasks
 
@@ -223,7 +223,7 @@ Based on that information they decided to implement the following changes:
 
 - Continue reducing the main bundle size to optimize compile and parse time (e.g. by removing
   duplicate dependencies throughout the different modules).
-- Apply [code splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting/) at
+- Apply [code splitting](/reduce-javascript-payloads-with-code-splitting/) at
   component level, to divide JavaScript in smaller chunks and allow for smarter loading of the
   different components.
 - Defer [component
@@ -254,9 +254,9 @@ The [Chrome User Experience
 Report](https://developers.google.com/web/tools/chrome-user-experience-report) provides user
 experience metrics for how real-world Chrome users experience popular destinations on the web. The
 data from the report can be obtained by [running queries in
-BigQuery](https://web.dev/chrome-ux-report-bigquery/),
+BigQuery](/chrome-ux-report-bigquery/),
 [PageSpeedInsights](https://developers.google.com/speed/pagespeed/insights/), or the [CrUX
-API](https://web.dev/chrome-ux-report-api/).
+API](/chrome-ux-report-api/).
 
 The [CrUX
 dashboard](https://datastudio.google.com/c/datasources/create?connectorId=AKfycbxk7u2UtsqzgaA7I0bvkaJbBPannEx0_zmeCsGh9bBZy7wFMLrQ8x24WxpBzk_ln2i7)
@@ -273,7 +273,7 @@ is an easy way to visualize the progress of core metrics:
 
 Web performance is never a finished task, and Mercado Libre understands the value these
 optimizations bring to their users. While they continue applying several optimizations across the
-site, including [prefetching](https://web.dev/instant-navigation-experiences/#production-cases) in
+site, including [prefetching](/instant-navigation-experiences/#production-cases) in
 product listing pages, image optimizations, and others, they continue adding improvements to product
 listing pages to reduce Total Blocking Time (TBT), and by proxy FID, even more. These optimizations
 include:
@@ -285,5 +285,5 @@ include:
 
 Mercado Libre has a holistic view of performance, so while they continue optimizing interactivity in
 the site, they have also started assessing opportunities for improvement on the other two current
-[Core Web Vitals](https://web.dev/vitals/): [LCP (Largest Contentful Paint)](https://web.dev/lcp/)
-and [CLS (Cumulative Layout Shift)](https://web.dev/cls/) even more.
+[Core Web Vitals](/vitals/): [LCP (Largest Contentful Paint)](/lcp/)
+and [CLS (Cumulative Layout Shift)](/cls/) even more.

@@ -345,7 +345,7 @@ Your origin is given a certain amount of free space to do what it wants with. Th
 shared between all origin storage:
 [(local) Storage](https://developer.mozilla.org/en-US/docs/Web/API/Storage),
 [IndexedDB](https://developer.mozilla.org/en-US/docs/Glossary/IndexedDB),
-[File System Access](https://web.dev/file-system-access/), and of course
+[File System Access](/file-system-access/), and of course
 [Caches](https://developer.mozilla.org/en-US/docs/Web/API/Cache).
 
 The amount you get isn't spec'd. It will differ depending on device and storage conditions. You can

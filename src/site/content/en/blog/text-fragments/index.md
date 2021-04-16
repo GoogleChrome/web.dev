@@ -26,7 +26,7 @@ feedback:
 ## Fragment Identifiers
 
 Chrome&nbsp;80 was a big release. It contained a number of highly anticipated features like
-[ECMAScript Modules in Web Workers](https://web.dev/module-workers/),
+[ECMAScript Modules in Web Workers](/module-workers/),
 [nullish coalescing](https://v8.dev/features/nullish-coalescing),
 [optional chaining](https://v8.dev/features/optional-chaining), and more. The release was, as usual,
 announced through a

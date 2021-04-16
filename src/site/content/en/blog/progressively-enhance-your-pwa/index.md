@@ -35,7 +35,7 @@ and technically rigorous layers of presentation and features on top of the conte
 While in 2003, progressive enhancement was about using—at the time—modern
 CSS features, unobtrusive JavaScript, and even just Scalable Vector Graphics.
 Progressive enhancement in 2020 and beyond is about using
-[modern browser capabilities](https://web.dev/fugu-status/).
+[modern browser capabilities](/fugu-status/).
 
 <figure class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IEOd4MT9BqnbeXQ7z0vC.png", alt="Inclusive web design for the future with progressive enhancement. Title slide from Finck and Champeon's original presentation.", width="800", height="597", class="w-screenshot" %}
@@ -111,13 +111,13 @@ For this article, I work with a simple PWA, called
 The name of this app is a tip of the hat to Project Fugu 🐡, an effort to give the web all
 the powers of Android/iOS/desktop applications.
 You can read more about the project on its
-[landing page](https://web.dev/fugu-status).
+[landing page](/fugu-status).
 
 Fugu Greetings is a drawing app that lets you create virtual greeting cards, and send
 them to your loved ones. It exemplifies
-[PWA's core concepts](https://web.dev/progressive-web-apps/). It's
-[reliable](https://web.dev/reliable/) and fully offline enabled, so even if you don't
-have a network, you can still use it. It's also [Installable](https://web.dev/install-criteria/)
+[PWA's core concepts](/progressive-web-apps/). It's
+[reliable](/reliable/) and fully offline enabled, so even if you don't
+have a network, you can still use it. It's also [Installable](/install-criteria/)
 to a device's home screen and integrates seamlessly with the operating system
 as a stand-alone application.
 
@@ -215,7 +215,7 @@ and has put it straight into your Downloads folder. This isn't great.
 What if there were a better way?
 What if you could just open a local file, edit it, and then save the modifications,
 either to a new file, or back to the original file that you had initially opened?
-Turns out there is. The [File System Access API](https://web.dev/file-system-access/)
+Turns out there is. The [File System Access API](/file-system-access/)
 allows you to open and create files and
 directories, as well as modify and save them .
 
@@ -365,8 +365,8 @@ Now the file is ready to be preserved for eternity.
 ## The Web Share and Web Share Target APIs
 
 Apart from storing for eternity, maybe I actually want to share my greeting card.
-This is something that the [Web Share API](https://web.dev/web-share/) and
-[Web Share Target API](https://web.dev/web-share-target/) allow me to do.
+This is something that the [Web Share API](/web-share/) and
+[Web Share Target API](/web-share-target/) allow me to do.
 Mobile, and more recently desktop operating systems have gained built-in sharing
 mechanisms.
 For example, below is desktop Safari's share sheet on macOS triggered from an article on
@@ -472,7 +472,7 @@ When you write a greeting card, it may not always be easy to correctly write
 someone's name.
 For example, I have a friend Sergey who prefers his name to be spelled in Cyrillic letters. I'm
 using a German QWERTZ keyboard and have no idea how to type their name.
-This is a problem that the [Contact Picker API](https://web.dev/contact-picker/) can solve.
+This is a problem that the [Contact Picker API](/contact-picker/) can solve.
 Since I have my friend stored in my phone's contacts app,
 via the Contacts Picker API, I can tap into my contacts from the web.
 
@@ -537,7 +537,7 @@ As a greeting card author, at times, I may want to do the same.
 I may want to either paste an image into a greeting card I'm working on,
 or copy my greeting card so I can continue editing it from
 somewhere else.
-The [Async Clipboard API](https://web.dev/image-support-for-async-clipboard/),
+The [Async Clipboard API](/image-support-for-async-clipboard/),
 supports both text and images.
 Let me walk you through how I added copy and paste support to the Fugu
 Greetings app.
@@ -627,7 +627,7 @@ the greeting card gets pasted into a new untitled image.
 
 ## The Badging API
 
-Another useful API is the [Badging API](https://web.dev/badging-api/).
+Another useful API is the [Badging API](/badging-api/).
 As an installable PWA, Fugu Greetings of course does have an app icon
 that users can place on the app dock or the home screen.
 A fun and easy way to demonstrate the API is to (ab)use it in Fugu Greetings
@@ -680,7 +680,7 @@ The badge counter on the icon is now at seven.
 Want to start each day fresh with something new?
 A neat feature of the Fugu Greetings app is that it can inspire you each morning
 with a new background image to start your greeting card.
-The app uses the [Periodic Background Sync API](https://web.dev/periodic-background-sync/)
+The app uses the [Periodic Background Sync API](/periodic-background-sync/)
 to achieve this.
 
 The first step is to *register* a periodic sync event in the service worker registration.
@@ -765,7 +765,7 @@ that is updated every day via the Periodic Background Sync API.
 
 Sometimes even with a lot of inspiration, you need a nudge to finish a started greeting
 card.
-This is a feature that is enabled by the [Notification Triggers API](https://web.dev/notification-triggers/).
+This is a feature that is enabled by the [Notification Triggers API](/notification-triggers/).
 As a user, I can enter a time when I want to be nudged to finish my greeting card.
 When that time comes, I will get a notification that my greeting card is waiting.
 
@@ -818,7 +818,7 @@ it didn't require a network connection.
 
 ## The Wake Lock API
 
-I also want to include the [Wake Lock API](https://web.dev/wakelock/).
+I also want to include the [Wake Lock API](/wakelock/).
 Sometimes you just need to stare long enough at the screen until inspiration
 kisses you.
 The worst that can happen then is for the screen to turn off.
@@ -872,7 +872,7 @@ screen awake.
 
 At times, even if you stare at the screen for hours,
 it's just useless and you can't come up with the slightest idea what to do with your greeting card.
-The [Idle Detection API](https://web.dev/idle-detection/) allows the app to detect user idle time.
+The [Idle Detection API](/idle-detection/) allows the app to detect user idle time.
 If the user is idle for too long, the app resets to the initial state
 and clears the canvas.
 This API is currently gated behind the

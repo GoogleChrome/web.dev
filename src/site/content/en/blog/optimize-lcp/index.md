@@ -272,9 +272,9 @@ blocking JavaScript results in a faster render, and consequently a better LCP.
 
 This can be accomplished by optimizing your scripts in a few different ways:
 
-- [Minify and compress JavaScript files](https://web.dev/reduce-network-payloads-using-text-compression/)
-- [Defer unused JavaScript](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
-- [Minimize unused polyfills](https://web.dev/serve-modern-code-to-modern-browsers/)
+- [Minify and compress JavaScript files](/reduce-network-payloads-using-text-compression/)
+- [Defer unused JavaScript](/reduce-javascript-payloads-with-code-splitting/)
+- [Minimize unused polyfills](/serve-modern-code-to-modern-browsers/)
 
 {% Aside %}
 The [Optimize First Input Delay](/optimize-fid/) guide covers all techniques needed to reduce

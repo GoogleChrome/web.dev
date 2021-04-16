@@ -66,7 +66,7 @@ to assistive technology users:
 Using the [clip pattern](https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/) you can hide the inner text on screen, but still have it announced by assistive technology. This can be especially handy if you translate your pages for localization.
 
 ```html
-<a href="https://web.dev/accessible">Learn more <span class="visually-hidden">about accessibility on web.dev</span></a>
+<a href="/accessible">Learn more <span class="visually-hidden">about accessibility on web.dev</span></a>
 ```
 
 ### Option 2: Add an `aria-label` attribute to the element
