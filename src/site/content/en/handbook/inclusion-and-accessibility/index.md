@@ -82,7 +82,7 @@ To be more gender inclusive, use _they/them_ for singular personal pronouns inst
 {% endCompare %}
 
 ## Writing for an international audience
-Avoid idioms. If non-native speakers aren't familiar with the idiom, they may be confused. Also, idioms are often lost in translation.
+Avoid idioms. If speakers whose first language isn't English aren't familiar with the idiom, they may be confused. Also, idioms are often lost in translation.
 
 {% Compare 'worse', 'Don\'t' %}
 > The sample app should work now. Give it a shot!

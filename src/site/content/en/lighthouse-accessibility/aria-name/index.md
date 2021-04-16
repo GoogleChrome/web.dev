@@ -45,7 +45,7 @@ that have any of the following ARIA roles but don't have accessible names will c
 | `aria-tooltip-name` | `tooltip` |
 | `aria-treeitem-name` | `treeitem` |
 
-{% include 'content/lighthouse-accessibility/use-native.njk' %}
+{% include 'content/lighthouse-accessibility/use-built-in.njk' %}
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

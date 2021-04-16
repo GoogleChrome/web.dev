@@ -25,9 +25,9 @@ immediately think of keyboards, mice, audio, video, and storage devices. You're
 right but you'll find other kinds of Universal Serial Bus (USB) devices out
 there.
 
-These non-standardized USB devices require hardware vendors to write native
+These non-standardized USB devices require hardware vendors to write platform-specific
 drivers and SDKs in order for you (the developer) to take advantage of them.
-Sadly this native code has historically prevented these devices from being used
+Sadly this platform-specific code has historically prevented these devices from being used
 by the Web. And that's one of the reasons the WebUSB API has been created: to
 provide a way to expose USB device services to the Web. With this API, hardware
 manufacturers will be able to build cross-platform JavaScript SDKs for their
