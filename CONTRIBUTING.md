@@ -3,9 +3,9 @@
 ## Authoring written content on the site
 
 If you plan to write a blog post or a guide for a collection take a moment to
-look over the [web.dev handbook](/handbook) and familiarize
+look over the [web.dev handbook](https://web.dev/handbook) and familiarize
 yourself with the process. When you're ready, follow the steps in the
-[Quickstart](/handbook/quick-start/) to create your content
+[Quickstart](https://web.dev/handbook/quick-start/) to create your content
 proposal.
 
 ## Submitting a pull request
