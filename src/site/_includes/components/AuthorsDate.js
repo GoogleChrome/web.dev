@@ -82,7 +82,7 @@ const renderAuthorImages = (limit, pairs) => {
       });
       return html`
         <div class="w-author__image--row-item">
-          <a href="${info.href}"> ${img} </a>
+          <a href="${info.href}">${img}</a>
         </div>
       `;
     })
@@ -104,7 +104,7 @@ const renderAuthorNames = (pairs) => {
     })
     .join(', ');
 
-  return html` <span class="w-author__name"> ${inner} </span> `;
+  return html` <span class="w-author__name">${inner}</span> `;
 };
 
 /**

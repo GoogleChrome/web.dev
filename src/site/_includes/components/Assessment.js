@@ -184,7 +184,7 @@ function optionContentTemplate(option) {
     return;
   }
   return html`
-    <span data-role="option"> ${md.renderInline(option.content)} </span>
+    <span data-role="option">${md.renderInline(option.content)}</span>
   `;
 }
 
