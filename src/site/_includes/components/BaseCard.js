@@ -75,11 +75,7 @@ class BaseCard {
       },
     });
 
-    return html`
-      <figure class="w-card-base__figure">
-        ${img}
-      </figure>
-    `;
+    return html` <figure class="w-card-base__figure">${img}</figure> `;
   }
 
   renderSubhead(subhead) {
@@ -89,9 +85,7 @@ class BaseCard {
 
     return html`
       <a class="w-card-base__link" tabindex="-1" href="${this.url}">
-        <p class="w-card-base__subhead">
-          ${md(subhead)}
-        </p>
+        <p class="w-card-base__subhead">${md(subhead)}</p>
       </a>
     `;
   }
