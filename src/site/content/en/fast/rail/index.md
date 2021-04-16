@@ -219,7 +219,7 @@ Be aware that these targets may change over time.
 
 * You don't have to load everything in under 5 seconds to produce the perception
   of a complete load. Consider [lazy-loading
-  images](https://web.dev/native-lazy-loading/), [code-splitting JavaScript
+  images](https://web.dev/browser-level-image-lazy-loading/), [code-splitting JavaScript
   bundles](https://web.dev/reduce-javascript-payloads-with-code-splitting/), and
   other [optimizations suggested on web.dev](https://web.dev/fast/).
 

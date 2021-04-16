@@ -346,7 +346,7 @@ Note how on iPhone the **Save As** button is missing.
 
 ## Conclusions
 
-Working with native files technically works on all modern browsers.
+Working with system files technically works on all modern browsers.
 On browsers that support the File System Access API, you can make the experience better by allowing
 for true saving and overwriting (not just downloading) of files and
 by letting your users create new files wherever they want,

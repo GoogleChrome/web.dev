@@ -248,7 +248,7 @@ Other storage mechanisms than files are referenced in the [offline content](#off
   For security reasons, system directories are not web-accessible.
 {% endDetails %}
 
-## iOS look and feel
+## Platform look and feel
 
 There is a more subtle thing that is self-evident for an iOS application like Podcasts: none of the text labels are selectable and all text blends in with the system font of the machine. Also my choice of system color theme (dark mode) is respected.
 
@@ -597,7 +597,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td><a href="#native-look-and-feel">Native look and feel</a></td>
+        <td><a href="#platform-look-and-feel">Platform look and feel</a></td>
         <td>
           <ul>
             <li>

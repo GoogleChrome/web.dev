@@ -621,8 +621,8 @@ the value.
 post](https://css-tricks.com/sliding-nightmare-understanding-range-input/) on
 [CSS-Tricks](https://css-tricks.com/) by [Ana
 Tudor](https://twitter.com/anatudor), that demonstrates a CSS only solution for
-track fill. I also found this [Native UI
-range](https://app.native-elements.dev/editor/elements/range) very inspiring.
+track fill. I also found this
+[`range` element](https://app.native-elements.dev/editor/elements/range) very inspiring.
 
 ### Thumb styles
 

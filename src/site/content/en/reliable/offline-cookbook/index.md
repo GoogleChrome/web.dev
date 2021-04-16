@@ -36,7 +36,7 @@ is still running and serving pages, so the things you do here mustn't disrupt th
 "version" of your site.
 
 These are things that would make your site entirely non-functional if they failed to be fetched, things
-an equivalent native-app would make part of the initial download.
+an equivalent platform-specific app would make part of the initial download.
 
 ```js
 self.addEventListener('install', function (event) {
@@ -385,7 +385,7 @@ can now expect them to be in control of deletion. If their device comes under st
 clearing non-essential data doesn't solve it, the user gets to judge which items to keep and
 remove.
 
-For this to work, it requires operating systems to treat "durable" origins as equivalent to native
+For this to work, it requires operating systems to treat "durable" origins as equivalent to platform-specific
 apps in their breakdowns of storage usage, rather than reporting the browser as a single item.
 
 ## Serving Suggestions—responding to requests {: #serving-suggestions }

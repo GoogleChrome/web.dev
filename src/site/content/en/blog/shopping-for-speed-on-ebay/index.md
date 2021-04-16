@@ -85,7 +85,7 @@ critical](https://web.dev/extract-critical-css/) than something below-the-fold. 
 are aware of this, but what about services? eBay's service architecture has a layer called
 [Experience
 Services](https://tech.ebayinc.com/engineering/experience-services-ebays-solution-to-multi-screen-application-development/),
-which the frontends (native apps and web servers) talk to.
+which the frontends (platform-specific apps and web servers) talk to.
 This layer is specifically designed to be view- or device-based, rather than entity-based like item,
 user, or order. eBay then introduced the concept of the critical path for Experience Services.
 When a request comes to these services, they work on getting the data for above-the-fold
