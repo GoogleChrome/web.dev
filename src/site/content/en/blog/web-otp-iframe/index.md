@@ -179,8 +179,8 @@ origin, the keyboard suggests to enter the OTP to the input field.
 
 As of April 2021, Safari supports iframe with [a unique SMS format using
 `%`](https://github.com/WICG/sms-one-time-codes/issues/4#issuecomment-709557866).
-However, as the spec discussion concluded to go with `@` instead, we expect they
-will support the same SMS format in future releases.
+However, as the spec discussion concluded to go with `@` instead, we hope the
+implementation of supported SMS format will converge.
 
 ## Feedback
 
