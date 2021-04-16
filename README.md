@@ -100,7 +100,7 @@ eye out for the netlify bot to comment on the pull request with your unique URL.
 
 ### Automatic deploys
 
-The site will build and deploy the master branch automatically every hour,
+The site will build and deploy the main branch automatically every hour,
 Mon-Fri. If you've just merged an article then it should go live at the top
 of the next hour.
 
