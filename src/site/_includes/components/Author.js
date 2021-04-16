@@ -40,6 +40,11 @@ module.exports = ({id, author, showSocialMedia = false, small = false}) => {
     width: '64',
     height: '64',
     class: `w-author__image${small ? ' w-author__image--small' : ''}`,
+    params: {
+      fit: 'crop',
+      h: '64',
+      w: '64',
+    },
   });
   return html`
     <div class="w-author">

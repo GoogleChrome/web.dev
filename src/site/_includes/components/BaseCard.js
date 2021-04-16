@@ -68,6 +68,11 @@ class BaseCard {
       height: '240',
       width: '354',
       class: 'w-card-base__image',
+      params: {
+        fit: 'crop',
+        h: '240',
+        w: '354',
+      },
     });
 
     return html`
