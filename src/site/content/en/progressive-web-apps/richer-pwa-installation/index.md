@@ -77,11 +77,12 @@ change in the future depending on uptake of the developer community and users' r
 
 ## Previewing the UI {: #previewing }
 
-This UI works in Chrome Dev & Chrome Canary on Android, with the flag 
-`mobile-pwa-install-use-bottom-sheet` enabled. This feature is enabled 
-on [squoosh.app](https://squoosh.app) and can be previewed there.    
+This UI works in Chrome Dev & Chrome Canary on Android, with the flag enabled;
 
-[#screenshots](https://web.dev/add-manifest/#screenshots) and 
+`mobile-pwa-install-use-bottom-sheet` 
+
+This feature is enabled on [squoosh.app](https://squoosh.app) and can be previewed there. As an
+aside, [#screenshots](https://web.dev/add-manifest/#screenshots) and 
 [#description](https://web.dev/add-manifest/#description) fields are already documented; 
 you can give it a try behind the flag. 
 
