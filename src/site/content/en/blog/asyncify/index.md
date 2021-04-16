@@ -101,7 +101,7 @@ or, in the past, the entire browser—for a range from milliseconds to a few sec
 
 Instead, code is only allowed to schedule an I/O operation together with a callback to be executed
 once it's finished. Such callbacks are executed as part of the browser's event loop. I won't be
-going into details here, but if you're interested in learning how event loop works under the hood,
+going into details here, but if you're interested in learning how the event loop works under the hood,
 check out Jake Archibald's
 [article](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/) which explains this
 topic in-depth.
@@ -165,7 +165,7 @@ printf("B\n");
 ```
 
 Sure, you could translate it in a very straightforward manner that would block the current thread
-until the time expires…
+until the time expires:
 
 ```js
 console.log("A");
@@ -173,7 +173,7 @@ for (let start = Date.now(); Date.now() - start < 1000;);
 console.log("B");
 ```
 
-…and, in fact, that's exactly what Emscripten does in [its default implementation of
+In fact, that's exactly what Emscripten does in [its default implementation of
 "sleep",](https://github.com/emscripten-core/emscripten/blob/16d5755a3f71f27d0c67b8d7752f94844e56ef7c/src/library_pthread_stub.js#L47-L52)
 but that's very inefficient, will block the entire UI and won't allow any other events to be handled
 meanwhile. Generally, don't do that in production code.
@@ -301,7 +301,7 @@ example, where I tried to get a user's name from a file as a string? Well, you c
 Emscripten provides a feature called
 [Embind](https://emscripten.org/docs/porting/connecting_cpp_and_javascript/embind.html) that allows
 you to handle conversions between JavaScript and C++ values. It has support for Asyncify as well, so
-you can call `.await()` on external `Promise`s and it will act just like `await` in an async-await
+you can call `await()` on external `Promise`s and it will act just like `await` in async-await
 JavaScript code:
 
 ```cpp
@@ -400,7 +400,7 @@ finished.
 When Asyncify detects a call to one of the `ASYNCIFY_IMPORTS` functions, it starts an asynchronous
 operation, saves the entire state of the application, including the call stack and any temporary
 locals, and later, when that operation is finished, restores all the memory and call stack and
-resumes from the exact same place and with the exact same state as if the program has never stopped.
+resumes from the same place and with the same state as if the program has never stopped.
 
 This is quite similar to async-await feature in JavaScript that I showed earlier, but, unlike the
 JavaScript one, doesn't require any special syntax or runtime support from the language, and instead
@@ -442,14 +442,14 @@ Then, once `async_sleep()` resolves, Asyncify support code will change `mode` to
 call the function again. This time, the "normal execution" branch is skipped - since it already did
 the job last time and I want to avoid printing "A" twice - and instead it comes straight to the
 "rewinding" branch. Once it's reached, it restores all the stored locals, changes mode back to
-"normal" and continues the execution as if the code was never stopped in the first place.
+"normal" and continues the execution as if the code were never stopped in the first place.
 
 ### Transformation costs
 
 Unfortunately, Asyncify transform isn't completely free, since it has to inject quite a bit of
 supporting code for storing and restoring all those locals, navigating the call stack under
 different modes and so on. It tries to modify only functions marked as asynchronous on the command
-line, as well as any of their potential callers, but that still might result in ~50% overhead to the
+line, as well as any of their potential callers, but that still might result in approximately 50 percent overhead to the
 uncompressed code size.
 
 {% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/Im4hmQOYRHFcsg8UTfTR.png", alt="A graph showing code
@@ -476,7 +476,7 @@ real host filesystem from a web application.
 
 On the other hand, there is a de-facto standard called [WASI](https://github.com/WebAssembly/WASI)
 for WebAssembly I/O in the console and the server-side. It was designed as a compilation target for
-system languages, and exposes all sorts of filesystem and other operations in a traditional
+system languages, and exposes all sorts of file system and other operations in a traditional
 synchronous form.
 
 What if you could map one to another? Then you could compile any application in any source language
