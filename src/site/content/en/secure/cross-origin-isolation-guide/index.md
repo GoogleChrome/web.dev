@@ -25,6 +25,9 @@ isolation is required if you want to use
 precision](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/),
 or the JS Self-Profiling API.
 
+If you intend to enable cross-origin isolation, evaluate the impact this will
+have on other cross-origin resources on your website, e.g. ad placements.
+
 {% Details %}
 {% DetailsSummary %}
 Determine where in your website `SharedArrayBuffer` is used
