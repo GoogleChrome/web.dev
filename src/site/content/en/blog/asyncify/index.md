@@ -141,8 +141,7 @@ function main() {
 }
 ```
 
-From the desugared example, it's a bit clearer that it starts a request and subscribes to the
-response with the first callback. Once the browser receives the initial response—just the HTTP
+In this de-sugared example, which is a bit clearer, a request is started and responses are subscribed to with the first callback. Once the browser receives the initial response—just the HTTP
 headers—it asynchronously invokes this callback. The callback starts reading the body as text using
 `response.text()`, and subscribes to the result with another callback. Finally, once `fetch` has
 retrieved all the contents, it invokes the last callback, which prints "Hello, (username)!" to the
