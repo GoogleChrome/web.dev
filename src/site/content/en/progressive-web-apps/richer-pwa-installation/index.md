@@ -118,6 +118,8 @@ Example;
 "description": "Compress and compare images with different codecs, right in your browser."
 {% endCompare %}
 
+Feedback
+In the coming months we would love to see how developers explore this new UI patterned and we would like to get feedback from you. Please reachout to us on [Twitter](https://twitter.com/ChromiumDev). 
 
 
 https://web.dev/add-manifest/#screenshots and https://web.dev/add-manifest/#description fields are already documented; you can give it a try behind the flag.
