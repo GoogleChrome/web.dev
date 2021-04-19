@@ -26,7 +26,7 @@ precision](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/),
 or the JS Self-Profiling API.
 
 If you intend to enable cross-origin isolation, evaluate the impact this will
-have on other cross-origin resources on your website, e.g. ad placements.
+have on other cross-origin resources on your website, such as ad placements.
 
 {% Details %}
 {% DetailsSummary %}
@@ -140,9 +140,9 @@ cross-origin isolation requires all subresources to explicitly opt-in. And we
 have come up with the idea of going in the opposite direction: [a new COEP
 "credentialless" mode](https://github.com/mikewest/credentiallessness/) that
 allows loading resources without the CORP header by stripping all their
-credentials. We are working out how it should work in detail, but we hope this
-will lighten your burden of making sure the subresources are sending the
-`Cross-Origin-Resource-Policy` header.
+credentials. We are working out the details of how it should work in detail, but
+we hope this will lighten your burden of making sure the subresources are
+sending the `Cross-Origin-Resource-Policy` header.
 
 Also, it's known that the `Cross-Origin-Opener-Policy: same-origin` header will
 break integrations that require cross-origin window interactions such as OAuth
@@ -154,8 +154,8 @@ the communication with the window opened by itself will be possible.
 If you want to enable cross-origin isolation but are blocked by these
 challenges, we recommend [registering for an origin
 trial](https://developer.chrome.com/blog/enabling-shared-array-buffer/#origin-trial)
-and wait until the new modes are available. We are not planning to terminate the
-origin trial until these new modes are available.
+and waiting until the new modes are available. We are not planning to terminate
+the origin trial until these new modes are available.
 
 {% endAside %}
 

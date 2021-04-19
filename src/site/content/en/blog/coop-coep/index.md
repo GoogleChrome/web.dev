@@ -17,7 +17,7 @@ authors:
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-04-16
+updated: 2021-04-19
 tags:
   - blog
   - security
@@ -143,7 +143,7 @@ article](/why-coop-coep) I will provide more background and context.
 
 {% Aside %}
 This article is aimed at those who would like to get their websites ready for
-using `SharedArrayBuffer`, WebAssembly Threads,
+using `SharedArrayBuffer`, WebAssembly threads,
 `performance.measureUserAgentSpecificMemory()`, high resolution timer with
 better precision or the JS Self-Profiling API in a more robust manner across
 browser platforms.
@@ -193,8 +193,8 @@ the communication with the window opened by itself will be possible.
 If you want to enable cross-origin isolation but are blocked by this issue, we
 recommend [registering for an origin
 trial](https://developer.chrome.com/blog/enabling-shared-array-buffer/#origin-trial)
-and wait until the new condition will be available. We are not planning to
-terminate the origin trial until this issue can be safely resolved.
+and waiting until the new condition is available. We are not planning to
+terminate the origin trial until this issue is safely resolved.
 
 {% endAside %}
 
@@ -229,7 +229,7 @@ Here is what you need to do depending on the nature of the resource:
   `Cross-Origin-Resource-Policy: cross-origin` header if possible.
 * For cross origin resources that you have no control over:
     * Use the `crossorigin` attribute in the loading HTML tag if the resource is
-      served with CORS. (ex: `<img src="***" crossorigin>`)
+      served with CORS. (For example, `<img src="***" crossorigin>`.)
     * Ask the owner of the resource to support either CORS or CORP.
 * For iframes, use CORP and COEP headers as follows:
   `Cross-Origin-Resource-Policy: same-origin` (or `same-site`, `cross-origin`
@@ -281,15 +281,15 @@ cross-origin isolation requires all subresources to explicitly opt-in. And we
 have come up with the idea of going in the opposite direction: [a new COEP
 "credentialless" mode](https://github.com/mikewest/credentiallessness/) that
 allows loading resources without the CORP header by stripping all their
-credentials. We are working out how it should work in detail, but we hope this
-will lighten your burden of making sure the subresources are sending the
-`Cross-Origin-Resource-Policy` header.
+credentials. We are working out the details of how it should work in detail, but
+we hope this will lighten your burden of making sure the subresources are
+sending the `Cross-Origin-Resource-Policy` header.
 
 If you want to enable cross-origin isolation but are blocked by this, we
 recommend [registering for an origin
 trial](https://developer.chrome.com/blog/enabling-shared-array-buffer/#origin-trial)
-and wait until the new mode is available. We are not planning to terminate the
-origin trial until the new mode is available.
+and waiting until the new mode is available. We are not planning to terminate
+the origin trial until the new mode is available.
 
 {% endAside %}
 
