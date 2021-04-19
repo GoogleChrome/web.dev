@@ -73,7 +73,7 @@ able to use privileged features including:
           <code>SharedArrayBuffer</code></a>
         </td>
         <td>
-          Required for WebAssembly Threads. This is available from Android
+          Required for WebAssembly threads. This is available from Android
           Chrome 88. Desktop version is currently enabled by default with the
           help of <a href="https://www.chromium.org/Home/chromium-security/site-isolation">
           Site Isolation</a>, but will require the cross-origin isolated state
@@ -281,9 +281,9 @@ cross-origin isolation requires all subresources to explicitly opt-in. And we
 have come up with the idea of going in the opposite direction: [a new COEP
 "credentialless" mode](https://github.com/mikewest/credentiallessness/) that
 allows loading resources without the CORP header by stripping all their
-credentials. We are working out the details of how it should work in detail, but
-we hope this will lighten your burden of making sure the subresources are
-sending the `Cross-Origin-Resource-Policy` header.
+credentials. We are figuring out the details of how it should work, but we hope
+this will lighten your burden of making sure the subresources are sending the
+`Cross-Origin-Resource-Policy` header.
 
 If you want to enable cross-origin isolation but are blocked by this, we
 recommend [registering for an origin

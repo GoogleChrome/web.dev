@@ -140,9 +140,9 @@ cross-origin isolation requires all subresources to explicitly opt-in. And we
 have come up with the idea of going in the opposite direction: [a new COEP
 "credentialless" mode](https://github.com/mikewest/credentiallessness/) that
 allows loading resources without the CORP header by stripping all their
-credentials. We are working out the details of how it should work in detail, but
-we hope this will lighten your burden of making sure the subresources are
-sending the `Cross-Origin-Resource-Policy` header.
+credentials. We are figuring out the details of how it should work, but we hope
+this will lighten your burden of making sure the subresources are sending the
+`Cross-Origin-Resource-Policy` header.
 
 Also, it's known that the `Cross-Origin-Opener-Policy: same-origin` header will
 break integrations that require cross-origin window interactions such as OAuth
