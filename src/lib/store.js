@@ -63,7 +63,17 @@ const initialState = {
   // Data for the current web.dev/LIVE event.
   eventDays: [],
   activeEventDay: null, // livestream shown for this day
+
+  courseProgress: [],
 };
+
+try {
+  initialState['courseProgress'] = JSON.parse(
+    localStorage['webdev_course_progress'],
+  );
+} catch {
+  initialState['courseProgress'] = [];
+}
 
 let store;
 if (isProd) {

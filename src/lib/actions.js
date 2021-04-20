@@ -249,3 +249,17 @@ export const openToC = store.action(() => {
     isTocOpened: true,
   };
 });
+
+export const markAsCompleted = store.action(({courseProgress}, url) => {
+  trackEvent({
+    category: 'Course Events',
+    action: 'completed',
+    label: url,
+  });
+  const completed = new Set(courseProgress);
+  completed.add(url);
+  localStorage['webdev_course_progress'] = JSON.stringify(
+    Array.from(completed),
+  );
+  return {courseProgress};
+});
