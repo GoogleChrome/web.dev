@@ -1,31 +1,22 @@
-.course-layout {
-  display: flex;
-  flex-direction: column;
-  @include bp(lg) {
-    flex-direction: row;
-  }
-}
-
-.course-body {
-  flex: 1;
-  min-width: 0;
+:root {
+  // This margin is also used by the app-bar to set its position sticky top.
+  --course-content-margin: 24px;
 }
 
 .course-content {
-  display: flex;
-  justify-content: center;
-  margin: 24px auto;
+  margin: var(--course-content-margin) auto;
   max-width: 1080px;
 }
 
 .course-content > main {
-  flex-grow: 1;
   margin: 0 36px;
   max-width: 80ch;
   min-width: 0;
   padding: 0;
 }
 
+// Give the heading, subheading, and copy paragraphs the same fluid text
+// treatment that we use on developer.chrome.com
 .course-headline {
   @include apply-utility('font', 'google-sans');
   @include apply-utility('weight', 'regular');
@@ -38,13 +29,13 @@
   @include flex-font((16px 28px), (18px 28px), (18px 28px));
 }
 
-.course-foo {
+.course-copy {
   margin-top: 50px;
   @include bp(xl) {
     margin-top: 64px;
   }
-}
 
-.course-foo p {
-  @include flex-font((16px 32px), (18px 32px), (18px 32px));
+  p {
+    @include flex-font((16px 32px), (18px 32px), (18px 32px));
+  }
 }

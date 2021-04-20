@@ -235,8 +235,6 @@
 // @param {length()} $lg - List of lengths, in px, representing font size and line height of the largest size
 // @param {number | boolean} $weight - Font weight, or false
 @mixin flex-font($sm, $md, $lg, $weight: false) {
-  /* stylelint-disable order/order */
-
   // Setup basic font styling from medium size
   @include font-setup(nth($md, 1), nth($md, 2), $weight);
 
