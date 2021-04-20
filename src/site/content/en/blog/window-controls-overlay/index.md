@@ -437,7 +437,7 @@ hashtag and let us know where and how you're using it.
 
 Window Controls Overlay was implemented and specified by
 [Amanda Baker](https://www.linkedin.com/in/amanda-baker-20a2b962/) from the Microsoft Edge team.
-Amanda has also reviewed this article. Further reviewers were
+This article was reviewed by
 [Joe Medley](https://github.com/jpmedley) and [Kenneth Rohde Christiansen](https://github.com/kenchris).
 Hero image by [Sigmund](https://unsplash.com/@sigmund) on
 [Unsplash](https://unsplash.com/photos/OV44gxH71DU).
