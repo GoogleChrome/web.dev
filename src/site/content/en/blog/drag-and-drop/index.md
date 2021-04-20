@@ -313,7 +313,7 @@ function handleDrop(e) {
 }
 ```
 
-You can find more information about this in [Custom drag-and-drop](https://web.dev/read-files/#select-dnd).
+You can find more information about this in [Custom drag-and-drop](/read-files/#select-dnd).
 
 ## More resources
 

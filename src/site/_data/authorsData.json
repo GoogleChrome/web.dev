@@ -363,7 +363,7 @@
     "descriptions": {
       "en": "Developer Advocate on the web team at Google, taking the sharp edges off new stuff & helping make the web better for developers! (he/him)"
     },
-    "image": "image/admin/Dm82FiGUflujPwt38U5P.jpg"
+    "image": "image/0g2WvpbGRGdVs0aAPc6ObG7gkud2/3rFbsLsMMk1VveHfBRSu.jpg"
   },
   "pjmclachlan": {
     "name": {
@@ -376,10 +376,11 @@
     },
     "country": "CA",
     "twitter": "b1tr0t",
+    "github": "b1tr0t",
     "descriptions": {
       "en": "Penny is a Product Manager on the Chrome Web Platform team responsible for Chrome permissions, notifications, and progressive web apps."
     },
-    "image": "image/admin/Y7BI31UZhmuEqgrPpXOJ.jpg"
+    "image": "image/0g2WvpbGRGdVs0aAPc6ObG7gkud2/moQSH93u2pALgA65WrsK.jpg"
   },
   "developit": {
     "name": {
@@ -1998,7 +1999,7 @@
       "en": "Freelance designer and educator"
     },
     "homepage": "https://piccalil.li/",
-    "github": "hankchizljaw",
+    "github": "andy-piccalilli",
     "twitter": "piccalilli_",
     "image": "image/foR0vJZKULb5AGJExlazy1xYDgI2/KgpVYUM3YJiVTASm4RTB.jpeg"
   },
@@ -2018,6 +2019,37 @@
       "en": "Adriana is a Developer Relations Engineer"
     },
     "image": "image/SeARmcA1EicLXagFnVOe0ou9cqK2/4KNPR11Y1YYxUi6ASIE1.jpg"
+  },
+  "jbrockmeyer": {
+    "name": {
+      "given": "Jan",
+      "family": "Brockmeyer"
+    },
+    "twitter": "jan_brockmeyer",
+    "github": "jabro86",
+    "org": {
+      "name": "Zalando",
+      "unit": "Client Engineering"
+    },
+    "country": "DE",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/OKm64vE60MFeWq62TFBh.jpg"
+  },
+  "jcolin": {
+    "name": {
+      "given": "Jeremy",
+      "family": "Colin"
+    },
+    "twitter": "jee_colin",
+    "github": "jeremycolin",
+    "org": {
+      "name": "Zalando",
+      "unit": "Client Engineering"
+    },
+    "country": "DE",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/IycLA5UeiU6yGAlwrkQ0.jpg",
+    "descriptions": {
+      "en": "Engineering Manager"
+    }
   },
   "hbsong": {
     "name": {

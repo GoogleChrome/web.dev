@@ -36,11 +36,8 @@ viewport becomes visible. It can be used to determine when the main content of t
 rendering on the screen.
 
 <picture>
-  <source srcset="../vitals/lcp_8x2.svg" media="(min-width: 640px)">
-  <img class="w-screenshot w-screenshot--filled"
-      src="../vitals/lcp_4x3.svg"
-      alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0
-            seconds and anything in between needs improvement">
+  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled" %}
 </picture>
 
 The most common causes of a poor LCP are:
@@ -275,9 +272,9 @@ blocking JavaScript results in a faster render, and consequently a better LCP.
 
 This can be accomplished by optimizing your scripts in a few different ways:
 
-- [Minify and compress JavaScript files](https://web.dev/reduce-network-payloads-using-text-compression/)
-- [Defer unused JavaScript](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
-- [Minimize unused polyfills](https://web.dev/serve-modern-code-to-modern-browsers/)
+- [Minify and compress JavaScript files](/reduce-network-payloads-using-text-compression/)
+- [Defer unused JavaScript](/reduce-javascript-payloads-with-code-splitting/)
+- [Minimize unused polyfills](/serve-modern-code-to-modern-browsers/)
 
 {% Aside %}
 The [Optimize First Input Delay](/optimize-fid/) guide covers all techniques needed to reduce
@@ -316,7 +313,7 @@ For many sites, images are the largest element in view when the page has finishe
 images, large carousels or banner images are all common examples of this.
 
 <figure class="w-figure">
-  <img width="300" src="./image-largest-element.png">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/unWra6cq0hPJJJT7Y3ye.png", alt="", width="459", height="925" %}
   <figcaption>Image as the largest page element: <a href="https://design.google/">design.google</a></figcaption>
 </figure>
 

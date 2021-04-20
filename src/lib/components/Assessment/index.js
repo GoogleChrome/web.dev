@@ -74,9 +74,7 @@ export class Assessment extends BaseModalElement {
           class="w-button--icon w-button--round web-assessment__close"
           data-icon="close"
         >
-          <span role="tooltip" class="w-tooltip">
-            Close
-          </span>
+          <span role="tooltip" class="w-tooltip">Close</span>
         </button>
       </div>
       ${this.prerenderedChildren}

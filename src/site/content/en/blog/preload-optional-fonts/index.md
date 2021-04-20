@@ -49,7 +49,7 @@ for asynchronously loaded fonts. However, every one of these supported values ca
 in one of the two ways listed above, until now!
 
 {% Aside %}
-  The [Cumulative Layout Shift](https://web.dev/cls/) metric makes it possible to measure the layout
+  The [Cumulative Layout Shift](/cls/) metric makes it possible to measure the layout
   instability on a web page.
 {% endAside %}
 
@@ -88,7 +88,7 @@ This occurs even if the font is stored in the browser's disk cache and can load 
 block period is complete.
 
 [Optimizations](https://bugs.chromium.org/p/chromium/issues/detail?id=1040632) have landed in Chrome 83 to entirely remove the first render cycle for optional fonts
-that are preloaded with [`<link rel="preload'>`](https://web.dev/codelab-preload-web-fonts/).
+that are preloaded with [`<link rel="preload'>`](/codelab-preload-web-fonts/).
 Instead, rendering is blocked until the custom font has finished loading or a certain period of time
 has passed. This timeout period is currently set at 100ms, but may possibly change in the near
 future to optimize performance.

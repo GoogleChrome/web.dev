@@ -54,9 +54,9 @@ Here is an example of a simple sign-in form that demonstrates all of the best pr
 between page loads or website deployments.
 * Put sign-in [in its own &lt;form&gt; element](#single-form).
 * [Ensure successful form submission](#submission).
-* Use [`autocomplete="new-password"`](#new-password) and [`id="new-password"`](#new-password) for 
+* Use [`autocomplete="new-password"`](#new-password) and [`id="new-password"`](#new-password) for
 the password input in a sign-up form, and for the new password in a reset-password form.
-* Use [`autocomplete="current-password"`](#current-password) and [`id="current-password"`](#current-password) 
+* Use [`autocomplete="current-password"`](#current-password) and [`id="current-password"`](#current-password)
 for a sign-in password input.
 * Provide [Show password](#show-password) functionality.
 * [Use `aria-label` and `aria-describedby`](#accessible-password-inputs) for
@@ -84,7 +84,7 @@ third-party identity services as well as its content.
 
 There are also two relatively new APIs not covered in this article which can
 help you build a better sign-in experience:
-*  [**Web OTP**](https://web.dev/web-otp/): to deliver one-time passcodes or
+*  [**WebOTP**](/web-otp/): to deliver one-time passcodes or
 PIN numbers via SMS to mobile phones. This can allow users to select a phone
 number as an identifier (no need to enter an email address!) and also enables
 two-step verification for sign-in and one-time codes for payment confirmation.
@@ -333,12 +333,12 @@ differentiate between new and current passwords.
 
 ### Use `autocomplete="new-password"` and `id="new-password"` for a new password {: #new-password }
 
-* Use `autocomplete="new-password"` and `id="new-password"` for the password input in a sign-up 
+* Use `autocomplete="new-password"` and `id="new-password"` for the password input in a sign-up
 form, or the new password in a change-password form.
 
 ### Use `autocomplete="current-password"` and `id="current-password"` for an existing password {: #current-password }
 
-* Use `autocomplete="current-password"` and `id="current-password"` for the password input in a 
+* Use `autocomplete="current-password"` and `id="current-password"` for the password input in a
   sign-in form, or the input for the user's old password in a change-password form. This tells the
   browser that you want it to use the current password that it has stored for the site.
 
@@ -355,12 +355,12 @@ For sign-in:
 ```
 
 {% Aside %}
-Browsers such as Chrome can use the browser's password manager to autofill fields in the sign-in 
-process for returning users. For these features to work, the browser needs to be able to 
+Browsers such as Chrome can use the browser's password manager to autofill fields in the sign-in
+process for returning users. For these features to work, the browser needs to be able to
 distinguish when a user changes their password.
 
-Specifically the form for changing the user's password should be cleared or hidden from the page 
-after the new password is set up. If the form for changing the user's password stays filled out on 
+Specifically the form for changing the user's password should be cleared or hidden from the page
+after the new password is set up. If the form for changing the user's password stays filled out on
 the page after the password change has occurred, the browser may not be able to record the update.
 {% endAside %}
 
@@ -388,7 +388,7 @@ Browser password and autofill systems are not simple. The algorithms for
 guessing, storing and displaying values are not standardized, and vary from
 platform to platform. For example, as pointed out by [Hidde de
 Vries](https://hiddedevries.nl/en/blog/2018-01-13-making-password-managers-play-ball-with-your-login-form):
-"Firefox's password manager complements its heuristics with a 
+"Firefox's password manager complements its heuristics with a
 [recipe system](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454)."
 
 [Autofill: What web devs should know, but
@@ -459,8 +459,7 @@ The default size and padding for inputs and buttons is too small on desktop and
 even worse on mobile.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./unstyled-form.png"
-       alt="Screenshot of unstyled form in Chrome for desktop and Chrome for Android.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lJNO6w2dOyp4cYKl5b3y.png", alt="Screenshot of unstyled form in Chrome for desktop and Chrome for Android.", width="800", height="434", class="w-screenshot" %}
 </figure>
 
 
@@ -474,7 +473,7 @@ mobile, and around 10 px on desktop. Try this out with a real mobile device and
 a real finger or thumb. You should comfortably be able to tap each of your
 inputs and buttons.
 
-The [Tap targets are not sized appropriately](https://web.dev/tap-targets/)
+The [Tap targets are not sized appropriately](/tap-targets/)
 Lighthouse audit can help you automate the process of detecting input elements
 that are too small.
 
@@ -509,7 +508,7 @@ queries](https://developers.google.com/web/fundamentals/design-and-ux/responsive
 `20px` is about right on mobile—but you should test this out with friends or
 colleagues who have low vision.
 
-The [Document doesn't use legible font sizes](https://web.dev/font-size/)
+The [Document doesn't use legible font sizes](/font-size/)
 Lighthouse audit can help you automate the process of detecting text that's too
 small.
 
@@ -749,6 +748,6 @@ Well designed UI and UX can reduce sign-in form abandonment:
 * [More capable form controls](/more-capable-form-controls)
 * [Creating Accessible Forms](https://webaim.org/techniques/forms/)
 * [Streamlining the Sign-in Flow Using Credential Management API](https://developers.google.com/web/updates/2016/04/credential-management-api)
-* [Verify phone numbers on the web with the Web OTP API](https://web.dev/web-otp/)
+* [Verify phone numbers on the web with the WebOTP API](/web-otp/)
 
 Photo by [Meghan Schiereck](https://unsplash.com/photos/_XFObcM_7KU) on [Unsplash](https://unsplash.com).

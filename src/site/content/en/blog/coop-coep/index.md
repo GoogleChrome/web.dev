@@ -2,20 +2,22 @@
 title: Making your website "cross-origin isolated" using COOP and COEP
 subhead: >
   Use COOP and COEP to set up a cross-origin isolated environment and enable
-  powerful features like `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`, and
-  the JS Self-Profiling API.
+  powerful features like `SharedArrayBuffer`,
+  `performance.measureUserAgentSpecificMemory()`, high resolution timer with
+  better precision, and the JS Self-Profiling API.
 description: >
   Some web APIs increase the risk of side-channel attacks like Spectre. To
   mitigate that risk, browsers offer an opt-in-based isolated environment called
   cross-origin isolated. Use COOP and COEP to set up such an environment and
   enable powerful features like `SharedArrayBuffer`,
-  `performance.measureUserAgentSpecificMemory()` or the JS Self-Profiling API.
+  `performance.measureUserAgentSpecificMemory()`, high resolution timer with
+  better precision or the JS Self-Profiling API.
 authors:
   - agektmr
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-03-17
+updated: 2021-04-19
 tags:
   - blog
   - security
@@ -28,6 +30,11 @@ feedback:
 
 **Updates**
 
+- **April 16, 2021**: Added notes about [a new COEP credentialless
+  mode](https://github.com/mikewest/credentiallessness/) and [COOP
+  same-origin-allow-popups to be a relaxed
+  condition](https://github.com/whatwg/html/issues/6364) for cross-origin
+  isolation.
 - **March 5, 2021**: Removed limitations for `SharedArrayBuffer`,
   `performance.measureUserAgentSpecificMemory()`, and debugging functionalities,
   which are now fully enabled in Chrome 89. Added upcoming capabilities,
@@ -66,11 +73,12 @@ able to use privileged features including:
           <code>SharedArrayBuffer</code></a>
         </td>
         <td>
-          Required for WebAssembly Threads. This is available from Android
+          Required for WebAssembly threads. This is available from Android
           Chrome 88. Desktop version is currently enabled by default with the
           help of <a href="https://www.chromium.org/Home/chromium-security/site-isolation">
           Site Isolation</a>, but will require the cross-origin isolated state
-          and will be disabled by default in Chrome 91.
+          and <a href="https://developer.chrome.com/blog/enabling-shared-array-buffer/">
+          will be disabled by default in Chrome 91</a>.
         </td>
       </tr>
       <tr>
@@ -135,9 +143,10 @@ article](/why-coop-coep) I will provide more background and context.
 
 {% Aside %}
 This article is aimed at those who would like to get their websites ready for
-using `SharedArrayBuffer`, WebAssembly Threads, `performance.measureUserAgentSpecificMemory()`
-or the JS Self-Profiling API in a more robust manner across browser
-platforms.
+using `SharedArrayBuffer`, WebAssembly threads,
+`performance.measureUserAgentSpecificMemory()`, high resolution timer with
+better precision or the JS Self-Profiling API in a more robust manner across
+browser platforms.
 {% endAside %}
 
 {% Aside 'key-term' %}
@@ -167,10 +176,27 @@ enable cross-origin isolation](/cross-origin-isolation-guide/).
 
 #### 1. Set the `Cross-Origin-Opener-Policy: same-origin` header on the top-level document
 
-By enabling COOP on a top-level document, windows
-with the same origin, and windows opened from the document, will have a separate
-browsing context group unless they are in the same origin with the same COOP
-setting. Thus, isolation is enforced for opened windows.
+By enabling `COOP: same-origin` on a top-level document, windows with the same
+origin, and windows opened from the document, will have a separate browsing
+context group unless they are in the same origin with the same COOP setting.
+Thus, isolation is enforced for opened windows and mutual communication between
+both windows is disabled.
+
+{% Aside 'caution' %}
+
+This will break integrations that require cross-origin window interactions such
+as OAuth and payments. To mitigate this problem, we are [exploring relaxing the
+condition](https://github.com/whatwg/html/issues/6364) to enable cross-origin
+isolation to `Cross-Origin-Opener-Policy: same-origin-allow-popups`. This way
+the communication with the window opened by itself will be possible.
+
+If you want to enable cross-origin isolation but are blocked by this issue, we
+recommend [registering for an origin
+trial](https://developer.chrome.com/blog/enabling-shared-array-buffer/#origin-trial)
+and waiting until the new condition is available. We are not planning to
+terminate the origin trial until this issue is safely resolved.
+
+{% endAside %}
 
 A browsing context group is a group of tabs, windows or iframes which share the
 same context. For example, if a website (`https://a.example`) opens a popup
@@ -190,9 +216,8 @@ parameters](https://first-party-test.glitch.me/coop).
 
 #### 2. Ensure resources have CORP or CORS enabled
 
-Make sure that all resources in the page are loaded with CORP or CORS
-HTTP headers. This step
-is required for [step four, enabling COEP](#enable-coep).
+Make sure that all resources in the page are loaded with CORP or CORS HTTP
+headers. This step is required for [step four, enabling COEP](#enable-coep).
 
 Here is what you need to do depending on the nature of the resource:
 
@@ -204,7 +229,7 @@ Here is what you need to do depending on the nature of the resource:
   `Cross-Origin-Resource-Policy: cross-origin` header if possible.
 * For cross origin resources that you have no control over:
     * Use the `crossorigin` attribute in the loading HTML tag if the resource is
-      served with CORS.
+      served with CORS. (For example, `<img src="***" crossorigin>`.)
     * Ask the owner of the resource to support either CORS or CORP.
 * For iframes, use CORP and COEP headers as follows:
   `Cross-Origin-Resource-Policy: same-origin` (or `same-site`, `cross-origin`
@@ -247,6 +272,25 @@ parameters](https://first-party-test.glitch.me/coep).
 COEP](https://github.com/GoogleChromeLabs/squoosh/pull/829/files#diff-316f969413f2d9a065fcc08c7a5589c088dd1e21deebadccfc5a4372ac5e0cbbR22-R23)
 to gain access to Wasm Threads (and Shared Array Buffer) as well on Android
 Chrome.
+{% endAside %}
+
+{% Aside 'caution' %}
+
+We've been exploring ways to deploy `Cross-Origin-Resource-Policy` at scale, as
+cross-origin isolation requires all subresources to explicitly opt-in. And we
+have come up with the idea of going in the opposite direction: [a new COEP
+"credentialless" mode](https://github.com/mikewest/credentiallessness/) that
+allows loading resources without the CORP header by stripping all their
+credentials. We are figuring out the details of how it should work, but we hope
+this will lighten your burden of making sure the subresources are sending the
+`Cross-Origin-Resource-Policy` header.
+
+If you want to enable cross-origin isolation but are blocked by this, we
+recommend [registering for an origin
+trial](https://developer.chrome.com/blog/enabling-shared-array-buffer/#origin-trial)
+and waiting until the new mode is available. We are not planning to terminate
+the origin trial until the new mode is available.
+
 {% endAside %}
 
 ### Determine whether isolation succeeded with `self.crossOriginIsolated`
@@ -508,3 +552,12 @@ isolated state.
 We'll keep this post updated as new features are made available to this
 cross-origin isolated state, and further improvements are made to DevTools
 around COOP and COEP.
+
+## Resources
+
+* [Why you need "cross-origin isolated" for powerful features](https://web.dev/why-coop-coep/)
+* [A guide to enable cross-origin isolation](https://web.dev/cross-origin-isolation-guide/)
+* [SharedArrayBuffer updates in Android Chrome 88 and Desktop Chrome
+  91](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
+* [Monitor your web page's total memory usage with
+  `measureUserAgentSpecificMemory()`](https://web.dev/monitor-total-page-memory-usage/)

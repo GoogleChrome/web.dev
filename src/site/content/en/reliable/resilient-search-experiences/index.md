@@ -51,7 +51,7 @@ When the user performs a search, the service worker allows the query to be defer
 
 {% Img src="image/admin/ZZItVQMLUPmVbwJlfDck.png", alt="A screenshot of the offline flow in Google Search.", width="800", height="436" %}
 
-Service workers allow Google Search to provide a [meaningful offline experience](https://web.dev/google-search-sw/#meaningful-offline-experience) and keep the user engaged, letting them complete their task.
+Service workers allow Google Search to provide a [meaningful offline experience](/google-search-sw/#meaningful-offline-experience) and keep the user engaged, letting them complete their task.
 
 ## Implement resilient search experiences with Workbox
 

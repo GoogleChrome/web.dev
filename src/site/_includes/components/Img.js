@@ -64,8 +64,18 @@ const generateSrc = (src, params = {}) => {
  * @return {string}
  */
 const Img = function (args) {
-  const {src, alt, width, height, class: className, linkTo, params} = args;
-  let {lazy, options, sizes} = args;
+  const {
+    alt,
+    class: className,
+    height,
+    id,
+    linkTo,
+    src,
+    style,
+    width,
+    params,
+  } = args;
+  let {lazy, sizes, options} = args;
 
   const checkHereIfError = `ERROR IN ${
     // @ts-ignore: `this` has type of `any`
@@ -132,14 +142,16 @@ const Img = function (args) {
   // written at all—which _is_ an accessibility violation.
   /* eslint-disable lit-a11y/alt-text */
   let imgTag = html` <img
-    src="${fullSrc}"
-    height="${heightAsNumber}"
-    width="${widthAsNumber}"
-    ${doNotUseSrcset ? '' : `srcset="${srcset}"`}
-    ${doNotUseSrcset ? '' : `sizes="${sizes}"`}
     ${alt ? `alt="${safeHtml`${alt}`}"` : ''}
     ${className ? `class="${className}"` : ''}
+    height="${heightAsNumber}"
+    ${id ? `id="${id}"` : ''}
     ${lazy ? 'loading="lazy"' : ''}
+    ${doNotUseSrcset ? '' : `sizes="${sizes}"`}
+    src="${fullSrc}"
+    ${doNotUseSrcset ? '' : `srcset="${srcset}"`}
+    ${style ? `style="${style}"` : ''}
+    width="${widthAsNumber}"
   />`;
   /* eslint-enable lit-a11y/alt-text */
 

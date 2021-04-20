@@ -137,7 +137,7 @@ Now it's your turn to **push the example app to your own GitHub repository**.
 If you haven't already, run the following command:
 
 ```bash
-git push origin master
+git push origin main
 ```
 
 Click on your repo under Settings in Travis to see your project's Travis
@@ -248,7 +248,7 @@ the app that bring the performance score below 95:
 
 ### Make a pull request to trigger Lighthouse Bot test on Travis
 
-Lighthouse Bot will only test pull requests, so if you push to the master branch
+Lighthouse Bot will only test pull requests, so if you push to the main branch
 now, you'll just get "This script can only be run on Travis PR requests" in your
 Travis log.
 

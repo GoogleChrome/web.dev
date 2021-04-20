@@ -97,9 +97,7 @@ module.exports = (path, lang) => {
         </div>
         <div class="w-path-card__desc">
           <h2 class="w-path-card__headline">${i18n(path.title, lang)}</h2>
-          <p class="w-path-card__subhead">
-            ${i18n(path.description, lang)}
-          </p>
+          <p class="w-path-card__subhead">${i18n(path.description, lang)}</p>
         </div>
       </div>
     </a>

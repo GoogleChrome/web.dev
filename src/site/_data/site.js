@@ -32,6 +32,7 @@ module.exports = {
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
   thumbnail: '/images/social.png',
   isBannerEnabled: false,
+  areCoursesEnabled: false,
   banner: '',
   // Note that the imageCdn value is only used when we do a production build
   // of the site. Otherwise all image paths are local. This means you can

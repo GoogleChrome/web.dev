@@ -88,9 +88,7 @@ module.exports = (days, authorsCollection) => {
             <span>${title}</span>
           </a>
           ${videoLink}
-          <div class="w-event-schedule__blurb">
-            ${blurb}
-          </div>
+          <div class="w-event-schedule__blurb">${blurb}</div>
           <div class="w-event-schedule__abstract" hidden>
             ${abstract.map((part) => html`<p>${part}</p>`)}
           </div>

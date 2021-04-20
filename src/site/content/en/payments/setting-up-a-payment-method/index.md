@@ -205,7 +205,7 @@ documentation](https://github.com/w3c/payment-request-info/wiki/PaymentMethodPra
 
 A [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) is
 used to define a web app as the name suggests. It's a widely used manifest file
-to [define a Progressive Web App (PWA)](https://web.dev/add-manifest/).
+to [define a Progressive Web App (PWA)](/add-manifest/).
 
 Typical web app manifest would look like this:
 

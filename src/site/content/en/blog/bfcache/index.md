@@ -55,7 +55,7 @@ loads:
       <td>
         A new request is initiated to load the previous page, and, depending
         on how well that page has been <a
-        href="https://web.dev/reliable/#the-options-in-your-caching-toolbox">
+        href="/reliable/#the-options-in-your-caching-toolbox">
         optimized</a> for repeat visits, the browser might have to re-download,
         re-parse, and re-execute some (or all) of resources it just downloaded.
       </td>
@@ -527,7 +527,7 @@ web APIs.
     polyfill](https://github.com/GoogleChromeLabs/first-input-delay)) in the
     `pageshow` event, and report FID as the delay of the first input after the
     bfcache restore.
-*   For [Cumulative Layout Shift (CLS)](/fid/), you can continue to keep using
+*   For [Cumulative Layout Shift (CLS)](/cls/), you can continue to keep using
     your existing Performance Observer; all you have to do is reset the current
     CLS value to 0.
 

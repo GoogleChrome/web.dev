@@ -22,12 +22,12 @@ that is responsive, supports multiple device inputs, and works across browsers.
 Try the [demo](https://gui-challenges.web.app/tabs/dist/).
 
 <figure class="w-figure w-figure--fullbleed">
-  {% Video 
+  {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/IBDNCMVCysfM9fYC9bnP.mp4",
-    className="w-screenshot", 
-    autoplay="true", 
-    loop="true", 
-    muted="true" 
+    class="w-screenshot",
+    autoplay="true",
+    loop="true",
+    muted="true"
   %}
   <figcaption class="w-figure">
     <a href="https://gui-challenges.web.app/tabs/dist/">Demo</a>
@@ -88,12 +88,12 @@ elements, which a `<section>` is great for. Each link hash will match a section,
 letting the browser scroll things via anchoring.
 
 <figure class="w-figure">
-  {% Video 
+  {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Pr8BrPDjq8ga9NyoHLJk.mp4",
-    className="w-screenshot", 
-    autoplay="true", 
-    loop="true", 
-    muted="true" 
+    class="w-screenshot",
+    autoplay="true",
+    loop="true",
+    muted="true"
   %}
   <figcaption class="w-figure">
     A link button is clicked, sliding in focused content
@@ -468,7 +468,7 @@ styles here, I just need to define how it overflows. I set overflow-y to auto,
 and then also trap the scroll interactions with the handy overscroll-behavior
 property.
 
-#### 3 scroll areas recap {: #overscroll }
+#### 3 scroll areas recap {: #scroll-areas-recap }
 
 Below I've chosen in my system settings to "always show scrollbars". I think
 it's doubly important for the layout to work with this setting turned on, as it
@@ -516,7 +516,7 @@ Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode) by
 selecting any mode other than **Responsive**, and then resizing the device frame.
 Notice the element stays in view and locked with its content. This has been
 available since Chromium updated their implementation to match the spec. Here's
-a [blog post](https://web.dev/snap-after-layout/) about it.
+a [blog post](/snap-after-layout/) about it.
 
 ### Animation {: #animation }
 
@@ -524,7 +524,7 @@ The goal of the animation work here is to clearly link interactions with UI
 feedback. This helps guide or assist the user through to their (hopefully)
 seamless discovery of all the content. I'll be adding motion with purpose and
 conditionally. Users can now specify [their motion
-preferences](https://web.dev/prefers-reduced-motion/) in their operating system,
+preferences](/prefers-reduced-motion/) in their operating system,
 and I thoroughly enjoy responding to their preferences in my interfaces.
 
 I'll be linking a tab underline with the article scroll position. Snapping isn't
@@ -535,12 +535,12 @@ We'll be checking the user's motion preference from both CSS and JS. There's a
 few great places to be considerate!
 
 <figure class="w-figure">
-  {% Video 
+  {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/D4zfhetqvhqlcPdTRtLZ.mp4",
-    className="w-screenshot", 
-    autoplay="true", 
-    loop="true", 
-    muted="true" 
+    class="w-screenshot",
+    autoplay="true",
+    loop="true",
+    muted="true"
   %}
 </figure>
 
@@ -560,12 +560,12 @@ instead of blink there?
 ```
 
 <figure class="w-figure">
-  {% Video 
+  {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q4JDplhM9gEd4PoiXqs6.mp4",
-    className="w-screenshot", 
-    autoplay="true", 
-    loop="true", 
-    muted="true" 
+    class="w-screenshot",
+    autoplay="true",
+    loop="true",
+    muted="true"
   %}
 </figure>
 
@@ -585,12 +585,12 @@ In Chromium Devtools, I can toggle the preference and demonstrate the 2
 different transition styles. I had a ton of fun building this.
 
 <figure class="w-figure">
-  {% Video 
+  {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/NVoLHgjGjf7fZw5HFpF6.mp4",
-    className="w-screenshot", 
-    autoplay="true", 
-    loop="true", 
-    muted="true" 
+    class="w-screenshot",
+    autoplay="true",
+    loop="true",
+    muted="true"
   %}
 </figure>
 
@@ -759,12 +759,12 @@ You may not have noticed, but I'm very proud of the transition of color as the
 highlighted navigation item becomes selected.
 
 <figure class="w-figure">
-  {% Video 
+  {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qoxGO8SR2t6GPuCWhwvu.mp4",
-    className="w-screenshot", 
-    autoplay="true", 
-    loop="true", 
-    muted="true" 
+    class="w-screenshot",
+    autoplay="true",
+    loop="true",
+    muted="true"
   %}
 </figure>
 
@@ -850,12 +850,12 @@ free scrolling, as they should be able to. When the section scroller stops
 scrolling, wherever it lands needs to be matched in the top navigation bar.
 
 <figure class="w-figure">
-  {% Video 
+  {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/syltOES9Gxc0ihOsgTIV.mp4",
-    className="w-screenshot", 
-    autoplay="true", 
-    loop="true", 
-    muted="true" 
+    class="w-screenshot",
+    autoplay="true",
+    loop="true",
+    muted="true"
   %}
 </figure>
 
@@ -902,12 +902,12 @@ the incoming nav item the active state attribute. The call to `scrollIntoView()`
 has a fun interaction with CSS that is worth noting.
 
 <figure class="w-figure">
-  {% Video 
+  {% Video
     src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/nsiyMgZ2QGF2fx9gVRgu.mp4",
-    className="w-screenshot", 
-    autoplay="true", 
-    loop="true", 
-    muted="true" 
+    class="w-screenshot",
+    autoplay="true",
+    loop="true",
+    muted="true"
   %}
 </figure>
 

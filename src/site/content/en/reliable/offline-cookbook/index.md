@@ -36,7 +36,7 @@ is still running and serving pages, so the things you do here mustn't disrupt th
 "version" of your site.
 
 These are things that would make your site entirely non-functional if they failed to be fetched, things
-an equivalent native-app would make part of the initial download.
+an equivalent platform-specific app would make part of the initial download.
 
 ```js
 self.addEventListener('install', function (event) {
@@ -345,7 +345,7 @@ Your origin is given a certain amount of free space to do what it wants with. Th
 shared between all origin storage:
 [(local) Storage](https://developer.mozilla.org/en-US/docs/Web/API/Storage),
 [IndexedDB](https://developer.mozilla.org/en-US/docs/Glossary/IndexedDB),
-[File System Access](https://web.dev/file-system-access/), and of course
+[File System Access](/file-system-access/), and of course
 [Caches](https://developer.mozilla.org/en-US/docs/Web/API/Cache).
 
 The amount you get isn't spec'd. It will differ depending on device and storage conditions. You can
@@ -385,7 +385,7 @@ can now expect them to be in control of deletion. If their device comes under st
 clearing non-essential data doesn't solve it, the user gets to judge which items to keep and
 remove.
 
-For this to work, it requires operating systems to treat "durable" origins as equivalent to native
+For this to work, it requires operating systems to treat "durable" origins as equivalent to platform-specific
 apps in their breakdowns of storage usage, rather than reporting the browser as a single item.
 
 ## Serving Suggestions—responding to requests {: #serving-suggestions }

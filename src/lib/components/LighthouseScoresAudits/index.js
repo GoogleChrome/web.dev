@@ -212,9 +212,7 @@ class LighthouseScoresAudits extends BaseElement {
           >Guide</span
         >
       </div>
-      <div class="lh-audit-list-rows" role="rowgroup">
-        ${rows}
-      </div>
+      <div class="lh-audit-list-rows" role="rowgroup">${rows}</div>
       <div class="lh-audit-list-see-more__container">
         <button
           @click="${this.onIncreaseAuditsShown}"

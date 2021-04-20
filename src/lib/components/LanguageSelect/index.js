@@ -51,9 +51,7 @@ class LanguageSelect extends BaseStateElement {
           </option>
         `
       : html`
-          <option value="${language}">
-            ${languageName} (${language})
-          </option>
+          <option value="${language}">${languageName} (${language})</option>
         `;
   }
 

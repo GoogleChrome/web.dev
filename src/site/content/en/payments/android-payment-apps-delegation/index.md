@@ -21,9 +21,9 @@ rate.
 That's why the Payment Request API supports a feature to request shipping
 address and contact information. This provides multiple benefits:
 
-* Users can pick the right address with just a few taps.    
+* Users can pick the right address with just a few taps.
 * The address is always returned in [the standardized
-  format](https://w3c.github.io/payment-request/#paymentaddress-interface).    
+  format](https://w3c.github.io/payment-request/#paymentaddress-interface).
 * Submitting an incorrect address is less likely.
 
 This functionality can be deferred to a payment app to offer a unified payment
@@ -51,7 +51,7 @@ option.
 
 {% Aside %}
 Learn how to implement an [Android payment
-app](https://web.dev/android-payment-apps-developers-guide/) in advance.
+app](/android-payment-apps-developers-guide/) in advance.
 {% endAside %}
 
 To add delegation support to an already existing Android payment app,
@@ -83,7 +83,7 @@ app. Declare the supported delegations as a `<meta-data>` in your app's
 </activity>
 ```
 
-`<resource>` must be a list of strings chosen from the following valid values: 
+`<resource>` must be a list of strings chosen from the following valid values:
 
 ```json
 [ "payerName", "payerEmail", "payerPhone", "shippingAddress" ]
@@ -201,7 +201,7 @@ To do so the following parameters must be specified as Intent extras:
     * `recipient`
     * `region`
     * `sortingCode`
-    * `addressLine`  
+    * `addressLine`
   All keys other than the `addressLine` have string values. The `addressLine`
   is an array of strings.
 * `shippingOptionId` - The identifier of the user-selected shipping option. This

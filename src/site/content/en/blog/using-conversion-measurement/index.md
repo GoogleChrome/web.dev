@@ -174,8 +174,8 @@ more use cases—please [share it](/conversion-measurement/#share-your-feedback)
 
 ## Further reading
 
-- [Origin trials developer guide](https://web.dev/third-party-origin-trials/)
-- [Getting started with Chrome's origin trials](https://web.dev/origin-trials/)
+- [Origin trials developer guide](/third-party-origin-trials/)
+- [Getting started with Chrome's origin trials](/origin-trials/)
 - [What are third-party origin
   trials?](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)
 

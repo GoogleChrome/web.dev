@@ -164,7 +164,7 @@ Here's how they compare to Web Payments:
       <td>✔</td>
     </tr>
     <tr>
-      <td>Native app integration</td>
+      <td>Platform-specific app integration</td>
       <td>✔</td>
       <td></td>
       <td></td>

@@ -26,7 +26,7 @@ feedback:
 ## Fragment Identifiers
 
 Chrome&nbsp;80 was a big release. It contained a number of highly anticipated features like
-[ECMAScript Modules in Web Workers](https://web.dev/module-workers/),
+[ECMAScript Modules in Web Workers](/module-workers/),
 [nullish coalescing](https://v8.dev/features/nullish-coalescing),
 [optional chaining](https://v8.dev/features/optional-chaining), and more. The release was, as usual,
 announced through a
@@ -34,7 +34,7 @@ announced through a
 Chromium blog. You can see an excerpt of the blog post in the screenshot below.
 
 <figure class="w-figure">
-  <img src="blog-red-ids.png" alt="" class="w-screenshot" width="400">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/egsW6tkKWYI8IHE6JyMZ.png", alt="", width="400", height="628" %}
   <figcaption class="w-figcaption">Chromium blog post with red boxes around elements with an <code>id</code> attribute.</figcaption>
 </figure>
 
@@ -58,7 +58,7 @@ As you can see in the Elements panel of the Developer Tools, the element in ques
 attribute with the value `HTML1`.
 
 <figure class="w-figure">
-  <img src="id-html1.png" alt="" class="w-screenshot" width="600">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/whVXhhrYwA55S3i4J3l5.png", alt="", width="600", height="97" %}
   <figcaption class="w-figcaption">Dev Tools showing the <code>id</code> of an element.</figcaption>
 </figure>
 
@@ -95,7 +95,7 @@ have an `id` attribute, meaning there is no way I can link to this heading. This
 Text Fragments solve.
 
 <figure class="w-figure">
-  <img src="id-missing.png" alt="" class="w-screenshot" width="600">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1g4rTS1q5LKHEHnDoF9o.png", alt="", width="600", height="71" %}
   <figcaption class="w-figcaption">Dev Tools showing a heading without an <code>id</code>.</figcaption>
 </figure>
 
@@ -148,7 +148,7 @@ If you click the link in a supporting browser like Chrome, the text fragment is 
 scrolls into view:
 
 <figure class="w-figure">
-  <img src="syntax-simple.png" alt="" class="w-screenshot" width="400">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/D3jwPrJlvN3FmJo3pADt.png", alt="", width="400", height="208" %}
   <figcaption class="w-figcaption">Text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
@@ -172,7 +172,7 @@ by `ES%20Modules%20in%20Web%20Workers.` as `textEnd`. When you click through on 
 like Chrome, the whole section is highlighted and scrolled into view:
 
 <figure class="w-figure">
-  <img src="syntax-end.png" alt="" class="w-screenshot" width="400">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2yTYmKnjHTnqXkcmHF1F.png", alt="", width="400", height="343" %}
   <figcaption class="w-figcaption">Text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
@@ -190,7 +190,7 @@ intended to highlight. The problem is that the desired section is not uniquely i
 current one-word `textStart` and `textEnd` values:
 
 <figure class="w-figure">
-  <img src="syntax-end-wrong.png" alt="" class="w-screenshot" width="400">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GGbbtHBpsoFyubnISyZw.png", alt="", width="400", height="342" %}
   <figcaption class="w-figcaption">Non-intended text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
@@ -202,12 +202,7 @@ Chrome&nbsp;80 release blog post as my example? The answer is that in this relea
 were introduced:
 
 <figure class="w-figure">
-  <img src="text-fragments.png" alt="Blog post text: Text URL Fragments.
-    Users or authors can now link to a specific portion of a page
-    using a text fragment provided in a URL.
-    When the page is loaded, the browser highlights the text and scrolls the fragment into view.
-    For example, the URL below loads a wiki page for 'Cat'
-    and scrolls to the content listed in the `text` parameter." class="w-screenshot" width="80%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yA1p3CijeDbTRwMys9Hq.png", alt="Blog post text: Text URL Fragments. Users or authors can now link to a specific portion of a page using a text fragment provided in a URL. When the page is loaded, the browser highlights the text and scrolls the fragment into view. For example, the URL below loads a wiki page for 'Cat' and scrolls to the content listed in the `text` parameter.", width="800", height="200", class="w-screenshot" %}
   <figcaption class="w-figcaption">Text Fragments announcement blog post excerpt.</figcaption>
 </figure>
 
@@ -219,7 +214,7 @@ URL
 matches at the first occurrence of the word "Text" already in the heading:
 
 <figure class="w-figure">
-  <img src="first-text.png" alt="" class="w-screenshot" width="80%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nXxCskUwdCxwxejPSSZW.png", alt="", width="800", height="209" %}
   <figcaption class="w-figcaption">Text Fragment matching at the first occurrence of "Text".</figcaption>
 </figure>
 
@@ -235,7 +230,7 @@ To allow the parser to clearly identify the `prefix-` and the `-suffix`, they ne
 from the `textStart` and the optional `textEnd` with a dash&nbsp;`-`.
 
 <figure class="w-figure">
-  <img src="correct-text.png" alt="" class="w-screenshot" width="80%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J3L5BVSMmzGY6xdkabP6.png", alt="", width="800", height="203" %}
   <figcaption class="w-figcaption">Text Fragment matching at the desired occurrence of "text".</figcaption>
 </figure>
 
@@ -288,7 +283,7 @@ menu. This extension is available for the following browsers:
 - [Link to Text Fragment for Apple Safari](https://apps.apple.com/app/link-to-text-fragment/id1532224396)
 
 <figure class="w-figure">
-  <img src="extension.png" alt="" class="w-screenshot" width="100%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASLtFCPoHvyTKrAtKAv4.png", alt="", width="800", height="500" %}
   <figcaption class="w-figcaption">
     <a href="https://github.com/GoogleChromeLabs/link-to-text-fragment">
       Link to Text Fragment
@@ -304,7 +299,7 @@ separated by an ampersand character `&`. Here is an example link with three text
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet<mark class="highlight-line highlight-line-active"></code></a>.
 
 <figure class="w-figure">
-  <img src="three-text-fragments.png" alt="" class="w-screenshot" width="80%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ffsq7aoSoVd9q6r5cquY.png", alt="", width="800", height="324" %}
   <figcaption class="w-figcaption">Three text fragments in one URL.</figcaption>
 </figure>
 
@@ -320,7 +315,7 @@ contains both an element fragment (`HTML1`), as well as a text fragment
 (`text=Give%20us%20feedback%20in%20our%20Product%20Forums.`):
 
 <figure class="w-figure">
-   <img src="text-feedback.png" alt="" class="w-screenshot" width="237">
+   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/JRKCM6Ihrq8sgRZRiymr.png", alt="", width="237", height="121" %}
   <figcaption class="w-figcaption">Linking with both element fragment and text fragment.</figcaption>
 </figure>
 
@@ -481,12 +476,12 @@ is in the form of a question. Clicking a featured snippet takes the user directl
 snippet text on the source web page. This works thanks to automatically created Text Fragments URLs.
 
 <figure class="w-figure">
-  <img src="google-serp.png" alt="" class="w-screenshot" width="80%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KbZgnGxZOOymLxYPZyGH.png", alt="", width="800", height="451" %}
   <figcaption class="w-figcaption">Google search engine results page showing a featured snippet. The status bar shows the Text Fragments URL.</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img src="google-help.png" alt="" class="w-screenshot" width="80%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4Q7zk9xBnb2uw8GRaLnU.png", alt="", width="800", height="451" %}
   <figcaption class="w-figcaption">After clicking through, the relevant section of the page is scrolled into view.</figcaption>
 </figure>
 

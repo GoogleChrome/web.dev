@@ -43,7 +43,7 @@ Paste the copied code from the previous step into your article.
 
 Be sure to replace the text that says "ALT_TEXT_HERE" with your own description
 of the image. You can read more about writing effective alt text over on [the
-web.dev handbook](https://web.dev/handbook/inclusion-and-accessibility/#use-inclusive-images).
+web.dev handbook](/handbook/inclusion-and-accessibility/#use-inclusive-images).
 
 {% Aside %}
 You may notice that the generated code is using either the
@@ -99,7 +99,7 @@ directly.
 ```
 ## Captions
 
-To include a caption along with an image, use `<figure>` with `<figcaption>` and 
+To include a caption along with an image, use `<figure>` with `<figcaption>` and
 place the shortcode snippet inside:
 
 ```md
@@ -117,7 +117,7 @@ place the shortcode snippet inside:
 ```
 
 <figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg", 
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QlgeHQrzaD9IOKBXB68I.jpg",
 alt="ALT_TEXT_HERE", width="380", height="240" %}
   <figcaption class="w-figcaption">
     A good boy.

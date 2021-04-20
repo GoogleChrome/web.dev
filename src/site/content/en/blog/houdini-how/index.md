@@ -26,7 +26,7 @@ the styles they write.
 Houdini enables more semantic CSS with the [Typed Object
 Model](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API/Guide). Developers can
 define advanced CSS custom properties with syntax, default values, and inheritance through the
-[Properties and Values API](https://web.dev/at-property/).
+[Properties and Values API](/at-property/).
 
 It also introduces paint, layout, and animation
 [worklets](https://developers.google.com/web/updates/2018/10/animation-worklet), which open up a
@@ -55,9 +55,14 @@ your own Paint worklet, or use an existing published worklet. Then, rather than 
 apply this worklet to borders and clipping.
 
 <figure class="w-figure">
-  <video class="w-screenshot" autoplay loop muted playsinline aria-label="Demo with angled corners and material design buttons">
-    <source src="https://storage.googleapis.com/web-dev-assets/houdini-how/angled-demo.mp4" type="video/mp4">
-  </video>
+  {% Video
+    src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LNMysDPgN7nSgyT1p1Fl.mp4",
+    class="w-screenshot",
+    autoplay=true,
+    loop=true,
+    muted=true,
+    playsinline=true
+  %}
   <figcaption class="w-figcaption">
     The example above uses the same paint worklet with different arguments (see code below) to accomplish this result. Demo on <a href="https://glitch.com/~angled-corners">Glitch</a>.</a>
   </figcaption>

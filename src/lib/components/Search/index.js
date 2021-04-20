@@ -465,16 +465,6 @@ class Search extends BaseStateElement {
     });
     this.expanded = true;
 
-    // Collapse the search box if the user scrolls while the seach box is
-    // focused.
-    window.addEventListener(
-      'scroll',
-      () => {
-        /** @type HTMLElement */ (document.activeElement).blur();
-      },
-      {passive: true, once: true},
-    );
-
     // Wait for the expanding animation to finish before hiding the header
     // links and allowing overflow content.
     // Keep a reference to the timeout in case the user tabs out quickly.
