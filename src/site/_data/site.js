@@ -41,7 +41,7 @@ module.exports = {
   imgix: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
   gcs: 'https://storage.googleapis.com',
-  gitlocalize: 'https://gitlocalize.com/repo/3847/',
+  gitlocalize: 'https://gitlocalize.com/repo/5395/',
   analytics: {
     ids: {
       prod: 'UA-126406676-2',
