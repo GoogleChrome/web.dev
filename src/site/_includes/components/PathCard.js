@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {generateSrc} = require('./Img');
+const {imgix} = require('./Img');
 const {html} = require('common-tags');
 const removeDrafts = require('../../_filters/remove-drafts');
 
@@ -88,7 +88,7 @@ module.exports = (path, lang) => {
         <div class="w-path-card__cover">
           <img
             class="w-path-card__cover-image"
-            src="${generateSrc(path.cover)}"
+            src="${imgix(path.cover)}"
             alt=""
             loading="lazy"
             width="100%"

@@ -42,7 +42,7 @@ const EventTable = require(`./${componentsDir}/EventTable`);
 const Glitch = require(`./${componentsDir}/Glitch`);
 const Hero = require(`./${componentsDir}/Hero`);
 const IFrame = require(`./${componentsDir}/IFrame`);
-const {Img, generateSrc: imigxFilter} = require(`./${componentsDir}/Img`);
+const {Img, imgix} = require(`./${componentsDir}/Img`);
 const Instruction = require(`./${componentsDir}/Instruction`);
 const Label = require(`./${componentsDir}/Label`);
 const Meta = require(`./${componentsDir}/Meta`);
@@ -159,7 +159,7 @@ module.exports = function (config) {
   config.addFilter('githubLink', githubLink);
   config.addFilter('gitlocalizeLink', gitlocalizeLink);
   config.addFilter('htmlDateString', htmlDateString);
-  config.addFilter('imgix', imigxFilter);
+  config.addFilter('imgix', imgix);
   config.addFilter('md', md);
   config.addFilter('navigation', navigation);
   config.addFilter('pagedNavigation', pagedNavigation);
