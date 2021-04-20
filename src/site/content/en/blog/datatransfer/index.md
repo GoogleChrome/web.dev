@@ -218,7 +218,7 @@ recognizable.
 ### Accessibility
 
 Drag-drop is not a very accessible interaction, but the DataTransfer API works with copy-paste, too.
-Please make sure you listen to copy-paste events! It doesn't take much extra work, and your users
+Make sure you listen to copy-paste events! It doesn't take much extra work, and your users
 will be grateful to you for adding it.
 
 ### Security and privacy
