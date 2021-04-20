@@ -15,12 +15,21 @@
   padding: 0;
 }
 
+.course-index {
+  @include apply-utility('weight', 'medium');
+  color: $GREY_700;
+  font-size: 11px;
+}
+
 // Give the heading, subheading, and copy paragraphs the same fluid text
 // treatment that we use on developer.chrome.com
 .course-headline {
   @include apply-utility('font', 'google-sans');
   @include apply-utility('weight', 'regular');
   @include flex-font((24px 32px), (32px 40px), (36px 44px));
+  // annoying workaround because our headings self-define margins
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .course-description {
