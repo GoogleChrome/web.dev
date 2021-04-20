@@ -1,5 +1,5 @@
 const {imgix: imgixFilter} = require('webdev-infra/filters/imgix');
-const {Img: ImgShortcode} = require('webdev-infra/shortcodes/Img');
+const {Img: BuildImgShortcode} = require('webdev-infra/shortcodes/Img');
 
 const {imgixDomain} = require('../../_data/site');
 
@@ -9,7 +9,7 @@ const {imgixDomain} = require('../../_data/site');
  * @param {wd.ImgArgs} args Named arguments
  * @return {string}
  */
-const Img = ImgShortcode(imgixDomain);
+const Img = BuildImgShortcode(imgixDomain);
 
 /**
  * Generates src URL of image from imgix path or URL.
@@ -18,6 +18,6 @@ const Img = ImgShortcode(imgixDomain);
  * @param {wd.TODOObject} [params] Imgix API params.
  * @return {string}
  */
-const imgix = imgixFilter(imgixDomain);
+const generateImgixSrc = imgixFilter(imgixDomain);
 
-module.exports = {Img, imgix};
+module.exports = {Img, generateImgixSrc};

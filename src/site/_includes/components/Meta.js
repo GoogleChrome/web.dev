@@ -16,7 +16,7 @@
 
 const {html} = require('common-tags');
 const path = require('path');
-const {imgix} = require('./Img');
+const {generateImgixSrc} = require('./Img');
 const site = require('../../_data/site');
 const strip = require('../../_filters/strip');
 const {findByUrl} = require('../../_filters/find-by-url');
@@ -68,7 +68,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
     if (!thumbnail) {
       thumbnail = new URL(site.thumbnail, site.imageCdn);
     } else {
-      thumbnail = new URL(imgix(thumbnail));
+      thumbnail = new URL(generateImgixSrc(thumbnail));
     }
     thumbnail.searchParams.set('auto', 'format');
     thumbnail.searchParams.set('fit', 'max');

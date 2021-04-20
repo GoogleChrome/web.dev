@@ -1,4 +1,4 @@
-const {Video: VideoShortcode} = require('webdev-infra/shortcodes/Video');
+const {Video: BuildVideoShortcode} = require('webdev-infra/shortcodes/Video');
 
 const {bucket, imgixDomain} = require('../../_data/site');
 
@@ -6,6 +6,6 @@ const {bucket, imgixDomain} = require('../../_data/site');
  * @param {wd.VideoArgs} args Named arguments
  * @returns {string}
  */
-const Video = VideoShortcode(bucket, imgixDomain);
+const Video = BuildVideoShortcode(bucket, imgixDomain);
 
 module.exports = {Video};
