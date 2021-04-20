@@ -5,9 +5,9 @@ subhead: A foundational overview of how to build split letter and word animation
 authors:
   - adamargyle
 description: A foundational overview of how to build split letter and word animations.
-date: 2021-03-17
-hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/SUaxDTgOYvv2JXxaErBP.png
-thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/zkv1FlI6dn82rJ104yBV.png
+date: 2021-04-20
+hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/XHfyVzz2S49XK7jRl9Xx.png
+thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/VgfJpMKN2a5p0dKRFxse.png
 tags:
   - blog
   - css
@@ -16,7 +16,9 @@ tags:
   - animation
 ---
 
-In this post I want to share thinking on ways to solve split text animations and interactions for the web that is minimal, accessible and works across browsers. Try the [demo](https://gui-challenges.web.app/split-text/dist/).
+In this post I want to share thinking on ways to solve split text animations and
+interactions for the web that is minimal, accessible and works across browsers.
+Try the [demo](https://gui-challenges.web.app/split-text/dist/).
 
 <figure class="w-figure w-figure--fullbleed">
   {% Video
@@ -37,40 +39,79 @@ If you prefer video, here's a YouTube version of this post:
 
 ## Overview
 
-Split text animations can be amazing. We'll be barely scratching the surface of animation potential in this post, but it does provide a foundation to build upon. The goal is to animate progressively. The text should be readable by default, with the animation built on top of it. Split text motion effects can get extravagant and potentially disruptive, so we will only manipulate HTML, or apply motion styles if the user is OK with motion.
+Split text animations can be amazing. We'll be barely scratching the surface of
+animation potential in this post, but it does provide a foundation to build
+upon. The goal is to animate progressively. The text should be readable by
+default, with the animation built on top of it. Split text motion effects can
+get extravagant and potentially disruptive, so we will only manipulate HTML, or
+apply motion styles if the user is OK with motion.
 
 Here's a general overview of the workflow and results:
-1. [Prepare](#) reduced motion conditional variables for CSS and JS.
-1. [Prepare](#) split text utilities in Javascript.
-1. [Orchestrate](#) the conditionals and utilities on page load.
-1. [Write](#) CSS transitions and animations for letters and words (the rad part!).
+1. [Prepare](#preparing-motion-conditionals) reduced motion conditional
+   variables for CSS and JS.
+1. [Prepare](#splitting-letters-utility-function) split text utilities in
+   Javascript.
+1. [Orchestrate](#split-orchestration) the conditionals and utilities on page
+   load.
+1. [Write](#splitting-animations-and-transitions) CSS transitions and animations
+   for letters and words (the rad part!).
 
 Here's a preview of the conditional results we're going for:
 
-TODO img
+<figure class="w-figure">
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/TIrcTqDDX0tQiRyIuin1.png",
+    alt="screenshot of the Chrome devtools with the Elements panel open and reduced motion set to 'reduce' and the h1 is shown unsplit",
+    class="w-screenshot",
+    width="800", height="517"
+  %}
+  <figcaption class="w-figcaption">
+    User prefers reduced motion: text is legible / unsplit
+  </figcaption>
+</figure>
 
-If a user prefers reduced motion, we leave the HTML document alone and do no animation. If motion is OK, we go ahead and chop it up into pieces. Here's a preview of the HTML after Javascript has split the text by letter. 
+If a user prefers reduced motion, we leave the HTML document alone and do no
+animation. If motion is OK, we go ahead and chop it up into pieces. Here's a
+preview of the HTML after Javascript has split the text by letter. 
 
-TODO img
+<figure class="w-figure">
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/prwDis2IMcZxFD39mnWF.png",
+    alt="screenshot of the Chrome devtools with the Elements panel open and reduced motion set to 'reduce' and the h1 is shown unsplit",
+    class="w-screenshot",
+    width="800", height="517"
+  %}
+  <figcaption class="w-figcaption">
+    User is OK with motion; text split into multiple <span> elements
+  </figcaption>
+</figure>
 
 ### Preparing motion conditionals
 
-The conveniently [available](https://caniuse.com/prefers-reduced-motion) `@media (prefers-reduced-motion: reduce)` media query will be used from CSS and Javascript in this project. This media query is our primary conditional for deciding to split text or not. The CSS media query will be used to withhold transitions and animations, while the Javascript media query will be used to withhold the HTML manipulation. 
+The conveniently [available](https://caniuse.com/prefers-reduced-motion) `@media
+(prefers-reduced-motion: reduce)` media query will be used from CSS and
+Javascript in this project. This media query is our primary conditional for
+deciding to split text or not. The CSS media query will be used to withhold
+transitions and animations, while the Javascript media query will be used to
+withhold the HTML manipulation. 
 
-todo: handbook this question
-Question:
-What else should be used to withhold split text animations?
+{% Banner 'neutral' %} **Question:** What else should be used to withhold split
+text animations?{% endBanner %}
+
 
 #### Preparing the CSS conditional
 
-I used PostCSS to enable the syntax of Media Queries Level 5, where I can store a media query boolean into a variable:
+I used PostCSS to enable the syntax of Media Queries Level 5, where I can store
+a media query boolean into a variable:
 
 ```css
 @custom-media --motionOK (prefers-reduced-motion: no-preference);
 ```
 
 #### Preparing the JS conditional
-In Javascript, the browser provides a way to check media queries, I used [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) to extract and rename the boolean result from the media query check:
+In Javascript, the browser provides a way to check media queries, I used
+[destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+to extract and rename the boolean result from the media query check:
 
 ```js
 const {matches:motionOK} = window.matchMedia(
@@ -78,7 +119,8 @@ const {matches:motionOK} = window.matchMedia(
 )
 ```
 
-I can then test for `motionOK`, and only change the document if the user has not requested to reduce motion.
+I can then test for `motionOK`, and only change the document if the user has not
+requested to reduce motion.
 
 ```js
 if (motionOK) {
@@ -86,7 +128,10 @@ if (motionOK) {
 }
 ```
 
-I can check the same value by using PostCSS to enable the `@nest` syntax from [Nesting Draft 1](https://drafts.csswg.org/css-nesting-1/). This allows me to store all the logic about the animation and it's style requirements for the parent and children, in one place:
+I can check the same value by using PostCSS to enable the `@nest` syntax from
+[Nesting Draft 1](https://drafts.csswg.org/css-nesting-1/). This allows me to
+store all the logic about the animation and it's style requirements for the
+parent and children, in one place:
 
 ```css
 letter-animation {
@@ -96,44 +141,58 @@ letter-animation {
 }
 ```
 
-With the PostCSS custom property and a Javascript boolean, we're ready to conditionally upgrade the effect. That rolls us into the next section where I break down the Javascript for transforming strings into elements.
+With the PostCSS custom property and a Javascript boolean, we're ready to
+conditionally upgrade the effect. That rolls us into the next section where I
+break down the Javascript for transforming strings into elements.
 
 ## Splitting Text
 
-Text letters, words, lines, etc cannot be individually animated with CSS or JS. To achieve the effect, we need boxes. If we want to animate each letter, then each letter needs to be an element. If we want to animate each word, then each word needs to be an element. 
+Text letters, words, lines, etc cannot be individually animated with CSS or JS.
+To achieve the effect, we need boxes. If we want to animate each letter, then
+each letter needs to be an element. If we want to animate each word, then each
+word needs to be an element. 
 
 1. Create Javascript utility functions for splitting strings into elements
 1. Orchestrate the usage of these utilities
 
-TODO
-info box:
-In this demo I'll be splitting the text from Javascript on the DOM of the page. If you're in a framework or on the server, you could split the text into elements from there, but do so respectfully. 
+{% Aside %} In this demo I'll be splitting the text from Javascript on the DOM
+of the page. If you're in a framework or on the server, you could split the text
+into elements from there, but do so respectfully.{% endAside %}
 
 ### Splitting letters utility function
 
-A fun place to start is with a function which takes a string and returns each letter in an array.
+A fun place to start is with a function which takes a string and returns each
+letter in an array.
 
 ```js
 export const byLetter = text =>
   [...text].map(span)
 ```
 
-The [spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) syntax from ES6 really helped make that a swift task. 
+The
+[spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+syntax from ES6 really helped make that a swift task. 
 
 ### Splitting words utility function
 
-Similar to splitting letters, this function takes a string and returns each word in an array.
+Similar to splitting letters, this function takes a string and returns each word
+in an array.
 
 ```js
 export const byWord = text =>
   text.split(' ').map(span)
 ```
 
-The [`split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) method on Javascript strings allows us to specify which characters to slice at. I passed an empty space, indicating a split between words.  
+The
+[`split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+method on Javascript strings allows us to specify which characters to slice at.
+I passed an empty space, indicating a split between words.  
 
 ### Making boxes utility function
 
-The effect requires boxes for each letter, and we see in those functions, that [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) is being called with a `span()` function. Here is the `span()` function.
+The effect requires boxes for each letter, and we see in those functions, that
+[`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+is being called with a `span()` function. Here is the `span()` function.
 
 ```js
 const span = (text, index) => {
@@ -146,7 +205,13 @@ const span = (text, index) => {
 }
 ```
 
-It's crucial to note that a custom property called `--index` is being set with the array position. Having the boxes for the letter animations is great, but having an index to use in CSS is a seemingly small addition with a large impact. Most notable in this large impact is [staggering](https://css-tricks.com/different-approaches-for-creating-a-staggered-animation/). We'll be able to use `--index` as a way of offsetting animations for a staggered look.
+It's crucial to note that a custom property called `--index` is being set with
+the array position. Having the boxes for the letter animations is great, but
+having an index to use in CSS is a seemingly small addition with a large impact.
+Most notable in this large impact is
+[staggering](https://css-tricks.com/different-approaches-for-creating-a-staggered-animation/).
+We'll be able to use `--index` as a way of offsetting animations for a staggered
+look.
 
 ### Utilities conclusion
 
@@ -181,7 +246,12 @@ After that, CSS takes over and will animate the elements / boxes.
 
 ### Finding Elements
 
-I chose to use attributes and values to store information about the desired animation and how to split the text. I liked putting these declarative options into the HTML. The attribute `split-by` is used from Javascript, to find elements and create boxes for either letters or words. The attribute `letter-animation` or `word-animation` is used from CSS, to target element children and apply transforms and animations.
+I chose to use attributes and values to store information about the desired
+animation and how to split the text. I liked putting these declarative options
+into the HTML. The attribute `split-by` is used from Javascript, to find
+elements and create boxes for either letters or words. The attribute
+`letter-animation` or `word-animation` is used from CSS, to target element
+children and apply transforms and animations.
 
 Here's a sample of HTML that demonstrates the two attributes:
 
@@ -192,7 +262,8 @@ Here's a sample of HTML that demonstrates the two attributes:
 
 ### Finding elements from Javascript
 
-I used the CSS selector syntax for attribute presence to gather the list of elements which want their text split:
+I used the CSS selector syntax for attribute presence to gather the list of
+elements which want their text split:
 
 ```js
 const splitTargets = document.querySelectorAll('[split-by]')
@@ -200,7 +271,9 @@ const splitTargets = document.querySelectorAll('[split-by]')
 
 ### Finding elements from CSS
 
-I also used the attribute presence selector in CSS to give all letter animations the same base styles. Later, we'll use the attribute value to add more specific styles to achieve an effect.
+I also used the attribute presence selector in CSS to give all letter animations
+the same base styles. Later, we'll use the attribute value to add more specific
+styles to achieve an effect.
 
 ```css
 letter-animation {
@@ -212,7 +285,9 @@ letter-animation {
 
 ### Splitting text in place
 
-For each of the split targets we find in Javascript, we'll split their text based on the value of the attribute and map each string to a `<span>`. We can then replace the text of the element with the boxes we made:
+For each of the split targets we find in Javascript, we'll split their text
+based on the value of the attribute and map each string to a `<span>`. We can
+then replace the text of the element with the boxes we made:
 
 ```js
 splitTargets.forEach(node => {
@@ -264,18 +339,24 @@ The Javascript could be read in the following English:
 1. Import some helper utility functions.
 1. Check if motion is ok for this user, if not do nothing.
 1. For each element that wants to be split.
-  1. Split them based on how they want to be split.
-  1. Replace text with elements.
+    1. Split them based on how they want to be split.
+    1. Replace text with elements.
 
 ## Splitting animations and transitions
 
-The above splitting document manipulation has just unlocked a multitude of potential animations and effects with CSS or Javascript. There are a few links at the bottom of this article to help inspire your splitting potential. 
+The above splitting document manipulation has just unlocked a multitude of
+potential animations and effects with CSS or Javascript. There are a few links
+at the bottom of this article to help inspire your splitting potential. 
 
-Time to show what you can do with this! I'll share 4 CSS driven animations and transitions. 🤓 
+Time to show what you can do with this! I'll share 4 CSS driven animations and
+transitions. 🤓 
 
 ### Split letters 
 
-As a foundation for the split letter effects, I found the following CSS to be helpful. I put all transitions and animations behind the motion media query and then give each new child letter `span` a display property plus a style for what to do with white spaces:
+As a foundation for the split letter effects, I found the following CSS to be
+helpful. I put all transitions and animations behind the motion media query and
+then give each new child letter `span` a display property plus a style for what
+to do with white spaces:
 
 ```css
 [letter-animation] > span {
@@ -284,15 +365,26 @@ As a foundation for the split letter effects, I found the following CSS to be he
 }
 ```
 
-The white spaces style is important so that the spans which are only a space, aren't collapsed by the layout engine. Now onto the stateful fun stuff.
+The white spaces style is important so that the spans which are only a space,
+aren't collapsed by the layout engine. Now onto the stateful fun stuff.
 
 #### Transition split letters example
 
-This example uses CSS transitions to the split text effect. With transitions we need states for the engine to animate between, and I chose three states: no hover, hover in sentence, hover on a letter. 
+This example uses CSS transitions to the split text effect. With transitions we
+need states for the engine to animate between, and I chose three states: no
+hover, hover in sentence, hover on a letter. 
 
-When the user hovers the sentence, aka the container, I scale back all the children as if the user pushed them further away. Then, as the user hovers a letter, I bring it forward.
+When the user hovers the sentence, aka the container, I scale back all the
+children as if the user pushed them further away. Then, as the user hovers a
+letter, I bring it forward.
 
-TODO video
+{% Video
+  src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/TTG7vmfEJRAlRISqqIIA.mp4",
+  class="w-screenshot",
+  autoplay="true",
+  loop="true",
+  muted="true"
+%}
 
 ```css
 @media (--motionOK) {
@@ -315,9 +407,17 @@ TODO video
 
 #### Animate split letters example
 
-This example uses a predefined `@keyframe` animation to infinitely animated each letter, and leverages the inline custom property index to create a stagger effect.
+This example uses a predefined `@keyframe` animation to infinitely animated each
+letter, and leverages the inline custom property index to create a stagger
+effect.
 
-TODO video
+{% Video
+  src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/Y9wcyj9AMwjn2XDASL2u.mp4",
+  class="w-screenshot",
+  autoplay="true",
+  loop="true",
+  muted="true"
+%}
 
 ```css
 @media (--motionOK) {
@@ -341,13 +441,15 @@ TODO video
 }
 ```
 
-TODO
-note:
-CSS `calc()` will use the unit type from the last item in the calculation. In the above case, that's 1ms. It's used strategically to convert the otherwise unitless number, into a value of `<time>` for the animation.
+{% Aside 'objective' %} CSS `calc()` will use the unit type from the last item
+in the calculation. In the above case, that's 1ms. It's used strategically to
+convert the otherwise unitless number, into a value of `<time>` for the
+animation. {% endAside %}
 
 ### Split words
 
-Flexbox worked as a container type for me here in these examples, nicely leveraging the `ch` unit as a healthy gap length. 
+Flexbox worked as a container type for me here in these examples, nicely
+leveraging the `ch` unit as a healthy gap length. 
 
 ```css
 word-animation {
@@ -357,13 +459,32 @@ word-animation {
 }
 ```
 
-todo image
+<figure class="w-figure">
+  {% Video
+    src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/qgTmqbho48bH9VE35HYj.mp4",
+    class="w-screenshot",
+    autoplay="true",
+    loop="true",
+    muted="true"
+  %}
+  <figcaption class="w-figure">
+    Flexbox devtools showing the gap between words
+  </figcaption>
+</figure>
 
 #### Transition split words example
 
-In this transition example I use hover again. As the effect initially hides the content until hover, I ensured that the interaction and styles were only applied if the device had the capability to hover.
+In this transition example I use hover again. As the effect initially hides the
+content until hover, I ensured that the interaction and styles were only applied
+if the device had the capability to hover.
 
-TODO video
+{% Video
+  src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/2oIFqmTm8QIoNAhRiJQl.mp4",
+  class="w-screenshot",
+  autoplay="true",
+  loop="true",
+  muted="true"
+%}
 
 ```css
 @media (hover) {
@@ -385,9 +506,16 @@ TODO video
 
 #### Animate split words example
 
-In this animation example I use CSS `@keyframes` again to create a staggered infinite animation on a regular paragraph of text.
+In this animation example I use CSS `@keyframes` again to create a staggered
+infinite animation on a regular paragraph of text.
 
-TODO video
+{% Video
+  src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/fXANvKVQB8wiIYfaSp56.mp4",
+  class="w-screenshot",
+  autoplay="true",
+  loop="true",
+  muted="true"
+%}
 
 ```css
 [word-animation="trampoline"] > span {
@@ -415,7 +543,9 @@ TODO video
 
 Now that you know how I did it, how would you?! 🙂
 
-Let's diversify our approaches and learn all the ways to build on the web. Create a Codepen or host your own demo, tweet me with it, and I'll add it to the Community remixes section below.
+Let's diversify our approaches and learn all the ways to build on the web.
+Create a Codepen or host your own demo, tweet me with it, and I'll add it to the
+Community remixes section below.
 
 Source
 - [GUI Challenges source on GitHub](https://github.com/argyleink/gui-challenges) 
