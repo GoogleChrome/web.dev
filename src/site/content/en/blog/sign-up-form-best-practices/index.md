@@ -192,8 +192,8 @@ ways to implement re-authentication from the codelab [Your First WebAuthn App](h
 
 You can help third party and built-in browser password managers suggest and store passwords, so that
 users don't need to choose, remember or type passwords themselves. Password managers work well in
-modern browsers, synchronizing accounts across devices, across native and web apps—and for new
-devices.
+modern browsers, synchronizing accounts across devices, across platform-specific and web apps—and
+for new devices.
 
 This makes it extremely important to code sign-up forms correctly, in particular to use the correct
 autocomplete values. For sign-up forms use `autocomplete="new-password"` for new passwords, and add

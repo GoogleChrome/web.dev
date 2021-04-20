@@ -19,18 +19,18 @@ tags:
 
 ## Prequisites
 
-This post assumes that you understand how image CDNs can improve your load performance. If not, check out [Use image CDNs to optimize images](https://web.dev/image-cdns). It also assumes that you've built basic websites before.
+This post assumes that you understand how image CDNs can improve your load performance. If not, check out [Use image CDNs to optimize images](/image-cdns). It also assumes that you've built basic websites before.
 
 {% Aside %}
 
-If you would like to install Thumbor on your own server and then follow along with this post, check out [How to install the Thumbor image CDN](https://web.dev/install-thumbor). Whenever you see `http://34.67.235.246:8888` in this post you'll need to replace that origin with your Thumbor instance's origin.
+If you would like to install Thumbor on your own server and then follow along with this post, check out [How to install the Thumbor image CDN](/install-thumbor). Whenever you see `http://34.67.235.246:8888` in this post you'll need to replace that origin with your Thumbor instance's origin.
 
 {% endAside %}
 
 
 ## Thumbor URL Format
 
-As mentioned in [Use Image CDNs to Optimize Images](https://web.dev/image-cdns), each image CDN uses a slightly different URL format for images. Figure 1 represents Thumbor's format.
+As mentioned in [Use Image CDNs to Optimize Images](/image-cdns), each image CDN uses a slightly different URL format for images. Figure 1 represents Thumbor's format.
 
 <figure class="w-figure">
   {% Img src="image/admin/lo1hS8qn53XCztrlgvl7.jpg", alt="A Thumbor URL has the following components: origin, security key, size, filters and image.", width="800", height="89", class="w-screenshot" %}

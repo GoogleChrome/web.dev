@@ -208,7 +208,7 @@ window.addEventListener('DOMContentLoaded', () => {
 Be sure to use a service worker to [precache](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker) the `action`
 page so that it will load quickly and work reliably, even if the user is offline.
 [Workbox](https://developers.google.com/web/tools/workbox/) is a tool that can help you
-[implement precaching](https://web.dev/precache-with-workbox/) in your service worker.
+[implement precaching](/precache-with-workbox/) in your service worker.
 
 ### Processing POST shares
 

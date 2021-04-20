@@ -140,7 +140,7 @@ if (!(await hasDevicePixelContentBox())) {
 
 Pixels are a surprisingly complex topic on the web and up until now there was no way for you to know the exact number of physical pixels an element occupies on the user's screen. The new `devicePixelContentBox` property on a `ResizeObserverEntry` gives you that piece of information and allows you to do pixel-perfect renderings with `<canvas>`. `devicePixelContentBox` is supported in Chrome 84+.
 
-[resizeobserver]: https://web.dev/resize-observer/
+[resizeobserver]: /resize-observer/
 [subpixel rendering]: https://en.wikipedia.org/wiki/Subpixel_rendering
 [moiré effect]: https://en.wikipedia.org/wiki/Moir%C3%A9_pattern
 [ro support]: https://caniuse.com/#feat=resizeobserver

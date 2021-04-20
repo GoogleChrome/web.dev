@@ -33,9 +33,9 @@ In this article I assume you already know how to create an augmented reality
 session and that you know how to run a frame loop. If you're not familiar with
 these concepts, you should read the earlier articles in this series.
 
-* [Virtual reality comes to the web](https://web.dev/vr-comes-to-the-web/)
-* [Virtual reality comes to the web, part II](https://web.dev/vr-comes-to-the-web-pt-ii/)
-* [Web AR: you may already know how to use it](https://web.dev/web-ar)
+* [Virtual reality comes to the web](/vr-comes-to-the-web/)
+* [Virtual reality comes to the web, part II](/vr-comes-to-the-web-pt-ii/)
+* [Web AR: you may already know how to use it](/web-ar)
 
 ## The immersive AR session sample
 

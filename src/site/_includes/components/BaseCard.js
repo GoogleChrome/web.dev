@@ -68,13 +68,14 @@ class BaseCard {
       height: '240',
       width: '354',
       class: 'w-card-base__image',
+      params: {
+        fit: 'crop',
+        h: '240',
+        w: '354',
+      },
     });
 
-    return html`
-      <figure class="w-card-base__figure">
-        ${img}
-      </figure>
-    `;
+    return html` <figure class="w-card-base__figure">${img}</figure> `;
   }
 
   renderSubhead(subhead) {
@@ -84,9 +85,7 @@ class BaseCard {
 
     return html`
       <a class="w-card-base__link" tabindex="-1" href="${this.url}">
-        <p class="w-card-base__subhead">
-          ${md(subhead)}
-        </p>
+        <p class="w-card-base__subhead">${md(subhead)}</p>
       </a>
     `;
   }

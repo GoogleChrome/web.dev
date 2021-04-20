@@ -238,7 +238,7 @@ Check out the [app shortcuts sample] and its [source].
 * Blink Component: [`UI>Browser>WebAppInstalls`]
 
 [Progressive Web Apps]: /progressive-web-apps/
-[What does it take to be installable?]: https://web.dev/install-criteria/
+[What does it take to be installable?]: /install-criteria/
 [scope]: /add-manifest/#scope
 [web app manifest]: /add-manifest
 [web app manifest icons]: /add-manifest/#icons

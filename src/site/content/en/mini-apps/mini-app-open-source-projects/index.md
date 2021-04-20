@@ -108,7 +108,7 @@ The [kbone-ui](https://wechat-miniprogram.github.io/kbone/docs/ui/intro/) projec
 ([open source on GitHub](https://github.com/wechat-miniprogram/kbone-ui)) is a UI framework that
 facilitates both mini app development as well as Vue.js development with kbone. The kbone-ui
 components emulate the look and feel of
-[WeChat's "native" mini app components](https://developers.weixin.qq.com/miniprogram/dev/component/)
+[WeChat's built-in mini app components](https://developers.weixin.qq.com/miniprogram/dev/component/)
 (also see [Components](/mini-app-components/) above). A
 [demo](https://wechat-miniprogram.github.io/kboneui/ui/#/) that runs directly in the browser lets
 you explore the available components.

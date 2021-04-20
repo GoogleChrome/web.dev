@@ -37,7 +37,7 @@ search page loading time, eBay saw a 0.5% increase in "Add to Cart" count.**
   </div>
 </div>
 
-Through the adoption of [Performance Budgets](https://web.dev/performance-budgets-101/) (derived
+Through the adoption of [Performance Budgets](/performance-budgets-101/) (derived
 after doing a competitive study with the [Chrome User Experience
 Report](https://developers.google.com/web/tools/chrome-user-experience-report)) and a focus on key
 [user-centric performance metrics](/user-centric-performance-metrics/), eBay was able to make
@@ -55,7 +55,7 @@ significant improvements to site speed.
 <figure class="w-figure">
   {% Img src="image/admin/YeJPjxdDBrdbgLxcbl7E.png", alt="Screenshots of PageSpeed Insights view of Chrome User Experience Report data highlighting fast FCP of 70% and fast FID of 88% for eBay.com", width="800", height="237", class="w-screenshot" %}
   <figcaption class="w-figcaption">
-    Chrome User Experience Report data for <a href="https://web.dev/fcp/">First Contentful Paint</a> and <a href="https://web.dev/fid/">First Input Delay</a> for the eBay.com origin.
+    Chrome User Experience Report data for <a href="/fcp/">First Contentful Paint</a> and <a href="/fid/">First Input Delay</a> for the eBay.com origin.
   </figcaption>
 </figure>
 
@@ -70,7 +70,7 @@ the web developer community at large, rather than eBay-specific topics.
 ## Reduce payload across all text resources
 
 One way to make sites fast is to simply load less code. eBay reduced their text payloads by trimming
-all the [unused and unnecessary bytes](https://web.dev/remove-unused-code/) of JavaScript, CSS,
+all the [unused and unnecessary bytes](/remove-unused-code/) of JavaScript, CSS,
 HTML, and JSON responses served to users. Previously, with every new feature, eBay kept increasing
 the payload of their responses, without cleaning up what was unused. This added up over time and
 became a performance bottleneck. Teams usually procrastinated on this cleanup activity, but you'd
@@ -81,11 +81,11 @@ The "cut" here is the wasted bytes in the response payload.
 ## Critical path optimization for above-the-fold content
 
 Not every pixel on the screen is equally important. The content [above-the-fold][atf] is [more
-critical](https://web.dev/extract-critical-css/) than something below-the-fold. iOS/Android/desktop and web apps
+critical](/extract-critical-css/) than something below-the-fold. iOS/Android/desktop and web apps
 are aware of this, but what about services? eBay's service architecture has a layer called
 [Experience
 Services](https://tech.ebayinc.com/engineering/experience-services-ebays-solution-to-multi-screen-application-development/),
-which the frontends (native apps and web servers) talk to.
+which the frontends (platform-specific apps and web servers) talk to.
 This layer is specifically designed to be view- or device-based, rather than entity-based like item,
 user, or order. eBay then introduced the concept of the critical path for Experience Services.
 When a request comes to these services, they work on getting the data for above-the-fold
@@ -103,7 +103,7 @@ Images are [one of the largest contributors to page
 bloat](https://almanac.httparchive.org/en/2019/media). Even
 small optimizations go a long way. eBay did two optimizations for images.
 
-First, eBay standardized on the [WebP image format](https://web.dev/serve-images-webp/) for search
+First, eBay standardized on the [WebP image format](/serve-images-webp/) for search
 results across all platforms, including iOS, Android, and [supported browsers][webp]. The search
 results page is the most image-heavy page at eBay, and they were already using WebP, but not in a
 consistent pattern.
@@ -125,7 +125,7 @@ The "cut" here is the wasted image bytes sent to users.
 
 ## Predictive prefetch of static assets
 
-A user session on eBay is not just one page. It is a flow. For example, the flow can be a navigation from the homepage to a search page to an item page. So why don't pages in the flow help each other? That is the idea of [predictive prefetch](https://web.dev/predictive-prefetching/), where one page prefetches the static assets required for the next likely page.
+A user session on eBay is not just one page. It is a flow. For example, the flow can be a navigation from the homepage to a search page to an item page. So why don't pages in the flow help each other? That is the idea of [predictive prefetch](/predictive-prefetching/), where one page prefetches the static assets required for the next likely page.
 
 With predictive prefetch, when a user navigates to the predicted page, the assets are already in the browser cache. This is done for CSS and JavaScript assets, where the URLs can be retrieved ahead of time. One thing to note here is that it helps only on first-time navigations. On subsequent navigations, the static assets will already be in the cache.
 
@@ -217,7 +217,7 @@ All the performance "cuts" eBay made collectively contributed towards moving the
   </figcaption>
 </figure>
 
-Performance is a feature and a [competitive advantage](https://web.dev/value-of-speed/). Optimized experiences lead to higher user engagement, conversions, and ROI. In eBay's case, these optimizations varied from things that were low-effort to a few that were advanced.
+Performance is a feature and a [competitive advantage](/value-of-speed/). Optimized experiences lead to higher user engagement, conversions, and ROI. In eBay's case, these optimizations varied from things that were low-effort to a few that were advanced.
 
 Check out [Speed by a thousand cuts][cuts] to learn more and be on the lookout for more detailed articles by eBay engineers on their performance work in the near future.
 

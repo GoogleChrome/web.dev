@@ -468,7 +468,7 @@ styles here, I just need to define how it overflows. I set overflow-y to auto,
 and then also trap the scroll interactions with the handy overscroll-behavior
 property.
 
-#### 3 scroll areas recap {: #overscroll }
+#### 3 scroll areas recap {: #scroll-areas-recap }
 
 Below I've chosen in my system settings to "always show scrollbars". I think
 it's doubly important for the layout to work with this setting turned on, as it
@@ -516,7 +516,7 @@ Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode) by
 selecting any mode other than **Responsive**, and then resizing the device frame.
 Notice the element stays in view and locked with its content. This has been
 available since Chromium updated their implementation to match the spec. Here's
-a [blog post](https://web.dev/snap-after-layout/) about it.
+a [blog post](/snap-after-layout/) about it.
 
 ### Animation {: #animation }
 
@@ -524,7 +524,7 @@ The goal of the animation work here is to clearly link interactions with UI
 feedback. This helps guide or assist the user through to their (hopefully)
 seamless discovery of all the content. I'll be adding motion with purpose and
 conditionally. Users can now specify [their motion
-preferences](https://web.dev/prefers-reduced-motion/) in their operating system,
+preferences](/prefers-reduced-motion/) in their operating system,
 and I thoroughly enjoy responding to their preferences in my interfaces.
 
 I'll be linking a tab underline with the article scroll position. Snapping isn't

@@ -3,10 +3,10 @@ layout: post
 title: How Zalando reduced performance feedback time from 1 day to 15 minutes with Lighthouse CI
 subhead: |
   The web team at Zalando found that integrating Lighthouse CI enabled a proactive approach to performance,
-  with automated status checks able to compare the current commit to master to prevent performance regressions.
+  with automated status checks able to compare the current commit to the main branch to prevent performance regressions.
 description: |
   The web team at Zalando found that integrating Lighthouse CI enabled a proactive approach to performance,
-  with automated status checks able to compare the current commit to master to prevent performance regressions.
+  with automated status checks able to compare the current commit to the main branch to prevent performance regressions.
 authors:
   - jcolin
   - jbrockmeyer
@@ -56,7 +56,7 @@ if performance is not set as a product delivery criteria
 it can easily slip away. When we were redesigning Zalando website in 2020
 we focused on delivering
 [new features](https://corporate.zalando.com/en/newsroom/news-stories/zalando-sets-out-revolutionize-pre-owned-fashion-europe)
-while  maintaining excellent user experience and applying a facelift 
+while  maintaining excellent user experience and applying a facelift
 to the website with custom fonts and more vibrant colors.
 However, when the redesigned website and app were ready for release,
 early adopter metrics revealed that the new version was slower.
@@ -72,7 +72,7 @@ we also transitioned part of our website to a more centralized architecture.
 
 The previous architecture called [Mosaic](https://www.mosaic9.org/)
 included a way to measure page performance with in-house metrics.
-However, it was difficult to compare performance metrics prior to rolling out to real users 
+However, it was difficult to compare performance metrics prior to rolling out to real users
 as we lacked internal lab performance monitoring tools.
 Despite deploying every day,
 there was a feedback loop of around one day for developers working on performance improvements.
@@ -121,8 +121,8 @@ with a link to the detailed Lighthouse reports as shown in the following images.
 
 
 <figure class="w-figure">
-  {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/PRQBzVBLG7wG1Ftngp6B.png", alt="Comparison image in Lighthouse CI showing how the commit compares to master", width="800", height="370", class="w-screenshot" %}
-  <figcaption>Lighthouse CI detailed commit report compared to master.</figcaption>
+  {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/PRQBzVBLG7wG1Ftngp6B.png", alt="Comparison image in Lighthouse CI showing how the commit compares to the main branch", width="800", height="370", class="w-screenshot" %}
+  <figcaption>Lighthouse CI detailed commit report compared to the main branch.</figcaption>
 </figure>
 
 ## Extending the performance coverage

@@ -19,7 +19,7 @@ feedback:
   - api
 ---
 
-[Standardized lazy-loading for images](/native-lazy-loading) landed in Chrome 76 via
+[Standardized lazy-loading for images](/browser-level-image-lazy-loading/) landed in Chrome 76 via
 the `loading` attribute and later came to Firefox. We are happy to share that
 **browser-level lazy-loading for iframes** is now
 [standardized](https://github.com/whatwg/html/pull/5579) and is also
@@ -134,7 +134,7 @@ whether an iframe is hidden:
 If an iframe meets any of these conditions, Chrome considers it hidden and
 won't lazy-load it in most cases. iframes that aren't hidden will only load
 when they're within the [load-in distance
-threshold](/native-lazy-loading/#load-in-distance-threshold). Chrome shows a
+threshold](/browser-level-image-lazy-loading/#load-in-distance-threshold). Chrome shows a
 placeholder for lazy-loaded iframes that are still being fetched.
 
 ### What impact might we see from lazy-loading popular iframe embeds?
@@ -300,7 +300,7 @@ in a WordPress site. You can optionally add the following code to your WordPress
 theme's `functions.php` file to automatically insert `loading="lazy"` to your
 existing iframes without having to manually update them each individually.
 
-Note that [native support for lazy-loading iframes is also being worked on in WordPress core](https://core.trac.wordpress.org/ticket/50756).
+Note that [browser-level support for lazy-loading iframes is also being worked on in WordPress core](https://core.trac.wordpress.org/ticket/50756).
 The following snippet will check for the relevant flags so that, once WordPress has the
 functionality built-in, it will no longer manually add the `loading="lazy"` attribute,
 ensuring it is interoperable with those changes and will not result in a duplicate attribute.

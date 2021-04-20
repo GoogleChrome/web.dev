@@ -403,7 +403,7 @@ to avoid confusion.
 
 The URL of a page should not be overly general, unless that page is our
 authoritative content on that topic. For example, the URL of
-[Introducing `<model-viewer>` 1.1](https://web.dev/introducing-model-viewer/)
+[Introducing `<model-viewer>` 1.1](/introducing-model-viewer/)
 is `https://web.dev/introducing-model-viewer/` because we wanted to reserve
 `https://web.dev/model-viewer/` for our authoritative guide on that topic.
 

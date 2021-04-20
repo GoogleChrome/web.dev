@@ -533,9 +533,9 @@ have another technique for debugging detached windows or this article helped unc
 app, I'd love to know! You can find me on Twitter [@\_developit](https://twitter.com/_developit).
 
 [performance-memory-api]: https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory
-[performance-measurememory]: https://web.dev/monitor-total-page-memory-usage/
+[performance-measurememory]: /monitor-total-page-memory-usage/
 [postmessage]: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
 [finalizationregistry]: https://v8.dev/features/weak-references#:~:text=FinalizationRegistry
 [weakref]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef
 [noopener]: https://developer.mozilla.org/en-US/docs/Web/API/Window/open#noopener
-[rel-noopener]: https://web.dev/external-anchors-use-rel-noopener/
+[rel-noopener]: /external-anchors-use-rel-noopener/

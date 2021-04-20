@@ -115,7 +115,7 @@ getting started with HID.
 
 ## Acknowledgements {: #acknowledgements }
 
-Thank you to [Pete LePage](https://web.dev/authors/petelepage/) and [Kayce
+Thank you to [Pete LePage](/authors/petelepage/) and [Kayce
 Basques](https://github.com/kaycebasques) for reviews of this article.
 
 <span>Photo by <a

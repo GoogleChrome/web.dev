@@ -282,7 +282,7 @@ proxy](https://en.wikipedia.org/wiki/Reverse_proxy) for serving SXGs. Given a
 URL, `webpkgserver` will fetch the URL's contents, package them as an SXG, and
 serve the SXG in response. For instructions on setting up the Web Packager
 server, see [How to set up signed exchanges using Web
-Packager](http://web.dev/signed-exchanges-webpackager).
+Packager](/signed-exchanges-webpackager).
 
 In production, `webpkgserver` should not use a public endpoint. Instead, the
 frontend web server should forward SXG requests to `webpkgserver`. These
@@ -304,7 +304,7 @@ options, you can also choose to build your own SXG generator.
 
   The NGINX SXG module only works with `CanSignHttpExchanges` certificates.
   Setup instructions can be found
-  [here](https://web.dev/how-to-set-up-signed-http-exchanges/).
+  [here](/how-to-set-up-signed-http-exchanges/).
 
 
 - `libsxg`
@@ -328,5 +328,5 @@ options, you can also choose to build your own SXG generator.
 
 *   [Spec draft](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html)
 *   [Explainer](https://github.com/WICG/webpackage/blob/master/explainer.md)
-*   [How to set up Signed Exchanges using Web Packager](https://web.dev/signed-exchanges-webpackager)
+*   [How to set up Signed Exchanges using Web Packager](/signed-exchanges-webpackager)
 *   [Demo of Signed Exchanges](https://signed-exchange-testing.dev/)

@@ -37,7 +37,7 @@ Complete the following instructions in the new tab that just opened:
 
 <img class="w-screenshot" src="./cdt-home-unoptimized.png" alt="Network panel showing the home page chunks.">
 
-The site uses [route-based code splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting/), thanks to which only the necessary code is requested at the beginning.
+The site uses [route-based code splitting](/reduce-javascript-payloads-with-code-splitting/), thanks to which only the necessary code is requested at the beginning.
 
 1. [Clear the network requests in DevTools](https://developers.google.com/web/tools/chrome-devtools/network/reference#clear).
 1. Within the app, click the **Blog** link to navigate to that page.
@@ -48,7 +48,7 @@ The JS and CSS chunks for the new route are loaded to render the page.
 
 Next, you'll implement Quicklink in this site, so that these chunks can be prefetched in the home page, making the navigation faster.
 
-This allows you to combine the best of both techniques: 
+This allows you to combine the best of both techniques:
 
 - Route-based code splitting tells the browser to only load the necessary chunks at a higher priority at page load time.
 - Prefetching tells the browser to load the chunks for in-viewport links at the lowest priority, during the browser's idle time.
@@ -184,7 +184,7 @@ When the home page loads the chunks for that route are loaded. After that, Quick
 
 These chunks are requested at the lowest priority and without blocking the page.
 
-Next: 
+Next:
 
 1. Clear the Network log again.
 1. Disable the **Disable cache** checkbox.
