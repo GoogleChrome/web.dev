@@ -26,6 +26,21 @@ cohort", which will be the same for thousands of browsers with a similar recent 
 The browser recalculates its cohort periodically, on the user's device, without sharing
 individual browsing data with the browser vendor or anyone else.
 
+{% Aside %}
+A page visit will only be included in the browser's FLoC calculation if `document.interestCohort()` 
+is used on the page. In other words, your cohort is based only on the pages you've visited that use 
+FLoC. 
+
+FLoC is now in [origin trial in Chrome](/origin-trials/). Find out more: 
+[How to take part in the FLoC origin trial](https://developer.chrome.com/blog/floc/).
+
+During the current FLoC origin trial, a page will also be included in the 
+calculation if (and&nbsp;only if) Chrome detects that the page load ads or ads-related resources. For 
+other clustering algorithms, we may experiment with different inclusion criteria: that's part of the 
+origin trial experiment process.
+
+{% endAside %}
+
 Advertisers (sites that pay for advertisements) can include code on their own websites in order to
 gather and provide cohort data to their adtech platforms (companies that provide software and tools
 to deliver advertising). For example, an adtech platform might learn from an online shoe store that
@@ -44,20 +59,6 @@ for an overview of all the proposals.
 issue](https://github.com/WICG/floc/issues/new) on the [FLoC Explainer](https://github.com/WICG/floc)
 repository.  If you have feedback on Chrome's experiment with this proposal, please post a reply on
 the [Intent to Experiment](https://groups.google.com/a/chromium.org/g/blink-dev/c/MmijXrmwrJs).
-
-{% Aside %}
-FLoC is now in [origin trial in Chrome](/origin-trials/). Find out more: 
-[How to take part in the FLoC origin trial](https://developer.chrome.com/blog/floc/).
-
-A page visit will only be included in the browser's FLoC calculation if `document.interestCohort()` 
-is used on the page. In other words, your cohort is based only on the pages you've visited that use 
-FLoC. 
-
-During the current FLoC origin trial, a page will also be included in the 
-calculation if (and&nbsp;only if) Chrome detects that the page load ads or ads-related resources. For 
-other clustering algorithms, we may experiment with different inclusion criteria: that's part of the 
-origin trial experiment process.
-{% endAside %}
 
 ## Why do we need FLoC?
 
