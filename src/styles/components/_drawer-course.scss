@@ -72,6 +72,17 @@
       background: $BLUE_50;
       color: $WEB_PRIMARY_COLOR;
     }
+
+    &[data-new='true']::after {
+      align-self: normal;
+      background: $WEB_PRIMARY_COLOR;
+      border-radius: 50%;
+      content: '';
+      display: inline-block;
+      height: 0.5em;
+      margin-left: 0.2em;
+      width: 0.5em;
+    }
   }
 
   &__link-counter {
