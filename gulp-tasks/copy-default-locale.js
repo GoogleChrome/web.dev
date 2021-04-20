@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const {defaultLocale} = require('../src/site/_data/site');
 
 const isProd = process.env.ELEVENTY_ENV === 'prod';
+const isStaging = process.env.ELEVENTY_ENV === 'staging';
 
 /**
  * Copies content of the default locale (en) into its own folder
@@ -15,7 +16,7 @@ const isProd = process.env.ELEVENTY_ENV === 'prod';
  * @returns {Promise<NodeJS.ReadWriteStream|null>}
  */
 const copyDefaultLocale = async () => {
-  if (isProd) {
+  if (isProd || isStaging) {
     return gulp
       .src(['./dist/**/*.html', '!./dist/i18n/**/*.html'])
       .pipe(gulp.dest(`./dist/i18n/${defaultLocale}`));

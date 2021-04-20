@@ -105,6 +105,7 @@ const {toc: courseToc} = require('webdev-infra/filters/toc');
 module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
   const isProd = process.env.ELEVENTY_ENV === 'prod';
+  const isStaging = process.env.ELEVENTY_ENV === 'staging';
 
   // ----------------------------------------------------------------------------
   // PLUGINS
@@ -219,7 +220,7 @@ module.exports = function (config) {
     config.addTransform('disable-lazy-load', disableLazyLoad);
   }
 
-  if (isProd) {
+  if (isProd || isStaging) {
     config.addTransform('responsive-images', responsiveImages);
     config.addTransform('purifyCss', purifyCss);
     config.addTransform('minifyHtml', minifyHtml);
