@@ -1,6 +1,5 @@
 ---
 title: Overview
-subhead: This post highlights a few powerful lines of CSS that do some serious heavy lifting and help you build robust modern layouts.
 authors:
   - una
 description: This post highlights a few powerful lines of CSS that do some serious heavy lifting and help you build robust modern layouts.

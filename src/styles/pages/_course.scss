@@ -25,3 +25,26 @@
   min-width: 0;
   padding: 0;
 }
+
+.course-headline {
+  @include apply-utility('font', 'google-sans');
+  @include apply-utility('weight', 'regular');
+  @include flex-font((24px 32px), (32px 40px), (36px 44px));
+}
+
+.course-description {
+  @include apply-utility('font', 'google-sans');
+  @include apply-utility('weight', 'regular');
+  @include flex-font((16px 28px), (18px 28px), (18px 28px));
+}
+
+.course-foo {
+  margin-top: 50px;
+  @include bp(xl) {
+    margin-top: 64px;
+  }
+}
+
+.course-foo p {
+  @include flex-font((16px 32px), (18px 32px), (18px 32px));
+}

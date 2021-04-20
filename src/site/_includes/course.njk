@@ -57,16 +57,18 @@ pageScripts:
     </nav>
 
     <div class="course-content">
-
       {% include 'partials/toc-side.njk' %}
-
       <main id="main" class="flow">
+        <h1 class="course-headline">{{ title }}</h1>
+        <p class="course-description">{{ description }}</p>
         {% include 'partials/toc-inner.njk' %}
-        {% if audio %}
-          {{ audioFab(audio.thumbnail) }}
-          {{ audioPlayer(audio.title, audio.src, audio.thumbnail) }}
-        {% endif %}
-        {{ content | safe }}
+        <div class="course-foo flow">
+          {% if audio %}
+            {{ audioFab(audio.thumbnail) }}
+            {{ audioPlayer(audio.title, audio.src, audio.thumbnail) }}
+          {% endif %}
+          {{ content | safe }}
+        </div>
       </main>
     </div>
 
