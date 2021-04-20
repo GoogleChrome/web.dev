@@ -1,4 +1,8 @@
 - url: /learn/css
-- url: /learn/css/borders
-- url: /learn/css/shadows
-- url: /learn/css/focus
+- url: /learn/css/box-model
+- url: /learn/css/selectors
+- url: /learn/css/the-cascade
+- url: /learn/css/specificity
+- url: /learn/css/inheritance
+- url: /learn/css/color
+- url: /learn/css/layout
