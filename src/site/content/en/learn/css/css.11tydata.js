@@ -7,10 +7,7 @@ module.exports = function () {
     projectKey: 'css',
     eleventyComputed: {
       permalink: (data) => {
-        if (
-          process.env.ELEVENTY_ENV === 'prod' ||
-          process.env.ELEVENTY_ENV === 'staging'
-        ) {
+        if (process.env.ELEVENTY_ENV === 'prod') {
           return false;
         }
 

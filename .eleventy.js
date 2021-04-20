@@ -84,7 +84,6 @@ const removeDrafts = require(`./${filtersDir}/remove-drafts`);
 const slugify = require(`./${filtersDir}/slugify`);
 const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
-const stripQueryParamsDev = require(`./${filtersDir}/strip-query-params-dev`);
 const getPaths = require(`./${filtersDir}/get-paths`);
 const navigation = require(`./${filtersDir}/navigation`);
 const padStart = require(`./${filtersDir}/pad-start`);
@@ -169,7 +168,6 @@ module.exports = function (config) {
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('slugify', slugify);
   config.addFilter('stripBlog', stripBlog);
-  config.addFilter('stripQueryParamsDev', stripQueryParamsDev);
   config.addFilter('getPaths', getPaths);
   config.addFilter('strip', strip);
   config.addFilter('courseToc', courseToc);
