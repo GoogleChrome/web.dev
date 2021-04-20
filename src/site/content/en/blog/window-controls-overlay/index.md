@@ -5,6 +5,7 @@ subhead: |
   Make use of the title bar area next to the window controls to make your PWA feel more like an app.
 authors:
   - thomassteiner
+  - amandabaker
 date: 2021-04-15
 description: |
   With the Window Controls Overlay feature, developers can customize the title bar of installed PWAs
@@ -156,22 +157,30 @@ which, in fact, it is.
 ### Determining which parts of the title bar are draggable
 
 While the screenshot above suggests that you are done, you are not done quite yet. The PWA window is
-no longer draggable, since the window controls buttons are no drag areas, and the rest of the title
-bar consists of the search widget. This can be fixed by leveraging the `app-region` CSS property
-with a value of `drag`. In the concrete case, it is fine to make everything besides the `input`
-element draggable.
+no longer draggable (apart from a very small area), since the window controls buttons are no drag
+areas, and the rest of the title bar consists of the search widget. This can be fixed by leveraging
+the `app-region` CSS property with a value of `drag`. In the concrete case, it is fine to make
+everything besides the `input` element draggable.
 
 ```css
 /* The entire search `div` is draggable… */
 .search {
+  -webkit-app-region: drag;
   app-region: drag;
 }
 
 /* …except for the `input`. */
 input {
+  -webkit-app-region: no-drag;
   app-region: no-drag;
 }
 ```
+
+{% Aside %}
+For now, `app-region` has not been standardized yet, so the plan is to continue using the prefixed
+`-webkit-app-region` until `app-region` is standardized. Currently, only `-webkit-app-region` is
+supported in the browser.
+{% endAside %}
 
 With this CSS in place, the user can drag the app window as usual by dragging the `div`, the `img`,
 or the `label`. Only the `input` element is interactive so the search query can be entered.
@@ -190,9 +199,10 @@ if ('windowControlsOverlay' in navigator) {
 ### Querying the window controls region with `windowControlsOverlay`
 
 The code so far has only one problem: on some platforms the window controls are on the right, on
-others they are on the left. This means that the linear gradient background image needs to be
-dynamically adapted to run from `#131313` to `maroon` or vice versa, so that it blends in with the
-title bar's `maroon` background color that is determined by
+others they are on the left. To make matters worse, the "three dots" Chrome menu will change
+position, too, based on the platform. This means that the linear gradient background image needs to
+be dynamically adapted to run from `#131313`→`maroon` or `maroon`→`#131313`→`maroon`, so that it
+blends in with the title bar's `maroon` background color that is determined by
 `<meta name="theme-color" content="maroon">`. This can be achieved by querying the
 [`getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
 API on the `navigator.windowControlsOverlay` property.
@@ -201,12 +211,14 @@ API on the `navigator.windowControlsOverlay` property.
 if ('windowControlsOverlay' in navigator) {
   const { x } = navigator.windowControlsOverlay.getBoundingClientRect();
   // Window controls are on the right (like on Windows).
-  // [ windowControlsOverlay___________________ [_] [■] [X] ]
+  // Chrome menu is left of the window controls.
+  // [ windowControlsOverlay___________________ […] [_] [■] [X] ]
   if (x === 0) {
     div.classList.add('search-controls-right');
   }
   // Window controls are on the left (like on macOS).
-  // [ [X] [_] [■] ___________________windowControlsOverlay ]
+  // Chrome menu is right of the window controls overlay.
+  // [ [X] [_] [■] ___________________windowControlsOverlay [⋮] ]
   else {
     div.classList.add('search-controls-left');
   }
@@ -220,10 +232,12 @@ Rather than having the background image in the `.search` class CSS rules directl
 modified code now uses two classes that the code above sets dynamically.
 
 ```css
+/* For macOS: */
 .search-controls-left {
-  background-image: linear-gradient(90deg, maroon, 66%, #131313);
+  background-image: linear-gradient(90deg, maroon, 45%, #131313, 90%, maroon);
 }
 
+/* For Windows: */
 .search-controls-right {
   background-image: linear-gradient(90deg, #131313, 33%, maroon);
 }
@@ -242,9 +256,10 @@ if (navigator.windowControlsOverlay.visible) {
 }
 ```
 
-{% Aside %} The window controls overlay visibility is not to be confused with visibility in the CSS
-sense. Even if you set `display: none` on the window controls overlay, the `visible` property would
-still report `true`. {% endAside %}
+{% Aside %} The window controls overlay visibility is not to be confused with the visibility in the
+CSS sense of whatever HTML content you place in the window controls overlay. Even if you set
+`display: none` on the `div` placed into the window controls overlay, the `visible` property of the
+window controls overlay would still report `true`. {% endAside %}
 
 ### Being notified of geometry changes
 
@@ -307,10 +322,11 @@ There are two possible cases to consider:
   where the app is used in a browser tab.
 - The case where an app is running in a browser that _does not_ support Window Controls Overlay.
 
-In both cases, by default the window controls overlay will display inline like regular HTML content
-and the `env()` variables' fallback values will kick in. On supporting browsers, you can also decide
-to not display the window controls overlay by checking the overlay's `visible` property and then
-hiding it.
+In both cases, by default the HTML the developer has determined to be placed in the window controls
+overlay will display inline like regular HTML content and the `env()` variables' fallback values
+will kick in for the positioning. On supporting browsers, you can also decide to not display the
+HTML designated for the window controls overlay by checking the overlay's `visible` property, and if
+it reports `false`, then hiding that HTML content.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/jgS3hkEbaJ8bU2Jl9Pdz.png", alt="PWA running in a browser tab with the window controls overlay displayed in the body.", width="800", height="118" %}
 
