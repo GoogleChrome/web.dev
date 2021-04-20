@@ -219,7 +219,7 @@ There are a number of layout methods that you can use to adjust the behavior and
 Remember how surrounding elements don't respect block margin and padding on an inline element?
 With `inline-block` you *can* cause that to happen.
 
-```
+```css
 p span {
 	display: inline-block;
 }
@@ -253,9 +253,9 @@ img {
 }
 ```
 
-The `float` property instructs an element to “float” to the direction specified.
+The `float` property instructs an element to "float" to the direction specified.
 The image in this example is instructed to float left,
-which then allows sibling elements to “wrap” around it.
+which then allows sibling elements to "wrap" around it.
 You can instruct an element to float `left`, `right` or `inherit`.
 
 {% Codepen {
