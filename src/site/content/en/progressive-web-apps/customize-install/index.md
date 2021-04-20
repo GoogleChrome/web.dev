@@ -4,23 +4,13 @@ title: How to provide your own in-app install experience
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2021-02-09
+updated: 2021-04-20
 description: |
   Use the beforeinstallprompt event to provide a custom, seamless, in-app
   install experience for your users.
 tags:
   - progressive-web-apps
 ---
-
-Many browsers make it possible for you to enable and promote the installation
-of your Progressive Web App (PWA) directly within the user interface of your
-PWA. Installation (sometimes formerly referred to as Add to Home Screen),
-makes it easy for users to install your PWA on their mobile or desktop device.
-Installing a PWA adds it to a user's launcher, allowing it to be run like any
-other installed app.
-
-In addition to the [browser provided install experience](/promote-install/#browser-promotion),
-it's possible to provide your own custom install flow, directly within your app.
 
 <figure class="w-figure w-figure--inline-right">
   <img src="spotify-custom-install.png"
@@ -30,59 +20,92 @@ it's possible to provide your own custom install flow, directly within your app.
   </figcaption>
 </figure>
 
-When considering whether to promote install, it's best to think about how
-users typically use your PWA.  For example, if there's a set of users who
-use your PWA multiple times in a week, these users might benefit from the
-added convenience of launching your app from a smartphone homescreen or
-from the Start menu in a desktop operating system.  Some productivity and
-entertainment applications also benefit from the extra screen real-estate
-created by removing the browser toolbars from the window in installed
-`standalone` or `minimal-ui` modes.
+Installability is one of the biggest advantages of a Progressive Web App.
+Installing your PWA can make it easier for users to find and use. Once
+installed, it looks and behaves like every other installed app that the user
+has.
 
-<div class="w-clearfix"></div>
+But, some users don't realize that they can install your PWA, so it can be
+helpful to provide an in-app experience to promote and enable installation of
+your PWA.
 
-## Promoting installation {: #promote-installation }
+<div id="promote-installation" class="w-clearfix"></div>
 
-To indicate your Progressive Web App is installable, and to provide a custom
-in-app install flow:
+## PWA Install Flow {: #install-flow }
 
-1. Listen for the `beforeinstallprompt` event.
-2. Save the `beforeinstallprompt` event, so it can be used to trigger the
-   install flow later.
-3. Alert the user that your PWA is installable, and provide a button or other
-   element to start the in-app installation flow.
+Let's take a look at the PWA install flow for Chrome and Edge, how you can
+provide your own in-app experience, and the best practices you should be
+following for both desktop and mobile.
+
+1. Browser checks the [installability criteria][criteria]
+   * Browser fires the `beforeinstallprompt` event.
+   * Page handles the `beforeinstallprompt` event & shows the in-app
+      install element(s).
+   * Browser shows the [browser provided install promotion][browser-promotion].
+   * Event logged to analytics. (Optional)
+2. User clicks an in-app install element.
+   * Page handles click on in-app install element.
+   * Browser shows install confirmation dialog.
+   * User clicks confirm or dismiss on install confirmation dialog.
+   * Event logged to analytics. (Optional)
+3. Browser installs PWA
+   * Switches to standalone window.
+   * Browser fires `appinstalled` event.
+   * Page handles `appinstalled` event & hides the in-app install elements(s).
+   * Event logged to analytics. (Optional)
 
 {% Aside %}
   The `beforeinstallprompt` event, and the `appinstalled` event have been moved
   from the Web App Manifest spec to their own
   [incubator](https://github.com/WICG/beforeinstallprompt). The Chrome team
   remains committed to supporting them, and has no plans to remove or deprecate
-  support. Google's Web DevRel team continues to recommend using them to provide a customized
-  install experience.
+  support. Google's Web DevRel team continues to recommend using them to
+  provide a customized install experience.
 {% endAside %}
 
-### Listen for the `beforeinstallprompt` event {: #beforeinstallprompt }
+### Page handles the `beforeinstallprompt` event {: #beforeinstallprompt }
 
-If your Progressive Web App meets the required [installation criteria](/install-criteria/),
-the browser fires a `beforeinstallprompt` event. Save a reference to the
-event, and update your user interface to indicate that the user can install
-your PWA. This is highlighted below.
+If your Progressive Web App meets the required [installation criteria][criteria],
+the browser fires a `beforeinstallprompt` event. The `beforeinstallprompt`
+event tells the PWA that it's installable, and that it can show the in-app
+install experience.
+
+{% Aside 'caution' %}
+To prevent confusion with your users, don't show your own custom install
+experience until the `beforeinstallprompt` event has been fired.
+{% endAside %}
+
+Save a reference to the event, and update your user interface to indicate
+that the user can install your PWA. And, so we can measure the effectiveness
+of the install flow, log it to analytics.
 
 ```js
 // Initialize deferredPrompt for use later to show browser install prompt.
 let deferredPrompt;
+// Initialize installSource, used by analytics to identify which in-app
+// install element is clicked.
+let installSource;
 
 window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent the mini-infobar from appearing on mobile
+  // Optionally, prevent the mini-infobar from appearing on mobile.
   e.preventDefault();
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
-  // Update UI notify the user they can install the PWA
+  // Update UI notify the user they can install the PWA.
   showInstallPromotion();
   // Optionally, send analytics event that PWA install promo was shown.
-  console.log(`'beforeinstallprompt' event was fired.`);
+  ga('send', 'event', {
+    eventCategory: 'pwa-install',
+    eventAction: 'promo-shown',
+    nonInteraction: true,
+  });
 });
 ```
+
+For consistency, all the analytics install events use the same category,
+`pwa-install`. In this case, the action is `promo-shown`. And set
+`non-interaction` to `true`, since this event wasn't generated by a user
+action.
 
 {% Aside %}
 There are many different [patterns](/promote-install/) that you can use to
@@ -91,7 +114,7 @@ flow, for example, a button in the header, an item in the navigation menu,
 or an item in your content feed.
 {% endAside %}
 
-### In-app installation flow {: #in-app-flow }
+### Page handles click on in-app install element {: #click-in-app-install }
 
 To provide in-app installation, provide a button or other interface element
 that a user can click to install your app. When the element is
@@ -101,46 +124,85 @@ asking them to confirm they want to install your PWA.
 
 ```js
 buttonInstall.addEventListener('click', async () => {
-  // Hide the app provided install promotion
+  // Identify which button was clicked, this should be unique for each button.
+  installSource = 'button-header-blue';
+  // Hide the in-app install promotion.
   hideInstallPromotion();
-  // Show the install prompt
+  // Show the install prompt.
   deferredPrompt.prompt();
-  // Wait for the user to respond to the prompt
+  // Wait for the user to respond to the prompt.
   const { outcome } = await deferredPrompt.userChoice;
-  // Optionally, send analytics event with outcome of user choice
-  console.log(`User response to the install prompt: ${outcome}`);
-  // We've used the prompt, and can't use it again, throw it away
+  // Optionally, send analytics event with outcome of user choice.
+  ga('send', 'event', {
+    eventCategory: 'pwa-install',
+    eventAction: 'promo-clicked',
+    eventLabel: installSource,
+    eventValue: outcome === 'accepted' ? 1 : 0,
+  });
+  // Clear installSource if the user clicked dismiss.
+  if (outcome === 'dismissed') {
+    installSource = null;
+  }
+  // Clear deferredPrompt since it can't be used again.
   deferredPrompt = null;
 });
 ```
 
 The `userChoice` property is a promise that resolves with the user's choice.
-You can only call `prompt()` on the deferred event once. If the user
-dismisses it, you'll need to wait until the `beforeinstallprompt` event
-is fired again, typically immediately after the `userChoice` property
-has resolved.
+If the user clicks cancel, or dismiss, the install stops, the browser returns
+to step one, and the flow starts all over again. Otherwise, the browser
+installs the PWA.
+
+If you're logging the event to analytics, like before, use category
+`pwa-install`, but this time, the action should be `promo-clicked`, indicating
+the user clicked on the in-app install promotion. Use  `installSource` for the
+label to identify which install element the user clicked to start the install.
+And set the event `value` to either `1` or `0`, depending on whether the user
+clicked accept or dismiss. In analytics, this will tell us what percentage of
+users completed the install for that specific promo.
+
+#### Two quick notes about prompt
+
+First, to help prevent spamming users, calling `prompt` requires a user
+gesture. And second, you can only call `prompt` once. But, as mentioned
+earlier, if the user clicks cancel, the flow returns to step one and you'll
+get a brand new `beforeinstallprompt` event. This is also why it's important to
+hide the custom install elements in this step. If for some reason, the
+`beforeinstallprompt` event isn't fired again, you don't want the install
+elements visible.
 
 {% Aside 'codelab' %}
 [Make a site installable using the beforeinstallprompt event](/codelab-make-installable).
 {% endAside %}
 
-## Detect when the PWA was successfully installed {: #detect-install }
+### Page handles `appinstalled` event {: #detect-install }
 
 You can use the `userChoice` property to determine if the user installed
 your app from within your user interface. But, if the user installs your
-PWA from the address bar or other browser component, `userChoice` won't
-help. Instead, you should listen for the `appinstalled` event. It is fired
-whenever your PWA is installed, no matter what mechanism is used to install
-your PWA.
+PWA from the address bar, other browser component, or from a different tab or
+window, `userChoice` won't help.
+
+Instead, the page should listen for the `appinstalled` event. It is fired
+whenever your PWA is installed, no matter what mechanism is used, and
+if more than one tab/window is open for the PWA, the `appinstalled` event is
+fired in all of them, making it easy to ensure any in-app install UI is removed
+once the PWA has been installed.
 
 ```js
 window.addEventListener('appinstalled', () => {
-  // Hide the app-provided install promotion
+  // Hide the app-provided install promotion.
   hideInstallPromotion();
-  // Clear the deferredPrompt so it can be garbage collected
+  // Clear the deferredPrompt so it can be garbage collected.
   deferredPrompt = null;
-  // Optionally, send analytics event to indicate successful install
-  console.log('PWA was installed');
+  // Event is fired in all open tabs/windows.
+  // If the page is not visible, do not log the analytics events.
+  if (document.visibilityState !== 'visible') {
+    return;
+  }
+  // Determine if the install came from in-app UI or from the browser.
+  const source = installSource || 'browser';
+  // Optionally, send analytics event to indicate successful install.
+  ga('send', 'event', 'pwa-install', 'installed', source);
 });
 ```
 
@@ -205,3 +267,6 @@ PWA, use conditional CSS:
 What if you need to update your app name, or provide new icons?
 Check out [How Chrome handles updates to the web app manifest](/manifest-updates/)
 to see when and how are those changes are reflected in Chrome.
+
+[criteria]: /install-criteria/
+[browser-promotion]: /promote-install/#browser-promotion
