@@ -3,6 +3,7 @@ layout: post
 title: Mainline Menswear implements PWA and sees a 55% conversion rate uplift
 authors:
   - charistheodoulou
+  - natashakosoglov
   - thomassteiner
 description: >
   Mainline Menswear implements a Progressive Web App (PWA) and sees a 55% conversion rate uplift for
