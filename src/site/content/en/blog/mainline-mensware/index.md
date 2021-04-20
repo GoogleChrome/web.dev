@@ -55,7 +55,7 @@ and enable them to take advantage of fast moving web technology.
   </div>
   <div class="w-stat">
     <p class="w-stat__figure">10<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower bounce rate vs. web</p>
+    <p class="w-stat__desc">Lower bounce rate in PWA vs. web</p>
   </div>
 </div>
 
