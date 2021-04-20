@@ -71,7 +71,7 @@ try {
   initialState['courseProgress'] = JSON.parse(
     localStorage['webdev_course_progress'],
   );
-} catch(e) {
+} catch (e) {
   initialState['courseProgress'] = [];
 }
 
