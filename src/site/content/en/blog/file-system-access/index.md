@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-02-25
+updated: 2021-04-21
 tags:
   - blog
   - capabilities
@@ -233,6 +233,75 @@ file at a specific position, or resize the file.
   Changes are **not** written to disk until the stream is closed, either by
   calling `close()` or when the stream is automatically closed by the pipe.
 {% endAside %}
+
+### Specifying a suggested file name and start directory
+
+In many cases your application may already have an opinion when it comes to default file names.
+For example, a text editor might want to suggest a default file name of `Untitled Text.txt`
+rather than `Untitled`. You can achieve this by passing a `suggestedName` property as part
+of the `showSaveFilePicker` options.
+
+```js/1
+const fileHandle = await self.showSaveFilePicker({
+  suggestedName: 'Untitled Text.txt',
+  types: [{
+    description: 'Text documents',
+    accept: {
+      'text/plain': ['.txt'],
+    },
+  }],
+});
+```
+
+The same goes for the default start directory. A text editor may want to start the file save
+or file open dialog in the default `documents` folder, whereas an image editor may want to
+start in the default `pictures` folder. You can suggest a default start directory by passing
+a `startIn` property to the `showSaveFilePicker`, `showDirectoryPicker()`, or `showOpenFilePicker`
+methods like so.
+
+```js/1
+const fileHandle = await self.showOpenFilePicker({
+  startIn: 'pictures'
+});
+```
+
+The list of the well-known system directories is:
+
+- `desktop`: The user's desktop directory, if such a thing exists.
+- `documents`: Directory in which documents created by the user would typically be stored.
+- `downloads`: Directory where downloaded files would typically be stored.
+- `music`: Directory where audio files would typically be stored.
+- `pictures`: Directory where photos and other still images would typically be stored.
+- `videos`: Directory where videos/movies would typically be stored.
+
+Apart from well-known system directories, you can also pass an existing file or directory handle
+as a value for `startIn`. The dialog would then open in the same directory.
+
+```js/2
+// Assume `directoryHandle` were a handle to a previously opened directory.
+const fileHandle = await self.showOpenFilePicker({
+  startIn: directoryHandle
+});
+```
+
+### Specifying the purpose of different file pickers
+
+Sometimes applications have different pickers for different purposes.
+For example, a rich text editor may allow the user to open text files,
+but also to import images. By default, each file picker would open at the last
+remembered location of the previous picker. You can circumvent this by storing `id`
+values for each type of picker. If an `id` is specified, the file picker implementation
+will remember a separate last used directory for pickers with that same `id`.
+
+```js
+const fileHandle1 = await self.showSaveFilePicker({
+  id: 'openText'
+});
+
+const fileHandle2 = await self.showSaveFilePicker({
+  id: 'importImage'
+});
+```
 
 ### Storing file handles or directory handles in IndexedDB
 
