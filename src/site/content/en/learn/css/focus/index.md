@@ -1,6 +1,6 @@
 ---
 title: Focus
-new: 'true'
+badge: new
 ---
 
 Hey we're talking about focus here!

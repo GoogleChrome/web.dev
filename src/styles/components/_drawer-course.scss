@@ -73,14 +73,24 @@
       color: $WEB_PRIMARY_COLOR;
     }
 
-    &[data-new='true']::after {
-      align-self: normal;
+    &::after {
+      display: inline-block;
+      height: 0.5em;
+      margin-left: 0.6em;
+    }
+
+
+    &[data-badge='new']::after {
+      color: $WEB_PRIMARY_COLOR;
+      content: 'NEW';
+      font-size: 12px;
+      @include apply-utility('weight', 'medium');
+    }
+
+    &[data-badge='updated']::after {
       background: $WEB_PRIMARY_COLOR;
       border-radius: 50%;
       content: '';
-      display: inline-block;
-      height: 0.5em;
-      margin-left: 0.2em;
       width: 0.5em;
     }
   }

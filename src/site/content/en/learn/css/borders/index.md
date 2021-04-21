@@ -8,6 +8,7 @@ audio:
   title: 'The CSS Podcast - 001: Flexbox'
   src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP035_v2.mp3?dest-id=1891556'
   thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
+badge: updated
 ---
 
 Hey we're talking about borders here!
