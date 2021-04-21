@@ -3,6 +3,14 @@ height: unset
 tabLabel: question
 questions:
   - type: multiple-choice
+    stimulus: |
+      ```css
+      .my-box {
+        width: 200px;
+        border: 10px solid;
+        padding: 20px;
+      }
+      ```
     cardinality: "1"
     correctAnswers: "1"
     stem: How wide do you think `.my-box` will be?
