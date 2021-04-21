@@ -33,7 +33,7 @@ FLoC is now in [origin trial in Chrome](/origin-trials/). Find out more:
 During the current FLoC origin trial, a page visit will only be included in the browser's FLoC 
 computation for one of two reasons: 
 * The FLoC API (`document.interestCohort()`) is used on the page. 
-* Chrome detects that the page [load ads or ads-related resources](https://github.com/WICG/floc/issues/82). 
+* Chrome detects that the page [loads ads or ads-related resources](https://github.com/WICG/floc/issues/82). 
 
 For other clustering algorithms, the trial may experiment with different inclusion criteria: that's 
 part of the origin trial experiment process.
@@ -280,7 +280,7 @@ by setting a [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#in
 in the browser's FLoC calculation if `document.interestCohort()` is used on the page. During the current
 [FLoC origin trial](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561), a
 page will also be included in the calculation if Chrome detects that the page
-[load ads or ads-related resources](https://github.com/WICG/floc/issues/82).
+[loads ads or ads-related resources](https://github.com/WICG/floc/issues/82).
 ([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md)
 explains how Chrome's ad detection mechanism works.)
 
