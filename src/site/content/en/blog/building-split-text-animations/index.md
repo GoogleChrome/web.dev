@@ -109,6 +109,7 @@ a media query boolean into a variable:
 ```
 
 #### Preparing the JS conditional
+
 In Javascript, the browser provides a way to check media queries, I used
 [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 to extract and rename the boolean result from the media query check:
@@ -308,6 +309,7 @@ splitTargets.forEach(node => {
 ```
 
 #### Orchestration conclusion
+
 `index.js` in completion:
 
 ```js
