@@ -35,7 +35,7 @@ Try the [demo](https://gui-challenges.web.app/split-text/dist/).
 
 If you prefer video, here's a YouTube version of this post:
 
-{% YouTube 'dm7gnp6eh3Q' %}
+{% YouTube '3hvN7bkjZBk' %}
 
 ## Overview
 
