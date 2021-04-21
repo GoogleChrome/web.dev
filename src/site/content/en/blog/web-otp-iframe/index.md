@@ -21,14 +21,13 @@ tags:
 feedback:
   - api
 ---
+SMS OTPs (one-time passwords) are commonly used to verify phone numbers, for
+example as a second step in authentication, or to verify payments on the web. 
+However, switching between the browser and the SMS app, to copy-paste or manually
+enter the OTP makes it easy to make mistakes and adds friction to the user experience.
 
-SMS OTPs are commonly used to verify phone numbers, for example as a second step
-in authentication, or to verify payments on the web. However, switching between
-the browser and the SMS app, making a copy / remembering the OTP and pasting /
-entering it causes mistakes and friction to end users.
-
-The [WebOTP API](/web-otp) gives such websites the ability to programmatically
-obtain the one-time password (OTP) from a SMS message and enter them
+The [WebOTP API](/web-otp) gives websites the ability to programmatically
+obtain the one-time password from a SMS message and enter it
 automatically in the form for the users with just one tap without switching the
 app. The SMS is specially-formatted and bound to the origin, so it mitigates
 chances for phishing websites to steal the OTP as well.
@@ -73,9 +72,9 @@ the verification process.
 Learn the basics of using WebOTP at [Verify phone numbers on the web with the
 WebOTP API](/web-otp/).
 
-##  cross-origin iframes use cases
+## Cross-origin iframes use cases
 
-Entering an OTP to a form within a cross-origin iframe is typical in payment
+Entering an OTP in a form within a cross-origin iframe is common in payment
 scenarios. Some credit card issuers require an additional verification step to
 check the payer's authenticity. This is called 3D Secure and the form is
 typically exposed within an iframe on the same page as if it's a part of the
@@ -92,7 +91,7 @@ For example:
 
 ## How to use WebOTP API from a cross-origin iframe
 
-To use WebOTP API from within a cross-origin iframe, developers need to do two
+To use WebOTP API from within a cross-origin iframe, you need to do two
 things:
 
 * Annotate both the top-frame origin and the iframe origin in the SMS text
@@ -134,27 +133,27 @@ API via otp-credentials [permissions
 policy](https://www.w3.org/TR/permissions-policy-1) to avoid unintended
 behavior. In general there are two ways to achieve this goal:
 
-via HTTP Header:
+- via HTTP Header:
 
 ```http
 Permissions-Policy: otp-credentials=(self "https://bank.example")
 ```
 
-via iframe allow attribute:
+- via iframe `allow` attribute:
 
 ```html
 <iframe src="https://bank.example/…" allow="otp-credentials"></iframe>
 ```
 
-See more examples on how to specify a permission policy
-[here](https://github.com/w3c/webappsec-permissions-policy/blob/master/permissions-policy-explainer.md#how-is-a-policy-specified).
+See [more examples on how to specify a permission policy
+](https://github.com/w3c/webappsec-permissions-policy/blob/master/permissions-policy-explainer.md#how-is-a-policy-specified).
 
 ### Caveats
 
 #### Nesting levels
 
 At the moment Chrome only supports WebOTP API calls from cross-origin iframes
-who have **no more than one** unique origin in its ancestor chain. In the
+that have **no more than one** unique origin in its ancestor chain. In the
 following scenarios:
 
 * a.com -> b.com
