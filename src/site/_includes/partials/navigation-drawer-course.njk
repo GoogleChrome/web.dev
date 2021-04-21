@@ -19,7 +19,7 @@
         <div class="input"></div>
       </div>
 
-      <drawer-course current="{{ page.url }}">
+      <web-drawer-course current="{{ page.url }}">
         {% for item in pageNavigation %}
         <a class="drawer-course__link" href="{{ item.url }}">
           <span class="drawer-course__link-counter font-mono">{{ loop.index0 | padStart(3, '0') }}</span>
@@ -27,7 +27,7 @@
           {{ icon('done', 'drawer-course__link-check gap-left-auto') }}
         </a>
         {% endfor %}
-      </drawer-course>
+      </web-drawer-course>
     </div>
 
   </nav>

@@ -69,4 +69,4 @@ class DrawerCourse extends BaseElement {
   }
 }
 
-customElements.define('drawer-course', DrawerCourse);
+customElements.define('web-drawer-course', DrawerCourse);
