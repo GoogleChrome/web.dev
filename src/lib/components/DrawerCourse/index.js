@@ -15,7 +15,6 @@
  */
 
 import {BaseElement} from '../BaseElement';
-import {html} from 'lit-element';
 import {trackEvent} from '../../analytics';
 
 /**
