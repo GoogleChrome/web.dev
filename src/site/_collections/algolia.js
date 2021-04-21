@@ -24,7 +24,7 @@ const TagsCollection = require('./tags');
 const {defaultLocale} = require('../_data/site');
 const {livePosts} = require('../_filters/live-posts');
 const {getDefaultUrl} = require('../_filters/urls');
-const {generateSrc} = require('../_includes/components/Img');
+const {generateImgixSrc} = require('../_includes/components/Img');
 const {supportedLocales} = require('../../../shared/locale');
 
 /**
@@ -120,7 +120,7 @@ module.exports = (collections) => {
       locales: [item.data.lang],
       image:
         'hero' in item.data &&
-        generateSrc(item.data.hero, {w: 100, auto: 'format'}),
+        generateImgixSrc(item.data.hero, {w: 100, auto: 'format'}),
       objectID: createHash('md5').update(item.url).digest('hex'),
     };
 
@@ -140,7 +140,7 @@ module.exports = (collections) => {
       locales: [defaultLocale],
       image:
         'hero' in item.data &&
-        generateSrc(item.data.hero, {w: 100, auto: 'format'}),
+        generateImgixSrc(item.data.hero, {w: 100, auto: 'format'}),
       objectID: createHash('md5').update(item.url).digest('hex'),
     };
 
