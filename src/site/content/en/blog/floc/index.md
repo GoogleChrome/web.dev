@@ -27,18 +27,16 @@ The browser recalculates its cohort periodically, on the user's device, without 
 individual browsing data with the browser vendor or anyone else.
 
 {% Aside %}
-A page visit will only be included in the browser's FLoC calculation if `document.interestCohort()` 
-is used on the page. In other words, your cohort is based only on the pages you've visited that use 
-FLoC. 
-
 FLoC is now in [origin trial in Chrome](/origin-trials/). Find out more: 
 [How to take part in the FLoC origin trial](https://developer.chrome.com/blog/floc/).
 
-During the current FLoC origin trial, a page will also be included in the 
-calculation if (and&nbsp;only if) Chrome detects that the page load ads or ads-related resources. For 
-other clustering algorithms, we may experiment with different inclusion criteria: that's part of the 
-origin trial experiment process.
+During the current FLoC origin trial, a page visit will only be included in the browser's FLoC 
+computation for one of two reasons: 
+* The FLoC API (`document.interestCohort()`) is used on the page. 
+* Chrome detects that the page [load ads or ads-related resources](https://github.com/WICG/floc/issues/82). 
 
+For other clustering algorithms, the trial may experiment with different inclusion criteria: that's 
+part of the origin trial experiment process.
 {% endAside %}
 
 Advertisers (sites that pay for advertisements) can include code on their own websites in order to
