@@ -251,6 +251,8 @@ em,
 This example extends the color change to both `<strong>` elements and `<em>` elements.
 It's also extended to a class named `.my-class`,and an element that has a `lang` attribute.
 
+{% Assessment 'simple-selectors' %}
+
 ## Pseudo-classes and pseudo-elements
 
 CSS provides useful selector types that focus on specific platform state,
