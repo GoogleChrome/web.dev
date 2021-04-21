@@ -2063,5 +2063,44 @@
     "twitter": "HongboSong",
     "github": "debugtive0517",
     "image": "image/MZfwZ8oVW8U6tzo5CXffcER0jR83/ieAP4AO0so7own9kFVW4.png"
+  },
+  "adamskret": {
+    "name": {
+      "given": "Adam",
+      "family": "Skręt"
+    },
+    "org": {
+      "name": "Orange Polska S.A."
+    },
+    "descriptions": {
+      "en": "Director of Digital & Performance Marketing, Orange Polska S.A."
+    },
+    "image": "image/BrQidfK9jaQyIHwdw91aVpkPiib2/9zVJ5KLkDStLNSz2ZxPE.jpg"
+  },
+  "rafałfilipek": {
+    "name": {
+      "given": "Rafał",
+      "family": "Filipek"
+    },
+    "org": {
+      "name": "Orange Polska S.A."
+    },
+    "descriptions": {
+      "en": "Lead Frontend Developer, Orange Polska S.A."
+    },
+    "image": "image/BrQidfK9jaQyIHwdw91aVpkPiib2/9zVJ5KLkDStLNSz2ZxPE.jpg"
+  },
+  "marcinsierakowski": {
+    "name": {
+      "given": "Marcin",
+      "family": "Sierakowski"
+    },
+    "org": {
+      "name": "Orange Polska S.A."
+    },
+    "descriptions": {
+      "en": "Director of Sales Platforms Development & Maintenance, Orange Polska S.A."
+    },
+    "image": "image/BrQidfK9jaQyIHwdw91aVpkPiib2/9zVJ5KLkDStLNSz2ZxPE.jpg"
   }
 }
