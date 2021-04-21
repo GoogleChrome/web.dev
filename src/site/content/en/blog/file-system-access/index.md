@@ -236,7 +236,7 @@ file at a specific position, or resize the file.
 
 ### Specifying a suggested file name and start directory
 
-In many cases your application may already have an opinion when it comes to default file names.
+In many cases you may want your app to suggest a default file name or location.
 For example, a text editor might want to suggest a default file name of `Untitled Text.txt`
 rather than `Untitled`. You can achieve this by passing a `suggestedName` property as part
 of the `showSaveFilePicker` options.
@@ -253,8 +253,8 @@ const fileHandle = await self.showSaveFilePicker({
 });
 ```
 
-The same goes for the default start directory. A text editor may want to start the file save
-or file open dialog in the default `documents` folder, whereas an image editor may want to
+The same goes for the default start directory. If you're building a text editor, you may want to start the file save
+or file open dialog in the default `documents` folder, whereas for an image editor, may want to
 start in the default `pictures` folder. You can suggest a default start directory by passing
 a `startIn` property to the `showSaveFilePicker`, `showDirectoryPicker()`, or `showOpenFilePicker`
 methods like so.
@@ -288,10 +288,10 @@ const fileHandle = await self.showOpenFilePicker({
 
 Sometimes applications have different pickers for different purposes.
 For example, a rich text editor may allow the user to open text files,
-but also to import images. By default, each file picker would open at the last
-remembered location of the previous picker. You can circumvent this by storing `id`
+but also to import images. By default, each file picker would open at the last-remembered 
+location. You can circumvent this by storing `id`
 values for each type of picker. If an `id` is specified, the file picker implementation
-will remember a separate last used directory for pickers with that same `id`.
+will remember a separate last-used directory for pickers with that same `id`.
 
 ```js
 const fileHandle1 = await self.showSaveFilePicker({
