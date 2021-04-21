@@ -17,7 +17,7 @@ tags:
 ---
 
 In this post I want to share thinking on ways to solve split text animations and
-interactions for the web that is minimal, accessible and works across browsers.
+interactions for the web that are minimal, accessible, and work across browsers.
 Try the [demo](https://gui-challenges.web.app/split-text/dist/).
 
 <figure class="w-figure w-figure--fullbleed">
@@ -42,7 +42,7 @@ If you prefer video, here's a YouTube version of this post:
 Split text animations can be amazing. We'll be barely scratching the surface of
 animation potential in this post, but it does provide a foundation to build
 upon. The goal is to animate progressively. The text should be readable by
-default, with the animation built on top of it. Split text motion effects can
+default, with the animation built on top. Split text motion effects can
 get extravagant and potentially disruptive, so we will only manipulate HTML, or
 apply motion styles if the user is OK with motion.
 
@@ -101,7 +101,7 @@ text animations?{% endBanner %}
 
 #### Preparing the CSS conditional
 
-I used PostCSS to enable the syntax of Media Queries Level 5, where I can store
+I used PostCSS to enable the syntax of [Media Queries Level 5](https://drafts.csswg.org/mediaqueries-5/), where I can store
 a media query boolean into a variable:
 
 ```css
@@ -148,7 +148,7 @@ break down the Javascript for transforming strings into elements.
 
 ## Splitting Text
 
-Text letters, words, lines, etc cannot be individually animated with CSS or JS.
+Text letters, words, lines, etc., cannot be individually animated with CSS or JS.
 To achieve the effect, we need boxes. If we want to animate each letter, then
 each letter needs to be an element. If we want to animate each word, then each
 word needs to be an element. 
