@@ -140,7 +140,7 @@
     "rollup-plugin-istanbul": "^2.0.1",
     "rollup-plugin-postcss": "^2.9.0",
     "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.22.7",
+    "sass": "^1.32.11",
     "sass-lint": "^1.12.1",
     "scroll-to-bottomjs": "^1.1.0",
     "slugify": "^1.4.5",
