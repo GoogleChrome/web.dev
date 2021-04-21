@@ -363,7 +363,7 @@ The example below demonstrates this ordering.
   id: 'NWdRXoL'
 } %}
 
-{% Aside ‘warning' %}
+{% Aside 'warning' %}
 Using `order` has the same problems as the `row-reverse` and `column-reverse` values of `flex-direction`.
 It would be very easy to create a disconnected experience for some users.
 Do not use `order` because you are fixing things being out of order in the document.
