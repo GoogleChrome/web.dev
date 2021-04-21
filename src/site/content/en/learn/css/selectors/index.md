@@ -333,6 +333,8 @@ For more on pseudo-elements, check out lesson 14.
 
 @@TO DO link up to lesson 14
 
+{% Assessment 'pseudo-selectors' %}
+
 ## Complex selectors
 
 You have already seen a vast array of selectors,
@@ -487,6 +489,8 @@ and it would also only apply the red color to `.my-class` **if** it was on an `<
 For more on specificity, see module 3.
 
 @@TO DO link
+
+{% Assessment 'complex-selectors' %}
 
 ## Resources
 

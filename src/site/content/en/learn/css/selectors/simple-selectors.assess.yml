@@ -3,16 +3,36 @@ height: unset
 tabLabel: question
 questions:
   - type: multiple-choice
+    stimulus: |
+      ```css
+      * {}
+      ```
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: What kind of simple selector is used in the above snippet?
+    options:
+      - content: attribute
+        rationale: "`[]` are used for **attribute** simple selectors"
+      - content: ID
+        rationale: "`#` are used for **ID** simple selectors"
+      - content: universal
+        rationale: "`*` is the **universal** simple selector"
+      - content: class
+        rationale: "`.` are used for **class** simple selectors"
+  - type: multiple-choice
+    stimulus: |
+      ```css
+      div {}
+      ```
     cardinality: "1"
     correctAnswers: "1"
-    stem: How wide do you think `.my-box` will be?
+    stem: What kind of simple selector is used in the above snippet?
     options:
-      - content: 200px
-        rationale: |
-          Since the default value for box-sizing is content-box, padding and
-          borders will be added to the width. `200px` would be correct if the 
-          box had `box-sizing: border-box`.
-      - content: 260px
-        rationale: |
-          The default box sizing is content-box, which means padding and 
-          borders are added to the overall box.
+      - content: class
+        rationale: "`.` are used for **class** simple selectors"
+      - content: type
+        rationale: "`element` are used for **type** simple selectors"
+      - content: attribute
+        rationale: "`[]` are used for **attribute** simple selectors"
+      - content: ID
+        rationale: "`#` are used for **ID** simple selectors"
