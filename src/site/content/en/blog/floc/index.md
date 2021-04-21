@@ -28,9 +28,12 @@ individual browsing data with the browser vendor or anyone else.
 
 {% Aside %}
 FLoC is now in [origin trial in Chrome](/origin-trials/). Find out more: 
-[How to take part in the FLoC origin trial](https://developer.chrome.com/blog/floc/).
+[How to take part in the FLoC origin trial](https://developer.chrome.com/blog/floc/). 
 
-During the current FLoC origin trial, a page visit will only be included in the browser's FLoC 
+The initial testing of FLoC is taking place with a [small percentage of users](https://blog.google/products/chrome/privacy-sustainability-and-the-importance-of-and/#jump-content:~:text=The%20initial%20testing%20of%20FLoC%20is%20taking%20place%20with%20a%20small%20percentage%20of%20users), 
+and FLoC is subject to [origin trial usage limits](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#19-are-there-any-usage-limits-on-experimental-features).
+
+For browsers that _are_ included in the current FLoC origin trial, a page visit will only be part of the browser's FLoC 
 computation for one of two reasons: 
 * The FLoC API (`document.interestCohort()`) is used on the page. 
 * Chrome detects that the page [load ads or ads-related resources](https://github.com/WICG/floc/issues/82). 
