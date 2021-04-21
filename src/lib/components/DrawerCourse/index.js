@@ -14,39 +14,58 @@
  * limitations under the License.
  */
 
-import {BaseStateElement} from '../BaseStateElement';
+import {BaseElement} from '../BaseElement';
 import {html} from 'lit-element';
-import {markAsCompleted} from '../../actions';
+import {trackEvent} from '../../analytics';
 
 /**
  * @fileoverview A drawer displaying the course ToC.
  */
 
-class DrawerCourse extends BaseStateElement {
+class DrawerCourse extends BaseElement {
   static get properties() {
     return {
       current: {type: String},
     };
   }
 
+  get courseProgress() {
+    let courseProgress;
+    try {
+      courseProgress = JSON.parse(localStorage['webdev_course_progress']);
+    } catch (e) {
+      courseProgress = [];
+    }
+    return courseProgress;
+  }
+
+  markAsCompleted(url) {
+    trackEvent({
+      category: 'Course Events',
+      action: 'completed',
+      label: url,
+    });
+    const completed = new Set(this.courseProgress);
+    completed.add(url);
+    localStorage['webdev_course_progress'] = JSON.stringify(
+      Array.from(completed),
+    );
+  }
+
   connectedCallback() {
     super.connectedCallback();
 
-    markAsCompleted(this.current);
     this.childElements = Array.from(this.children).map((child) => {
       if (this.courseProgress.indexOf(child.getAttribute('href')) > -1) {
         child.setAttribute('data-complete', 'true');
       }
       return child;
     });
+    this.markAsCompleted(this.current);
   }
 
   render() {
     return html`${this.childElements}`;
-  }
-
-  onStateChanged({courseProgress}) {
-    this.courseProgress = courseProgress;
   }
 }
 
