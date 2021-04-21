@@ -29,6 +29,11 @@ class DrawerCourse extends BaseElement {
     };
   }
 
+  constructor() {
+    super();
+    this.current = '';
+  }
+
   get courseProgress() {
     let courseProgress;
     try {
