@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,12 @@
  * limitations under the License.
  */
 
-/**
- * Removes any i18n data from a URL to determine the default URL.
- *
- * @param {string} url URL with possible i18n folder and locale in prefix.
- * @returns {string} URL without any i18n information.
- */
-const getDefaultUrl = (url) =>
-  url.replace(
-    /^\/i18n\/([a-z]{2}|[A-Z]{2}|ALL)(_([a-z]{2}|[A-Z]{2}|ALL))?\//,
-    '/',
-  );
+const recentBlogPosts = require('../../_collections/hooks/recent-blog-posts');
 
-module.exports = {
-  getDefaultUrl,
+module.exports = function () {
+  return {
+    eleventyComputed: {
+      recentPosts: recentBlogPosts,
+    },
+  };
 };
