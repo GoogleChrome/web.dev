@@ -1,5 +1,5 @@
 ---
-title: Fill an OTP form within a cross-origin iframe using WebOTP API
+title: Fill OTP forms within cross-origin iframes with WebOTP API
 subhead: WebOTP API can now receive OTPs from within iframes.
 authors:
   - yigu
