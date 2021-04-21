@@ -11,7 +11,7 @@ hero_position: center
 alt: |
   Photo of fast-moving traffic.
 origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/-6744140441987317759
+  url: https://developer.chrome.com/origintrials/#/view_trial/793759434324049921
 tags:
   - blog
   - capabilities
@@ -41,7 +41,7 @@ This a small list of possible ways developers might use WebTransport.
 As part of the origin trial process, we're interested in [hearing more](#feedback) about how you plan to use WebTransport.
 
 {% Aside %}
-Many of the concepts in this proposal were previously experimented with as part of the earlier [QuicTransport](https://chromestatus.com/feature/4854144902889472) origin trial, which did not end up being released as part of Chrome.
+Many of the concepts in this proposal were previously experimented with as part of the earlier QuicTransport origin trial, which did not end up being released as part of Chrome.
 
 WebTransport helps with similar use cases as QuicTransport, with the primary difference being that [HTTP/3](https://quicwg.org/base-drafts/draft-ietf-quic-http.html) instead of [QUIC](https://www.chromium.org/quic) is the underlying transport protocol.
 {% endAside %}
@@ -307,7 +307,7 @@ File a bug at [https://new.crbug.com](https://new.crbug.com). Include as much de
 
 Your public support helps Chrome prioritize features, and shows other browser vendors how critical it is to support them.
 
-- Be sure you have signed up for the [origin trial](https://developers.chrome.com/origintrials/#/view_trial/-6744140441987317759) to show your interest and provide your domain and contact info.
+- Be sure you have signed up for the [origin trial](https://developer.chrome.com/origintrials/#/view_trial/793759434324049921) to show your interest and provide your domain and contact info.
 - Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
   [`#WebTransport`](https://twitter.com/search?q=%23WebTransport&src=typed_query&f=live)
   and details on where and how you're using it.
