@@ -68,10 +68,6 @@ class DrawerCourse extends BaseElement {
     });
     this.markAsCompleted(this.current);
   }
-
-  render() {
-    return html`${this.childElements}`;
-  }
 }
 
 customElements.define('web-drawer-course', DrawerCourse);
