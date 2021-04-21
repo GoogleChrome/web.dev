@@ -113,6 +113,9 @@ things:
   </figcaption>
 </figure>
 
+You can try the demo yourself at
+[https://web-otp-iframe-demo.stackblitz.io](https://web-otp-iframe-demo.stackblitz.io).
+
 ### Annotate bound-origins to the SMS text message
 
 When WebOTP API is called from within an iframe, the SMS text message must
