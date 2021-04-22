@@ -18,7 +18,7 @@ tags:
 ---
 
 Mainline is an online clothing retailer that offers the biggest designer brand names in fashion. The
-UK-based company entrusts its teams of in-house experts, blended strategically with key partners, to
+UK-based company entrusts its team of in-house experts, blended strategically with key partners, to
 provide a frictionless shopping experience for all. With market presence in over 100 countries via
 seven custom-built territorial websites and an app, Mainline will continue to ensure the ecommerce
 offering is rivalling the competition.
@@ -32,14 +32,14 @@ functionality with a growing smartphone market in mind.
 ## Solution
 
 The objective was to build and launch a PWA that complemented the original mobile friendly version
-of the Mainline Menswear website, and then compare the stats to their current hybrid mobile app,
-that is available on Android and iOS.
+of the Mainline Menswear website, and then compare the stats to their hybrid mobile app,
+which is currently available on Android and iOS.
 
-Once launched, and being used by a small section of Mainline Menswear users, they were able to
-determine the difference in key stats between PWA, app and Web.
+Once the app launched and was being used by a small section of Mainline Menswear users, they were able to
+determine the difference in key stats between PWA, app, and Web.
 
-The approach Mainline took when looking at implementing a PWA to their website was to make sure that
-the framework they selected for their website (Nuxt.js, that utilizes Vue.js) would be future-proof
+The approach Mainline took when converting their website to a PWA was to make sure that
+the framework they selected for their website (Nuxt.js, utilizing Vue.js) would be future-proof
 and enable them to take advantage of fast moving web technology.
 
 ## Results
@@ -77,22 +77,22 @@ and enable them to take advantage of fast moving web technology.
 ## Technical deep dive
 
 [Mainline Menswear](https://www.mainlinemenswear.co.uk/) is using the
-[Nuxt.js framework](https://nuxtjs.org/) to bundle and render their site, which is a Single Page
-Application (SPA).
+[Nuxt.js framework](https://nuxtjs.org/) to bundle and render their site, which is a single page
+application (SPA).
 
 ### Generating a service worker file
 
-For generating the service worker, Mainline Menswear has added configuration through a custom
+For generating the service worker, Mainline Menswear added configuration through a custom
 implementation of the [`nuxt/pwa` Workbox module](https://pwa.nuxtjs.org/workbox).
 
 The reason they forked the `nuxt/pwa` module was to allow the team to add more customizations to the
 service worker file that they weren't able to or had issues with when using the standard version.
 One such optimization was around the [offline functionality](#providing-offline-functionality) of
-the site like serving a default offline page and gathering analytics while offline.
+the site like, for example, serving a default offline page and gathering analytics while offline.
 
 ### Anatomy of the web application manifest
 
-The team is generating a manifest with icons for different mobile app icon sizes and their web app
+The team generated a manifest with icons for different mobile app icon sizes and other web app
 details like `name`, `description` and `theme_color`:
 
 ```json
@@ -111,7 +111,7 @@ details like `name`, `description` and `theme_color`:
 }
 ```
 
-The web app, once installed, can be launched from the homescreen without the browser getting in the
+The web app, once installed, can be launched from the home screen without the browser getting in the
 way. This is achieved by adding the `display` parameter in the web application manifest file:
 
 ```json
@@ -121,7 +121,7 @@ way. This is achieved by adding the `display` parameter in the web application m
 ```
 
 Last but not the least, the company is now able to easily track how many users are visiting their
-web app from the homescreen by simply appending a `utm_source` parameter in the `start_url` field of
+web app from the home screen by simply appending a `utm_source` parameter in the `start_url` field of
 the manifest:
 
 ```json
@@ -135,27 +135,27 @@ web application manifest fields. {% endAside %}
 
 ### Runtime caching for faster navigations
 
-Caching for web apps is a "must" for page speed optimization and for providing a better user
+Caching for web apps is a must for page speed optimization and for providing a better user
 experience for returning users.
 
-For caching on the web, there are quite a few strategies out there with each using
+For caching on the web, there are quite a few
 [different approaches](https://dev.to/jonchen/service-worker-caching-and-http-caching-p82). The team
 is using a mix of the [HTTP cache](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching) and
 the [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) for caching assets on the
 client side.
 
-The Cache API gives Mainline Menswear a finer control over the cached assets, allowing them to apply
+The Cache API gives Mainline Menswear finer control over the cached assets, allowing them to apply
 complex strategies to each file type. While all this sounds complicated and hard to set up and
-maintain, [Workbox](https://developers.google.com/web/tools/workbox) has provided them with an easy
-way of declaring such complex strategies and has eased the pain of maintenance.
+maintain, [Workbox](https://developers.google.com/web/tools/workbox) provides them with an easy
+way of declaring such complex strategies and eases the pain of maintenance.
 
 #### Caching CSS and JS
 
-For CSS and JS files, the team has chosen to cache them and serve them over the cache using the
+For CSS and JS files, the team chose to cache them and serve them over the cache using the
 [`StaleWhileRevalidate`](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-strategies.StaleWhileRevalidate)
-Workbox strategy. This strategy allows them to serve all Nuxt CSS and JS files fast, increasing
-their page speed, while the files are being updated in the background for a fresh version of the
-files the next time they are being requested:
+Workbox strategy. This strategy allows them to serve all Nuxt CSS and JS files fast,
+which significantly increases their site's performance.
+At the same time, the files are being updated in the background to the latest version for the next visit:
 
 ```js
 /* sw.js */
@@ -172,8 +172,8 @@ workbox.routing.registerRoute(
 
 The strategy for caching Google Fonts depends on two file types:
 
-1. The stylesheet that contains the `@font-face` declarations.
-2. The underlying fonts files (requested within the stylesheet mentioned above).
+* The stylesheet that contains the `@font-face` declarations.
+* The underlying font files (requested within the stylesheet mentioned above).
 
 ```js
 // Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
@@ -210,11 +210,11 @@ workbox.routing.registerRoute(
 
 #### Caching images
 
-For images, Mainline Menswear decided to go with two separate strategies. The first strategy applies
-to all images coming from their CDN that are usually product images. Their pages are image-heavy so
-they are conscious of not taking too much of their users' device storage, so through Workbox they
-have added a strategy that is **caching images coming only from their CDN** and a **maximum number
-of images of 60** using the
+For images, Mainline Menswear decided to go with two strategies. The first strategy applies
+to all images coming from their CDN, which are usually product images. Their pages are image-heavy so
+they are conscious of not taking too much of their users' device storage. So through Workbox, they
+added a strategy that is **caching images coming only from their CDN** with a **maximum
+of 60 images** using the
 [`ExpirationPlugin`](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-expiration.ExpirationPlugin).
 
 The 61st (newest) image requested, replaces the 1st (oldest) image so that no more than 60 product
@@ -238,9 +238,9 @@ workbox.routing.registerRoute(
 );
 ```
 
-The second image strategy handles all the rest of the images that are being requested by the origin.
-These images tend to be very few and small across the whole origin, but the team here likewise
-limits the number of cached images to 60 to be on the safe side.
+The second image strategy handles the rest of the images being requested by the origin.
+These images tend to be very few and small across the whole origin, but to be on the safe side,
+the number of these cached images is also limited to 60.
 
 ```js
 workbox.routing.registerRoute(
@@ -260,7 +260,7 @@ workbox.routing.registerRoute(
 
 {% Aside 'objective' %} Even though the caching strategy is exactly the same as the previous one, by
 splitting images into two caches (`product_images` and `images`), it allows for more flexible
-updates to the strategies or caches to future versions of the service worker. {% endAside %}
+updates to the strategies or caches. {% endAside %}
 
 ### Providing offline functionality
 
@@ -276,7 +276,7 @@ const PRECACHE = [
 ```
 
 The precache list is then fed into Workbox which takes care of all the heavy lifting of adding the
-URLs to the cache, checking for any revision mismatch, updating accordingly, and serving the
+URLs to the cache, checking for any revision mismatch, updating, and serving the
 precached files with a `CacheFirst` strategy.
 
 ```js
@@ -315,7 +315,7 @@ workbox.routing.registerRoute(navigationRoute);
 
 ### Reporting successful installs
 
-Apart from the homescreen launch tracking (with `"start_url": "/?utm_source=pwa"` in the web
+Apart from the home screen launch tracking (with `"start_url": "/?utm_source=pwa"` in the web
 application manifest), the web app also reports successful app installs by listening to the
 `appinstalled` event on `window`:
 
