@@ -257,7 +257,7 @@ if (navigator.windowControlsOverlay.visible) {
 ```
 
 {% Aside %} The window controls overlay visibility is not to be confused with the visibility in the
-CSS sense of whatever HTML content you place in the window controls overlay. Even if you set
+CSS sense of whatever HTML content you place next to the window controls overlay. Even if you set
 `display: none` on the `div` placed into the window controls overlay, the `visible` property of the
 window controls overlay would still report `true`. {% endAside %}
 
