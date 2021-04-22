@@ -102,7 +102,7 @@ const html = '<img src="' + redPixel + '" width="100" height="100" alt="" />';
 event.dataTransfer.setData('text/html', html);
 ```
 
-For posterity, using `DataTransfer` with copy-paste interactions looks like the following. Notice that
+For posterity, using the DataTransfer API with copy-paste interactions looks like the following. Notice that
 the `dataTransfer` property is named `clipboardData` for clipboard events.
 
 ```js
@@ -195,7 +195,7 @@ emails, sharing contacts. That would be great, right? This starts with you! 🙌
 
 ## Concerns
 
-While `DataTransfer` is available today, there are some things to be aware of before integrating.
+While the DataTransfer API is available today, there are some things to be aware of before integrating.
 
 ### Browser compatibility
 
@@ -229,12 +229,12 @@ There are some security and privacy considerations you should be aware of when u
   becomes available on drop or paste.
 - The received data should be treated like any other user input; sanitize and validate before using.
 
-## Getting started with DataTransfer!
+## Getting started with the Transmat helper library
 
-Are you excited about using the DataTransfer in your application? Consider taking a look at the
+Are you excited about using the DataTransfer API in your application? Consider taking a look at the
 [Transmat library on GitHub](google.github.io/transmat). This open-source library aligns browser
 differences, provides JSON-LD utilities, contains an observer to respond to transfer events for
-highlighting drop-areas, and lets you integrate `DataTransfer` among existing drag and drop
+highlighting drop-areas, and lets you integrate the data transfer operations among existing drag and drop
 implementations.
 
 ```js
