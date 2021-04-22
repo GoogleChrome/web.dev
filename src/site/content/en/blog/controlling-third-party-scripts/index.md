@@ -1,7 +1,7 @@
 ---
 title: 'Keeping third-party scripts under control'
 subhead: |
-  Before optimizing third party tags, make sure that these scripts are things that you still need.
+  Before optimizing third party tags, make sure that these scripts are still needed on your site.
 authors:
   - ansteychris
   - antoinebisch
