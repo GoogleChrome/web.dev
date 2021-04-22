@@ -10,7 +10,7 @@ audio:
   thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 ---
 
-Hey we're talking about borders here!
+Heyz we're talking about borders here!
 
 ## Super centered: place-items: center
 
