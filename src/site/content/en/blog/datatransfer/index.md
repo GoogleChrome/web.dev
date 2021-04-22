@@ -10,6 +10,7 @@ description: >
   explains what developers can do with the DataTransfer API.
 date: 2021-04-21
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/QDbWuORGDrUkKquHEeAU.jpeg
+thumbnail: image/Fu4piJdkAKgtrxhf0aLliUyaEXt1/oUzqAGoZ709h6duNSOUo.webp
 tags:
   - blog
   - progressive-web-apps
@@ -38,7 +39,7 @@ tightly coupled integrations anymore. Instead you can give the user the full con
 data to wherever they would like.
 
 <figure class="w-figure">
-  {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/QzLyuLo3xCiRTA29oYx6.png", alt="Two app windows, one with a drag source and one with a paste target.", width="800", height="433" %}
+  {% YouTube 'EYMgUhn_Zdo' %}
   <figcaption class="w-figcaption">An example of interactions that are possible with the DataTransfer API.</figcaption>
 </figure>
 
@@ -49,7 +50,7 @@ below show drag-drop interactions, but the process for copy-paste is similar. If
 you are unfamiliar with the Drag and Drop API, there's a great article
 [explaining HTML5 Drag and Drop](https://web.dev/drag-and-drop/) that details the ins and outs.
 
-By providing MIME-type keyed data, you are able to freely interact with external applications.
+By providing [MIME-type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) keyed data, you are able to freely interact with external applications.
 Most WYSIWYG editors, text editors, and browsers respond to the "primitive" mime-types used in the
 example below.
 
@@ -82,13 +83,12 @@ document.querySelector('#dropTarget').addEventListener('drop', (event) => {
 ```
 
 Three MIME-types are widely supported across applications:
-
 - **`text/html`:** Renders the HTML payload in <code>contentEditable</code> elements and rich
-  text (WYSIWYG) editors like Google Docs, Microsoft Word, and others.</th>
+  text (WYSIWYG) editors like Google Docs, Microsoft Word, and others.
 - **`text/plain:`** Sets the value of input elements, content of code editors, and the fallback
   from <code>text/html</code>.
 - **`text/uri-list`:** Navigates to the URL when dropping on the URL bar or browser page. A URL
-  shortcut will be created when dropping on a directory or the desktop.</td>
+  shortcut will be created when dropping on a directory or the desktop.
 
 The widespread adoption of `text/html` by WYSIWYG editors makes it very useful. Like in HTML
 documents, you can embed resources by using
@@ -102,23 +102,25 @@ const html = '<img src="' + redPixel + '" width="100" height="100" alt="" />';
 event.dataTransfer.setData('text/html', html);
 ```
 
+### Transfer using copy and paste
+
 For posterity, using the DataTransfer API with copy-paste interactions looks like the following. Notice that
 the `dataTransfer` property is named `clipboardData` for clipboard events.
 
 ```js
-const copySource = document.querySelector('#copySource');
-const pasteTarget = document.querySelector('#pasteTarget');
 // Listen to copy-paste events on the document.
 document.addEventListener('copy', (event) => {
-  // Only copy when the `activeElement` (i.e., focused element) is, or is within,
-  // the `copySource` element.
+  const copySource = document.querySelector('#copySource');
+  // Only copy when the `activeElement` (i.e., focused element) is, 
+  // or is within, the `copySource` element.
   if (copySource.contains(document.activeElement)) {
     event.clipboardData.setData('text/plain', 'Foo bar');
-    // Prevent the browser's default copy behavior.
     event.preventDefault();
   }
 });
+
 document.addEventListener('paste', (event) => {
+  const pasteTarget = document.querySelector('#pasteTarget');
   if (pasteTarget.contains(document.activeElement)) {
     const data = event.clipboardData.getData('text/plain');
     console.log(data);
@@ -162,7 +164,7 @@ also limits the user when transferring data to applications that aren't using yo
 connect with third-party applications across the web, you need a universal data format.
 
 The [JSON-LD](https://json-ld.org/) (Linked Data) standard is a great candidate for this. It is
-lightweight and easy to read from and write to in JavaScript. [Schema.org](Schema.org) contains many
+lightweight and easy to read from and write to in JavaScript. [Schema.org](https://schema.org) contains many
 predefined types that can be used, and custom schema definitions are an option as well.
 
 ```js
@@ -178,11 +180,11 @@ const data = {
 event.dataTransfer.setData('application/ld+json', JSON.stringify(data));
 ```
 
-When using the Schema.org types, you can start with the generic [Thing](schema.org/Thing) type,
-or use something closer to your use case like [Event](schema.org/Event), [Person](schema.org/Person),
-[MediaObject](schema.org/MediaObject), [Place](schema.org/Place), or even highly-specific types like
-[MedicalEntity](schema.org/MedicalEntity) if need be. When you use TypeScript, you can use the
-interface definitions from the [schema-dts](github.com/google/schema-dts) type definitions.
+When using the Schema.org types, you can start with the generic [Thing](https://schema.org/Thing) type,
+or use something closer to your use case like [Event](https://schema.org/Event), [Person](https://schema.org/Person),
+[MediaObject](https://schema.org/MediaObject), [Place](https://schema.org/Place), or even highly-specific types like
+[MedicalEntity](https://schema.org/MedicalEntity) if need be. When you use TypeScript, you can use the
+interface definitions from the [schema-dts](https://github.com/google/schema-dts) type definitions.
 
 By transmitting and receiving JSON-LD data, you will support a more connected and open web. With
 applications speaking the same language, you can create deep integrations with external
@@ -232,7 +234,7 @@ There are some security and privacy considerations you should be aware of when u
 ## Getting started with the Transmat helper library
 
 Are you excited about using the DataTransfer API in your application? Consider taking a look at the
-[Transmat library on GitHub](google.github.io/transmat). This open-source library aligns browser
+[Transmat library on GitHub](https://google.github.io/transmat). This open-source library aligns browser
 differences, provides JSON-LD utilities, contains an observer to respond to transfer events for
 highlighting drop-areas, and lets you integrate the data transfer operations among existing drag and drop
 implementations.
