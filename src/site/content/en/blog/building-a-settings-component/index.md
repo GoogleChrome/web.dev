@@ -584,7 +584,7 @@ full width color, waiting for transparency to reveal it.
 %}
 
 #### Track fill style
-My design **does require Javascript** in order to maintain the fill style. There
+My design **does require JavaScript** in order to maintain the fill style. There
 are CSS only strategies but they require the thumb element to be the same height
 as the track, and I wasn't able to find a harmony within those limits.
 
@@ -612,8 +612,8 @@ sliders.forEach(slider => {
 ```
 
 I think this makes for a nice visual upgrade. The slider works great without
-Javascript, the `--track-fill` prop is not required, it simply will not have a
-fill style if not present. If Javascript is available, populate the custom
+JavaScript, the `--track-fill` prop is not required, it simply will not have a
+fill style if not present. If JavaScript is available, populate the custom
 property while also observing any user changes, syncing the custom property with
 the value.
 

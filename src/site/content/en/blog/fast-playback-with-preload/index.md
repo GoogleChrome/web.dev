@@ -229,7 +229,7 @@ element, it would be `as="audio"`.
 
 The example below shows how to preload the first segment of a video with `<link
 rel="preload">` and use it with Media Source Extensions. If you're not familiar
-with the MSE Javascript API, see [MSE basics][mse-basics].
+with the MSE JavaScript API, see [MSE basics][mse-basics].
 
 For the sake of simplicity, let's assume the entire video has been split into
 smaller files like `file_1.webm`, `file_2.webm`, `file_3.webm`, etc.
