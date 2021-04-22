@@ -70,7 +70,7 @@ Android app.
 
 Web content in a Trusted Web Activity must meet the PWA installability criteria.
 
-Additionally, in order to match the behaviour users expect from Android applications,
+Additionally, to match the behavior users expect from Android applications,
 [Chrome 86 introduced a change][18] where failing to handle the following scenarios is considered a
 crash:
 
@@ -78,9 +78,9 @@ crash:
   - Failure to return HTTP 200 for an offline network resource request.
   - An HTTP 404 or 5xx error in the application.
 
-When one of those scenarios happen in the Trusted Web Activity, it will cause a user visible
+When one of those scenarios happens in the Trusted Web Activity, it causes a user visible
 crash of the Android application. Check out the [guidance][19] on handling those scenarios in your
-Service Worker.
+service worker.
 
 The application must also meet additional Android-specific criteria such as [policy compliance][9].
 
