@@ -1592,6 +1592,28 @@
     "github": "maranag",
     "image": "image/admin/ChOBe0OzPT7siDgFmjC9.jpg"
   },
+  "charistheodoulou": {
+    "name": {
+      "given": "Charis",
+      "family": "Theodoulou"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "twitter": "charistheo_dev",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/RDHNBibB1P7yeOIrw0JX.jpg"
+  },
+  "natashakosoglov": {
+    "name": {
+      "given": "Natasha",
+      "family": "Kosoglov"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "linkedin": "https://uk.linkedin.com/in/natashakosoglov",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/ccGMk9IszZxs7LbBum7s.png"
+  },
   "mattreynolds": {
     "name": {
       "given": "Matt",
