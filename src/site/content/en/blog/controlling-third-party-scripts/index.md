@@ -175,9 +175,9 @@ This also opens up the opportunity to define the number of tags in this final li
 which can be monitored within
 [Lighthouse CI](https://web.dev/lighthouse-ci/#overview)
 and incorporated into performance-specific goal setting.
-For example,
+For example:
 
-> "if we stick to <5 tags on our Landing Pages along with our own optimized JS,
+> If we stick to <5 tags on our Landing Pages along with our own optimized JS,
 we're confident the
-[Total Blocking Time (TBT)](https://web.dev/tbt/) can hit 'good' in the
-[Core Web Vitals](https://web.dev/vitals/)."
+[Total Blocking Time (TBT)](/tbt/) can hit 'good' in the
+[Core Web Vitals](/vitals/).
