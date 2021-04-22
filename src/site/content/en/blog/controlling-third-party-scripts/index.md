@@ -1,5 +1,7 @@
 ---
 title: 'Keeping third-party scripts under control'
+subhead: |
+  Before optimizing third party tags, make sure that these scripts are things that you still need.
 authors:
   - ansteychris
   - antoinebisch
@@ -46,7 +48,7 @@ However, no one ever did.
 
 Before you start to think about third-party tag script execution,
 or which tags can be
-[deferred, lazy-loaded or preconnected](https://web.dev/codelab-optimize-third-party-javascript/)
+[deferred, lazy-loaded or preconnected](/codelab-optimize-third-party-javascript/)
 from a technical lens,
 there's an opportunity to govern which tags are added to a site/page from an organizational point of view.
 A common theme with websites that are being slowed down due to vast amounts of third-party tags,
@@ -169,11 +171,11 @@ height="305" %}
 The vetting process should leave you with a final list
 of tags which are classified as needed for a specific page.
 At this stage, you can then delve into
-[technical optimisation approaches](https://web.dev/codelab-optimize-third-party-javascript/).
+[technical optimisation approaches](/codelab-optimize-third-party-javascript/).
 This also opens up the opportunity to define the number of tags in this final list within a
-[performance budget](https://web.dev/your-first-performance-budget/),
+[performance budget](/your-first-performance-budget/),
 which can be monitored within
-[Lighthouse CI](https://web.dev/lighthouse-ci/#overview)
+[Lighthouse CI](/lighthouse-ci/#overview)
 and incorporated into performance-specific goal setting.
 For example:
 
