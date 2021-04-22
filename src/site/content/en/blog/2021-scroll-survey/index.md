@@ -16,34 +16,70 @@ tags:
   - ux
 ---
 
-Master
+Please
 
-OK
+please
 
-master
+PLEASE
 
-Blacklist
-
-OK
+pLeAsE
 
 blacklist
 
-OK
+black list
 
-We've been analyzing the results of the 
-[2019 Mozilla Developer Network Web DNA Report](https://mdn-web-dna.s3-us-west-2.amazonaws.com/MDN-Web-DNA-Report-2019.pdf) 
-for action items and follow up strategies to improve the top reported issues. 
-A small sub-group on the Chrome team identified a group of issues related 
-to scrolling, `scroll-snap`, and `touch-action`. Those issues were researched, 
-evaluated, and synthesized into a new, follow-up survey with more precise 
-questions about issues related to these topics. 
+whitelist
 
-## 2021 Scroll Survey
+white list
 
-We believe that there are many ways to improve scrolling on the web for 
-developers, designers, and users alike. We've created a survey which we 
-hope is respectful of your time. It should take no more than 10 minutes 
-to complete. The results will help browser vendors and standards groups 
-understand how to make scrolling better. 
+master
 
-You can take part in the survey at [2021 Web Scrolling Survey](https://google.qualtrics.com/jfe/form/SV_bjbaTccU1lpPlVX).
+slave
+
+tribal knowledge
+
+off the reservation
+
+tribe
+
+nitty gritty
+
+voodoo
+
+blackhat
+
+black hat
+
+redline
+
+white glove
+
+grandfathering
+
+grandfathered
+
+mom test
+
+girlfriend test
+
+grandma test
+
+ADHD
+
+blind
+
+crazy
+
+insane
+
+OCD
+
+sane
+
+sanity check
+
+final solution
+
+ninja
+
+retard
