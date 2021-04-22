@@ -65,6 +65,7 @@ improve your TTFB in a number of different ways:
 - Cache assets
 - Serve HTML pages cache-first
 - Establish third-party connections early
+- Use signed exchanges
 
 ### Optimize your server
 
@@ -168,6 +169,15 @@ Learn more by reading [Establish network connections early to improve perceived 
 speed](/preconnect-and-dns-prefetch/)
 {% endAside %}
 
+### Use signed exchanges (SXGs)
+
+[Signed exchanges (SXGs)](https://web.dev/signed-exchanges) are a delivery mechanism that allow for
+faster user experiences by providing content in an easily cacheable format.
+Specifically, [Google Search](https://developers.google.com/search/docs/advanced/experience/signed-exchange)
+will cache and sometimes prefetch SXGs. For sites that receive a large portion
+of their traffic from Google Search, SXGs can be an important tool for improving
+LCP. For more information, see [Signed
+Exchanges](https://web.dev/signed-exchanges).
 ## Render blocking JavaScript and CSS {: #render-blocking-resources }
 
 Before a browser can render any content, it needs to parse HTML markup into a DOM tree. The HTML
