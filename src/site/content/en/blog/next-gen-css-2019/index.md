@@ -324,7 +324,7 @@ Right now, only FireFox supports `gap` in flex layouts, but play around with thi
 
 ## CSS Houdini
 
-[Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini) is a set of low-level APIs for the browser's rendering engine that lets you tell the browser how to interpret custom CSS. In other words, it gives you access to the [CSS Object Model](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model), letting you _extend_ CSS via Javascript. This has several benefits:
+[Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini) is a set of low-level APIs for the browser's rendering engine that lets you tell the browser how to interpret custom CSS. In other words, it gives you access to the [CSS Object Model](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model), letting you _extend_ CSS via JavaScript. This has several benefits:
 
 *   It gives you much more power to create custom CSS features.
 *   It's easier to separate rendering concerns from application logic.
