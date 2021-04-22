@@ -17,7 +17,8 @@ groups:
       request: 99
     conditions:
       - >
-        glob('src/site/content/en/learn/css/**/*.md') in files
+        files.include('src/site/content/en/learn/css/*.md') or
+        files.include('src/site/_data/courses/css/*.yml')
 
   # Content
   # Handles any changes related to site content.
