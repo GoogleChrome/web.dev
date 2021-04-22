@@ -16,7 +16,7 @@
     "debug:test:lib": "TEST_MODE=debug npm-run-all clean rollup --parallel watch:rollup karma",
     "debug:test:unit": "node --inspect-brk ./node_modules/.bin/mocha ./test/unit",
     "deploy": "ELEVENTY_ENV=prod npm run build && node index-algolia.js && firebase deploy --non-interactive",
-    "dev": "npm-run-all clean rollup gulp --parallel watch:rollup watch:eleventy watch:gulp firebase-config start",
+    "dev": "npm-run-all clean rollup gulp eleventy --parallel watch:rollup watch:eleventy watch:gulp firebase-config start",
     "eleventy": "eleventy --quiet",
     "firebase-config": "node firebase-config.js",
     "gulp:content": "npx gulp copy-content-assets",
@@ -43,7 +43,7 @@
     "translated": "node ./tools/update-translated/index.js",
     "updated": "node ./tools/update-updated/index.js",
     "version-check": "node version-check.js",
-    "watch:eleventy": "eleventy --watch --quiet",
+    "watch:eleventy": "chokidar \"src/site/**/*\" -c \"npm run eleventy\"",
     "watch:gulp": "npx gulp build --silent && gulp watch --silent",
     "watch:rollup": "chokidar \"src/lib/**/*.{js,scss}\" --silent -c \"npm run rollup\"",
     "watch:test:lib": "TEST_MODE=dev npm-run-all clean rollup --parallel watch:rollup karma"
