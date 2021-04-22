@@ -53,7 +53,7 @@ A common theme with websites that are being slowed down due to vast amounts of t
 is this part of the website is not owned by a single person or team,
 and therefore falls between the cracks.
 There's nothing more frustrating than optimizing your website,
-being pleased with the performance in a staging environment,
+being happy with the performance in a staging environment,
 only for the speed to regress in production because of tags that are being added.
 Implementing a "vetting process" for third-party tags can help prevent this,
 by building a workflow that creates cross-functional accountability and responsibility for these tags.
