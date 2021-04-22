@@ -1598,8 +1598,14 @@
     "org": {
       "name": "Google"
     },
+    "description": {
+      "en": "User Experience Engineer"
+    },
+    "country": "NL",
     "twitter": "jorikdelaporik",
-    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/1P2utnbQKi02S0iz4GUz.jpg"
+    "github": "jtangelder",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/1P2utnbQKi02S0iz4GUz.jpg",
+    "homepage": "https://jorik.dev/"
   },
   "sahel": {
     "name": {
