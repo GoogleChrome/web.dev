@@ -32,7 +32,7 @@ with other (web) applications, not tied to any origin. The API has support for p
 data entries that can have different behaviors based on where data is transferred to. Your
 web application can send and receive the transferred data when listening to incoming events.
 
-This powerful capability can change the way we think about sharing and interoperability in web
+This capability can change the way we think about sharing and interoperability in web
 applications on desktop. Transferring data between applications doesn't need to rely on
 tightly coupled integrations anymore. Instead you can give the user the full control to transfer their
 data to wherever they would like.
