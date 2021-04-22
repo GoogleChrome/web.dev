@@ -684,7 +684,7 @@ web-tabs.w-event-tabs {
   }
 
   summary {
-    &::-webkit-details-marker {
+    &::marker {
       display: none;
     }
   }
