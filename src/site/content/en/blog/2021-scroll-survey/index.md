@@ -16,6 +16,20 @@ tags:
   - ux
 ---
 
+Master
+
+OK
+
+master
+
+Blacklist
+
+OK
+
+blacklist
+
+OK
+
 We've been analyzing the results of the 
 [2019 Mozilla Developer Network Web DNA Report](https://mdn-web-dna.s3-us-west-2.amazonaws.com/MDN-Web-DNA-Report-2019.pdf) 
 for action items and follow up strategies to improve the top reported issues. 
