@@ -1,0 +1,31 @@
+setLeader: Test your knowledge of pseudo selectors
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: Pseudo-element selectors use how many colons?
+    options:
+      - content: ":"
+        rationale: "One `:` is used to target pseudo-classes"
+      - content: "::"
+        rationale: "Two `::` are used to target pseudo-elements"
+      - content: ":::"
+        rationale: "This is invalid and targets nothing"
+  - type: multiple-choice
+    stimulus: |
+      ```css
+      p:hover {
+        background: white;
+        color: black;
+      }
+      ```
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: What kind of pseudo selector is used in the above snippet?
+    options:
+      - content: Pseudo-class
+        rationale: "One `:` is used to target pseudo-classes"
+      - content: Pseudo-element
+        rationale: "Two `::` are used to target pseudo-elements"

@@ -40,7 +40,7 @@ module.exports = {
   imageCdn: 'https://webdev.imgix.net',
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
-  gitlocalize: 'https://gitlocalize.com/repo/3847/',
+  gitlocalize: 'https://gitlocalize.com/repo/5395/',
   analytics: {
     ids: {
       prod: 'UA-126406676-2',

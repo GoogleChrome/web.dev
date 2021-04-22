@@ -21,7 +21,10 @@
  * @returns {string} URL without any i18n information.
  */
 const getDefaultUrl = (url) =>
-  url.replace(/^\/i18n\/[a-z]{2}(-[A-Z]{2})?\//, '/');
+  url.replace(
+    /^\/i18n\/([a-z]{2}|[A-Z]{2}|ALL)(_([a-z]{2}|[A-Z]{2}|ALL))?\//,
+    '/',
+  );
 
 module.exports = {
   getDefaultUrl,

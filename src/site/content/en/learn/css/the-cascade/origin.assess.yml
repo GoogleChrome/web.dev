@@ -1,0 +1,55 @@
+setLeader: Test your knowledge of cascade origins
+tabLabel: question
+questions:
+  - type: multiple-choice
+    stimulus: |
+      **Test your knowledge of cascade origins**, consider the following style
+      rules from various origins:
+
+      #### User-agent style
+      ```css
+      h1 { margin-block-start: 0.83em; }
+      ```
+
+      #### Bootstrap
+      ```css
+      h1 { margin-block-start: 20px; }
+      ```
+
+      #### Page Author styles
+      ```css
+      h1 { margin-block-start: 2ch; }
+
+      @media (max-width: 480px) {
+        h1 { margin-block-start: 1ch; }
+      }
+      ```
+
+      #### User custom style
+      ```css
+      h1 { margin-block-start: 2rem !important; }
+      ```
+
+      Then, given the following HTML:
+      ```html
+      <h1>Lorem ipsum</h1>
+      ```
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: "What is the final `margin-block-start` of the `h1`?"
+    options:
+      - content: 20px
+        rationale: "Bootstrap is part of the authored origin, which loses to the
+        important local user style"
+      - content: 0.83em
+        rationale: "The user agent style origin loses to the important local
+        user style"
+      - content: 2rem
+        rationale: "This `!important` user custom style has the most specific
+        origin"
+      - content: 2ch
+        rationale: "This author style is part of the authored origin, which loses to the
+        important local user style"
+      - content: 1ch
+        rationale: "This author style is part of the authored origin, which loses to the
+        important local user style"

@@ -128,38 +128,7 @@ cannot parse—the value it cannot parse is invalid and therefore ignored.
 The browser then continues to process the rest of the CSS without breaking stuff it already understands.
 {% endAside %}
 
-@@TO DO: turn the following into a self-assessment
-[SELF ASSESSMENT START]
-
-If you have the following HTML on your page:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <button>I am a button</button>
-    <style>
-      button {
-        background: pink;
-      }
-    </style>
-  </body>
-</html>
-```
-
-Inside `styles.css`, is the following CSS rule:
-
-```css
-button {
-  background: yellow;
-}
-```
-
-**What color is the button's background?**
-[SELF ASSESSMENT END]
+{% Assessment 'position' %}
 
 ## Specificity
 
@@ -237,7 +206,7 @@ alt="A visual demonstration of the order of origins as also explained in the lis
 If you have an `!important` rule type in the CSS you have authored
 and the user has an `!important` rule type in their custom CSS, who's CSS wins?
 
-@@TO DO Self assessment
+{% Assessment 'origin' %}
 
 ## Importance
 
@@ -271,6 +240,8 @@ If the CSS you expected to apply doesn't appear at all,
 then it didn't match the element.
 In that case you need to look elsewhere,
 perhaps for a typo in a class or element name or some invalid CSS.
+
+{% Assessment 'conclusion' %}
 
 ## Resources
 
