@@ -50,7 +50,7 @@ Here's a general overview of the workflow and results:
 1. [Prepare](#preparing-motion-conditionals) reduced motion conditional
    variables for CSS and JS.
 1. [Prepare](#splitting-letters-utility-function) split text utilities in
-   Javascript.
+   JavaScript.
 1. [Orchestrate](#split-orchestration) the conditionals and utilities on page
    load.
 1. [Write](#splitting-animations-and-transitions) CSS transitions and animations
@@ -72,7 +72,7 @@ Here's a preview of the conditional results we're going for:
 
 If a user prefers reduced motion, we leave the HTML document alone and do no
 animation. If motion is OK, we go ahead and chop it up into pieces. Here's a
-preview of the HTML after Javascript has split the text by letter. 
+preview of the HTML after JavaScript has split the text by letter.
 
 <figure class="w-figure">
   {% Img
@@ -90,10 +90,10 @@ preview of the HTML after Javascript has split the text by letter.
 
 The conveniently [available](https://caniuse.com/prefers-reduced-motion) `@media
 (prefers-reduced-motion: reduce)` media query will be used from CSS and
-Javascript in this project. This media query is our primary conditional for
+JavaScript in this project. This media query is our primary conditional for
 deciding to split text or not. The CSS media query will be used to withhold
-transitions and animations, while the Javascript media query will be used to
-withhold the HTML manipulation. 
+transitions and animations, while the JavaScript media query will be used to
+withhold the HTML manipulation.
 
 {% Banner 'neutral' %} **Question:** What else should be used to withhold split
 text animations?{% endBanner %}
@@ -110,7 +110,7 @@ a media query boolean into a variable:
 
 #### Preparing the JS conditional
 
-In Javascript, the browser provides a way to check media queries, I used
+In JavaScript, the browser provides a way to check media queries, I used
 [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 to extract and rename the boolean result from the media query check:
 
@@ -142,21 +142,21 @@ letter-animation {
 }
 ```
 
-With the PostCSS custom property and a Javascript boolean, we're ready to
+With the PostCSS custom property and a JavaScript boolean, we're ready to
 conditionally upgrade the effect. That rolls us into the next section where I
-break down the Javascript for transforming strings into elements.
+break down the JavaScript for transforming strings into elements.
 
 ## Splitting Text
 
 Text letters, words, lines, etc., cannot be individually animated with CSS or JS.
 To achieve the effect, we need boxes. If we want to animate each letter, then
 each letter needs to be an element. If we want to animate each word, then each
-word needs to be an element. 
+word needs to be an element.
 
-1. Create Javascript utility functions for splitting strings into elements
+1. Create JavaScript utility functions for splitting strings into elements
 1. Orchestrate the usage of these utilities
 
-{% Aside %} In this demo I'll be splitting the text from Javascript on the DOM
+{% Aside %} In this demo I'll be splitting the text from JavaScript on the DOM
 of the page. If you're in a framework or on the server, you could split the text
 into elements from there, but do so respectfully.{% endAside %}
 
@@ -172,7 +172,7 @@ export const byLetter = text =>
 
 The
 [spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
-syntax from ES6 really helped make that a swift task. 
+syntax from ES6 really helped make that a swift task.
 
 ### Splitting words utility function
 
@@ -186,8 +186,8 @@ export const byWord = text =>
 
 The
 [`split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
-method on Javascript strings allows us to specify which characters to slice at.
-I passed an empty space, indicating a split between words.  
+method on JavaScript strings allows us to specify which characters to slice at.
+I passed an empty space, indicating a split between words.
 
 ### Making boxes utility function
 
@@ -201,7 +201,7 @@ const span = (text, index) => {
 
   node.textContent = text
   node.style.setProperty('--index', index)
-  
+
   return node
 }
 ```
@@ -224,7 +224,7 @@ const span = (text, index) => {
 
   node.textContent = text
   node.style.setProperty('--index', index)
-  
+
   return node
 }
 
@@ -239,17 +239,17 @@ Next is importing and using these `byLetter()` and `byWord()` functions.
 
 ## Split orchestration
 
-With the splitting utilities ready to use, putting it all together means: 
+With the splitting utilities ready to use, putting it all together means:
 1. **Finding** which elements to split
 1. **Splitting** them and **replacing** text with HTML
 
-After that, CSS takes over and will animate the elements / boxes. 
+After that, CSS takes over and will animate the elements / boxes.
 
 ### Finding Elements
 
 I chose to use attributes and values to store information about the desired
 animation and how to split the text. I liked putting these declarative options
-into the HTML. The attribute `split-by` is used from Javascript, to find
+into the HTML. The attribute `split-by` is used from JavaScript, to find
 elements and create boxes for either letters or words. The attribute
 `letter-animation` or `word-animation` is used from CSS, to target element
 children and apply transforms and animations.
@@ -261,7 +261,7 @@ Here's a sample of HTML that demonstrates the two attributes:
 <h1 split-by="word" word-animation="trampoline">hover the words</h1>
 ```
 
-### Finding elements from Javascript
+### Finding elements from JavaScript
 
 I used the CSS selector syntax for attribute presence to gather the list of
 elements which want their text split:
@@ -286,7 +286,7 @@ letter-animation {
 
 ### Splitting text in place
 
-For each of the split targets we find in Javascript, we'll split their text
+For each of the split targets we find in JavaScript, we'll split their text
 based on the value of the attribute and map each string to a `<span>`. We can
 then replace the text of the element with the boxes we made:
 
@@ -337,7 +337,7 @@ if (motionOK) {
 }
 ```
 
-The Javascript could be read in the following English:
+The JavaScript could be read in the following English:
 1. Import some helper utility functions.
 1. Check if motion is ok for this user, if not do nothing.
 1. For each element that wants to be split.
@@ -347,13 +347,13 @@ The Javascript could be read in the following English:
 ## Splitting animations and transitions
 
 The above splitting document manipulation has just unlocked a multitude of
-potential animations and effects with CSS or Javascript. There are a few links
-at the bottom of this article to help inspire your splitting potential. 
+potential animations and effects with CSS or JavaScript. There are a few links
+at the bottom of this article to help inspire your splitting potential.
 
 Time to show what you can do with this! I'll share 4 CSS driven animations and
-transitions. 🤓 
+transitions. 🤓
 
-### Split letters 
+### Split letters
 
 As a foundation for the split letter effects, I found the following CSS to be
 helpful. I put all transitions and animations behind the motion media query and
@@ -374,7 +374,7 @@ aren't collapsed by the layout engine. Now onto the stateful fun stuff.
 
 This example uses CSS transitions to the split text effect. With transitions we
 need states for the engine to animate between, and I chose three states: no
-hover, hover in sentence, hover on a letter. 
+hover, hover in sentence, hover on a letter.
 
 When the user hovers the sentence, aka the container, I scale back all the
 children as if the user pushed them further away. Then, as the user hovers a
@@ -424,9 +424,9 @@ effect.
 ```css
 @media (--motionOK) {
   [letter-animation="breath"] > span {
-    animation: 
-      breath 1200ms ease 
-      calc(var(--index) * 100 * 1ms) 
+    animation:
+      breath 1200ms ease
+      calc(var(--index) * 100 * 1ms)
       infinite alternate;
   }
 }
@@ -451,7 +451,7 @@ animation. {% endAside %}
 ### Split words
 
 Flexbox worked as a container type for me here in these examples, nicely
-leveraging the `ch` unit as a healthy gap length. 
+leveraging the `ch` unit as a healthy gap length.
 
 ```css
 word-animation {
@@ -523,9 +523,9 @@ infinite animation on a regular paragraph of text.
 [word-animation="trampoline"] > span {
   display: inline-block;
   transform: translateY(100%);
-  animation: 
-    trampoline 3s ease 
-    calc(var(--index) * 150 * 1ms) 
+  animation:
+    trampoline 3s ease
+    calc(var(--index) * 150 * 1ms)
     infinite alternate;
 }
 
@@ -550,12 +550,12 @@ Create a Codepen or host your own demo, tweet me with it, and I'll add it to the
 Community remixes section below.
 
 Source
-- [GUI Challenges source on GitHub](https://github.com/argyleink/gui-challenges) 
-- [Splitting text Codepen starter](https://codepen.io/argyleink/pen/poRLyOM) 
+- [GUI Challenges source on GitHub](https://github.com/argyleink/gui-challenges)
+- [Splitting text Codepen starter](https://codepen.io/argyleink/pen/poRLyOM)
 
 More demos and inspiration
 - [Splitting text Codepen collection](https://codepen.io/collection/XpROaV/)
-- [Splitting.js](https://splitting.js.org/) 
+- [Splitting.js](https://splitting.js.org/)
 
 ## Community remixes
 

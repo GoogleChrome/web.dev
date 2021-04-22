@@ -39,7 +39,7 @@ Suppose you're browsing the web on a screen that's 300 pixels wide, and the page
 
 Responsive images and preload have been available for the last few years, but at the same time something was missing: there was no way to preload responsive images. [Starting in Chrome 73](https://developers.google.com/web/updates/2019/03/nic73#more), the browser can preload the right variant of responsive images specified in `srcset` before it discovers the `img` tag!
 
-Depending on your site's structure, that could mean significantly faster image display! We ran tests on a site that uses Javascript to lazy-load responsive images. Preloading resulted in images loading 1.2 seconds faster.
+Depending on your site's structure, that could mean significantly faster image display! We ran tests on a site that uses JavaScript to lazy-load responsive images. Preloading resulted in images loading 1.2 seconds faster.
 
 {% Aside %}
 
