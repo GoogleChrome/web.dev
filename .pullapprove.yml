@@ -3,7 +3,7 @@ version: 3
 groups:
   # Learn CSS
   # Handles any changes related to the Learn CSS course
-  content:
+  learncss:
     reviewers:
       users:
       - una
@@ -17,8 +17,8 @@ groups:
       request: 99
     conditions:
       - >
-        files.include('src/site/content/en/learn/css/*.md') or
-        files.include('src/site/_data/courses/css/*.yml')
+        glob('src/site/content/en/learn/css/**/*.md') in files or
+        glob('src/site/_data/courses/css/**/*.yml') in files
 
   # Content
   # Handles any changes related to site content.
@@ -34,6 +34,9 @@ groups:
       # Assign everyone on the content team for reviews.
       request: 99
     conditions:
+      # Only tag the content team if the review has not been handled by
+      # one of the prior teams.
+      - 'len(groups.active) == 0'
       - >
         files.include('src/site/content/*') or
         files.include('src/images/authors/*') or
@@ -54,6 +57,9 @@ groups:
       # time. Default is 1.
       request: 2
     conditions:
+      # Only tag the eng team if the review has not been handled by
+      # one of the prior teams.
+      - 'len(groups.active) == 0'
       # The engineering team is the default owner for any code related files.
       - >
         contains_any_globs(files, [
