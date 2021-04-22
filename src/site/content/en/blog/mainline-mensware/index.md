@@ -288,7 +288,7 @@ workbox.precaching.precacheAndRoute(PRECACHE);
 Once the service worker activates and the offline page is precached, it is then used to **respond to
 offline navigation requests by the user**. While Mainline Menswear's web app is an SPA, the offline
 page shows only after the page reloads, the user closes and reopens the browser tab, or when the web
-app is launched from the homescreen while offline.
+app is launched from the home screen while offline.
 
 To achieve this, Mainline Menswear provided a fallback to failed
 [`NavigationRoute`](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-routing.NavigationRoute)
