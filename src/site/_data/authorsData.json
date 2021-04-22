@@ -1606,6 +1606,23 @@
     },
     "image": "image/admin/g2zwlKdDpsMMPtgkx3Gb.jpg"
   },
+  "joriktangelder": {
+    "name": {
+      "given": "Jorik",
+      "family": "Tangelder"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "description": {
+      "en": "User Experience Engineer"
+    },
+    "country": "NL",
+    "twitter": "jorikdelaporik",
+    "github": "jtangelder",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/1P2utnbQKi02S0iz4GUz.jpg",
+    "homepage": "https://jorik.dev/"
+  },
   "sahel": {
     "name": {
       "given": "Sahel",
