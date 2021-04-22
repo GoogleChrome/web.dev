@@ -176,7 +176,7 @@ so everything in the overall rule (selector and properties) does not get the sam
 }
 ```
 
-@@TODO: self-assessment 1
+{% Assessment 'scoring-beginner' %}
 
 ## Specificity in context
 
@@ -232,7 +232,7 @@ a.my-class.another-class[href]:hover {
 }
 ```
 
-@@TODO: self-assessment 2
+{% Assessment 'scoring-advanced' %}
 
 ## Visualizing specificity
 
@@ -253,7 +253,7 @@ a.my-class.another-class[href]:hover {
 }
 ```
 
-@@TODO: self-assessment 3
+{% Assessment 'visualizing' %}
 
 ## Pragmatically increasing specificity
 
