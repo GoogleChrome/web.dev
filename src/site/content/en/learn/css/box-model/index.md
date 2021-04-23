@@ -4,8 +4,6 @@ description:
 authors:
   - andybell
 date: 2021-03-29
-tags:
-  - css
 ---
 
 # The box model
