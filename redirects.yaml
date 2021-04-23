@@ -255,3 +255,7 @@ redirects:
 # Redirect for style guide alignment
 - source: /debugging-layout-shifts
   destination: /debug-layout-shifts
+
+# Vanity url for Learn CSS course
+- source: /learncss
+  destination: /learn/css
