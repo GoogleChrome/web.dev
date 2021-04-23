@@ -90,14 +90,13 @@ const getPaths = require(`./${filtersDir}/get-paths`);
 const navigation = require(`./${filtersDir}/navigation`);
 const padStart = require(`./${filtersDir}/pad-start`);
 const {minifyJs} = require(`./${filtersDir}/minify-js`);
+const {cspHash, getHashList} = require(`./${filtersDir}/csp-hash`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
 const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
 const {purifyCss} = require(`./${transformsDir}/purify-css`);
 const {minifyHtml} = require(`./${transformsDir}/minify-html`);
-
-const {sha256base64} = require('./src/site/_data/lib/hash');
 
 // Shared dependencies between web.dev and developer.chrome.com
 const {updateSvgForInclude} = require('webdev-infra/filters/svg');
@@ -179,15 +178,7 @@ module.exports = function (config) {
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
   config.addFilter('padStart', padStart);
   config.addFilter('minifyJs', minifyJs);
-
-  const hashList = new Set();
-  config.addFilter('cspHash', (raw) => {
-    if (isProd) {
-      const hash = `'sha256-${sha256base64(raw)}'`;
-      hashList.add(hash);
-    }
-    return raw;
-  });
+  config.addFilter('cspHash', cspHash);
 
   // ----------------------------------------------------------------------------
   // SHORTCODES
@@ -254,7 +245,7 @@ module.exports = function (config) {
     config.on('afterBuild', () => {
       fs.writeFileSync(
         'dist/script-hash-list.json',
-        JSON.stringify([...hashList]),
+        JSON.stringify(getHashList()),
       );
     });
   }
