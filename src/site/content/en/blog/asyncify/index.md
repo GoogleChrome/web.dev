@@ -86,14 +86,14 @@ objects), [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Wind
 [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), server-side storage,
 and a new [File System Access API](https://web.dev/file-system-access/).
 
-However, only two of those APIs—the in-memory storage and the localStorage—can be used
+However, only two of those APIs—the in-memory storage and the `localStorage`—can be used
 synchronously, and both are the most limiting options in what you can store and for how long. All
 the other options provide only asynchronous APIs.
 
 This is one of the core properties of executing code on the web: any time-consuming operation, which
 includes any I/O, has to be asynchronous.
 
-The reason is that the web is historically single-threaded, and any user code that touches the UI,
+The reason is that the web is historically single-threaded, and any user code that touches the UI
 has to run on the same thread as the UI. It has to compete with the other important tasks like
 layout, rendering and event handling for the CPU time. You wouldn't want a piece of JavaScript or
 WebAssembly to be able to start a "file read" operation and block everything else—the entire tab,
@@ -102,9 +102,9 @@ or, in the past, the entire browser—for a range from milliseconds to a few sec
 Instead, code is only allowed to schedule an I/O operation together with a callback to be executed
 once it's finished. Such callbacks are executed as part of the browser's event loop. I won't be
 going into details here, but if you're interested in learning how the event loop works under the hood,
-check out Jake Archibald's
-[article](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/) which explains this
-topic in-depth.
+check out
+[Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
+which explains this topic in-depth.
 
 The short version is that the browser runs all the pieces of code in sort of an infinite loop, by
 taking them from the queue one by one. When some event is triggered, the browser queues the
