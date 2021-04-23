@@ -10,7 +10,7 @@ tags:
 
 # Sizing
 
-The responsive web is a flexible medium,
+The web is a responsive medium,
 but sometimes you want to control its dimensions to improve the overall interface quality.
 A good example of this is limiting line lengths to improve readability.
 How would you do that in a flexible medium like the web?
