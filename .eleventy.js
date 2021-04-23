@@ -77,6 +77,7 @@ const findTags = require(`./${filtersDir}/find-tags`);
 const githubLink = require(`./${filtersDir}/github-link`);
 const gitlocalizeLink = require(`./${filtersDir}/gitlocalize-link`);
 const htmlDateString = require(`./${filtersDir}/html-date-string`);
+const isNewContent = require(`./${filtersDir}/is-new-content`);
 const md = require(`./${filtersDir}/md`);
 const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
@@ -163,6 +164,7 @@ module.exports = function (config) {
   config.addFilter('gitlocalizeLink', gitlocalizeLink);
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('imgix', generateImgixSrc);
+  config.addFilter('isNewContent', isNewContent);
   config.addFilter('md', md);
   config.addFilter('navigation', navigation);
   config.addFilter('pagedNavigation', pagedNavigation);

@@ -21,9 +21,10 @@
 
       <course-links class="drawer-course__links scrollbar" current="{{ page.url }}">
         {% for item in pageNavigation %}
-        <a class="drawer-course__link" href="{{ item.url }}" data-badge="{{ item.page.data.badge }}">
+        {% set isNew = item.page.data.date | isNewContent %}
+        <a class="drawer-course__link" href="{{ item.url }}">
           <span class="drawer-course__link-counter font-mono">{{ loop.index0 | padStart(3, '0') }}</span>
-          <span class="drawer-course__link-title gap-left-400">{{ item.page.data.title }}</span>
+          <span class="drawer-course__link-title gap-left-400" {% if isNew %} data-badge="{{ 'i18n.courses.new' | i18n(locale) }}" {% endif %}>{{ item.page.data.title }}</span>
           {{ icon('done', 'drawer-course__link-check gap-left-auto') }}
         </a>
         {% endfor %}
