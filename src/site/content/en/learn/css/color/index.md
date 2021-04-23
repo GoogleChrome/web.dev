@@ -4,8 +4,6 @@ description:
 authors:
   - andybell
 date: 2021-04-01
-tags:
-  - css
 ---
 
 # Color

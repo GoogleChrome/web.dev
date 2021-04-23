@@ -4,8 +4,6 @@ description:
 authors:
   - andybell
 date: 2021-04-02
-tags:
-  - css
 ---
 
 # Inheritance
