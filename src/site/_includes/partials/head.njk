@@ -32,6 +32,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
+{# Sourced scripts cannot be authorized by a CSP hash individually, so we need to use an inline script loader for any sourced scripts. #}
+{# This works because the CSP includes the 'strict-dynamic' keyword, allowing the children of an authorized script to run. #}
 {% set scriptLoader %}
 function loadScript(url, type) {
   const s = document.createElement('script');
@@ -40,6 +42,7 @@ function loadScript(url, type) {
     s.type = type;
   }
   if (type === 'module') {
+    s.async = false; // Preserve load order.
     const pre = document.createElement('link');
     pre.rel = 'modulepreload';
     pre.href = url;
@@ -65,4 +68,4 @@ loadScript('{{ helpers.hashForProd('/js/app.js') }}', 'module');
   loadScript('https://www.google-analytics.com/analytics.js', null);
 {% endif %}
 {% endset %}
-<script>{{ scriptLoader|minifyJs|cspHash|safe }}</script>
+<script>{{ scriptLoader | minifyJs | cspHash | safe }}</script>
