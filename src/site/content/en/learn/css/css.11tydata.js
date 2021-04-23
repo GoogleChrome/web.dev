@@ -1,6 +1,7 @@
 module.exports = function () {
   return {
     layout: 'course',
+    thumbnail: 'image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/fs5FxWQTb8apvFViRifm.svg',
     // The key is used to look up the data for the course in _data.
     // e.g. A course with a key of 'a11y' would have a corresponding
     // _data/courses/a11y directory.
