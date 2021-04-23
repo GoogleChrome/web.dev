@@ -38,3 +38,20 @@
 .app-bar__item > a {
   color: var(--color-app-bar-link);
 }
+
+.app-bar__share {
+  text-transform: uppercase;
+  font-size: 14px;
+
+  &::before {
+    background-size: 22px 22px;
+    content: "";
+    display: inline-block;
+    height: 22px;
+    margin-right: 4px;
+    width: 22px;
+    vertical-align: middle;
+    background-image: url(/images/icons/share.svg);
+    background-image: url('/images/icons/share.svg');
+  }
+}

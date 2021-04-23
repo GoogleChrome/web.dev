@@ -10,5 +10,15 @@
       <a href="/learn/css/">Learn CSS!</a>
     </li>
   </ul>
-  <button class="w-ml--auto">Share</button>
+  <share-action class="gc-analytics-event app-bar__share w-ml--auto"
+    authors="{{ authors | expandAuthors(collections.authors) }}"
+    data-category="web.dev"
+    data-label="share"
+    data-action="click"
+    data-icon="share"
+    tabindex="0"
+    role="button"
+  >
+    <span>Share</span>
+  </share-action>
 </nav>
