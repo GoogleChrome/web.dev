@@ -76,7 +76,7 @@ crash:
 
   - Failure to verify digital asset links at application launch.
   - Failure to return HTTP 200 for an offline network resource request.
-  - An HTTP 404 or 5xx error in the application.
+  - A navigation request returning an HTTP 404 or 5xx error".
 
 When one of those scenarios happens in the Trusted Web Activity, it causes a user visible
 crash of the Android application. Check out the [guidance][19] on handling those scenarios in your
