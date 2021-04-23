@@ -1,14 +1,26 @@
+{% from 'macros/icon.njk' import icon with context %}
 <nav class="course-app-bar app-bar" aria-label="breadcrumbs">
   <ul class="app-bar__list">
     <li class="app-bar__item">
       <a href="/">web.dev</a>
     </li>
     <li class="app-bar__item">
-      <a href="/learn/">Learn</a>
+      <a href="/learn/">{{ 'i18n.header.learn' | i18n(locale) }}</a>
     </li>
     <li class="app-bar__item">
-      <a href="/learn/css/">Learn CSS!</a>
+      <a href="/learn/css/">{{ courseData.meta.title | i18n(locale) }}</a>
     </li>
   </ul>
-  <button class="w-ml--auto">Share</button>
+  <share-action class="gc-analytics-event app-bar__share"
+    authors="{{ authors | expandAuthors(collections.authors) }}"
+    data-category="web.dev"
+    data-label="share"
+    data-action="click"
+    data-icon="share"
+    tabindex="0"
+    role="button"
+  >
+    {{ icon('share') }}
+    <span>{{ 'i18n.common.share' | i18n(locale) }}</span>
+  </share-action>
 </nav>

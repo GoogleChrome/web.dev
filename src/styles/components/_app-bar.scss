@@ -1,12 +1,14 @@
 :root {
   --app-bar-height: 64px;
-  --color-app-bar-link: #{$GREY_700};
 }
 
 .app-bar {
+  align-items: center;
   background-color: rgba($WHITE, .96);
+  color: $GREY_700;
   display: flex;
-  padding: 20px 24px;
+  height: var(--app-bar-height);
+  padding: 0 24px;
 
   @include bp(md) {
     position: sticky;
@@ -36,5 +38,34 @@
 }
 
 .app-bar__item > a {
-  color: var(--color-app-bar-link);
+  color: $GREY_700;
+}
+
+.app-bar__share {
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  margin-left: auto;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+
+  @include bp(md) {
+    border-radius: 3px;
+  }
+
+  &:hover,
+  &:focus {
+    background: $GREY_100;
+  }
+
+  > span {
+    display: none;
+
+    @include bp(md) {
+      display: inline;
+      margin-left: 16px;
+    }
+  }
 }
