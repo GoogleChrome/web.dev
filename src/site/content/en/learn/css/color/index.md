@@ -261,7 +261,7 @@ The `box-shadow` property also accepts color as one of the values.
 } %}
 </figure>
 
-@@TODO Self-assessment
+{% Assessment 'color' %}
 
 ## Resources
 
