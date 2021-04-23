@@ -162,7 +162,7 @@ Lengths are **dimensions that refer to distance** and they can either be absolut
 ### Absolute lengths
 
 All absolute lengths resolve against the same base,
-this makes them predictable wherever they're used in your CSS.
+making them predictable wherever they're used in your CSS.
 For example, if you use `cm` to size your element and then print,
 it should be accurate if you compared it to a ruler.
 
