@@ -559,4 +559,4 @@ More demos and inspiration
 
 ## Community remixes
 
-Nothing to see here yet!
+- `<text-hover>` web component by [gnehcwu](https://twitter.com/gnehcwu) on [CodeSandbox](https://codesandbox.io/s/texthover-webcomponent-gkpm2)
