@@ -414,8 +414,7 @@ div {
 </figure>
 
 Using the `deg` angle unit, you can rotate a `div` 90° on its center axis.
-```suggestion
-Other angle units include `rad` (radians), `grad` (gradians), and `turn` units, which represent a part of an angle, where `1turn` = `360deg`, and `0.5turn` = `180deg`. These can come in handy when styling transforms and animations.
+
 ```css
 div {
 	background-image: url('a-low-resolution-image.jpg');
@@ -428,7 +427,13 @@ div {
 }
 ```
 
-### Resolution units
+{% Aside %}
+Other angle units include `rad` (radians), `grad` (gradians), and `turn` units,
+which represent a part of an angle, where `1turn` = `360deg`, and `0.5turn` = `180deg`.
+These can come in handy when styling transforms and animations.
+{% endAside %}
+
+#### Resolution units
 
 In the previous example the value of `min-resolution` is `192dpi`.
 The `dpi` unit stands for **dots per inch**.
