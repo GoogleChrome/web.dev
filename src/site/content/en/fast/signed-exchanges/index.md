@@ -313,7 +313,7 @@ Search to separately index or rank the same content delivered in different ways.
 #### Web Vitals
 
 For sites that receive a significant portion of their traffic from Google
-Search, SXGs can be used to improve [Web Vitals](https://web.dev/vitals/)—namely
+Search, SXGs can be used to improve [Web Vitals](/vitals/)—namely
 [LCP](https://web.dev/lcp/). Cached and prefetched SXGs can be delivered to
 users incredibly quickly and this yields a faster LCP. Although SXGs can be a
 powerful tool, they work best when combined with other performance optimizations
