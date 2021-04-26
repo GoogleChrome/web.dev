@@ -248,7 +248,7 @@ The **Preview** tab provides more information about the contents of a SXG.
 To see a SXG firsthand, visit this [demo](https://signed-exchange-testing.dev/)
 in [one of the browsers that supports SXG](#browser-compatibility)
 
-## Use Cases
+## Use cases
 
 SXGs can be used to deliver content directly from an origin server to a user—but
 this would largely defeat the purpose of SXGs. Rather, the intended use and
