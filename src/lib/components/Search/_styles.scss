@@ -97,7 +97,7 @@ web-search {
     padding: 8px 8px 8px 40px;
     width: 100%;
     font: inherit;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 20px;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
@@ -117,7 +117,7 @@ web-search {
     position: absolute;
     top: 55px;
     width: calc(100% - #{$WEB_CLOSE_BUTTON_WIDTH});
-    
+
     @include bp(md) {
       left: calc(#{$WEB_SEARCH_MARGIN} * 2);
       width: calc(100% - #{$WEB_SEARCH_MARGIN} * 2);
@@ -133,7 +133,7 @@ web-search {
   .web-search-popout__list {
     list-style: none;
     max-height: 50vh;
-    overflow: scroll;
+    overflow: auto;
   }
 
   .web-search-popout__link {

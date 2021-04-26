@@ -29,9 +29,7 @@ The use of mobile devices to surf the web continues to grow at an astronomical p
 Responsive web design, originally defined by [Ethan Marcotte in A List Apart](http://alistapart.com/article/responsive-web-design/), responds to the needs of the users and the devices they're using. The layout changes based on the size and capabilities of the device. For example, on a phone users would see content shown in a single column view; a tablet might show the same content in two columns.
 
 <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/responsive-web-design-basics/resize.mp4" type="video/mp4">
-  </video>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8RKRFvbuoXGkOSuEArb7.mp4", autoplay=true, controls=true, loop=true, muted=true, class="w-screenshot" %}
 </figure>
 
 A multitude of different screen sizes exist across phones, "phablets," tablets, desktops, game consoles, TVs, and even wearables. Screen sizes are always changing, so it's important that your site can adapt to any screen size, today or in the future. In addition, devices have different features with which we interact with them. For example some of your visitors will be using a touchscreen. Modern responsive design considers all of these things to optimize the experience for everyone.

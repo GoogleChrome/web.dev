@@ -25,7 +25,9 @@ feedback:
 
 **Updates**
 
-**January 20th, 2020**: `performance.measureMemory` is renamed to `performance.measureUserAgentSpecificMemory`
+**April 23rd, 2021**: Updated the status and clarified the scope of the API with a note about out-of-process iframes.
+
+**January 20th, 2021**: `performance.measureMemory` is renamed to `performance.measureUserAgentSpecificMemory`
 and enabled by default in Chrome 89 for [cross-origin isolated](/coop-coep) web pages.
 The format of the result also [has changed](https://github.com/WICG/performance-measure-memory/blob/master/ORIGIN_TRIAL.md#result-differences)
 slightly compared to the Origin Trial version.
@@ -69,7 +71,7 @@ leaks that slip through local testing.
 If you are familiar with the existing non-standard `performance.memory` API,
 you might be wondering how the new API differs from it. The main difference is
 that the old API returns the size of the JavaScript heap whereas the new API
-estimates the memory usage of the entire web page. This difference becomes
+estimates the memory used by the web page. This difference becomes
 important when Chrome shares the same heap with multiple web pages (or
 multiple instances of the same web page). In such cases, the result of the old
 API may be arbitrarily off. Since the old API is defined in
@@ -120,7 +122,7 @@ results for the same browser.
       </tr>
       <tr>
         <td>2. Create initial draft of specification</td>
-        <td>In Progress</td>
+        <td><a href="https://wicg.github.io/performance-measure-memory/">Complete</a></td>
       </tr>
       <tr>
         <td>3. Gather feedback and iterate design</td>
@@ -128,11 +130,11 @@ results for the same browser.
       </tr>
       <tr>
         <td>4. Origin trial </td>
-        <td><a href="https://developers.chrome.com/origintrials/#/view_trial/1281274093986906113">In Progress</a></td>
+        <td><a href="https://developers.chrome.com/origintrials/#/view_trial/1281274093986906113">Complete</a></td>
       </tr>
       <tr>
         <td>5. Launch</td>
-        <td>Not Started</td>
+        <td>Enabled by default in Chrome 89</td>
       </tr>
     </tbody>
 </table>
@@ -306,7 +308,9 @@ even change between different versions of the same browser. During the origin
 trial the value includes JavaScript memory usage of the main window and all
 **same-site** iframes and related windows. When the API ships, the value will
 account for JavaScript and DOM memory of all iframes, related windows, and web
-workers in the current process.
+workers in the current process. Note that the API does not measure the memory
+of cross-site [out-of-process iframes](https://www.chromium.org/developers/design-documents/oop-iframes)
+when [Site Isolation](https://www.chromium.org/Home/chromium-security/site-isolation) is enabled.
 
 The `breakdown` list provides further information about the used memory. Each
 entry describes some portion of the memory and attributes it to a set of

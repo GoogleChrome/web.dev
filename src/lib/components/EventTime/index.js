@@ -115,12 +115,8 @@ class EventTime extends BaseElement {
     return html`
       <time datetime=${this._date.toISOString()}>
         <div class="date">
-          <div class="date__month">
-            ${months[this._date.getMonth()]}
-          </div>
-          <div class="date__day">
-            ${this._date.getDate()}
-          </div>
+          <div class="date__month">${months[this._date.getMonth()]}</div>
+          <div class="date__day">${this._date.getDate()}</div>
         </div>
         <div class="time">
           <div class="time__value">

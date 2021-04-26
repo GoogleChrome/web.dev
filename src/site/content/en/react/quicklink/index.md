@@ -17,11 +17,11 @@ feedback:
   - api
 ---
 
-[Prefetching](https://web.dev/link-prefetch/) is a technique to speed up navigations by downloading the resources for the next page, ahead of time. [Quicklink](https://github.com/GoogleChromeLabs/quicklink) is a library that allows you to implement this technique at scale, by automatically prefetching links as they come into the view.
+[Prefetching](/link-prefetch/) is a technique to speed up navigations by downloading the resources for the next page, ahead of time. [Quicklink](https://github.com/GoogleChromeLabs/quicklink) is a library that allows you to implement this technique at scale, by automatically prefetching links as they come into the view.
 
-In multi-page apps the library prefetches documents (e.g. `/article.html`), for in-viewport links, so that when the user clicks on these links they can be picked up from the [HTTP cache](https://web.dev/http-cache/).
+In multi-page apps the library prefetches documents (e.g. `/article.html`), for in-viewport links, so that when the user clicks on these links they can be picked up from the [HTTP cache](/http-cache/).
 
-[Single-page apps](https://en.wikipedia.org/wiki/Single-page_application) commonly use a technique called [route-based code splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting/). This allows the site to load the code for a given route only when the user navigates to it. These files (JS, CSS) are commonly referred to as "chunks".
+[Single-page apps](https://en.wikipedia.org/wiki/Single-page_application) commonly use a technique called [route-based code splitting](/reduce-javascript-payloads-with-code-splitting/). This allows the site to load the code for a given route only when the user navigates to it. These files (JS, CSS) are commonly referred to as "chunks".
 
 With that said, in these sites, instead of prefetching documents the biggest performance gains come from prefetching these chunks before the page needs them.
 
@@ -133,7 +133,7 @@ const App = () => (
 
 The `withQuicklink()` HOC uses the path of the route as a key to obtain its associated chunks from `rmanifest.json`.
 Under the hood, as links come into the view, the library injects a `<link rel="prefetch">` tag in the page for each chunk so they can be prefetched.
-Prefetched resources will be requested at the lowest priority by the browser and kept in the [HTTP Cache](https://web.dev/http-cache/) for 5 minutes, after which point, the `cache-control` rules of the resource apply.
+Prefetched resources will be requested at the lowest priority by the browser and kept in the [HTTP Cache](/http-cache/) for 5 minutes, after which point, the `cache-control` rules of the resource apply.
 As a result of this, when a user clicks on a link and moves to a given route, the chunks will be retrieved from the cache, greatly improving the time it takes to render that route.
 
 ## Conclusion

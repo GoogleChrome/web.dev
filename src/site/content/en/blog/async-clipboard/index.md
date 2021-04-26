@@ -247,8 +247,7 @@ Imagine a web page that silently copies `rm -rf /` or a
 to your clipboard.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./prompt.png"
-       alt="Browser prompt asking the user for the clipboard permission.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dt4QpuEuik9ja970Zos1.png", alt="Browser prompt asking the user for the clipboard permission.", width="800", height="338", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The permission prompt for the Clipboard API.
   </figcaption>
@@ -403,7 +402,7 @@ simplified events aligned with the
 [Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API).
 Because of potential risks Chrome is
 treading carefully. To stay up to date on Chrome's progress, watch this article
-and our [blog](https://web.dev/blog/) for updates.
+and our [blog](/blog/) for updates.
 
 For now, support for the Clipboard API is available in
 [a number of browsers](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard#Browser_compatibility).

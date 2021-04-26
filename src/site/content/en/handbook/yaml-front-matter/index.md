@@ -33,7 +33,7 @@ authors:
 
 Author avatars appear underneath the page title.
 Clicking an author's avatar takes you to a page where you can see all of that author's
-content. See [Pete LePage](https://web.dev/authors/petelepage/) for an example.
+content. See [Pete LePage](/authors/petelepage/) for an example.
 
 See [Author profile](/handbook/author-profile/) to learn how to add a new author.
 
@@ -155,7 +155,7 @@ hero: image/admin/tyBs8QP5pbMVpY3yp1dM.jpg
 See [Hero images](/handbook/markup-media/#hero).
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" 
+  <img class="w-screenshot w-screenshot--filled"
        src="hero.jpg"
        alt="A page with a hero image.">
 </figure>
@@ -284,7 +284,7 @@ A page's full list of tags is shown at the bottom of its main content:
 
 ### Supported keywords {: #supported-keywords }
 
-Make sure tags added to the page are listed in 
+Make sure tags added to the page are listed in
 [`tagsData.json`](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_data/tagsData.json).
 
 ## `thumbnail`: present a slightly different version of the hero on the homepages {: #thumbnail }
@@ -304,7 +304,7 @@ cropping, or rearranging the hero image's content is OK. Using a completely
 different image is not OK.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" 
+  <img class="w-screenshot w-screenshot--filled"
        src="thumbnail.jpg"
        alt="A page with a thumbnail that's different from its hero.">
   <figcaption>
@@ -313,7 +313,7 @@ different image is not OK.
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" 
+  <img class="w-screenshot w-screenshot--filled"
        src="hero.jpg"
        alt="The page's hero image.">
 </figure>
@@ -329,7 +329,7 @@ title: Web developer tools for debugging JavaScript issues in Google Search
 ```
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" 
+  <img class="w-screenshot w-screenshot--filled"
        src="hero.jpg"
        alt="A screenshot of a page's title.">
 </figure>

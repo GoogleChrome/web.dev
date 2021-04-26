@@ -227,6 +227,13 @@ $gorko-config: (
     'output': 'responsive',
     'property': 'max-width',
   ),
+  'min-width': (
+    'items': (
+      '0': '0',
+    ),
+    'output': 'responsive',
+    'property': 'min-width',
+  ),
   'object-fit': (
     'items': (
       'cover': 'cover',

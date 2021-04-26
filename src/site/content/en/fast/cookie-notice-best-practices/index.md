@@ -74,13 +74,13 @@ attribute to the script tag.
 
 Scripts that are not asynchronous block the browser parser. This delays page
 load and LCP. For more information, see [Efficiently load third-party
-JavaScript](https://web.dev/efficiently-load-third-party-javascript/).
+JavaScript](/efficiently-load-third-party-javascript/).
 
 {% Aside %}
 If you must use synchronous scripts (for example, some cookie notices rely on
 synchronous scripts to implement cookie blocking) you should make sure that this
 request loads as quickly as possible. One way to do this is to [use resource
-hints](https://web.dev/preconnect-and-dns-prefetch/).
+hints](/preconnect-and-dns-prefetch/).
 {% endAside %}
 
 
@@ -100,7 +100,7 @@ All sites that load their cookie notice scripts from a third-party location
 should use either the `dns-prefetch` or `preconnect` resource hints to help
 establish an early connection with the origin that hosts cookie notice
 resources. For more information, see [Establish network connections early to
-improve perceived page speed](https://web.dev/preconnect-and-dns-prefetch/).
+improve perceived page speed](/preconnect-and-dns-prefetch/).
 
 ```html
 <link rel="preconnect" href="https://cdn.cookie-notice.com/">
@@ -160,7 +160,7 @@ notices:
 *   **Animations**: Many cookie notices use animations—for example, "sliding in"
     a cookie notice is a common design pattern. Depending on how these effects
     are implemented, they can cause layout shifts. For more information, see
-    [Debugging layout shifts](https://web.dev/debugging-layout-shifts/).
+    [Debugging layout shifts](/debugging-layout-shifts/).
 *   **Fonts**: Late-loading fonts can block render and or cause layout shifts.
     This phenomena is more apparent on slow connections.
 
@@ -224,7 +224,7 @@ helpful for incorporating cookie notices into performance measurement workflows.
 However, cookies and cookie notices are just one of many factors that can be
 difficult to perfectly simulate in lab environments. For this reason, it is
 important to make [RUM
-data](https://web.dev/user-centric-performance-metrics/#how-metrics-are-measured)
+data](/user-centric-performance-metrics/#how-metrics-are-measured)
 the cornerstone of your performance benchmarking, rather than synthetic tooling.
 
 
@@ -236,7 +236,7 @@ You can use scripting to have a [WebPageTest](https://webpagetest.org/) "click"
 the cookie consent banner while collecting a trace.
 
 Add a script by going to the **Script** tab. The script below navigates to the URL
-to be tested and then clicks the DOM element with the id `cookieButton`. 
+to be tested and then clicks the DOM element with the id `cookieButton`.
 
 {% Aside 'caution' %}
 WebPageTest scripts are
@@ -265,7 +265,7 @@ When using this script be aware that:
 If you've configured this script correctly, the screenshot taken by WebPageTest
 should not show a cookie notice (the cookie notice has been accepted).
 
-For more information on WebPageTest scripting, check out [WebPageTest 
+For more information on WebPageTest scripting, check out [WebPageTest
 documentation](https://docs.webpagetest.org/scripting/).
 
 #### Set cookies
@@ -316,7 +316,7 @@ use the following
 [command](https://github.com/GoogleChrome/lighthouse#cli-options):
 
 ```shell
-lighthouse <url> --extra-headers "{\"Cookie\":\"cookie1=abc; cookie2=def; \_id=foo\"}" 
+lighthouse <url> --extra-headers "{\"Cookie\":\"cookie1=abc; cookie2=def; \_id=foo\"}"
 ```
 
 For more information on setting custom request headers in Lighthouse CLI, see
@@ -386,7 +386,7 @@ Modals can look and perform quite differently depending on their size.
 
 Smaller, partial-screen modals can be a good alternative for sites that are
 struggling to implement cookie notices in a way that doesn't cause [layout
-shifts](https://web.dev/cls/).
+shifts](/cls/).
 
 On the other hand, large modals that obscure the majority of page content should
 be used carefully. In particular, smaller sites may find that users bounce
@@ -441,7 +441,7 @@ configuring the cookie usage that they accept.
     Controls for configuring cookie usage are most commonly displayed using a
     separate modal that is launched when the user responds to the initial cookie
     consent notice. However, if space permits, some sites will display these
-    controls inline within the initial cookie consent notice. 
+    controls inline within the initial cookie consent notice.
 
 *  **Granularity:**
     The most common approach to cookie configurability is to allow users to

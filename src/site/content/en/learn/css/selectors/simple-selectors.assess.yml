@@ -1,0 +1,38 @@
+setLeader: Test your knowledge of simple selectors
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    stimulus: |
+      ```css
+      * {}
+      ```
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: What kind of simple selector is used in the above snippet?
+    options:
+      - content: attribute
+        rationale: "`[]` are used for **attribute** simple selectors"
+      - content: ID
+        rationale: "`#` are used for **ID** simple selectors"
+      - content: universal
+        rationale: "`*` is the **universal** simple selector"
+      - content: class
+        rationale: "`.` are used for **class** simple selectors"
+  - type: multiple-choice
+    stimulus: |
+      ```css
+      div {}
+      ```
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: What kind of simple selector is used in the above snippet?
+    options:
+      - content: class
+        rationale: "`.` are used for **class** simple selectors"
+      - content: type
+        rationale: "`element` are used for **type** simple selectors"
+      - content: attribute
+        rationale: "`[]` are used for **attribute** simple selectors"
+      - content: ID
+        rationale: "`#` are used for **ID** simple selectors"

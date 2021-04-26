@@ -72,7 +72,7 @@ Malicious cross-site requests can be rejected by the server because of the addit
 
 ### `Sec-Fetch-Site`
 
-`Sec-Fetch-Site` tells the server which [site](https://web.dev/same-site-same-origin) sent the request. The browser sets this value to one of the following:
+`Sec-Fetch-Site` tells the server which [site](/same-site-same-origin) sent the request. The browser sets this value to one of the following:
 
  - `same-origin`, if the request was made by your own application (e.g. `site.example`)
  - `same-site`, if the request was made by a subdomain of your site (e.g. `bar.site.example`)

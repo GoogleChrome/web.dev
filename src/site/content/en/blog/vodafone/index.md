@@ -77,7 +77,7 @@ differences between the two versions other than that. Vodafone used the
 [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) API to
 measure LCP on real user sessions and sent the
 [field data](https://www.searchenginejournal.com/google-explains-why-field-data-is-more-reliable-than-lab-data/372404/)
-to their analytics provider. 
+to their analytics provider.
 
 {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/bDOhlrGwsiuknDTBjUJg.png", alt="A diagram of the A/B test setup.", width="800", height="398" %}
 
@@ -86,19 +86,19 @@ to their analytics provider.
 Vodafone made the following changes on the optimized page (version A):
 
 -  **Moved the rendering logic for a widget from client-side to server-side**, which resulted in
-   less [render-blocking JavaScript](https://web.dev/render-blocking-resources/)
+   less [render-blocking JavaScript](/render-blocking-resources/)
 -  **Server-side rendered** critical HTML
--  **Optimized images**, including [resizing](https://web.dev/uses-responsive-images/) the hero
+-  **Optimized images**, including [resizing](/uses-responsive-images/) the hero
    image, [optimizing SVG images](https://jakearchibald.github.io/svgomg/), using media queries to
-   [avoid loading images](https://web.dev/browser-level-image-lazy-loading/) that weren't yet
-   visible in the viewport, and [optimizing PNG images](https://web.dev/squoosh-v2/)
+   [avoid loading images](/browser-level-image-lazy-loading/) that weren't yet
+   visible in the viewport, and [optimizing PNG images](/squoosh-v2/)
 
 ## Overall business results {: #results }
 
 <div class="w-columns">
   <div>
     <p>
-      After optimizing version A for Web Vitals and comparing it to the 
+      After optimizing version A for Web Vitals and comparing it to the
       unoptimized version B, Vodafone found that version A led to:
     </p>
     <ul>
