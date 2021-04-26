@@ -284,7 +284,7 @@ regardless of how or why they were made: this includes information like IP
 address, the presence or absence of cookies, and the value of headers like
 `Accept-Language`. This information is "disclosed" to the destination server
 when a request is made. Because SXGs are prefetched from a cache, rather than
-the origin server, a user’s interest in a site will only be disclosed to the
+the origin server, a user's interest in a site will only be disclosed to the
 origin server once the user navigates to the site, rather than at the time of
 prefetching. In addition, content prefetched via SXG does not set cookies or
 access `localStorage` unless the content is loaded by the user. Furthermore,
