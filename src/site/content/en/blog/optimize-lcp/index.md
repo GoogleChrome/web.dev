@@ -197,7 +197,8 @@ Search](https://developers.google.com/search/docs/advanced/experience/signed-exc
 will cache and sometimes prefetch SXGs. For sites that receive a large portion
 of their traffic from Google Search, SXGs can be an important tool for improving
 LCP. For more information, see [Signed
-Exchanges](https://web.dev/signed-exchanges).
+Exchanges](/signed-exchanges).
+
 ## Render blocking JavaScript and CSS {: #render-blocking-resources }
 
 Before a browser can render any content, it needs to parse HTML markup into a
