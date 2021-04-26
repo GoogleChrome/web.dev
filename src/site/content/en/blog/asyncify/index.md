@@ -448,8 +448,7 @@ the job last time and I want to avoid printing "A" twice - and instead it comes 
 Unfortunately, Asyncify transform isn't completely free, since it has to inject quite a bit of
 supporting code for storing and restoring all those locals, navigating the call stack under
 different modes and so on. It tries to modify only functions marked as asynchronous on the command
-line, as well as any of their potential callers, but that still might result in approximately 50 percent overhead to the
-uncompressed code size.
+line, as well as any of their potential callers, but the code size overhead might still add up to approximately 50% before compression.
 
 {% Img src="image/9oK23mr86lhFOwKaoYZ4EySNFp02/Im4hmQOYRHFcsg8UTfTR.png", alt="A graph showing code
 size overhead for various benchmarks, from near-0% under fine-tuned conditions to over 100% in worst
