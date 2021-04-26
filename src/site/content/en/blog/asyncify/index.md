@@ -1,7 +1,7 @@
 ---
 title: Using asynchronous web APIs from WebAssembly
 description: Learn how to invoke asynchronous web APIs when compiling traditionally synchronous languages to WebAssembly.
-date: # TODO
+date: 2021-04-26
 hero: image/9oK23mr86lhFOwKaoYZ4EySNFp02/3XqfQyjjfxEw8T3azz0W.jpg
 alt: A crosswalk signal asking pedestrians to wait.
 authors:
