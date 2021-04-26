@@ -282,7 +282,7 @@ because of their privacy benefits over non-SXG formats.
 There is a certain amount of user information inherent to all network requests
 regardless of how or why they were made: this includes information like IP
 address, the presence or absence of cookies, and the value of headers like
-`Accept-Language`. This information is “disclosed” to the destination server
+`Accept-Language`. This information is "disclosed" to the destination server
 when a request is made. Because SXGs are prefetched from a cache, rather than
 the origin server, a user’s interest in a site will only be disclosed to the
 origin server once the user navigates to the site, rather than at the time of
