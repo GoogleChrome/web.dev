@@ -141,18 +141,14 @@ all notification events, including scheduled, displayed, and closed notification
 even when DevTools is closed.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="devtools-scheduled.png"
-       alt="A scheduled notification event was logged to the Notifications pane of Chrome
-            DevTools, which is located in the Application panel.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Fcyc3iFPdNexgqh1peA8.png", alt="A scheduled notification event was logged to the Notifications pane of Chrome DevTools, which is located in the Application panel.", width="800", height="247" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     A scheduled notification.
   </figcaption>
 </figure>
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="devtools-displayed.png"
-       alt="A displayed notification event was logged to the Notifications pane of Chrome
-            DevTools.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7Sj2NxYKbSXv4P894aLh.png", alt="A displayed notification event was logged to the Notifications pane of Chrome DevTools.", width="800", height="247" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     A displayed notification.
   </figcaption>

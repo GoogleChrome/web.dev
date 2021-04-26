@@ -1,0 +1,20 @@
+setLeader: Test your knowledge of the cascade
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,1,2,3"
+    stem: The Cascade can be used for...
+    options:
+      - content: "resolving conflicts when multiple styles apply to an element"
+        rationale: "This is one of it's primary goals, conflict resolution"
+      - content: "ensuring there's only 1 style value for each property at draw time"
+        rationale: "The text can only be one color, and The Cascade is a way of
+        determining which it should be"
+      - content: "scoring and weighting style rules"
+        rationale: "Scoring and weighting are part of the sorting phase of The
+        Cascade"
+      - content: "sorting and filtering style attributes"
+        rationale: "Sorting and filtering are phases of The Cascade to help
+        understand aspects of conflict resolution"

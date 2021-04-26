@@ -24,7 +24,7 @@ Performing a task on a site commonly involves several steps. For example, purcha
 In technical terms, moving through different pages means making a **navigation request**. As a general rule, you **don't** want to use long-lived `Cache-Control` headers to cache the HTML response for a navigation request. They should normally be satisfied via the network, with `Cache-Control: no-cache`, to ensure that the HTML, along with the chain of subsequent network requests, is (reasonably) fresh.
 Having to go against the network each time the user navigates to a new page unfortunately means that each navigation might be slow—at the very least, it means that it won't be *reliably* fast.
 
-To speed up these requests, if you can anticipate the user's action, you can request these pages and assets beforehand and keep them in the cache for a short period of time until the user clicks on these links. This technique is called [prefetching](https://web.dev/link-prefetch/) and it's commonly implemented by adding `<link rel="prefetch">` tags to pages, indicating the resource to prefetch.
+To speed up these requests, if you can anticipate the user's action, you can request these pages and assets beforehand and keep them in the cache for a short period of time until the user clicks on these links. This technique is called [prefetching](/link-prefetch/) and it's commonly implemented by adding `<link rel="prefetch">` tags to pages, indicating the resource to prefetch.
 
 In this guide we'll explore different ways in which [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) can be used as a complement of traditional prefetching techniques.
 
@@ -37,7 +37,7 @@ In this guide we'll explore different ways in which [service workers](https://de
        alt="Screenshot of MercadoLibre's listing pages one and two and a Link Prefetch tag connecting both.">
 </figure>
 
-Prefetched files are requested at the "Lowest" priority and stored in the [HTTP cache](https://web.dev/http-cache/) or the [memory cache](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/) (depending on whether the resource is cacheable or not), for an amount of time that varies by browsers. For example, as of Chrome 85, this value is 5 minutes. Resources are kept around for five minutes, after which the normal `Cache-Control` rules for the resource apply.
+Prefetched files are requested at the "Lowest" priority and stored in the [HTTP cache](/http-cache/) or the [memory cache](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/) (depending on whether the resource is cacheable or not), for an amount of time that varies by browsers. For example, as of Chrome 85, this value is 5 minutes. Resources are kept around for five minutes, after which the normal `Cache-Control` rules for the resource apply.
 
 Using service worker caching can help you extend the lifetime of prefetch resources beyond the five-minute window.
 
@@ -57,14 +57,14 @@ As a result of this, over 3 weeks of observation Virgilio Sport witnessed load t
 
 ## Implement precaching with Workbox
 
-In the following section we'll use [Workbox](https://web.dev/workbox/) to show how to implement different caching techniques in the service worker that can be used as a complement to `<link rel="prefetch">`, or even a replacement for it, by delegating this task completely to the service worker.
+In the following section we'll use [Workbox](/workbox/) to show how to implement different caching techniques in the service worker that can be used as a complement to `<link rel="prefetch">`, or even a replacement for it, by delegating this task completely to the service worker.
 
 {% Aside 'caution' %} You must take steps to ensure that adding a service worker to your site doesn't end up actually slowing down your navigations. Starting up the service worker without using it to respond to a navigation request will introduce a small amount of latency (as explained in [Building Faster, More Resilient Apps with Service Workers](https://www.youtube.com/watch?v=25aCD5XL1Jk)). You can mitigate this overhead by enabling a feature called [navigation preload](https://developers.google.com/web/updates/2017/02/navigation-preload), and then using the [network response](https://developers.google.com/web/updates/2017/02/navigation-preload#using_the_preloaded_response) that's been preloaded inside of your fetch event handler.
 {% endAside %}
 
 ### 1. Precache static pages and page subresources
 
-[Precaching](https://web.dev/precache-with-workbox/) is the ability of the service worker to save files to the cache while it's installing.
+[Precaching](/precache-with-workbox/) is the ability of the service worker to save files to the cache while it's installing.
 
 {% Aside %}
 Precaching sounds similar to prefetching, but it's a different technique. In the first one, the service worker fetches and stores resources (typically static files) while it's installing and keeps them in the cache until a new version of the file is available. In the second, resources are requested ahead of time to have it in the cache for brief periods of time in order to speed up subsequent navigations.
@@ -112,7 +112,7 @@ As mentioned earlier, `<link rel="prefetch">` fetches and keeps resources in the
 
 Service workers allow you to extend the lifetime of the prefetch pages, while providing the added benefit of making those resources available for offline usage.
 
-In the previous example, one could complement the `<link rel="prefetch">` used to prefetch a product page with a [Workbox runtime caching strategy](https://web.dev/runtime-caching-with-workbox/).
+In the previous example, one could complement the `<link rel="prefetch">` used to prefetch a product page with a [Workbox runtime caching strategy](/runtime-caching-with-workbox/).
 
 To implement that:
 

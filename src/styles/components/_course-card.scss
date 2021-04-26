@@ -1,0 +1,44 @@
+.course-card {
+  padding: 24px;
+
+  @include bp(sm) {
+    padding: 32px;
+  }
+
+  &__info {
+    color: $GREY_700;
+    font-size: 14px;
+
+    > :first-child {
+      color: $WEB_PRIMARY_COLOR;
+      border-top: 2px solid $WEB_PRIMARY_COLOR;
+      padding-top: 10px;
+    }
+  }
+
+  &__thumbnail {
+    object-fit: cover;
+    width: 100%;
+    border: 1px solid $GREY_300;
+    height: 192px;
+
+    @include bp(md) {
+      height: 240px;
+    }
+  }
+
+  &__description {
+    color: $GREY_700;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.course-card[data-dense] {
+  .course-card__thumbnail {
+    height: 192px;
+  }
+}

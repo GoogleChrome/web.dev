@@ -80,7 +80,7 @@ Eleventy provides a programmatic way to build arbitrary collections of content.
 This has let us build pagination support and generate virtual pages (pages that don't have a matching Markdown file on disk) for post authors.
 For example, we construct our authors pages using a template containing [an expression for its permalink](https://github.com/GoogleChrome/web.dev/blob/2050fe6352e024943195a438841dc99217f34e63/src/site/content/en/authors/index.njk#L4) (so the template is re-rendered for every author) and a backing [collection](https://github.com/GoogleChrome/web.dev/blob/2050fe6352e024943195a438841dc99217f34e63/src/site/_collections/paginated-posts-by-author.js#L23).
 
-This results in, for example, a simple page containing [all of Addy's posts](https://web.dev/authors/addyosmani/)!
+This results in, for example, a simple page containing [all of Addy's posts](/authors/addyosmani/)!
 
 ### Limitations
 
@@ -146,7 +146,7 @@ And antiquated browsers just ignore Web Components altogether and render whateve
 Each Web Component is a class with methods including `connectedCallback()`, `disconnectedCallback()`, and `attributeChangedCallback()`.
 web.dev's custom elements mostly inherit from [LitElement](https://lit-element.polymer-project.org/), which provides a simple base for complex components.
 
-While web.dev uses Web Components on many pages, nowhere is it more necessary than on the [Measure](https://web.dev/measure) page.
+While web.dev uses Web Components on many pages, nowhere is it more necessary than on the [Measure](/measure) page.
 Two elements provide the bulk of the functionality you see on this page:
 
 ```html

@@ -52,17 +52,13 @@ installed PWAs, it will be surfaced by the browser as shown below.
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img class="w-screenshot w-screenshot--filled"
-         src="downloads-menu.png"
-         alt="A screenshot of the Downloads menu item on Chrome's new tab page.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rJF9Cl75c7tcsBL6PQe0.png", alt="A screenshot of the Downloads menu item on Chrome's new tab page.", width="800", height="1480", class="w-screenshot w-screenshot--filled" %}
     <figcaption class="w-figcaption">
       First, select the <b>Downloads</b> menu item on Chrome's new tab page.
     </figcaption>
   </figure>
   <figure class="w-figure">
-    <img class="w-screenshot w-screenshot--filled"
-         src="articles-for-you.png"
-         alt="Media and articles that have been added to the index.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VFgYcvSwBjxP0OqOAyoR.png", alt="Media and articles that have been added to the index.", width="800", height="1480", class="w-screenshot w-screenshot--filled" %}
     <figcaption class="w-figcaption">
       Media and articles that have been added to the index will be shown in the
       <b>Articles for You</b> section.

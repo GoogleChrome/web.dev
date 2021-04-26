@@ -112,9 +112,7 @@ applying them specifically during product sale promotional events.
     </li>
   </ul>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="impact.png"
-        alt="The impact statistics.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6cgF8sQt5IH2XcISQsk.png", alt="The impact statistics.", width="800", height="870", class="w-screenshot" %}
   </figure>
 </div>
 

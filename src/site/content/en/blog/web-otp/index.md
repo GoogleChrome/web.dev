@@ -1,5 +1,5 @@
 ---
-title: Verify phone numbers on the web with the Web OTP API
+title: Verify phone numbers on the web with the WebOTP API
 subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
@@ -10,7 +10,7 @@ alt: A drawing of a woman using OTP to log in to a web app.
 
 description: |
   Finding, memorizing, and typing OTPs sent via SMS is cumbersome. The
-  Web OTP API simplifies the OTP workflow for users.
+  WebOTP API simplifies the OTP workflow for users.
 
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -22,11 +22,11 @@ feedback:
 ---
 
 {% Aside 'gotchas' %}
-If you want to learn more general SMS OTP form best practices including Web OTP
+If you want to learn more general SMS OTP form best practices including WebOTP
 API, checkout [SMS OTP form best practices](/sms-otp-form).
 {% endAside %}
 
-## What is the Web OTP API?
+## What is the WebOTP API?
 
 These days, most people in the world own a mobile device and developers are
 commonly using phone numbers as an identifier for users of their services.
@@ -36,7 +36,7 @@ one-time password (OTP) sent by SMS is one of the most common. Sending this code
 back to the developer's server demonstrates control of the phone number.
 
 {% Aside %}
-The Web OTP API was originally called the SMS Receiver API. You may still see it
+The WebOTP API was originally called the SMS Receiver API. You may still see it
 named that way in some places. If you used that API, you should still read this
 article. [There are significant differences](#differences) between the current
 and earlier versions of the API.
@@ -63,7 +63,7 @@ this](https://developers.google.com/identity/sms-retriever/). So does
 and
 [Safari](https://developer.apple.com/documentation/security/password_autofill/enabling_password_autofill_on_an_html_input_element).
 
-The Web OTP API lets your app receive specially-formatted messages bound to
+The WebOTP API lets your app receive specially-formatted messages bound to
 your app's domain. From this, you can programmatically obtain an OTP from an SMS
 message and verify a phone number for the user more easily.
 
@@ -79,7 +79,7 @@ establish new sessions for these users.
 
 ## Current status
 
-The table below explains the current status of the Web OTP API.
+The table below explains the current status of the WebOTP API.
 
 <table>
 <tr>
@@ -149,7 +149,7 @@ Let's say a user wants to verify their phone number with a website. The website
 sends a text message to the user over SMS and the user enters the OTP from the
 message to verify the ownership of the phone number.
 
-With the Web OTP API, these steps are as easy as one tap for the user, as
+With the WebOTP API, these steps are as easy as one tap for the user, as
 demonstrated in the video. When the text message arrives, a bottom sheet pops up
 and prompts the user to verify their phone number. After clicking the **Verify**
 button on the bottom sheet, the browser pastes the OTP into the form and the
@@ -163,16 +163,16 @@ form is submitted without the user needing to press **Continue**.
 The whole process is diagrammed in the image below.
 
 <figure class="w-figure">
-  <img src="./diagram.png" width="494" height="391" />
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GrFHzEg98jxCOguAQwHe.png", alt="", width="494", height="391" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Web OTP API diagram
+    WebOTP API diagram
   </figcaption>
 </figure>
 
 Try [the demo](https://web-otp.glitch.me) yourself. It doesn't ask for
 your phone number or send an SMS to your device, but you can send one from
 another device by copying the text displayed in the demo. This works because it
-doesn't matter who the sender is when using the Web OTP API.
+doesn't matter who the sender is when using the WebOTP API.
 
 1. Go to [https://web-otp.glitch.me](https://web-otp.glitch.me) in Chrome 84 or
    later on an Android device.
@@ -185,13 +185,13 @@ Your OTP is: 123456.
 ```
 
 Did you receive the SMS and see the prompt to enter the code to the input area?
-That is how the Web OTP API works for users.
+That is how the WebOTP API works for users.
 
 {% Aside 'gotcha' %}
 If the dialog doesn't appear for you, check out [the FAQ](#no-dialog).
 {% endAside %}
 
-Using the Web OTP API consists of three parts:
+Using the WebOTP API consists of three parts:
 
 * A properly annotated `<input>` tag
 * JavaScript in your web app
@@ -201,13 +201,13 @@ I'll cover the `<input>` tag first.
 
 ## Annotate an `<input>` tag
 
-Web OTP itself works without any HTML annotation, but for cross-browser
+WebOTP itself works without any HTML annotation, but for cross-browser
 compatibility, I highly recommend that you add `autocomplete="one-time-code"` to
 the `<input>` tag where you expect the user entering an OTP.
 
 This allows Safari 14 or later to suggest that the user to autofill the `<input>`
 field with an OTP when they receive an SMS with the format described in [Format
-the SMS message](#format) even though it doesn't support Web OTP.
+the SMS message](#format) even though it doesn't support WebOTP.
 
 {% Label %}
 HTML
@@ -220,9 +220,9 @@ HTML
 </form>
 ```
 
-## Use the Web OTP API
+## Use the WebOTP API
 
-Because Web OTP is simple, just copying and pasting the following code will do the
+Because WebOTP is simple, just copying and pasting the following code will do the
 job. I'll walk you through what's happening anyway.
 
 {% Label %}
@@ -276,15 +276,15 @@ if ('OTPCredential' in window) {
 ```
 
 {% Aside 'caution' %}
-The Web OTP API requires a secure origin (HTTPS). The feature detection on an
+The WebOTP API requires a secure origin (HTTPS). The feature detection on an
 HTTP website will fail.
 {% endAside %}
 
 ### Process the OTP
 
-The Web OTP API itself is simple enough. Use
+The WebOTP API itself is simple enough. Use
 [`navigator.credentials.get()`](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get)
-to obtain the OTP. Web OTP adds a new `otp` option to that method. It only has
+to obtain the OTP. WebOTP adds a new `otp` option to that method. It only has
 one property: `transport`, whose value must be an array with the string `'sms'`.
 
 {% Label %}
@@ -409,7 +409,7 @@ There are a couple of caveats when testing the API:
   API will not be triggered due to the design of the underlying [SMS User
   Consent
   API](https://developers.google.com/identity/sms-retriever/user-consent/request#2_start_listening_for_incoming_messages).
-* If you are using a work profile on your Android device and the Web OTP does
+* If you are using a work profile on your Android device and the WebOTP does
   not work, try installing and using Chrome on your personal profile instead
   (i.e. the same profile in which you receive SMS messages).
 
@@ -424,7 +424,7 @@ Did you find a bug with Chrome's implementation?
 
 ### How can I help this feature?
 
-Are you planning to use the Web OTP API? Your public support helps us prioritize
+Are you planning to use the WebOTP API? Your public support helps us prioritize
 features, and shows other browser vendors how critical it is to support them.
 Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
 [`#WebOTP`](https://twitter.com/search?q=%23WebOTP&src=typed_query&f=live)
@@ -432,7 +432,7 @@ and let us know where and how you're using it.
 
 ### What are the differences with the SMS Receiver API? {: #differences }
 
-Consider Web OTP API an evolved version of the SMS Receiver API. Web OTP API has
+Consider WebOTP API an evolved version of the SMS Receiver API. WebOTP API has
 a few significant differences compared to the SMS Receiver API.
 
 * The [expected text format](#format) for the SMS message has changed.
@@ -448,7 +448,7 @@ a few significant differences compared to the SMS Receiver API.
 Chromium and WebKit agreed on [the SMS text message
 format](https://wicg.github.io/sms-one-time-codes) and [Apple announced Safari's
 support for it](https://developer.apple.com/news/?id=z0i801mg) starting in iOS 14
-and macOS Big Sur. Though Safari doesn't support the Web OTP JavaScript API, by
+and macOS Big Sur. Though Safari doesn't support the WebOTP JavaScript API, by
 annotating `input` element with `autocomplete=["one-time-code"]`, the default
 keyboard automatically suggests that you enter the OTP if the SMS message complies
 with the format.
@@ -458,7 +458,7 @@ with the format.
 While SMS OTP is useful to verify a phone number when the number is first
 provided, phone number verification via SMS must be used carefully for
 re-authentication since phone numbers can be hijacked and recycled by carriers.
-Web OTP is a convenient re-auth and recovery mechanism, but services should
+WebOTP is a convenient re-auth and recovery mechanism, but services should
 combine it with additional factors, such as a knowledge challenge, or use the
 [Web Authentication
 API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
