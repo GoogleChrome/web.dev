@@ -27,9 +27,9 @@ feedback:
 Users access websites through a wide variety of devices and network connections. Even in major cities, where mobile networks are fast and reliable, one can end up experiencing slower load times, for example, when commuting in the subway, in a car, or just when moving around.
 In regions like emerging markets, this phenomenon is even more common, not only due to unreliable networks, but also because devices tend to have less memory and CPU processing power.
 
-[Adaptive loading](https://web.dev/adaptive-loading-cds-2019/) is a web performance pattern that lets you adapt your site based on the user's network and device conditions.
+[Adaptive loading](/adaptive-loading-cds-2019/) is a web performance pattern that lets you adapt your site based on the user's network and device conditions.
 
-The adaptive loading pattern is made possible by [service workers](https://web.dev/service-workers-cache-storage/), the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API), the [Hardware Concurrency API](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency), and the [Device Memory API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory). In this guide we explore how you can use service workers and the Network Information API to achieve an adaptive loading strategy.
+The adaptive loading pattern is made possible by [service workers](/service-workers-cache-storage/), the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API), the [Hardware Concurrency API](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency), and the [Device Memory API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory). In this guide we explore how you can use service workers and the Network Information API to achieve an adaptive loading strategy.
 
 ## Production case
 
@@ -38,7 +38,7 @@ The adaptive loading pattern is made possible by [service workers](https://web.d
 To provide a more reliable experience to all their users, Terra combines service workers and the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) to deliver lower quality images to users on 2G or 3G connections.
 
 <figure class="w-figure">
-  <img src="terra-adaptive-images.png" 
+  <img src="terra-adaptive-images.png"
        alt="A screenshot of Terra's home page connected to different image qualities according to the connection type.">
 </figure>
 
@@ -51,7 +51,7 @@ Taking that into consideration, Terra decided to start serving AMP versions of t
 To achieve that, they use the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) in the service worker to detect if the request comes from 3G or slower. If that's the case, they change the URL of the page to request the AMP version of the page instead.
 
 <figure class="w-figure">
-  <img src="terra-adaptive-amp.png" 
+  <img src="terra-adaptive-amp.png"
        alt="A screenshot of Terra's article page connected to different image qualities according to the connection type.">
 </figure>
 
@@ -59,9 +59,9 @@ Thanks to this technique, they send **70% less bytes** to users on slower connec
 
 ## Implement adaptive loading with Workbox
 
-In this section we'll explore how [Workbox](https://web.dev/workbox/) can be used to implement adaptive loading strategies.
+In this section we'll explore how [Workbox](/workbox/) can be used to implement adaptive loading strategies.
 
-Workbox provides several [runtime caching strategies](https://web.dev/runtime-caching-with-workbox/) out of the box. They are used to indicate how the service worker generates a response after receiving a `fetch` event.
+Workbox provides several [runtime caching strategies](/runtime-caching-with-workbox/) out of the box. They are used to indicate how the service worker generates a response after receiving a `fetch` event.
 
 For example, in a [Cache First](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network) strategy the [`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request) will be fulfilled using the cached response (if available). If there isn't a cached response, the `Request` will be fulfilled by a network request and the response will be cached.
 
@@ -141,7 +141,7 @@ Finally the response will be persisted in the cache, and sent back to the page.
 Cloudinary, a video and image hosting service, has a [Workbox Plugin](https://www.npmjs.com/package/cloudinary-workbox-plugin) that encapsulates the functionality explained in the previous section, making it even easier to implement.
 
 <figure class="w-figure">
-  <img src="cloudinary-workbox.png" 
+  <img src="cloudinary-workbox.png"
        alt="Cloudinary and Workbox logos.">
 </figure>
 

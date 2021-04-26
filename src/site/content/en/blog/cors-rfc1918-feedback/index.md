@@ -18,6 +18,12 @@ tags:
   - cors
 ---
 
+{% Aside %}
+  CORS-RFC1918 has been renamed to Private Network Access for clarity.
+  An update to this post is published at [developer.chrome.com
+  blog](https://developer.chrome.com/blog/private-network-access-update).
+{% endAside %}
+
 Malicious websites making requests to devices and servers hosted on a private
 network have long been a threat. Attackers may, for example, change a wireless
 router's configuration to enable
@@ -56,7 +62,7 @@ Browsers that implement CORS check with target
 resources whether they are okay being loaded from a different origin. This is
 accomplished either with extra headers inline describing the access or by using
 a mechanism called preflight requests, depending on the complexity. Read [Cross
-Origin Resource Sharing](https://web.dev/cross-origin-resource-sharing/)
+Origin Resource Sharing](/cross-origin-resource-sharing/)
 to learn more.
 
 With [CORS-RFC1918](https://wicg.github.io/cors-rfc1918/) the browser will block

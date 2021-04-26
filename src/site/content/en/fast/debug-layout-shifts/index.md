@@ -43,8 +43,8 @@ non-Chromium browsers.
 
 #### Usage
 
-The same code [snippet](https://web.dev/cls/#measure-cls-in-javascript) that
-measures [Cumulative Layout Shift (CLS)](https://web.dev/cls/) can also
+The same code [snippet](/cls/#measure-cls-in-javascript) that
+measures [Cumulative Layout Shift (CLS)](/cls/) can also
 serve to debug layout shifts. The snippet below logs information about layout
 shifts to the console. Inspecting this log will provide you information
 about when, where, and how a layout shift occurred.
@@ -118,7 +118,7 @@ debugging layout shifts:
 | Property | Description |
 |----------|-------------|
 |`sources`| The `sources` property lists the DOM elements that moved during the layout shift. This array can contain up to five sources. In the event that there are more than five elements impacted by the layout shift, the five largest (as measured by impact on layout stability) sources of layout shift are reported. This information is reported using the LayoutShiftAttribution interface (explained in more detail below).|
-|`value`| The `value` property reports the [layout shift score](https://web.dev/cls/#layout-shift-score) for a particular layout shift.|
+|`value`| The `value` property reports the [layout shift score](/cls/#layout-shift-score) for a particular layout shift.|
 |`hadRecentInput`| The `hadRecentInput` property indicates whether a layout shift occurred within 500 milliseconds of user input.|
 |`startTime`| The `startTime` property indicates when a layout shift occurred. `startTime` is indicated in milliseconds and is measured relative to the [time that the page load was initiated](https://www.w3.org/TR/hr-time-2/#sec-time-origin).|
 |`duration`| The `duration` property will always be set to `0`. This property is inherited from the [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry) interface (the `LayoutShift` interface extends the `PerformanceEntry` interface). However, the concept of duration does not apply to layout shift events, so it is set to `0`. For information on the `PerformanceEntry` interface, refer to the [spec](https://w3c.github.io/performance-timeline/#the-performanceentry-interface).|
@@ -409,7 +409,7 @@ layout](https://gist.github.com/paulirish/5d52fb081b3570c81e3a). A common
 example of this is when DOM elements are 'animated' by incrementing properties
 like `top` or `left` rather than using CSS's
 [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
-property. Read [How to create high-performance CSS animations](https://web.dev/animations-guide/)
+property. Read [How to create high-performance CSS animations](/animations-guide/)
 for more information.
 
 

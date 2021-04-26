@@ -1,10 +1,25 @@
 {#
   Finds an icon in the _includes/icons folder.
   Adds a class="icon" to the icon, as well as any additional classes passed in.
+  @param {string} name - The filename for the icon, minus the .svg extension
+  @param {string} className - A space separated list of classes to apply to the svg
 #}
 {% macro icon(name, className = '') %}
 {% set svg -%}
   {% include 'icons/' + name + '.svg' %}
 {%- endset %}
 {{ svg | updateSvgForInclude('icon ' + className) | safe }}
+{% endmacro %}
+
+{#
+  Inlines an svg into the page.
+  @param {string} path - The file path to the svg
+  @param {string} label - An aria-label to use for the svg
+  @param {string} className - A space separated list of classes to apply to the svg
+#}
+{% macro svg(path, label, className = '') %}
+{% set rawSvg -%}
+  {% include path %}
+{%- endset %}
+{{ rawSvg | updateSvgForInclude(className) | safe }}
 {% endmacro %}

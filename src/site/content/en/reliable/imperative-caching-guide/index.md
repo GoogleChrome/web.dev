@@ -1,12 +1,12 @@
 ---
-layout: post 
-title: "Imperative caching guide" 
+layout: post
+title: "Imperative caching guide"
 authors:
   - demianrenzulli
-  - andrewguan 
+  - andrewguan
 date: 2020-12-08
-description: | 
-  How to communicate window and service worker to perform tasks related to performance, caching and offline. 
+description: |
+  How to communicate window and service worker to perform tasks related to performance, caching and offline.
 tags:
   - service-worker
   - performance
@@ -17,9 +17,9 @@ Some websites might need to communicate to the service worker without the need o
 informed about the result. Here are some examples:
 
 - A page sends the service worker a list of URLs [to
-  prefetch](https://web.dev/instant-navigation-experiences/), so that, when the user clicks on a
+  prefetch](/instant-navigation-experiences/), so that, when the user clicks on a
   link the document or page subresources are already available in the cache, making subsequent
-  navigation much faster. 
+  navigation much faster.
 - The page asks the service worker to retrieve and cache a set of top articles, to have them
   available for offline purposes.
 
@@ -150,13 +150,13 @@ If the operation was successful, the user will be able to get the benefits from 
 One of the most common applications of **imperative caching** is **prefetching**, meaning fetching
 resources for a given URL, before the user moves to it, in order to speed up navigation.
 
-There are different ways of implementing prefetching in sites: 
+There are different ways of implementing prefetching in sites:
 
-- Using [Link prefetch tags](https://web.dev/link-prefetch/) in pages: resources are kept in the
+- Using [Link prefetch tags](/link-prefetch/) in pages: resources are kept in the
   browser cache for five minutes, after which the normal `Cache-Control` rules for the resource
-  apply. 
+  apply.
 - Complementing the previous technique with [a runtime caching strategy in the service
-  worker](https://web.dev/instant-navigation-experiences/) to extend the lifetime of the prefetch
+  worker](/instant-navigation-experiences/) to extend the lifetime of the prefetch
   resource beyond this limit.
 
 For relatively simple prefetching scenarios, like prefetching documents, or specific assets (JS,

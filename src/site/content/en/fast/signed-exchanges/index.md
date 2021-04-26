@@ -248,7 +248,7 @@ The **Preview** tab provides more information about the contents of a SXG.
 To see a SXG firsthand, visit this [demo](https://signed-exchange-testing.dev/)
 in [one of the browsers that supports SXG](#browser-compatibility)
 
-## Use Cases
+## Use cases
 
 SXGs can be used to deliver content directly from an origin server to a user—but
 this would largely defeat the purpose of SXGs. Rather, the intended use and
@@ -313,7 +313,7 @@ Search to separately index or rank the same content delivered in different ways.
 #### Web Vitals
 
 For sites that receive a significant portion of their traffic from Google
-Search, SXGs can be used to improve [Web Vitals](https://web.dev/vitals/)—namely
+Search, SXGs can be used to improve [Web Vitals](/vitals/)—namely
 [LCP](https://web.dev/lcp/). Cached and prefetched SXGs can be delivered to
 users incredibly quickly and this yields a faster LCP. Although SXGs can be a
 powerful tool, they work best when combined with other performance optimizations
@@ -326,8 +326,10 @@ and displayed using its canonical URL, rather than its AMP URL.
 
 All of the concepts described in this document still apply to the AMP use case,
 however, AMP has its own separate
-[tooling](https://github.com/ampproject/amppackager) for generating SXGs. {%
-Aside%} Learn how to serve AMP using signed exchanges on
+[tooling](https://github.com/ampproject/amppackager) for generating SXGs. 
+
+{% Aside%}
+Learn how to serve AMP using signed exchanges on
 [amp.dev](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/).
 {% endAside %}
 
@@ -392,7 +394,7 @@ proxy](https://en.wikipedia.org/wiki/Reverse_proxy) for serving SXGs. Given a
 URL, `webpkgserver` will fetch the URL's contents, package them as an SXG, and
 serve the SXG in response. For instructions on setting up the Web Packager
 server, see [How to set up signed exchanges using Web
-Packager](http://web.dev/signed-exchanges-webpackager).
+Packager](/signed-exchanges-webpackager).
 
 In production, `webpkgserver` should not use a public endpoint. Instead, the
 frontend web server should forward SXG requests to `webpkgserver`. These
@@ -414,7 +416,7 @@ options, you can also choose to build your own SXG generator.
 
   The NGINX SXG module only works with `CanSignHttpExchanges` certificates.
   Setup instructions can be found
-  [here](https://web.dev/how-to-set-up-signed-http-exchanges/).
+  [here](/how-to-set-up-signed-http-exchanges/).
 
 
 - `libsxg`

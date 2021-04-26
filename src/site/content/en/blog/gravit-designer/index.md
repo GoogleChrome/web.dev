@@ -68,9 +68,7 @@ Students and educators can install the Chrome OS version of Gravit Designer with
 ease, and enjoy the same powerful features regardless of platform.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" 
-       src="dark.png" 
-       alt="A screenshot of Gravit Designer.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CPOALQnJw0G03EHczYIh.png", alt="A screenshot of Gravit Designer.", width="800", height="476", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 ## Engineering challenges

@@ -1,0 +1,17 @@
+setLeader: Test your knowledge of specificity scoring
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: What is the specificity score of `a[href="#"]`?
+    options:
+      - content: "1"
+        rationale: 'The `a` is worth 1 point, but the `[href="#"]` is worth 10
+        points'
+      - content: "5"
+        rationale: "Try again!"
+      - content: "11"
+        rationale: 'The `a` is worth 1 point and the `[href="#"]` is worth 10
+        points, making a total score of **11 points**.'

@@ -35,38 +35,31 @@ pageScripts:
 
 <a class="skip-link w-button" href="#main">Skip to main</a>
 
-<div class="course-layout">
+<div class="display-flex direction-column lg:direction-row">
 
   {% include 'partials/header-course.njk' %}
   {% include 'partials/navigation-drawer-course.njk' %}
 
-  <div class="course-body">
-    <nav class="course-app-bar app-bar" aria-label="breadcrumbs">
-      <ul class="app-bar__list">
-        <li class="app-bar__item">
-          <a href="/">web.dev</a>
-        </li>
-        <li class="app-bar__item">
-          <a href="/learn/">Learn</a>
-        </li>
-        <li class="app-bar__item">
-          <a href="/learn/css/">Learn CSS!</a>
-        </li>
-      </ul>
-      <button class="w-ml--auto">Share</button>
-    </nav>
+  <div class="flex-1 min-width-0">
+    {% include 'partials/course-app-bar.njk' %}
 
-    <div class="course-content">
-
+    <div class="course-content display-flex justify-content-center">
       {% include 'partials/toc-side.njk' %}
-
-      <main id="main" class="flow">
+      <main id="main">
+        {% for item in pageNavigation %}
+          {% if item.url === page.url %}
+            <div class="course-index font-mono">{{ loop.index0 | padStart(3, '0') }}</div>
+          {% endif %}
+        {% endfor %}
+        <h1 class="course-headline">{{ title }}</h1>
+        <p class="course-description">{{ description }}</p>
         {% include 'partials/toc-inner.njk' %}
-        {% if audio %}
-          {{ audioFab(audio.thumbnail) }}
-          {{ audioPlayer(audio.title, audio.src, audio.thumbnail) }}
-        {% endif %}
-        {{ content | safe }}
+        <div class="course-copy flow">
+          {% if audio %}
+            {% include 'partials/course-audio.njk' %}
+          {% endif %}
+          {{ content | safe }}
+        </div>
       </main>
     </div>
 

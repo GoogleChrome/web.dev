@@ -177,7 +177,7 @@ To track if the user changes between `standalone`, and `browser tab`, listen for
 changes to the `display-mode` media query.
 
 ```js
-window.matchMedia('(display-mode: standalone)').addEventListener((evt) => {
+window.matchMedia('(display-mode: standalone)').addEventListener('change', (evt) => {
   let displayMode = 'browser';
   if (evt.matches) {
     displayMode = 'standalone';

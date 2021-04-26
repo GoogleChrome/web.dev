@@ -26,3 +26,24 @@
 .w-layout-container { max-width: 960px; }
 // Article pages have a narrower, single column layout.
 .w-layout-container--narrow { max-width: 800px; }
+
+// A configurable auto-fit grid that can be used for multi-column layouts.
+// Resizing the container will cause the grid children to wrap but will
+// preserve the column spacing.
+// https://codepen.io/robdodson/pen/YzNEaEz?editors=1100
+
+:root {
+  --grid-min: 150px;
+  --grid-max: .5fr;
+  --grid-gap: 24px;
+}
+
+.auto-fit-grid {
+  display: grid;
+  grid-gap: var(--grid-gap);
+  grid-template-columns: 1fr;
+
+  @include bp(md) {
+    grid-template-columns: repeat(auto-fit, minmax(var(--grid-min), var(--grid-max)));
+  }
+}

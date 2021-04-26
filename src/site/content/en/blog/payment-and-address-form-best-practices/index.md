@@ -181,8 +181,7 @@ to provide the right keyboard on mobile and enable basic built-in validation by 
 For example, use `type="email"` for email addresses and `type="tel"` for phone numbers.
 
 <figure class="w-figure">
-  <img src="images/input-type.jpg" alt="Two screenshots of Android phones, showing a keyboard appropriate
-  for entering an email addresss (using type=email) and for entering a telephone number (with type=tel).">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg", alt="Two screenshots of Android phones, showing a keyboard appropriate for entering an email addresss (using type=email) and for entering a telephone number (with type=tel).", width="800", height="683" %}
   <figcaption class="w-figcaption">Keyboards appropriate for email and telephone.</figcaption>
 </figure>
 
@@ -241,8 +240,7 @@ providing a link to edit the billing address (or use [`summary` and `details` el
 rather than displaying the billing address in a form.
 
 <figure class="w-figure">
-  <img src="images/review-order.png" alt="Example checkout page showing link
-  to change billing address.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIan7TU8goyoOXwLPYyd.png", alt="Example checkout page showing link to change billing address.", width="800", height="250" %}
   <figcaption class="w-figcaption">Add a link to review billing.</figcaption>
 </figure>
 
@@ -306,8 +304,7 @@ On form submission, browsers automatically set focus on fields with problematic 
 values. No JavaScript required!
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="images/invalid-email.png" alt="Screenshot of a sign-in form in
-  Chrome on desktop showing browser prompt and focus for an invalid email value." width="500">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mPyN7THWJNRQIiBezq6l.png", alt="Screenshot of a sign-in form in Chrome on desktop showing browser prompt and focus for an invalid email value.", width="500", height="483", class="w-screenshot" %}
   <figcaption class="w-figcaption">Basic built-in validation by the browser.</figcaption>
 </figure>
 
@@ -366,8 +363,7 @@ Don't force users to create an account before making a purchase. Not allowing gu
 as a major reason for shopping cart abandonment.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="images/shopping-cart-abandonment.png" alt="Reasons for shopping
-  cart abandonment during checkout.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a7OQLnCRb0FZglj07N7z.png", alt="Reasons for shopping cart abandonment during checkout.", width="800", height="503", class="w-screenshot" %}
   <figcaption class="w-figcaption">From <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a></figcaption>
 </figure>
 
@@ -386,9 +382,7 @@ needs to be done next. The video below shows how UK retailer [johnlewis.com](htt
 achieves this.
 
 <figure class="w-figure">
-   <video controls autoplay muted class="w-screenshot" poster="images/john-lewis.png">
-     <source src="https://samdutton.com/johnlewis.com.mp4" type="video/mp4">
-   </video>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/6gIb1yWrIMZFiv775B2y.mp4", controls=true, autoplay=true, muted=true, class="w-screenshot", poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ViftAUUUHr4TDXNec0Ch.png" %}
   <figcaption class="w-figcaption">Show checkout progress.</figcaption>
 </figure>
 
@@ -408,8 +402,7 @@ example, use `enterkeyhint="previous"` and `enterkeyhint="next"` within a multi-
 input.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="images/enterkeyhint.png" alt="Two screenshots of an address form
-  on Android showing how the enterkeyhint input attribute changes the enter key button icon.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QoY8Oynpw0CqjPACtCdG.png", alt="Two screenshots of an address form on Android showing how the enterkeyhint input attribute changes the enter key button icon.", width="800", height="684", class="w-screenshot" %}
   <figcaption class="w-figcaption">Enter key buttons on Android: 'next' and 'done'.</figcaption>
 </figure>
 
@@ -429,17 +422,14 @@ Limit potential exit points by removing visual clutter and distractions such as 
 Many successful retailers even remove navigation and search from checkout.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="images/remove-distractions.png" alt="Two screenshots on mobile
-  showing progress through johnlewis.com checkout. Search, navigation and other distractions are
-  removed.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/UR97R2LqJ5MRkL5H4V0U.png", alt="Two screenshots on mobile showing progress through johnlewis.com checkout. Search, navigation and other distractions are removed.", width="800", height="683", class="w-screenshot" %}
   <figcaption class="w-figcaption">Search, navigation and other distractions removed for checkout.</figcaption>
 </figure>
 
 Keep the journey focused. This is not the time to tempt users to do something else!
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="images/free-stickers.jpg" alt="Screenshot of checkout page on
-  mobile showing distracting promotion for FREE STICKERS." width="350">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lKJwd5e2smBfDjNxV22N.jpg", alt="Screenshot of checkout page on mobile showing distracting promotion for FREE STICKERS.", width="350", height="735", class="w-screenshot" %}
   <figcaption class="w-figcaption">Don't distract customers from completing their purchase.</figcaption>
 </figure>
 
@@ -448,9 +438,7 @@ see. For example: display the delivery address in plain text (not in a form) and
 change it via a link.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="images/returning-user.png" alt="Screenshot of 'Review order'
-  section of checkout page, showing text in plain text, with links to change delivery address,
-  payment method and billing address, which are not displayed." width="450">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xEAYOeEFYhOZLaB2aeCY.png", alt="Screenshot of 'Review order' section of checkout page, showing text in plain text, with links to change delivery address, payment method and billing address, which are not displayed.", width="450", height="219", class="w-screenshot" %}
   <figcaption class="w-figcaption">Hide data customers don't need to see.</figcaption>
 </figure>
 
@@ -686,8 +674,7 @@ payment card to look up an expiry date because autofill didn't work for a custom
 likely to lose a sale. Consider using standard HTML elements instead, and style them accordingly.
 
 <figure class="w-figure">
-  <img src="images/custom-element-date-glitch.jpg" alt="Screenshot of payment
-  form showing custom elements for card expiry date that interrupt autofill.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1LIQm2Jt5PHxN0I7tni3.jpg", alt="Screenshot of payment form showing custom elements for card expiry date that interrupt autofill.", width="800", height="916" %}
   <figcaption class="w-figcaption">Autocomplete filled all the fields—except the expiry date!</figcaption>
 </figure>
 
@@ -698,8 +685,7 @@ it easier for users to enter data, makes validation simpler, and enables browser
 Consider doing the same for other numeric data such as PIN and bank codes.
 
 <figure class="w-figure">
-  <img src="images/credit-card-number-multiple-inputs.jpg" alt="Screenshot of payment form showing a
-  credit card field split into four input elements.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cUwamPstwSQTlbmQ4CT.jpg", alt="Screenshot of payment form showing a credit card field split into four input elements.", width="800", height="833" %}
   <figcaption class="w-figcaption">Don't use multiple inputs for a credit card number.</figcaption>
 </figure>
 
@@ -740,8 +726,7 @@ your users, since form element functionality and appearance may vary, and differ
 size can lead to problematic positioning. BrowserStack enables [free testing for open source projects](https://www.browserstack.com/open-source) on a range of devices and browsers.
 
 <figure class="w-figure">
-  <img src="images/browserstack.jpg" alt="Screenshots of a payment form, payment-form.glitch.me, on
-  iPhone 7 and 11. The Complete Payment button is shown on iPhone 11 but not 7">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uk7WhpDMuHtvjmWlFnJE.jpg", alt="Screenshots of a payment form, payment-form.glitch.me, on iPhone 7 and 11. The Complete Payment button is shown on iPhone 11 but not 7", width="800", height="707" %}
   <figcaption class="w-figcaption">The same page on iPhone 7 and iPhone 11.<br>Reduce padding for
     smaller mobile viewports to ensure the <strong>Complete payment</strong> button isn't hidden.</figcaption>
 </figure>
@@ -775,7 +760,7 @@ That, in turn, gives you a solid basis for prioritizing effort, making changes, 
 
 * [Sign-in form best practices](/sign-in-form-best-practices)
 * [Sign-up form best practices](/sign-up-form-best-practices)
-* [Verify phone numbers on the web with the Web OTP API](/web-otp)
+* [Verify phone numbers on the web with the WebOTP API](/web-otp)
 * [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
 * [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 * [More capable form controls](/more-capable-form-controls)

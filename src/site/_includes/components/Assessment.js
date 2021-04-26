@@ -22,7 +22,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const site = require('../../_data/site');
-const {generateSrc} = require('./Img');
+const {generateImgixSrc} = require('./Img');
 
 // Renders the set leader at the top of the self-assessment
 function headerTemplate(assessment) {
@@ -84,7 +84,7 @@ function questionTemplate(question, assessment) {
     // @ts-ignore
     const oldSrc = $(this).attr('src');
     if (/image\/(.*)\/(.*)\.([a-z]{1,4})$/.test(oldSrc)) {
-      const src = generateSrc(oldSrc);
+      const src = generateImgixSrc(oldSrc);
       // @ts-ignore
       $(this).attr('src', src);
     }
@@ -184,9 +184,7 @@ function optionContentTemplate(option) {
     return;
   }
   return html`
-    <span data-role="option">
-      ${md.renderInline(option.content)}
-    </span>
+    <span data-role="option">${md.renderInline(option.content)}</span>
   `;
 }
 
@@ -197,9 +195,7 @@ function rationaleTemplate(option) {
     return;
   }
   return html`
-    <div data-role="rationale">
-      ${md.render(option.rationale)}
-    </div>
+    <div data-role="rationale">${md.render(option.rationale)}</div>
   `;
 }
 
