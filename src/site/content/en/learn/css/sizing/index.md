@@ -430,7 +430,6 @@ div {
 {% Aside %}
 Other angle units include `rad` (radians), `grad` (gradians), and `turn` units,
 which represent a part of an angle, where `1turn` = `360deg`, and `0.5turn` = `180deg`.
-These can come in handy when styling transforms and animations.
 {% endAside %}
 
 #### Resolution units
