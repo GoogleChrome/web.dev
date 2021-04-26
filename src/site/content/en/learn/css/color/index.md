@@ -4,8 +4,6 @@ description:
 authors:
   - andybell
 date: 2021-04-01
-tags:
-  - css
 ---
 
 # Color
@@ -186,8 +184,8 @@ Alpha is defined in `hsl()`,
 in the same way as `rgb()` by adding a `/` after the hue, saturation and lightness parameters *or* by using the
 [`hsla()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsla()) function.
 The alpha can be defined with a percentage or a decimal between 0 and 1.
-For example, to set a 50% alpha black, use: `hsl(0 0% 0% / 50%)` or `hsl(0 0 0 / 0.5)`.
-Using the `hsla()` function, write: `hsla(0, 0, 0, 50%)` or `hsla(0, 0, 0, 0.5)`.
+For example, to set a 50% alpha black, use: `hsl(0 0% 0% / 50%)` or `hsl(0 0% 0% / 0.5)`.
+Using the `hsla()` function, write: `hsla(0, 0%, 0%, 50%)` or `hsla(0, 0%, 0%, 0.5)`.
 
 {% Aside %}
 There are some newer color types coming to CSS.
@@ -261,7 +259,7 @@ The `box-shadow` property also accepts color as one of the values.
 } %}
 </figure>
 
-@@TODO Self-assessment
+{% Assessment 'color' %}
 
 ## Resources
 

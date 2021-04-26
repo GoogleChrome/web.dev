@@ -21,6 +21,7 @@ const copyFonts = require('./gulp-tasks/copy-fonts.js');
 const copyGlobalImages = require('./gulp-tasks/copy-global-images.js');
 const copyMisc = require('./gulp-tasks/copy-misc.js');
 const sassTask = require('./gulp-tasks/sass.js');
+const writeVersion = require('./gulp-tasks/write-version.js');
 
 gulp.task('copy-content-assets', copyContentAssets);
 gulp.task('default-locale', copyDefaultLocale);
@@ -35,6 +36,7 @@ gulp.task(
     copyContentAssets,
     copyFonts,
     sassTask,
+    writeVersion,
   ),
 );
 

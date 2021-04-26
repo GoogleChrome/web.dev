@@ -1,6 +1,5 @@
 ---
 title: Overview
-subhead: This post highlights a few powerful lines of CSS that do some serious heavy lifting and help you build robust modern layouts.
 authors:
   - una
 description: This post highlights a few powerful lines of CSS that do some serious heavy lifting and help you build robust modern layouts.
@@ -16,8 +15,6 @@ tags:
   - layout
   - mobile
 ---
-
-{% YouTube 'qm0IfG1GyZU' %}
 
 Modern CSS layouts enable developers to write really meaningful and robust styling rules with just a few keystrokes. The talk above and this subsequent post examine 10 powerful lines of CSS that do some serious heavy lifting.
 

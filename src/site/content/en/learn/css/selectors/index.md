@@ -4,8 +4,6 @@ description:
 authors:
   - andybell
 date: 2021-03-29
-tags:
-  - css
 ---
 
 # Selectors
@@ -251,6 +249,8 @@ em,
 This example extends the color change to both `<strong>` elements and `<em>` elements.
 It's also extended to a class named `.my-class`,and an element that has a `lang` attribute.
 
+{% Assessment 'simple-selectors' %}
+
 ## Pseudo-classes and pseudo-elements
 
 CSS provides useful selector types that focus on specific platform state,
@@ -330,6 +330,8 @@ You can also use `::selection` to style the content that has been highlighted by
 For more on pseudo-elements, check out lesson 14.
 
 @@TO DO link up to lesson 14
+
+{% Assessment 'pseudo-selectors' %}
 
 ## Complex selectors
 
@@ -485,6 +487,8 @@ and it would also only apply the red color to `.my-class` **if** it was on an `<
 For more on specificity, see module 3.
 
 @@TO DO link
+
+{% Assessment 'complex-selectors' %}
 
 ## Resources
 

@@ -46,12 +46,12 @@ one of the Core Web Vitals: [First Input Delay (FID)](/fid/) and its lab proxy,
 
 ## Long tasks, First Input Delay, and Total Blocking Time
 
-Running expensive Javascript code can lead to [long tasks](/long-tasks-devtools/),
+Running expensive JavaScript code can lead to [long tasks](/long-tasks-devtools/),
 which are those that run for more than **50ms** in the browser's main thread.
 
 FID (First Input Delay) measures the time from when a user first interacts with a page (e.g. when
 they click on a link) to the time when the browser is actually able to begin processing event
-handlers in response to that interaction. A site that executes expensive Javascript code will likely
+handlers in response to that interaction. A site that executes expensive JavaScript code will likely
 have several long tasks, which will end up negatively impacting FID.
 
 To provide a good user experience, sites should strive to have a First Input Delay of less than 100

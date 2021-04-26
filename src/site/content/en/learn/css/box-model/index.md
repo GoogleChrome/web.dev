@@ -4,8 +4,6 @@ description:
 authors:
   - andybell
 date: 2021-03-29
-tags:
-  - css
 ---
 
 # The box model
@@ -235,17 +233,7 @@ they will be applied to the **content box**.
 If you then set `padding` and `border`,
 these values will be added to the content box's size.
 
-Let's take a look at some example code:
-
-```css
-.my-box {
-	width: 200px;
-	border: 10px solid;
-	padding: 20px;
-}
-```
-
-@@TODO: SELF ASSESSMENT: "How wide do you think this box will be?". OPTIONS: 200px or 260px
+{% Assessment 'box-model' %}
 
 The actual width of this box will be 260px.
 As the CSS uses the default `box-sizing: content-box`,
