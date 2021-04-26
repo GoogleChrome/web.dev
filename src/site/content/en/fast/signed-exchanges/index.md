@@ -326,8 +326,10 @@ and displayed using its canonical URL, rather than its AMP URL.
 
 All of the concepts described in this document still apply to the AMP use case,
 however, AMP has its own separate
-[tooling](https://github.com/ampproject/amppackager) for generating SXGs. {%
-Aside%} Learn how to serve AMP using signed exchanges on
+[tooling](https://github.com/ampproject/amppackager) for generating SXGs. 
+
+{% Aside%}
+Learn how to serve AMP using signed exchanges on
 [amp.dev](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/).
 {% endAside %}
 
