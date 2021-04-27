@@ -145,9 +145,7 @@ _As of July 2020_
         <td>Firefox</td>
         <td>
           <ul>
-            <li><code>no-referrer-when-downgrade</code></li>
-            <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1589074">Considering </a><code>strict-origin-when-cross-origin</code>
-            </li>
+            <li><code>strict-origin-when-cross-origin</code> (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1589074">see closed bug</a>)</li>
             <li><code>strict-origin-when-cross-origin</code> in Private Browsing and for trackers</li>
           </ul>
         </td>
