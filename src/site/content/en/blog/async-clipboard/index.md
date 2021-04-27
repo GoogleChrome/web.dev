@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2021-02-08
+updated: 2021-04-27
 tags:
   - blog
   - capabilities
@@ -384,7 +384,7 @@ The first example demonstrates moving text on and off the clipboard.
 
 To try the API with images use this demo. Recall that only PNGs are supported
 and only in
-[a few browsers]([https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API).
+[a few browsers](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API).
 
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe
