@@ -71,7 +71,7 @@ The `margin` property is shorthand for `margin-top`,
 
 {% Img
 src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/PJfvU46GbvkmIYD5ueTb.png",
-alt="A diagram of the four main areas of the box model. The content box, padding box, border box and margin box",
+alt="A diagram of the four main areas of the box model.",
 width="800",
 height="547" %}
 
