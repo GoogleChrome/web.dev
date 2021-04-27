@@ -66,8 +66,23 @@ nightly version.
 ### Quality Criteria
 
 Web developers should use a Trusted Web Activity when they want to include web content in an
-Android app. Web content in a Trusted Web Activity must meet Lighthouse's PWA install quality
-criteria and additional Android-specific criteria such as [policy compliance][9].
+Android app.
+
+Web content in a Trusted Web Activity must meet the PWA installability criteria.
+
+Additionally, to match the behavior users expect from Android applications,
+[Chrome 86 introduced a change][18] where failing to handle the following scenarios is considered a
+crash:
+
+  - Failure to verify digital asset links at application launch.
+  - Failure to return HTTP 200 for an offline network resource request.
+  - A navigation request returning an HTTP 404 or 5xx error".
+
+When one of those scenarios happens in the Trusted Web Activity, it causes a user visible
+crash of the Android application. Check out the [guidance][19] on handling those scenarios in your
+service worker.
+
+The application must also meet additional Android-specific criteria such as [policy compliance][9].
 
 {% Aside 'caution' %}
   When your app is designed primarily for children under 13, additional
@@ -79,7 +94,7 @@ criteria and additional Android-specific criteria such as [policy compliance][9]
   <img src="lh-score.png" style="max-width: 100%;"
     alt="A screenshot showing the Lighthouse score for AirHorn, with the PWA badge and a performance score of 100."/>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    The PWA badge and a minimum Lighthouse score of 80 are required.
+    The PWA badge in Lighthouse shows if your PWA passes the installability criteria.
   </figcaption>
 </figure>
 
@@ -172,3 +187,5 @@ Finally, move your application from the closed test channel to production!
 [15]: https://play.google.com/store/apps/details?id=dev.conn.assetlinkstool
 [16]: https://developers.google.com/web/tools/lighthouse
 [17]: /fugu-status/
+[18]: https://blog.chromium.org/2020/06/changes-to-quality-criteria-for-pwas.html
+[19]: https://developer.chrome.com/docs/android/trusted-web-activity/whats-new/#updates-to-the-quality-criteria
