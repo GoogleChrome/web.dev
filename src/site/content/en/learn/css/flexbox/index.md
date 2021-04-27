@@ -368,7 +368,7 @@ Do not use `order` because you are fixing things being out of order in the docum
 If the items logically should be in a different order, change your HTML!
 {% endAside %}
 
-@@TO DO Self Assesement
+{% Assessment 'flex' %}
 
 ## Flexbox alignment overview
 
@@ -584,6 +584,8 @@ At present no browser has implemented these.
 However, switching into a flex formatting context gives you access to the properties.
 If you need to align something it's a great way to do it.
 {% endAside %}
+
+{% Assessment 'conclusion' %}
 
 ## Resources
 

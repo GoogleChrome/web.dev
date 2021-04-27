@@ -1,0 +1,40 @@
+setLeader: Test your knowledge of flexbox
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: The default `flex-direction` is
+    options:
+      - content: "`row`"
+        rationale: "By default, flexbox will fit items into a row, lining them
+        up at the start. With wrapping turned on, it will continue creating rows
+        for children to flow within."
+      - content: "`column`"
+        rationale: "Setting flex-direction to column is a great way to stack
+        elements, but it is not the default value."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: By default, a flex container wraps children.
+    options:
+      - content: "true"
+        rationale: "Wrapping must be enabled."
+      - content: "false"
+        rationale: "Use `flex-wrap: wrap` with `display: flex` to wrap children"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: A flex child item appears squished, which flex property helps mitigate this?
+    options:
+      - content: "`flex-grow`"
+        rationale: "This property describes if elements can grow beyond a basis
+        size, not how it should behave under a basis"
+      - content: "`flex-shrink`"
+        rationale: "Yes, this property describes how to handle sizing if the
+        width is going below the basis"
+      - content: "`flex-basis`"
+        rationale: "This provides the starting point of sizing, but not how to
+        handle sizing scenarios where width goes below basis, like in a squished
+        scenario."
