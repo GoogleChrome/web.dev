@@ -18,10 +18,10 @@ as well as layouts that need to be fluid and flexible.
 How do you decide the best way to style these with CSS?
 
 CSS provides us with various ways to solve layout problems,
-both on a horizontal axis, on a vertical axis, or even both.
+on a horizontal axis, vertical axis, or even both.
 Choosing the right layout method for a context can be hard,
 and often you may need more than one layout method to solve your problem.
-To help with this, over the next few lessons,
+To help with this, in the following modules,
 you'll learn about the unique features of each CSS layout mechanism to inform those decisions.
 
 ## Layout: a brief history
@@ -41,7 +41,7 @@ You can read how CSS layout and our approach to layout has evolved over time in
 
 Modern CSS has exceptionally powerful layout tooling.
 We have dedicated systems for layout and we're going to have a high-level look at what we have at our disposal,
-before digging into more detail of Flexbox and Grid in the next lessons.
+before digging into more detail of Flexbox and Grid in the next modules.
 
 ## Understanding the `display` property
 
@@ -92,13 +92,12 @@ This enables the flex properties that control alignment, ordering and flow.
 
 ## Flexbox and Grid
 
-There are two main layout mechanisms that create layout rules for multiple elements, *flexbox* and *grid*.
+There are two main layout mechanisms that create layout rules for multiple elements, *[flexbox](/learn/css/flexbox)* and *[grid](/learn/css/grid)*.
 They share similarities, but are designed to solve different layout problems.
 
-@@TODO: link to flexbox and grid lessons above
 
 {% Aside %}
-We will be going into much more detail for both of these in future lessons, but here is a high-level overview of what both are and what they are useful for.
+We will be going into much more detail for both of these in future modules, but here is a high-level overview of what both are and what they are useful for.
 {% endAside %}
 
 ### Flexbox
@@ -363,8 +362,8 @@ instead of the topmost relative parent, when it has an absolute position applied
 	position: absolute;
 	bottom: 0;
 	right: 0;
-  	width: 50px;
-  	height: 50px;
+	width: 50px;
+	height: 50px;
 }
 ```
 
@@ -393,9 +392,7 @@ it stays anchored to the `top`, `right`, `bottom` and `left` values that you set
 ## Wrap-up
 
 There's a lot of choice and flexibility with CSS layout.
-To dive further into the power of CSS Flexbox and Grid, continue into the next few modules.
+To dive further into the power of CSS [Flexbox](/learn/css/flexbox) and [Grid](/learn/css/grid), continue into the next few modules.
 
-@@TO DO, link to grid and flexbox
 
 @@TO DO -- self assessment
-
