@@ -65,6 +65,10 @@
     &[data-complete] {
       --check-display: block;
       color: $GREY_700;
+
+      > [data-badge]::after {
+        content: '';
+      }
     }
 
     &[data-active] {
@@ -92,9 +96,9 @@
       margin-left: 0.6em;
     }
 
-    &[data-badge='new']::after {
+    &[data-badge]::after {
       color: $WEB_PRIMARY_COLOR;
-      content: 'NEW';
+      content: attr(data-badge);
       font-size: 12px;
       @include apply-utility('weight', 'medium');
     }
