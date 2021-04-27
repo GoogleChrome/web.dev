@@ -1,0 +1,28 @@
+{% from 'macros/icon.njk' import svg with context %}
+
+<div class="auto-fit-grid" style="--grid-min: 400px; --grid-gap: 0;">
+  {# Convert the courses object into an array of objects. #}
+  {% set coursesArr = helpers.values(courses) %}
+  {# Sort courses by descending date order (most recent comes first) #}
+  {% for course in coursesArr|sort(true, false, 'meta.date') %}
+    {% if not course.meta.draft %}
+      {# If we have 3 or more courses set the grid to use a more dense styling. #}
+      {# This makes the thumbnails smaller. #}
+      <div class="course-card w-card" data-dense>
+        <div class="course-card__info gap-bottom-400">
+          <span class="font-google-sans weight-medium">{{ 'i18n.learn.course' | i18n(locale) }}</span>
+          <span class="gap-left-200 gap-right-200">·</span>
+          {# Count up the number of pages in the course and display it as "n resources" #}
+          {% set pages = collections.all | navigation(course.toc) %}
+          <span>{{ pages.length }} {{ 'i18n.learn.resources' | i18n(locale) }}</span>
+        </div>
+        <a href="{{ course.meta.url }}">
+          <img class="course-card__thumbnail" src="/images/courses/css/thumbnail.svg">
+        </a>
+        <a href="{{ course.meta.url }}" class="course-card__description display-block gap-top-400">
+          {{ course.meta.description | i18n(locale) }}
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>

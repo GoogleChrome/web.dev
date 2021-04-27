@@ -87,10 +87,10 @@ consider these shortcomings when trying to make a dynamic experience that
 supports actions such as adding, removing, or moving content.
 
 A common fix for this is to add listeners that execute a programmatic scroll via
-Javascript to force snapping to execute whenever any of these mentioned layout
+JavaScript to force snapping to execute whenever any of these mentioned layout
 changes happen. This workaround can be ineffective when the user expects the
 scroller to snap back to the same content as before. Any further handling with
-Javascript seems to almost defeat the purpose of this CSS feature.
+JavaScript seems to almost defeat the purpose of this CSS feature.
 
 ## Built-in support for re-snapping after layout changes in Chrome 81
 The mentioned shortcomings no longer exist in Chrome 81: scrollers will remain

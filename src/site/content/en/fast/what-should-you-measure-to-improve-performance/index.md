@@ -135,7 +135,7 @@ controlled through the Node API
 start the browser through Puppeteer, navigate to the landing page through the
 [goto](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagegotourl-options)
 function,
-[inject Javascript](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageevaluatepagefunction-args)
+[inject JavaScript](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageevaluatepagefunction-args)
 to fill fields or
 [click](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageclickselector-options)
 buttons and proceed through the funnel through further

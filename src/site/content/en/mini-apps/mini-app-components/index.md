@@ -50,7 +50,7 @@ overview of the available components, you can browse
 Earlier [I showed](/mini-app-devtools/#custom-elements-under-the-hood) that while, for example, WeChat's `<image>`
 is a web component under the hood, not all of these components are technically web components. Some
 components, like `<map>` and `<video>`, are rendered as
-[OS-native components](https://developers.weixin.qq.com/ebook?action=get_post_info&docid=000caab39b88b06b00863ab085b80a)
+[OS-built-in components](https://developers.weixin.qq.com/ebook?action=get_post_info&docid=000caab39b88b06b00863ab085b80a)
 that get layered over the WebView. For the developer, this implementation detail is not revealed,
 they are programmed like any other component.
 

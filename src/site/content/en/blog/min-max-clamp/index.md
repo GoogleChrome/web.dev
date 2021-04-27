@@ -40,7 +40,7 @@ year in version 79. This year, with Firefox
 browser parity for `min()`, `max()`, and `clamp()` in all evergreen browsers.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./caniuse.png" alt="" />
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIgePP41Quh7ubYh54vo.png", alt="", width="800", height="246", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     <a href="https://caniuse.com/css-math-functions">Caniuse</a> support table.
   </figcaption>

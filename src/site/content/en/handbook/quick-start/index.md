@@ -35,7 +35,7 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
 1. After you get approval from a web.dev team member that your content can be published on the site,
    submit a GitHub pull request.
 1. Check out the [web.dev markup section](/handbook/#web.dev-markup) to learn how to make your markdown squeaky clean.
-   In particular, check out the [web.dev components](https://web.dev/handbook/web-dev-components/) guide
+   In particular, check out the [web.dev components](/handbook/web-dev-components/) guide
    to discover UI elements that can make your content more engaging or aesthetically pleasing.
 1. Once your PR is merged, the content will be deployed to the site immediately.
 
@@ -55,7 +55,7 @@ If applicable, launch translation process for this content by emailing web.dev@.
 
 ### Tags
 
-Tags are used to categorize articles and also to generate [web.dev/tags](https://web.dev/tags/) pages.
+Tags are used to categorize articles and also to generate [web.dev/tags](/tags/) pages.
 The canonical list of tags is published in [tagsData.json](https://github.com/GoogleChrome/web.dev/blob/main/src/site/_data/tagsData.json) on Github.
 
 - to add a new tag, add it first to `tagsData.json`

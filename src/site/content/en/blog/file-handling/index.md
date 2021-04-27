@@ -19,7 +19,7 @@ origin_trial:
 
 {% Aside %}
   The File Handling API is part of the
-  [capabilities project](https://web.dev/fugu-status/) and is currently in development. This post will
+  [capabilities project](/fugu-status/) and is currently in development. This post will
   be updated as the implementation progresses.
 {% endAside %}
 
@@ -164,18 +164,14 @@ double click, or a right click and then select "Excalidraw" in the context menu.
 out the [implementation][demo-source] in the source code.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled"
-       src="./finder.png"
-       alt="The macOS finder window with an Excalidraw file." width="1764 " height="930">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TMh8Qev0XdwgIx7jJlP5.png", alt="The macOS finder window with an Excalidraw file.", width="800", height="422", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
      Double click or right click a file in your operating system's file explorer.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled"
-       src="./context-menu.png"
-       alt="The context menu that appears when right clicking a file with the 'Open with… Excalidraw' item highlighted." width="488" height="266">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wCNbMl6kJ11XziG3LO65.png", alt="The context menu that appears when right clicking a file with the 'Open with… Excalidraw' item highlighted.", width="488", height="266", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
      Excalidraw is the default file handler for <code>.excalidraw</code> files.
   </figcaption>

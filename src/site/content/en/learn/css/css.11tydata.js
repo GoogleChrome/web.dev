@@ -6,6 +6,11 @@ module.exports = function () {
     // _data/courses/a11y directory.
     projectKey: 'css',
     eleventyComputed: {
+      thumbnail: (data) => {
+        const {projectKey} = data;
+        // Use thumbnail defined in the frontmatter or in the meta.yml file.
+        return data.thumbnail || data?.courses?.[projectKey]?.meta?.thumbnail;
+      },
       permalink: (data) => {
         if (process.env.ELEVENTY_ENV === 'prod') {
           return false;

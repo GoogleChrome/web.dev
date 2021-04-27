@@ -1,0 +1,37 @@
+setLeader: Test your knowledge of complex selectors
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "1,3,4"
+    stem: Which of the following symbols are **not** a selector combinator?
+    options:
+      - content: ">"
+        rationale: "The direct descendant combinator"
+      - content: "÷"
+        rationale: "Invalid, not a CSS symbol"
+      - content: "+"
+        rationale: "The next sibling combinator"
+      - content: "*"
+        rationale: "This universal simple selector"
+      - content: "."
+        rationale: "The class simple selector"
+  - type: multiple-choice
+    stimulus: |
+      ```css
+      section.awesome {
+        border: 1px solid hotpink;
+      }
+      ```
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: The above selector is an example of a..
+    options:
+      - content: Combinator
+        rationale: "A symbol used to combine selectors into a more specific one"
+      - content: Compound selector
+        rationale: "When 2 or more selectors are used together, without a
+        combinator, in order to create a more specific selector"
+      - content: Terminator
+        rationale: "Not a selector type, but sounds like one doesn't it? 🤖"

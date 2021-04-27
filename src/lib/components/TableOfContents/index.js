@@ -80,9 +80,7 @@ class TableOfContents extends BaseStateElement {
           @click="${closeToC}"
         ></button>
       </div>
-      <div class="w-toc__content">
-        ${html(content)}
-      </div>
+      <div class="w-toc__content">${html(content)}</div>
     `;
   }
 

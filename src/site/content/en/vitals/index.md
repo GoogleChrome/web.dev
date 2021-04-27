@@ -61,11 +61,10 @@ following metrics (and their respective thresholds):
   To provide a good user experience, LCP should occur within **2.5 seconds** of
   when the page first starts loading.
 - **[First Input Delay (FID)](/fid/)**: measures _interactivity_. To provide a
-  good user experience, pages should have a FID of less than **100
-  milliseconds**.
+  good user experience, pages should have a FID of **100 milliseconds** or less.
 - **[Cumulative Layout Shift (CLS)](/cls/)**: measures _visual stability_. To
-  provide a good user experience, pages should maintain a CLS of less than
-  **0.1.**
+  provide a good user experience, pages should maintain a CLS of **0.1.** or
+  less.
 
 For each of the above metrics, to ensure you're hitting the recommended target
 for most of your users, a good threshold to measure is the **75th percentile**

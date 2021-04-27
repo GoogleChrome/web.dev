@@ -20,7 +20,7 @@ but others don't, the page gets a 0 for the
 
 The following table shows the weighting for each accessibility audit.
 More heavily weighted audits have a bigger effect on your score.
-[Manual audits](https://web.dev/lighthouse-accessibility/#additional-items-to-manually-check)
+[Manual audits](/lighthouse-accessibility/#additional-items-to-manually-check)
 aren't included in the table because they don't affect your score.
 
 <div class="w-table-wrapper">

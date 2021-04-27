@@ -119,7 +119,7 @@ For desktop devices:
 Open the optimized version of [style.css](https://use-media-queries-optimized.glitch.me/style.css) in your browser to see the changes made.
 
 {% Aside %}
-The images used in the optimized demo are already resized to fit into different screen sizes. Showing how to resize images is out of the scope of this guide, but if you want to know more about this, the [Serve responsive images guide](https://web.dev/serve-responsive-images/) covers some useful tools, like the [sharp npm package](https://www.npmjs.com/package/sharp) and the [ImageMagick CLI](https://www.imagemagick.org/script/index.php).
+The images used in the optimized demo are already resized to fit into different screen sizes. Showing how to resize images is out of the scope of this guide, but if you want to know more about this, the [Serve responsive images guide](/serve-responsive-images/) covers some useful tools, like the [sharp npm package](https://www.npmjs.com/package/sharp) and the [ImageMagick CLI](https://www.imagemagick.org/script/index.php).
 {% endAside %}
 
 ## Measure for different devices
