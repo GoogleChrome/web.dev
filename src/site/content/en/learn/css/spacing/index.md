@@ -81,7 +81,7 @@ You can remember these with trouble: TRouBLe.
 
 {% Img
 src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/oBvH9AMffeuMAy9XYLYF.png",
-alt="The word "Trouble" running downwards with T, R, B and L
+alt="The word 'Trouble' running downwards with T, R, B and L
 extending to Top, Right, Bottom and Left.
 A box with arrows showing the directions too.",
 width="800",
@@ -377,5 +377,4 @@ then use them throughout your CSS.
 When they are updated,
 either locally within an element or globally,
 the values will pass down through the cascade and the updated values will be reflected.
-
 
