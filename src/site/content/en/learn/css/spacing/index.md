@@ -25,7 +25,7 @@ each with its own strengths and caveats.
 
 ## HTML spacing
 
-HTML itself provides some methods to space elements..
+HTML itself provides some methods to space elements.
 The `<br />` and `<hr />` elements allow you to space elements in the block direction,
 which if you are in a latin-based language,
 is top-to-bottom.
@@ -82,7 +82,7 @@ You can remember these with trouble: TRouBLe.
 
 {% Img
 src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/oBvH9AMffeuMAy9XYLYF.png",
-alt="The word “Trouble” running downwards with T, R, B and L
+alt="The word "Trouble" running downwards with T, R, B and L
 extending to Top, Right, Bottom and Left.
 A box with arrows showing the directions too.",
 width="800",
