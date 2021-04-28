@@ -17,7 +17,7 @@ tags:
   - web-vitals
 ---
 
-{% YouTube 'AQqFZ5t8uNc', '1073' %}
+{% YouTube id='AQqFZ5t8uNc', startTime='1073' %}
 
 <blockquote>
   <p>

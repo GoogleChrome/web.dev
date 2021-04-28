@@ -22,7 +22,7 @@ codelabs:
   - codelab-building-resilient-search-experiences
 ---
 
-{% YouTube 'fhqCwDP69PI', '35' %}
+{% YouTube id='fhqCwDP69PI', startTime='35' %}
 
 Even in locations with fast networks a user might lose connection or connect to a flaky network, at some moments of the day.
 For example: a user is on the subway searching on the phone for a product on an e-commerce website. They type the product name, click the "search" button, and while waiting for the results, the connection is lost, leading to the standard browser offline page.

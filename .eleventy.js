@@ -53,7 +53,7 @@ const SignPosts = require(`./${componentsDir}/SignPosts`);
 const StackOverflow = require(`./${componentsDir}/StackOverflow`);
 const Tooltip = require(`./${componentsDir}/Tooltip`);
 const {Video} = require(`./${componentsDir}/Video`);
-const YouTube = require(`./${componentsDir}/YouTube`);
+const {YouTube} = require('webdev-infra/shortcodes/YouTube');
 
 // Collections
 const algolia = require('./src/site/_collections/algolia');
