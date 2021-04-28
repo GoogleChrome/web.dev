@@ -17,6 +17,7 @@ steps:
     env:
     - 'BUILD_ID=$BUILD_ID'
     - 'PROJECT_ID=$PROJECT_ID'
+    - 'NODE_ENV=production'
   - name: node:14
     id: 'Build site'
     entrypoint: npm
