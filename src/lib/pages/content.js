@@ -1,7 +1,6 @@
 /**
  * @fileoveriew Entrypoint for default content pages on web.dev.
  */
-import 'webdev-infra/web-components/YouTube';
 
 import '../components/ShareAction';
 import '../components/AssessmentQuestion';
