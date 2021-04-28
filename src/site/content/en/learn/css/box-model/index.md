@@ -18,10 +18,10 @@ Then you write this CSS for it:
 
 ```css
 p {
-	width: 100px;
-	height: 50px;
-	padding: 20px;
-	border: 1px solid;
+  width: 100px;
+  height: 50px;
+  padding: 20px;
+  border: 1px solid;
 }
 ```
 
@@ -54,7 +54,7 @@ Either way, this content will affect the size of the box by default.
 
 You can control this by using **extrinsic sizing**, or,
 you can continue to let the browser make decisions for you based on the content size,
- using **intrinsic sizing**.
+using **intrinsic sizing**.
 
 Let's quickly look at the difference, using a demo to help us.
 
@@ -121,7 +121,7 @@ intrinsic sizing provides the most flexibility, most of the time.
 Boxes are made up of distinct box model areas that all do a specific job.
 
 <figure class='w-figure'>
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/PJfvU46GbvkmIYD5ueTb.png", alt="A diagram showing the four main areas of the box model - content box, padding box, border box and margin box", width="800", height="547" %}
+{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg", alt="A diagram showing the four main areas of the box model - content box, padding box, border box and margin box", width="800", height="547" %}
   <figcaption>The four main areas of the box model: content box, padding box, border box and margin box.</figcaption>
 </figure>
 
@@ -178,11 +178,11 @@ The diagram has labels that associate elements of the frame with the box model.
 
 To break this analogy down:
 
-* The content box is the artwork.
-* The padding box is the white matte, between the frame and the artwork.
-* The border box is the the frame, providing a literal border for the artwork.
-* The margin box is the space between each frame.
-* The shadow occupies the same space as the margin box.
+- The content box is the artwork.
+- The padding box is the white matte, between the frame and the artwork.
+- The border box is the the frame, providing a literal border for the artwork.
+- The margin box is the space between each frame.
+- The shadow occupies the same space as the margin box.
 
 ## Debugging the box model
 
@@ -241,7 +241,7 @@ the applied width is the width of the content,
 `padding` and `border` on both sides are added to that.
 So 200px for the content + 40px of padding + 20px of border makes a total visible width of 260px.
 
-You *can* control this, though,
+You _can_ control this, though,
 by making the following modification to use the alternative box model, `border-box`:
 
 ```css/1
@@ -254,13 +254,13 @@ by making the following modification to use the alternative box model, `border-b
 ```
 
 This alternative box model tells CSS to apply the `width` to the border box instead of the content box.
-This means that our `border` and `padding` get *pushed in*,
+This means that our `border` and `padding` get _pushed in_,
 and as a result,
 when you set `.my-box` to be `200px` wide: it actually renders at `200px` wide.
 
 Check out how this works in the following interactive demo.
 Notice that when you toggle the `box-sizing` value
-it shows—via a blue background—which CSS is being applied *inside* our box.
+it shows—via a blue background—which CSS is being applied _inside_ our box.
 
 <figure class="w-figure">
 {% Codepen {
@@ -287,11 +287,11 @@ developers often add this rule to resets and normalizers,
 
 ## Resources
 
-* [Introduction to the box model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
-* [What are browser developer tools?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)
+- [Introduction to the box model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+- [What are browser developer tools?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)
 
 ### User agent stylesheets
 
-* [Chromium](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css)
-* [Firefox](https://searchfox.org/mozilla-central/source/layout/style/res/html.css)
-* [Webkit](https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css)
+- [Chromium](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css)
+- [Firefox](https://searchfox.org/mozilla-central/source/layout/style/res/html.css)
+- [Webkit](https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css)
