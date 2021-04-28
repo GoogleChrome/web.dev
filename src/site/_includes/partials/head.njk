@@ -9,10 +9,9 @@
   <link rel="stylesheet" href="{{ helpers.hashForProd('/css/main.css') }}">
 {% endif %}
 
-{# We only preload Material Icons because the site can't render properly without them. #}
-{# For Google Sans we use font-display: swap because preloading too many fonts can hurt performance. #}
-{# https://www.zachleat.com/web/preload/ #}
 <link rel="preload" as="font" crossorigin href="/fonts/material-icons/regular.woff2">
+<link rel="preload" as="font" crossorigin href="/fonts/google-sans/regular/latin.woff2">
+<link rel="preload" as="font" crossorigin href="/fonts/google-sans/bold/latin.woff2">
 
 <meta name="theme-color" content="#fff"/>
 
