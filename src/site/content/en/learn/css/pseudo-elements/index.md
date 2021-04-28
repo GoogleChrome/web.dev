@@ -11,7 +11,7 @@ and you want the first letter to be a much bigger drop cap—
 how do you achieve that?
 
 {% Img
-src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/a0gnZL3GUPVMWuDHqW3K.png",
+src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/Qpo2f3eRInt5iM6qW2p2.svg",
 alt="A couple of paragraphs of text with a blue drop cap",
 width="800",
 height="318" %}
