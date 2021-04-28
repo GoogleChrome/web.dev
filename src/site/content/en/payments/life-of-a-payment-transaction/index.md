@@ -46,7 +46,7 @@ The process involves 6 steps:
 6. After the customer confirms the purchase, the merchant validates the payment
    and completes the transaction.
 
-    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9Q6VqimbOxJ3ZXHvB8ry.svg", alt="A diagram showing the customer pressing the "Pay" button in BobPay, followed by a diagram of the cheese shop page showing "Payment accepted".", width="778", height="708" %}
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9Q6VqimbOxJ3ZXHvB8ry.svg", alt="A diagram showing the customer pressing the \"Pay\" button in BobPay, followed by a diagram of the cheese shop page showing \"Payment accepted\".", width="778", height="708" %}
 
 ## Step 1: The merchant initiates a payment transaction
 

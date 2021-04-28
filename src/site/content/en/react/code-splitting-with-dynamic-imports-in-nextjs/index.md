@@ -172,7 +172,7 @@ Now when you click the button it takes a while to load the component and the app
 displays the "Loading…" message in the meantime.
 
 <figure class="w-figure">
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tjlpmwolBVp1jh948Fln.png", alt="A dark screen with the text \", width="800", height="663" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tjlpmwolBVp1jh948Fln.png", alt="A dark screen with the text \"Loading...\".", width="800", height="663" %}
 </figure>
 
 ## Dynamic imports without SSR
