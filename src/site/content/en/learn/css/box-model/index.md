@@ -73,10 +73,12 @@ The box has a width, so is extrinsically sized.
 It controls the sizing of its child content.
 The problem with this though, is that the word "awesome" is too large for the box,
 so it overflows outside of the parent box's **border box** (more on this later in the lesson).
-One way to prevent this overflow is to allow the box to be intrinsically sized by either unsetting the width,
+One way to prevent this overflow is to allow the box to be intrinsically sized by either
+unsetting the width,
 or in this case,
 setting the `width` to be `max-content`.
-The `max-content` keyword tells the box to only be as wide as the intrinsic maximum width of its content (the word "awesome").
+The `max-content` keyword tells the box to only be as wide as the intrinsic maximum width of
+its content (the word "awesome").
 This allows the box to fit around "CSS is awesome", perfectly.
 
 Let's look at something more complex to see the impact of different sizing on real content:
@@ -89,7 +91,8 @@ Let's look at something more complex to see the impact of different sizing on re
 </figure>
 
 Toggle intrinsic sizing on and off
-to see how you can gain more control with extrinsic sizing and let the content have more control with intrinsic sizing.
+to see how you can gain more control with extrinsic sizing and let the content have more control
+with intrinsic sizing.
 To see the effect that intrinsic and extrinsic sizing has,
 add a few sentences of content to the card.
 When this element is using extrinsic sizing,
@@ -98,9 +101,11 @@ but this isn't the case when intrinsic sizing is toggled on.
 
 By default, this element has a set `width` and `height`—both `400px`.
 These dimensions give strict bounds to everything inside the element,
-which will be honoured unless the content is too large for the box in which case visible overflow will happen.
+which will be honoured unless the content is too large for the box in which case visible overflow
+will happen.
 You can see this in action by changing the content of the caption,
-under the flower picture to something that exceeds the height of the box, which is a few lines of content.
+under the flower picture to something that exceeds the height of the box, which is a few lines of
+content.
 
 {% Aside "key-term" %}
 When content is too big for the box it is in, we call this overflow.
@@ -110,7 +115,8 @@ You can manage how an element handles overflow content, using the `overflow` pro
 When you switch to intrinsic sizing,
 we're letting the browser make decisions for us,
 based on the box's content size.
-It's much more difficult for there to be overflow with intrinsic sizing because our box will resize with its content,
+It's much more difficult for there to be overflow with intrinsic sizing because our box will resize
+with its content,
 rather than try to size the content.
 It's important to remember that this is the default, flexible behaviour of a browser.
 Though extrinsic sizing gives more control on the surface,
@@ -121,8 +127,14 @@ intrinsic sizing provides the most flexibility, most of the time.
 Boxes are made up of distinct box model areas that all do a specific job.
 
 <figure class='w-figure'>
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg", alt="A diagram showing the four main areas of the box model - content box, padding box, border box and margin box", width="800", height="547" %}
-  <figcaption>The four main areas of the box model: content box, padding box, border box and margin box.</figcaption>
+{% Img
+  src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg",
+  alt="A diagram showing the four main areas of the box model - content box, padding box, border box and margin box",
+  width="800",
+  height="547"
+%}
+  <figcaption>The four main areas of the box model: content box, padding box, border box and
+  margin box.</figcaption>
 </figure>
 
 You start with **content box**, which is the area that the content lives in.
@@ -130,8 +142,10 @@ As you learned before: this content can control the size of its parent,
 so is usually the most variably sized area.
 
 The **padding box** surrounds the content box
-and is the space created by the [`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding) property.
-Because padding is inside the box, the background of the box will be visible in the space that it creates.
+and is the space created by
+the [`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding) property.
+Because padding is inside the box, the background of the box will be visible in the space that
+it creates.
 If our box has overflow rules set, such as `overflow: auto` or `overflow: scroll`,
 the scrollbars will occupy this space too.
 
@@ -143,8 +157,8 @@ the scrollbars will occupy this space too.
 </figure>
 
 The **border box** surrounds the padding box and its space is occupied by the `border` value.
-The border box is the bounds of your box and the **border edge** is the limit of what you can visually see.
-The [`border`](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
+The border box is the bounds of your box and the **border edge** is the limit of what you can
+visually see. The [`border`](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 property is used to visually frame an element.
 
 The final area, the **margin box**, is the space around your box,
@@ -154,7 +168,8 @@ Properties such as
 [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
 occupy this space too because they are painted on top,
 so they don't affect the size of our box.
-You could have an `outline-width` of `200px` on our box and everything inside and including the border box would be exactly the same size.
+You could have an `outline-width` of `200px` on our box and everything inside and including the
+border box would be exactly the same size.
 
 <figure class="w-figure">
 {% Codepen {
@@ -169,7 +184,12 @@ The box model is complex to understand,
 so let's recap what you've learned with an analogy.
 
 <figure class='w-figure'>
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg", alt="Three photo frames", width="800", height="562" %}
+{% Img
+  src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg",
+  alt="Three photo frames",
+  width="800",
+  height="562"
+%}
 </figure>
 
 In this diagram, you have three photo frames,
@@ -253,8 +273,8 @@ by making the following modification to use the alternative box model, `border-b
 }
 ```
 
-This alternative box model tells CSS to apply the `width` to the border box instead of the content box.
-This means that our `border` and `padding` get _pushed in_,
+This alternative box model tells CSS to apply the `width` to the border box instead of the
+content box.vThis means that our `border` and `padding` get _pushed in_,
 and as a result,
 when you set `.my-box` to be `200px` wide: it actually renders at `200px` wide.
 
