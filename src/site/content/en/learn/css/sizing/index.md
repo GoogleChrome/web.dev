@@ -40,8 +40,8 @@ a number is representative of a ratio if you define it without a supporting unit
 
 ```css
 p {
-	font-size: 24px;
-	line-height: 1.5;
+  font-size: 24px;
+  line-height: 1.5;
 }
 ```
 
@@ -71,8 +71,8 @@ Numbers can also be used in the following places:
 - When setting values for filters: `filter: sepia(0.5)` applies a `50%` sepia filter to the element.
 - When setting opacity: `opacity: 0.5` applies an `80%` opacity.
 - In color channels: `rgb(50, 50, 50)`,
-where the values 0-255 are acceptable to set a color value.
-[See color lesson](/learn/css/color).
+  where the values 0-255 are acceptable to set a color value.
+  [See color lesson](/learn/css/color).
 - To transform an element: `transform: scale(1.2)` scales the element by 120% of its initial size.
 
 ## Percentages
@@ -82,14 +82,15 @@ For example,`width` is calculated as a percentage of the width of the parent ele
 
 ```css
 div {
-	width: 450px;
-	height: 100px;
+  width: 450px;
+  height: 100px;
 }
 
 div p {
-	width: 50%; /* calculated: 225px */
+  width: 50%; /* calculated: 225px */
 }
 ```
+
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
@@ -105,15 +106,16 @@ regardless of direction.
 
 ```css
 div {
-	width: 450px;
-	height: 100px;
+  width: 450px;
+  height: 100px;
 }
 
 div p {
-	margin-top: 50%; /* calculated: 225px */
-	padding-right: 50%; /* calculated: 225px */
+  margin-top: 50%; /* calculated: 225px */
+  padding-right: 50%; /* calculated: 225px */
 }
 ```
+
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
@@ -125,15 +127,16 @@ In the above snippet, both the `margin-top` and `padding-right` will compute to 
 
 ```css
 div {
-	width: 450px;
-	height: 100px;
+  width: 450px;
+  height: 100px;
 }
 
 div p {
-	width: 50%; /* calculated: 225px */
-	transform: translateX(10%); /* calculated: 22.5px */
+  width: 50%; /* calculated: 225px */
+  transform: translateX(10%); /* calculated: 22.5px */
 }
 ```
+
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
@@ -168,9 +171,9 @@ it should be accurate if you compared it to a ruler.
 
 ```css
 div {
-	width: 10cm;
-	height: 5cm;
-	background: black;
+  width: 10cm;
+  height: 5cm;
+  background: black;
 }
 ```
 
@@ -238,7 +241,7 @@ Relative lengths are particularly useful on the web due to its responsive nature
 #### Font-size-relative units
 
 CSS provides helpful units that are relative to the size of elements of rendered typography,
-such as the size of the text itself (`em` units)  or width of the typefaces characters (`ch` units).
+such as the size of the text itself (`em` units) or width of the typefaces characters (`ch` units).
 
 <div class="w-table-wrapper">
   <table>
@@ -353,13 +356,14 @@ These units portion up the available viewport space.
 
 ```css
 div {
-	width: 10vw;
+  width: 10vw;
 }
 
 p {
-	max-width: 60ch;
+  max-width: 60ch;
 }
 ```
+
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
@@ -384,7 +388,13 @@ such as `em` and `rem`.
 If you use `px` units for sizing text,
 this preference will be ignored.
 
-{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/cUEl77VN4ZtAdElV4fd6.mp4" %}
+{% Video
+  src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/cUEl77VN4ZtAdElV4fd6.mp4",
+  autoplay=true,
+  controls=true,
+  muted=true
+%}
+
 {% endAside %}
 
 ## Miscellaneous units
@@ -401,11 +411,12 @@ They are also useful for rotating elements within transform functions.
 
 ```css
 div {
-	width: 150px;
-	height: 150px;
-	transform: rotate(60deg);
+  width: 150px;
+  height: 150px;
+  transform: rotate(60deg);
 }
 ```
+
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
@@ -417,13 +428,13 @@ Using the `deg` angle unit, you can rotate a `div` 90° on its center axis.
 
 ```css
 div {
-	background-image: url('a-low-resolution-image.jpg');
+  background-image: url('a-low-resolution-image.jpg');
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-	div {
-		background-image: url('a-high-resolution-image.jpg');
-	}
+  div {
+    background-image: url('a-high-resolution-image.jpg');
+  }
 }
 ```
 
