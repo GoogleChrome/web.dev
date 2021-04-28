@@ -6,7 +6,7 @@ subhead: |
   to introduce new components.
 authors:
   - thomassteiner
-date: 2021-04-26
+date: 2021-04-28
 description: |
   Insertable streams for MediaStreamTrack expose the contents of a MediaStreamTrack as a collection
   of streams (as defined by the WHATWG Streams API), which can be manipulated to introduce new
@@ -150,8 +150,8 @@ For a barcode scanner application, this chain would look as in the code sample b
 const stream = await getUserMedia({ video: true });
 const videoTrack = stream.getVideoTracks()[0];
 
-const trackProcessor = new TrackProcessor(videoTrack);
-const trackGenerator = new TrackGenerator();
+const trackProcessor = new MediaStreamTrackProcessor(videoTrack);
+const trackGenerator = new MediaStreamTrackGenerator();
 
 const transformer = new TransformStream({
   async transform(videoFrame, controller) {
