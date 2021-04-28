@@ -11,7 +11,7 @@ stacked on top of each other and you want space between them.
 How many ways can you think of to do that in CSS?
 
 {% Img
-src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/OMAGvvDAOH4MLFrFUXR2.png",
+src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/jGjBqBRk3uCvXT7Tdjre.svg",
 alt="Three stacked boxes with a downward arrow",
 width="800",
 height="498" %}
@@ -70,7 +70,7 @@ The `margin` property is shorthand for `margin-top`,
 `margin-right`, `margin-bottom` and `margin-left`.
 
 {% Img
-src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/PJfvU46GbvkmIYD5ueTb.png",
+src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ECuEOJEGnudhXW5JEFih.svg",
 alt="A diagram of the four main areas of the box model.",
 width="800",
 height="547" %}
@@ -80,7 +80,7 @@ top, right, bottom and left.
 You can remember these with trouble: TRouBLe.
 
 {% Img
-src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/oBvH9AMffeuMAy9XYLYF.png",
+src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/F8jtvl15CsAcs8Oaid2l.svg",
 alt="The word 'Trouble' running downwards with T, R, B and L
 extending to Top, Right, Bottom and Left.
 A box with arrows showing the directions too.",
@@ -331,7 +331,7 @@ which we cover in the
 [flexbox lesson](/learn/css/flexbox).
 
 {% Img
-src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/dR0S5JBCHrmv0DVSBlyX.png",
+src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/JNXSRH4j77loSB099E04.svg",
 alt="A diagram representation of a grid with gaps",
 width="800",
 height="434" %}
@@ -353,7 +353,7 @@ you should save these values as variables (or CSS custom properties)
 to tokenize those values and make the consistency a bit easier.
 
 {% Img
-src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/i5Sa2J5jdZWKA925TisY.png",
+src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/8eun6aGNHPTr4kyOrYkc.svg",
 alt="Consistent spacing between elements,
 using either 20px for a layout or 1em for flow content",
 width="800",
