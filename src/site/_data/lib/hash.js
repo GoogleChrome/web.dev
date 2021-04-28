@@ -23,6 +23,16 @@ function generateAndValidateHash(c) {
 }
 
 /**
+ * @param {string} str
+ * @return {string}
+ */
+function sha256base64(str) {
+  const c = crypto.createHash('sha256');
+  c.update(str);
+  return c.digest('base64');
+}
+
+/**
  * Hashes the passed files. Requires at least one.
  *
  * @param {string} file base file to hash
@@ -76,4 +86,5 @@ function hashForProd(file) {
 module.exports = {
   hashForProd,
   randomHash,
+  sha256base64,
 };

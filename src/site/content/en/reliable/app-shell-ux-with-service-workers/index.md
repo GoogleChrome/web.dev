@@ -19,7 +19,7 @@ tags:
   - service-worker
 ---
 
-{% YouTube 'fhqCwDP69PI', '438' %}
+{% YouTube id='fhqCwDP69PI', startTime='438' %}
 
 [Single-page app (SPA)](https://en.wikipedia.org/wiki/Single-page_application) is an architectural pattern in which the browser runs JavaScript code to update the existing page when the user visits a different section of the site, as opposed to loading an entire new page.
 

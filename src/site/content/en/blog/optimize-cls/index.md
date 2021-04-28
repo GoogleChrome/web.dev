@@ -15,7 +15,7 @@ tags:
   - web-vitals
 ---
 
-{% YouTube 'AQqFZ5t8uNc', '88' %}
+{% YouTube id='AQqFZ5t8uNc', startTime='88' %}
 
 "I was about to click that! Why did it move? 😭"
 
