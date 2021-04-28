@@ -155,8 +155,8 @@ const trackGenerator = new TrackGenerator();
 
 const transformer = new TransformStream({
   async transform(videoFrame, controller) {
-    const barcodes = detectBarcodes(videoFrame);
-    const newFrame = highlightBarcodes(videoFrame.data, barcodes);
+    const barcodes = await detectBarcodes(videoFrame);
+    const newFrame = highlightBarcodes(videoFrame, barcodes);
     videoFrame.close();
     controller.enqueue(newFrame);
   },
@@ -239,8 +239,9 @@ and let us know where and how you are using it.
 
 The insertable streams for `MediaStreamTrack` spec was written by
 [Harald Alvestrand](https://github.com/alvestrand) and [Guido Urdaneta](https://github.com/guidou).
-This article was reviewed by [Joe Medley](https://github/com/jpmedley),
-[Huib Kleinhout](https://github.com/huibk), and Harald Alvestrand. Hero image by
+This article was reviewed by Harald Alvestrand, [Joe Medley](https://github/com/jpmedley),
+[Huib Kleinhout](https://github.com/huibk), and
+[François Beaufort](https://github.com/beaufortfrancois). Hero image by
 [Chris Montgomery](https://unsplash.com/@cwmonty) on
 [Unsplash](https://unsplash.com/photos/smgTvepind4).
 
