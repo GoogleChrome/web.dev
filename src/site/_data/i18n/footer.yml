@@ -1,29 +1,39 @@
 file_a_bug:
   en: File a bug
+  pl: Zgłoś problem
 
 view_source:
   en: View source
+  pl: Zobacz źródło
 
 updates:
   en: Updates
+  pl: Nowości
 
 web_fundamentals:
   en: Web Fundamentals
+  pl: Web Fundamentals
 
 case_studies:
   en: Case studies
+  pl: Case studies
 
 podcasts:
   en: Podcasts
+  pl: Podkasty
 
 connect:
   en: Connect
+  pl: Kontakt
 
 all_products:
   en: All products
+  pl: Produkty
 
 terms_and_privacy:
   en: Terms & Privacy
+  pl: Polityka prywatności
 
 community_guidelines:
   en: Community Guidelines
+  pl: Wytyczne dla społeczności

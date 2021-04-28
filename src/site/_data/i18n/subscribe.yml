@@ -1,29 +1,39 @@
 subscribe:
   en: subscribe
+  pl: subskrybuj
 
 no_javascript:
   en: It seems like you have JavaScript disabled or it failed to load. After you submit the form, press the back button to return to the site.
+  pl: Wygląda na to, że masz wyłączony JavaScript lub nie udało się go załadować. Po przesłaniu formularza naciśnij przycisk Wstecz, aby wrócić do witryny.
 
 first_name:
   en: First Name
+  pl: Imię
 
 last_name:
   en: Last Name
+  pl: Nazwisko
 
 your_email:
   en: Your Email
+  pl: Twój email
 
 country:
   en: Country
+  pl: Kraj
 
 language:
   en: Language
+  pl: Język
 
 notice:
   en: Don't worry, no spam here! Your information will only be used for web.dev and Chrome related updates and our emails are typically no more than 1-2 times a month. You can unsubscribe anytime.
+  pl: Nie martw się, to nie spamu! Twoje dane będą wykorzystywane wyłącznie do wysyłania informacji związanych z web.dev i Chrome, a nasze e-maile są zazwyczaj przesyłane nie częściej niż 1-2 razy w miesiącu. Możesz zrezygnować z subskrypcji w dowolnym momencie.
 
 add_me:
   en: Add me to the web.dev mailing list.
+  pl: Dodaj mnie do listy mailingowej web.dev.
 
 i_accept_terms:
   en: I accept Google's <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms and Conditions</a> and acknowledge that my information will be used in accordance with Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.
+  pl: Akceptuję <a href="https://policies.google.com/terms" target="_blank" rel="noopener"> Warunki korzystania z usługi </a> Google i zgadzam się, by moje informacje były wykorzystywane zgodnie z <a href="https://policies.google.com/privacy" target="_blank" rel="noopener"> Polityką prywatności </a> Google.

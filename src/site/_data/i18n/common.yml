@@ -1,44 +1,59 @@
 note:
   en: Note
+  pl: Uwaga
 
 caution:
   en: Caution
+  pl: Uwaga
 
 warning:
   en: Warning
+  pl: Uwaga
 
 success:
   en: Success
+  pl: Sukces
 
 objective:
   en: Objective
+  pl: Cel
 
 try_it:
   en: Try it
+  pl: Spróbuj
 
 key_term:
   en: Key Term
+  pl: Słowo Kluczowe
 
 gotchas:
   en: Gotchas
+  pl: Uwaga
 
 do:
   en: Do
+  pl: Poprawnie
 
 dont:
   en: Don't
+  pl: Niepoprawnie
 
 close:
   en: Close
+  pl: Zamknij
 
 next:
   en: Next
+  pl: Następny
 
 prev:
   en: Prev # Short for "previous"
+  pl: Poprzedni
 
 updated:
   en: Updated
+  pl: Zaktualizowany
 
 share:
   en: Share
+  pl: Podziel się

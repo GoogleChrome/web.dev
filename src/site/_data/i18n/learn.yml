@@ -1,26 +1,35 @@
 header:
   en: "Explore our structured learning paths to discover everything you need to know about building for the modern web."
+  pl: "Poznaj nasze ścieżki szkoleniowe, aby odkryć wszystko, co musisz wiedzieć o budowaniu dla nowoczesnego Webu."
 
 resources:
   en: resources
+  pl: Zasoby
 
 course:
   en: Course
+  pl: Kurs
 
 courses:
   en: Courses
+  pl: Kursy
 
 performance:
   en: Performance
+  pl: Performance
 
 build_excellent:
   en: Build excellent websites
+  pl: Twórz doskonałe strony internetowe
 
 frameworks:
   en: Frameworks
+  pl: Frameworki
 
 lighthouse:
   en: Lighthouse
+  pl: Lighthouse
 
 explorations:
   en: Explorations
+  pl: Eksploracje
