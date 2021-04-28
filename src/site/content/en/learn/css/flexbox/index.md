@@ -44,13 +44,13 @@ which you will be able to explore in this guide.
 - They can display as a row, or a column.
 - They respect the writing mode of the document.
 - They are single line by default,
-but can be asked to wrap onto multiple lines.
+  but can be asked to wrap onto multiple lines.
 - Items in the layout can be visually reordered,
-away from their order in the DOM.
+  away from their order in the DOM.
 - Space can be distributed inside the items,
- so they become bigger and smaller according to the space available in their parent.
+  so they become bigger and smaller according to the space available in their parent.
 - Space can be distributed around the items and flex lines in a wrapped layout,
-using the Box Alignment properties.
+  using the Box Alignment properties.
 - The items themselves can be aligned on the cross axis.
 
 ## The main axis and the cross axis
@@ -62,7 +62,7 @@ if it is `column` your main axis is along the column.
 
 <figure class="w-figure">
 {% Img
-src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/byyEAja3E2bLRw1ffXdw.png",
+src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/xKtf0cHRw0xQyiyYuuyz.svg",
 alt="Three boxes next to each other with an arrow, pointing left to right. The arrow is labelled Main axis",
 width="800",
 height="320"
@@ -76,7 +76,7 @@ The cross axis runs in the other direction to the main axis,
 so if `flex-direction` is `row` the cross axis runs along the column.
 
 <figure class="w-figure">
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/9OWmrB5Epj4eTcFhGrrK.png", alt="Three boxes of different heights, next to each other with an arrow, pointing left to right. The arrow is labelled Main axis. There's another arrow pointing top to bottom. This one is labelled Cross axis", width="800", height="320" %}
+{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/5wCsZcBmK5L33LS7nOmP.svg", alt="Three boxes of different heights, next to each other with an arrow, pointing left to right. The arrow is labelled Main axis. There's another arrow pointing top to bottom. This one is labelled Cross axis", width="800", height="320" %}
 </figure>
 
 You can do two things on the cross axis.
@@ -157,7 +157,11 @@ and anyone navigating using the keyboard will follow.
 You can see in the following video how in a reversed column layout,
 tabbing between links becomes disconnected as the keyboard navigation follows the DOM not the visual display.
 
-{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/IgpaIRZd7kOq8sd46eaR.mp4" %}
+{% Video
+  src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/IgpaIRZd7kOq8sd46eaR.mp4",
+  autoplay=true,
+  controls=true
+%}
 
 Anything which can change the order of items in flexbox or grid can cause this problem.
 Therefore any reordering should include thorough testing to check that it will not make your site hard to use for some people.
@@ -203,7 +207,7 @@ The end of that axis is **main-end**.
 The start of the cross axis is **cross-start** and the end **cross-end**.
 
 {% Img
-src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/t3TTCe8ycheeWH1VTOv6.png",
+src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/uSH4TxRv8KNQDTK7Vn8h.svg",
 alt="A labelled diagram of the above terms",
 width="800",
 height="382" %}
@@ -351,8 +355,8 @@ If you wanted to cause an item to grow a little more than the algorithm decides 
 Items in your flex container can be reordered using the `order` property.
 This property allows the ordering of items in **ordinal groups**.
 Items are laid out in the direction dictated by `flex-direction`,
- lowest values first.
- If more than one item has the same value it will be displayed with the other items with that value.
+lowest values first.
+If more than one item has the same value it will be displayed with the other items with that value.
 
 The example below demonstrates this ordering.
 
