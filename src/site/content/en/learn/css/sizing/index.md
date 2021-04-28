@@ -296,8 +296,8 @@ such as the size of the text itself (`em` units) or width of the typefaces chara
   </table>
 </div>
 
-<figure class="w-figure>
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/z9JbwcKzHC7aeKWmEGo1.png", alt="The text, CSS is 10x great with labels for ascender height, descender height and x-height. The x-height represents 1ex and the 0 represents 1ch", width="800", height="203" %}
+<figure class="w-figure">
+{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ttaikDgwEC572lrGgWlG.svg", alt="The text, CSS is 10x great with labels for ascender height, descender height and x-height. The x-height represents 1ex and the 0 represents 1ch", width="800", height="203" %}
 </figure>
 
 #### Viewport-relative units
