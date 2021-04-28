@@ -21,7 +21,6 @@ such as strings and numbers.
 Color is one of these types and uses other types,
 such as numbers for its own definitions.
 
-
 ## Numeric colors
 
 It is very likely that your first exposure to colors in CSS is via numeric colors.
@@ -31,7 +30,7 @@ We can work with numerical color values in a few different forms.
 
 ```css
 h1 {
-	color: #b71540
+  color: #b71540;
 }
 ```
 
@@ -86,7 +85,6 @@ then add the second digit. Using **BF** as an example for 75% alpha:
 1. 176 + 15 = 191
 1. The alpha value is 191—75% of 255
 
-
 {% Aside %}
 You can also write hex codes in a three digit shorthand.
 A three digit hex code is a shortcut to an equivalent six digit sequence.
@@ -98,12 +96,12 @@ To add alpha, then `#a4e8` would expand to `#aa44ee88`.
 
 ```css
 h1 {
-	color: rgb(183, 21, 64)
+  color: rgb(183, 21, 64);
 }
 ```
 
 RGB colors are defined with the
-[`rgb()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/rgb()) color function,
+[`rgb()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/rgb()>) color function,
 using either numbers or percentages as parameters.
 The numbers need to be within the **0-255** range and the percentages are between **0% and 100%‌**.
 RGB works on the 0-255 scale,
@@ -116,9 +114,9 @@ White is the exact opposite: `rgb(255, 255, 255)` or `rgb(100%, 100%, 100%)`.
 
 An alpha is set in `rgb()` in one of two ways.
 Either add a `/` **after** the red, green and blue parameters,
-or use the [`rgba()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/rgba()) function.
+or use the [`rgba()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/rgba()>) function.
 The alpha can be defined with a percentage or a decimal between 0 and 1.
-For example, to set a 50% alpha black in modern browsers,  write: `rgb(0 0 0 / 50%)` or `rgb(0 0 0 / 0.5)`.
+For example, to set a 50% alpha black in modern browsers, write: `rgb(0 0 0 / 50%)` or `rgb(0 0 0 / 0.5)`.
 For wider support, using the `rgba()` function,
 write: `rgba(0, 0, 0, 50%)` or `rgba(0, 0, 0, 0.5)`.
 
@@ -142,7 +140,7 @@ you can still use commas to define `rgb()` and `hsl()`.
 
 ```css
 h1 {
-	color: hsl(344, 79%, 40%)
+  color: hsl(344, 79%, 40%);
 }
 ```
 
@@ -151,21 +149,21 @@ Hue describes the value on the color wheel, from 0 to 360 degrees, starting with
 A hue of 180, or 50% would be in the blue range.
 It's the origin of the color that we see.
 
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/FvSbrk1NRzpjWAW90Mwk.jpg", alt="A color wheel with labels for degree values in 60 degree increments to help visuals what each angle value represents", width="800", height="507" %}
+{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ob7MTste1Obu9AoLvbKq.svg", alt="A color wheel with labels for degree values in 60 degree increments to help visuals what each angle value represents", width="800", height="507" %}
 
 Saturation is how vibrant the selected hue is.
 A fully desaturated color (with a saturation of `0%`) will appear grayscale.
 And finally, lightness is the parameter which describes the scale from white to black of added light.
 A lightness of `100%` will always give you white.
 
-Using the [`hsl()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl()) color function,
+Using the [`hsl()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl()>) color function,
 you define a true black by writing `hsl(0 0% 0%)`, or even `hsl(0deg 0% 0%)`.
 This is because the hue parameter defines the degree on the color wheel,
 which if you use the number type, is **0-360**.
 You can also use the angle type, which is (`0deg`) or `(0turn)`.
 Both saturation and lightness are defined with percentages.
 
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/jXKJgvvjfOZduxOxgD26.jpg", alt="The HSL color function broken down visually. The hue uses the color wheel. The saturation shows grey blending into teal. The lightness shows black into white.", width="800", height="478" %}
+{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/RhVxWSZ6bH35eBdN6Prj.svg", alt="The HSL color function broken down visually. The hue uses the color wheel. The saturation shows grey blending into teal. The lightness shows black into white.", width="800", height="478" %}
 
 {% Aside %}
 [The angle type](https://developer.mozilla.org/en-US/docs/Web/CSS/angle)
@@ -181,16 +179,16 @@ This type accepts degrees, turns, radians and gradians.
 </figure>
 
 Alpha is defined in `hsl()`,
-in the same way as `rgb()` by adding a `/` after the hue, saturation and lightness parameters *or* by using the
-[`hsla()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsla()) function.
+in the same way as `rgb()` by adding a `/` after the hue, saturation and lightness parameters _or_ by using the
+[`hsla()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsla()>) function.
 The alpha can be defined with a percentage or a decimal between 0 and 1.
 For example, to set a 50% alpha black, use: `hsl(0 0% 0% / 50%)` or `hsl(0 0% 0% / 0.5)`.
 Using the `hsla()` function, write: `hsla(0, 0%, 0%, 50%)` or `hsla(0, 0%, 0%, 0.5)`.
 
 {% Aside %}
 There are some newer color types coming to CSS.
-These include [lab()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/lab())
-and [lch()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/lab()),
+These include [lab()](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/lab()>)
+and [lch()](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/lab()>),
 which allow a far wider range of color to be specified than is possible in RGB.
 {% endAside %}
 
@@ -213,11 +211,11 @@ Our favorites include goldenrod, aliceblue, and hotpink.
 Aside from standard colors, there are also special keywords available:
 
 - `transparent` is a fully transparent color.
-It is also the initial value of `background-color`
+  It is also the initial value of `background-color`
 - `currentColor` is the contextual computed dynamic value of the `color` property.
-If you have a text color of `red` and then set the `border-color` to be `currentColor`, it will also be red.
-If the element that you define `currentColor` on doesn't have a value for `color` defined,
-`currentColor` will be computed by the cascade instead
+  If you have a text color of `red` and then set the `border-color` to be `currentColor`, it will also be red.
+  If the element that you define `currentColor` on doesn't have a value for `color` defined,
+  `currentColor` will be computed by the cascade instead
 
 {% Aside %}
 System keywords are colors that are defined by your operating system theme.
