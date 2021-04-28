@@ -18,9 +18,7 @@ The browser's algorithms for converting HTML, CSS, and JavaScript into pixels ar
 as the _rendering pipeline_.
 
 <figure class="w-figure">
-  <img src="rendering-pipeline.jpg" 
-       alt="The rendering pipeline consists of the following sequential steps: 
-            JavaScript, Style, Layout, Paint, Composite.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/68xt0KeUvOpB8kA1OH0a.jpg", alt="The rendering pipeline consists of the following sequential steps: JavaScript, Style, Layout, Paint, Composite.", width="800", height="122" %}
   <figcaption class="w-figcaption">The rendering pipeline.</figcaption>
 </figure>
 
