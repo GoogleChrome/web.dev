@@ -43,8 +43,7 @@ When visiting the Google Search web app and going offline, instead of showing th
 The page also prompts the user to opt-in for notifications, to receive a link to the search results page once the connection is recovered.
 
 <figure class="w-figure">
-  <img src="search-offline-screen.png"
-       alt="A screenshot of the background retry interface in Google Search.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TqDtqgbKOsxRFnr2lNSy.png", alt="A screenshot of the background retry interface in Google Search.", width="257", height="475" %}
 </figure>
 
 When the user performs a search, the service worker allows the query to be deferred and sent to Google's servers as soon as the device goes back online by using the [Background Sync API](https://developers.google.com/web/updates/2015/12/background-sync), and to inform the user of the result by using the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API).

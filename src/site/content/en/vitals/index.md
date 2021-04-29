@@ -49,12 +49,9 @@ experience—_loading_, _interactivity_, and _visual stability_—and includes t
 following metrics (and their respective thresholds):
 
 <div class="w-stack w-stack--center w-stack--md">
-  <img src="lcp_ux.svg" width="400px" height="350px"
-       alt="Largest Contentful Paint threshold recommendations">
-  <img src="fid_ux.svg" width="400px" height="350px"
-       alt="First Input Delay threshold recommendations">
-  <img src="cls_ux.svg" width="400px" height="350px"
-       alt="Cumulative Layout Shift threshold recommendations">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Largest Contentful Paint threshold recommendations", width="400", height="350" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="First Input Delay threshold recommendations", width="400", height="350" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Cumulative Layout Shift threshold recommendations", width="400", height="350" %}
 </div>
 
 - **[Largest Contentful Paint (LCP)](/lcp/)**: measures _loading_ performance.
