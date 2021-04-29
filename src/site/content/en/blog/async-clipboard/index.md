@@ -384,7 +384,7 @@ The first example demonstrates moving text on and off the clipboard.
 
 To try the API with images use this demo. Recall that only PNGs are supported
 and only in
-[a few browsers](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API).
+[a few browsers](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API#browser_compatibility).
 
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe
