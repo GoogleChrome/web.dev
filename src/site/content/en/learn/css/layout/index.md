@@ -37,6 +37,13 @@ CSS has evolved as our needs for web design and browser technology have evolved.
 You can read how CSS layout and our approach to layout has evolved over time in
 [this article by Rachel Andrew](https://24ways.org/2019/a-history-of-css-through-15-years-of-24-ways/).
 
+{% Img
+  src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/1Ab4fuHoi8hqQf1Ejd3E.svg",
+  alt="A timeline showing how CSS has evolved over the years, starting in 1996 up to 2021",
+  width="760",
+  height="270"
+%}
+
 ## Layout: the present and future
 
 Modern CSS has exceptionally powerful layout tooling.
