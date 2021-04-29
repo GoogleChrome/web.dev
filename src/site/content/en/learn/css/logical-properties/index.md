@@ -315,7 +315,7 @@ p svg {
 Now, regardless of reading direction,
 the icon will position itself and space itself appropriately.
 
-@@TODO Self Assessment
+{% Assessment 'logical-props' %}
 
 ## Browser support
 
