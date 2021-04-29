@@ -7,12 +7,12 @@ description: |
 ---
 
 <style>
-  img.icon {
+  .icon {
     max-width: 32px;
     vertical-align: middle;
   }
 
-  img.icon.bordered {
+  .icon.bordered {
     border: 1px solid #949494;
     border-radius: 5px;
   }

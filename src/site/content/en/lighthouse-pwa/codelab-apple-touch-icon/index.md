@@ -55,7 +55,7 @@ the example app to your iOS device's home screen when an Apple touch icon hasn't
 1. Open Safari for iOS.
 1. Open the URL of your example app. This is the URL like `https://example.glitch.me` that you
    noted earlier.
-1. Tap **Share** {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/79A8XsdBaHeLGY5Wdm1J.png", alt="Apple Share Button", width="15", height="20", style="vertical-align:top;" %}  >
+1. Tap **Share** {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/79A8XsdBaHeLGY5Wdm1J.png", alt="Apple Share Button", width="46", height="60", style="height:1.2em;width:0.92em;vertical-align:top;" %}  >
    **Add to Home Screen**. You'll probably have to swipe left to see this option.
 1. Tap **Add**.
 
