@@ -226,9 +226,7 @@ To see how the size and number of resources changed, open the DevTools **Network
 
 Now scroll down the page and keep an eye on the **Network** panel. When you get to the video, you should see the page trigger additional requests.
 
-<video autoplay="" loop="" muted="" playsinline="">
-    <source src="./lazy-load-3g.mp4" type="video/mp4">
-  </video>
+{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bJHFfNjxvIthfRWeidbx.mp4", autoplay=true, loop=true, muted=true, playsinline=true %}
 
 {% Aside %}
 In this example, the element is loaded when it enters the viewport, which you can see happening in the video above. You can avoid that delay and create a smoother user experience by loading elements a little before they enter the viewport. To do that, use the [`rootMargin`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Creating_an_intersection_observer) property to define margins around the target element, which effectively grows (or shrinks) the area that triggers the `isIntersecting` change.

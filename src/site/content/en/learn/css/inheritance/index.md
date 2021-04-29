@@ -331,7 +331,7 @@ aside p {
 } %}
 </figure>
 
-@@TODO Add self-assessment
+{% Assessment 'conclusion' %}
 
 ## Resources
 

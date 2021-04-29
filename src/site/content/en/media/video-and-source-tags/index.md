@@ -194,14 +194,12 @@ controls.
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img src="./chrome-android-portrait-video-unstyled.png" alt="Android Chrome screenshot, portrait: unstyled video element overflows
-    viewport.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cDl2OfCE3hQivhaNvMUh.png", alt="Android Chrome screenshot, portrait: unstyled video element overflows viewport.", width="338", height="600" %}
     <figcaption class="w-figcaption">Android Chrome screenshot, portrait: unstyled video element overflows
     viewport.</figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="./chrome-android-landscape-video-unstyled.png" alt="Android Chrome screenshot, landscape: unstyled video element overflows
-    viewport.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt="Android Chrome screenshot, landscape: unstyled video element overflows viewport.", width="800", height="450" %}
     <figcaption class="w-figcaption">Android Chrome screenshot, landscape: unstyled video element overflows
     viewport.</figcaption>
   </figure>

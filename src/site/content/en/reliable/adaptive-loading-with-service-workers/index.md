@@ -38,8 +38,7 @@ The adaptive loading pattern is made possible by [service workers](/service-work
 To provide a more reliable experience to all their users, Terra combines service workers and the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) to deliver lower quality images to users on 2G or 3G connections.
 
 <figure class="w-figure">
-  <img src="terra-adaptive-images.png"
-       alt="A screenshot of Terra's home page connected to different image qualities according to the connection type.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EQst12doZ2b8CLO0MtO5.png", alt="A screenshot of Terra's home page connected to different image qualities according to the connection type.", width="734", height="381" %}
 </figure>
 
 The company also found that the scripts and assets (like banners) loaded by ad networks were especially detrimental to users navigating in 3G or slower connections.
@@ -51,8 +50,7 @@ Taking that into consideration, Terra decided to start serving AMP versions of t
 To achieve that, they use the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) in the service worker to detect if the request comes from 3G or slower. If that's the case, they change the URL of the page to request the AMP version of the page instead.
 
 <figure class="w-figure">
-  <img src="terra-adaptive-amp.png"
-       alt="A screenshot of Terra's article page connected to different image qualities according to the connection type.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4kfDfkeIzxVXLoaTylug.png", alt="A screenshot of Terra's article page connected to different image qualities according to the connection type.", width="741", height="379" %}
 </figure>
 
 Thanks to this technique, they send **70% less bytes** to users on slower connections. The **time spent** in AMP pages is higher for 3G users and ads in AMP pages have a better **CTR (click-through-rate)** for that group.
@@ -141,8 +139,7 @@ Finally the response will be persisted in the cache, and sent back to the page.
 Cloudinary, a video and image hosting service, has a [Workbox Plugin](https://www.npmjs.com/package/cloudinary-workbox-plugin) that encapsulates the functionality explained in the previous section, making it even easier to implement.
 
 <figure class="w-figure">
-  <img src="cloudinary-workbox.png"
-       alt="Cloudinary and Workbox logos.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iY2R0e4PvimaoVORo8Go.png", alt="Cloudinary and Workbox logos.", width="637", height="269" %}
 </figure>
 
 The plugin is designed to work with the [Workbox webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin). To implement it, use the [`GenerateSW()`](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-webpack-plugin.GenerateSW) class:
