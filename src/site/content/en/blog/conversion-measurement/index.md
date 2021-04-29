@@ -181,7 +181,7 @@ the Privacy Community Group ([PrivacyCG](https://www.w3.org/community/privacycg/
 ## Example
 
 {% Banner 'info', 'body' %} To see this in action, try out the
-[demo](http://goo.gle/demo-attribution-reporting) ⚡️ and see the corresponding
+[demo](https://goo.gle/demo-attribution-reporting) ⚡️ and see the corresponding
 [code](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement). {%
 endBanner %}
 
