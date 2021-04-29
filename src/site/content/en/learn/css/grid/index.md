@@ -20,7 +20,8 @@ there have been many methods to solve this layout,
 but with CSS grid,
 not only is it relatively straightforward,
 but you have lots of options.
-Grid is exceptionally useful at combining the control that extrinsic sizing provides with the flexibility of intrinsic sizing,
+Grid is exceptionally useful at combining the control
+that extrinsic sizing provides with the flexibility of intrinsic sizing,
 which makes it ideal for this sort of layout.
 This is because grid is a layout method designed for two-dimensional content.
 That is, laying things out in rows and columns at the same time.
@@ -126,6 +127,7 @@ and therefore creates a new grid formatting context for the direct children.
   display: grid;
 }
 ```
+
 ### Grid item
 
 A grid item is an item which is a direct child of the grid container.
@@ -173,7 +175,8 @@ The Chrome Grid dev tools can help you to understand the various parts of the gr
 Open the [demo](https://codepen.io/web-dot-dev/full/NWdbrzr) in Chrome.
 Inspect the element with the grey background, which has an ID of `container`.
 Highlight the grid by selecting the grid badge in the DOM, next to the `.container` element.
-Inside the Layout tab, select **Display Line Numbers** in the dropdown to see the line numbers on your grid.
+Inside the Layout tab,
+select **Display Line Numbers** in the dropdown to see the line numbers on your grid.
 
 <figure class="w-figure">
 {% Img
@@ -191,7 +194,8 @@ A grid highlighted in Chrome DevTools showing line numbers, cells and tracks.
 In addition to the length and percentage dimensions as described in the section on
 [sizing units](/learn/css/sizing),
 grid tracks can use intrinsic sizing keywords.
-These keywords are defined in the Box Sizing specification and add additional methods of sizing boxes in CSS,
+These keywords are defined in the Box Sizing specification
+and add additional methods of sizing boxes in CSS,
 not just grid tracks.
 
 - `min-content`
@@ -269,7 +273,8 @@ it could be written out using
 [`minmax()`](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax()) as `minmax(auto, 1fr)`.
 Grid looks at the intrinsic size of the content,
 then distributes available space after giving the content enough room.
-This means that you might not get tracks that each have an equal share of all space available in the grid container.
+This means that you might not get tracks that each have an equal share
+of all space available in the grid container.
 
 To force a track to take an equal share of the space in the grid container minus gaps use minmax.
 Replace `1fr` as a track size with `minmax(0, 1fr)`.
@@ -351,7 +356,7 @@ This creates a two-dimensional responsive layout with no need for any media quer
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'OJWbRax’'
+  id: 'OJWbRax'
 } %}
 
 There is a subtle difference between `auto-fill` and `auto-fit`.
@@ -381,7 +386,8 @@ The first is to tweak the auto-placement layout.
 
 The default behavior of grid layout is to place items along the rows.
 You can instead cause the items to place into columns using `grid-auto-flow: column`.
-You need to define row tracks if you do not want the items to create intrinsic column tracks and layout out all in one long row.
+You need to define row tracks otherwise the items will create intrinsic column tracks,
+and layout out all in one long row.
 
 These values relate to the writing mode of the document.
 A row always runs in the direction a sentence runs in the writing mode of the document or component.
@@ -415,8 +421,10 @@ You can also specify the same thing using the shorthand `grid-column`:
 
 ### Filling gaps
 
-An auto-placed layout with some items spanning multiple tracks may result in a grid with some unfilled cells.
-The default behavior of grid layout with a fully auto-placed layout is to always progress forward.
+An auto-placed layout with some items spanning multiple tracks
+may result in a grid with some unfilled cells.
+The default behavior of grid layout with a fully auto-placed layout
+is to always progress forward.
 The items will be placed according to the order they are in the source,
 or any modification with the `order` property.
 If there is not enough space to fit an item,
@@ -475,7 +483,9 @@ To place your item set the start and end lines of the grid area that it should b
 
 Chrome DevTools can give you a visual guide to the lines in order to check where your item is placed.
 
-The line numbering follows the writing mode and direction of the component. In the next demo change the writing mode or direction to see how the placement of the items stays consistent to the way that text flows.
+The line numbering follows the writing mode and direction of the component.
+In the next demo change the writing mode or direction
+to see how the placement of the items stays consistent to the way that text flows.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -518,7 +528,8 @@ In that case you can use `grid-column: 1 / -1`.
 The item will stretch right across the explicit grid.
 
 This only works for the explicit grid however.
-Take a layout of three rows of auto-placed items where you would like the very first item to span to the end line of the grid.
+Take a layout of three rows of auto-placed items
+where you would like the very first item to span to the end line of the grid.
 
 {%
 Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/Dt8yG376MqSyWJJ8KqPr.svg",
@@ -584,11 +595,13 @@ Once you have named lines they can be used instead of the numbers.
 }
 
 .sidebar {
-    grid-column: aside-start / aside-end; /* placed between line 1 and 2*/
+    grid-column: aside-start / aside-end;
+    /* placed between line 1 and 2*/
 }
 
 footer {
-    grid-column: main-start / main-end; /* right across the layout from line 1 to line 3*/
+    grid-column: main-start / main-end;
+    /* right across the layout from line 1 to line 3*/
 }
 ```
 
@@ -765,7 +778,9 @@ Items with a background color appear to completely fill the grid area they are p
 because the initial value for `justify-self` and `align-self` is `stretch`.
 
 {% Aside %}
-If your item is an image or something else with an intrinsic aspect ratio the initial value will be `start` rather than `stretch` to avoid stretching things out of shape.
+If your item is an image,
+or something else with an intrinsic aspect ratio,
+the initial value will be `start` rather than `stretch` to avoid stretching things out of shape.
 {% endAside %}
 
 In the demo change the values of `justify-items` and `align-items` to see how this changes the layout.
