@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "scripts": {
     "algolia": "node algolia.js",
-    "build:test": "npm-run-all clean gulp:sass gulp:content gulp:misc rollup eleventy",
+    "build:test": "npm-run-all clean gulp:sass gulp:misc rollup eleventy",
     "build": "npm-run-all clean gulp rollup eleventy gulp:default-locale firebase-config",
     "clean": "rimraf dist",
     "cloud-secrets": "node ./cloud-secrets.js",
@@ -19,7 +19,6 @@
     "dev": "npm-run-all clean rollup gulp eleventy --parallel watch:rollup watch:eleventy watch:gulp firebase-config start",
     "eleventy": "eleventy --quiet",
     "firebase-config": "node firebase-config.js",
-    "gulp:content": "npx gulp copy-content-assets",
     "gulp:default-locale": "npx gulp default-locale",
     "gulp:misc": "npx gulp copy-misc",
     "gulp:sass": "npx gulp sass",
