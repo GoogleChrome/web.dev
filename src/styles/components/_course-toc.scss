@@ -26,6 +26,7 @@
     // desktop + the top margin of the content element.
     top: calc(var(--app-bar-height) + var(--course-content-margin));
     width: 240px;
+    max-height: calc(100vh - var(--app-bar-height) - (var(--course-content-margin) * 2));
   }
 
   > summary {
