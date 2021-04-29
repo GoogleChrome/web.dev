@@ -211,9 +211,6 @@ on-screen may not be reported. It also means elements initially rendered in the
 viewport that then get pushed down, out of view will still report their
 initial, in-viewport size.
 
-However, (as mentioned above) an element will be removed from consideration if
-it's removed from the DOM or if its associated image resource changes.
-
 ### Examples
 
 Here are some examples of when the Largest Contentful Paint occurs on a few
