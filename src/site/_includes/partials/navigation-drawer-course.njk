@@ -19,15 +19,15 @@
         <div class="input"></div>
       </div>
 
-      <web-drawer-course current="{{ page.url }}">
+      <course-links class="drawer-course__links scrollbar" current="{{ page.url }}">
         {% for item in pageNavigation %}
-        <a class="drawer-course__link" href="{{ item.url }}">
-          <span class="drawer-course__link-counter font-mono">{{ loop.index0 | padStart(3, '0') }}</span>
-          <span class="drawer-course__link-title gap-left-400">{{ item.page.data.title }}</span>
-          {{ icon('done', 'drawer-course__link-check gap-left-auto') }}
-        </a>
+          <a class="drawer-course__link" href="{{ item.url }}" {% if item.url == page.url %}data-active{% endif %}>
+            <span class="drawer-course__link-counter font-mono">{{ loop.index0 | padStart(3, '0') }}</span>
+            <span class="drawer-course__link-title gap-left-400">{{ item.page.data.title }}</span>
+            {{ icon('done', 'drawer-course__link-check gap-left-auto') }}
+          </a>
         {% endfor %}
-      </web-drawer-course>
+      </course-links>
     </div>
 
   </nav>
