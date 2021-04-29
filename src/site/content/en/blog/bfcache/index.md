@@ -511,8 +511,8 @@ the navigation was fast!
 
 Tools like the [Chrome User Experience
 Report](https://developers.google.com/web/tools/chrome-user-experience-report),
-that collect and report on the Core Web Vitals metrics will soon be updated to
-treat bfcache restores as separate page visits in the dataset.
+that collect and report on the Core Web Vitals metrics treat bfcache restores as
+separate page visits in their dataset.
 
 And while there aren't (yet) dedicated web performance APIs for measuring these
 metrics after bfcache restores, their values can be approximated using existing
