@@ -77,7 +77,7 @@ shift scores](#layout-shift-score) are calculated.)
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
 </picture>
 
 ### What is a good CLS score?

@@ -55,7 +55,7 @@ loading](https://w3c.github.io/hr-time/#timeorigin-attribute).
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
 </picture>
 
 ### What is a good LCP score?
