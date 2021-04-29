@@ -52,7 +52,7 @@ HTML:
 </script>
 ```
 
-To avoid being bypassed, a CSP should allow scripts individually using nonces or hashes and use 'strict-dynamic' instead of an allowlist.
+To avoid being bypassed, a CSP should allow scripts individually using nonces or hashes and use `'strict-dynamic'` instead of an allowlist.
 
 ### Recommendations
 
@@ -76,15 +76,15 @@ However, you should define a CSP in an HTTP response header if you can. An injec
 
 #### Ensure CSP is backwards compatible
 
-Not all browsers support CSP nonces/hashes, therefore adding `unsafe-inline` as a fallback for non-compliant browsers is recommended. If the browser does support nonces/hashes, `unsafe-inline` will be ignored.
+Not all browsers support CSP nonces/hashes, therefore adding `'unsafe-inline'` as a fallback for non-compliant browsers is recommended. If the browser does support nonces/hashes, `'unsafe-inline'` will be ignored.
 
-Similarly, `strict-dynamic` is not supported by all browsers. It is recommended to set an allowlist as a fallback for any non-compliant browsers. The allowlist will be ignored in browsers that support `strict-dynamic`.
+Similarly, `'strict-dynamic'` is not supported by all browsers. It is recommended to set an allowlist as a fallback for any non-compliant browsers. The allowlist will be ignored in browsers that support `'strict-dynamic'`.
 
 ## How to develop a strict CSP
 
 Define a CSP in an HTTP response header named `Content-Security-Policy`. Make sure your CSP uses `script-src`, `object-src`, and `base-uri` (`default-src` will also work for `script-src` and `object-src`).
 
-Use CSP nonces or hashes in combination with `strict-dynamic` to secure the page from allowlist bypasses. Below is an example of using a hardened CSP with a nonce-based policy.
+Use CSP nonces or hashes in combination with `'strict-dynamic'` to secure the page from allowlist bypasses. Below is an example of using a hardened CSP with a nonce-based policy.
 
 CSP:
 
@@ -101,7 +101,7 @@ HTML:
 <script nonce="random123" src="https://trusted.example.com/trusted_script.js"></script>
 ```
 
-`random123` would be any base64 string generated every time the page loads. `unsafe-inline` and `https:` are ignored in modern browsers because of the nonce and `strict-dynamic`. For more information about adopting a strict CSP, check out the [Strict CSP guide](https://web.dev/strict-csp/#adopting-a-strict-csp).
+`random123` would be any base64 string generated every time the page loads. `'unsafe-inline'` and `https:` are ignored in modern browsers because of the nonce and `'strict-dynamic'`. For more information about adopting a strict CSP, check out the [Strict CSP guide](https://web.dev/strict-csp/#adopting-a-strict-csp).
 
 ### Testing a CSP
 
