@@ -299,7 +299,7 @@ To force all of the items to be a consistent size and ignore the size of the con
 This unpacks to:
 
 - `flex-grow: 1`: items can grow larger than their `flex-basis`.
-- `flex-shrink: 0`: items can shrink smaller than their `flex-basis`.
+- `flex-shrink: 0`: items can't shrink smaller than their `flex-basis`.
 - `flex-basis: 0`: items have a base size of `0`
 
 Using `flex: 1` says that all items have zero size,
