@@ -507,7 +507,8 @@ You can change this stacking order using `z-index` just as with positioned items
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'BapQWQW'
+  id: 'BapQWQW',
+  height: 600
 } %}
 
 ### Negative line numbers
