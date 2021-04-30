@@ -8,7 +8,7 @@ authors:
 date: 2021-04-30
 ---
 
-In the box model lesson,
+In the [box model](/learn/css/box-model) module,
 we considered a frame analogy to describe each section of the box model.
 
 {% Img
