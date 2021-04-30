@@ -262,7 +262,8 @@ In the demo below change the value of the third track.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'vYgyXNE'
+  id: 'vYgyXNE',
+  height: 600
 } %}
 
 ### The `minmax()` function
