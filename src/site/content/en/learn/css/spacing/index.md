@@ -307,7 +307,7 @@ will only apply the directional values when it is in its docked/stuck state.
 } %}
 
 In the [logical properties](/learn/css/logical-properties) module,
-you learned about the `inset` property,
+you learn about the `inset` property,
 which allows you to set directional values that honor writing mode.
 
 The `inset` order of properties is the same as TRouBLe with `margin` and `padding`
