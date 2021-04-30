@@ -167,13 +167,13 @@ const saveFile = async (blob) => {
 ## Introducing browser-fs-access
 
 As perfectly fine as the File System Access API is,
-it's [not yet  widely available](https://caniuse.com/#feat=file-system-access-api).
+it's [not yet  widely available](https://caniuse.com/native-filesystem-api).
 
 <figure class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/G1jsSjCBR871W1uKQWeN.png", alt="Browser support table for the File System Access API. All browsers are marked as 'no support' or 'behind a flag'.", width="800", height="224", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Browser support table for the File System Access API.
-    (<a href="https://caniuse.com/?search=file%20system%20access%20api">Source</a>)
+    (<a href="https://caniuse.com/native-filesystem-api">Source</a>)
   </figcaption>
 </figure>
 

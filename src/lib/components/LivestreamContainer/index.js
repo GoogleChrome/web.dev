@@ -29,15 +29,11 @@ class LivestreamContainer extends BaseStateElement {
     /* eslint-disable indent */
     return html`
       <div class="web-livestream-container__col-yt">
-        <div class="w-youtube">
-          <iframe
-            title="web.dev YouTube livestream"
-            class="w-youtube__embed"
-            src="https://www.youtube.com/embed/${this.videoId}"
-            frameborder="0"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
+        <div class="youtube">
+          <lite-youtube
+            videoid="${this.videoId}"
+            videotitle="web.dev YouTube livestream"
+          ></lite-youtube>
         </div>
       </div>
 
@@ -59,7 +55,7 @@ class LivestreamContainer extends BaseStateElement {
                   ask your questions in the comments on the video.
                 </div>
                 <a
-                  class="w-youtube-disabled-chat__link" 
+                  class="w-youtube-disabled-chat__link"
                   href="https://www.youtube.com/watch?v=${this.videoId}">
                   Go to YouTube
                 </a>

@@ -156,9 +156,7 @@ be made to launch full screen.
           app. The app runs in its own window, separate from the browser, and
           hides standard browser UI elements like the URL bar.
           <figure class="w-figure">
-            <img class="w-screenshot"
-                src="standalone-pwa-window.png"
-                alt="An example of a PWA window with standalone display.">
+            {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/XdBsDeRZozIyXyiXA59n.png", alt="An example of a PWA window with standalone display.", width="800", height="196", class="w-screenshot" %}
           </figure>
         </td>
       </tr>
@@ -169,9 +167,7 @@ be made to launch full screen.
           user a minimal set of UI elements for controlling navigation (such
           as back and reload).
           <figure class="w-figure">
-            <img class="w-screenshot"
-                src="minimal-ui-pwa-window.png"
-                alt="An example of a PWA window with minimal-ui display.">
+            {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/trPwjcMio7tBKGBNoT9u.png", alt="An example of a PWA window with minimal-ui display.", width="800", height="196", class="w-screenshot" %}
           </figure>
         </td>
       </tr>
@@ -255,9 +251,7 @@ the app's preview in task switchers. The `theme_color` should match the
 `meta` theme color specified in your document head.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-      src="theme_color-pwa-window.png"
-      alt="An example of a PWA window with custom theme_color.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8mkBdT3O0FZLo0PUppvv.png", alt="An example of a PWA window with custom theme_color.", width="800", height="196", class="w-screenshot" %}
 </figure>
 
 #### `shortcuts` {: #shortcuts }
@@ -312,9 +306,7 @@ To verify your manifest is setup correctly, use the **Manifest** pane in the
 **Application** panel of Chrome DevTools.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled"
-       src="lh-manifest.png"
-       alt="The application panel in Chrome Devtools with the manifest tab selected.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FpIOY0Ak6FAA5xMuB9IT.png", alt="The application panel in Chrome Devtools with the manifest tab selected.", width="800", height="601", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 This pane provides a human-readable version of many of your manifest's

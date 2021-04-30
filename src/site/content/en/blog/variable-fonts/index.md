@@ -267,7 +267,8 @@ You can view the working example and source code for the above sample
   controls=false,
   autoplay=true,
   loop=true,
-  muted=true
+  muted=true,
+  playsinline=true
   %}
   <figcaption class="w-figcaption">
     Typeface Zycon, designed for animation by David Berlow, type designer and

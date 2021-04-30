@@ -199,7 +199,7 @@ The **order of specificity of these origins**, from least specific, to most spec
    provided by the browser.
 
 <figure class="w-figure">
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/rjZMVAC5lNATzCErbyeI.png",
+{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/zPdaZ6G11oYrgJ78EfF7.svg",
 alt="A visual demonstration of the order of origins as also explained in the list.", width="800", height="347" %}
 </figure>
 

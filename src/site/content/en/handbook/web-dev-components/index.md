@@ -1313,4 +1313,4 @@ by adding a `left` or `right` argument to the shortcode:
 </button>
 
 ## Video / YouTube {: #video }
-See the [Images and video](/handbook/markup-media#video) post.
+See the [Images and video](/handbook/markup-media) post.

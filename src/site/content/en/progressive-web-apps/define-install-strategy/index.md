@@ -53,7 +53,7 @@ In this section we'll explore different ways of maximizing the installation rate
 Once a PWA meets the [installability criteria](/install-criteria/), most browsers will show an indication that the PWA is installable. For example, Desktop Chrome will show an installable icon in the address bar, and on mobile, it will show a mini-infobar:
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="a2hs-infobar.png" alt="Standard Chrome install prompt called mini-infobar">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1VOvbQjeenZOBAmzjVN5.png", alt="Standard Chrome install prompt called mini-infobar", width="800", height="417" %}
   <figcaption class="w-figcaption">
     The mini-infobar
   </figcaption>

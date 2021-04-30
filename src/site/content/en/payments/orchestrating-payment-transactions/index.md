@@ -21,8 +21,7 @@ orchestrate a payment transaction from a service worker during runtime (i.e.
 when a window is displayed and the user is interacting with it).
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./diagram.png"
-       alt="Orchestrating payment transactions with a service worker">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/b0Pz24lmWMepSM6tboa1.png", alt="Orchestrating payment transactions with a service worker", width="800", height="945", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Orchestrating payment transactions with a service worker
   </figcaption>
