@@ -253,7 +253,8 @@ helping them understand they can safely move to the next field.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWdMpaL'
+  id: 'QWdMpaL',
+  height: 250
 } %}
 
 The `:in-range` pseudo-class is available if an input has a `min` and `max`,
