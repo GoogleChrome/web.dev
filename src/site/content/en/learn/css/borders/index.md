@@ -228,7 +228,7 @@ You can define both properties, per corner like this:
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'abpyqeM'
+  id: 'WNRqoPM'
 } %}
 
 This adds a `border-top-left-top` value of `1em`,
