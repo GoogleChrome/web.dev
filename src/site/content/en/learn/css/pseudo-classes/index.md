@@ -262,7 +262,8 @@ such as a numeric input *and* the value is within those bounds.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'qBRXrpP'
+  id: 'qBRXrpP',
+  height: 250
 } %}
 
 With HTML forms,
