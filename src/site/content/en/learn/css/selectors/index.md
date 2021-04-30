@@ -43,8 +43,8 @@ it's important to know the parts of a CSS rule.
 A CSS rule is a block of code,
 containing one or more selectors and one or more declarations.
 
-<figure class="w-figure>
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/Vh2pt6e50XaObt1lEjEv.png", alt="An image of a CSS rule with the selector .my-css-rule", width="800", height="427" %}
+<figure class="w-figure">
+{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/hFR4OOwyH5zWc5XUIcyu.svg", alt="An image of a CSS rule with the selector .my-css-rule", width="800", height="427" %}
 </figure>
 
 In this CSS rule, the **selector** is `.my-css-rule`

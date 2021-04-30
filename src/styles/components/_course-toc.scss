@@ -26,12 +26,19 @@
     // desktop + the top margin of the content element.
     top: calc(var(--app-bar-height) + var(--course-content-margin));
     width: 240px;
+    max-height: calc(100vh - var(--app-bar-height) - (var(--course-content-margin) * 2));
   }
 
   > summary {
+    list-style: none;
     transition: background-color $TRANSITION_SPEED;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: 3px;
+    padding-left: 4px;
 
-    &::marker {
+    &::marker,
+    &::-webkit-details-marker {
       display: none;
     }
   }

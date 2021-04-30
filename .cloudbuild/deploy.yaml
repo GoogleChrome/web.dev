@@ -17,6 +17,7 @@ steps:
     env:
     - 'BUILD_ID=$BUILD_ID'
     - 'PROJECT_ID=$PROJECT_ID'
+    - 'NODE_ENV=production'
   - name: node:14
     id: 'Build site'
     entrypoint: npm
@@ -27,6 +28,8 @@ steps:
     id: 'Configure firebase.json'
     entrypoint: npm
     args: ['run', 'firebase-config']
+    env:
+    - 'ELEVENTY_ENV=prod'
   - name: 'gcr.io/$PROJECT_ID/firebase'
     id: 'Deploy site to Firebase'
     args: ['deploy']

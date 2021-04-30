@@ -19,7 +19,7 @@ tags:
   - service-worker
 ---
 
-{% YouTube 'fhqCwDP69PI', '438' %}
+{% YouTube id='fhqCwDP69PI', startTime='438' %}
 
 [Single-page app (SPA)](https://en.wikipedia.org/wiki/Single-page_application) is an architectural pattern in which the browser runs JavaScript code to update the existing page when the user visits a different section of the site, as opposed to loading an entire new page.
 
@@ -37,9 +37,7 @@ In this article we'll analyze how you can achieve an SPA-like architecture in mu
 [DEV](https://dev.to/) is a community where software developers write articles, take part in discussions, and build their professional profiles.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled"
-       src="homepage.jpg"
-       alt="A screenshot of https://dev.to">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Vk2qqXg5PmLV7oCR7xVh.jpg", alt="A screenshot of https://dev.to", width="800", height="482", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 Their architecture is a multi-page app based on traditional backend templating through Ruby on Rails. Their team was interested in some of the benefits of an app shell model, but didn't want to undertake a major architectural change or move away from their original tech stack.
@@ -50,8 +48,7 @@ Here's how their solution works:
 1. When a navigation request is intercepted by the service worker, they create a [streamed response](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream) by combining the cached header and footer with the main page content that just came from the server. The body is the only actual part of the page that requires fetching data from the network.
 
 <figure class="w-figure">
-  <img src="dev-architecture.png"
-       alt="Dev's architecture consisting on static headers and footers that are cached and a body requested from the network.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QkGCrnzggZmrp1PXrbHb.png", alt="Dev's architecture consisting on static headers and footers that are cached and a body requested from the network.", width="800", height="363" %}
 </figure>
 
 The key element of this solution is the usage of [streams](https://developers.google.com/web/updates/2016/06/sw-readablestreams), which enables [incremental creations and updates](https://streams.spec.whatwg.org/#intro) of data sources. The Streams API also provides an interface for reading or writing asynchronous chunks of data, only a subset of which might be available in memory at any given time.

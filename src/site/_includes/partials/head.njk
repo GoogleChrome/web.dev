@@ -9,10 +9,9 @@
   <link rel="stylesheet" href="{{ helpers.hashForProd('/css/main.css') }}">
 {% endif %}
 
-{# We only preload Material Icons because the site can't render properly without them. #}
-{# For Google Sans we use font-display: swap because preloading too many fonts can hurt performance. #}
-{# https://www.zachleat.com/web/preload/ #}
 <link rel="preload" as="font" crossorigin href="/fonts/material-icons/regular.woff2">
+<link rel="preload" as="font" crossorigin href="/fonts/google-sans/regular/latin.woff2">
+<link rel="preload" as="font" crossorigin href="/fonts/google-sans/bold/latin.woff2">
 
 <meta name="theme-color" content="#fff"/>
 
@@ -32,15 +31,40 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
-<script type="module" src="{{ helpers.hashForProd('/js/app.js') }}"></script>
+{# Sourced scripts cannot be authorized by a CSP hash individually, so we need to use an inline script loader for any sourced scripts. #}
+{# This works because the CSP includes the 'strict-dynamic' keyword, allowing the children of an authorized script to run. #}
+{% set scriptLoader %}
+function loadScript(url, type) {
+  const s = document.createElement('script');
+  s.src = url;
+  if (type) {
+    s.type = type;
+  }
+  if (type === 'module') {
+    s.async = false; // Preserve load order.
+    const pre = document.createElement('link');
+    pre.rel = 'modulepreload';
+    pre.href = url;
+    document.head.append(pre);
+    // We use DOMContentLoaded as the loader script is running sync, and inserting a module script here doesn't defer. This brings back normal type="module" behavior.
+    window.addEventListener('DOMContentLoaded', () => {
+      document.head.append(s);
+    });
+  } else {
+    document.head.append(s);
+  }
+}
+loadScript('{{ helpers.hashForProd('/js/app.js') }}', 'module');
 {# Add a facility for pages to declare an array of script paths. #}
 {# If no scripts are declared we will use the default page script. #}
 {# default.js loads the basic set of custom elements that all pages need. #}
 {% for item in pageScripts %}
-  <script type="module" src="{{ helpers.hashForProd(item) }}"></script>
+  loadScript('{{ helpers.hashForProd(item) }}', 'module');
 {% else %}
-  <script type="module" src="{{ helpers.hashForProd('/js/default.js') }}"></script>
+  loadScript('{{ helpers.hashForProd('/js/default.js') }}', 'module');
 {% endfor %}
 {% if process.env.ELEVENTY_ENV === 'prod' %}
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  loadScript('https://www.google-analytics.com/analytics.js', null);
 {% endif %}
+{% endset %}
+<script>{{ scriptLoader | minifyJs | cspHash | safe }}</script>

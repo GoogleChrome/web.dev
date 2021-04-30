@@ -68,7 +68,7 @@ specific test that is of particular interest when building a reliable web app:
 **Responds with a 200 OK while offline**:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./responds-200-offline.png" alt="Lighthouse's progressive web app report showing a passing responds with a 200 when offline audit.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5bc5TNicZiBgDdWkgAXg.png", alt="Lighthouse's progressive web app report showing a passing responds with a 200 when offline audit.", width="800", height="253", class="w-screenshot" %}
 </figure>
 
 {% Aside %}
