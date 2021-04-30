@@ -42,7 +42,8 @@ This is a useful way to hint that an element can be interacted with.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'vYgJyNP'
+  id: 'vYgJyNP',
+  height: 250
 } %}
 
 ### `:active`
