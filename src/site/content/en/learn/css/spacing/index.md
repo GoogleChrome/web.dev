@@ -91,13 +91,13 @@ The `margin` shorthand can also be used with one, two, or three values.
 Adding a fourth value lets you set each individual side.
 These are applied as follows:
 
-- One value will be applied to all sides. (i.e. `margin: 20px`)
+- One value will be applied to all sides. (`margin: 20px`)
 - Two values: the first value will be applied to the top and bottom sides,
 and the second value will be applied to the left and right sides.
-(i.e. `margin: 20px 40px`)
+(`margin: 20px 40px`)
 - Three values: the first value is `top`,
 the second value is `left` **and** `right`,
-and the third value is `bottom`. (i.e. margin: 20px 40px 30px`)
+and the third value is `bottom`. (`margin: 20px 40px 30px`)
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -207,9 +207,11 @@ If the `h1` were to have `3.5rem` of bottom margin,
 the space between them both would then be `3.5rem` because that is larger than `3rem`.
 Only block margins collapse, not inline (horizontal) margins.
 
-Margin collapse is rooted back to when the web was mostly just documents.
+{% Aside %}
+This behavior is rooted back to when the web was mostly just documents.
 Collapsing margins help to set consistent spacing between elements
 without accidentally creating huge gaps between elements that also have margin defined.
+{% endAside %}
 
 Margin collapse also helps with empty elements.
 If you have a paragraph that has a top and bottom margin of `20px`,
