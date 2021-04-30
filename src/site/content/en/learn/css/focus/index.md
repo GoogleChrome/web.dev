@@ -53,9 +53,8 @@ these are elements that accept interaction and input, such as `<a>`,
 `<button>`, `<input>` and `<select>`.
 In short, all form elements, buttons and links.
 
-There is also a HTML attribute called `tabindex` which allows any HTML element to receive focus,
-and in which order it appears in the document source order—block-start to block-end in your HTML.
-This is a sequence that is followed every time someone presses their <kbd>tab</kbd> key,
+There is also a HTML attribute called `tabindex` which allows you to change the tabbing index—which is 
+order in which elements are focused—every time someone presses their <kbd>tab</kbd> key,
 or focus is shifted with a hash change in the URL or by a JavaScript event.
 If `tabindex` on a HTML element is set to `0`,
 it can receive focus via the <kbd>tab</kbd> key and it will honour the global tab index,
