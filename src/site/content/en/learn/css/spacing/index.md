@@ -328,7 +328,7 @@ the first value is `row-gap` and the second value is `column-gap`.
 With both flexbox and grid, you can also create space using their distribution and alignment capabilities,
 which we cover in the
 [grid module](/learn/css/grid) and
-[flexbox lesson](/learn/css/flexbox).
+[flexbox module](/learn/css/flexbox).
 
 {% Img
 src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/JNXSRH4j77loSB099E04.svg",
