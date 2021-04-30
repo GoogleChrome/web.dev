@@ -347,7 +347,8 @@ so with this rule, it will be colored red.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'poRreXE'
+  id: 'poRreXE',
+  height: 250
 } %}
 
 ### `nth-child` and `nth-of-type`
