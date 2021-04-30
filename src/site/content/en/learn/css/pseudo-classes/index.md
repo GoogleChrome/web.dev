@@ -450,7 +450,9 @@ With `:empty`, you can find that and hide it.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'VwPzbKg'
+  id: 'VwPzbKg',
+  height: 250,
+  tab: 'html,result'
 } %}
 
 ## Finding and excluding multiple elements
