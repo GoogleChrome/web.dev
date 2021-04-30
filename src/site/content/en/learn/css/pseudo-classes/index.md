@@ -405,7 +405,8 @@ or if you want to find the only bold element in a paragraph.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'yLgobJb'
+  id: 'yLgobJb',
+  height: 250
 } %}
 
 ## Finding empty elements
