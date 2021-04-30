@@ -229,7 +229,8 @@ so should be put into an indeterminate state.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'NWdvdLB'
+  id: 'NWdvdLB',
+  height: 250
 } %}
 
 The `<progress>` element also has an indeterminate state that can be styled.
