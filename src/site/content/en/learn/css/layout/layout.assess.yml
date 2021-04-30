@@ -1,0 +1,53 @@
+setLeader: Test your knowledge of layout
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,2"
+    stem: "What 2 things does the `display` property do?"
+    options:
+      - content: "Determines `inline` or `block` or `none`"
+        rationale: "The layout engine needs to know if this box be full width or
+        not and does it need a new line"
+      - content: "Determines the grid layout frame"
+        rationale: "The display property can set display to grid but it doesn't
+        have anything to do with a layout frame"
+      - content: "Determines how the children should behave"
+        rationale: "Flexbox and grid have opinions and new features for their
+        children"
+      - content: "Determines if the box should scroll"
+        rationale: "That's the `overflow` property"
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "1,4"
+    stem: "Which display types create rules for their children?"
+    options:
+      - content: float
+        rationale: "This is not a display type, it's a property"
+      - content: flex
+        rationale: "Flexbox sizes the boxes and gives them new alignment,
+        distribution and sizing properties"
+      - content: inline-block
+        rationale: "A valid display type, but does not create rules for their
+        children"
+      - content: block
+        rationale: "A valid display type, but does not create rules for their
+        children"
+      - content: grid
+        rationale: "Grid creates columns and rows with rules and places children
+        inside of them"
+      - content: relative
+        rationale: "This is not a display type, it's a position value"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: "What does it mean if a block is out of flow?"
+    options:
+      - content: "It's stuck on the side of the river"
+        rationale: "Context is CSS here, not geography"
+      - content: "It's been given a `top` or `left` position value"
+        rationale: "Having these properties alone do not pull a box out of flow"
+      - content: "It's no longer positioned based on it's siblings positions"
+        rationale: "A box with `position: absolute` for example, is now
+        positioned with x and y coordinates based off it's containing block, and
+        not it's order with other sibling elements"
