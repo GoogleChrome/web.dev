@@ -2,7 +2,7 @@
 title: Borders
 description: >
   A border provides a frame for your boxes.
-  In this lesson find out how to change the size, style and color of borders using CSS.
+  In this module find out how to change the size, style and color of borders using CSS.
 authors:
   - andybell
 date: 2021-04-30
