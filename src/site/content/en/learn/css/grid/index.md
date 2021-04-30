@@ -224,7 +224,8 @@ In the next demo try out the different intrinsic sizing keywords by changing the
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'qBRqNgL'
+  id: 'qBRqNgL',
+  height: 600
 } %}
 
 {% Aside %}
