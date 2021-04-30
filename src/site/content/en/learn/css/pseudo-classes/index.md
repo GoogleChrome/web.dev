@@ -75,7 +75,8 @@ You can also react if a child element of your element receives focus with
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'mdRMOoV'
+  id: 'mdRMOoV',
+  height: 250
 } %}
 
 Focusable elements, like buttons,
