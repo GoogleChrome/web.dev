@@ -270,11 +270,12 @@ how far the border is outset from the edge and how it should repeat.
   border-image-repeat: stretch stretch;
 }
 ```
-
-{% Codepen {
-  user: 'web-dot-dev',
-  id: 'zYNdWNX'
-} %}
+{% Img 
+  src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/jjPvLY8VeJH2MH1wkXjD.jpg", 
+  alt="An illustrated frame, used as the border image of an element", 
+  width="800", 
+  height="438" 
+%}
 
 The [`border-image-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width)
 property is like `border-width`:
