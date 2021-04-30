@@ -84,7 +84,10 @@ The default browser behavior when an element receives focus is to present a focu
 This focus ring varies between both browser and operating systems.
 
 {% Video
-src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/zVu8FoqteYCP1sTj3uCm.mp4" %}
+  src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/zVu8FoqteYCP1sTj3uCm.mp4",
+  controls="true",
+  autoplay="true"
+%}
 
 This behavior can be changed with CSS,
 using the `:focus`, `:focus-within` and `:focus-visible`
