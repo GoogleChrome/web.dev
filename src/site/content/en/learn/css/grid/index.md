@@ -688,7 +688,8 @@ as with other grid methods.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'oNBYepg'
+  id: 'oNBYepg',
+  height: 600
 } %}
 
 ## Shorthand properties
