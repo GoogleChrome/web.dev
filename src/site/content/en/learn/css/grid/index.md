@@ -442,7 +442,8 @@ This may mean that the display becomes disconnected from the logical order.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'ZELBLrJ'
+  id: 'ZELBLrJ',
+  height: 600
 } %}
 
 ## Placing items
