@@ -768,7 +768,8 @@ Try different values of `align-content` and `justify-content` to see how the tra
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'rNjjMVd'
+  id: 'rNjjMVd',
+  height: 650
 } %}
 
 Note how the gaps become larger when using values such as `space-between`,
