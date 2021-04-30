@@ -49,7 +49,7 @@ stream created using the Web Audio API
 
 The core idea for insertable streams for `MediaStreamTrack` is to expose the content of a
 `MediaStreamTrack` as a collection of [streams](/streams/) (as defined by the WHATWG
-[Streams API](https://streams.spec.whatwg.org/)), which can be manipulated to introduce new
+[Streams API](https://streams.spec.whatwg.org/)). These streams can be manipulated to introduce new
 components.
 
 ## Use cases
