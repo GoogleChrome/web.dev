@@ -96,12 +96,12 @@ Insertable streams for `MediaStreamTrack` builds on concepts previously proposed
 [WebCodecs](https://web.dev/webcodecs/) and conceptually splits the `MediaStreamTrack` into two
 components:
 
-- The `TrackProcessor`, which consumes a `MediaStreamTrack` object's source and generates a stream
+- The `MediaStreamTrackProcessor`, which consumes a `MediaStreamTrack` object's source and generates a stream
   of media frames ([`VideoFrame`](https://w3c.github.io/webcodecs/#videoframe-interface) or
   [`AudioFrame`](https://w3c.github.io/webcodecs/#audioframe-interface)). You can think of this as a
   track sink that is capable of exposing the unencoded frames from the track to a `ReadableStream`
   and that exposes a control channel for signals going in the opposite direction.
-- The `TrackGenerator`, which consumes a stream of media frames and exposes a `MediaStreamTrack`
+- The `MediaStreamTrackGenerator`, which consumes a stream of media frames and exposes a `MediaStreamTrack`
   interface, so that it can be used anywhere a `MediaStreamTrack` is currently attached. It takes
   video frames as input, and emits control signals that result from subsequent processing.
 
@@ -111,7 +111,7 @@ A `MediaStreamTrackProcessor` object exposes two properties:
 
 - `readable`: Allows reading the frames flowing through the `MediaStreamTrack`. If the track is a
   video track, chunks read from `readable` will be `VideoFrame` objects. If the track is an audio
-  track, chunks read from `readable` will produce `AudioFrame` objects.
+  track, chunks read from `readable` will be `AudioFrame` objects.
 - `writableControl`: Allows sending control signals to the track. Control signals are objects of
   type `MediaStreamTrackSignal`.
 
@@ -121,8 +121,8 @@ A `MediaStreamTrackGenerator` object likewise exposes two properties:
 
 - `writable`: A `WritableStream` that allows writing media frames to the
   `MediaStreamTrackGenerator`, which is itself a `MediaStreamTrack`. If the `kind` attribute is
-  `"audio"`, the stream will accept `AudioFrame` objects and fail with any other type. If kind is
-  `"video"`, the stream will accept `VideoFrame` objects and fail with any other type. When a frame
+  `"audio"`, the stream accepts `AudioFrame` objects and fails with any other type. If kind is
+  `"video"`, the stream accepts `VideoFrame` objects and fails with any other type. When a frame
   is written to `writable`, the frame's `close()` method is automatically invoked, so that its
   internal resources are no longer accessible from JavaScript.
 - `readableControl`: A `ReadableStream` that allows reading control signals sent from any sinks
@@ -132,17 +132,15 @@ A `MediaStreamTrackGenerator` object likewise exposes two properties:
 In the `MediaStream` model, apart from media, which flows from sources to sinks, there are also
 control signals that flow in the opposite direction (i.e., from sinks to sources via the track). A
 `MediaStreamTrackProcessor` is a sink and it allows sending control signals to its track and source
-via its `writableControl` field. A `MediaStreamTrackGenerator` is a track for which a custom source
+via its `writableControl` property. A `MediaStreamTrackGenerator` is a track for which a custom source
 can be implemented by writing media frames to its `writable` field. Such a source can receive
-control signals sent by sinks via its `readableControl` field.
+control signals sent by sinks via its `readableControl` property.
 
 ### Bringing it all together
 
 The core idea is to create a processing chain as follows:
 
-```bash
 Platform Track → Processor → Transform → Generator → Platform Sinks
-```
 
 For a barcode scanner application, this chain would look as in the code sample below.
 
@@ -168,7 +166,7 @@ trackGenerator.readableControl.pipeTo(trackProcessor.writableControl);
 ```
 
 {% Aside %} This article barely scratches the surface of what is possible and going into the details
-is way beyond the scope of this publication. For more examples, I refer you to the advanced
+is way beyond the scope of this publication. For more examples, see the advanced
 [video processing demo](https://webrtc.github.io/samples/src/content/insertable-streams/video-processing/)
 and the advanced
 [audio processing demo](https://webrtc.github.io/samples/src/content/insertable-streams/audio-processing/)
@@ -190,9 +188,9 @@ detect it and highlight it. You can see the application's source code
 The security of this API relies on existing mechanisms in the web platform. As data is exposed using
 the `VideoFrame` and `AudioFrame` interfaces, the rules of those interfaces to deal with
 origin-tainted data apply. For example, data from cross-origin resources cannot be accessed due to
-existing restrictions to access such resources (e.g., it is not possible to access the pixels of a
-cross-origin image or video element). In addition to this, access to media data from cameras,
-microphones, or the screen is subject to user authorization. The media data this API exposes is
+existing restrictions on accessing such resources (e.g., it is not possible to access the pixels of a
+cross-origin image or video element). In addition, access to media data from cameras,
+microphones, or screens is subject to user authorization. The media data this API exposes is
 already available through other APIs. In addition to the media data, this API exposes some control
 signals such as requests for new frames. These signals are intended as hints and do not pose a
 significant security risk.
@@ -205,7 +203,7 @@ The Chromium team wants to hear about your experiences with insertable streams f
 ### Tell us about the API design
 
 Is there something about the API that does not work like you expected? Or are there missing methods
-or properties that you need to implement your idea? Have a question or comment on the security
+or properties that you need to implement your idea? Do you have a question or comment on the security
 model? File a spec issue on the corresponding [GitHub repo][github], or add your thoughts to an
 existing issue.
 
