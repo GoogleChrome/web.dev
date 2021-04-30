@@ -20,7 +20,7 @@ which is one of many browser-provided pseudo-classes.
 
 A pseudo-class lets you apply styles based on state changes and external factors.
 This means that your design can react to user input such as an invalid email address.
-You learned about these in the selectors lesson,
+These are covered in the [selectors](/learn/css/selectors) module,
 this lesson will take you through them in much more detail.
 
 Unlike pseudo-elements,
