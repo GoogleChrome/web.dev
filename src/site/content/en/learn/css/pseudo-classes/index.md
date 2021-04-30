@@ -213,7 +213,8 @@ such as a checkbox or radio button is in a checked state.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'GRrvrxv'
+  id: 'GRrvrxv',
+  height: 250
 } %}
 
 The `:checked` state is a binary(true or false) state,
