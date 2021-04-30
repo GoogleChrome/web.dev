@@ -797,7 +797,8 @@ instead the items are being moved around inside the defined area.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'rNjjMVd'
+  id: 'rNjjMVd',
+  height: 650
 } %}
 
 ## Resources
