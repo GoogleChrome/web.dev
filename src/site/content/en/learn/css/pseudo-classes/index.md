@@ -21,7 +21,7 @@ which is one of many browser-provided pseudo-classes.
 A pseudo-class lets you apply styles based on state changes and external factors.
 This means that your design can react to user input such as an invalid email address.
 These are covered in the [selectors](/learn/css/selectors) module,
-this lesson will take you through them in much more detail.
+and this module will take you through them in more detail.
 
 Unlike pseudo-elements,
 which you can learn more about in the [previous module](/learn/css/pseudo-elements),
