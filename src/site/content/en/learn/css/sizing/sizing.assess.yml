@@ -39,7 +39,7 @@ questions:
         contextual awareness, but there's a power and predictability to absolute
         units that can be foundational for certain designs."
   - type: multiple-choice
-    cardinality: "1+"
+    cardinality: "1"
     correctAnswers: "1"
     stem: Viewport units are absolute.
     options:
