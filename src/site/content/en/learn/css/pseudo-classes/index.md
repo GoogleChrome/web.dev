@@ -55,7 +55,8 @@ this state is when the click starts and hasn't yet been released.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'YzNxpam'
+  id: 'YzNxpam',
+  height: 250
 } %}
 
 ### `:focus`, `:focus-within`, and `:focus-visible`
