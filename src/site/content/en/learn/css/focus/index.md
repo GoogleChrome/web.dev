@@ -52,6 +52,7 @@ Certain elements are automatically focusable;
 these are elements that accept interaction and input, such as `<a>`,
 `<button>`, `<input>` and `<select>`.
 In short, all form elements, buttons and links.
+You can typically navigate a website's focusable elements using the *tab* key to move forward on the page, and *shift* + *tab* to move backward.
 
 There is also a HTML attribute called `tabindex` which allows you to change the tabbing index—which is 
 order in which elements are focused—every time someone presses their <kbd>tab</kbd> key,
