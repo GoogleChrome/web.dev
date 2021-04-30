@@ -148,7 +148,7 @@ Here, margin is removed from the top and bottom (block) sides,
 and `auto` shares the space between the left and right (inline) sides.
 
 {% Aside %}
-In the last lesson on [logical properties](/learn/css/logical-properties),
+In the previous module on [logical properties](/learn/css/logical-properties),
 you learned that instead of specifying `margin-top`, `margin-right`, `margin-bottom` and `margin-left`,
 you can use `margin-block-start`, `margin-inline-end`, `margin-block-end` and `margin-inline-start`.
 {% endAside %}
@@ -377,4 +377,3 @@ then use them throughout your CSS.
 When they are updated,
 either locally within an element or globally,
 the values will pass down through the cascade and the updated values will be reflected.
-
