@@ -493,7 +493,8 @@ to see how the placement of the items stays consistent to the way that text flow
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWdGdzd'
+  id: 'QWdGdzd',
+  height: 600
 } %}
 
 ### Stacking items
