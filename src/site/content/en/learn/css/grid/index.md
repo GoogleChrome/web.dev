@@ -801,6 +801,8 @@ instead the items are being moved around inside the defined area.
   height: 650
 } %}
 
+{% Assessment 'grid' %}
+
 ## Resources
 
 This guide has given you an overview of the different parts of the grid layout specification.
