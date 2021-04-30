@@ -170,7 +170,7 @@ pseudo element lets you style the bullet or number for a list item or the arrow 
 
 ```css
 ::marker {
-  color: olive;
+  color: hotpink;
 }
 
 ul ::marker {
