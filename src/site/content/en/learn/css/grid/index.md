@@ -397,7 +397,8 @@ In the next demo you can change mode the value of `grid-auto-flow` and the `writ
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'PoWbWbr'
+  id: 'PoWbWbr',
+  height: 600
 } %}
 
 ### Spanning tracks
