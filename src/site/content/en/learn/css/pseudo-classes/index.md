@@ -201,7 +201,8 @@ therefore you might not find yourself reaching for this pseudo class.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'yLgogPG'
+  id: 'yLgogPG',
+  height: 250
 } %}
 
 ### `:checked` and `:indeterminate`
