@@ -226,9 +226,7 @@ To see how the size and number of resources changed, open the DevTools **Network
 
 Now scroll down the page and keep an eye on the **Network** panel. When you get to the video, you should see the page trigger additional requests.
 
-<video autoplay="" loop="" muted="" playsinline="">
-    <source src="./lazy-load-3g.mp4" type="video/mp4">
-  </video>
+{% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bJHFfNjxvIthfRWeidbx.mp4", autoplay=true, loop=true, muted=true, playsinline=true %}
 
 {% Aside %}
 In this example, the element is loaded when it enters the viewport, which you can see happening in the video above. You can avoid that delay and create a smoother user experience by loading elements a little before they enter the viewport. To do that, use the [`rootMargin`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Creating_an_intersection_observer) property to define margins around the target element, which effectively grows (or shrinks) the area that triggers the `isIntersecting` change.
@@ -236,7 +234,7 @@ In this example, the element is loaded when it enters the viewport, which you ca
 
 ## Preconnect to required origins
 
-You've deferred non-critical Javascript and lazy-loaded the YouTube requests, so now it's time to optimize the remaining third-party content.
+You've deferred non-critical JavaScript and lazy-loaded the YouTube requests, so now it's time to optimize the remaining third-party content.
 
 Adding the `rel=preconnect` attribute to a link tells the browser to establish a connection to a domain before the request for that resource is made. This attribute is best used on origins that provide resources you are certain the page needs.
 

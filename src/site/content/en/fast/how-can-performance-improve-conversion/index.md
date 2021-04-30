@@ -30,7 +30,7 @@ In this guide we'll address the different ways in which a website should be opti
 
 ## Discovery
 
-New users discover a website in most cases through organic search, social sharing, website links or paid campaigns. Some important discovery mechanisms are directly affected by website performance. Website crawlers may have difficulty indexing sites that are slow to load or have extensive [client side rendering and Javascript](https://developers.google.com/search/docs/guides/dynamic-rendering).
+New users discover a website in most cases through organic search, social sharing, website links or paid campaigns. Some important discovery mechanisms are directly affected by website performance. Website crawlers may have difficulty indexing sites that are slow to load or have extensive [client side rendering and JavaScript](https://developers.google.com/search/docs/guides/dynamic-rendering).
 
 Speed can also be a direct ranking factor, for example on [web search](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html), [ad campaigns](https://developers.google.com/web/updates/2018/07/search-ads-speed#the_mobile_speed_score_for_ads_landing_pages) or [social networks](https://newsroom.fb.com/news/2017/08/news-feed-fyi-showing-you-stories-that-link-to-faster-loading-webpages/).
 Keep in mind that new users who discover your website will get an uncached first load, so basically the worst possible experience. This can be especially frustrating if good money was spent to get the user to the website, just to see them dropping off due to a long first load.

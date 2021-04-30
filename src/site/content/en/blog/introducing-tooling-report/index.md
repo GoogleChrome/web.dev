@@ -70,9 +70,7 @@ for the tool can be used. After the initial set of tests were written, we worked
 authors to make sure we used their tools correctly and represented them fairly.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled"
-       src="overview.jpg"
-       alt="A screenshot of tooling.report.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0OauqO2tSeOTDpDGutmk.jpg", alt="A screenshot of tooling.report.", width="800", height="394", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 ## We only use ${tool_name}, should I still care?

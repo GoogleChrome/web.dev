@@ -88,11 +88,7 @@ class Snackbar extends BaseElement {
         break;
     }
 
-    return html`
-      <div class="web-snackbar__surface">
-        ${template}
-      </div>
-    `;
+    return html` <div class="web-snackbar__surface">${template}</div> `;
   }
 }
 

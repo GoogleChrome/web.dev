@@ -18,6 +18,7 @@ const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const yaml = require('js-yaml');
+const fs = require('fs');
 
 const toc = require('eleventy-plugin-toc');
 const markdown = require('./src/site/_plugins/markdown');
@@ -42,7 +43,7 @@ const EventTable = require(`./${componentsDir}/EventTable`);
 const Glitch = require(`./${componentsDir}/Glitch`);
 const Hero = require(`./${componentsDir}/Hero`);
 const IFrame = require(`./${componentsDir}/IFrame`);
-const {Img, generateSrc: imigxFilter} = require(`./${componentsDir}/Img`);
+const {Img, generateImgixSrc} = require(`./${componentsDir}/Img`);
 const Instruction = require(`./${componentsDir}/Instruction`);
 const Label = require(`./${componentsDir}/Label`);
 const Meta = require(`./${componentsDir}/Meta`);
@@ -52,7 +53,7 @@ const SignPosts = require(`./${componentsDir}/SignPosts`);
 const StackOverflow = require(`./${componentsDir}/StackOverflow`);
 const Tooltip = require(`./${componentsDir}/Tooltip`);
 const {Video} = require(`./${componentsDir}/Video`);
-const YouTube = require(`./${componentsDir}/YouTube`);
+const {YouTube} = require('webdev-infra/shortcodes/YouTube');
 
 // Collections
 const algolia = require('./src/site/_collections/algolia');
@@ -84,10 +85,11 @@ const removeDrafts = require(`./${filtersDir}/remove-drafts`);
 const slugify = require(`./${filtersDir}/slugify`);
 const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
-const stripQueryParamsDev = require(`./${filtersDir}/strip-query-params-dev`);
 const getPaths = require(`./${filtersDir}/get-paths`);
 const navigation = require(`./${filtersDir}/navigation`);
 const padStart = require(`./${filtersDir}/pad-start`);
+const {minifyJs} = require(`./${filtersDir}/minify-js`);
+const {cspHash, getHashList} = require(`./${filtersDir}/csp-hash`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
@@ -105,6 +107,7 @@ const {toc: courseToc} = require('webdev-infra/filters/toc');
 module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
   const isProd = process.env.ELEVENTY_ENV === 'prod';
+  const isStaging = process.env.ELEVENTY_ENV === 'staging';
 
   // ----------------------------------------------------------------------------
   // PLUGINS
@@ -159,7 +162,7 @@ module.exports = function (config) {
   config.addFilter('githubLink', githubLink);
   config.addFilter('gitlocalizeLink', gitlocalizeLink);
   config.addFilter('htmlDateString', htmlDateString);
-  config.addFilter('imigix', imigxFilter);
+  config.addFilter('imgix', generateImgixSrc);
   config.addFilter('md', md);
   config.addFilter('navigation', navigation);
   config.addFilter('pagedNavigation', pagedNavigation);
@@ -168,12 +171,13 @@ module.exports = function (config) {
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('slugify', slugify);
   config.addFilter('stripBlog', stripBlog);
-  config.addFilter('stripQueryParamsDev', stripQueryParamsDev);
   config.addFilter('getPaths', getPaths);
   config.addFilter('strip', strip);
   config.addFilter('courseToc', courseToc);
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
   config.addFilter('padStart', padStart);
+  config.addFilter('minifyJs', minifyJs);
+  config.addFilter('cspHash', cspHash);
 
   // ----------------------------------------------------------------------------
   // SHORTCODES
@@ -219,7 +223,7 @@ module.exports = function (config) {
     config.addTransform('disable-lazy-load', disableLazyLoad);
   }
 
-  if (isProd) {
+  if (isProd || isStaging) {
     config.addTransform('responsive-images', responsiveImages);
     config.addTransform('purifyCss', purifyCss);
     config.addTransform('minifyHtml', minifyHtml);
@@ -234,6 +238,16 @@ module.exports = function (config) {
 
   // Make .yml files work in the _data directory.
   config.addDataExtension('yml', (contents) => yaml.safeLoad(contents));
+
+  // Make CSP hashes accessible to firebase config.
+  if (isProd) {
+    config.on('afterBuild', () => {
+      fs.writeFileSync(
+        'dist/script-hash-list.json',
+        JSON.stringify(getHashList()),
+      );
+    });
+  }
 
   return {
     dir: {

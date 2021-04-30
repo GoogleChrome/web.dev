@@ -100,8 +100,7 @@ and there are two styles at the opposite ends of the axis, one lighter and
 the other heavier. Between these, you can choose from 900 instances:
 
 <figure class="w-figure">
-  <img src="roboto-flex-aaaaaa.png"
-  alt="The letter 'A' shown in different weights">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ecr5godvTKunVXP7W8aU.png", alt="The letter 'A' shown in different weights", width="800", height="218" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Above: Illustrated anatomy of the Weight axis for the typeface Roboto.
   </figcaption>
@@ -141,8 +140,7 @@ define an Italic lowercase "n". Instead of interpolating one contour to the
 other, the **Italic** axis toggles from Roman to Italic contours.
 
 <figure class="w-figure">
-  <img src="Amstelvar-Ital-axis.png"
-  alt="Example of the Weight Axes for the typeface Amstelvar">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EySl1LIfX1QIrGq654PO.png", alt="Example of the Weight Axes for the typeface Amstelvar", width="800", height="520" %}
   <figcaption class="w-figcaption">
     Amstelvar's "n" contours in Italic (12 point, regular weight, normal width),
     and in Roman. Image supplied by David Berlow, type designer and typographer
@@ -250,8 +248,7 @@ illegible.
 ### Exciting expression
 
 <figure class="w-figure">
-  <img src="grass-mandy.png"
-  alt="Grass example by Mandy Michael">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rh7wLaBLauEF02D2dqMC.png", alt="Grass example by Mandy Michael", width="495", height="174" %}
 </figure>
 
 One great example of artistic expression is shown above, an exploration of the
@@ -270,7 +267,8 @@ You can view the working example and source code for the above sample
   controls=false,
   autoplay=true,
   loop=true,
-  muted=true
+  muted=true,
+  playsinline=true
   %}
   <figcaption class="w-figcaption">
     Typeface Zycon, designed for animation by David Berlow, type designer and
@@ -459,8 +457,7 @@ to better suit its size. A small size might be better off without fine details,
 while a large size might benefit from more details and thinner strokes.
 
 <figure class="w-figure">
-  <img src="roboto-flex-opsz.png"
-  alt="The letter 'a' shown at different optical sizes">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wrVCGSQNaGWhNp97BoRS.png", alt="The letter 'a' shown at different optical sizes", width="800", height="147" %}
   <figcaption class="w-figcaption">
     The letter 'a' in Roboto Flex at different pixel sizes, then scaled to be the same size,
     shows the differences in design.

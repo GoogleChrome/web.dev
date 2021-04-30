@@ -194,14 +194,12 @@ controls.
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img src="./chrome-android-portrait-video-unstyled.png" alt="Android Chrome screenshot, portrait: unstyled video element overflows
-    viewport.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cDl2OfCE3hQivhaNvMUh.png", alt="Android Chrome screenshot, portrait: unstyled video element overflows viewport.", width="338", height="600" %}
     <figcaption class="w-figcaption">Android Chrome screenshot, portrait: unstyled video element overflows
     viewport.</figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="./chrome-android-landscape-video-unstyled.png" alt="Android Chrome screenshot, landscape: unstyled video element overflows
-    viewport.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bCiZsNkZNsAhWbOBsLCs.png", alt="Android Chrome screenshot, landscape: unstyled video element overflows viewport.", width="800", height="450" %}
     <figcaption class="w-figcaption">Android Chrome screenshot, landscape: unstyled video element overflows
     viewport.</figcaption>
   </figure>
@@ -211,7 +209,7 @@ You can control video dimensions using CSS. If CSS does not meat all of your
 needs, JavaScript libraries and plugins such as [FitVids](http://fitvidsjs.com/)
 (outside the scope of this article) can help, even for videos from YouTube and
 other sources. Unfortunately, these resources can increase your [network payload
-sizes](https://web.dev/total-byte-weight/) with negative consequences for your
+sizes](/total-byte-weight/) with negative consequences for your
 revenues and your users' wallets.
 
 For simple uses like the ones I'm describing here, use [CSS media

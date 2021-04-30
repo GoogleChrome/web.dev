@@ -109,7 +109,7 @@ Instead of needing to load the regular and bold styles plus their italic version
 you can load a single file that contains all of the information.
 
 Variable fonts are now supported by all modern browsers,
-find out more in the [Introduction to variable fonts on the web](https://web.dev/variable-fonts/).
+find out more in the [Introduction to variable fonts on the web](/variable-fonts/).
 
 ### Select the right format
 
@@ -357,4 +357,4 @@ formats. Make sure to apply GZIP compression to the EOT and TTF formats, because
 compressed by default.
 - **Give precedence to `local()` in your `src` list:** listing `local('Font Name')` first in your
 `src` list ensures that HTTP requests aren't made for fonts that are already installed.
-- **Use [Lighthouse](https://developers.google.com/web/tools/lighthouse)** to test for [text compression](https://web.dev/uses-text-compression/).
+- **Use [Lighthouse](https://developers.google.com/web/tools/lighthouse)** to test for [text compression](/uses-text-compression/).

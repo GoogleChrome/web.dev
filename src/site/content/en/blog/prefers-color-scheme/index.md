@@ -169,7 +169,7 @@ like YouTube have shown that the power savings can be up to 60%.
 The video below has more details on these case studies and the power savings per app.
 
 <figure class="w-figure w-figure--fullbleed">
-  {% YouTube 'N_6sPd0Jd3g?start=305' %}
+  {% YouTube id='N_6sPd0Jd3g', startTime='305' %}
 </figure>
 
 ## Activating dark mode in the operating system
@@ -184,11 +184,11 @@ let's review how you can support it.
 
 Operating systems that support a dark mode or dark theme
 typically have an option to activate it somewhere in the settings.
-On macOS&nbsp;X, it's in the system preference's *General* section and called *Appearance* ([screenshot](macosx.png)),
-and on Windows&nbsp;10, it's in the *Colors* section and called *Choose your color* ([screenshot](windows10.png)).
-For Android&nbsp;Q, you can find it under *Display* as a *Dark Theme* toggle switch ([screenshot](android.png)),
+On macOS&nbsp;X, it's in the system preference's *General* section and called *Appearance* (<a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lUAnDhiGiZxigDbCqfn1.png' | imgix }}">screenshot</a>),
+and on Windows&nbsp;10, it's in the *Colors* section and called *Choose your color* (<a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ahr8nkFttRPCe4RH8IEk.png' | imgix }}">screenshot</a>).
+For Android&nbsp;Q, you can find it under *Display* as a *Dark Theme* toggle switch (<a href="{{ 'image/admin/Yh6SEoWDK1SbqcGjlL6d.png' | imgix }}">screenshot</a>),
 and on iOS&nbsp;13, you can change the *Appearance* in the *Display &amp; Brightness*
-section of the settings ([screenshot](ios.jpg)).
+section of the settings (<a href="{{ 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/K0QTu4Elw1ETabtoJjZ1.jpg' | imgix }}">screenshot</a>).
 
 <div class="w-clearfix"></div>
 

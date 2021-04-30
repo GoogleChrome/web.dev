@@ -35,20 +35,20 @@ Complete the following instructions in the new tab that just opened:
 {% Instruction 'reload-app', 'ol' %}
 1. Type `chunk` into the [Filter textbox](https://developers.google.com/web/tools/chrome-devtools/network/reference#filter-by-property) to hide any resources that do not include `chunk` in their name.
 
-<img class="w-screenshot" src="./cdt-home-unoptimized.png" alt="Network panel showing the home page chunks.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DCl6nkEfsVukurm8gBsy.png", alt="Network panel showing the home page chunks.", width="800", height="194", class="w-screenshot" %}
 
-The site uses [route-based code splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting/), thanks to which only the necessary code is requested at the beginning.
+The site uses [route-based code splitting](/reduce-javascript-payloads-with-code-splitting/), thanks to which only the necessary code is requested at the beginning.
 
 1. [Clear the network requests in DevTools](https://developers.google.com/web/tools/chrome-devtools/network/reference#clear).
 1. Within the app, click the **Blog** link to navigate to that page.
 
 The JS and CSS chunks for the new route are loaded to render the page.
 
-<img class="w-screenshot" src="./cdt-blog-unoptimized.png" alt="Network panel showing the blog page chunks.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/23QuiFZwo7rouJaqmz9m.png", alt="Network panel showing the blog page chunks.", width="800", height="119", class="w-screenshot" %}
 
 Next, you'll implement Quicklink in this site, so that these chunks can be prefetched in the home page, making the navigation faster.
 
-This allows you to combine the best of both techniques: 
+This allows you to combine the best of both techniques:
 
 - Route-based code splitting tells the browser to only load the necessary chunks at a higher priority at page load time.
 - Prefetching tells the browser to load the chunks for in-viewport links at the lowest priority, during the browser's idle time.
@@ -180,16 +180,16 @@ Repeat the first 6 steps from [Measure](#measure). Don't navigate to the blog pa
 
 When the home page loads the chunks for that route are loaded. After that, Quicklink prefetches the route's chunks for the in-viewport links:
 
-<img class="w-screenshot" src="./cdt-home-optimized.png" alt="Network panel showing the home page prefetching chunks.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lClOmOYDx8Cg3RZakAu2.png", alt="Network panel showing the home page prefetching chunks.", width="800", height="286", class="w-screenshot" %}
 
 These chunks are requested at the lowest priority and without blocking the page.
 
-Next: 
+Next:
 
 1. Clear the Network log again.
 1. Disable the **Disable cache** checkbox.
 1. Click the **Blog** link to navigate to that page.
 
-<img class="w-screenshot" src="./cdt-blog-optimized.png" alt="Network panel showing the blog page with chunks picked up from cache.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bJJYT3gDIWU9PeeXSdOE.png", alt="Network panel showing the blog page with chunks picked up from cache.", width="800", height="95", class="w-screenshot" %}
 
 The **Size** column indicates that these chunks were retrieved from the "prefetch cache", instead of the network. Loading these chunks without a Quicklink took approximately **580ms**. Using the library it now takes **2ms**, which represents a **99% reduction**!

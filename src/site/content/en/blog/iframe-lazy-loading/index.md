@@ -19,7 +19,7 @@ feedback:
   - api
 ---
 
-[Standardized lazy-loading for images](/native-lazy-loading) landed in Chrome 76 via
+[Standardized lazy-loading for images](/browser-level-image-lazy-loading/) landed in Chrome 76 via
 the `loading` attribute and later came to Firefox. We are happy to share that
 **browser-level lazy-loading for iframes** is now
 [standardized](https://github.com/whatwg/html/pull/5579) and is also
@@ -56,10 +56,7 @@ page. Despite this, users pay the cost of downloading data and costly
 JavaScript for each frame, even if they don't scroll to it.
 
 <figure class="w-figure">
-<img src="./iframe-lazyloading.png" alt="Data-savings from using iframe
-lazy-loading for an iframe. Eager loading pulls in 3MB in this example, while
-lazy-loading does not pull in this code until the user scrolls closer to the
-iframe.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xqZMRuULxbz6DVXNP8ea.png", alt="Data-savings from using iframe lazy-loading for an iframe. Eager loading pulls in 3MB in this example, while lazy-loading does not pull in this code until the user scrolls closer to the iframe.", width="800", height="460" %}
 </figure>
 
 Based off Chrome's research into [automatically lazy-loading offscreen iframes
@@ -137,7 +134,7 @@ whether an iframe is hidden:
 If an iframe meets any of these conditions, Chrome considers it hidden and
 won't lazy-load it in most cases. iframes that aren't hidden will only load
 when they're within the [load-in distance
-threshold](/native-lazy-loading/#load-in-distance-threshold). Chrome shows a
+threshold](/browser-level-image-lazy-loading/#load-in-distance-threshold). Chrome shows a
 placeholder for lazy-loaded iframes that are still being fetched.
 
 ### What impact might we see from lazy-loading popular iframe embeds?
@@ -165,9 +162,7 @@ devices. I have opened an internal bug with YouTube to discuss adding
 `loading=lazy` to its embed code.
 
 <figure class="w-figure">
-<img src="./iframe-chromecom.png" alt="Chrome.com achieved a 10 second
-reduction in Time To Interactive by lazy-loading offscreen iframes for their
-YouTube video embed">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HQkwBgEoyiZsiOaPyz8v.png", alt="Chrome.com achieved a 10 second reduction in Time To Interactive by lazy-loading offscreen iframes for their YouTube video embed", width="800", height="460" %}
 </figure>
 
 {% Aside %}
@@ -305,7 +300,7 @@ in a WordPress site. You can optionally add the following code to your WordPress
 theme's `functions.php` file to automatically insert `loading="lazy"` to your
 existing iframes without having to manually update them each individually.
 
-Note that [native support for lazy-loading iframes is also being worked on in WordPress core](https://core.trac.wordpress.org/ticket/50756).
+Note that [browser-level support for lazy-loading iframes is also being worked on in WordPress core](https://core.trac.wordpress.org/ticket/50756).
 The following snippet will check for the relevant flags so that, once WordPress has the
 functionality built-in, it will no longer manually add the `loading="lazy"` attribute,
 ensuring it is interoperable with those changes and will not result in a duplicate attribute.

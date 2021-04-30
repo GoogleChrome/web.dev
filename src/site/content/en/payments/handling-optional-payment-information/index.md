@@ -22,8 +22,7 @@ explains how a payment app can pass information about the payment method,
 shipping address, or contact information to the merchant using a service worker.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./diagram.png"
-       alt="Handling optional payment information with a service worker">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kDteyNFNEVnJQyTPw5p8.png", alt="Handling optional payment information with a service worker", width="800", height="2335", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Handling optional payment information with a service worker
   </figcaption>
@@ -76,8 +75,7 @@ app can let the customer pick one of the payment instruments and use it to pay
 for the merchant.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
-  <img class="w-screenshot" src="./paymentmethodchanged-ss.png"
-       alt="Payment method picker UI">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yZYmEL3y1e2cPaLNz34K.png", alt="Payment method picker UI", width="800", height="1600", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Payment method picker UI
   </figcaption>
@@ -95,8 +93,7 @@ identifier. The service worker should invoke
 information.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./paymentmethodchanged.png"
-       alt="Inform the merchant of a payment method change">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ogXzkcdinU3RNC9cMzN0.png", alt="Inform the merchant of a payment method change", width="800", height="659", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Inform the merchant of a payment method change
   </figcaption>
@@ -209,8 +206,7 @@ address information to their favorite payment app, they can reuse it in
 different shops.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
-  <img class="w-screenshot" src="./shippingaddresschanged-ss.png"
-       alt="Shipping address picker UI">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0ytdyaEC7tkPkBTv5rIu.png", alt="Shipping address picker UI", width="800", height="1600", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Shipping address picker UI
   </figcaption>
@@ -237,8 +233,7 @@ with the [new address
 object](https://www.w3.org/TR/payment-request/#dom-addressinit).
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./shippingaddresschanged.png"
-       alt="Inform the merchant of a shipping address change">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aVv5d9OEcEjH1Z6nUQKb.png", alt="Inform the merchant of a shipping address change", width="800", height="675", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Inform the merchant of a shipping address change
   </figcaption>
@@ -328,8 +323,7 @@ app. The payment app can use the information to construct a UI and let the
 customer pick a shipping option.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
-  <img class="w-screenshot" src="./shippingoptionchanged-ss.png"
-       alt="Shipping option picker UI">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VkHwTharTqX7oFK62RkA.png", alt="Shipping option picker UI", width="800", height="1600", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Shipping option picker UI
   </figcaption>
@@ -382,8 +376,7 @@ invoke
 with the new shipping option ID.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./shippingoptionchanged.png"
-       alt="Inform the merchant of a shipping option change">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mERzHqvPGrjKWu29m5q1.png", alt="Inform the merchant of a shipping option change", width="800", height="667", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Inform the merchant of a shipping option change
   </figcaption>

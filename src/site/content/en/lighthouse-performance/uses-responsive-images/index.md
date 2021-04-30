@@ -59,7 +59,7 @@ either when you upload an image, or request it from your page.
 Use the
 [`amp-img`](https://amp.dev/documentation/components/amp-img/?format=websites)
 component's support for
-[`srcset`](https://web.dev/use-srcset-to-automatically-choose-the-right-image/)
+[`srcset`](/use-srcset-to-automatically-choose-the-right-image/)
 to specify which image assets to use based on the screen size. See
 also [Responsive images with srcset, sizes &
 heights](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction/).

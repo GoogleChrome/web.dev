@@ -464,7 +464,7 @@ debugging the accessibility of your visual components.
   Tenon has strong integration support across build tools, browsers (via extensions), and even text editors.
 - There are many library- and framework-specific tools
   for highlighting accessibility issues with components.
-  For example, [web.dev](https://web.dev/accessibility-auditing-react/)
+  For example, [web.dev](/accessibility-auditing-react/)
   explains how to use [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
   to highlight accessibility issues for React components in your editor:
 
