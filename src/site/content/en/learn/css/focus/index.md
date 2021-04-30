@@ -13,7 +13,7 @@ date: 2021-04-30
 On your webpage,
 you click a link that skips the user to the main content of the website.
 These are often referred to as skip links, or anchor links.
-When that link is activated by a keyboard,
+When that link is activated by a keyboard, using the *tab* and *enter* keys,
 the main content container has a focus ring around it. Why is that?
 
 {% Codepen {
