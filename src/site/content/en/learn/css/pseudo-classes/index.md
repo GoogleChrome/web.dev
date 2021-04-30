@@ -14,7 +14,8 @@ which is one of many browser-provided pseudo-classes.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWdMGjE'
+  id: 'QWdMGjE',
+  height: 250
 } %}
 
 A pseudo-class lets you apply styles based on state changes and external factors.
