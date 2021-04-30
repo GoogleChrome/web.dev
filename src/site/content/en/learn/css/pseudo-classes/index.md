@@ -109,7 +109,8 @@ button:focus-visible {
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'qBRXRdW'
+  id: 'qBRXRdW',
+  height: 350
 } %}
 
 ### `:target`
