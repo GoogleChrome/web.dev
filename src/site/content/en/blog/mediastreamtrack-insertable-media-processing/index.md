@@ -102,7 +102,7 @@ components:
   track sink that is capable of exposing the unencoded frames from the track to a `ReadableStream`
   and that exposes a control channel for signals going in the opposite direction.
 - The `MediaStreamTrackGenerator`, which consumes a stream of media frames and exposes a `MediaStreamTrack`
-  interface, so that it can be used anywhere a `MediaStreamTrack` is currently attached. It takes
+  interface, so that it can be used in any sink a `MediaStreamTrack` is currently attached to. It takes
   video frames as input, and emits control signals that result from subsequent processing.
 
 #### The `MediaStreamTrackProcessor`
