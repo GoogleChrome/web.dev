@@ -306,7 +306,7 @@ will only apply the directional values when it is in its docked/stuck state.
   id: 'NWdNGZB'
 } %}
 
-In the [logical properties](/learn/css/logical-properties) lesson,
+In the [logical properties](/learn/css/logical-properties) module,
 you learned about the `inset` property,
 which allows you to set directional values that honor writing mode.
 
