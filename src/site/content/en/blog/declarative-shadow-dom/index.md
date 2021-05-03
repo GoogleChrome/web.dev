@@ -373,6 +373,63 @@ Declarative Shadow Roots, it is only loaded and parsed once. The browser uses a 
 are not supported in Declarative Shadow DOM. This is because there is currently no way to serialize
 constructable stylesheets in HTML, and no way to refer to them when populating `adoptedStyleSheets`.
 
+## Avoiding the flash of unstyled content {: #fouc }
+
+One potential issue in browsers that do not yet support Declarative Shadow DOM
+is avoiding "flash of unstyled content" (FOUC), where the raw contents are shown
+for Custom Elements that have not yet been upgraded. Prior to Declarative Shadow
+DOM, one common technique for avoiding FOUC was to apply a `display:none` style
+rule to Custom Elements that haven't been loaded yet, since these have not had
+their shadow root attached and populated. In this way, content is not displayed
+until it is "ready":
+
+```html
+<style>
+  x-foo:not(:defined) > * {
+    display: none;
+  }
+</style>
+```
+
+With the introduction of Declarative Shadow DOM, Custom Elements can be rendered
+or authored in HTML such that their shadow content in-place and ready before the
+client-side component implementation is loaded:
+
+```html
+<x-foo>
+  <template shadowroot="open">
+    <style>h2 { color: blue; }</style>
+    <h2>shadow content</h2>
+  </template>
+</x-foo>
+```
+
+In this case, the `display:none` "FOUC" rule would prevent the declarative
+shadow root's content from showing. However, removing that rule would cause
+browsers without Declarative Shadow DOM support to show incorrect or unstyled
+content until the Declarative Shadow DOM [polyfill](#polyfill) loads and
+converts the shadow root template into a real shadow root.
+
+Fortunately, this can be solved in CSS by modifying the FOUC style rule. In
+browsers that support Declarative Shadow DOM, the `<template shadowroot>`
+element is immediately converted into a shadow root, leaving no `<template>`
+element in the DOM tree. Browsers that don't support Declarative Shadow DOM
+preserve the `<template>` element, which we can use this to prevent FOUC:
+
+```html
+<style>
+  x-foo:not(:defined) > template[shadowroot] ~ *  {
+    display: none;
+  }
+</style>
+```
+
+Instead of hiding the not-yet-defined Custom Element, the revised "FOUC" rule
+hides its _children_ when they follow a `<template shadowroot>` element. Once
+the Custom Element is defined, the rule no longer matches. The rule is ignored
+in browsers that support Declarative Shadow DOM because the
+`<template shadowroot>` child is removed during HTML parsing.
+
 ## Feature detection and browser support {: #detection-support }
 
 Declarative Shadow DOM is available in Chrome&nbsp;90 and Edge&nbsp;91. It can also be enabled
