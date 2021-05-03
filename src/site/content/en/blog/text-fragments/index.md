@@ -471,14 +471,9 @@ contrived to begin with and since its exploitation requires _very_ specific prec
 the Chrome security team evaluated the risk of implementing scroll on navigation to be manageable.
 Other user agents may decide to show a manual scroll UI element instead.
 
-For sites that still wish to opt-out, we have proposed a
-[Document Policy](https://github.com/w3c/webappsec-feature-policy/blob/master/document-policy-explainer.md)
-header value that they can send, so user agents will not process Text Fragment URLs. Since Document
-Policy is not yet shipped, we are running an
-[origin trial](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md) to
-apply this policy as an intermediate solution. The
-[ForceLoadAtTop](https://developers.chrome.com/origintrials/#/view_trial/3253850730775183361) origin
-trial is running from Chrome version 83 to 85.
+For sites that still wish to opt-out, we support a
+[Document Policy](https://wicg.github.io/document-policy/)
+header value that they can send, so user agents will not process Text Fragment URLs.
 
 ```bash
 Document-Policy: force-load-at-top
@@ -507,7 +502,7 @@ On Windows, follow the documentation on the
 [Google Chrome Enterprise Help](https://support.google.com/chrome/a/answer/9131254?hl=en) support
 site.
 
-{% Aside 'warning' %} Please only try this when you know what you are doing. {% endAside %}
+{% Aside 'warning' %} Only try this when you know what you are doing. {% endAside %}
 
 ## Text fragments in web search
 
