@@ -19,14 +19,14 @@
         <div class="input"></div>
       </div>
 
-      <course-links class="drawer-course__links scrollbar" current="{{ page.url }}">
+      <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
         {% for item in pageNavigation %}
         {% set isNew = item.page.data.date | isNewContent %}
-        <a class="drawer-course__link" href="{{ item.url }}">
+        <a class="drawer-course__link" href="{{ item.url }}" {% if item.url == page.url %} data-active {% endif %}>
           <span class="drawer-course__link-counter font-mono">{{ loop.index0 | padStart(3, '0') }}</span>
           <span class="drawer-course__link-title gap-left-400"
               {% if isNew %} data-badge="{{ 'i18n.common.new' | i18n(locale) }}" {% endif %}
-          >{{ item.page.data.title }} {{ isNew }}</span>
+          >{{ item.page.data.title }}</span>
           {{ icon('done', 'drawer-course__link-check gap-left-auto') }}
         </a>
         {% endfor %}

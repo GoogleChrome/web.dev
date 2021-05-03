@@ -97,10 +97,14 @@
     }
 
     &[data-badge]::after {
+      @include apply-utility('font', 'mono');
+      font-weight: 700;
       color: $WEB_PRIMARY_COLOR;
       content: attr(data-badge);
-      font-size: 12px;
-      @include apply-utility('weight', 'medium');
+      font-size: px-to-rem(11px);
+      line-height: px-to-rem(16px);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
     }
   }
 
