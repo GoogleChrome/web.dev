@@ -18,26 +18,25 @@ questions:
       - content: "Determines if the box should scroll"
         rationale: "That's the `overflow` property"
   - type: multiple-choice
-    cardinality: "1+"
-    correctAnswers: "1,4"
-    stem: "Which display types create rules for their children?"
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: |
+      To flow multiple paragraphs into columns, which CSS property is best for
+      this task?
     options:
-      - content: float
-        rationale: "This is not a display type, it's a property"
-      - content: flex
-        rationale: "Flexbox sizes the boxes and gives them new alignment,
-        distribution and sizing properties"
-      - content: inline-block
-        rationale: "A valid display type, but does not create rules for their
-        children"
-      - content: block
-        rationale: "A valid display type, but does not create rules for their
-        children"
-      - content: grid
-        rationale: "Grid creates columns and rows with rules and places children
-        inside of them"
-      - content: relative
-        rationale: "This is not a display type, it's a position value"
+      - content: "`display: grid`"
+        rationale: "While grid could put multiple paragraphs into columns, those
+        columns would be their own columns, not flowing together from one to the
+        next like is needed."
+      - content: "`column-count`"
+        rationale: "Paragraphs will flow from the end of one column into the
+        start of the next, like a magazine or newspaper will do."
+      - content: "`display: flex`"
+        rationale: "While flex could put multiple paragraphs into columns, those
+        columns would be their own columns, not flowing together from one to the
+        next like is needed."
+      - content: "`float`"
+        rationale: "Try again!"
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "2"
@@ -51,3 +50,14 @@ questions:
         rationale: "A box with `position: absolute` for example, is now
         positioned with x and y coordinates based off it's containing block, and
         not it's order with other sibling elements"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: "Flexbox and Grid wrap their children by default?"
+    options:
+      - content: "True"
+        rationale: "It must be opted into with `flex-wrap: wrap` or
+        `repeat(auto-fit, 30ch)`"
+      - content: "False"
+        rationale: "Each Flexbox and Grid have special wrapping features that
+        need additional styles to apply"
