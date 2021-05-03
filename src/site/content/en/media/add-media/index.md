@@ -16,9 +16,9 @@ tags:
 In this section you'll learn how to embed a media file in a web page using the
 `<video>` and `<source>` tags, how to add captions to a video for the
 hearing-impaired, and some general concepts for using media frameworks.
-Additionally, you'll learn about best practices when using autoplay, using
-preload to speed up playback start, and we will discuss how we built an updated
-demo PWA with offline adaptive streaming capabilities called Kino.
+Additionally, you'll learn about using preload to speed up playback start, and
+we will discuss how we built an updated demo PWA with offline adaptive
+streaming capabilities called Kino.
 
 This section assumes you have a video file that is ready for embedding in a web
 page. A `.mov` file downloaded from a camera will not work—if that's all you
@@ -32,8 +32,6 @@ This section covers these topics.
   to a media file for hearing impaired.
 * In [Media frameworks](/media-frameworks/) you'll learn the basic about using
   media frameworks like Shaka Player, JW Player, and Video.js.
-* In [Autoplay best practices](/autoplay-best-practices/) you'll learn when and
-  when not to use autoplay, and the various gotchas associated with using it.
 * In [Fast playback with audio and video preload](/fast-playback-with-preload/)
   you'll learn to accelerate your media playback by actively preloading
   resources.
