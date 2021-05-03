@@ -390,7 +390,7 @@ provide built-in support for Text Fragments where the functionality is implement
 ### Programmatic Text Fragment link generation
 
 The [polyfill](https://github.com/GoogleChromeLabs/text-fragments-polyfill) contains a file
-`fragment-generation-utils.js` that you can import and generate Text Fragment links with as
+`fragment-generation-utils.js` that you can import and use to generate Text Fragment links. This is
 outlined in the code sample below:
 
 ```js
@@ -417,11 +417,11 @@ if (result.status === 0) {
 ### Obtaining Text Fragments for analytics purposes
 
 Plenty of sites use the fragment for routing, which is why browsers strip out Text Fragments
-as to not break those pages. There is an
+so as to not break those pages. There is an
 [acknowledged need](https://github.com/WICG/scroll-to-text-fragment/issues/128)
 to expose Text Fragments links to pages, for example, for analytics purposes,
 but the proposed solution is not implemented yet.
-As a workaround for now, you can use the one-liner script below to extract
+As a workaround for now, you can use the code below to extract
 the desired information.
 
 ```js
@@ -471,9 +471,9 @@ contrived to begin with and since its exploitation requires _very_ specific prec
 the Chrome security team evaluated the risk of implementing scroll on navigation to be manageable.
 Other user agents may decide to show a manual scroll UI element instead.
 
-For sites that still wish to opt-out, we support a
+For sites that wish to opt-out, Chromium supports a
 [Document Policy](https://wicg.github.io/document-policy/)
-header value that they can send, so user agents will not process Text Fragment URLs.
+header value that they can send so user agents will not process Text Fragment URLs.
 
 ```bash
 Document-Policy: force-load-at-top
