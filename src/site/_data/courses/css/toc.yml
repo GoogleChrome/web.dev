@@ -5,6 +5,7 @@
 - url: /learn/css/specificity
 - url: /learn/css/inheritance
 - url: /learn/css/color
+- url: /learn/css/sizing
 - url: /learn/css/layout
 - url: /learn/css/flexbox
 - url: /learn/css/grid
@@ -14,4 +15,10 @@
 - url: /learn/css/pseudo-classes
 - url: /learn/css/borders
 - url: /learn/css/shadows
+- url: /learn/css/focus
 - url: /learn/css/z-index
+- url: /learn/css/functions
+- url: /learn/css/gradients
+- url: /learn/css/animation
+- url: /learn/css/filters
+- url: /learn/css/blend-modes
