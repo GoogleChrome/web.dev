@@ -21,7 +21,7 @@ import {trackEvent} from '../../analytics';
  * @fileoverview A drawer displaying the course ToC.
  */
 
-class DrawerCourse extends BaseElement {
+class CourseLinks extends BaseElement {
   static get properties() {
     return {
       current: {type: String},
@@ -69,4 +69,4 @@ class DrawerCourse extends BaseElement {
   }
 }
 
-customElements.define('web-drawer-course', DrawerCourse);
+customElements.define('course-links', CourseLinks);
