@@ -3,12 +3,10 @@
  */
 
 import {html} from 'lit-element';
-import {unsafeHTML} from 'lit-html/directives/unsafe-html';
 import {BaseStateElement} from '../BaseStateElement';
 import {store} from '../../store';
 import {debounce} from '../../utils/debounce';
 import {trackError} from '../../analytics';
-import {allowHtml, escapeHtml} from '../../../lib/utils/escape-html';
 import 'focus-visible';
 import './_styles.scss';
 
@@ -41,17 +39,18 @@ async function internalLoadAlgoliaLibrary() {
 class Search extends BaseStateElement {
   static get properties() {
     return {
+      // Id of the HTML element displaying the results.
+      resultsId: {type: String, reflect: true},
       // Manages the expanded/collapsed state of the UI.
       expanded: {type: Boolean, reflect: true},
       // An array of algolia results.
       hits: {type: Object},
       // Manages showing/hiding the search results popout.
       showHits: {type: Boolean},
-      // Indicates which search result should be highlighted in the popout.
-      // Primarily used for keyboard behavior.
-      cursor: {type: Number},
       // Locale to use for search
       locale: {type: String},
+      // Search query
+      query: {type: String},
     };
   }
 
@@ -59,11 +58,11 @@ class Search extends BaseStateElement {
     super();
     this.hits = [];
     this.showHits = false;
-    this.cursor = -1;
     this.query = '';
     this.timeout;
     this.expanded = false;
     this.locale = 'en';
+    this.resultsEl;
 
     // On smaller screens we don't do an animation so it's ok for us to fire off
     // actions immediately. On larger screens we need to wait for the searchbox
@@ -85,6 +84,8 @@ class Search extends BaseStateElement {
     super.connectedCallback();
     window.addEventListener('resize', this.onResize);
     this.onResize();
+    this.resultsId = this.getAttribute('results-id');
+    this.resultsEl = document.getElementById(this.resultsId);
   }
 
   disconnectedCallback() {
@@ -165,100 +166,8 @@ class Search extends BaseStateElement {
           />
         </svg>
       </button>
-      ${this.hitsTemplate}
     `;
   }
-
-  /* eslint-disable indent */
-  get hitsTemplate() {
-    if (!this.showHits) {
-      return html`
-        <div
-          id="web-search-popout__list"
-          role="listbox"
-          aria-hidden="true"
-        ></div>
-      `;
-    }
-
-    if (!this.hits.length) {
-      if (!this.query) {
-        return '';
-      }
-
-      // This is intentionally NOT "site:web.dev", as users can have a broader
-      // result set that way. We tend to come up first regardless.
-      const query = 'web.dev ' + this.query.trim();
-      const searchUrl =
-        'https://google.com/search?q=' + window.encodeURIComponent(query);
-      return html`
-        <div class="web-search-popout">
-          <div class="web-search-popout__heading">
-            There are no suggestions for your query&mdash;try
-            <a
-              data-category="web.dev"
-              data-label="search, open Google"
-              data-action="click"
-              target="_blank"
-              tabindex="-1"
-              href=${searchUrl}
-            >
-              Google search
-            </a>
-          </div>
-        </div>
-      `;
-    }
-
-    return html`
-      <div class="web-search-popout">
-        <div class="web-search-popout__heading">Pages</div>
-        <ul
-          id="web-search-popout__list"
-          class="web-search-popout__list"
-          role="listbox"
-        >
-          ${this.itemsTemplate}
-        </ul>
-      </div>
-    `;
-  }
-
-  get itemsTemplate() {
-    // Note that our anchors have tabindex=-1 to prevent them from
-    // being focused.
-    // This is intentional because focus needs to stay in the input field.
-    // When the user is pressing arrow keys, we use a virtual cursor and
-    // aria-activedescendant to indicate the active anchor.
-    return this.hits.map((hit, idx) => {
-      if (!hit._highlightResult.title || !hit._highlightResult.title.value) {
-        return html``;
-      }
-
-      let title = hit._highlightResult.title.value;
-      // Escape any html entities in the title except for <strong> tags.
-      // Algolia sends back <strong> tags in the title which help highlight
-      // the characters that match what the user has typed.
-      title = allowHtml(escapeHtml(title), 'strong');
-      // Strip backticks as they look a bit ugly in the results.
-      title = title.replace(/`/g, '');
-      return html`
-        <li class="web-search-popout__item">
-          <a
-            id="web-search-popout__link--${idx}"
-            class="web-search-popout__link ${idx === this.cursor
-              ? 'web-search-popout__link--active'
-              : ''}"
-            aria-selected="${idx === this.cursor}"
-            tabindex="-1"
-            href="${hit.url}"
-            >${unsafeHTML(title)}</a
-          >
-        </li>
-      `;
-    });
-  }
-  /* eslint-enable indent */
 
   firstUpdated() {
     /** @type HTMLInputElement */
@@ -266,27 +175,17 @@ class Search extends BaseStateElement {
   }
 
   /**
-   * Keep track of cursor changes and reflect them to aria-activedescendant.
-   * This ensures screen readers properly announce the current search result.
-   * We do this because focus never leaves the search input box, so when the
-   * user is arrowing through results, we have to tell the screen reader about
-   * it.
+   * Passes on updated search properties to the searh results element.
    * @param {Map} changedProperties A Map of LitElement properties that changed.
    */
   updated(changedProperties) {
-    if (!changedProperties.has('cursor')) {
-      return;
-    }
-
-    if (this.cursor === -1) {
-      this.inputEl.removeAttribute('aria-activedescendant');
-      return;
-    }
-
-    this.inputEl.setAttribute(
-      'aria-activedescendant',
-      `web-search-popout__link--${this.cursor}`,
-    );
+    // Reflect changed properties to the results el.
+    const sharedProperties = ['query', 'hits', 'showHits'];
+    sharedProperties.forEach(property => {
+      if (changedProperties.has(property)) {
+        this.resultsEl[property] = this[property];
+      }
+    });
   }
 
   /**
@@ -301,41 +200,23 @@ class Search extends BaseStateElement {
   }
 
   onKeyDown(e) {
+    const navigationKeys = [
+      'Home',
+      'End',
+      'Up',
+      'ArrowUp',
+      'Down',
+      'ArrowDown',
+      'Enter'
+    ];
     // Check if the user is navigating within the search popout.
-    switch (e.key) {
-      case 'Home':
-        e.preventDefault();
-        this.firstHit();
-        return;
-
-      case 'End':
-        e.preventDefault();
-        this.lastHit();
-        return;
-
-      case 'Up': // IE/Edge specific value
-      case 'ArrowUp':
-        e.preventDefault();
-        this.prevHit();
-        return;
-
-      case 'Down': // IE/Edge specific value
-      case 'ArrowDown':
-        e.preventDefault();
-        this.nextHit();
-        return;
-
-      case 'Enter':
-        const hit = this.hits[this.cursor];
-        if (hit) {
-          this.navigateToHit(hit);
-        }
-        return;
-
-      case 'Esc': // IE/Edge specific value
-      case 'Escape':
-        /** @type HTMLElement */ (document.activeElement).blur();
-        return;
+    if (navigationKeys.includes(e.key)) {
+      e.preventDefault();
+      this.resultsEl.navigate(e.key);
+    }
+    if (['Esc', 'Escape'].includes(e.key)) {
+      /** @type HTMLElement */ (document.activeElement).blur();
+      return;
     }
   }
 
@@ -376,53 +257,6 @@ class Search extends BaseStateElement {
       console.error(err.debugData);
       trackError(err, 'search');
     }
-  }
-
-  firstHit() {
-    this.cursor = 0;
-    this.scrollHitIntoView();
-  }
-
-  lastHit() {
-    this.cursor = this.hits.length - 1;
-    this.scrollHitIntoView();
-  }
-
-  nextHit() {
-    this.cursor = (this.cursor + 1) % this.hits.length;
-    this.scrollHitIntoView();
-  }
-
-  prevHit() {
-    if (this.cursor === -1) {
-      this.cursor = this.hits.length - 1;
-    } else {
-      this.cursor = (this.cursor - 1 + this.hits.length) % this.hits.length;
-    }
-    this.scrollHitIntoView();
-  }
-
-  /**
-   * Waits for LitElement to render, then attempts to scroll the current active
-   * link into view. This is done because focus never leaves the input field
-   * since the user may still be typing their query. As a result, we need to
-   * tell the browser to scroll if the user has arrowed down to a hit that has
-   * overflown the container.
-   */
-  scrollHitIntoView() {
-    this.requestUpdate().then(() => {
-      this.renderRoot
-        .querySelector('.web-search-popout__link--active')
-        .scrollIntoView();
-    });
-  }
-
-  /**
-   * Tells the page to navigate to the url.
-   * @param {{url:string}} url A URL data object.
-   */
-  navigateToHit({url}) {
-    window.location.href = url;
   }
 
   /**
@@ -499,7 +333,6 @@ class Search extends BaseStateElement {
     this.expanded = false;
     this.showHits = false;
     this.hits = [];
-    this.cursor = -1;
     this.clear();
   }
 }
