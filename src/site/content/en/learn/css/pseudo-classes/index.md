@@ -521,3 +521,5 @@ img:not([alt]) {
   user: 'web-dot-dev',
   id: 'abpyWJK'
 } %}
+
+{% Assessment 'pseudo-classes' %}
