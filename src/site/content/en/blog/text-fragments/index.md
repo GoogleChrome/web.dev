@@ -8,7 +8,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2021-02-02
+updated: 2021-05-03
 hero: image/admin/Y4NLEbOwgTWdMNoxRYXw.jpg
 alt:
 description: |
@@ -386,6 +386,47 @@ The Text Fragments feature can be polyfilled to some extent. We provide a
 [polyfill](https://github.com/GoogleChromeLabs/text-fragments-polyfill), which is used internally by
 the [extension](https://github.com/GoogleChromeLabs/link-to-text-fragment), for browsers that do not
 provide built-in support for Text Fragments where the functionality is implemented in JavaScript.
+
+### Programmatic Text Fragment link generation
+
+The [polyfill](https://github.com/GoogleChromeLabs/text-fragments-polyfill) contains a file
+`fragment-generation-utils.js` that you can import and generate Text Fragment links with as
+outlined in the code sample below:
+
+```js
+const { generateFragment } = await import('https://unpkg.com/text-fragments-polyfill/dist/fragment-generation-utils.js');
+const result = generateFragment(window.getSelection());
+if (result.status === 0) {
+  let url = `${location.origin}${location.pathname}${location.search}`;
+  const fragment = result.fragment;
+  const prefix = fragment.prefix ?
+    `${encodeURIComponent(fragment.prefix)}-,` :
+    '';
+  const suffix = fragment.suffix ?
+    `,-${encodeURIComponent(fragment.suffix)}` :
+    '';
+  const textStart = encodeURIComponent(fragment.textStart);
+  const textEnd = fragment.textEnd ?
+    `,${encodeURIComponent(fragment.textEnd)}` :
+    '';
+  url += `#:~:text=${prefix}${textStart}${textEnd}${suffix}`;
+  console.log(url);
+}
+```
+
+### Obtaining Text Fragments for analytics purposes
+
+Plenty of sites use the fragment for routing, which is why browsers strip out Text Fragments
+as to not break those pages. There is an
+[acknowledged need](https://github.com/WICG/scroll-to-text-fragment/issues/128)
+to expose Text Fragments links to pages, for example, for analytics purposes,
+but the proposed solution is not implemented yet.
+As a workaround for now, you can use the one-liner script below to extract
+the desired information.
+
+```js
+new URL(performance.getEntries().find(({ type }) => type === 'navigate').name).hash;
+```
 
 ### Security
 
