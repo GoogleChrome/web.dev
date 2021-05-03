@@ -86,7 +86,8 @@ the `.child` element will sit behind it.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'XWpeayj'
+  id: 'XWpeayj',
+  height: 400
 } %}
 
 Add the following CSS to `.my-element`,
@@ -102,7 +103,8 @@ and the `.child` element will not sit behind it anymore.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'bGgorZy'
+  id: 'bGgorZy',
+  height: 400
 } %}
 
 Because `.my-element` now has a `position` value that's not `static`
@@ -117,7 +119,8 @@ A stacking context is a group of elements that have a common parent and move up 
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'JjErOXV'
+  id: 'JjErOXV',
+  height: 600
 } %}
 
 In this example,
