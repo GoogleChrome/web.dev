@@ -6,7 +6,7 @@ subhead: |
   to introduce new components.
 authors:
   - thomassteiner
-date: 2021-04-28
+date: 2021-05-03
 description: |
   Insertable streams for MediaStreamTrack expose the contents of a MediaStreamTrack as a collection
   of streams (as defined by the WHATWG Streams API), which can be manipulated to introduce new
