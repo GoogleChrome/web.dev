@@ -299,3 +299,5 @@ video::cue(i) {
   color: lightpink;
 }
 ```
+
+{% Assessment 'pseudo-elements' %}
