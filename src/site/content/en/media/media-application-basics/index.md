@@ -235,7 +235,7 @@ packager version v2.4.3-dd9870075f-release
 ```
 
 Now that you've tried your hand at using Shaka Packager and FFmpeg, you can continue
-learning the basic concepts, next up [Media metrics basics](/media-metrics-basics/).
+learning the basic concepts, next up [Media streaming basics](/media-streaming-basics/).
 
 [Shaka Packager]: https://github.com/google/shaka-packager
 [FFmpeg]: https://ffmpeg.org/download.html
