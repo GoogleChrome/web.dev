@@ -52,6 +52,11 @@ The core idea for insertable streams for `MediaStreamTrack` is to expose the con
 [Streams API](https://streams.spec.whatwg.org/)). These streams can be manipulated to introduce new
 components.
 
+Granting developers access to the video (or audio) stream directly allows them to apply modifications
+directly to the stream, rather than, for example, for the case of video manipulation,
+force them to go through intermediates like `<canvas>` objects, as outlined in this
+multi-step [article](https://html5doctor.com/video-canvas-magic/).
+
 ## Use cases
 
 Use cases for insertable streams for `MediaStreamTrack` include, but are not limited to:
