@@ -15,7 +15,7 @@ tags:
 
 [Progressive Web Apps](https://web.dev/progressive-web-apps/) bring a lot of features previously reserved for native applications to the web. One of the most prominent features associated with PWAs is [offline experience](https://web.dev/progressive-web-apps/).
 
-The offline watching experience is a great feature you could offer to your users. But therein lies one unique problem – video files can be very, *very* large. So you might be asking:
+The offline watching experience is a great feature you could offer to your users. But therein lies one unique problem–video files can be very, *very* large. So you might be asking:
 
 - How do I download and store a large video file?
 - And how do I serve it back?
@@ -93,7 +93,7 @@ async function downloadFile(url) {
 Notice how we `await reader.read()` in a loop? That's how you'll receive chunks of data from a readable stream as they arrive from the network. Consider how useful this is: you can start processing your data even before it all arrives from the network.
 
 {% Aside %}
-If you find the concept of streams confusing, check out [Streams – The definitive guide].
+If you find the concept of streams confusing, check out [Streams–The definitive guide].
 {% endAside %}
 
 ### Resuming downloads
@@ -253,6 +253,6 @@ With the main obstacles out of your way, you can now start adding some nice-to-h
 [Background Fetch]: https://developers.google.com/web/updates/2018/12/background-fetch
 [Kino app]: #
 [File System Access API]: https://web.dev/file-system-access/
-[Streams – The definitive guide]: https://web.dev/streams/
+[Streams–The definitive guide]: https://web.dev/streams/
 [Media Session API]: https://web.dev/media-session/
 [Response constructor]: https://developer.mozilla.org/en-US/docs/Web/API/Response/Response
