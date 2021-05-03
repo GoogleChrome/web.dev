@@ -181,7 +181,7 @@ class Search extends BaseStateElement {
   updated(changedProperties) {
     // Reflect changed properties to the results el.
     const sharedProperties = ['query', 'hits', 'showHits'];
-    sharedProperties.forEach(property => {
+    sharedProperties.forEach((property) => {
       if (changedProperties.has(property)) {
         this.resultsEl[property] = this[property];
       }
@@ -207,7 +207,7 @@ class Search extends BaseStateElement {
       'ArrowUp',
       'Down',
       'ArrowDown',
-      'Enter'
+      'Enter',
     ];
     // Check if the user is navigating within the search popout.
     if (navigationKeys.includes(e.key)) {
