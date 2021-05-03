@@ -20,7 +20,7 @@ How do you do that with CSS?
 {% Codepen {
   user: 'web-dot-dev',
   id: 'wvgrMrR',
-  height: 600px
+  height: 600
 } %}
 
 CSS has the
@@ -32,7 +32,8 @@ _not_ around the t-shirt.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'YzNrwae'
+  id: 'YzNrwae',
+  height: 600
 } %}
 
 Luckily, there is another option: the
@@ -87,7 +88,8 @@ add an `inset` keyword **before** the other properties.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'rNjGevp'
+  id: 'rNjGevp',
+  height: 600
 } %}
 
 ### Multiple shadows
@@ -105,7 +107,8 @@ Add a comma separated collection of value sets to achieve this:
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'abpLNXR'
+  id: 'abpLNXR',
+  tab: 'css,result'
 } %}
 
 ### Properties affecting box shadow
@@ -123,7 +126,8 @@ as if light is pointing at it.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'RwKLaXN'
+  id: 'RwKLaXN',
+  tab: 'css,result'
 } %}
 
 If your box with `box-shadow` is in a container that has `overflow: hidden`,
@@ -153,7 +157,8 @@ the shadow **won't** break out of that overflow either.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'BapwzyQ'
+  id: 'BapwzyQ',
+  tab: 'css,result'
 } %}
 
 ## Text shadow
@@ -209,7 +214,8 @@ and you can create some really cool text effects, such as 3D text.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'RwKLGaL'
+  id: 'RwKLGaL',
+  tab: 'css,result'
 } %}
 
 ## Drop shadow
@@ -221,7 +227,7 @@ as in the case in the intro of this module.
 
 ```css
 .my-image {
-filter: drop-shadow(0px 0px 10px rgba(0 0 0 / 30%))
+  filter: drop-shadow(0px 0px 10px rgba(0 0 0 / 30%))
 }
 ```
 
