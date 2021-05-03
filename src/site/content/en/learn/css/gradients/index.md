@@ -51,7 +51,9 @@ you can pass some colors like this and it will automatically split them evenly, 
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'mdRqPoZ'
+  id: 'mdRqPoZ',
+  tab: 'css,result',
+  height: 400
 } %}
 
 You can also pass an angle or keywords that represent an angle.
@@ -68,10 +70,12 @@ you would specify the angle as `to right` as the first argument.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'zYNPqXW'
+  id: 'zYNPqXW',
+  tab: 'css,result',
+  height: 400
 } %}
 
-You can also define where a color stops by adding a color stop value.
+A color stop value defined where a color stops and mixes with its neighbors.
 For a gradient starting with a dark shade of red running at a 45deg angle,
 at 30% of the size of the gradient changing to a lighter red: it looks like this.
 
@@ -83,15 +87,19 @@ at 30% of the size of the gradient changing to a lighter red: it looks like this
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'NWdwNZr'
+  id: 'NWdwNZr',
+  tab: 'css,result',
+  height: 400
 } %}
 
-You can add as many colors and color stops as you like in a `linear-gradient()`
-as well as many linear gradients as you want.
+You can add as many colors and color stops as you like in a `linear-gradient()`,
+and you can layer gradients on top of each other by separating each gradient with a comma.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'abpVZbj'
+  id: 'abpVZbj',
+  tab: 'css,result',
+  height: 400
 } %}
 
 ## Radial gradient
@@ -112,7 +120,9 @@ and select either a circle or ellipse, depending on the size of the box.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'LYxOZEq'
+  id: 'LYxOZEq',
+  tab: 'css,result',
+  height: 400
 } %}
 
 The gradient's position is similar to `background-position` using keywords and/or number values.
@@ -130,7 +140,9 @@ Likewise, you can add as many `radial-gradients` as you like too.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'MWJOepV'
+  id: 'MWJOepV',
+  tab: 'css,result',
+  height: 400
 } %}
 
 ## Conic gradient
@@ -146,7 +158,9 @@ and goes around in a 360 degree circle.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'qBRVNXG'
+  id: 'qBRVNXG',
+  tab: 'css,result',
+  height: 400
 } %}
 
 The [`conic-gradient()`](https://developer.mozilla.org/en-US/docs/Web/CSS/conic-gradient())
@@ -163,7 +177,9 @@ or it can be defined with numeric values.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'vYgWKpO'
+  id: 'vYgWKpO',
+  tab: 'css,result',
+  height: 400
 } %}
 
 You can add as many color stops as you want, like with other gradient types.
@@ -171,7 +187,9 @@ A good use case for this capability, with conic gradients is rendering pie chart
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'mdRqExP'
+  id: 'mdRqExP',
+  tab: 'css,result',
+  height: 400
 } %}
 
 ## Repeating and mixing
@@ -205,13 +223,22 @@ you can create a striped background with a `repeating-linear-gradient` by settin
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'ExZbgdy'
+  id: 'ExZbgdy',
+  tab: 'css,result',
+  height: 400
 } %}
 
 You can also mix gradient functions on `background` properties,
 as well as defining as many gradients as you like,
 just like you would with a background image.
-For example, you can mix two linear-gradients with a radial gradient.
+For example, you can mix multiple linear-gradients together, or two linear-gradients with a radial gradient.
+
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'ExZqGxP',
+  tab: 'css,result',
+  height: 400
+} %}
 
 ## Resources
 
