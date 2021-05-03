@@ -1,3 +1,3 @@
 import './content';
 import '../components/AudioFab';
-import '../components/DrawerCourse';
+import '../components/CourseLinks';
