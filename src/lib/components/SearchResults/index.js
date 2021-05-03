@@ -5,21 +5,16 @@
 import {html} from 'lit-element';
 import {unsafeHTML} from 'lit-html/directives/unsafe-html';
 import {BaseStateElement} from '../BaseStateElement';
-import {store} from '../../store';
-import {debounce} from '../../utils/debounce';
-import {trackError} from '../../analytics';
 import {allowHtml, escapeHtml} from '../../../lib/utils/escape-html';
 import 'focus-visible';
 import './_styles.scss';
-
-
 
 /**
  * An Algolia search box.
  * @extends {BaseStateElement}
  * @final
  */
- class SearchResults extends BaseStateElement {
+class SearchResults extends BaseStateElement {
   static get properties() {
     return {
       // An array of algolia results.
@@ -75,7 +70,6 @@ import './_styles.scss';
         }
         return;
     }
-
   }
 
   firstHit() {
