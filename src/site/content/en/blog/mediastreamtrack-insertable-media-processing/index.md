@@ -246,6 +246,7 @@ and let us know where and how you are using it.
 The insertable streams for `MediaStreamTrack` spec was written by
 [Harald Alvestrand](https://github.com/alvestrand) and [Guido Urdaneta](https://github.com/guidou).
 This article was reviewed by Harald Alvestrand, [Joe Medley](https://github/com/jpmedley),
+[Ben Wagner](https://github.com/dogben),
 [Huib Kleinhout](https://github.com/huibk), and
 [François Beaufort](https://github.com/beaufortfrancois). Hero image by
 [Chris Montgomery](https://unsplash.com/@cwmonty) on
