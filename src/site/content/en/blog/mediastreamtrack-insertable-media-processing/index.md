@@ -6,7 +6,7 @@ subhead: |
   generate new content.
 authors:
   - thomassteiner
-date: 2021-05-03
+date: 2021-05-04
 description: |
   Insertable streams for MediaStreamTrack is about exposing the content of a MediaStreamTrack
   as a stream that can be manipulated or used to generate new content.
