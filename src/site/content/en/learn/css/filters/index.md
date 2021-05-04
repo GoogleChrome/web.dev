@@ -5,7 +5,7 @@ description: >
   In this module, you can discover what is available.
 audio:
   title: 'The CSS Podcast - 023: Filters'
-  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP024_TCP_CSS_Podcast_Episode_024_v1.0.mp3?dest-id=1891556'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_023_v1.0.mp3?dest-id=1891556'
   thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
