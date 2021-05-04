@@ -73,7 +73,7 @@ the rest of the **CSS rule** will be applied to them.
 
 ## Custom properties and `var()`
 
-```
+```css
 :root {
 	--base-color: #ff00ff;
 }
@@ -234,9 +234,9 @@ You can learn more about the `min()`, `max()`, and `clamp`() functions in
 ## Shapes
 
 The
-[`clip-path`](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path,
-[`offset-path`](https://developer.mozilla.org/en-US/docs/Web/CSS/offset-path and
-[`shape-outside`](https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside
+[`clip-path`](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path),
+[`offset-path`](https://developer.mozilla.org/en-US/docs/Web/CSS/offset-path) and
+[`shape-outside`](https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside)
 CSS properties use shapes to visually clip your box or provide a shape for content to flow around.
 
 There are shape functions that can be used with both of these properties.
@@ -280,7 +280,7 @@ You can rotate an element using the
 [`rotate()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate())
 function, which will rotate an element on its center axis.
 You can also use the
-[`rotateX()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateX())`,
+[`rotateX()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateX()),
 [`rotateY()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateY()) and
 [`rotateZ()`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateZ())
 functions to rotate an element on a specific axis instead.
