@@ -30,14 +30,10 @@ module.exports = {
   subscribe: 'https://web.dev/newsletter',
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
-  thumbnail: '/images/social.png',
+  thumbnail: 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vU99HKzIf5EUPnzGVPf1.png',
   isBannerEnabled: false,
   areCoursesEnabled: false,
   banner: '',
-  // Note that the imageCdn value is only used when we do a production build
-  // of the site. Otherwise all image paths are local. This means you can
-  // develop locally without having to mess with the CDN at all.
-  imageCdn: 'https://webdev.imgix.net',
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
   gitlocalize: 'https://gitlocalize.com/repo/5395/',

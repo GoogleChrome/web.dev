@@ -62,18 +62,10 @@ module.exports = (locale, page, collections, renderData = {}) => {
     let thumbnail = social.thumbnail || social.hero;
     const alt = social.alt || site.name;
 
-    // If the page doesn't have social media images, a hero, or a thumbnail,
-    // fallback to using the site's default thumbnail.
-    // Return a full path to the image using our image CDN.
-    if (!thumbnail) {
-      thumbnail = new URL(site.thumbnail, site.imageCdn);
-    } else {
-      thumbnail = new URL(generateImgixSrc(thumbnail));
-    }
-    thumbnail.searchParams.set('auto', 'format');
-    thumbnail.searchParams.set('fit', 'max');
-    thumbnail.searchParams.set('w', 1200);
-    thumbnail = thumbnail.toString();
+    thumbnail = generateImgixSrc(thumbnail || site.thumbnail, {
+      fit: 'max',
+      w: 1200,
+    });
 
     return {title, description, thumbnail, alt};
   }
