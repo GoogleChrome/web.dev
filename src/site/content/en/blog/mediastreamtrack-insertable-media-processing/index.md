@@ -35,7 +35,6 @@ zero or more `MediaStreamTrack` objects, representing various audio or video tra
 media stream, such as an audio signal associated with a given speaker, like left or right in a
 stereo audio track.
 
-
 ## What is insertable streams for `MediaStreamTrack`?
 
 The core idea behind insertable streams for `MediaStreamTrack` is to expose the content of a
