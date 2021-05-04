@@ -267,19 +267,18 @@ how far the border is outset from the edge and how it should repeat.
 
 ```css
 .my-element {
-  border-image: url(https://assets.codepen.io/174183/border-image-frame.jpg);
+  border-image-source: url(https://assets.codepen.io/174183/border-image-frame.jpg);
   border-image-slice: 61 58 51 48;
   border-image-width: 20px 20px 20px 20px;
   border-image-outset: 0px 0px 0px 0px;
   border-image-repeat: stretch stretch;
 }
 ```
-{% Img
-  src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/jjPvLY8VeJH2MH1wkXjD.jpg",
-  alt="An illustrated frame, used as the border image of an element",
-  width="800",
-  height="438"
-%}
+
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'zYNdWNX'
+} %}
 
 The [`border-image-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width)
 property is like `border-width`:
@@ -316,7 +315,7 @@ It works like the `margin` shorthand where you define the top, right, bottom and
 ```
 
 {% Img
-src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/HbXJEF76GpAQ5FhMeMgH.png",
+src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/WETsTwhFSfl30VfyfMTA.png",
 alt="The image used in the demo with the four slices shown with blue lines",
 width="800",
 height="380" %}
