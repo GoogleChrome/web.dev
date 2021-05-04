@@ -156,8 +156,8 @@ For a barcode scanner application, this chain would look as in the code sample b
 const stream = await getUserMedia({ video: true });
 const videoTrack = stream.getVideoTracks()[0];
 
-const trackProcessor = new MediaStreamTrackProcessor(videoTrack);
-const trackGenerator = new MediaStreamTrackGenerator();
+const trackProcessor = new MediaStreamTrackProcessor({track: videoTrack});
+const trackGenerator = new MediaStreamTrackGenerator({kind: 'video'});
 
 const transformer = new TransformStream({
   async transform(videoFrame, controller) {
