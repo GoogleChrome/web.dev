@@ -12,6 +12,8 @@ description: |
   as a stream that can be manipulated or used to generate new content.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/Qu2wfQ3pxR8AeEfty88S.jpg
 alt: Cup of coffee and a laptop with a video conference showing many participants.
+origin_trial:
+  url: https://developer.chrome.com/origintrials/#/view_trial/-7811493553674125311
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - media
