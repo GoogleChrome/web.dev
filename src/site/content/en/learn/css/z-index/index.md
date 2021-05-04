@@ -3,6 +3,10 @@ title: Z-index and stacking contexts
 description: >
   In this module find out how to control the order in which things layer on top of each other,
   by using z-index and the stacking context.
+audio:
+  title: 'The CSS Podcast - 019: z-index and stacking contexts'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_019_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-05-03

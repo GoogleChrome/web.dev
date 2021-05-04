@@ -1,12 +1,16 @@
 ---
 title: Box Model
-description:
+description: >
+  Everything displayed by CSS is a box.
+  Understanding how the CSS Box Model works is therefore a core foundation of CSS.
+audio:
+  title: 'The CSS Podcast - 001: The Box Model'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_001_v2.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-03-29
 ---
-
-# The box model
 
 Say you have this bit of HTML:
 

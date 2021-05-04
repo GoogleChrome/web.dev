@@ -1,12 +1,16 @@
 ---
 title: Inheritance
-description:
+description: >
+  Some CSS properties inherit if you don't specify a value for them.
+  Find out how this works, and how to use it to your advantage in this module.
+audio:
+  title: 'The CSS Podcast - 005: Inheritance'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_005_v1.2.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-02
 ---
-
-# Inheritance
 
 Say you just wrote some CSS to make elements look like a button.
 

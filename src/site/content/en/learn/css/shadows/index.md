@@ -4,6 +4,10 @@ description: >
   There are a number of ways to add shadows to text and elements in CSS.
   In this module you'll learn how to use each option,
   and the tasks they were designed for.
+audio:
+  title: 'The CSS Podcast - 017: Shadows'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_017_v2.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-05-03

@@ -1,6 +1,12 @@
 ---
 title: Spacing
-description:
+description: >
+  Find out how to select the best method of spacing elements,
+  taking into consideration the layout method you are using and component that you need to build.
+audio:
+  title: 'The CSS Podcast - 013: Spacing'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_013_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-27

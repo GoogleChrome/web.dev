@@ -1,12 +1,17 @@
 ---
 title: Logical Properties
-description:
+description: >
+  Logical, flow relative properties and values are linked to the flow of text,
+  rather than the physical shape of the screen.
+  Learn how to take advantage of this newer approach to CSS.
+audio:
+  title: 'The CSS Podcast - 012: Logical Properties'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_012_v3.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-21
 ---
-
-# Logical Properties
 
 A really common user interface pattern is a text label with a supporting inline icon.
 

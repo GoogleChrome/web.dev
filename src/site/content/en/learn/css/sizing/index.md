@@ -1,14 +1,18 @@
 ---
 title: Sizing Units
-description:
+description: >
+  In this module find out how to size elements using CSS,
+  working with the flexible medium of the web.
+audio:
+  title: 'The CSS Podcast - 008: Sizing Units'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_008_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-13
 tags:
   - css
 ---
-
-# Sizing
 
 The web is a responsive medium,
 but sometimes you want to control its dimensions to improve the overall interface quality.
