@@ -5,8 +5,8 @@ subhead: Métricas esenciales para un sitio saludable
 description: Métricas esenciales para un sitio saludable
 authors:
   - philipwalton
-date: 30-04-2020
-updated: 21-07-2020
+date: 2020-04-30
+updated: 2020-07-21
 masthead: web-vitals.svg
 tags:
   - metrics
