@@ -7,11 +7,22 @@ authors:
   - samdutton
 hero: image/admin/wRrDtHNikUNqgdDewvYG.jpg
 date: 2020-10-06
-updated: 2020-02-10
+updated: 2020-05-04
 tags:
   - blog
   - privacy
 ---
+
+{% Banner 'caution', 'body' %}
+This API will soon be renamed to _Attribution Reporting_ and offer more features.
+
+- If you're experimenting with this API in [Chrome 91](https://chromestatus.com/features/schedule)
+  and below, this blogpost is what you need.
+- If you're interested in the next iteration of this API, it will soon be available for
+  experimentation in Chrome (origin trial). [Join the mailing list](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev) to stay tuned
+  on available experiments for this API.
+
+{% endBanner %}
 
 In order to measure the effectiveness of ad campaigns, advertisers and publishers need to know when
 an ad click or view leads to a [conversion](/digging-into-the-privacy-sandbox/#conversion), such as
@@ -72,20 +83,8 @@ cookies](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-pa
 and Edge [offers tracking
 prevention](https://support.microsoft.com/en-us/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention).
 
-Third-party cookies are becoming a legacy solution. **New purpose-built APIs are emerging** to
-address in a privacy-preserving way the use cases that third-party cookies solved. To name a few:
-
-- The Event Conversion Measurement API helps measure click-through conversions for now, and maybe
-  view-through conversions in future iterations.
-- The [Aggregate Conversion Measurement
-  API](https://github.com/WICG/conversion-measurement-api/blob/master/AGGREGATE.md) provides rich
-  reports to advertisers by [aggregating conversions from multiple
-  clients](https://github.com/WICG/conversion-measurement-api/blob/master/SERVICE.md).
-- [Trust Tokens](/trust-tokens/) help combat fraud and distinguish bots from humans.
-
-<figure class="w-figure">
-  {% Img src="image/admin/vs7VtXlG4d6wHjZ1Tmwi.jpg", alt="Overview of some privacy sandbox APIs: trust tokens and conversion measurement (aggregate and event)", width="800", height="254" %}
-</figure>
+Third-party cookies are becoming a legacy solution. **New purpose-built APIs**, like this one, are emerging to
+address in a privacy-preserving way the use cases that third-party cookies solved.
 
 **How does the Event Conversion Measurement API compare to third-party cookies?**
 
@@ -102,11 +101,9 @@ iteration** of the API. Things may change substantially in [future iterations](#
 
 ### Only clicks
 
-This API only supports **click-through conversion measurement**. View-through conversion measurement
-isn't supported yet, because view-through conversions are harder to measure in a truly
-privacy-preserving way. This is an active area of work; you can read more about privacy
-considerations in the [API
-proposal](https://github.com/WICG/conversion-measurement-api#privacy-considerations).
+This iteration of the API only supports **click-through conversion measurement**, but [view-through
+conversion
+measurement](https://github.com/WICG/conversion-measurement-api/blob/main/event_attribution_reporting.md) is under public incubation.
 
 ### How it works
 
@@ -390,7 +387,6 @@ attributes:
   reportingorigin="https://adtech.example"
   impressionexpiry="864000000"
   href="https://advertiser.example/shoes07"
-  target="_blank"
 >
   <img src="/images/shoe.jpg" alt="shoe" />
 </a>
@@ -585,11 +581,10 @@ deleted from browser storage.
   coarse information about the conversion.
 - Gather data to optimize ad selection, for example by training machine learning models.
 
-### What is not supported yet
+### What is not supported in this iteration
 
-The following features aren't supported yet, but may be in future iterations of this API, or in the
-[Aggregate Conversion Measurement
-API](https://github.com/WICG/conversion-measurement-api/blob/master/AGGREGATE.md):
+The following features aren't supported, but may be in future iterations of this API, or in
+[Aggregate](https://github.com/WICG/conversion-measurement-api/blob/master/AGGREGATE.md) reports:
 
 - View-through conversion measurement.
 - [Multiple reporting endpoints](https://github.com/WICG/conversion-measurement-api/issues/29).
@@ -620,7 +615,7 @@ it](#share-your-feedback). {% endAside %}
 - API and attribute naming may evolve.
 - Click data and conversion data may not require encoding.
 - The 3-bit limit for conversion data may be increased or decreased.
-- [More features may be added](#what-is-not-supported-yet), and **more privacy protections** (noise / fewer bits /
+- [More features may be added](#what-is-not-supported-in-this-iteration), and **more privacy protections** (noise / fewer bits /
   other limitations) if needed to support these new features.
 
 To follow and participate in discussions on new features, watch the proposal's [GitHub
