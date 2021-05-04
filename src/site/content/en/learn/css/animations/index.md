@@ -76,11 +76,11 @@ The first part to note is the
 [custom ident](https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident)
 (custom identifier)—or in more human terms, the name of the keyframes rule.
 This rule's identifier is `my-animation`.
-The custom ident works like a function name. Which, as you learned in the functions lesson,
+The custom identifier works like a function name. Which, as you learned in the [functions module](/learn/css/functions),
 lets you reference the keyframes rule elsewhere in your CSS code.
 
 {% Aside %}
-A custom-ident is used in various places in CSS,
+A `<custom-ident>` is used in various places in CSS,
 and allows you to provide your own name for things.
 These identifiers are case-sensitive,
 and in some cases there are words that you can't use.
@@ -302,7 +302,7 @@ The default value is `running` and if you set it to `pause`, it will pause the a
 {% Codepen {
   user: 'web-dot-dev',
   id: 'MWJQZyV',
-  height: 300
+  height: 400
 } %}
 
 ### `animation-fill-mode`
@@ -355,7 +355,6 @@ media query.
 
 This isn't necessarily a preference of no animation,
 but rather, a preference to reduce animations—
-[especially unexpected ones](https://www.smashingmagazine.com/2020/09/design-reduced-motion-sensitivities/).
+[especially unexpected ones](/prefers-reduced-motion/).
 You can learn more about this preference and overall performance with
 [this animation guide](https://web.dev/animations/).
-
