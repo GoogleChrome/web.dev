@@ -11,7 +11,7 @@
         </button>
 
         <div class="drawer-course__title">
-          {{ svg(courseData.meta.logo, courseData.meta.title | i18n(locale)) }}
+          {{ svg(courseData.meta.logo, {label: courseData.meta.title | i18n(locale)}) }}
         </div>
       </div>
 
@@ -27,7 +27,7 @@
           <span class="drawer-course__link-title gap-left-400"
               {% if isNew %} data-badge="{{ 'i18n.common.new' | i18n(locale) }}" {% endif %}
           >{{ item.page.data.title }}</span>
-          {{ icon('done', 'drawer-course__link-check gap-left-auto') }}
+          {{ icon('done', {className: 'drawer-course__link-check gap-left-auto'}) }}
         </a>
         {% endfor %}
       </course-links>
