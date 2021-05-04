@@ -31,12 +31,12 @@ Los Core Web Vitals son el subconjunto de Web Vitals que se aplica a todas las p
 Las métricas que componen los Core Web Vitals [evolucionarán](#evolving-web-vitals) con el tiempo. El conjunto actual en el 2020 se centra en tres aspectos de la experiencia del usuario: *carga* , *interactividad* y *estabilidad visual*, e incluye las siguientes métricas (y sus respectivos umbrales):
 
 <div class="w-stack w-stack--center w-stack--md">
-<img src="lcp_ux.svg" width="400px" height="350px" alt="Las recomendaciones de umbral del despliegue para el contenido más grande"><img src="fid_ux.svg" width="400px" height="350px" alt="Recomendaciones de umbral de demora de primera entrada"><img src="cls_ux.svg" width="400px" height="350px" alt="Recomendaciones de umbral de cambios acumulativos de diseño">
+<img src="lcp_ux.svg" width="400px" height="350px" alt="Recomendaciones de umbral para LCP"><img src="fid_ux.svg" width="400px" height="350px" alt="Recomendaciones de umbral para FID"><img src="cls_ux.svg" width="400px" height="350px" alt="Recomendaciones de umbral para CLS">
 </div>
 
-- **[Largest Contentful Paint (LCP)](/lcp/)** : mide el rendimiento de *carga.* Para proporcionar una buena experiencia de usuario, el LCP debe producirse dentro de los **2,5 segundos desde** que la página comienza a cargarse.
-- **[First Input Delay (FID)](/fid/)**: mide la *interactividad*. Para proporcionar una buena experiencia de usuario, las páginas deben tener un FID de menos de **100 milisegundos**.
-- **[Cumulative Layout Shift (CLS)](/cls/)**: mide *la estabilidad visual*. Para proporcionar una buena experiencia de usuario, las páginas deben mantener un CLS de menos de **0,1.**
+- **[Largest Contentful Paint (LCP)](/lcp/)** : se refiere al tiempo para el despliegue del contenido más extenso, LCP por sus siglas en inglés, mide el rendimiento de *carga.* Para proporcionar una buena experiencia de usuario, el LCP debe producirse dentro de los **2,5 segundos desde** que la página comienza a cargarse.
+- **[First Input Delay (FID)](/fid/)**: se refiere a la demora para la primera entrada, FID por sus siglas en inglés, mide la *interactividad*. Para proporcionar una buena experiencia de usuario, las páginas deben tener un FID de menos de **100 milisegundos**.
+- **[Cumulative Layout Shift (CLS)](/cls/)**: se refiere a el cambio acumulativo en el diseño CLS por sus siglás en inglés, mide *la estabilidad visual*. Para proporcionar una buena experiencia de usuario, las páginas deben mantener un CLS de menos de **0,1.**
 
 Con cada una de las métricas anteriores, para asegurarse de que está alcanzando el objetivo recomendado para la mayoría de sus usuarios, un buen umbral para medir es el **percentil 75** de cargas de página, segmentado en dispositivos móviles y de escritorio.
 
@@ -108,7 +108,13 @@ getFID(sendToAnalytics);
 getLCP(sendToAnalytics);
 ```
 
-También se puede reportar sobre cada uno de los Core Web Vitals sin escribir ningún código utilizando la [Extensión para Chrome de Web Vitals](https://github.com/GoogleChrome/web-vitals-extension). Esta extensión utiliza la biblioteca de [web-vitals](https://github.com/GoogleChrome/web-vitals) para medir cada una de estas métricas y mostrarlas a los usuarios mientras navegan por la web.
+Una vez que haya configurado su sitio para usar la biblioteca [web-vitals](https://github.com/GoogleChrome/web-vitals) para medir y enviar sus datos de Core Web Vitals a un punto final de análisis, el siguiente paso es agregar y hacer un reporte sobre esos datos para ver si sus páginas cumplen con los umbrales recomendados para al menos el 75% de las visitas a la página.
+
+Algunos proveedores de análisis tienen soporte integrado para métricas de Core Web Vitals, incluso aquellos que no lo tienen, deberían incluir funciones de métricas personalizadas básicas que le permitan medir Core Web Vitals en su herramienta.
+
+Un ejemplo de esto es el [Web Vitals Report](https://github.com/GoogleChromeLabs/web-vitals-report), que permite a los propietarios de sitios medir sus Core Web Vitals utilizando Google Analytics. Para obtener una guía sobre cómo medir los valores fundamentales de la Web mediante otras herramientas de análisis, consulte el artículo sobre [prácticas recomendadas para medir Core Web Vitals en el campo](/vitals-field-measurement-best-practices/).
+
+También se puede reportar sobre cada uno de los Core Web Vitals sin escribir código utilizando la [Extensión para Chrome de Web Vitals](https://github.com/GoogleChrome/web-vitals-extension). Esta extensión utiliza la biblioteca de [web-vitals](https://github.com/GoogleChrome/web-vitals) para medir cada una de estas métricas y mostrarlas a los usuarios mientras navegan por la web.
 
 Esta extensión puede resultar útil para comprender el rendimiento de sus propios sitios, los de la competencia y la web en general.
 
@@ -145,7 +151,7 @@ Como alternativa, los desarrolladores que prefieren medir estas métricas direct
 - [Medir FID en JavaScript](/fid/#measure-fid-in-javascript)
 - [Medir CLS en JavaScript](/cls/#measure-cls-in-javascript)
 
-{% Aside %} Para obtener información adicional sobre cómo medir estas métricas mediante servicios de análisis populares (o sus propias herramientas de análisis internas), consulte: [Prácticas recomendadas para medir Web Vitals en vivo](/vitals-field-measurement-best-practices/) {% endAside %}
+{% Aside %} Para obtener información adicional sobre cómo medir estas métricas mediante servicios de análisis populares (o sus propias herramientas de análisis internas), consulte: [Prácticas recomendadas para medir Web Vitals en el campo](/vitals-field-measurement-best-practices/) {% endAside %}
 
 #### Herramientas de laboratorio para medir Core Web Vitals
 
