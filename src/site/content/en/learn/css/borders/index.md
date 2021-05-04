@@ -3,7 +3,6 @@ title: Borders
 description: >
   A border provides a frame for your boxes.
   In this module find out how to change the size, style and color of borders using CSS.
-authors:
 audio:
   title: 'The CSS Podcast - 016: Borders'
   src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_016_v1.0.mp3?dest-id=1891556'
