@@ -15,7 +15,6 @@
  */
 
 const gulp = require('gulp');
-const copyContentAssets = require('./gulp-tasks/copy-content-assets.js');
 const copyDefaultLocale = require('./gulp-tasks/copy-default-locale.js');
 const copyFonts = require('./gulp-tasks/copy-fonts.js');
 const copyGlobalImages = require('./gulp-tasks/copy-global-images.js');
@@ -23,30 +22,17 @@ const copyMisc = require('./gulp-tasks/copy-misc.js');
 const sassTask = require('./gulp-tasks/sass.js');
 const writeVersion = require('./gulp-tasks/write-version.js');
 
-gulp.task('copy-content-assets', copyContentAssets);
 gulp.task('default-locale', copyDefaultLocale);
 gulp.task('copy-misc', copyMisc);
 gulp.task('sass', sassTask);
 
 gulp.task(
   'build',
-  gulp.parallel(
-    copyGlobalImages,
-    copyMisc,
-    copyContentAssets,
-    copyFonts,
-    sassTask,
-    writeVersion,
-  ),
+  gulp.parallel(copyGlobalImages, copyMisc, copyFonts, sassTask, writeVersion),
 );
 
 gulp.task('watch', () => {
   gulp.watch('./src/images/**/*', {ignoreInitial: true}, copyGlobalImages);
   gulp.watch('./src/misc/**/*', {ignoreInitial: true}, copyMisc);
-  gulp.watch(
-    './src/site/content/**/*',
-    {ignoreInitial: true},
-    copyContentAssets,
-  );
   gulp.watch('./src/styles/**/*.scss', {ignoreInitial: true}, sassTask);
 });

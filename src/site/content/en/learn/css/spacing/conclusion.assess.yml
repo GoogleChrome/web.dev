@@ -1,0 +1,56 @@
+setLeader: Test your knowledge of spacing
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "3"
+    stem: It's safe to use HTML for spacing when...
+    options:
+      - content: "It's only one"
+        rationale: "Try again!"
+      - content: "No one will notice"
+        rationale: "Try again!"
+      - content: "It's just for space"
+        rationale: "Try again!"
+      - content: "It helps with the understanding of the document"
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "3"
+    stem: To create space **inside** a box, use...
+    options:
+      - content: "Margin"
+        rationale: "Margin is for pushing outside of a box"
+      - content: "HTML"
+        rationale: "These are for spacing and dividing content"
+      - content: "Gap"
+        rationale: "Gap is for spacing between boxes"
+      - content: "Padding"
+        rationale: "Padding is for creating space inside of a box"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: To create space **outside** a box, use...
+    options:
+      - content: "Margin"
+        rationale: "Margin is for pushing outside of a box"
+      - content: "HTML"
+        rationale: "These are for spacing and dividing content"
+      - content: "Gap"
+        rationale: "Gap is for spacing between boxes"
+      - content: "Padding"
+        rationale: "Padding is for creating space inside of a box"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: To create space **between** boxes, use...
+    options:
+      - content: "Margin"
+        rationale: "Margin is for pushing outside of a box"
+      - content: "HTML"
+        rationale: "These are for spacing and dividing content"
+      - content: "Gap"
+        rationale: "Gap is for spacing between boxes"
+      - content: "Padding"
+        rationale: "Padding is for creating space inside of a box"
