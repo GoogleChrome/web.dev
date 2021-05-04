@@ -73,7 +73,8 @@ Use cases for insertable streams for `MediaStreamTrack` include, but are not lim
 
 ### Enabling support during the origin trial phase
 
-Starting in Chrome 86, insertable streams for `MediaStreamTrack` will be available as an origin trial in Chrome. The origin trial is expected to end in Chrome 91 (July 14, 2021).
+Starting in Chrome 90, insertable streams for `MediaStreamTrack` is available as part of the WebCodecs origin trial in Chrome. The origin trial is expected to end in Chrome 91 (July 14, 2021). 
+If necessary, a separate origin trial will continue for insertable streams for `MediaStreamTrack`.
 
 {% include 'content/origin-trials.njk' %}
 
