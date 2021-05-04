@@ -14,11 +14,11 @@ tags:
 ---
 
 {% Banner 'caution', 'body' %}
-This API will soon be renamed to _Attribution Reporting_ and offer more features.
+This API will be renamed to _Attribution Reporting_ and offer more features.
 
 - If you're experimenting with this API in [Chrome 91](https://chromestatus.com/features/schedule)
   and below, this blogpost is what you need.
-- If you're interested in the next iteration of this API, it will soon be available for
+- If you're interested in the next iteration of this API, it will be available for
   experimentation in Chrome (origin trial). [Join the mailing list](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev) to stay tuned
   on available experiments for this API.
 
