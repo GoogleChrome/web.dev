@@ -65,6 +65,10 @@
     &[data-complete] {
       --check-display: block;
       color: $GREY_700;
+
+      > [data-badge]::after {
+        content: '';
+      }
     }
 
     &[data-active] {
@@ -85,6 +89,23 @@
   &__link-title {
     font-size: px-to-rem(14px);
     line-height: 1.5;
+
+    &::after {
+      display: inline-block;
+      height: 0.5em;
+      margin-left: 0.6em;
+    }
+
+    &[data-badge]::after {
+      @include apply-utility('font', 'mono');
+      font-weight: 700;
+      color: $WEB_PRIMARY_COLOR;
+      content: attr(data-badge);
+      font-size: px-to-rem(11px);
+      line-height: px-to-rem(16px);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
   }
 
   &__link-check {
