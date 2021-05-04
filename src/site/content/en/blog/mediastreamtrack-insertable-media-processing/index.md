@@ -2,15 +2,14 @@
 layout: post
 title: Insertable streams for MediaStreamTrack
 subhead: |
-  The contents of MediaStreamTrack objects are exposed as a collection of streams so they can be manipulated
-  to introduce new components.
+  The content of a `MediaStreamTrack` is exposed as a stream that can be manipulated or used to
+  generate new content.
 authors:
   - thomassteiner
 date: 2021-05-03
 description: |
-  Insertable streams for MediaStreamTrack expose the contents of a MediaStreamTrack as a collection
-  of streams, which can be manipulated to introduce new
-  components.
+  Insertable streams for MediaStreamTrack is about exposing the content of a MediaStreamTrack
+  as a stream that can be manipulated or used to generate new content.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/Qu2wfQ3pxR8AeEfty88S.jpg
 alt: Cup of coffee and a laptop with a video conference showing many participants.
 tags:
@@ -76,7 +75,7 @@ Use cases for insertable streams for `MediaStreamTrack` include, but are not lim
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | [In Progress][spec]      |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | Not started              |
+| 4. **Origin trial**                      | **[In progress][ot]**    |
 | 5. Launch                                | Not started              |
 
 </div>
@@ -107,7 +106,7 @@ components:
 - The `MediaStreamTrackProcessor`, which consumes a `MediaStreamTrack` object's source and generates a stream
   of media frames, specifically [`VideoFrame`](https://w3c.github.io/webcodecs/#videoframe-interface) or
   [`AudioFrame`](https://w3c.github.io/webcodecs/#audioframe-interface)) objects. You can think of this as a
-  track sink that is capable of exposing the unencoded frames from the track to a `ReadableStream`
+  track sink that is capable of exposing the unencoded frames from the track as a `ReadableStream`
   and that exposes a control channel for signals going in the opposite direction.
 - The `MediaStreamTrackGenerator`, which consumes a stream of media frames and exposes a `MediaStreamTrack`
   interface, so that it can be used in any sink a `MediaStreamTrack` is currently attached to. It takes
@@ -255,3 +254,4 @@ This article was reviewed by Harald Alvestrand, [Joe Medley](https://github/com/
 [explainer]: https://github.com/w3c/mediacapture-transform/blob/main/explainer.md
 [github]: https://github.com/w3c/mediacapture-transform/
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
+[ot]: https://developer.chrome.com/origintrials/#/view_trial/-7811493553674125311
