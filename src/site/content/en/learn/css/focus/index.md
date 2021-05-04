@@ -4,7 +4,11 @@ description: >
   Understand the importance of focus in your web applications.
   You'll find out how to manage focus,
   and how to make sure the path through your page works for people using a mouse,
-  and those using the kayboard to navigate.
+  and those using the keyboard to navigate.
+audio:
+  title: 'The CSS Podcast - 018: Focus'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_018_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-30
@@ -54,7 +58,7 @@ these are elements that accept interaction and input, such as `<a>`,
 In short, all form elements, buttons and links.
 You can typically navigate a website's focusable elements using the *tab* key to move forward on the page, and *shift* + *tab* to move backward.
 
-There is also a HTML attribute called `tabindex` which allows you to change the tabbing index—which is 
+There is also a HTML attribute called `tabindex` which allows you to change the tabbing index—which is
 order in which elements are focused—every time someone presses their <kbd>tab</kbd> key,
 or focus is shifted with a hash change in the URL or by a JavaScript event.
 If `tabindex` on a HTML element is set to `0`,
