@@ -31,13 +31,16 @@
   }
 
   &__search {
-    padding: 0 16px;
     height: 48px;
+  }
 
-    > .input {
-      border: 1px solid $GREY_300;
-      height: 48px;
-    }
+  web-search {
+    margin: 0 16px;
+  }
+
+  .web-search-popout {
+    border-right: 1px solid #dadce0;
+    height: 100%;
   }
 
   &__links {

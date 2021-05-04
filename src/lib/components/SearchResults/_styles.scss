@@ -13,18 +13,8 @@ $WEB_CLOSE_BUTTON_WIDTH: 45px;
 
 .web-search-popout {
   background: white;
-  border-top: 1px solid #ddd;
-  box-shadow: 0 1px 2px 0 rgba($GREY_800,.3), 0 2px 6px 2px rgba($GREY_800,.15);
-  left: 0;
   padding: 16px 0;
   position: absolute;
-  top: 55px;
-  width: calc(100% - #{$WEB_CLOSE_BUTTON_WIDTH});
-
-  @include bp(md) {
-    left: calc(#{$WEB_SEARCH_MARGIN} * 2);
-    width: calc(100% - #{$WEB_SEARCH_MARGIN} * 2);
-  }
 }
 
 .web-search-popout__heading {
