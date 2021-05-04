@@ -219,10 +219,7 @@ it will only create `20px` of space: not `40px`.
 If *anything* is added to the inside of this element though,
 including `padding`, its margin will no longer collapse in itself and will be treated as any box with content.
 
-[SELF ASSESSMENT: "If two elements stacked on top of each other both have 20px of top margin and 30px of bottom margin,
-how much space will there be between them?"]
-
-@@TO DO Self Assessment
+{% Assessment 'margin-collapsing' %}
 
 #### Preventing margin collapse
 
@@ -379,3 +376,5 @@ then use them throughout your CSS.
 When they are updated,
 either locally within an element or globally,
 the values will pass down through the cascade and the updated values will be reflected.
+
+{% Assessment 'conclusion' %}

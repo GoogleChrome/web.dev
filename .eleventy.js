@@ -93,7 +93,6 @@ const {cspHash, getHashList} = require(`./${filtersDir}/csp-hash`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
-const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
 const {purifyCss} = require(`./${transformsDir}/purify-css`);
 const {minifyHtml} = require(`./${transformsDir}/minify-html`);
 
@@ -224,7 +223,6 @@ module.exports = function (config) {
   }
 
   if (isProd || isStaging) {
-    config.addTransform('responsive-images', responsiveImages);
     config.addTransform('purifyCss', purifyCss);
     config.addTransform('minifyHtml', minifyHtml);
   }
