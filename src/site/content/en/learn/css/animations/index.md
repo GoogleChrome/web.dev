@@ -8,7 +8,7 @@ authors:
   - andybell
 audio:
   title: 'The CSS Podcast - 022: Animation'
-  src: 'https://thecsspodcast.libsyn.com/022-animation'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCO022_TCP_CSS_Podcast_Episode_022_v1.0.mp3?dest-id=1891556'
   thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 date: 2021-05-04
 ---
