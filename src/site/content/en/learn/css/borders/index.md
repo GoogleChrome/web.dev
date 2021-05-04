@@ -4,6 +4,10 @@ description: >
   A border provides a frame for your boxes.
   In this module find out how to change the size, style and color of borders using CSS.
 authors:
+audio:
+  title: 'The CSS Podcast - 016: Borders'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_016_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
   - andybell
 date: 2021-04-30
 ---
@@ -270,11 +274,11 @@ how far the border is outset from the edge and how it should repeat.
   border-image-repeat: stretch stretch;
 }
 ```
-{% Img 
-  src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/jjPvLY8VeJH2MH1wkXjD.jpg", 
-  alt="An illustrated frame, used as the border image of an element", 
-  width="800", 
-  height="438" 
+{% Img
+  src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/jjPvLY8VeJH2MH1wkXjD.jpg",
+  alt="An illustrated frame, used as the border image of an element",
+  width="800",
+  height="438"
 %}
 
 The [`border-image-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width)
