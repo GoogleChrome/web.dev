@@ -310,7 +310,7 @@ It works like the `margin` shorthand where you define the top, right, bottom and
 ```css
 .my-element {
 	border-image: url('image.jpg');
-	border-image-slice: 20px 20px 20px 30px;
+	border-image-slice: 61 58 51 48;
 }
 ```
 
