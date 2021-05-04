@@ -82,6 +82,16 @@ Use cases for insertable streams for `MediaStreamTrack` include, but are not lim
 
 ## How to use insertable streams for `MediaStreamTrack`
 
+### Enabling support during the origin trial phase
+
+Starting in Chrome 86, insertable streams for `MediaStreamTrack` will be available as an origin trial in Chrome. The origin trial is expected to end in Chrome 91 (July 14, 2021).
+
+{% include 'content/origin-trials.njk' %}
+
+### Register for the origin trial {: #register-for-ot }
+
+{% include 'content/origin-trial-register.njk' %}
+
 ### Enabling via chrome://flags
 
 To experiment with insertable streams for `MediaStreamTrack` locally, without an origin trial token,
