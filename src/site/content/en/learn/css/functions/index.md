@@ -45,7 +45,7 @@ which means that if you pass the same arguments into them,
 they will always give you the same result back,
 regardless of what is happening in the rest of your code.
 These functions will often re-compute as values change in your CSS,
-much like other elements in the language,
+similar to other elements in the language,
 such as computed cascaded values like `currentColor`.
 
 In CSS, you can only use the provided functions,
