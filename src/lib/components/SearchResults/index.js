@@ -4,17 +4,17 @@
 
 import {html} from 'lit-element';
 import {unsafeHTML} from 'lit-html/directives/unsafe-html';
-import {BaseStateElement} from '../BaseStateElement';
+import {BaseElement} from '../BaseElement';
 import {allowHtml, escapeHtml} from '../../../lib/utils/escape-html';
 import 'focus-visible';
 import './_styles.scss';
 
 /**
  * An Algolia search box.
- * @extends {BaseStateElement}
+ * @extends {BaseElement}
  * @final
  */
-class SearchResults extends BaseStateElement {
+class SearchResults extends BaseElement {
   static get properties() {
     return {
       // An array of algolia results.
