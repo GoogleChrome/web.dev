@@ -51,6 +51,8 @@ class Search extends BaseStateElement {
       locale: {type: String},
       // Search query
       query: {type: String},
+      // Tag to filter the search results by.
+      tag: {type: String},
     };
   }
 
@@ -59,6 +61,7 @@ class Search extends BaseStateElement {
     this.hits = [];
     this.showHits = false;
     this.query = '';
+    this.tag = '';
     this.timeout;
     this.expanded = false;
     this.locale = 'en';
@@ -241,14 +244,18 @@ class Search extends BaseStateElement {
     }
     try {
       const index = await loadAlgoliaLibrary();
-      const {hits} = await index.search(query, {
+      const settings = {
         hitsPerPage: 10,
         attributesToHighlight: ['title'],
         attributesToRetrieve: ['url'],
         highlightPreTag: '<strong>',
         highlightPostTag: '</strong>',
         facetFilters: [`locales:${this.locale}`],
-      });
+      };
+      if (this.tag) {
+        settings.facetFilters.push(`tags:${this.tag}`);
+      }
+      const {hits} = await index.search(query, settings);
       if (this.query === query) {
         this.hits = hits;
       }
