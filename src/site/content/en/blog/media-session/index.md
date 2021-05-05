@@ -4,7 +4,7 @@ subhead: How to integrate with hardware media keys, customize media notification
 authors:
   - beaufortfrancois
 date: 2020-03-06
-updated: 2021-03-31
+updated: 2021-05-05
 hero: image/admin/IhujMvzGa5Mf0aNWYRXW.jpg
 thumbnail: image/admin/Q6CqQNLucogBCxGMsSU2.jpg
 description: |
@@ -22,9 +22,10 @@ feedback:
 To let users know what's currently playing in their browser and control it
 without returning to the page that launched it, the Media Session API has been
 introduced. It allows web developers to customize this experience through
-metadata in custom media notifications and media events such as playing,
-pausing, and even seeking and track changing. These customizations are available
-in several contexts including desktop media hubs, media notifications on mobile,
+metadata in custom media notifications, media events such as playing, pausing,
+seeking, track changing, and video conferencing events such as mute/unmute,
+turnon/turnoff camera, and hang up. These customizations are available in
+several contexts including desktop media hubs, media notifications on mobile,
 and even on wearable devices. I'll describe these customizations in this
 article.
 
@@ -49,7 +50,8 @@ The Media session API provides several benefits and capabilities:
 - Media notifications are customized on mobile, Chrome OS, and paired wearable device.
 - The [media hub] is available on desktop.
 - Lock screen media controls are available on [Chrome OS] and mobile.
-- Picture-in-Picture window controls are available.
+- Picture-in-Picture window controls are available for both [audio playback]
+  and [video conferencing].
 - Assistant integration on mobile is available.
 
 A few examples will illustrate some of these points.
@@ -66,6 +68,10 @@ seconds.
 <b>Example 3:</b> If users have tabs playing audio, they can easily stop
 playback from the media hub on desktop so that web developers have a chance to
 clear their state.
+
+<b>Example 4:</b> If users are on a video call, they can press the "toggle
+microphone" control in the Picture-in-Picture window to stop website from
+receiving microphone data.
 
 This is all done through two different interfaces: The `MediaSession` interface
 and the `MediaMetadata` interface. The first lets users control whatever's
@@ -172,6 +178,10 @@ const actionHandlers = [
   ['seekbackward',  (details) => { /* ... */ }],
   ['seekforward',   (details) => { /* ... */ }],
   ['seekto',        (details) => { /* ... */ }],
+  /* Video conferencing actions */
+  ['togglemicrophone', () => { /* ... */ }],
+  ['togglecamera',     () => { /* ... */ }],
+  ['hangup',           () => { /* ... */ }],
 ];
 
 for (const [action, handler] of actionHandlers) {
@@ -390,6 +400,79 @@ Resetting the position state is as easy as setting it to `null`.
 navigator.mediaSession.setPositionState(null);
 ```
 
+## Video conferencing actions {: #video-conferencing-actions }
+
+When the user puts their video call into a Picture-in-Picture window, the
+browser may display controls for mute/unmute, turnon/turnoff camera, and hang
+up. When the user clicks those, the website handles them through the video
+conferencing actions below.
+
+<figure class="w-figure">
+  {% Img
+    src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/fXc7jqc95Oa6sKce7kpZ.jpg",
+    alt="Screenshot of video conferencing controls in a Picture-in-Picture window",
+    width="748",
+    height="464"
+  %}
+  <figcaption class="w-figcaption">Video conferencing controls in a Picture-in-Picture window</figcaption>
+</figure>
+
+{% Aside %}
+At the time of writing, video conferencing actions are available only in
+Chrome&nbsp;92 on desktop.
+{% endAside %}
+
+### Toggle microphone
+
+The `"togglemicrophone"` action indicates that the user wants to mute or unmute
+the microphone. The `setMicrophoneActive(active)` method indicates to the
+browser whether the microphone is currently considered by the website to be
+active.
+
+```js
+let isMicrophoneActive = false;
+
+navigator.mediaSession.setActionHandler('togglemicrophone', () => {
+  if (isMicrophoneActive) {
+    // Mute the microphone.
+  } else {
+    // Unmute the microphone.
+  }
+  isMicrophoneActive = !isMicrophoneActive;
+  navigator.mediaSession.setMicrophoneActive(isMicrophoneActive);
+});
+```
+
+### Toggle camera
+
+The `"togglecamera"` action indicates that the user wants to turn the active
+camera on or off. The `setCameraActive(active)` method indicates to the browser
+whether the camera is currently considered by the website to be active.
+
+```js
+let isCameraActive = false;
+
+navigator.mediaSession.setActionHandler('togglemicrophone', () => {
+  if (isCameraActive) {
+    // Disable the camera.
+  } else {
+    // Enable the camera.
+  }
+  isCameraActive = !isCameraActive;
+  navigator.mediaSession.setCameraActive(isCameraActive);
+});
+```
+
+### Hang up
+
+The `"hangup"` action indicates that the user wants to end a call.
+
+```js
+navigator.mediaSession.setActionHandler('hangup', () => {
+  // End the call.
+});
+```
+
 ## Samples
 
 Check out some [Media Session samples] featuring [Blender Foundation] and
@@ -422,4 +505,5 @@ Check out some [Media Session samples] featuring [Blender Foundation] and
 [web audio api]: /web/updates/2012/02/HTML5-audio-and-the-Web-Audio-API-are-BFFs
 [blender foundation]: http://www.blender.org/
 [jan morgenstern's work]: http://www.wavemage.com/category/music/
-[pip window controls]: https://developers.google.com/web/updates/2018/10/watch-video-using-picture-in-picture#show_canvas_element_in_picture-in-picture_window
+[audio playback]: https://developers.google.com/web/updates/2018/10/watch-video-using-picture-in-picture#show_canvas_element_in_picture-in-picture_window
+[video conferencing]: #video-conferencing-actions
