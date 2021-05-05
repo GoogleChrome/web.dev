@@ -62,6 +62,7 @@ class Search extends BaseStateElement {
     this.timeout;
     this.expanded = false;
     this.locale = 'en';
+    this.resultsId = '';
     this.resultsEl;
 
     // On smaller screens we don't do an animation so it's ok for us to fire off
@@ -84,7 +85,6 @@ class Search extends BaseStateElement {
     super.connectedCallback();
     window.addEventListener('resize', this.onResize);
     this.onResize();
-    this.resultsId = this.getAttribute('results-id');
     this.resultsEl = document.getElementById(this.resultsId);
   }
 
