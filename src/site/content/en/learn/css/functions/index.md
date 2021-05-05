@@ -413,5 +413,5 @@ along with `perspective-origin-x` and `perspective-origin-y` properties to creat
 CSS also provides functions that help you animate elements,
 apply [gradients](/learn/css/gradients) to them and use graphical [filters](/learn/css/filters) to manipulate how they look.
 To keep this lesson as concise as possible,
-we're going to cover them in detail in the next few modules.
+they are covered in the linked modules.
 They all follow a similar structure to the functions demonstrated in this lesson.
