@@ -31,10 +31,6 @@ web-search {
     padding: 0 8px;
     transition: none;
     background: transparent;
-
-    // @include bp(md) {
-    //   display: none;
-    // }
   }
 
   .web-search__open-btn:focus,
