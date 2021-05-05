@@ -2,7 +2,7 @@
 title: Learn CSS
 authors:
   - andybell
-description: A course that breaks down the fundamentals of CSS to help you become a well-rounded front-end developer.
+description: An evergreen CSS course and reference to level-up your web styling expertise.
 date: 2021-05-04
 tags:
   - css
@@ -12,7 +12,7 @@ tags:
 **Welcome to Learn CSS!**
 
 This course breaks down the fundamentals of CSS into digestible,
-easy to understand parts.
+easy to understand pieces.
 Over the next few modules,
 you will learn how the core aspects of CSS work and how to use them effectively in your projects.
 
@@ -22,15 +22,15 @@ you'll learn about functions, color types, gradients, logical properties and inh
 to make you a well-rounded front-end developer,
 ready to take on any user interface.
 
-Each module is full of interactive demos and self-assessments for you to explore and test your knowledge.
+Each module is full of interactive demos and self-assessments for you to test your knowledge.
 In addition to learning through reading and demos,
-each module contains an accompanying podcast episode as another way to learn and expand your knowledge.
+there is an accompanying podcast episode for each topic as another way to learn and continue expanding your knowledge.
 
 This course is created for beginner and advanced CSS developers alike.
-You can go through the series of modules from start to finish
-to get a well-rounded understanding of CSS from top to bottom,
+You can go through the series from start to finish
+to get a general understanding of CSS from top to bottom,
 or you can use it as a reference for specific styling subjects.
-For those new to web development, check out the
+For those new to web development overall, check out the
 [intro to HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)
 course from MDN to learn all about how to write markup and link your stylesheets.
 
