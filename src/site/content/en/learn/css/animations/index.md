@@ -271,6 +271,10 @@ You can set which direction the timeline runs over your keyframes with
 - `alternate`: for each animation iteration, the timeline will run forwards or backwards in sequence
 - `alternate-reverse`: the reverse of `alternate`
 
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'JjWPqMv'
+} %}
 ### `animation-delay`
 
 ```css
