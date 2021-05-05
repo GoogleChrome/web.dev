@@ -171,7 +171,10 @@ such as length, number, angle and frequency. Units can be mixed too.
 In this example, the `calc()` function is being used to size an element's width
 as 100% of its containing parent element,
 then removing `2rem` off that computed value.
-
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'PopYema'
+} %}
 ```css
 :root {
   --root-height: 5rem;
