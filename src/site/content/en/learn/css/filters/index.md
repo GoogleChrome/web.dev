@@ -23,7 +23,7 @@ How do you do that?
 } %}
 
 A combination of CSS filters and the `backdrop-filter`
-allow us to only reduce opacity and blur what's needed in real time.
+allow us to apply effects and blur what's needed in real time.
 Blur and opacity are two of many available filters,
 so let's have a quick run through what they all do and how to use them.
 
@@ -48,7 +48,7 @@ the rest of the filters defined for `filter` will not work.
 This applies a gaussian blur and the only argument you can pass is a `radius`,
 which is
 [how much blur is applied](https://dbaron.org/log/20110225-blur-radius).
-This needs to be a length unit, like `10px`, percentages are not accepted.
+This needs to be a length unit, like `10px`. Percentages are not accepted.
 
 ```css
 .my-element {
@@ -59,7 +59,7 @@ This needs to be a length unit, like `10px`, percentages are not accepted.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'VwPQJwX',
-  height: 300
+  height: 450
 } %}
 
 ### `brightness`
@@ -86,7 +86,7 @@ To set 80% brightness with a decimal, write `0.8`.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'KKaQjpp',
-  height: 300
+  height: 450
 } %}
 
 ### `contrast`
@@ -102,7 +102,7 @@ Set a value between 0% and 100% to decrease or increase the contrast, respective
 {% Codepen {
   user: 'web-dot-dev',
   id: 'rNjJEOW',
-  height: 300
+  height: 450
 } %}
 
 ### `grayscale`
@@ -122,7 +122,7 @@ If you pass a value greater than 100%, it will be capped at 100%.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'MWJQMKe',
-  height: 300
+  height: 450
 } %}
 
 ### `invert`
@@ -143,7 +143,7 @@ the element will be completely inverted.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'yLgvdOO',
-  height: 300
+  height: 450
 } %}
 
 ### `opacity`
@@ -161,7 +161,7 @@ If you pass no arguments, the element is fully visible.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'RwKQzae',
-  height: 300
+  height: 450
 } %}
 
 ### `saturate`
@@ -180,7 +180,7 @@ Instead of increasing or decreasing the brightness effect,
 {% Codepen {
   user: 'web-dot-dev',
   id: 'BapYgQg',
-  height: 300
+  height: 450
 } %}
 
 ### `sepia`
@@ -200,7 +200,7 @@ Passing no arguments adds a full sepia effect (equivalent to `sepia(100%)`).
 {% Codepen {
   user: 'web-dot-dev',
   id: 'WNRMqpb',
-  height: 300
+  height: 450
 } %}
 
 ### `hue-rotate`
@@ -220,7 +220,7 @@ changing the part of the color wheel it references. If you pass no argument, it 
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ExZQBWw',
-  height: 300
+  height: 450
 } %}
 
 ### `drop-shadow`
@@ -242,11 +242,12 @@ but the `inset` keyword and spread value are not supported.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'PoWQrJr',
-  height: 300
+  height: 450
 } %}
 
 Learn more about the different types of shadows in the [shadows](/learn/css/shadows) module.
-`url`
+
+###`url`
 
 The `url` filter allows you to apply an SVG filter from a linked SVG element or file.
 You can
@@ -255,7 +256,7 @@ You can
 {% Codepen {
   user: 'web-dot-dev',
   id: 'mdRNgyp',
-  height: 300
+  height: 450
 } %}
 
 ## Backdrop filter
