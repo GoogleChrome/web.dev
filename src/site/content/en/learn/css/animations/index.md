@@ -325,6 +325,11 @@ Other options are:
 - `backwards`: The first keyframe will persist, based on the animation direction
 - `both`: follows the rules for both `forwards` and `backwards`
 
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'rNyBEVK'
+} %}
+
 ### The `animation` shorthand
 
 Instead of defining all the properties separately,
