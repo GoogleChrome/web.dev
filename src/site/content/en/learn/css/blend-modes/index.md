@@ -94,7 +94,7 @@ darker—most often producing a darker result.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'vYgRdOy',
-  height: 300
+  height: 450
 } %}
 
 ### Screen
@@ -111,7 +111,7 @@ and will most often produce a brighter result.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjELpYo',
-  height: 300
+  height: 450
 } %}
 
 ### Overlay
@@ -129,7 +129,7 @@ Mid-range colors, such as a 50% gray, are unaffected.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'BaprYom',
-  height: 300
+  height: 450
 } %}
 
 ### Darken
@@ -149,7 +149,7 @@ With `darken` and `lighten`, new color values are often created from this compar
 {% Codepen {
   user: 'web-dot-dev',
   id: 'dyNmdGM',
-  height: 300
+  height: 450
 } %}
 
 ### Lighten
@@ -165,7 +165,7 @@ Using `lighten` does the exact opposite of `darken`.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'OJWvQNO',
-  height: 300
+  height: 450
 } %}
 
 ### Color dodge
@@ -182,7 +182,7 @@ Pure black colors see no effect from this mode.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'abpYqpz',
-  height: 300
+  height: 450
 } %}
 
 ### Color burn
@@ -199,7 +199,7 @@ but increases contrast, resulting in more saturated mid-tones and reduced highli
 {% Codepen {
   user: 'web-dot-dev',
   id: 'gOgevmG',
-  height: 300
+  height: 450
 } %}
 
 ### Hard light
@@ -218,7 +218,7 @@ as if it were screened. If it is darker, it's multiplied.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ZELxreN',
-  height: 300
+  height: 450
 } %}
 
 ### Soft light
@@ -235,7 +235,7 @@ It works in very much the same way with less contrast.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'OJWvQmQ',
-  height: 300
+  height: 450
 } %}
 
 ### Difference
@@ -255,7 +255,7 @@ Differences in the values will invert.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'mdRxXwM',
-  height: 300
+  height: 450
 } %}
 
 ### Exclusion
@@ -273,14 +273,15 @@ it will return 50% gray, resulting in a softer output with less contrast.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'JjELpmb',
-  height: 300
+  height: 450
 } %}
 
 ## Non-separable blend modes
 
 You can think of these blend modes like HSL [color](/learn/css/color) components.
 Each takes a specific component value from the active layer and mixes it with other component values.
-Hue
+
+### Hue
 
 The `hue` blend mode takes the hue of the source color
 and applies it to the saturation and luminosity of the backdrop color.
