@@ -11,6 +11,20 @@ tags:
   - privacy
 ---
 
+{% Banner 'caution', 'body' %} The Conversion Measurement API will be renamed to
+_Attribution Reporting API_ and offer more features.
+
+- If you're experimenting with ([Conversion
+  Measurement API](https://github.com/WICG/conversion-measurement-api/blob/3e0ef7d3cee8d7dc5a4b953e70cb027b0e13943b/README.md))
+  in [Chrome 91](https://chromestatus.com/features/schedule) and below, read this post
+  to find more details, use cases and instructions for how to use the API.
+- If you're interested in the next iteration of this API (Attribution Reporting), which will be
+  available for experimentation in Chrome (origin trial), [join the mailing
+  list](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev) for updates
+  on available experiments.
+
+{% endBanner %}
+
 The [Event Conversion Measurement API](/conversion-measurement) measures when an ad click leads to a
 conversion, without using cross-site identifiers. Here, you'll find must-dos and tips to use this
 API locally or as an experiment for your end users.

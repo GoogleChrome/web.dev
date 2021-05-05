@@ -43,6 +43,9 @@ prev:
   en: Prev # Short for "previous"
   es_ES: Previo
 
+new:
+  en: new
+
 updated:
   en: Updated
   es_ES: Actualizado
