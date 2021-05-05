@@ -104,6 +104,14 @@ $WEB_CLOSE_BUTTON_WIDTH: 45px;
         transform: translateX(calc(50% - 200px + #{$WEB_SEARCH_MARGIN}));
         transition: var(--web-search-animation-time) transform;
         width: calc(200% - #{$WEB_SEARCH_MARGIN} * 2);
+        display: flex;
+      }
+    }
+
+    .web-search__open-btn,
+    .web-search__close-btn {
+      @include bp(md) {
+        display: none;
       }
     }
   }

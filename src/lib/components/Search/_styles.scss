@@ -32,9 +32,9 @@ web-search {
     transition: none;
     background: transparent;
 
-    @include bp(md) {
-      display: none;
-    }
+    // @include bp(md) {
+    //   display: none;
+    // }
   }
 
   .web-search__open-btn:focus,
@@ -59,11 +59,7 @@ web-search {
     display: none;
     height: 100%;
     width: 100%;
-
-    @include bp(md) {
-      display: flex;
-      position: relative;
-    }
+    position: relative;
 
     .web-search__search-icon {
       left: 8px;
