@@ -19,6 +19,8 @@ class SearchResults extends BaseStateElement {
     return {
       // An array of algolia results.
       hits: {type: Object},
+      // An internal array of algolia results (observable).
+      hits_: {type: Object},
       // Manages showing/hiding the search results element.
       showHits: {type: Boolean},
       // Indicates which search result should be highlighted.
