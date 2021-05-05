@@ -35,7 +35,7 @@ A function is named so you can call it within your code and you can pass data in
 This is known as passing arguments.
 
 {% Img
-src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/PtG5sop3RvjpnJlcLt2a.svg",
+src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/OCUXCuKLxHwZYFIIErUd.svg",
 alt="A diagram of a function as described above",
 width="800",
 height="311" %}
