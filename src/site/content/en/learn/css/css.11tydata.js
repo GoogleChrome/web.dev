@@ -5,6 +5,7 @@ module.exports = function () {
     // e.g. A course with a key of 'a11y' would have a corresponding
     // _data/courses/a11y directory.
     projectKey: 'css',
+    eleventyExcludeFromCollections: true,
     eleventyComputed: {
       thumbnail: (data) => {
         const {projectKey} = data;
