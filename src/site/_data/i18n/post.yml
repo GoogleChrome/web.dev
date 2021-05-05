@@ -1,11 +1,11 @@
 is_draft:
   en: 🚨 This post is a draft! 🚨
-  es_ES: 🚨 ¡Esta publicación es un borrador! 🚨
+  es: 🚨 ¡Esta publicación es un borrador! 🚨
 
 last_updated:
   en: Last updated
-  es_ES: Última actualización
+  es: Última actualización
 
 improve_article:
   en: Improve article
-  es_ES: Mejorar el artículo
+  es: Mejorar el artículo

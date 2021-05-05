@@ -21,35 +21,35 @@ key_term:
 
 gotchas:
   en: Gotchas
-  es_ES: Gotchas
+  es: Gotchas
 
 do:
   en: Do
-  es_ES: Hacer
+  es: Hacer
 
 dont:
   en: Don't
-  es_ES: No hagas
+  es: No hagas
 
 close:
   en: Close
-  es_ES: Cerrar
+  es: Cerrar
 
 next:
   en: Next
-  es_ES: Contiguo
+  es: Contiguo
 
 prev:
   en: Prev # Short for "previous"
-  es_ES: Previo
+  es: Previo
 
 new:
   en: new
 
 updated:
   en: Updated
-  es_ES: Actualizado
+  es: Actualizado
 
 share:
   en: Share
-  es_ES: Compartir
+  es: Compartir
