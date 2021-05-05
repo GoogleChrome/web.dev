@@ -291,6 +291,11 @@ Unlike the `animation-duration` property, you *can* define this as a negative va
 If you set a negative value, the timeline in your `@keyframes` will start at that point.
 For example, if your animation is 10 seconds long and you set `animation-delay` to `-5s`, it will start from half-way along your timeline.
 
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'bGqbyPw'
+} %}
+
 ### `animation-play-state`
 
 ```css
