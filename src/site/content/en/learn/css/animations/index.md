@@ -373,3 +373,8 @@ but rather, a preference to reduce animations—
 [especially unexpected ones](/prefers-reduced-motion/).
 You can learn more about this preference and overall performance with
 [this animation guide](https://web.dev/animations/).
+
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'bGqbPwq'
+} %}
