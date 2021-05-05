@@ -186,7 +186,7 @@ class SearchResults extends BaseStateElement {
 
     return html`
       <div class="web-search-popout">
-        <div class="web-search-popout__heading">Pages</div>
+        <div class="web-search-popout__heading">Results</div>
         <ul
           id="web-search-popout__list"
           class="web-search-popout__list"
