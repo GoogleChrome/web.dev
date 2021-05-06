@@ -28,7 +28,7 @@ const i18nRegex = /i18n\/\w+\//;
 module.exports = (locale, page, collections, renderData = {}) => {
   const forbiddenCharacters = [{searchValue: /"/g, replaceValue: '&quot;'}];
   const pageData = {
-    ...collections.all.find((item) => item.fileSlug === page.fileSlug).data,
+    ...collections.all.find((item) => item.fileSlug === page.fileSlug)?.data,
     ...renderData,
     page,
   };
