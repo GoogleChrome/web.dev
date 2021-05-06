@@ -36,6 +36,9 @@
   @include apply-utility('font', 'google-sans');
   @include apply-utility('weight', 'regular');
   @include flex-font((16px 28px), (18px 28px), (18px 28px));
+  color: $GREY_800;
+  font-style: italic;
+  max-width: 60ch;
 }
 
 .course-copy {
