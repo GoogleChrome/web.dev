@@ -1,0 +1,63 @@
+setLeader: Test your knowledge of layout
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,2"
+    stem: "What 2 things does the `display` property do?"
+    options:
+      - content: "Determines `inline` or `block` or `none`"
+        rationale: "The layout engine needs to know if this box be full width or
+        not and does it need a new line"
+      - content: "Determines the grid layout frame"
+        rationale: "The display property can set display to grid but it doesn't
+        have anything to do with a layout frame"
+      - content: "Determines how the children should behave"
+        rationale: "Flexbox and grid have opinions and new features for their
+        children"
+      - content: "Determines if the box should scroll"
+        rationale: "That's the `overflow` property"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: |
+      To flow multiple paragraphs into columns, which CSS property is best for
+      this task?
+    options:
+      - content: "`display: grid`"
+        rationale: "While grid could put multiple paragraphs into columns, those
+        columns would be their own columns, not flowing together from one to the
+        next."
+      - content: "`column-count`"
+        rationale: "Paragraphs will flow from the end of one column into the
+        start of the next, like a magazine or newspaper will do."
+      - content: "`display: flex`"
+        rationale: "While flex could put multiple paragraphs into columns, those
+        columns would be their own columns, not flowing together from one to the
+        next like is needed."
+      - content: "`float`"
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: "What does it mean if a block is out of flow?"
+    options:
+      - content: "It's stuck on the side of the river"
+        rationale: "Context is CSS here, not geography"
+      - content: "It's been given a `top` or `left` position value"
+        rationale: "Having these properties alone do not pull a box out of flow"
+      - content: "It's no longer positioned based on its siblings positions"
+        rationale: "A box with `position: absolute` for example, is now
+        positioned with x and y coordinates based on the containing block, and
+        not its order with other sibling elements"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: "Flexbox and Grid wrap their children by default?"
+    options:
+      - content: "True"
+        rationale: "It must be opted into with `flex-wrap: wrap` or
+        `repeat(auto-fit, 30ch)`"
+      - content: "False"
+        rationale: "Each Flexbox and Grid have special wrapping features that
+        need additional styles to apply"

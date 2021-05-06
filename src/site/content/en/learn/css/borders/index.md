@@ -351,3 +351,5 @@ but this value adds space between each edge region to create a seamless pattern.
   user: 'web-dot-dev',
   id: 'GRrvBYv'
 } %}
+
+{% Assessment 'borders' %}

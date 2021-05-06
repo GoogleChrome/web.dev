@@ -6,6 +6,10 @@ module.exports = function () {
     // _data/courses/a11y directory.
     projectKey: 'css',
     searchTag: 'course-learn-css',
+    // Exclude course content from the /tags/ pages.
+    excludeFromTags: true,
+    // Exclude course content from the /authors/ pages.
+    excludeFromAuthors: true,
     eleventyComputed: {
       tags: (data) => {
         const {searchTag} = data;

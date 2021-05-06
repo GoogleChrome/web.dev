@@ -63,6 +63,7 @@ module.exports = (collections) => {
       tag.elements = collections
         .getFilteredByTag(tag.key)
         .filter(livePosts)
+        .filter((item) => !item.data.excludeFromTags)
         .sort(sortByUpdated);
     }
 
