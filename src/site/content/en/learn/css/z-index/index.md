@@ -172,3 +172,5 @@ You can also create a stacking context by adding a `filter` and setting `backfac
 - [Forcing layers](https://surma.dev/things/forcing-layers/)
 - [Animations Guide: Force layer creation](https://web.dev/animations-guide/#force)
 - [Understanding z-index](https://ishadeed.com/article/understanding-z-index/)
+
+{% Assessment 'z-index' %}
