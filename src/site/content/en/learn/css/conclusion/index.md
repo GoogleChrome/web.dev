@@ -4,6 +4,12 @@ description: >
  Further resources to help you take your next steps.
 authors:
   - andybell
+  - rachelandrew
+  - una
+  - adamargyle
+  - robdodson
+  - kaycebasques
+  - jiwoong
 date: 2021-05-04
 ---
 
@@ -26,10 +32,4 @@ To continue to build your CSS skillset, here are some additional resources to ex
 
 ## Brought to you by
 
-- Andy Bell
-- Rachel Andrew
-- Una Kravets
-- Adam Argyle
-- Rob Dodson
-- Kayce Basques
-- Jiwoong Lee
+{% include 'partials/author-stack.njk' %}

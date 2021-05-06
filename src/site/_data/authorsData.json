@@ -76,6 +76,7 @@
       "unit": "Developer Relations"
     },
     "country": "US",
+    "homepage": "https://kayce.basqu.es/",
     "twitter": "kaycebasques",
     "github": "kaycebasques",
     "glitch": "kaycebasques",
@@ -161,6 +162,9 @@
       "unit": "Developer Relations"
     },
     "country": "US",
+    "descriptions": {
+      "en": "Googler working on web stuff. I help build web.dev!"
+    },
     "homepage": "https://robdodson.me",
     "twitter": "rob_dodson",
     "github": "robdodson",
@@ -2120,5 +2124,21 @@
     "twitter": "HongboSong",
     "github": "debugtive0517",
     "image": "image/MZfwZ8oVW8U6tzo5CXffcER0jR83/ieAP4AO0so7own9kFVW4.png"
+  },
+  "jiwoong": {
+    "name": {
+      "given": "Jiwoong",
+      "family": "Lee"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "descriptions": {
+      "en": "UX Designer for Web Platform & Chrome"
+    },
+    "twitter": "jiwoong",
+    "github": "jimoong",
+    "image": "image/foR0vJZKULb5AGJExlazy1xYDgI2/i3fyhkDpmO6VM1opsETS.jpg"
   }
 }
