@@ -4,7 +4,7 @@ subhead: How to integrate with hardware media keys, customize media notification
 authors:
   - beaufortfrancois
 date: 2020-03-06
-updated: 2021-05-05
+updated: 2021-05-06
 hero: image/admin/IhujMvzGa5Mf0aNWYRXW.jpg
 thumbnail: image/admin/Q6CqQNLucogBCxGMsSU2.jpg
 description: |
@@ -23,11 +23,11 @@ To let users know what's currently playing in their browser and control it
 without returning to the page that launched it, the Media Session API has been
 introduced. It allows web developers to customize this experience through
 metadata in custom media notifications, media events such as playing, pausing,
-seeking, track changing, and video conferencing events such as mute/unmute,
-turnon/turnoff camera, and hang up. These customizations are available in
-several contexts including desktop media hubs, media notifications on mobile,
-and even on wearable devices. I'll describe these customizations in this
-article.
+seeking, track changing, and video conferencing events such as mute/unmute
+microphone, turnon/turnoff camera, and hang up. These customizations are
+available in several contexts including desktop media hubs, media notifications
+on mobile, and even on wearable devices. I'll describe these customizations in
+this article.
 
 <figure class="w-figure">
   {% Img src="image/admin/qwTz64KKq4rq7WeA3rlT.jpg", alt="Screenshots of Media Session contexts", width="800", height="330" %}
@@ -403,8 +403,8 @@ navigator.mediaSession.setPositionState(null);
 ## Video conferencing actions {: #video-conferencing-actions }
 
 When the user puts their video call into a Picture-in-Picture window, the
-browser may display controls for mute/unmute, turnon/turnoff camera, and hang
-up. When the user clicks those, the website handles them through the video
+browser may display controls for the microphone, camera, and for hanging up.
+When the user clicks those, the website handles them through the video
 conferencing actions below.
 
 <figure class="w-figure">
