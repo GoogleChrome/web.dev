@@ -6,9 +6,9 @@ authors:
   - addyosmani
 description: |
   Today, we will cover new tooling features in Lighthouse, PageSpeed and DevTools to help identify how your site can improve on the Core Web Vitals.
-date: 2021-05-04
+date: 2021-05-07
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/9pCniP0TdYM5O9PDydl4.jpeg
-alt: "A Lighthouse lighting up the sea (https://unsplash.com/photos/D5OzyJ71mLI)"
+alt: "A Lighthouse lighting up the sea"
 tags:
   - blog
   - fast
@@ -345,3 +345,9 @@ as reducing reliance on polyfills and duplicates that may not be needed for the 
 For more information on Core Web Vitals tooling, keep an eye on the [Lighthouse
 team](https://twitter.com/____lighthouse) Twitter account and [What's new in
 DevTools](https://developers.google.com/web/updates/2020/05/devtools).
+
+[Hero image](https://unsplash.com/photos/D5OzyJ71mLI) by
+[Robert Wiedemann](https://unsplash.com/@antilumen)
+on [Unsplash](https://unsplash.com).
+
+
