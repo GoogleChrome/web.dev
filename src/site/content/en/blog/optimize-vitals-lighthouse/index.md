@@ -5,7 +5,7 @@ subhead: Finding opportunities to improve user-experience with Chrome's web tool
 authors:
   - addyosmani
 description: |
-  Today, we will cover new tooling features in Lighthouse, PageSpeed & DevTools to help identify how your site can improve on the Core Web Vitals.
+  Today, we will cover new tooling features in Lighthouse, PageSpeed and DevTools to help identify how your site can improve on the Core Web Vitals.
 date: 2021-05-04
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/9pCniP0TdYM5O9PDydl4.jpeg
 alt: "A Lighthouse lighting up the sea (https://unsplash.com/photos/D5OzyJ71mLI)"
