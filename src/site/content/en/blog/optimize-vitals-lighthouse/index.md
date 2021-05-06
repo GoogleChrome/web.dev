@@ -65,7 +65,7 @@ this as a summary view of what aspects of user-experience require your attention
 </figure>
 
 {% Aside %} Lighthouse focuses on measuring user-experience during the initial page load in a lab
-setting emulating a slow phone or desktop machine. If there is behavior on your page that may cause
+setting, emulating a slow phone or desktop machine. If there is behavior on your page that may cause
 layout shifts or long JavaScript tasks after page-load, the lab metrics will not reflect this. Try
 the DevTools Performance panel, [Search Console](https://search.google.com/search-console/about),
 the [Web Vitals
