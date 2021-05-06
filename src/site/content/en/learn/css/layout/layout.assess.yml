@@ -46,10 +46,10 @@ questions:
         rationale: "Context is CSS here, not geography"
       - content: "It's been given a `top` or `left` position value"
         rationale: "Having these properties alone do not pull a box out of flow"
-      - content: "It's no longer positioned based on it's siblings positions"
+      - content: "It's no longer positioned based on its siblings positions"
         rationale: "A box with `position: absolute` for example, is now
-        positioned with x and y coordinates based off it's containing block, and
-        not it's order with other sibling elements"
+        positioned with x and y coordinates based on the containing block, and
+        not its order with other sibling elements"
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "1"
