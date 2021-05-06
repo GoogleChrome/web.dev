@@ -212,7 +212,7 @@ partials I need to spend my time on):
 ### Identifying CLS from images without dimensions
 
 To [limit](/optimize-cls/#images-without-dimensions) Cumulative Layout Shift being caused by images
-without dimensions,  include width and height size attributes on your images and video elements.
+without dimensions, include width and height size attributes on your images and video elements.
 This approach ensures that the browser can allocate the correct amount of space in the document
 while the image is loading.
 
