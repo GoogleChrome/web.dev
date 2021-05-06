@@ -167,7 +167,7 @@ Will the audit also highlight preload opportunities if the LCP image is defined 
 background? Yes.
 
 Any image flagged as the LCP image whether via CSS background or `<img>` is a candidate if it's
-discovered at a waterfall depth of 3 or more.
+discovered at a waterfall depth of three or more.
 
 ### Identify CLS contributions
 
