@@ -5,11 +5,16 @@ module.exports = function () {
     // e.g. A course with a key of 'a11y' would have a corresponding
     // _data/courses/a11y directory.
     projectKey: 'css',
-    tags: ['course-learn-css'],
     searchTag: 'course-learn-css',
     eleventyComputed: {
+      tags: (data) => {
+        const {projectKey} = data;
+      }
       thumbnail: (data) => {
         const {projectKey} = data;
+
+        console.log(projectKey)
+        console.log(data['projectKey'])
         // Use thumbnail defined in the frontmatter or in the meta.yml file.
         return data.thumbnail || data?.courses?.[projectKey]?.meta?.thumbnail;
       },
