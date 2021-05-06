@@ -80,7 +80,10 @@ module.exports = (collections) => {
 
   if (collections) {
     // Find all posts, sort and key by author. Don't yet filter to live posts.
-    allPosts = collections.getFilteredByGlob('**/*.md').sort(sortByUpdated);
+    allPosts = collections
+      .getFilteredByGlob('**/*.md')
+      .filter((item) => !item.data.excludeFromAuthors)
+      .sort(sortByUpdated);
   }
 
   const authorsPosts = findAuthorsPosts(allPosts);
