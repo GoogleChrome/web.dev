@@ -69,7 +69,7 @@ setting emulating a slow phone or desktop machine. If there is behavior on your 
 layout shifts or long JavaScript tasks after page-load, the lab metrics will not reflect this. Try
 the DevTools Performance panel, [Search Console](https://search.google.com/search-console/about),
 the [Web Vitals
-extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en)
+extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en),
 or RUM for a post-load view into the metrics. {% endAside %}
 
 <figure class="w-figure">
