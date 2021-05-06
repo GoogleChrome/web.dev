@@ -28,7 +28,7 @@ Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2
 [CI](https://github.com/GoogleChrome/lighthouse-ci) and
 [WebPageTest](https://www.webpagetest.org/easy). 
 
-Lighthouse 7.x includes new features like Element Screenshots, for easier visual inspection of
+Lighthouse 7.x includes new features like element screenshots, for easier visual inspection of
 parts of your UI impacting user-experience metrics (e.g. what nodes are contributing to layout
 shift).
 
