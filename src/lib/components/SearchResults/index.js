@@ -110,6 +110,7 @@ class SearchResults extends BaseElement {
       this.renderRoot
         .querySelector('.web-search-popout__link--active')
         .scrollIntoView();
+      this.dispatchEvent(new Event('select'));
     });
   }
 
@@ -119,28 +120,6 @@ class SearchResults extends BaseElement {
    */
   navigateToHit({url}) {
     window.location.href = url;
-  }
-
-  /**
-   * Keep track of cursor changes and reflect them to aria-activedescendant.
-   * This ensures screen readers properly announce the current search result.
-   * We do this because focus never leaves the search input box, so when the
-   * user is arrowing through results, we have to tell the screen reader about
-   * it.
-   * @param {Map} changedProperties A Map of LitElement properties that changed.
-   */
-  updated(changedProperties) {
-    if (!changedProperties.has('cursor')) {
-      return;
-    }
-    if (this.cursor === -1) {
-      this.removeAttribute('aria-activedescendant');
-      return;
-    }
-    this.setAttribute(
-      'aria-activedescendant',
-      `web-search-popout__link--${this.cursor}`,
-    );
   }
 
   /* eslint-disable indent */

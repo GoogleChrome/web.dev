@@ -75,6 +75,8 @@ class Search extends BaseStateElement {
     // Debounce the method we use to search Algolia so we don't waste calls
     // while the user is typing.
     this.search = debounce(this.search.bind(this), 200);
+
+    this.onResultSelect = this.onResultSelect.bind(this);
   }
 
   onStateChanged({currentLanguage}) {
@@ -86,11 +88,13 @@ class Search extends BaseStateElement {
     window.addEventListener('resize', this.onResize);
     this.onResize();
     this.resultsEl = document.getElementById(this.getAttribute('results-id'));
+    this.resultsEl.addEventListener('select', this.onResultSelect);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     window.removeEventListener('resize', this.onResize);
+    this.resultsEl.removeEventListener('select', this.onResultSelect);
   }
 
   render() {
@@ -197,6 +201,26 @@ class Search extends BaseStateElement {
     const value = styles.getPropertyValue('--web-search-animation-time');
     // value will either be "200ms" or "0".
     this.animationTime = parseInt(value, 10);
+  }
+
+  /**
+   * Keep track of which result is selected in the search results element and
+   * reflect them to aria-activedescendant.
+   * This ensures screen readers properly announce the current search result.
+   * We do this because focus never leaves the search input box, so when the
+   * user is arrowing through results, we have to tell the screen reader about
+   * it.
+   * @param {Event} event Select event fired by search results element.
+   */
+  onResultSelect(event) {
+    if (event.target instanceof HTMLElement) {
+      const selected = event.target.querySelector('[aria-selected="true"]');
+      if (!selected || !selected.id) {
+        this.removeAttribute('aria-activedescendant');
+        return;
+      }
+      this.inputEl.setAttribute('aria-activedescendant', selected.id);
+    }
   }
 
   onKeyDown(e) {
