@@ -53,7 +53,7 @@ Lighthouse can
 [synthetically](/vitals-measurement-getting-started/#measuring-web-vitals-using-lab-data) measure
 the [Core Web Vitals metrics](/vitals/) including [Largest Contentful Paint](/lcp/), [Cumulative
 Layout Shift](/cls/) and [Total Blocking Time](/tbt/) (a lab proxy for [First Input Delay](/fid/)).
-These metrics reflect loading, layout stability and interaction readiness. Other metrics such as
+These metrics reflect loading, layout stability, and interaction readiness. Other metrics such as
 [First Contentful Paint](/first-contentful-paint/) highlighted in the [future of
 CWV](https://developer.chrome.com/devsummit/sessions/future-of-core-web-vitals/) are there too.
 
