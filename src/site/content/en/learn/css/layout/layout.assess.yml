@@ -27,7 +27,7 @@ questions:
       - content: "`display: grid`"
         rationale: "While grid could put multiple paragraphs into columns, those
         columns would be their own columns, not flowing together from one to the
-        next like is needed."
+        next."
       - content: "`column-count`"
         rationale: "Paragraphs will flow from the end of one column into the
         start of the next, like a magazine or newspaper will do."
