@@ -68,6 +68,7 @@ const data = {i18n: walk(path.join(__dirname, '..', '_data', 'i18n'))};
  * @return {string}
  */
 const i18n = (path, locale = 'en') => {
+  locale = locale.split('_')[0];
   try {
     return get(data, path)[locale] || get(data, path)[defaultLocale];
   } catch (err) {
