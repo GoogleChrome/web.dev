@@ -30,6 +30,9 @@ feedback:
 
 **Updates**
 
+- **May 6, 2021**: Based on feedback and issues reported we've decided to adjust
+  the timeline for `SharedArrayBuffer` usage in none cross-origin isolated sites
+  to be restricted in Chrome M92. 
 - **April 16, 2021**: Added notes about [a new COEP credentialless
   mode](https://github.com/mikewest/credentiallessness/) and [COOP
   same-origin-allow-popups to be a relaxed
