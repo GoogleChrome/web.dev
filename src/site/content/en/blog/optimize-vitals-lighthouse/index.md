@@ -16,7 +16,7 @@ tags:
   - web-vitals
 ---
 
-Today, we'll cover new tooling features in Lighthouse, PageSpeed &amp; DevTools to help identify
+Today, we'll cover new tooling features in Lighthouse, PageSpeed and DevTools to help identify
 how your site can improve on the Core Web Vitals.
 
 As a refresher on the tools, [Lighthouse](https://github.com/GoogleChrome/lighthouse) is an
