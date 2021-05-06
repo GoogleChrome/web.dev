@@ -402,4 +402,4 @@ There's a lot of choice and flexibility with CSS layout.
 To dive further into the power of CSS [Flexbox](/learn/css/flexbox) and [Grid](/learn/css/grid), continue into the next few modules.
 
 
-@@TO DO -- self assessment
+{% Assessment 'layout' %}
