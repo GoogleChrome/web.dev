@@ -79,11 +79,11 @@ and receive the URL. It is important to note that both the proposed manifest-bas
 the traditional `registerProtocolHandler()` play very similar roles in practice, while still
 allowing the possibility for complementary user-experiences:
 
-- Similarities include requirements around the list of schemes allowed to be registered, as well as
+- Similarities include requirements around the list of schemes allowed to be registered, and
   the name and format of parameters, etc.
-- Differences in the manifest-based registration are subtle, however, might be useful to enhance the
+- Differences in the manifest-based registration are subtle, but might be useful to enhance the
   experience for PWA users. For example, manifest-based PWA registration may not require an
-  additional user action, apart from the user-initiated installation of the PWA.
+  additional user action apart from the user-initiated installation of the PWA.
 
 ### Use cases
 
@@ -117,13 +117,13 @@ token, enable the `#enable-desktop-pwas-protocol-handling` flag in `chrome://fla
 
 ## How to use URL protocol handler registration for PWAs
 
-The API of the URL protocol handler registration for PWAs feature is modeled closely along the
-existing API of `navigator.registerProtocolHandler()`. Just this time the information is passed
-declaratively via the Web Application Manifest in a new property `"protocol_handlers"` that takes an
+The API for URL protocol handler registration is modeled closely on  
+`navigator.registerProtocolHandler()`. Just this time the information is passed
+declaratively via the Web Application Manifest in a new property called `"protocol_handlers"` that takes an
 array of objects with the two required keys `"protocol"` and `"url"`. The code snippet below shows
-the relevant excerpt of a Web Application Manifest that would register the protocols `web+tea` and
+how to register `web+tea` and
 `web+coffee`. The values are strings containing the URL of the handler with the required `%s`
-placeholder that will be replaced with the escaped URL to be handled.
+placeholder for the escaped URL.
 
 ```json
 {
@@ -155,8 +155,8 @@ The same app can register itself for multiple protocols, as you can see in the c
 Handler registrations are synchronized with the latest manifest version provided by the app. There
 are two cases:
 
-1. An update that adds new handlers triggers handler registration (separate from app installation).
-1. An update that removes handlers triggers handler unregistration (separate from app
+* An update that adds new handlers triggers handler registration (separate from app installation).
+* An update that removes handlers triggers handler unregistration (separate from app
    uninstallation).
 
 ## Demo
@@ -183,7 +183,7 @@ You can see a demo of URL protocol handler registration for PWAs on Glitch.
 
 ## Security considerations
 
-Since PWA installation requires the context to be secure, the present feature inherits this
+Since PWA installation requires the context to be secure, protocol handling inherits this
 constraint. The list of registered protocol handlers is not exposed to the web in any way so it
 cannot be used as a fingerprinting vector.
 
@@ -196,7 +196,7 @@ as the URL of an iframe.
 ### Allowlist of protocols
 
 Just like with `registerProtocolHandler()` there is an allowlist of protocols that apps can register
-to become the handler for.
+to handle.
 
 ### Default protocol handlers
 
