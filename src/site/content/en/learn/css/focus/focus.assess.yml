@@ -22,7 +22,7 @@ questions:
   - type: multiple-choice
     cardinality: "1+"
     correctAnswers: "0,1,3"
-    stem: Which of the following input devices cause focus?
+    stem: Which of the following input devices can set focus?
     options:
       - content: Gamepad
         rationale: "Gamepad's often send keyboard events when their buttons are
