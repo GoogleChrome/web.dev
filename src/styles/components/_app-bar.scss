@@ -39,6 +39,7 @@
 
 .app-bar__item > a {
   color: $GREY_700;
+  display: flex;
 }
 
 .app-bar__share {
@@ -68,4 +69,9 @@
       margin-left: 16px;
     }
   }
+}
+
+// Courses app bar specific subclass
+.course-app-bar__logo {
+  width: 101px;
 }
