@@ -33,7 +33,7 @@ questions:
         rationale: "A mouse requires vision and no longer puts focus on elements
         when used. All browsers used to put focus on things like buttons when
         clicked, but that has changed."
-      - content: Screen reader assistive technology
+      - content: Assistive technology (screen reader, switch, etc)
         rationale: "Definitely causes focus when used to navigate the we"
       - content: A potato
         rationale: "Sorry, while a potato can be used as a pointer on touch
