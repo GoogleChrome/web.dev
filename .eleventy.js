@@ -240,14 +240,12 @@ module.exports = function (config) {
   config.addDataExtension('yml', (contents) => yaml.safeLoad(contents));
 
   // Make CSP hashes accessible to firebase config.
-  if (isProd) {
-    config.on('afterBuild', () => {
-      fs.writeFileSync(
-        'dist/script-hash-list.json',
-        JSON.stringify(getHashList()),
-      );
-    });
-  }
+  config.on('afterBuild', () => {
+    fs.writeFileSync(
+      'dist/script-hash-list.json',
+      JSON.stringify(getHashList()),
+    );
+  });
 
   return {
     dir: {
