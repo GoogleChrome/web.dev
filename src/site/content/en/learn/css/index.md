@@ -2,6 +2,9 @@
 title: Learn CSS
 authors:
   - andybell
+  - una
+  - adamargyle
+  - rachelandrew
 description: An evergreen CSS course and reference to level-up your web styling expertise.
 date: 2021-05-04
 tags:
@@ -35,3 +38,5 @@ For those new to web development overall, check out the
 course from MDN to learn all about how to write markup and link your stylesheets.
 
 So, are you ready to learn CSS? Let's get started.
+
+{% include 'partials/author-stack.njk' %}
