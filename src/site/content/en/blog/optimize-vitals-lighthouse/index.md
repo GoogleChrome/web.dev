@@ -83,7 +83,7 @@ Report](https://developers.google.com/web/tools/chrome-user-experience-report) o
 [RUM](https://developer.mozilla.org/en-US/docs/Web/Performance/Rum-vs-Synthetic), do not have this
 limitation and are a valuable complement to lab data as they reflect the experience real users
 have. Field data can't offer the kinds of diagnostic information you get in the lab, so the two go
-together hand in hand.
+hand in hand.
 
 <figure class="w-figure">
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/iywvhTMqrgzG1k1v5vC1.png", alt="RUM vendor support for the core web vitals", width="800", height="518" %}
