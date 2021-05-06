@@ -109,7 +109,7 @@ largest contentful paint. Hovering over the element will highlight it in the mai
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/qeNJwYAVxysRV0okWmf4.png", alt="Largest Contentful Paint element", width="800", height="505" %}
 </figure>
 
-If this element is an image, this information is a useful hint you may want to optimize the loading
+If this element is an image, this information is a useful hint that you may want to optimize the loading
 of this image. Lighthouse includes a number of image optimization audits for helping you understand
 if your images could be better compressed, resized or delivered in a more optimal modern image
 format.
