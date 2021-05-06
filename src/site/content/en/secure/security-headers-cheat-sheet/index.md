@@ -9,25 +9,21 @@ tags:
   - security
 ---
 
-Do you know all security headers that protect your website from various threats
-and why they are needed? Are you confident that you are not missing anything?
+This article lists the most important security headers you can use to protect
+your website. Use this article to understand, look up, check if you are missing
+anything and start using them.
 
-This article lists all security headers that are available on the browser so
-that you can look up, examing if you are not missing anything, understand why
-they are needed and quickly start using it.
+**Security headers** we'll discuss in this article:
 
-**Security headers** available on the browser:
-
-* [X-Content-Type-Options](#xcto)
 * [Content Security Policy](#csp)
 * [Trusted Types](#tt)
+* [X-Content-Type-Options](#xcto)
 * [X-Frame-Options](#xfo)
 * [Cross-Origin Resource Policy](#corp)
 * [Cross-Origin Opener Policy](#coop)
-* [HTTP Strict Transport Security](#hsts)
 * [Cross-Origin Resource Sharing](#cors)
 * [Cross-Origin Embedder Policy](#coep)
-* [Timing-Allow-Origin](#tao)
+* [HTTP Strict Transport Security](#hsts)
 
 **Vulnerabilities** that can be mitigated with above security headers:
 
@@ -38,62 +34,15 @@ they are needed and quickly start using it.
 * [Cross-Site Request Forgery](#csrf)
 * [Spectre](#spectre)
 
-
-## X-Content-Type-Options
-
-When a malicious HTML document disguised as an image is uploaded to a photo
-service, some browsers will treat it as an active document and allow it to
-execute scripts in the context of the application,  causing a [cross-site
-scripting attack](#xss).
-
-`X-Content-Type-Options: nosniff` prevents it by instructing the browser not to
-[sniff that the MIME type](https://mimesniff.spec.whatwg.org/#introduction) set
-in the  `Content-Type` header for a given response is correct.
-
-### Recommended usage
-
-Apply the following header to **all of your resources**.
-
-```http
-X-Content-Type-Options: nosniff
-```
-
-{% Details %}
-{% DetailsSummary %}
-
-Learn more how to use X-Content-Type-Options
-
-{% endDetailsSummary %}
-
-### Recommended usages
-
-`X-Content-Type-Options: nosniff` is recommended for all resources served from
-your server along with the correct `Content-Type` header.
-
-{% Label %}Example headers sent with a document HTML{% endLabel %}
-
-```http
-X-Content-Type-Options: nosniff
-Content-Type: text/html; charset=utf-8
-```
-
-### Supported browsers
-
-Chrome, Firefox, Safari, Edge
-
-### Learn more
-
-* [X-Content-Type-Options - HTTP](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Content-Type-Options)
-
-{% endDetails %}
-
 ## Content Security Policy (CSP) {: #csp}
 
-TODO: Explain threats that CSP can mitigate.
+[Cross-Site Scripting (XSS)](#xss) is an attack where a vulnerability on a
+website allows a malicious script to be injected and executed.
 
-Content Security Policy (CSP) is a multi-purpose browser feature, but primarily
-helps to mitigate [XSS](https://owasp.org/www-community/attacks/xss/) attacks by
-restricting resources that can be loaded to the page.
+TODO: Add an example case study.
+
+Content Security Policy (CSP) mitigates XSS attacks by restricting resources
+that can be loaded to the page.
 
 {% Aside 'caution' %}
 
@@ -389,6 +338,54 @@ Chrome, Edge
  
 {% endDetails %}
 
+## X-Content-Type-Options
+
+When a malicious HTML document disguised as an image is uploaded to a photo
+service, some browsers will treat it as an active document and allow it to
+execute scripts in the context of the application,  causing a [cross-site
+scripting attack](#xss).
+
+`X-Content-Type-Options: nosniff` prevents it by instructing the browser not to
+[sniff that the MIME type](https://mimesniff.spec.whatwg.org/#introduction) set
+in the  `Content-Type` header for a given response is correct.
+
+### Recommended usage
+
+Apply the following header to **all of your resources**.
+
+```http
+X-Content-Type-Options: nosniff
+```
+
+{% Details %}
+{% DetailsSummary %}
+
+Learn more how to use X-Content-Type-Options
+
+{% endDetailsSummary %}
+
+### Recommended usages
+
+`X-Content-Type-Options: nosniff` is recommended for all resources served from
+your server along with the correct `Content-Type` header.
+
+{% Label %}Example headers sent with a document HTML{% endLabel %}
+
+```http
+X-Content-Type-Options: nosniff
+Content-Type: text/html; charset=utf-8
+```
+
+### Supported browsers
+
+Chrome, Firefox, Safari, Edge
+
+### Learn more
+
+* [X-Content-Type-Options - HTTP](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Content-Type-Options)
+
+{% endDetails %}
+
 ## X-Frame-Options {: #xfo}
 
 Being embedded in a malicious website may allow attackers to invoke unintended
@@ -633,46 +630,6 @@ Chrome, Firefox, Edge
 
 {% endDetails %}
 
-## HTTP Strict Transport Security (HSTS) {: #hsts}
-
-Communication over an HTTP connection is not encrypted, therefore the content
-exchanged over such a network can be eavesdropped or sniffed.
-
-`Strict-Transport-Security` header informs the browser that it should never load
-the site using HTTP and use HTTPS instead. Once it's set, the browser will use
-HTTPS instead of HTTP to access the domain without a redirect for a duration
-defined in the header.
-
-### Example usage
-
-```http
-Strict-Transport-Security: max-age=36000
-```
-
-{% Details %}
-{% DetailsSummary %}
-
-Learn more how to use HSTS
-
-{% endDetailsSummary %}
-
-### Recommended usages
-
-All websites that transition from HTTP to HTTPS should respond with a `Strict-Transport-Security` header when a request with HTTP is received.
-
-```http
-Strict-Transport-Security: max-age=36000
-```
-
-### Supported browsers
-
-Chrome, Firefox, Safari, Edge
-
-### Learn more
-* [Strict-Transport-Security - HTTP](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security)
-
-{% endDetails %}
-
 ## Cross-Origin Resource Sharing (CORS) {: #cors}
 
 Cross-Origin Resource Sharing (CORS) is a browser mechanism that requests and
@@ -872,46 +829,35 @@ Chrome, Firefox, Edge
 
 {% endDetails %}
 
-## Timing-Allow-Origin {: #tao}
+## HTTP Strict Transport Security (HSTS) {: #hsts}
 
-High-precision timers give more efficiency to Spectre-type side-channel attacks.
-Browsers prevent cross-origin access to the resource timing information by
-default.
+Communication over an HTTP connection is not encrypted, therefore the content
+exchanged over such a network can be eavesdropped or sniffed.
 
-`Timing-Allow-Origin` allows resources to specify which origins can see values
-of their attributes retrieved via features of the [Resource Timing
-API](https://developer.mozilla.org/docs/Web/API/Resource_Timing_API).
+`Strict-Transport-Security` header informs the browser that it should never load
+the site using HTTP and use HTTPS instead. Once it's set, the browser will use
+HTTPS instead of HTTP to access the domain without a redirect for a duration
+defined in the header.
 
 ### Example usage
 
-Allow `https://example.com` to read values from the Resource Timing API.
-
 ```http
-Timing-Allow-Origin: https://example.com
+Strict-Transport-Security: max-age=36000
 ```
-
 
 {% Details %}
 {% DetailsSummary %}
 
-Learn more how to use Timing-Allow-Origin
+Learn more how to use HSTS
 
 {% endDetailsSummary %}
 
 ### Recommended usages
 
-Websites that collect performance data.
-
-Allow any origins to read values from the Resource Timing API.
+All websites that transition from HTTP to HTTPS should respond with a `Strict-Transport-Security` header when a request with HTTP is received.
 
 ```http
-Timing-Allow-Origin: *
-```
-
-Allow `https://example.com` to read values from the Resource Timing API.
-
-```http
-Timing-Allow-Origin: https://example.com
+Strict-Transport-Security: max-age=36000
 ```
 
 ### Supported browsers
@@ -919,9 +865,7 @@ Timing-Allow-Origin: https://example.com
 Chrome, Firefox, Safari, Edge
 
 ### Learn more
-
-* [Timing-Allow-Origin -
-  HTTP](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin)
+* [Strict-Transport-Security - HTTP](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security)
 
 {% endDetails %}
 
@@ -948,12 +892,15 @@ HTML template systems, avoiding the use of [dangerous JavaScript
 APIs](https://domgo.at/cxss/sinks), and properly processing user data by hosting
 file uploads in a separate domain and sanitizing user-controlled HTML.
 
-Websites with sensitive information (e.g. personal information) should use the
-following headers.
+Websites with sensitive information (e.g. personal information) may mitigate
+these risks by using the following headers:
 
-* [Content Security Policy (CSP)](#csp)
-* [Trusted Types](#tt)
-* [X-Content-Type-Options](#xcto)
+* With [Content Security Policy (CSP)](#csp), a website can fundamentally
+  restrict scripts to be loaded to mitigate the risk.
+* With [Trusted Types](#tt), a website can enforce sanitization of data passed
+  into a dangerous JavaScript API.
+* [X-Content-Type-Options](#xcto) prevents the browser from misinterpreting
+  malicious scripts.
 
 ## Isolating your site from other websites
 
@@ -972,6 +919,13 @@ script inclusion](https://www.scip.ch/en/?labs.20160414) (XSSI), and various
 * [Cross-Origin Resource Policy (CORP)](#corp)
 * [Cross-Origin Opener Policy (COOP)](#coop)
 
+## Securely building a powerful website
+
+// TODO: Explain the benefit of cross-origin isolation etc?
+
+* [Cross-Origin Resource Sharing (CORS)](#cors)
+* [Cross-Origin Embedder Policy (COEP)](#coep)
+
 ## Encrypting traffic to your site
 
 Encryption issues appear when an application does not fully encrypt data in
@@ -987,14 +941,6 @@ or [lax CORS validation
 logic](https://blog.detectify.com/2018/04/26/cors-misconfigurations-explained/).
 
 * [HTTP Strict Transport Security (HSTS)](#hsts)
-
-## Securely building a powerful website
-
-// TODO: Explain the benefit of cross-origin isolation etc?
-
-* [Cross-Origin Resource Sharing (CORS)](#cors)
-* [Cross-Origin Embedder Policy (COEP)](#coep)
-* [Timing-Allow-Origin](#tao)
 
 ## Further reading
 
