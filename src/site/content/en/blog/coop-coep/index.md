@@ -17,7 +17,7 @@ authors:
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-04-19
+updated: 2021-05-06
 tags:
   - blog
   - security
@@ -78,7 +78,7 @@ able to use privileged features including:
           help of <a href="https://www.chromium.org/Home/chromium-security/site-isolation">
           Site Isolation</a>, but will require the cross-origin isolated state
           and <a href="https://developer.chrome.com/blog/enabling-shared-array-buffer/">
-          will be disabled by default in Chrome 91</a>.
+          will be disabled by default in Chrome 92</a>.
         </td>
       </tr>
       <tr>
@@ -558,6 +558,6 @@ around COOP and COEP.
 * [Why you need "cross-origin isolated" for powerful features](https://web.dev/why-coop-coep/)
 * [A guide to enable cross-origin isolation](https://web.dev/cross-origin-isolation-guide/)
 * [SharedArrayBuffer updates in Android Chrome 88 and Desktop Chrome
-  91](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
+  92](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
 * [Monitor your web page's total memory usage with
   `measureUserAgentSpecificMemory()`](https://web.dev/monitor-total-page-memory-usage/)
