@@ -6,7 +6,7 @@
     <summary>
       <div class="display-inline-flex align-center user-select-none">
         <div class="course-toc__heading font-google-sans weight-medium">{{ 'i18n.toc.table_of_contents' | i18n(locale) }}</div>
-        <span class="toc__icon height-400">{{ icon('arrow-right') }}</span>
+        <span class="toc__icon height-400">{{ icon('arrow-right', {label: 'toggle'}) }}</span>
       </div>
     </summary>
     <div class="toc__wrapper flow-recursive">{{ tocContents | safe }}</div>

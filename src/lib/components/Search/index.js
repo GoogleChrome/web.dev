@@ -39,8 +39,6 @@ async function internalLoadAlgoliaLibrary() {
 class Search extends BaseStateElement {
   static get properties() {
     return {
-      // Id of the HTML element displaying the results.
-      resultsId: {type: String, reflect: true},
       // Manages the expanded/collapsed state of the UI.
       expanded: {type: Boolean, reflect: true},
       // An array of algolia results.
@@ -65,7 +63,6 @@ class Search extends BaseStateElement {
     this.timeout;
     this.expanded = false;
     this.locale = 'en';
-    this.resultsId = '';
     this.resultsEl;
 
     // On smaller screens we don't do an animation so it's ok for us to fire off
@@ -88,7 +85,7 @@ class Search extends BaseStateElement {
     super.connectedCallback();
     window.addEventListener('resize', this.onResize);
     this.onResize();
-    this.resultsEl = document.getElementById(this.resultsId);
+    this.resultsEl = document.getElementById(this.getAttribute('results-id'));
   }
 
   disconnectedCallback() {
@@ -178,7 +175,7 @@ class Search extends BaseStateElement {
   }
 
   /**
-   * Passes on updated search properties to the searh results element.
+   * Passes on updated search properties to the search results element.
    * @param {Map} changedProperties A Map of LitElement properties that changed.
    */
   updated(changedProperties) {

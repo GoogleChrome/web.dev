@@ -9,8 +9,8 @@ date: 2021-04-21
 
 # Flexbox
 
-A design pattern that can be tricky in responsive design is a sidebar that sits inline with some content.
-Where there is viewport space,
+A design pattern that can be tricky in responsive design is a sidebar that sits inline with some
+content. Where there is viewport space,
 this pattern works great,
 but where space is condensed,
 that rigid layout can become problematic.
@@ -44,13 +44,13 @@ which you will be able to explore in this guide.
 - They can display as a row, or a column.
 - They respect the writing mode of the document.
 - They are single line by default,
-but can be asked to wrap onto multiple lines.
+  but can be asked to wrap onto multiple lines.
 - Items in the layout can be visually reordered,
-away from their order in the DOM.
+  away from their order in the DOM.
 - Space can be distributed inside the items,
- so they become bigger and smaller according to the space available in their parent.
+  so they become bigger and smaller according to the space available in their parent.
 - Space can be distributed around the items and flex lines in a wrapped layout,
-using the Box Alignment properties.
+  using the Box Alignment properties.
 - The items themselves can be aligned on the cross axis.
 
 ## The main axis and the cross axis
@@ -62,7 +62,7 @@ if it is `column` your main axis is along the column.
 
 <figure class="w-figure">
 {% Img
-src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/byyEAja3E2bLRw1ffXdw.png",
+src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/xKtf0cHRw0xQyiyYuuyz.svg",
 alt="Three boxes next to each other with an arrow, pointing left to right. The arrow is labelled Main axis",
 width="800",
 height="320"
@@ -76,19 +76,21 @@ The cross axis runs in the other direction to the main axis,
 so if `flex-direction` is `row` the cross axis runs along the column.
 
 <figure class="w-figure">
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/9OWmrB5Epj4eTcFhGrrK.png", alt="Three boxes of different heights, next to each other with an arrow, pointing left to right. The arrow is labelled Main axis. There's another arrow pointing top to bottom. This one is labelled Cross axis", width="800", height="320" %}
+{% Img
+  src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/5wCsZcBmK5L33LS7nOmP.svg", alt="Three boxes of different heights, next to each other with an arrow, pointing left to right. The arrow is labelled Main axis. There's another arrow pointing top to bottom. This one is labelled Cross axis", width="800", height="320" %}
 </figure>
 
 You can do two things on the cross axis.
-You can move the items individually or as a group so they align against each other and the flex container.
-Also, if you have wrapped flex lines,
+You can move the items individually or as a group so they align against each other and the flex
+container. Also, if you have wrapped flex lines,
 you can treat those lines as a group in order to control how space is assigned to those lines.
 You will see how this all works in practice throughout this guide,
 for now just keep in mind that the main axis follows your `flex-direction`.
 
 ## Creating a flex container
 
-Let's see how flexbox behaves by taking a group of different sized items and using flexbox to lay them out.
+Let's see how flexbox behaves by taking a group of different sized items and using flexbox to lay
+them out.
 
 ```html
 <div class="container" id="container">
@@ -98,7 +100,8 @@ Let's see how flexbox behaves by taking a group of different sized items and usi
 </div>
 ```
 
-To use flexbox you need to declare that you want to use a flex formatting context and not regular block and inline layout.
+To use flexbox you need to declare that you want to use a flex formatting context and not regular
+block and inline layout.
 Do this by changing the value of the `display` property to `flex`.
 
 ```css
@@ -151,16 +154,23 @@ away from how things are ordered in the HTML document,
 as it can negatively impact accessibility.
 The `row-reverse` and `column-reverse` values are a good example of this.
 The reordering only happens for the visual order, not the logical order.
-This is important to understand as the logical order is the order that a screen reader will read out the content,
+This is important to understand as the logical order is the order that a screen reader will read out
+the content,
 and anyone navigating using the keyboard will follow.
 
 You can see in the following video how in a reversed column layout,
-tabbing between links becomes disconnected as the keyboard navigation follows the DOM not the visual display.
+tabbing between links becomes disconnected as the keyboard navigation follows the DOM not the visual
+display.
 
-{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/IgpaIRZd7kOq8sd46eaR.mp4" %}
+{% Video
+  src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/IgpaIRZd7kOq8sd46eaR.mp4",
+  autoplay=true,
+  controls=true
+%}
 
 Anything which can change the order of items in flexbox or grid can cause this problem.
-Therefore any reordering should include thorough testing to check that it will not make your site hard to use for some people.
+Therefore any reordering should include thorough testing to check that it will not make your site
+hard to use for some people.
 
 For more information see:
 
@@ -195,7 +205,8 @@ left to right writing mode.
 This would make it easy to assume that flex items line up **on the left**, and run **horizontally**.
 
 With the main and cross axis plus the writing mode to consider,
-the fact that we talk about **start** and **end** rather than top, bottom, left, and right in flexbox might be easier to understand.
+the fact that we talk about **start** and **end** rather than top, bottom, left, and right in
+flexbox might be easier to understand.
 Each axis has a start and an end.
 The start of the main axis is referred to as **main-start**.
 So our flex items initially line up from main-start.
@@ -203,7 +214,7 @@ The end of that axis is **main-end**.
 The start of the cross axis is **cross-start** and the end **cross-end**.
 
 {% Img
-src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/t3TTCe8ycheeWH1VTOv6.png",
+src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/uSH4TxRv8KNQDTK7Vn8h.svg",
 alt="A labelled diagram of the above terms",
 width="800",
 height="382" %}
@@ -215,7 +226,9 @@ This means that if there is not enough space in the container the items will ove
 
 <figure class="w-figure">
 {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/VTUdLS9PeBziBvbOSc4q.jpg",
-alt="A flex container with nine items inside it, the items have shrunk down so one word is on a line but there is not enough room to show them side by side so the flex items have extended outside the box of the container.",
+alt="A flex container with nine items inside it, the items have shrunk down so one word is on a line
+but there is not enough room to show them side by side so the flex items have extended outside the
+box of the container.",
 width="800",
 height="282" %}
   <figcaption class="w-figcaption">
@@ -274,7 +287,8 @@ This is because the initial value of the `flex-` properties is:
 
 This can be represented by a keyword value of `flex: initial`.
 The `flex` shorthand property,
-or the longhands of `flex-grow`, `flex-shrink` and `flex-basis` are applied to the children of the flex container.
+or the longhands of `flex-grow`, `flex-shrink` and `flex-basis` are applied to the children of the
+flex container.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -291,7 +305,8 @@ This sets the properties to:
 - `flex-basis: auto`: items have a base size of `auto`.
 
 Using `flex: auto` will mean that items end up different sizes,
-as the space that is shared between the items is shared out _after_ each item is laid out as max-content size.
+as the space that is shared between the items is shared out _after_ each item is laid out as
+max-content size.
 So a large item will gain more space.
 To force all of the items to be a consistent size and ignore the size of the content change
 `flex:auto` to `flex: 1`. in the demo.
@@ -309,7 +324,8 @@ As all items have a `flex-grow` factor of `1` they all grow equally and the spac
 {% Aside %}
 There is also a value of `flex: none`,
 which will give you inflexible flex items that do not grow or shrink.
-This might be useful if you are purely using flexbox to access the alignment properties but don't want any flexible behavior.
+This might be useful if you are purely using flexbox to access the alignment properties but don't
+want any flexible behavior.
 {% endAside %}
 
 ### Allowing items to grow at different rates
@@ -327,7 +343,8 @@ three parts to the third.
   id: 'OJWRzEz'
 } %}
 
-You can do the same thing from a `flex-basis` of `auto`, though you will need to specify the three values.
+You can do the same thing from a `flex-basis` of `auto`, though you will need to specify the three
+values.
 The first value being `flex-grow`,
 the second `flex-shrink`,
 and the third `flex-basis`.
@@ -344,15 +361,16 @@ and the third `flex-basis`.
 
 This is a less common use case as the reason to use a `flex-basis` of `auto`
 is to allow the browser to figure out space distribution.
-If you wanted to cause an item to grow a little more than the algorithm decides however it might be useful.
+If you wanted to cause an item to grow a little more than the algorithm decides however it might be
+useful.
 
 ## Reordering flex items
 
 Items in your flex container can be reordered using the `order` property.
 This property allows the ordering of items in **ordinal groups**.
 Items are laid out in the direction dictated by `flex-direction`,
- lowest values first.
- If more than one item has the same value it will be displayed with the other items with that value.
+lowest values first.
+If more than one item has the same value it will be displayed with the other items with that value.
 
 The example below demonstrates this ordering.
 
@@ -362,7 +380,8 @@ The example below demonstrates this ordering.
 } %}
 
 {% Aside 'warning' %}
-Using `order` has the same problems as the `row-reverse` and `column-reverse` values of `flex-direction`.
+Using `order` has the same problems as the `row-reverse` and `column-reverse`
+values of `flex-direction`.
 It would be very easy to create a disconnected experience for some users.
 Do not use `order` because you are fixing things being out of order in the document.
 If the items logically should be in a different order, change your HTML!
@@ -397,7 +416,8 @@ On the cross axis they begin with `align-`.
 
 With the HTML used earlier, the flex items laid out as a row, there is space on the main axis.
 The items are not big enough to completely fill the flex container.
-The items line up at the start of the flex container because the initial value of `justify-content` is `flex-start`.
+The items line up at the start of the flex container because the initial value of `justify-content`
+is `flex-start`.
 The items line up at the start and any extra space is at the end.
 
 Add the `justify-content` property to the flex container,
@@ -414,7 +434,8 @@ and the items line up at the end of the container and the spare space is placed 
 You can also distribute the space between the items with `justify-content: space-between`.
 
 Try some of the values in the demo,
-and [see MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) for the full set of possible values.
+and [see MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) for the full set of
+possible values.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -422,14 +443,17 @@ and [see MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) 
 } %}
 
 {% Aside %}
-For the `justify-content` property to do anything you have to have spare space in your container on the main axis.
+For the `justify-content` property to do anything you have to have spare space in your container on
+the main axis.
 If your items fill the axis then there is no space to share out so the property won't do anything.
 {% endAside %}
 
 ### With `flex-direction: column`
 
-If you have changed your `flex-direction` to `column` then `justify-content` will work on the column.
-To have spare space in your container when working as a column you need to give your container a `height` or `block-size`.
+If you have changed your `flex-direction` to `column` then `justify-content` will work on
+the column.
+To have spare space in your container when working as a column you need to give your container a
+`height` or `block-size`.
 Otherwise you won't have spare space to distribute.
 
 Try the different values, this time with a flexbox column layout.
@@ -464,7 +488,8 @@ and the container has a `block-size` in order that we have some spare space.
 
 ### The `place-content` shorthand
 
-To set both `justify-content` and `align-content` you can use `place-content` with one or two values.
+To set both `justify-content` and `align-content` you can use `place-content` with one
+or two values.
 A single value will be used for both axes,
 if you specify both the first is used for `align-content` and the second for `justify-content`.
 
@@ -483,7 +508,8 @@ if you specify both the first is used for `align-content` and the second for `ju
 
 ## Aligning items on the cross-axis
 
-On the cross axis you can also align your items within the flex line using `align-items` and `align-self`.
+On the cross axis you can also align your items within the flex line using `align-items`
+and `align-self`.
 The space available for this alignment will depend on the height of the flex container,
 or flex line in the case of a wrapped set of items.
 
@@ -532,7 +558,8 @@ to set all of the individual `align-self` properties as a group.
 }
 ```
 
-In this next demo try changing the value of `align-items` to align all of the items on the cross axis as a group.
+In this next demo try changing the value of `align-items` to align all of the items on the cross
+axis as a group.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -578,7 +605,8 @@ which is row. The `align-items` property on the cross axis.
 ```
 
 {% Aside %}
-In the future we may be able to do this alignment without needing to make the parent a flex container.
+In the future we may be able to do this alignment without needing to make the parent a
+flex container.
 The alignment properties are specified for block and inline layout.
 At present no browser has implemented these.
 However, switching into a flex formatting context gives you access to the properties.

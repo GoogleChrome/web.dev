@@ -77,6 +77,7 @@ const findTags = require(`./${filtersDir}/find-tags`);
 const githubLink = require(`./${filtersDir}/github-link`);
 const gitlocalizeLink = require(`./${filtersDir}/gitlocalize-link`);
 const htmlDateString = require(`./${filtersDir}/html-date-string`);
+const isNewContent = require(`./${filtersDir}/is-new-content`);
 const md = require(`./${filtersDir}/md`);
 const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
@@ -93,7 +94,6 @@ const {cspHash, getHashList} = require(`./${filtersDir}/csp-hash`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
-const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
 const {purifyCss} = require(`./${transformsDir}/purify-css`);
 const {minifyHtml} = require(`./${transformsDir}/minify-html`);
 
@@ -163,6 +163,7 @@ module.exports = function (config) {
   config.addFilter('gitlocalizeLink', gitlocalizeLink);
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('imgix', generateImgixSrc);
+  config.addFilter('isNewContent', isNewContent);
   config.addFilter('md', md);
   config.addFilter('navigation', navigation);
   config.addFilter('pagedNavigation', pagedNavigation);
@@ -224,7 +225,6 @@ module.exports = function (config) {
   }
 
   if (isProd || isStaging) {
-    config.addTransform('responsive-images', responsiveImages);
     config.addTransform('purifyCss', purifyCss);
     config.addTransform('minifyHtml', minifyHtml);
   }

@@ -11,24 +11,27 @@
         </button>
 
         <div class="drawer-course__title">
-          {{ svg(courseData.meta.logo, courseData.meta.title | i18n(locale)) }}
+          {{ svg(courseData.meta.logo, {label: courseData.meta.title | i18n(locale)}) }}
         </div>
       </div>
 
       <div class="drawer-course__search">
-        <web-search resultsId="search-course-results" tag="{{ searchTag }}"></web-search>
+        <web-search results-id="search-course-results" tag="{{ searchTag }}"></web-search>
         <web-search-results id="search-course-results"></web-search-results>
       </div>
 
-      <web-drawer-course current="{{ page.url }}">
+      <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
         {% for item in pageNavigation %}
-        <a class="drawer-course__link" href="{{ item.url }}">
+        {% set isNew = item.page.data.date | isNewContent %}
+        <a class="drawer-course__link" href="{{ item.url }}" {% if item.url == page.url %} data-active {% endif %}>
           <span class="drawer-course__link-counter font-mono">{{ loop.index0 | padStart(3, '0') }}</span>
-          <span class="drawer-course__link-title gap-left-400">{{ item.page.data.title }}</span>
-          {{ icon('done', 'drawer-course__link-check gap-left-auto') }}
+          <span class="drawer-course__link-title gap-left-400"
+              {% if isNew %} data-badge="{{ 'i18n.common.new' | i18n(locale) }}" {% endif %}
+          >{{ item.page.data.title }}</span>
+          {{ icon('done', {className: 'drawer-course__link-check gap-left-auto'}) }}
         </a>
         {% endfor %}
-      </web-drawer-course>
+      </course-links>
     </div>
 
   </nav>

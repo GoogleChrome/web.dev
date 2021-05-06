@@ -173,7 +173,8 @@ $gorko-config: (
       'full': '100%',
       'half': percentage(1/2),
       'quarter': percentage(1/4),
-      'third': percentage(1/3)
+      'third': percentage(1/3),
+      'auto': 'auto',
     )),
     'output': 'responsive',
     'property': 'height'
@@ -341,7 +342,8 @@ $gorko-config: (
       'full': '100%',
       'half': percentage(1/2),
       'quarter': percentage(1/4),
-      'third': percentage(1/3)
+      'third': percentage(1/3),
+      'auto': 'auto',
     )),
     'output': 'responsive',
     'property': 'width'

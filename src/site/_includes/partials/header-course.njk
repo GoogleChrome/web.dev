@@ -7,6 +7,6 @@
   </button>
 
   <div class="header-course__title">
-    {{ svg(courseData.meta.logo, courseData.meta.title | i18n(locale)) }}
+    {{ svg(courseData.meta.logo, {label: courseData.meta.title | i18n(locale)}) }}
   </div>
 </web-header>
