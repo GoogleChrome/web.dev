@@ -178,7 +178,7 @@ class Search extends BaseStateElement {
   }
 
   /**
-   * Passes on updated search properties to the searh results element.
+   * Passes on updated search properties to the search results element.
    * @param {Map} changedProperties A Map of LitElement properties that changed.
    */
   updated(changedProperties) {
