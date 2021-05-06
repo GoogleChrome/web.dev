@@ -39,7 +39,7 @@ shift).
 </video>
 </figure>
 
-We've also shipped support for Element Screenshots on PageSpeed Insights, enabling a way to more
+We've also shipped support for element screenshots on PageSpeed Insights, enabling a way to more
 easily spot issues for one-off performance runs of pages.
 
 <figure class="w-figure">
