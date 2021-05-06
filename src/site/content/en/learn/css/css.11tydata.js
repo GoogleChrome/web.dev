@@ -8,13 +8,17 @@ module.exports = function () {
     searchTag: 'course-learn-css',
     eleventyComputed: {
       tags: (data) => {
+        const {searchTag} = data;
         const {projectKey} = data;
-      }
+        let tags = data?.courses?.[projectKey]?.meta?.tags || [];
+        tags = [...tags, ...data.tags];
+        if (!tags.includes(searchTag)) {
+          tags.push(searchTag);
+        }
+        return tags;
+      },
       thumbnail: (data) => {
         const {projectKey} = data;
-
-        console.log(projectKey)
-        console.log(data['projectKey'])
         // Use thumbnail defined in the frontmatter or in the meta.yml file.
         return data.thumbnail || data?.courses?.[projectKey]?.meta?.thumbnail;
       },
