@@ -33,8 +33,7 @@ questions:
         rationale: "Absolute values can change, but the base they 
         calculate against can't."
       - content: "An absolute length is calculated against a single shared base
-      value, where a relative unit is compared against a contextual and adaptive
-      base value"
+      value, where a relative unit is compared against a base value that can change."
         rationale: "Relative units are more adaptive and fluid because of their
         contextual awareness, but there's a power and predictability to absolute
         units that can be foundational for certain designs."
