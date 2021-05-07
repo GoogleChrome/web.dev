@@ -1,6 +1,12 @@
 ---
 title: Pseudo-elements
-description:
+description: >
+  A pseudo-element is like adding or targeting an extra element without having to add more HTML.
+  They have a variety of roles and you can learn about them in this module.
+audio:
+  title: 'The CSS Podcast - 014: Pseudo-elements'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_014_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-27
@@ -17,7 +23,7 @@ width="800",
 height="318" %}
 
 In CSS,
-you can use the `::first-letter` pseudo element to achieve this sort of design detail.
+you can use the `::first-letter` pseudo-element to achieve this sort of design detail.
 
 ```css
 p::first-letter {

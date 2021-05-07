@@ -1,13 +1,17 @@
 ---
 title: Flexbox
-description:
+description: >
+  Flexbox is a layout mechanism designed for laying out groups of items in one dimension.
+  Learn how to use it in this module.
+audio:
+  title: 'The CSS Podcast - 010: Flexbox'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_010_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - rachelandrew
   - andybell
 date: 2021-04-21
 ---
-
-# Flexbox
 
 A design pattern that can be tricky in responsive design is a sidebar that sits inline with some
 content. Where there is viewport space,

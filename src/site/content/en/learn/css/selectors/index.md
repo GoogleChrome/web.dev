@@ -1,12 +1,17 @@
 ---
 title: Selectors
-description:
+description: >
+  To apply CSS to an element you need to select it.
+  CSS provides you with a number of different ways to do this,
+  and you can explore them in this module.
+audio:
+  title: 'The CSS Podcast - 002: Selectors'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_002_v2.0_FINAL.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-03-29
 ---
-
-# Selectors
 
 If you've got some text that you only want to be larger and red if it's the first paragraph of an article,
 how do you do that?

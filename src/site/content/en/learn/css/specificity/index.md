@@ -1,12 +1,15 @@
 ---
 title: Specificity
-description:
+description: >
+  This module takes a deeper look at specificity, a key part of the cascade.
+audio:
+  title: 'The CSS Podcast - 003: Specificity'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_003_v2.0_FINAL.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-02
 ---
-
-# Specificity
 
 Suppose that you're working with the following HTML and CSS:
 

@@ -4,6 +4,10 @@ description: >
   In this module you will find out how to use the various types of gradients available in CSS.
   Gradients can be used to create a whole host of useful effects,
   without needing to create an image using a graphics application.
+audio:
+  title: 'The CSS Podcast - 021: Gradients'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP021_TCP_CSS_Podcast_Episode_021_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-05-03

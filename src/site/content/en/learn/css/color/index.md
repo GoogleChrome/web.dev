@@ -1,12 +1,16 @@
 ---
 title: Color
-description:
+description: >
+  There are several different ways to specify color in CSS.
+  In this module we take a look at the most commonly used color values.
+audio:
+  title: 'The CSS Podcast - 006: Color Part One'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_006_v3.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-01
 ---
-
-# Color
 
 Color is an important part of any website and in CSS there are many options for color types,
 functions and treatments.
