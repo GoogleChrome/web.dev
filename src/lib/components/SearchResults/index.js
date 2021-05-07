@@ -26,8 +26,6 @@ class SearchResults extends BaseElement {
       // Indicates which search result should be highlighted.
       // Primarily used for keyboard behavior.
       cursor: {type: Number},
-      // Search query
-      query: {type: String},
     };
   }
 
