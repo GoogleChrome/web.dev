@@ -444,7 +444,7 @@ This article was reviewed by
 Hero image by [Sigmund](https://unsplash.com/@sigmund) on
 [Unsplash](https://unsplash.com/photos/OV44gxH71DU).
 
-[explainer]: https://github.com/WICG/window-controls-overlay/blob/master/explainer.md
+[explainer]: https://github.com/WICG/window-controls-overlay/blob/main/explainer.md
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [issues]: https://github.com/WICG/window-controls-overlay/issues
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
