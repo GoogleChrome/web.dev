@@ -247,7 +247,7 @@ but the `inset` keyword and spread value are not supported.
 
 Learn more about the different types of shadows in the [shadows](/learn/css/shadows) module.
 
-###`url`
+### `url`
 
 The `url` filter allows you to apply an SVG filter from a linked SVG element or file.
 You can
