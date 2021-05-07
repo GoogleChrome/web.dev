@@ -1,11 +1,11 @@
 module.exports = function () {
+  // The key is used to look up the data for the course in _data.
+  // e.g. A course with a key of 'a11y' would have a corresponding
+  // _data/courses/a11y directory.
   const projectKey = 'css';
 
   return {
     layout: 'course',
-    // The key is used to look up the data for the course in _data.
-    // e.g. A course with a key of 'a11y' would have a corresponding
-    // _data/courses/a11y directory.
     projectKey,
     searchTag: `course-${projectKey}`,
     eleventyComputed: {

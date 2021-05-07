@@ -216,17 +216,15 @@ class Search extends BaseStateElement {
    * We do this because focus never leaves the search input box, so when the
    * user is arrowing through results, we have to tell the screen reader about
    * it.
-   * @param {Event} event Select event fired by search results element.
+   * @param {CustomEvent} event Select event fired by search results element.
    */
   onResultSelect(event) {
-    if (event.target instanceof HTMLElement) {
-      const selected = event.target.querySelector('[aria-selected="true"]');
-      if (!selected || !selected.id) {
-        this.removeAttribute('aria-activedescendant');
-        return;
-      }
-      this.inputEl.setAttribute('aria-activedescendant', selected.id);
+    const selected = event.detail.selected;
+    if (!selected || !selected.id) {
+      this.inputEl.removeAttribute('aria-activedescendant');
+      return;
     }
+    this.inputEl.setAttribute('aria-activedescendant', selected.id);
   }
 
   onKeyDown(e) {
@@ -298,6 +296,7 @@ class Search extends BaseStateElement {
    */
   clear() {
     this.inputEl.value = '';
+    this.inputEl.removeAttribute('aria-activedescendant');
     this.query = '';
   }
 

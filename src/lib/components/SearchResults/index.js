@@ -107,10 +107,12 @@ class SearchResults extends BaseElement {
    */
   scrollHitIntoView() {
     this.requestUpdate().then(() => {
-      this.renderRoot
-        .querySelector('.web-search-popout__link--active')
-        .scrollIntoView();
-      this.dispatchEvent(new Event('select'));
+      const selected = this.renderRoot
+        .querySelector('.web-search-popout__link--active');
+      selected.scrollIntoView();
+      this.dispatchEvent(new CustomEvent('select', {
+        detail: {selected}
+      }));
     });
   }
 
