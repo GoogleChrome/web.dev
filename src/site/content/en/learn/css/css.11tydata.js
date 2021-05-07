@@ -1,15 +1,16 @@
 module.exports = function () {
+  const projectKey = 'css';
+
   return {
     layout: 'course',
     // The key is used to look up the data for the course in _data.
     // e.g. A course with a key of 'a11y' would have a corresponding
     // _data/courses/a11y directory.
-    projectKey: 'css',
-    searchTag: 'course-learn-css',
+    projectKey,
+    searchTag: `course-${projectKey}`,
     eleventyComputed: {
       tags: (data) => {
         const {searchTag} = data;
-        const {projectKey} = data;
         let tags = data?.courses?.[projectKey]?.meta?.tags || [];
         tags = [...tags, ...data.tags];
         if (!tags.includes(searchTag)) {
@@ -18,7 +19,6 @@ module.exports = function () {
         return tags;
       },
       thumbnail: (data) => {
-        const {projectKey} = data;
         // Use thumbnail defined in the frontmatter or in the meta.yml file.
         return data.thumbnail || data?.courses?.[projectKey]?.meta?.thumbnail;
       },
