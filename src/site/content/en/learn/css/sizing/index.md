@@ -454,6 +454,8 @@ The `dpi` unit stands for **dots per inch**.
 A useful context for this is detecting very high resolution screens,
 such as Retina displays in a media query and serving up a higher resolution image.
 
+{% Assessment 'sizing' %}
+
 ## Resources
 
 - [CSS Spec Values and Units Level 4](https://www.w3.org/TR/css-values-4)
