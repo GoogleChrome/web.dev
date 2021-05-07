@@ -5,7 +5,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2015-07-21
-updated: 2021-05-06
+updated: 2021-05-07
 hero: image/admin/CME5IVhdn0pngs7jAlFX.jpg
 thumbnail: image/admin/1J1OTu90a2oH8wFogKnF.jpg
 alt: A Bluetooth chip on a coin
@@ -141,8 +141,9 @@ navigator.bluetooth.requestDevice({
 You can also request Bluetooth devices based on the device name being advertised
 with the `name` filters key, or even a prefix of this name with the `namePrefix`
 filters key. Note that in this case, you will also need to define the
-`optionalServices` key to be able to access some services. If you don't, you'll
-get an error later when trying to access them.
+`optionalServices` key to be able to access any services not included in a
+service filter. If you don't, you'll get an error later when trying to access
+them.
 
 ```js
 navigator.bluetooth.requestDevice({
@@ -162,8 +163,9 @@ specific data being advertised with the `manufacturerData` filters key. This key
 is an array of objects with a mandatory [Bluetooth company identifier] key named
 `companyIdentifier`. You can also provide a data prefix that filters
 manufacturer data from Bluetooth devices that start with it. Note that you will
-also need to define the `optionalServices` key to be able to access some
-services. If you don't, you'll get an error later when trying to access them.
+also need to define the `optionalServices` key to be able to access any services
+not included in a service filter. If you don't, you'll get an error later when
+trying to access them.
 
 ```js
 // Filter Bluetooth devices from Google company with manufacturer data bytes
@@ -188,7 +190,7 @@ more.
 {% Aside %}
 At the time of writing, the `manufacturerData` filter key is available in
 Chrome&nbsp;92. If backwards compatibility with older browsers is desired, you
-have to use some fallback options as the manufacturer data filter is considered
+have to provide a fallback option as the manufacturer data filter is considered
 empty. See an [example].
 {% endAside %}
 
