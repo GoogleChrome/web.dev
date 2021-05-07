@@ -559,7 +559,10 @@
     "twitter": "rachelandrew",
     "github": "rachelandrew",
     "glitch": "rachelandrew",
-    "image": "image/admin/dUAN2DEXHRT6G6iPrIby.jpg"
+    "image": "image/admin/dUAN2DEXHRT6G6iPrIby.jpg",
+    "descriptions": {
+      "en": "Freelance writer and editor. CSS Working Group Invited Expert."
+    }
   },
   "rviscomi": {
     "name": {
