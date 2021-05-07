@@ -6,8 +6,7 @@ questions:
     cardinality: "1"
     correctAnswers: "0"
     stem: |
-      Pseudo-classes select elements based on internal browser state, while
-      Pseudo-elements select browser owned parts of elements?
+      Pseudo-classes act as if a class has been dynamically applied to an element, while pseudo-elements act on an element itself.
     options:
       - content: "True"
         rationale: "Watch for the use of a single or double `:` as a key
