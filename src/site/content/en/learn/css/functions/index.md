@@ -122,7 +122,7 @@ you pass one or more arguments and use them on the **right side** of your CSS de
 
 ```css
 a::after {
-  content: attr('href')
+  content: attr('href');
 }
 ```
 
