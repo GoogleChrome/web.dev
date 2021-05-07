@@ -115,7 +115,7 @@ Add a comma separated collection of value sets to achieve this:
   tab: 'css,result'
 } %}
 
-### Properties affecting box shadow
+### Properties affecting box-shadow
 
 Adding a `border-radius` to your box will also affect the shape of the box shadow.
 This is because CSS is creating a shadow based on the shape of the box
@@ -176,7 +176,7 @@ It only works on text nodes.
 }
 ```
 
-The values for text shadow are the same as `box-shadow` and in the same order.
+The values for `text-shadow` are the same as `box-shadow` and in the same order.
 The only difference is that `text-shadow` has no `spread` value and no `inset` keyword.
 
 {% Codepen {
@@ -185,7 +185,7 @@ The only difference is that `text-shadow` has no `spread` value and no `inset` k
 } %}
 
 When you add a `box-shadow` it is clipped to the shape of your box,
-but text shadow has no clipping.
+but `text-shadow` has no clipping.
 This means that if your text is fully or semi transparent,
 the shadow is visible through it.
 
@@ -241,7 +241,7 @@ as in the case in the intro of this module.
 } %}
 
 {% Aside 'key-term' %}
-We cover CSS [filters](/learn/css/filters) in another  module,
+We cover CSS [filters](/learn/css/filters) in another module,
 but in short, filters allow you to apply multiple graphical effects to the pixels of an element.
 {% endAside %}
 

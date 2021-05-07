@@ -283,9 +283,7 @@ p:nth-child(even) {
 }
 ```
 
-For more on pseudo-classes, check out lesson 15.
-
-@@TO DO link up to lesson 15
+Find out more in the [pseudo-classes module](/learn/css/pseudo-classes).
 
 ### Pseudo-element
 
@@ -332,9 +330,7 @@ You can also use `::selection` to style the content that has been highlighted by
 }
 ```
 
-For more on pseudo-elements, check out lesson 14.
-
-@@TO DO link up to lesson 14
+Learn more in the [module on pseudo-elements](learn/css/pseudo-elements).
 
 {% Assessment 'pseudo-selectors' %}
 
@@ -347,7 +343,8 @@ This is where complex selectors step in to help.
 It's worth remembering at this point that although the following selectors give us more power,
 we can only **cascade downwards**, selecting child elements.
 We are not able to target upwards and select a parent element.
-We cover what the cascade is and how it works in a later lesson.
+We cover what the cascade is and how it works
+[in a later lesson](/learn/css/the-cascade).
 
 ### Combinators
 
@@ -489,9 +486,7 @@ a.my-class {
 
 This wouldn't apply a red color to all links
 and it would also only apply the red color to `.my-class` **if** it was on an `<a>` element.
-For more on specificity, see module 3.
-
-@@TO DO link
+For more on this, see the [specificity module](/learn/css/specificity).
 
 {% Assessment 'complex-selectors' %}
 

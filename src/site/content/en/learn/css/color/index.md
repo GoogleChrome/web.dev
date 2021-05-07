@@ -18,7 +18,7 @@ functions and treatments.
 How do you decide which color type to use?
 How do you make your colors semi-transparent?
 In this lesson,
-you're going to learn about what options you have to help you make the right decisions for your project and team.
+you're going to learn which options you have to help you make the right decisions for your project and team.
 
 CSS has [various different data types](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types),
 such as strings and numbers.
@@ -246,9 +246,7 @@ Gradients are a type of image that can be programmatically defined in CSS.
 Gradients accept two or more colors in any combination of color format, such as hex, rgb or hsl.
 
 {% Aside %}
-There's lots to learn with gradients so we wrote a whole lesson on how to use them.
-
-@@TODO link to gradients lesson
+There's lots to learn with gradients so we wrote [a whole lesson](/learn/css/gradients) on how to use them.
 {% endAside %}
 
 Finally, `border-color`, and `outline-color` set the color for borders and outlines on your boxes.

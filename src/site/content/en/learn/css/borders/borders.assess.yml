@@ -37,12 +37,12 @@ questions:
     correctAnswers: "0"
     stem: "`border-inline: 1px solid` would..."
     options:
-      - content: "put borders on the left and right (in Latin layouts)"
+      - content: "put borders on the left and right (in Latin layouts)."
         rationale: "🎉"
-      - content: "put borders on the top and bottom (in Latin layouts)"
+      - content: "put borders on the top and bottom (in Latin layouts)."
         rationale: "In a Latin layout like English, `border-block` would be the
-        top and bottom"
-      - content: "put borders on the inside"
+        top and bottom."
+      - content: "put borders on the inside."
         rationale: "Try again!"
-      - content: "put borders on the first line"
+      - content: "put borders on the first line."
         rationale: "Try again!"

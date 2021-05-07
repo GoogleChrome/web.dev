@@ -90,7 +90,7 @@ we have only been able to apply properties like margin relative to the direction
 For example, `margin-top` is applied to the physical top of the element.
 With logical properties, `margin-top` becomes `margin-block-start`.
 This means that regardless of language and text direction,
-the **block flow** has targeted and contextually appropriate margin rules.
+the **block flow** has appropriate margin rules.
 
 {% Codepen {
   user: 'web-dot-dev',

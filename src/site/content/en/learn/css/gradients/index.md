@@ -135,9 +135,9 @@ The size of the radial gradient determines the size of the gradient's ending sha
 which means it exactly meets the farthest corner of the box from the center.
 You can also use the following keywords:
 
-- `closest-corner` will meet the closest corner to the center of the gradient
-- `closest-side` will meet the side of the box closest to the center of the gradient
-- `farthest-side` will do the opposite to `closest-side`
+- `closest-corner` will meet the closest corner to the center of the gradient.
+- `closest-side` will meet the side of the box closest to the center of the gradient.
+- `farthest-side` will do the opposite to `closest-side`.
 
 You can add as many color stops as you like, just like with the `linear-gradient`.
 Likewise, you can add as many `radial-gradients` as you like too.

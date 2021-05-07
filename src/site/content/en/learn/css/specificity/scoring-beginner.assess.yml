@@ -9,7 +9,7 @@ questions:
     options:
       - content: "1"
         rationale: 'The `a` is worth 1 point, but the `[href="#"]` is worth 10
-        points'
+        points.'
       - content: "5"
         rationale: "Try again!"
       - content: "11"

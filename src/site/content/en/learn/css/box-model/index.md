@@ -105,7 +105,7 @@ but this isn't the case when intrinsic sizing is toggled on.
 
 By default, this element has a set `width` and `height`—both `400px`.
 These dimensions give strict bounds to everything inside the element,
-which will be honoured unless the content is too large for the box in which case visible overflow
+which will be honored unless the content is too large for the box in which case visible overflow
 will happen.
 You can see this in action by changing the content of the caption,
 under the flower picture to something that exceeds the height of the box, which is a few lines of
@@ -117,12 +117,12 @@ You can manage how an element handles overflow content, using the `overflow` pro
 {% endAside %}
 
 When you switch to intrinsic sizing,
-we're letting the browser make decisions for us,
+you are letting the browser make decisions for you,
 based on the box's content size.
 It's much more difficult for there to be overflow with intrinsic sizing because our box will resize
 with its content,
 rather than try to size the content.
-It's important to remember that this is the default, flexible behaviour of a browser.
+It's important to remember that this is the default, flexible behavior of a browser.
 Though extrinsic sizing gives more control on the surface,
 intrinsic sizing provides the most flexibility, most of the time.
 
@@ -137,7 +137,7 @@ Boxes are made up of distinct box model areas that all do a specific job.
   width="800",
   height="547"
 %}
-  <figcaption>The four main areas of the box model: content box, padding box, border box and
+  <figcaption class="w-figcaption">The four main areas of the box model: content box, padding box, border box and
   margin box.</figcaption>
 </figure>
 
@@ -241,7 +241,7 @@ and a `<span>` has a default `display` value of `inline`.
 An `inline` element has block margin,
 but other elements won't respect it.
 Use `inline-block`, and those elements will respect the block margin,
-while the element maintains most of the same behaviours it did as an `inline` element.
+while the element maintains most of the same behaviors it had as an `inline` element.
 A `block` item will, by default,
 fill the available **inline space**,
 whereas a `inline` and `inline-block` elements will only be as large as their content.
