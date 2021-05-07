@@ -21,7 +21,8 @@ that rigid layout can become problematic.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'poRENWv'
+  id: 'poRENWv',
+  height: 420
 } %}
 
 The Flexible Box Layout Model (flexbox) is a layout model designed for one-dimensional content.
@@ -37,7 +38,8 @@ you can instead provide flexible boundaries to hint how the content could displa
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'xxgERMp'
+  id: 'xxgERMp',
+  height: 400
 } %}
 
 ## What can you do with a flex layout?
@@ -200,7 +202,8 @@ Try changing the `flex-direction` in this demo which is using a vertical writing
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'qBRaPXX'
+  id: 'qBRaPXX',
+  height: 600
 } %}
 
 Therefore the way flex items behave by default is linked to the writing mode of the document.
@@ -254,7 +257,8 @@ To cause the items to wrap add `flex-wrap: wrap` to the flex container.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'WNRGdNZ'
+  id: 'WNRGdNZ',
+  height: 601
 } %}
 
 When a flex container wraps it creates multiple **flex lines**.
@@ -464,7 +468,8 @@ Try the different values, this time with a flexbox column layout.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'bGgwLgz'
+  id: 'bGgwLgz',
+  height: 600
 } %}
 
 ## Distributing space between flex lines
@@ -548,7 +553,8 @@ Try changing the value on that property to see how it moves within it's space on
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'RwKGQee'
+  id: 'RwKGQee',
+  height: 600
 } %}
 
 The `align-self` property is applied to individual items.
@@ -567,7 +573,8 @@ axis as a group.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWdKmby'
+  id: 'QWdKmby',
+  height: 600
 } %}
 
 ## Why is there no justify-self in flexbox?

@@ -39,7 +39,8 @@ how you can control it will help you to write more predictable CSS.
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'WNRemxN'
+  id: 'WNRemxN',
+  height: 300
 } %}
 </figure>
 
@@ -90,7 +91,8 @@ Let's look at something more complex to see the impact of different sizing on re
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'wvgwOJV'
+  id: 'wvgwOJV',
+  height: 650
 } %}
 </figure>
 
@@ -289,7 +291,8 @@ it shows—via a blue background—which CSS is being applied _inside_ our box.
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'oNBvVpM'
+  id: 'oNBvVpM',
+  height: 650
 } %}
 </figure>
 
