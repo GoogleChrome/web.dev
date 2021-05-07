@@ -98,7 +98,9 @@ class Search extends BaseStateElement {
   disconnectedCallback() {
     super.disconnectedCallback();
     window.removeEventListener('resize', this.onResize);
-    this.resultsEl.removeEventListener('select', this.onResultSelect);
+    if (this.resultsEl) {
+      this.resultsEl.removeEventListener('select', this.onResultSelect);
+    }
   }
 
   render() {
