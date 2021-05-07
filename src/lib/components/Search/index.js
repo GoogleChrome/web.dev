@@ -88,7 +88,11 @@ class Search extends BaseStateElement {
     window.addEventListener('resize', this.onResize);
     this.onResize();
     this.resultsEl = document.getElementById(this.getAttribute('results-id'));
-    this.resultsEl.addEventListener('select', this.onResultSelect);
+    if (this.resultsEl) {
+      this.resultsEl.addEventListener('select', this.onResultSelect);
+    } else {
+      console.warn(`No search results element found for ${this}`);
+    }
   }
 
   disconnectedCallback() {
