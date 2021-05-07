@@ -8,6 +8,10 @@ module.exports = function () {
     layout: 'course',
     projectKey,
     searchTag: `course-${projectKey}`,
+    // Exclude course content from the /tags/ pages.
+    excludeFromTags: true,
+    // Exclude course content from the /authors/ pages.
+    excludeFromAuthors: true,
     eleventyComputed: {
       tags: (data) => {
         const {searchTag} = data;
