@@ -45,6 +45,10 @@ class SearchResults extends BaseElement {
     this.cursor = -1;
   }
 
+  /**
+   * Allows to select and navigate to a search result using keyboard keys.
+   * @param {String} key Key identifier
+   */
   navigate(key) {
     switch (key) {
       case 'Home':
@@ -107,12 +111,11 @@ class SearchResults extends BaseElement {
    */
   scrollHitIntoView() {
     this.requestUpdate().then(() => {
-      const selected = this.renderRoot
-        .querySelector('.web-search-popout__link--active');
+      const selected = this.renderRoot.querySelector(
+        '.web-search-popout__link--active',
+      );
       selected.scrollIntoView();
-      this.dispatchEvent(new CustomEvent('select', {
-        detail: {selected}
-      }));
+      this.dispatchEvent(new CustomEvent('select', {detail: {selected}}));
     });
   }
 
