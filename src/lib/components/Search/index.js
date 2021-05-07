@@ -87,9 +87,19 @@ class Search extends BaseStateElement {
     super.connectedCallback();
     window.addEventListener('resize', this.onResize);
     this.onResize();
+    // Note: We only check for the existence of the resultsEl here in
+    // connectedCalback. This means if the resultsEl is added later, or
+    // if the JavaScript for the search component is inlined into the head,
+    // then this will run _before_ resultsEl exists.
     this.resultsEl = document.getElementById(this.getAttribute('results-id'));
     if (this.resultsEl) {
-      this.resultsEl.addEventListener('select', this.onResultSelect);
+      // ts requires us to cast the event listener if it's handling custom
+      // events.
+      // https://github.com/Microsoft/TypeScript/issues/28357
+      this.resultsEl.addEventListener(
+        'resultselect',
+        /** @type {EventListener} */ (this.onResultSelect),
+      );
     } else {
       console.warn(`No search results element found for ${this}`);
     }
@@ -99,7 +109,10 @@ class Search extends BaseStateElement {
     super.disconnectedCallback();
     window.removeEventListener('resize', this.onResize);
     if (this.resultsEl) {
-      this.resultsEl.removeEventListener('select', this.onResultSelect);
+      this.resultsEl.removeEventListener(
+        'resultselect',
+        /** @type {EventListener} */ (this.onResultSelect),
+      );
     }
   }
 
@@ -240,7 +253,7 @@ class Search extends BaseStateElement {
     // Check if the user is navigating within the search popout.
     if (navigationKeys.includes(e.key)) {
       e.preventDefault();
-      this.resultsEl.navigate(e.key);
+      /** @type {WebSearchResults} */ (this.resultsEl).navigate(e.key);
     }
     if (['Esc', 'Escape'].includes(e.key)) {
       /** @type HTMLElement */ (document.activeElement).blur();

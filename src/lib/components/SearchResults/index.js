@@ -113,7 +113,7 @@ class SearchResults extends BaseElement {
         '.web-search-popout__link--active',
       );
       selected.scrollIntoView();
-      this.dispatchEvent(new CustomEvent('select', {detail: {selected}}));
+      this.dispatchEvent(new CustomEvent('resultselect', {detail: {selected}}));
     });
   }
 
