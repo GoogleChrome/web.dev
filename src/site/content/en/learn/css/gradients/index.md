@@ -4,6 +4,10 @@ description: >
   In this module you will find out how to use the various types of gradients available in CSS.
   Gradients can be used to create a whole host of useful effects,
   without needing to create an image using a graphics application.
+audio:
+  title: 'The CSS Podcast - 021: Gradients'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP021_TCP_CSS_Podcast_Episode_021_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-05-03
@@ -131,9 +135,9 @@ The size of the radial gradient determines the size of the gradient's ending sha
 which means it exactly meets the farthest corner of the box from the center.
 You can also use the following keywords:
 
-- `closest-corner` will meet the closest corner to the center of the gradient
-- `closest-side` will meet the side of the box closest to the center of the gradient
-- `farthest-side` will do the opposite to `closest-side`
+- `closest-corner` will meet the closest corner to the center of the gradient.
+- `closest-side` will meet the side of the box closest to the center of the gradient.
+- `farthest-side` will do the opposite to `closest-side`.
 
 You can add as many color stops as you like, just like with the `linear-gradient`.
 Likewise, you can add as many `radial-gradients` as you like too.

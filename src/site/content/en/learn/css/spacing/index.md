@@ -1,6 +1,12 @@
 ---
 title: Spacing
-description:
+description: >
+  Find out how to select the best method of spacing elements,
+  taking into consideration the layout method you are using and component that you need to build.
+audio:
+  title: 'The CSS Podcast - 013: Spacing'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_013_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-27
@@ -91,13 +97,13 @@ The `margin` shorthand can also be used with one, two, or three values.
 Adding a fourth value lets you set each individual side.
 These are applied as follows:
 
-- One value will be applied to all sides. (`margin: 20px`)
+- One value will be applied to all sides. (`margin: 20px`).
 - Two values: the first value will be applied to the top and bottom sides,
 and the second value will be applied to the left and right sides.
 (`margin: 20px 40px`)
 - Three values: the first value is `top`,
 the second value is `left` **and** `right`,
-and the third value is `bottom`. (`margin: 20px 40px 30px`)
+and the third value is `bottom`. (`margin: 20px 40px 30px`).
 
 {% Codepen {
   user: 'web-dot-dev',

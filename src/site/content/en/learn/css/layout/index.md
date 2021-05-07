@@ -1,6 +1,11 @@
 ---
 title: Layout
-description:
+description: >
+  An overview of the various layout methods you have to choose from when building a component or page layout.
+audio:
+  title: 'The CSS Podcast - 009: Layout'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_009_v1.1.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-20
@@ -80,8 +85,8 @@ Any block level margin and padding will be ignored by the surrounding elements.
 ```
 
 Block elements don't sit alongside each other.
-They create a new line for themselves and unless changed by other CSS code.
-A block element will expand to the size of the inline dimension,
+They create a new line for themselves. Unless changed by other CSS code,
+a block element will expand to the size of the inline dimension,
 therefore spanning the full width in a horizontal writing mode.
 The margin on all sides of a block element will be respected.
 
@@ -402,4 +407,4 @@ There's a lot of choice and flexibility with CSS layout.
 To dive further into the power of CSS [Flexbox](/learn/css/flexbox) and [Grid](/learn/css/grid), continue into the next few modules.
 
 
-@@TO DO -- self assessment
+{% Assessment 'layout' %}

@@ -12,13 +12,13 @@ questions:
     stem: What kind of simple selector is used in the above snippet?
     options:
       - content: attribute
-        rationale: "`[]` are used for **attribute** simple selectors"
+        rationale: "`[]` are used for **attribute** simple selectors."
       - content: ID
-        rationale: "`#` are used for **ID** simple selectors"
+        rationale: "`#` are used for **ID** simple selectors."
       - content: universal
-        rationale: "`*` is the **universal** simple selector"
+        rationale: "`*` is the **universal** simple selector."
       - content: class
-        rationale: "`.` are used for **class** simple selectors"
+        rationale: "`.` are used for **class** simple selectors."
   - type: multiple-choice
     stimulus: |
       ```css
@@ -29,10 +29,10 @@ questions:
     stem: What kind of simple selector is used in the above snippet?
     options:
       - content: class
-        rationale: "`.` are used for **class** simple selectors"
+        rationale: "A `.` is used for **class** simple selectors."
       - content: type
-        rationale: "`element` are used for **type** simple selectors"
+        rationale: "An `element` name is used for **type** simple selectors."
       - content: attribute
-        rationale: "`[]` are used for **attribute** simple selectors"
+        rationale: "Square brackets `[]` are used for **attribute** simple selectors."
       - content: ID
-        rationale: "`#` are used for **ID** simple selectors"
+        rationale: "A `#` is used for **ID** simple selectors."

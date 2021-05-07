@@ -1,13 +1,17 @@
 ---
 title: Flexbox
-description:
+description: >
+  Flexbox is a layout mechanism designed for laying out groups of items in one dimension.
+  Learn how to use it in this module.
+audio:
+  title: 'The CSS Podcast - 010: Flexbox'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_010_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - rachelandrew
   - andybell
 date: 2021-04-21
 ---
-
-# Flexbox
 
 A design pattern that can be tricky in responsive design is a sidebar that sits inline with some
 content. Where there is viewport space,
@@ -135,10 +139,10 @@ the items display as a row because the initial value of `flex-direction` is `row
 If you want a row then you don't need to add the property.
 To change the direction, add the property and one of the four values:
 
-- `row`: the items lay out as a row
-- `row-reverse:` the items lay out as a row from the end of the flex container
-- `column`: the items lay out as a column
-- `column-reverse` : the items lay out as a column from the end of the flex container
+- `row`: the items lay out as a row.
+- `row-reverse:` the items lay out as a row from the end of the flex container.
+- `column`: the items lay out as a column.
+- `column-reverse` : the items lay out as a column from the end of the flex container.
 
 You can try out all of the values using our group of items in the demo below.
 
@@ -315,7 +319,7 @@ This unpacks to:
 
 - `flex-grow: 1`: items can grow larger than their `flex-basis`.
 - `flex-shrink: 0`: items can't shrink smaller than their `flex-basis`.
-- `flex-basis: 0`: items have a base size of `0`
+- `flex-basis: 0`: items have a base size of `0`.
 
 Using `flex: 1` says that all items have zero size,
 therefore all of the space in the flex container is available to be distributed.

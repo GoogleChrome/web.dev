@@ -1,6 +1,12 @@
 ---
 title: Pseudo-classes
-description: Pseudo-classes let you apply CSS based on state changes. This means that your design can react to user input such as an invalid email address.
+description: >
+  Pseudo-classes let you apply CSS based on state changes.
+  This means that your design can react to user input such as an invalid email address.
+audio:
+  title: 'The CSS Podcast - 015: Pseudo-classes'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_015_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-28
@@ -197,7 +203,7 @@ you can hook on to that state with the
 The [`:enabled`](https://developer.mozilla.org/en-US/docs/Web/CSS/:enabled)
 pseudo-class is available for the opposite state,
 though form elements are also `:enabled` by default,
-therefore you might not find yourself reaching for this pseudo class.
+therefore you might not find yourself reaching for this pseudo-class.
 
 {% Codepen {
   user: 'web-dot-dev',

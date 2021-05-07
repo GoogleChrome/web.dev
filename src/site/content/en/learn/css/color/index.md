@@ -1,12 +1,16 @@
 ---
 title: Color
-description:
+description: >
+  There are several different ways to specify color in CSS.
+  In this module we take a look at the most commonly used color values.
+audio:
+  title: 'The CSS Podcast - 006: Color Part One'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_006_v3.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-01
 ---
-
-# Color
 
 Color is an important part of any website and in CSS there are many options for color types,
 functions and treatments.
@@ -14,7 +18,7 @@ functions and treatments.
 How do you decide which color type to use?
 How do you make your colors semi-transparent?
 In this lesson,
-you're going to learn about what options you have to help you make the right decisions for your project and team.
+you're going to learn which options you have to help you make the right decisions for your project and team.
 
 CSS has [various different data types](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types),
 such as strings and numbers.
@@ -242,9 +246,7 @@ Gradients are a type of image that can be programmatically defined in CSS.
 Gradients accept two or more colors in any combination of color format, such as hex, rgb or hsl.
 
 {% Aside %}
-There's lots to learn with gradients so we wrote a whole lesson on how to use them.
-
-@@TODO link to gradients lesson
+There's lots to learn with gradients so we wrote [a whole lesson](/learn/css/gradients) on how to use them.
 {% endAside %}
 
 Finally, `border-color`, and `outline-color` set the color for borders and outlines on your boxes.
