@@ -39,7 +39,8 @@ which was covered in the last module, on [the cascade](/learn/css/the-cascade/).
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'YzNKMXm'
+  id: 'YzNKMXm',
+  height: 200
 } %}
 </figure>
 
@@ -278,7 +279,8 @@ With HTML that looks like this:
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'abpoxdR'
+  id: 'abpoxdR',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -306,7 +308,8 @@ button[onclick] {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'zYNOXBJ'
+  id: 'zYNOXBJ',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -340,7 +343,8 @@ because **both selectors have an identical specificity score** (`0-1-0`).
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'zYNOXKJ'
+  id: 'zYNOXKJ',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -360,7 +364,8 @@ the button would then be blue.
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'WNReWRO'
+  id: 'WNReWRO',
+  tab: 'css,result'
 } %}
 </figure>
 

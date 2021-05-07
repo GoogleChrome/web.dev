@@ -207,7 +207,7 @@ not just grid tracks.
 
 - `min-content`
 - `max-content`
-- the `fit-content()` function
+- `fit-content()`
 
 The [`min-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/min-content)
 keyword will make a track as small as it can be without the track content overflowing.

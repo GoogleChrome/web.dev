@@ -31,7 +31,8 @@ button {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'GRrgMOm'
+  id: 'GRrgMOm',
+  height: 200
 } %}
 </figure>
 

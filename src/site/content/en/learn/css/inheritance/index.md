@@ -48,7 +48,8 @@ how inheritance is a powerful feature to help you write less CSS.
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'zYNGEbg'
+  id: 'zYNGEbg',
+  height: 400
 } %}
 </figure>
 
@@ -80,7 +81,8 @@ html {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'JjEKgBX'
+  id: 'JjEKgBX',
+  height: 200
 } %}
 </figure>
 
@@ -97,7 +99,8 @@ body {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'VwPLrLP'
+  id: 'VwPLrLP',
+  height: 200
 } %}
 </figure>
 
@@ -120,7 +123,9 @@ Inheritance only flows downwards, not back up to parent elements.
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'JjEKgmK'
+  id: 'JjEKgmK',
+  tab: 'css,result',
+  height: 400
 } %}
 </figure>
 
@@ -220,7 +225,8 @@ To make the `<strong>` elements inside `.my-component` also `font-weight: 500` a
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'eYgNedO'
+  id: 'eYgNedO',
+  height: 400
 } %}
 </figure>
 
@@ -249,7 +255,9 @@ make them normal weight, which is the initial value.
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'OJWVORZ'
+  id: 'OJWVORZ',
+  tab: 'css,result',
+  height: 300
 } %}
 </figure>
 
@@ -282,7 +290,9 @@ aside p {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'JjEdpjw'
+  id: 'JjEdpjw',
+  tab: 'css,result',
+  height: 400
 } %}
 </figure>
 
@@ -312,7 +322,8 @@ aside p {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'bGgdLNB'
+  id: 'bGgdLNB',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -331,7 +342,8 @@ aside p {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'XWpbZbB'
+  id: 'XWpbZbB',
+  tab: 'css,result'
 } %}
 </figure>
 

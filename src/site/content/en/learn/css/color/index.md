@@ -55,7 +55,8 @@ which correspond to the red, green, and blue color channels respectively.
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'BapNrPG'
+  id: 'BapNrPG',
+  height: 430
 } %}
 </figure>
 
@@ -76,7 +77,8 @@ Here are some key, common values added to the black hex code, `#000000`:
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'VwPLXdr'
+  id: 'VwPLXdr',
+  height: 540
 } %}
 </figure>
 
@@ -127,7 +129,8 @@ write: `rgba(0, 0, 0, 50%)` or `rgba(0, 0, 0, 0.5)`.
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'dyNomWW'
+  id: 'dyNomWW',
+  height: 430
 } %}
 </figure>
 
@@ -178,7 +181,8 @@ This type accepts degrees, turns, radians and gradians.
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'poRJLQo'
+  id: 'poRJLQo',
+  height: 430
 } %}
 </figure>
 

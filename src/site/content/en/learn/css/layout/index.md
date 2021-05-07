@@ -128,7 +128,9 @@ and stretch them in the block direction, so they're all the same height.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'rNjxmor'
+  id: 'rNjxmor',
+  tab: 'css,result',
+  height: 300
 } %}
 
 
@@ -215,7 +217,8 @@ from the first column, then span to the third row, from the first row.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'YzNwrwB'
+  id: 'YzNwrwB',
+  height: 650
 } %}
 
 
@@ -247,7 +250,9 @@ p span {
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'PoWZJKw'
+  id: 'PoWZJKw',
+  height: 300,
+  tab: 'css,result'
 } %}
 
 
@@ -271,7 +276,8 @@ You can instruct an element to float `left`, `right` or `inherit`.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'VwPaLMg'
+  id: 'VwPaLMg',
+  height: 300
 } %}
 
 
@@ -397,7 +403,8 @@ it stays anchored to the `top`, `right`, `bottom` and `left` values that you set
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'NWdNGZB'
+  id: 'NWdNGZB',
+  height: 600
 } %}
 
 
