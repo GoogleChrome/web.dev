@@ -2118,5 +2118,18 @@
     "twitter": "HongboSong",
     "github": "debugtive0517",
     "image": "image/MZfwZ8oVW8U6tzo5CXffcER0jR83/ieAP4AO0so7own9kFVW4.png"
+  },
+  "arturjanc": {
+    "name": {
+      "given": "Artur",
+      "family": "Janc"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Security Engineering"
+    },
+    "github": "arturjanc",
+    "twitter": "arturjanc",
+    "image": "image/YLflGBAPWecgtKJLqCJHSzHqe2J2/hwvmzV4b6VQpTNrNF3wK.jpg"
   }
 }
