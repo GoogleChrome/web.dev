@@ -359,7 +359,7 @@ The tracks are not flexible however.
 You will get a gap on the end until there is enough space for another 200 pixel track.
 If you add the `minmax()` function,
 you can request as many tracks as will fit with a minimum size of 200 pixels and a maximum of 1fr.
-Grid then lays out the 200 pixel tracks and whatever space is left over is distributed equally to them.
+Grid then lays out the 200 pixel tracks and whatever space is leftover is distributed equally to them.
 
 This creates a two-dimensional responsive layout with no need for any media queries.
 

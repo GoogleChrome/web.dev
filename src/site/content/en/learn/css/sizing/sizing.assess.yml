@@ -7,30 +7,30 @@ questions:
     stem: Which of the following are valid dimensions?
     options:
       - content: cm
-        rationale: "Centimeters, a valid absolute dimension"
+        rationale: "Centimeters, a valid absolute dimension."
       - content: ui
-        rationale: "User interface is not a dimension in CSS"
+        rationale: "User interface is not a dimension in CSS."
       - content: in
-        rationale: "Inches, a valid absolute dimension"
+        rationale: "Inches, a valid absolute dimension."
       - content: 8th
         rationale: "Not a CSS dimension"
       - content: px
-        rationale: "Pixels, a valid absolute dimension"
+        rationale: "Pixels, a valid absolute dimension."
       - content: ch
-        rationale: "Character units, a valid relative dimension"
+        rationale: "Character units, a valid relative dimension."
       - content: ux
-        rationale: "User experience is not a dimension in CSS"
+        rationale: "User experience is not a dimension in CSS."
       - content: em
-        rationale: "Letter 'M' units, a valid relative dimension"
+        rationale: "Letter 'M' units, a valid relative dimension."
       - content: ex
-        rationale: "Letter 'x' units, a valid relative dimension"
+        rationale: "Letter 'x' units, a valid relative dimension."
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "1"
     stem: How are absolute and relative units different?
     options:
       - content: "Absolute values can't change but relative units can"
-        rationale: "Absolute values can change, but the base they 
+        rationale: "Absolute values can change, but the base they
         calculate against can't."
       - content: "An absolute length is calculated against a single shared base
       value, where a relative unit is compared against a base value that can change."

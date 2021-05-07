@@ -1,7 +1,7 @@
 ---
 title: Blend Modes
 description: >
-  Create compositional effects by mising two or more layers,
+  Create compositional effects by mixing two or more layers,
   and learn how to isolate an image with a white background in this module on blend modes.
 audio:
   title: 'The CSS Podcast - 024: Blend Modes'

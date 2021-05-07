@@ -2,7 +2,7 @@
 title: Learn CSS
 authors:
   - andybell
-description: An evergreen CSS course and reference to level-up your web styling expertise.
+description: An evergreen CSS course and reference to level up your web styling expertise.
 date: 2021-05-04
 tags:
   - css
@@ -14,7 +14,7 @@ tags:
 This course breaks down the fundamentals of CSS into digestible,
 easy to understand pieces.
 Over the next few modules,
-you will learn how the core aspects of CSS work and how to use them effectively in your projects.
+you'll learn how the core aspects of CSS work and how to use them effectively in your projects.
 
 You'll learn CSS fundamentals like the box model, cascade and specificity, flexbox, grid and z-index.
 And, along with these fundamentals,

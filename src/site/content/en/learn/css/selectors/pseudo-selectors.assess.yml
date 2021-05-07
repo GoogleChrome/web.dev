@@ -8,11 +8,11 @@ questions:
     stem: Pseudo-element selectors use how many colons?
     options:
       - content: ":"
-        rationale: "One `:` is used to target pseudo-classes"
+        rationale: "One `:` is used to target pseudo-classes."
       - content: "::"
-        rationale: "Two `::` are used to target pseudo-elements"
+        rationale: "Two `::` are used to target pseudo-elements."
       - content: ":::"
-        rationale: "This is invalid and targets nothing"
+        rationale: "This is invalid and targets nothing."
   - type: multiple-choice
     stimulus: |
       ```css
@@ -26,6 +26,6 @@ questions:
     stem: What kind of pseudo selector is used in the above snippet?
     options:
       - content: Pseudo-class
-        rationale: "One `:` is used to target pseudo-classes"
+        rationale: "One `:` is used to target pseudo-classes."
       - content: Pseudo-element
-        rationale: "Two `::` are used to target pseudo-elements"
+        rationale: "Two `::` are used to target pseudo-elements."

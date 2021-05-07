@@ -27,4 +27,4 @@ questions:
       - content: "True"
         rationale: "There's no official limit."
       - content: "False"
-        rationale: "Add as many multiple box shadows as you need"
+        rationale: "Add as many multiple box shadows as you need."

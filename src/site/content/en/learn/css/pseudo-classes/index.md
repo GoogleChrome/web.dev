@@ -203,7 +203,7 @@ you can hook on to that state with the
 The [`:enabled`](https://developer.mozilla.org/en-US/docs/Web/CSS/:enabled)
 pseudo-class is available for the opposite state,
 though form elements are also `:enabled` by default,
-therefore you might not find yourself reaching for this pseudo class.
+therefore you might not find yourself reaching for this pseudo-class.
 
 {% Codepen {
   user: 'web-dot-dev',
