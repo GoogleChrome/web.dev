@@ -4,7 +4,7 @@ subhead: How to integrate with hardware media keys, customize media notification
 authors:
   - beaufortfrancois
 date: 2020-03-06
-updated: 2021-05-06
+updated: 2021-05-07
 hero: image/admin/IhujMvzGa5Mf0aNWYRXW.jpg
 thumbnail: image/admin/Q6CqQNLucogBCxGMsSU2.jpg
 description: |
@@ -30,7 +30,7 @@ on mobile, and even on wearable devices. I'll describe these customizations in
 this article.
 
 <figure class="w-figure">
-  {% Img src="image/admin/qwTz64KKq4rq7WeA3rlT.jpg", alt="Screenshots of Media Session contexts", width="800", height="330" %}
+  {% Img src="image/admin/qwTz64KKq4rq7WeA3rlT.jpg", alt="Screenshots of Media Session contexts.", width="800", height="330" %}
   <figcaption class="w-figcaption">Media hub on desktop, media notification on mobile, and a wearable device.</figcaption>
 </figure>
 
@@ -70,7 +70,7 @@ playback from the media hub on desktop so that web developers have a chance to
 clear their state.
 
 <b>Example 4:</b> If users are on a video call, they can press the "toggle
-microphone" control in the Picture-in-Picture window to stop website from
+microphone" control in the Picture-in-Picture window to stop the website from
 receiving microphone data.
 
 This is all done through two different interfaces: The `MediaSession` interface
@@ -81,7 +81,7 @@ To illustrate, the image below shows how these interfaces relate to specific
 media controls, in this case a media notification on mobile.
 
 <figure class="w-figure">
-  {% Img src="image/admin/eiavbbCE6TlI8osR1tYT.jpg", alt="Media Session interfaces illustration", width="800", height="353" %}
+  {% Img src="image/admin/eiavbbCE6TlI8osR1tYT.jpg", alt="Media Session interfaces illustration.", width="800", height="353" %}
   <figcaption class="w-figcaption">Anatomy of a media notification on mobile.</figcaption>
 </figure>
 
@@ -161,7 +161,7 @@ buttons from a headset, another remote device, a keyboard, or interact with a
 media notification.
 
 <figure class="w-figure">
-  {% Img src="image/admin/9rN4x5GXdhg4qjC0ZEmk.jpg", alt="Screenshot of a media notification in Windows 10", width="800", height="450" %}
+  {% Img src="image/admin/9rN4x5GXdhg4qjC0ZEmk.jpg", alt="Screenshot of a media notification in Windows 10.", width="800", height="450" %}
   <figcaption class="w-figcaption">Customized media notification in Windows 10.</figcaption>
 </figure>
 
@@ -213,7 +213,7 @@ won't be shown unless the proper action handler is set.
 <figure class="w-figure">
   {% Img
     src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/WBZAf1ymhtXInsWumHtw.jpg",
-    alt="Screenshot of the Now Playing widget in macOS Big Sur",
+    alt="Screenshot of the Now Playing widget in macOS Big Sur.",
     width="800",
     height="450"
   %}
@@ -345,7 +345,7 @@ position state is a combination of the media playback rate, duration, and
 current time.
 
 <figure class="w-figure">
-  {% Img src="image/admin/Rlw13wMoaJrDziraXgUc.jpg", alt="Screenshot of lock screen media controls in Chrome OS", width="800", height="450" %}
+  {% Img src="image/admin/Rlw13wMoaJrDziraXgUc.jpg", alt="Screenshot of lock screen media controls in Chrome OS.", width="800", height="450" %}
   <figcaption class="w-figcaption">Lock screen media controls in Chrome OS.</figcaption>
 </figure>
 
@@ -403,18 +403,18 @@ navigator.mediaSession.setPositionState(null);
 ## Video conferencing actions {: #video-conferencing-actions }
 
 When the user puts their video call into a Picture-in-Picture window, the
-browser may display controls for the microphone, camera, and for hanging up.
+browser may display controls for the microphone and camera, and for hanging up.
 When the user clicks those, the website handles them through the video
 conferencing actions below.
 
 <figure class="w-figure">
   {% Img
     src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/fXc7jqc95Oa6sKce7kpZ.jpg",
-    alt="Screenshot of video conferencing controls in a Picture-in-Picture window",
+    alt="Screenshot of video conferencing controls in a Picture-in-Picture window.",
     width="748",
     height="464"
   %}
-  <figcaption class="w-figcaption">Video conferencing controls in a Picture-in-Picture window</figcaption>
+  <figcaption class="w-figcaption">Video conferencing controls in a Picture-in-Picture window.</figcaption>
 </figure>
 
 {% Aside %}
@@ -425,9 +425,8 @@ Chrome&nbsp;92 on desktop.
 ### Toggle microphone
 
 The `"togglemicrophone"` action indicates that the user wants to mute or unmute
-the microphone. The `setMicrophoneActive(active)` method indicates to the
-browser whether the microphone is currently considered by the website to be
-active.
+the microphone. The `setMicrophoneActive(isActive)` method tells the browser
+whether the website currently considers the microphone to be active.
 
 ```js
 let isMicrophoneActive = false;
@@ -446,8 +445,8 @@ navigator.mediaSession.setActionHandler('togglemicrophone', () => {
 ### Toggle camera
 
 The `"togglecamera"` action indicates that the user wants to turn the active
-camera on or off. The `setCameraActive(active)` method indicates to the browser
-whether the camera is currently considered by the website to be active.
+camera on or off. The `setCameraActive(isActive)` method indicates whether the
+browser considers the website to be active.
 
 ```js
 let isCameraActive = false;
