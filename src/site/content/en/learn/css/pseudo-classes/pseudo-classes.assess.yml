@@ -15,16 +15,20 @@ questions:
         rationale: "Pseudo-elements are for parts, Pseudo-classes are for
         state."
   - type: multiple-choice
-    cardinality: "1"
-    correctAnswers: "1"
-    stem: Like psuedo-elements, all CSS styles are available for use?
+    cardinality: "1+"
+    correctAnswers: "0,3"
+    stem: Which of the following are a *functional* pseudo-class?
     options:
-      - content: "True"
-        rationale: "There are meaningful limits to what you can style based on
-        state or styles you can apply to internal elements."
-      - content: "False"
-        rationale: "The limitations prevent authors from creating impossible or
-        undesirable user states."
+      - content: "`:is()`"
+        rationale: "🎉"
+      - content: "`:target`"
+        rationale: "Functional pseudo-classes have `()` after them, to indicate
+        they accept paremeters."
+      - content: "`:empty`"
+        rationale: "Functional pseudo-classes have `()` after them, to indicate
+        they accept paremeters."
+      - content: "`:not()`"
+        rationale: "🎉"
   - type: multiple-choice
     cardinality: "1+"
     correctAnswers: "0,3,4"
