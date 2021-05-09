@@ -5,7 +5,9 @@ authors:
   - dero
   - derekherman
 description: |
- @todo
+  Building a PWA with offline streaming has its challenges. In this article we
+  will learn about the APIs and techniques used to provide users with a
+  delightful offline media experience.
 date: 2021-04-30
 updated: 2021-04-30
 tags:
@@ -13,21 +15,42 @@ tags:
   - video
 ---
 
-[Progressive Web Apps](https://web.dev/progressive-web-apps/) bring a lot of features previously reserved for native applications to the web. One of the most prominent features associated with PWAs is [offline experience](https://web.dev/progressive-web-apps/).
+[Progressive Web Apps] bring a lot of features previously reserved for native
+applications to the web. One of the most prominent features associated with
+PWAs is an offline experience.
 
-The offline watching experience is a great feature you could offer to your users. But therein lies one unique problem–video files can be very, *very* large. So you might be asking:
+Even better would be an offline streaming media experience, which is an
+enhancement you could offer to your users in a few different ways. However,
+this creates a truly unique problem—media files can be very, *very* large. So
+you might be asking:
 
 - How do I download and store a large video file?
-- And how do I serve it back?
+- And how do I serve it back to the user?
+
+In this article we will be discussing answers to these questions, while
+referencing the [Kino] demo PWA we built that provides you with practical
+examples on how you can implement an offline streaming media experience without
+using any functional or presentational frameworks. The following examples are
+mainly for educational purposes, because in most cases you should probably use
+one of the existing [Media Frameworks] to provide these features.
+
+Unless you have a good business case for rolling out your own, building a PWA
+with offline streaming has its challenges. In this article we will learn about
+the APIs and techniques used to provide users with a delightful offline media
+experience.
 
 ## Downloading and storing a large media file
 
-Progressive Web Apps usually use the convenient [Cache API] to both download and store the assets required to provide the offline experience: documents, stylesheets, images and other.
+Progressive Web Apps usually use the convenient [Cache API] to both download
+and store the assets required to provide the offline experience: documents,
+stylesheets, images and others.
+
+Here is a basic example of using the Cache API within a Service Worker:
 
 ```javascript
-// Basic Cache API usage within a Service Worker
+const cacheStorageName = 'v1';
+
 this.addEventListener('install', function(event) {
-  const cacheStorageName = 'v1';
   event.waitUntil(
     caches.open(cacheStorageName).then(function(cache) {
       return cache.addAll([
@@ -35,7 +58,7 @@ this.addEventListener('install', function(event) {
         'style.css',
         'scripts.js',
 
-        // Don't do this
+        // Don't do this.
         'very-large-video.mp4',
       ]);
     })
@@ -43,36 +66,52 @@ this.addEventListener('install', function(event) {
 });
 ```
 
-However a Cache API has several limitations that makes its usage with large files impractical:
+While the example above does technically work, using the Cache API has several
+limitations that makes its usage with large files impractical.
 
-- Cache API won't allow you to pause and resume downloads easily.
-- Cache API doesn't let you track downloads progress.
-- Cache API doesn't offer a way to properly respond to [HTTP range requests].
+For example, the Cache API doesn't:
+- Allow you to easily pause and resume downloads
+- Let you track the progress of downloads
+- Offer a way to properly respond to [HTTP range requests]
 
-All pretty serious limitations for any video application. What are your other options, then?
+All of these issues are pretty serious limitations for any video application.
+Let's review some other options that might be more appropriate.
 
-Nowadays, [Fetch API] is a cross-browser way to asynchronously access remote file. It allows you to access the large video file as a stream and store it incrementally by chunks as they arrive.
-
-{% Aside %}
-Check out [Background Fetch] as a candidate for a progressive enhancement of the Fetch API in browsers that [support it](https://caniuse.com/mdn-api_serviceworkerregistration_backgroundfetch).
-{% endAside %}
-
-But store it how? Chances are there is a bunch of metadata associated with your media file: name, description, runtime length, category etc. You're not storing just the one media file, you are storing a structured object and the media file is just one of its properties.
-
-In this case the [IndexedDB API] lends itself as a solution to store both the media data and metadata. It can hold huge amounts of binary data easily and it also offers indexes that allow you to perform very fast data lookups.
+Nowadays, the [Fetch API] is a cross-browser way to asynchronously access remote
+files. In our use case it allows you to access large video files as a stream and
+store them incrementally as chunks using an HTTP range request.
 
 {% Aside %}
-There is also a [File System Access API] that you could use in some browsers to store the media files directly on the client device.
+Check out the [Background Fetch API] as a candidate for a progressive
+enhancement of the Fetch API in browsers that [support Background Fetch].
 {% endAside %}
 
-### Downloading media files using Fetch API
+Now that you can read the chunks of data with the [Fetch API] you also need to
+store them. Chances are there is a bunch of metadata associated with your media
+file. Such as: name, description, runtime length, category etc.
 
-We built a couple of interesting features around the Fetch API in our [Kino app].
+You're not storing just the one media file, you are storing a structured object,
+and the media file is just one of its properties.
+
+In this case the [IndexedDB API] provides an excellent solution to store both the
+media data and metadata. It can hold huge amounts of binary data easily, and it
+also offers indexes that allow you to perform very fast data lookups.
+
+{% Aside %}
+There is also a [File System Access API] that you could use in some browsers to
+store the media files directly on the client device.
+{% endAside %}
+
+### Downloading media files using the Fetch API
+
+We built a couple of interesting features around the Fetch API in our demo PWA,
+which we named [Kino]—the [source code] is public so feel free to review it.
 
 - The ability to pause and resume incomplete downloads.
 - A custom buffer for storing chunks of data into the database.
 
-Before we'll take a look at how those features are implemented, let's first do a quick recap of how you can use the Fetch API to download files.
+Before we take a look at how those features are implemented, let's first do a
+quick recap of how you can use the Fetch API to download files.
 
 ```javascript
 /**
@@ -90,26 +129,31 @@ async function downloadFile(url) {
 }
 ```
 
-Notice how we `await reader.read()` in a loop? That's how you'll receive chunks of data from a readable stream as they arrive from the network. Consider how useful this is: you can start processing your data even before it all arrives from the network.
+Notice how we `await reader.read()` in a loop? That's how you'll receive chunks
+of data from a readable stream as they arrive from the network. Consider how
+useful this is: you can start processing your data even before it all arrives
+from the network.
 
 {% Aside %}
-If you find the concept of streams confusing, check out [Streams–The definitive guide].
+If you find the concept of streams confusing, perhaps check out
+[Streams–The definitive guide] before you continue.
 {% endAside %}
 
 ### Resuming downloads
 
-Now when a download is paused or interrupted, the data chunks that have arrived so far will be safely stored in an IndexedDB database.
-
-You can then display a button to resume a download in your app. In our [Kino app], because our server supports [HTTP range requests], resuming a download is simple:
+When a download is paused or interrupted, the data chunks that have arrived will
+be safely stored in an IndexedDB database. You can then display a button to
+resume a download in your application. Because the [Kino] demo PWA server
+supports [HTTP range requests] resuming a download is somewhat straightforward:
 
 ```javascript
 async downloadFile() {
-  // this.currentFileMeta contains data from IndexedDB
+  // this.currentFileMeta contains data from IndexedDB.
   const { bytesDownloaded, url, downloadUrl } = this.currentFileMeta;
   const fetchOpts = {};
 
   // If we already have some data downloaded,
-  // request everything from that position on
+  // request everything from that position on.
   if (bytesDownloaded) {
     fetchOpts.headers = {
       Range: `bytes=${bytesDownloaded}-`,
@@ -129,7 +173,10 @@ async downloadFile() {
 
 ### Custom write buffer for IndexedDB
 
-On paper, the process of writing `dataChunk` values into IndexedDB database is simple. Those values already are `ArrayBuffer` instances, which are storable in IndexedDB directly, so we can just create an object of an appropriate shape and store it.
+On paper, the process of writing `dataChunk` values into an IndexedDB database
+is simple. Those values already are `ArrayBuffer` instances, which are storable
+in IndexedDB directly, so we can just create an object of an appropriate shape
+and store it.
 
 ```javascript
 const dataItem = {
@@ -139,10 +186,10 @@ const dataItem = {
   data: dataChunk,
 }
 
-// Name the store that will hold your data
+// Name of the store that will hold your data.
 const storeName = 'fileChunksStorage'
 
-// `db` is an instance of `IDBDatabase`
+// `db` is an instance of `IDBDatabase`.
 const transaction = db.transaction([storeName], 'readwrite');
 const store = transaction.objectStore(storeName);
 const putRequest = store.put(data);
@@ -150,15 +197,25 @@ const putRequest = store.put(data);
 putRequest.onsuccess = () => { ... }
 ```
 
-While this approach works, you will likely discover that your IndexedDB writes are significantly slower than your download. This isn't because IndexedDB writes are slow, it's because we are adding a lot of transactional overhead by creating a new transaction for every data chunk that we receive from a network.
+While this approach works, you will likely discover that your IndexedDB writes
+are significantly slower than your download. This isn't because IndexedDB writes
+are slow, it's because we are adding a lot of transactional overhead by creating
+a new transaction for every data chunk that we receive from a network.
 
-The downloaded chunks can be rather small and can be emitted by the stream in a very rapid succession. We need to limit the rate of IndexedDB writes. In our [Kino app] we do this by implementing an **intermediary write buffer**.
+The downloaded chunks can be rather small and can be emitted by the stream in a
+very rapid succession. We need to limit the rate of IndexedDB writes. In the
+[Kino] demo PWA we do this by implementing an **intermediary write buffer**.
 
-As data chunks arrive from the network, we append them to our buffer first. If the incoming data doesn't fit, we flush the full buffer into the database and clear it before appending the rest of the data to it. As a result our IndexedDB writes are less frequent, which leads to a significantly better write performance.
+As data chunks arrive from the network, we append them to our buffer first. If
+the incoming data doesn't fit, we flush the full buffer into the database and
+clear it before appending the rest of the data to it. As a result our IndexedDB
+writes are less frequent, which leads to significantly improved write
+performance.
 
 ## Serving a media file from offline storage
 
-Once you have a media file downloaded, you probably want your service worker to serve it from IndexedDB instead of fetching the file from the network.
+Once you have a media file downloaded, you probably want your service worker to
+serve it from IndexedDB instead of fetching the file from the network.
 
 ```javascript
 /**
@@ -181,17 +238,23 @@ const fetchHandler = async (event) => {
 self.addEventListener('fetch', fetchHandler);
 ```
 
-So what do we need to do in `getVideoResponse`?
+So what do you need to do in `getVideoResponse`?
 
 - The `event.respondWith` method expects a `Response` object as a parameter.
-- The [Response constructor] tells us that there are several types of objects we could use to instantiate a `Response` object: a `Blob`, `BufferSource`, `ReadableStream` and more.
-- We need an object that doesn't hold all of its data in memory, so we'll probably want to choose the `ReadableStream`.
+- The [Response constructor] tells us that there are several types of objects we
+  could use to instantiate a `Response` object: a `Blob`, `BufferSource`,
+  `ReadableStream` and more.
+- We need an object that doesn't hold all of its data in memory, so we'll
+  probably want to choose the `ReadableStream`.
 
-Also, because we're dealing with large files and we wanted to allow browsers to only request the part of the file they currently need, we needed to implement some basic support for [HTTP range requests].
+Also, because we're dealing with large files, and we wanted to allow browsers to
+only request the part of the file they currently need, we needed to implement
+some basic support for [HTTP range requests].
 
 ```javascript
 /**
- * Respond to a request to fetch offline video file and construct a response stream.
+ * Respond to a request to fetch offline video file and construct a response
+ * stream.
  *
  * Includes support for `Range` requests.
  *
@@ -235,24 +298,38 @@ const getVideoResponse = (request, fileMeta) => {
   return response;
 ```
 
-Feel free to check out the [Kino app service worker source code](https://github.com/xwp/web-dev-media/blob/ef13dc0aec8a025cb1152f8d41adeeac872964db/src/js/sw/sw.js#L39-L108) to find out how we are reading file data from IndexedDB and constructing a stream in a real application.
+Feel free to check out the [Kino] demo PWA [service worker source code] to find
+out how we are reading file data from IndexedDB and constructing a stream in
+a real application.
 
 ## Other considerations
 
-With the main obstacles out of your way, you can now start adding some nice-to-have features to your video application. Here are a few examples of features you would find in our [Kino app]:
+With the main obstacles out of your way, you can now start adding some
+nice-to-have features to your video application. Here are a few examples of
+features you would find in the [Kino] demo PWA:
 
-- [Media Session API] integration that allows your users to control media playback using dedicated hardware media keys or from media notification popups.
-- Caching of other assets associated with the media files like subtitles, poster images using the good old [Cache API].
-- Support for video streams (DASH, HLS) download within the app. Because stream manifests generally declare multiple sources of different bitrates, we need to transform the manifest file and only download one media version before we store it for offline viewing.
+- [Media Session API] integration that allows your users to control media
+  playback using dedicated hardware media keys or from media notification
+  popups.
+- Caching of other assets associated with the media files like subtitles, poster
+  images using the good old [Cache API].
+- Support for video streams (DASH, HLS) download within the app. Because stream
+  manifests generally declare multiple sources of different bitrates, we need to
+  transform the manifest file and only download one media version before we store
+  it for offline viewing.
 
-
-[Cache API]: https://web.dev/cache-api-quick-guide/
+[Progressive Web Apps]: /progressive-web-apps/
+[Media Frameworks]: /media-frameworks/
+[Cache API]: /cache-api-quick-guide/
 [HTTP range requests]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Range_requests
 [Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 [IndexedDB API]: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
-[Background Fetch]: https://developers.google.com/web/updates/2018/12/background-fetch
-[Kino app]: #
-[File System Access API]: https://web.dev/file-system-access/
-[Streams–The definitive guide]: https://web.dev/streams/
-[Media Session API]: https://web.dev/media-session/
+[Background Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Background_Fetch_API
+[support Background Fetch]: https://caniuse.com/mdn-api_serviceworkerregistration_backgroundfetch
+[File System Access API]: /file-system-access/
+[Kino]: https://web-dev-media.web.app/
+[source code]: https://github.com/xwp/web-dev-media/
+[Streams–The definitive guide]: /streams/
+[Media Session API]: /media-session/
 [Response constructor]: https://developer.mozilla.org/en-US/docs/Web/API/Response/Response
+[service worker source code]: https://github.com/xwp/web-dev-media/blob/ef13dc0aec8a025cb1152f8d41adeeac872964db/src/js/sw/sw.js#L39-L108
