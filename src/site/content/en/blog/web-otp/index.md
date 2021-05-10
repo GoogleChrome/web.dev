@@ -4,7 +4,7 @@ subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
-updated: 2021-02-23
+updated: 2021-05-12
 hero: image/admin/iVHsQYbBj8qNYZeSZKwK.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
@@ -34,13 +34,6 @@ commonly using phone numbers as an identifier for users of their services.
 There are a variety of ways to verify phone numbers, but a randomly generated
 one-time password (OTP) sent by SMS is one of the most common. Sending this code
 back to the developer's server demonstrates control of the phone number.
-
-{% Aside %}
-The WebOTP API was originally called the SMS Receiver API. You may still see it
-named that way in some places. If you used that API, you should still read this
-article. [There are significant differences](#differences) between the current
-and earlier versions of the API.
-{% endAside %}
 
 This idea is already deployed in many scenarios to achieve:
 
@@ -187,8 +180,10 @@ Your OTP is: 123456.
 Did you receive the SMS and see the prompt to enter the code to the input area?
 That is how the WebOTP API works for users.
 
-{% Aside 'gotcha' %}
+{% Aside 'gotchas' %}
+
 If the dialog doesn't appear for you, check out [the FAQ](#no-dialog).
+
 {% endAside %}
 
 Using the WebOTP API consists of three parts:
@@ -209,9 +204,7 @@ This allows Safari 14 or later to suggest that the user to autofill the `<input>
 field with an OTP when they receive an SMS with the format described in [Format
 the SMS message](#format) even though it doesn't support WebOTP.
 
-{% Label %}
-HTML
-{% endLabel %}
+{% Label %}HTML{% endLabel %}
 
 ```html
 <form>
@@ -225,9 +218,7 @@ HTML
 Because WebOTP is simple, just copying and pasting the following code will do the
 job. I'll walk you through what's happening anyway.
 
-{% Label %}
-JavaScript
-{% endLabel %}
+{% Label %}JavaScript{% endLabel %}
 
 ```js
 if ('OTPCredential' in window) {
@@ -259,9 +250,7 @@ if ('OTPCredential' in window) {
 Feature detection is the same as for many other APIs. Listening to
 `DOMContentLoaded` event will wait for the DOM tree to be ready to query.
 
-{% Label %}
-JavaScript
-{% endLabel %}
+{% Label %}JavaScript{% endLabel %}
 
 ```js
 if ('OTPCredential' in window) {
@@ -276,8 +265,10 @@ if ('OTPCredential' in window) {
 ```
 
 {% Aside 'caution' %}
+
 The WebOTP API requires a secure origin (HTTPS). The feature detection on an
 HTTP website will fail.
+
 {% endAside %}
 
 ### Process the OTP
@@ -287,9 +278,7 @@ The WebOTP API itself is simple enough. Use
 to obtain the OTP. WebOTP adds a new `otp` option to that method. It only has
 one property: `transport`, whose value must be an array with the string `'sms'`.
 
-{% Label %}
-JavaScript
-{% endLabel %}
+{% Label %}JavaScript{% endLabel %}
 
 ```js/1-2
     …
@@ -303,9 +292,7 @@ JavaScript
 This triggers the browser's permission flow when an SMS message arrives. If permission is
 granted, the returned promise resolves with an `OTPCredential` object.
 
-{% Label %}
-Content of obtained `OTPCredential` object
-{% endLabel %}
+{% Label %}Content of obtained `OTPCredential` object{% endLabel %}
 
 ```json
 {
@@ -317,9 +304,7 @@ Content of obtained `OTPCredential` object
 Next, pass the OTP value to the `<input>` field. Submitting the form directly
 will eliminate the step requiring the user to tap a button.
 
-{% Label %}
-JavaScript
-{% endLabel %}
+{% Label %}JavaScript{% endLabel %}
 
 ```js/5-6
     …
@@ -400,11 +385,105 @@ You may also fork it and create your version:
   allow: []
 } %}
 
+## Use the WebOTP from a cross-origin iframe
+
+Entering an SMS OTP to a cross-origin iframe is typically used for payment
+confirmation, especially with 3D Secure. Having the common format to support
+cross-origin iframes, WebOTP API delivers OTPs bound to nested origins. For
+example:
+
+* A user visits `shop.example` to purchase a pair of shoes with a credit card.
+* After entering the credit card number, the integrated payment provider shows a
+  form from `bank.example` within an iframe asking the user to verify their
+  phone number for fast checkout.
+* `bank.example` sends an SMS that contains an OTP to the user so that they can
+  enter it to verify their identity.
+
+To use WebOTP API from within a cross-origin iframe, you need to do two things:
+
+* Annotate both the top-frame origin and the iframe origin in the SMS text
+  message.
+* Configure permissions policy to allow the cross-origin iframe to receive OTP
+  from the user directly.
+
+<figure class="w-figure">
+{% Video
+  src="video/YLflGBAPWecgtKJLqCJHSzHqe2J2/Ba3OSkSsB4NwFkHGOuvc.mp4",
+  autoplay="true",
+  controls="true",
+  loop="true",
+  muted="true",
+  preload="auto",
+  width="300",
+  height="600",
+  class="w-screenshot"
+%}
+  <figcaption class="w-figcaption">
+    WebOTP API within an iframe in action.
+  </figcaption>
+</figure>
+
+You can try the demo yourself at
+[https://web-otp-iframe-demo.stackblitz.io](https://web-otp-iframe-demo.stackblitz.io).
+
+### Annotate bound-origins to the SMS text message
+
+When WebOTP API is called from within an iframe, the SMS text message must
+include the top-frame origin preceded by `@` followed by the OTP preceded by `#`
+followed by the iframe origin preceded by `@`.
+
+```text
+@shop.example #123456 @bank.exmple
+```
+
+### Configure Permissions Policy
+
+To use WebOTP in a cross-origin iframe, the embedder must grant access to this
+API via otp-credentials [permissions
+policy](https://www.w3.org/TR/permissions-policy-1) to avoid unintended
+behavior. In general there are two ways to achieve this goal:
+
+{% Label %}via HTTP Header:{% endLabel %}
+
+```http
+Permissions-Policy: otp-credentials=(self "https://bank.example")
+```
+
+{% Label %}via iframe `allow` attribute:{% endLabel %}
+
+```html
+<iframe src="https://bank.example/…" allow="otp-credentials"></iframe>
+```
+
+See [more examples on how to specify a permission policy
+](https://github.com/w3c/webappsec-permissions-policy/blob/master/permissions-policy-explainer.md#how-is-a-policy-specified).
+
+{% Aside %}
+
+At the moment Chrome only supports WebOTP API calls from cross-origin iframes
+that have **no more than one** unique origin in its ancestor chain. In the
+following scenarios:
+
+* `a.com` -> `b.com`
+* `a.com` -> `b.com` -> `b.com`
+* `a.com` -> `a.com` -> `b.com`
+* `a.com` -> `b.com` -> `c.com`
+
+using WebOTP in `b.com` is supported but using it in `c.com` is not.
+
+Note that the following scenario is also not supported because of lack of demand
+and UX complexities.
+
+* `a.com` -> `b.com` -> `a.com` (calls WebOTP API)
+
+{% endAside %}
+
 ## FAQ
 
 ### The dialog doesn't appear though I'm sending a properly formatted message. What's going wrong? {: #no-dialog}
 
 There are a couple of caveats when testing the API:
+
 * If the sender's phone number is included in the receiver's contact list, this
   API will not be triggered due to the design of the underlying [SMS User
   Consent
@@ -413,35 +492,21 @@ There are a couple of caveats when testing the API:
   not work, try installing and using Chrome on your personal profile instead
   (i.e. the same profile in which you receive SMS messages).
 
-### Where do I report bugs in Chrome's implementation?
+Having those in mind, here's a list of typical malformed SMSes:
 
-Did you find a bug with Chrome's implementation?
-
-* File a bug at
-  [https://new.crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ESMS).
-  Include as much detail as you can, simple instructions for reproducing, and
-  set **Components** to `Blink>WebOTP`.
-
-### How can I help this feature?
-
-Are you planning to use the WebOTP API? Your public support helps us prioritize
-features, and shows other browser vendors how critical it is to support them.
-Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
-[`#WebOTP`](https://twitter.com/search?q=%23WebOTP&src=typed_query&f=live)
-and let us know where and how you're using it.
-
-### What are the differences with the SMS Receiver API? {: #differences }
-
-Consider WebOTP API an evolved version of the SMS Receiver API. WebOTP API has
-a few significant differences compared to the SMS Receiver API.
-
-* The [expected text format](#format) for the SMS message has changed.
-* It no longer requires an app hash string to be included in the SMS message.
-* The method called is now `navigator.credentials.get()` rather than
-  `navigator.sms.receive()`.
-* The `get()` receives only the OTP rather than the entire SMS message as
-  `receive()` did before.
-* It's now possible to [abort the call to `get()`](#aborting).
+|Example malformed SMS Text|Why this won't work|
+|--------------------------|-------------------|
+|`@ftp://example.com #123`|URL scheme cannot be included|
+|`@https://example.com #123`|URL scheme cannot be included|
+|`@example.com:8080 #123`|Port cannot be included|
+|`@example.com/foobar #123`|Path cannot be included|
+|`@example .com #123456`|No whitespece in domain|
+|`@domain-forbiden-chars-#%/:<>?@[] #123456`|No [forbidden chars](https://url.spec.whatwg.org/#forbidden-host-code-point) in domain|
+|`@example.com #123456`<br/><br/>`Mambo Jumbo`|Per spec `@host #code` is expected to be the last line|
+|`@example.com #123456`<br/><br/>`App hash #oudf08lkjsdf834`|Per spec `@host #code` is expected to be the last line|
+|`@example.com 123456`|Expect `#`|
+|`example.com #123456`|Expect `@`|
+|`Hi mom, did you receive my last text`|Expect `@` and `#`|
 
 ### Is this API compatible between different browsers?
 
@@ -463,6 +528,23 @@ combine it with additional factors, such as a knowledge challenge, or use the
 [Web Authentication
 API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
 for strong authentication.
+
+### Where do I report bugs in Chrome's implementation?
+
+Did you find a bug with Chrome's implementation?
+
+* File a bug at
+  [https://new.crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ESMS).
+  Include as much detail as you can, simple instructions for reproducing, and
+  set **Components** to `Blink>WebOTP`.
+
+### How can I help this feature?
+
+Are you planning to use the WebOTP API? Your public support helps us prioritize
+features, and shows other browser vendors how critical it is to support them.
+Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) using the hashtag
+[`#WebOTP`](https://twitter.com/search?q=%23WebOTP&src=typed_query&f=live)
+and let us know where and how you're using it.
 
 {% Aside %}
 Find more questions at [the FAQ section in the explainer](https://github.com/WICG/WebOTP/blob/master/FAQ.md).
