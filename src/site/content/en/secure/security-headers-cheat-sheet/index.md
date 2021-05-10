@@ -25,7 +25,7 @@ Security headers recommended for all websites:
 : [Cross-Origin Resource Sharing (CORS)](#cors)
 : [HTTP Strict Transport Security (HSTS)](#hsts)
 
-Security headers recommended for websites with advanced features (e.g. `SharedArrayBuffer`):
+Security headers needed for websites with advanced features (e.g. `SharedArrayBuffer`):
 : [Cross-Origin Embedder Policy (COEP)](#coep)
 
 {% Details %}
@@ -67,19 +67,19 @@ Common vulnerabilities that undermine web isolation include [clickjacking](https
   malicious website.
 * Use [Cross-Origin Resource Policy (CORP)](#corp) to prevent your website's
   resources from being embedded by a cross-origin website.
-* Use [Cross-Origin Opener Policy (COOP)](#coop) to prevent your documents from
-  being opened and eavesdropped by a malicious website.
+* Use [Cross-Origin Opener Policy (COOP)](#coop) to prevent your website's
+  documents from being opened and eavesdropped by a malicious website.
 * Use [Cross-Origin Resource Sharing (CORS)](#cors) to control access to your
-  resources from cross-origin documents. 
+  website's resources from cross-origin documents. 
 
 ### Build a powerful website securely
 
 [Spectre](https://ieeexplore.ieee.org/document/8835233) puts any data loaded
 onto the same browsing context group potentially readable despite [same-origin
 policy](/same-origin-policy/). Browsers restrict features that may possibly
-exploit the vulnerability behind a special environment called "cross-origin
-isolation". With cross-origin isolation, you can use powerful features such as
-`SharedArrayBuffer`.
+exploit the vulnerability behind a special environment called "[cross-origin
+isolation](/coop-coep/)". With cross-origin isolation, you can use powerful
+features such as `SharedArrayBuffer`.
 
 * Use [Cross-Origin Embedder Policy (COEP)](#coep) along with [COOP](#coop) to
   enable cross-origin isolation.
@@ -127,8 +127,6 @@ A CSP can be an *extra* protection against XSS attacks; you should still make
 sure to escape (and sanitize) user input.
 
 {% endAside %}
-
-CSP seems complex. As a starter, we propose two baseline recommendations:
 
 #### 1. Use a nonce-based CSP {: #nonce-based-csp}
 
@@ -389,8 +387,8 @@ Learn more how to use X-Content-Type-Options
 `X-Content-Type-Options: nosniff` is recommended for all resources served from
 your server along with the correct `Content-Type` header.
 
-{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/OiZOnz1dVhuQU1n94tFQ.png",
-alt="X-Content-Type-Options: nosniff", width="800", height="238" %}
+{% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/IWqRWe9R1mOJImmMbLoM.png",
+alt="X-Content-Type-Options: nosniff", width="800", height="237" %}
 
 {% Label %}Example headers sent with a document HTML{% endLabel %}
 
