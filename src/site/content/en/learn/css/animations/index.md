@@ -374,6 +374,9 @@ but rather, a preference to reduce animations—
 You can learn more about this preference and overall performance with
 [this animation guide](https://web.dev/animations/).
 
+
+{% Assessment 'animations' %}
+
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bGqbPwq'
