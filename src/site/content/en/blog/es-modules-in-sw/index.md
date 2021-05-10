@@ -1,12 +1,12 @@
 ---
 title: "ES modules in service workers"
 subhead: "A modern alternative to importScripts()."
-description: "Service workers can now use static imports of ES modules to bring in extra code, as an alternative to importScripts()."
+description: "Service workers can use static imports of ES modules to bring in extra code, as an alternative to importScripts()."
 authors:
   - jeffposnick
-date: 2021-04-20
-hero: image/admin/JSBg0yF1fatrTDQSKiTW.webp
-alt: An example windowing approach for measuring layout shift.
+date: 2021-05-06
+hero: 
+alt: 
 tags:
   - blog
   - service-worker
@@ -97,4 +97,4 @@ To accomodate browsers that don't have built-in support, you can run your servic
 
 Once you have two versions of your service worker available—one that uses ES modules, and the other that doesn't—you'll need to detect what the current browser supports, and register the corresponding service worker script. The best practices for detecting support are currently in flux, but you can follow the discussion in this [GitHub issue](https://github.com/w3c/ServiceWorker/issues/1582) for recommendations.
 
-_Photo by <a href="https://unsplash.com/@vlado?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vlado Paunovic</a> on <a href="https://unsplash.com/s/photos/modular?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>_
+_Photo by <a href="https://unsplash.com/@vlado?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vlado Paunovic</a> on <a href="https://unsplash.com/@vlado?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>_
