@@ -7,7 +7,7 @@ questions:
     stem: CSS functions can be identified by which characters?
     options:
       - content: "`[]`"
-        rationale: "These characters are for arrays in Javascript"
+        rationale: "These characters are for arrays in Javascript."
       - content: "`{}`"
         rationale: "These characters wrap rules in CSS"
       - content: "`()`"
