@@ -260,7 +260,7 @@ URL protocol handler registration for PWAs was implemented and specified by
 [Diego González](https://www.linkedin.com/in/diekus/),
 [Connor Moody](https://www.linkedin.com/in/connor-d-moody/), and
 [Samuel Tang](https://www.linkedin.com/in/tangsamuel/) from the Microsoft Edge team. This article
-was reviewed by [Joe Medley](https://github.com/jpmedley). Hero image by
+was reviewed by [Joe Medley](https://github.com/jpmedley) and Fabio Rocha. Hero image by
 [JJ Ying](https://unsplash.com/@jjying) on [Unsplash](https://unsplash.com/photos/PDxYfXVlK2M).
 
 [explainer]:
