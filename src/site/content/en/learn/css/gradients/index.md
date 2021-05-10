@@ -249,3 +249,5 @@ For example, you can mix multiple linear-gradients together, or two linear-gradi
 - [Conic.css](https://www.conic.style/) - a useful collection of conic gradients
 - [MDN guide to gradients](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)
 - [Gradient generator](https://www.colorzilla.com/gradient-editor/)
+
+{% Assessment 'gradients' %}
