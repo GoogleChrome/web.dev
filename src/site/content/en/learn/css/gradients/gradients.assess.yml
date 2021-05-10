@@ -22,6 +22,6 @@ questions:
     options:
       - content: "True"
         rationale: "The `background-image` property allows many gradients, just
-        separate them with a comma"
+        separate them with a comma."
       - content: "False"
         rationale: "Oh, but they can!"
