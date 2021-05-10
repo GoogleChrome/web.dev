@@ -10,7 +10,7 @@ questions:
         rationale: "🎉"
       - content: "False"
         rationale: "CSS does not allow 2 animations to have the same name, but
-        it does allow `SWOOP` and `swoop` to coexist"
+        it does allow `SWOOP` and `swoop` to coexist."
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "1"
