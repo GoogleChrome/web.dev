@@ -5,7 +5,7 @@ subhead: |
   Let installed PWAs handle links that use a specific protocol for a more integrated experience.
 authors:
   - thomassteiner
-date: 2021-05-05
+date: 2021-05-10
 description: |
   After registering a PWA as a protocol handler, when a user clicks on a hyperlink with a specific
   scheme such as mailto, bitcoin, or web+music from a browser or a platform-specific app,
@@ -79,8 +79,8 @@ and receive the URL. It is important to note that both the proposed manifest-bas
 the traditional `registerProtocolHandler()` play very similar roles in practice, while still
 allowing the possibility for complementary user-experiences:
 
-- Similarities include requirements around the list of schemes allowed to be registered, and
-  the name and format of parameters, etc.
+- Similarities include requirements around the list of schemes allowed to be registered, and the
+  name and format of parameters, etc.
 - Differences in the manifest-based registration are subtle, but might be useful to enhance the
   experience for PWA users. For example, manifest-based PWA registration may not require an
   additional user action apart from the user-initiated installation of the PWA.
@@ -100,13 +100,13 @@ allowing the possibility for complementary user-experiences:
 
 <div class="w-table-wrapper">
 
-| Step                                     | Status                   |
-| ---------------------------------------- | ------------------------ |
-| 1. Create explainer                      | [Complete][explainer]    |
-| 2. Create initial draft of specification | [In progress][specification]              |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | Not started              |
-| 5. Launch                                | Not started              |
+| Step                                     | Status                       |
+| ---------------------------------------- | ---------------------------- |
+| 1. Create explainer                      | [Complete][explainer]        |
+| 2. Create initial draft of specification | [In progress][specification] |
+| 3. Gather feedback & iterate on design   | [In progress](#feedback)     |
+| 4. Origin trial                          | Not started                  |
+| 5. Launch                                | Not started                  |
 
 </div>
 
@@ -118,12 +118,11 @@ token, enable the `#enable-desktop-pwas-protocol-handling` flag in `chrome://fla
 ## How to use URL protocol handler registration for PWAs
 
 The API for URL protocol handler registration is modeled closely on  
-`navigator.registerProtocolHandler()`. Just this time the information is passed
-declaratively via the Web Application Manifest in a new property called `"protocol_handlers"` that takes an
-array of objects with the two required keys `"protocol"` and `"url"`. The code snippet below shows
-how to register `web+tea` and
-`web+coffee`. The values are strings containing the URL of the handler with the required `%s`
-placeholder for the escaped URL.
+`navigator.registerProtocolHandler()`. Just this time the information is passed declaratively via
+the Web Application Manifest in a new property called `"protocol_handlers"` that takes an array of
+objects with the two required keys `"protocol"` and `"url"`. The code snippet below shows how to
+register `web+tea` and `web+coffee`. The values are strings containing the URL of the handler with
+the required `%s` placeholder for the escaped URL.
 
 ```json
 {
@@ -155,9 +154,9 @@ The same app can register itself for multiple protocols, as you can see in the c
 Handler registrations are synchronized with the latest manifest version provided by the app. There
 are two cases:
 
-* An update that adds new handlers triggers handler registration (separate from app installation).
-* An update that removes handlers triggers handler unregistration (separate from app
-   uninstallation).
+- An update that adds new handlers triggers handler registration (separate from app installation).
+- An update that removes handlers triggers handler unregistration (separate from app
+  uninstallation).
 
 ## Demo
 
@@ -176,9 +175,9 @@ You can see a demo of URL protocol handler registration for PWAs on Glitch.
 1. To compare with the traditional flow that uses `navigator.registerProtocolHandler()`, click
    the \*_Register protocol handler_ button in the PWA. Then in the browser tab click the third link
    (chai). It will likewise show a prompt, but then open the PWA in a tab, not in a browser window.
-1. Send yourself a message on a platform-specific application like Skype on Windows
-   with a link like `<a href="web+coffee://americano">Americano</a>` and click it. It should
-   likewise open the installed PWA.
+1. Send yourself a message on a platform-specific application like Skype on Windows with a link like
+   `<a href="web+coffee://americano">Americano</a>` and click it. It should likewise open the
+   installed PWA.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/lfjgVAiGjVE9VohX3EDs.png", alt="URL protocol handler demo with browser tab with links on the left, and standalone PWA window on the right.", width="800", height="461" %}
 
@@ -210,8 +209,8 @@ prompt the user to either keep using the default handler or select the newly reg
 On the first launch of the PWA due to an invoked protocol, the user will be presented with a
 permission dialog. This dialog will display the app name and origin of the app, and ask the user if
 the app is allowed to handle links from the protocol. If a user rejects the permission dialog, the
-registered protocol handler will be ignored by the operating system.
-To unregister the protocol handler, the user needs to uninstall the PWA that registered it.
+registered protocol handler will be ignored by the operating system. To unregister the protocol
+handler, the user needs to uninstall the PWA that registered it.
 
 ## Feedback
 
