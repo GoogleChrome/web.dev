@@ -9,7 +9,7 @@ questions:
       - content: "`[]`"
         rationale: "These characters are for arrays in Javascript."
       - content: "`{}`"
-        rationale: "These characters wrap rules in CSS"
+        rationale: "These characters wrap rules in CSS."
       - content: "`()`"
         rationale: "Functions use these characters to wrap arguments yep!"
       - content: "`::`"
