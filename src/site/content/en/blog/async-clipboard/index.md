@@ -113,7 +113,7 @@ try {
 
 {% Aside 'warning' %}
   Safari (WebKit) treats user activation differently than Chromium (Blink)
-  (see [WebKit bug #222262](https://bugs.webkit.org/show_bug.cgi?id=222262).
+  (see [WebKit bug #222262](https://bugs.webkit.org/show_bug.cgi?id=222262)).
   For Safari, run all asynchronous operations in a promise
   whose result you assign to the `ClipboardItem`:
   
