@@ -22,7 +22,8 @@ How would you do that in a flexible medium like the web?
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'bGgEGxj'
+  id: 'bGgEGxj',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -52,7 +53,8 @@ p {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'yLgYZRK'
+  id: 'yLgYZRK',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -98,7 +100,8 @@ div p {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'ZELbwwj'
+  id: 'ZELbwwj',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -123,7 +126,8 @@ div p {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'WNRQPqX'
+  id: 'WNRQPqX',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -144,7 +148,8 @@ div p {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'xxgwBxv'
+  id: 'xxgwBxv',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -424,7 +429,8 @@ div {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'VwPvRbK'
+  id: 'VwPvRbK',
+  tab: 'css,result'
 } %}
 </figure>
 

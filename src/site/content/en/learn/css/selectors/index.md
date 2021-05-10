@@ -38,7 +38,8 @@ to help solve situations like this.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'XWprGYz'
+  id: 'XWprGYz',
+  height: 250
 } %}
 
 ## The parts of a CSS rule
@@ -438,7 +439,8 @@ rather than being the next element with the same parent.
 <figure class="w-figure">
   {% Codepen {
     user: 'web-dot-dev',
-    id: 'ZELzPPX'
+    id: 'ZELzPPX',
+    height: 400
   } %}
   <figcaption class="w-figcaption">Use a subsequent selector along with a `:checked` pseudo class to create a pure CSS switch element.</figcaption>
 </figure>

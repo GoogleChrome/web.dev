@@ -364,3 +364,5 @@ because the background property is already isolated.
   user: 'web-dot-dev',
   id: 'JjELLXy'
 } %}
+
+{% Assessment 'blend-modes' %}
