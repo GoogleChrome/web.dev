@@ -8,7 +8,7 @@ description: |
   Today, we will cover new tooling features in Lighthouse, PageSpeed and DevTools to help identify how your site can improve on the Core Web Vitals.
 date: 2021-05-07
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/9pCniP0TdYM5O9PDydl4.jpeg
-alt: "A Lighthouse lighting up the sea"
+alt: "A Lighthouse illuminating the sea"
 tags:
   - blog
   - fast
@@ -70,7 +70,7 @@ layout shifts or long JavaScript tasks after page-load, the lab metrics will not
 the DevTools Performance panel, [Search Console](https://search.google.com/search-console/about),
 the [Web Vitals
 extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en),
-or RUM for a post-load view into the metrics. {% endAside %}
+or [RUM](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data) for a post-load view into the metrics. {% endAside %}
 
 <figure class="w-figure">
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/PLMoiQpi12jT7BJUvlOJ.png", alt="Web Vitals lane in the devtools performance panel", width="800", height="476" %}
@@ -190,7 +190,7 @@ key elements noted in the audit as well as click-to-zoom for a clearer view:
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/L9geZVvkATRlAVcZA6dx.png", alt="Clicking on an Element screenshot will expand it", width="800", height="525" %}
 </figure>
 
-For post-load CLS, I personally find a lot of value in _persistently_ visualizing with rectangles
+For post-load CLS, there can be value in _persistently_ visualizing with rectangles
 which elements contributed the most to CLS. This is a feature you'll find in third-party tools like
 SpeedCurve's [Core Web Vitals dashboard](https://speedcurve.com/blog/web-vitals-user-experience/)
 and which I love using [Defaced's Layout Shift GIF
