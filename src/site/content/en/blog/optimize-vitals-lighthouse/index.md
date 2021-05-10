@@ -254,7 +254,9 @@ Lighthouse highlights opportunities to preload fonts when one or more of them us
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/GzqMzIzPVS1n5H11LdHf.png", alt="Lighthouse audit suggesting preloading optional fonts", width="800", height="545" %}
 </figure>
 
-Keep in mind that great care should be taken when considering preload for fonts as other options, such as [inlining font CSS at build-time](https://nextjs.org/blog/next-10-2#automatic-webfont-optimization), may also be able to get you far without as much risk of contending with requests for other important resources.
+Keep in mind that great care should be taken when considering preload for fonts as other options, such as [inlining font CSS at build-time](https://nextjs.org/blog/next-10-2#automatic-webfont-optimization), may also be able to get you far without as much risk of contending with requests for other important resources. [Preloading Fonts and the Puzzle of Prorities](https://andydavies.me/blog/2019/02/12/preloading-fonts-and-the-puzzle-of-priorities/) by Andy Davies is also a solid write-up on the trade-offs of font preloading.
+
+{% Aside %}It can seem counterintuitive to use `font-display: optional` on critical fonts. There is a [spec issue](https://github.com/w3c/csswg-drafts/issues/5924) open for discussing if a new `font-display` value should be added for such fonts. {% endAside %}
 
 ### Avoid non-composited animations
 
