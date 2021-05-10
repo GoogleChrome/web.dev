@@ -14,7 +14,7 @@ tags:
 This course breaks down the fundamentals of CSS into digestible,
 easy to understand pieces.
 Over the next few modules,
-you'll learn how the core aspects of CSS work and how to use them effectively in your projects.
+you'll learn how the core aspects of CSS work and how to use them effectively in your projects. Use the menu pane by the "Learn CSS" logo to navigate the modules.
 
 You'll learn CSS fundamentals like the box model, cascade and specificity, flexbox, grid and z-index.
 And, along with these fundamentals,
@@ -34,4 +34,4 @@ For those new to web development overall, check out the
 [intro to HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)
 course from MDN to learn all about how to write markup and link your stylesheets.
 
-So, are you ready to learn CSS? Let's get started.
+So, are you ready to learn CSS? [Let's get started](/learn/css/box-model/).
