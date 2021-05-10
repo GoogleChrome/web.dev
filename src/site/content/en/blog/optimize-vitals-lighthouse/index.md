@@ -242,22 +242,6 @@ on the web. It's important to:
 +   Take care when placing non-sticky ads near the top of the viewport 
 +   Eliminate shifts by reserving the largest possible size for the ad slot
 
-### Preload optional fonts to prevent layout shifts
-
-Layout shifts occur when the content on a page changes dynamically, causing a "shift" of other content. The fetching and rendering of web fonts is one such example that can cause layout shifts. This can happen due to fallback fonts being swapped in with a new font, causing FOUT (flash of unstyled text) or when invisible text is shown until the font required is rendered, causing FOIT (flash of invisible text).
-
-Optimizations in Chrome can remove the first render cycle for [optional fonts that are preloaded](/preload-optional-fonts) using `<link rel=preload>`. Rendering is blocked until the custom font has finished loading or a certain amount of time has passed, meaning no FOIT.
-
-Lighthouse highlights opportunities to preload fonts when one or more of them used `font-display: optional` and were not preloaded. 
-
-<figure class="w-figure">
-  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/GzqMzIzPVS1n5H11LdHf.png", alt="Lighthouse audit suggesting preloading optional fonts", width="800", height="545" %}
-</figure>
-
-Keep in mind that great care should be taken when considering preload for fonts as other options, such as [inlining font CSS at build-time](https://nextjs.org/blog/next-10-2#automatic-webfont-optimization), may also be able to get you far without as much risk of contending with requests for other important resources. [Preloading Fonts and the Puzzle of Prorities](https://andydavies.me/blog/2019/02/12/preloading-fonts-and-the-puzzle-of-priorities/) by Andy Davies is also a solid write-up on the trade-offs of font preloading.
-
-{% Aside %}It can seem counterintuitive to use `font-display: optional` on critical fonts. There is a [spec issue](https://github.com/w3c/csswg-drafts/issues/5924) open for discussing if a new `font-display` value should be added for such fonts. {% endAside %}
-
 ### Avoid non-composited animations
 
 Animations which are non-composited can present themselves as janky on lower-end devices if heavy
