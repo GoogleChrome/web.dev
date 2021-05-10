@@ -26,6 +26,5 @@ module.exports = function () {
     home: {
       paths,
     },
-    translated: 'none',
   };
 };
