@@ -8,7 +8,7 @@ authors:
 date: 2021-05-05
 description: |
   After registering a PWA as a protocol handler, when a user clicks on a hyperlink with a specific
-  scheme such as mailto, ms-word, or web+music from a browser or a platform-specific app,
+  scheme such as mailto, bitcoin, or web+music from a browser or a platform-specific app,
   the registered PWA will open and receive the URL.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/KKxFqY5Q6ovfi3qomHcv.jpg
 alt: A metal chain used as the symbol for links.
@@ -74,7 +74,7 @@ To make this clearer, here is a concrete example of the flow:
 The present _URL protocol handler registration for PWAs_ proposal is about offering protocol handler
 registration as part of a PWA installation through its manifest. After registering a PWA as a
 protocol handler, when a user clicks on a hyperlink with a specific scheme such as `mailto` ,
-`ms-word`, or `web+music` from a browser or a platform-specific app, the registered PWA will open
+`bitcoin`, or `web+music` from a browser or a platform-specific app, the registered PWA will open
 and receive the URL. It is important to note that both the proposed manifest-based registration and
 the traditional `registerProtocolHandler()` play very similar roles in practice, while still
 allowing the possibility for complementary user-experiences:
@@ -88,7 +88,7 @@ allowing the possibility for complementary user-experiences:
 ### Use cases
 
 - In a word processing PWA, the user in a document encounters a link to a presentation like
-  `ms-powerpoint://deck2378465`. When the user clicks on the link, the presentation PWA
+  `web+presentations://deck2378465`. When the user clicks on the link, the presentation PWA
   automatically opens in the correct scope and shows the slide deck.
 - In a platform-specific chat app, the user in a chat message receives a link to a `magnet` URL.
   Upon clicking the link, an installed torrent PWA launches and starts downloading.
@@ -103,7 +103,7 @@ allowing the possibility for complementary user-experiences:
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
 | 1. Create explainer                      | [Complete][explainer]    |
-| 2. Create initial draft of specification | Not started              |
+| 2. Create initial draft of specification | [In progress][specification]              |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
 | 4. Origin trial                          | Not started              |
 | 5. Launch                                | Not started              |
@@ -163,6 +163,7 @@ are two cases:
 
 You can see a demo of URL protocol handler registration for PWAs on Glitch.
 
+1. If you have not done so before, [enable the flag](#enabling-via-chrome:flags).
 1. Go to [https://protocol-handler.glitch.me/](https://protocol-handler.glitch.me/), install the
    PWA, and reload the app after the installation. The browser has now registered the PWA as a
    handler for the `web+coffee` protocol with the operating system.
@@ -209,7 +210,8 @@ prompt the user to either keep using the default handler or select the newly reg
 On the first launch of the PWA due to an invoked protocol, the user will be presented with a
 permission dialog. This dialog will display the app name and origin of the app, and ask the user if
 the app is allowed to handle links from the protocol. If a user rejects the permission dialog, the
-protocol handler is unregistered with the operating system.
+registered protocol handler will be ignored by the operating system.
+To unregister the protocol handler, the user needs to uninstall the PWA that registered it.
 
 ## Feedback
 
@@ -244,6 +246,7 @@ and let us know where and how you're using it.
 ## Useful links
 
 - [Explainer][explainer]
+- [Spec proposal][specification]
 - [GitHub][github]
 - [ChromeStatus](https://chromestatus.com/feature/5151703944921088)
 - [Chromium bug](https://crbug.com/1019239)
@@ -252,8 +255,9 @@ and let us know where and how you're using it.
 
 ## Acknowledgements
 
-URL protocol handler registration for PWAs was specified by
+URL protocol handler registration for PWAs was implemented and specified by
 [Fabio Rocha](https://www.linkedin.com/in/fabiorochap/),
+[Diego González](https://www.linkedin.com/in/diekus/),
 [Connor Moody](https://www.linkedin.com/in/connor-d-moody/), and
 [Samuel Tang](https://www.linkedin.com/in/tangsamuel/) from the Microsoft Edge team. This article
 was reviewed by [Joe Medley](https://github.com/jpmedley). Hero image by
@@ -261,6 +265,7 @@ was reviewed by [Joe Medley](https://github.com/jpmedley). Hero image by
 
 [explainer]:
   https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/URLProtocolHandler/explainer.md
+[specification]: https://github.com/w3c/manifest/pull/972
 [github]: https://github.com/MicrosoftEdge/MSEdgeExplainers/tree/main/URLProtocolHandler
 [wicg-discourse]:
   https://discourse.wicg.io/t/proposal-url-protocol-handler-registration-for-pwas/4276
