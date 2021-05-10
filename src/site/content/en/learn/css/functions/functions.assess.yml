@@ -15,7 +15,7 @@ questions:
       - content: "`::`"
         rationale: "These characters are for pseudo-elements in CSS."
       - content: "`:`"
-        rationale: "These characters are for pseudo-classes in CSS"
+        rationale: "These characters are for pseudo-classes in CSS."
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "0"
