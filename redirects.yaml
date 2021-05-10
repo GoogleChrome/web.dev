@@ -261,3 +261,8 @@ redirects:
   destination: /learn/css
 - source: /learnCSS
   destination: /learn/css
+
+# Changes for upcoming video...
+- source: /whats-new-web-vitals-2021
+  destination: /vitals
+  type: 302

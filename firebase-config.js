@@ -7,11 +7,12 @@ const {redirects: parsedRedirects} = yaml.safeLoad(redirectsYaml);
 const firebaseJson = require('./firebase.incl.json');
 firebaseJson.hosting.redirects = parsedRedirects.reduce(
   (redirects, redirect) => {
+    const type = [301, 302].includes(redirect.type) ? redirect.type : 301;
     if (redirect.source && redirect.destination) {
       redirects.push({
         source: redirect.source,
         destination: redirect.destination,
-        type: 301,
+        type,
       });
     }
     return redirects;
