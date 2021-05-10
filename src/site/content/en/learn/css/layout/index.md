@@ -1,6 +1,11 @@
 ---
 title: Layout
-description:
+description: >
+  An overview of the various layout methods you have to choose from when building a component or page layout.
+audio:
+  title: 'The CSS Podcast - 009: Layout'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_009_v1.1.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-20
@@ -80,8 +85,8 @@ Any block level margin and padding will be ignored by the surrounding elements.
 ```
 
 Block elements don't sit alongside each other.
-They create a new line for themselves and unless changed by other CSS code.
-A block element will expand to the size of the inline dimension,
+They create a new line for themselves. Unless changed by other CSS code,
+a block element will expand to the size of the inline dimension,
 therefore spanning the full width in a horizontal writing mode.
 The margin on all sides of a block element will be respected.
 
@@ -123,7 +128,9 @@ and stretch them in the block direction, so they're all the same height.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'rNjxmor'
+  id: 'rNjxmor',
+  tab: 'css,result',
+  height: 300
 } %}
 
 
@@ -210,7 +217,8 @@ from the first column, then span to the third row, from the first row.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'YzNwrwB'
+  id: 'YzNwrwB',
+  height: 650
 } %}
 
 
@@ -242,7 +250,9 @@ p span {
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'PoWZJKw'
+  id: 'PoWZJKw',
+  height: 300,
+  tab: 'css,result'
 } %}
 
 
@@ -266,7 +276,8 @@ You can instruct an element to float `left`, `right` or `inherit`.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'VwPaLMg'
+  id: 'VwPaLMg',
+  height: 300
 } %}
 
 
@@ -392,7 +403,8 @@ it stays anchored to the `top`, `right`, `bottom` and `left` values that you set
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'NWdNGZB'
+  id: 'NWdNGZB',
+  height: 600
 } %}
 
 

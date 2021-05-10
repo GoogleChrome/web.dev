@@ -149,3 +149,5 @@ Creating a focus state that has contrast with an element's default state is incr
 as they don't show up in Windows High Contrast Mode
 - Only set a positive value for `tabindex` on an HTML element if you absolutely have to
 - Make sure the focus state is very clear vs the default state
+
+{% Assessment 'focus' %}

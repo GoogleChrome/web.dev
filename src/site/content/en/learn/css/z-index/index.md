@@ -3,6 +3,10 @@ title: Z-index and stacking contexts
 description: >
   In this module find out how to control the order in which things layer on top of each other,
   by using z-index and the stacking context.
+audio:
+  title: 'The CSS Podcast - 019: z-index and stacking contexts'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_019_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-05-03
@@ -91,7 +95,7 @@ the `.child` element will sit behind it.
 } %}
 
 Add the following CSS to `.my-element`,
-and the `.child` element will not sit behind it anymore.
+and the `.child` element will not sit behind it.
 
 ```css/1-2
 .my-element {
@@ -144,8 +148,8 @@ You can put stuff behind the `<body>` until you create a stacking context with i
 
 You don't need to apply `z-index` and `position` to create a new
 [stacking context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context).
-You can create a new stacking context by adding a value for properties such as `opacity`,
-`will-change` and `transform`.
+You can create a new stacking context by adding a value for properties which create a new composite layer
+such as `opacity`, `will-change` and `transform`.
 You can
 [see a full list of properties here](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context).
 
@@ -172,3 +176,5 @@ You can also create a stacking context by adding a `filter` and setting `backfac
 - [Forcing layers](https://surma.dev/things/forcing-layers/)
 - [Animations Guide: Force layer creation](https://web.dev/animations-guide/#force)
 - [Understanding z-index](https://ishadeed.com/article/understanding-z-index/)
+
+{% Assessment 'z-index' %}

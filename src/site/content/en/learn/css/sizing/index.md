@@ -1,14 +1,18 @@
 ---
 title: Sizing Units
-description:
+description: >
+  In this module find out how to size elements using CSS,
+  working with the flexible medium of the web.
+audio:
+  title: 'The CSS Podcast - 008: Sizing Units'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_008_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-13
 tags:
   - css
 ---
-
-# Sizing
 
 The web is a responsive medium,
 but sometimes you want to control its dimensions to improve the overall interface quality.
@@ -18,7 +22,8 @@ How would you do that in a flexible medium like the web?
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'bGgEGxj'
+  id: 'bGgEGxj',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -48,7 +53,8 @@ p {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'yLgYZRK'
+  id: 'yLgYZRK',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -94,7 +100,8 @@ div p {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'ZELbwwj'
+  id: 'ZELbwwj',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -119,7 +126,8 @@ div p {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'WNRQPqX'
+  id: 'WNRQPqX',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -140,7 +148,8 @@ div p {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'xxgwBxv'
+  id: 'xxgwBxv',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -420,7 +429,8 @@ div {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'VwPvRbK'
+  id: 'VwPvRbK',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -449,6 +459,8 @@ In the previous example the value of `min-resolution` is `192dpi`.
 The `dpi` unit stands for **dots per inch**.
 A useful context for this is detecting very high resolution screens,
 such as Retina displays in a media query and serving up a higher resolution image.
+
+{% Assessment 'sizing' %}
 
 ## Resources
 

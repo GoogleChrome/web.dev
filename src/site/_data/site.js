@@ -37,7 +37,7 @@ module.exports = {
   areCoursesEnabled: false,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
-  gitlocalize: 'https://gitlocalize.com/repo/5395/',
+  gitlocalize: 'https://gitlocalize.com/repo/6062/',
   analytics: {
     ids: {
       prod: 'UA-126406676-2',

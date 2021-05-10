@@ -27,5 +27,6 @@ module.exports = ({hero, alt, heroPosition, heroFit = 'cover'}) => {
     width: '1600',
     sizes: '100vw',
     class: className,
+    decoding: 'auto',
   });
 };

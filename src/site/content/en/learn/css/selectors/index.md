@@ -1,12 +1,17 @@
 ---
 title: Selectors
-description:
+description: >
+  To apply CSS to an element you need to select it.
+  CSS provides you with a number of different ways to do this,
+  and you can explore them in this module.
+audio:
+  title: 'The CSS Podcast - 002: Selectors'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_002_v2.0_FINAL.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-03-29
 ---
-
-# Selectors
 
 If you've got some text that you only want to be larger and red if it's the first paragraph of an article,
 how do you do that?
@@ -33,7 +38,8 @@ to help solve situations like this.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'XWprGYz'
+  id: 'XWprGYz',
+  height: 250
 } %}
 
 ## The parts of a CSS rule
@@ -278,9 +284,7 @@ p:nth-child(even) {
 }
 ```
 
-For more on pseudo-classes, check out lesson 15.
-
-@@TO DO link up to lesson 15
+Find out more in the [pseudo-classes module](/learn/css/pseudo-classes).
 
 ### Pseudo-element
 
@@ -327,9 +331,7 @@ You can also use `::selection` to style the content that has been highlighted by
 }
 ```
 
-For more on pseudo-elements, check out lesson 14.
-
-@@TO DO link up to lesson 14
+Learn more in the [module on pseudo-elements](learn/css/pseudo-elements).
 
 {% Assessment 'pseudo-selectors' %}
 
@@ -342,7 +344,8 @@ This is where complex selectors step in to help.
 It's worth remembering at this point that although the following selectors give us more power,
 we can only **cascade downwards**, selecting child elements.
 We are not able to target upwards and select a parent element.
-We cover what the cascade is and how it works in a later lesson.
+We cover what the cascade is and how it works
+[in a later lesson](/learn/css/the-cascade).
 
 ### Combinators
 
@@ -436,7 +439,8 @@ rather than being the next element with the same parent.
 <figure class="w-figure">
   {% Codepen {
     user: 'web-dot-dev',
-    id: 'ZELzPPX'
+    id: 'ZELzPPX',
+    height: 400
   } %}
   <figcaption class="w-figcaption">Use a subsequent selector along with a `:checked` pseudo class to create a pure CSS switch element.</figcaption>
 </figure>
@@ -484,9 +488,7 @@ a.my-class {
 
 This wouldn't apply a red color to all links
 and it would also only apply the red color to `.my-class` **if** it was on an `<a>` element.
-For more on specificity, see module 3.
-
-@@TO DO link
+For more on this, see the [specificity module](/learn/css/specificity).
 
 {% Assessment 'complex-selectors' %}
 

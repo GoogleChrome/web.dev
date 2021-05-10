@@ -9,6 +9,7 @@ pretranslate:
     - "codelabs"
     - "tags"
     - "authors"
+    - "offline"
 
     ignore_patterns:
      - !ruby/regexp /{%\s?([a-zA-Z0-9\.\-\?\'\"\,\!\s\/]*)\s?%}/
