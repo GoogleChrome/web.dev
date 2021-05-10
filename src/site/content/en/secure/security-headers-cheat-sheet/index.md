@@ -103,11 +103,17 @@ website allows a malicious script to be injected and executed.
 `Content-Security-Policy` provides an added layer to mitigate XSS attacks by
 restricting resources that can be loaded to the page.
 
-{% Label %}Example usage{% endLabel%}
+We recommend that you use strict CSP and there are two approaches:
+
+* If you render your HTML pages on the server, use **a nonce-based strict CSP**.
+* If your HTML has to be served statically or cached, for example if it's a
+  single-page application, use **a hash-based strict CSP**.
+
+{% Label %}Example usage: A nonce-based CSP{% endLabel%}
 
 ```http
 Content-Security-Policy:
-  script-src 'sha256-{HASH1}' 'sha256-{HASH2}' 'strict-dynamic' https: 'unsafe-inline';
+  script-src 'nonce-{RANDOM1}' 'strict-dynamic' https: 'unsafe-inline';
   object-src 'none';
   base-uri 'none';
 ```
@@ -273,6 +279,10 @@ if (window.trustedTypes && trustedTypes.createPolicy) {
 ```
 
 ```javascript
+// Assignment of raw strings are blocked by Trusted Types.
+el.innerHTML = 'some string'; // This throws an exception.
+
+// Assignment of Trusted Types is accepted safely.
 const escaped = policy.createHTML('<img src=x onerror=alert(1)>');
 el.innerHTML = escaped;  // '&lt;img src=x onerror=alert(1)&gt;'
 ```
@@ -295,6 +305,20 @@ Learn more how to use Trusted Types
 
     Currently `'script'` is the only acceptable value for
     `require-trusted-types-for` directive.
+
+    Of course, Trusted Types can be combined with other CSP directives:
+
+    {% Label %}
+    When a nonce-based CSP in the previous section is merged with Trusted Types
+    {% endLabel %}
+
+    ```http
+    Content-Security-Policy:
+      script-src 'nonce-{RANDOM1}' 'strict-dynamic' https: 'unsafe-inline';
+      object-src 'none';
+      base-uri 'none';
+      require-trusted-types-for 'script';
+    ```
 
     {% Aside %}
 
@@ -332,9 +356,13 @@ Learn more how to use Trusted Types
     {% Label %}Use the policy when writing data to the DOM:{% endLabel %}
 
     ```javascript
+    // Assignment of raw strings are blocked by Trusted Types.
+    el.innerHTML = 'some string'; // This throws an exception.
+
+    // Assignment of Trusted Types is accepted safely.
     const escaped = policy.createHTML('<img src=x onerror=alert(1)>');
     el.innerHTML = escaped;  // '&lt;img src=x onerror=alert(1)&gt;'
-    ```
+    ````
 
     With `require-trusted-types-for: 'script'`, using a trusted type is a
     requirement. Using any dangerous DOM API with a string will result in an
