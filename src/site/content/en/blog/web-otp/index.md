@@ -385,7 +385,7 @@ You may also fork it and create your version:
   allow: []
 } %}
 
-## Use the WebOTP from a cross-origin iframe
+## Use WebOTP from a cross-origin iframe
 
 Entering an SMS OTP to a cross-origin iframe is typically used for payment
 confirmation, especially with 3D Secure. Having the common format to support
@@ -423,14 +423,14 @@ To use WebOTP API from within a cross-origin iframe, you need to do two things:
   </figcaption>
 </figure>
 
-You can try the demo yourself at
+You can try the demo at
 [https://web-otp-iframe-demo.stackblitz.io](https://web-otp-iframe-demo.stackblitz.io).
 
 ### Annotate bound-origins to the SMS text message
 
 When WebOTP API is called from within an iframe, the SMS text message must
 include the top-frame origin preceded by `@` followed by the OTP preceded by `#`
-followed by the iframe origin preceded by `@`.
+and the iframe origin preceded by `@`.
 
 ```text
 @shop.example #123456 @bank.exmple
