@@ -107,7 +107,7 @@ scrolled into view.
   muted="true"
 %}
 
-### Support the user’s color scheme preference
+### Support the user's color scheme preference
 
 Use `color-scheme` as a `<meta>` tag to signal to the browser that your page
 wants both the light and dark provided user-agent styles. It's a free dark mode
