@@ -136,6 +136,9 @@ JavaScript bundle needs to be loaded before the image is discoverable.
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/K9EPBZdSFoyXVDHoDjTx.png", alt="Preload the largest contentful paint image", width="800", height="489" %}
 </figure>
 
+{% Aside %} **Exercise great care when choosing to use preload**. Early network bandwidth is a scarce resource and using preload can come at the cost of another resource. To use preload effectively, make sure resources are being ordered correctly to avoid regressing other metrics when other resources in the page are also considered important (e.g. critical CSS, JS, fonts).
+{% endAside %}
+
 Lighthouse 6.5 and above now suggests opportunities to apply this optimization.
 
 There are a few common questions we are asked about preloading LCP images that may also be worth
