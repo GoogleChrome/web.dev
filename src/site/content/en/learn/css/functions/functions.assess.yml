@@ -29,7 +29,7 @@ questions:
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "0"
-    stem: Many CSS functions can nest within each other.
+    stem: "A `calc()` function can be placed inside of another `calc()` like `font-size: calc(10px + calc(5px * 3));`"
     options:
       - content: "True"
         rationale: "a"
