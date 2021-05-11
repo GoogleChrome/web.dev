@@ -65,7 +65,12 @@ function mapPagesToTree(collection, map) {
   for (const item of collection) {
     const ref = map.get(item.url);
     if (ref) {
-      ref.page = {...item};
+      ref.page = {
+        data: {
+          title: item.data.title,
+          description: item.data.description,
+        },
+      };
     }
   }
 }
