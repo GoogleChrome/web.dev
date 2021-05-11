@@ -23,7 +23,7 @@ if (process.env.ELEVENTY_ENV === 'prod') {
   const hashListJson = fs.readFileSync('dist/script-hash-list.json', 'utf-8');
   const hashList = JSON.parse(hashListJson);
   firebaseJson.hosting.headers[0].headers.push({
-    key: 'Content-Security-Policy-Report-Only',
+    key: 'Content-Security-Policy',
     value:
       `script-src 'strict-dynamic' ${hashList.join(' ')} ` +
       `'unsafe-inline' http: https:; object-src 'none'; base-uri 'self'; ` +
