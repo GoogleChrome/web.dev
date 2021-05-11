@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Optimizing Core Web Vitals using Lighthouse
+title: Optimizing Web Vitals using Lighthouse
 subhead: Finding opportunities to improve user-experience with Chrome's web tooling.
 authors:
   - addyosmani
 description: |
-  Today, we will cover new tooling features in Lighthouse, PageSpeed and DevTools to help identify how your site can improve on the Core Web Vitals.
+  Today, we will cover new tooling features in Lighthouse, PageSpeed and DevTools to help identify how your site can improve on the Web Vitals.
 date: 2021-05-10
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/6GPqQDYxZnVq8qF6DJ02.jpeg
 alt: "A Lighthouse illuminating the sea"
@@ -17,7 +17,7 @@ tags:
 ---
 
 Today, we'll cover new tooling features in Lighthouse, PageSpeed and DevTools to help identify
-how your site can improve on the Core Web Vitals.
+how your site can improve on the [Web Vitals](/vitals).
 
 As a refresher on the tools, [Lighthouse](https://github.com/GoogleChrome/lighthouse) is an
 open-source, automated tool for improving the quality of web pages. You can find it in the [Chrome
@@ -55,7 +55,7 @@ the [Core Web Vitals metrics](/vitals/) including [Largest Contentful Paint](/lc
 Layout Shift](/cls/) and [Total Blocking Time](/tbt/) (a lab proxy for [First Input Delay](/fid/)).
 These metrics reflect loading, layout stability, and interaction readiness. Other metrics such as
 [First Contentful Paint](/first-contentful-paint/) highlighted in the [future of
-CWV](https://developer.chrome.com/devsummit/sessions/future-of-core-web-vitals/) are there too.
+Core Web Vitals (CWV)](https://developer.chrome.com/devsummit/sessions/future-of-core-web-vitals/) are there too.
 
 The "Metrics" section of the Lighthouse report includes lab versions of these metrics. You can use
 this as a summary view of what aspects of user-experience require your attention. 
@@ -85,17 +85,7 @@ limitation and are a valuable complement to lab data as they reflect the experie
 have. Field data can't offer the kinds of diagnostic information you get in the lab, so the two go
 hand in hand.
 
-<figure class="w-figure">
-  {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/iywvhTMqrgzG1k1v5vC1.png", alt="RUM vendor support for the core web vitals", width="800", height="518" %}
-</figure>
-
-Several third-party services offer dashboards for field and RUM data, including [SpeedCurve
-(LUX)](https://speedcurve.com/blog/web-vitals-user-experience/), [Vercel
-Analytics](https://vercel.com/docs/next.js/analytics), [Akamai
-mPulse](https://www.akamai.com/us/en/products/performance/mpulse-real-user-monitoring.jsp) and
-[Treo.sh](https://treo.sh/).
-
-## Identify where you can improve on CWV
+## Identify where you can improve on Web Vitals
 
 ### Identify the Largest Contentful Paint element
 
