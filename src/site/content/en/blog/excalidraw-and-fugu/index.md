@@ -442,7 +442,7 @@ of which, I asked lipis one last question regarding what he thinks is missing fr
 that holds back Excalidraw?
 
 > The File System Access API is great, but you know what? Most files that I care about these days
-> live in my Dropbox or Google Drive, not on my harddisk. I wish the File System Access API would
+> live in my Dropbox or Google Drive, not on my hard disk. I wish the File System Access API would
 > include an abstraction layer for remote file systems providers like Dropbox or Google to integrate
 > with and that developers could code against. Users could then relax and know their files are safe
 > with the cloud provider they trust.
