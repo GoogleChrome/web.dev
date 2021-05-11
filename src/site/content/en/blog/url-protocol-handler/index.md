@@ -5,7 +5,7 @@ subhead: |
   Let installed PWAs handle links that use a specific protocol for a more integrated experience.
 authors:
   - thomassteiner
-date: 2021-05-10
+date: 2021-05-11
 description: |
   After registering a PWA as a protocol handler, when a user clicks on a hyperlink with a specific
   scheme such as mailto, bitcoin, or web+music from a browser or a platform-specific app,
