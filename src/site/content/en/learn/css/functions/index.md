@@ -122,7 +122,7 @@ you pass one or more arguments and use them on the **right side** of your CSS de
 
 ```css
 a::after {
-  content: attr('href')
+  content: attr('href');
 }
 ```
 
@@ -421,3 +421,5 @@ apply [gradients](/learn/css/gradients) to them and use graphical [filters](/lea
 To keep this module as concise as possible,
 they are covered in the linked modules.
 They all follow a similar structure to the functions demonstrated in this module.
+
+{% Assessment 'functions' %}
