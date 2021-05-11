@@ -46,7 +46,7 @@
     "country": "US",
     "homepage": "https://felix-arntz.me",
     "twitter": "felixarntz",
-    "description": {
+    "descriptions": {
       "en": "Developer Programs Engineer at Google, contributing to the CMS ecosystem"
     },
     "image": "image/admin/rAUzMzFAA67M36n66uVT.jpg"
@@ -1329,7 +1329,7 @@
       "name": "Google",
       "unit": "Developer Relations"
     },
-    "description": {
+    "descriptions": {
       "en": "Developer Advocate for Chrome and web"
     },
     "country": "DE",
@@ -1645,7 +1645,7 @@
     "org": {
       "name": "Google"
     },
-    "description": {
+    "descriptions": {
       "en": "User Experience Engineer"
     },
     "country": "NL",
@@ -1724,7 +1724,7 @@
     "twitter": "RReverser",
     "github": "RReverser",
     "homepage": "https://rreverser.com/",
-    "description": {
+    "descriptions": {
       "en": "WebAssembly Advocadoer"
     },
     "image": "image/admin/Ma3ckXmLV7aj1rVgVT1I.jpg"
@@ -1736,7 +1736,7 @@
     },
     "twitter": "Mfreed777",
     "github": "mfreed7",
-    "description": {
+    "descriptions": {
       "en": "Developer on the Chrome team"
     },
     "image": "image/admin/t7E3inN3orEPpDUXSkXR.jpg"
@@ -1770,7 +1770,7 @@
       "unit": "Chrome Browser Accessibility"
     },
     "country": "US",
-    "description": {
+    "descriptions": {
       "en": "Software Engineer"
     },
     "twitter": "aaronlev",
@@ -1809,7 +1809,7 @@
       "name": "Google",
       "unit": "Chrome Browser"
     },
-    "description": {
+    "descriptions": {
       "en": "Chrome Software Engineer"
     },
     "image": "image/admin/T5PegmVyKW3nxjuHZF14.jpg"
@@ -1843,7 +1843,7 @@
     },
     "twitter": "reillyeon",
     "github": "reillyeon",
-    "description": {
+    "descriptions": {
       "en": "Software Engineer on Google Chrome focusing on hardware APIs"
     },
     "image": "image/admin/C7kO2T8Q8jSZxU9xj3AC.jpg"
@@ -1895,7 +1895,7 @@
       "given": "Sören",
       "family": "Balko"
     },
-    "description": {
+    "descriptions": {
       "en": "CTO at Clipchamp"
     },
     "linkedin": "https://www.linkedin.com/in/sbalko/",
