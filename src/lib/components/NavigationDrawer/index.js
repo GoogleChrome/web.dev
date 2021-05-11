@@ -91,9 +91,9 @@ export class NavigationDrawer extends BaseStateElement {
     this.drawerContainer.addEventListener('click', this.onBlockClicks);
     this.closeBtn.addEventListener('click', closeNavigationDrawer);
     this.addEventListener('click', closeNavigationDrawer);
-    this.addEventListener('touchstart', this.onTouchStart, {passive: true});
-    this.addEventListener('touchmove', this.onTouchMove, {passive: true});
-    this.addEventListener('touchend', this.onTouchEnd);
+    // this.addEventListener('touchstart', this.onTouchStart, {passive: true});
+    // this.addEventListener('touchmove', this.onTouchMove, {passive: true});
+    // this.addEventListener('touchend', this.onTouchEnd);
   }
 
   onStateChanged({isNavigationDrawerOpen, currentUrl}) {
