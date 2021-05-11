@@ -7,7 +7,7 @@ subhead: >
 description: >
   The new PWA also has an average loading time 30% faster than the old site
   and has improved bounce rate 12% and session depth 18%.
-date: 2021-04-21
+date: 2021-05-11
 hero: image/BrQidfK9jaQyIHwdw91aVpkPiib2/Y0EbySRTUBgpnegXvg4K.jpg
 thumbnail: image/BrQidfK9jaQyIHwdw91aVpkPiib2/IXZcW61ju9WcwmmTbhZT.jpg
 alt: A group of smartphones in a circle.
