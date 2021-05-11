@@ -370,6 +370,26 @@ Your OTP is: 123456.
 @www.example.com #123456
 ```
 
+Here's a list of typical malformed SMSes:
+
+|Example malformed SMS Text|Why this won't work|
+|--------------------------|-------------------|
+|`Here is your code for @example.com #123456`|`@` is expected to be the first character of the last line.|
+|`Your code for @example.com is #123456`|`@` is expected to be the first character of the last line.|
+|<br/>`@example.com\t#123456`|A single space is expected between `@host` and `#code`.|
+|`Your verification code 123456`<br/><br/>`@example.com  #123456`|A single space is expected between `@host` and `#code`.|
+|`@ftp://example.com #123`|URL scheme cannot be included.|
+|`@https://example.com #123`|URL scheme cannot be included.|
+|`@example.com:8080 #123`|Port cannot be included.|
+|`@example.com/foobar #123`|Path cannot be included.|
+|`@example .com #123456`|No whitespece in domain.|
+|`@domain-forbiden-chars-#%/:<>?@[] #123456`|No [forbidden chars](https://url.spec.whatwg.org/#forbidden-host-code-point) in domain.|
+|`@example.com #123456`<br/><br/>`Mambo Jumbo`|`@host` and `#code` are expected to be the last line.|
+|`@example.com #123456`<br/><br/>`App hash #oudf08lkjsdf834`|`@host` and `#code` are expected to be the last line.|
+|`@example.com 123456`|Expect `#`.|
+|`example.com #123456`|Expect `@`.|
+|`Hi mom, did you receive my last text`|Expect `@` and `#`.|
+
 ## Demos
 
 Try various messages with the demo:
@@ -492,21 +512,7 @@ There are a couple of caveats when testing the API:
   not work, try installing and using Chrome on your personal profile instead
   (i.e. the same profile in which you receive SMS messages).
 
-Having those in mind, here's a list of typical malformed SMSes:
-
-|Example malformed SMS Text|Why this won't work|
-|--------------------------|-------------------|
-|`@ftp://example.com #123`|URL scheme cannot be included|
-|`@https://example.com #123`|URL scheme cannot be included|
-|`@example.com:8080 #123`|Port cannot be included|
-|`@example.com/foobar #123`|Path cannot be included|
-|`@example .com #123456`|No whitespece in domain|
-|`@domain-forbiden-chars-#%/:<>?@[] #123456`|No [forbidden chars](https://url.spec.whatwg.org/#forbidden-host-code-point) in domain|
-|`@example.com #123456`<br/><br/>`Mambo Jumbo`|Per spec `@host #code` is expected to be the last line|
-|`@example.com #123456`<br/><br/>`App hash #oudf08lkjsdf834`|Per spec `@host #code` is expected to be the last line|
-|`@example.com 123456`|Expect `#`|
-|`example.com #123456`|Expect `@`|
-|`Hi mom, did you receive my last text`|Expect `@` and `#`|
+Check back at [the format](#format) to see if your SMS is correctly formatted.
 
 ### Is this API compatible between different browsers?
 
