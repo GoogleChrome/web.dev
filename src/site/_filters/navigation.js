@@ -65,6 +65,10 @@ function mapPagesToTree(collection, map) {
   for (const item of collection) {
     const ref = map.get(item.url);
     if (ref) {
+      // Copy the page data that we actually need.
+      // Don't clone the entire data object or you can easily run into
+      // circular reference issues if you try to use this data inside of
+      // page content.
       ref.page = {
         data: {
           title: item.data.title,
