@@ -15,8 +15,6 @@ jobs:
         run: npm ci
 
       - name: Build site
-        env:
-          ELEVENTY_ENV: prod
         run: npm run build
 
       - name: Deploy site to Firebase
@@ -25,3 +23,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEB_DEV_PRODUCTION_1 }}'
           projectId: web-dev-production-1
+          channelId: 'pr-${{github.event.number}}'
