@@ -4,7 +4,7 @@ subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
-updated: 2021-05-12
+updated: 2021-05-11
 hero: image/admin/iVHsQYbBj8qNYZeSZKwK.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
@@ -69,72 +69,6 @@ the [Web Authentication
 API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API) to
 establish new sessions for these users.
 {% endAside %}
-
-## Current status
-
-The table below explains the current status of the WebOTP API.
-
-<table>
-<tr>
-<th markdown="block">
-Step
-</th>
-<th markdown="block">
-Status
-</th>
-</tr>
-<tr>
-<td markdown="block">
-1. Create explainer
-</td>
-<td markdown="block">
-<a href="https://github.com/WICG/WebOTP/blob/master/explainer.md">Complete</a>
-</td>
-</tr>
-<tr>
-<td markdown="block">
-2. Create initial draft of specification
-</td>
-<td markdown="block">
-<a href="https://wicg.github.io/WebOTP/">Complete</a>
-</td>
-</tr>
-<tr>
-<td markdown="block">
-3. Gather feedback and iterate on design
-</td>
-<td markdown="block">
-Complete
-</td>
-</tr>
-<tr>
-<td markdown="block">
-4. Origin trial
-</td>
-<td markdown="block">
-Complete
-</td>
-</tr>
-<tr>
-<td markdown="block">
-<strong>5. Launch</strong>
-</td>
-<td markdown="block">
-Chrome 84
-</td>
-</tr>
-</table>
-
-## Changes from earlier versions
-
-Early versions of this API were called SMS Receiver. If you are famillar with
-that version of the API be aware of the changes made to it. Improvements from
-SMS Receiver API include:
-
-* The SMS message format is now aligned with WebKit's.
-* The web page only receives an OTP code regardless of whatever else is in the
-  message.
-* The browser's application hash code is no longer required in the message.
 
 ## See it in action
 
@@ -370,25 +304,25 @@ Your OTP is: 123456.
 @www.example.com #123456
 ```
 
-Here's a list of typical malformed SMSes:
+Here are bad examples:
 
 |Example malformed SMS Text|Why this won't work|
 |--------------------------|-------------------|
 |`Here is your code for @example.com #123456`|`@` is expected to be the first character of the last line.|
 |`Your code for @example.com is #123456`|`@` is expected to be the first character of the last line.|
-|<br/>`@example.com\t#123456`|A single space is expected between `@host` and `#code`.|
-|`Your verification code 123456`<br/><br/>`@example.com  #123456`|A single space is expected between `@host` and `#code`.|
-|`@ftp://example.com #123`|URL scheme cannot be included.|
-|`@https://example.com #123`|URL scheme cannot be included.|
-|`@example.com:8080 #123`|Port cannot be included.|
-|`@example.com/foobar #123`|Path cannot be included.|
-|`@example .com #123456`|No whitespece in domain.|
-|`@domain-forbiden-chars-#%/:<>?@[] #123456`|No [forbidden chars](https://url.spec.whatwg.org/#forbidden-host-code-point) in domain.|
+|`Your verification code is 123456`<br/><br/>`@example.com\t#123456`|A single space is expected between `@host` and `#code`.|
+|`Your verification code is 123456`<br/><br/>`@example.com`<code>&nbsp;&nbsp;</code>`#123456`|A single space is expected between `@host` and `#code`.|
+|`Your verification code is 123456`<br/><br/>`@ftp://example.com #123456`|URL scheme cannot be included.|
+|`Your verification code is 123456`<br/><br/>`@https://example.com #123456`|URL scheme cannot be included.|
+|`Your verification code is 123456`<br/><br/>`@example.com:8080 #123456`|Port cannot be included.|
+|`Your verification code is 123456`<br/><br/>`@example.com/foobar #123456`|Path cannot be included.|
+|`Your verification code is 123456`<br/><br/>`@example .com #123456`|No whitespece in domain.|
+|`Your verification code is 123456`<br/><br/>`@domain-forbiden-chars-#%/:<>?@[] #123456`|No [forbidden chars](https://url.spec.whatwg.org/#forbidden-host-code-point) in domain.|
 |`@example.com #123456`<br/><br/>`Mambo Jumbo`|`@host` and `#code` are expected to be the last line.|
 |`@example.com #123456`<br/><br/>`App hash #oudf08lkjsdf834`|`@host` and `#code` are expected to be the last line.|
-|`@example.com 123456`|Expect `#`.|
-|`example.com #123456`|Expect `@`.|
-|`Hi mom, did you receive my last text`|Expect `@` and `#`.|
+|`Your verification code is 123456`<br/><br/>`@example.com 123456`|Missing `#`.|
+|`Your verification code is 123456`<br/><br/>`example.com #123456`|Missing `@`.|
+|`Hi mom, did you receive my last text`|Missing `@` and `#`.|
 
 ## Demos
 
@@ -450,9 +384,11 @@ You can try the demo at
 
 When WebOTP API is called from within an iframe, the SMS text message must
 include the top-frame origin preceded by `@` followed by the OTP preceded by `#`
-and the iframe origin preceded by `@`.
+and the iframe origin preceded by `@` at the last line.
 
 ```text
+Your verification code is 123456
+
 @shop.example #123456 @bank.exmple
 ```
 
