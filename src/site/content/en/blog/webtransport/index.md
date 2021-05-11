@@ -20,6 +20,18 @@ feedback:
   - api
 ---
 
+{% Aside 'caution' %}
+This proposal continues to undergo changes during the origin trial period. There 
+may be a divergence between the browser implementation and the information in this 
+article.
+
+For the latest on this evolving proposal, please read refer to the
+[editor's draft of WebTransport](https://w3c.github.io/webtransport/).
+
+Once the proposal stabilizes, we will update this article and associated code
+samples with up to date information.
+{% endAside %}
+
 ## Background
 
 ### What's WebTransport?
@@ -136,14 +148,14 @@ Both types of streams use <code>[Uint8Array](https://developer.mozilla.org/en-US
 
 ```js
 // Send two datagrams to the server.
-const writer = transport.writeable.getWriter();
+const writer = transport.datagrams.writable.getWriter();
 const data1 = new Uint8Array([65, 66, 67]);
 const data2 = new Uint8Array([68, 69, 70]);
 writer.write(data1);
 writer.write(data2);
 
 // Read datagrams from the server.
-const reader = transport.readable.getReader();
+const reader = transport.datagrams.readable.getReader();
 while (true) {
   const {value, done} = await reader.read();
   if (done) {
