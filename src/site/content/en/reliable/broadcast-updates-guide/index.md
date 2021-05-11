@@ -23,9 +23,7 @@ tabs it controls to inform of a certain event. Examples include:
   content available"**.
 
 <figure class="w-figure">
-  <img src="broadcast-updates-diagram.png"
-       width="550"
-       alt="Diagram showing a service worker communicating with the page to send an update.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/RpZYhHYGpPY9e3AjxuaQ.png", alt="Diagram showing a service worker communicating with the page to send an update.", width="800", height="462" %}
 </figure>
 
 We'll call these types of use cases where the service worker doesn't need to receive a message from
@@ -50,9 +48,7 @@ important service worker lifecycle moments from the page ("installed", "controll
 banner, so that they can refresh the PWA and access the latest features:
 
 <figure class="w-figure">
-  <img src="tinder-screenshot.png"
-       width="650"
-       alt="A screenshot of Tinder's webapp 'Update Available' functionality.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/I8TQ9quakuxJc4l6aNvW.png", alt="A screenshot of Tinder's webapp 'Update Available' functionality.", width="800", height="451" %}
   <figcaption class="w-figcaption">In the Tinder PWA, the service worker tells the page that a new version is ready, and the page shows users a "Update Available" banner.</figcaption>
 </figure>
 
@@ -63,9 +59,7 @@ assets to make it work offline, it sends a message to the page to show a "Ready 
 toast, letting the user know about the feature:
 
 <figure class="w-figure">
-  <img src="squoosh-screenshot.png"
-       width="550"
-       alt="A screenshot of Squoosh webapp 'Ready to work offline' functionality.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tRM8WvCI0aEdVGWGDpLS.png", alt="A screenshot of Squoosh webapp 'Ready to work offline' functionality.", width="800", height="553" %}
   <figcaption class="w-figcaption">In the Squoosh PWA the service worker broadcasts an update to the page when cache is ready, and the page displays "Ready to work offline" toast.
 </figcaption>
 </figure>

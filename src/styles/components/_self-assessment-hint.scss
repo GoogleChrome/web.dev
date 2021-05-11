@@ -26,13 +26,9 @@ $BORDER_COLOR: $GREY_300;
   padding: 1.125em #{$CHEVRON_SIZE + $CHEVRON_MARGIN + 4px} 1.125em 0;
   position: relative;
 
-  // scss-lint thinks this is a pseudo class instead of a psuedo element
-  // and complains about the two colons.
-  // scss-lint:disable all
-  &::-webkit-details-marker {
+  &::marker {
     display: none;
   }
-  // scss-lint:enable all
 
   &:focus {
     outline: none;

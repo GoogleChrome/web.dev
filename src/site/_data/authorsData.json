@@ -51,6 +51,21 @@
     },
     "image": "image/admin/rAUzMzFAA67M36n66uVT.jpg"
   },
+  "amandabaker": {
+    "name": {
+      "given": "Amanda",
+      "family": "Baker"
+    },
+    "org": {
+      "name": "Microsoft",
+      "unit": "Edge"
+    },
+    "github": "amandabaker",
+    "descriptions": {
+      "en": "Software Engineer on the Microsoft Edge team"
+    },
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/nr8opTnZn8ZFfrXzfGkV.png"
+  },
   "kaycebasques": {
     "name": {
       "given": "Kayce",
@@ -61,6 +76,7 @@
       "unit": "Developer Relations"
     },
     "country": "US",
+    "homepage": "https://kayce.basqu.es/",
     "twitter": "kaycebasques",
     "github": "kaycebasques",
     "glitch": "kaycebasques",
@@ -146,6 +162,9 @@
       "unit": "Developer Relations"
     },
     "country": "US",
+    "descriptions": {
+      "en": "Googler working on web stuff. I help build web.dev!"
+    },
     "homepage": "https://robdodson.me",
     "twitter": "rob_dodson",
     "github": "robdodson",
@@ -540,7 +559,10 @@
     "twitter": "rachelandrew",
     "github": "rachelandrew",
     "glitch": "rachelandrew",
-    "image": "image/admin/dUAN2DEXHRT6G6iPrIby.jpg"
+    "image": "image/admin/dUAN2DEXHRT6G6iPrIby.jpg",
+    "descriptions": {
+      "en": "Freelance writer and editor. CSS Working Group Invited Expert."
+    }
   },
   "rviscomi": {
     "name": {
@@ -846,6 +868,7 @@
       "given": "Chris",
       "family": "Anstey"
     },
+    "github": "ansteychris",
     "image": "image/admin/n9o3c8Qxz0uUprZnlsRk.jpg"
   },
   "mfriesenhahn": {
@@ -1086,7 +1109,7 @@
       "family": "Kravets"
     },
     "descriptions": {
-      "en": "Developer Advocate for Material Design"
+      "en": "Developer Advocate for CSS, UI & DevTools at Chrome"
     },
     "homepage": "https://una.im/",
     "github": "una",
@@ -1576,6 +1599,30 @@
     "github": "maranag",
     "image": "image/admin/ChOBe0OzPT7siDgFmjC9.jpg"
   },
+  "charistheodoulou": {
+    "name": {
+      "given": "Charis",
+      "family": "Theodoulou"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "twitter": "charistheo_dev",
+    "country": "UK",
+    "homepage": "https://www.charistheo.io/",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/RDHNBibB1P7yeOIrw0JX.jpg"
+  },
+  "natashakosoglov": {
+    "name": {
+      "given": "Natasha",
+      "family": "Kosoglov"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "linkedin": "https://uk.linkedin.com/in/natashakosoglov",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/ccGMk9IszZxs7LbBum7s.png"
+  },
   "mattreynolds": {
     "name": {
       "given": "Matt",
@@ -1589,6 +1636,23 @@
       "en": "Matt is a software developer"
     },
     "image": "image/admin/g2zwlKdDpsMMPtgkx3Gb.jpg"
+  },
+  "joriktangelder": {
+    "name": {
+      "given": "Jorik",
+      "family": "Tangelder"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "description": {
+      "en": "User Experience Engineer"
+    },
+    "country": "NL",
+    "twitter": "jorikdelaporik",
+    "github": "jtangelder",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/1P2utnbQKi02S0iz4GUz.jpg",
+    "homepage": "https://jorik.dev/"
   },
   "sahel": {
     "name": {
@@ -2102,5 +2166,21 @@
       "en": "Director of Sales Platforms Development & Maintenance, Orange Polska S.A."
     },
     "image": "image/BrQidfK9jaQyIHwdw91aVpkPiib2/8yggAIdGCA6AlONdxH4F.png"
+  },
+  "jiwoong": {
+    "name": {
+      "given": "Jiwoong",
+      "family": "Lee"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "descriptions": {
+      "en": "UX Designer for Web Platform & Chrome"
+    },
+    "twitter": "jiwoong",
+    "github": "jimoong",
+    "image": "image/foR0vJZKULb5AGJExlazy1xYDgI2/i3fyhkDpmO6VM1opsETS.jpg"
   }
 }

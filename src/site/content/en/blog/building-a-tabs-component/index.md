@@ -653,7 +653,7 @@ demo.
 ##### ` ScrollTimeline`
 
 While CSS and JavaScript can both create scroll timelines, I opted into
-Javascript so I could use live element measurements in the animation.
+JavaScript so I could use live element measurements in the animation.
 
 ```js
 const sectionScrollTimeline = new ScrollTimeline({
@@ -820,7 +820,7 @@ the inner loop one, and use that to know when it's selected.
 
 I had a lot of fun writing this. So much.
 
-### Even more Javascript enhancements {: #js }
+### Even more JavaScript enhancements {: #js }
 
 It's worth a reminder that the core of what I'm showing you here works without
 JavaScript. With that said, let's see how we can enhance it when JS is

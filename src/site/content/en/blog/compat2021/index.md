@@ -150,7 +150,8 @@ effects like this are made possible:
   controls=false,
   autoplay=true,
   loop=true,
-  muted=true
+  muted=true,
+  playsinline=true
 %}
   <figcaption class="w-figcaption">
     Animated chess demo by <a
@@ -283,7 +284,8 @@ flip effect can be very inconsistent across browsers:
   controls=false,
   autoplay=true,
   loop=true,
-  muted=true
+  muted=true,
+  playsinline=true
 %}
   <figcaption class="w-figcaption">
     Card flip effect in Chromium (left), Gecko (middle) and WebKit (right).

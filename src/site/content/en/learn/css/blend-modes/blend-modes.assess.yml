@@ -1,0 +1,31 @@
+setLeader: Test your knowledge of blend-modes
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,1,4,5"
+    stem: Which of following are CSS blend modes?
+    options:
+      - content: Difference
+        rationale: "🎉"
+      - content: Lighten
+        rationale: "🎉"
+      - content: Brighten
+        rationale: "Try again!"
+      - content: Dullen
+        rationale: "Try again!"
+      - content: Multiply
+        rationale: "🎉"
+      - content: Overlay
+        rationale: "🎉"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: |
+      If you want to blend different colors in different ways, which style of
+      blend mode would you need?
+    options:
+      - content: Separable
+        rationale: "These blend modes feature color channel targeted effects"
+      - content: Non-separable
+        rationale: "Try again, non-separable are not color channel aware"

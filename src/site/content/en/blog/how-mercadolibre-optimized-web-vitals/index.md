@@ -46,23 +46,19 @@ one of the Core Web Vitals: [First Input Delay (FID)](/fid/) and its lab proxy,
 
 ## Long tasks, First Input Delay, and Total Blocking Time
 
-Running expensive Javascript code can lead to [long tasks](/long-tasks-devtools/),
+Running expensive JavaScript code can lead to [long tasks](/long-tasks-devtools/),
 which are those that run for more than **50ms** in the browser's main thread.
 
 FID (First Input Delay) measures the time from when a user first interacts with a page (e.g. when
 they click on a link) to the time when the browser is actually able to begin processing event
-handlers in response to that interaction. A site that executes expensive Javascript code will likely
+handlers in response to that interaction. A site that executes expensive JavaScript code will likely
 have several long tasks, which will end up negatively impacting FID.
 
 To provide a good user experience, sites should strive to have a First Input Delay of less than 100
 milliseconds:
-
 <picture>
-  <source srcset="../vitals/fid_8x2.svg" media="(min-width: 640px)">
-  <img class="w-screenshot w-screenshot--filled"
-      src="../vitals/fid_4x3.svg"
-      alt="Good fid values are 2.5 seconds, poor values are greater than 4.0
-            seconds and anything in between needs improvement">
+  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled" %}
 </picture>
 
 While Mercado Libre's site was performing well in most sections, they found in the [Chrome User

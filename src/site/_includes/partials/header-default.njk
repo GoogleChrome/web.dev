@@ -12,7 +12,7 @@
     data-category="Site-Wide Custom Events"
     data-label="Site logo"
   >
-    <img class="header-default__logo" src="/images/lockup.svg" alt="web.dev" />
+    <img class="header-default__logo" width="125" height="30" src="/images/lockup.svg" alt="web.dev" />
   </a>
 
   <div class="header-default__middle">
@@ -53,7 +53,8 @@
         {{ 'i18n.header.about' | i18n(locale) }}
       </a>
     </div>
-    <web-search></web-search>
+    <web-search results-id="search-main-results"></web-search>
+    <web-search-results id="search-main-results"></web-search-results>
   </div>
 
   <web-profile-switcher-container></web-profile-switcher-container>

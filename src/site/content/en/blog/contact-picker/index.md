@@ -31,7 +31,8 @@ feedback:
     muted=true,
     class="w-screenshot",
     linkTo=true,
-    id="video-demo"
+    id="video-demo",
+    playsinline=true
   %}
 </figure>
 

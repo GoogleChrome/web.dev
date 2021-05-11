@@ -1,9 +1,15 @@
-# Used to organize the courses on the /learn page
-date: 2021-05-01
+# The date is used to organize the courses on the /learn page.
+# This should be the initial publish date of the course. When new pages are
+# added to the course the site will check if they are <30 days old, and if they
+# are, it will give them a "New" badge. However, when you first launch a course
+# you don't want every entry to have a "New" badge, so anything that existed
+# on or before this date will not receive the "New" badge.
+date: 2021-05-10
 url: /learn/css/
-draft: true
+draft: false
 title: i18n.courses.learn_css.title
 description: i18n.courses.learn_css.description
 # This path should be relative to the _include folder.
 logo: '../../../images/courses/css/logo.svg'
 background: "url('/images/courses/css/background.svg')"
+thumbnail: 'image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/fs5FxWQTb8apvFViRifm.svg'

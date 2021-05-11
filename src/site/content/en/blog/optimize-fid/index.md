@@ -37,11 +37,8 @@ simulated in a lab environment. **A real user interaction** is required in order
 response delay.
 
 <picture>
-  <source srcset="/vitals/fid_8x2.svg" media="(min-width: 640px)">
-  <img class="w-screenshot w-screenshot--filled"
-      src="/vitals/fid_4x3.svg"
-      alt="Good FID scores are 2.5 seconds, poor scores are greater than 4.0
-            seconds and anything in between needs improvement.">
+  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
 </picture>
 
 To help predict FID in the [lab](/how-to-measure-speed/#lab-data-vs-field-data), we

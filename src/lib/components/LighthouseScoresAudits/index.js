@@ -39,6 +39,7 @@ function createRowForAuditCategory(lhr, category) {
             data-category="web.dev"
             data-label="audit todos, internal link"
             data-action="click"
+            target="_blank"
             >${guide.title}</a
           >
         `;
