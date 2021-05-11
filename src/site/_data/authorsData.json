@@ -2128,6 +2128,45 @@
     "github": "debugtive0517",
     "image": "image/MZfwZ8oVW8U6tzo5CXffcER0jR83/ieAP4AO0so7own9kFVW4.png"
   },
+  "adamskret": {
+    "name": {
+      "given": "Adam",
+      "family": "Skręt"
+    },
+    "org": {
+      "name": "Orange Polska S.A."
+    },
+    "descriptions": {
+      "en": "Director of Digital & Performance Marketing, Orange Polska S.A."
+    },
+    "image": "image/BrQidfK9jaQyIHwdw91aVpkPiib2/nsG8CdUek2tyhCd6cCGf.jpg"
+  },
+  "rafałfilipek": {
+    "name": {
+      "given": "Rafał",
+      "family": "Filipek"
+    },
+    "org": {
+      "name": "Orange Polska S.A."
+    },
+    "descriptions": {
+      "en": "Lead Frontend Developer, Orange Polska S.A."
+    },
+    "image": "image/BrQidfK9jaQyIHwdw91aVpkPiib2/hpg1RLMvmCAx9V7d0vVv.jpg"
+  },
+  "marcinsierakowski": {
+    "name": {
+      "given": "Marcin",
+      "family": "Sierakowski"
+    },
+    "org": {
+      "name": "Orange Polska S.A."
+    },
+    "descriptions": {
+      "en": "Director of Sales Platforms Development & Maintenance, Orange Polska S.A."
+    },
+    "image": "image/BrQidfK9jaQyIHwdw91aVpkPiib2/8yggAIdGCA6AlONdxH4F.png"
+  },
   "jiwoong": {
     "name": {
       "given": "Jiwoong",
