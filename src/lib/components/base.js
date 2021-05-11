@@ -10,3 +10,4 @@ import './LanguageSelect';
 import './NavigationDrawer';
 import './SnackbarContainer';
 import './Search';
+import './SearchResults';

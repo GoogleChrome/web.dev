@@ -15,7 +15,12 @@
         </div>
       </div>
 
-      {# <div class="drawer-course__search"></div> #}
+      <!--
+      <div class="drawer-course__search">
+        <web-search results-id="search-course-results" tag="{{ searchTag }}"></web-search>
+        <web-search-results id="search-course-results"></web-search-results>
+      </div>
+      -->
 
       <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
         {% for item in pageNavigation %}
