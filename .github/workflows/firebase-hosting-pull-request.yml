@@ -16,6 +16,8 @@ jobs:
 
       - name: Build site
         run: npm run build
+        env:
+          ELEVENTY_ENV: staging
 
       - name: Deploy site to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
