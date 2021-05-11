@@ -46,11 +46,11 @@ transformed with CSS into a satisfying and smooth scroll experience, showcasing
 images and snapping them to a grid. JavaScript is added to facilitate
 roving-index interactions, helping keyboard users skip traversing 100+ items.
 Plus an experimental media query, `prefers-reduced-data`, is used to turn the
-media scroller ux into a lightweight title scroller experience.
+media scroller into a lightweight title scroller experience.
 
 ## Start with accessible markup
 
-A media scroller is made of just a couple core components, a list with items. A
+A media scroller is made of just a couple of core components, a list with items. A
 list, in its simplest form, can travel all over the world and be clearly
 consumed by all. A user landing at this page can browse a list and click a link
 to view an item. This is our accessible base.
@@ -94,7 +94,7 @@ relying on assistive technology like a screen reader. Learn more with [Five gold
 rules for compliant alt
 text](https://abilitynet.org.uk/news-blogs/five-golden-rules-compliant-alt-text).
 
-The `loading` attribute accepts the keyword lazy as a way to signal this image
+The `loading` attribute accepts the keyword `lazy` as a way to signal this image
 source should be fetched only when the image is within the viewport. This can be
 really nice for large lists, as users will only download images for items they
 scrolled into view.
@@ -117,9 +117,9 @@ or light mode, depending on how you look at it:
 <meta name="color-scheme" content="dark light">
 ```
 
-The meta tag provides the earliest signal possible, insomuch that the browser
-will use a dark default canvas color if the user has a dark theme preference.
-Specifically, navigations between pages of the site won't flash a white canvas
+The meta tag provides the earliest signal possible, so the browser
+can select a dark default canvas color if the user has a dark theme preference.
+This means that navigations between pages of the site won't flash a white canvas
 background between loads. Seamless dark theme between loads, much nicer on the
 eyes.
 
@@ -129,7 +129,7 @@ Learn much more from [Thomas Steiner](https://web.dev/authors/thomassteiner/) at
 ### Add content
 
 Given the above content structure of `ul > li > a > figure > picture > img`,
-next is to add images and titles to scroll through. I've packed the demo with
+the next task is to add images and titles to scroll through. I've packed the demo with
 static placeholder images and text, but feel free to power this from your
 favorite data source.
 
@@ -156,7 +156,7 @@ The container allows overriding the column size by providing the default size as
 a custom property. This grid layout is opinionated about column size, it's
 managing spacing and direction only:
 
-```css
+```css/1-2
 .horizontal-media-scroller {
   --size: 150px;
 
@@ -167,9 +167,9 @@ managing spacing and direction only:
 }
 ```
 
-Which is used by the `<picture>` element to create our base aspect ratio: a box:
+The custom property is then used by the `<picture>` element to create our base aspect ratio: a box:
 
-```css/8-11
+```css/8-10
 .horizontal-media-scroller {
   --size: 150px;
 
@@ -187,7 +187,7 @@ Which is used by the `<picture>` element to create our base aspect ratio: a box:
 
 With only a few more minor styles, complete the barebones of the media scroller:
 
-```css/8-9,11-13
+```css/8-9,11-12
 .horizontal-media-scroller {
   --size: 150px;
 
@@ -211,11 +211,11 @@ With only a few more minor styles, complete the barebones of the media scroller:
 ```
 
 Setting `overflow` sets the `<ul>` up to allow scrolling and keyboard navigation
-through its list and each direct child `<li>` element has its `::marker` removed
+through its list, then each direct child `<li>` element has its `::marker` removed
 by getting a new display type of `inline-block`. 
 
-The images aren't responsive yet though, as they'll burst right out of the boxes
-they're inside right now. Tame them with some sizes, fit and border styles, and
+The images aren't responsive yet though, and burst right out of the boxes
+they're inside. Tame them with some sizes, fit, and border styles, and
 a background gradient for when they're lazy loading:
 
 ```css
@@ -330,7 +330,7 @@ A scrolling container with overflow can become a snapping viewport with one line
   muted="true"
 %}
 
-```css/17-19
+```css/17-18
 .horizontal-media-scroller {
   --size: 150px;
 
@@ -356,8 +356,8 @@ A scrolling container with overflow can become a snapping viewport with one line
 
 ### Focus
 
-The inspiration for this component comes from it's massive popularity on TVs,
-App Stores, and more. Many video game platforms use a media scroller very
+The inspiration for this component comes from its massive popularity on TVs,
+in App Stores, and more. Many video game platforms use a media scroller very
 similar to this one, as their primary home screen layout. Focus is a huge UX
 moment here, not just a small addition. Imagine using this media scroller from
 your couch with a remote, give that interaction some small enhancements:
@@ -409,11 +409,10 @@ times to reach the end.
 There's 300 items in that first scroller of the demo. We can do better than make
 them traverse all of them to reach the next section.
 
-To create this experience, Javascript needs to observe keyboard events and focus
+To create this experience, JavaScript needs to observe keyboard events and focus
 events. I created [a small open source library on
-npm](https://github.com/argyleink/roving-ux) in hopes to make this user
-experience easy to achieve. Here's how to use its used in this demo for the 3
-scrollers:
+npm](https://github.com/argyleink/roving-ux) to help make this user
+experience easy to achieve. Here's how to use it for the 3 scrollers:
 
 ```js
 import {rovingIndex} from 'roving-ux';
@@ -479,8 +478,8 @@ and 4:3", width="800", height="324", class="w-screenshot" %}
 
 If the browser supports `aspect-ratio` syntax, the media scroller pictures are
 upgraded to `aspect-ratio` sizing. Using the draft nesting syntax, each picture
-changes it's aspect ratio depending if it's the 1st, 2nd or 3rd rows. The [nest
-syntax](https://drafts.csswg.org/css-nesting-1/) also allows setting some small
+changes its aspect ratio depending if it's the first, second, or third rows. The 
+[nest syntax](https://drafts.csswg.org/css-nesting-1/) also allows setting some small
 viewport adjustments, right there with the other sizing logic. 
 
 With that CSS, as the feature is available in more browser engines, an easy to
@@ -488,12 +487,12 @@ manage but more visually appealing layout will render.
 
 ### Prefers reduced data
 
-While this next technique is only available [behind a
-flag](chrome://flags/#enable-experimental-web-platform-features) in
-[Canary](https://www.google.com/chrome/canary/), I wanted to share how little
-CSS I could add, and save a considerable amount of page load time and amount of
-data used. The `prefers-reduced-data` media query from [level
-5](https://drafts.csswg.org/mediaqueries-5/) allows asking if the device is in
+While this next technique is only available 
+[behind a flag](chrome://flags/#enable-experimental-web-platform-features) in
+[Canary](https://www.google.com/chrome/canary/), 
+I wanted to share how I could save a considerable amount of page load time and 
+data use with a few lines of CSS. The `prefers-reduced-data` media query from 
+[level 5](https://drafts.csswg.org/mediaqueries-5/) allows asking if the device is in
 any reduced data states, like a data saver mode. If it is, I can modify the
 document, and in this case, hide the images.
 
@@ -529,7 +528,7 @@ alt="ALT_TEXT_HERE", width="800", height="841" %}
 
 (71 requests, 1.2mb of resources in 1.07s)
 
-64 less requests, that would be the ~60 images within the viewport (tests taken
+64 fewer requests, that would be the ~60 images within the viewport (tests taken
 on a wide screen display) of this browser tab, a page load boost of ~80%, and
 10% of the data over the wire. Pretty powerful CSS.
 
