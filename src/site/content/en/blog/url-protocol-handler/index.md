@@ -6,6 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-11
+updated: 2021-05-11
 description: |
   After registering a PWA as a protocol handler, when a user clicks on a hyperlink with a specific
   scheme such as mailto, bitcoin, or web+music from a browser or a platform-specific app,
@@ -110,10 +111,10 @@ allowing the possibility for complementary user-experiences:
 
 </div>
 
-### Enabling via chrome://flags
+### Enabling via chrome://flags or edge://flags
 
 To experiment with URL protocol handler registration for PWAs locally, without an origin trial
-token, enable the `#enable-desktop-pwas-protocol-handling` flag in `chrome://flags`.
+token, enable the `#enable-desktop-pwas-protocol-handling` flag in `chrome://flags` or `edge://flags`.
 
 ## How to use URL protocol handler registration for PWAs
 
