@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Excalidraw and Fugu—Improving Core User Journeys
+title: "Excalidraw and Fugu: Improving Core User Journeys"
 subhead: |
   Any sufficiently advanced technology is indistinguishable from magic. Unless you understand it. My
   name is Thomas Steiner, I work in Developer Relations at Google and in this write-up of my Google I/O talk, I will look at
@@ -10,7 +10,7 @@ authors:
   - thomassteiner
 date: 2021-05-10
 description: |
-  A write-up of Thomas Steiner's Google I/O 2021 talk titled Excalidraw and Fugu—Improving Core User Journeys
+  A write-up of Thomas Steiner's Google I/O 2021 talk titled Excalidraw and Fugu: Improving Core User Journeys
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/KKxFqY5Q6ovfi3qomHcv.jpg
 alt: A metal chain used as the symbol for links.
 tags:
@@ -18,7 +18,7 @@ tags:
   - capabilities
 ---
 
-I want to start the write-up of my talk with a story. On January 1st, 2020, Christopher Chedeau, a software
+I want to start with a story. On January 1st, 2020, Christopher Chedeau, a software
 engineer at Facebook, tweeted about a small drawing app he had started to work on. With this tool,
 you could draw boxes and arrows that feel cartoony and hand-drawn. The next day, you could also draw
 ellipses and text, as well as select objects and move them around. On January 3, the app had gotten
@@ -28,10 +28,10 @@ Christopher's first acts. By now, you could use colors and export the whole draw
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/VbicbA7xj5azVcDUBSKt.png", alt="ALT_TEXT_HERE", width="800", height="600" %}
 
 On January 15, Christopher put out a [blog post](https://blog.vjeux.com/2020/uncategorized/reflections-on-excalidraw.html) that drew a lot of attention on Twitter, including mine.
-The post started off with some impressive stats: 12K unique active users, 1.5K stars on GitHub, and
+The post started with some impressive stats: 12K unique active users, 1.5K stars on GitHub, and
 26 contributors. For a project that started a mere two weeks ago, that's not bad at all. But the
 thing that truly spiked my interest was further down in the post. Christopher wrote that he tried
-something new this time: Giving everyone who landed a Pull Request unconditional commit access. The
+something new this time: giving everyone who landed a pull request unconditional commit access. The
 same day of reading the blog post, I had a Pull Request up that added File System Access API support
 to Excalidraw, fixing a feature request that someone had filed. My Pull Request was merged a day
 later and from thereon, I had full commit access. Needless to say, I didn't abuse my power. And nor
@@ -65,7 +65,7 @@ perfect, but that's the idea of Excalidraw, so let me save it.
 
 {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/8o7LIna4TFnLgb6QPoCb.mov", autoplay=true, muted=true, playsinline=true %}
 
-I click the **save** icon and enter a file name in the file save dialog. In Chrome, a browser that
+I click the save icon and enter a file name in the file save dialog. In Chrome, a browser that
 supports the File System Access API, this is not a download, but a true save operation, where I can
 choose the location and name of the file, and where, if I make edits, I can just save them to the
 same file.
@@ -96,7 +96,7 @@ export const loadFromJSON = async (localAppState: AppState) => {
 So what's the secret? How can opening and saving work on different browsers that may or may not
 support the File System Access API? Opening a file in Excalidraw happens in a function called
 loadFromJSON, which in turn calls a
-The fileOpen function comes from a small library I wrote called browser-fs-access that we use in
+The fileOpen function that comes from a small library I wrote called browser-fs-access that we use in
 Excalidraw. This library provides file system access through the File System Access API with a
 legacy fallback, so it can be used in any browser.
 
@@ -126,7 +126,7 @@ export default async (options = {}) => {
 
 Let me first show you the implementation for when the API is supported. After negotiating the
 accepted mime types and file extensions, the central piece is calling the File System Access API's
-function showOpenFilePicker. This function returns an array of files or a single file, dependent on
+function `showOpenFilePicker()`. This function returns an array of files or a single file, dependent on
 whether multiple files are selected. All that's left then is to put the file handle on the file
 object, so it can be retrieved again.
 
@@ -149,8 +149,9 @@ export default async (options = {}) => {
 };
 ```
 
-The fallback implementation relies on an input element of type "file". After the to-be-accepted mime
-types and extensions negotiation, the next step is to programmatically click the input element so
+The fallback implementation relies on an input element of type "file". After the negotiation
+of the to-be-accepted mime types and extensions,
+the next step is to programmatically click the input element so
 the file open dialog shows. On change, that is, when the user has selected one or multiple files,
 the promise resolves.
 
@@ -176,9 +177,9 @@ export const saveAsJSON = async (
 };
 ```
 
-Now to saving. In Excalidraw, saving happens in a function called saveAsJSON. It first serializes
+Now to saving. In Excalidraw, saving happens in a function called `saveAsJSON()`. It first serializes
 the Excalidraw elements array to JSON, converts the JSON to a blob, and then calls a function called
-fileSave. This function is likewise provided by the browser-fs-access library.
+`fileSave()`. This function is likewise provided by the browser-fs-access library.
 
 ```js
 export default async (blob, options = {}, handle = null) => {
@@ -252,8 +253,8 @@ to be revoked after use. As this is just a download, no file save dialog gets sh
 files land in the default Downloads folder.
 
 One of my favorite system integrations on desktop is drag and drop. In Excalidraw, when I drop an
-.excalidraw file onto the application, it opens right away and I can start editing. On browsers that
-support the File System Access API, I can then even immediately save my changes, no need to go
+`.excalidraw` file onto the application, it opens right away and I can start editing. On browsers that
+support the File System Access API, I can then even immediately save my changes. No need to go
 through a file save dialog since the required file handle has been obtained from the drag and drop
 operation.
 
@@ -301,7 +302,7 @@ happens when you doubleclick a file is that the app that's associated with the f
 opens. For example for .docx this would be Microsoft Word.
 
 Excalidraw used to have an Electron version of the app that supported such file type associations,
-so when you double-clicked an .excalidraw file, the Excalidraw Electron app would open. Lipis, whom
+so when you double-clicked an `.excalidraw` file, the Excalidraw Electron app would open. Lipis, whom
 you have already met before, was both the creator and the deprecator of Excalidraw Electron. I asked
 him why he felt it was possible to deprecate the Electron version.
 
@@ -318,7 +319,9 @@ One could say Excalidraw for Electron was not deprecated because Electron is bad
 because the web has become good enough. I like this!
 
 When I say "the web has become good enough", it's because of features like the upcoming File
-Handling. This is a regular macOS Big Sur installation. Now check out what happens when I
+Handling. 
+
+This is a regular macOS Big Sur installation. Now check out what happens when I
 right-click an Excalidraw file. I can choose to open it with Excalidraw, the installed PWA. Of
 course double-clicking would work, too, it's just less dramatic to demonstrate in a screencast.
 
@@ -344,8 +347,8 @@ course double-clicking would work, too, it's just less dramatic to demonstrate i
 ```
 
 So how does this work? The first step is to make the file types my application can handle known to
-the operating system. I do this in a new field called file_handlers in the Web App Manifest. Its
-value is an array of objects with an action and an accept property. The action determines the URL
+the operating system. I do this in a new field called `file_handlers` in the Web App Manifest. Its
+value is an array of objects with an action and an `accept` property. The action determines the URL
 path the operating system launches your app at and the accept object are key value pairs of MIME
 types and the associated file extensions.
 
@@ -366,11 +369,11 @@ if ('launchQueue' in window && 'LaunchParams' in window) {
 }
 ```
 
-The next step is to handle the file when the application launches. This happens in the launchQueue
-interface where I need to set a consumer by calling, well, setConsumer. The parameter to this
-function is an asynchronous function that receives the launchParams. This launchParams object has a
+The next step is to handle the file when the application launches. This happens in the `launchQueue`
+interface where I need to set a consumer by calling, well, `setConsumer()`. The parameter to this
+function is an asynchronous function that receives the `launchParams`. This `launchParams` object has a
 field called files that gets me an array of file handles to work with. I only care for the first one
-and from this file handle I get a blob that I then pass to our old friend loadFromBlob.
+and from this file handle I get a blob that I then pass to our old friend `loadFromBlob()`.
 
 Again, if this went too fast, you can read more about the File Handling API in [my article](/file-handling/). You can enable file handling by setting the experimental web platform
 features flag. It's scheduled to land in Chrome later this year.
@@ -405,8 +408,8 @@ export const canvasToBlob = async (canvas: HTMLCanvasElement): Promise<Blob> => 
 ```
 
 The way this works is surprisingly simple. All I need is the canvas as a blob, which I then write
-onto the clipboard by passing a one-element array with a ClipboardItem with the blob to the
-navigator.clipboard.write function. For more information on what you can do with the clipboard API,
+onto the clipboard by passing a one-element array with a `ClipboardItem` with the blob to the
+`navigator.clipboard.write()` function. For more information on what you can do with the clipboard API,
 See Jason's and [my article](/async-clipboard/).
 
 Did you know that Excalidraw also has a collaborative mode? Different people can work together on
@@ -445,10 +448,12 @@ that holds back Excalidraw?
 > with the cloud provider they trust.
 
 I fully agree with lipis, I live in the cloud, too. Here's hoping that this will be implemented
-soon. Wow. We have seen a lot of really great API integrations in Excalidraw. File system, file
+soon. 
+
+Wow! We have seen a lot of really great API integrations in Excalidraw. File system, file
 handling, clipboard, web share and web share target. But here is one more thing. Up until now, I
 could only ever edit one document at a given time. Not anymore. Please enjoy for the first time an
-early version of tabbed application mode in Excalidraw. This is how it looks like.
+early version of tabbed application mode in Excalidraw. This is how it looks.
 
 I have an existing file open in the installed Excalidraw PWA that's running in standalone mode. Now
 I open a new tab in the standalone window. This is not a regular browser tab, but a PWA tab. In this
@@ -460,7 +465,7 @@ interested, be sure to read up on the current status of this feature in [my arti
 To stay in the loop on this and other features, be sure to watch our Fugu API tracker. We're super
 excited to push the web forward and allow you to do more on the platform. Here's to an ever
 improving Excalidraw, and here's to all the amazing applications that you will build. Go start
-creating at [excalidraw.com](https://excalidraw.com/)! I can't wait to see some of the APIs that I
-have shown today pop up in your apps! My name is Tom, you can find me as
+creating at [excalidraw.com](https://excalidraw.com/). I can't wait to see some of the APIs that I
+have shown today pop up in your apps. My name is Tom, you can find me as
 [@tomayac](https://twitter.com/tomayac) on Twitter and the internet in general. Thank you very much
 for watching, and enjoy the rest of Google I/O.
