@@ -136,7 +136,7 @@ JavaScript bundle needs to be loaded before the image is discoverable.
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/K9EPBZdSFoyXVDHoDjTx.png", alt="Preload the largest contentful paint image", width="800", height="489" %}
 </figure>
 
-{% Aside %} **Exercise great care when choosing to use preload**. Early network bandwidth is a scarce resource and using preload can come at the cost of another resource. To use preload effectively, make sure resources are being ordered correctly to avoid regressing other metrics when other resources in the page are also considered important (e.g. critical CSS, JS, fonts). The [cost of preload](https://docs.google.com/document/d/1ZEi-XXhpajrnq8oqs5SiW-CXR3jMc20jWIzN5QRy1QA/edit) covers this in more detail.
+{% Aside %} **Preload should be used sparingly**. Early network bandwidth is a scarce resource and using preload can come at the cost of another resource. To use preload effectively, make sure resources are being ordered correctly to avoid regressing other metrics when other resources in the page are also considered important (e.g. critical CSS, JS, fonts). The [cost of preload](https://docs.google.com/document/d/1ZEi-XXhpajrnq8oqs5SiW-CXR3jMc20jWIzN5QRy1QA/edit) covers this in more detail.
 {% endAside %}
 
 Lighthouse 6.5 and above now suggests opportunities to apply this optimization.
@@ -211,6 +211,9 @@ partials I need to spend my time on):
 <figure class="w-figure">
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/2Ihb2GYkbpGzYLYoZEDP.png", alt="Search Console displaying CLS issues", width="800", height="506" %}
 </figure>
+
+{% Aside %} To reduce layout shifts caused by Web Fonts, keep an eye on the new [size-adjust](https://groups.google.com/a/chromium.org/g/blink-dev/c/1PVr94hZHjU/m/J0xT8-rlAQAJ) descriptor for `@font-face`. This nable adjusting the size of fallback fonts to reduce CLS.
+{% endAside %}
 
 ### Identifying CLS from images without dimensions
 
