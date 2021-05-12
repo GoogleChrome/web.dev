@@ -85,7 +85,9 @@
 }
 
 .course-app-bar[data-stuck] {
-  box-shadow: 0 1px $GREY_300;
+  @include bp(lg) {
+    box-shadow: 0 1px $GREY_300;
+  }
 }
 
 .course-app-bar__logo {

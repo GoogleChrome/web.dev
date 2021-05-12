@@ -79,7 +79,8 @@ export class Header extends BaseStateElement {
    */
   manageFocus() {
     if (this.openDrawerBtn) {
-      this.openDrawerBtn.focus();
+      // FIXME(robdodson): https://github.com/GoogleChrome/web.dev/pull/5335
+      // this.openDrawerBtn.focus();
     }
   }
 }
