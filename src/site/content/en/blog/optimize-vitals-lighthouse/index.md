@@ -6,7 +6,7 @@ authors:
   - addyosmani
 description: |
   Today, we will cover new tooling features in Lighthouse, PageSpeed and DevTools to help identify how your site can improve on the Web Vitals.
-date: 2021-05-10
+date: 2021-05-11
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/6GPqQDYxZnVq8qF6DJ02.jpeg
 alt: "A Lighthouse illuminating the sea"
 tags:
