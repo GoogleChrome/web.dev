@@ -79,7 +79,13 @@ export class Header extends BaseStateElement {
    */
   manageFocus() {
     if (this.openDrawerBtn) {
-      this.openDrawerBtn.focus();
+      // FIXME: This is causing a bug in the Learn CSS course.
+      // Calling this method causes the page to scroll up by a certain %.
+      // It doesn't seem to happen on the header used for blog posts.
+      // One of the big differences is that the blog post header is
+      // position: fixed, whereas the course one is position sticky.
+      // Or this might be caused by the focus-visible polyfill.
+      // this.openDrawerBtn.focus();
     }
   }
 }

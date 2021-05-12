@@ -128,7 +128,7 @@
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
-  transition: background-color $TRANSITION_SPEED, box-shadow $TRANSITION_SPEED;
+  // transition: background-color $TRANSITION_SPEED, box-shadow $TRANSITION_SPEED;
   @include font_smoothing(
     $FONT_SMOOTHING_MOZ,
     $FONT_SMOOTHING_WEBKIT,

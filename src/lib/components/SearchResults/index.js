@@ -6,7 +6,7 @@ import {html} from 'lit-element';
 import {unsafeHTML} from 'lit-html/directives/unsafe-html';
 import {BaseElement} from '../BaseElement';
 import {allowHtml, escapeHtml} from '../../../lib/utils/escape-html';
-import 'focus-visible';
+// import 'focus-visible';
 import './_styles.scss';
 
 /**

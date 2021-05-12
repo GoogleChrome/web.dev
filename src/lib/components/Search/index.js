@@ -7,7 +7,7 @@ import {BaseStateElement} from '../BaseStateElement';
 import {store} from '../../store';
 import {debounce} from '../../utils/debounce';
 import {trackError} from '../../analytics';
-import 'focus-visible';
+// import 'focus-visible';
 import './_styles.scss';
 
 let algoliaIndexPromise;

@@ -15,7 +15,7 @@
   @include base-button();
   overflow: hidden;
   position: relative;
-  transition: background-color $TRANSITION_SPEED, box-shadow $TRANSITION_SPEED;
+  // transition: background-color $TRANSITION_SPEED, box-shadow $TRANSITION_SPEED;
   vertical-align: middle;
   white-space: nowrap;
 }
@@ -157,7 +157,7 @@
   height: 3rem;
   overflow: unset;
   padding: 0;
-  transition: background $TRANSITION_SPEED ease, color $TRANSITION_SPEED ease;
+  // transition: background $TRANSITION_SPEED ease, color $TRANSITION_SPEED ease;
   width: 3rem;
 }
 
