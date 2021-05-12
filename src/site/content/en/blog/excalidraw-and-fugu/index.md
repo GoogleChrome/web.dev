@@ -8,15 +8,22 @@ subhead: |
   take inspiration from these ideas and apply them to your own apps.
 authors:
   - thomassteiner
-date: 2021-05-10
+date: 2021-05-18
+scheduled: true
 description: |
   A write-up of Thomas Steiner's Google I/O 2021 talk titled Excalidraw and Fugu: Improving Core User Journeys
-hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/KKxFqY5Q6ovfi3qomHcv.jpg
-alt: A metal chain used as the symbol for links.
+hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/FcDeDjh1bW8zAHIzA2BF.png
+alt: Dropping a file from the macOS Finder onto the Excalidraw application.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
 ---
+
+{% Aside }
+This is a write-up of my Google I/O talk. If you prefer watching it, see the video below.
+{% endAside %}
+
+{% YouTube 'EK1AkxgQwro' %}
 
 ## How I came to Excalidraw
 
@@ -29,7 +36,7 @@ them around. On January 3, the app had gotten its name, Excalidraw, and, like wi
 project, buying the [domain name](https://excalidraw.com/) was one of Christopher's first acts. By
 now, you could use colors and export the whole drawing as a PNG.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/VbicbA7xj5azVcDUBSKt.png", alt="ALT_TEXT_HERE", width="800", height="600" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/VbicbA7xj5azVcDUBSKt.png", alt="Screenshot of the Excalidraw prototype application showing that it supported rectangles, arrows, ellipses, and text.", width="800", height="600" %}
 
 On January 15, Christopher put out a
 [blog post](https://blog.vjeux.com/2020/uncategorized/reflections-on-excalidraw.html) that drew a
@@ -46,7 +53,7 @@ reading the blog post, I had a [pull request](https://github.com/excalidraw/exca
 that added File System Access API support to Excalidraw, fixing a
 [feature request](https://github.com/excalidraw/excalidraw/issues/169) that someone had filed.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/9VJ9EqPzKdzUpxFeM5wH.png", alt="ALT_TEXT_HERE", width="800", height="617" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/9VJ9EqPzKdzUpxFeM5wH.png", alt="Screenshot of the tweet where I announce my PR at https://twitter.com/tomayac/status/1217792484161572865.", width="550", height="424" %}
 
 My pull request was merged a day later and from thereon, I had full commit access. Needless to say,
 I didn't abuse my power. And nor did anybody else from the 149 contributors so far.
@@ -55,7 +62,7 @@ Today, [Excalidraw](https://excalidraw.com/) is a full-fledged installable progr
 offline support, a stunning dark mode, and yes, the ability to open and save files thanks to the
 File System Access API.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/Wzz6UELRpcvkKZQtmVmc.png", alt="ALT_TEXT_HERE", width="800", height="537" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/Wzz6UELRpcvkKZQtmVmc.png", alt="Screenshot of the Excalidraw PWA in today's state.", width="800", height="537" %}
 
 ## Lipis on why he dedicates so much of his time to Excalidraw
 
@@ -486,7 +493,7 @@ context of Project Fugu. Spoiler alert: it's not. While we had an implementation
 in Excalidraw, in the end, we decided to go for a more traditional approach based on measuring
 pointer movement and page visibility.
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/SudM7tqa3ZooUJYx7aBB.png", alt="ALT_TEXT_HERE", width="800", height="685" %}
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/SudM7tqa3ZooUJYx7aBB.png", alt="Screenshot of the Idle Detection feedback filed at https://github.com/WICG/idle-detection/issues/36.", width="800", height="685" %}
 
 We filed [feedback](https://github.com/WICG/idle-detection/issues/36) on why the Idle Detection API
 wasn't solving the use case we had. All Project Fugu APIs are being developed in the open, so
