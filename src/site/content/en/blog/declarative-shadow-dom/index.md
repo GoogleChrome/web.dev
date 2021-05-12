@@ -392,7 +392,7 @@ until it is "ready":
 ```
 
 With the introduction of Declarative Shadow DOM, Custom Elements can be rendered
-or authored in HTML such that their shadow content in-place and ready before the
+or authored in HTML such that their shadow content is in-place and ready before the
 client-side component implementation is loaded:
 
 ```html
@@ -414,7 +414,7 @@ Fortunately, this can be solved in CSS by modifying the FOUC style rule. In
 browsers that support Declarative Shadow DOM, the `<template shadowroot>`
 element is immediately converted into a shadow root, leaving no `<template>`
 element in the DOM tree. Browsers that don't support Declarative Shadow DOM
-preserve the `<template>` element, which we can use this to prevent FOUC:
+preserve the `<template>` element, which we can use to prevent FOUC:
 
 ```html
 <style>
