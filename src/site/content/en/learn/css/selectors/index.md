@@ -497,4 +497,4 @@ For more on this, see the [specificity module](/learn/css/specificity).
 - [CSS selectors reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
 - [Interactive selectors game](https://flukeout.github.io/)
 - [Pseudo-class and pseudo-elements reference](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements)
-- [A tool that translates CSS selectors into plain-english explainers](https://hugogiraudel.github.io/selectors-explained/)
+- [A tool that translates CSS selectors into plain-english explainers](https://kittygiraudel.github.io/selectors-explained/)
