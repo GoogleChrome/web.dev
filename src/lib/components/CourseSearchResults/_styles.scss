@@ -11,13 +11,20 @@
 .web-search-popout__link {
   line-height: 28px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .web-search-popout__snippet {
   color: $GREY_700;
   font-size: 14px;
   margin: 0;
+}
+
+.web-search-popout__title {
+  strong {
+    color: $FOCUS_COLOR;
+    font-weight: 700;
+  }
 }
 
 .web-search-popout__item {

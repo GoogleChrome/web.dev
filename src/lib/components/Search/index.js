@@ -362,7 +362,7 @@ class Search extends BaseStateElement {
    * See internal comments for side-effects.
    * @param {FocusEvent} e focusout event object.
    */
-  onFocusOut(e) {
+  _onFocusOut(e) {
     // Check if the user's focus is moving to something that they just clicked
     // on. If so, programatically click it before closing the popout.
     // Because focusout fires before click, if we try to wait for the click
