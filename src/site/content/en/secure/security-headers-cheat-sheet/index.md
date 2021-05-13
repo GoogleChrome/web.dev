@@ -158,7 +158,7 @@ Content-Security-Policy:
 {% Details %}
 {% DetailsSummary %}
 
-Learn more how to use CSP
+How to use CSP
 
 {% endDetailsSummary %}
 
@@ -333,7 +333,7 @@ el.innerHTML = escaped;  // '&lt;img src=x onerror=alert(1)&gt;'
 {% Details %}
 {% DetailsSummary %}
 
-Learn more how to use Trusted Types
+How to use Trusted Types
 
 {% endDetailsSummary %}
 
@@ -450,7 +450,7 @@ X-Content-Type-Options: nosniff
 {% Details %}
 {% DetailsSummary %}
 
-Learn more how to use X-Content-Type-Options
+How to use X-Content-Type-Options
 
 {% endDetailsSummary %}
 
@@ -510,7 +510,7 @@ X-Frame-Options: DENY
 {% Details %}
 {% DetailsSummary %}
 
-Learn more how to use X-Frame-Options
+How to use X-Frame-Options
 
 {% endDetailsSummary %}
 
@@ -577,7 +577,7 @@ Cross-Origin-Resource-Policy: cross-origin
 {% Details %}
 {% DetailsSummary %}
 
-Learn more how to use CORP
+How to use CORP
 
 {% endDetailsSummary %}
 
@@ -670,7 +670,7 @@ Cross-Origin-Opener-Policy: same-origin-allow-popups
 {% Details %}
 {% DetailsSummary %}
 
-Learn more how to use COOP
+How to use COOP
 
 {% endDetailsSummary %}
 
@@ -790,7 +790,7 @@ Access-Control-Allow-Credentials: true
 {% Details %}
 {% DetailsSummary %}
 
-Learn more how to use CORS
+How to use CORS
 
 {% endDetailsSummary %}
 
@@ -916,7 +916,7 @@ Cross-Origin-Embedder-Policy: require-corp
 {% Details %}
 {% DetailsSummary %}
 
-Learn more how to use COEP
+How to use COEP
 
 {% endDetailsSummary %}
 
@@ -992,7 +992,7 @@ Strict-Transport-Security: max-age=36000
 {% Details %}
 {% DetailsSummary %}
 
-Learn more how to use HSTS
+How to use HSTS
 
 {% endDetailsSummary %}
 
