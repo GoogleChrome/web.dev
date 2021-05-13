@@ -21,7 +21,7 @@ feedback:
 ---
 
 {% Aside 'caution' %}
-This proposal continues to undergo changes during the origin trial period. There 
+This proposal continues to change during the origin trial period. There 
 may be a divergence between the browser implementation and the information in this 
 article.
 
