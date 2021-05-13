@@ -28,5 +28,8 @@ module.exports = ({hero, alt, heroPosition, heroFit = 'cover'}) => {
     sizes: '100vw',
     class: className,
     decoding: 'auto',
+    params: {
+      auto: 'format',
+    },
   });
 };
