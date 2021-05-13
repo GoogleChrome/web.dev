@@ -4,9 +4,9 @@ subhead: "A modern alternative to importScripts()."
 description: "Service workers can use static imports of ES modules to bring in extra code, as an alternative to importScripts()."
 authors:
   - jeffposnick
-date: 2021-05-06
-hero: 
-alt: 
+date: 2021-05-13
+hero: image/FNkVSAX8UDTTQWQkKftSgGe9clO2/JobkNOB1V5C9bp7x4Jur.jpg
+alt: Modular, abstract architecture.
 tags:
   - blog
   - service-worker
@@ -93,7 +93,7 @@ self.addEventListener('install', (event) => {
 
 The above example would work fine if all browsers supported ES modules in service workers, but as of this writing, that's not the case.
 
-To accomodate browsers that don't have built-in support, you can run your service worker script through a [ES module-compatible bundler](https://bundlers.tooling.report/) to create a service worker that includes all of the module code inline, and will work in older browsers. Alternatively, if the modules you're attempting to import are already available bundled in [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) or [UMD](https://github.com/umdjs/umd) formats, you can import them using `importScripts()`.
+To accommodate browsers that don't have built-in support, you can run your service worker script through a [ES module-compatible bundler](https://bundlers.tooling.report/) to create a service worker that includes all of the module code inline, and will work in older browsers. Alternatively, if the modules you're attempting to import are already available bundled in [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) or [UMD](https://github.com/umdjs/umd) formats, you can import them using `importScripts()`.
 
 Once you have two versions of your service worker available—one that uses ES modules, and the other that doesn't—you'll need to detect what the current browser supports, and register the corresponding service worker script. The best practices for detecting support are currently in flux, but you can follow the discussion in this [GitHub issue](https://github.com/w3c/ServiceWorker/issues/1582) for recommendations.
 
