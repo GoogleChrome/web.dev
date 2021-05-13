@@ -129,11 +129,7 @@ export class SearchResults extends BaseElement {
   render() {
     if (!this.showHits) {
       return html`
-        <div
-          id="${this.id}-list"
-          role="listbox"
-          aria-hidden="true"
-        ></div>
+        <div id="${this.id}-list" role="listbox" aria-hidden="true"></div>
       `;
     }
 
@@ -169,11 +165,7 @@ export class SearchResults extends BaseElement {
     return html`
       <div class="web-search-popout">
         <div class="web-search-popout__heading">Results</div>
-        <ul
-          id="web-search-popout__list"
-          class="web-search-popout__list"
-          role="listbox"
-        >
+        <ul id="${this.id}-list" class="web-search-popout__list" role="listbox">
           ${this.itemsTemplate}
         </ul>
       </div>
@@ -191,7 +183,7 @@ export class SearchResults extends BaseElement {
         return html``;
       }
 
-      let title = this.formatAlgoliaValue(hit._highlightResult.title.value);
+      const title = this.formatAlgoliaValue(hit._highlightResult.title.value);
       return html`
         <li class="web-search-popout__item">
           <a

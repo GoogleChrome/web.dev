@@ -289,9 +289,7 @@ class Search extends BaseStateElement {
         highlightPreTag: '<strong>',
         highlightPostTag: '</strong>',
         facetFilters: [`locales:${this.locale}`],
-        attributesToSnippet: [
-          'content:20',
-        ],
+        attributesToSnippet: ['content:20'],
         snippetEllipsisText: '...',
       };
       if (this.tag) {
