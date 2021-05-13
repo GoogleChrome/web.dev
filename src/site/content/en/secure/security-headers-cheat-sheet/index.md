@@ -483,19 +483,20 @@ Chrome, Firefox, Safari, Edge
 
 If a malicious website can embed your site as an iframe, this may allow
 attackers to invoke unintended actions by the user with
-[clickjacking](https://portswigger.net/web-security/clickjacking). Also,
-Spectre-type attacks give malicious websites a chance to eavesdrop the content
-of an embedded website.
+[clickjacking](https://portswigger.net/web-security/clickjacking). Also, in some
+cases [Spectre-type
+attacks](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)) give
+malicious websites a chance to learn about the contents of an embedded document.
 
 `X-Frame-Options` indicates whether or not a browser should be allowed to render
 a page in a `<frame>`, `<iframe>`, `<embed>` or `<object>`. **All documents**
-are recommended sending this header to indicate whether it allows being embedded
-by other documents.
+are recommended to send this header to indicate whether they allow being
+embedded by other documents.
 
 {% Aside %}
 
-If you need more granular control such as allowing only specific origin to embed
-the document, use the [CSP](#csp)
+If you need more granular control such as allowing only a specific origin to
+embed the document, use the [CSP](#csp)
 [`frame-ancestors`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors)
 directive.
 
@@ -540,10 +541,11 @@ X-Frame-Options: SAMEORIGIN
 {% Aside 'gotchas' %}
 
 Documents being embeddable by default means the web developers need to
-explicitly send `DENY` or `SAMEORIGIN` to stop being embedded and protect itself
-from side-channel attacks. The Chrome team is considering switching to block
-document embeds by default so those websites will be secure by default. In that
-new world, documents will need to explicitly opt-in to be embedded.
+explicitly send `DENY` or `SAMEORIGIN` to stop being embedded and protect
+themselves from side-channel attacks. The Chrome team is considering switching
+to block document embeds by default so that websites will be secure even if they
+don't explicitly set the header. In that new world, documents would need to
+explicitly opt-in to be embedded.
 
 {% endAside %}
 
@@ -559,19 +561,20 @@ Chrome, Firefox, Safari, Edge
 
 ## Cross-Origin Resource Policy (CORP) {: #corp}
 
-An attacker website can embed documents from another origin, for example from
-your site, to learn information about it by exploiting web-based [cross-site
+An attacker can embed resources from another origin, for example from your site,
+to learn information about them by exploiting web-based [cross-site
 leaks](https://xsleaks.dev/).
 
-`Cross-Origin-Resource-Policy` mitigates it by indicating the set of websites it
-can be loaded by. The header takes one of three values: `same-origin`,
-`same-site`, and `cross-origin`. **All documents** are recommended sending this
-header to indicate whether it allows being loaded by which origin's documents.
+`Cross-Origin-Resource-Policy` mitigates this risk by indicating the set of
+websites it can be loaded by. The header takes one of three values:
+`same-origin`, `same-site`, and `cross-origin`. **All resources** are
+recommended to send this header to indicate whether they allow being loaded by
+other websites.
 
 {% Label %}Example usage{% endLabel%}
 
 ```http
-Cross-Origin-Resource-Policy: cross-origin
+Cross-Origin-Resource-Policy: same-origin
 ```
 
 {% Details %}
@@ -602,14 +605,13 @@ Cross-Origin-Resource-Policy: cross-origin
 #### Limit the resource to be loaded from the `same-origin`
 
 `same-origin` should be applied to resources that are intended to be loaded only
-by same-origin pages. You may apply this to a resource that includes sensitive
-information about the user, or response of an API that is intended for the same
-origin.
+by same-origin pages. You should apply this to resources that include sensitive
+information about the user, or responses of an API that is intended to be called
+only from the same origin.
 
-Beware that even with this header the resource is still accessible from random
-requests so don't consider this as an ACL. It's just the browser will not load
-it on a cross-origin context. By "load" here means either the browser renders
-the content on the page or the JavaScript can read the content.
+Keep in mind that resources with this header can still be loaded directly, for
+example by navigating to the URL in a new browser window. Cross-Origin Resource
+Policy only protects the resource from being embedded by other websites.
 
 {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/7UzYMWsbKkh89m5ZImvj.png",
 alt="Cross-Origin-Resource-Policy: same-origin", width="800", height="238" %}
@@ -621,7 +623,7 @@ Cross-Origin-Resource-Policy: same-origin
 #### Limit the resource to be loaded from the `same-site`
 
 `same-site` is recommended to be applied to resources similar to above but are
-intended to be loaded by same-site pages.
+intended to be loaded by other subdomains of your site.
 
 {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/R9yNRGSJ4xABc560WRJI.png",
 alt="Cross-Origin-Resource-Policy: same-site", width="800", height="233" %}
@@ -651,15 +653,17 @@ Chrome, Firefox, Safari, Edge
 
 ## Cross-Origin Opener Policy (COOP) {: #coop}
 
-An attacker website can open another site in a popup window to learn information
-about it by exploiting web-based [cross-site leaks](https://xsleaks.dev/). This
-also may cause side-channel attacks exploiting
+An attacker's website can open another site in a popup window to learn
+information about it by exploiting web-based [cross-site
+leaks](https://xsleaks.dev/). In some cases, this may also allow the
+exploitation of side-channel attacks based on
 [Spectre](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)).
 
-A `Cross-Origin-Opener-Policy` header provides a way for a document to isolate
+The `Cross-Origin-Opener-Policy` header provides a way for a document to isolate
 itself from cross-origin windows opened through `window.open()` or a link with
-`target="_blank"` without `rel="noopener"`. As a result, the document will have
-no reference with a cross-origin document window mutually.
+`target="_blank"` without `rel="noopener"`. As a result, any cross-origin opener
+of the document will have no reference to it and will not be able to interact
+with it.
 
 {% Label %}Example usage{% endLabel%}
 
@@ -693,9 +697,9 @@ Cross-Origin-Opener-Policy: same-origin
 
 Setting `same-origin-allow-popups` allows a document to retain a reference to
 its popup windows unless they set COOP with `same-origin` or
-`same-origin-allow-popups`. This in reverse means `same-origin-allow-popups` can
-still prevent being referenced when opened as a popup window, but can open a
-popup window that has `unsafe-none` which is default.
+`same-origin-allow-popups`. This means `same-origin-allow-popups` can still
+protect the document from being referenced when opened as a popup window, but
+allow it to communicate with its own popups.
 
 {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/2uJZ0s2VnjxJUcBI2Ol9.png",
 alt="Cross-Origin-Opener-Policy: same-origin-allow-popups", width="800",
@@ -717,8 +721,7 @@ alt="Cross-Origin-Opener-Policy: unsafe-none", width="800", height="233" %}
 
 `unsafe-none` being the default means the web developers need to send
 `same-origin` or `same-origin-allow-popups` explicitly to protect their website
-from side-channel attacks. The Chrome team is considering to switch the default
-to `same-origin-allow-popups` so those websites will be secure by default.
+from side-channel attacks.
 
 {% endAside %}
 
@@ -731,8 +734,8 @@ Cross-Origin-Opener-Policy: unsafe-none
 Features such as `SharedArrayBuffer`,
 `performance.measureUserAgentSpecificMemory()` or [JS Self Profiling
 API](https://wicg.github.io/js-self-profiling/) are disabled by default. Some
-browsers allow you to use them by enabling a "cross-origin isolation"
-environment which requires [COOP](#coop) and [COEP](#coep) headers.
+browsers allow you to use them in "cross-origin isolated" contexts, which
+require you to set [COOP](#coop) and [COEP](#coep) headers.
 
 To learn more, read [Making your website "cross-origin isolated" using COOP and
 COEP](/coop-coep/)
@@ -748,8 +751,8 @@ Reporting API.
 Cross-Origin-Opener-Policy: same-origin; report-to="coop"
 ```
 
-COOP also supports report-only mode so you can receive reports without actually
-blocking communication between cross-origin documents.
+COOP also supports a report-only mode so you can receive reports without
+actually blocking communication between cross-origin documents.
 
 ```http
 Cross-Origin-Opener-Policy-Report-Only: same-origin; report-to="coop"
@@ -771,14 +774,12 @@ Unlike other items in this article, Cross-Origin Resource Sharing (CORS) is not
 a header, but a browser mechanism that requests and permits access to
 cross-origin resources.
 
-Browsers enforce [the same-origin policy](/same-origin-policy/) to prevent a web
-page programmatic access to cross-origin resources. For example, when a
+By default, browsers enforce [the same-origin policy](/same-origin-policy/) to
+prevent a web page from accessing cross-origin resources. For example, when a
 cross-origin image is loaded, even though it's displayed on the web page
 visually, the JavaScript on the page doesn't have access to the image's data.
-This is called an **opaque** response and [applied differently depending on the
-resource type](/same-origin-policy/#what-is-permitted-and-what-is-blocked). The
-resource provider can relax restrictions and allow other websites to read the
-resource by opting-in with CORS.
+The resource provider can relax restrictions and allow other websites to read
+the resource by opting-in with CORS.
 
 {% Label %}Example usage{% endLabel %}
 
@@ -833,13 +834,16 @@ Access-Control-Allow-Credentials: true
 ```
 
 * `Access-Control-Allow-Origin: https://example.com` indicates that the
-  `https://example.com` can access the contents of the response. You may use a
-  wildcard `*` but be careful about potential abuse.
-* `Access-Control-Allow-Credentials: true` indicates that the browser may store
-  the credential (`Set-cookie` header) in the response. Otherwise the cookie
-  will be ignored by the browser.
+  `https://example.com` can access the contents of the response. Resources meant
+  to be readable by any site can set this header to `*`, in which case the
+  browser will only require the request to be made [without
+  credentials](https://developer.mozilla.org/en-US/docs/Web/API/Request/credentials#value).
+* `Access-Control-Allow-Credentials: true` indicates that requests which carry
+  credentials (cookies) are allowed to load the resource. Otherwise,
+  authenticated requests will be rejected even if the requesting origin is
+  present in the `Access-Control-Allow-Origin` header.
 
-#### Preflighted request
+#### Preflighted requests
 
 A preflighted request is preceded with an `OPTIONS` request to check if the
 subsequent request is allowed to be sent. 
@@ -853,13 +857,14 @@ Access-Control-Request-Method: POST
 Access-Control-Request-Headers: X-PINGOTHER, Content-Type
 ```
 
-* `Access-Control-Request-Method: POST` requests to allow including `POST` in
-  subsequent requests.
-* `Access-Control-Request-Headers: X-PINGOTHER, Content-Type` request to allow
-  including `X-PINGOTHER` and `Content-Type` in subsequent requests.
+* `Access-Control-Request-Method: POST` allows the following request to be made
+  with the  `POST` method.
+* `Access-Control-Request-Headers: X-PINGOTHER, Content-Type` allows the
+  requester to set the `X-PINGOTHER` and `Content-Type` HTTP headers in the
+  subsequent request.
 
 
-{% Label %}Example response header{% endLabel %}
+{% Label %}Example response headers{% endLabel %}
 
 ```http
 Access-Control-Allow-Origin: https://example.com
@@ -870,9 +875,9 @@ Access-Control-Max-Age: 86400
 ```
 
 * `Access-Control-Allow-Methods: POST, GET, OPTIONS` indicates that subsequent
-  requests can include `POST`, `GET` and `OPTIONS`.
+  requests can be made with the  `POST`, `GET` and `OPTIONS` methods.
 * `Access-Control-Allow-Headers: X-PINGOTHER, Content-Type` indicates subsequent
-  requests can include `X-PINGOTHER` and `Content-Type` header.
+  requests can include the `X-PINGOTHER` and `Content-Type` headers.
 * `Access-Control-Max-Age: 86400`  indicates that the result of the preflighted
   request can be cached for 86400 seconds.
 
@@ -890,22 +895,20 @@ Chrome, Firefox, Safari, Edge
 
 ## Cross-Origin Embedder Policy (COEP) {: #coep}
 
-To reduce the efficiency of
-[Spectre](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)) to
+To reduce the ability of [Spectre-based
+attacks](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)) to
 steal cross-origin resources, features such as `SharedArrayBuffer`,
 `performance.measureUserAgentSpecificMemory()` or [JS Self Profiling
-API](https://wicg.github.io/js-self-profiling/) that involves high-precision
-timers are disabled by default.
+API](https://wicg.github.io/js-self-profiling/) are disabled by default.
 
-`Cross-Origin-Embedder-Policy: require-corp` prevents the documents and workers
-from loading cross-origin resources such as images, scripts, stylesheets,
-iframes and others unless they explicitly allow loading via [CORS](#cors) or
-[CORP](#corp) and isolate itself. By combining with
-`Cross-Origin-Opener-Policy`, they can opt into [cross-origin
-isolation](/cross-origin-isolation-guide/).
+`Cross-Origin-Embedder-Policy: require-corp` prevents documents and workers from
+loading cross-origin resources such as images, scripts, stylesheets, iframes and
+others unless these resources explicitly opt into being loaded via [CORS](#cors)
+or [CORP](#corp) headers. COEP can be combined with`Cross-Origin-Opener-Policy`
+to opt a document into [cross-origin isolation](/cross-origin-isolation-guide/).
 
 Use `Cross-Origin-Embedder-Policy: require-corp` when you want to enable
-[cross-origin isolation](/coop-coep/) on the document.
+[cross-origin isolation](/coop-coep/) for your document.
 
 {% Label %}Example usage{% endLabel %}
 
@@ -969,14 +972,8 @@ Chrome, Firefox, Edge
 
 ## HTTP Strict Transport Security (HSTS) {: #hsts}
 
-Communication over an HTTP connection is not encrypted, therefore the content
-exchanged over such a network is not safe. It can be eavesdropped (when an
-attacker captures and reads the data) or sniffed (when an attacker inspects the
-content in order to infer the data itself or the file format).
-
-Even if your site is set up for HTTPS, this header protects your users in case
-something happens and causes [insufficient encryption](link to the first section
-/ encrypt your site). 
+Communication over a plain HTTP connection is not encrypted, making the
+transferred data accessible to network-level eavesdroppers.
 
 `Strict-Transport-Security` header informs the browser that it should never load
 the site using HTTP and use HTTPS instead. Once it's set, the browser will use
