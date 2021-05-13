@@ -10,22 +10,23 @@ tags:
   - security
 ---
 
-This article lists the most important security headers and their quick guides so
-you can get started with protecting your website with those headers.
-
-Security headers recommended for websites with user inputs:
-: [Content Security Policy (CSP)](#csp)
-: [Trusted Types](#tt)
-: [X-Content-Type-Options](#xcto)
+This article lists the most important security headers you can use to protect
+your website. Use this article to understand, look up, and learn how to use
+web-based security features on your website.
 
 Security headers recommended for all websites:
+: [X-Content-Type-Options](#xcto)
 : [X-Frame-Options](#xfo)
 : [Cross-Origin Resource Policy (CORP)](#corp)
 : [Cross-Origin Opener Policy (COOP)](#coop)
-: [Cross-Origin Resource Sharing (CORS)](#cors)
 : [HTTP Strict Transport Security (HSTS)](#hsts)
 
+Security headers recommended for websites that handle sensitive user data:
+: [Content Security Policy (CSP)](#csp)
+: [Trusted Types](#tt)
+
 Security headers needed for websites with advanced features (e.g. `SharedArrayBuffer`):
+: [Cross-Origin Resource Sharing (CORS)](#cors)
 : [Cross-Origin Embedder Policy (COEP)](#coep)
 
 {% Details %}
@@ -43,52 +44,86 @@ why you'd want to use these security headers.
 
 ### Protect your site from injection vulnerabilities
 
-Injection vulnerabilities arise when untrusted data processed by your application can affect its behavior and, commonly, lead to the execution of attacker-controlled scripts. The most common result of injection bugs is [cross-site scripting](https://portswigger.net/web-security/cross-site-scripting) (XSS) in its various forms, including [reflected XSS](https://portswigger.net/web-security/cross-site-scripting/reflected), [stored XSS](https://portswigger.net/web-security/cross-site-scripting/stored), [DOM-based XSS](https://portswigger.net/web-security/cross-site-scripting/dom-based), and other variants.
+Injection vulnerabilities arise when untrusted data processed by your
+application can affect its behavior and, commonly, lead to the execution of
+attacker-controlled scripts. The most common vulnerability caused by injection
+bugs is [cross-site
+scripting](https://portswigger.net/web-security/cross-site-scripting) (XSS) in
+its various forms, including [reflected
+XSS](https://portswigger.net/web-security/cross-site-scripting/reflected),
+[stored XSS](https://portswigger.net/web-security/cross-site-scripting/stored),
+[DOM-based
+XSS](https://portswigger.net/web-security/cross-site-scripting/dom-based), and
+other variants.
 
-An XSS vulnerability can typically give an attacker complete access to user data processed by the application and any other information hosted in the same [web origin](/same-site-same-origin/#origin).
+An XSS vulnerability can typically give an attacker complete access to user data
+processed by the application and any other information hosted in the same [web
+origin](/same-site-same-origin/#origin).
 
-Traditional defenses against injections include consistent use of autoescaping HTML template systems, avoiding the use of [dangerous JavaScript APIs](https://domgo.at/cxss/sinks), and properly processing user data by hosting file uploads in a separate domain and sanitizing user-controlled HTML.
+Traditional defenses against injections include consistent use of autoescaping
+HTML template systems, avoiding the use of [dangerous JavaScript
+APIs](https://domgo.at/cxss/sinks), and properly processing user data by hosting
+file uploads in a separate domain and sanitizing user-controlled HTML.
 
-* Use [Content Security Policy (CSP)](#csp) to fundamentally restrict scripts to
-  be loaded to mitigate the risk.
-* Use [Trusted Types](#tt) to enforce sanitization of data passed into a
-  dangerous JavaScript API.
+* Use [Content Security Policy (CSP)](#csp) to control which scripts can be
+  executed by your application to mitigate the risk of injections.
+* Use [Trusted Types](#tt) to enforce sanitization of data passed into dangerous
+  JavaScript APIs.
 * Use [X-Content-Type-Options](#xcto) to prevent the browser from
-  misinterpreting malicious scripts.
+  misinterpreting the MIME types of your website's resources, which can lead to
+  script execution.
 
 ### Isolate your site from other websites
 
-The openness of the web allows websites to interact with each other in ways that can violate an 
-application's security expectations. This includes unexpectedly making authenticated requests or embedding data from another application in the attacker's document, allowing the attacker to modify or read application data.
+The openness of the web allows websites to interact with each other in ways that
+can violate an application's security expectations. This includes unexpectedly
+making authenticated requests or embedding data from another application in the
+attacker's document, allowing the attacker to modify or read application data.
 
-Common vulnerabilities that undermine web isolation include [clickjacking](https://portswigger.net/web-security/clickjacking), [cross-site request forgery](https://portswigger.net/web-security/csrf) (CSRF), [cross-site script inclusion](https://www.scip.ch/en/?labs.20160414) (XSSI), and various [cross-site leaks](https://xsleaks.dev).
+Common vulnerabilities that undermine web isolation include
+[clickjacking](https://portswigger.net/web-security/clickjacking), [cross-site
+request forgery](https://portswigger.net/web-security/csrf) (CSRF), [cross-site
+script inclusion](https://www.scip.ch/en/?labs.20160414) (XSSI), and various
+[cross-site leaks](https://xsleaks.dev).
 
 * Use [X-Frame-Options](#xfo) to prevent your documents from being embedded by a
   malicious website.
 * Use [Cross-Origin Resource Policy (CORP)](#corp) to prevent your website's
-  resources from being embedded by a cross-origin website.
-* Use [Cross-Origin Opener Policy (COOP)](#coop) to prevent your website's
-  documents from being opened and eavesdropped by a malicious website.
+  resources from being included by a cross-origin website.
+* Use [Cross-Origin Opener Policy (COOP)](#coop) to protect your website's
+  windows from interactions by malicious websites.
 * Use [Cross-Origin Resource Sharing (CORS)](#cors) to control access to your
   website's resources from cross-origin documents. 
+
+We strongly recommend reading [Post-Spectre Web
+Development](https://www.w3.org/TR/post-spectre-webdev/) if you are interested
+in these headers.
 
 ### Build a powerful website securely
 
 [Spectre](https://ieeexplore.ieee.org/document/8835233) puts any data loaded
-onto the same browsing context group potentially readable despite [same-origin
-policy](/same-origin-policy/). Browsers restrict features that may possibly
-exploit the vulnerability behind a special environment called "[cross-origin
-isolation](/coop-coep/)". With cross-origin isolation, you can use powerful
-features such as `SharedArrayBuffer`.
+into the same [browsing context group](/why-coop-coep/) potentially readable
+despite [same-origin policy](/same-origin-policy/). Browsers restrict features
+that may possibly exploit the vulnerability behind a special environment called
+"[cross-origin isolation](/coop-coep/)". With cross-origin isolation, you can
+use powerful features such as `SharedArrayBuffer`.
 
 * Use [Cross-Origin Embedder Policy (COEP)](#coep) along with [COOP](#coop) to
   enable cross-origin isolation.
 
 ### Encrypt traffic to your site
 
-Encryption issues appear when an application does not fully encrypt data in transit, allowing eavesdropping attackers to learn about the user's interactions with the application.
+Encryption issues appear when an application does not fully encrypt data in
+transit, allowing eavesdropping attackers to learn about the user's interactions
+with the application.
 
-Insufficient encryption can arise as a result of [mixed content](/what-is-mixed-content/), setting cookies without the [`Secure` attribute](https://developer.mozilla.org/docs/Web/HTTP/Cookies#restrict_access_to_cookies) (or [`__Secure` prefix](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Cookie_prefixes)), or [lax CORS validation logic](https://blog.detectify.com/2018/04/26/cors-misconfigurations-explained/).
+Insufficient encryption can arise in the following cases: not using HTTPS,
+[mixed content](/what-is-mixed-content/), setting cookies without the [`Secure`
+attribute](https://developer.mozilla.org/docs/Web/HTTP/Cookies#restrict_access_to_cookies)
+(or [`__Secure`
+prefix](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Cookie_prefixes)),
+or [lax CORS validation
+logic](https://blog.detectify.com/2018/04/26/cors-misconfigurations-explained/).
 
 * Use [HTTP Strict Transport Security (HSTS)](#hsts) to consisitently serve your
   contents through HTTPS.
@@ -97,13 +132,15 @@ Insufficient encryption can arise as a result of [mixed content](/what-is-mixed-
 
 ## Content Security Policy (CSP) {: #csp}
 
-[Cross-Site Scripting (XSS)](#xss) is an attack where a vulnerability on a
-website allows a malicious script to be injected and executed.
+[Cross-Site Scripting
+(XSS)](https://www.google.com/about/appsecurity/learning/xss/) is an attack
+where a vulnerability on a website allows a malicious script to be injected and
+executed.
 
 `Content-Security-Policy` provides an added layer to mitigate XSS attacks by
-restricting resources that can be loaded to the page.
+restricting which scripts can be executed by the page.
 
-We recommend that you use strict CSP and there are two approaches:
+We recommend that you enable strict CSP using one of the following approaches:
 
 * If you render your HTML pages on the server, use **a nonce-based strict CSP**.
 * If your HTML has to be served statically or cached, for example if it's a
@@ -134,7 +171,7 @@ sure to escape (and sanitize) user input.
 
 {% endAside %}
 
-#### 1. Use a nonce-based CSP {: #nonce-based-csp}
+#### 1. Use a nonce-based strict CSP {: #nonce-based-csp}
 
 If you render your HTML pages on the server, use **a nonce-based strict CSP**.
 
@@ -170,10 +207,10 @@ In HTML, in order to load the scripts, set the `nonce` attribute of all
 </script>
 ```
 
-#### 2. Use a hash-based CSP {: #hash-based-csp}
+#### 2. Use a hash-based strict CSP {: #hash-based-csp}
 
-If your HTML has to be served statically or cached, for example if it's a
-single-page application, use **a hash-based strict CSP**.
+If your HTML has to be served statically or cached, for example if you're
+building a single-page application, use **a hash-based strict CSP**.
 
 {% Label %}server configuration file{% endLabel %}
 
@@ -185,9 +222,8 @@ Content-Security-Policy:
 ```
 
 In HTML, you'll need to inline your scripts in order to apply a hash-based
-policy, because [most browsers don't support hashing external scripts](
-https://wpt.fyi/results/content-security-policy/script-src/script-src-sri_hash.sub.html?label=master&label=experimental&aligned).
-
+policy, because [most browsers don't support hashing external
+scripts](https://wpt.fyi/results/content-security-policy/script-src/script-src-sri_hash.sub.html?label=master&label=experimental&aligned).
 
 {% Label %}index.html{% endLabel %}
 
@@ -199,6 +235,9 @@ https://wpt.fyi/results/content-security-policy/script-src/script-src-sri_hash.s
 ...// your script2, inlined
 </script>
 ```
+
+To load external scripts, read "Load sourced scripts dynamically" section under
+[Option B: Hash-based CSP Response Header](/strict-csp/#hash-based-csp) section.
 
 ### Supported browsers
 
@@ -241,6 +280,10 @@ Chrome, Firefox, Edge, Safari
 * [Mitigate XSS with a Strict Content Security Policy (CSP)](/strict-csp)
 * [Content Security Policy Cheat
   Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html)
+* A nonce-based strict CSP example: [Google Photos](https://photos.google.com/)
+  (See the source code)
+* A hash-based strict CSP example: [CSP
+  Evaluator](https://csp-evaluator.withgoogle.com/) (See the source code)
 
 {% endDetails %}
 
@@ -387,14 +430,15 @@ Chrome, Edge
 
 ## X-Content-Type-Options {: #xcto}
 
-When a malicious HTML document disguised as an image is uploaded to a photo
-service, some browsers will treat it as an active document and allow it to
-execute scripts in the context of the application,  causing a [cross-site
-scripting attack](#xss).
+When a malicious HTML document is served from your domain (for example, if an
+image uploaded to a photo service contains valid HTML markup), some browsers
+will treat it as an active document and allow it to execute scripts in the
+context of the application, leading to a [cross-site scripting
+bug](https://www.google.com/about/appsecurity/learning/xss/).
 
-`X-Content-Type-Options: nosniff` prevents it by instructing the browser not to
-[sniff that the MIME type](https://mimesniff.spec.whatwg.org/#introduction) set
-in the  `Content-Type` header for a given response is correct.  This header is
+`X-Content-Type-Options: nosniff` prevents it by instructing the browser that
+the [MIME type](https://mimesniff.spec.whatwg.org/#introduction) set in the
+`Content-Type` header for a given response is correct. This header is
 recommended for **all of your resources**.
 
 {% Label %}Example usage{% endLabel%}
@@ -437,8 +481,8 @@ Chrome, Firefox, Safari, Edge
 
 ## X-Frame-Options {: #xfo}
 
-Being embedded in a malicious website may allow attackers to invoke unintended
-actions by the user with
+If a malicious website can embed your site as an iframe, this may allow
+attackers to invoke unintended actions by the user with
 [clickjacking](https://portswigger.net/web-security/clickjacking). Also,
 Spectre-type attacks give malicious websites a chance to eavesdrop the content
 of an embedded website.
@@ -515,9 +559,14 @@ Chrome, Firefox, Safari, Edge
 
 ## Cross-Origin Resource Policy (CORP) {: #corp}
 
-An attacker website can embed documents from another origin to learn information about it by exploiting web-based [cross-site leaks](https://xsleaks.dev/).
+An attacker website can embed documents from another origin, for example from
+your site, to learn information about it by exploiting web-based [cross-site
+leaks](https://xsleaks.dev/).
 
-`Cross-Origin-Resource-Policy` mitigates it by indicating the set of websites it can be loaded by. The header takes one of three values: `same-origin`, `same-site`, and `cross-origin`. **All documents** are recommended sending this header to indicate whether it allows being loaded by which origin's documents.
+`Cross-Origin-Resource-Policy` mitigates it by indicating the set of websites it
+can be loaded by. The header takes one of three values: `same-origin`,
+`same-site`, and `cross-origin`. **All documents** are recommended sending this
+header to indicate whether it allows being loaded by which origin's documents.
 
 {% Label %}Example usage{% endLabel%}
 
@@ -541,7 +590,7 @@ three headers.
 
 `cross-origin` is recommended to be applied by CDN-like services whose resources
 are assumed to be loaded by cross-origin pages unless they are already served
-through [CORS](#cors).
+through [CORS](#cors) because it has a similar effect.
 
 {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/qP2mspVMC6RazxDjWUrL.png",
 alt="Cross-Origin-Resource-Policy: cross-origin", width="800", height="234" %}
@@ -604,7 +653,8 @@ Chrome, Firefox, Safari, Edge
 
 An attacker website can open another site in a popup window to learn information
 about it by exploiting web-based [cross-site leaks](https://xsleaks.dev/). This
-also may cause side-channel attacks exploiting [Spectre](#spectre).
+also may cause side-channel attacks exploiting
+[Spectre](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)).
 
 A `Cross-Origin-Opener-Policy` header provides a way for a document to isolate
 itself from cross-origin windows opened through `window.open()` or a link with
@@ -679,10 +729,10 @@ Cross-Origin-Opener-Policy: unsafe-none
 {% Aside %}
 
 Features such as `SharedArrayBuffer`,
-`performance.measureUserAgentSpecificMemory()` or JS Self Profiling API are
-disabled by default. Some browsers allow you to use them by enabling a
-"cross-origin isolation" environment which requires [COOP](#coop) and
-[COEP](#coep) headers.
+`performance.measureUserAgentSpecificMemory()` or [JS Self Profiling
+API](https://wicg.github.io/js-self-profiling/) are disabled by default. Some
+browsers allow you to use them by enabling a "cross-origin isolation"
+environment which requires [COOP](#coop) and [COEP](#coep) headers.
 
 To learn more, read [Making your website "cross-origin isolated" using COOP and
 COEP](/coop-coep/)
@@ -717,8 +767,9 @@ Chrome, Firefox, Edge
 
 ## Cross-Origin Resource Sharing (CORS) {: #cors}
 
-Cross-Origin Resource Sharing (CORS) is a browser mechanism that requests and
-permits access to cross-origin resources.
+Unlike other items in this article, Cross-Origin Resource Sharing (CORS) is not
+a header, but a browser mechanism that requests and permits access to
+cross-origin resources.
 
 Browsers enforce [the same-origin policy](/same-origin-policy/) to prevent a web
 page programmatic access to cross-origin resources. For example, when a
@@ -745,8 +796,9 @@ Learn more how to use CORS
 
 ### Recommended usages
 
-Depending on request details, a request will be classified as a **simple
-request** or a **preflighted request**.
+Before looking into how to configure CORS, it's helpful to understand the
+distinction between request types. Depending on request details, a request will
+be classified as a **simple request** or a **preflighted request**.
 
 Criteria for a simple request:
 
@@ -838,10 +890,12 @@ Chrome, Firefox, Safari, Edge
 
 ## Cross-Origin Embedder Policy (COEP) {: #coep}
 
-To reduce the efficiency of [Spectre](#spectre) to steal cross-origin resources,
-features such as `SharedArrayBuffer`,
-`performance.measureUserAgentSpecificMemory()` or JS Self Profiling API that
-involves high-precision timers are disabled by default.
+To reduce the efficiency of
+[Spectre](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)) to
+steal cross-origin resources, features such as `SharedArrayBuffer`,
+`performance.measureUserAgentSpecificMemory()` or [JS Self Profiling
+API](https://wicg.github.io/js-self-profiling/) that involves high-precision
+timers are disabled by default.
 
 `Cross-Origin-Embedder-Policy: require-corp` prevents the documents and workers
 from loading cross-origin resources such as images, scripts, stylesheets,
@@ -877,9 +931,7 @@ width="800", height="410" %}
 
 #### Enable cross-origin isolation
 
-Sites that want to use Shared Array Buffer,
-`performance.measureUserAgentSpecificMemory()` or JS Self Profiling API need to
-enable [cross-origin isolation](/coop-coep) by sending
+Enable [cross-origin isolation](/coop-coep) by sending
 `Cross-Origin-Embedder-Policy: require-corp` along with
 `Cross-Origin-Opener-Policy: same-origin`.
 
@@ -918,7 +970,13 @@ Chrome, Firefox, Edge
 ## HTTP Strict Transport Security (HSTS) {: #hsts}
 
 Communication over an HTTP connection is not encrypted, therefore the content
-exchanged over such a network can be eavesdropped or sniffed.
+exchanged over such a network is not safe. It can be eavesdropped (when an
+attacker captures and reads the data) or sniffed (when an attacker inspects the
+content in order to infer the data itself or the file format).
+
+Even if your site is set up for HTTPS, this header protects your users in case
+something happens and causes [insufficient encryption](link to the first section
+/ encrypt your site). 
 
 `Strict-Transport-Security` header informs the browser that it should never load
 the site using HTTP and use HTTPS instead. Once it's set, the browser will use
@@ -940,7 +998,8 @@ Learn more how to use HSTS
 
 ### Recommended usages
 
-All websites that transition from HTTP to HTTPS should respond with a `Strict-Transport-Security` header when a request with HTTP is received.
+All websites that transition from HTTP to HTTPS should respond with a
+`Strict-Transport-Security` header when a request with HTTP is received.
 
 ```http
 Strict-Transport-Security: max-age=36000
@@ -951,7 +1010,8 @@ Strict-Transport-Security: max-age=36000
 Chrome, Firefox, Safari, Edge
 
 ### Learn more
-* [Strict-Transport-Security - HTTP](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security)
+* [Strict-Transport-Security -
+  HTTP](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security)
 
 {% endDetails %}
 
