@@ -41,8 +41,6 @@ declare global {
      */
     data: {
       authorsData: AuthorsData;
-      resourceCSS: TODO;
-      resourceJS: TODO;
       tagsData: TagsData;
       paths: TODO;
       countries: TODO;
@@ -100,6 +98,14 @@ declare global {
        * If post is a draft.
        */
       draft?: boolean;
+      /**
+       * If the post should be excluded from /authors/ pages.
+       */
+      excludeFromAuthors?: boolean;
+      /**
+       * If the post should be excluded from /tags/ pages.
+       */
+      excludeFromTags?: boolean;
     };
     /**
      * The rendered content of this template. This does not include layout wrappers.

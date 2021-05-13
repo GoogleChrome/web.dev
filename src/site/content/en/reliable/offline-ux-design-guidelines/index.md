@@ -54,18 +54,14 @@ current state of the application. For example, a notification could say:
 > network is restored.
 
 <figure class="w-figure" style="display: inline-block; max-width: 45%;">
-  <img src="emojoy-toast-message.png"
-       alt="The Emojoy emoji messaging app informing the user when a change in state occurs."
-  >
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/roxoXuJ9x7qUHFVWMgXZ.png", alt="The Emojoy emoji messaging app informing the user when a change in state occurs.", width="335", height="601" %}
   <figcaption class="w-figcaption">
     Clearly inform the user when a change in state occurs as soon as possible.
   </figcaption>
 </figure>
 
 <figure class="w-figure" style="display: inline-block; max-width: 45%;">
-  <img src="io-toast-message.png"
-       alt="The I/O 2016 app informing the user when a change in state occurs."
-  >
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GvE07BeSsnTyxnRbkZhz.png", alt="The I/O 2016 app informing the user when a change in state occurs.", width="335", height="601" %}
   <figcaption class="w-figcaption">
     The Google I/O app used a material design "toast" to let the user know when they were offline.
   </figcaption>
@@ -88,9 +84,7 @@ One example of this would be [Chrome Platform Status](https://chromestatus.com)
 which posts a note to the user when the app has been updated.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="weather-app.png"
-      alt="An example weather app."
-  >
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ikam7evJEVSicAnVxvWA.png", alt="An example weather app.", width="324", height="598" %}
   <figcaption class="w-figcaption">
     Some apps, like the weather app, need to auto-update, as old data
     is not useful.
@@ -98,9 +92,7 @@ which posts a note to the user when the app has been updated.
 </figure>
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="chrome-status-app-updated.png"
-      alt="Chrome Status uses a toast"
-  >
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5TtIkRCPsuxAOajX8LPF.png", alt="Chrome Status uses a toast", width="336", height="598" %}
   <figcaption class="w-figcaption">
     Apps like Chrome Status let the user know
     when content has been updated via a toast notification.
@@ -111,18 +103,14 @@ You may also show the last time the app was updated at all times in a prominent 
 be useful for a currency converter app, for example.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="material-money-rates-out-of-date.png"
-       alt="The Material Money app being out-of-date."
-  >
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nK4V7aUvmLvaNJgF1S2I.png", alt="The Material Money app being out-of-date.", width="324", height="598" %}
   <figcaption class="w-figcaption">
     Material Money caches rates…
   </figcaption>
 </figure>
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="material-money-rates-updated.png"
-       alt="Material money has been updated"
-  >
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wqaFuHzeAC2wR0D3pt7R.png", alt="Material money has been updated", width="324", height="598" %}
   <figcaption class="w-figcaption">
     …and notifies the user when the app has been updated.
   </figcaption>
@@ -133,18 +121,14 @@ informing the user of new content. Auto-updating would cause users to lose
 their place.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="tailpiece-normal.png"
-       alt="An example news app, Tailpiece in its normal state"
-  >
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rRLScscdU9BE9Wt4RYAx.png", alt="An example news app, Tailpiece in its normal state", width="360", height="665" %}
   <figcaption class="w-figcaption">
     Tailpiece, an online newspaper, will auto-download the latest news…
   </figcaption>
 </figure>
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="tailpiece-tap-to-update.png"
-       alt="Example news app, Tailpiece when its ready to be updated"
-  >
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/WNIMNF14cSF29fntl1Lc.png", alt="Example news app, Tailpiece when its ready to be updated", width="360", height="665" %}
   <figcaption class="w-figcaption">
     …but allow users to refresh manually so they do not lose their place in an article.
   </figcaption>
@@ -183,18 +167,14 @@ images. Also, adapt to the user's behavior. For example, if the sports section i
 make that the priority download.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="tailpiece-offline.png"
-       alt="Tailpiece informs the user that they are offline with various design widgets"
-  >
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/M39yiHQYpXacVII6d7zX.png", alt="Tailpiece informs the user that they are offline with various design widgets", width="360", height="665" %}
   <figcaption class="w-figcaption">
     If the device is offline, Tailpiece will notify the user with a status message…
   </figcaption>
 </figure>
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="tailpiece-offline-sidebar.png"
-       alt="Tailpiece has a visual indicator that shows what sections are ready for offline use."
-  >
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KpkzjYNoCWquWKXTvM28.png", alt="Tailpiece has a visual indicator that shows what sections are ready for offline use.", width="360", height="665" %}
   <figcaption class="w-figcaption">
     …letting them know that they can at least partially still use the app.
   </figcaption>
@@ -220,9 +200,7 @@ misunderstood by a non-technical audience so use action-based language that your
 to.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="io-offline-ready.png"
-       alt="I/O app offline"
-  >
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fNOute6xBzFcDUNMeXDe.png", alt="I/O app offline", width="360", height="664" %}
   <figcaption class="w-figcaption">
     The Google I/O 2016 app notifies the user when
     the app is ready for offline use…
@@ -230,9 +208,7 @@ to.
 </figure>
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="chome-offline.png"
-       alt="Chrome Status site is offline"
-  >
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Od6jUnazP8n7CMe18G2C.png", alt="Chrome Status site is offline", width="360", height="664" %}
   <figcaption class="w-figcaption">
     …and so does the Chrome Platform Status site, which includes information about the occupied storage.
   </figcaption>
@@ -305,7 +281,7 @@ current state of the app.
 <div class="w-columns">
 {% Compare 'worse' %}
   <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-    <img src="service-worker-ready.png" alt="A service worker icon is a bad example">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MaYiuInHsZ2mbPQcbD4l.png", alt="A service worker icon is a bad example", width="350", height="149" %}
     <figcaption class="w-figcaption">
       Avoid terms that aren't intelligible to non-technical users.
     </figcaption>
@@ -314,7 +290,7 @@ current state of the app.
 
 {% Compare 'better' %}
   <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-    <img src="download.png" alt="A download icon is a good example">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZIjYKLFK5DbrDJDJeDqu.png", alt="A download icon is a good example", width="350", height="149" %}
     <figcaption class="w-figcaption">
       Use language and imagery that describes the action.
     </figcaption>
@@ -337,7 +313,7 @@ with color, labels, and UI components.
 <div class="w-columns">
 {% Compare 'worse' %}
   <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-    <img src="accessibility_color8_dont.png" alt="A bad example only using color.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Uj28SN1ZepiIvya4YTe1.png", alt="A bad example only using color.", width="720", height="368" %}
     <figcaption class="w-figcaption">
       Use color as the sole means to describe what is happening.
     </figcaption>
@@ -346,7 +322,7 @@ with color, labels, and UI components.
 
 {% Compare 'better' %}
   <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-    <img src="accessibility_color7_do.png" alt="A good example that uses color and text to show an error.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/s78eC2GBEkDQouqhBYMO.png", alt="A good example that uses color and text to show an error.", width="720", height="368" %}
     <figcaption class="w-figcaption">
       Use a mixture of design elements to convey meaning
     </figcaption>
@@ -369,7 +345,7 @@ actions may be interpreted as saving for offline rather than demonstrating a net
 of the action you are trying to convey rather than presenting the user with an abstract concept. For
 example, save or download data would be action-based.
 
-<img src="download-icons-examples.png" alt="Various icon examples that convey offline">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/h2FFD3nLIOdSzWg5H5kO.png", alt="Various icon examples that convey offline", width="700", height="299" %}
 
 Offline can mean a number of things depending on the context, such as download, export, pin, etc.
 For more inspiration checkout the
@@ -385,13 +361,13 @@ loading. This reassures the user that something is happening and helps prevent r
 refreshes of your app.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="tailpiece-skel-article.png" alt="A skeleton layout example">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/pUIrcbblhHe5YPSrrwRy.png", alt="A skeleton layout example", width="360", height="665" %}
   <figcaption class="w-figcaption">
     Skeleton placeholder layout is shown during the download of the article…
   </figcaption>
 </figure>
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="tailpiece-normal.png" alt="A loaded article example">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rRLScscdU9BE9Wt4RYAx.png", alt="A loaded article example", width="360", height="665" %}
   <figcaption class="w-figcaption">
     …that gets replaced with the real contents once the download finishes.
   </figcaption>

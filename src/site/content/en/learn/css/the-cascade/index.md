@@ -1,14 +1,18 @@
 ---
 title: The cascade
-description:
+description: >
+  Sometimes two or more competing CSS rules could apply to an element.
+  In this module find out how the browser chooses which to use, and how to control this selection.
+audio:
+  title: 'The CSS Podcast - 004: The Cascade'
+  src: 'ttps://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_004_v1.0_FINAL.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-03-29
 tags:
   - css
 ---
-
-# The cascade
 
 CSS stands for Cascading Stylesheets.
 The cascade is the algorithm for solving conflicts where multiple CSS rules apply to an HTML element.
@@ -27,7 +31,8 @@ button {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'GRrgMOm'
+  id: 'GRrgMOm',
+  height: 200
 } %}
 </figure>
 
@@ -128,38 +133,7 @@ cannot parse—the value it cannot parse is invalid and therefore ignored.
 The browser then continues to process the rest of the CSS without breaking stuff it already understands.
 {% endAside %}
 
-@@TO DO: turn the following into a self-assessment
-[SELF ASSESSMENT START]
-
-If you have the following HTML on your page:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <button>I am a button</button>
-    <style>
-      button {
-        background: pink;
-      }
-    </style>
-  </body>
-</html>
-```
-
-Inside `styles.css`, is the following CSS rule:
-
-```css
-button {
-  background: yellow;
-}
-```
-
-**What color is the button's background?**
-[SELF ASSESSMENT END]
+{% Assessment 'position' %}
 
 ## Specificity
 
@@ -168,7 +142,7 @@ using a weighting or scoring system to make those calculations.
 By making a rule more specific,
 you can cause it to be applied even if some other CSS that matches the selector appears later in the CSS.
 
-In the next lesson you can learn the details of how specificity is calculated,
+In [the next lesson](/earn/css/specificity) you can learn the details of how specificity is calculated,
 however keeping a few things in mind will help you avoid too many specificity issues.
 
 CSS targeting a class on an element will make that rule more specific,
@@ -230,14 +204,14 @@ The **order of specificity of these origins**, from least specific, to most spec
    provided by the browser.
 
 <figure class="w-figure">
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/rjZMVAC5lNATzCErbyeI.png",
+{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/zPdaZ6G11oYrgJ78EfF7.svg",
 alt="A visual demonstration of the order of origins as also explained in the list.", width="800", height="347" %}
 </figure>
 
 If you have an `!important` rule type in the CSS you have authored
-and the user has an `!important` rule type in their custom CSS, who's CSS wins?
+and the user has an `!important` rule type in their custom CSS, whose CSS wins?
 
-@@TO DO Self assessment
+{% Assessment 'origin' %}
 
 ## Importance
 
@@ -271,6 +245,8 @@ If the CSS you expected to apply doesn't appear at all,
 then it didn't match the element.
 In that case you need to look elsewhere,
 perhaps for a typo in a class or element name or some invalid CSS.
+
+{% Assessment 'conclusion' %}
 
 ## Resources
 

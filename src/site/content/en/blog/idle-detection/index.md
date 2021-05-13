@@ -191,7 +191,8 @@ You can see the various options in the video below.
     autoplay=true,
     loop=true,
     muted=true,
-    class="w-screenshot"
+    class="w-screenshot",
+    playsinline=true
   %}
   <figcaption class="w-figcaption">
     Idle Detector state emulation in DevTools.

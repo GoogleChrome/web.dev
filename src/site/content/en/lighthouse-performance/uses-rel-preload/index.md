@@ -41,9 +41,7 @@ the potential savings for each resource is 200ms since `app.js` is no longer a b
 Preloading requests can make your pages load faster.
 
 <figure>
-  <img src="before.png"
-       alt="Without preload links, styles.css and ui.js are requested only after
-            app.js has been downloaded, parsed, and executed."/>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OiT1gArpZxNliikhBgx7.png", alt="Without preload links, styles.css and ui.js are requested only after app.js has been downloaded, parsed, and executed.", width="800", height="486" %}
   <figcaption>
     Without preload links, <code>styles.css</code> and
     <code>ui.js</code> are requested only after <code>app.js</code> has been downloaded,
@@ -71,9 +69,7 @@ as soon as possible.
 ```
 
 <figure>
-  <img src="after.png"
-       alt="With preload links, styles.css and ui.js are requested at the same time
-            as app.js."/>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tJLJXH2qXcrDBUfsSAK5.png", alt="With preload links, styles.css and ui.js are requested at the same time as app.js.", width="800", height="478" %}
   <figcaption>
     With preload links, <code>styles.css</code> and
     <code>ui.js</code> are requested at the same time as <code>app.js</code>.

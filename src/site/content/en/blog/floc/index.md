@@ -4,7 +4,7 @@ subhead: FLoC enables ad selection without sharing the browsing behaviour of ind
 authors:
   - samdutton
 date: 2021-03-30
-updated: 2021-04-15
+updated: 2021-04-21
 hero: image/80mq7dk16vVEg8BBhsVe42n6zn82/GA543wiVTwpbwp6Zmw0H.jpg
 thumbnail: image/80mq7dk16vVEg8BBhsVe42n6zn82/OuORgPSvN06ntXT5xOii.jpg
 alt: Murmuration of starlings over Brighton pier
@@ -26,6 +26,19 @@ cohort", which will be the same for thousands of browsers with a similar recent 
 The browser recalculates its cohort periodically, on the user's device, without sharing
 individual browsing data with the browser vendor or anyone else.
 
+{% Aside %}
+FLoC is now in [origin trial in Chrome](/origin-trials/). Find out more: 
+[How to take part in the FLoC origin trial](https://developer.chrome.com/blog/floc/). 
+
+During the current FLoC origin trial, a page visit will only be included in the browser's FLoC 
+computation for one of two reasons: 
+* The FLoC API (`document.interestCohort()`) is used on the page. 
+* Chrome detects that the page [loads ads or ads-related resources](https://github.com/WICG/floc/issues/82). 
+
+For other clustering algorithms, the trial may experiment with different inclusion criteria: that's 
+part of the origin trial experiment process.
+{% endAside %}
+
 Advertisers (sites that pay for advertisements) can include code on their own websites in order to
 gather and provide cohort data to their adtech platforms (companies that provide software and tools
 to deliver advertising). For example, an adtech platform might learn from an online shoe store that
@@ -36,16 +49,14 @@ Subsequently, the ad platform can use this data to select relevant ads (such as 
 boots from the shoe store) when a browser from one of those cohorts requests a page from a site that
 displays ads, such as a news website.
 
-{% Aside %}
 The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party
 cookies or other tracking mechanisms. See [Digging into the Privacy Sandbox](/digging-into-the-privacy-sandbox)
 for an overview of all the proposals.
 
-**This proposal needs your feedback!** If you have comments, please [create an
+**This proposal needs your feedback.** If you have comments, please [create an
 issue](https://github.com/WICG/floc/issues/new) on the [FLoC Explainer](https://github.com/WICG/floc)
 repository.  If you have feedback on Chrome's experiment with this proposal, please post a reply on
 the [Intent to Experiment](https://groups.google.com/a/chromium.org/g/blink-dev/c/MmijXrmwrJs).
-{% endAside %}
 
 ## Why do we need FLoC?
 
@@ -269,7 +280,7 @@ by setting a [Permissions-Policy](https://www.w3.org/TR/permissions-policy-1/#in
 in the browser's FLoC calculation if `document.interestCohort()` is used on the page. During the current
 [FLoC origin trial](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561), a
 page will also be included in the calculation if Chrome detects that the page
-[load ads or ads-related resources](https://github.com/WICG/floc/issues/82).
+[loads ads or ads-related resources](https://github.com/WICG/floc/issues/82).
 ([Ad Tagging in Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/ad_tagging.md)
 explains how Chrome's ad detection mechanism works.)
 

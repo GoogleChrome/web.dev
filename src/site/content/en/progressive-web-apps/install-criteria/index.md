@@ -30,15 +30,13 @@ menu.
 
 <div class="w-columns" >
   <figure class="w-figure" id="browser-install-promo">
-    <img src="how-does-it-work_desktop.png"
-        alt="Screenshot of omnibox with install indicator visible.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O9KXz4aQXm3ZOzPo98uT.png", alt="Screenshot of omnibox with install indicator visible.", width="800", height="307" %}
     <figcaption class="w-figcaption">
       Browser provided install promotion (desktop)
     </figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="how-does-it-work_mobile.png"
-        alt="Screenshot of browser provided install promotion.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bolh05TCEeT7xni4eUTG.png", alt="Screenshot of browser provided install promotion.", width="800", height="307" %}
     <figcaption class="w-figcaption">
       Browser provided install promotion (mobile)
     </figcaption>

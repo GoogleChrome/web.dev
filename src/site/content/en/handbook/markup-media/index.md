@@ -7,7 +7,8 @@ description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
 
-## Navigate to the media uploader
+## Images and video
+### Navigate to the media uploader
 
 Visit [the image uploader page](https://web-dev-uploads.web.app/) and
 sign-in using your Google corporate account. Note that this page only allows
@@ -19,7 +20,7 @@ There are different uploaders for web.dev and developer.chrome.com:
 * [developer.chrome.com uploader](https://chrome-gcs-uploader.web.app/)
 {% endAside %}
 
-## Choose a file
+### Choose a file
 
 Upload a high quality image (jpg or png if you need alpha transparency). Our
 image CDN will handle converting the image to webp if the browser supports it
@@ -37,7 +38,7 @@ look something like this:
 
 - Click the copy button to copy the snippet to your clipboard 📋
 
-## Paste!
+### Paste!
 
 Paste the copied code from the previous step into your article.
 
@@ -52,17 +53,17 @@ These are custom components for `web.dev` that ensure our media is
 responsive 📱
 {% endAside %}
 
-### Properties
+#### Properties
 
 The `{% raw %}`{% Img %}`{% endraw%}` and `{% raw %}`{% Video %}`{% endraw%}`
 shortcodes accepts many named arguments. Below are interfaces for both
 shortcodes. Each property of the interface is a named argument that can be used
 in the shortode.
 
-#### Img Properties (`ImgArgs`)
+##### Img Properties (`ImgArgs`)
 
 ```typescript
-{% include '../../../../../../types/site/_includes/components/Img.d.ts' %}
+{% include '../../../../../../node_modules/webdev-infra/types/shortcodes/Img.d.ts' %}
 ```
 
 The `{% raw %}`{% Img %}`{% endraw%}` `params` object exposes the entire [Imgix
@@ -92,12 +93,12 @@ aware of custom use-cases and potentially support them through our own shortcode
 directly.
 {% endAside %}
 
-#### Video Properties (`VideoArgs`)
+##### Video Properties (`VideoArgs`)
 
 ```typescript
-{% include '../../../../../../types/site/_includes/components/Video.d.ts' %}
+{% include '../../../../../../node_modules/webdev-infra/types/shortcodes/Video.d.ts' %}
 ```
-## Captions
+### Captions
 
 To include a caption along with an image, use `<figure>` with `<figcaption>` and
 place the shortcode snippet inside:
@@ -123,3 +124,16 @@ alt="ALT_TEXT_HERE", width="380", height="240" %}
     A good boy.
   </figcaption>
 </figure>
+
+### YouTube
+
+Use the {% raw %}`{% YouTube %}`{% endraw %} shortcode to embed a YouTube video.
+
+```md
+{% raw %}{% YouTube "qPD2yc8BoDk" %}
+
+<!-- You can pass an optional start time as well -->
+{% YouTube id="qPD2yc8BoDk", startTime="1678" %}{% endraw %}
+```
+
+{% YouTube "qPD2yc8BoDk" %}

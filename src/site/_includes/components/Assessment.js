@@ -22,7 +22,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const site = require('../../_data/site');
-const {generateSrc} = require('./Img');
+const {generateImgixSrc} = require('./Img');
 
 // Renders the set leader at the top of the self-assessment
 function headerTemplate(assessment) {
@@ -74,23 +74,11 @@ function questionTemplate(question, assessment) {
     ? `question-height="${assessment.height}"`
     : '';
 
-  const content = html`
+  return html`
     <web-question ${height} data-label="${assessment.tabLabel}">
       ${stimulus} ${responsesTemplate(question)}
     </web-question>
   `;
-  const $ = cheerio.load(content);
-  $('img').each(function () {
-    // @ts-ignore
-    const oldSrc = $(this).attr('src');
-    if (/image\/(.*)\/(.*)\.([a-z]{1,4})$/.test(oldSrc)) {
-      const src = generateSrc(oldSrc);
-      // @ts-ignore
-      $(this).attr('src', src);
-    }
-  });
-
-  return html`${$.html()}`;
 }
 
 // If a question has no components,
@@ -224,9 +212,22 @@ module.exports = function (targetAssessment) {
   const assessment = yaml.safeLoad(data);
 
   // prettier-ignore
-  return html`
+  const content = html`
     <web-assessment class="w-callout unresolved ${assessment.questions.length === 1 && 'web-assessment--singleton'}" aria-label="Check your understanding">
       ${headerTemplate(assessment)} ${contentTemplate(assessment)}
     </web-assessment>
   `;
+
+  const $ = cheerio.load(content);
+  $('img').each(function () {
+    // @ts-ignore
+    const oldSrc = $(this).attr('src');
+    if (/image\/(.*)\/(.*)\.([a-z]{1,4})$/.test(oldSrc)) {
+      const src = generateImgixSrc(oldSrc);
+      // @ts-ignore
+      $(this).attr('src', src);
+    }
+  });
+
+  return html`${$.html()}`;
 };

@@ -227,4 +227,4 @@ Make sure that you reject invalid requests before running authentication checks 
 - [Fetch Metadata Playground](https://secmetadata.appspot.com/)
 - [Google I/O talk: Securing Web Apps with Modern Platform Features](https://webappsec.dev/assets/pub/Google_IO-Securing_Web_Apps_with_Modern_Platform_Features.pdf) (Slides)
 
-{% YouTube 'DDtM9caQ97I', '1856' %}
+{% YouTube id='DDtM9caQ97I', startTime='1856' %}

@@ -16,7 +16,7 @@
 
 const {html} = require('common-tags');
 const path = require('path');
-const {generateSrc} = require('./Img');
+const {generateImgixSrc} = require('./Img');
 const site = require('../../_data/site');
 const strip = require('../../_filters/strip');
 const {findByUrl} = require('../../_filters/find-by-url');
@@ -28,7 +28,7 @@ const i18nRegex = /i18n\/\w+\//;
 module.exports = (locale, page, collections, renderData = {}) => {
   const forbiddenCharacters = [{searchValue: /"/g, replaceValue: '&quot;'}];
   const pageData = {
-    ...collections.all.find((item) => item.fileSlug === page.fileSlug).data,
+    ...collections.all.find((item) => item.fileSlug === page.fileSlug)?.data,
     ...renderData,
     page,
   };
@@ -62,18 +62,11 @@ module.exports = (locale, page, collections, renderData = {}) => {
     let thumbnail = social.thumbnail || social.hero;
     const alt = social.alt || site.name;
 
-    // If the page doesn't have social media images, a hero, or a thumbnail,
-    // fallback to using the site's default thumbnail.
-    // Return a full path to the image using our image CDN.
-    if (!thumbnail) {
-      thumbnail = new URL(site.thumbnail, site.imageCdn);
-    } else {
-      thumbnail = new URL(generateSrc(thumbnail));
-    }
-    thumbnail.searchParams.set('auto', 'format');
-    thumbnail.searchParams.set('fit', 'max');
-    thumbnail.searchParams.set('w', 1200);
-    thumbnail = thumbnail.toString();
+    thumbnail = generateImgixSrc(thumbnail || site.thumbnail, {
+      fit: 'max',
+      w: 1200,
+      fm: 'auto',
+    });
 
     return {title, description, thumbnail, alt};
   }
