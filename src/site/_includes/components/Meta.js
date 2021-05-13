@@ -65,6 +65,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
     thumbnail = generateImgixSrc(thumbnail || site.thumbnail, {
       fit: 'max',
       w: 1200,
+      fm: 'auto',
     });
 
     return {title, description, thumbnail, alt};

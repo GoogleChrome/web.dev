@@ -11,5 +11,7 @@ title: i18n.courses.learn_css.title
 description: i18n.courses.learn_css.description
 # This path should be relative to the _include folder.
 logo: '../../../images/courses/css/logo.svg'
+# This is used to provide the background for the navigation drawer and header.
 background: "url('/images/courses/css/background.svg')"
-thumbnail: 'image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/fs5FxWQTb8apvFViRifm.svg'
+# This is used for the social media thumbnail.
+thumbnail: 'image/foR0vJZKULb5AGJExlazy1xYDgI2/VmeHSQWK5LExsQQ0gUxh.svg'
