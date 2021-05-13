@@ -14,51 +14,112 @@ tags:
 
 ## Background
 
-[ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) have been a developer favorite for a while now—in addition to a [number of other benefits](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/), they offer the promise of a universal module format where shared code can be released once and run in browsers, as well as alternative runtimes like [Node.js](https://nodejs.org/en/). While [all modern browsers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#import) offer some ES module support, they don't all offer support _everywhere_ that code can be run. Specifically, support for importing ES modules inside of a browser's [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers) is just starting to become more widely available.
+[ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+have been a developer favorite for a while now—in addition to a
+[number of other benefits](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/),
+they offer the promise of a universal module format where shared code can be
+released once and run in browsers, as well as alternative runtimes like
+[Node.js](https://nodejs.org/en/). While
+[all modern browsers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#import)
+offer some ES module support, they don't all offer support _everywhere_ that
+code can be run. Specifically, support for importing ES modules inside of a
+browser's
+[service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+is just starting to become more widely available.
 
-This article details the current state of ES module support in service workers across common browsers, along with some gotchas to avoid, and best practices for shipping backwards-compatible service worker code.
+This article details the current state of ES module support in service workers
+across common browsers, along with some gotchas to avoid, and best practices for
+shipping backwards-compatible service worker code.
 
 ## Use cases
 
-The ideal use case for ES modules inside of service workers is for loading in modern library or configuration code that's shared with other runtimes that support ES modules.
+The ideal use case for ES modules inside of service workers is for loading in
+modern library or configuration code that's shared with other runtimes that
+support ES modules.
 
-Attempting to share code in this way prior to ES modules entailed using older "universal" module formats like [UMD](https://github.com/umdjs/umd) that include unneeded boilerplate, and writing code that made changes to globally exposed variables.
+Attempting to share code in this way prior to ES modules entailed using older
+"universal" module formats like [UMD](https://github.com/umdjs/umd) that include
+unneeded boilerplate, and writing code that made changes to globally exposed
+variables.
 
-Scripts imported via ES modules can trigger the service worker [update](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#updates) flow if their contents change, matching the [behavior](https://developers.google.com/web/updates/2019/09/fresher-sw#checks_for_updates_to_imported_scripts) of <code>[importScripts()](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts)</code>.
+Scripts imported via ES modules can trigger the service worker
+[update](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#updates)
+flow if their contents change, matching the
+[behavior](https://developers.google.com/web/updates/2019/09/fresher-sw#checks_for_updates_to_imported_scripts)
+of
+<code>[importScripts()](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts)</code>.
 
 ## Current limitations
 
 ### Static imports only
 
-ES modules can be imported in one of two ways: either [statically](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import), using the `import ... from '...'` syntax, or [dynamically](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports), using an `import('...')` statement. Inside of a service worker, only the static syntax is currently supported.
+ES modules can be imported in one of two ways: either
+[statically](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import),
+using the `import ... from '...'` syntax, or
+[dynamically](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports),
+using an `import('...')` statement. Inside of a service worker, only the static
+syntax is currently supported.
 
-This limitation is analogous to a [similar restriction](https://developers.google.com/web/updates/2018/10/tweaks-to-addAll-importScripts) placed on `importScripts()` usage. Dynamic calls to `importScripts()` do not work inside of a service worker, and all `importScripts()` calls, which are inherently synchronous, must complete before the service worker completes its `install` phase. This restriction ensures that the browser knows about, and is able to implicitly cache, all JavaScript code needed for a service worker's implementation during installation.
+This limitation is analogous to a
+[similar restriction](https://developers.google.com/web/updates/2018/10/tweaks-to-addAll-importScripts)
+placed on `importScripts()` usage. Dynamic calls to `importScripts()` do not
+work inside of a service worker, and all `importScripts()` calls, which are
+inherently synchronous, must complete before the service worker completes its
+`install` phase. This restriction ensures that the browser knows about, and is
+able to implicitly cache, all JavaScript code needed for a service worker's
+implementation during installation.
 
-At some point in the future, this restriction might be lifted, and dynamic ES module imports [may be allowed](https://github.com/w3c/ServiceWorker/issues/1356#issuecomment-783220858). For the time being, though, ensure that you only use the static syntax inside of a service worker.
+At some point in the future, this restriction might be lifted, and dynamic ES
+module imports
+[may be allowed](https://github.com/w3c/ServiceWorker/issues/1356#issuecomment-783220858).
+For the time being, though, ensure that you only use the static syntax inside of
+a service worker.
 
 #### What about other workers?
 
-Support for [ES modules in "dedicated" workers](https://web.dev/module-workers/)—those constructed with `new Worker('...', {type: 'module'})`—is more widespread, and has been supported in Chrome and Edge since [version 80](https://chromestatus.com/feature/5761300827209728), as well as [recent versions](https://bugs.webkit.org/show_bug.cgi?id=164860) of Safari. Both static and dynamic ES module imports are supported in dedicated workers.
+Support for
+[ES modules in "dedicated" workers](https://web.dev/module-workers/)—those
+constructed with `new Worker('...', {type: 'module'})`—is more widespread, and
+has been supported in Chrome and Edge since
+[version 80](https://chromestatus.com/feature/5761300827209728), as well as
+[recent versions](https://bugs.webkit.org/show_bug.cgi?id=164860) of Safari.
+Both static and dynamic ES module imports are supported in dedicated workers.
 
-Chrome and Edge have supported ES modules in [shared workers](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker) since [version 83](https://chromestatus.com/feature/5169440012369920), but no other browser offers support at this time.
+Chrome and Edge have supported ES modules in
+[shared workers](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker)
+since [version 83](https://chromestatus.com/feature/5169440012369920), but no
+other browser offers support at this time.
 
 ### No support for import maps
 
-[Import maps](https://github.com/WICG/import-maps/blob/main/README.md) allow runtime environments to rewrite module specifiers, to, for example, prepend the URL of a preferred CDN from which the ES modules can be loaded.
+[Import maps](https://github.com/WICG/import-maps/blob/main/README.md) allow
+runtime environments to rewrite module specifiers, to, for example, prepend the
+URL of a preferred CDN from which the ES modules can be loaded.
 
-While Chrome and Edge [version 89](https://www.chromestatus.com/feature/5315286962012160) and above support import maps, they currently [cannot be used](https://github.com/WICG/import-maps/issues/2) with service workers.
+While Chrome and Edge
+[version 89](https://www.chromestatus.com/feature/5315286962012160) and above
+support import maps, they currently
+[cannot be used](https://github.com/WICG/import-maps/issues/2) with service
+workers.
 
 ## Browser support
 
-ES modules in service workers are supported in Chrome and Edge starting with [version 91](https://chromestatus.com/feature/4609574738853888).
+ES modules in service workers are supported in Chrome and Edge starting with
+[version 91](https://chromestatus.com/feature/4609574738853888).
 
-Safari added support in the [Technology Preview 122 release](https://webkit.org/blog/11577/release-notes-for-safari-technology-preview-122/#:~:text=Added%20support%20for%20modules%20in%20Service%20Workers), and developers should expect to see this functionality released in the standard version of Safari in a future release.
+Safari added support in the
+[Technology Preview 122 release](https://webkit.org/blog/11577/release-notes-for-safari-technology-preview-122/#:~:text=Added%20support%20for%20modules%20in%20Service%20Workers),
+and developers should expect to see this functionality released in the standard
+version of Safari in a future release.
 
-Firefox does not currently support this functionality, and updates on their position can be found in this [GitHub issue](https://github.com/mozilla/standards-positions/issues/499).
+Firefox does not currently support this functionality, and updates on their
+position can be found in this
+[GitHub issue](https://github.com/mozilla/standards-positions/issues/499).
 
 ## Example code
 
-This is a basic example of using a shared ES module in a web app's `window` context, while also registering a service worker that uses the same ES module:
+This is a basic example of using a shared ES module in a web app's `window`
+context, while also registering a service worker that uses the same ES module:
 
 ```javascript
 // Inside config.js:
@@ -91,10 +152,28 @@ self.addEventListener('install', (event) => {
 
 ### Backwards compatibility
 
-The above example would work fine if all browsers supported ES modules in service workers, but as of this writing, that's not the case.
+The above example would work fine if all browsers supported ES modules in
+service workers, but as of this writing, that's not the case.
 
-To accommodate browsers that don't have built-in support, you can run your service worker script through a [ES module-compatible bundler](https://bundlers.tooling.report/) to create a service worker that includes all of the module code inline, and will work in older browsers. Alternatively, if the modules you're attempting to import are already available bundled in [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) or [UMD](https://github.com/umdjs/umd) formats, you can import them using `importScripts()`.
+To accommodate browsers that don't have built-in support, you can run your
+service worker script through a
+[ES module-compatible bundler](https://bundlers.tooling.report/) to create a
+service worker that includes all of the module code inline, and will work in
+older browsers. Alternatively, if the modules you're attempting to import are
+already available bundled in
+[IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) or
+[UMD](https://github.com/umdjs/umd) formats, you can import them using
+`importScripts()`.
 
-Once you have two versions of your service worker available—one that uses ES modules, and the other that doesn't—you'll need to detect what the current browser supports, and register the corresponding service worker script. The best practices for detecting support are currently in flux, but you can follow the discussion in this [GitHub issue](https://github.com/w3c/ServiceWorker/issues/1582) for recommendations.
+Once you have two versions of your service worker available—one that uses ES
+modules, and the other that doesn't—you'll need to detect what the current
+browser supports, and register the corresponding service worker script. The best
+practices for detecting support are currently in flux, but you can follow the
+discussion in this
+[GitHub issue](https://github.com/w3c/ServiceWorker/issues/1582) for
+recommendations.
 
-_Photo by <a href="https://unsplash.com/@vlado?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vlado Paunovic</a> on <a href="https://unsplash.com/@vlado?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>_
+_Photo by <a
+href="https://unsplash.com/@vlado?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vlado
+Paunovic</a> on <a
+href="https://unsplash.com/@vlado?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>_
