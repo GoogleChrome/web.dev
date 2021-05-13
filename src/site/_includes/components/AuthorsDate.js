@@ -75,6 +75,7 @@ const renderAuthorImages = (limit, pairs) => {
         height: '40',
         class: 'w-author__image w-author__image--small',
         params: {
+          auto: 'format',
           fit: 'crop',
           h: '40',
           w: '40',
