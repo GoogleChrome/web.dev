@@ -11,8 +11,8 @@ tags:
 ---
 
 This article lists the most important security headers you can use to protect
-your website. Use this article to understand, look up, and learn how to use
-web-based security features on your website.
+your website. Use it to understand web-based security features, learn how to
+implement them on your website, and as a reference for when you need a reminder.
 
 Security headers recommended for all websites:
 : [X-Content-Type-Options](#xcto)
@@ -32,15 +32,15 @@ Security headers needed for websites with advanced features (e.g. `SharedArrayBu
 {% Details %}
 {% DetailsSummary %}
 
-Learn known threats on the web
+Known threats on the web
 
-Before diving into security headers, learn what are known threats and understand
-why you'd want to use these security headers.
+Before diving into security headers, learn about known threats on the web 
+and why you'd want to use these security headers.
 
 {% endDetailsSummary %}
 
-Before diving into security headers, learn what are known threats and understand
-why you'd want to use these security headers.
+Before diving into security headers, learn about known threats on the web 
+and why you'd want to use these security headers.
 
 ### Protect your site from injection vulnerabilities
 
@@ -95,9 +95,9 @@ script inclusion](https://www.scip.ch/en/?labs.20160414) (XSSI), and various
 * Use [Cross-Origin Resource Sharing (CORS)](#cors) to control access to your
   website's resources from cross-origin documents. 
 
-We strongly recommend reading [Post-Spectre Web
-Development](https://www.w3.org/TR/post-spectre-webdev/) if you are interested
-in these headers.
+[Post-Spectre Web
+Development](https://www.w3.org/TR/post-spectre-webdev/) is a great read 
+if you are interested in these headers.
 
 ### Build a powerful website securely
 
@@ -140,7 +140,7 @@ executed.
 `Content-Security-Policy` provides an added layer to mitigate XSS attacks by
 restricting which scripts can be executed by the page.
 
-We recommend that you enable strict CSP using one of the following approaches:
+It's recommended that you enable strict CSP using one of the following approaches:
 
 * If you render your HTML pages on the server, use **a nonce-based strict CSP**.
 * If your HTML has to be served statically or cached, for example if it's a
@@ -236,7 +236,7 @@ scripts](https://wpt.fyi/results/content-security-policy/script-src/script-src-s
 </script>
 ```
 
-To load external scripts, read "Load sourced scripts dynamically" section under
+To load external scripts, read "Load sourced scripts dynamically" under
 [Option B: Hash-based CSP Response Header](/strict-csp/#hash-based-csp) section.
 
 ### Supported browsers
@@ -270,7 +270,7 @@ Chrome, Firefox, Edge, Safari
   become less relevant: nowadays, most browsers block
   [mixed-content](/what-is-mixed-content/).
 * You can also set a CSP in [**Report-Only
-  mode**](/strict-csp/#step-2:-set-a-strict-csp-and-prepare-your-scripts) 
+  mode**](/strict-csp/#step-2:-set-a-strict-csp-and-prepare-your-scripts). 
 * If you can't set a CSP as a header server-side, you can also set it as a meta
   tag. Note that you can't use **Report-Only** mode for meta tags (even though
   [this may change](https://github.com/w3c/webappsec-csp/issues/277)).
@@ -297,7 +297,7 @@ execution such as `eval()` or `.innerHTML`.
 Trusted Types provides the tools to write, security review, and maintain
 applications free of DOM XSS. They can be enabled via [CSP](#csp) and make
 JavaScript secure by default by limiting dangerous web APIs to only accept a
-special object - a Trusted Type.
+special object-a Trusted Type.
 
 To create these objects you can define security policies in which you can ensure
 that security rules (such as escaping or sanitization) are consistently applied
@@ -349,10 +349,10 @@ How to use Trusted Types
     Currently `'script'` is the only acceptable value for
     `require-trusted-types-for` directive.
 
-    Of course, Trusted Types can be combined with other CSP directives:
+    Of course, you can combine Trusted Types with other CSP directives:
 
     {% Label %}
-    When a nonce-based CSP in the previous section is merged with Trusted Types
+    Merging a nonce-based CSP from above with Trusted Types:
     {% endLabel %}
 
     ```http
@@ -366,14 +366,14 @@ How to use Trusted Types
     {% Aside %}
 
     You may limit allowed Trusted Types policy names by setting an additional
-    `trusted-types` directive (e.g. `trusted-types myPolicy`). However, this is
+    `trusted-types` directive (for example, `trusted-types myPolicy`). However, this is
     not a requirement.
 
     {% endAside %}
 
 2. Define a policy
 
-    {% Label %}Define a policy:{% endLabel %}
+    {% Label %}Policy:{% endLabel %}
 
     ```javascript
     // Feature detection
@@ -517,9 +517,9 @@ How to use X-Frame-Options
 
 ### Recommended usages
 
-All documents that are not designed to be embedded should use this header.
+All documents that are not designed to be embedded should use `X-Frame-Options` header.
 
-#### Protects your website from being embedded by any websites
+#### Protects your website from being embedded by any other websites
 
 Deny being embedded by any other documents.
 
@@ -530,7 +530,7 @@ alt="X-Frame-Options: DENY", width="800", height="237" %}
 X-Frame-Options: DENY
 ```
 
-#### Protects your website from being embedded by all cross-origin websites
+#### Protects your website from being embedded by any cross-origin websites
 
 Allow being embedded only by same-origin documents.
 
@@ -634,8 +634,8 @@ Cross-Origin-Resource-Policy: same-site
 
 {% Aside %}
 
-Learn the difference between same-origin and same-site at [Understanding
-"same-site" and "same-origin" "same-site"](/same-site-same-origin/).
+To learn more about the difference between same-origin and same-site, check out
+[Understanding "same-site" and "same-origin" "same-site"](/same-site-same-origin/).
 
 {% endAside %}
 
@@ -738,7 +738,7 @@ browsers allow you to use them in "cross-origin isolated" contexts, which
 require you to set [COOP](#coop) and [COEP](#coep) headers.
 
 To learn more, read [Making your website "cross-origin isolated" using COOP and
-COEP](/coop-coep/)
+COEP](/coop-coep/).
 
 {% endAside %}
 
@@ -803,14 +803,14 @@ be classified as a **simple request** or a **preflighted request**.
 
 Criteria for a simple request:
 
-* The method is one of: `GET`, `HEAD`, `POST`
-* The custom headers only include: `Accept`, `Accept-Language`,
-  `Content-Language`, `Content-Type`
-* The `Content-Type` is one of: `application/x-www-form-urlencoded`,
-  `multipart/form-data`, `text/plain`
+* The method is `GET`, `HEAD`, or `POST`.
+* The custom headers only include `Accept`, `Accept-Language`,
+  `Content-Language`, and `Content-Type`.
+* The `Content-Type` is `application/x-www-form-urlencoded`,
+  `multipart/form-data`, or `text/plain`.
 
-Everything else is classified as a preflighted request. More nuances can be
-found at [Cross-Origin Resource Sharing (CORS) - HTTP |
+Everything else is classified as a preflighted request. For more details,
+check out [Cross-Origin Resource Sharing (CORS) - HTTP |
 MDN](https://developer.mozilla.org/docs/Web/HTTP/CORS#simple_requests).
 
 #### Simple request
