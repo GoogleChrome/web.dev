@@ -57,7 +57,7 @@ ES modules can be imported in one of two ways: either
 [statically](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import),
 using the `import ... from '...'` syntax, or
 [dynamically](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports),
-using an `import('...')` statement. Inside of a service worker, only the static
+using the `import()` method. Inside of a service worker, only the static
 syntax is currently supported.
 
 This limitation is analogous to a
