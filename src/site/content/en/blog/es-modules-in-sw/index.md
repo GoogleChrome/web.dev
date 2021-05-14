@@ -15,7 +15,7 @@ tags:
 ## Background
 
 [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
-have been a developer favorite for a while now—in addition to a
+have been a developer favorite for a while now. In addition to a
 [number of other benefits](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/),
 they offer the promise of a universal module format where shared code can be
 released once and run in browsers, as well as alternative runtimes like
