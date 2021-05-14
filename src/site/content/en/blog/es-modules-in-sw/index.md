@@ -156,7 +156,7 @@ The above example would work fine if all browsers supported ES modules in
 service workers, but as of this writing, that's not the case.
 
 To accommodate browsers that don't have built-in support, you can run your
-service worker script through a
+service worker script through an
 [ES module-compatible bundler](https://bundlers.tooling.report/) to create a
 service worker that includes all of the module code inline, and will work in
 older browsers. Alternatively, if the modules you're attempting to import are
