@@ -16,7 +16,7 @@
           {% set pages = collections.all | navigation(course.toc) %}
           <span>{{ pages.length }} {{ 'i18n.learn.resources' | i18n(locale) }}</span>
         </div>
-        <a href="{{ course.meta.url }}">
+        <a class="course-card__image" href="{{ course.meta.url }}">
           <img class="course-card__thumbnail" src="/images/courses/css/thumbnail.svg">
         </a>
         <a href="{{ course.meta.url }}" class="course-card__description display-block gap-top-400">

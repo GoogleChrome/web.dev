@@ -33,7 +33,13 @@
     &:hover,
     &:focus {
       text-decoration: none;
+      outline: none;
     }
+  }
+
+  &__image:hover,
+  &__image:focus {
+    outline: none;
   }
 }
 
