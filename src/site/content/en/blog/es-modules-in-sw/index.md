@@ -18,7 +18,7 @@ tags:
 have been a developer favorite for a while now. In addition to a
 [number of other benefits](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/),
 they offer the promise of a universal module format where shared code can be
-released once and run in browsers, as well as alternative runtimes like
+released once and run in browsers and in alternative runtimes like
 [Node.js](https://nodejs.org/en/). While
 [all modern browsers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#import)
 offer some ES module support, they don't all offer support _everywhere_ that
