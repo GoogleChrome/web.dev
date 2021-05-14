@@ -1,10 +1,10 @@
 ---
-title: What is Federated Learning of Cohorts (FLoC)?
+title: What is FLoC?
 subhead: FLoC enables ad selection without sharing the browsing behaviour of individual users.
 authors:
   - samdutton
 date: 2021-03-30
-updated: 2021-04-21
+updated: 2021-05-14
 hero: image/80mq7dk16vVEg8BBhsVe42n6zn82/GA543wiVTwpbwp6Zmw0H.jpg
 thumbnail: image/80mq7dk16vVEg8BBhsVe42n6zn82/OuORgPSvN06ntXT5xOii.jpg
 alt: Murmuration of starlings over Brighton pier
@@ -16,8 +16,6 @@ tags:
 feedback:
   - api
 ---
-
-## Summary
 
 FLoC provides a privacy-preserving mechanism for interest-based ad selection.
 
