@@ -33,7 +33,7 @@ shipping backwards-compatible service worker code.
 
 ## Use cases
 
-The ideal use case for ES modules inside of service workers is for loading in
+The ideal use case for ES modules inside of service workers is for loading a
 modern library or configuration code that's shared with other runtimes that
 support ES modules.
 
