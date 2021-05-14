@@ -108,7 +108,7 @@ ES modules in service workers are supported in Chrome and Edge starting with
 [version 91](https://chromestatus.com/feature/4609574738853888).
 
 Safari added support in the
-[Technology Preview 122 release](https://webkit.org/blog/11577/release-notes-for-safari-technology-preview-122/#:~:text=Added%20support%20for%20modules%20in%20Service%20Workers),
+[Technology Preview 122 Release](https://webkit.org/blog/11577/release-notes-for-safari-technology-preview-122/#:~:text=Added%20support%20for%20modules%20in%20Service%20Workers),
 and developers should expect to see this functionality released in the standard
 version of Safari in a future release.
 
