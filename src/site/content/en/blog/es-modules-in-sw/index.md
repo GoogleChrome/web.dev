@@ -72,7 +72,7 @@ implementation during installation.
 Eventually, this restriction might be lifted, and dynamic ES
 module imports
 [may be allowed](https://github.com/w3c/ServiceWorker/issues/1356#issuecomment-783220858).
-For the time being, though, ensure that you only use the static syntax inside of
+For now, ensure that you only use the static syntax inside of
 a service worker.
 
 #### What about other workers?
