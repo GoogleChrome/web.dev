@@ -69,7 +69,7 @@ inherently synchronous, must complete before the service worker completes its
 able to implicitly cache, all JavaScript code needed for a service worker's
 implementation during installation.
 
-At some point in the future, this restriction might be lifted, and dynamic ES
+Eventually, this restriction might be lifted, and dynamic ES
 module imports
 [may be allowed](https://github.com/w3c/ServiceWorker/issues/1356#issuecomment-783220858).
 For the time being, though, ensure that you only use the static syntax inside of
