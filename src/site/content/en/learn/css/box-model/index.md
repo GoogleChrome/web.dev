@@ -280,7 +280,7 @@ by making the following modification to use the alternative box model, `border-b
 ```
 
 This alternative box model tells CSS to apply the `width` to the border box instead of the
-content box.vThis means that our `border` and `padding` get _pushed in_,
+content box. This means that our `border` and `padding` get _pushed in_,
 and as a result,
 when you set `.my-box` to be `200px` wide: it actually renders at `200px` wide.
 
