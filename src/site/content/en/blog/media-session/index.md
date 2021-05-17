@@ -4,7 +4,7 @@ subhead: How to integrate with hardware media keys, customize media notification
 authors:
   - beaufortfrancois
 date: 2020-03-06
-updated: 2021-05-07
+updated: 2021-05-17
 hero: image/admin/IhujMvzGa5Mf0aNWYRXW.jpg
 thumbnail: image/admin/Q6CqQNLucogBCxGMsSU2.jpg
 description: |
@@ -419,7 +419,7 @@ conferencing actions below.
 
 {% Aside %}
 At the time of writing, video conferencing actions are available only in
-Chrome&nbsp;92 on desktop.
+Chrome&nbsp;91 on desktop.
 {% endAside %}
 
 ### Toggle microphone
