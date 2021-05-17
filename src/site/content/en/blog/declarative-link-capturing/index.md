@@ -30,7 +30,7 @@ be updated as the implementation progresses. {% endAside %}
 
 ## What is Declarative Link Capturing? {: #what }
 
-Clicking links on the web can sometimes be a bit of an adventure. For example, clicking a
+Clicking links on the web can sometimes be a positively surprising experience. For example, clicking a
 [YouTube link](https://www.youtube.com/watch?v=dQw4w9WgXcQ) on a website like the one you read this
 very article on right now on an iOS device that has the
 [YouTube iOS app](https://apps.apple.com/us/app/youtube-watch-listen-stream/id544007664) installed
@@ -48,7 +48,7 @@ be captured, including, but not limited to, the following examples:
 1. Clicked links from other web pages.
 1. URL launches from a platform-specific app in the operating system.
 1. Navigations originating from the [App Shortcuts API](/app-shortcuts/)
-1. Links that go through (URL protocol handlers)[/url-protocol-handler/]
+1. Links that go through [URL protocol handlers](/url-protocol-handler/)
 1. Navigations caused by [file handlers](/file-handling/)
 1. Navigations caused by the [Share Target API](/web-share-target/)
 1. …and others
@@ -67,7 +67,7 @@ the `"scope"` member is not present in the manifest, it defaults to the parent p
 `"start_url"` member. {% endAside %}
 
 Some special conditions like middle-clicking a link (or right-clicking and then "open in new tab")
-would typically not trigger the link capturing behavior. The fact whether a link is `target=_self`
+would typically not trigger the link capturing behavior. Whether a link is `target=_self`
 or `target=_blank` does not matter, so that links clicked in a browser window (or window of a
 different PWA) would be opened in the PWA even if they would normally cause a navigation within the
 same tab.
@@ -91,7 +91,7 @@ Examples of sites that may use this API include:
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | [In Progress][spec]      |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| **4. Origin trial**                      | **[In progress][ot]**    |
+| **4. Origin trial**                      | **[In progress][ot]** (on Chrome OS)  |
 | 5. Launch                                | Not started              |
 
 </div>
