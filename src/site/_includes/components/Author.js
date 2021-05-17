@@ -41,7 +41,6 @@ module.exports = ({id, author, showSocialMedia = false, small = false}) => {
     height: '64',
     class: `w-author__image${small ? ' w-author__image--small' : ''}`,
     params: {
-      auto: 'format',
       fit: 'crop',
       h: '64',
       w: '64',

@@ -69,7 +69,6 @@ class BaseCard {
       width: '354',
       class: 'w-card-base__image',
       params: {
-        auto: 'format',
         fit: 'crop',
         h: '240',
         w: '354',

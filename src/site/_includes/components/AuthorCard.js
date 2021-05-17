@@ -35,7 +35,6 @@ class AuthorCard extends BaseCard {
       height: '192',
       class: 'w-card-author__image',
       params: {
-        auto: 'format',
         fit: 'crop',
         h: '192',
         w: '192',
