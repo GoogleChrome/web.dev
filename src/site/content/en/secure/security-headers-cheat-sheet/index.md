@@ -294,14 +294,15 @@ XSS](https://portswigger.net/web-security/cross-site-scripting/dom-based) is an
 attack where a malicious data is passed into a sink that supports dynamic code
 execution such as `eval()` or `.innerHTML`.
 
-Trusted Types provides the tools to write, security review, and maintain
+Trusted Types provide the tools to write, security review, and maintain
 applications free of DOM XSS. They can be enabled via [CSP](#csp) and make
-JavaScript secure by default by limiting dangerous web APIs to only accept a
-special object-a Trusted Type.
+JavaScript code secure by default by limiting dangerous web APIs to only accept
+a special object-a Trusted Type.
 
 To create these objects you can define security policies in which you can ensure
 that security rules (such as escaping or sanitization) are consistently applied
-before the data is written to the DOM.
+before the data is written to the DOM. These policies are then the only places
+in code that could potentially introduce DOM XSS.
 
 {% Label %}Example usages{% endLabel %}
 
@@ -313,7 +314,7 @@ Content-Security-Policy: require-trusted-types-for 'script'
 // Feature detection
 if (window.trustedTypes && trustedTypes.createPolicy) {
   // Name and create a policy
-  const policy = trustedTypes.createPolicy('htmlPolicy', {
+  const policy = trustedTypes.createPolicy('escapePolicy', {
     createHTML: str => {
       return str.replace(/\</g, '&lt;').replace(/>/g, '&gt;');
     }
@@ -322,7 +323,7 @@ if (window.trustedTypes && trustedTypes.createPolicy) {
 ```
 
 ```javascript
-// Assignment of raw strings are blocked by Trusted Types.
+// Assignment of raw strings is blocked by Trusted Types.
 el.innerHTML = 'some string'; // This throws an exception.
 
 // Assignment of Trusted Types is accepted safely.
@@ -379,7 +380,7 @@ How to use Trusted Types
     // Feature detection
     if (window.trustedTypes && trustedTypes.createPolicy) {
       // Name and create a policy
-      const policy = trustedTypes.createPolicy('htmlPolicy', {
+      const policy = trustedTypes.createPolicy('escapePolicy', {
         createHTML: str => {
           return str.replace(/\</g, '&lt;').replace(/>/g, '&gt;');
         }
