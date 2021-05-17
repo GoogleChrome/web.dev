@@ -2,13 +2,13 @@
 layout: post
 title: How to set browser flags in Chromium
 subhead: |
-  For some of the new APIs we introduce in Chromium, you need to set a browser flag for testing.
+  For some of the new APIs we introduce in Chromium, you need to set a browser flag for experimentation.
   This article explains how to do this in the various Chromium derivatives like Google Chrome, Microsoft Edge, and others.
 authors:
   - thomassteiner
 date: 2021-05-17
 description: |
-  For some of the new APIs we introduce in Chromium, you need to set a browser flag for testing.
+  For some of the new APIs we introduce in Chromium, you need to set a browser flag for experimentation.
   This article explains how to do this in the various Chromium derivatives like Google Chrome, Microsoft Edge, and others.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/NcSd5vAM9zMrbQqwVZhl.jpg
 alt: Various party flags.
@@ -28,30 +28,31 @@ Chromium, including the popular browsers [Google Chrome](https://www.google.com/
 ## The `chrome://` scheme
 
 Google Chrome has since the beginning supported a special scheme called `chrome://` for accessing
-browser-internal settings or features. You can see the (almost) full list by putting
-`chrome://chrome-urls` into the URL bar. The most common such special URL is `chrome://flags`.
+browser-internal settings or features. You can see the full list by putting
+`chrome://chrome-urls` into the URL bar. The special URL of interest here is `chrome://flags`.
 
 ## Setting browser flags
 
-For some of the [new APIs](/tags/capabilities/) we introduce in Chromium, you need to set a browser
-flag for testing. You guessed it, `chrome://flags` is where this happens. The most popular flag we
+For some [new APIs](/tags/capabilities/) in Chromium, you need to set a browser
+flag for experimentation. You guessed it, `chrome://flags` is where this happens. The most popular flag we
 ask you to set is `chrome://flags/#enable-experimental-web-platform-features`, which, as the name
 suggests, enables experimental web platform features.
 
 {% Aside 'warning' %} As the name suggests, experimental web platform features are _experimental_.
 We do not recommend you set flags on your daily production browser. Instead, we prefer you to use a
 development browser version like the Beta, Dev, or Canary channel for your development needs where
-you can set flags as required, and the Stable channel for everything else. {% endAside %}
+you can set flags as required, and the Stable channel for everything else.
+Also be sure to only set flags based on instructions from sources you trust. {% endAside %}
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/vtpmqTzfmsru5ZhxNuGt.png", alt="Toggling the 'experimental web platform features' flag.", width="800", height="125" %}
 
-{% Aside 'key-term' %} Browser flags are distinct from [origin trials](/origin-trials/).
+{% Aside %} Browser flags are distinct from [origin trials](/origin-trials/).
 
-Origin trials are set by website owners and opt in your local browser to a given feature. Only
+Origin trials are set by website owners and opt a user's browser into supporting a given feature. Only
 features deemed safe for testing with real users are available for origin trials.
 
 Browser flags are set by you and opt in your local browser to a given feature. Not all features that
-are available behind a flag are ready for prime time. {% endAside %}
+are available behind a flag are ripe for production—sometimes quite the opposite. {% endAside %}
 
 ## Scheme rewrites
 
@@ -59,7 +60,7 @@ Something interesting happens, though, if you enter a `chrome://` URL into a bro
 Chrome. For example, if you enter `chrome://flags/#enable-experimental-web-platform-features` into
 Microsoft Edge, you will notice that it gets rewritten as
 `edge://flags/#enable-experimental-web-platform-features`. All vendors have created this rewrite
-mechanism, which makes sense, as Edge is not Chrome, albeit is based on Chromium.
+mechanism, which makes sense, as Edge is not Chrome, although it is based on Chromium.
 
 ## Inclusive documentation
 
