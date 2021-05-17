@@ -238,13 +238,13 @@ To do that, first you need to store the source element's HTML when the drag star
 
 ```js/3-6
 function handleDragStart(e) {
-    this.style.opacity = '0.4';
+  this.style.opacity = '0.4';
 
-    dragSrcEl = this;
+  dragSrcEl = this;
 
-    e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/html', this.innerHTML);
-  }
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/html', this.innerHTML);
+}
 ```
 
 In the `drop` event you process the column drop,
@@ -255,14 +255,13 @@ first checking that the user is not dropping back onto the same column they drag
 function handleDrop(e) {
   e.stopPropagation();
 
-    if (dragSrcEl !== this) {
-      dragSrcEl.innerHTML = this.innerHTML;
-      this.innerHTML = e.dataTransfer.getData('text/html');
-    }
-
-    return false;
+  if (dragSrcEl !== this) {
+    dragSrcEl.innerHTML = this.innerHTML;
+    this.innerHTML = e.dataTransfer.getData('text/html');
   }
 
+  return false;
+}
 ```
 
 You can see the result in the following demo.
