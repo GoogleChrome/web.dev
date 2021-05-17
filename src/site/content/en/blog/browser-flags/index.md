@@ -41,7 +41,7 @@ experimental web platform features.
 {% Aside 'warning' %} As the name suggests, experimental web platform features are _experimental_.
 We do not recommend you set flags on your daily production browser. Instead, we prefer you to use a
 development browser version like the Beta, Dev, or Canary channel for your development needs where
-you can set flags as needed, and the Stable channel for everything else. {% endAside %}
+you can set flags as required, and the Stable channel for everything else. {% endAside %}
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/vtpmqTzfmsru5ZhxNuGt.png", alt="Toggling the 'experimental web platform features' flag.", width="800", height="125" %}
 
