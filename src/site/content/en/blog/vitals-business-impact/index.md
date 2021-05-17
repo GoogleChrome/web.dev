@@ -83,7 +83,7 @@ width="800", height="368" %}
 - Image optimization techniques.
 - Resize hero image; defer non critical.
 
-#### Key Learnings:
+#### Key Learnings
 
 - A/B testing is the best way to measure the meaningful impact.
 - A/B should be a server side one.
