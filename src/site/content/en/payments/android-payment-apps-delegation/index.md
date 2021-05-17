@@ -383,7 +383,7 @@ request.
       <tr>
         <td>Google Quick Search Box (a WebLayer embedder)</td>
         <td>
-          <code>“com.google.android.googlequicksearchbox”</code>
+          <code>"com.google.android.googlequicksearchbox"</code>
         </td>
       </tr>
     </tbody>
