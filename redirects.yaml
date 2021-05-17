@@ -259,3 +259,7 @@ redirects:
 # Vanity url for Learn CSS course
 - source: /learncss
   destination: /learn/css
+
+# Redirect for security headers quick reference.
+- source: /security-headers-cheat-sheet
+  destination: /security-headers
