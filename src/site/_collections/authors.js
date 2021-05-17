@@ -92,7 +92,7 @@ module.exports = (collections) => {
     // Set created on date and updated date
     if (author.elements.length > 0) {
       author.data.date = author.elements.slice(-1).pop().data.date;
-      const updated = author.elements.slice(0, 1).pop().data.updated;
+      const updated = author.elements.slice(0, 1).pop().data.date;
       if (author.data.date !== updated) {
         author.data.updated = updated;
       }

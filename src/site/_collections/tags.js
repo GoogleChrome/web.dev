@@ -62,9 +62,13 @@ module.exports = (collections) => {
     // Get posts
     if (collections) {
       tag.elements = collections
-        .getFilteredByTag(tag.key)
-        .filter(livePosts)
-        .filter((item) => !item.data.excludeFromTags)
+        .getFilteredByGlob('**/*.md')
+        .filter(
+          (item) =>
+            livePosts(item) &&
+            !item.data.excludeFromTags &&
+            (item.data.tags || []).includes(key),
+        )
         .sort(sortByUpdated);
     }
 
@@ -76,7 +80,7 @@ module.exports = (collections) => {
     // Set created on date and updated date
     if (tag.elements.length > 0) {
       tag.data.date = tag.elements.slice(-1).pop().data.date;
-      const updated = tag.elements.slice(0, 1).pop().data.updated;
+      const updated = tag.elements.slice(0, 1).pop().data.date;
       if (tag.data.date !== updated) {
         tag.data.updated = updated;
       }
