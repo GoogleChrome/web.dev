@@ -2,13 +2,13 @@
 layout: post
 title: How to set browser flags in Chromium
 subhead: |
-  For some of the new APIs we introduce in Chromium, you need to set a browser flag.
+  For some of the new APIs we introduce in Chromium, you need to set a browser flag for testing.
   This article explains how to do this in the various Chromium derivatives like Google Chrome, Microsoft Edge, and others.
 authors:
   - thomassteiner
 date: 2021-05-17
 description: |
-  For some of the new APIs we introduce in Chromium, you need to set a browser flag.
+  For some of the new APIs we introduce in Chromium, you need to set a browser flag for testing.
   This article explains how to do this in the various Chromium derivatives like Google Chrome, Microsoft Edge, and others.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/NcSd5vAM9zMrbQqwVZhl.jpg
 alt: Various party flags.
@@ -33,10 +33,10 @@ browser-internal settings or features. You can see the (almost) full list by put
 
 ## Setting browser flags
 
-For some of the [new APIs](/tags/capabilities/) we introduce in Chromium, you need to set a browser flag.
-You guessed it, `chrome://flags` is where this happens. The most popular flag we ask you to set is
-`chrome://flags/#enable-experimental-web-platform-features`, which, as the name suggests, enables
-experimental web platform features.
+For some of the [new APIs](/tags/capabilities/) we introduce in Chromium, you need to set a browser
+flag for testing. You guessed it, `chrome://flags` is where this happens. The most popular flag we
+ask you to set is `chrome://flags/#enable-experimental-web-platform-features`, which, as the name
+suggests, enables experimental web platform features.
 
 {% Aside 'warning' %} As the name suggests, experimental web platform features are _experimental_.
 We do not recommend you set flags on your daily production browser. Instead, we prefer you to use a
