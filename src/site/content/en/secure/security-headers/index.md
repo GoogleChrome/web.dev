@@ -1,11 +1,17 @@
 ---
 layout: post
 title: Security headers quick reference
+subhead: Learn and reference security headers quickly
 authors:
   - agektmr
   - arturjanc
 date: 2021-05-18
-description: 
+hero: image/YLflGBAPWecgtKJLqCJHSzHqe2J2/E3BVnrBFNV6w2Uqxn3bQ.jpg
+alt: A keylock in front of compressed code
+description: |
+  This article lists the most important security headers you can use to protect
+  your website. Use it to understand web-based security features, learn how to
+  implement them on your website, and as a reference for when you need a reminder.
 tags:
   - blog
   - security
@@ -985,7 +991,7 @@ defined in the header.
 {% Label %}Example usage{% endLabel%}
 
 ```http
-Strict-Transport-Security: max-age=36000
+Strict-Transport-Security: max-age=31536000
 ```
 
 {% Details %}
@@ -1001,7 +1007,7 @@ All websites that transition from HTTP to HTTPS should respond with a
 `Strict-Transport-Security` header when a request with HTTP is received.
 
 ```http
-Strict-Transport-Security: max-age=36000
+Strict-Transport-Security: max-age=31536000
 ```
 
 ### Supported browsers
