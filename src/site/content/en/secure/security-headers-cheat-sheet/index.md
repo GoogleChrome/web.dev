@@ -25,7 +25,7 @@ Security headers recommended for websites that handle sensitive user data:
 : [Content Security Policy (CSP)](#csp)
 : [Trusted Types](#tt)
 
-Security headers needed for websites with advanced features (e.g. `SharedArrayBuffer`):
+Security headers needed for websites with advanced features (such as `SharedArrayBuffer`):
 : [Cross-Origin Resource Sharing (CORS)](#cors)
 : [Cross-Origin Embedder Policy (COEP)](#coep)
 
@@ -269,10 +269,10 @@ Chrome, Firefox, Edge, Safari
   loaded over HTTPS](/fixing-mixed-content/#content-security-policy). This has
   become less relevant: nowadays, most browsers block
   [mixed-content](/what-is-mixed-content/).
-* You can also set a CSP in [**Report-Only
-  mode**](/strict-csp/#step-2:-set-a-strict-csp-and-prepare-your-scripts). 
+* You can also set a CSP in [report-only
+  mode](/strict-csp/#step-2:-set-a-strict-csp-and-prepare-your-scripts). 
 * If you can't set a CSP as a header server-side, you can also set it as a meta
-  tag. Note that you can't use **Report-Only** mode for meta tags (even though
+  tag. Note that you can't use **report-only** mode for meta tags (though
   [this may change](https://github.com/w3c/webappsec-csp/issues/277)).
 
 ### Learn more
@@ -297,7 +297,7 @@ execution such as `eval()` or `.innerHTML`.
 Trusted Types provide the tools to write, security review, and maintain
 applications free of DOM XSS. They can be enabled via [CSP](#csp) and make
 JavaScript code secure by default by limiting dangerous web APIs to only accept
-a special object-a Trusted Type.
+a special object—a Trusted Type.
 
 To create these objects you can define security policies in which you can ensure
 that security rules (such as escaping or sanitization) are consistently applied
@@ -424,8 +424,8 @@ Chrome, Edge
   MDN](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/require-trusted-types-for)
 * [CSP: trusted-types - HTTP |
   MDN](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types)
-* [DEMO](https://www.compass-demo.com/trusted-types/) (Open Inspector and see
-  what is happening)
+* [Trusted Types demo](https://www.compass-demo.com/trusted-types/)—open DevTools Inspector and see
+  what is happening
  
 {% endDetails %}
 
@@ -476,7 +476,7 @@ Chrome, Firefox, Safari, Edge
 
 ### Learn more
 
-* [X-Content-Type-Options - HTTP](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Content-Type-Options)
+* [X-Content-Type-Options - HTTP MDN](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Content-Type-Options)
 
 {% endDetails %}
 
@@ -490,7 +490,7 @@ attacks](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)) give
 malicious websites a chance to learn about the contents of an embedded document.
 
 `X-Frame-Options` indicates whether or not a browser should be allowed to render
-a page in a `<frame>`, `<iframe>`, `<embed>` or `<object>`. **All documents**
+a page in a `<frame>`, `<iframe>`, `<embed>`, or `<object>`. **All documents**
 are recommended to send this header to indicate whether they allow being
 embedded by other documents.
 
@@ -590,11 +590,11 @@ How to use CORP
 It is recommended that **all** resources are served with one of the following
 three headers.
 
-#### Allow the resource to be loaded `cross-origin`
+#### Allow resources to be loaded `cross-origin`
 
-`cross-origin` is recommended to be applied by CDN-like services whose resources
-are assumed to be loaded by cross-origin pages unless they are already served
-through [CORS](#cors) because it has a similar effect.
+It's recommended that CDN-like services apply `cross-origin` to resources 
+(since they are usually loaded by cross-origin pages), unless they are already served
+through [CORS](#cors) which has a similar effect.
 
 {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/qP2mspVMC6RazxDjWUrL.png",
 alt="Cross-Origin-Resource-Policy: cross-origin", width="800", height="234" %}
@@ -603,7 +603,7 @@ alt="Cross-Origin-Resource-Policy: cross-origin", width="800", height="234" %}
 Cross-Origin-Resource-Policy: cross-origin
 ```
 
-#### Limit the resource to be loaded from the `same-origin`
+#### Limit resources to be loaded from the `same-origin`
 
 `same-origin` should be applied to resources that are intended to be loaded only
 by same-origin pages. You should apply this to resources that include sensitive
@@ -621,10 +621,10 @@ alt="Cross-Origin-Resource-Policy: same-origin", width="800", height="238" %}
 Cross-Origin-Resource-Policy: same-origin
 ```
 
-#### Limit the resource to be loaded from the `same-site`
+#### Limit resources to be loaded from the `same-site`
 
-`same-site` is recommended to be applied to resources similar to above but are
-intended to be loaded by other subdomains of your site.
+`same-site` is recommended to be applied to resources that are similar to above
+but are intended to be loaded by other subdomains of your site.
 
 {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/R9yNRGSJ4xABc560WRJI.png",
 alt="Cross-Origin-Resource-Policy: same-site", width="800", height="233" %}
@@ -636,7 +636,7 @@ Cross-Origin-Resource-Policy: same-site
 {% Aside %}
 
 To learn more about the difference between same-origin and same-site, check out
-[Understanding "same-site" and "same-origin" "same-site"](/same-site-same-origin/).
+[Understanding "same-site" and "same-origin"](/same-site-same-origin/).
 
 {% endAside %}
 
@@ -646,7 +646,7 @@ Chrome, Firefox, Safari, Edge
 
 ### Learn more
 
-* [Consider deploying cross-origin resource policy!](https://resourcepolicy.fyi/)
+* [Consider deploying cross-origin resource policy](https://resourcepolicy.fyi/)
 * [Making your website "cross-origin isolated" using COOP and COEP](/coop-coep/)
 * [Why you need "cross-origin isolated" for powerful features](/why-coop-coep/)
 
@@ -796,8 +796,6 @@ How to use CORS
 
 {% endDetailsSummary %}
 
-### Recommended usages
-
 Before looking into how to configure CORS, it's helpful to understand the
 distinction between request types. Depending on request details, a request will
 be classified as a **simple request** or a **preflighted request**.
@@ -813,6 +811,8 @@ Criteria for a simple request:
 Everything else is classified as a preflighted request. For more details,
 check out [Cross-Origin Resource Sharing (CORS) - HTTP |
 MDN](https://developer.mozilla.org/docs/Web/HTTP/CORS#simple_requests).
+
+### Recommended usages
 
 #### Simple request
 
