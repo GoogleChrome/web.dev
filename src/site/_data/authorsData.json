@@ -2182,5 +2182,24 @@
     "twitter": "jiwoong",
     "github": "jimoong",
     "image": "image/foR0vJZKULb5AGJExlazy1xYDgI2/i3fyhkDpmO6VM1opsETS.jpg"
+  },
+  "christianliebel": {
+    "name": {
+      "given": "Christian",
+      "family": "Liebel"
+    },
+    "org": {
+      "name": "Thinktecture",
+      "unit": "Software Development"
+    },
+    "country": "DE",
+    "homepage": "https://christianliebel.com/",
+    "twitter": "christianliebel",
+    "github": "christianliebel",
+    "glitch": "christianliebel",
+    "descriptions": {
+      "en": "GDE for Web Capabilities & Angular"
+    },
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/pguQ0oykD0nNu9jM5OcP.jpeg"
   }
 }
