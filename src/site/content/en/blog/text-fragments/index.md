@@ -8,7 +8,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2021-05-10
+updated: 2021-05-17
 hero: image/admin/Y4NLEbOwgTWdMNoxRYXw.jpg
 alt:
 description: |
@@ -534,6 +534,7 @@ extension.
 
 ## Related links
 
+- [Spec draft](https://wicg.github.io/scroll-to-text-fragment/)
 - [TAG Review](https://github.com/w3ctag/design-reviews/issues/392)
 - [Chrome Platform Status entry](https://chromestatus.com/feature/4733392803332096)
 - [Chrome tracking bug](https://crbug.com/919204)
