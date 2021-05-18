@@ -30,7 +30,7 @@ be updated as the implementation progresses. {% endAside %}
 
 ## What is Declarative Link Capturing? {: #what }
 
-Clicking links on the web can sometimes be a positively surprising experience. For example, clicking
+Clicking links on the web can sometimes be a pleasant surprise. For example, clicking
 a [YouTube link](https://www.youtube.com/watch?v=dQw4w9WgXcQ) on a website like the one you read
 this very article on right now on an iOS device that has the
 [YouTube iOS app](https://apps.apple.com/us/app/youtube-watch-listen-stream/id544007664) installed
