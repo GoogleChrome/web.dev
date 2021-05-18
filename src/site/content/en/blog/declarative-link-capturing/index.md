@@ -30,12 +30,7 @@ be updated as the implementation progresses. {% endAside %}
 
 ## What is Declarative Link Capturing? {: #what }
 
-Clicking links on the web can sometimes be a pleasant surprise. For example, clicking
-a [YouTube link](https://www.youtube.com/watch?v=dQw4w9WgXcQ) on a website like the one you read
-this very article on right now on an iOS device that has the
-[YouTube iOS app](https://apps.apple.com/us/app/youtube-watch-listen-stream/id544007664) installed
-results in the link to be opened in the app, not the browser. The same is true for Android and the
-[YouTube Android app](https://play.google.com/store/apps/details?id=com.google.android.youtube&hl=en&gl=US).
+Clicking links on the web can sometimes be a pleasant surprise. For example, clicking a web page link to YouTube on a mobile device opens the YouTube iOS or Android app, if it is installed.
 But when you install the [YouTube PWA](https://www.youtube.com/) on a desktop computer and click a
 link, it opens in… 🥁 a browser tab.
 
