@@ -2223,5 +2223,18 @@
     },
     "twitter": "saurabhrajpal",
     "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/pgfTCNTb5C2ThMcZCzPQ.jpg"
+  },
+  "arturjanc": {
+    "name": {
+      "given": "Artur",
+      "family": "Janc"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Security Engineering"
+    },
+    "github": "arturjanc",
+    "twitter": "arturjanc",
+    "image": "image/YLflGBAPWecgtKJLqCJHSzHqe2J2/hwvmzV4b6VQpTNrNF3wK.jpg"
   }
 }
