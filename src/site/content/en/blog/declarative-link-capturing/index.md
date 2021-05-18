@@ -209,6 +209,7 @@ and let us know where and how you are using it.
 
 Declarative Link Capturing was specified by [Matt Giuca](https://twitter.com/mgiuca) with input from
 Alan Cutter and [Dominick Ng](https://twitter.com/dominickng). The API was implemented by Alan
+Cutter. This article was reviewed by [Joe Medley](https://github.com/jpmedley), Matt Giuca, and Alan
 Cutter. Hero image by [Zulmaury Saavedra](https://unsplash.com/@zulmaury) on
 [Unsplash](https://unsplash.com/photos/zh0J32MrJfA).
 
