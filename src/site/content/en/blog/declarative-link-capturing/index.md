@@ -2,15 +2,15 @@
 layout: post
 title: Choose how in-scope links open your PWA with Declarative Link Capturing
 subhead: |
-  Declarative Link Capturing is a proposal for a Web Application Manifest property called
+  Declarative Link Capturing is a proposal for a web app manifest property called
   `"capture_links"` that lets developers determine declaratively what should happen when the browser
-  is asked to navigate to a URL that is within the application's navigation scope, from a context
+  navigates to a URL that is within the application's navigation scope, from a context
   outside of the navigation scope.
 authors:
   - thomassteiner
 date: 2021-05-18
 description: |
-  Declarative Link Capturing is a proposal for a Web Application Manifest property called
+  Declarative Link Capturing is a proposal for a web app manifest property called
   "capture_links" that lets developers determine declaratively what should happen when the browser
   is asked to navigate to a URL that is within the application's navigation scope, from a context
   outside of the navigation scope.
@@ -36,32 +36,32 @@ this very article on right now on an iOS device that has the
 [YouTube iOS app](https://apps.apple.com/us/app/youtube-watch-listen-stream/id544007664) installed
 results in the link to be opened in the app, not the browser. The same is true for Android and the
 [YouTube Android app](https://play.google.com/store/apps/details?id=com.google.android.youtube&hl=en&gl=US).
-But when you install the [YouTube PWA](https://www.youtube.com/) on a macOS computer and click a
+But when you install the [YouTube PWA](https://www.youtube.com/) on a desktop computer and click a
 link, it opens in… 🥁 a browser tab.
 
 But it gets more complex. What if the link appears not in a website, but in a chat message that you
-receive in one of Google's manifold chat apps? On desktop operating systems that have the notion of
+receive in one of Google's chat apps? On desktop operating systems that have the notion of
 separate app windows, if the app is open already, should a new window or tab be created for each
 link click that is captured? When you think about it, there are many ways links and navigations can
-be captured, including, but not limited to, the following examples:
+be captured, including, but not limited to, the following:
 
-1. Clicked links from other web pages.
-1. URL launches from a platform-specific app in the operating system.
-1. Navigations originating from the [App Shortcuts API](/app-shortcuts/)
-1. Links that go through [URL protocol handlers](/url-protocol-handler/)
-1. Navigations caused by [file handlers](/file-handling/)
-1. Navigations caused by the [Share Target API](/web-share-target/)
-1. …and others
+* Clicked links from other web pages.
+* URL launches from a platform-specific app in the operating system.
+* Navigations originating from the [App Shortcuts API](/app-shortcuts/)
+* Links that go through [URL protocol handlers](/url-protocol-handler/)
+* Navigations caused by [file handlers](/file-handling/)
+* Navigations caused by the [Share Target API](/web-share-target/)
+* …and others
 
-Declarative Link Capturing is a proposal for a Web Application Manifest property called
+Declarative Link Capturing is a proposal for a web app manifest property called
 `"capture_links"` that lets developers determine declaratively what should happen when the browser
 is asked to navigate to a URL that is within the application's navigation scope, from a context
 outside of the navigation scope. This proposal does not apply if the user is already within the
 navigation scope (for instance, if the user has a browser tab open that is within scope, and clicks
 an internal link).
 
-{% Aside 'key-term' %} The [navigation scope](https://web.dev/add-manifest/#scope) of a Web
-Application Manifest is the `"scope"` item of a processed manifest. The navigation scope restricts
+{% Aside 'key-term' %} The [navigation scope](https://web.dev/add-manifest/#scope) of a web
+app manifest is the `"scope"` item of a processed manifest. The navigation scope restricts
 the set of URLs to which an application context can be navigated while the manifest is applied. If
 the `"scope"` member is not present in the manifest, it defaults to the parent path of the
 `"start_url"` member. {% endAside %}
@@ -80,7 +80,7 @@ Examples of sites that may use this API include:
   a time.
 - Single-window PWAs where the developer prefers to only have a single instance of the app open at
   any time, with new navigations focusing the existing instance. Sub-use cases include:
-  - Apps that generally only make sense to have one instance running (e.g., a music player, a game).
+  - Apps for which it make sense to have only one instance running (e.g., a music player, a game).
   - Apps that include multi-document management within a single instance (e.g., an HTML-implemented
     tab strip).
 
@@ -108,7 +108,7 @@ To experiment with Declarative Link Capturing locally, without an origin trial t
 Starting in Chromium&nbsp;91, Declarative Link Capturing will be available as an origin trial in
 Chromium. The origin trial is expected to end in Chromium&nbsp;94 (October 13, 2021).
 
-{% Aside 'caution' %} The origin trial will initially be limited to the Chrome&nbsp;OS platform.
+{% Aside 'caution' %} The origin trial is initially limited to Chrome&nbsp;OS.
 {% endAside %}
 
 {% include 'content/origin-trials.njk' %}
@@ -119,16 +119,15 @@ Chromium. The origin trial is expected to end in Chromium&nbsp;94 (October 13, 2
 
 ## How to use Declarative Link Capturing? {: #use }
 
-Developers can declaratively determine how links should be captured by leveraging the additional Web
-Application Manifest field `"capture_links"`. It takes a string or a an array of strings as its
+Developers can declaratively determine how links should be captured by leveraging the additional web
+app manifest field `"capture_links"`. It takes a string or a an array of strings as its
 value. If an array of strings is given, the user agent chooses the first supported item in the list,
-defaulting to `"none"`. The possible values dictate the link capturing behavior as follows:
+defaulting to `"none"`. The following values are supported:
 
 - `"none"` (the default): No link capturing; links clicked leading to this PWA scope navigate as
   normal without opening a PWA window.
-- `"new-client"`: Each link clicked leading to this PWA scope opens a new PWA window at that URL.
-- `"existing-client-navigate"`: When a link is clicked leading to this PWA scope, the user agent
-  finds an existing PWA window, and causes it to navigate to the opened URL. If more than one PWA
+- `"new-client"`: Each clicked link opens a new PWA window at that URL.
+- `"existing-client-navigate"`: The clicked link opens in an existing PWA window, if one is available, or in a new window if it is not. If more than one PWA
   window exists, the browser may choose one arbitrarily. This behaves like `"new-client"` if no
   window is currently open. 🚨 Careful! This option potentially leads to data loss, as pages can be
   arbitrarily navigated away from. Sites should be aware that they are opting into such behavior by
@@ -137,7 +136,7 @@ defaulting to `"none"`. The possible values dictate the link capturing behavior 
   [`beforeunload` event](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload),
   the user would see the prompt before the navigation completes.
 
-{% Aside %} There is an ongoing discussion about several new options in the future that do not open
+{% Aside %} There is discussion about adding options that do not open
 a window at all, but instead fire a `launch` event in a chosen foreground window or the service
 worker. See the [`launch` event explainer](https://github.com/WICG/sw-launch/blob/main/explainer.md)
 for details, and, more specifically, the sections on
@@ -153,9 +152,9 @@ The demo for Declarative Link Capturing actually consists of two demos that inte
 1. [https://continuous-harvest-tomato.glitch.me/](https://hill-glitter-tree.glitch.me/)
 1. [https://hill-glitter-tree.glitch.me/](https://hill-glitter-tree.glitch.me/)
 
-The screencast below shows how the two interact together. They show two different behaviors,
+The screencast below shows how the two interact. They show two different behaviors,
 `"new_client"` and `"existing_client_navigate"`. Be sure to test the apps in different states,
-running in a tab or as installed PWA, to see the difference in behavior.
+running in a tab or as an installed PWA, to see the difference in behavior.
 
 {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/pj3ehpntEg50WcnA2khM.webm", autoplay=true, muted=true, playsinline=true, loop=true %}
 
