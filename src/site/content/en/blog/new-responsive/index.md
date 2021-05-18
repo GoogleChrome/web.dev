@@ -278,8 +278,9 @@ When there is at least `350px` of space in the grid, the card layout goes
 horizontal by being set to `display: flex`, which has a default flex-direction
 of "row". 
 
-With less space, the product cards stack. Each product card styles itself, which
-is something that would be impossible when only able to rely on global styles.
+With less space, the product cards stack. Each product card styles itself, 
+something that would be impossible with global styles alone.
+
 ### Mixing Container Queries with Media Queries
 
 Container queries have so many use cases—one being a calendar component. You
