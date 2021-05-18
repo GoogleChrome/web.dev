@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Security headers quick reference
-subhead: Learn or look up security headers quickly
+subhead: Learn more about headers that can keep your site safe and quickly look up the most important details.
 authors:
   - agektmr
   - maudn
