@@ -1,9 +1,10 @@
 ---
 layout: post
 title: Security headers quick reference
-subhead: Learn and reference security headers quickly
+subhead: Learn or look up security headers quickly
 authors:
   - agektmr
+  - maudn
   - arturjanc
 date: 2021-05-18
 hero: image/YLflGBAPWecgtKJLqCJHSzHqe2J2/E3BVnrBFNV6w2Uqxn3bQ.jpg
