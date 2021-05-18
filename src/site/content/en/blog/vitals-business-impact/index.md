@@ -27,7 +27,7 @@ alt="LCP, FID, CLS",
 width="800", height="232" %}
 
 Are you struggling to convince your stakeholders to adopt
-[Core Web Vitals](https://web.dev/learn-web-vitals/)?
+[Core Web Vitals](/learn-web-vitals/)?
 Or are you wondering if it actually helps your business?
 This article will help you understand how Core Web Vitals correlate with
 key business metrics by exploring examples of companies which have already seen
@@ -145,7 +145,7 @@ The above results were achieved by grabbing low hanging fruit such as:
   <table>
     <thead>
       <tr>
-        <th><a href="https://web.dev/fast/#i18n.paths.fast.topics.optimize_your_images">
+        <th><a href="/fast/#i18n.paths.fast.topics.optimize_your_images">
         Image Optimization</a></th>
         <th><a href="/optimize-lcp/">JavaScript Optimization</a></th>
         <th><a href="/optimize-cls/#ads-embeds-and-iframes-without-dimensions">
