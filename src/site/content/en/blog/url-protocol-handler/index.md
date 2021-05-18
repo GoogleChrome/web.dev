@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-11
-updated: 2021-05-11
+updated: 2021-05-19
 description: |
   After registering a PWA as a protocol handler, when a user clicks on a hyperlink with a specific
   scheme such as mailto, bitcoin, or web+music from a browser or a platform-specific app,
@@ -118,9 +118,9 @@ token, enable the `#enable-desktop-pwas-protocol-handling` flag in `chrome://fla
 
 ## How to use URL protocol handler registration for PWAs
 
-The API for URL protocol handler registration is modeled closely on  
+The API for URL protocol handler registration is modeled closely on
 `navigator.registerProtocolHandler()`. Just this time the information is passed declaratively via
-the Web Application Manifest in a new property called `"protocol_handlers"` that takes an array of
+the web app manifest in a new property called `"protocol_handlers"` that takes an array of
 objects with the two required keys `"protocol"` and `"url"`. The code snippet below shows how to
 register `web+tea` and `web+coffee`. The values are strings containing the URL of the handler with
 the required `%s` placeholder for the escaped URL.

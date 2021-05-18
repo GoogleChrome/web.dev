@@ -10,6 +10,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-18
+updated: 2021-05-19
 scheduled: true
 description: |
   A write-up of Thomas Steiner's Google I/O 2021 talk titled Excalidraw and Fugu: Improving Core User Journeys
@@ -365,7 +366,7 @@ double-clicking would work, too, it's just less dramatic to demonstrate in a scr
 {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/Gz1w0Gey1XerN86sIF01.mp4", autoplay=true, muted=true, playsinline=true, loop=true %}
 
 So how does this work? The first step is to make the file types my application can handle known to
-the operating system. I do this in a new field called `file_handlers` in the Web App Manifest. Its
+the operating system. I do this in a new field called `file_handlers` in the web app manifest. Its
 value is an array of objects with an action and an `accept` property. The action determines the URL
 path the operating system launches your app at and the accept object are key value pairs of MIME
 types and the associated file extensions.

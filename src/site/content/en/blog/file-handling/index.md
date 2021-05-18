@@ -7,7 +7,7 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2020-11-02
+updated: 2021-05-19
 tags:
   - blog
   - file-handling
@@ -80,8 +80,8 @@ if ('launchQueue' in window) {
 
 ### The declarative part of the File Handling API
 
-As a first step, web apps need to declaratively describe in their [Web App Manifest](/add-manifest/)
-what kind of files they can handle. The File Handling API extends Web App Manifest with a new
+As a first step, web apps need to declaratively describe in their [web app manifest](/add-manifest/)
+what kind of files they can handle. The File Handling API extends web app manifest with a new
 property called `"file_handlers"` that accepts an array of, well, file handlers. A file handler is an
 object with two properties:
 
@@ -89,7 +89,7 @@ object with two properties:
 - An `"accept"` property with an object of MIME-types as keys and lists of file extensions as their
   values.
 
-The example below, showing only the relevant excerpt of the Web App Manifest, should make it clearer:
+The example below, showing only the relevant excerpt of the web app manifest, should make it clearer:
 
 ```json
 {

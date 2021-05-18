@@ -9,6 +9,7 @@ description: >
   Mainline Menswear implements a Progressive Web App (PWA) and sees a 55% conversion rate uplift for
   users that installed the app with caching and offline capabilities.
 date: 2021-04-20
+updated: 2021-05-19
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/Yz5G0leLpdHLidygym31.jpg
 tags:
   - blog
@@ -90,7 +91,7 @@ service worker file that they weren't able to or had issues with when using the 
 One such optimization was around the [offline functionality](#providing-offline-functionality) of
 the site like, for example, serving a default offline page and gathering analytics while offline.
 
-### Anatomy of the web application manifest
+### Anatomy of the web app manifest
 
 The team generated a manifest with icons for different mobile app icon sizes and other web app
 details like `name`, `description` and `theme_color`:
@@ -112,7 +113,7 @@ details like `name`, `description` and `theme_color`:
 ```
 
 The web app, once installed, can be launched from the home screen without the browser getting in the
-way. This is achieved by adding the `display` parameter in the web application manifest file:
+way. This is achieved by adding the `display` parameter in the web app manifest file:
 
 ```json
 {
@@ -131,7 +132,7 @@ the manifest:
 ```
 
 {% Aside %} See [Add a web app manifest](/add-manifest/) for a more in-depth explanation of all the
-web application manifest fields. {% endAside %}
+web app manifest fields. {% endAside %}
 
 ### Runtime caching for faster navigations
 
