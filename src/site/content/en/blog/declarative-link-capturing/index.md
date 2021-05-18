@@ -8,7 +8,7 @@ subhead: |
   outside of the navigation scope.
 authors:
   - thomassteiner
-date: 2021-05-12
+date: 2021-05-18
 description: |
   Declarative Link Capturing is a proposal for a Web Application Manifest property called
   "capture_links" that lets developers determine declaratively what should happen when the browser
@@ -30,9 +30,9 @@ be updated as the implementation progresses. {% endAside %}
 
 ## What is Declarative Link Capturing? {: #what }
 
-Clicking links on the web can sometimes be a positively surprising experience. For example, clicking a
-[YouTube link](https://www.youtube.com/watch?v=dQw4w9WgXcQ) on a website like the one you read this
-very article on right now on an iOS device that has the
+Clicking links on the web can sometimes be a positively surprising experience. For example, clicking
+a [YouTube link](https://www.youtube.com/watch?v=dQw4w9WgXcQ) on a website like the one you read
+this very article on right now on an iOS device that has the
 [YouTube iOS app](https://apps.apple.com/us/app/youtube-watch-listen-stream/id544007664) installed
 results in the link to be opened in the app, not the browser. The same is true for Android and the
 [YouTube Android app](https://play.google.com/store/apps/details?id=com.google.android.youtube&hl=en&gl=US).
@@ -67,15 +67,17 @@ the `"scope"` member is not present in the manifest, it defaults to the parent p
 `"start_url"` member. {% endAside %}
 
 Some special conditions like middle-clicking a link (or right-clicking and then "open in new tab")
-would typically not trigger the link capturing behavior. Whether a link is `target=_self`
-or `target=_blank` does not matter, so that links clicked in a browser window (or window of a
-different PWA) would be opened in the PWA even if they would normally cause a navigation within the
-same tab.
+would typically not trigger the link capturing behavior. Whether a link is `target=_self` or
+`target=_blank` does not matter, so that links clicked in a browser window (or window of a different
+PWA) would be opened in the PWA even if they would normally cause a navigation within the same tab.
 
 ## Suggested use cases
 
 Examples of sites that may use this API include:
 
+- PWAs that want to open a window, rather than a browser tab, when the user clicks on a link to
+  them. In a desktop environment, it often makes sense to have multiple application windows open at
+  a time.
 - Single-window PWAs where the developer prefers to only have a single instance of the app open at
   any time, with new navigations focusing the existing instance. Sub-use cases include:
   - Apps that generally only make sense to have one instance running (e.g., a music player, a game).
@@ -86,13 +88,13 @@ Examples of sites that may use this API include:
 
 <div class="w-table-wrapper">
 
-| Step                                     | Status                   |
-| ---------------------------------------- | ------------------------ |
-| 1. Create explainer                      | [Complete][explainer]    |
-| 2. Create initial draft of specification | [In Progress][spec]      |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| **4. Origin trial**                      | **[In progress][ot]** (on Chrome OS)  |
-| 5. Launch                                | Not started              |
+| Step                                     | Status                               |
+| ---------------------------------------- | ------------------------------------ |
+| 1. Create explainer                      | [Complete][explainer]                |
+| 2. Create initial draft of specification | [In Progress][spec]                  |
+| 3. Gather feedback & iterate on design   | [In progress](#feedback)             |
+| **4. Origin trial**                      | **[In progress][ot]** (on Chrome OS) |
+| 5. Launch                                | Not started                          |
 
 </div>
 
@@ -134,18 +136,14 @@ defaulting to `"none"`. The possible values dictate the link capturing behavior 
   memory, such as music players. If the page being navigated away from has a
   [`beforeunload` event](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload),
   the user would see the prompt before the navigation completes.
-- `"existing-client-event"`: When a link is clicked leading to this PWA scope the user agent finds
-  an existing PWA window and fires a `launch` event in that window's top-level context, containing
-  the launched URL. If more than one PWA window exists, the browser may choose one arbitrarily. This
-  behaves as `"new-client"` if no window is currently open. This is intended for more advanced
-  sites, which inspect the launched URL and use it to load data into the current browsing context,
-  without a navigation. For example, a site that allows multiple documents to be loaded in the same
-  window can pop open a new sub-window in response to the navigation.
 
-{% Aside 'objective' %} There is ongoing discussion about adding a `"serviceworker"` option in the
-future that does not open a window at all, but instead fires a `launch` event in the service
-worker's context. See the
-[`launch` event explainer](https://github.com/WICG/sw-launch/blob/main/explainer.md) for details.
+{% Aside %} There is an ongoing discussion about several new options in the future that do not open
+a window at all, but instead fire a `launch` event in a chosen foreground window or the service
+worker. See the [`launch` event explainer](https://github.com/WICG/sw-launch/blob/main/explainer.md)
+for details, and, more specifically, the sections on
+[`existing-client-event`](https://github.com/WICG/sw-launch/blob/main/declarative_link_capturing.md#:~:text=completes-,existing-client-event,-when)
+and
+[`service-worker`](https://github.com/WICG/sw-launch/blob/main/declarative_link_capturing.md#:~:text=future-,serviceworker,-doesn).
 {% endAside%}
 
 ## Demo
