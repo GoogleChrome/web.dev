@@ -422,7 +422,7 @@ conceptualize responsive design. It's time to think about responsive design
 beyond viewport size, and start considering all of these new axes for better
 component-based and customized experiences.
 
-> The next era of responsive design is here, and you can already start to
+The next era of responsive design is here, and you can already start to
 > explore it yourself.
 
 ### web.dev/learnCSS
