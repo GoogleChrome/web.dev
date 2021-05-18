@@ -2214,5 +2214,22 @@
     "github": "arturjanc",
     "twitter": "arturjanc",
     "image": "image/YLflGBAPWecgtKJLqCJHSzHqe2J2/hwvmzV4b6VQpTNrNF3wK.jpg"
+  },
+  "mkazi": {
+    "name": {
+      "given": "Minhaz",
+      "family": "Kazi"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
+    "descriptions": {
+      "en": "Developer Advocate at Google"
+    },
+    "country": "USA",
+    "github": "minhaz",
+    "twitter": "_mkazi_",
+    "image": "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/JIhb3g9F2oAg2t3PJ5Y2.jpeg"
   }
 }
