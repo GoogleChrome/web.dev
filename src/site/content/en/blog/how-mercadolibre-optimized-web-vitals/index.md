@@ -56,13 +56,9 @@ have several long tasks, which will end up negatively impacting FID.
 
 To provide a good user experience, sites should strive to have a First Input Delay of less than 100
 milliseconds:
-
 <picture>
-  <source srcset="../vitals/fid_8x2.svg" media="(min-width: 640px)">
-  <img class="w-screenshot w-screenshot--filled"
-      src="../vitals/fid_4x3.svg"
-      alt="Good fid values are 2.5 seconds, poor values are greater than 4.0
-            seconds and anything in between needs improvement">
+  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled" %}
 </picture>
 
 While Mercado Libre's site was performing well in most sections, they found in the [Chrome User

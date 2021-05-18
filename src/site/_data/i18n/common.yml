@@ -37,6 +37,9 @@ next:
 prev:
   en: Prev # Short for "previous"
 
+new:
+  en: new
+
 updated:
   en: Updated
 

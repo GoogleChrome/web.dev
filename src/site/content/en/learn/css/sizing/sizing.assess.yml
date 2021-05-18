@@ -1,0 +1,51 @@
+setLeader: Test your knowledge of sizing
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,2,4,5,7,8"
+    stem: Which of the following are valid dimensions?
+    options:
+      - content: cm
+        rationale: "Centimeters, a valid absolute dimension."
+      - content: ui
+        rationale: "User interface is not a dimension in CSS."
+      - content: in
+        rationale: "Inches, a valid absolute dimension."
+      - content: 8th
+        rationale: "Not a CSS dimension"
+      - content: px
+        rationale: "Pixels, a valid absolute dimension."
+      - content: ch
+        rationale: "Character units, a valid relative dimension."
+      - content: ux
+        rationale: "User experience is not a dimension in CSS."
+      - content: em
+        rationale: "Letter 'M' units, a valid relative dimension."
+      - content: ex
+        rationale: "Letter 'x' units, a valid relative dimension."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: How are absolute and relative units different?
+    options:
+      - content: "Absolute values can't change but relative units can"
+        rationale: "Absolute values can change, but the base they
+        calculate against can't."
+      - content: "An absolute length is calculated against a single shared base
+      value, where a relative unit is compared against a base value that can change."
+        rationale: "Relative units are more adaptive and fluid because of their
+        contextual awareness, but there's a power and predictability to absolute
+        units that can be foundational for certain designs."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: Viewport units are absolute.
+    options:
+      - content: "True"
+        rationale: "They may feel absolute, but they're relative to a viewport,
+        which could be an iframe or webview, and isn't always representative of
+        a device screen size."
+      - content: "False"
+        rationale: "They are relative to the document window they were created
+        in, which may or may not be the same as a device screen."

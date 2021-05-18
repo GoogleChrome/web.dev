@@ -21,7 +21,7 @@ Next.js uses file-system-based routing, which lets you just create files and fol
 inside the `./pages/` directory:
 
 <figure class="w-figure">
-<img class="w-screenshot" src="./pages-directory.png" alt="Screenshot of the pages directory containting three files: index.js, margherita.js, and pineapple-pizza.js.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7cwpyvEgBCIbkqrbsbL0.png", alt="Screenshot of the pages directory containting three files: index.js, margherita.js, and pineapple-pizza.js.", width="376", height="348", class="w-screenshot" %}
 </figure>
 
 To link to different pages, use the
@@ -121,7 +121,7 @@ downloaded, but `pineapple-pizza.js` is not:
 
 The `<Link>` component is suitable for most use cases, but you can also build
 your own component to do routing. Next.js makes this easy for you with the
-router API available in [`next/router`](https://nextjs.org/docs/api-reference/next/router#userouter). 
+router API available in [`next/router`](https://nextjs.org/docs/api-reference/next/router#userouter).
 If you want to do something (for example, submit a form) before navigating to a new
 route, you can define that in your custom routing code.
 
@@ -178,8 +178,7 @@ downloaded and `pineapple-pizza.js` is not:
 When you click on either link, the **Console** logs "Having fun with Next.js."
 and navigates to the new route:
 
-![DevTools Console displaying the message 'Having fun with
-Next.js.'](console.png)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/goiEqi3SIWJBUqsk7j6H.png", alt="DevTools Console displaying the message 'Having fun with Next.js.'", width="800", height="690" %}
 
 ## Conclusion
 

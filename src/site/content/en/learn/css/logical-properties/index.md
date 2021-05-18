@@ -1,13 +1,17 @@
 ---
 title: Logical Properties
-description:
+description: >
+  Logical, flow relative properties and values are linked to the flow of text,
+  rather than the physical shape of the screen.
+  Learn how to take advantage of this newer approach to CSS.
+audio:
+  title: 'The CSS Podcast - 012: Logical Properties'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_012_v3.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-21
 ---
-
-
-# Logical Properties
 
 A really common user interface pattern is a text label with a supporting inline icon.
 
@@ -36,7 +40,7 @@ They help you build a more resilient, inclusive front-end.
 The physical properties of top, right, bottom, and left refer to the physical dimensions of the viewport.
 You can think of these like a compass rose on a map.
 Logical properties, on the other hand,
-refer to the edges of a box as they relate to the *flow of content*.
+refer to the edges of a box as they relate to the _flow of content_.
 Therefore, they can change if the text direction or writing mode changes.
 This is a big shift from directional styles,
 and it gives us a lot more flexibility when styling our interfaces.
@@ -50,7 +54,7 @@ Think of this in the context of paragraphs of text following each other, top-to-
 
 <figure class="w-figure">
 {% Img
-src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/9gSKQi6mHsXv4y6G4uwQ.png",
+src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/JKfvuIFBBtmvylmFSV8K.svg",
 alt="Three blocks, div elements, with a down arrow, labelled 'block flow'",
 width="800",
 height="507" %}
@@ -64,7 +68,7 @@ If you were to change the document language of your webpage to Arabic (`<html la
 then the inline flow would be right-to-left.
 
 <figure class="w-figure">
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/0Bt8Mm8SP3OWFozy8qW7.png",
+{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/DfyMS0jh0SjSxaeNioJt.svg",
 alt="Three words, 'she sells seashells', with a left-to-right arrow, labelled 'inline flow'",
 width="800",
 height="507" %}
@@ -86,7 +90,7 @@ we have only been able to apply properties like margin relative to the direction
 For example, `margin-top` is applied to the physical top of the element.
 With logical properties, `margin-top` becomes `margin-block-start`.
 This means that regardless of language and text direction,
-the **block flow** has targeted and contextually appropriate margin rules.
+the **block flow** has appropriate margin rules.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -108,8 +112,8 @@ write a rule like this:
 
 ```css
 .my-element {
-	max-width: 150px;
-	max-height: 100px;
+  max-width: 150px;
+  max-height: 100px;
 }
 ```
 
@@ -121,8 +125,8 @@ that max width and height rule would look like this:
 
 ```css
 .my-element {
-	max-inline-size: 150px;
-	max-block-size: 100px;
+  max-inline-size: 150px;
+  max-block-size: 100px;
 }
 ```
 
@@ -136,7 +140,7 @@ For example, to align text to the right, you could use this CSS:
 
 ```css
 p {
-	text-align: right;
+  text-align: right;
 }
 ```
 
@@ -148,7 +152,7 @@ The text alignment rule now looks like this:
 
 ```css
 p {
-	text-align: end;
+  text-align: end;
 }
 ```
 
@@ -166,11 +170,11 @@ but the key difference is that when a writing mode changes, they change with it.
 
 ```css
 .my-element {
-	padding-top: 2em;
-	padding-bottom: 2em;
-	margin-left: 2em;
-	position: relative;
-	top: 0.2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-left: 2em;
+  position: relative;
+  top: 0.2em;
 }
 ```
 
@@ -180,11 +184,11 @@ With logical property equivalents, it would instead look like this:
 
 ```css
 .my-element {
-	padding-block-start: 2em;
-	padding-block-end: 2em;
-	margin-inline-start: 2em;
-	position: relative;
-	inset-block-start: 0.2em;
+  padding-block-start: 2em;
+  padding-block-end: 2em;
+  margin-inline-start: 2em;
+  position: relative;
+  inset-block-start: 0.2em;
 }
 ```
 
@@ -197,10 +201,10 @@ using shorthand versions of the margin and padding properties.
 
 ```css
 .my-element {
-	padding-block: 2em;
-	margin-inline: 2em 0;
-	position: relative;
-	inset: 0.2em 0 0 0;
+  padding-block: 2em;
+  margin-inline: 2em 0;
+  position: relative;
+  inset: 0.2em 0 0 0;
 }
 ```
 
@@ -211,9 +215,9 @@ To add a border on the bottom and right, with a right-hand radius, you might wri
 
 ```css
 .my-element {
-	border-bottom: 1px solid red;
-	border-right: 1px solid red;
-	border-bottom-right-radius: 1em;
+  border-bottom: 1px solid red;
+  border-right: 1px solid red;
+  border-bottom-right-radius: 1em;
 }
 ```
 
@@ -221,13 +225,13 @@ Or, you could use logical properties like this:
 
 ```css
 .my-element {
-	border-block-end: 1px solid red;
-	border-inline-end: 1px solid red;
-	border-end-end-radius: 1em;
+  border-block-end: 1px solid red;
+  border-inline-end: 1px solid red;
+  border-end-end-radius: 1em;
 }
 ```
 
-The "end-end" in `border-end-end-radius` is the block end *and* inline end.
+The "end-end" in `border-end-end-radius` is the block end _and_ inline end.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -315,7 +319,7 @@ p svg {
 Now, regardless of reading direction,
 the icon will position itself and space itself appropriately.
 
-@@TODO Self Assessment
+{% Assessment 'logical-props' %}
 
 ## Browser support
 

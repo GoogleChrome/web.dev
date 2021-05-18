@@ -18,6 +18,7 @@ const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const yaml = require('js-yaml');
+const fs = require('fs');
 
 const toc = require('eleventy-plugin-toc');
 const markdown = require('./src/site/_plugins/markdown');
@@ -52,7 +53,7 @@ const SignPosts = require(`./${componentsDir}/SignPosts`);
 const StackOverflow = require(`./${componentsDir}/StackOverflow`);
 const Tooltip = require(`./${componentsDir}/Tooltip`);
 const {Video} = require(`./${componentsDir}/Video`);
-const YouTube = require(`./${componentsDir}/YouTube`);
+const {YouTube} = require('webdev-infra/shortcodes/YouTube');
 
 // Collections
 const algolia = require('./src/site/_collections/algolia');
@@ -76,6 +77,7 @@ const findTags = require(`./${filtersDir}/find-tags`);
 const githubLink = require(`./${filtersDir}/github-link`);
 const gitlocalizeLink = require(`./${filtersDir}/gitlocalize-link`);
 const htmlDateString = require(`./${filtersDir}/html-date-string`);
+const isNewContent = require(`./${filtersDir}/is-new-content`);
 const md = require(`./${filtersDir}/md`);
 const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
@@ -87,10 +89,11 @@ const stripBlog = require(`./${filtersDir}/strip-blog`);
 const getPaths = require(`./${filtersDir}/get-paths`);
 const navigation = require(`./${filtersDir}/navigation`);
 const padStart = require(`./${filtersDir}/pad-start`);
+const {minifyJs} = require(`./${filtersDir}/minify-js`);
+const {cspHash, getHashList} = require(`./${filtersDir}/csp-hash`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
-const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
 const {purifyCss} = require(`./${transformsDir}/purify-css`);
 const {minifyHtml} = require(`./${transformsDir}/minify-html`);
 
@@ -160,6 +163,7 @@ module.exports = function (config) {
   config.addFilter('gitlocalizeLink', gitlocalizeLink);
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('imgix', generateImgixSrc);
+  config.addFilter('isNewContent', isNewContent);
   config.addFilter('md', md);
   config.addFilter('navigation', navigation);
   config.addFilter('pagedNavigation', pagedNavigation);
@@ -173,6 +177,8 @@ module.exports = function (config) {
   config.addFilter('courseToc', courseToc);
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
   config.addFilter('padStart', padStart);
+  config.addFilter('minifyJs', minifyJs);
+  config.addFilter('cspHash', cspHash);
 
   // ----------------------------------------------------------------------------
   // SHORTCODES
@@ -219,7 +225,6 @@ module.exports = function (config) {
   }
 
   if (isProd || isStaging) {
-    config.addTransform('responsive-images', responsiveImages);
     config.addTransform('purifyCss', purifyCss);
     config.addTransform('minifyHtml', minifyHtml);
   }
@@ -233,6 +238,16 @@ module.exports = function (config) {
 
   // Make .yml files work in the _data directory.
   config.addDataExtension('yml', (contents) => yaml.safeLoad(contents));
+
+  // Make CSP hashes accessible to firebase config.
+  if (isProd) {
+    config.on('afterBuild', () => {
+      fs.writeFileSync(
+        'dist/script-hash-list.json',
+        JSON.stringify(getHashList()),
+      );
+    });
+  }
 
   return {
     dir: {

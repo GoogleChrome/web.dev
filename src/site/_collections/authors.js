@@ -16,54 +16,11 @@
 /** @type AuthorsData */
 const authorsData = require('../_data/authorsData.json');
 const {livePosts} = require('../_filters/live-posts');
-const setdefault = require('../_utils/setdefault');
 const {sortByUpdated} = require('../_utils/sort-by-updated');
 
 /** @type Authors */
 let processedCollection;
 const PLACEHOLDER_IMG = 'image/admin/1v5F1SOBl46ZghbHQMle.svg';
-
-/**
- * Generate map the posts by author's username/key
- *
- * @param {Array<{ data: { authors: any[] }}>} posts
- * @return {Map<string, Array<Object>>} Map of posts by author's username/key
- */
-const findAuthorsPosts = (posts) => {
-  const authorsMap = new Map();
-  posts.forEach((post) => {
-    const authors = post.data.authors || [];
-    authors.forEach((author) => {
-      const postsByAuthor = setdefault(authorsMap, author, []);
-      postsByAuthor.push(post);
-      authorsMap.set(author, postsByAuthor);
-    });
-  });
-  return authorsMap;
-};
-
-/**
- * @param {AuthorsItem} author to update
- * @param {any[]} allAuthorPosts posts including drafts
- * @return {boolean} whether this author is allowed here
- */
-const maybeUpdateAuthorHref = (author, allAuthorPosts) => {
-  if (author.elements.length !== 0) {
-    return true;
-  }
-
-  if (author.twitter) {
-    author.href = `https://twitter.com/${author.twitter}`;
-    return true;
-  }
-
-  // If the author has scheduled or draft posts, don't complain.
-  if (allAuthorPosts.length !== 0) {
-    return true;
-  }
-
-  return false;
-};
 
 /**
  * Returns all authors with their posts.
@@ -76,28 +33,11 @@ module.exports = (collections) => {
     return processedCollection;
   }
 
-  let allPosts = [];
-
-  if (collections) {
-    // Find all posts, sort and key by author. Don't yet filter to live posts.
-    allPosts = collections.getFilteredByGlob('**/*.md').sort(sortByUpdated);
-  }
-
-  const authorsPosts = findAuthorsPosts(allPosts);
-
   /** @type Authors */
   const authors = {};
 
-  /** @type {!Array<string>} */
-  const invalidAuthors = [];
-
   Object.keys(authorsData).forEach((key) => {
     const authorData = authorsData[key];
-    // Get all authors but filter later.
-    const allAuthorPosts = authorsPosts.get(key) || [];
-    const href = `/authors/${key}/`;
-    // Generate the author's name out of valid given/family parts. This
-    // allows our authors to just have a single name.
     const title = [authorData.name.given, authorData.name.family]
       .filter((s) => s && s.length)
       .join(' ');
@@ -105,40 +45,62 @@ module.exports = (collections) => {
       authorData.descriptions && authorData.descriptions.en
         ? authorData.descriptions.en
         : `Our latest news, updates, and stories by ${title}.`;
+    const href = `/authors/${key}/`;
+    const image = authorData.image || PLACEHOLDER_IMG;
+
     /** @type AuthorsItem */
     const author = {
       ...authorData,
       data: {
+        alt: title,
+        hero: image,
         subhead: description,
         title,
       },
       description,
-      elements: allAuthorPosts.filter(livePosts),
+      elements: [],
       href,
+      image,
       key,
       title,
       url: href,
     };
 
-    // Update the author's href to be their Twitter profile, if they have no
-    // live posts on the site.
-    if (!maybeUpdateAuthorHref(author, allAuthorPosts)) {
-      // If they have no Twitter profile or posts (even draft ones), the
-      // author probably shouldn't be here.
-      invalidAuthors.push(key);
+    // Get posts
+    if (collections) {
+      author.elements = collections
+        .getFilteredByGlob('**/*.md')
+        .filter(
+          (item) =>
+            livePosts(item) &&
+            !item.data.excludeFromAuthors &&
+            (item.data.authors || []).includes(key),
+        )
+        .sort(sortByUpdated);
     }
 
-    if (!author.image) {
-      author.image = PLACEHOLDER_IMG;
-    }
-    author.data.hero = author.image;
-    author.data.alt = author.title;
-
+    // Limit posts for percy
     if (process.env.PERCY) {
       author.elements = author.elements.slice(-6);
     }
 
-    authors[key] = author;
+    // If author has no posts, point to their Twitter
+    if (author.elements.length === 0 && author.twitter) {
+      author.href = `https://twitter.com/${author.twitter}`;
+    }
+
+    // Set created on date and updated date
+    if (author.elements.length > 0) {
+      author.data.date = author.elements.slice(-1).pop().data.date;
+      const updated = author.elements.slice(0, 1).pop().data.date;
+      if (author.data.date !== updated) {
+        author.data.updated = updated;
+      }
+    }
+
+    if (author.elements.length > 0 || !collections || author.twitter) {
+      authors[author.key] = author;
+    }
   });
 
   if (collections) {
