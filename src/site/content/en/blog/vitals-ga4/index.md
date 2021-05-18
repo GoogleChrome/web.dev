@@ -355,9 +355,9 @@ The above query shows the results for the CLS metric, but the exact same
 technique can be used to report on the debug targets for LCP and FID. Just
 replace the where clause with the relevant metric to debug:
 
-```diff
--WHERE metric_name = 'CLS'
-+WHERE metric_name = 'LCP'
+```sql/1/0
+WHERE metric_name = 'CLS'
+WHERE metric_name = 'LCP'
 ```
 
 Again, you can refer to [Debug Web Vitals in the
