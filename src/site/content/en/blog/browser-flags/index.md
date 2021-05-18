@@ -6,7 +6,7 @@ subhead: |
   This article explains how to do this in the various Chromium derivatives like Google Chrome, Microsoft Edge, and others.
 authors:
   - thomassteiner
-date: 2021-05-17
+date: 2021-05-18
 description: |
   For some of the new APIs we introduce in Chromium, you need to set a browser flag for experimentation.
   This article explains how to do this in the various Chromium derivatives like Google Chrome, Microsoft Edge, and others.
