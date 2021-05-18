@@ -13,8 +13,6 @@ tags:
   - css
 ---
 
-# Layout
-
 Imagine you're working as a developer,
 and a designer colleague hands you a design for a brand new website.
 The design has all sorts of interesting layouts and compositions:
