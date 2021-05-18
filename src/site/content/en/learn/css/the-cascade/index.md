@@ -87,7 +87,7 @@ the linked stylesheet's CSS will have the most specificity.
 } %}
 <figcaption class="w-figcaption">The <code>&lt;style&gt;</code> element is declared in the <code>&lt;head&gt;</code>,
 while the <code>&lt;link /&gt;</code> element is declared in the <code>&lt;body&gt;</code>.
-This means it get more specificity than the <code>&lt;style&gt;</code> element</figcaption>
+This means it gets more specificity than the <code>&lt;style&gt;</code> element</figcaption>
 </figure>
 
 An inline `style` attribute with CSS declared in it will override all other CSS,

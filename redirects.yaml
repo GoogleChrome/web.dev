@@ -259,6 +259,7 @@ redirects:
 # Vanity urls for Learn CSS course
 - source: /learncss
   destination: /learn/css
+
 - source: /learnCSS
   destination: /learn/css
 
@@ -266,3 +267,7 @@ redirects:
 - source: /whats-new-web-vitals-2021
   destination: /vitals
   type: 302
+
+# Redirect for security headers quick reference.
+- source: /security-headers-cheat-sheet
+  destination: /security-headers

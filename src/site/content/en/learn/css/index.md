@@ -34,6 +34,8 @@ For those new to web development overall, check out the
 [intro to HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)
 course from MDN to learn all about how to write markup and link your stylesheets.
 
+Here's what you'll learn:
+
 {% include 'partials/course-index.njk' %}
 
 So, are you ready to learn CSS? [Let's get started](/learn/css/box-model/).

@@ -11,6 +11,17 @@ const {imgixDomain} = require('../../_data/site');
  */
 const Img = BuildImgShortcode(imgixDomain);
 
+function MetaImg(args) {
+  const IS_SVG_IMG = /\.svg$/i.test(args.src);
+
+  if (!args.params?.auto && !IS_SVG_IMG) {
+    args.params = args.params || {};
+    args.params.auto = 'format';
+  }
+
+  return Img(args);
+}
+
 /**
  * Generates src URL of image from imgix path or URL.
  *
@@ -20,4 +31,4 @@ const Img = BuildImgShortcode(imgixDomain);
  */
 const generateImgixSrc = imgixFilter(imgixDomain);
 
-module.exports = {Img, generateImgixSrc};
+module.exports = {Img: MetaImg, generateImgixSrc};

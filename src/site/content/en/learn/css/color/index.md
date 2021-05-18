@@ -196,7 +196,7 @@ Using the `hsla()` function, write: `hsla(0, 0%, 0%, 50%)` or `hsla(0, 0%, 0%, 0
 {% Aside %}
 There are some newer color types coming to CSS.
 These include [lab()](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/lab()>)
-and [lch()](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/lab()>),
+and [lch()](<https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/lch()>),
 which allow a far wider range of color to be specified than is possible in RGB.
 {% endAside %}
 

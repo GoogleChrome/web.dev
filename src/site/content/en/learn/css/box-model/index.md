@@ -68,7 +68,7 @@ Let's quickly look at the difference, using a demo to help us.
   user: 'web-dot-dev',
   id: 'abpoMBL'
 } %}
-  <figcaption>Notice that when the box is using extrinsic sizing,
+  <figcaption class="w-figcaption">Notice that when the box is using extrinsic sizing,
   there's a limit of how much content you can add before it overflows out of the box's bounds.
   This makes the word, "awesome", overflow.</figcaption>
 </figure>
@@ -223,7 +223,7 @@ Go ahead and try this in your own browser:
 1. Show the box model debugger
 
 <figure class='w-figure'>
-{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4" %}
+{% Video src="video/VbAJIREinuYvovrBzzvEyZOpw5w1/sKdHrAfqahgWfDVQEBBT.mp4", class="w-screenshot", controls=true %}
 </figure>
 
 ## Controlling the box model
@@ -280,7 +280,7 @@ by making the following modification to use the alternative box model, `border-b
 ```
 
 This alternative box model tells CSS to apply the `width` to the border box instead of the
-content box.vThis means that our `border` and `padding` get _pushed in_,
+content box. This means that our `border` and `padding` get _pushed in_,
 and as a result,
 when you set `.my-box` to be `200px` wide: it actually renders at `200px` wide.
 
