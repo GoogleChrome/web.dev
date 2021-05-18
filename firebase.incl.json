@@ -16,7 +16,11 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=1, stale-while-revalidate=599"
+            "value": "no-cache"
+          },
+          {
+            "key": "Surrogate-Control",
+            "value": "max-age=600"
           }
         ]
       }
