@@ -195,103 +195,21 @@ to audit your website and get actionable recommendations immediately.
 
 There are several more global brands which have also benefited from investing in Core Web Vitals.
 
-<div class="w-columns">
-  <figure class="w-figure">
-    {% Img
-    src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/xUxJrOzRfTYKn9ajq6N7.png",
-    alt="Tencent Video",
-    width="800", height="220" %}
-    <figcaption class="w-figcaption">
-      Tencent Video saw 70% better CTR for videos by passing Core Web Vitals.
-    </figcaption>
-  </figure>
-  <figure class="w-figure">
-    {% Img
-    src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/xnFd4iZ5k4ELdmdzIzu1.png",
-    alt="CDiscount",
-    width="566", height="89" %}
-    <figcaption class="w-figcaption">
-      Improving all 3 metrics contributed to 6% revenue uplift in their Black Friday sale.
-    </figcaption>
-  </figure>
-  <figure class="w-figure">
-    {% Img
-    src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/s4ujWz7virwA2sXNw9iD.png",
-    alt="Wix", width="128", height="128" %}
-    <figcaption class="w-figcaption">
-      Wix increased mobile origins passing Core Web Vitals by &gt;250% YoY.
-    </figcaption>
-  </figure>
-  <figure class="w-figure">
-    {% Img
-    src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/LnCIQw56eVtZM0e9bTH7.png",
-    alt="Nykaa",
-    width="800", height="269" %}
-    <figcaption class="w-figcaption">
-      40% improvement in LCP led to 28% more organic traffic from T2/T3 cities.
-    </figcaption>
-  </figure>
-  <figure class="w-figure">
-    {% Img
-    src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/UdX8P8rpskeDdZNyVAzT.png",
-    alt="NIKKEI", width="800", height="420" %}
-    <figcaption class="w-figcaption">
-      NIKKEI STYLE's 18% LCP improvement resulted in 9% more pageviews per session.
-    </figcaption>
-  </figure>
-  <figure class="w-figure">
-    {% Img
-    src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/mhbUA0b7UfDwlYmtvo8p.png",
-    alt="NDTV", width="800", height="166" %}
-    <figcaption class="w-figcaption">
-      50% better bounce rate after halving LCP (along with other product changes).
-      <a href="/ndtv">Full case study</a>.
-    </figcaption>
-  </figure>
-  <figure class="w-figure">
-    {% Img
-    src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/PvgwbCL9AL73DFQMxGk9.png",
-    alt="Agrofy", width="800", height="208" %}
-    <figcaption class="w-figcaption">
-      Agrofy Market's 70% better LCP correlated to 76% reduction in load abandonment.
-      <a href="/agrofy/">Full case study</a>.
-    </figcaption>
-  </figure>
-  <figure class="w-figure">
-    {% Img
-    src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/RiMnjY8SXzkaWAnIjy89.png",
-    alt="Flipkart",
-    width="300", height="168" %}
-    <figcaption class="w-figcaption">
-      Flipkart achieved 2.6% reduction in bounce rate by improving Core Web Vitals metrics.
-    </figcaption>
-  </figure>
-  <figure class="w-figure">
-    {% Img
-    src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/yalKca4outCrHHp63fHn.png",
-    alt="CyberAgent", width="800", height="178" %}
-    <figcaption class="w-figcaption">
-      Ameba Manga improved 2-3x #Comics read by improving 10x CLS score.
-    </figcaption>
-  </figure>
-  <figure class="w-figure">
-    {% Img
-    src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/c6mCCaG5W8eOwxXasfQl.png",
-    alt="Yahoo! Japan", width="412", height="68" %}
-    <figcaption class="w-figcaption">
-      Fixing CLS led to 98% reduction in poor pages and 15% uplift in PV / session.
-      <a href="/yahoo-japan-news/">Full case study</a>.
-    </figcaption>
-  </figure>
-  <figure class="w-figure">
-    {% Img
-    src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/ySdaV4MbJ2LyikTwgD4A.png",
-    alt="AliExpress", width="398", height="92" %}
-    <figcaption class="w-figcaption">
-      10X CLS & 2X LCP improvements translated to 15% lesser bounce rates.
-    </figcaption>
-  </figure>
-</div>
+{% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/awVh5EYicG4VRqOWb3au.png",
+alt="",
+width="800", height="424" %}
+
+- **Tencent Video** saw 70% better CTR for videos by passing Core Web Vitals.
+- **Cdiscount** improved all 3 metrics which contributed to 6% revenue uplift in their Black Friday sale.
+- **Wix** increased mobile origins passing Core Web Vitals by &gt;250% year-on-year.
+- **Nykaa** found that a 40% improvement in LCP led to 28% more organic traffic from T2/T3 cities.
+- **NIKKEI STYLE**'s 18% LCP improvement resulted in 9% more pageviews per session.
+- **NDTV** gained a 50% better bounce rate after halving LCP, along with other product changes. <a href="/ndtv">Full case study</a>.
+- **Agrofy Market**'s 70% better LCP correlated to 76% reduction in load abandonment. <a href="/agrofy/">Full case study</a>.
+- **Flipkart** achieved 2.6% reduction in bounce rate by improving Core Web Vitals metrics.
+- **Ameba Manga** improved 2-3x #Comics read by improving 10x CLS score.
+- **Yahoo! Japan** fixed CLS which led to a 98% reduction in poor pages and 15% uplift in PV / session. <a href="/yahoo-japan-news/">Full case study</a>.
+- **AliExpress** made 10X CLS & 2X LCP improvements, which translated to 15% lesser bounce rates.
 
 ## How can you get started now?
 
@@ -301,8 +219,26 @@ Start by measuring your site using field tools! There are various tools availabl
 
 {% Img
 src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/BZbi6hd4OUfKmwyDgQeR.png",
-alt="Chart showing Google and third party tools for measuring.",
+alt="",
 width="800", height="459" %}
+
+#### Google tools
+
+- Search Console
+- PageSpeed insights
+- web-vitals JS
+- Chrome User Experience Report
+
+#### Third-party tools
+
+- Cloudflare
+- New Relic
+- Akamai
+- Calibre
+- WebPageTest
+- Blue Triangle
+- Sentry
+- SpeedCurve
 
 Pick the tool that works best for you.
 You can go a step further and integrate with
