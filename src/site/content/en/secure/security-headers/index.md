@@ -422,7 +422,7 @@ How to use Trusted Types
     el.innerHTML = escaped;  // '&lt;img src=x onerror=alert(1)&gt;'
     ````
 
-    With `require-trusted-types-for: 'script'`, using a trusted type is a
+    With `require-trusted-types-for 'script'`, using a trusted type is a
     requirement. Using any dangerous DOM API with a string will result in an
     error.
 
