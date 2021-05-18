@@ -11,7 +11,7 @@ description: >
 authors:
   - saurabhrajpal
   - swethagopalakrishnan
-date: 2021-05-17
+date: 2021-05-18
 hero: image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/m80oUd2zASInyKJJ7QNc.png
 # thumbnail: image/admin/i2nyfqyVr4XWqilOxPrY.png
 alt: LCP, FID, CLS.
@@ -19,6 +19,7 @@ tags:
   - blog
   - web-vitals
   - performance
+  - case-study
 ---
 
 {% Img
@@ -65,7 +66,7 @@ adopting Core Web Vitals has many other short- and long-term benefits beyond ran
 Let's explore several case studies of global and local brands who adopted Core Web Vitals
 (before it had impact on ranking) because of its focus on user experience.
 
-## Case Studies
+## Case studies
 
 ### Vodafone
 
@@ -81,9 +82,9 @@ width="800", height="368" %}
 - Server Side Render the critical HTML.
 - Reduce render blocking Javascript.
 - Image optimization techniques.
-- Resize hero image; defer non critical.
+- Resize hero image; defer non critical resources.
 
-#### Key Learnings
+#### Key learnings
 
 - A/B testing is the best way to measure the meaningful impact.
 - A/B should be a server side one.
@@ -102,7 +103,7 @@ width="800", height="422" %}
 - Less variability in ad unit size and fixed size ad slots pre-allocated in UI.
 - Optimized ad script loading logic to prioritize header bidding and defer non-critical JS.
 
-#### Key Learnings
+#### Key learnings
 
 Fill rate might get impacted but eventually revenue uplifts with ads viewability improvement.
 
@@ -112,7 +113,7 @@ Tokopedia improved LCP by 55% and saw 23% better average session duration.
 
 {% Img
 src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/HsbbXe0pp73pfZvAlwNl.png",
-alt="Before 3.78s, After 1.72s",
+alt="Before 3.78s, after 1.72s.",
 width="800", height="722" %}
 
 #### Techniques
@@ -121,7 +122,7 @@ width="800", height="722" %}
 - Preload LCP Element.
 - Image optimization (compression, WebP, lazy load non-critical images).
 
-#### Key Learnings
+#### Key learnings
 
 - Built a performance monitoring dashboard
 to monitor progress and impact across teams.
@@ -146,40 +147,40 @@ The above results were achieved by grabbing low hanging fruit such as:
     <thead>
       <tr>
         <th><a href="/fast/#i18n.paths.fast.topics.optimize_your_images">
-        Image Optimization</a></th>
-        <th><a href="/optimize-lcp/">JavaScript Optimization</a></th>
+        Image optimization</a></th>
+        <th><a href="/optimize-lcp/">JavaScript optimization</a></th>
         <th><a href="/optimize-cls/#ads-embeds-and-iframes-without-dimensions">
-        Ads and Dynamic Content</a></th>
+        Ads and dynamic content</a></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>WebP image format</td>
-        <td>Defer third-party JS</td>
-        <td>Reserve space for ads above-the-fold</td>
+        <td>Using WebP image format</td>
+        <td>Deferring third-party JS</td>
+        <td>Reserving space for ads above-the-fold</td>
       </tr>
       <tr>
-        <td>Image CDN</td>
-        <td>Remove render-blocking and unused JS</td>
-        <td>Set height for dynamic content</td>
+        <td>Using image CDNs</td>
+        <td>Removing render-blocking and unused JS</td>
+        <td>Setting height for dynamic content</td>
       </tr>
       <tr>
         <td>Compression</td>
-        <td>Lazy-load non-critical JS</td>
+        <td>Lazy-loading non-critical JS</td>
         <td></td>
       </tr>
       <tr>
-        <td>Defer non-critical images</td>
-        <td>Preload critical JS</td>
+        <td>Deferring non-critical images</td>
+        <td>Preloading critical JS</td>
         <td></td>
       </tr>
       <tr>
-        <td>Preloading the hero images</td>
+        <td>Preloading hero images</td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td><a href="/image-aspect-ratio/">Specify aspect ratio</a></td>
+        <td><a href="/image-aspect-ratio/">Specifying aspect ratio</a></td>
         <td></td>
         <td></td>
       </tr>
@@ -199,23 +200,24 @@ There are several more global brands which have also benefited from investing in
 alt="",
 width="800", height="424" %}
 
-- **Tencent Video** saw 70% better CTR for videos by passing Core Web Vitals.
-- **Cdiscount** improved all 3 metrics which contributed to 6% revenue uplift in their Black Friday sale.
-- **Wix** increased mobile origins passing Core Web Vitals by &gt;250% year-on-year.
-- **Nykaa** found that a 40% improvement in LCP led to 28% more organic traffic from T2/T3 cities.
-- **NIKKEI STYLE**'s 18% LCP improvement resulted in 9% more pageviews per session.
-- **NDTV** gained a 50% better bounce rate after halving LCP, along with other product changes. <a href="/ndtv">Full case study</a>.
-- **Agrofy Market**'s 70% better LCP correlated to 76% reduction in load abandonment. <a href="/agrofy/">Full case study</a>.
-- **Flipkart** achieved 2.6% reduction in bounce rate by improving Core Web Vitals metrics.
-- **Ameba Manga** improved 2-3x #Comics read by improving 10x CLS score.
-- **Yahoo! Japan** fixed CLS which led to a 98% reduction in poor pages and 15% uplift in PV / session. <a href="/yahoo-japan-news/">Full case study</a>.
-- **AliExpress** made 10X CLS & 2X LCP improvements, which translated to 15% lesser bounce rates.
+- Tencent Video saw **70% better CTR** for videos by passing Core Web Vitals.
+- Cdiscount improved all 3 metrics which contributed to **6% revenue uplift** in their Black Friday sale.
+- Wix increased mobile origins passing Core Web Vitals by **over 250% year-on-year**.
+- Nykaa found that a 40% improvement in LCP led to **28% more organic traffic** from T2/T3 cities.
+- NIKKEI STYLE's 18% LCP improvement resulted in **9% more pageviews per session**.
+- <a href="/ndtv">NDTV gained a **50% better bounce rate** after halving LCP, along with other product changes.</a>.
+- <a href="/agrofy/">Full case studyAgrofy Market's 70% better LCP correlated to **76% reduction in load abandonment**.</a>.
+- Flipkart achieved **2.6% reduction in bounce rate** by improving Core Web Vitals metrics.
+- Ameba Manga improved the **number of comics read by 2-3 times** by improving the CLS score 10 times.
+- <a href="/yahoo-japan-news/">Yahoo! Japan fixed CLS which led to a 98% reduction in poor pages and **15% uplift in page views per session**.</a>.
+- AliExpress improved CLS by 10 times and LCP by double, which translated to **15% lesser bounce rates**.
 
 ## How can you get started now?
 
-### Step 1: Start Measuring
+### Step 1: Start measuring
 
-Start by measuring your site using field tools! There are various tools available:
+Start by measuring your site using field tools! There are various tools available, from
+both Google and other providers.
 
 {% Img
 src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/BZbi6hd4OUfKmwyDgQeR.png",
@@ -241,21 +243,21 @@ width="800", height="459" %}
 - SpeedCurve
 
 Pick the tool that works best for you.
-You can go a step further and integrate with
-[Google Analytics 4](https://web.dev/vitals-ga4)
+You can go a step further and [integrate with
+Google Analytics 4](/vitals-ga4)
 to correlate Core Web Vitals with your business metrics.
 
 ### Step 2: Convince your stakeholders
 
 - Educate your stakeholders about the importance of adopting Core Web Vitals
-to improve user experience and its correlation with your company's business metrics.
+to improve user experience and its correlation with company's business metrics.
 - Get a sponsor internally to start a small experiment.
 - Create a shared goal among stakeholders to improve Core Web Vitals across teams.
 
 ### Step 3: Deliver successful implementation using these tips
 
 - **Prioritize**: Pick a page with high traffic and/or conversion significance
-to deliver meaningful results (eg. ads landing page or conversion page, popular pages).
+to deliver meaningful results (for example, ads landing page, conversion page, or popular pages).
 - **A/B Test**: Use server side testing to avoid any rendering cost.
 Compare results between optimized and unoptimized versions.
 - **Monitor**: Use continuous monitoring to prevent regressions.
@@ -263,4 +265,4 @@ Compare results between optimized and unoptimized versions.
 Lastly, we believe that performance is a journey not a destination.
 On that note, we plan to keep this article updated with the latest case study highlights.
 If you also have a compelling business win and would like to be featured in this article,
-[submit a content proposal](https://web.dev/handbook/quick-start/).
+[submit a content proposal](/handbook/quick-start/).
