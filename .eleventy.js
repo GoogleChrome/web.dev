@@ -56,10 +56,10 @@ const {Video} = require(`./${componentsDir}/Video`);
 const {YouTube} = require('webdev-infra/shortcodes/YouTube');
 
 // Collections
-const algolia = require('./src/site/_collections/algolia');
 const authors = require(`./src/site/_collections/authors`);
 const blogPostsDescending = require(`./src/site/_collections/blog-posts-descending`);
 const newsletters = require(`./src/site/_collections/newsletters`);
+const pagesIndex = require('./src/site/_collections/pages-index');
 const {
   postsWithLighthouse,
 } = require(`./src/site/_collections/posts-with-lighthouse`);
@@ -137,10 +137,10 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // COLLECTIONS
   // ----------------------------------------------------------------------------
-  config.addCollection('algolia', algolia);
   config.addCollection('authors', authors);
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('newsletters', newsletters);
+  config.addCollection('pagesIndex', pagesIndex);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug

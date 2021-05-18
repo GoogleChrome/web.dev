@@ -15,15 +15,9 @@
  */
 
 declare global {
-  export interface AlgoliaCollectionItem {
-    title: string;
-    description?: string;
+  export interface PagesIndexCollectionItem {
     content?: string;
-    locales: string[];
-    objectID: string;
-    image?: string;
-    tags: string[];
-    url: string;
+    createdOn?: Date;
     /**
      * Title of default locale version if in different language.
      */
@@ -36,13 +30,20 @@ declare global {
      * Content of default locale version if in different language.
      */
     default_content?: string;
+    description?: string;
+    image?: string;
+    locales: string[];
+    objectID: string;
+    tags: string[];
     /**
-     * Date of index, only available after indexed. Basically can only be used by search.
+     * Title of a post.
      */
-    indexedOn?: number;
+     title: string;
+     updatedOn?: Date;
+     url: string;
   }
 
-  export type AlgoliaCollection = AlgoliaCollectionItem[];
+  export type PagesIndexCollection = PagesIndexCollectionItem[];
 }
 
 // empty export to keep file a module
