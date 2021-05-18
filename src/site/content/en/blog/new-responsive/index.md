@@ -282,7 +282,7 @@ With less space, the product cards stack. Each product card styles itself, which
 is something that would be impossible when only able to rely on global styles.
 ### Mixing Container Queries with Media Queries
 
-Container queries have so many use cases — one being a calendar component. You
+Container queries have so many use cases—one being a calendar component. You
 can use container queries to re-layout the calendar events and other segments
 based on the available width of their parent.
 
@@ -371,7 +371,7 @@ one has a width of --sidebar-width, which is 5rem by default, and the other is
 fold, the value of `--sidebar-width` is updated with the environment value of
 the left fold.
 
-```
+```css
 :root {
   --sidebar-width: 5rem;
 }
