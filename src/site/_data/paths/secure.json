@@ -11,7 +11,8 @@
       "pathItems": [
         "security-not-scary",
         "security-attacks",
-        "same-site-same-origin"
+        "same-site-same-origin",
+        "security-headers"
       ]
     },
     {

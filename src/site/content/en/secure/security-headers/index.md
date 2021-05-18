@@ -1,9 +1,10 @@
 ---
 layout: post
 title: Security headers quick reference
-subhead: Learn and reference security headers quickly
+subhead: Learn more about headers that can keep your site safe and quickly look up the most important details.
 authors:
   - agektmr
+  - maudn
   - arturjanc
 date: 2021-05-18
 hero: image/YLflGBAPWecgtKJLqCJHSzHqe2J2/E3BVnrBFNV6w2Uqxn3bQ.jpg
@@ -421,7 +422,7 @@ How to use Trusted Types
     el.innerHTML = escaped;  // '&lt;img src=x onerror=alert(1)&gt;'
     ````
 
-    With `require-trusted-types-for: 'script'`, using a trusted type is a
+    With `require-trusted-types-for 'script'`, using a trusted type is a
     requirement. Using any dangerous DOM API with a string will result in an
     error.
 
