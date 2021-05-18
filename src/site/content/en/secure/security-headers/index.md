@@ -21,6 +21,10 @@ This article lists the most important security headers you can use to protect
 your website. Use it to understand web-based security features, learn how to
 implement them on your website, and as a reference for when you need a reminder.
 
+Security headers recommended for websites that handle sensitive user data:
+: [Content Security Policy (CSP)](#csp)
+: [Trusted Types](#tt)
+
 Security headers recommended for all websites:
 : [X-Content-Type-Options](#xcto)
 : [X-Frame-Options](#xfo)
@@ -28,11 +32,7 @@ Security headers recommended for all websites:
 : [Cross-Origin Opener Policy (COOP)](#coop)
 : [HTTP Strict Transport Security (HSTS)](#hsts)
 
-Security headers recommended for websites that handle sensitive user data:
-: [Content Security Policy (CSP)](#csp)
-: [Trusted Types](#tt)
-
-Security headers needed for websites with advanced features (such as `SharedArrayBuffer`):
+Security headers for websites with advanced capabilities:
 : [Cross-Origin Resource Sharing (CORS)](#cors)
 : [Cross-Origin Embedder Policy (COEP)](#coep)
 
@@ -214,6 +214,9 @@ In HTML, in order to load the scripts, set the `nonce` attribute of all
 </script>
 ```
 
+[Google Photos](https://photos.google.com/) is a good nonce-based strict CSP
+example. Use DevTools to see how it's used.
+
 #### 2. Use a hash-based strict CSP {: #hash-based-csp}
 
 If your HTML has to be served statically or cached, for example if you're
@@ -246,6 +249,10 @@ scripts](https://wpt.fyi/results/content-security-policy/script-src/script-src-s
 To load external scripts, read "Load sourced scripts dynamically" under
 [Option B: Hash-based CSP Response Header](/strict-csp/#hash-based-csp) section.
 
+[CSP Evaluator](https://csp-evaluator.withgoogle.com/) is a good tool to
+evaluate your CSP, but at the same time a good nonce-based strict CSP example.
+Use DevTools to see how it's used.
+
 ### Supported browsers
 
 Chrome, Firefox, Edge, Safari
@@ -264,6 +271,9 @@ Chrome, Firefox, Edge, Safari
   certain unsafe patterns.
 
 {% endAside %}
+
+See [more
+compatibilities](https://developer.mozilla.org/docs/Web/HTTP/CSP#browser_compatibility).
 
 ### Other things to note about CSP
 
@@ -287,10 +297,6 @@ Chrome, Firefox, Edge, Safari
 * [Mitigate XSS with a Strict Content Security Policy (CSP)](/strict-csp)
 * [Content Security Policy Cheat
   Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html)
-* A nonce-based strict CSP example: [Google Photos](https://photos.google.com/)
-  (See the source code)
-* A hash-based strict CSP example: [CSP
-  Evaluator](https://csp-evaluator.withgoogle.com/) (See the source code)
 
 {% endDetails %}
 
@@ -423,6 +429,8 @@ How to use Trusted Types
 
 Chrome, Edge
 
+See [more compatibilities](https://caniuse.com/?search=trusted%20types).
+
 ### Learn more
 
 * [Prevent DOM-based cross-site scripting vulnerabilities with Trusted
@@ -481,6 +489,9 @@ Content-Type: text/html; charset=utf-8
 
 Chrome, Firefox, Safari, Edge
 
+See [more
+compatibilities](https://caniuse.com/mdn-http_headers_x-content-type-options).
+
 ### Learn more
 
 * [X-Content-Type-Options - HTTP MDN](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Content-Type-Options)
@@ -527,6 +538,10 @@ How to use X-Frame-Options
 
 All documents that are not designed to be embedded should use `X-Frame-Options` header.
 
+You can try how the following configurations affect loading an iframe on [this
+demo](https://first-party-test.glitch.me/). Change the `X-Frame-Options`
+dropdown menu and click the **Reload the iframe** button.
+
 #### Protects your website from being embedded by any other websites
 
 Deny being embedded by any other documents.
@@ -560,6 +575,9 @@ explicitly opt-in to be embedded.
 ### Supported browsers
 
 Chrome, Firefox, Safari, Edge
+
+See [more
+compatibilities](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options#browser_compatibility).
 
 ### Learn more
 
@@ -596,6 +614,12 @@ How to use CORP
 
 It is recommended that **all** resources are served with one of the following
 three headers.
+
+You can try how the following configurations affect loading resources under a
+[`Cross-Origin-Embedder-Policy: require-corp` environment](#coep) on [this
+demo](https://first-party-test.glitch.me/?coep=require-corp&). Change the
+**Cross-Origin-Resource-Policy** dropdown menu and click the **Reload the
+iframe** or **Reload the image** button to see the effect.
 
 #### Allow resources to be loaded `cross-origin`
 
@@ -651,6 +675,9 @@ To learn more about the difference between same-origin and same-site, check out
 
 Chrome, Firefox, Safari, Edge
 
+See [more
+compatibilities](https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).
+
 ### Learn more
 
 * [Consider deploying cross-origin resource policy](https://resourcepolicy.fyi/)
@@ -687,6 +714,12 @@ How to use COOP
 {% endDetailsSummary %}
 
 ### Recommended usages
+
+You can try how the following configurations affect communication with a
+cross-origin popup window on [this demo](https://first-party-test.glitch.me/).
+Change the **Cross-Origin-Opener-Policy** dropdown menu for both the document
+and the popup window, click the **Open a popup** button then click **Send a
+postMessage** to see if the message is actually delivered.
 
 #### Isolate a document from cross-origin windows
 
@@ -770,6 +803,9 @@ Cross-Origin-Opener-Policy-Report-Only: same-origin; report-to="coop"
 
 Chrome, Firefox, Edge
 
+See [more
+compatibilities](https://caniuse.com/mdn-http_headers_cross-origin-opener-policy).
+
 ### Learn more
 
 * [Why you need "cross-origin isolated" for powerful features](/why-coop-coep/)
@@ -851,6 +887,12 @@ Access-Control-Allow-Credentials: true
   authenticated requests will be rejected even if the requesting origin is
   present in the `Access-Control-Allow-Origin` header.
 
+You can try how the simple request affect loading resources under a
+[`Cross-Origin-Embedder-Policy: require-corp` environment](#coep) on [this
+demo](https://first-party-test.glitch.me/?coep=require-corp&). Click the
+**Cross-Origin Resource Sharing** checkbox and click the **Reload the image**
+button to see the effect.
+
 #### Preflighted requests
 
 A preflighted request is preceded with an `OPTIONS` request to check if the
@@ -870,7 +912,6 @@ Access-Control-Request-Headers: X-PINGOTHER, Content-Type
 * `Access-Control-Request-Headers: X-PINGOTHER, Content-Type` allows the
   requester to set the `X-PINGOTHER` and `Content-Type` HTTP headers in the
   subsequent request.
-
 
 {% Label %}Example response headers{% endLabel %}
 
@@ -892,6 +933,9 @@ Access-Control-Max-Age: 86400
 ### Supported browsers
 
 Chrome, Firefox, Safari, Edge
+
+See [more
+compatibilities](https://caniuse.com/mdn-http_headers_content-length_cors_response_safelist).
 
 ### Learn more
 
@@ -940,6 +984,14 @@ instruct the browser to block loading resources that do not opt-in via
 {% Img src="image/admin/MAhaVZdShm8tRntWieU4.png", alt="How COEP works",
 width="800", height="410" %}
 
+You can try how the following configurations affect loading resources on [this
+demo](https://first-party-test.glitch.me/). Change the
+**Cross-Origin-Embedder-Policy** dropdown menu, the
+**Cross-Origin-Resource-Policy** dropdown menu, the **Report Only** checkbox etc
+to see how they affect loading resources. Also, open [the reporting endpoint
+demo](https://reporting-endpoint.glitch.me/) to see if the blocked resources are
+reported.
+
 #### Enable cross-origin isolation
 
 Enable [cross-origin isolation](/coop-coep) by sending
@@ -970,6 +1022,9 @@ Cross-Origin-Embedder-Policy-Report-Only: require-corp; report-to="coep"
 ### Supported browsers
 
 Chrome, Firefox, Edge
+
+See [more
+compatibilities](https://caniuse.com/mdn-http_headers_cross-origin-embedder-policy).
 
 ### Learn more
 * [Making your website "cross-origin isolated" using COOP and COEP](/coop-coep/)
@@ -1013,6 +1068,8 @@ Strict-Transport-Security: max-age=31536000
 ### Supported browsers
 
 Chrome, Firefox, Safari, Edge
+
+See [more compatibilities](https://caniuse.com/stricttransportsecurity).
 
 ### Learn more
 * [Strict-Transport-Security -
