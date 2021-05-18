@@ -31,12 +31,14 @@ Viewport-based media queries give you some powerful tools, but lack a lot of
 finesse. They lack the ability to respond to user needs, and the ability to
 inject responsive styles into components themselves.
 
-{% Aside %} When referring to components for the sake of this article, this
+{% Aside %} 
+When referring to components for the sake of this article, this
 means elements, including elements that are made up of other elements, like a
-card or sidebar. Those components make up our web pages. {% endAside %}
+card or sidebar. Those components make up our web pages.
+{% endAside %}
 
 You can use global viewport information to style your components, but they still
-don’t own their styles, and that doesn’t work when our design systems are
+don't own their styles, and that doesn't work when our design systems are
 component-based and not page-based.
 
 The good news is, the ecosystem is changing, and it's changing pretty rapidly.
@@ -94,12 +96,12 @@ height="428" %}
 
 Users who have set operating system preferences for [reduced
 motion](https://web.dev/prefers-reduced-motion/), are requesting fewer
-animations when using their computer in general. Therefore, it’s likely that
-they wouldn’t appreciate a flashy intro screen, card flip animation, intricate
+animations when using their computer in general. Therefore, it's likely that
+they wouldn't appreciate a flashy intro screen, card flip animation, intricate
 loader, or other flashy animations while using the web.
 
 With `prefers-reduced-motion` you can design your pages with reduced-motion in
-mind, and create a motion-enhanced experience for those who don’t have this
+mind, and create a motion-enhanced experience for those who don't have this
 preference set. 
 
 {% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/r4z52PPvElemSUJwUCZp.mp4",
@@ -109,7 +111,7 @@ This card has information on both sides. The baseline reduced-motion experience
 is a crossfade to show that information, while the motion-enhanced experience is
 a card flip.
 
-Prefers-reduced-motion shouldn’t mean "no motion", since motion is so critical
+Prefers-reduced-motion shouldn't mean "no motion", since motion is so critical
 to conveying information online. Instead, provide a solid baseline experience
 that guides your users without unnecessary movement, and progressively enhance
 that experience for your users without those accessibility needs or preferences.
@@ -139,7 +141,7 @@ autoplay=true, muted=true, playsinline=true, loop=true, controls=true %}
 
 ### Designing for dark theme
 
-When designing for a dark theme, it’s not just about inverting background and
+When designing for a dark theme, it's not just about inverting background and
 text colors. There are a few considerations you might not realize. For example,
 you might need to desaturate colors on a dark background to reduce visual
 vibration.
@@ -149,8 +151,8 @@ alt="Dont use vibrant, saturated color with dark themes", width="698",
 height="640" %}
 
 Instead of using shadows to create depth and draw an element forward, you may
-want to use light in the element’s background-color to draw it forward. This is
-because shadows won’t be as effective on a dark background.
+want to use light in the element's background-color to draw it forward. This is
+because shadows won't be as effective on a dark background.
 
 <figure>
   {% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/ZiasjYiaPFmJJOkxJBce.mp4",
@@ -162,7 +164,7 @@ because shadows won’t be as effective on a dark background.
 
 Dark themes not only provide a more customized user experience, but they can
 also improve battery life significantly in AMOLED screens. Those are the screens
-we’re seeing in newer high-end phones, and they’re becoming increasingly popular
+we're seeing in newer high-end phones, and they're becoming increasingly popular
 across mobile devices.
 
 {% Img src="image/HodOHWjMnbNw56hvNASHWSgZyAf2/ZszEdn43lc4ZmcOaGKy4.webp",
@@ -182,12 +184,12 @@ possible
 ## Responsive to the container
 
 One of the most exciting emerging areas in CSS is container queries, also
-frequently called element queries. It’s hard to understate what the shift from
+frequently called element queries. It's hard to understate what the shift from
 page-based responsive design to container-based responsive design will do to
 evolve the design ecosystem.
 
-Here’s an example of the powerful abilities that container queries provide. You
-can manipulate any of the card element’s styles, including the link list, font
+Here's an example of the powerful abilities that container queries provide. You
+can manipulate any of the card element's styles, including the link list, font
 sizes, and overall layout based on its parent container:
 
 <figure>
@@ -290,13 +292,13 @@ autoplay=true, muted=true, playsinline=true, loop=true, controls=true %}
 <figcaption><a href="https://codepen.io/una/pen/RwodQZw">See demo on Codepen</a> (behind a flag in Canary).</figcaption>
 </figure>
 
-This demo container queries to change the layout and style of the calendar’s
+This demo container queries to change the layout and style of the calendar's
 date and day of the week, as well as adjusting the margins and font size on the
 scheduled events to help them better fit the space.
 
 Then, use a media query to shift the entire layout for smaller screen sizes.
 This example shows how powerful it is to _combine_ media queries (adjusting the
-global, or macro styles) with container queries (adjusting the container’s
+global, or macro styles) with container queries (adjusting the container's
 children, and their micro styles).
 
 So now we can think of Macro and Micro layouts within the same UI component to
@@ -340,13 +342,13 @@ Scoping would allow us to create "donut shaped" selectors, where we can specify
 where to keep a style encapsulated, and where to break out of that scoped style
 to refer back to a more global style.
 
-An example of this would be a tab panel, where we’d want the tabs to get the
+An example of this would be a tab panel, where we'd want the tabs to get the
 scoped style, and the panel within the tabs to get a parent style.
 
 ## Responsive to the form factor
 
 The next topic in our conversation about the new era of responsive design is a
-shift in form factors, and the growing possibilities of what we’ll need to be
+shift in form factors, and the growing possibilities of what we'll need to be
 designing for as a web community (such as shape-shifting screen or virtual
 reality).
 
@@ -410,12 +412,12 @@ circle of the new responsive", width="800", height="442" %}
 
 _This_ is the new responsive.
 
-It’s combining macro layout with micro layout, and on top of all of that, it’s
+It's combining macro layout with micro layout, and on top of all of that, it's
 taking user customization and form factor into account.
 
 Any of these changes alone would constitute a considerable shift in how we
 design for the web. But combined, they signify a really big shift in how we even
-conceptualize responsive design. It’s time to think about responsive design
+conceptualize responsive design. It's time to think about responsive design
 beyond viewport size, and start considering all of these new axes for better
 component-based and customized experiences.
 
@@ -429,7 +431,7 @@ basics, my team is launching a brand new, totally free CSS course and reference
 on web.dev. You can access it via [web.dev/learnCSS](/learn/css).
 
 I hope you enjoyed this overview on the next era of responsive design, and some
-of the primitives that will come along with it, and I also hope you’re as
+of the primitives that will come along with it, and I also hope you're as
 excited as I am about what this means for the future of web design. 
 
 It opens up a huge opportunity to us as a UI community to embrace
