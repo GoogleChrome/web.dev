@@ -33,7 +33,7 @@ module.exports = {
   thumbnail: 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vU99HKzIf5EUPnzGVPf1.png',
   isBannerEnabled: true,
   banner:
-    'We want to hear from you! We are looking for web developers to participate in user research, product testing, discussion groups and more. [Apply now to join](https://www.brandinvitation.com/wix/p3474224.aspx?said=QWERD5A&pcid=CLCS&aud=na&cid=na&enpt=lp&lang=9&l=9&udv=wdb) our WebDev Insights Community.',
+    'I/O is back, online, and free for everyone! I/O connects developers from around the world for thoughtful discussions and hands-on learning with Google experts. [Register now](https://events.google.com/io/?utm_source=web&utm_medium=embedded_marketing).',
   areCoursesEnabled: true,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
