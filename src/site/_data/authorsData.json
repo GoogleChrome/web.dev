@@ -2201,5 +2201,18 @@
       "en": "GDE for Web Capabilities & Angular"
     },
     "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/pguQ0oykD0nNu9jM5OcP.jpeg"
+  },
+  "arturjanc": {
+    "name": {
+      "given": "Artur",
+      "family": "Janc"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Security Engineering"
+    },
+    "github": "arturjanc",
+    "twitter": "arturjanc",
+    "image": "image/YLflGBAPWecgtKJLqCJHSzHqe2J2/hwvmzV4b6VQpTNrNF3wK.jpg"
   }
 }
