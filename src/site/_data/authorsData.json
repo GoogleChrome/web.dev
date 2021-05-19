@@ -2202,6 +2202,28 @@
     },
     "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/pguQ0oykD0nNu9jM5OcP.jpeg"
   },
+  "swethagopalakrishnan": {
+    "name": {
+      "given": "Swetha",
+      "family": "Gopalakrishnan"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "twitter": "swethago",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/Mpe7GGUwnUsy9Gx7UxZK.jpg"
+  },
+  "saurabhrajpal": {
+    "name": {
+      "given": "Saurabh",
+      "family": "Rajpal"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "twitter": "saurabhrajpal",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/pgfTCNTb5C2ThMcZCzPQ.jpg"
+  },
   "arturjanc": {
     "name": {
       "given": "Artur",
