@@ -5,7 +5,7 @@ subhead: 'Controlling macro and micro layout in a new era of responsive web desi
 authors:
   - una
 description: User-preference based media features, container queries, and media queries for new screen types, such as foldable screens, will enable us to usehr in a new era of responsive web design.
-date: 2021-19-05
+date: 2021-05-19
 hero: image/HodOHWjMnbNw56hvNASHWSgZyAf2/P5LtV5IubshVuDac8uKO.jpg
 tags:
   - blog
