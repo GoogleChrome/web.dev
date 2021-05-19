@@ -606,7 +606,7 @@ Since making a dashboard from scratch is time consuming, we developed a packaged
 solution that will create a template dashboard for you. First make sure that you
 have materialized your Web Vitals table using the above query. Then access the
 Web Vitals connector for Data Studio using this link:
-goo.gle/web-vitals-connector
+[goo.gle/web-vitals-connector](https://goo.gle/web-vitals-connector)
 
 After providing a one time authorization, you should see the following
 configuration screen:
