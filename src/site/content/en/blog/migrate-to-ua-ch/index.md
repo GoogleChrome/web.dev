@@ -163,7 +163,7 @@ For example, the current defaults for Chrome would be represented as:
 
 ⬇️ Response headers
 
-```
+```text
 Accept-CH: Sec-CH-UA-Mobile, Sec-CH-UA-Platform, Sec-CH-UA
 ```
 
@@ -172,7 +172,7 @@ send:
 
 ⬇️ Response headers
 
-```
+```text
 Accept-CH: Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform, Sec-CH-UA
 ```
 
@@ -206,14 +206,14 @@ draft](https://wicg.github.io/client-hints-infrastructure/#policy-controlled-cli
 
 ⬇️ Response from blog.site delegating the hint
 
-```
+```text
 Accept-CH: Sec-CH-UA-Model
 Permissions-Policy: ch-ua-model=(self "https://cdn.site")
 ```
 
 ⬆️ Request to subresources on cdn.site include the delegated hint
 
-```
+```text
 Sec-CH-UA-Model: "Pixel 5"
 ```
 
@@ -221,7 +221,7 @@ You can specify multiple hints for multiple origins, and not just from the `ch-u
 
 ⬇️ Response from blog.site delegating multiple hints to multiple origins
 
-```
+```text
 Accept-CH: Sec-CH-UA-Model, DPR
 Permissions-Policy: ch-ua-model=(self "https://cdn.site"),
                     ch-dpr=(self "https://cdn.site" "https://img.site")
@@ -238,7 +238,7 @@ specify the hints you would like to delegate in the `allow` attribute.
 
 ⬇️ Response from blog.site
 
-```
+```text
 Accept-CH: Sec-CH-UA-Model
 ```
 
@@ -250,7 +250,7 @@ Accept-CH: Sec-CH-UA-Model
 
 ⬆️ Request to widget.site
 
-```
+```text
 Sec-CH-UA-Model: "Pixel 5"
 ```
 
@@ -277,13 +277,13 @@ subresources.
 
 ⬇️ Response headers for `/blog`
 
-```
+```text
 Accept-CH: Sec-CH-UA-Mobile, Sec-CH-UA-Platform, Sec-CH-UA
 ```
 
 ⬇️ Response headers for `/app`
 
-```
+```text
 Accept-CH: Sec-CH-UA-Mobile, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version, Sec-CH-UA
 ```
 
@@ -309,20 +309,20 @@ one was sent without the critical hint.
 
 ⬆️ Initial request
 
-```
+```text
 [With default headers]
 ```
 
 ⬇️ Response headers
 
-```
+```text
 Accept-CH: Sec-CH-UA-Model
 Critical-CH: Sec-CH-UA-Model
 ```
 
 🔃 Browser retries initial request with the extra header
 
-```
+```text
 [With default headers + …]
 Sec-CH-UA-Model: Pixel 5
 ```
@@ -374,7 +374,7 @@ overrideUserAgentUsingClientHints(['model'])
 The resulting string would show the `Pixel 5` model, but still shows the reduced
 `92.0.0.0` as the `uaFullVersion` hint was not requested:
 
-```
+```text
 Mozilla/5.0 (Linux; Android 10.0; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.0.0 Mobile Safari/537.36
 ```
 
