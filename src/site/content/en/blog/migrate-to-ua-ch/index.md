@@ -27,7 +27,7 @@ easy-to-use format.
 
 {% Aside %} For more information on Client Hints and expanding them with
 user-agent data, read the [introductory article on User-Agent Client
-Hints](http://web.dev/user-agent-client-hints). {% endAside %}
+Hints](/user-agent-client-hints). {% endAside %}
 
 This article will take you through auditing your access to user-agent data and
 migrating user-agent string usage to User-Agent Client Hints.
@@ -49,7 +49,7 @@ recording or processing:
 * Browser name or version
 * Operating system name or version
 * Device make or model
-* CPU type, architecture, or bitness (e.g. 64-bit)
+* CPU type, architecture, or bitness (for example, 64-bit)
 
 It's also likely that you may be using a third-party library or service to
 process the user-agent. In this case, check to see if they are updating to
@@ -119,7 +119,7 @@ varying order, so don't rely on something appearing at a certain index. {%
 endAside %}
 
 If you need one of the more detailed, high-entropy user-agent values, you will
-need to specify it and check for the result in the returned Promise:
+need to specify it and check for the result in the returned `Promise`:
 
 ```javascript
 navigator.userAgentData.getHighEntropyValues(['model'])
@@ -204,14 +204,14 @@ header. The list of policy-controlled hints is available in the [Clients Hints
 Infrastructure
 draft](https://wicg.github.io/client-hints-infrastructure/#policy-controlled-client-hints-features)
 
-⬇️ Response from blog.site delegating the hint
+⬇️ Response from `blog.site` delegating the hint
 
 ```text
 Accept-CH: Sec-CH-UA-Model
 Permissions-Policy: ch-ua-model=(self "https://cdn.site")
 ```
 
-⬆️ Request to subresources on cdn.site include the delegated hint
+⬆️ Request to subresources on `cdn.site` include the delegated hint
 
 ```text
 Sec-CH-UA-Model: "Pixel 5"
@@ -219,7 +219,7 @@ Sec-CH-UA-Model: "Pixel 5"
 
 You can specify multiple hints for multiple origins, and not just from the `ch-ua` range:
 
-⬇️ Response from blog.site delegating multiple hints to multiple origins
+⬇️ Response from `blog.site` delegating multiple hints to multiple origins
 
 ```text
 Accept-CH: Sec-CH-UA-Model, DPR
@@ -236,19 +236,19 @@ are not using it directly at the top-level. {% endAside %}
 Cross-origin iframes work in a similar way to cross-origin resources, but you
 specify the hints you would like to delegate in the `allow` attribute.
 
-⬇️ Response from blog.site
+⬇️ Response from `blog.site`
 
 ```text
 Accept-CH: Sec-CH-UA-Model
 ```
 
-↪️ HTML for blog.site
+↪️ HTML for `blog.site`
 
 ```html
 <iframe src="https://widget.site" allow="ch-ua-model"></iframe>
 ```
 
-⬆️ Request to widget.site
+⬆️ Request to `widget.site`
 
 ```text
 Sec-CH-UA-Model: "Pixel 5"
