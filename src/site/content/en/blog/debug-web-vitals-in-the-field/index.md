@@ -133,12 +133,12 @@ to CLS and returns the largest source element from the largest shift:
 function getCLSDebugTarget(entries) {
   const largestShift = entries.reduce((a, b) => {
     return a && a.value > b.value ? a : b;
-  });
+  }, null);
   if (largestShift && largestShift.sources) {
     const largestSource = largestShift.sources.reduce((a, b) => {
       return a.node && a.previousRect.width * a.previousRect.height >
           b.previousRect.width * b.previousRect.height ? a : b;
-    });
+    }, null);
     if (largestSource) {
       return largestSource.node;
     }
@@ -347,14 +347,14 @@ function getSelector(node, maxLen = 100) {
 }
 
 function getLargestLayoutShiftEntry(entries) {
-  return entries.reduce((a, b) => a && a.value > b.value ? a : b);
+  return entries.reduce((a, b) => a && a.value > b.value ? a : b, null);
 }
 
 function getLargestLayoutShiftSource(sources) {
   return sources.reduce((a, b) => {
     return a.node && a.previousRect.width * a.previousRect.height >
         b.previousRect.width * b.previousRect.height ? a : b;
-  });
+  }, null);
 }
 
 function wasFIDBeforeDCL(fidEntry) {
