@@ -62,9 +62,9 @@ The default set of User-Agent Client Hints includes:
 * `Sec-CH-UA`: browser name and major/significant version
 * `Sec-CH-UA-Mobile`: boolean value indicating a mobile device
 * `Sec-CH-UA-Platform`: operating system name
-  * _Note:_ this has been updated in the spec and will be [reflected in
+  * _Note that this has been updated in the spec and will be [reflected in
     Chrome](https://groups.google.com/a/chromium.org/g/blink-dev/c/dafizBGwWMw/m/72l-1zm6AAAJ)
-    and other Chromium-based browsers shortly.
+    and other Chromium-based browsers shortly._
 
 The reduced version of the user-agent string that is proposed will also retain
 this basic information in a backwards-compatible way. For example, instead of
