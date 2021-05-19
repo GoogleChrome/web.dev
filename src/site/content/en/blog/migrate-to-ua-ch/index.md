@@ -8,6 +8,7 @@ authors:
   - rowan_m 
 date: 2021-05-19
 description: |
+  Strategies to migrate your site from relying on the user-agent string to the  new User-Agent Client Hints.
 hero: image/VWw0b3pM7jdugTkwI6Y81n6f5Yc2/uHTVU6MzCWYVPzLposSy.jpg
 alt: A brightly lit route through a cold, dark landscape. Follow that path!
 tags:
