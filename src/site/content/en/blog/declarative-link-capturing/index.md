@@ -8,7 +8,7 @@ subhead: |
   outside of the navigation scope.
 authors:
   - thomassteiner
-date: 2021-05-18
+date: 2021-05-19
 description: |
   Declarative Link Capturing is a proposal for a web app manifest property called
   "capture_links" that lets developers determine declaratively what should happen when the browser
