@@ -138,7 +138,7 @@ function getCLSDebugTarget(entries) {
     const largestSource = largestShift.sources.reduce((a, b) => {
       return a.node && a.previousRect.width * a.previousRect.height >
           b.previousRect.width * b.previousRect.height ? a : b;
-    }, null);
+    });
     if (largestSource) {
       return largestSource.node;
     }
@@ -354,7 +354,7 @@ function getLargestLayoutShiftSource(sources) {
   return sources.reduce((a, b) => {
     return a.node && a.previousRect.width * a.previousRect.height >
         b.previousRect.width * b.previousRect.height ? a : b;
-  }, null);
+  });
 }
 
 function wasFIDBeforeDCL(fidEntry) {
