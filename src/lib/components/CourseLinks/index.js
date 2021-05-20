@@ -113,9 +113,8 @@ class CourseLinks extends HTMLElement {
     if (ga && newPercent - oldPercent >= 10) {
       ga('send', 'event', {
         eventCategory: 'Course Events',
-        eventAction: 'progress',
-        eventLabel: courseKey,
-        eventValue: newPercent.toString(),
+        eventAction: `course: ${courseKey} progress`,
+        eventLabel: newPercent.toString(),
       });
     }
 
