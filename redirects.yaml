@@ -154,6 +154,8 @@ redirects:
 
 - source: /remove-code-blocking-indexing
   destination: /is-crawlable
+- source: /is-crawable
+  destination: /is-crawlable
 
 - source: /fix-http-status-codes
   destination: /http-status-code
