@@ -20,7 +20,7 @@
         <a href="{{ next.url }}" class="course-pagination-control" data-next>
           <div class="course-pagination-control__top display-flex align-center">
             <span class="font-mono case-upper">{{ 'i18n.common.next' | i18n(locale) }}</span>
-            <span class="font-mono">{{ loop.index0 | padStart(3, '0') }}</span>
+            <span class="font-mono">{{ (loop.index0 + 1) | padStart(3, '0') }}</span>
             {{ icon('arrow-forward', {label: 'next'}) }}
           </div>
 
