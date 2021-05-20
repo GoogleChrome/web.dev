@@ -82,6 +82,7 @@
 // Courses app bar specific subclass
 .course-app-bar {
   transition: box-shadow $TRANSITION_SPEED $TRANSITION_EASE;
+  z-index: 100;
 }
 
 .course-app-bar[data-stuck] {
