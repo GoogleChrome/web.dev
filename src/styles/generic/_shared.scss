@@ -67,6 +67,10 @@ html {
   scroll-padding-top: calc(#{$WEB_HEADER_HEIGHT} + 1.5rem);
 }
 
+web-header {
+  scroll-padding-top: unset !important;
+}
+
 // Fallback if scroll-padding-top is not supported
 *:not([href])[id]::before {
   content: ' ';
