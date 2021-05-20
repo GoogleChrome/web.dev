@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Does not use passive listeners to improve scrolling performance
+title: Use passive listeners to improve scrolling performance
 description: |
   Learn how to improve your page's scrolling responsiveness by avoiding
   passive event listeners.
