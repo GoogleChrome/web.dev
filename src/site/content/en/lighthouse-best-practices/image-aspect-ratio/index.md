@@ -17,8 +17,8 @@ possibly creating an unpleasant user experience.
 ## How the Lighthouse image aspect ratio audit fails
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags any
-image with a rendered aspect ratio
-5 percent or more different from its natural ratio:
+image with a rendered dimension more than a few pixels different from the expected dimension
+when rendered at its natural ratio:
 
 <figure class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OSV0HmZeoy84Tf0Vrt9o.png", alt="Lighthouse audit shows images displayed with incorrect aspect ratio", width="800", height="198", class="w-screenshot" %}
