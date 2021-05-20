@@ -1,5 +1,5 @@
 ---
-title: "The business impact of core web vitals"
+title: "The business impact of Core Web Vitals"
 subhead: >
   This article will help you understand how Core Web Vitals correlate with
   key business metrics by exploring examples of companies which have already see
