@@ -9,7 +9,7 @@ tags:
   - layout
 ---
 
-**Welcome to Learn CSS!**
+## Welcome to Learn CSS!
 
 This course breaks down the fundamentals of CSS into digestible,
 easy to understand pieces.
@@ -39,3 +39,7 @@ Here's what you'll learn:
 {% include 'partials/course-index.njk' %}
 
 So, are you ready to learn CSS? [Let's get started](/learn/css/box-model/).
+
+{% Aside %}
+This course is written and edited by CSS community experts: <a href="https://twitter.com/piccalilli_">Andy Bell</a>, <a href="https://twitter.com/rachelandrew">Rachel Andrew</a>, <a href="https://twitter.com/Una">Una Kravets</a>, and <a href="https://twitter.com/argyleink">Adam Argyle</a>. <a href="https://twitter.com/rob_dodson">Rob Dodson</a> and <a href="https://twitter.com/jiwoong">Jiwoong Lee</a> shepherded the UX & production build, along with help from <a href="https://twitter.com/devnook">Ewa Gasperowicz</a> and <a href="https://twitter.com/piccalilli_">Kayce Basques</a>.
+{% endAside %}
