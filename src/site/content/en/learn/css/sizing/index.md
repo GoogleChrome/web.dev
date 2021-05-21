@@ -75,7 +75,7 @@ which will not change and might look strange with certain font sizes.
 Numbers can also be used in the following places:
 
 - When setting values for filters: `filter: sepia(0.5)` applies a `50%` sepia filter to the element.
-- When setting opacity: `opacity: 0.5` applies an `80%` opacity.
+- When setting opacity: `opacity: 0.5` applies a `50%` opacity.
 - In color channels: `rgb(50, 50, 50)`,
   where the values 0-255 are acceptable to set a color value.
   [See color lesson](/learn/css/color).
