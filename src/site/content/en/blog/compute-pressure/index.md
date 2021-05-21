@@ -56,7 +56,7 @@ of the API aims to support the following potential decisions:
 - Adjust the video resolution or frame rate.
 - Skip non-essential video processing, such as cosmetic filters.
 - Disable non-essential audio processing, such as noise suppression.
-- Skew the quality-vs-speed and size-vs-speed knobs towards “speed” in video and
+- Skew the quality-vs-speed and size-vs-speed knobs towards "speed" in video and
   audio encoding.
 
 ### Video games
@@ -64,7 +64,7 @@ of the API aims to support the following potential decisions:
 - Use lower-quality video and audio assets as needed.
 - Disable optional effects like reflections, glare, or particle animations that
   don't affect gameplay.
-- Tweak quality-vs-speed knobs in the game’s rendering engine, affecting areas
+- Tweak quality-vs-speed knobs in the game's rendering engine, affecting areas
   like shadows quality, texture filtering, and view distance.
 
 The secondary use case is measuring the CPU resource consumption of a feature.
@@ -76,7 +76,7 @@ of decisions:
   feature, to find out which is more efficient. The API supports measuring CPU
   utilization in the field via
   [A/B tests](https://en.wikipedia.org/wiki/A/B_testing), because a feature's
-  CPU utilization depends on the hardware it’s running on. Most developers
+  CPU utilization depends on the hardware it's running on. Most developers
   cannot afford performance measurement labs covering all the devices owned by
   their users.
 - Estimate the impact of enabling a feature on CPU consumption. This cost
