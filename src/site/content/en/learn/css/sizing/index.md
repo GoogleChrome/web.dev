@@ -88,12 +88,12 @@ For example,`width` is calculated as a percentage of the width of the parent ele
 
 ```css
 div {
-  width: 450px;
+  width: 300px;
   height: 100px;
 }
 
 div p {
-  width: 50%; /* calculated: 225px */
+  width: 50%; /* calculated: 150px */
 }
 ```
 
@@ -105,7 +105,7 @@ div p {
 } %}
 </figure>
 
-In the above example, the width of `div p` is `225px`.
+In the above example, the width of `div p` is `150px`.
 
 If you set `margin` or `padding` as a percentage,
 they will be a portion of the **parent element's width**,
@@ -113,13 +113,13 @@ regardless of direction.
 
 ```css
 div {
-  width: 450px;
+  width: 300px;
   height: 100px;
 }
 
 div p {
-  margin-top: 50%; /* calculated: 225px */
-  padding-right: 50%; /* calculated: 225px */
+  margin-top: 50%; /* calculated: 150px */
+  padding-left: 50%; /* calculated: 150px */
 }
 ```
 
@@ -131,17 +131,17 @@ div p {
 } %}
 </figure>
 
-In the above snippet, both the `margin-top` and `padding-right` will compute to `225px`.
+In the above snippet, both the `margin-top` and `padding-left` will compute to `150px`.
 
 ```css
 div {
-  width: 450px;
+  width: 300px;
   height: 100px;
 }
 
 div p {
-  width: 50%; /* calculated: 225px */
-  transform: translateX(10%); /* calculated: 22.5px */
+  width: 50%; /* calculated: 150px */
+  transform: translateX(10%); /* calculated: 15px */
 }
 ```
 
@@ -156,8 +156,8 @@ div p {
 If you set a `transform` value as a percentage,
 it is based on the element with the transform set.
 In this example, the `p` has a `translateX` value of `10%` and a `width` of `50%`.
-First, calculate what the width will be: `225px` because it is **50% of its parent's width**.
-Then, take `10%` of `225px`, which is `22.5px`.
+First, calculate what the width will be: `150px` because it is **50% of its parent's width**.
+Then, take `10%` of `150px`, which is `15px`.
 
 {% Aside 'key-term' %}
 The transform property allows you alter an element's appearance and position by rotating, skewing, scaling and translating it.
