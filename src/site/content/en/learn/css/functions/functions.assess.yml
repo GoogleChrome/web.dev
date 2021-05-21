@@ -32,9 +32,9 @@ questions:
     stem: "A `calc()` function can be placed inside of another `calc()` like `font-size: calc(10px + calc(5px * 3));`"
     options:
       - content: "True"
-        rationale: "a"
+        rationale: "🎉"
       - content: "False"
-        rationale: "a"
+        rationale: "Try again!"
   - type: multiple-choice
     cardinality: "1+"
     correctAnswers: "0,2,4,5"

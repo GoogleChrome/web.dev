@@ -7,7 +7,7 @@ questions:
     correctAnswers: "0"
     stem: To vertically align with flexbox, use
     options:
-      - content: "align keywords`"
+      - content: "align keywords"
         rationale: "Nice"
       - content: "justify keywords"
         rationale: "Sorry"
