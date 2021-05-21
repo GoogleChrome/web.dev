@@ -33,4 +33,4 @@ To go along with this new material, there are eight new codelabs that will guide
 - [Service Worker Includes](https://developers.google.com/codelabs/pwa-training/pwa06--service-worker-includes#0) - Dynamically generating a streaming service worker response
 - [Working with Workers](https://developers.google.com/codelabs/pwa-training/pwa06--working-with-workers#0) - Using web workers to offload work from the main thread
 
-Over the next few months, we'll be converting the slide deck content into easier-to-consume, and update, formats. This will make it easier for us to keep the content up-to-date, so no more waiting four years for another push of content. Keep an eye on this space. The future of web apps is exciting, and we're thrilled to teach you how to build it.
+Over the next few months, we'll be converting the slide deck content into easier-to-consume and update formats. This will make it easier for us to keep the content up-to-date, so no more waiting four years for another push of content. Keep an eye on this space. The future of web apps is exciting, and we're thrilled to teach you how to build it.
