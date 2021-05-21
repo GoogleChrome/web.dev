@@ -2253,5 +2253,18 @@
     "github": "minhaz",
     "twitter": "_mkazi_",
     "image": "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/JIhb3g9F2oAg2t3PJ5Y2.jpeg"
+  },
+  "mgiuca": {
+    "name": {
+      "given": "Matt",
+      "family": "Giuca"
+    },
+    "twitter": "mgiuca",
+    "github": "mgiuca",
+    "org": {
+      "name": "Google",
+      "unit": "Engineering"
+    },
+    "country": "AU"
   }
 }
