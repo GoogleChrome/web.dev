@@ -50,7 +50,7 @@ in 15-20% lower revenue and sales.
 <figure>
   {% Img src="image/BrQidfK9jaQyIHwdw91aVpkPiib2/dtZxd66DIrH6QX7Ff9FH.png", alt="Charts that show the correlation between load time and conversions.", width="800", height="366" %}
   <figcaption>
-    The top chart (in orange) shows the total number of converted users on the old site, segmented by loading
+    The top chart (in orange) shows the conversion rate on the old site, segmented by loading
     time. For example, the first bar from the left represents users who experienced a loading time
     of less than 2 seconds. The bar next to it represents users who experienced a loading time of
     between 2 and 3 seconds. The bottom chart (in grey) shows the loading times that all users
