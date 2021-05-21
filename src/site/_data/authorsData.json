@@ -2201,5 +2201,19 @@
       "en": "GDE for Web Capabilities & Angular"
     },
     "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/pguQ0oykD0nNu9jM5OcP.jpeg"
+  },
+  "mgiuca": {
+    "name": {
+      "given": "Matt",
+      "family": "Giuca"
+    },
+    "twitter": "mgiuca",
+    "github": "mgiuca",
+    "org": {
+      "name": "Google",
+      "unit": "Engineering"
+    },
+    "country": "AU",
+    "image": "image/26V1DWN36MZr3mUo8ChSBlCpzp43/9gFKixjZHcpFPVcOX9Av.jpg"
   }
 }

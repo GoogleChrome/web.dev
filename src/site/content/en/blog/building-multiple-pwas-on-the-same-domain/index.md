@@ -4,6 +4,7 @@ title: Building multiple Progressive Web Apps on the same domain
 subhead: How to build multiple PWAs, taking advantage of the same domain name, to make the user aware that they belong to the same organization or service.
 authors:
   - demianrenzulli
+  - mgiuca
 date: 2021-05-18
 hero: image/26V1DWN36MZr3mUo8ChSBlCpzp43/RvAJGCLAmeyRSHKn5Nwc.jpeg
 alt: Multiple Shifting Gears.
