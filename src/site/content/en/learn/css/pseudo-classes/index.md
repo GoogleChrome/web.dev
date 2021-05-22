@@ -98,7 +98,7 @@ button:focus {
 This CSS removes the default browser focus ring when an element receives focus,
 which presents an accessibility issue for users who navigate a web page with a keyboard.
 If there is no focus style,
-they won't be able to keep track of where focus currently is when the <kbd>tab<kbd>.
+they won't be able to keep track of where focus currently is when the <kbd>tab</kbd>.
 With [`:focus-visible`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
 you can present a focus style when an element receives focus via the keyboard,
 while also using the `outline: none` rule to prevent it when a pointer device interacts with it.
