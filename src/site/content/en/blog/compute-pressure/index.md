@@ -94,8 +94,8 @@ A CPU core's utilization is the fraction of time that the core has been
 executing code belonging to a thread, as opposed to being in an idle state.
 
 A CPU utilization close to `0.0` indicates that the processor has been almost
-entirely idle. A CPU utilization close to `1.0` is very likely to lead to a
-device that is generating excessive heat. Web applications can help avoid bad
+entirely idle. A CPU utilization close to `1.0` is very likely to
+generate excessive heat. Web applications can help avoiding bad
 user experiences by reducing their compute demands when the CPU utilization is
 high.
 
