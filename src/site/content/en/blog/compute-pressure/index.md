@@ -121,7 +121,7 @@ across its CPU cores, in an attempt to meet the demand for computing power. As
 the speeds exceed the base clock speed, the elevated power consumption increases
 the CPU's temperature. At some point, the device enters a
 [thermal throttling regime](https://en.wikipedia.org/wiki/Dynamic_frequency_scaling),
-where the CPU clock speed is reduced, in order to bring the temperature down.
+where the CPU clock speed is reduced in order to bring the temperature down.
 
 As with CPU utilization, values from `0.0` (minimal) to `1.0` (boosted) are used
 to normalize clock speeds. A value of `0.5` represents the base clock speed for
