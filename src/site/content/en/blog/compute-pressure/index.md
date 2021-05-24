@@ -79,7 +79,7 @@ of decisions:
   CPU utilization depends on the hardware it's running on. Most developers
   cannot afford performance measurement labs covering all the devices owned by
   their users.
-- Estimate the impact of enabling a feature on CPU consumption. This cost
+- Estimate the impact on CPU consumption of enabling a feature. This cost
   estimate feeds into the decisions outlined in the primary use case.
 
 ## Core concepts
