@@ -12,7 +12,7 @@ updated: 2019-08-28
 
 Specifying a doctype prevents the browser from switching to
 [quirks mode](https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode),
-which can cause your page to render in unexpected ways.
+which can cause your page to [render in unexpected ways](https://quirks.spec.whatwg.org/#css).
 
 ## How the Lighthouse doctype audit fails
 
