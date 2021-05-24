@@ -93,7 +93,7 @@ serviceable video-as-GIF replacement that works across platforms. But how to go
 about lazy-loading it? To start, modify your `<video>` markup accordingly:
 
 ```html
-<video autoplay muted loop playsinline width="610" height="254" poster="one-does-not-simply.jpg">
+<video class="lazy" autoplay muted loop playsinline width="610" height="254" poster="one-does-not-simply.jpg">
   <source data-src="one-does-not-simply.webm" type="video/webm">
   <source data-src="one-does-not-simply.mp4" type="video/mp4">
 </video>

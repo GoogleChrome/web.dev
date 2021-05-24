@@ -3,7 +3,7 @@ title: Grid
 description: >
   CSS Grid Layout provides a two dimensional layout system,
   controlling layout in rows and columns.
-  In this module discover everything grd has to offer.
+  In this module discover everything grid has to offer.
 audio:
   title: 'The CSS Podcast - 011: Grid'
   src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_011_v1.0.mp3?dest-id=1891556'

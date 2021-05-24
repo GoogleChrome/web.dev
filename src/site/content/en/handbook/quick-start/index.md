@@ -70,5 +70,5 @@ tags:
   for more detailed information about web.dev's content process.
 {% endAside %}
 
-[form]: https://docs.google.com/forms/d/e/1FAIpQLSdYePZbDZ9Idi4MKL0cbqTuUHfPU7ZZJNnV9hDzjc0e1c2UXw/viewform?fbzx=7994504531518856644
+[form]: https://docs.google.com/forms/d/e/1FAIpQLSc65CDClpUu7R2ECacLz3B1a6hOCWdFAk2vkWXIbZjzNSXq_Q/viewform?resourcekey=0-t3rJNkt5V2-iE2N42KhrhQ
 [template]: https://docs.google.com/document/d/1lgaNIEnXZf-RB8_p9RK22QEgpXJqnu77pLWVWVy4nuw/edit?usp=sharing
