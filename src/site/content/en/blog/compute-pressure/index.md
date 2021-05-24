@@ -227,7 +227,7 @@ and clock speed values reported, due to the activities of other applications.
 ## Try a demo
 
 When accessed on a browser that supports the origin trial (currently Chrome 92
-or later), this [demo page](https://oyiptong.github.io/compute-pressure-demo/)
+or later), [this demo](https://oyiptong.github.io/compute-pressure-demo/)
 will display an ongoing readout of your device's CPU utilization and speed.
 
 ## API status
