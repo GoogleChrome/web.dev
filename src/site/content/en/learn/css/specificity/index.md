@@ -97,10 +97,11 @@ div {
 }
 ```
 
-### Class, attribute or pseudo-class selector
+### Class, pseudo-class, or attribute selector
 
-A [class](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) or
-[pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) selector gets **10 points of specificity**.
+A [class](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors),
+[pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) or
+[attribute](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) selector gets **10 points of specificity**.
 
 #### Class selector
 
