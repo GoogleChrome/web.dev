@@ -69,7 +69,7 @@ of the API aims to support the decisions listed here.
 
 The secondary use case is measuring the CPU resource consumption of a feature.
 This ultimately supports the main goal of avoiding driving user devices into
-high CPU utilization. The API aims to help developers make the following types
+high CPU utilization. The API helps developers make the following types
 of decisions:
 
 - Compare the CPU consumption of alternative implementations of the same
