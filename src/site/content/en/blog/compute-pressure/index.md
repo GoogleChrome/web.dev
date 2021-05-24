@@ -192,7 +192,7 @@ To give an example, the configuration in the preceding section uses
 `cpuUtilizationThresholds: [0.5, 0.75, 0.9]`. This configuration sets up a total
 of four possible buckets that the reported values might fall into, covering the
 ranges 0.0 to 0.5, 0.5 to 0.75, 0.75 to 0.9, and 0.9 to 1.0. To represent bucket
-membership, the value that is reported to the callback is the average between
+membership, the value reported to the callback is the average between
 the lower and upper bounds for the bucket.
 
 <figure class="w-figure">
