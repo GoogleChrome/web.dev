@@ -30,7 +30,7 @@ An example of this type of site architecture is a ecommerce site where:
 As discussed in the article, the [same-origin
 policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
 imposes several restrictions, preventing the sharing of service workers, caches,
-and permissions across origins. For that reason, **we strongly recommend
+and permissions across origins. For that reason, we strongly recommend
 avoiding this type of configuration** and for those that already have sites
 built in this way, to consider migrating to a single origin site architecture
 whenever possible.
