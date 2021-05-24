@@ -51,7 +51,7 @@ of the API aims to support the decisions listed here.
 
 ### Video conferencing
 
-- Dynamically adjust the number of live video feeds displayed on the screen at
+- Dynamically adjusting the number of live video feeds displayed on the screen at
   once.
 - Adjust the video resolution or frame rate.
 - Skip non-essential video processing, such as cosmetic filters.
