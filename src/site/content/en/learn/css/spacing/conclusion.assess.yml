@@ -14,7 +14,7 @@ questions:
       - content: "It's just for space."
         rationale: "Try again!"
       - content: "It helps with the understanding of the document."
-        rationale: "Try again!"
+        rationale: "You got it!"
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "3"
