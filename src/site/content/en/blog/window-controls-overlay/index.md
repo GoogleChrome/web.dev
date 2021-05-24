@@ -7,7 +7,7 @@ authors:
   - thomassteiner
   - amandabaker
 date: 2021-04-22
-updated: 2021-05-07
+updated: 2021-05-19
 description: |
   With the Window Controls Overlay feature, developers can customize the title bar of installed PWAs
   so that their PWAs feel more like apps.
@@ -84,7 +84,7 @@ The origin trial is expected to end in Chrome&nbsp;94 (expected in July 2021).
 
 ## How to use Window Controls Overlay
 
-### Adding `window-controls-overlay` to the Web App Manifest
+### Adding `window-controls-overlay` to the web app manifest
 
 A progressive web app can opt-in to the window controls overlay by adding
 `"window-controls-overlay"` as the primary `"display_override"` member in the web app manifest:
