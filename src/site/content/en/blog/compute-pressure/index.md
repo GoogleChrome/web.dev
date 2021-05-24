@@ -180,7 +180,7 @@ application to make useful decisions based on compute pressure, while not
 exposing information that might
 [harm a user's privacy](https://github.com/oyiptong/compute-pressure/blob/main/security-privacy-self-assessment.md).
 
-With this in mind, the API reports back normalized, unitless values between
+With this in mind, the API reports normalized, unitless values between
 `0.0` and `1.0` instead of more identifiable values like clock speeds in GHz.
 The values passed to the callback fall into one of the "buckets" defined by the
 thresholds used to configure the observer. The actual value will be the midpoint
