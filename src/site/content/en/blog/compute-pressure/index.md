@@ -73,7 +73,7 @@ high CPU utilization. The API helps developers make the following types
 of decisions:
 
 - Compare the CPU consumption of alternative implementations of the same
-  feature, to find out which is more efficient. The API supports measuring CPU
+  feature to find out which is more efficient. The API supports measuring CPU
   utilization in the field via
   [A/B tests](https://en.wikipedia.org/wiki/A/B_testing), because a feature's
   CPU utilization depends on the hardware it's running on. Most developers
