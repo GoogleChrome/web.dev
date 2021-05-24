@@ -102,7 +102,7 @@ high.
 ### CPU clock speed
 
 Modern CPU cores support a set of clock speeds. The device's firmware or
-operating system can set the core clock speed, in order to trade off the
+operating system can set the core clock speed in order to trade off the
 available CPU computational resources with power consumption.
 
 From a user experience standpoint, the following are the most interesting clock
