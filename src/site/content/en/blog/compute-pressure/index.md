@@ -65,7 +65,7 @@ of the API aims to support the decisions listed here.
 - Disable optional effects like reflections, glare, or particle animations that
   don't affect gameplay.
 - Tweak quality-vs-speed knobs in the game's rendering engine, affecting areas
-  like shadows quality, texture filtering, and view distance.
+  like shadow quality, texture filtering, and view distance.
 
 The secondary use case is measuring the CPU resource consumption of a feature.
 This ultimately supports the main goal of avoiding driving user devices into
