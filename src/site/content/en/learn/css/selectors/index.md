@@ -331,7 +331,7 @@ You can also use `::selection` to style the content that has been highlighted by
 }
 ```
 
-Learn more in the [module on pseudo-elements](learn/css/pseudo-elements).
+Learn more in the [module on pseudo-elements](/learn/css/pseudo-elements).
 
 {% Assessment 'pseudo-selectors' %}
 
