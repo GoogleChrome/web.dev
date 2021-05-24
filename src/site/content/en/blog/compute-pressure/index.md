@@ -34,7 +34,7 @@ Increasingly, there are web applications that would benefit from the same
 information.
 
 [Compute Pressure](https://github.com/oyiptong/compute-pressure/) is a new,
-experimental API intended to allow web applications to gain insight into the CPU
+experimental API allows web applications to gain insight into the CPU
 utilization of the browser's device. The API is designed as a callback mechanism
 that receives periodic updates, allowing developers to observe changes in CPU
 utilization over time. A web app that uses this API can make informed decisions
