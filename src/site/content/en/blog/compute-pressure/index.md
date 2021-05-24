@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Observing compute pressure
-subhead: An experimental API for reacting to changes in CPU utilization.
+subhead: An experimental API for reacting to changes in CPU use.
 authors:
   - jeffposnick
 date: 2021-05-21
-description: An experimental API for reacting to changes in CPU utilization.
+description: An experimental API for reacting to changes in CPU use.
 hero: image/FNkVSAX8UDTTQWQkKftSgGe9clO2/H9cVTFMj4cYmoIfGYQqd.jpg
 alt: A photograph of a pressure gauge.
 tags:
@@ -53,38 +53,36 @@ of the API aims to support the decisions listed here.
 
 - Dynamically adjusting the number of live video feeds displayed on the screen at
   once.
-- Adjust the video resolution or frame rate.
-- Skip non-essential video processing, such as cosmetic filters.
-- Disable non-essential audio processing, such as noise suppression.
-- Skew the quality-vs-speed and size-vs-speed knobs towards "speed" in video and
+- Adjusting the video resolution or frame rate.
+- Skipping non-essential video processing, such as cosmetic filters.
+- Disabling non-essential audio processing, such as noise suppression.
+- Skewing the quality-vs-speed and size-vs-speed knobs towards "speed" in video and
   audio encoding.
 
 ### Video games
 
-- Use lower-quality video and audio assets as needed.
-- Disable optional effects like reflections, glare, or particle animations that
+- Using lower-quality video and audio assets as needed.
+- Disabling optional effects like reflections, glare, or particle animations that
   don't affect gameplay.
-- Tweak quality-vs-speed knobs in the game's rendering engine, affecting areas
+- Tweaking quality-vs-speed knobs in the game's rendering engine, affecting areas
   like shadow quality, texture filtering, and view distance.
 
 The secondary use case is measuring the CPU resource consumption of a feature.
 This ultimately supports the main goal of avoiding driving user devices into
-high CPU utilization. The API helps developers make the following types
-of decisions:
+high CPU utilization. The API helps developers make the types of decisions
+listed here.
 
-- Compare the CPU consumption of alternative implementations of the same
+- Comparing the CPU consumption of alternative implementations of the same
   feature to find out which is more efficient. The API supports measuring CPU
   utilization in the field via
   [A/B tests](https://en.wikipedia.org/wiki/A/B_testing) because a feature's
   CPU utilization depends on the hardware it's running on. Most developers
   cannot afford performance measurement labs covering all the devices owned by
   their users.
-- Estimate the impact on CPU consumption of enabling a feature. This cost
+- Estimating the impact on CPU consumption of enabling a feature. This cost
   estimate feeds into the decisions outlined in the primary use case.
 
-## Core concepts
-
-### CPU utilization
+## CPU utilization
 
 The CPU utilization of a device is the average of the utilization of all the
 device's [CPU cores](https://en.wikipedia.org/wiki/Multi-core_processor),
@@ -99,7 +97,7 @@ generate excessive heat. Web applications can help avoiding bad
 user experiences by reducing their compute demands when the CPU utilization is
 high.
 
-### CPU clock speed
+## CPU clock speed
 
 Modern CPU cores support a set of clock speeds. The device's firmware or
 operating system can set the core clock speed in order to trade off the
