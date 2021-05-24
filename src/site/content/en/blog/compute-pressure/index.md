@@ -37,8 +37,8 @@ information.
 experimental API allows web applications to gain insight into the CPU
 utilization of the browser's device. The API provides a callback
 that receives periodic updates, allowing developers to observe changes in CPU
-utilization over time. A web app that uses this API can make informed decisions
-about enabling or disabling heavyweight features in response to these
+utilization over time. A web app that uses this API can enable or
+disable heavyweight features in response to these
 observations. It's a feedback mechanism that unlocks new avenues for adaptive
 behavior, which can in turn lead to smoother, cooler experiences across a range
 of hardware devices.
