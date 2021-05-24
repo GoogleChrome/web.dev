@@ -47,7 +47,7 @@ of hardware devices.
 
 The motivating use cases are helping video conferencing and video game web
 applications adapt to CPU utilization. The initial experimental implementation
-of the API aims to support the following potential decisions:
+of the API aims to support the decisions listed here.
 
 ### Video conferencing
 
