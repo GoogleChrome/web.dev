@@ -184,7 +184,7 @@ With this in mind, the API reports normalized, unitless values between
 `0.0` and `1.0` instead of more identifiable values like clock speeds in GHz.
 The values passed to the callback fall into one of the "buckets" defined by the
 thresholds used to configure the observer. The actual value will be the midpoint
-between the upper and lower bounds for the bucket—in other words, they will be
+between the upper and lower bounds for the bucket. In other words, they will be
 values determined by how you configure the observer, and not based on the actual
 device.
 
