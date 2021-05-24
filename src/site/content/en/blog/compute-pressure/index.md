@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Observing Compute Pressure
+title: Observing compute pressure
 subhead: An experimental API for reacting to changes in CPU utilization.
 authors:
   - jeffposnick
