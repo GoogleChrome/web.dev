@@ -23,6 +23,7 @@ jobs:
         env:
           GITHUB_SHA: ${{ secrets.GITHUB_SHA }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_RUN_ID: ${{ secrets.GITHUB_RUN_ID }}
 
       - name: Deploy site to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
