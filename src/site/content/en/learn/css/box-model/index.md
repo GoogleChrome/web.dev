@@ -81,8 +81,8 @@ so it overflows outside of the parent box's **border box** (more on this later i
 One way to prevent this overflow is to allow the box to be intrinsically sized by either
 unsetting the width,
 or in this case,
-setting the `width` to be `max-content`.
-The `max-content` keyword tells the box to only be as wide as the intrinsic maximum width of
+setting the `width` to be `min-content`.
+The `min-content` keyword tells the box to only be as wide as the intrinsic minimum width of
 its content (the word "awesome").
 This allows the box to fit around "CSS is awesome", perfectly.
 
