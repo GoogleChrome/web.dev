@@ -23,6 +23,7 @@ const getDeployedVersion = () => {
 (async () => {
   const deployedVersion = await getDeployedVersion();
   const currentVersion = process.env.GITHUB_SHA;
+  const run_id = Number(process.env.GITHUB_RUN_ID);
 
   console.log(`Current version: ${currentVersion}`);
   console.log(`Deployed version: ${deployedVersion}`);
@@ -31,7 +32,11 @@ const getDeployedVersion = () => {
     console.log(
       'The current and deployed versions are the same, stopping build.',
     );
-    await octokit.actions.cancelWorkflowRun();
+    await octokit.actions.cancelWorkflowRun({
+      owner: 'GoogleChrome',
+      repo: 'web.dev',
+      run_id,
+    });
   } else {
     console.log(
       'The current and deployed versions are different, continuing build.',
