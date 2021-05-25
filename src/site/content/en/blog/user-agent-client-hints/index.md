@@ -83,7 +83,7 @@ ratio" is, the more unique your requests are, the easier it is for servers to
 covertly track you.
 
 The User-Agent string enables many legitimate [use
-cases](https://github.com/WICG/ua-client-hints/blob/master/README.md#use-cases),
+cases](https://github.com/WICG/ua-client-hints/blob/main/README.md#use-cases),
 and serves an important purpose for developers and site owners. However, it is
 also critical that users' privacy is protected against covert tracking methods,
 and sending UA information by default goes against that goal.
@@ -151,7 +151,7 @@ progressive enhancement before going down this route.
 User-Agent Client Hints expand the range of properties with the `Sec-CH-UA`
 prefix that can be specified via the `Accept-CH` server response header. For all
 the details, start with [the
-explainer](https://github.com/WICG/ua-client-hints/blob/master/README.md) and
+explainer](https://github.com/WICG/ua-client-hints/blob/main/README.md) and
 then dive into the [full proposal](https://wicg.github.io/ua-client-hints/).
 
 {% Aside %}
