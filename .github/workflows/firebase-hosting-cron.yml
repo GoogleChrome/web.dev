@@ -13,17 +13,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build site
-        run: npm run build
-        env:
-          ELEVENTY_ENV: prod
-
       - name: Verify new version
         run: npm run version-check
         env:
           GITHUB_SHA: ${{ secrets.GITHUB_SHA }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_RUN_ID: ${{ secrets.GITHUB_RUN_ID }}
+
+      - name: Build site
+        run: npm run build
+        env:
+          ELEVENTY_ENV: prod
+          GITHUB_SHA: ${{ secrets.GITHUB_SHA }}
 
       - name: Deploy site to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
