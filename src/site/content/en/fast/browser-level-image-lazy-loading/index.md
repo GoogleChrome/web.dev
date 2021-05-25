@@ -114,7 +114,7 @@ begin loading.
 In Chrome 77+, you can experiment with these different thresholds by [throttling the
 network](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) in DevTools. In
 the meantime, you will need to override the effective connection type of the browser using the
-`chrome://flags/#force-effective-connection-type` flag.
+`about://flags/#force-effective-connection-type` flag.
 {% endAside %}
 
 ## Improved data-savings and distance-from-viewport thresholds

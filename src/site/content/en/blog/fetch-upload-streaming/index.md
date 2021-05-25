@@ -36,7 +36,7 @@ Maybe you can think of a much more exciting use-case for request streaming.
 
 ## Try out request streams
 
-### Enabling via chrome://flags {: #enable-flags }
+### Enabling via about://flags {: #enable-flags }
 
 Try out request streams in Chrome 85 by flipping an experimental flag:
 `enable-experimental-web-platform-features`.

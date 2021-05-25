@@ -111,10 +111,10 @@ allowing the possibility for complementary user-experiences:
 
 </div>
 
-### Enabling via chrome://flags or edge://flags
+### Enabling via about://flags or edge://flags
 
 To experiment with URL protocol handler registration for PWAs locally, without an origin trial
-token, enable the `#enable-desktop-pwas-protocol-handling` flag in `chrome://flags` or `edge://flags`.
+token, enable the `#enable-desktop-pwas-protocol-handling` flag in `about://flags` or `edge://flags`.
 
 ## How to use URL protocol handler registration for PWAs
 
