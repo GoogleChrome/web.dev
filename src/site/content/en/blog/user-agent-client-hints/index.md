@@ -442,12 +442,13 @@ deferred until at least 2021 to provide additional time for the ecosystem to
 evaluate the new User Agent Client Hints capabilities.
 
 You can test a version of this by enabling the
-`about://flags/#freeze-user-agent` flag from Chrome 84. This will return a
-string with the historical entries for compatibility reasons, but with sanitized
-specifics. For example, something like:
+`about://flags/#reduce-user-agent` flag from Chrome 93 (Note: this flag was
+named `about://flags/#freeze-user-agent` in versions Chrome 84 - 92). This will
+return a string with the historical entries for compatibility reasons, but with
+sanitized specifics. For example, something like:
 
 ```text
-Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.0.0 Mobile Safari/537.36
+Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.0.0 Mobile Safari/537.36
 ```
 
 _Photo by [Sergey Zolkin](https://unsplash.com/@szolkin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
