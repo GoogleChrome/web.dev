@@ -83,7 +83,7 @@ ratio" is, the more unique your requests are, the easier it is for servers to
 covertly track you.
 
 The User-Agent string enables many legitimate [use
-cases](https://github.com/WICG/ua-client-hints/blob/master/README.md#use-cases),
+cases](https://github.com/WICG/ua-client-hints/blob/main/README.md#use-cases),
 and serves an important purpose for developers and site owners. However, it is
 also critical that users' privacy is protected against covert tracking methods,
 and sending UA information by default goes against that goal.
@@ -151,7 +151,7 @@ progressive enhancement before going down this route.
 User-Agent Client Hints expand the range of properties with the `Sec-CH-UA`
 prefix that can be specified via the `Accept-CH` server response header. For all
 the details, start with [the
-explainer](https://github.com/WICG/ua-client-hints/blob/master/README.md) and
+explainer](https://github.com/WICG/ua-client-hints/blob/main/README.md) and
 then dive into the [full proposal](https://wicg.github.io/ua-client-hints/).
 
 {% Aside %}
@@ -442,12 +442,13 @@ deferred until at least 2021 to provide additional time for the ecosystem to
 evaluate the new User Agent Client Hints capabilities.
 
 You can test a version of this by enabling the
-`about://flags/#freeze-user-agent` flag from Chrome 84. This will return a
-string with the historical entries for compatibility reasons, but with sanitized
-specifics. For example, something like:
+`about://flags/#reduce-user-agent` flag from Chrome 93 (Note: this flag was
+named `about://flags/#freeze-user-agent` in versions Chrome 84 - 92). This will
+return a string with the historical entries for compatibility reasons, but with
+sanitized specifics. For example, something like:
 
 ```text
-Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.0.0 Mobile Safari/537.36
+Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.0.0 Mobile Safari/537.36
 ```
 
 _Photo by [Sergey Zolkin](https://unsplash.com/@szolkin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
