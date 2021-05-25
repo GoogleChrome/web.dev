@@ -8,11 +8,25 @@ description: |
 ---
 
 ## Images and video
-### Navigate to the media uploader
+
+### Dimensions
+
+- Hero images should be 3200px wide by 960px tall.
+- Thumbnail images should be 376px wide by 240px tall.
+- Content images should be no wider than 1600px.
+- Author images should be a 384px square.
+
+### Using the images CDN
+
+All images on web.dev are required to use our image CDN so we can optimize
+them for users on different devices.
 
 Visit [the image uploader page](https://web-dev-uploads.web.app/) and
 sign-in using your Google corporate account. Note that this page only allows
 Googlers access, so signing in with a personal account will fail.
+
+If you're not a Googler, reach out to your Google contact to see about getting
+access to the CDN.
 
 {% Aside 'caution' %}
 There are different uploaders for web.dev and developer.chrome.com:
