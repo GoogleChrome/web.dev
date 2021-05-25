@@ -5,12 +5,9 @@
  */
 
 const fetch = require('node-fetch');
-const {ErrorReporting} = require('@google-cloud/error-reporting');
-const {execSync} = require('child_process');
-const {CloudBuildClient} = require('@google-cloud/cloudbuild');
+const {Octokit} = require('@octokit/action');
 
-const client = new CloudBuildClient();
-const errors = new ErrorReporting();
+const octokit = new Octokit();
 const ERROR_MESSAGE = 'NOT FOUND';
 
 /**
@@ -25,23 +22,16 @@ const getDeployedVersion = () => {
 
 (async () => {
   const deployedVersion = await getDeployedVersion();
-  const currentVersion = execSync('git rev-parse HEAD').toString().trim();
+  const currentVersion = process.env.GITHUB_SHA;
 
   console.log(`Current version: ${currentVersion}`);
   console.log(`Deployed version: ${deployedVersion}`);
-
-  if (deployedVersion === ERROR_MESSAGE) {
-    errors.report('Deployed commit SHA not found');
-  }
 
   if (deployedVersion === currentVersion) {
     console.log(
       'The current and deployed versions are the same, stopping build.',
     );
-    await client.cancelBuild({
-      id: process.env.BUILD_ID,
-      projectId: process.env.PROJECT_ID,
-    });
+    await octokit.actions.cancelWorkflowRun();
   } else {
     console.log(
       'The current and deployed versions are different, continuing build.',
