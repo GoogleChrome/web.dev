@@ -79,7 +79,7 @@ web thing together, and this is `about://` all of us! Whenever you see instructi
 `about://` scheme, your Chromium browser of choice will do the right thing.
 
 {% Aside %}
-A notable exception from the rewriting mechanism is [`about:blank`](about:blank) (without the `//`), which
+A notable exception to the rewriting mechanism is [`about:blank`](about:blank) (without the `//`), which
 displays a blank, empty document.
 {% endAside %}
 
