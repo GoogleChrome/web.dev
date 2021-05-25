@@ -7,7 +7,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-18
-# updated: 2021-05-19
+updated: 2021-05-25
 description: |
   For some of the new APIs we introduce in Chromium, you need to set a browser flag for experimentation.
   This article explains how to do this in the various Chromium derivatives like Google Chrome, Microsoft Edge, and others.
@@ -77,6 +77,11 @@ Luckily there is a hidden champion scheme that fits all our needs: `about://`. I
 URLs get rewritten to `chrome://`, in Edge to `edge://`, and so on for all vendors. We are in this
 web thing together, and this is `about://` all of us! Whenever you see instructions that include the
 `about://` scheme, your Chromium browser of choice will do the right thing.
+
+{% Aside %}
+A notable exception from the rewriting mechanism is `about:blank` (without the `//`), which
+displays a blank, empty window.
+{% endAside %}
 
 ## Acknowledgements
 
