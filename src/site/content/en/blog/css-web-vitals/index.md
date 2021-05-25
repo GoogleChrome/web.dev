@@ -4,7 +4,7 @@ subhead: CSS-related techniques for optimizing Web Vitals
 authors:
   - katiehempenius
   - una
-date: 2020-05-19
+date: 2021-05-19
 hero: image/j2RDdG43oidUy6AL6LovThjeX9c2/uq7JQlKJo7KBETXnVuTf.jpg
 alt: Multi-colored gradient
 
@@ -17,9 +17,9 @@ tags:
 ---
 
 The way you write your styles and build layouts can have a major impact on [Core
-Web Vitals.](https://web.dev/learn-web-vitals) This is particularly true for
-[Cumulative Layout Shift (CLS)](https://web.dev/cls) and [Largest Contentful
-Paint (LCP)](https://web.dev/lcp). 
+Web Vitals.](/learn-web-vitals) This is particularly true for
+[Cumulative Layout Shift (CLS)](/cls) and [Largest Contentful
+Paint (LCP)](/lcp). 
 
 This article covers CSS-related techniques for optimizing Web Vitals. These
 optimizations are broken down by different aspects of a page: layout, images,
@@ -43,9 +43,9 @@ fonts, animations, and loading. Along the way, we'll explore improving an
 
 Inserting content into a page after the surrounding content has already loaded
 pushes everything else on the page down. This causes [layout
-shifts](https://web.dev/cls/#layout-shifts-in-detail).
+shifts](/cls/#layout-shifts-in-detail).
 
-[Cookie notices](https://web.dev/cookie-notice-best-practices/), particularly
+[Cookie notices](/cookie-notice-best-practices/), particularly
 those placed at the top of the page, are a common example of this problem. Other
 page elements that often cause this type of layout shift when they load include
 ads and embeds.
@@ -67,10 +67,10 @@ have shifted. For this demo, the results look like this:
 
 
 The cookie notice is not listed in these findings because the cookie notice
-itself isn't shifting when it loads—rather, it causes the items below it on the
+itself isn't shifting when it loads. Rather, it causes the items below it on the
 page (that is, `div.hero` and `article`) to shift. For more information on
 identifying and fixing layout shifts, see [Debugging Layout
-Shifts](https://web.dev/debugging-layout-shifts).
+Shifts](/debugging-layout-shifts).
 
 {% Aside %}
 
@@ -118,7 +118,7 @@ After:
 Another way to fix this layout shift would be to reserve space for the cookie
 notice at the top of the screen. This approach is equally effective. For more
 information, see [Cookie notice best
-practices](https://web.dev/cookie-notice-best-practices/).
+practices](/cookie-notice-best-practices/).
 
 {% Aside %}
 
@@ -132,11 +132,11 @@ subsequent demo steps will not include the cookie notice.
 ## Images
 
 
-### Images & Largest Contentful Paint (LCP)
+### Images and Largest Contentful Paint (LCP)
 
 Images are commonly the Largest Contentful Paint (LCP) element on a page. Other
 [page elements that can be the LCP
-element](https://web.dev/lcp/#what-elements-are-considered) include text blocks
+element](/lcp/#what-elements-are-considered) include text blocks
 and video poster images. The time at which the LCP element loads determines LCP.
 
 It's important to note that a page's LCP element can vary from page load to page
@@ -163,7 +163,7 @@ than load an image to create the effect.
 
 
 
-Change the `.banner` CSS to use gradient rather than an image:
+Change the `.banner` CSS to use a CSS gradient rather than an image:
 
 Before:
 
@@ -186,7 +186,7 @@ reserved for the image, a layout shift occurs when the image appears. In the
 demo, the hero image is causing a layout shift when it loads.
 
 {% Aside %}
-The phenomenon of images causing layout shifts is typically more apparent in
+The phenomenon of images causing layout shifts is more obvious in
 situations where images are slow to load - for example, on a slow connection or
 when loading an image with a particularly large file size.
 {% endAside %}
@@ -245,7 +245,7 @@ and
 attributes in conjunction with specifying `width` and `height` attributes. This
 has the additional performance advantage of allowing you to serve different
 sized images to different devices. For more information, see [Serve responsive
-images](https://web.dev/serve-responsive-images/).
+images](/serve-responsive-images/).
 {% endAside %}
 
 
@@ -260,7 +260,7 @@ By default, a browser will not immediately render a text element if its
 associated web fonts have not loaded yet. This is done to prevent a ["flash of
 unstyled text (FOUT)"](https://en.wikipedia.org/wiki/Flash_of_unstyled_content).
 In many situations, this delays [First Contentful Paint
-(FCP)](http://web.dev/fcp). In some situations, this delays Largest Contentful
+(FCP)](/fcp). In some situations, this delays Largest Contentful
 Paint (LCP).
 
 {% Aside %}
@@ -335,18 +335,18 @@ requested.
 
 This demo uses the Google Fonts API. Google Fonts provides the option to load
 fonts via `<link>` tags or an `@import` statement. The `<link>` code snippet
-includes a `preconnect` resource hint and therefore will likely result in faster
-stylesheet delivery than using `@import` version. 
+includes a `preconnect` resource hint. this should result in faster
+stylesheet delivery than using the `@import` version. 
 
 At a very high-level, you can think of [resource
-hints](https://www.w3.org/TR/resource-hints/#resource-hints) as a way to "hint"
+hints](https://www.w3.org/TR/resource-hints/#resource-hints) as a way to hint
 to the browser that it will need to set up a particular connection or download a
 particular resource. As a result, the browser will prioritize these actions.
 When using resource hints, keep in mind that prioritizing a particular action
 takes away browser resources from other actions. Thus, resource hints should be
 used thoughtfully and not for everything. For more information, see [Establish
 network connections early to improve perceived page
-speed](https://web.dev/preconnect-and-dns-prefetch/).
+speed](/preconnect-and-dns-prefetch/).
 
 Remove the following `@import` statement from your stylesheet:
 
@@ -381,14 +381,14 @@ render "ABC". This is a good way to reduce the file size of a font.
 
 The primary way that animations affect Web Vitals is when they cause layout
 shifts. There are two types of animations that you should avoid using:
-[animations that trigger layout](https://web.dev/animations-guide/#triggers) and
+[animations that trigger layout](/animations-guide/#triggers) and
 "animation-like" effects that move page elements. Typically these animations can
 be replaced with more performant equivalents by using CSS properties like
 [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform),
 [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity), and
 [`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter). For more
 information, see [How to create high-performance CSS
-animations](https://web.dev/animations/).
+animations](/animations/).
 
 
 ### Identify
@@ -466,19 +466,19 @@ stylesheet, it will stop downloading other resources until the browser has
 downloaded and parsed the stylesheet. This may delay LCP. To improve
 performance, consider [removing unused
 CSS](https://css-tricks.com/how-do-you-remove-unused-css-from-a-site/),
-[inlining critical CSS](https://web.dev/extract-critical-css/), and [deferring
-non-critical CSS](https://web.dev/defer-non-critical-css/#optimize).
+[inlining critical CSS](/extract-critical-css/), and [deferring
+non-critical CSS](/defer-non-critical-css/#optimize).
 
 
 ## Conclusion
 
 Although there is still room for further improvements (for example, using [image
-compression](https://web.dev/use-imagemin-to-compress-images/) to deliver images
+compression](/use-imagemin-to-compress-images/) to deliver images
 more quickly), these changes have significantly improved the Web Vitals of this
 site. If this were a real site, the next step would be to [collect performance
 data from real
-users](https://web.dev/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data)
+users](/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data)
 to assess whether it is [meeting the Web Vitals thresholds for most
-users](https://web.dev/vitals-measurement-getting-started/#data-interpretation).
+users](/vitals-measurement-getting-started/#data-interpretation).
 For more information about Web Vitals, see [Learn Web
-Vitals](https://web.dev/learn-web-vitals).
+Vitals](/learn-web-vitals).
