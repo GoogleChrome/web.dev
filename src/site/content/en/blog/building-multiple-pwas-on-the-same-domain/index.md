@@ -5,6 +5,7 @@ subhead: How to build multiple PWAs, taking advantage of the same domain name, t
 authors:
   - demianrenzulli
   - mgiuca
+  - cmp
 date: 2021-05-18
 hero: image/26V1DWN36MZr3mUo8ChSBlCpzp43/RvAJGCLAmeyRSHKn5Nwc.jpeg
 alt: Multiple Shifting Gears.

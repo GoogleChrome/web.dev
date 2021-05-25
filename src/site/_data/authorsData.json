@@ -2267,5 +2267,20 @@
     "github": "minhaz",
     "twitter": "_mkazi_",
     "image": "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/JIhb3g9F2oAg2t3PJ5Y2.jpeg"
+  },
+  "cmp": {
+    "name": {
+      "given": "Chase",
+      "family": "Phillips"
+    },
+    "github": "chasephillips",
+    "org": {
+      "name": "Google",
+      "unit": "Engineering"
+    },
+    "descriptions": {
+      "en": "Software Engineer on the Google Chrome team"
+    },
+    "country": "US"
   }
 }
