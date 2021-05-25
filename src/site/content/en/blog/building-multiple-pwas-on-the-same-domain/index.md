@@ -6,7 +6,8 @@ authors:
   - demianrenzulli
   - mgiuca
   - cmp
-date: 2021-05-18
+date: 2021-06-02
+scheduled: true
 hero: image/26V1DWN36MZr3mUo8ChSBlCpzp43/RvAJGCLAmeyRSHKn5Nwc.jpeg
 alt: Multiple Shifting Gears.
 description: Explore the recommended and not recommended ways of building multiple PWAs reusing the same domain with their pros and cons.
