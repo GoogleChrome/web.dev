@@ -85,10 +85,10 @@ If necessary, a separate origin trial will continue for insertable streams for `
 
 {% include 'content/origin-trial-register.njk' %}
 
-### Enabling via chrome://flags
+### Enabling via about://flags
 
 To experiment with insertable streams for `MediaStreamTrack` locally, without an origin trial token,
-enable the `#enable-experimental-web-platform-features` flag in `chrome://flags`.
+enable the `#enable-experimental-web-platform-features` flag in `about://flags`.
 
 ### Feature detection
 

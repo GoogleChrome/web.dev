@@ -281,7 +281,7 @@ In Chrome, the image must respond to certain criteria:
 {% Aside 'gotchas' %}
 The `description` and `screenshots` properties are currently used only in Chrome
 for Android when a user wants to install your app. The experimental flag
-`chrome://flags/#mobile-pwa-install-use-bottom-sheet` flag must be enabled in
+`about://flags/#mobile-pwa-install-use-bottom-sheet` flag must be enabled in
 Chrome 90.
 {% endAside %}
 

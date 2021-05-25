@@ -137,7 +137,7 @@ favorite data source.
 
 Now it's time for CSS to take this generic list of content and turn it into an
 experience. Netflix, App stores and many more sites and apps use horizontal
-scrolling areas to pack the viewport with categories and options. 
+scrolling areas to pack the viewport with categories and options.
 
 ### Creating the scroller layout
 
@@ -193,12 +193,12 @@ With only a few more minor styles, complete the barebones of the media scroller:
 
   display: grid;
   grid-auto-flow: column;
-  gap: calc(var(--gap) / 2); 
+  gap: calc(var(--gap) / 2);
   margin: 0;
 
   overflow-x: auto;
   overscroll-behavior-inline: contain;
-  
+
   & > li {
     display: inline-block; /* removes the list-item bullet */
   }
@@ -212,7 +212,7 @@ With only a few more minor styles, complete the barebones of the media scroller:
 
 Setting `overflow` sets the `<ul>` up to allow scrolling and keyboard navigation
 through its list, then each direct child `<li>` element has its `::marker` removed
-by getting a new display type of `inline-block`. 
+by getting a new display type of `inline-block`.
 
 The images aren't responsive yet though, and burst right out of the boxes
 they're inside. Tame them with some sizes, fit, and border styles, and
@@ -232,10 +232,10 @@ img {
   overflow: hidden;
 
   /* if empty, show a gradient placeholder */
-  background-image: 
+  background-image:
     linear-gradient(
-      to bottom, 
-      hsl(0 0% 40%), 
+      to bottom,
+      hsl(0 0% 40%),
       hsl(0 0% 20%)
     );
 }
@@ -244,7 +244,7 @@ img {
 ### Scroll padding
 
 Alignment to page content, plus an edge-to-edge scrolling surface area, are
-critical to a harmonious and minimal component. 
+critical to a harmonious and minimal component.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/hClUoh402H88dexfTpqS.mp4",
@@ -276,18 +276,18 @@ and layout lines, use `padding` that matches the `scroll-padding`:
 ```
 
 {% Aside %}
-I've simplified the example CSS here to only the logical properties. 
-The hosted demo linked in this post has fallbacks for browsers 
+I've simplified the example CSS here to only the logical properties.
+The hosted demo linked in this post has fallbacks for browsers
 without support for these logical shorthands.
 {%endAside%}
 
-**Horizontal scroll padding bug fix** 
+**Horizontal scroll padding bug fix**
 The above shows how easy it should be to
 pad a scroll container, but there's outstanding compatibility issues with it
 (fixed in Chromium 91+ though!). See
 [here](https://bugs.chromium.org/p/chromium/issues/detail?id=1069614) for a bit
 of the history, but the short version is that padding wasn't always accounted
-for in a scroll view. 
+for in a scroll view.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jpOZQeMvnHwqiH0jatl7.png", alt="A
 box is highlighted on the inline-end side of the last list item, showing the
@@ -296,7 +296,7 @@ width="800", height="272" %}
 
 To trick browsers into putting the padding at the end of the scroller I'll
 target the last figure in each list and append a pseudo element that's the
-amount of padding desired. 
+amount of padding desired.
 
 ```css
 .horizontal-media-scroller > li:last-of-type figure {
@@ -320,7 +320,7 @@ and document direction.
 
 ### Scroll snapping
 
-A scrolling container with overflow can become a snapping viewport with one line of CSS, then it's on children to specify how they'd like to align with that viewport. 
+A scrolling container with overflow can become a snapping viewport with one line of CSS, then it's on children to specify how they'd like to align with that viewport.
 
 {% Video
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/hClUoh402H88dexfTpqS.mp4",
@@ -344,7 +344,7 @@ A scrolling container with overflow can become a snapping viewport with one line
 
   padding-inline: var(--gap);
   scroll-padding-inline: var(--gap);
-  padding-block-end: calc(var(--gap) / 2); 
+  padding-block-end: calc(var(--gap) / 2);
 
   scroll-snap-type: inline mandatory;
 
@@ -392,7 +392,7 @@ space. If the user has no motion preferences around reducing motion, the offset
 is transitioned, giving subtle motion to the focus event.
 
 {% Aside %}
-This focus state is an opportunity for unique 
+This focus state is an opportunity for unique
 and brand defining micro-interaction UX
 {%endAside%}
 
@@ -404,7 +404,7 @@ scrolling content and options. The common pattern for solving this is called
 container of items is keyboard focused but only 1 child is allowed to hold focus
 at a time. This single focusable item at a time experience is designed to allow
 bypassing the potentially long list of items, as opposed to pressing tab 50+
-times to reach the end. 
+times to reach the end.
 
 There's 300 items in that first scroller of the demo. We can do better than make
 them traverse all of them to reach the next section.
@@ -429,7 +429,7 @@ focus targets aren't direct descendants.
 
 ```js/2-4
 document.querySelectorAll('.horizontal-media-scroller')
-  .forEach(scroller => 
+  .forEach(scroller =>
     rovingIndex({
       element: scroller,
       target: 'a',
@@ -478,20 +478,20 @@ and 4:3", width="800", height="324", class="w-screenshot" %}
 
 If the browser supports `aspect-ratio` syntax, the media scroller pictures are
 upgraded to `aspect-ratio` sizing. Using the draft nesting syntax, each picture
-changes its aspect ratio depending if it's the first, second, or third rows. The 
+changes its aspect ratio depending if it's the first, second, or third rows. The
 [nest syntax](https://drafts.csswg.org/css-nesting-1/) also allows setting some small
-viewport adjustments, right there with the other sizing logic. 
+viewport adjustments, right there with the other sizing logic.
 
 With that CSS, as the feature is available in more browser engines, an easy to
 manage but more visually appealing layout will render.
 
 ### Prefers reduced data
 
-While this next technique is only available 
-[behind a flag](chrome://flags/#enable-experimental-web-platform-features) in
-[Canary](https://www.google.com/chrome/canary/), 
-I wanted to share how I could save a considerable amount of page load time and 
-data use with a few lines of CSS. The `prefers-reduced-data` media query from 
+While this next technique is only available
+[behind a flag](about://flags/#enable-experimental-web-platform-features) in
+[Canary](https://www.google.com/chrome/canary/),
+I wanted to share how I could save a considerable amount of page load time and
+data use with a few lines of CSS. The `prefers-reduced-data` media query from
 [level 5](https://drafts.csswg.org/mediaqueries-5/) allows asking if the device is in
 any reduced data states, like a data saver mode. If it is, I can modify the
 document, and in this case, hide the images.

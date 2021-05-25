@@ -377,7 +377,7 @@ constructable stylesheets in HTML, and no way to refer to them when populating `
 
 Declarative Shadow DOM is available in Chrome&nbsp;90 and Edge&nbsp;91. It can also be enabled
 using the **Experimental Web Platform Features** flag in Chrome&nbsp;85. Navigate to
-`chrome://flags/#enable-experimental-web-platform-features` to find that setting.
+`about://flags/#enable-experimental-web-platform-features` to find that setting.
 
 As a new web platform API, Declarative Shadow DOM does not yet have widespread support across all
 browsers. Browser support can be detected by checking for the existence of a `shadowroot` property

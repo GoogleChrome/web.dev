@@ -151,17 +151,17 @@ development.
 
 To try out a Web Bundle:
 
-1. Go to `chrome://version` to see what version of Chrome you're running. If you're running version
+1. Go to `about://version` to see what version of Chrome you're running. If you're running version
    80 or later, skip the next step.
 1. Download [Chrome Canary](https://www.google.com/chrome/canary/) if you're not running Chrome 80
    or later.
-1. Open `chrome://flags/#web-bundles`.
+1. Open `about://flags/#web-bundles`.
 1. Set the **Web Bundles** flag to **Enabled**.
 
    <figure class="w-figure">
-     {% Img src="image/admin/tt32OXyh9PdrKK9KnMto.png", alt="A screenshot of chrome://flags", width="800", height="315" %}
+     {% Img src="image/admin/tt32OXyh9PdrKK9KnMto.png", alt="A screenshot of about://flags", width="800", height="315" %}
      <figcaption class="w-figcaption">
-       Enabling Web Bundles in <code>chrome://flags</code>
+       Enabling Web Bundles in <code>about://flags</code>
      </figcaption>
    </figure>
 

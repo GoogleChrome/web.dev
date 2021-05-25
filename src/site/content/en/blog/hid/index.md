@@ -345,7 +345,7 @@ navigator.hid.addEventListener("disconnect", event => {
 
 ## Dev Tips {: #dev-tips }
 
-Debugging HID in Chrome is easy with the internal page, `chrome://device-log`
+Debugging HID in Chrome is easy with the internal page, `about://device-log`
 where you can see all HID and USB device related events in one single place.
 
 <figure class="w-figure">

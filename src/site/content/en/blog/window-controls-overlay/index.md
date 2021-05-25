@@ -66,10 +66,10 @@ developers to place custom content in what was previously the browser-controlled
 
 </div>
 
-### Enabling via chrome://flags
+### Enabling via about://flags
 
 To experiment with Window Controls Overlay locally, without an origin trial token, enable the
-`#enable-desktop-pwas-window-controls-overlay` flag in `chrome://flags`.
+`#enable-desktop-pwas-window-controls-overlay` flag in `about://flags`.
 
 ### Enabling support during the origin trial phase
 

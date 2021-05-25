@@ -31,7 +31,7 @@ Viewport-based media queries give you some powerful tools, but lack a lot of
 finesse. They lack the ability to respond to user needs, and the ability to
 inject responsive styles into components themselves.
 
-{% Aside %} 
+{% Aside %}
 When referring to components for the sake of this article, this
 means elements, including elements that are made up of other elements, like a
 card or sidebar. Those components make up our web pages.
@@ -45,7 +45,7 @@ The good news is, the ecosystem is changing, and it's changing pretty rapidly.
 CSS is evolving, and a new era of responsive design is right on the horizon.
 
 We see this happen about every 10 years. 10 years ago, around 2010-2012, we saw
-a huge change with mobile and responsive design, and the emergence of CSS3. 
+a huge change with mobile and responsive design, and the emergence of CSS3.
 
 
 <figure>
@@ -102,7 +102,7 @@ loader, or other flashy animations while using the web.
 
 With `prefers-reduced-motion` you can design your pages with reduced-motion in
 mind, and create a motion-enhanced experience for those who don't have this
-preference set. 
+preference set.
 
 {% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/r4z52PPvElemSUJwUCZp.mp4",
 autoplay=true, muted=true, playsinline=true, loop=true, controls=true %}
@@ -223,7 +223,7 @@ information rather than the viewport and user agent.
   .links {
     display: none;
   }
-  
+
   .time {
     font-size: 1.25rem;
   }
@@ -242,7 +242,7 @@ as decreasing the time font size when the container is less than `850px` wide.
 
 In this demo plant website, each of the product cards, including the one in the
 hero, the sidebar of recently viewed items, and the product grid, are all the
-exact same component, with the same markup. 
+exact same component, with the same markup.
 
 <figure>
 {% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/D4hBchz6kaPjkgx8BCmU.mp4",
@@ -254,7 +254,7 @@ There are _no_ media queries used to create this entire layout, just container
 queries. This allows for each product card to shift to the proper layout to fill
 its space. The grid for example, uses a minmax column layout to let the elements
 flow into their space, and re-layout the grid when that space is too compressed
-(which means that it hit the minimum size). 
+(which means that it hit the minimum size).
 
 ```css
 .product {
@@ -266,7 +266,7 @@ flow into their space, and re-layout the grid when that space is too compressed
     padding: 0.5rem 0 0;
     display: flex;
   }
-  
+
   .card-container button {
     /* ... */
   }
@@ -276,9 +276,9 @@ flow into their space, and re-layout the grid when that space is too compressed
 
 When there is at least `350px` of space in the grid, the card layout goes
 horizontal by being set to `display: flex`, which has a default flex-direction
-of "row". 
+of "row".
 
-With less space, the product cards stack. Each product card styles itself, 
+With less space, the product cards stack. Each product card styles itself,
 something that would be impossible with global styles alone.
 
 ### Mixing Container Queries with Media Queries
@@ -308,7 +308,7 @@ allow for some really nice nuanced design decisions.
 ### Using container queries today
 
 These demos are now available to play with behind a flag in Chrome Canary. Go to
-`chrome://flags` in Canary and turn on the `#enable-container-queries` flag.
+`about://flags` in Canary and turn on the `#enable-container-queries` flag.
 This will enable support for `@container`, `inline-size` and `block-size` values
 for the `contain` property, and the LayoutNG Grid implementation.
 
@@ -389,7 +389,7 @@ main {
 
 This enables a layout where the sidebar, the navigation in this case, fills the
 space of one of the folds, where the app UI fills the other. This prevents a
-"crease" in the UI. 
+"crease" in the UI.
 
 {% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/Uf3RL7EhVZGK2ECiD0sT.mp4",
 autoplay=true, muted=true, playsinline=true, loop=true, controls=true %}
@@ -433,7 +433,7 @@ on web.dev. You can access it via [web.dev/learnCSS](/learn/css).
 
 I hope you enjoyed this overview on the next era of responsive design, and some
 of the primitives that will come along with it, and I also hope you're as
-excited as I am about what this means for the future of web design. 
+excited as I am about what this means for the future of web design.
 
 It opens up a huge opportunity to us as a UI community to embrace
 component-based styles, new form factors, and create user-responsive

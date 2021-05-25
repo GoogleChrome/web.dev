@@ -170,7 +170,7 @@ concerns](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285) are
 resolved. To force the functionality on for testing:
 
 - Use Chrome 84 **beta** or equivalent.
-- Enable the `chrome://flags/#enable-experimental-web-platform-features` flag.
+- Enable the `about://flags/#enable-experimental-web-platform-features` flag.
 
 By default, the browser returns the browser brand, significant / major version,
 and an indicator if the client is a mobile device:
@@ -315,7 +315,7 @@ You can try out both the headers and the JavaScript API on your own device at
 
 {% Aside %}
 Ensure you're using Chrome 84 Beta or equivalent with
-`chrome://flags/#enable-experimental-web-platform-features` enabled.
+`about://flags/#enable-experimental-web-platform-features` enabled.
 {% endAside %}
 
 ### Hint life-time and resetting
@@ -442,7 +442,7 @@ deferred until at least 2021 to provide additional time for the ecosystem to
 evaluate the new User Agent Client Hints capabilities.
 
 You can test a version of this by enabling the
-`chrome://flags/#freeze-user-agent` flag from Chrome 84. This will return a
+`about://flags/#freeze-user-agent` flag from Chrome 84. This will return a
 string with the historical entries for compatibility reasons, but with sanitized
 specifics. For example, something like:
 
