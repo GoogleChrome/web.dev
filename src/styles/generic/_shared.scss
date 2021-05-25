@@ -63,11 +63,11 @@ var {
   hyphens: none;
 }
 
-html {
-  scroll-padding-top: calc(#{$WEB_HEADER_HEIGHT} + 1.5rem);
-}
-
-// Fallback if scroll-padding-top is not supported
+// Give page headers some padding when they're scrolled into view.
+// Don't use scroll-padding-top until https://bugs.chromium.org/p/chromium/issues/detail?id=664246
+// is fixed. Otherwise we have weird issues with keyboard focus and sticky
+// positioned elements, demonstrated by this codepen: https://codepen.io/robdodson/pen/MWpKOOK
+// Use this workaround until we can use scroll-padding-top.
 *:not([href])[id]::before {
   content: ' ';
   display: block;
