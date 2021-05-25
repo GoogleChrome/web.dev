@@ -80,7 +80,7 @@ web thing together, and this is `about://` all of us! Whenever you see instructi
 
 {% Aside %}
 A notable exception from the rewriting mechanism is [`about:blank`](about:blank) (without the `//`), which
-displays a blank, empty window.
+displays a blank, empty document.
 {% endAside %}
 
 ## Acknowledgements
