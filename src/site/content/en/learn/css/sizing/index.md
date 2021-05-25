@@ -58,7 +58,7 @@ p {
 } %}
 </figure>
 
-In this example, `1.3` is equal to **130%** of the `p` element's **computed pixel font size**.
+In this example, `1.5` is equal to **150%** of the `p` element's **computed pixel font size**.
 This means that if the `p` has a `font-size` of `24px`,
 the line height will be computed as `36px`.
 
