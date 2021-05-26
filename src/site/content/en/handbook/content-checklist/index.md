@@ -404,7 +404,7 @@ any insensitive words, such as:
 * [master](https://developers.google.com/style/word-list#master)
 * [slave](https://developers.google.com/style/word-list#slave)
 
-Refer to the [Inclusion and accessibility](/handbook/inclusion-and-accessibility/#writing-for-an-international-audience) section of the handbook to verify that
+Refer to the [Inclusion and accessibility](/handbook/inclusion-and-accessibility/) section of the handbook to verify that
 text is inclusive for all audience members.
 
 ## Late-stage review checklist {: #late }
