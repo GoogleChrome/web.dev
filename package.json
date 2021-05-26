@@ -72,7 +72,6 @@
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@google-cloud/secret-manager": "^3.2.3",
-    "@octokit/action": "^3.8.1",
     "@percy/script": "^1.1.0",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.1.1",

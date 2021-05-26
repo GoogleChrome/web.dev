@@ -14,19 +14,20 @@ jobs:
         run: npm ci
 
       - name: Verify new version
+        id: version
         run: npm run version-check
         env:
           GITHUB_SHA: ${{ secrets.GITHUB_SHA }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_RUN_ID: ${{ secrets.GITHUB_RUN_ID }}
 
       - name: Build site
+        if: ${{ steps.version.outputs.isDifferent == 'true' }}
         run: npm run build
         env:
           ELEVENTY_ENV: prod
           GITHUB_SHA: ${{ secrets.GITHUB_SHA }}
 
       - name: Deploy site to Firebase
+        if: ${{ steps.version.outputs.isDifferent == 'true' }}
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
@@ -35,6 +36,7 @@ jobs:
           channelId: live
 
       - name: Algolia index site
+        if: ${{ steps.version.outputs.isDifferent == 'true' }}
         run: npm run algolia
         env:
           ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
