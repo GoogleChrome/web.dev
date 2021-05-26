@@ -46,7 +46,7 @@ entire JavaScript scope running on a separate thread, without any shared memory.
 In this post you'll learn about two different types of workers (web workers and service workers), their similarities and differences, and the most common patterns for using them in production websites.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eN5kePr9U0aZMgCyekhJ.png", alt="Diagram showing two links between the Window object and a web worker and service worker.", width="800", height="459" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eN5kePr9U0aZMgCyekhJ.png", alt="Diagram showing two links between the Window object and a web worker and service worker.", width="728", height="418" %}
 </figure>
 
 ## Web workers and service workers {: #web-workers-and-service-workers }
@@ -100,7 +100,7 @@ computations](https://www.youtube.com/watch?v=mDdgfyRB5kg&feature=youtu.be&t=875
 thread, to avoid blocking the UI.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZCC24V8uqi6HfFjRzuPq.png", alt="Diagram showing a link from the Window object to a web worker.", width="800", height="280" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZCC24V8uqi6HfFjRzuPq.png", alt="Diagram showing a link from the Window object to a web worker.", width="500", height="175" %}
 </figure>
 
 - **Example:** the team that built the videogame [PROXX](https://proxx.app/) wanted to leave the
@@ -109,14 +109,14 @@ thread, to avoid blocking the UI.
   maintenance on a separate thread.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xXNCbahCtPrS8rw6uf1z.png", alt="A screenshot of the videogame PROXX.", width="662", height="1184" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xXNCbahCtPrS8rw6uf1z.png", alt="A screenshot of the videogame PROXX.", width="225", height="403" %}
 </figure>
 
 **Service workers tasks** are generally more related to acting as a network proxy, handling
 background tasks, and things like caching and offline.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GmGcVnb2y1yNc4ZIFFQ8.png", alt="A screenshot of the videogame PROXX.", width="800", height="342" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GmGcVnb2y1yNc4ZIFFQ8.png", alt="A screenshot of the videogame PROXX.", width="624", height="267" %}
 </figure>
 
 **Example:** In a [podcast PWA](https://bgfetch-http203.glitch.me/), one might want to allow users
@@ -126,7 +126,7 @@ be used to that end. That way, if the user closes the tab while the episode is d
 doesn't have to be interrupted.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/oUH6K2JvcmfdAynTMjxQ.png", alt="A screenshot of a Podcast PWA.", width="800", height="496" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/oUH6K2JvcmfdAynTMjxQ.png", alt="A screenshot of a Podcast PWA.", width="500", height="310" %}
     <figcaption class="w-figcaption">The UI is updated to indicate the progress of a download (left). Thanks to service workers, the operation can continue running when all tabs have been closed (right).</figcaption>
 </figure>
 
@@ -139,7 +139,7 @@ respectively: [Comlink](https://github.com/GoogleChromeLabs/comlink) and
 [Workbox](https://developers.google.com/web/tools/workbox).
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MNMwX5KuJt5iOLZJbdO0.png", alt="A screenshot of the videogame PROXX.", width="800", height="430" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MNMwX5KuJt5iOLZJbdO0.png", alt="A screenshot of the videogame PROXX.", width="500", height="269" %}
 </figure>
 
 ### Comlink {: #comlink }
