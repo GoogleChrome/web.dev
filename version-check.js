@@ -5,7 +5,7 @@
  */
 
 const fetch = require('node-fetch');
-const {execSync} = require('child_process');
+const core = require('@actions/core');
 
 const ERROR_MESSAGE = 'NOT FOUND';
 
@@ -35,9 +35,5 @@ const getDeployedVersion = () => {
       'The current and deployed versions are different, continuing build.',
     );
   }
-  execSync(
-    `echo "::set-output name=isDifferent::${
-      deployedVersion !== currentVersion
-    }"`,
-  );
+  core.setOutput('isDifferent', deployedVersion !== currentVersion);
 })();
