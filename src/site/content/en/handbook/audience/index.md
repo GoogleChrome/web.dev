@@ -3,7 +3,7 @@ layout: handbook
 title: Audience
 date: 2019-06-26
 description: |
-  Definitions of the the key personas for web.dev and advice about how to write for them.
+  Definitions of the key personas for web.dev and advice about how to write for them.
 ---
 
 When you're writing for web.dev, it's important to consider the persona or personas you're writing for. Keeping your audience in mind helps you make good writing decisions, like how much background information to include or whether you need to define a key term. Those considerations help ensure that your readers can learn or accomplish something.

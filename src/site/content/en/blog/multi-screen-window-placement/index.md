@@ -183,7 +183,7 @@ Read on to learn more.
 
 ### The `isMultiScreen()` method
 
-To use the the Multi-Screen Window Placement API, I will first call the
+To use the Multi-Screen Window Placement API, I will first call the
 `Window.isMultiScreen()` method. It returns a promise that resolves with either `true` or `false`,
 depending on whether one or multiple screens are currently connected to the machine. For my setup,
 it returns `true`.

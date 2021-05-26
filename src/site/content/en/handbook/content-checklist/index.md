@@ -446,7 +446,7 @@ isn't covered anywhere else in the content?
 
 ### All images use the Img shortcode and are sized correctly {: #images }
 
-Images must use the the [`{% raw %}{% Img %}{% endraw %}` shortcode](/handbook/markup-media/) and
+Images must use the [`{% raw %}{% Img %}{% endraw %}` shortcode](/handbook/markup-media/) and
 should contain `width` and `height` attributes.
 
 {% Compare 'worse' %}
