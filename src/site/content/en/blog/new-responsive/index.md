@@ -6,6 +6,7 @@ authors:
   - una
 description: User-preference based media features, container queries, and media queries for new screen types, such as foldable screens, will enable us to usehr in a new era of responsive web design.
 date: 2021-05-19
+updated: 2021-05-26
 hero: image/HodOHWjMnbNw56hvNASHWSgZyAf2/P5LtV5IubshVuDac8uKO.jpg
 tags:
   - blog
@@ -118,7 +119,8 @@ that experience for your users without those accessibility needs or preferences.
 
 ### `prefers-color-scheme`
 
-Another preference media feature is `prefers-color-scheme`. This feature helps
+Another preference media feature is
+[`prefers-color-scheme`](/prefers-color-scheme). This feature helps
 you to customize your UI to the theme which your user prefers. In their
 operating system, whether it's on desktop or mobile, users can set a preference
 for light, dark, or auto themes, which change depending on the time of day.
@@ -142,7 +144,8 @@ autoplay=true, muted=true, playsinline=true, loop=true, controls=true %}
 ### Designing for dark theme
 
 When designing for a dark theme, it's not just about inverting background and
-text colors. There are a few considerations you might not realize. For example,
+text colors or [dark scrollbars](/color-scheme/). There are a few
+considerations you might not realize. For example,
 you might need to desaturate colors on a dark background to reduce visual
 vibration.
 
