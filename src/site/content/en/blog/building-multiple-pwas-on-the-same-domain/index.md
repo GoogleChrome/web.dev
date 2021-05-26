@@ -176,7 +176,9 @@ Here are some practical issues common to both same-origin approaches:
  to do this for a single app. Note that Chrome and some other
   browsers will actively prompt users to wipe local data when uninstalling one
   of the apps, and this will affect data for the other apps on the origin as
-  well.
+  well. Another issue is that apps will also have to share their [storage
+  quota](https://web.dev/storage-for-the-web/#how-much) which means if either of
+  them takes up too much space, the other will be negatively impacted.
 - **Permissions:** Permissions are tied to the origin. That means if the user
   grants a permission to one app, it will apply to all apps on that origin
   simultaneously. That may sound like a good thing (not having to ask for a
