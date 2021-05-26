@@ -17,7 +17,7 @@ tags:
 ---
 
 The way you write your styles and build layouts can have a major impact on [Core
-Web Vitals.](/learn-web-vitals) This is particularly true for
+Web Vitals](/learn-web-vitals). This is particularly true for
 [Cumulative Layout Shift (CLS)](/cls) and [Largest Contentful
 Paint (LCP)](/lcp). 
 
@@ -258,7 +258,7 @@ important to deliver fonts quickly.
 
 By default, a browser will not immediately render a text element if its
 associated web fonts have not loaded yet. This is done to prevent a ["flash of
-unstyled text (FOUT)"](https://en.wikipedia.org/wiki/Flash_of_unstyled_content).
+unstyled text" (FOUT)](https://en.wikipedia.org/wiki/Flash_of_unstyled_content).
 In many situations, this delays [First Contentful Paint
 (FCP)](/fcp). In some situations, this delays Largest Contentful
 Paint (LCP).
