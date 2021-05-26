@@ -26,7 +26,6 @@ guidance about how to use them effectively.
 1. [Columns](#columns)
 1. [Code](#code)
 1. [Compare](#compare)
-1. [Definition lists](#definition-lists)
 1. [Details](#details)
 1. [Glitches](#glitches)
 1. [Images](#images)
@@ -555,24 +554,6 @@ incidunt harum reprehenderit laboriosam labore consequuntur quod. Doloribus,
 deleniti! Atque aliquam facilis labore odio similique provident illo culpa
 assumenda perspiciatis.
 
-## Definition lists
-
-```md
-First Term
-: This is the definition of the first term.
-
-Second Term
-: This is one definition of the second term.
-: This is another definition of the second term.
-```
-
-First Term
-: This is the definition of the first term.
-
-Second Term
-: This is one definition of the second term.
-: This is another definition of the second term.
-
 ## Details
 
 ### Basic details component
@@ -895,6 +876,24 @@ for unordered lists.
   sit amet ullamcorper.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
+
+### Definition list
+
+```md
+First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
+```
+
+First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
 
 ## Stats
 Use the Stats component to call out important statistics
