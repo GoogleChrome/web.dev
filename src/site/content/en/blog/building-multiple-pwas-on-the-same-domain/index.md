@@ -262,7 +262,8 @@ recommended over using overlapping or nested paths, like `https://example.com/`
   sites](https://web.dev/multi-origin-pwas/)
 
 With many thanks for their technical reviews and suggestions: _Joe Medley,
-Dominick Ng, Alan Cutter, Daniel Murphy, Penny McLachlan and Thomas Steiner._
+Dominick Ng, Alan Cutter, Daniel Murphy, Penny McLachlan, Thomas Steiner and
+Darwin Huang_
 
 _Photo by [Tim Mossholder](https://unsplash.com/@timmossholder) on
 [Unsplash](https://unsplash.com/photos/GmvH5v9l3K4)_
