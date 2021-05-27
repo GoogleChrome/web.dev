@@ -23,8 +23,8 @@ const maxItemSizeInBytes = 10000; // 10,000
 /**
  * Trim text of Algoia Collection Item.
  *
- * @param {AlgoliaCollectionItem} item
- * @return {AlgoliaCollectionItem}
+ * @param {AlgoliaItem} item
+ * @return {AlgoliaItem}
  */
 const trimText = (item) => {
   const currentSizeInBytes = JSON.stringify(item).length;
@@ -58,10 +58,10 @@ const trimText = (item) => {
 };
 
 /**
- * Chunks array of AlgoliaCollectionItem into array of array of AlgoliaCollectionItem smaller than 10 MB.
+ * Chunks array of AlgoliaItem into array of array of AlgoliaItems smaller than 10 MB.
  *
- * @param {AlgoliaCollectionItem[]} arr
- * @return {AlgoliaCollectionItem[][]}
+ * @param {AlgoliaItem[]} arr
+ * @return {AlgoliaItem[][]}
  */
 const chunkAlgolia = (arr) => {
   const chunked = [];
@@ -91,12 +91,10 @@ async function index() {
     return;
   }
 
-  const raw = fs.readFileSync('dist/algolia.json', 'utf-8');
-  /** @type {AlgoliaCollection} */
-  const algoliaData = JSON.parse(raw);
-
-  // Set date of when object is being added to algolia
-  algoliaData.map((e) => {
+  const raw = fs.readFileSync('dist/pages.json', 'utf-8');
+  /** @type {AlgoliaItem[]} */
+  const algoliaData = JSON.parse(raw).map((e) => {
+    // Set date of when object is being added to algolia.
     e.indexedOn = indexedOn.getTime();
     return e;
   });
