@@ -15,7 +15,7 @@
  */
 
 declare global {
-  export interface PagesIndexCollectionItem {
+  export interface PagesCollectionItem {
     content?: string;
     createdOn?: Date;
     /**
@@ -43,7 +43,7 @@ declare global {
      url: string;
   }
 
-  export type PagesIndexCollection = PagesIndexCollectionItem[];
+  export type PagesCollection = PagesCollectionItem[];
 }
 
 // empty export to keep file a module

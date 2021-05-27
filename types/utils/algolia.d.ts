@@ -15,34 +15,11 @@
  */
 
 declare global {
-  export interface AlgoliaItem {
-    content?: string;
-    /**
-     * Title of default locale version if in different language.
-     */
-    default_title?: string;
-    /**
-     * Description of default locale version if in different language.
-     */
-    default_description?: string;
-    /**
-     * Content of default locale version if in different language.
-     */
-    default_content?: string;
-    description?: string;
-    image?: string;
+  export interface AlgoliaItem extends PagesCollectionItem {
     /**
      * Date of index, only available after indexed. Basically can only be used by search.
      */
     indexedOn?: number;
-    locales: string[];
-    objectID: string;
-    tags: string[];
-    /**
-     * Title of a post.
-     */
-     title: string;
-     url: string;
   }
 }
 

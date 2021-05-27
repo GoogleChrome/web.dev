@@ -91,16 +91,11 @@ async function index() {
     return;
   }
 
-  const raw = fs.readFileSync('dist/pages-index.json', 'utf-8');
-  /** @type {PagesIndexCollection} */
-  const pagesIndexData = JSON.parse(raw);
-
-  // Set date of when object is being added to algolia
+  const raw = fs.readFileSync('dist/pages.json', 'utf-8');
   /** @type {AlgoliaItem[]} */
-  const algoliaData = pagesIndexData.map((e) => {
-    delete e.createdOn;
-    delete e.updatedOn;
-    e['indexedOn'] = indexedOn.getTime();
+  const algoliaData = JSON.parse(raw).map((e) => {
+    // Set date of when object is being added to algolia.
+    e.indexedOn = indexedOn.getTime();
     return e;
   });
 

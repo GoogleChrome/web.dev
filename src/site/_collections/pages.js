@@ -14,6 +14,13 @@
  * limitations under the License.
  */
 
+/**
+ * @fileoverview Creates a collection of all pages on web.dev, including those
+ * created by virtual collections (such as authors and tags). This collection is
+ * then outputted as a JSON file which can be used to index all of the site's
+ * pages into Algolia as well as Firestore.
+ */
+
 const {createHash} = require('crypto');
 const striptags = require('striptags');
 const stripcomments = require('strip-comments');
@@ -59,37 +66,37 @@ function limitText(content, limit = 7500) {
 
 /**
  * @param {EleventyCollectionObject} collections
- * @returns {PagesIndexCollection}
+ * @returns {PagesCollection}
  */
 module.exports = (collections) => {
-  /** @type {PagesIndexCollection} */
-  const pagesIndexCollection = [];
+  /** @type {PagesCollection} */
+  const pagesCollection = [];
   /** @type {{
     [url: string]: {
-      [locale: string]: PagesIndexCollectionItem;
+      [locale: string]: PagesCollectionItem;
     };
   }} */
-  const pagesIndexCollectionProcessing = {};
+  const pagesCollectionProcessing = {};
 
   if (process.env.ELEVENTY_ENV !== 'prod') {
-    return pagesIndexCollection;
+    return pagesCollection;
   }
 
   /**
-   * This just adds an `PagesIndexCollectionItem` to the `pagesIndexCollectionProcessing`.
+   * This just adds an `PagesCollectionItem` to the `pagesCollectionProcessing`.
    * It checks to see if the URL exists on the object, if not it'll add it then add the
-   * `PagesIndexCollectionItem` to the `pagesIndexCollectionProcessing`.
+   * `PagesCollectionItem` to the `pagesCollectionProcessing`.
    *
-   * @param {PagesIndexCollectionItem} pagesIndexCollectionItem
+   * @param {PagesCollectionItem} pagesCollectionItem
    */
-  const addToCollection = (pagesIndexCollectionItem) => {
-    if (!pagesIndexCollectionProcessing[pagesIndexCollectionItem.url]) {
-      pagesIndexCollectionProcessing[pagesIndexCollectionItem.url] = {};
+  const addToCollection = (pagesCollectionItem) => {
+    if (!pagesCollectionProcessing[pagesCollectionItem.url]) {
+      pagesCollectionProcessing[pagesCollectionItem.url] = {};
     }
 
-    pagesIndexCollectionProcessing[pagesIndexCollectionItem.url][
-      pagesIndexCollectionItem.locales[0]
-    ] = pagesIndexCollectionItem;
+    pagesCollectionProcessing[pagesCollectionItem.url][
+      pagesCollectionItem.locales[0]
+    ] = pagesCollectionItem;
   };
 
   // All Author and Tag items
@@ -110,8 +117,8 @@ module.exports = (collections) => {
 
     const defaultUrl = getDefaultUrl(item.url);
 
-    /** @type {PagesIndexCollectionItem} */
-    const pagesIndexCollectionItem = {
+    /** @type {PagesCollectionItem} */
+    const pagesCollectionItem = {
       content: limitText(item.template.frontMatter.content),
       createdOn: item.data.date,
       description: item.data.description,
@@ -127,14 +134,14 @@ module.exports = (collections) => {
       url: defaultUrl,
     };
 
-    addToCollection(pagesIndexCollectionItem);
+    addToCollection(pagesCollectionItem);
   }
 
   for (const item of virtualCollections) {
     const defaultUrl = getDefaultUrl(item.url);
 
-    /** @type {PagesIndexCollectionItem} */
-    const pagesIndexCollectionItem = {
+    /** @type {PagesCollectionItem} */
+    const pagesCollectionItem = {
       content: limitText(item.data.subhead),
       createdOn: item.data.date,
       description: item.data.subhead,
@@ -150,7 +157,7 @@ module.exports = (collections) => {
       url: defaultUrl,
     };
 
-    addToCollection(pagesIndexCollectionItem);
+    addToCollection(pagesCollectionItem);
   }
 
   /**
@@ -174,8 +181,8 @@ module.exports = (collections) => {
    * }
    * ```
    */
-  for (const url in pagesIndexCollectionProcessing) {
-    const urlItem = pagesIndexCollectionProcessing[url];
+  for (const url in pagesCollectionProcessing) {
+    const urlItem = pagesCollectionProcessing[url];
     const defaultLocaleItem = urlItem[defaultLocale];
 
     // Get all languages used for url
@@ -206,9 +213,9 @@ module.exports = (collections) => {
         }
       }
 
-      pagesIndexCollection.push(localItem);
+      pagesCollection.push(localItem);
     }
   }
 
-  return pagesIndexCollection;
+  return pagesCollection;
 };
