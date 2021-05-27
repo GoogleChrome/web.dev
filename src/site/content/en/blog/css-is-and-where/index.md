@@ -31,7 +31,7 @@ selector:
 ```
 
 Legibility and shorter selector conveniences are only a piece of the value that
-`:is()` and `:where()` bring to CSS. In this post, you’ll discover the syntax
+`:is()` and `:where()` bring to CSS. In this post, you'll discover the syntax
 and value of these two functional pseudo selectors.
 
 <figure class="w-figure w-figure--fullbleed">
