@@ -133,7 +133,7 @@ of use cases for all three features.
 
 If you want to experiment with the Shape Detection API locally,
 enable the `#enable-experimental-web-platform-features`
-flag in `chrome://flags`.
+flag in `about://flags`.
 
 The interfaces of all three detectors, `FaceDetector`, `BarcodeDetector`, and
 `TextDetector`, are similar. They all provide a single asynchronous method

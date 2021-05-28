@@ -396,7 +396,8 @@ few guiding principles:
   from state to state.
 
 For a deep dive on how to improve CLS, see [Optimize
-CLS](/optimize-cls/).
+CLS](/optimize-cls/) and [Debug layout shifts
+](/debug-layout-shifts).
 
 ## Additional resources
 

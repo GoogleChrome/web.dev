@@ -26,7 +26,6 @@ guidance about how to use them effectively.
 1. [Columns](#columns)
 1. [Code](#code)
 1. [Compare](#compare)
-1. [Definition lists](#definition-lists)
 1. [Details](#details)
 1. [Glitches](#glitches)
 1. [Images](#images)
@@ -555,24 +554,6 @@ incidunt harum reprehenderit laboriosam labore consequuntur quod. Doloribus,
 deleniti! Atque aliquam facilis labore odio similique provident illo culpa
 assumenda perspiciatis.
 
-## Definition lists
-
-```md
-First Term
-: This is the definition of the first term.
-
-Second Term
-: This is one definition of the second term.
-: This is another definition of the second term.
-```
-
-First Term
-: This is the definition of the first term.
-
-Second Term
-: This is one definition of the second term.
-: This is another definition of the second term.
-
 ## Details
 
 ### Basic details component
@@ -874,27 +855,45 @@ for unordered lists.
 
 ### Ordered list
 
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-   sit amet ullamcorper.
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-   sit amet ullamcorper.
+```md
+1. Lorem ipsum dolor sit amet…
+1. Lorem ipsum dolor sit amet…
+1. Lorem ipsum dolor sit amet…
+```
 
-   <figure class="w-figure">
-     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O8cewP6LpV9OrdhZvDdy.png", alt="", width="800", height="475", class="w-screenshot w-screenshot--filled" %}
-     <figcaption class="w-figcaption">
-       Filled screenshot.
-     </figcaption>
-   </figure>
-
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-   sit amet ullamcorper.
+1. Lorem ipsum dolor sit amet…
+1. Lorem ipsum dolor sit amet…
+1. Lorem ipsum dolor sit amet…
 
 ### Unordered list
 
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
+```md
+- Lorem ipsum dolor sit amet…
+- Lorem ipsum dolor sit amet…
+- Lorem ipsum dolor sit amet…
+```
+
+- Lorem ipsum dolor sit amet…
+- Lorem ipsum dolor sit amet…
+- Lorem ipsum dolor sit amet…
+
+### Definition list
+
+```md
+First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
+```
+
+First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
 
 ## Stats
 Use the Stats component to call out important statistics

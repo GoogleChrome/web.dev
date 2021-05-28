@@ -103,14 +103,14 @@ const isMobile = navigator.userAgentData.mobile;
 `userAgentData.brands` is an array of objects with `brand` and `version`
 properties where the browser is able to list its compatibility with those
 brands. You can access it directly as an array or you may want to use a
-`filter()` call to check if a specific entry is present:
+`some()` call to check if a specific entry is present:
 
 ```javascript
 function isCompatible(item) {
   // In real life you most likely have more complex rules here
   return ['Chromium', 'Google Chrome', 'NewBrowser'].includes(item.brand);
 }
-if (navigator.userAgentData.brands.filter(isCompatible).length > 0) {
+if (navigator.userAgentData.brands.some(isCompatible)) {
   // browser reports as compatible
 }
 ```

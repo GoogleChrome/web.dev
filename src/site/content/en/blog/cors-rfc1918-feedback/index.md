@@ -119,7 +119,7 @@ Chrome is bringing CORS-RFC1918 in two steps:
 
 Chrome 87 adds a flag that mandates public websites making requests to private
 network resources to be on HTTPS. You can go to
-`chrome://flags#block-insecure-private-network-requests` to enable it. With this
+`about://flags#block-insecure-private-network-requests` to enable it. With this
 flag turned on, any requests to a private network resource from an HTTP website
 will be blocked.
 
@@ -168,7 +168,7 @@ If you are hosting a website within a private network that expects requests from
 public networks, the Chrome team is interested in your feedback and use cases. There
 are two things you can do to help:
 
-* Go to `chrome://flags#block-insecure-private-network-requests`, turn on the
+* Go to `about://flags#block-insecure-private-network-requests`, turn on the
   flag and see if your website sends requests to the private network resource as
   expected.
 * If you encounter any issues or have feedback, file an issue at

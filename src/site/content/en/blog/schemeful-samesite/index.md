@@ -62,7 +62,7 @@ considered a temporary solution in the migration towards full HTTPS.
 
 You can enable these changes for testing in both Chrome and Firefox.
 
-- From Chrome 86, enable `chrome://flags/#schemeful-same-site`. Track progress
+- From Chrome 86, enable `about://flags/#schemeful-same-site`. Track progress
   on the [Chrome Status
   page](https://chromestatus.com/feature/5096179480133632).
 - From Firefox 79, set `network.cookie.sameSite.schemeful` to `true` via

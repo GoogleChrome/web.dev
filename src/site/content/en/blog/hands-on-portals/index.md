@@ -67,11 +67,11 @@ Before Portals, we could have rendered another page using an `<iframe>`. We coul
 
 ## Try out Portals
 
-### Enabling via chrome://flags {: #enable-flags }
+### Enabling via about://flags {: #enable-flags }
 
 Try out Portals in Chrome 85 and later versions by flipping an experimental flag:
-- Enable the `chrome://flags/#enable-portals` flag for same-origin navigations.
-- For testing out cross-origin navigations, enable the `chrome://flags/#enable-portals-cross-origin` flag in addition.
+- Enable the `about://flags/#enable-portals` flag for same-origin navigations.
+- For testing out cross-origin navigations, enable the `about://flags/#enable-portals-cross-origin` flag in addition.
 
 During this early phase of the Portals experiment,
 we also recommend using a completely separate user data directory for your tests

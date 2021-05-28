@@ -47,7 +47,8 @@ Each page of web.dev content should be focused around one of these content types
 as much as possible. For example, a single page of content should not try to be a
 tutorial and an explainer.
 
-Reference documentation pages are not allowed on web.dev.
+Reference documentation pages are not allowed on web.dev. Reference
+documentation is better suited for a site like [MDN](https://developer.mozilla.org/en-US/).
 
 ### The content is unique {: #unique }
 
@@ -113,7 +114,7 @@ Here are some strategies for checking if the content is aligned with best practi
 * If the content discusses different aspects of web development (e.g. accessibility and
   performance) and the author is only an expert in one of those aspects (e.g. performance),
   ask a subject matter expert (SME) to do a quick review of the content. Instruct the
-  to specifically focus on making sure that the content is aligned with the best
+  reviewer to specifically focus on making sure that the content is aligned with the best
   practices of their area.
 
 Here are some common problems:
@@ -132,9 +133,11 @@ or [warning](/handbook/web-dev-components/#warning-asides) components.
 ### Avoid subjective statements like "it's easy" {: #subjective }
 
 Subjective statements like "it's easy" or "the process is simple" can usually be
-removed. What might be easy for some might not be easy for others.
+removed. What might be easy for some might not be easy for others. Take a look
+at the [Words to Avoid in Educational Writing](https://css-tricks.com/words-avoid-educational-writing/)
+post from css-tricks for other examples.
 
-### Avoid summaries at the end of the content { #summaries }
+### Avoid summaries at the end of the content {: #summaries }
 
 The intro of the page should already summarize the content.
 
@@ -161,6 +164,9 @@ use a fancy word.
 {% endCompare %}
 
 See also [Avoid fancy words](http://www.jlakes.org/ch/web/The-elements-of-style.pdf#page=73).
+
+Avoid using cultural idioms, for example: "Kill two birds with one stone". These
+may not be familiar to all readers.
 
 ### The writing is concise {: #concise }
 
@@ -376,7 +382,16 @@ Don't mention other companies, products, services, etc. without
 that entity's permission. You can ask the content lead to make exceptions
 to this rule, which will be done on a case-by-case basis.
 
-### Avoid insensitive words {: #insensitive-words }
+{% Aside 'warning' %}
+Watch out for words that imply a business relationship between two companies.
+
+For example: "Company X is **partnering** with Company Y to do Z".
+
+It is a good idea to speak to representitives from both companies to define how
+their names should be referenced in an article.
+{% endAside %}
+
+### Use inclusive language {: #insensitive-words }
 
 Refer to the [GDDSG word list][wordlist] and make sure that you're not using
 any insensitive words, such as:
@@ -388,6 +403,9 @@ any insensitive words, such as:
 * [hang](https://developers.google.com/style/word-list#hang)
 * [master](https://developers.google.com/style/word-list#master)
 * [slave](https://developers.google.com/style/word-list#slave)
+
+Refer to the [Inclusion and accessibility](/handbook/inclusion-and-accessibility/) section of the handbook to verify that
+text is inclusive for all audience members.
 
 ## Late-stage review checklist {: #late }
 
@@ -426,23 +444,21 @@ Review the Markdown and make sure that each image has descriptive
 those images. Is there any critical information embedded in the images that
 isn't covered anywhere else in the content?
 
-### All images are optimized and sized correctly {: #images }
+### All images use the Img shortcode and are sized correctly {: #images }
 
-Content images and thumbnails should be optimized with a service like
-[TinyPNG](https://tinypng.com) or [Squoosh](https://squoosh.app). Hero
-images do not need to be optimized.
+Images must use the the [`{% raw %}{% Img %}{% endraw %}` shortcode](/handbook/markup-media/) and
+should contain `width` and `height` attributes.
 
-All images should be sized correctly:
-
-* Hero images should be 3200 pixels wide by 960 pixels tall.
-* Thumbnail images should be 376 pixels wide by 240 pixels tall.
-* Content images should be no wider than 1600 pixels.
-
-{% Aside %}
-  Every unoptimized or incorrectly sized image that we commit to the repository
-  adds to the repository's overall size. This makes the repository slower-to-download
-  for new contributors and for our continuous integration systems.
-{% endAside %}
+{% Compare 'worse' %}
+  ```md
+  ![A system-level share target picker](./picker.png)
+  ```
+{% endCompare %}
+{% Compare 'better' %}
+  ```md
+  {% raw %}{% Img src="image/admin/cCXNoHbXAfkAQzTTuS0Z.png", alt="A system-level share target picker", width="370", height="349" %}{% endraw %}
+  ```
+{% endCompare %}
 
 ### All words are spelled correctly {: #spelling }
 

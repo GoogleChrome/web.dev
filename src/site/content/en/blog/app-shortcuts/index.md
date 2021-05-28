@@ -189,7 +189,7 @@ You should annotate app shortcuts `url` entries like you would do with
 
 App shortcuts are available on Android (Chrome 84), Windows (Chrome 85 and
 Edge 85), and Chrome OS (Chrome 92 behind the experimental
-`chrome://flags/#enable-desktop-pwas-app-icon-shortcuts-menu-ui` flag).
+`about://flags/#enable-desktop-pwas-app-icon-shortcuts-menu-ui` flag).
 More desktop platform support will follow.
 
 <figure class="w-figure">

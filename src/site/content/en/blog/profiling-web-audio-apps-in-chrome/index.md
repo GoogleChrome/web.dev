@@ -2,10 +2,10 @@
 title: Profiling Web Audio apps in Chrome
 subhead: >
   Learn how to profile the performance of Web Audio apps in Chrome using
-  `chrome://tracing` and the **WebAudio** tab in DevTools.
+  `about://tracing` and the **WebAudio** tab in DevTools.
 description: >
   Learn how to profile the performance of Web Audio apps in Chrome using
-  `chrome://tracing` and the **WebAudio** panel in DevTools.
+  `about://tracing` and the **WebAudio** panel in DevTools.
 date: 2020-05-04
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -29,9 +29,9 @@ eventually fix, the issue.
 ## Web Audio profiling tools
 
 There are two tools that will help you when profiling Web Audio,
-`chrome://tracing` and the **WebAudio** tab in Chrome DevTools.
+`about://tracing` and the **WebAudio** tab in Chrome DevTools.
 
-### When do you use `chrome://tracing`?
+### When do you use `about://tracing`?
 
 When mysterious "glitches" happen. Profiling the app with the tracing tools
 gives you insights on:
@@ -54,7 +54,7 @@ render budget (for example, approximately 2.67ms @ 48KHz). If the capacity
 goes near 100%, that means your app is likely to produce glitches because the
 renderer is failing to finish the work in the render budget.
 
-## Use `chrome://tracing`
+## Use `about://tracing`
 
 ### How to capture tracing data
 
@@ -66,7 +66,7 @@ or use other builds from [different release channels][diff-channel] (e.g.
 Beta or Canary). Once you have the browser ready, follow the steps below:
 
 1. Open your application (web page) on a tab.
-1. Open another tab and go to `chrome://tracing`.
+1. Open another tab and go to `about://tracing`.
 1. Press the **Record** button and select **Manually select settings**.
 1. Press the **None** buttons on both the **Record Categories** and
    **Disabled by Default Categories** sections.

@@ -53,10 +53,10 @@ Examples of sites that may use this API include:
 
 ## How to use the File Handling API {: #use }
 
-### Enabling via chrome://flags
+### Enabling via about://flags
 
 To experiment with the File Handling API locally, without an origin trial token, enable the
-`#file-handling-api` flag in `chrome://flags`.
+`#file-handling-api` flag in `about://flags`.
 
 ### Progressive enhancement
 
