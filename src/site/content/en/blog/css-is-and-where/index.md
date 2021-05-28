@@ -171,7 +171,7 @@ article > #nav {
 
 With `:where()`, I'm waiting to see libraries offer versions with no
 specificity. The specificity competition between author styles and library
-styles could come to an end. There would be no specificity to compete with as an
-author. CSS has been working on a grouping feature like this for quite some
+styles could come to an end. There would be no specificity to compete with when writing CSS. 
+CSS has been working on a grouping feature like this for quite some
 time, it's here, and it's still largely unexplored territory. Have fun making
 smaller stylesheets and removing commas.
