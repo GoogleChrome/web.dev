@@ -109,7 +109,7 @@ repetition.
 ### Using simple and complex selectors with `:is()`
 
 For a brush up on selectors, check out the [selectors module on Learn
-CSS](https://web.dev/learn/css/selectors/#complex-selectors). Here's a few
+CSS](/learn/css/selectors/#complex-selectors). Here's a few
 examples of simple and complex selectors to help illustrate the ability:
 
 ```css
