@@ -143,7 +143,7 @@ look at how they're different.
 
 When it comes to specificity, `:is()` and `:where()` strongly diverge. For a
 brush up on specificity, see the [specificity module on Learn
-CSS](https://web.dev/learn/css/specificity/).
+CSS](/learn/css/specificity/).
 
 In short
 - `:where()` has no specificity.<br>`:where()` squashes all the specificity in
