@@ -150,7 +150,7 @@ In short
   the selector list passed as functional parameters. This is a first of its
   kind selector feature. 
 - `:is()` takes the specificity of it's most specific
-  selector.<br>`:is(a,div,#id)` has a specificity score of an ID, 100 points
+  selector.<br>`:is(a,div,#id)` has a specificity score of an ID, 100 points.
 
 Taking on the highest specificity selector from the list has only been a gotcha
 for me when I was getting too excited about grouping. I was always able to
