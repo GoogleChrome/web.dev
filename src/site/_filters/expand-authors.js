@@ -1,19 +1,17 @@
 module.exports = (authorSlugs = [], authorsCollection) => {
   return authorSlugs
-    .map((authorKey) => {
+    .reduce((authors, authorKey) => {
       const profile = authorsCollection[authorKey];
 
       if (!profile) {
-        throw new Error(
-          `Author '${authorKey}' does not exist in '_data/authorsData.json'.`,
-        );
+        console.log(`Author '${authorKey}'pages`);
+      } else if (profile.twitter) {
+        authors.push(`@${profile.twitter}`);
+      } else {
+        authors.push(profile.title);
       }
 
-      if (profile.twitter) {
-        return `@${profile.twitter}`;
-      }
-
-      return profile.title;
-    })
+      return authors;
+    }, [])
     .join(' | ');
 };
