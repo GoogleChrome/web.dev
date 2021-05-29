@@ -87,7 +87,7 @@ section {
 }
 ```
 
-This rule causes every `<section`> element to have `2em` of `padding` on all sides.
+This rule causes every `<section>` element to have `2em` of `padding` on all sides.
 
 ### Class selector
 
@@ -253,7 +253,7 @@ em,
 ```
 
 This example extends the color change to both `<strong>` elements and `<em>` elements.
-It's also extended to a class named `.my-class`,and an element that has a `lang` attribute.
+It's also extended to a class named `.my-class`, and an element that has a `lang` attribute.
 
 {% Assessment 'simple-selectors' %}
 
