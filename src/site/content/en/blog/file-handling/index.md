@@ -7,9 +7,10 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2021-05-19
+updated: 2021-05-28
 tags:
   - blog
+  - capabilities
   - file-handling
 hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
