@@ -5,7 +5,7 @@ description:
   en: Add audio and video to your web sites
 
 overview:
-  en: Learn to add media capabilities to your site using either basic HTML markup or a media framework such as Shaka Player, JW Player or Video.js.
+  en: Learn to add media capabilities to your site using either basic HTML or a media framework such as Shaka Player, JW Player or Video.js.
 
 topics:
   concepts:
@@ -16,4 +16,3 @@ topics:
 
   add_media_to_a_web_page:
     en: Add media to a web page
-
