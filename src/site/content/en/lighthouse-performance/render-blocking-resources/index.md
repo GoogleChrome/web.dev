@@ -41,7 +41,7 @@ A `<link rel="stylesheet">` tag that:
 
 The first step to reducing the impact of render-blocking resources,
 is to identify what's critical and what's not.
-Use the [Coverage tab](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
+Use the [Coverage tab](https://developer.chrome.com/docs/devtools/coverage/)
 in Chrome DevTools to identify non-critical CSS and JS.
 When you load or run a page, the tab tells you how much code was used,
 versus how much was loaded:
