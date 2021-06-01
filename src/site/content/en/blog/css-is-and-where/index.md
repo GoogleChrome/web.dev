@@ -4,6 +4,8 @@ subhead: These seemingly small additions to CSS selector syntax are going to hav
 authors:
   - adamargyle
 description: These seemingly small additions to CSS selector syntax are going to have a big impact.
+hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/qQTmsVHjFY2RY8ImOEB9.jpg
+alt: A bright and white library, rows and rows of books, with a single person in the middle reaching for a single book.
 tags:
   - blog
   - css
@@ -175,3 +177,5 @@ styles could come to an end. There would be no specificity to compete with as an
 author. CSS has been working on a grouping feature like this for quite some
 time, it's here, and it's still largely unexplored territory. Have fun making
 smaller stylesheets and removing commas.
+
+*Photo by [Fahrul Azmi](https://unsplash.com/@fahrulazmi) on [Unsplash](https://unsplash.com/photos/cFUZ-6i83vs)*
