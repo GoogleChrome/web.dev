@@ -9,6 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-19
+updated: 2021-05-28
 description: |
   Declarative Link Capturing is a proposal for a web app manifest property called
   "capture_links" that lets developers determine declaratively what should happen when the browser
@@ -20,6 +21,7 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - progressive-web-apps
   - web-app-manifest
+  - capabilities
 origin_trial:
   url: https://developer.chrome.com/origintrials/#/view_trial/4285175045443026945
 ---
