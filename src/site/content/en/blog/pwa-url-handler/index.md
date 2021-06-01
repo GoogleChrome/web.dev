@@ -10,8 +10,8 @@ date: 2021-06-01
 description: |
   After registering a PWA as a URL handler, when a user clicks on a hyperlink that matches
   one of the registered URL patterns, the registered PWA will open.
-hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/fzrpAnVMFJ8xN9wIi8Si.jpg
-alt: Messages app on macOS.
+hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/EjFQNwv2IfINKykzsxxs.png
+alt: The Windows Skype instant messenger app next to the installed demo PWA, which is opened in standalone mode after clicking a link handled by it in a Skype chat message.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
