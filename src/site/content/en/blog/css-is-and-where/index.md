@@ -1,5 +1,5 @@
 ---
-title: New CSS functional psuedo class selectors `:is()` and `:where()`
+title: New CSS functional pseudo-class selectors `:is()` and `:where()`
 subhead: These seemingly small additions to CSS selector syntax are going to have a big impact.
 authors:
   - adamargyle
