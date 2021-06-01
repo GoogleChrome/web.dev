@@ -11,7 +11,9 @@ description: |
   After registering a PWA as a URL handler, when a user clicks on a hyperlink that matches
   one of the registered URL patterns, the registered PWA will open.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/EjFQNwv2IfINKykzsxxs.png
-alt: The Windows Skype instant messenger app next to the installed demo PWA, which is opened in standalone mode after clicking a link handled by it in a Skype chat message.
+alt: |
+  The Windows Skype instant messenger app next to the installed demo PWA, which is opened
+  in standalone mode after clicking a link handled by it in a Skype chat message.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
@@ -275,7 +277,6 @@ us know where and how you're using it.
 PWAs as URL Handlers was specified and implemented by
 [Lu Huang](https://github.com/LuHuangMSFT) from the Microsoft Edge team.
 This article was reviewed by [Joe Medley](https://github.com/jpmedley).
-Hero image via [Apple Support](https://support.apple.com/en-us/HT202549).
 
 [issues]: https://github.com/WICG/pwa-url-handler/issues
 [demo]: https://mandymsft.github.io/pwa/
