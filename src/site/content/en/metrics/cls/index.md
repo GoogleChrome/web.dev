@@ -75,13 +75,21 @@ measuring how often it's occurring for real users.
 
 ## What is CLS?
 
-A _layout shift_ occurs any time a visible element changes its position from one
-rendered frame to the next. 
+CLS is a measure of the largest burst of _layout shift scores_ for every
+[unexpected](/cls/#expected-vs.-unexpected-layout-shifts) layout shift that
+occurs during the entire lifespan of the page.
 
-To calculate CLS, unexpected layout shifts are observed during the entire lifespan
-of the page. Since layout shifts tend to happen in bursts, those bursts are grouped
-into [_session windows_](evolving-cls/#why-a-session-window).
-Windows are capped at 5 seconds with 1 second gap.
+A _layout shift_ occurs any time a visible element changes its position from one
+rendered frame to the next. (See below for details on how individual [layout
+shift scores](#layout-shift-score) are calculated.)
+
+A burst of layout shifts, known as a [_session
+window_](evolving-cls/#why-a-session-window), is when one or more individual
+layout shifts occur in rapid succession with less than 1-second in between each
+shift and a maximum of 5 seconds for the total window duration.
+
+The largest burst is the session window with the maximum cumulative score of all
+layout shifts within that window.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -92,13 +100,6 @@ Windows are capped at 5 seconds with 1 second gap.
     Example of session windows. Blue bars represent the scores of each individual layout shift.
   </figcaption>
 </figure>
-
-Each window's score is the sum of its individual layout shift scores.
-(See below for details on how individual [layout
-shift scores](#layout-shift-score) are calculated.)
-
-The value of CLS is the _maximum score of all the session windows_.
-
 
 {% Aside 'caution' %}
 Previously CLS measured the sum total of _all individual layout shift scores_
@@ -327,39 +328,70 @@ To measure CLS in JavaScript, you can use the [Layout Instability
 API](https://github.com/WICG/layout-instability). The following example shows
 how to create a
 [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
-that listens for unexpected `layout-shift` entries, accumulates them, and logs them to the console:
+that listens for unexpected `layout-shift` entries, groups them into sessions,
+and logs the maximum session value any time it changes.
 
 ```js
-let cls = 0;
+let clsValue = 0;
+let clsEntries = [];
+
+let sessionValue = 0;
+let sessionEntries = [];
 
 new PerformanceObserver((entryList) => {
   for (const entry of entryList.getEntries()) {
+    // Only count layout shifts without recent user input.
     if (!entry.hadRecentInput) {
-      cls += entry.value;
-      console.log('Current CLS value:', cls, entry);
+      const firstSessionEntry = sessionEntries[0];
+      const lastSessionEntry = sessionEntries[sessionEntries.length - 1];
+
+      // If the entry occurred less than 1 second after the previous entry and
+      // less than 5 seconds after the first entry in the session, include the
+      // entry in the current session. Otherwise, start a new session.
+      if (sessionValue &&
+          entry.startTime - lastSessionEntry.startTime < 1000 &&
+          entry.startTime - firstSessionEntry.startTime < 5000) {
+        sessionValue += entry.value;
+        sessionEntries.push(entry);
+      } else {
+        sessionValue = entry.value;
+        sessionEntries = [entry];
+      }
+
+      // If the current session value is larger than the current CLS value,
+      // update CLS and the entries contributing to it.
+      if (sessionValue > clsValue) {
+        clsValue = sessionValue;
+        clsEntries = sessionEntries;
+
+        // Log the updated value (and its entries) to the console.
+        console.log('CLS:', clsValue, clsEntries)
+      }
     }
   }
 }).observe({type: 'layout-shift', buffered: true});
 ```
 
 {% Aside 'warning' %}
-  This code shows how to log and accumulate unexpected `layout-shift` entries.
-  However, measuring CLS in JavaScript is more complicated. See below for
-  details:
+
+  This code shows the basic way to calculate and log CLS However, accurately
+  measuring CLS in a way that matches what is measured in the [Chrome User
+  Experience
+  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+  (CrUX) is more complicated. See below for details:
+
 {% endAside %}
 
-In the above example, all `layout-shift` entries whose `hadRecentInput` flag is
-set to false are accumulated to determine the current CLS value. In most cases,
-the current CLS value at the time the page is being unloaded is the final CLS
-value for that page, but there are a few important exceptions:
+In most cases, the current CLS value at the time the page is being unloaded is
+the final CLS value for that page, but there are a few important exceptions:
 
 The following section lists the differences between what the API reports and how
 the metric is calculated.
 
 #### Differences between the metric and the API
 
-- If a page is in the background state for its entire lifetime, it should not
-  report any CLS value.
+- If a page is loaded in the background, or if it's backgrounded prior to the
+  browser painting any content, then it should not report any CLS value.
 - If a page is restored from the [back/forward
   cache](/bfcache/#impact-on-core-web-vitals), its CLS value should be reset to
   zero since users experience this as a distinct page visit.
@@ -394,8 +426,6 @@ import {getCLS} from 'web-vitals';
 // where it needs to be reported.
 getCLS(console.log);
 ```
-
-
 
 You can refer to [the source code for
 `getCLS)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts)
