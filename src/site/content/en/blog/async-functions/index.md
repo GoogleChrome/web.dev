@@ -78,7 +78,7 @@ easier to read, especially for those less familiar with promises.
 
 {% Aside %}
 Anything you `await` is passed through `Promise.resolve()`, so you can
-safely `await` non-native promises.
+safely `await` non-platform promises, such as those created by promise polyfills.
 {% endAside %}
 
 ## Async return values
