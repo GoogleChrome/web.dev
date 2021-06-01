@@ -116,14 +116,14 @@ try {
   (see [WebKit bug #222262](https://bugs.webkit.org/show_bug.cgi?id=222262)).
   For Safari, run all asynchronous operations in a promise
   whose result you assign to the `ClipboardItem`:
-  
+
   ```js
   new ClipboardItem({
     'foo/bar': new Promise(async (resolve) => {
         // Prepare `blobValue` of type `foo/bar`
         resolve(new Blob([blobValue], { type: 'foo/bar' }));
       }),
-    }),  
+    })
   ```
 {% endAside %}
 
@@ -242,7 +242,7 @@ image data, but it could also come from a
 or the [File System Access API](/file-system-access/).
 
 ```js
-function copy() {
+async function copy() {
   const image = await fetch('kitten.png');
   const text = new Blob(['Cute sleeping kitten'], {type: 'text/plain'});
   const item = new ClipboardItem({
