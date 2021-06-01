@@ -77,7 +77,7 @@ measuring how often it's occurring for real users.
 
 CLS is a measure of the largest burst of _layout shift scores_ for every
 [unexpected](/cls/#expected-vs.-unexpected-layout-shifts) layout shift that
-occurs during the entire lifespan of the page.
+occurs during the entire lifespan of a page.
 
 A _layout shift_ occurs any time a visible element changes its position from one
 rendered frame to the next. (See below for details on how individual [layout
@@ -374,7 +374,7 @@ new PerformanceObserver((entryList) => {
 
 {% Aside 'warning' %}
 
-  This code shows the basic way to calculate and log CLS However, accurately
+  This code shows the basic way to calculate and log CLS. However, accurately
   measuring CLS in a way that matches what is measured in the [Chrome User
   Experience
   Report](https://developers.google.com/web/tools/chrome-user-experience-report)
