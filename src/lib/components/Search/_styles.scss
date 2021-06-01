@@ -1,16 +1,6 @@
 @import '../../../styles/settings/colors';
 @import '../../../styles/tools/mixins';
 
-// This represent the margin from the surrounding elements which needs to
-// be factored in when we're calculating the final width and translate
-// position for this element's expanded state.
-$WEB_SEARCH_MARGIN: 16px;
-
-// This accounts for the width of the close button which we display on mobile.
-// We need to offset the results popout by this amount so it doesn't appear
-// to extend past the search input field.
-$WEB_CLOSE_BUTTON_WIDTH: 45px;
-
 web-search {
   --web-search-animation-time: 0;
 
@@ -41,10 +31,6 @@ web-search {
     padding: 0 8px;
     transition: none;
     background: transparent;
-
-    @include bp(md) {
-      display: none;
-    }
   }
 
   .web-search__open-btn:focus,
@@ -69,16 +55,7 @@ web-search {
     display: none;
     height: 100%;
     width: 100%;
-
-    @include bp(md) {
-      display: flex;
-      max-width: calc(200% - #{$WEB_SEARCH_MARGIN} * 2);
-      min-width: calc(200% - #{$WEB_SEARCH_MARGIN} * 2);
-      // Display a minimum of 200px of search bar.
-      transform: translateX(calc(50% - 200px + #{$WEB_SEARCH_MARGIN}));
-      transition: var(--web-search-animation-time) transform;
-      width: calc(200% - #{$WEB_SEARCH_MARGIN} * 2);
-    }
+    position: relative;
 
     .web-search__search-icon {
       left: 8px;
@@ -97,7 +74,7 @@ web-search {
     padding: 8px 8px 8px 40px;
     width: 100%;
     font: inherit;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 20px;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
@@ -106,45 +83,6 @@ web-search {
       outline: none;
       box-shadow: 0 2px 0 0 $WEB_SECONDARY_COLOR;
     }
-  }
-
-  .web-search-popout {
-    background: white;
-    border-top: 1px solid #ddd;
-    box-shadow: 0 1px 2px 0 rgba($GREY_800,.3), 0 2px 6px 2px rgba($GREY_800,.15);
-    left: 0;
-    padding: 16px 0;
-    position: absolute;
-    top: 55px;
-    width: calc(100% - #{$WEB_CLOSE_BUTTON_WIDTH});
-    
-    @include bp(md) {
-      left: calc(#{$WEB_SEARCH_MARGIN} * 2);
-      width: calc(100% - #{$WEB_SEARCH_MARGIN} * 2);
-    }
-  }
-
-  .web-search-popout__heading {
-    color: $GREY_700;
-    font-size: 12px;
-    padding: 0 24px;
-  }
-
-  .web-search-popout__list {
-    list-style: none;
-    max-height: 50vh;
-    overflow: scroll;
-  }
-
-  .web-search-popout__link {
-    color: $PRIMARY_TEXT_COLOR;
-    display: block;
-    padding: 8px 24px;
-  }
-
-  .web-search-popout__link:hover,
-  .web-search-popout__link--active {
-    background: $GREY_200;
   }
 }
 
@@ -155,10 +93,6 @@ web-search[expanded] {
 
   .web-search__input-wrapper {
     display: flex;
-
-    @include bp(md) {
-      transform: translate(calc(-50% + #{$WEB_SEARCH_MARGIN}));
-    }
   }
 
   .web-search__close-btn {

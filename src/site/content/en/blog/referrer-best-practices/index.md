@@ -145,9 +145,7 @@ _As of July 2020_
         <td>Firefox</td>
         <td>
           <ul>
-            <li><code>no-referrer-when-downgrade</code></li>
-            <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1589074">Considering </a><code>strict-origin-when-cross-origin</code>
-            </li>
+            <li><code>strict-origin-when-cross-origin</code> (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1589074">see closed bug</a>)</li>
             <li><code>strict-origin-when-cross-origin</code> in Private Browsing and for trackers</li>
           </ul>
         </td>
@@ -393,7 +391,7 @@ policy (and a malicious actor could even spoof the referrer).
 Use [CSRF
 tokens](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation)
 as your primary protection. For extra protection, use
-[SameSite](https://web.dev/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)—and instead
+[SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)—and instead
 of `Referer`, use headers such as
 [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) (available on POST and
 CORS requests) and
@@ -480,7 +478,7 @@ David Van Cleve, Mike West, Sam Dutton, Rowan Merewood, Jxck and Kayce Basques._
 
 ## Resources
 
-- [Understanding "same-site" and "same-origin"](https://web.dev/same-site-same-origin/)
+- [Understanding "same-site" and "same-origin"](/same-site-same-origin/)
 - [A new security header: Referrer Policy
   (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
 - [Referrer-Policy on

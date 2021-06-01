@@ -10,7 +10,8 @@
  */
 const languageNames = {
   en: 'English',
-  pl: 'Polish',
+  pl: 'Polski',
+  es: 'Español',
 };
 
 /**

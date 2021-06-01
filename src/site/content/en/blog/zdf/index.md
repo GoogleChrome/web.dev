@@ -49,7 +49,7 @@ offline support. The player takes a content ID as input, talks to the ZDF API,
 and plays back the associated video.
 
 This is where one of the web's most powerful features comes to the rescue:
-[service workers](https://web.dev/service-worker-mindset/).
+[service workers](/service-worker-mindset/).
 
 The service worker can intercept the various requests done by the player and
 respond with the data from IndexedDB. This transparently adds offline

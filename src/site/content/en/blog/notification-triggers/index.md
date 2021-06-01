@@ -72,10 +72,10 @@ alarms for telephone conferences or video calls.
 
 ## How to use notification triggers {: #use }
 
-### Enabling via chrome://flags
+### Enabling via about://flags
 
 To experiment with the Notification Triggers API locally, without an origin trial token, enable the
-`#enable-experimental-web-platform-features` flag in `chrome://flags`.
+`#enable-experimental-web-platform-features` flag in `about://flags`.
 
 {% Aside %} Two earlier origin trials for the feature, which gave developers a chance to try out the
 proposed API, ran from Chrome&nbsp;80 to&nbsp;83 and from Chrome&nbsp;86 to&nbsp;88. You can read

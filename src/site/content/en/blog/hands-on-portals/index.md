@@ -56,7 +56,7 @@ they also come with features to navigate to their content.
 Seeing is believing:
 please first check out what we showcased at Chrome Dev Summit 2018:
 
-{% YouTube 'Ai4aZ9Jbsys', '1081' %}
+{% YouTube id='Ai4aZ9Jbsys', startTime='1081' %}
 
 With classic navigations, users have to wait with a blank screen
 until the browser finishes rendering the destination.
@@ -67,11 +67,11 @@ Before Portals, we could have rendered another page using an `<iframe>`. We coul
 
 ## Try out Portals
 
-### Enabling via chrome://flags {: #enable-flags }
+### Enabling via about://flags {: #enable-flags }
 
 Try out Portals in Chrome 85 and later versions by flipping an experimental flag:
-- Enable the `chrome://flags/#enable-portals` flag for same-origin navigations.
-- For testing out cross-origin navigations, enable the `chrome://flags/#enable-portals-cross-origin` flag in addition.
+- Enable the `about://flags/#enable-portals` flag for same-origin navigations.
+- For testing out cross-origin navigations, enable the `about://flags/#enable-portals-cross-origin` flag in addition.
 
 During this early phase of the Portals experiment,
 we also recommend using a completely separate user data directory for your tests

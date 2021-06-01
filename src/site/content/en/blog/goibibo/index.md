@@ -67,12 +67,12 @@ In their journey to improve user experience, Goibibo noticed a few trends:
   </figure>
 </div>
 
-### Web OTP {: #web-otp }
+### WebOTP {: #web-otp }
 
 <div class="w-columns">
   <p>
     Because secure authentication is a big challenge in India, Goibibo
-    used the <a href="/web-otp/">Web OTP (One-Time Password) API</a>
+    used the <a href="/web-otp/">WebOTP (One-Time Password) API</a>
     to reduce sign-in friction on their PWA.
   </p>
   <figure class="w-figure">
@@ -117,14 +117,14 @@ In their journey to improve user experience, Goibibo noticed a few trends:
 </style>
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rsENPcTITCviudxIhPU1.png", alt="1. Web Share improved returning user percentage 2. Contact Picker enhanced user experience, making it easier for guests to book 3. Web OTP reduced friction during transactions, resulting in less time spent on OTP screen and less retry API calls 4. Push notifications improved conversions of retargeted users", width="711", height="627", class="w-screenshot" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rsENPcTITCviudxIhPU1.png", alt="1. Web Share improved returning user percentage 2. Contact Picker enhanced user experience, making it easier for guests to book 3. WebOTP reduced friction during transactions, resulting in less time spent on OTP screen and less retry API calls 4. Push notifications improved conversions of retargeted users", width="711", height="627", class="w-screenshot" %}
 </figure>
 
 ## Overall business results {: #results }
 
 +   Iterations to PWA interfaces resulted in a 60% jump in conversion rate (compared to the
     previous mobile web flow) and delighted users.
-+   [New web capabilities](https://web.dev/fugu-status/) improved UX and caused a 20% increase
++   [New web capabilities](/fugu-status/) improved UX and caused a 20% increase
     in logged-in users (who convert 6x more).
 
 <blockquote>

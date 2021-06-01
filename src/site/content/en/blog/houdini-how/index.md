@@ -26,7 +26,7 @@ the styles they write.
 Houdini enables more semantic CSS with the [Typed Object
 Model](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API/Guide). Developers can
 define advanced CSS custom properties with syntax, default values, and inheritance through the
-[Properties and Values API](https://web.dev/at-property/).
+[Properties and Values API](/at-property/).
 
 It also introduces paint, layout, and animation
 [worklets](https://developers.google.com/web/updates/2018/10/animation-worklet), which open up a

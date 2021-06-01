@@ -2,20 +2,20 @@
 title: Why you need "cross-origin isolated" for powerful features
 subhead: >
   Learn why cross-origin isolation is needed to use powerful features such as
-  `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`, and the JS Self-Profiling
-  API.
+  `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`, high
+  resolution timer with better precision and the JS Self-Profiling API.
 description: >
   Some web APIs increase the risk of side-channel attacks like Spectre. To
   mitigate that risk, browsers offer an opt-in-based isolated environment called
   cross-origin isolated. Learn why cross-origin isolation is needed to use
   powerful features such as `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`,
-  and the JS Self-Profiling API.
+  high resolution timer with better precision and the JS Self-Profiling API.
 authors:
   - agektmr
   - domenic
 hero: image/admin/h8g1TQjkfkJSpWJrPakB.jpg
 date: 2020-05-04
-updated: 2020-10-19
+updated: 2021-04-12
 tags:
   - blog
   - security
@@ -24,7 +24,7 @@ feedback:
 ---
 ## Introduction
 In [Making your website "cross-origin isolated" using COOP and
-COEP](https://web.dev/coop-coep/) we explained how to adopt to "cross-origin
+COEP](/coop-coep/) we explained how to adopt to "cross-origin
 isolated" state using COOP and COEP. This is a companion article that explains
 why cross-origin isolation is required to enable powerful features on the browser.
 
@@ -47,7 +47,7 @@ clearer, let's define them:
 ## Background
 
 The web is built on the [same-origin
-policy](https://web.dev/same-origin-policy/): a security feature that restricts
+policy](/same-origin-policy/): a security feature that restricts
 how documents and scripts can interact with resources from another origin. This
 principle restricts the ways websites can access cross-origin resources. For
 example, a document from `https://a.example` is prevented from accessing data
@@ -86,7 +86,12 @@ successful.
 This all changed with
 [Spectre](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)), which
 makes any data that is loaded to the same browsing context group as your code
-potentially readable. If `evil.com` embeds a cross-origin image, they can use a
+potentially readable. By measuring the time certain operations take, attackers
+can guess the contents of the CPU caches, and through that, the contents of the
+process' memory. Such timing attacks are possible with low-granularity timers
+that exist in the platform, but can be sped up with high-granularity timers,
+both explicit (like `performance.now()`) and implicit (like
+`SharedArrayBuffer`s). If `evil.com` embeds a cross-origin image, they can use a
 Spectre attack to read its pixel data, which makes protections relying on
 "opaqueness" ineffective.
 
@@ -101,8 +106,10 @@ This is exactly what COOP+COEP is about.
 
 Under a cross-origin isolated state, the requesting site is considered less
 dangerous and this unlocks powerful features such as `SharedArrayBuffer`,
-`performance.measureUserAgentSpecificMemory()` and the JS Self-Profiling API which could otherwise be
-used for Spectre-like attacks. It also prevents modifying `document.domain`.
+`performance.measureUserAgentSpecificMemory()`, [high resolution
+timers](https://www.w3.org/TR/hr-time/) with better precision and the JS
+Self-Profiling API which could otherwise be used for Spectre-like attacks. It
+also prevents modifying `document.domain`.
 
 ### Cross Origin Embedder Policy {: #coep }
 [Cross Origin Embedder
@@ -239,16 +246,18 @@ protect your website in browsers that don't support COOP.
 ## Summary {: #summary }
 
 If you want guaranteed access to powerful features like `SharedArrayBuffer`,
-`performance.measureUserAgentSpecificMemory()` or JS Self-Profiling API, just remember that your
-document needs to use both COEP with the value of `require-corp` and COOP with
-the value of `same-origin`. In the absence of either, the browser will not
-guarantee sufficient isolation to safely enable those powerful features. You can
-determine your page's situation by checking if
+`performance.measureUserAgentSpecificMemory()`, [high resolution
+timers](https://www.w3.org/TR/hr-time/) with better precision or JS
+Self-Profiling API, just remember that your document needs to use both COEP with
+the value of `require-corp` and COOP with the value of `same-origin`. In the
+absence of either, the browser will not guarantee sufficient isolation to safely
+enable those powerful features. You can determine your page's situation by
+checking if
 [`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated)
 returns `true`.
 
 Learn the steps to implement this at [Making your website "cross-origin
-isolated" using COOP and COEP](https://web.dev/coop-coep/).
+isolated" using COOP and COEP](/coop-coep/).
 
 ## Resources
 * [COOP and COEP

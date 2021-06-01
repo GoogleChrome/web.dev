@@ -18,6 +18,12 @@ tags:
   - cors
 ---
 
+{% Aside %}
+  CORS-RFC1918 has been renamed to Private Network Access for clarity.
+  An update to this post is published at [developer.chrome.com
+  blog](https://developer.chrome.com/blog/private-network-access-update).
+{% endAside %}
+
 Malicious websites making requests to devices and servers hosted on a private
 network have long been a threat. Attackers may, for example, change a wireless
 router's configuration to enable
@@ -56,7 +62,7 @@ Browsers that implement CORS check with target
 resources whether they are okay being loaded from a different origin. This is
 accomplished either with extra headers inline describing the access or by using
 a mechanism called preflight requests, depending on the complexity. Read [Cross
-Origin Resource Sharing](https://web.dev/cross-origin-resource-sharing/)
+Origin Resource Sharing](/cross-origin-resource-sharing/)
 to learn more.
 
 With [CORS-RFC1918](https://wicg.github.io/cors-rfc1918/) the browser will block
@@ -113,7 +119,7 @@ Chrome is bringing CORS-RFC1918 in two steps:
 
 Chrome 87 adds a flag that mandates public websites making requests to private
 network resources to be on HTTPS. You can go to
-`chrome://flags#block-insecure-private-network-requests` to enable it. With this
+`about://flags#block-insecure-private-network-requests` to enable it. With this
 flag turned on, any requests to a private network resource from an HTTP website
 will be blocked.
 
@@ -162,7 +168,7 @@ If you are hosting a website within a private network that expects requests from
 public networks, the Chrome team is interested in your feedback and use cases. There
 are two things you can do to help:
 
-* Go to `chrome://flags#block-insecure-private-network-requests`, turn on the
+* Go to `about://flags#block-insecure-private-network-requests`, turn on the
   flag and see if your website sends requests to the private network resource as
   expected.
 * If you encounter any issues or have feedback, file an issue at

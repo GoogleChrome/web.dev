@@ -12,8 +12,8 @@ Content creation for web.dev has three phases: planning, writing, and publishing
 
 1. If you're a Googler or have access to a Googler, use the [content proposal form][form] to submit
    your new content request. If you don't have access to a Googler, use the
-   [content issue template](https://github.com/googlechrome/web.dev/issues/new?template=content.md).
-1. The web.dev team will take a look to see if the idea fits with the goals of the site. If the idea is approved, it gets slated for a publication date!
+   [content issue template](https://github.com/GoogleChrome/web.dev/issues/new?template=propose-new-content.md).
+1. The web.dev team will take a look to see if the idea fits with the goals of the site. If the idea is approved, it will be assigned a reviewer.
 
 {% Aside 'caution' %}
 If the piece you'd like to publish is time sensitive, make sure to submit the issue at least **one month** before the target publication date so there's enough time to move it through the writing process.
@@ -35,7 +35,7 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
 1. After you get approval from a web.dev team member that your content can be published on the site,
    submit a GitHub pull request.
 1. Check out the [web.dev markup section](/handbook/#web.dev-markup) to learn how to make your markdown squeaky clean.
-   In particular, check out the [web.dev components](https://web.dev/handbook/web-dev-components/) guide
+   In particular, check out the [web.dev components](/handbook/web-dev-components/) guide
    to discover UI elements that can make your content more engaging or aesthetically pleasing.
 1. Once your PR is merged, the content will be deployed to the site immediately.
 
@@ -55,7 +55,7 @@ If applicable, launch translation process for this content by emailing web.dev@.
 
 ### Tags
 
-Tags are used to categorize articles and also to generate [web.dev/tags](https://web.dev/tags/) pages.
+Tags are used to categorize articles and also to generate [web.dev/tags](/tags/) pages.
 The canonical list of tags is published in [tagsData.json](https://github.com/GoogleChrome/web.dev/blob/main/src/site/_data/tagsData.json) on Github.
 
 - to add a new tag, add it first to `tagsData.json`
@@ -65,10 +65,5 @@ tags:
   - accessibility
 ```
 
-{% Aside %}
-  Googlers: Check out [web.dev process](https://docs.google.com/document/d/1Vxgrgxtz4OeJcrYJF5lpK9bVhTcGpXOXeeL4GZCV8KY)
-  for more detailed information about web.dev's content process.
-{% endAside %}
-
-[form]: https://docs.google.com/forms/d/e/1FAIpQLSdYePZbDZ9Idi4MKL0cbqTuUHfPU7ZZJNnV9hDzjc0e1c2UXw/viewform?fbzx=7994504531518856644
+[form]: https://docs.google.com/forms/d/e/1FAIpQLSc65CDClpUu7R2ECacLz3B1a6hOCWdFAk2vkWXIbZjzNSXq_Q/viewform?resourcekey=0-t3rJNkt5V2-iE2N42KhrhQ
 [template]: https://docs.google.com/document/d/1lgaNIEnXZf-RB8_p9RK22QEgpXJqnu77pLWVWVy4nuw/edit?usp=sharing

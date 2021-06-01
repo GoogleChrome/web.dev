@@ -74,22 +74,21 @@ const renderAuthorImages = (limit, pairs) => {
         width: '40',
         height: '40',
         class: 'w-author__image w-author__image--small',
+        params: {
+          fit: 'crop',
+          h: '40',
+          w: '40',
+        },
       });
       return html`
         <div class="w-author__image--row-item">
-          <a href="${info.href}">
-            ${img}
-          </a>
+          <a href="${info.href}">${img}</a>
         </div>
       `;
     })
     .reverse();
 
-  return html`
-    <div class="w-author__image--row">
-      ${inner}
-    </div>
-  `;
+  return html` <div class="w-author__image--row">${inner}</div> `;
 };
 
 const renderAuthorNames = (pairs) => {
@@ -105,11 +104,7 @@ const renderAuthorNames = (pairs) => {
     })
     .join(', ');
 
-  return html`
-    <span class="w-author__name">
-      ${inner}
-    </span>
-  `;
+  return html` <span class="w-author__name">${inner}</span> `;
 };
 
 /**

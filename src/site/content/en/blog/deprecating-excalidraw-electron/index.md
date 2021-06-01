@@ -12,7 +12,7 @@ description: |
 authors:
   - thomassteiner
 date: 2021-01-07
-updated: 2021-01-27
+updated: 2021-05-19
 canonical: https://blog.excalidraw.com/deprecating-excalidraw-electron/
 hero: image/admin/qfK9zbKBQalqq5zdr1P1.jpg
 alt: |
@@ -174,7 +174,7 @@ outline why we think we do not need Electron.
 
 Excalidraw today is an [installable](/installable/) Progressive Web App with a
 [service worker](https://excalidraw.com/service-worker.js) and a
-[Web App Manifest](https://excalidraw.com/manifest.json). It caches all its resources in two caches,
+[web app manifest](https://excalidraw.com/manifest.json). It caches all its resources in two caches,
 one for fonts and font-related CSS, and one for everything else.
 
 <figure class="w-figure">

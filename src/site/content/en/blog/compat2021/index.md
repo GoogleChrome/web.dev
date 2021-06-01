@@ -1,14 +1,14 @@
 ---
 title: "Compat2021: Eliminating five top compatibility pain points on the web"
-subhead: 
+subhead:
     "Google is working with other browser vendors and industry partners to fix the
-    top five browser compatibility pain points for web developers: CSS Flexbox, 
+    top five browser compatibility pain points for web developers: CSS Flexbox,
     CSS Grid, `position: sticky`, `aspect-ratio`, and CSS transforms."
 description:
-    "Learn more about how Google is working with other browser vendors and 
-    industry partners to fix the top five browser compatibility pain points for 
-    web developers: CSS Flexbox, CSS Grid, position: sticky, aspect-ratio, 
-    and CSS transforms."     
+    "Learn more about how Google is working with other browser vendors and
+    industry partners to fix the top five browser compatibility pain points for
+    web developers: CSS Flexbox, CSS Grid, position: sticky, aspect-ratio,
+    and CSS transforms."
 authors:
   - robertnyman
   - foolip
@@ -35,7 +35,7 @@ last couple of years, Google and other partners, including Mozilla and
 Microsoft, have set out to learn more about the top pain points for web
 developers, to drive our work and prioritization to make the situation better.
 This project is connected to [Google's Developer
-Satisfaction](https://web.dev/developer-satisfaction) (DevSAT) work, and it
+Satisfaction](/developer-satisfaction) (DevSAT) work, and it
 started on a larger scale with the creation of the
 [MDN DNA (Developer Needs Assessment) surveys](https://insights.developer.mozilla.org/)
 in 2019 and 2020, and a deep-dive research effort presented in the
@@ -67,7 +67,7 @@ prioritize, and some are:
     [Gecko](https://bugzilla.mozilla.org/describecomponents.cgi),
     [WebKit](https://bugs.webkit.org/)), and for Chromium, how many stars those
     bugs have.
-+   Survey results: 
++   Survey results:
 
     +   [MDN DNA surveys](https://insights.developer.mozilla.org/)
     +   [MDN Browser Compatibility Report](https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html)
@@ -83,8 +83,8 @@ prioritize, and some are:
 In 2020, Chromium started work addressing the top areas outlined in
 [Improving Chromium's browser compatibility in 2020](https://blog.chromium.org/2020/06/improving-chromiums-browser.html).
 In 2021, we are beginning a dedicated effort to go even further. Google and
-[Microsoft are working together on addressing top issues in Chromium](https://blogs.windows.com/msedgedev/2021/03/22/better-compatibility-compat2021/), along with [Igalia](https://www.igalia.com/). Igalia, who are regular contributors 
-to Chromium and WebKit, and maintainers of the official WebKit port for embedded devices, 
+[Microsoft are working together on addressing top issues in Chromium](https://blogs.windows.com/msedgedev/2021/03/22/better-compatibility-compat2021/), along with [Igalia](https://www.igalia.com/). Igalia, who are regular contributors
+to Chromium and WebKit, and maintainers of the official WebKit port for embedded devices,
 have been very supportive and engaged in these compatibility efforts, and will be
 helping tackle and track the identified issues.
 
@@ -104,7 +104,7 @@ have had issues with `auto-height` flex containers leading to incorrectly sized 
     <figure class="w-figure" style="display: flex; flex-direction: column;">
     {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/qmKoKHkZga5hgBeiHuBz.png", alt="Stretched photo of a chessboard.", width="800", height="400" %}
         <figcaption class="w-figcaption" style="margin-top: auto">
-            Incorrectly sized image due to bugs. 
+            Incorrectly sized image due to bugs.
         </figcaption>
     </figure>
     <figure class="w-figure" style="display: flex; flex-direction: column;">
@@ -150,7 +150,8 @@ effects like this are made possible:
   controls=false,
   autoplay=true,
   loop=true,
-  muted=true
+  muted=true,
+  playsinline=true
 %}
   <figcaption class="w-figcaption">
     Animated chess demo by <a
@@ -234,7 +235,7 @@ The new
 [`aspect-ratio`](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio)
 CSS property makes it easy to maintain a consistent width-to-height ratio for
 elements, removing the need for the well-known
-[`padding-top` hack](https://web.dev/aspect-ratio/#the-old-hack:-maintaining-aspect-ratio-with-padding-top):
+[`padding-top` hack](/aspect-ratio/#the-old-hack:-maintaining-aspect-ratio-with-padding-top):
 
 <div class="w-columns">
 {% Compare 'worse', 'Using padding-top' %}
@@ -283,7 +284,8 @@ flip effect can be very inconsistent across browsers:
   controls=false,
   autoplay=true,
   loop=true,
-  muted=true
+  muted=true,
+  playsinline=true
 %}
   <figcaption class="w-figcaption">
     Card flip effect in Chromium (left), Gecko (middle) and WebKit (right).
@@ -308,7 +310,7 @@ flip effect can be very inconsistent across browsers:
 Follow and share any updates we post on
 [@ChromiumDev](https://twitter.com/ChromiumDev) or the [public mailing list,
 Compat 2021](https://groups.google.com/g/compat2021). Make sure bugs exist, or
-[file them](https://web.dev/how-to-file-a-good-bug/) for issues you have been
+[file them](/how-to-file-a-good-bug/) for issues you have been
 experiencing, and if there's anything missing, reach out through the above
 channels.
 

@@ -100,7 +100,7 @@ eye out for the netlify bot to comment on the pull request with your unique URL.
 
 ### Automatic deploys
 
-The site will build and deploy the master branch automatically every hour,
+The site will build and deploy the main branch automatically every hour,
 Mon-Fri. If you've just merged an article then it should go live at the top
 of the next hour.
 
@@ -126,7 +126,7 @@ If you need to debug the site's build process:
 
 1. Add a `debugger` statement to `.eleventy.js`
 1. Run `npm run debug:eleventy`
-1. Go to `chrome://inspect` to attach to the running process.
+1. Go to `about://inspect` to attach to the running process.
 
 <img
   width="295"

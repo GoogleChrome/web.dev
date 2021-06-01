@@ -87,7 +87,7 @@ The best way to get a feel for the Content Indexing API is to try a sample
 application.
 
 1. Make sure that you're using a supported browser and platform. Currently,
-   that's limited to **Chrome 84 or later on Android**. Go to `chrome://version` to see
+   that's limited to **Chrome 84 or later on Android**. Go to `about://version` to see
    what version of Chrome you're running.
 1. Visit [https://contentindex.dev](https://contentindex.dev)
 1. Click the `+` button next to one or more of the items on the list.

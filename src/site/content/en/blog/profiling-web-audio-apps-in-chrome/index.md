@@ -2,10 +2,10 @@
 title: Profiling Web Audio apps in Chrome
 subhead: >
   Learn how to profile the performance of Web Audio apps in Chrome using
-  `chrome://tracing` and the **WebAudio** tab in DevTools.
+  `about://tracing` and the **WebAudio** tab in DevTools.
 description: >
   Learn how to profile the performance of Web Audio apps in Chrome using
-  `chrome://tracing` and the **WebAudio** panel in DevTools.
+  `about://tracing` and the **WebAudio** panel in DevTools.
 date: 2020-05-04
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -29,9 +29,9 @@ eventually fix, the issue.
 ## Web Audio profiling tools
 
 There are two tools that will help you when profiling Web Audio,
-`chrome://tracing` and the **WebAudio** tab in Chrome DevTools.
+`about://tracing` and the **WebAudio** tab in Chrome DevTools.
 
-### When do you use `chrome://tracing`?
+### When do you use `about://tracing`?
 
 When mysterious "glitches" happen. Profiling the app with the tracing tools
 gives you insights on:
@@ -54,7 +54,7 @@ render budget (for example, approximately 2.67ms @ 48KHz). If the capacity
 goes near 100%, that means your app is likely to produce glitches because the
 renderer is failing to finish the work in the render budget.
 
-## Use `chrome://tracing`
+## Use `about://tracing`
 
 ### How to capture tracing data
 
@@ -66,7 +66,7 @@ or use other builds from [different release channels][diff-channel] (e.g.
 Beta or Canary). Once you have the browser ready, follow the steps below:
 
 1. Open your application (web page) on a tab.
-1. Open another tab and go to `chrome://tracing`.
+1. Open another tab and go to `about://tracing`.
 1. Press the **Record** button and select **Manually select settings**.
 1. Press the **None** buttons on both the **Record Categories** and
    **Disabled by Default Categories** sections.
@@ -91,13 +91,13 @@ Beta or Canary). Once you have the browser ready, follow the steps below:
 ### How to analyze tracing data
 
 The tracing data visualizes how Chrome's web audio engine renders the audio.
-The renderer has two different render modes: **Native mode** and
+The renderer has two different render modes: **Operating system mode** and
 **Worklet mode**. Each mode uses a different threading model, so the tracing
 results also differ.
 
-#### Native mode
+#### Operating system mode
 
-In Native mode, the [`AudioOutputDevice`][cr-audio-output-device] thread runs
+In operating system mode, the [`AudioOutputDevice`][cr-audio-output-device] thread runs
 all the web audio code. The `AudioOutputDevice` is a real-time priority thread
 originating from the browser's Audio Service that is driven by the audio
 hardware clock. If you see irregularity from the trace data in this lane,
@@ -106,7 +106,7 @@ of Linux and Pulse Audio is known to have this problem. See the following Chromi
 for more details: [#825823](https://crbug.com/825823),
 [#864463](https://crbug.com/864463).
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Mf64zHw10phOMhU3gXsJ.jpg", alt="Screen shot of native mode tracing result.", width="800", height="398",class="w-screenshot w-screenshot--filled" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Mf64zHw10phOMhU3gXsJ.jpg", alt="Screen shot of operating system mode tracing result.", width="800", height="398",class="w-screenshot w-screenshot--filled" %}
 
 #### Worklet mode
 
@@ -145,7 +145,7 @@ work before the next device callback.
 
 #### Example 2: Significant garbage collection on the worklet thread
 
-Unlike on the native audio rendering thread, garbage collection is managed
+Unlike on the operating system audio rendering thread, garbage collection is managed
 on the worklet thread. That means if your code does memory allocation/deallocation
 (e.g. new arrays) it eventually triggers a garbage collection which
 synchronously blocks the thread. If the workload of web audio operations and

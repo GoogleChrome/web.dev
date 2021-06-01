@@ -72,7 +72,7 @@ Malicious cross-site requests can be rejected by the server because of the addit
 
 ### `Sec-Fetch-Site`
 
-`Sec-Fetch-Site` tells the server which [site](https://web.dev/same-site-same-origin) sent the request. The browser sets this value to one of the following:
+`Sec-Fetch-Site` tells the server which [site](/same-site-same-origin) sent the request. The browser sets this value to one of the following:
 
  - `same-origin`, if the request was made by your own application (e.g. `site.example`)
  - `same-site`, if the request was made by a subdomain of your site (e.g. `bar.site.example`)
@@ -227,4 +227,4 @@ Make sure that you reject invalid requests before running authentication checks 
 - [Fetch Metadata Playground](https://secmetadata.appspot.com/)
 - [Google I/O talk: Securing Web Apps with Modern Platform Features](https://webappsec.dev/assets/pub/Google_IO-Securing_Web_Apps_with_Modern_Platform_Features.pdf) (Slides)
 
-{% YouTube 'DDtM9caQ97I', '1856' %}
+{% YouTube id='DDtM9caQ97I', startTime='1856' %}

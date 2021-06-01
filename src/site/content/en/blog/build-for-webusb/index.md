@@ -76,7 +76,7 @@ will be claimed by the operating system's input subsystem and a vendor-specific
 interface that remains available to WebUSB for use by a configuration tool. This
 tool can be served on the manufacturer's website allowing the user to change
 aspects of the device's behavior such as macro keys and lighting effects without
-installing any native software. Such a device's configuration descriptor would
+installing any platform-specific software. Such a device's configuration descriptor would
 look something like this:
 
 {% Aside  %}

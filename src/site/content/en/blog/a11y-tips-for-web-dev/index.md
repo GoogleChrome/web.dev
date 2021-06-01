@@ -464,7 +464,7 @@ debugging the accessibility of your visual components.
   Tenon has strong integration support across build tools, browsers (via extensions), and even text editors.
 - There are many library- and framework-specific tools
   for highlighting accessibility issues with components.
-  For example, [web.dev](https://web.dev/accessibility-auditing-react/)
+  For example, [web.dev](/accessibility-auditing-react/)
   explains how to use [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
   to highlight accessibility issues for React components in your editor:
 
@@ -480,7 +480,7 @@ debugging the accessibility of your visual components.
   or [Windows Automation API Testing Tools](http://msdn.microsoft.com/en-us/library/windows/desktop/dd373661(v=vs.85).aspx)
   and [AccProbe](http://accessibility.linuxfoundation.org/a11yweb/util/accprobe/) (Windows).
   You can also see the full accessibility tree that Chrome creates
-  by navigating to `chrome://accessibility`.
+  by navigating to `about://accessibility`.
 - The best way to test for screen reader support on a Mac is using the VoiceOver utility.
   Use `⌘F5` to enable or disable it, `Ctrl+Option ←→` to move through the page,
   and `Ctrl+Shift+Option + ↑↓` to move up and down the accessibility tree.

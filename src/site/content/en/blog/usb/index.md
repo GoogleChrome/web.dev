@@ -25,9 +25,9 @@ immediately think of keyboards, mice, audio, video, and storage devices. You're
 right but you'll find other kinds of Universal Serial Bus (USB) devices out
 there.
 
-These non-standardized USB devices require hardware vendors to write native
+These non-standardized USB devices require hardware vendors to write platform-specific
 drivers and SDKs in order for you (the developer) to take advantage of them.
-Sadly this native code has historically prevented these devices from being used
+Sadly this platform-specific code has historically prevented these devices from being used
 by the Web. And that's one of the reasons the WebUSB API has been created: to
 provide a way to expose USB device services to the Web. With this API, hardware
 manufacturers will be able to build cross-platform JavaScript SDKs for their
@@ -285,7 +285,7 @@ and firmware.
 
 ## Tips
 
-Debugging USB in Chrome is easier with the internal page `chrome://device-log`
+Debugging USB in Chrome is easier with the internal page `about://device-log`
 where you can see all USB device related events in one single place.
 
 <figure class="w-figure">
@@ -293,7 +293,7 @@ where you can see all USB device related events in one single place.
   <figcaption class="w-figcaption">Device log page in Chrome for debugging the WebUSB API.</figcaption>
 </figure>
 
-The internal page `chrome://usb-internals` also comes in handy and allows you
+The internal page `about://usb-internals` also comes in handy and allows you
 to simulate connection and disconnection of virtual WebUSB devices.
 This is be useful for doing UI testing without for real hardware.
 

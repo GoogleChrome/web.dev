@@ -17,7 +17,7 @@ tags:
 feature.
 
 Origin trials are usually only available on a first-party basis: they only work for a single
-registered [origin](https://web.dev/same-site-same-origin/#origin). If a developer wants to test an
+registered [origin](/same-site-same-origin/#origin). If a developer wants to test an
 experimental feature on other origins where their content is embedded, those origins all need to be
 registered for the origin trial, each with a unique trial token. This is not a scalable approach for
 testing scripts that are embedded across a number of sites.

@@ -4,7 +4,7 @@ title: What does it take to be installable?
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2021-02-09
+updated: 2021-05-19
 description: |
   Progressive Web App installability criteria.
 tags:
@@ -30,15 +30,13 @@ menu.
 
 <div class="w-columns" >
   <figure class="w-figure" id="browser-install-promo">
-    <img src="how-does-it-work_desktop.png"
-        alt="Screenshot of omnibox with install indicator visible.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/O9KXz4aQXm3ZOzPo98uT.png", alt="Screenshot of omnibox with install indicator visible.", width="800", height="307" %}
     <figcaption class="w-figcaption">
       Browser provided install promotion (desktop)
     </figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="how-does-it-work_mobile.png"
-        alt="Screenshot of browser provided install promotion.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bolh05TCEeT7xni4eUTG.png", alt="Screenshot of browser provided install promotion.", width="800", height="307" %}
     <figcaption class="w-figcaption">
       Browser provided install promotion (mobile)
     </figcaption>
@@ -58,17 +56,13 @@ promotion:
 * The web app is not already installed
 * Meets a user engagement heuristic
 * Be served over HTTPS
-* Includes a [Web App Manifest][add-manifest] that includes:
+* Includes a [web app manifest][add-manifest] that includes:
   * `short_name` or `name`
   * `icons` - must include a 192px and a 512px icon
   * `start_url`
   * `display` - must be one of `fullscreen`, `standalone`, or `minimal-ui`
   * `prefer_related_applications` must not be present, or be `false`
 * Registers a service worker with a `fetch` handler
-  * Starting in mid-2021, Chrome will require that the `fetch` event handler
-    return a valid response when the device is offline, see
-    [Improving Progressive Web App offline support detection][new-offline-detection]
-    for complete details and timelines.
 
 Other browsers have similar criteria for installation, though there may be
 minor differences. Check the respective sites for full details:

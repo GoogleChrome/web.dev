@@ -114,7 +114,7 @@ begin loading.
 In Chrome 77+, you can experiment with these different thresholds by [throttling the
 network](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) in DevTools. In
 the meantime, you will need to override the effective connection type of the browser using the
-`chrome://flags/#force-effective-connection-type` flag.
+`about://flags/#force-effective-connection-type` flag.
 {% endAside %}
 
 ## Improved data-savings and distance-from-viewport thresholds
@@ -163,7 +163,9 @@ Alternatively, specify their values directly in an inline style:
 
 The best practice of setting dimensions applies to `<img>` tags regardless of whether or not they are being loaded lazily. With lazy-loading, this can become more relevant. Setting `width` and `height` on images in modern browsers also allows browsers to infer their intrinsic size.
 
-Images will still lazy-load if dimensions are not included, but [specifying them decreases the chance of layout shift](https://www.youtube.com/watch?v=4-d_SoCHeWE). If you are unable to include dimensions for your images, lazy-loading them can be a trade-off between saving network resources and potentially being more at risk of layout shift.
+In most scenarios images still lazy-load if dimensions are not included, but there are a few edge cases you should be aware of. Without `width` and `height` specified, image dimensions are 0×0 pixels at first. If you have a gallery of such images, the browser may conclude that all of them fit inside the viewport at the start, as each takes up practically no space and no image is pushed offscreen. In this case the browser determines that all of them are visible to the user and decides to load everything.
+
+Also, [specifying image dimensions decreases the chances of layout shifts happening](https://www.youtube.com/watch?v=4-d_SoCHeWE). If you are unable to include dimensions for your images, lazy-loading them can be a trade-off between saving network resources and potentially being more at risk of layout shift.
 
 While lazy-loading in Chromium is implemented in a way such that images are likely to be loaded once they are visible, there is still a small chance that they might not be loaded yet. In this case, missing `width` and `height` attributes on such images increase their impact on Cumulative Layout Shift.
 

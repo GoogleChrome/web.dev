@@ -251,7 +251,7 @@ much faster than having to actually send back a copy of the actual resource
 being requested.
 
 <figure class="w-figure">
-  <img src="./http-cache.png" alt="A diagram of a client requesting a resource and the server responding with a 304 header.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/e2bN6glWoVbWIcwUF1uh.png", alt="A diagram of a client requesting a resource and the server responding with a 304 header.", width="474", height="215" %}
   <figcaption class="w-figcaption w-text--left">
     The browser requests <code>/file</code> from the server and includes the <code>If-None-Match</code>
     header to instruct the server to only return the full file if the <code>ETag</code> of

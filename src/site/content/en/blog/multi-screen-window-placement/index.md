@@ -21,7 +21,7 @@ feedback:
 
 {% Aside %}
   The Multi-Screen Window Placement API is part of the
-  [capabilities project](https://web.dev/fugu-status/) and is currently in
+  [capabilities project](/fugu-status/) and is currently in
   development. This post will be updated as the implementation progresses.
 {% endAside %}
 
@@ -56,10 +56,10 @@ Examples of sites that may use this API include:
 
 ## How to use the Multi-Screen Window Placement API {: #use }
 
-### Enabling via chrome://flags
+### Enabling via about://flags
 
 To experiment with the Multi-Screen Window Placement API locally, without an origin trial token,
-enable the `#enable-experimental-web-platform-features` flag in `chrome://flags`.
+enable the `#enable-experimental-web-platform-features` flag in `about://flags`.
 
 ### Enabling support during the origin trial phase
 

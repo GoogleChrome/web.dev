@@ -508,7 +508,7 @@ const [appReadable, devReadable] = port.readable.tee();
 ## Dev Tips {: #dev-tips }
 
 Debugging the Web Serial API in Chrome is easy with the internal page,
-`chrome://device-log` where you can see all serial device related events in one
+`about://device-log` where you can see all serial device related events in one
 single place.
 
 <figure class="w-figure">

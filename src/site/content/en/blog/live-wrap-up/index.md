@@ -74,7 +74,7 @@ of your web development project, taking on a key role in handling your developer
 lifecycle.
 
 We have all seen unwieldy build config files, so to help web developers _and_ tooling authors
-conquer the complexity of the web, we built [tooling.report](https://web.dev/introducing-tooling-report). It's a website
+conquer the complexity of the web, we built [tooling.report](/introducing-tooling-report). It's a website
 that helps you choose the right build tool for your next project, decide if migrating from one tool
 to another is worth it, or figure out how to incorporate best practices into your tooling
 configuration and code base.

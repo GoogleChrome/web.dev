@@ -167,13 +167,13 @@ const saveFile = async (blob) => {
 ## Introducing browser-fs-access
 
 As perfectly fine as the File System Access API is,
-it's [not yet  widely available](https://caniuse.com/#feat=file-system-access-api).
+it's [not yet  widely available](https://caniuse.com/native-filesystem-api).
 
 <figure class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/G1jsSjCBR871W1uKQWeN.png", alt="Browser support table for the File System Access API. All browsers are marked as 'no support' or 'behind a flag'.", width="800", height="224", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Browser support table for the File System Access API.
-    (<a href="https://caniuse.com/?search=file%20system%20access%20api">Source</a>)
+    (<a href="https://caniuse.com/native-filesystem-api">Source</a>)
   </figcaption>
 </figure>
 
@@ -251,7 +251,7 @@ the demo cannot be embedded in this article.
 ## The browser-fs-access library in the wild
 
 In my free time, I contribute a tiny bit to an
-[installable PWA](https://web.dev/progressive-web-apps/#installable)
+[installable PWA](/progressive-web-apps/#installable)
 called [Excalidraw](https://excalidraw.com/),
 a whiteboard tool that lets you easily sketch diagrams with a hand-drawn feel.
 It is fully responsive and works well on a range of devices from small mobile phones to computers with large screens.
@@ -346,7 +346,7 @@ Note how on iPhone the **Save As** button is missing.
 
 ## Conclusions
 
-Working with native files technically works on all modern browsers.
+Working with system files technically works on all modern browsers.
 On browsers that support the File System Access API, you can make the experience better by allowing
 for true saving and overwriting (not just downloading) of files and
 by letting your users create new files wherever they want,

@@ -318,6 +318,8 @@ features you would find in the [Kino] demo PWA:
   transform the manifest file and only download one media version before we store
   it for offline viewing.
 
+Up next, you will learn about [Fast playback with audio and video preload].
+
 [Progressive Web Apps]: /progressive-web-apps/
 [Media Frameworks]: /media-frameworks/
 [Cache API]: /cache-api-quick-guide/
@@ -327,9 +329,10 @@ features you would find in the [Kino] demo PWA:
 [Background Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Background_Fetch_API
 [support Background Fetch]: https://caniuse.com/mdn-api_serviceworkerregistration_backgroundfetch
 [File System Access API]: /file-system-access/
-[Kino]: https://web-dev-media.web.app/
-[source code]: https://github.com/xwp/web-dev-media/
+[Kino]: https://kinoweb-dev.web.app/
+[source code]: https://github.com/xwp/kino/
 [Streams–The definitive guide]: /streams/
 [Media Session API]: /media-session/
 [Response constructor]: https://developer.mozilla.org/en-US/docs/Web/API/Response/Response
-[service worker source code]: https://github.com/xwp/web-dev-media/blob/ef13dc0aec8a025cb1152f8d41adeeac872964db/src/js/sw/sw.js#L39-L108
+[service worker source code]: https://github.com/xwp/kino/blob/ef13dc0aec8a025cb1152f8d41adeeac872964db/src/js/sw/sw.js#L39-L108
+[Fast playback with audio and video preload]: /fast-playback-with-preload/

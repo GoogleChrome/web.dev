@@ -5,7 +5,7 @@ subhead: Work on more than one document at a time with tabs in your Progressive 
 authors:
   - thomassteiner
 date: 2021-02-25
-updated: 2021-04-07
+updated: 2021-05-19
 description: |
   Tabbed application mode allows Progressive Web App developers to add a tabbed document interface
   to their standalone PWAs.
@@ -19,7 +19,7 @@ tags:
 
 {% Aside %}
   Tabbed application mode is part of the
-  [capabilities project](https://web.dev/fugu-status/) and is currently in development. This post
+  [capabilities project](/fugu-status/) and is currently in development. This post
   will be updated as the implementation progresses. Tabbed application mode is an early-stage
   exploration of the Chrome team. It is not ready for production yet.
 {% endAside %}
@@ -33,7 +33,7 @@ panels to be contained within a single window, using tabs as a navigational widg
 between sets of documents.
 
 Progressive Web Apps can run in [various display modes](/add-manifest/#display) determined by the
-`display` property in the Web App Manifest. Examples are `fullscreen`, `standalone`, `minimal-ui`,
+`display` property in the web app manifest. Examples are `fullscreen`, `standalone`, `minimal-ui`,
 and `browser`. These display modes follow a
 [well-defined fallback chain](https://w3c.github.io/manifest/#dfn-fallback-display-mode)
 (`"fullscreen"` → `"standalone"` → `"minimal-ui"` → `"browser"`). If a browser does not support a
@@ -104,7 +104,7 @@ window.
 ## Using tabbed application mode
 
 To use tabbed application mode, developers need to opt their apps in by setting a specific
-[`"display_override"`](/display-override/) mode value in the Web App Manifest.
+[`"display_override"`](/display-override/) mode value in the web app manifest.
 
 ```json
 {
@@ -134,7 +134,7 @@ You can try tabbed application mode on Chrome&nbsp;OS devices running Chrome&nbs
 1. Open the app and interact with the tab strip.
 
 The video below shows the current iteration of the feature in action. There is no need to make any
-changes to the Web App Manifest for this to work.
+changes to the web app manifest for this to work.
 
 {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/JwN0btyXFGiT9oPFh2qJ.webm", autoplay="true", loop="true", muted="true" %}
 
@@ -145,7 +145,7 @@ The Chrome team wants to hear about your experiences with tabbed application mod
 ### Tell us about the API design
 
 Is there something about tabbed application mode that does not work like you expected? Comment on
-the [Web App Manifest Issue][issue] that we have created.
+the [web app manifest Issue][issue] that we have created.
 
 ### Report a problem with the implementation
 
@@ -166,7 +166,7 @@ know where and how you are using it.
 
 ## Useful links
 
-- [Web App Manifest spec issue][issue]
+- [Web app manifest spec issue][issue]
 - [Chromium bug](https://crbug.com/897314)
 - Blink Component: [`UI>Browser>WebAppInstalls`][blink-component]
 

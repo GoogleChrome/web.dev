@@ -43,7 +43,7 @@ They can help users in various ways:
 **Autofill the password for the correct input field**: Some browsers can find
 the correct input heuristically even if the website is not optimized for this
 purpose. Web developers can help password managers by correctly [annotating HTML
-input tags](https://web.dev/sign-in-form-best-practices/#new-password).
+input tags](/sign-in-form-best-practices/#new-password).
 
 **Prevent phishing**: Because password managers remember where the password was
 recorded, the password can be autofilled only at appropriate URLs, and not at
@@ -116,7 +116,7 @@ friction:
   manager suggest a generated password.
 
 Learn more at [Sign-in form best
-practices](https://web.dev/sign-in-form-best-practices/#new-password).
+practices](/sign-in-form-best-practices/#new-password).
 
 ## How it is used in real world
 
@@ -150,7 +150,7 @@ but has not signalled that it plans to do so as of August 2020.
 Let's have a look at how Chrome's password manager treats vulnerable passwords.
 
 Chrome's password manager is able to check for leaked passwords. By navigating
-to `chrome://settings/passwords` users can run **Check passwords** against stored
+to `about://settings/passwords` users can run **Check passwords** against stored
 passwords, and see a list of passwords that are recommended for update.
 
 <figure class="w-figure">
@@ -217,6 +217,6 @@ repository](https://github.com/wicg/change-password-url/issues).
   Passwords](https://wicg.github.io/change-password-url/)
 * [Detecting the reliability of HTTP status
   codes](https://wicg.github.io/change-password-url/response-code-reliability.html)
-* [Sign-in form best practices](https://web.dev/sign-in-form-best-practices/)
+* [Sign-in form best practices](/sign-in-form-best-practices/)
 
 Photo by [Matthew Brodeur](https://unsplash.com/photos/zEFyM4sulJ8) on [Unsplash](https://unsplash.com)

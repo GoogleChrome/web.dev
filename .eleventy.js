@@ -18,6 +18,7 @@ const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const yaml = require('js-yaml');
+const fs = require('fs');
 
 const toc = require('eleventy-plugin-toc');
 const markdown = require('./src/site/_plugins/markdown');
@@ -42,7 +43,7 @@ const EventTable = require(`./${componentsDir}/EventTable`);
 const Glitch = require(`./${componentsDir}/Glitch`);
 const Hero = require(`./${componentsDir}/Hero`);
 const IFrame = require(`./${componentsDir}/IFrame`);
-const {Img, generateSrc: imigxFilter} = require(`./${componentsDir}/Img`);
+const {Img, generateImgixSrc} = require(`./${componentsDir}/Img`);
 const Instruction = require(`./${componentsDir}/Instruction`);
 const Label = require(`./${componentsDir}/Label`);
 const Meta = require(`./${componentsDir}/Meta`);
@@ -52,13 +53,13 @@ const SignPosts = require(`./${componentsDir}/SignPosts`);
 const StackOverflow = require(`./${componentsDir}/StackOverflow`);
 const Tooltip = require(`./${componentsDir}/Tooltip`);
 const {Video} = require(`./${componentsDir}/Video`);
-const YouTube = require(`./${componentsDir}/YouTube`);
+const {YouTube} = require('webdev-infra/shortcodes/YouTube');
 
 // Collections
-const algolia = require('./src/site/_collections/algolia');
 const authors = require(`./src/site/_collections/authors`);
 const blogPostsDescending = require(`./src/site/_collections/blog-posts-descending`);
 const newsletters = require(`./src/site/_collections/newsletters`);
+const pages = require('./src/site/_collections/pages');
 const {
   postsWithLighthouse,
 } = require(`./src/site/_collections/posts-with-lighthouse`);
@@ -76,6 +77,7 @@ const findTags = require(`./${filtersDir}/find-tags`);
 const githubLink = require(`./${filtersDir}/github-link`);
 const gitlocalizeLink = require(`./${filtersDir}/gitlocalize-link`);
 const htmlDateString = require(`./${filtersDir}/html-date-string`);
+const isNewContent = require(`./${filtersDir}/is-new-content`);
 const md = require(`./${filtersDir}/md`);
 const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
@@ -84,14 +86,14 @@ const removeDrafts = require(`./${filtersDir}/remove-drafts`);
 const slugify = require(`./${filtersDir}/slugify`);
 const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
-const stripQueryParamsDev = require(`./${filtersDir}/strip-query-params-dev`);
 const getPaths = require(`./${filtersDir}/get-paths`);
 const navigation = require(`./${filtersDir}/navigation`);
 const padStart = require(`./${filtersDir}/pad-start`);
+const {minifyJs} = require(`./${filtersDir}/minify-js`);
+const {cspHash, getHashList} = require(`./${filtersDir}/csp-hash`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
-const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
 const {purifyCss} = require(`./${transformsDir}/purify-css`);
 const {minifyHtml} = require(`./${transformsDir}/minify-html`);
 
@@ -105,6 +107,7 @@ const {toc: courseToc} = require('webdev-infra/filters/toc');
 module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
   const isProd = process.env.ELEVENTY_ENV === 'prod';
+  const isStaging = process.env.ELEVENTY_ENV === 'staging';
 
   // ----------------------------------------------------------------------------
   // PLUGINS
@@ -134,10 +137,10 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // COLLECTIONS
   // ----------------------------------------------------------------------------
-  config.addCollection('algolia', algolia);
   config.addCollection('authors', authors);
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('newsletters', newsletters);
+  config.addCollection('pages', pages);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
@@ -159,7 +162,8 @@ module.exports = function (config) {
   config.addFilter('githubLink', githubLink);
   config.addFilter('gitlocalizeLink', gitlocalizeLink);
   config.addFilter('htmlDateString', htmlDateString);
-  config.addFilter('imgix', imigxFilter);
+  config.addFilter('imgix', generateImgixSrc);
+  config.addFilter('isNewContent', isNewContent);
   config.addFilter('md', md);
   config.addFilter('navigation', navigation);
   config.addFilter('pagedNavigation', pagedNavigation);
@@ -168,12 +172,13 @@ module.exports = function (config) {
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('slugify', slugify);
   config.addFilter('stripBlog', stripBlog);
-  config.addFilter('stripQueryParamsDev', stripQueryParamsDev);
   config.addFilter('getPaths', getPaths);
   config.addFilter('strip', strip);
   config.addFilter('courseToc', courseToc);
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
   config.addFilter('padStart', padStart);
+  config.addFilter('minifyJs', minifyJs);
+  config.addFilter('cspHash', cspHash);
 
   // ----------------------------------------------------------------------------
   // SHORTCODES
@@ -219,8 +224,7 @@ module.exports = function (config) {
     config.addTransform('disable-lazy-load', disableLazyLoad);
   }
 
-  if (isProd) {
-    config.addTransform('responsive-images', responsiveImages);
+  if (isProd || isStaging) {
     config.addTransform('purifyCss', purifyCss);
     config.addTransform('minifyHtml', minifyHtml);
   }
@@ -234,6 +238,16 @@ module.exports = function (config) {
 
   // Make .yml files work in the _data directory.
   config.addDataExtension('yml', (contents) => yaml.safeLoad(contents));
+
+  // Make CSP hashes accessible to firebase config.
+  if (isProd) {
+    config.on('afterBuild', () => {
+      fs.writeFileSync(
+        'dist/script-hash-list.json',
+        JSON.stringify(getHashList()),
+      );
+    });
+  }
 
   return {
     dir: {

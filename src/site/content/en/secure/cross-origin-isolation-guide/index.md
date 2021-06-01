@@ -4,7 +4,7 @@ title: A guide to enable cross-origin isolation
 authors:
   - agektmr
 date: 2021-02-09
-updated: 2021-03-16
+updated: 2021-05-06
 subhead: |
   Cross-origin isolation enables a web page to use powerful features such as
   SharedArrayBuffer. This article explains how to enable cross-origin
@@ -21,24 +21,30 @@ This guide shows you how to enable cross-origin isolation. Cross-origin
 isolation is required if you want to use
 [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer),
 [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/),
+[high resolution timer with better
+precision](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/),
 or the JS Self-Profiling API.
 
-{% Banner 'info', 'body' %}
-Starting in Chrome 91, functionalities that use `SharedArrayBuffer` will no longer 
+If you intend to enable cross-origin isolation, evaluate the impact this will
+have on other cross-origin resources on your website, such as ad placements.
+
+{% Details %}
+{% DetailsSummary %}
+Determine where in your website `SharedArrayBuffer` is used
+
+Starting in Chrome 92, functionalities that use `SharedArrayBuffer` will no longer 
 work without cross-origin isolation. If you landed on this page due to a 
 `SharedArrayBuffer` deprecation message, it's likely either your website or one of 
 the resources embedded on it is using `SharedArrayBuffer`. To ensure nothing breaks 
-on your website due to deprecation, follow the steps in this post.
-{% endBanner %}
+on your website due to deprecation, start by identifying where it's used.
 
+{% endDetailsSummary %}
 
 {% Aside 'objective' %}
 * Turn on cross-origin isolation to keep using `SharedArrayBuffer`.
 * If you rely on third-party code that uses `SharedArrayBuffer`, notify the third-party 
   provider to take action.
 {% endAside %}
-
-## Determine where in your website `SharedArrayBuffer` is used
 
 If you are not sure where in your site a `SharedArrayBuffer` is used, there are
 two ways find out:
@@ -60,7 +66,7 @@ allows developers to inspect websites.
 2. Select the **Console** panel.
 3. If the page is using `SharedArrayBuffer`, the following message will show up:
       ```text
-      [Deprecation] SharedArrayBuffer will require cross-origin isolation as of M91, around May 2021. See https://developer.chrome.com/blog/enabling-shared-array-buffer/ for more details. common-bundle.js:535
+      [Deprecation] SharedArrayBuffer will require cross-origin isolation as of M92, around May 2021. See https://developer.chrome.com/blog/enabling-shared-array-buffer/ for more details. common-bundle.js:535
       ```
 4. The filename and the line number at the end of the message (for example, `common-bundle.js:535`) 
    indicate where the `SharedArrayBuffer` is coming from. If it's a third-party library, 
@@ -93,6 +99,8 @@ APIs](https://wicg.github.io/deprecation-reporting/) to a specified endpoint.
 See an example implementation here:
 [https://first-party-test.glitch.me](https://first-party-test.glitch.me).
 
+{% endDetails %}
+
 ## Analyze the impact of cross-origin isolation  {: #analysis}
 
 Wouldn't it be great if you could assess the impact that enabling cross-origin
@@ -122,9 +130,33 @@ would be impacted.
 {% endAside %}
 
 {% Aside 'caution' %}
+
 Enabling cross-origin isolation will block the loading of cross-origin resources
 that you don't explicitly opt-in, and it will prevent your top-level document
 from being able to communicate with popup windows.
+
+We've been exploring ways to deploy `Cross-Origin-Resource-Policy` at scale, as
+cross-origin isolation requires all subresources to explicitly opt-in. And we
+have come up with the idea of going in the opposite direction: [a new COEP
+"credentialless" mode](https://github.com/mikewest/credentiallessness/) that
+allows loading resources without the CORP header by stripping all their
+credentials. We are figuring out the details of how it should work, but we hope
+this will lighten your burden of making sure the subresources are sending the
+`Cross-Origin-Resource-Policy` header.
+
+Also, it's known that the `Cross-Origin-Opener-Policy: same-origin` header will
+break integrations that require cross-origin window interactions such as OAuth
+and payments. To mitigate this problem, we are exploring [relaxing the
+condition](https://github.com/whatwg/html/issues/6364) to enable cross-origin
+isolation to `Cross-Origin-Opener-Policy: same-origin-allow-popups`. This way
+the communication with the window opened by itself will be possible.
+
+If you want to enable cross-origin isolation but are blocked by these
+challenges, we recommend [registering for an origin
+trial](https://developer.chrome.com/blog/enabling-shared-array-buffer/#origin-trial)
+and waiting until the new modes are available. We are not planning to terminate
+the origin trial until these new modes are available.
+
 {% endAside %}
 
 ## Mitigate the impact of cross-origin isolation
@@ -169,8 +201,19 @@ guidelines to enable cross-origin isolation:
 3. Check that `self.crossOriginIsolated` returns `true` in console to verify
    that your page is cross-origin isolated.
 
+{% Aside 'gotchas' %}
+
+Enabling cross-origin isolation on a local server might be a pain as simple
+servers do not support sending headers. You can launch Chrome with a command
+line flag `--enable-features=SharedArrayBuffer` to enable `SharedArrayBuffer`
+without enabling cross-origin isolation. Learn [how to run Chrome with a command
+line flag on respective
+platforms](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
+
+{% endAside %}
+
 ## Resources
 
 * [Making your website "cross-origin isolated" using COOP and COEP](/coop-coep/)
 * [SharedArrayBuffer updates in Android Chrome 88 and Desktop Chrome
-  91](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
+  92](https://developer.chrome.com/blog/enabling-shared-array-buffer/)

@@ -7,7 +7,8 @@ const crypto = require('crypto');
 const fs = require('fs');
 
 const hashLength = 8;
-const isProduction = process.env.ELEVENTY_ENV === 'prod';
+const isProd = process.env.ELEVENTY_ENV === 'prod';
+const isStaging = process.env.ELEVENTY_ENV === 'staging';
 
 function randomHash() {
   return Math.random().toString(16).substring(2);
@@ -19,6 +20,16 @@ function generateAndValidateHash(c) {
     throw new TypeError('could not hash content');
   }
   return hash;
+}
+
+/**
+ * @param {string} str
+ * @return {string}
+ */
+function sha256base64(str) {
+  const c = crypto.createHash('sha256');
+  c.update(str);
+  return c.digest('base64');
 }
 
 /**
@@ -52,7 +63,7 @@ const hashForProdCache = {};
  * @return {string}
  */
 function hashForProd(file) {
-  if (!isProduction) {
+  if (!isProd && !isStaging) {
     return `${file}?v=${randomHash()}`;
   }
 
@@ -75,4 +86,5 @@ function hashForProd(file) {
 module.exports = {
   hashForProd,
   randomHash,
+  sha256base64,
 };

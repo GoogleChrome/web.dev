@@ -55,7 +55,7 @@ loads:
       <td>
         A new request is initiated to load the previous page, and, depending
         on how well that page has been <a
-        href="https://web.dev/reliable/#the-options-in-your-caching-toolbox">
+        href="/reliable/#the-options-in-your-caching-toolbox">
         optimized</a> for repeat visits, the browser might have to re-download,
         re-parse, and re-execute some (or all) of resources it just downloaded.
       </td>
@@ -511,8 +511,8 @@ the navigation was fast!
 
 Tools like the [Chrome User Experience
 Report](https://developers.google.com/web/tools/chrome-user-experience-report),
-that collect and report on the Core Web Vitals metrics will soon be updated to
-treat bfcache restores as separate page visits in the dataset.
+that collect and report on the Core Web Vitals metrics treat bfcache restores as
+separate page visits in their dataset.
 
 And while there aren't (yet) dedicated web performance APIs for measuring these
 metrics after bfcache restores, their values can be approximated using existing

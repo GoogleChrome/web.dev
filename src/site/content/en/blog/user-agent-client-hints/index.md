@@ -83,7 +83,7 @@ ratio" is, the more unique your requests are, the easier it is for servers to
 covertly track you.
 
 The User-Agent string enables many legitimate [use
-cases](https://github.com/WICG/ua-client-hints/blob/master/README.md#use-cases),
+cases](https://github.com/WICG/ua-client-hints/blob/main/README.md#use-cases),
 and serves an important purpose for developers and site owners. However, it is
 also critical that users' privacy is protected against covert tracking methods,
 and sending UA information by default goes against that goal.
@@ -151,7 +151,7 @@ progressive enhancement before going down this route.
 User-Agent Client Hints expand the range of properties with the `Sec-CH-UA`
 prefix that can be specified via the `Accept-CH` server response header. For all
 the details, start with [the
-explainer](https://github.com/WICG/ua-client-hints/blob/master/README.md) and
+explainer](https://github.com/WICG/ua-client-hints/blob/main/README.md) and
 then dive into the [full proposal](https://wicg.github.io/ua-client-hints/).
 
 {% Aside %}
@@ -170,7 +170,7 @@ concerns](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285) are
 resolved. To force the functionality on for testing:
 
 - Use Chrome 84 **beta** or equivalent.
-- Enable the `chrome://flags/#enable-experimental-web-platform-features` flag.
+- Enable the `about://flags/#enable-experimental-web-platform-features` flag.
 
 By default, the browser returns the browser brand, significant / major version,
 and an indicator if the client is a mobile device:
@@ -315,7 +315,7 @@ You can try out both the headers and the JavaScript API on your own device at
 
 {% Aside %}
 Ensure you're using Chrome 84 Beta or equivalent with
-`chrome://flags/#enable-experimental-web-platform-features` enabled.
+`about://flags/#enable-experimental-web-platform-features` enabled.
 {% endAside %}
 
 ### Hint life-time and resetting
@@ -417,7 +417,7 @@ or `navigator.platform`) to make use of User-Agent Client Hints instead.
 Taking this a step further, you should re-examine your use of User-Agent
 information, and replace it with other methods whenever possible. Often, you can
 accomplish the same goal by making use of progressive enhancement, feature
-detection, or [responsive design](https://web.dev/responsive-web-design-basics).
+detection, or [responsive design](/responsive-web-design-basics).
 The base problem with relying on the User-Agent data is that you are always
 maintaining a mapping between the property you're inspecting and the behavior it
 enables. It's a maintenance overhead to ensure that your detection is
@@ -442,12 +442,13 @@ deferred until at least 2021 to provide additional time for the ecosystem to
 evaluate the new User Agent Client Hints capabilities.
 
 You can test a version of this by enabling the
-`chrome://flags/#freeze-user-agent` flag from Chrome 84. This will return a
-string with the historical entries for compatibility reasons, but with sanitized
-specifics. For example, something like:
+`about://flags/#reduce-user-agent` flag from Chrome 93 (Note: this flag was
+named `about://flags/#freeze-user-agent` in versions Chrome 84 - 92). This will
+return a string with the historical entries for compatibility reasons, but with
+sanitized specifics. For example, something like:
 
 ```text
-Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.0.0 Mobile Safari/537.36
+Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.0.0 Mobile Safari/537.36
 ```
 
 _Photo by [Sergey Zolkin](https://unsplash.com/@szolkin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

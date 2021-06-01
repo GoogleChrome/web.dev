@@ -29,7 +29,7 @@ tags:
 This post was authored by [Ashish Choudhury](https://www.linkedin.com/in/choudhuryashish/),
 [Dinakar Chandolu](https://www.linkedin.com/in/dinakarchandolu/),
 [Abhimanyu Raibahadur](https://www.linkedin.com/in/abhimanyuraibahadur/), and
-[Dhilipvenkatesh Uvarajan](https://www.linkedin.com/in/dhilip-venkatesh-uvarajan-16914624/) 
+[Dhilipvenkatesh Uvarajan](https://www.linkedin.com/in/dhilip-venkatesh-uvarajan-16914624/)
 from Lowe's.
 {% endAside %}
 
@@ -74,7 +74,7 @@ the team can make proactive optimizations with ownership of problematic code bei
 
 ## Implementation
 
-The heart of the Site Speed Governance (SSG) app is [Lighthouse CI](https://web.dev/lighthouse-ci/).
+The heart of the Site Speed Governance (SSG) app is [Lighthouse CI](/lighthouse-ci/).
 The SSG app uses Lighthouse to validate and audit the page performance of every pull request.
 
 <figure class="w-figure">
@@ -82,7 +82,7 @@ The SSG app uses Lighthouse to validate and audit the page performance of every 
 </figure>
 
 The SSG app causes a build to fail if the Site Speed Team's defined
-[performance budget](https://web.dev/performance-budgets-101/) and metric targets are not reached.
+[performance budget](/performance-budgets-101/) and metric targets are not reached.
 It enforces not only load performance but also SEO, PWA, and accessibility.
 It can report status immediately to authors, reviewers, and SRE teams.
 It can also be configured to bypass the checks when exceptions are needed.
