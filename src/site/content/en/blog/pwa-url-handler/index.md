@@ -5,7 +5,7 @@ subhead: |
   Let installed PWAs handle URLs for a more integrated experience.
 authors:
   - thomassteiner
-date: 2021-05-31
+date: 2021-06-01
 # updated:
 description: |
   After registering a PWA as a URL handler, when a user clicks on a hyperlink that matches
@@ -27,16 +27,16 @@ and is currently in development. This post will be updated as the implementation
 Imagine you chat with a friend using an instant messenger application like Messages on macOS and you
 talk about music. Further imagine you both have the `music.example.com` PWA installed on your
 devices. If you want to share your favorite track for your friend to enjoy, you can send them a deep
-link like `https://music.example.com/rick-astley/never-gonna-give-you-up`. Since this link is not
-particularly user friendly, the developers of `music.example.com` may have decided to add an
-additional short link to each track, like, for example, `https://🎵.example.com/r-a/n-g-g-y-u`.
+link like `https://music.example.com/rick-astley/never-gonna-give-you-up`. Since this link is pretty
+long, the developers of `music.example.com` may have decided to add an additional short link to each
+track, like, for example, `https://🎵.example.com/r-a/n-g-g-y-u`.
 
 PWA as URL Handlers is a proposal that allows apps like `music.example.com` to register themselves
 as URL handlers for URLs that match patterns like `music.example.com`, `*.music.example.com`, or
 `🎵.example.com`, so that links from outside of the PWA, for example, from an instant messenger
-application, open in the installed PWA rather than in a browser tab.
+application or an email client, open in the installed PWA rather than in a browser tab.
 
-This proposal consists of two additions:
+The PWA as URL Handlers proposal consists of two additions:
 
 1. The `"url_handlers"` Web App Manifest member.
 1. The `web-app-origin-association` file format for validating out-of-scope URL associations.
@@ -45,8 +45,9 @@ This proposal consists of two additions:
 
 Examples of sites that may use this API include:
 
-- Music or video streaming sites.
-- News or RSS readers.
+- Music or video streaming sites so track links or playlist links open in the player experience of
+  the app.
+- News or RSS readers so followed or subscribed-to sites open in the app's reader mode experience.
 
 ## Current status {: #status }
 
@@ -70,7 +71,10 @@ To experiment with PWAs as URL Handlers locally, without an origin trial token, 
 `#enable-desktop-pwas-url-handling` flag in `about://flags`.
 
 {% Aside %} Support for the PWAs as URL Handlers feature is limited to desktop operating systems
-like Window, macOS, and Linux. {% endAside %}
+like Window, macOS, and Linux. On Android, Chromium browsers install PWAs by generating a
+[WebAPK](https://developers.google.com/web/fundamentals/integration/webapks), which can register a
+set of intent filters for all URLs within the scope of the app. This means that PWAs already handle
+associated URLs on Android at the operating system level using intent filters. {% endAside %}
 
 ### The `"url_handlers"` Web App Manifest member
 
@@ -79,12 +83,13 @@ Manifest. This happens through the `"url_handlers"` member. It accepts an array 
 following property:
 
 - `origin`: A required `string`, which is a pattern for matching origins. These patterns are allowed
-  to have a wildcard (`*`) prefix in order to include multiple sub-domains (`*.example.com`). URLs
-  that match these origins could be handled by this web app.
+  to have a wildcard (`*`) prefix in order to include multiple sub-domains (like `*.example.com`).
+  URLs that match these origins could be handled by this web app. The scheme is always assumed to be
+  `https://`.
 
 The excerpt of a Web App Manifest below shows how the music PWA example from the introductory
 paragraph could set this up. The second entry with the wildcard (`"*.music.example.com"`) makes sure
-that the app also gets activated for `www.music.example.com` or other examples like
+that the app also gets activated for `www.music.example.com` or potential other examples like
 `marketing-activity.music.example.com`.
 
 ```json
@@ -103,13 +108,13 @@ that the app also gets activated for `www.music.example.com` or other examples l
 }
 ```
 
-{%Aside %} While in an online scenario short links from `🎵.example.com` could be redirected to
-`music.example.com`, such navigation redirection is not a good alternative with respect to offline
-scenarios. Therefore the app needs to register for both origins. {% endAside %}
+{%Aside %} While in an online scenario short links from `🎵.example.com` would typically be
+redirected to `music.example.com`, such navigation redirection is not a good alternative with
+respect to offline scenarios. Therefore the app needs to register for both origins. {% endAside %}
 
 ### The `web-app-origin-association` file
 
-Since the PWA lives on a different domain (`music.example.com`) than some of the URLs it needs to
+Since the PWA lives on a different origin (`music.example.com`) than some of the URLs it needs to
 handle (e.g., `🎵.example.com`), the app needs to verify ownership of these other origins. This
 happens in a `web-app-origin-association` file hosted on said other origins.
 
@@ -119,10 +124,10 @@ This file must contain valid JSON. The top-level structure is an object, with a 
 `"web_apps"`. This member is an array of objects and each object represents an entry for a unique
 web app. Each object contains:
 
-| Field        | Required | Description                                              | Type     | Default |
-| ------------ | -------- | -------------------------------------------------------- | -------- | ------- |
-| `"manifest"` | yes      | URL string of the Web App Manifest of the associated PWA | `string` | N/A     |
-| `"details"`  | no       | Contains arrays of URL patterns object                   | N/A      |
+| Field        | Required | Description                                                          | Type     | Default |
+| ------------ | -------- | -------------------------------------------------------------------- | -------- | ------- |
+| `"manifest"` | yes      | URL string of the Web App Manifest of the associated PWA             | `string` | N/A     |
+| `"details"`  | no       | An object that contains arrays of included and excluded URL patterns | `object` | N/A     |
 
 Each `"details"` object contains:
 
@@ -132,8 +137,8 @@ Each `"details"` object contains:
 | `"exclude_paths"` | no       | Array of disallowed path strings | `string[]` | `[]`    |
 
 An example `web-app-origin-association` file for the music PWA example from above is given below. It
-would be hosted from the origin `🎵.example.com` and establishes the association with
-`music.example.com`.
+would be hosted on the origin `🎵.example.com` and establishes the association with the
+`music.example.com` PWA, identified by its Web App Manifest URL.
 
 ```json
 {
@@ -148,6 +153,22 @@ would be hosted from the origin `🎵.example.com` and establishes the associati
   ]
 }
 ```
+
+{% Aside %} The `web-app-origin-association` file is similar to
+[Apple's associated domain file](https://developer.apple.com/documentation/safariservices/supporting_associated_domains_in_your_app#3001215),
+[Android's `assetlinks.json` file](https://developer.android.com/training/app-links/verify-site-associations),
+and
+[Windows' `windows-app-web-link` file](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/web-to-app-linking#associate-your-app-and-website-with-a-json-file).
+What differs is that the `web-app-origin-association` file does not reference PWAs using a
+platform-specific app ID, but by their Web App Manifest URL. {% endAside %}
+
+#### When does a URL match?
+
+A PWA matches a URL for URL handling if both of the following conditions are fulfilled:
+
+- The URL matches one of the origin strings in `"url_handlers"`.
+- The browser is able to validate via the respective `web-app-origin-association` file that each
+  origin agrees to let this app handle such a URL.
 
 #### Regarding `web-app-origin-association` file discovery
 
@@ -168,11 +189,12 @@ outlined above and then install the PWA at
 [Web App Manifest](https://github.com/mandymsft/pwa/blob/main/manifest.json), you can see that it
 handles URLs from the following URL patterns: `https://mandymsft.github.io` and
 `https://luhuangmsft.github.io`. Since the latter is on a different origin (`luhuangmsft.github.io`)
-that the PWA, the PWA on `mandymsft.github.io` needs to prove ownership, which happens via the
+than the PWA, the PWA on `mandymsft.github.io` needs to prove ownership, which happens via the
 `web-app-origin-association` file hosted at
 [https://luhuangmsft.github.io/.well-known/web-app-origin-association](https://luhuangmsft.github.io/.well-known/web-app-origin-association).
-To test that it is indeed working, send yourself a test message using an instant
-messaging app of your choice or an email that you view in an email client that is not web-based like Mail on macOS on
+
+To test that it is indeed working, send yourself a test message using an instant messaging app of
+your choice or an email that you view in an email client that is not web-based like Mail on macOS on
 your device with either of the links `https://mandymsft.github.io` or
 `https://luhuangmsft.github.io`. Both should open in the installed PWA.
 
@@ -184,9 +206,30 @@ control, transparency, and ergonomics.
 
 ### User control
 
+If more than one PWA register as URL handlers for a given URL pattern, the user will be shown a
+prompt where they can choose which PWA they want to handle the pattern with—if any at all.
+Navigations that start in a browser tab are not handled by this proposal, it is explicitly aimed at
+navigations that start outside of the browser.
+
 ### Transparency
 
+If the necessary association validation cannot be completed successfully during PWA installation for
+any reason, the browser will not register the app as an active URL handler for the affected URLs.
+URL handlers, if improperly implemented, can be used to hijack traffic for websites. This is why the
+app association mechanism is an important part of the proposed scheme.
+
+Platform-specific applications can already use operating system APIs to enumerate installed
+applications on the user's system. For example, applications on Windows can use the
+[`FindAppUriHandlersAsync`](https://docs.microsoft.com/en-us/uwp/api/windows.system.launcher.findappurihandlersasync)
+API to enumerate URL handlers. If PWAs register as OS level URL handlers in Windows, their presence
+would be visible to other applications.
+
 ### Permission persistence
+
+An origin could modify its associations with PWAs at any time. Browsers will regularly attempt to
+revalidate the associations of installed web apps. If a URL handler registration fails to revalidate
+because the association data has changed or is no longer available, the browser will remove
+registrations that are no longer valid.
 
 ## Feedback {: #feedback }
 
