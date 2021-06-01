@@ -245,7 +245,8 @@ which has also been updated with this change.
 
 ## Additional Updates
 
-Outside of the updates to Cumulative Layout Shift, the following metrics related updates have also been made to our web tooling:
+Outside of the updates to Cumulative Layout Shift,
+the following metrics related updates have also been made to our web tooling:
 
 - We're updating to
 [the most recent definition of the Largest Contentful Paint metric](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/speed/metrics_changelog/2020_11_lcp.md).
@@ -259,7 +260,7 @@ We expect this change to reflect a smooth transition for most sites and encourag
 [Web Vitals](/vitals/) and
 [Optimize CLS](optimize-cls)
 for tips and tricks on how to measure and optimize your layout shifts away.
-As always, please feel free to reach out on the
+As always, feel free to reach out on the
 [web-vitals-feedback group](https://groups.google.com/g/web-vitals-feedback)
 for feedback about the metrics and our tooling specific feedback forums for
 [Lighthouse](https://github.com/GoogleChrome/lighthouse), and
