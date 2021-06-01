@@ -261,7 +261,7 @@ us know where and how you're using it.
 ## Helpful links {: #helpful }
 
 - [Public explainer][explainer]
-- [TODO API Demo][demo] | [TODO API Demo source][demo-source]
+- [Demo][demo] | [Demo source][demo-source]
 - [Chromium tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
 - Blink Component: [`UI>Browser>WebAppInstalls`][blink-component]
