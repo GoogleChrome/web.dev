@@ -111,7 +111,7 @@ repetition.
 ### Using simple and complex selectors with `:is()`
 
 For a brush up on selectors, check out the [selectors module on Learn
-CSS](https://web.dev/learn/css/selectors/#complex-selectors). Here's a few
+CSS](/learn/css/selectors/#complex-selectors). Here's a few
 examples of simple and complex selectors to help illustrate the ability:
 
 ```css
@@ -145,14 +145,14 @@ look at how they're different.
 
 When it comes to specificity, `:is()` and `:where()` strongly diverge. For a
 brush up on specificity, see the [specificity module on Learn
-CSS](https://web.dev/learn/css/specificity/).
+CSS](/learn/css/specificity/).
 
 In short
 - `:where()` has no specificity.<br>`:where()` squashes all the specificity in
   the selector list passed as functional parameters. This is a first of its
   kind selector feature. 
 - `:is()` takes the specificity of it's most specific
-  selector.<br>`:is(a,div,#id)` has a specificity score of an ID, 100 points
+  selector.<br>`:is(a,div,#id)` has a specificity score of an ID, 100 points.
 
 Taking on the highest specificity selector from the list has only been a gotcha
 for me when I was getting too excited about grouping. I was always able to
@@ -173,8 +173,8 @@ article > #nav {
 
 With `:where()`, I'm waiting to see libraries offer versions with no
 specificity. The specificity competition between author styles and library
-styles could come to an end. There would be no specificity to compete with as an
-author. CSS has been working on a grouping feature like this for quite some
+styles could come to an end. There would be no specificity to compete with when writing CSS. 
+CSS has been working on a grouping feature like this for quite some
 time, it's here, and it's still largely unexplored territory. Have fun making
 smaller stylesheets and removing commas.
 
