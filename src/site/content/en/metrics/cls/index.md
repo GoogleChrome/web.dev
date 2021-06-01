@@ -5,16 +5,23 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2020-10-09
+updated: 2021-06-01
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
-  how to measure it
+  how to measure it.
 tags:
   - performance
   - metrics
+  - web-vitals
 ---
 
-{% Aside %}
+{% Banner 'caution', 'body' %}
+Jun 1, 2021: The implementation of CLS has changed.
+To learn more about the reasons behind the change, check out [Evolving the CLS metric](/evolving-cls).
+{% endBanner %}
+
+
+{% Aside 'key-term' %}
   Cumulative Layout Shift (CLS) is an important, user-centric metric for
   measuring [visual
   stability](/user-centric-performance-metrics/#types-of-metrics) because it
@@ -68,17 +75,37 @@ measuring how often it's occurring for real users.
 
 ## What is CLS?
 
-CLS measures the sum total of all individual _layout shift scores_ for every
-_unexpected layout shift_ that occurs during the entire lifespan of the page.
-
 A _layout shift_ occurs any time a visible element changes its position from one
-rendered frame to the next. (See below for details on how individual [layout
+rendered frame to the next. 
+
+To calculate CLS, unexpected layout shifts are observed during the entire lifespan
+of the page. Since layout shifts tend to happen in bursts, those bursts are grouped
+into [_session windows_](evolving-cls/#why-a-session-window).
+Windows are capped at 5 seconds with 1 second gap.
+
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    Example of session windows. Blue bars represent the scores of each individual layout shift.
+  </figcaption>
+</figure>
+
+Each window's score is the sum of its individual layout shift scores.
+(See below for details on how individual [layout
 shift scores](#layout-shift-score) are calculated.)
 
-<picture>
-  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
-</picture>
+The value of CLS is the _maximum score of all the session windows_.
+
+
+{% Aside 'caution' %}
+Previously CLS measured the sum total of _all individual layout shift scores_
+that occurred during the entire lifespan of the page.
+To see which tools still provide the ability to benchmark against the original
+implementation, check out [Evolving Cumulative Layout Shift in web tooling](LINK-PLACEHOLDER).
+{% endAside %}
 
 ### What is a good CLS score?
 
@@ -86,6 +113,11 @@ To provide a good user experience, sites should strive to have a CLS score of
 **0.1** or less. To ensure you're hitting this target for most of your users, a
 good threshold to measure is the **75th percentile** of page loads, segmented
 across mobile and desktop devices.
+
+<picture>
+  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+</picture>
 
 {% Aside %}
   To learn more about the research and methodology behind this recommendation,
