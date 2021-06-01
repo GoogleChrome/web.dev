@@ -5,7 +5,7 @@ subhead: >
   a change to CLS has been rolled out across a number of Chrome's web tooling surfaces including
   Lighthouse, PageSpeed Insights, and Chrome UX Report.
 date: 2021-06-01
-hero: image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/UAslFmRMON2y5qtY1TZE.png
+hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/ENrTmCSZl69N9gmf0twL.jpeg
 alt: The Lighthouse Scoring Calculator
 description: >
   Starting today,
@@ -41,7 +41,7 @@ long-lived pages like Single-Page Apps (SPAs) or infinite scroll apps naturally 
 By capping the aggregation to the worst 'window' of shifts,
 CLS can now be more consistently measured regardless of session duration.
 
-By adjusting the CLS metric to a
+As we announced in [Evolving the CLS metric](/evolving-cls/), we are adjusting the CLS metric to a
 [maximum session window with a 1 second gap, capped at 5 seconds](/evolving-cls/),
 this update better reflects the user experience for long lived pages.
 With this change in place,
@@ -120,7 +120,8 @@ as well as which tools still provide the ability to benchmark against the origin
 For most developers,
 this change is expected to happen seamlessly with no action needed to take advantage of data from the fix.
 
-The update to CLS has also been made to [Search Console](https://search.google.com/search-console/about) and will be reflective from 1 June, 2021 onwards.
+The update to CLS has also been made to [Search Console](https://search.google.com/search-console/about) and will be reflective from 1 June, 2021.
+
 
 ## "Old" CLS
 
@@ -268,4 +269,7 @@ for feedback about the metrics and our tooling specific feedback forums for
 [Chrome UX Report](https://groups.google.com/a/chromium.org/g/chrome-ux-report)
 for tooling issues. Cheers!
 
-_With thanks to Johannes Henkel, Rick Viscomi and Paul Irish for their feedback._
+_With thanks to Johannes Henkel, Rick Viscomi, Vivek Sekhar, Rachel Andrew, Milica Mihajlija and Paul Irish for their feedback._
+
+_Hero image by Barn Images / @barnimages on [Unsplash](https://unsplash.com/photos/t5YUoHW6zRo)_
+
