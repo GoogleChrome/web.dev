@@ -198,6 +198,8 @@ your choice or an email that you view in an email client that is not web-based l
 your device with either of the links `https://mandymsft.github.io` or
 `https://luhuangmsft.github.io`. Both should open in the installed PWA.
 
+{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/EjFQNwv2IfINKykzsxxs.png", alt="The Windows Skype instant messenger app next to the installed demo PWA, which is opened in standalone mode after clicking a link handled by it in a Skype chat message.", width="800", height="498" %}
+
 ## Security and permissions
 
 The Chromium team has designed and implemented PWAs as URL Handlers using the core principles
@@ -270,6 +272,9 @@ us know where and how you're using it.
 
 ## Acknowledgements
 
+PWAs as URL Handlers was specified and implemented by
+[Lu Huang](https://github.com/LuHuangMSFT) from the Microsoft Edge team.
+This article was reviewed by [Joe Medley](https://github.com/jpmedley).
 Hero image via [Apple Support](https://support.apple.com/en-us/HT202549).
 
 [issues]: https://github.com/WICG/pwa-url-handler/issues
