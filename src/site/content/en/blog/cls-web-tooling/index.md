@@ -1,5 +1,5 @@
 ---
-title: Evolving Cumulative Layout Shift in Web Tooling
+title: Evolving Cumulative Layout Shift in web tooling
 subhead: >
   Starting today,
   a change to CLS has been rolled out across a number of Chrome's web tooling surfaces including
@@ -13,6 +13,7 @@ description: >
   Lighthouse, PageSpeed Insights, and Chrome UX Report.
 tags:
   - blog
+  - web-vitals
 authors:
   - addyosmani
   - egsweeny
@@ -243,7 +244,7 @@ Or by relying directly on the
 [Web Vitals JavaScript library](https://github.com/GoogleChrome/web-vitals),
 which has also been updated with this change.
 
-## Additional Updates
+## Additional updates
 
 Outside of the updates to Cumulative Layout Shift,
 the following metrics related updates have also been made to our web tooling:
