@@ -4,7 +4,7 @@ subhead: >
   Starting today,
   a change to CLS has been rolled out across a number of Chrome's web tooling surfaces including
   Lighthouse, PageSpeed Insights, and Chrome UX Report.
-date: 2021-06-02
+date: 2021-06-01
 hero: image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/UAslFmRMON2y5qtY1TZE.png
 alt: The Lighthouse Scoring Calculator
 description: >
@@ -23,7 +23,7 @@ Today we would like to share how we are evolving measurement of the
 [Cumulative Layout Shift](/cls) (CLS)
 metric across a number of Chrome's web tooling surfaces.
 For developers, these changes will better reflect the user-experience for
-[long-lived pages](/better-layout-shift-metric/)
+[long-lived pages](/evolving-cls/)
 (such as those with infinite scroll or single-page apps).
 These updates to CLS will be rolling out to tools including Lighthouse,
 PageSpeed Insights, and Chrome UX Report.
@@ -120,6 +120,8 @@ as well as which tools still provide the ability to benchmark against the origin
 For most developers,
 this change is expected to happen seamlessly with no action needed to take advantage of data from the fix.
 
+The update to CLS has also been made to [Search Console](https://search.google.com/search-console/about) and will be reflective from 1 June, 2021 onwards.
+
 ## "Old" CLS
 
 As some developers may wish to monitor the older definition of CLS alongside the windowing-adjustment,
@@ -209,11 +211,9 @@ src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/UAslFmRMON2y5qtY1TZE.png",
 alt="Lighthouse scoring calculator",
 width="800", height="405" %}
 
-{% Aside %}
-Lighthouse 8.0's CLS implementation includes both windowing and support for AllFrames.
-Lighthouse has historically not included subframes in our metric calculation,
-but with AllFrames support this has now changed.
-{% endAside %}
+Lighthouse 8.0's CLS implementation includes both windowing and CLS contribution from subframes. Prior to 8.0, CLS in Lighthouse didn't include subframes' CLS in the metric calculation, but now does. And just for confirmation, field CLS measured by CrUX handles also handles windowing and subframes similarly. 
+
+Still, the primary difference between lab and field CLS is that lab CLS's window of observation ends at "fully loaded" as determined under lab conditions, whereas in the field, the window of observation extends to the entire page lifetime, including post-load activity. That said, the windowing adjustment does mitigate this difference substantially.
 
 ## Measuring in the field yourself
 
