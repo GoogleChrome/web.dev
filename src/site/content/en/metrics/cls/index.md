@@ -104,7 +104,7 @@ The value of CLS is the _maximum score of all the session windows_.
 Previously CLS measured the sum total of _all individual layout shift scores_
 that occurred during the entire lifespan of the page.
 To see which tools still provide the ability to benchmark against the original
-implementation, check out [Evolving Cumulative Layout Shift in web tooling](LINK-PLACEHOLDER).
+implementation, check out [Evolving Cumulative Layout Shift in web tooling](/cls-web-tooling).
 {% endAside %}
 
 ### What is a good CLS score?
