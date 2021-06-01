@@ -20,11 +20,12 @@ const {Img} = require('./Img');
 
 module.exports = ({id, author, showSocialMedia = false, small = false}) => {
   if (!author) {
-    throw new Error(
+    console.log(
       `Can't create Author component for "${id}" without author ` +
         `information. Please check '_data/authorsData.json' and make sure the ` +
         `author you provide is a key in this object.`,
     );
+    return;
   }
 
   if (!author.name) {
