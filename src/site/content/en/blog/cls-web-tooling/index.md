@@ -223,7 +223,10 @@ you can also record this for your field data via RUM using the following Perform
 
 ```js
 {
-  let max = 0, curr = 0, firstTs = Number.NEGATIVE_INFINITY, prevTs = Number.NEGATIVE_INFINITY;
+  let max = 0;
+  let curr = 0;
+  let firstTs = Number.NEGATIVE_INFINITY;
+  let prevTs = Number.NEGATIVE_INFINITY;
 
   new PerformanceObserver((entryList) => {
     for (const entry of entryList.getEntries()) {
