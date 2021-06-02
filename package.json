@@ -60,6 +60,7 @@
     "lit-element": "^2.2.0",
     "lit-html": "^1.2.1",
     "lodash.get": "^4.4.2",
+    "nunjucks": "^3.2.3",
     "pretty-ms": "^7.0.0",
     "strip-comments": "^2.0.1",
     "terser": "^4.6.4",
