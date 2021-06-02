@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
   navItems(collection) {
-    return collection.filter(x => !x.inputPath.includes('variants'));
+    return collection.filter((x) => !x.inputPath.includes('variants'));
   },
   getVariants(item, collection) {
     // If the item itself is a variant, return early.
@@ -12,21 +12,18 @@ module.exports = {
       return;
     }
 
-    const basePath = item.filePathStem
-      .split('/')
-      .slice(0, 3)
-      .join('/');
+    const basePath = item.filePathStem.split('/').slice(0, 3).join('/');
 
     return collection.filter(
-      x =>
+      (x) =>
         x.filePathStem.indexOf(basePath) === 0 &&
-        x.filePathStem.includes('variants')
+        x.filePathStem.includes('variants'),
     );
   },
   render(item) {
     const markup = fs.readFileSync(
       path.resolve(__basedir, item.inputPath),
-      'utf8'
+      'utf8',
     );
 
     return nunjucks.renderString(markup, {data: item.data});
@@ -34,13 +31,17 @@ module.exports = {
   renderSource(item) {
     const markup = fs.readFileSync(
       path.resolve(__basedir, item.inputPath),
-      'utf8'
+      'utf8',
     );
 
     return markup;
   },
   getDocs(item) {
-    const docsPath = path.join(__basedir, path.dirname(item.inputPath), 'docs.md');
+    const docsPath = path.join(
+      __basedir,
+      path.dirname(item.inputPath),
+      'docs.md',
+    );
 
     if (!fs.existsSync(docsPath)) {
       return null;
