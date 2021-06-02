@@ -16,10 +16,10 @@ tags:
 ---
 
 {% Banner 'caution', 'body' %}
-Jun 1, 2021: The implementation of CLS has changed.
-To learn more about the reasons behind the change, check out [Evolving the CLS metric](/evolving-cls).
+  **Jun 1, 2021:** The implementation of CLS has changed.
+  To learn more about the reasons behind the change, check out [Evolving the
+  CLS metric](/evolving-cls).
 {% endBanner %}
-
 
 {% Aside 'key-term' %}
   Cumulative Layout Shift (CLS) is an important, user-centric metric for
