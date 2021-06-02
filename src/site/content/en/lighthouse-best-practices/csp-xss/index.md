@@ -9,21 +9,17 @@ web_lighthouse:
   - csp-xss
 ---
 
-A Content Security Policy (CSP) helps to ensure any content loaded in the page is trusted by the site owner. CSPs mitigate cross-site scripting (XSS) attacks because they can block unsafe scripts injected by attackers. However, the CSP can easily be bypassed if it is not strict enough. Check out [Mitigate cross-site scripting (XSS) with a strict Content Security Policy (CSP)](https://web.dev/strict-csp/) for more information.
-
-## How Lighthouse detects if a CSP is strict enough
-
-Lighthouse uses findings collected by [CSP Evaluator](https://csp-evaluator.withgoogle.com/) to determine if a CSP is bypassable.
+A Content Security Policy (CSP) helps to ensure any content loaded in the page is trusted by the site owner. CSPs mitigate cross-site scripting (XSS) attacks because they can block unsafe scripts injected by attackers. However, the CSP can easily be bypassed if it is not strict enough.  Check out [Mitigate cross-site scripting (XSS) with a strict Content Security Policy (CSP)](https://web.dev/strict-csp/) for more information. Lighthouse collects CSPs enforced on the main document, and reports issues from [CSP Evaluator](https://csp-evaluator.withgoogle.com/) if they can be bypassed.
 
 {% Img src="image/9B7J9oWjgsWbuE84mmxDaY37Wpw2/42a4iEEKsD4T3yU47vNQ.png",
 alt="Lighthouse report warning that no CSP is found in enforcement mode.",
 width="730", height="78", class="w-screenshot" %}
 
-### Requirements
+## Required practices for a non-bypassable CSP
 
-Implement the following practices to ensure that your CSP can't be bypassed.
+Implement the following practices to ensure that your CSP can't be bypassed. If the CSP can be bypassed, Lighthouse will emit a high severity warning.
 
-#### CSP targets XSS
+### CSP targets XSS
 
 To target XSS, a CSP should include the `script-src`, `object-src`, and `base-uri` directives. The CSP should also be free of syntax errors.
 
@@ -31,7 +27,7 @@ To target XSS, a CSP should include the `script-src`, `object-src`, and `base-ur
 
 `base-uri` prevents the injection of unauthorized `<base>` tags which can be used to redirect all relative URLs (like scripts) to an attacker-controlled domain.
 
-#### CSP is effective against XSS
+### CSP uses nonces or hashes to avoid allowlist bypasses
 
 A CSP that configures an allowlist for `script-src` relies on the assumption that all responses coming from a trusted domain are safe, and can be executed as scripts. However, this assumption does not hold for modern applications; some common, benign patterns such as exposing [JSONP interfaces](https://lcamtuf.blogspot.ch/2011/08/subtle-deadly-problem-with-csp.html) and [hosting copies of the AngularJS library](https://github.com/cure53/XSSChallengeWiki/wiki/H5SC-Minichallenge-3:-%22Sh*t,-it's-CSP!%22) allow attackers to escape the confines of CSP.
 
@@ -48,23 +44,22 @@ script-src https://trusted.example.com
 HTML:
 
 ```html
-<script src="https://trusted.example.com/path/jsonp?callback=alert(document.domain)//">
-</script>
+<script src="https://trusted.example.com/path/jsonp?callback=alert(document.domain)//"></script>
 ```
 
-To avoid being bypassed, a CSP should allow scripts individually using nonces or hashes and use `'strict-dynamic'` instead of an allowlist.
+To avoid being bypassed, a CSP should allow scripts individually using nonces or hashes and use 'strict-dynamic' instead of an allowlist.
 
-### Recommendations
+## Additional recommendations for a secure CSP
 
-Implement the following practices for added security and compatibility.
+Implement the following practices for added security and compatibility. If the CSP does not follow one of the recommendations, Lighthouse will emit a medium severity warning.
 
-#### Configure CSP reporting
+### Configure CSP reporting
 
 [Configuring a reporting destination](https://developers.google.com/web/updates/2018/09/reportingapi) will help monitor for any breakages. You can set the reporting destination by using the `report-uri` or `report-to` directives. `report-to` is not currently supported by all modern browsers so it is recommended to use both or just `report-uri`.
 
 If any content violates the CSP, the browser will send a report to the configured destination. Make sure you have an application configured at this destination handling these reports.
 
-#### Define the CSP in an HTTP header
+### Define the CSP in an HTTP header
 
 A CSP can be defined in a meta tag like this:
 
@@ -74,17 +69,15 @@ A CSP can be defined in a meta tag like this:
 
 However, you should define a CSP in an HTTP response header if you can. An injection before the meta tag will bypass the CSP. Additionally, `frame-ancestors`, `sandbox` and reporting are not supported in meta tag CSPs.
 
-#### Ensure CSP is backwards compatible
+### Ensure CSP is backwards compatible
 
-Not all browsers support CSP nonces/hashes, therefore adding `'unsafe-inline'` as a fallback for non-compliant browsers is recommended. If the browser does support nonces/hashes, `'unsafe-inline'` will be ignored.
+Not all browsers support CSP nonces/hashes, therefore adding `unsafe-inline` as a fallback for non-compliant browsers is recommended. If the browser does support nonces/hashes, `unsafe-inline` will be ignored.
 
-Similarly, `'strict-dynamic'` is not supported by all browsers. It is recommended to set an allowlist as a fallback for any non-compliant browsers. The allowlist will be ignored in browsers that support `'strict-dynamic'`.
+Similarly, `strict-dynamic` is not supported by all browsers. It is recommended to set an allowlist as a fallback for any non-compliant browsers. The allowlist will be ignored in browsers that support `strict-dynamic`.
 
 ## How to develop a strict CSP
 
-Define a CSP in an HTTP response header named `Content-Security-Policy`. Make sure your CSP uses `script-src`, `object-src`, and `base-uri` (`default-src` will also work for `script-src` and `object-src`).
-
-Use CSP nonces or hashes in combination with `'strict-dynamic'` to secure the page from allowlist bypasses. Below is an example of using a hardened CSP with a nonce-based policy.
+Below is an example of using a strict CSP with a nonce-based policy.
 
 CSP:
 
@@ -101,10 +94,6 @@ HTML:
 <script nonce="random123" src="https://trusted.example.com/trusted_script.js"></script>
 ```
 
-`random123` would be any base64 string generated every time the page loads. `'unsafe-inline'` and `https:` are ignored in modern browsers because of the nonce and `'strict-dynamic'`. For more information about adopting a strict CSP, check out the [Strict CSP guide](https://web.dev/strict-csp/#adopting-a-strict-csp).
+`random123` would be any base64 string generated server-side every time the page loads. `unsafe-inline` and `https:` are ignored in modern browsers because of the nonce and `strict-dynamic`. For more information about adopting a strict CSP, check out the [Strict CSP guide](https://web.dev/strict-csp/#adopting-a-strict-csp).
 
-### Testing a CSP
-
-In addition to running Lighthouse, you can check a CSP for potential bypasses using [CSP Evaluator](https://csp-evaluator.withgoogle.com/) directly.
-
-If you want to test a new CSP without the risk of breaking existing pages, define the CSP in report-only mode by using `Content-Security-Policy-Report-Only` as the header name. This will send CSP violations to any reporting destinations you have configured with `report-to` and `report-uri`, but it will not actually enforce the CSP.
+You can check a CSP for potential bypasses using Lighthouse and [CSP Evaluator](https://csp-evaluator.withgoogle.com/). If you want to test a new CSP without the risk of breaking existing pages, define the CSP in report-only mode by using `Content-Security-Policy-Report-Only` as the header name. This will send CSP violations to any reporting destinations you have configured with `report-to` and `report-uri`, but it will not actually enforce the CSP.
