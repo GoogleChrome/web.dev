@@ -197,7 +197,7 @@ with "old CLS" being retired on December 14th, 2021.
 When CLS was first introduced in Lighthouse,
 it was a brand new sparkly metric.
 As such, in order to make sure developers had time to test, benchmark,
-and optimize against it,in the performance score CLS was weighed less heavily.
+and optimize against it, CLS was weighed less heavily in the performance score.
 
 Now, after having had some time in the hands of developers,
 the Lighthouse score has increased the weight of CLS from 5% to 15%,
@@ -212,7 +212,7 @@ src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/UAslFmRMON2y5qtY1TZE.png",
 alt="Lighthouse scoring calculator",
 width="800", height="405" %}
 
-Lighthouse 8.0's CLS implementation includes both windowing and CLS contribution from subframes. Prior to 8.0, CLS in Lighthouse didn't include subframes' CLS in the metric calculation, but now does. And just for confirmation, field CLS measured by CrUX handles also handles windowing and subframes similarly. 
+Lighthouse 8.0's CLS implementation includes both windowing and CLS contribution from subframes. Prior to 8.0, CLS in Lighthouse didn't include subframes' CLS in the metric calculation, but now does. And just for confirmation, field CLS measured by CrUX also handles windowing and subframes similarly. 
 
 Still, the primary difference between lab and field CLS is that lab CLS's window of observation ends at "fully loaded" as determined under lab conditions, whereas in the field, the window of observation extends to the entire page lifetime, including post-load activity. That said, the windowing adjustment does mitigate this difference substantially.
 
@@ -251,7 +251,7 @@ which has also been updated with this change.
 ## Additional updates
 
 Outside of the updates to Cumulative Layout Shift,
-the following metrics related updates have also been made to our web tooling:
+the following metrics-related updates have also been made to our web tooling:
 
 - We're updating to
 [the most recent definition of the Largest Contentful Paint metric](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/speed/metrics_changelog/2020_11_lcp.md).
@@ -275,4 +275,3 @@ for tooling issues. Cheers!
 _With thanks to Johannes Henkel, Rick Viscomi, Vivek Sekhar, Rachel Andrew, Milica Mihajlija, Jeff Jose and Paul Irish for their feedback._
 
 _Hero image by Barn Images / @barnimages on [Unsplash](https://unsplash.com/photos/t5YUoHW6zRo)_
-
