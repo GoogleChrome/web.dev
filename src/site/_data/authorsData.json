@@ -2202,6 +2202,20 @@
     },
     "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/pguQ0oykD0nNu9jM5OcP.jpeg"
   },
+  "mgiuca": {
+    "name": {
+      "given": "Matt",
+      "family": "Giuca"
+    },
+    "twitter": "mgiuca",
+    "github": "mgiuca",
+    "org": {
+      "name": "Google",
+      "unit": "Engineering"
+    },
+    "country": "AU",
+    "image": "image/26V1DWN36MZr3mUo8ChSBlCpzp43/9gFKixjZHcpFPVcOX9Av.jpg"
+  },
   "swethagopalakrishnan": {
     "name": {
       "given": "Swetha",
@@ -2253,5 +2267,20 @@
     "github": "minhaz",
     "twitter": "_mkazi_",
     "image": "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/JIhb3g9F2oAg2t3PJ5Y2.jpeg"
+  },
+  "cmp": {
+    "name": {
+      "given": "Chase",
+      "family": "Phillips"
+    },
+    "github": "chasephillips",
+    "org": {
+      "name": "Google",
+      "unit": "Engineering"
+    },
+    "descriptions": {
+      "en": "Software Engineer on the Google Chrome team"
+    },
+    "country": "US"
   }
 }
