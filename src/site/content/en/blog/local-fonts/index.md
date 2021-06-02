@@ -170,10 +170,10 @@ The Local Font Access API is an attempt at solving these challenges. It consists
 
 ### How to use the Local Font Access API
 
-#### Enabling via chrome://flags
+#### Enabling via about://flags
 
 To experiment with the Local Font Access API locally, enable the `#font-access` flag in
-`chrome://flags`.
+`about://flags`.
 
 ### Enabling support during the origin trial phase
 

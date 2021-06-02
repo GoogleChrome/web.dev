@@ -1,12 +1,15 @@
 ---
 title: Specificity
-description:
+description: >
+  This module takes a deeper look at specificity, a key part of the cascade.
+audio:
+  title: 'The CSS Podcast - 003: Specificity'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_003_v2.0_FINAL.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-02
 ---
-
-# Specificity
 
 Suppose that you're working with the following HTML and CSS:
 
@@ -36,7 +39,8 @@ which was covered in the last module, on [the cascade](/learn/css/the-cascade/).
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'YzNKMXm'
+  id: 'YzNKMXm',
+  height: 200
 } %}
 </figure>
 
@@ -47,7 +51,7 @@ You can think of specificity as a total score and each selector type earns point
 The selector with the highest score wins.
 
 With specificity in a real project,
-the balancing act is making sure the CSS rules you expect to apply, actually *do apply,*
+the balancing act is making sure the CSS rules you expect to apply, actually _do apply,_
 while generally keeping scores low to prevent complexity.
 The score should only be as high as we need it to be,
 rather than aiming for the highest score possible.
@@ -67,7 +71,7 @@ This means that any rule with 1 or more points will override it
 
 ```css
 * {
-	color: red;
+  color: red;
 }
 ```
 
@@ -81,7 +85,7 @@ selector gets **1 point of specificity** .
 
 ```css
 div {
-	color: red;
+  color: red;
 }
 ```
 
@@ -89,20 +93,21 @@ div {
 
 ```css
 ::selection {
-	color: red;
+  color: red;
 }
 ```
 
-### Class, attribute or pseudo-class selector
+### Class, pseudo-class, or attribute selector
 
-A [class](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) or
-[pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) selector gets **10 points of specificity**.
+A [class](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors),
+[pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) or
+[attribute](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) selector gets **10 points of specificity**.
 
 #### Class selector
 
 ```css
 .my-class {
-	color: red;
+  color: red;
 }
 ```
 
@@ -110,18 +115,17 @@ A [class](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) or
 
 ```css
 :hover {
-	color: red;
+  color: red;
 }
 ```
 
 #### Attribute selector
 
 ```css
-[href="#"] {
-	color: red;
+[href='#'] {
+  color: red;
 }
 ```
-
 
 The [`:not()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:not)
 pseudo-class itself adds nothing to the specificity calculation.
@@ -129,7 +133,7 @@ However, the selectors passed in as arguments do get added to the specificity ca
 
 ```css
 div:not(.my-class) {
-	color: red
+  color: red;
 }
 ```
 
@@ -144,7 +148,7 @@ as long as you use an ID selector (`#myID`) and not an attribute selector (`[id=
 
 ```css
 #myID {
-	color: red
+  color: red;
 }
 ```
 
@@ -169,8 +173,8 @@ so everything in the overall rule (selector and properties) does not get the sam
 
 ```css
 .my-class {
-	color: red !important; /* 10,000 points */
-	background: white; /* 10 points */
+  color: red !important; /* 10,000 points */
+  background: white; /* 10 points */
 }
 ```
 
@@ -204,7 +208,7 @@ a.my-class {
 ```
 
 Add the other class to the selector,
-it now has  **21 points of specificity**:
+it now has **21 points of specificity**:
 
 ```css
 a.my-class.another-class {
@@ -237,7 +241,7 @@ a.my-class.another-class[href]:hover {
 In diagrams and specificity calculators,
 the specificity is often visualized like this:
 
-{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/d1q5VKbFOQG2TBXoBtgm.png", alt="A diagram demonstrating most specific to least specific selectors", width="800", height="474" %}
+{% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/McrFhjqHXMznUzXbRuJ6.svg", alt="A diagram demonstrating most specific to least specific selectors", width="800", height="474" %}
 
 The left group is `id` selectors.
 The second group is class, attribute, and pseudo-class selectors.
@@ -259,11 +263,11 @@ Let's say we have some CSS that looks like this:
 
 ```css
 .my-button {
-	background: blue;
+  background: blue;
 }
 
 button[onclick] {
-	background: grey;
+  background: grey;
 }
 ```
 
@@ -276,7 +280,8 @@ With HTML that looks like this:
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'abpoxdR'
+  id: 'abpoxdR',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -293,18 +298,19 @@ repeat the class selector like this:
 
 ```css
 .my-button.my-button {
-	background: blue;
+  background: blue;
 }
 
 button[onclick] {
-	background: grey;
+  background: grey;
 }
 ```
 
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'zYNOXBJ'
+  id: 'zYNOXBJ',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -324,11 +330,11 @@ Let's stay with the button example for now and switch the CSS around to this:
 
 ```css
 .my-button {
-	background: blue;
+  background: blue;
 }
 
 [onclick] {
-	background: grey;
+  background: grey;
 }
 ```
 
@@ -338,7 +344,8 @@ because **both selectors have an identical specificity score** (`0-1-0`).
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'zYNOXKJ'
+  id: 'zYNOXKJ',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -347,18 +354,19 @@ the button would then be blue.
 
 ```css
 [onclick] {
-	background: grey;
+  background: grey;
 }
 
 .my-button {
-	background: blue;
+  background: blue;
 }
 ```
 
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'WNReWRO'
+  id: 'WNReWRO',
+  tab: 'css,result'
 } %}
 </figure>
 

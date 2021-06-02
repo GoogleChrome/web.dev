@@ -27,9 +27,7 @@ different APIs, the [Workbox library](https://developers.google.com/web/tools/wo
 some advanced cases.
 
 <figure class="w-figure">
-  <img src="two-way-communication-diagram.png"
-       width="800"
-       alt="Diagram showing a service worker and the page exchanging messages.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/HIbZyXbQNijm1S4eQlEv.png", alt="Diagram showing a service worker and the page exchanging messages.", width="800", height="310" %}
 </figure>
 
 {% Aside %}
@@ -77,9 +75,7 @@ implementation details, making it easier to use, while leveraging the [wide brow
 support](https://caniuse.com/mdn-api_messagechannel_port1) this API has.
 
 <figure class="w-figure">
-  <img src="workbox-window-diagram.png"
-       width="700"
-       alt="Diagram showing two-way communication between page and service worker, using Workbox Window.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DxyWzq96JQCU3hADZiN8.png", alt="Diagram showing two-way communication between page and service worker, using Workbox Window.", width="700", height="410" %}
 </figure>
 
 ## Using Browser APIs {: #using-browser-apis }
@@ -103,9 +99,7 @@ Differences:
 - Browser support varies among them.
 
 <figure class="w-figure">
-  <img src="communication-apis.png"
-       width="600"
-       alt="Diagram showing two-way communication between page and service worker, and the available browser APIs.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/nPYcdQbxAezigMiuoLJg.png", alt="Diagram showing two-way communication between page and service worker, and the available browser APIs.", width="600", height="273" %}
 </figure>
 
 ### Broadcast Channel API {: #broadcast-channel-api }
@@ -145,9 +139,7 @@ As seen, there's no explicit reference to a particular context, so there's no ne
 reference first to the service worker or any particular client.
 
 <figure class="w-figure">
-  <img src="broadcast-channel.png"
-       width="700"
-       alt="Diagram showing two-way communication between page and service worker, using a Broadcast Channel object.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uWl3NVD3rxbSoA0JxvuN.png", alt="Diagram showing two-way communication between page and service worker, using a Broadcast Channel object.", width="700", height="355" %}
 </figure>
 
 The disadvantage is that, at the moment of this writing, the API has support from Chrome, Firefox
@@ -205,9 +197,7 @@ self.clients.matchAll(options).then(function (clients) {
 ```
 
 <figure class="w-figure">
-  <img src="client-api.png"
-       width="500"
-       alt="Diagram showing a service worker communicating with an array of clients.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/oApyHsmljr1KkBW85Wv9.png", alt="Diagram showing a service worker communicating with an array of clients.", width="500", height="348" %}
 </figure>
 
 `Client API` is a good option to communicate easily with all the active tabs from a service worker
@@ -246,9 +236,7 @@ messageChannel.port1.onmessage = (event) => {
 ```
 
 <figure class="w-figure">
-  <img src="message-channel.png"
-       width="600"
-       alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/THMp68FKAah5qYIsiFOk.png", alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.", width="600", height="344" %}
 </figure>
 
 The service worker receives the port, saves a reference to it and uses it to send a message to the other
@@ -315,9 +303,7 @@ them later when the user is online. Once the operation is performed, they commun
 the user via a web push notification:
 
 <figure class="w-figure">
-  <img src="google-search-background-sync.png"
-       width="700"
-       alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eMbvk9IRoaAggs8t5CbF.png", alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.", width="700", height="381" %}
 </figure>
 
 {% Aside %} Check out [Resilient search experiences
@@ -374,9 +360,7 @@ bgFetch.addEventListener('progress', () => {
 ```
 
 <figure class="w-figure">
-  <img src="podcast-pwa.png"
-       width="700"
-       alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Ii1koJyCl0drJyewTIxV.png", alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.", width="700", height="434" %}
     <figcaption class="w-figcaption">The UI is updated to indicate the progress of a download (left). Thanks to service workers, the operation can continue running when all tabs have been closed (right).
     </figcaption>
 </figure>

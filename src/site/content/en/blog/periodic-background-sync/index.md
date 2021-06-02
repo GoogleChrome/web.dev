@@ -152,7 +152,7 @@ Furthermore, since Chrome doesn't want unused or seldom used web apps to gratuit
 consume battery or data, Chrome designed periodic background sync such that
 developers will have to earn it by providing value to their users. Concretely,
 Chrome is using a [site engagement score](https://www.chromium.org/developers/design-documents/site-engagement)
-(`chrome://site-engagement/`) to determine if and how often periodic background syncs can happen
+(`about://site-engagement/`) to determine if and how often periodic background syncs can happen
 for a given web app. In other words, a `periodicsync` event won't be fired at all unless the engagement
 score is greater than zero, and its value affects the frequency at which the
 `periodicsync` event fires. This ensures that the only apps syncing in the

@@ -5,6 +5,9 @@ snapshot:
     iframe {
       display: none !important;
     }
+    video {
+      visibility: hidden !important;
+    }
 agent:
   asset-discovery:
     network-idle-timeout: 250 # ms

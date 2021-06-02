@@ -47,4 +47,5 @@ exports.plugins = [
   require('./tools/linting/no-repeat-punctuation.js'),
   require('./tools/linting/no-smart-quotes.js'),
   require('./tools/linting/no-unescaped-template-tags.js'),
+  require('./tools/linting/no-chrome-scheme.js'),
 ];

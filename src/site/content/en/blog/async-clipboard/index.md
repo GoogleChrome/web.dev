@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2021-02-08
+updated: 2021-05-10
 tags:
   - blog
   - capabilities
@@ -110,6 +110,22 @@ try {
   console.error(err.name, err.message);
 }
 ```
+
+{% Aside 'warning' %}
+  Safari (WebKit) treats user activation differently than Chromium (Blink)
+  (see [WebKit bug #222262](https://bugs.webkit.org/show_bug.cgi?id=222262)).
+  For Safari, run all asynchronous operations in a promise
+  whose result you assign to the `ClipboardItem`:
+
+  ```js
+  new ClipboardItem({
+    'foo/bar': new Promise(async (resolve) => {
+        // Prepare `blobValue` of type `foo/bar`
+        resolve(new Blob([blobValue], { type: 'foo/bar' }));
+      }),
+    })
+  ```
+{% endAside %}
 
 ### The copy event
 
@@ -226,7 +242,7 @@ image data, but it could also come from a
 or the [File System Access API](/file-system-access/).
 
 ```js
-function copy() {
+async function copy() {
   const image = await fetch('kitten.png');
   const text = new Blob(['Cute sleeping kitten'], {type: 'text/plain'});
   const item = new ClipboardItem({
@@ -384,7 +400,7 @@ The first example demonstrates moving text on and off the clipboard.
 
 To try the API with images use this demo. Recall that only PNGs are supported
 and only in
-[a few browsers]([https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API).
+[a few browsers](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API#browser_compatibility).
 
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe

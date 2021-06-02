@@ -32,27 +32,21 @@ The process involves 6 steps:
 2. The merchant shows a payment button.
 3. The customer presses the payment button.
 
-    ![A diagram of a cheese shop website with a BobPay (payment app)
-    button.](123.svg)
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/NQIh5tt5wsQFC5yKLCaU.svg", alt="A diagram of a cheese shop website with a BobPay (payment app) button.", width="786", height="298" %}
 
 4. The browser launches the payment app.
 
-    ![A diagram of the cheese shop website with BobPay app launched in a modal.
-    The modal shows shipping options and total cost.](4.svg)
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IHztIcfJKeWDUIkugTkb.svg", alt="A diagram of the cheese shop website with BobPay app launched in a modal. The modal shows shipping options and total cost.", width="671", height="366" %}
 
 5. If the customer changes any details (such as shipping options or their
    address), the merchant updates the transaction details reflecting the change.
 
-    ![A diagram showing the customer choosing a different shipping option in
-    BobPay app modal. A second diagram showing the merchant updating the total
-    cost displayed in BobPay.](5.svg)
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BR9Od63aOdG9CaaD1z7K.svg", alt="A diagram showing the customer choosing a different shipping option in BobPay app modal. A second diagram showing the merchant updating the total cost displayed in BobPay.", width="777", height="702" %}
 
 6. After the customer confirms the purchase, the merchant validates the payment
    and completes the transaction.
 
-    ![A diagram showing the customer pressing the "Pay" button in BobPay,
-    followed by a diagram of the cheese shop page showing "Payment
-    accepted".](6.svg)
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9Q6VqimbOxJ3ZXHvB8ry.svg", alt="A diagram showing the customer pressing the \"Pay\" button in BobPay, followed by a diagram of the cheese shop page showing \"Payment accepted\".", width="778", height="708" %}
 
 ## Step 1: The merchant initiates a payment transaction
 

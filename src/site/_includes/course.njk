@@ -2,6 +2,8 @@
 layout: base
 pageScripts:
   - '/js/course.js'
+inlineScripts:
+  - '../../../lib/components/CourseLinks/index.js'
 ---
 
 {% from 'macros/audio-fab.njk' import audioFab %}
@@ -43,6 +45,8 @@ pageScripts:
   <div class="flex-1 min-width-0">
     {% include 'partials/course-app-bar.njk' %}
 
+    <div class="sticky-observer"></div>
+
     <div class="course-content display-flex justify-content-center">
       {% include 'partials/toc-side.njk' %}
       <main id="main">
@@ -68,3 +72,23 @@ pageScripts:
     {% include 'partials/footer.njk' %}
   </div>
 </div>
+
+{# This little script just watches a sentinel element using an
+IntersectionObserver so we can add a "stuck" state to our course-app-bar and
+have it display a bottom border. #}
+{% set stickyObserver %}
+const target = document.querySelector('.sticky-observer');
+const callback = (entries, observer) => {
+  entries.forEach(entry => {
+    const appBar = document.querySelector('.course-app-bar');
+    if (entry.isIntersecting) {
+      appBar.removeAttribute('data-stuck');
+    } else {
+      appBar.setAttribute('data-stuck', '');
+    }
+  });
+};
+const observer = new IntersectionObserver(callback);
+observer.observe(target);
+{% endset %}
+<script>{{ stickyObserver | minifyJs | cspHash | safe }}</script>

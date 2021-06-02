@@ -7,9 +7,10 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2020-11-02
+updated: 2021-05-28
 tags:
   - blog
+  - capabilities
   - file-handling
 hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
@@ -53,10 +54,10 @@ Examples of sites that may use this API include:
 
 ## How to use the File Handling API {: #use }
 
-### Enabling via chrome://flags
+### Enabling via about://flags
 
 To experiment with the File Handling API locally, without an origin trial token, enable the
-`#file-handling-api` flag in `chrome://flags`.
+`#file-handling-api` flag in `about://flags`.
 
 ### Progressive enhancement
 
@@ -80,8 +81,8 @@ if ('launchQueue' in window) {
 
 ### The declarative part of the File Handling API
 
-As a first step, web apps need to declaratively describe in their [Web App Manifest](/add-manifest/)
-what kind of files they can handle. The File Handling API extends Web App Manifest with a new
+As a first step, web apps need to declaratively describe in their [web app manifest](/add-manifest/)
+what kind of files they can handle. The File Handling API extends web app manifest with a new
 property called `"file_handlers"` that accepts an array of, well, file handlers. A file handler is an
 object with two properties:
 
@@ -89,7 +90,7 @@ object with two properties:
 - An `"accept"` property with an object of MIME-types as keys and lists of file extensions as their
   values.
 
-The example below, showing only the relevant excerpt of the Web App Manifest, should make it clearer:
+The example below, showing only the relevant excerpt of the web app manifest, should make it clearer:
 
 ```json
 {

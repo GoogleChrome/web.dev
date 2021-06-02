@@ -154,6 +154,8 @@ redirects:
 
 - source: /remove-code-blocking-indexing
   destination: /is-crawlable
+- source: /is-crawable
+  destination: /is-crawlable
 
 - source: /fix-http-status-codes
   destination: /http-status-code
@@ -256,6 +258,18 @@ redirects:
 - source: /debugging-layout-shifts
   destination: /debug-layout-shifts
 
-# Vanity url for Learn CSS course
+# Vanity urls for Learn CSS course
 - source: /learncss
   destination: /learn/css
+
+- source: /learnCSS
+  destination: /learn/css
+
+# Changes for upcoming video...
+- source: /whats-new-web-vitals-2021
+  destination: /vitals
+  type: 302
+
+# Redirect for security headers quick reference.
+- source: /security-headers-cheat-sheet
+  destination: /security-headers

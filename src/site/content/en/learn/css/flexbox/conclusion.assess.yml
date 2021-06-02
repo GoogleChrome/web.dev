@@ -1,0 +1,40 @@
+setLeader: Test your knowledge of flexbox
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: To vertically align with flexbox, use
+    options:
+      - content: "align keywords"
+        rationale: "Nice"
+      - content: "justify keywords"
+        rationale: "Sorry"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: To horizonally align with flexbox, use
+    options:
+      - content: "align keywords"
+        rationale: "Sorry"
+      - content: "justify keywords"
+        rationale: "Nice"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "3"
+    stem: |
+      By default, flex items are aligned to `stretch`. If you want content
+      height used for child items, which of the following styles would you use?
+    options:
+      - content: "`justify-content: flex-start`"
+        rationale: "The justify property is for horizontal alignment, not
+        vertical."
+      - content: "`align-content: start`"
+        rationale: "`content` aligns flex lines, not child item alignment."
+      - content: "`height: auto`"
+        rationale: "This will have no effect."
+      - content: "`align-items: flex-start`"
+        rationale: "Yes, we want to vertically align them to the 'top' or start,
+        which removes the default stretch value and instead uses the content
+        height."

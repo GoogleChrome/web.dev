@@ -25,7 +25,7 @@ _Crawling_ is how a search engine updates its index of content on the web.
 that return an unsuccessful HTTP status code (in the 400s or 500s):
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot" src="http-status-code.png" alt="Lighthouse audit showing search engines are struggling to index your page">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/omMzgdKyzeYBQjPjQFKa.png", alt="Lighthouse audit showing search engines are struggling to index your page", width="800", height="74", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-seo/scoring.njk' %}

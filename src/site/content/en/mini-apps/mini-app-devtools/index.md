@@ -188,7 +188,7 @@ these markup languages [later](/mini-app-markup-styling-and-scripting/#markup-la
 
 ### Custom elements under the hood
 
-Inspecting the WebView on a real device via [chrome://inspect/#devices](chrome://inspect/#devices)
+Inspecting the WebView on a real device via [about://inspect/#devices](about://inspect/#devices)
 reveals that WeChat DevTools was deliberately hiding the truth. Where WeChat DevTools showed an
 `<image>`, the actual thing I am looking at is a custom element called `<wx-image>` with a `<div>`
 as its only child. It is interesting to note that this custom element does not use

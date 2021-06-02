@@ -9,6 +9,7 @@
 
 .course-pagination-control {
   border-top: 1px solid $GREY_300;
+  color: $GREY_700;
   display: block;
   padding: 24px;
   text-decoration: none;
@@ -38,8 +39,8 @@
 }
 
 .course-pagination-control__top {
-  color: $WEB_PRIMARY_COLOR;
   font-size: px-to-rem(11px);
+  font-weight: 600;
 
   > * + * {
     margin-left: 20px;
@@ -47,12 +48,15 @@
 
   svg {
     color: $GREY_800;
-    width: 20px;
     height: 20px;
+    margin-top: -2px;
+    width: 20px;
   }
 }
 
 .course-pagination-control[data-next] > .course-pagination-control__top {
+  color: $WEB_PRIMARY_COLOR;
+
   > svg {
     @include bp(md) {
       margin-left: 0;
@@ -64,7 +68,7 @@
 
 .course-pagination-control__title {
   @include apply-utility('font', 'google-sans');
-  color: $PRIMARY_TEXT_COLOR;
+  color: $GREY_800;
   font-size: px-to-rem(20px);
   line-height: px-to-rem(40px);
   margin-top: px-to-rem(12px);
@@ -75,9 +79,9 @@
 }
 
 .course-pagination-control__desc {
-  color: $GREY_700;
   font-size: px-to-rem(14px);
-  line-height: px-to-rem(20px);
+  font-weight: 500;
+  line-height: px-to-rem(22px);
   margin-top: px-to-rem(8px);
 }
 
