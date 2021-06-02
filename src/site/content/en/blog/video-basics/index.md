@@ -67,7 +67,7 @@ here](https://developers.google.com/web/fundamentals/media/manipulating/applicat
 In the example above, the first choice is the WebM format ([which can be encoded
 with VP8 or VP9 codecs](https://www.webmproject.org/about/)), and is supported
 (at the time of writing) by 78% of [global
-users](https://caniuse.com/#search=webm). The second choice is the the H.265
+users](https://caniuse.com/#search=webm). The second choice is the H.265
 codec of mp4, which is supported on [iOS and newer
 Macs](https://caniuse.com/#search=h265). These codecs are newer and have
 improved data compression, while delivering the same quality video as older
