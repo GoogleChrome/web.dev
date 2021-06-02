@@ -4,7 +4,7 @@ subhead: >
   Starting today,
   a change to CLS has been rolled out across a number of Chrome's web tooling surfaces including
   Lighthouse, PageSpeed Insights, and Chrome UX Report.
-date: 2021-06-01
+date: 2021-06-02
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/ENrTmCSZl69N9gmf0twL.jpeg
 alt: The Lighthouse Scoring Calculator
 description: >
