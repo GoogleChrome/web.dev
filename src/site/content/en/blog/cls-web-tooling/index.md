@@ -95,7 +95,7 @@ as well as which tools still provide the ability to benchmark against the origin
         <td><a href="https://developers.google.com/speed/docs/insights/v5/get-started">
         PSI API</a></td>
         <td>1 June 2021</td>
-        <td>NA</td>
+        <td>Available in the `lighthouseResult` as `totalCumulativeLayoutShift`. Not available in the field `loadingExperience` data</td>
       </tr>
       <tr>
         <td><a href="https://web.dev/chrome-ux-report-bigquery/">
