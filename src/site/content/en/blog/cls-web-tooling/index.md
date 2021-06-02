@@ -251,7 +251,7 @@ which has also been updated with this change.
 ## Additional updates
 
 Outside of the updates to Cumulative Layout Shift,
-the following metrics related updates have also been made to our web tooling:
+the following metrics-related updates have also been made to our web tooling:
 
 - We're updating to
 [the most recent definition of the Largest Contentful Paint metric](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/speed/metrics_changelog/2020_11_lcp.md).
