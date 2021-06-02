@@ -2,7 +2,6 @@
   "//1": "Use git commit --no-verify to bypass the pre-commit hook",
   "//2": "Use git push --no-verify to bypass the pre-push hook",
   "hooks": {
-    "pre-push": "npm run lint",
-    "pre-commit": "node ./tools/isolate restored"
+    "pre-push": "npm run lint"
   }
 }
