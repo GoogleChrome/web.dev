@@ -103,6 +103,13 @@ layout shifts within that window.
   </figcaption>
 </figure>
 
+{% Aside 'caution' %}
+Previously CLS measured the sum total of _all individual layout shift scores_
+that occurred during the entire lifespan of the page.
+To see which tools still provide the ability to benchmark against the original
+implementation, check out [Evolving Cumulative Layout Shift in web tooling](/cls-web-tooling).
+{% endAside %}
+
 ### What is a good CLS score?
 
 To provide a good user experience, sites should strive to have a CLS score of
