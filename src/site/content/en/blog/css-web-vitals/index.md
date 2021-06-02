@@ -232,7 +232,7 @@ After:
 <figure class="w-figure">
   {% Video src="video/j2RDdG43oidUy6AL6LovThjeX9c2/fLUscMGOlGhKnNHef2py.mp4" %}
   <figcaption class="w-figcaption">
-    The hero image now loads without causing a layout shift.
+    The image now loads without causing a layout shift.
   </figcaption>
 </figure>
 
@@ -335,7 +335,7 @@ requested.
 
 This demo uses the Google Fonts API. Google Fonts provides the option to load
 fonts via `<link>` tags or an `@import` statement. The `<link>` code snippet
-includes a `preconnect` resource hint. this should result in faster
+includes a `preconnect` resource hint. This should result in faster
 stylesheet delivery than using the `@import` version. 
 
 At a very high-level, you can think of [resource
@@ -362,7 +362,7 @@ Add the following `<link>` tags to the `<head>` of the document:
 ```
 
 These link tags instruct the browser to establish an early connection to
-`https://fonts.gstatic.com`, and to prioritize loading the stylesheet that
+`https://fonts.gstatic.com` amd to load the stylesheet that
 contains the font declaration for Montserrat and Roboto. These `<link>` tags
 should be placed as early in the `<head>` as possible.
 
