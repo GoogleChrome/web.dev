@@ -5,7 +5,7 @@ subhead: |
   Let installed PWAs handle URLs for a more integrated experience.
 authors:
   - thomassteiner
-date: 2021-06-01
+date: 2021-06-02
 # updated:
 description: |
   After registering a PWA as a URL handler, when a user clicks on a hyperlink that matches
@@ -26,17 +26,17 @@ and is currently in development. This post will be updated as the implementation
 
 ## What is PWAs as URL Handlers? {: #what }
 
-Imagine you are chatting with a friend using an instant messenger application like Messages on macOS and you are
-talking about music. Further imagine you both have the `music.example.com` PWA installed on your
-devices. If you want to share your favorite track for your friend to enjoy, you can send them a deep
-link like `https://music.example.com/rick-astley/never-gonna-give-you-up`. Since this link is pretty
-long, the developers of `music.example.com` may have decided to add an additional short link to each
-track, like, for example, `https://🎵.example.com/r-a/n-g-g-y-u`.
+Imagine you are chatting with a friend using an instant messenger application like Messages on macOS
+and you are talking about music. Further imagine you both have the `music.example.com` PWA installed
+on your devices. If you want to share your favorite track for your friend to enjoy, you can send
+them a deep link like `https://music.example.com/rick-astley/never-gonna-give-you-up`. Since this
+link is pretty long, the developers of `music.example.com` may have decided to add an additional
+short link to each track, like, for example, `https://🎵.example.com/r-a/n-g-g-y-u`.
 
-PWA as URL Handlers allows apps like `music.example.com` to register themselves
-as URL handlers for URLs that match patterns like `music.example.com`, `*.music.example.com`, or
-`🎵.example.com`, so that links from outside of the PWA, for example, from an instant messenger
-application or an email client, open in the installed PWA rather than in a browser tab.
+PWA as URL Handlers allows apps like `music.example.com` to register themselves as URL handlers for
+URLs that match patterns like `music.example.com`, `*.music.example.com`, or `🎵.example.com`, so
+that links from outside of the PWA, for example, from an instant messenger application or an email
+client, open in the installed PWA rather than in a browser tab.
 
 PWA as URL Handlers consists of two additions:
 
@@ -81,10 +81,11 @@ associated URLs on Android at the operating system level using intent filters. {
 ### The `"url_handlers"` web app manifest member
 
 To associate an installed PWA with URL patterns, these patterns need to be specified in the web app
-manifest. This happens through the `"url_handlers"` member. It accepts an array of objects with an `origin` property, which is a required `string` that is a pattern for matching origins. These patterns are allowed
-to have a wildcard (`*`) prefix in order to include multiple sub-domains (like `*.example.com`).
-URLs that match these origins could be handled by this web app. The scheme is always assumed to be
-`https://`.
+manifest. This happens through the `"url_handlers"` member. It accepts an array of objects with an
+`origin` property, which is a required `string` that is a pattern for matching origins. These
+patterns are allowed to have a wildcard (`*`) prefix in order to include multiple sub-domains (like
+`*.example.com`). URLs that match these origins could be handled by this web app. The scheme is
+always assumed to be `https://`.
 
 The excerpt of a web app manifest below shows how the music PWA example from the introductory
 paragraph could set this up. The second entry with the wildcard (`"*.music.example.com"`) makes sure
@@ -121,15 +122,15 @@ This file must contain valid JSON. The top-level structure is an object, with a 
 `"web_apps"`. This member is an array of objects and each object represents an entry for a unique
 web app. Each object contains:
 
-| Field        | Description                                                          | Type     | Default |
-| ------------ | -------- | -------------------------------------------------------------------- | -------- | ------- |
+| Field        | Description                                                                     | Type     | Default |
+| ------------ | ------------------------------------------------------------------------------- | -------- | ------- |
 | `"manifest"` | (Required) URL string of the web app manifest of the associated PWA             | `string` | N/A     |
 | `"details"`  | (Optional) An object that contains arrays of included and excluded URL patterns | `object` | N/A     |
 
 Each `"details"` object contains:
 
-| Field             | Description                      | Type       | Default |
-| ----------------- | -------- | -------------------------------- | ---------- | ------- |
+| Field             | Description                                 | Type       | Default |
+| ----------------- | ------------------------------------------- | ---------- | ------- |
 | `"paths"`         | (Optional) Array of allowed path strings    | `string[]` | `[]`    |
 | `"exclude_paths"` | (Optional) Array of disallowed path strings | `string[]` | `[]`    |
 
@@ -175,8 +176,8 @@ For the browser to discover the `web-app-origin-association` file, developers ha
   at the origin's root path that points at the `web-app-origin-association` file via the `href`
   attribute.
 - Place the `web-app-origin-association` file in the
-  [`/.well-known/`](https://datatracker.ietf.org/doc/html/rfc8615) folder at the root of the
-  app. For this to work, the file name must exactly be `web-app-origin-association`.
+  [`/.well-known/`](https://datatracker.ietf.org/doc/html/rfc8615) folder at the root of the app.
+  For this to work, the file name must exactly be `web-app-origin-association`.
 
 ## Demo
 
@@ -191,7 +192,8 @@ than the PWA, the PWA on `mandymsft.github.io` needs to prove ownership, which h
 [https://luhuangmsft.github.io/.well-known/web-app-origin-association](https://luhuangmsft.github.io/.well-known/web-app-origin-association).
 
 To test that it is indeed working, send yourself a test message using an instant messaging app of
-your choice or an email viewed in an email client that is not web-based like Mail on macOS. The email or text message should contain either of the links `https://mandymsft.github.io` or
+your choice or an email viewed in an email client that is not web-based like Mail on macOS. The
+email or text message should contain either of the links `https://mandymsft.github.io` or
 `https://luhuangmsft.github.io`. Both should open in the installed PWA.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/EjFQNwv2IfINKykzsxxs.png", alt="The Windows Skype instant messenger app next to the installed demo PWA, which is opened in standalone mode after clicking a link handled by it in a Skype chat message.", width="800", height="498" %}
@@ -205,9 +207,9 @@ control, transparency, and ergonomics.
 ### User control
 
 If more than one PWA registers as a URL handler for a given URL pattern, the user will be prompted
-to choose which PWA they want to handle the pattern with—if any at all.
-Navigations that start in a browser tab are not handled by this proposal, it is explicitly aimed at
-navigations that start outside of the browser.
+to choose which PWA they want to handle the pattern with—if any at all. Navigations that start in a
+browser tab are not handled by this proposal, it is explicitly aimed at navigations that start
+outside of the browser.
 
 ### Transparency
 
@@ -268,9 +270,9 @@ us know where and how you're using it.
 
 ## Acknowledgements
 
-PWAs as URL Handlers was specified and implemented by
-[Lu Huang](https://github.com/LuHuangMSFT) from the Microsoft Edge team.
-This article was reviewed by [Joe Medley](https://github.com/jpmedley).
+PWAs as URL Handlers was specified and implemented by [Lu Huang](https://github.com/LuHuangMSFT)
+from the Microsoft Edge team. This article was reviewed by
+[Joe Medley](https://github.com/jpmedley).
 
 [issues]: https://github.com/WICG/pwa-url-handler/issues
 [demo]: https://mandymsft.github.io/pwa/
