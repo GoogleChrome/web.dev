@@ -81,7 +81,7 @@ as well as which tools still provide the ability to benchmark against the origin
         <td>Available as totalCumulativeLayoutShift in Lighthouse v8</td>
       </tr>
       <tr>
-        <td>Lighthouse CI</td>
+        <td><a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a></td>
         <td>v0.7.3, 3 June 2021</td>
         <td>N/A</td>
       </tr>
@@ -125,7 +125,7 @@ The update to CLS has also been made to [Search Console](https://search.google.c
 
 ## "Old" CLS
 
-As some developers may wish to monitor the older definition of CLS alongside the windowing-adjustment,
+As a reminder, the "old" CLS measures layout shift over the entire lifespan of the page. As some developers may wish to monitor the older definition of CLS alongside the windowing-adjustment,
 we have good news to share: we are exposing "old CLS" in Lighthouse and CrUX.
 
 In Lighthouse v8,
@@ -190,7 +190,7 @@ ON
 ```
 
 You will be able to continue relying on this data to be present for a period of up to 6 months,
-with uncapped CLS being retired on December 14th, 2021.
+with "old CLS" being retired on December 14th, 2021.
 
 ## Updating the CLS weighting in Lighthouse
 
@@ -272,7 +272,7 @@ for feedback about the metrics and our tooling specific feedback forums for
 [Chrome UX Report](https://groups.google.com/a/chromium.org/g/chrome-ux-report)
 for tooling issues. Cheers!
 
-_With thanks to Johannes Henkel, Rick Viscomi, Vivek Sekhar, Rachel Andrew, Milica Mihajlija and Paul Irish for their feedback._
+_With thanks to Johannes Henkel, Rick Viscomi, Vivek Sekhar, Rachel Andrew, Milica Mihajlija, Jeff Jose and Paul Irish for their feedback._
 
 _Hero image by Barn Images / @barnimages on [Unsplash](https://unsplash.com/photos/t5YUoHW6zRo)_
 
