@@ -197,7 +197,7 @@ with uncapped CLS being retired on December 14th, 2021.
 When CLS was first introduced in Lighthouse,
 it was a brand new sparkly metric.
 As such, in order to make sure developers had time to test, benchmark,
-and optimize against it,in the performance score CLS was weighed less heavily.
+and optimize against it, CLS was weighed less heavily in the performance score.
 
 Now, after having had some time in the hands of developers,
 the Lighthouse score has increased the weight of CLS from 5% to 15%,
