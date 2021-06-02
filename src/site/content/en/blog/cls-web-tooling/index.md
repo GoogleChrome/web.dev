@@ -117,10 +117,10 @@ as well as which tools still provide the ability to benchmark against the origin
   </table>
 </div>
 
+Chrome DevTools will also be updated to support the windowing adjustment shortly. The update to CLS has also been made to [Search Console](https://search.google.com/search-console/about) and will be reflective from 1 June, 2021. 
+
 For most developers,
 this change is expected to happen seamlessly with no action needed to take advantage of data from the fix.
-
-The update to CLS has also been made to [Search Console](https://search.google.com/search-console/about) and will be reflective from 1 June, 2021.
 
 
 ## "Old" CLS
@@ -219,30 +219,7 @@ Still, the primary difference between lab and field CLS is that lab CLS's window
 ## Measuring in the field yourself
 
 Should you wish to measure the latest CLS implementation,
-you can also record this for your field data via RUM using the following PerformanceObserver snippet:
-
-```js
-{
-  let max = 0;
-  let curr = 0;
-  let firstTs = Number.NEGATIVE_INFINITY;
-  let prevTs = Number.NEGATIVE_INFINITY;
-
-  new PerformanceObserver((entryList) => {
-    for (const entry of entryList.getEntries()) {
-      if (entry.hadRecentInput) continue;
-      if (entry.startTime - firstTs > 5000 || entry.startTime - prevTs > 1000) {
-        firstTs = entry.startTime;
-        curr = 0;
-      }
-      prevTs = entry.startTime;
-      curr += entry.value;
-      max = Math.max(max, curr);
-      console.log('Current MAX-session-gap1s-limit5s value:', max, entry);
-    }
-  }).observe({type: 'layout-shift', buffered: true});
-}
-```
+you can also record this for your field data via RUM using the [following](/cls/#measure-cls-in-javascript) PerformanceObserver snippet.
 
 Or by relying directly on the
 [Web Vitals JavaScript library](https://github.com/GoogleChrome/web-vitals),
