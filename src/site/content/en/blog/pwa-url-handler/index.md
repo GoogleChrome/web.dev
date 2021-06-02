@@ -81,13 +81,10 @@ associated URLs on Android at the operating system level using intent filters. {
 ### The `"url_handlers"` web app manifest member
 
 To associate an installed PWA with URL patterns, these patterns need to be specified in the web app
-manifest. This happens through the `"url_handlers"` member. It accepts an array of objects with the
-following property:
-
-- `origin`: A required `string`, which is a pattern for matching origins. These patterns are allowed
-  to have a wildcard (`*`) prefix in order to include multiple sub-domains (like `*.example.com`).
-  URLs that match these origins could be handled by this web app. The scheme is always assumed to be
-  `https://`.
+manifest. This happens through the `"url_handlers"` member. It accepts an array of objects with an `origin` property, which is a required `string` that is a pattern for matching origins. These patterns are allowed
+to have a wildcard (`*`) prefix in order to include multiple sub-domains (like `*.example.com`).
+URLs that match these origins could be handled by this web app. The scheme is always assumed to be
+`https://`.
 
 The excerpt of a web app manifest below shows how the music PWA example from the introductory
 paragraph could set this up. The second entry with the wildcard (`"*.music.example.com"`) makes sure
@@ -124,17 +121,17 @@ This file must contain valid JSON. The top-level structure is an object, with a 
 `"web_apps"`. This member is an array of objects and each object represents an entry for a unique
 web app. Each object contains:
 
-| Field        | Required | Description                                                          | Type     | Default |
+| Field        | Description                                                          | Type     | Default |
 | ------------ | -------- | -------------------------------------------------------------------- | -------- | ------- |
-| `"manifest"` | yes      | URL string of the web app manifest of the associated PWA             | `string` | N/A     |
-| `"details"`  | no       | An object that contains arrays of included and excluded URL patterns | `object` | N/A     |
+| `"manifest"` | (Required) URL string of the web app manifest of the associated PWA             | `string` | N/A     |
+| `"details"`  | (Optional) An object that contains arrays of included and excluded URL patterns | `object` | N/A     |
 
 Each `"details"` object contains:
 
-| Field             | Required | Description                      | Type       | Default |
+| Field             | Description                      | Type       | Default |
 | ----------------- | -------- | -------------------------------- | ---------- | ------- |
-| `"paths"`         | no       | Array of allowed path strings    | `string[]` | `[]`    |
-| `"exclude_paths"` | no       | Array of disallowed path strings | `string[]` | `[]`    |
+| `"paths"`         | (Optional) Array of allowed path strings    | `string[]` | `[]`    |
+| `"exclude_paths"` | (Optional) Array of disallowed path strings | `string[]` | `[]`    |
 
 An example `web-app-origin-association` file for the music PWA example from above is given below. It
 would be hosted on the origin `🎵.example.com` and establishes the association with the
