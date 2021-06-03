@@ -60,6 +60,45 @@ web platform features, developers would still need to write code and implement t
 functionality like permissions or push notifications, making it hard to achieve consistency for
 users.
 
+#### Security Considerations for using WebView as an in-app browser
+
+WebView gives the embedder application full access to the rendered content, including cookies and
+the DOM. Those are powerful features that require a high level of trust from users.
+
+Since WebView is not intended as a framework for building browsers, it lacks security features
+available in modern browsers.
+
+##### Multi-process architecture and site isolation
+
+Browsers are designed to be secure while rendering and executing content that is untrusted. To
+ensure the user stays safe while navigating content that is potentially untrustworthy or even
+malicious, modern browsers employ techniques such as using [multi-process architecture][9] and
+[site isolation][10].
+
+Without the multi-process architecture, a crash caused by the web page can crash the entire browserapp, or
+a vulnerability can be exploited to take control of the entire device. Site isolation adds another
+layer of security that makes it harder for untrustworthy sites to access and steal information from
+other sites.
+
+Until Android 8.0 Oreo, the WebView renderer used the same process as the embedder application. On
+newer versions of the OS, and when devices are capable enough, the renderer runs in a different
+process. However, a single process is still shared between all pages and WebView instances running
+them, making it impossible to fully implement site isolation.
+
+The lack of a multi-process architecture and site isolation is not an issue for applications that
+render content that they own and trust, but can be a problem for applications running untrusted
+third-party content, like in-app browsers, and leaves users exposed to vulnerabilities like
+[Meltdown][11] and [Spectre][12], which could be used for stealing cookies, banking details,
+personal information, and more.
+
+##### Secure UI Indicators
+
+It is also important to provide good security indicators to users, and browsers put a lot of effort
+and are [always evolving][13] in this area. However, the WebView lacks an API for checking if a
+site’s connection is secure, which allows application developers to build trustworthy security
+indicators. The lack of such an API could cause, for instance, a URL displayed in the address bar to
+not match the page displayed to the user, even over secure HTTPS connections.
+
 Another option available to developers is embedding a browser engine in their application. Besides
 leading to increased application size, this approach is both complex and time-consuming.
 
@@ -146,3 +185,8 @@ platform, also known as in-app browsers.
 [6]: /using-a-pwa-in-your-android-app/
 [7]: https://developers.google.com/digital-asset-links
 [8]: /using-a-pwa-in-your-android-app/#quality-criteria
+[9]: https://blog.chromium.org/2008/09/multi-process-architecture.html
+[10]: https://www.chromium.org/Home/chromium-security/site-isolation
+[11]: https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)
+[12]: https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)
+[13]: https://blog.chromium.org/2018/05/evolving-chromes-security-indicators.html
