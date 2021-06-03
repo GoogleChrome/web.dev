@@ -255,7 +255,7 @@ trial.
 
 {% include 'content/origin-trial-register.njk' %}
 
-### Enabling via chrome://flags
+### Enabling via about://flags
 
 To experiment with the API locally, without an origin trial token, enable the
 `#enable-experimental-web-platform-features` flag in about://flags.
