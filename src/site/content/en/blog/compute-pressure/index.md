@@ -4,7 +4,7 @@ title: Observing compute pressure
 subhead: An experimental API for reacting to changes in CPU use.
 authors:
   - jeffposnick
-date: 2021-05-21
+date: 2021-06-03
 description: An experimental API for reacting to changes in CPU use.
 hero: image/FNkVSAX8UDTTQWQkKftSgGe9clO2/H9cVTFMj4cYmoIfGYQqd.jpg
 alt: A photograph of a pressure gauge.
@@ -12,7 +12,7 @@ tags:
   - blog
   - capabilities
 origin_trial:
-  url: t/k
+  url: https://developer.chrome.com/origintrials/#/view_trial/1838594547874004993
 ---
 
 {% Aside %}
@@ -224,8 +224,8 @@ and clock speed values reported, due to the activities of other applications.
 
 ## Try a demo
 
-When accessed on a browser that supports the origin trial (currently Chrome 92
-or later), [this demo](https://oyiptong.github.io/compute-pressure-demo/)
+When accessed on a browser that supports the origin trial (currently Chrome 91
+or later), [this demo](https://googlechrome.github.io/samples/compute-pressure/index.html)
 will display an ongoing readout of your device's CPU utilization and speed.
 
 ## API status
@@ -236,7 +236,7 @@ will display an ongoing readout of your device's CPU utilization and speed.
 | ---------------------------------------- | ------------------------ |
 | 1. Create explainer                      | [Complete](https://github.com/oyiptong/compute-pressure/blob/main/README.md)    |
 | 2. Create initial draft of specification | [In Progress](https://oyiptong.github.io/compute-pressure/)      |
-| 3. Gather feedback & iterate on design   | [In progress](#) |
+| 3. Gather feedback & iterate on design   | In progress |
 | 4. **Origin trial**                      | [In progress](#ot)    |
 | 5. Launch                                | Not started              |
 
@@ -246,7 +246,7 @@ will display an ongoing readout of your device's CPU utilization and speed.
 
 ### Enabling support during the origin trial phase {: #ot }
 
-Starting in Chrome 92, the Compute Pressure API can be used as part of an origin
+Starting in Chrome 91, the Compute Pressure API can be used as part of an origin
 trial.
 
 {% include 'content/origin-trials.njk' %}
