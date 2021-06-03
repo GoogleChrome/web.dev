@@ -48,42 +48,23 @@ npm run dev
 Open `http://localhost:8080/` to see the site locally. Changes to assets will
 rebuild the site. Refresh to see your changes.
 
-### Speeding up builds
+### Set up build flags
 
-⚠️ This is an experimental feature 🧪🔬
+Building the entire site can take a while because it's around one thousand pages.
+If you want to _massively_ speed up your build times, we suggest setting some
+build flags to ignore certain sections.
 
-Any change to the site will cause Eleventy to rebuild. This can take 10-20s. If
-you want to speed things up you can isolate your directory using the `isolate`
-command.
+- Create a `.env` file at the root of your project
+- Add the following:
 
-```bash
-npm run isolate
+```text
+# Ignore ALL site content
+ELEVENTY_IGNORE=true
+
+# Only build the directories you're working on.
+# Note, this is a JSON string so you must use double quotes.
+ELEVENTY_INCLUDE=["blog", "vitals"]
 ```
-
-This will move all of the markdown files for the site into the `_exile`
-directory and it will ignore them for builds.
-
-You may pass an optional glob (or space separated list of globs) to the
-`isolate` command to tell it to preserve a directory.
-
-```bash
-# Example 1: Preserve the style-focus directory
-# note the -- which is needed to pass options to npm scripts
-npm run isolate -- src/site/content/en/accessible/style-focus/**
-
-# Example 2: Preserve everything in the accessible directory
-npm run isolate -- src/site/content/en/accessible/**/*
-```
-
-When you're finished making your edits, run the `integrate` command to restore
-all of the project files.
-
-```bash
-npm run integrate
-```
-
-☝️ A git commit hook will prevent you from being able to run `git commit` until
-you have run the `integrate` command.
 
 ## Environments 🌳
 

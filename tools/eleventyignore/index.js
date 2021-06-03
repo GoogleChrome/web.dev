@@ -17,21 +17,47 @@
 /**
  * @file This outputs an .eleventyignore file in the root of the project.
  * This is used to tell eleventy to ignore large sections of the docs in order
- * to speed up build times. For instance, the native-client docs have around
- * 1000 pages of API reference that can safely be ignored if you're just
- * developing locally.
+ * to speed up build times.
  *
- * To tell eleventy to ignore a section, add one of the environment variables
- * to your .env file.
+ * By default this will ignore most files on the site. You can use the
+ * ELEVENTY_INCLUDE=[] environement variable to pass a JSON string of
+ * directories that should be included in the build.
+ *
+ * Example .env file:
+ * ELEVENTY_IGNORE=true # ignore most of the site
+ * ELEVENTY_INCLUDE=["fast", "accessible"] # build /fast and /accessible
  */
 
 require('dotenv').config();
+const path = require('path');
 const fs = require('fs');
 const chalk = require('chalk');
 const warning = chalk.black.bgYellow;
 
+const getDirectories = (source) =>
+  fs
+    .readdirSync(source, {withFileTypes: true})
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name);
+
 // Default files that should always be ignored.
-const ignores = ['node_modules', '**/README.md', '**/_drafts', '*.swp'];
+const ignores = [];
+
+// Files that should be included in the build.
+let includes = process.env.ELEVENTY_INCLUDE || [];
+try {
+  includes = JSON.parse(includes);
+} catch (e) {
+  // ignore
+}
+
+// List all of the directories under /en/
+// Then filter out any directories that should be included in the build
+// Finally, replace /en/ with /**/ so it works across languages.
+const contentPath = path.join('src', 'site', 'content', 'en');
+const contentDirs = getDirectories(contentPath)
+  .filter((dir) => !includes.includes(dir))
+  .map((dir) => path.join(contentPath, dir).replace('/en/', '/**/'));
 
 const isProduction = process.env.NODE_ENV === 'production';
 // This will automatically be set to true by GitHub Actions.
@@ -39,23 +65,16 @@ const isCI = process.env.CI;
 
 // Only use ignore environment variables during dev and CI builds.
 if (!isProduction || isCI) {
-  // Ignore /docs/
-  if (process.env.ELEVENTY_IGNORE_BLOG) {
-    console.log(warning('Ignoring ALL docs.'));
-    ignores.push('src/site/content/**/blog/**/*');
+  if (process.env.ELEVENTY_IGNORE) {
+    console.log(
+      warning(
+        `Ignoring ALL docs`,
+        `${includes.length ? `except for ${includes}` : ''}`,
+      ),
+    );
+
+    ignores.push(...contentDirs);
   }
-
-  // // Ignore /docs/native-client/
-  // if (process.env.ELEVENTY_IGNORE_NACL) {
-  //   console.log(warning('Ignoring native-client docs.'));
-  //   ignores.push('site/**/docs/native-client/**/*');
-  // }
-
-  // // Ignore /docs/extensions/
-  // if (process.env.ELEVENTY_IGNORE_EXTENSIONS) {
-  //   console.log(warning('Ignoring extensions docs.'));
-  //   ignores.push('site/**/docs/extensions/**/*');
-  // }
 }
 
 fs.writeFileSync('.eleventyignore', ignores.join('\n'));
