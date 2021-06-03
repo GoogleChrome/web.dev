@@ -56,12 +56,14 @@ class LanguageSelect extends BaseStateElement {
   }
 
   render() {
-    const languageVersions = Array.from(document
-      .querySelectorAll('link[rel="alternate"]'))
-      .filter(link => link['hreflang'])
-      .map(link => link['hreflang']);
-    const langList = lang.supportedLanguages.filter(
-      lang => languageVersions.includes(lang));
+    const languageVersions = Array.from(
+      document.querySelectorAll('link[rel="alternate"]'),
+    )
+      .filter((link) => link['hreflang'])
+      .map((link) => link['hreflang']);
+    const langList = lang.supportedLanguages.filter((lang) =>
+      languageVersions.includes(lang),
+    );
     if (!langList.length) {
       return '';
     }
