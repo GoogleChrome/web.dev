@@ -95,7 +95,7 @@ personal information, and more.
 
 It is also important to provide good security indicators to users, and browsers put a lot of effort
 and are [always evolving][13] in this area. However, the WebView lacks an API for checking if a
-site's connection is secure, which allows application developers to build trustworthy security
+site's connection is secure that allows application developers to build trustworthy security
 indicators. The lack of such an API could cause, for instance, a URL displayed in the address bar to
 not match the page displayed to the user, even over secure HTTPS connections.
 
