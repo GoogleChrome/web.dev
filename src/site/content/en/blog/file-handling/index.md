@@ -7,7 +7,7 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2021-05-28
+updated: 2021-06-03
 tags:
   - blog
   - capabilities
@@ -78,6 +78,10 @@ if ('launchQueue' in window) {
   // The File Handling API is supported.
 }
 ```
+
+{% Aside %}
+File Handling is currently limited to desktop operating systems.
+{% endAside %}
 
 ### The declarative part of the File Handling API
 
@@ -178,11 +182,29 @@ out the [implementation][demo-source] in the source code.
   </figcaption>
 </figure>
 
-## Security and permissions
+## Security
 
 The Chrome team has designed and implemented the File Handling API using the core principles defined
 in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user control,
 transparency, and ergonomics.
+
+## Permissions, permissions persistence, and file handler updates
+
+To ensure user trust and the safety of users' files when the File Handling API is used to open a file,
+a permission prompt will be shown before a PWA can view a file. This permission prompt will be shown
+right after either of the following scenarios:
+
+1. The user selects the PWA to open a file, so that the permission is tightly coupled to the action of
+   opening a file using the PWA, making it more understandable and relevant.
+1. The site loads without the file, so that the user has an expectation of what the PWA is and why it
+   would like to view the file.
+
+This permission will show every time until the user clicks to **Allow** or **Block** file handling for
+the site, or ignores the prompt three times (after which Chromium will embargo and block this
+permission). The selected setting will persist across the PWA closing and reopening.
+
+When the manifest updates and changes in the `"file_handlers"` section are detected, the permissions
+will be reset.
 
 ### File-related challenges
 
@@ -191,9 +213,7 @@ These are outlined in the
 [article on the File System Access API](/file-system-access/#security-considerations). The
 additional security-pertinent capability that the File Handling API provides over the File System
 Access API is the ability to grant access to certain files through the operating system's built-in
-UI, as opposed to through a file picker shown by a web application. Any restrictions as to the files
-and folders that can be opened via the picker will also be applied to the files and folders opened
-via the operating system.
+UI, as opposed to through a file picker shown by a web application.
 
 There is still a risk that users may unintentionally grant a web application access to a file by
 opening it. However, it is generally understood that opening a file allows the application it is
