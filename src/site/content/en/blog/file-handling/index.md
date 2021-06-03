@@ -300,7 +300,7 @@ The File Handling API was specified by [Eric Willigers](https://github.com/ericw
 [issues]: https://github.com/WICG/file-handling/issues
 [demo]: https://excalidraw.com/
 [demo-source]: https://github.com/excalidraw/excalidraw/search?q=launchqueue&type=code
-[explainer]: https://github.com/WICG/file-handling/blob/master/explainer.md
+[explainer]: https://github.com/WICG/file-handling/blob/main/explainer.md
 [wicg-discourse]: https://discourse.wicg.io/t/proposal-ability-to-register-file-handlers/3084
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=829689
 [cr-status]: https://chromestatus.com/feature/5721776357113856
