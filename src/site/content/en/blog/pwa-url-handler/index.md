@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-06-03
-updated: 2021-06-03
+updated: 2021-06-04
 description: |
   After registering a PWA as a URL handler, when a user clicks on a hyperlink that matches
   one of the registered URL patterns, the registered PWA will open.
@@ -269,8 +269,8 @@ us know where and how you're using it.
 
 ## Acknowledgements
 
-PWAs as URL Handlers was specified and implemented by [Lu Huang](https://github.com/LuHuangMSFT)
-from the Microsoft Edge team. This article was reviewed by
+PWAs as URL Handlers was specified and implemented by [Lu Huang](https://github.com/LuHuangMSFT) and [Mandy Chen](https://github.com/mandymsft) from the Microsoft Edge team.
+This article was reviewed by
 [Joe Medley](https://github.com/jpmedley).
 Hero image by [Bryson Hammer](https://unsplash.com/@trhammerhead) on
 [Unsplash](https://unsplash.com/photos/JZ8AHFr2aEg).
