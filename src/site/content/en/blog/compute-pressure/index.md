@@ -7,7 +7,7 @@ authors:
 date: 2021-06-03
 description: An experimental API for reacting to changes in CPU use.
 hero: image/FNkVSAX8UDTTQWQkKftSgGe9clO2/H9cVTFMj4cYmoIfGYQqd.jpg
-alt: A photograph of a pressure gauge.
+alt: A pressure gauge and pipes.
 tags:
   - blog
   - capabilities
@@ -277,6 +277,6 @@ This blog post is derived on the sample code and
 [API explainer](https://github.com/oyiptong/compute-pressure/blob/main/README.md)
 created by Olivier Yiptong and Victor Costan.
 
-The hero image was created by Emma Steinhobel on
-[Unsplash](https://unsplash.com/photos/Y3brPR0gjb4). The diagram illustrating
+The hero image was created by Robert Anasch on
+[Unsplash](https://unsplash.com/photos/-C7IKRBZHrg). The diagram illustrating
 bucketing was created by [Adam Argyle](/authors/adamargyle/).
