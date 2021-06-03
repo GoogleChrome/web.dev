@@ -41,7 +41,7 @@ renderData:
   <section class="w-layout-container w-path-intro">
     <div class="w-path-intro__overview">
       <h2 class="w-headline--three no-link">Overview</h2>
-      <div>{{path.overview | i18n(locale)}}</div>
+      <div class="w-path-intro__overview-text">{{path.overview | i18n(locale)}}</div>
       {% if path.youtubeId %}
         <figure class="w-figure">
           {% YouTube path.youtubeId %}
