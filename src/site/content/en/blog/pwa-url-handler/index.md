@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-06-03
-# updated:
+updated: 2021-06-03
 description: |
   After registering a PWA as a URL handler, when a user clicks on a hyperlink that matches
   one of the registered URL patterns, the registered PWA will open.
@@ -72,7 +72,7 @@ To experiment with PWAs as URL Handlers locally, without an origin trial token, 
 `#enable-desktop-pwas-url-handling` flag in `about://flags`.
 
 {% Aside %} Support for the PWAs as URL Handlers feature is limited to desktop operating systems
-like Window, macOS, and Linux. On Android, Chromium browsers install PWAs by generating a
+like Windows, macOS, and Linux. On Android, Chromium browsers install PWAs by generating a
 [WebAPK](https://developers.google.com/web/fundamentals/integration/webapks), which can register a
 set of intent filters for all URLs within the scope of the app. This means that PWAs already handle
 associated URLs on Android at the operating system level using intent filters. {% endAside %}
@@ -141,7 +141,7 @@ would be hosted on the origin `🎵.example.com` and establishes the association
 {
   "web_apps": [
     {
-      "manifest": "https://music.example.com/manifest.webappmanifest",
+      "manifest": "https://music.example.com/manifest.json",
       "details": {
         "paths": ["/*"],
         "exclude_paths": ["/internal/*"]
