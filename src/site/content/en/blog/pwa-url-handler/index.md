@@ -141,7 +141,7 @@ would be hosted on the origin `🎵.example.com` and establishes the association
 {
   "web_apps": [
     {
-      "manifest": "https://music.example.com/manifest.webappmanifest",
+      "manifest": "https://music.example.com/manifest.json",
       "details": {
         "paths": ["/*"],
         "exclude_paths": ["/internal/*"]
