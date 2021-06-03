@@ -41,7 +41,7 @@ const getDirectories = (source) =>
     .map((dirent) => dirent.name);
 
 // Default files that should always be ignored.
-const ignores = [];
+const ignores = ['node_modules'];
 
 // Files that should be included in the build.
 let includes = process.env.ELEVENTY_INCLUDE || [];

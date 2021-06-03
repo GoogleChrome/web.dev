@@ -97,7 +97,7 @@ teams:
 - @GoogleChrome/web-devrel
 
 1. Navigate to [the Deploy workflow in the Actions panel](https://github.com/GoogleChrome/web.dev/actions?query=workflow%3ADeploy).
-2. Click the **Run workflow** button. Make sure the branch says `master`, then click the green **Run workflow** button.
+2. Click the **Run workflow** button. Make sure the branch says `main`, then click the green **Run workflow** button.
 
 ![An expanded workflow popup with a green run workflow button inside of it.](https://user-images.githubusercontent.com/1066253/89584965-da6eb500-d7f1-11ea-8a43-d8b1abe2cd3b.png)
 
