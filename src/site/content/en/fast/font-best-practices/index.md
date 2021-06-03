@@ -49,6 +49,7 @@ declaration is an essential part of working with any web font. At a minimum, it
 declares the name that will be used to refer to the font and indicates the
 location of the corresponding font file.
 
+
 ```css
 @font-face {
   font-family: "Open Sans";
@@ -60,6 +61,7 @@ A common misconception is that a font is requested when a `@font-face`
 declaration is encountered - this is not true. By itself, `@font-face`
 declaration does not trigger font download. Rather, a font is downloaded only if
 it is referenced by styling that is used on the page. For example, like this:
+
 
 ```css
 @font-face {
@@ -89,6 +91,7 @@ Similarly, removing unused CSS and splitting stylesheets can reduce the number
 of fonts loaded by a page.
 
 
+
 ### Best practices
 
 Fonts are typically important resources - without them the user might not be
@@ -100,6 +103,7 @@ files requires separate connection setups.
 If you're unsure if your page's fonts are being requested in time, check the
 **Timing** tab within the **Network** panel in Chrome DevTools for more
 information.
+
 
 
 
@@ -119,6 +123,7 @@ critical styling in the `<head>` of the main document rather than including them
 in an external stylesheet. This allows the browser to discover the font
 declarations sooner as the browser doesn't need to wait for the external
 stylesheet to download.
+
 
 ```html
 <head>
@@ -141,6 +146,7 @@ stylesheet to download.
     Inlining the font files themselves is not recommended. Inlining large
     resources like fonts is likely to delay the delivery of the main document,
     and with it, the discovery of other resources.
+
 {% endAside %}
 
 
@@ -151,6 +157,7 @@ you use the
 [`preconnect`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preconnect)
 resource hint to establish an early connection with the third-party origin.
 Resource hints should be placed in the `<head>` of the document.
+
 
 ```html
 
@@ -167,6 +174,7 @@ Resource hints should be placed in the `<head>` of the document.
 `preconnect` resource hint and therefore will likely result in faster stylesheet
 delivery than using `@import` version. These `<link>` tags should be placed as
 early in the document as possible.
+
 
 {% endAside %}
 
@@ -190,11 +198,13 @@ strategies. For example, `preload` ignores `unicode-range` declarations, and if
 used prudently, should only be used to load a single font format.
 
 
+
 ## Font delivery
 
 Faster font delivery yields faster text rendering. In addition, if a font is
 delivered early enough, this can help eliminate layout shifts resulting from
 font swapping.
+
 
 
 ### Best practices
@@ -241,6 +251,7 @@ particularly challenging.
    descriptor. `unicode-range` informs the browser which characters a font can
    be used for.
 
+
     ```css
     @font-face {
     font-family: "Open Sans";
@@ -278,6 +289,7 @@ particularly challenging.
    Because it uses Brotli, WOFF2 compresses 30% better than WOFF.
 
 
+
 #### Use fewer web fonts
 
 The fastest font to deliver is a font that isn't requested in the first place.
@@ -289,6 +301,7 @@ web fonts used on your site.
    interface of a user's device. System fonts typically vary by operating system
    and version. Because the font is already installed, the font does not need to
    be downloaded. System fonts can work particularly well for body text. 
+
 
 To use the system font in your CSS, list `system-ui` as the font-family:
 
@@ -320,6 +333,7 @@ variable fonts are sites that use (and need to use) a variety of font styles and
 weights.
 
 
+
 ## Font rendering
 
 When faced with a web font that has not yet loaded, the browser is faced with a
@@ -336,6 +350,7 @@ choice can have significant implications: `font-display` has the potential to
 impact LCP, FCP, and layout stability.
 
 
+
 ### Best practices
 
 
@@ -344,6 +359,7 @@ impact LCP, FCP, and layout stability.
 [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
 informs the browser how it should proceed with text rendering when the
 associated web font has not loaded. It is defined per font-face.
+
 
 ```css
 @font-face {
@@ -417,6 +433,7 @@ There are five possible values for `font-display`:
     period, it will be rendered in the fallback font.
 *   **Swap period**: The swap period comes after the block period. If the web
     font becomes available during the swap period, it will be "swapped" in.
+
 
 
 ##### Recommendation
