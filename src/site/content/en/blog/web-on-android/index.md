@@ -75,7 +75,7 @@ ensure the user stays safe while navigating content that is potentially untrustw
 malicious, modern browsers employ techniques such as using [multi-process architecture][9] and
 [site isolation][10].
 
-Without the multi-process architecture, a crash caused by the web page can crash the entire browserapp, or
+Without the multi-process architecture, a crash caused by the web page can crash the entire browser app, or
 a vulnerability can be exploited to take control of the entire device. Site isolation adds another
 layer of security that makes it harder for untrustworthy sites to access and steal information from
 other sites.
