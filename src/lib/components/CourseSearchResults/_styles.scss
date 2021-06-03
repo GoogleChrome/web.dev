@@ -5,8 +5,20 @@
 }
 
 .web-course-search__no-results {
-  text-align: center
-;}
+  text-align: center;
+}
+
+.web-search-popout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.web-search-popout__list {
+  max-height: 100%;
+}
 
 .web-search-popout__link {
   line-height: 28px;

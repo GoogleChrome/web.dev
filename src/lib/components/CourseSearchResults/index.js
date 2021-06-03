@@ -54,7 +54,7 @@ class CourseSearchResults extends SearchResults {
 
     return html`
       <div class="web-course-search web-search-popout">
-        <ul id="${this.id}-list" class="web-search-popout__list" role="listbox">
+        <ul id="${this.id}-list" class="web-search-popout__list scrollbar" role="listbox">
           ${this.itemsTemplate}
         </ul>
       </div>

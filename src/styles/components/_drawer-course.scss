@@ -16,6 +16,7 @@
     background-repeat: no-repeat;
     background-size: 294px;
     display: flex;
+    flex: 0;
     height: 144px;
     padding: 24px 16px 0;
   }
@@ -30,12 +31,10 @@
     }
   }
 
-  &__search {
-    height: 48px;
-  }
-
   web-search {
-    margin: 0 16px;
+    display: block;
+    height: 48px;
+    margin: var(--flow-space) var(--flow-space) 0;
 
     .web-search__input-wrapper {
       display: flex;
@@ -52,11 +51,21 @@
     height: 100%;
   }
 
+  &__scroll {
+    flex: 1;
+    overflow: auto;
+    overscroll-behavior: contain;
+    position: relative;
+  }
+
   &__links {
     display: block; // this is a custom element so it needs display: block;
-    flex: 1;
-    overflow-y: auto;
-    overscroll-behavior: contain; // sass-lint:disable-line no-misspelled-properties
+    position: absolute;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
   }
 
   &__link {
