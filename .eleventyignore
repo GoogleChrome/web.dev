@@ -1,0 +1,5 @@
+node_modules
+**/README.md
+**/_drafts
+*.swp
+src/site/content/**/blog/**/*
