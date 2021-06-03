@@ -194,9 +194,9 @@ To ensure user trust and the safety of users' files when the File Handling API i
 a permission prompt will be shown before a PWA can view a file. This permission prompt will be shown
 right after either of the following scenarios:
 
-1. The user selects the PWA to open a file, so that the permission is tightly coupled to the action of
+* The user selects the PWA to open a file, so that the permission is tightly coupled to the action of
    opening a file using the PWA, making it more understandable and relevant.
-1. The site loads without the file, so that the user has an expectation of what the PWA is and why it
+* The site loads without the file, so that the user has an expectation of what the PWA is and why it
    would like to view the file.
 
 This permission will show every time until the user clicks to **Allow** or **Block** file handling for
