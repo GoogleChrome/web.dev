@@ -60,7 +60,6 @@ const authors = require(`./src/site/_collections/authors`);
 const blogPostsDescending = require(`./src/site/_collections/blog-posts-descending`);
 const newsletters = require(`./src/site/_collections/newsletters`);
 const pages = require('./src/site/_collections/pages');
-const patterns = require('./src/site/_collections/patterns');
 const {
   postsWithLighthouse,
 } = require(`./src/site/_collections/posts-with-lighthouse`);
@@ -146,7 +145,6 @@ module.exports = function (config) {
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('newsletters', newsletters);
   config.addCollection('pages', pages);
-  config.addCollection('patterns', patterns);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug

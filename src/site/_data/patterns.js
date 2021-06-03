@@ -3,52 +3,97 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = {
-  navItems(collection) {
-    return collection.filter((x) => !x.inputPath.includes('variants'));
+  // Grabs all patters that it can find at the root level then builds up a dataset,
+  // rendered markup, view markup and docs. Lastly, it finds any variants and makes
+  // those part of the pattern, too
+  get items() {
+    const basePath = path.resolve(__basedir, 'src/pattern-library/patterns');
+
+    // Grabs each folder inside patterns, excluding hidden files/folders
+    const patterns = fs
+      .readdirSync(basePath)
+      .filter((item) => !/(^|\/)\.[^\/\.]/g.test(item));
+
+    // For creating a result collection
+    let result = [];
+
+    // This is used for both patterns and variants to grab markup, data and docs
+    const buildPattern = (patternPath, patternName) => {
+      const response = {};
+
+      if (!fs.existsSync(path.resolve(patternPath, `${patternName}.njk`))) {
+        return null;
+      }
+
+      response['markup'] = fs.readFileSync(
+        path.resolve(patternPath, `${patternName}.njk`),
+        'utf8',
+      );
+
+      if (fs.existsSync(path.resolve(patternPath, `${patternName}.json`))) {
+        response['data'] = JSON.parse(
+          fs.readFileSync(
+            path.resolve(patternPath, `${patternName}.json`),
+            'utf8',
+          ),
+        );
+
+        response['rendered'] = nunjucks.renderString(response.markup, {
+          data: response.data,
+        });
+      }
+
+      if (fs.existsSync(path.resolve(patternPath, `${patternName}.md`))) {
+        response['docs'] = fs.readFileSync(
+          path.resolve(patternPath, `${patternName}.md`),
+          'utf8',
+        );
+      }
+
+      return response;
+    };
+
+    // Loop each patterns folder, attempt to grab all the things and return
+    // back a fully formed object to use
+    patterns.forEach((item) => {
+      const patternRoot = path.resolve(basePath, item);
+      const patternRootParts = patternRoot.split('/').filter((x) => x.length);
+      const patternName = patternRootParts[patternRootParts.length - 1];
+      const patternResponse = buildPattern(patternRoot, patternName);
+      const patternVariantsRoot = path.resolve(patternRoot, 'variants');
+
+      // Urls for pattern page and preview
+      patternResponse['url'] = `/pattern-library/pattern/${patternName}/`;
+      patternResponse[
+        'previewUrl'
+      ] = `/pattern-library/preview/${patternName}/`;
+
+      // If this pattern has a variants folder, run the whole
+      // process on all that can be found
+      if (fs.existsSync(patternVariantsRoot)) {
+        const variants = fs
+          .readdirSync(patternVariantsRoot)
+          .filter((item) => !/(^|\/)\.[^\/\.]/g.test(item));
+
+        patternResponse['variants'] = variants.map((variant) => {
+          const variantRoot = path.resolve(patternVariantsRoot, variant);
+          const variantRootParts = variantRoot
+            .split('/')
+            .filter((x) => x.length);
+          const variantName = variantRootParts[variantRootParts.length - 1];
+
+          return {
+            ...{
+              previewUrl: `/pattern-library/preview/${patternName}/${variantName}/`,
+            },
+            ...buildPattern(variantRoot, variantName),
+          };
+        });
+      }
+
+      result.push(patternResponse);
+    });
+
+    return result;
   },
-  getVariants(item, collection) {
-    // If the item itself is a variant, return early.
-    if (item.filePathStem.includes('variants')) {
-      return;
-    }
-
-    const basePath = item.filePathStem.split('/').slice(0, 3).join('/');
-
-    return collection.filter(
-      (x) =>
-        x.filePathStem.indexOf(basePath) === 0 &&
-        x.filePathStem.includes('variants'),
-    );
-  },
-  render(item) {
-    const markup = fs.readFileSync(
-      path.resolve(__basedir, item.inputPath),
-      'utf8',
-    );
-
-    return nunjucks.renderString(markup, {data: item.data});
-  },
-  renderSource(item) {
-    const markup = fs.readFileSync(
-      path.resolve(__basedir, item.inputPath),
-      'utf8',
-    );
-
-    return markup;
-  },
-  getDocs(item) {
-    const docsPath = path.join(
-      __basedir,
-      path.dirname(item.inputPath),
-      'docs.md',
-    );
-
-    if (!fs.existsSync(docsPath)) {
-      return null;
-    }
-
-    const docsContent = fs.readFileSync(docsPath, 'utf8');
-
-    return docsContent;
-  }
 };

@@ -1,11 +1,11 @@
 ---
 title: 'Preview' 
 pagination:
-  data: collections.patterns
+  data: patterns.items
   size: 1
   addAllPagesToCollections: true
   alias: item
-permalink: '{{ item.filePathStem }}-preview/index.html'
+permalink: '{{ item.previewUrl }}/index.html'
 ---
 
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ permalink: '{{ item.filePathStem }}-preview/index.html'
 </head>
 <body>
   <div class="preview">
-    {{ patterns.render(item) | safe }}
+    {{ item.rendered | safe }}
   </div>
 </body>
 </html>

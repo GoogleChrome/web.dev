@@ -7,11 +7,10 @@
 
 module.exports = (collections) => {
   return collections
-    .getFilteredByGlob(
-      './src/site/content/en/pattern-library/patterns/**/*.njk',
-    )
+    .getFilteredByGlob('./src/site/content/pattern-library/patterns/**/*.njk')
     .map((item) => {
-      item.permalink = false;
+      item.data.permalink = false;
+      console.log(item.filePathStem);
       return item;
     });
 };

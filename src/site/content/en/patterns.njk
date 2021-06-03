@@ -1,0 +1,71 @@
+---
+layout: base
+title: 'Pattern'
+pagination:
+  data: patterns.items
+  size: 1
+  addAllPagesToCollections: true
+  alias: item
+permalink: '{{ item.url }}/index.html'
+---
+
+{% set title = item.data.title %}
+
+<a class="skip-link w-button" href="#main">Skip to main</a>
+
+{% include 'partials/header-default.njk' %}
+{% include 'partials/navigation-drawer-default.njk' %}
+
+<div id="content">
+  <div class="display-flex direction-column lg:direction-row">
+    <div>      
+      <nav class="flow" aria-label="Patterns">
+        <ul class="side-nav" role="list">
+          <li>
+            <a href="/">Pattern library</a>
+          </li>
+          <li>
+            <a href="/colors">Colors</a>
+          </li>
+          <li>
+            <a href="/typography">Typography</a>
+          </li>
+        </ul>
+        <h2>Patterns</h2>
+        <ul class="side-nav" role="list">
+          {% for item in patterns.items %}
+            <li>
+              <a href="{{ item.url }}">{{ item.data.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+
+    <div class="flex-1 min-width-0">
+      
+      <div class="course-content display-flex justify-content-center">
+        <main id="main">
+          <h1>{{ title }}</h1>
+          <iframe src="{{ item.previewUrl }}"></iframe>
+          <h2>Source (Nunjucks)</h2>
+          <web-copy-code>
+            <pre class="code-sample"><code>{{ item.markup }}</code></pre>
+          </web-copy-code>
+          <h2>Output</h2>
+          <web-copy-code>
+            <pre class="code-sample"><code>{{ item.rendered }}</code></pre>
+          </web-copy-code>
+          {% if item.docs %}
+          <div class="flow">
+            <h2>Docs</h2>
+            {{ item.docs | md }}
+          </div>
+          {% endif %}
+        </main>
+      </div>
+      
+      {% include 'partials/footer.njk' %}
+    </div>
+  </div>
+</div>
