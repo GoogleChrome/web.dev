@@ -4,7 +4,7 @@ subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
-updated: 2021-05-11
+updated: 2021-06-04
 hero: image/admin/iVHsQYbBj8qNYZeSZKwK.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
@@ -316,7 +316,7 @@ Here are bad examples:
 |`Your verification code is 123456`<br/><br/>`@https://example.com #123456`|URL scheme cannot be included.|
 |`Your verification code is 123456`<br/><br/>`@example.com:8080 #123456`|Port cannot be included.|
 |`Your verification code is 123456`<br/><br/>`@example.com/foobar #123456`|Path cannot be included.|
-|`Your verification code is 123456`<br/><br/>`@example .com #123456`|No whitespece in domain.|
+|`Your verification code is 123456`<br/><br/>`@example .com #123456`|No whitespace in domain.|
 |`Your verification code is 123456`<br/><br/>`@domain-forbiden-chars-#%/:<>?@[] #123456`|No [forbidden chars](https://url.spec.whatwg.org/#forbidden-host-code-point) in domain.|
 |`@example.com #123456`<br/><br/>`Mambo Jumbo`|`@host` and `#code` are expected to be the last line.|
 |`@example.com #123456`<br/><br/>`App hash #oudf08lkjsdf834`|`@host` and `#code` are expected to be the last line.|
