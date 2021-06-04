@@ -33,7 +33,7 @@ ensure `64px` is the consistent final size.
 
 This post explores a [new CSS font-face
 descriptor](https://drafts.csswg.org/css-fonts-5/#size-adjust-desc) called
-`size-adjust`, available in Firefox 89 (behind a flag) and Chromium 92 (see
+`size-adjust`, available in Chromium 92 and Firefox 89 (behind a flag); (see
 [caniuse](https://caniuse.com/mdn-css_at-rules_font-face_size-adjust) for latest
 support). It also demonstrates a few ways to correct and normalize font sizes
 for smoother user experience, consistent design systems and more predictable
