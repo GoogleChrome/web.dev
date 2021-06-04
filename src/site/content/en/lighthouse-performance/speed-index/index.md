@@ -4,7 +4,7 @@ title: Speed Index
 description: |
   Learn about Lighthouse's Speed Index metric and how to optimize it.
 date: 2019-05-02
-updated: 2019-10-10
+updated: 2021-06-04
 web_lighthouse:
   - speed-index
 ---
@@ -16,7 +16,7 @@ Each metric captures some aspect of page load speed.
 Lighthouse displays Speed Index in seconds:
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ksKnQH9tGEzIXsrVoUHR.png", alt="A screenshot of the Lighthouse Speed Index audit", width="800", height="588", class="w-screenshot" %}
+  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/LFN6FPQ2uQ4LnwcHiZWq.png", alt="A screenshot of the Lighthouse Speed Index audit", width="800", height="592", class="w-screenshot" %}
 </figure>
 
 ## What Speed Index measures
@@ -29,17 +29,14 @@ to generate the Speed Index score.
 
 {% Aside %}
 Speedline is based on the same principles as the
-[original speed index introduced by WebpageTest.org](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Metrics/SpeedIndex.md),
-but it computes the visual progression between frames using the
-[structural similarity (SSIM) index](https://en.wikipedia.org/wiki/Structural_similarity)
-instead of the histogram distance.
+[original speed index introduced by WebpageTest.org](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/metrics/SpeedIndex.md).
 {% endAside %}
 
 ## How Lighthouse determines your Speed Index score
 
 Your Speed Index score is a comparison of your page's speed index
 and the speed indices of real websites, based on
-[data from the HTTP Archive](https://bigquery.cloud.google.com/table/httparchive:lighthouse.2019_03_01_mobile?pli=1).
+[data from the HTTP Archive](/performance-scoring/#metric-scores).
 
 This table shows how to interpret your Speed Index score:
 
@@ -49,24 +46,20 @@ This table shows how to interpret your Speed Index score:
       <tr>
         <th>Speed Index<br>(in seconds)</th>
         <th>Color-coding</th>
-        <th>Speed Index score</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>0–4.3</td>
+        <td>0–3.4</td>
         <td>Green (fast)</td>
-        <td>75–100</td>
       </tr>
       <tr>
-        <td>4.4–5.8</td>
+        <td>3.4–5.8</td>
         <td>Orange (moderate)</td>
-        <td>50–74</td>
       </tr>
       <tr>
         <td>Over 5.8</td>
         <td>Red (slow)</td>
-        <td>0–49</td>
       </tr>
     </tbody>
   </table>
@@ -90,6 +83,6 @@ should have a particularly big impact:
 ## Resources
 
 - [Source code for **Speed Index** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/speed-index.js)
-- [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
+- [Lighthouse Scoring Guide](/performance-scoring)
 - [Speedline](https://github.com/paulirish/speedline)
-- [WebPagetest Speed Index](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Metrics/SpeedIndex.md)
+- [WebPagetest Speed Index](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/metrics/SpeedIndex.md)
