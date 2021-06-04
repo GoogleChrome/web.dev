@@ -224,7 +224,7 @@ a [Content Delivery Network (CDN)](https://web.dev/content-delivery-networks/)
 and [HTTP/2](https://web.dev/content-delivery-networks/#http2-and-http3).
 Without use of these technologies, it is much less likely that self-hosted fonts
 will deliver better performance. For more information, see [Content Delivery
-Networks](https://web.dev/content-delivery-networks/).
+Networks](/content-delivery-networks/).
 
 {% Aside %}
 
