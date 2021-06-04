@@ -245,7 +245,7 @@ for [CJK languages](https://en.wikipedia.org/wiki/CJK_characters) can be
 particularly challenging.
 
 
-*  **Unicode-range and font subsetting:** `@font-face` is often used in
+**Unicode-range and font subsetting:** `@font-face` is often used in
    conjunction with the
    [`unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range)
    descriptor. `unicode-range` informs the browser which characters a font can
