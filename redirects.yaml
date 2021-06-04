@@ -277,3 +277,11 @@ redirects:
 # Redirects for Media content
 - source: /media-cheat-sheet
   destination: /media-conversion
+
+# Redirects to https://developer.chrome.com/.
+- source: /browser-flags/
+  destination: https://developer.chrome.com/blog/browser-flags/
+- source: /origin-trials/
+  destination: https://developer.chrome.com/blog/origin-trials/
+- source: /third-party-origin-trials/
+  destination: https://developer.chrome.com/blog/third-party-origin-trials/

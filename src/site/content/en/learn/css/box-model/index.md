@@ -206,7 +206,7 @@ To break this analogy down:
 
 - The content box is the artwork.
 - The padding box is the white matte, between the frame and the artwork.
-- The border box is the the frame, providing a literal border for the artwork.
+- The border box is the frame, providing a literal border for the artwork.
 - The margin box is the space between each frame.
 - The shadow occupies the same space as the margin box.
 

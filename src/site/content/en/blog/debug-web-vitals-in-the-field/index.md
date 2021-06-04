@@ -131,11 +131,11 @@ to CLS and returns the largest source element from the largest shift:
 
 ```js
 function getCLSDebugTarget(entries) {
-  const largestShift = entries.reduce((a, b) => {
+  const largestEntry = entries.reduce((a, b) => {
     return a && a.value > b.value ? a : b;
   });
-  if (largestShift && largestShift.sources) {
-    const largestSource = largestShift.sources.reduce((a, b) => {
+  if (largestEntry && largestEntry.sources && layoutShift.sources.length) {
+    const largestSource = largestEntry.sources.reduce((a, b) => {
       return a.node && a.previousRect.width * a.previousRect.height >
           b.previousRect.width * b.previousRect.height ? a : b;
     });
@@ -382,7 +382,7 @@ function getDebugInfo(name, entries = []) {
       };
     } else if (name === 'CLS') {
       const largestEntry = getLargestLayoutShiftEntry(entries);
-      if (largestEntry && largestEntry.sources) {
+      if (largestEntry && largestEntry.sources && largestEntry.sources.length) {
         const largestSource = getLargestLayoutShiftSource(largestEntry.sources);
         if (largestSource) {
           return {

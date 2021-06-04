@@ -8,6 +8,7 @@ description: |
   needed. Instead of a "one-size-fits-all" approach to images, serve different
   image sizes to different devices.
 date: 2018-11-05
+updated: 2021-06-04
 codelabs:
   - codelab-specifying-multiple-slot-widths
   - codelab-art-direction
@@ -155,7 +156,7 @@ Use the `w` unit (instead of `px`) to write width descriptors. For example, a
 You don't need to know about density descriptors to serve different image sizes.
 However, if you're curious about how density descriptors work, check out the
 [Resolution Switching code lab](/codelab-density-descriptors).
-Density descriptors are used to serve different images based on the_ device's
+Density descriptors are used to serve different images based on the device's
 [pixel density](https://en.wikipedia.org/wiki/Pixel_density).
 
 ### The "sizes" attribute

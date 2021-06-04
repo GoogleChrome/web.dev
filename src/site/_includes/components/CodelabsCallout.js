@@ -24,10 +24,11 @@ module.exports = (slugs, lang) => {
   // Coerce slugs to Array just in case someone pasted in a single slug string.
   slugs = slugs instanceof Array ? slugs : [slugs];
 
-  const codelabs = slugs.map((slug) => findByUrl(`/${lang}/${slug}/`));
+  const codelabs = slugs
+    .map((slug) => findByUrl(`/${lang}/${slug}/`))
+    .filter((item) => item); // filter out any undefined entries
+
   if (!codelabs.length) {
-    /* eslint-disable-next-line */
-    console.warn(`Did not find any matching codelabs.`);
     return;
   }
 
