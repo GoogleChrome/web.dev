@@ -281,3 +281,7 @@ redirects:
   destination: https://developer.chrome.com/blog/origin-trials/
 - source: /third-party-origin-trials/
   destination: https://developer.chrome.com/blog/third-party-origin-trials/
+
+# Redirect for Aurora
+- source: /aurora
+  destination: /introducing-aurora

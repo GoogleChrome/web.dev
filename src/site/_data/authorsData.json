@@ -619,11 +619,16 @@
       "given": "Houssein",
       "family": "Djirdeh"
     },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
     "homepage": "https://houssein.me/",
     "twitter": "hdjirdeh",
     "github": "housseindjirdeh",
     "glitch": "housseindjirdeh",
-    "image": "image/admin/BibySYHD7JweNcHZCCOe.jpg"
+    "image": "image/admin/BibySYHD7JweNcHZCCOe.jpg",
+    "country": "US"
   },
   "megginkearney": {
     "name": {
@@ -2324,5 +2329,22 @@
     "descriptions": {
       "en": "Engineer at Google working on AVIF"
     }
+  },
+  "shubhie": {
+    "name": {
+      "given": "Shubhie",
+      "family": "Panicker"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Engineering"
+    },
+    "descriptions": {
+      "en": "Tech Lead Manager on the Chrome Web Platform team"
+    },
+    "github": "spanicker",
+    "twitter": "shubhie",
+    "country": "US",
+    "image": "image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/sInJ1hYQTzeVJUGaOjlk.jpeg"
   }
 }
