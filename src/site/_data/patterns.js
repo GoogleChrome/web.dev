@@ -1,3 +1,5 @@
+/* global __basedir */
+
 const nunjucks = require('nunjucks');
 const fs = require('fs');
 const path = require('path');
@@ -12,10 +14,10 @@ module.exports = {
     // Grabs each folder inside patterns, excluding hidden files/folders
     const patterns = fs
       .readdirSync(basePath)
-      .filter((item) => !/(^|\/)\.[^\/\.]/g.test(item));
+      .filter((item) => !/(^|\/)\.[^/.]/g.test(item));
 
     // For creating a result collection
-    let result = [];
+    const result = [];
 
     // This is used for both patterns and variants to grab markup, data and docs
     const buildPattern = (patternPath, patternName) => {
@@ -73,7 +75,7 @@ module.exports = {
       if (fs.existsSync(patternVariantsRoot)) {
         const variants = fs
           .readdirSync(patternVariantsRoot)
-          .filter((item) => !/(^|\/)\.[^\/\.]/g.test(item));
+          .filter((item) => !/(^|\/)\.[^/.]/g.test(item));
 
         patternResponse['variants'] = variants.map((variant) => {
           const variantRoot = path.resolve(patternVariantsRoot, variant);
