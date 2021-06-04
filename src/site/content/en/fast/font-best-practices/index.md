@@ -308,14 +308,14 @@ To use the system font in your CSS, list `system-ui` as the font-family:
 ```css
 font-family: system-ui
 ```
-*  **Variable fonts:** The idea behind [variable
-   fonts](https://web.dev/variable-fonts/) is that a single variable font can be
-   used as a replacement for multiple font files. Variable fonts work by
-   defining a "default" font style and providing
-   ["axes"](https://web.dev/variable-fonts/#axes-definitions) for manipulating
-   the font. For example, a variable font with a `Weight` axis could be used to
-   implement lettering that would previously require separate fonts for light,
-   regular, bold, and extra bold.
+The idea behind **[variable
+ fonts](/variable-fonts/)** is that a single variable font can be
+ used as a replacement for multiple font files. Variable fonts work by
+ defining a "default" font style and providing
+ ["axes"](/variable-fonts/#axes-definitions) for manipulating
+ the font. For example, a variable font with a `Weight` axis could be used to
+ implement lettering that would previously require separate fonts for light,
+ regular, bold, and extra bold.
 
 {% Aside %}
 
