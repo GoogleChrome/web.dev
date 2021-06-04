@@ -188,7 +188,7 @@ effective at making fonts discoverable early in the page load process, this
 comes at the cost of taking away browser resources from the loading of other
 resources. 
 
-In most scenarios, inlining font declarations and adjusting stylesheets will be
+In most scenarios, inlining font declarations and adjusting stylesheets is
 a more effective approach. These adjustments come closer to addressing the root
 cause of late-discovered fonts - rather than just providing a workaround.
 
