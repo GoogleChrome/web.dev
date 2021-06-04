@@ -6,7 +6,6 @@ import {html} from 'lit-element';
 import {unsafeHTML} from 'lit-html/directives/unsafe-html';
 import {SearchResults} from '../SearchResults';
 import 'focus-visible';
-import './_styles.scss';
 
 /**
  * An Algolia search box for courses drawer.
