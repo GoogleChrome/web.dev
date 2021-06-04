@@ -297,10 +297,10 @@ System fonts and variable fonts are two ways to potentially reduce the number of
 web fonts used on your site.
 
 
-*  **System fonts:** A system font is the default font used by the user
-   interface of a user's device. System fonts typically vary by operating system
-   and version. Because the font is already installed, the font does not need to
-   be downloaded. System fonts can work particularly well for body text. 
+A **system font** is the default font used by the user
+interface of a user's device. System fonts typically vary by operating system
+and version. Because the font is already installed, the font does not need to
+be downloaded. System fonts can work particularly well for body text. 
 
 
 To use the system font in your CSS, list `system-ui` as the font-family:
