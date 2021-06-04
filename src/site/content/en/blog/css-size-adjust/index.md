@@ -37,13 +37,13 @@ descriptor](https://drafts.csswg.org/css-fonts-5/#size-adjust-desc) called
 [caniuse](https://caniuse.com/mdn-css_at-rules_font-face_size-adjust) for latest
 support). It also demonstrates a few ways to correct and normalize font sizes
 for smoother user experience, consistent design systems and more predictable
-page layout. For example, when optimizing initial font rendering to prevent
+page layout. One important use case is optimizing web font rendering to prevent
 [cumulative layout shift](/cls/) (CLS). 
 
 Here's an interactive [demo](https://codepen.io/argyleink/pen/rNyMjxR) of the
 problem space. Try changing the typeface with the dropdown and observe: 
-1. The wildheight differences in the results.
-1. Visual jarring content shifts. 
+1. The height differences in the results.
+1. Visually jarring content shifts. 
 1. Moving interactive target areas (the dropdown jumps around!).
 
 {% Codepen {
@@ -55,7 +55,7 @@ problem space. Try changing the typeface with the dropdown and observe:
 Font family vs Typeface: A **typeface** is referred to by
 its family name plus its font face. `Helvetica Bold` is referring to the
 specific bold typeface while `Helvetica` is generically referring to the entire
-family of 8+. With CSS `@font-face` you'll be dealing with typefaces, even
+family of 8+ typefaces (normal, bold, italic, etc). With CSS `@font-face` you'll be dealing with typefaces, even
 though to use them you need to write `font-family`. 
 {% endAside %}
 
