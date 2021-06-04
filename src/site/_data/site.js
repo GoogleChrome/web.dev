@@ -31,9 +31,8 @@ module.exports = {
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
   thumbnail: 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vU99HKzIf5EUPnzGVPf1.png',
-  isBannerEnabled: true,
-  banner:
-    'We want to hear from you! We are looking for web developers to participate in user research, product testing, discussion groups and more. [Apply now to join](https://www.brandinvitation.com/wix/p3474224.aspx?said=QWERD5A&pcid=CLCS&aud=na&cid=na&enpt=lp&lang=9&l=9&udv=wdb) our WebDev Insights Community.',
+  isBannerEnabled: false,
+  banner: '',
   areCoursesEnabled: true,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
