@@ -2282,5 +2282,25 @@
       "en": "Software Engineer on the Google Chrome team"
     },
     "country": "US"
+  },
+  "jaikk": {
+    "name": {
+      "given": "Jai",
+      "family": "Krishnan"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "country": "US"
+  },
+  "wtc": {
+    "name": {
+      "given": "Wan-Teh",
+      "family": "Chang"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "country": "US"
   }
 }
