@@ -36,7 +36,7 @@ of ways in which web fonts impact performance:
 
 This article is broken down into three sections: font loading, font delivery,
 and font rendering. Each section explains how that particular aspect of the font
-lifecycle "works" and provides corresponding best practices.
+lifecycle works and provides corresponding best practices.
 
 ## Font loading
 
