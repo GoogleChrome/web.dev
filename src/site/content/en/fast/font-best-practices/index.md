@@ -220,7 +220,7 @@ found that sites using third-party fonts had a faster render than fonts that
 used first-party fonts.
 
 If you are considering using self-hosted fonts, confirm that your site is using
-a [Content Delivery Network (CDN)](https://web.dev/content-delivery-networks/)
+a [Content Delivery Network (CDN)](/content-delivery-networks/)
 and [HTTP/2](/content-delivery-networks/#http2-and-http3).
 Without use of these technologies, it is much less likely that self-hosted fonts
 will deliver better performance. For more information, see [Content Delivery
