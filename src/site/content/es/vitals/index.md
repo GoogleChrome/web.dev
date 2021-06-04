@@ -12,6 +12,7 @@ tags:
   - metrics
   - performance
   - web-vitals
+translated: 2021-05-05
 ---
 
 Asegurar una calidad de experiencia de usuario óptima es clave para el éxito a largo plazo de cualquier sitio web. Tanto para un propietario de un negocio, especialista de marketing o desarrollador, Web Vitals pueden ayudarle a cuantificar la experiencia de su sitio e identificar oportunidades para mejorar.
