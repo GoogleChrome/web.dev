@@ -26,7 +26,7 @@ of ways in which web fonts impact performance:
 
 *   **Delayed text rendering:** If a web font has not loaded, browsers typically
     delay text rendering. In many situations, this delays [First Contentful
-    Paint (FCP)](http://web.dev/fcp). In some situations, this delays [Largest
+    Paint (FCP)](/fcp). In some situations, this delays [Largest
     Contentful Paint (LCP)](/lcp/). 
 *   **Layout shifts:** The practice of font swapping has the potential to [cause
     layout
