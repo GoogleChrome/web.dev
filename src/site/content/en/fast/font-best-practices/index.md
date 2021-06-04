@@ -238,7 +238,7 @@ self-hosted font will be more performant.
 
 If you use a self-hosted font, it is recommended that you also apply some of the
 font file optimizations that third-party font providers typically provide
-automatically - for example, font subsetting and WOFF2 compression. The amount
+automatically—for example, font subsetting and WOFF2 compression. The amount
 of effort required to apply these optimizations will depend somewhat on the
 languages that your site supports. In particular, be aware that optimizing fonts
 for [CJK languages](https://en.wikipedia.org/wiki/CJK_characters) can be
