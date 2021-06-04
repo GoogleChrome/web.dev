@@ -160,11 +160,9 @@ Resource hints should be placed in the `<head>` of the document.
 
 
 ```html
-
 <head>
   <link rel="preconnect" href="https://fonts.com">
 </head>
-
 ```
 
 {% Aside %}
@@ -251,38 +249,37 @@ particularly challenging.
    descriptor. `unicode-range` informs the browser which characters a font can
    be used for.
 
-
-    ```css
-    @font-face {
+```css
+@font-face {
     font-family: "Open Sans";
     src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2");
     unicode-range: U+0025-00FF;
-    }
-    ```
+}
+```
 
-    A font file will be downloaded if the page contains one or more characters
-    matching the unicode range. `unicode-range` is commonly used to serve
-    different font files depending on the language used by page content.
+A font file will be downloaded if the page contains one or more characters
+matching the unicode range. `unicode-range` is commonly used to serve
+different font files depending on the language used by page content.
 
-    `unicode-range` is often used in conjunction with the technique of
-    subsetting. A subset font includes a smaller portion of the
-    [glyphs](https://en.wikipedia.org/wiki/Glyph) (that is, characters) that
-    were contained in the original font file. For example, rather than serve all
-    characters to all users, a site might generate separate subset fonts for
-    Latin and Cyrillic characters. The number of glyphs per font varies wildly:
-    Latin fonts are usually on the magnitude of 100 to 1000 glyphs per font;
-    [CJK](https://en.wikipedia.org/wiki/CJK_characters) fonts may have over
-    10,000 characters. Removing unused glyphs can significantly reduce the
-    filesize of a font.
+`unicode-range` is often used in conjunction with the technique of
+subsetting. A subset font includes a smaller portion of the
+[glyphs](https://en.wikipedia.org/wiki/Glyph) (that is, characters) that
+were contained in the original font file. For example, rather than serve all
+characters to all users, a site might generate separate subset fonts for
+Latin and Cyrillic characters. The number of glyphs per font varies wildly:
+Latin fonts are usually on the magnitude of 100 to 1000 glyphs per font;
+[CJK](https://en.wikipedia.org/wiki/CJK_characters) fonts may have over
+10,000 characters. Removing unused glyphs can significantly reduce the
+filesize of a font.
 
-    Tools for generating font subsets include
-    [subfont](https://github.com/Munter/subfont) and
-    [glyphanger](https://github.com/zachleat/glyphhanger).
+Tools for generating font subsets include
+[subfont](https://github.com/Munter/subfont) and
+[glyphanger](https://github.com/zachleat/glyphhanger).
 
-    For information on how Google Fonts implements font subsetting, see this
-    [presentation](https://www.unicodeconference.org/presentations-42/S5T3-Sheeter.pdf).
-    For the Google Fonts API subsets, see this
-    [repo](https://github.com/googlefonts/gftools/tree/main/Lib/gftools/encodings).
+For information on how Google Fonts implements font subsetting, see this
+[presentation](https://www.unicodeconference.org/presentations-42/S5T3-Sheeter.pdf).
+For the Google Fonts API subsets, see this
+[repo](https://github.com/googlefonts/gftools/tree/main/Lib/gftools/encodings).
 
 **WOFF2:** Of the modern font fonts, [WOFF2](https://www.w3.org/TR/WOFF2/) is
    the newest, has the widest browser support, and offers the best compression.
