@@ -212,7 +212,7 @@ font swapping.
 
 #### Using self-hosted fonts
 
-At least on paper, using a self-hosted font should deliver better performance as
+On paper, using a self-hosted font should deliver better performance as
 it eliminates a third-party connection setup. However, in practice, the
 performance differences between these two options is less clear cut: for
 example, the [Web Almanac](https://almanac.httparchive.org/en/2020/fonts#fig-7)
