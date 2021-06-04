@@ -2291,7 +2291,11 @@
     "org": {
       "name": "Google"
     },
-    "country": "US"
+    "country": "US",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/BKGlQ9PreNrLEV74mhKX.jpg",
+    "descriptions": {
+      "en": "Product Manager at Google working on open codecs"
+    }
   },
   "wtc": {
     "name": {
@@ -2301,6 +2305,10 @@
     "org": {
       "name": "Google"
     },
-    "country": "US"
+    "country": "US",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/tyVCzJx2Qe2hCSwXzhrk.jpeg",
+    "descriptions": {
+      "en": "Engineer at Google working on AVIF"
+    }
   }
 }

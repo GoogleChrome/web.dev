@@ -246,7 +246,7 @@ The basic parameters for avifenc used in this tutorial are:
       <td>--min 0</td><td>Set min quantizer for color to 0</td>
     </tr>
     <tr>
-      <td>max 63</td><td>Set max quantizer for color to 63</td>
+      <td>--max 63</td><td>Set max quantizer for color to 63</td>
     </tr>
     <tr>
       <td>--minalpha 0</td><td>Set min quantizer for alpha to 0</td>
@@ -278,7 +278,7 @@ The basic parameters for avifenc used in this tutorial are:
   </tbody>
 </table>
 
-The cq-level option sets the quantize level (0.63) to control the quality for color or alpha.
+The cq-level option sets the quantize level (0-63) to control the quality for color or alpha.
 
 {% Aside %}
 You can think of cq-level is the "amount" of quantization, so a lower value yields higher quality
