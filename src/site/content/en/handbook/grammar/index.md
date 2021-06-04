@@ -2,6 +2,7 @@
 layout: handbook
 title: Grammar, mechanics, and usage
 date: 2019-06-26
+updated: 2021-06-04
 description: |
   A list of grammar, mechanics, and usage rules for web.dev, followed by a list of style and usage references.
 ---
@@ -256,6 +257,18 @@ To copy, press `Control+C` (or `Command+C` on Mac).
 </div>
 
 Use _pane_ to refer to the content areas associated with tabs—unless you're referring to an area in DevTools; then use _panel_.
+
+Use `about://` instead of `chrome://` for built-in URLs in web.dev articles. This generalizes these URLs to all Chromium forks. Typing `about://` in such a browser will redirect to a browser-specific page. For example typing `about://` in Microsoft Edge will redirect to `edge://`.
+
+<div class="w-columns">
+{% Compare 'worse' %}
+`chrome://`
+{% endCompare %}
+
+{% Compare 'better' %}
+`about://`
+{% endCompare %}
+</div>
 
 ## Units
 Use _KB_ for kilobytes, _kb_ for kilobits.
