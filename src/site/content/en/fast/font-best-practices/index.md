@@ -327,7 +327,7 @@ example, italics, regular, bold). A font file contains a single font.
 {% endAside %}
 
 Not everyone will benefit from switching to variable fonts. [Variable
-fonts](https://web.dev/variable-fonts/) typically have larger file sizes than
+fonts](/variable-fonts/) typically have larger file sizes than
 non-variable fonts. Sites that will see the largest improvement from using
 variable fonts are sites that use (and need to use) a variety of font styles and
 weights.
