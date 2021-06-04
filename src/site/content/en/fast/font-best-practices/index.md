@@ -160,11 +160,9 @@ Resource hints should be placed in the `<head>` of the document.
 
 
 ```html
-
 <head>
   <link rel="preconnect" href="https://fonts.com">
 </head>
-
 ```
 
 {% Aside %}
@@ -251,14 +249,13 @@ particularly challenging.
    descriptor. `unicode-range` informs the browser which characters a font can
    be used for.
 
-
-    ```css
-    @font-face {
+```css
+@font-face {
     font-family: "Open Sans";
     src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2");
     unicode-range: U+0025-00FF;
-    }
-    ```
+}
+```
 
     A font file will be downloaded if the page contains one or more characters
     matching the unicode range. `unicode-range` is commonly used to serve
