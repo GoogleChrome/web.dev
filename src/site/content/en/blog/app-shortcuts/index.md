@@ -171,7 +171,12 @@ You are encouraged to order app shortcuts by priority, with the most critical
 app shortcuts appearing first in the `shortcuts` array as the limit on the
 number of app shortcuts displayed varies depending on the platform. Chrome and
 Edge on Windows for instance limit the number of app shortcuts to 10 while
-Chrome for Android only takes the first 3 app shortcuts into account.
+Chrome for Android only takes the first 4 app shortcuts into account.
+
+{% Aside %}
+Chrome 92 for Android 7 now allow only 3 app shortcuts. A shortcut to the site
+settings was added, taking one of the available shortcut slots for the app.
+{% endAside %}
 
 ### Use distinct app shortcut names
 
