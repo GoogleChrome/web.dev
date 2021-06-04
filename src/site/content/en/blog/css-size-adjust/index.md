@@ -117,8 +117,7 @@ the web font finishes loading. This gives you the best of both worlds: the
 content is visible as soon as possible, and you get a nicely styled page without
 sacrificing your user's time to content. The problem however, is that sometimes
 when the web font loads, it shifts the entire page around since it presents at a
-slightly different box height size, even though the font is set to the same
-size.
+slightly different box height size.
 
 <figure class="w-figure w-screenshot">
   {% Video
