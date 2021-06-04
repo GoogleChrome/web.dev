@@ -284,7 +284,7 @@ particularly challenging.
     For the Google Fonts API subsets, see this
     [repo](https://github.com/googlefonts/gftools/tree/main/Lib/gftools/encodings).
 
-*  **WOFF2:** Of the modern font fonts, [WOFF2](https://www.w3.org/TR/WOFF2/) is
+**WOFF2:** Of the modern font fonts, [WOFF2](https://www.w3.org/TR/WOFF2/) is
    the newest, has the widest browser support, and offers the best compression.
    Because it uses Brotli, WOFF2 compresses 30% better than WOFF.
 
