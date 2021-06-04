@@ -372,7 +372,9 @@ associated web font has not loaded. It is defined per font-face.
 There are five possible values for `font-display`:
 
 
+<div class="w-table-wrapper">
 <table>
+<thead>
   <tr>
    <td><strong>Value</strong>
    </td>
@@ -381,6 +383,8 @@ There are five possible values for `font-display`:
    <td><strong>Swap period</strong>
    </td>
   </tr>
+  </thead>
+  <tbody>
   <tr>
    <td>Auto
    </td>
@@ -421,7 +425,9 @@ There are five possible values for `font-display`:
    <td>None
    </td>
   </tr>
+  </tbody>
 </table>
+</div>
 
 
 
