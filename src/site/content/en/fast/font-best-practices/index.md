@@ -94,8 +94,8 @@ of fonts loaded by a page.
 
 ### Best practices
 
-Fonts are typically important resources - without them the user might not be
-able to view page content. Thus, best practices for font loading generally focus
+Fonts are typically important resources, as without them the user might be
+unable to view page content. Thus, best practices for font loading generally focus
 on making sure that fonts get loaded as early as possible. Particular care
 should be given to fonts loaded from third-party sites as downloading these font
 files requires separate connection setups.
