@@ -81,7 +81,7 @@ the page contained a `<h1>` element.
     Other ways of loading a font are the
     [`preload`](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
     resource hint and the [Font Loading
-    API](https://web.dev/optimize-webfont-loading/#the-font-loading-api).
+    API](/optimize-webfont-loading/#the-font-loading-api).
 {% endAside %}
 
 Thus, when thinking about font optimization, it's important to give stylesheets
