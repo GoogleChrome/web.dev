@@ -164,7 +164,7 @@ used in our example above.  To start, you will need:
 git clone https://github.com/AOMediaCodec/libavif.git
 ```
 
-#### 2. Change directory to libavif.
+#### 2. Change directory to libavif
 
 ```shell
 cd libavif
@@ -175,7 +175,7 @@ You can find more information at [libavif](https://github.com/AOMediaCodec/libav
 We are going to build avifenc so that it is statically linked to the
 AV1 encoder and decoder library, [libaom](https://aomedia.googlesource.com/aom).
 
-#### 3. Get and build libaom.
+#### 3. Get and build libaom
 
 Change to the libavif extensions directory.
 
@@ -196,7 +196,7 @@ Change directory to libavif.
 cd ..
 ```
 
-#### 4. Build the command line encoding tool, avifenc.
+#### 4. Build the command line encoding tool, avifenc
 
 It is a good idea to create a build directory for avifenc.
 
@@ -291,7 +291,7 @@ This tutorial uses the default setting of Speed 6,
 which we recommend as a balance of encode speed, compression efficiency, and quality.
 {% endAside%}
 
-### Create an AVIF image with default settings.
+### Create an AVIF image with default settings
 
 The most basic parameters for avifenc to run, are setting the input and output files.
 
@@ -321,7 +321,7 @@ If you want to see the options and learn more about them just run <code>./avifen
 
 You now have your very own second AVIF image!
 
-### Speeding up the encoder.
+### Speeding up the encoder
 
 One parameter that may be good to change
 depending on how many cores you have on your machine is the <code>--jobs</code> parameter.
@@ -342,7 +342,7 @@ you can get the best image quality and performance for your website using AVIF.
 The format is still relatively new,
 and optimizations and tooling integrations are actively being developed.
 If you have questions, comments, or feature requests,
-please reach out on the
+reach out on the
 [av1-discuss mailing list](https://groups.google.com/a/aomedia.org/g/av1-discuss),
 [AOM Github community](https://github.com/AOMediaCodec/community/wiki), and
 [AVIF wiki](https://github.com/AOMediaCodec/av1-avif/wiki).
