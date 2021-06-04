@@ -3,7 +3,7 @@ title: CSS `size-adjust` for `@font-face`
 subhead: As a web font loads, you can now adjust its scale, to normalize the document font sizes and prevent layout shift when switching between fonts
 authors:
   - adamargyle
-description: As a web font loads, you can now adjust its scale, to normalize the document font sizes and prevent layout shift when switching between fonts
+description: As a web font loads, you can now adjust its scale to normalize the document font sizes and prevent layout shift when switching between fonts
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/fL3dWSY7YBfagFP0ikMW.jpg
 alt: Well used letters from a letterpress, set into rows
 tags:
@@ -15,8 +15,7 @@ updated: 2021-06-04
 
 Consider the following
 [demo](https://codepen.io/argyleink/pen/8ace843980e2fd24bf15c8bd1bd072e4?editors=1100)
-where the only difference between each of these headers is the `font-family`,
-same `font-size` of `64px`. The examples on the left have not been adjusted and
+where the `font-size` is a consistent `64px`, and the only difference between each of these headers is the `font-family`. The examples on the left have not been adjusted and
 have an inconsistent final size. The examples on the right use `size-adjust` to
 ensure `64px` is the consistent final size.
 
@@ -28,7 +27,7 @@ ensure `64px` is the consistent final size.
     muted="true"
   %}
   <figcaption class="w-figure">
-    Chrome DevTools CSS grid layout debug tools used to show heights
+   In this example Chrome DevTools CSS grid layout debug tools are used to show heights.
   </figcaption>
 </figure>
 
@@ -39,7 +38,7 @@ descriptor](https://drafts.csswg.org/css-fonts-5/#size-adjust-desc) called
 support). It also demonstrates a few ways to correct and normalize font sizes
 for smoother user experience, consistent design systems and more predictable
 page layout. For example, when optimizing initial font rendering to prevent
-[cumulative layout shift](https://web.dev/cls/) (CLS). 
+[cumulative layout shift](/cls/) (CLS). 
 
 Here's an interactive [demo](https://codepen.io/argyleink/pen/rNyMjxR) of the
 problem space. Try changing the typeface with the dropdown and observe: 
@@ -107,16 +106,16 @@ element and the issue is very noticeable.
     muted="true"
   %}
   <figcaption class="w-figure">
-    left has layout shift, right does not
+    The example on the left has layout shift, the one on the right does not.
   </figcaption>
 </figure>
 
 To improve font rendering, a great technique is [font
-swapping](https://web.dev/font-display/), where you render a quick-loading
-system font to show the content first, and then swap that with a web font when
+swapping](/font-display/). Render a quick-loading
+system font to show the content first, then swap that with a web font when
 the web font finishes loading. This gives you the best of both worlds: the
 content is visible as soon as possible, and you get a nicely styled page without
-sacrificing your user's time to content. The problem, however, is that sometimes
+sacrificing your user's time to content. The problem however, is that sometimes
 when the web font loads, it shifts the entire page around since it presents at a
 slightly different box height size, even though the font is set to the same
 size.
@@ -148,14 +147,14 @@ by [Malte Ubl](https://twitter.com/cramforce).
     muted="true"
   %}
   <figcaption class="w-figure">
-    choose a [Google Web Font](https://fonts.google.com/), get back a pre-adjusted @font-face snippet
+    Choose a <a href="https://fonts.google.com/">Google Web Font</a>, get back a pre-adjusted <code>@font-face</code> snippet.
   </figcaption>
 </figure>
 
 At the beginning of this post, fixing the font size issue was done by trial and
 error. `size-adjust` was nudged in the source code until the same header in
 `Cookie` and `Arial` rendered the same `64px` as `Press Start 2P` did naturally.
-I aligned 2 fonts to a target font size.
+I aligned two fonts to a target font size.
 
 ```css
 @font-face {
@@ -209,7 +208,7 @@ html {
 }
 ```
 
-Local regular Arial adjusting in anticipation of a loaded custom font, for a
+In this example, local font Arial is adjusting in anticipation of a loaded custom font, for a
 seamless swap. 
 
 This strategy has an advantage of offering designers and developers the same
@@ -278,7 +277,6 @@ html {
 }
 ```
 
-Adjusting incoming downloaded fonts to a local target for a seamless swap.
 
 This strategy has the advantage of rendering without any adjustments, then
 adjusting any incoming fonts to match.
@@ -346,7 +344,7 @@ headline has been adjusted so it's letters rest snug on the baseline.
 ### `line-gap-override`
 
  The `line-gap-override` descriptor defines the line-gap metric for the font.
- This is the font recommended line-gap or external leading
+ This is the font recommended line-gap or external leading.
 
 ```css/3
 @font-face {
