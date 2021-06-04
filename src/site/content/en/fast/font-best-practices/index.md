@@ -30,7 +30,7 @@ of ways in which web fonts impact performance:
     Contentful Paint (LCP)](https://web.dev/lcp/). 
 *   **Layout shifts:** The practice of font swapping has the potential to [cause
     layout
-    shifts](https://web.dev/debug-layout-shifts/#identifying-the-cause-of-a-layout-shift).
+    shifts](/debug-layout-shifts/#identifying-the-cause-of-a-layout-shift).
     These layout shifts occur when a web font and its fallback font take up
     different amounts of space on the page.
 
