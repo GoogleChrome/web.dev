@@ -58,7 +58,7 @@ location of the corresponding font file.
 ```
 
 A common misconception is that a font is requested when a `@font-face`
-declaration is encountered - this is not true. By itself, `@font-face`
+declaration is encountered—this is not true. By itself, `@font-face`
 declaration does not trigger font download. Rather, a font is downloaded only if
 it is referenced by styling that is used on the page. For example, like this:
 
