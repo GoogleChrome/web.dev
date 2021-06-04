@@ -158,7 +158,7 @@ used in our example above.  To start, you will need:
 
 ### Building command line encoder avifenc
 
-#### 1. Get the code.
+#### 1. Get the code
 
 ```shell
 git clone https://github.com/AOMediaCodec/libavif.git
@@ -278,7 +278,7 @@ The basic parameters for avifenc used in this tutorial are:
   </tbody>
 </table>
 
-The cq-level option sets the quantize level (0..63) to control the quality for color or alpha.
+The cq-level option sets the quantize level (0.63) to control the quality for color or alpha.
 
 {% Aside %}
 You can think of cq-level is the "amount" of quantization, so a lower value yields higher quality
