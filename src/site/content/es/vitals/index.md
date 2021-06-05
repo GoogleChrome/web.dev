@@ -12,6 +12,7 @@ tags:
   - metrics
   - performance
   - web-vitals
+translated: 2021-05-05
 ---
 
 Asegurar una calidad de experiencia de usuario óptima es clave para el éxito a largo plazo de cualquier sitio web. Tanto para un propietario de un negocio, especialista de marketing o desarrollador, Web Vitals pueden ayudarle a cuantificar la experiencia de su sitio e identificar oportunidades para mejorar.
@@ -223,5 +224,3 @@ Los **Core Web Vitals** son relevantes para todas las páginas web y aparecen en
 Los otros Web Vitals suelen ser específicos del contexto o de la herramienta, y pueden ser más experimentales que los Core Web Vitals. Sus definiciones y umbrales pueden cambiar con mayor frecuencia.
 
 Para todos los Web Vitals, los cambios se documentarán de manera clara en este [REGISTRO DE CAMBIOS](http://bit.ly/chrome-speed-metrics-changelog) público.
-
-<web-feedback></web-feedback>

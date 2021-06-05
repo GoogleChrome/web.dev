@@ -56,7 +56,17 @@ class LanguageSelect extends BaseStateElement {
   }
 
   render() {
-    const langList = lang.supportedLanguages;
+    const languageVersions = Array.from(
+      document.querySelectorAll('link[rel="alternate"]'),
+    )
+      .filter((link) => link['hreflang'])
+      .map((link) => link['hreflang']);
+    const langList = lang.supportedLanguages.filter((lang) =>
+      languageVersions.includes(lang),
+    );
+    if (!langList.length) {
+      return '';
+    }
     return html`
       <div class="w-display-flex">
         <label class="w-visually-hidden" for="preferred-language">
