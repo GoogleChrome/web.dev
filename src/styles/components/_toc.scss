@@ -137,6 +137,10 @@ web-table-of-contents-button {
 .w-toc__header {
   margin-bottom: 12px;
   margin-top: 12px;
+
+  a {
+    display: inline-block;
+  }
 }
 
 .w-toc__header--link {
