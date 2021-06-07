@@ -1,14 +1,14 @@
 ---
 layout: post
-title: 'High performance storage for your app: The Storage Foundation API'
+title: 'High performance storage for your app: the Storage Foundation API'
 subhead: |
-  An API that is particularly well suited for Wasm-based libraries and
+  A storage API that is particularly well suited for Wasm-based libraries and
   applications that want to use custom storage algorithms to fine-tune
   execution speed and memory usage.
 authors:
   - thomassteiner
-date: 2021-06-03
-# updated: 2021-06-03
+date: 2021-06-07
+# updated: YYYY-MM-DD
 description: |
   The Storage Foundation API is a storage API that resembles a very basic filesystem,
   with direct access to stored data through buffers and offsets. Its goal is to give
@@ -61,6 +61,10 @@ There are two main parts to the API:
 
 The Storage Foundation API introduces a new interface `storageFoundation` that lives on the `window` object and that includes a number of functions:
 
+{% Aside %}
+We are currently exploring the tradeoffs between providing a synchronous vs. asynchronous API. The interfaces are designed to be asynchronous as a temporary measure and will be updated once a decision has been reached.
+{% endAside %}
+
 - `await storageFoundation.open(name)`: Opens the file with the given name if it exists and otherwise creates a new file. Returns a promise that resolves with the the opened file.
 - `await storageFoundation.delete(DOMString name)`: Removes the file with the given name. Void.
 - `await storageFoundation.rename(oldName, newName)`: Renames the file from the old name to the new name atomically. Void.
@@ -73,17 +77,13 @@ The Storage Foundation API introduces a new interface `storageFoundation` that l
 File names are restricted to lower-case alphanumeric characters and underscore (`a-z`, `0-9`, `_`).
 {% endAside %}
 
-{% Aside %}
-We are currently exploring the tradeoffs between providing a synchronous vs. asynchronous API. The interfaces are designed to be asynchronous as a temporary measure and will be updated once a decision has been reached.
-{% endAside %}
-
 ### File handles
+
+Working with files happens via the following functions:
 
 {% Aside %}
 Storage Foundation API used to be called NativeIO. Some references to this name still remain and will be removed eventually.
 {% endAside %}
-
-Working with files happens via the following functions:
 
 - `await NativeIOFile.close()`: Closes a file. Void.
 - `await NativeIOFile.flush()`: Synchronizes (that is, flushes) a file's in-core state with the storage device. Void.
@@ -109,7 +109,7 @@ underlying storage. To ensure that no data loss occurs on system crash, you must
 `NativeIOFile.flush()` and wait for it to successfully return.
 {% endAside %}
 
-### Suggested use cases for the API_NAME API {: #use-cases }
+### Suggested use cases for the Storage Foundation API {: #use-cases }
 
 Examples of sites that may use this API include:
 
@@ -128,15 +128,16 @@ Examples of sites that may use this API include:
 | 5. Launch                                  | Not started                  |
 
 </div>
-## How to use the API_NAME API {: #use }
+
+## How to use the Storage Foundation API {: #use }
 
 ### Enabling via about://flags
 
-To experiment with the API_NAME API locally, without an origin trial token, enable the `#TODO` flag in `about://flags`.
+To experiment with the Storage Foundation API locally, without an origin trial token, enable the `#experimental-web-platform-features` flag in `about://flags`.
 
 ### Enabling support during the origin trial phase
 
-Starting in Chromium XX, the API_NAME API will be available as an origin trial in Chromium. The origin trial is expected to end in Chromium XX (TODO exact date).
+Starting in Chromium&nbsp;90, the Storage Foundation API will be available as an origin trial in Chromium. The origin trial is expected to end in Chromium&nsbp;95 (November 10, 2021).
 
 {% include 'content/origin-trials.njk' %}
 
@@ -161,7 +162,7 @@ To check if the Storage Foundation API is supported, use:
 
 ## Security and permissions
 
-The Chromium team has designed and implemented the API_NAME API using the core principles defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user control, transparency, and ergonomics.
+The Chromium team has designed and implemented the Storage Foundation API using the core principles defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user control, transparency, and ergonomics.
 
 ### User control
 
@@ -174,7 +175,7 @@ The Chromium team has designed and implemented the API_NAME API using the core p
 
 ## Feedback {: #feedback }
 
-The Chromium team wants to hear about your experiences with the API_NAME API.
+The Chromium team wants to hear about your experiences with the Storage Foundation API.
 
 ### Tell us about the API design
 
@@ -188,7 +189,7 @@ File a bug at [new.crbug.com](https://new.crbug.com). Be sure to include as much
 
 ### Show support for the API
 
-Are you planning to use the API_NAME API? Your public support helps the Chromium team prioritize features and shows other browser vendors how critical it is to support them.
+Are you planning to use the Storage Foundation API? Your public support helps the Chromium team prioritize features and shows other browser vendors how critical it is to support them.
 
 Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag [`#StorageFoundation`](https://twitter.com/search?q=%23StorageFoundation&src=recent_search_click&f=live) and let us know where and how you are using it.
 Ask a question on StackOverflow with the hashtag [`#file-system-access-api`](https://stackoverflow.com/questions/tagged/file-system-access-api).
@@ -199,7 +200,7 @@ Ask a question on StackOverflow with the hashtag [`#file-system-access-api`](htt
 * [TODO API Demo][demo] | [TODO API Demo source][demo-source]
 * [Chromium tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
-* Blink Component: [`TODO`][blink-component]
+* Blink Component: [`Blink>Storage>NativeIO`][blink-component]
 * [TAG Review](TODO)
 * [Intent to Ship](TODO)
 * [WebKit-Dev thread](TODO)
