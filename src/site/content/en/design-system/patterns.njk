@@ -1,0 +1,39 @@
+---
+title: 'Pattern'
+pagination:
+  data: patterns.items
+  size: 1
+  addAllPagesToCollections: true
+  alias: item
+permalink: '{{ item.url }}/index.html'
+---
+
+{% from 'macros/icon.njk' import icon, svg with context %}
+
+{% extends "design-system.njk" %}
+{% set title = item.data.title %}
+{% set summary = item.data.summary %}
+{% set breadcrumbs = [
+  {
+    title: item.data.title,
+    url: item.url
+  }
+]%}
+
+{% block inner %}
+  <iframe src="{{ item.previewUrl }}"></iframe>
+  <h2>Source (Nunjucks)</h2>
+  <web-copy-code>
+    <pre class="code-sample"><code>{{ item.markup }}</code></pre>
+  </web-copy-code>
+  <h2>Output</h2>
+  <web-copy-code>
+    <pre class="code-sample"><code>{{ item.rendered }}</code></pre>
+  </web-copy-code>
+  {% if item.docs %}
+  <div class="flow">
+    <h2>Docs</h2>
+    {{ item.docs | md }}
+  </div>
+  {% endif %}
+{% endblock %}

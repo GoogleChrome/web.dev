@@ -65,10 +65,8 @@ module.exports = {
       const patternVariantsRoot = path.resolve(patternRoot, 'variants');
 
       // Urls for pattern page and preview
-      patternResponse['url'] = `/pattern-library/pattern/${patternName}/`;
-      patternResponse[
-        'previewUrl'
-      ] = `/pattern-library/preview/${patternName}/`;
+      patternResponse['url'] = `/design-system/pattern/${patternName}/`;
+      patternResponse['previewUrl'] = `/design-system/preview/${patternName}/`;
 
       // If this pattern has a variants folder, run the whole
       // process on all that can be found
@@ -86,7 +84,7 @@ module.exports = {
 
           return {
             ...{
-              previewUrl: `/pattern-library/preview/${patternName}/${variantName}/`,
+              previewUrl: `/design-system/preview/${patternName}/${variantName}/`,
             },
             ...buildPattern(variantRoot, variantName),
           };
