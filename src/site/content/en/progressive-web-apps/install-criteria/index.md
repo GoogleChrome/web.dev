@@ -4,7 +4,7 @@ title: What does it take to be installable?
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2021-04-14
+updated: 2021-05-19
 description: |
   Progressive Web App installability criteria.
 tags:
@@ -56,7 +56,7 @@ promotion:
 * The web app is not already installed
 * Meets a user engagement heuristic
 * Be served over HTTPS
-* Includes a [Web App Manifest][add-manifest] that includes:
+* Includes a [web app manifest][add-manifest] that includes:
   * `short_name` or `name`
   * `icons` - must include a 192px and a 512px icon
   * `start_url`

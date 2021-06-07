@@ -1,12 +1,16 @@
 ---
 title: Inheritance
-description:
+description: >
+  Some CSS properties inherit if you don't specify a value for them.
+  Find out how this works, and how to use it to your advantage in this module.
+audio:
+  title: 'The CSS Podcast - 005: Inheritance'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_005_v1.2.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-02
 ---
-
-# Inheritance
 
 Say you just wrote some CSS to make elements look like a button.
 
@@ -44,7 +48,8 @@ how inheritance is a powerful feature to help you write less CSS.
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'zYNGEbg'
+  id: 'zYNGEbg',
+  height: 400
 } %}
 </figure>
 
@@ -76,7 +81,8 @@ html {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'JjEKgBX'
+  id: 'JjEKgBX',
+  height: 200
 } %}
 </figure>
 
@@ -93,7 +99,8 @@ body {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'VwPLrLP'
+  id: 'VwPLrLP',
+  height: 200
 } %}
 </figure>
 
@@ -116,7 +123,9 @@ Inheritance only flows downwards, not back up to parent elements.
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'JjEKgmK'
+  id: 'JjEKgmK',
+  tab: 'css,result',
+  height: 400
 } %}
 </figure>
 
@@ -216,7 +225,8 @@ To make the `<strong>` elements inside `.my-component` also `font-weight: 500` a
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'eYgNedO'
+  id: 'eYgNedO',
+  height: 400
 } %}
 </figure>
 
@@ -245,7 +255,9 @@ make them normal weight, which is the initial value.
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'OJWVORZ'
+  id: 'OJWVORZ',
+  tab: 'css,result',
+  height: 300
 } %}
 </figure>
 
@@ -278,7 +290,9 @@ aside p {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'JjEdpjw'
+  id: 'JjEdpjw',
+  tab: 'css,result',
+  height: 400
 } %}
 </figure>
 
@@ -308,7 +322,8 @@ aside p {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'bGgdLNB'
+  id: 'bGgdLNB',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -327,7 +342,8 @@ aside p {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'XWpbZbB'
+  id: 'XWpbZbB',
+  tab: 'css,result'
 } %}
 </figure>
 

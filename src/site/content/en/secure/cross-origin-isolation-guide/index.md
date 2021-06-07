@@ -4,7 +4,7 @@ title: A guide to enable cross-origin isolation
 authors:
   - agektmr
 date: 2021-02-09
-updated: 2021-04-16
+updated: 2021-05-06
 subhead: |
   Cross-origin isolation enables a web page to use powerful features such as
   SharedArrayBuffer. This article explains how to enable cross-origin
@@ -32,7 +32,7 @@ have on other cross-origin resources on your website, such as ad placements.
 {% DetailsSummary %}
 Determine where in your website `SharedArrayBuffer` is used
 
-Starting in Chrome 91, functionalities that use `SharedArrayBuffer` will no longer 
+Starting in Chrome 92, functionalities that use `SharedArrayBuffer` will no longer 
 work without cross-origin isolation. If you landed on this page due to a 
 `SharedArrayBuffer` deprecation message, it's likely either your website or one of 
 the resources embedded on it is using `SharedArrayBuffer`. To ensure nothing breaks 
@@ -66,7 +66,7 @@ allows developers to inspect websites.
 2. Select the **Console** panel.
 3. If the page is using `SharedArrayBuffer`, the following message will show up:
       ```text
-      [Deprecation] SharedArrayBuffer will require cross-origin isolation as of M91, around May 2021. See https://developer.chrome.com/blog/enabling-shared-array-buffer/ for more details. common-bundle.js:535
+      [Deprecation] SharedArrayBuffer will require cross-origin isolation as of M92, around May 2021. See https://developer.chrome.com/blog/enabling-shared-array-buffer/ for more details. common-bundle.js:535
       ```
 4. The filename and the line number at the end of the message (for example, `common-bundle.js:535`) 
    indicate where the `SharedArrayBuffer` is coming from. If it's a third-party library, 
@@ -201,8 +201,19 @@ guidelines to enable cross-origin isolation:
 3. Check that `self.crossOriginIsolated` returns `true` in console to verify
    that your page is cross-origin isolated.
 
+{% Aside 'gotchas' %}
+
+Enabling cross-origin isolation on a local server might be a pain as simple
+servers do not support sending headers. You can launch Chrome with a command
+line flag `--enable-features=SharedArrayBuffer` to enable `SharedArrayBuffer`
+without enabling cross-origin isolation. Learn [how to run Chrome with a command
+line flag on respective
+platforms](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
+
+{% endAside %}
+
 ## Resources
 
 * [Making your website "cross-origin isolated" using COOP and COEP](/coop-coep/)
 * [SharedArrayBuffer updates in Android Chrome 88 and Desktop Chrome
-  91](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
+  92](https://developer.chrome.com/blog/enabling-shared-array-buffer/)

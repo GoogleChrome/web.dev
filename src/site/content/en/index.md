@@ -5,9 +5,6 @@ description: |
   guidance and analysis from web.dev.
 date: 2018-11-05
 i18n:
-  banner_blm_html: |
-    Google is committed to advancing racial equity for Black communities.
-    <a href="https://google.com/racialequity" target="_blank" rel="noopener">See how</a>.
   headline: Let's build the future of the web
   subheadline: |
     Get the web's modern capabilities on your own sites and apps with useful

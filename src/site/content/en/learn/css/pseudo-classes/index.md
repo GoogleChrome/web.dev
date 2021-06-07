@@ -1,6 +1,12 @@
 ---
 title: Pseudo-classes
-description: Pseudo-classes let you apply CSS based on state changes. This means that your design can react to user input such as an invalid email address.
+description: >
+  Pseudo-classes let you apply CSS based on state changes.
+  This means that your design can react to user input such as an invalid email address.
+audio:
+  title: 'The CSS Podcast - 015: Pseudo-classes'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_015_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-28
@@ -92,7 +98,7 @@ button:focus {
 This CSS removes the default browser focus ring when an element receives focus,
 which presents an accessibility issue for users who navigate a web page with a keyboard.
 If there is no focus style,
-they won't be able to keep track of where focus currently is when the <kbd>tab<kbd>.
+they won't be able to keep track of where focus currently is when the <kbd>tab</kbd>.
 With [`:focus-visible`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
 you can present a focus style when an element receives focus via the keyboard,
 while also using the `outline: none` rule to prevent it when a pointer device interacts with it.
@@ -197,7 +203,7 @@ you can hook on to that state with the
 The [`:enabled`](https://developer.mozilla.org/en-US/docs/Web/CSS/:enabled)
 pseudo-class is available for the opposite state,
 though form elements are also `:enabled` by default,
-therefore you might not find yourself reaching for this pseudo class.
+therefore you might not find yourself reaching for this pseudo-class.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -521,3 +527,5 @@ img:not([alt]) {
   user: 'web-dot-dev',
   id: 'abpyWJK'
 } %}
+
+{% Assessment 'pseudo-classes' %}

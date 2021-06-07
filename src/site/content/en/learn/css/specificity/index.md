@@ -1,12 +1,15 @@
 ---
 title: Specificity
-description:
+description: >
+  This module takes a deeper look at specificity, a key part of the cascade.
+audio:
+  title: 'The CSS Podcast - 003: Specificity'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_003_v2.0_FINAL.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-02
 ---
-
-# Specificity
 
 Suppose that you're working with the following HTML and CSS:
 
@@ -36,7 +39,8 @@ which was covered in the last module, on [the cascade](/learn/css/the-cascade/).
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'YzNKMXm'
+  id: 'YzNKMXm',
+  height: 200
 } %}
 </figure>
 
@@ -93,10 +97,11 @@ div {
 }
 ```
 
-### Class, attribute or pseudo-class selector
+### Class, pseudo-class, or attribute selector
 
-A [class](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) or
-[pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) selector gets **10 points of specificity**.
+A [class](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors),
+[pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) or
+[attribute](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) selector gets **10 points of specificity**.
 
 #### Class selector
 
@@ -275,7 +280,8 @@ With HTML that looks like this:
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'abpoxdR'
+  id: 'abpoxdR',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -303,7 +309,8 @@ button[onclick] {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'zYNOXBJ'
+  id: 'zYNOXBJ',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -337,7 +344,8 @@ because **both selectors have an identical specificity score** (`0-1-0`).
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'zYNOXKJ'
+  id: 'zYNOXKJ',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -357,7 +365,8 @@ the button would then be blue.
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'WNReWRO'
+  id: 'WNReWRO',
+  tab: 'css,result'
 } %}
 </figure>
 

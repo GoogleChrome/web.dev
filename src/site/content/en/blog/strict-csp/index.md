@@ -227,6 +227,7 @@ When setting a CSP, you have a few options:
   - If you want to set your CSP in report-only mode, you'll need to set it as a
     header—CSP meta tags don't support report-only mode.
 
+<span id="nonce-based-csp"></span>
 
 {% Details %}
 
@@ -315,6 +316,8 @@ the page, as long as they were loaded by a safe, already-trusted script (see the
 {% endAside %}
 
 {% endDetails %}
+
+<span id="hash-based-csp"></span>
 
 {% Details %}
 

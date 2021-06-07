@@ -27,7 +27,7 @@ describe('Build test', function () {
       path.join('authors', 'addyosmani', 'feed.xml'),
       path.join('tags', 'progressive-web-apps', 'feed.xml'),
       path.join('css', 'main.css'),
-      'algolia.json',
+      'pages.json',
       'manifest.webmanifest',
       'sw.js',
       'robots.txt',

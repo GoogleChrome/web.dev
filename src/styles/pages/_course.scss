@@ -9,7 +9,7 @@
 }
 
 .course-content > main {
-  margin: 0 36px;
+  margin: 0 24px;
   max-width: 80ch;
   min-width: 0;
   padding: 0;
@@ -36,6 +36,9 @@
   @include apply-utility('font', 'google-sans');
   @include apply-utility('weight', 'regular');
   @include flex-font((16px 28px), (18px 28px), (18px 28px));
+  color: $GREY_800;
+  font-style: italic;
+  max-width: 60ch;
 }
 
 .course-copy {
@@ -46,5 +49,19 @@
 
   p {
     @include flex-font((16px 32px), (18px 32px), (18px 32px));
+  }
+
+  // Course pages have 24px of margin on smaller screens, whereas
+  // blog pages have 32px. The general pre style assumes 32px of margin and
+  // sets itself to -32px to be full bleed on smaller screens, but this causes
+  // overflow on course pages.
+  // We should just make all of the pages use 24px, but we can save that work
+  // for our upcoming CSS refresh. For now, this is a little patch to prevent
+  // pre's from overflowing the course pages.
+  pre,
+  pre[class*='language-'] {
+    @include bp(sm) {
+      margin: 32px -24px;
+    }
   }
 }

@@ -29,7 +29,7 @@ By default, these keys are not available to the web application because they are
 
 ## Using the Keyboard Lock API
 
-The [`Keyboard` interface](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard) of the the Keyboard API provides functions that toggle capturing of key presses from the physical keyboard as well as getting information about the used [keyboard layout](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/getLayoutMap).
+The [`Keyboard` interface](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard) of the Keyboard API provides functions that toggle capturing of key presses from the physical keyboard as well as getting information about the used [keyboard layout](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/getLayoutMap).
 
 ### Prerequisite
 

@@ -14,6 +14,13 @@
  * limitations under the License.
  */
 
+/**
+ * @fileoverview Creates a collection of all pages on web.dev, including those
+ * created by virtual collections (such as authors and tags). This collection is
+ * then outputted as a JSON file which can be used to index all of the site's
+ * pages into Algolia as well as Firestore.
+ */
+
 const {createHash} = require('crypto');
 const striptags = require('striptags');
 const stripcomments = require('strip-comments');
@@ -59,37 +66,37 @@ function limitText(content, limit = 7500) {
 
 /**
  * @param {EleventyCollectionObject} collections
- * @returns {AlgoliaCollection}
+ * @returns {PagesCollection}
  */
 module.exports = (collections) => {
-  /** @type {AlgoliaCollection} */
-  const algoliaCollection = [];
+  /** @type {PagesCollection} */
+  const pagesCollection = [];
   /** @type {{
     [url: string]: {
-      [locale: string]: AlgoliaCollectionItem;
+      [locale: string]: PagesCollectionItem;
     };
   }} */
-  const algoliaCollectionProcessing = {};
+  const pagesCollectionProcessing = {};
 
   if (process.env.ELEVENTY_ENV !== 'prod') {
-    return algoliaCollection;
+    return pagesCollection;
   }
 
   /**
-   * This just adds an `AlgoliaCollectionItem` to the `algoliaCollectionProcessing`.
+   * This just adds an `PagesCollectionItem` to the `pagesCollectionProcessing`.
    * It checks to see if the URL exists on the object, if not it'll add it then add the
-   * `AlgoliaCollectionItem` to the `algoliaCollectionProcessing`.
+   * `PagesCollectionItem` to the `pagesCollectionProcessing`.
    *
-   * @param {AlgoliaCollectionItem} algoliaCollectionItem
+   * @param {PagesCollectionItem} pagesCollectionItem
    */
-  const addToCollection = (algoliaCollectionItem) => {
-    if (!algoliaCollectionProcessing[algoliaCollectionItem.url]) {
-      algoliaCollectionProcessing[algoliaCollectionItem.url] = {};
+  const addToCollection = (pagesCollectionItem) => {
+    if (!pagesCollectionProcessing[pagesCollectionItem.url]) {
+      pagesCollectionProcessing[pagesCollectionItem.url] = {};
     }
 
-    algoliaCollectionProcessing[algoliaCollectionItem.url][
-      algoliaCollectionItem.locales[0]
-    ] = algoliaCollectionItem;
+    pagesCollectionProcessing[pagesCollectionItem.url][
+      pagesCollectionItem.locales[0]
+    ] = pagesCollectionItem;
   };
 
   // All Author and Tag items
@@ -110,41 +117,47 @@ module.exports = (collections) => {
 
     const defaultUrl = getDefaultUrl(item.url);
 
-    /** @type {AlgoliaCollectionItem} */
-    const algoliaCollectionItem = {
-      title: item.data.title,
-      description: item.data.description,
+    /** @type {PagesCollectionItem} */
+    const pagesCollectionItem = {
       content: limitText(item.template.frontMatter.content),
-      url: defaultUrl,
-      tags: item.data.tags || [],
-      locales: [item.data.lang],
+      createdOn: item.data.date,
+      description: item.data.description,
       image:
-        'hero' in item.data &&
-        generateImgixSrc(item.data.hero, {w: 100, auto: 'format'}),
+        'hero' in item.data
+          ? generateImgixSrc(item.data.hero, {w: 100, auto: 'format'})
+          : null,
+      locales: [item.data.lang],
       objectID: createHash('md5').update(item.url).digest('hex'),
+      tags: item.data.tags || [],
+      title: item.data.title,
+      updatedOn: item.data.updated,
+      url: defaultUrl,
     };
 
-    addToCollection(algoliaCollectionItem);
+    addToCollection(pagesCollectionItem);
   }
 
   for (const item of virtualCollections) {
     const defaultUrl = getDefaultUrl(item.url);
 
-    /** @type {AlgoliaCollectionItem} */
-    const algoliaCollectionItem = {
-      title: item.data.title,
-      description: item.data.subhead,
+    /** @type {PagesCollectionItem} */
+    const pagesCollectionItem = {
       content: limitText(item.data.subhead),
-      url: defaultUrl,
-      tags: 'tags' in item.data ? item.data.tags : [],
-      locales: [defaultLocale],
+      createdOn: item.data.date,
+      description: item.data.subhead,
       image:
-        'hero' in item.data &&
-        generateImgixSrc(item.data.hero, {w: 100, auto: 'format'}),
+        'hero' in item.data
+          ? generateImgixSrc(item.data.hero, {w: 100, auto: 'format'})
+          : null,
+      locales: [defaultLocale],
       objectID: createHash('md5').update(item.url).digest('hex'),
+      tags: 'tags' in item.data ? item.data.tags : [],
+      title: item.data.title,
+      updatedOn: item.data.updated,
+      url: defaultUrl,
     };
 
-    addToCollection(algoliaCollectionItem);
+    addToCollection(pagesCollectionItem);
   }
 
   /**
@@ -168,8 +181,8 @@ module.exports = (collections) => {
    * }
    * ```
    */
-  for (const url in algoliaCollectionProcessing) {
-    const urlItem = algoliaCollectionProcessing[url];
+  for (const url in pagesCollectionProcessing) {
+    const urlItem = pagesCollectionProcessing[url];
     const defaultLocaleItem = urlItem[defaultLocale];
 
     // Get all languages used for url
@@ -200,9 +213,9 @@ module.exports = (collections) => {
         }
       }
 
-      algoliaCollection.push(localItem);
+      pagesCollection.push(localItem);
     }
   }
 
-  return algoliaCollection;
+  return pagesCollection;
 };

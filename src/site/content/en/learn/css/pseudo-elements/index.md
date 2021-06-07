@@ -1,6 +1,12 @@
 ---
 title: Pseudo-elements
-description:
+description: >
+  A pseudo-element is like adding or targeting an extra element without having to add more HTML.
+  They have a variety of roles and you can learn about them in this module.
+audio:
+  title: 'The CSS Podcast - 014: Pseudo-elements'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_014_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-27
@@ -17,7 +23,7 @@ width="800",
 height="318" %}
 
 In CSS,
-you can use the `::first-letter` pseudo element to achieve this sort of design detail.
+you can use the `::first-letter` pseudo-element to achieve this sort of design detail.
 
 ```css
 p::first-letter {
@@ -39,14 +45,14 @@ A pseudo-element is like adding or targeting an extra element without having to 
 This example solution, using `::first-letter`,
 is one of many pseudo-elements.
 They have a range of roles,
-and in this lesson you're going to learn which pseudo elements are available and how you can use them.
+and in this lesson you're going to learn which pseudo-elements are available and how you can use them.
 
 ## `::before` and `::after`
 
 Both the
 [`::before`](https://developer.mozilla.org/en-US/docs/Web/CSS/::before) and
 [`::after`](https://developer.mozilla.org/en-US/docs/Web/CSS/::after)
-pseudo elements create a child element inside an element **only** if you define a `content` property.
+pseudo-elements create a child element inside an element **only** if you define a `content` property.
 
 ```css
 .my-element::before {
@@ -118,7 +124,7 @@ Therefore, it won't work if you try to add it to an element that has `display: i
 ## `::first-line`
 
 The [`::first-line`](https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line)
-pseudo element will let you style the first line of text
+pseudo-element will let you style the first line of text
 only if the element with `::first-line` applied has a `display` value of `block`,
 `inline-block`, `list-item`, `table-caption` or `table-cell`.
 
@@ -134,7 +140,7 @@ p::first-line {
   id: 'vYgZVaO'
 } %}
 
-Like the `::first-letter` pseudo element,
+Like the `::first-letter` pseudo-element,
 there's only a subset of CSS properties you can use:
 
 - `color`
@@ -147,7 +153,7 @@ there's only a subset of CSS properties you can use:
 If you have an element that is presented in full screen mode,
 such as a `<dialog>` or a `<video>`,
 you can style the backdrop—the space between the element and the rest of the page—with the
-[`::backdrop`](https://developer.mozilla.org/en-US/docs/Web/CSS/::backdrop) pseudo element:
+[`::backdrop`](https://developer.mozilla.org/en-US/docs/Web/CSS/::backdrop) pseudo-element:
 
 
 ```css
@@ -161,12 +167,12 @@ video::backdrop {
   id: 'rNjwqRQ'
 } %}
 
-The `::backdrop` pseudo element is supported in all major browsers apart from Safari.
+The `::backdrop` pseudo-element is supported in all major browsers apart from Safari.
 
 ## `::marker`
 
 The [`::marker`](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker)
-pseudo element lets you style the bullet or number for a list item or the arrow of a `<summary>` element.
+pseudo-element lets you style the bullet or number for a list item or the arrow of a `<summary>` element.
 
 ```css
 ::marker {
@@ -208,7 +214,7 @@ You can change the marker symbol, using the `content` property. You can use this
 ## `::selection`
 
 The [`::selection`](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection)
-pseudo element allows you to style how selected text looks.
+pseudo-element allows you to style how selected text looks.
 
 ```css
 ::selection {
@@ -250,7 +256,7 @@ As with other pseudo-elements, only a subset of CSS properties are allowed:
 You can add a helper hint to form elements,
 such as `<input>` with a `placeholder` attribute.
 The [`::placeholder`](https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder)
-pseudo element allows you to style that text.
+pseudo-element allows you to style that text.
 
 ```css
 input::placeholder {
@@ -278,8 +284,8 @@ Form elements must be labelled or they will be inaccessible.
 
 ## `::cue`
 
-Last in this tour of pseudo elements is the
-[`::cue`](https://developer.mozilla.org/en-US/docs/Web/CSS/::cue) pseudo element.
+Last in this tour of pseudo-elements is the
+[`::cue`](https://developer.mozilla.org/en-US/docs/Web/CSS/::cue) pseudo-element.
 This allows you to style the WebVTT cues,
 which are the captions of a `<video>` element.
 
@@ -299,3 +305,5 @@ video::cue(i) {
   color: lightpink;
 }
 ```
+
+{% Assessment 'pseudo-elements' %}

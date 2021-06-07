@@ -20,6 +20,18 @@ feedback:
   - api
 ---
 
+{% Aside 'caution' %}
+This proposal continues to change during the origin trial period. There 
+may be a divergence between the browser implementation and the information in this 
+article.
+
+For the latest on this evolving proposal, please read refer to the
+[editor's draft of WebTransport](https://w3c.github.io/webtransport/).
+
+Once the proposal stabilizes, we will update this article and associated code
+samples with up to date information.
+{% endAside %}
+
 ## Background
 
 ### What's WebTransport?
@@ -92,7 +104,7 @@ However, if you already have a working WebRTC client/server setup that you're ha
 
 ## Try it out
 
-The best way to experiment with WebTransport is to use [this Python code](https://github.com/GoogleChrome/samples/blob/gh-pages/webtransport/web_transport_server.py) to start up a compatible HTTP/3 server locally. You can then use this page with a [basic JavaScript client](https://googlechrome.github.io/samples/webtransport/client.html) to try out client/server communications.
+The best way to experiment with WebTransport is to start up a compatible HTTP/3 server locally. (Unfortunately, a public reference server compatible with the latest specification is not currently available.) You can then use this page with a [basic JavaScript client](https://googlechrome.github.io/samples/webtransport/client.html) to try out client/server communications.
 
 ## Using the API
 
@@ -130,22 +142,20 @@ await transport.ready;
 
 Once you have a WebTransport instance that's connected to a server, you can use it to send and receive discrete bits of data, known as [datagrams](https://en.wikipedia.org/wiki/Datagram).
 
-The `sendDatagrams()` method returns a <code>[WritableStream](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream)</code>, which a web client can use to send data to the server. The <code>receiveDatagrams()</code> method returns a <code>[ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)</code>, allowing you to listen for data from the server. Both streams are inherently unreliable, so it is possible that the data you write will not be received by the server, and vice versa.
+The `writeable` getter returns a <code>[WritableStream](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream)</code>, which a web client can use to send data to the server. The <code>readable</code> getter returns a <code>[ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)</code>, allowing you to listen for data from the server. Both streams are inherently unreliable, so it is possible that the data you write will not be received by the server, and vice versa.
 
 Both types of streams use <code>[Uint8Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)</code> instances for data transfer.
 
 ```js
 // Send two datagrams to the server.
-const ws = transport.sendDatagrams();
-const writer = ws.getWriter();
+const writer = transport.datagrams.writable.getWriter();
 const data1 = new Uint8Array([65, 66, 67]);
 const data2 = new Uint8Array([68, 69, 70]);
 writer.write(data1);
 writer.write(data2);
 
 // Read datagrams from the server.
-const rs = transport.receiveDatagrams();
-const reader = rs.getReader();
+const reader = transport.datagrams.readable.getReader();
 while (true) {
   const {value, done} = await reader.read();
   if (done) {

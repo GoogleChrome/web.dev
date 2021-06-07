@@ -6,11 +6,10 @@ authors:
   - mustafakurtuldu
   - thomassteiner
 date: 2016-11-10
-updated: 2020-10-29
+updated: 2021-05-28
 tags:
   - progressive-web-apps
   - ux
-  - capabilities
   - network
   - offline
 ---

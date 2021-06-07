@@ -12,6 +12,7 @@ tags:
   - metrics
   - performance
   - web-vitals
+translated: 2021-05-05
 ---
 
 Asegurar una calidad de experiencia de usuario óptima es clave para el éxito a largo plazo de cualquier sitio web. Tanto para un propietario de un negocio, especialista de marketing o desarrollador, Web Vitals pueden ayudarle a cuantificar la experiencia de su sitio e identificar oportunidades para mejorar.
@@ -31,7 +32,9 @@ Los Core Web Vitals son el subconjunto de Web Vitals que se aplica a todas las p
 Las métricas que componen los Core Web Vitals [evolucionarán](#evolving-web-vitals) con el tiempo. El conjunto actual en el 2020 se centra en tres aspectos de la experiencia del usuario: *carga* , *interactividad* y *estabilidad visual*, e incluye las siguientes métricas (y sus respectivos umbrales):
 
 <div class="w-stack w-stack--center w-stack--md">
-<img src="lcp_ux.svg" width="400px" height="350px" alt="Recomendaciones de umbral para LCP"><img src="fid_ux.svg" width="400px" height="350px" alt="Recomendaciones de umbral para FID"><img src="cls_ux.svg" width="400px" height="350px" alt="Recomendaciones de umbral para CLS">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Recomendaciones de umbral para LCP", width="400", height="350" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="Recomendaciones de umbral para FID", width="400", height="350" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Recomendaciones de umbral para CLS", width="400", height="350" %}
 </div>
 
 - **[Largest Contentful Paint (LCP)](/lcp/)** : se refiere al tiempo para el despliegue del contenido más extenso, LCP por sus siglas en inglés, mide el rendimiento de *carga.* Para proporcionar una buena experiencia de usuario, el LCP debe producirse dentro de los **2,5 segundos desde** que la página comienza a cargarse.
@@ -221,5 +224,3 @@ Los **Core Web Vitals** son relevantes para todas las páginas web y aparecen en
 Los otros Web Vitals suelen ser específicos del contexto o de la herramienta, y pueden ser más experimentales que los Core Web Vitals. Sus definiciones y umbrales pueden cambiar con mayor frecuencia.
 
 Para todos los Web Vitals, los cambios se documentarán de manera clara en este [REGISTRO DE CAMBIOS](http://bit.ly/chrome-speed-metrics-changelog) público.
-
-<web-feedback></web-feedback>

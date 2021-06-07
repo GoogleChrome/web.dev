@@ -7,6 +7,7 @@ authors:
   - thomassteiner
   - amandabaker
 date: 2021-04-22
+updated: 2021-05-19
 description: |
   With the Window Controls Overlay feature, developers can customize the title bar of installed PWAs
   so that their PWAs feel more like apps.
@@ -65,10 +66,10 @@ developers to place custom content in what was previously the browser-controlled
 
 </div>
 
-### Enabling via chrome://flags
+### Enabling via about://flags
 
 To experiment with Window Controls Overlay locally, without an origin trial token, enable the
-`#enable-desktop-pwas-window-controls-overlay` flag in `chrome://flags`.
+`#enable-desktop-pwas-window-controls-overlay` flag in `about://flags`.
 
 ### Enabling support during the origin trial phase
 
@@ -83,7 +84,7 @@ The origin trial is expected to end in Chrome&nbsp;94 (expected in July 2021).
 
 ## How to use Window Controls Overlay
 
-### Adding `window-controls-overlay` to the Web App Manifest
+### Adding `window-controls-overlay` to the web app manifest
 
 A progressive web app can opt-in to the window controls overlay by adding
 `"window-controls-overlay"` as the primary `"display_override"` member in the web app manifest:
@@ -432,6 +433,7 @@ hashtag and let us know where and how you're using it.
 - [Chromium bug](https://crbug.com/937121)
 - [Chrome Platform Status entry](https://chromestatus.com/feature/5741247866077184)
 - [TAG review](https://github.com/w3ctag/design-reviews/issues/481)
+- [Microsoft Edge's related docs](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/experimental-features/#window-controls-overlay-for-installed-desktop-web-apps)
 
 ## Acknowledgements
 
@@ -442,7 +444,7 @@ This article was reviewed by
 Hero image by [Sigmund](https://unsplash.com/@sigmund) on
 [Unsplash](https://unsplash.com/photos/OV44gxH71DU).
 
-[explainer]: https://github.com/WICG/window-controls-overlay/blob/master/explainer.md
+[explainer]: https://github.com/WICG/window-controls-overlay/blob/main/explainer.md
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [issues]: https://github.com/WICG/window-controls-overlay/issues
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md

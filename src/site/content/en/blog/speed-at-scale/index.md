@@ -77,8 +77,8 @@ images and iframe content a little before it comes into the viewport.
 
 The `loading` attribute is implemented behind flags in Chrome Canary. You can
 try out [this demo](https://mathiasbynens.be/demo/img-loading-lazy) in Chrome
-75+ with the `chrome://flags/#enable-lazy-image-loading` and
-`chrome://flags/#enable-lazy-frame-loading` flags turned on.
+75+ with the `about://flags/#enable-lazy-image-loading` and
+`about://flags/#enable-lazy-frame-loading` flags turned on.
 
 A [write-up](https://addyosmani.com/blog/lazy-loading/) on the
 lazy-loading feature is available with more details.

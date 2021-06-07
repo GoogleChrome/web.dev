@@ -13,6 +13,13 @@ tags:
   - performance
   - web-vitals
 ---
+
+{% Banner 'info', 'body' %}
+  **Jun 2, 2021:** The update to CLS described in this
+  post is now available across Chrome's web tooling surfaces. See [Evolving
+  Cumulative Layout Shift in web tooling](/cls-web-tooling/) for details.
+{% endBanner %}
+
 We (the Chrome Speed Metrics Team) recently outlined our initial research into
 [options for making the CLS metric more fair to pages that are open for a long
 time](/better-layout-shift-metric/). We've received a lot of very

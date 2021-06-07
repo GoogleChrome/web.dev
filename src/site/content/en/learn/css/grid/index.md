@@ -1,6 +1,13 @@
 ---
 title: Grid
-description:
+description: >
+  CSS Grid Layout provides a two dimensional layout system,
+  controlling layout in rows and columns.
+  In this module discover everything grid has to offer.
+audio:
+  title: 'The CSS Podcast - 011: Grid'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_011_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - rachelandrew
   - andybell
@@ -200,7 +207,7 @@ not just grid tracks.
 
 - `min-content`
 - `max-content`
-- the `fit-content()` function
+- `fit-content()`
 
 The [`min-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/min-content)
 keyword will make a track as small as it can be without the track content overflowing.
@@ -352,7 +359,7 @@ The tracks are not flexible however.
 You will get a gap on the end until there is enough space for another 200 pixel track.
 If you add the `minmax()` function,
 you can request as many tracks as will fit with a minimum size of 200 pixels and a maximum of 1fr.
-Grid then lays out the 200 pixel tracks and whatever space is left over is distributed equally to them.
+Grid then lays out the 200 pixel tracks and whatever space is leftover is distributed equally to them.
 
 This creates a two-dimensional responsive layout with no need for any media queries.
 

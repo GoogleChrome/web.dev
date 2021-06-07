@@ -23,9 +23,9 @@ module.exports = function () {
   return {
     lang: lang.lang,
     locale: lang.locale,
+    translated: 'none',
     home: {
       paths,
     },
-    translated: 'none',
   };
 };

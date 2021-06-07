@@ -5,7 +5,7 @@ authors:
   - thomassteiner
   - petelepage
 date: 2020-09-24
-updated: 2021-03-24
+updated: 2021-05-19
 description: Learn how to create a simple offline experience for your app.
 tags:
   - progressive-web-apps
@@ -256,7 +256,7 @@ do in the example below. {% endAside %}
       document.querySelector("button").addEventListener("click", () => {
         window.location.reload();
       });
-      
+
       // Listen to changes in the network state, reload when online.
       // This handles the case when the device is completely offline.
       window.addEventListener('online', () => {
@@ -305,7 +305,7 @@ Glitch.
 ### Side note on making your app installable
 
 Now that your site has an offline fallback page, you might wonder about next steps. To make
-your app installable, you need to add a [Web App Manifest](/add-manifest/) and optionally come up
+your app installable, you need to add a [web app manifest](/add-manifest/) and optionally come up
 with an [install strategy](/define-install-strategy/).
 
 ### Side note on serving an offline fallback page with Workbox.js

@@ -7,16 +7,16 @@ questions:
     correctAnswers: "0"
     stem: To vertically align with flexbox, use
     options:
-      - content: "align keywords`"
+      - content: "align keywords"
         rationale: "Nice"
       - content: "justify keywords"
         rationale: "Sorry"
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "1"
-    stem: To horizonally align with flexbox, use 
+    stem: To horizonally align with flexbox, use
     options:
-      - content: "align keywords`"
+      - content: "align keywords"
         rationale: "Sorry"
       - content: "justify keywords"
         rationale: "Nice"
@@ -24,7 +24,7 @@ questions:
     cardinality: "1"
     correctAnswers: "3"
     stem: |
-      Be default, flex items are aligned to `stretch`. If you want content
+      By default, flex items are aligned to `stretch`. If you want content
       height used for child items, which of the following styles would you use?
     options:
       - content: "`justify-content: flex-start`"

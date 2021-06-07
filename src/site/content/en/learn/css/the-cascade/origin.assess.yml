@@ -40,16 +40,16 @@ questions:
     options:
       - content: 20px
         rationale: "Bootstrap is part of the authored origin, which loses to the
-        important local user style"
+        important local user style."
       - content: 0.83em
         rationale: "The user agent style origin loses to the important local
-        user style"
+        user style."
       - content: 2rem
         rationale: "This `!important` user custom style has the most specific
-        origin"
+        origin."
       - content: 2ch
         rationale: "This author style is part of the authored origin, which loses to the
-        important local user style"
+        important local user style."
       - content: 1ch
         rationale: "This author style is part of the authored origin, which loses to the
-        important local user style"
+        important local user style."

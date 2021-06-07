@@ -21,9 +21,9 @@ Chrome's offline page easter egg is one of the worst-kept secrets in history
 If you press the <kbd>space</kbd> key or, on mobile devices, tap the dinosaur,
 the offline page becomes a playable arcade game.
 You might be aware that you do not actually have to go offline
-when you feel like playing: in Chrome, you can just navigate to `chrome://dino`, or,
+when you feel like playing: in Chrome, you can just navigate to `about://dino`, or,
 for the geek in you, browse to
-`chrome://network-error/-106`.
+`about://network-error/-106`.
 But did you know that there are currently
 [270 million Chrome dino games played every month](https://www.blog.google/products/chrome/chrome-dino#jump-content:~:text=There%20are%20currently%20270%20million%20games%20played%20every%20month)?
 

@@ -8,7 +8,8 @@
         {
             "title": "i18n.paths.learn_web_vitals.topics.overview",
             "pathItems": [
-                "vitals"
+                "vitals",
+                "vitals-business-impact"
             ]
         },
         {
@@ -51,7 +52,8 @@
                 {
                     "title": "Infinite scroll without layout shifts",
                     "url": "https://addyosmani.com/blog/infinite-scroll-without-layout-shifts/"
-                }
+                },
+                "css-web-vitals"
             ]
         }
     ]

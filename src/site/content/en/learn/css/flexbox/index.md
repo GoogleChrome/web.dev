@@ -1,13 +1,17 @@
 ---
 title: Flexbox
-description:
+description: >
+  Flexbox is a layout mechanism designed for laying out groups of items in one dimension.
+  Learn how to use it in this module.
+audio:
+  title: 'The CSS Podcast - 010: Flexbox'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_010_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - rachelandrew
   - andybell
 date: 2021-04-21
 ---
-
-# Flexbox
 
 A design pattern that can be tricky in responsive design is a sidebar that sits inline with some
 content. Where there is viewport space,
@@ -17,7 +21,8 @@ that rigid layout can become problematic.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'poRENWv'
+  id: 'poRENWv',
+  height: 420
 } %}
 
 The Flexible Box Layout Model (flexbox) is a layout model designed for one-dimensional content.
@@ -33,7 +38,8 @@ you can instead provide flexible boundaries to hint how the content could displa
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'xxgERMp'
+  id: 'xxgERMp',
+  height: 400
 } %}
 
 ## What can you do with a flex layout?
@@ -135,10 +141,10 @@ the items display as a row because the initial value of `flex-direction` is `row
 If you want a row then you don't need to add the property.
 To change the direction, add the property and one of the four values:
 
-- `row`: the items lay out as a row
-- `row-reverse:` the items lay out as a row from the end of the flex container
-- `column`: the items lay out as a column
-- `column-reverse` : the items lay out as a column from the end of the flex container
+- `row`: the items lay out as a row.
+- `row-reverse:` the items lay out as a row from the end of the flex container.
+- `column`: the items lay out as a column.
+- `column-reverse` : the items lay out as a column from the end of the flex container.
 
 You can try out all of the values using our group of items in the demo below.
 
@@ -196,7 +202,8 @@ Try changing the `flex-direction` in this demo which is using a vertical writing
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'qBRaPXX'
+  id: 'qBRaPXX',
+  height: 600
 } %}
 
 Therefore the way flex items behave by default is linked to the writing mode of the document.
@@ -250,7 +257,8 @@ To cause the items to wrap add `flex-wrap: wrap` to the flex container.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'WNRGdNZ'
+  id: 'WNRGdNZ',
+  height: 601
 } %}
 
 When a flex container wraps it creates multiple **flex lines**.
@@ -315,7 +323,7 @@ This unpacks to:
 
 - `flex-grow: 1`: items can grow larger than their `flex-basis`.
 - `flex-shrink: 0`: items can't shrink smaller than their `flex-basis`.
-- `flex-basis: 0`: items have a base size of `0`
+- `flex-basis: 0`: items have a base size of `0`.
 
 Using `flex: 1` says that all items have zero size,
 therefore all of the space in the flex container is available to be distributed.
@@ -460,7 +468,8 @@ Try the different values, this time with a flexbox column layout.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'bGgwLgz'
+  id: 'bGgwLgz',
+  height: 600
 } %}
 
 ## Distributing space between flex lines
@@ -544,7 +553,8 @@ Try changing the value on that property to see how it moves within it's space on
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'RwKGQee'
+  id: 'RwKGQee',
+  height: 600
 } %}
 
 The `align-self` property is applied to individual items.
@@ -563,7 +573,8 @@ axis as a group.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWdKmby'
+  id: 'QWdKmby',
+  height: 600
 } %}
 
 ## Why is there no justify-self in flexbox?

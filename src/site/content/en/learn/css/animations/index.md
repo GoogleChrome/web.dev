@@ -266,10 +266,15 @@ which is how the "pulser" demo from the start of this lesson works.
 You can set which direction the timeline runs over your keyframes with
 [animation-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction):
 
-- `normal`: the default value, which is forwards
-- `reverse`: runs backwards over your timeline
-- `alternate`: for each animation iteration, the timeline will run forwards or backwards in sequence
-- `alternate-reverse`: the reverse of `alternate`
+- `normal`: the default value, which is forwards.
+- `reverse`: runs backwards over your timeline.
+- `alternate`: for each animation iteration, the timeline will run forwards or backwards in sequence.
+- `alternate-reverse`: the reverse of `alternate`.
+
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'JjWPqMv'
+} %}
 
 ### `animation-delay`
 
@@ -286,6 +291,11 @@ Like the `animation-duration` property, this accepts a time value.
 Unlike the `animation-duration` property, you *can* define this as a negative value.
 If you set a negative value, the timeline in your `@keyframes` will start at that point.
 For example, if your animation is 10 seconds long and you set `animation-delay` to `-5s`, it will start from half-way along your timeline.
+
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'bGqbyPw'
+} %}
 
 ### `animation-play-state`
 
@@ -312,9 +322,14 @@ property defines which values in your `@keyframes` timeline persist before the a
 The default value is `none` which means when the animation is complete, the values in your timeline are discarded.
 Other options are:
 
-- `forwards`: The last keyframe will persist, based on the animation direction
-- `backwards`: The first keyframe will persist, based on the animation direction
-- `both`: follows the rules for both `forwards` and `backwards`
+- `forwards`: The last keyframe will persist, based on the animation direction.
+- `backwards`: The first keyframe will persist, based on the animation direction.
+- `both`: follows the rules for both `forwards` and `backwards`.
+
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'rNyBEVK'
+} %}
 
 ### The `animation` shorthand
 
@@ -358,3 +373,11 @@ but rather, a preference to reduce animations—
 [especially unexpected ones](/prefers-reduced-motion/).
 You can learn more about this preference and overall performance with
 [this animation guide](https://web.dev/animations/).
+
+
+{% Assessment 'animations' %}
+
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'bGqbPwq'
+} %}

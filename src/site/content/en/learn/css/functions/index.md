@@ -52,7 +52,7 @@ In CSS, you can only use the provided functions,
 rather than write your own,
 but functions can be nested within each other in some contexts,
 giving them more flexibility.
-We'll cover that in more detail, later in this lesson.
+We'll cover that in more detail, later in this module.
 
 ## Functional selectors
 
@@ -62,7 +62,8 @@ We'll cover that in more detail, later in this lesson.
 }
 ```
 
-You learned about functional selectors in the pseudo classes lesson
+You learned about functional selectors in the
+[pseudo-classes module](/learn/css/pseudo-classes)
 which detailed functions like
 [`:is()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:is) and
 [`:not()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:not).
@@ -121,7 +122,7 @@ you pass one or more arguments and use them on the **right side** of your CSS de
 
 ```css
 a::after {
-  content: attr('href')
+  content: attr('href');
 }
 ```
 
@@ -175,6 +176,7 @@ then removing `2rem` off that computed value.
   user: 'web-dot-dev',
   id: 'PopYema'
 } %}
+
 ```css
 :root {
   --root-height: 5rem;
@@ -416,6 +418,8 @@ along with `perspective-origin-x` and `perspective-origin-y` properties to creat
 
 CSS also provides functions that help you [animate](/learn/css/animation) elements,
 apply [gradients](/learn/css/gradients) to them and use graphical [filters](/learn/css/filters) to manipulate how they look.
-To keep this lesson as concise as possible,
+To keep this module as concise as possible,
 they are covered in the linked modules.
-They all follow a similar structure to the functions demonstrated in this lesson.
+They all follow a similar structure to the functions demonstrated in this module.
+
+{% Assessment 'functions' %}
