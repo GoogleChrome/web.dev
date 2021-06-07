@@ -30,9 +30,84 @@ origin_trial:
 The Storage Foundation API is part of the [capabilities project](https://web.dev/fugu-status/) and is currently in development. This post will be updated as the implementation progresses.
 {% endAside %}
 
+The web platform increasingly offers developers the tools they need to build fined-tuned
+high-performance applications for the web. Most notably, [WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly) (Wasm) has opened the door to fast and powerful web applications, while technologies like [Emscripten](https://emscripten.org/) now allow developers to reuse tried and tested code on the web.
+In order to truly leverage this potential, developers must be given the same power and flexibility when it comes to storage.
+
+This is where the Storage Foundation API comes in. The Storage Foundation API is a new fast and unopinionated storage API that unlocks new and much-requested use cases for the web, such as implementing performant databases and gracefully managing large temporary files. With this new interface, developers will be able to "bring their own storage" to the web, reducing the feature gap between web and platform-specific code.
+
+The Storage Foundation API is designed to resemble a very basic filesystem, aiming to give developers flexibility by providing generic, simple, and performant primitives upon which they can build higher-level components. Applications can take advantage of the best tool for their needs, finding the right balance between usability, performance, and reliability.
+
+## Background: Why does the web need another storage API?
+
+The web platform offers a number of storage options for developers, each of which built with specific use-cases in mind.
+
+- Some of these options clearly do not overlap with this proposal as they only allow very small amounts of data to be stored, like [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies), or the [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) consisting of the `sessionStorage` and the `localStorage` mechanisms.
+- Other options are already deprecated for various reasons like the [File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API/Introduction) or [WebSQL](https://www.w3.org/TR/webdatabase/).
+- The [File System Access API](/file-system-access/) has a similar API surface, but its main intended usage is to interface with the client's filesystem and provide access to data that may be outside of the origin's or even the browser's ownership. This different focus comes with stricter security considerations and higher performance costs.
+- The [IndexedDB API](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) can be used as a backend for some of the Storage Foundation API's use-cases. For example, Emscripten includes [IDBFS](https://emscripten.org/docs/api_reference/Filesystem-API.html), an IndexedDB-based persistent file system. However, since IndexedDB is fundamentally a key-value store, it comes with significant performance limitations. Furthermore, directly accessing sub-sections of a file is even more difficult and slower under IndexedDB.
+- Finally, the [CacheStorage interface](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage) is widely supported and is tuned for storing large-sized data such as web application resources, but the values are immutable.
+
+The Storage Foundation API is an attempt at closing all the gaps of the previous storage options by allowing for the performant storage of mutable large files defined within the origin of the application.
+
 ## What is the Storage Foundation API? {: #what }
 
-The Storage Foundation API is a new web platform API that allows TODO.
+There are two main parts to the API:
+
+- **File system calls**, which provide basic functionality to interact with files and file paths
+- **File handles**, which provide read and write access to an existing file
+
+### File system calls
+
+The Storage Foundation API introduces a new interface `storageFoundation` that lives on the `window` object and that includes a number of functions:
+
+- `await storageFoundation.open(name)`: Opens the file with the given name if it exists and otherwise creates a new file. Returns a promise that resolves with the the opened file.
+- `await storageFoundation.delete(DOMString name)`: Removes the file with the given name. Void.
+- `await storageFoundation.rename(oldName, newName)`: Renames the file from the old name to the new name atomically. Void.
+- `await storageFoundation.getAll()`: Returns a promise that resolves with an array of all existing file names.
+- `await storageFoundation.requestCapacity(requestedCapacity)`: Requests new capacity (in bytes) for usage by the current execution context. Returns a promise that resolved with the remaining amount of capacity available.
+- `await storageFoundation.releaseCapacity(toBeReleasedCapacity)`: Releases unused capacity (in bytes) from the current execution context. Returns a promised that resolves with the remaining amount of capacity available.
+- `await storageFoundation.getRemainingCapacity()`: Returns a promise that resolves with the capacity available for the current execution context.
+
+{% Aside 'warning' %}
+File names are restricted to lower-case alphanumeric characters and underscore (`a-z`, `0-9`, `_`).
+{% endAside %}
+
+{% Aside %}
+We are currently exploring the tradeoffs between providing a synchronous vs. asynchronous API. The interfaces are designed to be asynchronous as a temporary measure and will be updated once a decision has been reached.
+{% endAside %}
+
+### File handles
+
+{% Aside %}
+Storage Foundation API used to be called NativeIO. Some references to this name still remain and will be removed eventually.
+{% endAside %}
+
+Working with files happens via the following functions:
+
+- `await NativeIOFile.close()`: Closes a file. Void.
+- `await NativeIOFile.flush()`: Synchronizes (that is, flushes) a file's in-core state with the storage device. Void.
+
+{% Aside %}
+It is a known issue that `flush()` might be slow and we are exploring whether offering a
+faster, less reliable variant would be useful.
+{% endAside %}
+
+- `await NativeIOFile.getLength()`: Returns a promise that resolves with the length of the file in bytes.
+- `await NativeIOFile.setLength(length)`: Sets the length of the file in bytes. If the new length is smaller than the current length, bytes are removed starting  from the end of the file. Otherwise the file is extended with zero-valued bytes. Void.
+- `await NativeIOFile.read(buffer, offset)`: Reads the contents of the file at the given offset through a buffer that is
+  the result of transferring the given buffer, which is then left detached. Returns a `NativeIOReadResult` with the transferred buffer and the the number
+  of bytes that were successfully read.
+- `await NativeIOFile.write(buffer, offset)`: Writes the contents of the given buffer into the file at the given offset.
+  The buffer is transferred before any data is written and is therefore left detached. Returns a `NativeIOWriteResult` with the transferred
+  buffer and the number of bytes that were successfully written. The file will be extended if the write range spans beyond its length.
+
+{% Aside %}
+Calls to `NativeIOFile.write()` only guarantee that the data has been written to the
+file, but it does not guarantee that the data has been persisted to the
+underlying storage. To ensure that no data loss occurs on system crash, you must call
+`NativeIOFile.flush()` and wait for it to successfully return.
+{% endAside %}
 
 ### Suggested use cases for the API_NAME API {: #use-cases }
 
@@ -134,6 +209,11 @@ Ask a question on StackOverflow with the hashtag [`#file-system-access-api`](htt
 
 
 ## Acknowledgements
+
+The Storage Foundation API was specified and implemented by
+[Emanuel Krivoy](https://github.com/fivedots) and
+[Richard Stotz](https://github.com/rstz).
+This article was reviewed by [Joe Medley](https://github.com/jpmedley).
 
 Hero image via [Markus Spiske](https://unsplash.com/@markusspiske) on [Unsplash](https://unsplash.com/photos/iar-afB0QQw).
 
