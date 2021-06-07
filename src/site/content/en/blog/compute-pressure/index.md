@@ -5,6 +5,7 @@ subhead: An experimental API for reacting to changes in CPU use.
 authors:
   - jeffposnick
 date: 2021-06-03
+updated: 2021-06-07
 description: An experimental API for reacting to changes in CPU use.
 hero: image/FNkVSAX8UDTTQWQkKftSgGe9clO2/H9cVTFMj4cYmoIfGYQqd.jpg
 alt: A pressure gauge and pipes.
@@ -224,7 +225,7 @@ and clock speed values reported, due to the activities of other applications.
 
 ## Try a demo
 
-When accessed on a browser that supports the origin trial (currently Chrome 91
+When accessed on a browser that supports the origin trial (currently Chrome 92
 or later), [this demo](https://googlechrome.github.io/samples/compute-pressure/index.html)
 will display an ongoing readout of your device's CPU utilization and speed.
 
@@ -246,7 +247,7 @@ will display an ongoing readout of your device's CPU utilization and speed.
 
 ### Enabling support during the origin trial phase {: #ot }
 
-Starting in Chrome 91, the Compute Pressure API can be used as part of an origin
+Starting in Chrome 92, the Compute Pressure API can be used as part of an origin
 trial.
 
 {% include 'content/origin-trials.njk' %}
