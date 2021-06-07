@@ -230,7 +230,7 @@ Dual-rumble effects are defined by four parameters:
 
 ```js
 // This assumes a `Gamepad` as the value of the `gamepad` variable.
-const vibrate = (gamepad, delay = 0, duration = 100, weak = 1.0, strong = 1.0) {
+const vibrate = (gamepad, delay = 0, duration = 100, weak = 1.0, strong = 1.0) => {
   if (!('vibrationActuator' in gamepad)) {
     return;
   }
