@@ -33,7 +33,7 @@ and includes a tutorial for using these libraries to encode AVIF images efficien
 
 AVIF is an image format based on the AV1 video codec,
 and standardized by the
-[Alliance for Open Media](http://aomedia.org).
+[Alliance for Open Media](https://aomedia.org).
 AVIF offers significant compression gains over other image formats like JPEG and WebP.
 While the exact savings will depend on the content, encoding settings, and quality target,
 [we](https://jakearchibald.com/2020/avif-has-landed/) and
@@ -156,12 +156,23 @@ used in our example above.  To start, you will need:
 * [git](https://git-scm.com/)
 * [ninja](https://ninja-build.org/)
 
+You will also need to install the development packages for zlib, libpng, and libjpeg.
+The commands for the Debian and Ubuntu Linux distributions are:
+
+```shell
+sudo apt-get install zlib1g-dev
+sudo apt-get install libpng-dev
+sudo apt-get install libjpeg-dev
+```
+
 ### Building command line encoder avifenc
 
 #### 1. Get the code
 
+Check out a release tag of libavif.
+
 ```shell
-git clone https://github.com/AOMediaCodec/libavif.git
+git clone -b v0.9.1 https://github.com/AOMediaCodec/libavif.git
 ```
 
 #### 2. Change directory to libavif
@@ -177,7 +188,7 @@ AV1 encoder and decoder library, [libaom](https://aomedia.googlesource.com/aom).
 
 #### 3. Get and build libaom
 
-Change to the libavif extensions directory.
+Change to the libavif external dependencies directory.
 
 ```shell
 cd ext
@@ -281,7 +292,7 @@ The basic parameters for avifenc used in this tutorial are:
 The cq-level option sets the quantize level (0-63) to control the quality for color or alpha.
 
 {% Aside %}
-You can think of cq-level is the "amount" of quantization, so a lower value yields higher quality
+You can think of cq-level as the "amount" of quantization, so a lower value yields higher quality
 {% endAside %}
 
 {% Aside %}
@@ -299,7 +310,7 @@ The most basic parameters for avifenc to run, are setting the input and output f
 ./avifenc happy_dog.jpg happy_dog.avif
 ```
 
-We recommend the following command line to encode an image, say at quality level 18:
+We recommend the following command line to encode an image, say at quantize level 18:
 
 ```shell
 ./avifenc --min 0 --max 63 -a end-usage=q -a cq-level=18 -a tune=ssim happy_dog.jpg happy_dog.avif
@@ -319,7 +330,7 @@ replace <code>"-a cq-level=18"</code> with, say,
 Avifenc has a lot of options that will affect both quality and speed.
 If you want to see the options and learn more about them just run <code>./avifenc</code>
 
-You now have your very own second AVIF image!
+You now have your very own AVIF image!
 
 ### Speeding up the encoder
 
