@@ -22,10 +22,22 @@ permalink: '{{ item.url }}/index.html'
 
 {% block inner %}
   <iframe src="{{ item.previewUrl }}"></iframe>
+  <div>
+    <a href="{{ item.previewUrl }}">View full screen</a>
+  </div>
   <h2>Source (Nunjucks)</h2>
   <web-copy-code>
     <pre class="code-sample"><code>{{ item.markup }}</code></pre>
   </web-copy-code>
+  {% if item.variants %}
+  <h2>Variants</h2>
+  {% for variant in item.variants %}
+  <iframe src="{{ variant.previewUrl }}"></iframe>
+  <div>
+    <a href="{{ variant.previewUrl }}">View full screen</a>
+  </div>
+  {% endfor %}
+  {% endif %}
   <h2>Output</h2>
   <web-copy-code>
     <pre class="code-sample"><code>{{ item.rendered }}</code></pre>
@@ -33,7 +45,7 @@ permalink: '{{ item.url }}/index.html'
   {% if item.docs %}
   <div class="flow">
     <h2>Docs</h2>
-    {{ item.docs | md }}
+    {{ item.docs | md | safe }}
   </div>
   {% endif %}
 {% endblock %}

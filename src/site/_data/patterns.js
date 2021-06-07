@@ -96,4 +96,18 @@ module.exports = {
 
     return result;
   },
+  get variants() {
+    const response = [];
+
+    this.items.forEach((item) => {
+      if (item.variants) {
+        item.variants.forEach((variant) => {
+          console.log(variant);
+          response.push(variant);
+        });
+      }
+    });
+
+    return response;
+  },
 };
