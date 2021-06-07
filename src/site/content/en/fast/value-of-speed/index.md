@@ -72,20 +72,21 @@ If you don't have a Google Analytics account,
 you can learn how to set one up at
 [Get started with Analytics](https://support.google.com/analytics/answer/1008015?hl=en).
 
-**Step 1:** Go to Google Analytics and click Admin. Under View, choose View Settings. There, copy the View ID.
+**Step 1:** Go to Google Analytics and click **Admin**. Under **View**, choose **View Settings**. There, copy the View ID.
 
 **Step 2:** Go to
-[this spreadsheet](https://docs.google.com/spreadsheets/d/1MapigRgyGUo-lAb-OZq7WvwlR3k2Dn9VEGtmsu6V_ak/edit?usp=sharing&resourcekey=0-CQX465kkPxC-AmwyLO0PqA) and click File, and Make a copy.
+[this spreadsheet](https://docs.google.com/spreadsheets/d/13BnREVWPhIiDYdEvOSYP3ovlMggPbnRQPMTSir6y__I/edit#gid=1619071522)
+and click **File**, and Make a copy.
 
-**Step 3:** Insert the View ID from Google Analytics into field B3,
-C3 and D3 in
-[the spreadsheet](https://docs.google.com/spreadsheets/d/1MapigRgyGUo-lAb-OZq7WvwlR3k2Dn9VEGtmsu6V_ak/edit?usp=sharing&resourcekey=0-CQX465kkPxC-AmwyLO0PqA).
+**Step 3:** Insert the View ID from Google Analytics into field **B3**,
+**C3** and **D3** in
+[the spreadsheet](https://docs.google.com/spreadsheets/d/13BnREVWPhIiDYdEvOSYP3ovlMggPbnRQPMTSir6y__I/edit#gid=1619071522).
 If your Google Analytics has goals instead of Ecommerce Conversion Rate,
-change field B6 and C6 so that you remove `ga:transactionsPerSession` and instead type in
+change field **B6** and **C6** so that you remove `ga:transactionsPerSession` and instead type in
 `ga:goalConversionRateAll` in the two fields.
 
 **Step 4:** In the spreadsheet,
-click Add-ons, Google Analytics, and choose Run reports.
+click **Add-ons**, **Google Analytics**, and choose **Run reports**.
 Then go to the spreadsheet page Rel mCvR and see the results.
 
 You should now have a chart that looks something like this:
