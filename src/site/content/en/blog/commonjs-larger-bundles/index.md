@@ -47,7 +47,7 @@ Later on, another module can import and use some or all of these functions:
 
 ```javascript
 // index.js
-const { add } = require(‘./utils');
+const { add } = require('./utils');
 console.log(add(1, 2));
 ```
 
@@ -135,7 +135,7 @@ export const subtract = (a, b) => a - b;
 
 ```javascript
 // index.js
-import { add } from ‘./utils';
+import { add } from './utils';
 const subtract = (a, b) => a - b;
 
 console.log(add(1, 2));
