@@ -112,7 +112,7 @@ export class SearchResults extends BaseElement {
       const selected = this.renderRoot.querySelector(
         '.web-search-popout__link--active',
       );
-      selected.scrollIntoView();
+      selected.scrollIntoView({block: 'nearest'});
       this.dispatchEvent(new CustomEvent('resultselect', {detail: {selected}}));
     });
   }
