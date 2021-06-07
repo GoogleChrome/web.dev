@@ -10,7 +10,7 @@ description: |
   Serving desktop-sized images to mobile devices can use 2–4x more data than
   needed. Instead of a "one-size-fits-all" approach to images, serve different
   image sizes to different devices.
-date: 2021-06-04
+date: 2021-06-07
 tags:
   - performance
   - blog
