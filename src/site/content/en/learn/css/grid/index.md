@@ -742,7 +742,7 @@ for example:
 
 ```css
 .container {
-    dislay: grid;
+    display: grid;
     grid: repeat(2, 80px) / auto-flow  120px;
 }
 ```
