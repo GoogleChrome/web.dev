@@ -32,11 +32,21 @@ pageScripts:
       <h2 class="w-details__header">Details</h2>
     </summary>
     <div class="flow">
-      <h3>Source (Nunjucks)</h2>
+      {% if item.data.keyLinks | length %}
+        <h3>Key links</h3>
+        <ul>
+          {% for link in item.data.keyLinks %}
+          <li>
+            <a href="{{ link.url }}">{{ link.label }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      <h3>Source (Nunjucks)</h3>
       <web-copy-code>
         {% highlight "html" %}{{ item.markup | safe }}{% endhighlight %}
       </web-copy-code>
-      <h3>Output</h2>
+      <h3>Output</h3>
       <web-copy-code>
         {% highlight "html" %}{{ item.rendered | safe }}{% endhighlight %}
       </web-copy-code>
