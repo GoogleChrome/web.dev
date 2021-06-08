@@ -6,6 +6,8 @@ pagination:
   addAllPagesToCollections: true
   alias: item
 permalink: '{{ item.url }}/index.html'
+pageScripts:
+  - '/js/content.js'
 ---
 
 {% from 'macros/icon.njk' import icon, svg with context %}
@@ -25,27 +27,51 @@ permalink: '{{ item.url }}/index.html'
   <div>
     <a href="{{ item.previewUrl }}">View full screen</a>
   </div>
-  <h2>Source (Nunjucks)</h2>
-  <web-copy-code>
-    <pre class="code-sample"><code>{{ item.markup }}</code></pre>
-  </web-copy-code>
+  <details class="w-details">
+    <summary class="w-details__summary">
+      <h2 class="w-details__header">Details</h2>
+    </summary>
+    <div class="flow">
+      <h3>Source (Nunjucks)</h2>
+      <web-copy-code>
+        {% highlight "html" %}{{ item.markup | safe }}{% endhighlight %}
+      </web-copy-code>
+      <h3>Output</h2>
+      <web-copy-code>
+        {% highlight "html" %}{{ item.rendered | safe }}{% endhighlight %}
+      </web-copy-code>
+      {% if item.docs %}
+      <div class="flow">
+        <h2>Docs</h2>
+        {{ item.docs | md | safe }}
+      </div>
+      {% endif %}
+    </div>
+  </details>
   {% if item.variants %}
-  <h2>Variants</h2>
-  {% for variant in item.variants %}
-  <iframe src="{{ variant.previewUrl }}"></iframe>
-  <div>
-    <a href="{{ variant.previewUrl }}">View full screen</a>
-  </div>
-  {% endfor %}
-  {% endif %}
-  <h2>Output</h2>
-  <web-copy-code>
-    <pre class="code-sample"><code>{{ item.rendered }}</code></pre>
-  </web-copy-code>
-  {% if item.docs %}
-  <div class="flow">
-    <h2>Docs</h2>
-    {{ item.docs | md | safe }}
-  </div>
+    <h2>Variants</h2>
+    {% for variant in item.variants %}
+    <h3>{{ variant.data.title }}</h3>
+    <iframe src="{{ variant.previewUrl }}"></iframe>
+    <div>
+      <a href="{{ variant.previewUrl }}">View full screen</a>
+    </div>
+    <details class="w-details">
+      <summary class="w-details__summary">
+        <h3 class="w-details__header">Details</h2>
+      </summary>
+      <div class="flow">
+        <h4>Source</h4>
+        <web-copy-code>
+          {% highlight "html" %}{{ variant.markup | safe }}{% endhighlight %}
+        </web-copy-code>
+        <h4>Output</h2>
+        <web-copy-code>
+          {% highlight "html" %}{{ variant.rendered | safe }}{% endhighlight %}
+        </web-copy-code>
+      </div>
+    </details>
+    {% endfor %}
   {% endif %}
 {% endblock %}
+
