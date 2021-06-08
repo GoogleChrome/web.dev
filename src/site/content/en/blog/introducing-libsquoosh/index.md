@@ -1,9 +1,9 @@
 ---
 title: Introducing libSquoosh
-subhead: It's Squoosh, but as a Node library
+subhead: It's Squoosh, but as a Node library.
 description: |
-  It's Squoosh, but as a Node library
-date: 2021-06-02
+  It's Squoosh, but as a Node library.
+date: 2021-06-08
 authors:
   - surma
 hero: image/i9nJGvw3SnTPH63zKOYWtI6cP5m2/zTPjhYuOfh8bnk7c7tlO.png
