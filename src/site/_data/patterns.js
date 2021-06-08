@@ -41,7 +41,9 @@ module.exports = {
         );
 
         response['rendered'] = nunjucks.renderString(response.markup, {
-          data: response.data,
+          data: Object.prototype.hasOwnProperty.call(response.data, 'context')
+            ? response.data.context
+            : {},
         });
       }
 
@@ -102,7 +104,6 @@ module.exports = {
     this.items.forEach((item) => {
       if (item.variants) {
         item.variants.forEach((variant) => {
-          console.log(variant);
           response.push(variant);
         });
       }
