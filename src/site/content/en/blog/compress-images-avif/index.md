@@ -42,15 +42,15 @@ have seen >50% savings vs. JPEG.
 
 <div class="w-columns">
 <figure class="w-figure">
-  <a href="happy_dog_20k.avif" target="_blank">
-    <img src="happy_dog_20k.avif" width="1120" height="840" alt="The image using AVIF">
+  <a href="https://storage.googleapis.com/web-dev-uploads/image/foR0vJZKULb5AGJExlazy1xYDgI2/kVqh1xli2O6mqKF3fQNx.avif" target="_blank">
+    <img src="https://storage.googleapis.com/web-dev-uploads/image/foR0vJZKULb5AGJExlazy1xYDgI2/kVqh1xli2O6mqKF3fQNx.avif" width="1120" height="840" alt="The image using AVIF">
   </a>
   <figcaption class="w-figcaption">
   1120 x 840 AVIF at 18,769 bytes
 </figure>
 <figure class="w-figure">
-  <a href="happy_dog_20k.jpg" target="_blank">
-    <img src="happy_dog_20k.jpg" width="1120" height="840" alt="The image using JPEG">
+  <a href="https://storage.googleapis.com/web-dev-uploads/image/foR0vJZKULb5AGJExlazy1xYDgI2/Jy0O0q0mLXl668HAo43n.jpeg" target="_blank">
+    <img src="https://storage.googleapis.com/web-dev-uploads/image/foR0vJZKULb5AGJExlazy1xYDgI2/Jy0O0q0mLXl668HAo43n.jpeg" width="1120" height="840" alt="The image using JPEG">
   </a>
   <figcaption class="w-figcaption">
   1120 x 840 JPEG at 20,036 bytes
