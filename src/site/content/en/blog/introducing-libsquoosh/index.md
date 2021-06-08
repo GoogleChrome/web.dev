@@ -18,7 +18,7 @@ tags:
 
 **We are happy to introduce [libSquoosh], an experimental Node library on top of which the Squoosh CLI is built, giving you all the capabilities for the Squoosh CLI with a JavaScript-idiomatic interface.**
 
-Squoosh.app is a PWA that compresses images for you in the browser. It supports many old and new image formats and processes them client-side in the browser through WebAssembly. This means your pictures stay safely on your own computer rather than being sent to a server somewhere, and means that Squoosh works even when offline.
+Squoosh.app is a PWA that compresses images for you in the browser. It supports many old and new image formats and processes them client-side in the browser through WebAssembly. This means your pictures stay safely on your own computer rather than being sent to a server somewhere, and that Squoosh works even when offline.
 
 At Chrome DevSummit 2020 [we announced Squoosh v2][squoosh v2 announcement], together with the Squoosh CLI to bring all the codecs of Squoosh to the command-line using Node and WebAssembly. This allows you to compress entire folders with one command and make use of the CLI's ][][experimental auto-optimizer] to let it choose the codec parameters for you.
 
