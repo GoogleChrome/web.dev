@@ -7,7 +7,7 @@ pagination:
   alias: item
 permalink: '{{ item.url }}/index.html'
 pageScripts:
-  - '/js/content.js'
+  - '/js/design-system.js'
 ---
 
 {% from 'macros/icon.njk' import icon, svg with context %}
@@ -23,7 +23,7 @@ pageScripts:
 ]%}
 
 {% block inner %}
-  <iframe src="{{ item.previewUrl }}"></iframe>
+  <iframe data-preview-frame src="{{ item.previewUrl }}"></iframe>
   <div>
     <a href="{{ item.previewUrl }}">View full screen</a>
   </div>
@@ -52,7 +52,7 @@ pageScripts:
     <h2>Variants</h2>
     {% for variant in item.variants %}
     <h3>{{ variant.data.title }}</h3>
-    <iframe src="{{ variant.previewUrl }}"></iframe>
+    <iframe data-preview-frame src="{{ variant.previewUrl }}"></iframe>
     <div>
       <a href="{{ variant.previewUrl }}">View full screen</a>
     </div>
