@@ -109,8 +109,8 @@ updated once a decision has been reached. For more background on the tradeoffs, 
 - `storageFoundation.open(name)`: Opens the file with the given name if it exists and otherwise
   creates a new file. Returns a promise that resolves with the the opened file.
 
-{% Aside 'warning' %} File names are restricted to lowercase alphanumeric characters and
-underscore (`a-z`, `0-9`, `_`). {% endAside %}
+{% Aside 'warning' %} File names are restricted to lowercase alphanumeric characters and underscore
+(`a-z`, `0-9`, `_`). {% endAside %}
 
 {% Aside %} A file can only be opened once. This means concurrent access from different tabs is
 currently not possible. {% endAside %}
@@ -124,12 +124,11 @@ currently not possible. {% endAside %}
   by the current execution context. Returns a promise that resolved with the remaining amount of
   capacity available.
 
-{% Aside %} The Storage Foundation API achieves fast and predictable
-performance by implementing its own quota management system. Web applications must explicitly ask
-for capacity before storing any new data. This request will be granted according to the browser's
-quota guidelines. Anytime an application starts a new JavaScript execution context (e.g., new tab,
-new worker, reloading the page), it must make sure it owns sufficient capacity before writing new
-data. {% endAside %}
+{% Aside %} The Storage Foundation API achieves fast and predictable performance by implementing its
+own quota management system. Web applications must explicitly ask for capacity before storing any
+new data. This request will be granted according to the browser's quota guidelines. Anytime an
+application starts a new JavaScript execution context (e.g., new tab, new worker, reloading the
+page), it must make sure it owns sufficient capacity before writing new data. {% endAside %}
 
 - `storageFoundation.releaseCapacity(toBeReleasedCapacity)`: Releases unused capacity (in bytes)
   from the current execution context. Returns a promised that resolves with the remaining amount of
@@ -202,6 +201,13 @@ it to successfully return. {% endAside %}
 | 5. Launch                                | Not started              |
 
 </div>
+
+{% Aside %} There is currently an
+[ongoing effort](https://docs.google.com/document/d/1g7ZCqZ5NdiU7oqyCpsc2iZ7rRAY1ZXO-9VoG4LfP7fM/edit?usp=sharing)
+to augment the
+[origin private file system](http://localhost:8080/file-system-access/#accessing-the-origin-private-file-system)
+of the [File System Access API](/file-system-access/) as to not introduce yet another entry point
+for a storage system. This article will be updated as we make progress on this. {% endAside %}
 
 ## How to use the Storage Foundation API {: #use }
 
