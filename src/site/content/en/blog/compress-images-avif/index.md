@@ -42,22 +42,18 @@ have seen >50% savings vs. JPEG.
 
 <div class="w-columns">
 <figure class="w-figure">
-  {% Img
-  src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/RRE6Gv9EQ986PLHTKI4g.png",
-  alt="The image using AVIF",
-  width="800",
-  height="1067" %}
+  <a href="happy_dog_20k.avif" target="_blank">
+    <img src="happy_dog_20k.avif" width="1120" height="840" alt="The image using AVIF">
+  </a>
   <figcaption class="w-figcaption">
-  1120 x 840 AVIF at 20,984 bytes
+  1120 x 840 AVIF at 18,769 bytes
 </figure>
 <figure class="w-figure">
-  {% Img
-  src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/WBvRmc1oH6tWR3WfqZ5y.jpg",
-   alt="The image using JPEG",
-   width="800",
-   height="1067" %}
+  <a href="happy_dog_20k.jpg" target="_blank">
+    <img src="happy_dog_20k.jpg" width="1120" height="840" alt="The image using JPEG">
+  </a>
   <figcaption class="w-figcaption">
-  1120 x 840 JPEG at 29,775 bytes
+  1120 x 840 JPEG at 20,036 bytes
   </figcaption>
 </figure>
 </div>
