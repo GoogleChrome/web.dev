@@ -39,9 +39,9 @@
             </button>
             <h2 class="pad-left-400">Design system</h2>
             <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
-              <a class="drawer-course__link" href="/design-system">Welcome</a> 
-              <a class="drawer-course__link" href="/design-system/colors">Colors</a>
-              <a class="drawer-course__link" href="/design-system/typography">Typography</a>
+              {% for link in sideLinks %}
+                <a class="drawer-course__link" href="{{ link.url }}" {% if link.url == page.url %} data-active {% endif %}>{{ link.text }}</a> 
+              {% endfor %}
             </course-links>
             <h2 class="pad-left-400 flow-space-700">Patterns</h2>
             <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
