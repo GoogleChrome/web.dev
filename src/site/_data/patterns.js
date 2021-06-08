@@ -98,10 +98,21 @@ module.exports = {
 
     return result;
   },
-  get variants() {
+
+  // Returns a flat array of all patterns and variants
+  get previews() {
     const response = [];
 
     this.items.forEach((item) => {
+      // Slice only what's needed from root pattern
+      response.push({
+        previewUrl: item.previewUrl,
+        data: {
+          title: item.data.title,
+        },
+        rendered: item.rendered,
+      });
+
       if (item.variants) {
         item.variants.forEach((variant) => {
           response.push(variant);
