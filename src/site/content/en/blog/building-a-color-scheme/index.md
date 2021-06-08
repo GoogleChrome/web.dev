@@ -89,7 +89,7 @@ alt="preview of the light theme end results", width="800", height="480" %}
 
 Starting with the brand color, it's rebuilt by wrapping `--brand-hue`, `--brand-saturation`
 and `--brand-lightness` custom properties inside the hsl `()` function parenthesis,
-without any calculations made to it:
+without any calculations:
 
 ```css
 * {
@@ -127,7 +127,7 @@ a secondary color, and it's also much less saturated.
 Surface colors are the backgrounds, borders and other decorative surfaces that
 text sits upon or within. In a light theme, these are the light colors, as
 opposed to the text colors which were dark. To create light colors with hsl,
-we'll use higher percentage values in the 3rd lightness value. We'll also lower
+we'll use higher percentage values in the third lightness value. We'll also lower
 the saturation, so the light greys don't look too tinted.
 
 ```css
@@ -143,7 +143,7 @@ the saturation, so the light greys don't look too tinted.
 variants, for interactive moments like `:focus` or `:hover` or to create the
 appearance of paper layers. In these scenarios, it's nice to transition
 `--surface2-light` on hover to `--surface3-light`, so a hover results in an
-increase of contrast (99% lightness to 92% lightness; darker). 
+increase of contrast (99% lightness to 92% lightness; making it darker). 
 
 ### Shadows
 
@@ -199,7 +199,7 @@ all in one place in the CSS.
 
 Most brands don't begin with a dark theme, it's a variant of their primary,
 usually lighter, theme. Users, on the other hand, often choose a dark theme for
-different contexts, like night time. These factors have led me to keeping 2
+different contexts, like night time. These factors have led me to keeping two
 things in mind with dark themes: 
 
 1. Users will generally be in the dark while using this theme, so test in the
@@ -257,7 +257,7 @@ low lightness and saturation, with the 1st surface being the darkest at 10%.
 In a dark theme, shadows can be very hard to see. Makes sense since it's hard to
 darken something that's already fairly dark. This is where
 `--shadow-strength-dark` comes in super handy as it allows us to darken the
-shadows by changing 1 variable.
+shadows by changing one variable.
 
 ```css
 * {
@@ -464,14 +464,14 @@ intensity when it's a dark color scheme. End result was something like this.
 }
 ```
 
-If I was to go further with shadows in my color scheme, I'd make the shadow
+If I were to go further with shadows in my color scheme, I'd make the shadow
 angles a design token constant too, as the light direction should be the same
 between all the shadows of the design.
 
 ## Using of the color schemes
 
-With the predefining of colors complete, it's time to use them by providing them
-as values for scheme agnostic properties to disguise. What I mean is, as a CSS
+With the predefining of colors complete, it's time to turn them into 
+scheme agnostic properties. What I mean is, as a CSS
 author inside this color scheme project, one should rarely need to access a
 specific color scheme's value. I want to make it easy to stay within the theme.
 
