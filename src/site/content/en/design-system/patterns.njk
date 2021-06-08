@@ -25,7 +25,8 @@ pageScripts:
 {% block inner %}
   <iframe data-preview-frame src="{{ item.previewUrl }}"></iframe>
   <div>
-    <a href="{{ item.previewUrl }}">View full screen</a>
+    <a href="{{ item.previewUrl }}" class="w-button">View full screen</a>
+    <button class="w-button">TODO: add theme switcher</button>
   </div>
   <details class="w-details">
     <summary class="w-details__summary">
@@ -64,7 +65,8 @@ pageScripts:
     <h3>{{ variant.data.title }}</h3>
     <iframe data-preview-frame src="{{ variant.previewUrl }}"></iframe>
     <div>
-      <a href="{{ variant.previewUrl }}">View full screen</a>
+      <a href="{{ variant.previewUrl }}" class="w-button">View full screen</a>
+      <button class="w-button">TODO: add theme switcher</button>
     </div>
     <details class="w-details">
       <summary class="w-details__summary">
