@@ -7,6 +7,7 @@ const path = require('path');
 
 // Set up the chalk warning state
 const warning = chalk.black.bgYellow;
+const error = chalk.black.bgRed;
 
 module.exports = {
   // Grabs all patters that it can find at the root level then builds up a dataset,
@@ -43,11 +44,12 @@ module.exports = {
       );
 
       if (fs.existsSync(path.resolve(patternPath, `${patternName}.json`))) {
-        response.data = JSON.parse(
+        response.data = buildPatternData(
           fs.readFileSync(
             path.resolve(patternPath, `${patternName}.json`),
             'utf8',
           ),
+          path.resolve(patternPath, `${patternName}.json`),
         );
 
         response.rendered = nunjucks.renderString(response.markup, {
@@ -65,6 +67,20 @@ module.exports = {
       }
 
       return response;
+    };
+
+    // Take data input and attempt to parse as JSON
+    const buildPatternData = (input, filePath) => {
+      try {
+        return JSON.parse(input);
+      } catch (ex) {
+        console.log(
+          error(
+            `Pattern data was malformed and couldn’t be parsed (${filePath})`,
+          ),
+        );
+        return {};
+      }
     };
 
     // Loop each patterns folder, attempt to grab all the things and return
