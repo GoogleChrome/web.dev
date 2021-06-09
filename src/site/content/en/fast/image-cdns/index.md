@@ -100,4 +100,4 @@ Third-party image CDNs provide image CDNs as a service. Just as cloud providers 
 
 There are many good options for image CDNs. Some will have more features than others, but all of them will probably help you save bytes on your images and therefore load your pages faster. Besides feature sets, other factors to consider when choosing an image CDN are cost, support, documentation, and ease of setup or migration.
 
-Trying them out yourself before making a decision can also be helpful. Below you can find codelabs with instructions on how to quickly get started with several image CDNs.
+Trying them out yourself before making a decision can also be helpful.
