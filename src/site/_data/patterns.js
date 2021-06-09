@@ -17,10 +17,14 @@ module.exports = {
     // @ts-ignore
     const basePath = path.join(__basedir, 'src', 'pattern-library', 'patterns');
 
-    // Grabs each folder inside patterns, excluding hidden files/folders
-    const patterns = fs
-      .readdirSync(basePath)
-      .filter((item) => !/(^|\/)\.[^/.]/g.test(item));
+    // Gets pattern paths, excluding hidden files/folders
+    const getPatternPaths = (refPath) => {
+      return fs
+        .readdirSync(refPath)
+        .filter((item) => !/(^|\/)\.[^/.]/g.test(item));
+    };
+
+    const patterns = getPatternPaths(basePath);
 
     // For creating a result collection
     const result = [];
@@ -103,9 +107,7 @@ module.exports = {
       // If this pattern has a variants folder, run the whole
       // process on all that can be found
       if (fs.existsSync(patternVariantsRoot)) {
-        const variants = fs
-          .readdirSync(patternVariantsRoot)
-          .filter((item) => !/(^|\/)\.[^/.]/g.test(item));
+        const variants = getPatternPaths(patternVariantsRoot);
 
         patternResponse.variants = variants.map((variant) => {
           const variantRoot = path.resolve(patternVariantsRoot, variant);
