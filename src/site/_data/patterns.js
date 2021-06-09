@@ -10,7 +10,7 @@ const warning = chalk.black.bgYellow;
 const error = chalk.black.bgRed;
 
 module.exports = {
-  // Grabs all patters that it can find at the root level then builds up a dataset,
+  // Grabs all patterns that it can find at the root level then builds up a dataset,
   // rendered markup, view markup and docs. Lastly, it finds any variants and makes
   // those part of the pattern, too
   get items() {
