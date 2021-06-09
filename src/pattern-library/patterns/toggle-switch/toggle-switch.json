@@ -1,0 +1,8 @@
+{
+  "title": "Toggle",
+  "context": {
+    "label": "A label for a toggle",
+    "id": "toggle_element",
+    "checked": false
+  }
+}
