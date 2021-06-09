@@ -30,33 +30,43 @@
     }
   }
 
-  &__search {
-    height: 48px;
-  }
-
   web-search {
-    margin: 0 16px;
+    display: block;
+    height: 48px;
+    padding: 0 var(--flow-space);
 
     .web-search__input-wrapper {
       display: flex;
     }
 
     .web-search__open-btn,
-    .web-search__close-btn {
+    .web-search__close-btn,
+    &[expanded] .web-search__close-btn {
       display: none;
     }
   }
 
   .web-search-popout {
-    border-right: 1px solid #dadce0;
     height: 100%;
+    padding-top: 0
+  }
+
+  &__scroll {
+    flex: 1;
+    overflow: auto;
+    // sass-lint:disable no-misspelled-properties
+    overscroll-behavior: contain;
+    position: relative;
   }
 
   &__links {
     display: block; // this is a custom element so it needs display: block;
-    flex: 1;
-    overflow-y: auto;
-    overscroll-behavior: contain; // sass-lint:disable-line no-misspelled-properties
+    position: absolute;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
   }
 
   &__link {
