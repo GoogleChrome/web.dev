@@ -1,8 +1,12 @@
 /* global __basedir */
 
+const chalk = require('chalk');
 const nunjucks = require('nunjucks');
 const fs = require('fs');
 const path = require('path');
+
+// Set up the chalk warning state
+const warning = chalk.black.bgYellow;
 
 module.exports = {
   // Grabs all patters that it can find at the root level then builds up a dataset,
@@ -25,6 +29,11 @@ module.exports = {
       const response = {};
 
       if (!fs.existsSync(path.resolve(patternPath, `${patternName}.njk`))) {
+        console.log(
+          warning(
+            `Markup file, ${patternName}.njk wasn’t found, so this pattern (${patternPath}) can’t be built up`,
+          ),
+        );
         return null;
       }
 
@@ -66,6 +75,12 @@ module.exports = {
       const patternName = patternRootParts[patternRootParts.length - 1];
       const patternResponse = buildPattern(patternRoot, patternName);
       const patternVariantsRoot = path.resolve(patternRoot, 'variants');
+
+      // Error will have been logged in buildPattern, but this is
+      // not an acceptable response.
+      if (!patternResponse) {
+        return;
+      }
 
       // Urls for pattern page and preview
       patternResponse.url = `/design-system/pattern/${patternName}/`;
