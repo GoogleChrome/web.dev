@@ -9,8 +9,8 @@ alt: Well used letters from a letterpress, set into rows
 tags:
   - blog
   - css
-date: 2021-06-04
-updated: 2021-06-04
+date: 2021-06-09
+updated: 2021-06-09
 ---
 
 Consider the following
