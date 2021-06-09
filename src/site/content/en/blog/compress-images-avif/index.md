@@ -53,7 +53,7 @@ have seen >50% savings vs. JPEG.
     <img src="https://storage.googleapis.com/web-dev-uploads/image/foR0vJZKULb5AGJExlazy1xYDgI2/Jy0O0q0mLXl668HAo43n.jpeg" width="1120" height="840" alt="The image using JPEG">
   </a>
   <figcaption class="w-figcaption">
-  1120 x 840 JPEG at 20,036 bytes
+  1120 x 840 JPEG at 20,036 bytes (click to enlarge)
   </figcaption>
 </figure>
 </div>
