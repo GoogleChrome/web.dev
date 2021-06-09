@@ -46,7 +46,7 @@ have seen >50% savings vs. JPEG.
     <img src="https://storage.googleapis.com/web-dev-uploads/image/foR0vJZKULb5AGJExlazy1xYDgI2/kVqh1xli2O6mqKF3fQNx.avif" width="1120" height="840" alt="The image using AVIF">
   </a>
   <figcaption class="w-figcaption">
-  1120 x 840 AVIF at 18,769 bytes
+  1120 x 840 AVIF at 18,769 bytes (click to enlarge)
 </figure>
 <figure class="w-figure">
   <a href="https://storage.googleapis.com/web-dev-uploads/image/foR0vJZKULb5AGJExlazy1xYDgI2/Jy0O0q0mLXl668HAo43n.jpeg" target="_blank">
