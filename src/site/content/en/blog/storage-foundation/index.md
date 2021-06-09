@@ -7,7 +7,7 @@ subhead: |
   execution speed and memory usage.
 authors:
   - thomassteiner
-date: 2021-06-08
+date: 2021-06-09
 # updated: YYYY-MM-DD
 description: |
   The Storage Foundation API is a storage API that resembles a very basic filesystem,
@@ -288,6 +288,12 @@ await storageFoundation.getAll();
 
 ## Demo
 
+You can play with the [Storage Foundation API demo][demo] in the embed below. Create, rename, write
+into, and read from files, and see the available capacity you have requested update as you make
+changes. You can find the [source code][demo-source] of the demo on Glitch.
+
+{% Glitch 'storage-foundation' %}
+
 ## Security and permissions
 
 The Chromium team has designed and implemented the Storage Foundation API using the core principles
@@ -335,7 +341,7 @@ and let us know where and how you are using it. Ask a question on StackOverflow 
 ## Helpful links {: #helpful }
 
 - [Public explainer][explainer]
-- [TODO API Demo][demo] | [TODO API Demo source][demo-source]
+- [Storage Foundation API demo][demo] | [Storage Foundation API demo source][demo-source]
 - [Chromium tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
 - Blink Component: [`Blink>Storage>NativeIO`][blink-component]
@@ -354,8 +360,8 @@ Hero image via [Markus Spiske](https://unsplash.com/@markusspiske) on
 [Unsplash](https://unsplash.com/photos/iar-afB0QQw).
 
 [issues]: https://github.com/WICG/storage-foundation-api-explainer/issues
-[demo]: TODO
-[demo-source]: TODO
+[demo]: https://storage-foundation.glitch.me/
+[demo-source]: https://glitch.com/edit/#!/storage-foundation
 [explainer]: https://github.com/WICG/storage-foundation-api-explainer
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=914488
 [cr-status]: https://chromestatus.com/feature/5670244905385984
