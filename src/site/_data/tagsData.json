@@ -132,6 +132,9 @@
   "media": {
     "title": "Media"
   },
+  "monitoring": {
+    "title": "Monitoring"
+  },
   "media-queries": {
     "title": "Media Queries"
   },
