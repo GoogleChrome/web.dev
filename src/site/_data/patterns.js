@@ -9,7 +9,8 @@ module.exports = {
   // rendered markup, view markup and docs. Lastly, it finds any variants and makes
   // those part of the pattern, too
   get items() {
-    const basePath = path.resolve(__basedir, 'src/pattern-library/patterns');
+    // @ts-ignore
+    const basePath = path.join(__basedir, 'src', 'pattern-library', 'patterns');
 
     // Grabs each folder inside patterns, excluding hidden files/folders
     const patterns = fs
