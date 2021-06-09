@@ -24,6 +24,12 @@ module.exports = {
         .filter((item) => !/(^|\/)\.[^/.]/g.test(item));
     };
 
+    // Parses out the pattern name from the last segment in its path
+    const getPatternName = (patternPath) => {
+      const pathParts = patternPath.split('/').filter((x) => x.length);
+      return pathParts[pathParts.length - 1];
+    };
+
     const patterns = getPatternPaths(basePath);
 
     // For creating a result collection
@@ -89,8 +95,7 @@ module.exports = {
     // back a fully formed object to use
     patterns.forEach((item) => {
       const patternRoot = path.resolve(basePath, item);
-      const patternRootParts = patternRoot.split('/').filter((x) => x.length);
-      const patternName = patternRootParts[patternRootParts.length - 1];
+      const patternName = getPatternName(patternRoot);
       const patternResponse = buildPattern(patternRoot, patternName);
       const patternVariantsRoot = path.resolve(patternRoot, 'variants');
 
@@ -111,10 +116,7 @@ module.exports = {
 
         patternResponse.variants = variants.map((variant) => {
           const variantRoot = path.resolve(patternVariantsRoot, variant);
-          const variantRootParts = variantRoot
-            .split('/')
-            .filter((x) => x.length);
-          const variantName = variantRootParts[variantRootParts.length - 1];
+          const variantName = getPatternName(variantRoot);
 
           return {
             ...{
