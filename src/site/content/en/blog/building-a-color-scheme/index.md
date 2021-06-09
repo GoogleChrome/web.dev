@@ -32,7 +32,7 @@ in CSS. [Try the demo](https://gui-challenges.web.app/color-schemes/dist/).
 
 If you prefer video, here's a YouTube version of this post:
 
-{% YouTube 'jmLdZY_Lo1k' %}
+{% YouTube 'oHcTn83M1ls' %}
 
 ## Overview
 
