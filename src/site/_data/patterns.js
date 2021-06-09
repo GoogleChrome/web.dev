@@ -28,20 +28,20 @@ module.exports = {
         return null;
       }
 
-      response['markup'] = fs.readFileSync(
+      response.markup = fs.readFileSync(
         path.resolve(patternPath, `${patternName}.njk`),
         'utf8',
       );
 
       if (fs.existsSync(path.resolve(patternPath, `${patternName}.json`))) {
-        response['data'] = JSON.parse(
+        response.data = JSON.parse(
           fs.readFileSync(
             path.resolve(patternPath, `${patternName}.json`),
             'utf8',
           ),
         );
 
-        response['rendered'] = nunjucks.renderString(response.markup, {
+        response.rendered = nunjucks.renderString(response.markup, {
           data: Object.prototype.hasOwnProperty.call(response.data, 'context')
             ? response.data.context
             : {},
@@ -49,7 +49,7 @@ module.exports = {
       }
 
       if (fs.existsSync(path.resolve(patternPath, `${patternName}.md`))) {
-        response['docs'] = fs.readFileSync(
+        response.docs = fs.readFileSync(
           path.resolve(patternPath, `${patternName}.md`),
           'utf8',
         );
@@ -68,8 +68,8 @@ module.exports = {
       const patternVariantsRoot = path.resolve(patternRoot, 'variants');
 
       // Urls for pattern page and preview
-      patternResponse['url'] = `/design-system/pattern/${patternName}/`;
-      patternResponse['previewUrl'] = `/design-system/preview/${patternName}/`;
+      patternResponse.url = `/design-system/pattern/${patternName}/`;
+      patternResponse.previewUrl = `/design-system/preview/${patternName}/`;
 
       // If this pattern has a variants folder, run the whole
       // process on all that can be found
@@ -78,7 +78,7 @@ module.exports = {
           .readdirSync(patternVariantsRoot)
           .filter((item) => !/(^|\/)\.[^/.]/g.test(item));
 
-        patternResponse['variants'] = variants.map((variant) => {
+        patternResponse.variants = variants.map((variant) => {
           const variantRoot = path.resolve(patternVariantsRoot, variant);
           const variantRootParts = variantRoot
             .split('/')
