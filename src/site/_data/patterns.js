@@ -53,9 +53,7 @@ module.exports = {
         );
 
         response.rendered = nunjucks.renderString(response.markup, {
-          data: Object.prototype.hasOwnProperty.call(response.data, 'context')
-            ? response.data.context
-            : {},
+          data: response.data.context || {},
         });
       }
 
