@@ -355,7 +355,8 @@ and let us know where and how you are using it. Ask a question on StackOverflow 
 
 The Storage Foundation API was specified and implemented by
 [Emanuel Krivoy](https://github.com/fivedots) and [Richard Stotz](https://github.com/rstz). This
-article was reviewed by [Joe Medley](https://github.com/jpmedley).
+article was reviewed by [Pete LePage](https://github.com/petele) and
+[Joe Medley](https://github.com/jpmedley).
 
 Hero image via [Markus Spiske](https://unsplash.com/@markusspiske) on
 [Unsplash](https://unsplash.com/photos/iar-afB0QQw).
