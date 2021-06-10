@@ -40,10 +40,6 @@ web-table-of-contents {
 
   .w-scroll-spy__active {
     position: relative;
-    -webkit-margin-before: 0em;
-    -webkit-margin-after: 0em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
     display: inline-block;
   }
 
@@ -132,15 +128,15 @@ web-table-of-contents-button {
   @include bp(sm) {
     height: calc(100% - 32px);
   }
+
+  a {
+    display: inline-block;
+  }
 }
 
 .w-toc__header {
   margin-bottom: 12px;
   margin-top: 12px;
-
-  a {
-    display: inline-block;
-  }
 }
 
 .w-toc__header--link {
