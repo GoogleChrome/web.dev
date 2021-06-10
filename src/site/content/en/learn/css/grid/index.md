@@ -644,7 +644,7 @@ footer {
 }
 ```
 
-The name can be anything you like other than the keyword `span`.
+The name can be anything you like other than the keywords `auto` and `span`.
 Once all of your items are named,
 use the
 [`grid-template-areas`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas)
