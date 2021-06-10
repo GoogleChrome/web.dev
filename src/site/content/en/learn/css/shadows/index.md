@@ -245,8 +245,7 @@ We cover CSS [filters](/learn/css/filters) in another module,
 but in short, filters allow you to apply multiple graphical effects to the pixels of an element.
 {% endAside %}
 
-The `drop-shadow` filter has the same values as `box-shadow` **without** a spread value.
-You can add as many shadows as you like,
+The `drop-shadow` filter has the same values as `box-shadow` **but** the `inset` keyword and `spread` value are not allowed. You can add as many shadows as you like,
 by adding multiple instances of `drop-shadow` values to the `filter` property.
 Each shadow will use the last shadow as a positioning reference point.
 
