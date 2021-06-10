@@ -2,16 +2,17 @@
 layout: post
 title: 'High performance storage for your app: the Storage Foundation API'
 subhead: |
-  A storage API that is particularly well suited for Wasm-based libraries and
-  applications that want to use custom storage algorithms to fine-tune
-  execution speed and memory usage.
+  The Storage Foundation API resembles a very basic filesystem,
+  with direct access to stored data through buffers and offsets. It gives
+  developers flexibility by providing generic, simple, and performant 
+  primitives upon which they can build higher-level components.
 authors:
   - thomassteiner
 date: 2021-06-09
 # updated: YYYY-MM-DD
 description: |
   The Storage Foundation API is a storage API that resembles a very basic filesystem,
-  with direct access to stored data through buffers and offsets. Its goal is to give
+  with direct access to stored data through buffers and offsets. It gives
   developers flexibility by providing generic, simple, and performant primitives upon
   which they can build higher-level components. It is particularly well suited for
   Wasm-based libraries and applications that want to use custom storage algorithms to
@@ -48,7 +49,7 @@ developers flexibility by providing generic, simple, and performant primitives u
 build higher-level components. Applications can take advantage of the best tool for their needs,
 finding the right balance between usability, performance, and reliability.
 
-## Background: Why does the web need another storage API?
+## Why does the web need another storage API?
 
 The web platform offers a number of storage options for developers, each of which built with
 specific use-cases in mind.
@@ -115,9 +116,9 @@ updated once a decision has been reached. For more background on the tradeoffs, 
 {% Aside %} A file can only be opened once. This means concurrent access from different tabs is
 currently not possible. {% endAside %}
 
-- `storageFoundation.delete(name)`: Removes the file with the given name. Void.
+- `storageFoundation.delete(name)`: Removes the file with the given name. Returns `undefined`.
 - `storageFoundation.rename(oldName, newName)`: Renames the file from the old name to the new name
-  atomically. Void.
+  atomically.  Returns `undefined`.
 - `storageFoundation.getAll()`: Returns a promise that resolves with an array of all existing file
   names.
 - `storageFoundation.requestCapacity(requestedCapacity)`: Requests new capacity (in bytes) for usage
@@ -143,9 +144,9 @@ Working with files happens via the following functions:
 {% Aside %} Storage Foundation API used to be called NativeIO. Some references to this name still
 remain and will be removed eventually. {% endAside %}
 
-- `NativeIOFile.close()`: Closes a file. Void.
+- `NativeIOFile.close()`: Closes a file.  Returns `undefined`.
 - `NativeIOFile.flush()`: Synchronizes (that is, flushes) a file's in-core state with the storage
-  device. Void.
+  device.  Returns `undefined`.
 
 {% Aside %} It is a known issue that `flush()` might be slow and we are exploring whether offering a
 faster, less reliable variant would be useful. {% endAside %}
@@ -153,7 +154,7 @@ faster, less reliable variant would be useful. {% endAside %}
 - `NativeIOFile.getLength()`: Returns a promise that resolves with the length of the file in bytes.
 - `NativeIOFile.setLength(length)`: Sets the length of the file in bytes. If the new length is
   smaller than the current length, bytes are removed starting from the end of the file. Otherwise
-  the file is extended with zero-valued bytes. Void.
+  the file is extended with zero-valued bytes.  Returns `undefined`.
 - `NativeIOFile.read(buffer, offset)`: Reads the contents of the file at the given offset through a
   buffer that is the result of transferring the given buffer, which is then left detached. Returns a
   `NativeIOReadResult` with the transferred buffer and the the number of bytes that were
