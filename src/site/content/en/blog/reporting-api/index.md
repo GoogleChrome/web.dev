@@ -26,7 +26,7 @@ Some errors only occur in production. You never see them locally or during devel
 The Reporting API helps catch some of these errors across your site and transmit them to an endpoint you've specified.
 
 This API enables you to activate a reporting mechanism that's operated by the browser.
-With Reporting API configured, reports can be generated when certain policies are violated (or when deprecated APIs are used, when the browser intervenes on your site, when the browser crashes, and more). The browser then sends those report(s) to the endpoint(s) you’ve configured.
+With Reporting API configured, reports can be generated when certain policies are violated (or when deprecated APIs are used, when the browser intervenes on your site, when the browser crashes, and more). The browser then sends those report(s) to the endpoint(s) you've configured.
 
 Setting up the Reporting API gives you peace of mind that when users experience these types of unforeseen errors, you'll be aware and able to fix them if needed. ✨
 
@@ -339,7 +339,7 @@ However, until there's wider browser support for the Reporting API (see [browser
 
 ### Configure the policies
 
-**Deprecation**, **intervention\_ and **crash** reports are generated automatically and sent as long as you have a **default\*\* endpoint set up; there's no dedicated policy. These reports are sent to the default endpoint.
+**Deprecation**, **intervention** and **crash** reports are generated automatically and sent as long as you have a **default** endpoint set up; there's no dedicated policy. These reports are sent to the default endpoint.
 
 By contrast, the **other report types** are generated only if an **explicit policy** is set up. They'll be sent to the endpoint that's specified by the policy via the `report-to` keyword.
 
@@ -363,8 +363,8 @@ Head over to the [demo](https://glitch.com/edit/#!/reporting-api-demo?path=serve
 
 When deciding where to send your reports, you have two options:
 
-- Use an existing report collector service
-- Or build and operate your own reporting collector.
+- Option 1: Use an existing report collector service
+- Option 2: Build and operate your own reporting collector.
 
 {% Banner 'info', 'body'%}
 You can set multiple endpoints. This can be handy to separate reports:
@@ -379,7 +379,7 @@ You can set multiple endpoints. This can be handy to separate reports:
 Some examples of report collector services are [report-uri](https://report-uri.com) and [uriports](https://uriports.com).
 If you know of other solutions, please [let us know](https://github.com/GoogleChrome/web.dev) and we'll update this post!
 
-🧐 Things to consider when selecting a service for your endpoints:
+**🧐 Things to consider when selecting a report collector as a service:**
 
 - Does this collector support all report types? For example, some reporting endpoint solutions support COOP/COEP reports, but not all do.
 - Does the pricing work for you?
@@ -393,7 +393,7 @@ Building your own server that receives reports isn't that trivial. To get starte
 - Click **Remix to edit**
 - You now have your clone ✨ You can customize it for your own purposes.
 
-🧐 Things to consider when building your own report collector:
+**🧐 Things to consider when building your own report collector:**
 
 - If your endpoint URL lives on a different origin than your site, the endpoint should support [CORS preflight requests](https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request).
 - To recognize reports requests sent by the browser to your endpoint, check for `POST` requests with a `Content-Type` of `application/reports+json`.
@@ -436,7 +436,7 @@ Once this is released, you'll be able to see reports within Chrome DevTools.
 #### Is the report properly sent and received?
 
 {% Aside 'gotchas' %}
-Because the report is sent out-of-band by the browser itself and not by a certain site, **the `POST` requests with the reports are **not** visible in the Network panel of your Developer Tools.** Dedicated DevTools support is being implemented to surface these requests.
+Because the report is sent out-of-band by the browser itself and not by a certain site, **the `POST` requests with the reports are not visible in the Network panel of your Developer Tools.** Dedicated DevTools support is being implemented to surface these requests.
 {% endAside %}
 
 To answer this, try the following:
