@@ -44,7 +44,7 @@ implementing performant databases and gracefully managing large temporary files.
 interface, developers will be able to "bring their own storage" to the web, reducing the feature gap
 between web and platform-specific code.
 
-The Storage Foundation API is designed to resemble a very basic filesystem, aiming to give
+The Storage Foundation API is designed to resemble a very basic filesystem so it gives
 developers flexibility by providing generic, simple, and performant primitives upon which they can
 build higher-level components. Applications can take advantage of the best tool for their needs,
 finding the right balance between usability, performance, and reliability.
