@@ -6,9 +6,12 @@ view_source:
   en: View source
   es: Ver fuente
 
-updates:
-  en: Updates
-  es: Actualizaciones
+related_content:
+  en: Related content
+
+chrome_updates:
+  en: Chrome updates
+  es: Chrome Actualizaciones
 
 web_fundamentals:
   en: Web Fundamentals
