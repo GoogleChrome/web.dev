@@ -146,7 +146,7 @@ Working with files happens via the following functions:
 remain and will be removed eventually. {% endAside %}
 
 - `NativeIOFile.close()`: Closes a file, and returns a promise that resolves when the operation completes.
-- `NativeIOFile.flush()`: Synchronizes (that is, flushes) a file's in-core state with the storage
+- `NativeIOFile.flush()`: Synchronizes (that is, flushes) a file's in-memory state with the storage
   device.  Returns `undefined`.
 
 {% Aside %} It is a known issue that `flush()` might be slow and we are exploring whether offering a
@@ -308,7 +308,7 @@ contexts.
 
 ### User control
 
-Storage quota will be used to distribute access to disk space and to prevent abuse. Like other
+Storage quota will be used to distribute access to disk space and to prevent abuse. Memory you want to occupy needs to be requested first. Like other
 storage APIs, users can clear the space taken by Storage Foundation API through
 their browser.
 
