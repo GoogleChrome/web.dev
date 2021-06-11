@@ -11,7 +11,7 @@ authors:
 date: 2021-06-10
 # updated: YYYY-MM-DD
 description: |
-  The Storage Foundation API is a storage API that resembles a very basic filesystem,
+  The Storage Foundation API is a storage API that resembles a basic file system,
   with direct access to stored data through buffers and offsets. It gives
   developers flexibility by providing generic, simple, and performant primitives upon
   which they can build higher-level components. It is particularly well suited for
@@ -44,7 +44,7 @@ implementing performant databases and gracefully managing large temporary files.
 interface, developers will be able to "bring their own storage" to the web, reducing the feature gap
 between web and platform-specific code.
 
-The Storage Foundation API is designed to resemble a very basic filesystem so it gives
+The Storage Foundation API is designed to resemble a very basic file system so it gives
 developers flexibility by providing generic, simple, and performant primitives upon which they can
 build higher-level components. Applications can take advantage of the best tool for their needs,
 finding the right balance between usability, performance, and reliability.
@@ -62,15 +62,15 @@ specific use-cases in mind.
 - Other options are already deprecated for various reasons like the
   [File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API/Introduction)
   or [WebSQL](https://www.w3.org/TR/webdatabase/).
-- The [File System Access API](/file-system-access/) has a similar API surface, but its main
-  intended usage is to interface with the client's filesystem and provide access to data that may be
+- The [File System Access API](/file-system-access/) has a similar API surface, but its
+ use is to interface with the client's file system and provide access to data that may be
   outside of the origin's or even the browser's ownership. This different focus comes with stricter
   security considerations and higher performance costs.
 - The [IndexedDB API](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) can be used as
   a backend for some of the Storage Foundation API's use-cases. For example, Emscripten includes
   [IDBFS](https://emscripten.org/docs/api_reference/Filesystem-API.html), an IndexedDB-based
   persistent file system. However, since IndexedDB is fundamentally a key-value store, it comes with
-  significant performance limitations. Furthermore, directly accessing sub-sections of a file is
+  significant performance limitations. Furthermore, directly accessing subsections of a file is
   even more difficult and slower under IndexedDB.
 - Finally, the
   [CacheStorage interface](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage) is widely
@@ -87,7 +87,7 @@ Examples of sites that may use this API include:
 
 - Productivity or creativity apps that operate on large amounts of video, audio, or image data. Such
   apps can offload segments to disk instead of holding them in memory.
-- Apps that rely on a persistent filesystem accessible from Wasm and that need more performance than
+- Apps that rely on a persistent file system accessible from Wasm and that need more performance than
   what IDBFS can guarantee.
 
 ## What is the Storage Foundation API? {: #what }
