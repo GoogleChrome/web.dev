@@ -283,9 +283,7 @@ that "screens" is plural in the event name.) This means the event fires whenever
 case of Sidecar) plugged in or unplugged.
 
 Note that you need to look up the new screen details asynchronously, the `screenschange` event
-itself does not provide this data. This may
-[change in the future](https://github.com/webscreens/window-placement/issues/28). For now you can
-look up the screen details by calling `window.getScreens()` as shown below.
+itself does not provide this data. To look up the screen details, use the live object from a cached `Screens` interface.
 
 ```js
 const screensInterface = await window.getScreens();
