@@ -5,7 +5,7 @@ subhead: |
   The Storage Foundation API resembles a basic file system,
   with direct access to stored data through buffers and offsets. It gives
   developers flexibility by providing generic, simple, and performant 
-  primitives upon which they can build higher-level components.
+  primitives on which they can build higher-level components.
 authors:
   - thomassteiner
 date: 2021-06-10
@@ -13,9 +13,9 @@ date: 2021-06-10
 description: |
   The Storage Foundation API is a storage API that resembles a basic file system,
   with direct access to stored data through buffers and offsets. It gives
-  developers flexibility by providing generic, simple, and performant primitives upon
+  developers flexibility by providing generic, simple, and performant primitives on
   which they can build higher-level components. It is particularly well suited for
-  Wasm-based libraries and applications that want to use custom storage algorithms to
+  Wasm-based libraries and applications that perform best when they can use custom storage algorithms to
   fine-tune execution speed and memory usage.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/jHUvdkuNQBLYxfWrCizd.jpg
 alt: |
@@ -35,23 +35,23 @@ The web platform increasingly offers developers the tools they need to build fin
 high-performance applications for the web. Most notably,
 [WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly) (Wasm) has opened the door to
 fast and powerful web applications, while technologies like [Emscripten](https://emscripten.org/)
-now allow developers to reuse tried and tested code on the web. In order to truly leverage this
-potential, developers must be given the same power and flexibility when it comes to storage.
+now allow developers to reuse tried and tested code on the web. To truly leverage this
+potential, developers must have the same power and flexibility when it comes to storage.
 
 This is where the Storage Foundation API comes in. The Storage Foundation API is a new fast and
 unopinionated storage API that unlocks new and much-requested use cases for the web, such as
 implementing performant databases and gracefully managing large temporary files. With this new
-interface, developers will be able to "bring their own storage" to the web, reducing the feature gap
+interface, developers can "bring their own storage" to the web, reducing the feature gap
 between web and platform-specific code.
 
 The Storage Foundation API is designed to resemble a very basic file system so it gives
-developers flexibility by providing generic, simple, and performant primitives upon which they can
+developers flexibility by providing generic, simple, and performant primitives on which they can
 build higher-level components. Applications can take advantage of the best tool for their needs,
 finding the right balance between usability, performance, and reliability.
 
 ## Why does the web need another storage API?
 
-The web platform offers a number of storage options for developers, each of which built with
+The web platform offers a number of storage options for developers, each of which is built with
 specific use-cases in mind.
 
 - Some of these options clearly do not overlap with this proposal as they only allow very small
@@ -99,10 +99,10 @@ There are two main parts to the API:
 
 ### File system calls
 
-The Storage Foundation API introduces a new interface `storageFoundation` that lives on the `window`
+The Storage Foundation API introduces a new object, `storageFoundation`, that lives on the `window`
 object and that includes a number of functions:
 
-{% Aside %} We are currently exploring the tradeoffs between providing a synchronous vs. an
+{% Aside %} We are currently exploring the tradeoffs between providing a synchronous versus an
 asynchronous API. The interfaces are designed to be asynchronous as a temporary measure and will be
 updated once a decision has been reached. For more background on the tradeoffs, see the
 [Explainer](https://github.com/WICG/storage-foundation-api-explainer#sync-vs-async). {% endAside %}
@@ -116,9 +116,10 @@ updated once a decision has been reached. For more background on the tradeoffs, 
 {% Aside %} A file can only be opened once. This means concurrent access from different tabs is
 currently not possible. {% endAside %}
 
-- `storageFoundation.delete(name)`: Removes the file with the given name. Returns `undefined`.
+- `storageFoundation.delete(name)`: Removes the file with the given name. Returns a promise
+  that resolves when the file is deleted.
 - `storageFoundation.rename(oldName, newName)`: Renames the file from the old name to the new name
-  atomically.  Returns `undefined`.
+  atomically.  Returns a promise that resolves when the file is renamed.
 - `storageFoundation.getAll()`: Returns a promise that resolves with an array of all existing file
   names.
 - `storageFoundation.requestCapacity(requestedCapacity)`: Requests new capacity (in bytes) for usage
@@ -128,12 +129,12 @@ currently not possible. {% endAside %}
 {% Aside %} The Storage Foundation API achieves fast and predictable performance by implementing its
 own quota management system. Web applications must explicitly ask for capacity before storing any
 new data. This request will be granted according to the browser's quota guidelines. Anytime an
-application starts a new JavaScript execution context (e.g., new tab, new worker, reloading the
-page), it must make sure it owns sufficient capacity before writing new data. {% endAside %}
+application starts a new JavaScript execution context (e.g., a new tab, a new worker, or when reloading the
+page), it must make sure it owns sufficient capacity before writing any data. {% endAside %}
 
-- `storageFoundation.releaseCapacity(toBeReleasedCapacity)`: Releases unused capacity (in bytes)
-  from the current execution context. Returns a promised that resolves with the remaining amount of
-  capacity available.
+- `storageFoundation.releaseCapacity(toBeReleasedCapacity)`: Releases the specified number of bytes
+  from the current execution context, and returns a promise that resolves with the remaining
+  capacity.
 - `storageFoundation.getRemainingCapacity()`: Returns a promise that resolves with the capacity
   available for the current execution context.
 
@@ -141,10 +142,10 @@ page), it must make sure it owns sufficient capacity before writing new data. {%
 
 Working with files happens via the following functions:
 
-{% Aside %} Storage Foundation API used to be called NativeIO. Some references to this name still
+{% Aside %} The Storage Foundation API used to be called NativeIO. Some references to this name still
 remain and will be removed eventually. {% endAside %}
 
-- `NativeIOFile.close()`: Closes a file.  Returns `undefined`.
+- `NativeIOFile.close()`: Closes a file, and returns a promise that resolves when the operation completes.
 - `NativeIOFile.flush()`: Synchronizes (that is, flushes) a file's in-core state with the storage
   device.  Returns `undefined`.
 
@@ -163,7 +164,7 @@ faster, less reliable variant would be useful. {% endAside %}
   A `NativeIOReadResult` is an object that consists of two entries:
 
   - `buffer`: An
-    [`ArrayBufferView`](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView) which is
+    [`ArrayBufferView`](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView), which is
     the result of transferring the buffer passed to `read()`. It is of the same type and length as
     source buffer.
   - `readBytes`: The number of bytes that were successfully read into `buffer`. This may be less
@@ -173,7 +174,7 @@ faster, less reliable variant would be useful. {% endAside %}
 - `NativeIOFile.write(buffer, offset)`: Writes the contents of the given buffer into the file at the
   given offset. The buffer is transferred before any data is written and is therefore left detached.
   Returns a `NativeIOWriteResult` with the transferred buffer and the number of bytes that were
-  successfully written. The file will be extended if the write range spans beyond its length.
+  successfully written. The file will be extended if the write range exceeds its length.
 
   A `NativeIOWriteResult` is an object that consists of two entries:
 
@@ -219,7 +220,7 @@ To experiment with the Storage Foundation API locally, without an origin trial t
 
 ### Enabling support during the origin trial phase
 
-Starting in Chromium&nbsp;90, the Storage Foundation API will be available as an origin trial in
+Starting in Chromium&nbsp;90, the Storage Foundation API is available as an origin trial in
 Chromium. The origin trial is expected to end in Chromium&nbsp;95 (November 10, 2021).
 
 {% include 'content/origin-trials.njk' %}
@@ -308,7 +309,7 @@ contexts.
 ### User control
 
 Storage quota will be used to distribute access to disk space and to prevent abuse. Like other
-storage APIs, users have the option of clearing the space taken by Storage Foundation API through
+storage APIs, users can clear the space taken by Storage Foundation API through
 their browser.
 
 ## Feedback {: #feedback }
