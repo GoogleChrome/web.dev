@@ -2,13 +2,13 @@
 layout: post
 title: Monitor your web application with the Reporting API
 subhead: |
-  Use the Reporting API to get security reports, deprecation reports, and more.
+  Use the Reporting API to monitor your site and get security reports, deprecation reports, and more.
 authors:
   - maudn
 date: 2021-06-08
 updated: 2021-06-08
 description: |
-  Use the Reporting API to get security reports, deprecation reports, and more.
+  Use the Reporting API to monitor your site and get security reports, deprecation reports, and more.
 hero: image/O2RNUyVSLubjvENAT3e7JSdqSOx1/PEgnzZFQVPhP2PyOnMm8.jpg
 alt: |
   A person looking into a scope, symbolizing monitoring and observation via the Reporting API.
@@ -19,20 +19,20 @@ tags:
 ---
 
 {% Banner 'caution', 'body' %}
-This is an API guide with detailed usage examples for the **Reporting API (v1)**, which uses the `Reporting-Endpoints` header. If you're already using the legacy Reporting API with the `Report-To` header and need to migrate to the new version, head over to the [migration post](/reporting-api-migration) instead.
+This is an API guide with detailed usage examples for the **Reporting API (v1)**, which uses the `Reporting-Endpoints` header. If you're already using the legacy Reporting API with the `Report-To` header and need to migrate to the new version (v1), head over to the [migration post](/reporting-api-migration) instead.
 {% endBanner %}
 
 Some errors only occur in production. You never see them locally or during development because **real users**, **real networks**, and **real devices** change the game.
 The Reporting API helps catch some of these errors across your site and transmit them to an endpoint you've specified.
 
-This API enables you to activate a reporting mechanism that's operated by the browser.
-With Reporting API configured, reports can be generated when certain policies are violated (or when deprecated APIs are used, when the browser intervenes on your site, when the browser crashes, and more). The browser then sends those report(s) to the endpoint(s) you've configured.
+This API enables you to activate a reporting mechanism that's **operated by the browser**.
+When the Reporting API configured on your site, **reports can be generated** when certain policies are violated (or when deprecated APIs are used, when the browser intervenes on your site or crashes, and more). The browser then sends those report(s) to the **endpoint(s) i.e. report collectors** you've configured.
 
 Setting up the Reporting API gives you peace of mind that when users experience these types of unforeseen errors, you'll be aware and able to fix them if needed. ✨
 
 ```http
   Reporting-Endpoints: main-endpoint="https://reports.example/main", default="https://reports.example/default"
-  Content-Security-Policy: "script-src 'self'; object-src 'none'; report-to main-endpoint;"
+  Content-Security-Policy: script-src 'self'; object-src 'none'; report-to main-endpoint;
 ```
 
 This post covers what this API can do, how it works, and how you can use it.
@@ -42,9 +42,12 @@ Let's dive in!
 ## Demo and code
 
 {% Banner 'info', 'body' %}
-[Demo site: report generation page](https://reporting-api-demo.glitch.me). This page uses the new Reporting API via the `Reporting-Endpoints` header. See the [code](https://glitch.com/edit/#!/reporting-api-demo).
-[Demo site: reporting endpoint](https://reports-endpoint.glitch.me). This server receives and displays reports. See the
+
+💥 [Demo site: report generation page](https://reporting-api-demo.glitch.me). This page uses the new Reporting API via the `Reporting-Endpoints` header. See the [code](https://glitch.com/edit/#!/reporting-api-demo).
+
+📬 [Demo site: reporting endpoint](https://reports-endpoint.glitch.me). This server receives and displays reports. See the
 [code](https://glitch.com/edit/#!/reports-endpoint).
+
 {% endBanner %}
 
 ## Use cases and report types
@@ -54,7 +57,7 @@ Let's dive in!
     <thead>
       <tr>
         <th>Report type</th>
-        <th>Example of a situation when a report would be generated</th>
+        <th>Example of a situation where a report would be generated</th>
       </tr>
     </thead>
     <tbody>
@@ -76,7 +79,7 @@ Let's dive in!
       </tr>
       <tr>
         <td>Deprecation warning</td>
-        <td>Your site is using an API that is deprecated (directly or via a top-level third-party script).
+        <td>Your site is using an API that is deprecated, directly or via a top-level third-party script.
         </td>
       </tr>
       <tr>
@@ -95,7 +98,7 @@ Let's dive in!
 Note:
 
 - **Network Error Logging** isn't listed because it isn't supported in the new version of the API. Check the [migration guide](/reporting-api-migration) for details.
-- **Permissions policy (formerly feature policy)** violation reports may be supported by default in the future. Right now, they're experimental. Once configured, these reports would be generated for example if your site has a permission policy to prevent microphone usage, but a script is requesting audio input.
+- **Permissions policy (formerly feature policy)** violation reports may be supported by default in the future. Right now, they're experimental. One example situation where such reports would be generated: if your site has a permission policy to prevent microphone usage, and a script is requesting audio input.
 
 {% endAside %}
 
@@ -113,23 +116,29 @@ Let's assume that your site, `site.example`, has a few policies configured.
 You decide to monitor your site in order to know when these policies are violated. To do so, you configure a `Reporting-Endpoints` header, and map these endpoint names via `'report-to'` in your policies where needed.
 
 ```http
-    Reporting-Endpoints: main-endpoint="https://reports.example/main", default="https://reports.example/default"
+Reporting-Endpoints: main-endpoint="https://reports.example/main", default="https://reports.example/default"
 ```
 
 ```http
-// Content-Security-Policy violations and Document-Policy violations will be sent to main-endpoint
-Content-Security-Policy: "script-src 'self'; object-src 'none'; report-to main-endpoint;"
-Document-Policy: "document-write=?0;report-to=main-endpoint;"
-// Deprecation reports don't need an explicit endpoint; these reports are always sent to the `default` endpoint
+# Content-Security-Policy violations and Document-Policy violations will be sent to `main-endpoint`
+Content-Security-Policy: script-src 'self'; object-src 'none'; report-to main-endpoint;
+Document-Policy: document-write=?0;report-to=main-endpoint;
+# Deprecation reports don't need an explicit endpoint because these reports are always sent to the `default` endpoint
 ```
 
 Something unforeseen happens, and these policies get violated for some of your users.
 
 The browser generates the reports that capture these issues.
 
-With a little bit of delay—up to a minute—the browser sends the reports to the endpoint that was configured for this violation type. The reports are sent **[out-of-band](https://en.wikipedia.org/wiki/Out-of-band_data)**—not by your site, but by the browser itself.
+With a little bit of delay—up to a minute—the browser sends the reports to the endpoint that was configured for this violation type. The reports are sent **[out-of-band](https://en.wikipedia.org/wiki/Out-of-band_data)** not by your site, but by the browser itself.
 
-Example report:
+{% Details %}
+
+{% DetailsSummary 'h4' %}
+
+Example report
+
+{% endDetailsSummary %}
 
 ```json
 {
@@ -150,59 +159,22 @@ Example report:
 }
 ```
 
+{% endDetails %}
+
 The endpoint(s) receive(s) these reports.
 
-You can access the reports on these endpoints, monitor what went wrong, and start troubleshooting to solve the problem that's affecting your users.
-
-{% Aside %}
-Note:
-
-- In the legacy Reporting API (v0), reports were sent in batches. The new Reporting API works differently: the browser will only batch together reports in the same request if they are generated by the same document. Reports are not sent in the same request if they come from different origins, or even different documents on the same origin). Learn more in the [migration guide](/reporting-api-migration).
-- Reports are sent with a delay to increase the chances that reports are sent in batches, to save bandwidth and be respectful to the user's network connection. This is especially important on mobile.
-  {% endAside %}
+You can now access the reports on these endpoints and monitor what went wrong. You can start troubleshooting to solve the problem that's affecting your users.
 
 ## Report format
 
 What the browser sends to the endpoint are requests that look as follows:
 
 ```http
-Request Method: POST
+POST
 Content-Type: application/reports+json
 ```
 
-The payload of these requests is a list of reports. For example:
-
-```json
-[
-  {
-    "age": 420,
-    "body": {
-      "columnNumber": 12,
-      "disposition": "enforce",
-      "lineNumber": 11,
-      "message": "Document policy violation: document-write is not allowed in this document.",
-      "policyId": "document-write",
-      "sourceFile": "https://site.example/script.js"
-    },
-    "type": "document-policy-violation",
-    "url": "https://site.example/",
-    "user_agent": "Mozilla/5.0... Chrome/92.0.4504.0"
-  },
-  {
-    "age": 510,
-    "body": {
-      "blockedURL": "https://site.example/img.jpg",
-      "destination": "image",
-      "disposition": "enforce",
-      "type": "corp"
-    },
-    "type": "coep",
-    "url": "https://dummy.example/",
-    "user_agent": "Mozilla/5.0... Chrome/92.0.4504.0"
-  }
-]
-```
-
+The payload of these requests is a list of reports.
 Here's the data you can find in each of these reports:
 
 <div class="w-table-wrapper">
@@ -239,6 +211,15 @@ Here's the data you can find in each of these reports:
   </table>
 </div>
 
+{% Aside %}
+Note:
+
+- In the new Reporting API (v1), thee browser only batches together reports in the same request if they are generated by the same document (page). Reports are not sent in the same request if they come from different origins, or even different documents on the same origin such as different pages on the same website. Learn more in the [migration guide](/reporting-api-migration).
+- In the new Reporting API, reports are scoped to **documents**. This means that for one given origin, different documents (`site.example/page1` and `site.example/page2`) can send reports to different endpoints. If you're migrating from the legacy Reporting API to the new Reporting API, check the [migration guide](/reporting-api-migration).
+- Reports are sent with a delay to increase the chances that reports are sent in batches. This saves bandwidth to be respectful to the user's network connection. This is especially important on mobile.
+
+{% endAside %}
+
 <!-- ! For example, for a CSP violation:z
 
 {
@@ -252,16 +233,65 @@ sample: "",
 statusCode: 200
 } -->
 
-{% Aside %}
-In the new Reporting API, reports are scoped to **documents**. This means that for one given origin, different documents (`site.example/page1` and `site.example/page2`) can send reports to different endpoints. If you're migrating from the legacy Reporting API to the new Reporting API, check the [migration guide](/reporting-api-migration).
+{% Details %}
+
+{% DetailsSummary 'h4' %}
+
+Example list of reports
+
+{% endDetailsSummary %}
+
+```json
+[
+  {
+    "age": 420,
+    "body": {
+      "columnNumber": 12,
+      "disposition": "enforce",
+      "lineNumber": 11,
+      "message": "Document policy violation: document-write is not allowed in this document.",
+      "policyId": "document-write",
+      "sourceFile": "https://site.example/script.js"
+    },
+    "type": "document-policy-violation",
+    "url": "https://site.example/",
+    "user_agent": "Mozilla/5.0... Chrome/92.0.4504.0"
+  },
+  {
+    "age": 510,
+    "body": {
+      "blockedURL": "https://site.example/img.jpg",
+      "destination": "image",
+      "disposition": "enforce",
+      "type": "corp"
+    },
+    "type": "coep",
+    "url": "https://dummy.example/",
+    "user_agent": "Mozilla/5.0... Chrome/92.0.4504.0"
+  }
+]
+```
+
+{% endDetails %}
+
+## Reports you get
+
+Let's assume that you've set up `Reporting-Endpoints` and a few policies on your page.
+
+✅ Reports that are generated due to violations of these policies (or deprecations) on your page will be sent to the endpoint(s) you've configured. This includes violations committed by **third-party scripts** running on your page.
+
+❌ Violations committed by a **cross-origin iframe** on your page will **not** be reported to your endpoint(s), to ensure privacy. The iframe could set up its own reporting and even report to your site's (i.e. the first-party's) reporting service, but that's a decision that the framed site would have to make.
+
+{% Aside 'gotchas' %}
+
+In Chrome DevTools, you'll see a console error or warning pop up for violations that are committed by third-party script but also by third-party iframes.
+
 {% endAside %}
 
 ## Browser support
 
-{% Banner 'caution', 'body' %}
 The table below sums up browser support for the **Reporting API v1**, that is with the `Reporting-Endpoints` header.
-Browser support for the legacy Reporting API (`Report-To` header) is the same, except for one report type: Network Error Logging isn't supported in the new Reporting API. Check the [migration guide](/reporting-api-migration) for details.
-{% endBanner %}
+Browser support for the legacy Reporting API (`Report-To` header) is the same, except for one report type: Network Error Logging isn't supported in the new Reporting API. Read the [migration guide](/reporting-api-migration) for details.
 
 <div class="w-table-wrapper">
   <table>
@@ -301,33 +331,14 @@ Browser support for the legacy Reporting API (`Report-To` header) is the same, e
         <td>✔ Yes</td>
       </tr>
     </tbody>
-
   </table>
 </div>
-
-{% Details %}
-
-{% DetailsSummary 'h3' %}
-
-About CSP reports
-
-{% endDetailsSummary %}
-
-There are two ways CSP reports can be configured:
-
-- [Recommended once browser support for the Reporting API evolves] With the Reporting API via the `Reporting-Endpoints` header (or `Report-To` for the [legacy Reporting API](link to migration guide)). This is supported only by Chrome 69+ and Edge. Report requests have the same format as other Reporting API requests, and have, like them, the content-type "application/reports+json".
-- With the CSP header alone via the `report-uri` directive. This has wide browser support, across Chrome, Firefox, Safari and Edge. Reports are sent with the content-type `application/csp-report` and have a unique format. These reports are called "CSP Level 2 Reports" and do _not_ rely on the Reporting API.
-
-Using the Reporting API is convenient, because it means you're using only one way to set up reporting for all report types: CSP violations but also all other event types you want to monitor. Another upside of using the Reporting API over custom CSP reporting is that all report requests generated via the Reporting API have the [same format](link to above), so you can use a generic endpoint.
-However, until there's wider browser support for the Reporting API (see [browser support]), switching your CSP reporting from `report-uri` to the Reporting API means that you'll lose CSP reports generated in Firefox and Safari.
-
-{% endDetails %}
 
 ## How-to: Configure report sending
 
 ### Configure the Reporting-Endpoints header
 
-- If you're migrating from the legacy Reporting API to the new Reporting API, it may make sense to configure both `Reporting-Endpoints` and `Report-To`. Head over to the [migration blogpost](/reporting-api-migration).
+- If you're migrating from the legacy Reporting API to the new Reporting API, it may make sense to configure **both** `Reporting-Endpoints` and `Report-To`. If you're using reporting for Content-Security-Policy violations via `report-uri` only or via `report-to` and the `Report-To` header, start using `Reporting-Endpoints`. Head over to the [migration guide](/reporting-api-migration) for all details regarding migration.
 - When configuring `Reporting-Endpoints`, ensure you have an endpoint named `default` if you want to receive intervention, deprecation and crash reports.
   To define your endpoints, head over to [How-to: Receive reports](/#how-to:-receive-reports).
 
@@ -335,7 +346,8 @@ However, until there's wider browser support for the Reporting API (see [browser
 
 - **Deprecation**, **intervention**, and **crash** reports are only sent to the endpoint named `default`. If the `Reporting-Endpoints` header defines no `default` endpoint, reports of this type won't ever be sent (although they will be generated).
 - `default` is **not** a fallback endpoint. If you set up `report-to my-endpoint` e.g. for `Document-Policy` and omit to define `my-endpoint` in `Reporting-Endpoints`, `Document-Policy` violations reports of this type won't ever be sent (although they will be generated).
-  {% endAside %}
+
+{% endAside %}
 
 ### Configure the policies
 
@@ -344,7 +356,7 @@ However, until there's wider browser support for the Reporting API (see [browser
 By contrast, the **other report types** are generated only if an **explicit policy** is set up. They'll be sent to the endpoint that's specified by the policy via the `report-to` keyword.
 
 {% Banner 'caution', 'body' %}
-Getting the syntax right for declaration can be tricky, because not all policies use the same header structure. Depending on the policy, it may look like `report-to=main-endpoint`, `report-to main-endpoint`, or report-to="main-endpoint".
+Getting the syntax right for declaration can be tricky, because not all policies use the same header structure. Depending on the policy, the right syntax may be `report-to=main-endpoint` or `report-to main-endpoint`.
 Head over to the [demo](https://glitch.com/edit/#!/reporting-api-demo?path=server.js%3A1%3A0) for code examples.
 {% endBanner %}
 
@@ -353,7 +365,7 @@ Head over to the [demo](https://glitch.com/edit/#!/reporting-api-demo?path=serve
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/reporting-api-demo?path=server.js&previewSize=0"
-    title="reporting-api-demo on Glitch"
+    title="Reporting API demo on Glitch"
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
@@ -363,21 +375,18 @@ Head over to the [demo](https://glitch.com/edit/#!/reporting-api-demo?path=serve
 
 When deciding where to send your reports, you have two options:
 
-- Option 1: Use an existing report collector service
+- Option 1: Use an existing report collector service.
 - Option 2: Build and operate your own reporting collector.
 
-{% Banner 'info', 'body'%}
-You can set multiple endpoints. This can be handy to separate reports:
+**Also note that can set multiple endpoints**. This can be handy to separate reports:
 
 - Maybe your analytics provider takes care of some kinds of reports, and you have an in-house solution for the others.
 - Maybe you want to route these reports to different endpoints, depending on their type: `endpoint.example/coop` `endpoint.example/csp` `endpoint.example/default`
 
-{% endBanner %}
-
 ### Option 1: Use an existing report collector service
 
 Some examples of report collector services are [report-uri](https://report-uri.com) and [uriports](https://uriports.com).
-If you know of other solutions, please [let us know](https://github.com/GoogleChrome/web.dev) and we'll update this post!
+If you know of other solutions, please [open an issue](https://github.com/GoogleChrome/web.dev/issues) to let us know, and we'll update this post!
 
 **🧐 Things to consider when selecting a report collector as a service:**
 
@@ -423,10 +432,20 @@ In case reports don't show up as expected in your endpoint, something is wrong. 
 
 #### Is the report generated?
 
-To answer this, use the console errors and the issues as an indirect debugging technique:
+To answer this, use the console errors and the issues as an indirect debugging technique.
+**Are violation errors and issues are generated?**
 
-- If violation errors and issues are generated, you can be sure that the report is generated—but it doesn't mean it will be sent, for example if there's an issue with your `Reporting-Endpoints` setup. So, if you get a console error but no report, it means there's an issue with your `Reporting-Endpoints` setup. Check [](link to next section) for troubleshooting tips.
-- If not, the issue may be in your policy configuration.
+- If yes: you can be sure that the report is generated—but it doesn't mean it will be sent to your endpoint. 
+  - It won't be sent to your endpoint if there's an issue with your `Reporting-Endpoints` setup. So, if you get a console error but no report, it means there may be an issue with your `Reporting-Endpoints` setup. Check [Is the report properly sent and received?](#is-the-report-properly-sent-and-received) for troubleshooting tips.
+  - It won't be sent to your endpoint if the issue is generated by a cross-site iframe on your site. [See details](#reports-you-get).
+- If no: your policy may be misconfigured.
+
+<figure class="w-figure">
+{% Img src="image/O2RNUyVSLubjvENAT3e7JSdqSOx1/6w0hKHGRQJZkp6NNT3n2.jpg", alt="Screenshot: errors and issues in Chrome DevTools", width="800", height="566" %}
+  <figcaption class="w-figcaption">
+    Errors and isisuesin Chroe DevTools
+  </figcaption>
+</figure>
 
 {% Aside %}
 In Chrome DevTools, features are being developed to enable you to see the reports your page generated.
@@ -441,7 +460,7 @@ Because the report is sent out-of-band by the browser itself and not by a certai
 
 To answer this, try the following:
 
-- Make sure to use [short delays](link to section above). Maybe the reason you can't see the report is because it hasn't been sent yet!
+- Make sure to use [short delays](#saving-time). Maybe the reason you can't see the report is because it hasn't been sent yet!
 - Check your header configuration. If there's an issue with it, reports that have been generated correctly will not be sent. Common mistakes:
 
   - The report group is used but not configured. Example:
@@ -469,5 +488,8 @@ Your endpoint should answer with OK or similar, and should receive the reports. 
 
 - [Specification: legacy Reporting API (v0)](https://www.w3.org/TR/reporting/)
 - [Specification: new Reporting API (v1)](https://w3c.github.io/reporting/)
-- [Migration guide](/reporting-api-migration)
+- [Migration guide from reporting API v0 to v1](/reporting-api-migration)
 - [ReportingObserver](/reporting-observer)
+
+_Hero image by [Nine Koepfer / @enka80](https://unsplash.com/@enka80) on [Unsplash](https://unsplash.com/photos/iPbwEiWkVMQ), edited._
+_With many thanks to Ian Clevelland, Eiji Kitamura and Milica Mihajlija for their reviews and suggestions on this article._
