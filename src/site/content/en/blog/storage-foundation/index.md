@@ -8,7 +8,7 @@ subhead: |
   primitives on which they can build higher-level components.
 authors:
   - thomassteiner
-date: 2021-06-10
+date: 2021-06-11
 # updated: YYYY-MM-DD
 description: |
   The Storage Foundation API is a storage API that resembles a basic file system,
@@ -35,19 +35,19 @@ The web platform increasingly offers developers the tools they need to build fin
 high-performance applications for the web. Most notably,
 [WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly) (Wasm) has opened the door to
 fast and powerful web applications, while technologies like [Emscripten](https://emscripten.org/)
-now allow developers to reuse tried and tested code on the web. To truly leverage this
-potential, developers must have the same power and flexibility when it comes to storage.
+now allow developers to reuse tried and tested code on the web. To truly leverage this potential,
+developers must have the same power and flexibility when it comes to storage.
 
 This is where the Storage Foundation API comes in. The Storage Foundation API is a new fast and
 unopinionated storage API that unlocks new and much-requested use cases for the web, such as
 implementing performant databases and gracefully managing large temporary files. With this new
-interface, developers can "bring their own storage" to the web, reducing the feature gap
-between web and platform-specific code.
+interface, developers can "bring their own storage" to the web, reducing the feature gap between web
+and platform-specific code.
 
-The Storage Foundation API is designed to resemble a very basic file system so it gives
-developers flexibility by providing generic, simple, and performant primitives on which they can
-build higher-level components. Applications can take advantage of the best tool for their needs,
-finding the right balance between usability, performance, and reliability.
+The Storage Foundation API is designed to resemble a very basic file system so it gives developers
+flexibility by providing generic, simple, and performant primitives on which they can build
+higher-level components. Applications can take advantage of the best tool for their needs, finding
+the right balance between usability, performance, and reliability.
 
 ## Why does the web need another storage API?
 
@@ -62,16 +62,16 @@ specific use-cases in mind.
 - Other options are already deprecated for various reasons like the
   [File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API/Introduction)
   or [WebSQL](https://www.w3.org/TR/webdatabase/).
-- The [File System Access API](/file-system-access/) has a similar API surface, but its
- use is to interface with the client's file system and provide access to data that may be
-  outside of the origin's or even the browser's ownership. This different focus comes with stricter
-  security considerations and higher performance costs.
+- The [File System Access API](/file-system-access/) has a similar API surface, but its use is to
+  interface with the client's file system and provide access to data that may be outside of the
+  origin's or even the browser's ownership. This different focus comes with stricter security
+  considerations and higher performance costs.
 - The [IndexedDB API](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) can be used as
   a backend for some of the Storage Foundation API's use-cases. For example, Emscripten includes
   [IDBFS](https://emscripten.org/docs/api_reference/Filesystem-API.html), an IndexedDB-based
   persistent file system. However, since IndexedDB is fundamentally a key-value store, it comes with
-  significant performance limitations. Furthermore, directly accessing subsections of a file is
-  even more difficult and slower under IndexedDB.
+  significant performance limitations. Furthermore, directly accessing subsections of a file is even
+  more difficult and slower under IndexedDB.
 - Finally, the
   [CacheStorage interface](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage) is widely
   supported and is tuned for storing large-sized data such as web application resources, but the
@@ -87,8 +87,8 @@ Examples of sites that may use this API include:
 
 - Productivity or creativity apps that operate on large amounts of video, audio, or image data. Such
   apps can offload segments to disk instead of holding them in memory.
-- Apps that rely on a persistent file system accessible from Wasm and that need more performance than
-  what IDBFS can guarantee.
+- Apps that rely on a persistent file system accessible from Wasm and that need more performance
+  than what IDBFS can guarantee.
 
 ## What is the Storage Foundation API? {: #what }
 
@@ -116,10 +116,10 @@ updated once a decision has been reached. For more background on the tradeoffs, 
 {% Aside %} A file can only be opened once. This means concurrent access from different tabs is
 currently not possible. {% endAside %}
 
-- `storageFoundation.delete(name)`: Removes the file with the given name. Returns a promise
-  that resolves when the file is deleted.
+- `storageFoundation.delete(name)`: Removes the file with the given name. Returns a promise that
+  resolves when the file is deleted.
 - `storageFoundation.rename(oldName, newName)`: Renames the file from the old name to the new name
-  atomically.  Returns a promise that resolves when the file is renamed.
+  atomically. Returns a promise that resolves when the file is renamed.
 - `storageFoundation.getAll()`: Returns a promise that resolves with an array of all existing file
   names.
 - `storageFoundation.requestCapacity(requestedCapacity)`: Requests new capacity (in bytes) for usage
@@ -129,8 +129,9 @@ currently not possible. {% endAside %}
 {% Aside %} The Storage Foundation API achieves fast and predictable performance by implementing its
 own quota management system. Web applications must explicitly ask for capacity before storing any
 new data. This request will be granted according to the browser's quota guidelines. Anytime an
-application starts a new JavaScript execution context (e.g., a new tab, a new worker, or when reloading the
-page), it must make sure it owns sufficient capacity before writing any data. {% endAside %}
+application starts a new JavaScript execution context (e.g., a new tab, a new worker, or when
+reloading the page), it must make sure it owns sufficient capacity before writing any data.
+{% endAside %}
 
 - `storageFoundation.releaseCapacity(toBeReleasedCapacity)`: Releases the specified number of bytes
   from the current execution context, and returns a promise that resolves with the remaining
@@ -142,20 +143,22 @@ page), it must make sure it owns sufficient capacity before writing any data. {%
 
 Working with files happens via the following functions:
 
-{% Aside %} The Storage Foundation API used to be called NativeIO. Some references to this name still
-remain and will be removed eventually. {% endAside %}
+{% Aside %} The Storage Foundation API used to be called NativeIO. Some references to this name
+still remain and will be removed eventually. {% endAside %}
 
-- `NativeIOFile.close()`: Closes a file, and returns a promise that resolves when the operation completes.
+- `NativeIOFile.close()`: Closes a file, and returns a promise that resolves when the operation
+  completes.
 - `NativeIOFile.flush()`: Synchronizes (that is, flushes) a file's in-memory state with the storage
-  device.  Returns `undefined`.
+  device, and returns a promise that resolves when the operation completes.
 
 {% Aside %} It is a known issue that `flush()` might be slow and we are exploring whether offering a
 faster, less reliable variant would be useful. {% endAside %}
 
 - `NativeIOFile.getLength()`: Returns a promise that resolves with the length of the file in bytes.
-- `NativeIOFile.setLength(length)`: Sets the length of the file in bytes. If the new length is
-  smaller than the current length, bytes are removed starting from the end of the file. Otherwise
-  the file is extended with zero-valued bytes.  Returns `undefined`.
+- `NativeIOFile.setLength(length)`: Sets the length of the file in bytes, and returns a promise that
+  resolves when the operation completes. If the new length is smaller than the current length, bytes
+  are removed starting from the end of the file. Otherwise the file is extended with zero-valued
+  bytes.
 - `NativeIOFile.read(buffer, offset)`: Reads the contents of the file at the given offset through a
   buffer that is the result of transferring the given buffer, which is then left detached. Returns a
   `NativeIOReadResult` with the transferred buffer and the the number of bytes that were
@@ -302,15 +305,15 @@ The Chromium team has designed and implemented the Storage Foundation API using 
 defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user
 control, transparency, and ergonomics.
 
-Following the same pattern as other modern storage APIs on the web, access to the Storage Foundation API is
-origin-bound, meaning that an origin may only access self-created data. It is also limited to secure
-contexts.
+Following the same pattern as other modern storage APIs on the web, access to the Storage Foundation
+API is origin-bound, meaning that an origin may only access self-created data. It is also limited to
+secure contexts.
 
 ### User control
 
-Storage quota will be used to distribute access to disk space and to prevent abuse. Memory you want to occupy needs to be requested first. Like other
-storage APIs, users can clear the space taken by Storage Foundation API through
-their browser.
+Storage quota will be used to distribute access to disk space and to prevent abuse. Memory you want
+to occupy needs to be requested first. Like other storage APIs, users can clear the space taken by
+Storage Foundation API through their browser.
 
 ## Feedback {: #feedback }
 
