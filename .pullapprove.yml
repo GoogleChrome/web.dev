@@ -37,18 +37,40 @@ groups:
         glob('src/site/_data/courses/css/**/*.yml') in files
 
   # Capabilities/Fugu
-  content:
+  capabilities:
     reviewers:
       users:
-      -  jpmedley
+      - jpmedley
       teams:
       - ~web-dev-content
       - ~web-dev-eng
       - ~web-dev-approvers
     conditions:
-      # Only fall through to this group if the review has not been handled by
-      # one of the prior teams.
-      - "'[Fugu]' in title or '[Capabilities]' in title or 'fugu' in labels or 'capabilities' in labels"
+      - '"[Fugu]" in title or "[Capabilities]" in title or "fugu" in labels or "capabilities" in labels'
+
+  # Vitals
+  vitals:
+    reviewers:
+      users:
+      - mihajlija
+      teams:
+      - ~web-dev-content
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    conditions:
+      - '"[CWV]" in title or "[Vitals]" in title or "vitals" in labels'
+
+  # Privacy/Security
+  privacy_security:
+    reviewers:
+      users:
+      - mihajlija
+      teams:
+      - ~web-dev-content
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    conditions:
+      - '"[Privacy]" in title or "[Security]" in title or "privacy/security" in labels'
 
   # Content
   # Handles any changes related to site content.
