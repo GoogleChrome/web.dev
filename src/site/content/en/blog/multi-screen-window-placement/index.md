@@ -7,7 +7,7 @@ description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
 date: 2020-09-14
-updated: 2021-06-10
+updated: 2021-06-11
 tags:
   - blog
   - capabilities
@@ -196,9 +196,10 @@ window.screen.isExtended;
 ### The `getScreens()` method
 
 Now that I know that the current setup is multi-screen, I can obtain more information about the
-second screen using `Window.getScreens()`. Calling this function will show a permission prompt that asks me whether the site may open and place windows on my screen. The function returns a promise that resolves with an array of
-`ScreenAdvanced` objects. On my MacBook Pro 13 with a connected iPad, this returns an array of two
-`ScreenAdvanced` objects:
+second screen using `Window.getScreens()`. Calling this function will show a permission prompt that
+asks me whether the site may open and place windows on my screen. The function returns a promise
+that resolves with an array of `ScreenAdvanced` objects. On my MacBook Pro 13 with a connected iPad,
+this returns an array of two `ScreenAdvanced` objects:
 
 ```js
 await window.getScreens();
@@ -279,18 +280,21 @@ is updated on cross-screen window placements or device changes.
 
 The only thing missing now is a way to detect when my screen setup changes. A new event,
 `screenschange`, does exactly that: it fires whenever the screen constellation is modified. (Notice
-that "screens" is plural in the event name.) This means the event fires whenever a new screen or an existing screen is (physically or virtually in the
-case of Sidecar) plugged in or unplugged.
+that "screens" is plural in the event name.) This means the event fires whenever a new screen or an
+existing screen is (physically or virtually in the case of Sidecar) plugged in or unplugged.
 
 Note that you need to look up the new screen details asynchronously, the `screenschange` event
-itself does not provide this data. To look up the screen details, use the live object from a cached `Screens` interface.
+itself does not provide this data. To look up the screen details, use the live object from a cached
+`Screens` interface.
 
 ```js
 const screensInterface = await window.getScreens();
 let cachedScreensLength = screensInterface.screens.length;
 screensInterface.addEventListener('screenschange', (event) => {
   if (screensInterface.screens.length !== cachedScreensLength) {
-    console.log(`The screen count changed from ${cachedScreensLength} to ${screensInterface.screens.length}`);
+    console.log(
+      `The screen count changed from ${cachedScreensLength} to ${screensInterface.screens.length}`,
+    );
     cachedScreensLength = screensInterface.screens.length;
   }
 });
@@ -357,9 +361,9 @@ if (!('getScreens' in window)) {
 }
 ```
 
-The other aspects of the API, that is, the various screen change events and the `screen` property of the
-`FullscreenOptions`, would simply never fire or silently be ignored respectively by non-supporting
-browsers.
+The other aspects of the API, that is, the various screen change events and the `screen` property of
+the `FullscreenOptions`, would simply never fire or silently be ignored respectively by
+non-supporting browsers.
 
 ## Demo
 
@@ -476,7 +480,8 @@ team to prioritize features and shows other browser vendors how critical it is t
 The Multi-Screen Window Placement API spec was edited by
 [Victor Costan](https://www.linkedin.com/in/pwnall) and
 [Joshua Bell](https://www.linkedin.com/in/joshuaseanbell). The API was implemented by
-[Mike Wasserman](https://www.linkedin.com/in/mike-wasserman-9900a079/) and [Adrienne Walker](https://github.com/quisquous). This article was reviewed by
+[Mike Wasserman](https://www.linkedin.com/in/mike-wasserman-9900a079/) and
+[Adrienne Walker](https://github.com/quisquous). This article was reviewed by
 [Joe Medley](https://github.com/jpmedley), [François Beaufort](https://github.com/beaufortfrancois),
 and [Kayce Basques](https://github.com/kaycebasques). Thanks to Laura Torrent Puig for the photos.
 
