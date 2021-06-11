@@ -22,3 +22,6 @@ topics:
 
   protect_users_from_tracking:
     en: Protect users from tracking
+
+  monitor_security_violations:
+    en: Monitor security violations

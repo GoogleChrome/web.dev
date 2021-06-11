@@ -8,7 +8,7 @@ authors:
 date: 2021-06-14
 updated: 2021-06-14
 description: |
-  Migrate to the new version of the Reporting API.
+  Migrate to the new Reporting API.
 hero: image/O2RNUyVSLubjvENAT3e7JSdqSOx1/PYEe5UP3bVYzPMXdQc0X.jpg
 alt: |
   A person and their refection on wet sand, symbolizing the migration from the legacy to the new Reporting API.
@@ -272,7 +272,7 @@ these browsers at the moment but this may change. {% endAside
 
 ### Migration steps for CSP reporting
 
-There are two ways CSP violation reports can be configured:
+There are two ways [CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) violation reports can be configured:
 
 - With the CSP header alone via the `report-uri` directive. This has wide browser support, across Chrome, Firefox, Safari and Edge. Reports are sent with the content-type `application/csp-report` and have a format that's specific to CSP. These reports are called "CSP Level 2 Reports" and do **not** rely on the Reporting API.
 - With the Reporting API, that is via `Report-To` header (v0, legacy) or the `Reporting-Endpoints` (v1). This is supported only by Chrome and Edge. Report requests have the same format as other Reporting API requests, and the same content-type "application/reports+json".
