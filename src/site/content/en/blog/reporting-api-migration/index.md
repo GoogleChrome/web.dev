@@ -18,33 +18,39 @@ tags:
   - security
 ---
 
-{% Banner 'caution', 'body' %}
-This post covers how to migrate to the new version of the Reporting API (v1). If you're new to the Reporting API or need detailed usage examples, head over to the [main post on the Reporting API](/reporting-api) instead.
-{% endBanner %}
+{% Banner 'caution', 'body' %} This post covers how to migrate to the new version of the
+Reporting API (v1). If you're new to the Reporting API or need detailed usage examples,
+head over to the [main post on the Reporting API](/reporting-api) instead. {% endBanner %}
 
-The Reporting API informs you about errors that happen across your site as visitors use it. It gives you visibility on browser interventions, browser crashes, Content-Security-Policy violations, COOP/COEP violations, deprecation warnings and more.
+The Reporting API informs you about errors that happen across your site as visitors use
+it. It gives you visibility on browser interventions, browser crashes,
+Content-Security-Policy violations, COOP/COEP violations, deprecation warnings and more.
 
-**A new version of the Reporting API is available. It's simpler, more private, and more likely to be supported across browsers.**
+**A new version of the Reporting API is available. It's simpler, more private, and more
+likely to be supported across browsers.**
 
-{% Aside %}
-The legacy Reporting API is named _Reporting API v0_.
-The new Reporting API is named _Reporting API v1_.
-{% endAside %}
+{% Aside %} The legacy Reporting API is named _Reporting API v0_. The new Reporting API is
+named _Reporting API v1_. {% endAside %}
 
 ## Summary
 
 {% Banner 'info', 'body' %}
 
-- If you already have reporting functionality in your site, migrate to v1 but keep using v0 simultaneously for some time. Make sure to set the `Reporting-Endpoint` header on **all responses** that might generate reports.
-- If you're adding reporting functionality to your site just now, use only v1, except if you need Network Error Logging.
-- If you're maintaining an endpoint service or are operating your own, expect more traffic with as you or external developers migrate to v1.
-- Check out the new API in action on this [demo site](https://reporting-api-demo.glitch.me) and see the [demo code](https://glitch.com/edit/#!/reporting-api-demo).
+If you already have reporting functionality for your site, **migrate to v1** but keep
+using v0 simultaneously for some time. Make sure to set the `Reporting-Endpoint` header on
+**all responses** that might generate reports.
+
+If you're adding reporting functionality to your site just now, use only v1, except if you
+need **Network Error Logging**.
+
+If you're maintaining an endpoint service or are operating your own, expect **more
+traffic** as you or external developers migrate to v1.
 
 {% endBanner %}
 
 Keep reading for details and example code!
 
-## Demo
+## Demo and code
 
 - [Demo site: new reporting API (v1)](https://reporting-api-demo.glitch.me)
 - [Code](https://glitch.com/edit/#!/reporting-api-demo) for the demo site
@@ -74,7 +80,8 @@ Keep reading for details and example code!
   ```
 
   {% CompareCaption %}
-  v1 uses the `Reporting-Endpoints` header to configure **named endpoints**.
+  v1 uses the `Reporting-Endpoints` header to configure **named
+  endpoints**.
   {% endCompareCaption %}
   {% endCompare %}
 
@@ -82,29 +89,34 @@ Keep reading for details and example code!
 
   {% Compare 'worse', 'v0 (legacy)' %}
 
-  With v0, you can set reporting endpoints on some responses only. Other documents (pages) on that origin would automatically use these ambient endpoints.
+  With v0, you can set reporting endpoints on some responses only. Other documents (pages)
+  on that origin would automatically use these ambient endpoints.
 
   {% endCompare %}
 
   {% Compare 'better', 'v1 (new)' %}
 
-  With v1, you need to set the `Reporting-Endpoints` header on all responses that might generate reports.
-  {% endCompare %}
+  With v1, you need to set the `Reporting-Endpoints` header on all responses that might
+  generate reports. {% endCompare %}
 
-- Both APIs support the same report types, with one exception: v1 does not support **Network Error reports**. Read more in the [migration steps](#migration-guide).
-- v0 is not and will not be supported across browsers. v1 is more likely to be supported across multiple browsers in the future.
+- Both APIs support the same report types, with one exception: v1 does not support
+  **Network Error reports**. Read more in the [migration steps](#migration-steps).
+- v0 is not and will not be supported across browsers. v1 is more likely to be supported
+  across multiple browsers in the future.
 
 ### What remains unchanged
 
 - The format and structure of the reports is unchanged.
-- The request sent by the browser to the endpoint remains a POST request of "Content-type" `application/reports+json`.
+- The request sent by the browser to the endpoint remains a POST request of "Content-type"
+  `application/reports+json`.
 - Mapping certain endpoints to certain report types is supported in both v0 and v1.
 - The formatting of the rules that generate reports when violated is unchanged.
 - The role of the default endpoint is unchanged.
-- The ReportingObserver API is unchanged. It still gets access to all observable reports, and their format is identical.
+- The Reporting API v1 has no impact on the [ReportingObserver](/reporting-observer).
+  ReportingObserver continues getting access to all observable reports, and their format is
+  identical.
 
-{% Details %}
-{% DetailsSummary 'h3' %}
+{% Details %} {% DetailsSummary 'h3' %}
 
 All differences between v0 and v1
 
@@ -154,9 +166,11 @@ All differences between v0 and v1
       </tr>
       <tr>
         <td>Report scope</td>
-        <td>Origin.<br/> A document's <code>Report-To</code> header affects other documents (pages) from that origin. The <code>url</code> field of a report still varies per-document.
+        <td>Origin.<br/> A document's <code>Report-To</code> header affects other documents (pages) from that origin. 
+        The <code>url</code> field of a report still varies per-document.
         </td>
-        <td>Document.<br/> A document's <code>Reporting-Endpoints</code> header only affects that document. The <code>url</code> field of a report still varies per-document.
+        <td>Document.<br/> A document's <code>Reporting-Endpoints</code> header only affects that document. 
+        The <code>url</code> field of a report still varies per-document.
       </tr>
       <tr>
         <td>Report isolation (batching)</td>
@@ -171,7 +185,7 @@ All differences between v0 and v1
       <tr>
         <td>Support for load balancing / priorities</td>
         <td>Yes ✔</td>
-        <td>No 	✘
+        <td>No  ✘
         </td>
       </tr>
     </tbody>
@@ -180,99 +194,142 @@ All differences between v0 and v1
 
 {% endDetails %}
 
+## Endpoint developers: Expect more traffic
+
+If you've set up your own server as a reporting endpoint, or if you're developing or
+maintaining a report collector as a service, expect more traffic to that endpoint.
+
+Reports aren't batched with the Reporting API v1 as they are with the Reporting API v0.
+Therefore, as application developers start migrating to the Reporting API v1, the **number
+of reports** will remain similar, but the **volume of requests** to the endpoint server
+will increase.
+
 ## Application developers: Migrate to `Reporting-Endpoints` (v1)
 
-{% Banner 'info', 'body' %}
-Using the new Reporting API (v1) has several benefits:
+### What should you do?
 
-- Browser signals are [positive](https://chromestatus.com/feature/5712172409683968), which means that cross-browser support can be expected for v1 (unlike v0 that is only supported in Chrome and Edge).
+✅ Using the new Reporting API (v1) has several benefits:
+
+- Browser signals are [positive](https://chromestatus.com/feature/5712172409683968), which
+  means that cross-browser support can be expected for v1 (unlike v0 that is only
+  supported in Chrome and Edge).
 - The API surface is simpler.
 - Tooling is being developed around the new Reporting API (v1).
-  {% endBanner %}
 
-### Migration steps if you have non-CSP reporting with the `Report-To` header (v0)
+With this in mind:
 
-{% Aside %}
-Because only Chrome and Edge support the Reporting API v0, you don't need to monitor usage for other browsers during your migration to v1.
-{% endAside %}
+- If your site already uses the Reporting API v0 with the `Report-To` header, migrate to
+  the Reporting API v1 (see the [migration steps](#migration-steps)). If your site already
+  uses reporting functionality for Content-Security-Policy violations, check the specific [migration
+  steps for CSP reporting](#migration-steps-for-csp-reporting).
+- If your site doesn't use the Reporting API yet and you're adding reporting functionality
+  to your site now: use only the new Reporting API (v1) i.e. the `Reporting-Endpoints`
+  header. You can skip this migration guide. **There's one exception to this**: if you
+  need Network Error Logging, use `Report-To` (v0) because Network Error Logging isn't
+  supported in the Reporting API v1. A new mechanism for Network Error Logging will be
+  developed⏤until that's available, the Reporting API v0 should be used. If you need
+  Network Error Logging **alongside** other report types, use **both** `Report-To` (v0)
+  and `Reporting-Endpoints` (v1). v0 gives you Network Error Logging and v1 gives you
+  reports of all other types.
 
-If you already have reporting functionality, your goal in this migration is to not lose reports you used to get with v0.
+### Migration steps
+
+Your goal in this migration is to **not lose reports** you used to get with v0.
+
+{% Aside %} Because only Chrome and Edge support the Reporting API v0, you don't need to
+focus on other browsers during your migration to v1. However, keep in mind that broader
+browser support may be coming. There are no tracking bugs for
+these browsers at the moment but this may change. {% endAside
+%}
 
 1. **Step 1 (do now)**: Use both headers: `Report-To` (v0) and `Reporting-Endpoints` (v1).
 
-   With this, you get reports for newer Chrome and Edge clients thanks to `Reporting-Endpoints` (v1). You get reports from older Chrome and Edge clients thanks to `Report-To` (v0). Browser instances that support `Reporting-Endpoints` will use `Reporting-Endpoints`, and instances that don't will fallback to `Report-To`.
-   The request and report format is the same for v0 and v1.
+   With this, you get:
 
-2. **Step 2 (do now):** Ensure that the `Reporting-Endpoints` header is set on all responses that might generate reports.
+   - Reports from newer Chrome and Edge clients thanks to `Reporting-Endpoints` (v1).
+   - Reports from older Chrome and Edge clients thanks
+     to `Report-To` (v0).
 
-   With v0, you could set reporting endpoints on some responses only, and other documents (pages) on that origin would use this "ambient" endpoint.
-   With v1, because of the difference in scoping, you need to set the `Reporting-Endpoints` header on all responses that might generate reports.
+   Browser instances that support `Reporting-Endpoints` will use
+   `Reporting-Endpoints`, and instances that don't will fallback to `Report-To`.
+   The
+   request and report format is the same for v0 and v1.
 
-3. **Step 3 (start later):** Once all or most of your users have updated to later Chrome or Edge installs (93 and later), remove **Report-To** (v0) and keep only `Reporting-Endpoints`.
+2. **Step 2 (do now):** Ensure that the `Reporting-Endpoints` header is set on all
+   responses that might generate reports.
 
-   One exception: if you do need Network Error Logging reports, keep **Report-To** until a new mechanim is in place for Network Error Logging.
+   With v0, you could set reporting endpoints on some responses only, and other documents
+   (pages) on that origin would use this "ambient" endpoint. With v1, because of the
+   difference in scoping, you need to set the `Reporting-Endpoints` header on all
+   responses that might generate reports.
 
-### Migration steps if you have CSP reporting
+3. **Step 3 (start later):** Once all or most of your users have updated to later Chrome
+   or Edge installs (93 and later), remove **Report-To** (v0) and keep only
+   `Reporting-Endpoints`.
 
-1. **Step 1 (do now)**: If you haven't added it yet, `report-to` alongside `report-uri`.
-   Browsers that support only `report-uri` (Firefox) will use `report-uri`, and browsers that also support `report-to`(Chrome, Edge) will use `report-to`.
+   One exception: if you do need Network Error Logging reports, keep **Report-To** until a
+   new mechanim is in place for Network Error Logging.
 
-2. **Step 2 (do now)**: To specify the named endpoints you'll use in `report-to`, use both headers `Report-To` and `Reporting-Endpoints`.
-   This ensures that you get reports from both older and newer Chrome and Edge clients.
-   
-3. **Step 3 (start later):** Once all or most of your users have updated to later Chrome or Edge installs (93 and later), remove **Report-To** (v0) and keep only `Reporting-Endpoints`. Keep `report-uri` so you still get reports for browsers that only support it.
+### Migration steps for CSP reporting
 
-### If you're adding reporting for the first time
+There are two ways CSP violation reports can be configured:
 
-If you're adding reporting functionality to your codebase now, use only the new `Reporting-Endpoints` header (v1).
+- With the CSP header alone via the `report-uri` directive. This has wide browser support, across Chrome, Firefox, Safari and Edge. Reports are sent with the content-type `application/csp-report` and have a format that's specific to CSP. These reports are called "CSP Level 2 Reports" and do **not** rely on the Reporting API.
+- With the Reporting API, that is via `Report-To` header (v0, legacy) or the `Reporting-Endpoints` (v1). This is supported only by Chrome and Edge. Report requests have the same format as other Reporting API requests, and the same content-type "application/reports+json".
 
-**There's one exception to this**: if you need Network Error Logging, use `Report-To` (v0) because Network Error Logging isn't supported in the Reporting API v1. A new mechanism for Network Error Logging will be developed⏤until that's available, the Reporting API v0 should be used.
-If you need Network Error Logging **alongside** other report types, use **both** `Report-To` (v0) and `Reporting-Endpoints` (v1). v0 gives you Network Error Logging and v1 gives you reports of all other types.
+✅ Using the Reporting API has benefits over custom CSP reporting:
 
-See an example in the [cookbook](/#migration-cookbook).
+- You're using a single way to set up reporting for all report types.
+- All report requests generated via the Reporting API have the same format, so you can use a generic endpoint.
+- Tooling is being developed around the Reporting API (for v1).
 
-## Endpoint developers: Expect more traffic
+However, because of the state of browser support, it's recommended that you keep `report-uri` alongside the newer `report-to` and `Reportig-Endpoints` in order to get CSP violation reports from multiple browsers.
 
-This section is relevant if you've set up your own server as a reporting endpoint, or you're developing or maintaining a report collector as a service.
+1. **Step 1 (do now)**: If you haven't added it yet, add `report-to` alongside `report-uri`.
+   Browsers that support only `report-uri` (Firefox) will use `report-uri`, and browsers
+   that also support `report-to`(Chrome, Edge) will use `report-to`.
 
-Reports aren't batched with the Reporting API v1 as they are with the Reporting API v0.
-Therefore, as application developers start migrating to the Reporting API v1, the **number of reports** will remain similar, but the **volume of requests** to the endpoint server will increase.
+2. **Step 2 (do now)**: To specify the named endpoints you'll use in `report-to`, use both
+   headers `Report-To` and `Reporting-Endpoints`. This ensures that you get reports from
+   both older and newer Chrome and Edge clients.
 
-## What about ReportingObserver?
+3. **Step 3 (start later):** Once all or most of your users have updated to later Chrome
+   or Edge installs (93 and later), remove **Report-To** (v0) and keep only
+   `Reporting-Endpoints`. Keep `report-uri` so you still get reports for browsers that
+   only support it.
 
-The Reporting API v1 has no impact on the [ReportingObserver](/reporting-observer).
-ReportingObserver continues getting access to all observable reports, and their format is identical.
+### Migration Cookbook
 
-## Migration cookbook
-
-### Basic migration
+#### Basic migration
 
 {% Compare 'worse', 'v0 (legacy)' %}
 
 ```http
-Report-To: { group: "main-endpoint", "max_age": 86400, "endpoints": [ { "url": "https://reports.example/main" }] }, { group: "default-endpoint", "max_age": 86400, "endpoints": [ { "url": "https://reports.example/default" }] }
+Report-To: { group: "main-endpoint", "endpoints": [ { "url": "https://reports.example/main" }] }, { group: "default-endpoint", "endpoints": [ { "url": "https://reports.example/default" }] }
 ```
 
 {% endCompare %}
 
-{% Compare 'better', 'v1 (new)' %}
+{% Compare 'better', 'v1 (new) alongisde v0 (legacy)' %}
 
 ```http
 Reporting-Endpoints: main-endpoint="https://reports.example/main", default="https://reports.example/default"
-# Optional: keep `Report-To`
 Report-To: { group: "main-endpoint", "max_age": 86400, "endpoints": [ { "url": "https://reports.example/main" }] }, { group: "default-endpoint", "max_age": 86400, "endpoints": [ { "url": "https://reports.example/default" }] }
 ```
 
 {% CompareCaption %}
-Keep `Report-To` _temporarily_ to avoid losing reports, if you already have reporting functionality in your site.
-Keep `Report-To` _until Network Error Logging has a new replacement_, if you need Network Error Logging.
 
-Note that with v1, you can still send specific report types to specific endpoints, but you can have only one URL per endpoint.
+Note that with v1, you can still send specific report types to specific endpoints, but you
+can have only one URL per endpoint.
+Keep `Report-To` _temporarily_ to avoid losing reports, if you
+already have reporting functionality in your site. Keep `Report-To` _until Network Error
+Logging has a new replacement_, if you need Network Error Logging.
+
 {% endCompareCaption %}
 
 {% endCompare %}
 
-### Observing all pages
+#### Observing all pages
 
 {% Compare 'worse', 'Legacy code (with v0), for example with express' %}
 
@@ -286,13 +343,14 @@ app.get("/page1", (request, response) => {
 });
 ```
 
-{% CompareCaption %}
-With v0, you can set reporting endpoints on some responses only. Other documents (pages) on that origin automatically use these ambient endpoints. Here, the endpoints set for `"/"` are used for all responses, for example for `page1`.
-{% endCompareCaption %}
+{% CompareCaption %} With v0, you can set reporting endpoints on some responses only.
+Other documents (pages) on that origin automatically use these ambient endpoints. Here,
+the endpoints set for `"/"` are used for all responses, for example for `page1`. {%
+endCompareCaption %}
 
 {% endCompare %}
 
-{% Compare 'better', 'Legacy code (with v1), for example with express' %}
+{% Compare 'better', 'New code (with v1), for example with express' %}
 
 ```javascript
 // Use a middleware to set the reporting endpoint(s) for *all* requests.
@@ -310,15 +368,17 @@ app.get("/page1", (request, response) => {
 });
 ```
 
-{% CompareCaption %}
-With v1, you need to set the `Reporting-Endpoints` header on all responses that might generate reports.
-{% endCompareCaption %}
+{% CompareCaption %} With v1, you need to set the `Reporting-Endpoints` header on all
+responses that might generate reports. {% endCompareCaption %}
 
 {% endCompare %}
-
-### CSP violation reports
 
 ## Further reading
 
 - [Specification: legacy Reporting API (v0)](https://www.w3.org/TR/reporting/)
 - [Specification: new Reporting API (v1)](https://w3c.github.io/reporting/)
+
+_Hero image by [Nine Koepfer / @enka80](https://unsplash.com/@enka80) on
+[Unsplash](https://unsplash.com/photos/tJC6I9S3nBw), edited._ _With many thanks to Ian
+Clevelland, Eiji Kitamura and Milica Mihajlija for their reviews and suggestions on this
+article._
