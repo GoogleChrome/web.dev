@@ -302,7 +302,7 @@ The Chromium team has designed and implemented the Storage Foundation API using 
 defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user
 control, transparency, and ergonomics.
 
-Following the same pattern as other modern storage web APIs, access to the Storage Foundation API is
+Following the same pattern as other modern storage APIs on the web, access to the Storage Foundation API is
 origin-bound, meaning that an origin may only access self-created data. It is also limited to secure
 contexts.
 
