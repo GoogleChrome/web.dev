@@ -65,8 +65,8 @@ A first origin trial ran from Chromium&nbsp;86 to Chromium&nbsp;88. After this o
 some [changes](https://github.com/webscreens/window-placement/blob/main/CHANGES.md) to the API. The
 article has been updated accordingly.
 
-Starting in Chromium&nbsp;92, the Multi-Screen Window Placement API will again be available as an
-origin trial in Chromium. This second origin trial is expected to end in Chromium&nbsp;95.
+Starting in Chromium&nbsp;93, the Multi-Screen Window Placement API will again be available as an
+origin trial in Chromium. This second origin trial is expected to end in Chromium&nbsp;96.
 
 {% include 'content/origin-trials.njk' %}
 
@@ -179,7 +179,7 @@ try {
 ```
 
 The browser
-[can](https://webscreens.github.io/window-placement/#issue-c601b517:~:text=Permission%20check%20for%20above%3F,-partial)
+[can](https://webscreens.github.io/window-placement/#usage-overview-screen-information:~:text=This%20method%20may%20prompt%20the%20user%20for%20permission)
 choose to show the permission prompt dynamically upon the first attempt to use any of the methods of
 the new API. Read on to learn more.
 
@@ -196,7 +196,7 @@ window.screen.isExtended;
 ### The `getScreens()` method
 
 Now that I know that the current setup is multi-screen, I can obtain more information about the
-second screen using `Window.getScreens()`. It returns a promise that resolves with an array of
+second screen using `Window.getScreens()`. Calling this function will show a permission prompt that asks me whether the site may open and place windows on my screen. The function returns a promise that resolves with an array of
 `ScreenAdvanced` objects. On my MacBook Pro 13 with a connected iPad, this returns an array of two
 `ScreenAdvanced` objects:
 
@@ -279,8 +279,7 @@ is updated on cross-screen window placements or device changes.
 
 The only thing missing now is a way to detect when my screen setup changes. A new event,
 `screenschange`, does exactly that: it fires whenever the screen constellation is modified. (Notice
-that "screens" is plural in the event name.) It also fires when the resolution of one of the
-connected screens changes or when a new or an existing screen is (physically or virtually in the
+that "screens" is plural in the event name.) This means the event fires whenever a new screen or an existing screen is (physically or virtually in the
 case of Sidecar) plugged in or unplugged.
 
 Note that you need to look up the new screen details asynchronously, the `screenschange` event
@@ -290,9 +289,12 @@ look up the screen details by calling `window.getScreens()` as shown below.
 
 ```js
 const screensInterface = await window.getScreens();
-screensInterface.addEventListener('screenschange', async (event) => {
-  const details = await window.getScreens();
-  console.log('The screen constellation has changed.', event), details;
+let cachedScreensLength = screensInterface.screens.length;
+screensInterface.addEventListener('screenschange', (event) => {
+  if (screensInterface.screens.length !== cachedScreensLength) {
+    console.log(`The screen count changed from ${cachedScreensLength} to ${screensInterface.screens.length}`);
+    cachedScreensLength = screensInterface.screens.length;
+  }
 });
 ```
 
@@ -304,7 +306,7 @@ If I am only interested in changes to the current screen (that is, the value of 
 ```js
 const screensInterface = await window.getScreens();
 screensInterface.addEventListener('currentscreenchange', async (event) => {
-  const details = (await window.getScreens()).currentScreen;
+  const details = screensInterface.currentScreen;
   console.log('The current screen has changed.', event, details);
 });
 ```
@@ -317,8 +319,7 @@ Finally, if I am only interested in changes to a concrete screen, I can listen t
 ```js
 const firstScreen = (await window.getScreens())[0];
 firstScreen.addEventListener('change', async (event) => {
-  const details = (await window.getScreens())[0];
-  console.log('The first screen has changed.', event, details);
+  console.log('The first screen has changed.', event, firstScreen);
 });
 ```
 
@@ -358,7 +359,7 @@ if (!('getScreens' in window)) {
 }
 ```
 
-The other aspects of the API, that is, the `screenschange` event and the `screen` property of the
+The other aspects of the API, that is, the various screen change events and the `screen` property of the
 `FullscreenOptions`, would simply never fire or silently be ignored respectively by non-supporting
 browsers.
 
@@ -477,7 +478,7 @@ team to prioritize features and shows other browser vendors how critical it is t
 The Multi-Screen Window Placement API spec was edited by
 [Victor Costan](https://www.linkedin.com/in/pwnall) and
 [Joshua Bell](https://www.linkedin.com/in/joshuaseanbell). The API was implemented by
-[Mike Wasserman](https://www.linkedin.com/in/mike-wasserman-9900a079/). This article was reviewed by
+[Mike Wasserman](https://www.linkedin.com/in/mike-wasserman-9900a079/) and [Adrienne Walker](https://github.com/quisquous). This article was reviewed by
 [Joe Medley](https://github.com/jpmedley), [François Beaufort](https://github.com/beaufortfrancois),
 and [Kayce Basques](https://github.com/kaycebasques). Thanks to Laura Torrent Puig for the photos.
 
