@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything iOS/Android/desktop apps can. The members of the cross-company capabilities project want to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2021-05-14
+updated: 2021-06-08
 tags:
   - blog
   - capabilities
@@ -359,7 +359,7 @@ that might be helpful.
 
 {% Aside %}
   Want to try some of these new capabilities? Check out the
-  [Web Capabilities Codelab](https://codelabs.developers.google.com/codelabs/web-capabilities/).
+  [Web Capabilities Codelab](https://developers.google.com/codelabs/project-fugu#0).
 {% endAside %}
 
 [ot-dashboard]: https://developers.chrome.com/origintrials/#/trials/active

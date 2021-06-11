@@ -18,7 +18,7 @@ questions:
       - content: "Color"
         rationale: "Try again!"
       - content: "`inset`"
-        rationale: "Try again! `text-shadow` has inset as well."
+        rationale: "Try again! `inset` is a **keyword** which is also unique to `box-shadow`."
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "1"

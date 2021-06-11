@@ -246,7 +246,7 @@ You can group multiple selectors by separating them with commas:
 ```css
 strong,
 em,
-.my-element,
+.my-class,
 [lang] {
   color: red;
 }

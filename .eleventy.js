@@ -104,6 +104,10 @@ const {updateSvgForInclude} = require('webdev-infra/filters/svg');
 // but this one seems to work better.
 const {toc: courseToc} = require('webdev-infra/filters/toc');
 
+// Creates a global variable for the current __dirname to make including and
+// working with files in the pattern library a little easier
+global.__basedir = __dirname;
+
 module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
   const isProd = process.env.ELEVENTY_ENV === 'prod';

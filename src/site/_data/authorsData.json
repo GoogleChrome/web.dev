@@ -434,7 +434,7 @@
     "descriptions": {
       "en": "Eng Manager working on Chrome and Web Platform"
     },
-    "image": "image/admin/tiRsxAul7QYidjbx2Nwo.jpg"
+    "image": "image/1L2RBhCLSnXjCnSlevaDjy3vba73/LJyNTOzyWbowv2mrlzPS.jpeg"
   },
   "jeffposnick": {
     "name": {
@@ -2296,5 +2296,32 @@
     },
     "country": "UK",
     "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/eIgvuUcq2LknyiDixzOJ.jpeg"
+  "jaikk": {
+    "name": {
+      "given": "Jai",
+      "family": "Krishnan"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "country": "US",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/BKGlQ9PreNrLEV74mhKX.jpg",
+    "descriptions": {
+      "en": "Product Manager at Google working on open codecs"
+    }
+  },
+  "wtc": {
+    "name": {
+      "given": "Wan-Teh",
+      "family": "Chang"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "country": "US",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/tyVCzJx2Qe2hCSwXzhrk.jpeg",
+    "descriptions": {
+      "en": "Engineer at Google working on AVIF"
+    }
   }
 }

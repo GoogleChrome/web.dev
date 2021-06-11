@@ -16,7 +16,7 @@
 
 const {html} = require('common-tags');
 const {Img} = require('./Img');
-const md = require('../../_filters/md');
+const md = require('markdown-it')();
 const constants = require('../../_utils/constants');
 const tagsCollection = require('../../_collections/tags')();
 
@@ -85,7 +85,7 @@ class BaseCard {
 
     return html`
       <a class="w-card-base__link" tabindex="-1" href="${this.url}">
-        <p class="w-card-base__subhead">${md(subhead)}</p>
+        <p class="w-card-base__subhead">${md.renderInline(subhead)}</p>
       </a>
     `;
   }
@@ -137,7 +137,7 @@ class BaseCard {
                   ? 'w-card-base__headline--with-image'
                   : 'w-card-base__headline'}"
               >
-                ${md(this.data.title)}
+                ${md.renderInline(this.data.title)}
               </h2>
             </a>
             ${AuthorsDate({authors, date: this.collectionItem.date, updated: this.data.updated, locale: this.data.locale})}

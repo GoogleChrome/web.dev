@@ -644,7 +644,7 @@ footer {
 }
 ```
 
-The name can be anything you like other than the keyword `span`.
+The name can be anything you like other than the keywords `auto` and `span`.
 Once all of your items are named,
 use the
 [`grid-template-areas`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas)
@@ -742,7 +742,7 @@ for example:
 
 ```css
 .container {
-    dislay: grid;
+    display: grid;
     grid: repeat(2, 80px) / auto-flow  120px;
 }
 ```
@@ -804,7 +804,7 @@ instead the items are being moved around inside the defined area.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'rNjjMVd',
+  id: 'YzZOOXB',
   height: 650
 } %}
 

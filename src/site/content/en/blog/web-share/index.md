@@ -4,7 +4,7 @@ subhead: Web apps can use the same system-provided share capabilities as platfor
 authors:
   - joemedley
 date: 2019-11-08
-updated: 2021-03-10
+updated: 2021-06-07
 hero: image/admin/ruvEms3AeSZvlEI01DKo.png
 alt: An illustration demonstrating that web apps can use the system-provided sharing UI.
 description: |
@@ -168,7 +168,18 @@ Using the API to share files is supported by:
 (Most Chromium-based browsers, like Edge, have the same support for this feature as the
 corresponding version of Chrome.)
 
+### Show support for the API
+
+Are you planning to use the Web Share API? Your public support helps the Chromium team
+prioritize features and shows other browser vendors how critical it is to support them.
+
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebShare`](https://twitter.com/search?q=%23WebShare&src=recent_search_click&f=live)
+and let us know where and how you're using it.
+
 ## Helpful Links
 
 - [Web Share Demos](https://w3c.github.io/web-share/demos/share-files.html)
 - [Scrapbook PWA](https://github.com/GoogleChrome/samples/blob/gh-pages/web-share/README.md#web-share-demo)
+
+[cr-dev-twitter]: https://twitter.com/ChromiumDev

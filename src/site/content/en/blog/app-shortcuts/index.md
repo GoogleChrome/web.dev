@@ -5,7 +5,7 @@ authors:
   - beaufortfrancois
   - jungkees
 date: 2020-05-20
-updated: 2021-04-06
+updated: 2021-05-03
 hero: image/admin/1ekafMZjtzcd0G3TLQJ4.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
@@ -172,6 +172,11 @@ app shortcuts appearing first in the `shortcuts` array as the limit on the
 number of app shortcuts displayed varies depending on the platform. Chrome and
 Edge on Windows for instance limit the number of app shortcuts to 10 while
 Chrome for Android only takes the first 4 app shortcuts into account.
+
+{% Aside %}
+Chrome 92 for Android 7 now allow only 3 app shortcuts. A shortcut to the site
+settings was added, taking one of the available shortcut slots for the app.
+{% endAside %}
 
 ### Use distinct app shortcut names
 
