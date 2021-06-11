@@ -5,8 +5,8 @@ subhead: |
   A new version of the Reporting API is available. It's simpler, more private, and more likely to be supported across browsers.
 authors:
   - maudn
-date: 2021-06-08
-updated: 2021-06-08
+date: 2021-06-14
+updated: 2021-06-14
 description: |
   Migrate to the new version of the Reporting API.
 hero: image/O2RNUyVSLubjvENAT3e7JSdqSOx1/PYEe5UP3bVYzPMXdQc0X.jpg
