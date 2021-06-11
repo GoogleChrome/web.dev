@@ -204,7 +204,7 @@ using shorthand versions of the margin and padding properties.
   padding-block: 2em;
   margin-inline: 2em 0;
   position: relative;
-  inset: 0.2em 0 0 0;
+  inset-block: 0.2em 0;
 }
 ```
 
