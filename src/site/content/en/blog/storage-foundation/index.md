@@ -2,7 +2,7 @@
 layout: post
 title: 'High performance storage for your app: the Storage Foundation API'
 subhead: |
-  The Storage Foundation API resembles a very basic filesystem,
+  The Storage Foundation API resembles a basic file system,
   with direct access to stored data through buffers and offsets. It gives
   developers flexibility by providing generic, simple, and performant 
   primitives upon which they can build higher-level components.
