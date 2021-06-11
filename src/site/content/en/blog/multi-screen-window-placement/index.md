@@ -394,9 +394,9 @@ You can play with the [demo][demo] embedded below, or see its [source code][demo
 
 <!-- Copy and Paste Me -->
 <div class="glitch-embed-wrap" style="height: 800px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/window-placement?path=iframe.html&previewSize=100"
+  <iframe src="https://window-placement.glitch.me/"
     title="window-placement on Glitch"
-    allow="fullscreen; geolocation; microphone; camera; midi; vr; encrypted-media"
+    sandbox="allow-popups allow-popups-to-escape-sandbox allow-scripts"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -489,7 +489,7 @@ and [Kayce Basques](https://github.com/kaycebasques). Thanks to Laura Torrent Pu
 [issues]: https://github.com/webscreens/window-placement/issues
 [demo]: https://window-placement.glitch.me/
 [demo-source]: https://glitch.com/edit/#!/window-placement
-[explainer]: https://github.com/webscreens/window-placement/blob/master/EXPLAINER.md
+[explainer]: https://github.com/webscreens/window-placement/blob/main/EXPLAINER.md
 [wicg-discourse]:
   https://discourse.wicg.io/t/proposal-supporting-window-placement-on-multi-screen-devices/3948
 [cr-bug]: https://crbug.com/897300
