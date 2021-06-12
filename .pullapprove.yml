@@ -48,6 +48,30 @@ groups:
     conditions:
       - '"[Fugu]" in title or "[Capabilities]" in title or "fugu" in labels or "capabilities" in labels'
 
+  # PWA
+  pwa:
+    reviewers:
+      users:
+      - jpmedley
+      teams:
+      - ~web-dev-content
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    conditions:
+      - '"[PWA]" in title or "pwa" in labels'
+
+  # Media
+  media:
+    reviewers:
+      users:
+      - jpmedley
+      teams:
+      - ~web-dev-content
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    conditions:
+      - '"[Media]" in title or "media" in labels'
+
   # Vitals
   vitals:
     reviewers:
@@ -71,6 +95,18 @@ groups:
       - ~web-dev-approvers
     conditions:
       - '"[Privacy]" in title or "[Security]" in title or "privacy/security" in labels'
+
+  # Identity
+  identity:
+    reviewers:
+      users:
+      - mihajlija
+      teams:
+      - ~web-dev-content
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    conditions:
+      - '"[Identity]" in title or "identity" in labels'
 
   # Content
   # Handles any changes related to site content.
