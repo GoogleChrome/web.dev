@@ -50,10 +50,14 @@ other aspects such as security, accessibility, and so forth.
 ### 1. Strong defaults
 
 A foundational aspect of conformance is ensuring that the tools developers use have strong defaults
-in place. For loading performance, every resource (fonts, CSS, JavaScript, images, etc.) should be
-optimized. This is a complex challenge involving trimming of bytes, reducing round trips, and
-separating out what is needed for the first render, visual readiness, and user interaction. For
-example, extracting critical CSS, and setting priority on important images.
+in place. This means solutions are not only baked into frameworks, but also framework design
+patterns make it easy to do the right thing and hard to follow anti-patterns. The framework supports
+developers with application design and code structure.
+
+For loading performance, every resource (fonts, CSS, JavaScript, images, etc.) should be optimized.
+This is a complex challenge involving trimming of bytes, reducing round trips, and separating out
+what is needed for the first render, visual readiness, and user interaction. For example, extracting
+critical CSS, and setting priority on important images.
 
 ### 2. Actionable rules
 
