@@ -8,7 +8,7 @@ description: |
     75th percentile CLS by 250% from 0.25 to 0.1 in a couple of months.
 authors:
   - chrisboakes
-date: 2021-06-11
+date: 2021-06-14
 # updated:
 hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/wqtXsd9ZcxILt6oaA7rk.jpeg
 thumbnail: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/yDxN8dVjj4JCYvsoWTVg.jpg
