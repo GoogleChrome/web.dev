@@ -6,7 +6,7 @@ authors:
   - beaufortfrancois
   - thomassteiner
 date: 2018-11-05
-updated: 2021-03-30
+updated: 2021-06-14
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -253,6 +253,18 @@ the app's preview in task switchers. The `theme_color` should match the
 <figure class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8mkBdT3O0FZLo0PUppvv.png", alt="An example of a PWA window with custom theme_color.", width="800", height="196", class="w-screenshot" %}
 </figure>
+
+In Chrome&nbsp;93, you can adjust this color based on a media query with the
+`media` attribute of the `meta` theme color element. The first one that matches
+will be picked. For example, you could have one color for light mode and another
+one for dark mode. At the time of writing, you can't define those in your
+manifest. See [w3c/manifest#975 GitHub
+issue](https://github.com/w3c/manifest/issues/975).
+
+```html
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="black">
+```
 
 #### `shortcuts` {: #shortcuts }
 
