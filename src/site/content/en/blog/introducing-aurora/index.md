@@ -50,9 +50,8 @@ alt="Aurora logo", width="800", height="450" %}
 
 In the coming months, we'll be sharing a lot more detail on Aurora. This is a
 collaboration between a small team of Chrome engineers (internally codenamed
-WebSDK) with experience working on front-end stacks, and framework and tooling
-authors. Our goal is to deliver the best user-experience possible for production
-apps regardless of the browser you're rendering in.
+WebSDK) and framework authors. Our goal is to deliver the best user-experience
+possible for production apps regardless of the browser you're rendering in.
 
 ## What is our strategy?
 
@@ -68,7 +67,7 @@ production environments, and they integrate tools such as compiler, bundler,
 linter etc.
 
 <figure class="w-figure">
-  {% Img src="image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/UuOwHlcV76N8BwboHBVy.png", alt="Chart that shows
+  {% Img src="image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/ZXuXfh0m5vDV8JNqWqNG.png", alt="Chart that shows
   common tooling in frameworks", width="800", height="450" %}
   <figcaption class="w-figcaption">
     Common tooling used by framework developers
@@ -82,8 +81,8 @@ great features for users.
 While we work to improve tools that live in every layer of the stack, frameworks
 such as Next.js, Nuxt.js, and Angular CLI, manage every step of an application's
 lifecycle. For this reason, and the fact that React adoption is the largest
-within the core UI framework ecosystem, most of our optimizations have begun as
-a proof of concept within Next.js before expanding to the rest of the ecosystem.
+within the core UI framework ecosystem, most of our optimizations have begun
+with proving out in Next.js before expanding to the rest of the ecosystem.
 
 Aurora supports success at scale by bringing solutions to the _right layer_ of
 popular tech stacks. By bridging the gap between browsers and frameworks, it
@@ -102,7 +101,7 @@ humility, curiosity, scientific enquiry and pragmatism. We work with framework
 authors on improvements, collaborate with the community and do our due diligence
 prior to landing any changes.
 
-{% Img src="image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/oRxGw4dKoQJRhke09t86.png",
+{% Img src="image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/M1CdgGUu5q2SGg9i428F.png",
 alt="Aurora's partner driven process for improving Core Web Vital metrics",
 width="800", height="448" %}
 
@@ -112,12 +111,12 @@ To summarize the steps we take for any new feature we work on:
 2. Prototype solutions that address this, with an emphasis on "strong defaults"
    .
 3. Verify the feature with another framework stack, to ensure it is adaptable.
-4. Validate the feature by experimenting in a few production apps, typically with
-   lab testing for performance.
+4. Validate the feature by experimenting in a few production apps, typically
+   with lab testing for performance.
 5. Drive design using the RFC process, addressing community feedback.
 6. Land the feature in a popular stack, typically behind a flag.
-7. Enable the feature in a representative production app to assess quality,
-   metrics and developer workflow integration.
+7. Enable the feature in a representative production app to assess quality and
+   developer workflow integration.
 8. Measure performance improvement by tracking metrics in representative
    production apps that adopted the feature or upgraded.
 9. Enable the feature as the default in the stack, so all upgrading users
@@ -177,8 +176,8 @@ defaults of multiple frameworks, including:
   [Next.js](https://nextjs.org/docs/advanced-features/measuring-performance) to
   allow easier insight into page performance through web vitals and other custom
   metrics.
-- [Granular chunking](/granular-chunking-nextjs/) shipped in
-  Next.js and Gatsby, resulting in reduced bundle sizes while improving caching
+- [Granular chunking](/granular-chunking-nextjs/) shipped in Next.js and Gatsby,
+  resulting in reduced bundle sizes by up to 70% while improving caching
   performance. This has become the default in Webpack 5.
 - A separate [polyfill
   chunk](https://github.com/vercel/next.js/pull/10212#issue-365945853) for older
