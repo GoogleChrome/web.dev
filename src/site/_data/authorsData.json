@@ -2283,6 +2283,20 @@
     },
     "country": "US"
   },
+  "chrisboakes": {
+    "name": {
+      "given": "Chris",
+      "family": "Boakes"
+    },
+    "github": "chrisboakes",
+    "linkedin": "https://www.linkedin.com/in/chris-boakes",
+    "twitter": "cboakes",
+    "descriptions": {
+      "en": "Principal Software Engineer at The Telegraph"
+    },
+    "country": "UK",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/eIgvuUcq2LknyiDixzOJ.jpeg"
+  },
   "jaikk": {
     "name": {
       "given": "Jai",
