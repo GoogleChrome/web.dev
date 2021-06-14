@@ -396,7 +396,7 @@ You can play with the [demo][demo] embedded below, or see its [source code][demo
 <div class="glitch-embed-wrap" style="height: 800px; width: 100%;">
   <iframe src="https://window-placement.glitch.me/"
     title="window-placement on Glitch"
-    sandbox="allow-popups allow-popups-to-escape-sandbox allow-scripts"
+    allow="window-placement" sandbox="allow-popups allow-popups-to-escape-sandbox allow-scripts"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
