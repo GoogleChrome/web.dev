@@ -5,7 +5,7 @@ authors:
   - shubhie
   - houssein
 date: 2021-06-15
-hero: image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/i8mOAsozYs0H49p7iDOX.jpg
+hero: image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/tCzTPP3b6A0qk9y7rSzK.jpg
 alt: Yellow and black warnings wall
 
 description: This article describes Conformance, a methodology used in frameworks within Google, and how we plan on open-sourcing it to the JavaScript framework ecosystem
@@ -14,7 +14,7 @@ tags:
   - aurora
 ---
 
-In our [introductory blog post](http://web.dev/aurora), we covered how we've learned a lot while
+In our [introductory blog post](/aurora), we covered how we've learned a lot while
 building and using frameworks and tools to develop and maintain large scale web applications such as
 Google Search, Maps, Photos, and so on. By safeguarding developers from writing code that can
 negatively affect user experience, we proved that frameworks can play a key role in shifting
@@ -43,7 +43,7 @@ enforced at **authoring time**. This breaks down into the following 3 principles
 
 {% Aside %}
 Conformance in this article focuses on coding best practices to achieve predictable loading
-performance & [Core Web Vital](https://web.dev/vitals/) scores, but the principles apply equally to
+performance & [Core Web Vital](/vitals/) scores, but the principles apply equally to
 other aspects such as security, accessibility, and so forth.
 {% endAside %}
 
@@ -160,8 +160,8 @@ As mentioned previously, Conformance rules can be surfaced in multiple areas. To
 are currently being explored as a way to surface errors directly in the browser within the user's
 local development environment.
 
-{% Img src="image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/fkZcRbk4WRiZtzcdoqn7.png", alt="ESLint error surfaced
-via a toast in the browser", width="800", height="483" %}
+{% Img src="image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/6euyc60GeSrmqpDprbQ7.png", alt="Errors surfaced via
+toasts", width="800", height="454" %}
 
 Many error-checking and auditing tools that developers rely on (Lighthouse, Chrome DevTools Issues
 tab) are passive and require some form of user interaction to retrieve information. Developers are
