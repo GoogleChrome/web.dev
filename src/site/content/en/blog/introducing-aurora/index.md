@@ -90,6 +90,11 @@ popular tech stacks. By bridging the gap between browsers and frameworks, it
 enables high-quality to be a side-effect of building for the web while acting as
 a feedback loop to improve the web platform.
 
+{% Aside %}
+Check out the [Conformance](/conformance) post to learn more about a key component of
+our strategy.
+{% endAside %}
+
 ## What is our work process?
 
 Our principles for how Aurora bridges browsers and the developer ecosystem are:
@@ -172,7 +177,7 @@ defaults of multiple frameworks, including:
   [Next.js](https://nextjs.org/docs/advanced-features/measuring-performance) to
   allow easier insight into page performance through web vitals and other custom
   metrics.
-- [Granular chunking](https://web.dev/granular-chunking-nextjs/) shipped in
+- [Granular chunking](/granular-chunking-nextjs/) shipped in
   Next.js and Gatsby, resulting in reduced bundle sizes while improving caching
   performance. This has become the default in Webpack 5.
 - A separate [polyfill
@@ -190,19 +195,18 @@ Through the rest of this year, we will be focused on helping framework stacks
 improve user-experience and how well they perform on metrics such as the Core
 Web Vitals. This work will include:
 
-- Optimizing initial load performance by building on our collaborations to
-  optimize
+- Conformance for enforcing best practices. Check out the [blog post](/conformance) to
+  learn more.
+- Optimizing initial load performance by building on our collaborations to optimize
   [Images](https://nextjs.org/blog/next-10#built-in-image-component-and-automatic-image-optimization),
-  [Fonts](https://nextjs.org/blog/next-10-2#automatic-webfont-optimization) and
-  [Critical CSS](https://angular.io/guide/workspace-config#optimization-configuration).
-- Loading third-party scripts (3Ps) with minimal perf impact by building on our
-  foundation of work on a
-  [Script](https://nextjs.org/docs/basic-features/script) component
-  and performing deep research into how best to order and sequence 3Ps.
+  [Fonts](https://nextjs.org/blog/next-10-2#automatic-webfont-optimization) and [Critical
+  CSS](https://angular.io/guide/workspace-config#optimization-configuration).
+- Loading third-party scripts (3Ps) with minimal perf impact by building on our foundation of work
+  on a [Script](https://nextjs.org/docs/basic-features/script) component and performing deep
+  research into how best to order and sequence 3Ps.
 - JavaScript performance at scale (e.g. supporting [React Server
   Components](https://reactjs.org/blog/2020/12/21/data-fetching-with-react-server-components.html)
   in Next.js).
-- Conformance: performance insights during runtime.
 
 Our team will aim to post more regular information on RFCs and design docs for
 these ideas so that any framework or developer that wishes to follow along can
