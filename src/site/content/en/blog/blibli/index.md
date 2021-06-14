@@ -92,6 +92,12 @@ to their home screen.
 If users lose the network connection, they are presented with an elegant offline
 fallback page.
 
+<figure class="w-figure">
+{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/biDb6f1owQWxmRNXUauu.png", alt="An elegent offline fallback page.", width="800", height="468" %}
+  <figcaption class="w-figcaption">
+    An elegent offline fallback page.
+  </figcaption>
+</figure>
 
 Blibli's lite page created a first impression that Blibli.com is fast and
 responsive. Moreover, the lite page streamlined the number of features by only
