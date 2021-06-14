@@ -312,12 +312,12 @@ will only apply the directional values when it is in its docked/stuck state.
 } %}
 
 In the [logical properties](/learn/css/logical-properties) module,
-you learn about the `inset` property,
-which allows you to set directional values that honor writing mode.
+you learn about the `inset-block` and `inset-inline` properties,
+which allow you to set directional values that honor writing mode.
 
-The `inset` order of properties is the same as TRouBLe with `margin` and `padding`
-but instead of `top`, `right`, `bottom` and `left`,
-it is `block-start`, `inline-end`, `block-end` and `inline-start`
+Both properties are shorthands combining the `start` and `end` values
+and as such accept either one value to be set for `start` and `end` or
+two individual values.
 
 ## Grid and flexbox
 
