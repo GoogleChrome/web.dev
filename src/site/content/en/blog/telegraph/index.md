@@ -10,8 +10,8 @@ authors:
   - chrisboakes
 date: 2021-06-11
 # updated:
-hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/ZOUxwntI6yKhtgY46pz2.png
-thumbnail: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/9KH8K89cpmvV6bXHF68g.jpg
+hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/wqtXsd9ZcxILt6oaA7rk.jpeg
+thumbnail: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/yDxN8dVjj4JCYvsoWTVg.jpg
 alt: The telegraph logo
 tags:
   - blog
@@ -24,7 +24,7 @@ Telegraph](https://www.telegraph.co.uk/). {% endAside %}
 
 ## The visual stability challenge
 
-Layout shifts can be very disruptive. At Telegraph Media Group visual stability
+Layout shifts can be very disruptive. At Telegraph Media Group (TMG) visual stability
 is particularly important because readers predominantly use our applications to
 consume the news. If the layout shifts while reading an article, the reader will
 likely lose their place. This can be a frustrating and distracting experience.
@@ -111,7 +111,7 @@ We focused on four areas where we could reduce layout shifts:
 - headers
 - embeds
 
-### Ads
+### Adverts
 
 The adverts load after the initial paint via JavaScript. Some of the containers
 they loaded in did not have any reserved height on them.
