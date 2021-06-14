@@ -1,10 +1,10 @@
 ---
-title: "Blibli's PWA generates 10 times more revenue per user than their previous mobile website"
-subhead: "How Blibli achieved a 42 percent reduction in bounce rates, an 8x improvement in mobile percent conversions, and 2.5 times more pages per session."
+title: "Blibli's PWA generates 10x more revenue per user than their previous mobile website"
+subhead: "How Blibli achieved a 42% reduction in bounce rates, an 8x improvement in mobile percent conversions, and 2.5 times more pages per session."
 authors:
   - joemedley
 date: 2021-07-21
-description: ow Blibli achieved a 42 percent reduction in bounce rates, an 8x improvement in mobile conversions, and 2.5 times more pages per session.
+description: ow Blibli achieved a 42% reduction in bounce rates, an 8x improvement in mobile conversions, and 2.5 times more pages per session.
 hero: image/admin/qfK9zbKBQalqq5zdr1P1.jpg
 alt: |
   To do (Hero image also).
@@ -17,8 +17,8 @@ tags:
 [Blibli](https://www.blibli.com/) is a well known e-commerce marketplace in
 Indonesia. The company had over 29 million average monthly website visits in
 2019. In a recent study, Blibli's web team found that their mobile web platform
-is a significant visitor and user acquisition platform, with 70 percent of web
-users landing on mobile and 30 percent of web users landing on desktop.
+is a significant visitor and user acquisition platform, with 70% of web
+users landing on mobile and 30% of web users landing on desktop.
 
 With that insight, Blibli embarked on a journey to develop a better web
 experience and improve conversions. As a result, they were able to achieve some
@@ -49,7 +49,7 @@ Blibli identified the following areas of opportunities:
     cities](https://storage.googleapis.com/gweb-economy-sea.appspot.com/assets/pdf/Indonesia-e-Conomy_SEA_2020_Country_Insights.pdf).
     Hence, PWA and fast pages were a good investment to support user needs like
     limited storage and slow networks.
-+   Fifty percent of users that are coming to the Blibli web platform are returning users.
++   50% of users that are coming to the Blibli web platform are returning users.
 
 ## The approach they used
 
@@ -70,7 +70,7 @@ New visitors are presented with a lightweight page which is three times faster
 when compared to the old home page.
 
 <figure class="w-figure">
-{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/bfL1ZGsRjv3QcbACnRGu.png", alt="A lightweight page that is three times faster than the old.", width="800", height="1422" %}
+{% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/bfL1ZGsRjv3QcbACnRGu.png", alt="A lightweight page that is three times faster than the old.", width="800", height="1422", params={w: '400' } %}
   <figcaption class="w-figcaption">
     A lightweight page that is three times faster than the old.
   </figcaption>
@@ -80,7 +80,7 @@ On subsequent pages, Blibli prompts users to add the PWA shortcut
 to their home screen.
 
 <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted class="w-screenshot" style="width:800px;">
     <source src="https://storage.googleapis.com/web-dev-assets/blibli/save-to-home-screen.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/blibli/save-to-home-screen.mp4" type="video/mp4">
   </video>
@@ -93,13 +93,12 @@ If users lose the network connection, they are presented with an elegant offline
 fallback page.
 
 
-
 Blibli's lite page created a first impression that Blibli.com is fast and
 responsive. Moreover, the lite page streamlined the number of features by only
 focusing on those that deliver the value proposition of Blibli.
 
 <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+  <video controls autoplay loop muted class="w-screenshot"  style="width:800px;">
     <source src="https://storage.googleapis.com/web-dev-assets/blibli/responsive-comparison.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/blibli/responsive-comparison.mp4" type="video/mp4">
   </video>
