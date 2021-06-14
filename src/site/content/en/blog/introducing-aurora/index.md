@@ -67,9 +67,13 @@ span the entire system: the client and the server, the development and
 production environments, and they integrate tools such as compiler, bundler,
 linter etc.
 
-{% Img src="image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/MWZYpbsfe9xxbdNp3GGG.png",
-alt="Chart that shows feedback loop of optimizations in tooling can directly
-improve the web platform", width="800", height="667" %}
+<figure class="w-figure">
+  {% Img src="image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/UuOwHlcV76N8BwboHBVy.png", alt="Chart that shows
+  common tooling in frameworks", width="800", height="450" %}
+  <figcaption class="w-figcaption">
+    Common tooling used by framework developers
+  </figcaption>
+</figure>
 
 When solutions are baked into the framework, teams of developers can use these
 solutions and focus their time on what matters most to the product -- shipping
