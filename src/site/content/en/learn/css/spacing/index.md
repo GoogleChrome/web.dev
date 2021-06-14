@@ -32,15 +32,15 @@ each with its own strengths and caveats.
 ## HTML spacing
 
 HTML itself provides some methods to space elements.
-The `<br />` and `<hr />` elements allow you to space elements in the block direction,
+The `<br>` and `<hr>` elements allow you to space elements in the block direction,
 which if you are in a latin-based language,
 is top-to-bottom.
 
-If you use a `<br />` element,
+If you use a `<br>` element,
 it will create a line-break,
 just like if you were to press your enter key in a word processor.
 
-The `<hr />` creates a horizontal line with space either-side, known as `margin`.
+The `<hr>` creates a horizontal line with space either-side, known as `margin`.
 
 {% Codepen {
   user: 'web-dot-dev',
