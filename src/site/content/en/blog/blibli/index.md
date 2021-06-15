@@ -140,12 +140,12 @@ of top management to ensure the best platform for all of our users.
 
 ## Overall business results
 
-+   3x reduction in page load times
-+   42% reduction in bounce rates
++   3x reduction in page load times.
++   42% reduction in bounce rates.
 +   8x Better mobile conversion rates in installed PWA compared to browser
-    mobile web
-+   2.5x more pages/sessions on installed PWA
-+   10x more revenue per user compared to the previous mobile website
+    mobile web.
++   2.5x more pages/sessions on installed PWA.
++   10x more revenue per user compared to the previous mobile website.
 
 "Speed and PWA were a valuable investment for us to provide the best mobile
 experience and representing our mission, to deliver the best platform for our
