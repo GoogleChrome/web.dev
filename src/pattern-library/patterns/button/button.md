@@ -1,3 +1,5 @@
-Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+## Initial observations
 
-Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.
+There's some inconsistency with hover and focus states which suggests the top 3 rows of buttons are the originals and the rest added at different stages.  
+
+It'll definitely be worth working out consistent states and treatments (border radius especially)  

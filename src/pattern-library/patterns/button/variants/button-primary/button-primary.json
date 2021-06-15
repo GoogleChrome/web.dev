@@ -1,1 +1,6 @@
-{ "title": "Primary" }
+{
+  "title": "Primary",
+  "context": {
+    "text": "A primary button"
+  }
+}
