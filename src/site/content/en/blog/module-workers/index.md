@@ -40,7 +40,7 @@ thread and responds by sending back messages of its own:
 
 ```js
 const worker = new Worker('worker.js');
-worker.addEventListener(e => {
+worker.addEventListener('message', e => {
   console.log(e.data);
 });
 worker.postMessage('hello');

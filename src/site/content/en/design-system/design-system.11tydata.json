@@ -1,0 +1,16 @@
+{
+  "sideLinks": [
+    {
+      "text": "Welcome",
+      "url": "/design-system/"
+    },
+    {
+      "text": "Colors",
+      "url": "/design-system/colors/"
+    },
+    {
+      "text": "Typography",
+      "url": "/design-system/typography/"
+    }
+  ]
+}

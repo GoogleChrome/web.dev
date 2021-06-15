@@ -1,0 +1,89 @@
+---
+title: 'Pattern'
+pagination:
+  data: patterns.items
+  size: 1
+  addAllPagesToCollections: true
+  alias: item
+permalink: '{{ item.url }}/index.html'
+pageScripts:
+  - '/js/design-system.js'
+---
+
+{% from 'macros/icon.njk' import icon, svg with context %}
+
+{% extends "design-system.njk" %}
+{% set title = item.data.title %}
+{% set summary = item.data.summary %}
+{% set breadcrumbs = [
+  {
+    title: item.data.title,
+    url: item.url
+  }
+]%}
+
+{% block inner %}
+  <iframe data-preview-frame src="{{ item.previewUrl }}"></iframe>
+  <div>
+    <a href="{{ item.previewUrl }}" class="w-button">View full screen</a>
+    <button class="w-button">TODO: add theme switcher</button>
+  </div>
+  <details class="w-details">
+    <summary class="w-details__summary">
+      <h2 class="w-details__header">Details</h2>
+    </summary>
+    <div class="flow">
+      {% if item.data.keyLinks | length %}
+        <h3>Key links</h3>
+        <ul>
+          {% for link in item.data.keyLinks %}
+          <li>
+            <a href="{{ link.url }}">{{ link.label }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      <h3>Source (Nunjucks)</h3>
+      <web-copy-code>
+        {% highlight "html" %}{{ item.markup | safe }}{% endhighlight %}
+      </web-copy-code>
+      <h3>Output</h3>
+      <web-copy-code>
+        {% highlight "html" %}{{ item.rendered | safe }}{% endhighlight %}
+      </web-copy-code>
+      {% if item.docs %}
+      <div class="flow">
+        <h2>Docs</h2>
+        {{ item.docs | md | safe }}
+      </div>
+      {% endif %}
+    </div>
+  </details>
+  {% if item.variants %}
+    <h2>Variants</h2>
+    {% for variant in item.variants %}
+    <h3>{{ variant.data.title }}</h3>
+    <iframe data-preview-frame src="{{ variant.previewUrl }}"></iframe>
+    <div>
+      <a href="{{ variant.previewUrl }}" class="w-button">View full screen</a>
+      <button class="w-button">TODO: add theme switcher</button>
+    </div>
+    <details class="w-details">
+      <summary class="w-details__summary">
+        <h3 class="w-details__header">Details</h2>
+      </summary>
+      <div class="flow">
+        <h4>Source</h4>
+        <web-copy-code>
+          {% highlight "html" %}{{ variant.markup | safe }}{% endhighlight %}
+        </web-copy-code>
+        <h4>Output</h2>
+        <web-copy-code>
+          {% highlight "html" %}{{ variant.rendered | safe }}{% endhighlight %}
+        </web-copy-code>
+      </div>
+    </details>
+    {% endfor %}
+  {% endif %}
+{% endblock %}
+

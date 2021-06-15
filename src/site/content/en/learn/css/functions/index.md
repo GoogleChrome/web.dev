@@ -196,7 +196,7 @@ You can also pass custom properties in a `var()` function as part of an expressi
 The [`min()`](https://developer.mozilla.org/en-US/docs/Web/CSS/min())
 function returns the smallest computed value of the one or more passed arguments.
 The [`max()`](https://developer.mozilla.org/en-US/docs/Web/CSS/max())
-function does the opposite: get the largest value of the one ore more passed arguments.
+function does the opposite: get the largest value of the one or more passed arguments.
 
 ```css
 .my-element {

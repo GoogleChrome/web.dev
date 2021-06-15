@@ -29,7 +29,7 @@ p {
 }
 ```
 
-The content would break out of your element and it would be 140px wide,
+The content would break out of your element and it would be 142px wide,
 rather than 100px.
 Why is that?
 The box model is a core foundation of CSS and understanding how it works,
