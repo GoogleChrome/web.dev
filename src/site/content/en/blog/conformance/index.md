@@ -139,8 +139,8 @@ teams using open-source frameworks.
 
 ESLint is widely used among JavaScript developers. and over 50% of Next.js applications use ESLint
 in some part of their build workflow. Next.js v11 introduced out-of-the-box ESLint support that
-includes a [custom plugin](https://nextjs.org/docs/tag/basic-features/eslint#eslint-plugin) and
-[shareable configuration](https://nextjs.org/docs/tag/basic-features/eslint#base-configuration) to
+includes a [custom plugin](https://nextjs.org/docs/basic-features/eslint#eslint-plugin) and
+[shareable configuration](https://nextjs.org/docs/basic-features/eslint#base-configuration) to
 make it easier to catch common framework-specific issues during development and at build time. This
 can help developers fix significant problems at authoring time. Examples include when a certain
 component is used, or not used, in a way that could harm performance as in [No HTML link for
