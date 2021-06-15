@@ -7,3 +7,54 @@ permalink: '/design-system/index.html'
 {% set summary %}
 Homepage for explaining where stuff is, how stuff works. Probably want to add some nicely designed cards for main sections too.
 {% endset %}
+
+{% block inner %}
+<h2>Use the pattern generator</h2>
+
+<p>To prevent repetitive file creation, you can use the pattern generator to create a new pattern, or pattern's variant with a npm task.</p>
+
+<h3>Example</h3>
+
+<p>Let's say you want a new pattern called &quot;my-pattern&quot;:</p>
+
+<pre><code>npm run patterns:create -- -p my-pattern -n my-pattern -t My\ Pattern
+</code></pre>
+
+<p>This will create the following folder and file structure:</p>
+
+<pre><code>web.dev
+└── src/
+    └── pattern-library/
+        └── patterns/
+            └── my-pattern/
+                ├── my-pattern.njk
+                ├── my-pattern.json
+                └── my-pattern.md
+</code></pre>
+
+<p>Let's you want to create a variant of &quot;my-pattern&quot;:</p>
+<pre><code>npm run patterns:create -- -p my-pattern/variants -n my-pattern-primary -t Primary
+</code></pre>
+<p>It'll result in this structure: </p>
+<pre><code>web.dev
+└── src/
+    └── pattern-library/
+        └── patterns/
+            └── my-pattern/
+                ├── my-pattern.njk
+                ├── my-pattern.json
+                ├── my-pattern.md
+                └── variants/
+                    ├── my-pattern-primary.njk
+                    └── my-pattern-primary.json
+</code></pre>
+<h3>Arguments</h3>
+<p>There are 3 arguments to pass in: </p>
+<p><strong>Note:</strong> Make sure you add the <code>--</code> <em>after</em> <code>npm run patterns:create</code> so the arguments get passed into the task. Also make sure you escape spaces with a <code>\</code>. </p>
+<ul>
+  <li><code>-p</code> is the path from <code>src/pattern-library/patterns</code></li>
+  <li><code>-n</code> is the file name</li>
+  <li><code>-t</code> is the title. If this is not set, the <code>-n</code> will be used</li>
+</ul>
+
+{% endblock %}
