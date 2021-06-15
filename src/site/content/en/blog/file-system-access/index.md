@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-04-21
+updated: 2021-06-15
 tags:
   - blog
   - capabilities
@@ -34,6 +34,13 @@ video editors, text editors, and more. After a user grants a web app access, thi
 read or save changes directly to files and folders on the user's device. Beyond reading and writing
 files, the File System Access API provides the ability to open a directory and enumerate its
 contents.
+
+{% Aside %}
+The File System Access API—despite the similar name—is distinct from the
+[`FileSystem`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem) interface exposed by the
+[File and Directory Entries API](https://wicg.github.io/entries-api/#api-domfilesystem) and the deprecated
+[File API: Directories and System](https://www.w3.org/TR/file-system-api/) specification.
+{% endAside %}
 
 If you've worked with reading and writing files before, much of what I'm about to share will be
 familiar to you. I encourage you to read it anyway, because not all systems are alike.
