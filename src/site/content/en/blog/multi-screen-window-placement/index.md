@@ -180,7 +180,7 @@ try {
 
 The browser
 [can](https://webscreens.github.io/window-placement/#usage-overview-screen-information:~:text=This%20method%20may%20prompt%20the%20user%20for%20permission)
-choose to show the permission prompt dynamically upon the first attempt to use any of the methods of
+choose to show the permission prompt dynamically on the first attempt to use any of the methods of
 the new API. Read on to learn more.
 
 ### The `window.screen.isExtended` property
@@ -273,7 +273,7 @@ Both also have a `label` and an `id`, which, if persisted across browser session
 arrangements to be restored. Information about the possible input methods are available in the
 `pointerTypes` array.
 
-The field `currentScreen` is a live object corresponding to the current `window.screen`. The object
+The `currentScreen` field is a live object corresponding to the current `window.screen`. The object
 is updated on cross-screen window placements or device changes.
 
 ### The `screenschange` event
