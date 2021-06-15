@@ -4,7 +4,7 @@ subhead: "How Blibli achieved a 42% reduction in bounce rate, an 8x improvement 
 authors:
   - collindionagata
   - swethagopalakrishnan
-date: 2021-06-21
+date: 2021-06-15
 description: How Blibli achieved a 42% reduction in bounce rate, an 8x improvement in mobile conversion rate, and 2.5x more pages per session.
 hero: image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/0d6gbBsSqZl5Z1GOhBtv.png
 alt: |
@@ -114,7 +114,7 @@ focusing on those that deliver the value proposition of Blibli.
   </figcaption>
 </figure>
 
-Blibli's PWA is installable, giving it a native-like look and feel. It is also
+Blibli's PWA is installable, giving it an app-like look and feel. It is also
 fast and reliable which was achieved using service worker caching and graceful
 offline fallback.
 
@@ -129,7 +129,7 @@ This comes as a delight for web users, a large proportion of whom use mid-tier
 devices. Since Blibli's PWA is less than 1MB in size (that's a whopping 24 times
 lighter than their Android app!), there is much less friction for users to
 install it. It also makes it easier for Blibli to retain users while providing
-them with a seamless native-like experience.
+them with a seamless app-like experience.
 
 ### Set performance budgets
 
