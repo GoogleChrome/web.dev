@@ -1,13 +1,14 @@
 ---
 title: "Blibli's PWA generates 10x more revenue per user than their previous mobile website"
-subhead: "How Blibli achieved a 42% reduction in bounce rates, an 8x improvement in mobile percent conversions, and 2.5 times more pages per session."
+subhead: "How Blibli achieved a 42% reduction in bounce rate, an 8x improvement in mobile conversion rate, and 2.5x more pages per session."
 authors:
-  - joemedley
-date: 2021-07-21
-description: ow Blibli achieved a 42% reduction in bounce rates, an 8x improvement in mobile conversions, and 2.5 times more pages per session.
-hero: image/admin/qfK9zbKBQalqq5zdr1P1.jpg
+  - collindionagata
+  - swethagopalakrishnan
+date: 2021-06-21
+description: How Blibli achieved a 42% reduction in bounce rate, an 8x improvement in mobile conversion rate, and 2.5x more pages per session.
+hero: image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/0d6gbBsSqZl5Z1GOhBtv.png
 alt: |
-  To do (Hero image also).
+  Images of the BliBli app.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
@@ -124,11 +125,11 @@ offline fallback.
   </figcaption>
 </figure>
 
-This comes as a delight for web users, a large proportion of whome use mid-tier
+This comes as a delight for web users, a large proportion of whom use mid-tier
 devices. Since Blibli's PWA is less than 1MB in size (that's a whopping 24 times
 lighter than their Android app!), there is much less friction for users to
 install it. It also makes it easier for Blibli to retain users while providing
-them with a seamless native like experience.
+them with a seamless native-like experience.
 
 ### Set performance budgets
 
@@ -149,6 +150,6 @@ of top management to ensure the best platform for all of our users.
 "Speed and PWA were a valuable investment for us to provide the best mobile
 experience and representing our mission, to deliver the best platform for our
 users"
-_—Collin Dion Agata, Senior Product Manager, Blibli_
+_—Collin Dion Agata, Lead Product Manager, Blibli_
 
 Photo by [Cristian Escobar](https://unsplash.com/@cristian1) on Unsplash.

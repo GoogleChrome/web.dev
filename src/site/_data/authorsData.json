@@ -2282,5 +2282,19 @@
       "en": "Software Engineer on the Google Chrome team"
     },
     "country": "US"
+  },
+  "collindionagata": {
+    "name": {
+      "given": "Collin",
+      "family": "Dion Agata"
+    },
+    "org": {
+      "name": "Blibli",
+      "unit": "Lead Product Manager"
+    },
+    "country": "ID",
+    "twitter": "CollinDion",
+    "linkedin": "collin-dion-agata",
+    "image": "image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/ZpE2N6yjkaqQNcSiaxvR.jpeg"
   }
 }
