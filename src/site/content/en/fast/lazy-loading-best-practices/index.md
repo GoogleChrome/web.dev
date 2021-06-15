@@ -125,7 +125,7 @@ image resource's name changes due to hash-based versioning, or is removed
 altogether. By the time the user lazy-loads the image, the resource is
 unavailable, and thus fails.
 
-While these are relatively rare occurrences, it may behoove you to have a backup
+While these are relatively rare occurrences, it may behove you to have a backup
 plan if lazy-loading fails. For images, such a solution may look something like
 this:
 
