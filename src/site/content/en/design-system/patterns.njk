@@ -23,7 +23,7 @@ pageScripts:
 ]%}
 
 {% block inner %}
-  <iframe data-preview-frame src="{{ item.previewUrl }}"></iframe>
+  <iframe data-preview-frame src="{{ item.previewUrl }}?state=window"></iframe>
   <div>
     <a href="{{ item.previewUrl }}" class="w-button">View full screen</a>
     <button class="w-button">TODO: add theme switcher</button>
@@ -63,7 +63,7 @@ pageScripts:
     <h2>Variants</h2>
     {% for variant in item.variants %}
     <h3>{{ variant.data.title }}</h3>
-    <iframe data-preview-frame src="{{ variant.previewUrl }}"></iframe>
+    <iframe data-preview-frame src="{{ variant.previewUrl }}?state=window"></iframe>
     <div>
       <a href="{{ variant.previewUrl }}" class="w-button">View full screen</a>
       <button class="w-button">TODO: add theme switcher</button>

@@ -14,10 +14,10 @@ permalink: '{{ item.previewUrl }}/index.html'
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://codepen.io/web-dot-dev/pen/abpoXGZ.css" />
+  <link rel="stylesheet" href="{{ helpers.hashForProd('/css/main.css') }}" />
   <title>{{ item.data.title }} - Preview</title>
   <style>
-    .preview {
+    [data-state="window"] .preview {
       padding: 1em;
     }
 
@@ -30,5 +30,15 @@ permalink: '{{ item.previewUrl }}/index.html'
   <div class="preview">
     {{ item.rendered | safe }}
   </div>
+
+  <!-- Sets a specific state for windowed previews -->
+  <script>
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+
+    const state = params.state || '';
+    
+    document.documentElement.setAttribute('data-state', state);
+  </script>
 </body>
 </html>
