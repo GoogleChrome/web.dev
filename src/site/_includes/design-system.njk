@@ -4,6 +4,13 @@
 <html lang="{{lang}}">
   <head>
     {% include 'partials/head.njk' %}
+    <!-- some hacky styles to get through this populating effort -->
+    <style>
+      .drawer-course__links {
+        position: static;
+        height: unset;
+      }
+    </style>
   </head>
   <body class="unresolved design-system">
     {#
