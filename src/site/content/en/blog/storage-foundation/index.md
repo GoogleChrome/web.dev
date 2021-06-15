@@ -8,7 +8,7 @@ subhead: |
   primitives on which they can build higher-level components.
 authors:
   - thomassteiner
-date: 2021-06-11
+date: 2021-06-15
 # updated: YYYY-MM-DD
 description: |
   The Storage Foundation API is a storage API that resembles a basic file system,
