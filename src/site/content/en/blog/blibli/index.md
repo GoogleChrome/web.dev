@@ -133,9 +133,9 @@ them with a seamless app-like experience.
 
 ### Set performance budgets
 
-Blibli made performance budgeting as a performance standard within the tech
-development and management, where the standard was reviewed on a regular basis
-and to be set as the KPI of internal tech development, along with the guidance
+Blibli made performance budgeting a performance standard within the tech
+development and management, where the standard was reviewed on a regular basis. 
+It's set as the KPI of internal tech development, with the guidance
 of top management to ensure the best platform for all of our users.
 
 ## Overall business results
