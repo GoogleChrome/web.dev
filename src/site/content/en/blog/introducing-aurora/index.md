@@ -37,7 +37,7 @@ of building for the web.
 ## Aurora: a collaboration between Chrome and open-source web frameworks & tools
 
 For almost two years, we have worked with some of the most popular frameworks
-such as Next.js, Nuxt.js and Angular, working to improve web performance. We've
+such as Next.js, Nuxt and Angular, working to improve web performance. We've
 also funded popular tools and libraries such as Vue, ESLint, webpack. Today, we
 are giving this effort a name - **Aurora**.
 
@@ -79,7 +79,7 @@ solutions and focus their time on what matters most to the product -- shipping
 great features for users.
 
 While we work to improve tools that live in every layer of the stack, frameworks
-such as Next.js, Nuxt.js, and Angular CLI, manage every step of an application's
+such as Next.js, Nuxt, and Angular CLI, manage every step of an application's
 lifecycle. For this reason, and the fact that React adoption is the largest
 within the core UI framework ecosystem, most of our optimizations have begun
 with proving out in Next.js before expanding to the rest of the ecosystem.
@@ -136,7 +136,7 @@ is enough overlap in the problems and solution layers to our efforts above to
 translate to other frameworks and tools, we know we can do more. To that end, we
 want to do our part to ensure libraries and frameworks helping developers
 succeed can thrive. That's one reason we will be continuing to invest in the
-Chrome Framework Fund. To date, it has supported work towards Webpack 5, Nuxt.js
+Chrome Framework Fund. To date, it has supported work towards Webpack 5, Nuxt
 and performance and improvements to ESLint.
 
 ## What has our work unlocked so far?
@@ -148,7 +148,7 @@ defaults of multiple frameworks, including:
 - An Image component in
   [Next.js](https://nextjs.org/docs/basic-features/image-optimization) that
   encapsulates best practices for image loading, followed by a collaboration
-  with [Nuxt.js](https://image.nuxtjs.org/) on the same. Use of this component
+  with [Nuxt](https://image.nuxtjs.org/) on the same. Use of this component
   has resulted in significant improvements to paint times and layout shift
   (example: 57% reduction in Largest Contentful Paint and 100% reduction in
   Cumulative Layout Shift on
@@ -219,6 +219,6 @@ The Aurora team ([Shubhie](https://github.com/spanicker),
 [Ralph](https://github.com/janicklas-ralph),
 [Addy](https://github.com/addyosmani)) look forward to continuing to work
 closely with the open-source framework community on improving user experience
-defaults in Next.js, Nuxt.js and Angular. We'll be growing our engagement to cover
+defaults in Next.js, Nuxt and Angular. We'll be growing our engagement to cover
 even more frameworks and tools over time. Watch this space for more blog posts,
 talks and RFCs from our team over the coming year :)
