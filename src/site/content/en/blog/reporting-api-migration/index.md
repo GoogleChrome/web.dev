@@ -300,7 +300,8 @@ recommended](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-S
 - You can use a generic endpoint because all report requests generated via the Reporting API have the same format.
 - In the future, you'll be able to access debugging tooling for the Reporting API v1.
 
-However, because of the state of browser support, it's recommended that you keep `report-uri` alongside the Reporting API approach (`Report-To` or better, `Reporting-Endpoints`) in order to get CSP violation reports from multiple browsers.
+However, [only a few browsers support `report-to`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to). Thus it's recommended that you keep `report-uri` alongside the Reporting API approach (`Report-To` or better, `Reporting-Endpoints`) in order to get CSP violation reports from multiple browsers.
+In a browser which recognizes `report-uri` and `report-to`, `report-uri` will be ignored if `report-to` is present. In a browser which recognizes only `report-uri`, only `report-uri` will be considered.
 
 1. **Step 1 (do now)**: If you haven't added it yet, add `report-to` alongside `report-uri`.
    Browsers that support only `report-uri` (Firefox) will use `report-uri`, and browsers
