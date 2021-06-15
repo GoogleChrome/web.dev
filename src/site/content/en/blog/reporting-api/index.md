@@ -63,6 +63,13 @@ receives and displays reports. See the
 
 ## Use cases and report types
 
+{% Banner 'caution', 'body' %}
+
+[Network Error Logging](https://w3c.github.io/network-error-logging/) isn't listed because it isn't supported in the new version of
+the API. Check the [migration guide](/reporting-api-migration/#network-error-logging) for details.
+
+{% endBanner %}
+
 <div class="w-table-wrapper">
   <table>
     <thead>
@@ -105,16 +112,13 @@ receives and displays reports. See the
   </table>
 </div>
 
-{% Aside %} Note:
-
-- [Network Error Logging](<https://developers.google.com/web/updates/2018/09/reportingapi?hl=en#:~:text=the%20network%20error%20logging%20(nel)>) isn't listed because it isn't supported in the new version of
-  the API. Check the [migration guide](/reporting-api-migration/#network-error-logging) for details.
-- **[Permissions
-  policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy)
-  (formerly feature policy)** violation reports may be supported by default in the future.
-  Right now, they're experimental. One example situation where such reports would be
-  generated: if your site has a permission policy to prevent microphone usage, and a
-  script is requesting audio input.
+{% Aside %}
+**[Permissions
+policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy)
+(formerly feature policy)** violation reports may be supported by default in the future.
+Right now, they're experimental. One example situation where such reports would be
+generated: if your site has a permission policy to prevent microphone usage, and a
+script is requesting audio input.
 
 {% endAside %}
 

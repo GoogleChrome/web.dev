@@ -55,10 +55,10 @@ Keep reading for details and example code!
 
 {% Banner 'caution', 'body' %}
 
-If you use [Network Error Logging](<https://developers.google.com/web/updates/2018/09/reportingapi?hl=en#:~:text=the%20network%20error%20logging%20(nel)>), continue using `Report-To` (v0) because Network Error Logging isn't
+If you use [Network Error Logging](https://w3c.github.io/network-error-logging/), continue using `Report-To` (v0) because Network Error Logging isn't
 supported in the Reporting API v1. A new mechanism for Network Error Logging will be
 developed⏤until that's available, the Reporting API v0 should be used.
-As of June 2021, this new mechanism is not shipped yet.
+**As of June 2021**, this new mechanism is not shipped yet.
 
 {% endBanner %}
 
