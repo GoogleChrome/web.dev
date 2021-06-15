@@ -108,7 +108,7 @@ receives and displays reports. See the
 {% Aside %} Note:
 
 - [Network Error Logging](<https://developers.google.com/web/updates/2018/09/reportingapi?hl=en#:~:text=the%20network%20error%20logging%20(nel)>) isn't listed because it isn't supported in the new version of
-  the API. Check the [migration guide](/reporting-api-migration) for details.
+  the API. Check the [migration guide](/reporting-api-migration/#network-error-logging) for details.
 - **[Permissions
   policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy)
   (formerly feature policy)** violation reports may be supported by default in the future.
@@ -347,7 +347,7 @@ committed by third-party script but also by third-party iframes.
 The table below sums up browser support for the **Reporting API v1**, that is with the
 `Reporting-Endpoints` header. Browser support for the legacy Reporting API (`Report-To`
 header) is the same, except for one report type: Network Error Logging isn't supported in
-the new Reporting API. Read the [migration guide](/reporting-api-migration) for details.
+the new Reporting API. Read the [migration guide](/reporting-api-migration/#network-error-logging) for details.
 
 <div class="w-table-wrapper">
   <table>
@@ -392,36 +392,54 @@ the new Reporting API. Read the [migration guide](/reporting-api-migration) for 
 
 ## Related reporting mechanisms
 
-- CSP, COOP and COEP headers each have a `Report-Only` variant: `CSP-Report-Only`, `COEP-Report-Only` or `COOP-Report-Only`. Both the main headers and their `Report-Only` variant are configured using `report-to`. Once `report-to` is configured, you need to specify endpoints. Do so by using the Reporting API headers⏤preferably, the new header `Reporting-Endpoints` (Reporting API v1) instead of the legacy one `Report-To`. CSP has its own specificities with `report-uri`. See details in the [migration guide](/reporting-api-migration).
+### Report-Only
 
-  {% Aside %}
-  One example where `...-Report-Only` headers are useful: let's assume you have a CSP set up for your site. You plan on tightening up your site's security by making your CSP stricter. Instead of directly deploying this new, stricter CSP, you first deploy it in `Report-Only` mode. This helps you monitor what your CSP _could have broken_ and tweak it, instead of actually inducing breakage for your end-users.
-  {% endAside %}
+CSP, COOP and COEP headers each have a `Report-Only` variant: [`Content-Security-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy-Report-Only), [`Cross-Origin-Embedder-Policy-Report-Only`](https://web.dev/coop-coep/#group) and [`Cross-Origin-Opener-Policy-Report-Only`](https://web.dev/coop-coep/#group). Both the main headers and their `Report-Only` variant are configured using `report-to`. Once `report-to` is configured, you need to specify endpoints.
 
-- You may want to monitor your site but have no possibility to set headers on your server. In that case, use [ReportingObserver](/reporting-observer). This JavaScript API can observe simple client-side warnings like deprecation and intervention. It does not support other types of errors, like CSP or COOP/COEP violations. This API is also useful in case you need to react to violations in real-time.
+Do so by using the Reporting API headers⏤preferably, the new header `Reporting-Endpoints` (Reporting API v1) instead of the legacy one `Report-To` (v0). CSP has its own specificities with `report-uri`. See details in the [migration guide](/reporting-api-migration).
+
+{% Aside %}
+One example where `...-Report-Only` headers are useful: let's assume you have a CSP set up for your site. You plan on tightening up your site's security by making your CSP stricter. Instead of directly deploying this new, stricter CSP, you first deploy it in `Report-Only` mode. This helps you monitor what your CSP _could have broken_ and tweak it, instead of actually inducing breakage for your end-users.
+{% endAside %}
+
+### ReportingObserver
+
+You may want to monitor your site but have no possibility to set headers on your server. In that case, use [ReportingObserver](/reporting-observer).
+
+This JavaScript API can observe simple client-side warnings like deprecation and intervention. It does not support other types of errors, like CSP or COOP/COEP violations.
+
+This API is also useful in case you need to react to violations in real-time.
 
 ## How-to: Configure report sending
 
 ### Configure the Reporting-Endpoints header
 
-- If you're migrating from the legacy Reporting API to the new Reporting API, it may make
-  sense to configure **both** `Reporting-Endpoints` and `Report-To`. If you're using
-  reporting for Content-Security-Policy violations via the `report-uri` directive only, or
-  via the `report-to` directive with the `Report-To` header, start using
-  `Reporting-Endpoints`. Head over to the [migration guide](/reporting-api-migration) for
-  all details regarding migration.
-- When configuring `Reporting-Endpoints`, ensure you have an endpoint named `default` if
-  you want to receive intervention, deprecation and crash reports.
+```http
+Reporting-Endpoints: main-endpoint="https://reports.example/main", default="https://reports.example/default"
+```
 
-  To define your
-  endpoints, head over to [How-to: Receive reports](/#how-to:-receive-reports).
+If you're migrating from the legacy Reporting API to the new Reporting API, it may make
+sense to configure **both** `Reporting-Endpoints` and `Report-To`. See details in the [migration guide](/reporting-api-migration/#migration-steps).
+
+```http
+Reporting-Endpoints: main-endpoint="https://reports.example/main", default="https://reports.example/default"
+Report-To: ...
+```
+
+**Note:** If you're using
+reporting for **Content-Security-Policy** violations via the `report-uri` directive only, or
+via the `Report-To` header, start using
+`Reporting-Endpoints` instead. See details in the [Migration guide > Migration steps for CSP reporting](/reporting-api-migration/#migration-steps-for-csp-reporting).
+
+When configuring `Reporting-Endpoints`, ensure you have an endpoint named `default` if
+you want to receive intervention, deprecation and crash reports.
 
 {% Aside 'gotchas' %}
 
 - **Deprecation**, **intervention**, and **crash** reports are only sent to the endpoint
   named `default`. If the `Reporting-Endpoints` header defines no `default` endpoint,
   reports of this type won't ever be sent (although they will be generated).
-- `default` is **not** a fallback endpoint. If you set up `report-to my-endpoint` e.g. for
+- `default` is **not** a fallback endpoint. For example, if you set up `report-to my-endpoint` for
   `Document-Policy` and omit to define `my-endpoint` in `Reporting-Endpoints`,
   `Document-Policy` violations reports of this type won't ever be sent (although they will
   be generated).
@@ -526,7 +544,7 @@ in your terminal:
 path/to/executable/Chrome --short-reporting-delay
 ```
 
-On Mac, `path/to/executable/Chrome` looks like `/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome`.
+See [How to run Chromium with flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
 
 ### Troubleshooting
 
@@ -594,8 +612,7 @@ To answer this, try the following:
   - The default endpoint is missing; some reports like deprecation and others _need_ the
     endpoint named `default`.
 
-- Look for issues in your policy configuration, such as missing quotes. [See details](link
-  to above).
+- Look for issues in your policy configuration, such as missing quotes. [See details](#configure-the-policies).
 - Make sure that your endpoint is CORS-configured. One common mistake is when the endpoint
   doesn't support CORS preflight requests.
 - Check if your endpoint itself can handle incoming requests. To do so, instead of

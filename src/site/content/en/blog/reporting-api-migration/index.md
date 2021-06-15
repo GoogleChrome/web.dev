@@ -49,18 +49,18 @@ traffic** as you or external developers migrate to v1 (`Reporting-Endpoints` hea
 
 {% endBanner %}
 
-One important note if you use [Network Error Logging](<https://developers.google.com/web/updates/2018/09/reportingapi?hl=en#:~:text=the%20network%20error%20logging%20(nel)>):
+Keep reading for details and example code!
+
+## Network Error Logging
 
 {% Banner 'caution', 'body' %}
 
-If you use Network Error Logging, continue using `Report-To` (v0) because Network Error Logging isn't
+If you use [Network Error Logging](<https://developers.google.com/web/updates/2018/09/reportingapi?hl=en#:~:text=the%20network%20error%20logging%20(nel)>), continue using `Report-To` (v0) because Network Error Logging isn't
 supported in the Reporting API v1. A new mechanism for Network Error Logging will be
 developed⏤until that's available, the Reporting API v0 should be used.
 As of June 2021, this new mechanism is not shipped yet.
 
 {% endBanner %}
-
-Keep reading for details and example code!
 
 ## Demo and code
 
@@ -282,9 +282,11 @@ these browsers at the moment but this may change. {% endAside
    One exception: if you do need Network Error Logging reports, keep **Report-To** until a
    new mechanim is in place for Network Error Logging.
 
+See code examples in the [migration cookbook](#basic-migration).
+
 ### Migration steps for CSP reporting
 
-There are two ways [CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) violation reports can be configured:
+There are two ways [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) violation reports can be configured:
 
 - With the CSP header alone via the `report-uri` directive. This has wide browser support, across Chrome, Firefox, Safari and Edge. Reports are sent with the content-type `application/csp-report` and have a format that's specific to CSP. These reports are called "CSP Level 2 Reports" and do **not** rely on the Reporting API.
 - With the Reporting API, that is via `Report-To` header (v0, legacy) or the `Reporting-Endpoints` (v1). This is supported only by Chrome and Edge. Report requests have the same format as other Reporting API requests, and the same content-type "application/reports+json".
@@ -310,7 +312,7 @@ However, because of the state of browser support, it's recommended that you keep
    `Reporting-Endpoints`. Keep `report-uri` so you still get reports for browsers that
    only support it.
 
-See details in the [migration cookbook](#csp-reporting-migration).
+See code examples in the [migration cookbook](#csp-reporting-migration).
 
 ### Migration Cookbook
 
