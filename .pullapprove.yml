@@ -109,9 +109,12 @@ groups:
       - '"[Identity]" in title or "identity" in labels'
 
   # Content
-  # Handles any changes related to site content.
+  # This is a fallback group that will handle content changes if none of the
+  # previous groups have been tagged in as reviewers.
   content:
     reviewers:
+      users:
+      - rachelandrew
       teams:
       - ~web-dev-content
       - ~web-dev-eng
