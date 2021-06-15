@@ -15,7 +15,7 @@ tags:
   - aurora
 ---
 
-On the Chrome team, we care about user-experience and a thriving web ecosystem.
+On the Chrome team, we care about user experience and a thriving web ecosystem.
 We want users to have the best possible experience on the web, not only with
 static documents but also when they use rich, highly-interactive applications.
 
@@ -38,7 +38,7 @@ of building for the web.
 
 For almost two years, we have worked with some of the most popular frameworks
 such as Next.js, Nuxt.js and Angular, working to improve web performance. We've
-also funded popular tools and libraries such as Vue, Eslint, Webpack. Today, we
+also funded popular tools and libraries such as Vue, ESLint, webpack. Today, we
 are giving this effort a name - **Aurora**.
 
 An aurora is a natural light display that shimmers in the sky. As we are trying
@@ -50,7 +50,7 @@ alt="Aurora logo", width="800", height="450" %}
 
 In the coming months, we'll be sharing a lot more detail on Aurora. This is a
 collaboration between a small team of Chrome engineers (internally codenamed
-WebSDK) and framework authors. Our goal is to deliver the best user-experience
+WebSDK) and framework authors. Our goal is to deliver the best user experience
 possible for production apps regardless of the browser you're rendering in.
 
 ## What is our strategy?
@@ -67,7 +67,7 @@ production environments, and they integrate tools such as compiler, bundler,
 linter etc.
 
 <figure class="w-figure">
-  {% Img src="image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/ZXuXfh0m5vDV8JNqWqNG.png", alt="Chart that shows
+  {% Img src="image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/ARzxz7gjVfJRFwdkzQoS.png", alt="Chart that shows
   common tooling in frameworks", width="800", height="450" %}
   <figcaption class="w-figcaption">
     Common tooling used by framework developers
@@ -101,13 +101,13 @@ humility, curiosity, scientific enquiry and pragmatism. We work with framework
 authors on improvements, collaborate with the community and do our due diligence
 prior to landing any changes.
 
-{% Img src="image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/M1CdgGUu5q2SGg9i428F.png",
+{% Img src="image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/QFTQX7npdBsFheXIqbuc.png",
 alt="Aurora's partner driven process for improving Core Web Vital metrics",
 width="800", height="448" %}
 
 To summarize the steps we take for any new feature we work on:
 
-1. Identify user-experience pain in a popular stack, using representative apps.
+1. Identify user experience pain in a popular stack, using representative apps.
 2. Prototype solutions that address this, with an emphasis on "strong defaults"
    .
 3. Verify the feature with another framework stack, to ensure it is adaptable.
@@ -177,7 +177,7 @@ defaults of multiple frameworks, including:
   allow easier insight into page performance through web vitals and other custom
   metrics.
 - [Granular chunking](/granular-chunking-nextjs/) shipped in Next.js and Gatsby,
-  resulting in reduced bundle sizes by up to 70% while improving caching
+  resulting in 30 to 70 percent reduction in bundle sizes while improving caching
   performance. This has become the default in Webpack 5.
 - A separate [polyfill
   chunk](https://github.com/vercel/next.js/pull/10212#issue-365945853) for older
@@ -191,7 +191,7 @@ easily reap their benefits without adding complexity to their workflow.
 ## What are we planning for 2021?
 
 Through the rest of this year, we will be focused on helping framework stacks
-improve user-experience and how well they perform on metrics such as the Core
+improve user experience and how well they perform on metrics such as the Core
 Web Vitals. This work will include:
 
 - Conformance for enforcing best practices. Check out the [blog post](/conformance) to
@@ -218,7 +218,7 @@ The Aurora team ([Shubhie](https://github.com/spanicker),
 [Alex](https://github.com/atcastle), [Gerald](https://github.com/devknoll),
 [Ralph](https://github.com/janicklas-ralph),
 [Addy](https://github.com/addyosmani)) look forward to continuing to work
-closely with the open-source framework community on improving user-experience
-defaults in Next, Nuxt and Angular. We'll be growing our engagement to cover
+closely with the open-source framework community on improving user experience
+defaults in Next.js, Nuxt.js and Angular. We'll be growing our engagement to cover
 even more frameworks and tools over time. Watch this space for more blog posts,
 talks and RFCs from our team over the coming year :)
