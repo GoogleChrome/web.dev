@@ -6,7 +6,7 @@ authors:
   - swethagopalakrishnan
 date: 2021-06-15
 description: How Blibli achieved a 42% reduction in bounce rate, an 8x improvement in mobile conversion rate, and 2.5x more pages per session.
-hero: image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/0d6gbBsSqZl5Z1GOhBtv.png
+hero: image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/nO8c2UEgQRXsoYVp3tZO.png
 alt: |
   Images of the BliBli app.
 tags:
