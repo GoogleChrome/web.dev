@@ -289,15 +289,18 @@ See code examples in the [migration cookbook](#basic-migration).
 There are two ways [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) violation reports can be configured:
 
 - With the CSP header alone via the `report-uri` directive. This has wide browser support, across Chrome, Firefox, Safari and Edge. Reports are sent with the content-type `application/csp-report` and have a format that's specific to CSP. These reports are called "CSP Level 2 Reports" and do **not** rely on the Reporting API.
-- With the Reporting API, that is via `Report-To` header (v0, legacy) or the `Reporting-Endpoints` (v1). This is supported only by Chrome and Edge. Report requests have the same format as other Reporting API requests, and the same content-type "application/reports+json".
+- With the Reporting API, that is via `Report-To` header (v0, legacy) or better, with the `Reporting-Endpoints` (v1). This is supported in Chrome and Edge only. Report requests have the same format as other Reporting API requests, and the same content-type `application/reports+json`.
 
-✅ Using the Reporting API has benefits over custom CSP reporting:
+Using the first approach (only `report-uri`) is [no longer
+recommended](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri).
+
+✅ Using the Reporting API also has a few benefits:
 
 - You're using a single way to set up reporting for all report types.
-- All report requests generated via the Reporting API have the same format, so you can use a generic endpoint.
-- Tooling is being developed around the Reporting API (for v1).
+- You can use a generic endpoint because all report requests generated via the Reporting API have the same format.
+- In the future, you'll be able to access debugging tooling for the Reporting API v1.
 
-However, because of the state of browser support, it's recommended that you keep `report-uri` alongside the newer `report-to` and `Reportig-Endpoints` in order to get CSP violation reports from multiple browsers.
+However, because of the state of browser support, it's recommended that you keep `report-uri` alongside the Reporting API approach (`Report-To` or better, `Reporting-Endpoints`) in order to get CSP violation reports from multiple browsers.
 
 1. **Step 1 (do now)**: If you haven't added it yet, add `report-to` alongside `report-uri`.
    Browsers that support only `report-uri` (Firefox) will use `report-uri`, and browsers
@@ -413,7 +416,7 @@ Content-Security-Policy: ...; report-uri https://reports.example/main
 ```
 
 {% CompareCaption %}
-Using `report-uri` alone is [no longer
+Using only `report-uri` is [no longer
 recommended](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri).
 If your code looks like above, migrate. See the 'New code' examples below (in green).
 {% endCompareCaption %}
