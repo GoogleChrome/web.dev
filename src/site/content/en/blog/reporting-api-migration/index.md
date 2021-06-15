@@ -36,15 +36,27 @@ named _Reporting API v1_. {% endAside %}
 
 {% Banner 'info', 'body' %}
 
-If you already have reporting functionality for your site, **migrate to v1** but keep
-using v0 simultaneously for some time. Make sure to set the `Reporting-Endpoints` header on
-**all responses** that might generate reports.
+If you already have reporting functionality for your site, **migrate to v1**
+(`Reporting-Endpoints` header) but keep the v0 header (`Report-To`) around for some time.
 
-If you're adding reporting functionality to your site just now, use only v1, except if you
-need **Network Error Logging**.
+If you're adding reporting functionality to your site just now, use only v1 (`Reporting-Endpoints` header).
+
+Make sure to set the `Reporting-Endpoints` header on all responses that might generate
+reports.
 
 If you're maintaining an endpoint service or are operating your own, expect **more
-traffic** as you or external developers migrate to v1.
+traffic** as you or external developers migrate to v1 (`Reporting-Endpoints` header).
+
+{% endBanner %}
+
+One important note if you use [Network Error Logging](<https://developers.google.com/web/updates/2018/09/reportingapi?hl=en#:~:text=the%20network%20error%20logging%20(nel)>):
+
+{% Banner 'caution', 'body' %}
+
+If you use Network Error Logging, continue using `Report-To` (v0) because Network Error Logging isn't
+supported in the Reporting API v1. A new mechanism for Network Error Logging will be
+developed⏤until that's available, the Reporting API v0 should be used.
+As of June 2021, this new mechanism is not shipped yet.
 
 {% endBanner %}
 
@@ -225,7 +237,7 @@ With this in mind:
 - If your site doesn't use the Reporting API yet and you're adding reporting functionality
   to your site now: use only the new Reporting API (v1) i.e. the `Reporting-Endpoints`
   header. You can skip this migration guide. **There's one exception to this**: if you
-  need Network Error Logging, use `Report-To` (v0) because Network Error Logging isn't
+  use Network Error Logging, use `Report-To` (v0) because Network Error Logging isn't
   supported in the Reporting API v1. A new mechanism for Network Error Logging will be
   developed⏤until that's available, the Reporting API v0 should be used. If you need
   Network Error Logging **alongside** other report types, use **both** `Report-To` (v0)
@@ -298,11 +310,13 @@ However, because of the state of browser support, it's recommended that you keep
    `Reporting-Endpoints`. Keep `report-uri` so you still get reports for browsers that
    only support it.
 
+See details in the [migration cookbook](#csp-reporting-migration).
+
 ### Migration Cookbook
 
 #### Basic migration
 
-{% Compare 'worse', 'v0 (legacy)' %}
+{% Compare 'worse', 'Legacy code (with v0)' %}
 
 ```http
 Report-To: { group: "main-endpoint", "endpoints": [ { "url": "https://reports.example/main" }] }, { group: "default-endpoint", "endpoints": [ { "url": "https://reports.example/default" }] }
@@ -310,7 +324,7 @@ Report-To: { group: "main-endpoint", "endpoints": [ { "url": "https://reports.ex
 
 {% endCompare %}
 
-{% Compare 'better', 'v1 (new) alongisde v0 (legacy)' %}
+{% Compare 'better', 'New code (transition code with v0 alongside v1)' %}
 
 ```http
 Reporting-Endpoints: main-endpoint="https://reports.example/main", default="https://reports.example/default"
@@ -319,15 +333,30 @@ Report-To: { group: "main-endpoint", "max_age": 86400, "endpoints": [ { "url": "
 
 {% CompareCaption %}
 
-Note that with v1, you can still send specific report types to specific endpoints, but you
-can have only one URL per endpoint.
-Keep `Report-To` _temporarily_ to avoid losing reports, if you
-already have reporting functionality in your site. Keep `Report-To` _until Network Error
-Logging has a new replacement_, if you need Network Error Logging.
+If you already have reporting functionality in your site, keep `Report-To` **only temporarily** (until most Chrome and Edge clients have been updated) to avoid losing reports.
+
+If you need Network Error Logging, keep `Report-To` **until Network Error Logging has a new replacement**.
 
 {% endCompareCaption %}
 
 {% endCompare %}
+
+{% Compare 'better', 'New code (with v1 only)' %}
+
+```http
+Reporting-Endpoints: main-endpoint="https://reports.example/main", default="https://reports.example/default"
+```
+
+{% CompareCaption %}
+
+This is what your code can look like in the future, once most Chrome and Edge clients have been updated and support the API v1.
+
+{% endCompareCaption %}
+
+{% endCompare %}
+
+Note that with v1, you can still send specific report **types** to specific **endpoints**. But you
+can have only one URL per endpoint.
 
 #### Observing all pages
 
@@ -370,6 +399,57 @@ app.get("/page1", (request, response) => {
 
 {% CompareCaption %} With v1, you need to set the `Reporting-Endpoints` header on all
 responses that might generate reports. {% endCompareCaption %}
+
+{% endCompare %}
+
+#### CSP reporting migration
+
+{% Compare 'worse', 'Legacy code, with `report-uri` only' %}
+
+```http
+Content-Security-Policy: ...; report-uri https://reports.example/main
+```
+
+{% CompareCaption %}
+Using `report-uri` alone is [no longer
+recommended](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri).
+If your code looks like above, migrate. See the 'New code' examples below (in green).
+{% endCompareCaption %}
+
+{% endCompare %}
+
+{% Compare 'worse', 'Better legacy code, with `report-uri` *and* the `report-to` directive with the `Report-To` (v0) header' %}
+
+```http
+Content-Security-Policy: ...; report-uri https://reports.example/main; report-to main-endpoint
+Report-To: main-endpoint="https://reports.example/main"
+```
+
+{% CompareCaption %}
+This is better: this code uses `report-to`, the newer replacement to `report-uri`.
+Note that keeping both `report-uri` and `report-to` makes sense because several browsers don't support [`report-to`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to) but support [`report-uri`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri), although it's deprecated.
+
+However, in this example the Reporting API v0 is used (`Report-To` header). Migrate to v1: see the 'New code' examples below (in green).
+
+{% endCompareCaption %}
+
+{% endCompare %}
+
+{% Compare 'better', 'New code, with `report-uri` *and* the `report-to` directive with the `Reporting-Endpoints` (v1) header' %}
+
+```http
+Content-Security-Policy: ...; report-uri https://reports.example/main; report-to main-endpoint
+Reporting-Endpoints: main-endpoint="https://reports.example/main"
+Report-To: ...
+```
+
+{% CompareCaption %}
+
+Keep the `report-uri` directive alongide the `report-to` directive until the `report-to` directive is supported across browsers. See the [browser compatibility table](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to).
+
+Keep `Report-To` alongside `Reporting-Endpoints` temporarily. Once most of your Chrome and Edge visitors have upgraded to 93+ browser versions, remove `Report-To`.
+
+{% endCompareCaption %}
 
 {% endCompare %}
 
