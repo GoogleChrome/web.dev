@@ -180,7 +180,7 @@ Next.js.
 ### Conformance in Other Frameworks
 
 Conformance is being explored in Next.js first with the goal of expanding to other frameworks
-(Nuxt.js, Angular, etc.). ESLint and TypeScript are already used in many frameworks in many
+(Nuxt, Angular, etc.). ESLint and TypeScript are already used in many frameworks in many
 different ways, but the concept of a cohesive, browser-level runtime system is being actively
 explored.
 
