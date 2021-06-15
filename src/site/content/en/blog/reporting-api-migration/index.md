@@ -37,7 +37,7 @@ named _Reporting API v1_. {% endAside %}
 {% Banner 'info', 'body' %}
 
 If you already have reporting functionality for your site, **migrate to v1** but keep
-using v0 simultaneously for some time. Make sure to set the `Reporting-Endpoint` header on
+using v0 simultaneously for some time. Make sure to set the `Reporting-Endpoints` header on
 **all responses** that might generate reports.
 
 If you're adding reporting functionality to your site just now, use only v1, except if you
@@ -375,6 +375,7 @@ responses that might generate reports. {% endCompareCaption %}
 
 ## Further reading
 
+- [Monitor your web application with the Reporting API](/reporting-api) (main post on the Reporting API)
 - [Specification: legacy Reporting API (v0)](https://www.w3.org/TR/reporting/)
 - [Specification: new Reporting API (v1)](https://w3c.github.io/reporting/)
 

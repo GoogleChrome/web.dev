@@ -107,12 +107,14 @@ receives and displays reports. See the
 
 {% Aside %} Note:
 
-- **Network Error Logging** isn't listed because it isn't supported in the new version of
+- [Network Error Logging](<https://developers.google.com/web/updates/2018/09/reportingapi?hl=en#:~:text=the%20network%20error%20logging%20(nel)>) isn't listed because it isn't supported in the new version of
   the API. Check the [migration guide](/reporting-api-migration) for details.
-- **Permissions policy (formerly feature policy)** violation reports may be supported by
-  default in the future. Right now, they're experimental. One example situation where such
-  reports would be generated: if your site has a permission policy to prevent microphone
-  usage, and a script is requesting audio input.
+- **[Permissions
+  policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy)
+  (formerly feature policy)** violation reports may be supported by default in the future.
+  Right now, they're experimental. One example situation where such reports would be
+  generated: if your site has a permission policy to prevent microphone usage, and a
+  script is requesting audio input.
 
 {% endAside %}
 
@@ -128,8 +130,8 @@ receives and displays reports. See the
 Let's assume that your site, `site.example`, has a few policies configured.
 
 You decide to monitor your site in order to know when these policies are violated. To do
-so, you configure a `Reporting-Endpoints` header, and map these endpoint names via
-`'report-to'` in your policies where needed.
+so, you configure a `Reporting-Endpoints` header, and map these endpoint names via the
+`'report-to'` directive in your policies where needed.
 
 ```http
 Reporting-Endpoints: main-endpoint="https://reports.example/main", default="https://reports.example/default"
@@ -143,6 +145,37 @@ Document-Policy: document-write=?0;report-to=main-endpoint;
 ```
 
 Something unforeseen happens, and these policies get violated for some of your users.
+
+{% Details %}
+
+{% DetailsSummary 'h4' %}
+
+Example violations
+
+{% endDetailsSummary %}
+
+`index.html`
+
+```html
+<script src="script.js"></script>
+<!-- load a script that's forbidden as per the Content-Security-Policy-->
+<script src="https://example.com/script.js"></script>
+```
+
+`script.js`, loaded by `index.html`
+
+```javascript
+// Try to use document.write despite the document policy
+try {
+  document.write('<h1>hi</h1>');
+} catch (e) {
+  console.log(e);
+}
+// Try to use a deprecated API
+const webkitStorageInfo = window.webkitStorageInfo;
+```
+
+{% endDetails %}
 
 The browser generates the reports that capture these issues.
 
@@ -373,9 +406,10 @@ the new Reporting API. Read the [migration guide](/reporting-api-migration) for 
 
 - If you're migrating from the legacy Reporting API to the new Reporting API, it may make
   sense to configure **both** `Reporting-Endpoints` and `Report-To`. If you're using
-  reporting for Content-Security-Policy violations via `report-uri` only or via
-  `report-to` and the `Report-To` header, start using `Reporting-Endpoints`. Head over to
-  the [migration guide](/reporting-api-migration) for all details regarding migration.
+  reporting for Content-Security-Policy violations via the `report-uri` directive only, or
+  via the `report-to` directive with the `Report-To` header, start using
+  `Reporting-Endpoints`. Head over to the [migration guide](/reporting-api-migration) for
+  all details regarding migration.
 - When configuring `Reporting-Endpoints`, ensure you have an endpoint named `default` if
   you want to receive intervention, deprecation and crash reports.
 
@@ -402,7 +436,7 @@ reports are sent to the default endpoint.
 
 By contrast, the **other report types** are generated only if an **explicit policy** is
 set up. They'll be sent to the endpoint that's specified by the policy via the `report-to`
-keyword.
+directive.
 
 {% Banner 'caution', 'body' %} Getting the syntax right for declaration can be tricky,
 because not all policies use the same header structure. Depending on the policy, the right
@@ -521,9 +555,10 @@ To answer this, use the console errors and the issues as an indirect debugging t
   </figcaption>
 </figure>
 
-{% Aside %} In Chrome DevTools, features are being developed to enable you to see the
-reports your page generated. Once this is released, you'll be able to see reports within
-Chrome DevTools. {% endAside %}
+{% Aside %} In Chrome DevTools, [features are being
+developed](https://bugs.chromium.org/p/chromium/issues/detail?id=1217725) to enable you to
+see the reports your page generated. Once this is released, you'll be able to see reports
+within Chrome DevTools. {% endAside %}
 
 #### Is the report properly sent and received?
 
@@ -540,12 +575,22 @@ To answer this, try the following:
   generated correctly will not be sent. Common mistakes:
 
   - The report group is used but not configured. Example:
+    {% Compare 'worse', 'Code with a mistake' %}
+
     ```http
     Cross-Origin-Embedder-Policy: "require-corp;report-to='coep-endpoint'"
     Reporting-Endpoints: default= "https://reports.example/default",
     ```
-    COEP reports should be sent to coep-endpoint, but this endpoint name isn't configured
+
+    {% CompareCaption %}
+
+    COEP reports should be sent to `coep-endpoint`, but this endpoint name isn't configured
     in `Reporting-Endpoints`.
+
+    {% endCompareCaption %}
+
+    {% endCompare %}
+
   - The default endpoint is missing; some reports like deprecation and others _need_ the
     endpoint named `default`.
 
@@ -569,10 +614,10 @@ there's an issue with the endpoint's configuration.
 
 ## Further reading
 
-- [Specification: legacy Reporting API (v0)](https://www.w3.org/TR/reporting/)
-- [Specification: new Reporting API (v1)](https://w3c.github.io/reporting/)
 - [Migration guide from reporting API v0 to v1](/reporting-api-migration)
 - [ReportingObserver](/reporting-observer)
+- [Specification: legacy Reporting API (v0)](https://www.w3.org/TR/reporting/)
+- [Specification: new Reporting API (v1)](https://w3c.github.io/reporting/)
 
 _Hero image by [Nine Koepfer / @enka80](https://unsplash.com/@enka80) on
 [Unsplash](https://unsplash.com/photos/iPbwEiWkVMQ), edited._ _With many thanks to Ian
