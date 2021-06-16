@@ -8,7 +8,7 @@ authors:
 date: 2021-06-14
 updated: 2021-06-14
 description: |
-  Migrate to the new Reporting API.
+  A new version of the Reporting API is available. It's simpler, more private, and more likely to be supported across browsers. This post goes over how to migrate to the new version of the Reporting API.
 hero: image/O2RNUyVSLubjvENAT3e7JSdqSOx1/PYEe5UP3bVYzPMXdQc0X.jpg
 alt: |
   A person and their refection on wet sand, symbolizing the migration from the legacy to the new Reporting API.
