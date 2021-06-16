@@ -263,7 +263,7 @@ original video. Squashed or stretched videos looks awful.
 [Try it]
 
 Compare the [responsive sample] to the [unresponsive version]. As you can see,
-it's not a great user experience with the unresponsive version.
+the unresponsive version isn't a great user experience.
 
 ### Device orientation
 
