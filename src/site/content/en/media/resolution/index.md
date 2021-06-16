@@ -60,7 +60,7 @@ to get it set up with Docker.
     /media # ffmpeg -i glocken.mov -b:v 350k -b:a 64k -s 1280x720 glocken_3g_720p.webm
     ```
 
-We should now have the following files created:
+The following files should now exist:
 
 ```bash
 /media # ls -l
