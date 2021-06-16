@@ -3,7 +3,7 @@ layout: post
 title: Ensure CSP is Effective Against XSS
 description: |
   Learn about preventing XSS attacks with a strict CSP.
-date: 2021-06-02
+date: 2021-06-16
 #updated: 2021-06-02
 web_lighthouse:
   - csp-xss
