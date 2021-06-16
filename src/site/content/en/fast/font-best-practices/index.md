@@ -318,18 +318,19 @@ The idea behind **[variable
 {% Aside %}
 
 We often refer to "Times New Roman" and "Helvetica" as fonts. However,
-technically speaking, these are typefaces. A typeface is composed of fonts -
-each of these fonts represents a particular variation of the typeface (for
-example, italics, regular, bold). A font file contains a single font.
+technically speaking, these are font _families_. A family is composed of styles,
+which are particular variations of the typeface (for example, light, medium, 
+or bold italic). A font file contains a single style unless it is a variable font.
+A typeface is the underlying design, which can be expressed as digital fonts -
+and in physical type, like carved woodblocks or metal.
 
 {% endAside %}
 
 Not everyone will benefit from switching to variable fonts. [Variable
-fonts](/variable-fonts/) typically have larger file sizes than
-non-variable fonts. Sites that will see the largest improvement from using
-variable fonts are sites that use (and need to use) a variety of font styles and
-weights.
-
+fonts](/variable-fonts/) contain many styles, so typically have larger file
+sizes than individual non-variable fonts that only contain one style.
+Sites that will see the largest improvement from using variable fonts are 
+those that use (and need to use) a variety of font styles and weights.
 
 
 ## Font rendering
