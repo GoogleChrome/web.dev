@@ -6,7 +6,7 @@ authors:
   - derekherman
 description: |
   Working with media often requires changing the characteristics of media files.
-  On this page, we learn about the tools we use and how to install them quickly.
+  On this page, you'll learn about the tools used and how to install them quickly.
 date: 2017-06-09
 updated: 2021-03-07
 tags:
@@ -16,7 +16,7 @@ tags:
 
 Working with media often requires changing the characteristics of media files,
 such as bitrate or resolution. Finding a straightforward way to get started can
-be pretty intimidating. On this page, we will learn about the tools we use and how
+be pretty intimidating. On this page, you will learn about the tools used and how
 to install them quickly.
 
 First, we describe the basic usage for two common command-line media utilities:
@@ -48,7 +48,7 @@ Adaptive Streaming over HTTP ([DASH]) or HTTP Live Streaming ([HLS]). Shaka
 Packager supports key security features: common encryption and Widevine digital
 rights management (DRM). It can also handle live-streaming, and video-on-demand.
 
-Despite what it says on the package, this utility is for more than `C++`
+Despite what it says on the package, this utility is for more than C++
 developers. You can use it as both a library for building media software and as
 a command-line utility for preparing media files for web playback. It's the
 latter capacity that's useful for us here. In fact, for web media creators,
@@ -130,8 +130,8 @@ ffmpeg [GeneralOptions] [InputFileOptions] -i input [OutputFileOptions] output
 ```
 
 Like Shaka Packager this application can handle multiple streams. Some of its
-options are used in multiple locations and have different manipulations on the
-file output depending on where they are in the command. Be aware of this as you
+options are used in multiple locations and manipulate the file output differently
+depending on where they are in the command. Be aware of this as you
 look at [FFmpeg questions on Stack Overflow] and similar sites.
 
 We'll again compare the basic pattern to the example for displaying file
@@ -166,7 +166,7 @@ At least one output file must be specified
 
 ## Installing applications with Docker
 
-If you plan to follow along and try out our commands you could either install the
+If you plan to follow along and try our commands you could either install the
 required tools manually, or take the easy path and use [Docker]. We suggest using
 Docker, because this is going to save you a lot of time. On top of that we've
 provided the instructions to get you set up quickly.
@@ -177,7 +177,7 @@ provided the instructions to get you set up quickly.
 
 1. Create a `docker` and `media` directory inside of `media-tools`.
    This will keep your `media` directory out of the build context. This is important
-   because `media` is where files are stored that we plan to do operation on, and
+   because `media` is where files are stored that we plan to do operations on, and
    some of them could be quite large. Putting the `Dockerfile` directly in
    `media-tools` would slow down building the image if you ever rebuild it down the
    road—perhaps to change the versions installed.

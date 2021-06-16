@@ -45,5 +45,5 @@ supporting accessibility are not that difficult. They are also a regulatory or
 legal requirement in many places.
 {% endAside %}
 
-There is a lot of ground to cover in this section, let's get started by learning
+There is a lot of ground to cover in this section, get started by learning
 how to use the [&lt;video> and &lt;source> tags](/video-and-source-tags/).

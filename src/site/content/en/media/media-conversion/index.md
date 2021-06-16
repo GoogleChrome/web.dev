@@ -20,7 +20,7 @@ show equivalent operations for all procedures, not all operations are possible
 in both applications.
 
 In many cases, the commands we're showing may be combined in a single command
-line operation, and would be when actual used. For example, there's nothing
+line operation, and would be when actually used. For example, there's nothing
 preventing you from setting an output file's bitrate in the same operation as
 a file conversion. For this article, we often show these operations as separate
 commands for the sake of clarity.

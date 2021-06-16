@@ -5,8 +5,8 @@ authors:
   - dero
   - derekherman
 description: |
-  Building a PWA with offline streaming has its challenges. In this article we
-  will learn about the APIs and techniques used to provide users with a
+  Building a PWA with offline streaming has its challenges. In this article you
+  will learn about the APIs and techniques that provide users with a
   delightful offline media experience.
 date: 2021-04-30
 updated: 2021-04-30
@@ -25,17 +25,17 @@ this creates a truly unique problem—media files can be very, *very* large. So
 you might be asking:
 
 - How do I download and store a large video file?
-- And how do I serve it back to the user?
+- And how do I serve it to the user?
 
-In this article we will be discussing answers to these questions, while
+In this article we will discuss answers to these questions, while
 referencing the [Kino] demo PWA we built that provides you with practical
-examples on how you can implement an offline streaming media experience without
+examples of how you can implement an offline streaming media experience without
 using any functional or presentational frameworks. The following examples are
 mainly for educational purposes, because in most cases you should probably use
 one of the existing [Media Frameworks] to provide these features.
 
-Unless you have a good business case for rolling out your own, building a PWA
-with offline streaming has its challenges. In this article we will learn about
+Unless you have a good business case for developing your own, building a PWA
+with offline streaming has its challenges. In this article you will learn about
 the APIs and techniques used to provide users with a delightful offline media
 experience.
 
@@ -43,7 +43,7 @@ experience.
 
 Progressive Web Apps usually use the convenient [Cache API] to both download
 and store the assets required to provide the offline experience: documents,
-stylesheets, images and others.
+stylesheets, images, and others.
 
 Here is a basic example of using the Cache API within a Service Worker:
 
@@ -67,7 +67,7 @@ this.addEventListener('install', function(event) {
 ```
 
 While the example above does technically work, using the Cache API has several
-limitations that makes its usage with large files impractical.
+limitations that makes its use with large files impractical.
 
 For example, the Cache API doesn't:
 - Allow you to easily pause and resume downloads
@@ -88,7 +88,7 @@ enhancement of the Fetch API in browsers that [support Background Fetch].
 
 Now that you can read the chunks of data with the [Fetch API] you also need to
 store them. Chances are there is a bunch of metadata associated with your media
-file. Such as: name, description, runtime length, category etc.
+file such as: name, description, runtime length, category, etc.
 
 You're not storing just the one media file, you are storing a structured object,
 and the media file is just one of its properties.
@@ -108,9 +108,9 @@ We built a couple of interesting features around the Fetch API in our demo PWA,
 which we named [Kino]—the [source code] is public so feel free to review it.
 
 - The ability to pause and resume incomplete downloads.
-- A custom buffer for storing chunks of data into the database.
+- A custom buffer for storing chunks of data in the database.
 
-Before we take a look at how those features are implemented, let's first do a
+Before showing how those features are implemented, we'll first do a
 quick recap of how you can use the Fetch API to download files.
 
 ```javascript
@@ -129,13 +129,13 @@ async function downloadFile(url) {
 }
 ```
 
-Notice how we `await reader.read()` in a loop? That's how you'll receive chunks
+Notice that `await reader.read()` is in a loop? That's how you'll receive chunks
 of data from a readable stream as they arrive from the network. Consider how
 useful this is: you can start processing your data even before it all arrives
 from the network.
 
 {% Aside %}
-If you find the concept of streams confusing, perhaps check out
+If you find the concept of streams confusing, check out
 [Streams–The definitive guide] before you continue.
 {% endAside %}
 

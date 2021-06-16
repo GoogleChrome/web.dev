@@ -5,7 +5,7 @@ authors:
   - joemedley
   - derekherman
 description: |
-  In this section we learn how to format video for mobile web playback, and how
+  In this section you'll learn how to format video for mobile web playback, and how
   to create multiple files to cover a range of browsers, plus how to encrypt them.
 date: 2017-06-30
 updated: 2021-03-07
@@ -17,7 +17,7 @@ tags:
 Now that we've introduced you to the [applications](/media-application-basics/)
 we use when manipulating media files, over the next few pages, we're going to
 take a raw video file from a camera and transform it into a resource that you
-can we can embed in a web page. We're going to show you how to format your
+can embed in a web page. We're going to show you how to format your
 video for mobile web playback, and how to create multiple files to cover a
 range of browsers. Specifically, we'll create a WebM file for use on Chrome and
 an MP4 file for use on other browsers.
@@ -30,7 +30,7 @@ characteristics:
   and video streams.
 * A [**Resolution**](/resolution/) appropriate for your users' devices.
 * A [**Bitrate**](/bitrate/) that doesn't overload your users' network bandwidth.
-* Viewable on all major browsers using **appropriate technologies**.
+* A result that's viewable on all major browsers using **appropriate technologies**.
 {% endAside %}
 
 Plus we will dive deeper into common commands used for

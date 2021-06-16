@@ -119,8 +119,9 @@ Just add your text data along with timings.
 
 However, what if you want your captions to render in a different position with
 left or right alignment? Perhaps to align the captions with the current speaker
-position. WebVTT defines settings to do that, and more, directly inside the
-`.vtt` file. Take note on how the caption placement is defined by adding
+position, or to stay out of the way of in-camera text. WebVTT defines settings to do that, 
+and more, directly inside the
+`.vtt` file. Take note of how the caption placement is defined by adding
 settings after the time interval definitions.
 
 ```text

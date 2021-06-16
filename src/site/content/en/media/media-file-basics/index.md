@@ -5,7 +5,7 @@ authors:
   - joemedley
   - derekherman
 description: |
-  You might think that you can take a video camera and upload it to the web as
+  You might think that you can take a video from a camera and upload it to the web as
   is. Preparing a video for serving from your own site is a bit more
   complicated.
 date: 2020-06-19
@@ -15,7 +15,7 @@ tags:
   - video
 ---
 
-In this article we will learn about media file basics such as the concepts of a
+In this article you will learn about media file basics such as the concepts of a
 container, and a few of the many available codec formats that you can use in a
 stream. Plus lightly touch on topics such as adaptive streaming, bitrate, and
 resolution—but we'll dive deeper into all these in later sections.
@@ -25,12 +25,12 @@ resolution—but we'll dive deeper into all these in later sections.
 You might think that you can take a raw file from a video camera and just upload
 it to the web as-is. Indeed, video streaming sites such as [YouTube] or [Vimeo]
 let you do just that, and even provide live-streaming capabilities—typically by
-connecting to your cameras HDMI port and then processing it through a capture
+connecting to your camera's HDMI port and then processing it through a capture
 card. These services greatly simplify video processing and uploading, which
 includes generating the many files and manifests needed for adaptive streaming
 and various resolutions. Plus the many other complicated and nuanced requirements
 that make self-hosting a bit of a chore. Preparing and serving a video from your
-own site, and likely a separate media server, is a bit more complicated that just
+own site, and likely a separate media server, is a bit more complicated than just
 uploading a raw camera file if you care how your users experience your site.
 
 Video files come in a variety of formats. The format that comes off your camera is
@@ -102,11 +102,11 @@ Follow the file type links to view the browsers that support them.
 
 ## Bitrate and resolution
 
-**_Bitrate_** is the maximum number of bits used to encode one second of a stream.
+**Bitrate** is the maximum number of bits used to encode one second of a stream.
 The more bits used to encode a second of stream, the higher the potential detail
 and fidelity. We provide more information about this concept in [Bitrate](/bitrate/).
 
-**_Resolution_** is the amount of information in a single frame of video, given as
+**Resolution** is the amount of information in a single frame of video, given as
 the number of logical pixels in each dimension. We provide more information about
 this concept in [Resolution](/resolution/).
 

@@ -17,7 +17,7 @@ tags:
 
 In this article, you are going to learn about the more advanced concept of media
 streaming and by the end should have a good understanding of the various
-streaming use cases, protocols, and extensions. Let's start with a bit of an
+streaming use cases, protocols, and extensions. Let's start with an
 explanation of what streaming actually is.
 
 Media streaming is a way of delivering and playing back media content piece by
@@ -27,7 +27,7 @@ split into individual chunks of data. Media chunks are later dynamically stitche
 back together at runtime—probably at different [bitrates], which you'll learn
 about later.
 
-Just keep in mind that in order to provide streaming on your website the server
+Keep in mind that to provide streaming on your website the server
 must support the [Range] HTTP request header. Learn more about the `Accept-Ranges`
 header in [The &lt;video> and &lt;source> tags] article.
 
@@ -35,15 +35,15 @@ header in [The &lt;video> and &lt;source> tags] article.
 
 Producing media chunks and the necessary manifests describing the stream is not
 exactly straightforward, but streaming unlocks some interesting use cases that
-are not possible to achieve just by pointing the `<video>` element on the page
+are not possible to achieve just by pointing a `<video>` element 
 to a set of static source files. You'll learn more about how to
 [add media to a web page] in a later section. First, you should know about a
 few use cases for streaming multimedia if you want to go further than just
 loading multiple files into the `<video>` element.
 
 * **Adaptive streaming** is where media chunks are encoded in several
-  bitrates, and the highest quality media chunk that **_fits_** the clients
-  current available bandwidth is returned to the media player.
+  bitrates, and the highest quality media chunk that **_fits_** the client's
+  currently available bandwidth is returned to the media player.
 * **Live broadcast** is where media chunks are encoded and made available in
   real time.
 * **Injecting media** is where other media like advertisements are injected into
@@ -123,13 +123,13 @@ The simplified example above illustrates a few things:
 
 While these basic concepts are simple, and it is certainly possible to write a
 DASH and HLS compatible video player from scratch, most people usually pick one
-of the open source mature solutions that already exist, such as [Shaka Player],
+of the mature open source solutions that already exist, such as [Shaka Player],
 [JW Player], or [Video.js] to name a few.
 
 However, we have created a demo Media PWA called Kino that demonstrates how you
 would go about developing your own basic streaming media website that provides
 offline media playback using just the simple `<video>` element. There are plans
-in our roadmap to support frameworks and digital right management, among other
+in our roadmap to support frameworks and digital rights management, among other
 features. So check back for updates from time to time, or request a feature.
 Read more about it in the [PWA with offline streaming] article.
 

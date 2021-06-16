@@ -59,7 +59,7 @@ them.
 WebM takes longer to create than MP4. This isn't surprising when you look at
 the results. While MP4 compresses to about `83%` of the original file's
 size, WebM is down to `78%` of the original's size, but can be much smaller.
-Your results will vary—it's important to call out that FFmpeg `4.2.2` set the
+Your results will vary. It's important to call out that FFmpeg `4.2.2` set the
 default video bitrate to `200k` and in `4.3.2` it does not set a default bitrate.
 So the video is no longer  **a mere`4%` of the original**. You can see this for yourself
 using the `ls -a` [bash command] in the folder where your media files are located.
@@ -136,7 +136,7 @@ formats recommended for DASH and HLS respectively.
 | opus   | WebM      | libopus    |
 | vorbis | WebM      | libvorbis  |
 
-Next, we'll show you how to change the [bitrate](/bitrate/) of you newly created files.
+Next, we'll show you how to change the [bitrate](/bitrate/) of your newly created files.
 
 [glocken.mov]: https://storage.googleapis.com/web-dev-assets/prepare-media/glocken.mov
 [bash command]: https://en.wikipedia.org/wiki/Ls
