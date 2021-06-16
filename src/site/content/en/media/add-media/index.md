@@ -37,7 +37,7 @@ This section covers these topics.
   resources.
 * In [PWA with offline streaming](/pwa-with-offline-streaming/) you'll learn how
   we built an updated demo PWA that is capable of adaptive streaming and offline
-  playback—without using frameworks, plus you can play with source code.
+  playback without using frameworks. Plus you can play with source code.
 
 {% Aside %}
 Be sure not to skip the accessibility section. The technical aspects of
