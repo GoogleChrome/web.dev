@@ -238,7 +238,7 @@ const fetchHandler = async (event) => {
 self.addEventListener('fetch', fetchHandler);
 ```
 
-So what do you need to do in `getVideoResponse`?
+So what do you need to do in `getVideoResponse()`?
 
 - The `event.respondWith` method expects a `Response` object as a parameter.
 - The [Response constructor] tells us that there are several types of objects we
