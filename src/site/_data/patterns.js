@@ -36,10 +36,35 @@ module.exports = {
     const result = [];
 
     // This is used for both patterns and variants to grab markup, data and docs
-    const buildPattern = (patternPath, patternName) => {
+    const buildPattern = (
+      patternPath,
+      patternName,
+      parentPath = null,
+      parentName = null,
+    ) => {
       const response = {};
 
-      if (!fs.existsSync(path.resolve(patternPath, `${patternName}.njk`))) {
+      // Attempt to load markup from the pass patternPath and patternName first,
+      // but if that can’t be found, attempt to load from the parent instead, if
+      // its details have been passed in
+      if (fs.existsSync(path.resolve(patternPath, `${patternName}.njk`))) {
+        response.markup = fs.readFileSync(
+          path.resolve(patternPath, `${patternName}.njk`),
+          'utf8',
+        );
+      } else {
+        if (parentPath !== null && parentName !== null) {
+          if (fs.existsSync(path.resolve(parentPath, `${parentName}.njk`))) {
+            response.markup = fs.readFileSync(
+              path.resolve(parentPath, `${parentName}.njk`),
+              'utf8',
+            );
+          }
+        }
+      }
+
+      // All markup avenues exhausted so time to bail out
+      if (!response.markup.length) {
         console.log(
           warning(
             `Markup file, ${patternName}.njk wasn’t found, so this pattern (${patternPath}) can’t be built up`,
@@ -47,11 +72,6 @@ module.exports = {
         );
         return null;
       }
-
-      response.markup = fs.readFileSync(
-        path.resolve(patternPath, `${patternName}.njk`),
-        'utf8',
-      );
 
       if (fs.existsSync(path.resolve(patternPath, `${patternName}.json`))) {
         response.data = buildPatternData(
@@ -122,7 +142,7 @@ module.exports = {
             ...{
               previewUrl: `/design-system/preview/${patternName}/${variantName}/`,
             },
-            ...buildPattern(variantRoot, variantName),
+            ...buildPattern(variantRoot, variantName, patternRoot, patternName),
           };
         });
       }
