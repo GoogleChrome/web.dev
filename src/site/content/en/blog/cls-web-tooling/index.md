@@ -95,13 +95,13 @@ as well as which tools still provide the ability to benchmark against the origin
         <td><a href="https://developers.google.com/speed/docs/insights/v5/get-started">
         PSI API</a></td>
         <td>1 June 2021</td>
-        <td>Available in the `lighthouseResult` as `totalCumulativeLayoutShift`. Not available in the field `loadingExperience` data</td>
+        <td>Available in the <code>lighthouseResult</code> as <code>totalCumulativeLayoutShift</code>. Not available in the field <code>loadingExperience</code> data</td>
       </tr>
       <tr>
         <td><a href="https://web.dev/chrome-ux-report-bigquery/">
         Chrome UX Report (CrUX) - BigQuery</a></td>
         <td>202105 dataset, published 8 June 2021</td>
-        <td>Available as `experimental.uncapped_cumulative_layout_shift` through 202111</td>
+        <td>Available as <code>experimental.uncapped_cumulative_layout_shift</code> through 202111</td>
       </tr>
       <tr>
         <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report/api/reference">
