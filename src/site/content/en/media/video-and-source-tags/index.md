@@ -67,7 +67,7 @@ in this article.
 
 {% Aside %}
 Notice in the previous example that the `controls` attribute was introduced.
-which instructs browsers to allow the user to control video playback, including
+This instructs browsers to allow the user to control video playback, including
 volume, seeking, selecting captions, and pause/resume playback among others.
 {% endAside %}
 
