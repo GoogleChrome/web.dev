@@ -416,7 +416,7 @@ along with `perspective-origin-x` and `perspective-origin-y` properties to creat
 
 ## Animation functions, gradients and filters
 
-CSS also provides functions that help you [animate](/learn/css/animation) elements,
+CSS also provides functions that help you [animate](/learn/css/animations) elements,
 apply [gradients](/learn/css/gradients) to them and use graphical [filters](/learn/css/filters) to manipulate how they look.
 To keep this module as concise as possible,
 they are covered in the linked modules.
