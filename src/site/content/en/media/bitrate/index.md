@@ -26,7 +26,7 @@ software and algorithms, quality is going to take a hit.
 
 So always start your conversion process with the highest quality source file you
 can get your hands on. Before doing anything, even before changing the codec or
-container, check the files
+container, check the file's
 [display characteristics](/media-conversion/#display-characteristics) and verify
 that your source file has a higher bitrate or resolution than your desired result.
 
