@@ -14,7 +14,7 @@ tags:
   - video
 ---
 
-In the previous [Containers and codecs](/containers-and-codecs/) article, we
+In the previous [Containers and codecs](/containers-and-codecs/) article, you
 learned how to change the extension (container) and codec of a media file. In
 this article, we'll show you how to change bitrate before explaining
 [resolution](/resolution/).
