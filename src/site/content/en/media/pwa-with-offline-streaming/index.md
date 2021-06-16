@@ -208,7 +208,7 @@ very rapid succession. We need to limit the rate of IndexedDB writes. In the
 
 As data chunks arrive from the network, we append them to our buffer first. If
 the incoming data doesn't fit, we flush the full buffer into the database and
-clear it before appending the rest of the data to it. As a result our IndexedDB
+clear it before appending the rest of the data. As a result our IndexedDB
 writes are less frequent, which leads to significantly improved write
 performance.
 
