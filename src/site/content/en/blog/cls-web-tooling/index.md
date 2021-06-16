@@ -100,9 +100,8 @@ as well as which tools still provide the ability to benchmark against the origin
       <tr>
         <td><a href="https://web.dev/chrome-ux-report-bigquery/">
         Chrome UX Report (CrUX) - BigQuery</a></td>
-        <td>8 June 2021</td>
-        <td>After 8 June 2021, available as
-        <code>experimental.uncapped_cumulative_layout_shift</code> (June 8 - Dec 14 2021)</td>
+        <td>202105 dataset, published 8 June 2021</td>
+        <td>Available as `experimental.uncapped_cumulative_layout_shift` through 202111</td>
       </tr>
       <tr>
         <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report/api/reference">
