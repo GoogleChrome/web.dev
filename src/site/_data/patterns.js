@@ -5,7 +5,7 @@ const nunjucks = require('nunjucks');
 const fs = require('fs');
 const path = require('path');
 
-// Set up the chalk warning state
+// Set up the chalk warning and error state
 const warning = chalk.black.bgYellow;
 const error = chalk.black.bgRed;
 
@@ -194,8 +194,6 @@ module.exports = {
             );
             return;
           }
-
-          console.log(variantItem);
 
           patternResponse.variants.push(variantItem);
         });
