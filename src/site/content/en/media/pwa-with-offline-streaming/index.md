@@ -202,8 +202,8 @@ are significantly slower than your download. This isn't because IndexedDB writes
 are slow, it's because we are adding a lot of transactional overhead by creating
 a new transaction for every data chunk that we receive from a network.
 
-The downloaded chunks can be rather small and can be emitted by the stream in a
-very rapid succession. We need to limit the rate of IndexedDB writes. In the
+The downloaded chunks can be rather small and can be emitted by the stream in
+rapid succession. You need to limit the rate of IndexedDB writes. In the
 [Kino] demo PWA we do this by implementing an **intermediary write buffer**.
 
 As data chunks arrive from the network, we append them to our buffer first. If
