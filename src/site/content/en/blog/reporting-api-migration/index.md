@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Migrate to the Reporting API v1
+title: Migrate to Reporting API v1
 subhead: |
   A new version of the Reporting API is available. It's simpler, more private, and more likely to be supported across browsers.
 authors:
