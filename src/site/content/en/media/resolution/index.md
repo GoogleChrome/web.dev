@@ -13,7 +13,7 @@ tags:
   - video
 ---
 
-In the previous articles we learned you how to change the
+In the previous articles you learned how to change the
 [containers, codecs](/containers-and-codecs/), and [bitrate](/bitrate/) of the
 [glocken.mov] media file. This article focuses on changing the resolution.
 
