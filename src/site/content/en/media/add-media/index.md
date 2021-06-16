@@ -21,7 +21,7 @@ we will discuss how we built an updated demo PWA with offline adaptive
 streaming capabilities called Kino.
 
 This section assumes you have a video file that is ready for embedding in a web
-page. A `.mov` file downloaded from a camera will not work—if that's all you
+page. A `.mov` file downloaded from a camera will not work. If that's all you
 have, see [Prepare media files for the web](/prepare-media/) then come back.
 
 This section covers these topics.
