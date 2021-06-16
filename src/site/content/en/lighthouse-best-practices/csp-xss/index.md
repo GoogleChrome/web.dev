@@ -2,7 +2,7 @@
 layout: post
 title: Ensure CSP is Effective Against XSS
 description: |
-  Learn about preventing XSS attacks with a strict CSP.
+  Learn about preventing cross-site scripting (XSS) attacks with a strict Content Security Policy (CSP).
 date: 2021-06-16
 #updated: 2021-06-02
 web_lighthouse:
