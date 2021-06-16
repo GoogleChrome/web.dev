@@ -30,7 +30,7 @@ This section covers these topics.
   learn specifically how to embed a media file in a web page.
 * In [Media accessibility](/media-accessibility/) you'll learn to add captions
   to a media file for hearing impaired.
-* In [Media frameworks](/media-frameworks/) you'll learn the basic about using
+* In [Media frameworks](/media-frameworks/) you'll learn basics about using
   media frameworks like Shaka Player, JW Player, and Video.js.
 * In [Fast playback with audio and video preload](/fast-playback-with-preload/)
   you'll learn to accelerate your media playback by actively preloading
