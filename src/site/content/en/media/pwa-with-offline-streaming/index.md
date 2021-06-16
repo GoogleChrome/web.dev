@@ -315,7 +315,7 @@ features you would find in the [Kino] demo PWA:
   images using the good old [Cache API].
 - Support for video streams (DASH, HLS) download within the app. Because stream
   manifests generally declare multiple sources of different bitrates, we need to
-  transform the manifest file and only download one media version before we store
+  transform the manifest file and only download one media version before storing
   it for offline viewing.
 
 Up next, you will learn about [Fast playback with audio and video preload].
