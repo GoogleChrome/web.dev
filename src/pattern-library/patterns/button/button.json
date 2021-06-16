@@ -9,5 +9,14 @@
   ],
   "context": {
     "text": "A button"
-  }
+  },
+  "variants": [
+    {
+      "name": "button-tertiary",
+      "title": "Tertiary",
+      "context": {
+        "text": "Hello m8"
+      }
+    }
+  ]
 }

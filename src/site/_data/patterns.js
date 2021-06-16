@@ -41,6 +41,7 @@ module.exports = {
       patternName,
       parentPath = null,
       parentName = null,
+      contextData = null,
     ) => {
       const response = {};
 
@@ -73,7 +74,16 @@ module.exports = {
         return null;
       }
 
-      if (fs.existsSync(path.resolve(patternPath, `${patternName}.json`))) {
+      // If specific context data has been passed, we prioritise that
+      if (contextData) {
+        response.data = contextData.context
+          ? contextData
+          : {context: contextData};
+      }
+      // If not, we look for a data file
+      else if (
+        fs.existsSync(path.resolve(patternPath, `${patternName}.json`))
+      ) {
         response.data = buildPatternData(
           fs.readFileSync(
             path.resolve(patternPath, `${patternName}.json`),
@@ -81,11 +91,11 @@ module.exports = {
           ),
           path.resolve(patternPath, `${patternName}.json`),
         );
-
-        response.rendered = nunjucks.renderString(response.markup, {
-          data: response.data.context || {},
-        });
       }
+
+      response.rendered = nunjucks.renderString(response.markup, {
+        data: response.data.context || {},
+      });
 
       if (fs.existsSync(path.resolve(patternPath, `${patternName}.md`))) {
         response.docs = fs.readFileSync(
@@ -118,6 +128,7 @@ module.exports = {
       const patternName = getPatternName(patternRoot);
       const patternResponse = buildPattern(patternRoot, patternName);
       const patternVariantsRoot = path.resolve(patternRoot, 'variants');
+      const patterVariantsData = patternResponse.data.variants || [];
 
       // Error will have been logged in buildPattern, but this is
       // not an acceptable response.
@@ -129,8 +140,8 @@ module.exports = {
       patternResponse.url = `/design-system/pattern/${patternName}/`;
       patternResponse.previewUrl = `/design-system/preview/${patternName}/`;
 
-      // If this pattern has a variants folder, run the whole
-      // process on all that can be found
+      // If this pattern has a variants folder
+      // run the whole process on all that can be found
       if (fs.existsSync(patternVariantsRoot)) {
         const variants = getPatternPaths(patternVariantsRoot);
 
@@ -140,11 +151,61 @@ module.exports = {
 
           return {
             ...{
+              name: variantName,
               previewUrl: `/design-system/preview/${patternName}/${variantName}/`,
             },
             ...buildPattern(variantRoot, variantName, patternRoot, patternName),
           };
         });
+      }
+
+      // If variants are defined in the root pattern's config,
+      // we need to render them too, using the root pattern's markup
+      if (patterVariantsData.length) {
+        const dataVariantItems = [];
+
+        patterVariantsData.forEach((variant) => {
+          dataVariantItems.push({
+            ...{
+              name: variant.name,
+              previewUrl: `/design-system/preview/${patternName}/${variant.name}/`,
+            },
+            ...buildPattern(patternRoot, patternName, null, null, {
+              title: variant.title || variant.name,
+              context: variant.context,
+            }),
+          });
+        });
+
+        // Now with the data variants built, we need to loop,
+        // check that a file-based one wasn't already made,
+        // then add it to the collection
+        dataVariantItems.forEach((variantItem) => {
+          const existingPattern = patternResponse.variants.find(
+            (x) => x.name === variantItem.name,
+          );
+
+          // Variant data files take priority, so if a rendered pattern exists, bail on this iteration
+          if (existingPattern) {
+            console.log(
+              warning(
+                `The variant, ${variantItem.name} was already processed with a data file, which takes priority over variants defined in the root pattern’ (${patternName}) data file`,
+              ),
+            );
+            return;
+          }
+
+          console.log(variantItem);
+
+          patternResponse.variants.push(variantItem);
+        });
+      }
+
+      // Lastly, sort variants by name
+      if (patternResponse.variants) {
+        patternResponse.variants = patternResponse.variants.sort((a, b) =>
+          a.name.localeCompare(b.name),
+        );
       }
 
       result.push(patternResponse);
