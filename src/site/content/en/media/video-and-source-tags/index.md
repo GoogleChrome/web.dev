@@ -306,7 +306,7 @@ video immediately. The precise way it works depends on the platform and browser.
   viewing is on desktop and whether the mobile user has added your site or app
   to their homescreen. For details, see [Autoplay best practices].
 
-* Firefox: Blocks all video and sound, but gives user the ability to relax these
+* Firefox: Blocks all video and sound, but gives users the ability to relax these
   restrictions for either all sites or particular sites. For details, see
   [Allow or block media autoplay in Firefox]
 
