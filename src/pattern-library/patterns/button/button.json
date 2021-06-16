@@ -12,10 +12,19 @@
   },
   "variants": [
     {
-      "name": "button-tertiary",
-      "title": "Tertiary",
+      "name": "primary",
+      "title": "Primary",
       "context": {
-        "text": "Hello m8"
+        "text": "A primary button",
+        "modifier": "w-button--primary"
+      }
+    },
+    {
+      "name": "secondary",
+      "title": "Secondary",
+      "context": {
+        "text": "A secondary button",
+        "modifier": "w-button--secondary"
       }
     }
   ]
