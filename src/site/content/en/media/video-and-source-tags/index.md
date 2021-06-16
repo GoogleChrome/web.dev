@@ -24,7 +24,7 @@ MP4 files for different browsers.
 For anyone to see your video, you still need to add it to a web page. Doing so
 properly requires adding two HTML elements: the [`<video>`] element and the
 [`<source>`] to your web page. In addition to basics about these tags, this
-article also explains attributes you should add to those tags to craft a good
+article explains attributes you should add to those tags to craft a good
 user experience.
 
 {% Aside %}
