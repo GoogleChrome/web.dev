@@ -34,7 +34,6 @@ named _Reporting API v1_. {% endAside %}
 
 ## Summary
 
-{% Banner 'info', 'body' %}
 
 If you already have reporting functionality for your site, **migrate to v1**
 (`Reporting-Endpoints` header) but keep the v0 header (`Report-To`) around for some time.
@@ -47,7 +46,6 @@ reports.
 If you're maintaining an endpoint service or are operating your own, expect **more
 traffic** as you or external developers migrate to v1 (`Reporting-Endpoints` header).
 
-{% endBanner %}
 
 Keep reading for details and example code!
 
