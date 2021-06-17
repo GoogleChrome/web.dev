@@ -277,8 +277,8 @@ these browsers at the moment but this may change. {% endAside
    or Edge installs (93 and later), remove **Report-To** (v0) and keep only
    `Reporting-Endpoints`.
 
-   One exception: if you do need Network Error Logging reports, keep **Report-To** until a
-   new mechanim is in place for Network Error Logging.
+   One exception: if you do need Network Error Logging reports, keep `Report-To` until a
+   new mechanism is in place for Network Error Logging.
 
 See code examples in the [migration cookbook](#basic-migration).
 
