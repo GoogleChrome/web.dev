@@ -15,29 +15,22 @@
  */
 
 declare global {
-  export interface TagsItem {
-    data: {
-      /**
-       * When the first post was created.
-       */
-      date?: Date;
-      subhead: string;
-      tags: string[];
-      title: string;
-      /**
-       * When the last post was last created.
-       */
-      updated?: Date;
-    };
-    description: string;
-    elements: EleventyCollectionItem[];
-    href: string;
-    key: string;
-    title: string;
-    url: string;
+  interface TagsDataField extends VirtualDataField {
+    tags: string[];
   }
+
+  export interface TagsItem
+    extends VirtualCollectionItem<TagsDataField, TagsDataItem> {}
+
+  export interface TagsExpandedItem
+    extends VirtualCollectionExpandedItem<TagsDataField, TagsDataItem> {}
+
   export interface Tags {
     [key: string]: TagsItem;
+  }
+
+  export interface TagsExpanded {
+    [key: string]: TagsExpandedItem;
   }
 }
 

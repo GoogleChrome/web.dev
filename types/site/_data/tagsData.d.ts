@@ -15,13 +15,10 @@
  */
 
 declare global {
-  export interface TagsDataItem {
-    description?: string;
-    title: string;
-  };
+  export interface TagsDataItem {}
   export interface TagsData {
     [key: string]: TagsDataItem;
-  };
+  }
 }
 
 // empty export to keep file a module

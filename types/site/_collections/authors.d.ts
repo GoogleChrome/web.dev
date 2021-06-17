@@ -15,30 +15,18 @@
  */
 
 declare global {
-  export interface AuthorsItem extends AuthorsDataItem {
-    data: {
-      alt?: string;
-      /**
-       * When the first post was created.
-       */
-      date?: Date;
-      hero?: string;
-      subhead: string;
-      title: string;
-      /**
-       * When the last post was last created.
-       */
-      updated?: Date;
-    };
-    description: string;
-    elements: EleventyCollectionItem[];
-    href: string;
-    key: string;
-    title: string;
-    url: string;
-  }
+  export interface AuthorsItem
+    extends VirtualCollectionItem<{}, AuthorsDataItem> {}
+
+  export interface AuthorsExpandedItem
+    extends VirtualCollectionExpandedItem<{}, AuthorsDataItem> {}
+
   export interface Authors {
     [key: string]: AuthorsItem;
+  }
+
+  export interface AuthorsExpanded {
+    [key: string]: AuthorsExpandedItem;
   }
 }
 

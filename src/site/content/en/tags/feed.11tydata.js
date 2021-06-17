@@ -15,9 +15,10 @@
  */
 
 const {feed} = require('../../../_collections/hooks/tags');
+const {lang} = require('../lang');
 
 module.exports = {
   pagination: {
-    before: (tags) => feed(tags),
+    before: (tags) => feed(tags, lang),
   },
 };

@@ -37,31 +37,13 @@ module.exports = (collections) => {
 
   Object.keys(tagsData).forEach((key) => {
     const tagData = tagsData[key];
-    const title = tagData.title;
-    const description =
-      tagData.description ||
-      `Our latest news, updates, and stories about ${title.toLowerCase()}.`;
     const href = `/tags/${key}/`;
-
-    /** @type TagsItem */
-    const tag = {
-      ...tagData,
-      data: {
-        subhead: description,
-        title,
-        tags: [key],
-      },
-      description,
-      elements: [],
-      href,
-      key,
-      title,
-      url: href,
-    };
+    let elements = [];
+    let date, updated;
 
     // Get posts
     if (collections) {
-      tag.elements = collections
+      elements = collections
         .getFilteredByGlob('**/*.md')
         .filter(
           (item) =>
@@ -74,17 +56,31 @@ module.exports = (collections) => {
 
     // Limit posts for percy
     if (process.env.PERCY) {
-      tag.elements = tag.elements.slice(-6);
+      elements = elements.slice(-6);
     }
 
     // Set created on date and updated date
-    if (tag.elements.length > 0) {
-      tag.data.date = tag.elements.slice(-1).pop().data.date;
-      const updated = tag.elements.slice(0, 1).pop().data.date;
-      if (tag.data.date !== updated) {
-        tag.data.updated = updated;
+    if (elements.length > 0) {
+      date = elements.slice(-1).pop().data.date;
+      const tempUpdated = elements.slice(0, 1).pop().data.date;
+      if (date !== tempUpdated) {
+        updated = tempUpdated;
       }
     }
+
+    /** @type TagsItem */
+    const tag = {
+      ...tagData,
+      data: {
+        date,
+        tags: [key],
+        updated,
+      },
+      elements,
+      href,
+      key,
+      url: href,
+    };
 
     if (tag.elements.length > 0 || !collections) {
       tags[tag.key] = tag;

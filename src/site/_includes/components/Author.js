@@ -17,22 +17,25 @@
 const {html} = require('common-tags');
 const AuthorInfo = require('./AuthorInfo');
 const {Img} = require('./Img');
+const {addFields} = require('../../_collections/hooks/utils');
 
 module.exports = ({id, author, showSocialMedia = false, small = false}) => {
   if (!author) {
     console.log(
       `Can't create Author component for "${id}" without author ` +
-        `information. Please check '_data/authorsData.json' and make sure the ` +
+        `information. Please check '_data/i18n/authors.yml' and make sure the ` +
         `author you provide is a key in this object.`,
     );
     return;
   }
 
-  if (!author.name) {
+  if (!author.title) {
+    author = addFields([author], 'i18n.authors')[0];
+  }
+
+  if (!author.title) {
     throw new Error(
-      `Can't create Author with missing author.name. author object: ${JSON.stringify(
-        author,
-      )}`,
+      `Can't create Author with missing author.title, author key: ${id}`,
     );
   }
   const img = Img({

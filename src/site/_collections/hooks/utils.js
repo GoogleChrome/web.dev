@@ -21,10 +21,41 @@
 const {PAGINATION_COUNT} = require('../../_utils/constants');
 const addPagination = require('../../_utils/add-pagination');
 const filterByLang = require('../../_filters/filter-by-lang');
+const {defaultLocale} = require('../../_data/site');
+const {i18n} = require('../../_filters/i18n');
 
 /**
- * @param {AuthorsItem[]|TagsItem[]} items
- * @return {TODO[]}
+ * @param {VirtualCollectionItem[]} items
+ * @param {string} path
+ * @param {string} [lang]
+ * @return {VirtualCollectionExpandedItem[]}
+ */
+const addFields = (items, path, lang = defaultLocale) => {
+  return items.map((s) => {
+    const title = i18n(`${path}.${s.key}.title`, lang);
+    const description = i18n(`${path}.${s.key}.description`, lang);
+
+    return {
+      ...s,
+      ...{
+        description,
+        title,
+        data: {
+          alt: title,
+          date: s.data.date,
+          hero: s.data.hero,
+          subhead: description,
+          title,
+          updated: s.data.updated,
+        },
+      },
+    };
+  });
+};
+
+/**
+ * @param {VirtualCollectionExpandedItem[]} items
+ * @return {VirtualCollectionExpandedItem[]}
  */
 const feed = (items) => {
   const filteredFeed = [];
@@ -46,7 +77,7 @@ const feed = (items) => {
 };
 
 /**
- * @param {AuthorsItem[]|TagsItem[]} items
+ * @param {VirtualCollectionExpandedItem[]} items
  * @param {string} href
  * @param {string[]} testItems
  * @return {Paginated[]}
@@ -66,7 +97,7 @@ const index = (items, href, testItems) => {
 };
 
 /**
- * @param {AuthorsItem[]|TagsItem[]} items
+ * @param {VirtualCollectionExpandedItem[]} items
  * @param {string} lang
  * @return {Paginated[]}
  */
@@ -85,6 +116,7 @@ const individual = (items, lang) => {
 };
 
 module.exports = {
+  addFields,
   feed,
   index,
   individual,

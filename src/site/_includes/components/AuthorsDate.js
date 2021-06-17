@@ -22,9 +22,11 @@
 
 const {html} = require('common-tags');
 const {Img} = require('./Img');
-const authorsCollectionFn = require('../../_collections/authors');
 const prettyDate = require('../../_filters/pretty-date');
 const {i18n} = require('../../_filters/i18n');
+const authorsCollectionFn = require('../../_collections/authors');
+const {addFields} = require('../../_collections/hooks/utils');
+const {defaultLocale} = require('../../_data/site');
 
 /**
  *
@@ -110,32 +112,33 @@ const renderAuthorNames = (pairs) => {
 /**
  * Render an authors card, including any number of authors and an optional date.
  *
- * @param {{authors: Array<string>, date?: Date, images?: number, updated?: Date, locale: string}} arg
- * @param {Authors} [authorsCollectionArg]
+ * @param {{authors: Array<string>, date?: Date, images?: number, updated?: Date, locale?: string}} arg
+ * @param {AuthorsExpanded | Authors} [authorsCollection]
  * @return {string}
  */
 const renderAuthorsDate = (
-  {authors, date, images = 2, updated, locale},
-  authorsCollectionArg,
+  {authors, date, images = 2, updated, locale = defaultLocale},
+  authorsCollection = authorsCollectionFn(),
 ) => {
-  const authorsCollection = authorsCollectionArg
-    ? authorsCollectionArg
-    : authorsCollectionFn();
   const pairs = (authors || []).map((id) => {
-    const info = authorsCollection[id];
+    let info = authorsCollection[id];
     if (!info) {
       throw new Error(
         `Can't create Author component for "${id}" without author ` +
-          `information. Please check '_data/authorsData.json' and make sure the ` +
+          `information. Please check '_data/i18n/authors.yml' and make sure the ` +
           `author you provide is a key in this object.`,
       );
     }
 
+    // @ts-ignore
+    if (!info.title) {
+      info = addFields([info], 'i18n.authors')[0];
+    }
+
+    // @ts-ignore
     if (!info.title) {
       throw new Error(
-        `Can't create Author with missing 'title'. author object: ${JSON.stringify(
-          info,
-        )}`,
+        `Can't create Author with missing 'title'. author id: ${id}}`,
       );
     }
 

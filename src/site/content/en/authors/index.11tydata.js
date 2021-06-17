@@ -15,9 +15,10 @@
  */
 
 const {index} = require('../../../_collections/hooks/authors');
+const {lang} = require('../lang');
 
 module.exports = {
   pagination: {
-    before: (authors) => index(authors),
+    before: (authors) => index(authors, lang),
   },
 };

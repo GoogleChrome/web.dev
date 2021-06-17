@@ -15,9 +15,10 @@
  */
 
 const {feed} = require('../../../_collections/hooks/authors');
+const {lang} = require('../lang');
 
 module.exports = {
   pagination: {
-    before: (authors) => feed(authors),
+    before: (authors) => feed(authors, lang),
   },
 };
