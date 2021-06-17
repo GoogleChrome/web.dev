@@ -50,7 +50,7 @@ While [lab measurement](/user-centric-performance-metrics/#in-the-lab) is certai
 {% Aside %}If you’re interested in a deeper dive into some of the metrics we looked into, here is a [study about TBT](https://docs.google.com/document/d/1xCERB_X7PiP5RAZDwyIkODnIXoBk-Oo7Mi9266aEdGg/edit#heading=h.ypzsa9g2mv2g) and a [study about TTI](https://docs.google.com/document/d/1sHy6R58olikMTwk5hkJL4jd9S1jbksdMY5ve3Shdg-g/edit).
 {% endAside %}
 
-{%Details%}
+{% Details %}
 
 {% DetailsSummary %}
 A note on measuring TTI in the field
@@ -93,7 +93,7 @@ The time between steps (1) and (5) above is an event's ***duration***. This is w
 
 The event's duration includes the delay, but it also includes the work occurring in event handlers and the work the browser needs to do to paint the next frame after those handlers have run. The duration of an event is currently available in the [Event Timing API](/#event-timing-api) via the entry's [duration](https://w3c.github.io/performance-timeline/#dom-performanceentry-duration) attribute.
 
-{%Details}
+{% Details %}
 
 {% DetailsSummary %}
 A note on asynchronous tasks
@@ -182,7 +182,7 @@ The following table lists the four interactions we want to define along with the
 
 The first three interactions listed above (keyboard, tap, and drag) are currently covered by FID. For our new responsiveness metric, we want to include scrolling as well, since scrolling is extremely common on the web and is a critical aspect of how responsive a page feels to users.
 
-{%Details}
+{% Details %}
 
 {% DetailsSummary %}
 A note on start and end
@@ -203,7 +203,7 @@ The `keydown` and `keypress` occur when the user presses the key, while the `key
 
 In order to capture the overall time taken by the keyboard interaction, we can compute the maximum of the duration of the `keydown` and the `keyup` events. The `keypress` event is deprecated, and it should be fired in the same task as the `keydown` event, so its duration will always overlap with `keydown`'s.
 
-{%Details%}
+{% Details %}
 
 {% DetailsSummary %}
 A note on repeating keypresses
@@ -220,7 +220,7 @@ For a tap or click, the release is generally the one which triggers the majority
 
 We’d like to include the event durations for all of these events, but as many of them overlap completely, we need to measure just `pointerdown`, `pointerup`, and `click` to cover the full interaction.
 
-{%Details%}
+{% Details %}
 
 {% DetailsSummary %}
 Can we narrow further to just `pointerdown` and `pointerup`?
