@@ -41,7 +41,7 @@ these steps have to happen again.
 This process begins from the step that has to be changed in order to allow the animation to take place.
 
 As mentioned before, these steps are **sequential**.
-For example, if you animation something that changes layout, the paint and composite
+For example, if you animate something that changes layout, the paint and composite
 steps also have to run again. Animating something that changes layout
 is therefore more expensive than animating something that only changes compositing.
 
