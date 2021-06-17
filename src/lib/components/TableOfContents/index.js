@@ -32,7 +32,6 @@ class TableOfContents extends BaseStateElement {
 
   constructor() {
     super();
-    this.scrollSpy = this.scrollSpy.bind(this);
     this.tocActiveClass = 'w-toc__active';
     this.tocBorderClass = 'w-toc__border';
     this.tocVisibleClass = 'w-toc__visible';
@@ -55,15 +54,6 @@ class TableOfContents extends BaseStateElement {
       console.warn(`Article container not found.`);
       return;
     }
-
-    this.headings = this.articleContent.querySelectorAll(
-      'h1[id], h2[id], h3[id]',
-    );
-
-    this.observer = new IntersectionObserver(this.scrollSpy, {
-      rootMargin: '0px 0px -80% 0px',
-    });
-    this.headings.forEach((heading) => this.observer.observe(heading));
   }
 
   render() {
@@ -80,7 +70,9 @@ class TableOfContents extends BaseStateElement {
           @click="${closeToC}"
         ></button>
       </div>
-      <div class="w-toc__content">${html(content)}</div>
+      <web-scroll-spy>
+        <div class="w-toc__content">${html(content)}</div>
+      </web-scroll-spy>
     `;
   }
 
@@ -92,46 +84,6 @@ class TableOfContents extends BaseStateElement {
 
   onStateChanged({isTocOpened}) {
     this.opened = isTocOpened;
-  }
-
-  scrollSpy(headings) {
-    const links = new Map(
-      [...this.querySelectorAll('a')].map((l) => [l.getAttribute('href'), l]),
-    );
-
-    for (const heading of headings) {
-      const href = `#${heading.target.getAttribute('id')}`;
-      const link = links.get(href);
-
-      if (link) {
-        if (heading.intersectionRatio > 0) {
-          link.classList.add(this.tocVisibleClass);
-          this.previouslyActiveHeading = heading.target.getAttribute('id');
-        } else {
-          link.classList.remove(this.tocVisibleClass);
-        }
-      }
-
-      const firstVisibleLink = this.querySelector(`.${this.tocVisibleClass}`);
-
-      links.forEach((link) => {
-        link.classList.remove(this.tocActiveClass, this.tocVisibleClass);
-        link.parentElement.classList.remove(this.tocBorderClass);
-      });
-
-      if (firstVisibleLink) {
-        firstVisibleLink.classList.add(this.tocActiveClass);
-        firstVisibleLink.parentElement.classList.add(this.tocBorderClass);
-      }
-
-      if (!firstVisibleLink && this.previouslyActiveHeading) {
-        const last = this.querySelector(
-          `a[href="#${this.previouslyActiveHeading}"]`,
-        );
-        last.classList.add(this.tocActiveClass);
-        last.parentElement.classList.add(this.tocBorderClass);
-      }
-    }
   }
 }
 
