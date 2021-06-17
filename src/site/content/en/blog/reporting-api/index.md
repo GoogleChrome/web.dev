@@ -559,7 +559,7 @@ it with `--short-reporting-delay` to receive reports almost immediately. Run thi
 in your terminal:
 
 ```bash
-path/to/executable/Chrome --short-reporting-delay
+YOUR_PATH/TO/EXECUTABLE/Chrome --short-reporting-delay
 ```
 
 See [How to run Chromium with flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
