@@ -1,5 +1,5 @@
 ---
-title: Let web applications be file handlers
+title: Let installed web applications be file handlers
 subhead: Register an app as a file handler with the operating system.
 authors:
   - thomassteiner
@@ -7,7 +7,7 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2021-06-03
+updated: 2021-06-17
 tags:
   - blog
   - capabilities
@@ -27,7 +27,7 @@ origin_trial:
 Now that web apps are [capable of reading and writing files](/file-system-access/), the next logical
 step is to let developers declare these very web apps as file handlers for the files their apps can
 create and process. The File Handling API allows you to do exactly this.
-After registering a text editor app as a file handler, you can right-click a `.txt` file on macOS
+After registering a text editor app as a file handler and after installing it, you can right-click a `.txt` file on macOS
 and select "Get Info" to then instruct the OS that it should always open `.txt` files with this app as default.
 
 ### Suggested use cases for the File Handling API {: #use-cases }
@@ -128,7 +128,7 @@ This is for a hypothetical application that handles comma-separated value (`.csv
 scalable vector graphics (`.svg`) files at `/open-svg`, and a made-up Grafr file format with any of
 `.grafr`, `.graf`, or `.graph` as the extension at `/open-graf`.
 
-{% Aside %} For this declaration to have any effect, the application must be installed. You can
+{% Aside 'warning' %} For this declaration to have any effect, the application must be installed. You can
 learn more in an article series on this very site on
 [making your app installable](/progressive-web-apps/#installable). {% endAside %}
 
@@ -163,7 +163,8 @@ added.
 
 ## Demo
 
-I have added file handling support to [Excalidraw][demo], a cartoon-style drawing app. When you
+I have added file handling support to [Excalidraw][demo], a cartoon-style drawing app. To test
+it, you first need to install Excalidraw. When you then
 create a file with it and store it somewhere on your file system, you can open the file via a
 double click, or a right click and then select "Excalidraw" in the context menu. You can check
 out the [implementation][demo-source] in the source code.
@@ -191,7 +192,7 @@ transparency, and ergonomics.
 ## Permissions, permissions persistence, and file handler updates
 
 To ensure user trust and the safety of users' files when the File Handling API is used to open a file,
-a permission prompt will be shown before a PWA can view a file. This permission prompt will be shown
+a permission prompt will be shown before an installed PWA can view a file. This permission prompt will be shown
 right after either of the following scenarios:
 
 * The user selects the PWA to open a file, so that the permission is tightly coupled to the action of
@@ -283,9 +284,6 @@ prioritize features and shows other browser vendors how critical it is to suppor
 - [Chromium tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
 - Blink Component: [`UI>Browser>WebAppInstalls>FileHandling`][blink-component]
-
-### Wanna go deeper {: #deeper-links }
-
 - [TAG Review](https://github.com/w3ctag/design-reviews/issues/371)
 - [Mozilla Standards Position](https://github.com/mozilla/standards-positions/issues/158)
 
