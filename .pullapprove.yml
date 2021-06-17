@@ -11,9 +11,12 @@ version: 3
 # https://docs.pullapprove.com/config/pullapprove-conditions/
 pullapprove_conditions:
 # Don't tag in any reviewers if the PR is work in progress.
-- condition: "'WIP' not in title or not draft"
+- condition: '"WIP" not in title'
   unmet_status: pending
-  explanation: "Work in progress"
+  explanation: 'Work in progress'
+- condition: 'not draft'
+  unmet_status: pending
+  explanation: 'Draft PR'
 
 groups:
   # Learn CSS
