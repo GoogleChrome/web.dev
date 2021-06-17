@@ -284,7 +284,7 @@ One option is to define a budget for the latency of an interaction, which may de
 
 Another option is to compute the average or median latency of the interactions throughout the life of the page. So if we had latencies of 80&nbsp;ms, 90&nbsp;ms, and 100&nbsp;ms, then the average latency for the page would be 90&nbsp;ms. We could also consider the average or median ‘over budget’ to account for different expectations depending on the type of interaction.
 
-## Limitations
+## How does this look like on web performance APIs?
 
 ### What's missing from Event Timing?
 
