@@ -203,6 +203,8 @@ The `keydown` and `keypress` occur when the user presses the key, while the `key
 
 In order to capture the overall time taken by the keyboard interaction, we can compute the maximum of the duration of the `keydown` and the `keyup` events. The `keypress` event is deprecated, and it should be fired in the same task as the `keydown` event, so its duration will always overlap with `keydown`'s.
 
+{%Details%}
+
 {% DetailsSummary %}
 A note on repeating keypresses
 {% endDetailsSummary %}
@@ -217,6 +219,8 @@ Another important user interaction is when the user taps or clicks on a website.
 For a tap or click, the release is generally the one which triggers the majority of reactions, but, as with keyboard interactions, we want to capture the full interaction. And in this case it’s more important to do so because having some UI updates upon tap press is not actually that uncommon.
 
 We’d like to include the event durations for all of these events, but as many of them overlap completely, we need to measure just `pointerdown`, `pointerup`, and `click` to cover the full interaction.
+
+{%Details%}
 
 {% DetailsSummary %}
 Can we narrow further to just `pointerdown` and `pointerup`?
