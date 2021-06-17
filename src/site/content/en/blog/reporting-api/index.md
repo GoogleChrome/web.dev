@@ -30,10 +30,10 @@ Reporting API helps catch some of these errors across your site and transmit the
 endpoint you've specified.
 
 This API enables you to activate a reporting mechanism that's **operated by the browser**.
-When the Reporting API configured on your site, **reports can be generated** when certain
+When the Reporting API is configured on your site, **reports can be generated** when certain
 policies are violated (or when deprecated APIs are used, when the browser intervenes on
 your site or crashes, and more). The browser then sends those report(s) to the
-**endpoint(s) i.e. report collectors** you've configured.
+**endpoint(s)**, that is report collectors, you've configured.
 
 Setting up the Reporting API gives you peace of mind that when users experience these
 types of unforeseen errors, you'll be aware and able to fix them if needed. ✨
@@ -49,7 +49,6 @@ Let's dive in!
 
 ## Demo and code
 
-{% Banner 'info', 'body' %}
 
 💥 [Demo site: report generation page](https://reporting-api-demo.glitch.me). This page
 uses the new Reporting API via the `Reporting-Endpoints` header. See the
@@ -59,7 +58,6 @@ uses the new Reporting API via the `Reporting-Endpoints` header. See the
 receives and displays reports. See the
 [code](https://glitch.com/edit/#!/reports-endpoint).
 
-{% endBanner %}
 
 ## Use cases and report types
 
@@ -117,7 +115,7 @@ the API. Check the [migration guide](/reporting-api-migration/#network-error-log
 policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy)
 (formerly feature policy)** violation reports may be supported by default in the future.
 Right now, they're experimental. One example situation where such reports would be
-generated: if your site has a permission policy to prevent microphone usage, and a
+generated is if your site has a permission policy to prevent microphone usage, and a
 script is requesting audio input.
 
 {% endAside %}
@@ -127,7 +125,7 @@ script is requesting audio input.
 <figure class="w-figure">
 {% Img src="image/O2RNUyVSLubjvENAT3e7JSdqSOx1/RgiT3KRy6w99wG1cAhha.png", alt="Diagram summarizing the steps below, from report generation to report access by the developer", width="800", height="240" %}
   <figcaption class="w-figcaption">
-    Diagram: how reports are generated and sent
+    How reports are generated and sent.
   </figcaption>
 </figure>
 
@@ -336,12 +334,12 @@ by **third-party scripts** running on your page.
 
 ❌ Violations committed by a **cross-origin iframe** on your page will **not** be reported
 to your endpoint(s), to ensure privacy. The iframe could set up its own reporting and even
-report to your site's (i.e. the first-party's) reporting service, but that's a decision
+report to your site's (that is, the first-party's) reporting service, but that's a decision
 that the framed site would have to make.
 
 {% Aside 'gotchas' %}
 
-In Chrome DevTools, you'll see a console error or warning pop up for violations that are
+In Chrome DevTools, you'll see a console error or warning pop-up for violations that are
 committed by third-party script but also by third-party iframes.
 
 {% endAside %}
@@ -420,7 +418,7 @@ instead of actually inducing breakage for your end-users. {% endAside %}
 ### ReportingObserver
 
 You may want to monitor your site but have no possibility to set headers on your server.
-In that case, use [ReportingObserver](/reporting-observer).
+In that case, use [`ReportingObserver`](/reporting-observer).
 
 This JavaScript API can observe simple client-side warnings like deprecation and
 intervention. It does not support other types of errors, like CSP or COOP/COEP violations.
@@ -429,7 +427,7 @@ This API is also useful in case you need to react to violations in real-time.
 
 ## How-to: Configure report sending
 
-### Configure the Reporting-Endpoints header
+### Configure the `Reporting-Endpoints` header
 
 ```http
 Reporting-Endpoints: main-endpoint="https://reports.example/main", default="https://reports.example/default"
@@ -444,7 +442,7 @@ Reporting-Endpoints: main-endpoint="https://reports.example/main", default="http
 Report-To: ...
 ```
 
-**Note:** If you're using reporting for **Content-Security-Policy** violations via the
+Note that if you're using reporting for `Content-Security-Policy` violations via the
 `report-uri` directive only, or via the `Report-To` header, start using
 `Reporting-Endpoints` instead. See details in the [Migration guide > Migration steps for
 CSP reporting](/reporting-api-migration/#migration-steps-for-csp-reporting).
@@ -498,7 +496,7 @@ When deciding where to send your reports, you have two options:
 - Option 1: Use an existing report collector service.
 - Option 2: Build and operate your own reporting collector.
 
-**Also note that can set multiple endpoints**. This can be handy to separate reports:
+**Also note that you can set multiple endpoints**. This can be handy to separate reports:
 
 - Maybe your analytics provider takes care of some kinds of reports, and you have an
   in-house solution for the others.
@@ -512,7 +510,7 @@ Some examples of report collector services are [report-uri](https://report-uri.c
 issue](https://github.com/GoogleChrome/web.dev/issues) to let us know, and we'll update
 this post!
 
-**🧐 Things to consider when selecting a report collector as a service:**
+**Things to consider when selecting a report collector as a service** 🧐 
 
 - Does this collector support all report types? For example, some reporting endpoint
   solutions support COOP/COEP reports, but not all do.
@@ -533,7 +531,7 @@ reports.
 - Click **Remix to edit**
 - You now have your clone ✨ You can customize it for your own purposes.
 
-**🧐 Things to consider when building your own report collector:**
+**Things to consider when building your own report collector** 🧐 
 
 - If your endpoint URL lives on a different origin than your site, the endpoint should
   support [CORS preflight
@@ -541,7 +539,7 @@ reports.
 - To recognize reports requests sent by the browser to your endpoint, check for `POST`
   requests with a `Content-Type` of `application/reports+json`.
 
-Our boilerplate report collector linked above does both these things.
+Our boilerplate report collector linked above does both of these things.
 
 ## How-to: Debug your reporting setup
 
@@ -554,7 +552,7 @@ will trigger reports of all types, check out the [demo](#demo-and-code).
 ### Saving time
 
 Reports may be sent with a delay, up to a minute, to preserve user experience. But when
-debugging, a minute is a long time 😴. Luckily, when debugging in Chrome, you can launch
+debugging, a minute is a long time. 😴 Luckily, when debugging in Chrome, you can launch
 it with `--short-reporting-delay` to receive reports almost immediately. Run this command
 in your terminal:
 
