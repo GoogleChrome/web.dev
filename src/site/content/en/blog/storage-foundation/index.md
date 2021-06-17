@@ -9,7 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-06-16
-# updated: YYYY-MM-DD
+updated: 2021-06-17
 description: |
   The Storage Foundation API is a storage API that resembles a basic file system,
   with direct access to stored data through buffers and offsets. It gives
@@ -210,7 +210,7 @@ it to successfully return. {% endAside %}
 {% Aside %} There is currently an
 [ongoing effort](https://docs.google.com/document/d/1g7ZCqZ5NdiU7oqyCpsc2iZ7rRAY1ZXO-9VoG4LfP7fM/edit?usp=sharing)
 to augment the
-[origin private file system](http://localhost:8080/file-system-access/#accessing-the-origin-private-file-system)
+[origin private file system](/file-system-access/#accessing-the-origin-private-file-system)
 of the [File System Access API](/file-system-access/) as to not introduce yet another entry point
 for a storage system. This article will be updated as we make progress on this. {% endAside %}
 
@@ -368,7 +368,7 @@ Hero image via [Markus Spiske](https://unsplash.com/@markusspiske) on
 [issues]: https://github.com/WICG/storage-foundation-api-explainer/issues
 [demo]: https://storage-foundation.glitch.me/
 [demo-source]: https://glitch.com/edit/#!/storage-foundation
-[explainer]: https://github.com/WICG/storage-foundation-api-explainer
+[explainer]: https://github.com/WICG/storage-foundation-api-explainer#readme
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=914488
 [cr-status]: https://chromestatus.com/feature/5670244905385984
 [blink-component]: https://chromestatus.com/features#component%3ABlink%3EStorage
