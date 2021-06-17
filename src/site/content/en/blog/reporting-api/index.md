@@ -527,9 +527,9 @@ reports.
 1. Head over to the [boilerplate report
    collector](https://glitch.com/edit/#!/reports-endpoint).
 
-- {% Instruction 'remix' %}
+1. {% Instruction 'remix' %}
 
-3. You now have your clone! You can customize it for your own purposes.
+1. You now have your clone! You can customize it for your own purposes.
 
 **Things to consider when building your own report collector** 🧐
 
