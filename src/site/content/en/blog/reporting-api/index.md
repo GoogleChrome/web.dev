@@ -562,6 +562,10 @@ YOUR_PATH/TO/EXECUTABLE/Chrome --short-reporting-delay
 
 See [How to run Chromium with flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
 
+{% Aside 'gotchas' %}
+This flag is not available via the Chrome UI, it's a command line flag only.
+{% endAside %}
+
 ### Troubleshooting
 
 In case reports don't show up as expected in your endpoint, something is wrong. Here are a
