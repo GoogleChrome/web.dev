@@ -122,8 +122,8 @@ developed⏤until that's available, the Reporting API v0 should be used.
 - Mapping certain endpoints to certain report types is supported in both v0 and v1.
 - The formatting of the rules that generate reports when violated is unchanged.
 - The role of the default endpoint is unchanged.
-- The Reporting API v1 has no impact on the [ReportingObserver](/reporting-observer).
-  ReportingObserver continues getting access to all observable reports, and their format is
+- The Reporting API v1 has no impact on the [`ReportingObserver`](/reporting-observer).
+  `ReportingObserver` continues getting access to all observable reports, and their format is
   identical.
 
 {% Details %} {% DetailsSummary 'h3' %}
@@ -232,12 +232,12 @@ With this in mind:
   the Reporting API v1 (see the [migration steps](#migration-steps)). If your site already
   uses reporting functionality for Content-Security-Policy violations, check the specific [migration
   steps for CSP reporting](#migration-steps-for-csp-reporting).
-- If your site doesn't use the Reporting API yet and you're adding reporting functionality
-  to your site now: use only the new Reporting API (v1) i.e. the `Reporting-Endpoints`
-  header. You can skip this migration guide. **There's one exception to this**: if you
-  use Network Error Logging, use `Report-To` (v0) because Network Error Logging isn't
+- If your site doesn't already use the Reporting API and you're now adding reporting
+  functionality: use the new Reporting API (v1) (the `Reporting-Endpoints`
+  header). **There's one exception to this**: if you need to
+  use Network Error Logging, use `Report-To` (v0). Network Error Logging currently isn't
   supported in the Reporting API v1. A new mechanism for Network Error Logging will be
-  developed⏤until that's available, the Reporting API v0 should be used. If you need
+  developed⏤until that's available, use the Reporting API v0. If you need
   Network Error Logging **alongside** other report types, use **both** `Report-To` (v0)
   and `Reporting-Endpoints` (v1). v0 gives you Network Error Logging and v1 gives you
   reports of all other types.
@@ -274,7 +274,7 @@ these browsers at the moment but this may change. {% endAside
    responses that might generate reports.
 
 3. **Step 3 (start later):** Once all or most of your users have updated to later Chrome
-   or Edge installs (93 and later), remove **Report-To** (v0) and keep only
+   or Edge installs (93 and later), remove `Report-To` (v0) and keep only
    `Reporting-Endpoints`.
 
    One exception: if you do need Network Error Logging reports, keep `Report-To` until a
@@ -310,13 +310,13 @@ In a browser which recognizes `report-uri` and `report-to`, `report-uri` will be
    both older and newer Chrome and Edge clients.
 
 3. **Step 3 (start later):** Once all or most of your users have updated to later Chrome
-   or Edge installs (93 and later), remove **Report-To** (v0) and keep only
+   or Edge installs (93 and later), remove `Report-To` (v0) and keep only
    `Reporting-Endpoints`. Keep `report-uri` so you still get reports for browsers that
    only support it.
 
 See code examples in the [migration cookbook](#csp-reporting-migration).
 
-### Migration Cookbook
+### Migration cookbook
 
 #### Basic migration
 
@@ -339,7 +339,7 @@ Report-To: { group: "main-endpoint", "max_age": 86400, "endpoints": [ { "url": "
 
 If you already have reporting functionality in your site, keep `Report-To` **only temporarily** (until most Chrome and Edge clients have been updated) to avoid losing reports.
 
-If you need Network Error Logging, keep `Report-To` **until Network Error Logging has a new replacement**.
+If you need Network Error Logging, keep `Report-To` **until Network Error Logging replacement becomes available**.
 
 {% endCompareCaption %}
 
