@@ -43,7 +43,13 @@ if (pathIndex > 0 && nameIndex > 0) {
 
   fs.writeFileSync(
     path.join(...[...basePath, `${name}.json`]),
-    `{ "title": "${title || name}" }`,
+    `
+{ 
+  "title": "${title || name}",
+  "context": {
+  }
+}
+`,
   );
 
   if (!isVariant) {

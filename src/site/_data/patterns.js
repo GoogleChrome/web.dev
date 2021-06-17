@@ -140,6 +140,10 @@ module.exports = {
       patternResponse.url = `/design-system/pattern/${patternName}/`;
       patternResponse.previewUrl = `/design-system/preview/${patternName}/`;
 
+      // An empty container for variants for if one or the other methods of loading
+      // them results in nothing
+      patternResponse.variants = [];
+
       // If this pattern has a variants folder
       // run the whole process on all that can be found
       if (fs.existsSync(patternVariantsRoot)) {
@@ -172,7 +176,7 @@ module.exports = {
             },
             ...buildPattern(patternRoot, patternName, null, null, {
               title: variant.title || variant.name,
-              context: variant.context,
+              context: {...patternResponse.data.context, ...variant.context}, // Merge existing context with variant context so we don't have to repeat ourselves a lot
             }),
           });
         });
@@ -199,11 +203,14 @@ module.exports = {
         });
       }
 
-      // Lastly, sort variants by name
-      if (patternResponse.variants) {
-        patternResponse.variants = patternResponse.variants.sort((a, b) =>
-          a.name.localeCompare(b.name),
-        );
+      // Lastly, sort variants by name if pattern hasn't
+      // specifically defined source order sorting
+      if (patternResponse.data.sort !== 'source') {
+        if (patternResponse.variants) {
+          patternResponse.variants = patternResponse.variants.sort((a, b) =>
+            a.name.localeCompare(b.name),
+          );
+        }
       }
 
       result.push(patternResponse);

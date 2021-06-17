@@ -59,7 +59,7 @@ pageScripts:
       {% endif %}
     </div>
   </details>
-  {% if item.variants %}
+  {% if item.variants | length %}
     <h2>Variants</h2>
     {% for variant in item.variants %}
     <h3>{{ variant.data.title }}</h3>
