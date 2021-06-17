@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-06-03
-updated: 2021-06-04
+updated: 2021-06-17
 description: |
   After registering a PWA as a URL handler, when a user clicks on a hyperlink that matches
   one of the registered URL patterns, the registered PWA will open.
@@ -33,14 +33,15 @@ link is pretty long, the developers of `music.example.com` may have decided to a
 short link to each track, like, for example, `https://🎵.example.com/r-a/n-g-g-y-u`.
 
 PWA as URL Handlers allows apps like `music.example.com` to register themselves as URL handlers for
-URLs that match patterns like `music.example.com`, `*.music.example.com`, or `🎵.example.com`, so
+URLs that match patterns like `https://music.example.com`, `https://*.music.example.com`, or
+`https://🎵.example.com`, so
 that links from outside of the PWA, for example, from an instant messenger application or an email
 client, open in the installed PWA rather than in a browser tab.
 
 PWA as URL Handlers consists of two additions:
 
 1. The `"url_handlers"` web app manifest member.
-1. The `web-app-origin-association` file format for validating out-of-scope URL associations.
+1. The `web-app-origin-association` file format for validating in- and out-of-scope URL associations.
 
 ### Suggested use cases for PWAs as URL Handlers {: #use-cases }
 
@@ -83,38 +84,38 @@ To associate an installed PWA with URL patterns, these patterns need to be speci
 manifest. This happens through the `"url_handlers"` member. It accepts an array of objects with an
 `origin` property, which is a required `string` that is a pattern for matching origins. These
 patterns are allowed to have a wildcard (`*`) prefix in order to include multiple sub-domains (like
-`*.example.com`). URLs that match these origins could be handled by this web app. The scheme is
-always assumed to be `https://`.
+`https://*.example.com`). URLs that match these origins could be handled by this web app. The scheme is
+always assumed to be `https://`, but it needs to be explicitly mentioned.
 
 The excerpt of a web app manifest below shows how the music PWA example from the introductory
-paragraph could set this up. The second entry with the wildcard (`"*.music.example.com"`) makes sure
-that the app also gets activated for `www.music.example.com` or potential other examples like
-`marketing-activity.music.example.com`.
+paragraph could set this up. The second entry with the wildcard (`"https://*.music.example.com"`) makes sure
+that the app also gets activated for `https://www.music.example.com` or potential other examples like
+`https://marketing-activity.music.example.com`.
 
 ```json
 {
   "url_handlers": [
     {
-      "origin": "music.example.com"
+      "origin": "https://music.example.com"
     },
     {
-      "origin": "*.music.example.com"
+      "origin": "https://*.music.example.com"
     },
     {
-      "origin": "🎵.example.com"
+      "origin": "https://🎵.example.com"
     }
   ]
 }
 ```
 
-{%Aside %} While in an online scenario, short links from `🎵.example.com` would typically be
-redirected to `music.example.com`. Such navigation redirection is not a good alternative with
+{%Aside %} While in an online scenario, short links from `https://🎵.example.com` would typically be
+redirected to `https://music.example.com`. Such navigation redirection is not a good alternative with
 respect to offline scenarios. Therefore the app needs to register for both origins. {% endAside %}
 
 ### The `web-app-origin-association` file
 
 Since the PWA lives on a different origin (`music.example.com`) than some of the URLs it needs to
-handle (e.g., `🎵.example.com`), the app needs to verify ownership of these other origins. This
+handle (e.g., `https://🎵.example.com`), the app needs to verify ownership of these other origins. This
 happens in a `web-app-origin-association` file hosted on the other origins.
 
 This file must contain valid JSON. The top-level structure is an object, with a member named
@@ -169,14 +170,10 @@ A PWA matches a URL for handling if both of the following conditions are fulfill
 
 #### Regarding `web-app-origin-association` file discovery
 
-For the browser to discover the `web-app-origin-association` file, developers have two choices.
-
-- Add a `<link rel="web-app-origin-association">` element in the header section of the main document
-  at the origin's root path that points at the `web-app-origin-association` file via the `href`
-  attribute.
-- Place the `web-app-origin-association` file in the
-  [`/.well-known/`](https://datatracker.ietf.org/doc/html/rfc8615) folder at the root of the app.
-  For this to work, the file name must exactly be `web-app-origin-association`.
+For the browser to discover the `web-app-origin-association` file, developers need to
+place the `web-app-origin-association` file in the
+[`/.well-known/`](https://datatracker.ietf.org/doc/html/rfc8615) folder at the root of the app.
+For this to work, the file name must exactly be `web-app-origin-association`.
 
 ## Demo
 
