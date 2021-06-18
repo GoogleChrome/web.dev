@@ -146,11 +146,11 @@ and
 
 The demo for Declarative Link Capturing actually consists of two demos that interact together:
 
-1. [https://continuous-harvest-tomato.glitch.me/](https://hill-glitter-tree.glitch.me/)
+1. [https://continuous-harvest-tomato.glitch.me/](https://continuous-harvest-tomato.glitch.me/)
 1. [https://hill-glitter-tree.glitch.me/](https://hill-glitter-tree.glitch.me/)
 
 The screencast below shows how the two interact. They show two different behaviors,
-`"new_client"` and `"existing_client_navigate"`. Be sure to test the apps in different states,
+`"new-client"` and `"existing-client-navigate"`. Be sure to test the apps in different states,
 running in a tab or as an installed PWA, to see the difference in behavior.
 
 {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/pj3ehpntEg50WcnA2khM.webm", autoplay=true, muted=true, playsinline=true, loop=true %}
