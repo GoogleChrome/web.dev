@@ -87,9 +87,9 @@ The following are steps Chrome takes to process an input:
 4. The renderer processes the event by running its handlers. These handlers may queue additional asynchronous work, such as `setTimeout` and fetches, that are part of the input handling. But at this point, the synchronous work is complete.
 5. A frame is painted to the screen that reflects the result of event handlers running. Note that any asynchronous tasks queued by the event handlers may still be unfinished.
 
-The time between steps (1) and (3) above is an event's ***delay***, which is what FID measures.
+The time between steps (1) and (3) above is an event's _delay_, which is what FID measures.
 
-The time between steps (1) and (5) above is an event's ***duration***. This is what our new metric will measure.
+The time between steps (1) and (5) above is an event's _duration_. This is what our new metric will measure.
 
 The event's duration includes the delay, but it also includes the work occurring in event handlers and the work the browser needs to do to paint the next frame after those handlers have run. The duration of an event is currently available in the [Event Timing API](/#event-timing-api) via the entry's [duration](https://w3c.github.io/performance-timeline/#dom-performanceentry-duration) attribute.
 
