@@ -1,5 +1,5 @@
 ---
-title: "Towards a better responsiveness metric"
+title: Towards a better responsiveness metric
 subhead: Learn about our thoughts on measuring responsiveness and give us feedback.
 description: Learn about our thoughts on measuring responsiveness and give us feedback.
 authors:
@@ -8,7 +8,7 @@ authors:
   - hbsong
 date: 2021-06-21
 hero: image/kns0INkO77RkiEStzHWYrugyWj32/TwRpOuLV9Z5GEZkGmAXi.jpeg
-alt: An example windowing approach for measuring layout shift.
+alt: Hand about to press a key in a keyboard
 tags:
   - blog
   - performance
@@ -24,7 +24,7 @@ This post will cover two main topics:
 1. Review our current responsiveness metric, First Input Delay (FID), and explain why we chose FID
    rather than some of the alternatives.
 2. Present some improvements we've been considering that should better capture the end-to-end
-   latency of individual events (not just the delay). These improvements also aim to capture a more
+   latency of individual events. These improvements also aim to capture a more
    holistic picture of the overall responsiveness of a page throughout its lifetime.
 
 ## What is First Input Delay?
@@ -47,9 +47,9 @@ measures from when input occurs to when input can be handled", width="800", heig
 
 FID does not include the time spent running those event handlers, nor any work done by the browser
 afterwards to update the screen. It measures the amount of time the main thread was busy before
-having the chance to handle an input. This blocking time is usually caused by long JavaScript
-tasks—tasks can’t just be stopped at any time, so the current task must complete before the browser
-can start processing the input.
+having the chance to handle an input. This blocking time is usually caused by long JavaScript tasks,
+as these can’t just be stopped at any time, so the current task must complete before the browser can
+start processing the input.
 
 ### Why did we choose FID?
 
@@ -69,10 +69,10 @@ There are several reasons for this. Perhaps the most important reason is that th
 measure the user experience directly. All of these metrics measure how much JavaScript runs on the
 page. While long running JavaScript does tend to cause problems to sites, these tasks don’t
 necessarily impact the user experience if the user is not interacting with the page when they occur.
-A page can have a great score on these metrics and feel slow or it can have a poor score while
-feeling fast for users. In our experience, these indirect measurements result in metrics that work
-great for some sites but not for most sites. In short, the fact that long tasks and TTI are not
-user-centric makes these weaker candidates.
+A page can have a great score on TBT and TTI but feel slow or it can have a poor score while feeling
+fast for users. In our experience, these indirect measurements result in metrics that work great for
+some sites but not for most sites. In short, the fact that long tasks and TTI are not user-centric
+makes these weaker candidates.
 
 While [lab measurement](/user-centric-performance-metrics/#in-the-lab) is certainly important and an
 invaluable tool for diagnostics, what really matters is how users experience sites. By having a
@@ -90,30 +90,28 @@ endAside %}
 
 {% Details %}
 
-{% DetailsSummary %}
-A note on measuring TTI in the field
-{% endDetailsSummary %}
+{% DetailsSummary %} A note on measuring TTI in the field {% endDetailsSummary %}
 
 Measuring TTI on real users in the field is problematic because it occurs very late in the page
 load. A 5-second network quiet window is required before TTI can even be computed. In the lab, you
 can choose to unload the page whenever you have all the data that you need, but that’s not the case
 with real-user monitoring in the field. A user may choose to leave the page or interact with it at
-any time. In particular, users may choose to leave pages that take a long time to load, and TTI will
-not be recorded in those cases. When we measured TTI for real users in Chrome, we found that only
-about half of page loads reached TTI. {% endDetails %}
+any time. In particular, users may choose to leave pages that take a long time to load, and an
+accurate TTI will not be recorded in those cases. When we measured TTI for real users in Chrome, we
+found that only about half of page loads reached TTI. {% endDetails %}
 
 ## What improvements are we considering?
 
-Given the shortcomings of FID described above, we would like to develop a new metric that extends
-what FID measures today yet still retains its strong connection to user experience.
+We would like to develop a new metric that extends what FID measures today yet still retains its
+strong connection to user experience.
 
 We want the new metric to:
 
-1. Consider the responsiveness of all user inputs (not just the first one), and capture each event's
-   full duration (not just the delay).
-2. Group events together that occur as part of the same logical user interaction and define that
+1. Consider the responsiveness of all user inputs (not just the first one)
+2. Capture each event's full duration (not just the delay).
+3. Group events together that occur as part of the same logical user interaction and define that
    interaction's latency as the max duration of all its events.
-3. Create an aggregate score for all interactions that occur on a page, throughout its full
+4. Create an aggregate score for all interactions that occur on a page, throughout its full
    lifecycle.
 
 To be successful, we should be able to say with high confidence that if a site scores poorly on this
@@ -224,8 +222,8 @@ consider it part of the interaction latency.
         <td><code>keyup</code></td>
       </tr>
       <tr>
-        <td rowspan="7">Tap / drag</td>
-        <td rowspan="2">Tap start / drag start</td>
+        <td rowspan="7">Tap or drag</td>
+        <td rowspan="2">Tap start or drag start</td>
         <td><code>pointerdown</code></td>
         <td><code>pointerdown</code></td>
       </tr>
@@ -234,7 +232,7 @@ consider it part of the interaction latency.
         <td><code>touchstart</code></td>
       </tr>
       <tr>
-        <td rowspan="5">Tap up / drag end</td>
+        <td rowspan="5">Tap up or drag end</td>
         <td><code>pointerup</code></td>
         <td><code>pointerup</code></td>
       </tr>
@@ -269,9 +267,7 @@ extremely common on the web and is a critical aspect of how responsive a page fe
 
 {% Details %}
 
-{% DetailsSummary %}
-A note on start and end
-{% endDetailsSummary %}
+{% DetailsSummary %} A note on start and end {% endDetailsSummary %}
 
 Note that each of these interactions has two parts: when the user presses the mouse, finger, or key
 down and when they lift it up. We need to ensure our metric doesn't count time the user spends
@@ -299,15 +295,16 @@ rare cases where `keyup` would also present interesting UI updates, so we want t
 overall time taken.
 
 In order to capture the overall time taken by the keyboard interaction, we can compute the maximum
-of the duration of the `keydown` and the `keyup` events. The `keypress` event is deprecated, and it
-should be fired in the same task as the `keydown` event, so its duration will always overlap with
-the duration of the`keydown`.
+of the duration of the `keydown` and the `keyup` events.
+
+{% Aside %}
+The `keypress` event is deprecated, and it should be fired in the same task as the `keydown` event,
+so its duration will always overlap with the duration of the`keydown`.
+{% endAside %}
 
 {% Details %}
 
-{% DetailsSummary %}
-A note on repeating keypresses
-{% endDetailsSummary %}
+{% DetailsSummary %} A note on repeating keypresses {% endDetailsSummary %}
 
 There is an edge case here worth mentioning: there may be cases where the user presses a key and
 takes a while to release it. In this case, the sequence of events dispatched can
@@ -332,9 +329,8 @@ interaction.
 
 {% Details %}
 
-{% DetailsSummary %}
-Can we narrow further to just `pointerdown` and `pointerup`?
-{% endDetailsSummary %}
+{% DetailsSummary %} Can we narrow further to just `pointerdown` and `pointerup`? {%
+endDetailsSummary %}
 
 One initial thought would be to use the `pointerdown` and `pointerup` events and assume that they
 cover all of the durations that we’re interested in. Sadly, this is not the case, as this [edge
@@ -351,9 +347,9 @@ large due to the browser tap delay and should be included. So we should measure 
 
 We decided to include dragging as well since it has similar associated events and since it generally
 causes important UI updates to sites. But for our metric we intend to only consider the drag start
-and the drop - the initial and final parts of the drag. This is to make it easier to reason about as
-well as make the latencies comparable with the other interactions considered. This is consistent
-with our decision to exclude continuous events such as `mouseover`.
+and the drag end - the initial and final parts of the drag. This is to make it easier to reason
+about as well as make the latencies comparable with the other interactions considered. This is
+consistent with our decision to exclude continuous events such as `mouseover`.
 
 We’re also not considering drags implemented via the [Drag and Drop
 API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) because they only work
@@ -363,9 +359,9 @@ on desktop.
 
 One of the most common forms of interacting with a site is via scrolling. For our new metric, we’d
 like to measure the latency for the initial scrolling interaction of the user. In particular, we
-care about the initial reaction of the browser to the fact that the user requested a scroll. In
-particular, we will not cover the whole scrolling experience. That is, scrolling produces many
-frames, and we’ll focus our attention on the initial frame produced as a reaction to the scroll.
+care about the initial reaction of the browser to the fact that the user requested a scroll. We will
+not cover the whole scrolling experience. That is, scrolling produces many frames, and we’ll focus
+our attention on the initial frame produced as a reaction to the scroll.
 
 Why just the first one? For one, subsequent frames may be captured by a separate smoothness
 [proposal](https://docs.google.com/presentation/d/1VwGIzypntWNosCTXWMsUI6ifw4sEKSRQgnwx3P_wqVg/edit#slide=id.p).
@@ -418,12 +414,12 @@ where press and release occur in the same frame", width="800", height="311" %}
 There's are pros and cons to this approach of using the maximum, and we're interested in [hearing
 your feedback](#feedback):
 
-* **Con**: It does not capture the full wait time of the user. For instance, it will capture the
-  start or end of a drag, but not both.
 * **Pro**: It is aligned with how we intend to measure scroll in that it only measures a single
   duration value.
 * **Pro**: It aims to reduce noise for cases like keyboard interactions, where the `keyup` usually
   does nothing and where the user may execute the key press and release quickly or slowly.
+* **Con**: It does not capture the full wait time of the user. For instance, it will capture the
+  start or end of a drag, but not both.
 
 For scrolling (which just has a single associated event) we’d like to define its latency as the time
 it takes for the browser to produce the first frame as a result of scrolling. That is, the latency
@@ -446,7 +442,7 @@ In order to perform this aggregation we need to solve two questions:
 1. What numbers do we try to aggregate?
 2. How do we aggregate those numbers?
 
-We’re exploring and evaluating several options. We welcome feedback on this aggregation.
+We’re exploring and evaluating several options. We welcome your thoughts on this aggregation.
 
 One option is to define a budget for the latency of an interaction, which may depend on the type
 (scroll, keyboard, tap, or drag). So for example if the budget for taps is 100&nbsp;ms and the
