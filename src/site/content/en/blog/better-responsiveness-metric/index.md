@@ -201,7 +201,7 @@ In the diagram above, the durations are disjoint because the frame from `keydown
 
 The `keydown` and `keypress` occur when the user presses the key, while the `keyup` occurs when the user releases the key. Generally the main content update occurs when the key is pressed: text appears on the screen, or the modifier effect is applied. That said, we want to capture the more rare cases where `keyup` would also present interesting UI updates, so we want to look at the overall time taken.
 
-In order to capture the overall time taken by the keyboard interaction, we can compute the maximum of the duration of the `keydown` and the `keyup` events. The `keypress` event is deprecated, and it should be fired in the same task as the `keydown` event, so its duration will always overlap with `keydown`'s.
+In order to capture the overall time taken by the keyboard interaction, we can compute the maximum of the duration of the `keydown` and the `keyup` events. The `keypress` event is deprecated, and it should be fired in the same task as the `keydown` event, so its duration will always overlap with the duration of the`keydown`.
 
 {% Details %}
 
