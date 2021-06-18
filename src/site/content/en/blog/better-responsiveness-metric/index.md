@@ -6,7 +6,7 @@ authors:
   - npm
   - anniesullie
   - hbsong
-date: 2021-06-28
+date: 2021-06-21
 hero: image/kns0INkO77RkiEStzHWYrugyWj32/TwRpOuLV9Z5GEZkGmAXi.jpeg
 alt: An example windowing approach for measuring layout shift.
 tags:
@@ -257,7 +257,7 @@ The `keydown` and `keyup` durations may overlap as well. This may happen for ins
 
 {% Img src="image/kns0INkO77RkiEStzHWYrugyWj32/e7htYAZb44AW4UeplBwJ.jpeg", alt="Keyboard interaction where press and release occur in the same frame", width="800", height="311" %}
 
-There's are pros and cons to this approach of using the maximum, and we're interested in [hearing your feedback](#Feedback):
+There's are pros and cons to this approach of using the maximum, and we're interested in [hearing your feedback](#feedback):
 
 * **Con**: It does not capture the full wait time of the user. For instance, it will capture the start or end of a drag, but not both.
 * **Pro**: It is aligned with how we intend to measure scroll in that it only measures a single duration value.
