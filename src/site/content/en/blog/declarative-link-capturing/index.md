@@ -9,7 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-19
-updated: 2021-05-28
+updated: 2021-06-18
 description: |
   Declarative Link Capturing is a proposal for a web app manifest property called
   "capture_links" that lets developers determine declaratively what should happen when the browser
@@ -205,8 +205,9 @@ and let us know where and how you are using it.
 
 Declarative Link Capturing was specified by [Matt Giuca](https://twitter.com/mgiuca) with input from
 Alan Cutter and [Dominick Ng](https://twitter.com/dominickng). The API was implemented by Alan
-Cutter. This article was reviewed by [Joe Medley](https://github.com/jpmedley), Matt Giuca, and Alan
-Cutter. Hero image by [Zulmaury Saavedra](https://unsplash.com/@zulmaury) on
+Cutter. This article was reviewed by [Joe Medley](https://github.com/jpmedley), Matt Giuca, Alan
+Cutter, and [Shunya Shishido](https://github.com/sisidovski).
+Hero image by [Zulmaury Saavedra](https://unsplash.com/@zulmaury) on
 [Unsplash](https://unsplash.com/photos/zh0J32MrJfA).
 
 [explainer]: https://github.com/WICG/sw-launch/blob/main/declarative_link_capturing.md
