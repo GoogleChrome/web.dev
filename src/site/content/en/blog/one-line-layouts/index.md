@@ -244,7 +244,7 @@ For the next layout, the main point to demonstrate here is `justify-content: spa
 This places the title, description, and image block in a vertical column inside of the parent card. Then, applying `justify-content: space-between` anchors the first (title) and last (image block) elements to the edges of the flexbox, and the descriptive text in between those gets placed with equal spacing to each endpoint.
 
 ```css/3
-.parent {
+.card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
