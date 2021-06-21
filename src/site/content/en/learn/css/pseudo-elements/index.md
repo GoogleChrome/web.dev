@@ -202,6 +202,7 @@ Only a small subset of CSS properties are supported for `::marker`:
 - `content`
 - `white-space`
 - `font` properties
+- `animation` and `transition` properties
 
 You can change the marker symbol, using the `content` property. You can use this to set a plus and minus symbol for the closed and empty states of a `<summary>` element, for example.
 
