@@ -6,7 +6,7 @@
     {# Use first found path as a default path. #}
     {% set path = paths[postPaths[0]] %}
   {% endif %}
-  {% set safeTitle = title | md | safe %}
+  {% set safeTitle = title | trim | md | safe %}
 
   {% if hero %}
     {% Hero {
