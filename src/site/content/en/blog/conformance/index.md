@@ -32,11 +32,14 @@ Conformance system was developed to codify best practices in a way that is autom
 enforceable. This ensured a consistently high bar for app quality and codebase maintainability
 regardless of the number of code contributors.
 
-Conformance is a system that ensures that developers stay on the well-lit path; it builds confidence
-and ensures predictable outcomes. It makes teams productive, and becomes crucial for _scale_ -- as
-teams grow and more features are developed simultaneously. It empowers developers to focus on
-building product features, freeing them from minutiae and the changing landscape in various areas
-such as performance, accessibility, security, etc.
+Conformance is a system that ensures that developers stay on the well-lit path;
+it builds confidence and ensures predictable outcomes. It makes teams
+productive, and becomes crucial for _scale_ -- as teams grow and more features
+are developed simultaneously. It empowers developers to focus on building
+product features, freeing them from minutiae and the changing landscape in
+various areas such as performance, accessibility, security, etc. Anyone can
+opt-out of Conformance at any time, and it should be customizable to the extent
+that teams will have the option to enforce whatever they decide to commit to.
 
 Conformance is founded on **strong defaults** and providing **actionable rules** that can be
 enforced at **authoring time**. This breaks down into the following 3 principles.
