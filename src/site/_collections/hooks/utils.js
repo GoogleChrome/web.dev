@@ -25,6 +25,9 @@ const {defaultLocale} = require('../../_data/site');
 const {i18n} = require('../../_filters/i18n');
 
 /**
+ * Used to add the title and description for use by cards
+ * as well as for the title of paginated pages.
+ *
  * @param {VirtualCollectionItem[]} items
  * @param {string} path
  * @param {string} [lang]
@@ -41,6 +44,7 @@ const addFields = (items, path, lang = defaultLocale) => {
         description,
         title,
         data: {
+          ...s.data,
           alt: title,
           date: s.data.date,
           hero: s.data.hero,
