@@ -67,7 +67,7 @@ const purifyCss = async (content, outputPath) => {
     }
     content = content.replace(
       '<!-- __PURGECSS_INJECT -->',
-      `<style>${after}</style></head>`,
+      `<style>${after}</style>`,
     );
     return content;
   }
