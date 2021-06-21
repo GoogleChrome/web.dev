@@ -124,7 +124,7 @@ these rules can also be surfaced to developers at different times:
 
 - During local development in the development server, browser and user's IDE will surface warnings,
   prompting developers to make small code changes.
-- At build time, unresolved issues that are high severity will gate successful build completion.
+- At build time, unresolved issues will be resurfaced in the user's terminal
 
 In a nutshell, teams will choose outcomes they care about, such as Core Web Vitals or loading
 performance, and enable relevant rulesets for all code contributors to follow.
