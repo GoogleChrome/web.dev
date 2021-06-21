@@ -90,7 +90,7 @@ endAside %}
 
 {% Details %}
 
-{% DetailsSummary %} A note on measuring TTI in the field {% endDetailsSummary %}
+{% DetailsSummary 'h4' %} A note on measuring TTI in the field {% endDetailsSummary %}
 
 Measuring TTI on real users in the field is problematic because it occurs very late in the page
 load. A 5-second network quiet window is required before TTI can even be computed. In the lab, you
@@ -155,7 +155,7 @@ attribute.
 
 {% Details %}
 
-{% DetailsSummary %} A note on asynchronous tasks {% endDetailsSummary %}
+{% DetailsSummary 'h4' %} A note on asynchronous tasks {% endDetailsSummary %}
 
 Ideally we would love to also capture asynchronous work triggered by the event. But the problem is
 that the definition of asynchronous work triggered by the event is extremely tricky to get right. As
@@ -267,7 +267,7 @@ extremely common on the web and is a critical aspect of how responsive a page fe
 
 {% Details %}
 
-{% DetailsSummary %} A note on start and end {% endDetailsSummary %}
+{% DetailsSummary 'h5' %} A note on start and end {% endDetailsSummary %}
 
 Note that each of these interactions has two parts: when the user presses the mouse, finger, or key
 down and when they lift it up. We need to ensure our metric doesn't count time the user spends
@@ -304,7 +304,7 @@ so its duration will always overlap with the duration of the`keydown`.
 
 {% Details %}
 
-{% DetailsSummary %} A note on repeating keypresses {% endDetailsSummary %}
+{% DetailsSummary 'h6' %} A note on repeating keypresses {% endDetailsSummary %}
 
 There is an edge case here worth mentioning: there may be cases where the user presses a key and
 takes a while to release it. In this case, the sequence of events dispatched can
@@ -329,7 +329,7 @@ interaction.
 
 {% Details %}
 
-{% DetailsSummary %} Can we narrow further to just `pointerdown` and `pointerup`? {%
+{% DetailsSummary 'h6' %} Can we narrow further to just `pointerdown` and `pointerup`? {%
 endDetailsSummary %}
 
 One initial thought would be to use the `pointerdown` and `pointerup` events and assume that they
