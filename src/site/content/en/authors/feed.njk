@@ -39,7 +39,7 @@ pagination:
     <id>{{ absolutePostUrl }}</id>
     <content type="html">
       <p>{{ post.templateContent | firstParagraph | replace("web-copy-code", "div") | htmlToAbsoluteUrls(absolutePostUrl) }}</p>
-      <a href="absolutePostUrl" target="_blank" >Read more...</a>
+      <a href="absolutePostUrl" target="_blank">Read more...</a>
     </content>
     {% for entry in post.data.authors %}
     {%- set author =  collections.authors[entry] -%}
