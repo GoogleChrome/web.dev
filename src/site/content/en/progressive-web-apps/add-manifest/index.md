@@ -254,11 +254,11 @@ the app's preview in task switchers. The `theme_color` should match the
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8mkBdT3O0FZLo0PUppvv.png", alt="An example of a PWA window with custom theme_color.", width="800", height="196", class="w-screenshot" %}
 </figure>
 
-In Chrome&nbsp;93, you can adjust this color based on a media query with the
-`media` attribute of the `meta` theme color element. The first one that matches
-will be picked. For example, you could have one color for light mode and another
-one for dark mode. At the time of writing, you can't define those in your
-manifest. See [w3c/manifest#975 GitHub
+As of Chromium&nbsp;93 and Safari&nbsp;15, you can adjust this color based on a
+media query with the `media` attribute of the `meta` theme color element. The
+first one that matches will be picked. For example, you could have one color for
+light mode and another one for dark mode. At the time of writing, you can't
+define those in your manifest. See [w3c/manifest#975 GitHub
 issue](https://github.com/w3c/manifest/issues/975).
 
 ```html

@@ -465,11 +465,11 @@ in order to see the theme color and favicon changes, open the
   });
 ```
 
-In Chrome&nbsp;93, you can adjust the color based on a media query with the
-`media` attribute of the `meta` theme color element. The first one that matches
-will be picked. For example, you could have one color for light mode and another
-one for dark mode. At the time of writing, you can't define those in your
-manifest. See [w3c/manifest#975 GitHub
+As of Chromium&nbsp;93 and Safari&nbsp;15, you can adjust the color based on a
+media query with the `media` attribute of the `meta` theme color element. The
+first one that matches will be picked. For example, you could have one color for
+light mode and another one for dark mode. At the time of writing, you can't
+define those in your manifest. See [w3c/manifest#975 GitHub
 issue](https://github.com/w3c/manifest/issues/975).
 
 ```html
