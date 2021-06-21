@@ -74,6 +74,7 @@ const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
 const expandAuthors = require(`./${filtersDir}/expand-authors`);
 const findTags = require(`./${filtersDir}/find-tags`);
+const firstParagraph = require(`./${filtersDir}/first-paragraph`);
 const githubLink = require(`./${filtersDir}/github-link`);
 const gitlocalizeLink = require(`./${filtersDir}/gitlocalize-link`);
 const htmlDateString = require(`./${filtersDir}/html-date-string`);
@@ -160,6 +161,7 @@ module.exports = function (config) {
   config.addFilter('i18n', i18n);
   config.addFilter('findByUrl', findByUrl);
   config.addFilter('findTags', findTags);
+  config.addFilter('firstParagraph', firstParagraph);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
   config.addFilter('expandAuthors', expandAuthors);
