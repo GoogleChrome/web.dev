@@ -2360,5 +2360,22 @@
     "twitter": "shubhie",
     "country": "US",
     "image": "image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/sInJ1hYQTzeVJUGaOjlk.jpeg"
+  },
+  "npm": {
+    "name": {
+      "given": "Nicolás",
+      "family": "Peña Moreno"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Engineering"
+    },
+    "descriptions": {
+      "en": "Software developer always looking for chocolates and games",
+      "es": "Programador siempre en busca de chocolates y juegos"
+    },
+    "github": "npm1",
+    "twitter": "NicPenaM",
+    "image": "image/kns0INkO77RkiEStzHWYrugyWj32/SCSIEb0Qtv6tPWel5tfd.jpeg"
   }
 }
