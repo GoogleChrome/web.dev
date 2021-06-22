@@ -38,7 +38,7 @@ pagination:
     <updated>{{ post.date | rssDate }}</updated>
     <id>{{ absolutePostUrl }}</id>
     <content type="html">
-      <p>{{ post.templateContent | firstParagraph | replace("web-copy-code", "div") | htmlToAbsoluteUrls(absolutePostUrl) }}</p>
+      <p>{{ post.templateContent | firstParagraph | replace("web-copy-code", "div") | htmlToAbsoluteUrls(absolutePostUrl) | safe }}</p>
       <a href="{{absolutePostUrl}}" target="_blank">Read more...</a>
     </content>
     {% for entry in post.data.authors %}
