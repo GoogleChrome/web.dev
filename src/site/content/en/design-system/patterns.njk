@@ -23,6 +23,12 @@ pageScripts:
 ]%}
 
 {% block inner %}
+
+  {% if item.docs %}
+  <div class="flow">
+    {{ item.docs | md | safe }}
+  </div>
+  {% endif %}
   <iframe data-preview-frame src="{{ item.previewUrl }}?state=window"></iframe>
   <div>
     <a href="{{ item.previewUrl }}" class="w-button">View full screen</a>
@@ -51,12 +57,6 @@ pageScripts:
       <web-copy-code>
         {% highlight "html" %}{{ item.rendered | safe }}{% endhighlight %}
       </web-copy-code>
-      {% if item.docs %}
-      <div class="flow">
-        <h2>Docs</h2>
-        {{ item.docs | md | safe }}
-      </div>
-      {% endif %}
     </div>
   </details>
   {% if item.variants | length %}

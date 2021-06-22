@@ -12,5 +12,19 @@
       "text": "Typography",
       "url": "/design-system/typography/"
     }
+  ],
+  "cssLinks": [
+    {
+      "text": "Methodology",
+      "url": "/design-system/css-methodology/"
+    },
+    {
+      "text": "Utilities",
+      "url": "/design-system/css-utilities/"
+    },
+    {
+      "text": "Compositions",
+      "url": "/design-system/css-compositions/"
+    }
   ]
 }

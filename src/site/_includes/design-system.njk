@@ -54,6 +54,12 @@
                 <a class="drawer-course__link" href="{{ link.url }}" {% if link.url == page.url %} data-active {% endif %}>{{ link.text }}</a> 
               {% endfor %}
             </course-links>
+            <h2 class="pad-left-400 flow-space-700">CSS</h2>
+            <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
+              {% for link in cssLinks %}
+                <a class="drawer-course__link" href="{{ link.url }}" {% if link.url == page.url %} data-active {% endif %}>{{ link.text }}</a> 
+              {% endfor %}
+            </course-links>
             <h2 class="pad-left-400 flow-space-700">Patterns</h2>
             <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
               {% for item in patterns.items %}
@@ -90,7 +96,7 @@
           <main id="main">
             <h1>{{ title }}</h1>
             {% if summary %}
-              <p>{{ summary }}</p>
+              <p><em>{{ summary }}</em></p>
             {% endif %}
 
             <div class="flow">
