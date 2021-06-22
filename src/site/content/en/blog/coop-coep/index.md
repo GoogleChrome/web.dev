@@ -17,7 +17,7 @@ authors:
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-05-06
+updated: 2021-06-23
 tags:
   - blog
   - security
@@ -27,6 +27,14 @@ feedback:
   - api
 ---
 
+{% Aside 'caution' %}
+
+`SharedArrayBuffer` on Chrome desktop requires cross-origin isolation starting
+from Chrome 92. Learn more at [SharedArrayBuffer updates in Android Chrome 88
+and Desktop Chrome
+92](https://developer.chrome.com/blog/enabling-shared-array-buffer/).
+
+{% endAside %}
 
 **Updates**
 
