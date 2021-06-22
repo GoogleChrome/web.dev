@@ -5,9 +5,19 @@ const nunjucks = require('nunjucks');
 const fs = require('fs');
 const path = require('path');
 
+// Pull in filters
+const md = require('../_filters/md.js');
+
 // Set up the chalk warning and error state
+// @ts-ignore
 const warning = chalk.black.bgYellow;
+// @ts-ignore
 const error = chalk.black.bgRed;
+
+// Set up custom nunjucks environment and add custom parts
+const nunjucksEnv = new nunjucks.Environment();
+
+nunjucksEnv.addFilter('md', md);
 
 module.exports = {
   // Grabs all patterns that it can find at the root level then builds up a dataset,
@@ -93,7 +103,7 @@ module.exports = {
         );
       }
 
-      response.rendered = nunjucks.renderString(response.markup, {
+      response.rendered = nunjucksEnv.renderString(response.markup, {
         data: response.data.context || {},
       });
 
