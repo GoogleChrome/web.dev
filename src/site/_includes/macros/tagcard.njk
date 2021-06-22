@@ -1,0 +1,34 @@
+{% macro tagcard(collectionItem) %}
+
+{% set url = '/tags/'+collectionItem.key %}
+{% set data = collectionItem.data %}
+{% set thumbnail = data.thumbnail or data.hero or null %}
+{% set alt = data.alt or '' %}
+
+<div class="w-card" role="listitem">
+  <article class="w-card-base">
+    {% if thumbnail %}
+      <div class="w-card-base__cover w-card-base__cover--with-image }}">
+        <a href="{{url}}" class="w-card-base__link" tabindex="-1" aria-hidden="true">
+          <figure class="w-card-base__figure">
+            {% Img src=thumbnail, alt=alt, width="354", height="240", class="w-card-base__image", params={fit: 'crop', h: '240', w: '354'} %}
+          </figure>
+        </a>
+      </div>
+    {% endif %}
+    <div class="w-card-base__blurb">
+      <a href="{{url}}" class="w-card-base__link">
+        <h2 class="{{ 'w-card-base__headline--with-image' if thumbnail else 'w-card-base__headline' }}">{{data.title}}</h2>
+      </a>
+      {% AuthorsDate authors=authors, date=collectionItem.date, updated=data.updated, locale=data.locale %}
+      <div class="w-card-base__desc">
+        {% if data.subhead %}
+          <a class="w-card-base__link" tabindex="-1" href="{{url}}">
+            <p class="w-card-base__subhead">{{data.subhead}}</p>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </article>
+</div>
+{% endmacro %}

@@ -1,0 +1,44 @@
+{% macro postcard(collectionItem, className = '', featured=false) %}
+
+{% set url = collectionItem.url %}
+{% set data = collectionItem.data %}
+{% set thumbnail = data.thumbnail or data.hero or null %}
+{% set alt = data.alt or '' %}
+{% set isDraft = 'w-card--draft' if data.draft %}
+{% set authors = data.authors or [] %}
+
+<div class="w-card {{className}} {{isDraft}}" role="listitem">
+  <article class="w-card-base {{ 'w-card-base--featured' if featured }}">
+    {% if thumbnail %}
+      <div class="w-card-base__cover w-card-base__cover--with-image }}">
+        <a href="{{url}}" class="w-card-base__link" tabindex="-1" aria-hidden="true">
+          <figure class="w-card-base__figure">
+            {% Img src=thumbnail, alt=alt, width="354", height="240", class="w-card-base__image", params={fit: 'crop', h: '240', w: '354'} %}
+          </figure>
+        </a>
+      </div>
+    {% endif %}
+    <div class="w-card-base__blurb">
+      <a href="{{url}}" class="w-card-base__link">
+        <h2 class="{{ 'w-card-base__headline--with-image' if thumbnail else 'w-card-base__headline' }}">{{data.title}}</h2>
+      </a>
+      {% AuthorsDate authors=authors, date=collectionItem.date, updated=data.updated, locale=data.locale %}
+      <div class="w-card-base__desc {{ className+'__desc' if className }}">
+        {% if data.subhead %}
+          <a class="w-card-base__link" tabindex="-1" href="{{url}}">
+            <p class="w-card-base__subhead">{{data.subhead}}</p>
+          </a>
+        {% endif %}
+        <div class="w-card__chips w-chips">
+          {% for tagKey in data.tags or [] %}
+            {% if tagKey in collections.tags %}
+              {% set tag = collections.tags[tagKey] %}
+              <a class="w-chip" href="/tags/{{tagKey}}">{{tag.title}}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+{% endmacro %}
