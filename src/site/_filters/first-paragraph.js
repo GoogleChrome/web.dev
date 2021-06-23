@@ -22,6 +22,6 @@ const cheerio = require('cheerio');
  * @returns {string}
  */
 module.exports = (templateContent) => {
-  const $ = cheerio.load(templateContent);
+  const $ = cheerio.load(templateContent, {xml: true});
   return $('p').first().html();
 };
