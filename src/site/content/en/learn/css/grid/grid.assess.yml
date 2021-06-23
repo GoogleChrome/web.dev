@@ -92,4 +92,4 @@ questions:
         rationale: "That's explicit placement not auto placement."
       - content: "When unassigned grid items are placed next in a layout
       template."
-        rationale: "a"
+        rationale: "Grid items without explicit locations set will be placed in the next available grid cell"
