@@ -68,7 +68,7 @@ pageScripts:
     <div class="w-grid w-pb--std">
       <div class="w-grid__columns w-grid__columns--featured" role="list">
         {% for post in recentPosts %}
-          {{ postcard(post, '', loop.first) }}
+          {{ postcard(post, loop.first) }}
         {% endfor %}
       </div>
     </div>

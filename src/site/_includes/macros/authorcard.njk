@@ -1,13 +1,21 @@
-{% macro authorcard(collectionItem) %}
+{#
+  @typedef {AuthorsItem} author - The author to display in card format.
+#}
+{% macro authorcard(author) %}
 
-{% set url = '/authors/'+collectionItem.key %}
-{% set data = collectionItem.data %}
+{% set url = author.url %}
+{% set data = author.data %}
 {% set thumbnail = data.thumbnail or data.hero or null %}
 {% set alt = data.alt or '' %}
 
 <div class="w-card w-card-author" role="listitem">
   <article class="w-card-base">
     <div class="w-card-base__cover w-card-base__cover--with-image }}">
+      {#
+        Because we are not adding descriptive alt text to this image,
+        and because the link is duplicated when we link the author's name below,
+        we chose to hide this link from screenreaders to make their navigation a bit more efficient.
+      #}
       <a href="{{url}}" class="w-card-base__link" tabindex="-1" aria-hidden="true">
         <figure class="w-card-base__figure w-card-author__figure">
           {% Img src=thumbnail, alt=alt, width="192", height="192", class="w-card-author__image", params={fit: 'crop', h: '192', w: '192'} %}
