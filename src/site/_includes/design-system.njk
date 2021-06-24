@@ -62,7 +62,7 @@
             </course-links>
             <h2 class="pad-left-400 flow-space-700">Patterns</h2>
             <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
-              {% for item in patterns.items %}
+              {% for item in design.patterns.items %}
               <a class="drawer-course__link" href="{{ item.url }}" {% if item.url == page.url %} data-active {% endif %}>
                 {{ item.data.title }}
               </a>

@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Pull in filters
-const md = require('../_filters/md.js');
+const md = require('../../_filters/md');
 
 // Set up the chalk warning and error state
 // @ts-ignore
