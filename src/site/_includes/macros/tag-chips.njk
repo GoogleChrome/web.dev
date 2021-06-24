@@ -2,7 +2,7 @@
   @typedef {string[]} tags - An array of tag keys to display.
   @property {string} [className] - A space separated list of classes to apply.
 #}
-{% macro tagschip(tags, className = '') %}
+{% macro tagChips(tags, className = '') %}
   <div class="w-chips {{className}}">
     {% for tagKey in tags or [] %}
       {% if tagKey in collections.tags %}

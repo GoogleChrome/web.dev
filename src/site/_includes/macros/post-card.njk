@@ -1,11 +1,11 @@
-{% from 'macros/tagschip.njk' import tagschip with context %}
+{% from 'macros/tag-chips.njk' import tagChips with context %}
 
 {#
   @typedef {EleventyCollectionItem} post - The post to display in card format.
   @property {boolean} [featured] - If a card should be a featured card.
   @property {string} [className] - A space separated list of classes to apply.
 #}
-{% macro postcard(post, featured=false, className = '') %}
+{% macro postCard(post, featured=false, className = '') %}
 
 {% set url = post.url %}
 {% set data = post.data %}
@@ -42,7 +42,7 @@
           </a>
         {% endif %}
 
-        {{ tagschip(data.tags, 'w-card__chips') }}
+        {{ tagChips(data.tags, 'w-card__chips') }}
 
       </div>
     </div>

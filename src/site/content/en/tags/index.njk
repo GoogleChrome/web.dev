@@ -12,7 +12,7 @@ pagination:
 ---
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
-{% from 'macros/tagcard.njk' import tagcard with context %}
+{% from 'macros/tag-card.njk' import tagCard with context %}
 <div class="tags-landing-page">
   {# Make sure Actions are first in the tab order. #}
   <div class="w-actions">
@@ -28,7 +28,7 @@ pagination:
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--three" role="list">
       {% for tag in paged.elements %}
-        {{ tagcard(tag) }}
+        {{ tagCard(tag) }}
       {% endfor %}
     </div>
   </section>
