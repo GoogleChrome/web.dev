@@ -1,3 +1,5 @@
+{% from 'macros/tagschip.njk' import tagschip with context %}
+
 {#
   @typedef {EleventyCollectionItem} post - The post to display in card format.
   @property {boolean} [featured] - If a card should be a featured card.
@@ -13,9 +15,9 @@
 {% set authors = data.authors or [] %}
 
 <div class="w-card {{className}} {{isDraft}}" role="listitem">
-  <article class="w-card-base {{ 'w-card-base--featured' if featured }}">
+  <article class="w-card-base {{ 'w-card-base--featured' if featured }} {{ 'w-card-base__with--cover' if thumbnail }}">
     {% if thumbnail %}
-      <div class="w-card-base__cover w-card-base__cover--with-image }}">
+      <div class="w-card-base__cover">
       {#
         We intentionally hide the thumbnail image from screen readers because it appears out of context
         from the rest of the article content and may confusing. Since the link for the article is duplicated
@@ -39,14 +41,9 @@
             <p class="w-card-base__subhead">{{data.subhead}}</p>
           </a>
         {% endif %}
-        <div class="w-card__chips w-chips">
-          {% for tagKey in data.tags or [] %}
-            {% if tagKey in collections.tags %}
-              {% set tag = collections.tags[tagKey] %}
-              <a class="w-chip" href="/tags/{{tagKey}}">{{tag.title}}</a>
-            {% endif %}
-          {% endfor %}
-        </div>
+
+        {{ tagschip(data.tags, 'w-card__chips') }}
+
       </div>
     </div>
   </article>

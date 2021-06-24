@@ -9,9 +9,9 @@
 {% set alt = data.alt or '' %}
 
 <div class="w-card" role="listitem">
-  <article class="w-card-base">
+  <article class="w-card-base {{ 'w-card-base__with--cover' if thumbnail }}">
     {% if thumbnail %}
-      <div class="w-card-base__cover w-card-base__cover--with-image }}">
+      <div class="w-card-base__cover">
         {#
           We intentionally hide the thumbnail image from screen readers because it appears out of context
           from the rest of the article content and may confusing. Since the link for the article is duplicated
