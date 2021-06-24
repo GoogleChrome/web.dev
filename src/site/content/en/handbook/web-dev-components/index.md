@@ -966,7 +966,7 @@ corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!
 ## Tables
 
 Use the markup below to create a table.
-Do _not_ use Markdown synatx;
+Do _not_ use Markdown syntax;
 it doesn't include the wrapper element needed
 to ensure correct whitespace around the table.
 
