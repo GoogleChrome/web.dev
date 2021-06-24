@@ -1,3 +1,4 @@
+{% from 'macros/tag-chips.njk' import tagChips with context %}
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
 <div class="guide-landing-page">
@@ -91,11 +92,7 @@
       {% StackOverflow stack_overflow_tag %}
     {% endif %}
 
-    <div class="w-chips">
-      {% for tag in tags | findTags %}
-        <a class="w-chip" href="{{ tag.href }}">{{ tag.title }}</a>
-      {% endfor %}
-    </div>
+    {{ tagChips(tags) }}
 
     <div class="w-post-github-link w-mt--l w-mb--l">
       <span class="w-mr--sm">
