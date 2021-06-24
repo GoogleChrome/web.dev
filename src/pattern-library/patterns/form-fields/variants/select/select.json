@@ -3,6 +3,7 @@
   "context": {
     "id": "country",
     "label": "Country",
+    "name": "country",
     "items": [
       {
         "value": "AF: Afghanistan",
