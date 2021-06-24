@@ -68,6 +68,14 @@
               </a>
               {% endfor %}
             </course-links>
+            <h2 class="pad-left-400 flow-space-700">Pages</h2>
+            <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
+              {% for item in design.pages %}
+              <a class="drawer-course__link" href="{{ item.link }}" {% if item.link == page.url %} data-active {% endif %}>
+                {{ item.title }}
+              </a>
+              {% endfor %}
+            </course-links>
           </div>
         </nav>
       </web-navigation-drawer>
