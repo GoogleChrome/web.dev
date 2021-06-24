@@ -26,15 +26,16 @@
   content: '';
   display: block;
   height: 2px;
+  margin-bottom: 32px;
   position: initial;
   width: 64px;
   z-index: -1;
-  margin-bottom: 32px;
 }
 
 .w-card-base__with--cover::before {
   @include bp(md) {
     background-color: transparent;
+    margin-bottom: 0px;
   }
 }
 
