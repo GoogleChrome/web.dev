@@ -17,10 +17,9 @@ tags:
 [Core Web Vitals](https://web.dev/vitals) are the most important metrics you should be measuring to understand your users' experiences, because when users have good experiences, [good things happen](https://wpostats.com/)! The [Web Vitals extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en) for Chrome is one tool in the [Web Vitals toolbox](https://web.dev/vitals-tools/) that focuses on giving you performance data about the pages you visit as you browse the web. But you may be wondering, "how typical are user experiences like mine?" The last thing we want to do is perpetuate the myth that _if it's fast for me, it's fast for thee_. So we're launching version 1.0 of the Web Vitals extension with a new feature to integrate real-user data from the [Chrome UX Report](https://web.dev/chrome-ux-report/) (CrUX) with your local Core Web Vitals experiences, putting them in the greater context of how other users have experienced the same pages and websites. It comes with a sparkly new UI and I'm excited to show you how it works.
 
 {% Video
-  src="video/STd8eW8CSiNp5B1bX0R6Dww2eH32/IewtLvOUoIV0IaNmYGmi.mov",
+  src="video/STd8eW8CSiNp5B1bX0R6Dww2eH32/EFeVK6dAwBZWzKhqBd1Y.mp4",
   height="493",
   width="800",
-  autoplay="true",
   controls="true",
   loop="true",
   muted="true",
