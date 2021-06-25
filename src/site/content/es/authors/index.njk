@@ -1,0 +1,37 @@
+---
+layout: default
+title: Authors
+permalink: /{{lang}}/{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
+description: Our latest news, updates, and stories for developers
+pagination:
+  data: collections.authors
+  size: 1
+  alias: paged
+  resolve: values
+  addAllPagesToCollections: true
+---
+{# *-landing-page classes are a holdover from devsite. #}
+{# It would be great to remove them as part of the v1 migration. #}
+{% from 'macros/author-card.njk' import authorCard with context %}
+<div class="authors-landing-page">
+  {# Make sure Actions are first in the tab order. #}
+  <div class="w-actions">
+    {% include 'partials/subscribe-action.njk' %}
+  </div>
+
+  <div class="w-layout-container w-pb--non">
+    <header class="w-page-header">
+      <h1 class="w-page-header__headline">{{ title }}</h1>
+      <p class="w-page-header__copy">{{ description }}</p>
+    </header>
+  </div>
+  <section class="w-grid">
+    <div class="w-grid__columns w-grid__columns--three" role="list">
+      {% for author in paged.elements %}
+        {{ authorCard(author) }}
+      {% endfor %}
+    </div>
+  </section>
+
+  {% include 'pagination.njk' %}
+</div>
