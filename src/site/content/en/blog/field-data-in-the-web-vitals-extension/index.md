@@ -1,7 +1,7 @@
 ---
 title: Find your way with field data in the Web Vitals extension
-subhead:
-description:
+subhead: The Web Vitals extension now shows you where your local experiences are in relation to real user experiences in the field.
+description: The Web Vitals extension now shows you where your local experiences are in relation to real user experiences in the field.
 authors:
   - rviscomi
 date: 2021-06-24
