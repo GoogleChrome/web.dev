@@ -156,7 +156,8 @@ If your site loads fonts from a third-party site, it is highly recommended that
 you use the
 [`preconnect`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preconnect)
 resource hint to establish an early connection with the third-party origin.
-Resource hints should be placed in the `<head>` of the document.
+Resource hints should be placed in the `<head>` of the document. This resource
+hint will set up a connection for loading the font stylesheet.
 
 
 ```html
@@ -164,6 +165,30 @@ Resource hints should be placed in the `<head>` of the document.
   <link rel="preconnect" href="https://fonts.com">
 </head>
 ```
+
+To preconnect the connection that is used to download the font file, you will
+need to add a separate `preconnect` resource hint that uses the `crossorigin`
+attribute. Unlike stylesheets, font files must be sent over a [CORS
+connection](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#what_requests_use_cors).
+
+```html
+<head>
+  <link rel="preconnect" href="https://fonts.com">
+  <link rel="preconnect" href="https://fonts.com" crossorigin>
+</head>
+```
+
+When using the `preconnect` resource hint, keep in mind that a font provider may
+serve stylesheets and fonts from separate origins. For example, this is how the
+`preconnect` resource hint would be used for Google Fonts.
+
+```html
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+```
+
 
 {% Aside %}
 
