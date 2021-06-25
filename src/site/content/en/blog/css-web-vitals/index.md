@@ -357,12 +357,13 @@ Remove the following `@import` statement from your stylesheet:
 Add the following `<link>` tags to the `<head>` of the document:
 
 ```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 ```
 
 These link tags instruct the browser to establish an early connection to
-`https://fonts.gstatic.com` amd to load the stylesheet that
+the origins used by Google Fonts and to load the stylesheet that
 contains the font declaration for Montserrat and Roboto. These `<link>` tags
 should be placed as early in the `<head>` as possible.
 
