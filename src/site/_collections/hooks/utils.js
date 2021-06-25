@@ -18,6 +18,7 @@
  * Reusable hooks for authors and tags
  */
 
+const {PAGINATION_COUNT} = require('../../_utils/constants');
 const addPagination = require('../../_utils/add-pagination');
 const filterByLang = require('../../_filters/filter-by-lang');
 
@@ -34,7 +35,10 @@ const feed = (items) => {
 
   for (const item of items) {
     if (item.elements.length > 0) {
-      filteredFeed.push(item);
+      filteredFeed.push({
+        ...item,
+        elements: item.elements.slice(0, PAGINATION_COUNT),
+      });
     }
   }
 
