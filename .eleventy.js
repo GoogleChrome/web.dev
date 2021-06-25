@@ -70,7 +70,6 @@ const {memoize, findByUrl} = require('./src/site/_filters/find-by-url');
 const pathSlug = require('./src/site/_filters/path-slug');
 const containsTag = require('./src/site/_filters/contains-tag');
 const expandAuthors = require('./src/site/_filters/expand-authors');
-const firstParagraph = require('./src/site/_filters/first-paragraph');
 const githubLink = require('./src/site/_filters/github-link');
 const gitlocalizeLink = require('./src/site/_filters/gitlocalize-link');
 const htmlDateString = require('./src/site/_filters/html-date-string');
@@ -155,7 +154,6 @@ module.exports = function (config) {
   config.addFilter('consoleDump', consoleDump);
   config.addFilter('i18n', i18n);
   config.addFilter('findByUrl', findByUrl);
-  config.addFilter('firstParagraph', firstParagraph);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
   config.addFilter('expandAuthors', expandAuthors);
