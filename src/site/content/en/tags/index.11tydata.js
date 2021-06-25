@@ -15,10 +15,9 @@
  */
 
 const {index} = require('../../../_collections/hooks/tags');
-const {lang} = require('../lang');
 
 module.exports = {
   pagination: {
-    before: (tags) => index(tags, lang),
+    before: (tags) => index(tags),
   },
 };
