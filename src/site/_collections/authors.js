@@ -78,10 +78,12 @@ module.exports = (collections) => {
         hero: image,
         updated,
       },
+      description: `i18n.authors.${key}.description`,
       elements,
       href,
       image,
       key,
+      title: `i18n.authors.${key}.title`,
       url: href,
     };
 

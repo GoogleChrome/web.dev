@@ -25,7 +25,6 @@ const {Img} = require('./Img');
 const prettyDate = require('../../_filters/pretty-date');
 const {i18n} = require('../../_filters/i18n');
 const authorsCollectionFn = require('../../_collections/authors');
-const {addFields} = require('../../_collections/hooks/utils');
 const {defaultLocale} = require('../../_data/site');
 
 /**
@@ -121,18 +120,13 @@ const renderAuthorsDate = (
   authorsCollection = authorsCollectionFn(),
 ) => {
   const pairs = (authors || []).map((id) => {
-    let info = authorsCollection[id];
+    const info = authorsCollection[id];
     if (!info) {
       throw new Error(
         `Can't create Author component for "${id}" without author ` +
           `information. Please check '_data/i18n/authors.yml' and make sure the ` +
           `author you provide is a key in this object.`,
       );
-    }
-
-    // @ts-ignore
-    if (!info.title) {
-      info = addFields([info], 'i18n.authors')[0];
     }
 
     // @ts-ignore

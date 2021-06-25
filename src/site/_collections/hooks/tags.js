@@ -14,21 +14,19 @@
  * limitations under the License.
  */
 
-const {addFields, feed, index, individual} = require('./utils');
+const {feed, index, individual} = require('./utils');
 
 /**
  * @param {TagsItem[]} tags
- * @param {string} lang
  * @return {TagsItem[]}
  */
-const tagsFeed = (tags, lang) => feed(addFields(tags, 'i18n.tags', lang));
+const tagsFeed = (tags) => feed(tags);
 
 /**
  * @param {TagsItem[]} tags
- * @param {string} lang
  * @return {Paginated[]}
  */
-const tagsIndex = (tags, lang) => {
+const tagsIndex = (tags) => {
   const href = '/tags/';
   const testTags = [
     'css',
@@ -39,7 +37,7 @@ const tagsIndex = (tags, lang) => {
     'webxr',
   ];
 
-  return index(addFields(tags, 'i18n.tags', lang), href, testTags);
+  return index(tags, href, testTags);
 };
 
 /**
@@ -47,8 +45,7 @@ const tagsIndex = (tags, lang) => {
  * @param {string} lang
  * @return {Paginated[]}
  */
-const tagsIndividual = (tags, lang) =>
-  individual(addFields(tags, 'i18n.tags', lang), lang);
+const tagsIndividual = (tags, lang) => individual(tags, lang);
 
 module.exports = {
   feed: tagsFeed,

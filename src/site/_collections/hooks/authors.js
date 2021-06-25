@@ -14,22 +14,19 @@
  * limitations under the License.
  */
 
-const {addFields, feed, index, individual} = require('./utils');
+const {feed, index, individual} = require('./utils');
 
 /**
  * @param {AuthorsItem[]} authors
- * @param {string} lang
  * @return {AuthorsExpandedItem[]}
  */
-const authorsFeed = (authors, lang) =>
-  feed(addFields(authors, 'i18n.authors', lang));
+const authorsFeed = (authors) => feed(authors);
 
 /**
  * @param {AuthorsItem[]} authors
- * @param {string} lang
  * @return {Paginated[]}
  */
-const authorsIndex = (authors, lang) => {
+const authorsIndex = (authors) => {
   const href = '/authors/';
   const testAuthors = [
     'robdodson',
@@ -40,7 +37,7 @@ const authorsIndex = (authors, lang) => {
     'adamargyle',
   ];
 
-  return index(addFields(authors, 'i18n.authors', lang), href, testAuthors);
+  return index(authors, href, testAuthors);
 };
 
 /**
@@ -48,8 +45,7 @@ const authorsIndex = (authors, lang) => {
  * @param {string} lang
  * @return {Paginated[]}
  */
-const authorsIndividual = (authors, lang) =>
-  individual(addFields(authors, 'i18n.authors', lang), lang);
+const authorsIndividual = (authors, lang) => individual(authors, lang);
 
 module.exports = {
   feed: authorsFeed,

@@ -19,7 +19,7 @@ declare global {
     extends VirtualCollectionItem<{}, AuthorsDataItem> {}
 
   export interface AuthorsExpandedItem
-    extends VirtualCollectionExpandedItem<{}, AuthorsDataItem> {}
+    extends VirtualCollectionItem<{}, AuthorsDataItem> {}
 
   export interface Authors {
     [key: string]: AuthorsItem;

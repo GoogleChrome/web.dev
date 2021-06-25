@@ -4,8 +4,8 @@ title: Authors
 permalink: /{{lang}}/{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
 description: Our latest news, updates, and stories for developers
 renderData:
-  title: "{{ paged.title or title }}"
-  description: "{{ paged.description or description }}"
+  title: "{{ paged.title | i18n(locale) or title }}"
+  description: "{{ paged.description | i18n(locale) or description }}"
   rss: "{{ paged.href }}feed.xml"
 pagination:
   data: collections.authors
@@ -26,7 +26,7 @@ pagination:
     <header class="w-page-header w-author-page-header">
       {% Img
         src=paged.data.hero,
-        alt=paged.data.alt,
+        alt=renderData.title,
         height="192",
         width="192",
         class="w-author-page__image",

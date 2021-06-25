@@ -76,9 +76,11 @@ module.exports = (collections) => {
         tags: [key],
         updated,
       },
+      description: `i18n.tags.${key}.description`,
       elements,
       href,
       key,
+      title: `i18n.tags.${key}.title`,
       url: href,
     };
 

@@ -21,45 +21,10 @@
 const {PAGINATION_COUNT} = require('../../_utils/constants');
 const addPagination = require('../../_utils/add-pagination');
 const filterByLang = require('../../_filters/filter-by-lang');
-const {defaultLocale} = require('../../_data/site');
-const {i18n} = require('../../_filters/i18n');
 
 /**
- * Used to add the title and description for use by cards
- * as well as for the title of paginated pages.
- *
  * @param {VirtualCollectionItem[]} items
- * @param {string} path
- * @param {string} [lang]
- * @return {VirtualCollectionExpandedItem[]}
- */
-const addFields = (items, path, lang = defaultLocale) => {
-  return items.map((s) => {
-    const title = i18n(`${path}.${s.key}.title`, lang);
-    const description = i18n(`${path}.${s.key}.description`, lang);
-
-    return {
-      ...s,
-      ...{
-        description,
-        title,
-        data: {
-          ...s.data,
-          alt: title,
-          date: s.data.date,
-          hero: s.data.hero,
-          subhead: description,
-          title,
-          updated: s.data.updated,
-        },
-      },
-    };
-  });
-};
-
-/**
- * @param {VirtualCollectionExpandedItem[]} items
- * @return {VirtualCollectionExpandedItem[]}
+ * @return {VirtualCollectionItem[]}
  */
 const feed = (items) => {
   const filteredFeed = [];
@@ -81,7 +46,7 @@ const feed = (items) => {
 };
 
 /**
- * @param {VirtualCollectionExpandedItem[]} items
+ * @param {VirtualCollectionItem[]} items
  * @param {string} href
  * @param {string[]} testItems
  * @return {Paginated[]}
@@ -101,7 +66,7 @@ const index = (items, href, testItems) => {
 };
 
 /**
- * @param {VirtualCollectionExpandedItem[]} items
+ * @param {VirtualCollectionItem[]} items
  * @param {string} lang
  * @return {Paginated[]}
  */
@@ -120,7 +85,6 @@ const individual = (items, lang) => {
 };
 
 module.exports = {
-  addFields,
   feed,
   index,
   individual,

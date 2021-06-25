@@ -23,7 +23,7 @@ declare global {
     extends VirtualCollectionItem<TagsDataField, TagsDataItem> {}
 
   export interface TagsExpandedItem
-    extends VirtualCollectionExpandedItem<TagsDataField, TagsDataItem> {}
+    extends VirtualCollectionItem<TagsDataField, TagsDataItem> {}
 
   export interface Tags {
     [key: string]: TagsItem;

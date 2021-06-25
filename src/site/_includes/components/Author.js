@@ -17,7 +17,6 @@
 const {html} = require('common-tags');
 const AuthorInfo = require('./AuthorInfo');
 const {Img} = require('./Img');
-const {addFields} = require('../../_collections/hooks/utils');
 
 module.exports = ({id, author, showSocialMedia = false, small = false}) => {
   if (!author) {
@@ -27,10 +26,6 @@ module.exports = ({id, author, showSocialMedia = false, small = false}) => {
         `author you provide is a key in this object.`,
     );
     return;
-  }
-
-  if (!author.title) {
-    author = addFields([author], 'i18n.authors')[0];
   }
 
   if (!author.title) {

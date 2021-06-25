@@ -35,24 +35,12 @@ declare global {
     AdditionalData extends {}
   > extends AdditionalData {
     data: DataField;
+    description: string;
     elements: EleventyCollectionItem[];
     href: string;
     key: string;
+    title: string;
     url: string;
-  }
-
-  export interface VirtualDataExpandedField extends VirtualDataField {
-    alt: string;
-    subhead: string;
-    title: string;
-  }
-
-  export interface VirtualCollectionExpandedItem<
-    DataField extends VirtualDataExpandedField,
-    AdditionalData extends {}
-  > extends VirtualCollectionItem<DataField, AdditionalData> {
-    description: string;
-    title: string;
   }
 }
 
