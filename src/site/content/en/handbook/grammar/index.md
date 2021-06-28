@@ -259,6 +259,7 @@ To copy, press `Control+C` (or `Command+C` on Mac).
 Use _pane_ to refer to the content areas associated with tabs—unless you're referring to an area in DevTools; then use _panel_.
 
 Use `about://` instead of `chrome://` for built-in URLs in web.dev articles. This generalizes these URLs to all Chromium forks. Typing `about://` in such a browser will be rewritten to a browser-specific scheme. For example typing `about://` in Microsoft Edge will be rewritten to `edge://`.
+For more background on this rule, see the article [How to set browser flags in Chromium](https://developer.chrome.com/blog/browser-flags/).
 
 <div class="w-columns">
 {% Compare 'worse' %}
