@@ -1,0 +1,21 @@
+title:
+  en: Performance audits
+
+description:
+  en: Measure performance and find opportunities to speed up page loads.
+
+overview:
+  en: These checks ensure that your page is optimized for users to be able to see and interact with page content.
+
+topics:
+  performance_audit_scoring:
+    en: Performance audit scoring
+
+  metrics:
+    en: Metrics
+
+  opportunities:
+    en: Opportunities
+
+  diagnostics:
+    en: Diagnostics

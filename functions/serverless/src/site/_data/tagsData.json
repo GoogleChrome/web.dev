@@ -1,0 +1,253 @@
+{
+  "3d": {
+    "title": "3D",
+    "description": "Our latest news, updates, and stories about 3D."
+  },
+  "accessibility": {
+    "title": "Accessibility"
+  },
+  "amp": {
+    "title": "AMP",
+    "description": "Our latest news, updates, and stories about AMP."
+  },
+  "analytics": {
+    "title": "Analytics"
+  },
+  "animations": {
+    "title": "Animations"
+  },
+  "audio": {
+    "title": "Audio"
+  },
+  "augmented-reality": {
+    "title": "Augmented Reality"
+  },
+  "canvas": {
+    "title": "Canvas"
+  },
+  "capabilities": {
+    "title": "Capabilities",
+    "description": "Our latest news, updates, and stories about new web capabilities (aka Project Fugu)."
+  },
+  "case-study": {
+    "title": "Case Study",
+    "description": "Our latest news, updates, and stories about case studies."
+  },
+  "cast": {
+    "title": "Cast"
+  },
+  "chrome-ux-report": {
+    "title": "Chrome UX Report",
+    "description": "Our latest news, updates, and stories about Chrome UX Report."
+  },
+  "chrome-dev-summit": {
+    "title": "Chrome Dev Summit",
+    "description": "Our latest news, updates, and stories about Chrome Dev Summit."
+  },
+  "content-security-policy": {
+    "title": "Content Security Policy"
+  },
+  "cookies": {
+    "title": "Cookies"
+  },
+  "cors": {
+    "title": "CORS",
+    "description": "Our latest news, updates, and stories about CORS."
+  },
+  "css": {
+    "title": "CSS",
+    "description": "Our latest news, updates, and stories about CSS."
+  },
+  "devices": {
+    "title": "Devices",
+    "description": "Our latest news, updates, and stories about connecting hardware devices to the web."
+  },
+  "devtools": {
+    "title": "DevTools",
+    "description": "Our latest news, updates, and stories about DevTools."
+  },
+  "dom": {
+    "title": "DOM",
+    "description": "Our latest news, updates, and stories about DOM."
+  },
+  "encryption": {
+    "title": "Encryption"
+  },
+  "engineering-blog": {
+    "title": "Engineering Blog",
+    "description": "Our latest news, updates, and stories from our engineering team."
+  },
+  "feature-policy": {
+    "title": "Feature Policy"
+  },
+  "file-system": {
+    "title": "File System"
+  },
+  "fonts": {
+    "title": "Fonts"
+  },
+  "forms": {
+    "title": "Forms"
+  },
+  "games": {
+    "title": "Games"
+  },
+  "graphics": {
+    "title": "Graphics"
+  },
+  "houdini": {
+    "title": "Houdini",
+    "description": "Our latest news, updates, and stories about Houdini."
+  },
+  "html": {
+    "title": "HTML"
+  },
+  "identity": {
+    "title": "Identity"
+  },
+  "images": {
+    "title": "Images"
+  },
+  "install": {
+    "title": "Install"
+  },
+  "intl": {
+    "title": "Intl"
+  },
+  "iot": {
+    "title": "IoT",
+    "description": "Our latest news, updates, and stories about IoT."
+  },
+  "javascript": {
+    "title": "JavaScript",
+    "description": "Our latest news, updates, and stories about JavaScript."
+  },
+  "layout": {
+    "title": "Layout"
+  },
+  "lighthouse": {
+    "title": "Lighthouse",
+    "description": "Our latest news, updates, and stories about Lighthouse."
+  },
+  "media": {
+    "title": "Media"
+  },
+  "media-queries": {
+    "title": "Media Queries"
+  },
+  "memory": {
+    "title": "Memory",
+    "description": "Memory management on the web."
+  },
+  "metrics": {
+    "title": "Metrics"
+  },
+  "mini-apps": {
+    "title": "Mini apps",
+    "description": "Apps built with Web technologies but not running in the browser."
+  },
+  "mobile": {
+    "title": "Mobile"
+  },
+  "modules": {
+    "title": "Modules"
+  },
+  "monetization": {
+    "title": "Monetization"
+  },
+  "network": {
+    "title": "Network"
+  },
+  "node": {
+    "title": "Node"
+  },
+  "notifications": {
+    "title": "Notifications"
+  },
+  "offline": {
+    "title": "Offline"
+  },
+  "origin-trials": {
+    "title": "Origin Trials"
+  },
+  "payments": {
+    "title": "Payments"
+  },
+  "performance": {
+    "title": "Performance"
+  },
+  "permissions": {
+    "title": "Permissions"
+  },
+  "progressive-web-apps": {
+    "title": "Progressive Web Apps",
+    "description": "Our latest news, updates, and stories about Progressive Web Apps."
+  },
+  "privacy": {
+    "title": "Privacy"
+  },
+  "puppeteer": {
+    "title": "Puppeteer",
+    "description": "Our latest news, updates, and stories about Puppeteer."
+  },
+  "rendering": {
+    "title": "Rendering"
+  },
+  "scale-on-web": {
+    "title": "Scale on web",
+    "description": "A collection of short case studies from India and Southeast Asia celebrating the success stories of Google partners across multiple aspects of modern web development. Learn how these partners achieved scale while building amazing web experiences and delighting their customers.",
+    "hero": {
+      "src": "/images/tags/scale-on-web.svg",
+      "width": 340,
+      "height": 177,
+      "heroOnly": true
+    }
+  },
+  "security": {
+    "title": "Security"
+  },
+  "seo": {
+    "title": "SEO",
+    "description": "Our latest news, updates, and stories about SEO."
+  },
+  "service-worker": {
+    "title": "Service Worker"
+  },
+  "storage": {
+    "title": "Storage"
+  },
+  "svg": {
+    "title": "SVG",
+    "description": "Our latest news, updates, and stories about SVG."
+  },
+  "testing": {
+    "title": "Testing"
+  },
+  "tools": {
+    "title": "Tools"
+  },
+  "ux": {
+    "title": "UX",
+    "description": "Our latest news, updates, and stories about UX."
+  },
+  "virtual-reality": {
+    "title": "Virtual Reality"
+  },
+  "webassembly": {
+    "title": "WebAssembly"
+  },
+  "web-app-manifest": {
+    "title": "Web App Manifest"
+  },
+  "web-bundles": {
+    "title": "Web Bundles"
+  },
+  "web-vitals": {
+    "title": "Web Vitals",
+    "description": "Our latest news, updates, and stories about Web Vitals."
+  },
+  "webxr": {
+    "title": "WebXR",
+    "description": "Our latest news, updates, and stories about WebXR."
+  }
+}

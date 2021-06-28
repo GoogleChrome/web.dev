@@ -1,0 +1,44 @@
+{% from 'macros/icon.njk' import icon, svg with context %}
+
+<web-navigation-drawer class="drawer-course" type="standard">
+  <nav data-drawer-container>
+
+    <div class="drawer-course__contents flow flow-space-300">
+      <div class="drawer-course__header" style="--course-background: {{ courseData.meta.background }}">
+        <button data-drawer-close-button class="w-button--svg w-button--round" aria-label="{{ 'i18n.common.close' | i18n(locale) }}">
+          {{ icon('close') }}
+          <span class="w-tooltip">{{ 'i18n.common.close' | i18n(locale) }}</span>
+        </button>
+
+        <div class="drawer-course__title">
+          {{ svg(courseData.meta.logo, {label: courseData.meta.title | i18n(locale)}) }}
+        </div>
+      </div>
+      <web-search class="drawer-course__search" results-id="search-course-results" tag="{{ searchTag }}"></web-search>
+      <div class="drawer-course__scroll">
+        <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
+          {% for item in pageNavigation %}
+            {# The isNew flag is used to display a 'NEW' badge next to content. #}
+            {% set isNew = false %}
+            {# Check to make sure the content was published after the course's #}
+            {# initial launch date (so everything doesn't say 'NEW' when we #}
+            {# first launch a course). #}
+            {% if item.page.data.date > courseData.meta.date %}
+              {# Only show the 'NEW' badge if content is less than thirty days old. #}
+              {% set isNew = item.page.data.date | isNewContent %}
+            {% endif %}
+          <a class="drawer-course__link" href="{{ item.url }}" {% if item.url == page.url %} data-active {% endif %}>
+            <span class="drawer-course__link-counter font-mono">{{ loop.index0 | padStart(3, '0') }}</span>
+            <span class="drawer-course__link-title gap-left-400"
+                {% if isNew %} data-badge="{{ 'i18n.common.new' | i18n(locale) }}" {% endif %}
+            >{{ item.page.data.title }}</span>
+            {{ icon('done', {className: 'drawer-course__link-check gap-left-auto'}) }}
+          </a>
+          {% endfor %}
+        </course-links>
+        <web-course-search-results class="drawer-course__search_results" id="search-course-results"></web-course-search-results>
+      </div>
+    </div>
+
+  </nav>
+</web-navigation-drawer>

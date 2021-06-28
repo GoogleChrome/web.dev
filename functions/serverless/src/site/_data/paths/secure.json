@@ -1,0 +1,62 @@
+{
+  "slug": "secure",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/gVpSImYQruckFe6Srvxv.svg",
+  "title": "i18n.paths.secure.title",
+  "updated": "May 24, 2018",
+  "description": "i18n.paths.secure.description",
+  "overview": "i18n.paths.secure.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.secure.topics.understand_security_basics",
+      "pathItems": [
+        "security-not-scary",
+        "security-attacks",
+        "same-site-same-origin",
+        "security-headers"
+      ]
+    },
+    {
+      "title": "i18n.paths.secure.topics.secure_connections_with_https",
+      "pathItems": [
+        "why-https-matters",
+        "what-is-mixed-content",
+        "fixing-mixed-content",
+        "when-to-use-local-https",
+        "how-to-use-local-https"
+      ]
+    },
+    {
+      "title": "i18n.paths.secure.topics.prevent_info_leaks",
+      "pathItems": [
+        "browser-sandbox",
+        "same-origin-policy",
+        "cross-origin-resource-sharing",
+        "coop-coep",
+        "why-coop-coep",
+        "fetch-metadata"
+      ]
+    },
+    {
+      "title": "i18n.paths.secure.topics.protect_websites_from_xss",
+      "pathItems": [
+        "trusted-types",
+        "strict-csp"
+      ]
+    },
+    {
+      "title": "i18n.paths.secure.topics.protect_users_from_tracking",
+      "pathItems": [
+        "digging-into-the-privacy-sandbox",
+        "samesite-cookies-explained",
+        "samesite-cookie-recipes",
+        "referrer-best-practices",
+        "trust-tokens",
+        "conversion-measurement",
+        "using-conversion-measurement",
+        "user-agent-client-hints",
+        "schemeful-samesite",
+        "floc"
+      ]
+    }
+  ]
+}

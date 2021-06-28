@@ -1,0 +1,90 @@
+{
+  "slug": "progressive-web-apps",
+  "cover": "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LvIq0sbMK73ycjb2yomw.svg",
+  "title": "i18n.paths.progressive_web_apps.title",
+  "updated": "February 24, 2019",
+  "description": "i18n.paths.progressive_web_apps.description",
+  "overview": "i18n.paths.progressive_web_apps.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.progressive_web_apps.topics.introduction",
+      "pathItems": [
+        "what-are-pwas",
+        "drive-business-success",
+        "pwa-checklist"
+      ]
+    },
+    {
+      "title": "i18n.paths.progressive_web_apps.topics.make_it_installable",
+      "pathItems": [
+        "install-criteria",
+        "define-install-strategy"
+      ],
+      "subtopics": [
+        {
+          "title": "i18n.paths.progressive_web_apps.topics.provide_an_installable_experience",
+          "pathItems": [
+            "add-manifest",
+            "offline-fallback-page",
+            "customize-install",
+            "promote-install",
+            "using-a-pwa-in-your-android-app"
+          ]
+        },
+        {
+          "title": "i18n.paths.progressive_web_apps.topics.codelabs",
+          "pathItems": [
+            "codelab-make-installable"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "i18n.paths.progressive_web_apps.topics.create_an_app_like_user_experience",
+      "pathItems": [
+        "app-like-pwas",
+        "progressively-enhance-your-pwa"
+      ],
+      "subtopics": [
+        {
+          "title": "i18n.paths.progressive_web_apps.topics.pwa_exclusive_features",
+          "pathItems": [
+            "app-shortcuts",
+            "badging-api",
+            "web-share-target",
+            "maskable-icon",
+            "periodic-background-sync"
+          ]
+        }, {
+          "title": "i18n.paths.progressive_web_apps.topics.more_ways_to_improve_your_user_experience",
+          "pathItems": [
+            "get-installed-related-apps",
+            "web-share"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "i18n.paths.progressive_web_apps.topics.advanced_topics",
+      "pathItems": [
+        "manifest-updates",
+        "multi-origin-pwas",
+        "building-multiple-pwas-on-the-same-domain",
+        "offline-ux-design-guidelines"
+      ]
+    },
+    {
+      "title": "i18n.paths.progressive_web_apps.topics.case_studies",
+      "pathItems": [
+        "deprecating-excalidraw-electron",
+        "clipchamp",
+        "gravit-designer",
+        "jdid",
+        "rakuten-24",
+        "zdf",
+        "goibibo",
+        "building-a-pwa-at-google-part-1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "draft": true,
+  "slug": "notifications",
+  "cover": "",
+  "title": "i18n.paths.notifications.title",
+  "updated": "May 24, 2018",
+  "description": "i18n.paths.notifications.description",
+  "overview": "i18n.paths.notifications.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.notifications.topics.notifications",
+      "pathItems": [
+        "codelab-notifications-get-started"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "slug": "fast",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/fjFJRFnHXiem8yF0GGQ9.svg",
+  "title": "i18n.paths.fast.title",
+  "updated": "July 17, 2020",
+  "description": "i18n.paths.fast.description",
+  "overview": "i18n.paths.fast.overview",
+    "topics": [
+    {
+      "title": "i18n.paths.fast.topics.introduction",
+      "pathItems": [
+        "why-speed-matters",
+        "what-is-speed",
+        "how-to-measure-speed",
+        "how-to-stay-fast",
+        "rail"
+      ]
+    },
+    {
+      "title": "i18n.paths.fast.topics.set_performance_budgets",
+      "pathItems": [
+        "performance-budgets-101",
+        "your-first-performance-budget",
+        "incorporate-performance-budgets-into-your-build-tools",
+        "use-lighthouse-for-performance-budgets",
+        "using-bundlesize-with-travis-ci",
+        "using-lighthouse-bot-to-set-a-performance-budget",
+        "lighthouse-ci"
+      ]
+    },
+    {
+      "title": "i18n.paths.fast.topics.optimize_your_images",
+      "pathItems": [
+        "choose-the-right-image-format",
+        "compress-images",
+        "use-imagemin-to-compress-images",
+        "replace-gifs-with-videos",
+        "serve-responsive-images",
+        "serve-images-with-correct-dimensions",
+        "serve-images-webp",
+        "image-cdns"
+      ]
+    },
+    {
+      "title": "i18n.paths.fast.topics.lazy_load_images_and_video",
+      "pathItems": [
+        "lazy-loading",
+        "lazy-loading-images",
+        "lazy-loading-video",
+        "browser-level-image-lazy-loading",
+        "use-lazysizes-to-lazyload-images",
+        "lazy-loading-problems"
+      ]
+    },
+    {
+      "title": "i18n.paths.fast.topics.optimize_your_javascript",
+      "pathItems": [
+        "apply-instant-loading-with-prpl",
+        "reduce-javascript-payloads-with-code-splitting",
+        "remove-unused-code",
+        "reduce-network-payloads-using-text-compression",
+        "serve-modern-code-to-modern-browsers",
+        "publish-modern-javascript",
+        "commonjs-larger-bundles"
+      ]
+    },
+    {
+      "title": "i18n.paths.fast.topics.optimize_your_resource_delivery",
+      "pathItems": [
+        "content-delivery-networks",
+        "prioritize-resources",
+        "preload-critical-assets",
+        "preconnect-and-dns-prefetch",
+        "link-prefetch",
+        "fast-playback-with-preload"
+      ]
+    },
+    {
+      "title": "i18n.paths.fast.topics.optimize_your_css",
+      "pathItems": [
+        "defer-non-critical-css",
+        "minify-css",
+        "extract-critical-css",
+        "optimize-css-background-images-with-media-queries"
+      ]
+    },
+    {
+      "title": "i18n.paths.fast.topics.optimize_your_third_party_resources",
+      "pathItems": [
+        "third-party-javascript",
+        "identify-slow-third-party-javascript",
+        "efficiently-load-third-party-javascript"
+      ]
+    },
+    {
+      "title": "i18n.paths.fast.topics.optimize_webfonts",
+      "pathItems": [
+        "avoid-invisible-text",
+        "optimize-webfont-loading",
+        "reduce-webfont-size"
+      ]
+    },
+    {
+      "title": "i18n.paths.fast.topics.optimize_for_network_quality",
+      "pathItems": [
+        "adaptive-serving-based-on-network-quality"
+      ]
+    },
+    {
+      "title": "i18n.paths.fast.topics.measure_performance_in_the_field",
+      "pathItems": [
+        "chrome-ux-report",
+        "chrome-ux-report-data-studio-dashboard",
+        "chrome-ux-report-pagespeed-insights",
+        "chrome-ux-report-bigquery",
+        "chrome-ux-report-api"
+      ]
+    },
+    {
+      "title": "i18n.paths.fast.topics.build_a_performance_culture",
+      "pathItems": [
+        "value-of-speed",
+        "how-can-performance-improve-conversion",
+        "what-should-you-measure-to-improve-performance",
+        "how-to-report-metrics",
+        "fixing-website-speed-cross-functionally",
+        "site-speed-and-business-metrics"
+      ]
+    }
+  ]
+}

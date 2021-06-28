@@ -1,0 +1,57 @@
+{
+  "slug": "handbook",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/Tb9AWhihdixMZTA3taHV.svg",
+  "title": "i18n.paths.handbook.title",
+  "updated": "Jun 24, 2019",
+  "description": "i18n.paths.handbook.description",
+  "overview": "i18n.paths.handbook.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.handbook.topics.content_process",
+      "pathItems": [
+        "handbook/quick-start",
+        "handbook/content-checklist",
+        "handbook/third-party-contributions"
+      ]
+    },
+    {
+      "title": "i18n.paths.handbook.topics.content_guidelines",
+      "pathItems": [
+        "handbook/content-types",
+        "handbook/case-study-guidelines",
+        "handbook/quality",
+        "handbook/voice",
+        "handbook/audience",
+        "handbook/grammar",
+        "handbook/inclusion-and-accessibility",
+        "handbook/effective-instruction",
+        "handbook/write-code-samples",
+        "handbook/use-media",
+        "handbook/word-list",
+        "handbook/tooling-and-libraries",
+        "handbook/reviews",
+        "handbook/pull-requests"
+      ]
+    },
+    {
+      "title": "i18n.paths.handbook.topics.web_dev_markup",
+      "pathItems": [
+        "handbook/author-profile",
+        "handbook/markup-post-codelab",
+        "handbook/web-dev-components",
+        "handbook/markup-media",
+        "handbook/markup-code",
+        "handbook/markup-sample-app",
+        "handbook/self-assessment-components",
+        "handbook/yaml-front-matter"
+      ]
+    },
+    {
+      "title": "i18n.paths.handbook.topics.content_infrastructure",
+      "pathItems": [
+        "handbook/resolving-glitch-issues",
+        "handbook/redirects"
+      ]
+    }
+  ]
+}

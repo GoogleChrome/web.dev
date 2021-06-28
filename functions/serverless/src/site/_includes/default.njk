@@ -1,0 +1,17 @@
+---
+layout: base
+---
+
+{# This is the standard layout that most pages will use. #}
+{% include 'partials/header-default.njk' %}
+{% include 'partials/navigation-drawer-default.njk' %}
+<main>
+  <div id="content">
+    {% if show_banner %}
+      {% include 'partials/banner.njk' %}
+    {% endif %}
+    {% include 'partials/translation-disclaimer.njk' %}
+    {{ content | safe }}
+  </div>
+</main>
+{% include 'partials/footer.njk' %}

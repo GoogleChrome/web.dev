@@ -1,0 +1,55 @@
+note:
+  en: Note
+
+caution:
+  en: Caution
+
+warning:
+  en: Warning
+
+success:
+  en: Success
+
+objective:
+  en: Objective
+
+try_it:
+  en: Try it
+
+key_term:
+  en: Key Term
+
+gotchas:
+  en: Gotchas
+  es: Gotchas
+
+do:
+  en: Do
+  es: Hacer
+
+dont:
+  en: Don't
+  es: No hagas
+
+close:
+  en: Close
+  es: Cerrar
+
+next:
+  en: Next
+  es: Contiguo
+
+prev:
+  en: Prev # Short for "previous"
+  es: Previo
+
+new:
+  en: new
+
+updated:
+  en: Updated
+  es: Actualizado
+
+share:
+  en: Share
+  es: Compartir

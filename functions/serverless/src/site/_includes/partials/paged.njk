@@ -1,0 +1,11 @@
+{% from 'macros/post-card.njk' import postCard with context %}
+
+<section class="w-grid">
+  <div class="w-grid__columns w-grid__columns--three" role="list">
+    {% for post in paged.elements %}
+      {{ postCard(post) }}
+    {% endfor %}
+  </div>
+</section>
+
+{% include 'pagination.njk' %}

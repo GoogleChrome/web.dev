@@ -1,0 +1,18 @@
+{
+  "slug": "discoverable",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/SYMQe2sdOk99lBWpN3qG.svg",
+  "title": "i18n.paths.discoverable.title",
+  "updated": "August 23, 2019",
+  "description": "i18n.paths.discoverable.description",
+  "overview": "i18n.paths.discoverable.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.discoverable.topics.how_search_works_and_how_to_measure_discoverability",
+      "pathItems": [
+        "how-search-works",
+        "pass-lighthouse-seo-audit",
+        "google-search-tools"
+      ]
+    }
+  ]
+}

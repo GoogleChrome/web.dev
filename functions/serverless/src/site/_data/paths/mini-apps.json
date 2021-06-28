@@ -1,0 +1,43 @@
+{
+  "slug": "mini-apps",
+  "cover": "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eKSmiCo2lrPZctW51u6C.svg",
+  "title": "i18n.paths.mini_apps.title",
+  "updated": "March 3, 2021",
+  "description": "i18n.paths.mini_apps.description",
+  "overview": "i18n.paths.mini_apps.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.mini_apps.topics.welcome",
+      "pathItems": [
+        "mini-app-super-apps",
+        "mini-app-about",
+        "mini-app-what-are-h5-and-quickapp"
+      ]
+    },
+    {
+      "title": "i18n.paths.mini_apps.topics.the_developer_experience_of_mini_apps",
+      "pathItems": [
+        "mini-app-devtools",
+        "mini-app-markup-styling-and-scripting",
+        "mini-app-components",
+        "mini-app-project-structure-lifecycle-and-bundling"
+      ]
+    },
+    {
+      "title": "i18n.paths.mini_apps.topics.the_wider_mini_apps_ecosystem",
+      "pathItems": [
+        "mini-app-standardization",
+        "mini-app-alternative-runtime-environments",
+        "mini-app-open-source-projects"
+      ]
+    },
+    {
+      "title": "i18n.paths.mini_apps.topics.learning_from_mini_apps",
+      "pathItems": [
+        "mini-app-programming-way",
+        "mini-app-example-project",
+        "mini-app-conclusion"
+      ]
+    }
+  ]
+}

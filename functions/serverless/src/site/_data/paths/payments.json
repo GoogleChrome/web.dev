@@ -1,0 +1,36 @@
+{
+  "slug": "payments",
+  "cover": "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/XrHTPjEPSDdCMduCzJxs.svg",
+  "title": "i18n.paths.payments.title",
+  "updated": "May 25, 2020",
+  "description": "i18n.paths.payments.description",
+  "overview": "i18n.paths.payments.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.payments.topics.integrate_web_payments_into_your_payment_app",
+      "pathItems": [
+        "empowering-payment-apps-with-web-payments",
+        "life-of-a-payment-transaction",
+        "setting-up-a-payment-method"
+      ],
+      "subtopics": [
+        {
+          "title": "i18n.paths.payments.topics.build_an_android_payment_app",
+          "pathItems": [
+            "android-payment-apps-developers-guide",
+            "android-payment-apps-delegation"
+          ]
+        },
+        {
+          "title": "i18n.paths.payments.topics.build_a_web_based_payment_app",
+          "pathItems": [
+            "web-based-payment-apps-overview",
+            "registering-a-web-based-payment-app",
+            "orchestrating-payment-transactions",
+            "handling-optional-payment-information"
+          ]
+        }
+      ]
+    }
+  ]
+}

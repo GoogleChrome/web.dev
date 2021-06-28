@@ -1,0 +1,58 @@
+{
+  "slug": "reliable",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/9K5gvnLRtD0yyiJM2r0c.svg",
+  "title": "i18n.paths.reliable.title",
+  "updated": "July 17, 2020",
+  "description": "i18n.paths.reliable.description",
+  "overview": "i18n.paths.reliable.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.reliable.topics.how_to_measure_network_reliability",
+      "pathItems": [
+        "network-connections-unreliable",
+        "identify-resources-via-network-panel",
+        "measuring-offline-usage"
+      ]
+    },
+    {
+      "title": "i18n.paths.reliable.topics.the_options_in_your_caching_toolbox",
+      "pathItems": [
+        "http-cache",
+        "love-your-cache",
+        "cache-api-quick-guide",
+        "service-workers-cache-storage",
+        "workbox",
+        "service-worker-caching-and-http-caching"
+      ]
+    },
+    {
+      "title": "i18n.paths.reliable.topics.how_caching_strategies_work",
+      "pathItems": [
+        "offline-cookbook",
+        "precache-with-workbox",
+        "runtime-caching-with-workbox",
+        "handling-navigation-requests"
+      ]
+    },
+    {
+      "title": "i18n.paths.reliable.topics.advanced_patterns",
+      "pathItems": [
+        "resilient-search-experiences",
+        "instant-navigation-experiences",
+        "app-shell-ux-with-service-workers",
+        "adaptive-loading-with-service-workers",
+        "offline-ux-design-guidelines",
+        "extending-workbox"
+      ]
+    },
+    {
+      "title": "i18n.paths.reliable.topics.communicate_with_workers",
+      "pathItems": [
+        "workers-overview",
+        "imperative-caching-guide",
+        "broadcast-updates-guide",
+        "two-way-communication-guide"
+      ]
+    }
+  ]
+}

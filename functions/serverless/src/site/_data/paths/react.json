@@ -1,0 +1,32 @@
+{
+  "slug": "react",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/3A9YgY1kQmaTmILXiF1k.svg",
+  "title": "i18n.paths.react.title",
+  "updated": "October 11, 2019",
+  "description": "i18n.paths.react.description",
+  "overview": "i18n.paths.react.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.react.topics.next_js",
+      "pathItems": [
+        "performance-as-a-default-with-nextjs",
+        "route-prefetching-in-nextjs",
+        "code-splitting-with-dynamic-imports-in-nextjs",
+        "how-amp-can-guarantee-fastness-in-your-nextjs-app"
+      ]
+    },
+    {
+      "title": "i18n.paths.react.topics.create_react_app",
+      "pathItems": [
+        "get-started-optimize-react",
+        "code-splitting-suspense",
+        "virtualize-long-lists-react-window",
+        "precache-with-workbox-react",
+        "prerender-with-react-snap",
+        "add-manifest-react",
+        "accessibility-auditing-react",
+        "quicklink"
+      ]
+    }
+  ]
+}

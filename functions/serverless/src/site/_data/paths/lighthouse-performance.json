@@ -1,0 +1,62 @@
+{
+  "slug": "lighthouse-performance",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/wpGZrgY08B0x6jbLnWPU.svg",
+  "title": "i18n.paths.lighthouse_performance.title",
+  "description": "i18n.paths.lighthouse_performance.description",
+  "overview": "i18n.paths.lighthouse_performance.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.lighthouse_performance.topics.performance_audit_scoring",
+      "pathItems": ["performance-scoring"]
+    },
+    {
+      "title": "i18n.paths.lighthouse_performance.topics.metrics",
+      "pathItems": [
+        "first-contentful-paint",
+        "first-meaningful-paint",
+        "speed-index",
+        "first-cpu-idle",
+        "interactive",
+        "lighthouse-max-potential-fid",
+        "lighthouse-total-blocking-time",
+        "lighthouse-largest-contentful-paint"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_performance.topics.opportunities",
+      "pathItems": [
+        "render-blocking-resources",
+        "uses-responsive-images",
+        "offscreen-images",
+        "unminified-css",
+        "unminified-javascript",
+        "unused-css-rules",
+        "uses-optimized-images",
+        "uses-webp-images",
+        "uses-text-compression",
+        "uses-rel-preconnect",
+        "time-to-first-byte",
+        "redirects",
+        "uses-rel-preload",
+        "efficient-animated-content",
+        "third-party-summary",
+        "non-composited-animations",
+        "third-party-facades"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_performance.topics.diagnostics",
+      "pathItems": [
+        "total-byte-weight",
+        "uses-long-cache-ttl",
+        "dom-size",
+        "critical-request-chains",
+        "user-timings",
+        "bootup-time",
+        "mainthread-work-breakdown",
+        "font-display",
+        "resource-summary"
+      ]
+    }
+  ]
+}

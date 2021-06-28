@@ -1,0 +1,42 @@
+{
+  "slug": "accessible",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/kIvqNJ7Z62umTO31nYhk.svg",
+  "title": "i18n.paths.accessible.title",
+  "description": "i18n.paths.accessible.description",
+  "overview": "i18n.paths.accessible.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.accessible.topics.understand_the_diverse_needs_of_users",
+      "pathItems": [
+        "what-is-accessibility"
+      ]
+    },
+    {
+      "title": "i18n.paths.accessible.topics.make_your_site_keyboard_accessible",
+      "pathItems": [
+        "keyboard-access",
+        "use-semantic-html",
+        "control-focus-with-tabindex",
+        "style-focus"
+      ]
+    },
+    {
+      "title": "i18n.paths.accessible.topics.understand_semantics_and_basic_screen_reader_support",
+      "pathItems": [
+        "semantics-and-screen-readers",
+        "headings-and-landmarks",
+        "labels-and-text-alternatives",
+        "media-accessibility"
+      ]
+    },
+    {
+      "title": "i18n.paths.accessible.topics.create_a_design_and_css_that_supports_users_with_different_needs",
+      "pathItems": [
+        "accessible-tap-targets",
+        "color-and-contrast-accessibility",
+        "accessible-responsive-design",
+        "content-reordering"
+      ]
+    }
+  ]
+}

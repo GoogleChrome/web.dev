@@ -1,0 +1,44 @@
+{
+  "slug": "angular",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/8VpJZiVck4X4bBXXGMsU.svg",
+  "title": "i18n.paths.angular.title",
+  "updated": "June 24, 2019",
+  "description": "i18n.paths.angular.description",
+  "overview": "i18n.paths.angular.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.angular.topics.introduction",
+      "pathItems": [
+        "get-started-optimize-angular"
+      ]
+    },
+    {
+      "title": "i18n.paths.angular.topics.fast",
+      "pathItems": [
+        "route-level-code-splitting-in-angular",
+        "route-preloading-in-angular",
+        "performance-budgets-with-the-angular-cli",
+        "faster-angular-change-detection",
+        "virtualize-lists-with-angular-cdk"
+      ]
+    },
+    {
+      "title": "i18n.paths.angular.topics.reliable",
+      "pathItems": [
+        "precaching-with-the-angular-service-worker"
+      ]
+    },
+    {
+      "title": "i18n.paths.angular.topics.installable",
+      "pathItems": [
+        "creating-pwa-with-angular-cli"
+      ]
+    },
+    {
+      "title": "i18n.paths.angular.topics.accessible",
+      "pathItems": [
+        "accessible-angular-with-codelyzer"
+      ]
+    }
+  ]
+}

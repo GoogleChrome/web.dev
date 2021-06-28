@@ -1,0 +1,112 @@
+{
+  "slug": "lighthouse-accessibility",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/84Wscf0ndzfe8Ri59fsW.svg",
+  "title": "i18n.paths.lighthouse_accessibility.title",
+  "description": "i18n.paths.lighthouse_accessibility.description",
+  "overview": "i18n.paths.lighthouse_accessibility.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.lighthouse_accessibility.topics.audit_scoring",
+      "pathItems": [
+        "accessibility-scoring"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_accessibility.topics.navigation",
+      "pathItems": [
+        "accesskeys",
+        "bypass",
+        "duplicate-id-active",
+        "heading-order",
+        "tabindex"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_accessibility.topics.aria",
+      "pathItems": [
+        "aria-allowed-attr",
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "aria-input-field-name",
+        "aria-required-attr",
+        "aria-required-children",
+        "aria-required-parent",
+        "aria-roles",
+        "aria-toggle-field-name",
+        "aria-valid-attr-value",
+        "aria-valid-attr",
+        "duplicate-id-aria"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_accessibility.topics.names_and_labels",
+      "pathItems": [
+        "button-name",
+        "document-title",
+        "form-field-multiple-labels",
+        "frame-title",
+        "image-alt",
+        "input-image-alt",
+        "label",
+        "link-name",
+        "object-alt"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_accessibility.topics.contrast",
+      "pathItems": [
+        "color-contrast"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_accessibility.topics.tables_and_lists",
+      "pathItems": [
+        "definition-list",
+        "dlitem",
+        "list",
+        "listitem",
+        "layout-table",
+        "td-headers-attr",
+        "th-has-data-cells"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_accessibility.topics.best_practices",
+      "pathItems": [
+        "meta-refresh",
+        "meta-viewport"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_accessibility.topics.audio_and_video",
+      "pathItems": [
+        "audio-caption",
+        "video-caption",
+        "video-description"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_accessibility.topics.internationalization_and_localization",
+      "pathItems": [
+        "html-has-lang",
+        "html-lang-valid",
+        "valid-lang"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_accessibility.topics.additional_items_to_manually_check",
+      "pathItems": [
+        "logical-tab-order",
+        "focusable-controls",
+        "interactive-element-affordance",
+        "managed-focus",
+        "focus-traps",
+        "custom-controls-labels",
+        "custom-control-roles",
+        "visual-order-follows-dom",
+        "offscreen-content-hidden",
+        "use-landmarks"
+      ]
+    }
+  ]
+}

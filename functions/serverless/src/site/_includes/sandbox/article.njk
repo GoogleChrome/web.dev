@@ -1,0 +1,26 @@
+---
+layout: sandbox/layout
+---
+
+{% if hero %}
+  <figure class="w-figure w-figure--hero">
+    <img src="{{ hero }}" alt="">
+  </figure>
+{% endif %}
+
+<article class="w-layout-container--narrow">
+  <h2>Sample article with {{ title }}</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a
+    massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus
+    nibh varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris.
+    Vestibulum porta dolor erat, vel molestie dolor posuere in.
+  </p>
+  {{ content | safe }}
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a
+    massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus
+    nibh varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris.
+    Vestibulum porta dolor erat, vel molestie dolor posuere in.
+  </p>
+</article>

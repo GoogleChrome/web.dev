@@ -1,0 +1,39 @@
+subscribe:
+  en: subscribe
+  es: suscribir
+
+no_javascript:
+  en: It seems like you have JavaScript disabled or it failed to load. After you submit the form, press the back button to return to the site.
+  es: Parece que tiene JavaScript deshabilitado o no se pudo cargar. Después de enviar el formulario, presione el botón Atrás para regresar al sitio.
+
+first_name:
+  en: First Name
+  es: Nombre
+
+last_name:
+  en: Last Name
+  es: Apellido
+
+your_email:
+  en: Your Email
+  es: Tu email
+
+country:
+  en: Country
+  es: País
+
+language:
+  en: Language
+  es: Idioma
+
+notice:
+  en: Don't worry, no spam here! Your information will only be used for web.dev and Chrome related updates and our emails are typically no more than 1-2 times a month. You can unsubscribe anytime.
+  es: ¡No te preocupes, no hay spam aquí! Su información solo se utilizará para web.dev y actualizaciones relacionadas con Chrome y nuestros correos electrónicos no suelen recibir más de 1 a 2 veces al mes. Puede anular su suscripción en cualquier momento.
+
+add_me:
+  en: Add me to the web.dev mailing list.
+  es: Agrégame a la lista de correo web.dev.
+
+i_accept_terms:
+  en: I accept Google's <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms and Conditions</a> and acknowledge that my information will be used in accordance with Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.
+  es: Acepto los <a href="https://policies.google.com/terms" target="_blank" rel="noopener"> Términos y condiciones </a> de Google y reconozco que mi información se utilizará de acuerdo con con la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener"> Política de privacidad </a> de Google.

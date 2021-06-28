@@ -1,0 +1,33 @@
+{
+  "slug": "devices",
+  "cover": "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rls8wXcjXofU4iZfXVDb.svg",
+  "title": "i18n.paths.devices.title",
+  "updated": "February 12, 2021",
+  "description": "i18n.paths.devices.description",
+  "overview": "i18n.paths.devices.overview",
+  "youtubeId": "ZIZqmXfrRLI",
+  "topics": [
+    {
+      "title": "i18n.paths.devices.topics.introduction",
+      "pathItems": [
+        "devices-introduction"
+      ]
+    },
+    {
+      "title": "i18n.paths.devices.topics.api_guides",
+      "pathItems": [
+        "bluetooth",
+        "usb",
+        "nfc",
+        "serial",
+        "hid"
+      ]
+    },
+    {
+      "title": "i18n.paths.devices.topics.advanced_topics",
+      "pathItems": [
+        "build-for-webusb"
+      ]
+    }
+  ]
+}

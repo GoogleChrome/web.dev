@@ -1,0 +1,23 @@
+<div class="w-topic">
+  <h2 id="{{ topic.title | i18n(locale) | slug }}" class="no-link w-headline--three w-topic__header">
+    {{ topic.title | i18n(locale)}}
+    <a class="w-headline-link" href="#{{ topic.title | i18n(locale) | slug }}" aria-hidden="true">#</a>
+  </h2>
+  <ul class="w-path-list">
+    {% if topic.pathItems %}
+      {% set section = topic %}
+      {% include 'partials/item.njk' %}
+    {% endif %}
+  </ul>
+  {% if topic.subtopics %}
+    {% for section in topic.subtopics %}
+      <h3 id="{{ section.title | i18n(locale) | slug }}" class="no-link w-headline--four w-topic__subtopic-header">
+        {{ section.title | i18n(locale) }}
+        <a class="w-headline-link" href="#{{ section.title | i18n(locale) | slug }}" aria-hidden="true">#</a>
+      </h3>
+      <ul class="w-path-list">
+        {% include 'partials/item.njk' %}
+      </ul>
+    {% endfor %}
+  {% endif %}
+</div>

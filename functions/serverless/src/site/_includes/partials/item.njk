@@ -1,0 +1,27 @@
+{% for pathItem in section.pathItems %}
+  {% set url = ['', lang, pathItem, ''] | join('/') %}
+  {% set item = url | findByUrl %}
+  {% if pathItem.url %}
+    <li class="w-path-listitem">
+      <a
+        class="w-path-link w-path-link--external"
+        href="{{ pathItem.url }}"
+      >
+        {{ pathItem.title | trim }}
+      </a>
+    </li>
+  {% elif item %}
+    {% if item.data.draft %}
+      {# noop #}
+    {% else %}
+      <li class="w-path-listitem">
+        <a
+          class="w-path-link"
+          href="{{ item.url }}"
+        >
+          {{ item.data.title | trim | md | safe }}
+        </a>
+      </li>
+    {% endif %}
+  {% endif %}
+{% endfor %}

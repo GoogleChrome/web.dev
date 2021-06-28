@@ -1,0 +1,50 @@
+{
+  "slug": "animations",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/khlZd1T1VU3FjmklZY2b.svg",
+  "title": "i18n.paths.animations.title",
+  "updated": "September 25, 2020",
+  "description": "i18n.paths.animations.description",
+  "overview": "i18n.paths.animations.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.animations.topics.how_browsers_render_animations",
+      "pathItems": [
+        "animations-overview"
+      ]
+    },
+    {
+      "title": "i18n.paths.animations.topics.build_animations_with_css",
+      "pathItems": [
+        {
+          "title": "CSS animations API guide",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations"
+        },
+        "animations-guide",
+        "animations-examples",
+        "prefers-reduced-motion",
+        {
+          "title": "Debug CSS animations with Chrome DevTools",
+          "url": "https://developers.google.com/web/tools/chrome-devtools/inspect-styles/animations"
+        },
+        {
+          "title": "Debug CSS animations with Firefox DevTools",
+          "url": "https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Work_with_animations"
+        }
+      ]
+    },
+    {
+      "title": "i18n.paths.animations.topics.build_animations_with_javascript",
+      "pathItems": [
+        {
+          "title": "Web Animations API overview",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API"
+        },
+        {
+          "title": "Web Animations API guide",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API"
+        },
+        "web-animations"
+      ]
+    }
+  ]
+}

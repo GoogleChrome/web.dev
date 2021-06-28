@@ -1,0 +1,39 @@
+{
+  "slug": "lighthouse-best-practices",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/WRBPLiZWj2BTEZIyRlqh.svg",
+  "description": "i18n.paths.lighthouse_best_practices.description",
+  "title": "i18n.paths.lighthouse_best_practices.title",
+  "overview": "i18n.paths.lighthouse_best_practices.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.lighthouse_best_practices.topics.general_best_practices",
+      "pathItems": ["doctype","errors-in-console","image-aspect-ratio"]
+    },
+    {
+      "title": "i18n.paths.lighthouse_best_practices.topics.make_your_page_fast",
+      "pathItems": ["uses-http2","no-document-write","uses-passive-event-listeners"]
+    },
+    {
+      "title": "i18n.paths.lighthouse_best_practices.topics.make_your_page_secure",
+      "pathItems": [
+        "is-on-https",
+        "external-anchors-use-rel-noopener",
+        "no-vulnerable-libraries",
+        "csp-xss"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_best_practices.topics.create_a_good_user_experience",
+      "pathItems": [
+        "geolocation-on-start",
+        "notification-on-start",
+        "password-inputs-can-be-pasted-into"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_best_practices.topics.avoid_deprecated_technologies",
+      "pathItems": ["appcache-manifest","deprecations"]
+    },
+    {"title": "i18n.paths.lighthouse_best_practices.topics.diagnostic_audits","pathItems": ["js-libraries"]}
+  ]
+}

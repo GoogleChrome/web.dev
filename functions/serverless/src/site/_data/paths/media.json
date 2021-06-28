@@ -1,0 +1,37 @@
+{
+  "slug": "media",
+  "cover": "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6hi0spZGVaFnsPVEt1P0.svg",
+  "title": "i18n.paths.media.title",
+  "updated": "June 19, 2020",
+  "description": "i18n.paths.media.description",
+  "overview": "i18n.paths.media.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.media.topics.concepts",
+      "pathItems": [
+        "media-experience",
+        "media-file-basics",
+        "media-application-basics",
+        "media-cheat-sheet"
+      ]
+    },
+    {
+      "title": "i18n.paths.media.topics.prepare_media_files_for_the_web",
+      "pathItems": [
+        "prepare-media",
+        "containers-and-codecs",
+        "bitrate",
+        "resolution"
+      ]
+    },
+    {
+      "title": "i18n.paths.media.topics.add_media_to_a_web_page",
+      "pathItems": [
+        "add-media",
+        "video-and-source-tags",
+        "media-accessibility",
+        "fast-playback-with-preload"
+      ]
+    }
+  ]
+}

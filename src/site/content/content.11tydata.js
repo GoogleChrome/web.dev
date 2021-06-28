@@ -1,7 +1,7 @@
-const outputPermalink = require('../../build/output-permalink');
+// const outputPermalink = require('../../build/output-permalink');
 
-module.exports = {
-  eleventyComputed: {
-    permalink: (data) => outputPermalink(data),
-  },
-};
+// module.exports = {
+//   eleventyComputed: {
+//     permalink: (data) => outputPermalink(data),
+//   },
+// };

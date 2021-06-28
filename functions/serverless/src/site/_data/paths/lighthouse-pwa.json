@@ -1,0 +1,33 @@
+{
+  "slug": "lighthouse-pwa",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/rLOdIP2q5ASla8qjoclm.svg",
+  "title": "i18n.paths.lighthouse_pwa.title",
+  "description": "i18n.paths.lighthouse_pwa.description",
+  "overview": "i18n.paths.lighthouse_pwa.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.lighthouse_pwa.topics.fast_and_reliable",
+      "pathItems": ["load-fast-enough-for-pwa","works-offline","offline-start-url"]
+    },
+    {
+      "title": "i18n.paths.lighthouse_pwa.topics.installable",
+      "pathItems": ["is-on-https","service-worker","installable-manifest"]
+    },
+    {
+      "title": "i18n.paths.lighthouse_pwa.topics.pwa_optimized",
+      "pathItems": [
+        "redirects-http",
+        "splash-screen",
+        "themed-omnibox",
+        "content-width",
+        "viewport",
+        "without-javascript",
+        "apple-touch-icon"
+      ]
+    },
+    {
+      "title": "i18n.paths.lighthouse_pwa.topics.additional_items_to_manually_check",
+      "pathItems": ["pwa-cross-browser","pwa-page-transitions","pwa-each-page-has-url"]
+    }
+  ]
+}

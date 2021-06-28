@@ -1,0 +1,9 @@
+{% set gitlocalizeUrl =  page.inputPath | gitlocalizeLink(lang) %}
+{% if translated === 'none' %}
+  {% Banner 'neutral' %}
+  This page is not translated yet.
+  {# {% if gitlocalizeUrl %}
+  Consider improving it by [contributing your translation]({{ gitlocalizeUrl }}).
+  {% endif %} #}
+  {% endBanner %}
+{% endif %}
