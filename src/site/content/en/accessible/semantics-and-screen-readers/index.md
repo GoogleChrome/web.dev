@@ -116,4 +116,4 @@ and explore its position in the accessibility tree.
 Once you know a bit about semantics and how they aid screen reader navigation,
 you can't help but look at the pages you build differently. In the next section,
 we'll take a step back and consider how the entire outline of a page can be
-conveyed using effective headings and landmarks.
+conveyed using effective [headings and landmarks](/headings-and-landmarks/).
