@@ -1,0 +1,9 @@
+<a
+  href="{{ data.url }}"
+  class="w-actions__fab w-actions__fab--subscribe{% if data.ga %} gc-analytics-event{% endif %}"
+  data-category="{{ data.ga.category }}"
+  data-label="{{ data.ga.label }}"
+  data-action="{{ data.ga.action }}"
+  >
+  <span>{{ data.text }}</span>
+</a>

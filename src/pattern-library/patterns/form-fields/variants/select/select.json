@@ -1,0 +1,1042 @@
+{
+  "title": "Select",
+  "context": {
+    "id": "country",
+    "label": "Country",
+    "name": "country",
+    "items": [
+      {
+        "value": "AF: Afghanistan",
+        "text": "Afghanistan (افغانستان)"
+      },
+      {
+        "value": "AX: Åland Islands",
+        "text": "Åland Islands (Åland)"
+      },
+      {
+        "value": "AL: Albania",
+        "text": "Albania (Shqipëria)"
+      },
+      {
+        "value": "DZ: Algeria",
+        "text": "Algeria (الجزائر)"
+      },
+      {
+        "value": "AS: American Samoa",
+        "text": "American Samoa"
+      },
+      {
+        "value": "AD: Andorra",
+        "text": "Andorra"
+      },
+      {
+        "value": "AO: Angola",
+        "text": "Angola"
+      },
+      {
+        "value": "AI: Anguilla",
+        "text": "Anguilla"
+      },
+      {
+        "value": "AQ: Antarctica",
+        "text": "Antarctica"
+      },
+      {
+        "value": "AG: Antigua and Barbuda",
+        "text": "Antigua and Barbuda"
+      },
+      {
+        "value": "AR: Argentina",
+        "text": "Argentina"
+      },
+      {
+        "value": "AM: Armenia",
+        "text": "Armenia (Հայաստանի Հանրապետութիւն)"
+      },
+      {
+        "value": "AW: Aruba",
+        "text": "Aruba"
+      },
+      {
+        "value": "AC: Ascension Island",
+        "text": "Ascension Island"
+      },
+      {
+        "value": "AU: Australia",
+        "text": "Australia"
+      },
+      {
+        "value": "AT: Austria",
+        "text": "Austria (Österreich)"
+      },
+      {
+        "value": "AZ: Azerbaijan",
+        "text": "Azerbaijan (Azərbaycan)"
+      },
+      {
+        "value": "BS: Bahamas",
+        "text": "Bahamas"
+      },
+      {
+        "value": "BH: Bahrain",
+        "text": "Bahrain (البحرين)"
+      },
+      {
+        "value": "BD: Bangladesh",
+        "text": "Bangladesh (বাংলাদেশ)"
+      },
+      {
+        "value": "BB: Barbados",
+        "text": "Barbados"
+      },
+      {
+        "value": "BY: Belarus",
+        "text": "Belarus (Беларусь)"
+      },
+      {
+        "value": "BE: Belgium",
+        "text": "Belgium (België)"
+      },
+      {
+        "value": "BZ: Belize",
+        "text": "Belize"
+      },
+      {
+        "value": "BJ: Benin",
+        "text": "Benin (Bénin)"
+      },
+      {
+        "value": "BM: Bermuda",
+        "text": "Bermuda"
+      },
+      {
+        "value": "BT: Bhutan",
+        "text": "Bhutan (भूटान)"
+      },
+      {
+        "value": "BO: Bolivia",
+        "text": "Bolivia"
+      },
+      {
+        "value": "BA: Bosnia and Herzegovina",
+        "text": "\n    Bosnia and Herzegovina (Bosna i Hercegovina)\n  "
+      },
+      {
+        "value": "BW: Botswana",
+        "text": "Botswana"
+      },
+      {
+        "value": "BV: Bouvet Island",
+        "text": "Bouvet Island"
+      },
+      {
+        "value": "BR: Brazil",
+        "text": "Brazil (Brasil)"
+      },
+      {
+        "value": "IO: British Indian Ocean Territory",
+        "text": "\n    British Indian Ocean Territory\n  "
+      },
+      {
+        "value": "VG: British Virgin Islands",
+        "text": "British Virgin Islands"
+      },
+      {
+        "value": "BN: Brunei",
+        "text": "Brunei"
+      },
+      {
+        "value": "BG: Bulgaria",
+        "text": "Bulgaria (България)"
+      },
+      {
+        "value": "BF: Burkina Faso",
+        "text": "Burkina Faso"
+      },
+      {
+        "value": "BI: Burundi",
+        "text": "Burundi"
+      },
+      {
+        "value": "KH: Cambodia",
+        "text": "Cambodia (កម្ពុជា)"
+      },
+      {
+        "value": "CM: Cameroon",
+        "text": "Cameroon (Cameroun)"
+      },
+      {
+        "value": "CA: Canada",
+        "text": "Canada"
+      },
+      {
+        "value": "IC: Canary Islands",
+        "text": "Canary Islands"
+      },
+      {
+        "value": "CV: Cape Verde",
+        "text": "Cape Verde (Cabo Verde)"
+      },
+      {
+        "value": "BQ: Caribbean Netherlands",
+        "text": "Caribbean Netherlands"
+      },
+      {
+        "value": "KY: Cayman Islands",
+        "text": "Cayman Islands"
+      },
+      {
+        "value": "CF: Central African Republic",
+        "text": "\n    Central African Republic (République centrafricaine)\n  "
+      },
+      {
+        "value": "EA: Ceuta and Melilla",
+        "text": "Ceuta and Melilla"
+      },
+      {
+        "value": "TD: Chad",
+        "text": "Chad (تشاد)"
+      },
+      {
+        "value": "CL: Chile",
+        "text": "Chile"
+      },
+      {
+        "value": "CN: China",
+        "text": "China (中国)"
+      },
+      {
+        "value": "CX: Christmas Island",
+        "text": "Christmas Island"
+      },
+      {
+        "value": "CP: Clipperton Island",
+        "text": "Clipperton Island"
+      },
+      {
+        "value": "CC: Cocos (Keeling) Islands",
+        "text": "Cocos (Keeling) Islands"
+      },
+      {
+        "value": "CO: Colombia",
+        "text": "Colombia"
+      },
+      {
+        "value": "KM: Comoros",
+        "text": "Comoros (جزر القمر)"
+      },
+      {
+        "value": "CD: Congo",
+        "text": "\n    Congo (DRC) (République démocratique du Congo)\n  "
+      },
+      {
+        "value": "CG: Congo",
+        "text": "Congo"
+      },
+      {
+        "value": "CK: Cook Islands",
+        "text": "Cook Islands"
+      },
+      {
+        "value": "CR: Costa Rica",
+        "text": "Costa Rica"
+      },
+      {
+        "value": "HR: Croatia",
+        "text": "Croatia (Hrvatska)"
+      },
+      {
+        "value": "CU: Cuba",
+        "text": "Cuba"
+      },
+      {
+        "value": "CW: Curaçao",
+        "text": "Curaçao"
+      },
+      {
+        "value": "CY: Cyprus",
+        "text": "Cyprus (Κύπρος)"
+      },
+      {
+        "value": "CZ: Czechia",
+        "text": "Czechia (Česko)"
+      },
+      {
+        "value": "CI: Côte d’Ivoire",
+        "text": "Côte d’Ivoire"
+      },
+      {
+        "value": "DK: Denmark",
+        "text": "Denmark (Danmark)"
+      },
+      {
+        "value": "DG: Diego Garcia",
+        "text": "Diego Garcia"
+      },
+      {
+        "value": "DJ: Djibouti",
+        "text": "Djibouti (Jabuuti)"
+      },
+      {
+        "value": "DM: Dominica",
+        "text": "Dominica"
+      },
+      {
+        "value": "DO: Dominican Republic",
+        "text": "\n    Dominican Republic (República Dominicana)\n  "
+      },
+      {
+        "value": "EC: Ecuador",
+        "text": "Ecuador"
+      },
+      {
+        "value": "EG: Egypt",
+        "text": "Egypt (مصر)"
+      },
+      {
+        "value": "SV: El Salvador",
+        "text": "El Salvador"
+      },
+      {
+        "value": "GQ: Equatorial Guinea",
+        "text": "\n    Equatorial Guinea (Guinée équatoriale)\n  "
+      },
+      {
+        "value": "ER: Eritrea",
+        "text": "Eritrea (ኤርትራ, اريتريا)"
+      },
+      {
+        "value": "EE: Estonia",
+        "text": "Estonia (Eesti)"
+      },
+      {
+        "value": "ET: Ethiopia",
+        "text": "Ethiopia (ኢትዮጵያ)"
+      },
+      {
+        "value": "FK: Falkland Islands",
+        "text": "Falkland Islands"
+      },
+      {
+        "value": "FO: Faroe Islands",
+        "text": "Faroe Islands (Føroyar)"
+      },
+      {
+        "value": "FJ: Fiji",
+        "text": "Fiji (फिजी)"
+      },
+      {
+        "value": "FI: Finland",
+        "text": "Finland (Suomi)"
+      },
+      {
+        "value": "FR: France",
+        "text": "France"
+      },
+      {
+        "value": "GF: French Guiana",
+        "text": "French Guiana (Guyane française)"
+      },
+      {
+        "value": "PF: French Polynesia",
+        "text": "\n    French Polynesia (Polynésie française)\n  "
+      },
+      {
+        "value": "TF: French Southern Territories",
+        "text": "\n    French Southern Territories\n  "
+      },
+      {
+        "value": "GA: Gabon",
+        "text": "Gabon"
+      },
+      {
+        "value": "GM: Gambia",
+        "text": "Gambia"
+      },
+      {
+        "value": "GE: Georgia",
+        "text": "Georgia (საქართველო)"
+      },
+      {
+        "value": "DE: Germany",
+        "text": "Germany (Deutschland)"
+      },
+      {
+        "value": "GH: Ghana",
+        "text": "Ghana"
+      },
+      {
+        "value": "GI: Gibraltar",
+        "text": "Gibraltar"
+      },
+      {
+        "value": "GR: Greece",
+        "text": "Greece (Ελλάδα)"
+      },
+      {
+        "value": "GL: Greenland",
+        "text": "Greenland (Kalaallit Nunaat)"
+      },
+      {
+        "value": "GD: Grenada",
+        "text": "Grenada"
+      },
+      {
+        "value": "GP: Guadeloupe",
+        "text": "Guadeloupe"
+      },
+      {
+        "value": "GU: Guam",
+        "text": "Guam"
+      },
+      {
+        "value": "GT: Guatemala",
+        "text": "Guatemala"
+      },
+      {
+        "value": "GG: Guernsey",
+        "text": "Guernsey"
+      },
+      {
+        "value": "GN: Guinea",
+        "text": "Guinea (Guinée)"
+      },
+      {
+        "value": "GW: Guinea-Bissau",
+        "text": "Guinea-Bissau (Guiné Bissau)"
+      },
+      {
+        "value": "GY: Guyana",
+        "text": "Guyana"
+      },
+      {
+        "value": "HT: Haiti",
+        "text": "Haiti (Haïti)"
+      },
+      {
+        "value": "HM: Heard & McDonald Islands",
+        "text": "\n    Heard & McDonald Islands\n  "
+      },
+      {
+        "value": "HN: Honduras",
+        "text": "Honduras"
+      },
+      {
+        "value": "HK: Hong Kong",
+        "text": "Hong Kong (香港)"
+      },
+      {
+        "value": "HU: Hungary",
+        "text": "Hungary (Magyarország)"
+      },
+      {
+        "value": "IS: Iceland",
+        "text": "Iceland (Ísland)"
+      },
+      {
+        "value": "IN: India",
+        "text": "India (भारत)"
+      },
+      {
+        "value": "ID: Indonesia",
+        "text": "Indonesia"
+      },
+      {
+        "value": "IR: Iran",
+        "text": "Iran (ایران)"
+      },
+      {
+        "value": "IQ: Iraq",
+        "text": "Iraq (العراق)"
+      },
+      {
+        "value": "IE: Ireland",
+        "text": "Ireland"
+      },
+      {
+        "value": "IM: Isle of Man",
+        "text": "Isle of Man"
+      },
+      {
+        "value": "IL: Israel",
+        "text": "Israel (ישראל)"
+      },
+      {
+        "value": "IT: Italy",
+        "text": "Italy (Italia)"
+      },
+      {
+        "value": "JM: Jamaica",
+        "text": "Jamaica"
+      },
+      {
+        "value": "JP: Japan",
+        "text": "Japan (日本)"
+      },
+      {
+        "value": "JE: Jersey",
+        "text": "Jersey"
+      },
+      {
+        "value": "JO: Jordan",
+        "text": "Jordan (الأردن)"
+      },
+      {
+        "value": "KZ: Kazakhstan",
+        "text": "Kazakhstan (Казахстан)"
+      },
+      {
+        "value": "KE: Kenya",
+        "text": "Kenya"
+      },
+      {
+        "value": "KI: Kiribati",
+        "text": "Kiribati"
+      },
+      {
+        "value": "XK: Kosovo",
+        "text": "Kosovo"
+      },
+      {
+        "value": "KW: Kuwait",
+        "text": "Kuwait (الكويت)"
+      },
+      {
+        "value": "KG: Kyrgyzstan",
+        "text": "Kyrgyzstan (Кыргызстан)"
+      },
+      {
+        "value": "LA: Laos",
+        "text": "Laos (ลาว)"
+      },
+      {
+        "value": "LV: Latvia",
+        "text": "Latvia (Latvija)"
+      },
+      {
+        "value": "LB: Lebanon",
+        "text": "Lebanon (لبنان)"
+      },
+      {
+        "value": "LS: Lesotho",
+        "text": "Lesotho"
+      },
+      {
+        "value": "LR: Liberia",
+        "text": "Liberia"
+      },
+      {
+        "value": "LY: Libya",
+        "text": "Libya (ليبيا)"
+      },
+      {
+        "value": "LI: Liechtenstein",
+        "text": "Liechtenstein"
+      },
+      {
+        "value": "LT: Lithuania",
+        "text": "Lithuania (Lietuva)"
+      },
+      {
+        "value": "LU: Luxembourg",
+        "text": "Luxembourg"
+      },
+      {
+        "value": "MO: Macau",
+        "text": "Macau (澳门)"
+      },
+      {
+        "value": "MK: Macedonia",
+        "text": "Macedonia (FYROM) (Македонија)"
+      },
+      {
+        "value": "MG: Madagascar",
+        "text": "Madagascar"
+      },
+      {
+        "value": "MW: Malawi",
+        "text": "Malawi"
+      },
+      {
+        "value": "MY: Malaysia",
+        "text": "Malaysia"
+      },
+      {
+        "value": "MV: Maldives",
+        "text": "Maldives"
+      },
+      {
+        "value": "ML: Mali",
+        "text": "Mali (مالي)"
+      },
+      {
+        "value": "MT: Malta",
+        "text": "Malta"
+      },
+      {
+        "value": "MH: Marshall Islands",
+        "text": "Marshall Islands"
+      },
+      {
+        "value": "MQ: Martinique",
+        "text": "Martinique"
+      },
+      {
+        "value": "MR: Mauritania",
+        "text": "Mauritania (موريتانيا)"
+      },
+      {
+        "value": "MU: Mauritius",
+        "text": "Mauritius"
+      },
+      {
+        "value": "YT: Mayotte",
+        "text": "Mayotte"
+      },
+      {
+        "value": "MX: Mexico",
+        "text": "Mexico (México)"
+      },
+      {
+        "value": "FM: Micronesia",
+        "text": "Micronesia"
+      },
+      {
+        "value": "MD: Moldova",
+        "text": "Moldova"
+      },
+      {
+        "value": "MC: Monaco",
+        "text": "Monaco"
+      },
+      {
+        "value": "MN: Mongolia",
+        "text": "Mongolia (Монгол улс)"
+      },
+      {
+        "value": "ME: Montenegro",
+        "text": "Montenegro (Црна Гора)"
+      },
+      {
+        "value": "MS: Montserrat",
+        "text": "Montserrat"
+      },
+      {
+        "value": "MA: Morocco",
+        "text": "Morocco (المغرب)"
+      },
+      {
+        "value": "MZ: Mozambique",
+        "text": "Mozambique (Moçambique)"
+      },
+      {
+        "value": "MM: Myanmar",
+        "text": "Myanmar (Burma)"
+      },
+      {
+        "value": "NA: Namibia",
+        "text": "Namibia"
+      },
+      {
+        "value": "NR: Nauru",
+        "text": "Nauru"
+      },
+      {
+        "value": "NP: Nepal",
+        "text": "Nepal (नेपाल)"
+      },
+      {
+        "value": "NL: Netherlands",
+        "text": "Netherlands (Nederland)"
+      },
+      {
+        "value": "AN: Netherlands Antilles",
+        "text": "\n    Netherlands Antilles (Nederlandse Antillen)\n  "
+      },
+      {
+        "value": "NC: New Caledonia",
+        "text": "New Caledonia (Nouvelle-Calédonie)"
+      },
+      {
+        "value": "NZ: New Zealand",
+        "text": "New Zealand"
+      },
+      {
+        "value": "NI: Nicaragua",
+        "text": "Nicaragua"
+      },
+      {
+        "value": "NE: Niger",
+        "text": "Niger"
+      },
+      {
+        "value": "NG: Nigeria",
+        "text": "Nigeria"
+      },
+      {
+        "value": "NU: Niue",
+        "text": "Niue"
+      },
+      {
+        "value": "NF: Norfolk Island",
+        "text": "Norfolk Island"
+      },
+      {
+        "value": "KP: North Korea",
+        "text": "\n    North Korea (조선 민주주의 인민 공화국)\n  "
+      },
+      {
+        "value": "MP: Northern Mariana Islands",
+        "text": "Northern Mariana Islands"
+      },
+      {
+        "value": "NO: Norway",
+        "text": "Norway (Norge)"
+      },
+      {
+        "value": "OM: Oman",
+        "text": "Oman (عمان)"
+      },
+      {
+        "value": "QO: Outlying Oceania",
+        "text": "Outlying Oceania"
+      },
+      {
+        "value": "PK: Pakistan",
+        "text": "Pakistan (پاکستان)"
+      },
+      {
+        "value": "PW: Palau",
+        "text": "Palau"
+      },
+      {
+        "value": "PS: Palestine",
+        "text": "Palestine (فلسطين)"
+      },
+      {
+        "value": "PA: Panama",
+        "text": "Panama (Panamá)"
+      },
+      {
+        "value": "PG: Papua New Guinea",
+        "text": "Papua New Guinea"
+      },
+      {
+        "value": "PY: Paraguay",
+        "text": "Paraguay"
+      },
+      {
+        "value": "PE: Peru",
+        "text": "Peru (Perú)"
+      },
+      {
+        "value": "PH: Philippines",
+        "text": "Philippines"
+      },
+      {
+        "value": "PN: Pitcairn Islands",
+        "text": "Pitcairn Islands"
+      },
+      {
+        "value": "PL: Poland",
+        "text": "Poland (Polska)"
+      },
+      {
+        "value": "PT: Portugal",
+        "text": "Portugal"
+      },
+      {
+        "value": "PR: Puerto Rico",
+        "text": "Puerto Rico"
+      },
+      {
+        "value": "QA: Qatar",
+        "text": "Qatar (قطر)"
+      },
+      {
+        "value": "RO: Romania",
+        "text": "Romania (România)"
+      },
+      {
+        "value": "RU: Russia",
+        "text": "Russia (Россия)"
+      },
+      {
+        "value": "RW: Rwanda",
+        "text": "Rwanda"
+      },
+      {
+        "value": "RE: Réunion",
+        "text": "Réunion"
+      },
+      {
+        "value": "BL: Saint Barthélemy",
+        "text": "Saint Barthélemy"
+      },
+      {
+        "value": "SH: Saint Helena",
+        "text": "Saint Helena"
+      },
+      {
+        "value": "KN: Saint Kitts and Nevis",
+        "text": "Saint Kitts and Nevis"
+      },
+      {
+        "value": "LC: Saint Lucia",
+        "text": "Saint Lucia"
+      },
+      {
+        "value": "MF: Saint Martin",
+        "text": "Saint Martin"
+      },
+      {
+        "value": "PM: Saint Pierre and Miquelon",
+        "text": "\n    Saint Pierre and Miquelon\n  "
+      },
+      {
+        "value": "WS: Samoa",
+        "text": "Samoa"
+      },
+      {
+        "value": "SM: San Marino",
+        "text": "San Marino"
+      },
+      {
+        "value": "SA: Saudi Arabia",
+        "text": "\n    Saudi Arabia (المملكة العربية السعودية)\n  "
+      },
+      {
+        "value": "SN: Senegal",
+        "text": "Senegal (Sénégal)"
+      },
+      {
+        "value": "RS: Serbia",
+        "text": "Serbia (Србија)"
+      },
+      {
+        "value": "SC: Seychelles",
+        "text": "Seychelles"
+      },
+      {
+        "value": "SL: Sierra Leone",
+        "text": "Sierra Leone"
+      },
+      {
+        "value": "SG: Singapore",
+        "text": "Singapore (新加坡)"
+      },
+      {
+        "value": "SX: Sint Maarten",
+        "text": "Sint Maarten"
+      },
+      {
+        "value": "SK: Slovakia",
+        "text": "Slovakia (Slovenská republika)"
+      },
+      {
+        "value": "SI: Slovenia",
+        "text": "Slovenia (Slovenija)"
+      },
+      {
+        "value": "SB: Solomon Islands",
+        "text": "Solomon Islands"
+      },
+      {
+        "value": "SO: Somalia",
+        "text": "Somalia (Somali)"
+      },
+      {
+        "value": "ZA: South Africa",
+        "text": "South Africa"
+      },
+      {
+        "value": "GS: South Georgia & South Sandwich Islands",
+        "text": "\n    South Georgia & South Sandwich Islands\n  "
+      },
+      {
+        "value": "KR: South Korea",
+        "text": "South Korea (대한민국)"
+      },
+      {
+        "value": "SS: South Sudan",
+        "text": "South Sudan"
+      },
+      {
+        "value": "ES: Spain",
+        "text": "Spain (España)"
+      },
+      {
+        "value": "LK: Sri Lanka",
+        "text": "Sri Lanka (இலங்கை)"
+      },
+      {
+        "value": "VC: St. Vincent & Grenadines",
+        "text": "\n    St. Vincent & Grenadines\n  "
+      },
+      {
+        "value": "SD: Sudan",
+        "text": "Sudan (السودان)"
+      },
+      {
+        "value": "SR: Suriname",
+        "text": "Suriname"
+      },
+      {
+        "value": "SJ: Svalbard and Jan Mayen",
+        "text": "Svalbard and Jan Mayen"
+      },
+      {
+        "value": "SZ: Swaziland",
+        "text": "Swaziland"
+      },
+      {
+        "value": "SE: Sweden",
+        "text": "Sweden (Sverige)"
+      },
+      {
+        "value": "CH: Switzerland",
+        "text": "\n    Switzerland (Schweiz, Suisse, Svizzera)\n  "
+      },
+      {
+        "value": "SY: Syria",
+        "text": "Syria (سوريا)"
+      },
+      {
+        "value": "ST: São Tomé and Príncipe",
+        "text": "São Tomé and Príncipe"
+      },
+      {
+        "value": "TW: Taiwan",
+        "text": "Taiwan (台湾)"
+      },
+      {
+        "value": "TJ: Tajikistan",
+        "text": "Tajikistan (تاجیکستان)"
+      },
+      {
+        "value": "TZ: Tanzania",
+        "text": "Tanzania"
+      },
+      {
+        "value": "TH: Thailand",
+        "text": "Thailand (ประเทศไทย)"
+      },
+      {
+        "value": "TL: Timor-Leste",
+        "text": "Timor-Leste"
+      },
+      {
+        "value": "TG: Togo",
+        "text": "Togo"
+      },
+      {
+        "value": "TK: Tokelau",
+        "text": "Tokelau"
+      },
+      {
+        "value": "TO: Tonga",
+        "text": "Tonga"
+      },
+      {
+        "value": "TT: Trinidad and Tobago",
+        "text": "Trinidad and Tobago"
+      },
+      {
+        "value": "TA: Tristan da Cunha",
+        "text": "Tristan da Cunha"
+      },
+      {
+        "value": "TN: Tunisia",
+        "text": "Tunisia (تونس)"
+      },
+      {
+        "value": "TR: Turkey",
+        "text": "Turkey (Türkiye)"
+      },
+      {
+        "value": "TM: Turkmenistan",
+        "text": "Turkmenistan (Туркменистан)"
+      },
+      {
+        "value": "TC: Turks and Caicos Islands",
+        "text": "Turks and Caicos Islands"
+      },
+      {
+        "value": "TV: Tuvalu",
+        "text": "Tuvalu"
+      },
+      {
+        "value": "UM: U.S. Outlying Islands",
+        "text": "\n    U.S. Outlying Islands (United States Minor Outlying Islands)\n  "
+      },
+      {
+        "value": "VI: U.S. Virgin Islands",
+        "text": "U.S. Virgin Islands"
+      },
+      {
+        "value": "UG: Uganda",
+        "text": "Uganda"
+      },
+      {
+        "value": "UA: Ukraine",
+        "text": "Ukraine (Україна)"
+      },
+      {
+        "value": "AE: United Arab Emirates",
+        "text": "\n    United Arab Emirates (الامارات العربية المتحدة)\n  "
+      },
+      {
+        "value": "GB: United Kingdom",
+        "text": "United Kingdom"
+      },
+      {
+        "value": "US: United States",
+        "text": "United States"
+      },
+      {
+        "value": "UY: Uruguay",
+        "text": "Uruguay"
+      },
+      {
+        "value": "UZ: Uzbekistan",
+        "text": "Uzbekistan (Ўзбекистон)"
+      },
+      {
+        "value": "VU: Vanuatu",
+        "text": "Vanuatu"
+      },
+      {
+        "value": "VA: Vatican City",
+        "text": "Vatican City (Vaticano)"
+      },
+      {
+        "value": "VE: Venezuela",
+        "text": "Venezuela"
+      },
+      {
+        "value": "VN: Vietnam",
+        "text": "Vietnam (Việt Nam)"
+      },
+      {
+        "value": "WF: Wallis and Futuna",
+        "text": "Wallis and Futuna"
+      },
+      {
+        "value": "EH: Western Sahara",
+        "text": "Western Sahara (الصحراء الغربية)"
+      },
+      {
+        "value": "YE: Yemen",
+        "text": "Yemen (اليمن)"
+      },
+      {
+        "value": "ZM: Zambia",
+        "text": "Zambia"
+      },
+      {
+        "value": "ZW: Zimbabwe",
+        "text": "Zimbabwe"
+      }
+    ]
+  }
+}

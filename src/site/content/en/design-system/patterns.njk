@@ -1,7 +1,7 @@
 ---
 title: 'Pattern'
 pagination:
-  data: patterns.items
+  data: design.patterns.items
   size: 1
   addAllPagesToCollections: true
   alias: item
@@ -23,7 +23,13 @@ pageScripts:
 ]%}
 
 {% block inner %}
-  <iframe data-preview-frame src="{{ item.previewUrl }}"></iframe>
+
+  {% if item.docs %}
+  <div class="flow">
+    {{ item.docs | md | safe }}
+  </div>
+  {% endif %}
+  <iframe data-preview-frame src="{{ item.previewUrl }}?state=window"></iframe>
   <div>
     <a href="{{ item.previewUrl }}" class="w-button">View full screen</a>
     <button class="w-button">TODO: add theme switcher</button>
@@ -51,19 +57,13 @@ pageScripts:
       <web-copy-code>
         {% highlight "html" %}{{ item.rendered | safe }}{% endhighlight %}
       </web-copy-code>
-      {% if item.docs %}
-      <div class="flow">
-        <h2>Docs</h2>
-        {{ item.docs | md | safe }}
-      </div>
-      {% endif %}
     </div>
   </details>
-  {% if item.variants %}
+  {% if item.variants | length %}
     <h2>Variants</h2>
     {% for variant in item.variants %}
     <h3>{{ variant.data.title }}</h3>
-    <iframe data-preview-frame src="{{ variant.previewUrl }}"></iframe>
+    <iframe data-preview-frame src="{{ variant.previewUrl }}?state=window"></iframe>
     <div>
       <a href="{{ variant.previewUrl }}" class="w-button">View full screen</a>
       <button class="w-button">TODO: add theme switcher</button>

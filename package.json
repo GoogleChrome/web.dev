@@ -31,6 +31,7 @@
     "lint:scss": "sass-lint -v -q",
     "lint:types": "tsc --noEmit",
     "lint": "npm-run-all lint:md lint:scss lint:js",
+    "patterns:create": "node src/pattern-library/pattern-generator.js",
     "percy": "PERCY=true npm-run-all build --parallel --race start snapshots",
     "rollup": "rollup -c",
     "snapshots": "percy exec --config ./tools/percy/.percy.conf.yml -- node tools/percy/snapshots.js",

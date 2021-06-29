@@ -1,0 +1,10 @@
+{
+  "title": "Form Fields",
+  "summary": "All form inputs, collected together.",
+  "context": {
+    "id": "myInput",
+    "label": "First name",
+    "name": "myInput",
+    "type": "text"
+  }
+}
