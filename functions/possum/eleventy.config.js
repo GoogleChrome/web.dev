@@ -126,7 +126,7 @@ module.exports = function (config) {
   });
 
   config.addPlugin(EleventyServerlessBundlerPlugin, {
-    name: 'serverless', // The serverless function name from your permalink object
+    name: 'possum', // The serverless function name from your permalink object
     functionsDir: './functions/',
   });
 

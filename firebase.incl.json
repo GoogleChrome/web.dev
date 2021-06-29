@@ -28,7 +28,11 @@
     "i18n": {
       "root": "/i18n"
     },
-    "redirects": []
+    "redirects": [],
+    "rewrites": [{
+      "source": "/possum",
+      "function": "possum"
+    }]
   },
   "emulators": {
     "hosting": {

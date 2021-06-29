@@ -1,5 +1,12 @@
 [[redirects]]
 from = "/about/"
+to = "/.netlify/functions/possum"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "possum"
+
+[[redirects]]
+from = "/about/"
 to = "/.netlify/functions/serverless"
 status = 200
 force = true

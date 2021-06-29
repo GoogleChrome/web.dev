@@ -1,3 +1,3 @@
-const serverless = require('./serverless');
+const possum = require('./possum');
 
-exports.serverless = serverless.serverless;
+exports.possum = possum.possum;

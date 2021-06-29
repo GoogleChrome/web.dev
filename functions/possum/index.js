@@ -4,8 +4,9 @@ const {EleventyServerless} = require('@11ty/eleventy');
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 
-exports.serverless = functions.https.onRequest(async (request, response) => {
-  // functions.logger.info('Hello logs!', {structuredData: true});
+exports.possum = functions.https.onRequest(async (request, response) => {
+  functions.logger.info('Hello logs!', {structuredData: true});
+  // return response.send(`You requested path: ${request.path}`);
 
   const elev = new EleventyServerless('serverless', {
     path: request.path, // required, the URL path
