@@ -157,7 +157,7 @@ you use the
 [`preconnect`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preconnect)
 resource hint to establish early connection(s) with the third-party origin.
 Resource hints should be placed in the `<head>` of the document. The resource
-hint below will set up a connection for loading the font stylesheet.
+hint below sets up a connection for loading the font stylesheet.
 
 
 ```html
