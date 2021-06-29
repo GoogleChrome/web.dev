@@ -18,7 +18,7 @@ tags:
 
 As part of project [Aurora](/introducing-aurora/), Google has been working with popular Web
 frameworks to ensure they perform well according to [Core Web Vitals](/vitals). Angular and Next.js
-have already landed font inline, which is explained in the first part of this article. The second
+have already landed font inlining, which is explained in the first part of this article. The second
 optimization we will cover is critical CSS inlining which is now enabled by default in Angular CLI
 and has a work in progress implementation in Nuxt.js.
 
