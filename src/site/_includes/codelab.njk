@@ -18,16 +18,18 @@ pageScripts:
       {% if date %}
         <div class="w-author__published">
           <time>{{date | prettyDate}}</time>
-          {% if updated %} <span class="w-author__separator">•</span> {{ 'i18n.common.updated' | i18n((locale)) }} <time>{{ updated | prettyDate }}</time> {% endif %}
+          {% if updated %} <span class="w-author__separator">•</span> {{ 'i18n.common.updated' | i18n(locale) }} <time>{{ updated | prettyDate }}</time> {% endif %}
         </div>
       {% endif %}
 
       {% if authors %}
         <div class="w-authors w-mt--xl w-pt--sm">
-          {% for author in authors %}
+          {% for authorKey in authors %}
+            {% set author = collections.authors[authorKey] %}
             {% Author {
-              id: author,
-              author: collections.authors[author],
+              id: authorKey,
+              title: author.title | i18n(locale),
+              author: author,
               showSocialMedia: true
               }
             %}

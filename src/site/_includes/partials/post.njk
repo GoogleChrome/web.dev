@@ -69,11 +69,14 @@
 
       {% if authors %}
         <div class="w-authors w-mt--xl w-pt--sm">
-          {% for author in authors %}
+          {% for authorKey in authors %}
+            {% set author = collections.authors[authorKey] %}
             {% Author {
-              id: author,
-              author: collections.authors[author],
-              showSocialMedia: true}
+              id: authorKey,
+              title: author.title | i18n(locale),
+              author: author,
+              showSocialMedia: true
+              }
             %}
           {% endfor %}
         </div>

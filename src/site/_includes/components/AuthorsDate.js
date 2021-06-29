@@ -138,7 +138,10 @@ const renderAuthorsDate = (
 
     return {
       id,
-      info,
+      info: {
+        ...info,
+        title: i18n(info.title, locale),
+      },
     };
   });
 
