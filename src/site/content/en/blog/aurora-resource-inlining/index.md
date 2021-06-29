@@ -207,6 +207,6 @@ In this post we touched on some of the collaboration between Chrome and Web fram
 framework author and you recognize some of the problems we tackled in your technology, we hope our
 findings would inspire you to apply similar performance optimizations.
 
-For a comprehensive list of the improvements we've been working on check web.dev/aurora. There you
-can find a comprehensive list of the work we've been doing in the space of optimization for Core Web
+Find out more about the improvements at [web.dev/aurora](/aurora). You
+can find a comprehensive list of the optimization work we've been doing for Core Web
 Vitals in the post [Introducing Aurora](/introducing-aurora/#what-has-our-work-unlocked-so-far).
