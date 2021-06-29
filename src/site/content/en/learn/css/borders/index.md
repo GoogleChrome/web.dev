@@ -167,9 +167,9 @@ You have this capability with borders, too:
   id: 'poRraBp'
 } %}
 
-In this example, `.my-element` has all sides defined as having a `1px`,
+In this example, `.my-element` has all sides defined as having a `2px`,
 dotted border that is the current text color.
-The `inline-end` border is then defined as `1px`, solid and red.
+The `inline-end` border is then defined as `2px`, solid and red.
 This means that in left-to-right languages—like English—
 the red border will be on the right side of the box.
 In right-to-left languages—like Arabic—
