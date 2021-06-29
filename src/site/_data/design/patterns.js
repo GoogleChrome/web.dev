@@ -19,12 +19,21 @@ const nunjucksEnv = new nunjucks.Environment();
 
 nunjucksEnv.addFilter('md', md);
 
+// For storing processed items for speedier builds
+let processedItems = [];
+
 module.exports = {
   // Grabs all patterns that it can find at the root level then builds up a dataset,
   // rendered markup, view markup and docs. Lastly, it finds any variants and makes
   // those part of the pattern, too
   get items() {
     // @ts-ignore
+
+    // If the items have already been processed, it's an immediate return
+    if (processedItems.length) {
+      return processedItems;
+    }
+
     const basePath = path.join(__basedir, 'src', 'pattern-library', 'patterns');
 
     // Gets pattern paths, excluding hidden files/folders
@@ -226,6 +235,7 @@ module.exports = {
       result.push(patternResponse);
     });
 
+    processedItems = result;
     return result;
   },
 
