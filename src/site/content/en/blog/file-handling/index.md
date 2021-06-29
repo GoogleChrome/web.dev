@@ -128,7 +128,7 @@ This is for a hypothetical application that handles comma-separated value (`.csv
 scalable vector graphics (`.svg`) files at `/open-svg`, and a made-up Grafr file format with any of
 `.grafr`, `.graf`, or `.graph` as the extension at `/open-graf`.
 
-{% Aside 'warning' %} For this declaration to have any effect, the application must be installed. You can
+{% Aside %} For this declaration to have any effect, the application must be installed. You can
 learn more in an article series on this very site on
 [making your app installable](/progressive-web-apps/#installable). {% endAside %}
 
