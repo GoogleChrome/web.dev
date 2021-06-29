@@ -166,8 +166,8 @@ hint below sets up a connection for loading the font stylesheet.
 </head>
 ```
 
-To preconnect the connection that is used to download the font file, you will
-need to add a separate `preconnect` resource hint that uses the `crossorigin`
+To preconnect the connection that is used to download the font file, 
+add a separate `preconnect` resource hint that uses the `crossorigin`
 attribute. Unlike stylesheets, font files must be sent over a [CORS
 connection](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#what_requests_use_cors).
 
