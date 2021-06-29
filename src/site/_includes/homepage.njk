@@ -4,6 +4,7 @@ title: web.dev
 pageScripts:
   - '/js/home.js'
 ---
+{% from 'macros/post-card.njk' import postCard with context %}
 <div>
   <div class="w-masthead-home">
     <div class="w-masthead-home__container">
@@ -67,11 +68,7 @@ pageScripts:
     <div class="w-grid w-pb--std">
       <div class="w-grid__columns w-grid__columns--featured" role="list">
         {% for post in recentPosts %}
-          {% if loop.first %}
-            {% PostCard post, true %}
-          {% else %}
-            {% PostCard post %}
-          {% endif %}
+          {{ postCard(post, loop.first) }}
         {% endfor %}
       </div>
     </div>

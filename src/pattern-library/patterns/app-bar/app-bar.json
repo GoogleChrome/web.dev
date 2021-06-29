@@ -1,0 +1,15 @@
+{
+  "title": "App bar",
+  "context": {
+    "items": [
+      {
+        "url": "#",
+        "text": "Lorem ipsum"
+      },
+      {
+        "url": "#",
+        "text": "Dolor sit amet"
+      }
+    ]
+  }
+}

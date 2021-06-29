@@ -55,7 +55,7 @@ and want them all to blend into each other.
   id: 'XWpEVGO'
 } %}
 
-The `mix-blend` mode affects the entire element,
+The `mix-blend-mode` affects the entire element,
 including its pseudo elements.
 One use-case is in the initial example of a duotone image,
 which has color layers applied to the element through its pseudo elements.
@@ -136,7 +136,7 @@ Mid-range colors, such as a 50% gray, are unaffected.
 
 The `darken` blend mode compares the source image and backdrop image's dark color luminosity
 and selects the darkest of the two.
-It does this by comparing rgb values instead of luminosity (like multiply and screen would do),
+It does this by comparing rgb values instead of luminosity (like `multiply` and `screen` would do),
 for each color channel.
 With `darken` and `lighten`, new color values are often created from this comparison process.
 

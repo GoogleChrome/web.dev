@@ -16,6 +16,7 @@
 
 const path = require('path');
 const locale = require('../../../shared/locale');
+const {PAGINATION_COUNT} = require('../_utils/constants');
 
 module.exports = {
   env: process.env.ELEVENTY_ENV || 'dev',
@@ -33,8 +34,9 @@ module.exports = {
   thumbnail: 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vU99HKzIf5EUPnzGVPf1.png',
   isBannerEnabled: true,
   banner:
-    'We want to hear from you! We are looking for web developers to participate in user research, product testing, discussion groups and more. [Apply now to join](https://www.brandinvitation.com/wix/p3474224.aspx?said=QWERD5A&pcid=CLCS&aud=na&cid=na&enpt=lp&lang=9&l=9&udv=wdb) our WebDev Insights Community.',
+    'PWA Summit: a conference to help everyone succeed with PWAs is happening Oct 6 & 7. [Submit your talk now](https://pwasummit.org).',
   areCoursesEnabled: true,
+  paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
   gitlocalize: 'https://gitlocalize.com/repo/6062/',

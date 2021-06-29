@@ -32,11 +32,14 @@ Conformance system was developed to codify best practices in a way that is autom
 enforceable. This ensured a consistently high bar for app quality and codebase maintainability
 regardless of the number of code contributors.
 
-Conformance is a system that ensures that developers stay on the well-lit path; it builds confidence
-and ensures predictable outcomes. It makes teams productive, and becomes crucial for _scale_ -- as
-teams grow and more features are developed simultaneously. It empowers developers to focus on
-building product features, freeing them from minutiae and the changing landscape in various areas
-such as performance, accessibility, security, etc.
+Conformance is a system that ensures that developers stay on the well-lit path;
+it builds confidence and ensures predictable outcomes. It makes teams
+productive, and becomes crucial for _scale_ -- as teams grow and more features
+are developed simultaneously. It empowers developers to focus on building
+product features, freeing them from minutiae and the changing landscape in
+various areas such as performance, accessibility, security, etc. Anyone can
+opt-out of Conformance at any time, and it should be customizable to the extent
+that teams will have the option to enforce whatever they decide to commit to.
 
 Conformance is founded on **strong defaults** and providing **actionable rules** that can be
 enforced at **authoring time**. This breaks down into the following 3 principles.
@@ -124,7 +127,7 @@ these rules can also be surfaced to developers at different times:
 
 - During local development in the development server, browser and user's IDE will surface warnings,
   prompting developers to make small code changes.
-- At build time, unresolved issues that are high severity will gate successful build completion.
+- At build time, unresolved issues will be resurfaced in the user's terminal
 
 In a nutshell, teams will choose outcomes they care about, such as Core Web Vitals or loading
 performance, and enable relevant rulesets for all code contributors to follow.
@@ -139,8 +142,8 @@ teams using open-source frameworks.
 
 ESLint is widely used among JavaScript developers. and over 50% of Next.js applications use ESLint
 in some part of their build workflow. Next.js v11 introduced out-of-the-box ESLint support that
-includes a [custom plugin](https://nextjs.org/docs/tag/basic-features/eslint#eslint-plugin) and
-[shareable configuration](https://nextjs.org/docs/tag/basic-features/eslint#base-configuration) to
+includes a [custom plugin](https://nextjs.org/docs/basic-features/eslint#eslint-plugin) and
+[shareable configuration](https://nextjs.org/docs/basic-features/eslint#base-configuration) to
 make it easier to catch common framework-specific issues during development and at build time. This
 can help developers fix significant problems at authoring time. Examples include when a certain
 component is used, or not used, in a way that could harm performance as in [No HTML link for

@@ -7,9 +7,14 @@
   iframe {
     border: 1px solid get-color('grey-300');
     resize: both;
-    width: var(--frame-width, auto);
-    height: var(--frame-height, auto);
+    width: var(--frame-width, max(100%, 500px));
+    height: var(--frame-height, max(100%, 500px));
     min-width: 300px;
-    min-height: 150px;
+    min-height: 300px;
+
+    &[data-size='large'] {
+      min-width: 100%;
+      min-height: 700px;
+    }
   }
 }
