@@ -98,7 +98,7 @@ When framework developers implement optimization in the underlying tooling, they
 existing and new applications to enable it, bringing the improvement to the entire ecosystem.
 
 This improvement is enabled by default from Next.js v10.2 and Angular v11. Both have support for
-Google and Adobe fonts inlining. Angular is expecting to introduce the latter in v12.2.
+inlining Google and Adobe fonts. Angular is expecting to introduce the latter in v12.2.
 
 You can find the implementation of [font inlining in Next.js on
 GitHub](https://github.com/vercel/next.js/pull/14746), and learn more about the optimization in the
