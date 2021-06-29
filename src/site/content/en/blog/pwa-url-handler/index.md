@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-06-03
-updated: 2021-06-17
+updated: 2021-06-29
 description: |
   After registering a PWA as a URL handler, when a user clicks on a hyperlink that matches
   one of the registered URL patterns, the registered PWA will open.
