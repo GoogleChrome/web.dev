@@ -30,7 +30,7 @@
     },
     "redirects": [],
     "rewrites": [{
-      "source": "/possum",
+      "source": "/about",
       "function": "possum"
     }]
   },
