@@ -120,27 +120,28 @@ const renderAuthorsDate = (
   authorsCollection = authorsCollectionFn(),
 ) => {
   const pairs = (authors || []).map((id) => {
-    const info = authorsCollection[id];
-    if (!info) {
+    const author = authorsCollection[id];
+    if (!author) {
       throw new Error(
         `Can't create Author component for "${id}" without author ` +
-          `information. Please check '_data/i18n/authors.yml' and make sure the ` +
+          `information. Please check '_data/authorsData.json' and make sure the ` +
           `author you provide is a key in this object.`,
       );
     }
-
-    // @ts-ignore
-    if (!info.title) {
+    const title = i18n(author.title, locale);
+    if (!title) {
       throw new Error(
-        `Can't create Author with missing 'title'. author id: ${id}}`,
+        `Can't create Author "${id}" with missing title. ` +
+          `Please check '_data/authorsData.json' and make sure the ` +
+          `author has a title.`,
       );
     }
 
     return {
       id,
       info: {
-        ...info,
-        title: i18n(info.title, locale),
+        ...author,
+        title,
       },
     };
   });

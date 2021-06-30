@@ -17,28 +17,32 @@
 const {html} = require('common-tags');
 const AuthorInfo = require('./AuthorInfo');
 const {Img} = require('./Img');
+const {i18n} = require('../../_filters/i18n');
 
 module.exports = ({
   id,
-  title,
   author,
+  locale,
   showSocialMedia = false,
   small = false,
 }) => {
   if (!author) {
     console.log(
       `Can't create Author component for "${id}" without author ` +
-        `information. Please check '_data/i18n/authors.yml' and make sure the ` +
+        `information. Please check '_data/authorsData.json' and make sure the ` +
         `author you provide is a key in this object.`,
     );
     return;
   }
-
+  const title = i18n(author.title, locale);
   if (!title) {
     throw new Error(
-      `Can't create Author with missing i18n.authors.${id}.title, author key: ${id}`,
+      `Can't create Author "${id}" with missing title. ` +
+        `Please check '_data/authorsData.json' and make sure the ` +
+        `author has a title.`,
     );
   }
+
   const img = Img({
     src: author.image,
     alt: title,

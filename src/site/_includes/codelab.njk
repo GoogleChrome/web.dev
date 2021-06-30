@@ -24,13 +24,12 @@ pageScripts:
 
       {% if authors %}
         <div class="w-authors w-mt--xl w-pt--sm">
-          {% for authorKey in authors %}
-            {% set author = collections.authors[authorKey] %}
+          {% for author in authors %}
             {% Author {
               id: authorKey,
-              title: author.title | i18n(locale),
-              author: author,
-              showSocialMedia: true
+              author: collections.authors[author],
+              showSocialMedia: true,
+              locale: locale
               }
             %}
           {% endfor %}
