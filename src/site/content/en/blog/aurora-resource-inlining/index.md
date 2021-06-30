@@ -38,7 +38,7 @@ how this would look like by including Material Icons:
 ```
 Even though this pattern is completely valid and functional, it blocks the application's rendering
 and introduces an extra request. To better understand what is going on, take a look at the source
-code of the stylesheet referenced in `index.html` above:
+code of the stylesheet referenced in the HTML above:
 
 ```css
 /* fallback */
