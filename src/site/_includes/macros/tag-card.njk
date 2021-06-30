@@ -19,8 +19,8 @@
           in the heading down below, this might be an OK tradeoff.
         #}
         <a href="{{url}}" class="w-card-base__link" tabindex="-1" aria-hidden="true">
-          <figure class="w-card-base__figure">
-            {% Img src=thumbnail, alt=title, width="354", height="240", class="w-card-base__image", params={fit: 'crop', h: '240', w: '354'} %}
+          <figure>
+            {% Img src=thumbnail, alt=title, width="354", height="240", params={fit: 'center', h: '240', w: '354'} %}
           </figure>
         </a>
       </div>

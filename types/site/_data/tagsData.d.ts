@@ -15,7 +15,9 @@
  */
 
 declare global {
-  export interface TagsDataItem {}
+  export interface TagsDataItem {
+    image?: string;
+  }
   export interface TagsData {
     [key: string]: TagsDataItem;
   }

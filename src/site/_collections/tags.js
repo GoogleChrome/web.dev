@@ -13,8 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const yaml = require('js-yaml');
+const fs = require('fs');
+const path = require('path');
+
 /** @type TagsData */
 const tagsData = require('../_data/tagsData.json');
+const tagsYaml = yaml.safeLoad(
+  fs.readFileSync(
+    path.join(__dirname, '..', '_data', 'i18n', 'tags.yml'),
+    'utf-8',
+  ),
+);
 const {livePosts} = require('../_filters/live-posts');
 const {sortByUpdated} = require('../_utils/sort-by-updated');
 
@@ -35,11 +45,12 @@ module.exports = (collections) => {
   /** @type Tags */
   const tags = {};
 
-  Object.keys(tagsData).forEach((key) => {
-    const tagData = tagsData[key];
+  Object.keys(tagsYaml).forEach((key) => {
+    const tagData = tagsData[key] || {};
     const href = `/tags/${key}/`;
     let elements = [];
     let date, updated;
+    const image = tagData.image;
 
     // Get posts
     if (collections) {
@@ -73,6 +84,7 @@ module.exports = (collections) => {
       ...tagData,
       data: {
         date,
+        hero: image,
         tags: [key],
         updated,
       },

@@ -108,9 +108,11 @@ module.exports = (collections) => {
     }
 
     const defaultUrl = getDefaultUrl(item.url);
-    const paginated = !!item.data.pagination;
+    const paginated = 'pagination' in item.data;
+    // Because virtual collection items need their description translated by the i18n filter.
+    // We have that translation in the renderData, so we check to see if that exists and then use it.
     const content =
-      paginated && !!item.data?.renderData?.description
+      paginated && item.data?.renderData?.description
         ? item.data.renderData.description
         : item.template.frontMatter.content;
 

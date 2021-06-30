@@ -18,7 +18,7 @@ const {feed, index, individual} = require('./utils');
 
 /**
  * @param {AuthorsItem[]} authors
- * @return {AuthorsExpandedItem[]}
+ * @return {AuthorsItem[]}
  */
 const authorsFeed = (authors) => feed(authors);
 

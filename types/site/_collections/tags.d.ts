@@ -22,15 +22,8 @@ declare global {
   export interface TagsItem
     extends VirtualCollectionItem<TagsDataField, TagsDataItem> {}
 
-  export interface TagsExpandedItem
-    extends VirtualCollectionItem<TagsDataField, TagsDataItem> {}
-
   export interface Tags {
     [key: string]: TagsItem;
-  }
-
-  export interface TagsExpanded {
-    [key: string]: TagsExpandedItem;
   }
 }
 

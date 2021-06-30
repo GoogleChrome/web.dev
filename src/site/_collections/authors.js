@@ -13,8 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const yaml = require('js-yaml');
+const fs = require('fs');
+const path = require('path');
+
 /** @type AuthorsData */
 const authorsData = require('../_data/authorsData.json');
+const authorsYaml = yaml.safeLoad(
+  fs.readFileSync(
+    path.join(__dirname, '..', '_data', 'i18n', 'authors.yml'),
+    'utf-8',
+  ),
+);
 const {livePosts} = require('../_filters/live-posts');
 const {sortByUpdated} = require('../_utils/sort-by-updated');
 
@@ -36,8 +46,8 @@ module.exports = (collections) => {
   /** @type Authors */
   const authors = {};
 
-  Object.keys(authorsData).forEach((key) => {
-    const authorData = authorsData[key];
+  Object.keys(authorsYaml).forEach((key) => {
+    const authorData = authorsData[key] || {};
     const href = `/authors/${key}/`;
     let elements = [];
     let date, updated;
