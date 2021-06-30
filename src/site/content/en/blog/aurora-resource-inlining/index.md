@@ -175,7 +175,7 @@ section button.primary {
 }
 ```
 In the example above, critters will read and parse the content of `styles.css`, after that it
-matches the two selectors against the HTML and discovers that we use `select button.primary`.
+matches the two selectors against the HTML and discovers that we use `section button.primary`.
 Finally critters will inline the corresponding styles in the `<head>` of the page resulting in:
 
 ```html
