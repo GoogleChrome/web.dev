@@ -1,5 +1,5 @@
 ---
-title: 'Resource Inlining in JavaScript frameworks'
+title: 'Resource inlining in JavaScript frameworks'
 subhead: Improving Largest Contentful Paint across the JavaScript ecosystem.
 authors:
   - mgechev
