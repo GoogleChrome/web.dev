@@ -99,8 +99,8 @@ This improvement is enabled by default from Next.js v10.2 and Angular v11. Both 
 inlining Google and Adobe fonts. Angular is expecting to introduce the latter in v12.2.
 
 You can find the implementation of [font inlining in Next.js on
-GitHub](https://github.com/vercel/next.js/pull/14746), and learn more about the optimization in the
-context of Angular in this [video](https://www.youtube.com/watch?v=yOpy9UMQG-Y).
+GitHub](https://github.com/vercel/next.js/pull/14746), and check out the [video explaining this optimization in the
+context of Angular](https://www.youtube.com/watch?v=yOpy9UMQG-Y).
 
 ## Inlining critical CSS
 
