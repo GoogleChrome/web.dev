@@ -6,7 +6,7 @@ authors:
 date: 2021-06-28
 hero: image/S838B7UEsdXmwrD8q5gvNlWTHHP2/yXASsFeUg39y0K7aFJIY.jpg
 alt: A labyrinth.
-description: Learn what are the latest optimizations JavaScript frameworks implemented in collaboration with project Aurora.
+description: Learn about the latest optimizations implemented in JavaScript frameworks in collaboration with project Aurora.
 tags:
   - blog
   - angular
