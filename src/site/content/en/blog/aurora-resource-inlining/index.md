@@ -78,7 +78,7 @@ An opportunity for optimization is to download the initial stylesheet at build t
 `index.html`. This skips an entire round trip to the CDN at runtime, reducing the blocking time.
 
 When building the application, a request is sent to the CDN, this fetches the stylesheet and inlines
-it in `index.html`, adding a `<link rel=preconnect>` to the domain. Applying this technique, we'd
+it in the HTML file, adding a `<link rel=preconnect>` to the domain. Applying this technique, we'd
 get the following result:
 
 ```html
