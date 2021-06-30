@@ -145,8 +145,7 @@ During the time between rendering the HTML and applying the styles the page is p
 When the browser uses the styles, we see flickering, which is a bad user experience and results in
 regressions in [Cumulative Layout Shift (CLS)](/cls/).
 
-To improve the loading behavior, together with asynchronous style loading, we use [critical CSS
-inlining](/extract-critical-css/). The [critters](http://npmjs.com/package/critters) tool can find
+[Critical CSS inlining](/extract-critical-css/), along with asynchronous style loading, can improve the loading behavior. The [critters](http://npmjs.com/package/critters) tool finds
 which styles are used on the page, by looking at the selectors in a stylesheet and matching them
 against the HTML. When it finds a match, it considers the corresponding styles as part of the
 critical CSS, and inlines them.
