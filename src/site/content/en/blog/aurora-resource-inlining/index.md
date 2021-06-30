@@ -204,7 +204,7 @@ by 27 points on a slow 3G network. {% endAside %}
 
 In this post we touched on some of the collaboration between Chrome and Web frameworks. If you're a
 framework author and you recognize some of the problems we tackled in your technology, we hope our
-findings would inspire you to apply similar performance optimizations.
+findings inspire you to apply similar performance optimizations.
 
 Find out more about the improvements at [web.dev/aurora](/aurora). You
 can find a comprehensive list of the optimization work we've been doing for Core Web
