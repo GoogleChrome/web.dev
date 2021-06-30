@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-06-29
+updated: 2021-06-30
 tags:
   - blog
   - capabilities
@@ -38,8 +38,15 @@ contents.
 {% Aside %}
 The File System Access API—despite the similar name—is distinct from the
 [`FileSystem`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem) interface exposed by the
-[File and Directory Entries API](https://wicg.github.io/entries-api/#api-domfilesystem) and the deprecated
-[File API: Directories and System](https://www.w3.org/TR/file-system-api/) specification.
+[File and Directory Entries API](https://wicg.github.io/entries-api/#api-domfilesystem), which
+documents the types and operations made available by browsers to script when a hierarchy of files and
+directories are dragged and dropped onto a page or selected using form elements or equivalent user
+actions.
+
+It is likewise distinct from the deprecated
+[File API: Directories and System](https://www.w3.org/TR/file-system-api/) specification, which defines an
+API to navigate file system hierarchies and a means by which browsers may expose sandboxed sections of a
+user's local filesystem to web applications.
 {% endAside %}
 
 If you've worked with reading and writing files before, much of what I'm about to share will be
