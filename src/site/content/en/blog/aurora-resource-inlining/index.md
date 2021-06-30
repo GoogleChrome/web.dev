@@ -111,8 +111,8 @@ all of the styles used at its initial rendering. To learn more about the topic, 
 
 We observed that many applications are loading styles synchronously, which blocks application
 rendering. A quick fix is to load the styles asynchronously. Rather than loading the scripts with
-`media="all"`, set the value of the media attribute to print, and once the loading completes,
-replace the attribute value to all:
+`media="all"`, set the value of the `media` attribute to `print`, and once the loading completes,
+replace the attribute value to `all`:
 
 ```html
 <link rel="stylesheet" href="..." media="print" onload="this.media='all'">
