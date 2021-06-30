@@ -193,7 +193,7 @@ section button.primary {
 ```
 
 Critical CSS inlining is now available in Angular and enabled by default in v12. If you're on v11,
-you can turn it on by [setting the `inlineCritical` property to
+turn it on by [setting the `inlineCritical` property to
 `true`](https://angular.io/guide/workspace-config#styles-optimization-options) in `angular.json`. To
 opt into this feature in Next.js add `experimental: { optimizeCss: true }` to your `next.config.js`.
 
