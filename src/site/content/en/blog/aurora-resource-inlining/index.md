@@ -26,7 +26,7 @@ and has a work in progress implementation in Nuxt.js.
 
 After analyzing hundreds of applications, the Aurora team found that developers often include fonts in
 their applications by referencing them in the `<head>` element of `index.html`. Here's an example of
-how this would look like by including Material Icons:
+how this would look like when including Material Icons:
 
 ```html
 <!doctype html>
