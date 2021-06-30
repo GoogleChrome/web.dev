@@ -24,7 +24,7 @@ and has a work in progress implementation in Nuxt.js.
 
 ## Font inlining
 
-After analyzing hundreds of applications, our team found that developers often include fonts in
+After analyzing hundreds of applications, the Aurora team found that developers often include fonts in
 their applications by referencing them in the `<head>` element of `index.html`. Here's an example of
 how this would look like by including Material Icons:
 
