@@ -212,7 +212,7 @@ callback. It accepts the earlier assigned thread handle as well as a pointer to 
 - in this case I don't have any results, so I'm just passing `NULL`.
 
 To compile code using threads with Emscripten, you need to invoke `emcc` and pass a `-pthread`
-parameter like you would when compiling same code with Clang or GCC on other platforms:
+parameter, as when compiling the same code with Clang or GCC on other platforms:
 
 ```shell
 emcc -pthread example.c -o example.js
@@ -238,7 +238,7 @@ environments, where applications normally run I/O in synchronous, blocking manne
 blog post about [Using asynchronous web APIs from WebAssembly](/asyncify/) if you'd
 like to learn more.
 
-Particularly in this case, the code synchronously invokes `pthread_create` to create a background
+In this case, the code synchronously invokes `pthread_create` to create a background
 thread, and follows up by another synchronous call to `pthread_join` that waits for the background
 thread to finish execution. However, Web Workers, that are used behind the scenes when this code is
 compiled with Emscripten, are asynchronous. So what happens is, `pthread_create` only _schedules_ a
@@ -370,14 +370,14 @@ generic `wasm32-unknown-unknown` target for generic WebAssembly output.
 If Wasm is intended to be used in a web environment, any interaction with JavaScript APIs is left to
 external libraries and tooling like [wasm-bindgen](https://rustwasm.github.io/docs/wasm-bindgen/)
 and [wasm-pack](https://rustwasm.github.io/docs/wasm-pack/). Unfortunately, this means that the
-standard library is not aware of Web Workers and standard APIs like
+standard library is not aware of Web Workers and standard APIs such as
 [`std::thread`](https://doc.rust-lang.org/std/thread/) won't work when compiled to WebAssembly.
 
 Luckily, the majority of the ecosystem depends on higher-level libraries to take care of
 multithreading. At that level it's much easier to abstract away all the platform differences.
 
 In particular, [Rayon](https://crates.io/crates/rayon) is the most popular choice for
-data-parallelism in Rust. It allows to take method chains on regular iterators and, usually with a
+data-parallelism in Rust. It allows you to take method chains on regular iterators and, usually with a
 single line change, convert them in a way where they'd run in parallel on all available threads
 instead of sequentially. For example:
 
