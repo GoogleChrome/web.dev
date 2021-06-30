@@ -24,9 +24,9 @@ and has a work in progress implementation in Nuxt.js.
 
 ## Font inlining
 
-After analyzing hundreds of applications, the Aurora team found that developers often include fonts in
-their applications by referencing them in the `<head>` element of `index.html`. Here's an example of
-how this would look like when including Material Icons:
+After analyzing hundreds of applications, the Aurora team found that developers often include fonts
+in their applications by referencing them in the `<head>` element of `index.html`. Here's an example
+of how this would look like when including Material Icons:
 
 ```html
 <!doctype html>
@@ -65,7 +65,8 @@ in the head.
   <figcaption class="w-figcaption">First, the website loads the font stylesheet.</figcaption>
 </figure>
 
-Next, the browser downloads the `woff2` file, then finally, it's able to proceed with rendering the application.
+Next, the browser downloads the `woff2` file, then finally, it's able to proceed with rendering the
+application.
 
 <figure class="w-figure">
   {% Img src="image/S838B7UEsdXmwrD8q5gvNlWTHHP2/V1uQUNEvw4vHwAW1ekPk.png",
@@ -107,9 +108,9 @@ context of Angular in this [video](https://www.youtube.com/watch?v=yOpy9UMQG-Y).
 ## Inlining critical CSS
 
 Another enhancement involves improving the [First Contentful Paint (FCP)](/fcp) and [Largest
-Contentful Paint (LCP)](/lcp) metrics by inlining critical CSS. The critical CSS of a page
-includes all of the styles used at its initial rendering. You can read more about the topic in the
-article [Defer non-critical CSS](/defer-non-critical-css/).
+Contentful Paint (LCP)](/lcp) metrics by inlining critical CSS. The critical CSS of a page includes
+all of the styles used at its initial rendering. You can read more about the topic in the article
+[Defer non-critical CSS](/defer-non-critical-css/).
 
 We observed that many applications are loading styles synchronously, which blocks application
 rendering. A quick fix is to load the styles asynchronously. Rather than loading the scripts with
@@ -121,7 +122,6 @@ replace the attribute value to all:
 ```
 
 This practice, however, can cause flickering of unstyled content.
-
 
 <figure class="w-figcaption">
   {% Video
@@ -137,29 +137,26 @@ This practice, however, can cause flickering of unstyled content.
 </figure>
 
 The video above shows the rendering of a page, which loads its styles asynchronously. The flicker
-happens because the browser first starts downloading the styles, then renders the HTML
-which follows. Once the browser downloads the styles, it triggers the `onload` event of the link
-element, updating the `media` attribute to `all`, and applies the styles to the DOM.
+happens because the browser first starts downloading the styles, then renders the HTML which
+follows. Once the browser downloads the styles, it triggers the `onload` event of the link element,
+updating the `media` attribute to `all`, and applies the styles to the DOM.
 
 During the time between rendering the HTML and applying the styles the page is partially unstyled.
 When the browser uses the styles, we see flickering, which is a bad user experience and results in
 regressions in [Cumulative Layout Shift (CLS)](/cls/).
 
-[Critical CSS inlining](/extract-critical-css/), along with asynchronous style loading, can improve the loading behavior. The [critters](http://npmjs.com/package/critters) tool finds
-which styles are used on the page, by looking at the selectors in a stylesheet and matching them
-against the HTML. When it finds a match, it considers the corresponding styles as part of the
-critical CSS, and inlines them.
+[Critical CSS inlining](/extract-critical-css/), along with asynchronous style loading, can improve
+the loading behavior. The [critters](http://npmjs.com/package/critters) tool finds which styles are
+used on the page, by looking at the selectors in a stylesheet and matching them against the HTML.
+When it finds a match, it considers the corresponding styles as part of the critical CSS, and
+inlines them.
 
 Let's look at an example:
 
+{% Compare 'worse', 'Example before inlining' %}
 ```html
 <head>
 <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-<style>
-section button.primary {
-  /* ... */
-}
-</style>
 <section>
  <button class="primary"></button>
 </section>
@@ -174,10 +171,13 @@ section button.primary {
   /* ... */
 }
 ```
+{% endCompare %}
+
 In the example above, critters will read and parse the content of `styles.css`, after that it
 matches the two selectors against the HTML and discovers that we use `section button.primary`.
 Finally critters will inline the corresponding styles in the `<head>` of the page resulting in:
 
+{% Compare 'better', 'Example after inlining' %}
 ```html
 <head>
 <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
@@ -191,6 +191,7 @@ section button.primary {
  <button class="primary"></button>
 </section>
 ```
+{% endCompare %}
 
 Critical CSS inlining is now available in Angular and enabled by default in v12. If you're on v11,
 turn it on by [setting the `inlineCritical` property to
@@ -206,6 +207,6 @@ In this post we touched on some of the collaboration between Chrome and web fram
 framework author and recognize some of the problems we tackled in your technology, we hope our
 findings inspire you to apply similar performance optimizations.
 
-Find out more about the improvements at [web.dev/aurora](/aurora). You
-can find a comprehensive list of the optimization work we've been doing for Core Web
-Vitals in the post [Introducing Aurora](/introducing-aurora/#what-has-our-work-unlocked-so-far).
+Find out more about the improvements at [web.dev/aurora](/aurora). You can find a comprehensive list
+of the optimization work we've been doing for Core Web Vitals in the post [Introducing
+Aurora](/introducing-aurora/#what-has-our-work-unlocked-so-far).
