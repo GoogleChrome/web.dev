@@ -10,10 +10,7 @@ description: Learn about the latest optimizations implemented in JavaScript fram
 tags:
   - blog
   - angular
-  - next.js
-  - nuxt.js
-  - cwv
-  - lcp
+  - web-vitals
 ---
 
 As part of project [Aurora](/introducing-aurora/), Google has been working with popular Web
