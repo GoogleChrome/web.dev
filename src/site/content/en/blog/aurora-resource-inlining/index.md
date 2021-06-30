@@ -202,7 +202,7 @@ by 27 points on a slow 3G network. {% endAside %}
 
 ## Conclusions
 
-In this post we touched on some of the collaboration between Chrome and Web frameworks. If you're a
+In this post we touched on some of the collaboration between Chrome and web frameworks. If you're a
 framework author and recognize some of the problems we tackled in your technology, we hope our
 findings inspire you to apply similar performance optimizations.
 
