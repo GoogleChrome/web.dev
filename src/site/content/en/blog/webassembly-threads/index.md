@@ -367,7 +367,7 @@ Pthread 0xa05c18 exited.
 Unlike Emscripten, Rust doesn't have a specialized end-to-end web target, but instead provides a
 generic `wasm32-unknown-unknown` target for generic WebAssembly output.
 
-If Wasm is intended to be used in a Web environment, any interaction with JavaScript APIs is left to
+If Wasm is intended to be used in a web environment, any interaction with JavaScript APIs is left to
 external libraries and tooling like [wasm-bindgen](https://rustwasm.github.io/docs/wasm-bindgen/)
 and [wasm-pack](https://rustwasm.github.io/docs/wasm-pack/). Unfortunately, this means that the
 standard library is not aware of Web Workers and standard APIs like
