@@ -107,8 +107,8 @@ context of Angular in this [video](https://www.youtube.com/watch?v=yOpy9UMQG-Y).
 ## Inlining critical CSS
 
 Another enhancement involves improving the [First Contentful Paint (FCP)](/fcp) and [Largest
-Contentful Paint (LCP)](/lcp) metrics by inlining critical CSS. We define the critical CSS of a page
-as all the styles that are used at its initial rendering. You can read more about the topic in the
+Contentful Paint (LCP)](/lcp) metrics by inlining critical CSS. The critical CSS of a page
+includes all of the styles used at its initial rendering. You can read more about the topic in the
 article [Defer non-critical CSS](/defer-non-critical-css/).
 
 We observed that many applications are loading styles synchronously, which blocks application
