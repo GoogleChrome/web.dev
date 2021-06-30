@@ -18,12 +18,12 @@ independent parts of the input data, scaling it to as many cores as the user has
 reducing the overall execution time.
 
 In this article you will learn how to use WebAssembly threads to bring multithreaded applications
-written in languages like C, C++ and Rust to the Web.
+written in languages like C, C++, and Rust to the web.
 
 ## How WebAssembly threads work
 
 WebAssembly threads is not a separate feature, but a combination of several components that allows
-WebAssembly apps to use traditional multithreading paradigms on the Web.
+WebAssembly apps to use traditional multithreading paradigms on the web.
 
 ### Web Workers
 
@@ -42,7 +42,7 @@ run the same WebAssembly code on the same shared memory without going through Ja
 Web Workers have been around for over a decade now, are widely supported, and don't require any
 special flags.
 
-### SharedArrayBuffer
+### `SharedArrayBuffer`
 
 WebAssembly memory is represented by a
 [`WebAssembly.Memory`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory)
@@ -59,7 +59,7 @@ To support multithreading, `WebAssembly.Memory` gained a shared variant too. Whe
 `shared` flag via the JavaScript API, or by the WebAssembly binary itself, it becomes a wrapper
 around a
 [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
-instead. It's a variation of `ArrayBuffer` that can be shared with other threads and read / modified
+instead. It's a variation of `ArrayBuffer` that can be shared with other threads and read or modified
 simultaneously from either side.
 
 ```js
@@ -77,23 +77,23 @@ compilation target for traditional synchronisation primitives.
 `SharedArrayBuffer` has a complicated history. It was initially shipped in several browsers
 mid-2017, but had to be disabled in the beginning of 2018 due to discovery of [Spectre
 vulnerabilities](https://developers.google.com/web/updates/2018/02/meltdown-spectre). The particular
-reason was that data extraction in Spectre relies on timing attacks - measuring execution time of a
+reason was that data extraction in Spectre relies on timing attacks—measuring execution time of a
 particular piece of code. To make this kind of attack harder, browsers reduced precision of standard
 timing APIs like `Date.now` and `performance.now`. However, shared memory, combined with a simple
 counter loop running in a separate thread [is also a very reliable way to get high-precision
 timing](https://github.com/tc39/security/issues/3), and it's much harder to mitigate without
 significantly throttling runtime performance.
 
-Instead, Chrome 68 (mid-2018) re-enabled `SharedArrayBuffer` again by leveraging [site
-isolation](https://developers.google.com/web/updates/2018/07/site-isolation) - a feature that puts
+Instead, Chrome 68 (mid-2018) re-enabled `SharedArrayBuffer` again by leveraging [Site
+Isolation](https://developers.google.com/web/updates/2018/07/site-isolation)—a feature that puts
 different websites into different processes and makes it much more difficult to use side-channel
 attacks like Spectre. However, this mitigation was still limited only to Chrome desktop, as Site
 Isolation is a fairly expensive feature, and couldn't be enabled by default for all sites on
 low-memory mobile devices nor was it yet implemented by other vendors.
 
-Fast-forward to 2020, Chrome and Firefox both have implementations of Site Isolation now and also
-decided on a standard way for websites to opt-in to the feature: [COOP/COEP
-headers](https://web.dev/coop-coep/). An opt-in mechanism allows to use Site Isolation even on
+Fast-forward to 2020, Chrome and Firefox both have implementations of Site Isolation, 
+and a standard way for websites to opt-in to the feature with [COOP and COEP
+headers](/coop-coep/). An opt-in mechanism allows to use Site Isolation even on
 low-powered devices where enabling it for all the websites would be too expensive. To opt-in, add
 the following headers to the main document in your server configuration:
 
@@ -104,7 +104,7 @@ Cross-Origin-Opener-Policy: same-origin
 
 Once you opt-in, you get access to `SharedArrayBuffer` (including `WebAssembly.Memory` backed by a
 `SharedArrayBuffer`), precise timers, memory measurement and other APIs that require an isolated
-origin for security reasons. Check out the [linked guide](https://web.dev/coop-coep/) for more
+origin for security reasons. Check out the [Making your website "cross-origin isolated" using COOP and COEP](/coop-coep/) for more
 details.
 
 ### WebAssembly atomics
@@ -119,13 +119,13 @@ This is where atomic operations come in.
 [WebAssembly
 atomics](https://webassembly.github.io/threads/core/syntax/instructions.html#atomic-memory-instructions)
 is an extension to the WebAssembly instruction set that allow to read and write small cells of data
-(usually 32- and 64-bit integers) "atomically", that is, in a way that guarantees that no two
-threads are reading / writing to the same cell at the same time, preventing such conflicts at a low
+(usually 32- and 64-bit integers) "atomically". That is, in a way that guarantees that no two
+threads are reading or writing to the same cell at the same time, preventing such conflicts at a low
 level. Additionally, WebAssembly atomics contain two more instruction kinds—"wait" and "notify"—that
 allow one thread to sleep ("wait") on a given address in a shared memory until another thread wakes
 it up via "notify".
 
-All the higher-level synchronisation primitives like channels, mutexes, read-write locks etc. build
+All the higher-level synchronisation primitives, including channels, mutexes, and read-write locks build
 upon those instructions.
 
 ## How to use WebAssembly threads
@@ -164,7 +164,7 @@ In C, particularly on Unix-like systems, the common way to use threads is via [P
 Threads](https://en.wikipedia.org/wiki/POSIX_Threads) provided by the `pthread` library. Emscripten
 [provides an API-compatible implementation](https://emscripten.org/docs/porting/pthreads.html) of
 the `pthread` library built atop Web Workers, shared memory and atomics, so that the same code can
-work on the Web without changes.
+work on the web without changes.
 
 Let's take a look at an example:
 
@@ -196,14 +196,14 @@ int main()
 }
 ```
 
-Here the headers for the pthread library are included via `pthread.h`. You can also see a couple of
+Here the headers for the `pthread` library are included via `pthread.h`. You can also see a couple of
 crucial functions for dealing with threads.
 
 [`pthread_create`](https://man7.org/linux/man-pages/man3/pthread_create.3.html) will create a
 background thread. It takes a destination to store a thread handle in, some thread creation
 attributes (here not passing any, so it's just `NULL`), the callback to be executed in the new
 thread (here `thread_callback`), and an optional argument pointer to pass to that callback in case
-you want to share some data from the main thread - in this example we're sharing a pointer to a
+you want to share some data from the main thread—in this example we're sharing a pointer to a
 variable `arg`.
 
 [`pthread_join`](https://man7.org/linux/man-pages/man3/pthread_join.3.html) can be called later at
@@ -232,10 +232,10 @@ cases, use setting `-s PTHREAD_POOL_SIZE_STRICT=2`.
 […hangs here…]
 ```
 
-What happened? The problem is, most of the time-consuming APIs on the Web are asynchronous and rely
+What happened? The problem is, most of the time-consuming APIs on the web are asynchronous and rely
 on the event loop to execute. This limitation is an important distinction compared to traditional
 environments, where applications normally run I/O in synchronous, blocking manner. Check out the
-blog post about [Using asynchronous web APIs from WebAssembly](https://web.dev/asyncify/) if you'd
+blog post about [Using asynchronous web APIs from WebAssembly](/asyncify/) if you'd
 like to learn more.
 
 Particularly in this case, the code synchronously invokes `pthread_create` to create a background
@@ -254,7 +254,7 @@ pool is sufficiently large.
 
 This is exactly what Emscripten allows with the [`-s
 PTHREAD_POOL_SIZE=...`](https://emsettings.surma.technology/#PTHREAD_POOL_SIZE) option. It allows to
-specify a number of threads - either a fixed number, or a JavaScript expression like
+specify a number of threads—either a fixed number, or a JavaScript expression like
 [`navigator.hardwareConcurrency`](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency)
 to create as many threads as there are cores on the CPU. The latter option is helpful when your code
 can scale to an arbitrary number of threads.
@@ -364,7 +364,7 @@ Pthread 0xa05c18 exited.
 
 ### Rust
 
-Unlike Emscripten, Rust doesn't have a specialised end-to-end Web target, but instead provides a
+Unlike Emscripten, Rust doesn't have a specialized end-to-end web target, but instead provides a
 generic `wasm32-unknown-unknown` target for generic WebAssembly output.
 
 If Wasm is intended to be used in a Web environment, any interaction with JavaScript APIs is left to
@@ -394,7 +394,7 @@ pub fn sum_of_squares(numbers: &[i32]) -> i32 {
 This unassuming code will split up the input data, calculate `x * x` and partial sums in parallel
 threads, and in the end add up those partial results together.
 
-In order to accomodate for platforms without working `std::thread`, Rayon provides hooks that allow
+To accommodate for platforms without working `std::thread`, Rayon provides hooks that allow
 to define custom logic for spawning and exiting threads. We've tapped into those hooks and built an
 adapter that you can use with wasm-bindgen to spawn WebAssembly threads as Web Workers:
 [wasm-bindgen-rayon](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon).
@@ -437,7 +437,7 @@ wasm-bindgen-generated code there, and expose its API with a library like
 [Comlink](https://github.com/GoogleChromeLabs/comlink) to the main thread.
 
 Check out
-[https://github.com/GoogleChromeLabs/wasm-bindgen-rayon/tree/main/demo](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon/tree/main/demo)
+[the wasm-bindgen-rayon example](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon/tree/main/demo)
 for an end-to-end demo showing:
 
 *   [Feature detection of
@@ -456,12 +456,12 @@ for an end-to-end demo showing:
 ## Real-world use-cases
 
 We actively use WebAssembly threads in [Squoosh.app](https://squoosh.app/) for client-side image
-compression - in particular, for formats like AVIF (C++), JPEG-XL (C++), OxiPNG (Rust) and WebP v2
+compression—in particular, for formats like AVIF (C++), JPEG-XL (C++), OxiPNG (Rust) and WebP v2
 (C++). Thanks to multithreading alone, we've seen consistent 1.5x-3x speed-ups (exact ratio differs
 per codec), and were able to push those numbers even further by combining WebAssembly threads with
 [WebAssembly SIMD](https://v8.dev/features/simd)!
 
-Google Earth is another notable service that's using WebAssembly threads for its [Web
+Google Earth is another notable service that's using WebAssembly threads for its [web
 version](https://earth.google.com/web/).
 
 [FFMPEG.WASM](https://ffmpegwasm.github.io/) is a WebAssembly version of a popular
@@ -469,4 +469,4 @@ version](https://earth.google.com/web/).
 encode videos directly in the browser.
 
 There are many more exciting examples using WebAssembly threads out there. Be sure to check out
-their demos and bring your own multithreaded applications and libraries to the Web!
+their demos and bring your own multithreaded applications and libraries to the web!
