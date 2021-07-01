@@ -177,7 +177,7 @@ function onXRFrame(hrTime, xrFrame) {
 ```
 
 There's one viewer pose that represents the user's overall position, meaning
-either the viewer's head or the the phone camera in the case of a smartphone.
+either the viewer's head or the phone camera in the case of a smartphone.
 The pose tells your application where the viewer is. Actual image rendering uses
 `XRView` objects, which I'll get to in a bit.
 

@@ -16,6 +16,7 @@
 
 const path = require('path');
 const locale = require('../../../shared/locale');
+const {PAGINATION_COUNT} = require('../_utils/constants');
 
 module.exports = {
   env: process.env.ELEVENTY_ENV || 'dev',
@@ -33,8 +34,9 @@ module.exports = {
   thumbnail: 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vU99HKzIf5EUPnzGVPf1.png',
   isBannerEnabled: true,
   banner:
-    'I/O is back, online, and free for everyone! I/O connects developers from around the world for thoughtful discussions and hands-on learning with Google experts. [Register now](https://events.google.com/io/?utm_source=web&utm_medium=embedded_marketing).',
+    'PWA Summit: a conference to help everyone succeed with PWAs is happening Oct 6 & 7. [Submit your talk now](https://pwasummit.org).',
   areCoursesEnabled: true,
+  paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
   gitlocalize: 'https://gitlocalize.com/repo/6062/',

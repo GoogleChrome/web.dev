@@ -434,7 +434,7 @@
     "descriptions": {
       "en": "Eng Manager working on Chrome and Web Platform"
     },
-    "image": "image/admin/tiRsxAul7QYidjbx2Nwo.jpg"
+    "image": "image/1L2RBhCLSnXjCnSlevaDjy3vba73/LJyNTOzyWbowv2mrlzPS.jpeg"
   },
   "jeffposnick": {
     "name": {
@@ -619,11 +619,16 @@
       "given": "Houssein",
       "family": "Djirdeh"
     },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
     "homepage": "https://houssein.me/",
     "twitter": "hdjirdeh",
     "github": "housseindjirdeh",
     "glitch": "housseindjirdeh",
-    "image": "image/admin/BibySYHD7JweNcHZCCOe.jpg"
+    "image": "image/admin/BibySYHD7JweNcHZCCOe.jpg",
+    "country": "US"
   },
   "megginkearney": {
     "name": {
@@ -1888,7 +1893,7 @@
       "family": "Guan"
     },
     "github": "AndrewKGuan",
-    "image": "image/admin/1v5F1SOBl46ZghbHQMle.svg"
+    "image": "image/HFWAhol3apcfNfuFxGZfjtLt2Yq2/oXpI60ZHNBOBos8bGJRn.jpeg"
   },
   "sorenbalko": {
     "name": {
@@ -2202,6 +2207,20 @@
     },
     "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/pguQ0oykD0nNu9jM5OcP.jpeg"
   },
+  "mgiuca": {
+    "name": {
+      "given": "Matt",
+      "family": "Giuca"
+    },
+    "twitter": "mgiuca",
+    "github": "mgiuca",
+    "org": {
+      "name": "Google",
+      "unit": "Engineering"
+    },
+    "country": "AU",
+    "image": "image/26V1DWN36MZr3mUo8ChSBlCpzp43/9gFKixjZHcpFPVcOX9Av.jpg"
+  },
   "swethagopalakrishnan": {
     "name": {
       "given": "Swetha",
@@ -2210,7 +2229,7 @@
     "org": {
       "name": "Google"
     },
-    "twitter": "swethago",
+    "twitter": "swetha_go",
     "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/Mpe7GGUwnUsy9Gx7UxZK.jpg"
   },
   "saurabhrajpal": {
@@ -2253,5 +2272,110 @@
     "github": "minhaz",
     "twitter": "_mkazi_",
     "image": "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/JIhb3g9F2oAg2t3PJ5Y2.jpeg"
+  },
+  "cmp": {
+    "name": {
+      "given": "Chase",
+      "family": "Phillips"
+    },
+    "github": "chasephillips",
+    "org": {
+      "name": "Google",
+      "unit": "Engineering"
+    },
+    "descriptions": {
+      "en": "Software Engineer on the Google Chrome team"
+    },
+    "country": "US"
+  },
+  "collindionagata": {
+    "name": {
+      "given": "Collin",
+      "family": "Dion Agata"
+    },
+    "org": {
+      "name": "Blibli",
+      "unit": "Lead Product Manager"
+    },
+    "country": "ID",
+    "twitter": "CollinDion",
+    "linkedin": "collin-dion-agata",
+    "image": "image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/ZpE2N6yjkaqQNcSiaxvR.jpeg"
+  },
+  "chrisboakes": {
+    "name": {
+      "given": "Chris",
+      "family": "Boakes"
+    },
+    "github": "chrisboakes",
+    "linkedin": "https://www.linkedin.com/in/chris-boakes",
+    "twitter": "cboakes",
+    "descriptions": {
+      "en": "Principal Software Engineer at The Telegraph"
+    },
+    "country": "UK",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/eIgvuUcq2LknyiDixzOJ.jpeg"
+  },
+  "jaikk": {
+    "name": {
+      "given": "Jai",
+      "family": "Krishnan"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "country": "US",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/BKGlQ9PreNrLEV74mhKX.jpg",
+    "descriptions": {
+      "en": "Product Manager at Google working on open codecs"
+    }
+  },
+  "wtc": {
+    "name": {
+      "given": "Wan-Teh",
+      "family": "Chang"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "country": "US",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/tyVCzJx2Qe2hCSwXzhrk.jpeg",
+    "descriptions": {
+      "en": "Engineer at Google working on AVIF"
+    }
+  },
+  "shubhie": {
+    "name": {
+      "given": "Shubhie",
+      "family": "Panicker"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Engineering"
+    },
+    "descriptions": {
+      "en": "Tech Lead Manager on the Chrome Web Platform team"
+    },
+    "github": "spanicker",
+    "twitter": "shubhie",
+    "country": "US",
+    "image": "image/0SXGYLkliuPQY3aSy3zWvdv7RqG2/sInJ1hYQTzeVJUGaOjlk.jpeg"
+  },
+  "npm": {
+    "name": {
+      "given": "Nicolás",
+      "family": "Peña Moreno"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Engineering"
+    },
+    "descriptions": {
+      "en": "Software developer always looking for chocolates and games",
+      "es": "Programador siempre en busca de chocolates y juegos"
+    },
+    "github": "npm1",
+    "twitter": "NicPenaM",
+    "image": "image/kns0INkO77RkiEStzHWYrugyWj32/SCSIEb0Qtv6tPWel5tfd.jpeg"
   }
 }

@@ -1,5 +1,5 @@
 ---
-title: Let web applications be file handlers
+title: Let installed web applications be file handlers
 subhead: Register an app as a file handler with the operating system.
 authors:
   - thomassteiner
@@ -7,26 +7,24 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2020-11-02
+updated: 2021-06-29
 tags:
   - blog
+  - capabilities
   - file-handling
 hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
 origin_trial:
-  url:
+  url: https://developer.chrome.com/origintrials/#/view_trial/-6682215947110973439
 ---
 
-{% Aside %}
-  The File Handling API is part of the
-  [capabilities project](/fugu-status/) and is currently in development. This post will
-  be updated as the implementation progresses.
-{% endAside %}
+{% Aside %} The File Handling API is part of the [capabilities project](/fugu-status/) and is
+currently in development. This post will be updated as the implementation progresses. {% endAside %}
 
 Now that web apps are [capable of reading and writing files](/file-system-access/), the next logical
 step is to let developers declare these very web apps as file handlers for the files their apps can
 create and process. The File Handling API allows you to do exactly this.
-After registering a text editor app as a file handler, you can right-click a `.txt` file on macOS
+After registering a text editor app as a file handler and after installing it, you can right-click a `.txt` file on macOS
 and select "Get Info" to then instruct the OS that it should always open `.txt` files with this app as default.
 
 ### Suggested use cases for the File Handling API {: #use-cases }
@@ -46,17 +44,28 @@ Examples of sites that may use this API include:
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | Not started              |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | Not started              |
+| 4. **Origin trial**                      | **[In progress][ot]**    |
 | 5. Launch                                | Not started              |
 
 </div>
 
 ## How to use the File Handling API {: #use }
 
-### Enabling via chrome://flags
+### Enabling via about://flags
 
 To experiment with the File Handling API locally, without an origin trial token, enable the
-`#file-handling-api` flag in `chrome://flags`.
+`#file-handling-api` flag in `about://flags`.
+
+### Enabling support during the origin trial phase
+
+Starting in Chromium&nbsp;92, the File Handling API will be available as an origin trial in
+Chromium. The origin trial is expected to end in Chromium&nbsp;94 (October 13, 2021).
+
+{% include 'content/origin-trials.njk' %}
+
+### Register for the origin trial {: #register-for-ot }
+
+{% include 'content/origin-trial-register.njk' %}
 
 ### Progressive enhancement
 
@@ -78,22 +87,24 @@ if ('launchQueue' in window) {
 }
 ```
 
+{% Aside %} File Handling is currently limited to desktop operating systems. {% endAside %}
+
 ### The declarative part of the File Handling API
 
-As a first step, web apps need to declaratively describe in their [Web App Manifest](/add-manifest/)
-what kind of files they can handle. The File Handling API extends Web App Manifest with a new
-property called `"file_handlers"` that accepts an array of, well, file handlers. A file handler is an
-object with two properties:
+As a first step, web apps need to declaratively describe in their [web app manifest](/add-manifest/)
+what kind of files they can handle. The File Handling API extends web app manifest with a new
+property called `"file_handlers"` that accepts an array of, well, file handlers. A file handler is
+an object with two properties:
 
 - An `"action"` property that points to a URL within the scope of the app as its value.
 - An `"accept"` property with an object of MIME-types as keys and lists of file extensions as their
   values.
 
-The example below, showing only the relevant excerpt of the Web App Manifest, should make it clearer:
+The example below, showing only the relevant excerpt of the web app manifest, should make it
+clearer:
 
 ```json
 {
-  …
   "file_handlers": [
     {
       "action": "/open-csv",
@@ -114,14 +125,13 @@ The example below, showing only the relevant excerpt of the Web App Manifest, sh
         "application/vnd.alternative-graph-app.graph": ".graph"
       }
     }
-  ],
-  …
+  ]
 }
 ```
 
-This is for a hypothetical application that handles comma-separated value (`.csv`) files at `/open-csv`,
-scalable vector graphics (`.svg`) files at `/open-svg`, and a made-up Grafr file format with any of
-`.grafr`, `.graf`, or `.graph` as the extension at `/open-graf`.
+This is for a hypothetical application that handles comma-separated value (`.csv`) files at
+`/open-csv`, scalable vector graphics (`.svg`) files at `/open-svg`, and a made-up Grafr file format
+with any of `.grafr`, `.graf`, or `.graph` as the extension at `/open-graf`.
 
 {% Aside %} For this declaration to have any effect, the application must be installed. You can
 learn more in an article series on this very site on
@@ -131,8 +141,8 @@ learn more in an article series on this very site on
 
 Now that the app has declared what files it can handle at which in-scope URL in theory, it needs to
 imperatively do something with incoming files in practice. This is where the `launchQueue` comes
-into play. To access launched files, a site needs to specify a consumer for the `window.launchQueue` object.
-Launches are queued until they are handled by the specified consumer, which is invoked
+into play. To access launched files, a site needs to specify a consumer for the `window.launchQueue`
+object. Launches are queued until they are handled by the specified consumer, which is invoked
 exactly once for each launch. In this manner, every launch is handled, regardless of when the
 consumer was specified.
 
@@ -158,7 +168,8 @@ added.
 
 ## Demo
 
-I have added file handling support to [Excalidraw][demo], a cartoon-style drawing app. When you
+I have added file handling support to [Excalidraw][demo], a cartoon-style drawing app. To test
+it, you first need to install Excalidraw. When you then
 create a file with it and store it somewhere on your file system, you can open the file via a
 double click, or a right click and then select "Excalidraw" in the context menu. You can check
 out the [implementation][demo-source] in the source code.
@@ -177,11 +188,29 @@ out the [implementation][demo-source] in the source code.
   </figcaption>
 </figure>
 
-## Security and permissions
+## Security
 
 The Chrome team has designed and implemented the File Handling API using the core principles defined
 in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user control,
 transparency, and ergonomics.
+
+## Permissions, permissions persistence, and file handler updates
+
+To ensure user trust and the safety of users' files when the File Handling API is used to open a file,
+a permission prompt will be shown before an installed PWA can view a file. This permission prompt will be shown
+right after either of the following scenarios:
+
+- The user selects the PWA to open a file, so that the permission is tightly coupled to the action
+  of opening a file using the PWA, making it more understandable and relevant.
+- The site loads without the file, so that the user has an expectation of what the PWA is and why it
+  would like to view the file.
+
+This permission will show every time until the user clicks to **Allow** or **Block** file handling
+for the site, or ignores the prompt three times (after which Chromium will embargo and block this
+permission). The selected setting will persist across the PWA closing and reopening.
+
+When the manifest updates and changes in the `"file_handlers"` section are detected, the permissions
+will be reset.
 
 ### File-related challenges
 
@@ -190,9 +219,7 @@ These are outlined in the
 [article on the File System Access API](/file-system-access/#security-considerations). The
 additional security-pertinent capability that the File Handling API provides over the File System
 Access API is the ability to grant access to certain files through the operating system's built-in
-UI, as opposed to through a file picker shown by a web application. Any restrictions as to the files
-and folders that can be opened via the picker will also be applied to the files and folders opened
-via the operating system.
+UI, as opposed to through a file picker shown by a web application.
 
 There is still a risk that users may unintentionally grant a web application access to a file by
 opening it. However, it is generally understood that opening a file allows the application it is
@@ -202,22 +229,21 @@ signal of trust in the application.
 
 ### Default handler challenges
 
-The exception to this is when there are no applications on the host system for a given file
-type. In this case, some host operating systems may
-automatically promote the newly registered handler to the default handler for that file type,
-silently and without any intervention by the user. This would mean if the user double clicks a file
-of that type, it would automatically open in the registered web app. On such host operating systems,
-when the user agent determines that there is no existing default handler for the file type, an
-explicit permission prompt might be necessary to avoid accidentally sending the contents of a file
-to a web application without the user's consent.
+The exception to this is when there are no applications on the host system for a given file type. In
+this case, some host operating systems may automatically promote the newly registered handler to the
+default handler for that file type, silently and without any intervention by the user. This would
+mean if the user double clicks a file of that type, it would automatically open in the registered
+web app. On such host operating systems, when the user agent determines that there is no existing
+default handler for the file type, an explicit permission prompt might be necessary to avoid
+accidentally sending the contents of a file to a web application without the user's consent.
 
 ### User control
 
-The spec states that browsers should not register every site that can handle files as a file handler.
-Instead, file handling registration should be gated behind installation
-and never happen without explicit user confirmation, especially if a site is to become the default handler.
-Rather than hijacking existing extensions like `.json` that the user probably already has
-a default handler registered for, sites should consider crafting their own extensions.
+The spec states that browsers should not register every site that can handle files as a file
+handler. Instead, file handling registration should be gated behind installation and never happen
+without explicit user confirmation, especially if a site is to become the default handler. Rather
+than hijacking existing extensions like `.json` that the user probably already has a default handler
+registered for, sites should consider crafting their own extensions.
 
 ### Transparency
 
@@ -242,8 +268,9 @@ model?
 Did you find a bug with Chrome's implementation? Or is the implementation different from the spec?
 
 - File a bug at [new.crbug.com](https://new.crbug.com). Be sure to include as much detail as you
-  can, simple instructions for reproducing, and enter `UI>Browser>WebAppInstalls>FileHandling` in the
-  **Components** box. [Glitch](https://glitch.com/) works great for sharing quick and easy repros.
+  can, simple instructions for reproducing, and enter `UI>Browser>WebAppInstalls>FileHandling` in
+  the **Components** box. [Glitch](https://glitch.com/) works great for sharing quick and easy
+  repros.
 
 ### Show support for the API
 
@@ -252,8 +279,8 @@ prioritize features and shows other browser vendors how critical it is to suppor
 
 - Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
 - Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
-  [`#FileHandling`](https://twitter.com/search?q=%23FileHandling&src=typed_query&f=live)
-  and let us know where and how you are using it.
+  [`#FileHandling`](https://twitter.com/search?q=%23FileHandling&src=typed_query&f=live) and let us
+  know where and how you are using it.
 
 ## Helpful links {: #helpful }
 
@@ -262,9 +289,6 @@ prioritize features and shows other browser vendors how critical it is to suppor
 - [Chromium tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
 - Blink Component: [`UI>Browser>WebAppInstalls>FileHandling`][blink-component]
-
-### Wanna go deeper {: #deeper-links }
-
 - [TAG Review](https://github.com/w3ctag/design-reviews/issues/371)
 - [Mozilla Standards Position](https://github.com/mozilla/standards-positions/issues/158)
 
@@ -279,7 +303,7 @@ The File Handling API was specified by [Eric Willigers](https://github.com/ericw
 [issues]: https://github.com/WICG/file-handling/issues
 [demo]: https://excalidraw.com/
 [demo-source]: https://github.com/excalidraw/excalidraw/search?q=launchqueue&type=code
-[explainer]: https://github.com/WICG/file-handling/blob/master/explainer.md
+[explainer]: https://github.com/WICG/file-handling/blob/main/explainer.md
 [wicg-discourse]: https://discourse.wicg.io/t/proposal-ability-to-register-file-handlers/3084
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=829689
 [cr-status]: https://chromestatus.com/feature/5721776357113856
@@ -288,3 +312,4 @@ The File Handling API was specified by [Eric Willigers](https://github.com/ericw
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]:
   https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[ot]: https://developer.chrome.com/origintrials/#/view_trial/-6682215947110973439

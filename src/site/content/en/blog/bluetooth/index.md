@@ -46,7 +46,7 @@ Bluetooth descriptors]. See MDN's [Browser compatibility] table for more
 information.
 
 For Linux and earlier versions of Windows, enable the
-`#experimental-web-platform-features` flag in `chrome://flags`.
+`#experimental-web-platform-features` flag in `about://flags`.
 
 ### Available for origin trials
 
@@ -484,7 +484,7 @@ Check out our [curated Web Bluetooth Demos] and [official Web Bluetooth Codelabs
 ## Tips
 
 A **Bluetooth Internals** page is available in Chrome at
-`chrome://bluetooth-internals` so that you can inspect everything about nearby
+`about://bluetooth-internals` so that you can inspect everything about nearby
 Bluetooth devices: status, services, characteristics, and descriptors.
 
 <figure class="w-figure">

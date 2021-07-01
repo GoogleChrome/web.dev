@@ -133,7 +133,7 @@ as it asks the user for permission to share their location. In some super apps, 
 imperative API that mini apps can leverage to request permissions without immediately using them, or
 to only check the status of a permission. This may even include an API to open the central super app
 permission settings, which corresponds to
-[Chrome's _Site Settings_](chrome://settings/content/siteDetails?site=https%3A%2F%2Fexample.com%2F).
+[Chrome's _Site Settings_](about://settings/content/siteDetails?site=https%3A%2F%2Fexample.com%2F).
 Mini apps also have to declare beforehand the origins of all servers that they potentially will
 request data from.
 

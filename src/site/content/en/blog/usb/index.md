@@ -285,7 +285,7 @@ and firmware.
 
 ## Tips
 
-Debugging USB in Chrome is easier with the internal page `chrome://device-log`
+Debugging USB in Chrome is easier with the internal page `about://device-log`
 where you can see all USB device related events in one single place.
 
 <figure class="w-figure">
@@ -293,7 +293,7 @@ where you can see all USB device related events in one single place.
   <figcaption class="w-figcaption">Device log page in Chrome for debugging the WebUSB API.</figcaption>
 </figure>
 
-The internal page `chrome://usb-internals` also comes in handy and allows you
+The internal page `about://usb-internals` also comes in handy and allows you
 to simulate connection and disconnection of virtual WebUSB devices.
 This is be useful for doing UI testing without for real hardware.
 

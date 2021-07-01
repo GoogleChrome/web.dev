@@ -4,6 +4,7 @@ subhead: How we used code splitting, code inlining, and server-side rendering in
 authors:
   - surma
 date: 2019-09-23
+updated: 2021-05-19
 hero: image/admin/14VzGmCgR470nlhPy3Fv.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
@@ -107,7 +108,7 @@ Each thin line (`dns`, `connect`, `ssl`) stands for the creation of a new HTTP c
 - Request #5: The font styles from `fonts.googleapis.com`
 - Request #8: Google Analytics
 - Request #9: A font file from `fonts.gstatic.com`
-- Request #14: The Web App Manifest
+- Request #14: The web app manifest
 
 The new connection for `index.html` is unavoidable. The browser _has_ to create a connection to our server to get the contents. The new connection for Google Analytics could be avoided by inlining something like [Minimal Analytics], but Google Analytics is not blocking our app from rendering or becoming interactive, so we don't really care about how fast it loads. Ideally, Google Analytics should be loaded in idle time, when everything else has already loaded. That way it won't take up bandwidth or processing power during the initial load. The new connection for the web app manifest is [prescribed by the fetch spec][fetch connections], as the manifest has to be loaded over a non-credentialed connection. Again, the web app manifest doesn't block our app from rendering or becoming interactive, so we don't need to care that much.
 

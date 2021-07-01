@@ -87,7 +87,7 @@ section {
 }
 ```
 
-This rule causes every `<section`> element to have `2em` of `padding` on all sides.
+This rule causes every `<section>` element to have `2em` of `padding` on all sides.
 
 ### Class selector
 
@@ -246,14 +246,14 @@ You can group multiple selectors by separating them with commas:
 ```css
 strong,
 em,
-.my-element,
+.my-class,
 [lang] {
   color: red;
 }
 ```
 
 This example extends the color change to both `<strong>` elements and `<em>` elements.
-It's also extended to a class named `.my-class`,and an element that has a `lang` attribute.
+It's also extended to a class named `.my-class`, and an element that has a `lang` attribute.
 
 {% Assessment 'simple-selectors' %}
 
@@ -331,7 +331,7 @@ You can also use `::selection` to style the content that has been highlighted by
 }
 ```
 
-Learn more in the [module on pseudo-elements](learn/css/pseudo-elements).
+Learn more in the [module on pseudo-elements](/learn/css/pseudo-elements).
 
 {% Assessment 'pseudo-selectors' %}
 

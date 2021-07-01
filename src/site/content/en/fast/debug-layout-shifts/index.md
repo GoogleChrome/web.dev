@@ -190,6 +190,14 @@ If all properties of `previousRect` are set to 0 this means that the element has
 shifted into view. If all properties of `currentRect` are set to 0 this means
 that the element has shifted out of view.
 
+{% Aside 'caution' %}
+Layout Instability API currently does not ignore elements that shifted but were not
+visible due to another element being positioned in front of them.
+Use `display: none`, `visibility: hidden`, or `opacity: 0` to avoid layout shifts in
+cases where you need to run layout on some elements before you make them visible to
+the user.
+{% endAside %}
+
 One of the most important things to understand when interpreting these outputs
 is that elements listed as _sources_ are the elements that shifted during the
 layout shift. However, it's possible that these elements are only indirectly

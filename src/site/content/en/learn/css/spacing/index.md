@@ -349,8 +349,7 @@ A good way to achieve this is use consistent measures for your spacing.
 
 For example, you could commit to using `20px`
 as a consistent measure for all gaps between elements—
-known as gutters—s
-o all layouts look and feel consistent.
+known as gutters—so all layouts look and feel consistent.
 You could also decide to use `1em` as the vertical spacing between flow content,
 which would achieve consistent spacing based on the element's `font-size`.
 Whatever you choose,

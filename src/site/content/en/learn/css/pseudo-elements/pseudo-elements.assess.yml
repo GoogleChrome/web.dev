@@ -23,7 +23,7 @@ questions:
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "1"
-    stem: Psuedo-elements can be found in an HTML file.
+    stem: Pseudo-elements can be found in an HTML file.
     options:
       - content: "True"
         rationale: "While DevTools may show pseudo-elements in the Elements

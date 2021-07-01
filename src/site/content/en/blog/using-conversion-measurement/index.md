@@ -150,9 +150,9 @@ A few tips when developing locally with the conversion measurement API.
 ### Set up your browser for local development
 
 - Use Chrome version 86 or later. You can check what version of Chrome you're using by typing
-  `chrome://version` in the URL bar.
+  `about://version` in the URL bar.
 - To activate the feature locally (for example if you're developing on `localhost`), enable
-  flags. Go to flags by typing `chrome://flags` in Chrome's URL bar. Turn on the **two** flags
+  flags. Go to flags by typing `about://flags` in Chrome's URL bar. Turn on the **two** flags
   `#enable-experimental-web-platform-features` and `#conversion-measurement-api`.
 - Disable third-party cookie blocking. In the long term, dedicated browser settings will be
   available to allow/block the API. Until then, third-party cookie blocking is used as the signal
@@ -166,13 +166,13 @@ A few tips when developing locally with the conversion measurement API.
 ### Debug
 
 You can see the conversion reports the browser has scheduled to send at
-`chrome://conversion-internals/` > **Pending Reports**. Reports are sent at scheduled times, but for
+`about://conversion-internals/` > **Pending Reports**. Reports are sent at scheduled times, but for
 debugging purposes you may want to get the reports immediately.
 
 - To receive all of the scheduled reports now, click **Send All Reports** in
-  `chrome://conversion-internals/` > **Pending Reports**.
+  `about://conversion-internals/` > **Pending Reports**.
 - To always receive reports **immediately** without having to click this button, enable the flag
-  `chrome://flags/#conversion-measurement-debug-mode`.
+  `about://flags/#conversion-measurement-debug-mode`.
 
 ### Test your origin trial token(s)
 

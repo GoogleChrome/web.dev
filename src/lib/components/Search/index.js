@@ -141,7 +141,7 @@ class Search extends BaseStateElement {
         role="combobox"
         aria-expanded="${this.expanded}"
         aria-controls="web-search__input"
-        aria-owns="web-search-popout__list"
+        aria-owns="${this.resultsEl.id}-list"
         aria-haspopup="listbox"
       >
         <svg
@@ -163,7 +163,7 @@ class Search extends BaseStateElement {
           role="searchbox"
           autocomplete="off"
           aria-autocomplete="list"
-          aria-controls="web-search-popout__list"
+          aria-controls="${this.resultsEl.id}-list"
           aria-label="All articles"
           placeholder="Search"
           @keydown="${this.onKeyDown}"
@@ -289,6 +289,8 @@ class Search extends BaseStateElement {
         highlightPreTag: '<strong>',
         highlightPostTag: '</strong>',
         facetFilters: [`locales:${this.locale}`],
+        attributesToSnippet: ['content:20'],
+        snippetEllipsisText: '...',
       };
       if (this.tag) {
         settings.facetFilters.push(`tags:${this.tag}`);

@@ -1,0 +1,20 @@
+/// Strictly temporary styles for playing with concepts and prototypes.
+.design-system {
+  .drawer-course__contents {
+    display: block;
+  }
+
+  iframe {
+    border: 1px solid get-color('grey-300');
+    resize: both;
+    width: var(--frame-width, max(100%, 500px));
+    height: var(--frame-height, max(100%, 500px));
+    min-width: 300px;
+    min-height: 300px;
+
+    &[data-size='large'] {
+      min-width: 100%;
+      min-height: 700px;
+    }
+  }
+}

@@ -59,10 +59,10 @@ can limit these calculations to moments when the user interacts with their devic
 
 ## How to use the Idle Detection API {: #use }
 
-### Enabling via chrome://flags
+### Enabling via about://flags
 
 To experiment with the Idle Detection API locally, without an origin trial token, enable the
-`#enable-experimental-web-platform-features` flag in `chrome://flags`.
+`#enable-experimental-web-platform-features` flag in `about://flags`.
 
 ### Enabling support during the origin trial phase
 

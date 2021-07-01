@@ -142,10 +142,10 @@ results for the same browser.
 
 ## Using `performance.measureUserAgentSpecificMemory()` {: use }
 
-### Enabling via chrome://flags
+### Enabling via about://flags
 
 To experiment with `performance.measureUserAgentSpecificMemory()` without an origin trial
-token, enable the `#experimental-web-platform-features` flag in `chrome://flags`.
+token, enable the `#experimental-web-platform-features` flag in `about://flags`.
 
 ### Enabling support during the origin trial phase
 

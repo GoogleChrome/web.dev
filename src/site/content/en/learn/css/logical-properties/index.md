@@ -117,8 +117,8 @@ write a rule like this:
 }
 ```
 
-The flow-relative equivalents are `max-block-size` and `min-block-size`.
-You can also use `max-inline-size` and `min-inline-size` instead of `max-width` and `min-width`.
+The flow-relative equivalents are `max-inline-size` and `max-block-size`.
+You can also use `min-block-size` and `min-inline-size` instead of `min-height` and `min-width`.
 
 With logical properties,
 that max width and height rule would look like this:
@@ -204,7 +204,7 @@ using shorthand versions of the margin and padding properties.
   padding-block: 2em;
   margin-inline: 2em 0;
   position: relative;
-  inset: 0.2em 0 0 0;
+  inset-block: 0.2em 0;
 }
 ```
 

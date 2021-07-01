@@ -9,6 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-19
+updated: 2021-06-18
 description: |
   Declarative Link Capturing is a proposal for a web app manifest property called
   "capture_links" that lets developers determine declaratively what should happen when the browser
@@ -20,6 +21,7 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - progressive-web-apps
   - web-app-manifest
+  - capabilities
 origin_trial:
   url: https://developer.chrome.com/origintrials/#/view_trial/4285175045443026945
 ---
@@ -144,11 +146,11 @@ and
 
 The demo for Declarative Link Capturing actually consists of two demos that interact together:
 
-1. [https://continuous-harvest-tomato.glitch.me/](https://hill-glitter-tree.glitch.me/)
+1. [https://continuous-harvest-tomato.glitch.me/](https://continuous-harvest-tomato.glitch.me/)
 1. [https://hill-glitter-tree.glitch.me/](https://hill-glitter-tree.glitch.me/)
 
 The screencast below shows how the two interact. They show two different behaviors,
-`"new_client"` and `"existing_client_navigate"`. Be sure to test the apps in different states,
+`"new-client"` and `"existing-client-navigate"`. Be sure to test the apps in different states,
 running in a tab or as an installed PWA, to see the difference in behavior.
 
 {% Video src="video/8WbTDNrhLsU0El80frMBGE4eMCD3/pj3ehpntEg50WcnA2khM.webm", autoplay=true, muted=true, playsinline=true, loop=true %}
@@ -203,8 +205,9 @@ and let us know where and how you are using it.
 
 Declarative Link Capturing was specified by [Matt Giuca](https://twitter.com/mgiuca) with input from
 Alan Cutter and [Dominick Ng](https://twitter.com/dominickng). The API was implemented by Alan
-Cutter. This article was reviewed by [Joe Medley](https://github.com/jpmedley), Matt Giuca, and Alan
-Cutter. Hero image by [Zulmaury Saavedra](https://unsplash.com/@zulmaury) on
+Cutter. This article was reviewed by [Joe Medley](https://github.com/jpmedley), Matt Giuca, Alan
+Cutter, and [Shunya Shishido](https://github.com/sisidovski).
+Hero image by [Zulmaury Saavedra](https://unsplash.com/@zulmaury) on
 [Unsplash](https://unsplash.com/photos/zh0J32MrJfA).
 
 [explainer]: https://github.com/WICG/sw-launch/blob/main/declarative_link_capturing.md

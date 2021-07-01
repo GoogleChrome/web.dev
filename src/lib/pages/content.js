@@ -9,6 +9,7 @@ import '../components/Assessment';
 import '../components/ResponseMultipleChoice';
 import '../components/ResponseThinkAndCheck';
 import '../components/SelectGroup';
+import '../components/ScrollSpy';
 import '../components/TableOfContents';
 import '../components/TableOfContentsButton';
 import '../components/Tabs';

@@ -5,7 +5,7 @@ subhead: |
   Strategies to migrate your site from relying on the user-agent string to the
   new User-Agent Client Hints.
 authors:
-  - rowan_m 
+  - rowan_m
 date: 2021-05-19
 description: |
   Strategies to migrate your site from relying on the user-agent string to the  new User-Agent Client Hints.
@@ -72,7 +72,7 @@ this basic information in a backwards-compatible way. For example, instead of
 
 If you are only checking the user-agent string for browser name, major version,
 or operating system, then your code will continue to work though you are likely
-to see deprecation warnings. 
+to see deprecation warnings.
 
 While you can and should migrate to User-Agent Client Hints, you may have legacy
 code or resource constraints that prevent this. The reduction of information in
@@ -103,14 +103,14 @@ const isMobile = navigator.userAgentData.mobile;
 `userAgentData.brands` is an array of objects with `brand` and `version`
 properties where the browser is able to list its compatibility with those
 brands. You can access it directly as an array or you may want to use a
-`filter()` call to check if a specific entry is present:
+`some()` call to check if a specific entry is present:
 
 ```javascript
 function isCompatible(item) {
   // In real life you most likely have more complex rules here
-  return ['Chromium', 'Google Chrome', 'NewBrowser'].contains(item.brand);
+  return ['Chromium', 'Google Chrome', 'NewBrowser'].includes(item.brand);
 }
-if (navigator.userAgentData.brands.filter(isCompatible).length > 0) {
+if (navigator.userAgentData.brands.some(isCompatible)) {
   // browser reports as compatible
 }
 ```
@@ -158,7 +158,7 @@ instead of sending additional headers. {% endAside %}
 
 Browsers or other clients may choose to supply different default hints, so it's
 good practice to specify everything you need, even if it's generally provided by
-default. 
+default.
 
 For example, the current defaults for Chrome would be represented as:
 
@@ -389,4 +389,4 @@ and we can explore your issue together.
 _Photo by [Ricardo
 Rocha](https://unsplash.com/@rcrazy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 on [Unsplash](https://unsplash.com/photos/nj1bqRzClq8)_
-  
+

@@ -64,7 +64,18 @@ description: |
     ```
 
 ## Create a profile image
-1. Select a photo of yourself that clearly shows your face and upper shoulders.
-1. Save two versions of the photo in `/images/authors`:
-    * yourauthorslug.jpg (96 px x 96 px)
-    * yourauthorslug@2x.jpg (192 px x 192 px)
+1. Follow the [Images and video](/handbook/markup-media/) guide to upload your
+   photo to the CDN.
+1. The image uploader will return a shortcode. Copy the `src` value from the
+   shortcode and use it as the `image` value in your profile.
+
+   ```json/5
+   "jaimiesmith": {
+      "name": {
+        "given": "Jaimie",
+        "family": "Smith"
+      },
+      "image": "image/Cprm03kLbFXkxbzGLI6x.jpg"
+    },
+   ```
+

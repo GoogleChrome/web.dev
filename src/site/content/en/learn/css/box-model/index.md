@@ -29,7 +29,7 @@ p {
 }
 ```
 
-The content would break out of your element and it would be 140px wide,
+The content would break out of your element and it would be 142px wide,
 rather than 100px.
 Why is that?
 The box model is a core foundation of CSS and understanding how it works,
@@ -81,8 +81,8 @@ so it overflows outside of the parent box's **border box** (more on this later i
 One way to prevent this overflow is to allow the box to be intrinsically sized by either
 unsetting the width,
 or in this case,
-setting the `width` to be `max-content`.
-The `max-content` keyword tells the box to only be as wide as the intrinsic maximum width of
+setting the `width` to be `min-content`.
+The `min-content` keyword tells the box to only be as wide as the intrinsic minimum width of
 its content (the word "awesome").
 This allows the box to fit around "CSS is awesome", perfectly.
 
@@ -206,7 +206,7 @@ To break this analogy down:
 
 - The content box is the artwork.
 - The padding box is the white matte, between the frame and the artwork.
-- The border box is the the frame, providing a literal border for the artwork.
+- The border box is the frame, providing a literal border for the artwork.
 - The margin box is the space between each frame.
 - The shadow occupies the same space as the margin box.
 

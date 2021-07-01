@@ -307,7 +307,7 @@ For example, if your animation is 10 seconds long and you set `animation-delay` 
 
 The [animation-play-state](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state)
 property allows you to play and pause the animation.
-The default value is `running` and if you set it to `pause`, it will pause the animation.
+The default value is `running` and if you set it to `paused`, it will pause the animation.
 
 {% Codepen {
   user: 'web-dot-dev',

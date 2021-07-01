@@ -72,7 +72,7 @@ Set the property to any valid CSS color value:
 }
  ```
 
-The browser will set the the address bar color of every page of your app
+The browser will set the address bar color of every page of your app
 according to the manifest's `theme_color`.
 
 ## Resources

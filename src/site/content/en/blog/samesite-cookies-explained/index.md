@@ -382,7 +382,7 @@ You must ensure that you pair `SameSite=None` with the `Secure` attribute.
 {% endCompare %}
 
 You can test this behavior as of Chrome 76 by enabling
-`chrome://flags/#cookies-without-same-site-must-be-secure` and from Firefox 69
+`about://flags/#cookies-without-same-site-must-be-secure` and from Firefox 69
 in [`about:config`](http://kb.mozillazine.org/About:config) by setting
 `network.cookie.sameSite.noneRequiresSecure`.
 

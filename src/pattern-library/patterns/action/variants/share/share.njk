@@ -1,0 +1,12 @@
+<share-action
+  authors="{{ data.authors }}"
+  class="w-actions__fab w-actions__fab--share{% if data.ga %} gc-analytics-event{% endif %}"
+  data-action="{{ data.action }}"
+  data-category="{{ data.ga.category }}"
+  data-label="{{ data.ga.label }}"
+  data-action="{{ data.ga.action }}"
+  role="button"
+  tabindex="0"
+  >
+  <span>{{ data.text }}</span>
+</share-action>

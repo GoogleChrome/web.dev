@@ -18,6 +18,13 @@
   }
 }
 
+.w-path-intro__overview-text {
+  // This text will come in as one big string from YAML.
+  // If the author has inserted multiple newlines we need to preserve those
+  // by making this pre-wrap.
+  white-space: pre-wrap;
+}
+
 .w-path-heading {
   // Pad the heading a bit so it lines up with the card padding for the
   // learning paths.

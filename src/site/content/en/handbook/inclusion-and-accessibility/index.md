@@ -8,6 +8,9 @@ description: |
 
 web.dev has a large international audience. We want members of that audience to access and understand web.dev content, and they should feel included in the ways we speak to our readers.
 
+## Use inclusive words
+Use preferred words from [our word list](https://developers.google.com/style/word-list). This list is extensive and provides both explanations and alternatives.
+
 ## Use readable language
 Aim for a grade 8 reading level when possible. If you don't have a feel for what grade 8 texts look like, check out some [examples on Newsela](https://newsela.com/articles/#/rule/latest?grade_levels=8.0). You can also run your text through a readability test.
 * For pieces up to 1,600 words, use [TextEvaluator](http://textevaluator.ets.org/TextEvaluator/).
@@ -55,7 +58,7 @@ Always provide [alt text](/image-alt).
 
 If you're creating an illustration, the parts that are essential for understanding the illustration should have a contrast ratio of at least 3:1. You can verify the contrast using checkers like the ones from [WeAIM](https://webaim.org/resources/contrastchecker/) or the [Paciello Group](https://developer.paciellogroup.com/resources/contrastanalyser/).
 
-Avoid images that may exclude certain audience members. Just like when you _write_ about people, remember to be inclusive when you _show_ people and the things they do and make. For example, avoid stock photos that show only male developers.
+Avoid images that may exclude certain audience members. Just like when you _write_ about people, remember to be inclusive when you _show_ people and the things they do and make. For example, avoid stock photos that show only male developers. As an alternative, check out [WOCINTECH Stock Photos](https://www.wocintechchat.com/blog/wocintechphotos).
 
 ## Create accessible code blocks
 Make sure code blocks are [simple](/handbook/quality/#keep-it-simple) and follow accessibility best practices. At a minimum:
@@ -95,3 +98,7 @@ Avoid idioms. If speakers whose first language isn't English aren't familiar wit
 {% endCompare %}
 
 Don't rely on cultural references alone to convey essential information. It's likely that at least some of your audience won't know the same movies, TV, books, and games that you do. While a reference here and there can [add personality](/handbook/voice) to your writing, make sure readers can understand your ideas even if they don't catch the reference.
+
+Avoid locality bias. For example, "coming this fall" is a way to describe a point in time that only works on one of the world's hemispheres. Instead, refer to a specific point in time, for example: "coming in June of 2021" or "coming in Q2 of 2021".
+
+Be aware of differences in availability and viability. Something being described as "cheap", "affordable" or "ubiquitous" is inherently subjective. Something that is cheap in  one country can be a luxury good for the top-earners in another. Something that is available at any corner store in one part of the world can be a scarce resource in another part.

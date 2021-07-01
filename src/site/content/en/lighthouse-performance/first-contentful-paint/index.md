@@ -5,7 +5,7 @@ description: |
   Learn about Lighthouse's First Contentful Paint metric and
   how to measure and optimize it.
 date: 2019-05-02
-updated: 2019-10-10
+updated: 2021-06-04
 web_lighthouse:
   - first-contentful-paint
 ---
@@ -17,7 +17,7 @@ Each metric captures some aspect of page load speed.
 Lighthouse displays FCP in seconds:
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Y8maVyZwGyS6gdyRjYWb.png", alt="A screenshot of the Lighthouse First Contentful Paint audit", width="800", height="588", class="w-screenshot" %}
+  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/0zDaizn5WxE6QfToxVMG.png", alt="A screenshot of the Lighthouse First Contentful Paint audit", width="800", height="592", class="w-screenshot" %}
 </figure>
 
 ## What FCP measures
@@ -34,9 +34,10 @@ Your FCP score is a comparison of your page's FCP time
 and FCP times for real websites, based on
 [data from the HTTP Archive](https://httparchive.org/reports/loading-speed#fcp).
 For example, sites performing in the ninety-ninth percentile
-render FCP in about 1.5&nbsp;seconds.
-If your website's FCP is 1.5 seconds,
-your FCP score is 99.
+render FCP in about 1.2&nbsp;seconds.
+If your website's FCP is 1.2 seconds,
+your FCP score is 99. See [How metric scores are determined](/performance-scoring/#metric-scores)
+to learn how Lighthouse score thresholds are set.
 
 This table shows how to interpret your FCP score:
 
@@ -46,24 +47,20 @@ This table shows how to interpret your FCP score:
       <tr>
         <th>FCP time<br>(in seconds)</th>
         <th>Color-coding</th>
-        <th>FCP score<br>(HTTP Archive percentile)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>0–2</td>
+        <td>0–1.8</td>
         <td>Green (fast)</td>
-        <td>75–100</td>
       </tr>
       <tr>
-        <td>2–4</td>
+        <td>1.8–3</td>
         <td>Orange (moderate)</td>
-        <td>50–74</td>
       </tr>
       <tr>
-        <td>Over 4</td>
+        <td>Over 3</td>
         <td>Red (slow)</td>
-        <td>0–49</td>
       </tr>
     </tbody>
   </table>
@@ -93,7 +90,8 @@ for more on collecting real-user metrics.
 ## Resources
 
 - [Source code for **First Contentful Paint** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-contentful-paint.js)
-- [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
+- [FCP Metric Guide](/fcp)
+- [Lighthouse Scoring Guide](/performance-scoring)
 - [Paint Timing specification](https://w3c.github.io/paint-timing)
 
 [metrics]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics

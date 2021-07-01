@@ -9,13 +9,12 @@ description:
   The Notification Triggers API allows developers to schedule local notifications that don't require
   a network connection, which makes them ideal for use cases like calendar apps.
 date: 2019-10-24
-updated: 2021-04-01
+updated: 2021-05-28
 hero: image/admin/6ZuVN2HFiIqTVrmjN5XC.jpg
 hero_position: center
 tags:
   - blog
   - capabilities
-  - origin-trials
   - notification-triggers
 feedback:
   - api
@@ -72,10 +71,10 @@ alarms for telephone conferences or video calls.
 
 ## How to use notification triggers {: #use }
 
-### Enabling via chrome://flags
+### Enabling via about://flags
 
 To experiment with the Notification Triggers API locally, without an origin trial token, enable the
-`#enable-experimental-web-platform-features` flag in `chrome://flags`.
+`#enable-experimental-web-platform-features` flag in `about://flags`.
 
 {% Aside %} Two earlier origin trials for the feature, which gave developers a chance to try out the
 proposed API, ran from Chrome&nbsp;80 to&nbsp;83 and from Chrome&nbsp;86 to&nbsp;88. You can read
