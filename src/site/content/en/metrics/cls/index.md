@@ -288,6 +288,8 @@ content that moves gradually and naturally from one position to the next can
 often help the user better understand what's going on, and guide them between
 state changes.
 
+Be sure to respect prefers-reduced-motion browser settings, as some site visitors can experience ill effects or attention issues from animation.
+
 CSS [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
 property allows you to animate elements without triggering layout shifts:
 
