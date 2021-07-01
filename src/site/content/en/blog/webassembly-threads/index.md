@@ -1,5 +1,6 @@
 ---
 title: Using WebAssembly threads from C, C++ and Rust
+subhead: Learn how to bring multithreaded applications written in other languages to WebAssembly.
 description: Learn how to bring multithreaded applications written in other languages to WebAssembly.
 date: 2021-06-22
 hero: image/9oK23mr86lhFOwKaoYZ4EySNFp02/YrOqDnzjHFqmZdiNBmbw.jpg
@@ -91,7 +92,7 @@ attacks like Spectre. However, this mitigation was still limited only to Chrome 
 Isolation is a fairly expensive feature, and couldn't be enabled by default for all sites on
 low-memory mobile devices nor was it yet implemented by other vendors.
 
-Fast-forward to 2020, Chrome and Firefox both have implementations of Site Isolation, 
+Fast-forward to 2020, Chrome and Firefox both have implementations of Site Isolation,
 and a standard way for websites to opt-in to the feature with [COOP and COEP
 headers](/coop-coep/). An opt-in mechanism allows to use Site Isolation even on
 low-powered devices where enabling it for all the websites would be too expensive. To opt-in, add
@@ -168,6 +169,8 @@ work on the web without changes.
 
 Let's take a look at an example:
 
+{% Label %}example.c:{% endLabel %}
+
 ```c/2,17,19
 #include <stdio.h>
 #include <unistd.h>
@@ -208,8 +211,8 @@ variable `arg`.
 
 [`pthread_join`](https://man7.org/linux/man-pages/man3/pthread_join.3.html) can be called later at
 any time to wait for the thread to finish the execution, and get the result returned from the
-callback. It accepts the earlier assigned thread handle as well as a pointer to store the result in
-- in this case I don't have any results, so I'm just passing `NULL`.
+callback. It accepts the earlier assigned thread handle as well as a pointer to store the result.
+In this case, there aren't any results so the function takes a `NULL` as an argument.
 
 To compile code using threads with Emscripten, you need to invoke `emcc` and pass a `-pthread`
 parameter, as when compiling the same code with Clang or GCC on other platforms:
@@ -321,6 +324,8 @@ to higher-level APIs like [`std::thread`](https://en.cppreference.com/w/cpp/thre
 
 So the example above can be rewritten in more idiomatic C++ like this:
 
+{% Label %}example.cpp:{% endLabel %}
+
 ```cpp/1,9,14
 #include <iostream>
 #include <thread>
@@ -391,7 +396,7 @@ pub fn sum_of_squares(numbers: &[i32]) -> i32 {
 }
 ```
 
-This unassuming code will split up the input data, calculate `x * x` and partial sums in parallel
+With this small change, the code will split up the input data, calculate `x * x` and partial sums in parallel
 threads, and in the end add up those partial results together.
 
 To accommodate for platforms without working `std::thread`, Rayon provides hooks that allow
