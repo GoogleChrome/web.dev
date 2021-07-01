@@ -9,7 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-06-16
-updated: 2021-06-17
+updated: 2021-06-30
 description: |
   The Storage Foundation API is a storage API that resembles a basic file system,
   with direct access to stored data through buffers and offsets. It gives
@@ -202,7 +202,7 @@ it to successfully return. {% endAside %}
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | Not started              |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | [Started][ot]            |
+| 4. **Origin trial**                      | **[In progress][ot]**    |
 | 5. Launch                                | Not started              |
 
 </div>
