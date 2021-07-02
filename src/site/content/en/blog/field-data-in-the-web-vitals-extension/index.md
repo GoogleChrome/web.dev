@@ -1,12 +1,12 @@
 ---
-title: Find your way with field data in the Web Vitals extension
+title: Find your way with field data in the Web Vitals extension update
 subhead: The Web Vitals extension now shows you where your local experiences are in relation to
   real user experiences in the field.
 description: The Web Vitals extension now shows you where your local experiences are in relation
   to real user experiences in the field.
 authors:
   - rviscomi
-date: 2021-06-30
+date: 2021-07-02
 hero: image/STd8eW8CSiNp5B1bX0R6Dww2eH32/KwcWeCZ6LoIfTLRgVxp4.png
 alt: The Milky Way galaxy with a pin labeled You Are Here
 tags:
@@ -23,8 +23,8 @@ for Chrome is one tool in the [Web Vitals toolbox](/vitals-tools/) that shows yo
 performance data about the pages you visit as you browse the web. 
 
 Page performance depends on many factors, including hardware and network quality. How
-you experience a page on your machine may be very different from how majority of users
-experience it. That's why the version 1.0 of the Web Vitals extension includes a new feature
+you experience a page on your machine may be very different from how the majority of users
+experience it. That's why version 1.0 of the Web Vitals extension includes a new feature
 that integrates real-user data from the [Chrome UX Report](/chrome-ux-report/) (CrUX) 
 with your local Core Web Vitals measurements. This feature displays your local measurements
 in the context of how other users have experienced the same pages. It comes with
@@ -41,6 +41,8 @@ a sparkly new UI and I'm excited to show you how it works.
   class="w-screenshot"
 %}
 
+### Field data from CrUX
+
 CrUX is a public dataset of real-user experiences in Chrome. It powers some of the critical tools
 in the Core Web Vitals workflow like [Search Console](https://support.google.com/webmasters/answer/9205520#about_data)
 and [PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/about#crux).
@@ -54,10 +56,12 @@ metrics: [LCP](/lcp/#what-is-lcp), [FID](/fid/#what-is-fid), and
 16% of real-user experiences on a given page are evaluated as having good
 <span style="white-space: nowrap;">LCP ≤ 2.5</span> seconds.
 
+### New extension UI
+
 <figure class="w-figure">
 {% Img src="image/STd8eW8CSiNp5B1bX0R6Dww2eH32/EaVNEuQ6gxVLtHYNkSZj.png", alt="Screenshot of the
 Web Vitals extension showing an explanation of how the local LCP experience relates to real-user
-desktop data from the field.", width="800", height="549", class="screenshot" %}
+desktop data from the field.", width="800", height="549", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Screenshot of the Web Vitals extension showing an explanation of how the local LCP experience
     relates to real-user desktop data from the field.
@@ -76,10 +80,12 @@ real-user distributions. This should make it immediately apparent when your loca
 experience is very different from other users'. For example, if you have a slow LCP experience and
 only 1% of users have similar experiences, something unusual must have happened.
 
+### Falling back to origin-level data
+
 <figure class="w-figure">
 {% Img src="image/STd8eW8CSiNp5B1bX0R6Dww2eH32/t5SmXUJqJadNsyOi26bb.png", alt="Screenshot of the
 Web Vitals extension showing origin-level desktop field data with \"Waiting for input…\" for the
-FID results.", width="800", height="552" %}
+FID results.", width="800", height="552", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Screenshot of the Web Vitals extension showing origin-level desktop field data with
     "Waiting for input…" for the FID results.
@@ -93,14 +99,16 @@ granular origin-level data whenever possible. This data represents the aggregate
 on all pages of the website, so while it may not be immediately relevant to your particular page
 experience, it should still offer some insight into how users experience the site as a whole.
 
-Another common case is to see a "Waiting for input.." message. This is because FID is the only
+Another common case is to see a "Waiting for input&hellip;" message. This is because FID is the only
 Core Web Vital that requires user interaction to be measured, so the extension won't have any local FID data
 to show until you interact with the page.
+
+### Edge cases
 
 <figure class="w-figure">
 {% Img src="image/STd8eW8CSiNp5B1bX0R6Dww2eH32/qt6fmKIjPNrUsckKiUfS.png", alt="Screenshot of the
 Web Vitals extension showing only local data; field data is unavailable.",
-width="800", height="548" %}
+width="800", height="548", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Screenshot of the Web Vitals extension showing only local data; field data is unavailable.
   </figcaption>
@@ -123,10 +131,12 @@ visiting a page like that, you may only see field data for LCP and CLS. It's wor
 sake of completeness that the same could happen for LCP or CLS in extremely rare situations, but
 this issue is predominantly affected by FID.
 
+### Comparing field data from phones
+
 <figure class="w-figure">
 {% Img src="image/STd8eW8CSiNp5B1bX0R6Dww2eH32/0K0g0TD22jdNZpSe3s3p.png", alt="Screenshot of the
 Web Vitals extension showing local metrics compared to phone field data.",
-width="800", height="556" %}
+width="800", height="556", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Screenshot of the Web Vitals extension showing local metrics compared to phone field data.
   </figcaption>
@@ -147,6 +157,8 @@ To enable phone data in the extension, follow these steps:
 
 The UI will update in a few places to indicate which mode you're in. Be aware that real phone
 users' experiences can be _very different_ from that of desktop users, so use this feature with discretion.
+
+### Get the Web Vitals extension
 
 To start using the latest version of the Web Vitals extension, head over to the
 [Chrome Web Store](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en)
