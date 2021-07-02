@@ -98,7 +98,7 @@
     "fancy-log": "^1.3.3",
     "firebase": "^7.14.6",
     "firebase-tools": "^9.3.0",
-    "gorko": "^0.2.3",
+    "gorko": "^0.7.0",
     "gts": "^2.0.2",
     "gulp": "^4.0.0",
     "html-minifier": "^4.0.0",
