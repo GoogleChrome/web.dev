@@ -111,4 +111,49 @@ module.exports = {
       ],
     },
   ],
+  textSizes: [
+    {
+      name: 'Base',
+      min: 16,
+      max: 16,
+      unit: 'px',
+    },
+    {
+      name: 'Size 1',
+      min: 16,
+      max: 18,
+      unit: 'px',
+    },
+
+    {
+      name: 'Size 2',
+      min: 18,
+      max: 20,
+      unit: 'px',
+    },
+    {
+      name: 'Size 3',
+      min: 20,
+      max: 28,
+      unit: 'px',
+    },
+    {
+      name: 'Size 4',
+      min: 24,
+      max: 36,
+      unit: 'px',
+    },
+    {
+      name: 'Size 5',
+      min: 28,
+      max: 48,
+      unit: 'px',
+    },
+    {
+      name: 'Size 6',
+      min: 36,
+      max: 60,
+      unit: 'px',
+    },
+  ],
 };
