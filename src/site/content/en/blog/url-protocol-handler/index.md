@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-11
-updated: 2021-06-30
+updated: 2021-07-02
 description: |
   After registering a PWA as a protocol handler, when a user clicks on a hyperlink with a specific
   scheme such as mailto, bitcoin, or web+music from a browser or a platform-specific app,
@@ -16,7 +16,7 @@ alt: A metal chain used as the symbol for links.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
-origin-trial
+origin_trial:
   - url: https://developer.chrome.com/origintrials/#/view_trial/1136033006004207617
 ---
 
