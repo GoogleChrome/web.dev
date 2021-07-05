@@ -559,7 +559,7 @@ Address line 2 (optional)
 You can try this out by remixing and editing the demo embedded below.
 
 {% Aside 'caution' %}
-Research shows that [**Address line 2** may be problematic for users]((https://baymard.com/blog/address-line-2)).
+Research shows that [**Address line 2** may be problematic for users](https://baymard.com/blog/address-line-2).
 Bear this in mind when designing address forms—you should consider alternatives such as using a
 single `textarea` (see below) or other options.
 {% endAside %}

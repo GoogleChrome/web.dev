@@ -1,0 +1,46 @@
+{
+  "title": "Headline",
+  "sort": "source",
+  "context": {
+    "title": "A headline",
+    "summary": "Donec ullamcorper nulla non metus auctor fringilla. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+  },
+  "variants": [
+    {
+      "name": "one",
+      "context": {
+        "modifier": "--one"
+      }
+    },
+    {
+      "name": "two",
+      "context": {
+        "modifier": "--two"
+      }
+    },
+    {
+      "name": "two-small",
+      "context": {
+        "modifier": "--two-small"
+      }
+    },
+    {
+      "name": "two-faded",
+      "context": {
+        "modifier": "--two-faded"
+      }
+    },
+    {
+      "name": "three",
+      "context": {
+        "modifier": "--three"
+      }
+    },
+    {
+      "name": "four",
+      "context": {
+        "modifier": "--four"
+      }
+    }
+  ]
+}

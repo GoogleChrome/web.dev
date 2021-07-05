@@ -12,6 +12,7 @@ pagination:
 ---
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
+{% from 'macros/author-card.njk' import authorCard with context %}
 <div class="authors-landing-page">
   {# Make sure Actions are first in the tab order. #}
   <div class="w-actions">
@@ -26,8 +27,8 @@ pagination:
   </div>
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--three" role="list">
-      {% for element in paged.elements %}
-        {% AuthorCard element %}
+      {% for author in paged.elements %}
+        {{ authorCard(author) }}
       {% endfor %}
     </div>
   </section>

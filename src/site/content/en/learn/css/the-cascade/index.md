@@ -93,7 +93,7 @@ This means it gets more specificity than the <code>&lt;style&gt;</code> element<
 An inline `style` attribute with CSS declared in it will override all other CSS,
 regardless of its position, unless a declaration has `!important` defined.
 
-Position also applies in the order of your in a CSS rule.
+Position also applies in the order of your CSS rule.
 In this example, the element will have a purple background because `background: purple` was declared last.
 Because the green background was declared before the purple background, it is now ignored by the browser.
 

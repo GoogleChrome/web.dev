@@ -1,0 +1,16 @@
+{
+  "title": "Details",
+  "context": {
+    "summary": "My details",
+    "content": "<p>Some content that is hidden by default.</p><p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>"
+  },
+  "variants": [
+    {
+      "name": "open",
+      "title": "Open by default",
+      "context": {
+        "state": "open"
+      }
+    }
+  ]
+}

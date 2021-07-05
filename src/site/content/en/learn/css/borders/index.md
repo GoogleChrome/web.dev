@@ -247,7 +247,7 @@ This enables you to get creative and make some complex shapes.
 ```css
 .my-element {
 	border: 2px solid;
-  	border-radius: 95px 155px 148px 103px / 48px 95px 130px 203px;
+  border-radius: 95px 155px 148px 103px / 48px 95px 130px 203px;
 }
 ```
 

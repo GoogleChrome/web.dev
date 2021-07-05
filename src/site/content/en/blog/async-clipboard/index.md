@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2021-05-10
+updated: 2021-06-30
 tags:
   - blog
   - capabilities
@@ -243,7 +243,7 @@ or the [File System Access API](/file-system-access/).
 
 ```js
 async function copy() {
-  const image = await fetch('kitten.png');
+  const image = await fetch('kitten.png').then(response => response.blob());
   const text = new Blob(['Cute sleeping kitten'], {type: 'text/plain'});
   const item = new ClipboardItem({
     'text/plain': text,

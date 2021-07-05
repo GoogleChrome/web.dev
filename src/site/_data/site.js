@@ -16,6 +16,7 @@
 
 const path = require('path');
 const locale = require('../../../shared/locale');
+const {PAGINATION_COUNT} = require('../_utils/constants');
 
 module.exports = {
   env: process.env.ELEVENTY_ENV || 'dev',
@@ -31,9 +32,11 @@ module.exports = {
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
   thumbnail: 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vU99HKzIf5EUPnzGVPf1.png',
-  isBannerEnabled: false,
-  banner: '',
+  isBannerEnabled: true,
+  banner:
+    'PWA Summit: a conference to help everyone succeed with PWAs is happening Oct 6 & 7. [Submit your talk now](https://pwasummit.org).',
   areCoursesEnabled: true,
+  paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
   gitlocalize: 'https://gitlocalize.com/repo/6062/',

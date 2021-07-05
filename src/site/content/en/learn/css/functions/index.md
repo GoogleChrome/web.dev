@@ -122,7 +122,7 @@ you pass one or more arguments and use them on the **right side** of your CSS de
 
 ```css
 a::after {
-  content: attr('href');
+  content: attr(href);
 }
 ```
 
@@ -196,7 +196,7 @@ You can also pass custom properties in a `var()` function as part of an expressi
 The [`min()`](https://developer.mozilla.org/en-US/docs/Web/CSS/min())
 function returns the smallest computed value of the one or more passed arguments.
 The [`max()`](https://developer.mozilla.org/en-US/docs/Web/CSS/max())
-function does the opposite: get the largest value of the one ore more passed arguments.
+function does the opposite: get the largest value of the one or more passed arguments.
 
 ```css
 .my-element {
@@ -416,7 +416,7 @@ along with `perspective-origin-x` and `perspective-origin-y` properties to creat
 
 ## Animation functions, gradients and filters
 
-CSS also provides functions that help you [animate](/learn/css/animation) elements,
+CSS also provides functions that help you [animate](/learn/css/animations) elements,
 apply [gradients](/learn/css/gradients) to them and use graphical [filters](/learn/css/filters) to manipulate how they look.
 To keep this module as concise as possible,
 they are covered in the linked modules.

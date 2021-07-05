@@ -203,35 +203,7 @@ This will now enable that smooth gradient transition.
 </figure>
 -->
 
-## Multiple declarations
-
-Another neat feature of `@property` is that you can declare multiple
-new custom properties at the same time. For example, if you wanted
-to set multiple values with the same syntax but a unique `initial-value`,
-you could write something like:
-
-```css
-@property --colorPrimary,
-@property --colorSecondary,
-@property --colorText {
-  syntax: '<color>';
-  inherits: true;
-}
-
-@property --colorPrimary {
-  initial-value: magenta;
-}
-
-@property --colorSecondary {
-  initial-value: aliceblue;
-}
-
-@property --colorText {
-  initial-value: dimgray;
-}
-```
-
-## Conclusion
+## Conclusion 
 
 The `@property` rule makes an exciting technology even more accessible by
 allowing you to write semantically meaningful CSS within CSS itself. To learn
