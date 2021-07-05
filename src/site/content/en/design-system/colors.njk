@@ -13,3 +13,17 @@ The colors and how to use them Nullam quis risus eget urna mollis ornare vel eu 
     url: page.url
   }
 ]%}
+{% block inner %}
+{% for group in design.tokens.colors %}
+  <h2>{{ group.group }}</h2>
+  <div class="flow">
+    {% for color in group.items %}
+      <div style="width: 20rem;">
+        <h3>{{ color.name }}</h3>
+        <div style="height: 5rem; background: {{ color.hsl }}">
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}
+{% endblock %}
