@@ -44,5 +44,5 @@ gulp.task('watch', () => {
   gulp.watch('./src/images/**/*', {ignoreInitial: true}, copyGlobalImages);
   gulp.watch('./src/misc/**/*', {ignoreInitial: true}, copyMisc);
   gulp.watch('./src/styles/**/*.scss', {ignoreInitial: true}, sassTask);
-  gulp.watch('./src/scss/**/*.scss', {ignoreInitial: true}, sassNexTask);
+  gulp.watch('./src/scss/**/*.scss', {ignoreInitial: true}, sassNextTask);
 });
