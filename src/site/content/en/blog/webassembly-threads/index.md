@@ -412,15 +412,35 @@ With this small change, the code will split up the input data, calculate `x * x`
 threads, and in the end add up those partial results together.
 
 To accommodate for platforms without working `std::thread`, Rayon provides hooks that allow
-to define custom logic for spawning and exiting threads. We've tapped into those hooks and built an
-adapter that you can use with wasm-bindgen to spawn WebAssembly threads as Web Workers:
-[wasm-bindgen-rayon](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon).
+to define custom logic for spawning and exiting threads.
 
-To use it, you need to re-export an `initThreadPool` function from the wasm-bindgen-rayon library in
-your main code and invoke it right after initialization.
+[wasm-bindgen-rayon](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon) taps into those hooks
+to spawn WebAssembly threads as Web Workers. To use it, you need to add it as a dependency and
+follow the configuration steps described in the
+[docs](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon#setting-up). The example above will
+end up looking like this:
 
-```js
-import init, { initThreadPool /* ... */ } from './pkg/index.js';
+```rust/0-2/
+pub use wasm_bindgen_rayon::init_thread_pool;
+
+#[wasm_bindgen]
+pub fn sum_of_squares(numbers: &[i32]) -> i32 {
+  numbers
+  .par_iter()
+  .map(x => x * x)
+  .sum()
+}
+```
+
+Once done, the generated JavaScript will export an extra `initThreadPool` function. This function
+will create a pool of Workers and reuse them throughout the lifetime of the program for any
+multithreaded operations done by Rayon.
+
+This pool mechanism is similar to the `-s PTHREAD_POOL_SIZE=...` option in Emscripten explained
+earlier, and also needs to be initialized before the main code to avoid deadlocks:
+
+```js/0,5-7
+import init, { initThreadPool, sum_of_squares } from './pkg/index.js';
 
 // Regular wasm-bindgen initialization.
 await init();
@@ -430,25 +450,18 @@ await init();
 await initThreadPool(navigator.hardwareConcurrency);
 
 // ...now you can invoke any exported functions as you normally would
+console.log(sum_of_squares(new Int32Array([1, 2, 3]))); // 14
 ```
 
-It will create a pool of Workers and reuse them throughout the lifetime of the program. This
-initialization is similar to the `-s PTHREAD_POOL_SIZE=...` option in Emscripten explained earlier,
-and needs to happen before the main code to avoid the same deadlocks.
-
-There are few other configurations to set up before you can use multithreading, so make sure to
-check the [detailed documentation](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon#usage) for
-complete setup steps.
-
-The same
+Note that the same
 [caveats](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon#caveats) about blocking the main
-thread apply here too. Even the `sum_of_squares` example still needs to block the main thread to wait for the partial
-results from other threads.
+thread apply here too. Even the `sum_of_squares` example still needs to block the main thread to
+wait for the partial results from other threads.
 
 It might be a very short wait or a long one, depending on the complexity of iterators and number of
 available threads, but, to be on the safe side, browser engines actively prevent blocking the main
 thread altogether and code will throw an error. Instead, you should create a Worker, import the
-wasm-bindgen-generated code there, and expose its API with a library like
+`wasm-bindgen`-generated code there, and expose its API with a library like
 [Comlink](https://github.com/GoogleChromeLabs/comlink) to the main thread.
 
 Check out
