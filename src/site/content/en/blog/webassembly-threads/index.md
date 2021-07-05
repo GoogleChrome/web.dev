@@ -250,8 +250,8 @@ blocks the event loop to wait for that Worker, and by doing so prevents it from 
 It's a classic example of a [deadlock](https://en.wikipedia.org/wiki/Deadlock).
 
 One way to solve this problem is to create a pool of Workers ahead of time, before the program has
-even started, so that by the time `pthread_create` is invoked, it only needs to take a ready-to-use
-Worker from the pool, run the provided callback on that background thread and return the Worker back
+even started. When `pthread_create` is invoked, it takes a ready-to-use
+Worker from the pool, runs the provided callback on that background thread, and returns the Worker back
 to the pool. All of this can be done synchronously, so there won't be any deadlocks as long as the
 pool is sufficiently large.
 
