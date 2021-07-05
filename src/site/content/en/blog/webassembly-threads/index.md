@@ -269,7 +269,7 @@ sufficient to use `-s PTHREAD_POOL_SIZE=1`:
 emcc -pthread -s PTHREAD_POOL_SIZE=1 example.c -o example.js
 ```
 
-{% Aside 'success' %} This time, when you execute it, things work successfully: {% endAside %}
+This time, when you execute it, things work successfully:
 
 
 ```text
@@ -279,9 +279,9 @@ After the thread
 Pthread 0x701510 exited.
 ```
 
-{% Aside 'caution' %} There is another problem though: see that `sleep(1)` in the code example? It
+There is another problem though: see that `sleep(1)` in the code example? It
 executes in the thread callback, meaning off the main thread, so it should be fine, right? Well, it
-isn't. {% endAside %}
+isn't.
 
 When `pthread_join` is called, it has to wait for the thread execution to finish, meaning that if
 the created thread is performing long-running tasks—in this case, sleeping 1 second—then the main
@@ -440,11 +440,9 @@ There are few other configurations to set up before you can use multithreading, 
 check the [detailed documentation](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon#usage) for
 complete setup steps.
 
-{% Aside 'caution' %} The same
+The same
 [caveats](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon#caveats) about blocking the main
-thread apply here too. {% endAside %}
-
-Even the `sum_of_squares` example still needs to block the main thread to wait for the partial
+thread apply here too. Even the `sum_of_squares` example still needs to block the main thread to wait for the partial
 results from other threads.
 
 It might be a very short wait or a long one, depending on the complexity of iterators and number of
