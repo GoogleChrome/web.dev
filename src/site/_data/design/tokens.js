@@ -156,4 +156,65 @@ module.exports = {
       unit: 'px',
     },
   ],
+  spacing: [
+    {
+      name: 'Base',
+      min: 16,
+      max: 16,
+      unit: 'px',
+    },
+    {
+      name: 'Size 1',
+      min: 22,
+      max: 32,
+      unit: 'px',
+    },
+    {
+      name: 'Size 2',
+      min: 38,
+      max: 60,
+      unit: 'px',
+    },
+    {
+      name: 'Size 3',
+      min: 60,
+      max: 90,
+      unit: 'px',
+    },
+    {
+      name: 'Size 4',
+      min: 100,
+      max: 150,
+      unit: 'px',
+    },
+  ],
+  radius: [
+    {
+      name: 'Base',
+      value: '3px',
+    },
+  ],
+  font: [
+    {
+      name: 'Base',
+      description: 'Roboto - main content.',
+      values: ['Roboto', 'Arial', 'sans-serif'],
+    },
+    {
+      name: 'Brand',
+      description: 'Google Sans - headings.',
+      values: ['Google Sans', ...this.fonts[0].values],
+    },
+    {
+      name: 'Mono',
+      description: 'Code samples etc.',
+      values: [
+        'SFMono-Regular',
+        'Consolas',
+        'Liberation Mono',
+        'Menlo',
+        'monospace',
+      ],
+    },
+  ],
 };
