@@ -15,7 +15,7 @@ updated: 2021-05-27
 
 When writing CSS, you can sometimes end up with long selector lists to target
 multiple elements with the same style rules. For example, if you want to color
-adjust any `<b>` tags found inside a header element, you could write:
+adjust any `<b>` tags found inside a heading element, you could write:
 
 ```css
 h1 > b, h2 > b, h3 > b, h4 > b, h5 > b, h6 > b {
