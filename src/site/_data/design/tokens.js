@@ -1,3 +1,5 @@
+const slugify = require('slugify');
+
 module.exports = {
   colors: [
     {
@@ -203,7 +205,7 @@ module.exports = {
     {
       name: 'Brand',
       description: 'Google Sans - headings.',
-      values: ['Google Sans', ...this.fonts[0].values],
+      values: ['Google Sans', 'Roboto', 'Arial', 'sans-serif'],
     },
     {
       name: 'Mono',
@@ -217,4 +219,23 @@ module.exports = {
       ],
     },
   ],
+  get convertToSass() {
+    let response = '';
+
+    response += '$gorko-colors: (';
+
+    this.colors.forEach((group) => {
+      group.items.forEach((color) => {
+        response += `'${slugify(group.group + '-' + color.name, {
+          lower: true,
+        })}': ${color.hsl},`;
+      });
+    });
+
+    // Remove the trailing comma
+    response = response.replace(/,\s*$/, '');
+    response += ');';
+
+    return response;
+  },
 };
