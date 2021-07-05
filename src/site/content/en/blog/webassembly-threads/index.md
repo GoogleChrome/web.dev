@@ -250,10 +250,10 @@ blocks the event loop to wait for that Worker, and by doing so prevents it from 
 It's a classic example of a [deadlock](https://en.wikipedia.org/wiki/Deadlock).
 
 One way to solve this problem is to create a pool of Workers ahead of time, before the program has
-even started. When `pthread_create` is invoked, it takes a ready-to-use
-Worker from the pool, runs the provided callback on that background thread, and returns the Worker back
-to the pool. All of this can be done synchronously, so there won't be any deadlocks as long as the
-pool is sufficiently large.
+even started. When `pthread_create` is invoked, it can take a ready-to-use
+Worker from the pool, run the provided callback on its background thread, and return the Worker
+back to the pool. All of this can be done synchronously, so there won't be any deadlocks as long as
+the pool is sufficiently large.
 
 This is exactly what Emscripten allows with the [`-s
 PTHREAD_POOL_SIZE=...`](https://emsettings.surma.technology/#PTHREAD_POOL_SIZE) option. It allows to
