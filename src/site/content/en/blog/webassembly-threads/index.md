@@ -289,11 +289,21 @@ thread will also have to block for the same amount of time till the results are 
 is executed in the browser, it will block the UI thread for 1 second until the thread callback
 returns. This leads to poor user experience.
 
-There are few solutions to this.
+There are few solutions to this:
+ - `pthread_detach`
+ - `-s PROXY_TO_PTHREAD`
+ - Custom Worker and Comlink
+
+#### pthread_detach
 
 First, if you only need to run some tasks off the main thread, but don't need to wait for the
-results, you can use [`pthread_detach`](https://man7.org/linux/man-pages/man3/pthread_detach.3.html)
-instead of `pthread_join`. This will leave the thread callback running in the background.
+results, you can use
+[`pthread_detach`](https://man7.org/linux/man-pages/man3/pthread_detach.3.html) instead of
+`pthread_join`. This will leave the thread callback running in the background. If you're using this
+option, you can switch off the warning with [`-s
+PTHREAD_POOL_SIZE_STRICT=0`](https://emsettings.surma.technology/#PTHREAD_POOL_SIZE_STRICT).
+
+#### PROXY_TO_PTHREAD
 
 Second, if you're compiling a C application rather than a library, you can use [`-s
 PROXY_TO_PTHREAD`](https://emsettings.surma.technology/#PROXY_TO_PTHREAD) option, which will offload
@@ -303,13 +313,15 @@ Incidentally, when using this option, you don't have to precreate the thread poo
 Emscripten can leverage the main thread for creating new underlying Workers, and then block the
 helper thread in `pthread_join` without deadlocking.
 
+#### Comlink
+
 Third, if you're working on a library and still need to block, you can create your own Worker,
 import the Emscripten-generated code and expose it with
 [Comlink](https://github.com/GoogleChromeLabs/comlink) to the main thread. Main thread will be able
 to invoke any exported methods as asynchronous functions, and that way will also avoid blocking the
 UI.
 
-In a simple application such as the previous example  `-s PROXY_TO_PTHREAD` is the best option:
+In a simple application such as the previous example `-s PROXY_TO_PTHREAD` is the best option:
 
 ```shell
 emcc -pthread -s PROXY_TO_PTHREAD example.c -o example.js
@@ -362,8 +374,8 @@ Before the thread
 Inside the thread: 42
 Pthread 0xc06190 exited.
 After the thread
-Proxied main thread 0xa05c18 finished with return code 0. EXIT_RUNTIME=0 set, so keeping
-main thread alive for asynchronous event operations.
+Proxied main thread 0xa05c18 finished with return code 0. EXIT_RUNTIME=0 set, so
+keeping main thread alive for asynchronous event operations.
 Pthread 0xa05c18 exited.
 ```
 
