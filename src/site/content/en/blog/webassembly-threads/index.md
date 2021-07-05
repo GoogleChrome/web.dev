@@ -29,11 +29,11 @@ WebAssembly apps to use traditional multithreading paradigms on the web.
 ### Web Workers
 
 First component is the regular
-[Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers) you
-know and love from JavaScript. WebAssembly threads use the `new Worker` constructor to create new
-underlying threads. Each thread loads a JavaScript glue, and then the main thread uses
-[`Worker#postMessage`](https://developer.mozilla.org/docs/Web/API/Worker/postMessage) method
-to share the compiled
+[Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers) you know and
+love from JavaScript. WebAssembly threads use the `new Worker` constructor to create new underlying
+threads. Each thread loads a JavaScript glue, and then the main thread uses
+[`Worker#postMessage`](https://developer.mozilla.org/docs/Web/API/Worker/postMessage) method to
+share the compiled
 [`WebAssembly.Module`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module)
 as well as a shared
 [`WebAssembly.Memory`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory)
@@ -52,7 +52,7 @@ object in the JavaScript API. By default `WebAssembly.Memory` is a wrapper aroun
 raw byte buffer that can be accessed only by a single thread.
 
 ```js
-> new WebAssembly.Memory({initial:1, maximum:10}).buffer
+> new WebAssembly.Memory({ initial:1, maximum:10 }).buffer
 ArrayBuffer { … }
 ```
 
@@ -60,16 +60,16 @@ To support multithreading, `WebAssembly.Memory` gained a shared variant too. Whe
 `shared` flag via the JavaScript API, or by the WebAssembly binary itself, it becomes a wrapper
 around a
 [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
-instead. It's a variation of `ArrayBuffer` that can be shared with other threads and read or modified
-simultaneously from either side.
+instead. It's a variation of `ArrayBuffer` that can be shared with other threads and read or
+modified simultaneously from either side.
 
 ```js
-> new WebAssembly.Memory({initial:1, maximum:10, shared:true}).buffer
+> new WebAssembly.Memory({ initial:1, maximum:10, shared:true }).buffer
 SharedArrayBuffer { … }
 ```
 
-Unlike [`postMessage`](https://developer.mozilla.org/docs/Web/API/Worker/postMessage),
-normally used for communication between main thread and Web Workers,
+Unlike [`postMessage`](https://developer.mozilla.org/docs/Web/API/Worker/postMessage), normally used
+for communication between main thread and Web Workers,
 [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
 doesn't require copying data or even waiting for the event loop to send and receive messages.
 Instead, any changes are seen by all threads nearly instantly, which makes it a much better
@@ -92,11 +92,11 @@ attacks like Spectre. However, this mitigation was still limited only to Chrome 
 Isolation is a fairly expensive feature, and couldn't be enabled by default for all sites on
 low-memory mobile devices nor was it yet implemented by other vendors.
 
-Fast-forward to 2020, Chrome and Firefox both have implementations of Site Isolation,
-and a standard way for websites to opt-in to the feature with [COOP and COEP
-headers](/coop-coep/). An opt-in mechanism allows to use Site Isolation even on
-low-powered devices where enabling it for all the websites would be too expensive. To opt-in, add
-the following headers to the main document in your server configuration:
+Fast-forward to 2020, Chrome and Firefox both have implementations of Site Isolation, and a standard
+way for websites to opt-in to the feature with [COOP and COEP headers](/coop-coep/). An opt-in
+mechanism allows to use Site Isolation even on low-powered devices where enabling it for all the
+websites would be too expensive. To opt-in, add the following headers to the main document in your
+server configuration:
 
 ```http
 Cross-Origin-Embedder-Policy: require-corp
@@ -105,8 +105,8 @@ Cross-Origin-Opener-Policy: same-origin
 
 Once you opt-in, you get access to `SharedArrayBuffer` (including `WebAssembly.Memory` backed by a
 `SharedArrayBuffer`), precise timers, memory measurement and other APIs that require an isolated
-origin for security reasons. Check out the [Making your website "cross-origin isolated" using COOP and COEP](/coop-coep/) for more
-details.
+origin for security reasons. Check out the [Making your website "cross-origin isolated" using COOP
+and COEP](/coop-coep/) for more details.
 
 ### WebAssembly atomics
 
@@ -126,8 +126,8 @@ level. Additionally, WebAssembly atomics contain two more instruction kinds—"w
 allow one thread to sleep ("wait") on a given address in a shared memory until another thread wakes
 it up via "notify".
 
-All the higher-level synchronisation primitives, including channels, mutexes, and read-write locks build
-upon those instructions.
+All the higher-level synchronisation primitives, including channels, mutexes, and read-write locks
+build upon those instructions.
 
 ## How to use WebAssembly threads
 
@@ -199,8 +199,8 @@ int main()
 }
 ```
 
-Here the headers for the `pthread` library are included via `pthread.h`. You can also see a couple of
-crucial functions for dealing with threads.
+Here the headers for the `pthread` library are included via `pthread.h`. You can also see a couple
+of crucial functions for dealing with threads.
 
 [`pthread_create`](https://man7.org/linux/man-pages/man3/pthread_create.3.html) will create a
 background thread. It takes a destination to store a thread handle in, some thread creation
@@ -211,8 +211,8 @@ variable `arg`.
 
 [`pthread_join`](https://man7.org/linux/man-pages/man3/pthread_join.3.html) can be called later at
 any time to wait for the thread to finish the execution, and get the result returned from the
-callback. It accepts the earlier assigned thread handle as well as a pointer to store the result.
-In this case, there aren't any results so the function takes a `NULL` as an argument.
+callback. It accepts the earlier assigned thread handle as well as a pointer to store the result. In
+this case, there aren't any results so the function takes a `NULL` as an argument.
 
 To compile code using threads with Emscripten, you need to invoke `emcc` and pass a `-pthread`
 parameter, as when compiling the same code with Clang or GCC on other platforms:
@@ -238,22 +238,22 @@ cases, use setting `-s PTHREAD_POOL_SIZE_STRICT=2`.
 What happened? The problem is, most of the time-consuming APIs on the web are asynchronous and rely
 on the event loop to execute. This limitation is an important distinction compared to traditional
 environments, where applications normally run I/O in synchronous, blocking manner. Check out the
-blog post about [Using asynchronous web APIs from WebAssembly](/asyncify/) if you'd
-like to learn more.
+blog post about [Using asynchronous web APIs from WebAssembly](/asyncify/) if you'd like to learn
+more.
 
-In this case, the code synchronously invokes `pthread_create` to create a background
-thread, and follows up by another synchronous call to `pthread_join` that waits for the background
-thread to finish execution. However, Web Workers, that are used behind the scenes when this code is
-compiled with Emscripten, are asynchronous. So what happens is, `pthread_create` only _schedules_ a
-new Worker thread to be created on the next event loop run, but then `pthread_join` immediately
-blocks the event loop to wait for that Worker, and by doing so prevents it from ever being created.
-It's a classic example of a [deadlock](https://en.wikipedia.org/wiki/Deadlock).
+In this case, the code synchronously invokes `pthread_create` to create a background thread, and
+follows up by another synchronous call to `pthread_join` that waits for the background thread to
+finish execution. However, Web Workers, that are used behind the scenes when this code is compiled
+with Emscripten, are asynchronous. So what happens is, `pthread_create` only _schedules_ a new
+Worker thread to be created on the next event loop run, but then `pthread_join` immediately blocks
+the event loop to wait for that Worker, and by doing so prevents it from ever being created. It's a
+classic example of a [deadlock](https://en.wikipedia.org/wiki/Deadlock).
 
 One way to solve this problem is to create a pool of Workers ahead of time, before the program has
-even started. When `pthread_create` is invoked, it can take a ready-to-use
-Worker from the pool, run the provided callback on its background thread, and return the Worker
-back to the pool. All of this can be done synchronously, so there won't be any deadlocks as long as
-the pool is sufficiently large.
+even started. When `pthread_create` is invoked, it can take a ready-to-use Worker from the pool, run
+the provided callback on its background thread, and return the Worker back to the pool. All of this
+can be done synchronously, so there won't be any deadlocks as long as the pool is sufficiently
+large.
 
 This is exactly what Emscripten allows with the [`-s
 PTHREAD_POOL_SIZE=...`](https://emsettings.surma.technology/#PTHREAD_POOL_SIZE) option. It allows to
@@ -279,9 +279,8 @@ After the thread
 Pthread 0x701510 exited.
 ```
 
-There is another problem though: see that `sleep(1)` in the code example? It
-executes in the thread callback, meaning off the main thread, so it should be fine, right? Well, it
-isn't.
+There is another problem though: see that `sleep(1)` in the code example? It executes in the thread
+callback, meaning off the main thread, so it should be fine, right? Well, it isn't.
 
 When `pthread_join` is called, it has to wait for the thread execution to finish, meaning that if
 the created thread is performing long-running tasks—in this case, sleeping 1 second—then the main
@@ -297,10 +296,9 @@ There are few solutions to this:
 #### pthread_detach
 
 First, if you only need to run some tasks off the main thread, but don't need to wait for the
-results, you can use
-[`pthread_detach`](https://man7.org/linux/man-pages/man3/pthread_detach.3.html) instead of
-`pthread_join`. This will leave the thread callback running in the background. If you're using this
-option, you can switch off the warning with [`-s
+results, you can use [`pthread_detach`](https://man7.org/linux/man-pages/man3/pthread_detach.3.html)
+instead of `pthread_join`. This will leave the thread callback running in the background. If you're
+using this option, you can switch off the warning with [`-s
 PTHREAD_POOL_SIZE_STRICT=0`](https://emsettings.surma.technology/#PTHREAD_POOL_SIZE_STRICT).
 
 #### PROXY_TO_PTHREAD
@@ -394,8 +392,8 @@ Luckily, the majority of the ecosystem depends on higher-level libraries to take
 multithreading. At that level it's much easier to abstract away all the platform differences.
 
 In particular, [Rayon](https://crates.io/crates/rayon) is the most popular choice for
-data-parallelism in Rust. It allows you to take method chains on regular iterators and, usually with a
-single line change, convert them in a way where they'd run in parallel on all available threads
+data-parallelism in Rust. It allows you to take method chains on regular iterators and, usually with
+a single line change, convert them in a way where they'd run in parallel on all available threads
 instead of sequentially. For example:
 
 ```rust/3/2
@@ -408,11 +406,11 @@ pub fn sum_of_squares(numbers: &[i32]) -> i32 {
 }
 ```
 
-With this small change, the code will split up the input data, calculate `x * x` and partial sums in parallel
-threads, and in the end add up those partial results together.
+With this small change, the code will split up the input data, calculate `x * x` and partial sums in
+parallel threads, and in the end add up those partial results together.
 
-To accommodate for platforms without working `std::thread`, Rayon provides hooks that allow
-to define custom logic for spawning and exiting threads.
+To accommodate for platforms without working `std::thread`, Rayon provides hooks that allow to
+define custom logic for spawning and exiting threads.
 
 [wasm-bindgen-rayon](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon) taps into those hooks
 to spawn WebAssembly threads as Web Workers. To use it, you need to add it as a dependency and
@@ -453,10 +451,9 @@ await initThreadPool(navigator.hardwareConcurrency);
 console.log(sum_of_squares(new Int32Array([1, 2, 3]))); // 14
 ```
 
-Note that the same
-[caveats](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon#caveats) about blocking the main
-thread apply here too. Even the `sum_of_squares` example still needs to block the main thread to
-wait for the partial results from other threads.
+Note that the same [caveats](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon#caveats) about
+blocking the main thread apply here too. Even the `sum_of_squares` example still needs to block the
+main thread to wait for the partial results from other threads.
 
 It might be a very short wait or a long one, depending on the complexity of iterators and number of
 available threads, but, to be on the safe side, browser engines actively prevent blocking the main
@@ -464,9 +461,9 @@ thread altogether and code will throw an error. Instead, you should create a Wor
 `wasm-bindgen`-generated code there, and expose its API with a library like
 [Comlink](https://github.com/GoogleChromeLabs/comlink) to the main thread.
 
-Check out
-[the wasm-bindgen-rayon example](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon/tree/main/demo)
-for an end-to-end demo showing:
+Check out [the wasm-bindgen-rayon
+example](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon/tree/main/demo) for an end-to-end
+demo showing:
 
 *   [Feature detection of
     threads.](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon/blob/e13485d6d64a062b890f5bb3a842b1fe609eb3c1/demo/wasm-worker.js#L27)
