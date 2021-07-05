@@ -7,7 +7,7 @@ authors:
 description: |
   Commands needed to convert a raw mov file to media assets packaged for DASH or HLS.
 date: 2018-09-20
-updated: 2021-03-06
+updated: 2021-07-05
 tags:
   - media
   - video

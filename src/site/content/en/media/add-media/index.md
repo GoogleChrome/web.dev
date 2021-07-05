@@ -7,7 +7,7 @@ authors:
 description: |
   Embed a media file in a web page using the <video> and <source> tags.
 date: 2020-06-19
-updated: 2021-04-11
+updated: 2021-07-05
 tags:
   - media
   - video

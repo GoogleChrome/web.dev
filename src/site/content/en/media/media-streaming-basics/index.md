@@ -9,7 +9,7 @@ description: |
   from a server where the content has been split into individual chunks of data
   that can later be combined during playback using protocols such as DASH and HLS.
 date: 2021-04-13
-updated: 2021-04-13
+updated: 2021-07-05
 tags:
   - media
   - video
@@ -35,7 +35,7 @@ header in [The &lt;video> and &lt;source> tags] article.
 
 Producing media chunks and the necessary manifests describing the stream is not
 exactly straightforward, but streaming unlocks some interesting use cases that
-are not possible to achieve just by pointing a `<video>` element 
+are not possible to achieve just by pointing a `<video>` element
 to a set of static source files. You'll learn more about how to
 [add media to a web page] in a later section. First, you should know about a
 few use cases for streaming multimedia if you want to go further than just

@@ -8,7 +8,7 @@ description: |
   In this section you'll learn how to format video for mobile web playback, and how
   to create multiple files to cover a range of browsers, plus how to encrypt them.
 date: 2017-06-30
-updated: 2021-03-07
+updated: 2021-07-05
 tags:
   - media
   - video

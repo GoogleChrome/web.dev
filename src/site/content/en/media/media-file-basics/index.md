@@ -9,7 +9,7 @@ description: |
   is. Preparing a video for serving from your own site is a bit more
   complicated.
 date: 2020-06-19
-updated: 2021-03-03
+updated: 2021-07-05
 tags:
   - media
   - video

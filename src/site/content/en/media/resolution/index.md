@@ -7,7 +7,7 @@ authors:
 description: |
   Resolution is the amount of information in a frame of video.
 date: 2017-06-30
-updated: 2020-08-27
+updated: 2021-07-05
 tags:
   - media
   - video

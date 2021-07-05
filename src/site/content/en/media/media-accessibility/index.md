@@ -10,7 +10,7 @@ description: |
   descriptions are the only way many users can experience your videos, and in
   some jurisdictions, they're even required by law or regulation.
 date: 2020-08-20
-updated: 2021-04-11
+updated: 2021-07-05
 tags:
   - media
   - video
@@ -119,7 +119,7 @@ Just add your text data along with timings.
 
 However, what if you want your captions to render in a different position with
 left or right alignment? Perhaps to align the captions with the current speaker
-position, or to stay out of the way of in-camera text. WebVTT defines settings to do that, 
+position, or to stay out of the way of in-camera text. WebVTT defines settings to do that,
 and more, directly inside the
 `.vtt` file. Take note of how the caption placement is defined by adding
 settings after the time interval definitions.

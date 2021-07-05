@@ -8,8 +8,8 @@ description: |
   Building a PWA with offline streaming has its challenges. In this article you
   will learn about the APIs and techniques that provide users with a
   delightful offline media experience.
-date: 2021-04-30
-updated: 2021-04-30
+date: 2021-07-05
+updated: 2021-07-05
 tags:
   - media
   - video

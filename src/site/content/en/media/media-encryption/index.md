@@ -9,7 +9,7 @@ description: |
   file to encrypted media packaged for MPEG-DASH or HLS using both Clear Key or
   Widevine encryption.
 date: 2021-03-05
-updated: 2021-03-05
+updated: 2021-07-05
 tags:
   - media
   - video

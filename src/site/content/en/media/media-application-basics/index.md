@@ -8,7 +8,7 @@ description: |
   Working with media often requires changing the characteristics of media files.
   On this page, you'll learn about the tools used and how to install them quickly.
 date: 2017-06-09
-updated: 2021-03-07
+updated: 2021-07-05
 tags:
   - media
   - video
