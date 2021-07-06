@@ -1,0 +1,41 @@
+// :root {
+//   --color-core-primary: #3740ff;
+//   --color-core-secondary: #e51661;
+//   --color-core-tertiary: #6001ff;
+//   --color-core-brand: #3fc4ff;
+//   --color-state-good: #018642;
+//   --color-state-good-bright: #0cce6b;
+//   --color-state-good-glare: #e2faed;
+//   --color-state-warn: #d04900;
+//   --color-state-warn-bright: #ffa400;
+//   --color-state-warn-glare: #fff5e0;
+//   --color-state-bad: #eb0f00;
+//   --color-state-bad-bright: #ff4e42;
+//   --color-state-bad-glare: #ffe9e8;
+//   --color-shades-dark: #191919;
+//   --color-shades-gray: #545454;
+//   --color-shades-gray-bright: #8d8d8d;
+//   --color-shades-gray-glare: #d9d9d9;
+//   --color-shades-light: #f3f3f3;
+//   --color-shades-light-bright: #ffffff;
+// }
+
+$gorko-themes: (
+  'default': (
+    'tokens': (
+      'color': (
+        'text': var(--color-shades-dark),
+        'bg': var(--color-shades-light-bright)
+      )
+    )
+  ),
+  'dark': (
+    'prefers-color-scheme': 'dark',
+    'tokens': (
+      'color': (
+        'text': var(--color-shades-light),
+        'bg': var(--color-shades-dark)
+      )
+    )
+  )
+);

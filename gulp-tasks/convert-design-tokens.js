@@ -51,7 +51,7 @@ const convertDesignTokens = (cb) => {
 
     ///  TEXT SIZES
   `;
-  result += '$gorko-sizes: (';
+  result += '$gorko-size-scale: (';
 
   tokens.textSizes.forEach((size) => {
     result += `'${nameSlug(size.name)}': ${clampGenerator(
@@ -67,7 +67,7 @@ const convertDesignTokens = (cb) => {
   
     ///  SPACING SIZES
   `;
-  result += '$gorko-spacing: (';
+  result += '$gorko-space-scale: (';
 
   tokens.spacing.forEach((size) => {
     result += `'${nameSlug(size.name)}': ${clampGenerator(

@@ -1,5 +1,17 @@
-@import 'tokens';
+// First up: config
+@import 'config';
+
+// Disable util class generator because we'll render them at the end
+$generate-utility-classes: false;
+
+// Next: pull in gorko for design token and custom property generation
+@import '../../node_modules/gorko/gorko.scss';
+
+// @import 'reset';
 
 body {
-  color: map-get($gorko-colors, 'core-primary');
+  @include appl;
 }
+
+// Render gorko utilities
+@include generate-utility-classes();
