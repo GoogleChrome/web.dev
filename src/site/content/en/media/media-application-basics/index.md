@@ -65,7 +65,7 @@ This isn't quite what you get if you type `packager -help`. This example is
 easier to reason about, and this reflects the examples in the
 [Shaka Packager documentation]. Note that there are multiple `stream_descriptor`
 items in the pattern. Though we don't show it, you could manipulate the video
-and audio streams of a file directly.
+and audio streams of a file separately in a single command.
 
 Compare this basic pattern with a simple use that displays file characteristics.
 In the example, We've lined up equivalent parts.
