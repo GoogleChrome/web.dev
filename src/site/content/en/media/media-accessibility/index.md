@@ -146,6 +146,11 @@ video::cue(b) {
 }
 ```
 
+{% Aside 'gotchas' %}
+Be careful when coloring text to keep to high-contrast colors so as not to
+degrade readability.
+{% endAside %}
+
 If you're interested in learning more about styling and tagging of individual
 cues, the [WebVTT specification] is a good source for advanced examples.
 
