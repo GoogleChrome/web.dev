@@ -47,7 +47,7 @@ stylesheets, images, and others.
 
 Here is a basic example of using the Cache API within a Service Worker:
 
-```javascript
+```javascript/10-11
 const cacheStorageName = 'v1';
 
 this.addEventListener('install', function(event) {
