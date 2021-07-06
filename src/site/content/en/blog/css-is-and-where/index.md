@@ -151,7 +151,7 @@ In short
 - `:where()` has no specificity.<br>`:where()` squashes all the specificity in
   the selector list passed as functional parameters. This is a first of its
   kind selector feature. 
-- `:is()` takes the specificity of it's most specific
+- `:is()` takes the specificity of its most specific
   selector.<br>`:is(a,div,#id)` has a specificity score of an ID, 100 points.
 
 Taking on the highest specificity selector from the list has only been a gotcha
