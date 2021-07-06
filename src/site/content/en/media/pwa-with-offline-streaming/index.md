@@ -241,7 +241,7 @@ self.addEventListener('fetch', fetchHandler);
 So what do you need to do in `getVideoResponse()`?
 
 - The `event.respondWith` method expects a `Response` object as a parameter.
-- The [Response constructor] tells us that there are several types of objects we
+- The [Response() constructor] tells us that there are several types of objects we
   could use to instantiate a `Response` object: a `Blob`, `BufferSource`,
   `ReadableStream`, and more.
 - We need an object that doesn't hold all of its data in memory, so we'll
@@ -333,6 +333,6 @@ Up next, you will learn about [Fast playback with audio and video preload].
 [source code]: https://github.com/xwp/kino/
 [Streams–The definitive guide]: /streams/
 [Media Session API]: /media-session/
-[Response constructor]: https://developer.mozilla.org/en-US/docs/Web/API/Response/Response
+[Response() constructor]: https://developer.mozilla.org/en-US/docs/Web/API/Response/Response
 [service worker source code]: https://github.com/xwp/kino/blob/ef13dc0aec8a025cb1152f8d41adeeac872964db/src/js/sw/sw.js#L39-L108
 [Fast playback with audio and video preload]: /fast-playback-with-preload/
