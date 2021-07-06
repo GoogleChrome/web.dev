@@ -7,7 +7,8 @@ authors:
 description: |
   Media streaming is the method for continuously delivering multimedia content
   from a server where the content has been split into individual chunks of data
-  that can later be combined during playback using protocols such as DASH and HLS.
+  that can be joined back together during playback in a specific order through
+  a range request using protocols such as DASH and HLS.
 date: 2021-04-13
 updated: 2021-07-05
 tags:
@@ -71,8 +72,8 @@ in the `<video>` element to a manifest file.
 ```
 
 {% Aside 'caution' %}
-This is valid, but doesn't actually work. Browsers don't natively support
-DASH manifest playback.
+This is valid HTML, but doesn't actually work. Browsers don't natively support
+DASH manifest playback added to the `src` property.
 {% endAside %}
 
 What may seem as a deficit is actually a strength in disguise. Streams are
