@@ -50,8 +50,8 @@ focus on three, which are [Shaka Player], [JW Player], and [Video.js].
 
 According to the documentation, Google's [Shaka Player] is an open-source
 JavaScript library for adaptive media. It plays adaptive media formats (such as
-[DASH] and [HLS]) in a browser, without using plugins or Flash. Instead, Shaka
-Player uses the open web standards [MediaSource Extensions] and
+[DASH] and [HLS]) in a browser, without using plugins. Instead, Shaka Player
+uses the open web standards [MediaSource Extensions] and
 [Encrypted Media Extensions].
 
 Shaka Player also supports [offline storage and playback] of media using
@@ -61,9 +61,10 @@ depends on browser support.
 There are directions for [basic usage] on the Shaka Player documentation site.
 However, in a nutshell to use Shaka Player you first need to create an HTML page
 with a video or audio element. Then in your application's JavaScript you
-install the polyfills and check for browser support. Once confirmed support for
-Shaka Player you will create a Player object to wrap the media element, listen for
-errors, then load a manifest file. Shaka Player will take over from there.
+install the polyfills and check for browser support. Once the browser has
+confirmed support for Shaka Player a script will create a Player object to wrap
+the media element, listen for errors, then load a manifest file. Shaka Player
+will take over from there.
 
 With Shaka you will need to host and encode your media files yourself.
 Creating a media server is not overly complex, however encoding/transcoding media
@@ -95,14 +96,14 @@ YouTube videos are typically going to be your best free option.
 
 According tho their website, [Video.js] is built from the
 ground up for an HTML5 world. It supports HTML5 video and modern streaming
-formats such as DASH and HLS, as well as YouTube, Vimeo, and even Flash
-(through plugins). It supports video playback on desktop and mobile devices
-and looks good everywhere with CSS-based skins.
+formats such as DASH and HLS, as well as YouTube, and Vimeo. It supports
+video playback on desktop and mobile devices and looks good everywhere with
+CSS-based skins.
 
 There are a few ways to use Video.js, but the easiest is to use the free CDN
-version provided by Fastly. You can learn more on how to get the player set up
-on the [getting started] page. Video.js is a very powerful video player, and
-much like Shaka Player you will also need to host and encode your video.
+version provided by [Fastly]. You can learn more on how to get the player set
+up on the [getting started] page. Video.js is a very powerful video player,
+and much like Shaka Player you will also need to host and encode your video.
 However, one difference is in the plugin system where you can do things like
 play YouTube videos in the Video.js player, which can also be customized.
 
@@ -138,4 +139,5 @@ to handle the heavy lifting.
 [Zencoder]: https://en.wikipedia.org/wiki/Zencoder
 [Amazon Elastic Encoder]: https://aws.amazon.com/elastictranscoder
 [Google Transcoder API]: https://cloud.google.com/transcoder/docs
+[Fastly]: https://videojs.com/getting-started/#videojs-cdn
 [getting started]: https://videojs.com/getting-started
