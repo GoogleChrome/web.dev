@@ -201,7 +201,8 @@ ffmpeg -i myvideo.mp4 -keyint_min 150 -g 150 -f webm -vf setsar=1:1 out.webm
 ```
 
 {% Aside %}
-Visit _Containers and codecs_ to view the audio and video [**codecs**](/containers-and-codecs/#codecs) and the associated library.
+Visit _Containers and codecs_ to view the audio and video [**codecs**](/containers-and-codecs/#codecs)
+and the associated encoding and decoding library the codec uses.
 {% endAside %}
 
 ***MP4/H.264***
