@@ -10,7 +10,11 @@ $generate-utility-classes: false;
 // @import 'reset';
 
 body {
-  @include appl;
+  font-size: get-size('base');
+}
+
+h1 {
+  font-size: get-size('size-6');
 }
 
 // Render gorko utilities
