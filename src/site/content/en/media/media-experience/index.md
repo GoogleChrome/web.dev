@@ -37,9 +37,10 @@ should be in service to the user experience.
 
 The [media](/media/) section of this website will help you achieve these technical
 requirements. Don't worry if these concepts are still a bit abstract. We'll
-explain them progressively throughout all the articles. First looking at the
-concepts, then learning how to use them, and finally the practical application
-of using them on the web.
+explain them progressively throughout all the articles. In the first section you
+will learn about the basic concepts of media, then how to add media to the web in
+the second section, and in the final section the practical applications, with some
+advanced techniques, of using media on the web.
 
 ## Displaying video on the web
 
