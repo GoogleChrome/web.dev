@@ -15,6 +15,7 @@
  */
 
 const gulp = require('gulp');
+const convertDesignTokens = require('./gulp-tasks/convert-design-tokens.js');
 const copyDefaultLocale = require('./gulp-tasks/copy-default-locale.js');
 const copyFonts = require('./gulp-tasks/copy-fonts.js');
 const copyGlobalImages = require('./gulp-tasks/copy-global-images.js');
@@ -23,20 +24,24 @@ const sassTask = require('./gulp-tasks/sass.js');
 const sassNextTask = require('./gulp-tasks/sass-next.js');
 const writeVersion = require('./gulp-tasks/write-version.js');
 
-gulp.task('default-locale', copyDefaultLocale);
+gulp.task('convert-design-tokens', convertDesignTokens);
 gulp.task('copy-misc', copyMisc);
+gulp.task('default-locale', copyDefaultLocale);
 gulp.task('sass', sassTask);
 gulp.task('sass-next', sassNextTask);
 
 gulp.task(
   'build',
-  gulp.parallel(
-    copyGlobalImages,
-    copyMisc,
-    copyFonts,
-    sassTask,
-    sassNextTask,
-    writeVersion,
+  gulp.series(
+    convertDesignTokens,
+    gulp.parallel(
+      copyGlobalImages,
+      copyMisc,
+      copyFonts,
+      sassTask,
+      sassNextTask,
+      writeVersion,
+    ),
   ),
 );
 
