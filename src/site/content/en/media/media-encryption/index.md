@@ -91,14 +91,14 @@ packager \
   input=glocken.mp4,stream=audio,output=glockena.m4a \
   input=glocken.mp4,stream=video,output=glockenv.mp4 \
   --enable_fixed_key_encryption \
-  --keys label=:key=INSERT_KEY_HERE:key_id=INSERT_KEY_ID_HERE
+  --keys label=audio:key=INSERT_AUDIO_KEY_HERE:key_id=INSERT_AUDIO_KEY_ID_HERE,label=video:key=INSERT_VIDEO_KEY_HERE:key_id=INSERT_VIDEO_KEY_ID_HERE
 ```
 
 {% Aside %}
-Note that we are encrypting both `video` and `audio` streams using the same `keys`
-by omitting the label. You could define a different set of `keys` per-stream like
-`label=audio:key=:key_id=,label=video:key=:key_id=`, which would increase your
-security.
+Note that we can also encrypt both `video` and `audio` streams using the same `keys`
+by omitting the label argument instead of defining a different set of `keys` per-stream.
+For example, `--keys label=:key=INSERT_KEY_HERE:key_id=INSERT_KEY_ID_HERE`. However,
+this would decrease the level of security when protecting your streams.
 {% endAside %}
 
 ### Create a key information file
