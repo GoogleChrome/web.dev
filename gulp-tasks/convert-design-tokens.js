@@ -40,7 +40,7 @@ const convertDesignTokens = (cb) => {
 
   tokens.colors.forEach((group) => {
     group.items.forEach((color) => {
-      result += `'${nameSlug(group.group + '-' + color.name)}': ${color.hsl},`;
+      result += `'${nameSlug(group.group + '-' + color.name)}': ${color.hex},`;
     });
   });
 
