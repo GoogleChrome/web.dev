@@ -7,7 +7,7 @@ authors:
 description: |
   Building a PWA with offline streaming has its challenges. In this article you
   will learn about the APIs and techniques that provide users with a
-  delightful offline media experience.
+  high-quality offline media experience.
 date: 2021-07-05
 updated: 2021-07-05
 tags:
@@ -21,7 +21,7 @@ PWAs is an offline experience.
 
 Even better would be an offline streaming media experience, which is an
 enhancement you could offer to your users in a few different ways. However,
-this creates a truly unique problem—media files can be very, *very* large. So
+this creates a truly unique problem—media files can be *very* large. So
 you might be asking:
 
 - How do I download and store a large video file?
@@ -36,7 +36,7 @@ one of the existing [Media Frameworks] to provide these features.
 
 Unless you have a good business case for developing your own, building a PWA
 with offline streaming has its challenges. In this article you will learn about
-the APIs and techniques used to provide users with a delightful offline media
+the APIs and techniques used to provide users with a high-quality offline media
 experience.
 
 ## Downloading and storing a large media file
@@ -329,7 +329,7 @@ Up next, you will learn about [Fast playback with audio and video preload].
 [Background Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Background_Fetch_API
 [support Background Fetch]: https://caniuse.com/mdn-api_serviceworkerregistration_backgroundfetch
 [File System Access API]: /file-system-access/
-[Kino]: https://kinoweb-dev.web.app/
+[Kino]: https://kinoweb.dev/
 [source code]: https://github.com/xwp/kino/
 [Streams–The definitive guide]: /streams/
 [Media Session API]: /media-session/
