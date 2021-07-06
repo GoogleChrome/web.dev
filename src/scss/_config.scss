@@ -22,12 +22,12 @@ $gorko-config: (
     'themes': $gorko-themes
   ),
   'bg': (
-    'items': $gorko-colors,
+    'items': $gorko-theme-keys,
     'output': 'standard',
     'property': 'background'
   ),
   'color': (
-    'items': $gorko-colors,
+    'items': $gorko-theme-keys,
     'output': 'standard',
     'property': 'color'
   ),
