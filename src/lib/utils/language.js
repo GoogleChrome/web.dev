@@ -3,7 +3,7 @@
  * TODO(devnook): Extract isSupportedLocale to a common format.
  * @see https://github.com/GoogleChrome/web.dev/issues/3131
  */
- import cookies from 'js-cookie';
+import cookies from 'js-cookie';
 
 /**
  * A map of supported language codes to their full names.
