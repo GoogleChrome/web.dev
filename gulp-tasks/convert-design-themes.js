@@ -2,6 +2,11 @@ const fs = require('fs');
 const prettier = require('prettier');
 const themes = require('../src/site/_data/design/themes.js');
 
+/*
+  Converts the theme config into Sass variables that can be used
+  by Gorko to generate both Custom Property groups and also utility
+  classes that have a direct relationship to in-context design tokens
+*/
 const convertDesignThemes = (cb) => {
   let result = '';
 
@@ -25,6 +30,7 @@ const convertDesignThemes = (cb) => {
   result += ');';
 
   result += `
+  
     /// THEMES
     /// The gorko config for the actual themes starts https://github.com/andy-piccalilli/gorko#using-themes
   `;

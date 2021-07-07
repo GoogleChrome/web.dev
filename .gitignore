@@ -86,6 +86,7 @@ entrypoint.hashmanifest.json
 .firebase
 firebase.json
 src/scss/_tokens.scss
+src/scss/_themes.scss
 
 # Eleventy
 # We generate our own .eleventyignore file dynamically during builds

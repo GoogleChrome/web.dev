@@ -3,6 +3,10 @@ const slugify = require('slugify');
 const prettier = require('prettier');
 const tokens = require('../src/site/_data/design/tokens.json');
 
+/*
+  Converts the design tokens into Sass variables so Gorko can use
+  them as the core of the CSS system.
+*/
 const convertDesignTokens = (cb) => {
   let result = '';
   const rootSize = 16;

@@ -1,3 +1,13 @@
+/*
+  THEME CONFIG
+
+  In here, we have some enum-style keys that refer to colors in context. These
+  keys are then used to inform a relationship between context and design tokens.
+
+  The structure for a color design token reference is ${group}-${item} and should
+  be lowercase, so if you wanted to use the core primary color, you would use
+  'core-primary' because “Core” is the group and “Primary” is the item
+*/
 module.exports = {
   colorKeys: {
     CORE_TEXT: 'core-text',
