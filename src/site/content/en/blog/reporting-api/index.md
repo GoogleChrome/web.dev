@@ -227,7 +227,7 @@ POST
 Content-Type: application/reports+json
 ```
 
-The payload of these requests is a list of reports. Here's the data you can find in each
+The payload of these requests is a JSON-formatted list of reports. Here's the data you can find in each
 of these reports:
 
 <div class="w-table-wrapper">
