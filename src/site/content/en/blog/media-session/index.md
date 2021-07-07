@@ -4,7 +4,7 @@ subhead: How to integrate with hardware media keys, customize media notification
 authors:
   - beaufortfrancois
 date: 2020-03-06
-updated: 2021-05-07
+updated: 2021-07-01
 hero: image/admin/IhujMvzGa5Mf0aNWYRXW.jpg
 thumbnail: image/admin/Q6CqQNLucogBCxGMsSU2.jpg
 description: |
@@ -235,15 +235,23 @@ loading for instance. In this case, override this behavior by setting
 the website UI stays in sync with media notification controls.
 
 ```js
+const video = document.querySelector('video');
+
 navigator.mediaSession.setActionHandler('play', async () => {
   // Resume playback
-  await document.querySelector('video').play();
-  navigator.mediaSession.playbackState = 'playing';
+  await video.play();
 });
 
 navigator.mediaSession.setActionHandler('pause', () => {
   // Pause active playback
-  document.querySelector('video').pause();
+  video.pause();
+});
+
+video.addEventListener('play', () => {
+  navigator.mediaSession.playbackState = 'playing';
+});
+
+video.addEventListener('pause', () => {
   navigator.mediaSession.playbackState = 'paused';
 });
 ```
