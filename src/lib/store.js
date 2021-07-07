@@ -4,6 +4,7 @@ import getMeta from './utils/meta';
 import {getTimeOffset} from './utils/time-offset';
 import {localStorage} from './utils/storage';
 import {isProd} from 'webdev_config';
+import language from './utils/language';
 
 const initialParams = new URLSearchParams(window.location.search);
 const timeOffset = getTimeOffset(initialParams.get('_now'));
@@ -55,7 +56,8 @@ const initialState = {
   showingSnackbar: false,
   snackbarType: null,
 
-  userPreferredLanguage: '',
+  // If the page is served in the user's preferred language or is a fallback.
+  isI18nFallback: language.isI18nFallback(),
 
   // Used to override the current time for web.dev/LIVE testing.
   timeOffset,
