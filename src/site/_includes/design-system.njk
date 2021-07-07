@@ -104,7 +104,7 @@
           <main id="main">
             <h1>{{ title }}</h1>
             {% if summary %}
-              <p><em>{{ summary }}</em></p>
+              {{ summary | md | safe }}
             {% endif %}
 
             <div class="flow">

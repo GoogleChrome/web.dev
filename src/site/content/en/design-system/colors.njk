@@ -5,7 +5,15 @@ permalink: '/design-system/colors/index.html'
 {% extends "design-system.njk" %}
 {% set title = 'Colors' %}
 {% set summary %}
-The colors and how to use them Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus.
+Colors are set with design tokens, which are located here: `src/site/_data/design/tokens.json`. 
+There is also a contextual relationship between colors and how they are applied with themes: `src/site/_data/design/themes.js`
+
+### Todo
+
+- Create proper color references 
+- Document themeing 
+- Document color usage 
+
 {% endset %}
 {% set breadcrumbs = [
   {
@@ -16,11 +24,26 @@ The colors and how to use them Nullam quis risus eget urna mollis ornare vel eu 
 {% block inner %}
 {% for group in design.tokens.colors %}
   <h2>{{ group.group }}</h2>
-  <div class="flow">
+  <!-- TEMP LAYOUT -->
+  <div class="swatches">
     {% for color in group.items %}
-      <div style="width: 20rem;">
+      <div>
         <h3>{{ color.name }}</h3>
-        <div style="height: 5rem; background: {{ color.hsl }}">
+        <dl>
+          <dt>Sass</dt>
+          <dd>
+            <code>get-color('{{ group.group | slug }}-{{ color.name | slug }}')</code>
+          </dd>
+          <dt>Hex</dt>
+          <dd>
+            <code>{{ color.hex }}</code>
+          </dd>
+          <dt>HSL</dt>
+          <dd>
+            <code>{{ color.hsl }}</code>
+          </dd>
+        </dl>
+        <div class="gap-top-400" style="height: 10rem; background: {{ color.hsl }}">
         </div>
       </div>
     {% endfor %}
