@@ -7,7 +7,7 @@ $generate-utility-classes: false;
 // Next: pull in gorko for design token and custom property generation
 @import '../../node_modules/gorko/gorko.scss';
 
-// @import 'reset';
+@import 'reset';
 
 body {
   font-size: get-size('base');
