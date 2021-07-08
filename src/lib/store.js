@@ -56,9 +56,6 @@ const initialState = {
   showingSnackbar: false,
   snackbarType: null,
 
-  // If the page is served in the user's preferred language or is a fallback.
-  isI18nFallback: language.isI18nFallback(),
-
   // Used to override the current time for web.dev/LIVE testing.
   timeOffset,
 
