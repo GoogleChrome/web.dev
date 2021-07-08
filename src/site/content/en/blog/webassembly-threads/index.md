@@ -2,7 +2,7 @@
 title: Using WebAssembly threads from C, C++ and Rust
 subhead: Learn how to bring multithreaded applications written in other languages to WebAssembly.
 description: Learn how to bring multithreaded applications written in other languages to WebAssembly.
-date: 2021-06-22
+date: 2021-07-08
 hero: image/9oK23mr86lhFOwKaoYZ4EySNFp02/YrOqDnzjHFqmZdiNBmbw.jpg
 alt: A needle acting as a prism—splitting a single white thread into multiple colourful ones.
 authors:
