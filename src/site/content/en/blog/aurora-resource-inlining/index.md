@@ -190,6 +190,21 @@ section button.primary {
 ```
 {% endCompare %}
 
+After inlining the critical CSS in the HTML we can see that the flickering of the page is gone:
+
+<figure class="w-figcaption">
+  {% Video
+    src=["video/S838B7UEsdXmwrD8q5gvNlWTHHP2/TPbZ9TZiDzFEYfybaPoz.mp4"],
+    autoplay=true,
+    loop=true,
+    muted=true,
+    playsinline=true
+  %}
+  <figcaption style="text-align: center;">
+    The page loading after CSS inlining.
+  </figcaption>
+</figure>
+
 Critical CSS inlining is now available in Angular and enabled by default in v12. If you're on v11,
 turn it on by [setting the `inlineCritical` property to
 `true`](https://angular.io/guide/workspace-config#styles-optimization-options) in `angular.json`. To
