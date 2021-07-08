@@ -111,7 +111,7 @@ and COEP](/coop-coep/) for more details.
 ### WebAssembly atomics
 
 While `SharedArrayBuffer` allows each thread to read and write to the same memory, for correct
-communication you want to make sure they don't "step on each others' toes". For example, it's
+communication you want to make sure they don't perform conflicting operations at the same time. For example, it's
 possible for one thread to start reading data from a shared address, while another thread is writing
 to it, so the first thread will now get a corrupted result. This category of bugs is known as race
 conditions. In order to prevent race conditions, you need to somehow synchronize those accesses.
