@@ -478,7 +478,7 @@ demo showing:
     to [the main
     thread](https://github.com/GoogleChromeLabs/wasm-bindgen-rayon/blob/e13485d6d64a062b890f5bb3a842b1fe609eb3c1/demo/index.js#L25-L29).
 
-## Real-world use-cases
+## Real-world use cases
 
 We actively use WebAssembly threads in [Squoosh.app](https://squoosh.app/) for client-side image
 compression—in particular, for formats like AVIF (C++), JPEG-XL (C++), OxiPNG (Rust) and WebP v2
@@ -494,4 +494,4 @@ version](https://earth.google.com/web/).
 encode videos directly in the browser.
 
 There are many more exciting examples using WebAssembly threads out there. Be sure to check out
-their demos and bring your own multithreaded applications and libraries to the web!
+the demos and bring your own multithreaded applications and libraries to the web!
