@@ -144,7 +144,7 @@ markup choices and how they impact the overall component.
 
 The [`color-scheme`](https://web.dev/color-scheme/) meta tag in the above
 snippet informs the browser that this page wants the light and dark browser
-styles. The example breadcrumbs don’t include any CSS for these color schemes,
+styles. The example breadcrumbs don't include any CSS for these color schemes,
 and so the breadcrumbs will use the default colors provided by the browser.
 
 {% Aside %} Try removing all the styles from the demo page. The component works
@@ -156,7 +156,7 @@ without them due to the well structured markup. {% endAside %}
 <nav class="breadcrumbs" role="navigation"></nav>
 ```
 
-It’s appropriate to use the
+It's appropriate to use the
 [`<nav>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav) element
 for site navigation. While the element has an implicit ARIA [role of
 navigation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Navigation_Role),
