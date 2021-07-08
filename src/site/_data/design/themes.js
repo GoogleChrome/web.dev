@@ -20,21 +20,33 @@ module.exports = {
   getDark() {
     return {
       CORE_TEXT: 'shades-light',
+      MID_TEXT: 'shades-gray-glare',
+      HIGHLIGHT_TEXT: 'core-primary-glare',
       CORE_BG: 'shades-dark',
       ACTION_TEXT: 'core-primary',
       ACTION_BG: 'shades-light-bright',
       ACTION_TEXT_2: 'shades-light-bright',
       ACTION_BG_2: 'core-primary',
+      STATE_INFO_TEXT: 'core-primary',
+      STATE_WARN_TEXT: 'state-warn',
+      STATE_GOOD_TEXT: 'state-good',
+      STATE_BAD_TEXT: 'state-bad',
     };
   },
   getLight() {
     return {
       CORE_TEXT: 'shades-dark',
+      MID_TEXT: 'shades-gray',
+      HIGHLIGHT_TEXT: 'core-primary',
       CORE_BG: 'shades-light-bright',
       ACTION_TEXT: 'core-primary',
       ACTION_BG: 'shades-light-bright',
       ACTION_TEXT_2: 'shades-light-bright',
       ACTION_BG_2: 'core-primary',
+      STATE_INFO_TEXT: 'core-primary',
+      STATE_WARN_TEXT: 'state-warn',
+      STATE_GOOD_TEXT: 'state-good',
+      STATE_BAD_TEXT: 'state-bad',
     };
   },
   generate() {
