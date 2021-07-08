@@ -38,7 +38,7 @@ Your Speed Index score is a comparison of your page's speed index
 and the speed indices of real websites, based on
 [data from the HTTP Archive](/performance-scoring/#metric-scores).
 
-This table shows how to interpret your Speed Index score:
+This table shows how to interpret your mobile Speed Index score:
 
 <div class="w-table-wrapper">
   <table>
