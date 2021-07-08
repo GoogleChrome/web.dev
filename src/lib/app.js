@@ -14,9 +14,8 @@ import removeServiceWorkers from './utils/sw-remove';
 document.body.classList.remove('unresolved');
 
 // Configures global page state (loading, signed in).
-function onGlobalStateChanged({isSignedIn, isI18nFallback}) {
+function onGlobalStateChanged({isSignedIn}) {
   document.body.classList.toggle('lh-signedin', isSignedIn);
-  document.body.classList.toggle('i18n-fallback', isI18nFallback);
 
   // Cache whether the user was signed in, to help prevent FOUC in future and
   // for Analytics, as this can be read synchronosly and Firebase's auth takes
