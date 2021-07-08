@@ -12,17 +12,23 @@ module.exports = {
   colorKeys: {
     CORE_TEXT: 'core-text',
     CORE_BG: 'core-bg',
+    MID_TEXT: 'mid-text',
+    HIGHLIGHT_TEXT: 'highlight-text',
     ACTION_TEXT: 'action-text',
     ACTION_BG: 'action-bg',
     ACTION_TEXT_2: 'action-text-2',
     ACTION_BG_2: 'action-bg-2',
+    STATE_INFO_TEXT: 'state-info-text',
+    STATE_WARN_TEXT: 'state-warn-text',
+    STATE_GOOD_TEXT: 'state-good-text',
+    STATE_BAD_TEXT: 'state-bad-text',
   },
   getDark() {
     return {
       CORE_TEXT: 'shades-light',
+      CORE_BG: 'shades-dark',
       MID_TEXT: 'shades-gray-glare',
       HIGHLIGHT_TEXT: 'core-primary-glare',
-      CORE_BG: 'shades-dark',
       ACTION_TEXT: 'core-primary',
       ACTION_BG: 'shades-light-bright',
       ACTION_TEXT_2: 'shades-light-bright',
@@ -36,9 +42,9 @@ module.exports = {
   getLight() {
     return {
       CORE_TEXT: 'shades-dark',
+      CORE_BG: 'shades-light-bright',
       MID_TEXT: 'shades-gray',
       HIGHLIGHT_TEXT: 'core-primary',
-      CORE_BG: 'shades-light-bright',
       ACTION_TEXT: 'core-primary',
       ACTION_BG: 'shades-light-bright',
       ACTION_TEXT_2: 'shades-light-bright',
