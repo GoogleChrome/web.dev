@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Building a breadcrumbs component
-subhead: A foundational overview of how to build a responsive and accessible breadcrumbs component for users to traverse your experience
+subhead: A foundational overview of how to build a responsive and accessible breadcrumbs component for users to navigate your site.
 authors:
   - adamargyle
-description: A foundational overview of how to build a responsive and accessible breadcrumbs component for users to traverse your experience
+description: A foundational overview of how to build a responsive and accessible breadcrumbs component for users to navigate your site.
 date: 2021-07-14
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/kCeb8N9YlMYsI5O5ChC9.png
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/dk9VreVtYiF3LBkRpZlg.png
@@ -13,7 +13,6 @@ tags:
   - css
   - dom
   - javascript
-  - interaction
 ---
 
 In this post I want to share thinking on a way to build breadcrumb components.
@@ -64,8 +63,8 @@ rpg » indie » on sale`, as shown below.
   muted="true"
 %}
 
-This breadcrumb component should enable users to move throughout this
-information hierarchy; jumping branches and traversing pages with speed and
+This breadcrumb component should enable users to move through this
+information hierarchy; jumping branches and selecting pages with speed and
 accuracy. 
 
 {% Video
@@ -82,17 +81,17 @@ I find it's helpful to think in terms of collections and items.
 
 ### Collections
 
-A collection would be an array of options to choose from. From the homepage of
-the breadcrumb prototype of this post, the collection is FPS, RPG, brawler,
+A collection is an array of options to choose from. From the homepage of
+the breadcrumb prototype of this post, the collections are FPS, RPG, brawler,
 dungeon crawler, sports and puzzle. 
 
 ### Items
 
 A video game is an item, a specific collection could also be an item if it
 represents another collection. For example, RPG is an item and a valid
-collection. When it's an item,the user is on that collection page. For example,
+collection. When it's an item, the user is on that collection page. For example,
 they are on  the RPG page, which displays a list of RPG games, including the
-additional sub categories AAA, Indie and Self Published.
+additional subcategories AAA, Indie and Self Published.
 
 In computer science terms, this breadcrumbs component represents a
 [multidimensional
@@ -142,7 +141,7 @@ markup choices and how they impact the overall component.
   muted="true"
 %}
 
-The [`color-scheme`](https://web.dev/color-scheme/) meta tag in the above
+The [`color-scheme`](/color-scheme/) meta tag in the above
 snippet informs the browser that this page wants the light and dark browser
 styles. The example breadcrumbs don't include any CSS for these color schemes,
 and so the breadcrumbs will use the default colors provided by the browser.
@@ -158,11 +157,11 @@ without them due to the well structured markup. {% endAside %}
 
 It's appropriate to use the
 [`<nav>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav) element
-for site navigation. While the element has an implicit ARIA [role of
-navigation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Navigation_Role),
-in testing I noticed that having the attribute did indeed change the way a
+for site navigation, which has an implicit ARIA [role of
+navigation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Navigation_Role). 
+In testing, I noticed that having the `role` attribute changed the way a
 screen reader interacted with the element, it was actually announced as
-navigation, and so I've chosen to keep it there explicitly.
+navigation, and so I've chosen to add it.
 
 #### Icons
 
@@ -206,7 +205,7 @@ the icon, like this:
 ```
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/BVkOZ3YnQBgF6K09sLTE.png",
-alt="devtools showing a rendered `<use>` SVG element", width="800", height="447"
+alt="DevTools showing a rendered `<use>` SVG element.", width="800", height="447"
 %}
 
 Define once, use as many times as you like, with minimal page performance impact
@@ -239,14 +238,14 @@ but for page navigation.
 ```
 
 A link and some options is nothing special but adds more functionality to a
-simple breadcrumb. Adding a `title` to the select element is helpful for screen
+simple breadcrumb. Adding a `title` to the `<select>` element is helpful for screen
 reader users, giving them information about the action of the button. However it
 provides the same help to everyone else too, you'll see it's front and center on
 iPad. One attribute provides button context to many users. 
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/IbANGFRfyEC61P7ETlGp.png",
-alt="screenshot with the invisible select element being hovered and its
-contextual tooltip showing", width="271", height="83" %}
+alt="Screenshot with the invisible select element being hovered and its
+contextual tooltip showing.", width="271", height="83" %}
 
 #### Separator decorations
 
@@ -262,11 +261,11 @@ contextual tooltip showing", width="271", height="83" %}
   muted="true"
 %}
 
-Thanks to the [`gap`](https://web.dev/flexbox-gap/) property, a feature for
-optional separators was easy to implement. Not only are separators optional
-entirely, adding just one works great too (see the 3rd example in the video
+Separators are optional, adding just one works great too (see the third example in the video
 above). I then give each `aria-hidden="true"` since they are decorative and not
 something a screen reader needs to announce.
+
+The [`gap`](/flexbox-gap) property, covered next, makes the spacing of these straightforward.
 
 ### Styles
 
@@ -275,12 +274,12 @@ Since the color uses [system colors](https://www.w3.org/TR/css-color-4/#css-syst
 #### Layout direction and flow
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/uPs9kdqJgyaY5GWqdZHP.png",
-alt="devtools showing breadcrumb nav alignment with a it's flexbox overlay
-feature", width="800", height="74" %}
+alt="DevTools showing breadcrumb nav alignment with a its flexbox overlay
+feature.", width="800", height="74" %}
 
 The primary navigation element `nav.breadcrumbs` sets a scoped custom property
 for children to use, and otherwise establishes a horizontal vertically aligned
-layout. This ensures that the crumbs, dividers and icons align.
+layout. This ensures that the crumbs, dividers, and icons align.
 
 ```css
 .breadcrumbs {
@@ -294,7 +293,7 @@ layout. This ensures that the crumbs, dividers and icons align.
 ```
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/8JJyoerH462n22u0vD2R.png",
-alt="one breadcrumb shown vertically aligned with flexbox overlays",
+alt="One breadcrumb shown vertically aligned with flexbox overlays.",
 width="167", height="66" %}
 
 Each `.crumb` also establishes a horizontal vertically aligned layout with some
@@ -328,8 +327,8 @@ The `.crumbicon` component uses grid to stack an SVG icon with a "nearly
 invisible" `<select>` element.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/jx2uAiFT8NEHD5AbuSp3.png",
-alt="grid devtools shown overlaying a button where the row and column are both
-named stack", width="218", height="180" %}
+alt="Grid DevTools shown overlaying a button where the row and column are both
+named stack.", width="218", height="180" %}
 
 ```css/8
 .crumbicon {
@@ -345,7 +344,11 @@ named stack", width="218", height="180" %}
 }
 ```
 
-The `<select>` element is last in the DOM, so it's on top of the stack, and interactive. Add a style of `opacity: .01` so the element is still usable, and the result is a select box that fits perfectly to the shape of the icon. This is a nice way to customize the look of a select element while maintaining the built-in functionality.
+The `<select>` element is last in the DOM, so it's on top of the stack,
+and interactive. Add a style of `opacity: .01` so the element is still usable,
+and the result is a select box that fits perfectly to the shape of the icon.
+This is a nice way to customize the look of a `<select>` element while
+maintaining the built-in functionality.
 
 ```css
 .disguised-select {
@@ -393,11 +396,11 @@ breadcrumbs component qualified well.
 
 The overflow styles set up the following UX:
 
-1. Horizontal scroll with overscroll containment.
-1. Horizontal scroll padding.
-1. One snap point on the last crumb. This means that on page load the first
+- Horizontal scroll with overscroll containment.
+- Horizontal scroll padding.
+- One snap point on the last crumb. This means that on page load the first
    crumb loads snapped and in view.
-1. Removes the snap point from Safari, which struggles with the horizontal
+- Removes the snap point from Safari, which struggles with the horizontal
    scrolling and snap effect combinations.
 
 #### Media queries
@@ -414,8 +417,8 @@ just the icon:
 ```
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/T47A7AUqFPuneqNK3GWa.png",
-alt="side by side of the breadcrumbs with and without a home label, for
-comparison", width="800", height="84" %}
+alt="Side by side of the breadcrumbs with and without a home label, for
+comparison.", width="800", height="84" %}
 
 ## Accessibility
 
@@ -433,10 +436,10 @@ transition in a `prefers-reduced-motion` check, we can prevent unwanted motion.
 ```
 
 None of the other styles need to change, the hover and focus effects are great
-and meaningful without a `transition`, but if motion is OK, we'll add a subtle
+and meaningful without a `transition`, but if motion is okay, we'll add a subtle
 transition to the interaction.
 
-### Javascript
+### JavaScript
 
 Regardless of the type of router you use in your site or application, when a
 user interacts with the breadcrumbs, the URL needs to be updated, and the user
@@ -479,11 +482,11 @@ crumb.forEach(nav => {
 })
 ```
 
-The strategy for this is to watch for keyboard down events on each select
+The strategy for this is to watch for keyboard down events on each `<select>`
 element and determine if the key pressed was navigation confirmation (`Tab` or
 `Enter`) or spatial navigation (`ArrowUp` or `ArrowDown`). With this
 determination, the component can decide to wait or go, when the event for the
-select element fires.
+`<select>` element fires.
 
 ## Conclusion
 
@@ -495,4 +498,4 @@ to the community remixes section below!
 
 ## Community remixes
 
-*Nothing to see here yet*
+*Nothing to see here yet.*
