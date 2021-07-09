@@ -9,7 +9,7 @@ description: |
   from a server where the content has been split into individual chunks of data
   that can be joined back together during playback in a specific order through
   a range request using protocols such as DASH and HLS.
-date: 2021-04-13
+date: 2021-07-05
 updated: 2021-07-05
 tags:
   - media

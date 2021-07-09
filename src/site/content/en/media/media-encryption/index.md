@@ -8,7 +8,7 @@ description: |
   Learn digital rights management concepts, and the commands needed to get from a raw mov
   file to encrypted media packaged for MPEG-DASH or HLS using both Clear Key or
   Widevine encryption.
-date: 2021-03-05
+date: 2021-07-05
 updated: 2021-07-05
 tags:
   - media

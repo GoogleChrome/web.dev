@@ -7,7 +7,7 @@ description: |
   Media frameworks come in both the proprietary and open-source variety, and at
   their core are a set of APIs that support audio and/or video playback for
   various container formats and transmission protocols.
-date: 2021-04-30
+date: 2021-07-05
 updated: 2021-07-05
 tags:
   - media
