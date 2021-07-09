@@ -371,8 +371,7 @@ your couch with a remote, give that interaction some small enhancements:
 %}
 
 ```css
-.horizontal-media-scroller {
-  display: inline-block;
+.horizontal-media-scroller a {
   outline-offset: 12px;
 
   &:focus {
@@ -387,7 +386,7 @@ your couch with a remote, give that interaction some small enhancements:
 }
 ```
 
-This sets the focus outline style `5px` away from the box, giving it some nice
+This sets the focus outline style `7px` away from the box, giving it some nice
 space. If the user has no motion preferences around reducing motion, the offset
 is transitioned, giving subtle motion to the focus event.
 
@@ -454,7 +453,7 @@ and 4:3", width="800", height="324", class="w-screenshot" %}
 
 ```css/3,6,12
 @supports (aspect-ratio: 1) {
-  .horizontal-media-scroller figure > picture
+  .horizontal-media-scroller figure > picture {
     inline-size: auto; /* for a block-size driven ratio */
     aspect-ratio: 1; /* boxes by default */
 
