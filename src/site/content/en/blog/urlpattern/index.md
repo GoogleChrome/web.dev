@@ -374,6 +374,6 @@ and
 
 ## Acknowledgements
 
-Please see the [original explainer document](https://github.com/WICG/urlpattern/blob/main/explainer.md#references--acknowledgements) for a full list of acknowledgements.
+See the [original explainer document](https://github.com/WICG/urlpattern/blob/main/explainer.md#references--acknowledgements) for a full list of acknowledgements.
 
 The hero image at the top of this post is by <a href="https://unsplash.com/@koushikc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Koushik Chowdavarapu</a> on <a href="https://unsplash.com/s/photos/pattern?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>.
