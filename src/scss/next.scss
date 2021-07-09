@@ -1,0 +1,23 @@
+// First up: config
+@import 'config';
+
+// Disable util class generator because we'll render them at the end
+$generate-utility-classes: false;
+
+// Next: pull in gorko for design token and custom property generation
+@import '../../node_modules/gorko/gorko.scss';
+
+@import 'reset';
+
+body {
+  font-size: get-size('base');
+  background: get-utility-value('color', 'core-text');
+  color: get-utility-value('color', 'core-bg');
+}
+
+h1 {
+  font-size: get-size('size-6');
+}
+
+// Render gorko utilities
+@include generate-utility-classes();
