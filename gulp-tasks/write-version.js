@@ -7,7 +7,7 @@
  */
 const writeVersion = async () => {
   if (process.env.ELEVENTY_ENV === 'prod') {
-    require('fs').writeFileSync('./dist/version', process.env.GITHUB_SHA);
+    require('fs').writeFileSync('./dist/version', process.env.GITHUB_SHA || '');
   }
 };
 
