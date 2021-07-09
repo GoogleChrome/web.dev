@@ -228,7 +228,7 @@ a massa sit amet ullamcorper.
 
 ## Browser compatibility table
 
-With the `BrowserCompat` shortcode, ou can embed
+With the `BrowserCompat` shortcode, you can embed
 a [caniuse.com](http://caniuse.com) compatibility table in your post.
 The requested feature must have the same id as used on caniuse.com
 (you can find it in caniuse.com url, e.g. `webp` in `caniuse.com/webp`

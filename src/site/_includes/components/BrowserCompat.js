@@ -26,6 +26,8 @@ module.exports = (feature) => {
     <source type="image/png" srcset="https://caniuse.bitsofco.de/image/${feature}.png">
     <img
       src="https://caniuse.bitsofco.de/image/${feature}.jpg"
+      width="800px"
+      height="410px"
       alt="Data on support for the ${feature} feature across the major browsers from caniuse.com">
     </picture>
   `;
