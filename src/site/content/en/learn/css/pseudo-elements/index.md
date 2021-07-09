@@ -83,7 +83,7 @@ Once a `::before` or `::after` element has been created,
 you can style it however you want with no limits.
 You can only insert a `::before` or `::after` element to an element that will accept child elements
 ([elements with a document tree](https://www.w3.org/TR/CSS21/generate.html)),
-so elements such as `<img />`, `<video>`, `<button`> and `<input>` won't work.
+so elements such as `<img />`, `<video>`, `<button>` and `<input>` won't work.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -202,6 +202,7 @@ Only a small subset of CSS properties are supported for `::marker`:
 - `content`
 - `white-space`
 - `font` properties
+- `animation` and `transition` properties
 
 You can change the marker symbol, using the `content` property. You can use this to set a plus and minus symbol for the closed and empty states of a `<summary>` element, for example.
 

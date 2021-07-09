@@ -1,0 +1,28 @@
+<web-table-of-contents opened>
+  <div class="w-toc__label">
+    <span>{{ data.label }}</span>
+    <button
+      class="w-button w-button--secondary w-button--icon"
+      data-icon="close"
+      aria-label="Close Table of Contents"
+    ></button>
+  </div>
+  <web-scroll-spy>
+    <div class="w-toc__content">
+      <h2 class="w-toc__header">
+        <a href="{{ data.heading.url }}" class="w-toc__header--link">{{
+          data.heading.text
+        }}</a>
+      </h2>
+      <div class="w-toc__list">
+        <ul>
+          {% for item in data.items %}
+          <li>
+            <a href="{{ item.url }}">{{ item.text }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </web-scroll-spy>
+</web-table-of-contents>

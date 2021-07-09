@@ -375,9 +375,9 @@ You can learn more about this preference and overall performance with
 [this animation guide](https://web.dev/animations/).
 
 
-{% Assessment 'animations' %}
-
 {% Codepen {
   user: 'web-dot-dev',
   id: 'bGqbPwq'
 } %}
+
+{% Assessment 'animations' %}

@@ -1,0 +1,30 @@
+{
+  "title": "Banners",
+  "summary": "Hidden in small viewports so increase the sample window size.",
+  "context": {
+    "content": "Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.",
+    "modifier": "w-banner--neutral"
+  },
+  "variants": [
+    {
+      "name": "info",
+      "title": "Info",
+      "modifier": "w-banner--info"
+    },
+    {
+      "name": "caution",
+      "title": "Caution",
+      "modifier": "w-banner--caution"
+    },
+    {
+      "name": "warning",
+      "title": "Warning",
+      "modifier": "w-banner--warning"
+    },
+    {
+      "name": "body",
+      "title": "Body",
+      "modifier": "w-banner--info w-banner--body"
+    }
+  ]
+}
