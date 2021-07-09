@@ -103,8 +103,6 @@
     "gorko": "^0.7.1",
     "gts": "^2.0.2",
     "gulp": "^4.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-header": "^2.0.9",
     "gulp-sass": "^5.0.0",
     "html-minifier": "^4.0.0",
     "husky": "^4.2.3",
