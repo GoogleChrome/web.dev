@@ -1,58 +1,77 @@
-/* Box sizing rules */
+// A modified version of the modern CSS reset https://piccalil.li/blog/a-modern-css-reset/
+
+// Box sizing rules
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Remove default margin */
+// Remove default margin
 body,
 h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p,
 figure,
 blockquote,
 dl,
-dd {
+dd,
+pre {
   margin: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+// Set core body defaults
+body {
+  min-height: 100vh;
+}
+
+// Remove list styles on ul, ol elements with a list role, which suggests
+// default styling will be removed.
+// https://github.com/hankchizljaw/modern-css-reset/issues/30
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
-  padding: 0;
 }
 
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
+// Don't let lists spill outside of their containing box.
+ul,
+ol {
+  list-style-position: inside;
 }
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  line-height: 1.5;
-}
-
-/* A elements that don't have a class get default styles */
+// Anchor elements that don't have a class get default styles
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
+// Make images easier to work with
+img {
   display: block;
+  height: auto;
+  max-width: 100%;
 }
 
-/* Inherit fonts for inputs and buttons */
+li img,
+p img {
+  display: inline-block;
+  vertical-align: sub;
+}
+
+// Inherit fonts for inputs and buttons
 input,
 button,
 textarea,
 select {
   font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+}
+
+// Remove the default border on iframes
+iframe {
+  border: 0;
 }
