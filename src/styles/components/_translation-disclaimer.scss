@@ -1,0 +1,7 @@
+.translation-disclaimer {
+  display: none;
+}
+
+[i18n-fallback] .translation-disclaimer {
+  display: block;
+}
