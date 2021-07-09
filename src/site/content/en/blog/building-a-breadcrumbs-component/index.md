@@ -441,19 +441,22 @@ transition to the interaction.
 
 ### JavaScript
 
-Regardless of the type of router you use in your site or application, when a
-user interacts with the breadcrumbs, the URL needs to be updated, and the user
-shown the appropriate page. Two critical user experience measures are handled by
-Javascript here: select has changed and eager select change event firing
-prevention.
+First, regardless of the type of router you use in your site or application,
+when a user changes the breadcrumbs, the URL needs to be updated and the user
+shown the appropriate page. Second, to normalize the user experience, make sure
+no unexpected navigations happen when users are just browsing `<select>`
+options.
 
-The eager change event prevention is needed due to the use of a `<select>`
+Two critical user experience measures to be handled by JavaScript: select has
+changed and eager `<select>` change event firing prevention.
+
+The eager event prevention is needed due to the use of a `<select>`
 element. On Windows Edge, and probably other browsers too, the select `changed`
-event fires as the user navigates options with the keyboard. This is why I
+event fires as the user browses options with the keyboard. This is why I
 called it eager, as the user has only pseudo selected the option, like a hover
 or focus, yet hasn't confirmed the choice with `enter` or a `click`. The eager
-event firing makes this component category change feature inaccessible, because
-opening the select box and simply browsing an item, will fire the event and
+event makes this component category change feature inaccessible, because
+opening the select box and simply browsing an item will fire the event and
 change the page, before the user is ready.
 
 #### A better `<select>` changed event
