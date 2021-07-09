@@ -190,7 +190,7 @@ section button.primary {
 ```
 {% endCompare %}
 
-After inlining the critical CSS in the HTML we can see that the flickering of the page is gone:
+After inlining the critical CSS in the HTML you will find that the flickering of the page is gone:
 
 <figure class="w-figcaption">
   {% Video
