@@ -3,7 +3,6 @@
   "version": "3.0.0",
   "scripts": {
     "algolia": "node algolia.js",
-    "build:test": "npm-run-all clean gulp:sass gulp:misc rollup eleventy",
     "build": "npm-run-all clean gulp ignore rollup eleventy gulp:default-locale firebase-config",
     "clean": "rimraf dist",
     "cloud-secrets": "node ./cloud-secrets.js",
