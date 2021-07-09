@@ -240,7 +240,7 @@ self.addEventListener('fetch', fetchHandler);
 
 So what do you need to do in `getVideoResponse()`?
 
-- The `event.respondWith` method expects a `Response` object as a parameter.
+- The `event.respondWith()` method expects a `Response` object as a parameter.
 - The [Response() constructor] tells us that there are several types of objects we
   could use to instantiate a `Response` object: a `Blob`, `BufferSource`,
   `ReadableStream`, and more.
