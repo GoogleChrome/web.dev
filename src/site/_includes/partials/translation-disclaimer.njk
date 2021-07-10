@@ -1,3 +1,9 @@
-<div role="banner" class="w-banner w-banner--neutral translation-disclaimer">
+{% set gitlocalizeUrl =  page.inputPath | gitlocalizeLink(lang) %}
+{% if translated === 'none' %}
+  {% Banner 'neutral' %}
   This page is not translated yet.
-</div>
+  {# {% if gitlocalizeUrl %}
+  Consider improving it by [contributing your translation]({{ gitlocalizeUrl }}).
+  {% endif %} #}
+  {% endBanner %}
+{% endif %}
