@@ -43,6 +43,7 @@ class EventSchedule extends HTMLElement {
     // This just creates an element, we're not yet making it part of the DOM, so it's allowed here
     // in the constructor.
 
+    // @ts-ignore
     this._modalElement = /** @type import('../EventScheduleModal').EventScheduleModal */ (document.createElement(
       'web-event-schedule-modal',
     ));
