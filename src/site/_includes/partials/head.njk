@@ -45,6 +45,12 @@ include. #}
   <script>{{ inlineScript | minifyJs | cspHash | safe }}</script>
 {% endfor %}
 
+{# Inline script to handle l10n fallback banner. #}
+{% set l10nFallback %}
+  {% include 'partials/l10n-fallback.js' %}
+{% endset %}
+<script>{{ l10nFallback | minifyJs | cspHash | safe }}</script>
+
 {# Sourced scripts cannot be authorized by a CSP hash individually, so we need
 to use an inline script loader for any sourced scripts. #}
 {# This works because the CSP includes the 'strict-dynamic' keyword, allowing
