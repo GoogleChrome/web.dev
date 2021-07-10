@@ -65,7 +65,7 @@
     "nunjucks": "^3.2.3",
     "pretty-ms": "^7.0.0",
     "strip-comments": "^2.0.1",
-    "terser": "^4.6.4",
+    "terser": "^5.7.1",
     "unistore": "^3.4.1",
     "web-vitals": "^0.2.4",
     "wicg-inert": "^3.0.1"
