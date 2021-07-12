@@ -30,11 +30,7 @@ declare global {
     updated?: Date;
   }
 
-  export interface VirtualCollectionItem<
-    DataField extends VirtualDataField,
-    AdditionalData extends {}
-  > extends AdditionalData {
-    data: DataField;
+  export interface VirtualCollectionItem {
     description: string;
     elements: EleventyCollectionItem[];
     href: string;
