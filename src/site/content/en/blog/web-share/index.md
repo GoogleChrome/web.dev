@@ -4,7 +4,7 @@ subhead: Web apps can use the same system-provided share capabilities as platfor
 authors:
   - joemedley
 date: 2019-11-08
-updated: 2021-06-07
+updated: 2021-07-09
 hero: image/admin/ruvEms3AeSZvlEI01DKo.png
 alt: An illustration demonstrating that web apps can use the system-provided sharing UI.
 description: |
@@ -163,6 +163,7 @@ As of early 2021, using the API to share title, text, and URL is supported by:
 
 Using the API to share files is supported by:
 
+- Safari 15 or later on macOS and iOS.
 - Chrome 75 or later on Android, and 89 or later on Chrome OS and Windows.
 
 (Most Chromium-based browsers, like Edge, have the same support for this feature as the
