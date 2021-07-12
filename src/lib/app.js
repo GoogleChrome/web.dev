@@ -8,6 +8,7 @@
 import {store} from './store';
 import {localStorage} from './utils/storage';
 import removeServiceWorkers from './utils/sw-remove';
+import {copySectionLinks} from './copy-section-links';
 
 // This hides a legacy browser warning that can appear on the /measure page
 // See .unsupported-notice in _page-header.scss
@@ -25,4 +26,6 @@ function onGlobalStateChanged({isSignedIn}) {
 store.subscribe(onGlobalStateChanged);
 onGlobalStateChanged(store.getState());
 
+// Copy section links on click
+copySectionLinks();
 removeServiceWorkers();

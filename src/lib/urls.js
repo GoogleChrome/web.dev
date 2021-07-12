@@ -3,7 +3,7 @@
  * @return {string} normalized URL
  */
 export function normalizeUrl(url) {
-  url = url.replace(/\/+/g, '/'); // replace any occurance of "////" with "/"
+  url = url.replace(/\/+/g, '/'); // replace any occurrence of "////" with "/"
 
   const u = new URL(url, window.location.toString());
   let pathname = u.pathname;
