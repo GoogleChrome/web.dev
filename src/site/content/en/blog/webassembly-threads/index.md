@@ -2,7 +2,7 @@
 title: Using WebAssembly threads from C, C++ and Rust
 subhead: Learn how to bring multithreaded applications written in other languages to WebAssembly.
 description: Learn how to bring multithreaded applications written in other languages to WebAssembly.
-date: 2021-07-08
+date: 2021-07-12
 hero: image/9oK23mr86lhFOwKaoYZ4EySNFp02/YrOqDnzjHFqmZdiNBmbw.jpg
 alt: A needle acting as a prism—splitting a single white thread into multiple colourful ones.
 authors:
@@ -457,7 +457,7 @@ main thread to wait for the partial results from other threads.
 
 It might be a very short wait or a long one, depending on the complexity of iterators and number of
 available threads, but, to be on the safe side, browser engines actively prevent blocking the main
-thread altogether and code will throw an error. Instead, you should create a Worker, import the
+thread altogether and such code will throw an error. Instead, you should create a Worker, import the
 `wasm-bindgen`-generated code there, and expose its API with a library like
 [Comlink](https://github.com/GoogleChromeLabs/comlink) to the main thread.
 
@@ -482,9 +482,9 @@ demo showing:
 
 We actively use WebAssembly threads in [Squoosh.app](https://squoosh.app/) for client-side image
 compression—in particular, for formats like AVIF (C++), JPEG-XL (C++), OxiPNG (Rust) and WebP v2
-(C++). Thanks to multithreading alone, we've seen consistent 1.5x-3x speed-ups (exact ratio differs
-per codec), and were able to push those numbers even further by combining WebAssembly threads with
-[WebAssembly SIMD](https://v8.dev/features/simd)!
+(C++). Thanks to the multithreading alone, we've seen consistent 1.5x-3x speed-ups (exact ratio
+differs per codec), and were able to push those numbers even further by combining WebAssembly threads
+with [WebAssembly SIMD](https://v8.dev/features/simd)!
 
 Google Earth is another notable service that's using WebAssembly threads for its [web
 version](https://earth.google.com/web/).
