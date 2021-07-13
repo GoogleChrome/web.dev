@@ -62,9 +62,10 @@ This decision was made after close consultation with the current maintainer of
 The best way to familiarize yourself with the core of the supported syntax is to
 refer to the
 [documentation](https://github.com/pillarjs/path-to-regexp#parameters) for
-`path-to-regexp`. Once `URLPattern` matures, documentation specific to its
-syntax will be added to standard resources, like
-[MDN](https://developer.mozilla.org/en-US/).
+`path-to-regexp`. You can
+[read the documentation](https://github.com/WICG/urlpattern/blob/main/docs/urlpattern.md)
+intended for publication on [MDN](https://developer.mozilla.org/) in its current
+home on GitHub.
 
 ### Additional features
 
