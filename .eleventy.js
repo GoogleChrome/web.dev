@@ -32,6 +32,7 @@ const AuthorsDate = require('./src/site/_includes/components/AuthorsDate');
 const Banner = require('./src/site/_includes/components/Banner');
 const Blockquote = require('./src/site/_includes/components/Blockquote');
 const Breadcrumbs = require('./src/site/_includes/components/Breadcrumbs');
+const BrowserCompat = require('./src/site/_includes/components/BrowserCompat');
 const CodelabsCallout = require('./src/site/_includes/components/CodelabsCallout');
 const Codepen = require('./src/site/_includes/components/Codepen');
 const Compare = require('./src/site/_includes/components/Compare');
@@ -190,6 +191,7 @@ module.exports = function (config) {
   config.addPairedShortcode('Banner', Banner);
   config.addPairedShortcode('Blockquote', Blockquote);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
+  config.addShortcode('BrowserCompat', BrowserCompat);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addShortcode('Codepen', Codepen);
   config.addPairedShortcode('Compare', Compare);

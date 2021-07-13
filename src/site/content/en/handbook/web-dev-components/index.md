@@ -226,6 +226,20 @@ a massa sit amet ullamcorper.
 a massa sit amet ullamcorper.
 {% endBlockquote %}
 
+## Browser compatibility table
+
+With the `BrowserCompat` shortcode, you can embed
+a [caniuse.com](http://caniuse.com) compatibility table in your post.
+The requested feature must have the same id as used on caniuse.com
+(you can find it in caniuse.com url, e.g. `webp` in `caniuse.com/webp`
+for WebP feature.)
+
+```text
+{% raw %}{% BrowserCompat 'web-app-manifest' %}{% endraw %}
+```
+
+{% BrowserCompat 'api.HTMLShadowElement' %}
+
 ## Buttons
 
 In general, you shouldn't need to add buttons to your posts.
