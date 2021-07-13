@@ -72,7 +72,7 @@ home on GitHub.
 `URLPattern`'s syntax is a superset of what `path-to-regexp` supports, as
 `URLPattern` supports a fairly unique feature among routing libraries: matching
 [origins](https://developer.mozilla.org/en-US/docs/Web/API/URL/origin),
-including wildcards in hosthames. Most other routing libraries just deal with
+including wildcards in hostnames. Most other routing libraries just deal with
 the [pathname](https://developer.mozilla.org/en-US/docs/Web/API/URL/pathname),
 and occasionally the
 [search](https://developer.mozilla.org/en-US/docs/Web/API/URL/search) or
@@ -293,6 +293,38 @@ object, then the return values from <code>URLPattern</code>'s
 [very similar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges#examples)
 when it comes to representing anonymous and named groups.
 {% endAside %}
+
+### Unicode support and normalization
+
+`URLPattern` supports Unicode characters in a few different ways.
+
+- Named groups, like `:café`, can contain Unicode characters. The rules used for
+  valid
+  [JavaScript identifiers](https://developer.mozilla.org/en-US/docs/Glossary/Identifier)
+  apply to named groups.
+
+- Text within a pattern will be automatically encoded according to the same
+  rules used for URL encoding of that particular component. Unicode characters
+  within `pathname` will be
+  [percent-encoded](https://developer.mozilla.org/en-US/docs/Glossary/percent-encoding),
+  so a `pathname` pattern like `/café` is normalized to `/caf%C3%A`
+  automatically. Unicode characters in the `hostname` are automatically encoded
+  using [Punycode](https://en.wikipedia.org/wiki/Punycode), rather than
+  percent-encoding.
+
+- Regular expression groups must contain only ASCII characters. Regular
+  expression syntax makes it difficult and unsafe to automatically encode
+  Unicode characters in these groups. If you want to match a Unicode character
+  in a regular expression group,you need to percent encode it manually, like
+  `(caf%C3%A9)` to match `café`.
+
+In addition to encoding Unicode characters, `URLPattern` also performs URL
+normalization. For example, `/foo/./bar` in the `pathname` component is
+collapsed to the equivalent `/foo/bar`.
+
+When in doubt about how a given input pattern has been normalized, inspect the
+constructed `URLPattern` instance using your browser's
+[DevTools](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools).
 
 ## Putting it all together
 
