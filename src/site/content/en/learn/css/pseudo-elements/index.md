@@ -246,10 +246,8 @@ p:nth-of-type(2)::selection {
 
 As with other pseudo-elements, only a subset of CSS properties are allowed:
 
-- `color` and `caret-color`
+- `color`
 - `background-color` but **not** `background-image`
-- `cursor`
-- `outline`
 - `text` properties
 
 ## `::placeholder`
