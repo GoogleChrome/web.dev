@@ -236,7 +236,7 @@ to the `<a>` tag. On Android, links with `target="_blank"` will open in a
 A few other notes on `scope`:
 
 * If you don't include a `scope` in your manifest, then the default implied
-  `scope` is the directory that your web app manifest is served from.
+  `scope` is the parent directory of your `start_url`.
 * The `scope` attribute can be a relative path (`../`), or any higher level
   path (`/`) which would allow for an increase in coverage of navigations
   in your web app.
