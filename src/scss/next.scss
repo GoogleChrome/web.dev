@@ -8,15 +8,128 @@ $generate-utility-classes: false;
 @import '../../node_modules/gorko/gorko.scss';
 
 @import 'reset';
+@import 'fonts';
 
+/// GLOBAL CSS
+/// Core CSS that is applicable to every page.
+/// https://cube.fyi/css.html
 body {
-  font-size: get-size('base');
-  background: get-utility-value('color', 'core-text');
-  color: get-utility-value('color', 'core-bg');
+  font-size: get-size('size-1');
+  padding: get-size('size-1');
+
+  @include apply-utility('bg', 'core-bg');
+  @include apply-utility('color', 'core-text');
+  @include apply-utility('font', 'base');
+  @include apply-utility('leading', 'regular');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include apply-utility('font', 'brand');
+  @include apply-utility('leading', 'flat');
+  @include apply-utility('weight', 'regular');
 }
 
 h1 {
   font-size: get-size('size-6');
+}
+
+h2 {
+  font-size: get-size('size-5');
+}
+
+h3 {
+  font-size: get-size('size-4');
+}
+
+h4 {
+  font-size: get-size('size-3');
+}
+
+h5,
+h6 {
+  font-size: get-size('size-2');
+}
+
+ul:not([class]),
+ol:not([class]) {
+  list-style: none;
+}
+
+ol:not([class]),
+ul:not([class]) {
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0 2ch;
+
+    @include apply-utility('leading', 'short');
+  }
+
+  li + li {
+    margin-top: 1em;
+  }
+}
+
+ul:not([class]) {
+  // AB: I don't like how restrictive the marker pseudo-element is
+  // and we have some sizing and positioning that will benefit
+  // from a standard pseudo-element instead.
+  list-style: none;
+  padding-inline-start: 1rem;
+
+  li::before {
+    content: '';
+    display: block;
+    width: 0.8ex;
+    height: 0.8ex;
+    margin-block-start: 1ex;
+    border-radius: 50%;
+    background: currentColor;
+  }
+}
+
+ol:not([class]) {
+  counter-reset: ol-list;
+  padding-inline-start: 0.5rem;
+
+  li::before {
+    content: counter(ol-list);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    font-size: 0.9em;
+    background: var(--color-accent-bg);
+    color: var(--color-accent-text);
+
+    @include apply-utility('weight', 'medium');
+  }
+
+  li {
+    counter-increment: ol-list;
+  }
+}
+
+a:not([class]) {
+  color: var(--color-highlight-text);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+p,
+li,
+blockquote {
+  max-width: 70ch;
 }
 
 // Render gorko utilities

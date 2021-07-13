@@ -104,6 +104,19 @@ const convertDesignTokens = (cb) => {
 
   cleanResult();
 
+  // Move on to font weights
+  result += `
+  
+    ///  FONT WEIGHTS
+  `;
+  result += '$gorko-font-weights: (';
+
+  tokens.fontWeights.forEach((weight) => {
+    result += `'${nameSlug(weight.name)}': ${weight.value},`;
+  });
+
+  cleanResult();
+
   // Lastly, misc values like radius and transitions
   result += `
   
