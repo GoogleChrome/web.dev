@@ -17,8 +17,15 @@
 const {html} = require('common-tags');
 const AuthorInfo = require('./AuthorInfo');
 const {Img} = require('./Img');
+const {i18n} = require('../../_filters/i18n');
 
-module.exports = ({id, author, showSocialMedia = false, small = false}) => {
+module.exports = ({
+  id,
+  author,
+  locale,
+  showSocialMedia = false,
+  small = false,
+}) => {
   if (!author) {
     console.log(
       `Can't create Author component for "${id}" without author ` +
@@ -27,17 +34,18 @@ module.exports = ({id, author, showSocialMedia = false, small = false}) => {
     );
     return;
   }
-
-  if (!author.name) {
+  const title = i18n(author.title, locale);
+  if (!title) {
     throw new Error(
-      `Can't create Author with missing author.name. author object: ${JSON.stringify(
-        author,
-      )}`,
+      `Can't create Author "${id}" with missing title. ` +
+        `Please check '_data/authorsData.json' and make sure the ` +
+        `author has a title.`,
     );
   }
+
   const img = Img({
     src: author.image,
-    alt: author.title,
+    alt: title,
     width: '64',
     height: '64',
     class: `w-author__image${small ? ' w-author__image--small' : ''}`,
@@ -49,8 +57,8 @@ module.exports = ({id, author, showSocialMedia = false, small = false}) => {
   });
   return html`
     <div class="w-author">
-      <a href="/authors/${id}">${img}</a>
-      ${AuthorInfo({author, id, showSocialMedia})}
+      <a href="${author.href}">${img}</a>
+      ${AuthorInfo({author, title, showSocialMedia})}
     </div>
   `;
 };

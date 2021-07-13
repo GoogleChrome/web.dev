@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,31 @@
  * limitations under the License.
  */
 
-const {individual} = require('../../../_collections/hooks/tags');
-const {lang} = require('../lang');
+declare global {
+  export interface VirtualDataField {
+    /**
+     * When the first post was created.
+     */
+    date: Date;
+    /**
+     * Hero image of element.
+     */
+    hero?: string;
+    /**
+     * When the last post was last created.
+     */
+    updated?: Date;
+  }
 
-module.exports = {
-  pagination: {
-    before: (tags) => individual(tags, lang),
-  },
-};
+  export interface VirtualCollectionItem {
+    description: string;
+    elements: EleventyCollectionItem[];
+    href: string;
+    key: string;
+    title: string;
+    url: string;
+  }
+}
+
+// empty export to keep file a module
+export {};

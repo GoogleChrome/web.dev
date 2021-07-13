@@ -1,12 +1,12 @@
 ---
 renderData:
   metadata:
-    author: "{{ paged.title }}"
+    author: "{{ paged.title | i18n(locale) }}"
     icon: "{{ paged.data.hero | imgix }}"
     id: https://web.dev/
     logo: https://web.dev/images/shared/rss-banner.png
-    subtitle: "{{ paged.description }}"
-    title: "{{ paged.title }} on web.dev"
+    subtitle: "{{ paged.description | i18n(locale) }}"
+    title: "{{ paged.title | i18n(locale) }} on web.dev"
     url: https://web.dev{{ paged.href }}feed.xml
 noindex: true
 permalink: "/{{lang}}{{ paged.href }}feed.xml"
@@ -39,9 +39,9 @@ pagination:
     <id>{{ absolutePostUrl }}</id>
     <content type="html">{{ post.templateContent | replace("web-copy-code", "div") | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
     {% for entry in post.data.authors %}
-    {%- set author =  collections.authors[entry] -%}
+    {%- set author = collections.authors[entry] -%}
     <author>
-      <name>{{ author.title }}</name>
+      <name>{{ author.title | i18n(locale) }}</name>
     </author>
     {%- endfor %}
   </entry>

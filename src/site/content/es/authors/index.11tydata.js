@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-const {individual} = require('../../../_collections/hooks/tags');
-const {lang} = require('../lang');
+const {index} = require('../../../_collections/hooks/authors');
 
 module.exports = {
   pagination: {
-    before: (tags) => individual(tags, lang),
+    before: (authors) => index(authors),
   },
 };
