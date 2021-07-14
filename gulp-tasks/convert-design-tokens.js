@@ -27,9 +27,9 @@ const convertDesignTokens = (cb) => {
     const slope = (maxSize - minSize) / (maxViewport - minViewport);
     const intersection = -1 * minViewport * slope + minSize;
 
-    return `clamp(${minSize}rem, ${intersection.toFixed(2)}rem + ${
-      slope.toFixed(2) * 100
-    }vw, ${maxSize}rem)`;
+    return `clamp(${minSize}rem, ${intersection.toFixed(2)}rem + ${(
+      slope * 100
+    ).toFixed(2)}vw, ${maxSize}rem)`;
   };
 
   // Removes trailing commas and closes Sass map group

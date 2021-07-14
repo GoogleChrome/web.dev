@@ -63,6 +63,12 @@ blockquote {
   max-width: 70ch;
 }
 
+h1,
+h2,
+h3 {
+  max-width: 30ch;
+}
+
 /// Lists
 
 ul:not([class]),
