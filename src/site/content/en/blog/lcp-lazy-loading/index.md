@@ -1,12 +1,12 @@
 ---
-title: Lazy-loading is a prickly pear
-subhead: Optimizing for performance without the sharp edges.
+title: Why you shouldn't lazy-load your LCP image
+subhead: Data-driven advice for lazy-loading images with Core Web Vitals in mind.
 description: Recent research has shown that lazy loading images above-the-fold can lead to regressions in Core Web Vitals performance.
 authors:
   - rviscomi
   - felixarntz
 date: 2021-07-14
-hero: image/STd8eW8CSiNp5B1bX0R6Dww2eH32/h5OlDz9eOONtAi8JNqh7.jpg
+hero: image/STd8eW8CSiNp5B1bX0R6Dww2eH32/eeYD7mvILHrB7QnEkydF.jpg
 alt: Photograph of an opuntia cactus leaf growing, by ZooFari via Wikipedia.
 tags:
   - blog
@@ -18,22 +18,22 @@ tags:
 Lazy-loading is a technique to defer downloading a resource until it's needed, which conserves data
 and reduces network contention for critical assets. It became a web standard in
 [2019](https://web.dev/browser-level-image-lazy-loading/) and today `loading="lazy"` for images is
-[supported](https://caniuse.com/loading-lazy-attr) by Chromium-based browsers. That sounds great,
+[supported](https://caniuse.com/loading-lazy-attr) by most major browsers. That sounds great,
 but is there such a thing as too much lazy loading?
 
 This post summarizes how we analyzed publicly available web transparency data and ad hoc A/B testing
 to understand the adoption and performance characteristics of native image lazy-loading. What we
 found is that lazy-loading can be an amazingly effective tool for reducing unneeded image bytes, but
-overuse could negatively affect performance. Concretely, our analysis shows that more eagerly
+overuse can negatively affect performance. Concretely, **our analysis shows that more eagerly
 loading images within the initial viewport—while liberally lazy-loading the rest—can give us the
-best of both worlds: fewer bytes loaded and improved Core Web Vitals.
+best of both worlds: fewer bytes loaded and improved [Core Web Vitals](/vitals/#core-web-vitals).**
 
 ## Adoption
 
-According to the most recent data in HTTP Archive, native image lazy-loading is used by
-[17%](https://httparchive.org/reports/state-of-images?start=2020_01_01&end=2021_06_01#imgLazy) of
-websites and adoption is growing rapidly. This much of a foothold in the ecosystem is remarkable for
-a relatively new API.
+According to the most recent data in [HTTP Archive](https://httparchive.org/),
+native image lazy-loading is used by[17%](https://httparchive.org/reports/state-of-images?start=2020_01_01&end=2021_06_01#imgLazy)
+of websites and adoption is growing rapidly. This much of a foothold in the ecosystem is remarkable
+for a relatively new API.
 
 <figure class="w-figure">
   {% Img
@@ -80,8 +80,8 @@ WordPress alone has since grown to over 1 million websites (14% of total).
 
 [Digging deeper](https://gist.github.com/rviscomi/44d80c1a0f4dec9cbafb37347c770278#file-lazy-loading-crux-lcp-sql)
 into HTTP Archive, we can compare how pages with and without native image lazy loading perform with
-the [Largest Contentful Paint](https://web.dev/lcp/) (LCP) metric. The LCP data comes from real user
-experiences from the Chrome UX Report (CrUX) as opposed to synthetic testing in the lab. The chart
+the [Largest Contentful Paint](https://web.dev/lcp/) (LCP) metric. The LCP data comes from real-user
+experiences from the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX) as opposed to synthetic testing in the lab. The chart
 below uses a box-and-whisker plot to visualize the distributions of each pages' 75th percentile LCP:
 the lines represent the 10th and 90th percentiles and the boxes represent the 25th and 75th
 percentiles.
@@ -135,7 +135,8 @@ test.
 
 The goal for the A/B test was to prove or disprove the hypothesis that native image lazy-loading, as
 implemented in WordPress core, resulted in slower LCP performance and fewer image bytes. The
-methodology we used was to test a demo WordPress website with the twentytwentyone theme. We tested
+methodology we used was to test a demo WordPress website with the [twentytwentyone](https://wordpress.org/themes/twentytwentyone/)
+theme. We tested
 both archive and single page types, which are like the home and article pages, on desktop and
 emulated mobile devices using [WebPageTest](https://webpagetest.org/). We tested each combination of
 pages with and without lazy-loading enabled and ran each test nine times to get the median LCP value
@@ -380,8 +381,9 @@ featured image on the page or the first image in the main content, it's assumed 
 the heading or the amount of paragraph text early in the main content may affect whether the image
 is within the viewport. There are also user-level conditions that may affect the accuracy of the
 heuristics, especially the viewport size and the usage of anchor links that change the scroll
-position of the page. For those reasons, it's important to acknowledge that these results may not be
-universally applicable to all real-world scenarios and need more fine-tuning.
+position of the page. For those reasons, it's important to acknowledge that the fix is only
+calibrated to provide good performance in the general case and fine-tuning may be needed to make
+these results applicable to all real-world scenarios.
 
 ## Rolling it out
 
@@ -399,13 +401,12 @@ follow along with progress on that audit. Until then, one thing developers could
 instances of LCP elements being lazy-loaded is to add more detailed logging to their field data.
 
 ```js
-new PerformanceObserver((entryList) => {
-  const entries = entryList.getEntries();
-  const latestEntry = entries[entries.length - 1];
+webVitals.getLCP(lcp => {
+  const latestEntry = lcp.entries[lcp.entries.length - 1];
   if (latestEntry?.element?.getAttribute('loading') == 'lazy') {
     console.warn('Warning: LCP element was lazy loaded', latestEntry);
   }
-}).observe({type: 'largest-contentful-paint', buffered: true});
+});
 ```
 
 The JavaScript snippet above will evaluate the most recent LCP element and log a warning if it was
