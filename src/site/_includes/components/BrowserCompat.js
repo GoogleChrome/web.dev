@@ -19,16 +19,37 @@
  * @param {string} feature Feature id compatible with caniuse.com.
  * @returns {string}
  */
-module.exports = (feature) => {
-  // Source: https://caniuse.bitsofco.de/
-  return `<picture>
-    <source type="image/webp" srcset="https://caniuse.bitsofco.de/image/${feature}.webp">
-    <source type="image/png" srcset="https://caniuse.bitsofco.de/image/${feature}.png">
-    <img
-      src="https://caniuse.bitsofco.de/image/${feature}.jpg"
-      width="800px"
-      height="410px"
-      alt="Data on support for the ${feature} feature across the major browsers from caniuse.com">
-    </picture>
-  `;
+const bcd = require('../../_utils/browserCompat');
+
+const browsers = [
+  'chrome',
+  'firefox',
+  'edge',
+  'safari',
+];
+
+module.exports = async (feature) => {
+  const data = await bcd();
+  let compatIcons = [];
+
+  if (data[feature] &&  data[feature].support) {
+    compatIcons = browsers.map((browser) => {
+      const support = data[feature].support[browser];
+      const isSupported = support.version_added && ! support.version_removed;
+      const version = support.version_added || 'X';
+
+      return `<span
+        class="
+        browser-compat__icon browser-compat--${browser} browser-compat--${isSupported}"
+        data-version="${version}"
+        >
+      </span>
+      `;
+    });
+  }
+
+  return `<div class="browser-compat">
+    ${compatIcons.join('')}
+  </div>
+  `
 };

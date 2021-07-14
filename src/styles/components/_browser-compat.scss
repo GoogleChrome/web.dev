@@ -1,0 +1,49 @@
+.browser-compat {
+
+  .browser-compat__icon {
+    height: 48px;
+    width: 48px;
+    margin: 6px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .browser-compat__icon::before {
+    content: attr(data-version);
+    display: block;
+    width: 18px;
+    line-height: 18px;
+    height: 18px;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+  }
+
+  .browser-compat__icon.browser-compat--false::before {
+    background: red;
+  }
+
+  .browser-compat__icon.browser-compat--true::before {
+    background: green;
+  }
+
+  .browser-compat--chrome {
+    background: content-box url('/images/icons/chrome.svg');
+  }
+
+  .browser-compat--firefox {
+    background: content-box url('/images/icons/firefox.svg');
+  }
+
+  .browser-compat--edge {
+    background: content-box url('/images/icons/edge.svg');
+  }
+
+  .browser-compat--safari {
+    background: content-box no-repeat url('/images/icons/safari_48x48.png');
+  }
+}
