@@ -2,6 +2,10 @@
 title: Conclusion and next steps
 description: >
  Further resources to help you take your next steps.
+audio:
+  title: 'The CSS Podcast - 025: Season 1 Wrap Up'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_025_v2.0.mp3?dest-id=1891565'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
   - rachelandrew
