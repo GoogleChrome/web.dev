@@ -176,7 +176,7 @@ module.exports = function (config) {
   config.addFilter('courseToc', courseToc);
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
   config.addFilter('padStart', padStart);
-  config.addFilter('minifyJs', minifyJs);
+  config.addNunjucksAsyncFilter('minifyJs', minifyJs);
   config.addFilter('cspHash', cspHash);
 
   // ----------------------------------------------------------------------------

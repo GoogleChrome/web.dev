@@ -17,4 +17,20 @@
       min-height: 700px;
     }
   }
+
+  dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-gap: 0.5rem;
+  }
+
+  dt {
+    margin: 0;
+  }
+
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    grid-gap: 2rem;
+  }
 }
