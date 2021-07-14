@@ -31,7 +31,7 @@ web-lighthouse-scores-audits {
     color: $GREY_700;
     text-transform: uppercase;
     display: flex;
-    padding: $ROW_PADDING / 2 $ROW_PADDING;
+    padding: $ROW_PADDING * 0.5 $ROW_PADDING;
 
     .lh-audit-list-row__item {
       // Enforce vertical alignment w/o flex.
