@@ -55,6 +55,16 @@ h6 {
   font-size: get-size('size-2');
 }
 
+/// General typesetting
+
+p,
+li,
+blockquote {
+  max-width: 70ch;
+}
+
+/// Lists
+
 ul:not([class]),
 ol:not([class]) {
   list-style: none;
@@ -118,19 +128,34 @@ ol:not([class]) {
   }
 }
 
-a:not([class]) {
+/// Links
+
+a:link {
   color: var(--color-highlight-text);
-
-  &:hover {
-    text-decoration: none;
-  }
 }
 
-p,
-li,
-blockquote {
-  max-width: 70ch;
+a:visited {
+  color: var(--color-highlight-text-alt);
 }
+
+a:hover {
+  color: var(--color-highlight-text);
+  background: var(--color-highlight-interact-bg);
+}
+
+a:active {
+  filter: brightness(0.9);
+}
+
+/// General interactive states
+
+:focus {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 4px;
+}
+
+/// UTILITY CLASSES
+@import 'utilities/flow.scss';
 
 // Render gorko utilities
 @include generate-utility-classes();
