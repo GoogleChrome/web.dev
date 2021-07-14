@@ -1,7 +1,7 @@
 ---
 title: The performance effects of too much lazy-loading
 subhead: Data-driven advice for lazy-loading images with Core Web Vitals in mind.
-description: Recent research has shown that lazy loading images above-the-fold can lead to regressions in Core Web Vitals performance.
+description: "Eagerly loading images within the initial viewport—while liberally lazy-loading the rest—can improve Web Vitals while loading fewer bytes."
 authors:
   - rviscomi
   - felixarntz
@@ -24,9 +24,9 @@ but is there such a thing as too much lazy loading?
 This post summarizes how we analyzed publicly available web transparency data and ad hoc A/B testing
 to understand the adoption and performance characteristics of native image lazy-loading. What we
 found is that lazy-loading can be an amazingly effective tool for reducing unneeded image bytes, but
-overuse can negatively affect performance. Concretely, **our analysis shows that more eagerly
+overuse can negatively affect performance. Concretely, our analysis shows that more eagerly
 loading images within the initial viewport—while liberally lazy-loading the rest—can give us the
-best of both worlds: fewer bytes loaded and improved [Core Web Vitals](/vitals/#core-web-vitals).**
+best of both worlds: fewer bytes loaded and improved [Core Web Vitals](/vitals/#core-web-vitals).
 
 ## Adoption
 
@@ -158,30 +158,31 @@ and number of image bytes.
         href="https://www.webpagetest.org/video/compare.php?medianMetric=chromeUserTiming.LargestContentfulPaint&highlightLCP=1&thumbSize=200&ival=100&end=visual&tests=210625_BiDcQM_859caf47f070026732f4da3f70b8afe3-l:fix,210625_BiDcPT_2b89f12170b7180acf06cb35d3125d6a-l:disabled,210625_AiDc28_df202856ac4f0da4748c7a84a7a455a8-l:default">twentytwentyone-archive-desktop</a></td>
         <td style="text-align: right;">2,029</td>
         <td style="text-align: right;">1,759</td>
-        <td style="text-align: right;">-13%</td>
+        <td style="text-align: right; background-color: #8fd1b1;">-13%</td>
       </tr>
       <tr>
         <td><a
         href="https://www.webpagetest.org/video/compare.php?medianMetric=chromeUserTiming.LargestContentfulPaint&highlightLCP=1&thumbSize=200&ival=100&end=visual&tests=210625_BiDcV5_003a2ee20d6ee7323fca102afe3ef511-l:fix,210625_BiDcET_810fe76322f8a6003c38f0bc901e4025-l:disabled,210625_BiDc99_44b0562e9077eb01e1e18dceec69bca9-l:default">twentytwentyone-archive-mobile</a></td>
         <td style="text-align: right;">1,657</td>
         <td style="text-align: right;">1,403</td>
-        <td style="text-align: right;">-15%</td>
+        <td style="text-align: right; background-color: #7ecaa5;">-15%</td>
       </tr>
       <tr>
         <td><a
         href="https://www.webpagetest.org/video/compare.php?medianMetric=chromeUserTiming.LargestContentfulPaint&highlightLCP=1&thumbSize=200&ival=100&end=visual&tests=210625_AiDcR8_47e248c3211951b7af3bc9a87f205cc7-l:fix,210625_AiDcXB_3d9db18bf36397fcdc5d3db207d0d9e7-l:disabled,210625_AiDc2G_ee59429fac9a388b2184758078610b61-l:default">twentytwentyone-single-desktop</a></td>
         <td style="text-align: right;">1,655</td>
         <td style="text-align: right;">1,726</td>
-        <td style="text-align: right;">4%</td>
+        <td style="text-align: right; background-color: #fae3e1;">4%</td>
       </tr>
       <tr>
         <td><a
         href="https://www.webpagetest.org/video/compare.php?medianMetric=chromeUserTiming.LargestContentfulPaint&highlightLCP=1&thumbSize=200&ival=100&end=visual&tests=210625_BiDcR1_c349d38d4c7151772f2678fa7767ff42-l:fix,210625_AiDcD9_502bb504fc87aebafc5f8c9aaa70faa5-l:disabled,210625_BiDcPS_de2a3e5a526e470287d850d1dbc96fb7-l:default">twentytwentyone-single-mobile</a></td>
         <td style="text-align: right;">1,352</td>
         <td style="text-align: right;">1,384</td>
-        <td style="text-align: right;">2%</td>
+        <td style="text-align: right; background-color: #fdf0ef;">2%</td>
       </tr>
     </tbody>
+    <caption>Change in LCP (ms) by disabling native image lazy-loading on sample WordPress pages.</caption>
   </table>
 </div>
 
@@ -210,30 +211,31 @@ By comparison, the difference for archive pages is more like two to three standa
         href="https://www.webpagetest.org/video/compare.php?medianMetric=chromeUserTiming.LargestContentfulPaint&highlightLCP=1&thumbSize=200&ival=100&end=visual&tests=210625_BiDcQM_859caf47f070026732f4da3f70b8afe3-l:fix,210625_BiDcPT_2b89f12170b7180acf06cb35d3125d6a-l:disabled,210625_AiDc28_df202856ac4f0da4748c7a84a7a455a8-l:default">twentytwentyone-archive-desktop</a></td>
         <td style="text-align: right;">577</td>
         <td style="text-align: right;">1173</td>
-        <td style="text-align: right;">103%</td>
+        <td style="text-align: right; background-color: #e67c73;">103%</td>
       </tr>
       <tr>
         <td><a
         href="https://www.webpagetest.org/video/compare.php?medianMetric=chromeUserTiming.LargestContentfulPaint&highlightLCP=1&thumbSize=200&ival=100&end=visual&tests=210625_BiDcV5_003a2ee20d6ee7323fca102afe3ef511-l:fix,210625_BiDcET_810fe76322f8a6003c38f0bc901e4025-l:disabled,210625_BiDc99_44b0562e9077eb01e1e18dceec69bca9-l:default">twentytwentyone-archive-mobile</a></td>
         <td style="text-align: right;">172</td>
         <td style="text-align: right;">378</td>
-        <td style="text-align: right;">120%</td>
+        <td style="text-align: right; background-color: #e67c73;">120%</td>
       </tr>
       <tr>
         <td><a
         href="https://www.webpagetest.org/video/compare.php?medianMetric=chromeUserTiming.LargestContentfulPaint&highlightLCP=1&thumbSize=200&ival=100&end=visual&tests=210625_AiDcR8_47e248c3211951b7af3bc9a87f205cc7-l:fix,210625_AiDcXB_3d9db18bf36397fcdc5d3db207d0d9e7-l:disabled,210625_AiDc2G_ee59429fac9a388b2184758078610b61-l:default">twentytwentyone-single-desktop</a></td>
         <td style="text-align: right;">301</td>
         <td style="text-align: right;">850</td>
-        <td style="text-align: right;">183%</td>
+        <td style="text-align: right; background-color: #e67c73;">183%</td>
       </tr>
       <tr>
         <td><a
         href="https://www.webpagetest.org/video/compare.php?medianMetric=chromeUserTiming.LargestContentfulPaint&highlightLCP=1&thumbSize=200&ival=100&end=visual&tests=210625_BiDcR1_c349d38d4c7151772f2678fa7767ff42-l:fix,210625_AiDcD9_502bb504fc87aebafc5f8c9aaa70faa5-l:disabled,210625_BiDcPS_de2a3e5a526e470287d850d1dbc96fb7-l:default">twentytwentyone-single-mobile</a></td>
         <td style="text-align: right;">114</td>
         <td style="text-align: right;">378</td>
-        <td style="text-align: right;">233%</td>
+        <td style="text-align: right; background-color: #e67c73;">233%</td>
       </tr>
     </tbody>
+    <caption>Change in the number of image bytes (KB) by disabling native image lazy-loading on sample WordPress pages.</caption>
   </table>
 </div>
 
@@ -276,8 +278,8 @@ the fold and we tested it under the same conditions as the first A/B test.
         <td style="text-align: right;">2,029</td>
         <td style="text-align: right;">1,759</td>
         <td style="text-align: right;">1,749</td>
-        <td style="text-align: right;">-14%</td>
-        <td style="text-align: right;">-1%</td>
+        <td style="text-align: right; background-color: #8bd0ae;">-14%</td>
+        <td style="text-align: right; background-color: #fafdfb;">-1%</td>
       </tr>
       <tr>
         <td><a
@@ -285,8 +287,8 @@ the fold and we tested it under the same conditions as the first A/B test.
         <td style="text-align: right;">1,657</td>
         <td style="text-align: right;">1,403</td>
         <td style="text-align: right;">1,352</td>
-        <td style="text-align: right;">-18%</td>
-        <td style="text-align: right;">-4%</td>
+        <td style="text-align: right; background-color: #64c093;">-18%</td>
+        <td style="text-align: right; background-color: #e0f2e9;">-4%</td>
       </tr>
       <tr>
         <td><a
@@ -294,8 +296,8 @@ the fold and we tested it under the same conditions as the first A/B test.
         <td style="text-align: right;">1,655</td>
         <td style="text-align: right;">1,726</td>
         <td style="text-align: right;">1,676</td>
-        <td style="text-align: right;">1%</td>
-        <td style="text-align: right;">-3%</td>
+        <td style="text-align: right; background-color: #fef7f7;">1%</td>
+        <td style="text-align: right; background-color: #e6f5ee;">-3%</td>
       </tr>
       <tr>
         <td><a
@@ -303,18 +305,19 @@ the fold and we tested it under the same conditions as the first A/B test.
         <td style="text-align: right;">1,352</td>
         <td style="text-align: right;">1,384</td>
         <td style="text-align: right;">1,342</td>
-        <td style="text-align: right;">-1%</td>
-        <td style="text-align: right;">-3%</td>
+        <td style="text-align: right; background-color: #f8fcfa;">-1%</td>
+        <td style="text-align: right; background-color: #e6f5ee;">-3%</td>
       </tr>
     </tbody>
+    <caption>Change in LCP (ms) by the proposed fix for native image lazy-loading on sample WordPress pages.</caption>
   </table>
 </div>
 
 These results are much more promising. Lazy-loading only the images below the fold results in a
-complete reversal of the LCP regression and even a slight _improvement_ over disabling LCP entirely.
-How could it be faster than not lazy-loading at all? One possibility is that by not loading
-below-the-fold images, there's less network contention with the LCP image, which enables it to load
-more quickly.
+complete reversal of the LCP regression and possibly even a slight _improvement_ over disabling LCP
+entirely. How could it be faster than not lazy-loading at all? One explanation is that by not
+loading below-the-fold images, there's less network contention with the LCP image, which enables it
+to load more quickly.
 
 <div class="w-table-wrapper">
   <table>
@@ -336,7 +339,7 @@ more quickly.
       <td style="text-align: right;">1173</td>
       <td style="text-align: right;">577</td>
       <td style="text-align: right;">0%</td>
-      <td style="text-align: right;">-51%</td>
+      <td style="text-align: right; background-color: #a9dcc3;">-51%</td>
     </tr>
     <tr>
       <td><a
@@ -345,7 +348,7 @@ more quickly.
       <td style="text-align: right;">378</td>
       <td style="text-align: right;">172</td>
       <td style="text-align: right;">0%</td>
-      <td style="text-align: right;">-54%</td>
+      <td style="text-align: right; background-color: #a3d9bf;">-54%</td>
     </tr>
     <tr>
       <td><a
@@ -354,7 +357,7 @@ more quickly.
       <td style="text-align: right;">850</td>
       <td style="text-align: right;">301</td>
       <td style="text-align: right;">0%</td>
-      <td style="text-align: right;">-65%</td>
+      <td style="text-align: right; background-color: #92d3b3;">-65%</td>
     </tr>
     <tr>
       <td><a
@@ -363,9 +366,10 @@ more quickly.
       <td style="text-align: right;">378</td>
       <td style="text-align: right;">114</td>
       <td style="text-align: right;">0%</td>
-      <td style="text-align: right;">-70%</td>
+      <td style="text-align: right; background-color: #89cfad;">-70%</td>
     </tr>
     </tbody>
+    <caption>Change in the number of image bytes (KB) by the proposed fix for native image lazy-loading on sample WordPress pages.</caption>
   </table>
 </div>
 
