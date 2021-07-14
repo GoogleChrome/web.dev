@@ -1,5 +1,5 @@
 ---
-title: Why you shouldn't lazy-load your LCP image
+title: The performance effects of too much lazy-loading
 subhead: Data-driven advice for lazy-loading images with Core Web Vitals in mind.
 description: Recent research has shown that lazy loading images above-the-fold can lead to regressions in Core Web Vitals performance.
 authors:
