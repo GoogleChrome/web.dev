@@ -1,0 +1,14 @@
+---
+layout: show
+permalink: /{{lang}}{{ paged.url }}index.html
+renderData:
+  title: "{{ paged.data.title }}"
+  description: "{{ paged.data.subhead }}"
+  hero: "{{ paged.data.thumbnail }}"
+pagination:
+  data: collections.shows
+  size: 1
+  alias: paged
+  resolve: values
+  addAllPagesToCollections: true
+---
