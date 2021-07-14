@@ -1,3 +1,5 @@
+@use 'sass:list';
+
 @use 'sass:math';
 
 @import '../settings/colors';
@@ -157,10 +159,10 @@
 
   // Print font styles in shorthand syntax.
   // sass-lint:disable-block indentation
-  font: $font_weight #{$font_size}px / #{calculate_unitless_line_height(
+  font: $font_weight list.slash(#{$font_size}px, calculate_unitless_line_height(
       $line_height,
       $font_size
-    )} $font_family;
+    )) $font_family;
   // sass-lint:enable-block indentation
 
   // Add letter-spacing if it's defined in the map.
