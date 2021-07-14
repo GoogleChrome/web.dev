@@ -29,9 +29,9 @@ const filterByLang = require('../../_filters/filter-by-lang');
 const feed = (items) => {
   const filteredFeed = [];
 
-  // if (process.env.ELEVENTY_ENV !== 'prod') {
-  //   return filteredFeed;
-  // }
+  if (process.env.ELEVENTY_ENV !== 'prod') {
+    return filteredFeed;
+  }
 
   for (const item of items) {
     if (item.elements.length > 0) {
