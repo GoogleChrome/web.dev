@@ -17,7 +17,7 @@ tags:
 
 Lazy-loading is a technique to defer downloading a resource until it's needed, which conserves data
 and reduces network contention for critical assets. It became a web standard in
-[2019](https://web.dev/browser-level-image-lazy-loading/) and today `loading="lazy"` for images is
+[2019](/browser-level-image-lazy-loading/) and today `loading="lazy"` for images is
 [supported](https://caniuse.com/loading-lazy-attr) by Chromium-based browsers. That sounds great,
 but is there such a thing as too much lazy loading?
 
@@ -80,7 +80,7 @@ WordPress alone has since grown to over 1 million websites (14% of total).
 
 [Digging deeper](https://gist.github.com/rviscomi/44d80c1a0f4dec9cbafb37347c770278#file-lazy-loading-crux-lcp-sql)
 into HTTP Archive, we can compare how pages with and without native image lazy loading perform with
-the [Largest Contentful Paint](https://web.dev/lcp/) (LCP) metric. The LCP data comes from real user
+the [Largest Contentful Paint](/lcp/) (LCP) metric. The LCP data comes from real user
 experiences from the Chrome UX Report (CrUX) as opposed to synthetic testing in the lab. The chart
 below uses a box-and-whisker plot to visualize the distributions of each pages' 75th percentile LCP:
 the lines represent the 10th and 90th percentiles and the boxes represent the 25th and 75th
@@ -249,7 +249,7 @@ helps reduce image bytes but at the cost of a delayed LCP.
 Before we get into how the fix was implemented, let's look at how lazy-loading works in WordPress
 today. The most important aspect of the current implementation is that it lazy-loads images above
 the fold (within the viewport). The CMS blog post
-[acknowledges](https://web.dev/browser-level-lazy-loading-for-cmss/#avoid-lazy-loading-above-the-fold-elements)
+[acknowledges](/browser-level-lazy-loading-for-cmss/#avoid-lazy-loading-above-the-fold-elements)
 this as a pattern to avoid, but experimental data at the time indicated that the effect on LCP was
 minimal and worth simplifying the implementation in WordPress core.
 
@@ -388,7 +388,7 @@ universally applicable to all real-world scenarios and need more fine-tuning.
 Now that we've identified a better way to lazy-load images, all of the image savings and faster LCP
 performance, how can we get sites to start using it? The highest priority change is to submit a
 patch to WordPress core to implement the experimental fix. We'll also be updating the guidance in
-the [Browser-level lazy-loading for CMSs](https://web.dev/browser-level-lazy-loading-for-cmss/) blog
+the [Browser-level lazy-loading for CMSs](/browser-level-lazy-loading-for-cmss/) blog
 post to clarify the negative effects of above-the-fold lazy-loading and how CMSs can use heuristics
 to avoid it.
 
