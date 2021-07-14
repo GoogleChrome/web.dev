@@ -63,7 +63,7 @@ const data = {i18n: walk(path.join(__dirname, '..', '_data', 'i18n'))};
 /**
  * Looks for the i18n string that matches the path and locale.
  * @param {string} path A dot separated path
- * @param {string} locale A locale prefix (example: 'en', 'pl')
+ * @param {string} [locale] A locale prefix (example: 'en', 'pl')
  * @return {string}
  */
 const i18n = (path, locale = defaultLocale) => {

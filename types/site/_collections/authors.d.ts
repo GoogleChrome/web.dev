@@ -16,7 +16,7 @@
 
 declare global {
   export interface AuthorsItem extends VirtualCollectionItem, AuthorsDataItem {
-    data: VirtualDataField;
+    data?: VirtualDataField;
   }
 
   export interface Authors {
