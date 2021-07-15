@@ -65,13 +65,12 @@ class LanguageSelect extends BaseStateElement {
     const langList = lang.supportedLanguages.filter((language) =>
       languageVersions.includes(language) || language === currentLang,
     );
-    const disabled = langList.length === 1;
     return html`
       <div class="w-display-flex">
         <label class="w-visually-hidden" for="preferred-language">
           Choose language
         </label>
-        <select id="preferred-language" ?disabled=${disabled} @change="${this.onChange}">
+        <select id="preferred-language" @change="${this.onChange}">
           ${langList.map((language) => this.renderOption(language))}
         </select>
       </div>
