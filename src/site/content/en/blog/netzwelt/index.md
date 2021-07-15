@@ -4,8 +4,9 @@ subhead: The relaunched website also sees ad viewability of over 75%, bounce rat
 authors:
   - martinschierle
 date: 2021-07-15
-hero: image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/ErZNqWVYCAkOmEu1r7pd.png
-alt: Screenshot of PageSpeed Insights for the Netzwelt.de site, showing a score of 100."
+hero: image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/esq05YkD123DMpDMscHP.png
+thumbnail: image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/wV39PG4MOeX7ey5A7gu8.png
+alt: Netzwelt logo
 description: >
   Learn how German news publisher Netzwelt optimized Core Web Vitals to improve user experience and ad revenues.
 tags:
@@ -92,7 +93,7 @@ and CSS media rules used to reserve space.
 To maintain a good page experience and high ad viewability,
 Netzwelt implemented lazy-loading and reserved space for the size of the lowest common denominator.
 In a multisize zone the banners requested in the sizes 300x250 to 300x600, reserved 250px in height.
-This eliminated layout shift for the smaller sizes; it is calculated in half for the larger banners.
+This eliminated layout shifts for the smaller sizes; and reduced them massively for larger banners.
 This approach is not optimal, but it is a start and a good compromise.
 
 To optimize further,
