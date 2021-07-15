@@ -13,6 +13,7 @@ $generate-utility-classes: false;
 /// GLOBAL CSS
 /// Core CSS that is applicable to every page.
 /// https://cube.fyi/css.html
+
 body {
   font-size: get-size('size-1');
   padding: get-size('size-1');
@@ -132,6 +133,22 @@ ol:not([class]) {
   li {
     counter-increment: ol-list;
   }
+}
+
+/// Separators
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-stroke);
+  max-width: 80rem;
+  margin-inline: 0;
+}
+
+// For the <hr /> itself and whatever element follows it,
+// have consistent space in flow contexts
+hr,
+hr + * {
+  --flow-space: #{get-size('size-6')};
 }
 
 /// Links

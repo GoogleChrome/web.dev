@@ -27,6 +27,7 @@ module.exports = {
     STATE_WARN_TEXT: 'state-warn-text',
     STATE_GOOD_TEXT: 'state-good-text',
     STATE_BAD_TEXT: 'state-bad-text',
+    STROKE: 'stroke',
   },
   getDark() {
     return {
@@ -47,6 +48,7 @@ module.exports = {
       STATE_WARN_TEXT: 'state-warn',
       STATE_GOOD_TEXT: 'state-good',
       STATE_BAD_TEXT: 'state-bad',
+      STROKE: 'shades-gray',
     };
   },
   getLight() {
@@ -68,6 +70,7 @@ module.exports = {
       STATE_WARN_TEXT: 'state-warn',
       STATE_GOOD_TEXT: 'state-good',
       STATE_BAD_TEXT: 'state-bad',
+      STROKE: 'shades-gray-glare',
     };
   },
   generate() {
