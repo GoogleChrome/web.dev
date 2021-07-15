@@ -5,8 +5,7 @@ authors:
   - jeffposnick
 date: 2021-07-09
 description: An approach to standardizing common pattern matching use cases.
-hero: image/FNkVSAX8UDTTQWQkKftSgGe9clO2/G3wYliV3iroECG3AeVmP.jpg
-alt: A tile pattern.
+thumbnail: image/FNkVSAX8UDTTQWQkKftSgGe9clO2/YWhOUaN06kzk4mu93a1v.jpg
 tags:
   - blog
 ---
@@ -409,4 +408,4 @@ and
 
 See the [original explainer document](https://github.com/WICG/urlpattern/blob/main/explainer.md#references--acknowledgements) for a full list of acknowledgements.
 
-The hero image at the top of this post is by <a href="https://unsplash.com/@koushikc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Koushik Chowdavarapu</a> on <a href="https://unsplash.com/s/photos/pattern?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>.
+The hero image at the top of this post is by <a href="https://unsplash.com/@megindoors?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vic</a> on <a href="https://unsplash.com/s/photos/route-66?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>.
