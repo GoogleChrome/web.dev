@@ -6,7 +6,7 @@ authors:
   - rviscomi
   - felixarntz
 date: 2021-07-14
-hero: image/STd8eW8CSiNp5B1bX0R6Dww2eH32/eeYD7mvILHrB7QnEkydF.jpg
+hero: image/STd8eW8CSiNp5B1bX0R6Dww2eH32/Hdl5V6rz7DOLmC7LkYaX.jpg
 alt: Photograph of an opuntia cactus leaf growing, by ZooFari via Wikipedia.
 tags:
   - blog
@@ -433,4 +433,4 @@ Trying out relatively new web platform APIs can come with both risks and rewards
 cutting edge features for a reason. While we're starting to get a sense of the thorniness of native
 image lazy-loading, we're also seeing the upsides of how to use it to achieve better performance.
 
-<small>_Photo credit: ZooFari via [Wikipedia](https://en.wikipedia.org/wiki/Opuntia#/media/File:Opuntia_leaf.JPG) ([CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/))_</small>
+<small>_Photo by <a href="https://unsplash.com/@frankielopez?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Frankie Lopez</a> on <a href="https://unsplash.com/s/photos/prickly-pear?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>_</small>
