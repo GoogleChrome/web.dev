@@ -10,6 +10,9 @@ $generate-utility-classes: false;
 @import 'reset';
 @import 'fonts';
 
+/// MIXINS
+@import 'mixins/rounded-border';
+
 /// GLOBAL CSS
 /// Core CSS that is applicable to every page.
 /// https://cube.fyi/css.html
@@ -144,21 +147,56 @@ blockquote {
   @include apply-utility('leading', 'short');
 }
 
+blockquote,
+blockquote > * {
+  margin-inline: auto;
+
+  @include apply-utility('measure', 'short');
+}
+
 // Make sure figcaptions are central with the blockquote
 // when they appear in the same <figure> context
 figure > blockquote ~ figcaption {
-  text-align: center;
-  margin-block-start: get-size('size-1');
-
   @include apply-utility('leading', 'flat');
 }
 
-// All blockquote elements need much shorter line-lengths
-blockquote,
-blockquote p,
-figure > blockquote ~ figcaption {
+/// Captions
+caption,
+figcaption {
+  margin-block-start: get-size('size-1');
   margin-inline: auto;
-  max-width: 35ch;
+  font-style: italic;
+  text-align: center;
+
+  @include apply-utility('measure', 'short');
+}
+
+/// Tables
+table {
+  max-width: 100%;
+  min-width: 50%;
+  border-spacing: 0;
+
+  @include rounded-border();
+}
+
+th,
+td {
+  padding: 0.5em;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+th {
+  @include apply-utility('weight', 'medium');
+}
+
+tr td {
+  border-top: 1px solid var(--color-stroke);
+}
+
+caption {
+  caption-side: bottom;
 }
 
 /// Separators
