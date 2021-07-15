@@ -65,7 +65,7 @@ class LanguageSelect extends BaseStateElement {
     const langList = lang.supportedLanguages.filter((language) =>
       languageVersions.includes(language) || language === currentLang,
     );
-    const disabled = langList.length === 1 ? 'disabled' : '';
+    const disabled = langList.length === 1;
     return html`
       <div class="w-display-flex">
         <label class="w-visually-hidden" for="preferred-language">
