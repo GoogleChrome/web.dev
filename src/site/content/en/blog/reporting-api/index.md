@@ -20,7 +20,7 @@ tags:
 
 {% Banner 'caution', 'body' %} This is an API guide with detailed usage examples for the
 **Reporting API (v1)**, which uses the `Reporting-Endpoints` header. If you're already
-using the legacy Reporting API with the `Report-To` header and need to migrate to the new
+using the legacy Reporting API with the `Report-To` header () or if you're using CSP reporting with `report-uri`) and need to migrate to the new
 version (v1), head over to the [migration post](/reporting-api-migration) instead. {%
 endBanner %}
 
