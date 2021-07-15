@@ -10,6 +10,10 @@ $generate-utility-classes: false;
 @import 'reset';
 @import 'fonts';
 
+/// GLOBAL VARIABLES
+/// Global variables that should be accessible in all authored CSS
+$global-gutter: #{get-size('size-2')};
+
 /// MIXINS
 @import 'mixins/rounded-border';
 
@@ -161,6 +165,7 @@ figure > blockquote ~ figcaption {
 }
 
 /// Captions
+
 caption,
 figcaption {
   margin-block-start: get-size('size-1');
@@ -172,6 +177,7 @@ figcaption {
 }
 
 /// Tables
+
 table {
   max-width: 100%;
   min-width: 50%;
@@ -242,7 +248,8 @@ a:active {
 }
 
 /// UTILITY CLASSES
-@import 'utilities/flow.scss';
+@import 'utilities/flow';
+@import 'utilities/wrapper';
 
 // Render gorko utilities
 @include generate-utility-classes();
