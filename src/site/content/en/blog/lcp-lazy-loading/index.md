@@ -5,7 +5,7 @@ description: "Eagerly loading images within the initial viewport—while liberal
 authors:
   - rviscomi
   - felixarntz
-date: 2021-07-14
+date: 2021-07-15
 hero: image/STd8eW8CSiNp5B1bX0R6Dww2eH32/Hdl5V6rz7DOLmC7LkYaX.jpg
 alt: Photograph of an opuntia cactus leaf growing, by ZooFari via Wikipedia.
 tags:
