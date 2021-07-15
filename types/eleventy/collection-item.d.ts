@@ -73,6 +73,12 @@ declare global {
         url: string;
         outputPath: string;
       };
+      renderData?: {
+        [key: string]: TODO;
+      };
+      pagination?: {
+        [key: string]: TODO;
+      };
       collections: TODO;
       /**
        * Tells Algolia not index this page.

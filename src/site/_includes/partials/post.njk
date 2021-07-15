@@ -71,9 +71,11 @@
         <div class="w-authors w-mt--xl w-pt--sm">
           {% for author in authors %}
             {% Author {
-              id: author,
+              id: authorKey,
               author: collections.authors[author],
-              showSocialMedia: true}
+              showSocialMedia: true,
+              locale: locale
+              }
             %}
           {% endfor %}
         </div>

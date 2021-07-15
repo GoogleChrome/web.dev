@@ -18,8 +18,7 @@ const yaml = require('js-yaml');
 const get = require('lodash.get');
 const fs = require('fs');
 const path = require('path');
-
-const defaultLocale = 'en';
+const {defaultLocale} = require('../../../shared/locale');
 
 /**
  * Recursively walk a directory and create an object out of the file tree.
@@ -67,7 +66,7 @@ const data = {i18n: walk(path.join(__dirname, '..', '_data', 'i18n'))};
  * @param {string} locale A locale prefix (example: 'en', 'pl')
  * @return {string}
  */
-const i18n = (path, locale = 'en') => {
+const i18n = (path, locale = defaultLocale) => {
   locale = locale.split('_')[0];
   try {
     return get(data, path)[locale] || get(data, path)[defaultLocale];

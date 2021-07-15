@@ -26,8 +26,6 @@ const striptags = require('striptags');
 const stripcomments = require('strip-comments');
 const removeMarkdown = require('remove-markdown');
 
-const AuthorsCollection = require('./authors');
-const TagsCollection = require('./tags');
 const {defaultLocale} = require('../_data/site');
 const {livePosts} = require('../_filters/live-posts');
 const {getDefaultUrl} = require('../_filters/urls');
@@ -99,12 +97,6 @@ module.exports = (collections) => {
     ] = pagesCollectionItem;
   };
 
-  // All Author and Tag items
-  /** @type Array<AuthorsItem|TagsItem> */
-  const virtualCollections = [
-    ...Object.values(AuthorsCollection(collections)),
-    ...Object.values(TagsCollection(collections)),
-  ];
   // All posts
   const allSorted = collections.getAllSorted().filter((item) => {
     return item.data.title && item.data.page.url && livePosts(item);
@@ -116,12 +108,19 @@ module.exports = (collections) => {
     }
 
     const defaultUrl = getDefaultUrl(item.url);
+    const paginated = 'pagination' in item.data;
+    // Because virtual collection items need their description translated by the i18n filter.
+    // We have that translation in the renderData, so we check to see if that exists and then use it.
+    const content =
+      paginated && item.data?.renderData?.description
+        ? item.data.renderData.description
+        : item.template.frontMatter.content;
 
     /** @type {PagesCollectionItem} */
     const pagesCollectionItem = {
-      content: limitText(item.template.frontMatter.content),
+      content: limitText(content),
       createdOn: item.data.date,
-      description: item.data.description,
+      description: item.data?.renderData?.description || item.data.description,
       image:
         'hero' in item.data
           ? generateImgixSrc(item.data.hero, {w: 100, auto: 'format'})
@@ -129,30 +128,7 @@ module.exports = (collections) => {
       locales: [item.data.lang],
       objectID: createHash('md5').update(item.url).digest('hex'),
       tags: item.data.tags || [],
-      title: item.data.title,
-      updatedOn: item.data.updated,
-      url: defaultUrl,
-    };
-
-    addToCollection(pagesCollectionItem);
-  }
-
-  for (const item of virtualCollections) {
-    const defaultUrl = getDefaultUrl(item.url);
-
-    /** @type {PagesCollectionItem} */
-    const pagesCollectionItem = {
-      content: limitText(item.data.subhead),
-      createdOn: item.data.date,
-      description: item.data.subhead,
-      image:
-        'hero' in item.data
-          ? generateImgixSrc(item.data.hero, {w: 100, auto: 'format'})
-          : null,
-      locales: [defaultLocale],
-      objectID: createHash('md5').update(item.url).digest('hex'),
-      tags: 'tags' in item.data ? item.data.tags : [],
-      title: item.data.title,
+      title: item.data?.renderData?.title || item.data.title,
       updatedOn: item.data.updated,
       url: defaultUrl,
     };
