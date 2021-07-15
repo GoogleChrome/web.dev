@@ -20,7 +20,8 @@ German publisher [Netzwelt](https://www.netzwelt.de/) quickly realized the poten
 towards a great page experience and improved advertising-based monetization.
 They went on a journey to relaunch their website,
 applying common performance best practices while optimizing ad tags and placements in parallel.
-Committing to great UX and fast pages proved to be a path for optimizing engagement and ad revenues hand in hand,
+Committing to great UX and fast pages proved to be a path
+for optimizing engagement and ad revenues hand in hand,
 with page views up by 27%, ad viewability over 75%, and advertising revenues improving by 18%.
 
 
@@ -42,7 +43,8 @@ with page views up by 27%, ad viewability over 75%, and advertising revenues imp
 ## The challenge
 
 Like many other news publishers,
-Netzwelt struggled to find the right balance between optimizing user experience and page speed while maintaining high ad revenues.
+Netzwelt struggled to find the right balance between optimizing user experience and page speed
+while maintaining high ad revenues.
 The main challenges they encountered were:
 
 * High [Cumulative Layout Shift](/cls) (CLS) due to layout shifts triggered by ads,
@@ -59,7 +61,8 @@ which also added to layout shifts and might be detected as late largest paints.
 When Netzwelt started working on core web vitals,
 they quickly noticed that optimizing Core Web Vitals doesn't need to affect advertisement negatively
 but can be used as an opportunity to improve ad viewability.
-Therefore, the Netzwelt team optimized Core Web Vitals to lift ad viewability above 75% to attract higher-value advertising
+Therefore, the Netzwelt team optimized Core Web Vitals to lift ad viewability
+above 75% to attract higher-value advertising
 (the global average for display ads
 [is less than 50%](https://www.thinkwithgoogle.com/feature/viewability/state-of-viewability)).
 
@@ -77,7 +80,8 @@ Netzwelt solved this problem by making the top ad sticky and removing some of th
 The overlaid ad avoids triggering layout jumps for ads of different sizes.
 Although the reduced eligible sizes do impact ad sales, the better viewability offsets this easily.
 
-Historical data and A/B tests helped Netzwelt find the right size and positioning for different devices and screen sizes,
+Historical data and A/B tests helped Netzwelt find the right size
+and positioning for different devices and screen sizes,
 and CSS media rules used to reserve space.
 
 **Ads below the fold** offer room for significant improvement:
@@ -96,10 +100,12 @@ Netzwelt used
 [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) and the
 [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API)
 to control ad placements and reduce layout shifts.
-Different ad positions and lazy loading strategies are used depending on scroll position and network connection quality,
+Different ad positions and lazy loading strategies are used depending on
+scroll position and network connection quality,
 and ads may be changed from multiple to fixed sizes.
 The aim of the algorithm is always to maximize ad viewability while minimizing layout shifts.
-Browsers not supporting the NetworkInfo API use a proxy value based on a combination of device and IP derived network type.
+Browsers not supporting the NetworkInfo API use a proxy value based on a
+combination of device and IP derived network type.
 This
 [adaptive loading](https://addyosmani.com/blog/adaptive-loading/)
 strategy especially reduces CLS for users with slow internet connections.
@@ -174,7 +180,8 @@ First Netzwelt made sure to avoid the straightforward pitfalls:
 adequate whitespace is preserved beforehand to avoid layout shifts when ads load in.
 * Making sure the display and positioning of the consent dialog does not trigger layout shifts.
 One problem found and fixed here was the scroll-lock option of the service provider,
-which disabled scrolling while consent shows by moving the main content of the article on scroll, causing layout shifts.
+which disabled scrolling while consent shows by moving the main content of the article on scroll,
+causing layout shifts.
 
 After this work, there were still large discrepancies between field and lab CLS.
 While lab CLS was close to zero, field values were significantly above thresholds.
@@ -221,7 +228,8 @@ After relaunching the optimized page,
 Netzwelt saw CPM increases of 20-30%,
 with an ad viewability above 75%.
 However, Netzwelt assumes the overall revenue uplift to be even higher.
-Traffic increased since the relaunch, probably driven by higher user engagement and lower bounce rates due to improved UX.
+Traffic increased since the relaunch, probably driven by higher user engagement
+and lower bounce rates due to improved UX.
 These effects are hard to quantify and set in causal relation to the relaunch,
 as traffic naturally fluctuates, and there are also effects from the global pandemic.
 These indirect effects are one of the reasons why Netzwelt always looks at all numbers when reviewing their site,
