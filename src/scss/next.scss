@@ -59,8 +59,7 @@ h6 {
 /// General typesetting
 
 p,
-li,
-blockquote {
+li {
   max-width: 70ch;
 }
 
@@ -133,6 +132,33 @@ ol:not([class]) {
   li {
     counter-increment: ol-list;
   }
+}
+
+/// Blockquotes
+
+blockquote {
+  font-size: get-size('size-4');
+  text-align: center;
+
+  @include apply-utility('font', 'brand');
+  @include apply-utility('leading', 'short');
+}
+
+// Make sure figcaptions are central with the blockquote
+// when they appear in the same <figure> context
+figure > blockquote ~ figcaption {
+  text-align: center;
+  margin-block-start: get-size('size-1');
+
+  @include apply-utility('leading', 'flat');
+}
+
+// All blockquote elements need much shorter line-lengths
+blockquote,
+blockquote p,
+figure > blockquote ~ figcaption {
+  margin-inline: auto;
+  max-width: 35ch;
 }
 
 /// Separators
