@@ -38,10 +38,7 @@
     },
     {
       "title": "i18n.paths.secure.topics.protect_websites_from_xss",
-      "pathItems": [
-        "trusted-types",
-        "strict-csp"
-      ]
+      "pathItems": ["trusted-types", "strict-csp"]
     },
     {
       "title": "i18n.paths.secure.topics.protect_users_from_tracking",
@@ -57,6 +54,10 @@
         "schemeful-samesite",
         "floc"
       ]
+    },
+    {
+      "title": "i18n.paths.secure.topics.monitor_security_violations",
+      "pathItems": ["reporting-api", "reporting-api-migration"]
     }
   ]
 }
