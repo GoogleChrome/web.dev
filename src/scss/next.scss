@@ -251,6 +251,12 @@ a:active {
   scroll-margin-top: 2ex;
 }
 
+/// High contrast selection style
+::selection {
+  color: var(--color-core-bg);
+  background: var(--color-core-text);
+}
+
 /// UTILITY CLASSES
 @import 'utilities/flow';
 @import 'utilities/focus-ring';
