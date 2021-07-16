@@ -247,6 +247,10 @@ a:active {
   outline-offset: 4px;
 }
 
+:target {
+  scroll-margin-top: 2ex;
+}
+
 /// UTILITY CLASSES
 @import 'utilities/flow';
 @import 'utilities/focus-ring';
