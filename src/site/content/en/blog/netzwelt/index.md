@@ -5,7 +5,7 @@ authors:
   - martinschierle
 date: 2021-07-15
 hero: image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/esq05YkD123DMpDMscHP.png
-thumbnail: image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/wV39PG4MOeX7ey5A7gu8.png
+thumbnail: image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/XuTyBKOPVQjIt2MFMPoG.png
 alt: Netzwelt logo
 description: >
   Learn how German news publisher Netzwelt optimized Core Web Vitals to improve user experience and ad revenues.
