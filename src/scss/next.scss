@@ -249,7 +249,11 @@ a:active {
 
 /// UTILITY CLASSES
 @import 'utilities/flow';
+@import 'utilities/focus-ring';
 @import 'utilities/wrapper';
+
+// The prototype file is for temporary prototyping
+@import 'prototype';
 
 // Render gorko utilities
 @include generate-utility-classes();
