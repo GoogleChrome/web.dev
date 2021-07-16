@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 const CacheAsset = require('@11ty/eleventy-cache-assets');
+const path = require('path');
 const {defaultLocale} = require('../../../shared/locale');
 
 /** @type ShowsData */
 const showsData = require('../_data/showsData.json');
 
 /**
- * Returns all authors with their posts.
+ * Returns all show playlists with their videos.
  *
  * @return {Promise<Shows>}
  */
@@ -31,7 +32,14 @@ module.exports = async () => {
 
   for (const key of keys) {
     const showData = showsData[key];
-    const href = `/shows/${key}/`;
+    const href = path.join('/', 'shows', key, '/');
+    /**
+     * Instead of calling the YouTube API here, the playlist information is handled by GoogleChromeLabs/chrome-gcs-uploader
+     * This is so:
+     * 1. We don't expose our YouTube Playlist API key
+     * 2. We don't make thousands of requests
+     * 3. The thumbnails are added to our storage bucket for imgix
+     */
     const url = `https://storage.googleapis.com/web-dev-uploads/youtube/${showData.playlistId}.json`;
     const elements = (
       await CacheAsset(url, {
@@ -44,7 +52,7 @@ module.exports = async () => {
     ).map((v) => {
       v.date = new Date(v.date);
       v.data.date = new Date(v.data.date);
-      v.url = `${href}${v.data.videoId}/`;
+      v.url = path.join(href, v.data.videoId, '/');
       v.data.lang = defaultLocale;
       return v;
     });

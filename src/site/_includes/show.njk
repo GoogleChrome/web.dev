@@ -8,8 +8,6 @@ layout: default
       <time>{{ paged.data.date | prettyDate }}</time>
     </div>
   </header>
-  <figure>
-    {% YouTube paged.data.videoId %}
-  </figure>
+  {% YouTube paged.data.videoId %}
   <p>{{ paged.data.description | md({linkify: true}) | safe }}</p>
 </div>
