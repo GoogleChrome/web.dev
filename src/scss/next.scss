@@ -221,6 +221,25 @@ hr + * {
   --flow-space: #{get-size('size-6')};
 }
 
+/// Basic code
+
+code {
+  padding: 0.125em 0.25em;
+  background: var(--color-mid-bg);
+  border: 1px solid var(--color-stroke);
+  font-size: 0.9em;
+  hyphens: none;
+  tab-size: 2;
+  text-align: left;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+
+  @include apply-utility('font', 'mono');
+}
+
 /// Links
 
 a:link {
@@ -260,6 +279,7 @@ a:active {
 /// UTILITY CLASSES
 @import 'utilities/flow';
 @import 'utilities/focus-ring';
+@import 'utilities/region';
 @import 'utilities/wrapper';
 
 // The prototype file is for temporary prototyping
