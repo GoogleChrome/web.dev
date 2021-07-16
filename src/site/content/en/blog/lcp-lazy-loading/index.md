@@ -31,7 +31,7 @@ best of both worlds: fewer bytes loaded and improved [Core Web Vitals](/vitals/#
 ## Adoption
 
 According to the most recent data in [HTTP Archive](https://httparchive.org/),
-native image lazy-loading is used by[17%](https://httparchive.org/reports/state-of-images?start=2020_01_01&end=2021_06_01#imgLazy)
+native image lazy-loading is used by [17%](https://httparchive.org/reports/state-of-images?start=2020_01_01&end=2021_06_01#imgLazy)
 of websites and adoption is growing rapidly. This much of a foothold in the ecosystem is remarkable
 for a relatively new API.
 
