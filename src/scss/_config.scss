@@ -48,7 +48,9 @@ $gorko-config: (
   ),
   'leading': (
     'items': (
-      'flat': '1.1'
+      'flat': '1.2',
+      'short': '1.35',
+      'regular': '1.7'
     ),
     'output': 'standard',
     'property': 'line-height'
@@ -65,6 +67,11 @@ $gorko-config: (
     'items': $gorko-size-scale,
     'output': 'standard',
     'property': 'font-size'
+  ),
+  'weight': (
+    'items': $gorko-font-weights,
+    'output': 'standard',
+    'property': 'font-weight'
   ),
   'breakpoints': (
     'md': '(min-width: 37em)'

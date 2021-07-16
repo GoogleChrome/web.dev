@@ -37,12 +37,6 @@ ol[role='list'] {
   list-style: none;
 }
 
-// Don't let lists spill outside of their containing box.
-ul,
-ol {
-  list-style-position: inside;
-}
-
 // Anchor elements that don't have a class get default styles
 a:not([class]) {
   text-decoration-skip-ink: auto;

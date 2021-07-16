@@ -1,0 +1,14 @@
+/// WRAPPER UTILITY
+/// A horizontally centered wrapper that
+/// provides a consistent central column.
+.wrapper {
+  margin-inline: auto;
+  width: 90rem; // For no clamp support
+  width: clamp(16rem, 90vw, 90rem);
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $global-gutter;
+  padding-right: $global-gutter;
+  position: relative;
+}
