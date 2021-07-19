@@ -14,7 +14,7 @@ tags:
 hero: image/admin/9wQYJACMKOM6aUA0BPsW.jpg
 alt: Simulated trading desk showing multiple fake cryptocurrencies and their price charts.
 origin_trial:
-  url: https://developers.chrome.com/origintrials
+  url: https://developer.chrome.com/origintrials/#/view_trial/-8087339030850568191
 feedback:
   - api
 ---
@@ -47,7 +47,7 @@ Examples of sites that may use this API include:
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | [Complete][spec]         |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | Upcoming                 |
+| 4. **Origin trial**                          | **[In progress](https://developer.chrome.com/origintrials/#/view_trial/-8087339030850568191)**                 |
 | 5. Launch                                | Not started              |
 
 </div>
