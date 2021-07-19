@@ -62,7 +62,7 @@ The best way to familiarize yourself with the core of the supported syntax is to
 refer to the
 [documentation](https://github.com/pillarjs/path-to-regexp#parameters) for
 `path-to-regexp`. You can
-[read the documentation](https://github.com/WICG/urlpattern/blob/main/docs/urlpattern.md)
+[read the documentation](https://github.com/WICG/urlpattern/blob/main/mdn-drafts/QUICK-REFERENCE.md)
 intended for publication on [MDN](https://developer.mozilla.org/) in its current
 home on GitHub.
 
