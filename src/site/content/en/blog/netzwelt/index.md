@@ -3,7 +3,7 @@ title: How committing to Core Web Vitals increased Netzwelt's advertising revenu
 subhead: The relaunched website also sees ad viewability of over 75%, bounce rates reduced by 50%, and page views up by 27%.
 authors:
   - martinschierle
-date: 2021-07-15
+date: 2021-07-19
 hero: image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/esq05YkD123DMpDMscHP.png
 thumbnail: image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/XuTyBKOPVQjIt2MFMPoG.png
 alt: Netzwelt logo
