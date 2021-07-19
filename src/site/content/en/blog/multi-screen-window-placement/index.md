@@ -47,7 +47,7 @@ Examples of sites that may use this API include:
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | [Complete][spec]         |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. **Origin trial**                          | **[In progress](https://developer.chrome.com/origintrials/#/view_trial/-8087339030850568191)**                 |
+| 4. **Origin trial**                      | **[In progress][ot]**    |
 | 5. Launch                                | Not started              |
 
 </div>
@@ -66,7 +66,8 @@ some [changes](https://github.com/webscreens/window-placement/blob/main/CHANGES.
 article has been updated accordingly.
 
 Starting in Chromium&nbsp;93, the Multi-Screen Window Placement API will again be available as an
-origin trial in Chromium. This second origin trial is expected to end in Chromium&nbsp;95 (November 10, 2021).
+origin trial in Chromium. This second origin trial is expected to end in Chromium&nbsp;95 (November
+10, 2021).
 
 {% include 'content/origin-trials.njk' %}
 
@@ -469,9 +470,6 @@ team to prioritize features and shows other browser vendors how critical it is t
 - [Chromium tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
 - Blink Component: [`Blink>WindowDialog`][blink-component]
-
-### Wanna go deeper {: #deeper-links }
-
 - [TAG Review][tag-review]
 - [Intent to Experiment][i2e]
 
@@ -499,5 +497,5 @@ and [Kayce Basques](https://github.com/kaycebasques). Thanks to Laura Torrent Pu
 [powerful-apis]:
   https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [tag-review]: https://github.com/w3ctag/design-reviews/issues/522
-[ot]: https://developers.chrome.com/origintrials/#/view_trial/1411878483180650497
+[ot]: https://developer.chrome.com/origintrials/#/view_trial/-8087339030850568191
 [i2e]: https://groups.google.com/a/chromium.org/g/blink-dev/c/C6xw8i1ZIdE/m/TJsr0zXxBwAJ
