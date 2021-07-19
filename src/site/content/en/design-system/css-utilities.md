@@ -55,7 +55,7 @@ focus for high contrast users. The box-shadow helps to support border-radius
 elements.
 
 ```html
-<button class="[ my-cool-button ] [ focus-ring ]">My cool button</button>
+<button class="my-cool-button focus-ring">My cool button</button>
 ```
 
 You can customise the `--focus-ring-padding-color`, which creates the
