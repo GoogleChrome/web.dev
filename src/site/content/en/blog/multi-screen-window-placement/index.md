@@ -7,8 +7,7 @@ description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
 date: 2020-09-14
-updated: 2021-07-29
-scheduled: true
+updated: 2021-07-19
 tags:
   - blog
   - capabilities
@@ -67,7 +66,7 @@ some [changes](https://github.com/webscreens/window-placement/blob/main/CHANGES.
 article has been updated accordingly.
 
 Starting in Chromium&nbsp;93, the Multi-Screen Window Placement API will again be available as an
-origin trial in Chromium. This second origin trial is expected to end in Chromium&nbsp;96.
+origin trial in Chromium. This second origin trial is expected to end in Chromium&nbsp;95 (November 10, 2021).
 
 {% include 'content/origin-trials.njk' %}
 
