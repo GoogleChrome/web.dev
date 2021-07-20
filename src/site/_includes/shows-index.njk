@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% from 'macros/show-card.njk' import showCard with context %}
+{% from 'macros/shows-card.njk' import showsCard with context %}
 <div>
   {# Make sure Actions are first in the tab order. #}
   <div class="w-actions">
@@ -17,7 +17,7 @@ layout: default
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--three" role="list">
       {% for show in paged.elements %}
-        {{ showCard(show) }}
+        {{ showsCard(show) }}
       {% endfor %}
     </div>
   </section>

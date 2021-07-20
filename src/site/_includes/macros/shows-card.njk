@@ -1,13 +1,13 @@
 {#
   @typedef {ShowsItem} show - The show to display in card format.
 #}
-{% macro showCard(show) %}
+{% macro showsCard(show) %}
 
-{% set data = show.data %}
-{% set title = data.title %}
-{% set description = data.subhead %}
+{% set title = show.title | i18n(locale) %}
+{% set description = show.description | i18n(locale) %}
 {% set url = show.url %}
-{% set hero = data.thumbnail or null %}
+{% set data = show.data %}
+{% set hero = data.hero or null %}
 
 <div class="w-card" role="listitem">
   <article class="w-card-base {{ 'w-card-base__with--cover' if hero }}">
@@ -20,7 +20,7 @@
         #}
         <a href="{{url}}" class="w-card-base__link" tabindex="-1" aria-hidden="true">
           <figure>
-            {% Img src=hero, alt=title, width="354", height="240", params={fit: 'fit', h: '240', w: '354'} %}
+            {% Img src=hero, alt=title, width="354", height="240", params={fit: 'center', h: '240', w: '354'} %}
           </figure>
         </a>
       </div>

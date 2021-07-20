@@ -3,6 +3,7 @@ layout: default
 ---
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
+{% from 'macros/show-card.njk' import showCard with context %}
 <div class="shows-landing-page">
   {# Make sure Actions are first in the tab order. #}
   <div class="w-actions">
@@ -18,5 +19,13 @@ layout: default
       </a>
     </header>
   </div>
-  {% include 'partials/paged.njk' %}
+  <section class="w-grid">
+    <div class="w-grid__columns w-grid__columns--three" role="list">
+      {% for show in paged.elements %}
+        {{ showCard(show) }}
+      {% endfor %}
+    </div>
+  </section>
+
+  {% include 'pagination.njk' %}
 </div>
