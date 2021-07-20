@@ -356,7 +356,7 @@ maintaining the built-in functionality.
   inline-size: 100%;
   block-size: 100%;
   opacity: .01;
-  font-size: 100% /* Defaults to 16px; fixes iOS zoom */
+  font-size: min(100%, 16px); /* Defaults to 16px; fixes iOS zoom */
 }
 ```
 
