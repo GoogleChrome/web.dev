@@ -114,7 +114,7 @@ part of the URL is not set. The wildcard `*` will match any value for a given
 portion of the URL.
 
 The constructor offers several shortcuts for simpler usage. Completely omitting
-`search` and `hash`, or any other properties, is equivalent to setting them the
+`search` and `hash`, or any other properties, is equivalent to setting them to the
 `'*'` wildcard. The above example could be simplified to
 
 ```js
