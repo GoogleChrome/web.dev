@@ -370,8 +370,8 @@ if (!(globalThis && 'URLPattern' in globalThis)) {
 
 ## Feedback and future plans
 
-Some aspects of `URLPattern` are still being
-[actively developed](https://github.com/WICG/urlpattern/blob/main/202012-update.md#whats-still-left-to-do),
+Some aspects of `URLPattern` are [still being
+developed](https://github.com/WICG/urlpattern/blob/main/202012-update.md#whats-still-left-to-do),
 and there are a number of
 [open questions](https://github.com/WICG/urlpattern/blob/main/202012-update.md#open-questions)
 about specific behaviors that may still be refined. We encourage you to try out
