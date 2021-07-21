@@ -287,8 +287,8 @@ If you're familiar with the
 <code>[exec()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec)</code>
 method of a
 <code>[RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)</code>
-object, then the return values from <code>URLPattern</code>'s
-<code>exec()</code> method will look
+object, then the return values from <code>URLPattern.exec()</code> 
+method will look
 [very similar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges#examples)
 when it comes to representing anonymous and named groups.
 {% endAside %}
