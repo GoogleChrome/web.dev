@@ -50,7 +50,7 @@ need to match against URLs.
 
 A guiding philosophy for `URLPattern` is to avoid reinvention. If you're already
 familiar with the routing syntax used in Express or Ruby on Rails, you shouldn't
-have to learn anything new to use `URLPattern`. But given the slight divergences
+have to learn anything new. But given the slight divergences
 between syntaxes in popular routing libraries, something had to be chosen as the
 base syntax, and the designers of `URLPattern` decided to use `path-to-regexp`'s
 pattern syntax (though not its API surface) as the starting point.
