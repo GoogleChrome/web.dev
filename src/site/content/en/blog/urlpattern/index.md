@@ -35,7 +35,7 @@ logic to their own code.
 
 <code>[URLPattern](https://github.com/WICG/urlpattern/blob/main/explainer.md#urlpattern)</code>
 is a proposed addition to the web platform that builds on the foundation created
-by these frameworks. Its goals are to standardize a routing pattern syntax,
+by these frameworks. Its goal is to standardize a routing pattern syntax,
 including support for wildcards, named token groups, regular expression groups,
 and group modifiers. <code>URLPattern</code> instances created with this syntax
 can perform common routing tasks, like matching against full URLs or a URL
