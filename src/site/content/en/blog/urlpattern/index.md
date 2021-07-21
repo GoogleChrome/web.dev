@@ -68,7 +68,7 @@ home on GitHub.
 
 ### Additional features
 
-`URLPattern`'s syntax is a superset of what `path-to-regexp` supports, as
+The syntax of `URLPattern` is a superset of what `path-to-regexp` supports, as
 `URLPattern` supports a fairly unique feature among routing libraries: matching
 [origins](https://developer.mozilla.org/en-US/docs/Web/API/URL/origin),
 including wildcards in hostnames. Most other routing libraries just deal with
