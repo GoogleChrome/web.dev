@@ -358,7 +358,7 @@ library provides a way to use the <code>URLPattern</code> interface in browsers
 or environments like [Node](https://nodejs.org/) which lack built-in support. If
 you use the polyfill, make sure that you use feature detection to ensure that
 you're only loading it if the current environment lacks support. Otherwise,
-you'll lose one of the key benefits of <code>URLPattern—the</code> fact that
+you'll lose one of the key benefits of <code>URLPattern</code>: the fact that
 support environments don't have to download and parse additional code in order
 to use it.
 
