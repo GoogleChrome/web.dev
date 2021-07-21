@@ -15,6 +15,7 @@
  */
 
 const chalk = require('chalk');
+const {EleventyServerlessBundlerPlugin} = require('@11ty/eleventy');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const yaml = require('js-yaml');
@@ -107,6 +108,14 @@ module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
   const isProd = process.env.ELEVENTY_ENV === 'prod';
   const isStaging = process.env.ELEVENTY_ENV === 'staging';
+
+  // Eleventy Serverless
+  config.addPlugin(EleventyServerlessBundlerPlugin, {
+    name: 'serverless', // The serverless function name from your permalink object
+    functionsDir: './functions/',
+    inputDir: '.',
+    copy: [{from: '.cache', to: 'cache'}],
+  });
 
   // ----------------------------------------------------------------------------
   // PLUGINS

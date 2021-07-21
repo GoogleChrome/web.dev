@@ -32,7 +32,7 @@ const {defaultLocale} = require('../site/_data/site');
  * @example outputPermalink({permalink: 'pl/index.html'}); // '/i18n/pl/'
  *
  * @param {TODO} data
- * @returns {string}
+ * @returns {{serverless: string}}
  */
 module.exports = (data) => {
   const defaultLocaleRegExp = new RegExp(`^/${defaultLocale}/`);
@@ -45,15 +45,19 @@ module.exports = (data) => {
   }
 
   if (data.permalink) {
-    return data.permalink.replace(
-      /^\/{{lang}}/,
-      localization ? '/i18n/{{lang}}' : '',
-    );
+    return {
+      serverless: data.permalink.replace(
+        /^\/{{lang}}/,
+        localization ? '/i18n/{{lang}}' : '',
+      ),
+    };
   }
 
-  return data.page.inputPath
-    .replace(/^\.\/src\/site\/content/, localization ? 'i18n/' : '')
-    .replace(/index.(md|njk)$/, '')
-    .replace(/(md|njk)$/, 'html')
-    .replace(defaultLocaleRegExp, '/');
+  return {
+    serverless: data.page.inputPath
+      .replace(/^\.\/src\/site\/content/, localization ? 'i18n/' : '')
+      .replace(/index.(md|njk)$/, '')
+      .replace(/(md|njk)$/, 'html')
+      .replace(defaultLocaleRegExp, '/'),
+  };
 };
