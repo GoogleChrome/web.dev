@@ -14,7 +14,7 @@ tags:
 
 Routing is a key piece of every web application. At its heart, routing involves
 taking a URL, applying some pattern matching or other app-specific logic to it,
-and then usually displaying web content based on the result. Routing might be
+and then, usually, displaying web content based on the result. Routing might be
 implemented in a number of ways: it's sometimes code running on a server that
 maps a path to files on disk, or logic in a single-page app that waits for
 changes to the current `location` and creates a corresponding piece of DOM to
