@@ -270,7 +270,7 @@ const result = p.exec('https://imagecdn1.example.com/foo/cat.jpg');
 
 ### Anonymous and named groups
 
-As seen in the previous example, `exec()`'s return value includes information
+As seen in the previous example, the return value of`exec()` includes information
 about anonymous patterns and named tokens in the `groups` property for the
 corresponding URL property, like `pathname`.
 
