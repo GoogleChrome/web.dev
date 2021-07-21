@@ -40,6 +40,8 @@ make sure that all unsecure HTTP traffic to your site is redirected to HTTPS:
   * [Cloudflare](https://www.cloudflare.com/website-optimization/automatic-https-rewrite/)
   * [Microsoft IIS](https://serverfault.com/q/893315)
 
+Latest Guide for [HTTP traffic to HTTPS in NGINX](https://www.armanism.com/blog/install-free-ssl-on-nginx#:~:text=Step%204%20-%20Redirect%20HTTP%20to%20HTTPS%20in%20NGINX%20(Optionally))
+
 ## Resources
 - [Source code for **Does not redirect HTTP traffic to HTTPS** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects-http.js)
 - [Does not use HTTPS](/is-on-https)
