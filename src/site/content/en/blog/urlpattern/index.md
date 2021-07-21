@@ -17,7 +17,7 @@ taking a URL, applying some pattern matching or other app-specific logic to it,
 and then, usually, displaying web content based on the result. Routing might be
 implemented in a number of ways: it's sometimes code running on a server that
 maps a path to files on disk, or logic in a single-page app that waits for
-changes to the current `location` and creates a corresponding piece of DOM to
+changes to the current location and creates a corresponding piece of DOM to
 display.
 
 While there is no one definitive standard, web developers have gravitated
@@ -69,7 +69,7 @@ home on GitHub.
 ### Additional features
 
 The syntax of `URLPattern` is a superset of what `path-to-regexp` supports, as
-`URLPattern` supports a fairly unique feature among routing libraries: matching
+`URLPattern` supports a uncommon feature among routing libraries: matching
 [origins](https://developer.mozilla.org/en-US/docs/Web/API/URL/origin),
 including wildcards in hostnames. Most other routing libraries just deal with
 the [pathname](https://developer.mozilla.org/en-US/docs/Web/API/URL/pathname),
@@ -159,8 +159,8 @@ string is considered relative to that base.
 Whether one string or two are provided, the `URLPattern` constructor will parse
 the full URL pattern, breaking it up into URL components, and map each portion
 of the larger pattern to the corresponding component. This means that under the
-hood, each `URLPattern` object created with strings ends up being represented
-the same as an equivalent `URLPattern` object created with an object. The
+hood, each `URLPattern` created with strings ends up being represented
+the same as an equivalent `URLPattern` created with an object. The
 strings constructor is just a shortcut, for those who prefer a less verbose
 interface.
 
@@ -270,17 +270,21 @@ const result = p.exec('https://imagecdn1.example.com/foo/cat.jpg');
 
 ### Anonymous and named groups
 
-As seen in the previous example, the return value of`exec()` includes information
-about anonymous patterns and named tokens in the `groups` property for the
-corresponding URL property, like `pathname`.
+When you pass a URL string to `exec()`, you get back a value telling your which portions matched all of the pattern's groups.
 
-You can use array indices to access the corresponding value for an anonymous
-pattern match. If there are multiple anonymous patterns, index `0` will
-represent the matching value for the left-most one, with `1` and further indices
-used for subsequent patterns.
+The return value has properties that correspond to the components of the
+`URLPattern`, like `pathname`. So if a group was defined as part of the
+`pathname` portion of the `URLPattern`, then the matches can be found in the
+return value's `pathname.groups`. The matches are represented differently
+depending on whether the corresponding pattern was an anonymous or named group.
 
-When using named tokens in a pattern, the `groups` property of a given URL
-component will have properties whose names correspond to each token name.
+You can use array indices to access the values for an anonymous pattern match.
+If there are multiple anonymous patterns, index `0` will represent the matching
+value for the left-most one, with `1` and further indices used for subsequent
+patterns.
+
+When using named groups in a pattern, the matches will exposed as properties
+whose names correspond to each group name.
 
 {% Aside %}
 If you're familiar with the
