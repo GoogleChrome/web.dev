@@ -86,7 +86,7 @@ routing cross-origin requests inside of a
 effectively ignore this additional feature and use `URLPattern` like
 other libraries.
 
-## Usage examples
+## Examples
 
 ### Constructing the pattern
 
