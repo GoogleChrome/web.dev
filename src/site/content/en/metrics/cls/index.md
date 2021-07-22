@@ -84,7 +84,7 @@ rendered frame to the next. (See below for details on how individual [layout
 shift scores](#layout-shift-score) are calculated.)
 
 A burst of layout shifts, known as a [_session
-window_](evolving-cls/#why-a-session-window), is when one or more individual
+window_](/evolving-cls/#why-a-session-window), is when one or more individual
 layout shifts occur in rapid succession with less than 1-second in between each
 shift and a maximum of 5 seconds for the total window duration.
 
