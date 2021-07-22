@@ -78,7 +78,7 @@ is a [string](https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-15
 example, to convey that the user prefers a dark theme and reduced motion, the client hints look like
 in the example below.
 
-```
+```bash
 Sec-CH-Prefers-Color-Scheme: "dark"
 Sec-CH-Prefers-Reduced-Motion: "reduce"
 ```
