@@ -1,7 +1,7 @@
 ---
 title: User preference media features client hints headers
 subhead:
-  The new `Sec-CH-Prefers-Color-Scheme` client hint header allows sites to obtain the user's color
+  The `Sec-CH-Prefers-Color-Scheme` client hint header allows sites to obtain the user's color
   scheme preferences optionally at request time, allowing servers to inline the right CSS and
   therefore avoid a flash of incorrect color theme.
 authors:
@@ -52,7 +52,7 @@ that aims to solve this issue.
 header that servers can use to advertise their use of request headers for proactive content
 negotiation, colloquially referred to as client hints. The
 [User Preference Media Features Client Hints Headers](https://wicg.github.io/user-preference-media-features-headers/)
-proposal defines a set of new client hints aimed at conveying user preference media features. These
+proposal defines a set of client hints aimed at conveying user preference media features. These
 client hints are named after the corresponding user preference media feature that they report on.
 For example, the currently preferred color scheme as per `prefers-color-scheme` is reported via the
 aptly named `Sec-CH-Prefers-Color-Scheme` client hint.
@@ -91,7 +91,7 @@ respectively.
 
 {% Aside %} While the
 [User Preference Media Features Client Hints Headers](https://wicg.github.io/user-preference-media-features-headers/)
-proposal defines a set of new client hints, Chromium for now only supports
+proposal defines a set of client hints, Chromium for now only supports
 `Sec-CH-Prefers-Color-Scheme`. {% endAside %}
 
 The list of the client hints is modeled after the
@@ -106,6 +106,12 @@ The list of the client hints is modeled after the
 | `Sec-CH-Forced-Colors`                | [`active`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-forced-colors-active), [`none`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-forced-colors-none)                                                                                                                                                                                                       | [`forced-colors`](https://drafts.csswg.org/mediaqueries-5/#forced-colors)                               |
 | `Sec-CH-Prefers-Color-Scheme`         | [`light`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-color-scheme-light), [`dark`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-color-scheme-dark)                                                                                                                                                                                           | [`prefers-color-scheme`](https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme)                 |
 | `Sec-CH-Prefers-Reduced-Data`         | [`no-preference`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-data-no-preference), [`reduce`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-data-reduce)                                                                                                                                                                       | [`prefers-reduced-data`](https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-data)                 |
+
+## Browser support
+
+The `Sec-CH-Prefers-Color-Scheme` client hint header is supported on Chromium&nbsp;93.
+Other vendors' feedback, namely [WebKit's](https://lists.webkit.org/pipermail/webkit-dev/2021-May/031856.html)
+and [Mozilla's](https://github.com/mozilla/standards-positions/issues/526), is pending.
 
 ## Demo of `Sec-CH-Prefers-Color-Scheme`
 
@@ -179,5 +185,4 @@ Many thanks for valuable feedback and advice from:
 Hero image by [Tdadamemd](https://commons.wikimedia.org/wiki/User:Tdadamemd) on
 [Wikimedia Commons](<https://commons.wikimedia.org/wiki/File:Sun%26Moon_apparent_sizes_(min-max_halved).jpg>).
 
-[powerful-apis]:
-  https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
