@@ -93,6 +93,6 @@ src/scss/_themes.scss
 .eleventyignore
 
 # Serverless
-functions/serverless/**
-!functions/serverless/index.js
+netlify/functions/serverless/**
+!netlify/functions/serverless/index.js
 netlify.toml

@@ -9,7 +9,7 @@ async function handler(event) {
     path: event.path,
     query: event.queryStringParameters,
     inputDir: '.',
-    functionsDir: './functions/',
+    functionsDir: './netlify/functions/',
   });
 
   try {

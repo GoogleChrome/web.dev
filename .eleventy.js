@@ -112,9 +112,17 @@ module.exports = function (config) {
   // Eleventy Serverless
   config.addPlugin(EleventyServerlessBundlerPlugin, {
     name: 'serverless', // The serverless function name from your permalink object
-    functionsDir: './functions/',
-    inputDir: '.',
-    copy: [{from: '.cache', to: 'cache'}],
+    functionsDir: './netlify/functions/',
+    copy: [
+      {from: './.cache', to: '.cache'},
+      {from: './shared', to: 'shared'},
+      {from: './src/site/_collections/', to: 'src/site/_collections/'},
+      {from: './src/site/_drafts/', to: 'src/site/_drafts/'},
+      {from: './src/site/_filters/', to: 'src/site/_filters/'},
+      {from: './src/site/_plugins/', to: 'src/site/_plugins/'},
+      {from: './src/site/_transforms/', to: 'src/site/_transforms/'},
+      {from: './src/site/_utils/', to: 'src/site/_utils/'},
+    ],
   });
 
   // ----------------------------------------------------------------------------
