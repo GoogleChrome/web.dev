@@ -3,7 +3,7 @@ title: URLPattern brings routing to the web platform
 subhead: An approach to standardizing common pattern matching use cases.
 authors:
   - jeffposnick
-date: 2021-07-09
+date: 2021-07-22
 description: An approach to standardizing common pattern matching use cases.
 thumbnail: image/FNkVSAX8UDTTQWQkKftSgGe9clO2/YWhOUaN06kzk4mu93a1v.jpg
 tags:
