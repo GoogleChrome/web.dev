@@ -8,7 +8,7 @@ authors:
 date: 2021-07-26
 description: |
    Many operating systems offer the ability to launch applications automatically when the user logs in. This ability is now available for installed web applications.
-hero: image/SeARmcA1EicLXagFnVOe0ou9cqK2/1zH4LFQQPyCoiuzOFRv4.jpg
+hero: image/SeARmcA1EicLXagFnVOe0ou9cqK2/R0c5ykoGY80UjUa7qpTS.jpg
 alt: Laptop, coffee and stationary tools on desk.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -29,7 +29,7 @@ Which applications the user wants to start automatically will vary from user to 
 
 Run on login is available in Chrome or Edge 91 or later, on Windows, Linux, and MacOS. To configure an app to run on login, visit `about://apps`, right click on the app you want and select 'Start app when you sign in'
 
-{% Img src="image/SeARmcA1EicLXagFnVOe0ou9cqK2/XShRFj91UauErBcVk93e.png", alt="Squoosh app with right click menu open and the option to start app when you sign in selected", width="637", height="378" %}
+{% Img src="image/SeARmcA1EicLXagFnVOe0ou9cqK2/rAkGLZ2lCPsLW4eIqad4.png", alt="Squoosh app with right click menu open and the option to start app when you sign in selected", width="637", height="378" %}
 
 {% Aside %}
 At this moment there is not a configuration that developers can use to enable run on login from their apps, we are researching a way to implement this functionality in the future.
