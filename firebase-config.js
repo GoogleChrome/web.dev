@@ -27,7 +27,7 @@ if (process.env.ELEVENTY_ENV === 'prod') {
     value:
       `script-src 'strict-dynamic' ${hashList.join(' ')} ` +
       `'unsafe-inline' http: https:; object-src 'none'; base-uri 'self'; ` +
-      `frame-ancestors: 'self'; ` +
+      `frame-ancestors 'self'; ` +
       `report-uri https://csp.withgoogle.com/csp/webdev`,
   });
   firebaseJson.hosting.headers[0].headers.push({
