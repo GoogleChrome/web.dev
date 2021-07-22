@@ -32,32 +32,29 @@ const {defaultLocale} = require('../site/_data/site');
  * @example outputPermalink({permalink: 'pl/index.html'}); // '/i18n/pl/'
  *
  * @param {TODO} data
- * @returns {{serverless: string}}
+ * @returns {string}
  */
 module.exports = (data) => {
   const defaultLocaleRegExp = new RegExp(`^/${defaultLocale}/`);
   const localization = data.lang !== defaultLocale;
-
+  let permalink;
   // In eleventy you can set permalink: false to tell it to not output a page.
   // If a page has a false permalink we should completely ignore it.
   if ('permalink' in data && data.permalink === false) {
-    return;
+    return permalink;
   }
 
   if (data.permalink) {
-    return {
-      serverless: data.permalink.replace(
-        /^\/{{lang}}/,
-        localization ? '/i18n/{{lang}}' : '',
-      ),
-    };
-  }
-
-  return {
-    serverless: data.page.inputPath
+    permalink = data.permalink.replace(
+      /^\/{{lang}}/,
+      localization ? '/i18n/{{lang}}' : '',
+    );
+  } else {
+    permalink = data.page.inputPath
       .replace(/^\.\/src\/site\/content/, localization ? 'i18n/' : '')
       .replace(/index.(md|njk)$/, '')
       .replace(/(md|njk)$/, 'html')
-      .replace(defaultLocaleRegExp, '/'),
-  };
+      .replace(defaultLocaleRegExp, '/');
+  }
+  return permalink;
 };

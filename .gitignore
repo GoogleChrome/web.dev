@@ -91,5 +91,8 @@ src/scss/_themes.scss
 # Eleventy
 # We generate our own .eleventyignore file dynamically during builds
 .eleventyignore
+
+# Serverless
 functions/serverless/**
 !functions/serverless/index.js
+netlify.toml
