@@ -62,8 +62,9 @@ class LanguageSelect extends BaseStateElement {
       .filter((link) => link['hreflang'])
       .map((link) => link['hreflang']);
     const currentLang = document.documentElement.lang;
-    const langList = lang.supportedLanguages.filter((language) =>
-      languageVersions.includes(language) || language === currentLang,
+    const langList = lang.supportedLanguages.filter(
+      (language) =>
+        languageVersions.includes(language) || language === currentLang,
     );
     return html`
       <div class="w-display-flex">
