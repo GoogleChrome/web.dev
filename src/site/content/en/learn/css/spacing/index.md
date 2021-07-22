@@ -32,15 +32,15 @@ each with its own strengths and caveats.
 ## HTML spacing
 
 HTML itself provides some methods to space elements.
-The `<br />` and `<hr />` elements allow you to space elements in the block direction,
+The `<br>` and `<hr>` elements allow you to space elements in the block direction,
 which if you are in a latin-based language,
 is top-to-bottom.
 
-If you use a `<br />` element,
+If you use a `<br>` element,
 it will create a line-break,
 just like if you were to press your enter key in a word processor.
 
-The `<hr />` creates a horizontal line with space either-side, known as `margin`.
+The `<hr>` creates a horizontal line with space either-side, known as `margin`.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -312,12 +312,12 @@ will only apply the directional values when it is in its docked/stuck state.
 } %}
 
 In the [logical properties](/learn/css/logical-properties) module,
-you learn about the `inset` property,
-which allows you to set directional values that honor writing mode.
+you learn about the `inset-block` and `inset-inline` properties,
+which allow you to set directional values that honor writing mode.
 
-The `inset` order of properties is the same as TRouBLe with `margin` and `padding`
-but instead of `top`, `right`, `bottom` and `left`,
-it is `block-start`, `inline-end`, `block-end` and `inline-start`
+Both properties are shorthands combining the `start` and `end` values
+and as such accept either one value to be set for `start` and `end` or
+two individual values.
 
 ## Grid and flexbox
 
@@ -348,8 +348,8 @@ to help you create a consistent user interface that has good flow and rhythm.
 A good way to achieve this is use consistent measures for your spacing.
 
 For example, you could commit to using `20px`
-as a consistent measure for all gaps between elements—
-known as gutters—so all layouts look and feel consistent.
+as a consistent measure for all gaps between elements—known as gutters—so
+all layouts look and feel consistent.
 You could also decide to use `1em` as the vertical spacing between flow content,
 which would achieve consistent spacing based on the element's `font-size`.
 Whatever you choose,
