@@ -16,6 +16,7 @@
 
 module.exports = {
   pagination: {
-    before: (shows) => shows.reduce((a, c) => [...a, ...c.elements], []),
+    before: (shows) =>
+      shows.reduce((all, current) => [...all, ...current.elements], []),
   },
 };

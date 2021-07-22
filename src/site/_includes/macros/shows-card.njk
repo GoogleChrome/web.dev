@@ -19,9 +19,7 @@
           in the heading down below, this might be an OK tradeoff.
         #}
         <a href="{{url}}" class="w-card-base__link" tabindex="-1" aria-hidden="true">
-          <figure>
-            {% Img src=hero, alt=title, width="354", height="240", params={fit: 'center', h: '240', w: '354'}, class="shows-card" %}
-          </figure>
+          {% Img src=hero, alt=title, width="354", height="240", params={fit: 'center', h: '240', w: '354'}, class="shows-card" %}
         </a>
       </div>
     {% endif %}

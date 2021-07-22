@@ -45,9 +45,10 @@ module.exports = async () => {
       await CacheAsset(url, {
         duration: '6h',
         type: 'json',
-      }).catch((e) => {
-        console.warn(e);
-        return [];
+      }).catch(() => {
+        throw new Error(
+          `Error fetching JSON for YouTube Playlist ${showData.playlistId} (${key})`,
+        );
       })
     ).map((v) => {
       v.date = new Date(v.date);
@@ -80,7 +81,7 @@ module.exports = async () => {
       show.elements = show.elements.slice(-6);
     }
 
-    // Set created on date and updated date
+    // Set created on date and updated date to be used for indexing to detect updates
     if (show.elements.length > 0) {
       show.data.date = show.elements.slice(-1).pop().data.date;
       const updated = show.elements.slice(0, 1).pop().data.date;

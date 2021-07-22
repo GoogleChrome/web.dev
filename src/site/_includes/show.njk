@@ -9,5 +9,5 @@ layout: default
     </div>
   </header>
   {% YouTube paged.data.videoId %}
-  <p>{{ paged.data.description | md({linkify: true}) | safe }}</p>
+  <p>{{ paged.data.description | md({linkify: true, breaks: true}) | safe }}</p>
 </div>
