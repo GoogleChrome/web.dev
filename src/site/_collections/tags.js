@@ -70,7 +70,7 @@ module.exports = (collections) => {
       elements = elements.slice(-6);
     }
 
-    // Set created on date and updated date
+    // Set created on date and updated date to be used for indexing to detect updates
     if (elements.length > 0) {
       date = elements.slice(-1).pop().data.date;
       const tempUpdated = elements.slice(0, 1).pop().data.date;

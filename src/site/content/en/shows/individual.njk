@@ -1,6 +1,6 @@
 ---
-layout: authors-individual
-title: Authors
+layout: shows-individual
+title: Shows
 permalink: /{{lang}}/{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
 description: Our latest news, updates, and stories for developers
 renderData:
@@ -9,7 +9,7 @@ renderData:
   rss: "{{ paged.href }}feed.xml"
   hero: "{{ paged.data.hero }}"
 pagination:
-  data: collections.authors
+  data: collections.shows
   size: 1
   alias: paged
   resolve: values

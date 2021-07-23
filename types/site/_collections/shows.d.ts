@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,12 @@
  */
 
 declare global {
-  interface TagsDataField extends VirtualDataField {
-    tags: string[];
+  export interface ShowsItem extends VirtualCollectionItem, ShowsDataItem {
+    data?: VirtualDataField;
   }
 
-  export interface TagsItem extends VirtualCollectionItem, TagsDataItem {
-    data?: TagsDataField;
-  }
-
-  export interface Tags {
-    [key: string]: TagsItem;
+  export interface Shows {
+    [key: string]: ShowsItem;
   }
 }
 
