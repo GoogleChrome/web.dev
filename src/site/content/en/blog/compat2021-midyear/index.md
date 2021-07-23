@@ -1,12 +1,12 @@
 ---
 title: "Compat 2021 mid-year update: Flex gap everywhere"
-description:
+subhead:
     "Mid-year update on Compat 2021 —an effort to eliminate browser compatibility problems in five 
     key focus areas: CSS flexbox, CSS Grid, position: sticky, aspect-ratio, and CSS transforms."
 authors:
   - foolip
   - kosamari 
-hero: "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/KQ5oNcLGKdBSuUM8pFPx.jpeg" 
+hero: "image/Wd2sVnt4VLho4jgp7UtIyWFceE02/94aWUQEFQTPIQnn2zOoN.jpg" 
 alt: "A puzzle with a missing piece." 
 date: 2021-07-23 
 updated: 2021-07-23 
@@ -40,9 +40,9 @@ run periodically across multiple browsers and results are available on the
  in test results means greater interoperability of a web feature across multiple browsers. 
 
 <figure class="w-figure">
-{% Img src="image/Wd2sVnt4VLho4jgp7UtIyWFceE02/CFL9C7UHKSrAgI5rLrvv.jpg", alt="Caption: a snapshot of Compat 2021 Dashboard (experimental browser types)", width="800", height="538" %}
+{% Img src="image/Wd2sVnt4VLho4jgp7UtIyWFceE02/CFL9C7UHKSrAgI5rLrvv.jpg", alt="Caption: a snapshot of Compat 2021 Dashboard (experimental browsers)", width="800", height="538" %}
   <figcaption class="w-figcaption">
-    A snapshot of <a href="https://wpt.fyi/compat2021">Compat 2021 Dashboard</a> (experimental browser types).
+    A snapshot of <a href="https://wpt.fyi/compat2021">Compat 2021 Dashboard</a> (experimental browsers).
   </figcaption>
 </figure>
 
@@ -56,7 +56,7 @@ Safari 14.1 shipped the
 [`gap` property for flexbox](https://blogs.igalia.com/svillar/2020/10/01/closing-the-gap-in-flexbox/)
 . The `gap` property is a convenient way to set spacing between items. This property is often used 
 in Grid layout, and support in flexbox layout was one of the most requested features in the 
-[MDN Browser CompatibilityReport](https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html)
+[MDN Browser Compatibility Report](https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html)
 . With this update, the `gap` property in flex layouts is available in all major browsers and a top 
 compatibility challenge is resolved. Safari 14.1 also included many fixes for 
 [images in flexbox](https://blogs.igalia.com/svillar/2021/01/20/flexbox-cats-a-k-a-fixing-images-in-flexbox/), removing the need for old workarounds. 
@@ -72,7 +72,8 @@ Chromium 88, there was also a
 resolving a number of long-standing bugs. Finally, Chromium recently added 
 [support for new alignment keywords](https://bugs.chromium.org/p/chromium/issues/detail?id=1011718)
 : `start`, `end`, `self-start`, `self-end`, `left`, and `right`. These keywords are available to 
-try in [Chrome Canary](https://www.google.com/chrome/canary/). 
+try in [Chrome Canary](https://www.google.com/chrome/canary/) and 
+[Edge Canary](https://www.microsoftedgeinsider.com/en-us/download/canary). 
 
 
 ## CSS Grid  
@@ -142,7 +143,7 @@ Since the announcement in March, all three browser engines have improved their C
 * Firefox went from 83 to 86.
 * Safari went from 64 to 82.
 
-Notably, Safari has pushed to close the compatibility gap by 17 points, thanks to a lot of work from
+Notably, Safari has pushed to close the compatibility gap by 18 points, thanks to a lot of work from
 WebKit contributors. In particular the team at 
 [Igalia contributed](https://www.igalia.com/2021/06/29/Igalia-Developments-in-WebKit-and-Safari-15.html)
 to the `aspect-ratio` property and many improvements to Flexbox and Grid, such as `gap` for flexbox 
