@@ -28,7 +28,7 @@ feedback:
 ## Introduction
 
 {% Aside 'note' %}
-📚 I have done a lot of background research on the history and theory of dark mode,
+I have done a lot of background research on the history and theory of dark mode,
 if you are only interested in working with dark mode, feel free to
 [skip the introduction](#activating-dark-mode-in-the-operating-system).
 {% endAside %}
@@ -110,7 +110,7 @@ explicitly writes: _"The choice of whether to enable a light or dark appearance
 is an aesthetic one for most users, and might not relate to ambient lighting conditions."_
 
 {% Aside 'note' %}
-👩‍🔬 Read up more on
+Read up more on
 [user research regarding why people want dark mode and how they use it](https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d).
 {% endAside %}
 
