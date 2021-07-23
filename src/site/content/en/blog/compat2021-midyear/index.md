@@ -2,12 +2,12 @@
 title: "Compat 2021 mid-year update: Flex gap everywhere"
 description:
     "Mid-year update on Compat 2021 —an effort to eliminate browser compatibility problems in five 
-    key focus areas: CSS Flexbox, CSS Grid, position: sticky, aspect-ratio, and CSS transforms."
+    key focus areas: CSS flexbox, CSS Grid, position: sticky, aspect-ratio, and CSS transforms."
 authors:
   - foolip
   - kosamari 
-hero: "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/KQ5oNcLGKdBSuUM8pFPx.jpeg" alt: "A puzzle
-    with a missing piece." 
+hero: "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/KQ5oNcLGKdBSuUM8pFPx.jpeg" 
+alt: "A puzzle with a missing piece." 
 date: 2021-07-23 
 updated: 2021-07-23 
 tags:
@@ -59,8 +59,7 @@ in Grid layout, and support in flexbox layout was one of the most requested feat
 [MDN Browser CompatibilityReport](https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html)
 . With this update, the `gap` property in flex layouts is available in all major browsers and a top 
 compatibility challenge is resolved. Safari 14.1 also included many fixes for 
-[images in flexbox](https://blogs.igalia.com/svillar/2021/01/20/flexbox-cats-a-k-a-fixing-images-in-flexbox/)
-, removing the need for old workarounds. 
+[images in flexbox](https://blogs.igalia.com/svillar/2021/01/20/flexbox-cats-a-k-a-fixing-images-in-flexbox/), removing the need for old workarounds. 
 
 Firefox resolved rendering of 
 [tables as flex items](https://bugzilla.mozilla.org/show_bug.cgi?id=1674302), bumping Firefox 
@@ -88,7 +87,7 @@ So far in 2021, Safari has improved from 89% to 93% passing tests, and Chromium 
 architecture to resolve more CSS Grid issues, called GridNG. This is an effort led by the Microsoft
 team, and led to the recent increase from 94% to 97% in the 
 [targeted Grid tests](https://wpt.fyi/compat2021?feature=css-grid). You can expect an update on 
-GridNG on the[Edge blog](https://blogs.windows.com/msedgedev/) soon.
+GridNG on the [Edge blog](https://blogs.windows.com/msedgedev/) soon.
 
 ## CSS `position: sticky`
 
