@@ -18,7 +18,7 @@ tags:
 It's time for the mid-year update on Compat 2021—an effort to eliminate browser compatibility
 problems in five key focus areas. For more details about the 
 [#compat2021](https://twitter.com/search?q=%23compat2021) work and how we decided on the 
-areas of focus, check out the [March announcement](https://web.dev/compat2021). 
+areas of focus, check out the [March announcement](/compat2021). 
 
 Improvements to Chromium discussed in this post will reach Chrome, Edge and all Chromium-based
 browsers.
@@ -108,7 +108,7 @@ Beyond `position: sticky`,
 
 The `aspect-ratio` property, which makes it straightforward to set width-to-height ratio, is crucial
 to responsive web design. It is also a solution to prevent 
-[cumulative layout shifts](https://web.dev/cls/). 
+[cumulative layout shifts](/cls/). 
  
 The `aspect-ratio` property is now supported in stable versions of Chrome, Edge, and Firefox, and
 in 
@@ -123,7 +123,7 @@ of all five focus areas for Compat 2021. It has
 feature.  
 
 Learn more about the usage and benefits of the 
-[`aspect-ratio` property on web.dev](https://web.dev/aspect-ratio/).
+[`aspect-ratio` property on web.dev](/aspect-ratio/).
 
 ## CSS transforms
 
@@ -155,4 +155,4 @@ To follow the progress of Compat 2021, keep an eye on the
 [dashboard](https://wpt.fyi/compat2021?feature=summary), subscribe to 
 [our mailing list](https://groups.google.com/g/compat2021), or reach out to usat 
 [@chromiumdev](https://twitter.com/chromiumdev). If you experience any issues make sure to 
-[file a bug](https://web.dev/how-to-file-a-good-bug/) for the affected browser.
+[file a bug](/how-to-file-a-good-bug/) for the affected browser.
