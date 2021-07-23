@@ -211,11 +211,11 @@ This means it will lay out as if it had a single child of "intrinsic-size"
 dimensions, ensuring that your unsized divs still occupy space.
 `contain-intrinsic-size` acts as a placeholder size in lieu of rendered content.
 
-As setting sizes for each element using `contain-intrinsic-size` is not easily 
-done, we can utilize a `IntersectionObserver` and `MutationObserver` to set
-the correct sizes inline. [Alex Russel](https://twitter.com/slightlylate) explains
-how this works in a [two](https://infrequently.org/2020/12/content-visibility-scroll-fix/)-[part](https://infrequently.org/2020/12/resize-resilient-deferred-rendering/) blog post series.
-
+{% Aside %}
+We can use `IntersectionObserver` and `MutationObserver` to set
+the correct sizes inline for each element. [Alex Russell](https://twitter.com/slightlylate) explains
+how this works in [`content-visibility` without jittery scrollbars](https://infrequently.org/2020/12/content-visibility-scroll-fix/), and [Resize-Resilient `content-visibility` Fixes](https://infrequently.org/2020/12/resize-resilient-deferred-rendering/).
+{% endAside %}
 ## Hiding content with `content-visibility: hidden`
 
 What if you want to keep the content unrendered regardless of whether or not it
