@@ -1,7 +1,7 @@
 ---
 title: "Compat 2021 mid-year update: Flex gap everywhere"
 subhead:
-    "Mid-year update on Compat 2021 —an effort to eliminate browser compatibility problems in five 
+    "Mid-year update on Compat 2021—an effort to eliminate browser compatibility problems in five 
     key focus areas: CSS flexbox, CSS Grid, position: sticky, aspect-ratio, and CSS transforms."
 authors:
   - foolip
