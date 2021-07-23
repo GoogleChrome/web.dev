@@ -1,7 +1,7 @@
 ---
-title: "Compat2021 mid-year update: Flex gap everywhere"
+title: "Compat 2021 mid-year update: Flex gap everywhere"
 description:
-    "Mid-year update on Compat2021 —an effort to eliminate browser compatibility problems in five 
+    "Mid-year update on Compat 2021 —an effort to eliminate browser compatibility problems in five 
     key focus areas: CSS Flexbox, CSS Grid, position: sticky, aspect-ratio, and CSS transforms."
 authors:
   - foolip
@@ -15,7 +15,7 @@ tags:
   - CSS
 ---
 
-It's time for the mid-year update on Compat2021—an effort to eliminate browser compatibility
+It's time for the mid-year update on Compat 2021—an effort to eliminate browser compatibility
 problems in five key focus areas. For more details about the 
 [#compat2021](https://twitter.com/search?q=%23compat2021) work and how we decided on the 
 areas of focus, check out the [March announcement](https://web.dev/compat2021). 
@@ -25,7 +25,7 @@ browsers.
 
 ## How we measure progress
 
-You can check the [Compat2021 dashboard](https://wpt.fyi/compat2021?feature=summary) for
+You can check the [Compat 2021 dashboard](https://wpt.fyi/compat2021?feature=summary) for
 [web-platform-tests](https://github.com/web-platform-tests/wpt#the-web-platform-tests-project) 
 to see the number of passing tests and the trending graphs for different browsers. 
 
@@ -117,7 +117,7 @@ in
 [usage](https://www.chromestatus.com/metrics/css/timeline/popularity/657) is increasing.
   
 Although no browser has 100% passing tests, the compatibility gap for `aspect-ratio` is the smallest
-of all five focus areas for Compat2021. It has 
+of all five focus areas for Compat 2021. It has 
 [more than 90% passing tests for all major browsers](https://wpt.fyi/compat2021?feature=aspect-ratio)
 . Moving forward, we'll keep monitoring the progress using this test suite to make it a rock-solid 
 feature.  
@@ -137,7 +137,7 @@ update.
 
 ## Overall score improvements 
 
-Since the announcement in March, all three browser engines have improved their Compat2021 scores: 
+Since the announcement in March, all three browser engines have improved their Compat 2021 scores: 
 
 * Chrome and Edge Dev went from 86 to 92.
 * Firefox went from 83 to 86.
@@ -149,9 +149,9 @@ WebKit contributors. In particular the team at
 to the `aspect-ratio` property and many improvements to Flexbox and Grid, such as `gap` for flexbox 
 and various bug fixes.
 
-## Follow the Compat2021 progress
+## Follow the Compat 2021 progress
 
-To follow the progress of Compat2021, keep an eye on the 
+To follow the progress of Compat 2021, keep an eye on the 
 [dashboard](https://wpt.fyi/compat2021?feature=summary), subscribe to 
 [our mailing list](https://groups.google.com/g/compat2021), or reach out to usat 
 [@chromiumdev](https://twitter.com/chromiumdev). If you experience any issues make sure to 
