@@ -15,7 +15,7 @@ tags:
   - CSS
 ---
 
-It’s time for the mid-year update on Compat2021—an effort to eliminate browser compatibility
+It's time for the mid-year update on Compat2021—an effort to eliminate browser compatibility
 problems in five key focus areas. For more details about the 
 [#compat2021](https://twitter.com/search?q=%23compat2021) work and how we decided on the 
 areas of focus, check out the [March announcement](https://web.dev/compat2021). 
@@ -35,7 +35,7 @@ run periodically across multiple browsers and results are available on the
 [wpt.fyi](https://wpt.fyi/) dashboard.
 {% endAside %}
 
- A simple "passed tests" number doesn’t tell the entire story of browser compatibility, however it
+ A simple "passed tests" number doesn't tell the entire story of browser compatibility, however it
  is one of the signals we use to see the progress of our effort. Fewer differences between browsers
  in test results means greater interoperability of a web feature across multiple browsers. 
 
