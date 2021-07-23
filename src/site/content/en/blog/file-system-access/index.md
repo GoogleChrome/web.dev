@@ -71,7 +71,7 @@ API to ensure that people can easily manage their files. See the
 `Window.chooseFileSystemEntries()` that has been replaced with the three specialized methods
 `Window.showOpenFilePicker()`, `Window.showSaveFilePicker()`, and `Window.showDirectoryPicker()`.
 There were a number of other
-[changes](https://github.com/WICG/file-system-access/blob/master/changes.md) that you can read up
+[changes](https://github.com/WICG/file-system-access/blob/main/changes.md) that you can read up
 on. {% endAside %}
 
 ## Using the File System Access API {: #how-to-use }
@@ -679,7 +679,7 @@ The File System Access API spec was written by
 [spec]: https://wicg.github.io/file-system-access/
 [cr-bug]: https://crbug.com/853326
 [cr-status]: https://www.chromestatus.com/feature/6284708426022912
-[explainer]: https://github.com/WICG/file-system-access/blob/master/EXPLAINER.md
+[explainer]: https://github.com/WICG/file-system-access/blob/main/EXPLAINER.md
 [spec-security]: https://wicg.github.io/file-system-access/#privacy-considerations
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EStorage%3EFileSystem
 [nfs-cr-sec-model]:
@@ -711,9 +711,9 @@ The File System Access API spec was written by
 [text-editor]: https://googlechromelabs.github.io/text-editor/
 [text-editor-source]: https://github.com/GoogleChromeLabs/text-editor/
 [text-editor-fs-helper]:
-  https://github.com/GoogleChromeLabs/text-editor/blob/master/src/inline-scripts/fs-helpers.js
+  https://github.com/GoogleChromeLabs/text-editor/blob/main/src/inline-scripts/fs-helpers.js
 [text-editor-app-js]:
-  https://github.com/GoogleChromeLabs/text-editor/blob/master/src/inline-scripts/app.js
+  https://github.com/GoogleChromeLabs/text-editor/blob/main/src/inline-scripts/app.js
 [download-file]:
   https://developers.google.com/web/updates/2011/08/Downloading-resources-in-HTML5-a-download
 [cr-dev-twitter]: https://twitter.com/chromiumdev
