@@ -401,7 +401,7 @@ pub fn sum_of_squares(numbers: &[i32]) -> i32 {
   numbers
   .iter()
   .par_iter()
-  .map(x => x * x)
+  .map(|x| x * x)
   .sum()
 }
 ```
@@ -425,7 +425,7 @@ pub use wasm_bindgen_rayon::init_thread_pool;
 pub fn sum_of_squares(numbers: &[i32]) -> i32 {
   numbers
   .par_iter()
-  .map(x => x * x)
+  .map(|x| x * x)
   .sum()
 }
 ```
