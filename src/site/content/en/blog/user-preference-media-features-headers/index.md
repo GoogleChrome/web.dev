@@ -176,12 +176,8 @@ of Client Hint Reliability likewise apply to this proposal.
 
 ## Acknowledgements
 
-Many thanks for valuable feedback and advice from:
-
-- [Yoav Weiss](https://github.com/yoavweiss)
-- The W3C TAG reviewers
-  ([w3ctag/design-reviews/issues/632](https://github.com/w3ctag/design-reviews/issues/632))
-
+Many thanks for valuable feedback and advice from
+[Yoav Weiss](https://github.com/yoavweiss).
 Hero image by [Tdadamemd](https://commons.wikimedia.org/wiki/User:Tdadamemd) on
 [Wikimedia Commons](<https://commons.wikimedia.org/wiki/File:Sun%26Moon_apparent_sizes_(min-max_halved).jpg>).
 
