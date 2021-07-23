@@ -1,5 +1,5 @@
 ---
-title: "Compat2021: Eliminating five top compatibility pain points on the web"
+title: "Compat 2021: Eliminating five top compatibility pain points on the web"
 subhead:
     "Google is working with other browser vendors and industry partners to fix the
     top five browser compatibility pain points for web developers: CSS Flexbox,
@@ -46,7 +46,7 @@ surveys.
 
 The goal in 2021 is to eliminate browser compatibility problems in five key focus
 areas so developers can confidently build on them as reliable foundations. This
-effort is called [**#Compat2021**](https://twitter.com/search?q=%23compat2021&src=typed_query&f=live).
+effort is called [**#Compat 2021**](https://twitter.com/search?q=%23compat2021&src=typed_query&f=live).
 
 ## Choosing what to focus on
 
