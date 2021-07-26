@@ -79,6 +79,8 @@ example, to convey that the user prefers a dark theme and reduced motion, the cl
 in the example below.
 
 ```bash
+GET / HTTP/2
+Host: example.com
 Sec-CH-Prefers-Color-Scheme: "dark"
 Sec-CH-Prefers-Reduced-Motion: "reduce"
 ```
