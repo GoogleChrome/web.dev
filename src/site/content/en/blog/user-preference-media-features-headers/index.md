@@ -152,7 +152,25 @@ the inlined CSS changes according to the user's preferred color scheme.
 1. The server can then tailor the response to the client's preferences accordingly and, for example,
    inline the CSS responsible for the dark theme into the response body.
 
-## Privacy and Security Considerations
+## Node.js example
+
+The Node.js example below, written for the popular Express.js framework, shows how
+dealing with the `Sec-CH-Prefers-Color-Scheme` client hint header could look like in practice.
+This code is what actually powers the [demo](#demo-of-sec-ch-prefers-color-scheme) above.
+
+```js
+app.get("/", (req, res) => {
+  // Tell the client the server accepts the `Sec-CH-Prefers-Color-Scheme` client hint…
+  res.set("Accept-CH", "Sec-CH-Prefers-Color-Scheme");
+  // …and that the server's response will vary based on its value…
+  res.set("Vary", "Sec-CH-Prefers-Color-Scheme");
+  // …and that the server considers this client hint a _critical_ client hint.
+  res.set("Critical-CH", "Sec-CH-Prefers-Color-Scheme");
+  // Read the user's preferred color scheme from the headers…
+  const prefersColorScheme = req.get("sec-ch-prefers-color-scheme");
+  // …and send the adequate HTML response with the right CSS inlined.
+  res.send(getHTML(prefersColorScheme));
+});
 
 The Chromium team has designed and implemented User Preference Media Features Client Hints Headers
 using the core principles defined in [Controlling Access to Powerful Web Platform
