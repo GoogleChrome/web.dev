@@ -172,6 +172,8 @@ app.get("/", (req, res) => {
   res.send(getHTML(prefersColorScheme));
 });
 
+## Privacy and security considerations
+
 The Chromium team has designed and implemented User Preference Media Features Client Hints Headers
 using the core principles defined in [Controlling Access to Powerful Web Platform
 Features][powerful-apis], including user control, transparency, and ergonomics.
