@@ -310,7 +310,7 @@ when it comes to representing anonymous and named groups.
   rules used for URL encoding of that particular component. Unicode characters
   within `pathname` will be
   [percent-encoded](https://developer.mozilla.org/en-US/docs/Glossary/percent-encoding),
-  so a `pathname` pattern like `/café` is normalized to `/caf%C3%A`
+  so a `pathname` pattern like `/café` is normalized to `/caf%C3%A9`
   automatically. Unicode characters in the `hostname` are automatically encoded
   using [Punycode](https://en.wikipedia.org/wiki/Punycode), rather than
   percent-encoding.
