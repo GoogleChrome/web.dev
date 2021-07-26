@@ -7,7 +7,7 @@ subhead:
 authors:
   - thomassteiner
   - beaufortfrancois
-date: 2021-07-22
+date: 2021-07-26
 # updated: 2021-07-22
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/8O1JKZ6YxdA0IIuYtECB.jpg
 alt: Sun and moon
