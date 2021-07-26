@@ -142,7 +142,7 @@ using a weighting or scoring system to make those calculations.
 By making a rule more specific,
 you can cause it to be applied even if some other CSS that matches the selector appears later in the CSS.
 
-In [the next lesson](/earn/css/specificity) you can learn the details of how specificity is calculated,
+In [the next lesson](/learn/css/specificity) you can learn the details of how specificity is calculated,
 however keeping a few things in mind will help you avoid too many specificity issues.
 
 CSS targeting a class on an element will make that rule more specific,
