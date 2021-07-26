@@ -91,7 +91,7 @@ respectively.
 
 {% Aside %} While the
 [User Preference Media Features Client Hints Headers](https://wicg.github.io/user-preference-media-features-headers/)
-proposal defines a set of client hints, Chromium for now only supports
+proposal defines a set of client hints, Chromium at the time of writing only supports
 `Sec-CH-Prefers-Color-Scheme`. {% endAside %}
 
 The list of the client hints is modeled after the
@@ -126,7 +126,7 @@ the inlined CSS changes according to the user's preferred color scheme.
 
 1. The client makes an initial request to the server.
    ```bash
-   GET / HTTP/1.1
+   GET / HTTP/2
    Host: example.com
    ```
 1. The server responds, telling the client via `Accept-CH` that it accepts the
@@ -143,7 +143,7 @@ the inlined CSS changes according to the user's preferred color scheme.
 1. The client then retries the request, telling the server via `Sec-CH-Prefers-Color-Scheme` that it
    has a user preference for dark-schemed content.
    ```bash
-   GET / HTTP/1.1
+   GET / HTTP/2
    Host: example.com
    Sec-CH-Prefers-Color-Scheme: "dark"
    ```
