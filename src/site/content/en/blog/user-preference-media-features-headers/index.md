@@ -136,7 +136,7 @@ the inlined CSS changes according to the user's preferred color scheme.
    `Critical-CH` it considers `Sec-CH-Prefers-Color-Scheme` a Critical Client Hint that it also
    varies the response on as conveyed by `Vary`.
    ```bash
-   HTTP/1.1 200 OK
+   HTTP/2 200 OK
    Content-Type: text/html
    Accept-CH: Sec-CH-Prefers-Color-Scheme, Sec-CH-Prefers-Contrast
    Vary: Sec-CH-Prefers-Color-Scheme
