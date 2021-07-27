@@ -17,7 +17,7 @@ tags:
 ---
 Run on login gives the user the ability to choose which applications start
 automatically when they first log into their computer. This ability has been
-available in many operating systems for a long time, but it was reserved for
+available in many operating systems for a long time, but was reserved for
 platform specific applications, now it is available for installed web applications too.
 
 ## Save users time
