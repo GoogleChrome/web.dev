@@ -11,7 +11,6 @@ import {
   runTransaction,
   onSnapshot,
 } from 'firebase/firestore';
-import {initializePerformance} from 'firebase/performance';
 
 import {firebaseConfig} from 'webdev_config';
 import {store} from './store';
@@ -20,8 +19,7 @@ import {clearSignedInState} from './actions';
 import {trackError} from './analytics';
 
 function initialize() {
-  const firebase = initializeApp(firebaseConfig);
-  initializePerformance(firebase); // initialize performance monitoring
+  initializeApp(firebaseConfig);
 
   let firestoreUserUnsubscribe = () => {};
   let lastSavedUrl = null;
