@@ -9,7 +9,7 @@ date: 2021-07-26
 description: |
    Many operating systems offer the ability to launch applications automatically when the user logs in. This ability is now available for installed web applications.
 hero: image/SeARmcA1EicLXagFnVOe0ou9cqK2/R0c5ykoGY80UjUa7qpTS.jpg
-alt: Laptop, coffee and stationary tools on desk.
+alt: Laptop, coffee, and stationary tools on desk.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - progressive-web-apps
