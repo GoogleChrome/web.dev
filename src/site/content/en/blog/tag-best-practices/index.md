@@ -90,7 +90,8 @@ manager that injected it—rather than the tag itself.
   src="image/j2RDdG43oidUy6AL6LovThjeX9c2/cjLFJStmZvkQkr4DYPlk.png",
   alt="Screenshot of creating a custom tag in Google Tag Manager",
   width="800",
-  height="470"
+  height="470",
+  class="screenshot"
 %}
 
 
@@ -143,7 +144,8 @@ templates will not work for all use cases.
   src="image/j2RDdG43oidUy6AL6LovThjeX9c2/QRz6pn83YE6plVivynA7.png",
   alt="Screenshot of using a custom template in Google Tag Manager",
   width="800",
-  height="388"
+  height="388",
+  class="screenshot"
 %}
 
 
@@ -208,7 +210,7 @@ response is not relevant ( for example, when sending data to analytics
 providers). The
 [`navigator.sendBeacon()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon)
 and [`fetch()
-keepalive`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#parameters)`
+keepalive`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#parameters)
 APIs are designed to address this same use case but are arguably more reliable
 than pixels. 
 
@@ -512,14 +514,14 @@ is not well maintained and possibly misused.
 
 Google Tag Manager
 [limits](https://support.google.com/tagmanager/answer/2772488?hl=en) container
-size to 200 KB and will warn about container size starting at 140 KB. However,
+size to 200&nbsp;KB and will warn about container size starting at 140&nbsp;KB. However,
 most sites should aim to keep their containers far smaller than this. For
-perspective, the median site container is around 6 KB.
+perspective, the median site container is around 6&nbsp;KB.
 
 To determine the size of your container, look at the size of the response
 returned by `https://www.googletagmanager.com/gtag/js?id=YOUR\_ID`. This
 response contains the Google Tag Manager library plus the contents of the
-container. By itself, the Google Tag Manager library is around 33 KB.
+container. By itself, the Google Tag Manager library is around 33&nbsp;KB.
 
 
 ### Name your container versions
@@ -610,4 +612,4 @@ way to reverse this trend. The ideal frequency for doing this will depend on how
 often your site's tags are updated.
 
 For more information, see [Keeping third-party scripts under
-control](https://web.dev/controlling-third-party-scripts/).
+control](/controlling-third-party-scripts/).
