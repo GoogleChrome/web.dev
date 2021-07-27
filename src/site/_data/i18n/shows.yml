@@ -10,6 +10,16 @@ mother-language-day:
   description:
     en: 'February 21st is International Mother Language Day! To celebrate, each week we’ll be releasing a new video hosted by one of our team members in their mother language.'
 
+gui-challenges:
+  title:
+    en: GUI Challenges
+  description:
+    en: | 
+      There is no one way to solve interfaces challenges. 
+      In this series, we'll be challenging ourselves and each other 
+      to find multiple ways to solve interface challenges 
+      and expand the diversity of our skills.
+
 designing-in-the-browser:
   title:
     en: 'Designing in the Browser'
