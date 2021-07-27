@@ -37,7 +37,7 @@ ability as well.
 
 Run on login is available in Chrome or Edge 91 or later, on Windows, Linux,
 and MacOS. To configure an app to run on login, visit `about://apps`, right
-click on the app you want and select 'Start app when you sign in'
+click on the app you want and select 'Start app when you sign in'.
 
 {% Img src="image/SeARmcA1EicLXagFnVOe0ou9cqK2/rAkGLZ2lCPsLW4eIqad4.png",
 alt="Squoosh app with right click menu open and the option to start app when
