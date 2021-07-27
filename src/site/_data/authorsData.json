@@ -959,32 +959,12 @@
     "image": "image/kns0INkO77RkiEStzHWYrugyWj32/SCSIEb0Qtv6tPWel5tfd.jpeg"
   },
   "derekherman": {
-    "name": {
-      "given": "Derek",
-      "family": "Herman"
-    },
-    "org": {
-      "name": "XWP"
-    },
-    "description": {
-      "en": "CTO at XWP"
-    },
     "country": "US",
     "github": "derekherman",
     "twitter": "derekherman",
     "image": "image/8L1ESx211yWBm8uNAgqvUc2GwNk1/Co3mEQ34Z8eAw6lPGx5o.jpg"
   },
   "dero": {
-    "name": {
-      "given": "Jaroslav",
-      "family": "Polakovič"
-    },
-    "org": {
-      "name": "XWP"
-    },
-    "description": {
-      "en": "Software Engineer"
-    },
     "country": "CZ",
     "github": "dero",
     "twitter": "dero_name",
