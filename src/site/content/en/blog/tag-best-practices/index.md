@@ -184,7 +184,7 @@ In some situations third-party scripts can be replaced with image or iframe
 "pixels". Compared to their script-based counterparts, these pixels may support
 less functionality; however, because there is no JavaScript execution, they are
 also the most performant and secure type of tag. Pixels have a very small
-resource size (less than 1 KB) and do not cause layout shifts.
+resource size (less than 1&nbsp;KB) and do not cause layout shifts.
 
 Check with your third-party provider for more information on their support for
 pixels. Additionally, you can try inspecting their code for a `<noscript>` tag.
