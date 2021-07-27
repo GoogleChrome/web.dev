@@ -9,3 +9,9 @@ mother-language-day:
     en: 'Mother Language Day'
   description:
     en: 'February 21st is International Mother Language Day! To celebrate, each week we’ll be releasing a new video hosted by one of our team members in their mother language.'
+
+designing-in-the-browser:
+  title:
+    en: 'Designing in the Browser'
+  description:
+    en: 'Designing in the Browser explores the intersection of design and front-end development, teaching you how to build beautiful UIs with modern web standards in mind.'
