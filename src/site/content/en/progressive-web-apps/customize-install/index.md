@@ -162,7 +162,7 @@ indicating whether the browser is running in standalone mode.
 function getPWADisplayMode() {
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
   if (document.referrer.startsWith('android-app://')) {
-    return 'twa';
+    return 'pwa';
   } else if (navigator.standalone || isStandalone) {
     return 'standalone';
   }
