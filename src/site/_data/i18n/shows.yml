@@ -19,3 +19,9 @@ gui-challenges:
       In this series, we'll be challenging ourselves and each other 
       to find multiple ways to solve interface challenges 
       and expand the diversity of our skills.
+
+designing-in-the-browser:
+  title:
+    en: 'Designing in the Browser'
+  description:
+    en: 'Designing in the Browser explores the intersection of design and front-end development, teaching you how to build beautiful UIs with modern web standards in mind.'
