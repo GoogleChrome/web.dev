@@ -32,9 +32,8 @@ module.exports = {
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
   thumbnail: 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vU99HKzIf5EUPnzGVPf1.png',
-  isBannerEnabled: true,
-  banner:
-    'PWA Summit: a conference to help everyone succeed with PWAs is happening Oct 6 & 7. [Submit your talk now](https://pwasummit.org).',
+  isBannerEnabled: false,
+  banner: '',
   areCoursesEnabled: true,
   paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',

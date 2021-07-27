@@ -61,6 +61,7 @@ const pages = require('./src/site/_collections/pages');
 const {
   postsWithLighthouse,
 } = require('./src/site/_collections/posts-with-lighthouse');
+const shows = require('./src/site/_collections/shows');
 const tags = require('./src/site/_collections/tags');
 
 // Filters
@@ -141,6 +142,7 @@ module.exports = function (config) {
   config.addCollection('newsletters', newsletters);
   config.addCollection('pages', pages);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
+  config.addCollection('shows', shows);
   config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
@@ -175,7 +177,7 @@ module.exports = function (config) {
   config.addFilter('courseToc', courseToc);
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
   config.addFilter('padStart', padStart);
-  config.addFilter('minifyJs', minifyJs);
+  config.addNunjucksAsyncFilter('minifyJs', minifyJs);
   config.addFilter('cspHash', cspHash);
 
   // ----------------------------------------------------------------------------

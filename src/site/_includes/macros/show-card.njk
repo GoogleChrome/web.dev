@@ -1,0 +1,40 @@
+{#
+  @typedef {ShowsItem} show - The show to display in card format.
+#}
+{% macro showCard(show) %}
+
+{% set data = show.data %}
+{% set title = data.title %}
+{% set description = data.subhead %}
+{% set url = show.url %}
+{% set hero = data.thumbnail or null %}
+
+<div class="w-card" role="listitem">
+  <article class="w-card-base {{ 'w-card-base__with--cover' if hero }}">
+    {% if hero %}
+      <div class="w-card-base__cover">
+        {#
+          We intentionally hide the hero image from screen readers because it appears out of context
+          from the rest of the article content and may be confusing. Since the link for the article is duplicated
+          in the heading down below, this might be an OK tradeoff.
+        #}
+        <a href="{{url}}" class="w-card-base__link" tabindex="-1" aria-hidden="true">
+          {% Img src=hero, alt=title, width="354", height="240", params={fit: 'fit', h: '240', w: '354'} %}
+        </a>
+      </div>
+    {% endif %}
+    <div class="w-card-base__blurb">
+      <a href="{{url}}" class="w-card-base__link">
+        <h2 class="{{ 'w-card-base__headline--with-image' if hero else 'w-card-base__headline' }}">{{title}}</h2>
+      </a>
+      <div class="w-card-base__desc">
+        {% if description %}
+          <a class="w-card-base__link" tabindex="-1" href="{{url}}">
+            <p class="w-card-base__subhead">{{description}}</p>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </article>
+</div>
+{% endmacro %}

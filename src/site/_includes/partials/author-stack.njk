@@ -1,8 +1,8 @@
 <div class="flow flow-space-400">
   {%- for item in authors -%}
-    {%- set author = authorsData[item] -%}
-    {%- set authorName = author.name.given + ' ' + author.name.family -%}
-    {%- set authorDesc = author.descriptions[locale] or author.descriptions.en -%}
+    {%- set author = collections.authors[item] -%}
+    {%- set authorName = author.title | i18n(locale) -%}
+    {%- set authorDesc = author.description | i18n(locale) -%}
     <div class="display-flex align-center">
       {% Img class="flex-shrink-none rounded-full", src=author.image, alt=authorName, width="80", height="80" %}
       <div class="display-flex direction-column gap-left-300">

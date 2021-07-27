@@ -1,0 +1,79 @@
+/**
+ * IMPORTED TOKENS
+ * These are generated with the design tokens data
+*/
+@import 'tokens';
+
+/**
+ * IMPORTED THEMES
+ * These themes are for dark/light mode and abstract CSS Custom
+ * property references to design tokens into more contextual references
+*/
+@import 'themes';
+
+/**
+ * CORE CONFIG
+ * This powers everything from utility class generation to breakpoints
+ * to enabling/disabling pre-built components/utilities.
+ */
+$gorko-config: (
+  'css-vars': (
+    'color': $gorko-colors,
+    'themes': $gorko-themes
+  ),
+  'bg': (
+    'items': $gorko-theme-keys,
+    'output': 'standard',
+    'property': 'background'
+  ),
+  'color': (
+    'items': $gorko-theme-keys,
+    'output': 'standard',
+    'property': 'color'
+  ),
+  'flow-space': (
+    'items': $gorko-space-scale,
+    'output': 'standard',
+    'property': '--flow-space'
+  ),
+  'font': (
+    'items': $gorko-fonts,
+    'output': 'standard',
+    'property': 'font-family'
+  ),
+  'gap-top': (
+    'items': $gorko-space-scale,
+    'output': 'standard',
+    'property': 'margin-top'
+  ),
+  'leading': (
+    'items': (
+      'flat': '1.2',
+      'short': '1.35',
+      'regular': '1.7'
+    ),
+    'output': 'standard',
+    'property': 'line-height'
+  ),
+  'measure': (
+    'items': (
+      'short': '40ch',
+      'long': '65ch'
+    ),
+    'output': 'standard',
+    'property': 'max-width'
+  ),
+  'text': (
+    'items': $gorko-size-scale,
+    'output': 'standard',
+    'property': 'font-size'
+  ),
+  'weight': (
+    'items': $gorko-font-weights,
+    'output': 'standard',
+    'property': 'font-weight'
+  ),
+  'breakpoints': (
+    'md': '(min-width: 37em)'
+  )
+);

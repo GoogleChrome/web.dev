@@ -1,0 +1,1062 @@
+jakearchibald:
+  title:
+    en: Jake Archibald
+  description:
+    en: Human boy working on web standards at Google
+
+aaronkrajeski:
+  title:
+    en: Aaron Krajeski
+  description:
+    en: Overly concerned with glowing rectangles
+
+felixarntz:
+  title:
+    en: Felix Arntz
+  description:
+    en: Developer Programs Engineer at Google, contributing to the CMS ecosystem
+
+amandabaker:
+  title:
+    en: Amanda Baker
+  description:
+    en: Software Engineer on the Microsoft Edge team
+
+kaycebasques:
+  title:
+    en: Kayce Basques
+  description:
+    en: Technical Writer, Chrome DevTools & Lighthouse
+
+johyphenel:
+  title:
+    en: Jo-el van Bergen
+  description:
+    en: Our latest news, updates, and stories by Jo-el van Bergen.
+
+sgomes:
+  title:
+    en: Sérgio Gomes
+  description:
+    en: Our latest news, updates, and stories by Sérgio Gomes.
+
+beaufortfrancois:
+  title:
+    en: François Beaufort
+  description:
+    en: Dives into Chromium source code
+
+mathiasbynens:
+  title:
+    en: Mathias Bynens
+  description:
+    en: V8 JavaScript whisperer
+
+hongchanchoi:
+  title:
+    en: Hongchan Choi
+  description:
+    en: Software Engineer working on Chromium
+
+robdodson:
+  title:
+    en: Rob Dodson
+  description:
+    en: Googler working on web stuff. I help build web.dev!
+
+samdutton:
+  title:
+    en: Sam Dutton
+  description:
+    en: Sam is a Developer Advocate
+
+arthurevans:
+  title:
+    en: Arthur Evans
+  description:
+    en: Arthur is a Tech Writer
+
+exterkamp:
+  title:
+    en: Shane Exterkamp
+  description:
+    en: Shane is a SWE on Lighthouse
+
+sfourault:
+  title:
+    en: Sébastien Fourault
+  description:
+    en: Our latest news, updates, and stories by Sébastien Fourault.
+
+tomgreenaway:
+  title:
+    en: Tom Greenaway
+  description:
+    en: Tom is the Games Lead for the Chrome & Web Developer Relations team at Google
+
+ilyagrigorik:
+  title:
+    en: Ilya Grigorik
+  description:
+    en: Our latest news, updates, and stories by Ilya Grigorik.
+
+yigu:
+  title:
+    en: Yi Gu
+  description:
+    en: Software Engineer working on Chromium
+
+alsan:
+  title:
+    en: Kaan Alsan
+  description:
+    en: Former Software Engineer Intern working on Chromium
+
+katiehempenius:
+  title:
+    en: Katie Hempenius
+  description:
+    en: Our latest news, updates, and stories by Katie Hempenius.
+
+mihajlija:
+  title:
+    en: Milica Mihajlija
+  description:
+    en: Our latest news, updates, and stories by Milica Mihajlija.
+
+mustafakurtuldu:
+  title:
+    en: Mustafa Kurtuldu
+  description:
+    en: Our latest news, updates, and stories by Mustafa Kurtuldu.
+
+agektmr:
+  title:
+    en: Eiji Kitamura
+  description:
+    en: Developer Advocate in Tokyo
+
+kosamari:
+  title:
+    en: Mariko Kosaka
+  description:
+    en: Mariko is a drawsplainer
+
+petelepage:
+  title:
+    en: Pete LePage
+  description:
+    en: Developer Advocate on the web team at Google, taking the sharp edges off new stuff & helping make the web better for developers! (he/him)
+
+pjmclachlan:
+  title:
+    en: Penny McLachlan
+  description:
+    en: Penny is a Product Manager on the Chrome Web Platform team responsible for Chrome permissions, notifications, and progressive web apps.
+
+developit:
+  title:
+    en: Jason Miller
+  description:
+    en: Jason is a Web DevRel focused on speed and the JS ecosystem.
+
+addyosmani:
+  title:
+    en: Addy Osmani
+  description:
+    en: Eng Manager working on Chrome and Web Platform
+
+jeffposnick:
+  title:
+    en: Jeff Posnick
+  description:
+    en: Web DevRel @ Google
+
+pozdnyakov:
+  title:
+    en: Mikhail Pozdnyakov
+  description:
+    en: Mikhail is an Engineer at Intel
+
+demianrenzulli:
+  title:
+    en: Demian Renzulli
+  description:
+    en: Our latest news, updates, and stories by Demian Renzulli.
+
+alexshalamov:
+  title:
+    en: Alex Shalamov
+  description:
+    en: Alex is an Engineer at Intel
+
+rsolomakhin:
+  title:
+    en: Rouslan Solomakhin
+  description:
+    en: Our latest news, updates, and stories by Rouslan Solomakhin.
+
+thomassteiner:
+  title:
+    en: Thomas Steiner
+  description:
+    en: Tom is a Developer Advocate
+
+surma:
+  title:
+    en: Surma
+  description:
+    en: Our latest news, updates, and stories by Surma.
+
+samthor:
+  title:
+    en: Sam Thorogood
+  description:
+    en: ¯‍\‍_‍(‍ツ‍)‍_‍/‍¯
+
+rachelandrew:
+  title:
+    en: Rachel Andrew
+  description:
+    en: Freelance writer and editor. CSS Working Group Invited Expert.
+
+rviscomi:
+  title:
+    en: Rick Viscomi
+  description:
+    en: Our latest news, updates, and stories by Rick Viscomi.
+
+philipwalton:
+  title:
+    en: Philip Walton
+  description:
+    en: Engineer at Google working on the Web Platform
+
+ekharvey:
+  title:
+    en: Lizzi Harvey
+  description:
+    en: Lizzi is a Tech Writer at Google
+
+houssein:
+  title:
+    en: Houssein Djirdeh
+  description:
+    en: Our latest news, updates, and stories by Houssein Djirdeh.
+
+megginkearney:
+  title:
+    en: Meggin Kearney
+  description:
+    en: Meggin is a Tech Writer
+
+dgash:
+  title:
+    en: Dave Gash
+  description:
+    en: Dave is a Tech Writer
+
+mdiblasio:
+  title:
+    en: Michael DiBlasio
+  description:
+    en: Our latest news, updates, and stories by Michael DiBlasio.
+
+jeremywagner:
+  title:
+    en: Jeremy Wagner
+  description:
+    en: Our latest news, updates, and stories by Jeremy Wagner.
+
+gmimani:
+  title:
+    en: Garima Mimani
+  description:
+    en: Our latest news, updates, and stories by Garima Mimani.
+
+martinsplitt:
+  title:
+    en: Martin Splitt
+  description:
+    en: Our latest news, updates, and stories by Martin Splitt.
+
+uskay:
+  title:
+    en: Yusuke Utsunomiya
+  description:
+    en: Tech consultant for Web, Chrome & AMP
+
+jormears:
+  title:
+    en: Jordon Mears‎
+  description:
+    en: Jordon is a Tech Lead Manager working on Google Earth.
+
+martinschierle:
+  title:
+    en: Martin Schierle
+  description:
+    en: Our latest news, updates, and stories by Martin Schierle.
+
+joemedley:
+  title:
+    en: Joe Medley
+  description:
+    en: If an API's not documented it doesn't exist
+
+egsweeny:
+  title:
+    en: Elizabeth Sweeny
+  description:
+    en: Product manager for developer tools on the web platform in Chrome.
+
+rowan_m:
+  title:
+    en: Rowan Merewood
+  description:
+    en: Developer Advocate for Chrome and web
+
+adamargyle:
+  title:
+    en: Adam Argyle
+  description:
+    en: Developer Advocate for Chrome
+
+lunalu:
+  title:
+    en: Luna Lu
+  description:
+    en: Build and enforce guardrails for the web.
+
+geddski:
+  title:
+    en: Dave Geddes
+  description:
+    en: Founder at Mastery Games
+
+danyao:
+  title:
+    en: Danyao Wang
+  description:
+    en:
+
+linahansson:
+  title:
+    en: Lina Hansson
+  description:
+    en: Lina is a Conversion Specialist at Google, focused on mobile CRO and site speed.
+
+bojanpavic:
+  title:
+    en: Bojan Pavic
+  description:
+    en: Our latest news, updates, and stories by Bojan Pavic.
+
+ansteychris:
+  title:
+    en: Chris Anstey
+  description:
+    en: Our latest news, updates, and stories by Chris Anstey.
+
+mfriesenhahn:
+  title:
+    en: Michael Friesenhahn
+  description:
+    en: Michael is a Tech Writer
+
+hbatra:
+  title:
+    en: Harleen Batra
+  description:
+    en: Harleen is a Developer Marketing Manager
+
+mgechev:
+  title:
+    en: Minko Gechev
+  description:
+    en: Our latest news, updates, and stories by Minko Gechev.
+
+sfluin:
+  title:
+    en: Stephen Fluin
+  description:
+    en: Our latest news, updates, and stories by Stephen Fluin.
+
+mohamedzamakhan:
+  title:
+    en: Zama Khan Mohammed
+  description:
+    en: Our latest news, updates, and stories by Zama Khan Mohammed.
+
+dougsillars:
+  title:
+    en: Doug Sillars
+  description:
+    en: Our latest news, updates, and stories by Doug Sillars.
+
+samrichard:
+  title:
+    en: Sam Richard
+  description:
+    en: Our latest news, updates, and stories by Sam Richard.
+
+yoavweiss:
+  title:
+    en: Yoav Weiss
+  description:
+    en: Our latest news, updates, and stories by Yoav Weiss.
+
+katejeffreys:
+  title:
+    en: Kate Jeffreys
+  description:
+    en: Technical Writer at Google
+
+jimper:
+  title:
+    en: Jonathon Imperiosi
+  description:
+    en: Our latest news, updates, and stories by Jonathon Imperiosi.
+
+robhazan:
+  title:
+    en: Rob Hazan
+  description:
+    en: Our latest news, updates, and stories by Rob Hazan.
+
+gernberg:
+  title:
+    en: Gustav Ernberg von Heijne
+  description:
+    en: Our latest news, updates, and stories by Gustav Ernberg von Heijne.
+
+thebengeu:
+  title:
+    en: Beng Eu
+  description:
+    en: AdSpeed tech lead at Google
+
+yosuke_furukawa:
+  title:
+    en: Yosuke Furukawa
+  description:
+    en: Our latest news, updates, and stories by Yosuke Furukawa.
+
+satoshi_arai:
+  title:
+    en: Satoshi Arai
+  description:
+    en: Our latest news, updates, and stories by Satoshi Arai.
+
+kento_tsuji:
+  title:
+    en: Kento Tsuji
+  description:
+    en: Our latest news, updates, and stories by Kento Tsuji.
+
+ajain:
+  title:
+    en: Ankit Jain
+  description:
+    en: Our latest news, updates, and stories by Ankit Jain.
+
+kenjibaheux:
+  title:
+    en: Kenji Baheux
+  description:
+    en: Our latest news, updates, and stories by Kenji Baheux.
+
+una:
+  title:
+    en: Una Kravets
+  description:
+    en: Developer Advocate for CSS, UI & DevTools at Chrome
+
+phillipkriegel:
+  title:
+    en: Phillip Kriegel
+  description:
+    en: Phillip is a Specialist Engineer
+
+tigeroakes:
+  title:
+    en: Tiger Oakes
+  description:
+    en: Developer working on Firefox Preview
+
+kumagi:
+  title:
+    en: Hiroki Kumazaki
+  description:
+    en: Our latest news, updates, and stories by Hiroki Kumazaki.
+
+andreban:
+  title:
+    en: André Cipriani Bandarra
+  description:
+    en: Andre is a Developer Advocate
+
+koto:
+  title:
+    en: Krzysztof Kotowicz
+  description:
+    en: Our latest news, updates, and stories by Krzysztof Kotowicz.
+
+lwe:
+  title:
+    en: Lukas Weichselbaum
+  description:
+    en: Our latest news, updates, and stories by Lukas Weichselbaum.
+
+dgrogan:
+  title:
+    en: David Grogan
+  description:
+    en: Our latest news, updates, and stories by David Grogan.
+
+ulan:
+  title:
+    en: Ulan Degenbaev
+  description:
+    en: Our latest news, updates, and stories by Ulan Degenbaev.
+
+domenic:
+  title:
+    en: Domenic Denicola
+  description:
+    en: Our latest news, updates, and stories by Domenic Denicola.
+
+cjamcl:
+  title:
+    en: Connor Clark
+  description:
+    en: Our latest news, updates, and stories by Connor Clark.
+
+paullewis:
+  title:
+    en: Paul Lewis
+  description:
+    en: Our latest news, updates, and stories by Paul Lewis.
+
+patrickkettner:
+  title:
+    en: Patrick Kettner
+  description:
+    en: Our latest news, updates, and stories by Patrick Kettner.
+
+sebabenz:
+  title:
+    en: Sebastian Benz
+  description:
+    en: Our latest news, updates, and stories by Sebastian Benz.
+
+syg:
+  title:
+    en: Shu-yu Guo
+  description:
+    en: Our latest news, updates, and stories by Shu-yu Guo.
+
+nattestad:
+  title:
+    en: Thomas Nattestad
+  description:
+    en: Our latest news, updates, and stories by Thomas Nattestad.
+
+maudn:
+  title:
+    en: Maud Nalpas
+  description:
+    en: Developer Advocate for Chrome and web
+
+morss:
+  title:
+    en: Ben Morss
+  description:
+    en: Our latest news, updates, and stories by Ben Morss.
+
+ericbidelman:
+  title:
+    en: Eric Bidelman
+  description:
+    en: Our latest news, updates, and stories by Eric Bidelman.
+
+jungkees:
+  title:
+    en: Jungkee Song
+  description:
+    en: PM on the Microsoft Edge team
+
+leszeks:
+  title:
+    en: Leszek Swirski
+  description:
+    en: Our latest news, updates, and stories by Leszek Swirski.
+
+nainar:
+  title:
+    en: Naina Raisinghani
+  description:
+    en: Our latest news, updates, and stories by Naina Raisinghani.
+
+crystallambert:
+  title:
+    en: Crystal Lambert
+  description:
+    en: Our latest news, updates, and stories by Crystal Lambert.
+
+dalmaer:
+  title:
+    en: Dion Almaer
+  description:
+    en: Our latest news, updates, and stories by Dion Almaer.
+
+bmcquade:
+  title:
+    en: Bryan McQuade
+  description:
+    en: Our latest news, updates, and stories by Bryan McQuade.
+
+drott:
+  title:
+    en: Dominik Röttsches
+  description:
+    en: Our latest news, updates, and stories by Dominik Röttsches.
+
+yaraki:
+  title:
+    en: Yuichi Araki
+  description:
+    en: Developer Programs Engineer at Google
+
+kevinellis:
+  title:
+    en: Kevin Ellis
+  description:
+    en: Software Engineer on the web platform.
+
+robertnyman:
+  title:
+    en: Robert Nyman
+  description:
+    en: Developer advocate on the web team at Google.
+
+foolip:
+  title:
+    en: Philip Jägenstedt
+  description:
+    en: Our latest news, updates, and stories by Philip Jägenstedt.
+
+olgademidova:
+  title:
+    en: Olga Demidova
+  description:
+    en: Product Marketing Manager
+
+gilbertococchi:
+  title:
+    en: Gilberto Cocchi
+  description:
+    en: Our latest news, updates, and stories by Gilberto Cocchi.
+
+antonkarlovskiy:
+  title:
+    en: Anton Karlovskiy
+  description:
+    en: Our latest news, updates, and stories by Anton Karlovskiy.
+
+rkochman:
+  title:
+    en: Rob Kochman
+  description:
+    en: Our latest news, updates, and stories by Rob Kochman.
+
+jonchen:
+  title:
+    en: Jonathan Chen
+  description:
+    en: Web Ecosystem Consultant
+
+msdikla:
+  title:
+    en: Dikla Cohen
+  description:
+    en: Our latest news, updates, and stories by Dikla Cohen.
+
+bpj:
+  title:
+    en: Bart Jarochowski
+  description:
+    en: Our latest news, updates, and stories by Bart Jarochowski.
+
+charistheodoulou:
+  title:
+    en: Charis Theodoulou
+  description:
+    en: Our latest news, updates, and stories by Charis Theodoulou.
+
+natashakosoglov:
+  title:
+    en: Natasha Kosoglov
+  description:
+    en: Our latest news, updates, and stories by Natasha Kosoglov.
+
+mattreynolds:
+  title:
+    en: Matt Reynolds
+  description:
+    en: Matt is a software developer
+
+joriktangelder:
+  title:
+    en: Jorik Tangelder
+  description:
+    en: User Experience Engineer
+
+sahel:
+  title:
+    en: Sahel Sharify
+  description:
+    en: Our latest news, updates, and stories by Sahel Sharify.
+
+loirooriol:
+  title:
+    en: Oriol Brufau
+  description:
+    en: Our latest news, updates, and stories by Oriol Brufau.
+
+joelriley:
+  title:
+    en: Joel Riley
+  description:
+    en: Our latest news, updates, and stories by Joel Riley.
+
+douglasparker:
+  title:
+    en: Douglas Parker
+  description:
+    en: Our latest news, updates, and stories by Douglas Parker.
+
+vladimirlevin:
+  title:
+    en: Vladimir Levin
+  description:
+    en: Our latest news, updates, and stories by Vladimir Levin.
+
+rreverser:
+  title:
+    en: Ingvar Stepanyan
+  description:
+    en: WebAssembly Advocadoer
+
+masonfreed:
+  title:
+    en: Mason Freed
+  description:
+    en: Developer on the Chrome team
+
+roeln:
+  title:
+    en: Roel Nieskens
+  description:
+    en: Our latest news, updates, and stories by Roel Nieskens.
+
+dcrossland:
+  title:
+    en: Dave Crossland
+  description:
+    en: Our latest news, updates, and stories by Dave Crossland.
+
+aaronleventhal:
+  title:
+    en: Aaron Leventhal
+  description:
+    en: Software Engineer
+
+joanbaca:
+  title:
+    en: Joan Baca
+  description:
+    en: Our latest news, updates, and stories by Joan Baca.
+
+aranhacarlos:
+  title:
+    en: Carlos Aranha
+  description:
+    en: Our latest news, updates, and stories by Carlos Aranha.
+
+scottfriesen:
+  title:
+    en: Scott Friesen
+  description:
+    en: Our latest news, updates, and stories by Scott Friesen.
+
+bartekn:
+  title:
+    en: Bartek Nowierski
+  description:
+    en: Chrome Software Engineer
+
+djuffin:
+  title:
+    en: Eugene Zemtsov
+  description:
+    en: Our latest news, updates, and stories by Eugene Zemtsov.
+
+giesau:
+  title:
+    en: Stephan Giesau
+  description:
+    en: Our latest news, updates, and stories by Stephan Giesau.
+
+mattgaunt:
+  title:
+    en: Matt Gaunt
+  description:
+    en: Our latest news, updates, and stories by Matt Gaunt.
+
+reillyg:
+  title:
+    en: Reilly Grant
+  description:
+    en: Software Engineer on Google Chrome focusing on hardware APIs
+
+nateschloss:
+  title:
+    en: Nate Schloss
+  description:
+    en: Our latest news, updates, and stories by Nate Schloss.
+
+andrewcomminos:
+  title:
+    en: Andrew Comminos
+  description:
+    en: Our latest news, updates, and stories by Andrew Comminos.
+
+bingler:
+  title:
+    en: Steven Bingler
+  description:
+    en: Software engineer on Chrome's Privacy Sandbox.
+
+andrewguan:
+  title:
+    en: Andrew Guan
+  description:
+    en: Our latest news, updates, and stories by Andrew Guan.
+
+sorenbalko:
+  title:
+    en: Sören Balko
+  description:
+    en: CTO at Clipchamp
+
+rezakazemi:
+  title:
+    en: Reza Kazemi
+  description:
+    en: Product Manager at Corel
+
+antoinebisch:
+  title:
+    en: Antoine Bisch
+  description:
+    en: Web Ecosystem Consultant
+
+anniesullie:
+  title:
+    en: Annie Sullivan
+  description:
+    en: Our latest news, updates, and stories by Annie Sullivan.
+
+mmocny:
+  title:
+    en: Michal Mocny
+  description:
+    en: Our latest news, updates, and stories by Michal Mocny.
+
+huib:
+  title:
+    en: Huib Kleinhout
+  description:
+    en: Our latest news, updates, and stories by Huib Kleinhout.
+
+sisidovski:
+  title:
+    en: Shunya Shishido
+  description:
+    en: Web Ecosystem Consultant
+
+gladenjoy:
+  title:
+    en: Tomoki Kiraku
+  description:
+    en: Our latest news, updates, and stories by Tomoki Kiraku.
+
+alonko:
+  title:
+    en: Alon Kochba
+  description:
+    en: Our latest news, updates, and stories by Alon Kochba.
+
+choudhuryashish:
+  title:
+    en: Ashish Choudhury
+  description:
+    en: Our latest news, updates, and stories by Ashish Choudhury.
+
+dinakarchandolu:
+  title:
+    en: Dinakar Chandolu
+  description:
+    en: Our latest news, updates, and stories by Dinakar Chandolu.
+
+abhimanyuraibahadur:
+  title:
+    en: Abhimanyu Raibahadur
+  description:
+    en: Our latest news, updates, and stories by Abhimanyu Raibahadur.
+
+dhilipvenkateshuvarajan:
+  title:
+    en: Dhilip venkatesh Uvarajan
+  description:
+    en: Our latest news, updates, and stories by Dhilip venkatesh Uvarajan.
+
+safwans:
+  title:
+    en: Safwan Samla
+  description:
+    en: Our latest news, updates, and stories by Safwan Samla.
+
+andybell:
+  title:
+    en: Andy Bell
+  description:
+    en: Freelance designer and educator
+
+ajara:
+  title:
+    en: Adriana Jara
+  description:
+    en: Adriana is a Developer Relations Engineer
+
+jbrockmeyer:
+  title:
+    en: Jan Brockmeyer
+  description:
+    en: Our latest news, updates, and stories by Jan Brockmeyer.
+
+jcolin:
+  title:
+    en: Jeremy Colin
+  description:
+    en: Engineering Manager
+
+hbsong:
+  title:
+    en: Hongbo Song
+  description:
+    en: Our latest news, updates, and stories by Hongbo Song.
+
+adamskret:
+  title:
+    en: Adam Skręt
+  description:
+    en: Director of Digital & Performance Marketing, Orange Polska S.A.
+
+rafałfilipek:
+  title:
+    en: Rafał Filipek
+  description:
+    en: Lead Frontend Developer, Orange Polska S.A.
+
+marcinsierakowski:
+  title:
+    en: Marcin Sierakowski
+  description:
+    en: Director of Sales Platforms Development & Maintenance, Orange Polska S.A.
+
+jiwoong:
+  title:
+    en: Jiwoong Lee
+  description:
+    en: UX Designer for Web Platform & Chrome
+
+christianliebel:
+  title:
+    en: Christian Liebel
+  description:
+    en: GDE for Web Capabilities & Angular
+
+mgiuca:
+  title:
+    en: Matt Giuca
+  description:
+    en: Our latest news, updates, and stories by Matt Giuca.
+
+swethagopalakrishnan:
+  title:
+    en: Swetha Gopalakrishnan
+  description:
+    en: Our latest news, updates, and stories by Swetha Gopalakrishnan.
+
+saurabhrajpal:
+  title:
+    en: Saurabh Rajpal
+  description:
+    en: Our latest news, updates, and stories by Saurabh Rajpal.
+
+arturjanc:
+  title:
+    en: Artur Janc
+  description:
+    en: Our latest news, updates, and stories by Artur Janc.
+
+mkazi:
+  title:
+    en: Minhaz Kazi
+  description:
+    en: Developer Advocate at Google
+
+cmp:
+  title:
+    en: Chase Phillips
+  description:
+    en: Software Engineer on the Google Chrome team
+
+collindionagata:
+  title:
+    en: Collin Dion Agata
+  description:
+    en: Our latest news, updates, and stories by Collin Dion Agata.
+
+chrisboakes:
+  title:
+    en: Chris Boakes
+  description:
+    en: Principal Software Engineer at The Telegraph
+
+jaikk:
+  title:
+    en: Jai Krishnan
+  description:
+    en: Product Manager at Google working on open codecs
+
+wtc:
+  title:
+    en: Wan-Teh Chang
+  description:
+    en: Engineer at Google working on AVIF
+
+shubhie:
+  title:
+    en: Shubhie Panicker
+  description:
+    en: Tech Lead Manager on the Chrome Web Platform team
+
+npm:
+  title:
+    en: Nicolás Peña Moreno
+  description:
+    en: Software developer always looking for chocolates and games
+    es: Programador siempre en busca de chocolates y juegos

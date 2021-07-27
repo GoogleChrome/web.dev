@@ -1,0 +1,438 @@
+3d:
+  title:
+    en: 3D
+  description:
+    en: Our latest news, updates, and stories about 3D.
+
+accessibility:
+  title:
+    en: Accessibility
+  description:
+    en: Our latest news, updates, and stories about Accessibility.
+
+amp:
+  title:
+    en: AMP
+  description:
+    en: Our latest news, updates, and stories about AMP.
+
+analytics:
+  title:
+    en: Analytics
+  description:
+    en: Our latest news, updates, and stories about Analytics.
+
+animations:
+  title:
+    en: Animations
+  description:
+    en: Our latest news, updates, and stories about Animations.
+
+audio:
+  title:
+    en: Audio
+  description:
+    en: Our latest news, updates, and stories about Audio.
+
+augmented-reality:
+  title:
+    en: Augmented Reality
+  description:
+    en: Our latest news, updates, and stories about Augmented Reality.
+
+canvas:
+  title:
+    en: Canvas
+  description:
+    en: Our latest news, updates, and stories about Canvas.
+
+capabilities:
+  title:
+    en: Capabilities
+  description:
+    en: Our latest news, updates, and stories about new web capabilities (aka Project Fugu).
+
+case-study:
+  title:
+    en: Case Study
+  description:
+    en: Our latest news, updates, and stories about case studies.
+
+cast:
+  title:
+    en: Cast
+  description:
+    en: Our latest news, updates, and stories about Cast.
+
+chrome-ux-report:
+  title:
+    en: Chrome UX Report
+  description:
+    en: Our latest news, updates, and stories about Chrome UX Report.
+
+chrome-dev-summit:
+  title:
+    en: Chrome Dev Summit
+  description:
+    en: Our latest news, updates, and stories about Chrome Dev Summit.
+
+content-security-policy:
+  title:
+    en: Content Security Policy
+  description:
+    en: Our latest news, updates, and stories about Content Security Policy.
+
+cookies:
+  title:
+    en: Cookies
+  description:
+    en: Our latest news, updates, and stories about Cookies.
+
+cors:
+  title:
+    en: CORS
+  description:
+    en: Our latest news, updates, and stories about CORS.
+
+css:
+  title:
+    en: CSS
+  description:
+    en: Our latest news, updates, and stories about CSS.
+
+devices:
+  title:
+    en: Devices
+  description:
+    en: Our latest news, updates, and stories about connecting hardware devices to the web.
+
+devtools:
+  title:
+    en: DevTools
+  description:
+    en: Our latest news, updates, and stories about DevTools.
+
+dom:
+  title:
+    en: DOM
+  description:
+    en: Our latest news, updates, and stories about DOM.
+
+encryption:
+  title:
+    en: Encryption
+  description:
+    en: Our latest news, updates, and stories about Encryption.
+
+engineering-blog:
+  title:
+    en: Engineering Blog
+  description:
+    en: Our latest news, updates, and stories from our engineering team.
+
+feature-policy:
+  title:
+    en: Feature Policy
+  description:
+    en: Our latest news, updates, and stories about Feature Policy.
+
+file-system:
+  title:
+    en: File System
+  description:
+    en: Our latest news, updates, and stories about File System.
+
+fonts:
+  title:
+    en: Fonts
+  description:
+    en: Our latest news, updates, and stories about Fonts.
+
+forms:
+  title:
+    en: Forms
+  description:
+    en: Our latest news, updates, and stories about Forms.
+
+games:
+  title:
+    en: Games
+  description:
+    en: Our latest news, updates, and stories about Games.
+
+graphics:
+  title:
+    en: Graphics
+  description:
+    en: Our latest news, updates, and stories about Graphics.
+
+houdini:
+  title:
+    en: Houdini
+  description:
+    en: Our latest news, updates, and stories about Houdini.
+
+html:
+  title:
+    en: HTML
+  description:
+    en: Our latest news, updates, and stories about HTML.
+
+identity:
+  title:
+    en: Identity
+  description:
+    en: Our latest news, updates, and stories about Identity.
+
+images:
+  title:
+    en: Images
+  description:
+    en: Our latest news, updates, and stories about Images.
+
+install:
+  title:
+    en: Install
+  description:
+    en: Our latest news, updates, and stories about Install.
+
+intl:
+  title:
+    en: Intl
+  description:
+    en: Our latest news, updates, and stories about Intl.
+
+iot:
+  title:
+    en: IoT
+  description:
+    en: Our latest news, updates, and stories about IoT.
+
+javascript:
+  title:
+    en: JavaScript
+  description:
+    en: Our latest news, updates, and stories about JavaScript.
+
+layout:
+  title:
+    en: Layout
+  description:
+    en: Our latest news, updates, and stories about Layout.
+
+lighthouse:
+  title:
+    en: Lighthouse
+  description:
+    en: Our latest news, updates, and stories about Lighthouse.
+
+media:
+  title:
+    en: Media
+  description:
+    en: Our latest news, updates, and stories about Media.
+
+media-queries:
+  title:
+    en: Media Queries
+  description:
+    en: Our latest news, updates, and stories about Media Queries.
+
+memory:
+  title:
+    en: Memory
+  description:
+    en: Memory management on the web.
+
+metrics:
+  title:
+    en: Metrics
+  description:
+    en: Our latest news, updates, and stories about Metrics.
+
+mini-apps:
+  title:
+    en: Mini apps
+  description:
+    en: Apps built with Web technologies but not running in the browser.
+
+mobile:
+  title:
+    en: Mobile
+  description:
+    en: Our latest news, updates, and stories about Mobile.
+
+modules:
+  title:
+    en: Modules
+  description:
+    en: Our latest news, updates, and stories about Modules.
+
+monetization:
+  title:
+    en: Monetization
+  description:
+    en: Our latest news, updates, and stories about Monetization.
+
+network:
+  title:
+    en: Network
+  description:
+    en: Our latest news, updates, and stories about Network.
+
+node:
+  title:
+    en: Node
+  description:
+    en: Our latest news, updates, and stories about Node.
+
+notifications:
+  title:
+    en: Notifications
+  description:
+    en: Our latest news, updates, and stories about Notifications.
+
+offline:
+  title:
+    en: Offline
+  description:
+    en: Our latest news, updates, and stories about Offline.
+
+origin-trials:
+  title:
+    en: Origin Trials
+  description:
+    en: Our latest news, updates, and stories about Origin Trials.
+
+payments:
+  title:
+    en: Payments
+  description:
+    en: Our latest news, updates, and stories about Payments.
+
+performance:
+  title:
+    en: Performance
+  description:
+    en: Our latest news, updates, and stories about Performance.
+
+permissions:
+  title:
+    en: Permissions
+  description:
+    en: Our latest news, updates, and stories about Permissions.
+
+progressive-web-apps:
+  title:
+    en: Progressive Web Apps
+  description:
+    en: Our latest news, updates, and stories about Progressive Web Apps.
+
+privacy:
+  title:
+    en: Privacy
+  description:
+    en: Our latest news, updates, and stories about Privacy.
+
+puppeteer:
+  title:
+    en: Puppeteer
+  description:
+    en: Our latest news, updates, and stories about Puppeteer.
+
+rendering:
+  title:
+    en: Rendering
+  description:
+    en: Our latest news, updates, and stories about Rendering.
+
+scale-on-web:
+  title:
+    en: Scale on web
+  description:
+    en: A collection of short case studies from India and Southeast Asia celebrating the success stories of Google partners across multiple aspects of modern web development. Learn how these partners achieved scale while building amazing web experiences and delighting their customers.
+
+security:
+  title:
+    en: Security
+  description:
+    en: Our latest news, updates, and stories about Security.
+
+seo:
+  title:
+    en: SEO
+  description:
+    en: Our latest news, updates, and stories about SEO.
+
+service-worker:
+  title:
+    en: Service Worker
+  description:
+    en: Our latest news, updates, and stories about Service Worker.
+
+storage:
+  title:
+    en: Storage
+  description:
+    en: Our latest news, updates, and stories about Storage.
+
+svg:
+  title:
+    en: SVG
+  description:
+    en: Our latest news, updates, and stories about SVG.
+
+testing:
+  title:
+    en: Testing
+  description:
+    en: Our latest news, updates, and stories about Testing.
+
+tools:
+  title:
+    en: Tools
+  description:
+    en: Our latest news, updates, and stories about Tools.
+
+ux:
+  title:
+    en: UX
+  description:
+    en: Our latest news, updates, and stories about UX.
+
+virtual-reality:
+  title:
+    en: Virtual Reality
+  description:
+    en: Our latest news, updates, and stories about Virtual Reality.
+
+webassembly:
+  title:
+    en: WebAssembly
+  description:
+    en: Our latest news, updates, and stories about WebAssembly.
+
+web-app-manifest:
+  title:
+    en: Web App Manifest
+  description:
+    en: Our latest news, updates, and stories about Web App Manifest.
+
+web-bundles:
+  title:
+    en: Web Bundles
+  description:
+    en: Our latest news, updates, and stories about Web Bundles.
+
+web-vitals:
+  title:
+    en: Web Vitals
+  description:
+    en: Our latest news, updates, and stories about Web Vitals.
+
+webxr:
+  title:
+    en: WebXR
+  description:
+    en: Our latest news, updates, and stories about WebXR.
+

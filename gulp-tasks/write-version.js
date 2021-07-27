@@ -5,9 +5,12 @@
  *
  * @returns {Promise<void>}
  */
+const fs = require('fs');
 const writeVersion = async () => {
   if (process.env.ELEVENTY_ENV === 'prod') {
-    require('fs').writeFileSync('./dist/version', process.env.GITHUB_SHA);
+    // Verify dist directory exists
+    fs.mkdirSync('./dist', {recursive: true});
+    fs.writeFileSync('./dist/version', process.env.GITHUB_SHA || '');
   }
 };
 

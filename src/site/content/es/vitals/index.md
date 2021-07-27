@@ -3,11 +3,11 @@ layout: post
 title: Web Vitals
 subhead: Métricas esenciales para un sitio saludable
 description: Métricas esenciales para un sitio saludable
+hero: image/admin/BHaoqqR73jDWe6FL2kfw.png
 authors:
   - philipwalton
 date: 2020-04-30
 updated: 2020-07-21
-masthead: web-vitals.svg
 tags:
   - metrics
   - performance

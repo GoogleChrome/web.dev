@@ -1,0 +1,31 @@
+---
+layout: default
+---
+{# *-landing-page classes are a holdover from devsite. #}
+{# It would be great to remove them as part of the v1 migration. #}
+{% from 'macros/show-card.njk' import showCard with context %}
+<div class="shows-landing-page">
+  {# Make sure Actions are first in the tab order. #}
+  <div class="w-actions">
+    {% include 'partials/subscribe-action.njk' %}
+  </div>
+
+  <div class="w-layout-container w-pb--non">
+    <header class="w-page-header">
+      <h1 class="w-page-header__headline w-tags-page-header__headline {{'w-visually-hidden' if paged.hero.heroOnly}}">{{ renderData.title }}</h1>
+      <p class="w-page-header__copy">{{ renderData.description | safe }}</p>
+      <a href="{{ renderData.rss }}" target="_blank" class="w-tags-page__rss">
+        <img src="/images/icons/rss.svg" alt="RSS Feed" width="32" height="32">
+      </a>
+    </header>
+  </div>
+  <section class="w-grid">
+    <div class="w-grid__columns w-grid__columns--three" role="list">
+      {% for show in paged.elements %}
+        {{ showCard(show) }}
+      {% endfor %}
+    </div>
+  </section>
+
+  {% include 'pagination.njk' %}
+</div>

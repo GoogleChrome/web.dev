@@ -1,0 +1,13 @@
+/// FOCUS RING
+/// A box-shadow powered focus ring that uses a transparent
+/// outline to provide focus for high contrast users.
+/// The box-shadow helps to support border-radius elements.
+/// You can customise the --focus-ring-padding-color, which
+/// creates the illusion of space, but it's actually just
+/// the background
+.focus-ring:focus {
+  outline: 2px solid transparent;
+  box-shadow: 0px 0px 0px 2px
+      var(--focus-ring-padding-color, var(--color-core-bg)),
+    0px 0px 0px 4px var(--color-focus-ring);
+}

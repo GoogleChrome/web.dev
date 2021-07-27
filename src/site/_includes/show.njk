@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<div class="w-layout-container--narrow w-post-content">
+  <header class="w-article-header">
+    <h1 class="w-article-header__headline">{{ paged.data.title }}</h1>
+    <div class="w-author__published">
+      <time>{{ paged.data.date | prettyDate }}</time>
+    </div>
+  </header>
+  {% YouTube paged.data.videoId %}
+  <p>{{ paged.data.description | md({linkify: true, breaks: true}) | safe }}</p>
+</div>
