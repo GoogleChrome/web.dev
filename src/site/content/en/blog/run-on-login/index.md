@@ -35,7 +35,7 @@ ability as well.
 
 ## Add a PWA to run on login
 
-Run on login is available in Chrome or Edge 91 or later, on Windows, Linux,
+Run on login is available in Chrome 91 or Edge 91 or later, on Windows, Linux,
 and MacOS. To configure an app to run on login, visit `about://apps`, right
 click on the app you want and select 'Start app when you sign in'.
 
