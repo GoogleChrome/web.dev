@@ -45,7 +45,7 @@ you sign in selected", width="637", height="378" %}
 
 {% Aside %}
 Currently there is no configuration that developers can use to enable
-run on login from their apps, we are researching a way to implement this
+run on login from their apps. We are researching a way to implement this
 functionality in the future.
 {% endAside %}
 
