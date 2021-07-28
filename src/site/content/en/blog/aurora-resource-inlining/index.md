@@ -154,7 +154,6 @@ Let's look at an example:
 ```html
 <head>
    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-  ...
 </head>
 <body>
   <section>
