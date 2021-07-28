@@ -21,13 +21,13 @@ survey](https://web.dev/2021-scroll-survey/) based on top reported issues from
 the [2019 MDN Web DNA
 Report](https://mdn-web-dna.s3-us-west-2.amazonaws.com/MDN-Web-DNA-Report-2019.pdf).
 The [2021 Scroll Survey
-Report](https://drive.google.com/file/d/10WXTJHCZmH0rXEh3J7z3ki96-f9SHs_R/view?resourcekey=0-5b1y_6rZDhyt6Tkbz3FCzA)
+Report](https://storage.googleapis.com/web-dev-uploads/file/vS06HQ1YTsbMKSFTIPl2iogUQP73/QZopyELSk8T7IpsgOnRU.pdf)
 is ready and the Chrome team would like to share some thoughts and action items
 we've gleaned from the survey results. We hope these results will help browser
 vendors and standards groups understand how to improve web scrolling. 
 
 **View the [2021 Scroll Survey
-Report](https://drive.google.com/file/d/10WXTJHCZmH0rXEh3J7z3ki96-f9SHs_R/view?resourcekey=0-5b1y_6rZDhyt6Tkbz3FCzA).**
+Report](https://storage.googleapis.com/web-dev-uploads/file/vS06HQ1YTsbMKSFTIPl2iogUQP73/QZopyELSk8T7IpsgOnRU.pdf).**
 
 ## Noteworthy results
 
