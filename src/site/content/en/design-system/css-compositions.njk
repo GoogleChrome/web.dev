@@ -14,6 +14,49 @@ permalink: '/design-system/css-compositions/index.html'
 in your context, or target the composition itself (E.G <code>.sidebar</code>) for extra specificity.</p>
 <p>The default values are fallbacks for custom properties, so are easily overridden.</p>
 
+<h2>Auto Grid</h2>
+<p><code>.auto-grid</code></p>
+
+<p>A flexible layout that will create an auto-fill grid with
+configurable grid item sizes.</p>
+
+<h3>Configuration</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Default value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>--auto-grid-gutter</code></td>
+      <td><code>$global-gutter</code></td>
+      <td>This defines the space between each item</td>
+    </tr>
+    <tr>
+      <td><code>--auto-grid-min-item-size</code></td>
+      <td><code>20rem</code></td>
+      <td>How large each item should be, as a minimum</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Examples</h3>
+
+<div class="auto-grid">
+  <div class="bg-mid-bg pad-size-1">Item 1</div>
+  <div class="bg-mid-bg pad-size-1">Item 2</div>
+  <div class="bg-mid-bg pad-size-1">Item 3</div>
+  <div class="bg-mid-bg pad-size-1">Item 4</div>
+  <div class="bg-mid-bg pad-size-1">Item 5</div>
+  <div class="bg-mid-bg pad-size-1">Item 6</div>
+  <div class="bg-mid-bg pad-size-1">Item 7</div>
+  <div class="bg-mid-bg pad-size-1">Item 8</div>
+</div>
+
+
 <h2>Sidebar</h2>
 <p><code>.sidebar</code></p>
 
@@ -97,11 +140,6 @@ on top of each other</p>
 
 <p>A layout that allows you to lay <strong>2</strong> items next to each other until there is not enough horizontal space to allow that.</p>
 
-<div class="switcher">
-  <div class="bg-mid-bg pad-size-1">Item 1</div>
-  <div class="bg-mid-bg pad-size-1">Item 2</div>
-</div>
-
 <h3>Configuration</h3>
 <table>
   <thead>
@@ -129,5 +167,12 @@ on top of each other</p>
     </tr>
   </tbody>
 </table>
+
+<h3>Examples</h3>
+
+<div class="switcher">
+  <div class="bg-mid-bg pad-size-1">Item 1</div>
+  <div class="bg-mid-bg pad-size-1">Item 2</div>
+</div>
 
 {% endblock %}
