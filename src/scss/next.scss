@@ -276,6 +276,9 @@ a:active {
   background: var(--color-core-text);
 }
 
+/// COMPOSITIONS
+@import 'compositions/sidebar';
+
 /// UTILITY CLASSES
 @import 'utilities/flow';
 @import 'utilities/focus-ring';

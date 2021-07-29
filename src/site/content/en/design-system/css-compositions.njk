@@ -1,5 +1,6 @@
 ---
 title: 'CSS Compositions'
+permalink: '/design-system/css-compositions/index.html'
 ---
 
 {% extends "design-system.njk" %}
@@ -7,6 +8,58 @@ title: 'CSS Compositions'
 <!-- prettier-ignore -->
 {% block inner %}
 
-<p>A reference for CSS compositions.</p>
+<h2>Sidebar</h2>
+
+<dl>
+  <dt>Class</dt>
+  <dd><code>.sidebar</code></dd>
+</dl>
+
+<p>A layout that allows you to have a flexible main content area
+and a &quot;fixed&quot; width sidebar that sits on the left or right.
+If there is not enough viewport space to fit both the sidebar
+width <em>and</em> the main content minimum width, they will stack
+on top of each other</p>
+
+<h3>Configuration</h3>
+<p>If you want to change the value of a custom property, you can either set a value
+in your context, or target the <code>.sidebar</code> for extra specificity.</p>
+<p>The default values are fallbacks for custom properties, so are easily overridden.</p>
+<dl>
+  <dt><code>--sidebar-gutter</code> <br />(default <code>$global-gutter</code>)</dt>
+  <dd>This defines the space between the sidebar and main content</dd>
+  <dt><code>--sidebar-target-width</code> <br />(default <code>20rem</code>)</dt>
+  <dd>How large the sidebar should be</dd>
+  <dt><code>--sidebar-content-min-width</code> <br />(default <code>50%</code>)</dt>
+  <dd>The minimum size of the main content area</dd> 
+</dl>
+
+<h3>Exceptions</h3>
+<dl>
+  <dt><code>.sidebar[data-direction='rtl']</code></dt>
+  <dd>Flips the sidebar to be on the right</dd>
+</dl>
+
+<h3>Example</h3>
+
+<p>A standard sidebar</p>
+
+<div class="sidebar">
+  <div>I am the sidebar</div>
+  <div class="flow">
+    <h4>I am the content</h4>
+    <p>Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum.</p>
+    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper.</p>
+  </div>
+</div>
+
+<div class="sidebar" data-direction="rtl">
+  <div class="flow">
+    <h4>I am the content</h4>
+    <p>Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum.</p>
+    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper.</p>
+  </div>
+  <div>I am the sidebar</div>
+</div>
 
 {% endblock %}
