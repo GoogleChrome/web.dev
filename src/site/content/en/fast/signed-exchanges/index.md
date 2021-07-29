@@ -388,7 +388,7 @@ serve the SXG certificate as `application/cert-chain+cbor`.
 ### Web Packager Server
 
 The [Web Packager
-server](https://github.com/google/webpackager/blob/master/cmd/webpkgserver/README.md),
+server](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md),
 `webpkgserver`, acts as a [reverse
 proxy](https://en.wikipedia.org/wiki/Reverse_proxy) for serving SXGs. Given a
 URL, `webpkgserver` will fetch the URL's contents, package them as an SXG, and
@@ -398,7 +398,7 @@ Packager](/signed-exchanges-webpackager).
 
 In production, `webpkgserver` should not use a public endpoint. Instead, the
 frontend web server should forward SXG requests to `webpkgserver`. These
-[recommendations](https://github.com/google/webpackager/blob/master/cmd/webpkgserver/README.md#running-behind-front-end-edge-server)
+[recommendations](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md#running-behind-front-end-edge-server)
 contain more information on running `webpkgserver` behind a frontend edge
 server.
 
@@ -435,7 +435,7 @@ options, you can also choose to build your own SXG generator.
 
 - `gen-signedexchange`
 
-  [`gen-signedexchange`](https://github.com/WICG/webpackage/tree/master/go/signedexchange)
+  [`gen-signedexchange`](https://github.com/WICG/webpackage/tree/main/go/signedexchange)
   is a tool provided by the webpackage specification as a [reference
   implementation](https://en.wikipedia.org/wiki/Reference_implementation) of
   generating SXGs. Due to its limited feature set, `gen-signedexchange` is
