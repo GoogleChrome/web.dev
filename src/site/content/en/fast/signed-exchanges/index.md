@@ -408,6 +408,12 @@ This section lists tooling alternatives to Web Packager. In addition to these
 options, you can also choose to build your own SXG generator.
 
 
+- `sxg-rs`
+
+  [`sxg-rs`](https://github.com/google/sxg-rs) includes code that runs on
+  Cloudflare Workers and Fastly Compute@Edge, and a Rust library that could be
+  adapted to other serverless platforms.
+
 - NGINX SXG Module
 
   The [NGINX SXG module](https://github.com/google/nginx-sxg-module) generates
