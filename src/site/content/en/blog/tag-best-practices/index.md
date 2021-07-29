@@ -2,6 +2,7 @@
 layout: post
 title: Best practices for tags and tag managers
 subhead: Optimize tags and tag managers for Core Web Vitals.
+hero: image/j2RDdG43oidUy6AL6LovThjeX9c2/aIZgX5qHUBalZz0dUNqN.jpg
 authors:
   - katiehempenius
 description: |
