@@ -63,6 +63,11 @@ $gorko-config: (
     'output': 'standard',
     'property': 'max-width'
   ),
+  'pad': (
+    'items': $gorko-space-scale,
+    'output': 'standard',
+    'property': 'padding'
+  ),
   'text': (
     'items': $gorko-size-scale,
     'output': 'standard',
