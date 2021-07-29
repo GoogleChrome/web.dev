@@ -10,6 +10,9 @@
 /// --switcher-target-container-width (40rem): How large the container
 /// needs to be to allow items to sit inline with each other
 
+/// --switcher-vertical-alignment How items should align vertically.
+/// Can be any acceptable flexbox alignment value.
+
 .switcher {
   display: flex;
   flex-wrap: wrap;
