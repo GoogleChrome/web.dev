@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2021-07-23
+updated: 2021-07-29
 tags:
   - blog
   - capabilities
