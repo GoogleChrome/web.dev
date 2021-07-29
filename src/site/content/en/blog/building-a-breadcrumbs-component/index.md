@@ -469,7 +469,7 @@ const preventedKeys = new Set(['ArrowUp', 'ArrowDown'])
 
 // watch crumbs for changes,
 // ensures it's a full value change, not a user exploring options via keyboard
-crumb.forEach(nav => {
+crumbs.forEach(nav => {
   let ignoreChange = false
 
   nav.addEventListener('change', e => {
