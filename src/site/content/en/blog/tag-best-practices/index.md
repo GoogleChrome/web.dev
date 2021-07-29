@@ -521,7 +521,7 @@ most sites should aim to keep their containers far smaller than this. For
 perspective, the median site container is around 6&nbsp;KB.
 
 To determine the size of your container, look at the size of the response
-returned by `https://www.googletagmanager.com/gtag/js?id=YOUR\_ID`. This
+returned by `https://www.googletagmanager.com/gtag/js?id=YOUR_ID`. This
 response contains the Google Tag Manager library plus the contents of the
 container. By itself, the Google Tag Manager library is around 33&nbsp;KB.
 
