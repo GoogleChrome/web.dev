@@ -7,7 +7,7 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2021-06-29
+updated: 2021-07-29
 tags:
   - blog
   - capabilities
@@ -197,13 +197,9 @@ transparency, and ergonomics.
 ## Permissions, permissions persistence, and file handler updates
 
 To ensure user trust and the safety of users' files when the File Handling API is used to open a file,
-a permission prompt will be shown before an installed PWA can view a file. This permission prompt will be shown
-right after either of the following scenarios:
-
-- The user selects the PWA to open a file, so that the permission is tightly coupled to the action
-  of opening a file using the PWA, making it more understandable and relevant.
-- The site loads without the file, so that the user has an expectation of what the PWA is and why it
-  would like to view the file.
+a permission prompt will be shown before a PWA can view a file. This permission prompt will be shown
+right after the user selects the PWA to open a file, so that the permission is tightly coupled to the 
+action of opening a file using the PWA, making it more understandable and relevant.
 
 This permission will show every time until the user clicks to **Allow** or **Block** file handling
 for the site, or ignores the prompt three times (after which Chromium will embargo and block this
