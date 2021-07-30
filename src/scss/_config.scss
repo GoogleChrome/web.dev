@@ -46,6 +46,11 @@ $gorko-config: (
     'output': 'standard',
     'property': 'margin-top'
   ),
+  'gutter': (
+    'items': $gorko-space-scale,
+    'output': 'standard',
+    'property': '--gutter'
+  ),
   'leading': (
     'items': (
       'flat': '1.2',

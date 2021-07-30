@@ -4,8 +4,8 @@
 /// configurable grid item sizes
 
 /// CUSTOM PROPERTIES AND CONFIGURATION
-/// --auto-grid-gutter ($global-gutter): This defines the space
-/// between each item
+/// --gutter ($global-gutter): This defines the space
+/// between each item.
 
 /// --auto-grid-min-item-size (16rem): How large each item should be
 /// ideally, as a minimum.
@@ -16,5 +16,5 @@
     auto-fill,
     minmax(var(--auto-grid-min-item-size, 16rem), 1fr)
   );
-  grid-gap: var(--auto-grid-gutter, $global-gutter);
+  grid-gap: var(--gutter, $global-gutter);
 }

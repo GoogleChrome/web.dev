@@ -3,8 +3,8 @@
 /// there is space in the viewport and stacks on small viewports
 
 /// CUSTOM PROPERTIES AND CONFIGURATION
-/// --repel-gutter ($global-gutter): This defines the space
-/// between each item
+/// --gutter ($global-gutter): This defines the space
+/// between each item.
 
 /// --repel-vertical-alignment How items should align vertically.
 /// Can be any acceptable flexbox alignment value.
@@ -13,5 +13,5 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: var(--repel-vertical-alignment, center);
-  gap: var(--repel-gutter, $global-gutter);
+  gap: var(--gutter, $global-gutter);
 }

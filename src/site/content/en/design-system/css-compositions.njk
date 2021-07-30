@@ -14,6 +14,17 @@ permalink: '/design-system/css-compositions/index.html'
 in your context, or target the composition itself (E.G <code>.sidebar</code>) for extra specificity.</p>
 <p>The default values are fallbacks for custom properties, so are easily overridden.</p>
 
+<h2>Gutters and Spacing</h2> 
+<p>All compositions use a consistent
+<code>--gutter</code> Custom Property to manage spacing between items. You
+can either set a value for this in context, just like in the configuration
+section above, or you can use the <code>gutter</code> utility classes.</p>
+
+<p>For example, you could increase the gutter on the sidebar like this:
+<code>&lt;div class=&quot;sidebar gutter-size-2&quot;&gt;</code>. </p>
+
+<hr />
+
 <h2>Auto Grid</h2>
 <p><code>.auto-grid</code></p>
 
@@ -31,9 +42,9 @@ configurable grid item sizes.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code>--auto-grid-gutter</code></td>
+      <td><code>--gutter</code></td>
       <td><code>$global-gutter</code></td>
-      <td>This defines the space between each item</td>
+      <td>This defines the space between each item.</td>
     </tr>
     <tr>
       <td><code>--auto-grid-min-item-size</code></td>
@@ -72,9 +83,9 @@ configurable grid item sizes.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code>--cluster-gutter</code></td>
+      <td><code>--gutter</code></td>
       <td><code>$global-gutter</code></td>
-      <td>This defines the space between each item</td>
+      <td>This defines the space between each item.</td>
     </tr>
     <tr>
       <td><code>--cluster-horizontal-alignment</code></td>
@@ -117,7 +128,7 @@ there is space in the viewport and stacks on small viewports.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code>--repel-gutter</code></td>
+      <td><code>--gutter</code></td>
       <td><code>$global-gutter</code></td>
       <td>This defines the space between items.</td>
     </tr>
@@ -155,9 +166,9 @@ on top of each other</p>
   </thead>
   <tbody>
     <tr>
-      <td><code>--sidebar-gutter</code></td>
+      <td><code>--gutter</code></td>
       <td><code>$global-gutter</code></td>
-      <td>This defines the space between the sidebar and main content</td>
+      <td>This defines the space between the sidebar and main content.</td>
     </tr>
     <tr>
       <td><code>--sidebar-target-width</code></td>

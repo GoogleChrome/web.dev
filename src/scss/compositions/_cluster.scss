@@ -4,8 +4,8 @@
 /// spacing, regardless of their size
 
 /// CUSTOM PROPERTIES AND CONFIGURATION
-/// --cluster-gutter ($global-gutter): This defines the space
-/// between each item
+/// --gutter ($global-gutter): This defines the space
+/// between each item.
 
 /// --cluster-horizontal-alignment (flex-start) How items should align
 /// horizontally. Can be any acceptable flexbox aligmnent value.
@@ -16,7 +16,7 @@
 .cluster {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--cluster-gutter, $global-gutter);
+  gap: var(--gutter, $global-gutter);
   justify-content: var(--cluster-horizontal-alignment, flex-start);
   align-items: var(--cluster-vertical-alignment, center);
 }

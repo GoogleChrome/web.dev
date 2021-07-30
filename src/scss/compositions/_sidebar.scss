@@ -7,8 +7,8 @@
 /// on top of each other
 
 /// CUSTOM PROPERTIES AND CONFIGURATION
-/// --sidebar-gutter ($global-gutter): This defines the space
-/// between the sidebar and main content
+/// --gutter ($global-gutter): This defines the space
+/// between the sidebar and main content.
 
 /// --sidebar-target-width (20rem): How large the sidebar should be
 
@@ -19,7 +19,7 @@
 .sidebar {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--sidebar-gutter, $global-gutter);
+  gap: var(--gutter, $global-gutter);
 }
 
 .sidebar:not([data-direction]) > :first-child {

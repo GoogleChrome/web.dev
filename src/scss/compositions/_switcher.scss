@@ -4,7 +4,7 @@
 /// until there is not enough horizontal space to allow that.
 
 /// CUSTOM PROPERTIES AND CONFIGURATION
-/// --switcher-gutter ($global-gutter): This defines the space
+/// --gutter ($global-gutter): This defines the space
 /// between each item
 
 /// --switcher-target-container-width (40rem): How large the container
@@ -16,7 +16,7 @@
 .switcher {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--switcher-gutter, $global-gutter);
+  gap: var(--gutter, $global-gutter);
   align-items: var(--switcher-vertical-alignment, flex-start);
 }
 
