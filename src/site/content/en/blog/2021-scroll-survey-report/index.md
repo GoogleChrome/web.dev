@@ -259,7 +259,7 @@ Two-thirds of respondents deliver infinite scroll in their web work, and an equa
 amount report it's difficult to do. Another example of high usage paired with
 high difficulty, which indicates to us an area needing attention.
 
-While [`content-visibility`](https://web.dev/content-visibility/) and
+While [`content-visibility`](/content-visibility/) and
 `contain-intrinsic-size` can be combined to reduce render costs for long
 scrollable areas, it doesn't seem to be helping with "load more" infinite scroll
 UX. 
