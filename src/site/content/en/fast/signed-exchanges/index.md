@@ -410,7 +410,7 @@ options, you can also choose to build your own SXG generator.
 
 - `sxg-rs`
 
-  [`sxg-rs`](https://github.com/google/sxg-rs) includes code that runs on
+  [`sxg-rs`](https://github.com/google/sxg-rs) is a collection of tools for generating SXGs using various serverless platforms.
   Cloudflare Workers and Fastly Compute@Edge, and a Rust library that could be
   adapted to other serverless platforms.
 
