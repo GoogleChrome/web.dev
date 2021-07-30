@@ -153,10 +153,13 @@ Let's look at an example:
 {% Compare 'worse', 'Example before inlining' %}
 ```html
 <head>
-<link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-<section>
- <button class="primary"></button>
-</section>
+   <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+</head>
+<body>
+  <section>
+    <button class="primary"></button>
+  </section>
+</body>
 ```
 
 ```css
@@ -177,16 +180,18 @@ Finally critters will inline the corresponding styles in the `<head>` of the pag
 {% Compare 'better', 'Example after inlining' %}
 ```html
 <head>
-<link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-<style>
-section button.primary {
-  /* ... */
-}
-</style>
+  <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+  <style>
+  section button.primary {
+    /* ... */
+  }
+  </style>
 </head>
-<section>
- <button class="primary"></button>
-</section>
+<body>
+  <section>
+    <button class="primary"></button>
+  </section>
+</body>
 ```
 {% endCompare %}
 
