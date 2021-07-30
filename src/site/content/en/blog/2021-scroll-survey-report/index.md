@@ -335,7 +335,7 @@ and [features](#features).
 
 ### Compatibility
 
-The Chrome team has [declared a goal](https://web.dev/compat2021) to decrease
+The Chrome team has [declared a goal](/compat2021) to decrease
 the number of web compatibility issues, including scroll compatibility.
 
 The first three compatibility issues to focus on:
@@ -347,13 +347,13 @@ The first three compatibility issues to focus on:
 
 The survey results showed that there needs to be more education around
 `touch-action` and [logical
-properties](https://web.dev/logical-property-shorthands/). The browser is at the
+properties](/logical-property-shorthands/). The browser is at the
 forefront of international layout, and it's apparent it's underutilized or
 misunderstood.
 
 Areas to focus on:
 1. [`touch-action`](https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action)
-1. [Logical properties](https://web.dev/learn/css/logical-properties/)
+1. [Logical properties](/learn/css/logical-properties/)
 
 ### APIs
 
