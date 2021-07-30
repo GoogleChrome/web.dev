@@ -386,9 +386,9 @@ The features developers struggle to build include:
 
 - [Scroll Survey
   Report](https://drive.google.com/file/d/10WXTJHCZmH0rXEh3J7z3ki96-f9SHs_R/view?usp=sharing&resourcekey=0-5b1y_6rZDhyt6Tkbz3FCzA)
-- [Survey Announcement](https://web.dev/2021-scroll-survey/)
+- [Survey Announcement](/2021-scroll-survey/)
 - [Mozilla DNA Reports](https://insights.developer.mozilla.org/)
 - [Compat2021: Eliminating five top compatibility pain points on the
-  web](https://web.dev/compat2021/)
+  web](/compat2021/)
 - [2020-2021 Scroll Compatibility Igalia
   Work](https://groups.google.com/a/google.com/g/blink-interactions-team/search?q=Igalia%20work%20update)
