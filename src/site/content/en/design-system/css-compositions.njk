@@ -59,7 +59,7 @@ configurable grid item sizes.</p>
 <h2>Cluster</h2>
 <p><code>.cluster</code></p>
 
-<p>A layout that lets you uto distribute items with consitent spacing, regardless of their size</p>
+<p>A layout that lets you uto distribute items with consitent spacing, regardless of their size.</p>
 
 <h3>Configuration</h3>
 <table>
@@ -100,6 +100,39 @@ configurable grid item sizes.</p>
   <div class="bg-mid-bg pad-size-1">Item 6</div>
   <div class="bg-mid-bg pad-size-1">Item 7</div>
   <div class="bg-mid-bg pad-size-1">Item 8</div>
+</div>
+
+<h2>Repel</h2>
+<p>A little layout that pushes items away from each other where
+there is space in the viewport and stacks on small viewports.</p>
+<p><code>.repel</code></p> 
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Default value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>--repel-gutter</code></td>
+      <td><code>$global-gutter</code></td>
+      <td>This defines the space between items.</td>
+    </tr>
+    <tr>
+      <td><code>--repel-vertical-alignment</code></td>
+      <td><code>20rem</code></td>
+      <td>How items should align vertically. Can be any acceptable <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container">flexbox alignment value.</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Examples</h3>
+<div class="repel">
+  <div class="bg-mid-bg pad-size-1">Item 1 repels item 2</div>
+  <div class="bg-mid-bg pad-size-1">Item 2 repels item 1</div>
 </div>
 
 <h2>Sidebar</h2>
