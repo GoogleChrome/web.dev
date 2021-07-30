@@ -17,7 +17,7 @@ tags:
 ---
 
 In April, the Chrome team [released a scroll and touch-action
-survey](https://web.dev/2021-scroll-survey/) based on top reported issues from
+survey](/2021-scroll-survey/) based on top reported issues from
 the [2019 MDN Web DNA
 Report](https://mdn-web-dna.s3-us-west-2.amazonaws.com/MDN-Web-DNA-Report-2019.pdf).
 The [2021 Scroll Survey
