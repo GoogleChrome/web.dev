@@ -31,6 +31,24 @@ $gorko-config: (
     'output': 'standard',
     'property': 'color'
   ),
+  'flex-align': (
+    'items': (
+      'start': 'flex-start',
+      'center': 'center',
+      'end': 'flex-end'
+    ),
+    'output': 'responsive',
+    'property': 'align-items'
+  ),
+  'flex-justify': (
+    'items': (
+      'start': 'flex-start',
+      'center': 'center',
+      'end': 'flex-end'
+    ),
+    'output': 'responsive',
+    'property': 'justify-content'
+  ),
   'flow-space': (
     'items': $gorko-space-scale,
     'output': 'standard',
@@ -45,6 +63,11 @@ $gorko-config: (
     'items': $gorko-space-scale,
     'output': 'standard',
     'property': 'margin-top'
+  ),
+  'gutter': (
+    'items': $gorko-space-scale,
+    'output': 'standard',
+    'property': '--gutter'
   ),
   'leading': (
     'items': (
@@ -62,6 +85,11 @@ $gorko-config: (
     ),
     'output': 'standard',
     'property': 'max-width'
+  ),
+  'pad': (
+    'items': $gorko-space-scale,
+    'output': 'standard',
+    'property': 'padding'
   ),
   'text': (
     'items': $gorko-size-scale,
