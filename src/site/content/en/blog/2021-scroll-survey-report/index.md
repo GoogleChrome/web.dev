@@ -7,6 +7,8 @@ authors:
   - samdutton
 description: Get the 2021 Scroll Survey Report plus words from the Chrome team about how this impacts priorities and plans for Chromium and the web.
 date: 2021-07-28
+thumbnail: image/80mq7dk16vVEg8BBhsVe42n6zn82/0yI4zjveGNiC1Kh8QzhV.jpg
+alt: The unveiling of the new Torah display at Trinity International University, photo by Taylor Wilcox
 tags:
   - blog
   - css
@@ -392,3 +394,5 @@ The features developers struggle to build include:
   web](/compat2021/)
 - [2020-2021 Scroll Compatibility Igalia
   Work](https://groups.google.com/a/google.com/g/blink-interactions-team/search?q=Igalia%20work%20update)
+
+Thumbnail image: photo by [Taylor Wilcox](https://unsplash.com/@taypaigey) on [Unsplash](https://unsplash.com/photos/aXeVH4FcS1k).
