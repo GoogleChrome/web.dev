@@ -28,15 +28,15 @@ may also be used for subtitles and chapter titles. The can also help search
 engines understand what's in a video. Those capabilities are outside the scope
 of this article.
 
-<figure class="w-figure  w-figure--inline-right">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vbNDp5R05MwQmsxZ0RLI.jpg", alt="Screenshot showing captions displayed using the track element in Chrome on Android", width="800", height="480" %}
-  <figcaption class="w-figcaption">Screenshot showing captions displayed using the
-track element in Chrome on Android</figcaption>
-</figure>
-
 An example `<video>` tag with two `<track>` tags is shown below. There's also a
 sample you can [view on Glitch](https://track-demonstration.glitch.me)
 ([source](https://glitch.com/edit/#!/track-demonstration)).
+
+<figure class="w-figure">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vbNDp5R05MwQmsxZ0RLI.jpg", alt="Screenshot showing captions displayed using the track element in Chrome on Android", width="600", height="360" %}
+  <figcaption class="w-figcaption">Screenshot showing captions displayed using the
+track element in Chrome on Android</figcaption>
+</figure>
 
 To add captions to your video add a track element as a child of the video
 element:
