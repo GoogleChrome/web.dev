@@ -80,13 +80,13 @@ This metric needs to be changed; it's a clear signal there's work to be done.
 
 From our research, these difficulties come from the multitude of use cases for
 scroll. When we talk about scrolling, that might include:
-- [Positioning elements within scrollable areas.](https://elad.medium.com/css-position-sticky-how-it-really-works-54cd01dc2d46)
+- [Positioning elements within scrollable areas](https://elad.medium.com/css-position-sticky-how-it-really-works-54cd01dc2d46)
 - [Infinite scroll](https://blog.logrocket.com/infinite-scroll-techniques-in-react-adcfd7ff32bd/)
-- [Scroll linked animation.](https://greensock.com/scrolltrigger/)
+- [Scroll linked animation](https://greensock.com/scrolltrigger/)
 - [Carousels](https://css-tricks.com/css-only-carousel/)
 - [Scrollview padding](https://blog.alexandergottlieb.com/overflow-scroll-and-the-right-padding-problem-a-css-only-solution-6d442915b3f4)
 - [Cyclical scroll](https://www.magictoolbox.com/magicscroll/integration/)
-- [Virtualized scroll.](https://github.com/tbranyen/hyperlist)
+- [Virtualized scroll](https://github.com/tbranyen/hyperlist)
 
 Missing browser features,
 complex JavaScript, and the need to support input modes including touch,
