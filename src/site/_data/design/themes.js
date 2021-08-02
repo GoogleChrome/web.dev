@@ -94,13 +94,13 @@ module.exports = {
       {
         name: 'dark-toggle',
         key: 'prefix',
-        value: '[data-theme="dark"]',
+        value: '[data-user-theme="dark"]',
         tokens: this.getDark(),
       },
       {
         name: 'light-toggle',
         key: 'prefix',
-        value: '[data-theme="light"]',
+        value: '[data-user-theme="light"]',
         tokens: this.getLight(),
       },
     ];
