@@ -2,6 +2,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 {% if CSS_ORIGIN === 'next' %}
+  <script>
+    // A global function that the theme toggle can use to apply the current theme.
+    window.applyThemeSetting = function(override) {
+      const currentSetting = override || localStorage.getItem('user-color-scheme');
+      const currentAttribute = document.documentElement.getAttribute('data-theme');
+
+      if (currentSetting && currentSetting !== currentAttribute) {
+        document.documentElement.setAttribute('data-theme', currentSetting);
+      }
+    };
+    window.applyThemeSetting();
+  </script>
   {# hashForProd() will cache bust the css in dev with a random string. #}
   <link rel="stylesheet" href="{{ helpers.hashForProd('/css/next.css') }}">
 {% else %}
