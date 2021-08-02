@@ -215,7 +215,7 @@ It is useful for users to be able to use clipboard keyboard shortcuts such as
 <kbd>ctrl</kbd>+<kbd>c</kbd> and <kbd>ctrl</kbd>+<kbd>v</kbd>.
 Chromium exposes _read-only_ files on the clipboard as outlined below.
 This triggers when the user hits the operating system's default paste shortcut
-or when the usere clicks the **Edit > Paste** menu in the browser's menu bar.
+or when the user clicks **Edit** then **Paste** in the browser's menu bar.
 No further plumbing code is needed.
 
 ```js
