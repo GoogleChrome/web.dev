@@ -55,7 +55,10 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 }
 
 .w-author__name-link {
+  display: inline-block;
   color: inherit;
+  line-height: 48px;
+  min-width: 48px;
 
   &:hover,
   &:focus {
@@ -82,19 +85,27 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   padding: 0 4px;
 }
 
+.w-author__link {
+  display: inline-block;
+  min-width: 48px;
+  text-align: center;
+}
+
 .w-author__link-list {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
   overflow: hidden;
+  width: fit-content;
 }
 
 .w-author__link-listitem {
   float: left;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 48px;
   margin: 0;
+  min-width: 48px;
 }
 
 .w-author__link-listitem::after {
