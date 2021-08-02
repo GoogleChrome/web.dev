@@ -37,7 +37,7 @@ The survey anonymously collected 880 submissions, with 366 answering every
 question. 
 
 While getting started with scrolling is one line of CSS, like `overflow-x:
-scroll;`, the surface area of scroll APIs and options is large, spanning JS to
+scroll;`, the surface area of scroll APIs and options is large, spanning JavaScript to
 CSS. The following results help to highlight the issues web developers are
 encountering.
 
