@@ -8,7 +8,7 @@ authors:
   - thomassteiner
   - beaufortfrancois
 date: 2021-08-02
-# updated: 2021-07-22
+updated: 2021-08-03
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/8O1JKZ6YxdA0IIuYtECB.jpg
 alt: Sun and moon
 tags:
@@ -171,6 +171,7 @@ app.get("/", (req, res) => {
   // …and send the adequate HTML response with the right CSS inlined.
   res.send(getHTML(prefersColorScheme));
 });
+```
 
 ## Privacy and security considerations
 
