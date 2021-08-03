@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2021-06-30
+updated: 2021-07-29
 tags:
   - blog
   - capabilities
@@ -207,6 +207,28 @@ async function getClipboardContents() {
     console.error(err.name, err.message);
   }
 }
+```
+
+### Working with pasted files
+
+It is useful for users to be able to use clipboard keyboard shortcuts such as
+<kbd>ctrl</kbd>+<kbd>c</kbd> and <kbd>ctrl</kbd>+<kbd>v</kbd>.
+Chromium exposes _read-only_ files on the clipboard as outlined below.
+This triggers when the user hits the operating system's default paste shortcut
+or when the user clicks **Edit** then **Paste** in the browser's menu bar.
+No further plumbing code is needed.
+
+```js
+document.addEventListener("paste", async e => {
+  e.preventDefault();
+  if (!e.clipboardData.files.length) {
+    return;
+  }
+  const file = e.clipboardData.files[0];
+  // Read the file's contents, assuming it's a text file.
+  // There is no way to write back to it.
+  console.log(await file.text());
+});
 ```
 
 ### The paste event
