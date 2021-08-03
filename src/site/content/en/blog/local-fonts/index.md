@@ -14,7 +14,7 @@ description: >
   The Local Fonts API enumerates the user's installed local fonts and provides low-level access to
   the various TrueType/OpenType tables.
 date: 2020-08-24
-updated: 2021-03-31
+updated: 2021-07-30
 hero: image/admin/oeXwG1zSwnivzpvcUJly.jpg
 alt: Page of a font book.
 feedback:
@@ -162,8 +162,8 @@ The Local Font Access API is an attempt at solving these challenges. It consists
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | 1. Create explainer                      | [Complete][explainer]                                                                           |
 | 2. Create initial draft of specification | [In progress][spec]                                                                             |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback)                                                                        |
-| **4. Origin trial**                      | **[In progress](https://developers.chrome.com/origintrials/#/view_trial/-7289075996899147775)** |
+| 3. **Gather feedback & iterate on design**   | [**In progress**](#feedback)                                                                        |
+| 4. Origin trial                     | Complete |
 | 5. Launch                                | Not started                                                                                     |
 
 </div>
@@ -174,17 +174,6 @@ The Local Font Access API is an attempt at solving these challenges. It consists
 
 To experiment with the Local Font Access API locally, enable the `#font-access` flag in
 `about://flags`.
-
-### Enabling support during the origin trial phase
-
-Starting in Chrome 87, the Local Font Access API will be available as an origin trial in Chrome. The
-origin trial is expected to end in Chrome 89 (April 7, 2021).
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 #### Feature detection
 
