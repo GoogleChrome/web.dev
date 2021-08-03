@@ -171,6 +171,7 @@ app.get("/", (req, res) => {
   // …and send the adequate HTML response with the right CSS inlined.
   res.send(getHTML(prefersColorScheme));
 });
+```
 
 ## Privacy and security considerations
 
