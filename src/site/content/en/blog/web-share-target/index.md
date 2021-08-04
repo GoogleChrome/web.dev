@@ -1,6 +1,6 @@
 ---
 title: Receiving shared data with the Web Share Target API
-subhead: Sharing on mobile made simple with the Web Share Target API
+subhead: Sharing on mobile and desktop made simple with the Web Share Target API
 authors:
   - petelepage
   - joemedley
@@ -9,7 +9,7 @@ updated: 2021-06-07
 hero: image/admin/RfxdrfKdh5Fp8camulRt.png
 alt: An illustration demonstrating that platform-specific apps can now share content with web apps.
 description: |
-  On a mobile device, sharing should be as simple as clicking the Share button,
+  On a mobile or desktop device, sharing should be as simple as clicking the Share button,
   choosing an app, then choosing who to share with. The Web Share Target API
   allows installed web apps to register with the underlying operating system to receive shared content.
 tags:
@@ -20,7 +20,7 @@ feedback:
   - api
 ---
 
-On a mobile device, sharing should be as straightforward as clicking the **Share** button,
+On a mobile or desktop device, sharing should be as straightforward as clicking the **Share** button,
 choosing an app, and choosing who to share with. For example, you may want to
 share an interesting article, either by emailing it to friends or tweeting it to
 the world.

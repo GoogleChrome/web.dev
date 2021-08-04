@@ -27,6 +27,7 @@
       <a href="{{url}}" class="w-card-base__link">
         <h2 class="{{ 'w-card-base__headline--with-image' if hero else 'w-card-base__headline' }}">{{title}}</h2>
       </a>
+      {% AuthorsDate date=data.date, locale=locale %}
       <div class="w-card-base__desc">
         {% if description %}
           <a class="w-card-base__link" tabindex="-1" href="{{url}}">
