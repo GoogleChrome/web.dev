@@ -140,7 +140,11 @@ const p = new URLPattern({
 ```
 
 {% Aside %}
-When passing a `baseURL` to the constructor, any aspects of the URL that are not provided are treated as if they were set to an empty string, _not_ as a `'*'` wildcard. For instance, `new URLPattern({baseURL: 'https://example.com/'})` will create a `URLPattern` with `search`, `hash`, and other unspecified properties set to `''`.
+When passing a `baseURL` to the constructor, any aspects of the URL
+that are not provided are treated as if they were set to an empty string, _not_
+as a `'*'` wildcard. For instance,
+`new URLPattern({baseURL: 'https://example.com/'})` will create a `URLPattern`
+with `search`, `hash`, and other unspecified properties set to `''`.
 {% endAside %}
 
 All of these examples assume that your use case involves matching origins. If
