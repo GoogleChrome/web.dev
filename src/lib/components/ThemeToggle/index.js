@@ -31,37 +31,15 @@ class ThemeToggle extends HTMLElement {
     this.toggleSwitch = this.querySelector('[role="switch"]');
 
     if (this.toggleSwitch) {
-      this.applySetting();
-
-      // Allows --flow-space to work and we
-      // only want that to happen when it's
-      // ready to go
-      this.style.display = 'block';
-      this.toggleSwitch.style.visibility = 'visible';
-
       // On change, calculate the new setting, toggle state changes and store in storage
       this.toggleSwitch.addEventListener('change', () => {
         const setting = this.toggleSwitch.checked ? 'dark' : 'light';
-
         this.applySetting(setting);
         localStorage.setItem(this.STORAGE_KEY, setting);
       });
+
+      this.applySetting();
     }
-  }
-
-  getCSSCustomProp(propKey) {
-    let response = getComputedStyle(document.documentElement).getPropertyValue(
-      propKey,
-    );
-
-    // Tidy up the string if there’s something to work with
-    if (response.length) {
-      response = response.replace(/'|"/g, '').trim();
-    }
-
-    // Gorko will probably set this as a `var()` reference,
-    // we need to strip that stuff out
-    return response.replace('var(--color-').replace(')');
   }
 
   applySetting(passedSetting) {
@@ -72,12 +50,20 @@ class ThemeToggle extends HTMLElement {
     if (currentSetting) {
       this.setToggleSwitchStatus(currentSetting);
       window.applyThemeSetting(currentSetting);
-    } else {
-      // Loads the value based on the CSS custom property value instead, with a fallback of light
-      const customPropValue =
-        this.getCSSCustomProp(this.COLOR_MODE_KEY) || 'light';
-      this.setToggleSwitchStatus(customPropValue);
-      window.applyThemeSetting(customPropValue);
+    }
+    // If no storage setting, we set up media query-based state change
+    else {
+      // Set the checkbox to on if we're already in dark preference
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        this.setToggleSwitchStatus('dark');
+      }
+
+      // Listen for changes to the preference and set checkbox state accordingly
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', (evt) => {
+          this.setToggleSwitchStatus(evt.matches ? 'dark' : 'light');
+        });
     }
   }
 
@@ -88,6 +74,7 @@ class ThemeToggle extends HTMLElement {
       'aria-checked',
       isDarkMode ? 'true' : 'false',
     );
+
     this.toggleSwitch.checked = isDarkMode;
   }
 }
