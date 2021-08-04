@@ -23,7 +23,8 @@ $global-gutter: #{get-size('size-2')};
 
 body {
   font-size: get-size('size-1');
-  padding: get-size('size-1');
+  display: flex;
+  flex-direction: column;
 
   @include apply-utility('bg', 'core-bg');
   @include apply-utility('color', 'core-text');
@@ -283,10 +284,14 @@ a:active {
 @import 'compositions/sidebar';
 @import 'compositions/switcher';
 
+/// BLOCKS
+@import 'blocks/skip-link';
+
 /// UTILITY CLASSES
 @import 'utilities/flow';
 @import 'utilities/focus-ring';
 @import 'utilities/region';
+@import 'utilities/visually-hidden';
 @import 'utilities/wrapper';
 
 // The prototype file is for temporary prototyping
