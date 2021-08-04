@@ -73,7 +73,7 @@ before painting a single pixel on the screen.
 ## Optimize
 
 To optimize this page, you need to know which classes are considered "critical".
-You'll use the [Coverage Tool](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage) for that:
+You'll use the [Coverage Tool](https://developer.chrome.com/docs/devtools/css/reference/#coverage) for that:
 
 1. In DevTools, open the [Command Menu](https://developers.google.com/web/tools/chrome-devtools/command-menu), by pressing `Control+Shift+P` or `Command+Shift+P` (Mac).
 1. Type "Coverage" and select **Show Coverage**.

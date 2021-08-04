@@ -30,20 +30,43 @@
     }
   }
 
-  &__search {
-    padding: 0 16px;
+  web-search {
+    display: block;
     height: 48px;
+    padding: 0 var(--flow-space);
 
-    > .input {
-      border: 1px solid $GREY_300;
-      height: 48px;
+    .web-search__input-wrapper {
+      display: flex;
+    }
+
+    .web-search__open-btn,
+    .web-search__close-btn,
+    &[expanded] .web-search__close-btn {
+      display: none;
     }
   }
 
-  &__links {
+  .web-search-popout {
+    height: 100%;
+    padding-top: 0
+  }
+
+  &__scroll {
     flex: 1;
-    overflow-y: auto;
-    overscroll-behavior: contain; // sass-lint:disable-line no-misspelled-properties
+    overflow: auto;
+    // sass-lint:disable no-misspelled-properties
+    overscroll-behavior: contain;
+    position: relative;
+  }
+
+  &__links {
+    display: block; // this is a custom element so it needs display: block;
+    position: absolute;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
   }
 
   &__link {
@@ -56,18 +79,24 @@
     min-height: 48px;
     padding: 16px 24px;
 
+    &:hover {
+      background-color: rgba($GREY_800, .03);
+      text-decoration: none;
+    }
+
     &[data-complete] {
       --check-display: block;
       color: $GREY_700;
-      background-color: rgba($GREY_800, .03);
+
+      > [data-badge]::after {
+        content: '';
+      }
     }
 
-    &:hover,
     &[data-active] {
       --counter-color: #{$WEB_PRIMARY_COLOR};
       background: $BLUE_50;
       color: $WEB_PRIMARY_COLOR;
-      text-decoration: none;
     }
   }
 
@@ -82,6 +111,23 @@
   &__link-title {
     font-size: px-to-rem(14px);
     line-height: 1.5;
+
+    &::after {
+      display: inline-block;
+      height: 0.5em;
+      margin-left: 0.6em;
+    }
+
+    &[data-badge]::after {
+      @include apply-utility('font', 'mono');
+      font-weight: 700;
+      color: $WEB_PRIMARY_COLOR;
+      content: attr(data-badge);
+      font-size: px-to-rem(11px);
+      line-height: px-to-rem(16px);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
   }
 
   &__link-check {

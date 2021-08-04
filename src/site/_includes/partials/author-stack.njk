@@ -1,0 +1,35 @@
+<div class="flow flow-space-400">
+  {%- for item in authors -%}
+    {%- set author = collections.authors[item] -%}
+    {%- set authorName = author.title | i18n(locale) -%}
+    {%- set authorDesc = author.description | i18n(locale) -%}
+    <div class="display-flex align-center">
+      {% Img class="flex-shrink-none rounded-full", src=author.image, alt=authorName, width="80", height="80" %}
+      <div class="display-flex direction-column gap-left-300">
+        <div class="font-weight-medium">
+          {{ authorName }}
+        </div>
+        <div class="gap-top-100 color-grey-800 text-275">
+          {{ authorDesc }}
+        </div>
+        <ul class="list-separator display-flex list-style-none text-275 gap-top-50">
+          {%- if author.homepage -%}
+          <li class="display-flex">
+            <a href="{{ author.homepage }}">Homepage</a>
+          </li>
+          {%- endif -%}
+          {%- if author.twitter -%}
+          <li class="display-flex">
+            <a href="https://twitter.com/@{{ author.twitter }}">Twitter</a>
+          </li>
+          {%- endif -%}
+          {%- if author.github -%}
+          <li class="display-flex">
+            <a href="https://github.com/{{ author.github }}">GitHub</a>
+          </li>
+          {%- endif -%}
+        </ul>
+      </div>
+    </div>
+  {%- endfor -%}
+</div>

@@ -211,6 +211,11 @@ This means it will lay out as if it had a single child of "intrinsic-size"
 dimensions, ensuring that your unsized divs still occupy space.
 `contain-intrinsic-size` acts as a placeholder size in lieu of rendered content.
 
+{% Aside %}
+We can use `IntersectionObserver` and `MutationObserver` to set
+the correct sizes inline for each element. [Alex Russell](https://twitter.com/slightlylate) explains
+how this works in [`content-visibility` without jittery scrollbars](https://infrequently.org/2020/12/content-visibility-scroll-fix/), and [Resize-Resilient `content-visibility` Fixes](https://infrequently.org/2020/12/resize-resilient-deferred-rendering/).
+{% endAside %}
 ## Hiding content with `content-visibility: hidden`
 
 What if you want to keep the content unrendered regardless of whether or not it
@@ -241,7 +246,15 @@ happen, they only happen when the element is shown again (i.e. the
 `content-visibility: hidden` property is removed).
 
 Some great use cases for `content-visibility: hidden` are when implementing
-advanced virtual scrollers, and measuring layout.
+advanced virtual scrollers, and measuring layout. They're also great for
+single-page applications (SPA's). Inactive app views can be left in the DOM with
+`content-visibility: hidden` applied to prevent their display but maintain their
+cached state. This makes the view quick to render when it becomes active again.
+
+{% Aside 'note' %}
+In an experiment, Facebook engineers observed an up to 250ms improvement in
+navigation times when going back to previously cached views.
+{% endAside %}
 
 ## Conclusion
 

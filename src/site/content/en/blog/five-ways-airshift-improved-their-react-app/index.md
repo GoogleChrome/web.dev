@@ -194,7 +194,7 @@ import { proxy } from 'comlink';
 
 // import the workerlized calc function with comlink
 const WorkerlizedCostCalc = proxy(new Worker('./WorkerlizedCostCalc.js'));
-export default function Cost({ userInfo }) {
+export default async function Cost({ userInfo }) {
   // execute the calculation in the worker
   const instance = await new WorkerlizedCostCalc();
   const cost = await instance.calc(userInfo);

@@ -150,7 +150,7 @@ but has not signalled that it plans to do so as of August 2020.
 Let's have a look at how Chrome's password manager treats vulnerable passwords.
 
 Chrome's password manager is able to check for leaked passwords. By navigating
-to `chrome://settings/passwords` users can run **Check passwords** against stored
+to `about://settings/passwords` users can run **Check passwords** against stored
 passwords, and see a list of passwords that are recommended for update.
 
 <figure class="w-figure">

@@ -5,18 +5,20 @@ subhead: PWAs can use the "display_override" property to deal with special displ
 authors:
   - thomassteiner
 date: 2021-02-25
+updated: 2021-05-28
 description: |
   The display_override property allows developers to define a customized fallback chain of modes
   their PWAs should be displayed in.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/woTD625c2X9tODE58koK.jpg
-alt: Web App Manifest source code excerpt.
+alt: Web app manifest source code excerpt.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - progressive-web-apps
+  - capabilities
   - web-app-manifest
 ---
 
-A [Web App Manifest](/add-manifest/) is a JSON file that tells the browser about your Progressive
+A [web app manifest](/add-manifest/) is a JSON file that tells the browser about your Progressive
 Web App and how it should behave when installed on the user's desktop or mobile device.
 Via the [`display`](/add-manifest/#display) property, you can customize what browser UI is shown when your app is launched. For example, you can hide the
 address bar and browser chrome. Games can even be made to launch full screen.
@@ -111,7 +113,7 @@ In the example below, the display mode fallback chain would be as follows.
 To remain backward compatible, any future display mode will only be acceptable as a value of
 `display_override`, but not `display`.
 Browsers that do not support `display_override` fall back to the `display` property and ignore
-`display_override` as an unknown Web App Manifest property.
+`display_override` as an unknown web app manifest property.
 
 {% Aside %}
   The `display_override` property is defined independently from its potential values.

@@ -5,7 +5,7 @@ subhead: Learnings for adopting the standardized loading attribute
 authors:
   - felixarntz
 date: 2020-11-20
-#updated: 2020-11-20
+updated: 2021-07-29
 hero: image/admin/Tx8vq8DMsflw49EHAa8Q.jpg
 alt: A lazy leopard relaxing on a tree
 description: |
@@ -137,21 +137,19 @@ layout shifts to decide whether lazy-loading is worth it.
 ### Avoid lazy-loading above-the-fold elements
 
 At the moment CMSs are recommended to only add `loading="lazy"` attributes to
-images and iframes which are positioned below-the-fold, to avoid a slight delay
-in the [Largest Contentful Paint](/lcp/) metric. However it has
+images and iframes which are positioned below-the-fold, to avoid a delay
+in the [Largest Contentful Paint](/lcp/) metric, which in some cases can be
+significant [as discovered in July 2021](/lcp-lazy-loading/). However, it has
 to be acknowledged that it's complex to assess the position of an element
 relative to the viewport before the rendering process. This applies especially
 if the CMS uses an automated approach for adding `loading` attributes, but even
 based on manual intervention several factors such as the different viewport
-sizes and aspect ratios have to be considered. Fortunately, the impact of
-marking above-the-fold elements with `loading="lazy"` is fairly small, with a
-regression of <1% at the 75th and 99th percentiles compared to eagerly-loaded
-elements.
+sizes and aspect ratios have to be considered. Still, it is strongly recommended to omit hero images and other images or iframes that are likely to appear above the fold from being lazy-loaded.
 
 {% Aside %}
 Depending on the capabilities and audience of the CMS, try to define reasonable
 estimates for whether an image or iframe is likely to be in the initial
-viewport, for example never lazy-loading elements in a header template. In
+viewport, for example never lazy-loading elements in a header template or the hero image of the main content. In
 addition, offer either a UI or API which allows modifying the existence of the
 `loading` attribute on elements.
 {% endAside %}
@@ -186,13 +184,9 @@ Having the feature enabled by default will result in greater network resource
 savings than if it had to be enabled manually, for example on a per-image
 basis.
 
-If possible, `loading="lazy"` should
+As much as possible, `loading="lazy"` should
 [only be added to elements which likely appear below-the-fold](#avoid-lazy-loading-above-the-fold-elements).
-If this requirement is too complex to implement for a CMS, it is then preferable
-to globally provide the attribute rather than omit it, since on most websites
-the amount of page content outside of the initial viewport is far greater than
-the initially visible content. In other words, the resource-saving wins from
-using the `loading` attribute are greater than the LCP wins from omitting it.
+While this requirement can be complex to implement for a CMS due to lack of client-side awareness and various viewport sizes, it is recommended to at least [use approximate heuristics to omit elements such as hero images that will likely appear above-the-fold from being lazy-loaded](/lcp-lazy-loading/#testing-a-fix).
 
 ### Allow per-element modifications
 

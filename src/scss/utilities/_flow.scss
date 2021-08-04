@@ -1,0 +1,8 @@
+/// FLOW UTILITY
+/// The flow utility provides flow and rhythm between direct sibling elements.
+/// Where --flow-space is not defined: the default value is 1em, which equals
+/// the font size of the affected element.
+/// Info: https://piccalil.li/quick-tip/flow-utility/
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}

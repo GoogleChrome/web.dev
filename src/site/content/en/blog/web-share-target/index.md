@@ -1,15 +1,15 @@
 ---
 title: Receiving shared data with the Web Share Target API
-subhead: Sharing on mobile made simple with the Web Share Target API
+subhead: Sharing on mobile and desktop made simple with the Web Share Target API
 authors:
   - petelepage
   - joemedley
 date: 2019-11-08
-updated: 2020-02-09
+updated: 2021-06-07
 hero: image/admin/RfxdrfKdh5Fp8camulRt.png
 alt: An illustration demonstrating that platform-specific apps can now share content with web apps.
 description: |
-  On a mobile device, sharing should be as simple as clicking the Share button,
+  On a mobile or desktop device, sharing should be as simple as clicking the Share button,
   choosing an app, then choosing who to share with. The Web Share Target API
   allows installed web apps to register with the underlying operating system to receive shared content.
 tags:
@@ -20,7 +20,7 @@ feedback:
   - api
 ---
 
-On a mobile device, sharing should be as straightforward as clicking the **Share** button,
+On a mobile or desktop device, sharing should be as straightforward as clicking the **Share** button,
 choosing an app, and choosing who to share with. For example, you may want to
 share an interesting article, either by emailing it to friends or tweeting it to
 the world.
@@ -273,7 +273,16 @@ potential target for receiving shared data.
 - [Squoosh](https://github.com/GoogleChromeLabs/squoosh)
 - [Scrapbook PWA](https://github.com/GoogleChrome/samples/blob/gh-pages/web-share/README.md#web-share-demo)
 
+### Show support for the API
 
+Are you planning to use the Web Share Target API? Your public support helps the Chromium team
+prioritize features and shows other browser vendors how critical it is to support them.
+
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebShareTarget`](https://twitter.com/search?q=%23WebShareTarget&src=recent_search_click&f=live)
+and let us know where and how you're using it.
+
+[cr-dev-twitter]: https://twitter.com/ChromiumDev
 [spec]: https://wicg.github.io/web-share-target/
 [demo]: https://web-share.glitch.me/
 [demo-source]: https://glitch.com/edit/#!/web-share?path=index.html

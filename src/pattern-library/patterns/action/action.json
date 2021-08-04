@@ -1,0 +1,12 @@
+{
+  "title": "Action",
+  "context": {
+    "text": "Subscribe",
+    "url": "/newsletter/",
+    "ga": {
+      "label": "view-subscribe",
+      "category": "web.dev",
+      "action": "action"
+    }
+  }
+}

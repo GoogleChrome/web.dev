@@ -27,7 +27,7 @@ Delegating these types of non-critical tasks to the service worker has the benef
 main thread for better handling more pressing tasks such as responding to user interactions.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gCpdKiIbSDZBMJEJE2tZ.png", alt="Diagram of a page requesting resources to cache to a service worker.", width="800", height="374" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gCpdKiIbSDZBMJEJE2tZ.png", alt="Diagram of a page requesting resources to cache to a service worker.", width="565", height="264" %}
 </figure>
 
 In this guide we'll explore how to implement a **one-way** communication technique from the page to
@@ -48,7 +48,7 @@ use cases **imperative caching**.
 top items in category pages to speed up subsequent navigation to product detail pages.
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eNMKYuaKnlYu0N3IIhI5.png", alt="Logo of 1-800 Flowers.", width="316", height="160" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eNMKYuaKnlYu0N3IIhI5.png", alt="Logo of 1-800 Flowers.", width="400", height="203" %}
 </figure>
 
 They use a mixed approach to decide which items to prefetch:
@@ -63,7 +63,7 @@ They use the [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache)
 responses:
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FH4clAbGShyIdhj4jWdL.png", alt="Logo of 1-800 Flowers.", width="800", height="316" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FH4clAbGShyIdhj4jWdL.png", alt="Logo of 1-800 Flowers.", width="728", height="287" %}
    <figcaption class="w-figcaption">Prefetching JSON product data from product listing pages in 1-800Flowers.com.</figcaption>
 </figure>
 

@@ -11,11 +11,11 @@ describe('Build test', function () {
     // eslint-disable-next-line
     this.timeout(0);
 
-    console.log('Running npm run build:test...');
+    console.log('Running npm run build...');
     try {
       // This copies everything except for images because gulp will try to
       // optimize those during a prod build which slows things right down.
-      await exec('ELEVENTY_ENV=prod npm run build:test');
+      await exec('ELEVENTY_ENV=prod npm run build');
     } catch (err) {
       assert.fail(err);
     }
@@ -27,7 +27,7 @@ describe('Build test', function () {
       path.join('authors', 'addyosmani', 'feed.xml'),
       path.join('tags', 'progressive-web-apps', 'feed.xml'),
       path.join('css', 'main.css'),
-      'algolia.json',
+      'pages.json',
       'manifest.webmanifest',
       'sw.js',
       'robots.txt',

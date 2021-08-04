@@ -1,0 +1,29 @@
+---
+title: 'Page'
+pagination:
+  data: design.pages
+  size: 1
+  addAllPagesToCollections: true
+  alias: item
+permalink: '{{ item.link }}/index.html'
+pageScripts:
+  - '/js/design-system.js'
+---
+
+<!--prettier-ignore-->
+{% extends "design-system.njk" %}
+{% set title = item.title %}
+{% set breadcrumbs = [
+  {
+    title: item.title,
+    url: item.url
+  }
+]%}
+
+{% block inner %}
+<iframe data-preview-frame data-size="large" src="{{ item.url }}"></iframe>
+<div>
+  <a href="{{ item.url }}" class="w-button">View full screen</a>
+  <button class="w-button">TODO: add theme switcher</button>
+</div>
+{% endblock %}

@@ -36,6 +36,7 @@
     width: fit-content;
     border-radius: 3px;
     padding-left: 4px;
+    background-color: $GREY_200;
 
     &::marker,
     &::-webkit-details-marker {
@@ -44,11 +45,16 @@
   }
 
   > summary:hover {
-    background-color: $GREY_200;
+    background-color: $GREY_300;
+    cursor: pointer;
   }
 
   &__heading {
     font-size: px-to-rem(14px);
+  }
+
+  .w-scroll-spy__active {
+    font-weight: 700;
   }
 }
 
@@ -68,9 +74,6 @@
 
 .toc__list {
   list-style: none;
-  // Give a little bottom margin so when we scroll to the bottom the last link
-  // clearly scrolls into view.
-  padding-bottom: 16px;
 }
 
 .toc__list .toc__list {

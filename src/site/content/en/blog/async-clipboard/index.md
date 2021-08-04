@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2021-04-27
+updated: 2021-07-29
 tags:
   - blog
   - capabilities
@@ -111,6 +111,22 @@ try {
 }
 ```
 
+{% Aside 'warning' %}
+  Safari (WebKit) treats user activation differently than Chromium (Blink)
+  (see [WebKit bug #222262](https://bugs.webkit.org/show_bug.cgi?id=222262)).
+  For Safari, run all asynchronous operations in a promise
+  whose result you assign to the `ClipboardItem`:
+
+  ```js
+  new ClipboardItem({
+    'foo/bar': new Promise(async (resolve) => {
+        // Prepare `blobValue` of type `foo/bar`
+        resolve(new Blob([blobValue], { type: 'foo/bar' }));
+      }),
+    })
+  ```
+{% endAside %}
+
 ### The copy event
 
 In the case where a user initiates a clipboard copy, non-textual data is
@@ -193,6 +209,28 @@ async function getClipboardContents() {
 }
 ```
 
+### Working with pasted files
+
+It is useful for users to be able to use clipboard keyboard shortcuts such as
+<kbd>ctrl</kbd>+<kbd>c</kbd> and <kbd>ctrl</kbd>+<kbd>v</kbd>.
+Chromium exposes _read-only_ files on the clipboard as outlined below.
+This triggers when the user hits the operating system's default paste shortcut
+or when the user clicks **Edit** then **Paste** in the browser's menu bar.
+No further plumbing code is needed.
+
+```js
+document.addEventListener("paste", async e => {
+  e.preventDefault();
+  if (!e.clipboardData.files.length) {
+    return;
+  }
+  const file = e.clipboardData.files[0];
+  // Read the file's contents, assuming it's a text file.
+  // There is no way to write back to it.
+  console.log(await file.text());
+});
+```
+
 ### The paste event
 
 As noted before, there are plans to introduce events to work with the Clipboard API,
@@ -226,8 +264,8 @@ image data, but it could also come from a
 or the [File System Access API](/file-system-access/).
 
 ```js
-function copy() {
-  const image = await fetch('kitten.png');
+async function copy() {
+  const image = await fetch('kitten.png').then(response => response.blob());
   const text = new Blob(['Cute sleeping kitten'], {type: 'text/plain'});
   const item = new ClipboardItem({
     'text/plain': text,

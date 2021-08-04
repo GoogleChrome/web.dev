@@ -17,7 +17,7 @@ authors:
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-04-19
+updated: 2021-06-23
 tags:
   - blog
   - security
@@ -27,9 +27,20 @@ feedback:
   - api
 ---
 
+{% Aside 'caution' %}
+
+`SharedArrayBuffer` on Chrome desktop requires cross-origin isolation starting
+from Chrome 92. Learn more at [SharedArrayBuffer updates in Android Chrome 88
+and Desktop Chrome
+92](https://developer.chrome.com/blog/enabling-shared-array-buffer/).
+
+{% endAside %}
 
 **Updates**
 
+- **May 6, 2021**: Based on feedback and issues reported we've decided to adjust
+  the timeline for `SharedArrayBuffer` usage in none cross-origin isolated sites
+  to be restricted in Chrome M92. 
 - **April 16, 2021**: Added notes about [a new COEP credentialless
   mode](https://github.com/mikewest/credentiallessness/) and [COOP
   same-origin-allow-popups to be a relaxed
@@ -78,7 +89,7 @@ able to use privileged features including:
           help of <a href="https://www.chromium.org/Home/chromium-security/site-isolation">
           Site Isolation</a>, but will require the cross-origin isolated state
           and <a href="https://developer.chrome.com/blog/enabling-shared-array-buffer/">
-          will be disabled by default in Chrome 91</a>.
+          will be disabled by default in Chrome 92</a>.
         </td>
       </tr>
       <tr>
@@ -558,6 +569,6 @@ around COOP and COEP.
 * [Why you need "cross-origin isolated" for powerful features](https://web.dev/why-coop-coep/)
 * [A guide to enable cross-origin isolation](https://web.dev/cross-origin-isolation-guide/)
 * [SharedArrayBuffer updates in Android Chrome 88 and Desktop Chrome
-  91](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
+  92](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
 * [Monitor your web page's total memory usage with
   `measureUserAgentSpecificMemory()`](https://web.dev/monitor-total-page-memory-usage/)

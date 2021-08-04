@@ -5,7 +5,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2015-07-21
-updated: 2021-02-26
+updated: 2021-05-07
 hero: image/admin/CME5IVhdn0pngs7jAlFX.jpg
 thumbnail: image/admin/1J1OTu90a2oH8wFogKnF.jpg
 alt: A Bluetooth chip on a coin
@@ -46,7 +46,7 @@ Bluetooth descriptors]. See MDN's [Browser compatibility] table for more
 information.
 
 For Linux and earlier versions of Windows, enable the
-`#experimental-web-platform-features` flag in `chrome://flags`.
+`#experimental-web-platform-features` flag in `about://flags`.
 
 ### Available for origin trials
 
@@ -107,9 +107,11 @@ chooser where they can pick one device or simply cancel the request.
 </figure>
 
 
-The `navigator.bluetooth.requestDevice` function takes a mandatory object that
+The `navigator.bluetooth.requestDevice()` function takes a mandatory object that
 defines filters. These filters are used to return only devices that match some
 advertised Bluetooth GATT services and/or the device name.
+
+#### Services filter
 
 For instance, to request Bluetooth devices advertising the [Bluetooth GATT
 Battery Service]:
@@ -134,22 +136,65 @@ navigator.bluetooth.requestDevice({
 .catch(error => { console.error(error); });
 ```
 
+#### Name filter
+
 You can also request Bluetooth devices based on the device name being advertised
 with the `name` filters key, or even a prefix of this name with the `namePrefix`
 filters key. Note that in this case, you will also need to define the
-`optionalServices` key to be able to access some services. If you don't, you'll
-get an error later when trying to access them.
+`optionalServices` key to be able to access any services not included in a
+service filter. If you don't, you'll get an error later when trying to access
+them.
 
 ```js
 navigator.bluetooth.requestDevice({
   filters: [{
     name: 'Francois robot'
   }],
-  optionalServices: ['battery_service']
+  optionalServices: ['battery_service'] // Required to access service later.
 })
 .then(device => { /* … */ })
 .catch(error => { console.error(error); });
 ```
+
+#### Manufacturer data filter
+
+It is also possible to request Bluetooth devices based on the manufacturer
+specific data being advertised with the `manufacturerData` filters key. This key
+is an array of objects with a mandatory [Bluetooth company identifier] key named
+`companyIdentifier`. You can also provide a data prefix that filters
+manufacturer data from Bluetooth devices that start with it. Note that you will
+also need to define the `optionalServices` key to be able to access any services
+not included in a service filter. If you don't, you'll get an error later when
+trying to access them.
+
+```js
+// Filter Bluetooth devices from Google company with manufacturer data bytes
+// that start with [0x01, 0x02].
+navigator.bluetooth.requestDevice({
+  filters: [{
+    manufacturerData: [{
+      companyIdentifier: 0x00e0,
+      dataPrefix: new Uint8Array([0x01, 0x02])
+    }]
+  }],
+  optionalServices: ['battery_service'] // Required to access service later.
+})
+.then(device => { /* … */ })
+.catch(error => { console.error(error); });
+```
+
+A mask can also be used with a data prefix to match some patterns in
+manufacturer data. Check out the [Bluetooth data filters explainer] to learn
+more.
+
+{% Aside %}
+At the time of writing, the `manufacturerData` filter key is available in
+Chrome&nbsp;92. If backwards compatibility with older browsers is desired, you
+have to provide a fallback option as the manufacturer data filter is considered
+empty. See an [example].
+{% endAside %}
+
+#### No filters
 
 Finally, instead of `filters` you can use the `acceptAllDevices` key to show all
 nearby Bluetooth devices. You will also need to define the `optionalServices`
@@ -159,7 +204,7 @@ when trying to access them.
 ```js
 navigator.bluetooth.requestDevice({
   acceptAllDevices: true,
-  optionalServices: ['battery_service']
+  optionalServices: ['battery_service'] // Required to access service later.
 })
 .then(device => { /* … */ })
 .catch(error => { console.error(error); });
@@ -401,6 +446,7 @@ Service, or a Health Thermometer Service.
 - [Device Disconnect](https://googlechrome.github.io/samples/web-bluetooth/device-disconnect.html) - disconnect and get notified from a disconnection of a BLE Device after connecting to it.
 - [Get Characteristics](https://googlechrome.github.io/samples/web-bluetooth/get-characteristics.html) - get all characteristics of an advertised service from a BLE Device.
 - [Get Descriptors](https://googlechrome.github.io/samples/web-bluetooth/get-descriptors.html) - get all characteristics' descriptors of an advertised service from a BLE Device.
+- [Manufacturer Data Filter](https://googlechrome.github.io/samples/web-bluetooth/manufacturer-data-filter.html) - retrieve basic device information from a BLE Device that matches manufacturer data.
 
 ### Combining multiple operations
 
@@ -438,7 +484,7 @@ Check out our [curated Web Bluetooth Demos] and [official Web Bluetooth Codelabs
 ## Tips
 
 A **Bluetooth Internals** page is available in Chrome at
-`chrome://bluetooth-internals` so that you can inspect everything about nearby
+`about://bluetooth-internals` so that you can inspect everything about nearby
 Bluetooth devices: status, services, characteristics, and descriptors.
 
 <figure class="w-figure">
@@ -539,3 +585,6 @@ Hero image by [SparkFun Electronics from Boulder, USA].
 [Kayce Basques]: https://github.com/kaycebasques
 [SparkFun Electronics from Boulder, USA]: https://commons.wikimedia.org/wiki/File:Bluetooth_4.0_Module_-_BR-LE_4.0-S2A_(16804031059).jpg
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
+[Bluetooth company identifier]: https://www.bluetooth.com/specifications/assigned-numbers/company-identifiers/
+[Bluetooth data filters explainer]: https://github.com/WebBluetoothCG/web-bluetooth/blob/main/data-filters-explainer.md
+[example]: https://groups.google.com/a/chromium.org/g/blink-dev/c/5Id2LANtFko/m/5SIig7ktAgAJ

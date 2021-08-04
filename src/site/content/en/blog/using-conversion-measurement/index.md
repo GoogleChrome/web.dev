@@ -11,6 +11,20 @@ tags:
   - privacy
 ---
 
+{% Banner 'caution', 'body' %} The Conversion Measurement API will be renamed to
+_Attribution Reporting API_ and offer more features.
+
+- If you're experimenting with ([Conversion
+  Measurement API](https://github.com/WICG/conversion-measurement-api/blob/3e0ef7d3cee8d7dc5a4b953e70cb027b0e13943b/README.md))
+  in [Chrome 91](https://chromestatus.com/features/schedule) and below, read this post
+  to find more details, use cases and instructions for how to use the API.
+- If you're interested in the next iteration of this API (Attribution Reporting), which will be
+  available for experimentation in Chrome (origin trial), [join the mailing
+  list](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev) for updates
+  on available experiments.
+
+{% endBanner %}
+
 The [Event Conversion Measurement API](/conversion-measurement) measures when an ad click leads to a
 conversion, without using cross-site identifiers. Here, you'll find must-dos and tips to use this
 API locally or as an experiment for your end users.
@@ -136,9 +150,9 @@ A few tips when developing locally with the conversion measurement API.
 ### Set up your browser for local development
 
 - Use Chrome version 86 or later. You can check what version of Chrome you're using by typing
-  `chrome://version` in the URL bar.
+  `about://version` in the URL bar.
 - To activate the feature locally (for example if you're developing on `localhost`), enable
-  flags. Go to flags by typing `chrome://flags` in Chrome's URL bar. Turn on the **two** flags
+  flags. Go to flags by typing `about://flags` in Chrome's URL bar. Turn on the **two** flags
   `#enable-experimental-web-platform-features` and `#conversion-measurement-api`.
 - Disable third-party cookie blocking. In the long term, dedicated browser settings will be
   available to allow/block the API. Until then, third-party cookie blocking is used as the signal
@@ -152,13 +166,13 @@ A few tips when developing locally with the conversion measurement API.
 ### Debug
 
 You can see the conversion reports the browser has scheduled to send at
-`chrome://conversion-internals/` > **Pending Reports**. Reports are sent at scheduled times, but for
+`about://conversion-internals/` > **Pending Reports**. Reports are sent at scheduled times, but for
 debugging purposes you may want to get the reports immediately.
 
 - To receive all of the scheduled reports now, click **Send All Reports** in
-  `chrome://conversion-internals/` > **Pending Reports**.
+  `about://conversion-internals/` > **Pending Reports**.
 - To always receive reports **immediately** without having to click this button, enable the flag
-  `chrome://flags/#conversion-measurement-debug-mode`.
+  `about://flags/#conversion-measurement-debug-mode`.
 
 ### Test your origin trial token(s)
 

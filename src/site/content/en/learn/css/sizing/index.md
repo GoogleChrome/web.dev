@@ -1,14 +1,18 @@
 ---
 title: Sizing Units
-description:
+description: >
+  In this module find out how to size elements using CSS,
+  working with the flexible medium of the web.
+audio:
+  title: 'The CSS Podcast - 008: Sizing Units'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast_Episode_008_v1.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-13
 tags:
   - css
 ---
-
-# Sizing
 
 The web is a responsive medium,
 but sometimes you want to control its dimensions to improve the overall interface quality.
@@ -18,7 +22,8 @@ How would you do that in a flexible medium like the web?
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'bGgEGxj'
+  id: 'bGgEGxj',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -48,11 +53,12 @@ p {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'yLgYZRK'
+  id: 'yLgYZRK',
+  tab: 'css,result'
 } %}
 </figure>
 
-In this example, `1.3` is equal to **130%** of the `p` element's **computed pixel font size**.
+In this example, `1.5` is equal to **150%** of the `p` element's **computed pixel font size**.
 This means that if the `p` has a `font-size` of `24px`,
 the line height will be computed as `36px`.
 
@@ -69,7 +75,7 @@ which will not change and might look strange with certain font sizes.
 Numbers can also be used in the following places:
 
 - When setting values for filters: `filter: sepia(0.5)` applies a `50%` sepia filter to the element.
-- When setting opacity: `opacity: 0.5` applies an `80%` opacity.
+- When setting opacity: `opacity: 0.5` applies a `50%` opacity.
 - In color channels: `rgb(50, 50, 50)`,
   where the values 0-255 are acceptable to set a color value.
   [See color lesson](/learn/css/color).
@@ -82,23 +88,24 @@ For example,`width` is calculated as a percentage of the width of the parent ele
 
 ```css
 div {
-  width: 450px;
+  width: 300px;
   height: 100px;
 }
 
 div p {
-  width: 50%; /* calculated: 225px */
+  width: 50%; /* calculated: 150px */
 }
 ```
 
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'ZELbwwj'
+  id: 'ZELbwwj',
+  tab: 'css,result'
 } %}
 </figure>
 
-In the above example, the width of `div p` is `225px`.
+In the above example, the width of `div p` is `150px`.
 
 If you set `margin` or `padding` as a percentage,
 they will be a portion of the **parent element's width**,
@@ -106,49 +113,51 @@ regardless of direction.
 
 ```css
 div {
-  width: 450px;
+  width: 300px;
   height: 100px;
 }
 
 div p {
-  margin-top: 50%; /* calculated: 225px */
-  padding-right: 50%; /* calculated: 225px */
+  margin-top: 50%; /* calculated: 150px */
+  padding-left: 50%; /* calculated: 150px */
 }
 ```
 
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'WNRQPqX'
+  id: 'WNRQPqX',
+  tab: 'css,result'
 } %}
 </figure>
 
-In the above snippet, both the `margin-top` and `padding-right` will compute to `225px`.
+In the above snippet, both the `margin-top` and `padding-left` will compute to `150px`.
 
 ```css
 div {
-  width: 450px;
+  width: 300px;
   height: 100px;
 }
 
 div p {
-  width: 50%; /* calculated: 225px */
-  transform: translateX(10%); /* calculated: 22.5px */
+  width: 50%; /* calculated: 150px */
+  transform: translateX(10%); /* calculated: 15px */
 }
 ```
 
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'xxgwBxv'
+  id: 'xxgwBxv',
+  tab: 'css,result'
 } %}
 </figure>
 
 If you set a `transform` value as a percentage,
 it is based on the element with the transform set.
 In this example, the `p` has a `translateX` value of `10%` and a `width` of `50%`.
-First, calculate what the width will be: `225px` because it is **50% of its parent's width**.
-Then, take `10%` of `225px`, which is `22.5px`.
+First, calculate what the width will be: `150px` because it is **50% of its parent's width**.
+Then, take `10%` of `150px`, which is `15px`.
 
 {% Aside 'key-term' %}
 The transform property allows you alter an element's appearance and position by rotating, skewing, scaling and translating it.
@@ -420,7 +429,8 @@ div {
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'VwPvRbK'
+  id: 'VwPvRbK',
+  tab: 'css,result'
 } %}
 </figure>
 
@@ -449,6 +459,8 @@ In the previous example the value of `min-resolution` is `192dpi`.
 The `dpi` unit stands for **dots per inch**.
 A useful context for this is detecting very high resolution screens,
 such as Retina displays in a media query and serving up a higher resolution image.
+
+{% Assessment 'sizing' %}
 
 ## Resources
 

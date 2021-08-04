@@ -55,6 +55,10 @@ const pagesToTest = [
     title: 'Tags page',
   },
   {
+    url: '/shows/',
+    title: 'Shows page',
+  },
+  {
     url: '/podcasts/',
     title: 'Podcasts page',
   },

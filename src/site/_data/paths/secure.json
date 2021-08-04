@@ -11,7 +11,8 @@
       "pathItems": [
         "security-not-scary",
         "security-attacks",
-        "same-site-same-origin"
+        "same-site-same-origin",
+        "security-headers"
       ]
     },
     {
@@ -37,7 +38,10 @@
     },
     {
       "title": "i18n.paths.secure.topics.protect_websites_from_xss",
-      "pathItems": ["trusted-types"]
+      "pathItems": [
+        "trusted-types",
+        "strict-csp"
+      ]
     },
     {
       "title": "i18n.paths.secure.topics.protect_users_from_tracking",
@@ -50,7 +54,8 @@
         "conversion-measurement",
         "using-conversion-measurement",
         "user-agent-client-hints",
-        "schemeful-samesite"
+        "schemeful-samesite",
+        "floc"
       ]
     }
   ]

@@ -1,0 +1,52 @@
+---
+permalink: '/design-system/colors/index.html'
+---
+
+{% extends "design-system.njk" %}
+{% set title = 'Colors' %}
+{% set summary %}
+Colors are set with design tokens, which are located here: `src/site/_data/design/tokens.json`. 
+There is also a contextual relationship between colors and how they are applied with themes: `src/site/_data/design/themes.js`
+
+### Todo
+
+- Create proper color references 
+- Document themeing 
+- Document color usage 
+
+{% endset %}
+{% set breadcrumbs = [
+  {
+    title: 'Colors',
+    url: page.url
+  }
+]%}
+{% block inner %}
+{% for group in design.tokens.colors %}
+  <h2>{{ group.group }}</h2>
+  <!-- TEMP LAYOUT -->
+  <div class="swatches">
+    {% for color in group.items %}
+      <div>
+        <h3>{{ color.name }}</h3>
+        <dl>
+          <dt>Sass</dt>
+          <dd>
+            <code>get-color('{{ group.group | slug }}-{{ color.name | slug }}')</code>
+          </dd>
+          <dt>Hex</dt>
+          <dd>
+            <code>{{ color.hex }}</code>
+          </dd>
+          <dt>HSL</dt>
+          <dd>
+            <code>{{ color.hsl }}</code>
+          </dd>
+        </dl>
+        <div class="gap-top-400" style="height: 10rem; background: {{ color.hsl }}">
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}
+{% endblock %}

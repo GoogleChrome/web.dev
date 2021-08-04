@@ -27,5 +27,9 @@ module.exports = ({hero, alt, heroPosition, heroFit = 'cover'}) => {
     width: '1600',
     sizes: '100vw',
     class: className,
+    decoding: 'auto',
+    // Don't lazy load hero images
+    // https://github.com/GoogleChrome/web.dev/issues/5813
+    loading: false,
   });
 };

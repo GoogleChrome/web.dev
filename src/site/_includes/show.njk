@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{% set data = paged.data %}
+<div class="w-layout-container--narrow w-post-content">
+  <header class="w-article-header">
+    <h1 class="w-article-header__headline">{{ data.title }}</h1>
+    <div class="w-author__published">
+      <time>{{ data.date | prettyDate }}</time>
+    </div>
+    <div class="w-layout-container--narrow w-post-signpost">
+      <span class="w-post-signpost__title">Appears in:</span>
+        <a class="w-post-signpost__link" href="{{ data.parent.url }}">{{ data.parent.title | i18n(locale) }}</a >
+    </div>
+  </header>
+  {% YouTube data.videoId %}
+  <p>{{ data.description | md({linkify: true, breaks: true}) | safe }}</p>
+</div>

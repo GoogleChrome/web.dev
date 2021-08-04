@@ -1,0 +1,121 @@
+{% from 'macros/icon.njk' import icon, svg with context %}
+
+<!DOCTYPE html>
+<html lang="{{lang}}">
+  <head>
+    {% include 'partials/head.njk' %}
+    <!-- some hacky styles to get through this populating effort -->
+    <style>
+      .drawer-course__contents {
+        overflow-y: auto;
+      }
+
+      .drawer-course__links {
+        position: static;
+        height: unset;
+      }
+    </style>
+  </head>
+  <body class="unresolved design-system">
+    {#
+      Make the snackbar the first item in the DOM so we don't have to steal the
+      user's focus on initial visit to show them a cookie banner. Instead, the
+      snackbar will be the first stop for the screen reader / focus.
+    #}
+    <web-snackbar-container></web-snackbar-container>
+
+    <a class="skip-link w-button" href="#main">Skip to main</a>
+
+    <div class="display-flex direction-column lg:direction-row">
+
+
+      <web-header class="header-course lg:display-none" role="navigation" style="--course-background: {{ courseData.meta.background }}">
+        <button data-open-drawer-button class="w-button--svg w-button--round" aria-label="Open menu">
+          {{ icon('menu') }}
+          <span class="w-tooltip w-tooltip--left">Open menu</span>
+        </button>
+
+        <div class="header-course__title">
+          <strong>Pattern library</strong>
+        </div>
+      </web-header>
+
+      <web-navigation-drawer class="drawer-course" type="standard">
+        <nav data-drawer-container>
+
+          <div class="drawer-course__contents flow flow-space-300 display-block">
+            <button data-drawer-close-button class="w-button--svg w-button--round lg:display-none" aria-label="close">
+              {{ icon('close') }}
+              <span class="w-tooltip">Close</span>
+            </button>
+            <h2 class="pad-left-400">Design system</h2>
+            <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
+              {% for link in sideLinks %}
+                <a class="drawer-course__link" href="{{ link.url }}" {% if link.url == page.url %} data-active {% endif %}>{{ link.text }}</a> 
+              {% endfor %}
+            </course-links>
+            <h2 class="pad-left-400 flow-space-700">CSS</h2>
+            <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
+              {% for link in cssLinks %}
+                <a class="drawer-course__link" href="{{ link.url }}" {% if link.url == page.url %} data-active {% endif %}>{{ link.text }}</a> 
+              {% endfor %}
+            </course-links>
+            <h2 class="pad-left-400 flow-space-700">Patterns</h2>
+            <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
+              {% for item in design.patterns.items %}
+              <a class="drawer-course__link" href="{{ item.url }}" {% if item.url == page.url %} data-active {% endif %}>
+                {{ item.data.title }}
+              </a>
+              {% endfor %}
+            </course-links>
+            <h2 class="pad-left-400 flow-space-700">Pages</h2>
+            <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
+              {% for item in design.pages %}
+              <a class="drawer-course__link" href="{{ item.link }}" {% if item.link == page.url %} data-active {% endif %}>
+                {{ item.title }}
+              </a>
+              {% endfor %}
+            </course-links>
+          </div>
+        </nav>
+      </web-navigation-drawer>
+
+      <div class="flex-1 min-width-0">
+        <nav class="app-bar" aria-label="breadcrumbs">
+          <ul class="app-bar__list">
+            <li class="app-bar__item">
+              <a href="/">{{ svg('../../../images/lockup.svg', {label: 'web.dev', className: 'course-app-bar__logo'}) }}</a>
+            </li>
+            <li class="app-bar__item">
+              <a href="/design-system/">Design System</a>
+            </li>
+            {% for breadcrumb in breadcrumbs %}
+              <li class="app-bar__item">
+                <a href="{{ breadcrumb.url }}">{{ breadcrumb.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+
+        <div class="sticky-observer"></div>
+        
+        <!-- TODO: get rid of this naughty bit -->
+        <div class="course-content" style="min-height: 800px">
+          <main id="main">
+            <h1>{{ title }}</h1>
+            {% if summary %}
+              {{ summary | md | safe }}
+            {% endif %}
+
+            <div class="flow">
+              {% block inner %}
+              {% endblock %}
+            </div>
+          </main>
+        </div>
+
+        {% include 'partials/footer.njk' %}
+      </div>
+    </div>
+  </body>
+</html>

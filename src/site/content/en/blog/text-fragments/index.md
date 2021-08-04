@@ -8,7 +8,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2021-02-02
+updated: 2021-05-17
 hero: image/admin/Y4NLEbOwgTWdMNoxRYXw.jpg
 alt:
 description: |
@@ -387,6 +387,47 @@ The Text Fragments feature can be polyfilled to some extent. We provide a
 the [extension](https://github.com/GoogleChromeLabs/link-to-text-fragment), for browsers that do not
 provide built-in support for Text Fragments where the functionality is implemented in JavaScript.
 
+### Programmatic Text Fragment link generation
+
+The [polyfill](https://github.com/GoogleChromeLabs/text-fragments-polyfill) contains a file
+`fragment-generation-utils.js` that you can import and use to generate Text Fragment links. This is
+outlined in the code sample below:
+
+```js
+const { generateFragment } = await import('https://unpkg.com/text-fragments-polyfill/dist/fragment-generation-utils.js');
+const result = generateFragment(window.getSelection());
+if (result.status === 0) {
+  let url = `${location.origin}${location.pathname}${location.search}`;
+  const fragment = result.fragment;
+  const prefix = fragment.prefix ?
+    `${encodeURIComponent(fragment.prefix)}-,` :
+    '';
+  const suffix = fragment.suffix ?
+    `,-${encodeURIComponent(fragment.suffix)}` :
+    '';
+  const textStart = encodeURIComponent(fragment.textStart);
+  const textEnd = fragment.textEnd ?
+    `,${encodeURIComponent(fragment.textEnd)}` :
+    '';
+  url += `#:~:text=${prefix}${textStart}${textEnd}${suffix}`;
+  console.log(url);
+}
+```
+
+### Obtaining Text Fragments for analytics purposes
+
+Plenty of sites use the fragment for routing, which is why browsers strip out Text Fragments
+so as to not break those pages. There is an
+[acknowledged need](https://github.com/WICG/scroll-to-text-fragment/issues/128)
+to expose Text Fragments links to pages, for example, for analytics purposes,
+but the proposed solution is not implemented yet.
+As a workaround for now, you can use the code below to extract
+the desired information.
+
+```js
+new URL(performance.getEntries().find(({ type }) => type === 'navigate').name).hash;
+```
+
 ### Security
 
 Text fragment directives are invoked only on full (non-same-page) navigations that are the result of
@@ -430,14 +471,9 @@ contrived to begin with and since its exploitation requires _very_ specific prec
 the Chrome security team evaluated the risk of implementing scroll on navigation to be manageable.
 Other user agents may decide to show a manual scroll UI element instead.
 
-For sites that still wish to opt-out, we have proposed a
-[Document Policy](https://github.com/w3c/webappsec-feature-policy/blob/master/document-policy-explainer.md)
-header value that they can send, so user agents will not process Text Fragment URLs. Since Document
-Policy is not yet shipped, we are running an
-[origin trial](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md) to
-apply this policy as an intermediate solution. The
-[ForceLoadAtTop](https://developers.chrome.com/origintrials/#/view_trial/3253850730775183361) origin
-trial is running from Chrome version 83 to 85.
+For sites that wish to opt-out, Chromium supports a
+[Document Policy](https://wicg.github.io/document-policy/)
+header value that they can send so user agents will not process Text Fragment URLs.
 
 ```bash
 Document-Policy: force-load-at-top
@@ -466,7 +502,7 @@ On Windows, follow the documentation on the
 [Google Chrome Enterprise Help](https://support.google.com/chrome/a/answer/9131254?hl=en) support
 site.
 
-{% Aside 'warning' %} Please only try this when you know what you are doing. {% endAside %}
+{% Aside 'warning' %} Only try this when you know what you are doing. {% endAside %}
 
 ## Text fragments in web search
 
@@ -498,6 +534,7 @@ extension.
 
 ## Related links
 
+- [Spec draft](https://wicg.github.io/scroll-to-text-fragment/)
 - [TAG Review](https://github.com/w3ctag/design-reviews/issues/392)
 - [Chrome Platform Status entry](https://chromestatus.com/feature/4733392803332096)
 - [Chrome tracking bug](https://crbug.com/919204)

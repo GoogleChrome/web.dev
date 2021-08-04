@@ -58,6 +58,7 @@ function Codepen(param) {
     height: height,
     'theme-id': theme,
     'default-tab': tab,
+    editable: true,
   };
 
   const src = `${url}?${stringify(queryParams)}`;

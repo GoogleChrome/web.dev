@@ -11,7 +11,12 @@
 const languageNames = {
   en: 'English',
   pl: 'Polski',
-  es_ES: 'Español',
+  es: 'Español',
+  ko: '한국어',
+  zn: 'Chinese',
+  ru: 'Rусский',
+  pt: 'Português',
+  ja: '日本語',
 };
 
 /**

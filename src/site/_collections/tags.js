@@ -13,8 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const yaml = require('js-yaml');
+const fs = require('fs');
+const path = require('path');
+
 /** @type TagsData */
 const tagsData = require('../_data/tagsData.json');
+const tagsYaml = yaml.safeLoad(
+  fs.readFileSync(
+    path.join(__dirname, '..', '_data', 'i18n', 'tags.yml'),
+    'utf-8',
+  ),
+);
 const {livePosts} = require('../_filters/live-posts');
 const {sortByUpdated} = require('../_utils/sort-by-updated');
 
@@ -35,36 +45,56 @@ module.exports = (collections) => {
   /** @type Tags */
   const tags = {};
 
-  Object.keys(tagsData).forEach((key) => {
-    const tagData = tagsData[key];
-    const description =
-      tagData.description ||
-      `Our latest news, updates, and stories about ${tagData.title.toLowerCase()}.`;
+  Object.keys(tagsYaml).forEach((key) => {
+    const tagData = tagsData[key] || {};
     const href = `/tags/${key}/`;
-    const title = tagData.title;
+    let elements = [];
+    let date, updated;
+    const image = tagData.image;
+
+    // Get posts
+    if (collections) {
+      elements = collections
+        .getFilteredByGlob('**/*.md')
+        .filter(
+          (item) =>
+            livePosts(item) &&
+            !item.data.excludeFromTags &&
+            (item.data.tags || []).includes(key),
+        )
+        .sort(sortByUpdated);
+    }
+
+    // Limit posts for percy
+    if (process.env.PERCY) {
+      elements = elements.slice(-6);
+    }
+
+    // Set created on date and updated date to be used for indexing to detect updates
+    if (elements.length > 0) {
+      date = elements.slice(-1).pop().data.date;
+      const tempUpdated = elements.slice(0, 1).pop().data.date;
+      if (date !== tempUpdated) {
+        updated = tempUpdated;
+      }
+    }
 
     /** @type TagsItem */
     const tag = {
-      ...tagsData[key],
+      ...tagData,
       data: {
-        subhead: description,
-        title,
+        date,
+        hero: image,
         tags: [key],
+        updated,
       },
-      description,
-      elements: [],
+      description: `i18n.tags.${key}.description`,
+      elements,
       href,
       key,
-      title,
+      title: `i18n.tags.${key}.title`,
       url: href,
     };
-
-    if (collections) {
-      tag.elements = collections
-        .getFilteredByTag(tag.key)
-        .filter(livePosts)
-        .sort(sortByUpdated);
-    }
 
     if (tag.elements.length > 0 || !collections) {
       tags[tag.key] = tag;

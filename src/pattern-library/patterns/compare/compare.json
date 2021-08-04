@@ -1,0 +1,39 @@
+{
+  "title": "Compare",
+  "context": {
+    "items": [
+      {
+        "type": "worse",
+        "label": "Don’t",
+        "content": "```Bad code example```"
+      },
+      {
+        "type": "better",
+        "label": "Do",
+        "content": "```good code example```"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "name": "with-captions",
+      "title": "With captions",
+      "context": {
+        "items": [
+          {
+            "type": "worse",
+            "label": "Don’t",
+            "content": "```Bad code example```",
+            "caption": "Explanation of why `example` is bad."
+          },
+          {
+            "type": "better",
+            "label": "Do",
+            "content": "```good code example```",
+            "caption": "Explanation of why `example` is good."
+          }
+        ]
+      }
+    }
+  ]
+}

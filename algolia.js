@@ -16,22 +16,60 @@
 require('dotenv').config();
 const algoliasearch = require('algoliasearch');
 const fs = require('fs');
-const {sizeof} = require('sizeof');
 
 const maxChunkSizeInBytes = 10000000; // 10,000,000
+const maxItemSizeInBytes = 10000; // 10,000
 
 /**
- * Chunks array of AlgoliaCollectionItem into array of array of AlgoliaCollectionItem smaller than 10 MB.
+ * Trim text of Algoia Collection Item.
  *
- * @param {AlgoliaCollectionItem[]} arr
- * @return {AlgoliaCollectionItem[][]}
+ * @param {AlgoliaItem} item
+ * @return {AlgoliaItem}
+ */
+const trimText = (item) => {
+  const currentSizeInBytes = JSON.stringify(item).length;
+  let textLength = 0;
+  if (currentSizeInBytes < maxItemSizeInBytes) {
+    // Check if item is small enough, if it is, return it
+    return item;
+  } else if (item.default_content) {
+    // Since it is not, check if there is a `default_content` then get the length of the contents
+    textLength = item.default_content.length + item.content.length;
+  } else {
+    // Get the length of the content
+    textLength = item.content.length;
+  }
+  // Calculate how many characters needs to be removed to get to right size
+  const charactersToRemove = currentSizeInBytes - maxItemSizeInBytes;
+  // Calculate what percentage of description can stay in order to get it to right size
+  const percentageToRemove = (textLength - charactersToRemove) / textLength;
+  // Trim content
+  item.content = item.content.slice(
+    0,
+    Math.floor(item.content.length * percentageToRemove),
+  );
+  if (item.default_content) {
+    item.default_content = item.content.slice(
+      0,
+      Math.floor(item.default_content.length * percentageToRemove),
+    );
+  }
+  return item;
+};
+
+/**
+ * Chunks array of AlgoliaItem into array of array of AlgoliaItems smaller than 10 MB.
+ *
+ * @param {AlgoliaItem[]} arr
+ * @return {AlgoliaItem[][]}
  */
 const chunkAlgolia = (arr) => {
   const chunked = [];
   let tempSizeInBytes = 0;
   let temp = [];
-  for (const current of arr) {
-    const currentSizeInBytes = sizeof(current);
+  for (const arrItem of arr) {
+    const current = trimText(arrItem);
+    const currentSizeInBytes = JSON.stringify(current).length;
     if (tempSizeInBytes + currentSizeInBytes < maxChunkSizeInBytes) {
       temp.push(current);
       tempSizeInBytes += currentSizeInBytes;
@@ -53,12 +91,10 @@ async function index() {
     return;
   }
 
-  const raw = fs.readFileSync('dist/algolia.json', 'utf-8');
-  /** @type {AlgoliaCollection} */
-  const algoliaData = JSON.parse(raw);
-
-  // Set date of when object is being added to algolia
-  algoliaData.map((e) => {
+  const raw = fs.readFileSync('dist/pages.json', 'utf-8');
+  /** @type {AlgoliaItem[]} */
+  const algoliaData = JSON.parse(raw).map((e) => {
+    // Set date of when object is being added to algolia.
     e.indexedOn = indexedOn.getTime();
     return e;
   });

@@ -1,0 +1,8 @@
+{
+  "title": "With extra summary content",
+  "context": {
+    "summary": "My details",
+    "summaryPreview": "Some teaser content",
+    "content": "<p>Some content that is hidden by default.</p><p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>"
+  }
+}

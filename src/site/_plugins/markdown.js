@@ -16,6 +16,7 @@
 
 const md = require('markdown-it');
 const slugify = require('slugify');
+const site = require('../_data/site');
 
 const markdown = md({
   html: true,
@@ -43,6 +44,11 @@ const markdown = md({
 
 // Custom renderer rules
 const fence = markdown.renderer.rules.fence;
+const link_open =
+  markdown.renderer.rules.link_open ||
+  // @ts-ignore
+  ((tokens, idx, options, env, self) => self.renderToken(tokens, idx, options));
+
 const rules = {
   // Wrap code blocks in a web-copy-code element so folks can copy the
   // snippet.
@@ -54,6 +60,13 @@ const rules = {
   // responsive.
   table_close: () => '</table>\n</div>',
   table_open: () => '<div class="w-table-wrapper">\n<table>\n',
+  link_open: (tokens, idx, options, env, slf) => {
+    const origin = new URL(tokens[idx].attrGet('href'), site.url).origin;
+    if (origin !== site.url) {
+      tokens[idx].attrPush(['rel', 'noopener']);
+    }
+    return link_open(tokens, idx, options, env, slf);
+  },
 };
 
 markdown.renderer.rules = {...markdown.renderer.rules, ...rules};

@@ -35,13 +35,13 @@ A `<link rel="stylesheet">` tag that:
 
 * Does not have a `disabled` attribute. When this attribute is present,
   the browser does not download the stylesheet.
-* Does not have a `media` attribute that matches the user's device.
+* Does not have a `media` attribute that matches the user's device specifically. `media="all"` is considered render-blocking.
 
 ## How to identify critical resources
 
 The first step to reducing the impact of render-blocking resources,
 is to identify what's critical and what's not.
-Use the [Coverage tab](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
+Use the [Coverage tab](https://developer.chrome.com/docs/devtools/coverage/)
 in Chrome DevTools to identify non-critical CSS and JS.
 When you load or run a page, the tab tells you how much code was used,
 versus how much was loaded:

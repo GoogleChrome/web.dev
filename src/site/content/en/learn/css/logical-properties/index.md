@@ -1,12 +1,17 @@
 ---
 title: Logical Properties
-description:
+description: >
+  Logical, flow relative properties and values are linked to the flow of text,
+  rather than the physical shape of the screen.
+  Learn how to take advantage of this newer approach to CSS.
+audio:
+  title: 'The CSS Podcast - 012: Logical Properties'
+  src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP_CSS_Podcast__Episode_012_v3.0.mp3?dest-id=1891556'
+  thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - andybell
 date: 2021-04-21
 ---
-
-# Logical Properties
 
 A really common user interface pattern is a text label with a supporting inline icon.
 
@@ -85,7 +90,7 @@ we have only been able to apply properties like margin relative to the direction
 For example, `margin-top` is applied to the physical top of the element.
 With logical properties, `margin-top` becomes `margin-block-start`.
 This means that regardless of language and text direction,
-the **block flow** has targeted and contextually appropriate margin rules.
+the **block flow** has appropriate margin rules.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -112,8 +117,8 @@ write a rule like this:
 }
 ```
 
-The flow-relative equivalents are `max-block-size` and `min-block-size`.
-You can also use `max-inline-size` and `min-inline-size` instead of `max-width` and `min-width`.
+The flow-relative equivalents are `max-inline-size` and `max-block-size`.
+You can also use `min-block-size` and `min-inline-size` instead of `min-height` and `min-width`.
 
 With logical properties,
 that max width and height rule would look like this:
@@ -199,7 +204,7 @@ using shorthand versions of the margin and padding properties.
   padding-block: 2em;
   margin-inline: 2em 0;
   position: relative;
-  inset: 0.2em 0 0 0;
+  inset-block: 0.2em 0;
 }
 ```
 

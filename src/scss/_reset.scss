@@ -1,0 +1,71 @@
+// A modified version of the modern CSS reset https://piccalil.li/blog/a-modern-css-reset/
+
+// Box sizing rules
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Remove default margin
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd,
+pre {
+  margin: 0;
+}
+
+// Set core body defaults
+body {
+  min-height: 100vh;
+}
+
+// Remove list styles on ul, ol elements with a list role, which suggests
+// default styling will be removed.
+// https://github.com/hankchizljaw/modern-css-reset/issues/30
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+// Anchor elements that don't have a class get default styles
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+// Make images easier to work with
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+li img,
+p img {
+  display: inline-block;
+  vertical-align: sub;
+}
+
+// Inherit fonts for inputs and buttons
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+}
+
+// Remove the default border on iframes
+iframe {
+  border: 0;
+}
