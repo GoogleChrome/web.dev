@@ -28,12 +28,25 @@ class ThemeToggle extends HTMLElement {
   }
 
   connectedCallback() {
-    // Allows --flow-space to work and we
-    // only want that to happen when it's
-    // wired up
-    this.style.display = 'block';
+    this.toggleSwitch = this.querySelector('[role="switch"]');
 
-    this.render();
+    if (this.toggleSwitch) {
+      this.applySetting();
+
+      // Allows --flow-space to work and we
+      // only want that to happen when it's
+      // ready to go
+      this.style.display = 'block';
+      this.toggleSwitch.style.visibility = 'visible';
+
+      // On change, calculate the new setting, toggle state changes and store in storage
+      this.toggleSwitch.addEventListener('change', () => {
+        const setting = this.toggleSwitch.checked ? 'dark' : 'light';
+
+        this.applySetting(setting);
+        localStorage.setItem(this.STORAGE_KEY, setting);
+      });
+    }
   }
 
   getCSSCustomProp(propKey) {
@@ -57,53 +70,25 @@ class ThemeToggle extends HTMLElement {
       passedSetting || localStorage.getItem(this.STORAGE_KEY);
 
     if (currentSetting) {
-      this.setStatus(currentSetting);
+      this.setToggleSwitchStatus(currentSetting);
       window.applyThemeSetting(currentSetting);
     } else {
       // Loads the value based on the CSS custom property value instead, with a fallback of light
       const customPropValue =
         this.getCSSCustomProp(this.COLOR_MODE_KEY) || 'light';
-      this.setStatus(customPropValue);
+      this.setToggleSwitchStatus(customPropValue);
       window.applyThemeSetting(customPropValue);
     }
   }
 
-  setStatus(currentSetting) {
-    // Loop the buttons and set aria-pressed (active) state depending on current theme
-    this.buttons.forEach((button) => {
-      button.setAttribute(
-        'aria-pressed',
-        currentSetting === button.getAttribute('data-theme') ? 'true' : 'false',
-      );
-    });
-  }
-
-  render() {
-    this.innerHTML = `
-      <div class="theme-toggle" aria-label="Change display theme">
-        <button class="button" data-theme="light">Light</button>
-        <button class="button" data-theme="dark">Dark</button>
-      </div>
-    `;
-
-    this.afterRender();
-  }
-
-  afterRender() {
-    this.buttons = this.querySelectorAll('[data-theme]');
-
-    // Loop each button to attach the toggle event
-    this.buttons.forEach((button) => {
-      button.addEventListener('click', (evt) => {
-        evt.preventDefault();
-
-        const setting = button.getAttribute('data-theme');
-        this.applySetting(setting);
-        localStorage.setItem(this.STORAGE_KEY, setting);
-      });
-    });
-
-    this.applySetting();
+  // Sets the correct aria checked role and checked state
+  setToggleSwitchStatus(currentSetting) {
+    const isDarkMode = currentSetting === 'dark';
+    this.toggleSwitch.setAttribute(
+      'aria-checked',
+      isDarkMode ? 'true' : 'false',
+    );
+    this.toggleSwitch.checked = isDarkMode;
   }
 }
 
