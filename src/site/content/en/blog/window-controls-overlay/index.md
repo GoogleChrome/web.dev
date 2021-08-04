@@ -13,7 +13,7 @@ description: |
   so that their PWAs feel more like apps.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/KEHQXWqr6s7VnEfTqVOC.jpeg
 alt: Kid drawing, crafting, and painting rocks.
-origin-trial:
+origin_trial:
   url: https://developer.chrome.com/origintrials/#/view_trial/-9105152546636300287
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
