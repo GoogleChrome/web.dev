@@ -7,12 +7,14 @@ authors:
   - thomassteiner
   - amandabaker
 date: 2021-04-22
-updated: 2021-05-19
+updated: 2021-08-04
 description: |
   With the Window Controls Overlay feature, developers can customize the title bar of installed PWAs
   so that their PWAs feel more like apps.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/KEHQXWqr6s7VnEfTqVOC.jpeg
 alt: Kid drawing, crafting, and painting rocks.
+origin-trial:
+  url: https://developer.chrome.com/origintrials/#/view_trial/-9105152546636300287
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - progressive-web-apps
@@ -61,7 +63,7 @@ developers to place custom content in what was previously the browser-controlled
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | Not started              |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | Not started              |
+| 4. **Origin trial**                      | [**In progress**][ot]    |
 | 5. Launch                                | Not started              |
 
 </div>
@@ -448,3 +450,4 @@ Hero image by [Sigmund](https://unsplash.com/@sigmund) on
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [issues]: https://github.com/WICG/window-controls-overlay/issues
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[ot]: https://developer.chrome.com/origintrials/#/view_trial/-9105152546636300287
