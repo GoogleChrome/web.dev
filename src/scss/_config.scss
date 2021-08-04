@@ -26,10 +26,36 @@ $gorko-config: (
     'output': 'standard',
     'property': 'background'
   ),
+  'box': (
+    'items': (
+      'hidden': 'none',
+      'block': 'block',
+      'inline-block': 'inline-block',
+      'flex': 'flex'
+    ),
+    'output': 'responsive',
+    'property': 'display'
+  ),
   'color': (
     'items': $gorko-theme-keys,
     'output': 'standard',
     'property': 'color'
+  ),
+  'flex-dir': (
+    'items': (
+      'row': 'row',
+      'column': 'column'
+    ),
+    'output': 'standard',
+    'property': 'flex-direction'
+  ),
+  'flex': (
+    'items': (
+      'none': 'none',
+      'auto': 'auto'
+    ),
+    'output': 'standard',
+    'property': 'flex'
   ),
   'flex-align': (
     'items': (
