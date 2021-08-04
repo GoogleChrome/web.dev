@@ -10,6 +10,7 @@
 */
 module.exports = {
   colorKeys: {
+    MODE: 'mode',
     CORE_TEXT: 'core-text',
     CORE_BG: 'core-bg',
     MID_TEXT: 'mid-text',
@@ -32,6 +33,7 @@ module.exports = {
   },
   getDark() {
     return {
+      MODE: 'dark',
       CORE_TEXT: 'shades-light',
       CORE_BG: 'shades-dim',
       MID_TEXT: 'shades-gray-glare',
@@ -55,6 +57,7 @@ module.exports = {
   },
   getLight() {
     return {
+      MODE: 'light',
       CORE_TEXT: 'shades-dark',
       CORE_BG: 'shades-light-bright',
       MID_TEXT: 'shades-gray',
@@ -91,8 +94,14 @@ module.exports = {
       {
         name: 'dark-toggle',
         key: 'prefix',
-        value: '[data-theme="dark"]',
+        value: '[data-user-theme="dark"]',
         tokens: this.getDark(),
+      },
+      {
+        name: 'light-toggle',
+        key: 'prefix',
+        value: '[data-user-theme="light"]',
+        tokens: this.getLight(),
       },
     ];
   },
