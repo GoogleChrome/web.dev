@@ -10,7 +10,7 @@
     {% include 'partials/head.njk' %}
     <!-- some hacky styles to get through this populating effort -->
   </head>
-  <body>
+  <body class="design-system">
     {#
       Make the snackbar the first item in the DOM so we don't have to steal the
       user's focus on initial visit to show them a cookie banner. Instead, the
@@ -21,7 +21,20 @@
     <a class="skip-link button" href="#main">Skip to main</a>
 
     <div class="flex-auto box-flex flex-dir-column">
-      <div class="sidebar flex-auto">
+      <div class="sidebar flex-auto" data-direction="rtl">
+        <div class="pad-size-1">
+          <div class="wrapper flow">
+            <h1>{{ title }}</h1>
+            {% if summary %}
+              {{ summary | md | safe }}
+            {% endif %}
+
+            <div class="flow">
+              {% block inner %}
+              {% endblock %}
+            </div>
+          </div>
+        </div>
         <nav class="bg-mid-bg pad-size-1" aria-label="design system">
           {{ svg('../../../images/lockup.svg', {label: 'web.dev', className: 'brand'}) }}
           <ul class="stack-nav" role="list">
@@ -48,17 +61,6 @@
             {% endfor %}
           </ul>
         </nav>
-        <div class="flow pad-size-1">
-          <h1>{{ title }}</h1>
-          {% if summary %}
-            {{ summary | md | safe }}
-          {% endif %}
-
-          <div class="flow">
-            {% block inner %}
-            {% endblock %}
-          </div>
-        </div>
       </div>
     </div>
     {% include 'partials/footer.njk' %}
