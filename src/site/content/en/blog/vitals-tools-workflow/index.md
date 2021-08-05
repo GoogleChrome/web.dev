@@ -30,7 +30,7 @@ and continuously monitor and prevent regression.
 <figure class="w-figure">
 {% Img
 src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/aQKhuF8mZNiQNrMXhpkm.png",
-alt="A diagram of the various steps outlined in this article. Evaluate website health and identify pain points, debug and optimize, monitor and continuous development.",
+alt="A diagram of the cycle outlined in this article: evaluate website health and identify pain points, debug and optimize, monitor and continuous development.",
 width="800", height="465" %}
   <figcaption class="w-figcaption">
     Suggested workflow to optimize Core Web Vitals.
@@ -146,12 +146,12 @@ and helps identify the types of pages that need the most attention.
 Using this tool you can:
 
 - Identify the number of pages with a poor experience,
-need improvements, or a good experience,
+that need improvements, or a good experience,
 broken down by mobile and desktop views.
 - Get granular information on URL performance grouped by status,
 metric, and URL groups (groups of similar web pages).
-Identify key templates of pages to improve based on the URL groups surfaced
-(each group contains URLs that provide a similar user experience).
+- Identify key templates of pages to improve based on the URL groups surfaced.
+(Each group contains URLs that provide a similar user experience).
 - Get detailed device-specific reports
 showing how many URLs are in the different experience buckets for either mobile or desktop.
 
@@ -175,7 +175,7 @@ while the CrUX Dashboard will show a high percentage of poor experiences
 (visits broken down per metrics).
 
 Analyzing your website using the Search Console tool
-narrows down your analysis to pages and page types that need the most attention.
+narrows your analysis to pages and page types that need the most attention.
 With this knowledge,
 the next step is to get into the performance details of these pages.
 
@@ -265,7 +265,7 @@ Quickly identifying low-effort fixes helps to start the optimization process
 before handling the bigger tasks.
 
 While the metrics' absolute values may be interesting to look at,
-do keep in mind that they change based on the environment Lighthouse is running in
+keep in mind that they change based on the environment Lighthouse is running in
 and many other factors,
 such as the network conditions of the servers hosting the website and its third parties.
 In addition,
@@ -329,10 +329,10 @@ Chrome DevTools (CDT) is a great help for doing just that.
 ### Deep dive with Chrome DevTools
 
 If you are new to CDT,
-you can get an overview of all the cool features—analyze runtime performance,
-optimize website speed, debug JavaScript,
-simulate mobile devices,
-override JavaScript and HTML, CSS,
+you can get an overview of all the cool features—analyzing runtime performance,
+optimizing website speed, debugging JavaScript,
+simulating mobile devices,
+overriding JavaScript and HTML, CSS,
 and JavaScript coverage—in
 [this post](https://developer.chrome.com/docs/devtools/).
 
@@ -493,7 +493,7 @@ and libraries such as
 <figure class="w-figure">
 {% Img
 src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/aQKhuF8mZNiQNrMXhpkm.png",
-alt="A diagram of the various steps outlined in this article. Evaluate website health and identify pain points, debug and optimize, monitor and continuous development.",
+alt="A diagram of the cycle outlined in this article: evaluate website health and identify pain points, debug and optimize, monitor and continuous development.",
 width="800", height="465" %}
   <figcaption class="w-figcaption">
     Suggested workflow to optimize Core Web Vitals.
