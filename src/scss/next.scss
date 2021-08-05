@@ -16,6 +16,7 @@ $global-gutter: map-get($gorko-space-scale, 'size-1');
 
 /// MIXINS
 @import 'mixins/rounded-border';
+@import 'mixins/vertically-align-label';
 
 /// GLOBAL CSS
 /// Core CSS that is applicable to every page.
