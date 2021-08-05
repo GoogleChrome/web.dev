@@ -3,21 +3,21 @@ title: Making your website "cross-origin isolated" using COOP and COEP
 subhead: >
   Use COOP and COEP to set up a cross-origin isolated environment and enable
   powerful features like `SharedArrayBuffer`,
-  `performance.measureUserAgentSpecificMemory()`, high resolution timer with
-  better precision, and the JS Self-Profiling API.
+  `performance.measureUserAgentSpecificMemory()` and high resolution timer with
+  better precision.
 description: >
   Some web APIs increase the risk of side-channel attacks like Spectre. To
   mitigate that risk, browsers offer an opt-in-based isolated environment called
   cross-origin isolated. Use COOP and COEP to set up such an environment and
   enable powerful features like `SharedArrayBuffer`,
-  `performance.measureUserAgentSpecificMemory()`, high resolution timer with
-  better precision or the JS Self-Profiling API.
+  `performance.measureUserAgentSpecificMemory()` or high resolution timer with
+  better precision.
 authors:
   - agektmr
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-06-23
+updated: 2021-08-05
 tags:
   - blog
   - security
@@ -38,6 +38,10 @@ and Desktop Chrome
 
 **Updates**
 
+- **Aug 5, 2021**: JS Self-Profiling API has been mentioned as one of APIs that
+  require cross-origin isolation, but reflecting [recent change of the
+  direction](https://github.com/shhnjk/shhnjk.github.io/tree/main/investigations/js-self-profiling#conclusion),
+  it's removed.
 - **May 6, 2021**: Based on feedback and issues reported we've decided to adjust
   the timeline for `SharedArrayBuffer` usage in none cross-origin isolated sites
   to be restricted in Chrome M92. 
@@ -103,15 +107,6 @@ able to use privileged features including:
       </tr>
       <tr>
         <td>
-          <a href="https://wicg.github.io/js-self-profiling/">
-          JS Self-Profiling API</a>
-        </td>
-        <td>
-          Not available in any browsers yet.
-        </td>
-      </tr>
-      <tr>
-        <td>
           <a href="https://crbug.com/1180178">
           <code>performance.now()</code>, <code>performance.timeOrigin</code></a>
         </td>
@@ -153,11 +148,12 @@ This article shows how to use these new headers. In [a follow-up
 article](/why-coop-coep) I will provide more background and context.
 
 {% Aside %}
+
 This article is aimed at those who would like to get their websites ready for
 using `SharedArrayBuffer`, WebAssembly threads,
-`performance.measureUserAgentSpecificMemory()`, high resolution timer with
-better precision or the JS Self-Profiling API in a more robust manner across
-browser platforms.
+`performance.measureUserAgentSpecificMemory()` or high resolution timer with
+better precision in a more robust manner across browser platforms.
+
 {% endAside %}
 
 {% Aside 'key-term' %}
