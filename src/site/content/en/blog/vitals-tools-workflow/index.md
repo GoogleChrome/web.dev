@@ -277,7 +277,7 @@ but we recommend focusing more on the optimization opportunities in the report.
 
 {% Aside %}
 Lighthouse analyzes pages at load time in a lab environment.
-While lab assessments of LCP are often useful to debug and optimize LCP in the field,
+While lab assessments of LCP are often useful for debugging and optimizing LCP in the field,
 user actions affect CLS and FID in ways that are not always captured by lab measurements of page load alone.
 TTI and TBT are proxy metrics to diagnose FID issues,
 but they may not always correlate with FID for a particular site.
