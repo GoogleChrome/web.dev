@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="192px" height="192px" viewBox="0 0 192 192" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
-    <title>00 React</title>
-    <desc>Created with Sketch.</desc>
-    <g id="00-React" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group" transform="translate(12.000000, 7.000000)" stroke="#000000">
-            <ellipse id="Oval-Copy" transform="translate(84.000000, 89.000000) rotate(120.000000) translate(-84.000000, -89.000000) " cx="84" cy="89" rx="83.1635501" ry="30.9585524"></ellipse>
-            <ellipse id="Oval-Copy" transform="translate(84.000000, 89.000000) rotate(60.000000) translate(-84.000000, -89.000000) " cx="84" cy="89" rx="83.1635501" ry="30.9585524"></ellipse>
-            <ellipse id="Oval-Copy" cx="84" cy="89" rx="83.5" ry="30.8317588"></ellipse>
-        </g>
-        <circle id="Oval" stroke="#000000" fill="#2979FF" cx="96" cy="96" r="15"></circle>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="192" height="192" version="1.1" viewBox="0 0 192 192"><title>00 React</title><desc>Created with Sketch.</desc><g id="00-React" fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g id="Group" stroke="#000" transform="translate(12.000000, 7.000000)"><ellipse id="Oval-Copy" cx="84" cy="89" rx="83.164" ry="30.959" transform="translate(84.000000, 89.000000) rotate(120.000000) translate(-84.000000, -89.000000)"/><ellipse id="Oval-Copy" cx="84" cy="89" rx="83.164" ry="30.959" transform="translate(84.000000, 89.000000) rotate(60.000000) translate(-84.000000, -89.000000)"/><ellipse id="Oval-Copy" cx="84" cy="89" rx="83.5" ry="30.832"/></g><circle id="Oval" cx="96" cy="96" r="15" fill="#2979FF" stroke="#000"/></g></svg>
