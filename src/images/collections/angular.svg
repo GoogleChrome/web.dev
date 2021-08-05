@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="192px" height="192px" viewBox="0 0 192 192" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
-    <title>Artboard</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="angular" transform="translate(22.000000, 18.000000)" fill-rule="nonzero">
-            <g id="Group-11">
-                <polygon id="polygon50" stroke="#000000" fill="#DD0031" points="11.5821136 121.818273 73.3705227 155.778409 135.477136 121.35825 147.054818 25.3367045 73.2925227 0 1.84741111e-13 25.7931818"></polygon>
-                <polygon id="polygon50" fill="#C3002F" points="73.3736725 155.201584 135.011032 121.042587 146.51178 25.6757812 73.3029633 0.532104492"></polygon>
-                <path d="M73.5681818,77.6383636 L87.08415,77.6383636 L73.5681818,45.6184773 L60.0522137,77.6383636 L73.5681818,77.6383636 Z M73.5681818,91.0463864 L54.247692,91.0667727 L44.3893163,114.109568 L28.3636364,114.409159 L73.5681818,13.2954545 L118.772727,114.409159 L102.747047,114.109568 L92.8886716,91.0667727 L73.5681818,91.0463864 Z" id="Combined-Shape" stroke="#000000" fill="#FFFFFF"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="192" height="192" version="1.1" viewBox="0 0 192 192"><title>Artboard</title><desc>Created with Sketch.</desc><g id="Artboard" fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g id="angular" fill-rule="nonzero" transform="translate(22.000000, 18.000000)"><g id="Group-11"><polygon id="polygon50" fill="#DD0031" stroke="#000" points="11.582 121.818 73.371 155.778 135.477 121.358 147.055 25.337 73.293 0 0 25.793"/><polygon id="polygon50" fill="#C3002F" points="73.374 155.202 135.011 121.043 146.512 25.676 73.303 .532"/><path id="Combined-Shape" fill="#FFF" stroke="#000" d="M73.5681818,77.6383636 L87.08415,77.6383636 L73.5681818,45.6184773 L60.0522137,77.6383636 L73.5681818,77.6383636 Z M73.5681818,91.0463864 L54.247692,91.0667727 L44.3893163,114.109568 L28.3636364,114.409159 L73.5681818,13.2954545 L118.772727,114.409159 L102.747047,114.109568 L92.8886716,91.0667727 L73.5681818,91.0463864 Z"/></g></g></g></svg>
