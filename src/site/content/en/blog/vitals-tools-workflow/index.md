@@ -344,16 +344,16 @@ identify bottlenecks and
 - Enable the
 **[Layout Shift Regions](https://developer.chrome.com/blog/new-in-devtools-77/#layoutshifts)**
 checkbox in the
-[Command Menu](https://developer.chrome.com/docs/devtools/command-menu/)
+**[Command Menu](https://developer.chrome.com/docs/devtools/command-menu/)**
 and load the page in the **Network** tab to highlight layout shifts at load time
 (also useful while browsing the page).
 - Analyze code usage with the
-[Coverage](https://developer.chrome.com/docs/devtools/coverage/)
+**[Coverage](https://developer.chrome.com/docs/devtools/coverage/)**
 tab and remove unused code to improve the LCP and FID metrics.
 - Enable the
-[Local Overrides](https://developer.chrome.com/blog/new-in-devtools-65/#overrides)
+**[Local Overrides](https://developer.chrome.com/blog/new-in-devtools-65/#overrides)**
 to test code changes on a live page.
-Changes made through the Chrome DevTools will persist,
+Changes made through Chrome DevTools will persist,
 and you can perform audits such as those discussed above,
 allowing for a quick analysis of the impact on user experience.
 
