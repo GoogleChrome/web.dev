@@ -119,4 +119,22 @@ module.exports = {
       },
     ];
   },
+  get backgroundUtilities() {
+    return Object.keys(this.colorKeys)
+      .filter((key) => key.includes('_BG'))
+      .map((key) => ({
+        utilityClass: `bg-${this.colorKeys[key]}`,
+        sassMixin: `@include apply-utility('bg', '${this.colorKeys[key]}')`,
+        sassFunction: `get-utility-value('bg', '${this.colorKeys[key]}')`,
+      }));
+  },
+  get textUtilities() {
+    return Object.keys(this.colorKeys)
+      .filter((key) => key.includes('_TEXT'))
+      .map((key) => ({
+        utilityClass: `color-${this.colorKeys[key]}`,
+        sassMixin: `@include apply-utility('color', '${this.colorKeys[key]}')`,
+        sassFunction: `get-utility-value('color', '${this.colorKeys[key]}')`,
+      }));
+  },
 };

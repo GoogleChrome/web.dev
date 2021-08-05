@@ -41,13 +41,7 @@
             <p class="brand__byline">Design System</p>
           </div>
           <div class="pad-inline-size-1">
-            <theme-toggle>
-              <!-- As part of the patterns, we'll build out a switch block and use that here -->
-              <label for="theme-toggle">
-                Dark mode
-                <input type="checkbox" role="switch" id="theme-toggle" />
-              </label>
-            </theme-toggle>
+            {% include "partials/standard-theme-toggle.njk" %}
           </div>
           <ul class="stack-nav flow-space-size-2" role="list">
             {% for link in sideLinks %}
