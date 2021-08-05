@@ -35,29 +35,38 @@
             </div>
           </div>
         </div>
-        <nav class="flow bg-mid-bg pad-size-1" aria-label="design system">
-          <div class="brand cluster">
+        <nav class="flow bg-mid-bg pad-block-size-1" aria-label="design system">
+          <div class="brand cluster pad-inline-size-1">
             {{ svg('../../../images/lockup.svg', {label: 'web.dev'}) }}
             <p class="brand__byline">Design System</p>
+          </div>
+          <div class="pad-inline-size-1">
+            <theme-toggle>
+              <!-- As part of the patterns, we'll build out a switch block and use that here -->
+              <label for="theme-toggle">
+                Dark mode
+                <input type="checkbox" role="switch" id="theme-toggle" />
+              </label>
+            </theme-toggle>
           </div>
           <ul class="stack-nav flow-space-size-2" role="list">
             {% for link in sideLinks %}
               <li>{{ stackLink(link.url, page.url, link.text)}}</li>
             {% endfor %}
           </ul>
-          <h2 class="text-size-3">CSS</h2>
+          <h2 class="text-size-3 pad-inline-size-1 flow-space-size-2">CSS</h2>
           <ul class="stack-nav" role="list">
             {% for link in cssLinks %}
               <li>{{ stackLink(link.url, page.url, link.text)}}</li>
             {% endfor %}
           </ul>
-          <h2 class="text-size-3">Patterns</h2>
+          <h2 class="text-size-3 pad-inline-size-1 flow-space-size-2">Patterns</h2>
           <ul class="stack-nav" role="list">
             {% for item in design.patterns.items %}
               <li>{{ stackLink(item.url, page.url, item.data.title) }}</li>
             {% endfor %}
           </ul>
-          <h2 class="text-size-3">Pages</h2>
+          <h2 class="text-size-3 pad-inline-size-1 flow-space-size-2">Pages</h2>
           <ul class="stack-nav" role="list">
             {% for item in design.pages %}
               <li>{{ stackLink(item.link, page.url, item.title) }}</li>
