@@ -1,4 +1,8 @@
 .design-system {
   --sidebar-content-min-width: 60%;
   --sidebar-target-width: 25rem;
+
+  .sidebar nav {
+    outline: 1px solid var(--color-stroke);
+  }
 }
