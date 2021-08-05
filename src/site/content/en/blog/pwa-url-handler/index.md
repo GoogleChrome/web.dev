@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-06-03
-updated: 2021-06-29
+updated: 2021-08-05
 description: |
   After registering a PWA as a URL handler, when a user clicks on a hyperlink that matches
   one of the registered URL patterns, the registered PWA will open.
@@ -117,6 +117,9 @@ respect to offline scenarios. Therefore the app needs to register for both origi
 Since the PWA lives on a different origin (`music.example.com`) than some of the URLs it needs to
 handle (e.g., `https://🎵.example.com`), the app needs to verify ownership of these other origins. This
 happens in a `web-app-origin-association` file hosted on the other origins.
+
+{% Aside %} Apps that want to handle URLs that live on the _same_ origin than the PWA likewise need to
+specify the handling rules in a `web-app-origin-association` file hosted on said origin. {% endAside %}
 
 This file must contain valid JSON. The top-level structure is an object, with a member named
 `"web_apps"`. This member is an array of objects and each object represents an entry for a unique
