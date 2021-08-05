@@ -1,0 +1,20 @@
+/// THIS IS VERY MUCH A TEMPORARY
+/// BIT OF CSS UNTIL WE SLING SOME
+/// PROPER UI DESIGN ON THE THEME TOGGLE
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  button {
+    border: 2px solid var(--color-stroke);
+    padding: 0.5rem 1rem;
+
+    @include apply-utility('bg', 'action-bg');
+    @include apply-utility('color', 'action-text');
+  }
+
+  [aria-pressed='true'] {
+    border-color: get-color('core-primary-glare');
+  }
+}
