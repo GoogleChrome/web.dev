@@ -12,7 +12,7 @@ $generate-utility-classes: false;
 
 /// GLOBAL VARIABLES
 /// Global variables that should be accessible in all authored CSS
-$global-gutter: #{get-size('size-2')};
+$global-gutter: map-get($gorko-space-scale, 'size-1');
 
 /// MIXINS
 @import 'mixins/rounded-border';
@@ -297,6 +297,7 @@ a:active {
 /// BLOCKS
 @import 'blocks/brand';
 @import 'blocks/skip-link';
+@import 'blocks/stack-nav';
 
 /// UTILITY CLASSES
 @import 'utilities/flow';
