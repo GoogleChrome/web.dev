@@ -1,0 +1,21 @@
+{
+  "title": "Brand",
+  "context": {
+    "byline": ""
+  },
+  "variants": [
+    {
+      "name": "Byline",
+      "context": {
+        "byline": "Design System"
+      }
+    },
+    {
+      "name": "Cluster byline",
+      "context": {
+        "tokens": "cluster",
+        "byline": "Design System"
+      }
+    }
+  ]
+}
