@@ -145,8 +145,8 @@ provides a holistic site-wide view of your performance
 and helps identify the types of pages that need the most attention.
 Using this tool you can:
 
-- Identify the number of pages with a poor experience,
-that need improvements, or a good experience,
+- Identify the number of pages that have a poor experience,
+those that need improvements, and those that give a good experience,
 broken down by mobile and desktop views.
 - Get granular information on URL performance grouped by status,
 metric, and URL groups (groups of similar web pages).
