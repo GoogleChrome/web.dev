@@ -1,0 +1,27 @@
+{
+  "title": "Stack Nav",
+  "context": {
+    "items": [
+      {
+        "text": "Lorem ipsum dolor",
+        "url": "#",
+        "active": false
+      },
+      {
+        "text": "Tristique Ornare Commodo",
+        "url": "#",
+        "active": true
+      },
+      {
+        "text": "Adipiscing Amet Ullamcorper",
+        "url": "#",
+        "active": false
+      },
+      {
+        "text": "Risus Adipiscing",
+        "url": "#",
+        "active": false
+      }
+    ]
+  }
+}
