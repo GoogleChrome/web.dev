@@ -45,7 +45,7 @@ we strongly recommend implementing
 [Real User Measurement](/vitals-field-measurement-best-practices/) (RUM)
 monitoring in addition to this workflow.
 
-## Step A: Evaluate website health and Identify pain points
+## Step A: Evaluate website health and identify pain points
 
 {% Img
 src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/i1Uk3GTajiHlylHL4wP1.png",
@@ -226,7 +226,7 @@ a high-level understanding of metrics and improvements to focus on.
 With that information,
 you are now ready to debug and optimize your pages which we will discuss in the next section.
 
-## Step B: Debug and Optimize
+## Step B: Debug and optimize
 
 {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/qWh67N9ZOLOu12FzO7oz.png",
 alt="Image showing the tools used in this step: Lighthouse, Web Vitals Extension, Chrome DevTools.",
@@ -382,7 +382,7 @@ User experience work is an iterative process
 and to ensure new releases do not regress improvements made,
 it is critical to have a robust monitoring and continuous development process in place.
 
-## Step C: Monitor and Continuous Development
+## Step C: Monitor and continuous development
 
 {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/YwmFzHT6SJmi8sJta7G7.png",
 alt="An image of the tools used in step 3: CrUX on BigQuery, CrUX API, PSI API, web-vitals.js, and Lighthouse-CI.",
