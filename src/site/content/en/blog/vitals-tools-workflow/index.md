@@ -4,9 +4,10 @@ subhead: Combine Google tools to audit, improve and monitor your website effecti
 authors:
   - antoinebisch
   - gmimani
-date: 2021-08-04
-hero: image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/aQKhuF8mZNiQNrMXhpkm.png
-alt: A diagram of the various steps outlined in this article. Evaluate website health and identify pain points, debug and optimize, monitor and continuous development.
+date: 2021-08-05
+hero: image/PTlEGTxNW2XkfI8mA3pIGDFxdYY2/1qMzdR1XGj3HKzuW4PFG.jpg
+thumbnail: image/PTlEGTxNW2XkfI8mA3pIGDFxdYY2/ApVe49OiB4KIJwcC7njy.jpg
+alt: An image of the various tools described in this article.
 description: >
   With the growing importance of Core Web Vitals, site owners and developers increasingly focus on performance and key user experiences. Google provides many tools to help evaluate, optimize, and monitor pages, but users are often confused by the different sources of data and how to leverage them effectively. This article proposes a workflow combining several tools and clarifies where and how they make sense along the development process.
 tags:
