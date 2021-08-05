@@ -276,6 +276,17 @@ a:active {
   background: var(--color-core-text);
 }
 
+
+/// COMPOSITIONS
+@import 'compositions/auto-grid';
+@import 'compositions/cluster';
+@import 'compositions/repel';
+@import 'compositions/sidebar';
+@import 'compositions/switcher';
+
+/// BLOCK CLASSES
+@import 'blocks/theme-toggle';
+
 /// UTILITY CLASSES
 @import 'utilities/flow';
 @import 'utilities/focus-ring';

@@ -47,7 +47,6 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   display: block;
   font-size: 14px;
   font-style: normal;
-  line-height: 20px;
 }
 
 .w-author__name {
@@ -55,6 +54,7 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 }
 
 .w-author__name-link {
+  display: inline-block;
   color: inherit;
 
   &:hover,
@@ -82,30 +82,27 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   padding: 0 4px;
 }
 
+.w-author__link {
+  display: block;
+}
+
 .w-author__link-list {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin: 0;
   overflow: hidden;
+  margin-top: 9px;
 }
 
 .w-author__link-listitem {
-  float: left;
   font-size: 14px;
-  line-height: 20px;
-  margin: 0;
+  display: flex;
 }
 
-.w-author__link-listitem::after {
+.w-author__link-listitem + .w-author__link-listitem::before {
   content: '·';
-  display: inline-block;
+  display: block;
   margin: 0 4px;
-}
-
-.w-author__link-listitem:last-of-type::after {
-  content: '';
-  margin: 0;
 }
 
 .w-author__link:focus {
