@@ -118,7 +118,7 @@ Since the PWA lives on a different origin (`music.example.com`) than some of the
 handle (e.g., `https://🎵.example.com`), the app needs to verify ownership of these other origins. This
 happens in a `web-app-origin-association` file hosted on the other origins.
 
-{% Aside %} Apps that want to handle URLs that live on the _same_ origin than the PWA likewise need to
+{% Aside %} Apps that want to handle URLs that live on the _same_ origin as the PWA likewise need to
 specify the handling rules in a `web-app-origin-association` file hosted on said origin. {% endAside %}
 
 This file must contain valid JSON. The top-level structure is an object, with a member named
