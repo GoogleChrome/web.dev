@@ -341,9 +341,9 @@ Some features we recommend exploring in the context of CWV are the following:
 - Load the page in the **Performance** tab to analyze the waterfall,
 identify bottlenecks and
 [observe the CWV flags](https://developer.chrome.com/blog/new-in-devtools-88/#web-vitals).
-- Activate the
-[show layout shift regions](https://developer.chrome.com/blog/new-in-devtools-77/#layoutshifts)
-in the
+- Enable the
+**[Layout Shift Regions](https://developer.chrome.com/blog/new-in-devtools-77/#layoutshifts)**
+checkbox in the
 [Command Menu](https://developer.chrome.com/docs/devtools/command-menu/)
 and load the page in the **Network** tab to highlight layout shifts at load time
 (also useful while browsing the page).
