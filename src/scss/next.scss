@@ -25,6 +25,7 @@ body {
   font-size: get-size('size-1');
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 
   @include apply-utility('bg', 'core-bg');
   @include apply-utility('color', 'core-text');
@@ -239,6 +240,15 @@ code {
   -webkit-box-decoration-break: clone;
 
   @include apply-utility('font', 'mono');
+}
+
+pre > code {
+  display: block;
+  padding: get-size('size-1');
+  max-width: 80ch;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 /// Links
