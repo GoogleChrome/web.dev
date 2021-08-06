@@ -21,20 +21,7 @@
     <a class="skip-link button" href="#main">Skip to main</a>
 
     <div class="flex-auto box-flex flex-dir-column">
-      <div class="sidebar flex-auto" data-direction="rtl">
-        <div class="pad-size-1">
-          <div class="wrapper flow">
-            <h1>{{ title }}</h1>
-            {% if summary %}
-              {{ summary | md | safe }}
-            {% endif %}
-
-            <div class="flow">
-              {% block inner %}
-              {% endblock %}
-            </div>
-          </div>
-        </div>
+      <div class="sidebar flex-auto">
         <nav class="flow bg-mid-bg pad-block-size-1" aria-label="design system">
           <div class="brand cluster pad-inline-size-1">
             {{ svg('../../../images/lockup.svg', {label: 'web.dev'}) }}
@@ -67,6 +54,19 @@
             {% endfor %}
           </ul>
         </nav>
+        <div class="pad-size-1">
+          <div class="wrapper flow">
+            <h1>{{ title }}</h1>
+            {% if summary %}
+              {{ summary | md | safe }}
+            {% endif %}
+
+            <div class="flow">
+              {% block inner %}
+              {% endblock %}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     {% include 'partials/footer.njk' %}
