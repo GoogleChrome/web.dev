@@ -15,6 +15,15 @@ pageScripts:
 {% extends "design-system.njk" %}
 
 {% block inner %}
+  
+  {% if item.variants | length %}
+  <nav class="cluster" aria-label="variants">
+    {% for variant in item.variants %}
+      <a href="#{{ variant.data.title | slug }}">{{ variant.data.title }}</a>
+    {% endfor %}
+  </nav>
+  {% endif %}
+
   <div class="region"> 
    {{ designSystemPattern(item.previewUrl, item.markup, item.rendered) }} 
   </div>
@@ -39,7 +48,7 @@ pageScripts:
   {% if item.variants | length %}
     <h2>Variants</h2>
     {% for variant in item.variants %}
-    <h3>{{ variant.data.title }}</h3>
+    <h3 id="{{ variant.data.title | slug }}">{{ variant.data.title }}</h3>
     <div class="flow-space-size-1">
       {{ designSystemPattern(variant.previewUrl, variant.markup, variant.rendered) }} 
     </div>
