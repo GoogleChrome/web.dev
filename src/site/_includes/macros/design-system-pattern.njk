@@ -1,0 +1,22 @@
+<!-- The design-system top-level class is the scss/pages/_design-system.scss page -->
+{% macro designSystemPattern(previewUrl, markup, rendered) %}
+<div class="region flow">
+  <iframe class="design-system__preview-frame" src="{{ previewUrl }}?state=window"></iframe>
+  <div class="box-flex flex-justify-end">
+    <a href="{{ previewUrl }}">View full screen</a>
+  </div>
+  <details>
+    <summary>Code</summary>
+    <div class="flow">
+      <p class="text-size-3">Source (Nunjucks)</p>
+      <web-copy-code>
+        {% highlight "html" %}{{ markup | safe }}{% endhighlight %}
+      </web-copy-code>
+      <p class="text-size-3">Output</p>
+      <web-copy-code>
+        {% highlight "html" %}{{ rendered | safe }}{% endhighlight %}
+      </web-copy-code>
+    </div>
+  </details>
+</div>
+{% endmacro %}
