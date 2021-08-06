@@ -329,10 +329,10 @@ Up next, you will learn about [Fast playback with audio and video preload].
 [Background Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Background_Fetch_API
 [support Background Fetch]: https://caniuse.com/mdn-api_serviceworkerregistration_backgroundfetch
 [File System Access API]: /file-system-access/
-[Kino]: https://kinoweb.dev/
-[source code]: https://github.com/xwp/kino/
+[Kino]: https://kinoweb.dev
+[source code]: https://github.com/GoogleChrome/kino
 [Streams–The definitive guide]: /streams/
 [Media Session API]: /media-session/
 [Response() constructor]: https://developer.mozilla.org/en-US/docs/Web/API/Response/Response
-[service worker source code]: https://github.com/xwp/kino/blob/ef13dc0aec8a025cb1152f8d41adeeac872964db/src/js/sw/sw.js#L39-L108
+[service worker source code]: https://github.com/GoogleChrome/kino/blob/72055bdc7c8ad3de943a55293b2bf882e467c814/src/js/sw/sw.js#L53-L122
 [Fast playback with audio and video preload]: /fast-playback-with-preload/
