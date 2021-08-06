@@ -11,14 +11,16 @@ pageScripts:
 
 {% from 'macros/design-system-pattern.njk' import designSystemPattern with context %}
 
+{% set pageTitle = item.data.title ~ ' - Pattern' %}
 {% extends "design-system.njk" %}
 
 {% block inner %}
-  
-  {{ designSystemPattern(item.previewUrl, item.markup, item.rendered) }} 
-  
+  <div class="region"> 
+   {{ designSystemPattern(item.previewUrl, item.markup, item.rendered) }} 
+  </div>
+
   {% if item.docs %}
-  <article class="flow region">
+  <article class="flow">
     <h2>Information</h2>
     {{ item.docs | md | safe }}
     {% if item.data.keyLinks | length %}
@@ -38,7 +40,9 @@ pageScripts:
     <h2>Variants</h2>
     {% for variant in item.variants %}
     <h3>{{ variant.data.title }}</h3>
-    {{ designSystemPattern(variant.previewUrl, variant.markup, variant.rendered) }} 
+    <div class="flow-space-size-1">
+      {{ designSystemPattern(variant.previewUrl, variant.markup, variant.rendered) }} 
+    </div>
     {% endfor %}
   {% endif %}
 {% endblock %}

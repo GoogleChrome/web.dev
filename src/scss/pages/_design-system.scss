@@ -19,4 +19,8 @@
   min-height: 300px;
   border: 1px solid var(--color-stroke);
   resize: both;
+
+  &[data-size='tall'] {
+    min-height: 800px;
+  }
 }

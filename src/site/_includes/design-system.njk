@@ -56,7 +56,7 @@
         </nav>
         <div class="pad-size-1">
           <div class="wrapper flow">
-            <h1>{{ title }}</h1>
+            <h1>{{ pageTitle if pageTitle else title }}</h1>
             {% if summary %}
               {{ summary | md | safe }}
             {% endif %}
