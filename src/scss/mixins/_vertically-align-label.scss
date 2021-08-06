@@ -4,10 +4,10 @@
 /// using magic numbers
 /// More: https://ishadeed.com/article/button-label-alignment/
 @mixin vertically-align-label() {
-  &:before {
+  &::before {
     content: '';
     display: inline-block;
-    height: 1em;
     vertical-align: middle;
+    height: 1ex;
   }
 }
