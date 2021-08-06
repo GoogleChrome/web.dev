@@ -5,7 +5,7 @@ subhead: A foundational overview of how to build a responsive and accessible swi
 authors:
   - adamargyle
 description: A foundational overview of how to build a responsive and accessible switch component.
-date: 2021-08-04
+date: 2021-08-11
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/9enjDnqrgdzS6lUOWAGO.png
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/gNjyaiykXSBUPVhSOinL.png
 tags:
