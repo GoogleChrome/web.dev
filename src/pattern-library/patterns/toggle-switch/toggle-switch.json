@@ -1,0 +1,7 @@
+{
+  "title": "Toggle Switch",
+  "context": {
+    "label": "Dark theme",
+    "inputId": "toggle-switch"
+  }
+}
