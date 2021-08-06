@@ -49,8 +49,8 @@ draggable and tangible.
 ### Custom properties
 
 The following variables represent the various parts of the switch and their
-options. As the top level class, `.gui-switch` contains custom properties used
-throughout the component children, as well as entry points for centralized
+options. As the top-level class, `.gui-switch` contains custom properties used
+throughout the component children, and entry points for centralized
 customization.
 
 #### Track
@@ -161,7 +161,8 @@ distribution of space", width="746", height="218", class="w-screenshot" %}
 ```
 
 Extending and modifying the flexbox layout is like changing any flexbox layout.
-For example, to put labels above or below a switch, change the `flex-direction`:
+For example, to put labels above or below a switch, or to change the
+`flex-direction`:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q9ouS16fND5xcqY14YVh.png",
 alt="flexbox devtools overlaying a vertical label and switch", width="486",
@@ -176,7 +177,7 @@ height="254", class="w-screenshot" %}
 
 ### Track
 
-The checkbox input is styled to a switch track by removing its normal
+The checkbox input is styled as a switch track by removing its normal
 `appearance: checkbox` and supplying its own size instead:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Ai9vbILT66rxmVsKgmoJ.png",
@@ -201,15 +202,12 @@ areas with the name 'track'", width="272", height="182", class="w-screenshot" %}
 The track also creates a one by one single cell grid track area for a thumb to
 claim. 
 
-{% Aside %} I liked how these two names collided here, a visual track and a grid
-track, aligning in semantics and visual purpose. {% endAside %}
-
 ### Thumb
 
-The style `appearance: none` also removed the visual checkmark supplied by the
+The style `appearance: none` also removes the visual checkmark supplied by the
 browser. This component uses a
-[pseudo-element](https://web.dev/learn/css/pseudo-elements/) and the input's
-`:checked` [pseudo-class](https://web.dev/learn/css/pseudo-classes/) state to
+[pseudo-element](https://web.dev/learn/css/pseudo-elements/) and the `:checked`
+[pseudo-class](https://web.dev/learn/css/pseudo-classes/) on the input to
 replace this visual indicator.
 
 The thumb is a pseudo-element child attached to the `input[type="checkbox"]` and
@@ -382,7 +380,7 @@ I thought this decoupled orchestration worked out well. The thumb element is
 only concerned with 1 style, a `translateX` position. The input can manage all
 the complexity and calculations. 
 
-{% Aside %} Reminds me of [reactive state
+{% Aside %} This reminds me of [reactive state
 stores](https://css-tricks.com/build-a-state-management-system-with-vanilla-javascript/),
 where the store centralizes all the computing, actions and side effects (parent
 track element). Subscribers (thumb pseudo element) can observe dynamic values
@@ -719,10 +717,12 @@ export {
 
 Notice how `window.getComputedStyle()` accepts a second argument, a target pseudo element. Pretty neat that JavaScript can read so many values from elements, even from pseudo elements.
 
-{% Aside 'warning' %} These functions use `parseInt()` which is making an
-assumption that you are querying a value that returns a pixel value. These
-utilities will not help usage like this `getStyle(element, "display")`, for
-example. {% endAside %}
+{% Aside 'warning' %} 
+These functions use `parseInt()` which is making an
+assumption that you are querying a value that returns a pixel value. This means
+that you cannot use these functions with `getStyle(element, "display")`, for
+example. 
+{% endAside %}
 
 ### `dragging`
 
