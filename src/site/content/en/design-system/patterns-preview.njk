@@ -15,15 +15,18 @@ permalink: '{{ item.previewUrl }}/index.html'
     {% include 'partials/head.njk' %}
 
     <style>
+      /* Extra padding for theme toggle */
       body {
-        padding: 1rem;
+        padding: 1rem 1rem 5rem 1rem;
       }
 
       .theme-toggle {
         position: fixed;
-        bottom: 1rem;
-        left: 1rem;
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
         z-index: 10;
+        background: var(--color-mid-bg);
       }
     </style>
   </head>
