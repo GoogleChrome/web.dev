@@ -1,4 +1,4 @@
----
+--- 
 layout: post
 title: Labels and text alternatives
 authors:
