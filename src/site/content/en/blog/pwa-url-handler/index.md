@@ -1,12 +1,12 @@
 ---
 layout: post
-title: PWAs as URL Handlers
+title: PWAs as URL Handlers (no longer pursued)
 subhead: |
   Let installed PWAs handle URLs for a more integrated experience.
 authors:
   - thomassteiner
 date: 2021-06-03
-updated: 2021-08-05
+updated: 2021-08-09
 description: |
   After registering a PWA as a URL handler, when a user clicks on a hyperlink that matches
   one of the registered URL patterns, the registered PWA will open.
@@ -19,9 +19,16 @@ tags:
   - progressive-web-apps
 ---
 
-{% Aside %} PWAs as URL Handlers is part of the [capabilities project](https://web.dev/fugu-status/)
-and is currently in development. This post will be updated as the implementation progresses.
+{% Aside 'warning' %} PWAs as URL Handlers was part of the [capabilities project](https://web.dev/fugu-status/)
+and is no longer pursued. The feature will be reincarnated as `launch_handler` and `scope_extensions`.
+Watch this site for updates.
 {% endAside %}
+
+{% Details %}
+
+{% DetailsSummary %}
+Original article
+{% endDetailsSummary %}
 
 ## What is PWAs as URL Handlers? {: #what }
 
@@ -274,6 +281,7 @@ This article was reviewed by
 [Joe Medley](https://github.com/jpmedley).
 Hero image by [Bryson Hammer](https://unsplash.com/@trhammerhead) on
 [Unsplash](https://unsplash.com/photos/JZ8AHFr2aEg).
+{% endDetails %}
 
 [issues]: https://github.com/WICG/pwa-url-handler/issues
 [demo]: https://mandymsft.github.io/pwa/
