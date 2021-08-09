@@ -153,6 +153,18 @@ ol:not([class]) {
   }
 }
 
+dt {
+  @include apply-utility('weight', 'bold');
+}
+
+dt ~ dd {
+  margin-inline-start: 2ch;
+}
+
+dd + dt {
+  margin-top: 0.5em;
+}
+
 /// Blockquotes
 
 blockquote {

@@ -35,7 +35,7 @@ $toggle-switch-decor-ratio: 0.8;
   display: block;
   width: $toggle-switch-thumb-size;
   height: $toggle-switch-thumb-size;
-  border-radius: $toggle-switch-thumb-size;
+  border-radius: 100%;
   box-shadow: 0 0 2px rgb(0 0 0 / 50%);
   position: absolute;
   inset: 50% 0 0 0;
