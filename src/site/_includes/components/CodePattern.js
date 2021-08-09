@@ -2,6 +2,7 @@ const {html} = require('common-tags');
 const Prism = require('prismjs');
 
 module.exports = () => {
+  // Temporarily use a hardcoded pattern data.
   const pattern = {
     id: 'example-pattern',
     layout: 'pattern',
@@ -26,18 +27,21 @@ module.exports = () => {
     suite: '/patterns/',
   };
 
+  const prismTypes = ['html', 'css', 'js'];
+
   const assets = Object.values(pattern.assets)
     .map((asset) => {
+      const type = prismTypes.includes(asset.type)
+        ? asset.type
+        : 'text';
       const content = Prism.highlight(
         asset.content,
-        Prism.languages.html,
-        'html',
+        Prism.languages[type],
+        type,
       );
       return html`
-        <web-tab title="${asset.type}">
-          <pre>
-            <code class="language-${asset.type}">${content}</code>
-          </pre>
+        <web-tab title="${asset.type}" data-label="${asset.type}">
+          <pre><code class="language-${asset.type}">${content}</code></pre>
         </web-tab>
       `;
     })

@@ -10,6 +10,8 @@
 .code-pattern {
   width: 100%;
 
+  --primary-color: $WEB_PRIMARY_COLOR;
+
   .code-pattern__content {
     display: grid;
     gap: 1rem; // sass-lint:disable-line no-misspelled-properties
@@ -23,13 +25,24 @@
   .code-pattern__assets,
   .code-pattern__demo {
     border: 1px solid $BORDER_COLOR;
-
-    iframe,
-    web-tabs {
-      height: 100%;
-      width: 100%;
-    }
   }
+
+  pre {
+    border: none;
+    background: none;
+  }
+
+  iframe {
+    border: none;
+    height: 100%;
+    width: 100%;
+  }
+
+  web-tabs {
+    height: 100%;
+    width: 100%;
+  }
+
 
   .w-button {
     text-transform: none;
