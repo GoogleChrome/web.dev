@@ -1,8 +1,14 @@
 ---
 layout: default
 ---
-{% set patternId = page.url | getRelativePath('patterns') %}
-{% set pattern = patternId | getPattern(patterns) %}
 
 {{ content | safe }}
+
+{% if page.url %}
+  {% set patternId = page.url | getRelativePath('patterns') %}
+{% endif %}
+
+{% if patternId %}
+  {% set pattern = patternId | getPattern(patterns) %}
+{% endif %}
 
