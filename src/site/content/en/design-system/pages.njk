@@ -10,20 +10,12 @@ pageScripts:
   - '/js/design-system.js'
 ---
 
+{% set pageTitle = item.title %}
+
 <!--prettier-ignore-->
 {% extends "design-system.njk" %}
-{% set title = item.title %}
-{% set breadcrumbs = [
-  {
-    title: item.title,
-    url: item.url
-  }
-]%}
+{% from 'macros/design-system-pattern.njk' import designSystemPattern with context %}
 
 {% block inner %}
-<iframe data-preview-frame data-size="large" src="{{ item.url }}"></iframe>
-<div>
-  <a href="{{ item.url }}" class="w-button">View full screen</a>
-  <button class="w-button">TODO: add theme switcher</button>
-</div>
+  {{ designSystemPattern(item.url, null, null, 'tall') }} 
 {% endblock %}

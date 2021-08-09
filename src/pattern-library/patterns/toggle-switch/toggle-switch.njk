@@ -1,0 +1,7 @@
+<label class="toggle-switch" for="{{ data.inputId }}">
+  <span class="toggle-switch__label {{ 'visually-hidden' if data.hiddenLabel }}">{{ data.label }}</span>
+  <input type="checkbox" role="switch" class="toggle-switch__input" id="{{ data.inputId }}" />
+  <div class="toggle-switch__decor focus-ring" aria-hidden="true">
+    <div class="toggle-switch__thumb"></div>
+  </div>
+</label>
