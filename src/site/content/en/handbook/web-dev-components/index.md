@@ -22,6 +22,7 @@ guidance about how to use them effectively.
 1. [Buttons](#buttons)
 1. [Callouts](#callouts)
 1. [Checkbox](#checkbox)
+1. [Code pattern](#codepattern)
 1. [Codepen](#codepen)
 1. [Columns](#columns)
 1. [Code](#code)
@@ -36,16 +37,6 @@ guidance about how to use them effectively.
 1. [Tables](#tables)
 1. [Tooltips](#tooltips)
 1. [Video](#video)
-
-## Code Patterns
-
-A component that displays a demo and code snippets, organized in tabs, side by side.
-
-```text
-{% raw %}{% CodePattern 'pattern-id' %}{% endraw %}
-```
-
-{% CodePattern 'pattern-id' %}
 
 ## Asides
 Use asides to provide information that's related to but distinct from the
@@ -328,6 +319,16 @@ element, and add the `w-ml--l` class to the label. See below:
   <label for="sub-newsletter" class="w-ml--l">Add me to the web.dev mailing list.</label>
 </div>
 ```
+
+## Code pattern {: #codepattern }
+
+A component that displays a demo and code snippets, organized in tabs, side by side.
+
+```text
+{% raw %}{% CodePattern 'pattern-id' %}{% endraw %}
+```
+
+{% CodePattern 'pattern-id' %}
 
 ## Codepen {: #codepen }
 

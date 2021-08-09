@@ -15,11 +15,8 @@
   .code-pattern__content {
     display: grid;
     gap: 1rem; // sass-lint:disable-line no-misspelled-properties
-    grid-template-columns: 50% auto;
-    justify-items: stretch;
+    grid-template-columns: 1fr 1fr;
     height: 300px;
-    margin-bottom: 1rem;
-    overflow: scroll;
   }
 
   .code-pattern__assets,
@@ -41,10 +38,5 @@
   web-tabs {
     height: 100%;
     width: 100%;
-  }
-
-
-  .w-button {
-    text-transform: none;
   }
 }
