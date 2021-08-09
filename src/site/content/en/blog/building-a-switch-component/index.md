@@ -562,9 +562,9 @@ visual states need styles due to the use of `appearance: none`.
 alt="The dark styled switch in disabled, checked, and unchecked
 states.", width="740", height="250" %}
 
-This state is tricky since it needs to account for a disabled: checked,
-unchecked, dark and light. I stylistically chose minimal styles for these states
-to ease the maintenance burden of the combinations of styles.
+This state is tricky since it needs dark and light themes with both disabled and
+checked states. I stylistically chose minimal styles for these states to ease
+the maintenance burden of the combinations of styles.
 
 ### Indeterminate
 
