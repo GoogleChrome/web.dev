@@ -15,7 +15,7 @@
  */
 
 /**
- * Finds a pattern by the pattern's id in the paaterns data object.
+ * Finds a pattern by the patterns id in the paaterns data object.
  * @param {string} id Pattern Id
  * @param {Array} patterns Patterns data object
  * @return {Object} Pattern object

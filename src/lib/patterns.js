@@ -20,19 +20,12 @@ const matter = require('gray-matter');
 const md = require('markdown-it')();
 
 const stripDot = /^\./;
-const basePath = 'src/site/content/en/patterns';
+const basePath = path.join(__dirname, '../../src/site/content/en/patterns');
 const files = glob.sync(path.join(basePath, '**', 'index.md'));
-
-const ids = new Set();
 
 const allPatterns = files
   .map((file) => {
     const id = path.relative(basePath, path.dirname(file));
-    if (ids.has(id)) {
-      throw new Error(`Duplicate pattern id found: ${id}`);
-    }
-    ids.add(id);
-
     const fileContents = matter(fs.readFileSync(file, 'utf-8'));
     if (fileContents.data.layout !== 'pattern') {
       return;
@@ -52,6 +45,7 @@ const allPatterns = files
     }, {});
 
     const content = md.render(fileContents.content);
+    // Use external demo url from frontmatter, if set, or default to local demo.
     const demo =
       fileContents.data.demo || path.join('/', 'patterns', id, 'demo.html');
     const suite = path.join('/', 'patterns', path.dirname(id), '/');
