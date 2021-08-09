@@ -129,10 +129,26 @@ $gorko-config: (
     'output': 'standard',
     'property': 'padding-inline'
   ),
+  'ta': (
+    'items': (
+      'center': 'center',
+      'left': 'left',
+      'right': 'right'
+    ),
+    'output': 'standard',
+    'property': 'text-align'
+  ),
   'text': (
     'items': $gorko-size-scale,
     'output': 'standard',
     'property': 'font-size'
+  ),
+  'tt': (
+    'items': (
+      'upper': 'uppercase'
+    ),
+    'output': 'standard',
+    'property': 'text-transform'
   ),
   'weight': (
     'items': $gorko-font-weights,
