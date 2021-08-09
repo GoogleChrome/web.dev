@@ -1,0 +1,37 @@
+@import '../settings/colors';
+
+// =============================================================================
+// CODE PATTERN component
+//
+// A component that displays the code and a demo side by side.
+//
+// =============================================================================
+
+.code-pattern {
+  width: 100%;
+
+  .code-pattern__content {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 50% auto;
+    justify-items: stretch;
+    height: 300px;
+    margin-bottom: 1rem;
+    overflow: scroll;
+  }
+
+  .code-pattern__assets,
+  .code-pattern__demo {
+    border: 1px solid $BORDER_COLOR;
+
+    iframe,
+    web-tabs {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .w-button {
+    text-transform: none;
+  }
+}

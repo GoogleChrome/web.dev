@@ -37,6 +37,16 @@ guidance about how to use them effectively.
 1. [Tooltips](#tooltips)
 1. [Video](#video)
 
+## Code Patterns
+
+A component that displays a demo and code snippets, organized in tabs, side by side.
+
+```text
+{% raw %}{% CodePattern 'pattern-id' %}{% endraw %}
+```
+
+{% CodePattern 'pattern-id' %}
+
 ## Asides
 Use asides to provide information that's related to but distinct from the
 content in the body of the post or codelab. Asides should generally be short—no
