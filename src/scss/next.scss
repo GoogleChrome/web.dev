@@ -182,9 +182,43 @@ blockquote > * {
   @include apply-utility('measure', 'short');
 }
 
-// Make sure figcaptions are central with the blockquote
-// when they appear in the same <figure> context
-figure > blockquote ~ figcaption {
+/// @extend is *very* naughty if used unwisely
+/// However, we want child elements to flow without
+/// having to add a class so in this instance, it
+/// can slide
+blockquote {
+  @extend .flow;
+}
+
+/// <q> elements are ideal, but we need to make sure
+/// any element is styled as a quote
+blockquote > *::before {
+  content: open-quote;
+}
+
+blockquote > *::after {
+  content: close-quote;
+}
+
+/// It's best to reset content rather than
+/// add quotes only to the first-child, because
+/// quotes might actually be multiline
+blockquote > cite::before,
+blockquote > cite::after {
+  content: unset;
+}
+
+/// Make sure figcaptions are central with the blockquote
+/// when they appear in the same <figure> context.
+// Same applies to cites
+figure > blockquote ~ figcaption,
+blockquote cite {
+  margin-inline: auto;
+  display: block;
+  font-style: normal;
+  font-size: get-size('size-2');
+
+  @include apply-utility('weight', 'bold');
   @include apply-utility('leading', 'flat');
 }
 
@@ -192,12 +226,12 @@ figure > blockquote ~ figcaption {
 
 caption,
 figcaption {
-  margin-block-start: get-size('size-1');
   margin-inline: auto;
   font-style: italic;
   text-align: center;
 
   @include apply-utility('measure', 'short');
+  @include apply-utility('gap-top', 'size-1');
 }
 
 /// Tables
