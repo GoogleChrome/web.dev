@@ -112,8 +112,8 @@ I chose to wrap my `<input type="checkbox" role="switch">` element with a
 ambiguity, while giving the user the ability to interact with the label to
 toggle the input.
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/hRnaoi1lcNmpzizuUUzm.png", alt="a
-natural, unstyled label and checkbox", class="w-screenshot", width="216",
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/hRnaoi1lcNmpzizuUUzm.png", alt="A
+natural, unstyled label and checkbox.", class="w-screenshot", width="216",
 height="80" %}
 
 ```html
@@ -134,8 +134,8 @@ such as `oninput`and `onchanged`.
 
 ## Layouts
 
-[Flexbox](https://web.dev/learn/css/flexbox/),
-[grid](https://web.dev/learn/css/grid/), and [custom
+[Flexbox](/learn/css/flexbox/),
+[grid](/learn/css/grid/), and [custom
 properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) are critical
 in maintaining the styles of this component. They centralize values, give names
 to otherwise ambiguous calculations or areas, and enable a small custom property
@@ -148,8 +148,8 @@ the private and public custom properties the children use to compute their
 layouts.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/aIpui6HjdmtoELmVX59U.png",
-alt="flexbox devtools overlaying a horizontal label and switch, showing their layout
-distribution of space", width="746", height="218", class="w-screenshot" %}
+alt="Flexbox DevTools overlaying a horizontal label and switch, showing their layout
+distribution of space.", width="746", height="218", class="w-screenshot" %}
 
 ```css
 .gui-switch { 
@@ -165,7 +165,7 @@ For example, to put labels above or below a switch, or to change the
 `flex-direction`:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Q9ouS16fND5xcqY14YVh.png",
-alt="flexbox devtools overlaying a vertical label and switch", width="486",
+alt="Flexbox DevTools overlaying a vertical label and switch.", width="486",
 height="254", class="w-screenshot" %}
 
 ```html
@@ -181,8 +181,8 @@ The checkbox input is styled as a switch track by removing its normal
 `appearance: checkbox` and supplying its own size instead:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/Ai9vbILT66rxmVsKgmoJ.png",
-alt="grid devtools overlaying the switch track, showing the named grid track
-areas with the name 'track'", width="272", height="182", class="w-screenshot" %}
+alt="Grid DevTools overlaying the switch track, showing the named grid track
+areas with the name 'track'.", width="272", height="182", class="w-screenshot" %}
 
 ```css
 .gui-switch > input {
@@ -206,8 +206,8 @@ claim.
 
 The style `appearance: none` also removes the visual checkmark supplied by the
 browser. This component uses a
-[pseudo-element](https://web.dev/learn/css/pseudo-elements/) and the `:checked`
-[pseudo-class](https://web.dev/learn/css/pseudo-classes/) on the input to
+[pseudo-element](/learn/css/pseudo-elements/) and the `:checked`
+[pseudo-class](/learn/css/pseudo-classes/) on the input to
 replace this visual indicator.
 
 The thumb is a pseudo-element child attached to the `input[type="checkbox"]` and
@@ -215,7 +215,7 @@ stacks on top of the track instead of below it by claiming the grid area
 `track`:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/THV6KoJTUIBfSFntzcG1.png",
-alt="devtools showing the pseudo element thumb as positioned inside a CSS grid",
+alt="DevTools showing the pseudo-element thumb as positioned inside a CSS grid.",
 width="554", height="196", class="w-screenshot" %}
 
 ```css
@@ -238,8 +238,8 @@ Custom properties enable a versatile switch component that adapts to color
 schemes, right-to-left languages and motion preferences.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/kct3QcQiOyY618trAkYl.png",
-alt="side by side comparison of the light and dark theme for the switch and it's
-states", width="800", height="425" %}
+alt="A side by side comparison of the light and dark theme for the switch and its
+states.", width="800", height="425" %}
 
 ### Touch interaction styles
 
@@ -271,10 +271,10 @@ interaction feedback. Be sure to provide custom alternatives if you remove them.
 
 This element's styles are mostly about its shape and color, which it accesses
 from the parent `.gui-switch` via the
-[cascade](https://web.dev/learn/css/the-cascade/). 
+[cascade](/learn/css/the-cascade/). 
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/DlRcU2fRFUNykS8mtIgZ.png",
-alt="screenshot of the switch variants with custom track sizes and colors",
+alt="The switch variants with custom track sizes and colors.",
 width="768", height="630" %}
 
 ```css
@@ -307,14 +307,14 @@ The thumb element is already on the right `track` but needs circle styles:
 ```
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/2XLIMU0IzH9oHLfUso65.png",
-alt="devtools shown highlighting the circle thumb pseudo-element", width="504",
+alt="DevTools shown highlighting the circle thumb pseudo-element.", width="504",
 height="208", class="w-screenshot" %}
 
 #### Interaction
 
 Use custom properties to prepare for interactions which will show hover
 highlights and thumb position changes. The [user's preference is also
-checked](https://web.dev/prefers-reduced-motion/) before transitioning the
+checked](/prefers-reduced-motion/) before transitioning the
 motion or hover highlight styles.
 
 ```css
@@ -377,7 +377,7 @@ may animate when changed:
 %}
 
 I thought this decoupled orchestration worked out well. The thumb element is
-only concerned with 1 style, a `translateX` position. The input can manage all
+only concerned with one style, a `translateX` position. The input can manage all
 the complexity and calculations. 
 
 {% Aside %} This reminds me of [reactive state
@@ -436,10 +436,10 @@ think it worked out great:
 }
 ```
 
-A custom property called `--isLTR` initially holds a value of 1, kinda like it's
-`true` since our layout does default to left-to-right. Then, using the CSS
+A custom property called `--isLTR` initially holds a value of `1`, meaning it's
+`true` since our layout is left-to-right by default. Then, using the CSS
 pseudo class [`:dir()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:dir),
-the value is set to -1 when the component is within a right-to-left layout. 
+the value is set to `-1` when the component is within a right-to-left layout. 
 
 Put `--isLTR` into action by using it within a `calc()` inside of a transform:
 
@@ -473,7 +473,7 @@ account for the opposite side requirement:
 }
 ```
 
-While it won't work to solve all needs regarding a concept like logical CSS
+While this approach won't work to solve all needs regarding a concept like logical CSS
 transforms, it does offer some
 [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) principles for many
 use cases.
@@ -483,11 +483,11 @@ use cases.
 Using the built in `input[type="checkbox"]` wouldn't be complete without
 handling the various states it can be in: `:checked`, `:disabled`,
 `:indeterminate` and `:hover`. `:focus` was intentionally left alone, with an
-adjustment only made to it's offset; the focus ring looked great on Firefox and
+adjustment only made to its offset; the focus ring looked great on Firefox and
 Safari:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/T1UPB5mimpmIVc3BAOP9.png",
-alt="screenshot of focus ring focused on a switch in Firefox and Safari",
+alt="A screenshot of focus ring focused on a switch in Firefox and Safari.",
 width="800", height="363" %}
 
 {% Aside 'gotchas' %} Chromium will be catching up to the rounded focus ring styles seen
@@ -559,8 +559,8 @@ visual states need styles due to the use of `appearance: none`.
 ```
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/2Zfw8KIHH7cpmnTDafm6.png",
-alt="screenshot of the dark styled switch in disabled checked and unchecked
-states", width="740", height="250" %}
+alt="The dark styled switch in disabled, checked, and unchecked
+states.", width="740", height="250" %}
 
 This state is tricky since it needs to account for a disabled: checked,
 unchecked, dark and light. I stylistically chose minimal styles for these states
@@ -583,8 +583,8 @@ It is tricky to set a checkbox to indeterminate, only JavaScript can set it:
 ```
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/BEZ0OZaMPG74RGImkmCh.png",
-alt="screenshot of the indeterminate state which has the track thumb in the
-middle, to indicate undecided", width="196", height="130" %}
+alt="The indeterminate state which has the track thumb in the
+middle, to indicate undecided.", width="196", height="130" %}
 
 Since the state, to me, is unassuming and inviting, it felt appropriate to put
 the switch thumb position in the middle:
@@ -651,7 +651,7 @@ attempted and nothing happens.
 
 ### Draggable thumbs
 
-The thumb pseudo element receives it's position from the `.gui-switch > input`
+The thumb pseudo-element receives its position from the `.gui-switch > input`
 scoped `var(--thumb-position)`, JavaScript can supply an inline style value on
 the input to dynamically update the thumb position making it appear to follow
 the pointer gesture. When the pointer is released, remove the inline styles and
@@ -689,7 +689,7 @@ ones:
 }
 ```
 
-The desired result is a horizontal gesture that doesn't also pan / scroll the
+The desired result is a horizontal gesture that doesn't also pan or scroll the
 page. A pointer can vertically scroll start from within the input and scroll the
 page, but horizontal ones are custom handled.
 
@@ -761,7 +761,7 @@ The script hero is `state.activethumb`, the little circle this script is
 positioning along with a pointer. The `switches` object is a `Map()` where the
 keys are `.gui-switch`'s and the values are cached bounds and sizes that keep
 the script efficient. Right-to-left is handled using the same custom property
-that CSS is `--isLTR`, and is able to leverage it to invert logic and continue
+that CSS is `--isLTR`, and is able to use it to invert logic and continue
 supporting RTL. The `event.offsetX` is valuable as well, as it contains a delta
 value useful for positioning the thumb. 
 
