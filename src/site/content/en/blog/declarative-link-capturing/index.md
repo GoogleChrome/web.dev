@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Choose how in-scope links open your PWA with Declarative Link Capturing
+title: Choose how in-scope links open your PWA with Declarative Link Capturing (no longer pursued)
 subhead: |
   Declarative Link Capturing is a proposal for a web app manifest property called
   `"capture_links"` that lets developers determine declaratively what should happen when the browser
@@ -9,7 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-19
-updated: 2021-06-18
+updated: 2021-08-09
 description: |
   Declarative Link Capturing is a proposal for a web app manifest property called
   "capture_links" that lets developers determine declaratively what should happen when the browser
@@ -26,9 +26,16 @@ origin_trial:
   url: https://developer.chrome.com/origintrials/#/view_trial/4285175045443026945
 ---
 
-{% Aside %} Declarative Link Capturing is part of the
-[capabilities project](https://web.dev/fugu-status/) and is currently in development. This post will
-be updated as the implementation progresses. {% endAside %}
+{% Aside 'warning' %} Declarative Link Capturing was part of the
+[capabilities project](https://web.dev/fugu-status/)
+and is no longer pursued. The feature will be reincarnated as `launch_handler` and `scope_extensions`.
+Watch this site for updates. {% endAside %}
+
+{% Details %}
+
+{% DetailsSummary %}
+Original article
+{% endDetailsSummary %}
 
 ## What is Declarative Link Capturing? {: #what }
 
@@ -209,6 +216,7 @@ Cutter. This article was reviewed by [Joe Medley](https://github.com/jpmedley), 
 Cutter, and [Shunya Shishido](https://github.com/sisidovski).
 Hero image by [Zulmaury Saavedra](https://unsplash.com/@zulmaury) on
 [Unsplash](https://unsplash.com/photos/zh0J32MrJfA).
+{% endDetails %}
 
 [explainer]: https://github.com/WICG/sw-launch/blob/main/declarative_link_capturing.md
 [issues]: https://github.com/WICG/sw-launch/issues/
