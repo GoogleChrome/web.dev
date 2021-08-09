@@ -63,11 +63,11 @@ Unlike other ways of applying CSS from JavaScript, there is no need to create `<
 mess with JavaScript strings of CSS text.
 
 CSS modules also have some of the same benefits as JavaScript modules.
-- Deduplication: if the same CSS file is imported from multiple places in an application, it will
+- **Deduplication:** if the same CSS file is imported from multiple places in an application, it will
   still only be fetched, instantiated, and parsed a single time.
-- Consistent order of evaluation: when the importing JavaScript is running, it can rely on the
+- **Consistent order of evaluation:** when the importing JavaScript is running, it can rely on the
   stylesheet it imports having already been fetched and parsed.
-- Security: modules are fetched with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+- **Security:** modules are fetched with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
   and use strict MIME-type checking.
 
 ## Import Assertions (what's with the '`assert`'?)
