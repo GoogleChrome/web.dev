@@ -31,9 +31,7 @@ module.exports = () => {
 
   const assets = Object.values(pattern.assets)
     .map((asset) => {
-      const type = prismTypes.includes(asset.type)
-        ? asset.type
-        : 'text';
+      const type = prismTypes.includes(asset.type) ? asset.type : 'text';
       const content = Prism.highlight(
         asset.content,
         Prism.languages[type],
