@@ -33,7 +33,7 @@ In this post I want to share thinking on a way to build switch components.
 
 If you prefer video, here's a YouTube version of this post:
 
-{% YouTube 'kHL3gxAlvK8' %}
+{% YouTube '_KqccADghcA' %}
 
 ## Overview
 
