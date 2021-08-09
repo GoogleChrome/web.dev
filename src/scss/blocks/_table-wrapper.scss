@@ -12,3 +12,18 @@
     white-space: nowrap;
   }
 }
+
+/// CELL ALIGNMENT EXCEPTIONS
+.table-wrapper[data-alignment='top'] {
+  th,
+  td {
+    vertical-align: top;
+  }
+}
+
+.table-wrapper[data-alignment='baseline'] {
+  th,
+  td {
+    vertical-align: top;
+  }
+}

@@ -229,6 +229,11 @@ caption {
   caption-side: bottom;
 }
 
+table ul:not([class]),
+table ol:not([class]) {
+  margin: 0;
+}
+
 /// Separators
 
 hr {
@@ -320,6 +325,7 @@ a:active {
 @import 'blocks/brand';
 @import 'blocks/skip-link';
 @import 'blocks/stack-nav';
+@import 'blocks/table-wrapper';
 @import 'blocks/toggle-switch';
 
 /// UTILITY CLASSES

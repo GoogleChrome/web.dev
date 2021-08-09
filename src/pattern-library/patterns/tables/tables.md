@@ -1,10 +1,10 @@
-Use the markup below to create a table.
-Do _not_ use Markdown syntax;
-it doesn't include the wrapper element needed
-to ensure correct whitespace around the table.
+Use HTML markup for tables. Do _not_ use Markdown syntax. It is also
+recommended that you use the `table-wrapper` and `scrollbar` classes to
+provide a good user experience for smaller viewports.
 
-If you want content in `<td>` elements to be vertically aligned
-to the top of the cell, add the `w-table--top-align` class
-to the `<table>` element.
-
-Tables scroll when their width is larger than that of the content column.
+If you want content in `<td>` elements to be vertically aligned to the top of
+the cell, add the `[data-align="top"]` [exception]
+(https://cube.fyi/exception) to the `.table-wrapper` element. You can also
+add `[data-align="baseline"]` for baseline alignment. The default alignment
+is center and bottom alignment isn’t available because it provides a poor
+reading experience.
