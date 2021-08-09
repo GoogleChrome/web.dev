@@ -1,8 +1,9 @@
 /// WRAPPER UTILITY
-/// A horizontally centered wrapper that
-/// provides a consistent central column.
+/// Info: https://web.dev/design-system/css-utilities/#wrapper
+
 .wrapper {
-  margin-inline: auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 90rem; // For no clamp support
   width: clamp(16rem, 90vw, 90rem);
   max-width: 100%;

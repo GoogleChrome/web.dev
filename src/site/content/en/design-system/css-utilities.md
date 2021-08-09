@@ -76,6 +76,27 @@ chunks/sections/regions of content.
 <div class="region">I have consistent space now.</div>
 ```
 
+## Scrollbar
+
+Provides a scrollbar only if there is overflow content. This utility only provides the scrollbar and **not** the rule which determines which direction scrolling occurs (`overflow-x`, `overflow-y`, `overflow`), so the element that this is applied to needs to deal with that.
+
+The scrollbar colors can be changed too by setting the following **on the element** or on a parent element that has a [higher specificity](https://web.dev/learn/css/specificity/) than `:root`.
+
+<dl>
+<dt><code>--scrollbar-bg</code></dt>
+<dd>The track/background color</dd>
+<dt><code>--scrollbar-fg</code></dt>
+<dd>The thumb/foreground color</dd>
+</dl>
+
+### Example
+
+```html
+<div class="table-wrapper scrollbar">
+  <table></table>
+</div>
+```
+
 ## Visually hidden
 
 If you hide an element with `display: none`, it can also hide it from assistive
