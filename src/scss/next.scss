@@ -12,10 +12,14 @@ $generate-utility-classes: false;
 
 /// GLOBAL VARIABLES
 /// Global variables that should be accessible in all authored CSS
-$global-gutter: #{get-size('size-2')};
+$global-gutter: map-get($gorko-space-scale, 'size-1');
+$global-standard-transition-duration: 250ms;
+$global-slinky-transition-duration: 500ms;
+$global-slinky-transition-bezier: cubic-bezier(0.42, 0, 0.32, 1.17);
 
 /// MIXINS
 @import 'mixins/rounded-border';
+@import 'mixins/vertically-align-label';
 
 /// GLOBAL CSS
 /// Core CSS that is applicable to every page.
@@ -23,7 +27,9 @@ $global-gutter: #{get-size('size-2')};
 
 body {
   font-size: get-size('size-1');
-  padding: get-size('size-1');
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 
   @include apply-utility('bg', 'core-bg');
   @include apply-utility('color', 'core-text');
@@ -73,7 +79,7 @@ li {
 h1,
 h2,
 h3 {
-  max-width: 30ch;
+  max-width: 25ch;
 }
 
 /// Lists
@@ -86,9 +92,7 @@ ol:not([class]) {
 ol:not([class]),
 ul:not([class]) {
   li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0 2ch;
+    position: relative;
 
     @include apply-utility('leading', 'short');
   }
@@ -108,11 +112,16 @@ ul:not([class]) {
   li::before {
     content: '';
     display: block;
+    position: absolute;
+    inset: 1ex 0 0 0;
     width: 0.8ex;
     height: 0.8ex;
-    margin-block-start: 1ex;
     border-radius: 50%;
     background: currentColor;
+  }
+
+  li {
+    padding-inline-start: 2ch;
   }
 }
 
@@ -128,6 +137,8 @@ ol:not([class]) {
     align-items: center;
     width: 1.5rem;
     height: 1.5rem;
+    position: absolute;
+    inset: 0 0 0 0;
     border-radius: 50%;
     font-size: 0.9em;
     background: var(--color-accent-bg);
@@ -138,6 +149,7 @@ ol:not([class]) {
 
   li {
     counter-increment: ol-list;
+    padding-inline-start: 2.5rem;
   }
 }
 
@@ -240,6 +252,15 @@ code {
   @include apply-utility('font', 'mono');
 }
 
+pre > code {
+  display: block;
+  padding: get-size('size-1');
+  max-width: 80ch;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
 /// Links
 
 a:link {
@@ -276,7 +297,6 @@ a:active {
   background: var(--color-core-text);
 }
 
-
 /// COMPOSITIONS
 @import 'compositions/auto-grid';
 @import 'compositions/cluster';
@@ -284,14 +304,21 @@ a:active {
 @import 'compositions/sidebar';
 @import 'compositions/switcher';
 
-/// BLOCK CLASSES
-@import 'blocks/theme-toggle';
+/// BLOCKS
+@import 'blocks/brand';
+@import 'blocks/skip-link';
+@import 'blocks/stack-nav';
+@import 'blocks/toggle-switch';
 
 /// UTILITY CLASSES
 @import 'utilities/flow';
 @import 'utilities/focus-ring';
 @import 'utilities/region';
+@import 'utilities/visually-hidden';
 @import 'utilities/wrapper';
+
+/// PAGES
+@import 'pages/design-system';
 
 // The prototype file is for temporary prototyping
 @import 'prototype';

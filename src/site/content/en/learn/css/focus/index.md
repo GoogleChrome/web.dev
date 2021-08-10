@@ -97,7 +97,7 @@ This focus ring varies between both browser and operating systems.
 This behavior can be changed with CSS,
 using the `:focus`, `:focus-within` and `:focus-visible`
 pseudo-classes that you learned about in the
-[pseudo-classes lesson](/learn/layout/pseudo-classes).
+[pseudo-classes lesson](/learn/css/pseudo-classes).
 It is important to set a focus style which has **contrast** with the default style of an element.
 For example, a common approach is to utilize the `outline` property.
 

@@ -30,7 +30,7 @@
 
   {# Make sure Actions are first in the tab order. #}
   <div class="w-actions">
-    <share-action authors="{{ authors | expandAuthors(collections.authors) }}"
+    <share-action authors="{{ authors | expandAuthors(collections.authors, lang) }}"
       class="gc-analytics-event w-actions__fab w-actions__fab--share"
       data-category="web.dev"
       data-label="share"

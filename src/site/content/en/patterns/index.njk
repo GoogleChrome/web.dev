@@ -1,0 +1,12 @@
+---
+layout: default
+title: Patterns homepage
+---
+
+<h2> {{title}} </h2>
+
+<ul>
+{% for pattern in patterns %}
+  <li><a href="/patterns/{{pattern.id}}">{{ pattern.id }}</a></li>
+{% endfor %}
+</ul>

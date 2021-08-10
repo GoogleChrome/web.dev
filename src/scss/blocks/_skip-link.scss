@@ -1,0 +1,10 @@
+.skip-link {
+  z-index: 10;
+
+  /// Please avoid using @extend where possible
+  /// In this context, it's fine because this
+  /// skip link needs parity with the visually hidden util
+  &:not(:focus) {
+    @extend .visually-hidden;
+  }
+}
