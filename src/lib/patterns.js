@@ -23,42 +23,44 @@ const stripDot = /^\./;
 const basePath = path.join(__dirname, '../../src/site/content/en/patterns');
 const files = glob.sync(path.join(basePath, '**', 'index.md'));
 
-const allPatterns = files
-  .reduce((patterns, file) => {
-    const id = path.relative(basePath, path.dirname(file));
-    const fileContents = matter(fs.readFileSync(file, 'utf-8'));
-    if (fileContents.data.layout !== 'pattern') {
-      return patterns;
-    }
-
-    const assetsPaths = glob.sync(path.join(path.dirname(file), 'assets', '*'));
-    const assets = assetsPaths.reduce((out, assetPath) => {
-      const basename = path.basename(assetPath);
-      const type = path.extname(assetPath).replace(stripDot, '');
-      const content = fs.readFileSync(assetPath, 'utf-8');
-      out[basename] = {
-        content,
-        type,
-        name: basename,
-      };
-      return out;
-    }, {});
-
-    const content = md.render(fileContents.content);
-    // Use external demo url from frontmatter, if set, or default to local demo.
-    const demo =
-      fileContents.data.demo || path.join('/', 'patterns', id, 'demo.html');
-    const suite = path.join('/', 'patterns', path.dirname(id), '/');
-    patterns[id] = {
-      id,
-      ...fileContents.data,
-      content,
-      assets,
-      demo,
-      suite,
-    };
+/** @type CodePatterns */
+const allPatterns = files.reduce((patterns, file) => {
+  const id = path.relative(basePath, path.dirname(file));
+  const fileContents = matter(fs.readFileSync(file, 'utf-8'));
+  if (fileContents.data.layout !== 'pattern') {
     return patterns;
+  }
+
+  const assetsPaths = glob.sync(path.join(path.dirname(file), 'assets', '*'));
+  /** @type CodePatternAssets */
+  const assets = assetsPaths.reduce((out, assetPath) => {
+    const basename = path.basename(assetPath);
+    const type = path.extname(assetPath).replace(stripDot, '');
+    const content = fs.readFileSync(assetPath, 'utf-8');
+    out[basename] = {
+      content,
+      type,
+      name: basename,
+    };
+    return out;
   }, {});
+
+  const content = md.render(fileContents.content);
+  // Use external demo url from frontmatter, if set, or default to local demo.
+  const demo =
+    fileContents.data.demo || path.join('/', 'patterns', id, 'demo.html');
+  const suite = path.join('/', 'patterns', path.dirname(id), '/');
+  /** @type CodePattern */
+  patterns[id] = {
+    id,
+    ...fileContents.data,
+    content,
+    assets,
+    demo,
+    suite,
+  };
+  return patterns;
+}, {});
 
 module.exports = function () {
   return allPatterns;
