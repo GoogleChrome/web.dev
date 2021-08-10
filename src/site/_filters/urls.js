@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const path = require('path');
 
 /**
  * Removes any i18n data from a URL to determine the default URL.
@@ -26,6 +27,15 @@ const getDefaultUrl = (url) =>
     '/',
   );
 
+/**
+ * Extracts relative path from a url.
+ * @param {string} url Url to be processed.
+ * @param {string} pathPrefix Part of the url the output should be relative to.
+ * @returns {string} relative path
+ */
+const getRelativePath = (url, pathPrefix) => path.relative(pathPrefix, url);
+
 module.exports = {
   getDefaultUrl,
+  getRelativePath,
 };
