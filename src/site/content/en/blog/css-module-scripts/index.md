@@ -1,5 +1,5 @@
 ---
-title: Using CSS Module Scripts to `import` stylesheets
+title: Using CSS Module Scripts to import stylesheets
 subhead: >
   Learn how to use CSS module scripts to import CSS stylesheets using the same syntax as JavaScript
   modules.
