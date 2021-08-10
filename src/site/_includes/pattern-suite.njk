@@ -5,7 +5,7 @@ layout: default
 {{ content | safe }}
 
 <ul>
-{% for pattern in patterns %}
+{% for patternId, pattern in patterns %}
   {% if pattern.suite == page.url %}
     <li><a href="/patterns/{{pattern.id}}">{{ pattern.id }}</a></li>
   {% endif %}

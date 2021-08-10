@@ -24,11 +24,11 @@ const basePath = path.join(__dirname, '../../src/site/content/en/patterns');
 const files = glob.sync(path.join(basePath, '**', 'index.md'));
 
 const allPatterns = files
-  .map((file) => {
+  .reduce((patterns, file) => {
     const id = path.relative(basePath, path.dirname(file));
     const fileContents = matter(fs.readFileSync(file, 'utf-8'));
     if (fileContents.data.layout !== 'pattern') {
-      return;
+      return patterns;
     }
 
     const assetsPaths = glob.sync(path.join(path.dirname(file), 'assets', '*'));
@@ -49,7 +49,7 @@ const allPatterns = files
     const demo =
       fileContents.data.demo || path.join('/', 'patterns', id, 'demo.html');
     const suite = path.join('/', 'patterns', path.dirname(id), '/');
-    return {
+    patterns[id] = {
       id,
       ...fileContents.data,
       content,
@@ -57,8 +57,8 @@ const allPatterns = files
       demo,
       suite,
     };
-  })
-  .filter((pattern) => !!pattern);
+    return patterns;
+  }, {});
 
 module.exports = function () {
   return allPatterns;

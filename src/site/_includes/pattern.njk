@@ -5,10 +5,9 @@ layout: default
 {{ content | safe }}
 
 {% if page.url %}
-  {% set patternId = page.url | getRelativePath('patterns') %}
+  {% set patternId = page.url | getRelativePath('/patterns/') %}
 {% endif %}
 
 {% if patternId %}
-  {% set pattern = patternId | getPattern(patterns) %}
+  {% set pattern = patterns[patternId] %}
 {% endif %}
-
