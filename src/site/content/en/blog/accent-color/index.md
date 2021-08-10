@@ -15,11 +15,12 @@ tags:
 
 Today's HTML form elements are [difficult to
 customize](https://codepen.io/GeoffreyCrofte/pen/BiHzp). It feels as if it's
-either: no custom styles, very few custom styles, or reset input styles and
+a choice between few or no custom styles, or resetting input styles and
 build it up from scratch. Building it up from scratch ends up being much more
-work than anticipated; forgotten styles for element states
+work than anticipated. It can also lead to forgotten styles for element states
 ([indeterminate](https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate),
-I'm looking at you), losing built in accessibility features, etc. It may be more
+I'm looking at you), and the loss of built-in accessibility features. 
+To fully recreate what the browser provides may be more
 work than you're looking to take on.
 
 ```css
@@ -46,8 +47,9 @@ providing a way to bring your brand into elements.
 </figure>
 
 The `accent-color` property also works with
-[`color-scheme`](https://web.dev/color-scheme/), allowing authors to tint both
-the light and dark elements. Here the user has dark theme active, the page uses
+[`color-scheme`](/color-scheme/), allowing authors to tint both
+the light and dark elements. 
+In the following example the user has a dark theme active, the page uses
 `color-scheme: light dark`, and uses the same `accent-color: hotpink` for dark
 themed hotpink tinted controls.
 
@@ -68,7 +70,7 @@ themed hotpink tinted controls.
 
 As of this writing, Chromium 93+ and Firefox 92+ support `accent-color`.
 
-## Supported Elements
+## Supported elements
 
 Currently, only four elements will tint via the `accent-color` property:
 [checkbox](#checkbox), [radio](#radio), [range](#range) and
@@ -109,7 +111,7 @@ then your browser doesn't support `accent-color` yet.
   id: 'rNmrxqL'
 } %}
 
-## Guaranteeing Contrast
+## Guaranteeing contrast
 
 To prevent inaccessible elements from existing, browsers with `accent-color`
 need to determine an [eligible contrast
@@ -132,7 +134,7 @@ Provide a brand color, and trust that it will make smart decisions for you.
 The browser will not change your color in a dark theme.
 {% endAside %}
 
-## Extra: more tinting
+## Extra: More tinting
 
 You may be wondering how to tint more than these four form elements? Here's a
 minimal sandbox which tints:
