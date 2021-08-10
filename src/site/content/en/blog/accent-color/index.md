@@ -6,7 +6,7 @@ authors:
   - adamargyle
   - jarhar
 description: Bring your brand color to built-in HTML form inputs with one line of code.
-date: 2021-08-09
+date: 2021-08-10
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/WOcuCLCwMr0M2lF17bmm.png
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/huEpiCoJQ6dAo8rHGsZT.png
 tags:
