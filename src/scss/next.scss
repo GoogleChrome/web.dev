@@ -13,9 +13,8 @@ $generate-utility-classes: false;
 /// GLOBAL VARIABLES
 /// Global variables that should be accessible in all authored CSS
 $global-gutter: map-get($gorko-space-scale, 'size-1');
-$global-standard-transition-duration: 250ms;
-$global-slinky-transition-duration: 500ms;
-$global-slinky-transition-bezier: cubic-bezier(0.42, 0, 0.32, 1.17);
+
+// NOTE: there are more design token-led global variables in _tokens.scss
 
 /// MIXINS
 @import 'mixins/rounded-border';

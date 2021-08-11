@@ -25,8 +25,8 @@ $toggle-switch-decor-ratio: 0.8;
   width: #{$toggle-switch-thumb-size * 1.7};
   height: #{$toggle-switch-decor-ratio}em;
   border-radius: $toggle-switch-thumb-size;
-  transition: background $global-standard-transition-duration;
-  transition-delay: $global-standard-transition-duration;
+  transition: background $global-transition-base;
+  transition-delay: $global-transition-base-duration;
 
   @include apply-utility('bg', 'check-bg');
 }
@@ -40,8 +40,7 @@ $toggle-switch-decor-ratio: 0.8;
   position: absolute;
   inset: 50% 0 0 0;
   transform: translateY(-50%);
-  transition: transform $global-slinky-transition-duration
-    $global-slinky-transition-bezier;
+  transition: transform $global-transition-bounce;
   z-index: 1;
 
   @include apply-utility('bg', 'check-fg');
