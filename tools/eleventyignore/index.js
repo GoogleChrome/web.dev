@@ -43,6 +43,8 @@ const getDirectories = (source) =>
 // Default files that should always be ignored.
 const ignores = ['node_modules'];
 
+// Test.
+
 // Files that should be included in the build.
 let includes = process.env.ELEVENTY_INCLUDE || [];
 try {
