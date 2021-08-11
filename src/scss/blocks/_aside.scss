@@ -1,3 +1,5 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/aside
 .aside {
   --gutter: 0.5rem;
 
@@ -5,7 +7,7 @@
   max-width: 35rem;
   margin-inline: auto;
 
-  @include apply-utility('bg', 'mid-bg');
+  @include apply-utility('bg', 'mid-bg'); // For if no BG utility is added
   @include apply-utility('leading', 'short');
 
   a {
