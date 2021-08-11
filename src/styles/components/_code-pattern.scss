@@ -1,0 +1,41 @@
+@import '../settings/colors';
+
+// =============================================================================
+// CODE PATTERN component
+//
+// A component that displays the code and a demo side by side.
+//
+// =============================================================================
+
+.code-pattern {
+  width: 100%;
+
+  --primary-color: $WEB_PRIMARY_COLOR;
+
+  .code-pattern__content {
+    display: grid;
+    gap: 1rem; // sass-lint:disable-line no-misspelled-properties
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .code-pattern__assets,
+  .code-pattern__demo {
+    border: 1px solid $BORDER_COLOR;
+  }
+
+  pre {
+    border: 0;
+    background: 0;
+  }
+
+  iframe {
+    border: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  web-tabs {
+    height: 100%;
+    width: 100%;
+  }
+}
