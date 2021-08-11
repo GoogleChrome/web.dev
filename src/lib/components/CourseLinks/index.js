@@ -58,10 +58,11 @@ class CourseLinks extends HTMLElement {
     let courseProgress;
     try {
       courseProgress = JSON.parse(localStorage['webdev_course_progress']);
-      courseProgress = courseProgress[courseKey];
     } catch (e) {
-      courseProgress = {...initialProgress};
+      courseProgress = {};
     }
+
+    courseProgress = courseProgress[courseKey] || {...initialProgress};
 
     // Find every anchor that the user has already visited and set an attribute
     // on it so it renders a checkmark.
@@ -120,12 +121,24 @@ class CourseLinks extends HTMLElement {
 
     // Write everything back to localstorage using the data-course-key
     // to identify which course it came from.
-    localStorage['webdev_course_progress'] = JSON.stringify({
+    let updatedProgress;
+    try {
+      updatedProgress = JSON.parse(localStorage['webdev_course_progress']);
+    } catch (e) {
+      updatedProgress = {};
+    }
+
+    // If a user has visited multiple course sections, we need to preserve
+    // their progress, so we merge the new progress with their saved state
+    // from localStorage.
+    updatedProgress = Object.assign({}, updatedProgress, {
       [courseKey]: {
         pages: newPages,
         percent: newPercent.toString(),
       },
     });
+
+    localStorage['webdev_course_progress'] = JSON.stringify(updatedProgress);
   };
 }
 
