@@ -888,5 +888,6 @@ to the community remixes section below!
 *Nothing to see here yet.*
 
 ### Resources
-- `.gui-switch` [source code on
-  Github](https://github.com/argyleink/gui-challenges)
+
+Find the `.gui-switch` [source code on
+  Github](https://github.com/argyleink/gui-challenges).
