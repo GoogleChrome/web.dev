@@ -3,7 +3,11 @@
   "summary": "The default type of an aside is a 'note'.",
   "order": "source",
   "context": {
-    "content": "Use the note aside to provide supplemental information."
+    "content": "Use the note aside to provide supplemental information. [A test link](#) for CSS purposes.",
+    "utilities": {
+      "title": "color-state-info-text",
+      "main": "bg-state-info-bg color-state-info-text"
+    }
   },
   "variants": [
     {
@@ -12,7 +16,12 @@
       "context": {
         "content": "Use the caution aside to indicate a potential pitfall or complication.",
         "type": "caution",
-        "title": "Caution"
+        "title": "Caution",
+        "icon": "error.svg",
+        "utilities": {
+          "title": "color-state-bad-text",
+          "main": "bg-state-bad-bg color-state-bad-text"
+        }
       }
     },
     {
@@ -21,7 +30,12 @@
       "context": {
         "content": "The warning aside is stronger than a caution aside; use it to tell the reader not to do something.",
         "type": "warning",
-        "title": "Warning"
+        "title": "Warning",
+        "icon": "warning.svg",
+        "utilities": {
+          "icon": "color-state-warn-text",
+          "main": "bg-state-warn-bg color-dark-text"
+        }
       }
     },
     {
@@ -30,7 +44,11 @@
       "context": {
         "content": "Use the success aside to describe a successful action or an error-free status.",
         "type": "success",
-        "title": "Success"
+        "title": "Success",
+        "icon": "done.svg",
+        "utilities": {
+          "main": "bg-state-good-bg color-state-good-text"
+        }
       }
     },
     {
@@ -39,7 +57,11 @@
       "context": {
         "content": "Use the objective aside to define the goal of a process described in the body copy.",
         "type": "objective",
-        "title": "Objective"
+        "title": "Objective",
+        "icon": "done.svg",
+        "utilities": {
+          "main": "bg-state-good-bg color-state-good-text"
+        }
       }
     },
     {
@@ -48,7 +70,11 @@
       "context": {
         "content": "Use the gotcha aside to indicate a common problem that the reader wouldn't know without specialized knowledge of the topic.",
         "type": "gotchas",
-        "title": "Gotchas!"
+        "title": "Gotchas!",
+        "icon": "lightbulb.svg",
+        "utilities": {
+          "main": "t-bg-core-tertiary-bright t-color-core-tertiary"
+        }
       }
     },
     {
@@ -57,7 +83,12 @@
       "context": {
         "content": "Use the key-term aside to define a term that's essential to understanding an idea in the body copy. Key-term asides should be a single sentence that includes the term in italics. For example, \"A portal is…\"",
         "type": "key-term",
-        "title": "Key Term"
+        "title": "Key Term",
+        "icon": "highlighter.svg",
+        "utilities": {
+          "main": "t-color-core-secondary-shade t-bg-core-secondary-bright",
+          "icon": "t-color-core-secondary"
+        }
       }
     },
     {
@@ -66,7 +97,11 @@
       "context": {
         "content": "Use the codelab aside to link to an associated codelab.",
         "type": "codelab",
-        "title": "Try it!"
+        "title": "Codelab",
+        "icon": "code.svg",
+        "utilities": {
+          "main": "t-bg-core-quaternary-bright t-color-core-quaternary"
+        }
       }
     }
   ]
