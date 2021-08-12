@@ -303,14 +303,14 @@ If you need to display these types of UI affordances, reserve sufficient space i
 In some cases adding content dynamically is an integral part of the page. For example, when loading more products to a list of items or when updating live feed content. In those cases you can avoid unexpected layout shifts by:
 
 *   Replacing the old content with the new content within a fixed size container or by using a carousel and removing the old content after the transition. Remember to disable any links/controls until the transition has completed in order to prevent accidental clicks/taps while the new content is coming in.
-*   Having the user initiate the load of new content such that they will be expecting the shift (e.g. with a “load more” or “refresh” button). It’s recommended to prefetch the content before the user interaction so that it will show up immediately after it. As a reminder, layout shifts that don't occur within 500ms of user input will be counted towards CLS.
-*   Seamlessly load the content offscreen and overlay a notice to the user that it’s available (e.g. with a “scroll up” button).
+*   Having the user initiate the load of new content such that they will be expecting the shift (e.g. with a "load more" or "refresh" button). It’s recommended to prefetch the content before the user interaction so that it will show up immediately after it. As a reminder, layout shifts that don't occur within 500ms of user input will be counted towards CLS.
+*   Seamlessly load the content offscreen and overlay a notice to the user that it’s available (e.g. with a "scroll up" button).
 
 
 <figure class="w-figure">
   {% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/B6oqm3fEXtby7qQadk4D.png", alt="Examples of dynamic content loading without causing unexpected layout shifts from Twitter and the Chloé website", width="579", height="460" %}
   <figcaption class="w-figcaption">
-    Examples of dynamic content loading without causing unexpected layout shifts. Left: “Load More” example on the Chloé website. Check out the related [article](https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c) from the YNAP tech team. Right: Live feed content loading on Twitter.
+    Examples of dynamic content loading without causing unexpected layout shifts. Left: "Load More" example on the Chloé website. Check out the related [article](https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c) from the YNAP tech team. Right: Live feed content loading on Twitter.
   </figcaption>
 </figure>
 
