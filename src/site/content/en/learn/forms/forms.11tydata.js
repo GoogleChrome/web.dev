@@ -31,6 +31,10 @@ module.exports = function () {
         if (process.env.ELEVENTY_ENV === 'prod') {
           return false;
         }
+
+        // Because we're overriding the permalink here, we need to explicitly
+        // remove the /en/ from the path. Normally this is handled in
+        // src/site/content/content.11tydata.js) but this supersedes it.
         return (data.page.filePathStem + '.html').replace(/^\/en\//, '/');
       },
     },
