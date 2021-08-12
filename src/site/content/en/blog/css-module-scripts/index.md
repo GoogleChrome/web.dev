@@ -32,7 +32,7 @@ than other ways of importing and applying CSS.
 
 ## Browser Support
 
-CSS module scripts are available in Chrome and Edge in version 93. 
+CSS module scripts are available by default in Chrome and Edge in version 93. 
 
 Support in Firefox and Safari is not yet available. Implementation progress can be tracked at the
 [Gecko bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1720570) and [WebKit
@@ -74,7 +74,7 @@ CSS modules also have some of the same benefits as JavaScript modules.
 
 ## Import Assertions (what's with the '`assert`'?)
 
-The `assert { type: 'css'}` part of the `import` statement is an [import
+The `assert { type: 'css' }` part of the `import` statement is an [import
 assertion](https://v8.dev/features/import-assertions). This is required; without it, the `import` is
 treated as a normal JavaScript module import, and will fail if the imported file has a
 non-JavaScript MIME type.
