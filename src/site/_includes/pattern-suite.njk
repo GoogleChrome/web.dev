@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<header class="w-masthead-about">
+  <div class="w-masthead-about__container">
+    <div class="w-masthead-about__left">
+      <h1 class="w-headline--two w-font-weight--medium w-mt--non">
+       Code Patterns
+      </h1>
+      <p>
+        A collection of code snippets to help you optmize your web projects.
+      </p>
+    </div>
+    <div class="w-masthead-about__right">
+      {% Img
+          height=220,
+          width=330,
+          src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dYAbN2LdttJ1qYk1gssh.svg",
+          alt="Collection cover image",
+          loading="lazy",
+          decoding="async",
+          class="w-masthead-path__image"
+        %}
+    </div>
+  </div>
+</header>
+
+<hr>
+
+<section class="w-layout-container">
+  <h2> {{title}} </h2>
+
+  {{ content | safe }}
+
+  {% for patternId, pattern in patterns %}
+    {% if pattern.suite == page.url %}
+      <div class="flow">
+        <a href="/patterns/{{pattern.id}}"><h3 id="{{pattern.id}}">{{pattern.title}}</h3></a>
+        {{ pattern.content | safe }}
+        {% CodePattern pattern.id %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</section>

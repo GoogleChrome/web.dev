@@ -788,7 +788,10 @@
     "image": "image/admin/eXpk44oNMpOnNPLrMOMm.jpg"
   },
   "antoinebisch": {
+    "country": "GB",
+    "linkedin": "https://www.linkedin.com/in/antoinebisch/",
     "github": "antoinebisch",
+    "twitter": "AntoineBisch",
     "country": "UK",
     "image": "image/admin/xCDa34tJbhKRgr8pj5BJ.jpg"
   },
@@ -957,6 +960,11 @@
     "github": "npm1",
     "twitter": "NicPenaM",
     "image": "image/kns0INkO77RkiEStzHWYrugyWj32/SCSIEb0Qtv6tPWel5tfd.jpeg"
+  },
+  "jarhar": {
+    "github": "josepharhar",
+    "twitter": "josepharhar",
+    "image": "image/ahMMPwVRwAdp0gFdY0zZnncYdsm1/3i0rkOVNKJImIy1UWvyC.jpeg"
   },
   "dandclark": {
     "twitter": "dandclark1",

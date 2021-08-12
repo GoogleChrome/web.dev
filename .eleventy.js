@@ -33,6 +33,7 @@ const Banner = require('./src/site/_includes/components/Banner');
 const Blockquote = require('./src/site/_includes/components/Blockquote');
 const Breadcrumbs = require('./src/site/_includes/components/Breadcrumbs');
 const CodelabsCallout = require('./src/site/_includes/components/CodelabsCallout');
+const CodePattern = require('./src/site/_includes/components/CodePattern');
 const Codepen = require('./src/site/_includes/components/Codepen');
 const Compare = require('./src/site/_includes/components/Compare');
 const CompareCaption = require('./src/site/_includes/components/CompareCaption');
@@ -67,6 +68,7 @@ const tags = require('./src/site/_collections/tags');
 // Filters
 const consoleDump = require('./src/site/_filters/console-dump');
 const {i18n} = require('./src/site/_filters/i18n');
+const {getRelativePath} = require('./src/site/_filters/urls');
 const {memoize, findByUrl} = require('./src/site/_filters/find-by-url');
 const pathSlug = require('./src/site/_filters/path-slug');
 const containsTag = require('./src/site/_filters/contains-tag');
@@ -155,6 +157,7 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   config.addFilter('consoleDump', consoleDump);
   config.addFilter('i18n', i18n);
+  config.addFilter('getRelativePath', getRelativePath);
   config.addFilter('findByUrl', findByUrl);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
@@ -194,6 +197,7 @@ module.exports = function (config) {
   config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addShortcode('Codepen', Codepen);
+  config.addShortcode('CodePattern', CodePattern);
   config.addPairedShortcode('Compare', Compare);
   config.addPairedShortcode('CompareCaption', CompareCaption);
   config.addPairedShortcode('Details', Details);

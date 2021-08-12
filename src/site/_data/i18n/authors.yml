@@ -1061,6 +1061,11 @@ npm:
     en: Software developer always looking for chocolates and games
     es: Programador siempre en busca de chocolates y juegos
 
+jarhar:
+  title:
+    en: Joey Arhar
+  description:
+    en: Software Engineer on the Chrome DOM team
 dandclark:
   title:
     en: Dan Clark
