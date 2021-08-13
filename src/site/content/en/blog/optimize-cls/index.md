@@ -300,11 +300,11 @@ You've probably experienced layout shifts due to UI that pops-in at the top or b
 
 If you need to display these types of UI affordances, reserve sufficient space in the viewport for it in advance (for example, using a placeholder or skeleton UI) so that when it loads, it does not cause content in the page to surprisingly shift around.
 
-In some cases adding content dynamically is an integral part of the page. For example, when loading more products to a list of items or when updating live feed content. In those cases you can avoid unexpected layout shifts by:
+In some cases adding content dynamically is important part of user experience. For example, when loading more products to a list of items or when updating live feed content. There are several ways to avoid unexpected layout shifts in those cases:
 
-*   Replacing the old content with the new content within a fixed size container or by using a carousel and removing the old content after the transition. Remember to disable any links/controls until the transition has completed in order to prevent accidental clicks/taps while the new content is coming in.
-*   Having the user initiate the load of new content such that they will be expecting the shift (e.g. with a "load more" or "refresh" button). It’s recommended to prefetch the content before the user interaction so that it will show up immediately after it. As a reminder, layout shifts that don't occur within 500ms of user input will be counted towards CLS.
-*   Seamlessly load the content offscreen and overlay a notice to the user that it’s available (e.g. with a "scroll up" button).
+*   Replace the old content with the new content within a fixed size container or use a carousel and remove the old content after the transition. Remember to disable any links and controls until the transition has completed to prevent accidental clicks or taps while the new content is coming in.
+*   Have the user initiate the load of new content, so they are not surprised by the shift (for example with a "Load more" or "Refresh" button). It's recommended to prefetch the content before the user interaction so that it shows up immediately. As a reminder, layout shifts that occur within 500&nbsp;ms of user input are not counted towards CLS.
+*   Seamlessly load the content offscreen and overlay a notice to the user that it's available (for example, with a "Scroll up" button).
 
 
 <figure class="w-figure">
