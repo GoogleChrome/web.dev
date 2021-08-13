@@ -5,7 +5,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2015-07-21
-updated: 2021-05-07
+updated: 2021-08-13
 hero: image/admin/CME5IVhdn0pngs7jAlFX.jpg
 thumbnail: image/admin/1J1OTu90a2oH8wFogKnF.jpg
 alt: A Bluetooth chip on a coin
@@ -117,14 +117,13 @@ For instance, to request Bluetooth devices advertising the [Bluetooth GATT
 Battery Service]:
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+navigator.bluetooth.requestDevice({ filters: [{ services: [0x180F /* Battery */] }] })
 .then(device => { /* … */ })
 .catch(error => { console.error(error); });
 ```
 
-If your Bluetooth GATT Service is not on the list of [the standardized Bluetooth
-GATT services] though, you may provide either the full Bluetooth UUID or a short
-16- or 32-bit form.
+You can use either the full Bluetooth UUID or a short 16- or 32-bit form for Bluetooth
+GATT Services.
 
 ```js
 navigator.bluetooth.requestDevice({
@@ -150,7 +149,7 @@ navigator.bluetooth.requestDevice({
   filters: [{
     name: 'Francois robot'
   }],
-  optionalServices: ['battery_service'] // Required to access service later.
+  optionalServices: [0x180F /* Battery */] // Required to access service later.
 })
 .then(device => { /* … */ })
 .catch(error => { console.error(error); });
@@ -177,7 +176,7 @@ navigator.bluetooth.requestDevice({
       dataPrefix: new Uint8Array([0x01, 0x02])
     }]
   }],
-  optionalServices: ['battery_service'] // Required to access service later.
+  optionalServices: [0x180F /* Battery */] // Required to access service later.
 })
 .then(device => { /* … */ })
 .catch(error => { console.error(error); });
@@ -204,7 +203,7 @@ when trying to access them.
 ```js
 navigator.bluetooth.requestDevice({
   acceptAllDevices: true,
-  optionalServices: ['battery_service'] // Required to access service later.
+  optionalServices: [0x180F /* Battery */] // Required to access service later.
 })
 .then(device => { /* … */ })
 .catch(error => { console.error(error); });
@@ -222,7 +221,7 @@ Bluetooth remote GATT Server which holds the service and characteristic
 definitions.
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+navigator.bluetooth.requestDevice({ filters: [{ services: [0x180F /* Battery */] }] })
 .then(device => {
   // Human-readable name of the device.
   console.log(device.name);
@@ -241,20 +240,20 @@ want to get a Primary GATT Service and read a characteristic that belongs to
 this service. Let's try, for instance, to read the current charge level of the
 device's battery.
 
-In the example below, `battery_level` is the [standardized Battery Level
+In the example below, `0x2A19` is the [standardized Battery Level
 Characteristic].
 
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+navigator.bluetooth.requestDevice({ filters: [{ services: [0x180F /* Battery */] }] })
 .then(device => device.gatt.connect())
 .then(server => {
   // Getting Battery Service…
-  return server.getPrimaryService('battery_service');
+  return server.getPrimaryService(0x180F /* Battery */);
 })
 .then(service => {
   // Getting Battery Level Characteristic…
-  return service.getCharacteristic('battery_level');
+  return service.getCharacteristic(0x2A19 /* Battery Level */);
 })
 .then(characteristic => {
   // Reading Battery Level…
@@ -266,9 +265,8 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 .catch(error => { console.error(error); });
 ```
 
-If you use a custom Bluetooth GATT characteristic, you may provide either the
-full Bluetooth UUID or a short 16- or 32-bit form to
-`service.getCharacteristic`.
+You can use either the full Bluetooth UUID or a short 16- or 32-bit form to
+`service.getCharacteristic()`.
 
 Note that you can also add a `characteristicvaluechanged` event listener on a
 characteristic to handle reading its value. Check out the [Read Characteristic
@@ -302,10 +300,10 @@ I promise there is no magic here. It's all explained in the [Heart Rate Control
 Point Characteristic page].
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
+navigator.bluetooth.requestDevice({ filters: [{ services: [0x180D /* Heart Rate */] }] })
 .then(device => device.gatt.connect())
-.then(server => server.getPrimaryService('heart_rate'))
-.then(service => service.getCharacteristic('heart_rate_control_point'))
+.then(server => server.getPrimaryService(0x180D /* Heart Rate */))
+.then(service => service.getCharacteristic(0x2A39 /* Heart Rate Control Point */))
 .then(characteristic => {
   // Writing 1 is the signal to reset energy expended.
   const resetEnergyExpended = Uint8Array.of(1);
@@ -323,10 +321,10 @@ Now, let's see how to be notified when the [Heart Rate Measurement]
 characteristic changes on the device:
 
 ```js
-navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
+navigator.bluetooth.requestDevice({ filters: [{ services: [0x180D /* Heart Rate */] }] })
 .then(device => device.gatt.connect())
-.then(server => server.getPrimaryService('heart_rate'))
-.then(service => service.getCharacteristic('heart_rate_measurement'))
+.then(server => server.getPrimaryService(0x180D /* Heart Rate */))
+.then(service => service.getCharacteristic(0x2A37 /* Heart Rate Measurement */))
 .then(characteristic => characteristic.startNotifications())
 .then(characteristic => {
   characteristic.addEventListener('characteristicvaluechanged',
@@ -392,17 +390,17 @@ characteristics.
 Let's see for instance how to read the user description of the measurement
 interval of the device's health thermometer.
 
-In the example below, `health_thermometer` is the [Health Thermometer service],
-`measurement_interval` the [Measurement Interval characteristic], and
-`gatt.characteristic_user_description` the [Characteristic User Description
+In the example below, `0x1809` is the [Health Thermometer service],
+`0x2A21` the [Measurement Interval characteristic], and
+`0x2901` the [Characteristic User Description
 descriptor].
 
 ```js/4-9
-navigator.bluetooth.requestDevice({ filters: [{ services: ['health_thermometer'] }] })
+navigator.bluetooth.requestDevice({ filters: [{ services: [0x1809 /* Health Thermometer */] }] })
 .then(device => device.gatt.connect())
-.then(server => server.getPrimaryService('health_thermometer'))
-.then(service => service.getCharacteristic('measurement_interval'))
-.then(characteristic => characteristic.getDescriptor('gatt.characteristic_user_description'))
+.then(server => server.getPrimaryService(0x1809 /* Health Thermometer */))
+.then(service => service.getCharacteristic(0x2A21 /* Measurement Interval */))
+.then(characteristic => characteristic.getDescriptor(0x2901 /* Characteristic User Description */))
 .then(descriptor => descriptor.readValue())
 .then(value => {
   const decoder = new TextDecoder('utf-8');
@@ -416,11 +414,11 @@ device's health thermometer, let's see how to update it and write a custom
 value.
 
 ```js/5-9
-navigator.bluetooth.requestDevice({ filters: [{ services: ['health_thermometer'] }] })
+navigator.bluetooth.requestDevice({ filters: [{ services: [0x1809 /* Health Thermometer */] }] })
 .then(device => device.gatt.connect())
-.then(server => server.getPrimaryService('health_thermometer'))
-.then(service => service.getCharacteristic('measurement_interval'))
-.then(characteristic => characteristic.getDescriptor('gatt.characteristic_user_description'))
+.then(server => server.getPrimaryService(0x1809 /* Health Thermometer */))
+.then(service => service.getCharacteristic(0x2A21 /* Measurement Interval */))
+.then(characteristic => characteristic.getDescriptor(0x2901 /* Characteristic User Description */))
 .then(descriptor => {
   const encoder = new TextEncoder('utf-8');
   const userDescription = encoder.encode('Defines the time between measurements.');
@@ -558,7 +556,6 @@ Hero image by [SparkFun Electronics from Boulder, USA].
 [Promises tutorial]: /promises
 [Arrow functions]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 [Bluetooth GATT Battery Service]: https://www.bluetooth.com/specifications/gatt/
-[the standardized Bluetooth GATT services]: https://www.bluetooth.com/specifications/assigned-numbers/
 [standardized Battery Level Characteristic]: https://www.bluetooth.com/specifications/gatt/
 [Read Characteristic Value Changed Sample]: https://googlechrome.github.io/samples/web-bluetooth/read-characteristic-value-changed.html
 [Heart Rate Control Point Characteristic page]: https://www.bluetooth.com/specifications/gatt/
