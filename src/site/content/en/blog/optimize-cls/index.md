@@ -310,7 +310,7 @@ In some cases adding content dynamically is important part of user experience. F
 <figure class="w-figure">
   {% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/B6oqm3fEXtby7qQadk4D.png", alt="Examples of dynamic content loading without causing unexpected layout shifts from Twitter and the Chloé website", width="579", height="460" %}
   <figcaption class="w-figcaption">
-    Examples of dynamic content loading without causing unexpected layout shifts. Left: "Load More" example on the Chloé website. Check out the related [article](https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c) from the YNAP tech team. Right: Live feed content loading on Twitter.
+    Examples of dynamic content loading without causing unexpected layout shifts. Left: "Load More" example on Chloé website. Check out how the YNAP team [optimized for CLS when loading more content](https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c). Right: Live feed content loading on Twitter.
   </figcaption>
 </figure>
 
