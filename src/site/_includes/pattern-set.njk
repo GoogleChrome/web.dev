@@ -1,0 +1,130 @@
+---
+layout: default
+pageScripts:
+  - '/js/content.js'
+---
+
+{% if page.url %}
+  {% set patternSetId = page.url | getRelativePath('/patterns/') %}
+{% endif %}
+
+{% if patternSetId %}
+  {% set patternSet = patterns.sets[patternSetId] %}
+{% endif %}
+
+{% if patternSet.suite %}
+  {% set patternSuite = patterns.sets[patternSet.suite] %}
+  {% set currentPatternSet = patternSet %}
+{% else %}
+  {% set patternSuite = patterns.sets[patternSetId] %}
+{% endif %}
+
+<section class="w-layout-container">
+  {% from 'macros/breadcrumbs.njk' import breadcrumbs with context %}
+  {% set crumbs = [
+    ['All patterns', '/patterns/'],
+    [patternSuite.title, '/patterns/' + patternSuite.id]
+  ] %}
+  {{ breadcrumbs(crumbs) }}
+</section>
+
+<header class="w-masthead-about">
+  <div class="w-masthead-about__container">
+    <div class="w-masthead-about__left">
+      <h1 class="w-headline--two w-font-weight--medium w-mt--non">
+        {{ patternSuite.title }}
+      </h1>
+      <p>
+        {{ patternSuite.description }}
+      </p>
+    </div>
+    <div class="w-masthead-about__right">
+      {% Img
+          height=220,
+          width=330,
+          src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dYAbN2LdttJ1qYk1gssh.svg",
+          alt="Collection cover image",
+          loading="lazy",
+          decoding="async",
+          class="w-masthead-path__image"
+        %}
+    </div>
+  </div>
+</header>
+
+<hr>
+
+<section class="w-layout-container code-patterns-nav--top">
+  <nav class="code-patterns-nav__sets">
+    {% for setId, set in patterns.sets %}
+      {% if set.suite == patternSuite.id %}
+        {% if setId == currentPatternSet.id %}
+          <a class="selected" href="/patterns/{{set.id}}">{{set.title}}</a>
+        {% else %}
+          <a href="/patterns/{{set.id}}">{{set.title}}</a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </nav>
+  <div class="code-patterns-nav__filter">
+  <input type="text" placeholder="filter"/>
+  </div>
+</div>
+
+<section class="w-layout-container code-patterns--main">
+  <div>
+    {# Show patterns from current set (if set) or from the whole suite #}
+
+    {% if currentPatternSet %}
+
+      <h2> {{ currentPatternSet.title }} </h2>
+      {{ currentPatternSet.content | safe }}
+      {% for patternId, pattern in patterns.patterns %}
+        {% if pattern.set == currentPatternSet.id %}
+          <div class="flow">
+            <a href="/patterns/{{pattern.id}}"><h3 id="{{pattern.id}}">{{pattern.title}}</h3></a>
+            {{ pattern.content | safe }}
+            {% CodePattern pattern.id %}
+          </div>
+        {% endif %}
+      {% endfor %}
+
+    {% else %}
+
+      {% for patternSetId, patternSet in patterns.sets %}
+        {% if patternSet.suite == patternSuite.id %}
+          <h2> {{ patternSet.title }} </h2>
+          {{ patternSet.content | safe }}
+          {% for patternId, pattern in patterns.patterns %}
+            {% if pattern.set == patternSetId %}
+              <div class="flow">
+                <a href="/patterns/{{pattern.id}}"><h3 id="{{pattern.id}}">{{pattern.title}}</h3></a>
+                {{ pattern.content | safe }}
+                {% CodePattern pattern.id %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+
+    {% endif %}
+  </div>
+
+  <section class="code-patterns-nav--side">
+    <div class="code-patterns-nav__filter">
+      <input type="text" placeholder="filter"/>
+    </div>
+    <nav class="code-patterns-nav__sets">
+      {% for setId, set in patterns.sets %}
+        {% if set.suite == patternSuite.id %}
+          {% if setId == currentPatternSet.id %}
+            <a class="selected" href="/patterns/{{set.id}}">{{set.title}}</a>
+          {% else %}
+            <a href="/patterns/{{set.id}}">{{set.title}}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </nav>
+  </div>
+
+</section>

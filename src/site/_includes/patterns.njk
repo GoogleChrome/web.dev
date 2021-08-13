@@ -4,4 +4,13 @@ pageScripts:
   - '/js/content.js'
 ---
 
-{% include 'partials/post.njk' %}
+{{ title }}
+
+{% for setId, set in patterns.sets %}
+<ul>
+{% if not set.suite %}
+  <li><a href="/patterns/{{ set.id }}">{{ set.title }}</a></li>
+{% endif %}
+</ul>
+
+{% endfor %}

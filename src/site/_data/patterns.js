@@ -1,5 +1,6 @@
 const patterns = require('../../lib/patterns');
 
-module.exports = function () {
-  return patterns();
+module.exports = {
+  patterns: patterns.patterns(),
+  sets: patterns.sets(),
 };
