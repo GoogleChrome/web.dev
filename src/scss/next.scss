@@ -332,7 +332,7 @@ a:active {
 
 /// General interactive states
 
-:focus {
+:focus-visible {
   outline: 2px solid var(--color-focus-ring);
   outline-offset: 4px;
 }
@@ -357,6 +357,7 @@ a:active {
 /// BLOCKS
 @import 'blocks/aside';
 @import 'blocks/brand';
+@import 'blocks/button';
 @import 'blocks/label';
 @import 'blocks/skip-link';
 @import 'blocks/stack-nav';

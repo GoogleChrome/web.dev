@@ -17,7 +17,7 @@
       "title": "Primary",
       "context": {
         "text": "A primary button",
-        "modifier": "w-button--primary"
+        "type": "primary"
       }
     },
     {

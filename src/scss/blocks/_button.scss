@@ -1,0 +1,56 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.03ch;
+  border-radius: $global-radius-base;
+  padding: 1.4em 1em;
+  cursor: pointer;
+  box-shadow: none;
+
+  @include apply-utility('bg', 'action-bg');
+  @include apply-utility('color', 'action-text');
+  @include apply-utility('weight', 'medium');
+  @include apply-utility('leading', 'flat');
+  @include vertically-align-label();
+}
+
+/// If there's no text utility, we need to make sure
+/// the button is the base size as internal padding
+/// is em based
+.button:not([class*='text']) {
+  font-size: get-size('base');
+}
+
+/// Interactive states
+.button:hover {
+  transform: translateY(-0.25em);
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 10%), 0px 8px 8px 1px rgb(0 0 0 / 7%),
+    0px 3px 8px 2px rgb(0 0 0 / 8%);
+  transition: transform $global-transition-movement,
+    box-shadow $global-transition-movement, filter $global-transition-fade;
+  filter: invert(0.05); // Achieves a "shaded" state in all themes
+}
+
+.button:active {
+  transform: none;
+  transition: all $global-transition-base;
+  filter: none;
+  transform: scale(99%);
+  box-shadow: inset 0 0 10px rgb(0 0 0 / 10%);
+}
+
+/// TYPES
+.button[data-type='primary'] {
+  @include apply-utility('bg', 'action-bg-primary');
+  @include apply-utility('color', 'action-text-primary');
+}
+
+.button[data-type='primary']:hover {
+  filter: brightness(1.5);
+}
+
+.button[data-type='primary']:active {
+  filter: none;
+}

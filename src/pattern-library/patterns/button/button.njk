@@ -1,1 +1,6 @@
-<button class="w-button {{ data.modifier }}"{% if data.icon %} data-icon="{{ data.icon }}"{% endif %}>{{ data.text }}</button>
+<button 
+  class="button"
+  {% if data.type %}data-type="{{ data.type }}"{% endif %}
+>
+  {{ data.text }}
+</button>
