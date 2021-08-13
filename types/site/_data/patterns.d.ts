@@ -35,6 +35,16 @@ declare global {
   export interface CodePatterns {
     [key: string]: CodePattern;
   }
+  export interface CodePatternSet {
+    id: string;
+    title: string;
+    description: string;
+    content: string;
+    suite: string;
+  }
+  export interface CodePatternSets {
+    [key: string]: CodePatternSet;
+  }
 }
 
 // empty export to keep file a module

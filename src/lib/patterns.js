@@ -23,6 +23,7 @@ const stripDot = /^\./;
 const basePath = path.join(__dirname, '../../src/site/content/en/patterns');
 const files = glob.sync(path.join(basePath, '**', 'index.md'));
 
+/** @type CodePatternSets */
 const allPatternSets = {};
 
 /** @type CodePatterns */
@@ -33,14 +34,15 @@ const allPatterns = files.reduce((patterns, file) => {
   const suite = path.dirname(id);
 
   if (fileContents.data.layout === 'pattern-set') {
-    allPatternSets[id] = {
+    const set = {
       id,
-      ...fileContents.data,
+      title: fileContents.data.title,
+      description: fileContents.data.description,
       content,
+      suite: suite !== '.' ? suite : null,
     };
-    if (suite !== '.') {
-      allPatternSets[id].suite = suite;
-    }
+    /** @type CodePatternSet */
+    allPatternSets[id] = set;
   }
 
   if (fileContents.data.layout !== 'pattern') {
