@@ -40,7 +40,7 @@
         "icon": "warning.svg",
         "utilities": {
           "icon": "color-state-warn-text",
-          "main": "bg-state-warn-bg color-dark-text"
+          "main": "bg-state-warn-bg color-core-text"
         }
       }
     },
@@ -79,7 +79,7 @@
         "title": "Gotchas!",
         "icon": "lightbulb.svg",
         "utilities": {
-          "main": "t-bg-core-tertiary-bright t-color-core-tertiary"
+          "main": "bg-tertiary-bg color-tertiary-text"
         }
       }
     },
@@ -92,7 +92,7 @@
         "title": "Key Term",
         "icon": "highlighter.svg",
         "utilities": {
-          "main": "t-color-core-secondary-shade t-bg-core-secondary-bright",
+          "main": "color-secondary-text bg-secondary-bg",
           "icon": "t-color-core-secondary"
         }
       }
@@ -106,7 +106,7 @@
         "title": "Codelab",
         "icon": "code.svg",
         "utilities": {
-          "main": "t-bg-core-quaternary-bright t-color-core-quaternary"
+          "main": "bg-quaternary-bg color-quaternary-text"
         }
       }
     }
