@@ -75,10 +75,7 @@ class CourseLinks extends HTMLElement {
     // Find every anchor that the user has already visited and set an attribute
     // on it so it renders a checkmark.
     children.forEach((child) => {
-      if (
-        course.pages &&
-        course.pages.indexOf(child.getAttribute('href')) > -1
-      ) {
+      if (course.pages && course.pages.includes(child.getAttribute('href'))) {
         child.setAttribute('data-complete', 'true');
       }
       return child;
