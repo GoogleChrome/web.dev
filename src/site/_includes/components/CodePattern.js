@@ -1,4 +1,3 @@
-const {html} = require('common-tags');
 const Prism = require('prismjs');
 const patterns = require('../../_data/patterns').patterns;
 
@@ -16,7 +15,7 @@ module.exports = (patternId, height = 300) => {
         Prism.languages[type],
         type,
       );
-      return html`
+      return `
         <web-tab title="${asset.type}" data-label="${asset.type}">
           <pre><code class="language-${asset.type}">${content}</code></pre>
         </web-tab>
@@ -24,7 +23,7 @@ module.exports = (patternId, height = 300) => {
     })
     .join('\n');
 
-  return html`<div class="code-pattern flow flow-space-400">
+  return `<div class="code-pattern flow flow-space-400">
     <div class="code-pattern__content" style="height: ${height}px;">
       <div class="code-pattern__demo">
         <iframe src="${pattern.demo}" title="Demo" height="${height}"></iframe>
