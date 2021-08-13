@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-{% set pattern = patterns[patternId] %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +11,7 @@
   {% endfor %}
 </head>
 <body>
+  {% set pattern = patterns.patterns[patternId] %}
   {{ pattern.assets['body.html'].content | safe }}
   {% for assetName, asset in pattern.assets %}
     {% if asset.type == 'js' %}

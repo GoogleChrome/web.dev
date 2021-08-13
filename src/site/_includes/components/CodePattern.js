@@ -1,37 +1,17 @@
 const {html} = require('common-tags');
 const Prism = require('prismjs');
+const patterns = require('../../_data/patterns').patterns;
 
-module.exports = () => {
-  // Temporarily use a hardcoded pattern data.
-  const pattern = {
-    id: 'example-pattern',
-    layout: 'pattern',
-    title: 'An example pattern in a suite',
-    description: 'A description for the example pattern',
-    content: '<h2>An example pattern in a suites</h2>',
-    assets: {
-      'body.html': {
-        content: '<h1>Hello</h1>',
-        type: 'html',
-      },
-      'script.js': {
-        content: 'document.write("hello")',
-        type: 'js',
-      },
-      'style.css': {
-        content: 'background: red;',
-        type: 'css',
-      },
-    },
-    demo: '/patterns/example-pattern/demo.html',
-    suite: '/patterns/',
-  };
-
+module.exports = (patternId, height = 300) => {
+  const pattern = patterns[patternId];
+  if (!pattern) {
+    return '';
+  }
   const prismTypes = ['html', 'css', 'js'];
-
   const assets = Object.values(pattern.assets)
     .map((asset) => {
       const type = prismTypes.includes(asset.type) ? asset.type : 'text';
+      console.log(asset.content)
       const content = Prism.highlight(
         asset.content,
         Prism.languages[type],
@@ -46,9 +26,9 @@ module.exports = () => {
     .join('\n');
 
   return html`<div class="code-pattern flow flow-space-400">
-    <div class="code-pattern__content">
+    <div class="code-pattern__content" style="height: ${height}px;">
       <div class="code-pattern__demo">
-        <iframe src="${pattern.demo}" title="Demo"></iframe>
+        <iframe src="${pattern.demo}" title="Demo" height="${height}" width="300"></iframe>
       </div>
       <div class="code-pattern__assets">
         <web-tabs>${assets}</web-tabs>

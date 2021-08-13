@@ -1,5 +1,7 @@
 ---
 layout: default
+pageScripts:
+  - '/js/content.js'
 ---
 
 <header class="w-masthead-about">
@@ -28,12 +30,32 @@ layout: default
 
 <hr>
 
-<section class="w-layout-container">
+{% set suitesLength = patterns.suites|length %}
+{% if suitesLength > 1 %}
+<section class="w-layout-container code-patterns-nav--top">
+  <nav class="code-patterns-nav__suites">
+    {% set currentSuiteId = page.url | getRelativePath('/patterns/') %}
+    {% for suiteId, suite in patterns.suites %}
+      {% if suiteId == currentSuiteId %}
+        <a class="selected" href="/patterns/{{suite.id}}">{{suite.title}}</a>
+      {% else %}
+        <a href="/patterns/{{suite.id}}">{{suite.title}}</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+  <div class="code-patterns-nav__filter">
+  <input type="text" placeholder="filter"/>
+  </div>
+</div>
+{% endif %}
+
+<section class="w-layout-container code-patterns--main">
+  <div>
   <h2> {{title}} </h2>
 
   {{ content | safe }}
 
-  {% for patternId, pattern in patterns %}
+  {% for patternId, pattern in patterns.patterns %}
     {% if pattern.suite == page.url %}
       <div class="flow">
         <a href="/patterns/{{pattern.id}}"><h3 id="{{pattern.id}}">{{pattern.title}}</h3></a>
@@ -42,4 +64,22 @@ layout: default
       </div>
     {% endif %}
   {% endfor %}
+  </div>
+  {% if suitesLength > 1 %}
+  <section class="code-patterns-nav--side">
+    <div class="code-patterns-nav__filter">
+      <input type="text" placeholder="filter"/>
+    </div>
+    <nav class="code-patterns-nav__suites">
+      {% set currentSuiteId = page.url | getRelativePath('/patterns/') %}
+      {% for suiteId, suite in patterns.suites %}
+        {% if suiteId == currentSuiteId %}
+          <a class="selected" href="/patterns/{{suite.id}}">{{suite.title}}</a>
+        {% else %}
+          <a href="/patterns/{{suite.id}}">{{suite.title}}</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+  </div>
+  {% endif %}
 </section>
