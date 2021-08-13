@@ -6,5 +6,5 @@ If you want content in `<td>` elements to be vertically aligned to the top of
 the cell, add the `[data-align="top"]` [exception]
 (https://cube.fyi/exception) to the `.table-wrapper` element. You can also
 add `[data-align="baseline"]` for baseline alignment. The default alignment
-is center and bottom alignment isn’t available because it provides a poor
+is center and bottom alignment isn't available because it provides a poor
 reading experience.
