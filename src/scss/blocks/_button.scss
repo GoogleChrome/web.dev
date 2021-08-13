@@ -3,6 +3,7 @@
   align-items: center;
   border: 1px solid transparent;
   text-transform: uppercase;
+  text-decoration: none;
   letter-spacing: 0.03ch;
   border-radius: $global-radius-base;
   padding: 1.4em 1em;
@@ -14,6 +15,16 @@
   @include apply-utility('weight', 'medium');
   @include apply-utility('leading', 'flat');
   @include vertically-align-label();
+}
+
+.button svg {
+  width: 1.2em;
+  height: 1.2em;
+
+  /// Why not gap?
+  /// Gap will add space to the pseudo-element that's
+  /// assisting with vertical alignment
+  margin-inline-end: 0.5em;
 }
 
 /// If there's no text utility, we need to make sure
@@ -53,4 +64,27 @@
 
 .button[data-type='primary']:active {
   filter: none;
+}
+
+.button[data-type='secondary'] {
+  border-color: get-utility-value('color', 'stroke');
+  @include apply-utility('color', 'mid-text');
+}
+
+.button[data-type='secondary']:active {
+  filter: none;
+  border-color: currentColor;
+
+  @include apply-utility('bg', 'dark-bg');
+  @include apply-utility('color', 'core-text');
+}
+
+/// DISABLED STATE
+/// All properties are !important because this
+/// state has to take priority in all cases
+.button:disabled {
+  filter: invert(0.2) !important;
+  box-shadow: none !important;
+  transform: none !important;
+  cursor: not-allowed !important;
 }
