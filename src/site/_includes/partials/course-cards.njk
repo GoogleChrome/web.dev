@@ -17,7 +17,7 @@
           <span>{{ pages.length }} {{ 'i18n.learn.resources' | i18n(locale) }}</span>
         </div>
         <a href="{{ course.meta.url }}">
-          <img class="course-card__thumbnail" src="/images/courses/css/thumbnail.svg">
+          <img class="course-card__thumbnail" src="{{ course.meta.card }}">
         </a>
         <a href="{{ course.meta.url }}" class="course-card__description display-block gap-top-400">
           {{ course.meta.description | i18n(locale) }}

@@ -50,7 +50,8 @@
       "title": "i18n.paths.handbook.topics.content_infrastructure",
       "pathItems": [
         "handbook/resolving-glitch-issues",
-        "handbook/redirects"
+        "handbook/redirects",
+        "handbook/adding-a-course"
       ]
     }
   ]

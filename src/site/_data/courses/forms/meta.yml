@@ -4,11 +4,11 @@
 # are, it will give them a "New" badge. However, when you first launch a course
 # you don't want every entry to have a "New" badge, so anything that existed
 # on or before this date will not receive the "New" badge.
-date: 2021-05-10
-url: /learn/css/
-draft: false
-title: i18n.courses.learn_css.title
-description: i18n.courses.learn_css.description
+date: 2021-08-11
+url: /learn/forms/
+draft: true
+title: i18n.courses.learn_forms.title
+description: i18n.courses.learn_forms.description
 # This is the logo that appears in the navigation drawer and header.
 logo: '/images/courses/css/logo.svg'
 # This is used to provide the background for the navigation drawer and header.
