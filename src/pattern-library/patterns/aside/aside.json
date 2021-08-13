@@ -79,7 +79,7 @@
         "title": "Gotchas!",
         "icon": "lightbulb.svg",
         "utilities": {
-          "main": "bg-tertiary-bg color-tertiary-text"
+          "main": "bg-tertiary-box-bg color-tertiary-box-text"
         }
       }
     },
@@ -92,8 +92,7 @@
         "title": "Key Term",
         "icon": "highlighter.svg",
         "utilities": {
-          "main": "color-secondary-text bg-secondary-bg",
-          "icon": "t-color-core-secondary"
+          "main": "color-secondary-box-text bg-secondary-box-bg"
         }
       }
     },
@@ -106,7 +105,7 @@
         "title": "Codelab",
         "icon": "code.svg",
         "utilities": {
-          "main": "bg-quaternary-bg color-quaternary-text"
+          "main": "bg-quaternary-box-bg color-quaternary-box-text"
         }
       }
     }
