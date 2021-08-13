@@ -451,7 +451,7 @@ This table will help you choose the right APIs to suit your needs.
         <td>Allows slicing of data in meaningful ways
         which can be joined with other public datasets
         like the
-        [HTTP Archive](https://httparchive.org/) for advanced insights.</td>
+          <a href="https://httparchive.org/">HTTP Archive</a> for advanced insights.</td>
         <td>RESTful access to CrUX data programmatically.
 More filtering possibilities and faster than PSI API (also higher quota).</td>
         <td>RESTful access to CrUX and Lighthouse data programmatically.</td>

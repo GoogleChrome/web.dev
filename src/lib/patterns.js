@@ -23,10 +23,26 @@ const stripDot = /^\./;
 const basePath = path.join(__dirname, '../../src/site/content/en/patterns');
 const files = glob.sync(path.join(basePath, '**', 'index.md'));
 
+const allPatternSets = {};
+
 /** @type CodePatterns */
 const allPatterns = files.reduce((patterns, file) => {
   const id = path.relative(basePath, path.dirname(file));
   const fileContents = matter(fs.readFileSync(file, 'utf-8'));
+  const content = md.render(fileContents.content);
+  const suite = path.dirname(id);
+
+  if (fileContents.data.layout === 'pattern-set') {
+    allPatternSets[id] = {
+      id,
+      ...fileContents.data,
+      content,
+    };
+    if (suite !== '.') {
+      allPatternSets[id].suite = suite;
+    }
+  }
+
   if (fileContents.data.layout !== 'pattern') {
     return patterns;
   }
@@ -45,11 +61,10 @@ const allPatterns = files.reduce((patterns, file) => {
     return out;
   }, {});
 
-  const content = md.render(fileContents.content);
   // Use external demo url from frontmatter, if set, or default to local demo.
   const demo =
     fileContents.data.demo || path.join('/', 'patterns', id, 'demo.html');
-  const suite = path.join('/', 'patterns', path.dirname(id), '/');
+  const set = path.dirname(id);
   /** @type CodePattern */
   patterns[id] = {
     id,
@@ -57,11 +72,19 @@ const allPatterns = files.reduce((patterns, file) => {
     content,
     assets,
     demo,
-    suite,
+    set,
   };
   return patterns;
 }, {});
 
-module.exports = function () {
-  return allPatterns;
+console.log(allPatterns);
+console.log(allPatternSets);
+
+module.exports = {
+  patterns: function () {
+    return allPatterns;
+  },
+  sets: function () {
+    return allPatternSets;
+  },
 };

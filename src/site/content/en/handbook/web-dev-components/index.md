@@ -325,10 +325,10 @@ element, and add the `w-ml--l` class to the label. See below:
 A component that displays a demo and code snippets, organized in tabs, side by side.
 
 ```text
-{% raw %}{% CodePattern 'pattern-id' %}{% endraw %}
+{% raw %}{% CodePattern 'pattern-id' optional-height-in-px %}{% endraw %}
 ```
 
-{% CodePattern 'pattern-id' %}
+{% CodePattern 'example-pattern', 500 %}
 
 ## Codepen {: #codepen }
 
