@@ -17,6 +17,7 @@ $global-gutter: map-get($gorko-space-scale, 'size-1');
 // NOTE: there are more design token-led global variables in _tokens.scss
 
 /// MIXINS
+@import 'mixins/button-base-styles';
 @import 'mixins/rounded-border';
 @import 'mixins/vertically-align-label';
 
@@ -358,6 +359,7 @@ a:active {
 @import 'blocks/aside';
 @import 'blocks/brand';
 @import 'blocks/button';
+@import 'blocks/fab';
 @import 'blocks/label';
 @import 'blocks/skip-link';
 @import 'blocks/stack-nav';

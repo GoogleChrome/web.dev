@@ -1,0 +1,38 @@
+{
+  "title": "Floating Action Button",
+  "summary": "The `.fab`—floating action button—is designed to be compact where space is limited and expanded otherwise. There's also an option for it to be docked at the bottom right of the viewport.",
+  "keyLinks": [
+    {
+      "label": "Sass File",
+      "url": "https://github.com/GoogleChrome/web.dev/tree/main/src/scss/blocks/_fab.scss"
+    }
+  ],
+  "context": {
+    "text": "Subscribe",
+    "url": "/newsletter/",
+    "icon": "subscribe.svg"
+  },
+  "variants": [
+    {
+      "name": "primary",
+      "title": "Primary",
+      "context": {
+        "type": "primary"
+      }
+    },
+    {
+      "name": "icon-only",
+      "title": "Icon Only",
+      "context": {
+        "iconOnly": true
+      }
+    },
+    {
+      "name": "docked",
+      "title": "Docked",
+      "context": {
+        "docked": true
+      }
+    }
+  ]
+}
