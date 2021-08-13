@@ -1,0 +1,5 @@
+---
+layout: patterns
+title: Patterns
+---
+
