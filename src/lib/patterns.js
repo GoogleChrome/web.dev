@@ -38,6 +38,7 @@ const allPatterns = files.reduce((patterns, file) => {
       id,
       title: fileContents.data.title,
       description: fileContents.data.description,
+      hero: fileContents.data.hero,
       content,
       suite: suite !== '.' ? suite : null,
     };
