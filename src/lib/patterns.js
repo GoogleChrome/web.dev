@@ -13,6 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/**
+ * @fileoverview A singleton that collects all Code Patterns from .md files
+ *   under "basePath" directory.
+ */
+
 const glob = require('fast-glob');
 const fs = require('fs');
 const path = require('path');
