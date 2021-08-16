@@ -123,11 +123,11 @@ The `nginx` plugin allows you to generate SXG dynamically instead of statically 
 
 ### Option 1: Install the plugin from a Debian package {: #step-3-option-1 }
 
-The [SXG module for `nginx`](https://github.com/kumagi/nginx-sxg-module) is distributed on GitHub.
+The [SXG module for `nginx`](https://github.com/google/nginx-sxg-module) is distributed on GitHub.
 On Debian-based systems, you can install it as a binary package:
 
 ```bash
-sudo apt install -y nginx
+sudo apt install -y nginx=1.15.9-0
 wget https://github.com/google/nginx-sxg-module/releases/download/v0.1/libnginx-mod-http-sxg-filter_1.15.9-0ubuntu1.1_amd64.deb
 sudo dpkg -i libnginx-mod-http-sxg-filter_1.15.9-0ubuntu1.1_amd64.deb
 ```
