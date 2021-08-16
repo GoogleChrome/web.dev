@@ -31,7 +31,7 @@ pageScripts:
   {% set patternSuite = patterns.sets[patternSetId] %}
 {% endif %}
 
-<section class="w-layout-container">
+<section class="w-layout-container--wide">
   {% from 'macros/breadcrumbs.njk' import breadcrumbs with context %}
   {% set allPatternsName = 'i18n.patterns.all_patterns' | i18n(locale) %}
   {% set crumbs = [
@@ -66,7 +66,7 @@ pageScripts:
 
 <hr>
 
-<section class="w-layout-container code-patterns-nav--top">
+<section class="w-layout-container--wide code-patterns-nav--top">
   <nav class="code-patterns-nav__sets">
     {% for setId, set in patterns.sets %}
       {% if set.suite == patternSuite.id %}
@@ -83,7 +83,7 @@ pageScripts:
   </div>
 </section>
 
-<section class="w-layout-container code-patterns-main">
+<section class="w-layout-container--wide code-patterns-main">
   <div>
     {# Show patterns from current set (if set) or from the whole suite #}
 
