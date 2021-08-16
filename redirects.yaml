@@ -274,6 +274,10 @@ redirects:
 - source: /security-headers-cheat-sheet
   destination: /security-headers
 
+# Redirects for Media content
+- source: /media-cheat-sheet
+  destination: /media-conversion
+
 # Redirects to https://developer.chrome.com/.
 - source: /browser-flags/
   destination: https://developer.chrome.com/blog/browser-flags/
