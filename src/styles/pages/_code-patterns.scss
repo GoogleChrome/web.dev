@@ -1,12 +1,21 @@
 @import '../settings/colors';
 @import '../tools/breakpoints';
 
-.code-patterns--main {
+.w-masthead-patterns__container {
+  padding: 0 24px;
+  margin: 64px auto;
+}
+
+.code-patterns-main {
   display: flex;
   flex-direction: column-reverse;
 
   @include bp(md) {
     flex-direction: row;
+
+    h2:first-child {
+      margin-top: 0;
+    }
   }
 }
 

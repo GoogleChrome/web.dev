@@ -32,7 +32,7 @@ pageScripts:
 </section>
 
 <header class="w-masthead-about">
-  <div class="w-masthead-about__container">
+  <div class="w-masthead-about__container w-masthead-patterns__container">
     <div class="w-masthead-about__left">
       <h1 class="w-headline--two w-font-weight--medium w-mt--non">
         {{ patternSuite.title }}
@@ -47,7 +47,6 @@ pageScripts:
           width=330,
           src=patternSuite.hero,
           alt="Collection cover image",
-          loading="lazy",
           decoding="async",
           class="w-masthead-path__image"
         %}
@@ -72,9 +71,9 @@ pageScripts:
   <div class="code-patterns-nav__filter">
     <input type="text" placeholder="filter"/>
   </div>
-</div>
+</section>
 
-<section class="w-layout-container code-patterns--main">
+<section class="w-layout-container code-patterns-main">
   <div>
     {# Show patterns from current set (if set) or from the whole suite #}
 
@@ -101,7 +100,7 @@ pageScripts:
           {% for patternId, pattern in patterns.patterns %}
             {% if pattern.set == patternSetId %}
               <div class="flow">
-                <a href="/patterns/{{pattern.id}}"><h3 id="{{pattern.id}}">{{pattern.title}}</h3></a>
+                <h3 id="{{pattern.id}}"><a href="/patterns/{{pattern.id}}">{{pattern.title}}</a></h3>
                 {{ pattern.content | safe }}
                 {% CodePattern pattern.id %}
               </div>
