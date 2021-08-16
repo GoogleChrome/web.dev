@@ -87,7 +87,7 @@ This guide assumes that the filename of the certificate you got from DigiCert is
 The SXG format is complex and hard to generate without using tools.
 You can use one of the following options to generate SXG:
 
-- The [gen-signedexchange](https://github.com/WICG/webpackage/tree/master/go/signedexchange) tool written in Go.
+- The [gen-signedexchange](https://github.com/WICG/webpackage/tree/main/go/signedexchange) tool written in Go.
 - The [`libsxg` library](https://github.com/google/libsxg) written in C.
 
 This guide uses `libsxg`.
@@ -265,7 +265,7 @@ server {
 
 ## Step 6: Test
 
-Use the [dump-signedexchange tool](https://github.com/WICG/webpackage/tree/master/go/signedexchange)
+Use the [dump-signedexchange tool](https://github.com/WICG/webpackage/tree/main/go/signedexchange)
 to test that the SXGs being served are correct, ensure that no errors are reported, and verify that the headers
 and body are as expected.
 
