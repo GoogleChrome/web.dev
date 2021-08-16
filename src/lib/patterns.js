@@ -16,7 +16,8 @@
 
 /**
  * @fileoverview A singleton that collects all Code Patterns from .md files
- *   under "basePath" directory.
+ *   under "basePath" directory. Code Patterns get then exposed as part of
+ *   the _data directory, for the use in eleventy.
  */
 
 const glob = require('fast-glob');
