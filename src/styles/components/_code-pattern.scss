@@ -23,6 +23,10 @@
     border: 1px solid $BORDER_COLOR;
   }
 
+  web-tabs:not(:defined) {
+    display: none;
+  }
+
   pre {
     border: 0;
     background: 0;
