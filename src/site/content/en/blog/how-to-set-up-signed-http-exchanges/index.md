@@ -119,6 +119,7 @@ sudo make install
 ```
 
 ## Step 3: Install `nginx` plugin
+
 The `nginx` plugin allows you to generate SXG dynamically instead of statically generating them prior to serving.
 
 ### Option 1: Install the plugin from a Debian package {: #step-3-option-1 }
@@ -154,6 +155,7 @@ This guide assumes that you install it to `/opt/nginx`.
 ## Step 4: Configure the `nginx` plugin to work with SXG
 
 ### Option 1: Configure an installed-from-Debian `nginx` module
+
 Follow these instructions if you used [Step 3, Option 1](#step-3-option-1) earlier.
 
 Delivering SXG content requires HTTPS. You can get an SSL/TLS certificate from DigiCert, Let's Encrypt, and other services. Note that you CANNOT use an SXG certificate for SSL or vice versa, therefore you will need two certificates. The configuration file in `/etc/nginx/nginx.conf` should look similar to the following, assuming that you put the SSL key/certificate pair in `/path/to/ssl/` and the SXG key/certificate pair in `/path/to/sxg/`:
