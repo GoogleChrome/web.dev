@@ -8,7 +8,7 @@ description: >
   modules.
 authors:
   - dandclark
-date: 2021-08-06 # TODO Update to publishing date
+date: 2021-08-17
 hero: image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/Hu0ljomDqgb0y7h7REp6.jpg
 alt: A stack of multicolored shipping containers.
 tags:
