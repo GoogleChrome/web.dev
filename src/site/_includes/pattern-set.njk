@@ -4,6 +4,12 @@ pageScripts:
   - '/js/content.js'
 ---
 
+{#
+  This page displays a set (or a suite of sets) of code patterns.
+  Code patterns are organized as follows:
+  /patterns/ -> PatternSuites -> PatternSets -> Patterns
+#}
+
 {% if page.url %}
   {% set patternSetId = page.url | getRelativePath('/patterns/') %}
 {% else %}
@@ -15,9 +21,13 @@ pageScripts:
 {% endif %}
 
 {% if patternSet.suite %}
+  {# This is a page for a PatternSet.
+    patternSuite variable is set to the parent of the current set. #}
   {% set patternSuite = patterns.sets[patternSet.suite] %}
   {% set currentPatternSet = patternSet %}
 {% else %}
+  {# This is a page for a PatternSuite.
+    There is no current pattern set selected. #}
   {% set patternSuite = patterns.sets[patternSetId] %}
 {% endif %}
 
