@@ -16,6 +16,7 @@
     display: grid;
     gap: 1rem; // sass-lint:disable-line no-misspelled-properties
     grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr)
   }
 
   .code-pattern__assets,
@@ -27,10 +28,15 @@
     display: none;
   }
 
+  web-tab {
+    height: 100%;
+  }
+
   pre {
     border: 0;
     background: 0;
-    white-space: pre-wrap;
+    height: 100%;
+    margin: 0;
   }
 
   iframe {
