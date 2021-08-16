@@ -4,7 +4,7 @@ subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2021-03-03
+updated: 2021-08-18
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
 thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
@@ -616,8 +616,8 @@ Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 [Google Developer codelab]: https://codelabs.developers.google.com/codelabs/web-serial
 [Serial API polyfill]: https://github.com/google/web-serial-polyfill
 [Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[security]: https://github.com/reillyeon/serial/blob/gh-pages/EXPLAINER.md#security-considerations
-[privacy]: https://github.com/reillyeon/serial/blob/gh-pages/EXPLAINER.md#privacy-considerations
+[security]: https://wicg.github.io/serial/#security
+[privacy]: https://wicg.github.io/serial/#privacy
 [transform stream]: https://developer.mozilla.org/en-US/docs/Web/API/TransformStream
 [transform streams]: https://developer.mozilla.org/en-US/docs/Web/API/TransformStream
 [issues]: https://github.com/wicg/serial/issues
