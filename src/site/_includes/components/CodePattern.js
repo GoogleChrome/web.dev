@@ -1,6 +1,11 @@
 const Prism = require('prismjs');
 const patterns = require('../../_data/patterns').patterns;
 
+/**
+ * A component to display code samples and a code demo side-by-side.
+ * @param {string} patternId Id of the Code Pattern to be displayed.
+ * @param {number?} height Optional desired height of the component.
+ */
 module.exports = (patternId, height = 300) => {
   const pattern = patterns[patternId];
   if (!pattern) {
