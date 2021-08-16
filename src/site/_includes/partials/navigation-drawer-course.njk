@@ -4,14 +4,20 @@
   <nav data-drawer-container>
 
     <div class="drawer-course__contents flow flow-space-300">
-      <div class="drawer-course__header" style="--course-background: {{ courseData.meta.background }}">
+      <div class="drawer-course__header" style="--course-background: url('{{ courseData.meta.background }}')">
         <button data-drawer-close-button class="w-button--svg w-button--round" aria-label="{{ 'i18n.common.close' | i18n(locale) }}">
           {{ icon('close') }}
           <span class="w-tooltip">{{ 'i18n.common.close' | i18n(locale) }}</span>
         </button>
 
         <div class="drawer-course__title">
-          {{ svg(courseData.meta.logo, {label: courseData.meta.title | i18n(locale)}) }}
+          {% if courseData.meta.logo %}
+            {# The course logo is stored in src/images, but the svg macro uses
+            Nunjuck's include syntax. So we need to give it a relative path from
+            src/site/_includes to src/images. #}
+            {% set logo = helpers.join('../../..', courseData.meta.logo) %}
+            {{ svg(logo, {label: courseData.meta.title | i18n(locale)}) }}
+          {% endif %}
         </div>
       </div>
       <web-search class="drawer-course__search" results-id="search-course-results" tag="{{ searchTag }}"></web-search>
