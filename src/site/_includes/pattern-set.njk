@@ -23,8 +23,9 @@ pageScripts:
 
 <section class="w-layout-container">
   {% from 'macros/breadcrumbs.njk' import breadcrumbs with context %}
+  {% set allPatternsName = 'i18n.patterns.all_patterns' | i18n(locale) %}
   {% set crumbs = [
-    ['All patterns', '/patterns/'],
+    [allPatternsName, '/patterns/'],
     [patternSuite.title, '/patterns/' + patternSuite.id]
   ] %}
   {{ breadcrumbs(crumbs) }}
