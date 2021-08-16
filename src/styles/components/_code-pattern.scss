@@ -16,7 +16,7 @@
     display: grid;
     gap: 1rem; // sass-lint:disable-line no-misspelled-properties
     grid-template-columns: 1fr 1fr;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr)
+    // grid-template-columns: minmax(0, 1fr) minmax(0, 1fr)
   }
 
   .code-pattern__assets,
@@ -43,7 +43,6 @@
     border: 0;
     height: 100%;
     width: 100%;
-    min-width: 300px;
   }
 
   web-tabs {
