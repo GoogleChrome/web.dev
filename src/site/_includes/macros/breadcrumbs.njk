@@ -1,5 +1,11 @@
 {#
-  @typedef {[string: string]} crumbs - The titles and urls of breadcrumbs to display.
+  @typedef {Array.<string>} BreadcrumbLink - 2-el array with a title and
+    an url for a breadcrumb link.
+#}
+
+{#
+  Displays breadcrumbs element.
+  @param {Array.<BreadcrumbLink>} crumbs
 #}
 {% macro breadcrumbs(crumbs) %}
 
