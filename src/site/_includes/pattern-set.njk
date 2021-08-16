@@ -6,6 +6,8 @@ pageScripts:
 
 {% if page.url %}
   {% set patternSetId = page.url | getRelativePath('/patterns/') %}
+{% else %}
+  {% set patternSetId = '' %}
 {% endif %}
 
 {% if patternSetId %}
@@ -42,7 +44,7 @@ pageScripts:
       {% Img
           height=220,
           width=330,
-          src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dYAbN2LdttJ1qYk1gssh.svg",
+          src=patternSuite.hero,
           alt="Collection cover image",
           loading="lazy",
           decoding="async",
@@ -67,7 +69,7 @@ pageScripts:
     {% endfor %}
   </nav>
   <div class="code-patterns-nav__filter">
-  <input type="text" placeholder="filter"/>
+    <input type="text" placeholder="filter"/>
   </div>
 </div>
 
@@ -82,7 +84,7 @@ pageScripts:
       {% for patternId, pattern in patterns.patterns %}
         {% if pattern.set == currentPatternSet.id %}
           <div class="flow">
-            <a href="/patterns/{{pattern.id}}"><h3 id="{{pattern.id}}">{{pattern.title}}</h3></a>
+            <h3 id="{{pattern.id}}"><a href="/patterns/{{pattern.id}}">{{pattern.title}}</a></h3>
             {{ pattern.content | safe }}
             {% CodePattern pattern.id %}
           </div>
