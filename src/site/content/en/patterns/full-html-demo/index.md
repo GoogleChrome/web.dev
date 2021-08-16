@@ -11,7 +11,7 @@ in the demo.md file in the patterns directory, and ommit the layout property
 in the frontmatter. You still neeed to include the patternId in the
 fromtmatter.
 
-```
+```html
 ---
 patternId: full-html-demo
 ---
