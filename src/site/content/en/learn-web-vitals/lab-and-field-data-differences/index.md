@@ -259,7 +259,7 @@ LCP times, depending on how users behave on that page.
 
 #### FID requires real-user interaction
 
-The [FID](/fid/) metric measures how responsive a page is to user interactions,
+The FID metric measures how responsive a page is to user interactions,
 _at the time when users actually chose to interact with it._
 
 The second part of that sentence is critical because lab tests, even those that
