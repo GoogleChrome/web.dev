@@ -13,12 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-/**
- * A shortcode for embedding caniuse.com browser compatibility table.
- * @param {string} feature Feature id compatible with caniuse.com.
- * @returns {string}
- */
 const bcd = require('../../_utils/browserCompat');
 
 const browsers = [
@@ -28,6 +22,10 @@ const browsers = [
   'safari',
 ];
 
+/**
+ * A shortcode for embedding caniuse.com browser compatibility table.
+ * @param {string} feature Feature id compatible with caniuse.com.
+ */
 module.exports = async (feature) => {
   const data = await bcd();
   let compatIcons = [];
@@ -40,16 +38,30 @@ module.exports = async (feature) => {
 
       return `<span
         class="
-        browser-compat__icon browser-compat--${browser} browser-compat--${isSupported}"
-        data-version="${version}"
+        browser-compat__icon browser-compat--${browser}"
         >
+      </span>
+      <span
+        class="
+        browser-compat__version browser-compat--${isSupported}"
+        >
+        ${version}
       </span>
       `;
     });
+    const source = data[feature].mdn_url;
+    const sourceLink = source
+      ? `<span class="browser-compat__link">
+        <a href="${source}" target="_blank">Source</a>
+      </span>`
+      : '';
+    return `<div class="browser-compat">
+      <span>Browser support:</span>
+      ${compatIcons.join('')}
+      ${sourceLink}
+    </div>
+    `
   }
 
-  return `<div class="browser-compat">
-    ${compatIcons.join('')}
-  </div>
-  `
+  return '';
 };

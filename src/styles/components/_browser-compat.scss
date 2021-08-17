@@ -1,49 +1,58 @@
+@import '../settings/colors';
+
 .browser-compat {
+  display: flex;
+  align-items: center;
+  color: $GREY_700;
 
   .browser-compat__icon {
-    height: 48px;
-    width: 48px;
-    margin: 6px;
+    height: 24px;
+    width: 24px;
+    margin-left: 24px;
+    margin-right: 6px;
     display: inline-block;
-    position: relative;
+    background: content-box no-repeat transparent;
   }
 
-  .browser-compat__icon::before {
-    content: attr(data-version);
+  .browser-compat__version {
     display: block;
-    width: 18px;
-    line-height: 18px;
-    height: 18px;
-    border-radius: 50%;
-    bottom: 0;
-    right: 0;
-    position: absolute;
+    width: 20px;
+    line-height: 20px;
+    height: 20px;
+    border-radius: 10px;
     text-align: center;
     color: #fff;
-    font-size: 12px;
+    font-size: 10px;
+    font-weight: 600;
   }
 
-  .browser-compat__icon.browser-compat--false::before {
-    background: red;
+  .browser-compat__version.browser-compat--false {
+    background: $GOOGLE_RED_100;
+    color: $GOOGLE_RED_900;
   }
 
-  .browser-compat__icon.browser-compat--true::before {
-    background: green;
+  .browser-compat__version.browser-compat--true {
+    background: $GREEN_100;
+    color: $GREEN_900;
+  }
+
+  .browser-compat__link {
+    margin-left: 24px;
   }
 
   .browser-compat--chrome {
-    background: content-box url('/images/icons/chrome.svg');
+    background-image: url('/images/icons/chrome.svg');
   }
 
   .browser-compat--firefox {
-    background: content-box url('/images/icons/firefox.svg');
+    background-image: url('/images/icons/firefox.svg');
   }
 
   .browser-compat--edge {
-    background: content-box url('/images/icons/edge.svg');
+    background-image: url('/images/icons/edge.svg');
   }
 
   .browser-compat--safari {
-    background: content-box no-repeat url('/images/icons/safari_48x48.png');
+    background-image: url('/images/icons/safari_24x24.png');
   }
 }
