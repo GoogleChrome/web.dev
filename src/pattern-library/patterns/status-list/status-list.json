@@ -1,5 +1,6 @@
 {
-  "title": "Icon List",
+  "title": "Status List",
+  "summary": "A simple state-based variant on an unordered or ordered list.",
   "context": {
     "icon": "check",
     "items": [
@@ -28,5 +29,14 @@
         "url": "#"
       }
     ]
-  }
+  },
+  "variants": [
+    {
+      "name": "good",
+      "title": "Good state",
+      "context": {
+        "state": "good"
+      }
+    }
+  ]
 }
