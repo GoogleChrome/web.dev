@@ -4,7 +4,7 @@ subhead: Learn how to avoid sudden layout shifts to improve user-experience
 authors:
   - addyosmani
 date: 2020-05-05
-updated: 2020-08-20
+updated: 2021-08-17
 hero: image/admin/74TRx6aETydsBGa2IZ7R.png
 description: |
   Cumulative Layout Shift (CLS) is a metric that quantifies how often users experience sudden shifts in page content. In this guide, we'll cover optimizing common causes of CLS such as images and iframes without dimensions or dynamic content.
@@ -310,7 +310,7 @@ In some cases adding content dynamically is an important part of user experience
 <figure class="w-figure">
   {% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="Examples of dynamic content loading without causing unexpected layout shifts from Twitter and the Chloé website", width="800", height="458" %}
   <figcaption class="w-figcaption">
-    Examples of dynamic content loading without causing unexpected layout shifts. Left: Live feed content loading on Twitter. Right: "Load More" example on Chloé website. Check out how the YNAP team [optimized for CLS when loading more content](https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c).
+    Examples of dynamic content loading without causing unexpected layout shifts. Left: Live feed content loading on Twitter. Right: "Load More" example on Chloé website. Check out how the YNAP team <a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">optimized for CLS when loading more content</a>.
   </figcaption>
 </figure>
 
