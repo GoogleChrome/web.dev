@@ -1,0 +1,20 @@
+/// AUTO GRID
+/// More info: https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/
+/// A flexible layout that will create an auto-fill grid with
+/// configurable grid item sizes
+
+/// CUSTOM PROPERTIES AND CONFIGURATION
+/// --gutter ($global-gutter): This defines the space
+/// between each item.
+
+/// --auto-grid-min-item-size (16rem): How large each item should be
+/// ideally, as a minimum.
+///
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--auto-grid-min-item-size, 16rem), 1fr)
+  );
+  grid-gap: var(--gutter, $global-gutter);
+}

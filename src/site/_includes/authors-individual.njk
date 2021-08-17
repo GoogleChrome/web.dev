@@ -1,9 +1,7 @@
 ---
 layout: default
 ---
-{# *-landing-page classes are a holdover from devsite. #}
-{# It would be great to remove them as part of the v1 migration. #}
-<div class="authors-landing-page">
+<div>
   {# Make sure Actions are first in the tab order. #}
   <div class="w-actions">
     {% include 'partials/subscribe-action.njk' %}
@@ -50,4 +48,11 @@ layout: default
     </header>
   </div>
   {% include 'partials/paged.njk' %}
+  <div class="w-layout-container">
+    <div class="w-text--center">
+      <a class="w-button" href="/authors">
+        {{ 'i18n.paths.authors.see_more' | i18n(locale) }}
+      </a>
+    </div>
+  </div>
 </div>

@@ -6,6 +6,7 @@ authors:
   - adamargyle
 description: A foundational overview of how to build a responsive and accessible breadcrumbs component for users to navigate your site.
 date: 2021-07-14
+updated: 2021-07-15
 thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/kCeb8N9YlMYsI5O5ChC9.png
 hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/dk9VreVtYiF3LBkRpZlg.png
 tags:
@@ -355,7 +356,7 @@ maintaining the built-in functionality.
   inline-size: 100%;
   block-size: 100%;
   opacity: .01;
-  font-size: 16px; /* fix iOS zoom */
+  font-size: min(100%, 16px); /* Defaults to 16px; fixes iOS zoom */
 }
 ```
 
@@ -468,7 +469,7 @@ const preventedKeys = new Set(['ArrowUp', 'ArrowDown'])
 
 // watch crumbs for changes,
 // ensures it's a full value change, not a user exploring options via keyboard
-crumb.forEach(nav => {
+crumbs.forEach(nav => {
   let ignoreChange = false
 
   nav.addEventListener('change', e => {

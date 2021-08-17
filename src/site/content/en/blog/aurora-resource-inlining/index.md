@@ -153,10 +153,13 @@ Let's look at an example:
 {% Compare 'worse', 'Example before inlining' %}
 ```html
 <head>
-<link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-<section>
- <button class="primary"></button>
-</section>
+   <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+</head>
+<body>
+  <section>
+    <button class="primary"></button>
+  </section>
+</body>
 ```
 
 ```css
@@ -177,18 +180,35 @@ Finally critters will inline the corresponding styles in the `<head>` of the pag
 {% Compare 'better', 'Example after inlining' %}
 ```html
 <head>
-<link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-<style>
-section button.primary {
-  /* ... */
-}
-</style>
+  <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+  <style>
+  section button.primary {
+    /* ... */
+  }
+  </style>
 </head>
-<section>
- <button class="primary"></button>
-</section>
+<body>
+  <section>
+    <button class="primary"></button>
+  </section>
+</body>
 ```
 {% endCompare %}
+
+After inlining the critical CSS in the HTML you will find that the flickering of the page is gone:
+
+<figure class="w-figcaption">
+  {% Video
+    src=["video/S838B7UEsdXmwrD8q5gvNlWTHHP2/TPbZ9TZiDzFEYfybaPoz.mp4"],
+    autoplay=true,
+    loop=true,
+    muted=true,
+    playsinline=true
+  %}
+  <figcaption style="text-align: center;">
+    The page loading after CSS inlining.
+  </figcaption>
+</figure>
 
 Critical CSS inlining is now available in Angular and enabled by default in v12. If you're on v11,
 turn it on by [setting the `inlineCritical` property to

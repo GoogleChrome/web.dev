@@ -20,7 +20,7 @@ declare global {
   }
 
   export interface TagsItem extends VirtualCollectionItem, TagsDataItem {
-    data: TagsDataField;
+    data?: TagsDataField;
   }
 
   export interface Tags {

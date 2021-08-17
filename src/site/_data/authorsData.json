@@ -228,7 +228,6 @@
     "country": "USA",
     "twitter": "rick_viscomi",
     "github": "rviscomi",
-    "glitch": "rviscomi",
     "image": "image/admin/oWRqaR6XXwIdNXPLpUMn.jpg"
   },
   "philipwalton": {
@@ -789,7 +788,10 @@
     "image": "image/admin/eXpk44oNMpOnNPLrMOMm.jpg"
   },
   "antoinebisch": {
+    "country": "GB",
+    "linkedin": "https://www.linkedin.com/in/antoinebisch/",
     "github": "antoinebisch",
+    "twitter": "AntoineBisch",
     "country": "UK",
     "image": "image/admin/xCDa34tJbhKRgr8pj5BJ.jpg"
   },
@@ -958,5 +960,32 @@
     "github": "npm1",
     "twitter": "NicPenaM",
     "image": "image/kns0INkO77RkiEStzHWYrugyWj32/SCSIEb0Qtv6tPWel5tfd.jpeg"
+  },
+  "derekherman": {
+    "country": "US",
+    "github": "derekherman",
+    "twitter": "derekherman",
+    "image": "image/8L1ESx211yWBm8uNAgqvUc2GwNk1/Co3mEQ34Z8eAw6lPGx5o.jpg"
+  },
+  "dero": {
+    "country": "CZ",
+    "github": "dero",
+    "twitter": "dero_name",
+    "image": "image/8L1ESx211yWBm8uNAgqvUc2GwNk1/wj3d5QqXh3gIUuR7Ob7w.jpg"
+  },
+  "jarhar": {
+    "github": "josepharhar",
+    "twitter": "josepharhar",
+    "image": "image/ahMMPwVRwAdp0gFdY0zZnncYdsm1/3i0rkOVNKJImIy1UWvyC.jpeg"
+  },
+  "majido": {
+    "github": "majido",
+    "twitter": "majido",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/0uSIZyBE7DIwZ3bGnPgz.jpg"
+  },
+  "flackr": {
+    "twitter": "flackrw",
+    "github": "flackr",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/OoCXp829hcVrzCEmjzSd.jpg"
   }
 }

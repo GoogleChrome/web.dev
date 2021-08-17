@@ -1,0 +1,145 @@
+---
+layout: default
+pageScripts:
+  - '/js/content.js'
+---
+
+{#
+  This page displays a set (or a suite of sets) of code patterns.
+  Code patterns are organized as follows:
+  /patterns/ -> PatternSuites -> PatternSets -> Patterns
+#}
+
+{% if page.url %}
+  {% set patternSetId = page.url | getRelativePath('/patterns/') %}
+{% else %}
+  {% set patternSetId = '' %}
+{% endif %}
+
+{% if patternSetId %}
+  {% set patternSet = patterns.sets[patternSetId] %}
+{% else %}
+  {% set patternSet = null %}
+{% endif %}
+
+{% if patternSet.suite %}
+  {# This is a page for a PatternSet.
+    patternSuite variable is set to the parent of the current set. #}
+  {% set patternSuite = patterns.sets[patternSet.suite] %}
+  {% set currentPatternSet = patternSet %}
+{% else %}
+  {# This is a page for a PatternSuite.
+    There is no current pattern set selected. #}
+  {% set patternSuite = patterns.sets[patternSetId] %}
+  {% set currentPatternSet = null %}
+{% endif %}
+
+<section class="w-layout-container--wide">
+  {% from 'macros/breadcrumbs.njk' import breadcrumbs with context %}
+  {% set allPatternsName = 'i18n.patterns.all_patterns' | i18n(locale) %}
+  {% set crumbs = [
+    [allPatternsName, '/patterns/'],
+    [patternSuite.title, '/patterns/' + patternSuite.id]
+  ] %}
+  {{ breadcrumbs(crumbs) }}
+</section>
+
+<header class="w-masthead-about">
+  <div class="w-masthead-about__container w-masthead-patterns__container">
+    <div class="w-masthead-about__left">
+      <h1 class="w-headline--two w-font-weight--medium w-mt--non">
+        {{ patternSuite.title }}
+      </h1>
+      <p>
+        {{ patternSuite.description }}
+      </p>
+    </div>
+    <div class="w-masthead-about__right">
+      {% Img
+          height=220,
+          width=330,
+          src=patternSuite.hero,
+          alt="Collection cover image",
+          decoding="async",
+          class="w-masthead-path__image"
+        %}
+    </div>
+  </div>
+</header>
+
+<hr>
+
+<section class="w-layout-container--wide code-patterns-nav--top">
+  <nav class="code-patterns-nav__sets">
+    {% for setId, set in patterns.sets %}
+      {% if set.suite == patternSuite.id %}
+        {% if setId == currentPatternSet.id %}
+          <a class="selected" href="/patterns/{{set.id}}">{{set.title}}</a>
+        {% else %}
+          <a href="/patterns/{{set.id}}">{{set.title}}</a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </nav>
+  <div class="code-patterns-nav__filter">
+    <input type="text" placeholder="filter"/>
+  </div>
+</section>
+
+<section class="w-layout-container--wide code-patterns-main">
+  <div>
+    {# Show patterns from current set (if set) or from the whole suite #}
+
+    {% if currentPatternSet %}
+
+      <h2> {{ currentPatternSet.title }} </h2>
+      {{ currentPatternSet.content | safe }}
+      {% for patternId, pattern in patterns.patterns %}
+        {% if pattern.set == currentPatternSet.id %}
+          <div class="flow">
+            <h3 id="{{pattern.id}}"><a href="/patterns/{{pattern.id}}">{{pattern.title}}</a></h3>
+            {{ pattern.content | safe }}
+            {% CodePattern pattern.id %}
+          </div>
+        {% endif %}
+      {% endfor %}
+
+    {% else %}
+
+      {% for patternSetId, patternSet in patterns.sets %}
+        {% if patternSet.suite == patternSuite.id %}
+          <h2> {{ patternSet.title }} </h2>
+          {{ patternSet.content | safe }}
+          {% for patternId, pattern in patterns.patterns %}
+            {% if pattern.set == patternSetId %}
+              <div class="flow">
+                <h3 id="{{pattern.id}}"><a href="/patterns/{{pattern.id}}">{{pattern.title}}</a></h3>
+                {{ pattern.content | safe }}
+                {% CodePattern pattern.id %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+
+    {% endif %}
+  </div>
+
+  <section class="code-patterns-nav--side">
+    <div class="code-patterns-nav__filter">
+      <input type="text" placeholder="filter"/>
+    </div>
+    <nav class="code-patterns-nav__sets">
+      {% for setId, set in patterns.sets %}
+        {% if set.suite == patternSuite.id %}
+          {% if setId == currentPatternSet.id %}
+            <a class="selected" href="/patterns/{{set.id}}">{{set.title}}</a>
+          {% else %}
+            <a href="/patterns/{{set.id}}">{{set.title}}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </nav>
+  </div>
+
+</section>

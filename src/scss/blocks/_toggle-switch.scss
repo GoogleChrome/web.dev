@@ -1,0 +1,75 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/toggle-switch
+
+$toggle-switch-thumb-size: 1.25em;
+$toggle-switch-decor-ratio: 0.8;
+
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: max-content;
+  gap: 1em;
+}
+
+.toggle-switch__input {
+  opacity: 0;
+  position: absolute;
+  inset: 50% 0 0 0;
+  transform: translateY(-50%);
+}
+
+.toggle-switch__decor {
+  display: block;
+  position: relative;
+  width: #{$toggle-switch-thumb-size * 1.7};
+  height: #{$toggle-switch-decor-ratio}em;
+  border-radius: $toggle-switch-thumb-size;
+  transition: background $global-standard-transition-duration;
+  transition-delay: $global-standard-transition-duration;
+
+  @include apply-utility('bg', 'check-bg');
+}
+
+.toggle-switch__thumb {
+  display: block;
+  width: $toggle-switch-thumb-size;
+  height: $toggle-switch-thumb-size;
+  border-radius: $toggle-switch-thumb-size;
+  box-shadow: 0 0 2px rgb(0 0 0 / 50%);
+  position: absolute;
+  inset: 50% 0 0 0;
+  transform: translateY(-50%);
+  transition: transform $global-slinky-transition-duration
+    $global-slinky-transition-bezier;
+  z-index: 1;
+
+  @include apply-utility('bg', 'check-fg');
+}
+
+/// INTERACTIVE STATES
+
+/// On hover, shift the switch 1px in the direction it will go
+.toggle-switch__decor:hover .toggle-switch__thumb {
+  margin-inline-start: 1px;
+}
+
+:checked + .toggle-switch__decor:hover .toggle-switch__thumb {
+  margin-inline-start: -1px;
+}
+
+:checked + .toggle-switch__decor {
+  @include apply-utility('bg', 'check-bg-active');
+}
+
+:checked + .toggle-switch__decor .toggle-switch__thumb {
+  transform: translate(
+    #{$toggle-switch-thumb-size * $toggle-switch-decor-ratio},
+    -50%
+  );
+}
+
+:disabled + .toggle-switch__decor {
+  filter: grayscale(1) brightness(1.5);
+  cursor: not-allowed;
+}

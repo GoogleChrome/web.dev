@@ -7,6 +7,7 @@ renderData:
   title: "{{ paged.title | i18n(locale) or title }}"
   description: "{{ paged.description | i18n(locale) or description }}"
   rss: "{{ paged.href }}feed.xml"
+  hero: "{{ paged.data.hero }}"
 pagination:
   data: collections.authors
   size: 1

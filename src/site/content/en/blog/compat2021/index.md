@@ -1,13 +1,13 @@
 ---
-title: "Compat2021: Eliminating five top compatibility pain points on the web"
+title: "Compat 2021: Eliminating five top compatibility pain points on the web"
 subhead:
     "Google is working with other browser vendors and industry partners to fix the
-    top five browser compatibility pain points for web developers: CSS Flexbox,
+    top five browser compatibility pain points for web developers: CSS flexbox,
     CSS Grid, `position: sticky`, `aspect-ratio`, and CSS transforms."
 description:
     "Learn more about how Google is working with other browser vendors and
     industry partners to fix the top five browser compatibility pain points for
-    web developers: CSS Flexbox, CSS Grid, position: sticky, aspect-ratio,
+    web developers: CSS flexbox, CSS Grid, position: sticky, aspect-ratio,
     and CSS transforms."
 authors:
   - robertnyman
@@ -24,7 +24,7 @@ tags:
 
 Google is working with other browser vendors and industry partners to fix the
 top five browser compatibility pain points for web developers. The areas of focus
-are CSS Flexbox, CSS Grid, `position: sticky`, `aspect-ratio`, and CSS
+are CSS flexbox, CSS Grid, `position: sticky`, `aspect-ratio`, and CSS
 transforms. Check out [How you can contribute and follow along](#contribute) to
 learn how to get involved.
 
@@ -46,7 +46,7 @@ surveys.
 
 The goal in 2021 is to eliminate browser compatibility problems in five key focus
 areas so developers can confidently build on them as reliable foundations. This
-effort is called [**#Compat2021**](https://twitter.com/search?q=%23compat2021&src=typed_query&f=live).
+effort is called [**#Compat 2021**](https://twitter.com/search?q=%23compat2021&src=typed_query&f=live).
 
 ## Choosing what to focus on
 
@@ -58,7 +58,7 @@ for developers.
 The compatibility project uses multiple criteria influencing which areas to
 prioritize, and some are:
 
-+   Feature usage. For example, Flexbox is used in
++   Feature usage. For example, flexbox is used in
     [75%](https://www.chromestatus.com/metrics/feature/timeline/popularity/1692)
     of all page views, and adoption is growing strongly in [HTTP
     Archive](https://almanac.httparchive.org/en/2020/css#layout).
@@ -74,7 +74,7 @@ prioritize, and some are:
     +   [State of CSS](https://2020.stateofcss.com/en-US/features/)
         most known and used features
 
-+   Test results from [web-platform-tests](https://github.com/web-platform-tests/wpt#the-web-platform-tests-project). For example, [Flexbox on
++   Test results from [web-platform-tests](https://github.com/web-platform-tests/wpt#the-web-platform-tests-project). For example, [flexbox on
     wpt.fyi](https://wpt.fyi/results/css/css-flexbox).
 +   [Can I use](https://caniuse.com/)'s most-searched-for features.
 
@@ -90,9 +90,9 @@ helping tackle and track the identified issues.
 
 Here are the areas which are committed to being fixed in 2021.
 
-### CSS Flexbox
+### CSS flexbox
 
-[CSS Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout)
+[CSS flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout)
 is
 [widely used](https://www.chromestatus.com/metrics/feature/timeline/popularity/1692)
 on the web and there are still some major challenges for developers. For example,
@@ -118,7 +118,7 @@ have had issues with `auto-height` flex containers leading to incorrectly sized 
 </div>
 
 
-[Igalia's Flexbox Cats](https://blogs.igalia.com/svillar/2021/01/20/flexbox-cats-a-k-a-fixing-images-in-flexbox/)
+[Igalia's flexbox Cats](https://blogs.igalia.com/svillar/2021/01/20/flexbox-cats-a-k-a-fixing-images-in-flexbox/)
 blog post dives deeper into these issues with many more examples.
 
 #### Why it is prioritized

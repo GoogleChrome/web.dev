@@ -82,6 +82,7 @@ entrypoint.hashmanifest.json
 .vscode
 
 # Temporary files
+.cache
 .tmp
 .cache
 .firebase

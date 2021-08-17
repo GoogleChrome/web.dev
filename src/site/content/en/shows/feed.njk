@@ -1,0 +1,51 @@
+---
+renderData:
+  metadata:
+    author: Google Developers
+    category: "{{ paged.title | i18n(locale) }}"
+    icon: https://web.dev/images/social.png
+    id: https://web.dev/
+    logo: https://web.dev/images/shared/rss-banner.png
+    subtitle: "{{ paged.description | i18n(locale) }}"
+    title: "{{ paged.title | i18n(locale) }} on web.dev"
+    url: https://web.dev{{ paged.href }}feed.xml
+noindex: true
+permalink: "/{{lang}}{{ paged.href }}feed.xml"
+pagination:
+  data: collections.shows
+  size: 1
+  alias: paged
+  resolve: values
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>{{ renderData.metadata.id }}</id>
+  <title>{{ renderData.metadata.title }}</title>
+  <updated>{{ site.buildDate | rssDate }}</updated>
+  <author>
+    <name>{{ renderData.metadata.author }}</name>
+  </author>
+  <link href="{{ renderData.metadata.url }}" rel="self"/>
+  <link href="{{ renderData.metadata.id }}"/>
+  <category term="{{ renderData.metadata.title }}"/>
+  <icon>{{ renderData.metadata.icon }}</icon>
+  <logo>{{ renderData.metadata.logo }}</logo>
+  <subtitle>{{ renderData.metadata.subtitle }}</subtitle>
+  {% for post in paged.elements -%}
+  {#  absoluteUrl comes from 11ty RSS Plugin (@see https://www.11ty.dev/docs/plugins/rss/) #}
+  {% set absolutePostUrl -%}{{ post.url | url | absoluteUrl(renderData.metadata.url) }}{%- endset %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.date | rssDate }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content type="text/html" mode="escaped">{{ post.data.description | md({linkify: true, breaks: true, xhtmlOut: true}) | safe }}</content>
+    {% for entry in post.data.authors %}
+    {%- set author = collections.authors[entry] -%}
+    <author>
+      <name>{{ author.title | i18n(locale) }}</name>
+    </author>
+    {%- endfor %}
+  </entry>
+  {%- endfor %}
+</feed>

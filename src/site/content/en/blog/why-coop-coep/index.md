@@ -2,20 +2,20 @@
 title: Why you need "cross-origin isolated" for powerful features
 subhead: >
   Learn why cross-origin isolation is needed to use powerful features such as
-  `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`, high
-  resolution timer with better precision and the JS Self-Profiling API.
+  `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()` and high
+  resolution timer with better precision.
 description: >
   Some web APIs increase the risk of side-channel attacks like Spectre. To
   mitigate that risk, browsers offer an opt-in-based isolated environment called
   cross-origin isolated. Learn why cross-origin isolation is needed to use
-  powerful features such as `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`,
-  high resolution timer with better precision and the JS Self-Profiling API.
+  powerful features such as `SharedArrayBuffer`, `performance.measureUserAgentSpecificMemory()`
+  and high resolution timer with better precision.
 authors:
   - agektmr
   - domenic
 hero: image/admin/h8g1TQjkfkJSpWJrPakB.jpg
 date: 2020-05-04
-updated: 2021-04-12
+updated: 2021-08-05
 tags:
   - blog
   - security
@@ -106,10 +106,10 @@ This is exactly what COOP+COEP is about.
 
 Under a cross-origin isolated state, the requesting site is considered less
 dangerous and this unlocks powerful features such as `SharedArrayBuffer`,
-`performance.measureUserAgentSpecificMemory()`, [high resolution
-timers](https://www.w3.org/TR/hr-time/) with better precision and the JS
-Self-Profiling API which could otherwise be used for Spectre-like attacks. It
-also prevents modifying `document.domain`.
+`performance.measureUserAgentSpecificMemory()` and [high resolution
+timers](https://www.w3.org/TR/hr-time/) with better precision which could
+otherwise be used for Spectre-like attacks. It also prevents modifying
+`document.domain`.
 
 ### Cross Origin Embedder Policy {: #coep }
 [Cross Origin Embedder
@@ -246,13 +246,12 @@ protect your website in browsers that don't support COOP.
 ## Summary {: #summary }
 
 If you want guaranteed access to powerful features like `SharedArrayBuffer`,
-`performance.measureUserAgentSpecificMemory()`, [high resolution
-timers](https://www.w3.org/TR/hr-time/) with better precision or JS
-Self-Profiling API, just remember that your document needs to use both COEP with
-the value of `require-corp` and COOP with the value of `same-origin`. In the
-absence of either, the browser will not guarantee sufficient isolation to safely
-enable those powerful features. You can determine your page's situation by
-checking if
+`performance.measureUserAgentSpecificMemory()` or [high resolution
+timers](https://www.w3.org/TR/hr-time/) with better precision, just remember
+that your document needs to use both COEP with the value of `require-corp` and
+COOP with the value of `same-origin`. In the absence of either, the browser will
+not guarantee sufficient isolation to safely enable those powerful features. You
+can determine your page's situation by checking if
 [`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated)
 returns `true`.
 
