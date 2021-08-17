@@ -99,8 +99,8 @@ Looking at LCP from the field data in the screenshot above, you can see a
 distribution where:
 
 - 88% of visits saw an LCP of 2.5 seconds or less (good).
-- 8% of visits saw LCP between 2.5 and 4 seconds (needs improvement).
-- 4% of visits saw and LCP greater than 4 seconds (poor).
+- 8% of visits saw an LCP between 2.5 and 4 seconds (needs improvement).
+- 4% of visits saw an LCP greater than 4 seconds (poor).
 
 At the 75th percentile, LCP was 1.8 seconds:
 
