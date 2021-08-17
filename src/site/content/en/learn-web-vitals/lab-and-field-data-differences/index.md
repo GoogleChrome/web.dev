@@ -294,7 +294,7 @@ Task](https://w3c.github.io/longtasks/), it doesn't affect a page's TBT or TTI.
 This means a page may have poor FID despite having very good TBT and TTI scores.
 
 {% Aside %}
-**Tip:** pages can avoid the tab delay issue by always specifying a [mobile viewport](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away).
+To avoid the tab delay issue on a page, always specify a [mobile viewport](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away).
 {% endAside %}
 
 #### Effects of cache state and bfcache on FID
