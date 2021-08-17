@@ -314,7 +314,7 @@ time at all.
 
 #### Effects of user interaction on CLS
 
-[CLS](/cls/) measured in the lab only considers layout shifts that occur above
+CLS measured in the lab only considers layout shifts that occur above
 the fold and during load, but this is only a subset of what CLS actually
 measures.
 
