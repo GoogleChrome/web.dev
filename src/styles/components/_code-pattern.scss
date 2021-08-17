@@ -21,6 +21,7 @@
   .code-pattern__assets,
   .code-pattern__demo {
     border: 1px solid $BORDER_COLOR;
+    overflow-y: hidden;
   }
 
   web-tabs:not(:defined) {
