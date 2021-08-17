@@ -2,8 +2,6 @@
 layout: default
 pageScripts:
   - '/js/content.js'
-inlineScripts:
-   - '../../../lib/components/Tabs/index.js'
 ---
 
 {#
@@ -20,6 +18,8 @@ inlineScripts:
 
 {% if patternSetId %}
   {% set patternSet = patterns.sets[patternSetId] %}
+{% else %}
+  {% set patternSet = null %}
 {% endif %}
 
 {% if patternSet.suite %}
@@ -31,9 +31,10 @@ inlineScripts:
   {# This is a page for a PatternSuite.
     There is no current pattern set selected. #}
   {% set patternSuite = patterns.sets[patternSetId] %}
+  {% set currentPatternSet = null %}
 {% endif %}
 
-<section class="w-layout-container">
+<section class="w-layout-container--wide">
   {% from 'macros/breadcrumbs.njk' import breadcrumbs with context %}
   {% set allPatternsName = 'i18n.patterns.all_patterns' | i18n(locale) %}
   {% set crumbs = [
@@ -68,7 +69,7 @@ inlineScripts:
 
 <hr>
 
-<section class="w-layout-container code-patterns-nav--top">
+<section class="w-layout-container--wide code-patterns-nav--top">
   <nav class="code-patterns-nav__sets">
     {% for setId, set in patterns.sets %}
       {% if set.suite == patternSuite.id %}
@@ -86,6 +87,7 @@ inlineScripts:
 </section>
 
 <section class="w-layout-container code-patterns-main">
+<section class="w-layout-container--wide code-patterns-main">
   <div>
     {# Show patterns from current set (if set) or from the whole suite #}
 
