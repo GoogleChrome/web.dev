@@ -1,3 +1,5 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/banner
 .banner {
   --gutter: 0.5rem;
 
@@ -5,11 +7,11 @@
   display: flex;
   gap: 0 $global-gutter;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .banner__content {
-  max-width: 60ch;
+  max-width: 60vw;
 
   @include apply-utility('leading', 'short');
 }
@@ -20,19 +22,36 @@
 
   flex: none; /// We don't want this to shrink
   margin-inline-start: auto;
+  margin-block-start: auto;
 
-  /// The button padding misaligns the buttons because they are transparent
-  /// so this fixes that for us
-  transform: translate(
-    -#{$banner-actions-button-padding-x},
-    $banner-actions-button-padding-y
-  );
+  // /// The button padding misaligns the buttons because they are transparent
+  // /// so this fixes that for us
+  // transform: translate(
+  //   $banner-actions-button-padding-x,
+  //   $banner-actions-button-padding-y
+  // );
 
   button {
     padding: $banner-actions-button-padding-y $banner-actions-button-padding-x;
   }
 
+  /// Let whatever button element's current hover state happen
   button:not(:hover) {
     background: transparent;
   }
+}
+
+/// If the content has a cluster on it,
+/// we need to make some adjustments
+.banner__content.cluster {
+  --gutter: #{$global-gutter};
+
+  flex-wrap: nowrap;
+}
+
+.banner__img {
+  max-width: 2.5em;
+  max-height: 2.5em;
+  /// A slightly lighter background, regardless of current color
+  background: rgba(255, 255, 255, 0.5);
 }
