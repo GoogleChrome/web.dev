@@ -31,6 +31,7 @@ declare global {
     assets: CodePatternAssets;
     demo: string;
     suite: string;
+    height: number;
   }
   export interface CodePatterns {
     [key: string]: CodePattern;
