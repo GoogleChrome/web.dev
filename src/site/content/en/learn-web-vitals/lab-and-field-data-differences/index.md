@@ -36,7 +36,7 @@ The following real example of a PageSpeed Insights report from web.dev shows
 that in some cases lab and field data can be different across all of the Core
 Web Vitals metrics:
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/yN4PRURHJnDaLSJKsNsW.png", alt="Screenshot of a PageSpeed Insights report with conflicting lab and field data", width="800", height="509" %}
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/YvQK3wA9AQ2fmEuNSzKK.png", alt="Screenshot of a PageSpeed Insights report with conflicting lab and field data", width="800", height="509" %}
 
 Difference between tools is an understandable source of confusion for
 developers. This post explains the main reasons these differences could
@@ -95,20 +95,23 @@ represent a specific point in the distribution. Tools that report Core Web
 Vitals field scores do so [using the 75th
 percentile](/defining-core-web-vitals-thresholds/#choice-of-percentile).
 
-Looking at LCP from the screenshot above as an example, you can see a
-distribution where 88% of visits saw an LCP of 2.5 seconds or less (good), 7%
-of visits saw LCP between 2.5 and 4 seconds (needs improvement), and 4% of
-visits saw and LCP greater than 4 seconds (poor). At the 75th percentile, LCP was
-1.8 seconds:
+Looking at LCP from the field data in the screenshot above, you can see a
+distribution where:
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/pb3HNHToW7QocJhLXXtE.png", alt="Distribution of LCP scores", width="800", height="203" %}
+- 88% of visits saw an LCP of 2.5 seconds or less (good).
+- 8% of visits saw LCP between 2.5 and 4 seconds (needs improvement).
+- 4% of visits saw and LCP greater than 4 seconds (poor).
+
+At the 75th percentile, LCP was 1.8 seconds:
+
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/HttRJY6Drm09UdmbuyyB.png", alt="Distribution of LCP scores in the field", width="400", height="100" %}
 
 Lab data from the same page shows an LCP value of 3.0 second. While this value
 is greater than the 1.8 seconds shown in the field data, it's still a valid LCP
 value for this page—it's one of many values that make up the full distribution
 of load experiences.
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/zZYQpbFiF6jCDzGcv6QS.png", alt="ALT_TEXT_HERE", width="800", height="103" %}
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/kztPvvnwuTrCzo318cZP.png", alt="LCP score in the lab", width="400", height="50" %}
 
 ## Why lab and field data are different
 
