@@ -1,7 +1,7 @@
 ---
 patternId: notice-animated-footer
 ---
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -321,3 +321,4 @@ patternId: notice-animated-footer
         </p>
     </div>
 </body>
+```

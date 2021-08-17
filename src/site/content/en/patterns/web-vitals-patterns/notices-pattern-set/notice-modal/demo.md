@@ -1,7 +1,7 @@
 ---
 patternId: notice-modal
 ---
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -313,3 +313,4 @@ patternId: notice-modal
         </p>
     </div>
 </body>
+```

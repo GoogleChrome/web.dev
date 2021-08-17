@@ -1,7 +1,7 @@
 ---
 patternId: notice-sticky-footer
 ---
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -311,3 +311,4 @@ patternId: notice-sticky-footer
         </p>
     </div>
 </body>
+```
