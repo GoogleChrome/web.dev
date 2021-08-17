@@ -1,0 +1,38 @@
+.banner {
+  --gutter: 0.5rem;
+
+  padding: $global-gutter;
+  display: flex;
+  gap: 0 $global-gutter;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.banner__content {
+  max-width: 60ch;
+
+  @include apply-utility('leading', 'short');
+}
+
+.banner__actions {
+  $banner-actions-button-padding-x: 1rem;
+  $banner-actions-button-padding-y: 0.8rem;
+
+  flex: none; /// We don't want this to shrink
+  margin-inline-start: auto;
+
+  /// The button padding misaligns the buttons because they are transparent
+  /// so this fixes that for us
+  transform: translate(
+    -#{$banner-actions-button-padding-x},
+    $banner-actions-button-padding-y
+  );
+
+  button {
+    padding: $banner-actions-button-padding-y $banner-actions-button-padding-x;
+  }
+
+  button:not(:hover) {
+    background: transparent;
+  }
+}
