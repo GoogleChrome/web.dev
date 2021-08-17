@@ -98,7 +98,7 @@ percentile](/defining-core-web-vitals-thresholds/#choice-of-percentile).
 Looking at LCP from the screenshot above as an example, you can see a
 distribution where 88% of visits saw an LCP of 2.5 seconds or less (good), 7%
 of visits saw LCP between 2.5 and 4 seconds (needs improvement), and 4% of
-visits saw and LCP greater than 4 second (poor). At the 75th percentile, LCP was
+visits saw and LCP greater than 4 seconds (poor). At the 75th percentile, LCP was
 1.8 seconds:
 
 {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/pb3HNHToW7QocJhLXXtE.png", alt="Distribution of LCP scores", width="800", height="203" %}
