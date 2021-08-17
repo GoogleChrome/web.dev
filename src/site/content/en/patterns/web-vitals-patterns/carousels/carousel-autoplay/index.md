@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: Autoplay carousel
-description: A no-layout autoplay carousel
+description: A no-layout shift autoplay carousel
 date: 2021-08-17
 ---
 
