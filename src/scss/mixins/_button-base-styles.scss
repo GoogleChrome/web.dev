@@ -1,0 +1,91 @@
+/// BUTTON BASE STYLES
+/// Consistent, base styles that can be shared
+/// between button-type elements
+@mixin button-base-styles() {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+
+  @include apply-utility('bg', 'action-bg');
+  @include apply-utility('color', 'action-text');
+  @include apply-utility('weight', 'medium');
+  @include apply-utility('leading', 'flat');
+  @include vertically-align-label();
+
+  & svg {
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  & svg + * {
+    /// Why not gap?
+    /// Gap will add space to the pseudo-element that's
+    /// assisting with vertical alignment, so we add margin
+    /// inline-start to the element that directly follows the icon
+    margin-inline-start: 0.5em;
+  }
+
+  /// If there's no text utility, we need to make sure
+  /// the& is the base size as internal padding
+  /// is em based
+  &:not([class*='text']) {
+    font-size: get-size('base');
+  }
+
+  /// Interactive states
+  &:hover {
+    transform: translateY(-0.25em);
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 10%),
+      0px 8px 8px 1px rgb(0 0 0 / 7%), 0px 3px 8px 2px rgb(0 0 0 / 8%);
+    transition: transform $global-transition-movement,
+      box-shadow $global-transition-movement, filter $global-transition-fade;
+    filter: invert(0.05); // Achieves a "shaded" state in all themes
+  }
+
+  &:active {
+    transform: none;
+    transition: all $global-transition-base;
+    filter: none;
+    transform: scale(99%);
+    box-shadow: inset 0 0 10px rgb(0 0 0 / 10%);
+  }
+
+  /// TYPES
+  &[data-type='primary'] {
+    @include apply-utility('bg', 'action-bg-primary');
+    @include apply-utility('color', 'action-text-primary');
+  }
+
+  &[data-type='primary']:hover {
+    filter: brightness(1.5);
+  }
+
+  &[data-type='primary']:active {
+    filter: none;
+  }
+
+  &[data-type='secondary'] {
+    border-color: get-utility-value('color', 'stroke');
+    @include apply-utility('color', 'mid-text');
+  }
+
+  &[data-type='secondary']:active {
+    filter: none;
+    border-color: currentColor;
+
+    @include apply-utility('bg', 'dark-bg');
+    @include apply-utility('color', 'core-text');
+  }
+
+  /// DISABLED STATE
+  /// All properties are !important because this
+  /// state has to take priority in all cases
+  &:disabled {
+    filter: invert(0.2) !important;
+    box-shadow: none !important;
+    transform: none !important;
+    cursor: not-allowed !important;
+  }
+}
