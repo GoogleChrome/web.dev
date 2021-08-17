@@ -155,7 +155,7 @@ Vitals metrics:
 
 #### Different LCP elements
 
-The [LCP](/lcp/) element identified in a lab test may not be the same LCP
+The LCP element identified in a lab test may not be the same LCP
 element users see when visiting your page.
 
 If you run a Lighthouse report for a given page, it's going to return the same
