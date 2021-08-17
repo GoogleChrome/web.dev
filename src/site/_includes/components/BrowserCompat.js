@@ -15,12 +15,7 @@
  */
 const bcd = require('../../_utils/browserCompat');
 
-const browsers = [
-  'chrome',
-  'firefox',
-  'edge',
-  'safari',
-];
+const browsers = ['chrome', 'firefox', 'edge', 'safari'];
 
 /**
  * A shortcode for embedding caniuse.com browser compatibility table.
@@ -30,21 +25,15 @@ module.exports = async (feature) => {
   const data = await bcd();
   let compatIcons = [];
 
-  if (data[feature] &&  data[feature].support) {
+  if (data[feature] && data[feature].support) {
     compatIcons = browsers.map((browser) => {
       const support = data[feature].support[browser];
-      const isSupported = support.version_added && ! support.version_removed;
+      const isSupported = support.version_added && !support.version_removed;
       const version = support.version_added || 'X';
 
-      return `<span
-        class="
-        browser-compat__icon browser-compat--${browser}"
-        >
+      return `<span class="browser-compat__icon browser-compat--${browser}">
       </span>
-      <span
-        class="
-        browser-compat__version browser-compat--${isSupported}"
-        >
+      <span class="browser-compat__version browser-compat--${isSupported}">
         ${version}
       </span>
       `;
@@ -60,7 +49,7 @@ module.exports = async (feature) => {
       ${compatIcons.join('')}
       ${sourceLink}
     </div>
-    `
+    `;
   }
 
   return '';

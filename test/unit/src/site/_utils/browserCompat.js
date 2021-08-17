@@ -4,13 +4,13 @@ const browserCompat = require('../../../../../src/site/_utils/browserCompat');
 describe('browserCompat', function () {
   let data;
 
-  before(async function() {
+  before(async function () {
     data = await browserCompat();
     delete data.browsers;
   });
 
   it('every entry has a support value', function () {
-    for (const [key, value] of Object.entries(data)) {
+    for (const value of Object.values(data)) {
       assert.ok(value.support);
     }
   });
@@ -22,5 +22,4 @@ describe('browserCompat', function () {
   it('includes an entry with dashes', function () {
     assert.ok(data['css.properties.-moz-context-properties']);
   });
-
 });

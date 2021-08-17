@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 const bcd = require('@mdn/browser-compat-data');
-const {AssetCache} = require("@11ty/eleventy-cache-assets");
+const {AssetCache} = require('@11ty/eleventy-cache-assets');
 
 // Flatten a tree of data into a flat object (prep for lookup by key).
 function walk(obj, prefix) {
-  let result = {};
+  const result = {};
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === 'object' && value !== null) {
       const prefix_ = prefix + (prefix ? '.' : '') + key;
@@ -32,13 +32,13 @@ function walk(obj, prefix) {
   return result;
 }
 
-module.exports = async function() {
-  let asset = new AssetCache("bcd_data");
-  if (asset.isCacheValid("1d")) {
+module.exports = async function () {
+  const asset = new AssetCache('bcd_data');
+  if (asset.isCacheValid('1d')) {
     return asset.getCachedValue();
   }
   delete bcd.browsers;
   const data = walk(bcd, '');
-  await asset.save(data, "json");
+  await asset.save(data, 'json');
   return data;
 };
