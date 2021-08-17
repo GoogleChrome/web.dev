@@ -42,8 +42,7 @@ patternId: notice-modal
         <button id="close-button" class="close-button" aria-label="close" tabindex="0">✕</button>
         <div>
             <h1>Notice</h1>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Maecenas volutpat blandit aliquam etiam erat velit. Integer eget aliquet nibh praesent.
+            Lorem ipsum dolor sit amet.
         </div>
     </div>
     <script>
