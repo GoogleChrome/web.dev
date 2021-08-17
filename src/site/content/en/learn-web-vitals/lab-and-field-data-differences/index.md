@@ -268,7 +268,7 @@ to interact with a page, and thus cannot accurately measure FID.
 
 #### TBT and TTI do not consider user behavior
 
-Lab metrics like [Total Blocking Time (TBT)](/tbt/) and [Timg to Interactive
+Lab metrics such as [Total Blocking Time (TBT)](/tbt/) and [Time to Interactive
 (TTI)](/tti/) are intended to help diagnose issues with FID because they
 quantify how much the main thread is blocked during page load.
 
