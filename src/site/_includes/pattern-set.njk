@@ -18,6 +18,8 @@ pageScripts:
 
 {% if patternSetId %}
   {% set patternSet = patterns.sets[patternSetId] %}
+{% else %}
+  {% set patternSet = null %}
 {% endif %}
 
 {% if patternSet.suite %}
@@ -29,6 +31,7 @@ pageScripts:
   {# This is a page for a PatternSuite.
     There is no current pattern set selected. #}
   {% set patternSuite = patterns.sets[patternSetId] %}
+  {% set currentPatternSet = null %}
 {% endif %}
 
 <section class="w-layout-container--wide">
