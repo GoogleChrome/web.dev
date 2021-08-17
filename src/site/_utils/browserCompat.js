@@ -16,11 +16,12 @@
 const bcd = require('@mdn/browser-compat-data');
 const {AssetCache} = require("@11ty/eleventy-cache-assets");
 
+// Flatten a tree of data into a flat object (prep for lookup by key).
 function walk(obj, prefix) {
   let result = {};
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === 'object' && value !== null) {
-      let prefix_ = prefix + (prefix ? '.' : '') + key;
+      const prefix_ = prefix + (prefix ? '.' : '') + key;
       if (value.__compat) {
         result[prefix_] = value.__compat;
         delete value.__compat;

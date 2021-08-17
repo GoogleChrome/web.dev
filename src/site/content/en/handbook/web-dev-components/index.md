@@ -235,7 +235,7 @@ With the `BrowserCompat` shortcode, you can embed an
 widget in your post. You have to pass in the dot-separated feature ID,
 as used on [BCD Schema](https://github.com/mdn/browser-compat-data), e.g. for
 [Web/API/BackgroundFetchEvent](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchEvent)
-the ID is api.BackgroundFetchEvent:
+the ID is `api.BackgroundFetchEvent`:
 
 
 ```text
