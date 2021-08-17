@@ -1,5 +1,5 @@
 ---
-layout: pattern-suite
+layout: pattern-set
 title: Banners and footers
 description: A collection of code snippets to help you optmize your web projects.
 date: 2021-08-10
