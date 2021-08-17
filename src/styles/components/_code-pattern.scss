@@ -18,8 +18,7 @@
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr)
   }
 
-  .code-pattern__assets,
-  .code-pattern__demo {
+  .code-pattern__assets {
     border: 1px solid $BORDER_COLOR;
   }
 
@@ -39,9 +38,13 @@
   }
 
   iframe {
-    border: 0;
+    background-color: $WHITE;
+    border: 1px solid $BORDER_COLOR;
     height: 100%;
     width: 100%;
+    resize: both;
+    position: relative;
+    z-index: 1;
   }
 
   web-tabs {
