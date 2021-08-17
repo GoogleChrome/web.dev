@@ -5,6 +5,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    figure {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
   {% for assetName, asset in pattern.assets %}
     {% if asset.type == 'css' %}
       <style>{{ asset.content | safe }}</style>
@@ -13,6 +24,7 @@
 </head>
 <body>
   {% set pattern = patterns.patterns[patternId] %}
+  {{ content | safe }}
   {{ pattern.assets['body.html'].content | safe }}
   {% for assetName, asset in pattern.assets %}
     {% if asset.type == 'js' %}
