@@ -282,7 +282,7 @@ it _looks_ interactive, and this cannot be measured with TBT or TTI.
 
 #### TBT and TTI do not consider tap delay
 
-If a site is not optimized for mobile viewing, browsers will [add a 300ms
+If a site is not optimized for mobile viewing, browsers will [add a 300&nbsp;ms
 delay](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away)
 after any tap before running event handlers. They do this because they need to
 determine whether the user is trying to double-tap to zoom before they can fire
