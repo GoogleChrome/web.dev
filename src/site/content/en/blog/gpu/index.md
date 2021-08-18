@@ -24,9 +24,9 @@ stack_overflow_tag: webgpu
 
 ## What is WebGPU? {: #what }
 
-[WebGPU] is a new web API that exposes modern computer graphics capabilities
-such as Direct3D 12, Metal, and Vulkan for performing rendering and computation
-operations on a graphics processing unit (GPU).
+[WebGPU] is a new web API that exposes modern computer graphics capabilities,
+specifically Direct3D 12, Metal, and Vulkan, for performing rendering and
+computation operations on a graphics processing unit (GPU).
 
 <figure class="w-figure">
   {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/WHoJmX2IU7roV4iabH6M.png", alt="Architecture diagram showing WebGPUs connection between OS APIs and Direct3D 12, Metal, and Vulkan.", width="800", height="313" %}
