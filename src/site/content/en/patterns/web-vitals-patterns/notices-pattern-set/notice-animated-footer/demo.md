@@ -26,11 +26,10 @@ patternId: notice-animated-footer
         }
         @keyframes slideIn {
             from {
-                transform: translateY(100vh)
+                transform: translateY(100vh);
             }
-
             to {
-                transform: translateY(0vh)
+                transform: translateY(0vh);
             }
         }
         .close-button {
@@ -45,7 +44,6 @@ patternId: notice-animated-footer
         }
     </style>
 </head>
-
 <body>
     <div id="banner" class="banner">
         <button id="close-button" class="close-button" aria-label="close" tabindex="0">✕</button>
