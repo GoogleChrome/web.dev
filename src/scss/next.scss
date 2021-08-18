@@ -348,6 +348,11 @@ a:active {
   background: var(--color-core-text);
 }
 
+/// Misc web components that need to be blocks
+web-copy-code {
+  display: block;
+}
+
 /// COMPOSITIONS
 @import 'compositions/auto-grid';
 @import 'compositions/cluster';
@@ -370,6 +375,7 @@ a:active {
 @import 'blocks/toggle-switch';
 
 /// UTILITY CLASSES
+@import 'utilities/all-center';
 @import 'utilities/flow';
 @import 'utilities/focus-ring';
 @import 'utilities/region';

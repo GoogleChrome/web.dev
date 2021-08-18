@@ -4,6 +4,26 @@ permalink: '/design-system/css-utilities/index.html'
 layout: 'design-system-documentation.njk'
 ---
 
+## All center
+
+Does what it says on the tin. It center-aligns text with `text-align` and uses
+`margin-inline: auto` to center align on the reading mode direction.
+
+```html
+<header class="all-center">
+  <h1>A page header</h1>
+  <p>
+    Donec ullamcorper nulla non metus auctor fringilla. Integer posuere erat a
+    ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam.
+    Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit
+    tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Duis
+    mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia
+    odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient
+    montes, nascetur ridiculus mus.
+  </p>
+</header>
+```
+
 ## Flow
 
 The flow utility provides flow and rhythm between direct sibling elements.
