@@ -19,6 +19,7 @@ guidance about how to use them effectively.
 1. [Asides](#asides)
 1. [Banners](#banners)
 1. [Block quotes](#blockquotes)
+1. [Browser Compatibility](#browsercompat)
 1. [Buttons](#buttons)
 1. [Callouts](#callouts)
 1. [Checkbox](#checkbox)
@@ -226,6 +227,22 @@ a massa sit amet ullamcorper.
 [Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
 a massa sit amet ullamcorper.
 {% endBlockquote %}
+
+## Browser compatibility table {: #browsercompat }
+
+With the `BrowserCompat` shortcode, you can embed an
+[MDN - Browser Compatibility Data](https://github.com/mdn/browser-compat-data/)
+widget in your post. You have to pass in the dot-separated feature ID,
+as used on [BCD Schema](https://github.com/mdn/browser-compat-data), e.g. for
+[Web/API/BackgroundFetchEvent](https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchEvent)
+the ID is `api.BackgroundFetchEvent`:
+
+
+```text
+{% raw %}{% BrowserCompat 'api.BackgroundFetchEvent' %}{% endraw %}
+```
+
+{% BrowserCompat 'api.BackgroundFetchEvent' %}
 
 ## Buttons
 
