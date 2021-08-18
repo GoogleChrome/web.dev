@@ -2,7 +2,7 @@
 title: Access modern GPU features with WebGPU
 subhead: |
   WebGPU enables high-performance 3D graphics and data-parallel computation on
-  the Web.
+  the web.
 authors:
   - beaufortfrancois
   - cwallez
@@ -12,7 +12,7 @@ hero: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/SN6GIsxmcINXJZKszOTr.jpeg
 thumbnail: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/SN6GIsxmcINXJZKszOTr.jpeg
 description: |
   WebGPU enables high-performance 3D graphics and data-parallel computation on
-  the Web.
+  the web.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
@@ -24,22 +24,22 @@ stack_overflow_tag: webgpu
 
 ## What is WebGPU? {: #what }
 
-[WebGPU] is a new API for the web that exposes modern computer graphics APIs
+[WebGPU] is a new web API that exposes modern computer graphics capabilities
 such as Direct3D 12, Metal, and Vulkan for performing rendering and computation
-operations on a Graphics Processing Unit (GPU).
+operations on a graphics processing unit (GPU).
 
 <figure class="w-figure">
-  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/WHoJmX2IU7roV4iabH6M.png", alt="Architecture diagram highlighting platform OS APIs used in WebGPU", width="800", height="313" %}
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/WHoJmX2IU7roV4iabH6M.png", alt="Architecture diagram showing WebGPUs connection between OS APIs and Direct3D 12, Metal, and Vulkan.", width="800", height="313" %}
   <figcaption class="w-figcaption">WebGPU architecture diagram</figcaption>
 </figure>
 
 This goal is similar to the [WebGL] family of APIs, but WebGPU enables access to
 more advanced features of GPUs. Whereas WebGL is mostly for drawing images but
-can be repurposed with great effort to do other kinds of computations, WebGPU
-has first-class support for performing general computations on the GPU.
+can be repurposed with great effort for other kinds of computations, WebGPU
+provides first-class support for performing general computations on the GPU.
 
-After 4 years of development at the [W3C's "GPU for the Web" Community Group],
-WebGPU is now ready for developers to try it out in Chrome and give feedback on
+After four years of development in the [W3C's "GPU for the Web" Community
+Group], WebGPU is now ready for developers to try in Chrome and give feedback on
 the API and the shading language.
 
 {% Blockquote 'David Catuhe, Creator of Babylon.js' %}
@@ -202,7 +202,7 @@ Hero image via [Maxime Rossignol](https://unsplash.com/@maxoor) on
 [WebGPU]: https://gpuweb.github.io/gpuweb/
 [WebGL]: https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API
 [W3C's "GPU for the Web" Community Group]: https://www.w3.org/community/gpu/
-[Babylon.js Playground]: https://playground.babylonjs.com/
+[Babylon.js Playground]: https://playground.babylonjs.com/#WMRQCG
 [Get started with GPU Compute on the Web]: https://developers.google.com/web/updates/2019/08/get-started-with-gpu-compute-on-the-web
 [A Taste of WebGPU in Firefox]: https://hacks.mozilla.org/2020/04/experimental-webgpu-in-firefox/
 [WebGPU for Metal Developers, Part One]: https://metalbyexample.com/webgpu-part-one/
