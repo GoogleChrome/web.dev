@@ -3,6 +3,7 @@ layout: pattern
 title: Full HTML demo pattern
 description: A description for the example pattern
 date: 2021-08-10
+draft: true
 ---
 
 The HTML for the demo page can differ from the code samples displayed

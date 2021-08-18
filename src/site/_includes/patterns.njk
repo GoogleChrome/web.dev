@@ -18,8 +18,11 @@ layout: default
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--three" role="list">
       {% for setId, set in patterns.sets %}
-        {% if not set.suite %}
-          {{ PatternSuiteCard(set) }}
+        {% if site.env == 'prod' and set.draft %}
+        {% else %}
+          {% if not set.suite %}
+            {{ PatternSuiteCard(set) }}
+          {% endif %}
         {% endif %}
       {% endfor %}
     </div>
