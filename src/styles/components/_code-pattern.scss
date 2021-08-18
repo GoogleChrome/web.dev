@@ -1,4 +1,5 @@
 @import '../settings/colors';
+@import '../tools/breakpoints';
 
 // =============================================================================
 // CODE PATTERN component
@@ -15,11 +16,14 @@
   .code-pattern__content {
     display: grid;
     gap: 1rem; // sass-lint:disable-line no-misspelled-properties
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr)
+    grid-template-columns: minmax(0, 1fr);
+
+    @include bp(md) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
   }
 
-  .code-pattern__assets,
-  .code-pattern__demo {
+  .code-pattern__assets {
     border: 1px solid $BORDER_COLOR;
   }
 
@@ -39,9 +43,13 @@
   }
 
   iframe {
-    border: 0;
+    background-color: $WHITE;
+    border: 1px solid $BORDER_COLOR;
     height: 100%;
     width: 100%;
+    resize: both;
+    position: relative;
+    z-index: 1;
   }
 
   web-tabs {

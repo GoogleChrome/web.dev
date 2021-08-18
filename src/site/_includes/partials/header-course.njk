@@ -11,7 +11,7 @@
       {# The course logo is stored in src/images, but the svg macro uses
       Nunjuck's include syntax. So we need to give it a relative path from
       src/site/_includes to src/images. #}
-      {% set logo = helpers.join('../../..', courseData.meta.logo) %}
+      {% set logo = helpers.join('../..', courseData.meta.logo) %}
       {{ svg(logo, {label: courseData.meta.title | i18n(locale)}) }}
     {% endif %}
   </div>

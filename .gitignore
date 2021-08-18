@@ -84,6 +84,7 @@ entrypoint.hashmanifest.json
 # Temporary files
 .cache
 .tmp
+.cache
 .firebase
 firebase.json
 src/scss/_tokens.scss
