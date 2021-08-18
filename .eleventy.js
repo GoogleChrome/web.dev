@@ -32,6 +32,7 @@ const AuthorsDate = require('./src/site/_includes/components/AuthorsDate');
 const Banner = require('./src/site/_includes/components/Banner');
 const Blockquote = require('./src/site/_includes/components/Blockquote');
 const Breadcrumbs = require('./src/site/_includes/components/Breadcrumbs');
+const BrowserCompat = require('./src/site/_includes/components/BrowserCompat');
 const CodelabsCallout = require('./src/site/_includes/components/CodelabsCallout');
 const CodePattern = require('./src/site/_includes/components/CodePattern');
 const Codepen = require('./src/site/_includes/components/Codepen');
@@ -42,6 +43,7 @@ const DetailsSummary = require('./src/site/_includes/components/DetailsSummary')
 const EventTable = require('./src/site/_includes/components/EventTable');
 const Glitch = require('./src/site/_includes/components/Glitch');
 const Hero = require('./src/site/_includes/components/Hero');
+const includeRaw = require('./src/site/_includes/components/includeRaw');
 const IFrame = require('./src/site/_includes/components/IFrame');
 const {Img, generateImgixSrc} = require('./src/site/_includes/components/Img');
 const Instruction = require('./src/site/_includes/components/Instruction');
@@ -195,6 +197,7 @@ module.exports = function (config) {
   config.addPairedShortcode('Banner', Banner);
   config.addPairedShortcode('Blockquote', Blockquote);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
+  config.addNunjucksAsyncShortcode('BrowserCompat', BrowserCompat);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addShortcode('Codepen', Codepen);
   config.addShortcode('CodePattern', CodePattern);
@@ -215,6 +218,7 @@ module.exports = function (config) {
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('Video', Video);
   config.addShortcode('YouTube', YouTube);
+  config.addShortcode('includeRaw', includeRaw);
 
   // This table is used for the web.dev/LIVE event, and should be taken down
   // when the event is over or we no longer use it.
