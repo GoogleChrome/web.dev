@@ -42,6 +42,7 @@ const DetailsSummary = require('./src/site/_includes/components/DetailsSummary')
 const EventTable = require('./src/site/_includes/components/EventTable');
 const Glitch = require('./src/site/_includes/components/Glitch');
 const Hero = require('./src/site/_includes/components/Hero');
+const includeRaw = require('./src/site/_includes/components/includeRaw');
 const IFrame = require('./src/site/_includes/components/IFrame');
 const {Img, generateImgixSrc} = require('./src/site/_includes/components/Img');
 const Instruction = require('./src/site/_includes/components/Instruction');
@@ -215,6 +216,7 @@ module.exports = function (config) {
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('Video', Video);
   config.addShortcode('YouTube', YouTube);
+  config.addShortcode('includeRaw', includeRaw);
 
   // This table is used for the web.dev/LIVE event, and should be taken down
   // when the event is over or we no longer use it.
