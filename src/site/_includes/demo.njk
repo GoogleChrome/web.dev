@@ -1,4 +1,5 @@
 {# A file to display a standalone demo for a CodePattern #}
+{% set pattern = patterns.patterns[patternId] %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,6 @@
   {% endfor %}
 </head>
 <body>
-  {% set pattern = patterns.patterns[patternId] %}
   {{ pattern.assets['body.html'].content | safe }}
   {% for assetName, asset in pattern.assets %}
     {% if asset.type == 'js' %}
