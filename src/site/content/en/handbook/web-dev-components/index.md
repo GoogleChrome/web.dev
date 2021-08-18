@@ -325,8 +325,8 @@ element, and add the `w-ml--l` class to the label. See below:
 A component that displays a demo and code snippets, organized in tabs,
 side by side.
 
-The height of the component is determined by the length of the longest code
-snippet. It can be overridden by passing the optional height attribute
+The height of the component is determined by the code snippet with the most
+code lines. It can be overridden by passing the optional height attribute
 in the shortcode.
 
 ```text

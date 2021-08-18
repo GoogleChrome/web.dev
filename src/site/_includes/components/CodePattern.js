@@ -16,7 +16,7 @@ const lineHeight = 24;
  * Margin of the <pre> element, in px. Used to calculate the default height
  *   of the component.
  */
-const preMargin = 16;
+const preMargin = 2 * 16;
 
 /**
  * Tab list height, in px. Used to calculate the default height
@@ -45,16 +45,14 @@ module.exports = (patternId, height) => {
         Prism.languages[type],
         type,
       );
-      return `
-        <web-tab title="${asset.type}" data-label="${asset.type}">
+      return `<web-tab title="${asset.type}" data-label="${asset.type}">
           <pre><code class="language-${asset.type}">${content}</code></pre>
-        </web-tab>
-      `;
+        </web-tab>`;
     })
     .join('\n');
 
   const defaultHeight =
-    Math.max(...assetLines) * lineHeight + 2 * preMargin + tabListHeight;
+    Math.max(...assetLines) * lineHeight + preMargin + tabListHeight;
   height = height || pattern.height || defaultHeight;
 
   return `<div class="code-pattern flow flow-space-400">
