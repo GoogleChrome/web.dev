@@ -42,17 +42,19 @@ After four years of development in the [W3C's "GPU for the Web" Community
 Group], WebGPU is now ready for developers to try in Chrome and give feedback on
 the API and the shading language.
 
+{% Blockquote 'Mr.doob, Creator of Three.js' %}
+"After a decade of WebGL bringing 3D graphics to the web and enabling all sorts
+of new experiences, it's now time to upgrade the stack and help web developers
+take full advantage of modern graphics cards. WebGPU arrives just in time!"
+{% endBlockquote %}
+
 {% Blockquote 'David Catuhe, Creator of Babylon.js' %}
 WebGPU gets us closer to the metal and it also unlocks the power of compute
 shader for Web developers. New 3D experiences can be built today on [Babylon.js
 Playground].
 {% endBlockquote %}
 
-{% Blockquote 'Mr.doob, Creator of Three.js' %}
-"After a decade of WebGL bringing 3D graphics to the web and enabling all sorts
-of new experiences, it's now time to upgrade the stack and help web developers
-take full advantage of modern graphics cards. WebGPU arrives just in time!"
-{% endBlockquote %}
+{% Video src="video/vvhSqZboQoZZN9wBvoXq72wzGAf1/Xb7LvsJ5e8efTssp94c6.mov", autoplay=true, muted=true, playsinline=true, loop=true %}
 
 ## Current status {: #status }
 
