@@ -127,7 +127,7 @@ pageScripts:
       {% for patternId, pattern in patterns.patterns %}
         {% if pattern.set == patternSuite.id %}
           {% if loop.first %}
-            <h2> Other patterns vv </h2>
+            <h2> Other patterns</h2>
           {% endif %}
           <div>
             <h3 id="{{pattern.id}}"><a href="/patterns/{{pattern.id}}">{{pattern.title}}</a></h3>
