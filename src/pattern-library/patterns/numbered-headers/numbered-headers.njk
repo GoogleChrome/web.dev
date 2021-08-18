@@ -1,10 +1,10 @@
-<section class="w-numbered-headers">
-  <div class="w-measure-steps">
-    {% for step in data.steps %}
-      <div class="w-measure-step">
-        <h3 class="w-numbered-header {{ data.direction }}">{{ step.title }}</h3>
-        <div>{{ step.summary }}</div>
+<section class="numbered-headers auto-grid">
+  {% for step in data.steps %}
+    <div class="numbered-headers__step">
+      <div class="numbered-headers__heading {{ data.utilities.heading }}">
+        <h3 class="text-size-3">{{ step.title }}</h3>
       </div>
-    {% endfor %}
-  </div>
+      <p>{{ step.summary }}</p>
+    </div>
+  {% endfor %}
 </section>
