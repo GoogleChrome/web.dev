@@ -42,12 +42,9 @@
 {# Include the GA object so we can start queuing events. #}
 {% include 'partials/analytics.njk' %}
 
-{# Warning: Inlined script can't contain double curly braces (like in a JSDoc
-object comment), or any other nunjucks syntax. Otherwise nunjucks will fail the
-include. #}
 {% for item in inlineScripts %}
   {% set inlineScript %}
-    {% include item %}
+    {% includeRaw item %}
   {% endset %}
   <script>{{ inlineScript | minifyJs | cspHash | safe }}</script>
 {% endfor %}

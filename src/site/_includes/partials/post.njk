@@ -116,7 +116,8 @@
     {% if codelabs %}
       {% CodelabsCallout codelabs, lang %}
     {% endif %}
-    <web-feedback additional-questions="{{ feedback }}"></web-feedback>
+    {# TODO: We've removed the feedback widget for now as it's noisy and unhelpful. #}
+    {# <web-feedback additional-questions="{{ feedback }}"></web-feedback> #}
   </div>
 
   {% if 'blog' in tags %}
