@@ -11,8 +11,8 @@ patternId: fonts-first-party
     <title>Self-hosted fonts demo</title>
     <style>
         @font-face {
-            font-family: 'Zen Tokyo Zoo';
-            src: url("https://storage.googleapis.com/web-dev-uploads/file/j2RDdG43oidUy6AL6LovThjeX9c2/Xz7qKvkuFHqvcUmj5L1m.woff2") format('woff2');
+            font-family: 'Google Sans';
+            src: url("/fonts/google-sans/regular/latin.woff2") format('woff2');
             font-display: swap;
         }
         body {
@@ -22,7 +22,7 @@ patternId: fonts-first-party
             line-height: 1.5;
         }
         h1 {
-            font-family: 'Zen Tokyo Zoo', sans-serif;
+            font-family: 'Google Sans', sans-serif;
             font-size: 3em;
         }
     </style>
