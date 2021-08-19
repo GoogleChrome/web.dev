@@ -53,7 +53,9 @@ async function BrowserCompat(feature) {
     const sourceLabel = i18n(`i18n.browser_compat.source`, locale);
     const sourceLink = source
       ? `<span class="browser-compat__link">
-        <a href="${source}" target="_blank">${sourceLabel}</a>
+        <a href="${source}#browser_compatibility" target="_blank">
+          ${sourceLabel}
+        </a>
       </span>`
       : '';
     const supportLabel = i18n(`i18n.browser_compat.browser_support`, locale);
