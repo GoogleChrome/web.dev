@@ -124,11 +124,13 @@ pageScripts:
       {% endfor %}
 
       {# Patterns that belong directly to the pattern suite #}
+      {% set first = true %}
       {% for patternId, pattern in patterns.patterns %}
         {% if pattern.set == patternSuite.id %}
-          {% if loop.first %}
-            <h2> Other patterns</h2>
+          {% if first %}
+            <h2>{{ "i18n.patterns.other_patterns" | i18n(locale) }}</h2>
           {% endif %}
+          {% set first = false %}
           <div>
             <h3 id="{{pattern.id}}"><a href="/patterns/{{pattern.id}}">{{pattern.title}}</a></h3>
             {{ pattern.content | safe }}
