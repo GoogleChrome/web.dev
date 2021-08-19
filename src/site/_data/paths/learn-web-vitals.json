@@ -32,6 +32,7 @@
         {
             "title": "i18n.paths.learn_web_vitals.topics.debug_web_vitals",
             "pathItems": [
+                "lab-and-field-data-differences",
                 "debug-layout-shifts",
                 "debug-web-vitals-in-the-field"
             ]

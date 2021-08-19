@@ -8,7 +8,7 @@ height: 400
 
 It is possible to use an image (static or animated) as a demo in a CodePattern.
 
-Use an `{% raw %}{% Img %}{% endraw %}` shortcode wrapped in `<figure>` tag in the demo.md
+Use an `{% raw %}{% Img %}{% endraw %}` shortcode wrapped in a `<figure>` tag in the demo.md
 file. In this case, you should **not** add *body.html* to the demo assets.
 If you still want to display an HTML snippet, give it a name other than "body".
 

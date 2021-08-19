@@ -47,7 +47,7 @@ class CourseLinks extends HTMLElement {
    * Get the user's overall course progress from localstorage.
    * This returns an object where each string key represents a different course.
    * Example: {css: {pages: ['intro', ...], percent: 10}, pwa: {...}}
-   * @returns {Object.<string, Course>}
+   * @returns {{[courseName: string]: Course}}
    */
   getProgress = () => {
     let progress;

@@ -13,7 +13,7 @@
 #}
 {% macro svg(path, options) %}
 {% set rawSvg -%}
-  {% include path %}
+  {% includeRaw path %}
 {%- endset %}
 {{ rawSvg | updateSvgForInclude(options) | safe }}
 {% endmacro %}
