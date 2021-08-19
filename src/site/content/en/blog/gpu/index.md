@@ -54,7 +54,12 @@ shader for Web developers. New 3D experiences can be built today on [Babylon.js
 Playground].
 {% endBlockquote %}
 
-{% Video src="video/vvhSqZboQoZZN9wBvoXq72wzGAf1/Xb7LvsJ5e8efTssp94c6.mov", autoplay=true, muted=true, playsinline=true, loop=true %}
+<figure class="w-figure">
+  {% Video src="video/vvhSqZboQoZZN9wBvoXq72wzGAf1/Xb7LvsJ5e8efTssp94c6.mov", autoplay=true, muted=true, playsinline=true, loop=true %}
+  <figcaption class="w-figcaption">
+    A Babylon.js demo of a rough sea being simulated using WebGPU's compute shader capability.
+  </figcaption>
+</figure>
 
 ## Current status {: #status }
 
