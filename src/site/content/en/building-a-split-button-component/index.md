@@ -588,8 +588,8 @@ alt="ALT_TEXT_HERE", width="448", height="422", class="w-screenshot" %}
   padding-block: .5ch;
   border-radius: var(--radius);
   overflow: hidden;
-  display: inline-grid;
-  justify-items: stretch;
+  display: flex;
+  flex-direction: column;
   font-size: .9em;
   transition: opacity var(--out-speed) ease;
 
