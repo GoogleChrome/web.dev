@@ -268,6 +268,21 @@ table ol:not([class]) {
   margin: 0;
 }
 
+/// Cell alignment
+table[data-alignment='top'] {
+  th,
+  td {
+    vertical-align: top;
+  }
+}
+
+table[data-alignment='baseline'] {
+  th,
+  td {
+    vertical-align: top;
+  }
+}
+
 /// Separators
 
 hr {
