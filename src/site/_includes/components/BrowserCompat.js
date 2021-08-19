@@ -39,7 +39,7 @@ async function BrowserCompat(feature) {
       const ariaLabel = [
         browser,
         isSupported ? ` ${version}, ` : ', ',
-        ariaSupported
+        ariaSupported,
       ].join('');
       return `<span class="browser-compat__icon browser-compat--${browser}">
           <span class="w-visually-hidden">${ariaLabel}</span>
