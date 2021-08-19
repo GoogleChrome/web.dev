@@ -24,6 +24,7 @@
   {% endfor %}
 </head>
 <body>
+  {{ content | safe }}
   {{ pattern.assets['body.html'].content | safe }}
   {% for assetName, asset in pattern.assets %}
     {% if asset.type == 'js' %}
