@@ -19,14 +19,14 @@ feedback:
 {% Banner 'caution' %}
 **⚠️ Warning: you may need to update your app!** 
 
-**TrustTokenV3** is a collection of backwards-incompatible changes to Chromium’s Trust Tokens 
+**TrustTokenV3** is a collection of backwards-incompatible changes to Chromium's Trust Tokens 
 implementation. The changes arrived in Chrome 92, which reached Chrome Stable towards the end of 
 July 2021.
 
 If you haven't already, you will need to update existing applications 
 [testing the API](https://www.chromestatus.com/feature/5078049450098688).
 
-Find out more: [What’s TrustTokenV3?](https://bit.ly/what-is-trusttokenv3).
+Find out more: [What's TrustTokenV3?](https://bit.ly/what-is-trusttokenv3).
 {% endBanner %}
 
 <br><br>
