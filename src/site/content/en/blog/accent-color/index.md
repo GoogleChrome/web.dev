@@ -71,7 +71,7 @@ themed hotpink tinted controls.
 
 As of this writing, Chromium 93+ and Firefox 92+ support `accent-color`.
 
-{% BrowserCompat 'css.accent-color' %}
+{% BrowserCompat 'css.properties.accent-color' %}
 
 ## Supported elements
 
