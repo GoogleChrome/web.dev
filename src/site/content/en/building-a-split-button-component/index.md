@@ -371,11 +371,12 @@ The primary button needs a few special styles to complete the design effect:
 
 ```css
 .gui-split-button > button {
-  border-radius: var(--radius) 0 0 var(--radius);
+  border-end-start-radius: var(--radius);
+  border-start-start-radius: var(--radius);
 
   & > svg {
-      fill: none;
-      stroke: var(--ontheme);
+    fill: none;
+    stroke: var(--ontheme);
   }
 }
 ```
@@ -469,7 +470,8 @@ alt="ALT_TEXT_HERE", width="800", height="241", class="w-screenshot" %}
   align-items: center;
   justify-content: center;
   border-inline-start: var(--border);
-  border-radius: 0 var(--radius) var(--radius) 0;
+  border-start-end-radius: var(--radius);
+  border-end-end-radius: var(--radius);
 }
 ```
 
