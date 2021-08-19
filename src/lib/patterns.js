@@ -13,6 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/**
+ * @fileoverview A singleton that collects all Code Patterns from .md files
+ *   under "basePath" directory. Code Patterns then get exposed as part of
+ *   the _data directory, for use in eleventy.
+ */
+
 const glob = require('fast-glob');
 const fs = require('fs');
 const path = require('path');
@@ -23,10 +30,29 @@ const stripDot = /^\./;
 const basePath = path.join(__dirname, '../../src/site/content/en/patterns');
 const files = glob.sync(path.join(basePath, '**', 'index.md'));
 
+/** @type CodePatternSets */
+const allPatternSets = {};
+
 /** @type CodePatterns */
 const allPatterns = files.reduce((patterns, file) => {
   const id = path.relative(basePath, path.dirname(file));
   const fileContents = matter(fs.readFileSync(file, 'utf-8'));
+  const content = md.render(fileContents.content);
+  const suite = path.dirname(id);
+
+  if (fileContents.data.layout === 'pattern-set') {
+    const set = {
+      id,
+      title: fileContents.data.title,
+      description: fileContents.data.description,
+      hero: fileContents.data.hero,
+      content,
+      suite: suite !== '.' ? suite : null,
+    };
+    /** @type CodePatternSet */
+    allPatternSets[id] = set;
+  }
+
   if (fileContents.data.layout !== 'pattern') {
     return patterns;
   }
@@ -45,11 +71,10 @@ const allPatterns = files.reduce((patterns, file) => {
     return out;
   }, {});
 
-  const content = md.render(fileContents.content);
   // Use external demo url from frontmatter, if set, or default to local demo.
   const demo =
     fileContents.data.demo || path.join('/', 'patterns', id, 'demo.html');
-  const suite = path.join('/', 'patterns', path.dirname(id), '/');
+  const set = path.dirname(id);
   /** @type CodePattern */
   patterns[id] = {
     id,
@@ -57,11 +82,16 @@ const allPatterns = files.reduce((patterns, file) => {
     content,
     assets,
     demo,
-    suite,
+    set,
   };
   return patterns;
 }, {});
 
-module.exports = function () {
-  return allPatterns;
+module.exports = {
+  patterns: function () {
+    return allPatterns;
+  },
+  sets: function () {
+    return allPatternSets;
+  },
 };

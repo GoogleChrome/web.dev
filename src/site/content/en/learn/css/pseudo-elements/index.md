@@ -83,12 +83,17 @@ Once a `::before` or `::after` element has been created,
 you can style it however you want with no limits.
 You can only insert a `::before` or `::after` element to an element that will accept child elements
 ([elements with a document tree](https://www.w3.org/TR/CSS21/generate.html)),
-so elements such as `<img />`, `<video>`, `<button>` and `<input>` won't work.
+so elements such as `<img />`, `<video>` and `<input>` won't work.
 
 {% Codepen {
   user: 'web-dot-dev',
   id: 'GRrEYrg'
 } %}
+
+{% Aside 'gotchas' %}
+`input[type="checkbox"]` is an exception. 
+It is allowed to have pseudo-element children.
+{% endAside %}
 
 ## `::first-letter`
 
