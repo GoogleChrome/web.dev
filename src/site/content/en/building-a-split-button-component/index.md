@@ -56,7 +56,7 @@ know that essential email actions are contained in the split button.
 
 ### Parts
 
-Let’s break down the essential parts of a split button before discussing their
+Let's break down the essential parts of a split button before discussing their
 overall orchestration and final user experience.
 [VisBug](https://github.com/GoogleChromeLabs/ProjectVisBug)'s accessibility
 inspect tool is used here to help show a macro view of the component, surfacing
