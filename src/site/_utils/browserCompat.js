@@ -40,5 +40,5 @@ module.exports = async function () {
   delete bcd.browsers;
   const data = walk(bcd, '');
   await asset.save(data, 'json');
-  return data;
+  return asset.getCachedValue();
 };
