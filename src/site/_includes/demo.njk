@@ -16,7 +16,7 @@
   {{ pattern.assets['body.html'].content | safe }}
   {% for assetName, asset in pattern.assets %}
     {% if asset.type == 'js' %}
-      <script>{{ asset.content | safe }}</script>
+      <script>{{ asset.content | cspHash | safe }}</script>
     {% endif %}
   {% endfor %}
 </body>
