@@ -32,14 +32,19 @@ async function BrowserCompat(feature) {
     compatIcons = browsers.map((browser) => {
       const support = data[feature].support[browser];
       const isSupported = support.version_added && !support.version_removed;
-      const version = isSupported ? support.version_added : '\u00D7';
-      const ariaVersion = isSupported ? 'Version' + version : 'Not supported';
-      return `<span
-        class="browser-compat__icon browser-compat--${browser}"
-        aria-label="${browser}">
+      const version = isSupported ? support.version_added : '\u00D7'; // small x
+      const ariaSupported = isSupported
+        ? i18n('i18n.browser_compat.supported', locale)
+        : i18n('i18n.browser_compat.not_supported', locale);
+      const ariaLabel = [
+        browser,
+        isSupported ? ` ${version}, ` : ', ',
+        ariaSupported
+      ].join('');
+      return `<span class="browser-compat__icon browser-compat--${browser}">
+          <span class="w-visually-hidden">${ariaLabel}</span>
       </span>
-      <span class="browser-compat__version browser-compat--${isSupported}"
-        aria-label="${ariaVersion}">
+      <span class="browser-compat__version browser-compat--${isSupported}">
         ${version}
       </span>
       `;
@@ -53,7 +58,7 @@ async function BrowserCompat(feature) {
       : '';
     const supportLabel = i18n(`i18n.browser_compat.browser_support`, locale);
     return `<div class="browser-compat">
-      <span>${supportLabel}</span>
+      <span>${supportLabel}:</span>
       ${compatIcons.join('')}
       ${sourceLink}
     </div>

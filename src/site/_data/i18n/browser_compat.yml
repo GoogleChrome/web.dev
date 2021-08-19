@@ -3,3 +3,9 @@ browser_support:
 
 source:
   en: Source
+
+supported:
+  en: Supported
+
+not_supported:
+  en: Not supported
