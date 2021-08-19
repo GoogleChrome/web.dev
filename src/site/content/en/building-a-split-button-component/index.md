@@ -7,8 +7,8 @@ authors:
 description: A foundational overview of how to build an accessible split-button component.
 date: 2021-09-01
 updated: 2021-09-01
-thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/kCeb8N9YlMYsI5O5ChC9.png
-hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/dk9VreVtYiF3LBkRpZlg.png
+thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/rVSie6kSTSiw8msPeBCk.png
+hero: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/kg9adsqjPM2EpzVZ1mZu.png
 tags:
   - blog
   - css
