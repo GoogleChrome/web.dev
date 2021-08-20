@@ -3,6 +3,8 @@
 .aside {
   --gutter: 0.5rem;
 
+  @extend .flow;
+
   padding: $global-gutter;
   max-width: 35rem;
   margin-inline: auto;
