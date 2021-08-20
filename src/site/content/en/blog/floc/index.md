@@ -25,16 +25,16 @@ The browser recalculates its cohort periodically, on the user's device, without 
 individual browsing data with the browser vendor or anyone else.
 
 {% Aside %}
-FLoC is now in [origin trial in Chrome](/origin-trials/). Find out more: 
-[How to take part in the FLoC origin trial](https://developer.chrome.com/blog/floc/). 
-
-During the current FLoC origin trial, a page visit will only be included in the browser's FLoC 
-computation for one of two reasons: 
+During the initial FLoC trial, a page visit was only be included in the browser's FLoC computation 
+for one of two reasons: 
 * The FLoC API (`document.interestCohort()`) is used on the page. 
 * Chrome detects that the page [loads ads or ads-related resources](https://github.com/WICG/floc/issues/82). 
 
 For other clustering algorithms, the trial may experiment with different inclusion criteria: that's 
 part of the origin trial experiment process.
+
+The origin trial for the initial version of FLoC, which ran from Chrome 89 to 91, 
+[is now closed](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561).
 {% endAside %}
 
 Advertisers (sites that pay for advertisements) can include code on their own websites in order to
@@ -286,7 +286,12 @@ explains how Chrome's ad detection mechanism works.)
 Pages served from private IP addresses, such as intranet pages, won't be part of the FLoC
 computation.
 
-## As a web developer how can I try out FLoC?
+## How does the FLoC JavaScript API work?
+
+{% Aside %}
+The origin trial for the initial version of FLoC, which ran from Chrome 89 to 91, 
+[is now closed](https://developer.chrome.com/origintrials/#/view_trial/213920982300098561).
+{% endAside %}
 
 The FLoC API is very simple: just a single method that returns a promise that resolves to an object
 providing the cohort `id` and `version`:
@@ -302,32 +307,13 @@ The cohort data made available looks like this:
 ```js
 {
   id: "14159",
-  version: "chrome.1.0"
+  version: "chrome.2.1"
 }
 ```
 
 The `version` value enables sites using FLoC to know which browser and which FLoC model the cohort
 ID refers to. As described below, the promise returned by `document.interestCohort()` will reject
 for any frame that is not allowed the `interest-cohort` permission.
-
-The FLoC API is available in Chrome 89 and above, but if you are not taking part in the origin
-trial, you will need to set flags and run Chrome from the command line.
-[Run&nbsp;Chromium with flags](http://www.chromium.org/developers/how-tos/run-chromium-with-flags)
-explains how to do this for different operating systems.
-
-1. Start Chrome with the following flags: <br>
-
-    ```text
-    --enable-blink-features=InterestCohortAPI
-    --enable-features="FederatedLearningOfCohorts:update_interval/10s/minimum_history_domain_size_required/1,FlocIdSortingLshBasedComputation,InterestCohortFeaturePolicy"
-    ```
-2. Make sure third-party cookies are not blocked and that no ad blocker is running.
-3. View the demo at [floc.glitch.me](https://floc.glitch.me/).
-
-{% Aside %}
-[How to take part in the FLoC origin trial](https://developer.chrome.com/blog/floc) explains how
-to try out FLoC in both first- and third-party contexts.
-{% endAside%}
 
 ## Can websites opt out of being included in the FLoC computation?
 
@@ -357,10 +343,9 @@ on the [FLoC Explainer](https://github.com/WICG/floc) repository.
 
 ## Find out more
 
-* [FLoC demo](https://floc.glitch.me)
-* [How to take part in the FLoC origin trial](https://developer.chrome.com/blog/floc)
 * [Digging in to the Privacy Sandbox](/digging-into-the-privacy-sandbox/)
 * [FLoC Explainer](https://github.com/WICG/floc)
+* [FLoC Origin Trial & Clustering](https://sites.google.com/a/chromium.org/dev/Home/chromium-privacy/privacy-sandbox/floc)
 * [Evaluation of cohort Algorithms for the FLoC API](https://github.com/google/ads-privacy/blob/master/proposals/FLoC/README.md)
 
 ---
