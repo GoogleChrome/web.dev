@@ -164,7 +164,7 @@ IP addresses from a site host.
 
 **Goal:** Verify user authenticity without fingerprinting.
 
-Anti-fraud protection is crucial for keeping users safe, and to ensure that advertisers and site owners can get accurate ad performance measurements. Advertisers and site owners must be able to distinguish between malicious bots and authentic users. If advertisers can't reliably tell which ad clicks are from real humans, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as [device fingerprinting](#fingerprinting) to combat fraud.
+Anti-fraud protection is crucial for keeping users safe, and to ensure that advertisers and site owners can get accurate ad performance measurements. Advertisers and site owners must be able to distinguish between malicious bots and authentic users. If advertisers can't reliably tell which ad clicks are from real humans, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as [device fingerprinting](#glossary-fingerprinting) to combat fraud.
 
 Unfortunately, the techniques used to identify legitimate users and block spammers, fraudsters, and bots work in ways similar to [fingerprinting](#glossary-fingerprinting) techniques that damage privacy.
 
@@ -284,9 +284,11 @@ View of an ad. (See also [click-through rate](#glossary-ctr).)
 A measure of anonymity within a data set. If you have _k_ anonymity, you can't be distinguished from _k-1_ other individuals in the data set. In other words, _k_ individuals have the same information (including you).
 
 ### Nonce
+
 Arbitrary number used once only in cryptographic communication.
 
 ### Origin
+
 The origin of a request, including the server name but no path information. For example: `https://web.dev`.
 
 ### Passive surface {: #glossary-passive-surface }
