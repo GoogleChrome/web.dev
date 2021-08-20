@@ -104,7 +104,9 @@ The API also offers two types of **attribution reports**:
 
 * **Aggregate reports** are not tied to a specific event on the ad side. These reports provide richer, higher-fidelity conversion data than event-level reports. A combination of privacy techniques across cryptography, distribution of trust, and differential privacy help reduce the risk of identity joining across sites. 
 
-Both report types can be used simultaneously: they're complementary. Other features in this API include [cross-device attribution reporting](https://github.com/WICG/conversion-measurement-api/blob/main/cross_device.md) and [app-to-web attribution reporting](https://github.com/WICG/conversion-measurement-api/blob/main/app_to_web.md).
+Both report types can be used simultaneously: they're complementary. 
+
+Learn more about the status of these features and how to try this API [here](https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting-introduction/#status).
 
 ### Select ads
 
