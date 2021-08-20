@@ -88,8 +88,9 @@ pageScripts:
 
 <section class="w-layout-container--wide code-patterns-main">
   <div>
-    {# Show patterns from current set (if set) or from the whole suite #}
+    {{ content | safe }}
 
+    {# Show patterns from current set (if set) or from the whole suite #}
     {% if currentPatternSet %}
 
       <h2> {{ currentPatternSet.title }} </h2>
