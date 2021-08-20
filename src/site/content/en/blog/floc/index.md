@@ -4,7 +4,7 @@ subhead: FLoC enables ad selection without sharing the browsing behaviour of ind
 authors:
   - samdutton
 date: 2021-03-30
-updated: 2021-05-14
+updated: 2021-08-20
 hero: image/80mq7dk16vVEg8BBhsVe42n6zn82/GA543wiVTwpbwp6Zmw0H.jpg
 thumbnail: image/80mq7dk16vVEg8BBhsVe42n6zn82/OuORgPSvN06ntXT5xOii.jpg
 alt: Murmuration of starlings over Brighton pier
@@ -65,10 +65,11 @@ relevant and useful to them, and relevant ads also bring more business to advert
 it displays relevant ads. Thus, selecting relevant ads increases revenue for ad-supported websites.
 That, in turn, means that relevant ads help fund content creation that benefits users.
 
-However, many people are concerned about the privacy implications of tailored advertising, which
-currently relies on techniques such as tracking cookies and device fingerprinting which are used to
-track individual browsing behavior. The FLoC proposal aims to allow more effective ad selection
-without compromising privacy.
+However, people are concerned about the privacy implications of tailored advertising, which 
+currently relies on techniques such as tracking cookies and device fingerprinting which can reveal 
+your browsing history across sites to advertisers or ad platforms. The FLoC proposal aims to allow 
+ad selection in a way that better protects privacy.
+
 
 ## What can FLoC be used for?
 
@@ -147,9 +148,9 @@ Alex's browser's cohort: 1354.
 ### 5. Adtech platform: <span style="font-weight:normal">adnetwork.example</span>
 1. <u>adnetwork.example</u> can select an ad suitable for Alex by combining the data it has from
 the publisher <u>dailynews.example</u> and the advertiser <u>shoestore.example</u>:
-	- Alex's browser's cohort (1354) provided by <u>dailynews.example</u>.
-	- Data about cohorts and product interests from <u>shoestore.example</u>: "Browsers from cohort 1354
-	might be interested in hiking boots."
+  - Alex's browser's cohort (1354) provided by <u>dailynews.example</u>.
+  - Data about cohorts and product interests from <u>shoestore.example</u>: "Browsers from cohort 1354
+  might be interested in hiking boots."
 1. <u>adnetwork.example</u> selects an ad appropriate to Alex: an ad for hiking boots on
 <u>shoestore.example</u>.
 1. <u>dailynews.example</u> displays the ad 🥾.
@@ -300,8 +301,8 @@ The cohort data made available looks like this:
 
 ```js
 {
-	id: "14159",
-	version: "chrome.1.0"
+  id: "14159",
+  version: "chrome.1.0"
 }
 ```
 
@@ -328,7 +329,7 @@ explains how to do this for different operating systems.
 to try out FLoC in both first- and third-party contexts.
 {% endAside%}
 
-## How can websites opt out of the FLoC computation?
+## Can websites opt out of being included in the FLoC computation?
 
 The `interest-cohort` permissions policy enables a site to declare that it does not want to be
 included in the user's list of sites for cohort calculation. The policy will be `allow` by default.
@@ -336,11 +337,18 @@ The promise returned by `document.interestCohort()` will reject for any frame th
 `interest-cohort` permission. If the main frame does not have the `interest-cohort` permission, then the
 page visit will not be included in the interest cohort calculation.
 
-For example, a site can opt out of all FLoC cohort calculation by sending the following HTTP response header:
+For example, a site can opt out of all FLoC cohort calculation by sending the following HTTP 
+response header:
 
 ```text
   Permissions-Policy: interest-cohort=()
 ```
+
+## Can a user stop sites from getting their browser's FLoC cohort?
+
+If a user disables Privacy Sandbox in chrome://settings/privacySandbox, the browser will not provide 
+the user's cohort when asked for it via JavaScript: the promise returned by 
+`document.interestCohort()` will reject.
 
 ## How can I make suggestions or provide feedback?
 
