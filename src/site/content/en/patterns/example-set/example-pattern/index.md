@@ -1,9 +1,0 @@
----
-layout: pattern
-title: Example pattern
-description: A description for the example pattern
-date: 2021-08-10
-draft: true
----
-
-Code pattern is a snippet of code, representing a solution to a typical problem.
