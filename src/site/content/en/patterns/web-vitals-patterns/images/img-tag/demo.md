@@ -1,3 +1,7 @@
+---
+patternId: web-vitals-patterns/images/img-tag
+---
+
 <!DOCTYPE html>
 <html lang="en">
 

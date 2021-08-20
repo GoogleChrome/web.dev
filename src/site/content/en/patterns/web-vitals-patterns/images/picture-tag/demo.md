@@ -1,5 +1,5 @@
 ---
-patternId: picture-tag
+patternId: web-vitals-patterns/images/picture-tag
 ---
 
 <!DOCTYPE html>
