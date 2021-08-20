@@ -198,7 +198,7 @@ With this code:
 {% DetailsSummary %}
 How can a website work out whether to trust you?
 {% endDetailsSummary %}
-You might have shopping history with an ecommerce site, checkins on a location platform, or account 
+You might have shopping history with an e-commerce site, check-ins on a location platform, or account 
 history at a bank. Issuers might also look at other factors such as how long you've had an account, 
 or other interactions (such as CAPTCHAs or form submission) that increase the issuer's trust in the 
 likelihood that you're a real human.
