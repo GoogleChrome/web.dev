@@ -1,5 +1,5 @@
 ---
-patternId: full-html-demo
+patternId: web-vitals-patterns/carousels/carousel-autoplay
 ---
 
 <!DOCTYPE html>
