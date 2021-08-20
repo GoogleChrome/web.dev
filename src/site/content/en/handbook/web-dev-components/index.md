@@ -350,7 +350,7 @@ in the shortcode.
 {% raw %}{% CodePattern 'pattern-id' optional-height-in-px %}{% endraw %}
 ```
 
-{% CodePattern 'example-pattern', 500 %}
+{% CodePattern 'example-set/example-pattern', 500 %}
 
 ## Codepen {: #codepen }
 

@@ -1,5 +1,6 @@
 ---
-patternId: full-html-demo
+patternId: example-set/full-html-demo
+draft: true
 ---
 
 <!DOCTYPE html>

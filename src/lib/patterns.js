@@ -40,12 +40,15 @@ const allPatterns = files.reduce((patterns, file) => {
   const content = md.render(fileContents.content);
   const suite = path.dirname(id);
 
+  // This only reads front-matter from files, and doesn't inherit any data
+  // from Eleventy data cascade (e.g. "11tydata.js" files).
   if (fileContents.data.layout === 'pattern-set') {
     const set = {
       id,
       title: fileContents.data.title,
       description: fileContents.data.description,
       hero: fileContents.data.hero,
+      draft: fileContents.data.draft,
       content,
       suite: suite !== '.' ? suite : null,
     };
