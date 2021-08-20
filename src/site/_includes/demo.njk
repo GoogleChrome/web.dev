@@ -34,7 +34,7 @@
   {{ pattern.assets['body.html'].content | safe }}
   {% for assetName, asset in pattern.assets %}
     {% if asset.type == 'js' %}
-      <script>{{ asset.content | minifyJa | cspHash | safe }}</script>
+      <script>{{ asset.content | minifyJs | cspHash | safe }}</script>
     {% endif %}
   {% endfor %}
 </body>
