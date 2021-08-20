@@ -58,20 +58,20 @@ Frames are the centerpiece in video processing. Thus in WebCodecs most classes
 either consume or produce frames. Video encoders convert frames into encoded
 chunks. Video decoders do the opposite.
 
-Also `VideoFrame` plays nicely with the the rest of Web APIs by being a [`CanvasImageSource`](https://html.spec.whatwg.org/multipage/canvas.html#canvasimagesource) and having a [constructor](https://www.w3.org/TR/webcodecs/#dom-videoframe-videoframe) accepting `CanvasImageSource`.
-So it can be used in functions like [`drawImage()`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage) and[`texImage2D()`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texImage2D), also it can be constructed from canvases, bitmaps, video elements and other video frames.
+Also `VideoFrame` plays nicely with other Web APIs by being a [`CanvasImageSource`](https://html.spec.whatwg.org/multipage/canvas.html#canvasimagesource) and having a [constructor](https://www.w3.org/TR/webcodecs/#dom-videoframe-videoframe) that accepts `CanvasImageSource`.
+So it can be used in functions like [`drawImage()`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage) and[`texImage2D()`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texImage2D). Also it can be constructed from canvases, bitmaps, video elements and other video frames.
 
 
 WebCodecs API works well in tandem with the classes from [Insertable Streams API](https://w3c.github.io/mediacapture-transform/)
 which connect WebCodecs to [media stream tracks](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack).
-- `MediaStreamTrackProcessor` breaks up into media tracks into individual frames
-- `MediaStreamTrackGenerator` helps to create a media track from a stream of frames.
+- `MediaStreamTrackProcessor` breaks media tracks into individual frames.
+- `MediaStreamTrackGenerator` creates a media track from a stream of frames.
 
 
 ## WebCodecs and web workers
 
-By design WebCodecs API does all the heavy lifting asynchronously and off the main thread,
-but since frame and chunk callbacks can often be called multiple times a second,
+By design WebCodecs API does all the heavy lifting asynchronously and off the main thread.
+But since frame and chunk callbacks can often be called multiple times a second,
 they might clutter the main thread and thus make the website less responsive.
 Therefore it is preferable to move handling of individual frames and encoded chunks into a
 web worker.
@@ -79,7 +79,7 @@ web worker.
 To help with that, [ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)
 provides a convenient way to automatically transfer all frames coming from a media
 track to the worker. For example, `MediaStreamTrackProcessor` can be used to obtain a
-`ReadableStream` for a media stream track coming from the web camera, after that
+`ReadableStream` for a media stream track coming from the web camera. After that
 the stream is transferred to a web worker where frames are read one by one and queued
 into a `VideoEncoder`.
 
@@ -96,7 +96,7 @@ moved between workers.
 ```
 
 It all starts with a `VideoFrame`.
-There are three ways to construct video frames
+There are three ways to construct video frames.
 + From an image source like canvas, image bitmap or a video element.
 ```js
 const cnv = document.createElement('canvas');
@@ -167,17 +167,17 @@ let encoder = new VideoEncoder(init);
 encoder.configure(config);
 ```
 
-After the encoder has been set up, it's ready to start accepting frames via `encode()` method.
+After the encoder has been set up, it's ready to accept frames via `encode()` method.
 Both `configure()` and `encode()` return immediately without waiting for the
 actual work to complete. It allows several frames to queue for encoding at the
-same time, `encodeQueueSize` shows how many requests are waiting in the queue waiting
+same time, while `encodeQueueSize` shows how many requests are waiting in the queue
 for previous encodes to finish.
-Errors are reported either by immediately throwing an exception, if case the arguments
+Errors are reported either by immediately throwing an exception, in case the arguments
 or the order of method calls violates the API contract, or by calling the `error()`
 callback for problems encountered in the codec implementation.
 If encoding completes successfully the `output()`
 callback is called with a new encoded chunk as an argument.
-Another important detail here is that frames need to be told when they are nor
+Another important detail here is that frames need to be told when they are no
 longer needed by calling `close()`.
 
 ```js
@@ -261,7 +261,7 @@ Setting up a `VideoDecoder` is similar to what's been done for the
 `VideoEncoder`: two functions are passed when the decoder is created, and codec
 parameters are given to `configure()`.
 
-The set of codec parameters can vary from codec to codec, for example H.264 codec
+The set of codec parameters varies from codec to codec. For example H.264 codec
 might need a [binary blob](https://wicg.github.io/web-codecs/#dom-audiodecoderconfig-description)
 of avcC, unless it's encoded in so called AnnexB format ( `encoderConfig.avc = { format: "annexb" }` ).
 
@@ -284,10 +284,10 @@ decoder.configure(config);
 ```
 
 Once the decoder is initialized, you can start feeding it with `EncodedVideoChunk` objects.
-In order to create a chunk, you'll need
-- a [`BufferSource`](https://developer.mozilla.org/en-US/docs/Web/API/BufferSource)of encoded video data
+To create a chunk, you'll need:
+- A [`BufferSource`](https://developer.mozilla.org/en-US/docs/Web/API/BufferSource) of encoded video data
 - the chunk's start timestamp in microseconds (media time of the first encoded frame in the chunk)
-- the chunk's type
+- the chunk's type, one of:
   - `key` if the chunk can be decoded independently from previous chunks
   - `delta` if the chunk can only be decoded after one or more previous chunks have been decoded
 
@@ -369,7 +369,7 @@ async function render_frame() {
 
 ## Demo
 
-The demo below shows how animation frames from a canvas are
+The demo below shows how animation frames from a canvas are:
 - captured at 25fps into a `ReadableStream` by `MediaStreamTrackProcessor`
 - transferred to a web worker
 - encoded into H.264 video format
