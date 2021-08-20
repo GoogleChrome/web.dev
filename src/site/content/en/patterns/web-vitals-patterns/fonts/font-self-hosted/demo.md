@@ -1,5 +1,5 @@
 ---
-patternId: fonts-first-party
+patternId: web-vitals-patterns/fonts/fonts-self-hosted
 ---
 
 <!DOCTYPE html>

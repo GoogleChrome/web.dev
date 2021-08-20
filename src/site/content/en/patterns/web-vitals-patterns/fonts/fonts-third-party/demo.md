@@ -1,5 +1,5 @@
 ---
-patternId: fonts-third-party
+patternId: web-vitals-patterns/fonts/fonts-third-party
 ---
 
 <!DOCTYPE html>
