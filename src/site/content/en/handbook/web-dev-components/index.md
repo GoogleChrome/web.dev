@@ -339,15 +339,17 @@ element, and add the `w-ml--l` class to the label. See below:
 
 ## Code pattern {: #codepattern }
 
-A component that displays a demo and code snippets, organized in tabs,
-side by side.
+A component that displays a demo and code snippets side by side,
+organized in tabs.
 
-The height of the component is determined by the code snippet with the most
-code lines. It can be overridden by passing the optional height attribute
+Component height is determined by the code snippet with the most
+code lines. 
+
+To change the component height, specify the height value in pixels
 in the shortcode.
 
 ```text
-{% raw %}{% CodePattern 'pattern-id' optional-height-in-px %}{% endraw %}
+{% raw %}{% CodePattern 'pattern-id', optional-height-in-px %}{% endraw %}
 ```
 
 {% CodePattern 'example-set/example-pattern', 500 %}
