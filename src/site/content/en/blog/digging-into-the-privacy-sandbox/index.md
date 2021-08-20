@@ -94,9 +94,9 @@ The [Attribution Reporting](https://github.com/csharrison/conversion-measurement
 1. An event on a publisher's website, such as a user viewing or clicking an ad. 
 1. A subsequent conversion on an advertiser site.
 
-This API supports two types of **attribution measurement**:
-* **Click-through**: available in the first implementation of this API, currently in [origin trial](https://web.dev/conversion-measurement/#browser-support). 
-* **View-through**: see [public explainer](https://github.com/WICG/conversion-measurement-api#event-level-reports-clicks-and-views).
+This API supports **click-through** and **view-through** measurement.
+
+Other features in this API include cross-device attribution reporting and app-to-web attribution reporting. 
 
 The API also offers two types of **attribution reports**:
 
