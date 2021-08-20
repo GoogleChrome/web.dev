@@ -9,12 +9,18 @@
   <style>
     html, body {
       height: 100%;
+      margin: 0;
     }
     figure {
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      margin: 0;
+    }
+    figure > img {
+      max-width: 100%;
+      object-fit: contain;
     }
   </style>
   {% for assetName, asset in pattern.assets %}
