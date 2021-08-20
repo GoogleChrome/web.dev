@@ -300,9 +300,9 @@ verify that each token is used only once. To mitigate risk, issuers could also s
 
 ### Request mechanisms
 
-It might be possible to allow for sending RRs outside of `fetch()`, for example with navigation 
-requests. Sites might also be able to include issuer data in HTTP response headers to enable token 
-redemption in parallel with page loading.
+It might be possible to allow for sending redemption records outside of `fetch()`, for example with 
+navigation requests. Sites might also be able to include issuer data in HTTP response headers to 
+enable token redemption in parallel with page loading.
 
 **To reiterate: this proposal needs your feedback!** If you have comments, please
 [create an issue](https://github.com/WICG/trust-token-api/issues/new) on the
