@@ -332,7 +332,7 @@ response header:
 
 ## Can a user stop sites from getting their browser's FLoC cohort?
 
-If a user disables Privacy Sandbox in chrome://settings/privacySandbox, the browser will not provide 
+If a user disables Privacy Sandbox in `chrome://settings/privacySandbox`, the browser will not provide 
 the user's cohort when asked for it via JavaScript: the promise returned by 
 `document.interestCohort()` will reject.
 

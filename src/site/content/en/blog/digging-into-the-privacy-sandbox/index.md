@@ -21,7 +21,7 @@ feedback:
 ## Summary
 
 * This post outlines APIs and concepts from the [Privacy Sandbox](https://www.chromium.org/Home/chromium-privacy/privacy-sandbox) proposals.
-* The proposals are inviting feedback from the community, particularly from those in the advertising space (publishers, advertisers, and ad tech companies), to suggest missing use cases and share information about how to support your business use cases.
+* The proposal authors are inviting feedback from the community, particularly from those in the advertising space (publishers, advertisers, and ad tech companies), to suggest missing use cases and share information about how to support your business use cases.
 * You can comment on the proposals by filing issues on [the repositories linked to below](#proposals).
 * There's a [glossary](#glossary) for the proposals at the end of this post.
 
@@ -126,7 +126,7 @@ First-party-data and contextual ad selection can be achieved without knowing any
 Interest-based ad selection currently uses cookies to track user behaviour across as many sites as possible. Many people are concerned about the privacy implications of ad selection. The Privacy Sandbox proposes two alternatives, for remarketing and for interest-based selection:
 
 * [FLEDGE](https://github.com/WICG/turtledove/blob/main/FLEDGE.md): for **remarketing use cases**.<br> 
-The API is designed so it cannot be used by third parties to track user browsing behaviour: the user's browser, not the advertiser or ad tech platform, stores advertiser-defined interest groups that the user's browser is associated with. The user’s browser combines interest group data with ad buyer/seller data and business logic to conduct an "auction" locally on the user's device to select an ad, rather than sharing data with a third party.
+The API is designed so it cannot be used by third parties to track user browsing behaviour: the user's browser, not the advertiser or ad tech platform, stores advertiser-defined interest groups that the user's browser is associated with. The user's browser combines interest group data with ad buyer/seller data and business logic to conduct an "auction" locally on the user's device to select an ad, rather than sharing data with a third party.
 
 * [FLoC](https://github.com/jkarlin/floc): for **interest-based audiences**.<br>
 The API generates clusters of similar people, known as "cohorts". Data is generated locally on the user's browser, not by a third party. The browser shares the generated cohort data, but this cannot be used to identify or track individual users. This enables companies to select ads based on the behavior of people with similar browsing behaviour, while preserving privacy.
