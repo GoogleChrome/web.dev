@@ -1,0 +1,89 @@
+
+:root {
+    --carousel-image-width: 600px;
+    --carousel-image-height: 400px;
+    --button-color: #878787;
+    --button-hover: black;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 3em minmax(0px, var(--carousel-image-width)) 3em;
+}
+
+.left-column, .right-column {
+    padding-bottom: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#slide-container {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+    padding-bottom: 1em;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+}
+
+.slide {
+    scroll-snap-align: center;
+}
+
+.slide img {
+    object-fit: contain;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    cursor: pointer;
+    background-color: var(--button-color);
+    height: 1em;
+    width: 1em;
+    border-radius: 50%;
+    border: 1em solid white;
+}
+
+.dot.active,
+.dot:hover {
+    background-color: var(--button-hover);
+}
+
+#back-button, #forward-button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
+}
+
+#back-button:hover .arrow, #forward-button:hover .arrow {
+    border-color: var(--button-hover);
+}
+
+.arrow {
+    position: absolute;
+    width: 1em; 
+    height: 1em;
+}
+
+.arrow-left {
+    right: 5px;
+    transform: rotate(45deg);
+    border-left: .5em solid var(--button-color);
+    border-bottom: .5em solid var(--button-color); 
+}
+
+.arrow-right {
+    left: 5px;
+    transform: rotate(45deg);
+    border-top: .5em solid var(--button-color);
+    border-right: .5em solid var(--button-color);
+}
