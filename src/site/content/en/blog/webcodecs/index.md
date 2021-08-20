@@ -50,9 +50,19 @@ streaming, etc.
 
 ## Current status {: #status }
 
-The [WebCodecs API](https://wicg.github.io/web-codecs/) is available in Chrome 94.
+<div class="w-table-wrapper">
 
-## Video frames
+| Step                                         | Status                       |
+| -------------------------------------------- | ---------------------------- |
+| 1. Create explainer                          | [Complete](https://github.com/WICG/web-codecs/blob/master/explainer.md)        |
+| 2. Create initial draft of specification     | [Complete](https://wicg.github.io/web-codecs/)         |
+| 3. Gather feedback & iterate on design       | Complete                     |
+| 4. Origin trial                              | Complete                     |
+| 5. Launch                                    | Chrome 94                    |
+
+</div>
+
+## Video processing workflow
 
 Frames are the centerpiece in video processing. Thus in WebCodecs most classes
 either consume or produce frames. Video encoders convert frames into encoded
@@ -218,9 +228,8 @@ function handleChunk(chunk, metadata) {
   if (metadata.decoderConfig) {
     // Decoder needs to be configured (or reconfigured) with new parameters
     // when metadata has a new decoderConfig.
-    // Usually it happens in the beginning or when encoder has a new codec
-    // extra data (aka decoderConfig.description).
-
+    // Usually it happens in the beginning or when the encoder has a new
+    // codec specific binary configuration. (VideoDecoderConfig.description).
     fetch('/upload_extra_data',
     {
       method: 'POST',
@@ -291,10 +300,9 @@ To create a chunk, you'll need:
   - `key` if the chunk can be decoded independently from previous chunks
   - `delta` if the chunk can only be decoded after one or more previous chunks have been decoded
 
-Any chunks emitted by the encoder are ready for the decoder as is, although it's
-hard to imagine a real-world use case for decoding newly encoded chunks (except for the demo below).
-All of the things said above about the asynchronous nature of encoder's methods are equally true
-for decoders.
+Also any chunks emitted by the encoder are ready for the decoder as is.
+All of the things said above about error reporting and the asynchronous nature
+of encoder's methods are equally true for decoders as well.
 
 ```js
 let responses = await downloadVideoChunksFromServer(timestamp);
@@ -323,7 +331,7 @@ memory used by the web application.
 
 ```js
 let cnv = document.getElementById('canvas_to_render');
-let ctx = cnv.getContext('2d', { alpha: false });
+let ctx = cnv.getContext('2d');
 let ready_frames = [];
 let underflow = true;
 let time_base = 0;
