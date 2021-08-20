@@ -91,10 +91,9 @@ moved between workers.
 
 ### Encoding
 
-<figure class="w-figure">
-  {% Img src="Encoding.png", alt="The path from a Canvas or an ImageBitmap to the network or to storage", width="960", height="720" %}
-  <figcaption class="w-figcaption">The path from a <code>Canvas</code> or an <code>ImageBitmap</code> to the network or to storage</figcaption>
-</figure>
+```html
+  <Img src="Encoding.png" alt="The path from a Canvas or an ImageBitmap to the network or to storage" width="960" height="720" />
+```
 
 It all starts with a `VideoFrame`.
 There are three ways to construct video frames
@@ -254,10 +253,9 @@ await encoder.flush();
 
 ### Decoding
 
-<figure class="w-figure">
-  {% Img src="Decoding.png", alt="The path from the network or storage to a Canvas or an ImageBitmap.", width="960", height="720" %}
-  <figcaption class="w-figcaption">The path from the network or storage to a <code>Canvas</code> or an <code>ImageBitmap</code>.</figcaption>
-</figure>
+```html
+  <Img src="Decoding.png" alt="The path from the network or storage to a Canvas or an ImageBitmap." width="960" height="720" />
+```
 
 Setting up a `VideoDecoder` is similar to what's been done for the
 `VideoEncoder`: two functions are passed when the decoder is created, and codec
