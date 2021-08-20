@@ -19,10 +19,10 @@ layout: default
     <div class="w-grid__columns w-grid__columns--three" role="list">
       {% for setId, set in patterns.sets %}
         {% if (site.env == 'prod' and set.draft) or set.suite %}
-          {# Don't display drafts suite cards in prod, and don't display
-            sets that are have a parent suite #}
+          {# Don't display draft suite cards in prod, and don't display
+            sets that have a parent suite #}
         {% else %}
-            {{ PatternSuiteCard(set) }}
+          {{ PatternSuiteCard(set) }}
         {% endif %}
       {% endfor %}
     </div>
