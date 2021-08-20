@@ -1,45 +1,34 @@
 {
   "title": "Headline",
+  "summary": "A pattern to help you maintain semantic hierarchy and appropriate aesthetic for headings.",
   "sort": "source",
   "context": {
-    "title": "A headline",
-    "summary": "Donec ullamcorper nulla non metus auctor fringilla. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    "text": "A headline is just a heading tag with utility classes",
+    "utilities": "text-size-6"
   },
   "variants": [
     {
-      "name": "one",
+      "name": "H2 styles",
       "context": {
-        "modifier": "--one"
+        "utilities": "text-size-5"
       }
     },
     {
-      "name": "two",
+      "name": "H3 styles",
       "context": {
-        "modifier": "--two"
+        "utilities": "text-size-4"
       }
     },
     {
-      "name": "two-small",
+      "name": "H4 styles",
       "context": {
-        "modifier": "--two-small"
+        "utilities": "text-size-3"
       }
     },
     {
-      "name": "two-faded",
+      "name": "Utility overriding look and feel",
       "context": {
-        "modifier": "--two-faded"
-      }
-    },
-    {
-      "name": "three",
-      "context": {
-        "modifier": "--three"
-      }
-    },
-    {
-      "name": "four",
-      "context": {
-        "modifier": "--four"
+        "utilities": "tt-upper color-highlight-text"
       }
     }
   ]

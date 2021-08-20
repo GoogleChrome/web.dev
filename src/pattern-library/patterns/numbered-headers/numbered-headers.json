@@ -1,8 +1,13 @@
 {
   "title": "Numbered headers",
-  "summary": "Default view is vertical layout.",
+  "summary": "A simple pattern for adding numbers to headed sections of content. Use the [cluster compostion](/design-system/css-compositions/#cluster) to [render the numbers horizontally](#horizontal).",
+  "keyLinks": [
+    {
+      "label": "Sass File",
+      "url": "https://github.com/GoogleChrome/web.dev/tree/main/src/scss/blocks/_numbered-headers.scss"
+    }
+  ],
   "context": {
-    "direction": "w-numbered-header--vertical",
     "steps": [
       {
         "title": "Run tests on your site",
@@ -23,7 +28,9 @@
       "name": "horizontal",
       "title": "Horizontal",
       "context": {
-        "direction": "w-numbered-header--horizontal"
+        "utilities": {
+          "heading": "cluster"
+        }
       }
     }
   ]

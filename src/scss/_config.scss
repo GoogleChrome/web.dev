@@ -26,6 +26,11 @@ $gorko-config: (
     'output': 'standard',
     'property': 'background'
   ),
+  't-bg': (
+    'items': $gorko-colors,
+    'output': 'standard',
+    'property': 'background'
+  ),
   'box': (
     'items': (
       'hidden': 'none',
@@ -38,6 +43,11 @@ $gorko-config: (
   ),
   'color': (
     'items': $gorko-theme-keys,
+    'output': 'standard',
+    'property': 'color'
+  ),
+  't-color': (
+    'items': $gorko-colors,
     'output': 'standard',
     'property': 'color'
   ),
@@ -129,10 +139,26 @@ $gorko-config: (
     'output': 'standard',
     'property': 'padding-inline'
   ),
+  'ta': (
+    'items': (
+      'center': 'center',
+      'left': 'left',
+      'right': 'right'
+    ),
+    'output': 'standard',
+    'property': 'text-align'
+  ),
   'text': (
     'items': $gorko-size-scale,
     'output': 'standard',
     'property': 'font-size'
+  ),
+  'tt': (
+    'items': (
+      'upper': 'uppercase'
+    ),
+    'output': 'standard',
+    'property': 'text-transform'
   ),
   'weight': (
     'items': $gorko-font-weights,

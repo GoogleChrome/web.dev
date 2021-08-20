@@ -1,3 +1,9 @@
-<div class="w-banner {{ data.modifier }}" role="banner">
-  {{ data.content | safe }}
+<div class="banner {{ data.utilities.main }}" role="banner">
+  <div class="banner__content flow">
+    {{ data.content | md | safe }}
+  </div>
+  <div class="banner__actions cluster">
+    <button class="button {{ data.utilities.button }}">Action 1</button>
+    <button class="button {{ data.utilities.button }}">Action 2</button>
+  </div>
 </div>

@@ -1,1 +1,4 @@
-Default banners can be added to site templates (for example, landing pages) to provide timely information to users (for example, an alert about an upcoming conference). Don't use default banners in the body of a post; instead, use the body variant.
+The banner is used to present a message to the user with an optional actions.
+
+You can style it using [theme utility classes and/or token utility classes](/design-system/colors).
+These are generally applied to the banner itself, and the buttons. All of these are optional.

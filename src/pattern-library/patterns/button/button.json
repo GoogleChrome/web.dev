@@ -1,11 +1,10 @@
 {
   "title": "Button",
-  "summary": "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   "sort": "source",
   "keyLinks": [
     {
       "label": "Sass file",
-      "url": "https://github.com/GoogleChrome/web.dev/blob/main/src/styles/components/_buttons.scss"
+      "url": "https://github.com/GoogleChrome/web.dev/blob/main/src/styles/components/_button.scss"
     }
   ],
   "context": {
@@ -17,7 +16,7 @@
       "title": "Primary",
       "context": {
         "text": "A primary button",
-        "modifier": "w-button--primary"
+        "type": "primary"
       }
     },
     {
@@ -25,7 +24,16 @@
       "title": "Secondary",
       "context": {
         "text": "A secondary button",
-        "modifier": "w-button--secondary"
+        "type": "secondary"
+      }
+    },
+    {
+      "name": "disabled",
+      "title": "Disabled",
+      "context": {
+        "text": "A disabled button",
+        "type": "secondary",
+        "attribute": "disabled"
       }
     },
     {
@@ -33,8 +41,7 @@
       "title": "With Icon",
       "context": {
         "text": "A button with an icon",
-        "icon": "file_download",
-        "modifier": "w-button--with-icon"
+        "icon": "plus.svg"
       }
     },
     {
@@ -42,8 +49,8 @@
       "title": "Primary With Icon",
       "context": {
         "text": "A primary button with an icon",
-        "icon": "file_download",
-        "modifier": "w-button--primary w-button--with-icon"
+        "icon": "plus.svg",
+        "type": "primary"
       }
     }
   ]

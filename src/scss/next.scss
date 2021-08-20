@@ -13,11 +13,11 @@ $generate-utility-classes: false;
 /// GLOBAL VARIABLES
 /// Global variables that should be accessible in all authored CSS
 $global-gutter: map-get($gorko-space-scale, 'size-1');
-$global-standard-transition-duration: 250ms;
-$global-slinky-transition-duration: 500ms;
-$global-slinky-transition-bezier: cubic-bezier(0.42, 0, 0.32, 1.17);
+
+// NOTE: there are more design token-led global variables in _tokens.scss
 
 /// MIXINS
+@import 'mixins/button-base-styles';
 @import 'mixins/rounded-border';
 @import 'mixins/vertically-align-label';
 
@@ -153,6 +153,18 @@ ol:not([class]) {
   }
 }
 
+dt {
+  @include apply-utility('weight', 'bold');
+}
+
+dt ~ dd {
+  margin-inline-start: 2ch;
+}
+
+dd + dt {
+  margin-top: 0.5em;
+}
+
 /// Blockquotes
 
 blockquote {
@@ -170,9 +182,43 @@ blockquote > * {
   @include apply-utility('measure', 'short');
 }
 
-// Make sure figcaptions are central with the blockquote
-// when they appear in the same <figure> context
-figure > blockquote ~ figcaption {
+/// @extend is *very* naughty if used unwisely
+/// However, we want child elements to flow without
+/// having to add a class so in this instance, it
+/// can slide
+blockquote {
+  @extend .flow;
+}
+
+/// <q> elements are ideal, but we need to make sure
+/// any element is styled as a quote
+blockquote > *::before {
+  content: open-quote;
+}
+
+blockquote > *::after {
+  content: close-quote;
+}
+
+/// It's best to reset content rather than
+/// add quotes only to the first-child, because
+/// quotes might actually be multiline
+blockquote > cite::before,
+blockquote > cite::after {
+  content: unset;
+}
+
+/// Make sure figcaptions are central with the blockquote
+/// when they appear in the same <figure> context.
+// Same applies to cites
+figure > blockquote ~ figcaption,
+blockquote cite {
+  margin-inline: auto;
+  display: block;
+  font-style: normal;
+  font-size: get-size('size-2');
+
+  @include apply-utility('weight', 'bold');
   @include apply-utility('leading', 'flat');
 }
 
@@ -180,12 +226,12 @@ figure > blockquote ~ figcaption {
 
 caption,
 figcaption {
-  margin-block-start: get-size('size-1');
   margin-inline: auto;
   font-style: italic;
   text-align: center;
 
   @include apply-utility('measure', 'short');
+  @include apply-utility('gap-top', 'size-1');
 }
 
 /// Tables
@@ -215,6 +261,26 @@ tr td {
 
 caption {
   caption-side: bottom;
+}
+
+table ul:not([class]),
+table ol:not([class]) {
+  margin: 0;
+}
+
+/// Cell alignment
+table[data-alignment='top'] {
+  th,
+  td {
+    vertical-align: top;
+  }
+}
+
+table[data-alignment='baseline'] {
+  th,
+  td {
+    vertical-align: top;
+  }
 }
 
 /// Separators
@@ -282,7 +348,7 @@ a:active {
 
 /// General interactive states
 
-:focus {
+:focus-visible {
   outline: 2px solid var(--color-focus-ring);
   outline-offset: 4px;
 }
@@ -297,6 +363,11 @@ a:active {
   background: var(--color-core-text);
 }
 
+/// Misc web components that need to be blocks
+web-copy-code {
+  display: block;
+}
+
 /// COMPOSITIONS
 @import 'compositions/auto-grid';
 @import 'compositions/cluster';
@@ -305,15 +376,25 @@ a:active {
 @import 'compositions/switcher';
 
 /// BLOCKS
+@import 'blocks/aside';
+@import 'blocks/banner';
 @import 'blocks/brand';
+@import 'blocks/button';
+@import 'blocks/fab';
+@import 'blocks/label';
+@import 'blocks/numbered-headers';
 @import 'blocks/skip-link';
 @import 'blocks/stack-nav';
+@import 'blocks/status-list';
+@import 'blocks/table-wrapper';
 @import 'blocks/toggle-switch';
 
 /// UTILITY CLASSES
+@import 'utilities/all-center';
 @import 'utilities/flow';
 @import 'utilities/focus-ring';
 @import 'utilities/region';
+@import 'utilities/scrollbar';
 @import 'utilities/visually-hidden';
 @import 'utilities/wrapper';
 

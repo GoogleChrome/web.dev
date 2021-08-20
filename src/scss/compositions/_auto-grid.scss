@@ -9,11 +9,13 @@
 
 /// --auto-grid-min-item-size (16rem): How large each item should be
 /// ideally, as a minimum.
-///
+
+/// --auto-grid-placement (auto-fill): Set either auto-fit or auto-fill
+/// to change how empty grid tracks are handled
 .auto-grid {
   display: grid;
   grid-template-columns: repeat(
-    auto-fill,
+    var(--auto-grid-placement, auto-fill),
     minmax(var(--auto-grid-min-item-size, 16rem), 1fr)
   );
   grid-gap: var(--gutter, $global-gutter);

@@ -1,0 +1,45 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/aside
+.aside {
+  --gutter: 0.5rem;
+
+  @extend .flow;
+
+  padding: $global-gutter;
+  max-width: 35rem;
+  margin-inline: auto;
+  border-radius: $global-radius-large;
+
+  @include apply-utility('bg', 'mid-bg'); // For if no BG utility is added
+  @include apply-utility('leading', 'short');
+
+  a {
+    color: currentColor;
+    text-decoration-color: currentColor;
+  }
+
+  a:focus {
+    outline-color: currentColor;
+  }
+}
+
+.aside__icon,
+.aside svg {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+/// Blocks usually shouldn't control spacing, but
+/// the aside is often found in `.flow` contexts
+/// so we need to make sure the space above and below
+/// is consistent
+.aside,
+.aside + * {
+  @include apply-utility('flow-space', 'size-2');
+}
+
+/// Now, we want to make sure all spacing inside the
+/// element stays consistent too
+.aside > * {
+  @include apply-utility('flow-space', 'base');
+}

@@ -1,0 +1,16 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/tables
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  table {
+    min-width: 30rem;
+    width: 100%;
+  }
+
+  td,
+  th {
+    white-space: nowrap;
+  }
+}
