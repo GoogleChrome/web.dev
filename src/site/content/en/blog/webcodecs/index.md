@@ -92,12 +92,12 @@ moved between workers.
 ### Encoding
 
 ```html
-  <Img src="Encoding.png" alt="The path from a Canvas or an ImageBitmap to the network or to storage" width="960" height="720" />
+  <img src="Encoding.png" alt="The path from a Canvas or an ImageBitmap to the network or to storage" width="960" height="720" />
 ```
 
 It all starts with a `VideoFrame`.
 There are three ways to construct video frames.
-+ From an image source like canvas, image bitmap or a video element.
++ From an image source like a canvas, an image bitmap, or a video element.
 ```js
 const cnv = document.createElement('canvas');
 // draw something on the canvas
