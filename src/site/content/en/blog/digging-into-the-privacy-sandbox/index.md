@@ -106,7 +106,7 @@ The API also offers two types of **attribution reports**:
 
 Both report types can be used simultaneously: they're complementary. 
 
-Learn more about the status of these features and how to try this API [here](https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting-introduction/#status).
+[Introduction to Attribution Reporting](https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting-introduction/#status) explains more about the status of these features and how to try this API.
 
 ### Select ads
 
