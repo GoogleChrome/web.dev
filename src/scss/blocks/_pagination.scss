@@ -1,0 +1,23 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 $global-gutter;
+}
+
+.pagination__action:last-child {
+  text-align: right;
+}
+
+.pagination__status {
+  display: none;
+  padding: 0.3em 0.8em;
+
+  @include apply-utility('bg', 'mid-bg');
+}
+
+@include media-query('md') {
+  .pagination__status {
+    display: inline-block;
+  }
+}
