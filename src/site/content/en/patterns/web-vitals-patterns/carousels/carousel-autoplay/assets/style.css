@@ -6,13 +6,6 @@
     --button-hover: black;
 }
 
-body {
-    padding: 1em;
-    font-family: system-ui;
-    display: grid;
-    justify-items: center;
-}
-
 .grid {
     display: grid;
     grid-template-columns: 3em minmax(0px, var(--carousel-image-width)) 3em;
