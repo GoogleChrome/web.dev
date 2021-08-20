@@ -1,0 +1,37 @@
+  body {
+      overscroll-behavior-y: none;
+      font-family: system-ui;
+      padding: 2em;
+  }
+
+  .banner {
+      animation: slideIn 1000ms ease-in-out;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      padding: 1rem;
+      background-color: yellow;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  }
+
+  @keyframes slideIn {
+      from {
+          transform: translateY(100vh)
+      }
+
+      to {
+          transform: translateY(0vh)
+      }
+  }
+
+  .close-button {
+      background: transparent;
+      border: none;
+      padding: 1em;
+      font-size: 1em;
+      position: absolute;
+      right: 0;
+      top: 0;
+      cursor: pointer;
+  }

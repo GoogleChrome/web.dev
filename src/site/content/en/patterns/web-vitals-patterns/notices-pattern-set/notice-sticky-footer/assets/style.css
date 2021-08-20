@@ -1,0 +1,26 @@
+body {
+    font-family: system-ui;
+    padding: 2em;
+    overscroll-behavior-y: none;
+}
+
+.banner {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 1rem;
+    background-color: yellow;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.close-button {
+    background: transparent;
+    border: none;
+    padding: 1em;
+    font-size: 1em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
