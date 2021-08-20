@@ -58,7 +58,7 @@ Chrome DevTools **Network** and **Application** tabs.
 </figure>
 
 {% Aside %}
-The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party }
+The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party 
 cookies or other tracking mechanisms. See [Digging into the Privacy Sandbox](/digging-into-the-privacy-sandbox)
 for an overview of all the proposals.
 
