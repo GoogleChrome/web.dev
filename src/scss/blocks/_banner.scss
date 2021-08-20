@@ -24,13 +24,6 @@
   margin-inline-start: auto;
   margin-block-start: auto;
 
-  // /// The button padding misaligns the buttons because they are transparent
-  // /// so this fixes that for us
-  // transform: translate(
-  //   $banner-actions-button-padding-x,
-  //   $banner-actions-button-padding-y
-  // );
-
   button {
     padding: $banner-actions-button-padding-y $banner-actions-button-padding-x;
   }
