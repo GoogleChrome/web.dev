@@ -30,7 +30,7 @@ site/content/en/patterns/SomePatternSuite/
 * **index.md** - The overview and description of the pattern
   * mandatory fields in frontmatter: *layout* and *title*
 
-  ```
+  ```text
   ---
   layout: pattern
   title: Example Pattern
