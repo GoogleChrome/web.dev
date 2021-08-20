@@ -1,6 +1,6 @@
 ---
 layout: pattern
-title: Autoplay carousel
+title: Example pattern
 description: A description for the example pattern
 date: 2021-08-10
 draft: true

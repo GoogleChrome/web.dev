@@ -6,6 +6,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    figure {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    figure > img {
+      max-width: 100%;
+      object-fit: contain;
+    }
+  </style>
   {% for assetName, asset in pattern.assets %}
     {% if asset.type == 'css' %}
       <style>{{ asset.content | safe }}</style>
@@ -13,10 +30,11 @@
   {% endfor %}
 </head>
 <body>
+  {{ content | safe }}
   {{ pattern.assets['body.html'].content | safe }}
   {% for assetName, asset in pattern.assets %}
     {% if asset.type == 'js' %}
-      <script>{{ asset.content | safe }}</script>
+      <script>{{ asset.content | cspHash | safe }}</script>
     {% endif %}
   {% endfor %}
 </body>

@@ -131,7 +131,7 @@ pageScripts:
             <h2>{{ "i18n.patterns.other_patterns" | i18n(locale) }}</h2>
           {% endif %}
           {% set first = false %}
-          <div>
+          <div class="flow">
             <h3 id="{{pattern.id}}"><a href="/patterns/{{pattern.id}}">{{pattern.title}}</a></h3>
             {{ pattern.content | safe }}
             {% CodePattern pattern.id %}
@@ -142,7 +142,7 @@ pageScripts:
     {% endif %}
   </div>
 
-  <section class="code-patterns-nav--side">
+  <div class="code-patterns-nav--side">
     <div class="code-patterns-nav__filter">
       <input type="text" placeholder="filter"/>
     </div>
@@ -157,6 +157,6 @@ pageScripts:
         {% endif %}
       {% endfor %}
     </nav>
-  </div>
 
+  </div>
 </section>
