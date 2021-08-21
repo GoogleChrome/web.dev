@@ -62,5 +62,4 @@ patternId: web-vitals-patterns/images/img-tag
         <p>Image is displayed at either its original size or its "object-fit: contain" size - whichever of these is smaller.<p>
         <img class="scale-down" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/DmZBhXhFnBS7tl8TW4Fn.jpg" width="800" height="533">
     </div>
-
 </body>
