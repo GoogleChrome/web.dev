@@ -13,6 +13,8 @@ thumbnail: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/SN6GIsxmcINXJZKszOTr.jpeg
 description: |
   WebGPU enables high-performance 3D graphics and data-parallel computation on
   the web.
+origin_trial:
+    url: https://developer.chrome.com/origintrials/#/view_trial/118219490218475521
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
