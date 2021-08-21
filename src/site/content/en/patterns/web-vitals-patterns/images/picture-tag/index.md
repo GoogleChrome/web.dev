@@ -1,9 +1,10 @@
 ---
 layout: pattern
-title: Art direction
+title: <picture> tag
 description: Avoid layout shifts when using the <picture> tag
 date: 2021-08-18
 updated: 2021-08-18
+height: 300
 ---
 
 The

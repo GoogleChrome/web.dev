@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: Autoplay carousel
-description: Use CSS scroll snap to create an autoplay carousel
+description: Use CSS scroll snap to create a performant autoplay carousel
 date: 2021-08-17
 height: 600
 ---

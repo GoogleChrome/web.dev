@@ -4,6 +4,7 @@ title: <img> tag
 description: Use the width and height attributes to avoid layout shifts
 date: 2021-08-17
 updated: 2021-08-17
+height: 300
 ---
 
 Setting the `width` and `height` attributes on `<img>` tags helps prevent

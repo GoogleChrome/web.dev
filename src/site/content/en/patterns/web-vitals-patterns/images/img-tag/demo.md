@@ -17,13 +17,26 @@ patternId: web-vitals-patterns/images/img-tag
         h1 {
             text-align: center;
         }
-        img {
-            width: 100%;
-        }
         .section {
             margin: 1em;
             padding: 1em;
             background-color: #F5F5F5;
+        }
+        .cover {
+            object-fit: cover;
+            width: 100%
+        }
+        .contain {
+            object-fit: contain;
+            width: 100%
+        }
+        .fill {
+            object-fit: fill;
+            width: 100%;
+        }
+        .scale-down {
+            object-fit: scale-down;
+            width: 100%;
         }
     </style>
 </head>
@@ -31,42 +44,23 @@ patternId: web-vitals-patterns/images/img-tag
     <h1>&lt;img&gt; tag</h1>
     <div class="section">
         <h2>object-fit: cover</h2>
-        <img src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/bhO3chAuvC09AxtHyx7e.jpg" width="800" height="400" style="object-fit: cover">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Maecenas volutpat blandit aliquam etiam erat velit. Integer eget aliquet nibh praesent.
-        </p>
+        <p>Image fills container. If the image has a different aspect ratio than container, it will be cropped to fit.</p>
+        <img class="cover" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/DmZBhXhFnBS7tl8TW4Fn.jpg" width="800" height="533">
     </div>
     <div class="section">
         <h2>object-fit: contain</h2>
-        <img src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/bhO3chAuvC09AxtHyx7e.jpg" width="800" height="400" style="object-fit: contain">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Maecenas volutpat blandit aliquam etiam erat velit. Integer eget aliquet nibh praesent.
-        </p>
+        <p>Image is displayed at its original aspect ratio. If the image has a different aspect ratio than its container, it will be displayed "letterbox" style.</p>
+        <img class="contain" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/DmZBhXhFnBS7tl8TW4Fn.jpg" width="800" height="533">
     </div>
     <div class="section">
         <h2>object-fit: fill</h2>
-        <img src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/bhO3chAuvC09AxtHyx7e.jpg" width="800" height="400" style="object-fit: fill">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Maecenas volutpat blandit aliquam etiam erat velit. Integer eget aliquet nibh praesent.
-        </p>
+        <p>Image fills container. If image has a different aspect ratio than container, it will be stretched to fit.</p>
+        <img class="fill" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/DmZBhXhFnBS7tl8TW4Fn.jpg" width="800" height="533">
     </div>
     <div class="section">
         <h2>object-fit: scale-down</h2>
-        <img src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/bhO3chAuvC09AxtHyx7e.jpg" width="800" height="400" style="object-fit: scale-down">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Maecenas volutpat blandit aliquam etiam erat velit. Integer eget aliquet nibh praesent.
-        </p>
+        <p>Image is displayed at either its original size or its "object-fit: contain" size - whichever of these is smaller.<p>
+        <img class="scale-down" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/DmZBhXhFnBS7tl8TW4Fn.jpg" width="800" height="533">
     </div>
-    <div class="section">
-        <h2>object-fit: none</h2>
-        <img src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/bhO3chAuvC09AxtHyx7e.jpg" width="800" height="400" style="object-fit: none">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Maecenas volutpat blandit aliquam etiam erat velit. Integer eget aliquet nibh praesent.
-        </p>
-    </div>
+
 </body>
