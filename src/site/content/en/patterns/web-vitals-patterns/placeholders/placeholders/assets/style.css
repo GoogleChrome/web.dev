@@ -1,0 +1,43 @@
+:root {
+    --placeholder-primary: #bfbfbf;
+    --placeholder-secondary: #cccccc;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    width: 100%;
+    max-width: 500px;
+    margin: 1em 0em;
+}
+.item {
+    display: grid;
+    gap: .5em;
+}
+.image-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+.image-container img {
+    width: 100%;
+}
+.text-container {
+    font-size: 1em;
+    height: 1.5em;
+    text-align: center;
+    font-weight: bold;
+}
+@keyframes fade {
+    50% {
+        opacity: .2;
+    }
+}
+.loading {
+    animation: fade ease-in-out 2s infinite;
+}
+.loading .image-container{
+    background-color: var(--placeholder-primary);
+}
+.loading .text-container {
+    background-color: var(--placeholder-secondary);
+}
