@@ -354,10 +354,10 @@ in the shortcode.
 
 {% CodePattern 'example-set/example-pattern', 500 %}
 
-You can embed one of the existing patterns (from /content/en/patterns/
+You can embed one of the existing patterns (from `/content/en/patterns/`
 directory) or add a new one. Check out the
 [examples and documentation](/patterns/example-set/) on how to write new
-Code Patterns.
+code patterns.
 
 
 ## Codepen {: #codepen }
