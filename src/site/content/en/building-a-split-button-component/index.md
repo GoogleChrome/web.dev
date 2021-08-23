@@ -656,6 +656,33 @@ smooth.
   muted="true"
 %}
 
+#### Right-to-left layout
+
+[Logical properties](/learn/css/logical-properties/) do all the complex work.
+Here's the list of logical properties used:
+- `display: inline-flex`
+- `padding-block` and `padding-inline` as a pair, instead of `padding`
+  shorthand, get the benefits of padding the logical sides
+- `border-end-start-radius` and
+  [friends](https://drafts.csswg.org/css-logical/#border-radius-properties) will
+  round corners based on document direction
+- `inline-size`
+- `border-inline-start`
+
+{% Video 
+  src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/lNn1KXfw1GprPJa9RFHO.mp4",
+  class="w-screenshot",
+  autoplay="true",
+  loop="true",
+  muted="true"
+%}
+
+{% Aside 'gotchas' %} 
+The popup element is positioned with `left` and `top` and
+would need adjusted for writing modes like
+[`vertical-rl`](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode).
+{% endAside %}
+
 ## JavaScript
 
 Nearly all of the following JavaScript is to enhance accessibility. Two of my
