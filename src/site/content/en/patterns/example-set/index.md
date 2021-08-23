@@ -13,8 +13,8 @@ Patterns are organized as follows: `/patterns/PatternSuite/PatternSet/Pattern`
 
 To create a new pattern:
 1. Add a new directory in a chosen
-PatternSuite or PatternSet folder. The directory name becomes the ID
-of the pattern. E.g. for a pattern in
+`PatternSuite` or `PatternSet` folder. The directory name becomes the ID
+of the pattern. For example, for a pattern in
 `/patterns/some-suite/my-pattern/` the pattern ID is `some-suite/my-pattern`.
 1. Add the following files to the directory:
 
