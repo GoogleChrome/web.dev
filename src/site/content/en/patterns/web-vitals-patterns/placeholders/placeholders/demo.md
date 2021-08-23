@@ -1,5 +1,5 @@
 ---
-patternId: web-vitals-patterns/loading-content/placeholders
+patternId: web-vitals-patterns/placeholders/placeholders
 ---
 
 <!DOCTYPE html>
