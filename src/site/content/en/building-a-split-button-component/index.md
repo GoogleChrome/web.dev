@@ -428,31 +428,6 @@ The video below attempts to break this microinteraction down, to show how
   muted="true" 
 %}
 
-#### Generic `<svg>` icon styles
-
-All icons are relatively sized to the button `font-size` they're used within by
-using the [`ch`](/learn/css/sizing/#relative-lengths) unit as the
-`inline-size`. Each is also given some styles to help outline icons soft and
-smooth.
-
-```css
-.gui-split-button svg {
-  inline-size: 2ch;
-  box-sizing: content-box;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2px;
-}
-```
-
-{% Video 
-  src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/2vJRCeIhxVitT79q78RR.mp4",
-  class="w-screenshot",
-  autoplay="true",
-  loop="true",
-  muted="true"
-%}
-
 #### Styling the popup button
 
 A `4ch` flexbox for centering an icon and anchoring a popup button list. Like
@@ -655,6 +630,31 @@ alt="The popup in the dark theme.", width="434", height="412", class="w-screensh
   }
 }
 ```
+
+#### Generic `<svg>` icon styles
+
+All icons are relatively sized to the button `font-size` they're used within by
+using the [`ch`](/learn/css/sizing/#relative-lengths) unit as the
+`inline-size`. Each is also given some styles to help outline icons soft and
+smooth.
+
+```css
+.gui-split-button svg {
+  inline-size: 2ch;
+  box-sizing: content-box;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
+```
+
+{% Video 
+  src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/2vJRCeIhxVitT79q78RR.mp4",
+  class="w-screenshot",
+  autoplay="true",
+  loop="true",
+  muted="true"
+%}
 
 ## JavaScript
 
