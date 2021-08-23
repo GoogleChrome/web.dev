@@ -27,8 +27,11 @@ site/content/en/patterns/SomePatternSuite/
                     |--some-asset.ext
 ```
 
-* **index.md** - The overview and description of the pattern
-  * mandatory fields in frontmatter: *layout* and *title*
+### `index.md`
+
+The overview and the description of the pattern.
+
+YAML front matter must contain `layout` and `title`.
 
   ```text
   ---
