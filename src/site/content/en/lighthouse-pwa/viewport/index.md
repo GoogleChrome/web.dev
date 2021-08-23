@@ -11,7 +11,7 @@ web_lighthouse:
 ---
 
 Many search engines rank pages based on how mobile-friendly they are.
-Without a [viewport meta tag](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag),
+Without a [viewport meta tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag),
 mobile devices render pages at typical desktop screen widths and then scale the
 pages down, making them difficult to read.
 
