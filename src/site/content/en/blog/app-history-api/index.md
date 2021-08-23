@@ -4,7 +4,7 @@ subhead: "Standardizing client-side routing through a brand new API which comple
 authors:
   - samthor
 date: 2021-08-25
-hero: image/QMjXarRXcMarxQddwrEdPvHVM242/nfRcF1VBdvRcsYI7RSIQ.jpg
+hero: image/QMjXarRXcMarxQddwrEdPvHVM242/aDcKXxmGtrMVmwZK43Ta.jpg
 alt: "Sculpture adorning the General Post Office, Sydney, Australia"
 description: "Learn about the App History API, a new API which adds improved functionality to build single-page applications."
 tags:
@@ -16,9 +16,6 @@ Single-page applications, or SPAs, are defined by a core feature: these are webs
 
 While SPAs have been able to bring you this feature via the History API (or in limited cases, by adjusting the site's #hash part), it's a [clunky API][clunky-history-api] developed long-before SPAs were the norm—and the web is crying out for a completely new approach.
 The App History API is a proposed API that completely overhauls this space, rather than trying to simply patch up History API's rough edges (e.g., [Scroll Restoration][scroll-restoration] patched the History API rather than trying to reinvent it).
-
-[clunky-history-api]: https://html5doctor.com/interview-with-ian-hickson-html-editor/#:~:text=My%20biggest%20mistake%E2%80%A6there%20are%20so%20many%20to%20choose%20from!%20pushState()%20is%20my%20favourite%20mistake
-[scroll-restoration]: https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration
 
 {% Aside %}
 
@@ -95,8 +92,6 @@ This is fine, but not exhaustive.
 Links might come and go on your page, and they're not the only way users can navigate through pages, e.g., they may submit a form or even use an [image map].
 Your page might deal with these, but there's a long tail of possibilities which could just be simplified—something that the new App History API achieves.
 
-[image map]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map
-
 Personally, the History API often _feels_ like it could go some way to help with these possibilities.
 However, it really only has two surface areas: responding if the user presses Back or Forward in their browser, plus pushing and replacing URLs.
 It doesn't have an analogy to "navigate", except if you manually set up listeners for, e.g., click events, as demonstrated above.
@@ -110,8 +105,6 @@ Notably, this is different from calling `transitionWhile()`, which permits the n
 As mentioned, it won't always be possible to cancel the navigation: the navigation caused by a user pressing their browser's Back and Forward buttons isn't cancelable.
 There's [some discussion on GitHub][back-forward-discuss], but the goal here is that the App History API should not be able to 'lock in' a user from leaving your site via the gestures available in their browser.
 
-[back-forward-discuss]: https://github.com/WICG/app-history/issues/32
-
 ## Transition
 
 When your code calls `transitionWhile()` from within its "navigate" handler, it informs the browser that it's now preparing the page for the new, updated state; and that the navigation may take some time (because the call accepts a `Promise`).
@@ -119,8 +112,6 @@ When your code calls `transitionWhile()` from within its "navigate" handler, it 
 As such, this API introduces a semantic concept that the browser understands: a SPA navigation is currently occurring, over time, changing the document from a previous URL and state to a new one.
 This has a number of potential benefits, including that of accessibility: browsers can surface the beginning, end, or potential failure of a navigation in a variety of ways.
 Chrome, for example, intends to [reactivate its native loading indicator][loading-crbug] during this time.
-
-[loading-crbug]: https://bugs.chromium.org/p/chromium/issues/detail?id=1241202
 
 ### Transition Success and Failure
 
@@ -185,8 +176,6 @@ To deal with any of these possibilities, the event passed to the "navigate" even
 For more information see [Abortable fetch][abortable-fetch], but the short version is it basically provides an object that fires an event when you should stop your work.
 Notably, you can pass along an `AbortSignal` to any calls you make to `fetch()`, which will cancel in-flight network requests if the navigation is preempted.
 This will both save the user's bandwidth, and reject the `Promise` returned by `fetch()`, preventing any following code from e.g., updating the DOM to show a now invalid page navigation.
-
-[abortable-fetch]: https://developers.google.com/web/updates/2017/09/abortable-fetch
 
 For a concrete example, you might set up loading a page of cat memes with a `fetch()` call in your handler.
 By passing the `signal` along to it, the fetch will be cancelled if the user decides to instead load a different page on your site before the `fetch` completes.
@@ -290,7 +279,20 @@ It allows you to pass transient information about this specific navigation event
 This could be useful to, for example, denote a particular animation that causes the next page to appear (the alternative might be to set a global variable or include it as part of the #hash. Both options are a bit awkward).
 Notably, this `info` won't be replayed if a user later causes navigation, e.g., via their Back and Forward buttons—in fact, it will always be `undefined` in those cases.
 
-<!-- TODO: include demo (gif?) of two buttons: appear from left, appear from right, that shows a photo appearing from different directions -->
+<figure class="w-figure w-figure--fullbleed">
+  {% Video
+    src="video/QMjXarRXcMarxQddwrEdPvHVM242/UGyXlkr5Cbn3Db84FwqU.mov",
+    autoplay="true",
+    loop="true",
+    width="320",
+    height="320",
+    muted="true",
+    class="w-screenshot",
+  %}
+  <figcaption class="w-figure">
+    <a href="https://wiry-tricolor-lipstick.glitch.me" target="_blank">Demo of opening from left or right</a>
+  </figcaption>
+</figure>
 
 The `appHistory` namespace also has a number of other navigation methods: I've already mentioned `goTo()` (which accepts a `key` that denotes a specific entry in the user's history), but it also includes `back()`, `forward()` and `reload()`.
 These methods are all handled—just like `navigate()`—by the centralized "navigate" event handler.
@@ -327,21 +329,14 @@ And for sites which use [Server Side Rendering][ssr-definition] (SSR) for all st
 But sites that leverage mostly JS to create their pages may need to create an additional function to initialize their page.
 This is up for discussion [in the app-history repo][initial-event-discuss].
 
-[ssr-definition]: https://developers.google.com/web/updates/2019/02/rendering-on-the-web#terminology
-[initial-event-discuss]: https://github.com/WICG/app-history/issues/31
-
 Another intentional design choice of the App History API is that it operates only within a single frame—that is, the top-level page, or a single specific `<iframe>`.
 This has a number of interesting implications that are [further documented in the spec][backforward-note], but in practice, will reduce developer confusion.
 The previous History API has a number of confusing edge cases, like support for frames, and the reimagined App History API avoids them from the get-go.
-
-[backforward-note]: https://github.com/WICG/app-history#warning-backforward-are-not-always-opposites
 
 {% Aside %}
 
 In the near future, it's hoped that [an unrelated change to the HTML spec][iframe-historyless] could introduce "historyless" IFrames which do not participate in the browser's history whatsoever.
 IFrames which change their URL have classically confused both developers and users because this change has no effect on the user's URL bar or overall page title, so, e.g., a user pressing Back or Forward in their browser might not have an immediately obvious effect.
-
-[iframe-historyless]: https://github.com/whatwg/html/issues/6501
 
 {% endAside %}
 
@@ -353,15 +348,11 @@ You can also [try out a demo][demo] by [Domenic Denicola][domenic].
 We're especially eager for feedback on issues labelled with ["feedback wanted"][feedback-wanted] on GitHub.
 You can also check out the repo and spec more generally at WICG/app-history, including filing new issues.
 
-[feedback-wanted]: https://github.com/WICG/app-history/issues?q=is%3Aissue+is%3Aopen+label%3A%22feedback+wanted%22
-
 If you'd like to provide feedback on the API, please look for issues marked "feedback wanted" at GitHub.
 You can also check out the repo and spec more generally at [WICG/app-history][repo].
 
 While the classic History API appears straightforward, it's not very well-defined and has [a large number of issues][history-api-issues] around corner cases and how it has been implemented differently across browsers.
 We hope you consider providing feedback on the new App History API.
-
-[history-api-issues]: https://github.com/whatwg/html/issues?q=is%3Aissue+is%3Aopen+history
 
 ## References
 
@@ -371,21 +362,30 @@ We hope you consider providing feedback on the new App History API.
 * [TAG review][w3ctag]
 * [Chromestatus entry][chromestatus]
 
-[mozilla-position]: https://github.com/mozilla/standards-positions/issues/543
-[i2p]: https://groups.google.com/a/chromium.org/g/blink-dev/c/R1D5xYccqb0/m/8ukfzdVSAgAJ?utm_medium=email&utm_source=footer
-[w3ctag]: https://github.com/w3ctag/design-reviews/issues/605
-[chromestatus]: https://chromestatus.com/features/6232287446302720
-
 ## Acknowledgements
 
 Thanks to [Thomas Steiner][thomassteiner], [Domenic Denicola][domenic] and Nate Chapin for reviewing this post.
 Hero image from [Unsplash][hero-image], by [Jeremy Zero][hero-image-by].
 
+[clunky-history-api]: https://html5doctor.com/interview-with-ian-hickson-html-editor/#:~:text=My%20biggest%20mistake%E2%80%A6there%20are%20so%20many%20to%20choose%20from!%20pushState()%20is%20my%20favourite%20mistake
+[scroll-restoration]: https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration
+[image map]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map
+[back-forward-discuss]: https://github.com/WICG/app-history/issues/32
+[loading-crbug]: https://bugs.chromium.org/p/chromium/issues/detail?id=1241202
+[abortable-fetch]: https://developers.google.com/web/updates/2017/09/abortable-fetch
+[ssr-definition]: https://developers.google.com/web/updates/2019/02/rendering-on-the-web#terminology
+[initial-event-discuss]: https://github.com/WICG/app-history/issues/31
+[backforward-note]: https://github.com/WICG/app-history#warning-backforward-are-not-always-opposites
+[iframe-historyless]: https://github.com/whatwg/html/issues/6501
+[feedback-wanted]: https://github.com/WICG/app-history/issues?q=is%3Aissue+is%3Aopen+label%3A%22feedback+wanted%22
+[history-api-issues]: https://github.com/whatwg/html/issues?q=is%3Aissue+is%3Aopen+history
+[mozilla-position]: https://github.com/mozilla/standards-positions/issues/543
+[i2p]: https://groups.google.com/a/chromium.org/g/blink-dev/c/R1D5xYccqb0/m/8ukfzdVSAgAJ?utm_medium=email&utm_source=footer
+[w3ctag]: https://github.com/w3ctag/design-reviews/issues/605
+[chromestatus]: https://chromestatus.com/features/6232287446302720
 [hero-image]: https://unsplash.com/photos/bGYguEqV2lk
 [hero-image-by]: https://unsplash.com/@jeremy0
-
 [thomassteiner]: https://web.dev/authors/thomassteiner/
-
 [domenic]: https://web.dev/authors/domenic/
 [demo]: https://gigantic-honored-octagon.glitch.me/
 [wicg-report]: https://wicg.github.io/app-history/
