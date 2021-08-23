@@ -287,7 +287,7 @@ Notably, this `info` won't be replayed if a user later causes navigation, e.g., 
     width="320",
     height="320",
     muted="true",
-    class="w-screenshot",
+    class="w-screenshot"
   %}
   <figcaption class="w-figure">
     <a href="https://wiry-tricolor-lipstick.glitch.me" target="_blank">Demo of opening from left or right</a>
