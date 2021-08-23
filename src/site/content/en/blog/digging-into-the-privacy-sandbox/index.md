@@ -94,9 +94,9 @@ The [Attribution Reporting](https://github.com/csharrison/conversion-measurement
 1. An event on a publisher's website, such as a user viewing or clicking an ad. 
 1. A subsequent conversion on an advertiser site.
 
-This API supports two types of **attribution measurement**:
-* **Click-through**: available in the first implementation of this API, currently in [origin trial](https://web.dev/conversion-measurement/#browser-support). 
-* **View-through**: see [public explainer](https://github.com/WICG/conversion-measurement-api#event-level-reports-clicks-and-views).
+This API supports **click-through** and **view-through** measurement.
+
+Other features in this API include cross-device attribution reporting and app-to-web attribution reporting. 
 
 The API also offers two types of **attribution reports**:
 
@@ -104,7 +104,9 @@ The API also offers two types of **attribution reports**:
 
 * **Aggregate reports** are not tied to a specific event on the ad side. These reports provide richer, higher-fidelity conversion data than event-level reports. A combination of privacy techniques across cryptography, distribution of trust, and differential privacy help reduce the risk of identity joining across sites. 
 
-Both report types can be used simultaneously: they're complementary. Other features in this API include [cross-device attribution reporting](https://github.com/WICG/conversion-measurement-api/blob/main/cross_device.md) and [app-to-web attribution reporting](https://github.com/WICG/conversion-measurement-api/blob/main/app_to_web.md).
+Both report types can be used simultaneously: they're complementary. 
+
+[Introduction to Attribution Reporting](https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting-introduction/#status) explains more about the status of these features and how to try this API.
 
 ### Select ads
 

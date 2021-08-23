@@ -25,7 +25,7 @@ The browser recalculates its cohort periodically, on the user's device, without 
 individual browsing data with the browser vendor or anyone else.
 
 {% Aside %}
-During the initial FLoC trial, a page visit was only be included in the browser's FLoC computation 
+During the initial FLoC trial, a page visit was only included in the browser's FLoC computation 
 for one of two reasons: 
 * The FLoC API (`document.interestCohort()`) is used on the page. 
 * Chrome detects that the page [loads ads or ads-related resources](https://github.com/WICG/floc/issues/82). 
