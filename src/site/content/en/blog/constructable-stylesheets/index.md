@@ -61,10 +61,11 @@ preload stylesheets without injecting them into the DOM.
 ## Constructing a stylesheet
 
 Rather than introducing a new API to accomplish this, the [Constructable
-StyleSheets](https://wicg.github.io/construct-stylesheets) specification makes
-it possible to create stylesheets imperatively by invoking the `CSSStyleSheet()`
-constructor. The resulting CSSStyleSheet object has two new methods that make it
-safer to add and update stylesheet rules without triggering [Flash of Unstyled
+StyleSheets](https://drafts.csswg.org/cssom/#dom-cssstylesheet-cssstylesheet)
+specification makes it possible to create stylesheets imperatively by invoking
+the `CSSStyleSheet()` constructor. The resulting CSSStyleSheet object has two
+new methods that make it safer to add and update stylesheet rules without
+triggering [Flash of Unstyled
 Content](https://en.wikipedia.org/wiki/Flash_of_unstyled_content) (FOUC).
 The
 [`replace()`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/replace)
@@ -108,7 +109,7 @@ ignored with a warning as of Chrome 84.
 ## Using constructed stylesheets
 
 The second new feature introduced by Constructable StyleSheets is an
-[adoptedStyleSheets](https://wicg.github.io/construct-stylesheets/#using-constructed-stylesheets)
+[adoptedStyleSheets](https://drafts.csswg.org/cssom/#extensions-to-the-document-or-shadow-root-interface)
 property available on [Shadow
 Roots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM)
 and [Documents](https://developer.mozilla.org/en/docs/Web/API/Document). This
