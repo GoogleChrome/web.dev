@@ -41,7 +41,8 @@ YAML front matter must contain `layout` and `title`.
   ```
 
 * **demo.md** - The demo.
-  * mandatory fields in frontmatter: *patternId*
+
+YAML front matter must contain `patternId`.
   * leave the content blank if you want to build the demo out of *body.html*,
   *css* and *js* files included in assets
   * for different kinds of demos, see the examples below
