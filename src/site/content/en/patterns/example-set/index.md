@@ -40,7 +40,9 @@ YAML front matter must contain `layout` and `title`.
   ---
   ```
 
-* **demo.md** - The demo.
+### `demo.md`
+
+The demo.
 
 YAML front matter must contain `patternId`.
   * leave the content blank if you want to build the demo out of *body.html*,
