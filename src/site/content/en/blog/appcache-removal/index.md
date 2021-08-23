@@ -55,26 +55,22 @@ A "deprecated" feature still exists, but logs warning messages discouraging use.
     <tr>
     <td><a href="https://blog.chromium.org/2020/01/appcache-scope-restricted.html">AppCache scope restriction</a>
     </td>
-    <td>Chrome 80 (February 2020)
-    </td>
+    <td>Chrome 80 (February 2020)</td>
     </tr>
     <tr>
     <td>"Reverse" origin trial begins
     </td>
-    <td>Chrome 84 (<a href="https://chromiumdash.appspot.com/schedule">estimated July 2020</a>)
-    </td>
+    <td>Chrome 84 (July 2020)</td>
     </tr>
     <tr>
     <td><a href="https://groups.google.com/a/chromium.org/g/blink-dev/c/FvM-qo7BfkI/m/AvxoE6JpBgAJ">Removal from secure contexts</a>, except for those opted-in to the origin trial
     </td>
-    <td>Chrome 85 (<a href="https://chromiumdash.appspot.com/schedule">estimated August 2020</a>)
-    </td>
+    <td>Chrome 85 (August 2020)</td>
     </tr>
     <tr>
     <td>Complete removal from secure contexts for everyone, with completion of origin trial
     </td>
-    <td>Chrome 95 (<a href="https://chromiumdash.appspot.com/schedule">estimated October 2021</a>)
-    </td>
+    <td>Chrome 95 (October 5th, 2021)</td>
     </tr>
   </table>
 </div>
