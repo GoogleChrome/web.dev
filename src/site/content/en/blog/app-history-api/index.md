@@ -340,6 +340,16 @@ IFrames which change their URL have classically confused both developers and use
 
 {% endAside %}
 
+Lastly, there's not yet consensus on programatically modifying or rearranging the list of entries the user has navigated through while using your site.
+This is [currently under discussion][bug-edit-entries], but one option could be to allow only deletions: either historic entries or "all future entries".
+The latter would allow temporary state, e.g., as a developer, I could:
+
+- ask the user a question by navigating to new URL or state
+- allow the user to complete their work (or go Back)
+- on completion, the App History API can remove that entry
+
+This could be perfect for temporary modals or interstitals: the new URL is something that a user can use the Back gesture to leave from, but they then cannot accidentaly go Forward to open it again (because the entry has been removed), and is just not possible with the current History API.
+
 ## Try the App History API
 
 You can try the App History API today in Chrome or Chromium-based browsers by enabling the "Experimental Web Platform features" flag.
@@ -390,3 +400,4 @@ Hero image from [Unsplash][hero-image], by [Jeremy Zero][hero-image-by].
 [demo]: https://gigantic-honored-octagon.glitch.me/
 [wicg-report]: https://wicg.github.io/app-history/
 [repo]: https://github.com/WICG/app-history
+[bug-edit-entries]: https://github.com/WICG/app-history/issues/9
