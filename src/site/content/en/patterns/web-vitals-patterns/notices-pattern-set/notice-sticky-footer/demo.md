@@ -13,6 +13,7 @@ patternId: notice-sticky-footer
             font-family: system-ui;
             padding: 2em;
             overscroll-behavior-y: none;
+            background-color: #f4f4f4;
         }
         .banner {
             position: fixed;
@@ -20,8 +21,8 @@ patternId: notice-sticky-footer
             bottom: 0;
             right: 0;
             padding: 1rem;
-            background-color: yellow;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
         .close-button {
             background: transparent;

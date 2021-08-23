@@ -13,6 +13,7 @@ patternId: notice-animated-footer
             overscroll-behavior-y: none;
             font-family: system-ui;
             padding: 2em;
+            background-color: #f4f4f4;
         }
         .banner {
             animation: slideIn 1000ms ease-in-out;
@@ -21,8 +22,8 @@ patternId: notice-animated-footer
             bottom: 0;
             right: 0;
             padding: 1rem;
-            background-color: yellow;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
         @keyframes slideIn {
             from {

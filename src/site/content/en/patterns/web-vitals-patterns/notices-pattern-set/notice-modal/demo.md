@@ -13,6 +13,7 @@ patternId: notice-modal
             overscroll-behavior-y: none;
             font-family: system-ui;
             padding: 2em;
+            background-color: #f4f4f4;
         }
         .modal {
             position: fixed;
@@ -20,9 +21,9 @@ patternId: notice-modal
             left: 50%;
             min-width: 66%;
             transform: translate(-50%, -50%);
-            padding: 2rem;
-            background-color: yellow;
-            box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+            padding: 1em 2em 2em 2em;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
         }
         .close-button {
             background: transparent;
