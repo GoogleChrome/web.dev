@@ -49,7 +49,8 @@ A common split button can be found in your email application. The primary action
 is send, but perhaps you can send later or save a draft instead:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/7D9MI9GmPhYAtFs83DDI.png",
-alt="ALT_TEXT_HERE", width="800", height="517", class="w-screenshot" %}
+alt="An example split button as seen in an email application.", 
+width="800", height="517", class="w-screenshot" %}
 
 The shared action area is nice, since the user doesn't need to look around. They
 know that essential email actions are contained in the split button.
@@ -63,7 +64,7 @@ inspect tool is used here to help show a macro view of the component, surfacing
 aspects of the HTML, style and accessibility for each major part.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/URCIaZV3gyMvTiMjRYmK.png",
-alt="ALT_TEXT_HERE", width="800", height="581", class="w-screenshot" %}
+alt="The HTML elements that make up the split button.", width="800", height="581", class="w-screenshot" %}
 
 #### Top level split button container
 
@@ -72,19 +73,19 @@ The highest level component is an inline flexbox, with a class of
 and the [`.gui-popup-button`](#the-popup-toggle-button).
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/SLjXwBPvsrEXBb1vcm6L.png",
-alt="ALT_TEXT_HERE", width="800", height="581", class="w-screenshot" %}
+alt="The gui-split-button class inspected and showing the CSS properties used in this class.", width="800", height="581", class="w-screenshot" %}
 
 #### The primary action button
 
 The initially visible and focusable `<button>` fits within the container with
 two matching corner shapes for
-[focus](https://web.dev/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible),
-[hover](https://web.dev/learn/css/pseudo-classes/#:hover) and
-[active](https://web.dev/learn/css/pseudo-classes/#:active) interactions to
+[focus](/learn/css/pseudo-classes/#:focus-:focus-within-and-:focus-visible),
+[hover](/learn/css/pseudo-classes/#:hover) and
+[active](/learn/css/pseudo-classes/#:active) interactions to
 appear contained within `.gui-split-button`.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/69gvxF4AfQoNki4pBtVb.png",
-alt="ALT_TEXT_HERE", width="800", height="644", class="w-screenshot" %}
+alt="The inspector showing the CSS rules for <button>.", width="800", height="644", class="w-screenshot" %}
 
 #### The popup toggle button
 
@@ -94,7 +95,7 @@ it is the positioning anchor for [`.gui-popup`](#the-popup-card) and host for `:
 to present the popup.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/p2R7pHvID9XR9JoHHzth.png",
-alt="ALT_TEXT_HERE", width="800", height="490", class="w-screenshot" %}
+alt="The inspector showing the CSS rules for the class gui-popup-button.", width="800", height="490", class="w-screenshot" %}
 
 #### The popup card
 
@@ -103,7 +104,7 @@ This is a floating card child to its anchor
 semantically wrapping the button list. 
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/LSeLIFhe7yuG9QoR1VM9.png",
-alt="ALT_TEXT_HERE", width="800", height="629", class="w-screenshot" %}
+alt="The inspector showing the CSS rules for the class gui-popup", width="800", height="629", class="w-screenshot" %}
 
 #### The secondary action(s)
 
@@ -112,7 +113,7 @@ action button](#the-primary-action-button) features an icon and a complimentary
 style to the primary button.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/5GBSno8pMaNVRZJT7yxd.png",
-alt="ALT_TEXT_HERE", width="800", height="679", class="w-screenshot" %}
+alt="The inspector showing the CSS rules for <button>.", width="800", height="679", class="w-screenshot" %}
 
 ### Custom properties
 
@@ -153,7 +154,7 @@ modify values used throughout the component.
 {% Aside %} CSS [nesting](https://drafts.csswg.org/css-nesting-1/) and [custom
 media queries](https://www.w3.org/TR/mediaqueries-5/#custom-mq) are used with
 [PostCSS](https://github.com/postcss/postcss) to enable author time usage of
-"future" CSS features {% endAside %}
+"future" CSS features. {% endAside %}
 
 ## Layouts and color
 
@@ -281,11 +282,11 @@ should fit inline with other split buttons, actions or elements.
 ```
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/a55qj9gU1qmoTlnbQvDe.png",
-alt="ALT_TEXT_HERE", width="800", height="241", class="w-screenshot" %}
+alt="The split button.", width="800", height="241", class="w-screenshot" %}
 
-#### Styling the `<button>`s
+#### The `<button>` styling
 
-Buttons are very good at disguising how much code it takes. You might need to
+Buttons are very good at disguising how much code is required. You might need to
 undo or replace browser default styles, but you'll also need to enforce some
 inheritance, add interaction states and adapt to various user preferences and
 input types. Button styles add up quickly.
@@ -328,7 +329,7 @@ These, though, share it, and only apply their own background on interaction.
 ```
 
 Add interaction states with a few CSS
-[pseudo-classes](https://web.dev/learn/css/pseudo-classes/) and use of matching
+[pseudo-classes](/learn/css/pseudo-classes/) and use of matching
 custom properties for the state:
 
 {% Video 
@@ -382,7 +383,7 @@ The primary button needs a few special styles to complete the design effect:
 ```
 
 Lastly, for some flair, the light theme button and icon get a
-[shadow](https://web.dev/learn/css/shadows/):
+[shadow](/learn/css/shadows/):
 
 {% Video 
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/8qkrdaVnJowC5Uvuqncw.mp4",
@@ -430,7 +431,7 @@ The video below attempts to break this microinteraction down, to show how
 #### Generic `<svg>` icon styles
 
 All icons are relatively sized to the button `font-size` they're used within by
-using the [`ch`](https://web.dev/learn/css/sizing/#relative-lengths) unit as the
+using the [`ch`](/learn/css/sizing/#relative-lengths) unit as the
 `inline-size`. Each is also given some styles to help outline icons soft and
 smooth.
 
@@ -459,7 +460,7 @@ the primary button, it is transparent until otherwise hovered or interacted
 with, and stretched to fill.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/fiSlBJyM8x52b5msQBUY.png",
-alt="ALT_TEXT_HERE", width="800", height="241", class="w-screenshot" %}
+alt="The arrow part of the split button used to trigger the popup.", width="800", height="241", class="w-screenshot" %}
 
 ```css
 .gui-popup-button {
@@ -477,7 +478,7 @@ alt="ALT_TEXT_HERE", width="800", height="241", class="w-screenshot" %}
 
 Layer in hover, focus and active states with [CSS
 Nesting](https://drafts.csswg.org/css-nesting-1/) and the
-[`:is()`](https://web.dev/css-is-and-where/) functional selector:
+[`:is()`](/css-is-and-where/) functional selector:
 
 ```css
 .gui-popup-button {
@@ -567,7 +568,7 @@ are thinner, and the shadow has a hint of brand blue to it. Like with buttons,
 strong UI/UX is a result of these little details stacking up.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/D7RWfwJW25G3kuzPSnlz.png",
-alt="ALT_TEXT_HERE", width="448", height="422", class="w-screenshot" %}
+alt="A floating card element.", width="448", height="422", class="w-screenshot" %}
 
 ```css
 .gui-popup {
@@ -608,7 +609,7 @@ The icons and buttons are given brand colors to style nicely within each dark
 and light themed card:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/ddCiS1PqDtjDRESUG4U1.png",
-alt="ALT_TEXT_HERE", width="452", height="422", class="w-screenshot" %}
+alt="Links and icons for checkout, Quick Pay, and Save for later.", width="452", height="422", class="w-screenshot" %}
 
 ```css
 .gui-popup {
@@ -634,7 +635,7 @@ The dark theme popup has text and icon shadow additions, plus a slightly more
 intense box shadow:
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/4vOdW4OD1i4uNRQdTWH5.png",
-alt="ALT_TEXT_HERE", width="434", height="412", class="w-screenshot" %}
+alt="The popup in the dark theme.", width="434", height="412", class="w-screenshot" %}
 
 ```css
 .gui-popup {
