@@ -50,10 +50,16 @@ CSS and JS files included in `assets`.
  
 For different kinds of demos, see the examples below.
 
-* **assets** directory:
-  * 1+ files named `asset-name.ext`, e.g. *style.css*
-  * Each file is displayed as a tab in samples area of the CodePattern
-  * `ext` becomes the label of the tab with the sample
-  * if the file name is `body.html`, it will be used as the body for the demo
-  * `*.css` files get included in the `<head>` of the demo
-  * `*.js` files get included at the end of the body of the demo
+### `assets` directory
+
+Assets directory can contain one or more files named `asset-name.ext`,
+such as `style.css` or `script.js`.
+
+Each file is displayed as a tab in samples area of the code pattern.
+ 
+The file extension is the label of the tab with the sample. For example, the tab
+displaying `style.css` is labeled `CSS`.
+
+- If the file name is `body.html`, it will be used as the body for the demo.
+- `*.css` files get included in the `<head>` of the demo.
+- `*.js` files get included at the end of the body of the demo.
