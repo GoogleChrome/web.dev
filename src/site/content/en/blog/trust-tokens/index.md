@@ -4,7 +4,7 @@ subhead: Trust Tokens is a new API to help combat fraud and distinguish bots fro
 authors:
   - samdutton
 date: 2020-06-22
-updated: 2021-08-19
+updated: 2021-08-23
 hero: image/admin/okxi2ttRG3h1Z4F3cylI.jpg
 thumbnail: image/admin/cTo0l2opcfNxg1TEjxSg.jpg
 alt: Black and white photograph of hand holding token
@@ -137,7 +137,7 @@ are a real human, such as account activity, or passing a CAPTCHA challenge.
 issue a trust token to the user's browser:
 
 ```js
-fetch('https://issuer.example/.well-known/trust-token', {
+fetch('https://issuer.example/trust-token', {
   trustToken: {
     type: 'token-request',
     issuer: 'https://issuer.example'
@@ -160,7 +160,7 @@ document.hasTrustToken('https://issuer.example');
 `issuer.example`, so `publisher.example` can attempt to redeem a token:
 
 ```js
-fetch('https://issuer.example/.well-known/trust-token', {
+fetch('https://issuer.example/trust-token', {
 trustToken: {
   type: 'token-redemption',
   issuer: 'https://issuer.example',
@@ -211,7 +211,7 @@ If the user is deemed to be trustworthy by a trust token issuer such as `issuer.
 can fetch trust tokens for the user by making a `fetch()` request with a `trustToken` parameter:
 
 ```js
-fetch('issuer.example/.well-known/trust-token', {
+fetch('issuer.example/trust-token', {
   trustToken: {
     type: 'token-request'
   }
@@ -239,13 +239,13 @@ A publisher site (such as `publisher.example` in the example above) can check if
 tokens available for the user:
 
 ```js
-const userHasTokens = await document.hasTrustToken('issuer.example/.well-known/trust-token');
+const userHasTokens = await document.hasTrustToken('issuer.example/trust-token');
 ````
 
 If there are tokens available, the publisher site can redeem them to get a redemption record:
 
 ```js
-fetch('issuer.example/.well-known/trust-token', {
+fetch('issuer.example/trust-token', {
   ...
   trustToken: {
     type: 'token-redemption',
@@ -264,7 +264,7 @@ fetch('https://foo.example/post-comment', {
   ...
   trustToken: {
     type: 'send-redemption-record',
-    issuers: ['issuer.example/.well-known/trust-token', ...]
+    issuers: ['issuer.example/trust-token', ...]
   }
   ...
 }).then(...);
