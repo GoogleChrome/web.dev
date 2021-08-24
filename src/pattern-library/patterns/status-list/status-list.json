@@ -32,10 +32,10 @@
   },
   "variants": [
     {
-      "name": "good",
-      "title": "Good state",
+      "name": "bad",
+      "title": "Bad state",
       "context": {
-        "state": "good"
+        "state": "bad"
       }
     }
   ]

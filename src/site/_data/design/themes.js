@@ -69,7 +69,7 @@ module.exports = {
       ACCENT_TEXT: 'shades-gray-glare',
       ACCENT_BG: 'shades-charcoal',
       ACTION_BG: 'shades-dim',
-      ACTION_BG_ALT: 'shades-gray',
+      ACTION_BG_ALT: 'shades-dim',
       ACTION_BG_PRIMARY: 'core-primary-dim',
       ACTION_BG_HOVER: 'shades-charcoal',
       ACTION_TEXT: 'core-primary-glare',
