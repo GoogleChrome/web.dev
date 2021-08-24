@@ -118,7 +118,7 @@ module.exports = {
       ACTION_BG: 'shades-light-bright',
       ACTION_BG_ALT: 'shades-light-bright',
       ACTION_BG_PRIMARY: 'core-primary',
-      ACTION_BG_HOVER: 'core-primary-bright',
+      ACTION_BG_HOVER: 'shades-gray-bright',
       ACTION_TEXT: 'core-primary',
       ACTION_TEXT_PRIMARY: 'shades-light-bright',
       ACTION_TEXT_ALT: 'shades-dark',
