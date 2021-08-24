@@ -62,7 +62,7 @@ Use cases for insertable streams for `MediaStreamTrack` include, but are not lim
 | 2. Create initial draft of specification | [In Progress][spec]      |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
 | 4. Origin trial                          | Completed                |
-| 5. **Launch**                            | Completed                |
+| 5. **Launch**                            | **Completed**            |
 
 </div>
 
@@ -102,8 +102,6 @@ A `MediaStreamTrackProcessor` object exposes two properties:
 - `readable`: Allows reading the frames from the `MediaStreamTrack`. If the track is a video track,
   chunks read from `readable` will be `VideoFrame` objects. If the track is an audio track, chunks
   read from `readable` will be `AudioFrame` objects.
-- `writableControl`: Allows sending control signals to the track. Control signals are objects of
-  type `MediaStreamTrackSignal`.
 
 #### The `MediaStreamTrackGenerator`
 
@@ -115,16 +113,11 @@ A `MediaStreamTrackGenerator` object likewise exposes two properties:
   `"video"`, the stream accepts `VideoFrame` objects and fails with any other type. When a frame is
   written to `writable`, the frame's `close()` method is automatically invoked, so that its media
   resources are no longer accessible from JavaScript.
-- `readableControl`: A `ReadableStream` that allows reading control signals sent from any sinks
-  connected to the `MediaStreamTrackGenerator`. Control signals are objects of type
-  `MediaStreamTrackSignal`.
 
 In the `MediaStream` model, apart from media, which flows from sources to sinks, there are also
-control signals that flow in the opposite direction (i.e., from sinks to sources via the track). A
-`MediaStreamTrackProcessor` is a sink and it allows sending control signals to its track and source
-via its `writableControl` property. A `MediaStreamTrackGenerator` is a track for which a custom
-source can be implemented by writing media frames to its `writable` field. Such a source can receive
-control signals sent by sinks via its `readableControl` property.
+control signals that flow in the opposite direction (i.e., from sinks to sources via the track).
+A `MediaStreamTrackGenerator` is a track for which a custom
+source can be implemented by writing media frames to its `writable` field.
 
 ### Bringing it all together
 
@@ -152,7 +145,11 @@ const transformer = new TransformStream({
 
 trackProcessor.readable.pipeThrough(transformer).pipeTo(trackGenerator.writable);
 
-trackGenerator.readableControl.pipeTo(trackProcessor.writableControl);
+const videoBefore = document.getElementById('video-before');
+const videoAfter = document.getElementById('video-after');
+videoBefore.srcObject = stream;
+const streamAfter = new MediaStream([generator]);
+videoAfter.srcObject = streamAfter;
 ```
 
 {% Aside %} This article barely scratches the surface of what is possible and going into the details
