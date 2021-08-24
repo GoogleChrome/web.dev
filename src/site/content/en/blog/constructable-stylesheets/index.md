@@ -99,7 +99,7 @@ sheet.replace('@import url("styles.css"); a { color: red; }');
 
 {% Aside 'gotchas' %}
 In earlier versions of the specification,
-`replace()`</code>` allowed `@import` rules and returned
+`replace()` allowed `@import` rules and returned
 a Promise that resolved when these were finished loading. This feature was
 [removed from the specification](https://github.com/WICG/construct-stylesheets/issues/119#issuecomment-642300024)
 and `@import` rules are
