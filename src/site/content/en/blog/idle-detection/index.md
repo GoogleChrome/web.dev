@@ -153,7 +153,7 @@ console.log('IdleDetector is stopped.');
 
 ### DevTools support
 
-Starting in Chromium&nbsp;86, you can emulate idle events in DevTools without actually being idle.
+Starting in Chromium&nbsp;94, you can emulate idle events in DevTools without actually being idle.
 In DevTools, open the **Sensors** tab and look for **Emulate Idle Detector state**.
 You can see the various options in the video below.
 
