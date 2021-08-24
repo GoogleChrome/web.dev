@@ -7,22 +7,17 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-04
+updated: 2021-08-24
 description: |
   Insertable streams for MediaStreamTrack is about exposing the content of a MediaStreamTrack
   as a stream that can be manipulated or used to generate new content.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/Qu2wfQ3pxR8AeEfty88S.jpg
 alt: Cup of coffee and a laptop with a video conference showing many participants.
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/-7811493553674125311
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - media
   - capabilities
 ---
-
-{% Aside %} Insertable streams for `MediaStreamTrack` is part of the
-[capabilities project](https://web.dev/fugu-status/) and is currently in development. This post will
-be updated as the implementation progresses. {% endAside %}
 
 ## Background
 
@@ -66,29 +61,12 @@ Use cases for insertable streams for `MediaStreamTrack` include, but are not lim
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | [In Progress][spec]      |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. **Origin trial**                      | **[In progress][ot]**    |
-| 5. Launch                                | Not started              |
+| 4. Origin trial                          | Completed                |
+| 5. **Launch**                            | Completed                |
 
 </div>
 
 ## How to use insertable streams for `MediaStreamTrack`
-
-### Enabling support during the origin trial phase
-
-Starting in Chrome 90, insertable streams for `MediaStreamTrack` is available as part of the
-WebCodecs origin trial in Chrome. The origin trial is expected to end in Chrome 91 (July 14, 2021).
-If necessary, a separate origin trial will continue for insertable streams for `MediaStreamTrack`.
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
-
-### Enabling via about://flags
-
-To experiment with insertable streams for `MediaStreamTrack` locally, without an origin trial token,
-enable the `#enable-experimental-web-platform-features` flag in `about://flags`.
 
 ### Feature detection
 
