@@ -89,7 +89,7 @@ components:
   [`VideoFrame`](https://w3c.github.io/webcodecs/#videoframe-interface) or
   [`AudioFrame`](https://w3c.github.io/webcodecs/#audioframe-interface)) objects. You can think of
   this as a track sink that is capable of exposing the unencoded frames from the track as a
-  `ReadableStream`. It also exposes a control channel for signals going in the opposite direction.
+  `ReadableStream`.
 - The `MediaStreamTrackGenerator`, which consumes a stream of media frames and exposes a
   `MediaStreamTrack` interface. It can be provided to any sink, just like a track from
   `getUserMedia()`. It takes media frames as input. In addition, it provides access to control
@@ -97,22 +97,20 @@ components:
 
 #### The `MediaStreamTrackProcessor`
 
-A `MediaStreamTrackProcessor` object exposes two properties:
-
-- `readable`: Allows reading the frames from the `MediaStreamTrack`. If the track is a video track,
-  chunks read from `readable` will be `VideoFrame` objects. If the track is an audio track, chunks
-  read from `readable` will be `AudioFrame` objects.
+A `MediaStreamTrackProcessor` object exposes one property, `readable`. It allows for reading the
+frames from the `MediaStreamTrack`. If the track is a video track,
+chunks read from `readable` will be `VideoFrame` objects. If the track is an audio track, chunks
+read from `readable` will be `AudioFrame` objects.
 
 #### The `MediaStreamTrackGenerator`
 
-A `MediaStreamTrackGenerator` object likewise exposes two properties:
-
-- `writable`: A `WritableStream` that allows writing media frames to the
-  `MediaStreamTrackGenerator`, which is itself a `MediaStreamTrack`. If the `kind` attribute is
-  `"audio"`, the stream accepts `AudioFrame` objects and fails with any other type. If kind is
-  `"video"`, the stream accepts `VideoFrame` objects and fails with any other type. When a frame is
-  written to `writable`, the frame's `close()` method is automatically invoked, so that its media
-  resources are no longer accessible from JavaScript.
+A `MediaStreamTrackGenerator` object likewise exposes one property, `writable`, which is a
+`WritableStream` that allows writing media frames to the
+`MediaStreamTrackGenerator`, which is itself a `MediaStreamTrack`. If the `kind` attribute is
+`"audio"`, the stream accepts `AudioFrame` objects and fails with any other type. If kind is
+`"video"`, the stream accepts `VideoFrame` objects and fails with any other type. When a frame is
+written to `writable`, the frame's `close()` method is automatically invoked, so that its media
+resources are no longer accessible from JavaScript.
 
 In the `MediaStream` model, apart from media, which flows from sources to sinks, there are also
 control signals that flow in the opposite direction (i.e., from sinks to sources via the track).
