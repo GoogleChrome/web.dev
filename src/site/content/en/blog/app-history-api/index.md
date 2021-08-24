@@ -46,7 +46,7 @@ A basic implementation on example.com could look like this:
 
 ```js
 appHistory.addEventListener("navigate", event => {
-  switch (e.destination.url) {
+  switch (event.destination.url) {
     case 'https://example.com/':
       event.transitionWhile(loadIndexPage());
       break;
@@ -144,15 +144,14 @@ You can simply `await fetch()` knowing that if the network is unavailable, the e
 ### Transition Context and Rollback
 
 During the period between the initial `navigate` event and the exact time these terminal events fire, there'll also be an object available that gives some context on the navigation that's occurring—it's available at `appHistory.transition`.
-As well as the context, you're able to use this object to _rollback_ this navigation, pretending as if the navigation never occurred.
+You're able to use this object to _rollback_ this navigation, pretending as if the navigation never occurred.
 Your site might choose to do this in response to a user action, or perhaps if the URL loaded is invalid and should never appear in the user's history. For example:
 
 ```js
-appHistory.addEventListener('navigateerror', e => {
+appHistory.addEventListener('navigateerror', event => {
   const attemptedLoadURL = location.href;
   const previousURL = appHistory.transition.from;
   console.warn('Failed to load', attemptedLoadURL, 'returning to', previousURL);
-
   appHistory.transition.rollback();
 });
 ```
@@ -162,8 +161,8 @@ If a page loaded through a user clicking on an `<a href>` fails to load and is r
 
 {% Aside %}
 
-This is just one example of how you might use "navigateerror".
-It's not a requirement that you call `rollback()` on error; most likely, you'll show an error message.
+Calling `rollback()` on error could be useful in some situations, but avoid it in the general case.
+You're more likely to show an error message, perhaps so the user can try a reload to get their content.
 
 {% endAside %}
 
@@ -183,7 +182,7 @@ Take a look:
 
 ```js
 appHistory.addEventListener("navigate", event => {
-  if (isCatsUrl(e.destination.url)) {
+  if (isCatsUrl(event.destination.url)) {
     const method = async () => {
       const request = await fetch('/cat-memes.json', { signal: event.signal });
       const json = await request.json();
@@ -306,18 +305,18 @@ It can be detected by looking for the `formData` property on the event passed to
 Here's an example that simply turns any form submission into one which stays on the current page:
 
 ```js
-appHistory.addEventListener("navigate", e => { 
-  if (e.formData && e.canTransition) {
+appHistory.addEventListener("navigate", event => {
+  if (event.formData && event.canTransition) {
     // User submitted a POST form to a same-domain URL
     // (If canTransition is false, the event is just informative:
     // you can't intercept this request, although you could
     // likely still call .preventDefault() to stop it completely).
 
     const submitToServer = async () => {
-      await fetch(e.destination.url, { method: 'POST', body: e.formData });
+      await fetch(event.destination.url, { method: 'POST', body: event.formData });
       // You could navigate again with {replace: true} to change the URL here
     };
-    e.transitionWhile(submitToServer());
+    event.transitionWhile(submitToServer());
   }
 });
 ```
