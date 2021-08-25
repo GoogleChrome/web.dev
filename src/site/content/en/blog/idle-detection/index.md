@@ -8,7 +8,7 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2021-08-24
+updated: 2021-08-25
 tags:
   - blog
   - idle-detection
@@ -46,7 +46,7 @@ can limit these calculations to moments when the user interacts with their devic
 | 2. Create initial draft of specification | [Complete][specification]|
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
 | 4. Origin trial                          | Completed                |
-| 5. **Launch**                            | **Completed**            |
+| 5. **Launch**                            | **Chromium 94**            |
 
 </div>
 
