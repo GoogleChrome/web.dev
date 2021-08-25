@@ -127,7 +127,7 @@ WebGPU.
 WebGPU is available on select devices on Chrome OS, macOS, and Windows 10 in
 Chrome&nbsp;94 with more devices being supported in the future. Linux
 experimental support is available by running Chrome with
-`--enable-features=UseSkiaRenderer,Vulkan`. More support for more platforms will
+`--enable-features=Vulkan`. More support for more platforms will
 follow.
 
 The full list of known issues is available in the [Origin Trial Caveats document].
