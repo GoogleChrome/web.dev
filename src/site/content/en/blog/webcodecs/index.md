@@ -395,10 +395,12 @@ The demo below shows how animation frames from a canvas are:
 To check for WebCodecs support:
 
 ```js
-if ('VideoFrame' in window) {
+if ('VideoEncoder' in window) {
   // WebCodecs API is supported.
 }
 ```
+Keep in mind that WebCodecs API is only available in [secure contexts](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts),
+so detection will fail if [`self.isSecureContext`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/isSecureContext) is false.
 
 ## Feedback {: #feedback }
 
