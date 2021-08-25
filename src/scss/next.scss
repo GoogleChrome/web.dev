@@ -327,6 +327,18 @@ pre > code {
   -webkit-overflow-scrolling: touch;
 }
 
+/// Sub and sup
+sub,
+sup {
+  font-size: 0.6em;
+  vertical-align: baseline;
+}
+
+sup {
+  position: relative;
+  top: -1ex;
+}
+
 /// Links
 
 a:link {
@@ -386,6 +398,7 @@ web-copy-code {
 @import 'blocks/pagination';
 @import 'blocks/skip-link';
 @import 'blocks/stack-nav';
+@import 'blocks/stats';
 @import 'blocks/status-list';
 @import 'blocks/table-wrapper';
 @import 'blocks/toggle-switch';
