@@ -339,6 +339,86 @@ sup {
   top: -1ex;
 }
 
+/// Details and summary
+details:not([class]) {
+  @extend .flow;
+
+  --flow-space: 0.5em;
+
+  max-width: 75ch;
+  border-block: 1px solid get-utility-value('bg', 'stroke');
+  padding: 1.3rem 0.5rem 1.6rem 0.5rem;
+}
+
+details:not([class]) summary {
+  position: relative;
+  font-size: get-size('size-3');
+  list-style: none;
+  cursor: pointer;
+
+  @include apply-utility('color', 'action-text');
+  @include apply-utility('weight', 'regular');
+  @include apply-utility('leading', 'flat');
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  /// A custom marker
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+  }
+
+  &::before {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: get-utility-value('bg', 'highlight-interact-bg');
+    inset-inline-end: 0;
+    inset-block-start: -2px;
+  }
+
+  &::after {
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    inset-block-start: 9px;
+    inset-inline-end: 12px;
+    transform: rotate(45deg);
+  }
+
+  /// The marker handles our focus state for us
+  &:focus {
+    outline: none;
+
+    &::before {
+      outline: 1px solid currentColor;
+    }
+  }
+
+  &:hover {
+    &::before {
+      filter: invert(0.05);
+    }
+  }
+}
+
+details[open]:not([class]) summary {
+  &::after {
+    inset-block-start: 11px;
+    transform: rotate(-135deg);
+  }
+}
+
+details:not([class]) summary + * {
+  @include apply-utility('flow-space', 'size-1');
+}
+
 /// Links
 
 a:link {

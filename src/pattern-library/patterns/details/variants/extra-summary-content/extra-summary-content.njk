@@ -1,7 +1,7 @@
-<details class="w-details">
-  <summary class="w-details__summary">
-    <h2 class="w-details__header">{{ data.summary }}</h2>
-    <p class="w-details__preview">{{ data.summaryPreview }}</p>
+<details>
+  <summary>
+    {{ data.summary }}
+    <p class="text-base color-core-text gap-top-base">{{ data.summaryPreview }}</p>
   </summary>
   {{ data.content | safe }}
 </details>
