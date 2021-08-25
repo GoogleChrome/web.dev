@@ -102,7 +102,7 @@ moved between workers.
 ### Encoding
 
 <figure class="w-figure">
-  {% Img src="Encoding.png", alt="The path from a Canvas or an ImageBitmap to the network or to storage", width="960", height="720" %}
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/lEovMYp8oh1JSClCLCiD.png", alt="The path from a Canvas or an ImageBitmap to the network or to storage", width="800", height="393" %}
   <figcaption class="w-figcaption">The path from a <code>Canvas</code> or an <code>ImageBitmap</code> to the network or to storage</figcaption>
 </figure>
 
@@ -264,7 +264,7 @@ await encoder.flush();
 ### Decoding
 
 <figure class="w-figure">
-  {% Img src="Decoding.png", alt="The path from the network or storage to a Canvas or an ImageBitmap.", width="960", height="720" %}
+  {% Img src="image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/fzi3E4v2jJJj5QAlhoRG.png", alt="The path from the network or storage to a Canvas or an ImageBitmap.", width="800", height="419" %}
   <figcaption class="w-figcaption">The path from the network or storage to a <code>Canvas</code> or an <code>ImageBitmap</code>.</figcaption>
 </figure>
 
