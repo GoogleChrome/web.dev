@@ -72,7 +72,7 @@ Both these methods are usually allowed, but have cases where they're unable to b
 You can't handle navigations via `transitionWhile()` if the navigation is a cross-origin navigation: i.e., if it's leaving your domain.
 And you can't cancel a navigation via `preventDefault()` if the user is pressing the Back or Forward buttons in their browser; you should not be able to trap your users on your site.
 
-Even if these methods aren't allowed, the "navigate" event is still _informative_, so your code could still, e.g., log an analytics event or perform cleanup.
+Even if these methods aren't allowed, the "navigate" handler is still _informative_, so your code could still, e.g., log an analytics event or perform cleanup.
 
 ## Why another event handler?
 
@@ -106,8 +106,8 @@ This method must be called  synchronously inside the "navigate" event handler.
 Notably, this is different from calling `transitionWhile()`, which permits the navigation, but allows your code to handle it.
 
 As mentioned, it won't always be possible to cancel the navigation.
-The navigation caused by a user pressing their browser's Back or Forward buttons isn't cancelable.
-There's [some discussion on GitHub][back-forward-discuss], but the goal here is that the App History API should not be able to 'lock in' a user from leaving your site via the gestures available in their browser.
+The navigation caused by a user pressing their browser's Back or Forward buttons isn't cancelable because a user may be trying to leave your site, and your code should not be able to prevent this.
+This is [being discussed on GitHub][back-forward-discuss].
 
 ## Transition
 
@@ -123,8 +123,8 @@ After the "navigate" handler completes normally, the URL being navigated to will
 This happens immediately, even if you've called `transitionWhile()`.
 But if you have called it with a `Promise`, one of two things will happen:
 
-- If that succeeds (or you did not call `transitionWhile()`), the App History API will fire "navigatesuccess".
-- If the `Promise` rejects, the API will fire "navigateerror".
+- If that succeeds (or you did not call `transitionWhile()`), the App History API will fire "navigatesuccess" with an `Event`.
+- If the `Promise` rejects, the API will fire "navigateerror" with an `ErrorEvent`.
 
 These events allow your code to deal with success or failure in a centralized way.
 For example, you might deal with success by hiding a previously displayed progress indicator, like this:
@@ -236,22 +236,30 @@ await appHistory.navigate('/another_url');
 
 ### State
 
-The App History API surfaces a notion of "state".
-This is similar to but improved from `history.state` from the History API. In the App History API, you can call the `.getState()` method of the current `AppHistoryEntry` (or any entry) to return a copy of its state.
-The returned copy is mutable, but changes to the returned object won't affect further calls to `.getState()`. For example:
+The App History API surfaces a notion of "state", which is developer-provided information that is stored persistently on the current history entry, but which isn't directly visible to the user.
+This is extremely similar to but improved from `history.state` in the History API.
+
+In the App History API, you can call the `.getState()` method of the current `AppHistoryEntry` (or any entry) to return a copy of its state.
+By default, this will be `undefined`.
+You can synchronously set the state for the current `AppHistoryEntry` by calling:
 
 ```js
-const state = appHistory.getState() ?? { count: 0 };
-state.count++;
-console.info(appHistory.getState());  // prints whatever state/count was before
+appHistory.updateCurrent({ state: something });
 ```
 
-You can update the current state by calling `appHistory.updateCurrent()` with new state:
+You can also set the state when navigating programmatically with `appHistory.navigate()` (this is [described below](#:=programatic-navigation)).
+
+In the App History API, the state returned from `.getState()` is a copy of the previously set state.
+If you modify it, the stored version won't also change.
+For example:
 
 ```js
-const state = appHistory.getState() ?? { count: 0 };
-state.count++;
-appHistory.updateCurrent({ state });
+appHistory.updateCurrent({ state: { count: 1 }});
+
+const state = appHistory.getState();
+state.count = 2;
+
+console.info(appHistory.getState());  // count will still be one
 ```
 
 ### Access All Entries
@@ -261,17 +269,24 @@ The API also provides a way to access the entire list of entries that a user has
 This could be used to, e.g., show a different UI based on how the user navigated to a certain page, or just to look back at the previous URLs or their states.
 This is impossible with the current History API.
 
-Entries themselves support events that allow operations to be taken when the entry finishes loading, is navigated to or from, or if it's disposed of from the user's history (e.g., an entry forward of the current position can be disposed because the user clicked a link and cleared the existing stack).
-These events can be set up at any time, but are best configured when a brand new navigation occurs, to avoid duplicate handlers.
+It's possible to handle events on `AppHistoryEntry`.
+These events include "dispose" (if the entry is no longer accessible), along with "navigateto" and "navigatefrom".
+For example, you might add a "navigatefrom" handler to clean up some state when the user leaves a specific page (either by forward navigation or their Back or Forward button).
 
 ## Examples
 
-The "navigate" event isn't just fired when the user clicks a link.
-And while the App History API is particularly powerful even with a simple event handler, you can look for and operate differently depending on the type of navigation that is being performed.
+The "navigate" event fires for all types of navigations, as mentioned above.
+(There's actually a [long appendix in the spec][long-nav-appendix] of all possible types.)
 
-### Programmatic Navigation
+While for many sites the most common case will be when the user clicks a `<a href="...">`, there are two notable, more complex navigation types that are worth covering.
 
-You can call `appHistory.navigate('/another_page')` from anywhere in your code to cause a navigation which will be handled by the centralized event handler registered on the "navigate" handler.
+### Programatic Navigation :programatic-navigation
+
+First is programatic navigation, where navigation is caused by a method call inside youur client-side code.
+
+You can call `appHistory.navigate('/another_page')` from anywhere in your code to cause a navigation.
+This will be handled by the centralized event handler registered on the "navigate" handler, and your centralized handler will be called synchronously.
+
 This is intended as an improved aggregation of older methods like `location.assign()` and friends, plus the History API's methods `pushState()` and `replacestate()`.
 
 {% Aside %}
@@ -283,7 +298,8 @@ Their signatures aren't modified in any way (i.e., they won't now return a `Prom
 {% endAside %}
 
 The `AppHistory.navigate()` method returns a `Promise`, so the invoker can wait until the transition is complete (or is rejected due to failure or being preempted by another navigation).
-It also has an optional options object, allowing you to `replace` the current URL, set a new immutable `state` (to be made available via `AppHistoryEntry.getState()`), and `AppHistoryNavigateEvent.info`.
+It also has an optional options object which controls how the navigation will occur.
+These options will allow you to `replace` the current URL, set a new immutable `state` (to be made available via `AppHistoryEntry.getState()`), and configure `AppHistoryNavigateEvent.info`.
 
 The `info` property is worth calling out.
 It allows you to pass transient information about this specific navigation event into the "navigate" handler.
@@ -313,12 +329,11 @@ These methods are all handled—just like `navigate()`—by the centralized "nav
 
 ### Form Submissions
 
-Form submission via POST is a kind of navigation, and the App History API can intercept it.
-This is no different from a navigation done by clicking a link, or calling `AppHistory.navigate()`.
-It's handled centrally.
+Secondly, HTML `<form>` submission via POST is a special type of navigation, and the App History API can intercept it.
+While it includes an additional payload, the navigation is still handled centrally by the "navigate" handler.
 
-Form submission can be detected by looking for the `formData` property on the event passed to "navigate".
-Here's an example that simply turns any form submission into one which stays on the current page:
+Form submission can be detected by looking for the `formData` property on the `AppHistoryNavigateEvent`.
+Here's an example that simply turns any form submission into one which stays on the current page via `fetch()`:
 
 ```js
 appHistory.addEventListener("navigate", event => {
@@ -330,7 +345,8 @@ appHistory.addEventListener("navigate", event => {
 
     const submitToServer = async () => {
       await fetch(event.destination.url, { method: 'POST', body: event.formData });
-      // You could navigate again with {replace: true} to change the URL here
+      // You could navigate again with {replace: true} to change the URL here,
+      // which might indicate "done"
     };
     event.transitionWhile(submitToServer());
   }
@@ -356,7 +372,7 @@ So, e.g., a user pressing Back or Forward in their browser might not see an imme
 
 {% endAside %}
 
-Lastly, there's not yet consensus on programatically modifying or rearranging the list of entries the user has navigated through.
+Lastly, there's not yet consensus on programmatically modifying or rearranging the list of entries the user has navigated through.
 This is [currently under discussion][bug-edit-entries], but one option could be to allow only deletions: either historic entries or "all future entries".
 The latter would allow temporary state.
 E.g., as a developer, I could:
@@ -370,7 +386,7 @@ This is just not possible with the current History API.
 
 ## Try the App History API
 
-You can try the App History API today in Chrome or Chromium-based browsers by enabling the "Experimental Web Platform features" flag.
+You can try the App History API from August 2021 in a Canary version of Chrome or Chromium-based browsers by enabling the "Experimental Web Platform features" flag.
 You can also [try out a demo][demo] by [Domenic Denicola][domenic].
 
 We're especially eager for feedback on issues labelled with ["feedback wanted"][feedback-wanted] on GitHub.
@@ -416,3 +432,4 @@ Hero image from [Unsplash][hero-image], by [Jeremy Zero][hero-image-by].
 [wicg-report]: https://wicg.github.io/app-history/
 [repo]: https://github.com/WICG/app-history
 [bug-edit-entries]: https://github.com/WICG/app-history/issues/9
+[long-nav-appendix]: https://github.com/WICG/app-history#appendix-types-of-navigations
