@@ -122,7 +122,7 @@ The core idea is to create a processing chain as follows:
 
 Platform Track → Processor → Transform → Generator → Platform Sinks
 
-For a barcode scanner application, this chain would look as in the code sample below.
+The example below illustrates this chain for a barcode application which highlights a barcode in a live video stream.
 
 ```js
 const stream = await getUserMedia({ video: true });
