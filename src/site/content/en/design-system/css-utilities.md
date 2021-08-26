@@ -24,6 +24,25 @@ Does what it says on the tin. It center-aligns text with `text-align` and uses
 </header>
 ```
 
+## Avatar
+
+The avatar utility adds a consistent treatment to images of authors and prevents
+them being shrunk/grown by flexbox layouts.
+
+You can affect the size of the avatar in your context by setting a value for
+`--avatar-size`, which has a default value of `65px`.
+
+The `.avatar` class can be added directly to an image, or a direct parent, such
+as a link.
+
+```html
+<img class="avatar" src="/path-to-image.jpg" alt="Example's profile shot" />
+
+<a href="#" class="avatar">
+  <img class="avatar" src="/path-to-image.jpg" alt="Example's profile shot" />
+</a>
+```
+
 ## Flow
 
 The flow utility provides flow and rhythm between direct sibling elements.

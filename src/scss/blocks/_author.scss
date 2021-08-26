@@ -1,0 +1,27 @@
+.author {
+  --flow-space: 0.5em;
+
+  font-size: 0.9em;
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+.author__links {
+  --gutter: 0 1em;
+
+  padding: 0;
+  font-size: 0.9em;
+}
+
+.author__name {
+  font-style: normal;
+
+  a {
+    color: currentColor;
+  }
+
+  a:not(:hover) {
+    text-decoration: none;
+  }
+}

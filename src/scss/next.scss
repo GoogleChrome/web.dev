@@ -469,6 +469,7 @@ web-copy-code {
 
 /// BLOCKS
 @import 'blocks/aside';
+@import 'blocks/author';
 @import 'blocks/banner';
 @import 'blocks/brand';
 @import 'blocks/button';
@@ -485,6 +486,7 @@ web-copy-code {
 
 /// UTILITY CLASSES
 @import 'utilities/all-center';
+@import 'utilities/avatar';
 @import 'utilities/flow';
 @import 'utilities/focus-ring';
 @import 'utilities/region';
