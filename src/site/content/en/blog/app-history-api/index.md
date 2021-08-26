@@ -20,7 +20,7 @@ The App History API is a proposed API that completely overhauls this space, rath
 
 {% Aside %}
 
-The App History API is currently in development, and available from August 2021 in the Canary version of Chromium-based browsers behind the "Experimental Web Platform features" flag.
+The App History API is currently in development, and available in Chrome 95 and beyond behind the "Experimental Web Platform features" flag.
 [Check out a demo here][demo].
 
 {% endAside %}
@@ -42,8 +42,8 @@ Read on to find out more!
 
 {% endAside %}
 
-The `AppHistoryNavigationEvent`, which is passed to the "navigate" event handler, contains information about the navigation, such as the target URL, and allows you to respond to the navigation in one centralized place.
-A basic implementation on example.com could look like this:
+The specific `AppHistoryNavigationEvent` passed to the "navigate" event handler contains information about the navigation, such as the destination URL, and allows you to respond to the navigation in one centralized place.
+A basic implementation for the handler, on example.com, could look like this:
 
 ```js
 appHistory.addEventListener("navigate", event => {
@@ -58,21 +58,22 @@ appHistory.addEventListener("navigate", event => {
 });
 ```
 
-This example calls `transitionWhile()` on the event with a promise generated from async helper functions.
-By calling this method with a response, the browser knows that your code needs to run to configure the next state of your site.
-This will create a transition object, which tracks the success or failure of the `Promise`.
-For example, it might reject because the user's browser is offline.
-
 You can handle the event in one of two ways:
 
 - by calling `transitionWhile()` (as described above) to handle the navigation
 - by calling `preventDefault()`, which can cancel the navigation completely
 
-Both these methods are usually allowed, but have cases where they're unable to be called.
+This example calls `transitionWhile()` on the event with a promise generated from async helper functions.
+By calling this method with a response, the browser knows that your code needs to run to configure the next state of your site.
+This will create a transition object, which tracks the success or failure of the `Promise`.
+For example, it might reject because the user's browser is offline.
+
+Both `transitionWhile()` and `preventDefault()` are usually allowed, but have cases where they're unable to be called.
 You can't handle navigations via `transitionWhile()` if the navigation is a cross-origin navigation: i.e., if it's leaving your domain.
 And you can't cancel a navigation via `preventDefault()` if the user is pressing the Back or Forward buttons in their browser; you should not be able to trap your users on your site.
 
-Even if these methods aren't allowed, the "navigate" handler is still _informative_, so your code could still, e.g., log an analytics event or perform cleanup.
+Even if you can't stop or intercept the navigation itself, the "navigate" event handler will still fire.
+It's _informative_, so your code could, e.g., log an Analytics event to indicate that a user is leaving your site.
 
 ## Why another event handler?
 
@@ -303,7 +304,8 @@ These options will allow you to `replace` the current URL, set a new immutable `
 
 The `info` property is worth calling out.
 It allows you to pass transient information about this specific navigation event into the "navigate" handler.
-This could be useful to, for example, denote a particular animation that causes the next page to appear (the alternative might be to set a global variable or include it as part of the #hash. Both options are a bit awkward).
+This could be useful to, for example, denote a particular animation that causes the next page to appear.
+(The alternative might be to set a global variable or include it as part of the #hash. Both options are a bit awkward.)
 Notably, this `info` won't be replayed if a user later causes navigation, e.g., via their Back and Forward buttons.
 In fact, it will always be `undefined` in those cases.
 
@@ -381,16 +383,16 @@ E.g., as a developer, I could:
 - allow the user to complete their work (or go Back)
 - remove a history entry on completion of a task
 
-This could be perfect for temporary modals or interstitals: the new URL is something that a user can use the Back gesture to leave from, but they then cannot accidentaly go Forward to open it again (because thef entry has been removed).
+This could be perfect for temporary modals or interstitals: the new URL is something that a user can use the Back gesture to leave from, but they then cannot accidentaly go Forward to open it again (because the entry has been removed).
 This is just not possible with the current History API.
 
 ## Try the App History API
 
-You can try the App History API from August 2021 in a Canary version of Chrome or Chromium-based browsers by enabling the "Experimental Web Platform features" flag.
+You can try the App History API in Chrome 95 and above by enabling the "Experimental Web Platform features" flag.
 You can also [try out a demo][demo] by [Domenic Denicola][domenic].
 
 We're especially eager for feedback on issues labelled with ["feedback wanted"][feedback-wanted] on GitHub.
-You can also check out the repo and spec more generally at [https://github.com/WICG/app-history], including filing new issues.
+You can also check out the repo and spec more generally at [https://github.com/WICG/app-history][repo], including filing new issues.
 
 While the classic History API appears straightforward, it's not very well-defined and has [a large number of issues][history-api-issues] around corner cases and how it has been implemented differently across browsers.
 We hope you consider providing feedback on the new App History API.
