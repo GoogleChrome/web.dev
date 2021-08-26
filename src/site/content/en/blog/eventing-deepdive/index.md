@@ -15,7 +15,7 @@ date: 2021-08-26
 # updated: 2021-08-26
 tags:
   - blog
-hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
+hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/tPQ30G1QPF3ETAVf1Q40.jpg
 alt: Binders in many colors.
 origin_trial:
   url: https://developer.chrome.com/origintrials/#/view_trial/-6682215947110973439
@@ -513,3 +513,8 @@ render the page useless. They simply prevent events from getting where they woul
 But we also call `preventDefault()`, which you'll recall prevents the default _action_. So any
 default actions (like mousewheel scroll, keyboard scroll or highlight or tabbing, link clicking,
 context menu display, etc.) are all prevented, thus leaving the page in a fairly useless state.
+
+## Acknowledgements
+
+Hero image by [Tom Wilson](https://unsplash.com/@pastorthomasbwilson) on
+[Unsplash](https://unsplash.com/photos/Em2hPK55o8g).
