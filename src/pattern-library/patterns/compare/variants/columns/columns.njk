@@ -1,17 +1,15 @@
-<div class="cluster">
+<div class="switcher">
   {% for item in data.items %}
   <figure class="compare flow" data-type="{{ item.type }}">
-    <p class="compare__label">
-      {{ item.label }}
-    </p>
-    <div class="compare__content flow">
-      {{ item.content | md | safe }}
-    </div>
-    {% if item.caption %}
+    <pre class="compare__code">{{ item.code | md | safe }}</pre>
     <figcaption class="compare__caption">
-      <p>{{ item.caption | md | safe }}</p>
+      <p class="compare__label">
+        {{ item.label }}
+      </p>
+      {% if item.caption %}
+        <p>— {{ item.caption | md | safe }}</p>
+      {% endif %}
     </figcaption>
-    {% endif %}
   </figure>
   {% endfor %}
 </div>

@@ -11,12 +11,12 @@
       {
         "type": "worse",
         "label": "Don’t",
-        "content": "```Bad code example```"
+        "code": "```Bad code example```"
       },
       {
         "type": "better",
         "label": "Do",
-        "content": "```good code example```"
+        "code": "```good code example```"
       }
     ]
   },
@@ -29,13 +29,13 @@
           {
             "type": "worse",
             "label": "Don’t",
-            "content": "```Bad code example```",
+            "code": "```Bad code example```",
             "caption": "Explanation of why `example` is bad."
           },
           {
             "type": "better",
             "label": "Do",
-            "content": "```good code example```",
+            "code": "```good code example```",
             "caption": "Explanation of why `example` is good."
           }
         ]

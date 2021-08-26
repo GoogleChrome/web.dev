@@ -2,9 +2,6 @@
 /// https://web.dev/design-system/pattern/compare
 .compare {
   --compare-highlight-color: #{get-utility-value('color', 'state-info-text')};
-
-  padding-inline-start: 1rem;
-  border-inline-start: 3px solid var(--compare-highlight-color);
 }
 
 .compare__label {
@@ -14,17 +11,22 @@
   @include apply-utility('font', 'brand');
 }
 
-.compare__content {
-  --flow-space: 1rem;
-}
-
 .compare__caption {
-  --flow-space: 0.8rem;
+  --flow-space: 1rem;
+
   text-align: left;
-  margin-inline-start: 0;
   font-style: normal;
+  margin-inline-start: 0;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1ch;
+  border-inline-start: 3px solid var(--compare-highlight-color);
 
   @include apply-utility('color', 'mid-text');
+
+  /// Ensures paragraphs flow into each other rather than act like blocks
+  > * {
+    display: inline;
+  }
 }
 
 /// TYPE EXCEPTIONS
