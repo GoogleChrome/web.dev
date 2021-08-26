@@ -248,18 +248,29 @@ module.exports = {
     const response = [];
 
     this.items.forEach((item) => {
-      // Slice only what's needed from root pattern
+      // Slice only what's needed from root pattern, but
+      // add any extra CSS for samples to both item and variants
       response.push({
         previewUrl: item.previewUrl,
         data: {
           title: item.data.title,
+          extraSampleCSS: item.data.extraSampleCSS,
         },
         rendered: item.rendered,
       });
 
       if (item.variants) {
         item.variants.forEach((variant) => {
-          response.push(variant);
+          response.push({
+            ...variant,
+            ...{
+              data: {
+                title: variant.data.title,
+                extraSampleCSS:
+                  variant.data.extraSampleCSS || item.data.extraSampleCSS,
+              },
+            },
+          });
         });
       }
     });
