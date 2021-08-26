@@ -1,8 +1,8 @@
 {
   "title": "Tooltips",
   "summary": "Use tooltips to provide information about UI controls that are too small to have a label.",
+  "extraSampleCSS": ".tooltip { margin-block: 3rem; margin-inline: auto; }",
   "context": {
-    "icon": "unfold_less",
     "tooltip": "Standard alignment"
   },
   "variants": [
@@ -10,16 +10,16 @@
       "name": "left-aligned",
       "title": "Left aligned",
       "context": {
-        "toolip": "Left aligment",
-        "modifier": "w-tooltip--left"
+        "tooltip": "Left aligment",
+        "modifier": "left"
       }
     },
     {
       "name": "right-aligned",
       "title": "Right aligned",
       "context": {
-        "toolip": "Right aligment",
-        "modifier": "w-tooltip--right"
+        "tooltip": "Right aligment",
+        "modifier": "right"
       }
     }
   ]
