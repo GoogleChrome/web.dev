@@ -118,7 +118,7 @@ The browser will ask:
 "Is anything listening for a click event on `#C` in the bubbling phase?" Pay close attention here.
 It is completely possible to listen for clicks (or any event type) in _both_ the capturing _and_
 bubbling phases. And if you had wired up event handlers in both phases (e.g. by calling
-`.addEventListener()` twice (once with `capture = true` and once with `capture = false`), then yes,
+`.addEventListener()` twice, once with `capture = true` and once with `capture = false`), then yes,
 both event handlers would absolutely fire for the same element. But it's also important to note that
 they fire in different phases (one in the capturing phase and one in the bubbling phase).
 
@@ -451,28 +451,28 @@ just play some of their music right here instead?"
 What other element/event combinations allow you to prevent the default action? I cannot possibly
 list them all, and sometimes you have to just experiment to see. But briefly, here are a few:
 
-- `<form> element + submit event` - `preventDefault()` for this combination will prevent a form from
+- `<form> element + submit event`: `preventDefault()` for this combination will prevent a form from
   submitting. This is useful if you want to perform validation and should something fail, you can
   conditionally call preventDefault to stop the form from submitting.
 
-- `<a> element + click event` - `preventDefault()` for this combination prevents the browser from
+- `<a> element + click event`: `preventDefault()` for this combination prevents the browser from
   navigating to the URL specified in the `<a>` element's href attribute.
 
-- `document + mousewheel event` - `preventDefault()` for this combination prevents page scrolling
+- `document + mousewheel event`: `preventDefault()` for this combination prevents page scrolling
   with the mousewheel (scrolling with keyboard would still work though) (NOTE: requires calling
   `addEventListener()` with `{ passive: false }`).
 
-- `document + keydown event` - `preventDefault()` for this combination is lethal. It renders the
+- `document + keydown event`: `preventDefault()` for this combination is lethal. It renders the
   page largely useless, preventing keyboard scrolling, tabbing, and keyboard highlighting
 
-- `document + mousedown event` - `preventDefault()` for this combination will prevent text
+- `document + mousedown event`: `preventDefault()` for this combination will prevent text
   highlighting with the mouse and any other "default" action that one would invoke with a mouse
   down.
 
-- `input element + keypress event` - `preventDefault()` for this combination will prevent characters
+- `input element + keypress event`: `preventDefault()` for this combination will prevent characters
   typed by the user from reaching the input element.
 
-- `document + contextmenu event` - `preventDefault()` for this combination prevents the native
+- `document + contextmenu event`: `preventDefault()` for this combination prevents the native
   browser context menu from appearing when a user right-clicks or long-presses (or any other way in
   which a context menu might appear).
 
