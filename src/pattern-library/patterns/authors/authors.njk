@@ -23,6 +23,9 @@
     <cite class="author__name">
       <a href="{{ data.url }}" class="w-author__name-link">{{ data.name }}</a>
     </cite>
+    {% if data.bio %}
+      <p class="author__bio">Lectus vivamus aliquet ullamcorper iaculis nisl mauris</p>
+    {% endif %}
     <ul class="author__links cluster" role="list">
       {% for link in data.links %}
       <li class="w-author__link-listdata">
