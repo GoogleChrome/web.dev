@@ -6,7 +6,7 @@
 
 .author__links {
   --gutter: 0 1em;
-  --flow-space: 0.8em;
+  --flow-space: 0.3em;
 
   padding: 0;
   font-size: 0.9em;
@@ -29,4 +29,8 @@
   font-size: 0.9em;
 
   @include apply-utility('color', 'mid-text');
+}
+
+.author__bio + .author__links {
+  --flow-space: 0.8em;
 }
