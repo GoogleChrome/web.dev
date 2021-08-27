@@ -13,6 +13,7 @@ $generate-utility-classes: false;
 /// GLOBAL VARIABLES
 /// Global variables that should be accessible in all authored CSS
 $global-gutter: map-get($gorko-space-scale, 'size-1');
+$global-stroke: 1px solid get-utility-value('color', 'stroke');
 
 // NOTE: there are more design token-led global variables in _tokens.scss
 
@@ -417,6 +418,37 @@ details[open]:not([class]) summary {
 
 details:not([class]) summary + * {
   @include apply-utility('flow-space', 'size-1');
+}
+
+/// Form fields
+
+select {
+  display: block;
+  width: 100%;
+  background-color: get-utility-value('bg', 'core-bg');
+  color: get-utility-value('color', 'core-text');
+  // Use an escaped svg to add a small grey arrow to the end of the select
+  // sass-lint:disable quotes
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10L12 15L17 10H7Z' fill='%235F6368'/%3E%3C/svg%3E%0A");
+  // Set the width of the arrow background image and let the height default to auto
+  background-size: 1.5em;
+  background-position: right 0.5em top 50%;
+  background-repeat: no-repeat;
+  border: $global-stroke;
+  border-radius: $global-radius-base;
+  font: inherit;
+  line-height: 1.1;
+  padding: 1em 3em 1em 0.8em;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:hover {
+  background-color: get-utility-value('bg', 'accent-bg');
 }
 
 /// Links
