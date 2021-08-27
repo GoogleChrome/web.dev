@@ -147,7 +147,7 @@ bubbling phase?
 Next, the `document`: Is anything listening for click events on the `document` in the
 bubbling phase?
 
-Finally, the `window`: Is anything listening for click events on the window in the bubbling phase?
+Finally, the `window`: "Is anything listening for click events on the window in the bubbling phase?"
 
 Phew! That was a long journey, and our event is probably very tired by now, but believe it or not,
 that is the journey every event goes through! Most of the time, this is never noticed because
