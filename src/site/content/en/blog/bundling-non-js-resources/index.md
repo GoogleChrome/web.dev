@@ -170,13 +170,14 @@ It would also integrate better with import maps and custom resolvers as it would
 Import assertions are a new feature that allows to import types other than ECMAScript modules. For now they're limited to JSON:
 
 {% Label%}foo.json:{% endLabel %}
+
 ```json
 { "answer": 42 }
 ```
 
 {% Label %}main.mjs:{% endLabel %}
-```js
 
+```js
 import json from './foo.json' assert { type: 'json' };
 console.log(json.answer); // 42
 ```
