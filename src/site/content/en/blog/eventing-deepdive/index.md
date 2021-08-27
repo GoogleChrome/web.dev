@@ -144,8 +144,8 @@ bubbling phase?"
 Next, the `<html>` element: "Is anything listening for click events on the `<html>` element in the
 bubbling phase?
 
-Next, the `document`: Is anything listening for click events on the `document` in the
-bubbling phase?
+Next, the `document`: "Is anything listening for click events on the `document` in the
+bubbling phase?"
 
 Finally, the `window`: "Is anything listening for click events on the window in the bubbling phase?"
 
