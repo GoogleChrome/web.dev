@@ -113,7 +113,7 @@ a click event on `#A` in the capturing phase and if so, the appropriate event ha
 
 Next, the event will _propagate_ to the `#B` element (and the same question will be asked).
 
-Finally, the event will reach its target and the browser will ask: "is anything listening for a click event on the
+Finally, the event will reach its target and the browser will ask: "Is anything listening for a click event on the
 `#C` element in the capturing phase?" The answer this time is "yes!" This brief period of time when
 the event is _at_ the target, is known as the "target phase." At this point, the event handler will
 fire, the browser will console.log "#C was clicked" and then we're done, right? _Wrong!_ We're not
