@@ -5,7 +5,7 @@ subhead: Seamless reusable styles.
 authors:
   - developit
 date: 2019-02-08
-updated: 2021-08-13
+updated: 2021-08-27
 description: Constructable Stylesheets provide a seamless way to create and distribute styles to documents or shadow roots without worrying about FOUC.
 tags:
   - blog
