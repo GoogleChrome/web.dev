@@ -48,7 +48,7 @@ It's that third parameter, `useCapture`, which determines if your event listener
 capturing or the bubbling phase. Possible values are `true | false`. The default value is `false`
 meaning that event bubbling will be used most of the time.
 
-{% Aside %} The above syntax for addEventListener is the legacy syntax still commonly in use and well supported by all major browsers. Alternatively, one can use the newer syntax which takes an [options object](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) as the 3rd parameter, instead of a boolean.
+{% Aside %} The above syntax for `addEventListener` is the legacy syntax still commonly in use and well supported by all major browsers. Alternatively, one can use the newer syntax which takes an [`options object`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) as the third parameter, instead of a boolean.
 {% endAside %}
 
 #### Event Capturing
