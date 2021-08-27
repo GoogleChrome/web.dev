@@ -48,8 +48,10 @@ It's that third parameter, `useCapture`, which determines if your event listener
 capturing or the bubbling phase. Possible values are `true | false`. The default value is `false`
 meaning that event bubbling will be used most of the time.
 
-{% Aside %} The above syntax for `addEventListener` is the legacy syntax still commonly in use and well supported by all major browsers. Alternatively, one can use the newer syntax which takes an [`options object`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) as the third parameter, instead of a boolean.
-{% endAside %}
+{% Aside %} The above syntax for `addEventListener` is the legacy syntax still commonly in use and
+well supported by all major browsers. Alternatively, one can use the newer syntax which takes an
+[`options object`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) as
+the third parameter, instead of a boolean. {% endAside %}
 
 #### Event Capturing
 
@@ -83,41 +85,50 @@ document.getElementById('C').addEventListener(
   true,
 );
 ```
-When a user clicks on element `#C`, an event, which originates at the `window`, is dispatched. This event will then propagate through its descendants as follows:
+
+When a user clicks on element `#C`, an event, which originates at the `window`, is dispatched. This
+event will then propagate through its descendants as follows:
 
 `window` => `document` => `<html>` => `<body>` => and so on, until it reaches the target.
 
-It does not matter if nothing is listening for a click event at the `window` or `document` or `<html>` element or `<body>` element (or any other element on the way to its target).  An event still originates at the `window` and begins its journey as just described.
+It does not matter if nothing is listening for a click event at the `window` or `document` or
+`<html>` element or `<body>` element (or any other element on the way to its target). An event still
+originates at the `window` and begins its journey as just described.
 
-In our example, the click event will then _propagate_ (this is an
-important word as it will tie directly into how the `stopPropagation()` method works and will be
-explained later in this document) _from the `window`_ to its target element (in this case,
-`#C`) by way of every element between the `window` and `#C`.
+In our example, the click event will then _propagate_ (this is an important word as it will tie
+directly into how the `stopPropagation()` method works and will be explained later in this document)
+_from the `window`_ to its target element (in this case, `#C`) by way of every element between the
+`window` and `#C`.
 
-This means that the click event will begin at `window` and the browser will ask the following questions:
+This means that the click event will begin at `window` and the browser will ask the following
+questions:
 
-"Is anything listening for a click event on the `window` in the capturing phase?" If so, the appropriate event handlers will fire. In our example, nothing is, so no handlers will fire.
+"Is anything listening for a click event on the `window` in the capturing phase?" If so, the
+appropriate event handlers will fire. In our example, nothing is, so no handlers will fire.
 
-Next, the event will _propagate_ to the `document` and the browser will ask: "Is anything listening for a click event on the `document` in the capturing phase?" If so, the
-appropriate event handlers will fire.
+Next, the event will _propagate_ to the `document` and the browser will ask: "Is anything listening
+for a click event on the `document` in the capturing phase?" If so, the appropriate event handlers
+will fire.
 
-Next, the event will _propagate_ to the `<html>` element and the browser will ask: "Is anything listening for a click
-on the `<html>` element in the capturing phase?" If so, the appropriate event handlers will fire.
+Next, the event will _propagate_ to the `<html>` element and the browser will ask: "Is anything
+listening for a click on the `<html>` element in the capturing phase?" If so, the appropriate event
+handlers will fire.
 
-Next, the event will _propagate_ to the `<body>` element and the browser will ask: "Is anything listening for a click
-event on the `<body>` element in the capturing phase?" If so, the appropriate event handlers will
-fire.
+Next, the event will _propagate_ to the `<body>` element and the browser will ask: "Is anything
+listening for a click event on the `<body>` element in the capturing phase?" If so, the appropriate
+event handlers will fire.
 
-Next, the event will _propagate_ to the `#A` element. Again, the browser will ask: "Is anything listening for
-a click event on `#A` in the capturing phase and if so, the appropriate event handlers will fire.
+Next, the event will _propagate_ to the `#A` element. Again, the browser will ask: "Is anything
+listening for a click event on `#A` in the capturing phase and if so, the appropriate event handlers
+will fire.
 
 Next, the event will _propagate_ to the `#B` element (and the same question will be asked).
 
-Finally, the event will reach its target and the browser will ask: "Is anything listening for a click event on the
-`#C` element in the capturing phase?" The answer this time is "yes!" This brief period of time when
-the event is _at_ the target, is known as the "target phase." At this point, the event handler will
-fire, the browser will console.log "#C was clicked" and then we're done, right? _Wrong!_ We're not
-done at all. The process continues, but now it changes to the bubbling phase.
+Finally, the event will reach its target and the browser will ask: "Is anything listening for a
+click event on the `#C` element in the capturing phase?" The answer this time is "yes!" This brief
+period of time when the event is _at_ the target, is known as the "target phase." At this point, the
+event handler will fire, the browser will console.log "#C was clicked" and then we're done, right?
+_Wrong!_ We're not done at all. The process continues, but now it changes to the bubbling phase.
 
 #### Event Bubbling
 
@@ -131,21 +142,21 @@ both event handlers would absolutely fire for the same element. But it's also im
 they fire in different phases (one in the capturing phase and one in the bubbling phase).
 
 Next, the event will _propagate_ (more commonly stated as "bubble" because it seems as though the
-event is traveling "up" the DOM tree) to its parent element, `#B`, and the browser will ask:
-"Is anything listening for click events on `#B` in the bubbling phase?" In our example, nothing is,
-so no handlers will fire.
+event is traveling "up" the DOM tree) to its parent element, `#B`, and the browser will ask: "Is
+anything listening for click events on `#B` in the bubbling phase?" In our example, nothing is, so
+no handlers will fire.
 
-Next, the event will bubble to `#A` and the browser will ask: "Is anything listening for click events on `#A` in the
-bubbling phase?"
+Next, the event will bubble to `#A` and the browser will ask: "Is anything listening for click
+events on `#A` in the bubbling phase?"
 
-Next, the event will bubble to `<body>`: "Is anything listening for click events on the `<body>` element in the
-bubbling phase?"
+Next, the event will bubble to `<body>`: "Is anything listening for click events on the `<body>`
+element in the bubbling phase?"
 
 Next, the `<html>` element: "Is anything listening for click events on the `<html>` element in the
 bubbling phase?
 
-Next, the `document`: "Is anything listening for click events on the `document` in the
-bubbling phase?"
+Next, the `document`: "Is anything listening for click events on the `document` in the bubbling
+phase?"
 
 Finally, the `window`: "Is anything listening for click events on the window in the bubbling phase?"
 
@@ -472,8 +483,8 @@ list them all, and sometimes you have to just experiment to see. But briefly, he
   with the mousewheel (scrolling with keyboard would still work though) (NOTE: requires calling
   `addEventListener()` with `{ passive: false }`).
 
-- `document + keydown event`: `preventDefault()` for this combination is lethal. It renders the
-  page largely useless, preventing keyboard scrolling, tabbing, and keyboard highlighting
+- `document + keydown event`: `preventDefault()` for this combination is lethal. It renders the page
+  largely useless, preventing keyboard scrolling, tabbing, and keyboard highlighting
 
 - `document + mousedown event`: `preventDefault()` for this combination will prevent text
   highlighting with the mouse and any other "default" action that one would invoke with a mouse
