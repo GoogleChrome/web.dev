@@ -195,7 +195,7 @@ Add an `<svg>` icon and the `.gui-popup` container element.
 
 For straightforward popup placement, `.gui-popup` is a child to the button that
 expands it. The only catch with this strategy is the `.gui-split-button`
-container can not use `overflow: hidden`, as it will clip the popup from being
+container can't use `overflow: hidden`, as it will clip the popup from being
 visually present.
 
 A `<ul>` filled with `<li><button>` contents will announce itself as a "button
@@ -540,7 +540,7 @@ The `.gui-popup` element is a floating card button list using custom properties
 and relative units to be subtly smaller, interactively matched with the primary
 button, and on brand with its use of color. Notice the icons have less contrast,
 are thinner, and the shadow has a hint of brand blue to it. Like with buttons,
-strong UI/UX is a result of these little details stacking up.
+strong UI and UX is a result of these little details stacking up.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/D7RWfwJW25G3kuzPSnlz.png",
 alt="A floating card element.", width="448", height="422", class="w-screenshot" %}
@@ -660,14 +660,14 @@ smooth.
 
 [Logical properties](/learn/css/logical-properties/) do all the complex work.
 Here's the list of logical properties used:
-- `display: inline-flex`
+- `display: inline-flex` creates an inline flex element.
 - `padding-block` and `padding-inline` as a pair, instead of `padding`
-  shorthand, get the benefits of padding the logical sides
+  shorthand, get the benefits of padding the logical sides.
 - `border-end-start-radius` and
   [friends](https://drafts.csswg.org/css-logical/#border-radius-properties) will
-  round corners based on document direction
-- `inline-size`
-- `border-inline-start`
+  round corners based on document direction.
+- `inline-size` rather than `width` ensures the size isn't tied to physical dimensions.
+- `border-inline-start` adds a border to the start, which might be on the right or the left depending on script direction.
 
 {% Video 
   src="video/vS06HQ1YTsbMKSFTIPl2iogUQP73/lNn1KXfw1GprPJa9RFHO.mp4",
@@ -679,7 +679,7 @@ Here's the list of logical properties used:
 
 {% Aside 'gotchas' %} 
 The popup element is positioned with `left` and `top` and
-would need adjusted for writing modes like
+would need to be adjusted for writing modes like
 [`vertical-rl`](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode).
 {% endAside %}
 
@@ -763,7 +763,7 @@ with
 
 ### Split button clicks
 
-Finally, if the user clicks, taps or keyboard interacts with the buttons, the
+Finally, if the user clicks, taps, or keyboard interacts with the buttons, the
 application needs to perform the appropriate action. Event bubbling is used
 again here, but this time on the `.gui-split-button` container, to catch button
 clicks from a child popup or the primary action.
