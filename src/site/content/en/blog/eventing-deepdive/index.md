@@ -96,7 +96,7 @@ explained later in this document) _from the `window`_ to its target element (in 
 
 This means that the click event will begin at `window` and the browser will ask the following questions:
 
-“Is anything listening for a click event on the `window` in the capturing phase?” If so, the appropriate event handlers will fire. In our example, nothing is, so no handlers will fire.
+"Is anything listening for a click event on the `window` in the capturing phase?" If so, the appropriate event handlers will fire. In our example, nothing is, so no handlers will fire.
 
 Next, the event will _propagate_ to the `document` and the browser will ask: "Is anything listening for a click event on the `document` in the capturing phase?" If so, the
 appropriate event handlers will fire.
