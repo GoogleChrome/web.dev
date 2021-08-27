@@ -71,6 +71,7 @@ For example, it might reject because the user's browser is offline.
 Both `transitionWhile()` and `preventDefault()` are usually allowed, but have cases where they're unable to be called.
 You can't handle navigations via `transitionWhile()` if the navigation is a cross-origin navigation: i.e., if it's leaving your domain.
 And you can't cancel a navigation via `preventDefault()` if the user is pressing the Back or Forward buttons in their browser; you should not be able to trap your users on your site.
+(This is [being discussed on GitHub][back-forward-discuss].)
 
 Even if you can't stop or intercept the navigation itself, the "navigate" event handler will still fire.
 It's _informative_, so your code could, e.g., log an Analytics event to indicate that a user is leaving your site.
@@ -99,16 +100,6 @@ Your page might deal with these, but there's a long tail of possibilities which 
 Personally, the History API often _feels_ like it could go some way to help with these possibilities.
 However, it really only has two surface areas: responding if the user presses Back or Forward in their browser, plus pushing and replacing URLs.
 It doesn't have an analogy to "navigate", except if you manually set up listeners for, e.g., click events, as demonstrated above.
-
-### Preventing Navigation
-
-It's possible to completely cancel a navigation event via `preventDefault()`, causing it to be ignored.
-This method must be called  synchronously inside the "navigate" event handler.
-Notably, this is different from calling `transitionWhile()`, which permits the navigation, but allows your code to handle it.
-
-As mentioned, it won't always be possible to cancel the navigation.
-The navigation caused by a user pressing their browser's Back or Forward buttons isn't cancelable because a user may be trying to leave your site, and your code should not be able to prevent this.
-This is [being discussed on GitHub][back-forward-discuss].
 
 ## Transition
 
@@ -240,7 +231,7 @@ await appHistory.navigate('/another_url');
 The App History API surfaces a notion of "state", which is developer-provided information that is stored persistently on the current history entry, but which isn't directly visible to the user.
 This is extremely similar to but improved from `history.state` in the History API.
 
-In the App History API, you can call the `.getState()` method of the current `AppHistoryEntry` (or any entry) to return a copy of its state.
+In the App History API, you can call the `AppHistoryEntry.getState()` method of the current entry (or any entry) to return a copy of its state.
 By default, this will be `undefined`.
 You can synchronously set the state for the current `AppHistoryEntry` by calling:
 
@@ -248,7 +239,7 @@ You can synchronously set the state for the current `AppHistoryEntry` by calling
 appHistory.updateCurrent({ state: something });
 ```
 
-You can also set the state when navigating programmatically with `appHistory.navigate()` (this is [described below](#:=programatic-navigation)).
+You can also set the state when navigating programmatically with `appHistory.navigate()` (this is [described below](#programmatic-navigation)).
 
 In the App History API, the state returned from `.getState()` is a copy of the previously set state.
 If you modify it, the stored version won't also change.
@@ -257,10 +248,10 @@ For example:
 ```js
 appHistory.updateCurrent({ state: { count: 1 }});
 
-const state = appHistory.getState();
+const state = appHistory.current.getState();
 state.count = 2;
 
-console.info(appHistory.getState());  // count will still be one
+console.info(appHistory.current.getState());  // count will still be one
 ```
 
 ### Access All Entries
@@ -281,9 +272,9 @@ The "navigate" event fires for all types of navigations, as mentioned above.
 
 While for many sites the most common case will be when the user clicks a `<a href="...">`, there are two notable, more complex navigation types that are worth covering.
 
-### Programatic Navigation :programatic-navigation
+### Programmatic Navigation {: #programmatic-navigation }
 
-First is programatic navigation, where navigation is caused by a method call inside youur client-side code.
+First is programmatic navigation, where navigation is caused by a method call inside youur client-side code.
 
 You can call `appHistory.navigate('/another_page')` from anywhere in your code to cause a navigation.
 This will be handled by the centralized event handler registered on the "navigate" handler, and your centralized handler will be called synchronously.
