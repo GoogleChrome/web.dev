@@ -239,7 +239,7 @@ You can synchronously set the state for the current `AppHistoryEntry` by calling
 appHistory.updateCurrent({ state: something });
 ```
 
-You can also set the state when navigating programmatically with `appHistory.navigate()` (this is [described below](#programatic-navigation)).
+You can also set the state when navigating programmatically with `appHistory.navigate()` (this is [described below](#programmatic-navigation)).
 
 In the App History API, the state returned from `.getState()` is a copy of the previously set state.
 If you modify it, the stored version won't also change.
@@ -272,9 +272,9 @@ The "navigate" event fires for all types of navigations, as mentioned above.
 
 While for many sites the most common case will be when the user clicks a `<a href="...">`, there are two notable, more complex navigation types that are worth covering.
 
-### Programatic Navigation {: #programatic-navigation }
+### Programmatic Navigation {: #programmatic-navigation }
 
-First is programatic navigation, where navigation is caused by a method call inside youur client-side code.
+First is programmatic navigation, where navigation is caused by a method call inside youur client-side code.
 
 You can call `appHistory.navigate('/another_page')` from anywhere in your code to cause a navigation.
 This will be handled by the centralized event handler registered on the "navigate" handler, and your centralized handler will be called synchronously.
