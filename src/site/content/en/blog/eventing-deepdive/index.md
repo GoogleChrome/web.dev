@@ -85,7 +85,7 @@ document.getElementById('C').addEventListener(
 ```
 When a user clicks on element `#C`, an event, which originates at the `window`, is dispatched. This event will then propagate through its descendants as follows:
 
-`window` => `document` => `<html>` => `<body>` => and so on, until it reaches the target
+`window` => `document` => `<html>` => `<body>` => and so on, until it reaches the target.
 
 It does not matter if nothing is listening for a click event at the window or document or `<html>` element or `<body>` element (or any other element on the way ot its target).  An event still originates at the window and begins its journey as just described.
 
