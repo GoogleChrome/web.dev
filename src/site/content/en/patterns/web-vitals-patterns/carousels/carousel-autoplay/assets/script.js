@@ -1,19 +1,13 @@
 function autoplayCarousel() {
     const carouselEl = document.getElementById("carousel");
     const slidesEl = document.getElementById("slide-container");
-
+    let slideWidth = document.getElementsByClassName("slide")[0].offsetWidth;
     // Add click handlers
-    document.querySelector("#back-button")
-        .addEventListener("click", () => navigate("backward"));
-
-    document.querySelector("#forward-button")
-        .addEventListener("click", () => navigate("forward"));
-
-    document.querySelectorAll(".dot")
+    document.querySelectorAll(".slide-indicator")
         .forEach((dot, index) => {
             dot.addEventListener("click", () => navigate(index));
+            dot.addEventListener("mouseenter", () => clearInterval(autoplay));
         });
-
     // Add keyboard handlers
     document.addEventListener('keydown', (e) => {
         if (e.code === 'ArrowLeft') {
@@ -24,44 +18,41 @@ function autoplayCarousel() {
             navigate("forward");
         }
     });
-
     // Autoplay
-    const autoplay = setInterval(() => navigate("forward"), 2000);
-    carouselEl.addEventListener("mouseenter", () => clearInterval(autoplay));
-
+    const autoplay = setInterval(() => navigate("forward"), 3000);
+    slidesEl.addEventListener("mouseenter", () => clearInterval(autoplay));
     // Slide transition
     const getNewScrollPosition = (arg) => {
-        const imageWidth = 600;
-        const gap = 16;
-        const maxScrollLeft = slidesEl.scrollWidth - imageWidth;
-
+        let slideWidth = document.getElementsByClassName("slide")[0].offsetWidth
+        const gap = 10;
+        const maxScrollLeft = slidesEl.scrollWidth - slideWidth;
         if (arg === "forward") {
-            const x = slidesEl.scrollLeft + imageWidth + gap;
+            const x = slidesEl.scrollLeft + slideWidth + gap;
             return x <= maxScrollLeft ? x : 0;
         } else if (arg === "backward") {
-            const x = slidesEl.scrollLeft - imageWidth - gap;
+            const x = slidesEl.scrollLeft - slideWidth - gap;
             return x >= 0 ? x : maxScrollLeft;
         } else if (typeof arg === "number") {
-            const x = arg * (imageWidth + gap);
+            const x = arg * (slideWidth + gap);
             return x;
         }
     }
-
+    window.addEventListener('resize', () => {
+        slideWidth = document.getElementsByClassName("slide")[0].offsetWidth;
+    });
     const navigate = (arg) => {
         slidesEl.scrollLeft = getNewScrollPosition(arg);
     }
-
-    // Update nav dots as slides transition
-    const slideObserver = new IntersectionObserver((entries) => {
+    // Slide indicators
+    const slideObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            if (entry.intersectionRatio > 0) {
-                const slideIndex = entry.target.dataset.index;
-                carouselEl.querySelector('.dot.active').classList.remove('active');
-                carouselEl.querySelectorAll('.dot')[slideIndex].classList.add('active');
+            if (entry.isIntersecting) {
+                const slideIndex = entry.target.dataset.slideindex;
+                carouselEl.querySelector('.slide-indicator.active').classList.remove('active');
+                carouselEl.querySelectorAll('.slide-indicator')[slideIndex].classList.add('active');
             }
         });
-    }, { root: slidesEl });
-
+    }, { root: slidesEl, threshold: .1 });
     document.querySelectorAll('.slide').forEach((slide) => {
         slideObserver.observe(slide);
     });

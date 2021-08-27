@@ -10,128 +10,130 @@ patternId: web-vitals-patterns/carousels/carousel-autoplay
     <title>Autoplay Carousel Demo</title>
     <style>
         :root {
-            --carousel-image-width: 600px;
-            --carousel-image-height: 400px;
-            --button-color: #878787;
+            --button-primary: #878787;
             --button-hover: black;
         }
         body {
             padding: 1em;
             font-family: system-ui;
-            display: grid;
-            justify-items: center;
+            text-align: center;
         }
-        .grid {
-            display: grid;
-            grid-template-columns: 3em minmax(0px, var(--carousel-image-width)) 3em;
-        }
-        .left-column, .right-column {
-            padding-bottom: 4em;
+        #carousel {
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }  
+        .navigation {
             display: flex;
             justify-content: center;
-            align-items: center;
+        }
+        .slide-indicator {
+            height: 44px;
+            width: 50px;
+            display: flex;
+            justify-items: center;
+            cursor: pointer;
+        }
+        .slide-indicator:after {
+            content: "";
+            background-color: var(--button-primary);
+            height: 10px;
+            margin-top: 10px;
+            width: 40px;
+        }
+        .slide-indicator.active:after,
+        .slide-indicator:hover:after {
+            background-color: var(--button-hover);
+        }
+        .slide-banner {
+            background-color: black;
+            color: white;
+            position: absolute;
+            left: 0;
+            bottom: 20px;
+            padding: 15px;
+            font-size: 2.5vw;
+        }
+        .slide-banner a {
+            color: white;
         }
         #slide-container {
-            display: grid;
-            grid-auto-flow: column;
-            gap: 1rem;
-            padding-bottom: 1em;
-            overflow-y: auto;
-            overscroll-behavior-x: contain;
             scroll-snap-type: x mandatory;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            gap: 10px;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
         }
         .slide {
             scroll-snap-align: center;
+            position: relative;
+            min-width: 100%;
+            aspect-ratio: 2 / 1;
         }
         .slide img {
-            object-fit: contain;
-        }
-        .dots {
-            display: flex;
-            justify-content: center;
-        }
-        .dot {
-            cursor: pointer;
-            background-color: var(--button-color);
-            height: 1em;
-            width: 1em;
-            border-radius: 50%;
-            border: 1em solid white;
-        }
-        .dot.active,
-        .dot:hover {
-            background-color: var(--button-hover);
-        }
-        #back-button, #forward-button {
-            display: flex;
-            align-items: center;
-            position: relative;
-            width: 3em;
-            height: 3em;
-            cursor: pointer;
-        }
-        #back-button:hover .arrow, #forward-button:hover .arrow {
-            border-color: var(--button-hover);
-        }
-        .arrow {
-            position: absolute;
-            width: 1em; 
-            height: 1em;
-        }
-        .arrow-left {
-            right: 5px;
-            transform: rotate(45deg);
-            border-left: .5em solid var(--button-color);
-            border-bottom: .5em solid var(--button-color); 
-        }
-        .arrow-right {
-            left: 5px;
-            transform: rotate(45deg);
-            border-top: .5em solid var(--button-color);
-            border-right: .5em solid var(--button-color);
+            height: 100%;
+            width: auto;
         }
     </style>
 </head>
 <body>
     <h1>Autoplay carousel</h1>
-    <div class="carousel" id="carousel">
-        <div class="grid">
-            <div class="left-column">
-                <div id="back-button"><i class="arrow arrow-left"></i></div>
+    <div id="carousel">
+        <div id="slide-container">
+            <div class="slide" data-slideIndex="0">
+                <div class="slide-banner">Tour the Empire State Building! <a href="">Buy tickets now.</a></div>
+                <img width="1200" height="600" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/d5JiF2JjxniJRH6xviYA.jpg">
             </div>
-            <div class="middle-column">
-                <div id="slide-container">
-                    <a class="slide" href="#" data-index="0"><img width="600" height="400" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/C0slLSuXSTJHyUxRDc3O.jpg"></a>
-                    <a class="slide" href="#" data-index="1"><img width="600" height="400" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/ALVztAgQoyIQUfmQknJk.jpg"></a>
-                    <a class="slide" href="#" data-index="2"><img width="600" height="400" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/ZZXVrtIcIuUG16jbqtAe.jpg"></a>
-                    <a class="slide" href="#" data-index="3"><img width="600" height="400" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/xBhWwvEjF8Dj2oMbhOQd.jpg"></a>
-                    <a class="slide" href="#" data-index="4"><img width="600" height="400" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/rvZxMyUkTJ5i35oC3rTa.jpg"></a>
-                </div>
-                <div class="dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
+            <div class="slide" data-slideIndex="1">
+                <div class="slide-banner">Ride the Shinkansen! <a href="">Buy tickets now.</a></div>
+                <img width="1200" height="600" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/atRogpxlJTXAvhWe654i.jpg">
             </div>
-            <div class="right-column">
-                <div id="forward-button"><i class="arrow arrow-right"></i></div>
+            <div class="slide" data-slideIndex="2">
+                <div class="slide-banner">Discover relaxation! <a href="">Buy tickets now.</a></div>
+                <img width="1200" height="600" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/q8svpF1B6dG5wNuiTgyV.jpg">
+            </div>
+            <div class="slide" data-slideIndex="3">
+                <div class="slide-banner">See penguins! <a href="">Buy tickets now.</a></div>
+                <img width="1200" height="600" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/oweFaoCZ4g8bieZdvG5L.jpg">
+            </div>
+            <div class="slide" data-slideIndex="4">
+                <div class="slide-banner">Take a ride on the wheel! <a href="">Buy tickets now.</a></div>
+                <img width="1200" height="600" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/dcAMZ91QT8H06x5xTwUR.jpg">
             </div>
         </div>
+        <div class="navigation">
+            <div class="slide-indicator active"></div>
+            <div class="slide-indicator"></div>
+            <div class="slide-indicator"></div>
+            <div class="slide-indicator"></div>
+            <div class="slide-indicator"></div>
+        </div>
     </div>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+        incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+        erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+        Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+        Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+        erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+        euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+        iaculis eu non diam phasellus.
+    </p>
     <script>
         function autoplayCarousel(){
             const carouselEl = document.getElementById("carousel");
             const slidesEl = document.getElementById("slide-container");
+            let slideWidth = document.getElementsByClassName("slide")[0].offsetWidth;
             // Add click handlers
-            document.querySelector("#back-button")
-                .addEventListener("click", () => navigate("backward"));
-            document.querySelector("#forward-button")
-                .addEventListener("click", () => navigate("forward"));
-            document.querySelectorAll(".dot")
+            document.querySelectorAll(".slide-indicator")
                 .forEach((dot, index) => {
                     dot.addEventListener("click", () => navigate(index));
+                    dot.addEventListener("mouseenter", () => clearInterval(autoplay));
                 });
             // Add keyboard handlers
             document.addEventListener('keydown', (e) => {
@@ -144,37 +146,40 @@ patternId: web-vitals-patterns/carousels/carousel-autoplay
                 }
             });
             // Autoplay
-            const autoplay = setInterval(() => navigate("forward"), 2000);
-            carouselEl.addEventListener("mouseenter", () => clearInterval(autoplay));
+            const autoplay = setInterval(() => navigate("forward"), 3000);
+            slidesEl.addEventListener("mouseenter", () => clearInterval(autoplay));
             // Slide transition
             const getNewScrollPosition = (arg) => {
-                const imageWidth = 600;
-                const gap = 16;
-                const maxScrollLeft = slidesEl.scrollWidth - imageWidth;
+                let slideWidth = document.getElementsByClassName("slide")[0].offsetWidth
+                const gap = 10;
+                const maxScrollLeft = slidesEl.scrollWidth - slideWidth;
                 if (arg === "forward") {
-                    const x = slidesEl.scrollLeft + imageWidth + gap;
+                    const x = slidesEl.scrollLeft + slideWidth + gap;
                     return x <= maxScrollLeft ? x : 0;
                 } else if (arg === "backward") {
-                    const x = slidesEl.scrollLeft - imageWidth - gap;
+                    const x = slidesEl.scrollLeft - slideWidth - gap;
                     return x >= 0 ? x : maxScrollLeft;
                 } else if (typeof arg === "number") {
-                    const x = arg * (imageWidth + gap);
+                    const x = arg * (slideWidth + gap);
                     return x;
                 }
             }
+            window.addEventListener('resize', () => {
+                slideWidth = document.getElementsByClassName("slide")[0].offsetWidth;
+            });
             const navigate = (arg) => {
                 slidesEl.scrollLeft = getNewScrollPosition(arg);
             }
-            // Slide indicators ("dots")
-            const slideObserver = new IntersectionObserver((entries) => {
+            // Slide indicators
+            const slideObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
-                    if (entry.intersectionRatio > 0) {
-                        const slideIndex = entry.target.dataset.index;
-                        carouselEl.querySelector('.dot.active').classList.remove('active');
-                        carouselEl.querySelectorAll('.dot')[slideIndex].classList.add('active');
+                    if (entry.isIntersecting) {
+                        const slideIndex = entry.target.dataset.slideindex;
+                        carouselEl.querySelector('.slide-indicator.active').classList.remove('active');
+                        carouselEl.querySelectorAll('.slide-indicator')[slideIndex].classList.add('active');
                     }
                 });
-            }, { root: slidesEl });
+            }, { root: slidesEl, threshold: .1 });
             document.querySelectorAll('.slide').forEach((slide) => {
                 slideObserver.observe(slide);
             });
