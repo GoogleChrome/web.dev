@@ -87,7 +87,7 @@ When a user clicks on element `#C`, an event, which originates at the `window`, 
 
 `window` => `document` => `<html>` => `<body>` => and so on, until it reaches the target.
 
-It does not matter if nothing is listening for a click event at the window or document or `<html>` element or `<body>` element (or any other element on the way ot its target).  An event still originates at the window and begins its journey as just described.
+It does not matter if nothing is listening for a click event at the `window` or `document` or `<html>` element or `<body>` element (or any other element on the way to its target).  An event still originates at the `window` and begins its journey as just described.
 
 In our example, the click event will then _propagate_ (this is an
 important word as it will tie directly into how the `stopPropagation()` method works and will be
