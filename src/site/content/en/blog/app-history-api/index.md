@@ -355,7 +355,7 @@ This is up for discussion [in the app-history repo][initial-event-discuss].
 
 Another intentional design choice of the App History API is that it operates only within a single frame—that is, the top-level page, or a single specific `<iframe>`.
 This has a number of interesting implications that are [further documented in the spec][backforward-note], but in practice, will reduce developer confusion.
-The previous History API has a number of confusing edge cases, like support for frames, and the reimagined App History API these edge cases from the get-go.
+The previous History API has a number of confusing edge cases, like support for frames, and the reimagined App History API handles these edge cases from the get-go.
 
 {% Aside %}
 
