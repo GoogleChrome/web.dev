@@ -93,7 +93,7 @@ track to the worker. For example, `MediaStreamTrackProcessor` can be used to obt
 the stream is transferred to a web worker where frames are read one by one and queued
 into a `VideoEncoder`.
 
-With [`HTMLCanvasElement.transferControlToOffscreen`](https://developers.google.com/web/updates/2018/08/offscreen-canvas#unblock_main_thread) even rendering can be done off the main thread. But if all the hight level tools turned
+With [`HTMLCanvasElement.transferControlToOffscreen`](https://developers.google.com/web/updates/2018/08/offscreen-canvas#unblock_main_thread) even rendering can be done off the main thread. But if all the high level tools turned
 out to be inconvenient, `VideoFrame` itself is [transferable](https://developer.mozilla.org/en-US/docs/Web/API/Transferable) and may be
 moved between workers.
 
