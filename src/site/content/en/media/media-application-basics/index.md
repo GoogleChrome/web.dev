@@ -203,6 +203,14 @@ provided the instructions to get you set up quickly.
     docker run -w /media -v ${PWD}/media:/media -it --rm media-tools
     /media #
     ```
+    
+    If you are using Windows Command Prompt, use the following command instead:
+    
+    ```bash
+    docker run -w /media -v %cd%/media:/media -it --rm media-tools
+    /media #
+    ```
+    
 
 {% Aside 'gotchas' %}
 Make sure you run the previous `docker` commands from inside the `media-tools`
