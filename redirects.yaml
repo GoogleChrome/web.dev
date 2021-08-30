@@ -183,6 +183,9 @@ redirects:
 - source: /web-vitals
   destination: /vitals
 
+- source: /si
+  destination: /speed-index
+
 # Redirects Progressive Web App content
 
 - source: /pwa
