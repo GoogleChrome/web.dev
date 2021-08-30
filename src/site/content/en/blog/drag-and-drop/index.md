@@ -104,8 +104,8 @@ function handleDragStart(e) {
 
   let items = document.querySelectorAll('.container .box');
   items.forEach(function(item) {
-    item.addEventListener('dragstart', handleDragStart, false);
-    item.addEventListener('dragend', handleDragEnd, false);
+    item.addEventListener('dragstart', handleDragStart);
+    item.addEventListener('dragend', handleDragEnd);
   });
 ```
 
@@ -171,13 +171,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     this.classList.remove('over');
   }
 
+  function handleDrop(e) {
+    // we'll add this later
+  }
+
   let items = document.querySelectorAll('.container .box');
   items.forEach(function(item) {
-    item.addEventListener('dragstart', handleDragStart, false);
-    item.addEventListener('dragover', handleDragOver, false);
-    item.addEventListener('dragenter', handleDragEnter, false);
-    item.addEventListener('dragleave', handleDragLeave, false);
-    item.addEventListener('dragend', handleDragEnd, false);
+    item.addEventListener('dragstart', handleDragStart);
+    item.addEventListener('dragover', handleDragOver);
+    item.addEventListener('dragenter', handleDragEnter);
+    item.addEventListener('dragleave', handleDragLeave);
+    item.addEventListener('dragend', handleDragEnd);
+    item.addEventListener('drop', handleDrop);
   });
 });
 ```
@@ -205,7 +210,7 @@ consider [throttling or debouncing your event listener](https://css-tricks.com/d
 ## Completing the drop
 
 To process the actual drop,
-add an event listener for the `drop` event.
+add an event listener for the `drop` event (we do this above, so you can fill it in).
 In the `drop` handler,
 you'll need to prevent the browser's default behavior for drops,
 which is typically some sort of annoying redirect.
