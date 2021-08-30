@@ -221,7 +221,7 @@ function handleDrop(e) {
 
 Be sure to register the new handler in amongst the other handlers:
 
-```js/7-8
+```js/7-7
   let items = document.querySelectorAll('.container .box');
   items.forEach(function(item) {
     item.addEventListener('dragstart', handleDragStart);
