@@ -211,7 +211,7 @@ Hero image via [Maxime Rossignol](https://unsplash.com/@maxoor) on
 [WebGPU]: https://gpuweb.github.io/gpuweb/
 [WebGL]: https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API
 [W3C's "GPU for the Web" Community Group]: https://www.w3.org/community/gpu/
-[Babylon.js Playground]: https://playground.babylonjs.com/#WMRQCG
+[Babylon.js Playground]: https://playground.babylonjs.com/#XCNL7Y
 [Get started with GPU Compute on the Web]: https://developers.google.com/web/updates/2019/08/get-started-with-gpu-compute-on-the-web
 [A Taste of WebGPU in Firefox]: https://hacks.mozilla.org/2020/04/experimental-webgpu-in-firefox/
 [WebGPU for Metal Developers, Part One]: https://metalbyexample.com/webgpu-part-one/
