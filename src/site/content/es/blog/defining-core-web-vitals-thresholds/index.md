@@ -1,13 +1,13 @@
 ---
 title: Definición de los umbrales de las métricas de Core Web Vitals
-subhead: The research and methodology behind Core Web Vitals thresholds
+subhead: La investigación y la metodología detrás de los umbrales de Core Web Vitals
 authors:
   - bmcquade
-description: The research and methodology behind Core Web Vitals thresholds
+description: La investigación y la metodología detrás de los umbrales de Core Web Vitals
 date: '2020-05-21'
-updated: '2020-05-27'
-hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
-alt: The research and methodology behind Core Web Vitals thresholds
+updated: 27-05-2020
+hero: image / admin / WNrgCVjmp8Gyc8EbZ9Jv.png
+alt: La investigación y la metodología detrás de los umbrales de Core Web Vitals
 tags:
   - blog
   - performance
@@ -20,7 +20,7 @@ tags:
 
 En el 2020 las Core Web Vitals son tres métricas: Largest Contentful Paint : Despliegue del contenido más extenso (LCP), First Input Delay: Demora de la primera entrada (FID) y Cumulative Layout Shift: Cambio Acumulativo del diseño (CLS). Cada métrica mide un aspecto diferente de la experiencia del usuario: LCP mide la velocidad de carga percibida y marca el punto en la línea de tiempo de carga de la página en el que probablemente se haya cargado el contenido principal de la misma. FID mide la capacidad de respuesta y cuantifica la experiencia que sienten los usuarios cuando intentan interactuar por primera vez con la página, y CLS mide la estabilidad visual y cuantifica la cantidad de cambios de diseño inesperados del contenido visible de la página.
 
-Each Core Web Vitals metric has associated thresholds, which categorize performance as either "good", "needs improvement", or "poor":
+Cada métrica de Core Web Vitals tiene umbrales asociados, que clasifican el rendimiento como "bueno", "necesita mejorar" o "deficiente":
 
 <div class="w-stack w-stack--center w-stack--md">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Recomendaciones del umbral de Largest Contentful Paint", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="Recomendaciones del umbral de First Input Delay", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Recomendaciones del umbral de Cumulative Layout Shift", width="400", height="350" %}</div>
 
@@ -30,7 +30,7 @@ Each Core Web Vitals metric has associated thresholds, which categorize performa
       <th> </th>
       <th>Bueno</th>
       <th>Deficiente</th>
-      <th>Percentile</th>
+      <th>Percentil</th>
     </tr>
     <tr>
       <td>Largest Contentful Paint</td>
@@ -40,8 +40,8 @@ Each Core Web Vitals metric has associated thresholds, which categorize performa
     </tr>
     <tr>
       <td>First Input Delay</td>
-      <td>≤100ms</td>
-      <td>&gt;300ms</td>
+      <td>≤ 100 ms</td>
+      <td>&gt; 300 ms</td>
       <td>75</td>
     </tr>
     <tr>
@@ -63,7 +63,7 @@ Each Core Web Vitals metric has associated thresholds, which categorize performa
 <p data-md-type="paragraph">Además, para garantizar que los propietarios de los sitios puedan optimizarlos para que cumplan los umbrales "buenos", exigimos que estos umbrales sean alcanzables para los contenidos actuales de la web. Por ejemplo, mientras que cero milisegundos es un umbral ideal de LCP "bueno", que da lugar a experiencias de carga instantáneas, un umbral de cero milisegundos no es alcanzable en la práctica de la mayoría de los casos, debido a las latencias de procesamiento de la red y de los dispositivos. Por lo tanto, cero milisegundos no es un umbral LCP "bueno" razonable para Core Web Vitals.</p>
 <p data-md-type="paragraph">Al evaluar los umbrales "buenos" de Core Web Vitals de los candidatos, verificamos que esos umbrales sean alcanzables, según los datos del <a href="https://developers.google.com/web/tools/chrome-user-experience-report" data-md-type="link">Chrome User Experience Report</a> (CrUX). Para confirmar que se puede alcanzar un umbral, requerimos que al menos el 10% de los <a href="/same-site-same-origin/#origin" data-md-type="link">orígenes</a> actualmente cumplen con el umbral "bueno". Además, para garantizar que los sitios bien optimizados no se clasifican erróneamente debido a la variabilidad de los datos de campo, también verificamos que el contenido bien optimizado cumple sistemáticamente el umbral "bueno".</p>
 <p data-md-type="paragraph">Por el contrario, establecemos el umbral "deficiente" identificando un nivel de rendimiento que solo una minoría de orígenes que actualmente no cumple. A menos que se disponga de investigaciones pertinentes para definir un umbral "deficiente", de forma predeterminada se clasifica como "deficiente" entre el 10 y el 30% de los orígenes con peores resultados.</p>
-<h3 data-md-type="header" data-md-header-level="3">Final thoughts on criteria</h3>
+<h3 data-md-type="header" data-md-header-level="3">Reflexiones finales sobre los criterios</h3>
 <p data-md-type="paragraph">Al evaluar los umbrales de los candidatos, encontramos que los criterios a veces entraban en conflicto entre sí. Por ejemplo, puede haber una tensión entre un umbral que se puede alcanzar de manera constante y que garantiza experiencias de usuario consistentemente buenas. Además, dado que la investigación de la percepción humana generalmente proporciona una variedad de valores, y las métricas de comportamiento del usuario muestran cambios graduales en el comportamiento, descubrimos que a menudo no existe un umbral "correcto" único para una métrica. Por lo tanto, nuestro enfoque para el Core Web Vitals 2020 fue elegir los umbrales que cumplan mejor con los criterios anteriores, reconociendo al mismo tiempo que no hay un umbral perfecto y que a veces podemos tener que elegir entre múltiples umbrales candidatos razonables. En vez de preguntar "¿cuál es el umbral perfecto?" en cambio, nos hemos centrado en preguntar "¿qué umbral candidato cumple mejor nuestros criterios?"</p>
 <h2 data-md-type="header" data-md-header-level="2">Elección del percentil</h2>
 <p data-md-type="paragraph">Como se señaló anteriormente, para clasificar el rendimiento general de una página o sitio, utilizamos el valor del percentil 75 de todas las visitas a esa página o sitio. El percentil 75 se eligió en función de dos criterios. En primer lugar, el percentil debe garantizar que la mayoría de las visitas a una página o sitio experimenten el nivel de rendimiento deseado. En segundo lugar, el valor del percentil elegido no debe verse afectado en exceso por los valores atípicos.</p>
@@ -81,14 +81,14 @@ Each Core Web Vitals metric has associated thresholds, which categorize performa
   <table>
     <tr>
       <th> </th>
-      <th>1 second</th>
+      <th>1 segundo</th>
       <th>1.5 segundos</th>
-      <th>2 seconds</th>
+      <th>2 segundos</th>
       <th>2.5 segundos</th>
-      <th>3 seconds</th>
+      <th>3 segundos</th>
     </tr>
     <tr>
-      <td><strong>phone</strong></td>
+      <td><strong>teléfono</strong></td>
       <td>3.5%</td>
       <td>13%</td>
       <td>27%</td>
@@ -96,7 +96,7 @@ Each Core Web Vitals metric has associated thresholds, which categorize performa
       <td>55%</td>
     </tr>
     <tr>
-      <td><strong>desktop</strong></td>
+      <td><strong>escritorio</strong></td>
       <td>6.9%</td>
       <td>19%</td>
       <td>36%</td>
@@ -113,14 +113,14 @@ Each Core Web Vitals metric has associated thresholds, which categorize performa
   <table>
     <tr>
       <th> </th>
-      <th>3 seconds</th>
+      <th>3 segundos</th>
       <th>3.5 segundos</th>
-      <th>4 seconds</th>
+      <th>4 segundos</th>
       <th>4.5 segundos</th>
-      <th>5 seconds</th>
+      <th>5 segundos</th>
     </tr>
     <tr>
-      <td><strong>phone</strong></td>
+      <td><strong>teléfono</strong></td>
       <td>45%</td>
       <td>35%</td>
       <td>26%</td>
@@ -128,7 +128,7 @@ Each Core Web Vitals metric has associated thresholds, which categorize performa
       <td>15%</td>
     </tr>
     <tr>
-      <td><strong>desktop</strong></td>
+      <td><strong>escritorio</strong></td>
       <td>36%</td>
       <td>26%</td>
       <td>19%</td>
@@ -153,15 +153,15 @@ Each Core Web Vitals metric has associated thresholds, which categorize performa
   <table>
     <tr>
       <th></th>
-      <th>100ms</th>
+      <th>100 ms</th>
     </tr>
     <tr>
-      <td><strong>phone</strong></td>
+      <td><strong>teléfono</strong></td>
       <td>78%</td>
     </tr>
     <tr>
-      <td><strong>desktop</strong></td>
-      <td>&gt;99%</td>
+      <td><strong>escritorio</strong></td>
+      <td>&gt; 99%</td>
     </tr>
   </table>
 </div></div>
@@ -171,7 +171,7 @@ Each Core Web Vitals metric has associated thresholds, which categorize performa
 <h3 data-md-type="header" data-md-header-level="3">Calidad de la experiencia</h3>
 <p data-md-type="paragraph">Cumulative Layout Shift (CLS) es una nueva métrica que mide cuánto cambia el contenido visible de una página. Dado que CLS es nuevo, no conocemos ninguna investigación que pueda informar directamente sobre los umbrales de esta métrica. Por lo tanto, para identificar un umbral que se ajuste a las expectativas de los usuarios, evaluamos páginas del mundo real con diferentes cantidades de cambios en el diseño, para determinar la cantidad máxima de cambio que se percibe como aceptable antes de causar interrupciones significativas al consumir el contenido de la página. En nuestras pruebas internas, encontramos que los niveles de cambio a partir de 0.15 se percibían sistemáticamente como disruptivos, mientras que los cambios de 0.1 e inferiores eran perceptibles pero no excesivamente disruptivos. Por lo tanto, aunque el cambio cero del diseño es el ideal, llegamos a la conclusión de que los valores de hasta 0.1 son umbrales CLS "buenos".</p>
 <h3 data-md-type="header" data-md-header-level="3">Viabilidad</h3>
-<p data-md-type="paragraph">Based on CrUX data, we can see that nearly 50% of origins have CLS of 0.05 or below.</p>
+<p data-md-type="paragraph">Según los datos de CrUX, podemos ver que casi el 50% de los orígenes tienen CLS de 0.05 o menos.</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de orígenes CrUX clasificados como "buenos" (para los umbrales CLS candidatos)</strong></p>
 <div data-md-type="block_html"><div class="w-table-wrapper">
   <table>
@@ -182,13 +182,13 @@ Each Core Web Vitals metric has associated thresholds, which categorize performa
       <th>0.15</th>
     </tr>
     <tr>
-      <td><strong>phone</strong></td>
+      <td><strong>teléfono</strong></td>
       <td>49%</td>
       <td>60%</td>
       <td>69%</td>
     </tr>
     <tr>
-      <td><strong>desktop</strong></td>
+      <td><strong>escritorio</strong></td>
       <td>42%</td>
       <td>59%</td>
       <td>69%</td>
@@ -208,14 +208,14 @@ Each Core Web Vitals metric has associated thresholds, which categorize performa
       <th>0.3</th>
     </tr>
     <tr>
-      <td><strong>phone</strong></td>
+      <td><strong>teléfono</strong></td>
       <td>31%</td>
       <td>25%</td>
       <td>20%</td>
       <td>18%</td>
     </tr>
     <tr>
-      <td><strong>desktop</strong></td>
+      <td><strong>escritorio</strong></td>
       <td>31%</td>
       <td>23%</td>
       <td>18%</td>
