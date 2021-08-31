@@ -1,5 +1,5 @@
 ---
-title: Tools to measure Core Web Vitals
+title: Инструменты для измерения Core Web Vitals
 subhead: Теперь ваши любимые средства разработчика могут измерять показатели Core Web Vitals.
 authors:
   - addyosmani
@@ -8,7 +8,7 @@ date: '2020-05-28'
 description: Прочтите о недавно объявленной поддержке измерения Core Web Vitals в популярных инструментах веб-разработчиков, таких как Lighthouse, PageSpeed Insights, Chrome UX Report и многих других.
 hero: image/admin/wNtXgv1OE2OETdiSzi8l.png
 thumbnail: image/admin/KxBRBQe5CRZpCxNYyW2H.png
-alt: Chrome User Experience logo, PageSpeed Insights logo, Lighthouse logo, Search Console logo, Chrome DevTools logo, Web Vitals extension logo.
+alt: Логотип Chrome User Experience, логотип PageSpeed Insights, логотип Lighthouse, логотип Search Console, логотип Chrome DevTools, логотип расширения Web Vitals.
 tags:
   - blog
   - web-vitals
@@ -29,7 +29,7 @@ tags:
 - После того как вы определили страницы, которые нуждаются в доработке, используйте PageSpeed Insights (на основе Lighthouse и Chrome UX Report) для диагностики лабораторных и полевых проблем на странице. PageSpeed Insights (PSI) доступен через Search Console, или вы можете ввести URL-адрес напрямую в PSI.
 - Готовы оптимизировать свой сайт локально в лабораторных условиях? Используйте Lighthouse и Chrome DevTools, чтобы измерить Core Web Vitals и получить действенные рекомендации о том, что именно нужно исправить. Расширение Web Vitals для Chrome позволяет просматривать показатели на рабочем столе в режиме реального времени.
 - Нужна настраиваемая панель управления Core Web Vitals? Используйте обновленную панель инструментов CrUX или новый Chrome UX Report API для полевых данных и PageSpeed Insights API для лабораторных данных.
-- Looking for guidance? web.dev/measure can measure your page and show you a prioritized set of guides and codelabs for optimization, using PSI data.
+- Ищете руководство? web.dev/measure может измерить вашу страницу и показать вам приоритетный набор руководств и кодовых таблиц для оптимизации, используя данные PSI.
 - Наконец, перед развертыванием изменений в рабочей среде используйте Lighthouse CI для запросов на включение внесённых изменений, чтобы убедиться в отсутствии регрессий в Core Web Vitals.
 
 После этого введения давайте более подробно рассмотрим конкретные обновления для каждого инструмента!
@@ -66,7 +66,7 @@ PageSpeed Insights и [PageSpeed Insights API](https://developers.google.com/spe
 
 Единственный способ по-настоящему узнать, как сайт работает для пользователей, — это реально измерить его производительность в полевых условиях, когда пользователи загружают сайт и взаимодействуют с ним. Этот тип измерения обычно называется мониторингом реальных пользователей или сокращенно RUM. Даже если у вас нет RUM на сайте, CrUX может предоставить быстрый и простой способ оценить Core Web Vitals.
 
-**Introducing the CrUX API**
+**Представляем CrUX API**
 
 Сегодня мы рады анонсировать [CrUX API](http://developers.google.com/web/tools/chrome-user-experience-report/api/reference/) — быстрый и бесплатный способ легко интегрировать рабочие процессы разработки с измерением качества на уровне источника и URL-адреса для следующих полевых показателей:
 
@@ -81,9 +81,9 @@ PageSpeed Insights и [PageSpeed Insights API](https://developers.google.com/spe
 
 <figure class="w-figure">{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Демонстрация Chrome User Experience Report API с метриками Core Web Vitals", width="800", height="523", class="w-screenshot w-screenshot--filled" %}</figure>
 
-In future releases, we plan to expand the API to enable access to additional CrUX dataset dimensions and metrics.
+В будущих выпусках мы планируем расширить API, чтобы обеспечить доступ к дополнительным параметрам и показателям набора данных CrUX.
 
-**Revamped CrUX Dashboard**
+**Обновленная панель управления CrUX**
 
 Обновленная [панель CrUX Dashboard](http://g.co/chromeuxdash) позволяет легко отслеживать производительность источника с течением времени, и теперь можно использовать панель для мониторинга распределения всех показателей Core Web Vitals. Чтобы начать работу с панелью, ознакомьтесь с нашим [руководством](/chrome-ux-report-data-studio-dashboard/) на web.dev.
 
@@ -91,9 +91,9 @@ In future releases, we plan to expand the API to enable access to additional CrU
 
 Мы сделали новую целевую страницу Core Web Vitals, чтобы можно было с первого взгляда увидеть, как работает ваш сайт. Мы будем рады отзывам обо всех инструментах CrUX; чтобы поделиться своими мыслями и вопросами, напишите нам в Твиттере [@ChromeUXReport](https://twitter.com/chromeuxreport) или в [Google Group](https://groups.google.com/a/chromium.org/g/chrome-ux-report).
 
-### Chrome DevTools Performance panel
+### Панель производительности Chrome DevTools
 
-**Debug Layout Shift events in the Experience section**
+**События Debug Layout Shift в разделе Experience**
 
 На панели **Performance** в Chrome DevTools появился новый раздел **[Experience](https://developers.google.com/web/updates/2020/05/devtools#cls)**, с помощью которого можно обнаруживать неожиданные смещения макета. Это полезно для поиска и устранения проблем визуальной нестабильности на вашей странице, которые учитываются в метрике CLS (Совокупное смещение макета).
 
@@ -105,14 +105,14 @@ In future releases, we plan to expand the API to enable access to additional CrU
 
 Показатель TBT (Общее время блокировки) можно измерить с помощью лабораторных инструментов, это отличный косвенный показатель для FID (Времени ожидания до первого взаимодействия с контентом). TBT измеряет общее количество времени между [FCP (Первой отрисовкой контента)](/fcp/) и [TTI (Временем до интерактивности)](/tti/), когда основной поток был заблокирован на достаточно долгое время, чтобы предотвратить реакцию на ввод. Оптимизация производительности, улучшающая TBT в лабораторных условиях, должна улучшить FID в полевых условиях.
 
-<figure class="w-figure">   {% Img src="image/admin/WufuLpvrZfgbRn70C74V.png", alt="Total Blocking Time displayed in the footer of the DevTools performance panel", width="800", height="517", class="w-screenshot" %} </figure>
+<figure class="w-figure">{% Img src = "image / admin / WufuLpvrZfgbRn70C74V.png", alt = "Общее время блокировки, отображаемое в нижнем колонтитуле панели производительности DevTools", width = "800", height = "517", class = "w-screenshot "%}</figure>
 
 TBT теперь отображается в нижнем колонтитуле панели **Performance** в Chrome DevTools при измерении производительности страницы:
 
 {% Instruction 'devtools-performance', 'ol' %}
 
 1. Щелкните **Record**.
-2. Manually reload the page.
+2. Обновите страницу вручную.
 3. Дождитесь загрузки страницы, затем остановите запись.
 
 Дополнительные сведения см. в разделе [«Новые возможности DevTools (Chrome 84)»](https://developers.google.com/web/updates/2020/05/devtools#cls).
@@ -133,9 +133,9 @@ TBT теперь отображается в нижнем колонтитуле
 
 <figure class="w-figure">{% Img src = "image / admin / ryoV1T1PhxUmo9zdCsDe.png", alt = "Измеряйте показатели Core Web Vitals с течением времени и получайте приоритетные рекомендации с помощью инструмента измерения web.dev", width = "800", height = "459", class = "w-screenshot"%}</figure>
 
-### Web Vitals extension
+### Расширение Web Vitals
 
-The Web Vitals extension measures the three Core Web Vitals metrics in real-time for (desktop) Google Chrome. This is helpful for catching issues early on during your development workflow and as a diagnostic tool to assess performance of Core Web Vitals as you browse the web.
+Расширение Web Vitals измеряет три показателя Core Web Vitals в режиме реального времени для (настольного) Google Chrome. Это полезно для выявления проблем на ранних этапах рабочего процесса разработки и в качестве диагностического инструмента для оценки производительности Core Web Vitals при просмотре веб-страниц.
 
 Расширение теперь можно установить из [Интернет-магазина Chrome](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en)! Надеемся, вы сочтете это полезным. Мы приветствуем любой вклад в улучшение расширения, а также отзывы в репозитории проекта на [GitHub](https://github.com/GoogleChrome/web-vitals-extension/).
 
@@ -152,6 +152,6 @@ The Web Vitals extension measures the three Core Web Vitals metrics in real-time
 - Используйте **отчет Core Web Vitals report в Search Console**, чтобы получить сводку о том, как ваши источники работают в полевых условиях.
 - Используйте **расширение Web Vitals**, чтобы отслеживать производительность страницы по Core Web Vitals в режиме реального времени.
 
-We will cover more about our Core Web Vitals tooling at [web.dev Live](/live/) in June. Sign up to get updates on the event!
+Мы расскажем больше о наших инструментах Core Web Vitals на [web.dev Live](/live/) в июне. Зарегистрируйтесь, чтобы получать новости о мероприятии!
 
-~ by Elizabeth and Addy, WebPerf Janitors
+~ Элизабет и Эдди, WebPerf Janitors
