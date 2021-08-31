@@ -58,7 +58,7 @@ Google 认为核心 Web 指标对一切网络体验都至关重要。因此，Go
       <td>CLS</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">         Chrome User Experience Report</a></td>
+      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome 用户体验报告</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
@@ -144,9 +144,9 @@ getLCP(sendToAnalytics);
 
 此外，倾向于直接通过底层网页 API 来测量这些指标的开发者可以参考这些指标指南，从而了解执行详情：
 
-- [Measure LCP in JavaScript](/lcp/#measure-lcp-in-javascript)
-- [Measure FID in JavaScript](/fid/#measure-fid-in-javascript)
-- [Measure CLS in JavaScript](/cls/#measure-cls-in-javascript)
+- [在 JavaScript 中测量 LCP](/lcp/#measure-lcp-in-javascript)
+- [在 JavaScript 中测量 FID](/fid/#measure-fid-in-javascript)
+- [在 JavaScript 中测量 CLS](/cls/#measure-cls-in-javascript)
 
 {% Aside %}关于如何使用热门分析服务（或您自己的内部分析工具）来测量这些指标的更多指导，请参阅：[实测 Web 指标的最佳实践](/vitals-field-measurement-best-practices/){% endAside %}
 
@@ -170,13 +170,13 @@ getLCP(sendToAnalytics);
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/chrome-devtools">           Chrome DevTools</a></td>
+        <td><a href="https://developers.google.com/web/tools/chrome-devtools">Chrome 开发者工具</a></td>
         <td>✔</td>
         <td>✘（使用<a href="/tbt/"> TBT </a>代替）</td>
         <td>✔</td>
       </tr>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/lighthouse">           Lighthouse</a></td>
+        <td><a href="https://developers.google.com/web/tools/lighthouse">灯塔</a></td>
         <td>✔</td>
         <td>✘（使用<a href="/tbt/"> TBT </a>代替）</td>
         <td>✔</td>
@@ -191,13 +191,13 @@ getLCP(sendToAnalytics);
 
 根据用户设备功能、网络状况、设备上可能正在运行的其他进程以及与页面交互方式的差别，网站性能也可能会有很大差异。事实上，每项核心 Web 指标的得分都会受到用户交互的影响。只有通过实际测量才能准确获取全貌。
 
-### Recommendations for improving your scores
+### 提高分数的建议
 
 当您测量了核心 Web 指标并确定了需要改进的领域后，下一步就是优化。以下指南提供了如何针对每项核心 Web 指标优化页面的具体建议：
 
-- [Optimize LCP](/optimize-lcp/)
-- [Optimize FID](/optimize-fid/)
-- [Optimize CLS](/optimize-cls/)
+- [优化 LCP](/optimize-lcp/)
+- [优化 FID](/optimize-fid/)
+- [优化 CLS](/optimize-cls/)
 
 ## 其他 Web 指标
 
