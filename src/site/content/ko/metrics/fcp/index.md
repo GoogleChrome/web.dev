@@ -17,37 +17,37 @@ tags:
 
 최초 콘텐츠풀 페인트(FCP) 메트릭은 페이지가 로드되기 시작한 시점부터 페이지 콘텐츠의 일부가 화면에 렌더링될 때까지의 시간을 측정합니다. 이 메트릭에서 "콘텐츠"란 텍스트, 이미지(배경 이미지 포함), `<svg>` 요소 또는 흰색이 아닌 `<canvas>` 요소를 뜻합니다.
 
-{% Img src="image/admin/3UhlOxRc0j8Vc4DGd4dt.png", alt="FCP timeline from google.com", width="800", height="311", linkTo=true %}
+{% Img src="image/admin/3UhlOxRc0j8Vc4DGd4dt.png", alt="google.com의 FCP 타임라인", width="800", height="311", linkTo=true %}
 
-In the above load timeline, FCP happens in the second frame, as that's when the first text and image elements are rendered to the screen.
+위의 로드 타임라인에서 FCP는 첫 번째 텍스트와 이미지 요소가 화면에 렌더링되는 두 번째 프레임에서 발생합니다.
 
 전체가 아닌 일부 콘텐츠만 렌더링되었음을 확인하실 수 있습니다. 이는 *최초* 콘텐츠풀 페인트(FCP)와 페이지의 주요 콘텐츠 로딩이 완료된 시점을 측정하는 것을 목표로 하는 *[Large Contentful Paint(최대 콘텐츠풀 페인트, LCP)](/lcp/)*를 구분하는 중요한 차이점입니다.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">   {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Good FCP values are 1.8 seconds or less, poor values are greater than 3.0 seconds and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="좋은 FCP 값은 1.8초 이하이고 나쁜 값은 3.0초보다 크며 그 사이에는 개선이 필요합니다", height=400" "300", class="w-screenshot w-screenshot--채워진 너비-전체" %}</source></picture>
 
 ### 좋은 FCP 점수는 무엇인가요?
 
 우수한 사용자 경험을 제공하려면 사이트의 최초 콘텐츠풀 페인트가 **1.8초** 이하여야 합니다. 대부분의 사용자에 대해 이 목표를 달성할 수 있도록 하려면 모바일 및 데스크톱 기기 전반에 분할된 페이지 로드의 **75번째 백분위수**를 측정하는 것이 바람직한 임계값입니다.
 
-## How to measure FCP
+## FCP 측정 방법
 
 CLS는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장](/user-centric-performance-metrics/#in-the-field)에서 측정할 수 있으며 다음 도구에서 사용할 수 있습니다.
 
-### Field tools
+### 현장 도구
 
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [Search Console(Speed Report)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
-- [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
+- [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)
 
-### Lab tools
+### 실험 도구
 
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 
-### Measure FCP in JavaScript
+### JavaScript에서 FCP 측정
 
 JavaScript에서 FCP를 측정하려면 [Paint Timing API를](https://w3c.github.io/paint-timing/) 사용할 수 있습니다. 다음 예시에서는 이름이 `first-contentful-paint`인 `paint` 항목을 수신 대기하고 콘솔에 기록하는 [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)를 작성하는 방법을 확인하실 수 있습니다.
 
@@ -88,24 +88,24 @@ JavaScript에서 FCP를 측정하는 방법에 대한 전체 예제는 [`getFCP(
 
 {% Aside %} 일부 경우(예: 교차 원본 iframe) JavaScript에서 FCP를 측정할 수 없습니다. 자세한 내용은 `web-vitals` 라이브러리의 [제한 사항](https://github.com/GoogleChrome/web-vitals#limitations) 섹션을 참조하세요. {% endAside %}
 
-## How to improve FCP
+## FCP를 개선하는 방법
 
 특정 사이트에 대한 FCP를 개선하는 방법을 알아보려면 Lighthouse 성능 감사를 실행하고 감사에서 제안하는 특정한 [기회](/lighthouse-performance/#opportunities) 또는 [진단](/lighthouse-performance/#diagnostics)을 주의 깊게 살펴보시기 바랍니다.
 
-To learn how to improve FCP in general (for any site), refer to the following performance guides:
+모든 사이트에서 일반적으로 FCP를 개선하는 방법을 알아보려면 다음 성능 가이드를 참조하세요.
 
-- [Eliminate render-blocking resources](/render-blocking-resources/)
-- [Minify CSS](/unminified-css/)
-- [Remove unused CSS](/unused-css-rules/)
-- [Preconnect to required origins](/uses-rel-preconnect/)
-- [Reduce server response times (TTFB)](/time-to-first-byte/)
-- [Avoid multiple page redirects](/redirects/)
+- [렌더링 차단 리소스 제거](/render-blocking-resources/)
+- [CSS 축소](/unminified-css/)
+- [사용하지 않는 CSS 제거](/unused-css-rules/)
+- [필요한 출처에 사전 연결](/uses-rel-preconnect/)
+- [서버 응답 시간 단축(TTFB)](/time-to-first-byte/)
+- [여러 페이지 리디렉션 방지](/redirects/)
 - [핵심 요청 사전 로드](/uses-rel-preload/)
-- [Avoid enormous network payloads](/total-byte-weight/)
-- [Serve static assets with an efficient cache policy](/uses-long-cache-ttl/)
+- [막대한 네트워크 페이로드 방지](/total-byte-weight/)
+- [효율적인 캐시 정책으로 정적 자산 제공](/uses-long-cache-ttl/)
 - [과도한 DOM 크기 방지](/dom-size/)
 - [크리티컬 요청 깊이 최소화](/critical-request-chains/)
-- [Ensure text remains visible during webfont load](/font-display/)
-- [Keep request counts low and transfer sizes small](/resource-summary/)
+- [웹폰트 로드 중에 텍스트가 계속 표시되는지 확인](/font-display/)
+- [요청 수를 줄이고 전송 크기를 작게 유지](/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}
