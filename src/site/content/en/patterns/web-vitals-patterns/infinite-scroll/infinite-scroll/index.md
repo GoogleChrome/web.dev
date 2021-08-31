@@ -10,6 +10,11 @@ height: 500
 This infinite scroll example is designed to ensure that there are never any
 layout shifts - regardless of how long it takes the server to respond with new content.
 
+One of the most common issues with many infinite scroll implementations is that
+the page footer (or similar UX element) gets pushed further down the page
+whenever new items are added. With this infinite scroll implementation, this
+never occurs.
+
 **High-level approach**
 
 Whenever possible, new items are inserted into the page before the user reaches

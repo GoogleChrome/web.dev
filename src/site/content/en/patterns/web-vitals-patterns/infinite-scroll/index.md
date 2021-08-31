@@ -8,5 +8,5 @@ height: 500
 ---
 
 Infinite scroll is a UX pattern where content is continously added to the page
-as a user scrolls. Some implementations of infinite scroll can be a source of [layout
-shifts](https://web.dev/debugging-layout-shifts/).
+as a user scrolls. Some implementations of infinite scroll can be a source of
+[layout shifts](https://web.dev/debugging-layout-shifts/).

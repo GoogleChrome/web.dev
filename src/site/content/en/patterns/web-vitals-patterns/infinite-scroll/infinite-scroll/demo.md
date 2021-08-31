@@ -25,23 +25,32 @@ patternId: web-vitals-patterns/infinite-scroll/infinite-scroll
             overscroll-behavior-y: none;
         }
         .item {
-            height: 50vh;
-            background-color: lightpink;
-            margin: 1em;
+            width: 100%;
+            aspect-ratio: 1 / 1;
             font-size: 5em;
             display: flex;
             justify-content: center;
             align-items: center;
+            border: 1px solid black;
         }
-        .new {
-            background-color: lightblue;
+        .button-wrapper {
+            padding: 0 40px 40px 40px;
         }
         .footer {
             padding: 1em;
         }
+        select {
+            margin: 20px;
+        }
         /* --- Infinite Scroll ---------------------------------------------*/
         #infinite-scroll-container {
             position: relative;
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            gap: 20px;
+            margin: 0 auto;
+            padding: 20px;
         }
         #sentinel {
             position: absolute;
@@ -90,6 +99,8 @@ patternId: web-vitals-patterns/infinite-scroll/infinite-scroll
         <option value="0">0ms</option>
         <option value="50">50ms</option>
         <option value="500">500ms</option>
+        <option value="1000">1000ms</option>
+        <option value="2000">2000ms</option>
         <option value="5000">5000ms</option>
     </select>
     <div id="infinite-scroll-container">
@@ -103,7 +114,7 @@ patternId: web-vitals-patterns/infinite-scroll/infinite-scroll
             <span class="disabled-text">Loading more items...</span>
             <span class="active-text">Show more</span>
         </button>
-        <div class="footer">This is a footer. | Lorum ipsum. | Lorum ipsum.</div>
+        <div class="footer">Privacy Policy | About Us | Corporate | Like & Subscribe</div>
     </div>
     <script>
         function infiniteScroll() {
@@ -126,7 +137,10 @@ patternId: web-vitals-patterns/infinite-scroll/infinite-scroll
                 };
             })();
             const fakeServer = (() => {
-                const remainingItems = [...Array(10).keys()];
+                const remainingItems = [...Array(50).keys()].map((i) => {
+                    const randomHexCode = Math.floor(Math.random()*16777215).toString(16);
+                    return {value: i, color: `#${randomHexCode}`}
+                })
                 const serverDelay = parseInt(document.getElementById("delay-select").value);
                 return {
                     fakeRequest: async () => {
@@ -152,9 +166,9 @@ patternId: web-vitals-patterns/infinite-scroll/infinite-scroll
                 while (responseBuffer.length > 0) {
                     const data = responseBuffer.shift();
                     const el = document.createElement("div");
-                    el.textContent = data;
+                    el.textContent = data.value;
+                    el.style.backgroundColor = data.color;
                     el.classList.add("item");
-                    el.classList.add("new");
                     containerEl.insertBefore(el, loadingButtonEl);
                     console.log(`inserted: ${data}`);
                 }
