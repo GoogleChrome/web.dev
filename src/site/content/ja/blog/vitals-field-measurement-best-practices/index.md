@@ -67,7 +67,7 @@ getLCP(sendToAnalytics);
 
 {% Aside %}ヒント: [`web-vitals`](https://github.com/GoogleChrome/web-vitals) JavaScript ライブラリでは、レポートされた各指標インスタンスに ID を提供しており、これによってほとんどのアナリティクス ツールで分布を構築できるようにしています。詳細については、[`Metric`](https://github.com/GoogleChrome/web-vitals#metric) (指標) インターフェースのドキュメンテーションを参照してください。{% endAside %}
 
-## Send your data at the right time
+## 適切なタイミングでデータを送信する
 
 パフォーマンス指標の中には、ページの読み込みが完了した時点ですぐに計算できるものもあれば、CLS のようにページの表示期間全体を考慮し、ページのアンロードが開始された時点で初めて確定するものもあります。
 
