@@ -1,13 +1,13 @@
 ---
-title: Tools to measure Core Web Vitals
-subhead: Your favorite developer tools can now measure the Core Web Vitals.
+title: Herramientas para medir Core Web Vitals
+subhead: Sus herramientas de desarrollo favoritas ahora pueden medir los Core Web Vitals.
 authors:
   - addyosmani
   - egsweeny
 date: '2020-05-28'
 description: Lea sobre la recién anunciada compatibilidad de las medidas de Core Web Vitals con herramientas populares para desarrolladores web como Lighthouse, PageSpeed Insights, Chrome UX Report y muchas otras.
-hero: image/admin/wNtXgv1OE2OETdiSzi8l.png
-thumbnail: image/admin/KxBRBQe5CRZpCxNYyW2H.png
+hero: image / admin / wNtXgv1OE2OETdiSzi8l.png
+thumbnail: image / admin / KxBRBQe5CRZpCxNYyW2H.png
 alt: Logotipo de Chrome User Experience, logotipo de PageSpeed Insights, logotipo de Lighthouse, logotipo de Search Console, logotipo de Chrome DevTools, logotipo de la extensión Web Vitals.
 tags:
   - blog
@@ -32,7 +32,7 @@ Para empezar a optimizar la experiencia del usuario con Core Web Vitals, pruebe 
 - ¿Busca orientación? web.dev/measure puede medir su página y mostrarle un conjunto priorizado de normas y laboratorios de código para la optimización, utilizando datos de PSI.
 - Por último, utilice Lighthouse CI en las solicitudes de extracción para asegurarse de que no haya regresiones en Core Web Vitals antes de implementar un cambio en la producción.
 
-With that introduction, let's dive into the specific updates for each tool!
+Con esa introducción, ¡profundicemos en las actualizaciones específicas para cada herramienta!
 
 ### Lighthouse
 
@@ -81,7 +81,7 @@ A continuación se muestra una [demostración](https://developers.google.com/web
 
 <figure class="w-figure">{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Demostración de la API Informe de experiencia del usuario de Chrome que muestra las métricas de Core Web Vitals", width="800", height="523", class="w-screenshot w-screenshot--filled" %}</figure>
 
-In future releases, we plan to expand the API to enable access to additional CrUX dataset dimensions and metrics.
+En versiones futuras, planeamos expandir la API para permitir el acceso a dimensiones y métricas adicionales del conjunto de datos de CrUX.
 
 **Panel de control de CrUX renovado**
 
@@ -91,9 +91,9 @@ El [panel de control de CrUX](http://g.co/chromeuxdash) recientemente rediseñad
 
 Introducimos una nueva página de inicio de Core Web Vitals para que sea aún más fácil ver el rendimiento de su sitio de un vistazo. Agradecemos sus comentarios sobre todas las herramientas de CrUX, para compartir sus opiniones y preguntas, póngase en contacto con nosotros en la cuenta de Twitter [@ChromeUXReport](https://groups.google.com/a/chromium.org/g/chrome-ux-report) o en el [Grupo de Google](https://groups.google.com/a/chromium.org/g/chrome-ux-report).
 
-### Chrome DevTools Performance panel
+### Panel de rendimiento de Chrome DevTools
 
-**Debug Layout Shift events in the Experience section**
+**Depurar eventos de cambio de diseño en la sección Experiencia**
 
 El **rendimiento** del panel Chrome DevTools tiene una nueva **[sección de Experiencia](https://developers.google.com/web/updates/2020/05/devtools#cls)** que puede ayudarle a detectar cambios de diseño inesperados. Esto es útil para encontrar y solucionar problemas de inestabilidad visual en su página que contribuyen al Cumulative Layout Shift.
 
@@ -111,11 +111,11 @@ TBT se muestra ahora en el pie de página del panel de **rendimiento** de Chrome
 
 {% Instruction 'devtools-performance', 'ol' %}
 
-1. Click **Record**.
-2. Manually reload the page.
-3. Wait for the page to load and then stop recording.
+1. Haga clic en **Grabar** .
+2. Vuelva a cargar la página manualmente.
+3. Espere a que se cargue la página y luego detenga la grabación.
 
-For more information, see [What's New In DevTools (Chrome 84)](https://developers.google.com/web/updates/2020/05/devtools#cls).
+Para obtener más información, consulte [Novedades de DevTools (Chrome 84)](https://developers.google.com/web/updates/2020/05/devtools#cls) .
 
 ### Search Console
 
@@ -133,7 +133,7 @@ Una vez que identifique un tipo de página que tenga problemas relacionados con 
 
 <figure class="w-figure">{% Img src="image/admin/ryoV1T1PhxUmo9zdCsDe.png", alt="Mida las métricas de Core Web Vitals a lo largo del tiempo y obtenga orientación priorizada con la herramienta de medición de web.dev", width="800", height="459", class="w-screenshot" %}</figure>
 
-### Web Vitals extension
+### Extensión Web Vitals
 
 La extensión Web Vitals mide las tres métricas de Core Web Vitals en tiempo real para Google Chrome (de escritorio). Esto es útil para detectar problemas en una fase temprana del flujo de trabajo de desarrollo y como herramienta de diagnóstico para evaluar el rendimiento de Core Web Vitals mientras se navega por la web.
 
@@ -145,7 +145,7 @@ La extensión Web Vitals mide las tres métricas de Core Web Vitals en tiempo re
 
 ¡Eso es un envoltorio! ¿Qué puede hacer a continuación?:
 
-- Use **Lighthouse** in DevTools to optimize your user experience and ensure you are setting yourself up for success with Core Web Vitals in the field.
+- Utilice **Lighthouse** en DevTools para optimizar su experiencia de usuario y asegurarse de que se está preparando para el éxito con Core Web Vitals en el campo.
 - Utilice **PageSpeed Insights** para comparar el rendimiento de Core Web Vitals en el laboratorio y en el campo.
 - Pruebe la nueva **API de Chrome User Experience Report** para acceder fácilmente a los resultados de su origen y su URL con respecto a Core Web Vitals durante los últimos 28 días.
 - Utilice la sección y el pie de página de **Experiencia** en el panel de **Rendimiento** de DevTools para profundizar y depurar contra Core Web Vitals específicos.
