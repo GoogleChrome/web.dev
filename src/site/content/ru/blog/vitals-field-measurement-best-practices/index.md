@@ -1,13 +1,13 @@
 ---
 title: Лучшие практики для измерения показателей Web Vitals в полевых условиях
-subhead: How to measure Web Vitals with your current analytics tool.
+subhead: Как измерить Web Vitals с помощью текущего инструмента аналитики.
 authors:
   - philipwalton
-description: How to measure Web Vitals with your current analytics tool
+description: Как измерить Web Vitals с помощью текущего инструмента аналитики
 date: '2020-05-27'
 updated: '2020-07-21'
 hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
-alt: How to measure Web Vitals with your current analytics tool
+alt: Как измерить Web Vitals с помощью текущего инструмента аналитики
 tags:
   - blog
   - performance
@@ -29,12 +29,12 @@ tags:
 Измерение пользовательских метрик или событий в инструменте аналитики обычно состоит из трех этапов:
 
 1. [Определите или зарегистрируйте](https://support.google.com/analytics/answer/2709829?hl=en&ref_topic=2709827) пользовательскую метрику в админке вашего инструмента (при необходимости). *(Примечание: не все поставщики аналитики требуют, чтобы пользовательские метрики определялись заранее.)*
-2. Compute the value of the metric in your frontend JavaScript code.
+2. Вычислите значение метрики в своем внешнем JavaScript-коде.
 3. Отправьте значение метрики в серверную аналитику, убедившись, что имя или идентификатор совпадают с тем, что было определено на шаге 1 *(если требуется)*.
 
 Для шагов 1 и 3 вы можете обратиться к документации вашего инструмента аналитики за инструкциями. На шаге 2 для вычисления значения каждой из метрик Core Web Vitals вы можете использовать [JavaScript-библиотеку web-vitals](https://github.com/GoogleChrome/web-vitals).
 
-The following code sample shows how easy it can be to track these metrics in code and send them to an analytics service.
+В следующем примере кода показано, насколько легко можно отслеживать эти метрики в коде и отправлять их в службу аналитики.
 
 ```js
 import {getCLS, getFID, getLCP} from 'web-vitals';
@@ -63,12 +63,11 @@ getLCP(sendToAnalytics);
 
 Отчет [Web Vitals Report](https://github.com/GoogleChromeLabs/web-vitals-report) — пример этого метода с использованием Google Analytics. У этого отчета [открытый исходный код](https://github.com/GoogleChromeLabs/web-vitals-report), поэтому разработчики могут ссылаться на него как на пример методов, описанных в этом разделе.
 
-![Screenshots of the Web Vitals
-Report](https://user-images.githubusercontent.com/326742/101584324-3f9a0900-3992-11eb-8f2d-182f302fb67b.png)
+<img src="https://user-images.githubusercontent.com/326742/101584324-3f9a0900-3992-11eb-8f2d-182f302fb67b.png" alt="Скриншоты Web Vitals &lt;span translate =" no=""> Отчет "data-md-type =" image "&gt;
 
 {% Aside %} Совет. Библиотека [`web-vitals`](https://github.com/GoogleChrome/web-vitals) предоставляет идентификатор для каждого зарегистрированного экземпляра метрики, что позволяет создавать дистрибутивы в большинстве аналитических инструментов. См. документацию по интерфейсу [`Metric`](https://github.com/GoogleChrome/web-vitals#metric) для более подробной информации. {% endAside %}
 
-## Send your data at the right time
+## Отправляйте свои данные в нужное время
 
 Некоторые метрики производительности можно рассчитать после завершения загрузки страницы, в то время как другие (например, CLS) учитывают всё время жизни страницы и окончательно вычисляются только после того, как пользователь покидает страницу.
 
@@ -80,17 +79,17 @@ Report](https://user-images.githubusercontent.com/326742/101584324-3f9a0900-3992
 
 {% Aside 'gotchas' %} Из-за [определённых ошибок браузера](https://github.com/w3c/page-visibility/issues/59#issue-554880545) в некоторых случаях `visibilitychange` не срабатывает. Если вы создаете собственную библиотеку аналитики, важно знать об этих ошибках. Обратите внимание, что в [JavaScript-библиотеке web-vitals](https://github.com/GoogleChrome/web-vitals) все эти ошибки браузеров учтены. {% endAside %}
 
-## Monitor performance over time
+## Отслеживайте производительность с течением времени
 
 После того как вы обновите свою реализацию аналитики, чтобы отслеживать метрики Core Web Vitals и включать их в отчеты, следующий шаг — отслеживать, как изменения вашего сайта влияют на производительность в течение длительного периода времени.
 
-### Version your changes
+### Версия ваших изменений
 
-A naive (and ultimately unreliable) approach to tracking changes is to deploy changes to production and then assume that all metrics received after the deployment date correspond to the new site and all metrics received before the deployment date correspond to the old site. However, any number of factors (including caching at the HTTP, service worker, or CDN layer) can prevent this from working.
+Наивный (и в конечном итоге ненадежный) подход к отслеживанию изменений заключается в развертывании изменений в производственной среде и последующем предположении, что все метрики, полученные после даты развертывания, соответствуют новому сайту, а все метрики, полученные до даты развертывания, соответствуют старому сайту. Однако любое количество факторов (включая кеширование на уровне HTTP, сервис-воркера или CDN) может помешать этому.
 
 Гораздо лучший подход — создать уникальную версию для каждого развернутого изменения, а затем отслеживать эту версию в вашем инструменте аналитики. Большинство аналитических инструментов поддерживают установку версии. Если ваш инструмент этого не делает, вы можете создать специальный параметр и установить этот параметр на развернутую версию.
 
-### Run experiments
+### Проведите эксперименты
 
 Вы можете сделать еще один шаг вперед в управлении версиями, отслеживая несколько версий (или экспериментов) одновременно.
 
@@ -100,11 +99,11 @@ A naive (and ultimately unreliable) approach to tracking changes is to deploy ch
 
 {% Aside %} Группы экспериментов всегда должны создаваться на сервере. Избегайте использовать любые инструменты для экспериментов или A/B-тестирование на стороне клиента. Эти инструменты обычно блокируют рендеринг, пока не будет определена экспериментальная группа пользователей, что может негативно сказаться на времени LCP. {% endAside %}
 
-## Ensure measurement doesn't affect performance
+## Убедитесь, что измерения не влияют на производительность
 
 При измерении производительности реальных пользователей очень важно, чтобы используемый для измерения производительности код не оказывал негативного влияния на производительность страницы. Если это происходит, то любые полученные выводы о влиянии производительности на бизнес, будут ненадежными, так как вы не будете знать, оказывает ли негативное влияние присутствие самого кода аналитики.
 
-Always follow these principles when deploying RUM analytics code on your production site:
+Всегда следуйте этим принципам при развертывании кода аналитики RUM на рабочем сайте:
 
 ### Отложите загрузку своей аналитики
 
@@ -118,7 +117,7 @@ Always follow these principles when deploying RUM analytics code on your product
 
 Код аналитики часто запускается в ответ на ввод пользователя, но если ваш аналитический код проводит много измерений DOM или применяет другие API-интерфейсы, интенсивно использующие процессор, сам аналитический код может стать причиной плохой отзывчивости на ввод. Кроме того, если JavaScript-файл с кодом аналитики имеет большой размер, выполнение этого файла может заблокировать основной поток и отрицательно повлиять на FID.
 
-### Use non-blocking APIs
+### Используйте неблокирующие API
 
 API, такие как <code>&lt;a href="https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon" data-md-type="link"&gt;sendBeacon()&lt;/a&gt;</code> и <code>&lt;a href="https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback" data-md-type="link"&gt;requestIdleCallback()&lt;/a&gt;</code> специально разработаны для выполнения некритических задач таким образом, чтобы не блокировать важные для пользователя задачи.
 
@@ -128,9 +127,9 @@ API, такие как <code>&lt;a href="https://developer.mozilla.org/docs/Web/
 
 {% Aside %} Рекомендации о том, как максимально использовать время простоя, обеспечивая возможность экстренного запуска кода при необходимости (например, когда пользователь покидает страницу), см. в статье о шаблоне [idle-until-urgent](https://philipwalton.com/articles/idle-until-urgent/). {% endAside %}
 
-### Don't track more than what you need
+### Не отслеживайте больше, чем вам нужно
 
-The browser exposes a lot of performance data, but just because the data is available does not necessarily mean you should record it and send it to your analytics servers.
+Браузер предоставляет множество данных о производительности, но наличие этих данных не обязательно означает, что вы должны записывать их и отправлять на свои аналитические серверы.
 
 Например, [Resource Timing API](https://w3c.github.io/resource-timing/) предоставляет подробные данные о времени загрузки каждого ресурса на вашей странице. Однако маловероятно, что все эти данные будут обязательными или полезными для улучшения производительности загрузки ресурсов.
 
