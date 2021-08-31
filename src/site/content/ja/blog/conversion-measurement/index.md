@@ -27,11 +27,11 @@ In order to measure the effectiveness of ad campaigns, advertisers and publisher
 
 {% Aside %} This API is part of the Privacy Sandbox, a series of proposals to satisfy third-party use cases without third-party cookies or other cross-site tracking mechanisms. See [Digging into the Privacy Sandbox](/digging-into-the-privacy-sandbox) for an overview of all the proposals. {% endAside %}
 
-## Glossary
+## 用語集
 
 - **Adtech platforms**: companies that provide software and tools to enable brands or agencies to target, deliver, and analyze their digital advertising.
 - **Advertisers**: companies paying for advertising.
-- **Publishers**: companies that display ads on their websites.
+- **サイト運営者**：ウェブサイトに広告を表示する会社。
 - **Click-through conversion**: conversion that is attributed to an ad click.
 - **View-through conversion**: conversion that is attributed to an ad impression (if the user doesn't interact with the ad, then later converts).
 
@@ -43,7 +43,7 @@ In order to measure the effectiveness of ad campaigns, advertisers and publisher
 
 ## API の概要
 
-### Why is this needed?
+### なぜこれが必要なのですか？
 
 Today, ad conversion measurement often relies on [third-party cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies). **But browsers are restricting access to these.**
 
@@ -60,11 +60,11 @@ Third-party cookies are becoming a legacy solution. **New purpose-built APIs**, 
 
 This API is at an **early experimental stage**. What's available as an origin trial is the **first iteration** of the API. Things may change substantially in [future iterations](#use-cases).
 
-### Only clicks
+### クリックのみ
 
 This iteration of the API only supports **click-through conversion measurement**, but [view-through conversion measurement](https://github.com/WICG/conversion-measurement-api/blob/main/event_attribution_reporting.md) is under public incubation.
 
-### How it works
+### 使い方
 
 <figure class="w-figure">{％Img src = "image / admin / Xn96AVosulGisR6Hoj4J.jpg"、alt = "図：変換測定 API ステップの概要"、width = "800"、height = "496"％}</figure>
 
@@ -78,7 +78,7 @@ With this API, such outbound links can be configured with attributes that are sp
 - Custom data to attach to an ad click on the publisher's side, for example a click ID or campaign ID.
 - The website for which a conversion is expected for this ad.
 - The reporting endpoint that should be notified of successful conversions.
-- The cut-off date and time for when conversions can no longer be counted for this ad.
+- この広告でコンバージョンをカウントできなくなった締め切り日時。
 
 When the user clicks an ad, the browser—on the user's local device—records this event, alongside conversion configuration and click data specified by Conversion Measurement attributes on the `<a>` element.
 
@@ -101,7 +101,7 @@ The Event Conversion Measurement API can be supported:
 
 [Chrome 機能エントリ](https://chromestatus.com/features/6412002824028160)の現在のステータスの詳細をご覧ください。
 
-### Standardization
+### 標準化
 
 This API is being designed in the open, in the Web Platform Incubator Community Group ([WICG](https://www.w3.org/community/wicg/)). It's available for experimentation in Chrome.
 
@@ -113,9 +113,9 @@ WebKit, the web browser engine used by Safari, has a proposal with similar goals
 
 With this API, conversions can be measured while protecting users' privacy: users can't be recognized across sites. This is made possible by **data limits**, **noising of conversion data**, and **report timing** mechanisms.
 
-Let's take a closer look at how these mechanisms work, and what they mean in practice.
+これらのメカニズムがどのように機能するか、そしてそれらが実際に何を意味するかを詳しく見てみましょう。
 
-### Data limits
+### データ制限
 
 In the following, **click-time or view-time data** is data available to `adtech.example` when the ad is served to the user and then clicked or viewed. Data from when a conversion happened is **conversion-time data**.
 
@@ -166,9 +166,9 @@ Summing up click data and conversion data:
   <table class="w-table--top-align">
     <thead>
       <tr>
-        <th>Data</th>
-        <th>Size</th>
-        <th>Example</th>
+        <th>データ</th>
+        <th>サイズ</th>
+        <th>例</th>
       </tr>
     </thead>
     <tbody>
@@ -178,7 +178,7 @@ Summing up click data and conversion data:
         <td>広告 ID またはクリック ID</td>
       </tr>
       <tr>
-        <td>Conversion data</td>
+        <td>変換データ</td>
         <td>3 ビット、ノイズ</td>
         <td>An integer from 0 to 7 that can map to a conversion type: signup, complete checkout, etc.</td>
       </tr>
@@ -186,7 +186,7 @@ Summing up click data and conversion data:
   </table>
 </div>
 
-### Report timing
+### レポートのタイミング
 
 特定の広告クリックに対して複数のコンバージョンが登録されている場合**、対応するレポートがコンバージョンごとに送信され、クリックごとに最大 3 つまで送信されます**。
 
@@ -196,7 +196,7 @@ Reports may not be exactly sent at these scheduled dates and times: if the brows
 
 After expiry (click time + `impressionexpiry`), no conversion is counted—`impressionexpiry` is the cut-off date and time for when conversions can no longer be counted for this ad.
 
-In Chrome, report scheduling works as follows:
+Chromeでは、レポートのスケジュールは次のように機能します。
 
 <div class="w-table-wrapper">
   <table class="w-table--top-align">
@@ -225,8 +225,9 @@ In Chrome, report scheduling works as follows:
         <td>
           <ul>
             <li>広告クリックの 2 日後</li>
-            <li>or 7 days after ad click</li>
-            <li>or <code>impressionexpiry</code> after ad click.</li>
+            <li>または広告クリックから7日後</li>
+            <li>または広告クリック後の<code>impressionexpiry</code>
+</li>
           </ul>
         </td>
         <td>3</td>
@@ -237,7 +238,8 @@ In Chrome, report scheduling works as follows:
         <td>
           <ul>
             <li>広告クリックの 2 日後</li>
-            <li>or <code>impressionexpiry</code> after ad click.</li>
+            <li>または広告クリック後の<code>impressionexpiry</code>
+</li>
           </ul>
         </td>
         <td>2</td>
@@ -256,9 +258,9 @@ In Chrome, report scheduling works as follows:
 
 <figure class="w-figure">{％Img src = "image / admin / bgkpW6Nuqs5q1ddyMG8X.jpg"、alt = "どのレポートがいつ送信されるかを示すクロノロジー"、width = "800"、height = "462"％}</figure>
 
-See [Sending Scheduled Reports](https://github.com/WICG/conversion-measurement-api#sending-scheduled-reports) for more details on timing.
+タイミングの詳細については、 [スケジュールされたレポートの送信を](https://github.com/WICG/conversion-measurement-api#sending-scheduled-reports)参照してください。
 
-## Example
+## 例
 
 {% Banner 'info', 'body' %}これが実際に動作することを確認するには、[デモ](https://goo.gle/demo-event-level-conversion-measurement-api)を試して、対応する[コード](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement)を確認してください。 {% endBanner %}
 
@@ -285,15 +287,15 @@ The adtech platform developers have configured the `<a>` element with conversion
 </a>
 ```
 
-This code specifies the following:
+このコードは以下を指定します：
 
 <div class="w-table-wrapper">
   <table class="w-table--top-align">
     <thead>
       <tr>
-        <th>Attribute</th>
-        <th>Default value, maximum, minimum</th>
-        <th>Example</th>
+        <th>属性</th>
+        <th>デフォルト値、最大、最小</th>
+        <th>例</th>
       </tr>
     </thead>
     <tbody>
@@ -322,7 +324,7 @@ This code specifies the following:
       <tr>
         <td>
 <code>reportingorigin</code> (optional): the destination for reporting confirmed conversions.</td>
-        <td>Top-level origin of the page where the link element is added.</td>
+        <td>リンク要素が追加されたページのトップレベルの起点。</td>
         <td><code>https://adtech.example</code></td>
       </tr>
       <tr>
@@ -397,7 +399,7 @@ app.get('/conversion', (req, res) => {
 The browser receives this request. Upon detecting `.well-known/register-conversion`, the browser:
 
 - Looks up all ad clicks in storage that match this `conversiondestination` (because it's receiving this conversion on a URL that has been registered as a `conversiondestination` URL when the user clicked the ad). It finds the ad click that happened on the publisher's site one day before.
-- Registers a conversion for this ad click.
+- この広告クリックのコンバージョンを登録します。
 
 Several ad clicks can match a conversion—the user may have clicked an ad for `shoes.example` on both `news.example` and `weather.example`. In this case, several conversions are registered.
 
@@ -413,10 +415,10 @@ Once the scheduled time to send the report is reached, the browser sends the **c
 
 `https://adtech.example/.well-known/register-conversion?impression-data=200400600&conversion-data=2&credit=100`
 
-Included as parameters are:
+パラメータとして含まれるものは次のとおりです。
 
 - 元の広告クリックに関連付けられたデータ (`impression-data`)。
-- The data associated with a conversion, [potentially noised](#noising-of-conversion-data).
+- 変換に関連するデータ[。ノイズが発生する可能性があり](#noising-of-conversion-data)ます。
 - The conversion credit attributed to the click. This API follows a **last-click attribution** model: the most recent matching ad click is given a credit of 100, all other matching ad clicks are given a credit of 0.
 
 As the adtech server receives this request, it can pull the `impression-data` and `conversion-data` from it, i.e. the conversion report:
@@ -425,7 +427,7 @@ As the adtech server receives this request, it can pull the `impression-data` an
 {"impression-data": "200400600", "conversion-data": 3, "credit": 100}
 ```
 
-### Subsequent conversions and expiry
+### その後の変換と有効期限
 
 Later on, the user may convert again—for example by purchasing a tennis racket on `advertiser.example` to go alongside their shoes. A similar flow takes place:
 
@@ -436,12 +438,12 @@ After `impressionexpiry`, conversions for this ad click stop being counted and t
 
 ## Use cases
 
-### What is currently supported
+### 現在サポートされているもの
 
 - Measure click-through conversions: determine which ad clicks lead to conversions, and access coarse information about the conversion.
-- Gather data to optimize ad selection, for example by training machine learning models.
+- 機械学習モデルのトレーニングなどにより、データを収集して広告の選択を最適化します。
 
-### What is not supported in this iteration
+### このイテレーションでサポートされていないもの
 
 次の機能はサポートされていませんが、この API の今後のイテレーション、または[集計](https://github.com/WICG/conversion-measurement-api/blob/master/AGGREGATE.md)レポートには含まれる可能性があります。
 
@@ -470,9 +472,9 @@ Discussion of additional possible features takes place in the open, in the [**Is
 
 ## お試しください
 
-### Demo
+### デモ
 
-Try out the [demo](https://goo.gle/demo-event-level-conversion-measurement-api). Make sure to follow the "Before you start" instructions.
+[デモをお](https://goo.gle/demo-event-level-conversion-measurement-api)試しください。必ず「始める前に」の指示に従ってください。
 
 Tweet [@maudnals](https://twitter.com/maudnals?lang=en) or [@ChromiumDev](https://twitter.com/ChromiumDev) for any question about the demo!
 
@@ -480,7 +482,7 @@ Tweet [@maudnals](https://twitter.com/maudnals?lang=en) or [@ChromiumDev](https:
 
 API をローカルで、またはエンドユーザーを対象に実験する予定の方は、[Using the conversion measurement API](/using-conversion-measurement) を参照してください。
 
-### Share your feedback
+### フィードバックを共有する
 
 **Your feedback is crucial**, so that new conversion measurement APIs can support your use cases and provide a good developer experience.
 
