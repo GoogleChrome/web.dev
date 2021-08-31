@@ -3,13 +3,9 @@ layout: post
 title: Total Blocking Time (TBT)
 authors:
   - philipwalton
-date: '2019-11-07'
-updated: '2020-06-15'
-description: |2
-
-  This post introduces the Total Blocking Time (TBT) metric and explains
-
-  how to measure it
+date: 2019 年 11 月 7 日
+updated: 2020 年 6 月 15 日
+description: この投稿では、Total Blocking Time (合計ブロック時間、TBT) という指標について紹介し、その測定方法に関する説明を行います。
 tags:
   - performance
   - metrics
@@ -17,100 +13,100 @@ tags:
 
 {% Aside %}
 
-Total Blocking Time (TBT) is an important [lab metric](/user-centric-performance-metrics/#in-the-lab) for measuring [load responsiveness](/user-centric-performance-metrics/#types-of-metrics) because it helps quantify the severity of how non-interactive a page is prior to it becoming reliably interactive—a low TBT helps ensure that the page is [usable](/user-centric-performance-metrics/#questions).
+Total Blocking Time (合計ブロック時間、TBT) は、[読み込みの応答性](/user-centric-performance-metrics/#in-the-lab)を測定するために重要となる[ラボ環境での指標](/user-centric-performance-metrics/#types-of-metrics)です。ページが確実に操作可能になるまでの間の操作不可能性の重大さの数値化に役立ち、TBT が低ければ低いほどページが確実に[使用可能](/user-centric-performance-metrics/#questions)となることを示しています。
 
 {% endAside %}
 
-## What is TBT?
+## TBT とは？
 
-The Total Blocking Time (TBT) metric measures the total amount of time between [First Contentful Paint (FCP)](/fcp/) and [Time to Interactive (TTI)](/tti/) where the main thread was blocked for long enough to prevent input responsiveness.
+Total Blocking Time (TBT) 指標は、長時間に渡りメイン スレッドがブロックされ、入力の応答性が妨げられることで発生する [First Contentful Paint (視覚コンテンツの初期表示時間、FCP)](/fcp/) と [Time to Interactive (操作可能になるまでの時間、TTI)](/tti/) の間の時間の合計を測定します。
 
-The main thread is considered "blocked" any time there's a [Long Task](/custom-metrics/#long-tasks-api)—a task that runs on the main thread for more than 50 milliseconds (ms). We say the main thread is "blocked" because the browser cannot interrupt a task that's in progress. So in the event that a user *does* interact with the page in the middle of a long task, the browser must wait for the task to finish before it can respond.
+メイン スレッド上で 50 ミリ秒 (ms) 以上実行されているタスクを意味する[長く時間がかかっているタスク](/custom-metrics/#long-tasks-api)がある場合、メイン スレッドは "ブロックされた" とみなされます。メイン スレッドが "ブロックされた" と表現されるのは、ブラウザーが進行中のタスクを中断することができないからです。そのため、長く時間がかかっているタスクの途中でユーザーがページを*操作*した場合、ブラウザーは応答する前にタスクの終了を待たなければなりません。
 
-If the task is long enough (e.g. anything above 50 ms), it's likely that the user will notice the delay and perceive the page as sluggish or janky.
+タスクの処理にかなり長く時間がかかっている場合 (例: 50 ms 以上)、ユーザーはその遅延に気付き、ページが遅い、または質が低いと感じてしまう可能性があります。
 
 特定の長いタスクの*ブロック時間*は、50ミリ秒を超える期間です。また、*ページの合計ブロック時間*は、FCPとTTIの間で発生する各長いタスクの*ブロック時間の合計です。*
 
-For example, consider the following diagram of the browser's main thread during page load:
+たとえば、ページを読み込んでいる最中のブラウザーのメイン スレッドの図は、以下のようになります。
 
-{% Img src="image/admin/clHG8Yv239lXsGWD6Iu6.svg", alt="A tasks timeline on the main thread", width="800", height="156", linkTo=true %}
+{% Img src="image/admin/clHG8Yv239lXsGWD6Iu6.svg", alt="メイン スレッドでのタスク処理のタイムライン", width="800", height="156", linkTo=true %}
 
-The above timeline has five tasks, three of which are Long Tasks because their duration exceeds 50 ms. The next diagram shows the blocking time for each of the long tasks:
+上記のタイムライン上には 5 つのタスクがあり、そのうちの 3 つは継続時間が 50 ms を超えているため、長く時間がかかっているタスクとなります。以下の図は、長く時間がかかっているタスクそれぞれのブロック時間を示しています。
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xKxwKagiz8RliuOI2Xtc.svg", alt="A tasks timeline on the main thread showing blocking time", width="800", height="156", linkTo=true %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xKxwKagiz8RliuOI2Xtc.svg", alt="ブロック時間を示しているメイン スレッドでのタスク処理のタイムライン", width="800", height="156", linkTo=true %}
 
-So while the total time spent running tasks on the main thread is 560 ms, only 345 ms of that time is considered blocking time.
+このため、メイン スレッドでのタスク実行の総時間は 560 ミリ秒ですが、そのうちの 345 ミリ秒のみがブロック時間としてみなされます。
 
 <table>
   <tr>
     <th></th>
-    <th>Task duration</th>
+    <th>タスクの継続時間</th>
     <th>タスクのブロック時間</th>
   </tr>
   <tr>
-    <td>Task one</td>
-    <td>250 ms</td>
-    <td>200 ms</td>
+    <td>タスク 1</td>
+    <td>250 ミリ秒</td>
+    <td>200 ミリ秒</td>
   </tr>
   <tr>
-    <td>Task two</td>
-    <td>90 ms</td>
-    <td>40 ms</td>
+    <td>タスク 2</td>
+    <td>90 ミリ秒</td>
+    <td>40 ミリ秒</td>
   </tr>
   <tr>
-    <td>Task three</td>
-    <td>35 ms</td>
-    <td>0 ms</td>
+    <td>タスク 3</td>
+    <td>35 ミリ秒</td>
+    <td>0 ミリ秒</td>
   </tr>
   <tr>
-    <td>Task four</td>
-    <td>30 ms</td>
-    <td>0 ms</td>
+    <td>タスク 4</td>
+    <td>30 ミリ秒</td>
+    <td>0 ミリ秒</td>
   </tr>
   <tr>
-    <td>Task five</td>
-    <td>155 ms</td>
-    <td>105 ms</td>
+    <td>タスク 5</td>
+    <td>155 ミリ秒</td>
+    <td>105 ミリ秒</td>
   </tr>
   <tr>
-    <td colspan="2"><strong>Total Blocking Time</strong></td>
-    <td><strong>345 ms</strong></td>
+    <td colspan="2"><strong>合計ブロック時間</strong></td>
+    <td><strong>345 ミリ秒</strong></td>
   </tr>
 </table>
 
-### How does TBT relate to TTI?
+### TBT は TTI にどのように関係していますか？
 
-TBT is a great companion metric for TTI because it helps quantify the severity of how non-interactive a page is prior it to becoming reliably interactive.
+TBTは、ページが確実に操作可能になる前の操作不可能性の重大さの数値化に役立つため、TTI との相性が非常に良い指標です。
 
-TTI considers a page "reliably interactive" if the main thread has been free of long tasks for at least five seconds. This means that three, 51 ms tasks spread out over 10 seconds can push back TTI just as far as a single 10-second long task—but those two scenarios would feel very different to a user trying to interact with the page.
+TTI は、メイン スレッドに長く時間がかかっているタスクがない状態が少なくとも 5 秒間続いた場合に、そのページを "確実に操作可能" であるとみなします。つまり、51 ミリ秒のタスクが 10 秒の間に 3 つ散らばっている場合、10 秒間の長く時間がかかっているタスク 1 つと同じように TTI を悪化させてしまいます。この 2 つのシナリオは、ページの操作を試みようとするユーザーにとってはまったく異なるものに感じられるはずです。
 
-In the first case, three, 51 ms tasks would have a TBT of **3 ms**. Whereas a single, 10-second long tasks would have a TBT of **9950 ms**. The larger TBT value in the second case quantifies the worse experience.
+最初のケースの場合、51 ミリ秒のタスクが 3 つあれば、TBT は **3 ミリ秒**になります。一方で、10 秒のタスクが 1 つある場合、TBT は **9950 ミリ秒**となります。2 番目のケースで TBT 値が大きくなっているのは、ユーザー体験の悪化を示しています。
 
-## How to measure TBT
+## TBT の測定方法
 
-TBT is a metric that should be measured [in the lab](/user-centric-performance-metrics/#in-the-lab). The best way to measure TBT is to run a Lighthouse performance audit on your site. See the [Lighthouse documentation on TBT](/lighthouse-total-blocking-time) for usage details.
+TBT は、[ラボ環境](/user-centric-performance-metrics/#in-the-lab)で測定する場合に最適な指標です。TBT の測定に最適な方法には、サイトでの Lighthouse のパフォーマンス監査の実行が挙げられます。使用方法の詳細については、「[TBT に関する Lighthouse ドキュメント](/lighthouse-total-blocking-time)」を参照してください。
 
-### Lab tools
+### ラボ測定を実施するためのツール
 
 - [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - [WebPageTest](https://www.webpagetest.org/)
 
-{% Aside %} While it is possible to measure TBT in the field, it's not recommended as user interaction can affect your page's TBT in ways that lead to lots of variance in your reports. To understand a page's interactivity in the field, you should measure [First Input Delay (FID)](/fid/). {% endAside %}
+{% Aside %}実際のユーザー環境での TBT の測定は可能ですが、ユーザーの操作がページの TBT に影響を与え、レポートに多数のばらつきが出てしまう可能性があるため、お勧めできません。実際のユーザー環境でのページのインタラクティブ性を理解するためには、[First Input Delay (FID)](/fid/) を測定する必要があります。{% endAside %}
 
-## What is a good TBT score?
+## TBT における良いスコアとは？
 
-To provide a good user experience, sites should strive to have a Total Blocking Time of less than **300 milliseconds** when tested on **average mobile hardware**.
+優れたユーザー エクスペリエンスを提供するためには、**平均的なモバイル ハードウェア**でテストを行った場合に、Total Blocking Time を **300 ミリ秒**以下に抑えるよう努力する必要があります。
 
-For details on how your page's TBT affects your Lighthouse performance score, see [How Lighthouse determines your TBT score](/lighthouse-total-blocking-time/#how-lighthouse-determines-your-tbt-score)
+ページの TBT が Lighthouse のパフォーマンス スコアにどのような影響を及ぼすかについては、「[Lighthouse による TBT スコアの決定方法](/lighthouse-total-blocking-time/#how-lighthouse-determines-your-tbt-score)」を参照してください。
 
-## How to improve TBT
+## TBT の改善方法
 
-To learn how to improve TBT for a specific site, you can run a Lighthouse performance audit and pay attention to any specific [opportunities](/lighthouse-performance/#opportunities) the audit suggests.
+特定のサイトについて TBT の改善方法を把握するには、Lighthouse でパフォーマンス監査を実行し、そこで推奨される具体的な [Opportunities](/lighthouse-performance/#opportunities) (改善機会) に注目します。
 
-To learn how to improve TBT in general (for any site), refer to the following performance guides:
+TBT の (あらゆるサイトに共通する) 一般的な改善方法については、以下のパフォーマンス ガイドを参照してください。
 
-- [Reduce the impact of third-party code](/third-party-summary/)
-- [Reduce JavaScript execution time](/bootup-time/)
-- [Minimize main thread work](/mainthread-work-breakdown/)
-- [Keep request counts low and transfer sizes small](/resource-summary/)
+- [サードパーティ製コードの影響を減らす](/third-party-summary/)
+- [JavaScript の実行にかかる時間を短縮する](/bootup-time/)
+- [メイン スレッドの作業を最小限に抑える](/mainthread-work-breakdown/)
+- [リクエスト数を少なく、転送サイズを小さく維持する](/resource-summary/)
