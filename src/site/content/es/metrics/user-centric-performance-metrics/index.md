@@ -1,6 +1,6 @@
 ---
 layout: post
-title: User-centric performance metrics
+title: Métricas de rendimiento centradas en el usuario
 authors:
   - philipwalton
 date: '2019-11-08'
@@ -12,7 +12,7 @@ tags:
 
 Todos hemos oído hablar de la importancia del rendimiento. Pero cuando hablamos de rendimiento, y de hacer que los sitios web sean "rápidos", ¿a qué nos referimos específicamente?
 
-The truth is performance is relative:
+La verdad es que el rendimiento es relativo:
 
 - Un sitio puede ser rápido para un usuario (en una red rápida con un dispositivo potente) pero lento para otro (en una red lenta con un dispositivo de gama baja).
 - Dos sitios pueden terminar de cargarse al mismo tiempo, pero uno puede *parecer* más rápido (si carga el contenido de forma progresiva en vez de esperar hasta el final para mostrar algo).
@@ -20,7 +20,7 @@ The truth is performance is relative:
 
 Por eso, cuando se habla de rendimiento, es importante ser preciso y referirse al rendimiento en términos de criterios objetivos que pueden medirse cuantitativamente. Estos criterios se conocen como *métricas*.
 
-But just because a metric is based on objective criteria and can be quantitatively measured, it doesn't necessarily mean those measurements are useful.
+Pero el hecho de que una métrica se base en criterios objetivos y pueda medirse cuantitativamente no significa necesariamente que esas medidas sean útiles.
 
 ## Definición de las métricas
 
@@ -28,43 +28,43 @@ Históricamente, el rendimiento web se ha medido con el evento <code>&lt;a href=
 
 Por ejemplo, un servidor podría responder con una página mínima que se "cargue" inmediatamente, pero que luego retrase la búsqueda de contenido y la visualización de cualquier cosa en la página hasta varios segundos después de que se active el evento `load`. Si bien esta página podría tener técnicamente un tiempo de carga rápido, ese tiempo no correspondería con la forma en que el usuario experimenta realmente la carga de la página.
 
-Over the past few years, members of the Chrome team—in collaboration with the [W3C Web Performance Working Group](https://www.w3.org/webperf/)—have been working to standardize a set of new APIs and metrics that more accurately measure how users experience the performance of a web page.
+En los últimos años, los miembros del equipo de Chrome, en colaboración con el [Grupo de trabajo de rendimiento web del W3C](https://www.w3.org/webperf/), han estado trabajando para estandarizar un conjunto de nuevas API y métricas que miden con mayor precisión cómo los usuarios experimentan el rendimiento de una página web.
 
-To help ensure the metrics are relevant to users, we frame them around a few key questions:
+Para ayudar a garantizar que las métricas sean relevantes para los usuarios, las enmarcamos en torno a algunas preguntas clave:
 
 <table id="questions">
   <tr>
-    <td><strong>Is it happening?</strong></td>
-    <td>Did the navigation start successfully? Has the server responded?</td>
+    <td><strong>¿Está sucediendo?</strong></td>
+    <td>¿La navegación se inició correctamente? ¿Ha respondido el servidor?</td>
   </tr>
   <tr>
-    <td><strong>Is it useful?</strong></td>
-    <td>Has enough content rendered that users can engage with it?</td>
+    <td><strong>¿Es útil?</strong></td>
+    <td>¿Se ha renderizado suficiente contenido para que los usuarios puedan interactuar con él?</td>
   </tr>
   <tr>
-    <td><strong>Is it usable?</strong></td>
+    <td><strong>¿Es utilizable?</strong></td>
     <td>¿Los usuarios pueden interactuar con la página o está ocupada?</td>
   </tr>
   <tr>
-    <td><strong>Is it delightful?</strong></td>
+    <td><strong>¿Es delicioso?</strong></td>
     <td>¿Son las interacciones fluidas y naturales, libres de retrasos y bloqueos?</td>
   </tr>
 </table>
 
-## How metrics are measured
+## Cómo se miden las métricas
 
-Performance metrics are generally measured in one of two ways:
+Las métricas de rendimiento generalmente se miden de dos maneras:
 
-- **In the lab:** using tools to simulate a page load in a consistent, controlled environment
+- **En el laboratorio:** uso de herramientas para simular la carga de una página en un entorno controlado y uniforme
 - **En el campo**: en usuarios reales que realmente cargan e interactúan con la página
 
 Ninguna de estas opciones es necesariamente mejor o peor que la otra; de hecho, por lo general, conviene utilizar ambas para garantizar un buen rendimiento.
 
-### In the lab
+### En el laboratorio
 
 Probar el rendimiento en el laboratorio es esencial cuando se desarrollan nuevas funciones. Antes de que las funciones se emitan en el proceso de producción, es imposible medir sus características de rendimiento en usuarios reales, por lo que probarlas en el laboratorio antes de que se lancen es la mejor manera de evitar regresiones en el rendimiento.
 
-### In the field
+### En el campo
 
 Por otro lado, si bien las pruebas en el laboratorio son una aproximación razonable del rendimiento, no necesariamente reflejan lo que experimentan todos los usuarios de su sitio en la realidad.
 
@@ -74,7 +74,7 @@ Además, la carga de las páginas puede que no sea determinista. Por ejemplo, lo
 
 La única forma de saber realmente cómo es el rendimiento de su sitio para sus usuarios es medir realmente su rendimiento conforme esos usuarios lo cargan e interactúan con él. Este tipo de medidas se conoce comúnmente como [Monitoreo de usuarios reales](https://en.wikipedia.org/wiki/Real_user_monitoring), o RUM para abreviar.
 
-## Types of metrics
+## Tipos de métricas
 
 Hay otros tipos de métricas que son relevantes para cómo los usuarios perciben el rendimiento.
 
@@ -97,9 +97,9 @@ Al tener en cuenta todos los tipos de métricas de rendimiento anteriores, se es
 
 Aunque esta lista incluye métricas que miden muchos de los diversos aspectos del rendimiento relevantes para los usuarios, no incluye todo (por ejemplo, la capacidad de respuesta y la fluidez en el tiempo de ejecución no están cubiertas actualmente).
 
-In some cases, new metrics will be introduced to cover missing areas, but in other cases the best metrics are ones specifically tailored to your site.
+En algunos casos, se introducirán nuevas métricas para cubrir las áreas que faltan, pero en otros casos, las mejores métricas son las que se adaptan específicamente a su sitio.
 
-## Custom metrics
+## Métricas personalizadas
 
 Las métricas de rendimiento enumeradas anteriormente son buenas para obtener una comprensión general de las características de rendimiento de la mayoría de los sitios en la web. También son buenas para tener un conjunto común de métricas para que los sitios puedan comparar su rendimiento con el de sus competidores.
 
@@ -108,10 +108,10 @@ Sin embargo, puede haber ocasiones en las que un sitio específico sea único de
 Para abordar estos casos, el Grupo de trabajo de rendimiento web también estandarizó la API de nivel inferior que pueden ser útiles para implementar sus propias métricas personalizadas:
 
 - [API para sincronizar usuarios](https://w3c.github.io/user-timing/)
-- [Long Tasks API](https://w3c.github.io/longtasks/)
+- [API de tareas largas](https://w3c.github.io/longtasks/)
 - [API para sincronizar elementos](https://wicg.github.io/element-timing/)
 - [API para sincronizar la navegación](https://w3c.github.io/navigation-timing/)
 - [API para sincronizar los recursos](https://w3c.github.io/resource-timing/)
 - [Sincronizador de servidores](https://w3c.github.io/server-timing/)
 
-Refer to the guide on [Custom Metrics](/custom-metrics/) to learn how to use these APIs to measure performance characteristics specific to your site.
+Consulte la guía sobre [métricas personalizadas](/custom-metrics/) para saber cómo utilizar estas API para medir las características de rendimiento específicas de su sitio.
