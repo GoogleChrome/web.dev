@@ -26,9 +26,9 @@ tags:
     <source src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">     A screencast illustrating how layout instability can negatively affect     users.   </figcaption></figure>
+  <figcaption class="w-figcaption w-figcaption--fullbleed">불안정한 레이아웃이 사용자에게 어떻게 부정적인 영향을 미칠 수 있는지 보여주는 스크린캐스트.</figcaption></figure>
 
-Unexpected movement of page content usually happens because resources are loaded asynchronously or DOM elements get dynamically added to the page above existing content. The culprit might be an image or video with unknown dimensions, a font that renders larger or smaller than its fallback, or a third-party ad or widget that dynamically resizes itself.
+페이지 콘텐츠의 예기치 않은 이동은 일반적으로 리소스가 비동기식으로 로드되거나 DOM 요소가 기존 콘텐츠 위의 페이지에 동적으로 추가되기 때문에 발생합니다. 원인은 알 수 없는 크기의 이미지나 동영상, 대체 크기보다 크거나 작게 렌더링되는 글꼴, 동적으로 크기가 조정되는 타사 광고 또는 위젯일 수 있습니다.
 
 이것이 더욱 큰 문제가 되는 이유는 개발 중인 사이트가 기능하는 방식이 종종 사용자가 경험하는 방식과 상당히 다르다는 것입니다. 대부분 개인화된 콘텐츠나 타사 콘텐츠는 프로덕션 환경에서는 개발 환경과 동일하게 작동하지 않고, 테스트 이미지는 이미 개발자의 브라우저 캐시에 존재하며, 로컬에서 실행되는 API 호출이 너무 빨라 지연이 눈에 띄지 않는 경우가 많기 때문입니다.
 
@@ -58,7 +58,7 @@ CLS는 페이지의 전체 수명 동안 발생하는 모든 [예기치 않은](
 우수한 사용자 경험을 제공하려면 사이트의 CLS 점수가 **0.1** 이하여야 합니다. 대부분의 사용자에 대해 이 목표를 달성할 수 있도록 하려면 모바일 및 데스크톱 기기 전반에 분할된 페이지 로드의 **75번째 백분위수**를 측정하는 것이 바람직한 임계값입니다.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="양호한 CLS 값은 0.1 미만이고 불량한 값은 0.25보다 크며 그 사이에는 개선이 필요합니다", width="300", height=" , class="w-screenshot w-screenshot--채워진 너비-전체" %}</source></picture>
 
 {% Aside %} 이러한 권장 사항의 기반이 되는 연구 및 방법론에 대해 자세히 알아보려면 [Core Web Vitals 메트릭 임계값 정의](/defining-core-web-vitals-thresholds/)를 참조하시기 바랍니다. {% endAside %}
 
@@ -66,7 +66,7 @@ CLS는 페이지의 전체 수명 동안 발생하는 모든 [예기치 않은](
 
 레이아웃 이동은 [Layout Instability API](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)가 정의하는 것으로, 뷰포트 내의 가시적 요소가 두 프레임 사이에서 시작 위치가 변경될 때마다(예: 기본 [쓰기 모드](https://github.com/WICG/layout-instability) 의 상단 및 왼쪽 위치) `layout-shift` 항목을 보고합니다. 그리고 이러한 요소는 *불안정 요소*로 간주됩니다.
 
-Note that layout shifts only occur when existing elements change their start position. If a new element is added to the DOM or an existing element changes size, it doesn't count as a layout shift—as long as the change doesn't cause other visible elements to change their start position.
+레이아웃 이동은 기존 요소가 시작 위치를 변경할 때만 발생합니다. 새 요소가 DOM에 추가되거나 기존 요소의 크기가 변경되면 변경으로 인해 다른 가시적 요소의 시작 위치가 변경되지 않는 한 레이아웃 이동으로 간주되지 않습니다.
 
 ### 레이아웃 이동 점수
 
@@ -118,7 +118,7 @@ layout shift score = impact fraction * distance fraction
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FdCETo2dLwGmzw0V5lNT.png", alt="안정적 요소, *불안정 요소*가 여러 개 있는 레이아웃 이동 예시", width="800", height="600", linkTo=true %}
 
-In the first frame above there are four results of an API request for animals, sorted in alphabetical order. In the second frame, more results are added to the sorted list.
+위의 첫 번째 프레임에는 동물에 대한 API 요청의 네 가지 결과가 알파벳순으로 정렬되어 있습니다. 두 번째 프레임에서는 정렬된 목록에 더 많은 결과가 추가됩니다.
 
 목록의 첫 번째 항목("Cat")은 프레임 간에 시작 위치를 변경하지 않으므로 안정적입니다. 마찬가지로 목록에 추가된 새 항목은 이전에 DOM에 없었으므로 시작 위치가 변경되지 않았습니다. 그러나 "Dog", "Horse", "Zebra"라고 표시된 항목은 모두 시작 위치가 변경되었으므로 *불안정 요소*입니다.
 
@@ -130,7 +130,7 @@ In the first frame above there are four results of an API request for animals, s
 
 ### 예상한 레이아웃 이동 vs. 예상치 못한 레이아웃 이동
 
-Not all layout shifts are bad. In fact, many dynamic web applications frequently change the start position of elements on the page.
+모든 레이아웃 변경이 나쁜 것은 아닙니다. 실제로 많은 동적 웹 응용 프로그램은 페이지에서 요소의 시작 위치를 자주 변경합니다.
 
 #### 사용자 개시 레이아웃 이동
 
@@ -142,27 +142,27 @@ Not all layout shifts are bad. In fact, many dynamic web applications frequently
 
 {% Aside 'caution' %} `hadRecentInput` 플래그는 탭, 클릭 또는 키 누르기와 같은 개별 입력 이벤트에 대해서만 true가 됩니다. 스크롤, 드래그, 핀치 및 줌 제스처와 같은 지속적인 상호 작용은 "최근 입력"으로 간주되지 않습니다. 자세한 내용은 [레이아웃 불안정 요소 사양](https://github.com/WICG/layout-instability#recent-input-exclusion) 을 참조하세요. {% endAside %}
 
-#### Animations and transitions
+#### 애니메이션 및 전환
 
 제대로 된 애니메이션 및 전환은 사용자를 놀라게 하지 않고서도 페이지의 콘텐츠를 업데이트할 수 있는 좋은 방법입니다. 페이지에서 갑자기 예기치 않게  콘텐츠가 이동하는 경우는 거의 항상 좋지 않은 사용자 경험으로 이어집니다 그러나 한 위치에서 다음 위치로 점진적이고 자연스럽게 이동하는 콘텐츠는 사용자가 상황을 더 잘 이해하고, 사용자에게 상태의 변경을 안내하는 데 도움이 됩니다.
 
-CSS [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) property allows you to animate elements without triggering layout shifts:
+CSS [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) 속성을 사용하면 레이아웃 이동을 트리거하지 않고 요소에 애니메이션을 적용할 수 있습니다.
 
 - `height` 및 `width` 속성을 변경하는 대신 `transform: scale()`을 사용하세요.
 - 요소를 이동하려면 `top` , `right` , `bottom` 또는 `left` 속성을 변경하는 것은 피하고, 대신 `transform: translate()`를 사용하세요.
 
-## How to measure CLS
+## CLS 측정 방법
 
 CLS는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장](/user-centric-performance-metrics/#in-the-field)에서 측정할 수 있으며 다음 도구에서 사용할 수 있습니다.
 
 {% Aside 'caution' %} 실험실 도구는 일반적으로 인공적인 환경에서 페이지를 로드하므로 페이지 로드 중에 발생하는 레이아웃 이동만 측정할 수 있습니다. 결과적으로 주어진 페이지에 대해 랩 도구에서 보고한 CLS 값은 실제 사용자가 실제로 경험하는 것보다 작을 수 있습니다. {% endAside %}
 
-### Field tools
+### 현장 도구
 
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 - [Search Console(Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
-- [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
+- [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)
 
 ### 실험실 도구
 
@@ -170,7 +170,7 @@ CLS는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - [WebPageTest](https://webpagetest.org/)
 
-### Measure CLS in JavaScript
+### JavaScript에서 CLS 측정
 
 JavaScript에서 CLS를 측정하려면 [Layout Instability API를](https://github.com/WICG/layout-instability) 사용할 수 있습니다. 다음 예시에서는 예기치 않은 `layout-shift` 항목을 수신 대기하고, 세션으로 그룹화하고, 변경될 때마다 최대 세션 값을 기록하는 [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) 를 생성하는 방법을 보여줍니다.
 
@@ -234,7 +234,7 @@ new PerformanceObserver((entryList) => {
 이러한 예외 외에도 CLS는 페이지의 전체 수명을 측정하기 때문에 조금 더 복잡해집니다.
 
 - 사용자는 며칠, 몇 주, 몇 달 등 *매우* 오랫동안 탭을 열어 둘 수 있습니다. 실제로 사용자는 탭을 닫지 않을 수도 있습니다.
-- On mobile operating systems, browsers typically do not run page unload callbacks for background tabs, making it difficult to report the "final" value.
+- 모바일 운영 체제에서 브라우저는 일반적으로 백그라운드 탭에 대해 페이지 언로드 콜백을 실행하지 않으므로 "최종" 값을 보고하기 어렵습니다.
 
 이러한 경우를 처리하려면 페이지가 언로드될 때뿐 아니라 페이지가 백그라운드일 때마다 CLS를 보고해야 합니다([`visibilitychange` 이벤트](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#event-visibilitychange)는 이 두 시나리오 모두에 적용됨). 그리고 이 데이터를 수신하는 분석 시스템은 백엔드에서 최종 CLS 값을 계산해야 합니다.
 
@@ -252,7 +252,7 @@ JavaScript에서 CLS를 측정하는 방법에 대한 전체 예제는 [`getCLS)
 
 {% Aside %} 일부 경우(예: 교차 원본 iframe) JavaScript에서 CLS를 측정할 수 없습니다. 자세한 내용은 `web-vitals` 라이브러리의 [제한 사항](https://github.com/GoogleChrome/web-vitals#limitations) 섹션을 참조하세요. {% endAside %}
 
-## How to improve CLS
+## CLS를 개선하는 방법
 
 대부분의 웹사이트에서 다음과 같은 몇 가지 기본 원칙을 준수하면 예기치 않은 레이아웃 이동을 모두 방지할 수 있습니다.
 
@@ -262,7 +262,7 @@ JavaScript에서 CLS를 측정하는 방법에 대한 전체 예제는 [`getCLS)
 
 CLS를 개선하는 방법에 대한 자세한 내용은 [CLS 최적화](/optimize-cls/) 및 [레이아웃 이동 디버그](/debug-layout-shifts)를 참조하세요.
 
-## Additional resources
+## 추가 리소스
 
 - [레이아웃 이동 최소화](https://developers.google.com/doubleclick-gpt/guides/minimize-layout-shift)에 대한 Google Publisher Tag 지침
 - [#PerfMatters](https://youtu.be/zIJuY-JCjqw)(2020년), [Annie Sullivan](https://anniesullie.com/)과 [Steve Kobes](https://kobes.ca/)의 [누적 레이아웃 이동 이해](https://perfmattersconf.com/) 동영상
