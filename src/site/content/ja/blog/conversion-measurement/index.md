@@ -1,14 +1,12 @@
 ---
-title: A more private way to measure ad conversions, the Event Conversion Measurement API
-subhead: |2
-
-  A new web API available as an origin trial measures when an ad click leads to a conversion, without using cross-site identifiers.
+title: よりプライベートな広告コンバージョンの測定方法である Event Conversion Measurement API について
+subhead: オリジン トライアルとして利用可能な新しい Web API がクロスサイト ID を使用せずに、広告のクリックがコンバージョンにつながるタイミングを測定します。
 authors:
   - maudn
   - samdutton
 hero: image/admin/wRrDtHNikUNqgdDewvYG.jpg
-date: '2020-10-06'
-updated: '2020-05-04'
+date: 2020 年 10 月 6 日
+updated: 2020 年 5 月 4 日
 tags:
   - blog
   - privacy
@@ -17,150 +15,150 @@ tags:
 {% Banner 'caution', 'body' %}Conversion Measurement API は *Attribution Reporting API* に名前が変更され、さらなる機能を提供します。
 
 - [Chrome 91](https://chromestatus.com/features/schedule) [以下で (Conversion Measurement API](https://github.com/WICG/conversion-measurement-api/blob/3e0ef7d3cee8d7dc5a4b953e70cb027b0e13943b/README.md) ) をお試しの方は、この投稿を読んで、API の詳細、使用例、手順を確認してください。
-- If you're interested in the next iteration of this API (Attribution Reporting), which will be available for experimentation in Chrome (origin trial), [join the mailing list](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev) for updates on available experiments.
+- Chrome (オリジン トライアル) での実験に利用できるこの API (Attribution Reporting) の次のイテレーションに興味がある方は、[メーリングリストにご登録の上、利用可能な実験の最新情報をご確認ください。](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev)
 
 {% endBanner %}
 
-In order to measure the effectiveness of ad campaigns, advertisers and publishers need to know when an ad click or view leads to a [conversion](/digging-into-the-privacy-sandbox/#conversion), such as a purchase or sign-up. Historically, this has been done with **third-party cookies**. Now, the Event Conversion Measurement API enables the correlation of an event on a publisher's website with a subsequent conversion on an advertiser site without involving mechanisms that can be used to recognize a user across sites.
+広告キャンペーンの効果を測定するために、広告主とサイト運営者は、広告のクリックまたは表示が購入や申し込みなどの[コンバージョンにつながる時期を知る必要があります。](/digging-into-the-privacy-sandbox/#conversion)**歴史的に、これはサードパーティの Cookie を使用**して行われてきました。現在、Event Conversion Measurement API を使用すると、サイト間でユーザーを認識するために使用できるメカニズムを使用せずに、サイト運営者の Web サイトでのイベントとその後の広告主サイトでのコンバージョンを関連付けることができます。
 
-{% Banner 'info', 'body' %} **This proposal needs your feedback!** If you have comments, please [create an issue](https://github.com/WICG/conversion-measurement-api/issues/) in the API proposal's repository. {% endBanner %}
+{% Banner 'info', 'body' %}**この提案には、皆さまからのフィードバックが必要です。**コメントをお持ちの方は、API プロポーザルのリポジトリで[課題を作成してください。](https://github.com/WICG/conversion-measurement-api/issues/) {% endBanner %}
 
-{% Aside %} This API is part of the Privacy Sandbox, a series of proposals to satisfy third-party use cases without third-party cookies or other cross-site tracking mechanisms. See [Digging into the Privacy Sandbox](/digging-into-the-privacy-sandbox) for an overview of all the proposals. {% endAside %}
+{% Aside %}この API は、プライバシーサンドボックスの一部であり、サードパーティの Cookie やその他のクロスサイト追跡メカニズムを使用せずにサードパーティのユース ケースを満たす一連の提案です。すべての提案の概要については、「[Digging into the Privacy Sandbox](/digging-into-the-privacy-sandbox)」を参照してください。 {% endAside %}
 
 ## 用語集
 
-- **Adtech platforms**: companies that provide software and tools to enable brands or agencies to target, deliver, and analyze their digital advertising.
-- **Advertisers**: companies paying for advertising.
+- **アドテック プラットフォーム**: ブランドや代理店がデジタル広告をターゲティング、配信、分析できるようにするソフトウェアやツールを提供する企業。
+- **広告主**: 広告にお金を払っている会社。
 - **サイト運営者**：ウェブサイトに広告を表示する会社。
-- **Click-through conversion**: conversion that is attributed to an ad click.
-- **View-through conversion**: conversion that is attributed to an ad impression (if the user doesn't interact with the ad, then later converts).
+- **クリックスルー コンバージョン**: 広告のクリックに起因するコンバージョン。
+- **ビュースルー コンバージョン**: 広告のインプレッションに起因するコンバージョン (ユーザーが広告を操作しなかった場合は、後でコンバージョンします)。
 
-## Who needs to know about this API: adtech platforms, advertisers, and publishers
+## この API について知っておく必要があるのは、アドテック プラットフォーム、広告主、パブリッシャーです。
 
-- **Adtech platforms** such as **[demand-side platforms](https://en.wikipedia.org/wiki/Demand-side_platform)** are likely to be interested in using this API to support functionality that currently relies on third-party cookies. If you're working on conversion measurement systems: [try out the demo](#demo), [experiment with the API](#experiment-with-the-api), and [share your feedback](#share-your-feedback).
-- **Advertisers and publishers relying on custom code for advertising or conversion measurement** may similarly be interested in using this API to replace existing techniques.
-- **Advertisers and publishers relying on adtech platforms for advertising or conversion measurement** don't need to use the API directly, but the [rationale for this API](#why-is-this-needed) may be of interest, particularly if you are working with adtech platforms that may integrate the API.
+- **[デマンドサイド](https://en.wikipedia.org/wiki/Demand-side_platform)** プラットフォームなどの**アドテック プラットフォーム**は、現在サードパーティの Cookie に依存している機能をサポートするためにこの API を使用することに関心を持つ可能性が高いでしょう。変換測定システムの開発に取り組んでいる方は、[デモを試し](#experiment-with-the-api)、[API を使って実験を行い](#demo)、[フィードバックを共有](#share-your-feedback)していただくようお願いします。
+- **広告やコンバージョンの測定にカスタム コードを使用している広告主やサイト運営者**も、同様にこの API を使用して既存の手法を置き換えることに関心があるかもしれません。
+- **広告またはコンバージョン測定に関してアドテック プラットフォームに依存している広告主およびパブリッシャー**は、API を直接使用する必要はありませんが、API を統合する可能性のあるアドテック プラットフォームを使用している場合には、特に[この API の理論的根拠](#why-is-this-needed)に興味を示されるかもしれません。
 
 ## API の概要
 
 ### なぜこれが必要なのですか？
 
-Today, ad conversion measurement often relies on [third-party cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies). **But browsers are restricting access to these.**
+今日、広告コンバージョンの測定は、多くの場合、 [サードパーティ Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies) に依存しています。**しかし、ブラウザーはこれらへのアクセスを制限しています。**
 
-Chrome plans on [phasing out support for third-party cookies](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html) and [offers ways for users to block them if they choose](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en). Safari [blocks third-party cookies](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/), Firefox [blocks known third-party tracking cookies](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default), and Edge [offers tracking prevention](https://support.microsoft.com/en-us/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention).
+[Chromeは、サードパーティ Cookie のサポートを段階的に廃止することを](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)計画しており[、ユーザーが選択した場合に](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en) Cookie をブロックする方法を提供します。 Safari は[サードパーティ Cookie](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/) をブロックし、Firefox は[既知のサードパーティ追跡 Cookie をブロックし](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default)、また Edge は[追跡防止を提供します](https://support.microsoft.com/en-us/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention)。
 
-Third-party cookies are becoming a legacy solution. **New purpose-built APIs**, like this one, are emerging to address in a privacy-preserving way the use cases that third-party cookies solved.
+サードパーティ Cookie はレガシー ソリューションになりつつあります。**このような新しい専用の API** は、サードパーティ Cookie が解決したユース ケースにプライバシーを保護する方法で対処する目的で使用が広まっています。
 
-**How does the Event Conversion Measurement API compare to third-party cookies?**
+**Event Conversion Measurement API はサードパーティ Cookie とどのような点で異なりますか？**
 
-- It's **purpose-built** to measure conversions, unlike cookies. This in turn can enable browsers to apply more enhanced privacy protections.
-- It's **more private**: it makes it difficult to recognize a user across two different top-level sites, for example to link publisher-side and advertiser-side user profiles. See how in [How this API preserves user privacy](#how-this-api-preserves-user-privacy).
+- Cookie とは異なり、コンバージョンを測定する**ために設計されています。**これにより、ブラウザーはより強化されたプライバシー保護を適用できるようになります。
+- **より高いレベルのプライバシー**を提供します。たとえば、サイト運営者側と広告主側のユーザー プロファイルをリンクするなど、2 つの異なるトップレベル サイトで同じユーザーを特定することが難しくなります。詳細については、「[How this API preserves user privacy](#how-this-api-preserves-user-privacy)」を参照してください。
 
 ### 最初のイテレーション
 
-This API is at an **early experimental stage**. What's available as an origin trial is the **first iteration** of the API. Things may change substantially in [future iterations](#use-cases).
+この API は**初期の実験段階にあり**ます。オリジン トライアルとして利用できるのは、API の**最初のイテレーション**です。[将来のイテレーション](#use-cases)では、状況が大幅に変わる可能性があります。
 
 ### クリックのみ
 
-This iteration of the API only supports **click-through conversion measurement**, but [view-through conversion measurement](https://github.com/WICG/conversion-measurement-api/blob/main/event_attribution_reporting.md) is under public incubation.
+この API のイテレーションは、**クリックスルー コンバージョン測定**のみをサポートしていますが、 [ビュースルー コンバージョン測定](https://github.com/WICG/conversion-measurement-api/blob/main/event_attribution_reporting.md)は公開中です。
 
 ### 使い方
 
 <figure class="w-figure">{％Img src = "image / admin / Xn96AVosulGisR6Hoj4J.jpg"、alt = "図：変換測定 API ステップの概要"、width = "800"、height = "496"％}</figure>
 
-This API can be used with two types of links (`<a>` elements) used for advertising:
+この API は、広告に使用される 2 種類のリンク (`<a>` 要素) で使用できます。
 
-- Links in a **first-party** context, such as ads on a social network or a search engine results page;
-- Links in a **third-party iframe**, such as on a publisher site that uses a third-party adtech provider.
+- **ファーストパーティのコンテキスト**におけるリンク。ソーシャル ネットワーク上の広告や検索エンジンの結果ページなど。
+- **サードパーティの iframe** におけるリンク。サードパーティのアドテック プロバイダーを使用するパブリッシャー サイトなど。
 
-With this API, such outbound links can be configured with attributes that are specific to ad conversions:
+この API を使用すると、このようなアウトバウンド リンクを広告コンバージョンに固有の属性で構成できます。
 
-- Custom data to attach to an ad click on the publisher's side, for example a click ID or campaign ID.
-- The website for which a conversion is expected for this ad.
-- The reporting endpoint that should be notified of successful conversions.
+- クリック ID やキャンペーン ID など、サイト運営者側の広告クリックに添付するカスタム データ。
+- この広告のコンバージョンが見込まれる Web サイト。
+- 変換が成功したことを通知する必要があるレポート エンドポイント。
 - この広告でコンバージョンをカウントできなくなった締め切り日時。
 
-When the user clicks an ad, the browser—on the user's local device—records this event, alongside conversion configuration and click data specified by Conversion Measurement attributes on the `<a>` element.
+ユーザーが広告をクリックすると、(ユーザーのローカル デバイスの) ブラウザーがこのイベントをコンバージョン設定とともに記録し、 `<a>`要素のコンバージョン測定属性で指定されたデータをクリックします。
 
-Later on, the user may visit the advertiser's website and perform an action that the advertiser or their adtech provider categorizes as a **conversion**. If this happens, the ad click and the conversion event are matched by the user's browser.
+その後、ユーザーは広告主の Web サイトにアクセスして、広告主またはそのアドテック プロバイダーが**コンバージョン**として分類するアクションを実行できます。これが発生した場合、広告クリックとコンバージョン イベントはユーザーのブラウザーによって照合されます。
 
-The browser finally schedules a **conversion report** to be sent to the endpoint specified in the `<a>` element's attributes. This report includes data about the ad click that led to this conversion, as a well as data about the conversion.
+ブラウザーは最終的に `<a>` 要素の属性で指定されたエンドポイントに送信される**コンバージョン レポート**をスケジュールします。このレポートには、このコンバージョンにつながった広告クリックに関するデータと、コンバージョンに関するデータが含まれています。
 
-If several conversions are registered for a given ad click, as many corresponding reports are scheduled to be sent (up to a maximum of three per ad click).
+特定の広告クリックに対して複数のコンバージョンが登録されている場合、対応するレポートが多数送信されるようにスケジュールされます (広告クリックごとに最大 3 つ)。
 
-Reports are sent after a delay: days or sometimes weeks after conversion (see why in [Reports timing](#report-timing)).
+レポートは、変換後数日または場合によっては数週間の遅延後に送信されます ([レポートのタイミングで](#report-timing)理由を参照してください)。
 
-## Browser support and similar APIs
+## ブラウザーのサポートと類似する API
 
-### Browser support
+### ブラウザーのサポート
 
-The Event Conversion Measurement API can be supported:
+Event Conversion Measurement API をサポートできます。
 
-- As an [origin trial](/origin-trials/). Origin trials enable the API for **all visitors** of a given [origin](/same-site-same-origin/#origin). **You need to register your origin for the origin trial in order to try the API with end users**. See [Using the conversion measurement API](/using-conversion-measurement) for details about the origin trial.
-- By turning on flags, in Chrome 86 and later. Flags enable the API on a **single user**'s browser. **Flags are useful when developing locally**.
+- [オリジン トライアル](/origin-trials/)としてサポート可能。オリジン トライアルは、特定の[オリジンの](/same-site-same-origin/#origin)**すべての訪問者**に対して API を有効にします。**エンド ユーザーで API を試すには、オリジン トライアルにオリジンを登録する必要があります**。オリジン トライアルの詳細については、「[変換測定 API の使用](/using-conversion-measurement)」を参照してください。
+- Chrome 86 以降でフラグをオンにする。**フラグは、単一ユーザー**のブラウザーで API を有効にします。**フラグは、ローカルで開発するときに役立ちます**。
 
 [Chrome 機能エントリ](https://chromestatus.com/features/6412002824028160)の現在のステータスの詳細をご覧ください。
 
 ### 標準化
 
-This API is being designed in the open, in the Web Platform Incubator Community Group ([WICG](https://www.w3.org/community/wicg/)). It's available for experimentation in Chrome.
+この API は、Web Platform Incubator Community Group ([WICG](https://www.w3.org/community/wicg/)) でオープンに設計されています。Chrome での実験に利用可能です。
 
 ### 同様の API
 
-WebKit, the web browser engine used by Safari, has a proposal with similar goals, the [Private Click Measurement](https://github.com/privacycg/private-click-measurement). It's being worked on within the Privacy Community Group ([PrivacyCG](https://www.w3.org/community/privacycg/)).
+Safari で使用される Web ブラウザー エンジンである  WebKit には、同様の目標を持つ提案である[プライベート クリック測定](https://github.com/privacycg/private-click-measurement)があります。プライバシー コミュニティ グループ ([PrivacyCG](https://www.w3.org/community/privacycg/)) 内で作業中です。
 
 ## この API がユーザーのプライバシーを保護する方法
 
-With this API, conversions can be measured while protecting users' privacy: users can't be recognized across sites. This is made possible by **data limits**, **noising of conversion data**, and **report timing** mechanisms.
+この API を使用すると、ユーザーのプライバシーを保護しながらコンバージョンを測定できます。ユーザーはサイト間で認識されません。**これは、データ制限**、**変換データの通知**、および**レポートのタイミング** メカニズムによって可能になります。
 
 これらのメカニズムがどのように機能するか、そしてそれらが実際に何を意味するかを詳しく見てみましょう。
 
 ### データ制限
 
-In the following, **click-time or view-time data** is data available to `adtech.example` when the ad is served to the user and then clicked or viewed. Data from when a conversion happened is **conversion-time data**.
+以下において、**クリック時間または表示時間のデータ**は、広告がユーザーに配信されてからクリックまたは表示されたときに `adtech.example` で利用できるデータです。変換が発生したときのデータは、**コンバージョン時間データ**です。
 
-Let's look at a **publisher** `news.example` and an **advertiser** `shoes.example`. Third-party scripts from the **adtech platform** `adtech.example` are present on the publisher site `news.example` to include ads for the advertiser `shoes.example`. `shoes.example` includes `adtech.example` scripts as well, to detect conversions.
+**パブリッシャー **`news.example` と**広告主** `shoes.example` を見てみましょう。**アドテック プラットフォーム** `adtech.example` のサードパーティ スクリプトがパブリッシャー サイト `news.example` に存在しており、広告主 `shoes.example` の広告が含まれています。`shoes.example` には、コンバージョンを検出するための `adtech.example` が含まれています。
 
-How much can `adtech.example` learn about web users?
+`adtech.example` は Web ユーザーについてどのくらい学ぶことができますか？
 
-#### With third-party cookies
+#### サードパーティ Cookie を使用
 
-<figure class="w-figure">   {% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="Diagram: how third-party cookies enable cross-site user recognition", width="800", height="860" %} </figure>
+<figure class="w-figure">{％Img src = "image / admin / kRpuY2r7ZSPtADz7e1P5.jpg"、alt = "図：サードパーティ Cookie がクロスサイト ユーザーの認識を可能にする方法"、width = "800"、height = "860"％}</figure>
 
-`adtech.example` relies on a **a third-party cookie used as a unique cross-site identifier** to **recognize a user across sites**. In addition, `adtech.example` can access **both** detailed click- or view-time data and detailed conversion-time data—and link them.
+`adtech.example` は、**サイト間でユーザーを認識する**ために、**一意のクロスサイト識別子として使用されるサードパーティ Cookie** に依存しています。さらに、`adtech.example` は、詳細なクリック時間または表示時間のデータと詳細な変換時間のデータの**両方**にアクセスし、それらをリンクすることができます。
 
-As a result, `adtech.example` can track the behavior of a single user across sites, between an ad view, click, and conversion.
+その結果、`adtech.example` は、1 人のユーザーによる広告ビューからクリック、コンバージョンにおよぶサイト全体の行動を追跡できます。
 
-Because `adtech.example` is likely present on a large number of publisher and advertiser sites—not just `news.example` and `shoes.example`—a user's behavior can be tracked across the web.
+`adtech.example`、`news.example`、`shoes.example` だけでなく、多数のサイト運営者や広告主のサイトに存在する可能性が高いため、ユーザーの行動を Web 全体で追跡できます。
 
-#### With the Event Conversion Measurement API
+#### Event Conversion Measurement API を使用
 
-<figure class="w-figure">   {% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="Diagram: how the API enables conversion measurement without cross-site user recognition", width="800", height="643" %}   <figcaption class="w-figcaption">"Ad ID" on the cookies diagram and "Click ID" are both identifiers that enable mapping to detailed data. On this diagram, it's called "Click ID" because only click-through conversion measurement is supported.</figcaption> </figure>
+<figure class="w-figure">{％Img src = "image / admin / X6sfyeKGncVm0LJSYJva.jpg"、alt = "図：API がクロスサイトユーザー認識なしでコンバージョン測定を可能にする方法"、width = "800"、height = "643"％}<figcaption class="w-figcaption"> Cookie 図の「広告 ID」と「クリック ID」はどちらも、詳細データへのマッピングを可能にする識別子です。この図では、クリックスルー コンバージョン測定のみがサポートされているため、「クリック ID」と呼ばれています。</figcaption></figure>
 
-`adtech.example` can't use a cross-site identifier and hence **can't recognize a user across sites**.
+`adtech.example` はクロスサイト識別子を使用できないため、**サイト間でユーザーを認識できません**。
 
 - 64 ビット識別子を広告クリックに添付できます。
-- Only 3 bits of conversion data can be attached to the conversion event. 3 bits can fit an integer value from 0 to 7. This is not much data, but enough that advertisers can learn how to make good decisions about where to spend their advertising budget in the future (for example by training data models).
+- 変換イベントに添付できる変換データは 3 ビットのみです。3 ビットは 0 から 7 までの整数値に適合できます。これは多くのデータではありませんが、広告主が将来の広告予算をどこに使うかについて適切な決定を下す方法を学ぶのに十分です (たとえば、データモデルのトレーニングによって)。
 
-{% Aside %} The click data and conversion data are never exposed to a JavaScript environment in the same context. {% endAside %}
+{% Aside %}クリック データとコンバージョン データが同じコンテキストの JavaScript 環境に公開されることはありません。{% endAside %}
 
-#### Without an alternative to third-party cookies
+#### サードパーティ Cookie に代わるものなし
 
-Without an alternative to third-party cookies such as the Event Conversion Measurement API, conversions can't be attributed: if `adtech.example` is present on both the publisher's and advertiser's site, it may access click-time or conversion-time data but it can't link them at all.
+Event Conversion Measurement API などのサードパーティ Cookie に代わるものがなければ、コンバージョンを `adtech.example` することはできません。adtech.example がサイト運営者と広告主の両方のサイトに存在する場合は、クリック時間またはコンバージョン時間のデータにアクセスできますが、それらをリンクすることは一切できません。
 
 この場合、ユーザーのプライバシーは保護されますが、広告主は広告費を最適化できません。Event Conversion Measurement API のような代替手段が必要なのはこのためです。
 
-### Noising of conversion data
+### コンバージョン データのノイズ
 
 変換時に収集された 3 ビットには**ノイズ**が発生します。
 
-For example, in Chrome's implementation, data noising works as follows: 5% of the time, the API reports a random 3-bit value instead of the actual conversion data.
+たとえば、Chrome の実装では、データ ノイズは次のように機能します。API は 5％ の確率で実際のコンバージョン データではなくランダムな 3 ビット値をレポートします。
 
 これにより、プライバシー攻撃からユーザーが保護されます。いくつかの変換からのデータを悪用して識別子を作成しようとする攻撃者は、受信するデータを完全には信用できないため、こうしたタイプの攻撃はより複雑化します。
 
-Note that it's possible to [recover the true conversion count](/using-conversion-measurement/#(optional)-recover-the-corrected-conversion-count).
+[真のコンバージョン数を回復](/using-conversion-measurement/#(optional)-recover-the-corrected-conversion-count)できることにご注意ください。
 
-Summing up click data and conversion data:
+クリック データとコンバージョン データの合計:
 
 <div class="w-table-wrapper">
   <table class="w-table--top-align">
@@ -173,14 +171,14 @@ Summing up click data and conversion data:
     </thead>
     <tbody>
       <tr>
-        <td>Click data (<code>impressiondata</code> attribute)</td>
+        <td>クリック データ (<code>impressiondata</code> 属性)</td>
         <td>64 ビット</td>
         <td>広告 ID またはクリック ID</td>
       </tr>
       <tr>
         <td>変換データ</td>
         <td>3 ビット、ノイズ</td>
-        <td>An integer from 0 to 7 that can map to a conversion type: signup, complete checkout, etc.</td>
+        <td>サインアップ、完全なチェックアウトなど、コンバージョン タイプにマッピングできる 0 から 7 までの整数。</td>
       </tr>
     </tbody>
   </table>
@@ -190,11 +188,11 @@ Summing up click data and conversion data:
 
 特定の広告クリックに対して複数のコンバージョンが登録されている場合**、対応するレポートがコンバージョンごとに送信され、クリックごとに最大 3 つまで送信されます**。
 
-To prevent conversion time from being used to get more information from the conversion side and hence hinder users' privacy, this API specifies that conversion reports aren't sent immediately after a conversion happens. After the initial ad click, a schedule of **reporting windows** associated with this click begins. Each reporting window has a deadline, and conversions registered before that deadline will be sent at the end of that window.
+変換側からより多くの情報を取得する目的で変換時間が使用されることによりユーザーのプライバシーに影響がおよぶのを防ぐために、この API では、変換直後に変換レポートが送信されないことが指定されます。最初の広告クリックの後、このクリックに関連付けられた**レポート ウィンドウ**のスケジュールが開始されます。各レポート ウィンドウには期限があり、その期限より前に登録されたコンバージョンは、そのウィンドウの最後に送信されます。
 
-Reports may not be exactly sent at these scheduled dates and times: if the browser isn't running when a report is scheduled to be sent, the report is sent at browser startup—which could be days or weeks after the scheduled time.
+レポートは、このようにスケジュールされた日時の正確なタイミングでは送信されない場合があります。レポートの送信がスケジュールされているときにブラウザーが稼働していなければ、レポートはブラウザーの起動時に送信されます。それは、スケジュールされた時刻から数日後または数週間後となる場合があります。
 
-After expiry (click time + `impressionexpiry`), no conversion is counted—`impressionexpiry` is the cut-off date and time for when conversions can no longer be counted for this ad.
+満了後 (クリック時間 + `impressionexpiry`)、変換はカウントされません。この広告の変換をカウントできなくなるタイミングとして、`impressionexpiry` がカットオフの日時となります
 
 Chromeでは、レポートのスケジュールは次のように機能します。
 
@@ -203,8 +201,8 @@ Chromeでは、レポートのスケジュールは次のように機能しま�
     <thead>
       <tr>
         <th><code>impressionexpiry</code></th>
-        <th>Depending on conversion time, a conversion report is sent (if the browser is open)...</th>
-        <th>Number of reporting windows</th>
+        <th>変換時間に応じて、変換レポートが送信されます (ブラウザーが開いている場合)...</th>
+        <th>レポート ウィンドウの数</th>
       </tr>
     </thead>
     <tbody>
@@ -214,14 +212,14 @@ Chromeでは、レポートのスケジュールは次のように機能しま�
           <ul>
             <li>広告がクリックされてから 2 日後</li>
             <li>または広告クリックから 7 日後</li>
-            <li>or <code>impressionexpiry</code> = 30 days after ad click.</li>
+            <li>または<code>impressionexpiry</code> = 広告クリックから 30 日後。</li>
           </ul>
         </td>
         <td>3</td>
       </tr>
       <tr>
         <td>
-<code>impressionexpiry</code> is between 7 and 30 days</td>
+<code>impressionexpiry</code>は 7 日から 30 日です</td>
         <td>
           <ul>
             <li>広告クリックの 2 日後</li>
@@ -234,7 +232,7 @@ Chromeでは、レポートのスケジュールは次のように機能しま�
       </tr>
       <tr>
         <td>
-<code>impressionexpiry</code> is between 2 and 7 days</td>
+<code>impressionexpiry</code>は 2 日から 7 日です</td>
         <td>
           <ul>
             <li>広告クリックの 2 日後</li>
@@ -268,11 +266,11 @@ API によりコンバージョンが記録および報告される仕組みは�
 
 ### 広告クリック (ステップ 1 から 5)
 
-<figure class="w-figure">   {% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="Diagram: ad click and click storage", width="800", height="694" %} </figure>
+<figure class="w-figure">{％Img src = "image / admin / FvbacJL6u37XHuvQuUuO.jpg"、alt = "図：広告クリックとクリック ストレージ"、width = "800"、height = "694"％}</figure>
 
-An `<a>` ad element is loaded on a publisher site by `adtech.example` within an iframe.
+`<a>`広告要素は、iframe 内の`adtech.example` によってサイト運営者サイトに読み込まれます。
 
-The adtech platform developers have configured the `<a>` element with conversion measurement attributes:
+アドテック プラットフォームの開発者は、`<a>` を以下のようなコンバージョン測定属性で設定しています。
 
 ```html
 <a
@@ -309,27 +307,28 @@ The adtech platform developers have configured the `<a>` element with conversion
       </tr>
       <tr>
         <td>
-<code>conversiondestination</code> (required): the <b><a href="/same-site-same-origin/#site" noopener="">eTLD+1</a></b> where a conversion is expected for this ad.</td>
-        <td>(no default)</td>
+<code>conversiondestination</code> (必須): <b><a href="/same-site-same-origin/#site" noopener="">eTLD + 1</a></b> 変換はこの広告のために期待されています。</td>
+        <td>(デフォルトなし)</td>
         <td>
 <code>https://advertiser.example</code> 。<br> <code>conversiondestination</code>が<code>https://advertiser.example</code> である場合、 <code>https://advertiser.example</code> と<code>https://shop.advertiser.example</code> の両方での変換に起因します。<br> <code>conversiondestination</code>が<code>https://shop.advertiser.example</code> の場合も同じことが起こり、<code>https://advertiser.example</code> と<code>https://shop.advertiser.example</code> の両方での変換に起因します。</td>
       </tr>
       <tr>
         <td>
-<code>impressionexpiry</code> (optional): in milliseconds, the cutoff time for when conversions can be attributed to this ad.</td>
-        <td>           <code>2592000000</code> = 30 days (in milliseconds).<br><br>           Maximum: 30 days (in milliseconds).<br><br>           Minimum: 2 days (in milliseconds).         </td>
+<code>impressionexpiry</code>の有効期限 (オプション): ミリ秒単位で、コンバージョンがこの広告に起因する可能性がある場合のカットオフ時間。</td>
+        <td>
+<code>2592000000</code> = 30日 (ミリ秒単位)。<br><br>最大: 30 日 (ミリ秒単位)。<br><br>最小: 2日 (ミリ秒単位)。</td>
         <td>クリックから 10 日後： <code>864000000</code>
 </td>
       </tr>
       <tr>
         <td>
-<code>reportingorigin</code> (optional): the destination for reporting confirmed conversions.</td>
+<code>reportingorigin</code> (オプション): 確認済みのコンバージョンをレポートする宛先。</td>
         <td>リンク要素が追加されたページのトップレベルの起点。</td>
         <td><code>https://adtech.example</code></td>
       </tr>
       <tr>
         <td>
-<code>href</code>: the intended destination of the ad click.</td>
+<code>href</code>: 広告クリックの目的の宛先。</td>
         <td><code>/</code></td>
         <td><code>https://advertiser.example/shoes07</code></td>
       </tr>
@@ -337,7 +336,7 @@ The adtech platform developers have configured the `<a>` element with conversion
   </table>
 </div>
 
-{% Aside %} Some notes about the example:
+{% Aside %}例に関する注意事項:
 
 - 現在はクリックのみがサポートされていますが、API の属性または API プロポーザルで使用されている「インプレッション」という用語があります。名前は、API の将来の反復で更新される可能性があります。
 - 広告は iframe 内にある必要はありませんが、これがこの例の基になっています。
@@ -346,11 +345,11 @@ The adtech platform developers have configured the `<a>` element with conversion
 
 {% Aside 'gotchas' %}
 
-- Flows based on navigating via `window.open` or `window.location` won't be eligible for attribution.
+- `window.open` または `window.location` を介したナビゲートに基づくフローは、帰属の対象にはなりません。
 
 {% endAside %}
 
-When the user taps or clicks the ad, they navigate to the advertiser's site. Once the navigation is committed, the browser stores an object that includes `impressiondata`, `conversiondestination`, `reportingorigin`, and `impressionexpiry`:
+ユーザーが広告をタップまたはクリックすると、広告主のサイトに移動します。ナビゲーションがコミットされると、ブラウザーは、`impressiondata`、`conversiondestination`、`reportingorigin`、`impressionexpiry` を含むオブジェクトを保存します。
 
 ```json
 {
@@ -361,11 +360,11 @@ When the user taps or clicks the ad, they navigate to the advertiser's site. Onc
 }
 ```
 
-### Conversion and report scheduling (steps 6 to 9)
+### 変換とレポートのスケジュール (ステップ 6 から 9)
 
-<figure class="w-figure">   {% Img src="image/admin/2fFVvAwyiXSaSDp8XVXo.jpg", alt="Diagram: conversion and report scheduling", width="800", height="639" %} </figure>
+<figure class="w-figure">{％Img src = "image/admin/2fFVvAwyiXSaSDp8XVXo.jpg"、alt = "図: 変換とレポートのスケジュール"、width = "800"、height = "639"％}</figure>
 
-Either directly after clicking the ad, or later on—for example, on the next day—the user visits `advertiser.example`, browses sports shoes, finds a pair they want to purchase, and proceeds to checkout. `advertiser.example` has included a pixel on the checkout page:
+広告をクリックした直後、または後で (たとえば翌日に)、ユーザーは `advertiser.example` にアクセスし、スポーツ シューズを閲覧し、購入したいペアを見つけて、チェックアウトに進みます。`advertiser.example` は、チェックアウト ページにピクセルを含めました。
 
 ```html
 <img
@@ -375,9 +374,9 @@ Either directly after clicking the ad, or later on—for example, on the next da
 />
 ```
 
-`adtech.example` receives this request, and decides that it qualifies as a conversion. They now need to request the browser to record a conversion. `adtech.example` compresses all of the conversion data into 3 bits—an integer between 0 and 7, for example they might map a **Checkout** action to a conversion value of 2.
+`adtech.example` はこのリクエストを受信し、コンバージョンとして適格であると判断します。次に、コンバージョンを記録するようにブラウザーに要求する必要があります。`adtech.example` は、すべての変換データを 3 ビット (0 から 7 の整数) に圧縮します。たとえば、**チェックアウト** アクションを変換値 2 にマップする場合があります。
 
-`adtech.example` then sends a specific register-conversion redirect to the browser:
+`adtech.example` は、特定のレジスタ変換リダイレクトをブラウザーに送信します。
 
 ```js
 const conversionValues = {
@@ -394,24 +393,24 @@ app.get('/conversion', (req, res) => {
 });
 ```
 
-{% Aside %} `.well-known` URLs are special URLs. They make it easy for software tools and servers to discover commonly-needed information or resources for a site—for example, on what page a user can [change their password](/change-password-url/). Here, `.well-known` is only used so that the browser recognizes this as a special conversion request. This request is actually cancelled internally by the browser. {% endAside %}
+{% Aside %}`.well-known` は特別な URL です。これにより、ソフトウェア ツールやサーバーは、サイトで一般的に必要な情報やリソースを簡単に見つけることができます。たとえば、ユーザーが[パスワードを変更できる](/change-password-url/)ページを確認できます。ここで、`.well-known` は、ブラウザーがこれを特別な変換要求として認識するためだけの目的で使用されます。このリクエストは、実際にはブラウザーによって内部的にキャンセルされます。{% endAside %}
 
-The browser receives this request. Upon detecting `.well-known/register-conversion`, the browser:
+ブラウザーはこのリクエストを受け取ります。`.well-known/register-conversion` を検出すると、ブラウザーは次のようになります。
 
-- Looks up all ad clicks in storage that match this `conversiondestination` (because it's receiving this conversion on a URL that has been registered as a `conversiondestination` URL when the user clicked the ad). It finds the ad click that happened on the publisher's site one day before.
+- `conversiondestination` に一致するストレージ内のすべての広告クリックを検索します (ユーザーが広告をクリックしたときに `conversiondestination` URL として登録された URL でこのコンバージョンを受信しているため)。 1 日前にサイト運営者のサイトで発生した広告クリックを検出します。
 - この広告クリックのコンバージョンを登録します。
 
-Several ad clicks can match a conversion—the user may have clicked an ad for `shoes.example` on both `news.example` and `weather.example`. In this case, several conversions are registered.
+いくつかの広告のクリックが変換にマッチする場合があります。ユーザーは、`news.example` と `weather.example` の両方で `shoes.example` の広告をクリックした可能性があります。この場合は、複数の変換が登録されます。
 
-Now, the browser knows that it needs to inform the adtech server of this conversion—more specifically, the browser must inform the `reportingorigin` that is specified in both the `<a>` element and in the pixel request (`adtech.example`).
+これで、ブラウザーはこの変換をアドテック サーバーに通知する必要があることを認識します。具体的には、`<a>` 要素とピクセル リクエスト (`adtech.example`) の両方で指定されている `reportingorigin` に報告する必要があります。
 
-To do so, the browser schedules to send a **conversion report**, a blob of data containing the click data (from the publisher's site) and the conversion data (from the advertiser's). For this example, the user converted one day after click. So the report is scheduled to be sent on the next day, at the two-day-after-click mark if the browser is running.
+そのために、ブラウザーは **コンバージョン レポート**、つまり (パブリッシャー サイトからの) クリック データを含むデータのブロブおよび (広告主サイトからの) コンバージョン データを含むデータを送信するようにスケジュールします。この例では、ユーザーはクリックの 1 日後にコンバージョンを達成しました。そのため、レポートは翌日、ブラウザーが実行されている場合はクリック後 2 日目で送信されるようにスケジュールされています。
 
 ### レポートの送信 (ステップ 10 および 11)
 
-<figure class="w-figure">   {% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="Diagram: browser sending the report", width="800", height="533" %} </figure>
+<figure class="w-figure">{％Img src = "image/admin/Er48gVzK5gHUGdDHWHz1.jpg"、alt = "図: レポートを送信するブラウザー"、width = "800"、height = "533"％}</figure>
 
-Once the scheduled time to send the report is reached, the browser sends the **conversion report**: it sends an HTTP POST to the reporting origin that was specified in the `<a>` element (`adtech.example`). For example:
+レポートを送信する予定の時間に達すると、ブラウザーは**変換レポート**を送信します。`<a>`要素 `adtech.example` で指定されたレポートの発信元に HTTP POST が送信されます。
 
 `https://adtech.example/.well-known/register-conversion?impression-data=200400600&conversion-data=2&credit=100`
 
@@ -419,9 +418,9 @@ Once the scheduled time to send the report is reached, the browser sends the **c
 
 - 元の広告クリックに関連付けられたデータ (`impression-data`)。
 - 変換に関連するデータ[。ノイズが発生する可能性があり](#noising-of-conversion-data)ます。
-- The conversion credit attributed to the click. This API follows a **last-click attribution** model: the most recent matching ad click is given a credit of 100, all other matching ad clicks are given a credit of 0.
+- クリックに起因するコンバージョン クレジット。この API は、**ラストクリック アトリビューション** モデルに従います。最新の一致する広告クリックには 100 のクレジットが与えられ、他のすべての一致する広告クリックには 0 のクレジットが与えられます。
 
-As the adtech server receives this request, it can pull the `impression-data` and `conversion-data` from it, i.e. the conversion report:
+アドテック サーバーがこのリクエストを受信すると、サーバーから `impression-data` と `conversion-data` (つまり変換レポート) を取得できます。
 
 ```json
 {"impression-data": "200400600", "conversion-data": 3, "credit": 100}
@@ -429,42 +428,42 @@ As the adtech server receives this request, it can pull the `impression-data` an
 
 ### その後の変換と有効期限
 
-Later on, the user may convert again—for example by purchasing a tennis racket on `advertiser.example` to go alongside their shoes. A similar flow takes place:
+後に、ユーザーは、たとえば、シューズに合わせてテニスのラケットを `advertiser.example` から購入するかもしれません。その際も同様のフローが発生します。
 
-- The adtech server sends a conversion request to the browser.
-- The browser matches this conversion with the ad click, schedules a report, and sends it to the adtech server later on.
+- アドテック サーバーは、変換要求をブラウザーに送信します。
+- ブラウザーはこのコンバージョンを広告クリックと照合し、レポートをスケジュールし、それを後からアドテック サーバーに送信します。
 
-After `impressionexpiry`, conversions for this ad click stop being counted and the ad click is deleted from browser storage.
+`impressionexpiry` の有効期限が切れると、この広告クリックのコンバージョンはカウントされなくなり、広告クリックはブラウザーのストレージから削除されます。
 
-## Use cases
+## ユース ケース
 
 ### 現在サポートされているもの
 
-- Measure click-through conversions: determine which ad clicks lead to conversions, and access coarse information about the conversion.
+- クリックスルー コンバージョンを測定する: どの広告クリックがコンバージョンにつながるかを判断し、コンバージョンに関する大まかな情報にアクセスします。
 - 機械学習モデルのトレーニングなどにより、データを収集して広告の選択を最適化します。
 
 ### このイテレーションでサポートされていないもの
 
 次の機能はサポートされていませんが、この API の今後のイテレーション、または[集計](https://github.com/WICG/conversion-measurement-api/blob/master/AGGREGATE.md)レポートには含まれる可能性があります。
 
-- View-through conversion measurement.
-- [Multiple reporting endpoints](https://github.com/WICG/conversion-measurement-api/issues/29).
-- [Web conversions that started in an iOS/Android app](https://github.com/WICG/conversion-measurement-api/issues/54).
-- Conversion lift measurement / incrementality: measurement of causal differences in conversion behavior, by measuring the difference between a test group that saw an ad and a control group that didn't.
-- Attribution models that are not last-click.
-- Use cases that require larger amounts of information about the conversion event. For example, granular purchase values or product categories.
+- ビュースルー コンバージョン測定。
+- [複数のレポート エンドポイント](https://github.com/WICG/conversion-measurement-api/issues/29)。
+- [iOS/Android アプリで開始された Web コンバージョン](https://github.com/WICG/conversion-measurement-api/issues/54)。
+- コンバージョン リフトの測定/増分: 広告を見たテスト グループと見なかったコントロール グループの違いを測定することによる、コンバージョン行動の因果関係の違いの測定。
+- ラストクリックではないアトリビューション モデル。
+- 変換イベントに関する大量の情報を必要とするユース ケース。たとえば、きめ細かい購入額や商品カテゴリなど。
 
-Before these features and more can be supported, **more privacy protections** (noise, fewer bits, or other limitations) must be added to the API.
+これらの機能やその他の機能をサポートする前に、(ノイズやビット数の削減、その他の制限など) **さらなるプライバシー保護**を API に追加する必要があります。
 
-Discussion of additional possible features takes place in the open, in the [**Issues** of the API proposal repository](https://github.com/WICG/conversion-measurement-api/issues).
+追加される可能性のある機能に関するディスカッションは、[API プロポーザル リポジトリの**課題のセクション**](https://github.com/WICG/conversion-measurement-api/issues)に公開されています。
 
-{% Aside %} Is your use case missing? Do you have feedback on the API? [Share it](#share-your-feedback). {% endAside %}
+{% Aside %}ユース ケースの欠落や API に関するフィードバックがございましたら、ぜひ[共有](#share-your-feedback)してください。{% endAside %}
 
-### What else may change in future iterations
+### 将来のイテレーションで変わる可能性があるもの
 
-- This API is at an early, experimental stage. In future iterations, this API may undergo substantial changes including but not limited to the ones listed below. Its goal is to measure conversions while preserving user privacy, and any change that would help better address this use case will be made.
+- この API は、初期の実験段階にあります。今後のイテレーションにおいて、この API は変更される可能性があります。その変更内容は、以下を含むものの、これらに限定されない可能性があります。その目標は、ユーザーのプライバシーを保護しながらコンバージョンを測定することであり、このユース ケースにより適切に対処するのに役立つ変更が加えられます。
 - API と属性の命名は進化する可能性があります。
-- Click data and conversion data may not require encoding.
+- クリック データとコンバージョン データはエンコードを必要としなくなる可能性があります。
 - 変換データの 3 ビット制限は増減する可能性があります。
 - [より多くの機能が追加される可能性があります。そうした新機能をサポートするのに必要でれば、](#what-is-not-supported-in-this-iteration)**さらなるプライバシー保護 (ノイズ/ビット数の減少/その他の制限など) **が追加される可能性もあります。
 
@@ -476,7 +475,7 @@ Discussion of additional possible features takes place in the open, in the [**Is
 
 [デモをお](https://goo.gle/demo-event-level-conversion-measurement-api)試しください。必ず「始める前に」の指示に従ってください。
 
-Tweet [@maudnals](https://twitter.com/maudnals?lang=en) or [@ChromiumDev](https://twitter.com/ChromiumDev) for any question about the demo!
+デモに関する質問については、[@maudnals](https://twitter.com/maudnals?lang=en) または [@ChromiumDev](https://twitter.com/ChromiumDev) をツイートしてください。
 
 ### API をお試しください
 
@@ -484,17 +483,17 @@ API をローカルで、またはエンドユーザーを対象に実験する�
 
 ### フィードバックを共有する
 
-**Your feedback is crucial**, so that new conversion measurement APIs can support your use cases and provide a good developer experience.
+新しい Conversion Measurement API がユース ケースをサポートし、開発者に優れた体験を提供するには、**皆さまからのフィードバックが欠かせません**。
 
 - Chrome の実装に関するバグを報告するには、[バグを開いてください](https://bugs.chromium.org/p/chromium/issues/entry?status=Unconfirmed&components=Internals%3EConversionMeasurement&description=Chrome%20Version%3A%20%28copy%20from%20chrome%3A%2F%2Fversion%29%0AOS%3A%20%28e.g.%20Win10%2C%20MacOS%2010.12%2C%20etc...%29%0AURLs%20%28if%20applicable%29%20%3A%0A%0AWhat%20steps%20will%20reproduce%20the%20problem%3F%0A%281%29%0A%282%29%0A%283%29%0A%0AWhat%20is%20the%20expected%20result%3F%0A%0A%0AWhat%20happens%20instead%3F%0A%0AIf%20applicable%2C%20include%20screenshots%2Finfo%20from%20chrome%3A%2F%2Fconversion-internals%20or%20relevant%20devtools%20errors.%0A)。
-- To share feedback and discuss use cases on the Chrome API, create a new issue or engage in existing ones on the [API proposal repository](https://github.com/WICG/conversion-measurement-api/issues). Similarly, you can discuss the WebKit/Safari API and its use cases on the [API proposal repository](https://github.com/privacycg/private-click-measurement/issues).
-- To discuss advertising use cases and exchange views with industry experts: join the [Improving Web Advertising Business Group](https://www.w3.org/community/web-adv/). Join the [Privacy Community Group](https://www.w3.org/community/privacycg/) for discussions around the WebKit/Safari API.
+- Chrome API のフィードバックを共有し、ユース ケースに関するディスカッションを行うには、新しい課題を作成するか、 [API プロポーザル リポジトリ](https://github.com/WICG/conversion-measurement-api/issues)に既存の課題に参加してください。[同様に、API プロポーザル リポジトリでは ](https://github.com/privacycg/private-click-measurement/issues)WebKit/Safari API とそのユース ケースに関するディスカッションを行えます。
+- 広告の使用例について話し合い、業界の専門家と意見を交換するには、 [Improving Web Advertising Business Group](https://www.w3.org/community/web-adv/) に参加してください。 WebKit/Safari API に関するディスカッションについては、[プライバシー コミュニティ グループ](https://www.w3.org/community/privacycg/)に参加してください。
 
 ### 最新情報の確認をお忘れなく
 
-- As developer feedback and use cases are gathered, the Event Conversion Measurement API will evolve over time. Watch the proposal's [GitHub repository](https://github.com/WICG/conversion-measurement-api/).
-- Follow along the evolution of the [Aggregate Conversion Measurement API](https://github.com/WICG/conversion-measurement-api/blob/master/AGGREGATE.md) that will complement this API.
+- 開発者によるフィードバックとユース ケースが収集されるにつれ、Event Conversion Measurement API は進化していきます。プロポーザルの [GitHub リポジトリ](https://github.com/WICG/conversion-measurement-api/)をご覧ください。
+- この API を補完する [AggregateConversion Measurement API](https://github.com/WICG/conversion-measurement-api/blob/master/AGGREGATE.md) の進化を追いましょう。
 
-*With many thanks for contributions and feedback to all reviewers—especially Charlie Harrison, John Delaney, Michael Kleber and Kayce Basques.*
+*Charlie Harrison、John Delaney、Michael Kleber、KayceBasques をはじめとする、すべてのレビュアーによる貢献とフィードバックに感謝いたします。*
 
-*Hero image by William Warby / @wawarby on [Unsplash](https://unsplash.com/photos/WahfNoqbYnM), edited.*
+*William Warby によるヒーロー画像/Unsplash の [@wawarby](https://unsplash.com/photos/WahfNoqbYnM)、編集済み。*
