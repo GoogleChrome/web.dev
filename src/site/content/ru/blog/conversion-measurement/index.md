@@ -16,8 +16,8 @@ tags:
 
 {% Banner 'caution', 'body' %} Conversion Measurement API будет переименован в *Attribution Reporting API* и получит больше функций.
 
-- If you're experimenting with ([Conversion Measurement API](https://github.com/WICG/conversion-measurement-api/blob/3e0ef7d3cee8d7dc5a4b953e70cb027b0e13943b/README.md)) in [Chrome 91](https://chromestatus.com/features/schedule) and below, read this post to find more details, use cases and instructions for how to use the API.
-- If you're interested in the next iteration of this API (Attribution Reporting), which will be available for experimentation in Chrome (origin trial), [join the mailing list](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev) for updates on available experiments.
+- Если вы экспериментируете с [Conversion Measurement API](https://github.com/WICG/conversion-measurement-api/blob/3e0ef7d3cee8d7dc5a4b953e70cb027b0e13943b/README.md) в [Chrome 91](https://chromestatus.com/features/schedule) и ниже, то в этой публикации вы найдете более подробную информацию, варианты использования и инструкции к данному API.
+- Если вас интересует следующая версия этого API (Attribution Reporting), которая будет доступна для экспериментов в Chrome (как пробная версия источника), [присоединяйтесь к списку рассылки](https://groups.google.com/u/1/a/chromium.org/g/attribution-reporting-api-dev), чтобы получать новости о доступных экспериментах.
 
 {% endBanner %}
 
@@ -25,7 +25,7 @@ tags:
 
 {% Banner 'info', 'body' %} **Нам важны отзывы об этом предложении!** Если у вас есть комментарии, [создайте тему](https://github.com/WICG/conversion-measurement-api/issues/) в репозитории предложения API. {% endBanner %}
 
-{% Aside %} This API is part of the Privacy Sandbox, a series of proposals to satisfy third-party use cases without third-party cookies or other cross-site tracking mechanisms. See [Digging into the Privacy Sandbox](/digging-into-the-privacy-sandbox) for an overview of all the proposals. {% endAside %}
+{% Aside %} Этот API входит в тестовую среду конфиденциальности (Privacy Sandbox) — серию предложений для третьих лиц без использования сторонних файлов cookie и других механизмов межсайтового отслеживания. Обзор всех предложений см. в статье [«Углубляемся в тестовую среду конфиденциальности»](/digging-into-the-privacy-sandbox). {% endAside %}
 
 ## Глоссарий
 
@@ -33,9 +33,9 @@ tags:
 - **Рекламодатели**: компании, которые оплачивают рекламу.
 - **Издатели**: компании, которые размещают рекламу на своих сайтах.
 - **Конверсия по клику**: конверсия, связанная с кликом на объявлении.
-- **View-through conversion**: conversion that is attributed to an ad impression (if the user doesn't interact with the ad, then later converts).
+- **Конверсия по показам**: конверсия, связанная с показом объявления (если пользователь не взаимодействует с объявлением, но затем всё же совершает конверсию).
 
-## Who needs to know about this API: adtech platforms, advertisers, and publishers
+## Кому нужно знать об этом API — adtech-платформам, рекламодателям и издателям
 
 - **Adtech-платформам**, таким как **[автоматизированные платформы покупки рекламы](https://en.wikipedia.org/wiki/Demand-side_platform)**, этот API поможет поддерживать функции, которые сейчас зависят от сторонних файлов cookie. Если вы работаете над системами измерения конверсии, то [попробуйте демоверсию](#demo), [поэкспериментируйте с API](#experiment-with-the-api) и [поделитесь своим мнением](#share-your-feedback).
 - **Рекламодатели и издатели, использующие собственный код для рекламы или измерения конверсии**, могут применять этот API вместо существующих методов.
@@ -58,7 +58,7 @@ Chrome планирует [отказаться от поддержки стор
 
 ### Первая версия
 
-This API is at an **early experimental stage**. What's available as an origin trial is the **first iteration** of the API. Things may change substantially in [future iterations](#use-cases).
+Этот API находится на **ранней экспериментальной стадии**. В качестве пробной версии источника доступна **первая версия** API. В [будущих версиях](#use-cases) всё может существенно измениться.
 
 ### Только клики
 
@@ -88,7 +88,7 @@ This API is at an **early experimental stage**. What's available as an origin tr
 
 Если для одного клика на объявлении регистрируется несколько конверсий, то планируется отправка соответствующего количества отчетов (до трех на каждый клик на объявлении).
 
-Reports are sent after a delay: days or sometimes weeks after conversion (see why in [Reports timing](#report-timing)).
+Отчеты отправляются с задержкой: через несколько дней или даже недель после конверсии (о том, почему так происходит, см. в разделе [«Сроки отправки отчетов»](#report-timing)).
 
 ## Поддержка браузеров и похожие API
 
@@ -96,7 +96,7 @@ Reports are sent after a delay: days or sometimes weeks after conversion (see wh
 
 Event Conversion Measurement API может поддерживаться:
 
-- As an [origin trial](/origin-trials/). Origin trials enable the API for **all visitors** of a given [origin](/same-site-same-origin/#origin). **You need to register your origin for the origin trial in order to try the API with end users**. See [Using the conversion measurement API](/using-conversion-measurement) for details about the origin trial.
+- Как [пробная версия источника](/origin-trials/). Пробные версии источника позволяют использовать API для **всех посетителей** из определенного [источника](/same-site-same-origin/#origin)**. Чтобы опробовать API на конечных пользователях, необходимо зарегистрировать свой источник для пробной версии источника**. Подробнее о пробной версии источника см. в статье [«Использование API для измерения конверсии»](/using-conversion-measurement).
 - При включении флагов в Chrome 86 и новее. Флаги включают API в браузере **отдельного пользователя**. **Флаги удобны при локальной разработке**.
 
 Подробности о текущем статусе этой функции Chrome смотрите [здесь](https://chromestatus.com/features/6412002824028160).
@@ -256,11 +256,11 @@ WebKit, движок веб-браузера Safari, предлагает пох
 
 <figure class="w-figure">{% Img src="image/admin/bgkpW6Nuqs5q1ddyMG8X.jpg", alt="Хронология и расписание отправки отчетов", width = "800", height = "462" %}</figure>
 
-See [Sending Scheduled Reports](https://github.com/WICG/conversion-measurement-api#sending-scheduled-reports) for more details on timing.
+Подробнее о расписании см. в разделе документации [«Отправка запланированных отчетов»](https://github.com/WICG/conversion-measurement-api#sending-scheduled-reports).
 
 ## Пример
 
-{% Banner 'info', 'body' %} To see this in action, try out the [demo](https://goo.gle/demo-event-level-conversion-measurement-api) ⚡️ and see the corresponding [code](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement). {% endBanner %}
+{% Banner 'info', 'body' %} Чтобы увидеть, как всё это работает на практике, запустите [демоверсию](https://goo.gle/demo-event-level-conversion-measurement-api) ⚡️ и изучите соответствующий [код](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement). {% endBanner %}
 
 Вот как API регистрирует конверсию и сообщает о ней. Обратите внимание, что поток событий между кликом и конверсией относится только к текущей версии API. Будущие версии этого API [могут отличаться](#use-cases).
 
@@ -478,7 +478,7 @@ app.get('/conversion', (req, res) => {
 
 ### Поэкспериментируйте с API
 
-If you're planning to experiment with the API (locally or with end users), see [Using the conversion measurement API](/using-conversion-measurement).
+Если вы планируете поэкспериментировать с API (локально или с конечными пользователями), изучите статью [«Использование API для измерения конверсий»](/using-conversion-measurement).
 
 ### Поделитесь своим мнением
 
@@ -495,4 +495,4 @@ If you're planning to experiment with the API (locally or with end users), see [
 
 *Большое спасибо за помощь и отзывы всем рецензентам, особенно Чарли Харрисону, Джону Делани, Майклу Клеберу и Кейси Баски.*
 
-*Hero image by William Warby / @wawarby on [Unsplash](https://unsplash.com/photos/WahfNoqbYnM), edited.*
+*Главное изображение взято у William Warby/@wawarby на [Unsplash](https://unsplash.com/photos/WahfNoqbYnM) и отредактировано.*
