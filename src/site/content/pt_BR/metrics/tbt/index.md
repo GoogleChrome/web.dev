@@ -5,11 +5,7 @@ authors:
   - philipwalton
 date: '2019-11-07'
 updated: '2020-06-15'
-description: |2
-
-  This post introduces the Total Blocking Time (TBT) metric and explains
-
-  how to measure it
+description: Este artigo apresenta a métrica Total Blocking Time (TBT) e explica como medi-la.
 tags:
   - performance
   - metrics
@@ -17,35 +13,35 @@ tags:
 
 {% Aside %}
 
-Total Blocking Time (TBT) is an important [lab metric](/user-centric-performance-metrics/#in-the-lab) for measuring [load responsiveness](/user-centric-performance-metrics/#types-of-metrics) because it helps quantify the severity of how non-interactive a page is prior to it becoming reliably interactive—a low TBT helps ensure that the page is [usable](/user-centric-performance-metrics/#questions).
+O Total Blocking Time (TBT), ou tempo total de bloqueio, é uma [métrica de laboratório](/user-centric-performance-metrics/#in-the-lab) importante para medir a [responsividade da carga](/user-centric-performance-metrics/#types-of-metrics) porque ajuda a quantificar o nível de não-interatividade de uma página antes que ela se torne interativa de forma confiável. Um baixo valor de TBT ajuda a garantir que a página seja [utilizável](/user-centric-performance-metrics/#questions) .
 
 {% endAside %}
 
 ## O que é TBT?
 
-The Total Blocking Time (TBT) metric measures the total amount of time between [First Contentful Paint (FCP)](/fcp/) and [Time to Interactive (TTI)](/tti/) where the main thread was blocked for long enough to prevent input responsiveness.
+A métrica Total Blocking Time (TBT) mede a quantidade total de tempo entre a [First Contentful Paint (FCP)](/fcp/) e a [Time to Interactive (TTI)](/tti/) em que a thread principal foi bloqueado por tempo suficiente para evitar a responsividade da entrada.
 
-The main thread is considered "blocked" any time there's a [Long Task](/custom-metrics/#long-tasks-api)—a task that runs on the main thread for more than 50 milliseconds (ms). We say the main thread is "blocked" because the browser cannot interrupt a task that's in progress. So in the event that a user *does* interact with the page in the middle of a long task, the browser must wait for the task to finish before it can respond.
+A thread principal é considerada "bloqueada" sempre que houver uma [tarefa longa](/custom-metrics/#long-tasks-api) rodando, ou seja, uma tarefa que é executada na thread principal por mais de 50 milissegundos (ms). Dizemos que a thread principal está "bloqueada" porque o navegador não pode interromper uma tarefa em andamento. Assim, no caso em que um usuário *interage* com a página no meio de uma tarefa longa, o navegador precisa aguardar que a tarefa termine antes que ele possa responder.
 
-If the task is long enough (e.g. anything above 50 ms), it's likely that the user will notice the delay and perceive the page as sluggish or janky.
+Se a tarefa for longa o suficiente (por exemplo, qualquer coisa acima de 50 ms), é provável que o usuário sinta o atraso e perceba a página como lenta ou instável.
 
-The *blocking time* of a given long task is its duration in excess of 50 ms. And the *total blocking time* for a page is the sum of the *blocking time* for each long task that occurs between FCP and TTI.
+O *tempo* de bloqueio de uma determinada tarefa longa é sua duração superior a 50 ms. E o *tempo total de bloqueio* de uma página é a soma dos *tempos de bloqueio* de cada tarefa longa que ocorre entre a FCP e a TTI.
 
-For example, consider the following diagram of the browser's main thread during page load:
+Por exemplo, considere o seguinte diagrama da thread principal do navegador durante o carregamento da página:
 
-{% Img src="image/admin/clHG8Yv239lXsGWD6Iu6.svg", alt="A tasks timeline on the main thread", width="800", height="156", linkTo=true %}
+{% Img src="image/admin/clHG8Yv239lXsGWD6Iu6.svg", alt="Uma linha do tempo de tarefas na thread principal", width="800", height="156", linkTo=true %}
 
-The above timeline has five tasks, three of which are Long Tasks because their duration exceeds 50 ms. The next diagram shows the blocking time for each of the long tasks:
+A linha do tempo acima possui cinco tarefas, três das quais são Tarefas Longas porque sua duração excede 50 ms. O diagrama a seguir mostra o tempo de bloqueio para cada uma das tarefas longas:
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xKxwKagiz8RliuOI2Xtc.svg", alt="A tasks timeline on the main thread showing blocking time", width="800", height="156", linkTo=true %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xKxwKagiz8RliuOI2Xtc.svg", alt="Um cronograma de tarefas no thread principal mostrando o tempo de bloqueio", width="800", height="156", linkTo=true %}
 
-So while the total time spent running tasks on the main thread is 560 ms, only 345 ms of that time is considered blocking time.
+Portanto, embora o tempo total gasto na execução de tarefas na thread principal seja de 560 ms, apenas 345 ms desse tempo são considerados tempo de bloqueio.
 
 <table>
   <tr>
     <th></th>
     <th>Duração da tarefa</th>
-    <th>Task blocking time</th>
+    <th>Tempo de bloqueio da tarefa</th>
   </tr>
   <tr>
     <td>Tarefa um</td>
@@ -78,17 +74,17 @@ So while the total time spent running tasks on the main thread is 560 ms, only 3
   </tr>
 </table>
 
-### How does TBT relate to TTI?
+### Como a TBT se relaciona com a TTI?
 
-TBT is a great companion metric for TTI because it helps quantify the severity of how non-interactive a page is prior it to becoming reliably interactive.
+A TBT é uma ótima métrica complementar para a TTI porque ajuda a quantificar o nível de não-interatividade de uma página antes que ela se torne interativa de forma confiável.
 
-TTI considers a page "reliably interactive" if the main thread has been free of long tasks for at least five seconds. This means that three, 51 ms tasks spread out over 10 seconds can push back TTI just as far as a single 10-second long task—but those two scenarios would feel very different to a user trying to interact with the page.
+A TTI considera uma página "confiavelmente interativa" se a thread principal estiver livre de tarefas longas por pelo menos cinco segundos. Isto significa que três tarefas de 51 ms espalhadas por 10 segundos podem atrasar a TTI em até uma única tarefa de 10 segundos — mas esses dois cenários seriam percebidos de forma muito diferente para um usuário tentando interagir com a página.
 
-In the first case, three, 51 ms tasks would have a TBT of **3 ms**. Whereas a single, 10-second long tasks would have a TBT of **9950 ms**. The larger TBT value in the second case quantifies the worse experience.
+No primeiro caso, três tarefas de 51 ms teriam uma TBT de **3 ms**. Enquanto uma tarefa única de 10 segundos de duração teria uma TBT de **9.950 ms**. O maior valor da TBT no segundo caso quantifica a experiência pior.
 
-## How to measure TBT
+## Como medir a TBT
 
-TBT is a metric that should be measured [in the lab](/user-centric-performance-metrics/#in-the-lab). The best way to measure TBT is to run a Lighthouse performance audit on your site. See the [Lighthouse documentation on TBT](/lighthouse-total-blocking-time) for usage details.
+TBT é uma métrica que deve ser medida [em laboratório](/user-centric-performance-metrics/#in-the-lab) . A melhor maneira de medir a TBT é executar uma auditoria de desempenho do Lighthouse no seu site. Consulte a [documentação do Lighthouse sobre TBT](/lighthouse-total-blocking-time) para obter detalhes de uso.
 
 ### Ferramentas de laboratório
 
@@ -96,21 +92,21 @@ TBT is a metric that should be measured [in the lab](/user-centric-performance-m
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - [WebPageTest](https://www.webpagetest.org/)
 
-{% Aside %} While it is possible to measure TBT in the field, it's not recommended as user interaction can affect your page's TBT in ways that lead to lots of variance in your reports. To understand a page's interactivity in the field, you should measure [First Input Delay (FID)](/fid/). {% endAside %}
+{% Aside %} Embora seja possível medir o TBT em campo, isto não é recomendado, pois a interação com o usuário pode afetar a TBT da sua página de maneiras que podem levar a muitas variações nos seus relatórios. Para entender a interatividade de uma página em campo, você deve medir a [First Input Delay (FID)](/fid/). {% endAside %}
 
 ## O que é uma boa pontuação TBT?
 
-To provide a good user experience, sites should strive to have a Total Blocking Time of less than **300 milliseconds** when tested on **average mobile hardware**.
+Para fornecer uma boa experiência ao usuário, os sites devem se esforçar para ter uma Total Blocking Time de menos de **300 milissegundos** quando testados em **um hardware móvel típico** .
 
-For details on how your page's TBT affects your Lighthouse performance score, see [How Lighthouse determines your TBT score](/lighthouse-total-blocking-time/#how-lighthouse-determines-your-tbt-score)
+Para obter detalhes sobre como a TBT da sua página afeta sua pontuação de desempenho no Lighthouse, consulte [Como o Lighthouse determina sua pontuação TBT](/lighthouse-total-blocking-time/#how-lighthouse-determines-your-tbt-score)
 
-## How to improve TBT
+## Como melhorar a TBT
 
-To learn how to improve TBT for a specific site, you can run a Lighthouse performance audit and pay attention to any specific [opportunities](/lighthouse-performance/#opportunities) the audit suggests.
+Para aprender como melhorar a TBT para um site específico, você pode executar uma auditoria de desempenho do Lighthouse e prestar atenção a quaisquer [oportunidades](/lighthouse-performance/#opportunities) específicas que a auditoria sugerir.
 
-To learn how to improve TBT in general (for any site), refer to the following performance guides:
+Para aprender como melhorar a TBT em geral (para qualquer site), consulte os seguintes guias de desempenho:
 
 - [Reduza o impacto do código de terceiros](/third-party-summary/)
 - [Reduza o tempo de execução do JavaScript](/bootup-time/)
-- [Minimize main thread work](/mainthread-work-breakdown/)
+- [Minimize o trabalho da thread principal](/mainthread-work-breakdown/)
 - [Mantenha as contagens de solicitações baixas e os tamanhos de transferência pequenos](/resource-summary/)
