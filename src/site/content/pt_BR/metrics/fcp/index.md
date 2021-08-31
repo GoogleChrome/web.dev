@@ -13,7 +13,7 @@ tags:
 
 {% Aside %}A First Contentful Paint (FCP), ou primeira renderização de conteúdo, é uma métrica importante e centrada no usuário para medir [a velocidade de carregamento percebida](/user-centric-performance-metrics/#types-of-metrics) porque marca o primeiro ponto na linha do tempo de carregamento da página onde o usuário pode ver alguma coisa na tela: uma FCP rápida ajuda a tranquilizar o usuário que algo está [acontecendo](/user-centric-performance-metrics/#questions). {% endAside %}
 
-## What is FCP?
+## O que é FCP?
 
 A métrica First Contentful Paint (FCP) mede o tempo desde o início do carregamento da página até o momento em que qualquer parte do conteúdo da página é renderizada na tela. Para esta métrica, "conteúdo" se refere a texto, imagens (incluindo imagens de fundo), `<svg>` ou elementos `<canvas>` não-vazios.
 
@@ -24,9 +24,9 @@ Na linha do tempo de carregamento acima, a FCP acontece no segundo quadro, pois 
 Você notará que embora parte do conteúdo tenha sido renderizado, nem todo ele foi renderizado. Esta é uma distinção importante a ser feita entre a *First Contentful Paint (FCP)* e a *[Largest Contentful Paint (LCP)](/lcp/)*, que tem como objetivo medir quando o conteúdo principal da página terminou de carregar.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">   {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Good FCP values are 1.8 seconds or less, poor values are greater than 3.0 seconds and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src = "image / eqprBhZUGfb8WYnumQ9ljAxRrA72 / vQKpz0S2SGnnoXHMDidj.svg", alt = "Bons valores de FCP são 1,8 segundos ou menos, valores baixos são maiores que 3,0 segundos e qualquer coisa entre as necessidades de melhoria", largura = "400", altura = "300", classe = "w-screenshot w-screenshot - full width-full"%}</source></picture>
 
-### What is a good FCP score?
+### O que é uma boa pontuação de FCP?
 
 Para fornecer uma boa experiência ao usuário, os sites devem se esforçar para ter uma First Contentful Paint de **1,8 segundos** ou menos. Para garantir que você esteja atingindo essa meta para a maioria de seus usuários, um bom limite para medir é o **75º percentil** de carregamentos de página, segmentado através de dispositivos móveis e desktop.
 
@@ -34,14 +34,14 @@ Para fornecer uma boa experiência ao usuário, os sites devem se esforçar para
 
 A FCP pode ser medida [em laboratório](/user-centric-performance-metrics/#in-the-lab) ou [em campo](/user-centric-performance-metrics/#in-the-field) e está disponível nas seguintes ferramentas:
 
-### Field tools
+### Ferramentas de campo
 
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 - [Relatório de experiência do usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [Console de Busca (relatório de velocidade)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 
-### Lab tools
+### Ferramentas de laboratório
 
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
@@ -67,9 +67,9 @@ Este código mostra como registrar a entrada `first-contentful-paint` no console
 
 No exemplo acima, a entrada registrada `first-contentful-paint` informará quando o primeiro elemento de conteúdo foi renderizado. No entanto, em alguns casos, essa entrada não é válida para medir a FCP.
 
-The following section lists the differences between what the API reports and how the metric is calculated.
+A seção a seguir lista as diferenças entre o que a API informa e como a métrica é calculada.
 
-#### Differences between the metric and the API
+#### Diferenças entre a métrica e a API
 
 - A API enviará uma entrada de `first-contentful-paint` para páginas carregadas numa aba em segundo plano, mas essas páginas devem ser ignoradas ao calcular a FCP (os tempos de primeira renderização só devem ser considerados se a página estiver em primeiro plano o tempo todo).
 - A API não relata `first-contentful-paint` quando a página é restaurada do [cache back/forward](/bfcache/#impact-on-core-web-vitals), mas a FCP deve ser medida nesses casos, pois os usuários as experimentam como visitas de página distintas.
@@ -98,14 +98,14 @@ Para saber como melhorar a FCP em geral (para qualquer site), consulte os seguin
 - [Minifique o CSS](/unminified-css/)
 - [Remova o CSS não utilizado](/unused-css-rules/)
 - [Pré-conecte a origens necessárias](/uses-rel-preconnect/)
-- [Reduce server response times (TTFB)](/time-to-first-byte/)
+- [Reduza os tempos de resposta do servidor (TTFB)](/time-to-first-byte/)
 - [Evite múltiplos redirecionamentos de página](/redirects/)
 - [Pré-carregue solicitações importantes](/uses-rel-preload/)
-- [Avoid enormous network payloads](/total-byte-weight/)
-- [Serve static assets with an efficient cache policy](/uses-long-cache-ttl/)
+- [Evite enormes cargas de rede](/total-byte-weight/)
+- [Sirva ativos estáticos com uma política de cache eficiente](/uses-long-cache-ttl/)
 - [Evite um tamanho excessivo do DOM](/dom-size/)
 - [Minimize a profundidade de solicitações críticas](/critical-request-chains/)
 - [Certifique-se que o texto permanece visível durante o carregamento de webfonts](/font-display/)
-- [Keep request counts low and transfer sizes small](/resource-summary/)
+- [Mantenha as contagens de solicitações baixas e os tamanhos de transferência pequenos](/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}
