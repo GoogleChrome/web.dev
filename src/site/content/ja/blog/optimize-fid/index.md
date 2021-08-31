@@ -6,7 +6,7 @@ authors:
   - addyosmani
 date: 2020 年 5 月 5 日
 hero: image/admin/WH0KlcJXJlxvsxU9ow2i.jpg
-alt: A hand touching a smartphone screen
+alt: スマートフォンの画面に触れる手
 description: First Input Delay (初回入力までの遅延時間、FID) は、ユーザーが初めてサイトを操作してからブラウザーが実際にその操作に応答するまでの時間を測定するものです。この記事では、使用されていない JavaScript の圧縮、長く時間がかかっているタスクの分割、操作に対する準備状況の改善などの実施により FID を最適化する方法について説明します。
 tags:
   - blog
@@ -23,7 +23,7 @@ tags:
 [First Input Delay](/fid/) (FID) は、サイトのインタラクティブ性や応答性についてのユーザーの第一印象を測定する [Core Web Vitals](/vitals/) 指標です。ユーザーが最初にページに操作してからブラウザーが実際にその操作に応答するまでの時間を測定します。FID は[フィールド指標](/user-centric-performance-metrics/#in-the-field)であり、ラボ環境ではシミュレートできません。応答の遅延を測定するには、**実際のユーザーによる操作**が必要です。
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)">{％Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / Se4TiXIdp8jtLJVScWed.svg"、alt = "良いfid値は2.5秒、悪い値は4.0秒を超え、その間の値は改善が必要"、width = "384"、height = "96 "、class =" w-screenshot w-screenshot--filled width-full "％}</source></picture>
 
 [ラボ](/how-to-measure-speed/#lab-data-vs-field-data)環境での FID の予測には、[Total Blocking Time (合計ブロック時間、TBT)](/tbt/) をお勧めしています。この 2 つの指標の測定対象は異なりますが、通常 TBT の改善は FID の改善に相当します。
 
@@ -154,7 +154,7 @@ import('module.js').then((module) => {
 
 {% Aside %}このトピックの詳細については、「[最新のコードを最新のブラウザーに配信して、ページの読み込みを高速化する](/serve-modern-code-to-modern-browsers/)」ガイドをご覧ください。{% endAside %}
 
-## Developer tools
+## 開発者ツール
 
 FID を測定またはデバッグするためのツールは、以下のように様々なものが用意されています。
 
