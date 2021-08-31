@@ -1,13 +1,13 @@
 ---
 title: 필드의 Web Vitals 측정 모범 사례
-subhead: How to measure Web Vitals with your current analytics tool.
+subhead: 현재 분석 도구로 Web Vitals를 측정하는 방법.
 authors:
   - philipwalton
-description: How to measure Web Vitals with your current analytics tool
+description: 현재 분석 도구로 Web Vitals를 측정하는 방법
 date: '2020-05-27'
 updated: '2020-07-21'
 hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
-alt: How to measure Web Vitals with your current analytics tool
+alt: 현재 분석 도구로 Web Vitals를 측정하는 방법
 tags:
   - blog
   - performance
@@ -32,9 +32,9 @@ Core Web Vitals 메트릭을 지원하는 분석 도구를 사용하는 것이 �
 2. 프런트엔드 JavaScript 코드에서 메트릭 값을 계산합니다.
 3. 이름 또는 ID가 1단계에서 정의된 것과 일치하도록 메트릭 값을 분석 백엔드로 보냅니다*(필요한 경우에만)*.
 
-For steps 1 and 3, you can refer to your analytics tool's documentation for instructions. For step 2 you can use the [web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript library to compute the value of each of the Core Web Vitals metrics.
+1단계와 3단계의 경우 분석 도구의 설명서에서 지침을 참조할 수 있습니다. 2단계에서는 [Web Vitals](https://github.com/GoogleChrome/web-vitals) JavaScript 라이브러리를 사용하여 각 Core Web Vitals 메트릭의 값을 계산할 수 있습니다.
 
-The following code sample shows how easy it can be to track these metrics in code and send them to an analytics service.
+다음 코드 샘플은 코드에서 이러한 메트릭을 추적하고 분석 서비스로 보내는 것이 얼마나 쉬운지를 보여줍니다.
 
 ```js
 import {getCLS, getFID, getLCP} from 'web-vitals';
@@ -67,7 +67,7 @@ getLCP(sendToAnalytics);
 
 {% Aside %} 팁: [`web-vitals`](https://github.com/GoogleChrome/web-vitals) JavaScript 라이브러리는 보고된 각 메트릭 인스턴스에 대한 ID를 제공하므로 대부분의 분석 도구에서 분포를 구축할 수 있습니다. 자세한 내용은 [`Metric`](https://github.com/GoogleChrome/web-vitals#metric) 인터페이스 문서를 참조하세요. {% endAside %}
 
-## Send your data at the right time
+## 적시에 데이터 전송
 
 일부 성능 메트릭은 페이지 로드가 완료되면 계산할 수 있는 반면 CLS와 같은 다른 성능 메트릭은 페이지의 전체 수명을 고려하며 페이지에서 언로드를 시작한 후에야 최종적으로 결정됩니다.
 
@@ -79,17 +79,17 @@ getLCP(sendToAnalytics);
 
 {% Aside 'gotchas' %} [일부 브라우저 버그](https://github.com/w3c/page-visibility/issues/59#issue-554880545)로 인해  `visibilitychange` 이벤트가 실행되지 않는 경우도 있습니다. 자체 분석 라이브러리를 구축하는 경우 이러한 버그를 인식하는 것이 중요합니다. [web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript 라이브러리는 이러한 모든 버그를 설명합니다. {% endAside %}
 
-## Monitor performance over time
+## 시간 경과에 따른 성능 모니터링
 
 Core Web Vitals 메트릭을 추적하고 보고하도록 분석 구현을 업데이트한 후 다음 단계는 사이트 변경 사항이 시간 경과에 따라 성능에 미치는 영향을 추적하는 것입니다.
 
-### Version your changes
+### 변경 사항 버전 관리
 
 변경 사항을 추적할 때 프로덕션에 변경 사항을 배포하고, 배포일 이후 수신된 모든 메트릭이 새로운 사이트에 해당하며, 배포일 이전에 수신된 모든 메트릭은 이전 사이트에 해당한다고 가정하는 것은 너무나 고지식하며 안정적이도 않은 방법입니다. HTTP, 서비스 작업자 또는 CDN 계층에서의 캐싱을 포함한 여러 가지 요소가 이를 작동할 수 없게 하기 때문입니다.
 
-A much better approach is to create a unique version for each deployed change and then track that version in your analytics tool. Most analytics tools support setting a version. If yours does not, you can create a custom dimension and set that dimension to your deployed version.
+훨씬 더 나은 접근 방식은 배포된 각 변경 사항에 대해 고유한 버전을 만든 다음 분석 도구에서 해당 버전을 추적하는 것입니다. 대부분의 분석 도구는 버전 설정을 지원합니다. 그렇지 않은 경우 사용자 지정 차원을 만들고 해당 차원을 배포된 버전으로 설정할 수 있습니다.
 
-### Run experiments
+### 실험 실행
 
 동시에 여러 버전 또는 실험을 추적하여 버전 관리를 한 단계 더 발전시킬 수 있습니다.
 
@@ -99,7 +99,7 @@ A much better approach is to create a unique version for each deployed change an
 
 {% Aside %} 실험 그룹은 항상 서버에서 설정해야 합니다. 클라이언트에서 실행되는 실험 또는 A/B 테스트 도구는 사용하지 마세요. 이러한 도구는 일반적으로 사용자의 실험 그룹이 결정될 때까지 렌더링을 차단하므로 LCP 시간에 악영향을 미칠 수 있습니다. {% endAside %}
 
-## Ensure measurement doesn't affect performance
+## 측정이 성능에 영향을 미치지 않는지 확인
 
 실제 사용자의 성능을 측정할 때 실행 중인 성능 측정 코드가 페이지 성능에 부정적인 영향을 미치지 않도록 하는 것이 매우 중요합니다. 그렇게 되는 경우 분석 코드 자체가 문제인지 알 수 없기 때문에 성능이 비즈니스에 미치는 영향에 대한 결과를 신뢰할 수 없게 됩니다.
 
@@ -115,13 +115,13 @@ Core Web Vitals 메트릭을 측정하는 데 사용되는 모든 API는 [`buffe
 
 ### 긴 작업을 생성하지 말 것
 
-Analytics code often runs in response to user input, but if your analytics code is conducting a lot of DOM measurements or using other processor-intensive APIs the analytics code itself can cause poor input responsiveness. In addition, if the JavaScript file containing your analytics code is large, executing that file can block the main thread and negatively affect FID.
+분석 코드는 종종 사용자 입력에 대한 응답으로 실행되지만 분석 코드가 많은 DOM 측정을 수행하거나 다른 프로세서 집약적인 API를 사용하는 경우 분석 코드 자체가 입력 응답성을 저하시킬 수 있습니다. 또한 분석 코드가 포함된 JavaScript 파일이 큰 경우 해당 파일을 실행하면 메인 스레드가 차단되어 FID에 부정적인 영향을 미칠 수 있습니다.
 
-### Use non-blocking APIs
+### 비차단 API 사용
 
 <code>&lt;a href="https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon" data-md-type="link"&gt;sendBeacon()&lt;/a&gt;</code> 및 <code>&lt;a href="https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback" data-md-type="link"&gt;requestIdleCallback()&lt;/a&gt;</code> 같은 API는 사용자에게 크리티컬한 태스크를 차단하지 않는 방식으로 크리티컬이 아닌 태스크를 운영하기 위해 특별히 설계되었습니다.
 
-These APIs are great tools to use in a RUM analytics library.
+이러한 API는 RUM 분석 라이브러리에서 사용할 수 있는 훌륭한 도구입니다.
 
 일반적으로 모든 분석 비콘은 `sendBeacon()` API(사용 가능한 경우)를 사용하여 전송되어야 하며 모든 수동 분석 측정 코드는 유휴 기간 실행되어야 합니다.
 
@@ -129,7 +129,7 @@ These APIs are great tools to use in a RUM analytics library.
 
 ### 필요 이상으로 추적하지 말 것
 
-The browser exposes a lot of performance data, but just because the data is available does not necessarily mean you should record it and send it to your analytics servers.
+브라우저는 많은 성능 데이터를 노출하지만 데이터를 사용할 수 있다고 해서 반드시 기록하고 분석 서버로 보내야 하는 것은 아닙니다.
 
 예를 들어 [Resource Timing API](https://w3c.github.io/resource-timing/)는 페이지에 로드된 모든 단일 리소스에 대한 자세한 타이밍 데이터를 제공합니다. 그러나 모든 데이터가 리소스 로드 성능을 개선하는 데 반드시 또는 유용하지는 않죠.
 
