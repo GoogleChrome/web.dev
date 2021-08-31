@@ -13,7 +13,7 @@ tags:
 
 {% Aside %} A Time to Interactive (TTI), ou tempo até interatividade, é uma importante [métrica de laboratório](/user-centric-performance-metrics/#in-the-lab) para medir a [responsividade da carga](/user-centric-performance-metrics/#types-of-metrics). Ela ajuda a identificar casos em que uma página *parece* interativa, mas na verdade não é. Uma TTI rápida ajuda a garantir que a página seja [utilizável](/user-centric-performance-metrics/#questions). {% endAside %}
 
-## What is TTI?
+## O que é TTI?
 
 A métrica TTI mede o tempo desde o início do carregamento da página até o carregamento de seus principais sub-recursos e é capaz de responder de forma confiável e rápida à entrada do usuário.
 
@@ -24,7 +24,7 @@ Para calcular a TTI com base num [rastreamento de desempenho](https://developers
 3. Pesquise para trás pela última tarefa longa antes da janela silenciosa, parando na FCP se nenhuma tarefa longa for encontrada.
 4. A TTI é o tempo de término da última tarefa longa antes da janela silenciosa (ou o mesmo valor que a FCP se nenhuma tarefa longa for encontrada).
 
-The following diagram should help visualize the steps above:
+O diagrama a seguir deve ajudar a visualizar as etapas acima:
 
 {% Img src="image/admin/WZM0n4aXah67lEyZugOT.svg", alt="Uma linha do tempo de carregamento da página mostrando como calcular a TTI", width="800", height="473", linkTo=true %}
 
@@ -32,25 +32,25 @@ Historicamente, os desenvolvedores otimizavam as páginas para tempos de renderi
 
 Técnicas como a renderização lado-servidor (SSR) podem levar a cenários em que uma página *parece* interativa (ou seja, links e botões são visíveis na tela), mas não é *de fato* interativa porque a thread principal está bloqueado ou porque o código JavaScript que controla esses elementos ainda não foi carregado.
 
-When users try to interact with a page that looks interactive but actually isn't, they'll likely respond in one of two ways:
+Quando os usuários tentam interagir com uma página que parece interativa, mas na verdade não é, eles provavelmente responderão de uma destas duas maneiras:
 
 - Na melhor das hipóteses, ficarão incomodados porque a página demora para responder.
 - Na pior das hipóteses, eles presumirão que a página está quebrada e provavelmente irão embora. Eles podem até perder a confiança no valor da sua marca.
 
 Para evitar esse problema, faça todos os esforços para minimizar a diferença entre a FCP e a TTI. E nos casos em que exista uma diferença perceptível, deixe claro por meio de indicadores visuais que os componentes de sua página ainda não são interativos.
 
-## How to measure TTI
+## Como medir TTI
 
 A TTI é uma métrica que é idealmente medida [em laboratório](/user-centric-performance-metrics/#in-the-lab). A melhor maneira de medir a TTI é executar uma auditoria de desempenho do Lighthouse no seu site. Consulte a [documentação do Lighthouse sobre TTI](/interactive/) para obter detalhes de uso.
 
-### Lab tools
+### Ferramentas de laboratório
 
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - [WebPageTest](https://www.webpagetest.org/)
 
 {% Aside %} Embora seja possível medir a TTI em campo, isto não é recomendado, pois a interação com o usuário pode afetar a TTI de sua página de maneiras que podem levar a muitas variações em seus relatórios. Para entender a interatividade de uma página em campo, você deve medir a [First Input Delay (FID)](/fid/). {% endAside %}
 
-## What is a good TTI score?
+## O que é uma boa pontuação de TTI?
 
 Para garantir uma boa experiência ao usuário, os sites devem se esforçar para ter um tempo de interação de menos de **5 segundos** quando testados num **hardware móvel típico** .
 
@@ -65,8 +65,8 @@ Para saber como melhorar a TTI em geral (para qualquer site), consulte os seguin
 - [Minifique o JavaScript](/unminified-javascript/)
 - [Pré-conecte a origens necessárias](/uses-rel-preconnect/)
 - [Pré-carregue solicitações importantes](/uses-rel-preload/)
-- [Reduce the impact of third-party code](/third-party-summary/)
+- [Reduza o impacto do código de terceiros](/third-party-summary/)
 - [Minimize a profundidade de solicitações críticas](/critical-request-chains/)
-- [Reduce JavaScript execution time](/bootup-time/)
+- [Reduza o tempo de execução do JavaScript](/bootup-time/)
 - [Minimize o trabalho da thread principal](/mainthread-work-breakdown/)
-- [Keep request counts low and transfer sizes small](/resource-summary/)
+- [Mantenha as contagens de solicitações baixas e os tamanhos de transferência pequenos](/resource-summary/)
