@@ -1,11 +1,11 @@
 ---
-title: SameSite cookies explained
+title: Explicación de las cookies de SameSite
 subhead: Mantenga protegido su sitio aprendiendo a establecer explícitamente sus cookies entre sitios.
 authors:
   - rowan_m
 date: '2019-05-07'
 updated: '2020-05-28'
-hero: image/admin/UTOC41rgCccAqVNbJlyK.jpg
+hero: image / admin / UTOC41rgCccAqVNbJlyK.jpg
 description: Aprenda a marcar sus cookies para uso propio y de terceros con el atributo SameSite. Tambén puede mejorar la seguridad de su sitio utilizando los valores Lax y Strict de SameSite para mejorar la protección contra ataques de tipo CSRF. Especificar el nuevo atributo None le permite marcar explícitamente sus cookies para usarlas entre varios sitios.
 tags:
   - blog
@@ -20,7 +20,7 @@ feedback:
 
 - [Explicación sobre las cookies de SameSite](/samesite-cookies-explained/)
 - [Recetas para usar las cookies en SameSite](/samesite-cookie-recipes/)
-- [Schemeful Same-Site](/schemeful-samesite) {% endAside %}
+- [Esquema en el mismo sitio](/schemeful-samesite) {% endAside %}
 
 Las cookies son uno de los métodos disponibles para agregar un estado persistente a los sitios web. A lo largo de los años, sus capacidades han crecido y evolucionado significativamente, pero también dejaron algunos problemas heredados importantes en la plataforma. Para solucionar esta situación, los navegadores (incluidos Chrome, Firefox y Edge) están modificando su comportamiento a fin de hacer cumplir más valores predeterminados que ayuden a preservar la privacidad.
 
@@ -60,7 +60,7 @@ La lectura de `document.cookie` generará todas las cookies a las que se tiene a
 
 Si prueba esto en una selección de sitios populares, notará que la mayoría de ellos establecen significativamente más de tres cookies. En la mayoría de los casos, esas cookies se envían a ese dominio a partir de cada solicitud, lo cual tiene varias implicaciones. El ancho de banda que se emplea para la carga suele estar más restringido para sus usuarios que la descarga, de modo que la sobrecarga en todas las solicitudes que salen agrega un retraso en el tiempo que transcurre hasta llegar al primer byte. Por este motivo, sugerimos que sea conservador en la cantidad y el tamaño de las cookies que establezca. Utilice el  atributo `Max-Age` para garantizar que las cookies no permanezcan más tiempo del necesario.
 
-## What are first-party and third-party cookies?
+## ¿Qué son las cookies propias y de terceros?
 
 Si regresa a la misma selección de sitios que veía antes, probablemente notó que había cookies para una gran variedad de dominios, no solo el que visitaba en ese momento. A las cookies que coinciden con el dominio del sitio actual, es decir, el que se muestra en la barra de direcciones del navegador, se les conoce como **cookies propias**. De manera similar, las cookies cuyos dominios son distintos al del sitio que se visita en ese momento se denominan cookies de **terceros**. Esta no es una una forma para denominarlas que pueda usarse en todos los casos, pero es relativa al contexto del usuario. Es decir, la misma cookie puede ser propia o de terceros, según el sitio donde se encuentre el usuario en ese momento.
 
@@ -147,7 +147,7 @@ Chrome implementa estos comportamientos predeterminados a partir de la versión 
 
 {% Aside %}
 
-This article will be updated as additional browsers announce support.
+Este artículo se actualizará a medida que los navegadores adicionales anuncien su compatibilidad.
 
 {% endAside %}
 
