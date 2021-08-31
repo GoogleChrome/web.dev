@@ -3,9 +3,9 @@ title: Cómo empezar a medir Web Vitals
 authors:
   - katiehempenius
 date: '2020-05-27'
-updated: '2020-05-27'
-hero: image/admin/QxMJKZcue9RS5u05XxTE.png
-alt: Monthly graph overlayed with stopwatches labeled LCP, FID, and CLS.
+updated: 27-05-2020
+hero: image / admin / QxMJKZcue9RS5u05XxTE.png
+alt: Gráfico mensual superpuesto con cronómetros etiquetados como LCP, FID y CLS.
 description: Aprenda a medir los Web Vitals de su sitio tanto en el mundo real como en entornos de laboratorio.
 tags:
   - blog
@@ -67,7 +67,7 @@ Con respecto a los Web Vitals, Google utiliza el porcentaje de experiencias "bue
 
 Los [datos de laboratorio](/user-centric-performance-metrics/#in-the-lab), también conocidos como datos sintéticos, se recopilan de un entorno controlado, en vez de usuarios reales. A diferencia de los datos del RUM, los datos de laboratorio se pueden recopilar de entornos de preproducción y, por lo tanto, se pueden incorporar a los flujos de trabajo de los desarrolladores y a los procesos de integración continua. Ejemplos de herramientas que recopilan datos sintéticos son Lighthouse y WebPageTest.
 
-### Considerations
+### Consideraciones
 
 Siempre habrá discrepancias entre los datos del RUM y los datos de laboratorio, especialmente si las condiciones de la red, el tipo de dispositivo o la ubicación del entorno del laboratorio difieren significativamente de las de los usuarios. Sin embargo, cuando se trata de recopilar datos de laboratorio sobre métricas de Web Vitals en particular, hay un par de consideraciones específicas que es importante tener en cuenta:
 
