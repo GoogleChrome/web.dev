@@ -58,7 +58,7 @@ CLS は、ページの表示中に発生した[予期しない](/cls/#expected-v
 良好なユーザー体験を提供するために、サイトは CLS スコアが **0.1** 以下になるように努力する必要があります。ほぼすべてのユーザーに対してこの目標値を確実に達成するためには、モバイル デバイスとデスクトップ デバイスに分けた上で、総ページロード数の 75 パーセンタイルをしきい値として設定します。
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{％Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / uqclEgIlTHhwIgNTXN3Y.svg"、alt = "良好なCLS値は0.1未満、不良な値は0.25を超え、その間の値は改善が必要"、width = "400"、height = "300" 、class = "w-screenshot w-screenshot--filled width-full"％}</source></picture>
 
 {% Aside %}この推奨事項の根拠となる調査および方法論に関する詳細については、「[Core Web Vitals 指標のしきい値の定義](/defining-core-web-vitals-thresholds/)」を参照してください。{% endAside %}
 
@@ -142,7 +142,7 @@ layout shift score = impact fraction * distance fraction
 
 {% Aside 'caution' %}`hadRecentInput` フラグは、個別の入力イベント (タップ、クリック、キー押下など) に対してのみ true になります。連続的なインタラクション (スクロール、ドラッグ、ピンチによるズーム ジェスチャーなど) は "最近の入力" (Recent Input、500 ミリ秒以内に応答が発生する入力) とはみなされません。詳細はについては、「[レイアウトの不安定性の仕様](https://github.com/WICG/layout-instability#recent-input-exclusion)」を参照してください。{% endAside %}
 
-#### Animations and transitions
+#### アニメーションとトランジション
 
 アニメーションやトランジションは、上手に使用することでユーザーを驚かせることなくページ上のコンテンツを更新することができる優れた手法です。ページ上でコンテンツが突然何の前触れもなく移動してしまえば、ユーザーはほとんどの場合に悪印象を抱いてしまいます。しかしながら、ある位置から目的の位置へと少しづつ自然に移動するようなコンテンツは、ユーザーにとっては何が起こっているのかを理解しやすいですし、状態が変化している間にユーザーを誘導することもできます。
 
