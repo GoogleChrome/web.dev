@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Web Vitals
-description: Essential metrics for a healthy site
+description: 정상적인 사이트를 위한 필수 메트릭
 hero: image/admin/BHaoqqR73jDWe6FL2kfw.png
 authors:
   - philipwalton
@@ -19,35 +19,35 @@ tags:
 
 Web Vitals는 웹에서 우수한 사용자 경험을 제공하는 데 필수적인 품질 신호에 대한 통합 지침을 제공하기 위한 Google의 이니셔티브입니다.
 
-Google has provided a number of tools over the years to measure and report on performance. Some developers are experts at using these tools, while others have found the abundance of both tools and metrics challenging to keep up with.
+Google은 성능을 측정하고 보고하기 위해 수년 동안 다양한 도구를 제공해 왔습니다. 이러한 도구를 사용하는 데 전문가가 된 일부 개발자도 존재하지만, 너무나 풍부한 도구와 메트릭에 버거워하는 이들도 있습니다.
 
-Site owners should not have to be performance gurus in order to understand the quality of experience they are delivering to their users. The Web Vitals initiative aims to simplify the landscape, and help sites focus on the metrics that matter most, the **Core Web Vitals**.
+사이트 소유자의 경우 사용자에게 제공하는 경험의 품질을 이해하고자 성능에 관한 모든 것을 알고 있을 필요는 없습니다. Web Vitals 이니셔티브는 전망을 단순화하고, 사이트에서 가장 중요한 메트릭인 **Core Web Vitals**에 초점을 맞추도록 지원합니다.
 
 ## Core Web Vitals
 
-Core Web Vitals are the subset of Web Vitals that apply to all web pages, should be measured by all site owners, and will be surfaced across all Google tools. Each of the Core Web Vitals represents a distinct facet of the user experience, is measurable [in the field](/user-centric-performance-metrics/#how-metrics-are-measured), and reflects the real-world experience of a critical [user-centric](/user-centric-performance-metrics/#how-metrics-are-measured) outcome.
+Core Web Vitals는 모든 웹페이지에 적용되는 Web Vitals의 하위 집합으로 모든 사이트 소유자가 측정해야 하며 모든 Google 도구의 표면에 위치합니다. 각각의 Core Web Vitals는 사용자 경험의 고유한 측면을 나타내고, [필드에서](/user-centric-performance-metrics/#how-metrics-are-measured) 측정 가능하며, 필수적인 [사용자 중심](/user-centric-performance-metrics/#how-metrics-are-measured) 결과에 대한 현실의 경험을 반영합니다.
 
-The metrics that make up Core Web Vitals will [evolve](#evolving-web-vitals) over time. The current set for 2020 focuses on three aspects of the user experience—*loading*, *interactivity*, and *visual stability*—and includes the following metrics (and their respective thresholds):
+Core Web Vitals를 구성하는 메트릭은 시간이 지남에 따라 [진화](#evolving-web-vitals)합니다. 2020년 현재 세트는 사용자 경험의 세 가지 측면인 (*로딩*, *상호 작용*, *시각적 안정성*에 중점을 두고 있으며 다음 메트릭(및 각각의 임계값)을 포함합니다.
 
-<div class="w-stack w-stack--center w-stack--md">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Largest Contentful Paint threshold recommendations", width="400", height="350" %}   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="First Input Delay threshold recommendations", width="400", height="350" %}   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Cumulative Layout Shift threshold recommendations", width="400", height="350" %} </div>
+<div class="w-stack w-stack--center w-stack--md">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Largest Contentful Paint 임계값 권장", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="First Input Delay 임계값 권장", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Cumulative Layout Shift 임계값 권장", width="400", height="350" %}</div>
 
-- **[Largest Contentful Paint (LCP)](/lcp/)**: measures *loading* performance. To provide a good user experience, LCP should occur within **2.5 seconds** of when the page first starts loading.
-- **[First Input Delay (FID)](/fid/)**: measures *interactivity*. To provide a good user experience, pages should have a FID of **100 milliseconds** or less.
-- **[Cumulative Layout Shift (CLS)](/cls/)**: measures *visual stability*. To provide a good user experience, pages should maintain a CLS of **0.1.** or less.
+- **[Largest Contentful Paint(최대 콘텐츠풀 페인트, LCP)](/lcp/)**: *로딩* 성능을 측정합니다. 우수한 사용자 경험을 제공하려면 페이지가 처음으로 로딩된 후 **2.5초** 이내에 LCP가 발생해야 합니다.
+- **[First Input Delay(최초 입력 지연, FID)](/fid/)**: *상호 작용*을 측정합니다. 우수한 사용자 경험을 제공하려면 페이지의 FID가 **100밀리초** 이하여야 합니다.
+- **[Cumulative Layout Shift(누적 레이아웃 시프트, CLS)](/cls/)**: *시각적 안정성*을 측정합니다. 우수한 사용자 경험을 제공하려면 페이지에서 **0.1** 이하의 CLS를 유지해야 합니다.
 
-For each of the above metrics, to ensure you're hitting the recommended target for most of your users, a good threshold to measure is the **75th percentile** of page loads, segmented across mobile and desktop devices.
+위의 각 메트릭이 대부분의 사용자를 위해 권장되는 목표에 도달했는지 확인하기 위해 측정하기 좋은 임계값은 모바일 및 데스크톱 장치 전반을 세분화했을 때 페이지 로드의 **75번째 백분위수**입니다.
 
-Tools that assess Core Web Vitals compliance should consider a page passing if it meets the recommended targets at the 75th percentile for all of the above three metrics.
+Core Web Vitals 규정 준수를 평가하는 도구는 페이지가 위의 세 가지 메트릭 모두에 대해 75번째 백분위수에서 권장 목표를 충족한다면 통과한다고 간주해야 합니다.
 
-{% Aside %} To learn more about the research and methodology behind these recommendations, see: [Defining the Core Web Vitals metrics thresholds](/defining-core-web-vitals-thresholds/) {% endAside %}
+{% Aside %} 이러한 권장 사항의 기반이 되는 연구 및 방법론에 대해 자세히 알아보려면 [Core Web Vitals 메트릭 임계값](/defining-core-web-vitals-thresholds/)을 참조하시기 바랍니다. {% endAside %}
 
-### Tools to measure and report Core Web Vitals
+### Core Web Vitals를 측정하고 보고하는 도구
 
-Google believes that the Core Web Vitals are critical to all web experiences. As a result, it is committed to surfacing these metrics [in all of its popular tools](/vitals-tools/). The following sections details which tools support the Core Web Vitals.
+Google은 Core Web Vitals가 모든 웹 경험에 필수적이라고 생각하며, [사용자에게 널리 사용되는 도구](/vitals-tools/)의 표면에 이러한 메트릭을 표시하도록 최선을 다하고 있습니다. 다음 섹션에서는 Core Web Vitals를 지원하는 도구가 무엇인지에 대한 상세한 정보를 확인하실 수 있습니다.
 
-#### Field tools to measure Core Web Vitals
+#### Core Web Vitals를 측정하기 위한 필드 도구
 
-The [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) collects anonymized, real user measurement data for each Core Web Vital. This data enables site owners to quickly assess their performance without requiring them to manually instrument analytics on their pages, and powers tools like [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), and Search Console's [Core Web Vitals report](https://support.google.com/webmasters/answer/9205520).
+[Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)는 각 Core Web Vital에 대해 익명으로 실제 사용자 측정 데이터를 수집합니다. 사이트 소유자는 페이지에 대해 분석 도구를 사용할 필요 없이, 이 데이터를 활용해 신속하게 성능을 평가하고 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) 및 Search Console의 [Core Web Vitals Report](https://support.google.com/webmasters/answer/9205520) 같은 도구를 지원할 수 있습니다.
 
 <div class="w-table-wrapper">
   <table>
@@ -58,19 +58,19 @@ The [Chrome User Experience Report](https://developers.google.com/web/tools/chro
       <td>CLS</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">         Chrome User Experience Report</a></td>
+      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/speed/pagespeed/insights/">         PageSpeed Insights</a></td>
+      <td><a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
     </tr>
     <tr>
-      <td><a href="https://support.google.com/webmasters/answer/9205520">         Search Console (Core Web Vitals report)</a></td>
+      <td><a href="https://support.google.com/webmasters/answer/9205520">Search Console(Core Web Vitals Report)</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
@@ -78,17 +78,17 @@ The [Chrome User Experience Report](https://developers.google.com/web/tools/chro
   </table>
 </div>
 
-{% Aside %} For guidance on how to use these tools, and which tool is right for your use case, see: [Getting started with measuring Web Vitals](/vitals-measurement-getting-started/) {% endAside %}
+{% Aside %} 이러한 도구를 사용하는 방법과 자신의 사용 사례에 알맞은 도구를 알아보려면 [Web Vitals로 측정 시작하기](/vitals-measurement-getting-started/)를 참조하시기 바랍니다. {% endAside %}
 
-The data provided by Chrome User Experience Report offers a quick way to assess the performance of sites, but it does not provide the detailed, per-pageview telemetry that is often necessary to accurately diagnose, monitor, and quickly react to regressions. As a result, we strongly recommend that sites set up their own real-user monitoring.
+Chrome User Experience Report의 데이터는 사이트의 성능을 빠르게 평가할 수 있게 해주지만 정확한 진단이나 모니터링, 회귀에 대한 신속한 대응에 필수적인 상세한 페이지 뷰당 원격 분석은 제공하지 않습니다. 그러므로 필드에서 자체적으로 실제 사용자 모니터링을 진행하길 강력하게 추천합니다.
 
-#### Measure Core Web Vitals in JavaScript
+#### JavaScript에서 Core Web Vitals 측정
 
-Each of the Core Web Vitals can be measured in JavaScript using standard web APIs.
+표준 웹 API를 사용하여 JavaScript에서 각 Core Web Vitals를 측정할 수 있습니다.
 
-The easiest way to measure all the Core Web Vitals is to use the [web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript library, a small, production-ready wrapper around the underlying web APIs that measures each metric in a way that accurately matches how they're reported by all the Google tools listed above.
+모든 Core Web Vitals를 가장 쉽게 측정할 수 있는 방법은 [web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript 라이브러리를 사용하는 것입니다. 이러한 라이브러리는 위에 나열된 모든 Google 도구가 보고하는 것과 정확히 일치하는 방식으로 각 메트릭을 측정하는 기본 웹 API 주변에 위치한 소규모의 프로덕션 래퍼입니다.
 
-With the [web-vitals](https://github.com/GoogleChrome/web-vitals) library, measuring each metric is as simple as calling a single function (see the documentation for complete [usage](https://github.com/GoogleChrome/web-vitals#usage) and [API](https://github.com/GoogleChrome/web-vitals#api) details):
+[web-vitals](https://github.com/GoogleChrome/web-vitals) 라이브러리를 사용하면 각 메트릭을 측정하는 것이 단일 함수를 호출하는 것만큼 간단해집니다(완전한 [사용 방법](https://github.com/GoogleChrome/web-vitals#usage) 및 [API](https://github.com/GoogleChrome/web-vitals#api) 세부 정보는 해당 문서 참조).
 
 ```js
 import {getCLS, getFID, getLCP} from 'web-vitals';
@@ -105,15 +105,15 @@ getFID(sendToAnalytics);
 getLCP(sendToAnalytics);
 ```
 
-Once you've configured your site to use the [web-vitals](https://github.com/GoogleChrome/web-vitals) library to measure and send your Core Web Vitals data to an analytics endpoint, the next step is to aggregate and report on that data to see if your pages are meeting the recommended thresholds for at least 75% of page visits.
+[web-vitals](https://github.com/GoogleChrome/web-vitals) 라이브러리를 사용하여 Core Web Vitals 데이터를 측정하고 분석 엔드포인트로 전송하도록 사이트를 구성했다면, 다음 단계는 해당 데이터를 집계하고 보고하여 페이지가 페이지 방문의 최소 75%에 대해 권장 임계값을 충족하는지 확인하는 것입니다.
 
-While some analytics providers have built-in support for Core Web Vitals metrics, even those that don't should include basic custom metric features that allow you to measure Core Web Vitals in their tool.
+일부 분석 제공업체에서는 Core Web Vitals 메트릭에 대한 지원을 기본적으로 제공합니다. 그렇지 않은 곳이더라도, 자신의 도구에 Core Web Vitals를 측정하도록 허용하는 기본 커스텀 메트릭 기능은 포함해야 합니다.
 
-One example of this is the [Web Vitals Report](https://github.com/GoogleChromeLabs/web-vitals-report), which allows site owners to measure their Core Web Vitals using Google Analytics. For guidance on measuring Core Web Vitals using other analytics tools, see [Best practices for measuring Web Vitals in the field](/vitals-field-measurement-best-practices/).
+[Web Vitals Report](https://github.com/GoogleChromeLabs/web-vitals-report)를 이에 대한 예시로 들 수 있습니다. 이 보고서를 통해 사이트 소유자는 Google Analytics를 사용하여 Core Web Vitals를 측정할 수 있습니다. 다른 분석 도구를 사용하여 Core Web Vitals를 측정하는 방법에 대한 지침은 [필드에서 Web Vitals를 측정하기 위한 모범 사례](/vitals-field-measurement-best-practices/)를 참조하시기 바랍니다.
 
-You can also report on each of the Core Web Vitals without writing any code using the [Web Vitals Chrome Extension](https://github.com/GoogleChrome/web-vitals-extension). This extension uses the [web-vitals](https://github.com/GoogleChrome/web-vitals) library to measure each of these metrics and display them to users as they browse the web.
+또한 [Web Vitals Chrome 확장 프로그램](https://github.com/GoogleChrome/web-vitals-extension)을 사용해 코드를 작성하지 않고도 각 Core Web Vitals에 대해 보고할 수 있습니다. 이러한 확장 프로그램은 [web-vitals](https://github.com/GoogleChrome/web-vitals) 라이브러리를 사용하여 각 메트릭을 측정하고 사용자가 웹을 탐색할 때 표시합니다.
 
-This extension can be helpful in understanding the performance of your own sites, your competitor's sites, and the web at large.
+이 확장 프로그램은 귀하의 사이트, 경쟁업체 사이트는 물론 전반적인 웹의 성능을 이해하는 데 도움이 될 수 있습니다.
 
 <div class="w-table-wrapper">
   <table>
@@ -133,7 +133,7 @@ This extension can be helpful in understanding the performance of your own sites
         <td>✔</td>
       </tr>
       <tr>
-        <td><a href="https://github.com/GoogleChrome/web-vitals-extension">           Web Vitals Extension</a></td>
+        <td><a href="https://github.com/GoogleChrome/web-vitals-extension">Web Vitals 확장 프로그램</a></td>
         <td>✔</td>
         <td>✔</td>
         <td>✔</td>
@@ -142,21 +142,21 @@ This extension can be helpful in understanding the performance of your own sites
   </table>
 </div>
 
-Alternatively, developers who prefer to measure these metrics directly via the underlying web APIs can refer to these metric guides for implementation details:
+기본 웹 API를 통해 이러한 메트릭을 직접 측정하는 것을 선호하는 개발자는 구현 세부 정보에 대해 다음과 같은 메트릭 가이드를 참조할 수 있습니다.
 
 - [JavaScript에서 LCP 측정](/lcp/#measure-lcp-in-javascript)
 - [JavaScript에서 FID 측정](/fid/#measure-fid-in-javascript)
 - [JavaScript에서 CLS 측정](/cls/#measure-cls-in-javascript)
 
-{% Aside %} For additional guidance on how to measure these metrics using popular analytics services (or your own in-house analytics tools), see: [Best practices for measuring Web Vitals in the field](/vitals-field-measurement-best-practices/) {% endAside %}
+{% Aside %} 인기 분석 서비스(또는 자체적인 인하우스 분석 툴)를 사용해 이러한 메트릭을 측정하는 법에 대한 자세한 내용은 [필드 Web Vitals 측정 모범 사례](/vitals-field-measurement-best-practices/)를 참조하시기 바랍니다. {% endAside %}
 
-#### Lab tools to measure Core Web Vitals
+#### Core Web Vitals를 측정하기 위한 실험실 도구
 
-While all of the Core Web Vitals are, first and foremost, field metrics, many of them are also measurable in the lab.
+모든 Core Web Vitals는 기본적으로 필드용 메트릭이지만, 대부분은 실험실에서도 측정할 수 있습니다.
 
-Lab measurement is the best way to test the performance of features during development—before they've been released to users. It's also the best way to catch performance regressions before they happen.
+실험실 측정은 기능을 사용자에게 출시하기 전에 개발 중 기능의 성능을 테스트하고, 성능 회귀가 발생하기 전에 이를 포착해낼 수 있는 가장 좋은 방법입니다.
 
-The following tools can be used to measure the Core Web Vitals in a lab environment:
+다음 도구를 사용하여 실험실 환경에서 Core Web Vitals를 측정할 수 있습니다.
 
 <div class="w-table-wrapper">
   <table>
@@ -170,51 +170,51 @@ The following tools can be used to measure the Core Web Vitals in a lab environm
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/chrome-devtools">           Chrome DevTools</a></td>
+        <td><a href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a></td>
         <td>✔</td>
-        <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>
+        <td>✘ (대신 <a href="/tbt/">TBT</a> 사용)</td>
         <td>✔</td>
       </tr>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/lighthouse">           Lighthouse</a></td>
+        <td><a href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a></td>
         <td>✔</td>
-        <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>
+        <td>✘ (대신 <a href="/tbt/">TBT</a> 사용)</td>
         <td>✔</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-{% Aside %} Tools like Lighthouse that load pages in a simulated environment without a user cannot measure FID (there is no user input). However, the Total Blocking Time (TBT) metric is lab-measurable and is an excellent proxy for FID. Performance optimizations that improve TBT in the lab should improve FID in the field (see performance recommendations below). {% endAside %}
+{% Aside %} 사용자 없이 시뮬레이션된 환경에서 페이지를 로드하는 Lighthouse와 같은 도구로는 FID를 측정할 수 없습니다(사용자 입력이 없음). 그러나 Total Blocking Time(총 차단 시간, TBT) 메트릭은 실험실에서 측정할 수 있으며 FID를 충분히 대체할 수 있습니다. 실험실에서 TBT를 개선하는 성능 최적화는 필드에서 FID를 개선합니다(아래 성능 권장 사항 참조). {% endAside %}
 
-While lab measurement is an essential part of delivering great experiences, it is not a substitute for field measurement.
+실험실 측정은 훌륭한 경험을 제공하는 데 필수적인 부분이지만 필드 측정을 대신할 수는 없습니다.
 
-The performance of a site can vary dramatically based on a user's device capabilities, their network conditions, what other processes may be running on the device, and how they're interacting with the page. In fact, each of the Core Web Vitals metrics can have its score affected by user interaction. Only field measurement can accurately capture the complete picture.
+사이트의 성능은 사용자의 장치 기능, 네트워크 조건, 장치에서 실행 중인 다른 프로세스, 페이지와 상호 작용하는 방식에 따라 크게 달라질 수 있습니다. 사실, 각 Core Web Vitals 메트릭의 점수는 사용자 상호 작용에 영향을 받을 수 있습니다. 그러므로 필드 측정만이 전체 그림을 정확하게 포착할 수 있는 방법입니다.
 
 ### 점수 향상을 위한 권장 사항
 
-Once you've measured the Core Web Vitals and identified areas for improvement, the next step is to optimize. The following guides offer specific recommendations for how to optimize your pages for each of the Core Web Vitals:
+Core Web Vitals를 측정하고 개선할 영역을 식별한 후 다음 단계는 최적화입니다. 다음 가이드는 각 Core Web Vitals에 대해 페이지를 최적화하는 방법에 대한 구체적인 권장 사항을 제공합니다.
 
 - [LCP 최적화](/optimize-lcp/)
 - [FID 최적화](/optimize-fid/)
 - [CLS 최적화](/optimize-cls/)
 
-## Other Web Vitals
+## 기타 Web Vitals
 
-While the Core Web Vitals are the critical metrics for understanding and delivering a great user experience, there are other vital metrics as well.
+Core Web Vitals는 우수한 사용자 경험을 이해하고 제공하는 데 중요한 메트릭이지만 다른 중요 메트릭 또한 존재합니다.
 
-These other Web Vitals often serve as proxy or supplemental metrics for the Core Web Vitals, to help capture a larger part of the experience or to aid in diagnosing a specific issue.
+이러한 기타 Web Vitals 메트릭은 경험의 더 큰 부분을 포착하고, 특정 문제의 진단을 지원하는 등 주로 Core Web Vitals를 대체하거나 보완하는 역할을 합니다.
 
-For example, the metrics [Time to First Byte (TTFB)](/time-to-first-byte/) and [First Contentful Paint (FCP)](/fcp/) are both vital aspects of the *loading* experience, and are both useful in diagnosing issues with LCP (slow [server response times](/overloaded-server/) or [render-blocking resources](/render-blocking-resources/), respectively).
+예를 들어, [Time to First Byte(최초 바이트까지의 시간, TTFB)](/time-to-first-byte/) 및 [First Contentful Paint(최초 콘텐츠풀 페인트, FCP)](/fcp/) 메트릭은 모두 *)로딩* 경험에 중요한 요소이며 LCP와 함께 문제(각각 느린 [서버 응답 시간](/overloaded-server/) 또는 [렌더링 차단 리소스](/render-blocking-resources/) 문제)를 진단하는 데 유용합니다.
 
-Similarly, metrics like [Total Blocking Time (TBT)](/tbt/) and [Time to Interactive (TTI)](/tti/) are lab metrics that are vital in catching and diagnosing potential *interactivity* issues that will impact FID. However, they are not part of the Core Web Vitals set because they are not field-measurable, nor do they reflect a [user-centric](/user-centric-performance-metrics/#how-metrics-are-measured) outcome.
+마찬가지로, [총 차단 시간(TBT)](/tbt/) 및 [Time to Interactive(상호 작용까지의 시간, TTI)](/tti/)와 같은 메트릭은 FID에 영향을 줄 잠재적인 *상호 작용* 문제를 파악하고 진단하는 데 필수적인 실험실 메트릭입니다. 그러나 필드에서 측정할 수 없고 [사용자 중심](/user-centric-performance-metrics/#how-metrics-are-measured) 결과를 반영하지도 않기 때문에 Core Web Vitals 세트에 속하지는 않습니다.
 
 ## 진화하는 Web Vitals
 
-Web Vitals and Core Web Vitals represent the best available signals developers have today to measure quality of experience across the web, but these signals are not perfect and future improvements or additions should be expected.
+Web Vitals 및 Core Web Vitals는 개발자가 웹 전반에 대한 경험의 품질을 측정하기 위해 현재 사용할 수 있는 최상의 신호를 나타내지만 이러한 신호는 완벽하지 않으며 향후 개선 또는 추가가 이루어질 수 있습니다.
 
-The **Core Web Vitals** are relevant to all web pages and featured across relevant Google tools. Changes to these metrics will have wide-reaching impact; as such, developers should expect the definitions and thresholds of the Core Web Vitals to be stable, and updates to have prior notice and a predictable, annual cadence.
+**Core Web Vitals**는 모든 웹페이지와 관련이 있으며 관련 Google 도구 전반에서 제공됩니다. 이러한 메트릭이 변경되는 경우 광범위한 영향을 미치기 때문에 개발자는 Core Web Vitals의 정의 및 임계값이 안정적이고, 사전 통지 및 예측 가능한 연간 주기로 업데이트가 이루어질 것임을 기대합니다.
 
-The other Web Vitals are often context or tool specific, and may be more experimental than the Core Web Vitals. As such, their definitions and thresholds may change with greater frequency.
+다른 Web Vitals는 컨텍스트 또는 도구별로 달라지며 Core Web Vitals보다 더 실험적일 수 있습니다. 따라서 정의와 임계값이 더 자주 변경될 수 있습니다.
 
-For all Web Vitals, changes will be clearly documented in this public [CHANGELOG](http://bit.ly/chrome-speed-metrics-changelog).
+Web Vitals에 대한 모든 변경 사항은 공개된 이 [변경 로그](http://bit.ly/chrome-speed-metrics-changelog)에 명확하게 문서화됩니다.
