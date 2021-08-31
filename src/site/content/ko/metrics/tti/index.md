@@ -15,18 +15,18 @@ tags:
 
 ## TTI는 무엇인가요?
 
-The TTI metric measures the time from when the page starts loading to when its main sub-resources have loaded and it is capable of reliably responding to user input quickly.
+TTI 메트릭은 페이지가 로드되기 시작한 시점부터 주요 하위 리소스가 로드되고 사용자 입력에 신속하게 안정적으로 응답할 수 있는 시점까지의 시간을 측정합니다.
 
-To calculate TTI based on a [performance trace](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference) of a web page, follow these steps:
+[웹 페이지의 성능 추적](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference) 을 기반으로 TTI를 계산하려면 다음 단계를 따르세요.
 
 1. [First Contentful Paint(최초 콘텐츠풀 페인트, FCP)](/fcp/)에서 시작합니다.
 2. 이 시점 이후부터 최소 5초 정도의 조용한 기간을 검색합니다. 여기서 *조용한 기간*이란 [긴 작업](/custom-metrics/#long-tasks-api)이 없고 전송 중 네트워크 GET 요청이 2개 미만인 기간을 뜻합니다.
 3. 긴 작업이 발견되지 않으면 조용한 기간 이전의 마지막 긴 작업을 역방향으로 검색하며 FCP에서 종료합니다.
 4. TTI는 조용한 기간이 발생하기 이전 마지막 긴 작업의 종료 시간이거나, 긴 작업이 발견되지 않았을 경우에는 FCP와 동일한 값입니다.
 
-The following diagram should help visualize the steps above:
+다음 다이어그램은 위의 단계를 시각화하는 데 도움이 됩니다.
 
-{% Img src="image/admin/WZM0n4aXah67lEyZugOT.svg", alt="A page load timeline showing how to compute TTI", width="800", height="473", linkTo=true %}
+{% Img src="image/admin/WZM0n4aXah67lEyZugOT.svg", alt="TTI 계산 방법을 보여주는 페이지 로드 타임라인", width="800", height="473", linkTo=true %}
 
 일반적으로 개발자는 빠른 렌더링 시간을 위해 페이지를 최적화해 왔으며 때로는 TTI를 희생하는 경우도 있었습니다.
 
@@ -39,7 +39,7 @@ SSR(서버 측 렌더링)과 같은 기술로 인해 페이지가 상호 작용 
 
 이런 문제를 피하기 위해서는 FCP와 TTI 사이 차이를 최소화하기 위해 최대한의 노력을 기울여야 합니다. 차이가 있지만 가시적이지 않은 경우, 페이지의 구성 요소가 아직 상호 작용하지 않는다는 것을 시각적 표시를 통해 분명히 알려주어야 합니다.
 
-## How to measure TTI
+## TTI 측정 방법
 
 TTI는 [실험실에서](/user-centric-performance-metrics/#in-the-lab) 가장 측정하기 좋은 메트릭입니다. TTI를 측정하는 가장 좋은 방법은 사이트에서 Lighthouse 성능 감사를 실행하는 것입니다. 사용법에 대한 자세한 내용은 [TTI에 대한 Lighthouse 문서](/interactive/)를 참조하세요.
 
@@ -56,7 +56,7 @@ TTI는 [실험실에서](/user-centric-performance-metrics/#in-the-lab) 가장 �
 
 페이지의 TTI가 Lighthouse 성능 점수에 미치는 영향에 대한 자세한 내용은 [Lighthouse가 TTI 점수를 결정하는 방법](/interactive/#how-lighthouse-determines-your-tti-score)을 참조하세요.
 
-## How to improve TTI
+## TTI를 개선하는 방법
 
 특정 사이트에 대한 TTI를 개선하는 방법을 알아보려면 Lighthouse 성능 감사를 실행하고 감사에서 제안하는 특정한 [기회](/lighthouse-performance/#opportunities)를 주의 깊게 살펴보시기 바랍니다.
 
@@ -65,8 +65,8 @@ TTI는 [실험실에서](/user-centric-performance-metrics/#in-the-lab) 가장 �
 - [JavaScript 축소](/unminified-javascript/)
 - [필요한 원본에 사전 연결](/uses-rel-preconnect/)
 - [핵심 요청 사전 로드](/uses-rel-preload/)
-- [Reduce the impact of third-party code](/third-party-summary/)
+- [타사 코드의 영향 줄이기](/third-party-summary/)
 - [크리티컬 요청 깊이 최소화](/critical-request-chains/)
 - [JavaScript 실행 시간 단축](/bootup-time/)
-- [Minimize main thread work](/mainthread-work-breakdown/)
+- [메인 스레드 작업 최소화](/mainthread-work-breakdown/)
 - [요청 수를 낮게 유지하고 전송 크기를 작게 유지](/resource-summary/)
