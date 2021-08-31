@@ -28,9 +28,9 @@ tags:
   <table>
     <tr>
       <th> </th>
-      <th>Good</th>
+      <th>良い</th>
       <th>悪い</th>
-      <th>Percentile</th>
+      <th>パーセンタイル</th>
     </tr>
     <tr>
       <td>Largest Contentful Paint</td>
@@ -65,7 +65,7 @@ tags:
 <p data-md-type="paragraph">逆に、少数のオリジンのみが現時点で満たすことができていないパフォーマンス レベルを特定することにより、"悪い" しきい値を確立します。"悪い" しきい値の定義に関連する研究がない限りは、最もパフォーマンスの悪い 10% から 30% のオリジンがデフォルトで "悪い" として分類されます。</p>
 <h3 data-md-type="header" data-md-header-level="3">基準についての最終的な見解</h3>
 <p data-md-type="paragraph">候補となるしきい値を評価していくと、しきい値が互いに矛盾している場合が散見されました。たとえば、しきい値が一貫して達成が可能であることと、しきい値が一貫して良好なユーザー エクスペリエンスを確保することは、緊張関係にあります。また、人間の知覚に関する研究では一般的に値が範囲で提供されており、ユーザーの行動指標においては行動に緩やかな変化が見られることから、指標における "正しい" しきい値が 1 つではない場合が多いことが分かりました。このように、2020 年の Core Web Vitals では、完璧なしきい値というものは存在せず、時には複数の合理的なしきい値の候補の中から選択する必要があることを認識しつつ、上記の基準に最もよく適合する値を選択するというアプローチを取っています。「完璧なしきい値とは？」という問いではなく、「どれが私たちの基準に最もよく当てはまるしきい値の候補なのか？」という問いに焦点を当てました。</p>
-<h2 data-md-type="header" data-md-header-level="2">Choice of percentile</h2>
+<h2 data-md-type="header" data-md-header-level="2">パーセンタイルの選択</h2>
 <p data-md-type="paragraph">先に述べたとおり、ページやサイトの総合的なパフォーマンスの分類には、そのページやサイトの全訪問者数の 75 パーセンタイルという値が使用されています。75 パーセンタイルという値は、次の 2 つの基準に基づいて選択されています。1 つ目の基準は、このパーセンタイルが、ページやサイトの訪問者の大多数が目標とするレベルのパフォーマンスを体験できることを確約するものでなければならないということです。そして 2 つ目の基準は、選択したパーセンタイルの値が外れ値による影響を受けすぎないということです。</p>
 <p data-md-type="paragraph">これらの目標は、お互いにやや相反する部分があります。1 つ目の目標を達成するには、一般的にパーセンタイルが高ければ高いほど良い結果となります。しかしながら、パーセンタイルが高くなるにつれて結果的に得られる値が外れ値の影響を受ける可能性も高くなります。あるサイトに対する少数の訪問が、ネットワーク接続がたまたま不安定であったために過剰に大きい LCP サンプルとなってしまった場合、サイトの分類がこういった外れ値のサンプルによって決定されてしまうことは避けたいものです。たとえば、訪問数が 100 回となるサイトのパフォーマンスを 95 などの高いパーセンタイル値を用いて評価する場合、95 というパーセンタイル値が外れ値による影響を受けるために必要な外れ値のサンプル数は、たったの 5 つです。</p>
 <p data-md-type="paragraph">これらの目標については多少相反する部分があるのですが、分析の結果、75 パーセンタイルが妥当なバランスであるという結論に至りました。75 パーセンタイルという値を使用することにより、ほとんどのサイト訪問者 (4 人中 3 人) が目標とするレベル以上のパフォーマンスを体験できたことが分かったのです。また、75 パーセンタイルという値は、外れ値による影響を受けにくくなっています。例に戻って見てみると、訪問数が 100 回となるサイトでは、75 というパーセンタイルの値が外れ値の影響を受けるため必要な外れ値のサンプル数は、25 です。100 件のサンプルのうち 25 件が外れ値となる可能性がありますが、95 パーセンタイルの場合に比べると確率ははるかに低くなります。</p>
@@ -74,7 +74,7 @@ tags:
 <p data-md-type="paragraph">ユーザーがタスクに集中できなくなるまでの時間として "1秒" という数字がよく挙げられます。しかしながら、関連する調査を詳しく調べてみると、1 秒というのはおおよそ数百ミリ秒から数秒までの値の範囲を示す近似値であることが分かりました。</p>
 <p data-md-type="paragraph">1 秒のしきい値については、<a href="https://dl.acm.org/doi/10.1145/108844.108874" data-md-type="link">Card など</a>および <a href="https://dl.acm.org/doi/10.1145/1476589.1476628" data-md-type="link">Miller</a> による 2 つの論文がよく引用されています。Card は、Newell の「<a href="https://dl.acm.org/doi/book/10.5555/86564" data-md-type="link">認知の統一理論</a>」を引用して、1 秒という "即時反応" のしきい値を定義しています。Newell は、即時反応を「ある刺激に対して<em data-md-type="emphasis">約 1 秒</em> (つまり、おおよそ 0.3 秒から 3 秒) 以内に行われる必要がある反応」として説明しています。これは、Newell の "認知についてのリアルタイムの制約" の議論に続くもので、「認知的考察を喚起するような環境との相互作用は、おおよそ 0.5 秒から 2-3 秒の範囲内で行われる」と述べています。また、1 秒というしきい値に関するもう 1 つの一般的な引用元に挙げられている Miller は、「反応の遅れが 2 秒を超え、さらに 1 秒程度延長される可能性がある場合、人間が機械コミュニケーションを使用して行うことのできるタスクは、その性格を大きく変えるだろう」と述べています。</p>
 <p data-md-type="paragraph">Miller および Card の研究では、ユーザーが集中力を失うまでの待ち時間がおおよそ 0.3 秒から 3 秒の範囲であることを記述しており、LCP の "良い" しきい値がこの範囲内に含まれるべきであることを示唆しています。また、既存の First Contentful Paint (視覚コンテンツの初期表示時間、FCP) の "良い" しきい値が 1 秒であり、Largest Contentful Paint が通常 First Contentful Paint の後に発生することを考慮し、LCP のしきい値の候補の範囲を 1 秒から 3 秒へとさらに制限しています。この範囲内で最も基準に適合するしきい値を選択するために、以下ではこれらのしきい値の候補の達成可能性について見ていきます。</p>
-<h3 data-md-type="header" data-md-header-level="3">Achievability</h3>
+<h3 data-md-type="header" data-md-header-level="3">達成可能性</h3>
 <p data-md-type="paragraph">CrUX のデータを使用することで、候補となる LCP の "良い" しきい値を満たす Web 上のオリジンのパーセンテージを決定することができます。</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">(候補となる LCP のしきい値について) "良い" に分類された CrUX のオリジンのパーセンテージ</strong></p>
 <div data-md-type="block_html"><div class="w-table-wrapper">
@@ -90,18 +90,18 @@ tags:
     <tr>
       <td><strong>スマートフォン</strong></td>
       <td>3.5%</td>
-      <td>13%</td>
-      <td>27%</td>
-      <td>42%</td>
-      <td>55%</td>
+      <td>13％</td>
+      <td>27％</td>
+      <td>42％</td>
+      <td>55％</td>
     </tr>
     <tr>
-      <td><strong>desktop</strong></td>
-      <td>6.9%</td>
-      <td>19%</td>
-      <td>36%</td>
-      <td>51%</td>
-      <td>64%</td>
+      <td><strong>デスクトップ</strong></td>
+      <td>6.9％</td>
+      <td>19％</td>
+      <td>36％</td>
+      <td>51％</td>
+      <td>64％</td>
     </tr>
   </table>
 </div></div>
@@ -121,19 +121,19 @@ tags:
     </tr>
     <tr>
       <td><strong>スマートフォン</strong></td>
-      <td>45%</td>
-      <td>35%</td>
-      <td>26%</td>
-      <td>20%</td>
-      <td>15%</td>
+      <td>45％</td>
+      <td>35％</td>
+      <td>26％</td>
+      <td>20％</td>
+      <td>15％</td>
     </tr>
     <tr>
-      <td><strong>desktop</strong></td>
-      <td>36%</td>
-      <td>26%</td>
-      <td>19%</td>
-      <td>14%</td>
-      <td>10%</td>
+      <td><strong>デスクトップ</strong></td>
+      <td>36％</td>
+      <td>26％</td>
+      <td>19％</td>
+      <td>14％</td>
+      <td>10％</td>
     </tr>
   </table>
 </div></div>
@@ -146,7 +146,7 @@ tags:
 <p data-md-type="paragraph">同様に、Miller は "制御装置の起動に対する応答" についての応答のしきい値を「一般的にキーやスイッチなどを含む制御装置の物理的な起動を示す動作によって表現される操作の現れ」と定義し、「この応答は、(中略) 操作者によって引き起こされる機械的な動作の一部として知覚される必要があり、遅延時間は 0.1 秒以下にとどめる必要がある」と述べています。その後、「キーを押下してから視覚的なフィードバックを得るまでの遅延は、0.1 秒から 0.2 秒以下にとどめる必要がある」とも述べています。</p>
 <p data-md-type="paragraph">さらに最近では、Kaaresoja らが「<a href="https://dl.acm.org/doi/10.1145/2611387" data-md-type="link">時間的に完璧な仮想的なボタンへ向けて</a>」の中で、タッチスクリーンに表示された仮想的なボタンをタッチすることと、ボタンがタッチされたことを後から示す視覚的なフィードバックの同時性の知覚に関して、さまざまな遅延に関する調査を実施しています。ボタンを押してから視覚的なフィードバックが得られるまでの 遅延が 85 ミリ秒以下となる場合、参加者は 75% の割合でボタンを押したと同時に視覚的なフィードバックが得られたと回答しました。また、遅延時間が 100 ミリ秒以下となる場合には、参加者はボタン押下の知覚品質が一貫して高いと回答しましたが、100 ミリ秒から 150 ミリ秒の遅延時間では知覚品質は低下し、300 ミリ秒では非常に低いレベルにまで達しました。</p>
 <p data-md-type="paragraph">以上のことから、調査の結果として Web Vitals の 1 つである First Input Delay のしきい値としては、100 ミリ秒前後の値が適切であると結論付けられました。また、300 ミリ秒以上の遅延についてユーザーが低品質であるとして報告していることから、"悪い" しきい値としては 300 ミリ秒が妥当であると判断しました。</p>
-<h3 data-md-type="header" data-md-header-level="3">Achievability</h3>
+<h3 data-md-type="header" data-md-header-level="3">達成可能性</h3>
 <p data-md-type="paragraph">CrUX のデータを使用し、Web 上のオリジンの大多数 (75 パーセンタイル) が 100 ミリ秒という FID の "良い" しきい値を満たしていることを特定しました。</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">(100 ミリ秒という FID のしきい値について) "良い" に分類された CrUX のオリジンのパーセンテージ</strong></p>
 <div data-md-type="block_html"><div class="w-table-wrapper">
@@ -157,10 +157,10 @@ tags:
     </tr>
     <tr>
       <td><strong>スマートフォン</strong></td>
-      <td>78%</td>
+      <td>78％</td>
     </tr>
     <tr>
-      <td><strong>desktop</strong></td>
+      <td><strong>デスクトップ</strong></td>
       <td>99％ より大きい</td>
     </tr>
   </table>
@@ -170,9 +170,9 @@ tags:
 <h2 data-md-type="header" data-md-header-level="2">Cumulative Layout Shift</h2>
 <h3 data-md-type="header" data-md-header-level="3">ユーザー体験の質</h3>
 <p data-md-type="paragraph">Cumulative Layout Shift (CLS) は、ページに表示されているコンテンツがどの程度移動するかを測定するための新しい指標です。CLS は新しい指標であるため、この指標での理想的なしきい値を直接的に知ることができるような研究はありません。そこで、ユーザーの期待に沿ったしきい値を特定するために、レイアウト シフトの大きさが様々に異なる実際のページを評価し、ページ コンテンツの消費に大きな混乱をもたらすことのない、許容範囲内として考えられる最大のレイアウト シフトの大きさを決定しました。Google の社内テストでは、0.15 を超えるレイアウト シフトは一貫して不快に感じられ、0.1 以下のレイアウト シフトは目立ちはするものの、過剰に不快に感じられるものではないことが明らかになりました。したがって、レイアウト シフトが発生しない場合が理想ではありますが、0.1 までの値であれば、"良い" CLS のしきい値の候補になると結論付けました。</p>
-<h3 data-md-type="header" data-md-header-level="3">Achievability</h3>
+<h3 data-md-type="header" data-md-header-level="3">達成可能性</h3>
 <p data-md-type="paragraph">CrUX のデータによると、オリジン全体の約 50％ において CLS が 0.05 以下となっていることがわかりました。</p>
-<p data-md-type="paragraph"><strong data-md-type="double_emphasis">% of CrUX origins classified as "good" (for candidate CLS thresholds)</strong></p>
+<p data-md-type="paragraph"><strong data-md-type="double_emphasis">「良好」として分類されたCrUXオリジンの割合（候補CLSしきい値の場合）</strong></p>
 <div data-md-type="block_html"><div class="w-table-wrapper">
   <table>
     <tr>
@@ -183,15 +183,15 @@ tags:
     </tr>
     <tr>
       <td><strong>スマートフォン</strong></td>
-      <td>49%</td>
-      <td>60%</td>
-      <td>69%</td>
+      <td>49％</td>
+      <td>60％</td>
+      <td>69％</td>
     </tr>
     <tr>
-      <td><strong>desktop</strong></td>
-      <td>42%</td>
-      <td>59%</td>
-      <td>69%</td>
+      <td><strong>デスクトップ</strong></td>
+      <td>42％</td>
+      <td>59％</td>
+      <td>69％</td>
     </tr>
   </table>
 </div></div>
@@ -209,17 +209,17 @@ tags:
     </tr>
     <tr>
       <td><strong>スマートフォン</strong></td>
-      <td>31%</td>
-      <td>25%</td>
-      <td>20%</td>
-      <td>18%</td>
+      <td>31％</td>
+      <td>25％</td>
+      <td>20％</td>
+      <td>18％</td>
     </tr>
     <tr>
-      <td><strong>desktop</strong></td>
-      <td>31%</td>
-      <td>23%</td>
-      <td>18%</td>
-      <td>16%</td>
+      <td><strong>デスクトップ</strong></td>
+      <td>31％</td>
+      <td>23％</td>
+      <td>18％</td>
+      <td>16％</td>
     </tr>
   </table>
 </div></div>
