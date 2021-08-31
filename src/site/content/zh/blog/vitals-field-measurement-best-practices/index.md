@@ -22,11 +22,11 @@ tags:
 
 本篇指南探讨了使用第三方或内部分析工具测量核心 Web 指标（或任何自定义指标）的最佳实践。对于希望在自己的服务中添加核心 Web 指标支持的分析供应商来说，这篇文章也可以作为一篇指南。
 
-## Use custom metrics or events
+## 使用自定义指标或事件
 
 如上所述，大多数分析工具可以让您测量自定义数据。如果您的分析工具支持这一功能，那么您应该能够使用下方的机制测量各项核心 Web 指标。
 
-Measuring custom metrics or events in an analytics tool is generally a three-step process:
+在分析工具中测量自定义指标或事件通常分为三个步骤：
 
 1. 在您的工具管理中[定义或注册](https://support.google.com/analytics/answer/2709829?hl=en&ref_topic=2709827)自定义指标（如有需要）。*（注意：并非所有分析供应商都要求提前定义自定义指标。）*
 2. 在您的前端 JavaScript 代码中计算指标值。
@@ -67,7 +67,7 @@ getLCP(sendToAnalytics);
 
 {% Aside %} 提示： [`web-vitals`](https://github.com/GoogleChrome/web-vitals) JavaScript 库为所报告的每个指标实例提供一个 ID，从而可以在大多数分析工具中建立分布。请参阅[`Metric`](https://github.com/GoogleChrome/web-vitals#metric)接口文档了解更多详情。{% endAside %}
 
-## Send your data at the right time
+## 在正确的时间发送您的数据
 
 一些性能指标可以在页面完成加载后进行计算，而其他指标（如 CLS）则会将页面的整个生命周期纳入考量范围，且只有在页面开始卸载后才会完成计算。
 
@@ -89,7 +89,7 @@ getLCP(sendToAnalytics);
 
 更好的方法是为每个已部署的更改创建一个独特的版本，然后在您的分析工具中跟踪该版本。大多数分析工具都支持版本设置。如果您的工具中不行，则可以创建一个自定义维度并将该维度设置为您部署的版本。
 
-### Run experiments
+### 运行实验
 
 您可以同时跟踪多个版本（或实验）来实现进一步的版本管理。
 
@@ -99,7 +99,7 @@ getLCP(sendToAnalytics);
 
 {% Aside %} 您始终应该将实验组设置在服务器上。请避免在客户端上使用任何实验或 A/B 测试工具。在确定用户的实验组之前，这些工具通常会阻塞渲染，因而可能会影响您的 LCP 时间。{% endAside %}
 
-## Ensure measurement doesn't affect performance
+## 确保测量不会影响性能
 
 在测量真实用户性能时，至关重要的一点是您正在运行的任何性能测量代码都不会对您的页面性能产生负面影响。如果产生了负面影响，那么您在性能如何对业务产生影响方面试图得出的任何结论都是不可靠的，因为您永远无法知道分析代码本身的存在是否会产生最大的负面影响。
 
@@ -107,17 +107,17 @@ getLCP(sendToAnalytics);
 
 ### 延迟加载您的分析代码
 
-Analytics code should always be loaded in an asynchronous, non-blocking way, and generally it should be loaded last. If you load your analytics code in a blocking way, it can negatively affect LCP.
+分析代码应该始终以异步、非阻塞的方式加载，并且通常应该最后加载。如果您以阻塞方式加载分析代码，则会对 LCP 产生负面影响。
 
 用于测量核心 Web 指标的所有 API 都是特别为支持异步和延迟脚本加载（通过[`buffered`](https://www.chromestatus.com/feature/5118272741572608)标志）而设计的，因此无需急于提前加载脚本。
 
 如果您测量的指标无法在页面加载时间轴的后期进行计算，您应该*只*将需要提前运行的代码内联到`<head>`中（这样就不是一个[阻塞渲染请求](/render-blocking-resources/)）并延迟加载其余的代码。不要仅仅因为单项指标的需要而提前加载所有分析代码。
 
-### Do not create long tasks
+### 不要创建长任务
 
 分析代码通常为响应用户输入而运行，但如果您的分析代码正在执行大量 DOM 测量或使用其他处理器密集型 API，那么分析代码本身可能会导致较差的输入响应度。此外，如果包含您分析代码的 JavaScript 文件很大，则执行该文件可能会阻塞主线程并对 FID 产生负面影响。
 
-### Use non-blocking APIs
+### 使用非阻塞 API
 
 诸如<code>&lt;a href="https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon" data-md-type="link"&gt;sendBeacon()&lt;/a&gt;</code>和<code>&lt;a href="https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback" data-md-type="link"&gt;requestIdleCallback()&lt;/a&gt;</code>这样的 API 是专门为运行不会阻塞用户关键任务的非关键任务而设计的。
 
