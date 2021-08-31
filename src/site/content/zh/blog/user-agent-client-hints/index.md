@@ -1,9 +1,6 @@
 ---
-title: Improving user privacy and developer experience with User-Agent Client Hints
-subhead: |-
-  User-Agent Client Hints are a new expansion to the Client Hints API, that
- "enables developers to access information about a user's browser in a"
-  privacy-preserving and ergonomic way.
+title: 通过用户代理客户端提示改善用户隐私和开发者体验
+subhead: 用户代理客户端提示是客户端提示 API 的新扩展，能够使开发者以保护隐私和符合工效学的方式访问用户的浏览器信息。
 authors:
   - rowan_m
   - yoavweiss
@@ -11,7 +8,7 @@ date: '2020-06-25'
 updated: '2021-02-12'
 hero: image/admin/xlg4t3uiTp0L5TBThFHQ.jpg
 thumbnail: image/admin/hgxRNa56Vb9o3QRwIrm9.jpg
-alt: "A variety of different footprints in the snow. A hint at who's been there."
+alt: 雪地上各种不同的脚印。提示了应该有谁来过。
 tags:
   - blog
   - privacy
@@ -22,43 +19,43 @@ feedback:
 
 {% YouTube 'f0YY0o2OAKA' %}
 
-Client Hints enable developers to actively request information about the user's device or conditions, rather than needing to parse it out of the User-Agent (UA) string. Providing this alternative route is the first step to eventually reducing User-Agent string granularity.
+客户端提示使开发者能够主动请求用户设备或条件的相关信息，而无需从用户代理 (UA) 字符串中解析出这些信息。提供这条替代路由是最终减少用户代理字符串粒度的第一步。
 
-Learn how to update your existing functionality that relies on parsing the User-Agent string to make use of User-Agent Client Hints instead.
+了解针对依赖于解析用户代理字符串的现有功能的更新方式，进而改为使用用户代理客户端提示。
 
-{% Banner 'caution', 'body' %} If you are already using User-Agent Client Hints, pay attention to the upcoming changes. The header format is changing so the `Accept-CH` tokens exactly match the returned headers. Previously a site could have sent `Accept-CH: UA-Platform` to receive the `Sec-CH-UA-Platform` header and now that site should send `Accept-CH: Sec-CH-UA-Platform`. If you've already implemented User-Agent Client Hints, send both formats until the change has fully rolled out in stable Chromium. See [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ) for updates. {% endBanner %}
+{% Banner '注意', '主体' %}如果您已经在使用用户代理客户端提示，请注意即将到来的变更。我们正在对标头格式进行更改，从而使`Accept-CH`令牌与返回头完全匹配。网站在以往可以发送`Accept-CH: UA-Platform`来接收`Sec-CH-UA-Platform`标头，而网站现在应改为发送`Accept-CH: Sec-CH-UA-Platform`。如果您已经实现了用户代理客户端提示，请在这一更改在稳定的 Chromium 中完全推出前发送这两种格式。请参阅[有意向移除：重命名用户代理客户端提示 ACCEPT-CH 令牌](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ)来获取更新。{% endBanner %}
 
 ## 背景
 
-When web browsers make requests they include information about the browser and its environment so that servers can enable analytics and customize the response. This was defined all the way back in 1996 (RFC 1945 for HTTP/1.0), where you can find the [original definition for the User-Agent string](https://tools.ietf.org/html/rfc1945#section-10.15), which includes an example:
+网络浏览器发出请求时，会包含浏览器及其环境的相关信息，以便服务器可以启用分析并自定义响应。这一点早在 1996 年就被定义了（HTTP/1.0 的 RFC 1945），您可以在其中找到[用户代理字符串](https://tools.ietf.org/html/rfc1945#section-10.15)的原始定义，里面包括一个示例：
 
 ```text
 User-Agent: CERN-LineMode/2.15 libwww/2.17b3
 ```
 
-This header was intended to specify, in order of significance, the product (e.g. browser or library) and a comment (e.g. version).
+这个标头的目的是按重要性顺序指定产品（例如浏览器或库）和一条注释（例如版本）。
 
 ### 用户代理字符串的状态
 
-Over the intervening *decades*, this string has accrued a variety of additional details about the client making the request (as well as cruft, due to backwards compatibility). We can see that when looking at Chrome's current User-Agent string:
+在过去的*几十年*里，这个字符串已经积累了发出请求的客户端的各种相关附加细节（由于向后兼容性，也包括 cruft）。我们在看 Chrome 当前的用户代理字符串时就能发现这一点：
 
 ```text
 Mozilla/5.0 (Linux; Android 10; Pixel 3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4076.0 Mobile Safari/537.36
 ```
 
-The above string contains information about the user's operating system and version, the device model, the browser's brand and full version, enough clues to infer it's a mobile browser, and not to mention a number of references to other browsers for historical reasons.
+上方的字符串包含用户的操作系统和版本、设备型号、浏览器的品牌和完整版本的相关信息，这些线索足以推断出这是一个移动浏览器，更不用说出于历史原因对其他浏览器的一些引用。
 
-The combination of these parameters with the sheer diversity of possible values means the User-Agent string could contain enough information to allow individual users to be uniquely identified. If you test your own browser at [AmIUnique](https://amiunique.org/), you can see just how closely **your** User-Agent string identifies **you**. The lower your resulting "Similarity ratio" is, the more unique your requests are, the easier it is for servers to covertly track you.
+这些参数与可能值的绝对多样性相组合，就意味着用户代理字符串可以包含足够的信息来对单个用户做出唯一标识。如果您在 [AmIUnique](https://amiunique.org/) 中测试自己的浏览器，就可以看出**您自己的**用户代理字符串能够多么准确地识别**您**的身份。得到的“相似率”越低，请求就越独特，服务器也就越容易暗中跟踪您。
 
-The User-Agent string enables many legitimate [use cases](https://github.com/WICG/ua-client-hints/blob/main/README.md#use-cases), and serves an important purpose for developers and site owners. However, it is also critical that users' privacy is protected against covert tracking methods, and sending UA information by default goes against that goal.
+用户代理字符串支持许多合理的[用例](https://github.com/WICG/ua-client-hints/blob/main/README.md#use-cases)，并为开发者和网站所有者提供重要用途。但是，保护用户隐私免受隐蔽跟踪方法的侵害也至关重要，而默认发送 UA 信息与这一目标背道而驰。
 
-There's also a need to improve web compatibility when it comes to the User-Agent string. It is unstructured, so parsing it results in unnecessary complexity, which is often the cause for bugs and site compatibility issues that hurt users. These issues also disproportionately hurt users of less common browsers, as sites may have failed to test against their configuration.
+提高网络兼容性对于用户代理字符串也是必须的。用户代理字符串是非结构化的，因此对其进行解析会带来不必要的复杂性，这通常是导致错误和站点兼容性问题并对用户造成困扰的原因。这些问题对不太常用的浏览器的用户造成的伤害也是不成比例的，因为网站可能无法针对这些用户配置进行测试。
 
-## Introducing the new User-Agent Client Hints
+## 推出新的用户代理客户端提示
 
-[User-Agent Client Hints](https://github.com/WICG/ua-client-hints#explainer-reducing-user-agent-granularity) enable access to the same information but in a more privacy-preserving way, in turn enabling browsers to eventually reduce the User-Agent string's default of broadcasting everything. [Client Hints](https://tools.ietf.org/html/draft-ietf-httpbis-client-hints) enforce a model where the server must ask the browser for a set of data about the client (the hints) and the browser applies its own policies or user configuration to determine what data is returned. This means that rather than exposing **all** the User-Agent information by default, access is now managed in an explicit and auditable fashion. Developers also benefit from a simpler API - no more regular expressions!
+[用户代理客户端提示](https://github.com/WICG/ua-client-hints#explainer-reducing-user-agent-granularity)使您能够通过更加保护隐私的方式访问相同的信息，进而使浏览器能够最终降低用户代理字符串默认公布所有内容的程度。[客户端提示](https://tools.ietf.org/html/draft-ietf-httpbis-client-hints)会强制执行一个模型，其中，服务器必须向浏览器询问有关客户端的一组数据（提示），而浏览器通过应用自己的政策或用户配置来确定返回哪些数据。这意味着**所有**用户代理信息现在不再会被默认公开，而是会以显式的、可审计的方式得到访问管理。开发者还将得益于一个更简单的 API 而不再需要编写正则表达式！
 
-The current set of Client Hints primarily describes the browser's display and connection capabilities. You can explore the details in [Automating Resource Selection with Client Hints](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints), but here's a quick refresher on the process.
+当前这组客户端提示主要描述了浏览器的显示和连接功能。您可以在[使用客户端提示实现自动化资源选择](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints)中探索详细信息，但我先在这里对该过程做一个快速回顾。
 
 服务器通过标头请求特定的客户端提示：
 
@@ -68,7 +65,7 @@ The current set of Client Hints primarily describes the browser's display and co
 Accept-CH: Viewport-Width, Width
 ```
 
-Or a meta tag:
+或元标签：
 
 ```html
 <meta http-equiv="Accept-CH" content="Viewport-Width, Width" />
@@ -83,21 +80,21 @@ Viewport-Width: 460
 Width: 230
 ```
 
-The server can choose to vary its responses, for example by serving images at an appropriate resolution.
+服务器可以选择改变其响应，例如选择以合适的分辨率提供图像。
 
-{% Aside %} There are ongoing discussions on enabling Client Hints on an initial request, but you should consider [responsive design](/responsive-web-design-basics) or progressive enhancement before going down this route. {% endAside %}
+{% Aside %} 目前关于在初始请求时启用客户端提示的讨论仍在持续进行，但在选定这个方向之前，您应该首先考虑[响应式设计](/responsive-web-design-basics)或渐进增强。{% endAside %}
 
-User-Agent Client Hints expand the range of properties with the `Sec-CH-UA` prefix that can be specified via the `Accept-CH` server response header. For all the details, start with [the explainer](https://github.com/WICG/ua-client-hints/blob/main/README.md) and then dive into the [full proposal](https://wicg.github.io/ua-client-hints/).
+用户代理客户端提示能够使用通过`Accept-CH`服务器响应头指定的`Sec-CH-UA`前缀来扩展属性范围。如需了解全部详情，请先从[解释器](https://github.com/WICG/ua-client-hints/blob/main/README.md)着手，然后再深入研究[完整方案](https://wicg.github.io/ua-client-hints/)。
 
-{% Aside %} Client Hints are **only sent over secure connections**, so make sure you have [migrated your site to HTTPS](/why-https-matters). {% endAside %}
+{% Aside %} 客户端提示**仅通过安全连接发送**，因此请确保您已[将网站迁移到 HTTPS](/why-https-matters)。{% endAside %}
 
-The new set of hints is available from Chromium 84, so let's explore how it all works.
+Chromium 84 提供了一组新的提示，现在我们就来探索一下这些提示的运作方式。
 
-## User-Agent Client Hints from Chromium 84
+## Chromium 84 的用户代理客户端提示
 
-User-Agent Client Hints will only be enabled gradually on Chrome Stable as [compatibility concerns](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285) are resolved. To force the functionality on for testing:
+用户代理客户端提示只会随着[兼容性问题](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285)的逐一解决而在 Chrome 稳定版上逐步启用。强制开启功能进行测试的方式：
 
-- Use Chrome 84 **beta** or equivalent.
+- 使用 Chrome 84 **测试版**或同等版本。
 - 启用`about://flags/#enable-experimental-web-platform-features`标志。
 
 默认情况下，浏览器会返回浏览器品牌、重要/主要版本以及客户端是否为移动设备的指示符：
@@ -109,29 +106,29 @@ Sec-CH-UA: "Chromium";v="84", "Google Chrome";v="84"
 Sec-CH-UA-Mobile: ?0
 ```
 
-{% Aside 'caution' %} These properties are more complex than just a single value, so [Structured Headers](https://httpwg.org/http-extensions/draft-ietf-httpbis-header-structure.html) are used for representing lists and booleans. {% endAside %}
+{% Aside '注意' %} 这些属性比单个值更为复杂，因此我们用[结构化标头](https://httpwg.org/http-extensions/draft-ietf-httpbis-header-structure.html)来表示列表和布尔值。{% endAside %}
 
 ### 用户代理响应和请求标头
 
-&lt;style&gt; .w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {     width: 28ch; }  .w-table-wrapper td {   padding: 4px 8px 4px 0; } &lt;/style&gt;
+&lt;style&gt; .w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) { width: 28ch; } .w-table-wrapper td { padding: 4px 8px 4px 0; } &lt;/style&gt;
 
-⬇️ Response `Accept-CH`<br>⬆️ Request header | ⬆️ 请求<br>示例值 | 描述
+⬇️ 响应`Accept-CH`<br> ⬆️ 请求标头 | ⬆️ 请求<br>示例值 | 描述
 --- | --- | ---
 `Sec-CH-UA` | `"Chromium";v="84",`<br>`"Google Chrome";v="84"` | 浏览器品牌及其重要版本列表。
-`Sec-CH-UA-Mobile` | `?1` | Boolean indicating if the browser is on a mobile device (`?1` for true) or not (`?0` for false).
+`Sec-CH-UA-Mobile` | `?1` | 布尔值，指示浏览器是（`?1`表示真）否（`?0`表示假）在移动设备上。
 `Sec-CH-UA-Full-Version` | `"84.0.4143.2"` | 浏览器的完整版本。
-`Sec-CH-UA-Platform` | `"Android"` | The platform for the device, usually the operating system (OS).
+`Sec-CH-UA-Platform` | `"Android"` | 设备平台，通常为操作系统 (OS)。
 `Sec-CH-UA-Platform-Version` | `"10"` | 平台或操作系统的版本。
-`Sec-CH-UA-Arch` | `"arm"` | The underlying architecture for the device. While this may not be relevant to displaying the page, the site may want to offer a download which defaults to the right format.
+`Sec-CH-UA-Arch` | `"arm"` | 设备的底层架构。虽然这可能与显示页面无关，但网站可能会希望提供默认为正确格式的下载。
 `Sec-CH-UA-Model` | `"Pixel 3"` | 设备型号。
 
-{% Aside 'gotchas' %} Privacy and compatibility considerations mean the value may be blank, not returned, or populated with a varying value. This is referred to as [GREASE](https://wicg.github.io/ua-client-hints/#grease). {% endAside %}
+{% Aside '为您解惑' %}出于隐私和兼容性的考虑，该值可能为空、不返回或用一个不同的值来填充。这被称为 [GREASE](https://wicg.github.io/ua-client-hints/#grease)。{% endAside %}
 
-### Example exchange
+### 示例交换
 
 示例交换如下所示：
 
-⬆️ *Initial request from browser*<br> The browser is requesting the `/downloads` page from the site and sends its default basic User-Agent.
+⬆️*浏览器的初始请求*<br>浏览器正在向网站请求`/downloads`页面并发送其默认的基本用户代理。
 
 ```text
 GET /downloads HTTP/1.1
@@ -141,7 +138,7 @@ Sec-CH-UA: "Chromium";v="84", "Google Chrome";v="84"
 Sec-CH-UA-Mobile: ?0
 ```
 
-⬇️ *Response from server*<br> The server sends the page back and additionally asks for the full browser version and the platform.
+⬇️*服务器的响应*<br>服务器将页面发回并另外要求提供完整的浏览器版本和平台。
 
 ```text
 HTTP/1.1 200 OK
@@ -162,13 +159,13 @@ Sec-CH-UA-Platform: "Android"
 
 ### JavaScript API
 
-Alongside the headers, the User-Agent can also be accessed in JavaScript via `navigator.userAgentData`. The default `Sec-CH-UA` and `Sec-CH-UA-Mobile` header information can be accessed via the `brands` and `mobile` properties, respectively:
+除了标头外，还可以通过`navigator.userAgentData`在 JavaScript 中访问用户代理。可以分别通过`brands`和`mobile`属性访问默认的`Sec-CH-UA`和`Sec-CH-UA-Mobile`：
 
 ```js
-// Log the brand data
+// 记录品牌数据
 console.log(navigator.userAgentData.brands);
 
-// output
+// 输出
 [
   {
     brand: 'Chromium',
@@ -180,24 +177,24 @@ console.log(navigator.userAgentData.brands);
   },
 ];
 
-// Log the mobile indicator
+// 记录移动指示器
 console.log(navigator.userAgentData.mobile);
 
-// output
+// 输出
 false;
 ```
 
-The additional values are accessed via the `getHighEntropyValues()` call. The "high entropy" term is a reference to [information entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory)), in other words - the amount of information that these values reveal about the user's browser. As with requesting the additional headers, it's down to the browser what values, if any, are returned.
+附加值可以通过`getHighEntropyValues()`调用来进行访问。“高熵”一词指的是[信息熵](https://en.wikipedia.org/wiki/Entropy_(information_theory))，也就是这些值揭示的有关用户浏览器的信息量。与请求附加标头一样，返回值（如果有）取决于浏览器。
 
 ```js
-// Log the full user-agent data
+// 记录完整的用户代理数据
 navigator
   .userAgentData.getHighEntropyValues(
     ["architecture", "model", "platform", "platformVersion",
      "uaFullVersion"])
   .then(ua => { console.log(ua) });
 
-// output
+// 输出
 {
   "architecture": "x86",
   "model": "",
@@ -207,25 +204,25 @@ navigator
 }
 ```
 
-### Demo
+### 演示版
 
-You can try out both the headers and the JavaScript API on your own device at [user-agent-client-hints.glitch.me](https://user-agent-client-hints.glitch.me).
+您可以在 [user-agent-client-hints.glitch.me](https://user-agent-client-hints.glitch.me) 上尝试对自己的设备使用标头和 JavaScript API。
 
-{% Aside %} Ensure you're using Chrome 84 Beta or equivalent with `about://flags/#enable-experimental-web-platform-features` enabled. {% endAside %}
+{% Aside %} 确保您使用的是 Chrome 84 测试版或同等版本，并启用`about://flags/#enable-experimental-web-platform-features`。{% endAside %}
 
-### Hint life-time and resetting
+### 提示生命周期和重设
 
-Hints specified via the `Accept-CH` header will be sent for the duration of the browser session or until a different set of hints are specified.
+通过`Accept-CH`标头指定的提示将在浏览器会话期间或直到指定一组不同提示之前进行发送。
 
 这意味着如果服务器发送：
 
-⬇️ *Response*
+⬇️*响应*
 
 ```text
 Accept-CH: Sec-CH-UA-Full-Version
 ```
 
-Then the browser will send the `Sec-CH-UA-Full-Version` header on all requests for that site until the browser is closed.
+然后，浏览器直到关闭前都会为该网站的所有请求发送`Sec-CH-UA-Full-Version`标头。
 
 ⬆️*后续请求*
 
@@ -233,9 +230,9 @@ Then the browser will send the `Sec-CH-UA-Full-Version` header on all requests f
 Sec-CH-UA-Full-Version: "84.0.4143.2"
 ```
 
-However, if another `Accept-CH` header is received then that will **completely replace** the current hints the browser is sending.
+但是，如果收到另一个`Accept-CH`标头，则该标头将**完全替换**浏览器正在发送的当前提示。
 
-⬇️ *Response*
+⬇️*响应*
 
 ```text
 Accept-CH: Sec-CH-UA-Platform
@@ -247,23 +244,23 @@ Accept-CH: Sec-CH-UA-Platform
 Sec-CH-UA-Platform: "Android"
 ```
 
-The previously asked-for `Sec-CH-UA-Full-Version` **will not be sent**.
+之前请求的`Sec-CH-UA-Full-Version`**将不会被发送**。
 
-It's best to think of the `Accept-CH` header as specifying the complete set of hints desired for that page, meaning the browser then sends the specified hints for all the subresources on that page. While hints will persist to the next navigation, the site should not rely or assume they will be delivered.
+最好将`Accept-CH`标头的功能视作指定该页面所需的完整提示集，这意味着浏览器随后会为该页面上的所有子资源发送指定的提示。虽然提示会持续到下一次导航，但网站不应依赖或假设这些提示会被传递。
 
-{% Aside 'success' %} Always ensure you can still deliver a meaningful experience without this information. This is to enhance the user experience, not define it. That's why they're called "hints" and not "answers" or "requirements"! {% endAside%}
+{% Aside '成功' %}始终确保您在没有这些信息的情况下仍能提供有意义的体验。提示是为了增强用户体验，而不是定义用户体验的，所以这些信息才会被称为“提示”，而不是“答案”或“要求”！{% endAside%}
 
-You can also use this to effectively clear all hints being sent by the browser by sending a blank `Accept-CH` in the response. Consider adding this anywhere that the user is resetting preferences or signing out of your site.
+利用这一点，您还可以通过在响应中发送一个空的`Accept-CH`来有效清除浏览器发送的所有提示。可以考虑在任何用户重置首选项或退出网站的位置添加此选项。
 
-This pattern also matches how hints work via the `<meta http-equiv="Accept-CH" …>` tag. The requested hints will only be sent on requests initiated by the page and not on any subsequent navigation.
+这种模式也符合提示在`<meta http-equiv="Accept-CH" …>`标签下的运作方式。所请求的提示只会在页面发起请求时被发送，而不会在任何后续导航时被发送。
 
 ### 提示范围和跨域请求
 
-By default, Client Hints will only be sent on same-origin requests. That means if you ask for specific hints on `https://example.com`, but the resources you want to optimize are on `https://downloads.example.com` they **will not** receive any hints.
+默认情况下，客户端提示只会在同域请求中被发送。这意味着如果您在`https://example.com`中要求特定提示，但您要优化的资源在`https://downloads.example.com`上，那么这些资源**将不会**收到任何提示。
 
-To allow hints on cross-origin requests each hint and origin must be specified by a `Feature-Policy` header. To apply this to a User-Agent Client Hint, you need to lowercase the hint and remove the `sec-` prefix. For example:
+为了在跨域请求中发送提示，每个提示和域都必须由一个`Feature-Policy`标头进行指定。如需将这一做法应用在用户代理客户端提示中，您需要将提示小写并删除`sec-`前缀。例如：
 
-⬇️ *Response from `example.com`*
+⬇️*`example.com`的响应*
 
 ```text
 Accept-CH: Sec-CH-UA-Platform, DPR
@@ -271,13 +268,13 @@ Feature-Policy: ch-ua-platform downloads.example.com;
                 ch-dpr cdn.provider img.example.com
 ```
 
-⬆️ *Request to `downloads.example.com`*
+⬆️*向`downloads.example.com`发送的请求*
 
 ```text
 Sec-CH-UA-Platform: "Android"
 ```
 
-⬆️ *Requests to `cdn.provider` or `img.example.com`*
+⬆️*向`cdn.provider`或`img.example.com`发送的请求*
 
 ```text
 DPR: 2
@@ -285,22 +282,22 @@ DPR: 2
 
 ## 在哪里使用用户代理客户端提示？
 
-The quick answer is that you should refactor any instances where you are parsing either the User-Agent header or making use of any of the JavaScript calls that access the same information (i.e. `navigator.userAgent`, `navigator.appVersion`, or `navigator.platform`) to make use of User-Agent Client Hints instead.
+快速的解答就是您应该对正在解析用户代理标头或使用访问相同信息的任何 JavaScript 调用（例如`navigator.userAgent`、`navigator.appVersion`或`navigator.platform`）的任何实例进行重构，进而改用用户代理客户端提示。
 
-Taking this a step further, you should re-examine your use of User-Agent information, and replace it with other methods whenever possible. Often, you can accomplish the same goal by making use of progressive enhancement, feature detection, or [responsive design](/responsive-web-design-basics). The base problem with relying on the User-Agent data is that you are always maintaining a mapping between the property you're inspecting and the behavior it enables. It's a maintenance overhead to ensure that your detection is comprehensive and remains up-to-date.
+更进一步地，您应该重新检查您对用户代理信息的使用，并尽可能地用其他方法代替。通常情况下，您可以通过使用渐进增强、特征检测或[响应式设计](/responsive-web-design-basics)来实现同样的目标。依赖用户代理数据的基本问题是，您始终要对正在检查的属性与其启用行为之间的映射进行维护。这项维护开销可确保您的检测是全面的并保持最新状态。
 
-With these caveats in mind, the [User-Agent Client Hints repo lists some valid use cases](https://github.com/WICG/ua-client-hints#use-cases) for sites.
+考虑到这些注意事项， [用户代理客户端提示存储库列出了一些有效用例](https://github.com/WICG/ua-client-hints#use-cases)（针对网站）。
 
-## What happens to the User-Agent string?
+## 用户代理字符串会发生什么变化？
 
-The plan is to minimize the ability for covert tracking on the web by reducing the amount of identifying information exposed by the existing User-Agent string while not causing undue disruption on existing sites. Introducing User-Agent Client Hints now gives you a chance to understand and experiment with the new capability, before any changes are made to User-Agent strings.
+该计划是通过减少现有用户代理字符串暴露的识别信息量，同时不对现有网站造成过度干扰，从而最大限度地削弱网络上隐蔽跟踪的能力。用户代理客户端提示的推出使您有机会在我们对用户代理字符串进行任何更改前了解和试验新功能。
 
-[Eventually](https://groups.google.com/a/chromium.org/d/msg/blink-dev/-2JIRNMWJ7s/u-YzXjZ8BAAJ), the information in the User-Agent string will be reduced so it maintains the legacy format while only providing the same high-level browser and significant version information as per the default hints. In Chromium, this change has been deferred until at least 2021 to provide additional time for the ecosystem to evaluate the new User Agent Client Hints capabilities.
+[最终](https://groups.google.com/a/chromium.org/d/msg/blink-dev/-2JIRNMWJ7s/u-YzXjZ8BAAJ)，用户代理字符串中的信息将得到减少，从而在保持传统格式的同时，只提供与默认提示相同的高级浏览器和重要版本信息。在 Chromium 中，此更改已至少推迟到 2021 年，以便为生态系统提供更多时间来评估新的用户代理客户端提示功能。
 
-You can test a version of this by enabling the `about://flags/#reduce-user-agent` flag from Chrome 93 (Note: this flag was named `about://flags/#freeze-user-agent` in versions Chrome 84 - 92). This will return a string with the historical entries for compatibility reasons, but with sanitized specifics. For example, something like:
+您可以通过启用 Chrome 93 中的`about://flags/#reduce-user-agent`标志来测试其中一个版本（注意：此标志在 Chrome 84 - 92 版本中叫做`about://flags/#freeze-user-agent`)。出于兼容性原因，这将返回一个带有历史条目，但包含已净化具体内容的字符串。如下所示：
 
 ```text
 Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.0.0 Mobile Safari/537.36
 ```
 
-*Photo by [Sergey Zolkin](https://unsplash.com/@szolkin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/m9qMoh-scfE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+*照片：[谢尔盖·佐尔金 (Sergey Zolkin)](https://unsplash.com/@szolkin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)；来源：[Unsplash](https://unsplash.com/photos/m9qMoh-scfE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
