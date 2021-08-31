@@ -31,7 +31,7 @@ tags:
 - примените Chrome DevTools;
 - (дополнительно) соберите отчеты о нежелательных функциях.
 
-If you already know where you are using `SharedArrayBuffer`, skip to [Analyze the impact of cross-origin isolation](#analysis).
+Если вы уже точно знаете, где используется `SharedArrayBuffer`, перейдите к разделу [«Анализ влияния межсайтовой изоляции»](#analysis).
 
 ### Chrome DevTools
 
@@ -86,7 +86,7 @@ If you already know where you are using `SharedArrayBuffer`, skip to [Analyze th
 
 ## Снижение влияния межсайтовой изоляции
 
-After you have determined which resources will be affected by cross-origin isolation, here are general guidelines for how you actually opt-in those cross-origin resources:
+Если вы уже определили, какие ресурсы затронет межсайтовая изоляция, придерживайтесь следующих общих рекомендаций о том, как решить проблему с этими ресурсами:
 
 1. Для таких межсайтовых ресурсов, как изображения, скрипты, таблицы стилей, блоки iframe и другие, задайте заголовок [`Cross-Origin-Resource-Policy: cross-origin`](https://resourcepolicy.fyi/#cross-origin). Для локальных ресурсов сайта установите заголовок [`Cross-Origin-Resource-Policy: same-site`](https://resourcepolicy.fyi/#same-origin).
 2. Добавьте атрибут `crossorigin` в тег HTML документа верхнего уровня, если ресурс загружается с помощью [CORS](/cross-origin-resource-sharing/) (пример: `<img src="example.jpg" crossorigin>`).
@@ -96,7 +96,7 @@ After you have determined which resources will be affected by cross-origin isola
 
 ## Включение межсайтовой изоляции
 
-After you have mitigated the impact by cross-origin isolation, here are general guidelines to enable cross-origin isolation:
+Если вы уже определили, как снизить влияние межсайтовой изоляции, придерживайтесь следующих общих рекомендаций о том, как включить межсайтовую изоляцию:
 
 1. Задайте заголовок `Cross-Origin-Opener-Policy: same-origin` в документе верхнего уровня. Если ранее вы уже задали заголовок `Cross-Origin-Opener-Policy-Report-Only: same-origin`, замените его. Это заблокирует обмен данными между документом верхнего уровня и его всплывающими окнами.
 2. Задайте заголовок `Cross-Origin-Embedder-Policy: require-corp` в документе верхнего уровня. Если ранее вы уже задали заголовок `Cross-Origin-Embedder-Policy-Report-Only: require-corp`, замените его. Это заблокирует загрузку межсайтовых ресурсов, не имеющих явного разрешения на загрузку.
