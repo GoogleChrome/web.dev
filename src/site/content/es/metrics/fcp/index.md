@@ -13,7 +13,7 @@ tags:
 
 {% Aside %} First Contentful Paint: Primer despliegue de contenido (FCP) es una métrica importante, centrada en el usuario, para medir la [velocidad de carga percibida](/user-centric-performance-metrics/#types-of-metrics) porque marca el primer punto en la línea de tiempo de carga de la página en el que el usuario puede ver algo en la pantalla: una FCP rápida ayuda a tranquilizar al usuario de que algo está [ocurriendo](/user-centric-performance-metrics/#questions). {% endAside %}
 
-## What is FCP?
+## ¿Qué es FCP?
 
 La métrica "First Contentful Paint" (FCP) mide el tiempo que transcurre desde que la página comienza a cargarse hasta que cualquier parte del contenido de la página se representa en la pantalla. Para esta métrica, el "contenido" se refiere al texto, las imágenes (incluidas las imágenes que están en segundo plano), los elementos `<svg>` o los elementos `<canvas>` que no están en blanco.
 
@@ -24,30 +24,30 @@ En la carga anterior de la línea de tiempo, FCP ocurre en el segundo marco, ya 
 Notará que, aunque se ha renderizado parte del contenido, no se ha renderizado todo. Esta es una distinción importante que se debe hacer entre *First* Contentful Paint (FCP) y *[Largest Contentful Paint (LCP)](/lcp/)*, cuyo objetivo es medir cuándo se terminó de cargar el contenido principal de la página.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">   {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Good FCP values are 1.8 seconds or less, poor values are greater than 3.0 seconds and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src = "image / eqprBhZUGfb8WYnumQ9ljAxRrA72 / vQKpz0S2SGnnoXHMDidj.svg", alt = "Los buenos valores de FCP son 1,8 segundos o menos, los valores malos son superiores a 3,0 segundos y cualquier cosa intermedia necesita mejora", width = "400", height = "300", class = "w-screenshot w-screenshot - ancho completo"%}</source></picture>
 
 ### ¿Qué es una buena puntuación FCP?
 
 Para brindar una buena experiencia de usuario, los sitios deberían esforzarse por tener una First Contentful Paint de **1.8 segundos** o menos. Para asegurarse de que está alcanzando este objetivo para la mayoría de sus usuarios, un buen umbral para medir es el **percentil 75** de cargas de páginas, segmentado en dispositivos móviles y equipos de escritorio.
 
-## How to measure FCP
+## Cómo medir FCP
 
 FCP se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the-lab) o [en el campo](/user-centric-performance-metrics/#in-the-field) y está disponible en las siguientes herramientas:
 
-### Field tools
+### Herramientas de campo
 
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [Search Console (Speed Report)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
+- [Search Console (informe de velocidad)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [Biblioteca de JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 
-### Lab tools
+### Herramientas de laboratorio
 
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 
-### Measure FCP in JavaScript
+### Medir FCP en JavaScript
 
 Para medir FCP en JavaScript, puede utilizar la [API de Paint Timing](https://w3c.github.io/paint-timing/). En el siguiente ejemplo se muestra cómo crear un [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) que capta una entrada de `paint` con el nombre `first-contentful-paint` y la registra en la consola.
 
@@ -69,7 +69,7 @@ En el ejemplo anterior, la entrada registrada `first-contentful-paint` le indica
 
 En la siguiente sección se enumeran las diferencias entre lo que reporta la API y cómo se calcula la métrica.
 
-#### Differences between the metric and the API
+#### Diferencias entre la métrica y la API
 
 - La API enviará una entrada `first-contentful-paint` para las páginas cargadas en una pestaña de segundo plano, pero esas páginas deben ser ignoradas cuando se calcule el FCP (los tiempos del primer despliegue solo deben considerarse si la página estuvo en primer plano todo el tiempo).
 - La API no reporta `first-contentful-paint` cuando la página se restaura desde la [caché de retroceso/avance](/bfcache/#impact-on-core-web-vitals), pero LCP debe medirse en estos casos, ya que los usuarios las experimentan como visitas de página distintas.
@@ -84,27 +84,27 @@ import {getFCP} from 'web-vitals';
 getFCP(console.log);
 ```
 
-You can refer to [the source code for `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts) for a complete example of how to measure FCP in JavaScript.
+Puede consultar [el código fuente de `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts) para obtener un ejemplo completo de cómo medir FCP en JavaScript.
 
 {% Aside %} En algunos casos (como los iframes de origen cruzado) no es posible medir LCP en JavaScript. Consulte la sección de [limitaciones](https://github.com/GoogleChrome/web-vitals#limitations) `web-vitals` para obtener más información. {% endAside %}
 
-## How to improve FCP
+## Cómo mejorar FCP
 
 Para aprender a mejorar FCP para un sitio específico, puede ejecutar una auditoría de desempeño Lighthouse y prestar atención a cualquier [oportunidad](/lighthouse-performance/#opportunities) específica que sugiera la auditoría.
 
 Para saber cómo mejorar la FCP en general (para cualquier sitio), consulte las siguientes normas de rendimiento:
 
 - [Eliminar los recursos que bloquean el renderizado](/render-blocking-resources/)
-- [Minify CSS](/unminified-css/)
-- [Remove unused CSS](/unused-css-rules/)
+- [Minificar CSS](/unminified-css/)
+- [Eliminar CSS no utilizado](/unused-css-rules/)
 - [Preconectar a los orígenes requeridos](/uses-rel-preconnect/)
-- [Reduce server response times (TTFB)](/time-to-first-byte/)
+- [Reducir los tiempos de respuesta del servidor (TTFB)](/time-to-first-byte/)
 - [Evitar los redireccionamientos de varias páginas](/redirects/)
 - [Precargar solicitudes clave](/uses-rel-preload/)
 - [Evitar cargas útiles de red enormes](/total-byte-weight/)
 - [Publicar activos estáticos con una política de caché eficiente](/uses-long-cache-ttl/)
 - [Evitar un tamaño de DOM excesivo](/dom-size/)
-- [Minimize critical request depth](/critical-request-chains/)
+- [Minimizar la profundidad de la solicitud crítica](/critical-request-chains/)
 - [Asegurarse de que el texto permanezca visible durante la carga de la fuente web](/font-display/)
 - [Mantener la cantidad de solicitudes bajas y los tamaños de transferencia reducidos](/resource-summary/)
 
