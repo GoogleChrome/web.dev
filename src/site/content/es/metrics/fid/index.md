@@ -17,28 +17,28 @@ Todos sabemos lo importante que es causar una buena primera impresión. Es impor
 
 En la web, una buena primera impresión puede marcar la diferencia entre que alguien se convierta en un usuario leal o que se vaya y nunca regrese. La pregunta es, ¿qué es lo que da una buena impresión y cómo se puede medir qué tipo de impresión está causando en los usuarios?
 
-On the web, first impressions can take a lot of different forms—we have first impressions of a site's design and visual appeal as well as first impressions of its speed and responsiveness.
+En la Web, las primeras impresiones pueden tomar muchas formas diferentes: tenemos las primeras impresiones del diseño y el atractivo visual de un sitio, así como las primeras impresiones de su velocidad y capacidad de respuesta.
 
 Si bien es difícil medir el gusto de los usuarios por el diseño de un sitio con API web, ¡no lo es medir su velocidad y capacidad de respuesta!
 
 La primera impresión que tienen los usuarios de la rapidez con la que se carga su sitio se puede medir con [First Contentful Paint (FCP)](/fcp/). Pero la rapidez con la que su sitio puede pintar pixeles en la pantalla es solo una parte de la historia. ¡La capacidad de respuesta de su sitio es igualmente importante cuando los usuarios intentan interactuar con esos pixeles!
 
-The First Input Delay (FID) metric helps measure your user's first impression of your site's interactivity and responsiveness.
+La métrica First Input Delay (FID) ayuda a medir la primera impresión de su usuario sobre la interactividad y capacidad de respuesta de su sitio.
 
-## What is FID?
+## ¿Qué es FID?
 
 FID mide el tiempo desde que un usuario interactúa por primera vez con una página (es decir, cuando hace clic en un enlace, pulsa un botón o utiliza un control personalizado impulsado por JavaScript) hasta el momento en que el navegador puede comenzar a procesar controladores de eventos como respuesta a esa interacción.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / Se4TiXIdp8jtLJVScWed.svg", alt = "Los valores de fid correctos son 2,5 segundos, los valores deficientes son superiores a 4,0 segundos y cualquier valor intermedio debe mejorarse", width = "400", height = "300 ", class =" w-screenshot w-screenshot - ancho completo "%}</source></picture>
 
-### What is a good FID score?
+### ¿Qué es una buena puntuación FID?
 
 Para proporcionar una buena experiencia de usuario, los sitios deben esforzarse por tener una First Input Delay de **100 milisegundos** o menos. Para asegurarse de que está alcanzando este objetivo para la mayoría de sus usuarios, un buen umbral para medir es el **percentil 75** de cargas de página, segmentado en dispositivos móviles y de escritorio.
 
 {% Aside %} Para obtener más información sobre la investigación y la metodología que está detrás de esta recomendación, consulte: [Definición de los umbrales para las métricas de Core Web Vitals](/defining-core-web-vitals-thresholds/) {% endAside %}
 
-## FID in detail
+## FID en detalle
 
 Como desarrolladores que escriben código el cual responde a eventos, con frecuencia asumimos que nuestro código se ejecutará inmediatamente, tan pronto como suceda el evento. Pero como usuarios, a menudo todos hemos experimentado lo contrario: cargamos una página web en nuestro teléfono, intentamos interactuar con ella y luego nos sentimos frustrados cuando no sucedía nada.
 
@@ -75,7 +75,7 @@ FID mide la delta entre el momento en que se recibe un evento de entrada y el si
 Por ejemplo, todos los siguientes elementos HTML deben esperar a que se completen las tareas en curso en el subproceso principal antes de responder a las interacciones del usuario:
 
 - Campos de texto, casillas de verificación y botones de opción (`<input>`, `<textarea>`)
-- Select dropdowns (`<select>`)
+- Seleccionar menús desplegables ( `<select>` )
 - Enlaces (`<a>`)
 
 ### ¿Por qué se debe considerar solo la primera entrada?
@@ -86,7 +86,7 @@ Si bien un retraso de cualquier entrada puede provocar una mala experiencia del 
 - Los mayores problemas de interactividad que vemos en la web hoy en día ocurren cuando carga una página. Por lo tanto, creemos que centrarse inicialmente en mejorar la primera interacción del usuario del sitio tendrá el mayor impacto en la mejora de la interactividad general de la web.
 - Las soluciones recomendadas sobre cómo los sitios deben corregir las grandes demoras en la primera entrada (división de código, carga de menos JavaScript por adelantado, etc.) no son necesariamente las mismas soluciones para corregir retrasos lentos en la entrada después que se cargue la página. Al separar estas métricas, podremos proporcionar normas de rendimiento más específicas para los desarrolladores web.
 
-### What counts as a first input?
+### ¿Qué cuenta como primera entrada?
 
 FID es una métrica que mide la capacidad de respuesta de una página durante la carga. Como tal, solo se enfoca en eventos de entrada para acciones discretas como dar clics, pulsar y presionar teclas.
 
@@ -98,7 +98,7 @@ Para decirlo de otra manera, FID se centra en la R (capacidad de respuesta) en e
 
 No todos los usuarios interactuarán con su sitio cada vez que lo visitan. Y no todas las interacciones son relevantes para FID (como se mencionó en la sección anterior). Además, las primeras interacciones de algunos usuarios serán en los malos momentos (cuando el subproceso principal está ocupado durante un periodo prolongado de tiempo), y las primeras interacciones de algunos usuarios serán en los buenos momentos (cuando el subproceso principal está completamente inactivo).
 
-This means some users will have no FID values, some users will have low FID values, and some users will probably have high FID values.
+Esto significa que algunos usuarios no tendrán valores FID, algunos usuarios tendrán valores FID bajos y algunos usuarios probablemente tendrán valores FID altos.
 
 La forma en que sigue, reporta y analiza FID probablemente será bastante diferente de otras métricas a las que puede estar acostumbrado. En la siguiente sección se explica cuál es la mejor manera de hacer esto.
 
@@ -112,11 +112,11 @@ Sin embargo, aunque FID solo mide la parte de la "demora" de la latencia del eve
 
 ## Cómo medir FID
 
-FID is a metric that can only be measured [in the field](/user-centric-performance-metrics/#in-the-field), as it requires a real user to interact with your page. You can measure FID with the following tools.
+FID es una métrica que solo se puede medir [en el campo](/user-centric-performance-metrics/#in-the-field) , ya que requiere que un usuario real interactúe con su página. Puede medir FID con las siguientes herramientas.
 
 {% Aside %} FID requiere de un usuario real y, por lo tanto, no se puede medir en el laboratorio. Sin embargo, la métrica [Total Blocking Time: Tiempo total de bloqueo (TBT)](/tbt/) se puede medir en laboratorio, se correlaciona bien con la FID en el campo y también captura los problemas que afectan la interactividad. Las optimizaciones que mejoran el TBT en el laboratorio también deberían mejorar la FID para sus usuarios. {% endAside %}
 
-### Field tools
+### Herramientas de campo
 
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
@@ -140,9 +140,9 @@ new PerformanceObserver((entryList) => {
 
 En el ejemplo anterior, el valor de demora para la entrada `first-input` se mide al tomar la delta entre las marcas de tiempo `startTime` y `processingStart`. En la mayoría de los casos, este será el valor FID, sin embargo, no todas las `first-input` son válidas para medir FID.
 
-The following section lists the differences between what the API reports and how the metric is calculated.
+La siguiente sección enumera las diferencias entre lo que informa la API y cómo se calcula la métrica.
 
-#### Differences between the metric and the API
+#### Diferencias entre la métrica y la API
 
 - La API enviará `first-input` para las páginas que se carguen en una pestaña de segundo plano, pero esas páginas deben ignorarse al calcular FID.
 - La API también enviará `first-input` si la página estaba en segundo plano antes de que ocurriera la primera entrada, pero esas páginas también deben ignorarse cuando se calcula FID (las entradas solo se consideran si la página estuvo en primer plano todo el tiempo).
@@ -158,13 +158,13 @@ import {getFID} from 'web-vitals';
 getFID(console.log);
 ```
 
-You can refer to [the source code for `getFID)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts) for a complete example of how to measure FID in JavaScript.
+Puede consultar [el código fuente de `getFID)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFID.ts) para obtener un ejemplo completo de cómo medir FID en JavaScript.
 
 {% Aside %} En algunos casos (como los iframes de origen cruzado) no es posible medir FID en JavaScript. Consulte la sección de [limitaciones](https://github.com/GoogleChrome/web-vitals#limitations) de los `web-vitals` para obtener más información. {% endAside %}
 
 ### Analizar y reportar los datos de FID
 
-Due to the expected variance in FID values, it's critical that when reporting on FID you look at the distribution of values and focus on the higher percentiles.
+Debido a la variación esperada en los valores de FID, es fundamental que al informar sobre FID observe la distribución de valores y se concentre en los percentiles más altos.
 
 Si bien la [elección del percentil](/defining-core-web-vitals-thresholds/#choice-of-percentile) para todos los umbrales de Core Web Vitals es el 75, para FID en particular recomendamos encarecidamente que consulte los percentiles 95 al 99, ya que corresponderán a las primeras experiencias particularmente malas que los usuarios tienen con su sitio. Y le mostrarán las áreas que necesitan más mejoras.
 
