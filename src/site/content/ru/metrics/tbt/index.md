@@ -5,11 +5,7 @@ authors:
   - philipwalton
 date: '2019-11-07'
 updated: '2020-06-15'
-description: |2
-
-  This post introduces the Total Blocking Time (TBT) metric and explains
-
-  how to measure it
+description: В этой статье описывается метрика TBT (Общее время блокировки) и объясняются принципы ее измерения
 tags:
   - performance
   - metrics
@@ -17,29 +13,29 @@ tags:
 
 {% Aside %}
 
-Total Blocking Time (TBT) is an important [lab metric](/user-centric-performance-metrics/#in-the-lab) for measuring [load responsiveness](/user-centric-performance-metrics/#types-of-metrics) because it helps quantify the severity of how non-interactive a page is prior to it becoming reliably interactive—a low TBT helps ensure that the page is [usable](/user-centric-performance-metrics/#questions).
+Общее время блокировки (TBT) — важный [лабораторный показатель](/user-centric-performance-metrics/#in-the-lab) для измерения [отзывчивости при загрузке,](/user-centric-performance-metrics/#types-of-metrics) так как данный показатель помогает количественно оценить степень неинтерактивности страницы до того момента, как она станет надежно интерактивной. Низкое значение показателя TBT гарантирует, что страница [пригодна к использованию](/user-centric-performance-metrics/#questions).
 
 {% endAside %}
 
-## What is TBT?
+## Что такое TBT?
 
-The Total Blocking Time (TBT) metric measures the total amount of time between [First Contentful Paint (FCP)](/fcp/) and [Time to Interactive (TTI)](/tti/) where the main thread was blocked for long enough to prevent input responsiveness.
+Метрика Total Blocking Time (TBT) измеряет общее количество времени между [FCP (Первой отрисовкой контента)](/fcp/) и [TTI (Временем до интерактивности)](/tti/). В данный период времени основной поток блокируется и не реагирует на действия пользователя.
 
-The main thread is considered "blocked" any time there's a [Long Task](/custom-metrics/#long-tasks-api)—a task that runs on the main thread for more than 50 milliseconds (ms). We say the main thread is "blocked" because the browser cannot interrupt a task that's in progress. So in the event that a user *does* interact with the page in the middle of a long task, the browser must wait for the task to finish before it can respond.
+Основной поток считается «заблокированным» каждый раз, когда возникает [длительная задача](/custom-metrics/#long-tasks-api) — задача, которая выполняется в основном потоке более 50 миллисекунд (мс). Мы говорим, что основной поток «заблокирован», потому что браузер не может прервать выполняемую задачу. Если пользователь *взаимодействует* со страницей в середине длительной задачи, браузер ждет завершения задачи, прежде чем ответить на действия пользователя.
 
-If the task is long enough (e.g. anything above 50 ms), it's likely that the user will notice the delay and perceive the page as sluggish or janky.
+Если задача достаточно длительная (более 50 мс), вполне вероятно, что пользователь заметит задержку и воспримет страницу как «подвисающую» или «глючную».
 
-The *blocking time* of a given long task is its duration in excess of 50 ms. And the *total blocking time* for a page is the sum of the *blocking time* for each long task that occurs between FCP and TTI.
+*Время блокировки* данной длительной задачи — это ее продолжительность, превышающая 50 мс. И *общее время блокировки* для страницы — это сумма *временных интервалов блокировок* для каждой длительной задачи, возникающей между FCP и TTI.
 
-For example, consider the following diagram of the browser's main thread during page load:
+Для примера рассмотрим следующую схему основного потока браузера во время загрузки страницы:
 
 {% Img src = "image / admin / clHG8Yv239lXsGWD6Iu6.svg", alt = "Временная шкала задач в основном потоке", width = "800", height = "156", linkTo = true%}
 
-The above timeline has five tasks, three of which are Long Tasks because their duration exceeds 50 ms. The next diagram shows the blocking time for each of the long tasks:
+На временной шкале выше пять задач, три из которых являются длительными, так как их продолжительность превышает 50 мс. Следующая диаграмма показывает время блокировки для каждой из длительных задач:
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xKxwKagiz8RliuOI2Xtc.svg", alt="A tasks timeline on the main thread showing blocking time", width="800", height="156", linkTo=true %}
+{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / xKxwKagiz8RliuOI2Xtc.svg", alt = "Временная шкала с отмеченным временем блокировки задач в основном потоке", width = "800", height = "156", linkTo = true%}
 
-So while the total time spent running tasks on the main thread is 560 ms, only 345 ms of that time is considered blocking time.
+Таким образом, хотя общее время, затрачиваемое на выполнение задач в основном потоке, составляет 560 мс, только 345 мс считаются временем блокировки.
 
 <table>
   <tr>
@@ -48,27 +44,27 @@ So while the total time spent running tasks on the main thread is 560 ms, only 3
     <th>Время блокировки задачи</th>
   </tr>
   <tr>
-    <td>Task one</td>
+    <td>Первая задача</td>
     <td>250 мс</td>
     <td>200 мс</td>
   </tr>
   <tr>
-    <td>Task two</td>
+    <td>Вторая задача</td>
     <td>90 мс</td>
     <td>40 мс</td>
   </tr>
   <tr>
-    <td>Task three</td>
+    <td>Третья задача</td>
     <td>35 мс</td>
     <td>0 мс</td>
   </tr>
   <tr>
-    <td>Task four</td>
+    <td>Четвертая задача</td>
     <td>30 мс</td>
     <td>0 мс</td>
   </tr>
   <tr>
-    <td>Task five</td>
+    <td>Пятая задача</td>
     <td>155 мс</td>
     <td>105 мс</td>
   </tr>
@@ -80,37 +76,37 @@ So while the total time spent running tasks on the main thread is 560 ms, only 3
 
 ### Как TBT соотносится с TTI?
 
-TBT is a great companion metric for TTI because it helps quantify the severity of how non-interactive a page is prior it to becoming reliably interactive.
+TBT — отличный вспомогательный показатель для TTI, потому что он помогает количественно оценить степень неинтерактивности страницы до того, как она станет надежно интерактивной.
 
-TTI considers a page "reliably interactive" if the main thread has been free of long tasks for at least five seconds. This means that three, 51 ms tasks spread out over 10 seconds can push back TTI just as far as a single 10-second long task—but those two scenarios would feel very different to a user trying to interact with the page.
+TTI считает страницу «надежно интерактивной», если в основном потоке не выполняются длительные задачи в течение как минимум пяти секунд. Это означает, что три задачи по 51 мс, распределенные на 10 секунд, могут отодвинуть TTI так же далеко, как и одна 10-секундная задача, но эти два сценария будут сильно отличаться для пользователя, пытающегося взаимодействовать со страницей.
 
-In the first case, three, 51 ms tasks would have a TBT of **3 ms**. Whereas a single, 10-second long tasks would have a TBT of **9950 ms**. The larger TBT value in the second case quantifies the worse experience.
+В первом случае для трех задач по 51 мс значение TBT составит **3 мс**. Тогда как для одиночной 10-секундной задачи TBT будет равно **9950 мс**. Чем больше значение TBT во втором случае, тем хуже впечатления пользователя.
 
 ## Как измерить TBT
 
-TBT is a metric that should be measured [in the lab](/user-centric-performance-metrics/#in-the-lab). The best way to measure TBT is to run a Lighthouse performance audit on your site. See the [Lighthouse documentation on TBT](/lighthouse-total-blocking-time) for usage details.
+TBT — это показатель, который лучше всего измерять [в лабораторных условиях](/user-centric-performance-metrics/#in-the-lab). Оптимальный способ измерить TBT — запустить проверку производительности Lighthouse для вашего сайта. Подробнее об этом см. в [документации Lighthouse по TBT](/lighthouse-total-blocking-time).
 
-### Lab tools
+### Инструменты для измерения в лабораторных условиях
 
 - [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 - [WebPageTest](https://www.webpagetest.org/)
 
-{% Aside %} While it is possible to measure TBT in the field, it's not recommended as user interaction can affect your page's TBT in ways that lead to lots of variance in your reports. To understand a page's interactivity in the field, you should measure [First Input Delay (FID)](/fid/). {% endAside %}
+{% Aside %} Не рекомендуется измерять TBT в полевых условиях, поскольку взаимодействие с пользователем может повлиять на TBT страницы таким образом, что это приведет к большим расхождениям со значениями в отчетах. Чтобы оценить интерактивность страницы в полевых условиях, следует измерить [FID (Время ожидания до первого взаимодействия с контентом)](/fid/). {% endAside %}
 
-## What is a good TBT score?
+## Какое значение показателя TBT можно считать хорошим?
 
-To provide a good user experience, sites should strive to have a Total Blocking Time of less than **300 milliseconds** when tested on **average mobile hardware**.
+Для обеспечения удобства работы пользователей сайты должны стремиться к тому, чтобы общее время блокировки не превышало **300 миллисекунд** при тестировании на **мобильных устройствах среднего уровня производительности**.
 
-For details on how your page's TBT affects your Lighthouse performance score, see [How Lighthouse determines your TBT score](/lighthouse-total-blocking-time/#how-lighthouse-determines-your-tbt-score)
+Подробная информация о влиянии TBT страницы на показатель производительности в Lighthouse приводится в статье [«Как Lighthouse определяет ваш показатель TBT»](/lighthouse-total-blocking-time/#how-lighthouse-determines-your-tbt-score).
 
-## How to improve TBT
+## Как улучшить показатель TBT
 
-To learn how to improve TBT for a specific site, you can run a Lighthouse performance audit and pay attention to any specific [opportunities](/lighthouse-performance/#opportunities) the audit suggests.
+Чтобы узнать, как улучшить TBT для конкретного сайта, можно запустить проверку производительности с помощью Lighthouse и обратить внимание на любые конкретные [возможности улучшения](/lighthouse-performance/#opportunities), предлагаемые проверкой.
 
 Чтобы узнать, как улучшить TBT в целом (для любого сайта), обратитесь к следующим руководствам по производительности:
 
-- [Reduce the impact of third-party code](/third-party-summary/)
-- [Reduce JavaScript execution time](/bootup-time/)
-- [Minimize main thread work](/mainthread-work-breakdown/)
-- [Keep request counts low and transfer sizes small](/resource-summary/)
+- [Уменьшение влияния стороннего кода](/third-party-summary/)
+- [Уменьшение времени выполнения JavaScript](/bootup-time/)
+- [Минимизация работы основного потока](/mainthread-work-breakdown/)
+- [Поддержание малого количества запросов и объемов передаваемых данных](/resource-summary/)
