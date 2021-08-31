@@ -19,7 +19,7 @@ tags:
 
 필드 데이터라고도 알려진 [Real User Monitoring](https://en.wikipedia.org/wiki/Real_user_monitoring)(실제 사용자 모니터링, RUM) 데이터는 사이트의 실제 사용자가 경험하는 성능을 포착합니다. RUM 데이터는 Google에서 사이트가 [권장되는 Core Web Vitals 임계값](/vitals/)을 충족하는지 확인하는 데 사용됩니다.
 
-### Getting started
+### 시작하기
 
 RUM 설정이 없는 경우 다음 도구를 사용하여 사이트의 실제 성능에 대한 데이터를 빠르게 제공할 수 있습니다. 이러한 도구는 모두 동일한 기본 데이터 세트([Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report))를 기반으로 하지만 사용 사례가 약간 다릅니다.
 
@@ -29,7 +29,7 @@ RUM 설정이 없는 경우 다음 도구를 사용하여 사이트의 실제 �
 
 위에 나열된 도구는 Web Vital 측정을 "시작"하는 데는 적합할 뿐만 아니라 다른 곳에서도 유용할 수 있습니다. 특히 CrUX와 PSI는 모두 API로 제공되며 [대시보드](https://dev.to/chromiumdev/a-step-by-step-guide-to-monitoring-the-competition-with-the-chrome-ux-report-4k1o) 및 기타 보고를 구축하는 데 사용할 수 있습니다.
 
-### Collecting RUM data
+### RUM 데이터 수집
 
 CrUX 기반 도구는 Web Vitals 성능을 조사하기 위한 좋은 출발점이지만, 자체 RUM으로 이를 보완하는 방법을 적극 추천합니다. 직접 수집한 RUM 데이터는 사이트 성능에 대한 보다 자세하고 즉각적인 피드백을 제공하기 때문에 문제를 쉽게 식별하고 가능한 솔루션을 테스트할 수 있습니다.
 
@@ -41,7 +41,7 @@ CrUX 기반 도구는 Web Vitals 성능을 조사하기 위한 좋은 출발점�
 
 RUM 공급자를 이용하지 않는 경우, [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)를 사용하여 이러한 메트릭을 수집하고 보고하도록 기존 분석 설정을 보강할 수 있습니다. 아래에서 이러한 방식에 대한 자세한 설명을 확인해주세요.
 
-### The web-vitals JavaScript library
+### web-vitals JavaScript 라이브러리
 
 Web Vitals에 대해 자체적인 RUM 설정을 구현하려는 경우, Web Vitals 측정을 수집하는 가장 쉬운 방법은 사용하는 [`web-vitals`](https://github.com/GoogleChrome/web-vitals) JavaScript 라이브러리를 사용하는 것입니다. `web-vitals`는 [현장에서 측정 가능](/user-centric-performance-metrics/#in-the-field)한 각 Web Vitals 메트릭을 수집하고 보고하기 위한 편리한 API를 제공하는 소규모 모듈식 라이브러리(~1KB)입니다.
 
@@ -49,7 +49,7 @@ Web Vital을 구성하는 메트릭은 모두 브라우저의 빌트인 성능 A
 
 `web-vitals` 구현에 대한 자세한 내용은 [문서](https://github.com/GoogleChrome/web-vitals) 및 [현장의 Web Vitals 측정에 대한 모범 사례](/vitals-field-measurement-best-practices/)를 참조하세요.
 
-### Data aggregation
+### 데이터 집계
 
 `web-vitals`가 수집한 측정값을 보고하는 것이 중요합니다. 이 데이터가 측정되었으나 보고되지 않은 경우에는 절대 확인할 수 없기 때문이죠. `web-vitals` 문서에는 데이터를 [API 엔드포인트](https://github.com/GoogleChrome/web-vitals#send-the-results-to-an-analytics-endpoint), [Google Analytics](https://github.com/GoogleChrome/web-vitals#send-the-results-to-google-analytics) 또는 [Google Tag Manager](https://github.com/GoogleChrome/web-vitals#send-the-results-to-google-tag-manager)로 보내는 방법을 보여주는 예시가 기재되어 있습니다.
 
@@ -57,17 +57,17 @@ Web Vital을 구성하는 메트릭은 모두 브라우저의 빌트인 성능 A
 
 사용할 도구를 고려할 때 누가 데이터에 액세스하게 될지 고려하는 것이 좋습니다. 기업은 일반적으로 단일 부서가 아니라 회사 전체가 성능 개선에 관심을 가질 때 가장 큰 성과를 거둡니다. 다른 부서의 승인을 받는 방법을 알아보려면 [전체적인 웹 사이트 속도 수정](/fixing-website-speed-cross-functionally/)을 참조하세요.
 
-### Data interpretation
+### 데이터 해석
 
 성능 데이터를 분석할 때는 분포의 꼬리에 관심을 기울이는 게 중요합니다. RUM 데이터는 성능이 다양하다는 것을 보여주는 경우가 많습니다. 빠른 속도를 경험하는 사용자도 있고, 느린 속도를 경험하는 사용자도 있습니다. 그러나 중앙값을 사용하여 데이터를 요약하면 이러한 부분이 쉽게 가려집니다.
 
 Google은 Web Vitals에 대해 중앙값 또는 평균과 같은 통계가 아닌 "원활한" 경험의 비율을 사용하여 사이트 또는 페이지가 권장 임계값을 충족하는지 결정합니다. 특히 사이트 또는 페이지가 Core Web Vitals 임계값을 충족하는 것으로 간주되려면 페이지 방문의 75%가 각 메트릭에 대한 "양호" 임계값을 충족해야 합니다.
 
-## Measuring Web Vitals using lab data
+## 실험실 데이터를 사용하여 Web Vitals 측정
 
 인공적 데이터라고도 불리는 [실험실 데이터](/user-centric-performance-metrics/#in-the-lab)는 실제 사용자가 아닌 통제된 환경에서 수집됩니다. 실험실 데이터는 RUM 데이터와 달리 사전 프로덕션 환경에서 수집할 수 있으므로 개발자 워크플로 및 지속적인 통합 프로세스에 통합할 수 있습니다. 인공적 데이터를 수집하는 도구의 예로는 Lighthouse 및 WebPageTest가 있습니다.
 
-### Considerations
+### 고려 사항
 
 RUM 데이터와 실험실 데이터 사이에는 항상 불일치가 있습니다. 특히 네트워크 조건, 장치 유형 또는 실험실 환경의 위치가 사용자의 환경과 크게 다른 경우에는 더욱 그렇습니다. 그러나 Web Vitals 메트릭에 대한 실험실 데이터를 수집할 때는 특히 유의해야 할 특정 고려 사항이 몇 가지 있습니다.
 
@@ -80,4 +80,4 @@ RUM 데이터와 실험실 데이터 사이에는 항상 불일치가 있습니�
 
 - **Web Vitals Chrome 확장 프로그램:** Web Vitals Chrome [확장 프로그램](https://github.com/GoogleChrome/web-vitals-extension)은 주어진 페이지에 대한 Core Web Vitals(LCP, FID 및 CLS)를 측정하고 보고합니다. 이 도구는 개발자에게 코드 변경 시 실시간 성능 피드백을 제공하기 위해 제작되었습니다.
 - **Lighthouse:** Lighthouse는 LCP, CLS 및 TBT를 보고하고 가능한 성능 개선 사항도 강조합니다. Lighthouse는 Chrome DevTools에서 Chrome 확장 프로그램 및 npm 패키지로 사용할 수 있습니다. Lighthouse는 [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)를 통해 지속적인 통합 워크플로에 통합될 수도 있습니다.
-- **WebPageTest:** [WebPageTest](https://webpagetest.org/) includes Web Vitals as a part of its standard reporting. WebPageTest is useful for gathering information on Web Vitals under particular device and network conditions.
+- **WebPageTest:** [WebPageTest](https://webpagetest.org/)는 표준 보고의 일부로 Web Vitals를 포함합니다. WebPageTest는 특정 장치 및 네트워크 조건에서 Web Vitals에 대한 정보를 수집하는 데 유용합니다.
