@@ -24,7 +24,7 @@ First Contentful Paint (FCP) 指標は、ページの読み込みが開始され
 コンテンツの一部がレンダリングされたものの、すべてのコンテンツがレンダリングされたわけではないことがわかります。これは、*First* Contentful Paint (FCP) と、ページのメイン コンテンツの読み込み完了タイミングの測定が目的となる *[Largest Contentful Paint (LCP)](/lcp/)* の重要な違いです。
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">   {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Good FCP values are 1.8 seconds or less, poor values are greater than 3.0 seconds and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{％Img src = "image / eqprBhZUGfb8WYnumQ9ljAxRrA72 / vQKpz0S2SGnnoXHMDidj.svg"、alt = "良好なFCP値は1.8秒以下、不良な値は3.0秒を超え、その間の値は改善が必要"、width = "400"、height = "300"、class = "w-screenshot w-screenshot--filled width-full"％}</source></picture>
 
 ### FCP における良いスコアとは？
 
@@ -94,7 +94,7 @@ JavaScript を使用して FCP を測定する方法に関する詳細な例に�
 
 FCP の (あらゆるサイトに共通する) 一般的な改善方法については、以下のパフォーマンス ガイドを参照してください。
 
-- [Eliminate render-blocking resources](/render-blocking-resources/)
+- [レンダリングをブロックするリソースを排除する](/render-blocking-resources/)
 - [CSS を圧縮する](/unminified-css/)
 - [使用されていない CSS を削除する](/unused-css-rules/)
 - [必要なオリジンに事前接続する](/uses-rel-preconnect/)
