@@ -22,14 +22,14 @@ Embora recomendemos o uso de uma ferramenta de análises que ofereça suporte à
 
 Este guia discute as melhores práticas para medir as métricas Core Web Vitals (ou qualquer métrica personalizada) com uma ferramenta de análise nativa ou de terceiros. Ele também pode servir como um guia para fornecedores de análise que desejam adicionar suporte Core Web Vitals a seus serviços.
 
-## Use custom metrics or events
+## Use métricas ou eventos personalizados
 
 Conforme mencionado acima, a maioria das ferramentas de análise permite medir dados personalizados. Se sua ferramenta de análise suportar isso, você deverá ser capaz de medir cada uma das métricas Core Web Vitals usando este mecanismo.
 
-Measuring custom metrics or events in an analytics tool is generally a three-step process:
+Medir métricas ou eventos personalizados em uma ferramenta de análise geralmente é um processo de três etapas:
 
 1. [Defina ou registre](https://support.google.com/analytics/answer/2709829?hl=en&ref_topic=2709827) a métrica personalizada na administração da ferramenta (se necessário). *(Observação: nem todos os provedores de análise exigem que as métricas personalizadas sejam definidas com antecedência.)*
-2. Compute the value of the metric in your frontend JavaScript code.
+2. Calcule o valor da métrica em seu código JavaScript de front-end.
 3. Envie o valor da métrica para o back-end de análise, garantindo que o nome ou ID corresponda ao que foi definido na etapa 1 *(novamente, se necessário)* .
 
 Para as etapas 1 e 3, você pode consultar a documentação da ferramenta de análise para obter instruções. Para a etapa 2, você pode usar a [biblioteca JavaScript web-vitals](https://github.com/GoogleChrome/web-vitals) para calcular o valor de cada uma das métricas Core Web Vitals.
@@ -67,7 +67,7 @@ O [Web Vitals Report](https://github.com/GoogleChromeLabs/web-vitals-report) é 
 
 {% Aside %} Dica: a biblioteca JavaScript [`web-vitals`](https://github.com/GoogleChrome/web-vitals) fornece um ID para cada instância de métrica relatada, permitindo a construção de distribuições na maioria das ferramentas de análise. Consulte a documentação da interface [`Metric`](https://github.com/GoogleChrome/web-vitals#metric) para mais detalhes. {% endAside %}
 
-## Send your data at the right time
+## Envie seus dados na hora certa
 
 Algumas métricas de desempenho podem ser calculadas quando a página termina de carregar, enquanto outras (como CLS) consideram toda a vida útil da página e só produzem um resultado final quando a página começa a ser descarregada.
 
@@ -79,7 +79,7 @@ Observe que os sistemas operacionais móveis geralmente disparam o evento `visib
 
 {% Aside 'gotchas' %} Devido a [alguns bugs de navegador](https://github.com/w3c/page-visibility/issues/59#issue-554880545), existem algumas situações onde o evento `visibilitychange` não dispara. Se você estiver construindo sua própria biblioteca de análise, é importante estar ciente desses bugs. Observe que a biblioteca JavaScript [web-vitals](https://github.com/GoogleChrome/web-vitals) é responsável por todos esses bugs. {% endAside %}
 
-## Monitor performance over time
+## Monitore o desempenho ao longo do tempo
 
 Depois de atualizar sua implementação de análise para rastrear e relatar as métricas Core Web Vitals, a próxima etapa é rastrear como as mudanças no seu site afetam o desempenho ao longo do tempo.
 
@@ -89,23 +89,23 @@ Uma abordagem ingênua (e, em última análise, não confiável) para rastrear m
 
 Uma abordagem muito melhor é criar uma versão exclusiva para cada mudança implementada e, em seguida, rastrear essa versão na sua ferramenta de análise. A maioria das ferramentas de análise oferece suporte à configuração de uma versão. Se a sua não tiver esse recurso, você pode criar uma dimensão personalizada e definir essa dimensão como sendo sua versão implementada.
 
-### Run experiments
+### Faça experimentos
 
-You can take versioning one step further by tracking multiple versions (or experiments) at the same time.
+Você pode levar o controle de versão um passo adiante, rastreando várias versões (ou experimentos) ao mesmo tempo.
 
-If your analytics tool lets you define experiment groups, use that feature. Otherwise, you can use custom dimensions to ensure each of your metric values can be associated with a particular experiment group in your reports.
+Se sua ferramenta de análise permite definir grupos de experimentos, use esse recurso. Caso contrário, você pode usar dimensões personalizadas para garantir que cada um de seus valores de métrica possa ser associado a um grupo de experimentos específico em seus relatórios.
 
 Com a experimentação implementada em suas análises, você pode implementar uma mudança experimental num subconjunto de seus usuários e comparar o desempenho dessa mudança com o desempenho dos usuários no grupo de controle. Depois de ter certeza de que uma mudança realmente melhora o desempenho, você pode então implementá-la para todos os usuários.
 
 {% Aside %} Os grupos de experimentos devem sempre ser definidos no servidor. Evite realizar qualquer experimento ou qualquer ferramenta de teste A/B que rode no cliente. Essas ferramentas normalmente bloquearão a renderização até que o grupo de experimentos de um usuário seja determinado, o que pode prejudicar seus tempos de LCP. {% endAside %}
 
-## Ensure measurement doesn't affect performance
+## Certifique-se de que a medição não afete o desempenho
 
 Ao medir o desempenho em usuários reais, é absolutamente crítico que qualquer código de medição de desempenho que você esteja executando não afete negativamente o desempenho de sua página. Se isto acontecer, quaisquer conclusões que você tente obter sobre como seu desempenho afeta seus negócios não serão confiáveis, pois você nunca saberá se a presença do código de análise em si está causando o maior impacto negativo.
 
 Sempre siga estes princípios ao implantar código de análise RUM em seu site de produção:
 
-### Defer your analytics
+### Adie suas análises
 
 O código analítico deve sempre ser carregado de forma assíncrona e sem bloqueio e, geralmente, deve ser carregado por último. Se você carregar seu código analítico de forma que cause bloqueio, ele poderá afetar negativamente a LCP.
 
@@ -113,7 +113,7 @@ Todas as APIs usadas para medir as métricas Core Web Vitals foram projetadas es
 
 No caso de estar medindo uma métrica que não possa ser calculada posteriormente no cronograma de carregamento da página, você deve embutir *apenas* o código que precisa ser executado no início no bloco `<head>` do seu documento (para que não seja uma [solicitação que bloqueie a renderização](/render-blocking-resources/)) e adiar todo o resto. Não carregue todas as suas análises antecipadamente apenas porque uma única métrica exige.
 
-### Do not create long tasks
+### Não crie tarefas longas
 
 O código de análise geralmente é executado em resposta à entrada do usuário, mas se seu código de análise está conduzindo muitas medições DOM ou usando outras APIs que demandam uso intensivo do processador, o próprio código de análise pode causar uma resposta de entrada insatisfatória. Além disso, se o arquivo JavaScript que contém o código analítico for grande, a execução desse arquivo pode bloquear o thread principal e afetar negativamente a FID.
 
@@ -127,10 +127,10 @@ Em geral, todos os sinalizadores de análise devem ser enviados usando a API `se
 
 {% Aside %} Para obter orientação sobre como maximizar o uso do tempo ocioso, garantindo ao mesmo tempo que o código possa ser executado com urgência quando necessário (como quando um usuário está descarregando a página), consulte o padrão [idle-until-urgent.](https://philipwalton.com/articles/idle-until-urgent/) {% endAside %}
 
-### Don't track more than what you need
+### Não rastreie mais do que você precisa
 
-The browser exposes a lot of performance data, but just because the data is available does not necessarily mean you should record it and send it to your analytics servers.
+O navegador expõe muitos dados de desempenho, mas só porque os dados estão disponíveis não significa necessariamente que você deve registrá-los e enviá-los aos seus servidores analíticos.
 
 Por exemplo, a [Resource Timing API](https://w3c.github.io/resource-timing/) fornece dados de tempo detalhados para cada recurso carregado em sua página. No entanto, é improvável que todos esses dados sejam necessários ou úteis para melhorar o desempenho do carregamento de recursos.
 
-In short, don't just track data because it's there, ensure the data will be used before consuming resources tracking it.
+Resumindo, não apenas rastreie os dados porque eles estão lá, certifique-se de que os dados serão usados antes de consumir recursos para rastreá-los.
