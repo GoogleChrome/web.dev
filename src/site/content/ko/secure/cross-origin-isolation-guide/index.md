@@ -28,7 +28,7 @@ Chrome 92부터 출처 간 격리 없이는 `SharedArrayBuffer`를 사용하는 
 
 사이트에서 `SharedArrayBuffer`가 사용되는 위치를 확실히 모르는 경우, 두 가지 방법으로 알아낼 수 있습니다.
 
-- Using Chrome DevTools
+- Chrome DevTools 사용
 - (고급) 사용 중단 보고 사용
 
 `SharedArrayBuffer` 사용 위치를 이미 알고 있다면 [출처 간 격리의 영향 분석](#analysis)으로 건너뛰세요.
@@ -38,7 +38,7 @@ Chrome 92부터 출처 간 격리 없이는 `SharedArrayBuffer`를 사용하는 
 개발자는 [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open)를 사용하여 웹사이트를 검사할 수 있습니다.
 
 1. `SharedArrayBuffer`를 사용하고 있다고 의심되는 페이지에서 [Chrome DevTools를 엽니다](https://developers.google.com/web/tools/chrome-devtools/open).
-2. Select the **Console** panel.
+2. **콘솔** 패널을 선택합니다.
 3. 페이지가 `SharedArrayBuffer`를 사용하는 경우 다음 메시지가 표시됩니다.
     ```text
     [Deprecation] SharedArrayBuffer will require cross-origin isolation as of M92, around May 2021. See https://developer.chrome.com/blog/enabling-shared-array-buffer/ for more details. common-bundle.js:535
@@ -67,7 +67,7 @@ Chrome 92부터 출처 간 격리 없이는 `SharedArrayBuffer`를 사용하는 
 실제로 어떤 부분도 건드리지 않고 출처 간 격리를 활성화했을 때 사이트에 미치는 영향을 평가할 수 있다면 좋지 않을까요? [`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) 및 [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) HTTP 헤더를 사용하면 그렇게 할 수 있습니다.
 
 1. 최상위 문서에서 [`Cross-Origin-Opener-Policy-Report-Only: same-origin`](/coop-coep/#1.-set-the-cross-origin-opener-policy:-same-origin-header-on-the-top-level-document)을 설정합니다. 이름에서 알 수 있듯이 이 헤더는 `COOP: same-origin`이 사이트에 **잠재적으로 미칠** 영향에 대한 보고서만 보냅니다. 실제로 팝업 창과의 통신을 중단시키지 않습니다.
-2. Set up reporting and configure a web server to receive and save the reports.
+2. 보고를 설정하고 보고서를 수신하고 저장하도록 웹 서버를 구성합니다.
 3. 최상위 문서에서 [`Cross-Origin-Embedder-Policy-Report-Only: require-corp`](/coop-coep/#3.-use-the-coep-report-only-http-header-to-assess-embedded-resources)를 설정합니다. 다시 말하지만, 이 헤더를 사용하면 아직 사이트 기능에 실제로 영향을 주지 않으면서 `COEP: require-corp`을 활성화할 때의 영향을 확인할 수 있습니다. 이전 단계에서 설정한 동일한 보고 서버로 보고서를 보내도록 이 헤더를 구성할 수 있습니다.
 
 {% Aside %} Chrome DevTools **네트워크** 패널에서 [**도메인** 컬럼을 활성화](https://developers.google.com/web/tools/chrome-devtools/network#information)하여 어떤 리소스가 영향을 받는지 전반적으로 파악할 수도 있습니다. {% endAside %}
