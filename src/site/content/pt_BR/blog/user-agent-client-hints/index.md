@@ -1,9 +1,8 @@
 ---
-title: Improving user privacy and developer experience with User-Agent Client Hints
+title: Melhorando a privacidade do usuário e a experiência do desenvolvedor com User-Agent Client Hints
 subhead: |-
-  User-Agent Client Hints are a new expansion to the Client Hints API, that
- "enables developers to access information about a user's browser in a"
-  privacy-preserving and ergonomic way.
+  User-Agent Client Hints são uma nova expansão da API Client Hints, que
+  permite que os desenvolvedores acessem informações (dicas) sobre o navegador de um usuário de forma ergonômica e preservando sua privacidade.
 authors:
   - rowan_m
   - yoavweiss
@@ -22,15 +21,15 @@ feedback:
 
 {% YouTube 'f0YY0o2OAKA' %}
 
-Client Hints enable developers to actively request information about the user's device or conditions, rather than needing to parse it out of the User-Agent (UA) string. Providing this alternative route is the first step to eventually reducing User-Agent string granularity.
+As Client Hints (dicas do cliente) permitem que os desenvolvedores solicitem informações sobre o dispositivo ou as condições do usuário, em vez de precisar processá-las a partir da string do cabeçalho User-Agent (UA). Fornecer essa rota alternativa é o primeiro passo para reduzir a granularidade da string User-Agent.
 
-Learn how to update your existing functionality that relies on parsing the User-Agent string to make use of User-Agent Client Hints instead.
+Aprenda como atualizar seu código existente que depende do processamento da string User-Agent para usar, em vez disso, as User-Agent Client Hints.
 
-{% Banner 'caution', 'body' %} If you are already using User-Agent Client Hints, pay attention to the upcoming changes. The header format is changing so the `Accept-CH` tokens exactly match the returned headers. Previously a site could have sent `Accept-CH: UA-Platform` to receive the `Sec-CH-UA-Platform` header and now that site should send `Accept-CH: Sec-CH-UA-Platform`. If you've already implemented User-Agent Client Hints, send both formats until the change has fully rolled out in stable Chromium. See [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ) for updates. {% endBanner %}
+{% Banner 'caution', 'body' %} Se você já estiver usando as User-Agent Client Hints, às mudanças que estão previstas. O formato do cabeçalho está mudando para que os tokens `Accept-CH` correspondam exatamente aos cabeçalhos retornados. Anteriormente, um site poderia ter enviado `Accept-CH: UA-Platform` para receber o cabeçalho `Sec-CH-UA-Platform` mas agora esse site deve enviar `Accept-CH: Sec-CH-UA-Platform`. Se você já implementou User-Agent Client Hints, envie os dois formatos até que a mudança seja totalmente implementada no Chromium estável. Acesse [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ) para saber das atualizações. {% endBanner %}
 
-## Background
+## Histórico
 
-When web browsers make requests they include information about the browser and its environment so that servers can enable analytics and customize the response. This was defined all the way back in 1996 (RFC 1945 for HTTP/1.0), where you can find the [original definition for the User-Agent string](https://tools.ietf.org/html/rfc1945#section-10.15), which includes an example:
+Quando os navegadores da web fazem solicitações, eles incluem informações sobre o navegador e seu ambiente para que os servidores possam ativar análises e personalizar a resposta. Isto foi definido em 1996, na RFC 1945 para HTTP/1.0, onde você encontrará a [definição original para a string User-Agent](https://tools.ietf.org/html/rfc1945#section-10.15), que inclui o seguinte exemplo:
 
 ```text
 User-Agent: CERN-LineMode/2.15 libwww/2.17b3
@@ -40,7 +39,7 @@ Este cabeçalho tinha como objetivo especificar, em ordem de importância, o pro
 
 ### O estado da string User-Agent
 
-Over the intervening *decades*, this string has accrued a variety of additional details about the client making the request (as well as cruft, due to backwards compatibility). We can see that when looking at Chrome's current User-Agent string:
+Ao longo das *décadas seguintes*, essa string acumulou uma variedade de detalhes adicionais sobre o cliente que faz a solicitação (também acumulou complexidade, devido à necessidade de compatibilidade reversa). Isto pode ser comprovado olhando para a string User-Agent no Chrome hoje:
 
 ```text
 Mozilla/5.0 (Linux; Android 10; Pixel 3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4076.0 Mobile Safari/537.36
@@ -48,19 +47,19 @@ Mozilla/5.0 (Linux; Android 10; Pixel 3) AppleWebKit/537.36 (KHTML, like Gecko) 
 
 A string acima contém informações sobre o sistema operacional e a versão do usuário, o modelo do dispositivo, a marca do navegador e a versão completa, pistas suficientes para inferir que se trata de um navegador móvel, sem mencionar uma série de referências a outros navegadores por motivos históricos.
 
-The combination of these parameters with the sheer diversity of possible values means the User-Agent string could contain enough information to allow individual users to be uniquely identified. If you test your own browser at [AmIUnique](https://amiunique.org/), you can see just how closely **your** User-Agent string identifies **you**. The lower your resulting "Similarity ratio" is, the more unique your requests are, the easier it is for servers to covertly track you.
+A combinação desses parâmetros com a grande diversidade de valores possíveis significa que a string User-Agent pode conter informações suficientes para permitir que usuários individuais sejam identificados de forma única. Se você testar seu próprio navegador em [AmIUnique](https://amiunique.org/), você pode verificar a precisão com que **seu** string User-Agent identifica **seu** navegador. Quanto menor for a "taxa de similaridade" resultante, quanto mais exclusivas forem as suas solicitações, mais fácil será para os servidores rastreá-lo secretamente.
 
-The User-Agent string enables many legitimate [use cases](https://github.com/WICG/ua-client-hints/blob/main/README.md#use-cases), and serves an important purpose for developers and site owners. However, it is also critical that users' privacy is protected against covert tracking methods, and sending UA information by default goes against that goal.
+A string User-Agent permite diversos [casos de uso](https://github.com/WICG/ua-client-hints/blob/main/README.md#use-cases) legítimos e serve a um propósito importante para desenvolvedores e proprietários de sites. No entanto, também é fundamental que a privacidade dos usuários seja protegida contra métodos de rastreamento secreto, e o envio de informações de UA por default vai contra esse objetivo.
 
-There's also a need to improve web compatibility when it comes to the User-Agent string. It is unstructured, so parsing it results in unnecessary complexity, which is often the cause for bugs and site compatibility issues that hurt users. These issues also disproportionately hurt users of less common browsers, as sites may have failed to test against their configuration.
+Também é necessário melhorar a compatibilidade com a web no que diz respeito à string User-Agent. Ela não é estruturada, portanto, é desnecessariamente complexo realizar seu processamento, o que costuma ser causa de bugs e problemas de compatibilidade do site que prejudicam os usuários. Esses problemas também afetam desproporcionalmente os usuários de navegadores menos comuns, pois os sites podem não conseguir testar sua configuração.
 
-## Introducing the new User-Agent Client Hints
+## Apresentando o novo User-Agent Client Hints
 
-[User-Agent Client Hints](https://github.com/WICG/ua-client-hints#explainer-reducing-user-agent-granularity) enable access to the same information but in a more privacy-preserving way, in turn enabling browsers to eventually reduce the User-Agent string's default of broadcasting everything. [Client Hints](https://tools.ietf.org/html/draft-ietf-httpbis-client-hints) enforce a model where the server must ask the browser for a set of data about the client (the hints) and the browser applies its own policies or user configuration to determine what data is returned. This means that rather than exposing **all** the User-Agent information by default, access is now managed in an explicit and auditable fashion. Developers also benefit from a simpler API - no more regular expressions!
+O [User-Agent Client Hints](https://github.com/WICG/ua-client-hints#explainer-reducing-user-agent-granularity) permite o acesso às mesmas informações, mas de uma maneira que preserva melhor a privacidade, enquanto ainda permite que os navegadores reduzam o comportamento default da string User-Agent, que é transmitir tudo. As [Client Hints](https://tools.ietf.org/html/draft-ietf-httpbis-client-hints) impõem um modelo em que o servidor precisa solicitar ao navegador um conjunto de dados sobre o cliente (as dicas/hints) e o navegador aplica suas próprias políticas ou configuração de usuário para determinar quais dados são retornados. Isto significa que, em vez de expor **todas** as informações do User-Agent por default, o acesso agora é gerenciado de maneira explícita e auditável. Os desenvolvedores também se beneficiam de uma API mais simples: não é preciso mais usar expressões regulares!
 
-The current set of Client Hints primarily describes the browser's display and connection capabilities. You can explore the details in [Automating Resource Selection with Client Hints](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints), but here's a quick refresher on the process.
+O conjunto atual de Client Hints descreve principalmente os recursos de exibição e conexão do navegador. Você pode explorar os detalhes em [Automating Resource Selection with Client Hints](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints), mas aqui está um rápido resumo do processo.
 
-The server asks for specific Client Hints via a header:
+O servidor solicita Client Hints específicas por meio de um cabeçalho:
 
 ⬇️ *Resposta do servidor*
 
@@ -83,24 +82,24 @@ Viewport-Width: 460
 Width: 230
 ```
 
-The server can choose to vary its responses, for example by serving images at an appropriate resolution.
+O servidor pode escolher variar suas respostas, por exemplo, servindo imagens numa resolução apropriada.
 
-{% Aside %} There are ongoing discussions on enabling Client Hints on an initial request, but you should consider [responsive design](/responsive-web-design-basics) or progressive enhancement before going down this route. {% endAside %}
+{% Aside %} Existem discussões em andamento sobre a ativação das Client Hints numa solicitação inicial, mas você deve primeiro considerar o [design responsivo](/responsive-web-design-basics) ou o aprimoramento progressivo antes de seguir por esse caminho. {% endAside %}
 
-User-Agent Client Hints expand the range of properties with the `Sec-CH-UA` prefix that can be specified via the `Accept-CH` server response header. For all the details, start with [the explainer](https://github.com/WICG/ua-client-hints/blob/main/README.md) and then dive into the [full proposal](https://wicg.github.io/ua-client-hints/).
+As User-Agent Client Hints ampliam a faixa de propriedades com o prefixo `Sec-CH-UA` que pode ser especificado por meio do cabeçalho de resposta do servidor `Accept-CH`. Para conhecer todos os detalhes, comece com [a explicação](https://github.com/WICG/ua-client-hints/blob/main/README.md) e, em seguida, mergulhe na [proposta completa](https://wicg.github.io/ua-client-hints/).
 
-{% Aside %} Client Hints are **only sent over secure connections**, so make sure you have [migrated your site to HTTPS](/why-https-matters). {% endAside %}
+{% Aside %} Client Hints só são **enviadas através de conexões seguras**, portanto, é necessário que você tenha realizado a [migração do seu site para HTTPS](/why-https-matters). {% endAside %}
 
-The new set of hints is available from Chromium 84, so let's explore how it all works.
+Esse novo conjunto de dicas está disponível no Chromium 84, então vamos explorar como tudo funciona.
 
-## User-Agent Client Hints from Chromium 84
+## User-Agent Client Hints do Chromium 84
 
-User-Agent Client Hints will only be enabled gradually on Chrome Stable as [compatibility concerns](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285) are resolved. To force the functionality on for testing:
+As User-Agent Client Hints só serão ativadas gradualmente no Chrome estável à medida que as [questões de compatibilidade](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285) forem resolvidas. Para forçar essa funcionalidade para testes:
 
 - Use o Chrome 84 **beta** ou equivalente.
 - Ative o `about://flags/#enable-experimental-web-platform-features` .
 
-By default, the browser returns the browser brand, significant / major version, and an indicator if the client is a mobile device:
+Por default, o navegador retorna a marca do navegador, a versão maior/principal e um indicador se o cliente for um dispositivo móvel:
 
 ⬆️ *Todos os pedidos*
 
@@ -109,29 +108,29 @@ Sec-CH-UA: "Chromium";v="84", "Google Chrome";v="84"
 Sec-CH-UA-Mobile: ?0
 ```
 
-{% Aside 'caution' %} These properties are more complex than just a single value, so [Structured Headers](https://httpwg.org/http-extensions/draft-ietf-httpbis-header-structure.html) are used for representing lists and booleans. {% endAside %}
+{% Aside 'caution' %} Essas propriedades são mais complexas do que apenas um único valor, portanto, [cabeçalhos estruturados](https://httpwg.org/http-extensions/draft-ietf-httpbis-header-structure.html) são usados para representar listas e booleanos. {% endAside %}
 
-### User-Agent response and request headers
+### Cabeçalhos User-Agent de solicitação e resposta
 
-&lt;style&gt; .w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {     width: 28ch; }  .w-table-wrapper td {   padding: 4px 8px 4px 0; } &lt;/style&gt;
+&lt;style&gt; .w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) { width: 28ch; } .w-table-wrapper td { padding: 4px 8px 4px 0; } &lt;/style&gt;
 
-⬇️ Response `Accept-CH`<br>⬆️ Request header | ⬆️ Request<br>Example value | Descrição
+⬇️ Resposta `Accept-CH`<br> ⬆️ Cabeçalho de solicitação | ⬆️ Exemplo de<br> valor de solicitação | Descrição
 --- | --- | ---
 `Sec-CH-UA` | `"Chromium";v="84",`<br>`"Google Chrome";v="84"` | Lista de marcas de navegadores e suas versões significativas.
-`Sec-CH-UA-Mobile` | `?1` | Boolean indicating if the browser is on a mobile device (`?1` for true) or not (`?0` for false).
+`Sec-CH-UA-Mobile` | `?1` | Booleano que indica se o navegador está num dispositivo móvel (`?1` é true) ou não (`?0` é false).
 `Sec-CH-UA-Full-Version` | `"84.0.4143.2"` | A versão completa do navegador.
 `Sec-CH-UA-Platform` | `"Android"` | A plataforma do dispositivo, geralmente o sistema operacional (SO).
 `Sec-CH-UA-Platform-Version` | `"10"` | A versão para a plataforma ou sistema operacional.
 `Sec-CH-UA-Arch` | `"arm"` | A arquitetura subjacente do dispositivo. Embora isso possa não ser relevante para a exibição da página, o site pode oferecer um download cujo padrão é o formato correto.
 `Sec-CH-UA-Model` | `"Pixel 3"` | O modelo do dispositivo.
 
-{% Aside 'gotchas' %} Privacy and compatibility considerations mean the value may be blank, not returned, or populated with a varying value. This is referred to as [GREASE](https://wicg.github.io/ua-client-hints/#grease). {% endAside %}
+{% Aside 'gotchas' %} Considerações sobre privacidade e compatibilidade significam que o valor pode estar em branco, não ser retornado ou preenchido com um valor variável. Isto é conhecido como [GREASE](https://wicg.github.io/ua-client-hints/#grease) . {% endAside %}
 
-### Example exchange
+### Exemplo de comunicação
 
-An example exchange would look like this:
+Um exemplo de troca de informações seria o seguinte:
 
-⬆️ *Initial request from browser*<br> The browser is requesting the `/downloads` page from the site and sends its default basic User-Agent.
+⬆️ *Solicitação inicial do navegador*<br> O navegador está solicitando a página `/downloads` do site e envia seu User-Agent básico default.
 
 ```text
 GET /downloads HTTP/1.1
@@ -141,7 +140,7 @@ Sec-CH-UA: "Chromium";v="84", "Google Chrome";v="84"
 Sec-CH-UA-Mobile: ?0
 ```
 
-⬇️ *Response from server*<br> The server sends the page back and additionally asks for the full browser version and the platform.
+⬇️ *Resposta do servidor*<br> O servidor envia a página de volta e, adicionalmente, solicita informações sobre as versões completas do navegador e da plataforma.
 
 ```text
 HTTP/1.1 200 OK
@@ -162,13 +161,13 @@ Sec-CH-UA-Platform: "Android"
 
 ### API JavaScript
 
-Alongside the headers, the User-Agent can also be accessed in JavaScript via `navigator.userAgentData`. The default `Sec-CH-UA` and `Sec-CH-UA-Mobile` header information can be accessed via the `brands` and `mobile` properties, respectively:
+Junto com os cabeçalhos, o User-Agent também pode ser acessado em JavaScript via `navigator.userAgentData`. As informações de cabeçalho `Sec-CH-UA` e `Sec-CH-UA-Mobile` podem ser acessadas por meio das propriedades `brands` e `mobile`, respectivamente:
 
 ```js
-// Log the brand data
+// Registrar os dados do produto
 console.log(navigator.userAgentData.brands);
 
-// output
+// saída
 [
   {
     brand: 'Chromium',
@@ -180,24 +179,24 @@ console.log(navigator.userAgentData.brands);
   },
 ];
 
-// Log the mobile indicator
+// Registrar o indicador móvel
 console.log(navigator.userAgentData.mobile);
 
-// output
+// saída
 false;
 ```
 
-The additional values are accessed via the `getHighEntropyValues()` call. The "high entropy" term is a reference to [information entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory)), in other words - the amount of information that these values reveal about the user's browser. As with requesting the additional headers, it's down to the browser what values, if any, are returned.
+Os valores adicionais são acessados por meio da chamada `getHighEntropyValues()` O termo "alta entropia" (high entropy) é uma referência à [entropia da informação](https://en.wikipedia.org/wiki/Entropy_(information_theory)), ou seja, a quantidade de informação que esses valores revelam sobre o navegador do usuário. Tal como acontece com a solicitação de cabeçalhos adicionais, cabe ao navegador decidir quais valores, se houver, serão retornados.
 
 ```js
-// Log the full user-agent data
+// Carregar todos os dados user-agent
 navigator
   .userAgentData.getHighEntropyValues(
     ["architecture", "model", "platform", "platformVersion",
      "uaFullVersion"])
   .then(ua => { console.log(ua) });
 
-// output
+// saída
 {
   "architecture": "x86",
   "model": "",
@@ -207,17 +206,17 @@ navigator
 }
 ```
 
-### Demo
+### Demonstração
 
-You can try out both the headers and the JavaScript API on your own device at [user-agent-client-hints.glitch.me](https://user-agent-client-hints.glitch.me).
+Você pode experimentar os cabeçalhos e a API JavaScript no seu próprio dispositivo em [user-agent-client-hints.glitch.me](https://user-agent-client-hints.glitch.me).
 
 {% Aside %} Certifique-se de usar o Chrome 84 Beta ou equivalente com `about://flags/#enable-experimental-web-platform-features` habilitados. {% endAside %}
 
-### Hint life-time and resetting
+### Duração e redefinição das dicas
 
-Hints specified via the `Accept-CH` header will be sent for the duration of the browser session or until a different set of hints are specified.
+As dicas especificadas por meio do cabeçalho `Accept-CH` serão enviadas durante a sessão do navegador ou até que um conjunto diferente de dicas seja especificado.
 
-That means if the server sends:
+Isto significa que se o servidor enviar:
 
 ⬇️ *Resposta*
 
@@ -225,7 +224,7 @@ That means if the server sends:
 Accept-CH: Sec-CH-UA-Full-Version
 ```
 
-Then the browser will send the `Sec-CH-UA-Full-Version` header on all requests for that site until the browser is closed.
+Em seguida, o navegador enviará o cabeçalho `Sec-CH-UA-Full-Version` em todas as solicitações desse site até que o navegador seja fechado.
 
 ⬆️ *Solicitações subsequentes*
 
@@ -233,7 +232,7 @@ Then the browser will send the `Sec-CH-UA-Full-Version` header on all requests f
 Sec-CH-UA-Full-Version: "84.0.4143.2"
 ```
 
-However, if another `Accept-CH` header is received then that will **completely replace** the current hints the browser is sending.
+No entanto, se outro cabeçalho `Accept-CH` for recebido, ele **substituirá completamente** as dicas atuais que o navegador está enviando.
 
 ⬇️ *Resposta*
 
@@ -247,21 +246,21 @@ Accept-CH: Sec-CH-UA-Platform
 Sec-CH-UA-Platform: "Android"
 ```
 
-The previously asked-for `Sec-CH-UA-Full-Version` **will not be sent**.
+O `Sec-CH-UA-Full-Version` solicitado anteriormente **não será enviado** .
 
-It's best to think of the `Accept-CH` header as specifying the complete set of hints desired for that page, meaning the browser then sends the specified hints for all the subresources on that page. While hints will persist to the next navigation, the site should not rely or assume they will be delivered.
+É melhor pensar no cabeçalho `Accept-CH` como uma especificação do conjunto completo de dicas desejadas para aquela página, significando que o navegador então envia as dicas especificadas para todos os sub-recursos nessa página. Embora as dicas persistam até a próxima navegação, o site não deve confiar ou presumir que elas serão entregues.
 
-{% Aside 'success' %} Always ensure you can still deliver a meaningful experience without this information. This is to enhance the user experience, not define it. That's why they're called "hints" and not "answers" or "requirements"! {% endAside%}
+{% Aside 'success' %} Sempre garanta que você ainda possa proporcionar uma experiência significativa sem essas informações. Essas informações servem para aprimorar a experiência do usuário, não para defini-la. É por isso que são chamados de "dicas" e não "respostas" ou "requisitos"! {% endAside%}
 
-You can also use this to effectively clear all hints being sent by the browser by sending a blank `Accept-CH` in the response. Consider adding this anywhere that the user is resetting preferences or signing out of your site.
+Você também pode limpar efetivamente todas as dicas enviadas pelo navegador, enviando um `Accept-CH` em branco na resposta. Considere utilizar isto sempre que o usuário estiver redefinindo as preferências ou saindo do seu site.
 
 Esse padrão também corresponde ao modo como as dicas funcionam por meio da tag `<meta http-equiv="Accept-CH" …>` As dicas solicitadas só serão enviadas em solicitações iniciadas pela página e não em qualquer navegação subsequente.
 
-### Hint scope and cross-origin requests
+### Escopo das dicas e solicitações de origem cruzada
 
-By default, Client Hints will only be sent on same-origin requests. That means if you ask for specific hints on `https://example.com`, but the resources you want to optimize are on `https://downloads.example.com` they **will not** receive any hints.
+Por default, as dicas do cliente serão enviadas apenas em solicitações da mesma origem. Isto significa que se você solicitar dicas específicas em `https://example.com`, mas os recursos que deseja otimizar estiverem em `https://downloads.example.com` eles **não** receberão nenhuma dica.
 
-To allow hints on cross-origin requests each hint and origin must be specified by a `Feature-Policy` header. To apply this to a User-Agent Client Hint, you need to lowercase the hint and remove the `sec-` prefix. For example:
+Para permitir dicas em solicitações de origem cruzada, cada dica e origem deve ser especificada por um cabeçalho `Feature-Policy`. Para aplicar isso a uma User-Agent Client Hint, você precisa colocar a dica em minúsculas e remover o prefixo `sec-` Por exemplo:
 
 ⬇️ *Resposta de `example.com`*
 
@@ -283,21 +282,21 @@ Sec-CH-UA-Platform: "Android"
 DPR: 2
 ```
 
-## Where to use User-Agent Client Hints?
+## Onde usar User-Agent Client Hints?
 
-The quick answer is that you should refactor any instances where you are parsing either the User-Agent header or making use of any of the JavaScript calls that access the same information (i.e. `navigator.userAgent`, `navigator.appVersion`, or `navigator.platform`) to make use of User-Agent Client Hints instead.
+A resposta rápida é que você deve refatorar quaisquer instâncias em que você estiver processando o cabeçalho User-Agent ou usando alguma chamada JavaScript que acessa as mesmas informações (por exemplo, `navigator.userAgent`, `navigator.appVersion` ou `navigator.platform`) e alterar o código para usar User-Agent Client Hints.
 
-Taking this a step further, you should re-examine your use of User-Agent information, and replace it with other methods whenever possible. Often, you can accomplish the same goal by making use of progressive enhancement, feature detection, or [responsive design](/responsive-web-design-basics). The base problem with relying on the User-Agent data is that you are always maintaining a mapping between the property you're inspecting and the behavior it enables. It's a maintenance overhead to ensure that your detection is comprehensive and remains up-to-date.
+Em seguida, você deve reexaminar o uso das informações do User-Agent e substituí-las por outros métodos sempre que possível. Frequentemente, você pode alcançar o mesmo objetivo através do aprimoramento progressivo, detecção de recursos ou [design responsivo](/responsive-web-design-basics). O problema fundamental de confiar nos dados do User-Agent é que você sempre precisa manter um mapeamento entre a propriedade que está inspecionando e o comportamento que ela habilita. É um overhead de manutenção para garantir que sua detecção seja abrangente e permaneça sempre atualizada.
 
 Com essas advertências em mente, o [repositório User-Agent Client Hints lista alguns casos de uso válidos](https://github.com/WICG/ua-client-hints#use-cases) para sites.
 
-## What happens to the User-Agent string?
+## O que vai acontecer com a string User-Agent?
 
-The plan is to minimize the ability for covert tracking on the web by reducing the amount of identifying information exposed by the existing User-Agent string while not causing undue disruption on existing sites. Introducing User-Agent Client Hints now gives you a chance to understand and experiment with the new capability, before any changes are made to User-Agent strings.
+O plano é minimizar a capacidade de rastreamento secreto na web, reduzindo a quantidade de informações de identificação exposta pela string User-Agent existente, sem introduzir problemas nos sites existentes. A Introdução do User-Agent Client Hints lhe permite entender e experimentar o novo recurso, antes que qualquer alteração seja feita nas strings do User-Agent.
 
-[Eventually](https://groups.google.com/a/chromium.org/d/msg/blink-dev/-2JIRNMWJ7s/u-YzXjZ8BAAJ), the information in the User-Agent string will be reduced so it maintains the legacy format while only providing the same high-level browser and significant version information as per the default hints. In Chromium, this change has been deferred until at least 2021 to provide additional time for the ecosystem to evaluate the new User Agent Client Hints capabilities.
+[Eventualmente](https://groups.google.com/a/chromium.org/d/msg/blink-dev/-2JIRNMWJ7s/u-YzXjZ8BAAJ), as informações da string User-Agent serão reduzidas para manter o formato legado, enquanto fornece apenas as mesmas informações de navegador e versão significativas de acordo com as dicas default. No Chromium, essa mudança foi adiada até pelo menos 2021 para dar mais tempo para o ecossistema avaliar as novas possibilidades das User Agent Client Hints.
 
-You can test a version of this by enabling the `about://flags/#reduce-user-agent` flag from Chrome 93 (Note: this flag was named `about://flags/#freeze-user-agent` in versions Chrome 84 - 92). This will return a string with the historical entries for compatibility reasons, but with sanitized specifics. For example, something like:
+Você pode testar uma versão desse recurso ativando o `about://flags/#reduce-user-agent` do Chrome 93 (Observação: este sinalizador chama-se `about://flags/#freeze-user-agent` nas versões Chrome 84 - 92). Isto retornará uma string com as entradas históricas por motivos de compatibilidade, mas com especificações higienizadas. Por exemplo, algo como:
 
 ```text
 Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.0.0 Mobile Safari/537.36
