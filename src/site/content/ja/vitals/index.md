@@ -170,7 +170,7 @@ Core Web Vitals に関してはフィールド データの測定が何よりも
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/chrome-devtools">           Chrome DevTools</a></td>
+        <td><a href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a></td>
         <td>✔</td>
         <td>✘ (代わりに <a href="/tbt/">TBT</a> を使用してください)</td>
         <td>✔</td>
@@ -191,7 +191,7 @@ Core Web Vitals に関してはフィールド データの測定が何よりも
 
 サイトのパフォーマンスは、ユーザーが使用するデバイスの性能やネットワークの状態、ユーザーのデバイス上での別プロセスの実行状況、そしてユーザーによるページの操作方法に応じて大きく変化します。実際に Core Web Vitals の各指標のスコアは、ユーザーの操作に影響を受けます。正確な全体像を把握することができるのは、実際のユーザー環境での測定のみです。
 
-### Recommendations for improving your scores
+### スコアを改善するための推奨事項
 
 Core Web Vitals の測定によって改善点を見つけたら、次のステップは最適化です。以下のガイドでは、ページを最適化するために必要となる具体的な推奨事項を、Core Web Vitals の各指標ごとに紹介しています。
 
