@@ -19,7 +19,7 @@ tags:
 
 [真实用户监控](https://en.wikipedia.org/wiki/Real_user_monitoring) (RUM) 数据，也称实际数据，可以捕获网站真实用户的性能体验。Google 用 RUM 数据来确定网站是否符合[核心 Web 指标建议阈值](/vitals/)。
 
-### Getting started
+### 入门
 
 如果您还未设置 RUM，那么以下工具将快速为您提供网站实际性能的相关数据。这些工具都基于相同的底层数据集（[Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)），但用例略有不同：
 
@@ -29,7 +29,7 @@ tags:
 
 值得注意的是，虽然上方列出的工具非常适合作为 Web 指标的“入门”测量工具，但这些工具在其他情况下也十分有用。特别要指出的是，CrUX 和 PSI 都可作为 API 使用，还可用于[构建仪表板](https://dev.to/chromiumdev/a-step-by-step-guide-to-monitoring-the-competition-with-the-chrome-ux-report-4k1o)和其他报告。
 
-### Collecting RUM data
+### 收集 RUM 数据
 
 尽管基于 CrUX 的工具是调查 Web 指标性能的良好开端，但我们强烈建议您使用自己的 RUM 来对性能数据进行补充。您自己收集的 RUM 数据可以针对您网站的性能提供更详细、即时的反馈，因而更加易于识别问题和测试可能的解决方案。
 
@@ -41,7 +41,7 @@ tags:
 
 如果您没有 RUM 供应商，那么可以通过使用[`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)来扩充您现有的分析手段，从而对这些指标进行收集和报告。以下内容对该方法进行了更详细的解释。
 
-### The web-vitals JavaScript library
+### web-vitals JavaScript 库
 
 如果您正在为 Web 指标搭建和实现自己的 RUM，那么收集 Web 指标测量值最简单的方法是使用[`web-vitals`](https://github.com/GoogleChrome/web-vitals) JavaScript 库。`web-vitals`是一个小型的模块化库 (约 1KB)，可以提供一个便捷的 API 来为每个[可实际测量的](/user-centric-performance-metrics/#in-the-field) Web 指标进行收集和报告工作。
 
@@ -49,7 +49,7 @@ Web 指标的构成指标并非都由浏览器的内置性能 API 直接公开�
 
 如需进一步了解执行`web-vitals`的更多相关信息，请参考[文档](https://github.com/GoogleChrome/web-vitals)和[实测 Web 指标的最佳实践](/vitals-field-measurement-best-practices/)指南。
 
-### Data aggregation
+### 数据聚合
 
 对`web-vitals`收集的测量值进行报告至关重要。如果在测量数据后不进行报告，那么您就无法看到这些数据。 `web-vitals`文档包含的一些示例说明了如何将数据发送到[一个通用 API 端点](https://github.com/GoogleChrome/web-vitals#send-the-results-to-an-analytics-endpoint)、[Google 分析](https://github.com/GoogleChrome/web-vitals#send-the-results-to-google-analytics)或[ Google 跟踪代码管理器](https://github.com/GoogleChrome/web-vitals#send-the-results-to-google-tag-manager)。
 
@@ -57,7 +57,7 @@ Web 指标的构成指标并非都由浏览器的内置性能 API 直接公开�
 
 在考虑使用哪种工具时，思考谁会需要访问数据往往十分有帮助。当整个公司（而非单个部门）都希望提高绩效时，企业通常会取得最高的绩效。请参阅[跨功能修复网站速度](/fixing-website-speed-cross-functionally/)，了解如何获得不同部门的支持。
 
-### Data interpretation
+### 数据解读
 
 在分析性能数据时，留意分布的尾部数据十分重要。RUM 数据经常显示出非常大的性能差异，有些用户的速度体验很快，而有些用户的速度体验很慢。但是，使用中位数来汇总数据就会很轻易地掩盖掉这种特性。
 
@@ -67,7 +67,7 @@ Web 指标的构成指标并非都由浏览器的内置性能 API 直接公开�
 
 [实验室数据](/user-centric-performance-metrics/#in-the-lab)，也称为合成数据，是从受控环境，而非实际用户中收集的数据。与 RUM 数据不同，实验室数据可以在预上线环境中进行收集，因此可以整合到开发者工作流程和持续集成过程中。收集合成数据的工具包括灯塔和 WebPageTest 网页性能测试工具等。
 
-### Considerations
+### 注意事项
 
 RUM 数据和实验室数据之间始终会存在差异，特别是在实验室环境的网络条件、设备类型或地理位置与用户相对应的信息之间存在显著差异的情况下。但是，在收集有关 Web 指标的实验室数据时，尤为需要注意以下几条具体注意事项：
 
