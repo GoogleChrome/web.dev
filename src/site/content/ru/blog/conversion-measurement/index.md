@@ -27,7 +27,7 @@ tags:
 
 {% Aside %} This API is part of the Privacy Sandbox, a series of proposals to satisfy third-party use cases without third-party cookies or other cross-site tracking mechanisms. See [Digging into the Privacy Sandbox](/digging-into-the-privacy-sandbox) for an overview of all the proposals. {% endAside %}
 
-## Glossary
+## Глоссарий
 
 - **Adtech-платформы**: компании, которые предоставляют программное обеспечение и инструменты, позволяющие брендам или агентствам таргетировать, доставлять и анализировать свою цифровую рекламу.
 - **Рекламодатели**: компании, которые оплачивают рекламу.
@@ -43,7 +43,7 @@ tags:
 
 ## Общие сведения об API
 
-### Why is this needed?
+### Зачем это нужно?
 
 Сегодня для измерения конверсии рекламы часто используются [сторонние файлы cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies). **Однако браузеры ограничивают доступ к ним.**
 
@@ -60,7 +60,7 @@ Chrome планирует [отказаться от поддержки стор
 
 This API is at an **early experimental stage**. What's available as an origin trial is the **first iteration** of the API. Things may change substantially in [future iterations](#use-cases).
 
-### Only clicks
+### Только клики
 
 Эта версия API поддерживает только **измерение конверсий по кликам**, а [измерение конверсий по показам](https://github.com/WICG/conversion-measurement-api/blob/main/event_attribution_reporting.md) находится в стадии общедоступной инкубации.
 
@@ -101,15 +101,15 @@ Event Conversion Measurement API может поддерживаться:
 
 Подробности о текущем статусе этой функции Chrome смотрите [здесь](https://chromestatus.com/features/6412002824028160).
 
-### Standardization
+### Стандартизация
 
 Разработка этого API ведется открыто в группе Web Platform Incubator Community Group ([WICG](https://www.w3.org/community/wicg/)). Он доступен для экспериментов в Chrome.
 
-### Similar APIs
+### Похожие API
 
 WebKit, движок веб-браузера Safari, предлагает похожее решение под названием [Private Click Measurement](https://github.com/privacycg/private-click-measurement). Над ним работает группа Privacy Community Group ([PrivacyCG](https://www.w3.org/community/privacycg/)).
 
-## How this API preserves user privacy
+## Как этот API сохраняет конфиденциальность пользователей
 
 С помощью этого API можно измерять конверсии, сохраняя конфиденциальность пользователей, так как их нельзя будет узнать на разных сайтах. Это реализовано благодаря **ограничениям данных**, **зашумлению данных конверсии** и механизмам **управления временем отправки отчетов**.
 
@@ -142,7 +142,7 @@ WebKit, движок веб-браузера Safari, предлагает пох
 - К клику на объявлении можно привязать 64-битный идентификатор.
 - К событию конверсии можно привязать только 3 бита данных конверсии. 3 бита могут соответствовать целочисленному значению от 0 до 7. Это небольшой объем данных, но вполне достаточный для того, чтобы рекламодатели смогли понять, где лучше потратить свой рекламный бюджет в будущем (например, путем обучения моделей данных).
 
-{% Aside %} The click data and conversion data are never exposed to a JavaScript environment in the same context. {% endAside %}
+{% Aside %} Данные о кликах и конверсиях никогда не отображаются в среде JavaScript в одном и том же контексте. {% endAside %}
 
 #### Без альтернативы сторонним cookie
 
@@ -166,16 +166,16 @@ WebKit, движок веб-браузера Safari, предлагает пох
   <table class="w-table--top-align">
     <thead>
       <tr>
-        <th>Data</th>
-        <th>Size</th>
-        <th>Example</th>
+        <th>Данные</th>
+        <th>Размер</th>
+        <th>Пример</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Данные о клике (атрибут <code>impressiondata</code>)</td>
-        <td>64 bits</td>
-        <td>An ad ID or click ID</td>
+        <td>64 бит</td>
+        <td>Идентификатор объявления или идентификатор клика</td>
       </tr>
       <tr>
         <td>Данные о конверсии</td>
@@ -209,7 +209,7 @@ WebKit, движок веб-браузера Safari, предлагает пох
     </thead>
     <tbody>
       <tr>
-        <td>30 days, the default and maximum value</td>
+        <td>30 дней, значение по умолчанию и максимальное значение</td>
         <td>
           <ul>
             <li>через 2 дня после клика на объявлении</li>
@@ -258,7 +258,7 @@ WebKit, движок веб-браузера Safari, предлагает пох
 
 See [Sending Scheduled Reports](https://github.com/WICG/conversion-measurement-api#sending-scheduled-reports) for more details on timing.
 
-## Example
+## Пример
 
 {% Banner 'info', 'body' %} To see this in action, try out the [demo](https://goo.gle/demo-event-level-conversion-measurement-api) ⚡️ and see the corresponding [code](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement). {% endBanner %}
 
@@ -291,9 +291,9 @@ See [Sending Scheduled Reports](https://github.com/WICG/conversion-measurement-a
   <table class="w-table--top-align">
     <thead>
       <tr>
-        <th>Attribute</th>
+        <th>Атрибут</th>
         <th>Значение по умолчанию, максимум и минимум</th>
-        <th>Example</th>
+        <th>Пример</th>
       </tr>
     </thead>
     <tbody>
@@ -301,7 +301,8 @@ See [Sending Scheduled Reports](https://github.com/WICG/conversion-measurement-a
         <td>
 <code>impressiondata</code> (обязательный): <b>64-битный</b> идентификатор, который привязывается к клику на объявлении.</td>
         <td>(нет значения по умолчанию)</td>
-        <td>A dynamically generated click ID  such as a 64-bit integer:           <code>200400600</code>         </td>
+        <td>Динамически генерируемый идентификатор клика, например 64-битное целое число: <code>200400600</code>
+</td>
       </tr>
       <tr>
         <td>
@@ -313,8 +314,9 @@ See [Sending Scheduled Reports](https://github.com/WICG/conversion-measurement-a
       <tr>
         <td>
 <code>impressionexpiry</code> (необязательный): время отсечки в миллисекундах, до которого конверсии могут регистрироваться для данного объявления.</td>
-        <td>           <code>2592000000</code> = 30 days (in milliseconds).<br><br>           Maximum: 30 days (in milliseconds).<br><br>           Minimum: 2 days (in milliseconds).         </td>
-        <td>Ten days after click: <code>864000000</code>
+        <td>
+<code>2592000000</code> = 30 дней (в миллисекундах).<br><br> Максимум: 30 дней (в миллисекундах).<br><br> Минимум: 2 дня (в миллисекундах).</td>
+        <td>Через десять дней после клика: <code>864000000</code>
 </td>
       </tr>
       <tr>
@@ -403,7 +405,7 @@ app.get('/conversion', (req, res) => {
 
 Для этого браузер планирует отправку **отчета** о конверсии — большого массива двоичных данных, содержащего данные о кликах (с сайта издателя) и данные о конверсиях (от рекламодателя). В этом примере пользователь совершил конверсию через день после клика. Таким образом, отправка отчета запланирована на следующий день, то есть через два дня после клика, если браузер запущен.
 
-### Sending the report (steps 10 and 11)
+### Отправка отчета (шаги 10 и 11)
 
 <figure class="w-figure">{% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="Диаграмма: браузер отправляет отчет", width = "800", height = "533" %}</figure>
 
@@ -432,7 +434,7 @@ app.get('/conversion', (req, res) => {
 
 По истечении времени `impressionexpiry` любые конверсии для этого клика на объявлении перестанут учитываться, а сам клик на объявлении будет удален из хранилища браузера.
 
-## Use cases
+## Случаи применения
 
 ### Что поддерживается в текущей версии
 
@@ -460,7 +462,7 @@ app.get('/conversion', (req, res) => {
 
 - Данный API находится на ранней экспериментальной стадии. В будущих версиях API может претерпеть существенные изменения, некоторые из которых перечислены ниже. Так как цель этого API — измерять конверсии при сохранении конфиденциальности пользователей, в него могут вноситься любые изменения, способствующие более эффективному решению этой задачи.
 - Название API и атрибутов могут меняться.
-- Click data and conversion data may not require encoding.
+- Данные о кликах и конверсиях могут не требовать кодирования.
 - Ограничение в 3 бита для данных о конверсии может увеличиться или уменьшиться.
 - [Могут быть добавлены дополнительные функции](#what-is-not-supported-in-this-iteration) и **дополнительные средства защиты конфиденциальности** (зашумление, уменьшение количества бит или иные ограничения), если это потребуется для новых функций.
 
@@ -478,7 +480,7 @@ app.get('/conversion', (req, res) => {
 
 If you're planning to experiment with the API (locally or with end users), see [Using the conversion measurement API](/using-conversion-measurement).
 
-### Share your feedback
+### Поделитесь своим мнением
 
 **Ваш отзыв очень важен**, так как необходимые вам варианты использования могут быть реализованы в новых API для измерения конверсии, что принесет пользу и другим разработчикам.
 
