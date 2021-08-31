@@ -1,5 +1,5 @@
 ---
-title: SameSite cookies explained
+title: SameSite 쿠키 설명
 subhead: 사이트 간 쿠키를 명시적으로 표시하는 방법을 학습하여 사이트를 보호하세요.
 authors:
   - rowan_m
@@ -13,13 +13,13 @@ tags:
   - cookies
   - chrome80
 feedback:
-  - api
+  - API
 ---
 
 {% Aside %} 이 문서는 `SameSite` 쿠키 특성 변경에 관한 시리즈의 일부입니다.
 
-- [SameSite cookies explained](/samesite-cookies-explained/)
-- [SameSite cookies recipes](/samesite-cookie-recipes/)
+- [SameSite 쿠키 설명](/samesite-cookies-explained/)
+- [SameSite 쿠키 레시피](/samesite-cookie-recipes/)
 - [계획적인 Same-Site](/schemeful-samesite) {% endAside %}
 
 쿠키는 웹 사이트에 영구적 상태를 추가하는 데 사용할 수 있는 방법 중 하나입니다. 수년에 걸쳐 쿠키의 기능은 성장하고 발전했지만 몇 가지 고질적인 문제가 있는 플랫폼으로 남아 있습니다. 이 문제를 해결하기 위해 브라우저(Chrome, Firefox 및 Edge 포함)는 개인 정보의 보호 수준을 높이는 기본값을 적용하도록 동작을 변경하고 있습니다.
@@ -34,7 +34,7 @@ Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 
 <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="3개의 쿠키가 응답으로 서버에서 브라우저로 전송되고 있습니다", width="800", height="276", style="max-width: 60vw" %}<figcaption class="w-figcaption"> 서버는 <code>Set-Cookie</code> 헤더를 사용하여 쿠키를 설정합니다.</figcaption></figure>
 
-When your reader views a page that meets those requirements, i.e. they're on a secure connection and the cookie is less than a month old, then their browser will send this header in its request:
+독자가 이러한 요구 사항을 충족하는 페이지를 볼 때, 즉 보안 연결에 있고 쿠키가 한 달 미만인 경우 브라우저는 요청에 다음 헤더를 보냅니다.
 
 ```text
 Cookie: promo_shown=1
@@ -60,7 +60,7 @@ Cookie: promo_shown=1
 
 인기 있는 사이트에서 이 기능을 시도하면 대부분이 3개 이상의 쿠키를 설정한다는 것을 알 수 있을 것입니다. 대부분의 경우 이러한 쿠키는 해당 도메인에 대한 각각의 요청에 대해 전송되며 이는 여러 의미를 갖습니다. 사용자에 대해 업로드 대역폭은 다운로드보다 제한적인 경우가 많으므로 모든 아웃바운드 요청에 대한 오버헤드로 인해 첫 바이트까지의 시간이 지연됩니다. 설정하는 쿠키의 수와 크기에서 보수적 입장을 유지하세요. `Max-Age` 특성을 사용하여 쿠키가 필요 이상으로 오래 유지되지 않도록 하세요.
 
-## What are first-party and third-party cookies?
+## 자사 및 타사 쿠키란 무엇입니까?
 
 이전에 보았던 동일한 사이트로 돌아가면 현재 방문 중인 도메인뿐만 아니라 다양한 도메인에 대한 쿠키가 있음을 알 수 있습니다. 현재 사이트의 도메인, 즉 브라우저의 주소 표시줄에 표시되는 도메인과 일치하는 쿠키를 **자사** 쿠키라고 합니다. 마찬가지로 현재 사이트가 아닌 다른 도메인의 쿠키를 **타사** 쿠키라고 합니다. 이것은 절대적인 레이블은 아니며 사용자의 컨텍스트에 상대적입니다. 동일한 쿠키가 사용자가 당시 어느 사이트에 있는 지에 따라 자사 또는 타사가 될 수 있습니다.
 
@@ -112,7 +112,7 @@ Set-Cookie: promo_shown=1; SameSite=Strict
 <p>Read the <a href="https://blog.example/blog/cat.html">article</a>.</p>
 ```
 
-And the cookie has been set as so:
+그리고 쿠키는 다음과 같이 설정되었습니다.
 
 ```text
 Set-Cookie: promo_shown=1; SameSite=Lax
@@ -237,10 +237,10 @@ Chrome, Safari 및 UC 브라우저를 비롯한 이전 버전의 여러 브라�
 
 {% endAside %}
 
-## `SameSite` cookie recipes
+## `SameSite` 쿠키 레시피
 
 `SameSite=None`에 대한 이러한 변경 사항과 브라우저 동작의 차이를 성공적으로 처리하도록 쿠키를 업데이트하는 방법에 대한 자세한 내용은 후속 게시물, [SameSite 쿠키 레시피](/samesite-cookie-recipes)를 참조하세요.
 
-*Kind thanks for contributions and feedback from Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner, and Vivek Sekhar*
+*Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner, Vivek Sekhar의 기여와 피드백에 감사드립니다.*
 
 *[Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)의 [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)가 제공한 쿠키 영웅 이미지*
