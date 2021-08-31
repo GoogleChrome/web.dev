@@ -34,7 +34,7 @@ tags:
 
 累积布局偏移 (CLS) 指标通过测量真实用户体验中发生偏移的频率来帮助您解决这一问题。
 
-## What is CLS?
+## 什么是 CLS？
 
 CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-unexpected-layout-shifts)布局偏移中最大一连串的*布局偏移分数*。
 
@@ -58,7 +58,7 @@ CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-
 为了提供良好的用户体验，网站应该努力将 CLS 分数控制在**&nbsp;0.1 **或以下。为了确保您能够在大部分用户的访问期间达成建议目标值，一个良好的测量阈值为页面加载的**第 75 个百分位数**，且该阈值同时适用于移动和桌面设备。
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好的 CLS 值低于 0.1，较差的值大于 0.25 并且介于两者之间的任何东西都需要改进", width="400", height="300" , class="w-screenshot w-screenshot--filled width-full" %}</source></picture>
 
 {% Aside %}要想详细了解这些建议值背后的研究和方法论，请参阅：[定义核心 Web 指标的指标阈值](/defining-core-web-vitals-thresholds/) {% endAside %}
 
@@ -86,7 +86,7 @@ CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-
 
 在上图中，有一个元素在一帧中占据了一半的可视区域。接着，在下一帧中，元素下移了可视区域高度的 25%。红色虚线矩形框表示两帧中元素的可见区域集合，在本示例中，该集合占总可视区域的 75%，因此其*影响分数*为`0.75` 。
 
-### Distance fraction
+### 距离分数
 
 布局偏移分数计算公式的另一部分测量不稳定元素相对于可视区域位移的距离。*距离分数*指的是任何*不稳定元素*在一帧中位移的最大距离（水平或垂直）除以可视区域的最大尺寸维度（宽度或高度，以较大者为准）。
 
@@ -112,7 +112,7 @@ CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-
 
 *距离分数*由紫色箭头表示。绿色框向下移动的距离大约为可视区域的 14%，因此*距离分数*为`0.14` 。
 
-The layout shift score is `0.5 x 0.14 = 0.07`.
+布局偏移分数是`0.5 x 0.14 = 0.07` 。
 
 最后一个示例说明了多个*不稳定元素*的情况：
 
@@ -126,7 +126,7 @@ The layout shift score is `0.5 x 0.14 = 0.07`.
 
 箭头表示*不稳定元素*相对于起始位置的位移距离。由蓝色箭头表示的“Zebra”元素位移的距离最大，约为可视区域高度的 30%。因此本示例中的*距离分数*为`0.3` 。
 
-The layout shift score is `0.38 x 0.3 = 0.1172`.
+布局偏移分数是`0.38 x 0.3 = 0.1172` 。
 
 ### 预期布局偏移 vs. 意外布局偏移
 
@@ -142,7 +142,7 @@ The layout shift score is `0.38 x 0.3 = 0.1172`.
 
 {% Aside '请注意' %}`hadRecentInput`标志仅适用于不连续输入事件，如轻触、点击或按键操作。滚动、拖动或捏拉缩放手势等连续性交互操作不算作“最近输入”。更多详情请参阅[布局不稳定性规范](https://github.com/WICG/layout-instability#recent-input-exclusion)。{% endAside %}
 
-#### Animations and transitions
+#### 动画和过渡
 
 动画和过渡如果做得好，确实是一个在更新页面内容时不让用户感到突兀的好方法。页面内容突然发生意外偏移几乎无一例外会造成糟糕的用户体验。但如果内容从一个位置逐步又自然地移动到下一个位置，这通常有助于用户更好地明白当前状况，并引导他们适应状态之间的变化。
 
@@ -151,7 +151,7 @@ CSS [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)属
 - 用`transform: scale()`来替代和调整`height`和`width`属性。
 - 如需使元素能够四处移动，可以用`transform: translate()`来替代和调整`top`、`right`、`bottom`或`left`属性。
 
-## How to measure CLS
+## 如何测量 CLS
 
 CLS 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量或[实际](/user-centric-performance-metrics/#in-the-field)测量，并且可以在以下工具中使用：
 
@@ -159,18 +159,18 @@ CLS 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 ### 实测工具
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [PageSpeed Insights 网页速度测量工具](https://developers.google.com/speed/pagespeed/insights/)
 - [搜索控制台（核心 Web 指标报告）](https://support.google.com/webmasters/answer/9205520)
-- [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
+- [`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)
 
-### Lab tools
+### 实验室工具
 
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Chrome 开发者工具](https://developers.google.com/web/tools/chrome-devtools/)
+- [灯塔](https://developers.google.com/web/tools/lighthouse/)
 - [WebPageTest 网页性能测试工具](https://webpagetest.org/)
 
-### Measure CLS in JavaScript
+### 在 JavaScript 中测量 CLS
 
 要在 JavaScript 中测量 CLS，您可以使用[布局不稳定性 API](https://github.com/WICG/layout-instability)。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)来侦听意外`layout-shift`条目、将条目按会话分组、记录最大会话值，并在最大会话值发生改变时更新记录。
 
@@ -223,9 +223,9 @@ new PerformanceObserver((entryList) => {
 
 在大多数情况下，页面卸载时的当前 CLS 值就是该页面的最终 CLS 值，但有一些重要的例外：
 
-The following section lists the differences between what the API reports and how the metric is calculated.
+以下部分列出了 API 报告的内容与指标计算方式之间的差异。
 
-#### Differences between the metric and the API
+#### 指标和 API 之间的差异
 
 - 如果页面是在后台加载的，或者页面在浏览器绘制任何内容之前被转移到后台，那么该页面不应该报告任何 CLS 值。
 - 如果页面通过[往返缓存](/bfcache/#impact-on-core-web-vitals)恢复，则该页面的 CLS 值应重置为零，因为这对用户来说是多次不同的页面访问体验。
@@ -248,7 +248,7 @@ import {getCLS} from 'web-vitals';
 getCLS(console.log);
 ```
 
-You can refer to [the source code for `getCLS)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts) for a complete example of how to measure CLS in JavaScript.
+您可以参考[`getCLS)`的源代码](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts)，了解如何在 JavaScript 中测量 CLS 的完整示例。
 
 {% Aside %}在某些情况下（例如跨域 iframe），CLS 无法在 JavaScript 中进行测量。详情请参阅`web-vitals`库的[局限性](https://github.com/GoogleChrome/web-vitals#limitations)部分。 {% endAside %}
 
@@ -262,7 +262,7 @@ You can refer to [the source code for `getCLS)`](https://github.com/GoogleChrome
 
 如需深入了解如何改进 CLS，请参阅[优化 CLS ](/optimize-cls/)和[调试布局偏移](/debug-layout-shifts)。
 
-## Additional resources
+## 其他资源
 
 - Google 发布商代码关于[最小化布局偏移](https://developers.google.com/doubleclick-gpt/guides/minimize-layout-shift)的指南
 - [安妮·沙利文 (Annie Sullivan) ](https://anniesullie.com/)与[史蒂夫·科比斯 (Steve Kobes) ](https://kobes.ca/)在[ #PerfMatters ](https://perfmattersconf.com/)上发表的演讲：[《了解累积布局偏移》](https://youtu.be/zIJuY-JCjqw)(2020)
