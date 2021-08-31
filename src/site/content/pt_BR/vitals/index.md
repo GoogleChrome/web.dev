@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Web Vitals
-description: Essential metrics for a healthy site
+description: Métricas essenciais para um site saudável
 hero: image/admin/BHaoqqR73jDWe6FL2kfw.png
 authors:
   - philipwalton
@@ -15,7 +15,7 @@ tags:
 
 A otimização da qualidade da experiência do usuário é a chave para o sucesso no longo prazo de qualquer site na web. Seja você proprietário de uma empresa, comerciante ou desenvolvedor, as Web Vitals podem ajudá-lo a quantificar a experiência do seu site e identificar oportunidades de melhoria.
 
-## Overview
+## Visão geral
 
 As Web Vitals são uma iniciativa do Google para fornecer orientação unificada em relação a sinais de qualidade essenciais que visam proporcionar uma ótima experiência ao usuário na web.
 
@@ -41,7 +41,7 @@ As ferramentas que avaliam a conformidade das Core Web Vitals devem considerar q
 
 {% Aside %} Para saber mais sobre a pesquisa e a metodologia por trás dessas recomendações, consulte: [Definindo os limites das Core Web Vitals](/defining-core-web-vitals-thresholds/) {% endAside %}
 
-### Tools to measure and report Core Web Vitals
+### Ferramentas para medir e relatar Core Web Vitals
 
 O Google acredita que as Core Web Vitals são essenciais para todas as experiências na web. Como resultado, está empenhado em disponibilizar essas métricas [em todas as suas ferramentas populares](/vitals-tools/). As seções a seguir detalham quais ferramentas suportam as Core Web Vitals.
 
@@ -64,7 +64,7 @@ O [Relatório de experiência do usuário Chrome](https://developers.google.com/
       <td>✔</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/speed/pagespeed/insights/">         PageSpeed Insights</a></td>
+      <td><a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
@@ -113,7 +113,7 @@ Um exemplo é o [Web Vitals Report](https://github.com/GoogleChromeLabs/web-vita
 
 Você também pode relatar sobre cada uma das Core Web Vitals sem escrever nenhum código através do uso da [Web Vitals Chrome Extension](https://github.com/GoogleChrome/web-vitals-extension). Esta extensão usa a biblioteca [web-vitals](https://github.com/GoogleChrome/web-vitals) para medir cada uma dessas métricas e mostrá-las aos usuários enquanto navegam na web.
 
-This extension can be helpful in understanding the performance of your own sites, your competitor's sites, and the web at large.
+Essa extensão pode ser útil para entender o desempenho de seus próprios sites, dos sites de seus concorrentes e da web em geral.
 
 <div class="w-table-wrapper">
   <table>
@@ -133,7 +133,7 @@ This extension can be helpful in understanding the performance of your own sites
         <td>✔</td>
       </tr>
       <tr>
-        <td><a href="https://github.com/GoogleChrome/web-vitals-extension">           Web Vitals Extension</a></td>
+        <td><a href="https://github.com/GoogleChrome/web-vitals-extension">Extensão Web Vitals</a></td>
         <td>✔</td>
         <td>✔</td>
         <td>✔</td>
@@ -170,7 +170,7 @@ As seguintes ferramentas podem ser usadas para medir as Core Web Vitals num ambi
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/chrome-devtools">           Chrome DevTools</a></td>
+        <td><a href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a></td>
         <td>✔</td>
         <td>✘ (use <a href="/tbt/">TBT</a>)</td>
         <td>✔</td>
@@ -191,7 +191,7 @@ Embora as medições em laboratório sejam uma parte essencial da entrega de ót
 
 O desempenho de um site pode variar drasticamente com base nos recursos do dispositivo do usuário, suas condições de rede, quais outros processos podem estar em execução no dispositivo e como esses processos estão interagindo com a página. Na verdade, cada uma das métricas das Core Web Vitals pode ter sua pontuação afetada pela interação do usuário. Somente a medição em campo é capaz de capturar com precisão o cenário completo.
 
-### Recommendations for improving your scores
+### Recomendações para melhorar suas pontuações
 
 Depois de medir as Core Web Vitals e identificar as áreas que podem ser melhoradas, a próxima etapa é otimizar. Os guias a seguir oferecem recomendações específicas sobre como otimizar suas páginas para cada uma das Core Web Vitals:
 
