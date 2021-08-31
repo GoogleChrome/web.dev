@@ -1,0 +1,27 @@
+name: Presubmit
+on:
+  pull_request:
+    types: [labeled,opened,reopened,synchronize]
+jobs:
+  presubmit:
+    runs-on: ubuntu-latest
+    name:
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check if presubmit
+        uses: ./.github/actions/presubmit
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          is_presubmit: ${{ contains(github.event.pull_request.labels.*.name, 'presubmit') }}
+
+      - name: Run a production build of site
+        run: npm run build
+        env:
+          ELEVENTY_ENV: prod
