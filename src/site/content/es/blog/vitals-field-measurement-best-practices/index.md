@@ -1,5 +1,5 @@
 ---
-title: Best practices for measuring Web Vitals in the field
+title: Prácticas recomendadas para medir Web Vitals en el campo
 subhead: Cómo medir Web Vitals con su herramienta de análisis actual.
 authors:
   - philipwalton
@@ -16,23 +16,23 @@ tags:
 
 Tener la capacidad de medir e informar sobre el rendimiento real de sus páginas es fundamental para diagnosticar y mejorar el rendimiento a lo largo del tiempo. Sin [datos de campo](/user-centric-performance-metrics/#in-the-field) , es imposible saber con certeza si los cambios que está realizando en su sitio realmente están logrando los resultados deseados.
 
-Many popular [Real User Monitoring (RUM)](https://en.wikipedia.org/wiki/Real_user_monitoring) analytics providers already support the [Core Web Vitals](/vitals/#core-web-vitals) metrics in their tools (as well as many [other Web Vitals](/vitals/#other-web-vitals)). If you're currently using one of these RUM analytics tools, you're in great shape to assess how well the pages on your site meet the [recommended Core Web Vitals thresholds](/vitals/#core-web-vitals) and prevent regressions in the future.
+Muchos proveedores populares de análisis [Real User Monitoring (RUM)](https://en.wikipedia.org/wiki/Real_user_monitoring) ya admiten las métricas de [Core Web Vitals](/vitals/#core-web-vitals) en sus herramientas (así como muchas [otras Web Vitals](/vitals/#other-web-vitals)). Si actualmente utiliza una de estas herramientas de análisis RUM, está en condiciones de evaluar si las páginas de su sitio cumplen los [umbrales recomendados por Core Web Vitals](/vitals/#core-web-vitals) y evitar regresiones en el futuro.
 
-While we do recommend using an analytics tool that supports the Core Web Vitals metrics, if the analytics tool you're currently using does not support them, you don't necessarily need to switch. Almost all analytics tools offer a way to define and measure [custom metrics](https://support.google.com/analytics/answer/2709828) or [events](https://support.google.com/analytics/answer/1033068), which means you can likely use your current analytics provider to measure the Core Web Vitals metrics and add them to your existing analytics reports and dashboards.
+Aunque recomendamos utilizar una herramienta de análisis que admita las métricas de Core Web Vitals, si la herramienta de análisis que utiliza actualmente no las admite, no es necesario que cambie. Casi todas las herramientas de análisis ofrecen una forma de definir y medir [métricas personalizadas](https://support.google.com/analytics/answer/2709828) o [eventos](https://support.google.com/analytics/answer/1033068), lo que significa que probablemente pueda utilizar su proveedor de análisis actual para medir las métricas de Core Web Vitals y agregarlas a sus paneles y reportes de análisis actuales.
 
-This guide discusses best practices for measuring Core Web Vitals metrics (or any custom metrics) with a third-party or in-house analytics tool. It can also serve as a guide for analytics vendors wishing to add Core Web Vitals support to their service.
+En esta guía se analizan las prácticas recomendadas para medir las métricas de Core Web Vitals (o cualquier métrica personalizada) con una herramienta de análisis de terceros o interna. También puede servir de guía para los proveedores de análisis que deseen agregar el soporte de Core Web Vitals a su servicio.
 
-## Use custom metrics or events
+## Utilice eventos o métricas personalizadas
 
-As mentioned above, most analytics tools let you measure custom data. If your analytics tool supports this, you should be able to measure each of the Core Web Vitals metrics using this mechanism.
+Como se mencionó anteriormente, la mayoría de las herramientas de análisis le permiten medir datos personalizados. Si su herramienta de análisis lo permite, debería poder medir cada una de las métricas de Core Web Vitals mediante este mecanismo.
 
-Measuring custom metrics or events in an analytics tool is generally a three-step process:
+Medir eventos o métricas personalizadas en una herramienta de análisis generalmente es un proceso de tres pasos:
 
-1. [Define or register](https://support.google.com/analytics/answer/2709829?hl=en&ref_topic=2709827) the custom metric in your tool's admin (if required). *(Note: not all analytics providers require custom metrics to be defined ahead of time.)*
-2. Compute the value of the metric in your frontend JavaScript code.
-3. Send the metric value to your analytics backend, ensuring the name or ID matches what was defined in step 1 *(again, if required)*.
+1. [Defina o registre](https://support.google.com/analytics/answer/2709829?hl=en&ref_topic=2709827) la métrica personalizada en el administrador de su herramienta (si es necesario). *(Nota: no todos los proveedores de análisis requieren que las métricas personalizadas se definan con anticipación).*
+2. Calcule el valor de la métrica en su código JavaScript del frontend.
+3. Envíe el valor de la métrica al análisis del backend, asegúrese de que el nombre o el ID coincide con lo que definió en el paso 1 *(de nuevo, si es necesario)*.
 
-For steps 1 and 3, you can refer to your analytics tool's documentation for instructions. For step 2 you can use the [web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript library to compute the value of each of the Core Web Vitals metrics.
+Para los pasos 1 y 3, puede consultar la documentación de su herramienta de análisis para obtener instrucciones. Para el paso 2, puede utilizar la Biblioteca de Javascript [web-vitals](https://github.com/GoogleChrome/web-vitals) para calcular el valor de cada una de las métricas de Core Web Vitals.
 
 El siguiente ejemplo de código muestra lo fácil que puede ser realizar un seguimiento de estas métricas en el código y enviarlas a un servicio de análisis.
 
@@ -51,41 +51,41 @@ getFID(sendToAnalytics);
 getLCP(sendToAnalytics);
 ```
 
-## Ensure you can report a distribution
+## Asegúrese de que puede reportar una distribución
 
-Once you've computed the values for each of the Core Web Vitals metrics and sent them to your analytics service using a custom metric or event, the next step is to build a report or dashboard displaying the values that have been collected.
+Una vez que haya calculado los valores de cada una de las métricas de Core Web Vitals y los haya enviado a su servicio de análisis mediante una métrica o un evento personalizado, el siguiente paso es crear un informe o un panel que muestre los valores recopilados.
 
-To ensure you're meeting the [recommended Core Web Vitals thresholds](/vitals/#core-web-vitals), you'll need your report to display the value of each metric at the 75th percentile.
+Para asegurarse de que cumple los [umbrales recomendados por Core Web Vitals](/vitals/#core-web-vitals), necesitará que su reporte muestre el valor de cada métrica en el percentil 75.
 
-If your analytics tool does not offer quantile reporting as a built-in feature, you can probably still get this data manually by generating a report that lists every metric value sorted in ascending order. Once this report is generated, the result that is 75% of the way through the full, sorted list of all values in that report will be the 75th percentile for that metric—and this will be the case no matter how you segment your data (by device type, connection type, country, etc.).
+Si su herramienta de análisis no ofrece informes de percentiles como una función incorporada, probablemente aún pueda obtener estos datos manualmente generando un informe que enumere todos los valores de las métricas clasificados en orden ascendente. Una vez que se genere este informe, el resultado que se encuentre en el 75% de la lista completa y ordenada de todos los valores de ese informe será el percentil 75 para esa métrica, y esto será así independientemente de cómo se segmenten los datos (por tipo de dispositivo, tipo de conexión, país, etc.).
 
-If your analytic tool does not give you metric-level reporting granularity by default, you can probably achieve the same result if your analytics tool supports [custom dimensions](https://support.google.com/analytics/answer/2709828). By setting a unique, custom dimension value for each individual metric instance you track, you should be able to generate a report, broken down by individual metric instances, if you include the custom dimension in the report configuration. Since each instance will have a unique dimension value, no grouping will occur.
+Si su herramienta de análisis no le ofrece un nivel de detalle para realizar reportes a nivel de métricas de forma predeterminada, probablemente pueda conseguir el mismo resultado si su herramienta de análisis admite [dimensiones personalizadas](https://support.google.com/analytics/answer/2709828). Al establecer un valor de dimensión único y personalizado para cada instancia de métrica individual a la que le realiza un seguimiento, debería poder generar un reporte, desglosado por instancias de métrica individuales, si incluye la dimensión personalizada en la configuración del reporte. Dado que cada instancia tendrá un valor de dimensión único, no se producirá ninguna agrupación.
 
-The [Web Vitals Report](https://github.com/GoogleChromeLabs/web-vitals-report) is an example of this technique that uses Google Analytics. The code for the report is [open source](https://github.com/GoogleChromeLabs/web-vitals-report), so developers can reference it as an example of the techniques outlined in this section.
+[Web Vitals Report](https://github.com/GoogleChromeLabs/web-vitals-report) es un ejemplo de esta técnica que utiliza Google Analytics. El código del reporte es de [código abierto](https://github.com/GoogleChromeLabs/web-vitals-report), por lo que los desarrolladores pueden consultarlo como un ejemplo de las técnicas descritas en esta sección.
 
 <img src="https://user-images.githubusercontent.com/326742/101584324-3f9a0900-3992-11eb-8f2d-182f302fb67b.png" alt="Capturas de pantalla de Web Vitals &lt;span translate =" no=""> Informe "data-md-type =" image "&gt;
 
-{% Aside %} Tip: The [`web-vitals`](https://github.com/GoogleChrome/web-vitals) JavaScript library provides an ID for each metric instance reported making it possible to build distributions in most analytics tools. See the [`Metric`](https://github.com/GoogleChrome/web-vitals#metric) interface documentation for more details. {% endAside %}
+{% Aside %} Sugerencia: la Biblioteca de Javascript [`web-vitals`](https://github.com/GoogleChrome/web-vitals) proporciona un ID para cada instancia de métrica reportada, lo que permite crear distribuciones en la mayoría de las herramientas de análisis. Consulte la documentación de la interfaz [`Metric`](https://github.com/GoogleChrome/web-vitals#metric) para obtener más información. {% endAside %}
 
 ## Envíe sus datos en el momento adecuado
 
-Some performance metrics can be calculated once the page has finished loading, while others (like CLS) consider the entire lifespan of the page—and are only final once the page has started unloading.
+Algunas métricas de rendimiento se pueden calcular una vez que la página haya terminado de cargarse, mientras que otras (como CLS) tienen en cuenta toda la vida útil de la página y solo son definitivas una vez que la página haya comenzado a descargarse.
 
-This can be problematic, however, since both the `beforeunload` and `unload` events are not reliable (especially on mobile) and their use is [not recommended](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#legacy-lifecycle-apis-to-avoid) (since they can prevent a page from being eligible for the [Back-Forward Cache](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#page-navigation-cache)).
+Sin embargo, esto puede ser problemático ya que los eventos `beforeunload` y `unload` no son confiables (especialmente en móviles) y su uso [no es recomendado](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#legacy-lifecycle-apis-to-avoid) (ya que pueden evitar que una página sea elegible para la función [Back-Forward Cache](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#page-navigation-cache)).
 
-For metrics that track the entire lifespan of a page, it's best to send whatever the metric's current value is during the `visibilitychange` event, whenever the page's visibility state changes to `hidden`. This is because—once the page's visibility state changes to `hidden`—there's no guarantee that any script on that page will be able to run again. This is especially true on mobile operating systems where the browser app itself can be closed without any page callbacks being fired.
+Para las métricas que rastrean toda la vida útil de una página, es mejor enviar el valor actual de la métrica durante el evento `visibilitychange`, siempre que el estado de visibilidad de la página cambie a `hidden`. Esto se debe a que, una vez que el estado de visibilidad de la página cambia a `hidden`, no hay garantía de que cualquier script de esa página pueda volver a ejecutarse. Esto es especialmente cierto en los sistemas operativos móviles, donde la aplicación del navegador en sí se puede cerrar sin que se active ninguna devolución de llamada de páginas.
 
-Note that mobile operating systems do generally fire the `visibilitychange` event when switching tabs, switching apps, or closing the browser app itself. They also fire the `visibilitychange` event when closing a tab or navigating to a new page. This makes the `visibilitychange` event far more reliable than the `unload` or `beforeunload` events.
+Tenga en cuenta que los sistemas operativos móviles generalmente activan el evento `visibilitychange` al cambiar de pestaña, se cambia de aplicación o se cierra la propia aplicación del navegador. También activan el evento `visibilitychange` cuando se cierra una pestaña o se navega a una nueva página. Esto hace que el evento `visibilitychange` sea mucho más confiable que los eventos `unload` o `beforeunload`.
 
-{% Aside 'gotchas' %} Due to [some browser bugs](https://github.com/w3c/page-visibility/issues/59#issue-554880545), there are a few cases where the `visibilitychange` event does not fire. If you're building your own analytics library, it's important to be aware of these bugs. Note that the [web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript library does account for all of these bugs. {% endAside %}
+{% Aside 'gotchas' %} Debido a [algunos errores del navegador](https://github.com/w3c/page-visibility/issues/59#issue-554880545), hay algunos casos en los que el evento `visibilitychange` no se activa. Si está construyendo su propia biblioteca de análisis, es importante que tenga en cuenta estos errores. Tenga en cuenta que la Biblioteca de Javascript [web-vitals](https://github.com/GoogleChrome/web-vitals) tiene en cuenta todos estos errores. {% endAside %}
 
 ## Supervisar el rendimiento a lo largo del tiempo
 
-Once you've updated your analytics implementation to both track and report on the Core Web Vitals metrics, the next step is to track how changes to your site affect performance over time.
+Una vez que haya actualizado su implementación de análisis para realizar un seguimiento e informar sobre las métricas de Core Web Vitals, el siguiente paso es realizar un seguimiento de cómo los cambios en su sitio afectan al rendimiento a lo largo del tiempo.
 
-### Version your changes
+### La versión de sus cambios
 
-A naive (and ultimately unreliable) approach to tracking changes is to deploy changes to production and then assume that all metrics received after the deployment date correspond to the new site and all metrics received before the deployment date correspond to the old site. However, any number of factors (including caching at the HTTP, service worker, or CDN layer) can prevent this from working.
+Un enfoque ingenuo (y en última instancia poco confiable) para el seguimiento de los cambios es implementar los cambios en la producción y luego asumir que todas las métricas recibidas después de la fecha de implementación corresponden al nuevo sitio y todas las métricas recibidas antes de la fecha de implementación corresponden al sitio anterior. Sin embargo, cualquier número de factores (incluyendo el almacenamiento en caché en el HTTP, el trabajador de servicios o la capa CDN) puede evitar que esto funcione.
 
 Un enfoque mucho mejor es crear una versión única para cada cambio implementado y luego rastrear esa versión en su herramienta de análisis. La mayoría de las herramientas de análisis admiten la configuración de una versión. Si el suyo no lo hace, puede crear una dimensión personalizada y establecer esa dimensión en su versión implementada.
 
@@ -93,44 +93,44 @@ Un enfoque mucho mejor es crear una versión única para cada cambio implementad
 
 Puede llevar el control de versiones un paso más allá mediante el seguimiento de varias versiones (o experimentos) al mismo tiempo.
 
-If your analytics tool lets you define experiment groups, use that feature. Otherwise, you can use custom dimensions to ensure each of your metric values can be associated with a particular experiment group in your reports.
+Si su herramienta de análisis le permite definir grupos de experimentos, utilice esa función. De lo contrario, puede utilizar dimensiones personalizadas para asegurarse de que cada uno de los valores de sus métricas se pueda asociar con un grupo de experimentos en particular en sus reportes.
 
-With experimentation in place in your analytics, you can roll out an experimental change to a subset of your users and compare the performance of that change to the performance of users in the control group. Once you have confidence that a change does indeed improve performance, you can roll it out to all users.
+Con la experimentación en el lugar donde lleva a cabo análisis, puede implementar un cambio experimental en un subconjunto de sus usuarios y comparar el rendimiento de ese cambio con el rendimiento de los usuarios en el grupo de control. Una vez que tenga la seguridad de que un cambio realmente mejora el rendimiento, puede implementarlo en todos los usuarios.
 
-{% Aside %} Experiment groups should always be set on the server. Avoid using any experimentation or A/B testing tool that runs on the client. These tools will typically block rendering until a user's experiment group is determined, which can be detrimental to your LCP times. {% endAside %}
+{% Aside %} Los grupos de experimentación siempre deben configurarse en el servidor. Evite utilizar cualquier herramienta de experimentación o prueba A/B que se ejecute del lado del cliente. Por lo general, estas herramientas bloquearán la renderización hasta que se determine el grupo de experimentación de un usuario, lo que puede ser perjudicial para sus tiempos de LCP. {% endAside %}
 
-## Ensure measurement doesn't affect performance
+## Garantizar que el cálculo no afecte al rendimiento
 
-When measuring performance on real users, it's absolutely critical that any performance measurement code you're running does not negatively impact the performance of your page. If it does, then any conclusions you attempt to draw on how your performance affects your business will be unreliable, as you'll never know if the presence of the analytics code itself is having the largest negative impact.
+Cuando se mide el rendimiento en usuarios reales, es absolutamente fundamental que cualquier código para medir el rendimiento que esté ejecutando no tenga un impacto negativo en el rendimiento de su página. Si es así, cualquier conclusión que intente sacar sobre cómo afecta su rendimiento a su negocio no será confiable, ya que nunca sabrá si la presencia del propio código de análisis está teniendo el mayor impacto negativo.
 
-Always follow these principles when deploying RUM analytics code on your production site:
+Siga siempre estos principios cuando implemente el código de análisis del RUM en su sitio de producción:
 
-### Defer your analytics
+### Difiera sus análisis
 
 El código de análisis siempre debe cargarse de forma asincrónica y sin bloqueo y, por lo general, debe cargarse en último lugar. Si carga su código de análisis de forma bloqueada, puede afectar negativamente a LCP.
 
-All of the APIs used to measure the Core Web Vitals metrics were specifically designed to support asynchronous and deferred script loading (via the [`buffered`](https://www.chromestatus.com/feature/5118272741572608) flag), so there's no need to rush to get your scripts loaded early.
+Todas las API utilizadas para medir las métricas de Core Web Vitals fueron diseñadas específicamente para soportar la carga asíncrona y diferida de scripts (a través de la marca [`buffered`](https://www.chromestatus.com/feature/5118272741572608)), por lo que no es necesario apresurarse para que sus scripts se carguen antes de tiempo.
 
-In the event that you're measuring a metric that cannot be computed later in the page load timeline, you should inline *only* the code that needs to run early into the `<head>` of your document (so it's not a [render-blocking request](/render-blocking-resources/)) and defer the rest. Do not load all your analytics early just because a single metric requires it.
+En el caso de que esté midiendo una métrica que no se puede calcular más adelante en la línea de tiempo de carga de la página, debe incluir *solo* el código que debe ejecutarse antes en el `<head>` de su documento (para que no sea una [solicitud de bloqueo de renderización](/render-blocking-resources/)) y diferir el resto. No cargue todos sus análisis de forma anticipada solo porque una sola métrica lo requiera.
 
-### Do not create long tasks
+### No cree tareas largas
 
-Analytics code often runs in response to user input, but if your analytics code is conducting a lot of DOM measurements or using other processor-intensive APIs the analytics code itself can cause poor input responsiveness. In addition, if the JavaScript file containing your analytics code is large, executing that file can block the main thread and negatively affect FID.
+El código de análisis con frecuencia se ejecuta en respuesta a la entrada del usuario, pero si su código de análisis realiza muchos cálculos del DOM o utiliza otras API que requieren uso intensivo del procesador, el propio código de análisis puede causar una respuesta de entrada deficiente. Además, si el archivo JavaScript que contiene su código de análisis es grande, la ejecución de ese archivo puede bloquear el proceso principal y afectar negativamente a la FID.
 
-### Use non-blocking APIs
+### Utilice las API sin bloqueo
 
-APIs like <code>&lt;a href="https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon" data-md-type="link"&gt;sendBeacon()&lt;/a&gt;</code> and <code>&lt;a href="https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback" data-md-type="link"&gt;requestIdleCallback()&lt;/a&gt;</code> are specifically designed for running non-critical tasks in a way that doesn't block user-critical tasks.
+API como <code>&lt;a href="https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon" data-md-type="link"&gt;sendBeacon()&lt;/a&gt;</code> y <code>&lt;a href="https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback" data-md-type="link"&gt;requestIdleCallback()&lt;/a&gt;</code> están diseñadas específicamente para ejecutar tareas no fundamentales de manera que no bloqueen las tareas fundamentales para el usuario.
 
 Estas API son excelentes herramientas para usar en una biblioteca de análisis de RUM.
 
-In general, all analytics beacons should be sent using the `sendBeacon()` API (if available), and all passive analytics measurement code should be run during idle periods.
+En general, todas las señales de los análisis deben enviarse utilizando la API `sendBeacon()` (si está disponible), y todo el código de cálculo de análisis pasivos debe ejecutarse durante los periodos de inactividad.
 
-{% Aside %} For guidance on how to maximize the use of idle time, while still ensuring code can be run urgently when needed (like when a user is unloading the page), refer to the [idle-until-urgent](https://philipwalton.com/articles/idle-until-urgent/) pattern. {% endAside %}
+{% Aside %} Para obtener orientación sobre cómo maximizar el uso del tiempo de inactividad y, al mismo tiempo, garantizar que el código se pueda ejecutar con urgencia cuando sea necesario (como cuando un usuario está descargando la página), consulte el patrón [idle-until-urgent](https://philipwalton.com/articles/idle-until-urgent/). {% endAside %}
 
 ### No rastree más de lo que necesita
 
-The browser exposes a lot of performance data, but just because the data is available does not necessarily mean you should record it and send it to your analytics servers.
+El navegador expone una gran cantidad de datos de rendimiento, pero el hecho de que los datos estén disponibles no significa necesariamente que deba registrarlos y enviarlos a sus servidores para realizar análisis.
 
 Por ejemplo, la [API de tiempo de recursos](https://w3c.github.io/resource-timing/) proporciona datos de tiempo detallados para cada recurso cargado en su página. Sin embargo, es poco probable que todos esos datos sean necesarios o útiles para mejorar el rendimiento de la carga de recursos.
 
-In short, don't just track data because it's there, ensure the data will be used before consuming resources tracking it.
+En resumen, no se limite a rastrear los datos porque están ahí, asegúrese de que los datos se utilizarán antes de consumir recursos para realizar su seguimiento.
