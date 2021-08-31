@@ -66,7 +66,7 @@ O [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experie
 
 A única maneira de conhecer o desempenho real do seu site para os usuários é medindo seu desempenho no campo à medida que esses usuários carregam suas páginas e interagem com elas. Esse tipo de medição é geralmente chamado de Monitoramento Real do Usuário - ou RUM (abreviação de Real User Monitoring). Mesmo se você não tiver RUM no seu site, o CrUX pode lhe fornecer uma maneira rápida e fácil de avaliar suas Core Web Vitals.
 
-**Introducing the CrUX API**
+**Apresentando a API CrUX**
 
 Hoje temos o prazer de anunciar a [API CrUX](http://developers.google.com/web/tools/chrome-user-experience-report/api/reference/), uma solução rápida e gratuita para integrar facilmente seus workflows de desenvolvimento com medições de qualidade a nível de URL e origem para as seguintes métricas de campo:
 
@@ -83,7 +83,7 @@ Abaixo está uma [demonstração](https://developers.google.com/web/tools/chrome
 
 Em versões futuras, planejamos expandir a API para permitir o acesso a dimensões e métricas adicionais do dataset CrUX.
 
-**Revamped CrUX Dashboard**
+**Painel CrUX reformulado**
 
 O novo [Painel CrUX](http://g.co/chromeuxdash) permite que você acompanhe facilmente o desempenho de uma origem ao longo do tempo, Agora você também pode usá-lo para monitorar as distribuições de todas as métricas Core Web Vitals. Para começar a usar o painel, veja nosso [tutorial](/chrome-ux-report-data-studio-dashboard/) em web.dev.
 
@@ -91,7 +91,7 @@ O novo [Painel CrUX](http://g.co/chromeuxdash) permite que você acompanhe facil
 
 Introduzimos uma nova página de destino Core Web Vitals para tornar ainda mais fácil o acompanhamento do desempenho do seu site . Agradecemos seus comentários sobre todas as ferramentas CrUX; para compartilhar suas ideias e perguntas, entre em contato conosco através da conta Twitter [@ChromeUXReport](https://twitter.com/chromeuxreport) ou no [Google Group](https://groups.google.com/a/chromium.org/g/chrome-ux-report).
 
-### Chrome DevTools Performance panel
+### Painel de desempenho do Chrome DevTools
 
 **Depuração de eventos de mudança de layout na seção Experience**
 
@@ -111,9 +111,9 @@ A TBT agora é mostrada no rodapé do painel **Chrome DevTools Performance** qua
 
 {% Instruction 'devtools-performance', 'ol' %}
 
-1. Click **Record**.
-2. Manually reload the page.
-3. Wait for the page to load and then stop recording.
+1. Clique em **Gravar** .
+2. Recarregue a página manualmente.
+3. Espere a página carregar e pare a gravação.
 
 Para obter mais informações, veja [Novidades do DevTools (Chrome 84)](https://developers.google.com/web/updates/2020/05/devtools#cls) .
 
@@ -133,7 +133,7 @@ Depois de identificar um tipo de página com problemas relacionados às Core Web
 
 <figure class="w-figure">   {% Img src="image/admin/ryoV1T1PhxUmo9zdCsDe.png", alt="Meça as Core Web Vitals ao longo do tempo e obtenha orientação priorizada com a ferramenta web.dev measure", width="800", height="459", class="w-screenshot" %}</figure>
 
-### Web Vitals extension
+### Extensão Web Vitals
 
 A extensão Web Vitals mede as três métricas Core Web Vitals em tempo real para o Google Chrome (desktop). Isto é útil para detectar problemas no início do workflow de desenvolvimento e como uma ferramenta de diagnóstico para avaliar o desempenho das Core Web Vitals enquanto você navega na web.
 
@@ -141,7 +141,7 @@ A extensão agora está disponível para instalação na [Chrome Web Store](http
 
 <figure class="w-figure">   {% Img src="image/admin/woROdEmNV4jlHDPryjBQ.png", alt="Core Web Vitals exibidas em tempo real com a extensão Web Vitals Chrome", width="800", height="459", class="w-screenshot" %}</figure>
 
-#### Quick highlights
+#### Destaques rápidos
 
 Isto é um resumo! O que você pode fazer em seguida:
 
@@ -154,4 +154,4 @@ Isto é um resumo! O que você pode fazer em seguida:
 
 Falaremos mais sobre nossas ferramentas Core Web Vitals na [web.dev Live](/live/) em junho. Inscreva-se para ficar por dentro do evento!
 
-~ by Elizabeth and Addy, WebPerf Janitors
+~ por Elizabeth e Addy, WebPerf Janitors
