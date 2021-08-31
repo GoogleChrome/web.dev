@@ -28,17 +28,17 @@ tags:
 
 如果您不确定您网站中`SharedArrayBuffer`的使用位置，有两种方法可以找到：
 
-- Using Chrome DevTools
+- 使用 Chrome 开发者工具
 - （进阶）使用弃用报告
 
 如果您已经知道`SharedArrayBuffer`的使用位置，请跳至[分析跨域隔离的影响](#analysis)。
 
-### Using Chrome DevTools
+### 使用 Chrome 开发者工具
 
 [Chrome 开发者工具](https://developers.google.com/web/tools/chrome-devtools/open)允许开发者对网站进行检查。
 
 1. 在您怀疑可能正在使用`SharedArrayBuffer`的页面上[打开 Chrome 开发者工具](https://developers.google.com/web/tools/chrome-devtools/open)。
-2. Select the **Console** panel.
+2. 选择**控制台**面板。
 3. 如果该页面正在使用`SharedArrayBuffer`，则会显示以下消息：
     ```text
     [Deprecation] SharedArrayBuffer will require cross-origin isolation as of M92, around May 2021. See https://developer.chrome.com/blog/enabling-shared-array-buffer/ for more details. common-bundle.js:535
@@ -84,7 +84,7 @@ tags:
 
 {% endAside %}
 
-## Mitigate the impact of cross-origin isolation
+## 减轻跨域隔离的影响
 
 在确定哪些资源将受到跨域隔离的影响后，以下是有关如何实际让这些跨域资源选择加入的一般准则：
 
@@ -94,7 +94,7 @@ tags:
 4. 在您确认所有跨域资源都已选择加入后，请在加载到 iframe 中的跨域资源上设置`Cross-Origin-Embedder-Policy: require-corp`标头。
 5. 请确保没有需要通过`postMessage()`进行通信的跨域弹出窗口。这些弹出窗口无法在启用跨域隔离时继续运行。您可以将通信移动到另一个非跨域隔离文档中，或使用一种不同的通信方法（例如，HTTP 请求）。
 
-## Enable cross-origin isolation
+## 启用跨域隔离
 
 在减轻跨域隔离的影响后，以下是启用跨域隔离的一般准则：
 
@@ -108,7 +108,7 @@ tags:
 
 {% endAside %}
 
-## Resources
+## 资源
 
 - [使用 COOP 和 COEP 将您的网站“跨域隔离”](/coop-coep/)
 - [安卓 Chrome 88 和桌面 Chrome 92 中的 SharedArrayBuffer 更新](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
