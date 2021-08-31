@@ -108,7 +108,7 @@ After you have mitigated the impact by cross-origin isolation, here are general 
 
 {% endAside %}
 
-## Resources
+## Ресурсы
 
 - [Как изолировать сайт от других источников с помощью COOP и COEP](/coop-coep/)
 - [Обновления, связанные с SharedArrayBuffer, в версиях Chrome 88 для Android и Chrome 92 для ПК](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
