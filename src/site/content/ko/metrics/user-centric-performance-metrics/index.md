@@ -12,7 +12,7 @@ tags:
 
 성능이 얼마나 중요한지는 모두가 알고 있습니다. 그러나 성능을 개선하고 웹사이트를 "빠르게" 만든다는 것은 구체적으로 무엇을 의미할까요?
 
-The truth is performance is relative:
+사실 성능은 상대적입니다.
 
 - 동일한 사이트더라도 강력한 장치와 고속 네트워크를 보유한 사용자에게는 빠르고, 하위 장치와 느린 네트워크를 보유한 사용자에게는 느립니다.
 - 두 사이트가 정확히 같은 시간에 로드를 완료하더라도, 하나는 더 빨리 로드되는 것처럼 *보일 수* 있습니다(끝까지 항목을 표시하기를 기다리지 않고 콘텐츠를 점진적으로 로드하는 경우).
@@ -39,7 +39,7 @@ The truth is performance is relative:
   </tr>
   <tr>
     <td><strong>유용성</strong></td>
-    <td>Has enough content rendered that users can engage with it?</td>
+    <td>사용자가 참여할 수 있는 충분한 콘텐츠가 렌더링되었습니까?</td>
   </tr>
   <tr>
     <td><strong>사용 가능 여부</strong></td>
@@ -47,7 +47,7 @@ The truth is performance is relative:
   </tr>
   <tr>
     <td><strong>쾌적함</strong></td>
-    <td>Are the interactions smooth and natural, free of lag and jank?</td>
+    <td>상호 작용이 부드럽고 자연스러우며 지연과 버벅거림이 없습니까?</td>
   </tr>
 </table>
 
