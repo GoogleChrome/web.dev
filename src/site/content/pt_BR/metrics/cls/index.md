@@ -120,7 +120,7 @@ Este último exemplo ilustra vários *elementos instáveis* :
 
 No primeiro quadro acima, há quatro resultados de uma solicitação de API para animais, classificados em ordem alfabética. No segundo quadro, mais resultados são adicionados à lista ordenada.
 
-The first item in the list ("Cat") does not change its start position between frames, so it's stable. Similarly, the new items added to the list were not previously in the DOM, so their start positions don't change either. But the items labelled "Dog", "Horse", and "Zebra" all shift their start positions, making them *unstable elements*.
+O primeiro item da lista ("Cat") não altera sua posição inicial entre os quadros, portanto, é estável. Da mesma forma, os novos itens adicionados à lista não estavam anteriormente no DOM, portanto, suas posições iniciais também não mudam. Mas os itens rotulados como "Dog", "Horse" e "Zebra" mudam suas posições iniciais, fazendo com que sejam *elementos instáveis*.
 
 Novamente, os retângulos pontilhados vermelhos representam a união dessas três áreas *instáveis* antes e depois das áreas, que neste caso é cerca de 38% da área da janela de visualização (*fração* de `0.38`).
 
@@ -172,7 +172,7 @@ A CLS pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 
 ### Medição da CLS em JavaScript
 
-To measure CLS in JavaScript, you can use the [Layout Instability API](https://github.com/WICG/layout-instability). The following example shows how to create a [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) that listens for unexpected `layout-shift` entries, groups them into sessions, and logs the maximum session value any time it changes.
+Para medir a CLS em JavaScript, você pode usar a [API Layout Instability](https://github.com/WICG/layout-instability). O exemplo a seguir mostra como criar um [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) que escuta as entradas `layout-shift`, as agrupa em sessões registra o valor máximo da sessão sempre que ela mudar.
 
 ```js
 let clsValue = 0;
@@ -228,7 +228,7 @@ A seção a seguir lista as diferenças entre o que a API informa e como a métr
 #### Diferenças entre a métrica e a API
 
 - Se uma página for carregada em segundo plano, ou se estiver em segundo plano antes do navegador renderizar qualquer conteúdo, ela não deve relatar nenhum valor CLS.
-- If a page is restored from the [back/forward cache](/bfcache/#impact-on-core-web-vitals), its CLS value should be reset to zero since users experience this as a distinct page visit.
+- Se uma página for restaurada do cache [back/forward](/bfcache/#impact-on-core-web-vitals), seu valor CLS deve ser zerado, pois os usuários percebem isto como uma visita de página distinta.
 - A API não relata entradas `layout-shift` para mudanças que ocorrem dentro de iframes, mas para medir corretamente a CLS, você deve considerá-las. Subquadros podem usar a API para relatar suas entradas `layout-shift` para o quadro pai para [agregação](https://github.com/WICG/layout-instability#cumulative-scores) .
 
 Além dessas exceções, a CLS introduz uma complexidade adicional devido ao fato de que mede toda a vida útil de uma página:
@@ -252,7 +252,7 @@ Para um exemplo completo de como medir a CLS em JavaScript, consulte [o código-
 
 {% Aside %} Em alguns casos (como iframes de origem cruzada), não é possível medir a CLS em JavaScript. Consulte a seção de [limitações](https://github.com/GoogleChrome/web-vitals#limitations) da biblioteca `web-vitals` para mais detalhes. {% endAside %}
 
-## How to improve CLS
+## Como melhorar a CLS
 
 Para a maioria dos sites, você pode evitar todas as mudanças inesperadas de layout, aderindo a alguns princípios orientadores:
 
