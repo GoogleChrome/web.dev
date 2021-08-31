@@ -1,12 +1,12 @@
 ---
 title: Cómo optimizar First Input Delay
-subhead: How to respond faster to user interactions.
+subhead: Cómo responder más rápido a las interacciones de los usuarios.
 authors:
   - houssein
   - addyosmani
 date: '2020-05-05'
 hero: image/admin/WH0KlcJXJlxvsxU9ow2i.jpg
-alt: A hand touching a smartphone screen
+alt: Una mano tocando la pantalla de un teléfono inteligente
 description: First Input Delay (FID) mide el tiempo que transcurre desde que un usuario interactúa por primera vez con su sitio hasta el momento en que el navegador es capaz de responder a esa interacción. Descubra cómo optimizar la FID al minimizar los procesos de JavaScript que no se utilicen dividiendo las tareas largas y mejorando la preparación para la interacción.
 tags:
   - blog
@@ -23,7 +23,7 @@ tags:
 [First Input Delay: Demora de la primera entrada](/fid/) (FID) es una [métrica de Core Web Vitals](/vitals/) que captura la primera impresión del usuario sobre la interactividad y la capacidad de respuesta de un sitio. Mide el tiempo que transcurre desde que el usuario interactúa por primera vez con una página hasta el momento en que el navegador es capaz de responder a esa interacción. El FID es una [métrica de campo](/user-centric-performance-metrics/#in-the-field) y no se puede simular en un entorno de laboratorio. Es necesario tener **una interacción real con el usuario** para medir la demora en la respuesta.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)">{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / Se4TiXIdp8jtLJVScWed.svg", alt = "Los valores de fid correctos son 2,5 segundos, los valores deficientes son superiores a 4,0 segundos y cualquier valor intermedio debe mejorarse", width = "384", height = "96 ", class =" w-screenshot w-screenshot - ancho completo "%}</source></picture>
 
 Para predecir la FID en el [laboratorio](/how-to-measure-speed/#lab-data-vs-field-data), recomendamos que se utilice el [Total Blocking Time: Tiempo de bloqueo total (TBT)](/tbt/). Ambas métricas miden cosas diferentes, pero las mejoras en el TBT generalmente coinciden con mejoras en la FID.
 
@@ -33,12 +33,12 @@ La principal causa de una FID deficiente es que **JavaScript se ejecute intensam
 
 El navegador no puede responder a la mayoría de las entradas de los usuarios mientras ejecuta JavaScript en el subproceso principal. En otras palabras, el navegador no puede responder a las interacciones del usuario mientras el subproceso principal esté ocupado. Para mejorar esta situación, haga lo siguiente:
 
-- [Break up Long Tasks](#long-tasks)
+- [Divida las tareas largas](#long-tasks)
 - [Optimice su página de modo que esté lista para la interacción](#optimize-interaction-readiness)
-- [Use a web worker](#use-a-web-worker)
+- [Utilice un trabajador web](#use-a-web-worker)
 - [Reduzca el tiempo de ejecución de JavaScript](#reduce-javascript-execution)
 
-## Break up Long Tasks {: #long-tasks }
+## Divida las tareas largas {: # long-tasks}
 
 Si ya intentó reducir la cantidad de procesos en JavaScript que se cargan en una sola página, quizás resulte útil dividir el código de ejecución prolongada en **tareas asincrónicas más pequeñas**.
 
@@ -63,17 +63,17 @@ A continuación, se muestran las puntuaciones del TBT antes y después de optimi
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="Mejoras en la puntuación del TBT en Lighthouse después de optimizar el script en el origen"., width="800", height="148", class="w-screenshot" %}
 
-### Data-fetching can impact many aspects of interaction readiness
+### La búsqueda de datos puede afectar muchos aspectos de la preparación para la interacción
 
 - Esperar a que se realice una serie de búsquedas en cascada (por ejemplo, JavaScript junto con búsquedas de datos para los componentes) puede afectar la latencia de la interacción. Trate de reducir al mínimo la dependencia a las búsquedas de datos en cascada.
 - Los grandes almacenes de datos en línea pueden aumentar el tiempo de análisis en HTML y afectar tanto en el despliegue como en las métricas de la interacción. Trate de reducir al mínimo la cantidad de datos que deben procesarse posteriormente en el lado del cliente.
 
-### Third-party script execution can delay interaction latency too
+### La ejecución de un script de terceros también puede retrasar la latencia de la interacción
 
 - Muchos sitios incluyen etiquetas y análisis de terceros que pueden mantener la red ocupada y hacer que el subproceso principal deje de responder periódicamente, afectando la latencia de la interacción. Analice la carga bajo demanda del código de terceros (por ejemplo, tal vez no deba cargar la parte inferior de esos anuncios hasta que se hayan desplazado un poco más cerca de la ventana de visualización).
 - En algunos casos, los scripts de terceros pueden adelantarse a los de origen en términos de la prioridad y el ancho de banda en el subproceso principal, lo cual también retrasa la velocidad con que una página está lista para la interacción. Intente priorizar la carga de aquello que crea proporciona primero el valor más grande a los usuarios.
 
-## Use a web worker
+## Utilice un trabajador web
 
 Un subproceso principal bloqueado es una de las principales causas de que haya retrasos en la entrada. Los [trabajadores web](https://developer.mozilla.org/en-US/docs/Web/API/Worker) hacen posible ejecutar JavaScript en subprocesos en segundo plano. Mover las operaciones que no se efectúan en la interfaz del usuario hacia un subproceso del trabajo independiente, puede reducir el tiempo de bloqueo del subproceso principal y, en consecuencia, mejorar la FID.
 
@@ -104,7 +104,7 @@ La pestaña [Coverage](https://developers.google.com/web/tools/chrome-devtools/c
 
 Para reducir el porcentaje de JavaScript que no está en uso:
 
-- Code-split your bundle into multiple chunks
+- Divida el código de su paquete en varios fragmentos
 - Suspenda cualquier proceso en JavaScript que no sea crítico, incluidos los scripts de terceros, mediante `async` o `defer`
 
 La **división del código** es el concepto de dividir un solo paquete grande de JavaScript en fragmentos más pequeños que se pueden cargar condicionalmente (también conocidos como carga diferida). [La mayoría de los navegadores más recientes admiten la sintaxis de importación dinámica](https://caniuse.com/#feat=es6-module-dynamic-import), en la cual se permite la búsqueda de módulos previa solicitud:
@@ -131,7 +131,7 @@ Además de la división del código, siempre use [async o defer](https://javascr
 <script async src="…"></script>
 ```
 
-Unless there is a specific reason not to, all third-party scripts should be loaded with either `defer` or `async` by default.
+A menos que haya una razón específica para no hacerlo, todos los scripts de terceros deben cargarse con `defer` o `async` de forma predeterminada.
 
 #### Reduzca al mínimo los polyfills que no se utilicen
 
@@ -139,7 +139,7 @@ Si crea su código utilizando la sintaxis de JavaScript más reciente y usa como
 
 Una de las principales preocupaciones sobre el rendimiento al incluir polyfills y código transpilado en su sitio es que los navegadores más recientes no deberían tener que descargarlos si no es necesario hacerlo. Para reducir el tamaño de JavaScript en su aplicación, minimice tanto como sea posible los polyfills que no se utilicen y restrinja su uso a los entornos donde realmente se necesiten.
 
-To optimize polyfill usage on your site:
+Para optimizar el uso de polyfill en su sitio:
 
 - Si usa [Babel](https://babeljs.io/docs/en/index.html) como transpilador, utilice [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) para incluir únicamente los polyfills que se necesiten para los navegadores a los que se dirige. En el caso de Babel 7.9, habilite la opción [`bugfixes`](https://babeljs.io/docs/en/babel-preset-env#bugfixes) a fin de reducir aún más los polyfills que no sean necesarios.
 
