@@ -13,7 +13,7 @@ tags:
 
 {% Aside %}可交互时间 (TTI) 是测量[加载响应度](/user-centric-performance-metrics/#types-of-metrics)的重要[实验室指标](/user-centric-performance-metrics/#in-the-lab)。该指标有助于识别*看起来*具备交互性但实际上并非如此的页面情况。迅捷的 TTI 有助于确保页面的[有效性](/user-centric-performance-metrics/#questions)。 {% endAside %}
 
-## What is TTI?
+## 什么是 TTI？
 
 TTI 指标测量页面从开始加载到主要子资源完成渲染，并能够快速、可靠地响应用户输入所需的时间。
 
@@ -39,13 +39,13 @@ TTI 指标测量页面从开始加载到主要子资源完成渲染，并能够�
 
 为了避免这个问题，请尽一切努力将 FCP 和 TTI 之间的差值降至最低。如果两者在某些情况下确实存在明显差异，请通过视觉指示器清楚表明页面上的组件还无法进行交互。
 
-## How to measure TTI
+## 如何测量 TTI
 
 TTI 指标最好[在实验室中](/user-centric-performance-metrics/#in-the-lab)进行测量。测量 TTI 的最佳方法是在您的网站上运行一次灯塔性能审计。有关使用详情，请参阅[灯塔中关于 TTI 的说明文档](/interactive/)。
 
-### Lab tools
+### 实验室工具
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [灯塔](https://developers.google.com/web/tools/lighthouse/)
 - [WebPageTest 网页性能测试工具](https://www.webpagetest.org/)
 
 {% Aside %}虽然 TTI 可以在实际情况下进行测量，但我们不建议这样做，因为用户交互会影响您网页的 TTI，从而导致您的报告中出现大量差异。如需了解页面在实际情况中的交互性，您应该测量[ First Input Delay 首次输入延迟 (FID)](/fid/) 。{% endAside %}
@@ -62,11 +62,11 @@ TTI 指标最好[在实验室中](/user-centric-performance-metrics/#in-the-lab)
 
 如需了解改进 TTI 的常见方式（针对任何网站），请参阅以下性能指南：
 
-- [Minify JavaScript](/unminified-javascript/)
+- [缩小 JavaScript](/unminified-javascript/)
 - [预连接到所需的来源](/uses-rel-preconnect/)
 - [预加载关键请求](/uses-rel-preload/)
-- [Reduce the impact of third-party code](/third-party-summary/)
-- [Minimize critical request depth](/critical-request-chains/)
-- [Reduce JavaScript execution time](/bootup-time/)
-- [Minimize main thread work](/mainthread-work-breakdown/)
+- [减少第三方代码的影响](/third-party-summary/)
+- [最小化关键请求深度](/critical-request-chains/)
+- [减少 JavaScript 执行时间](/bootup-time/)
+- [最小化主线程工作](/mainthread-work-breakdown/)
 - [保持较低的请求数和较小的传输大小](/resource-summary/)
