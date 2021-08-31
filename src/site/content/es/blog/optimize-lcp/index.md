@@ -1,5 +1,5 @@
 ---
-title: Optimize Largest Contentful Paint
+title: Optimice Largest Contentful Paint
 subhead: Cómo renderizar su contenido principal más rápido.
 authors:
   - houssein
@@ -7,13 +7,7 @@ date: '2020-05-05'
 updated: 20-08-2020
 hero: image / admin / qqTKhxUFqdLXnST2OFWN.jpg
 alt: Optimizar el banner LCP
-description: |2
-
-  Largest Contentful Paint (LCP) can be used to determine when the main content of the page has
-
-  finished rendering on the screen. Learn how to optimize LCP by improving slow server response
-
-  times, resource load times and client-side rendering.
+description: Largest Contentful Paint (LCP) se puede utilizar para determinar cuándo el contenido principal de la página se terminó de renderizar en la pantalla. Aprenda a optimizar LCP mejorando los tiempos de respuesta lentos del servidor, los tiempos de carga de recursos y renderización del lado del cliente.
 tags:
   - blog
   - performance
@@ -23,71 +17,71 @@ tags:
 {% ID de YouTube = 'AQqFZ5t8uNc', startTime = '1073'%}
 
 <blockquote>
-  <p>     I can't see any useful content! Why does it take so long to load? 😖   </p>
+  <p>No puedo ver ningún contenido útil. ¿Por qué tarda tanto en cargar? 😖</p>
 </blockquote>
 
-One factor contributing to a poor user experience is how long it takes a user to see any content rendered to the screen. [First Contentful Paint](/fcp) (FCP) measures how long it takes for initial DOM content to render, but it does not capture how long it took the largest (usually more meaningful) content on the page to render.
+Uno de los factores que contribuyen a una mala experiencia de usuario es el tiempo que tarda el usuario en ver cualquier contenido renderizado en la pantalla. [First Contentful Paint: Primer despliegue del contenido](/fcp) (FCP) mide el tiempo que tarda en renderizarse el contenido del DOM inicial, pero no captura el tiempo que tarda en renderizarse el contenido más grande (generalmente más significativo) de la página.
 
-[Largest Contentful Paint](/lcp) (LCP) is a [Core Web Vitals](/vitals/) metric and measures when the largest content element in the viewport becomes visible. It can be used to determine when the main content of the page has finished rendering on the screen.
+[Largest Contentful Paint : Despliegue del contenido más extenso](/lcp) (LCP) es una métrica de [Core Web Vitals](/vitals/) y mide cuándo se hace visible el elemento de contenido más grande en la ventana de visualización. Puede utilizarse para determinar cuándo el contenido principal de la página terminó la renderización en la pantalla.
 
 <picture>
   <source srcset="{{ " image imgix media="(min-width: 640px)">{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / 9trpfS9wruEPGekHqBdn.svg", alt = "Los valores buenos de LCP son 2,5 segundos, los valores malos son superiores a 4,0 segundos y cualquier cosa intermedia necesita mejora", width = "384", height = "96 ", class =" w-screenshot w-screenshot - ancho completo "%}</source></picture>
 
-The most common causes of a poor LCP are:
+Las causas más comunes de una LCP deficiente son:
 
-- [Slow server response times](#slow-servers)
-- [Render-blocking JavaScript and CSS](#render-blocking-resources)
+- [Tiempos de respuesta lentos del servidor](#slow-servers)
+- [JavaScript y CSS bloquean la renderización](#render-blocking-resources)
 - [Tiempos de carga de recursos lentos](#slow-resource-load-times)
-- [Client-side rendering](#client-side-rendering)
+- [Renderización del lado del cliente](#client-side-rendering)
 
-## Slow server response times {: #slow-servers }
+## Tiempos de respuesta lentos del servidor {: # slow-servers}
 
-The longer it takes a browser to receive content from the server, the longer it takes to render anything on the screen. A faster server response time directly improves every single page-load metric, including LCP.
+Cuanto más tarda un navegador en recibir el contenido del servidor, más tiempo tarda en renderizar cualquier cosa en la pantalla. Un tiempo de respuesta del servidor más rápido mejora directamente cada métrica de carga de la página, incluido el LCP.
 
-Before anything else, improve how and where your server handles your content. Use [**Time to First Byte**](/time-to-first-byte) (TTFB) to measure your server response times. You can improve your TTFB in a number of different ways:
+Antes que nada, mejore cómo y dónde su servidor maneja su contenido. Utilice [**Time to First Byte: Tiempo hasta el primer byte**](/time-to-first-byte) (TTFB) para medir los tiempos de respuesta de su servidor. Puede mejorar su TTFB de varias formas:
 
-- Optimize your server
+- <a>Optimizar su servidor</a>
 - Enrutar a los usuarios a una CDN cercana
-- Cache assets
-- Serve HTML pages cache-first
-- Establish third-party connections early
-- Use signed exchanges
+- Activos del caché
+- Publicar las páginas HTML en cache-first
+- Establecer conexiones con terceros con anticipación
+- Utilizar intercambios firmados
 
-### Optimize your server
+### Optimizar su servidor
 
-Are you running expensive queries that take your server a significant amount of time to complete? Or are there other complex operations happening server-side that delay the process to return page content? Analyzing and improving the efficiency of your server-side code will directly improve the time it takes for the browser to receive the data.
+¿Ejecuta consultas costosas que le toman a su servidor una cantidad significativa de tiempo en completar? ¿O hay otras operaciones complejas en el lado del servidor que retrasan el proceso para devolver el contenido de la página? Analizar y mejorar la eficiencia de su código del lado del servidor mejorará directamente el tiempo que tarda el navegador en recibir los datos.
 
-Instead of just immediately serving a static page on a browser request, many server-side web frameworks need to create the web page dynamically. In other words, rather than just sending a complete HTML file that's already ready when the browser requests it, the frameworks need to run logic to construct the page. This could be due to pending results from a database query or even because components need to be generated into markup by a UI framework (such as [React](https://reactjs.org/docs/react-dom-server.html)). Many web frameworks that run on the server have performance guidance that you can use to speed up this process.
+En vez de publicar inmediatamente una página estática cuando el navegador la solicita, muchos frameworks web del lado del servidor necesitan crear la página web de forma dinámica. En otras palabras, en vez de enviar un archivo HTML completo que ya está listo cuando el navegador lo solicita, los frameworks necesitan ejecutar la lógica para crear la página. Esto podría deberse a los resultados pendientes de una consulta a la base de datos o incluso porque los componentes se deben generar en el marcado por un framework de interfaz de usuario (como [React](https://reactjs.org/docs/react-dom-server.html)). Muchos frameworks web que se ejecutan en el servidor tienen una guía de rendimiento que se puede utilizar para acelerar este proceso.
 
-{% Aside %} Check out [Fix an overloaded server](/overloaded-server/) for more tips. {% endAside %}
+{% Aside %} Consulte [Cómo reparar un servidor sobrecargado](/overloaded-server/), para obtener más sugerencias. {% endAside %}
 
 ### Enrutar a los usuarios a una CDN cercana
 
-A Content Delivery Network (CDN) is a network of servers distributed in many different locations. If the content on your web page is being hosted on a single server, your website will load slower for users that are geographically farther away because their browser requests literally have to travel around the world. Consider using a CDN to ensure that your users never have to wait for network requests to faraway servers.
+Una Red de distribución de contenidos (CDN) es una red de servidores que se distribuyen en diferentes ubicaciones. Si el contenido de su página web se aloja en un solo servidor, su sitio web se cargará más lentamente para los usuarios que se encuentren geográficamente más lejos, porque las solicitudes de su navegador literalmente tienen que viajar por todo el mundo. Considere la posibilidad de utilizar una CDN para garantizar que sus usuarios nunca tengan que esperar las solicitudes de red a servidores lejanos.
 
-### Cache assets
+### Activos del caché
 
-If your HTML is static and doesn't need to change on every request, caching can prevent it from being recreated unnecessarily. By storing a copy of the generated HTML on disk, server-side caching can reduce TTFB and minimize resource usage.
+Si su HTML es estática y no necesita cambiar en cada solicitud, el almacenamiento en caché puede evitar que se vuelva a crear innecesariamente. Al almacenar una copia del HTML generado en el disco, el almacenamiento en el caché del lado del servidor puede reducir la TTFB y minimizar el uso de los recursos.
 
-Depending on your toolchain, there are many different ways to apply server caching:
+Dependiendo de su cadena de herramientas, hay muchas maneras diferentes de aplicar el almacenamiento en el caché del servidor:
 
-- Configure reverse proxies ([Varnish](https://varnish-cache.org/), [nginx](https://www.nginx.com/)) to serve cached content or act as a cache server when installed in front of an application server
-- Configure and manage your cloud provider's ([Firebase](https://firebase.google.com/docs/hosting/manage-cache), [AWS](https://aws.amazon.com/caching/), [Azure](https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching)) cache behavior
-- Use a CDN that provides edge servers so that your content is cached and stored closer to your users
+- Configure proxies inversos ([Varnish](https://varnish-cache.org/), [nginx](https://www.nginx.com/)) para publicar contenido en el caché o actuar como un servidor del caché cuando se instala frente a un servidor de aplicaciones
+- Configure y administre el comportamiento del caché de su proveedor en la nube ([Firebase](https://firebase.google.com/docs/hosting/manage-cache), [AWS](https://aws.amazon.com/caching/), [Azure)](https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching))
+- Utilice una CDN que proporcione servidores perimetrales para que su contenido se almacene en el caché y esté más cerca de sus usuarios
 
-### Serve HTML pages cache-first
+### Publicar las páginas HTML en cache-first
 
-When installed, a [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) runs in the browser background and can intercept requests from the server. This level of programmatic cache control makes it possible to cache some or all of the HTML page's content and only update the cache when the content has changed.
+Cuando se instala, un [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) se ejecuta en segundo plano del navegador y puede interceptar las solicitudes del servidor. Este nivel de control programático del caché permite almacenar en el caché parte o todo el contenido de la página HTML y solo actualizar el caché cuando el contenido cambió.
 
-The following chart shows how LCP distributions have been reduced on a site using this pattern:
+En la siguiente gráfica se muestra cómo se han reducido las distribuciones de LCP en un sitio utilizando este patrón:
 
-<figure class="w-figure">   {% Img     src="image/admin/uB0Sm56R88MRF16voQ1k.png",     alt="Largest Contentful Paint distributions before and after HTML caching",     width="800",     height="495"   %}   <figcaption class="w-figcaption">     Largest Contentful Paint distribution, for page loads with and without a service worker -      <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a>   </figcaption> </figure>
+<figure class="w-figure">{% Img src = "image / admin / uB0Sm56R88MRF16voQ1k.png", alt = "Las distribuciones de Largest Contentful Paint antes y después de utilizar el almacenamiento en el caché de HTML", width = "800", height = "495"%}<figcaption class="w-figcaption"> La distribución Contentful Paint más grande, para cargas de páginas mediante, y sin utilizar, un service worker - <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a></figcaption></figure>
 
-The chart shows the distribution for LCP from a single site over the last 28 days, segmented by service worker state. Notice how far more page loads have a faster LCP value after cache-first HTML page serving was introduced in the service worker (blue portion of chart).
+En la gráfica se muestra la distribución de la LCP de un solo sitio durante los últimos 28 días, segmentado por el estado del service worker. Observe cómo muchas más cargas de páginas tienen un valor de LCP más rápido después de que se introdujo el servicio de páginas HTML cache-first en el service worker (parte azul de la gráfica).
 
-{% Aside %} To learn more about techniques for serving full or partial HTML pages cache-first, take a look at [Smaller HTML Payloads with Service Workers](https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/) {% endAside %}
+{% Aside %} Para obtener más información sobre las técnicas para publicar páginas HTML completas o parciales en cache-first, eche un vistazo a [Cargas útiles HTML más pequeñas con Service Workers](https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/) {% endAside %}
 
-### Establish third-party connections early
+### Establecer conexiones con terceros con anticipación
 
 Las solicitudes del servidor a orígenes de terceros también pueden afectar a LCP, especialmente si son necesarias para mostrar contenido crítico en la página. Utilice `rel="preconnect"` para informar al navegador que su página tiene la intención de establecer una conexión lo antes posible.
 
@@ -95,13 +89,13 @@ Las solicitudes del servidor a orígenes de terceros también pueden afectar a L
 <link rel="preconnect" href="https://example.com" />
 ```
 
-You can also use `dns-prefetch` to resolve DNS lookups faster.
+También puede utilizar `dns-prefetch` para resolver las búsquedas de DNS de forma más rápida.
 
 ```html
 <link rel="dns-prefetch" href="https://example.com" />
 ```
 
-Although both hints work differently, consider using `dns-prefetch` as a fallback for browsers that do not support `preconnect`.
+Aunque ambas sugerencias funcionan de manera diferente, considere utilizar `dns-prefetch` como alternativa para los navegadores que no admiten `preconnect`.
 
 ```html
 <head>
@@ -111,51 +105,51 @@ Although both hints work differently, consider using `dns-prefetch` as a fallbac
 </head>
 ```
 
-{% Aside %} Learn more by reading [Establish network connections early to improve perceived page speed](/preconnect-and-dns-prefetch/) {% endAside %}
+{% Aside %} Obtenga más información leyendo [Establecer conexiones de red con anticipación para mejorar la velocidad que se percibe en la página](/preconnect-and-dns-prefetch/) {% endAside %}
 
-### Use signed exchanges (SXGs)
+### Utilizar intercambios firmados (SXG)
 
-[Signed exchanges (SXGs)](https://web.dev/signed-exchanges) are a delivery mechanism that allow for faster user experiences by providing content in an easily cacheable format. Specifically, [Google Search](https://developers.google.com/search/docs/advanced/experience/signed-exchange) will cache and sometimes prefetch SXGs. For sites that receive a large portion of their traffic from Google Search, SXGs can be an important tool for improving LCP. For more information, see [Signed Exchanges](/signed-exchanges).
+[Los intercambios firmados (SXG)](https://web.dev/signed-exchanges) son un mecanismo de entrega que permite experiencias de usuario más rápidas al proporcionar contenido en un formato que se puede almacenar en el caché fácilmente. Específicamente, la [Google Search](https://developers.google.com/search/docs/advanced/experience/signed-exchange) almacenará en el caché y, a veces, buscará previamente los SXG. Para los sitios que reciben una gran parte de su tráfico de Google Search, los SXG pueden ser una herramienta importante para mejorar LCP. Para obtener más información, consulte [Intercambios firmados](/signed-exchanges).
 
-## Render blocking JavaScript and CSS {: #render-blocking-resources }
+## Renderización que bloquea JavaScript y CSS {: #render-blocking-resources }
 
-Before a browser can render any content, it needs to parse HTML markup into a DOM tree. The HTML parser will pause if it encounters any external stylesheets (`<link rel="stylesheet">`) or synchronous JavaScript tags (`<script src="main.js">`).
+Antes de que un navegador pueda renderizar cualquier contenido, necesita analizar el marcado HTML en un árbol DOM. El analizador HTML se detendrá si encuentra hojas de estilo externas (`<link rel="stylesheet">`) o etiquetas de JavaScript sincrónicas (`<script src="main.js">`).
 
-Scripts and stylesheets are both render blocking resources which delay FCP, and consequently LCP. Defer any non-critical JavaScript and CSS to speed up loading of the main content of your web page.
+Los scripts y las hojas de estilo son recursos que bloquean la renderización y retrasan la FCP y, como consecuencia, la LCP. Retrasa cualquier JavaScript y CSS no crítico para acelerar la carga del contenido principal de su página web.
 
 ### Reducir el tiempo de bloqueo de CSS
 
-Ensure that only the minimal amount of necessary CSS is blocking render on your site with the following:
+Asegúrese de que solo la cantidad mínima de CSS necesaria esté bloqueando la renderización en su sitio con lo siguiente:
 
 - Minificar CSS
-- Defer non-critical CSS
-- Inline critical CSS
+- Retrasar CSS no crítico
+- CSS crítico con estilos integrados en el código
 
 ### Minificar CSS
 
-For easier legibility, CSS files can contain characters such as spacing, indentation, or comments. These characters are all unnecessary for the browser, and minifying these files will ensure that they get removed. Ultimately, reducing the amount of blocking CSS will always improve the time it takes to fully render the main content of the page (LCP).
+Para facilitar la legibilidad, los archivos CSS pueden contener caracteres como espaciado, sangría o comentarios. Todos estos caracteres son innecesarios para el navegador, y la minificación de estos archivos garantizará que se eliminen. En última instancia, reducir la cantidad de CSS de bloqueo siempre mejorará el tiempo que se tarda en renderizar completamente el contenido principal de la página (LCP).
 
-If you use a module bundler or build tool, include an appropriate plugin to minify CSS files on every build:
+Si utiliza un agrupador de módulos o una herramienta de compilación, incluya un complemento adecuado para minificar los archivos CSS en cada compilación:
 
-- For webpack: [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin)
+- Para webpack: [optimice-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin)
 - Para Gulp: [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css)
-- For Rollup: [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter)
+- Para Rollup: [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter)
 
 <figure class="w-figure">{% Img src = "image / admin / vQXSKrY1Eq3CKkNbu9Td.png", alt = "Ejemplo de mejora de LCP: antes y después de minificar CSS", width = "800", height = "139"%}<figcaption class="w-figcaption"> Ejemplo de mejora de LCP: antes y después de minificar CSS</figcaption></figure>
 
-{% Aside %} For more details, refer to the [Minify CSS](/minify-css/) guide. {% endAside %}
+{% Aside %} Para obtener más información, consulte la guía [Minify CSS](/minify-css/). {% endAside %}
 
-### Defer non-critical CSS
+### Retrasar CSS no crítico
 
-Use the [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) tab in Chrome DevTools to find any unused CSS on your web page.
+Utilice la pestaña [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) de Chrome DevTools para encontrar cualquier CSS que no utilice en su página web.
 
-{% Img src="image/admin/wjS4NrU5EsJeCuvK0zhn.png", alt="Coverage tab in Chrome DevTools", width="800", height="559" %}
+{% Img src="image/admin/wjS4NrU5EsJeCuvK0zhn.png", alt="Pestaña Coverage de Chrome DevTools", width="800", height="559" %}
 
 Para optimizar:
 
-- Remove any unused CSS entirely or move it to another stylesheet if used on a separate page of your site.
+- Elimine por completo cualquier CSS que no utilice o muévalo a otra hoja de estilo si se utiliza en una página separada de su sitio.
 
-- For any CSS not needed for initial rendering, use [loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md) to load files asynchronously, which leverages `rel="preload"`and `onload`.
+- Para cualquier CSS que no sea necesaria para la renderización inicial, utilice [loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md) para cargar los archivos de forma asincrónica, lo que aprovecha `rel="preload"` y `onload`.
 
     ```
     ```html
@@ -163,78 +157,78 @@ Para optimizar:
     ```
     ```
 
-    <figure class="w-figure">   {% Img     src="image/admin/2fcwrkXQRQrM8w1qyy3P.png",     alt="Example of LCP improvement: Before and after deferring non-critical CSS",     width="800",     height="139"   %}   <figcaption class="w-figcaption">     Example of LCP improvement: Before and after deferring non-critical CSS   </figcaption> </figure>
+    <figure class="w-figure">{% Img src="image/admin/2fcwrkXQRQrM8w1qyy3P.png", alt="Ejemplo de como mejorar LCP: antes y después de aplazar CSS no crítico", width="800", height="139" %} <figcaption class="w-figcaption"> Ejemplo de como mejorar LCP: antes y después de aplazar CSS no crítico </figcaption></figure>
 
-{% Aside %} For more details, refer to the [Defer non-critical CSS](/defer-non-critical-css/) guide. {% endAside %}
+{% Aside %} Para obtener más información, consulte la guía [Retrasar CSS no crítico](/defer-non-critical-css/). {% endAside %}
 
-### Inline critical CSS
+### CSS crítico con estilos integrados en el código
 
-Inline any critical-path CSS used for above-the-fold content by including it directly in `<head>.`
+Estilos integrados en el código de cualquier CSS de ruta crítica que se utilice para el contenido de la mitad superior de la página que lo incluya directamente en el `<head>.`
 
-<figure class="w-figure">   {% Img     src="image/admin/m0n0JsLpH9JsNnXywSwz.png",     alt="Critical CSS inlined",     width="800", height="325",     class="w-screenshot w-screenshot--filled"   %}   <figcaption class="w-figcaption">Critical CSS inlined</figcaption> </figure>
+<figure class="w-figure">{% Img src="image/admin/m0n0JsLpH9JsNnXywSwz.png", alt="CSS crítico con estilos integrados en el código", width="800", height="325", class="w-screenshot w-screenshot--lleno" %} <figcaption class="w-figcaption">CSS crítico con estilos integrados en el código</figcaption></figure>
 
-Inlining important styles eliminates the need to make a round-trip request to fetch critical CSS. Deferring the rest minimizes CSS blocking time.
+La inserción de estilos importantes elimina la necesidad de realizar una solicitud de ida y vuelta para obtener CSS crítico. Retrasar el resto minimiza el tiempo de bloqueo de CSS.
 
-If you cannot manually add inline styles to your site, use a library to automate the process. Some examples:
+Si no puede agregar manualmente estilos integrados en el código a su sitio, utilice una biblioteca para automatizar el proceso. Algunos ejemplos son:
 
-- [Critical](https://github.com/addyosmani/critical), [CriticalCSS](https://github.com/filamentgroup/criticalCSS), and [Penthouse](https://github.com/pocketjoso/penthouse) are all packages that extract and inline above-the-fold CSS
-- [Critters](https://github.com/GoogleChromeLabs/critters) is a webpack plugin that inlines critical CSS and lazy-loads the rest
+- [Critical](https://github.com/addyosmani/critical) , [CriticalCSS](https://github.com/filamentgroup/criticalCSS) y [Penthouse](https://github.com/pocketjoso/penthouse) son paquetes que extraen e incorporan estilos integrados en el código de CSS, en la parte superior de la página.
+- [Critters](https://github.com/GoogleChromeLabs/critters) es un complemento de webpack que integra estilos integrados en el código de CSS crítico y carga diferida de REST
 
-<figure class="w-figure">   {% Img     src="image/admin/L8sc51bd3ckxwnUfczC4.png",     alt="Example of LCP improvement: Before and after inlining critical CSS",     width="800",     height="175"   %}   <figcaption class="w-figcaption">     Example of LCP improvement: Before and after inlining critical CSS   </figcaption> </figure>
+<figure class="w-figure">{% Img src="image/admin/L8sc51bd3ckxwnUfczC4.png", alt="Ejemplo de como mejorar LCP antes y después de incorporar estilos integrados en el código de CSS crítico", width="800", height="175" %} <figcaption class="w-figcaption"> Ejemplo de como mejorar LCP antes y después de incorporar estilos integrados en el código de CSS crítico </figcaption></figure>
 
-{% Aside %} Take a look at the [Extract critical CSS](/extract-critical-css/) guide to learn more. {% endAside %}
+{% Aside %} Eche un vistazo a la guía sobre [Cómo extraer CSS crítico](/extract-critical-css/) para obtener más información. {% endAside %}
 
 ### Reducir el tiempo de bloqueo de JavaScript
 
-Download and serve the minimal amount of necessary JavaScript to users. Reducing the amount of blocking JavaScript results in a faster render, and consequently a better LCP.
+Descargue y publique la cantidad mínima de JavaScript necesaria a los usuarios. La reducción de la cantidad que JavaScript bloquea el sitio se traduce en una renderización más rápida y, en consecuencia, en una mejor LCP.
 
 Esto se puede lograr optimizando sus scripts de diferentes formas:
 
 - [Minificar y comprimir archivos JavaScript](https://web.dev/reduce-network-payloads-using-text-compression/)
-- [Defer unused JavaScript](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
+- [Retrasar JavaScript no utilizado](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
 - [Minimice los polyfills no utilizados](https://web.dev/serve-modern-code-to-modern-browsers/)
 
-{% Aside %} The [Optimize First Input Delay](/optimize-fid/) guide covers all techniques needed to reduce JavaScript blocking time in a little more detail. {% endAside %}
+{% Aside %} La guía [Optimizar First Input Delay](/optimize-fid/) cubre todas las técnicas necesarias para reducir el tiempo de bloqueo de JavaScript con un poco más de detalle. {% endAside %}
 
 ## Tiempos de carga de recursos lentos {: # slow-resource-load-times}
 
-Although an increase in CSS or JavaScript blocking time will directly result in worse performance, the time it takes to load many other types of resources can also affect paint times. The types of elements that affect LCP are:
+Aunque un aumento en el tiempo de bloqueo de CSS o JavaScript se traduce directamente en un peor rendimiento, el tiempo que se tarda en cargar muchos otros tipos de recursos también puede afectar los tiempos de despliegue. Los tipos de elementos que afectan a LCP son:
 
 - `<img>` elementos
 - `<image>` elementos dentro de un elemento `<svg>`
-- `<video>` elements (the [poster](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-poster) image is used to measure LCP)
-- An element with a background image loaded via the [`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url()) function (as opposed to a CSS gradient)
-- [Block-level](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) elements containing text nodes or other inline-level text elements
+- `<video>` elementos (la imagen del [cartel](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-poster) se utilizan para medir LCP)
+- Un elemento con una imagen de segundo plano que se carga a través de la función [`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url()) (a diferencia de un <a>gradiente CSS</a>)
+- Elementos a [nivel de bloque](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) que contienen nodos de texto u otros elementos de texto con estilos integrados en el código.
 
-The time it takes to load these elements if rendered above-the-fold will have a direct effect on LCP. There are a few ways to ensure these files are loaded as fast as possible:
+El tiempo que se tarda en cargar estos elementos si se renderizan en la mitad superior de la página tendrá un efecto directo en LCP. Hay algunas formas de garantizar que estos archivos se carguen lo más rápido posible:
 
 - Optimizar y comprimir imágenes
 - Precargar recursos importantes
 - Comprimir archivos de texto
-- Deliver different assets based on network connection (adaptive serving)
-- Cache assets using a service worker
+- Entregar diferentes activos basados en la conexión de la red (servicio adaptable)
+- Almacenar activos en el caché con un service worker
 
 ### Optimizar y comprimir imágenes
 
-For many sites, images are the largest element in view when the page has finished loading. Hero images, large carousels or banner images are all common examples of this.
+En muchos sitios, las imágenes son el elemento más grande a la vista cuando la página terminó de cargarse. En las imágenes hero los grandes carruseles o los banners son ejemplos comunes de esto.
 
-<figure class="w-figure">   {% Img     src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/unWra6cq0hPJJJT7Y3ye.png",     alt="",     width="459",     height="925"   %}   <figcaption>Image as the largest page element: <a href="https://design.google/">design.google</a></figcaption> </figure>
+<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/unWra6cq0hPJJJT7Y3ye.png", alt="", width="459", height="925" %} <figcaption>Imagen como elemento más grande de la página: <a href="https://design.google/">design.google</a></figcaption></figure>
 
-Improving how long it takes to load and render these types of images will directly speed up LCP. To do this:
+Mejorar el tiempo que se tarda en cargar y renderizar este tipo de imágenes acelerará directamente la LCP. Para hacer esto:
 
-- Consider not using an image in the first place. If it's not relevant to the content, remove it.
-- Compress images (with [Imagemin](/use-imagemin-to-compress-images) for example)
+- En primer lugar, considere la posibilidad de no utilizar una imagen. Si no es relevante para el contenido, elimínela.
+- Comprima imágenes (por ejemplo con [Imagemin](/use-imagemin-to-compress-images))
 - Convierta imágenes a formatos más nuevos (JPEG 2000, JPEG XR o WebP)
-- Use responsive images
-- Consider using an image CDN
+- Utilice imágenes responsive
+- Considere utilizar una imagen CDN
 
-{% Aside %} Take a look at [Optimize your images](/fast/#optimize-your-images) for guides and resources that explain all of these techniques in detail. {% endAside %}
+{% Aside %} Eche un vistazo a [Optimice sus imágenes](/fast/#optimize-your-images) para obtener guías y recursos que expliquen todas estas técnicas en detalle. {% endAside %}
 
 ### Precargar recursos importantes
 
 A veces, los recursos importantes que se declaran o utilizan en un determinado archivo CSS o JavaScript pueden recuperarse más tarde de lo que le gustaría, como una fuente escondida en uno de los muchos archivos CSS de una aplicación.
 
-If you know that a particular resource should be prioritized, use `<link rel="preload">` to fetch it sooner. [Many types of resources](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded) can be preloaded, but you should first focus on [preloading critical assets](/preload-critical-assets/), such as fonts, above-the-fold images or videos, and critical-path CSS or JavaScript.
+Si sabe que un recurso en particular debe ser prioritario, utilice `<link rel="preload">` para recuperarlo antes. [Se pueden precargar muchos tipos de recursos](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded), pero debería centrarse primero en [precargar activos críticos](/preload-critical-assets/), como fuentes, imágenes o videos en la mitad superior de la página, y CSS o JavaScript de ruta crítica.
 
 ```html
 <link rel="preload" as="script" href="script.js" />
@@ -244,7 +238,7 @@ If you know that a particular resource should be prioritized, use `<link rel="pr
 <link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin />
 ```
 
-Since Chrome 73, preloading can be used along with [responsive images](/preload-responsive-images/) to combine both patterns for much faster image loading.
+Desde Chrome 73, la precarga se puede utilizar junto con [imágenes responsivas](/preload-responsive-images/) para combinar ambos patrones y conseguir una carga de imágenes mucho más rápida.
 
 ```html
 <link
@@ -258,23 +252,23 @@ Since Chrome 73, preloading can be used along with [responsive images](/preload-
 
 ### Comprimir archivos de texto
 
-Compression algorithms, like [Gzip](https://www.youtube.com/watch?v=whGwm0Lky2s&feature=youtu.be&t=14m11s) and [Brotli](https://opensource.googleblog.com/2015/09/introducing-brotli-new-compression.html), can significantly reduce the size of text files (HTML, CSS, JavaScript) as they're transferred between the server and browser. Gzip is effectively supported in all browsers and Brotli, which provides even better compression results, [can be used in almost all newer browsers](https://caniuse.com/#feat=brotli).
+Los algoritmos de compresión, como [Gzip](https://www.youtube.com/watch?v=whGwm0Lky2s&feature=youtu.be&t=14m11s) y [Brotli](https://opensource.googleblog.com/2015/09/introducing-brotli-new-compression.html), pueden reducir significativamente el tamaño de los archivos de texto (HTML, CSS, JavaScript) conforme se transfieren entre el servidor y el navegador. Gzip efectivamente es compatible con todos los navegadores y Brotli, que proporciona resultados de compresión aún mejores, [se puede utilizar en casi todos los navegadores más recientes](https://caniuse.com/#feat=brotli).
 
-Compressing your resources will minimize their delivery size, improving load times and consequently LCP.
+La compresión de sus recursos minimizará su tamaño de entrega, mejorando los tiempos de carga y, en consecuencia, la LCP.
 
-1. First, check if your server already compresses files automatically. Most hosting platforms, CDNs, and reverse proxy servers either encode assets with compression by default or allow you to easily configure them.
-2. If you need to modify your server to compress files, consider using Brotli instead of gzip since it can provide better compression ratios.
-3. Once you pick a compression algorithm to use, compress assets ahead of time during the build process instead of on-the-fly as they are requested by the browser. This minimizes server overhead and prevents delays when requests are made, especially when using high compression ratios.
+1. En primer lugar, verifique si su servidor ya comprime archivos automáticamente. La mayoría de las plataformas de alojamiento, CDN y servidores proxy inversos codifican activos con compresión de forma predeterminada o le permiten configurarlos fácilmente.
+2. Si necesita modificar su servidor para comprimir los archivos, considere la posibilidad de utilizar Brotli en vez de gzip, ya que puede proporcionar mejores índices de compresión.
+3. Una vez que elija un algoritmo de compresión, comprima los activos con anticipación durante el proceso de creación en vez de hacerlo sobre la marcha, según lo solicite el navegador. Esto minimiza la sobrecarga del servidor y se evitan retrasos en las solicitudes, especialmente cuando se utilizan índices de compresión elevados.
 
-<figure class="w-figure">   {% Img     src="image/admin/Ckh2Jjkoh7ojLj5Wxeqc.png",     alt="Example of LCP improvement: Before and after Brotli compression ",     width="800",     height="139"   %}   <figcaption class="w-figcaption">     Example of LCP improvement: Before and after Brotli compression   </figcaption> </figure>
+<figure class="w-figure">{% Img src="image/admin/Ckh2Jjkoh7ojLj5Wxeqc.png", alt="Ejemplo de como mejorar LCP: antes y después de utilizar la compresión Brotli", width="800", height="139" %} <figcaption class="w-figcaption"> Ejemplo de como mejorar LCP: antes y después de utilizar la compresión Brotli </figcaption></figure>
 
-{% Aside %} For more details, refer to the [Minify and compress network payloads](/reduce-network-payloads-using-text-compression/) guide. {% endAside %}
+{% Aside %} Para obtener más información, consulte la guía [Minificar y comprimir cargas útiles de la red](/reduce-network-payloads-using-text-compression/). {% endAside %}
 
-### Adaptive serving
+### Servicio adaptativo
 
-When loading resources that make up the main content of a page, it can be effective to conditionally fetch different assets depending on the user's device or network conditions. This can be done using the [Network Information](https://wicg.github.io/netinfo/), [Device Memory](https://www.w3.org/TR/device-memory/), and [HardwareConcurrency](https://html.spec.whatwg.org/multipage/workers.html#navigator.hardwareconcurrency) APIs.
+Cuando se cargan los recursos que conforman el contenido principal de una página, puede ser efectivo obtener de forma condicional diferentes activos dependiendo del dispositivo del usuario o de las condiciones de la red. Esto se puede hacer utilizando las API [Información de la red](https://wicg.github.io/netinfo/), [Memoria del dispositivo](https://www.w3.org/TR/device-memory/) y [Concurrencia del hardware](https://html.spec.whatwg.org/multipage/workers.html#navigator.hardwareconcurrency).
 
-If you have large assets that are critical for initial rendering, you can use different variations of the same resource depending on the user's connection or device. For example, you can display an image instead of a video for any connection speeds lower than 4G:
+Si tienes activos grandes que son críticos para la renderización inicial, puedes utilizar diferentes variaciones del mismo recurso dependiendo de la conexión o el dispositivo del usuario. Por ejemplo, puedes mostrar una imagen en vez de un video para cualquier velocidad de conexión inferior a 4G:
 
 ```js
 if (navigator.connection && navigator.connection.effectiveType) {
@@ -286,66 +280,66 @@ if (navigator.connection && navigator.connection.effectiveType) {
 }
 ```
 
-A list of useful properties that you can use:
+Una lista de propiedades útiles que puede utilizar son:
 
-- `navigator.connection.effectiveType`: Effective connection type
-- `navigator.connection.saveData`: Data-saver enabled/disabled
-- `navigator.hardwareConcurrency`: CPU core count
-- `navigator.deviceMemory`: Device Memory
+- `navigator.connection.effectiveType`: tipo de conexión efectiva
+- `navigator.connection.saveData`: ahorro de datos habilitado/deshabilitado
+- `navigator.hardwareConcurrency`: recuento de núcleos del CPU
+- `navigator.deviceMemory`: memoria del dispositivo
 
-{% Aside %} For more information, refer to [Adaptive serving based on network quality](/adaptive-serving-based-on-network-quality/). {% endAside %}
+{% Aside %} Para obtener más información, consulte [Servicio adaptativo basado en la calidad de la red](/adaptive-serving-based-on-network-quality/). {% endAside %}
 
-### Cache assets using a service worker
+### Almacenar activos en el caché con un service worker
 
-Service workers can be used for many useful tasks, including serving smaller HTML responses as mentioned earlier in this article. They can also be used to cache any static resource which can be served to the browser instead of from the network on repeat requests.
+Los service workers se pueden utilizar para muchas tareas útiles, incluyendo publicar respuestas en HTML más pequeñas como se mencionó anteriormente en este artículo. También se pueden utilizar para almacenar en el caché cualquier recurso estático que se pueda publicar en el navegador en vez de desde la red en solicitudes repetidas.
 
-Precaching critical resources using a service worker can reduce their load times significantly, especially for users who reload the web page with a weaker connection (or even access it offline). Libraries like [Workbox](https://developers.google.com/web/tools/workbox/) can make the process of updating precached assets easier than writing a custom service worker to handle this yourself.
+El almacenamiento previo en el caché de recursos críticos mediante un service worker puede reducir sus tiempos de carga de manera significativa, especialmente para los usuarios que recargan la página web con una conexión más débil (o incluso acceden a ella sin conexión). Las librerías como [Workbox](https://developers.google.com/web/tools/workbox/) pueden hacer que el proceso de actualización de activos almacenados previamente en el caché sea más fácil que escribir en un service worker personalizado para que lo maneje usted mismo.
 
-{% Aside %} Take a look at [Network reliability](/reliable/) to learn more about service workers and Workbox. {% endAside %}
+{% Aside %} Eche un vistazo a la [confiabilidad de la red](/reliable/) para obtener más información sobre los service workers y Workbox. {% endAside %}
 
 ## Representación del lado del cliente {: # client-side-rendering}
 
-Many sites use client-side JavaScript logic to render pages directly in the browser. Frameworks and libraries, like [React](https://reactjs.org/), [Angular](https://angular.io/), and [Vue](https://vuejs.org/), have made it easier to build single-page applications that handle different facets of a web page entirely on the client rather on the server.
+Muchos sitios utilizan la lógica de JavaScript del lado del cliente para renderizar las páginas directamente en el navegador. Los frameworks y las librerías, como [React](https://reactjs.org/), [Angular](https://angular.io/) y [Vue](https://vuejs.org/), han facilitado la creación de aplicaciones de una sola página que manejan diferentes facetas de una página web completamente en el cliente y no en el servidor.
 
-If you're building a site that is mostly rendered on the client, you should be wary of the effect it can have on LCP if a large JavaScript bundle is used. If optimizations aren't in place to prevent it, users may not see or interact with any content on the page until all the critical JavaScript has finished downloading and executing.
+Si está creando un sitio que se renderiza principalmente en el lado del cliente, debe tener cuidado con el efecto que puede tener en LCP si se utiliza un gran paquete de JavaScript. Si no se implementan optimizaciones para evitarlo, es posible que los usuarios no vean ni interactúen con ningún contenido de la página hasta que todo el JavaScript crítico haya terminado de descargarse y ejecutarse.
 
 Al crear un sitio renderizado del lado del cliente, considere las siguientes optimizaciones:
 
 - Minimizar JavaScript crítico
-- Use server-side rendering
-- Use pre-rendering
+- Utilizar la renderización del lado del servidor
+- Utilizar la renderización previa
 
 ### Minimizar JavaScript crítico
 
-If content on your site only becomes visible, or can be interacted with, after a certain amount of JavaScript is downloaded: it becomes even more important to cut down on the size of your bundle as much as possible. This can be done by:
+Si el contenido de su sitio solo se vuelve visible, o se puede interactuar con él, después de que se descargue una cierta cantidad de JavaScript: es aún más importante reducir el tamaño de su paquete tanto como sea posible. Esto se puede hacer al:
 
 - Minificar JavaScript
-- Deferring unused JavaScript
+- Retrasar JavaScript no utilizado
 - Minimizar los polyfills no utilizados
 
-Go back to the [Reduce JavaScript blocking time](#reduce-javascript-blocking-time) section to read more about these optimizations.
+Vuelva a la sección [Reducir el tiempo de bloqueo de JavaScript](#reduce-javascript-blocking-time) para obtener más información sobre estas optimizaciones.
 
-### Use server-side rendering
+### Utilizar la renderización del lado del servidor
 
-Minimizing the amount of JavaScript should always be the first thing to focus on for sites that are mostly client-rendered. However, you should also consider combining a server rendering experience to improve LCP as much as possible.
+Minimizar la cantidad de JavaScript siempre debe ser lo primero en lo que se debe centrar para los sitios que en su mayoría se renderizan por el cliente. Sin embargo, también debería considerar la posibilidad de combinar una experiencia de renderizado en el servidor para mejorar la LCP tanto como sea posible.
 
-This concept works by using the server to render the application into HTML, where the client then "[hydrates](https://www.gatsbyjs.org/docs/react-hydration/)" all the JavaScript and required data onto the same DOM content. This can improve LCP by ensuring the main content of the page is first rendered on the server rather than only on the client, but there are a few drawbacks:
+Este concepto funciona utilizando el servidor para renderizar la aplicación en HTML, donde el cliente luego "[hidrata](https://www.gatsbyjs.org/docs/react-hydration/)" todo el JavaScript y los datos requeridos en el mismo contenido DOM. Esto puede mejorar la LCP al garantizar que el contenido principal de la página se renderice primero en el servidor en vez de solo en el lado del cliente, pero hay algunos inconvenientes:
 
 - Mantener la misma aplicación renderizada en JavaScript en el servidor y el cliente puede aumentar la complejidad.
-- Executing JavaScript to render an HTML file on the server will always increase server response times (TTFB) as compared to just serving static pages from the server.
-- A server-rendered page may look like it can be interacted with, but it can't respond to any user input until all the client-side JavaScript has executed. In short, it can make [**Time to Interactive**](/tti/) (TTI) worse.
+- Ejecutar JavaScript para renderizar un archivo HTML en el servidor siempre aumentará los tiempos de respuesta del servidor (TTFB) en comparación con solo publicar páginas estáticas desde el servidor.
+- Puede parecer que se puede interactuar con una página renderizada por el servidor, pero no puede responder a ninguna entrada del usuario hasta que se haya ejecutado todo el JavaScript del lado del cliente. En resumen, puede hacer que el [**Time to Interactive: Tiempo de Interacción **](/tti/) (TTI) empeore.
 
-### Use pre-rendering
+### Utilizar la renderización previa
 
-Pre-rendering is a separate technique that is less complex than server-side rendering and also provides a way to improve LCP in your application. A headless browser, which is a browser without a user interface, is used to generate static HTML files of every route during build time. These files can then be shipped along with the JavaScript bundles that are needed for the application.
+La renderización previa es una técnica independiente que es menos compleja que la renderización del lado del servidor y también proporciona una forma de mejorar LCP en su aplicación. Se utiliza un navegador sin encabezado, el cual es un navegador sin interfaz de usuario, para generar archivos HTML estáticos de cada ruta durante el tiempo de la creación. Estos archivos se pueden enviar junto con los paquetes de JavaScript necesarios para la aplicación.
 
-With pre-rendering, TTI is still negatively impacted but server response times aren't as affected as they would be with a server-side rendering solution that dynamically renders each page only after it's requested.
+Con la renderización previa, la TTI sigue teniendo un impacto negativo, pero los tiempos de respuesta del servidor no se ven tan afectados como lo harían con una solución de la renderización del lado del servidor que renderiza dinámicamente cada página solo después de que se solicita.
 
-<figure class="w-figure">   {% Img     src="image/admin/sm9s16UHfh8a5MDEWjxa.png",     alt="Example of LCP improvement: Before and after pre-rendering",     width="800",     height="139"   %}   <figcaption class="w-figcaption">     Example of LCP improvement: Before and after pre-rendering   </figcaption> </figure>
+<figure class="w-figure">{% Img src="image/admin/sm9s16UHfh8a5MDEWjxa.png", alt="Ejemplo de como mejorar LCP: antes y después de hacer una renderización previa", width="800", height="139" %} <figcaption class="w-figcaption"> Ejemplo de como mejorar LCP: antes y después de hacer una renderización previa </figcaption></figure>
 
-{% Aside %} For a deeper dive into different server-rendering architectures, take a look at [Rendering on the web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web). {% endAside %}
+{% Aside %} Para profundizar en las diferentes arquitecturas de renderización de servidores, eche un vistazo a la [Renderización en la web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web). {% endAside %}
 
-## Developer tools
+## Herramientas para desarrolladores
 
 Hay varias herramientas disponibles para medir y depurar LCP:
 
@@ -353,10 +347,10 @@ Hay varias herramientas disponibles para medir y depurar LCP:
 
     {% Img src="image/admin/Sar3Pa7TDe9ibny6sfq4.jpg", alt="Lighthouse 6.0", width="800", height="309" %}
 
-- The **Timings** section of the [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) panel in Chrome DevTools includes a LCP marker and shows you which element is associated with LCP when you hover over the **Related Node** field.
+- La sección de **sincronizaciones** del [rendimiento](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) en el panel en Chrome DevTools incluye un marcador de LCP y muestra qué elemento se asocia con LCP cuando se pasa sobre el campo **Nodo relacionado**.
 
-    {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="LCP in Chrome DevTools", width="800", height="509" %}
+    {% Img src="image/admin/sxczQPKH0cvMBsNCx5uH.png", alt="LCP en Chrome DevTools", width="800", height="509" %}
 
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) provides real-world LCP values aggregated at the origin-level
+- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) proporciona valores de LCP del mundo real agregados a nivel de origen.
 
-*With thanks to Philip Walton, Katie Hempenius, Kayce Basques, and Ilya Grigorik for their reviews.*
+*Agradecemos a Philip Walton, Katie Hempenius, Kayce Basques e Ilya Grigorik por sus comentarios.*
