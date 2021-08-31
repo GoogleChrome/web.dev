@@ -5,7 +5,7 @@ authors:
 date: '2020-05-27'
 updated: '2020-05-27'
 hero: image/admin/QxMJKZcue9RS5u05XxTE.png
-alt: Monthly graph overlayed with stopwatches labeled LCP, FID, and CLS.
+alt: Gráfico mensal sobreposto com cronômetros identificados como LCP, FID e CLS.
 description: Aprenda como medir as Web Vitals do seu site em ambientes de mundo real e de laboratório.
 tags:
   - blog
@@ -29,7 +29,7 @@ Se você não tiver uma configuração RUM, as ferramentas a seguir irão lhe fo
 
 É importante notar que, embora as ferramentas listadas acima sejam adequadas para "começar" a medir as Web Vitals, elas também podem ser úteis em outros contextos. Em particular, tanto CrUX e como o PSI estão disponíveis como API e podem ser usados para [construir painéis](https://dev.to/chromiumdev/a-step-by-step-guide-to-monitoring-the-competition-with-the-chrome-ux-report-4k1o) e outros relatórios.
 
-### Collecting RUM data
+### Coletando dados RUM
 
 Embora as ferramentas baseadas em CrUX sejam um bom ponto de partida para investigar o desempenho das Web Vitals, é altamente recomendável complementá-las com seus próprios dados RUM. Os dados RUM que você mesmo coleta podem fornecer feedback mais detalhado e imediato sobre o desempenho do seu site. Isso facilita a identificação de problemas e o teste de possíveis soluções.
 
@@ -41,7 +41,7 @@ Provedores RUM dedicados se especializam em coletar e relatar dados RUM. Para us
 
 Se você não tiver um provedor RUM, poderá aumentar sua configuração de análise existente para coletar e relatar essas métricas usando a [biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals). Este método é explicado em mais detalhes abaixo.
 
-### The web-vitals JavaScript library
+### A biblioteca JavaScript web-vitals
 
 Se você estiver implementando sua própria configuração RUM para Web Vitals, a maneira mais fácil de coletar medições do Web Vitals é usar a biblioteca JavaScript [`web-vitals`](https://github.com/GoogleChrome/web-vitals). A `web-vitals` é uma pequena biblioteca modular (~1 KB) que fornece uma API conveniente para coletar e relatar cada uma das métricas das Web Vitals [mensuráveis em campo.](/user-centric-performance-metrics/#in-the-field)
 
@@ -49,7 +49,7 @@ As métricas que compõem as Web Vitals não são todas expostas diretamente pel
 
 Para mais informações sobre a implementação da biblioteca `web-vitals`, consulte a [documentação](https://github.com/GoogleChrome/web-vitals) e o guia [Práticas recomendadas para medir as métricas Web Vitals em campo](/vitals-field-measurement-best-practices/).
 
-### Data aggregation
+### Agregação de dados
 
 É essencial que você relate as medições coletadas pela biblioteca `web-vitals`. Se esses dados forem medidos, mas não relatados, você nunca vai vê-los. A documentação da `web-vitals` inclui exemplos que mostram como enviar os dados para [um endpoint de API genérico](https://github.com/GoogleChrome/web-vitals#send-the-results-to-an-analytics-endpoint), [Google Analytics](https://github.com/GoogleChrome/web-vitals#send-the-results-to-google-analytics) ou [Google Tag Manager](https://github.com/GoogleChrome/web-vitals#send-the-results-to-google-tag-manager) .
 
@@ -57,7 +57,7 @@ Se você já tem uma ferramenta de relatórios favorita, considere usá-la. Caso
 
 Ao considerar qual ferramenta usar, é importante pensar sobre quem precisará ter acesso aos dados. Normalmente, as empresas obtêm os maiores ganhos de desempenho quando toda a empresa, em vez de um único departamento, tem interesse em melhorar o desempenho. Consulte [Corrigindo a velocidade multifuncional de um site](/fixing-website-speed-cross-functionally/) para saber como conseguir a adesão de diferentes departamentos.
 
-### Data interpretation
+### Interpretação dos dados
 
 Ao analisar os dados de desempenho, é importante prestar atenção às caudas da distribuição. Os dados RUM geralmente revelam que o desempenho varia bastante: alguns usuários têm experiências rápidas enquanto outros têm experiências lentas. No entanto, usar a mediana para resumir os dados pode mascarar facilmente esse comportamento.
 
@@ -67,16 +67,16 @@ Com relação às métricas Web Vitals, o Google usa a porcentagem de experiênc
 
 [Os dados de laboratório](/user-centric-performance-metrics/#in-the-lab) , também conhecidos como dados sintéticos, são coletados de um ambiente controlado, em vez de usuários reais. Ao contrário dos dados RUM, os dados de laboratório podem ser coletados de ambientes de pré-produção e, portanto, incorporados aos workflows do desenvolvedor e processos de integração contínua. Exemplos de ferramentas que coletam dados sintéticos são Lighthouse e WebPageTest.
 
-### Considerations
+### Considerações
 
 Sempre haverá discrepâncias entre os dados RUM e os dados do laboratório, principalmente se as condições da rede, o tipo de dispositivo ou a localização do ambiente do laboratório forem significativamente diferentes daqueles usados pelos usuários. No entanto, quando se trata de coletar dados de laboratório sobre métricas Web Vitals em particular, há algumas considerações específicas importantes que devem ser observadas:
 
 - **Cumulative Layout Shift - CLS (deslocamento cumulativo de layout):** A métrica [Cumulative Layout Shift](/cls/) medida em ambientes de laboratório pode ser artificialmente menor do que a CLS observada nos dados RUM. A CLS é definida como a "soma total de todas as pontuações de deslocamento de layout individual para cada deslocamento de layout inesperado que ocorre *durante toda a vida útil da página*". No entanto, a vida útil de uma página normalmente é muito diferente, dependendo se ela está sendo carregada por um usuário real ou por uma ferramenta de medição de desempenho sintética. Muitas ferramentas de laboratório apenas carregam a página: elas não interagem com ela. Como resultado, elas apenas capturam deslocamentos de layout que ocorrem durante o carregamento inicial da página. Em contraste, a CLS medida pelas ferramentas RUM captura [deslocamentos inesperados de layout](/cls/#expected-vs.-unexpected-layout-shifts) que ocorrem durante toda a vida útil da página.
 - **First Input Delay - FID (atraso da primeira entrada):** A métrica [First Input Delay](/fid/) não pode ser medida em ambientes de laboratório porque requer interações do usuário com a página. Como resultado, a métrica [Total Blocking Time](/tbt/) (TBT) é o proxy de laboratório recomendado para o FID. A TBT mede a "quantidade total de tempo entre a Primeira renderização de conteúdo e o Tempo até a interação, durante a qual a página é bloqueada, ou seja, impedida de responder à entrada do usuário". Embora a FID e a TBT sejam calculados de forma diferente, ambas são reflexos de um thread principal bloqueado durante o processo de bootstrap. Quando o thread principal é bloqueado, o navegador demora para responder às interações do usuário. A FID mede o atraso, se houver, que ocorre na primeira vez que um usuário tenta interagir com uma página.
 
-### Tooling
+### Ferramental
 
-These tools can be used to gather lab measurements of Web Vitals:
+Essas ferramentas podem ser usadas para coletar medições de laboratório de Web Vitals:
 
 - **Web Vitals Chrome Extension:** O [Web Vitals Chrome Extension](https://github.com/GoogleChrome/web-vitals-extension) mede e reporta as Core Web Vitals (LCP, FID, e CLS) para uma determinada página. Esta ferramenta se destina a fornecer aos desenvolvedores feedback de desempenho em tempo real conforme eles fazem alterações no código.
 - **Lighthouse: ** O Lighthouse relata sobre LCP, CLS e TBT e também destaca possíveis melhorias de desempenho. O Lighthouse está disponível no Chrome DevTools, como uma extensão do Chrome e como um pacote npm. O Lighthouse também pode ser incorporado a workflows de integração contínua por meio do [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) .
