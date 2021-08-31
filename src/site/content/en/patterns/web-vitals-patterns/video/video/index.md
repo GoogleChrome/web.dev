@@ -4,7 +4,7 @@ title: Video
 description: Optimize video tags for Core Web Vitals
 date: 2021-08-19
 updated: 2021-08-19
-height: 400
+height: 500
 ---
 
 When optimizing video for Core Web Vitals make sure to set the `width` and

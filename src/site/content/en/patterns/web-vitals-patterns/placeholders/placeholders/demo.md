@@ -10,7 +10,7 @@ patternId: web-vitals-patterns/placeholders/placeholders
     <title>Placeholder demo</title>
     <style>
         :root {
-            --placeholder-primary: #bfbfbf;
+            --placeholder-primary: #eeeeee;
             --placeholder-secondary: #cccccc;
         }
         body {
@@ -31,10 +31,6 @@ patternId: web-vitals-patterns/placeholders/placeholders
             display: grid;
             gap: .5em;
         }
-        .image-container {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-        }
         .image-container img {
             width: 100%;
         }
@@ -44,25 +40,31 @@ patternId: web-vitals-patterns/placeholders/placeholders
             text-align: center;
             font-weight: bold;
         }
-        @keyframes fade {
-            50% {
-                opacity: .2;
-            }
-        }
-        .loading {
+        .image-container {
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
             animation: fade ease-in-out 2s infinite;
         }
-        .loading .image-container{
-            background-color: var(--placeholder-primary);
+        @keyframes fade {
+            0% {
+                background-color: var(--placeholder-primary);
+            }
+            50% {
+                background-color: var(--placeholder-secondary);
+            }
+            100% {
+                background-color: var(--placeholder-primary);
+            }
         }
-        .loading .text-container {
-            background-color: var(--placeholder-secondary);
+        .item.loaded .image-container, .item.loaded .text-container {
+            animation: none;
         }
     </style>
 </head>
 
 <body>
     <h1>Placeholders</h1>
+    <button>Reload</button>
     <div class="grid">
         <div class="item">
             <div class="image-container">
@@ -76,29 +78,61 @@ patternId: web-vitals-patterns/placeholders/placeholders
             </div>
             <div class="text-container">Watches</div>
         </div>
-        <div class="item loading">
+        <div class="item empty">
             <div class="image-container">
                 <img src="">
             </div>
             <div class="text-container"></div>
         </div>
-        <div class="item loading">
+        <div class="item empty">
             <div class="image-container">
                 <img src="">
             </div>
             <div class="text-container"></div>
         </div>
-        <div class="item loading">
+        <div class="item empty">
             <div class="image-container">
                 <img src="">
             </div>
             <div class="text-container"></div>
         </div>
-        <div class="item loading">
+        <div class="item empty">
             <div class="image-container">
                 <img src="">
             </div>
             <div class="text-container"></div>
         </div>
     </div>
+    <script>
+        document.querySelector("button").addEventListener("click", ()=> {
+            window.location.reload();
+        });
+        setTimeout(() => {
+            const data = [
+                {
+                    description: "Shirt",
+                    src:"https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/eM7KKuO6MQv43UWd0bSG.jpg"
+                },
+                {
+                    description: "Shorts",
+                    src:"https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/CXdSCe7iBNHX1SQGR9Xd.jpg"
+                },
+                {
+                    description: "Sunglasses",
+                    src:"https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/sSJWeg59fl3ObQurc50r.jpg"
+                },
+                {
+                    description: "Shoes",
+                    src:"https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/4d94KXdGWwPr9lBa4ui9.jpg"
+                }
+            ];
+            document.querySelectorAll(".item.empty").forEach((el, index) => {
+                if(data[index]){
+                    el.classList = "item loaded";
+                    el.querySelector("img").src = data[index].src;
+                    el.querySelector(".text-container").innerHTML = data[index].description;
+                }
+            });
+        }, 3000);
+    </script>
 </body>

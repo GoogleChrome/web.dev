@@ -13,7 +13,11 @@ patternId: web-vitals-patterns/video/video-gif
             font-family: system-ui;
             display: grid;
             justify-items: center;
-            padding: 2em;
+            padding: 1em;
+            line-height: 1.5;
+        }
+        i {
+            padding: 10px;
         }
     </style>
 </head>
@@ -22,6 +26,7 @@ patternId: web-vitals-patterns/video/video-gif
     <video autoplay loop muted playsinline width="320" height="240">
         <source src="https://web-dev.imgix.net/video/j2RDdG43oidUy6AL6LovThjeX9c2/HhcHgzvoYoMJ57J9fk2w.mp4" type="video/mp4">
     </video>
+    <i>Canis familiaris</i>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
         incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 

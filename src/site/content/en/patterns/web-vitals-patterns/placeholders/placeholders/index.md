@@ -4,7 +4,7 @@ title: Placeholders
 description: Reserve space for future page content
 date: 2021-08-23
 updated: 2021-08-23
-height: 600
+height: 700
 ---
 
 Creating placeholders for page content can sometimes be as simple as adding a

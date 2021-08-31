@@ -4,7 +4,7 @@ title: GIF-style video
 description: Use MP4 video as a placement for GIFs
 date: 2021-08-19
 updated: 2021-08-19
-height: 400
+height: 500
 ---
 
 Animated GIFs can be 5-20x larger than the equivalent MP4 video. However,
