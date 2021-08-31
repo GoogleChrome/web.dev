@@ -6,7 +6,7 @@ authors:
   - addyosmani
 date: '2020-05-05'
 hero: image/admin/WH0KlcJXJlxvsxU9ow2i.jpg
-alt: A hand touching a smartphone screen
+alt: 스마트폰 화면을 만지는 손
 description: First Input Delay(최초 입력 지연, FID)는 사용자가 사이트에 처음 상호 작용한 시간부터 브라우저가 실제로 해당 상호 작용에 응답할 수 있었던 시간까지를 측정합니다. 사용하지 않는 JavaScript를 최소화하고, 긴 작업을 분리하고, 상호 작용 준비를 개선하여 FID를 최적화하는 방법을 알아봅니다.
 tags:
   - blog
@@ -23,7 +23,7 @@ tags:
 [First Input Delay](/fid/)(최초 입력 지연, FID)는 사이트의 상호 작용 및 응답성에 대한 사용자의 첫인상을 포착하는 [Core Web Vitals](/vitals/) 메트릭으로, 사용자가 페이지와 처음 상호 작용한 시점부터 브라우저가 실제로 해당 상호 작용에 응답한 시점까지의 시간을 측정합니다. FID는 [필드 메트릭](/user-centric-performance-metrics/#in-the-field)이며 실험실 환경에서 시뮬레이션할 수 없습니다. 응답 지연을 측정하려면 **실제 사용자 상호 작용**이 필요하기 때문입니다.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="좋은 fid 값은 2.5초이고, 나쁨 값은 4.0초보다 크며 그 사이에는 개선이 필요합니다.", width="384", height="9 ", class="w-screenshot w-screenshot--채워진 너비-전체" %}</source></picture>
 
 [실험실](/how-to-measure-speed/#lab-data-vs-field-data)에서 FID를 예측하는 데 활용할 만한 메트릭은 [Total Blocking Time(총 차단 시간, TBT)](/tbt/)입니다. 둘은 서로 다른 부분을 측정하지만, TBT를 개선하면 일반적으로 FID도 개선됩니다.
 
@@ -34,8 +34,8 @@ tags:
 브라우저는 메인 스레드에서 JavaScript를 실행하는 동안 대부분의 사용자 입력에 응답할 수 없습니다. 즉, 메인 스레드가 사용 중인 경우 브라우저는 사용자 상호 작용에 응답할 수 없다는 의미입니다. 이를 개선하기 위한 방법은 다음과 같습니다.
 
 - [긴 작업 세분화](#long-tasks)
-- [Optimize your page for interaction readiness](#optimize-interaction-readiness)
-- [Use a web worker](#use-a-web-worker)
+- [상호 작용 준비를 위해 페이지 최적화](#optimize-interaction-readiness)
+- [웹 작업자 사용](#use-a-web-worker)
 - [JavaScript 실행 시간 단축](#reduce-javascript-execution)
 
 ## 긴 작업 세분화 {: #long-tasks }
@@ -50,13 +50,13 @@ FID는 코드 분할 및 긴 작업 세분화와 같은 같은 모범 사례를 
 
 {% Aside %} 자세한 내용은 [긴 JavaScript 작업으로 인해 상호 작용까지의 시간이 지연되나요?](/long-tasks-devtools/)를 참조하세요. {% endAside %}
 
-## Optimize your page for interaction readiness
+## 상호 작용 준비를 위해 페이지 최적화
 
-There are a number of common causes for poor FID and TBT scores in web apps that rely heavily on JavaScript:
+JavaScript에 크게 의존하는 웹 앱에서 FID 및 TBT 점수가 좋지 않은 일반적인 원인에는 여러 가지가 있습니다.
 
-### First-party script execution can delay interaction readiness
+### 자사 스크립트 실행으로 상호 작용 준비가 지연될 수 있음
 
-- JavaScript size bloat, heavy execution times and inefficient chunking can slow down how soon a page can respond to user input and impact FID, TBT, and TTI. Progressive loading of code and features can help spread this work out and improve interaction readiness.
+- JavaScript 크기 팽창, 과도한 실행 시간 및 비효율적인 청크로 인해 페이지가 사용자 입력에 응답하고 FID, TBT 및 TTI에 영향을 미치는 속도가 느려질 수 있습니다. 코드와 기능을 점진적으로 로드하면 이 작업을 분산하고 상호 작용 준비를 개선하는 데 도움이 될 수 있습니다.
 - 서버 측에서 렌더링된 앱은 화면에 픽셀이 빠르게 그려지는 것처럼 보일 수 있지만 대규모 스크립트 실행(예: 이벤트 리스너를 연결하기 위한 원상 회복)으로 인해 사용자 상호 작용이 차단될 수도 있다는 점에 유의해야 합니다. 경로 기반 코드 분할을 사용하는 경우 수백 밀리초, 때로는 몇 초가 소요될 수 있습니다. 더 많은 논리를 서버 측으로 이동하거나 빌드 시간 동안 더 많은 콘텐츠를 고정적으로 생성하도록 하는 것이 좋습니다.
 
 다음은 애플리케이션에 대한 자사 스크립트 로딩을 최적화하기 전과 후의 TBT 점수입니다. 중요하지 않은 구성 요소에 대해 비용이 많이 드는 스크립트 로드(및 실행)를 이동함으로써 사용자는 페이지와 훨씬 더 빨리 상호 작용할 수 있게 되었습니다.
@@ -73,15 +73,15 @@ There are a number of common causes for poor FID and TBT scores in web apps that
 - 많은 사이트에는 네트워크를 계속 바쁘게 유지하고 메인 스레드가 주기적으로 응답하지 않도록 하여 상호 작용 대기 시간에 영향을 줄 수 있는 타사 태그 및 분석이 포함되어 있습니다. 타사 코드의 주문형 로드를 탐색해보세요(예: 뷰포트에 더 가깝게 스크롤될 때까지 스크롤해야 볼 수 있는 광고를 로드하지 않을 수 있음).
 - 경우에 따라 타사 스크립트가 메인 스레드의 우선순위 및 대역폭 측면에서 자사 스크립트보다 앞에 올 수 있으며, 이 경우 페이지에서 상호 작용 준비를 마치는 시간도 지연됩니다. 사용자에게 가장 큰 가치를 제공하는 부분을 먼저 로드하도록 우선순위를 정하세요.
 
-## Use a web worker
+## 웹 작업자 사용
 
 차단된 메인 스레드는 입력 지연의 주요 원인 중 하나입니다. [웹 작업자](https://developer.mozilla.org/en-US/docs/Web/API/Worker)를 사용하면 백그라운드 스레드에서 JavaScript를 실행할 수 있습니다. UI가 아닌 작업을 별도의 작업자 스레드로 이동하면 메인 스레드 차단 시간을 줄이고 결과적으로 FID를 개선할 수 있습니다.
 
-Consider using the following libraries to make it easier to use web workers on your site:
+사이트에서 웹 작업자를 더 쉽게 사용할 수 있도록 다음 라이브러리를 사용하는 것이 좋습니다.
 
 - [Comlink](https://github.com/GoogleChromeLabs/comlink) `postMessage`를 추상화하고 사용하기 쉽게 만드는 도우미 라이브러리
 - [Workway](https://github.com/WebReflection/workway) : 일반적 목적의 웹 작업자 익스포터
-- [Workerize](https://github.com/developit/workerize): Move a module into a web worker
+- [Workerize](https://github.com/developit/workerize) : 모듈을 웹 작업자로 이동
 
 {% Aside %} 웹 작업자가 메인 스레드에서 코드를 실행하는 방법에 대해 자세히 알아보려면 [웹 작업자를 사용하여 브라우저의 메인 스레드에서 JavaScript 실행](/off-main-thread/)을 참조하세요. {% endAside %}
 
@@ -104,7 +104,7 @@ Chrome DevTools의 [Coverage](https://developers.google.com/web/tools/chrome-dev
 
 사용하지 않는 JavaScript를 줄이는 방법은 다음과 같습니다.
 
-- Code-split your bundle into multiple chunks
+- 번들을 여러 청크로 코드 분할
 - `async` 또는 `defer`를 사용하여 타사 스크립트를 비롯한 중요하지 않은 JavaScript 지연
 
 **코드 분할**은 하나의 큰 JavaScript 번들을 조건부로 로드할 수 있는 더 작은 청크로 분할하는 개념입니다(지연 로드라고도 함). 대부분의 최신 브라우저는 [동적 가져오기 구문을 지원하며](https://caniuse.com/#feat=es6-module-dynamic-import) 이는 요청 시 모듈 가져오기를 허용합니다.
@@ -117,10 +117,10 @@ import('module.js').then((module) => {
 
 특정 사용자 상호 작용(예: 경로 변경 또는 모달 표시)에서 JavaScript를 동적으로 가져오면 초기 페이지 로드에 사용되지 않는 코드는 필요할 때만 가져오도록 합니다.
 
-Aside from general browser support, dynamic import syntax can be used in many different build systems.
+일반적인 브라우저 지원 외에도 다양한 빌드 시스템에서 동적 가져오기 구문을 사용할 수 있습니다.
 
 - [webpack](https://medium.com/rollup/rollup-now-has-code-splitting-and-we-need-your-help-46defd901c82) , [Rollup](https://parceljs.org/code_splitting.html) 또는 [Parcel](https://webpack.js.org/guides/code-splitting/)을 모듈 번들러로 사용하는 경우 동적 가져오기 지원을 활용하세요.
-- Client-side frameworks, like [React](https://reactjs.org/docs/code-splitting.html#reactlazy), [Angular](https://angular.io/guide/lazy-loading-ngmodules), and [Vue](https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components) provide abstractions to make it easier to lazy-load at the component-level.
+- [React](https://reactjs.org/docs/code-splitting.html#reactlazy) , [Angular](https://angular.io/guide/lazy-loading-ngmodules) 및 [Vue](https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components) 와 같은 클라이언트 측 프레임워크는 구성 요소 수준에서 지연 로드를 쉽게 하기 위해 추상화를 제공합니다.
 
 {% Aside %} 코드 분할에 대해 자세히 알아보려면 [코드 분할로 JavaScript 페이로드 줄이기](/reduce-javascript-payloads-with-code-splitting/)를 참조하세요. {% endAside %}
 
@@ -131,7 +131,7 @@ Aside from general browser support, dynamic import syntax can be used in many di
 <script async src="…"></script>
 ```
 
-Unless there is a specific reason not to, all third-party scripts should be loaded with either `defer` or `async` by default.
+특별한 이유가 없는 한 모든 타사 스크립트는 기본적으로 `defer` 또는 `async`
 
 #### 사용하지 않는 Polyfills 최소화
 
@@ -152,9 +152,9 @@ Unless there is a specific reason not to, all third-party scripts should be load
 
     Babel로 컴파일된 많은 최신 ECMAScript 기능은 JavaScript 모듈을 지원하는 환경에서 이미 지원되고 있습니다. 따라서 이렇게 하면 실제로 필요한 브라우저에 대해  변환 컴파일된 코드만 사용되도록 하여 프로세스를 단순화할 수 있습니다.
 
-{% Aside %} The [Serve modern code to modern browsers for faster page loads](/serve-modern-code-to-modern-browsers/) guide goes into more detail about this topic. {% endAside %}
+{% Aside %} [더 빠른 페이지 로드를 위해 최신 브라우저에 최신 코드 제공](/serve-modern-code-to-modern-browsers/) 가이드에서 이 주제에 대해 자세히 설명합니다. {% endAside %}
 
-## Developer tools
+## 개발자 도구
 
 FID를 측정하고 디버그하는 데 사용할 수 있는 여러 가지 도구가 있습니다.
 
@@ -164,4 +164,4 @@ FID를 측정하고 디버그하는 데 사용할 수 있는 여러 가지 도�
 
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) 는 원본 수준에서 집계된 실제 FID 값을 제공합니다.
 
-*With thanks to Philip Walton, Kayce Basques, Ilya Grigorik, and Annie Sullivan for their reviews.*
+*Philip Walton, Kayce Basques, Ilya Grigorik 및 Annie Sullivan의 리뷰에 감사드립니다.*
