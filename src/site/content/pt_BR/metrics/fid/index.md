@@ -13,24 +13,24 @@ tags:
 
 {% Aside %} First Input Delay (FID), ou Atraso da Primeira Entrada, é uma métrica importante e centrada no usuário para medir a [responsividade do carregamento](/user-centric-performance-metrics/#types-of-metrics) porque quantifica a experiência que os usuários sentem ao tentar interagir com páginas que não respondem: uma FID baixa ajuda a garantir que a página seja [utilizável](/user-centric-performance-metrics/#questions) . {% endAside %}
 
-We all know how important it is to make a good first impression. It's important when meeting new people, and it's also important when building experiences on the web.
+Todos nós sabemos como é importante causar uma boa primeira impressão. É importante ao conhecer novas pessoas e também ao construir experiências na web.
 
-On the web, a good first impression can make the difference between someone becoming a loyal user or them leaving and never coming back. The question is, what makes for a good impression, and how do you measure what kind of impression you're likely making on your users?
+Na web, uma boa primeira impressão pode fazer a diferença entre alguém se tornar um usuário fiel ou sair e nunca mais voltar. A questão é: o que causa uma boa impressão e como você mede o tipo de impressão que provavelmente está causando nos usuários?
 
 Na web, as primeiras impressões podem assumir muitas formas diferentes: temos as primeiras impressões sobre o design e o apelo visual de um site, bem como as primeiras impressões sobre sua velocidade e capacidade de resposta.
 
-While it is hard to measure how much users like a site's design with web APIs, measuring its speed and responsiveness is not!
+Embora seja difícil medir o quanto os usuários gostam do design de um site com APIs da web, medir sua velocidade e capacidade de resposta não é!
 
 A primeira impressão que os usuários têm de quão rápido seu site carrega pode ser medida com a [First Contentful Paint (FCP)](/fcp/). Mas a rapidez com que seu site pode renderizar pixels na tela é apenas parte da história. Igualmente importante é a capacidade de resposta do seu site quando os usuários tentam interagir com esses pixels!
 
-The First Input Delay (FID) metric helps measure your user's first impression of your site's interactivity and responsiveness.
+A métrica First Input Delay (FID) ajuda a medir a primeira impressão do usuário sobre a interatividade e capacidade de resposta do seu site.
 
-## What is FID?
+## O que é FID?
 
 A FID mede o tempo desde quando um usuário interage pela primeira vez com uma página (ou seja, quando clica num link, toca num botão ou usa um controle personalizado baseado em JavaScript) até o momento em que o navegador é realmente capaz de começar a processar manipuladores de eventos em resposta a essa interação.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / Se4TiXIdp8jtLJVScWed.svg", alt = "Bons valores fid são 2,5 segundos, valores fracos são maiores que 4,0 segundos e qualquer coisa entre precisa de melhorias", largura = "400", altura = "300 ", classe =" w-screenshot w-screenshot - preenchido com largura total "%}</source></picture>
 
 ### O que é uma boa pontuação da FID?
 
@@ -60,15 +60,15 @@ Atrasos longos na primeira entrada normalmente ocorrem entre a [First Contentful
 
 Você deve ter notado que há uma boa quantidade de tempo (incluindo três [tarefas longas](/custom-metrics/#long-tasks-api)) entre a FCP e a TTI. Se um usuário tentar interagir com a página durante esse tempo (por exemplo, clicar num link), haverá um atraso entre quando o clique é recebido e quando o thread principal será capaz de responder.
 
-Consider what would happen if a user tried to interact with the page near the beginning of the longest task:
+Considere o que aconteceria se um usuário tentasse interagir com a página próximo ao início da tarefa mais longa:
 
 {% Img src="image/admin/krOoeuQ4TWCbt9t6v5Wf.svg", alt="Exemplo de rastreamento de carregamento de página com FCP, TTI e FID", width="800", height="380", linkTo=true %}
 
-Because the input occurs while the browser is in the middle of running a task, it has to wait until the task completes before it can respond to the input. The time it must wait is the FID value for this user on this page.
+Como a entrada ocorre enquanto o navegador está no meio da execução de uma tarefa, ele precisa esperar até que a tarefa seja concluída para poder responder à entrada. O tempo de espera é o valor FID para este usuário nesta página.
 
 {% Aside %} Neste exemplo, o usuário acabou de interagir com a página no início do período mais ocupado da thread principal. Se o usuário tivesse interagido com a página apenas um momento antes (durante o período ocioso), o navegador poderia ter respondido imediatamente. Essa variação no atraso de entrada ressalta a importância de olhar para a distribuição dos valores FID ao relatar a métrica. Você pode ler mais sobre isto na seção abaixo sobre como analisar e relatar os dados da FID. {% endAside %}
 
-### What if an interaction doesn't have an event listener?
+### E se uma interação não tiver um ouvinte de eventos?
 
 O FID mede o delta entre o momento em que um evento de entrada é recebido e a próxima vez que o thread principal fica ocioso. Isto significa que a FID é medida **mesmo nos casos em que um ouvinte de evento não foi registrado.** A razão é porque muitas interações do usuário não requerem um ouvinte de evento, mas *exigem* que o thread principal esteja ocioso, para que possa executar.
 
@@ -78,15 +78,15 @@ Por exemplo, todos os elementos HTML a seguir precisam aguardar a conclusão das
 - Menus dropdown com Select ( `<select>` )
 - Links ( `<a>` )
 
-### Why only consider the first input?
+### Por que considerar apenas a primeira entrada?
 
-While a delay from any input can lead to a bad user experience, we primarily recommend measuring the first input delay for a few reasons:
+Embora um atraso de qualquer entrada possa levar a uma experiência ruim do usuário, recomendamos medir o primeiro atraso de entrada por alguns motivos:
 
-- The first input delay will be the user's first impression of your site's responsiveness, and first impressions are critical in shaping our overall impression of a site's quality and reliability.
+- O primeiro atraso de entrada será a primeira impressão do usuário sobre a capacidade de resposta do seu site, e as primeiras impressões são críticas para moldar nossa impressão geral da qualidade e confiabilidade de um site.
 - Os maiores problemas de interatividade que vemos na web hoje ocorrem durante o carregamento da página. Portanto, acreditamos que o foco inicial em melhorar a primeira interação do usuário com o site terá o maior impacto na melhoria da interatividade geral da web.
 - As soluções recomendadas sobre como sites devem corrigir grandes atrasos na primeira entrada (dividir o código, carregar menos JavaScript no início, etc.) não são necessariamente as mesmas soluções para corrigir atrasos de entrada lentos após o carregamento da página. Separando essas métricas, poderemos fornecer diretrizes de desempenho mais específicas para os desenvolvedores web.
 
-### What counts as a first input?
+### O que conta como uma primeira entrada?
 
 A FID é uma métrica que mede a capacidade de resposta de uma página durante o carregamento. Como tal, ela se concentra apenas nos eventos de entrada causados por ações discretas como cliques, toques e pressionamentos de tecla.
 
@@ -94,15 +94,15 @@ Outras interações, como rolagem e zoom, são ações contínuas e têm restri�
 
 Em outras palavras, a FID se concentra no R (responsividade) do [modelo de desempenho RAIL](https://developers.google.com/web/fundamentals/performance/rail) , enquanto que a rolagem e o zoom estão mais relacionados ao A (animação), e suas qualidades de desempenho devem ser avaliadas separadamente.
 
-### What if a user never interacts with your site?
+### E se um usuário nunca interagir com seu site?
 
 Nem todos os usuários irão interagir com o seu site sempre que o visitarem. E nem todas as interações são relevantes para a FID (conforme mencionamos na seção anterior). Além disso, as primeiras interações de alguns usuários serão em momentos ruins (quando o thread principal está ocupado por um longo período de tempo), e as primeiras interações de outros usuários serão em momentos bons (quando o thread principal está completamente ocioso).
 
 Isto significa que alguns usuários não terão valores FID, alguns usuários terão valores FID baixos e alguns usuários provavelmente terão valores FID altos.
 
-How you track, report on, and analyze FID will probably be quite a bit different from other metrics you may be used to. The next section explains how best to do this.
+A maneira como você rastreia, relata e analisa o FID provavelmente será um pouco diferente de outras métricas com as quais você pode estar acostumado. A próxima seção explica a melhor maneira de fazer isso.
 
-### Why only consider the input delay?
+### Por que considerar apenas o atraso de entrada?
 
 Conforme mencionado acima, o FID mede apenas o "atraso" durante o processamento de eventos. Ele não mede o tempo de processamento do evento em si, nem o tempo que o navegador leva para atualizar a IU após a execução dos manipuladores de eventos.
 
@@ -116,7 +116,7 @@ A FID é uma métrica que só pode ser medida [em campo](/user-centric-performan
 
 {% Aside %} A FID requer um usuário real e, portanto, não pode ser medida no laboratório. No entanto, a métrica [Total Blocking Time (TBT)](/tbt/) é mensurável em laboratório, se correlaciona bem com a FID em campo e também captura problemas que afetam a interatividade. As otimizações que melhoram a TBT no laboratório também devem melhorar a FID para seus usuários. {% endAside %}
 
-### Field tools
+### Ferramentas de campo
 
 - [Relatório de experiência do usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
@@ -140,9 +140,9 @@ new PerformanceObserver((entryList) => {
 
 No exemplo acima, o valor do atraso `first-input` é medido tomando o delta entre os timestamps `startTime` e `processingStart` da entrada. Na maioria dos casos, esse será o valor FID; entretanto, nem todas as entradas `first-input` são válidas para medir a FID.
 
-The following section lists the differences between what the API reports and how the metric is calculated.
+A seção a seguir lista as diferenças entre o que a API informa e como a métrica é calculada.
 
-#### Differences between the metric and the API
+#### Diferenças entre a métrica e a API
 
 - A API despachará `first-input` para páginas carregadas numa aba de plano de fundo, mas essas páginas devem ser ignoradas ao calcular a FID.
 - A API também despachará as entradas `first-input` se a página estiver em segundo plano antes da ocorrência da primeira entrada, mas essas páginas também devem ser ignoradas ao calcular a FID (entradas são consideradas apenas se a página estava em primeiro plano o tempo todo).
@@ -178,9 +178,9 @@ Embora o FID seja uma métrica de campo (e o Lighthouse seja uma ferramenta de m
 
 Para saber como melhorar a FID, veja [Otimize a FID](/optimize-fid/). Para obter orientações adicionais sobre técnicas de desempenho individual que também podem melhorar a FID, consulte:
 
-- [Reduce the impact of third-party code](/third-party-summary/)
-- [Reduce JavaScript execution time](/bootup-time/)
+- [Reduza o impacto do código de terceiros](/third-party-summary/)
+- [Reduza o tempo de execução do JavaScript](/bootup-time/)
 - [Minimize o trabalho da thread principal](/mainthread-work-breakdown/)
-- [Keep request counts low and transfer sizes small](/resource-summary/)
+- [Mantenha as contagens de solicitações baixas e os tamanhos de transferência pequenos](/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}
