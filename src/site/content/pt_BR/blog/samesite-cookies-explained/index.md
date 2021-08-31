@@ -1,5 +1,5 @@
 ---
-title: SameSite cookies explained
+title: Cookies SameSite explicados
 subhead: Proteja seu site aprendendo como marcar explicitamente cookies cross-site.
 authors:
   - rowan_m
@@ -18,8 +18,8 @@ feedback:
 
 {% Aside %} Este artigo faz parte de uma série sobre alterações em atributos do cookie `SameSite`
 
-- [SameSite cookies explained](/samesite-cookies-explained/)
-- [SameSite cookies recipes](/samesite-cookie-recipes/)
+- [Cookies SameSite explicados](/samesite-cookies-explained/)
+- [Receitas de cookies SameSite](/samesite-cookie-recipes/)
 - [Schemeful Same-Site](/schemeful-samesite) {% endAside %}
 
 Cookies são um dos métodos disponíveis para adicionar estado persistente a sites. Com o passar dos anos, suas capacidades cresceram e evoluíram, mas deixaram a plataforma com alguns problemas legados problemáticos. Para resolver isso, os navegadores (incluindo Chrome, Firefox e Edge) estão mudando seu comportamento para impor mais padrões de preservação da privacidade.
@@ -60,7 +60,7 @@ A leitura de `document.cookie` devolve todos os cookies acessíveis no contexto 
 
 Se você tentar isso numa seleção de sites populares, notará que a maioria deles define muito mais do que apenas três cookies. Na maioria dos casos, esses cookies são enviados a cada solicitação para esse domínio, o que tem uma série de implicações. A largura de banda de upload geralmente é mais restrita que o download para seus usuários, de modo que a sobrecarga em todas as solicitações de saída estará adicionando um atraso no seu tempo para o primeiro byte. Seja conservador no número e no tamanho dos cookies que você define. Use o atributo `Max-Age` para ajudar a garantir que os cookies não durem mais do que o necessário.
 
-## What are first-party and third-party cookies?
+## O que são cookies primários e de terceiros?
 
 Se você voltar para a mesma seleção de sites que estava olhando antes, deve ter percebido que havia cookies para uma variedade de domínios, não apenas aquele que você estava visitando no momento. Os cookies que correspondem ao domínio do site atual (o domínio exibido na barra de endereços do navegador) são chamados de cookies **primários.** Da mesma forma, os cookies de domínios diferentes do site atual são chamados de cookies de **terceiros.** Isto não é um rótulo absoluto, mas relativo ao contexto do usuário; o mesmo cookie pode ser original ou de terceiros, dependendo do site no qual o usuário se encontra no momento.
 
@@ -78,7 +78,7 @@ Os usuários também estão se conscientizando de como cookies podem ser usados 
 
 ## Declare explicitamente o uso de cookies com o atributo `SameSite`
 
-The introduction of the `SameSite` attribute (defined in [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site-00)) allows you to declare if your cookie should be restricted to a first-party or same-site context. It's helpful to understand exactly what 'site' means here. The site is the combination of the domain suffix and the part of the domain just before it. For example, the `www.web.dev` domain is part of the `web.dev` site.
+A introdução do `SameSite` (definido em [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site-00) ) permite que você declare se seu cookie deve ser restrito a um contexto primário ou do mesmo site. É útil entender exatamente o que 'site' significa aqui. O site é a combinação do sufixo do domínio e a parte do domínio imediatamente anterior. Por exemplo, o `www.web.dev` faz parte do site `web.dev`
 
 {% Aside 'key-term' %}
 
@@ -112,7 +112,7 @@ Quando o usuário estiver no seu site, o cookie será enviado junto com a solici
 <p>Read the <a href="https://blog.example/blog/cat.html">article</a>.</p>
 ```
 
-And the cookie has been set as so:
+E o cookie foi definido como:
 
 ```text
 Set-Cookie: promo_shown=1; SameSite=Lax
@@ -132,7 +132,7 @@ Por último, existe a opção de não especificar o valor.  Anteriormente, esta 
 
 {% Aside %}
 
-If you provide a service that other sites consume such as widgets, embedded content, affiliate programs, advertising, or sign-in across multiple sites then you should use `None` to ensure your intent is clear.
+Se você fornece um serviço que outros sites consomem, como widgets, conteúdo incorporado, programas de afiliados, publicidade ou login em vários sites, você deve usar `None` para garantir que sua intenção seja clara.
 
 {% endAside %}
 
@@ -140,14 +140,14 @@ If you provide a service that other sites consume such as widgets, embedded cont
 
 Embora o `SameSite` seja amplamente suportado, infelizmente ele não tem sido amplamente adotado pelos desenvolvedores. O padrão default de envio de cookies para todos os lugares significa que todos os casos de uso funcionam, mas deixa o usuário vulnerável a CSRF e vazamento não intencional de informações. Para encorajar os desenvolvedores a declarar suas intenções e fornecer aos usuários uma experiência mais segura, a proposta da IETF, [Incrementally Better Cookies](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00) apresenta duas mudanças principais:
 
-- Cookies without a `SameSite` attribute will be treated as `SameSite=Lax`.
+- Cookies sem um `SameSite` serão tratados como `SameSite=Lax` .
 - Cookies com `SameSite=None` também devem especificar `Secure`, o que significa que requerem um contexto seguro.
 
 O Chrome implementa esse comportamento default a partir da versão 84. O [Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ) suporta experimentalmente a partir do Firefox 69 e será comportamento default no futuro. Para testar esses comportamentos no Firefox, abra [`about:config`](http://kb.mozillazine.org/About:config) e ative `network.cookie.sameSite.laxByDefault`. O [Edge](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/8lMmI5DwEAAJ) também tem planos de mudar seus comportamentos padrão.
 
 {% Aside %}
 
-This article will be updated as additional browsers announce support.
+Este artigo será atualizado à medida que navegadores adicionais anunciarem suporte.
 
 {% endAside %}
 
@@ -175,7 +175,7 @@ Set-Cookie: promo_shown=1; SameSite=Lax
 
 {% CompareCaption %}
 
-The browser will treat that cookie as if `SameSite=Lax` was specified.
+O navegador tratará esse cookie como se `SameSite=Lax` tivesse sido especificado.
 
 {% endCompareCaption %}
 
@@ -199,7 +199,7 @@ Set-Cookie: widget_session=abc123; SameSite=None
 
 {% CompareCaption %}
 
-Setting a cookie without `Secure` **will be rejected**.
+A configuração de um cookie sem `Secure` **será rejeitada** .
 
 {% endCompareCaption %}
 
@@ -241,6 +241,6 @@ Várias versões mais antigas de navegadores, incluindo Chrome, Safari e navegad
 
 Para mais detalhes sobre como atualizar seus cookies para lidar com essas mudanças de `SameSite=None` e as diferenças de comportamento em diferentes navegadores, acesse o artigo seguinte, [Receitas de cookies SameSite](/samesite-cookie-recipes).
 
-*Kind thanks for contributions and feedback from Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner, and Vivek Sekhar*
+*Muito obrigado pelas contribuições e feedback de Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner e Vivek Sekhar*
 
-*Cookie hero image by [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+*Imagem do Cookie Hero por [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) no [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
