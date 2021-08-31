@@ -1,15 +1,13 @@
 ---
-title: Referer and Referrer-Policy best practices
-subhead: Best practices to set your Referrer-Policy and use the referrer in incoming requests.
+title: "Лучшие практики по настройке заголовков \tReferer и Referrer-Policy"
+subhead: Лучшие практики по настройке заголовка ответа Referrer-Policy и использования реферера во входящих запросах.
 authors:
   - maudn
 date: '2020-07-30'
 updated: '2020-09-23'
 hero: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
 thumbnail: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
-description: |2
-
- "Consider setting a referrer policy of `strict-origin-when-cross-origin`. It retains much of the referrer's usefulness, while mitigating the risk of leaking data cross-origins."
+description: Рассмотрите возможность установки политики реферера "strict-origin-when-cross-origin". Она сохраняет большую часть полезности реферера, одновременно снижая риск утечки данных при запросах на другой источник.
 tags:
   - blog
   - security
@@ -20,64 +18,64 @@ feedback:
 
 ## Резюме
 
-- Unexpected cross-origin information leakage hinders web users' privacy. A protective referrer policy can help.
-- Consider setting a referrer policy of `strict-origin-when-cross-origin`. It retains much of the referrer's usefulness, while mitigating the risk of leaking data cross-origins.
+- Неожиданная утечка информации при запросах на другой источник препятствует конфиденциальности пользователей в Интернете. Здесь может помочь защитная политика реферера.
+- Рассмотрите возможность установки политики реферера `strict-origin-when-cross-origin`. Она сохраняет большую часть полезности реферера, одновременно снижая риск утечки данных при запросах на другой источник.
 - Не используйте рефереры для защиты от подделки межсайтовых запросов (CSRF). Вместо этого используйте [токены CSRF](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation) и другие заголовки в качестве дополнительного уровня безопасности.
 
 {% Aside %} Прежде чем мы начнем:
 
-- If you're unsure of the difference between "site" and "origin", check out [Understanding "same-site" and "same-origin"](/same-site-same-origin/).
-- The `Referer` header is missing an R, due to an original misspelling in the spec. The `Referrer-Policy` header and `referrer` in JavaScript and the DOM are spelled correctly. {% endAside %}
+- Если вы не уверены в разнице между «сайтом» и «источником», ознакомьтесь со статьей [«Понимание "same-site" и "same-origin"»](/same-site-same-origin/).
+- В `Referer` отсутствует буква R из-за неправильного написания в спецификации. Заголовок `Referrer-Policy` и `referrer` в JavaScript и DOM написаны правильно. {% endAside %}
 
-## Referer and Referrer-Policy 101
+## Кратко о заголовках Referer и Referrer-Policy
 
-HTTP requests may include the optional [`Referer` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), which indicates the origin or web page URL the request was made from. The [`Referrer-Policy` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) defines what data is made available in the `Referer` header.
+HTTP-запросы могут включать необязательный [заголовок `Referer`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), указывающий источник или URL-адрес веб-страницы, с которой был сделан запрос. [Заголовок `Referrer-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) определяет, какие данные будут доступны в заголовке `Referer`
 
-In the example below, the `Referer` header includes the complete URL of the page on `site-one` from which the request was made.
+В приведенном ниже примере заголовок `Referer` включает полный URL-адрес страницы на сайте `site-one`, с которого был сделан запрос.
 
-<figure class="w-figure">   {% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="HTTP request including a Referer header.", width="800", height="573" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="HTTP-запрос, включая заголовок Referer", width="800", height="573" %}</figure>
 
-The `Referer` header might be present in different types of requests:
+Заголовок `Referer` может присутствовать в разных типах запросов:
 
-- Navigation requests, when a user clicks a link
-- Subresource requests, when a browser requests images, iframes, scripts, and other resources that a page needs.
+- запросы навигации, когда пользователь нажимает ссылку;
+- запросы подресурсов, когда браузер запрашивает изображения, плавающие фреймы, скрипты и другие ресурсы, которые необходимы странице.
 
-For navigations and iframes, this data can also be accessed via JavaScript using `document.referrer`.
+Что касается навигации и плавающих фреймов, к этим данным также можно получить доступ через JavaScript с помощью `document.referrer`.
 
-The `Referer` value can be insightful. For example, an analytics service might use the value to determine that 50% of the visitors on `site-two.example` came from `social-network.example`.
+Значение `Referer` может быть полезным. Например, служба аналитики может использовать это значение, чтобы определить, что 50% посетителей на `site-two.example` пришли из `social-network.example`.
 
-But when the full URL including the path and query string is sent in the `Referer` **across origins**, this can be **privacy-hindering** and pose **security risks** as well. Take a look at these URLs:
+Но когда полный URL-адрес, включая путь и строку запроса, отправляется в `Referer` **&nbsp;при запросах на другие источники**, это может нарушать **конфиденциальность** и создавать **риски для безопасности**. Взгляните на эти URL-адреса:
 
-<figure class="w-figure">   {% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="URLs with paths, mapped to different privacy and security risks.", width="800", height="370" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/oTUtfrwaGYYjlOJ6KRs6.jpg", alt="URL-адреса с путями, сопоставленными с различными угрозами конфиденциальности и безопасности.", width="800", height="370" %}</figure>
 
-URLs #1 to #5 contain private information—sometimes even identifying or sensitive. Leaking these silently across origins can compromise web users' privacy.
+URL-адреса с №1 по №5 содержат личную информацию, иногда даже идентифицирующую или конфиденциальную. Незаметная утечка данных при запросах на другие источники может поставить под угрозу конфиденциальность пользователей в Интернете.
 
-URL #6 is a [capability URL](https://www.w3.org/TR/capability-urls/). You don't want it to fall in the hands of anyone other than the intended user. If this were to happen, a malicious actor could hijack this user's account.
+URL № 6 — это [возможность URL](https://www.w3.org/TR/capability-urls/). Вы не хотите, чтобы пароль попал в руки кого-либо, кроме предполагаемого пользователя. Если это произойдет, злоумышленник может завладеть учетной записью этого пользователя.
 
 **Чтобы ограничить доступ к данным реферера для запросов с вашего сайта, вы можете установить политику реферера.**
 
 ## Какие политики доступны и чем они отличаются?
 
-You can select one of eight policies. Depending on the policy, the data available from the `Referer` header (and `document.referrer`) can be:
+Вы можете выбрать одну из восьми политик. В зависимости от политики данные, из заголовка `Referer` (и `document.referrer`) могут быть доступны следующие данные:
 
-- No data (no `Referer` header is present)
-- Only the [origin](/same-site-same-origin/#origin)
-- The full URL: origin, path, and query string
+- нет данных (`Referer` отсутствует);
+- только [источник](/same-site-same-origin/#origin);
+- полный URL-адрес: источник, путь и строка запроса.
 
-<figure class="w-figure">   {% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Data that can be contained in the Referer header and document.referrer.", width="800", height="255" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Данные, которые могут содержаться в заголовке Referer и document.referrer.", width="800", height="255" %}</figure>
 
-Some policies are designed to behave differently depending on the **context**: cross-origin or same-origin request, security (whether the request destination is as secure as the origin), or both. This is useful to limit the amount of information shared across origins or to less secure origins—while maintaining the richness of the referrer within your own site.
+Некоторые политики разработаны так, чтобы вести себя по-разному в зависимости от **контекста**: запрос на другой источник или в пределах текущего источника, безопасность, или и то, и другое (независимо от того, отправляется ли запрос из более безопасного протокола в менее безопасный). Это полезно для ограничения объема информации, передаваемой из разных источников, или для менее безопасных источников — при сохранении разнообразия рефереров на вашем собственном сайте.
 
-Here is an overview showing how referrer policies restrict the URL data available from the Referer header and `document.referrer`:
+Вот обзор, показывающий, как политики реферера ограничивают данные URL, доступные из заголовка Referer и `document.referrer`:
 
-<figure class="w-figure">   {% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Different referrer policies and their behaviour, depending on the security and cross-origin context.", width="800", height="537" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Различные политики рефереров и их поведение в зависимости от протокола безопасности и контекста разных источников.", width="800", height="537" %}</figure>
 
 MDN предоставляет [полный список политик и примеров поведения](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Directives) .
 
 На заметку:
 
-- All policies that take the scheme (HTTPS vs. HTTP) into account (`strict-origin`, `no-referrer-when-downgrade` and `strict-origin-when-cross-origin`) treat requests from an HTTP origin to another HTTP origin the same way as requests from an HTTPS origin to another HTTPS origin—even if HTTP is less secure. That's because for these policies, what matters is whether a security **downgrade** takes place, i.e. if the request can expose data from an encrypted origin to an unencrypted one. An HTTP → HTTP request is unencrypted all along, so there is no downgrade. HTTPS → HTTP requests, on the contrary, present a downgrade.
-- If a request is **same-origin**, this means that the scheme (HTTPS or HTTP) is the same; hence there is no security downgrade.
+- Все политики, которые принимают во внимание схему (HTTPS или HTTP) (`strict-origin`, `no-referrer-when-downgrade` и `strict-origin-when-cross-origin`), обрабатывают запросы от источника HTTP к другому источнику HTTP одинаково как запросы от источника HTTPS к другому источнику HTTPS, даже если HTTP менее безопасен. Это потому, что для этих политик имеет значение, имеет ли место **понижение уровня** безопасности, то есть может ли запрос предоставить данные из зашифрованного источника в незашифрованный. HTTP → HTTP-запрос всё время не зашифрован, поэтому понижения уровня безопасности не происходит. HTTPS → HTTP-запросы, напротив, представляют собой понижение уровня безопасности.
+- При запросе в пределах **одинакового источника** схема (HTTPS или HTTP) не меняется; следовательно, понижения уровня безопасности не происходит.
 
 ## Политики реферера по умолчанию в браузерах
 
@@ -90,22 +88,22 @@ MDN предоставляет [полный список политик и пр
     <thead>
       <tr>
         <th>Браузер</th>
-        <th>Default <code>Referrer-Policy</code> / Behavior</th>
+        <th>Политика <code>Referrer-Policy</code> умолчанию / Поведение</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Chrome</td>
-        <td>           Planning to switch to <code>strict-origin-when-cross-origin</code> in <a href="https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default">version 85</a> (previously <code>no-referrer-when-downgrade</code>)         </td>
+        <td>Планируется переход на <code>strict-origin-when-cross-origin</code> в <a href="https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default">версии 85</a> (ранее <code>no-referrer-when-downgrade</code>)</td>
       </tr>
       <tr>
         <td>Fire Fox</td>
         <td>
           <ul>
             <li>
-<code>strict-origin-when-cross-origin</code> (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1589074">see closed bug</a>)</li>
+<code>strict-origin-when-cross-origin</code> (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1589074">см. закрытую ошибку</a>)</li>
             <li>
-<code>strict-origin-when-cross-origin</code> in Private Browsing and for trackers</li>
+<code>strict-origin-when-cross-origin</code> в режиме конфиденциального просмотра и для трекеров</li>
           </ul>
         </td>
       </tr>
@@ -115,13 +113,14 @@ MDN предоставляет [полный список политик и пр
           <ul>
             <li><code>no-referrer-when-downgrade</code></li>
             <li>
-<a href="https://github.com/privacycg/proposals/issues/13">Experimenting</a> with <code>strict-origin-when-cross-origin</code>             </li>
+<a href="https://github.com/privacycg/proposals/issues/13">Идут эксперименты</a> со <code>strict-origin-when-cross-origin</code>
+</li>
           </ul>
         </td>
       </tr>
       <tr>
         <td>Safari</td>
-        <td>           Similar to <code>strict-origin-when-cross-origin</code>. See           <a href="https://webkit.org/blog/9661/preventing-tracking-prevention-tracking/">Preventing Tracking Prevention Tracking</a> for details.         </td>
+        <td>Политика, подобная <code>strict-origin-when-cross-origin</code>. Подробности см. в публикации <a href="https://webkit.org/blog/9661/preventing-tracking-prevention-tracking/">«Предотвращение отслеживания»</a>.</td>
       </tr>
     </tbody>
   </table>
@@ -129,21 +128,21 @@ MDN предоставляет [полный список политик и пр
 
 ## Настройка политики реферера: лучшие практики
 
-{% Aside 'objective' %} Explicitly set a privacy-enhancing policy, such as `strict-origin-when-cross-origin`(or stricter). {% endAside %}
+{% Aside 'objective' %} Явно установите политику для повышения конфиденциальности, например, `strict-origin-when-cross-origin` (или более строгую). {% endAside %}
 
 Есть разные способы установить политики реферера для вашего сайта:
 
-- As an HTTP header
-- Within your [HTML](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML)
-- From JavaScript on a [per-request basis](https://javascript.info/fetch-api#referrer-referrerpolicy)
+- как заголовок HTTP;
+- в вашем [HTML](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML)-коде;
+- из JavaScript по [запросу](https://javascript.info/fetch-api#referrer-referrerpolicy).
 
 Вы можете установить разные политики для разных страниц, запросов или элементов.
 
-The HTTP header and the meta element are both page-level. The precedence order when determining an element's effective policy is:
+HTTP-заголовок и метаданные относятся к уровню страницы. Порядок приоритета при определении эффективной политики элемента:
 
-1. Element-level policy
-2. Page-level policy
-3. Browser default
+1. Политика на уровне элементов.
+2. Политика на уровне страницы.
+3. Браузер по умолчанию.
 
 **Пример:**
 
@@ -154,38 +153,38 @@ The HTTP header and the meta element are both page-level. The precedence order w
 <img src="..." referrerpolicy="no-referrer-when-downgrade" />
 ```
 
-The image will be requested with a `no-referrer-when-downgrade` policy, while all other subresource requests from this page will follow the `strict-origin-when-cross-origin` policy.
+Изображение будет запрошено с политикой `no-referrer-when-downgrade`, в то время как все остальные запросы подресурсов с этой страницы будут следовать политике `strict-origin-when-cross-origin`.
 
 ## Как посмотреть политику реферера?
 
-[securityheaders.com](https://securityheaders.com/) is handy to determine the policy a specific site or page is using.
+Сайт [securityheaders.com](https://securityheaders.com/) помогает определить политику, которую использует конкретный сайт или страница.
 
-You can also use the developer tools of Chrome, Edge, or Firefox to see the referrer policy used for a specific request. At the time of this writing, Safari doesn't show the `Referrer-Policy` header but does show the `Referer` that was sent.
+Вы также можете использовать инструменты разработчика Chrome, Edge или Firefox, чтобы увидеть политику реферера, используемую для конкретного запроса. На момент написания этой статьи Safari не показывает `Referrer-Policy`, но показывает отправленный заголовок `Referer`.
 
-<figure class="w-figure">   {% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="A screenshot of the Network panel of Chrome DevTools, showing Referer and Referrer-Policy.", width="800", height="416" %}   <figcaption class="w-figcaption">     Chrome DevTools, <b>Network</b> panel with a request selected.   </figcaption> </figure>
+<figure class="w-figure">{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="Скриншот панели Network в Chrome DevTools с заголовками Referer и Referrer-Policy.", width="800", height="416" %} <figcaption class="w-figcaption"> Chrome DevTools, панель <b>Network</b> с выбранным запросом. </figcaption></figure>
 
 ## Какую политику вы должны установить для своего веб-сайта?
 
-Summary: Explicitly set a privacy-enhancing policy such as `strict-origin-when-cross-origin` (or stricter).
+Резюме: явно установите политику для повышения конфиденциальности, например, `strict-origin-when-cross-origin` (или более строгую).
 
 ### Почему «явно»?
 
-If no referrer policy is set, the browser's default policy will be used—in fact, websites often defer to the browser's default. But this is not ideal, because:
+Если политика реферера не задана, будет использоваться политика браузера по умолчанию — фактически, веб-сайты часто подчиняются политике браузера по умолчанию. Но это не самый лучший вариант, потому что:
 
-- Browser default policies are either `no-referrer-when-downgrade`, `strict-origin-when-cross-origin`, or stricter—depending on the browser and mode (private/incognito). So your website won't behave predictably across browsers.
-- Browsers are adopting stricter defaults such as `strict-origin-when-cross-origin` and mechanisms such as [referrer trimming](https://github.com/privacycg/proposals/issues/13) for cross-origin requests. Explicitly opting into a privacy-enhancing policy before browser defaults change gives you control and helps you run tests as you see fit.
+- Политики браузеров по умолчанию либо `no-referrer-when-downgrade`, `strict-origin-when-cross-origin`, либо более строгие — в зависимости от браузера и режима (конфиденциального просмотра или инкогнито). Таким образом, ваш сайт не будет вести себя предсказуемо в разных браузерах.
+- Браузеры принимают более строгие настройки по умолчанию, такие как `strict-origin-when-cross-origin` и такие механизмы, как [referrer trimming](https://github.com/privacycg/proposals/issues/13) для запросов на другой источник. Явный выбор политики повышения конфиденциальности до изменения стандартных настроек браузера дает вам контроль над ситуацией и помогает проводить тесты по своему усмотрению.
 
-### Why `strict-origin-when-cross-origin` (or stricter)?
+### Почему `strict-origin-when-cross-origin` (или более строгая политика)?
 
-You need a policy that is secure, privacy-enhancing, and useful—what "useful" means depends on what you want from the referrer:
+Вам нужна безопасная, обеспечивающая конфиденциальность и полезная политика — что вы подразумеваете под «полезной», зависит от того, что вы хотите от реферера:
 
-- **Secure**: if your website uses HTTPS ([if not, make it a priority](/why-https-matters/)), you don't want your website's URLs to leak in non-HTTPS requests. Since anyone on the network can see these, this would expose your users to person-in-the-middle-attacks. The policies `no-referrer-when-downgrade`, `strict-origin-when-cross-origin`, `no-referrer` and `strict-origin` solve this problem.
-- **Privacy-enhancing**: for a cross-origin request, `no-referrer-when-downgrade` shares the full URL—this is not privacy-enhancing. `strict-origin-when-cross-origin` and `strict-origin` only share the origin, and `no-referrer` shares nothing at all. This leaves you with `strict-origin-when-cross-origin`, `strict-origin`, and `no-referrer` as privacy-enhancing options.
-- **Useful**: `no-referrer` and `strict-origin` never share the full URL, even for same-origin requests—so if you need this, `strict-origin-when-cross-origin` is a better option.
+- **Безопасность**: если ваш веб-сайт использует HTTPS ([если нет, сделайте эту задачу приоритетной](/why-https-matters/)), вы не хотите, чтобы URL-адреса вашего веб-сайта просачивались в запросы, отличные от HTTPS. Поскольку любой в сети может их видеть, это подвергнет ваших пользователей атакам типа «человек посередине». Политики `no-referrer-when-downgrade`, `strict-origin-when-cross-origin`, `no-referrer` и `strict-origin` решают эту проблему.
+- **Повышение конфиденциальности**: при запросах на другие источники `no-referrer-when-downgrade` передает полный URL-адрес — это не способствует повышению конфиденциальности. Политики `strict-origin-when-cross-origin` и `strict-origin` отправляют только источник, а `no-referrer` вообще ничего не отправляет. Это оставляет вам политики `strict-origin-when-cross-origin`, `strict-origin` и `no-referrer` в качестве вариантов повышения конфиденциальности.
+- **Польза**: `no-referrer` и `strict-origin` никогда не отправляют полный URL-адрес, даже для запросов в пределах одного и того же источника, поэтому если вам это нужно, `strict-origin-when-cross-origin` — лучший вариант.
 
-All of this means that **`strict-origin-when-cross-origin`** is generally a sensible choice.
+Всё это означает, что **`strict-origin-when-cross-origin`**, как правило, является разумным выбором.
 
-**Example: Setting a `strict-origin-when-cross-origin` policy:**
+**Пример: установка политики `strict-origin-when-cross-origin`**
 
 `index.html`:
 
@@ -200,9 +199,9 @@ const helmet = require('helmet');
 app.use(helmet.referrerPolicy({policy: 'strict-origin-when-cross-origin'}));
 ```
 
-### What if `strict-origin-when-cross-origin` (or stricter) doesn't accommodate all your use cases?
+### Что если политика `strict-origin-when-cross-origin` (или более строгая) не подходит для всех ваших вариантов использования?
 
-In this case, take a **progressive approach**: set a protective policy like `strict-origin-when-cross-origin` for your website and if need be, a more permissive policy for specific requests or HTML elements.
+В этом случае используйте **прогрессивный подход**: установите для вашего веб-сайта политику защиты, такую как `strict-origin-when-cross-origin` и, если необходимо, менее строгую политику для определенных запросов или элементов HTML.
 
 ### Пример: политика на уровне элементов
 
@@ -222,7 +221,7 @@ In this case, take a **progressive approach**: set a protective policy like `str
 </head>
 ```
 
-Note that Safari/WebKit may cap `document.referrer` or the `Referer` header for [cross-site](/same-site-same-origin/#same-site-cross-site) requests. See [details](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/).
+Обратите внимание, что Safari/WebKit может ограничивать заголовок `document.referrer` или `Referer` [для межсайтовых](/same-site-same-origin/#same-site-cross-site) запросов. Смотрите [подробности](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/).
 
 ### Пример: политика на уровне запроса
 
@@ -232,42 +231,42 @@ Note that Safari/WebKit may cap `document.referrer` or the `Referer` header for 
 fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 ```
 
-### What else should you consider?
+### Что ещё нужно учесть?
 
-Your policy should depend on your website and use cases—this is up to you, your team, and your company. If some URLs contain identifying or sensitive data, set a protective policy.
+Выбор политики должен определяться вашим веб-сайтом и вариантами использования — решаете вы, ваша команда и ваша компания. Если некоторые URL-адреса содержат идентифицирующие или конфиденциальные данные, установите политику защиты.
 
-{% Aside 'warning' %} Data that might not look sensitive to you can be sensitive for your users, or is simply not data they want or expect to silently leak cross-origin. {% endAside %}
+{% Aside 'warning' %} Данные, которые могут показаться вам не конфиденциальными, могут быть конфиденциальными для ваших пользователей. Другой вариант — ваши пользователи не ждут, что данные будут незаметно передавать при запросах на другие источники. {% endAside %}
 
 ## Использование реферера из входящих запросов: лучшие практики
 
-### What to do if your site's functionality uses the referrer URL of incoming requests?
+### Что делать, если функционал вашего сайта использует URL-адрес реферера из входящих запросов?
 
 #### Защитите данные пользователей
 
-The `Referer` may contain private, personal, or identifying data—so make sure you treat it as such.
+Заголовок `Referer` может содержать конфиденциальные, личные или идентифицирующие данные, поэтому убедитесь, что вы относитесь к ним как к таковым.
 
-#### Keep in mind that the `Referer` you receive may change
+#### Имейте в виду, что получаемый вами заголовок `Referer` может измениться
 
-Using the referrer from incoming cross-origin requests has a few limitations:
+Использование реферера из входящих запросов на другие источники имеет ряд ограничений:
 
-- If you have no control over the request emitter's implementation, you can't make assumptions about the `Referer` header (and `document.referrer`) you receive. The request emitter may decide anytime to switch to a `no-referrer` policy, or more generally to a stricter policy than what they used before—meaning you'll get less data via the `Referer` than you used to.
-- Browsers are increasingly using the Referrer-Policy `strict-origin-when-cross-origin` by default. This means that you may now receive only the origin (instead of full referrer URL) in incoming cross-origin requests, if the site that sends these has no policy set.
-- Browsers may change the way they manage `Referer`; for example, in the future, they may decide to always trim referrers to origins in cross-origin subresource requests, in order to protect user privacy.
-- The `Referer` header (and `document.referrer`) may contain more data than you need, for example a full URL when you only want to know if the request is cross-origin.
+- Если у вас нет контроля над реализацией отправителя запросов, вы не можете делать предположения о заголовке `Referer` (и `document.referrer`), который вы получаете. Отправитель запроса может в любой момент решить перейти на политику `no-referrer` или на более строгую политику, чем предыдущая, — это означает, что вы получите меньше данных через `Referer`, чем раньше.
+- Браузеры всё чаще используют для Referrer-Policy значение по умолчанию `strict-origin-when-cross-origin`. Это означает, что теперь вы можете получать только источник (вместо полного URL-адреса реферера) во входящих запросах на другие источники, если сайт, который их отправляет, не имеет установленной политики.
+- Браузеры могут изменить способ управления `Referer`; например, в будущем они могут решить всегда обрезать рефереры до источников в запросах подресурсов на другие источники, чтобы защитить конфиденциальность пользователей.
+- `Referer` (и `document.referrer`) может содержать больше данных, чем вам нужно, например полный URL-адрес, когда вы хотите только узнать, поступил ли запрос из другого источника.
 
 #### Альтернативы `Referer`
 
 Возможно, вам придется рассмотреть альтернативы, если:
 
-- An essential functionality of your site uses the referrer URL of incoming cross-origin requests;
-- And/or if your site is not receiving anymore the part of the referrer URL it needs in a cross-origin request. This happens when the request emitter changed their policy or when they have no policy set and the browser default's policy changed (like in [Chrome 85](https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default)).
+- Важный функционал вашего сайта использует URL-адрес реферера из входящих запросов на другие источники;
+- И/или если ваш сайт больше не получает ту часть URL-адреса реферера, которая ему нужна в запросе на другой источник. Это происходит, когда отправитель запросов изменил свою политику или когда у них не задана политика, а политика браузера по умолчанию изменилась (как в [Chrome 85](https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default)).
 
 Чтобы определить альтернативы, сначала проанализируйте, какую часть реферера вы используете.
 
 **Если вам нужен только источник ( `https://site-one.example` ):**
 
-- If you're using the referrer in a script that has top-level access to the page, `window.location.origin` is an alternative.
-- If available, headers like [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) and [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) give you the `Origin` or describe whether the request is cross-origin, which may be exactly what you need.
+- Если вы используете реферер в скрипте, который имеет доступ к странице верхнего уровня, альтернативой является `window.location.origin`.
+- Если возможно, используйте такие заголовки, как [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) и [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site), они дадут `Origin` или ответ, поступил ли запрос из другого источника. Возможно, именно это вам и нужно.
 
 **Если вам нужны другие элементы URL (путь, параметры запроса…):**
 
@@ -276,47 +275,47 @@ Using the referrer from incoming cross-origin requests has a few limitations:
 
 **Если вы не можете использовать эти альтернативы:**
 
-- Check if your systems can be changed to expect the request emitter (`site-one.example`) to explicitly set the information you need in a configuration of some sort. Pro: more explicit, more privacy-preserving for `site-one.example` users, more future-proof. Con: potentially more work from your side or for your system's users.
-- Check whether the site that emits the requests may agree to set a per-element or per-request Referrer-Policy of `no-referrer-when-downgrade`. Con: potentially less privacy-preserving for `site-one.example` users, potentially not supported in all browsers.
+- Проверьте, можно ли изменить ваши системы таким образом, чтобы они ожидали от отправителя запроса (`site-one.example`) явного задания нужной вам информации в какой-либо конфигурации. Плюсы: более явный, более конфиденциальный для пользователей `site-one.example` с ориентацией на будущее. Минусы: потенциально большой объем работы с вашей стороны или со стороны пользователей вашей системы.
+- Проверьте, может ли сайт, который отправляет запросы, согласиться установить политику `no-referrer-when-downgrade`. Минусы: потенциально менее конфиденциальная политика для пользователей `site-one.example`; может поддерживаться не во всех браузерах.
 
 ### Защита от подделки межсайтовых запросов (CSRF)
 
-Note that a request emitter can always decide not to send the referrer by setting a `no-referrer` policy (and a malicious actor could even spoof the referrer).
+Обратите внимание, что отправитель запроса всегда может решить не отправлять реферер, установив `no-referrer` (а злоумышленник может даже подделать реферер).
 
-Use [CSRF tokens](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation) as your primary protection. For extra protection, use [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)—and instead of `Referer`, use headers such as [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) (available on POST and CORS requests) and [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) (if available).
+Используйте [токены CSRF в](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation) качестве основной защиты. Для дополнительной защиты используйте [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites), а вместо `Referer` — заголовки, такие как [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) (доступно в запросах POST и CORS) и [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) (если доступно).
 
-### Logging
+### Логирование
 
-Make sure to protect users' personal or sensitive data that may be in the `Referer`.
+Обязательно защитите личные или конфиденциальные данные пользователей, которые могут находиться в `Referer`.
 
-If you're only using the origin, check if the [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) header could be an alternative. This may give you the information that you need for debugging purposes in a simpler way and without needing to parse the referrer.
+Если вы используете только источник, проверьте, может ли заголовок [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) применяться в качестве альтернативы. Этот заголовок может дать вам информацию для отладки более простым способом и без необходимости синтаксического анализа реферера.
 
 ### Платежи
 
-Payment providers may rely on the `Referer` header of incoming requests for security checks.
+Платежные сервисы могут полагаться на заголовок `Referer` входящих запросов для проверок безопасности.
 
 Например:
 
-- The user clicks a **Buy** button on `online-shop.example/cart/checkout`.
-- `online-shop.example` redirects to `payment-provider.example` to manage the transaction.
-- `payment-provider.example` checks the `Referer` of this request against a list of allowed `Referer` values set up by the merchants. If it doesn't match any entry in the list, `payment-provider.example` rejects the request. If it does match, the user can proceed to the transaction.
+- Пользователь нажимает кнопку **Купить** на `online-shop.example/cart/checkout`.
+- `online-shop.example` перенаправляет на `payment-provider.example` для проведения транзакцим.
+- `payment-provider.example` проверяет `Referer` этого запроса на соответствие списку допустимых `Referer`, установленных продавцами. Если заголовок не соответствует ни одной записи в списке, `payment-provider.example` отклоняет запрос. Если соответствует, продолжается обработка транзакции пользователя.
 
 #### Рекомендации по проверке безопасности потока платежей
 
-**Summary: as a payment provider, you can use the `Referer` as a basic check against naive attacks—but you should absolutely have another, more reliable verification method in place.**
+**Резюме: как платежный сервис вы можете использовать `Referer` в качестве базовой проверки против простых атак, но вам совершенно необходимо иметь другой, более надежный метод проверки.**
 
-The `Referer` header alone isn't a reliable basis for a check: the requesting site, whether they're a legitimate merchant or not, can set a `no-referrer` policy which will make the `Referer` information unavailable to the payment provider. However, as a payment provider, looking at the `Referer` may help you catch naive attackers who did not set a `no-referrer` policy. So you can decide to use the `Referer` as a first basic check. If you do so:
+Сам по себе заголовок `Referer` не является надежной основой для проверки: запрашивающий сайт, независимо от того, является ли он легитимным продавцом или нет, может установить политику `no-referrer`, которая сделает информацию `Referer` недоступной для платежного сервиса. Но просмотр `Referer` может помочь вам поймать наивных злоумышленников, которые не установили политику `no-referrer`. Поэтому вы можете решить использовать `Referer` в качестве первой базовой проверки. Если вы сделаете это:
 
-- **Do not expect the `Referer` to always be present; and if it's present, only check against the piece of data it will include at the minimum: the origin**. When setting the list of allowed `Referer` values, make sure that no path is included, but only the origin. Example: the allowed `Referer` values for `online-shop.example` should be `online-shop.example`, not `online-shop.example/cart/checkout`. Why? Because by expecting either no `Referer` at all or a `Referer` value that is the origin of the requesting website, you prevent unexpected errors since you're **not making assumptions about the `Referrer-Policy`** your merchant has set or about the browser's behavior if the merchant has no policy set. Both the site and the browser could strip the `Referer` sent in the incoming request to only the origin or not send the `Referer` at all.
-- If the `Referer` is absent or if it's present and your basic `Referer` origin check was successful: you can move onto your other, more reliable verification method (see below).
+- **Не ждите, что `Referer` всегда будет присутствовать; и если он присутствует, проверяйте только те данные, которые он минимально будет включать: источник**. При задании списка разрешенных значений `Referer` убедитесь, что в него не включен путь, а только источник. Пример: допустимые значения `Referer` `online-shop.example` должны быть `online-shop.example`, а не `online-shop.example/cart/checkout`. Почему? Поскольку, ожидая либо отсутствия `Referer` вообще, либо значение `Referer`, которое является источником запрашивающего веб-сайта, вы предотвращаете непредвиденные ошибки, поскольку вы **не делаете предположений о политике `Referrer-Policy`** реферера, установленной вашим продавцом, или о поведении браузера, если у продавца нет установленной политики. И сайт, и браузер могут обрезать `Referer` отправленный во входящем запросе, только до источника или не отправлять `Referer` вообще.
+- Если заголовок `Referer` отсутствует или если он присутствует и ваша базовая проверка заголовка `Referer` прошла успешно: вы можете перейти к другому, более надежному методу проверки (см. ниже).
 
 **Какой метод проверки более надежен?**
 
-One reliable verification method is to let the requester **hash the request parameters** together with a unique key. As a payment provider, you can then **calculate the same hash on your side** and only accept the request if it matches your calculation.
+Один из надежных методов проверки — позволить **инициатору запроса хешировать параметры запроса** вместе с уникальным ключом. Как платежный сервис, вы можете **рассчитать тот же хеш на своей стороне** и принять запрос только в том случае, если хеш соответствует вашим расчетам.
 
-**What happens to the `Referer` when an HTTP merchant site with no referrer policy redirects to an HTTPS payment provider?**
+**Что происходит с `Referer`, когда торговый сайт HTTP без политики реферера перенаправляет на платежный сервис HTTPS?**
 
-No `Referer` will be visible in the request to the HTTPS payment provider, because [most browsers](#default-referrer-policies-in-browsers) use `strict-origin-when-cross-origin` or `no-referrer-when-downgrade` by default when a website has no policy set. Also note that [Chrome's change to a new default policy](https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default) won't change this behaviour.
+Заголовок `Referer` не будет отображаться в запросе к платежному сервису HTTPS, поскольку [большинство браузеров](#default-referrer-policies-in-browsers) по умолчанию используют `strict-origin-when-cross-origin` или `no-referrer-when-downgrade`, если для веб-сайта не задана политика. Также обратите внимание, что [переход Chrome на новую политику по умолчанию](https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default) не изменит этого поведения.
 
 {% Aside %}
 
@@ -326,21 +325,21 @@ No `Referer` will be visible in the request to the HTTPS payment provider, becau
 
 ## Заключение
 
-A protective referrer policy is a great way to give your users more privacy.
+Защитная политика реферера — отличный способ предоставить вашим пользователям больше конфиденциальности.
 
 Чтобы узнать больше о различных методах защиты ваших пользователей, ознакомьтесь с коллекцией [Safe and secure](/secure/) от web.dev!
 
-*With many thanks for contributions and feedback to all reviewers - especially Kaustubha Govind, David Van Cleve, Mike West, Sam Dutton, Rowan Merewood, Jxck and Kayce Basques.*
+*Большое спасибо за вклад и отзывы всем рецензентам, особенно Каустубхе Говинду, Дэвиду Ван Кливу, Майку Уэсту, Сэму Даттону, Роуэну Меревуду, Джеку Баски и Кейси Баски.*
 
 ## Ресурсы
 
-- [Understanding "same-site" and "same-origin"](/same-site-same-origin/)
-- [A new security header: Referrer Policy (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
-- [Referrer-Policy on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
-- [Referer header: privacy and security concerns on MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
-- [Chrome change: Blink intent to implement](https://groups.google.com/a/chromium.org/d/msg/blink-dev/aBtuQUga1Tk/n4BLwof4DgAJ)
-- [Chrome change: Blink intent to ship](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/lqFuqwZDDR8)
-- [Chrome change: status entry](https://www.chromestatus.com/feature/6251880185331712)
-- [Chrome change: 85 beta blogpost](https://blog.chromium.org/2020/07/chrome-85-upload-streaming-human.html)
-- [Referrer trimming GitHub thread: what different browsers do](https://github.com/privacycg/proposals/issues/13)
-- [Referrer-Policy Spec](https://w3c.github.io/webappsec-referrer-policy/#referrer-policy-delivery)
+- [Понимание "same-site" и "same-origin"](/same-site-same-origin/).
+- [Новый заголовок безопасности: политика реферера (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/).
+- [Referrer-Policy на MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy).
+- [Заголовок Referer: проблемы конфиденциальности и безопасности в MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns).
+- [Изменение Chrome: намерение реализации на Blink](https://groups.google.com/a/chromium.org/d/msg/blink-dev/aBtuQUga1Tk/n4BLwof4DgAJ).
+- [Изменение Chrome: намерение о запуске на Blink](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/lqFuqwZDDR8).
+- [Изменение Chrome: запись статуса](https://www.chromestatus.com/feature/6251880185331712).
+- [Изменение Chrome: сообщение в блоге о бета-версии 85](https://blog.chromium.org/2020/07/chrome-85-upload-streaming-human.html).
+- [Реферер обрезает поток GitHub: что делают разные браузеры](https://github.com/privacycg/proposals/issues/13).
+- [Спецификация Referrer-Policy](https://w3c.github.io/webappsec-referrer-policy/#referrer-policy-delivery).
