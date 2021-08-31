@@ -1,15 +1,11 @@
 ---
 layout: post
-title: Total Blocking Time (TBT)
+title: Total Blocking Time 总阻塞时间 (TBT)
 authors:
   - philipwalton
 date: '2019-11-07'
 updated: '2020-06-15'
-description: |2
-
-  This post introduces the Total Blocking Time (TBT) metric and explains
-
-  how to measure it
+description: 本篇文章介绍了总阻塞时间 (TBT) 指标并说明了该指标的测量方式
 tags:
   - performance
   - metrics
@@ -17,29 +13,29 @@ tags:
 
 {% Aside %}
 
-Total Blocking Time (TBT) is an important [lab metric](/user-centric-performance-metrics/#in-the-lab) for measuring [load responsiveness](/user-centric-performance-metrics/#types-of-metrics) because it helps quantify the severity of how non-interactive a page is prior to it becoming reliably interactive—a low TBT helps ensure that the page is [usable](/user-centric-performance-metrics/#questions).
+总阻塞时间 (TBT) 是测量[加载响应度](/user-centric-performance-metrics/#in-the-lab)的重要[实验室指标](/user-centric-performance-metrics/#types-of-metrics)，因为该项指标有助于量化在页面交互性变为可靠前，不可交互程度的严重性，较低的 TBT 有助于确保页面的[可用性](/user-centric-performance-metrics/#questions)。
 
 {% endAside %}
 
-## What is TBT?
+## 什么是 TBT？
 
-The Total Blocking Time (TBT) metric measures the total amount of time between [First Contentful Paint (FCP)](/fcp/) and [Time to Interactive (TTI)](/tti/) where the main thread was blocked for long enough to prevent input responsiveness.
+总阻塞时间 (TBT) 指标测量[ First Contentful Paint 首次内容绘制 (FCP) ](/fcp/)与[ Time to Interactive 可交互时间 (TTI) ](/tti/)之间的总时间，这期间，主线程被阻塞的时间过长，无法作出输入响应。
 
-The main thread is considered "blocked" any time there's a [Long Task](/custom-metrics/#long-tasks-api)—a task that runs on the main thread for more than 50 milliseconds (ms). We say the main thread is "blocked" because the browser cannot interrupt a task that's in progress. So in the event that a user *does* interact with the page in the middle of a long task, the browser must wait for the task to finish before it can respond.
+每当出现[长任务](/custom-metrics/#long-tasks-api)（在主线程上运行超过 50 毫秒的任务）时，主线程都被视作“阻塞状态”。我们说主线程处于“阻塞状态”是因为浏览器无法中断正在进行的任务。因此，如果用户在某个长任务运行期间与页面*进行*交互，那么浏览器必须等到任务完成后才能作出响应。
 
-If the task is long enough (e.g. anything above 50 ms), it's likely that the user will notice the delay and perceive the page as sluggish or janky.
+如果任务时长足够长（例如超过 50 毫秒），那么用户很可能会注意到延迟，并认为页面缓慢或卡顿。
 
-The *blocking time* of a given long task is its duration in excess of 50 ms. And the *total blocking time* for a page is the sum of the *blocking time* for each long task that occurs between FCP and TTI.
+某个给定长任务的*阻塞时间*是该任务持续时间超过 50 毫秒的部分。一个页面的*总阻塞时间*是在 FCP 和 TTI 之间发生的每个长任务的*阻塞时间*总和。
 
-For example, consider the following diagram of the browser's main thread during page load:
+例如，请看以下这张页面加载期间浏览器主线程的图表：
 
-{% Img src="image/admin/clHG8Yv239lXsGWD6Iu6.svg", alt="A tasks timeline on the main thread", width="800", height="156", linkTo=true %}
+{% Img src="image/admin/clHG8Yv239lXsGWD6Iu6.svg", alt="主线程上的任务时间轴", width="800", height="156", linkTo=true %}
 
-The above timeline has five tasks, three of which are Long Tasks because their duration exceeds 50 ms. The next diagram shows the blocking time for each of the long tasks:
+上方的时间轴上有五个任务，其中三个是长任务，因为这些任务的持续时间超过 50 毫秒。下图显示了各个长任务的阻塞时间：
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xKxwKagiz8RliuOI2Xtc.svg", alt="A tasks timeline on the main thread showing blocking time", width="800", height="156", linkTo=true %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xKxwKagiz8RliuOI2Xtc.svg", alt="显示阻塞时间的主线程任务时间轴", width="800", height="156", linkTo=true %}
 
-So while the total time spent running tasks on the main thread is 560 ms, only 345 ms of that time is considered blocking time.
+因此，虽然在主线程上运行任务的总时间为 560 毫秒，但其中只有 345 毫秒被视为阻塞时间。
 
 <table>
   <tr>
@@ -78,39 +74,39 @@ So while the total time spent running tasks on the main thread is 560 ms, only 3
   </tr>
 </table>
 
-### How does TBT relate to TTI?
+### TBT 与 TTI 有什么关系？
 
-TBT is a great companion metric for TTI because it helps quantify the severity of how non-interactive a page is prior it to becoming reliably interactive.
+TBT 是 TTI 的一个出色的配套指标，因为 TBT 有助于量化在页面交互性变为可靠前，不可交互程度的严重性。
 
-TTI considers a page "reliably interactive" if the main thread has been free of long tasks for at least five seconds. This means that three, 51 ms tasks spread out over 10 seconds can push back TTI just as far as a single 10-second long task—but those two scenarios would feel very different to a user trying to interact with the page.
+TTI 会在主线程至少有五秒钟没有长任务时，认为页面具备“可靠交互性”。也就是说，分布在 10 秒钟里的三个 51 毫秒长的任务与单个 10 秒长的任务对 TTI 的影响是相同的，但对于试图与页面进行交互的用户来说，这两种情况给人的感觉是截然不同的。
 
-In the first case, three, 51 ms tasks would have a TBT of **3 ms**. Whereas a single, 10-second long tasks would have a TBT of **9950 ms**. The larger TBT value in the second case quantifies the worse experience.
+在第一种情况下，三个 51 毫秒的任务的 TBT 为**&nbsp;3 毫秒**。而单个 10 秒长的任务的 TBT 为**&nbsp;9950 毫秒**。第二种情况下较大的 TBT 值对较差的体验进行了量化。
 
 ## 如何测量 TBT
 
-TBT is a metric that should be measured [in the lab](/user-centric-performance-metrics/#in-the-lab). The best way to measure TBT is to run a Lighthouse performance audit on your site. See the [Lighthouse documentation on TBT](/lighthouse-total-blocking-time) for usage details.
+TBT 指标应该[在实验室中](/user-centric-performance-metrics/#in-the-lab)进行测量。测量 TBT的最佳方法是在您的网站上运行一次灯塔性能审计。有关使用详情，请参阅[灯塔中关于 TBT 的说明文档](/lighthouse-total-blocking-time)。
 
 ### 实验室工具
 
 - [Chrome 开发者工具](https://developers.google.com/web/tools/chrome-devtools/)
 - [灯塔](https://developers.google.com/web/tools/lighthouse/)
-- [WebPageTest](https://www.webpagetest.org/)
+- [WebPageTest 网页性能测试工具](https://www.webpagetest.org/)
 
-{% Aside %} While it is possible to measure TBT in the field, it's not recommended as user interaction can affect your page's TBT in ways that lead to lots of variance in your reports. To understand a page's interactivity in the field, you should measure [First Input Delay (FID)](/fid/). {% endAside %}
+{% Aside %}虽然 TBT 可以在实际情况下进行测量，但我们不建议这样做，因为用户交互会影响您网页的 TBT，从而导致您的报告中出现大量差异。如需了解页面在实际情况中的交互性，您应该测量[ First Input Delay 首次输入延迟 (FID)](/fid/) 。{% endAside %}
 
-## What is a good TBT score?
+## 怎样算是良好的 TBT 分数？
 
-To provide a good user experience, sites should strive to have a Total Blocking Time of less than **300 milliseconds** when tested on **average mobile hardware**.
+为了提供良好的用户体验，网站在**普通移动硬件**上进行测试时，应该努力将总阻塞时间控制在**&nbsp;300 毫秒**以内。
 
-For details on how your page's TBT affects your Lighthouse performance score, see [How Lighthouse determines your TBT score](/lighthouse-total-blocking-time/#how-lighthouse-determines-your-tbt-score)
+有关页面 TBT 对灯塔性能分数影响的详细信息，请参阅[灯塔如何确定您的 TBT 分数](/lighthouse-total-blocking-time/#how-lighthouse-determines-your-tbt-score)
 
 ## 如何改进 TBT
 
-To learn how to improve TBT for a specific site, you can run a Lighthouse performance audit and pay attention to any specific [opportunities](/lighthouse-performance/#opportunities) the audit suggests.
+如需了解如何改进某个特定网站的 TBT，您可以运行一次灯塔性能审计，并留心查看审计建议的各种具体[机会](/lighthouse-performance/#opportunities)。
 
-To learn how to improve TBT in general (for any site), refer to the following performance guides:
+如需了解改进 TBT 的常见方式（针对任何网站），请参阅以下性能指南：
 
 - [减少第三方代码的影响](/third-party-summary/)
 - [减少 JavaScript 执行时间](/bootup-time/)
 - [最小化主线程工作](/mainthread-work-breakdown/)
-- [Keep request counts low and transfer sizes small](/resource-summary/)
+- [保持较低的请求数和较小的传输大小](/resource-summary/)
