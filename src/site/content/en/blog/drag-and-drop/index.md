@@ -206,7 +206,7 @@ consider [throttling or debouncing your event listener](https://css-tricks.com/d
 ## Completing the drop
 
 To process the actual drop,
-add an event listener for the `drop` event (we do this above, so you can fill it in).
+add an event listener for the `drop` event.
 In the `drop` handler,
 you'll need to prevent the browser's default behavior for drops,
 which is typically some sort of annoying redirect.
