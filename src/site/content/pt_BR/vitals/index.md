@@ -197,7 +197,7 @@ Depois de medir as Core Web Vitals e identificar as áreas que podem ser melhora
 
 - [Otimizar a LCP](/optimize-lcp/)
 - [Otimizar a FID](/optimize-fid/)
-- [Optimize CLS](/optimize-cls/)
+- [Otimizar a CLS](/optimize-cls/)
 
 ## Outras Web Vitals
 
