@@ -13,9 +13,9 @@ tags:
 
 Este guia mostra como habilitar o isolamento de origem cruzada. O isolamento de origem cruzada é necessário se você deseja usar [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/), [cronômetro de alta resolução com melhor precisão](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/) ou a API JS Self-Profiling.
 
-If you intend to enable cross-origin isolation, evaluate the impact this will have on other cross-origin resources on your website, such as ad placements.
+Se você pretende ativar o isolamento de origem cruzada, avalie o impacto que isso terá em outros recursos de origem cruzada em seu site, como canais de anúncios.
 
-{% Details %} {% DetailsSummary %} Determine where in your website `SharedArrayBuffer` is used
+{% Details %} {% DetailsSummary %} Determine onde o `SharedArrayBuffer` é usado em seu site
 
 A partir do Chrome 92, as funcionalidades que usam `SharedArrayBuffer` não funcionarão mais sem o isolamento de origem cruzada. Se você acessou esta página devido a uma `SharedArrayBuffer`, é provável que seu site ou um dos recursos incorporados a ele esteja usando `SharedArrayBuffer`. Para garantir que nada seja interrompido em seu site devido à suspensão do uso, comece identificando onde ele é usado.
 
@@ -26,19 +26,19 @@ A partir do Chrome 92, as funcionalidades que usam `SharedArrayBuffer` não func
 - Ative o isolamento de origem cruzada para continuar usando `SharedArrayBuffer`.
 - Se você depende de código de terceiros que usa `SharedArrayBuffer`, notifique o provedor de terceiros para tomar providências. {% endAside %}
 
-If you are not sure where in your site a `SharedArrayBuffer` is used, there are two ways find out:
+Se você não tiver certeza de onde em seu site um `SharedArrayBuffer` é usado, há duas maneiras de descobrir:
 
-- Using Chrome DevTools
+- Usando Chrome DevTools
 - (Avançado) Usando Deprecation Reporting
 
 Se você já sabe onde está usando `SharedArrayBuffer`, vá para [Analisar o impacto do isolamento de origem cruzada](#analysis) .
 
-### Using Chrome DevTools
+### Usando Chrome DevTools
 
-[Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open) allows developers to inspect websites.
+[O Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open) permite que os desenvolvedores inspecionem sites.
 
 1. [Abra o Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open) na página que você suspeita estar usando `SharedArrayBuffer`.
-2. Select the **Console** panel.
+2. Selecione o painel **Console.**
 3. Se a página estiver usando `SharedArrayBuffer`, a seguinte mensagem será exibida:
     ```text
     [Deprecation] SharedArrayBuffer will require cross-origin isolation as of M92, around May 2021. See https://developer.chrome.com/blog/enabling-shared-array-buffer/ for more details. common-bundle.js:535
@@ -58,23 +58,23 @@ Alguns navegadores têm [uma funcionalidade que relata APIs deprecadas](https://
     ```
 3. Assim que o cabeçalho começar a se propagar, o endpoint no qual você se registrou deve começar a coletar relatórios de deprecação.
 
-See an example implementation here: [https://first-party-test.glitch.me](https://first-party-test.glitch.me).
+Veja um exemplo de implementação aqui: [https://first-party-test.glitch.me](https://first-party-test.glitch.me) .
 
 {% endDetails %}
 
-## Analyze the impact of cross-origin isolation  {: #analysis}
+## Analise o impacto do isolamento de origem cruzada {: #analysis}
 
 Não seria ótimo se você pudesse avaliar o impacto que a ativação do isolamento de origem cruzada teria em seu site sem realmente quebrar nada? Os cabeçalhos HTTP [`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) e [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) permitem que você faça exatamente isso.
 
-1. Set [`Cross-Origin-Opener-Policy-Report-Only: same-origin`](/coop-coep/#1.-set-the-cross-origin-opener-policy:-same-origin-header-on-the-top-level-document) on your top-level document. As the name indicates, this header only sends reports about the impact that `COOP: same-origin` **would** have on your site—it won't actually disable communication with popup windows.
+1. Defina [`Cross-Origin-Opener-Policy-Report-Only: same-origin`](/coop-coep/#1.-set-the-cross-origin-opener-policy:-same-origin-header-on-the-top-level-document) em seu documento de nível superior. Como o nome indica, este cabeçalho apenas envia relatórios sobre o impacto que `COOP: same-origin` **teria** em seu site - ele não desabilitará a comunicação com janelas pop-up.
 2. Configure relatórios e configure um servidor web para receber e salvar os relatórios.
-3. Set [`Cross-Origin-Embedder-Policy-Report-Only: require-corp`](/coop-coep/#3.-use-the-coep-report-only-http-header-to-assess-embedded-resources) on your top-level document. Again, this header lets you see the impact of enabling `COEP: require-corp` without actually affecting your site's functioning yet. You can configure this header to send reports to the same reporting server that you set up in the previous step.
+3. Defina [`Cross-Origin-Embedder-Policy-Report-Only: require-corp`](/coop-coep/#3.-use-the-coep-report-only-http-header-to-assess-embedded-resources) em seu documento de nível superior. Novamente, este cabeçalho permite que você veja o impacto de habilitar `COEP: require-corp` sem realmente afetar o funcionamento do seu site ainda. Você pode configurar este cabeçalho para enviar relatórios ao mesmo servidor de relatórios que configurou na etapa anterior.
 
-{% Aside %} You can also [enable the **Domain** column](https://developers.google.com/web/tools/chrome-devtools/network#information) in Chrome DevTools **Network** panel to get a general view of which resources would be impacted. {% endAside %}
+{% Aside %} Você também pode [ativar a coluna **Domínio**](https://developers.google.com/web/tools/chrome-devtools/network#information) **no painel Rede do** Chrome DevTools para obter uma visão geral de quais recursos seriam afetados. {% endAside %}
 
 {% Aside 'caution' %}
 
-Enabling cross-origin isolation will block the loading of cross-origin resources that you don't explicitly opt-in, and it will prevent your top-level document from being able to communicate with popup windows.
+Habilitar o isolamento de origem cruzada bloqueará o carregamento de recursos de origem cruzada que você não ativou explicitamente e impedirá que seu documento de nível superior seja capaz de se comunicar com janelas pop-up.
 
 Temos explorado maneiras de implantar a `Cross-Origin-Resource-Policy` em escala, já que o isolamento de origem cruzada requer que todos os sub-recursos optem por isso explicitamente. Então tivemos a ideia de ir na direção oposta: [um novo modo COEP "credentialess"](https://github.com/mikewest/credentiallessness/) que permite carregar recursos sem o cabeçalho CORP removendo todas as suas credenciais. Estamos descobrindo os detalhes de como isso deve funcionar, mas esperamos que isto alivie seu fardo de garantir que os sub-recursos estejam enviando o cabeçalho `Cross-Origin-Resource-Policy`
 
@@ -90,7 +90,7 @@ Depois de determinar quais recursos serão afetados pelo isolamento de origem cr
 
 1. Em recursos de origem cruzada, como imagens, scripts, folhas de estilo, iframes e outros, defina o cabeçalho [`Cross-Origin-Resource-Policy: cross-origin`](https://resourcepolicy.fyi/#cross-origin) Em recursos do mesmo site, defina o cabeçalho [`Cross-Origin-Resource-Policy: same-site`](https://resourcepolicy.fyi/#same-origin).
 2. Defina o atributo `crossorigin` na tag HTML no documento de nível superior se o recurso for servido com [CORS](/cross-origin-resource-sharing/) (por exemplo, `<img src="example.jpg" crossorigin>` ).
-3. If cross-origin resources loaded into iframes involve another layer of iframes, recursively apply steps described in this section before moving forward.
+3. Se os recursos de origem cruzada carregados em iframes envolverem outra camada de iframes, aplique recursivamente as etapas descritas nesta seção antes de prosseguir.
 4. Depois de confirmar que todos os recursos de origem cruzada estão incluídos, defina o cabeçalho `Cross-Origin-Embedder-Policy: require-corp` nos recursos de origem cruzada carregados em iframes.
 5. Certifique-se de que não haja janelas pop-up de origem cruzada que exijam comunicação por meio de `postMessage()`. Não há como mantê-los funcionando quando o isolamento de origem cruzada está habilitado. Você pode mover a comunicação para outro documento que não tenha isolamento de origem cruzada ou usar um método de comunicação diferente (por exemplo, solicitações HTTP).
 
@@ -108,7 +108,7 @@ Habilitar o isolamento de origem cruzada em um servidor local pode ser doloroso,
 
 {% endAside %}
 
-## Resources
+## Recursos
 
 - [Deixando seu site com "isolamento de origem cruzada" usando COOP e COEP](/coop-coep/)
-- [SharedArrayBuffer updates in Android Chrome 88 and Desktop Chrome 92](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
+- [Atualizações de SharedArrayBuffer no Android Chrome 88 e Desktop Chrome 92](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
