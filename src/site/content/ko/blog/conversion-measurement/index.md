@@ -1,5 +1,5 @@
 ---
-title: A more private way to measure ad conversions, the Event Conversion Measurement API
+title: 광고 전환을 측정하는 보다 개인적인 방법인 Event Conversion Measurement API
 subhead: 최초 평가판으로 사용할 수 있는 새로운 Web API는 사이트 간 식별자를 사용하지 않고 언제 광고 클릭이 전환으로 이어지는 지를 측정합니다.
 authors:
   - maudn
@@ -25,7 +25,7 @@ tags:
 
 {% Aside %} 이 API는 제3자 쿠키 또는 기타 사이트 간 추적 메커니즘 없이 제3자 사용 사례를 충족하기 위한 일련의 제안인 개인정보 보호 샌드박스의 일부입니다. 모든 제안에 대한 개요는 [개인정보 보호 샌드박스 심층 해부](/digging-into-the-privacy-sandbox)를 참조하세요. {% endAside %}
 
-## Glossary
+## 용어 사전
 
 - **애드테크 플랫폼**: 브랜드 또는 대행사가 디지털 광고를 타겟팅, 전달 및 분석할 수 있도록 하는 소프트웨어 및 도구를 제공하는 회사입니다.
 - **광고주**: 광고 비용을 지불하는 회사입니다.
@@ -39,7 +39,7 @@ tags:
 - **광고 또는 전환 측정을 위해 맞춤 코드에 의존하는 광고주와 게시자**도 마찬가지로 이 API를 사용하여 기존 기술을 대체하는 데 관심을 가질 수 있습니다.
 - **광고 또는 전환 측정을 위해 애드테크 플랫폼에 의존하는 광고주 및 게시자**는 이 API를 직접 사용할 필요는 없지만, 특히 API를 통합할 수 있는 애드테크 플랫폼으로 작업하는 경우에 [이 API에 담겨진 논리](#why-is-this-needed)에 관심을 가질 수 있습니다.
 
-## API overview
+## API 개요
 
 ### 왜 필요한가?
 
@@ -62,13 +62,13 @@ Chrome은 [제3자 쿠키에 대한 지원을 단계적으로 중단](https://bl
 
 이 API 버전에서는 **사용자 클릭 전환 측정**만 지원하지만 [조회 후 전환 측정](https://github.com/WICG/conversion-measurement-api/blob/main/event_attribution_reporting.md)도 공개 인큐베이션 상태에 있습니다.
 
-### How it works
+### 작동 원리
 
 <figure class="w-figure">{% Img src="image/admin/Xn96AVosulGisR6Hoj4J.jpg", alt="다이어그램: conversion measurement API 단계 개요", width="800", height="496" %}</figure>
 
 이 API는 광고에 사용되는 두 가지 유형의 링크(`<a>` 요소)와 함께 사용할 수 있습니다.
 
-- Links in a **first-party** context, such as ads on a social network or a search engine results page;
+- 소셜 네트워크 또는 검색 엔진 결과 페이지의 광고와 같은 **자사** 컨텍스트의 링크
 - 제3자 애드테크 제공업체를 사용하는 게시자 사이트와 같은 **제3자 iframe**의 링크입니다.
 
 이 API를 사용하면 광고 전환과 관련된 특성으로 이러한 아웃바운드 링크를 구성할 수 있습니다.
@@ -88,9 +88,9 @@ Chrome은 [제3자 쿠키에 대한 지원을 단계적으로 중단](https://bl
 
 보고서는 전환 후 며칠 또는 몇 주 후의 시차를 두고 전송됩니다(그 이유는 [보고서 타이밍](#report-timing) 참조).
 
-## Browser support and similar APIs
+## 브라우저 지원 및 유사한 API
 
-### Browser support
+### 브라우저 지원
 
 Event Conversion Measurement API는 다음과 같이 지원될 수 있습니다.
 
@@ -99,21 +99,21 @@ Event Conversion Measurement API는 다음과 같이 지원될 수 있습니다.
 
 [Chrome 기능 항목](https://chromestatus.com/features/6412002824028160)에서 현재 상황에 대한 자세한 내용을 확인하세요.
 
-### Standardization
+### 표준화
 
 이 API는 [WICG](https://www.w3.org/community/wicg/)(Web Platform Incubator Community Group)에서 공개적으로 설계되고 있습니다. Chrome에서 실험적으로 이용할 수 있습니다.
 
-### Similar APIs
+### 유사한 API
 
 Safari에서 사용하는 웹 브라우저 엔진인 WebKit에는 [Private Click Measurement](https://github.com/privacycg/private-click-measurement)라는 유사한 목표를 가진 제안이 있습니다. 개인정보 보호 커뮤니티 그룹([PrivacyCG](https://www.w3.org/community/privacycg/)) 내에서 작업이 이루어지고 있습니다.
 
-## How this API preserves user privacy
+## 이 API가 사용자 개인정보를 보호하는 방법
 
 이 API를 사용하면 사용자의 개인정보를 보호하면서 전환을 측정할 수 있습니다. 즉, 사이트 간에 사용자를 식별할 수 없습니다. 이를 위해 **데이터 제한**, **변환 데이터에 노이즈 도입** 및 **보고 타이밍** 메커니즘이 적용됩니다.
 
-Let's take a closer look at how these mechanisms work, and what they mean in practice.
+이러한 메커니즘이 작동하는 방식과 실제로 의미하는 바를 자세히 살펴보겠습니다.
 
-### Data limits
+### 데이터 제한
 
 이어지는 내용에서 **클릭 시간 또는 조회 시간 데이터**는 사용자에게 광고가 게재된 후 클릭 또는 조회되었을 때 `adtech.example`이 사용할 수 있는 데이터입니다. 전환이 발생한 시점의 데이터가 **전환 시간 데이터**입니다.
 
@@ -137,7 +137,7 @@ Let's take a closer look at how these mechanisms work, and what they mean in pra
 
 `adtech.example`은 사이트 간 식별자를 사용할 수 없으며, 따라서 **여러 사이트에 걸쳐 사용자를 인식할 수 없습니다**.
 
-- A 64 bit-identifier can be attached to an ad click.
+- 64비트 식별자는 광고 클릭에 첨부할 수 있습니다.
 - 변환 이벤트에는 3비트의 변환 데이터만 첨부할 수 있습니다. 3비트는 0에서 7 사이의 정수 값에 맞을 수 있습니다. 이것은 많은 데이터는 아니지만 광고주가 미래에 광고 예산을 어디에 사용할지 올바른 결정을 내리는 방법(예를 들어, 데이터 모델을 훈련하여)을 알아내기에는 충분합니다.
 
 {% Aside %} 클릭 데이터와 전환 데이터는 동일한 컨텍스트에서 JavaScript 환경에 노출되지 않습니다. {% endAside %}
@@ -158,25 +158,25 @@ Event Conversion Measurement API와 같은 제3자 쿠키에 대한 대안이 �
 
 [실제 전환 수](/using-conversion-measurement/#(optional)-recover-the-corrected-conversion-count)는 복구가 가능합니다.
 
-Summing up click data and conversion data:
+클릭 데이터 및 전환 데이터 요약:
 
 <div class="w-table-wrapper">
   <table class="w-table--top-align">
     <thead>
       <tr>
-        <th>Data</th>
-        <th>Size</th>
-        <th>Example</th>
+        <th>데이터</th>
+        <th>크기</th>
+        <th>예시</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>클릭 데이터( <code>impressiondata</code> 특성)</td>
-        <td>64 bits</td>
-        <td>An ad ID or click ID</td>
+        <td>64비트</td>
+        <td>광고 ID 또는 클릭 ID</td>
       </tr>
       <tr>
-        <td>Conversion data</td>
+        <td>전환 데이터</td>
         <td>3비트, 노이즈 도입</td>
         <td>전환 유형(가입, 결제 완료 등)에 매핑할 수 있는 0에서 7 사이의 정수</td>
       </tr>
@@ -194,24 +194,24 @@ Summing up click data and conversion data:
 
 만료(클릭 시간 + `impressionexpiry`) 후에는 전환이 카운트되지 않습니다. `impressionexpiry`는 전환이 더 이상 이 광고에 대해 카운트될 수 없는 경계 시기에 해당하는 날짜와 시간입니다.
 
-In Chrome, report scheduling works as follows:
+Chrome에서 보고서 예약은 다음과 같이 작동합니다.
 
 <div class="w-table-wrapper">
   <table class="w-table--top-align">
     <thead>
       <tr>
         <th><code>impressionexpiry</code></th>
-        <th>Depending on conversion time, a conversion report is sent (if the browser is open)...</th>
-        <th>Number of reporting windows</th>
+        <th>전환 시간에 따라 전환 보고서가 전송됩니다(브라우저가 열려 있는 경우)...</th>
+        <th>보고 기간 수</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>30 days, the default and maximum value</td>
+        <td>30일, 기본값 및 최대값</td>
         <td>
           <ul>
-            <li>2 days after the ad was clicked</li>
-            <li>or 7 days after ad click</li>
+            <li>광고를 클릭한 후 2일</li>
+            <li>또는 광고 클릭 후 7일</li>
             <li>또는 <code>impressionexpiry</code> = 광고 클릭 후 30일</li>
           </ul>
         </td>
@@ -222,9 +222,10 @@ In Chrome, report scheduling works as follows:
 <code>impressionexpiry</code>는 7일에서 30일 사이입니다.</td>
         <td>
           <ul>
-            <li>2 days after ad click</li>
-            <li>or 7 days after ad click</li>
-            <li>or <code>impressionexpiry</code> after ad click.</li>
+            <li>광고 클릭 후 2일</li>
+            <li>또는 광고 클릭 후 7일</li>
+            <li>또는 광고 클릭 후 <code>impressionexpiry</code>
+</li>
           </ul>
         </td>
         <td>3</td>
@@ -234,8 +235,9 @@ In Chrome, report scheduling works as follows:
 <code>impressionexpiry</code>는 2일에서 7일 사이입니다.</td>
         <td>
           <ul>
-            <li>2 days after ad click</li>
-            <li>or <code>impressionexpiry</code> after ad click.</li>
+            <li>광고 클릭 후 2일</li>
+            <li>또는 광고 클릭 후 <code>impressionexpiry</code>
+</li>
           </ul>
         </td>
         <td>2</td>
@@ -244,7 +246,7 @@ In Chrome, report scheduling works as follows:
         <td>
 <code>impressionexpiry</code>는 2일 미만입니다.</td>
         <td>
-          <li>2 days after ad click</li>
+          <li>광고 클릭 후 2일</li>
         </td>
         <td>1</td>
       </tr>
@@ -256,15 +258,15 @@ In Chrome, report scheduling works as follows:
 
 타이밍에 대한 자세한 내용은 [예약 보고서 보내기](https://github.com/WICG/conversion-measurement-api#sending-scheduled-reports)를 참조하세요.
 
-## Example
+## 예시
 
 {% Banner 'info', 'body' %} 실제 작동을 확인하려면 [데모](https://goo.gle/demo-event-level-conversion-measurement-api) ⚡️를 시도하고 해당하는 [코드](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/conversion-measurement)를 확인하세요. {% endBanner %}
 
 API가 전환을 기록하고 보고하는 방법은 다음과 같습니다. 이것이 현재 API에서 클릭-투-전환 흐름이 작동하는 방식입니다. 이 API의 향후 버전에서는 [달라질 수 있습니다](#use-cases).
 
-### Ad click (steps 1 to 5)
+### 광고 클릭(1~5단계)
 
-<figure class="w-figure">   {% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="Diagram: ad click and click storage", width="800", height="694" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="다이어그램: 광고 클릭 및 클릭 저장", width="800", height="694" %}</figure>
 
 `<a>` 광고 요소는 iframe 내의 `adtech.example`에 의해 게시자 사이트에 로드됩니다.
 
@@ -283,36 +285,38 @@ API가 전환을 기록하고 보고하는 방법은 다음과 같습니다. 이
 </a>
 ```
 
-This code specifies the following:
+이 코드는 다음을 지정합니다.
 
 <div class="w-table-wrapper">
   <table class="w-table--top-align">
     <thead>
       <tr>
         <th>귀속</th>
-        <th>Default value, maximum, minimum</th>
-        <th>Example</th>
+        <th>기본값, 최대, 최소</th>
+        <th>예시</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>
 <code>impressiondata</code>(필수): 광고 클릭에 첨부할 <b>64비트</b> 식별자입니다.</td>
-        <td>(no default)</td>
-        <td>A dynamically generated click ID  such as a 64-bit integer:           <code>200400600</code>         </td>
+        <td>(기본값 없음)</td>
+        <td>64비트 정수와 같이 동적으로 생성된 클릭 ID: <code>200400600</code>
+</td>
       </tr>
       <tr>
         <td>
 <code>conversiondestination</code>(필수): 이 광고에 대해 전환이 예상되는 <b><a href="/same-site-same-origin/#site" noopener="">eTLD+1</a></b>입니다.</td>
-        <td>(no default)</td>
+        <td>(기본값 없음)</td>
         <td>
 <code>https://advertiser.example</code>.<br><code>conversiondestination</code>이 <code>https://advertiser.example</code>인 경우 <code>https://advertiser.example</code> 및 <code>https://shop.advertiser.example</code> 모두의 전환이 귀속됩니다.<br><code>conversiondestination</code>이 <code>https://shop.advertiser.example</code>인 경우에도 마찬가지입니다: <code>https://advertiser.example</code> 및 <code>https://shop.advertiser.example</code> 모두의 전환이 귀속됩니다.</td>
       </tr>
       <tr>
         <td>
 <code>impressionexpiry</code>(선택 사항): 전환이 이 광고에 귀속될 수 있는 제한 시간(밀리초)입니다.</td>
-        <td>           <code>2592000000</code> = 30 days (in milliseconds).<br><br>           Maximum: 30 days (in milliseconds).<br><br>           Minimum: 2 days (in milliseconds).         </td>
-        <td>Ten days after click: <code>864000000</code>
+        <td>
+<code>2592000000</code> = 30일(밀리초).<br><br> 최대: 30일(밀리초).<br><br> 최소: 2일(밀리초).</td>
+        <td>클릭 후 10일: <code>864000000</code>
 </td>
       </tr>
       <tr>
@@ -393,7 +397,7 @@ app.get('/conversion', (req, res) => {
 브라우저는 이 요청을 수신합니다. `.well-known/register-conversion`을 감지하면 브라우저가 다음 작업을 수행합니다.
 
 - `conversiondestination`과 일치하는 저장소의 모든 광고 클릭을 조회합니다(사용자가 광고를 클릭할 때 `conversiondestination` URL로 등록된 URL에서 이 전환을 수신하기 때문). 하루 전에 게시자의 사이트에서 발생한 광고 클릭을 찾습니다.
-- Registers a conversion for this ad click.
+- 이 광고 클릭에 대한 전환을 등록합니다.
 
 여러 광고 클릭이 전환과 일치할 수 있습니다. 사용자가 `news.example` 및 `weather.example` 모두에서 `shoes.example`에 대한 광고를 클릭했을 수 있습니다. 이 경우 여러 전환이 등록됩니다.
 
@@ -403,13 +407,13 @@ app.get('/conversion', (req, res) => {
 
 ### 보고서 보내기(10 및 11단계)
 
-<figure class="w-figure">   {% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="Diagram: browser sending the report", width="800", height="533" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="다이어그램: 보고서를 보내는 브라우저", width="800", height="533" %}</figure>
 
 보고서를 보내도록 예약된 시간에 도달하면 브라우저가 **전환 보고서**를 보냅니다. 구체적으로, `<a>` 요소(`adtech.example`)에 지정된 보고 출처로 HTTP POST가 보내집니다. 예를 들면 다음과 같습니다.
 
 `https://adtech.example/.well-known/register-conversion?impression-data=200400600&conversion-data=2&credit=100`
 
-Included as parameters are:
+매개변수로 포함되는 항목은 다음과 같습니다.
 
 - 원래 광고 클릭과 관련된 데이터(`impression-data`)
 - [잠재적으로 노이즈가 도입](#noising-of-conversion-data)된 전환과 관련된 데이터
@@ -421,7 +425,7 @@ Included as parameters are:
 {"impression-data": "200400600", "conversion-data": 3, "credit": 100}
 ```
 
-### Subsequent conversions and expiry
+### 후속 전환 및 만료
 
 나중에 사용자가 다시 전환할 수도 있습니다. 예를 들어 `advertiser.example`에서 신발에 어울리는 테니스 라켓을 구매할 수 있습니다. 여기서도 비슷한 흐름이 발생합니다.
 
@@ -430,7 +434,7 @@ Included as parameters are:
 
 `impressionexpiry` 후, 이 광고 클릭에 대한 전환의 카운트가 중단되고 광고 클릭이 브라우저 저장소에서 삭제됩니다.
 
-## Use cases
+## 사용 사례
 
 ### 현재 지원되는 내용
 
@@ -443,7 +447,7 @@ Included as parameters are:
 
 - 조회 후 전환 측정
 - [다중 보고 끝점](https://github.com/WICG/conversion-measurement-api/issues/29)
-- [Web conversions that started in an iOS/Android app](https://github.com/WICG/conversion-measurement-api/issues/54).
+- [iOS/Android 앱에서 시작된 웹 전환](https://github.com/WICG/conversion-measurement-api/issues/54)
 - 전환 상승 측정/증분: 광고를 본 테스트 그룹과 그렇지 않은 대조군 간의 차이를 측정하여 전환 행동의 인과적 차이를 측정합니다.
 - 마지막 클릭이 아닌 기여 모델
 - 전환 이벤트에 대해 더 많은 양의 정보가 필요한 사용 사례(예: 세분화된 구매 가치 또는 제품 범주)
@@ -466,7 +470,7 @@ Included as parameters are:
 
 ## 시도해 보기
 
-### Demo
+### 데모
 
 [데모](https://goo.gle/demo-event-level-conversion-measurement-api)를 시도해 보세요. "시작하기 전에" 지침을 따르세요.
 
@@ -476,7 +480,7 @@ Included as parameters are:
 
 API로 실험해볼 계획이라면(로컬에서, 또는 최종 사용자를 통해) [Conversion Measurement API 사용하기](/using-conversion-measurement)를 참조하세요.
 
-### Share your feedback
+### 피드백 공유
 
 새로운 Conversion Measurement API가 여러분의 사용 사례를 지원하고 우수한 개발자 경험을 제공할 수 있으려면 **여러분의 피드백은 매우 중요합니다.**
 
