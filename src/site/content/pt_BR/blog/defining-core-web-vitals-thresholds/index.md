@@ -6,7 +6,7 @@ authors:
 description: A pesquisa e a metodologia por trás dos limites das Core Web Vitals
 date: '2020-05-21'
 updated: '2020-05-27'
-hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
+hero: image / admin / WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: A pesquisa e a metodologia por trás dos limites das Core Web Vitals
 tags:
   - blog
@@ -28,26 +28,26 @@ Cada métrica Core Web Vitals tem limites associados, que categorizam o desempen
   <table>
     <tr>
       <th> </th>
-      <th>Good</th>
+      <th>Bom</th>
       <th>Ruim</th>
-      <th>Percentile</th>
+      <th>Percentil</th>
     </tr>
     <tr>
       <td>Largest Contentful Paint (LCP)</td>
       <td>≤2500ms</td>
-      <td>&gt;4000ms</td>
+      <td>&gt; 4000ms</td>
       <td>75</td>
     </tr>
     <tr>
       <td>First Input Delay (FID)</td>
       <td>≤100ms</td>
-      <td>&gt;300ms</td>
+      <td>&gt; 300ms</td>
       <td>75</td>
     </tr>
     <tr>
       <td>Cumulative Layout Shift (CLS)</td>
-      <td>≤0.1</td>
-      <td>&gt;0.25</td>
+      <td>≤0,1</td>
+      <td>&gt; 0,25</td>
       <td>75</td>
     </tr>
 </table>
@@ -63,9 +63,9 @@ Cada métrica Core Web Vitals tem limites associados, que categorizam o desempen
 <p data-md-type="paragraph">Além disso, para garantir que os proprietários de sites possam otimizar seus sites para atender aos "bons" limites, exigimos que esses limites sejam alcançáveis para o conteúdo existente na web. Por exemplo, embora zero milissegundos seja um limite "bom" de LCP ideal, resultando em experiências de carregamento instantâneo, um limite de zero milissegundos não é alcançável na prática na maioria dos casos, devido às latências de processamento de rede e dispositivo. Portanto, zero milissegundos não é um limite razoável de LCP "bom" para Core Web Vitals.</p>
 <p data-md-type="paragraph">Ao avaliar os candidatos a limites "bons" do Core Web Vitals, verificamos se esses limites são alcançáveis, com base nos dados do <a href="https://developers.google.com/web/tools/chrome-user-experience-report" data-md-type="link">Relatório de Experiência do Usuário Chrome</a> (CrUX). Para confirmar que um limite é alcançável, exigimos que pelo menos 10% das <a href="/same-site-same-origin/#origin" data-md-type="link">origens</a> atualmente atendam ao limite "bom". Além disso, para garantir que sites bem otimizados não sejam classificados incorretamente devido à variabilidade nos dados de campo, também verificamos se o conteúdo bem otimizado atende consistentemente ao limite "bom".</p>
 <p data-md-type="paragraph">Por outro lado, estabelecemos o limite "ruim" identificando um nível de desempenho que apenas uma minoria das origens não está atingindo atualmente. A menos que haja pesquisas disponíveis relevantes para definir um limite "ruim", por default, 10-30% das origens com pior desempenho são classificadas como "ruim".</p>
-<h3 data-md-type="header" data-md-header-level="3">Final thoughts on criteria</h3>
+<h3 data-md-type="header" data-md-header-level="3">Considerações finais sobre os critérios</h3>
 <p data-md-type="paragraph">Ao avaliar os limites dos candidatos, descobrimos que os critérios às vezes estavam em conflito uns com os outros. Por exemplo, pode haver uma tensão entre um limite ser consistentemente alcançável e garantir boas experiências do usuário consistentemente. Além disso, dado que a pesquisa de percepção humana normalmente fornece uma gama de valores, e as métricas de comportamento do usuário mostram mudanças graduais no comportamento, descobrimos que muitas vezes não há um único limite "correto" para uma métrica. Portanto, nossa abordagem para o 2020 Core Web Vitals tem sido escolher os limites que melhor atendem aos critérios acima, embora reconhecendo que não há um limite perfeito e que às vezes podemos precisar escolher entre vários candidatos razoáveis a limites. Em vez de perguntar "qual é o limite perfeito?" em vez disso, nos concentramos em perguntar "qual candidato a limite que melhor atende aos nossos critérios?"</p>
-<h2 data-md-type="header" data-md-header-level="2">Choice of percentile</h2>
+<h2 data-md-type="header" data-md-header-level="2">Escolha de percentil</h2>
 <p data-md-type="paragraph">Conforme observado anteriormente, para classificar o desempenho geral de uma página ou site, usamos o valor do 75º percentil de todas as visitas a essa página ou site. O 75º percentil foi escolhido com base em dois critérios. Primeiro, o percentil deve garantir que a maioria das visitas a uma página ou site tenham o nível de desempenho desejado. Em segundo lugar, o valor no percentil escolhido não deve ser excessivamente impactado por pontos fora da curva.</p>
 <p data-md-type="paragraph">Esses objetivos são um tanto contraditórios. Para satisfazer a primeira meta, um percentil mais alto é normalmente a melhor escolha. No entanto, com percentis mais altos, a probabilidade de o valor resultante ser impactado por pontos fora da curva também aumenta. Se acontecer de algumas visitas a um site ocorrerem em conexões de rede instáveis que resultam em amostras LCP excessivamente grandes, não queremos que nossa classificação de site seja decidida por essas amostras discrepantes. Por exemplo, se estivéssemos avaliando o desempenho de um site com 100 visitas usando um percentil alto, como o 95º, seriam necessárias apenas 5 amostras de valores discrepantes para o valor do 95º percentil ser afetado pelos valores discrepantes.</p>
 <p data-md-type="paragraph">Dado que essas metas são um pouco contraditórias, após a análise, concluímos que o 75º percentil atinge um equilíbrio razoável. Usando o 75º percentil, sabemos que a maioria das visitas ao site (3 de 4) atingiu o nível de desempenho desejado ou melhor. Além disso, o valor do 75º percentil tem menos probabilidade de ser afetado por pontos fora da curva. Voltando ao nosso exemplo, para um site com 100 visitas, 25 dessas visitas precisariam relatar amostras grandes de pontos fora da curva para o valor no 75º percentil a ser afetado por esses pontos. Embora seja possível 25 de 100 amostras serem discrepantes, isso é muito menos provável do que para o caso do 95º percentil.</p>
@@ -74,22 +74,22 @@ Cada métrica Core Web Vitals tem limites associados, que categorizam o desempen
 <p data-md-type="paragraph">Um segundo é frequentemente citado como a quantidade de tempo que um usuário irá esperar antes de começar a perder o foco em uma tarefa. Em uma inspeção mais detalhada de pesquisas relevantes, descobrimos que um segundo é uma aproximação para descrever uma gama de valores, de aproximadamente várias centenas de milissegundos a vários segundos.</p>
 <p data-md-type="paragraph">Duas fontes comumente citadas para o limite de um segundo são <a href="https://dl.acm.org/doi/10.1145/108844.108874" data-md-type="link">Card et al</a> e <a href="https://dl.acm.org/doi/10.1145/1476589.1476628" data-md-type="link">Miller</a>. Card define um limite de "resposta imediata" de um segundo, citando as <a href="https://dl.acm.org/doi/book/10.5555/86564" data-md-type="link">Teorias Unificadas de Cognição</a> de Newell. Newell explica as respostas imediatas como "respostas que devem ser feitas a algum estímulo dentro de <em data-md-type="emphasis">aproximadamente um segundo</em> (isto é, aproximadamente de ~ 0,3s a ~ 3s)." Isso segue a discussão de Newell sobre "restrições em tempo real na cognição", onde se observa que "as interações com o ambiente que evocam considerações cognitivas ocorrem na ordem dos segundos", que variam de aproximadamente 0,5 a 2-3 segundos. Miller, outra fonte frequentemente citada para o limite de um segundo, observa que "tarefas que os humanos podem e irão realizar nas comunicações com máquinas terão suas características alteradas consideravelmente se os atrasos de resposta forem maiores que dois segundos ou algo em torno disso."</p>
 <p data-md-type="paragraph">A pesquisa de Miller e Card descreve a quantidade de tempo que um usuário irá esperar, antes de perder o foco, como um intervalo de aproximadamente 0,3 a 3 segundos, o que sugere que nosso limite "bom" de LCP deve estar nesta faixa. Além disso, dado que o limite "bom" da First Contentful Paint existente é de um segundo e que a Largest Contentful Paint normalmente ocorre após a First Contentful Paint, restringimos ainda mais nossa faixa de candidatos a limites de LCP, de 1 segundo a 3 segundos. Para escolher o limite nesta faixa que melhor atende aos nossos critérios, examinamos abaixo a possibilidade de alcançar esses candidatos a limites.</p>
-<h3 data-md-type="header" data-md-header-level="3">Achievability</h3>
-<p data-md-type="paragraph">Using data from CrUX, we can determine the percentage of origins on the web that meet our candidate LCP "good" thresholds.</p>
+<h3 data-md-type="header" data-md-header-level="3">Possibilidade de realização</h3>
+<p data-md-type="paragraph">Usando os dados do CrUX, podemos determinar a porcentagem de origens na web que atendem aos limites "bons" de nosso candidato LCP.</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de origens CrUX classificadas como "boas" (para candidatos a limites de LCP)</strong></p>
 <div data-md-type="block_html"><div class="w-table-wrapper">
   <table>
     <tr>
       <th> </th>
-      <th>1 second</th>
-      <th>1.5 seconds</th>
-      <th>2 seconds</th>
-      <th>2.5 seconds</th>
-      <th>3 seconds</th>
+      <th>1 segundo</th>
+      <th>1,5 segundos</th>
+      <th>2 segundos</th>
+      <th>2,5 segundos</th>
+      <th>3 segundos</th>
     </tr>
     <tr>
-      <td><strong>phone</strong></td>
-      <td>3.5%</td>
+      <td><strong>telefone</strong></td>
+      <td>3,5%</td>
       <td>13%</td>
       <td>27%</td>
       <td>42%</td>
@@ -97,7 +97,7 @@ Cada métrica Core Web Vitals tem limites associados, que categorizam o desempen
     </tr>
     <tr>
       <td><strong>desktop</strong></td>
-      <td>6.9%</td>
+      <td>6,9%</td>
       <td>19%</td>
       <td>36%</td>
       <td>51%</td>
@@ -105,22 +105,22 @@ Cada métrica Core Web Vitals tem limites associados, que categorizam o desempen
     </tr>
   </table>
 </div></div>
-<p data-md-type="paragraph">While less than 10% of origins meet the 1 second threshold, all other thresholds from 1.5 to 3 seconds satisfy our requirement that at least 10% of origins meet the "good" threshold, and are thus still valid candidates.</p>
-<p data-md-type="paragraph">In addition, to ensure the chosen threshold is consistently achievable for well-optimized sites, we analyze LCP performance for top-performing sites across the web, to determine which thresholds are consistently achievable for these sites. Specifically, we aim to identify a threshold that is consistently achievable at the 75th percentile for top performing sites. We find that the 1.5 and 2 second thresholds are not consistently achievable, while 2.5 seconds is consistently achievable.</p>
+<p data-md-type="paragraph">Embora menos de 10% das origens atendam ao limite de 1 segundo, todos os outros limites de 1,5 a 3 segundos atendem ao nosso requisito de que pelo menos 10% das origens atendam ao limite "bom" e, portanto, ainda são candidatos válidos.</p>
+<p data-md-type="paragraph">Além disso, para garantir que o limite escolhido seja consistentemente atingível para sites bem otimizados, analisamos o desempenho do LCP para sites de alto desempenho em toda a web, para determinar quais limites são consistentemente atingíveis para esses sites. Especificamente, nosso objetivo é identificar um limite que seja consistentemente atingível no 75º percentil para sites de melhor desempenho. Descobrimos que os limites de 1,5 e 2 segundos não são consistentemente alcançáveis, enquanto 2,5 segundos são consistentemente alcançáveis.</p>
 <p data-md-type="paragraph">Para identificar um limite "ruim" para LCP, usamos dados CrUX para identificar um limite atingido pela maioria das origens:</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de origens CrUX classificadas como "ruins" (para candidatos a limites de LCP)</strong></p>
 <div data-md-type="block_html"><div class="w-table-wrapper">
   <table>
     <tr>
       <th> </th>
-      <th>3 seconds</th>
-      <th>3.5 seconds</th>
-      <th>4 seconds</th>
-      <th>4.5 seconds</th>
-      <th>5 seconds</th>
+      <th>3 segundos</th>
+      <th>3,5 segundos</th>
+      <th>4 segundos</th>
+      <th>4,5 segundos</th>
+      <th>5 segundos</th>
     </tr>
     <tr>
-      <td><strong>phone</strong></td>
+      <td><strong>telefone</strong></td>
       <td>45%</td>
       <td>35%</td>
       <td>26%</td>
@@ -143,12 +143,12 @@ Cada métrica Core Web Vitals tem limites associados, que categorizam o desempen
 <h3 data-md-type="header" data-md-header-level="3">Qualidade da experiência</h3>
 <p data-md-type="paragraph">A pesquisa é razoavelmente consistente ao concluir que atrasos no feedback visual de até cerca de 100 ms são percebidos como sendo causados por uma fonte associada, como uma entrada do usuário. Isto sugere que um limite "bom" de 100 ms para First Input Delay é provavelmente apropriado como um valor mínimo: se o atraso para processamento de entrada exceder 100 ms, não há chance de outras etapas de processamento e renderização serem concluídas a tempo.</p>
 <p data-md-type="paragraph">Os tempos de resposta comumente citados por Jakob Nielsen<a href="https://www.nngroup.com/articles/response-times-3-important-limits/" data-md-type="link">: Os 3 limites importantes</a> definem 0,1 segundo como o limite para que o usuário sinta que o sistema está reagindo instantaneamente. Nielsen cita Miller e Card, que cita <a href="https://psycnet.apa.org/record/1964-05029-000" data-md-type="link">The Perception of Causality</a>, de Michotte, de 1962. Na pesquisa de Michotte, aos participantes de um experimento são mostrados "dois objetos em uma tela. O objeto A parte e se move em direção a B. Ele para no momento em que entra em contato com B, enquanto este último começa a se mover e se afasta de A." Michotte varia o intervalo de tempo entre o momento em que o objeto A para e o momento em que o objeto B começa a se mover. Michotte descobre que, para atrasos de até cerca de 100 ms, os participantes têm a impressão de que o objeto A causa o movimento do objeto B. Para atrasos de cerca de 100 ms a 200 ms, a percepção de causalidade é mista, e para atrasos de mais de 200 ms, o movimento do objeto B não é mais visto como tendo sido causado pelo Objeto A.</p>
-<p data-md-type="paragraph">Similarly, Miller defines a response threshold for "Response to control activation" as "the indication of action given, ordinarily, by the movement of a key, switch or other control member that signals it has been physically actIvated. This response should be…perceived as a part of the mechanical action induced by the operator. Time delay: No more than 0.1 second" and later "the delay between depressing a key and visual feedback should be no more than 0.1 to 0.2 seconds".</p>
+<p data-md-type="paragraph">Da mesma forma, Miller define um limite de resposta para "Resposta à ativação de controle" como "a indicação de ação dada, normalmente, pelo movimento de uma chave, interruptor ou outro membro de controle que sinaliza que foi fisicamente ativado. Esta resposta deve ser ... percebida como parte da ação mecânica induzida pelo operador. Atraso de tempo: Não mais do que 0,1 segundo "e mais tarde" o atraso entre o pressionamento de uma tecla e o feedback visual não deve ser mais do que 0,1 a 0,2 segundos ".</p>
 <p data-md-type="paragraph">Mais recentemente, em <a href="https://dl.acm.org/doi/10.1145/2611387" data-md-type="link">Towards the Temporally Perfect Virtual Button</a>, Kaaresoja et al investigaram a percepção de simultaneidade entre o toque de um botão virtual numa tela sensível ao toque e o feedback visual subsequente indicando que o botão foi tocado, para vários atrasos. Quando o atraso entre o pressionamento do botão e o feedback visual foi de 85ms ou menos, os participantes relataram que o feedback visual apareceu simultaneamente com o pressionamento do botão 75% das vezes. Além disso, para atrasos de 100ms ou menos, os participantes relataram uma qualidade percebida consistentemente alta do pressionamento do botão, com a qualidade percebida caindo para atrasos de 100ms a 150ms, e atingindo níveis muito baixos para atrasos de 300ms.</p>
 <p data-md-type="paragraph">Diante do exposto, concluímos que a pesquisa aponta para uma faixa de valores em torno de 100 ms como limite apropriado de First Input Delay para Web Vitals. Além disso, como os usuários relataram níveis de qualidade baixos para atrasos de 300 ms ou mais, 300 ms se apresenta como um limite "ruim" razoável.</p>
-<h3 data-md-type="header" data-md-header-level="3">Achievability</h3>
-<p data-md-type="paragraph">Using data from CrUX, we determine that the majority of origins on the web meet the 100ms FID "good" threshold at the 75th percentile:</p>
-<p data-md-type="paragraph"><strong data-md-type="double_emphasis">% of CrUX origins classified as "good" for FID 100ms threshold</strong></p>
+<h3 data-md-type="header" data-md-header-level="3">Possibilidade de realização</h3>
+<p data-md-type="paragraph">Usando dados do CrUX, determinamos que a maioria das origens na web atendem ao limite "bom" do FID de 100 ms no 75º percentil:</p>
+<p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de origens CrUX classificadas como "boas" para o limite FID de 100 ms</strong></p>
 <div data-md-type="block_html"><div class="w-table-wrapper">
   <table>
     <tr>
@@ -156,33 +156,33 @@ Cada métrica Core Web Vitals tem limites associados, que categorizam o desempen
       <th>100ms</th>
     </tr>
     <tr>
-      <td><strong>phone</strong></td>
+      <td><strong>telefone</strong></td>
       <td>78%</td>
     </tr>
     <tr>
       <td><strong>desktop</strong></td>
-      <td>&gt;99%</td>
+      <td>&gt; 99%</td>
     </tr>
   </table>
 </div></div>
-<p data-md-type="paragraph">Additionally, we observe that top sites across the web are able to consistently meet this threshold at the 75th percentile (and often meet it at the 95th percentile).</p>
+<p data-md-type="paragraph">Além disso, observamos que os principais sites da web conseguem atingir esse limite de forma consistente no 75º percentil (e muitas vezes no 95º percentil).</p>
 <p data-md-type="paragraph">Diante do exposto, concluímos que 100 ms é um limite "bom" razoável para a FID.</p>
 <h2 data-md-type="header" data-md-header-level="2">Cumulative Layout Shift (CLS)</h2>
 <h3 data-md-type="header" data-md-header-level="3">Qualidade da experiência</h3>
 <p data-md-type="paragraph">O Cumulative Layout Shift - CLS (deslocamento cumulativo de layout) é uma nova métrica que mede o quanto o conteúdo visível de uma página muda. Como CLS é uma métrica nova, não temos conhecimento de pesquisas que possam informar diretamente os seus limites. Assim, para identificar um limite que esteja alinhado com as expectativas do usuário, avaliamos as páginas do mundo real com diferentes quantidades de mudança de layout, para determinar a quantidade máxima de mudança que é percebida como aceitável antes de causar interrupções significativas ao consumir o conteúdo da página. Em nossos testes internos, descobrimos que os níveis de mudança de 0,15 e acima foram consistentemente percebidos como perturbadores, enquanto as mudanças de 0,1 e abaixo foram perceptíveis, mas não excessivamente perturbadoras. Assim, embora a mudança de layout zero seja ideal, concluímos que valores de até 0,1 são candidatos a limites "bons" de CLS.</p>
-<h3 data-md-type="header" data-md-header-level="3">Achievability</h3>
-<p data-md-type="paragraph">Based on CrUX data, we can see that nearly 50% of origins have CLS of 0.05 or below.</p>
+<h3 data-md-type="header" data-md-header-level="3">Possibilidade de realização</h3>
+<p data-md-type="paragraph">Com base nos dados CrUX, podemos ver que quase 50% das origens têm CLS de 0,05 ou menos.</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de origens CrUX classificadas como "boas" (para candidatos a limites de CLS)</strong></p>
 <div data-md-type="block_html"><div class="w-table-wrapper">
   <table>
     <tr>
       <th> </th>
-      <th>0.05</th>
-      <th>0.1</th>
-      <th>0.15</th>
+      <th>0,05</th>
+      <th>0,1</th>
+      <th>0,15</th>
     </tr>
     <tr>
-      <td><strong>phone</strong></td>
+      <td><strong>telefone</strong></td>
       <td>49%</td>
       <td>60%</td>
       <td>69%</td>
@@ -196,19 +196,19 @@ Cada métrica Core Web Vitals tem limites associados, que categorizam o desempen
   </table>
 </div></div>
 <p data-md-type="paragraph">Embora os dados do CrUX sugiram que 0,05 pode ser um limite "bom" razoável para CLS, reconhecemos que existem alguns casos de uso em que é difícil evitar mudanças de layout perturbadoras. Por exemplo, para conteúdo incorporado de terceiros, como incorporações de mídia social, a altura do conteúdo incorporado às vezes não é conhecida até que termine de carregar, o que pode levar a uma mudança de layout maior que 0,05. Assim, concluímos que, embora muitas origens atendam ao limite de 0,05, o limite ligeiramente menos rigoroso do CLS de 0,1 atinge um melhor equilíbrio entre a qualidade da experiência e a capacidade de realização. Esperamos que, daqui para frente, o ecossistema da web identifique soluções para lidar com mudanças de layout causadas por incorporações de terceiros, o que permitiria o uso de um limite CLS "bom" mais rigoroso de 0,05 ou 0 em uma iteração futura dos Core Web Vitals.</p>
-<p data-md-type="paragraph">Additionally, to determine a "poor" threshold for CLS, we used CrUX data to identify a threshold met by most origins:</p>
+<p data-md-type="paragraph">Além disso, para determinar um limite "ruim" para CLS, usamos dados CrUX para identificar um limite atingido pela maioria das origens:</p>
 <p data-md-type="paragraph"><strong data-md-type="double_emphasis">% de origens CrUX classificadas como "ruins" (para candidatos a limites de CLS)</strong></p>
 <div data-md-type="block_html"><div class="w-table-wrapper">
   <table>
     <tr>
       <th> </th>
-      <th>0.15</th>
-      <th>0.2</th>
-      <th>0.25</th>
-      <th>0.3</th>
+      <th>0,15</th>
+      <th>0,2</th>
+      <th>0,25</th>
+      <th>0,3</th>
     </tr>
     <tr>
-      <td><strong>phone</strong></td>
+      <td><strong>telefone</strong></td>
       <td>31%</td>
       <td>25%</td>
       <td>20%</td>
