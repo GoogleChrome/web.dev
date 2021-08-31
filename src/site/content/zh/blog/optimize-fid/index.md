@@ -1,12 +1,12 @@
 ---
 title: 优化 First Input Delay 首次输入延迟
-subhead: How to respond faster to user interactions.
+subhead: 如何更快地响应用户交互。
 authors:
   - houssein
   - addyosmani
 date: '2020-05-05'
 hero: image/admin/WH0KlcJXJlxvsxU9ow2i.jpg
-alt: A hand touching a smartphone screen
+alt: 一只手触摸智能手机屏幕
 description: 首次输入延迟 (FID) 测量从用户第一次与您的网站交互直到浏览器实际能够对交互作出响应的时间。了解如何通过最小化未使用的 JavaScript、分割长任务和改进交互准备来优化 FID。
 tags:
   - blog
@@ -23,20 +23,20 @@ tags:
 [首次输入延迟](/fid/) (FID) 是[核心 Web 指标](/vitals/)中的一项指标，可捕获用户对网站交互性和响应度的第一印象。该项指标测量从用户第一次与您的网站交互直到浏览器实际能够对交互作出响应的时间。FID 是一项[实际指标](/user-centric-performance-metrics/#in-the-field)，无法在实验室环境中进行模拟。该项指标需要**真实的用户交互**才能测量响应延迟。
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="好的fid 值为2.5 秒，差的值大于4.0 秒，中间的任何值都需要改进", width="384", height="96 ", class="w-screenshot w-screenshot--filled width-full" %}</source></picture>
 
 为了有助于在[实验室](/how-to-measure-speed/#lab-data-vs-field-data)中预测 FID，我们建议您测量[ Total Blocking Time 总阻塞时间 (TBT)](/tbt/)。虽然这两项指标的测量内容不同，但 TBT 的改进通常能够带来 FID 的相应改进。
 
 糟糕的 FID 主要是由**繁重的 JavaScript 执行**导致的。优化您网页上 JavaScript 的解析、编译和执行方式将直接降低 FID。
 
-## Heavy JavaScript execution
+## 繁重的 JavaScript 执行
 
 浏览器在主线程上执行 JavaScript 时无法对大多数用户输入作出响应。换句话说，当主线程繁忙时，浏览器无法响应用户交互。要想改善这一点：
 
 - [分割长任务](#long-tasks)
 - [优化您的页面，做好交互准备](#optimize-interaction-readiness)
 - [使用 Web Worker](#use-a-web-worker)
-- [Reduce JavaScript execution time](#reduce-javascript-execution)
+- [减少 JavaScript 执行时间](#reduce-javascript-execution)
 
 ## 分割长任务 {: #long-tasks }
 
@@ -54,7 +54,7 @@ tags:
 
 对于高度依赖 JavaScript 的网络应用程序来说，导致 FID 和 TBT 分数较差的常见原因有很多：
 
-### First-party script execution can delay interaction readiness
+### 第一方脚本执行会延迟交互准备
 
 - JavaScript 体积膨胀、执行时间过长和分块效率低下会延迟页面对用户输入作出响应的时机，并影响 FID、TBT 和 TTI。渐进式加载代码和功能可以有助于分散工作量，改善交互准备。
 - 服务端渲染的应用程序在屏幕上绘制像素的速度可能看起来很快，但需要注意用户交互被大型脚本执行（例如通过数据重构来连接事件侦听器）阻塞的情况。如果使用了基于路由的代码分割，这可能会花费数百毫秒，有时甚至是数秒。请考虑将更多逻辑转移到服务器端，或在构建期间静态生成更多内容。
@@ -63,7 +63,7 @@ tags:
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="优化第一方脚本后，灯塔中 TBT 分数的改善。", width="800", height="148", class="w-screenshot” ％}
 
-### Data-fetching can impact many aspects of interaction readiness
+### 数据获取会影响交互准备的许多方面
 
 - 等待一连串的级联获取（例如组件的 JavaScript 和数据获取）会影响交互延迟。请尽量最大限度地减少对级联数据获取的依赖。
 - 大型内联数据存储会延长 HTML 解析时间并影响绘制和交互指标。请尽量最大限度地减少需要在客户端进行后处理的数据量。
@@ -85,7 +85,7 @@ tags:
 
 {% Aside %}如需进一步了解 Web Worker 如何在主线程外执行代码，请参阅[使用 Web Worker 在浏览器主线程外运行 JavaScript](/off-main-thread/)。{% endAside %}
 
-### Reduce JavaScript execution time {: #reduce-javascript-execution }
+### 减少 JavaScript 执行时间 {: #reduce-javascript-execution }
 
 限制页面上 JavaScript 的数量可以减少浏览器执行 JavaScript 代码所需的时间。这样能够使浏览器更迅速地开始对任何用户交互作出响应。
 
@@ -154,7 +154,7 @@ import('module.js').then((module) => {
 
 {% Aside %}[为现代浏览器提供现代代码来实现更快的页面加载速度](/serve-modern-code-to-modern-browsers/)指南对该主题展开了详细探讨。{% endAside %}
 
-## Developer tools
+## 开发者工具
 
 许多工具都可以用于测量和调试 FID：
 
@@ -164,4 +164,4 @@ import('module.js').then((module) => {
 
 - [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)提供在域级聚合下的真实 FID 值
 
-*With thanks to Philip Walton, Kayce Basques, Ilya Grigorik, and Annie Sullivan for their reviews.*
+*感谢 Philip Walton、Kayce Basques、Ilya Grigorik 和 Annie Sullivan 的审阅。*
