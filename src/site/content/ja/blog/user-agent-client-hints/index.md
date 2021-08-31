@@ -1,17 +1,14 @@
 ---
-title: Improving user privacy and developer experience with User-Agent Client Hints
-subhead: |-
-  User-Agent Client Hints are a new expansion to the Client Hints API, that
- "enables developers to access information about a user's browser in a"
-  privacy-preserving and ergonomic way.
+title: User-Agent Client Hints によるユーザーのプライバシーと開発者体験の改善
+subhead: User-Agent Client Hints は Client Hints API に新しく追加された拡張機能であり、プライバシーの保護が担保された、人間工学に基づいた方法を通して開発者がユーザーの使用ブラウザーに関する情報にアクセスできるようにします。
 authors:
   - rowan_m
   - yoavweiss
-date: '2020-06-25'
-updated: '2021-02-12'
+date: 2020 年 6 月 25 日
+updated: 2021 年 2 月 12 日
 hero: image/admin/xlg4t3uiTp0L5TBThFHQ.jpg
 thumbnail: image/admin/hgxRNa56Vb9o3QRwIrm9.jpg
-alt: "A variety of different footprints in the snow. A hint at who's been there."
+alt: 誰がそこにいたのかを特定するヒントになる、雪の上に残された様々な種類の足跡。
 tags:
   - blog
   - privacy
@@ -22,85 +19,85 @@ feedback:
 
 {% YouTube 'f0YY0o2OAKA' %}
 
-Client Hints enable developers to actively request information about the user's device or conditions, rather than needing to parse it out of the User-Agent (UA) string. Providing this alternative route is the first step to eventually reducing User-Agent string granularity.
+Client Hints を使用することにより、開発者はユーザーの使用デバイスや使用条件に関する情報を User-Agent (UA) 文字列から解析するのではなく、積極的にリクエストすることができるようになります。この代替手法の提供は、最終的に User-Agent 文字列の粒度を低下させるための第一歩となります。
 
-Learn how to update your existing functionality that relies on parsing the User-Agent string to make use of User-Agent Client Hints instead.
+User-Agent 文字列の解析に依存している既存の機能を更新し、その代替手法として User-Agent Client Hints を使用する方法について説明します。
 
-{% Banner 'caution', 'body' %} If you are already using User-Agent Client Hints, pay attention to the upcoming changes. The header format is changing so the `Accept-CH` tokens exactly match the returned headers. Previously a site could have sent `Accept-CH: UA-Platform` to receive the `Sec-CH-UA-Platform` header and now that site should send `Accept-CH: Sec-CH-UA-Platform`. If you've already implemented User-Agent Client Hints, send both formats until the change has fully rolled out in stable Chromium. See [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ) for updates. {% endBanner %}
+{% Banner 'caution', 'body' %}すでに User-Agent Client Hints をご利用の場合には、今後の変更にご注意ください。ヘッダーのフォーマットは変更され、`Accept-CH` トークンが返されるヘッダーに正確に一致するようになります。これまでサイトは `Sec-CH-UA-Platform` ヘッダーを受信するために `Accept-CH: UA-Platform` を送信していましたが、現在は `Accept-CH: Sec-CH-UA-Platform` を送信する必要があります。すでに User-Agent Client Hints を実装している場合には、この変更内容が安定版の Chromium で完全にロールアウトされるまでは、両方のフォーマットを送信するようにしてください。詳細については、「[削除の意図: User-Agent Client Hint ACCEPT-CH トークンの名前の変更](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ)」を参照してください。{% endBanner %}
 
-## Background
+## 背景
 
-When web browsers make requests they include information about the browser and its environment so that servers can enable analytics and customize the response. This was defined all the way back in 1996 (RFC 1945 for HTTP/1.0), where you can find the [original definition for the User-Agent string](https://tools.ietf.org/html/rfc1945#section-10.15), which includes an example:
+Web ブラウザーがリクエストを行う場合、そのリクエストにはブラウザーとその環境に関する情報が含まれています。これを基にサーバーは分析を行い、レスポンスをカスタマイズすることができるようになります。この仕組みは 1996 年に定義されたもので (RFC 1945 for HTTP/1.0)、その中には [User-Agent 文字列の初期の定義](https://tools.ietf.org/html/rfc1945#section-10.15)が含まれています。そこには、次のような例が記載されています。
 
 ```text
 User-Agent: CERN-LineMode/2.15 libwww/2.17b3
 ```
 
-This header was intended to specify, in order of significance, the product (e.g. browser or library) and a comment (e.g. version).
+このヘッダーは、製品 (例: ブラウザーやライブラリ) とコメント (例: バージョン) を重要度が高い順に指定することを目的としています。
 
-### The state of the User-Agent string
+### User-Agent 文字列の状態
 
-Over the intervening *decades*, this string has accrued a variety of additional details about the client making the request (as well as cruft, due to backwards compatibility). We can see that when looking at Chrome's current User-Agent string:
+この文字列は、過去*数十年*に渡ってリクエストを実行するクライアントに関する様々な追加情報を蓄積してきました (下位互換性を担保するために粗悪な情報も含まれています)。Chrome の現在の User-Agent 文字列を見てみると、それがよく分かります。
 
 ```text
 Mozilla/5.0 (Linux; Android 10; Pixel 3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4076.0 Mobile Safari/537.36
 ```
 
-The above string contains information about the user's operating system and version, the device model, the browser's brand and full version, enough clues to infer it's a mobile browser, and not to mention a number of references to other browsers for historical reasons.
+上記の文字列には、ユーザーの OS とバージョン、デバイスのモデル、ブラウザーのブランドと完全なバージョン表記など、使用するブラウザーがモバイル ブラウザーであることを推測するために十分な情報が含まれており、また、歴史的な理由から他のブラウザーの参照情報も含まれています。
 
-The combination of these parameters with the sheer diversity of possible values means the User-Agent string could contain enough information to allow individual users to be uniquely identified. If you test your own browser at [AmIUnique](https://amiunique.org/), you can see just how closely **your** User-Agent string identifies **you**. The lower your resulting "Similarity ratio" is, the more unique your requests are, the easier it is for servers to covertly track you.
+これらのパラメーターと利用可能な値の多彩な組み合わせは、User-Agent 文字列が個々のユーザーを一意に識別できるほどの情報を持っていることを意味します。自分のブラウザーを [AmIUnique](https://amiunique.org/) でテストしてみると、**ご利用の** User-Agent 文字列が**あなた**をどの程度正確に識別しているのかが分かります。結果的に得られる "類似度" が低ければ低いほど、あなたのリクエストがユニークであり、サーバーが密かにあなたを追跡することが容易になっていることを意味しています。
 
-The User-Agent string enables many legitimate [use cases](https://github.com/WICG/ua-client-hints/blob/main/README.md#use-cases), and serves an important purpose for developers and site owners. However, it is also critical that users' privacy is protected against covert tracking methods, and sending UA information by default goes against that goal.
+User-Agent 文字列は、数多くの合法的な[ユース ケース](https://github.com/WICG/ua-client-hints/blob/main/README.md#use-cases)を実現可能にし、開発者やサイトの所有者にとって重要な目的を果たしています。しかしながら、秘密の追跡手法からユーザーのプライバシーを保護することも重要であり、UA 情報をデフォルトで送信する仕様はその目標に反することになります。
 
-There's also a need to improve web compatibility when it comes to the User-Agent string. It is unstructured, so parsing it results in unnecessary complexity, which is often the cause for bugs and site compatibility issues that hurt users. These issues also disproportionately hurt users of less common browsers, as sites may have failed to test against their configuration.
+また、User-Agent 文字列に関しては、Web での互換性を高めていく必要性も残されています。User-Agent 文字列は構造化が成されていないため、その解析には無駄な複雑性が伴い、それがバグやサイトの互換性に関する問題の原因となっています。その結果として、ユーザーに対する不利益が生じているケースも多く見られています。こういった問題は、比較的マイナーなブラウザーを使用しているユーザーに対し、サイト側でそういった構成に対するテストを行うことができない可能性があるために偏って不利益を生じさせてしまいます。
 
-## Introducing the new User-Agent Client Hints
+## 新しい User-Agent Client Hints のご紹介
 
-[User-Agent Client Hints](https://github.com/WICG/ua-client-hints#explainer-reducing-user-agent-granularity) enable access to the same information but in a more privacy-preserving way, in turn enabling browsers to eventually reduce the User-Agent string's default of broadcasting everything. [Client Hints](https://tools.ietf.org/html/draft-ietf-httpbis-client-hints) enforce a model where the server must ask the browser for a set of data about the client (the hints) and the browser applies its own policies or user configuration to determine what data is returned. This means that rather than exposing **all** the User-Agent information by default, access is now managed in an explicit and auditable fashion. Developers also benefit from a simpler API - no more regular expressions!
+[User-Agent Client Hints](https://github.com/WICG/ua-client-hints#explainer-reducing-user-agent-granularity) は、同一の情報へのアクセスを実現しながらも、プライバシーをより安全に保護することができる方法であり、ブラウザーは最終的に User-Agent 文字列のすべてのブロードキャストの既定値を削減することができるようになります。[Client Hints](https://tools.ietf.org/html/draft-ietf-httpbis-client-hints) は、サーバーがブラウザーにクライアントに関する一連のデータ (ヒント) をリクエストし、ブラウザーが独自のポリシーやユーザー構成を適用して返されるデータを決定するようなモデルを強制します。つまり、**すべて**の User-Agent 情報をデフォルトで公開するのではなく、明示的かつ監査可能な方法でアクセスが管理されるようになったのです。また、開発者にとっても API がシンプルになる (正規表現を使用する必要がなくなるなど) というメリットがあります。
 
-The current set of Client Hints primarily describes the browser's display and connection capabilities. You can explore the details in [Automating Resource Selection with Client Hints](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints), but here's a quick refresher on the process.
+現在の Client Hints には、主にブラウザーの表示や接続に関連する機能の情報が記載されています。詳細については「[Client Hints によるリソース選択の自動化](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints)」でご確認いただくことが可能ですが、ここでもこの手順について簡単にご説明させていただきます。
 
-The server asks for specific Client Hints via a header:
+サーバーは、ヘッダーを介して特定の Client Hint をリクエストします。
 
-⬇️ *Response from server*
+⬇️*サーバーからのレスポンス*
 
 ```text
 Accept-CH: Viewport-Width, Width
 ```
 
-Or a meta tag:
+また、メタ タグは次のようになります。
 
 ```html
 <meta http-equiv="Accept-CH" content="Viewport-Width, Width" />
 ```
 
-The browser can then choose to send the following headers back in subsequent requests:
+ブラウザーは、後続するリクエストで次のヘッダーを送り返す選択をすることができるようになります。
 
-⬆️ *Subsequent request*
+⬆️*後続するリクエスト*
 
 ```text
 Viewport-Width: 460
 Width: 230
 ```
 
-The server can choose to vary its responses, for example by serving images at an appropriate resolution.
+サーバーは、たとえば適切な解像度の画像の提供など、レスポンスの内容を変化させることができるようになります。
 
-{% Aside %} There are ongoing discussions on enabling Client Hints on an initial request, but you should consider [responsive design](/responsive-web-design-basics) or progressive enhancement before going down this route. {% endAside %}
+{% Aside %}初回のリクエストでの Client Hints の有効化については継続的な議論が行われていますが、この方法を選択する前に[レスポンシブ デザイン](/responsive-web-design-basics)やプログレッシブ エンハンスメントなどの方法を検討する必要があります。{% endAside %}
 
-User-Agent Client Hints expand the range of properties with the `Sec-CH-UA` prefix that can be specified via the `Accept-CH` server response header. For all the details, start with [the explainer](https://github.com/WICG/ua-client-hints/blob/main/README.md) and then dive into the [full proposal](https://wicg.github.io/ua-client-hints/).
+User-Agent Client Hints は、`Accept-CH` サーバー レスポンス ヘッダーを介して指定可能な `Sec-CH-UA` プレフィックスを使用してプロパティの範囲を拡張することができます。詳細については、「[説明書](https://github.com/WICG/ua-client-hints/blob/main/README.md)」から学習を開始し、「[提案の詳細](https://wicg.github.io/ua-client-hints/)」を参照して理解を深めてください。
 
-{% Aside %} Client Hints are **only sent over secure connections**, so make sure you have [migrated your site to HTTPS](/why-https-matters). {% endAside %}
+{% Aside %}Client Hints は**安全な接続を介してのみ送信が可能**となるため、[サイトの HTTPS への移行](/why-https-matters)が完了していることをご確認ください。{% endAside %}
 
-The new set of hints is available from Chromium 84, so let's explore how it all works.
+新しいヒントは Chromium 84 より利用可能となっています。それでは、その仕組みを見てみましょう。
 
-## User-Agent Client Hints from Chromium 84
+## Chromium 84 以降の User-Agent Client Hints
 
-User-Agent Client Hints will only be enabled gradually on Chrome Stable as [compatibility concerns](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285) are resolved. To force the functionality on for testing:
+User-Agent Client Hints は、[互換性の問題](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285)が解決されるとともに Chrome の安定版において徐々に有効化されていきます。テストを実施するために機能を強制的にオンにするには、以下に従ってください。
 
-- Use Chrome 84 **beta** or equivalent.
-- Enable the `about://flags/#enable-experimental-web-platform-features` flag.
+- Chrome 84 の**ベータ版**または同等のものを使用する。
+- `about://flags/#enable-experimental-web-platform-features` フラグを有効にする。
 
-By default, the browser returns the browser brand, significant / major version, and an indicator if the client is a mobile device:
+デフォルトでは、ブラウザーのブランド、重要なバージョン/メジャー バージョン、クライアントがモバイル デバイスであるかどうかを示すインジケーターが返されます。
 
 ⬆️*すべてのリクエスト*
 
@@ -109,29 +106,29 @@ Sec-CH-UA: "Chromium";v="84", "Google Chrome";v="84"
 Sec-CH-UA-Mobile: ?0
 ```
 
-{% Aside 'caution' %} These properties are more complex than just a single value, so [Structured Headers](https://httpwg.org/http-extensions/draft-ietf-httpbis-header-structure.html) are used for representing lists and booleans. {% endAside %}
+{% Aside 'caution' %}これらのプロパティは単一の値に比べてより複雑であるため、リストやブール値の表現については[構造化されたヘッダー](https://httpwg.org/http-extensions/draft-ietf-httpbis-header-structure.html)が使用されています。{% endAside %}
 
-### User-Agent response and request headers
+### User-Agent レスポンスとリクエスト ヘッダー
 
-&lt;style&gt; .w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {     width: 28ch; }  .w-table-wrapper td {   padding: 4px 8px 4px 0; } &lt;/style&gt;
+&lt;style&gt; .w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) { width: 28ch; } .w-table-wrapper td { padding: 4px 8px 4px 0; } &lt;/style&gt;
 
-⬇️ Response `Accept-CH`<br>⬆️ Request header | ⬆️リクエスト<br>値の例 | 説明
+⬇️レスポンスの `Accept-CH`<br>⬆️リクエスト ヘッダー | ⬆️リクエスト<br>値の例 | 説明
 --- | --- | ---
-`Sec-CH-UA` | `"Chromium";v="84",`<br>`"Google Chrome";v="84"` | List of browser brands and their significant version.
-`Sec-CH-UA-Mobile` | `?1` | Boolean indicating if the browser is on a mobile device (`?1` for true) or not (`?0` for false).
+`Sec-CH-UA` | `"Chromium";v="84",`<br>`"Google Chrome";v="84"` | ブラウザーのブランドと、その重要なバージョンのリスト。
+`Sec-CH-UA-Mobile` | `?1` | ブラウザーがモバイル デバイス上で実行されているか (true の場合: `?1`)、またはそうでないか (false の場合: `?0`) を示すブール値。
 `Sec-CH-UA-Full-Version` | `"84.0.4143.2"` | ブラウザの完全版。
-`Sec-CH-UA-Platform` | `"Android"` | The platform for the device, usually the operating system (OS).
-`Sec-CH-UA-Platform-Version` | `"10"` | The version for the platform or OS.
-`Sec-CH-UA-Arch` | `"arm"` | The underlying architecture for the device. While this may not be relevant to displaying the page, the site may want to offer a download which defaults to the right format.
-`Sec-CH-UA-Model` | `"Pixel 3"` | The device model.
+`Sec-CH-UA-Platform` | `"Android"` | デバイスのプラットフォーム (通常はオペレーティング システム (OS) を表示)。
+`Sec-CH-UA-Platform-Version` | `"10"` | プラットフォームまたは OS のバージョン。
+`Sec-CH-UA-Arch` | `"arm"` | デバイスの基礎的なアーキテクチャ。ページの表示には関係がない可能性もありますが、サイトで正確なフォーマットをデフォルトでダウンロードできるようにすることが必要になる可能性もあります。
+`Sec-CH-UA-Model` | `"Pixel 3"` | デバイスのモデル。
 
-{% Aside 'gotchas' %} Privacy and compatibility considerations mean the value may be blank, not returned, or populated with a varying value. This is referred to as [GREASE](https://wicg.github.io/ua-client-hints/#grease). {% endAside %}
+{% Aside 'gotchas' %}プライバシーや互換性を考慮し、値を空白にしたり、返さなかったり、さまざまに変化する値とともに追加されたりする場合があります。これは、[GREASE](https://wicg.github.io/ua-client-hints/#grease) と呼ばれています。{% endAside %}
 
-### Example exchange
+### やり取りの例
 
-An example exchange would look like this:
+やり取りの例は、次のようになります。
 
-⬆️ *Initial request from browser*<br> The browser is requesting the `/downloads` page from the site and sends its default basic User-Agent.
+⬆️*ブラウザーからの初回リクエスト*<br>ブラウザーはサイトに `/downloads` ページをリクエストしており、デフォルトの基本的な User-Agent を送信します。
 
 ```text
 GET /downloads HTTP/1.1
@@ -141,14 +138,14 @@ Sec-CH-UA: "Chromium";v="84", "Google Chrome";v="84"
 Sec-CH-UA-Mobile: ?0
 ```
 
-⬇️ *Response from server*<br> The server sends the page back and additionally asks for the full browser version and the platform.
+⬇️*サーバーからのレスポンス*<br>サーバーはページを送り返し、さらにブラウザーの完全なバージョン表記とプラットフォームをリクエストします。
 
 ```text
 HTTP/1.1 200 OK
 Accept-CH: Sec-CH-UA-Full-Version, Sec-CH-UA-Platform
 ```
 
-⬆️ *Subsequent requests*<br> The browser grants the server access to the additional information and sends the extra hints back in all subsequent responses.
+⬆️*後続するリクエスト*<br>ブラウザーはサーバーに追加情報へのアクセスを許可し、その後のすべてのレスポンスで追加のヒントを送り返します。
 
 ```text
 GET /downloads/app1 HTTP/1.1
@@ -162,13 +159,13 @@ Sec-CH-UA-Platform: "Android"
 
 ### JavaScript API
 
-Alongside the headers, the User-Agent can also be accessed in JavaScript via `navigator.userAgentData`. The default `Sec-CH-UA` and `Sec-CH-UA-Mobile` header information can be accessed via the `brands` and `mobile` properties, respectively:
+ヘッダーを利用する方法以外にも、JavaScript の `navigator.userAgentData` を使用して User-Agent にアクセスすることも可能です。デフォルトの `Sec-CH-UA` ヘッダーおよび `Sec-CH-UA-Mobile` ヘッダーの情報には、以下のようにそれぞれ `brands` および `mobile` プロパティを介してアクセスすることができます。
 
 ```js
-// Log the brand data
+// ブランド データを出力
 console.log(navigator.userAgentData.brands);
 
-// output
+// 出力内容
 [
   {
     brand: 'Chromium',
@@ -180,24 +177,24 @@ console.log(navigator.userAgentData.brands);
   },
 ];
 
-// Log the mobile indicator
+// モバイル インジケーターを出力
 console.log(navigator.userAgentData.mobile);
 
-// output
+// 出力内容
 false;
 ```
 
-The additional values are accessed via the `getHighEntropyValues()` call. The "high entropy" term is a reference to [information entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory)), in other words - the amount of information that these values reveal about the user's browser. As with requesting the additional headers, it's down to the browser what values, if any, are returned.
+追加の値には、`getHighEntropyValues()` 呼び出しを介してアクセスすることができます。"High Entropy" (高エントロピー) という用語は[情報エントロピー](https://en.wikipedia.org/wiki/Entropy_(information_theory))にちなんでおり、言い換えるならば、これらの値がユーザーのブラウザーに関する情報をどの程度明らかにできるかという観点から見た情報量のことを意味しています。追加ヘッダーのリクエストと同様に、(返す値がある場合に) どのような値が返されるかはブラウザー次第です。
 
 ```js
-// Log the full user-agent data
+// 完全な User-Agent データを出力
 navigator
   .userAgentData.getHighEntropyValues(
     ["architecture", "model", "platform", "platformVersion",
      "uaFullVersion"])
   .then(ua => { console.log(ua) });
 
-// output
+// 出力内容
 {
   "architecture": "x86",
   "model": "",
@@ -209,61 +206,61 @@ navigator
 
 ### デモ
 
-You can try out both the headers and the JavaScript API on your own device at [user-agent-client-hints.glitch.me](https://user-agent-client-hints.glitch.me).
+「[user-agent-client-hints.glitch.me](https://user-agent-client-hints.glitch.me)」では、ヘッダーと JavaScript API の両方をご自身のデバイスで試してみることができます。
 
-{% Aside %} Ensure you're using Chrome 84 Beta or equivalent with `about://flags/#enable-experimental-web-platform-features` enabled. {% endAside %}
+{% Aside %}Chrome 84 のベータ版または同等のブラウザーを使用しており、`about://flags/#enable-experimental-web-platform-features` が有効になっていることをご確認ください。{% endAside %}
 
-### Hint life-time and resetting
+### ヒントの存続期間とリセット
 
-Hints specified via the `Accept-CH` header will be sent for the duration of the browser session or until a different set of hints are specified.
+`Accept-CH` ヘッダーを介して指定されたヒントは、ブラウザーのセッションの継続期間中、または別のヒントが指定されるまでの間送信されます。
 
-That means if the server sends:
+つまり、サーバーが送信を行うと、次のようになります。
 
-⬇️ *Response*
+⬇️*レスポンス*
 
 ```text
 Accept-CH: Sec-CH-UA-Full-Version
 ```
 
-Then the browser will send the `Sec-CH-UA-Full-Version` header on all requests for that site until the browser is closed.
+その後ブラウザーは、ブラウザーを閉じるまでの間、そのサイトに対するすべてのリクエストで `Sec-CH-UA-Full-Version` ヘッダーを送信します。
 
-⬆️ *Subsequent requests*
+⬆️*後続するリクエスト*
 
 ```text
 Sec-CH-UA-Full-Version: "84.0.4143.2"
 ```
 
-However, if another `Accept-CH` header is received then that will **completely replace** the current hints the browser is sending.
+しかしながら、別の `Accept-CH` ヘッダーを受信した場合には、ブラウザーが送信している現在のヒントを**完全に置き換えます**。
 
-⬇️ *Response*
+⬇️*レスポンス*
 
 ```text
 Accept-CH: Sec-CH-UA-Platform
 ```
 
-⬆️ *Subsequent requests*
+⬆️*後続するリクエスト*
 
 ```text
 Sec-CH-UA-Platform: "Android"
 ```
 
-The previously asked-for `Sec-CH-UA-Full-Version` **will not be sent**.
+前にリクエストされた `Sec-CH-UA-Full-Version` は、**送信されません**。
 
-It's best to think of the `Accept-CH` header as specifying the complete set of hints desired for that page, meaning the browser then sends the specified hints for all the subresources on that page. While hints will persist to the next navigation, the site should not rely or assume they will be delivered.
+`Accept-CH` ヘッダーがこのページに必要なヒントの完全なセットを指定しているものとして考えるのがよいでしょう。つまり、次にブラウザーはそのページのすべてのサブリソースについて指定されたヒントを送信することを意味します。ヒントは次のナビゲーションまで持続しますが、サイトはそれが送信されるものとして想定してはいけません。
 
-{% Aside 'success' %} Always ensure you can still deliver a meaningful experience without this information. This is to enhance the user experience, not define it. That's why they're called "hints" and not "answers" or "requirements"! {% endAside%}
+{% Aside 'success' %}この情報がなかったとしても有意義なユーザー エクスペリエンスを提供できるよう、常に準備するようにしてください。この情報はユーザー エクスペリエンスを向上させるために存在するものであり、定義するものではありません。それゆえに、"回答" や "要求" ではなく "ヒント" と呼ばれているのです。{% endAside%}
 
-You can also use this to effectively clear all hints being sent by the browser by sending a blank `Accept-CH` in the response. Consider adding this anywhere that the user is resetting preferences or signing out of your site.
+また、レスポンスで空白の `Accept-CH` を送信することにより、ブラウザーから送信されるすべてのヒントを効果的に消去する方法にこれを利用することもできます。ユーザーが設定をリセットしたり、サイトからサインアウトしたりする必要がある場合には、この手法の採用をご検討ください。
 
-This pattern also matches how hints work via the `<meta http-equiv="Accept-CH" …>` tag. The requested hints will only be sent on requests initiated by the page and not on any subsequent navigation.
+このパターンは、`<meta http-equiv="Accept-CH" …>` タグを介したヒントの動作にも一致します。リクエストされたヒントはそのページで開始されたリクエストでのみ送信され、後続するナビゲーションでは送信されません。
 
-### Hint scope and cross-origin requests
+### ヒントの範囲とクロスオリジン リクエスト
 
-By default, Client Hints will only be sent on same-origin requests. That means if you ask for specific hints on `https://example.com`, but the resources you want to optimize are on `https://downloads.example.com` they **will not** receive any hints.
+デフォルトでは、Client Hints は同一オリジン リクエストでのみ送信されます。つまり、`https://example.com` が特定のヒントをリクエストしたとしても、最適化を実施するリソースが `https://downloads.example.com` にある場合には、ヒントを受信することは**できません**。
 
-To allow hints on cross-origin requests each hint and origin must be specified by a `Feature-Policy` header. To apply this to a User-Agent Client Hint, you need to lowercase the hint and remove the `sec-` prefix. For example:
+クロスオリジン リクエストでヒントを許可するためには、それぞれのヒントとオリジンを `Feature-Policy` ヘッダーで指定する必要があります。これを User-Agent Client Hints に適用するには、ヒントを小文字にし、`sec-` プレフィックスを削除する必要があります。たとえば、次のようになります。
 
-⬇️ *Response from `example.com`*
+⬇️*`example.com`からのレスポンス*
 
 ```text
 Accept-CH: Sec-CH-UA-Platform, DPR
@@ -271,36 +268,36 @@ Feature-Policy: ch-ua-platform downloads.example.com;
                 ch-dpr cdn.provider img.example.com
 ```
 
-⬆️ *Request to `downloads.example.com`*
+⬆️*`downloads.example.com`へのリクエスト*
 
 ```text
 Sec-CH-UA-Platform: "Android"
 ```
 
-⬆️ *Requests to `cdn.provider` or `img.example.com`*
+⬆️*`cdn.provider` または `img.example.com`へのリクエスト*
 
 ```text
 DPR: 2
 ```
 
-## Where to use User-Agent Client Hints?
+## User-Agent Client Hints を使用する場所
 
-The quick answer is that you should refactor any instances where you are parsing either the User-Agent header or making use of any of the JavaScript calls that access the same information (i.e. `navigator.userAgent`, `navigator.appVersion`, or `navigator.platform`) to make use of User-Agent Client Hints instead.
+簡単に説明をすると、User-Agent ヘッダーを解析したり、同じ情報にアクセスする JavaScript 呼び出し (例: `navigator.userAgent`、`navigator.appVersion`、`navigator.platform`) のいずれかを使用したりしている任意のインスタンスをリファクタリングし、代わりに User-Agent Client Hints を使用する必要があります。
 
-Taking this a step further, you should re-examine your use of User-Agent information, and replace it with other methods whenever possible. Often, you can accomplish the same goal by making use of progressive enhancement, feature detection, or [responsive design](/responsive-web-design-basics). The base problem with relying on the User-Agent data is that you are always maintaining a mapping between the property you're inspecting and the behavior it enables. It's a maintenance overhead to ensure that your detection is comprehensive and remains up-to-date.
+さらに一歩進む場合には、User-Agent 情報の使用そのものを再検討し、可能な限り別の方法で置き換えていく必要があります。多くの場合、プログレッシブ エンハンスメント、機能検出、[レスポンシブ デザイン](/responsive-web-design-basics)を利用することによって同じ目的を達成することが可能です。User-Agent データに依存する場合に考えられる基本的な問題としては、検査対象のプロパティと、そのプロパティが可能にする動作との間のマッピングを常に維持しなければいけなくなるという点が挙げられます。これは、包括的に検出を行い、最新の状態を維持するためにメンテナンスに関連するオーバーヘッドが生じてしまうことを意味します。
 
-With these caveats in mind, the [User-Agent Client Hints repo lists some valid use cases](https://github.com/WICG/ua-client-hints#use-cases) for sites.
+これらの注意点を踏まえた上で、User-Agent Client Hints のリポジトリではサイトでの利用に役立つ「[ユース ケース](https://github.com/WICG/ua-client-hints#use-cases)」をいくつか紹介しています。
 
-## What happens to the User-Agent string?
+## User-Agent 文字列はどう変化しますか？
 
-The plan is to minimize the ability for covert tracking on the web by reducing the amount of identifying information exposed by the existing User-Agent string while not causing undue disruption on existing sites. Introducing User-Agent Client Hints now gives you a chance to understand and experiment with the new capability, before any changes are made to User-Agent strings.
+この計画は、既存のサイトに過度の混乱をもたらさないようにしながら、既存の User-Agent 文字列が公開する識別情報の量を削減することにより、Web 上で秘密の追跡が行われる可能性を最小限に抑えることを目的としています。User-Agent Client Hints を現段階で導入しておけば、User-Agent 文字列に変更が加えられる前に新しい機能について理解を深めたり、実験を行ったりすることが可能になります。
 
-[Eventually](https://groups.google.com/a/chromium.org/d/msg/blink-dev/-2JIRNMWJ7s/u-YzXjZ8BAAJ), the information in the User-Agent string will be reduced so it maintains the legacy format while only providing the same high-level browser and significant version information as per the default hints. In Chromium, this change has been deferred until at least 2021 to provide additional time for the ecosystem to evaluate the new User Agent Client Hints capabilities.
+[最終的には](https://groups.google.com/a/chromium.org/d/msg/blink-dev/-2JIRNMWJ7s/u-YzXjZ8BAAJ)、User-Agent 文字列の情報は削減され、従来の形式を維持しながらデフォルトのヒントと同一の高レベルのブラウザー情報および重要なバージョン情報のみが提供されるようになります。Chromium では、新しい User Agent Client Hints の機能をエコシステムが十分に評価するための期間を確保するために、この変更の実施は少なくとも 2021 年にまで延期されています。
 
-You can test a version of this by enabling the `about://flags/#reduce-user-agent` flag from Chrome 93 (Note: this flag was named `about://flags/#freeze-user-agent` in versions Chrome 84 - 92). This will return a string with the historical entries for compatibility reasons, but with sanitized specifics. For example, something like:
+Chrome 93 の `about://flags/#reduce-user-agent` フラグを有効にすることで、このバージョンの User-Agent 文字列をテストすることができます (注: このフラグは、Chrome 84 から 92 のバージョンでは `about://flags/#freeze-user-agent` という名前でした)。このバージョンでは互換性の理由から過去のエントリを含む文字列が返されますが、詳細部分はサニタイズされています。たとえば、次のようになっています。
 
 ```text
 Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.0.0 Mobile Safari/537.36
 ```
 
-*Photo by [Sergey Zolkin](https://unsplash.com/@szolkin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/m9qMoh-scfE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+*写真の提供: [Unsplash](https://unsplash.com/photos/m9qMoh-scfE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) の [Sergey Zolkin](https://unsplash.com/@szolkin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
