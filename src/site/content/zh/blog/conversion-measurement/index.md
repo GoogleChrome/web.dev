@@ -28,18 +28,18 @@ tags:
 ## 通用术语
 
 - **广告技术平台**：提供软件和工具从而使品牌或代理机构能够定位、交付和分析其数字广告的公司。
-- **Advertisers**: companies paying for advertising.
+- **广告商**：为广告付费的公司。
 - **发布商**：在其网站上展示广告的公司。
-- **Click-through conversion**: conversion that is attributed to an ad click.
+- **点击型转化**：归因于广告点击的转化。
 - **浏览型转化**：归因于广告展示的转化（用户未与广告交互，而稍后又发生了转化）。
 
-## Who needs to know about this API: adtech platforms, advertisers, and publishers
+## 谁需要了解此 API：广告技术平台、广告商和发布商
 
 - **广告技术平台**（例如**[需求方平台](https://en.wikipedia.org/wiki/Demand-side_platform)**）可能会有兴趣使用此 API 来支持当前依赖第三方 cookie 的功能。如果您正在研究转化测量系统：请[尝试演示版](#demo)、[使用该 API 进行实验](#experiment-with-the-api)并[分享您的反馈](#share-your-feedback)。
-- **Advertisers and publishers relying on custom code for advertising or conversion measurement** may similarly be interested in using this API to replace existing techniques.
+- **依赖自定义代码进行广告或转化测量的广告商和发布商**可能同样有兴趣使用此 API 来替换现有技术。
 - **依靠广告技术平台进行广告或转化测量的广告商和发布商**不需要直接使用 API，但可能会对[此 API 的基本原理](#why-is-this-needed)感兴趣，尤其是在您正在使用可能集成 API 的广告技术平台的情况下。
 
-## API overview
+## API 概览
 
 ### 为什么需要这个 API？
 
@@ -54,7 +54,7 @@ Chrome 计划[逐步停止对第三方 cookie 的支持，](https://blog.chromiu
 - 与 cookie 不同，该 API **专为**测量转化**而构建**。这反过来又可以使浏览器应用更多增强的隐私保护。
 - **更加私密**：该 API 使得在两个不同的顶级网站上识别同一位用户（例如将发布商端和广告商端的用户资料联系起来）变得困难。请参阅[该 API 如何保护用户隐私](#how-this-api-preserves-user-privacy)。
 
-### A first iteration
+### 第一次迭代
 
 此 API 还处于**早期实验阶段**。将其用作原始试验是**第一次迭代**中的功能。在[未来迭代](#use-cases)中，情况可能会发生重大变化。
 
@@ -68,8 +68,8 @@ Chrome 计划[逐步停止对第三方 cookie 的支持，](https://blog.chromiu
 
 此 API 可以与两类用于广告的链接（`<a>`元素）一起使用：
 
-- Links in a **first-party** context, such as ads on a social network or a search engine results page;
-- Links in a **third-party iframe**, such as on a publisher site that uses a third-party adtech provider.
+- **第一方**上下文中的链接，例如社交网络或搜索引擎结果页面上的广告；
+- **第三方 iframe** 中的链接，例如使用第三方广告技术提供商的发布商网站上的链接。
 
 通过此 API，可以使用于广告转化的特定属性来配置这类出站链接：
 
@@ -90,7 +90,7 @@ Chrome 计划[逐步停止对第三方 cookie 的支持，](https://blog.chromiu
 
 ## 浏览器支持和类似 API
 
-### Browser support
+### 浏览器支持
 
 对事件转化测量 API 提供的支持：
 
@@ -99,7 +99,7 @@ Chrome 计划[逐步停止对第三方 cookie 的支持，](https://blog.chromiu
 
 请在 [Chrome 功能条目](https://chromestatus.com/features/6412002824028160)上查看当前状态的相关详情。
 
-### Standardization
+### 标准化
 
 此 API 是在网络平台孵化器社区组（[WICG](https://www.w3.org/community/wicg/)）中进行公开设计的，目前可以在 Chrome 中进行实验。
 
@@ -107,13 +107,13 @@ Chrome 计划[逐步停止对第三方 cookie 的支持，](https://blog.chromiu
 
 Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提案，即[私人点击测量](https://github.com/privacycg/private-click-measurement)。隐私社区组（[PrivacyCG](https://www.w3.org/community/privacycg/)）正在对该提案进行研究。
 
-## How this API preserves user privacy
+## 此 API 如何保护用户隐私
 
 通过使用此 API，您就可以在保护用户隐私的同时测量转化：用户无法被跨站识别。这是通过**数据限制**、**向转化数据中添加噪声**以及**报告时间**机制实现的。
 
 让我们仔细看看这些机制的工作原理及其在实践中的意义。
 
-### Data limits
+### 数据限制
 
 在下文中，**点击时间或浏览时间数据**是`adtech.example`在广告被提供给用户，然后被点击或浏览时获得的数据。转化发生时的数据是**转化时间数据**。
 
@@ -121,7 +121,7 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
 
 `adtech.example`可以了解到网络用户的多少信息？
 
-#### With third-party cookies
+#### 使用第三方 cookie
 
 <figure class="w-figure">{% Img src="image/admin/kRpuY2r7ZSPtADz7e1P5.jpg", alt="图解：第三方 cookie 如何实现跨站用户识别", width="800", height="860" %}</figure>
 
@@ -131,7 +131,7 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
 
 由于`adtech.example`通常会出现在大量发布商和广告商的网站上（而不仅仅是`news.example`和`shoes.example`），因此用户在整个网络上的行为都可以被跟踪。
 
-#### With the Event Conversion Measurement API
+#### 使用事件转化测量 API
 
 <figure class="w-figure">{% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="图解：API 如何在避免跨站用户识别的情况下启用转化测量", width="800", height="643" %}<figcaption class="w-figcaption">cookie 图解中的“广告 ID”和“点击 ID”都是可以映射到详细数据的标识符。在这张图解中，标识符被称为“点击 ID”，因为该 API 仅支持点击型转化测量。</figcaption></figure>
 
@@ -164,7 +164,7 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
   <table class="w-table--top-align">
     <thead>
       <tr>
-        <th>Data</th>
+        <th>数据</th>
         <th>大小</th>
         <th>示例</th>
       </tr>
@@ -177,14 +177,14 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
       </tr>
       <tr>
         <td>转化数据</td>
-        <td>3 bits, noised</td>
+        <td>3 位，有噪声</td>
         <td>一个从 0 到 7 的整数，可以映射到一种转化类型：注册、完成结帐等。</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-### Report timing
+### 报告时间
 
 如果某次给定的广告点击注册了多次转化，则浏览器会**为每次转化发送相应的报告，且每次点击最多发送 3 次**。
 
@@ -202,7 +202,7 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
       <tr>
         <th><code>impressionexpiry</code></th>
         <th>转化报告根据转化时间进行发送（如果浏览器处于打开状态）...</th>
-        <th>Number of reporting windows</th>
+        <th>报告窗口数</th>
       </tr>
     </thead>
     <tbody>
@@ -211,7 +211,7 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
         <td>
           <ul>
             <li>广告点击后 2 天</li>
-            <li>or 7 days after ad click</li>
+            <li>或广告点击后 7 天</li>
             <li>或<code>impressionexpiry</code> = 广告点击后 30 天。</li>
           </ul>
         </td>
@@ -219,11 +219,11 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
       </tr>
       <tr>
         <td>
-<code>impressionexpiry</code> is between 7 and 30 days</td>
+<code>impressionexpiry</code>在 7 到 30 天之间</td>
         <td>
           <ul>
-            <li>2 days after ad click</li>
-            <li>or 7 days after ad click</li>
+            <li>广告点击后 2 天</li>
+            <li>或广告点击后 7 天</li>
             <li>或广告点击后<code>impressionexpiry</code>。</li>
           </ul>
         </td>
@@ -231,10 +231,10 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
       </tr>
       <tr>
         <td>
-<code>impressionexpiry</code> is between 2 and 7 days</td>
+<code>impressionexpiry</code>在 2 到 7 天之间</td>
         <td>
           <ul>
-            <li>2 days after ad click</li>
+            <li>广告点击后 2 天</li>
             <li>或广告点击后<code>impressionexpiry</code>。</li>
           </ul>
         </td>
@@ -242,9 +242,9 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
       </tr>
       <tr>
         <td>
-<code>impressionexpiry</code> is under 2 days</td>
+<code>impressionexpiry</code>不到 2 天</td>
         <td>
-          <li>2 days after ad click</li>
+          <li>广告点击后 2 天</li>
         </td>
         <td>1</td>
       </tr>
@@ -262,7 +262,7 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
 
 以下是 API 记录和报告转化的方式。请注意，这是当前 API 的点击转化流程工作方式。此 API 的未来迭代[可能会有所不同](#use-cases)。
 
-### Ad click (steps 1 to 5)
+### 广告点击（步骤 1 到 5）
 
 <figure class="w-figure">{% Img src="image/admin/FvbacJL6u37XHuvQuUuO.jpg", alt="图解：广告点击和点击存储", width="800", height="694" %}</figure>
 
@@ -289,8 +289,8 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
   <table class="w-table--top-align">
     <thead>
       <tr>
-        <th>Attribute</th>
-        <th>Default value, maximum, minimum</th>
+        <th>属性</th>
+        <th>默认值、最大值、最小值</th>
         <th>示例</th>
       </tr>
     </thead>
@@ -298,14 +298,14 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
       <tr>
         <td>
 <code>impressiondata</code>（必需）：附加到广告点击的一个 <b>64 位</b>标识符。</td>
-        <td>(no default)</td>
+        <td>（无默认）</td>
         <td>一个动态生成的点击 ID，例如一个 64 位整数：<code>200400600</code>
 </td>
       </tr>
       <tr>
         <td>
 <code>conversiondestination</code>（必需）：该广告预期会发生转化的 <b><a href="/same-site-same-origin/#site" noopener="">eTLD + 1</a></b>。</td>
-        <td>(no default)</td>
+        <td>（无默认）</td>
         <td>
 <code>https://advertiser.example</code>。<br>如果<code>conversiondestination</code>是<code>https://advertiser.example</code>，则<code>https://advertiser.example</code>和<code>https://shop.advertiser.example</code>上的转化都将进行归因。<br>如果<code>conversiondestination</code>是<code>https://shop.advertiser.example</code>，也会发生同样的情况：<code>https://advertiser.example</code>和<code>https://shop.advertiser.example</code>上的转化都将进行归因。</td>
       </tr>
@@ -333,7 +333,7 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
   </table>
 </div>
 
-{% Aside %} Some notes about the example:
+{% Aside %} 关于示例的一些说明：
 
 - 尽管 API 目前仅支持点击型转化，但您会在 API 属性或 API 提案中看到“展示量”这个术语。这些名称可能会在 API 的未来迭代中更新。
 - 广告并不一定要在 iframe 中，但本示例中的广告属于这一情况。
@@ -395,7 +395,7 @@ app.get('/conversion', (req, res) => {
 浏览器收到此请求。在检测到`.well-known/register-conversion`时，浏览器：
 
 - 会在存储中查找与该`conversiondestination`匹配的所有广告点击（因为浏览器是从一个已经在用户点击广告时被注册为`conversiondestination`的 URL 上收到转化的）。浏览器找到一天前在发布商网站上发生的广告点击。
-- Registers a conversion for this ad click.
+- 为该广告点击注册一次转化。
 
 多次广告点击都可以匹配一次转化：用户可能同时在`news.example`和`weather.example`上都点击了`shoes.example`广告。在这种情况下，多次点击将注册多次转化。
 
@@ -403,7 +403,7 @@ app.get('/conversion', (req, res) => {
 
 为此，浏览器计划发送**转化报告**，即一个包含点击数据（来自发布商网站）和转化数据（来自广告商网站）的数据对象。在此示例中，用户在点击之后的一天发生了转化。因此，如果浏览器正在运行，报告预计会在之后一天，也就是点击后两天标记处发送。
 
-### Sending the report (steps 10 and 11)
+### 发送报告（步骤 10 和 11）
 
 <figure class="w-figure">{% Img src="image/admin/Er48gVzK5gHUGdDHWHz1.jpg", alt="图解：浏览器发送报告", width="800", height="533" %}</figure>
 
@@ -432,7 +432,7 @@ app.get('/conversion', (req, res) => {
 
 在`impressionexpiry`后，浏览器将不再对该广告点击的转化进行计数，并会将广告点击从浏览器存储中删除。
 
-## Use cases
+## 用例
 
 ### 目前支持哪些功能
 
@@ -444,7 +444,7 @@ app.get('/conversion', (req, res) => {
 以下功能暂不支持，但可能会出现在该 API 的未来迭代中，或出现在[聚合](https://github.com/WICG/conversion-measurement-api/blob/master/AGGREGATE.md)报告中：
 
 - 浏览型转化测量。
-- [Multiple reporting endpoints](https://github.com/WICG/conversion-measurement-api/issues/29).
+- [多个报告端点](https://github.com/WICG/conversion-measurement-api/issues/29)。
 - [在 iOS/安卓应用程序中开始的网络转化](https://github.com/WICG/conversion-measurement-api/issues/54)。
 - 转化提升测量/增量：对于转化行为因果差异的测量，测量看到广告的测试组和没有看到广告的对照组之间的差异。
 - 非最终点击归因模型。
@@ -466,7 +466,7 @@ app.get('/conversion', (req, res) => {
 
 如需关注并参与有关新功能的讨论，请观看提案的 [GitHub 存储库](https://github.com/WICG/conversion-measurement-api/issues)并提交想法。
 
-## Try it out
+## 试试看
 
 ### 演示版
 
@@ -478,7 +478,7 @@ app.get('/conversion', (req, res) => {
 
 如果您打算（在本地或对最终用户）试用 API，请参阅[使用转化测量 API](/using-conversion-measurement) 。
 
-### Share your feedback
+### 分享您的反馈
 
 **您的反馈至关重要**，这样新的转化测量 API 才能支持您的用例并提供良好的开发者体验。
 
