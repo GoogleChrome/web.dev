@@ -30,7 +30,7 @@ tags:
 FID는 사용자가 페이지와 처음 상호 작용할 때(예: 링크를 클릭하거나 버튼을 탭하거나 사용자 지정 JavaScript 기반 컨트롤을 사용할 때)부터 해당 상호 작용에 대한 응답으로 브라우저가 실제로 이벤트 핸들러 처리를 시작하기까지의 시간을 측정합니다.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="좋은 fid 값은 2.5초, 나쁜 값은 4.0초보다 크며 그 사이에 개선이 필요함", width="400", height="3 ", class="w-screenshot w-screenshot--채워진 너비-전체" %}</source></picture>
 
 ### 좋은 FID 점수는 무엇인가요?
 
@@ -74,13 +74,13 @@ FID는 입력 이벤트가 수신된 시점과 메인 스레드가 다음 유휴
 
 예를 들어 다음 HTML 요소는 모두 사용자 상호 작용에 응답하려면 메인 스레드에서 진행 중인 작업이 완료될 때까지 대기해야 합니다.
 
-- Text fields, checkboxes, and radio buttons (`<input>`, `<textarea>`)
+- 텍스트 필드, 체크박스, 라디오 버튼( `<input>` , `<textarea>` )
 - 선택 드롭다운( `<select>` )
-- links (`<a>`)
+- 링크( `<a>` )
 
 ### 최초 입력만 고려하는 이유는 무엇인가요?
 
-While a delay from any input can lead to a bad user experience, we primarily recommend measuring the first input delay for a few reasons:
+입력 지연으로 인해 사용자 경험이 좋지 않을 수 있지만 주로 다음과 같은 몇 가지 이유로 첫 번째 입력 지연을 측정하는 것이 좋습니다.
 
 - 최초 입력 지연은 사이트의 응답성에 대한 사용자의 첫인상이 될 것이며, 사이트의 품질과 신뢰성에 대한 전반적인 인상을 형성하는 데 중요합니다.
 - 오늘날 웹에서 볼 수 있는 가장 큰 상호 작용 문제는 페이지 로드 중에 발생합니다. 따라서 처음에는 사이트의 최초 사용자 상호 작용을 개선하는 데 중점을 두는 것이 웹의 전반적인 상호 작용을 개선하는 데 가장 큰 영향을 미치게 될 것입니다.
@@ -110,20 +110,20 @@ FID를 추적, 보고 및 분석하는 방법은 기존에 사용하던 다른 �
 
 그러나 FID는 이벤트 대기 시간의 '지연' 부분만 측정하지만 더 많은 이벤트 수명 주기를 추적하려는 개발자는 [Event Timing API](https://wicg.github.io/event-timing/)를 사용하여 추적할 수 있습니다. 자세한 내용은 [커스텀 메트릭](/custom-metrics/#event-timing-api)에 대한 가이드를 참조하시기 바랍니다.
 
-## How to measure FID
+## FID 측정 방법
 
 FID는 실제 사용자가 페이지와 상호 작용해야 하므로 [사이트](/user-centric-performance-metrics/#in-the-field)에서만 측정할 수 있는 메트릭입니다. 다음 도구를 사용하여 FID를 측정할 수 있습니다.
 
 {% Aside %} FID는 실제 사용자가 필요하므로 실험실에서 측정할 수 없습니다. 그러나 [Total Blocking Time(총 차단 시간, TBT)](/tbt/) 메트릭은 실험실에서 측정할 수 있고 사이트의 FID와 상관관계가 있으며 상호 작용에 영향을 미치는 문제도 포착합니다. 즉, 실험실에서 TBT를 개선하는 최적화는 사용자를 위한 FID 또한 개선합니다. {% endAside %}
 
-### Field tools
+### 현장 도구
 
 - [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 - [Search Console(Core Web Vitals Report)](https://support.google.com/webmasters/answer/9205520)
-- [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
+- [`web-vitals` JavaScript 라이브러리](https://github.com/GoogleChrome/web-vitals)
 
-### Measure FID in JavaScript
+### JavaScript에서 FID 측정
 
 JavaScript에서 FID를 측정하려면 [Event Timing API](https://wicg.github.io/event-timing)를 사용할 수 있습니다. 다음 예시에서는 `first-input` 항목을 수신 대기하고 콘솔에 기록하는 [`PerformanceObserver`](https://wicg.github.io/event-timing/#sec-performance-event-timing)를 작성하는 방법을 확인하실 수 있습니다.
 
@@ -162,7 +162,7 @@ JavaScript에서 FID를 측정하는 방법에 대한 전체 예제는 [`getFID)
 
 {% Aside %} 일부 경우(예: 교차 원본 iframe) JavaScript에서 FID를 측정할 수 없습니다. 자세한 내용은 `web-vitals` 라이브러리의 [제한 사항](https://github.com/GoogleChrome/web-vitals#limitations) 섹션을 참조하세요. {% endAside %}
 
-### Analyzing and reporting on FID data
+### FID 데이터 분석 및 보고
 
 FID 값에는 변동이 예상되므로, FID를 보고할 때는 값 분포를 살펴보고 더 높은 백분위수에 초점을 맞추는 것이 중요합니다.
 
@@ -170,7 +170,7 @@ FID 값에는 변동이 예상되므로, FID를 보고할 때는 값 분포를 �
 
 보고서를 장치 범주 또는 유형별로 분류하는 경우에도 마찬가지입니다. 예를 들어 데스크톱과 모바일에 대해 별도의 보고서를 실행하는 경우 데스크톱에서 가장 중요하게 생각하는 FID 값은 데스크톱 사용자의 95~99번째 백분위수여야 하고 모바일에서 가장 중요하게 여기는 FID 값은 모바일 사용자의 95~99번째 백분위수여야 합니다.
 
-## How to improve FID
+## FID를 개선하는 방법
 
 특정 사이트에 대한 FID를 개선하는 방법을 알아보려면 Lighthouse 성능 감사를 실행하고 감사에서 제안하는 특정한 [기회](/lighthouse-performance/#opportunities)를 주의 깊게 살펴보시기 바랍니다.
 
@@ -178,9 +178,9 @@ FID는 필드 메트릭(Lighthouse는 실험실 메트릭 도구임)이지만 FI
 
 FID를 개선하는 방법에 대한 자세한 내용은 [FID 최적화](/optimize-fid/)를 참조하시기 바랍니다. FID를 개선할 수 있는 개별 성능 기술에 대한 추가 지침은 다음을 참조하세요.
 
-- [Reduce the impact of third-party code](/third-party-summary/)
+- [타사 코드의 영향 줄이기](/third-party-summary/)
 - [JavaScript 실행 시간 단축](/bootup-time/)
-- [Minimize main thread work](/mainthread-work-breakdown/)
+- [메인 스레드 작업 최소화](/mainthread-work-breakdown/)
 - [요청 수를 낮게 유지하고 전송 크기를 작게 유지](/resource-summary/)
 
 {% include 'content/metrics/metrics-changelog.njk' %}
