@@ -15,7 +15,7 @@ tags:
 
 Оптимизация качества взаимодействия с пользователем — ключ к долгосрочному успеху любого сайта в Интернете. Web Vitals поможет владельцам бизнеса, маркетологам или разработчикам количественно оценить впечатления от сайта и определить возможности для улучшения.
 
-## Overview
+## Обзор
 
 Web Vitals — это инициатива Google, цель которой — предоставить единое руководство по сигналам качества, необходимым для обеспечения хорошего взаимодействия с пользователем в Интернете.
 
@@ -64,7 +64,7 @@ Google верит, что показатели Core Web Vitals критичес�
       <td>✔</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/speed/pagespeed/insights/">         PageSpeed Insights</a></td>
+      <td><a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
@@ -127,13 +127,13 @@ getLCP(sendToAnalytics);
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://github.com/GoogleChrome/web-vitals">web-vitals</a></td>
+        <td><a href="https://github.com/GoogleChrome/web-vitals">Web-Vitals</a></td>
         <td>✔</td>
         <td>✔</td>
         <td>✔</td>
       </tr>
       <tr>
-        <td><a href="https://github.com/GoogleChrome/web-vitals-extension">           Web Vitals Extension</a></td>
+        <td><a href="https://github.com/GoogleChrome/web-vitals-extension">Расширение Web Vitals</a></td>
         <td>✔</td>
         <td>✔</td>
         <td>✔</td>
@@ -170,7 +170,7 @@ getLCP(sendToAnalytics);
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://developers.google.com/web/tools/chrome-devtools">           Chrome DevTools</a></td>
+        <td><a href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a></td>
         <td>✔</td>
         <td>✘ (используйте для этого <a href="/tbt/">TBT)</a>
 </td>
