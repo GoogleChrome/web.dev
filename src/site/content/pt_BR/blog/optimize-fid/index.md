@@ -23,7 +23,7 @@ A [First Contentful Paint](/fcp/) - FCP (primeira renderização de conteúdo) e
 A [First Input Delay](/fid/) - FID (atraso da primeira entrada) é uma métrica [Core Web Vitals](/vitals/) que captura a primeira impressão de um usuário sobre a interatividade e capacidade de resposta de um site. Ela mede o tempo desde quando um usuário interage pela primeira vez com uma página até o momento em que o navegador é finalmente capaz de responder a essa interação. A FID é uma [métrica de campo](/user-centric-performance-metrics/#in-the-field) e não pode ser simulada em ambiente de laboratório. **É necessária uma interação real do usuário** para medir o atraso da resposta.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)">{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / Se4TiXIdp8jtLJVScWed.svg", alt = "Bons valores de fid são 2,5 segundos, valores fracos são maiores que 4,0 segundos e qualquer coisa entre precisa de melhorias", largura = "384", altura = "96 ", classe =" w-screenshot w-screenshot - preenchido com largura total "%}</source></picture>
 
 Para ajudar a prever a FID no [laboratório](/how-to-measure-speed/#lab-data-vs-field-data) , recomendamos a métrica [Total Blocking Time - TBT (tempo total de bloqueio)](/tbt/). Elas medem coisas diferentes, mas melhorias na TBT geralmente correspondem a melhorias na FID.
 
