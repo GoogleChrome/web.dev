@@ -19,26 +19,26 @@ tags:
 
 Já aconteceu de você estar lendo um artigo online quando algo muda repentinamente na página? Sem aviso, o texto se move e você perdeu o seu lugar. Ou ainda pior: você está prestes a tocar num link ou botão, mas um instante antes do seu dedo pousar - BOOM - o link se move e você acaba clicando noutra coisa!
 
-Most of the time these kinds of experiences are just annoying, but in some cases, they can cause real damage.
+Na maioria das vezes, esse tipo de experiência é apenas irritante, mas, em alguns casos, pode causar danos reais.
 
 <figure class="w-figure">
   <video autoplay controls loop muted class="w-screenshot" poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png" width="658" height="510">
     <source src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.mp4" type="video/mp4; codecs=h264">
   </source></source></video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">     A screencast illustrating how layout instability can negatively affect     users.   </figcaption></figure>
+  <figcaption class="w-figcaption w-figcaption--fullbleed">Um screencast ilustrando como a instabilidade do layout pode afetar negativamente os usuários.</figcaption></figure>
 
 O movimento inesperado do conteúdo da página geralmente ocorre porque os recursos são carregados de forma assíncrona ou os elementos do DOM são adicionados dinamicamente à página acima do conteúdo existente. O culpado pode ser uma imagem ou vídeo com dimensões desconhecidas, uma fonte que fica maior ou menor que sua substituta ou um anúncio ou widget de terceiros que se redimensiona dinamicamente.
 
-What makes this issue even more problematic is that how a site functions in development is often quite different from how users experience it. Personalized or third-party content often doesn't behave the same in development as it does in production, test images are often already in the developer's browser cache, and API calls that run locally are often so fast that the delay isn't noticeable.
+O que torna esse problema ainda mais problemático é que o modo como um site funciona no desenvolvimento é geralmente muito diferente de como os usuários o experimentam. O conteúdo personalizado ou de terceiros geralmente não se comporta da mesma forma no desenvolvimento e na produção, as imagens de teste geralmente já estão no cache do navegador do desenvolvedor e as chamadas de API executadas localmente costumam ser tão rápidas que o atraso não é perceptível.
 
-The Cumulative Layout Shift (CLS) metric helps you address this problem by measuring how often it's occurring for real users.
+A métrica Cumulative Layout Shift (CLS) ajuda a resolver esse problema medindo a frequência com que ele ocorre para usuários reais.
 
-## What is CLS?
+## O que é CLS?
 
 CLS é uma medida da maior explosão de ocorrências de *mudança de layout* para cada mudança de layout [inesperada](/cls/#expected-vs.-unexpected-layout-shifts) que ocorre durante toda a existência de uma página.
 
-A *layout shift* occurs any time a visible element changes its position from one rendered frame to the next. (See below for details on how individual [layout shift scores](#layout-shift-score) are calculated.)
+Uma *mudança de layout* ocorre sempre que um elemento visível muda sua posição de um quadro renderizado para o próximo. (Veja abaixo os detalhes sobre como as [pontuações de mudança de layout](#layout-shift-score) individuais são calculadas.)
 
 Uma explosão de mudanças de layout, conhecida como [*janela de sessão*](evolving-cls/#why-a-session-window) (session window), ocorre quando uma ou mais mudanças de layout individuais acontecem em rápida sucessão com menos de 1 segundo entre cada mudança e um máximo de 5 segundos para a duração total da janela.
 
@@ -49,16 +49,16 @@ A maior explosão é a janela da sessão com a pontuação cumulativa máxima de
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
   </source></source></video>
-  <figcaption class="w-figcaption">     Example of session windows. Blue bars represent the scores of each individual layout shift.   </figcaption></figure>
+  <figcaption class="w-figcaption">Exemplo de janelas de sessão. As barras azuis representam as pontuações de cada mudança de layout individual.</figcaption></figure>
 
 {% Aside 'caution' %} Anteriormente, a CLS media a soma total de *todas as pontuações de mudança de layout individuais* que ocorriam durante a existência da página. Para ver quais ferramentas ainda fornecem a capacidade de fazer benchmarks em relação à implementação original, dê uma olhada em [Evolução da Cumulative Layout Shift em ferramentas da web](/cls-web-tooling). {% endAside %}
 
-### What is a good CLS score?
+### O que é uma boa pontuação CLS?
 
 Para fornecer uma boa experiência ao usuário, os sites devem se esforçar para ter uma pontuação CLS de **0,1** ou menos. Para garantir que você esteja atingindo essa meta para a maioria de seus usuários, um bom limite para medir é o **75º percentil** de carregamentos de página, segmentado através de dispositivos móveis e desktop.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Good CLS values are under 0.1, poor values are greater than 0.25 and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / uqclEgIlTHhwIgNTXN3Y.svg", alt = "Bons valores de CLS estão abaixo de 0,1, valores baixos são maiores que 0,25 e qualquer coisa entre precisa de melhorias", largura = "400", altura = "300" , classe = "w-screenshot w-screenshot - full width-full"%}</source></picture>
 
 {% Aside %} Para saber mais sobre a pesquisa e a metodologia por trás dessa recomendação, veja: [Definindo os limites das Core Web Vitals](/defining-core-web-vitals-thresholds/) {% endAside %}
 
@@ -68,7 +68,7 @@ As mudanças de layout são definidas pela [API de instabilidade de layout](http
 
 Observe que as mudanças de layout ocorrem apenas quando os elementos existentes mudam sua posição inicial. Se um novo elemento for adicionado ao DOM ou um elemento existente mudar de tamanho, isto não conta como uma mudança de layout - desde que a mudança não faça com que outros elementos visíveis mudem sua posição inicial.
 
-### Layout shift score
+### Pontuação de mudança de layout
 
 Para calcular a *pontuação de mudança de layout* , o navegador observa o tamanho do viewport e o movimento dos *elementos instáveis* no viewport entre dois quadros renderizados. A pontuação de mudança de layout é um produto de duas medidas desse movimento: a *fração de impacto* e a *fração de distância* (ambas definidas abaixo).
 
@@ -76,19 +76,19 @@ Para calcular a *pontuação de mudança de layout* , o navegador observa o tama
 layout shift score = impact fraction * distance fraction
 ```
 
-### Impact fraction
+### Fração de impacto
 
 A [fração de impacto](https://github.com/WICG/layout-instability#Impact-Fraction) mede como os *elementos instáveis* afetam a área da janela de visualização (viewport) entre dois quadros.
 
-The union of the visible areas of all *unstable elements* for the previous frame *and* the current frame—as a fraction of the total area of the viewport—is the *impact fraction* for the current frame.
+A união das áreas visíveis de todos os *elementos instáveis* do quadro anterior *e* do quadro atual - como uma fração da área total da janela de visualização - é a *fração de impacto* do quadro atual.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BbpE9rFQbF8aU6iXN1U6.png", alt="Exemplo de fração de impacto com um *elemento instável*", width="800", height="600", linkTo=true %}
 
 Na imagem acima, há um elemento que ocupa metade da janela de visualização em um quadro. Depois, no quadro seguinte, o elemento é deslocado para baixo em 25% da altura da janela de visualização. O retângulo pontilhado vermelho indica a união da área visível do elemento em ambos os quadros, que, neste caso, é 75% da janela de visualização total, portanto, sua *fração de impacto* é de `0.75` .
 
-### Distance fraction
+### Fração de distância
 
-The other part of the layout shift score equation measures the distance that unstable elements have moved, relative to the viewport. The *distance fraction* is the greatest distance any *unstable element* has moved in the frame (either horizontally or vertically) divided by the viewport's largest dimension (width or height, whichever is greater).
+A outra parte da equação de pontuação de mudança de layout mede a distância que os elementos instáveis se moveram em relação à janela de visualização. A *fração de distância* é a maior distância que qualquer *elemento instável* moveu no quadro (horizontal ou verticalmente) dividida pela maior dimensão da janela de visualização (largura ou altura, o que for maior).
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASnfpVs2n9winu6mmzdk.png", alt="Exemplo de fração de distância com um *elemento instável*", width="800", height="600", linkTo=true %}
 
@@ -104,17 +104,17 @@ O próximo exemplo mostra como a adição de conteúdo a um elemento existente a
 
 O botão "Click Me!" é anexado à parte inferior da caixa cinza com texto preto, o que empurra a caixa verde com texto branco para baixo (e parcialmente para fora da janela de visualização).
 
-In this example, the gray box changes size, but its start position does not change so it's not an *unstable element*.
+Neste exemplo, a caixa cinza muda de tamanho, mas sua posição inicial não muda, portanto não é um *elemento instável* .
 
 O botão "Click Me!" não estava anteriormente no DOM, portanto, sua posição inicial também não muda.
 
 A posição inicial da caixa verde, entretanto, muda, mas como ela foi movida parcialmente para fora da janela de visualização, a área invisível não é considerada ao calcular a *fração de impacto*. A união das áreas visíveis para a caixa verde em ambos os quadros (ilustrada pelo retângulo pontilhado vermelho) é a mesma que a área da caixa verde no primeiro quadro: 50% da janela de visualização. A *fração de impacto* é `0.5`.
 
-The *distance fraction* is illustrated with the purple arrow. The green box has moved down by about 14% of the viewport so the *distance fraction* is `0.14`.
+A *fração de distância* é ilustrada com a seta roxa. A caixa verde foi movida para baixo em cerca de 14% da janela de visualização, então a *fração de distância* é `0.14` .
 
-The layout shift score is `0.5 x 0.14 = 0.07`.
+A pontuação de mudança de layout é `0.5 x 0.14 = 0.07` .
 
-This last example illustrates multiple *unstable elements*:
+Este último exemplo ilustra vários *elementos instáveis* :
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FdCETo2dLwGmzw0V5lNT.png", alt="Exemplo de mudança de layout com vários *elementos* estáveis e instáveis", width="800", height="600", linkTo=true %}
 
@@ -126,23 +126,23 @@ Novamente, os retângulos pontilhados vermelhos representam a união dessas trê
 
 As setas representam as distâncias que os *elementos instáveis* se moveram desde suas posições iniciais. O elemento "Zebra", representado pela seta azul, foi o que mais se moveu, cerca de 30% da altura da janela de visualização. Isto faz com que a *fração de distância* neste exemplo seja `0.3`.
 
-The layout shift score is `0.38 x 0.3 = 0.1172`.
+A pontuação de mudança de layout é `0.38 x 0.3 = 0.1172` .
 
-### Expected vs. unexpected layout shifts
+### Mudanças de layout esperadas vs. inesperadas
 
-Not all layout shifts are bad. In fact, many dynamic web applications frequently change the start position of elements on the page.
+Nem todas as mudanças de layout são ruins. Na verdade, muitos aplicativos dinâmicos da Web frequentemente mudam a posição inicial dos elementos na página.
 
-#### User-initiated layout shifts
+#### Mudanças de layout iniciadas pelo usuário
 
 Uma mudança de layout só é ruim se o usuário não a espera. Por outro lado, as mudanças de layout que ocorrem em resposta às interações do usuário (clicar num link, pressionar um botão, digitar numa caixa de pesquisa e similares) geralmente são aceitáveis, contanto que a mudança ocorra perto o suficiente da interação que o relacionamento esteja claro para o usuário.
 
 Por exemplo, se uma interação do usuário disparar uma solicitação de rede que pode demorar um pouco para ser concluída, é melhor imediatamente alocar algum espaço e mostrar um indicador de carregamento para evitar uma mudança desagradável de layout quando a solicitação for concluída. Se o usuário não perceber que algo está sendo carregado ou não tiver noção de quando o recurso estará pronto, ele pode tentar clicar em outra coisa enquanto espera, algo que pode sair do lugar na hora do clique.
 
-Layout shifts that occur within 500 milliseconds of user input will have the [`hadRecentInput`](https://wicg.github.io/layout-instability/#dom-layoutshift-hadrecentinput) flag set, so they can be excluded from calculations.
+As mudanças de layout que ocorrem dentro de 500 milissegundos da entrada do usuário terão o [`hadRecentInput`](https://wicg.github.io/layout-instability/#dom-layoutshift-hadrecentinput) definido, para que possam ser excluídas dos cálculos.
 
 {% Aside 'caution' %} O `hadRecentInput` só será verdadeiro para eventos de entrada discretos, como toque, clique ou pressionamento de tecla. Interações contínuas como rolar, arrastar ou gestos de pinça e zoom não são consideradas "entrada recente". Consulte a [Especificação de Instabilidade de Layout](https://github.com/WICG/layout-instability#recent-input-exclusion) para mais detalhes. {% endAside %}
 
-#### Animations and transitions
+#### Animações e transições
 
 Animações e transições, quando bem feitas, são uma ótima maneira de atualizar o conteúdo da página sem surpreender o usuário. O conteúdo que muda abrupta e inesperadamente na página quase sempre cria uma experiência ruim para o usuário. Mas o conteúdo que se move de forma gradual e natural de uma posição para a seguinte pode, muitas vezes, ajudar o usuário a entender melhor o que está acontecendo e guiá-lo entre as mudanças de estado.
 
@@ -155,16 +155,16 @@ A propriedade [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/tra
 
 A CLS pode ser medida [em laboratório](/user-centric-performance-metrics/#in-the-lab) ou [em campo](/user-centric-performance-metrics/#in-the-field) e está disponível nas seguintes ferramentas:
 
-{% Aside 'caution' %} Lab tools typically load pages in a synthetic environment and are thus only able to measure layout shifts that occur during page load. As a result, CLS values reported by lab tools for a given page may be less than what real users experience in the field. {% endAside %}
+{% Aside 'caution' %} As ferramentas de laboratório normalmente carregam páginas em um ambiente sintético e, portanto, só podem medir as mudanças de layout que ocorrem durante o carregamento da página. Como resultado, os valores CLS relatados por ferramentas de laboratório para uma determinada página podem ser menores do que os usuários reais experimentam no campo. {% endAside %}
 
-### Field tools
+### Ferramentas de campo
 
 - [Relatório de Experiência do Usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 - [Console de Busca (relatório Core Web Vitals)](https://support.google.com/webmasters/answer/9205520)
 - [Biblioteca JavaScript `web-vitals`](https://github.com/GoogleChrome/web-vitals)
 
-### Lab tools
+### Ferramentas de laboratório
 
 - [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
@@ -223,9 +223,9 @@ Este código mostra a forma básica de calcular e registrar a CLS. No entanto, m
 
 Na maioria dos casos, o valor CLS no momento em que a página está sendo descarregada é o valor CLS final para essa página, mas existem algumas exceções importantes:
 
-The following section lists the differences between what the API reports and how the metric is calculated.
+A seção a seguir lista as diferenças entre o que a API informa e como a métrica é calculada.
 
-#### Differences between the metric and the API
+#### Diferenças entre a métrica e a API
 
 - Se uma página for carregada em segundo plano, ou se estiver em segundo plano antes do navegador renderizar qualquer conteúdo, ela não deve relatar nenhum valor CLS.
 - If a page is restored from the [back/forward cache](/bfcache/#impact-on-core-web-vitals), its CLS value should be reset to zero since users experience this as a distinct page visit.
@@ -254,15 +254,15 @@ Para um exemplo completo de como medir a CLS em JavaScript, consulte [o código-
 
 ## How to improve CLS
 
-For most websites, you can avoid all unexpected layout shifts by sticking to a few guiding principles:
+Para a maioria dos sites, você pode evitar todas as mudanças inesperadas de layout, aderindo a alguns princípios orientadores:
 
 - **Sempre inclua atributos de tamanho em suas imagens e elementos de vídeo ou reserve o espaço necessário usando algo como [caixas de proporção de aspecto do CSS](https://css-tricks.com/aspect-ratio-boxes/).** Essa abordagem garante que o navegador possa alocar a quantidade correta de espaço no documento enquanto a imagem é carregada. Observe que você também pode usar a [política de recursos de mídia não dimensionada](https://github.com/w3c/webappsec-feature-policy/blob/master/policies/unsized-media.md) para forçar esse comportamento em navegadores que oferecem suporte a políticas de recursos.
-- **Never insert content above existing content, except in response to a user interaction.** This ensures any layout shifts that occur are expected.
-- **Prefer transform animations to animations of properties that trigger layout changes.** Animate transitions in a way that provides context and continuity from state to state.
+- **Nunca insira conteúdo acima do conteúdo existente, exceto em resposta a uma interação do usuário.** Isso garante que quaisquer mudanças de layout que ocorram sejam esperadas.
+- **Prefira animações de transformação a animações de propriedades que acionam mudanças de layout.** Anime as transições de uma forma que forneça contexto e continuidade de um estado para outro.
 
 Para obter informações detalhadas sobre como melhorar a CLS, veja [Otimize a CLS](/optimize-cls/) e [Depuração de mudanças de layout](/debug-layout-shifts) .
 
-## Additional resources
+## Recursos adicionais
 
 - Orientação do Google para tags sobre como [minimizar a mudança de layout](https://developers.google.com/doubleclick-gpt/guides/minimize-layout-shift)
 - [Understanding Cumulative Layout Shift (Compreendendo a mudança cumulativa de layout)](https://youtu.be/zIJuY-JCjqw) por [Annie Sullivan](https://anniesullie.com/) e [Steve Kobes](https://kobes.ca/) em [#PerfMatters](https://perfmattersconf.com/) (2020)
