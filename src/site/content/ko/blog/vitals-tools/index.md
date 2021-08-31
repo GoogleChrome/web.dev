@@ -66,7 +66,7 @@ PageSpeed Insights 및 [PageSpeed Insights API](https://developers.google.com/sp
 
 사이트가 사용자를 위해 어떻게 작동하는지 제대로 알 수 있는 유일한 방법은 해당 사용자가 사이트를 로드하고 상호 작용할 때 필드에서 사이트의 성능을 실제로 측정하는 것입니다. 이러한 측정 유형을 일반적으로 Real User Monitoring(실제 사용자 모니터링, RUM)이라고 합니다. 사이트에 대한 RUM이 없더라도 CrUX는 Core Web Vitals를 평가하기 위한 쉽고 빠른 방법을 제공해줍니다.
 
-**Introducing the CrUX API**
+**CrUX API 소개**
 
 개발 워크플로를 원본 및 URL 수준 품질 측정과 쉽고 빠르게 통합할 수 있게 해주는 무료 [CrUX API](http://developers.google.com/web/tools/chrome-user-experience-report/api/reference/)를 발표하게 되어 기쁩니다. 다음 필드 메트릭에 대해 사용할 수 있습니다.
 
@@ -81,7 +81,7 @@ PageSpeed Insights 및 [PageSpeed Insights API](https://developers.google.com/sp
 
 <figure class="w-figure">{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Core Web Vitals 메트릭을 보여주는 Chrome User Experience Report API 데모", width="800", height="523", class="w-screenshot w-screenshot--filled" %}</figure>
 
-In future releases, we plan to expand the API to enable access to additional CrUX dataset dimensions and metrics.
+향후 릴리스에서는 추가 CrUX 데이터 세트 차원 및 메트릭에 액세스할 수 있도록 API를 확장할 계획입니다.
 
 **개선된 CrUX Dashboard**
 
@@ -91,7 +91,7 @@ In future releases, we plan to expand the API to enable access to additional CrU
 
 사이트 성능을 한눈에 훨씬 더 쉽게 파악할 수 있도록 새로운 Core Web Vitals 랜딩 페이지를 도입했습니다. CrUX 도구에 대한 피드백은 언제나 환영입니다. [@ChromeUXReport](https://twitter.com/chromeuxreport) Twitter 계정 또는 [Google 그룹](https://groups.google.com/a/chromium.org/g/chrome-ux-report)으로 다양한 생각과 질문을 공유해주세요.
 
-### Chrome DevTools Performance panel
+### Chrome DevTools 성능 패널
 
 **Experience 섹션의 레이아웃 이동 이벤트 디버그**
 
@@ -112,10 +112,10 @@ Layout Shift를 선택하여 **Summary** 탭에서 세부 정보를 볼 수 있�
 {% Instruction 'devtools-performance', 'ol' %}
 
 1. **Record**를 클릭합니다.
-2. Manually reload the page.
-3. Wait for the page to load and then stop recording.
+2. 페이지를 수동으로 새로고침합니다.
+3. 페이지가 로드될 때까지 기다렸다가 기록을 중지합니다.
 
-For more information, see [What's New In DevTools (Chrome 84)](https://developers.google.com/web/updates/2020/05/devtools#cls).
+자세한 내용은 [DevTools의 새로운 기능(Chrome 84)](https://developers.google.com/web/updates/2020/05/devtools#cls)을 참조하세요.
 
 ### Search Console
 
