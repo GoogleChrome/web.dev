@@ -213,7 +213,7 @@ Set-Cookie: widget_session=abc123; SameSite=None; Secure
 
 {% CompareCaption %}
 
-You must ensure that you pair `SameSite=None` with the `Secure` attribute.
+`SameSite=None`を`Secure`属性とペアにする必要があります。
 
 {% endCompareCaption %}
 
