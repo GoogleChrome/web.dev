@@ -1,6 +1,6 @@
 ---
-title: Referer and Referrer-Policy best practices
-subhead: Best practices to set your Referrer-Policy and use the referrer in incoming requests.
+title: リファラーとリファラーポリシーのベストプラクティス
+subhead: リファラーポリシーを設定し、送信されてくるリクエストにリファラーを使用するためのベストプラクティス。
 authors:
   - maudn
 date: '2020-07-30'
@@ -20,31 +20,31 @@ feedback:
 
 ## 概要
 
-- Unexpected cross-origin information leakage hinders web users' privacy. A protective referrer policy can help.
+- 予期しないクロスオリジン情報の漏洩は、Web ユーザーのプライバシーに支障をきたします。保護リファラーポリシーが便利です。
 - Consider setting a referrer policy of `strict-origin-when-cross-origin`. It retains much of the referrer's usefulness, while mitigating the risk of leaking data cross-origins.
-- Don't use referrers for Cross-Site Request Forgery (CSRF) protection. Use [CSRF tokens](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation) instead, and other headers as an extra layer of security.
+- クロスサイトリクエストフォージェリ (CSRF) 保護にリファラーを使用しないでください。 [代わりに CSRF トークン](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation)を使用し、セキュリティの追加レイヤーとして他のヘッダーを使用します。
 
 {% Aside %}始める前に：
 
 - If you're unsure of the difference between "site" and "origin", check out [Understanding "same-site" and "same-origin"](/same-site-same-origin/).
 - The `Referer` header is missing an R, due to an original misspelling in the spec. The `Referrer-Policy` header and `referrer` in JavaScript and the DOM are spelled correctly. {% endAside %}
 
-## Referer and Referrer-Policy 101
+## リファラーとリファラーポリシー 101
 
-HTTP requests may include the optional [`Referer` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), which indicates the origin or web page URL the request was made from. The [`Referrer-Policy` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) defines what data is made available in the `Referer` header.
+HTTP リクエストには、リクエストの発信元または Web ページの URL を示す [`Referer` ヘッダーが含まれる場合があります。](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) [`Referrer-Policy` ヘッダーは、](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)`Referer` ヘッダーで使用できるデータを定義します。
 
-In the example below, the `Referer` header includes the complete URL of the page on `site-one` from which the request was made.
+以下の例では、`Referer` ヘッダーには、リクエストの発信元となる `site-one` のページの完全な URL が含まれています。
 
-<figure class="w-figure">   {% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="HTTP request including a Referer header.", width="800", height="573" %} </figure>
+<figure class="w-figure">{％Img src = "image / admin / cXgqJfmD5OPdzqXl9RNt.jpg"、alt = "リファラーヘッダーを含む HTTP リクエスト。"、width = "800"、height = "573"％}</figure>
 
-The `Referer` header might be present in different types of requests:
+`Referer` ヘッダーは、さまざまなタイプのリクエストに存在する可能性があります。
 
 - Navigation requests, when a user clicks a link
 - Subresource requests, when a browser requests images, iframes, scripts, and other resources that a page needs.
 
 For navigations and iframes, this data can also be accessed via JavaScript using `document.referrer`.
 
-The `Referer` value can be insightful. For example, an analytics service might use the value to determine that 50% of the visitors on `site-two.example` came from `social-network.example`.
+`Referer` 値はインサイトを提供する可能性があります。たとえば、分析サービスはこの値を使用して、 `site-two.example` の訪問者のうち 50% は `social-network.example`から来たと判断することが考えられます。
 
 But when the full URL including the path and query string is sent in the `Referer` **across origins**, this can be **privacy-hindering** and pose **security risks** as well. Take a look at these URLs:
 
@@ -52,23 +52,23 @@ But when the full URL including the path and query string is sent in the `Refere
 
 URLs #1 to #5 contain private information—sometimes even identifying or sensitive. Leaking these silently across origins can compromise web users' privacy.
 
-URL #6 is a [capability URL](https://www.w3.org/TR/capability-urls/). You don't want it to fall in the hands of anyone other than the intended user. If this were to happen, a malicious actor could hijack this user's account.
+URL＃6 は[機能 URL](https://www.w3.org/TR/capability-urls/) で、意図したユーザー以外の人物には渡したくないものです。これが発生した場合、悪意のある攻撃者がこのユーザーのアカウントを乗っ取る可能性があります。
 
-**In order to restrict what referrer data is made available for requests from your site, you can set a referrer policy.**
+**サイトからのリクエストで利用できるリファラーデータを制限するには、リファラーポリシーを設定できます。**
 
-## What policies are available and how do they differ?
+## 利用可能なポリシーは？それぞれの違う点は？
 
-You can select one of eight policies. Depending on the policy, the data available from the `Referer` header (and `document.referrer`) can be:
+8 つのポリシーから 1 つ選択できます。ポリシーに応じて、 `Referer` ヘッダー (および`document.referrer`) からは以下のデータを使用できる場合があります。
 
-- No data (no `Referer` header is present)
-- Only the [origin](/same-site-same-origin/#origin)
-- The full URL: origin, path, and query string
+- データなし (`Referer` ヘッダーがない)
+- [オリジン](/same-site-same-origin/#origin)のみ
+- 完全な URL：オリジン、パス、クエリ文字列
 
 <figure class="w-figure">   {% Img src="image/admin/UR1U0HRP0BOF1e0XnyWA.jpg", alt="Data that can be contained in the Referer header and document.referrer.", width="800", height="255" %} </figure>
 
-Some policies are designed to behave differently depending on the **context**: cross-origin or same-origin request, security (whether the request destination is as secure as the origin), or both. This is useful to limit the amount of information shared across origins or to less secure origins—while maintaining the richness of the referrer within your own site.
+一部のポリシーは、**コンテキスト**に応じて異なる動作をするように設計されています：クロスオリジンまたは同じオリジンのリクエスト、セキュリティ (リクエストの宛先がオリジンと同じくらい安全かどうか)、またはその両方。これは、自分のサイト内のリファラーの豊富さを維持しながら、オリジン間で共有される情報の量を制限したり、安全性の低いオリジンに制限したりするのに役立ちます。
 
-Here is an overview showing how referrer policies restrict the URL data available from the Referer header and `document.referrer`:
+リファラ―ポリシーによってリファラ―ヘッダーと `document.referrer` の使用できる URL データがどのように制限されるかを以下にまとめています。
 
 <figure class="w-figure">{％Img src = "image / admin / BIHWDY60CI317O7IzmQs.jpg"、alt = "セキュリティとクロスオリジンコンテキストに応じた、さまざまなリファラーポリシーとその動作。"、width = "800"、height = "537"％}</figure>
 
@@ -77,7 +77,7 @@ MDN provides a [full list of policies and behavior examples](https://developer.m
 注意事項：
 
 - All policies that take the scheme (HTTPS vs. HTTP) into account (`strict-origin`, `no-referrer-when-downgrade` and `strict-origin-when-cross-origin`) treat requests from an HTTP origin to another HTTP origin the same way as requests from an HTTPS origin to another HTTPS origin—even if HTTP is less secure. That's because for these policies, what matters is whether a security **downgrade** takes place, i.e. if the request can expose data from an encrypted origin to an unencrypted one. An HTTP → HTTP request is unencrypted all along, so there is no downgrade. HTTPS → HTTP requests, on the contrary, present a downgrade.
-- If a request is **same-origin**, this means that the scheme (HTTPS or HTTP) is the same; hence there is no security downgrade.
+- リクエストの**オリジンが同じ**である場合は、スキーム (HTTPS または HTTP) が同じであるため、セキュリティのダウングレードは起こらないことを意味します。
 
 ## ブラウザのデフォルトのリファラーポリシー
 
@@ -96,7 +96,8 @@ MDN provides a [full list of policies and behavior examples](https://developer.m
     <tbody>
       <tr>
         <td>クロム</td>
-        <td>           Planning to switch to <code>strict-origin-when-cross-origin</code> in <a href="https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default">version 85</a> (previously <code>no-referrer-when-downgrade</code>)         </td>
+        <td>
+<a href="https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default">バージョン85で</a><code>strict-origin-when-cross-origin</code>への切り替えを計画しています (以前は<code>no-referrer-when-downgrade</code>)</td>
       </tr>
       <tr>
         <td>Firefox</td>
@@ -129,17 +130,17 @@ MDN provides a [full list of policies and behavior examples](https://developer.m
 
 ## リファラーポリシーの設定：ベストプラクティス
 
-{% Aside 'objective' %} Explicitly set a privacy-enhancing policy, such as `strict-origin-when-cross-origin`(or stricter). {% endAside %}
+{% Aside 'objective' %}`strict-origin-when-cross-origin` (またはそれ以上に厳密なポリシー) などのプライバシー強化ポリシーを明示的に設定します。 {% endAside %}
 
 サイトのリファラーポリシーを設定するには、さまざまな方法があります。
 
-- As an HTTP header
-- Within your [HTML](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML)
-- From JavaScript on a [per-request basis](https://javascript.info/fetch-api#referrer-referrerpolicy)
+- HTTP ヘッダーとして設定する
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML) 内で設定する
+- [リクエストごとに](https://javascript.info/fetch-api#referrer-referrerpolicy) JavaScript から設定する
 
 ページ、リクエスト、要素ごとに異なるポリシーを設定できます。
 
-The HTTP header and the meta element are both page-level. The precedence order when determining an element's effective policy is:
+HTTP ヘッダーとメタ要素はどちらもページレベルです。要素の有効なポリシーを決定する際の優先順位は次のとおりです。
 
 1. 要素レベルのポリシー
 2. ページレベルのポリシー
@@ -158,9 +159,9 @@ The image will be requested with a `no-referrer-when-downgrade` policy, while al
 
 ## リファラーポリシーを確認するにはどうすればよいですか？
 
-[securityheaders.com](https://securityheaders.com/) is handy to determine the policy a specific site or page is using.
+特定のサイトまたはページが使用しているポリシーを判別するには、[securityheaders.com](https://securityheaders.com/) が便利です。
 
-You can also use the developer tools of Chrome, Edge, or Firefox to see the referrer policy used for a specific request. At the time of this writing, Safari doesn't show the `Referrer-Policy` header but does show the `Referer` that was sent.
+Chrome、Edge、または Firefox の開発者ツールを使用して、特定のリクエストに使用されるリファラーポリシーを確認することもできます。この記事の執筆時点では、Safari に`Referrer-Policy`ヘッダーは表示されませんが、送信された`Referer` は表示されます。
 
 <figure class="w-figure">   {% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="A screenshot of the Network panel of Chrome DevTools, showing Referer and Referrer-Policy.", width="800", height="416" %}   <figcaption class="w-figcaption">     Chrome DevTools, <b>Network</b> panel with a request selected.   </figcaption> </figure>
 
@@ -168,16 +169,16 @@ You can also use the developer tools of Chrome, Edge, or Firefox to see the refe
 
 `strict-origin-when-cross-origin` （またはそれ以上）などのプライバシー強化ポリシーを明示的に設定します。
 
-### Why "explicitly"?
+### なぜ「明示的に」設定するのか？
 
-If no referrer policy is set, the browser's default policy will be used—in fact, websites often defer to the browser's default. But this is not ideal, because:
+リファラーポリシーが設定されていない場合は、ブラウザーのデフォルトポリシーが使用されます。実際、Web サイトはブラウザーのデフォルト設定に従うことがよくあります。しかし、これは理想的ではありません。理由は次のとおりです。
 
 - Browser default policies are either `no-referrer-when-downgrade`, `strict-origin-when-cross-origin`, or stricter—depending on the browser and mode (private/incognito). So your website won't behave predictably across browsers.
 - `strict-origin-when-cross-origin`などのより厳密なデフォルトと、クロスオリジンリクエストの[リファラートリミング](https://github.com/privacycg/proposals/issues/13)などのメカニズムを採用しています。ブラウザのデフォルトが変更される前にプライバシー強化ポリシーを明示的にオプトインすると、制御が可能になり、適切と思われるテストを実行できるようになります。
 
-### Why `strict-origin-when-cross-origin` (or stricter)?
+### なぜ`strict-origin-when-cross-origin` (またはより厳密なポリシー) を使うのですか？
 
-You need a policy that is secure, privacy-enhancing, and useful—what "useful" means depends on what you want from the referrer:
+ポリシーは安全で、プライバシーの強化につながり、かつ便利なものが必要だからです。何が「便利」なのかは、リファラーに何を求めているかによって異なります。
 
 - **Secure**: if your website uses HTTPS ([if not, make it a priority](/why-https-matters/)), you don't want your website's URLs to leak in non-HTTPS requests. Since anyone on the network can see these, this would expose your users to person-in-the-middle-attacks. The policies `no-referrer-when-downgrade`, `strict-origin-when-cross-origin`, `no-referrer` and `strict-origin` solve this problem.
 - **Privacy-enhancing**: for a cross-origin request, `no-referrer-when-downgrade` shares the full URL—this is not privacy-enhancing. `strict-origin-when-cross-origin` and `strict-origin` only share the origin, and `no-referrer` shares nothing at all. This leaves you with `strict-origin-when-cross-origin`, `strict-origin`, and `no-referrer` as privacy-enhancing options.
@@ -193,16 +194,16 @@ All of this means that **`strict-origin-when-cross-origin`** is generally a sens
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 ```
 
-Or server-side, for example in Express:
+またはサーバー側、たとえば Express の場合：
 
 ```javascript
 const helmet = require('helmet');
 app.use(helmet.referrerPolicy({policy: 'strict-origin-when-cross-origin'}));
 ```
 
-### What if `strict-origin-when-cross-origin` (or stricter) doesn't accommodate all your use cases?
+### `strict-origin-when-cross-origin` (またはより厳密なポリシー) がすべてのユースケースに対応できない場合はどうしますか？
 
-In this case, take a **progressive approach**: set a protective policy like `strict-origin-when-cross-origin` for your website and if need be, a more permissive policy for specific requests or HTML elements.
+この場合、**プログレッシブアプローチを採用します。**`strict-origin-when-cross-origin`などの保護ポリシーを設定し、必要に応じて、特定のリクエストや HTML 要素に対してより寛容なポリシーを設定します。
 
 ### 例：要素レベルのポリシー
 
@@ -232,44 +233,44 @@ Note that Safari/WebKit may cap `document.referrer` or the `Referer` header for 
 fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 ```
 
-### What else should you consider?
+### 他には何を考慮すべきですか？
 
 Your policy should depend on your website and use cases—this is up to you, your team, and your company. If some URLs contain identifying or sensitive data, set a protective policy.
 
-{% Aside 'warning' %} Data that might not look sensitive to you can be sensitive for your users, or is simply not data they want or expect to silently leak cross-origin. {% endAside %}
+{% Aside 'warning' %}機密性が低いと思われるデータでも、ユーザーにとっては機密性が高いものである場合があります。または、単に不要なデータであったり、オリジン間でサイレントにリークするとは思われていないデータである場合もあります。{% endAside %}
 
-## Using the referrer from incoming requests: best practices
+## 送信されてくるリクエストのリファラーの使用：ベストプラクティス
 
-### What to do if your site's functionality uses the referrer URL of incoming requests?
+### サイトの機能が送信されてくるリクエストのリファラー URL を使用している場合はどうすればよいですか？
 
 #### ユーザーのデータを保護する
 
-The `Referer` may contain private, personal, or identifying data—so make sure you treat it as such.
+`Referer`には、個人データや識別データが含まれている可能性があるため、適切に取り扱う必要があります。
 
-#### Keep in mind that the `Referer` you receive may change
+#### 受信する`Referer`は変更される場合があることを覚えておきましょう。
 
-Using the referrer from incoming cross-origin requests has a few limitations:
+送られてくるクロスオリジンリクエストのリファラーを使用することには、制限がいくつかあります。
 
 - If you have no control over the request emitter's implementation, you can't make assumptions about the `Referer` header (and `document.referrer`) you receive. The request emitter may decide anytime to switch to a `no-referrer` policy, or more generally to a stricter policy than what they used before—meaning you'll get less data via the `Referer` than you used to.
-- Browsers are increasingly using the Referrer-Policy `strict-origin-when-cross-origin` by default. This means that you may now receive only the origin (instead of full referrer URL) in incoming cross-origin requests, if the site that sends these has no policy set.
-- Browsers may change the way they manage `Referer`; for example, in the future, they may decide to always trim referrers to origins in cross-origin subresource requests, in order to protect user privacy.
-- The `Referer` header (and `document.referrer`) may contain more data than you need, for example a full URL when you only want to know if the request is cross-origin.
+- ブラウザには、デフォルトで Referrer-Policy `strict-origin-when-cross-origin` が使用されることを増えつつあります。これは、これらを送信するサイトにポリシーが設定されていない場合は、受信するクロスオリジンリクエストで (完全なリファラーURLではなく) オリジンのみを受信できることを意味します。
+- ブラウザーは `Referer` の管理方法を変更する場合があります。たとえば、将来的には、ユーザーのプライバシーを保護するために、クロスオリジンサブリソースリクエストのオリジンへのリファラーを常にトリミングすることを決定することができます。
+- `Referer`ヘッダー (および`document.referrer`) には、必要以上のデータが含まれている場合があります。たとえば、リクエストがクロスオリジンであるかどうかだけを知りたいときに、完全な URL が含まれている場合があります。
 
 #### `Referer`代替
 
 次の場合は、代替案を検討する必要があります。
 
-- An essential functionality of your site uses the referrer URL of incoming cross-origin requests;
-- And/or if your site is not receiving anymore the part of the referrer URL it needs in a cross-origin request. This happens when the request emitter changed their policy or when they have no policy set and the browser default's policy changed (like in [Chrome 85](https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default)).
+- サイトの重要な機能は、受信するクロスオリジンリクエストのリファラー URL を使用します。
+- および/またはサイトがクロスオリジンリクエストで必要なリファラー URL の一部を受信しなくなった場合。これは、リクエストエミッタがポリシーを変更した場合、またはポリシーが設定されておらず、ブラウザのデフォルトのポリシーが変更された場合に発生します ([Chrome 85など](https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default))。
 
-To define alternatives, analyze first what part of the referrer you're using.
+代替案を定義するには、最初にリファラーのどの部分を使用しているかを分析します。
 
-**If you only need the origin (`https://site-one.example`):**
+**オリジンのみが必要な場合 (`https://site-one.example`)：**
 
-- If you're using the referrer in a script that has top-level access to the page, `window.location.origin` is an alternative.
+- ページへのトップレベルのアクセス権を持つスクリプトでリファラーを使用している場合は、`window.location.origin` が代わりとなります。
 - If available, headers like [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) and [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) give you the `Origin` or describe whether the request is cross-origin, which may be exactly what you need.
 
-**If you need other elements of the URL (path, query parameters…):**
+**URL の他の要素 (パス、クエリパラメータなど) が必要な場合：**
 
 - リクエストパラメータはユースケースに対応している可能性があり、これによりリファラーを解析する手間が省けます。
 - If you're using the referrer in a script that has top-level access to the page, `window.location.pathname` may be an alternative. Extract only the path section of the URL and pass it on as an argument, so any potentially sensitive information in the URL parameters isn't passed on.
@@ -277,9 +278,9 @@ To define alternatives, analyze first what part of the referrer you're using.
 **これらの代替手段を使用できない場合：**
 
 - Check if your systems can be changed to expect the request emitter (`site-one.example`) to explicitly set the information you need in a configuration of some sort. Pro: more explicit, more privacy-preserving for `site-one.example` users, more future-proof. Con: potentially more work from your side or for your system's users.
-- Check whether the site that emits the requests may agree to set a per-element or per-request Referrer-Policy of `no-referrer-when-downgrade`. Con: potentially less privacy-preserving for `site-one.example` users, potentially not supported in all browsers.
+- リクエストを発信するサイトが、要素ごとまたはリクエストごとのリファラーポリシーを `no-referrer-when-downgrade` に設定することに同意するかどうかを確認します。 `site-one.example` のユーザーのプライバシー保護が低下する可能性があり、すべてのブラウザーでサポートされるとは限りません。
 
-### Cross-Site Request Forgery (CSRF) protection
+### クロスサイトリクエストフォージェリ (CSRF) 保護
 
 Note that a request emitter can always decide not to send the referrer by setting a `no-referrer` policy (and a malicious actor could even spoof the referrer).
 
@@ -287,32 +288,32 @@ Use [CSRF tokens](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Requ
 
 ### ロギング
 
-Make sure to protect users' personal or sensitive data that may be in the `Referer`.
+`Referer` 含まれている可能性のあるユーザーの個人データまたは機密データを必ず保護してください。
 
-If you're only using the origin, check if the [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) header could be an alternative. This may give you the information that you need for debugging purposes in a simpler way and without needing to parse the referrer.
+オリジンのみを使用している場合は、[`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) ヘッダーを代替として使用できるかどうかを確認してください。そうすることで、わざわざリファラーを解析せずに、デバッグに必要な情報をより簡単に得られる場合があります。
 
 ### 支払い
 
-Payment providers may rely on the `Referer` header of incoming requests for security checks.
+支払いプロバイダーは、セキュリティチェックを行う際に、受信するリクエストの `Referer` ヘッダーを確認する場合がります。
 
 For example:
 
 - The user clicks a **Buy** button on `online-shop.example/cart/checkout`.
-- `online-shop.example` redirects to `payment-provider.example` to manage the transaction.
-- `payment-provider.example` checks the `Referer` of this request against a list of allowed `Referer` values set up by the merchants. If it doesn't match any entry in the list, `payment-provider.example` rejects the request. If it does match, the user can proceed to the transaction.
+- `online-shop.example` は、取引を管理するため `payment-provider.example` にリダイレクトします。
+- `payment-provider.example` は、このリクエストの `Referer` をマーチャントが設定した許可されている `Referer` 値のリストと照合します。リストのどのエントリとも一致しない場合、`payment-provider.example`はリクエストを拒否します。一致する場合、ユーザーは取引に進むことができます。
 
 #### 支払いフローのセキュリティチェックのベストプラクティス
 
-**Summary: as a payment provider, you can use the `Referer` as a basic check against naive attacks—but you should absolutely have another, more reliable verification method in place.**
+**まとめ: 支払いプロバイダーは、`Referer` をナイーブな攻撃に対する基本的なチェックとして使用できますが、他にも信頼性の高い検証方法を絶対に用意しておく必要があります。**
 
 The `Referer` header alone isn't a reliable basis for a check: the requesting site, whether they're a legitimate merchant or not, can set a `no-referrer` policy which will make the `Referer` information unavailable to the payment provider. However, as a payment provider, looking at the `Referer` may help you catch naive attackers who did not set a `no-referrer` policy. So you can decide to use the `Referer` as a first basic check. If you do so:
 
 - **Do not expect the `Referer` to always be present; and if it's present, only check against the piece of data it will include at the minimum: the origin**. When setting the list of allowed `Referer` values, make sure that no path is included, but only the origin. Example: the allowed `Referer` values for `online-shop.example` should be `online-shop.example`, not `online-shop.example/cart/checkout`. Why? Because by expecting either no `Referer` at all or a `Referer` value that is the origin of the requesting website, you prevent unexpected errors since you're **not making assumptions about the `Referrer-Policy`** your merchant has set or about the browser's behavior if the merchant has no policy set. Both the site and the browser could strip the `Referer` sent in the incoming request to only the origin or not send the `Referer` at all.
-- If the `Referer` is absent or if it's present and your basic `Referer` origin check was successful: you can move onto your other, more reliable verification method (see below).
+- `Referer` が存在しない場合、またはリファラーが存在し、基本的な`Referer` 発信元チェックが成功した場合は、もう 1 つのより信頼性が高い検証方法を試します (以下を参照)。
 
-**What is a more reliable verification method?**
+**より信頼性の高い検証方法とは何ですか？**
 
-One reliable verification method is to let the requester **hash the request parameters** together with a unique key. As a payment provider, you can then **calculate the same hash on your side** and only accept the request if it matches your calculation.
+信頼できる検証方法の 1 つとして、リクエスターに**一意のキーを使ってリクエストパラメーターをハッシュ化させる**という方法があります。支払いプロバイダーとして、**同じハッシュを自分サイドで計算する**ことにより、自分の計算結果と一致した場合にのみ、そのリクエストを受け入れるということができます。
 
 **What happens to the `Referer` when an HTTP merchant site with no referrer policy redirects to an HTTPS payment provider?**
 
@@ -320,27 +321,27 @@ No `Referer` will be visible in the request to the HTTPS payment provider, becau
 
 {% Aside %}
 
-If your website uses HTTP, [migrate to HTTPS](/why-https-matters/).
+Web サイトに HTTP を使用している場合は、 [HTTPS に移行します](/why-https-matters/)。
 
 {% endAside %}
 
 ## 結論
 
-A protective referrer policy is a great way to give your users more privacy.
+保護リファラーポリシーは、ユーザーのプライバシーを高める優れた方法です。
 
-To learn more about different techniques to protect your users, check out web.dev's [Safe and secure](/secure/) collection!
+ユーザーを保護するさまざまな手法の詳細については、web.dev の [Safe and secure](/secure/) コレクションをご覧ください！
 
-*With many thanks for contributions and feedback to all reviewers - especially Kaustubha Govind, David Van Cleve, Mike West, Sam Dutton, Rowan Merewood, Jxck and Kayce Basques.*
+*Kaustubha Govind、David Van Cleve、Mike West、Sam Dutton、Rowan Merewood、Jxck、Kayce Basques をはじめとする、すべてのレビューアーの貢献とフィードバックに感謝いたします。*
 
-## Resources
+## リソース
 
 - [Understanding "same-site" and "same-origin"](/same-site-same-origin/)
-- [A new security header: Referrer Policy (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
+- [新しいセキュリティヘッダー：リファラーポリシー (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
 - [Referrer-Policy on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
 - [Referer header: privacy and security concerns on MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
-- [Chrome change: Blink intent to implement](https://groups.google.com/a/chromium.org/d/msg/blink-dev/aBtuQUga1Tk/n4BLwof4DgAJ)
-- [Chrome change: Blink intent to ship](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/lqFuqwZDDR8)
-- [Chrome change: status entry](https://www.chromestatus.com/feature/6251880185331712)
-- [Chrome change: 85 beta blogpost](https://blog.chromium.org/2020/07/chrome-85-upload-streaming-human.html)
-- [Referrer trimming GitHub thread: what different browsers do](https://github.com/privacycg/proposals/issues/13)
-- [Referrer-Policy Spec](https://w3c.github.io/webappsec-referrer-policy/#referrer-policy-delivery)
+- [Chrome の変更：Blink Intent to Implement](https://groups.google.com/a/chromium.org/d/msg/blink-dev/aBtuQUga1Tk/n4BLwof4DgAJ)
+- [Chrome の変更：Blink Intent to Ship](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/lqFuqwZDDR8)
+- [Chrome の変更：ステータスエントリ](https://www.chromestatus.com/feature/6251880185331712)
+- [Chrome の変更：85 件のベータ版ブログ記事](https://blog.chromium.org/2020/07/chrome-85-upload-streaming-human.html)
+- [GitHub スレッドをトリミングするリファラ―：さまざまなブラウザーの機能](https://github.com/privacycg/proposals/issues/13)
+- [リファラーポリシーの仕様](https://w3c.github.io/webappsec-referrer-policy/#referrer-policy-delivery)
