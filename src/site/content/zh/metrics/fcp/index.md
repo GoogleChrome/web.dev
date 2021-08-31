@@ -24,30 +24,30 @@ tags:
 您会注意到，虽然部分内容已完成渲染，但并非所有内容都已经完成渲染。这是*首次*内容绘制 (FCP) 与*[ Largest Contentful Paint 最大内容绘制 (LCP) ](/lcp/)*（旨在测量页面的主要内容何时完成加载）之间的重要区别。
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">   {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Good FCP values are 1.8 seconds or less, poor values are greater than 3.0 seconds and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="良好的 FCP 值是 1.8 秒或更短，差的值大于 3.0 秒，中间的任何东西都需要改进", width="400", height "300", class="w-screenshot w-screenshot--filled width-full" %}</source></picture>
 
 ### 怎样算是良好的 FCP 分数？
 
 为了提供良好的用户体验，网站应该努力将首次内容绘制控制在**&nbsp;1.8 秒**或以内。为了确保您能够在大部分用户的访问期间达成建议目标值，一个良好的测量阈值为页面加载的**第 75 个百分位数**，且该阈值同时适用于移动和桌面设备。
 
-## How to measure FCP
+## 如何测量 FCP
 
 FCP 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量或[实际](/user-centric-performance-metrics/#in-the-field)测量，并且可以在以下工具中使用：
 
 ### 实测工具
 
 - [PageSpeed Insights 网页速度测量工具](https://developers.google.com/speed/pagespeed/insights/)
-- [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [搜索控制台（速度报告）](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
-- [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
+- [`web-vitals` JavaScript 库](https://github.com/GoogleChrome/web-vitals)
 
-### Lab tools
+### 实验室工具
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+- [灯塔](https://developers.google.com/web/tools/lighthouse/)
+- [Chrome 开发者工具](https://developers.google.com/web/tools/chrome-devtools/)
 - [PageSpeed Insights 网页速度测量工具](https://developers.google.com/speed/pagespeed/insights/)
 
-### Measure FCP in JavaScript
+### 在 JavaScript 中测量 FCP
 
 要在 JavaScript 中测量 FCP，您可以使用[绘制计时 API](https://w3c.github.io/paint-timing/)。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)来侦听名称为`first-contentful-paint`的`paint`条目并记录在控制台中。
 
@@ -67,9 +67,9 @@ new PerformanceObserver((entryList) => {
 
 在上方的示例中，已记录的`first-contentful-paint`条目会告诉您首个内容元素的绘制时间点。但在某些情况下，该条目并不能够用来测量 FCP。
 
-The following section lists the differences between what the API reports and how the metric is calculated.
+以下部分列出了 API 报告的内容与指标计算方式之间的差异。
 
-#### Differences between the metric and the API
+#### 指标和 API 之间的差异
 
 - API 会为在后台选项卡中加载的页面分发`first-contentful-paint`条目，但在计算 FCP 时应忽略这些页面（只有当页面始终处于前台时才应考虑首次绘制的时机）。
 - 当页面通过[往返缓存](/bfcache/#impact-on-core-web-vitals)恢复时，API 不会报告`first-contentful-paint`条目，但在这些情况下应该测量 FCP，因为这对用户来说是多次不同的页面访问体验。
@@ -84,7 +84,7 @@ import {getFCP} from 'web-vitals';
 getFCP(console.log);
 ```
 
-You can refer to [the source code for `getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts) for a complete example of how to measure FCP in JavaScript.
+您可以参考[`getFCP()`的源代码](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts)，了解如何在 JavaScript 中测量 FCP 的完整示例。
 
 {% Aside %}在某些情况下（例如跨域 iframe），FCP 无法在 JavaScript 中进行测量。详情请参阅`web-vitals`库的[局限性](https://github.com/GoogleChrome/web-vitals#limitations)部分。 {% endAside %}
 
@@ -95,16 +95,16 @@ You can refer to [the source code for `getFCP()`](https://github.com/GoogleChrom
 要了解改进 FCP 的常见方式（针对任何网站），请参阅以下性能指南：
 
 - [消除阻塞渲染的资源](/render-blocking-resources/)
-- [Minify CSS](/unminified-css/)
+- [缩小 CSS](/unminified-css/)
 - [移除未使用的 CSS](/unused-css-rules/)
 - [预连接到所需的来源](/uses-rel-preconnect/)
-- [Reduce server response times (TTFB)](/time-to-first-byte/)
-- [Avoid multiple page redirects](/redirects/)
+- [减少服务器响应时间 (TTFB)](/time-to-first-byte/)
+- [避免多个页面重定向](/redirects/)
 - [预加载关键请求](/uses-rel-preload/)
-- [Avoid enormous network payloads](/total-byte-weight/)
+- [避免巨大的网络负载](/total-byte-weight/)
 - [使用高效的缓存策略服务静态资产](/uses-long-cache-ttl/)
 - [避免 DOM 过大](/dom-size/)
-- [Minimize critical request depth](/critical-request-chains/)
+- [最小化关键请求深度](/critical-request-chains/)
 - [确保文本在网页字体加载期间保持可见](/font-display/)
 - [保持较低的请求数和较小的传输大小](/resource-summary/)
 
