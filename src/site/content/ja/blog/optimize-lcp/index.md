@@ -1,6 +1,6 @@
 ---
 title: Largest Contentful Paint を最適化する
-subhead: How to render your main content faster.
+subhead: メインコンテンツをより速くレンダリングする方法。
 authors:
   - houssein
 date: 2020 年 5 月 5 日
@@ -25,7 +25,7 @@ tags:
 [Largest Contentful Paint](/lcp) (最大視覚コンテンツの表示時間、LCP) は [Core Web Vitals](/vitals/) に含まれている指標であり、ビューポート内で最もサイズが大きいコンテンツ要素の表示タイミングを測定します。この指標は、ページのメイン コンテンツの画面へのレンダリングが完了したタイミングを判断するために使用されます。
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)">{％Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / 9trpfS9wruEPGekHqBdn.svg"、alt = "良好なLCP値は2.5秒、不良な値は4.0秒を超え、その間の値は改善が必要"、width = "384"、height = "96 "、class =" w-screenshot w-screenshot--filled width-full "％}</source></picture>
 
 LCP が低下する要因としては、一般的に以下のものが考えられます。
 
@@ -40,14 +40,14 @@ LCP が低下する要因としては、一般的に以下のものが考えら�
 
 何よりもまず、サーバーがコンテンツを処理する方法と場所を改善しましょう。サーバーの応答時間を測定するには、[**Time to First Byte**](/time-to-first-byte) (サーバーの初期応答時間、TTFB) を使用します。TTFB の改善には、以下のような様々な方法があります。
 
-- Optimize your server
+- サーバーを最適化する
 - ユーザーを近くの CDN にルーティングする
 - アセットをキャッシュする
 - HTML ページをキャッシュファーストで配信する
-- Establish third-party connections early
+- サードパーティの接続を早期に確立する
 - Signed Exchange (SXG) を使用する
 
-### Optimize your server
+### サーバーを最適化する
 
 サーバーが処理を完了するまでにかなり長い時間がかかってしまうような、負荷が高いクエリを実行していませんか？あるいは、別の複雑な処理がサーバーサイドで実行されていて、ページ コンテンツを返す処理に遅延が発生していませんか？サーバーサイドのコードを分析して効率化することで、ブラウザーがデータを受け取るまでの時間を直接的に改善することができます。
 
@@ -165,7 +165,7 @@ Chrome DevTools の [Coverage](https://developers.google.com/web/tools/chrome-de
 
 Above the fold (アバブ・ザ・フォールド、スクロールせずに閲覧可能なサイトのファースト ビューを指す) のコンテンツに使用されているクリティカル パス CSS は、`<head>` タグ内に直接記述してインライン化します。
 
-<figure class="w-figure">   {% Img     src="image/admin/m0n0JsLpH9JsNnXywSwz.png",     alt="Critical CSS inlined",     width="800", height="325",     class="w-screenshot w-screenshot--filled"   %}   <figcaption class="w-figcaption">Critical CSS inlined</figcaption> </figure>
+<figure class="w-figure">{％Img src = "image / admin / m0n0JsLpH9JsNnXywSwz.png"、alt = "Critical CSS inlined"、width = "800"、height = "325"、class = "w-screenshot w-screenshot--filled"％}<figcaption class="w-figcaption">重要なCSSがインライン化</figcaption></figure>
 
 重要なスタイルをインライン化してしまえば、重要な CSS を取得するために順番にリクエストを行う必要がなくなります。そして、残りの部分を先送りすることによって CSS のブロック時間を最小限に抑えることができるようになります。
 
@@ -219,7 +219,7 @@ CSS や JavaScript によるブロック時間の増加はパフォーマンス�
 - まず第一に、画像を使用しないことを検討します。コンテンツに関係のない画像は、削除しましょう。
 - 画像を圧縮する (たとえば [Imagemin](/use-imagemin-to-compress-images) を使用)
 - 画像をより新しい形式 (JPEG 2000、JPEG XR、WebP) に変換する
-- Use responsive images
+- レスポンシブ画像を使用する
 - 画像 CDN の使用を検討する
 
 {% Aside %}これらの技術について詳細に説明しているガイドやリソースについては、「[画像を最適化する](/fast/#optimize-your-images)」を参照してください。{% endAside %}
@@ -339,7 +339,7 @@ Service Worker を使用して重要なリソースを事前にキャッシュ�
 
 {% Aside %}さまざまな種類のサーバーサイド レンダリング アーキテクチャの詳細については、「[Web 上でのレンダリング](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)」を参照してください。{% endAside %}
 
-## Developer tools
+## 開発者ツール
 
 LCP を測定またはデバッグするためのツールは、以下のように様々なものが用意されています。
 
