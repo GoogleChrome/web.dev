@@ -34,7 +34,7 @@ tags:
 
 看完了这些介绍，我们现在就来深入了解各个工具的具体更新！
 
-### Lighthouse
+### 灯塔
 
 灯塔是一款自动化网站审计工具，可以帮助开发者诊断问题并发掘改善网站用户体验的机会。这款工具在实验室环境中测量用户体验质量的多个维度，包括性能和可访问性。灯塔的最新版本（[6.0](/lighthouse-whats-new-6.0/)，于 2020 年 5 月中旬发布）中包括额外的审计项、新指标和新的性能分数组成。
 
@@ -71,8 +71,8 @@ PageSpeed Insights 和 [PageSpeed Insights API](https://developers.google.com/sp
 今天，我们很高兴地向大家推出 [CrUX API](http://developers.google.com/web/tools/chrome-user-experience-report/api/reference/) ，这款 API 能够通过一种快速且免费的方式，轻松将您的开发工作流程与下列实际指标的域级和 URL 级质量测量进行集成：
 
 - 最大内容绘制
-- Cumulative Layout Shift
-- First Input Delay
+- 累积布局偏移
+- 首次输入延迟
 - 首次内容绘制
 
 开发者可以查询域或 URL，并按不同的形式因素对结果进行细分。 API 会每日更新并汇总前 28 天的数据（与每月汇总的 BigQuery 数据集不同）。这款 API 也拥有充足的公共 API 配额，与另一个 PageSpeed Insights API 相同（每日 25,000 个请求）。
@@ -112,12 +112,12 @@ Chrome 开发者工具的**性能**面板中有一个全新的**[体验部分](h
 {% Instruction 'devtools-performance', 'ol' %}
 
 1. 单击**录制**。
-2. Manually reload the page.
-3. Wait for the page to load and then stop recording.
+2. 手动重新加载页面。
+3. 等待页面加载，然后停止录制。
 
 如需了解更多信息，请参阅[开发者工具新增功能 (Chrome 84)](https://developers.google.com/web/updates/2020/05/devtools#cls)。
 
-### Search Console
+### 搜索控制台
 
 搜索控制台中全新的[核心 Web 指标报告](https://support.google.com/webmasters/answer/9205520)可以帮助您根据 CrUX 的真实世界（实际）数据识别网站中需要重点关注的页面组。URL 性能会按状态、指标类型和 URL 组（相似网页的组）进行分组。
 
@@ -141,7 +141,7 @@ Web 指标扩展程序实时测量（桌面）Google Chrome 的三项核心 Web 
 
 <figure class="w-figure">{% Img src="image/admin/woROdEmNV4jlHDPryjBQ.png", alt="使用 Web 指标 Chrome 扩展程序实时显示的核心 Web 指标", width="800", height="459", class="w-screenshot” ％}</figure>
 
-#### Quick highlights
+#### 快速亮点
 
 内容到这里就结束了！您接下来可以做什么：
 
