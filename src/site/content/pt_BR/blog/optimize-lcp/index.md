@@ -1,12 +1,12 @@
 ---
 title: Otimização da Largest Contentful Paint
-subhead: How to render your main content faster.
+subhead: Como renderizar seu conteúdo principal mais rápido.
 authors:
   - houssein
 date: '2020-05-05'
 updated: '2020-08-20'
 hero: image/admin/qqTKhxUFqdLXnST2OFWN.jpg
-alt: Optimize LCP banner
+alt: Otimize o banner LCP
 description: A métrica Largest Contentful Paint (LCP) pode ser usada para determinar quando o conteúdo principal da página terminou a renderização na tela. Aprenda como otimizar a LCP ao melhorar tempos de resposta lentos do servidor, tempos de carregamento de recursos e renderização no lado do cliente.
 tags:
   - blog
@@ -17,7 +17,7 @@ tags:
 {% YouTube id='AQqFZ5t8uNc', startTime='1073' %}
 
 <blockquote>
-  <p>     I can't see any useful content! Why does it take so long to load? 😖   </p>
+  <p>Não consigo ver nenhum conteúdo útil! Por que demora tanto para carregar? 😖</p>
 </blockquote>
 
 Um fator que contribui para uma experiência ruim do usuário é quanto tempo leva para um usuário ver qualquer conteúdo renderizado na tela. A métrica [First Contentful Paint](/fcp) - FCP (primeira renderização de conteúdo) mede quanto tempo leva para o conteúdo DOM inicial ser renderizado, mas não captura quanto tempo levou para o conteúdo maior (geralmente mais significativo) na página ser renderizado.
@@ -25,14 +25,14 @@ Um fator que contribui para uma experiência ruim do usuário é quanto tempo le
 [Largest Contentful Paint](/lcp) - LCP (maior renderização de conteúdo) é uma métrica [Core Web Vitals](/vitals/) e mede quando o maior elemento de conteúdo na janela de visualização se torna visível. Ela pode ser usada para determinar quando o conteúdo principal da página terminou de ser renderizado na tela.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)">{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / 9trpfS9wruEPGekHqBdn.svg", alt = "Bons valores de LCP são 2,5 segundos, valores baixos são maiores que 4,0 segundos e qualquer coisa entre precisa de melhorias", largura = "384", altura = "96 ", classe =" w-screenshot w-screenshot - preenchido com largura total "%}</source></picture>
 
 As causas mais comuns de uma LCP ruim são:
 
-- [Slow server response times](#slow-servers)
+- [Tempos de resposta lentos do servidor](#slow-servers)
 - [JavaScript e CSS que bloqueiam a renderização](#render-blocking-resources)
-- [Slow resource load times](#slow-resource-load-times)
-- [Client-side rendering](#client-side-rendering)
+- [Tempos lentos de carregamento de recursos](#slow-resource-load-times)
+- [Renderização do lado do cliente](#client-side-rendering)
 
 ## Tempos de resposta lentos do servidor {:#slow-servers}
 
@@ -73,7 +73,7 @@ Há muitas alternativas diferentes de usar cache no servidor; a escolha depende 
 
 Quando instalado, um [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) é executado em segundo plano do navegador e pode interceptar solicitações do servidor. Este nível de controle de cache programático permite armazenar em cache parte ou todo o conteúdo de uma página HTML e apenas atualizar o cache quando o conteúdo for alterado.
 
-The following chart shows how LCP distributions have been reduced on a site using this pattern:
+O gráfico a seguir mostra como as distribuições de LCP foram reduzidas em um site usando este padrão:
 
 <figure class="w-figure">{% Img src="image/admin/uB0Sm56R88MRF16voQ1k.png", alt="Distribuições de Largest Contentful Paint antes e depois do uso de cache HTML", width="800", height="495" %} <figcaption class="w-figcaption"> Distribuição de Largest Contentful Paint para carregamento de páginas com e sem service worker - <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a> </figcaption></figure>
 
@@ -95,7 +95,7 @@ Você também pode usar `dns-prefetch` para resolver consultas DNS mais rapidame
 <link rel="dns-prefetch" href="https://example.com" />
 ```
 
-Although both hints work differently, consider using `dns-prefetch` as a fallback for browsers that do not support `preconnect`.
+Embora as duas dicas funcionem de maneira diferente, considere o uso de `dns-prefetch` como um substituto para navegadores que não oferecem suporte à `preconnect` .
 
 ```html
 <head>
@@ -131,9 +131,9 @@ Para facilitar a legibilidade, os arquivos CSS podem conter caracteres como espa
 
 Se você usar um empacotador de módulos ou ferramenta de build, inclua um plug-in apropriado para minificar os arquivos CSS em cada build:
 
-- For webpack: [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin)
-- For Gulp: [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css)
-- For Rollup: [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter)
+- Para webpack: [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin)
+- Para Gulp: [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css)
+- Para Rollup: [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter)
 
 <figure class="w-figure">   {% Img     src="image/admin/vQXSKrY1Eq3CKkNbu9Td.png",     alt="Exemplo de melhoria de LCP: antes e depois de minificar CSS",     width="800",     height="139"   %}   <figcaption class="w-figcaption"> Exemplo de melhoria de LCP: antes e depois de minificar CSS </figcaption></figure>
 
@@ -147,7 +147,7 @@ Use a aba [Coverage](https://developers.google.com/web/tools/chrome-devtools/cov
 
 Para otimizar:
 
-- Remove any unused CSS entirely or move it to another stylesheet if used on a separate page of your site.
+- Remova qualquer CSS não utilizado inteiramente ou mova-o para outra folha de estilo, se usado em uma página separada do seu site.
 
 - Para qualquer CSS não necessário para renderização inicial, use [loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md) para carregar arquivos de forma assíncrona, o que alavanca `rel="preload"` e `onload` .
 
@@ -169,9 +169,9 @@ Embuta qualquer CSS essencial que é usado para conteúdo acima da dobra incluin
 
 Embutir estilos importantes elimina a necessidade de fazer uma solicitação de ida e volta para buscar CSS crítico. Adiar o restante minimiza o tempo de bloqueio do CSS.
 
-If you cannot manually add inline styles to your site, use a library to automate the process. Some examples:
+Se você não pode adicionar manualmente estilos embutidos ao seu site, use uma biblioteca para automatizar o processo. Alguns exemplos:
 
-- [Critical](https://github.com/addyosmani/critical), [CriticalCSS](https://github.com/filamentgroup/criticalCSS), and [Penthouse](https://github.com/pocketjoso/penthouse) are all packages that extract and inline above-the-fold CSS
+- [Critical](https://github.com/addyosmani/critical) , [CriticalCSS](https://github.com/filamentgroup/criticalCSS) e [Penthouse](https://github.com/pocketjoso/penthouse) são pacotes que extraem e embutem CSS acima da dobra
 - [Critters](https://github.com/GoogleChromeLabs/critters) é um plugin webpack que embute CSS crítico e carrega o resto de forma lazy
 
 <figure class="w-figure">   {% Img     src="image/admin/L8sc51bd3ckxwnUfczC4.png",     alt="Exemplo de melhoria da LCP: antes e depois de embutir CSS crítico",     width="800",     height="175"   %}   <figcaption class="w-figcaption">    Exemplo de melhoria da LCP: antes e depois de embutir CSS crítico   </figcaption></figure>
@@ -195,9 +195,9 @@ Isto pode ser feito otimizando seus scripts de maneiras diferentes:
 Embora um aumento no tempo de bloqueio do CSS ou JavaScript resulte diretamente em pior desempenho, o tempo que leva para carregar vários outros tipos de recursos também pode afetar os tempos de renderização. Os tipos de elementos que afetam a LCP são:
 
 - Elementos `<img>`
-- `<image>` elements inside an `<svg>` element
+- `<image>` dentro de um elemento `<svg>`
 - `<video>` (a imagem [poster](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-poster) é usada para medir a LCP)
-- An element with a background image loaded via the [`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url()) function (as opposed to a CSS gradient)
+- Um elemento com uma imagem de plano de fundo carregada por meio da [`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url()) (em oposição a um gradiente CSS)
 - [Elementos de nível de bloco](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) contendo nós de texto ou outros elementos de texto inline
 
 O tempo que leva para carregar esses elementos, se renderizados acima da dobra, terá um efeito direto na LCP. Seguem algumas técnicas para garantir que esses arquivos sejam carregados o mais rápido possível:
@@ -206,7 +206,7 @@ O tempo que leva para carregar esses elementos, se renderizados acima da dobra, 
 - Pré-carregamento de recursos importantes
 - Compactação de arquivos de texto
 - Entrega de diferentes ativos com base na conexão de rede (serviço adaptável)
-- Cache assets using a service worker
+- Ativos de cache usando um service worker
 
 ### Otimização e compressão de imagens
 
@@ -218,8 +218,8 @@ Melhorar o tempo que leva para carregar e renderizar esses tipos de imagens irá
 
 - Considere a possibilidade de não usar uma imagem. Se não for relevante para o conteúdo, remova-a.
 - Comprima imagens (com [Imagemin](/use-imagemin-to-compress-images) por exemplo)
-- Convert images into newer formats (JPEG 2000, JPEG XR, or WebP)
-- Use responsive images
+- Converta imagens em formatos mais recentes (JPEG 2000, JPEG XR ou WebP)
+- Use imagens responsivas
 - Considere usar um CDN de imagens
 
 {% Aside %} Dê uma olhada em [Otimize suas imagens](/fast/#optimize-your-images) para guias e recursos que explicam todas essas técnicas em detalhes. {% endAside %}
@@ -257,7 +257,7 @@ Algoritmos de compactação, como [Gzip](https://www.youtube.com/watch?v=whGwm0L
 Comprimir seus recursos minimizará seu tamanho de entrega, melhorando o tempo de carregamento e consequentemente a LCP.
 
 1. Primeiro, verifique se o seu servidor já compacta os arquivos automaticamente. A maioria das plataformas de hospedagem, CDNs e servidores proxy reverso já faz compactação por default ou permite que você os configure facilmente para isto.
-2. If you need to modify your server to compress files, consider using Brotli instead of gzip since it can provide better compression ratios.
+2. Se você precisar modificar seu servidor para compactar arquivos, considere o uso de Brotli em vez de gzip, pois ele pode fornecer melhores taxas de compactação.
 3. Depois de escolher um algoritmo de compactação para usar, compacte os ativos durante o processo de build, em vez de durante o processo em que eles são solicitados pelo navegador. Isto minimiza a sobrecarga do servidor e evita atrasos quando as solicitações forem feitas, especialmente quando estiver usando altas taxas de compactação.
 
 <figure class="w-figure">   {% Img     src="image/admin/Ckh2Jjkoh7ojLj5Wxeqc.png",     alt="Exemplo de melhoria de LCP: antes e depois da compressão Brotli",     width="800",     height="139"   %}   <figcaption class="w-figcaption">     Exemplo de melhoria de LCP: antes e depois da compressão Brotli   </figcaption></figure>
@@ -268,7 +268,7 @@ Comprimir seus recursos minimizará seu tamanho de entrega, melhorando o tempo d
 
 Ao carregar recursos que constituem o conteúdo principal de uma página, pode ser eficaz buscar condicionalmente diferentes ativos, dependendo do dispositivo do usuário ou das condições da rede. Isto pode ser feito usando as APIs [Network Information](https://wicg.github.io/netinfo/), [Device Memory](https://www.w3.org/TR/device-memory/) e  [HardwareConcurrency](https://html.spec.whatwg.org/multipage/workers.html#navigator.hardwareconcurrency).
 
-If you have large assets that are critical for initial rendering, you can use different variations of the same resource depending on the user's connection or device. For example, you can display an image instead of a video for any connection speeds lower than 4G:
+Se você tiver grandes ativos que são críticos para a renderização inicial, você pode usar diferentes variações do mesmo recurso, dependendo da conexão ou dispositivo do usuário. Por exemplo, você pode exibir uma imagem em vez de um vídeo para qualquer velocidade de conexão inferior a 4G:
 
 ```js
 if (navigator.connection && navigator.connection.effectiveType) {
@@ -280,16 +280,16 @@ if (navigator.connection && navigator.connection.effectiveType) {
 }
 ```
 
-A list of useful properties that you can use:
+Uma lista de propriedades úteis que você pode usar:
 
 - `navigator.connection.effectiveType`: tipo de conexão efetiva
 - `navigator.connection.saveData`: salvamento de dados ativado/desativado
 - `navigator.hardwareConcurrency`: contagem de núcleos de CPU
-- `navigator.deviceMemory`: Device Memory
+- `navigator.deviceMemory` : memória do dispositivo
 
 {% Aside %} Para mais informações, consulte o guia [Serviço adaptável com base na qualidade da rede](/adaptive-serving-based-on-network-quality/). {% endAside %}
 
-### Cache assets using a service worker
+### Ativos de cache usando um service worker
 
 Os service workers podem ser usados para muitas tarefas úteis, incluindo a entrega de respostas HTML menores, conforme mencionado anteriormente neste artigo. Eles também podem ser usados para armazenar em cache qualquer recurso estático que possa ser servido ao navegador em vez de ser transferido pela rede em solicitações repetidas.
 
@@ -313,9 +313,9 @@ Ao construir um site renderizado do lado do cliente, considere a realização da
 
 Se o conteúdo do seu site só se torna visível ou permite interações depois que uma certa quantidade de JavaScript é baixada, torna-se ainda mais importante reduzir o tamanho do seu pacote o máximo possível. Isto pode ser feito através das seguintes estratégias:
 
-- Minifying JavaScript
-- Deferring unused JavaScript
-- Minimizing unused polyfills
+- Minificando JavaScript
+- Adiando JavaScript não utilizado
+- Minimizando polyfills não usados
 
 Volte para a seção [Redução do tempo de bloqueio do JavaScript](#reduce-javascript-blocking-time) para ler mais sobre essas otimizações.
 
@@ -326,7 +326,7 @@ Minimizar a quantidade de JavaScript deve sempre ser a primeira coisa a se conce
 Esse conceito funciona usando o servidor para renderizar o aplicativo em HTML, onde o cliente depois "[hidrata](https://www.gatsbyjs.org/docs/react-hydration/)" todo o JavaScript e os dados necessários no mesmo conteúdo DOM. Isto pode melhorar a LCP, garantindo que o conteúdo principal da página seja renderizado primeiro no servidor, e não apenas no cliente, mas existem algumas desvantagens:
 
 - Manter o mesmo aplicativo renderizado por JavaScript no servidor e no cliente pode aumentar a sua complexidade.
-- Executing JavaScript to render an HTML file on the server will always increase server response times (TTFB) as compared to just serving static pages from the server.
+- Executar JavaScript para renderizar um arquivo HTML no servidor sempre aumentará os tempos de resposta do servidor (TTFB) em comparação com apenas servir páginas estáticas do servidor.
 - Uma página renderizada pelo servidor pode parecer que é capaz de interagir, mas não será capaz de responder a nenhuma entrada do usuário até que todo o JavaScript do lado do cliente tenha sido executado. Resumindo, isto pode piorar a métrica [**Time to Interactive**](/tti/) (TTI).
 
 ### Usar pré-renderização
@@ -337,11 +337,11 @@ Com a pré-renderização, a TTI ainda é impactada negativamente, mas os tempos
 
 <figure class="w-figure">   {% Img     src="image/admin/sm9s16UHfh8a5MDEWjxa.png",     alt="Exemplo de melhoria de LCP: antes e depois da pré-renderização",     width="800",     height="139"   %}   <figcaption class="w-figcaption">     Exemplo de melhoria de LCP: antes e depois da pré-renderização   </figcaption></figure>
 
-{% Aside %} For a deeper dive into different server-rendering architectures, take a look at [Rendering on the web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web). {% endAside %}
+{% Aside %} Para um mergulho mais profundo em diferentes arquiteturas de renderização de servidor, dê uma olhada em [Renderização na web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web) . {% endAside %}
 
-## Developer tools
+## Ferramentas de desenvolvimento
 
-A number of tools are available to measure and debug LCP:
+Uma série de ferramentas estão disponíveis para medir e depurar LCP:
 
 - O [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) inclui suporte para medição de LCP em ambiente de laboratório.
 
@@ -353,4 +353,4 @@ A number of tools are available to measure and debug LCP:
 
 - O [Relatório de Experiência do Usuário Chrome](https://developers.google.com/web/tools/chrome-user-experience-report) fornece valores de LCP do mundo real agregados no nível de origem
 
-*With thanks to Philip Walton, Katie Hempenius, Kayce Basques, and Ilya Grigorik for their reviews.*
+*Com agradecimentos a Philip Walton, Katie Hempenius, Kayce Basques e Ilya Grigorik por suas análises.*
