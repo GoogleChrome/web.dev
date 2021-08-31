@@ -1,7 +1,3 @@
-:root {
-    --button-primary: #878787;
-    --button-hover: black;
-}
 body {
     padding: 1em;
     font-family: system-ui;
@@ -26,18 +22,18 @@ body {
 }
 .slide-indicator:after {
     content: "";
-    background-color: var(--button-primary);
+    background-color: #878787;
     height: 10px;
     margin-top: 10px;
     width: 40px;
 }
 .slide-indicator.active:after,
 .slide-indicator:hover:after {
-    background-color: var(--button-hover);
+    background-color: #000000;
 }
 .slide-banner {
-    background-color: black;
-    color: white;
+    background-color: #000000;
+    color: #ffffff;
     position: absolute;
     left: 0;
     bottom: 20px;
@@ -45,7 +41,7 @@ body {
     font-size: 2.5vw;
 }
 .slide-banner a {
-    color: white;
+    color: #ffffff;
 }
 #slide-container {
     scroll-snap-type: x mandatory;

@@ -11,10 +11,9 @@ smooth, performant slide transitions that do not cause [layout
 shifts](https://web.dev/debugging-layout-shifts/).
 
 This carousel can be navigated in a variety of ways: in addition to navigation
-controls, it supports keyboard navigation and swiping.
-
-To maximize usability and readability, the carousel stops auto-transitioning
-once the user mouseovers within the carousel area.
+controls, it supports keyboard navigation and swiping. To maximize usability and
+readability, the carousel stops auto-transitioning once the user mouseovers
+within the carousel area.
 
 To learn about performance and UX best practices for carousels, see
 [Carousel Best Practices](https://web.dev/carousel-best-practices/).

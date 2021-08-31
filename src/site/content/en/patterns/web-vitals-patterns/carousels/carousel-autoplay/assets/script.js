@@ -1,7 +1,8 @@
 function autoplayCarousel() {
     const carouselEl = document.getElementById("carousel");
-    const slidesEl = document.getElementById("slide-container");
-    let slideWidth = document.getElementsByClassName("slide")[0].offsetWidth;
+    const slideContainerEl = carouselEl.querySelector("#slide-container");
+    const slideEl = carouselEl.querySelector(".slide");
+    let slideWidth = slideEl.offsetWidth;
     // Add click handlers
     document.querySelectorAll(".slide-indicator")
         .forEach((dot, index) => {
@@ -18,30 +19,30 @@ function autoplayCarousel() {
             navigate("forward");
         }
     });
+    // Add resize handler
+    window.addEventListener('resize', () => {
+        slideWidth = slideEl.offsetWidth;
+    });
     // Autoplay
     const autoplay = setInterval(() => navigate("forward"), 3000);
-    slidesEl.addEventListener("mouseenter", () => clearInterval(autoplay));
+    slideContainerEl.addEventListener("mouseenter", () => clearInterval(autoplay));
     // Slide transition
     const getNewScrollPosition = (arg) => {
-        let slideWidth = document.getElementsByClassName("slide")[0].offsetWidth
         const gap = 10;
-        const maxScrollLeft = slidesEl.scrollWidth - slideWidth;
+        const maxScrollLeft = slideContainerEl.scrollWidth - slideWidth;
         if (arg === "forward") {
-            const x = slidesEl.scrollLeft + slideWidth + gap;
+            const x = slideContainerEl.scrollLeft + slideWidth + gap;
             return x <= maxScrollLeft ? x : 0;
         } else if (arg === "backward") {
-            const x = slidesEl.scrollLeft - slideWidth - gap;
+            const x = slideContainerEl.scrollLeft - slideWidth - gap;
             return x >= 0 ? x : maxScrollLeft;
         } else if (typeof arg === "number") {
             const x = arg * (slideWidth + gap);
             return x;
         }
     }
-    window.addEventListener('resize', () => {
-        slideWidth = document.getElementsByClassName("slide")[0].offsetWidth;
-    });
     const navigate = (arg) => {
-        slidesEl.scrollLeft = getNewScrollPosition(arg);
+        slideContainerEl.scrollLeft = getNewScrollPosition(arg);
     }
     // Slide indicators
     const slideObserver = new IntersectionObserver((entries, observer) => {
@@ -52,7 +53,7 @@ function autoplayCarousel() {
                 carouselEl.querySelectorAll('.slide-indicator')[slideIndex].classList.add('active');
             }
         });
-    }, { root: slidesEl, threshold: .1 });
+    }, { root: slideContainerEl, threshold: .1 });
     document.querySelectorAll('.slide').forEach((slide) => {
         slideObserver.observe(slide);
     });

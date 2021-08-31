@@ -9,10 +9,6 @@ patternId: web-vitals-patterns/carousels/carousel-autoplay
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Autoplay Carousel Demo</title>
     <style>
-        :root {
-            --button-primary: #878787;
-            --button-hover: black;
-        }
         body {
             padding: 1em;
             font-family: system-ui;
@@ -37,18 +33,18 @@ patternId: web-vitals-patterns/carousels/carousel-autoplay
         }
         .slide-indicator:after {
             content: "";
-            background-color: var(--button-primary);
+            background-color: #878787;
             height: 10px;
             margin-top: 10px;
             width: 40px;
         }
         .slide-indicator.active:after,
         .slide-indicator:hover:after {
-            background-color: var(--button-hover);
+            background-color: #000000;
         }
         .slide-banner {
-            background-color: black;
-            color: white;
+            background-color: #000000;
+            color: #ffffff;
             position: absolute;
             left: 0;
             bottom: 20px;
@@ -56,7 +52,7 @@ patternId: web-vitals-patterns/carousels/carousel-autoplay
             font-size: 2.5vw;
         }
         .slide-banner a {
-            color: white;
+            color: #ffffff;
         }
         #slide-container {
             scroll-snap-type: x mandatory;
@@ -103,7 +99,7 @@ patternId: web-vitals-patterns/carousels/carousel-autoplay
             </div>
             <div class="slide" data-slideIndex="4">
                 <div class="slide-banner">Take a ride on the wheel! <a href="">Buy tickets now.</a></div>
-                <img width="1200" height="600" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/dcAMZ91QT8H06x5xTwUR.jpg">
+                <img width="1200" height="600" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/G0aWgHwWJTPZus9YEMyH.jpg">
             </div>
         </div>
         <div class="navigation">
@@ -127,8 +123,9 @@ patternId: web-vitals-patterns/carousels/carousel-autoplay
     <script>
         function autoplayCarousel(){
             const carouselEl = document.getElementById("carousel");
-            const slidesEl = document.getElementById("slide-container");
-            let slideWidth = document.getElementsByClassName("slide")[0].offsetWidth;
+            const slideContainerEl = carouselEl.querySelector("#slide-container");
+            const slideEl = carouselEl.querySelector(".slide");
+            let slideWidth = slideEl.offsetWidth;
             // Add click handlers
             document.querySelectorAll(".slide-indicator")
                 .forEach((dot, index) => {
@@ -145,30 +142,30 @@ patternId: web-vitals-patterns/carousels/carousel-autoplay
                     navigate("forward");
                 }
             });
+            // Add resize handler
+            window.addEventListener('resize', () => {
+                slideWidth = slideEl.offsetWidth;
+            });
             // Autoplay
             const autoplay = setInterval(() => navigate("forward"), 3000);
-            slidesEl.addEventListener("mouseenter", () => clearInterval(autoplay));
+            slideContainerEl.addEventListener("mouseenter", () => clearInterval(autoplay));
             // Slide transition
             const getNewScrollPosition = (arg) => {
-                let slideWidth = document.getElementsByClassName("slide")[0].offsetWidth
                 const gap = 10;
-                const maxScrollLeft = slidesEl.scrollWidth - slideWidth;
+                const maxScrollLeft = slideContainerEl.scrollWidth - slideWidth;
                 if (arg === "forward") {
-                    const x = slidesEl.scrollLeft + slideWidth + gap;
+                    const x = slideContainerEl.scrollLeft + slideWidth + gap;
                     return x <= maxScrollLeft ? x : 0;
                 } else if (arg === "backward") {
-                    const x = slidesEl.scrollLeft - slideWidth - gap;
+                    const x = slideContainerEl.scrollLeft - slideWidth - gap;
                     return x >= 0 ? x : maxScrollLeft;
                 } else if (typeof arg === "number") {
                     const x = arg * (slideWidth + gap);
                     return x;
                 }
             }
-            window.addEventListener('resize', () => {
-                slideWidth = document.getElementsByClassName("slide")[0].offsetWidth;
-            });
             const navigate = (arg) => {
-                slidesEl.scrollLeft = getNewScrollPosition(arg);
+                slideContainerEl.scrollLeft = getNewScrollPosition(arg);
             }
             // Slide indicators
             const slideObserver = new IntersectionObserver((entries, observer) => {
@@ -179,7 +176,7 @@ patternId: web-vitals-patterns/carousels/carousel-autoplay
                         carouselEl.querySelectorAll('.slide-indicator')[slideIndex].classList.add('active');
                     }
                 });
-            }, { root: slidesEl, threshold: .1 });
+            }, { root: slideContainerEl, threshold: .1 });
             document.querySelectorAll('.slide').forEach((slide) => {
                 slideObserver.observe(slide);
             });
