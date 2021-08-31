@@ -35,12 +35,12 @@ HTTP 请求可能包含可选的[`Referer`标头](https://developer.mozilla.org/
 
 <figure class="w-figure">{% Img src="image/admin/cXgqJfmD5OPdzqXl9RNt.jpg", alt="包括一个引荐来源标头的 HTTP 请求。", width="800", height="573" %}</figure>
 
-The `Referer` header might be present in different types of requests:
+`Referer`标头可能出现在不同类型的请求中：
 
 - 导航请求（当用户点击链接时）
 - 子资源请求（当浏览器请求页面需要的图像、iframe、脚本和其他资源时）
 
-For navigations and iframes, this data can also be accessed via JavaScript using `document.referrer`.
+对于导航和 iframe，也可以通过 JavaScript 使用`document.referrer`访问这些数据。
 
 `Referer`值可以提供非常有见解的信息。例如，分析服务可以使用该值来确定`site-two.example`上 50% 的访问者来自`social-network.example`。
 
@@ -58,7 +58,7 @@ URL #6 是一个[功能性 URL](https://www.w3.org/TR/capability-urls/)。不要
 
 您可以从八种政策中选择一种。根据政策的选择， `Referer`标头（和`document.referrer`）中可用的数据可以是：
 
-- No data (no `Referer` header is present)
+- 无数据（不存在`Referer`标头）
 - 只有[域](/same-site-same-origin/#origin)
 - 完整 URL：域、路径和查询字符串
 
@@ -72,14 +72,14 @@ URL #6 是一个[功能性 URL](https://www.w3.org/TR/capability-urls/)。不要
 
 MDN 提供了[完整的政策和行为示例列表](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Directives)。
 
-Things to note:
+注意事项：
 
 - 所有将方案（HTTPS 与 HTTP）考虑在内的政策（`strict-origin`、`no-referrer-when-downgrade`和`strict-origin-when-cross-origin`）都会以相同的方式处理从一个 HTTP 域到另一个 HTTP 域的请求以及从一个 HTTPS 域到另一个 HTTPS 域的请求（即使 HTTP 的安全性更低）。这是因为对于这些政策来说，重要的是是否发生了安全**降级**，即请求是否可以将数据从一个加密域暴露给一个未加密域。 HTTP → HTTP 请求一直都是未加密的，因此不会出现降级。 相反，HTTPS → HTTP 请求会呈现降级。
 - 如果请求是**同域的** ，这意味着方案（HTTPS 或 HTTP）相同，因此也就没有安全降级。
 
 ## 浏览器中的默认引荐来源政策
 
-*As of July 2020*
+*截至 2020 年 7 月*
 
 **在未设置引荐来源政策的情况下将使用浏览器的默认政策。**
 
@@ -87,7 +87,7 @@ Things to note:
   <table>
     <thead>
       <tr>
-        <th>Browser</th>
+        <th>浏览器</th>
         <th>默认<code>Referrer-Policy</code>/行为</th>
       </tr>
     </thead>
@@ -101,7 +101,7 @@ Things to note:
         <td>
           <ul>
             <li>
-<code>strict-origin-when-cross-origin</code> (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1589074">see closed bug</a>)</li>
+<code>strict-origin-when-cross-origin</code> （<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1589074">请参阅已关闭的错误</a>）</li>
             <li>私密浏览和跟踪器中使用<code>strict-origin-when-cross-origin</code>
 </li>
           </ul>
@@ -129,9 +129,9 @@ Things to note:
 
 {% Aside '目标' %}显式设置隐私增强政策，例如`strict-origin-when-cross-origin`（或更严格的政策）。{% endAside %}
 
-There are different ways to set referrer policies for your site:
+有多种方法可以为您的网站设置引荐来源政策：
 
-- As an HTTP header
+- 作为 HTTP 标头
 - 在您的 [HTML](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML) 中
 - [基于每个请求](https://javascript.info/fetch-api#referrer-referrerpolicy)，来源于 JavaScript
 
@@ -141,11 +141,11 @@ HTTP 标头和元元素都是页面级的。确定一个元素的有效政策时
 
 1. 元素级政策
 2. 页面级政策
-3. Browser default
+3. 浏览器默认
 
 **示例：**
 
-`index.html`:
+`index.html` ：
 
 ```html
 <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -185,7 +185,7 @@ HTTP 标头和元元素都是页面级的。确定一个元素的有效政策时
 
 **示例：设置一个`strict-origin-when-cross-origin`政策：**
 
-`index.html`:
+`index.html` ：
 
 ```html
 <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -204,7 +204,7 @@ app.use(helmet.referrerPolicy({policy: 'strict-origin-when-cross-origin'}));
 
 ### 示例：元素级政策
 
-`index.html`:
+`index.html` ：
 
 ```html/6
 <head>
@@ -224,7 +224,7 @@ app.use(helmet.referrerPolicy({policy: 'strict-origin-when-cross-origin'}));
 
 ### 示例：请求级政策
 
-`script.js`:
+`script.js` ：
 
 ```javascript
 fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
@@ -240,7 +240,7 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 
 ### 如果您的网站功能使用传入请求的引荐来源 URL 怎么办？
 
-#### Protect users' data
+#### 保护用户数据
 
 `Referer`可能包含私密数据、个人数据或识别数据，因此请确保您对此类数据采用相应的对待方式。
 
@@ -255,7 +255,7 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 
 #### `Referer`的替代方案
 
-You may need to consider alternatives if:
+如果出现以下情况，您可能需要考虑替代方案：
 
 - 您网站的一项基本功能使用传入跨域请求中的引荐来源 URL；
 - 和/或如果您的网站不再接收其在跨域请求中所需的引荐来源 URL 部分。当请求发射器更改了政策或没有设置政策，并且浏览器的默认政策发生了变化（比如在 [Chrome 85](https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default) 中）时，就会发生这种情况。
@@ -277,26 +277,26 @@ You may need to consider alternatives if:
 - 检查您的系统是否可以更改为期望请求发射器（`site-one.example`）在某种配置下显式设置您需要的信息。优点：更明确、对`site-one.example`用户来说更保护隐私、更利于将来。缺点：可能会为您或您的系统用户带来更多的工作。
 - 检查发出请求的网站是否同意为每个元素或每个请求设置`no-referrer-when-downgrade`引荐来源政策。缺点：对`site-one.example`用户的隐私保护可能较弱、可能并非所有浏览器都支持。
 
-### Cross-Site Request Forgery (CSRF) protection
+### 跨站请求伪造 (CSRF) 保护
 
 请注意，请求发射器始终可以通过设置一个`no-referrer`政策来决定不发送引荐来源（恶意行为者甚至可以伪造引荐来源）。
 
 将 [CSRF 令牌](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation)作为您的主要保护措施。要想获得额外保护，请使用[SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)，同时使用诸如[`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin)（可用于 POST 和 CORS 请求）和[`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site)（如果可用）这样的标头，而不是`Referer`。
 
-### Logging
+### 日志记录
 
 请确保可能在`Refer`中的用户的个人数据或敏感数据得到保护。
 
 如果您只使用域，请检查[`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin)标头是否可以作为替代方案。在调试方面，这可能会以更简单的方式为您提供所需信息，而无需解析引荐来源。
 
-### Payments
+### 付款
 
 付款服务提供商可能会依赖传入请求中的`Referer`标头来进行安全检查。
 
-For example:
+例如：
 
-- The user clicks a **Buy** button on `online-shop.example/cart/checkout`.
-- `online-shop.example` redirects to `payment-provider.example` to manage the transaction.
+- 用户单击`online-shop.example/cart/checkout`上的**购买**按钮。
+- `online-shop.example`重定向到`payment-provider.example`来管理交易。
 - `payment-provider.example`对照商家设置的`Referer`准许值列表检查该请求的`Referer`。如果在列表中未找到任何匹配条目，则`payment-provider.example`拒绝该请求。如果有匹配条目，则用户可以继续进行交易。
 
 #### 支付流程安全检查的最佳实践
@@ -322,7 +322,7 @@ For example:
 
 {% endAside %}
 
-## Conclusion
+## 结论
 
 一个保护性的引荐来源政策是为您的用户提供更多隐私保护的好方法。
 
@@ -330,7 +330,7 @@ For example:
 
 *非常感谢所有审稿人的贡献和反馈：特别是 Kaustubha Govind、David Van Cleve、Mike West、Sam Dutton、Rowan Merewood、Jxck 和 Kayce Basques。*
 
-## Resources
+## 资源
 
 - [理解“同站”和“同域”](/same-site-same-origin/)
 - [新的安全标头：引荐来源政策 (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
@@ -338,7 +338,7 @@ For example:
 - [引荐来源标头：MDN 上的隐私和安全问题](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
 - [Chrome 更改：Blink 引擎有意向实现](https://groups.google.com/a/chromium.org/d/msg/blink-dev/aBtuQUga1Tk/n4BLwof4DgAJ)
 - [Chrome 更改：Blink 引擎有意向运送](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/lqFuqwZDDR8)
-- [Chrome change: status entry](https://www.chromestatus.com/feature/6251880185331712)
-- [Chrome change: 85 beta blogpost](https://blog.chromium.org/2020/07/chrome-85-upload-streaming-human.html)
+- [Chrome 更改：状态条目](https://www.chromestatus.com/feature/6251880185331712)
+- [Chrome 更改：85 测试版博文](https://blog.chromium.org/2020/07/chrome-85-upload-streaming-human.html)
 - [引荐来源修剪 GitHub 线程：不同浏览器的做法](https://github.com/privacycg/proposals/issues/13)
 - [引荐来源政策规范](https://w3c.github.io/webappsec-referrer-policy/#referrer-policy-delivery)
