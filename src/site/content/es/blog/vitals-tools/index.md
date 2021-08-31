@@ -5,12 +5,10 @@ authors:
   - addyosmani
   - egsweeny
 date: '2020-05-28'
-description: |2
-
-  Read about the newly announced Core Web Vitals measurement support across popular web developer tools like Lighthouse, PageSpeed Insights, Chrome UX Report, and many others.
+description: Lea sobre la recién anunciada compatibilidad de las medidas de Core Web Vitals con herramientas populares para desarrolladores web como Lighthouse, PageSpeed Insights, Chrome UX Report y muchas otras.
 hero: image/admin/wNtXgv1OE2OETdiSzi8l.png
 thumbnail: image/admin/KxBRBQe5CRZpCxNYyW2H.png
-alt: Chrome User Experience logo, PageSpeed Insights logo, Lighthouse logo, Search Console logo, Chrome DevTools logo, Web Vitals extension logo.
+alt: Logotipo de Chrome User Experience, logotipo de PageSpeed Insights, logotipo de Lighthouse, logotipo de Search Console, logotipo de Chrome DevTools, logotipo de la extensión Web Vitals.
 tags:
   - blog
   - web-vitals
@@ -19,20 +17,20 @@ tags:
 
 La iniciativa [Web Vitals](/vitals/) recientemente anunciada proporciona una orientación unificada sobre las señales de calidad que son esenciales para que todos los sitios brinden una excelente experiencia de usuario en la web. Nos complace anunciar que **todas las herramientas populares de Google para desarrolladores web ahora son compatibles con las medidas de Core Web Vitals**, lo que le ayudará a diagnosticar y solucionar más fácilmente los problemas de la experiencia del usuario. Esto incluye [Lighthouse](https://github.com/GoogleChrome/lighthouse), [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools), [Search Console](https://search.google.com/search-console/about), [la herramienta de medición de web.dev](/measure/), la [extensión de Chrome Web Vitals](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma)  y una nueva (!)[API de Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report).
 
-With Google Search now including Core Web Vitals as the foundation for evaluating [page experience](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html), it's important that these metrics are as available and actionable as possible.
+Ahora que la Búsqueda de Google incluye Core Web Vitals como base para evaluar la [experiencia de la página](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html), es importante que estas métricas estén disponibles y sean tan procesables como sea posible.
 
-<figure class="w-figure">   {% Img src="image/admin/V00vjrHmwzljYo04f3d3.png", alt="Summary of Chrome and Search Tools that support the Core Web Vitals metrics", width="800", height="509", class="w-screenshot" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/V00vjrHmwzljYo04f3d3.png", alt="Resumen de Chrome y herramientas de búsqueda compatibles con las métricas de Core Web Vitals", width="800", height="509", class="w-screenshot" %}</figure>
 
-{% Aside 'key-term' %} **Lab tools** provide insight into how a *potential user* will likely experience your website and offer reproducible results for debugging. **Field** tools provide insight into how your *real users* are experiencing your website; this type of measurement is often called Real User Monitoring (RUM). Each [lab or field tool](/how-to-measure-speed/#lab-data-vs-field-data) offers distinct value for optimizing your user experience. {% endAside %}
+{% Aside 'key-term' %} Las **herramientas de laboratorio** brindan una visión sobre cómo un *usuario potencial* probablemente experimentará su sitio web y ofrecen resultados reproducibles para la depuración. Las herramientas de **campo** brindan una visión sobre cómo sus *usuarios reales* experimentan su sitio web. Este tipo de medición a menudo se denomina Monitoreo de Usuarios Reales (RUM). Cada [herramienta de laboratorio o de campo](/how-to-measure-speed/#lab-data-vs-field-data) ofrece un valor distinto para optimizar su experiencia de usuario. {% endAside %}
 
-To begin your journey optimizing user-experience with Core Web Vitals, try the following workflow:
+Para empezar a optimizar la experiencia del usuario con Core Web Vitals, pruebe el siguiente flujo de trabajo:
 
-- Use Search Console's new Core Web Vitals report to identify groups of pages that require attention (based on the field data).
+- Utilice el nuevo Core Web Vitals Report de Search Console para identificar los grupos de páginas que requieren atención (según los datos de campo).
 - Una vez que haya identificado las páginas que necesitan trabajo, utiliza PageSpeed Insights •	Una vez que haya identificado las páginas que necesitan atención, utilice PageSpeed Insights (impulsado por Lighthouse y Chrome UX Report) para diagnosticar problemas de laboratorio y de campo en una página. PageSpeed Insights (PSI) está disponible por medio de Search Console o puede introducir una URL directamente en PSI.
-- Ready to optimize your site locally in the lab? Use Lighthouse and Chrome DevTools to measure Core Web Vitals and get actionable guidance on exactly what to fix. The Web Vitals Chrome extension can give you a real-time view of metrics on desktop.
-- Need a custom dashboard of Core Web Vitals? Use the updated CrUX Dashboard or new Chrome UX Report API for field data or PageSpeed Insights API for lab data.
-- Looking for guidance? web.dev/measure can measure your page and show you a prioritized set of guides and codelabs for optimization, using PSI data.
-- Finally, use Lighthouse CI on pull requests to ensure there are no regressions in Core Web Vitals before you deploy a change to production.
+- ¿Está listo para optimizar su sitio localmente en el laboratorio? Utilice Lighthouse y Chrome DevTools para medir Core Web Vitals y obtenga una orientación práctica sobre qué corregir exactamente. La extensión de Chrome Web Vitals puede brindarle una visión en tiempo real de las métricas en el escritorio.
+- ¿Necesita un panel de control personalizado de Core Web Vitals? Utilice el panel de control actualizado de CrUX o la nueva API de Chrome UX Report para los datos de campo o la API de PageSpeed Insights para los datos de laboratorio.
+- ¿Busca orientación? web.dev/measure puede medir su página y mostrarle un conjunto priorizado de normas y laboratorios de código para la optimización, utilizando datos de PSI.
+- Por último, utilice Lighthouse CI en las solicitudes de extracción para asegurarse de que no haya regresiones en Core Web Vitals antes de implementar un cambio en la producción.
 
 With that introduction, let's dive into the specific updates for each tool!
 
@@ -40,33 +38,33 @@ With that introduction, let's dive into the specific updates for each tool!
 
 Lighthouse es una herramienta automatizada de auditoría de sitios web que ayuda a que los desarrolladores diagnostiquen problemas e identifiquen oportunidades para mejorar la experiencia del usuario de sus sitios. Mide varias dimensiones de la calidad de la experiencia del usuario en un entorno de laboratorio, incluyendo el rendimiento y la accesibilidad. La última versión de Lighthouse ([6.0](/lighthouse-whats-new-6.0/), lanzada a mediados de mayo del 2020) incluye auditorías adicionales, nuevas métricas y una puntuación de rendimiento integrada recientemente.
 
-<figure class="w-figure">   {% Img src="image/admin/4j72CWywp2D88Xti8zBf.png", alt="Lighthouse 6.0 showing the latest Core Web Vitals metrics", width="800", height="527", class="w-screenshot" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/4j72CWywp2D88Xti8zBf.png", alt="Lighthouse 6.0 muestra las métricas más recientes de Core Web Vitals", width="800", height="527", class="w-screenshot" %}</figure>
 
-Lighthouse 6.0 introduces three new metrics to the report. Two of these new metrics—[Largest Contentful Paint](/lcp/) (LCP) and [Cumulative Layout Shift](/cls/) (CLS)—are lab implementations of Core Web Vitals and provide important diagnostic information for optimizing user experience. Given their importance for assessing user experience, the new metrics are not only measured and included in the report, they are also factored in calculating the performance score.
+Lighthouse 6.0 introduce tres nuevas métricas en el informe. Dos de estas nuevas métricas, [Largest Contentful Paint : Despliegue del contenido más extenso](/lcp/) (LCP) y el [Cumulative Layout Shift: Cambio Acumulativo del diseño](/cls/) (CLS), son implementaciones del laboratorio Core Web Vitals y brindan información de diagnóstico importante para optimizar la experiencia del usuario. Dada su importancia para evaluar la experiencia del usuario, las nuevas métricas no solo se miden e incluyen en el reporte, sino que también se tienen en cuenta para calcular la puntuación de rendimiento.
 
-The third new metric included in Lighthouse—[Total Blocking Time](/tbt/) (TBT)—correlates well with the field metric [First Input Delay](/fid/) (FID), another Core Web Vitals metric. Following the recommendations provided in the Lighthouse report and optimizing against your scores sets you up to provide the best possible experience to your users.
+La tercera nueva métrica incluida en Lighthouse, el [Total Blocking Time: Tiempo total de bloqueo](/tbt/) (TBT), se correlaciona bien con la métrica de campo [First Input Delay: Demora de la primera entrada](/fid/) (FID), otra métrica de Core Web Vitals. Si sigue las recomendaciones proporcionadas en el informe Lighthouse y optimiza sus resultados, podrá ofrecer la mejor experiencia posible a sus usuarios.
 
 Todos los productos que potencian Lighthouse se actualizan para reflejar la última versión, incluyendo [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci), que le permitirán medir fácilmente sus Core Web Vitals en solicitudes de extracción antes de que se fusionen e implementen.
 
-<figure class="w-figure">   {% Img src="image/admin/aOm5ZAIUbspjcyRMIXbn.png", alt="Lighthouse CI displaying a diff view with Largest Contentful Paint", width="800", height="498", class="w-screenshot" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/aOm5ZAIUbspjcyRMIXbn.png", alt="Lighthouse CI muestra una visualización de diferencias con Largest Contentful Paint", width="800", height="498", class="w-screenshot" %}</figure>
 
-To learn more about the latest updates to Lighthouse, check out our [What's New in Lighthouse 6.0](/lighthouse-whats-new-6.0/) blog post.
+Para obtener más información sobre las últimas actualizaciones de Lighthouse, consulte nuestra publicación del blog [Novedades de Lighthouse 6.0.](/lighthouse-whats-new-6.0/)
 
 ### PageSpeed Insights
 
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) (PSI) reports on the lab and field performance of a page on both mobile and desktop devices. The tool provides an overview of how real-world users experience the page (powered by the Chrome UX Report) and a set of actionable recommendations on how a site owner can improve page experience (provided by Lighthouse).
+[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) (PSI) reporta sobre el rendimiento de laboratorio y de campo de una página en dispositivos móviles y equipos de escritorio. La herramienta proporciona una visión general de cómo los usuarios del mundo real experimentan la página (impulsada por Chrome UX Report) y un conjunto de recomendaciones prácticas sobre cómo el propietario de un sitio puede mejorar la experiencia de la página (proporcionada por Lighthouse).
 
-PageSpeed Insights and the [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started) have also been upgraded to use Lighthouse 6.0 under the hood and now support measuring Core Web Vitals in both the lab and field sections of the report! Core Web Vitals are annotated with a blue ribbon as shown below.
+PageSpeed Insights y la [API de PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/get-started) también se actualizaron para usar Lighthouse 6.0 y ahora son compatibles con las medidas de Core Web Vitals en las secciones del reporte de laboratorio y de campo. Las Core Web Vitals se anotan con una cinta azul como se muestra a continuación.
 
-<figure class="w-figure">   {% Img src="image/admin/l1posckVsR7JeVGnk6Jv.png", alt="PageSpeed Insights with Core Web Vitals data displayed for field and lab", width="800", height="873", class="w-screenshot" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/l1posckVsR7JeVGnk6Jv.png", alt="PageSpeed Insights con los datos de Core Web Vitals mostrados en el campo y en el laboratorio", width="800", height="873", class="w-screenshot" %}</figure>
 
 Si bien [Search Console](https://search.google.com/search-console/) ofrece a los propietarios de sitios una gran visión general de los grupos de páginas que necesitan atención, PSI ayuda a identificar oportunidades por página para mejorar la experiencia de la página. En PSI, podrá ver claramente si su página cumple o no con los umbrales para una buena experiencia en todos los Core Web Vitals en la parte superior del reporte, se indica si **acredita la evaluación Core Web Vitals** o **no acredita la evaluación Core Web Vitals**.
 
 ### CrUX
 
-The [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX) is a public dataset of real user experience data on millions of websites. It measures field versions of all the Core Web Vitals. Unlike lab data, CrUX data comes from [opted-in users](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) in the field. Using this data, developers are able to understand the distribution of real-world user experiences on their own or even competitors' websites. Even if you don't have RUM on your site, CrUX can provide a quick and easy way to assess your Core Web Vitals. The [CrUX dataset on BigQuery](https://developers.google.com/web/tools/chrome-user-experience-report/bigquery/getting-started) includes fine-grained performance data for all Core Web Vitals and is available in monthly snapshots at the origin-level.
+[Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX) es un conjunto de datos públicos sobre la experiencia real del usuario en millones de sitios web. Mide las versiones de campo de todas las Core Web Vitals. A diferencia de los datos de laboratorio, los datos de CrUX provienen de [usuarios que han optado por participar](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) en el campo. Con estos datos, los desarrolladores pueden comprender la distribución de las experiencias de los usuarios del mundo real en sus propios sitios web o incluso en los de la competencia. Incluso si no tiene RUM en su sitio, CrUX puede proporcionar una manera rápida y fácil de evaluar sus Core Web Vitals. El [conjunto de datos de CrUX en BigQuery](https://developers.google.com/web/tools/chrome-user-experience-report/bigquery/getting-started) incluye datos de rendimiento detallados para todos los Core Web Vitals y está disponible en instantáneas mensuales a nivel de origen.
 
-The only way to truly know how your site performs for your users is to actually measure its performance in the field as those users are loading and interacting with it. This type of measurement is commonly referred to as Real User Monitoring—or RUM for short. Even if you don't have RUM on your site, CrUX can provide a quick and easy way to assess your Core Web Vitals.
+La única manera de saber realmente cómo funciona su sitio para los usuarios es medir su rendimiento en el campo mientras esos usuarios lo cargan e interactúan con él. Este tipo de medición se conoce comúnmente como Monitoreo de usuarios reales, o RUM por sus siglas en inglés. Incluso si no tiene RUM en su sitio, CrUX puede proporcionar una manera rápida y fácil de evaluar sus Core Web Vitals.
 
 **Introducción a la API de CrUX**
 
@@ -79,37 +77,37 @@ Hoy nos complace anunciar la [API de CrUX](http://developers.google.com/web/tool
 
 Los desarrolladores pueden consultar un origen o una URL y segmentar los resultados por diferentes factores de forma. La API se actualiza diariamente y resume los datos de los 28 días anteriores (a diferencia del conjunto de datos de BigQuery, que se agrega mensualmente). La API también tiene las mismas cuotas públicas reducidas que ponemos en nuestra otra API, la API de PageSpeed Insights (25,000 solicitudes al día).
 
-Below is a [demo](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started) using the CrUX API to visualize the Core Web Vitals metrics with distributions for **good**, **needs improvement**, and **poor**:
+A continuación se muestra una [demostración](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started) que utiliza la API de CrUX para visualizar las métricas de Core Web Vitals con distribuciones **buenas**, **que necesitan mejoras** y **deficientes**:
 
-<figure class="w-figure">   {% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Chrome User Experience Report API demo showing Core Web Vitals metrics", width="800", height="523", class="w-screenshot w-screenshot--filled" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/ye3CMKfacSItYA2lqItP.png", alt="Demostración de la API Informe de experiencia del usuario de Chrome que muestra las métricas de Core Web Vitals", width="800", height="523", class="w-screenshot w-screenshot--filled" %}</figure>
 
 In future releases, we plan to expand the API to enable access to additional CrUX dataset dimensions and metrics.
 
-**Revamped CrUX Dashboard**
+**Panel de control de CrUX renovado**
 
-The newly redesigned [CrUX Dashboard](http://g.co/chromeuxdash) allows you to easily track an origin's performance over time, and now you can use it to monitor the distributions of all of the Core Web Vitals metrics. To get started with the dashboard, check out our [tutorial](/chrome-ux-report-data-studio-dashboard/) on web.dev.
+El [panel de control de CrUX](http://g.co/chromeuxdash) recientemente rediseñado le permite rastrear fácilmente el rendimiento de un origen a lo largo del tiempo, y ahora puede utilizarlo para monitorear las distribuciones de todas las métricas de Core Web Vitals. Para comenzar con el panel, consulte nuestro [tutorial](/chrome-ux-report-data-studio-dashboard/) en web.dev.
 
-<figure class="w-figure">   {% Img src="image/admin/OjbICyhI21RNfGXrFP1x.png", alt="Chrome UX Report dashboard displaying the Core Web Vitals metrics in a new landing page", width="800", height="497", class="w-screenshot w-screenshot--filled" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/OjbICyhI21RNfGXrFP1x.png", alt="Panel de Informes de experiencia del usuario de Chrome que muestra las métricas de Core Web Vitals en una nueva página de destino", width="800", height="497", class="w-screenshot w-screenshot--filled" %}</figure>
 
-We've introduced a new Core Web Vitals landing page to make it even easier to see how your site is performing at a glance. We welcome your feedback on all CrUX tooling; to share your thoughts and questions reach us at the [@ChromeUXReport](https://twitter.com/chromeuxreport) Twitter account or [Google Group](https://groups.google.com/a/chromium.org/g/chrome-ux-report).
+Introducimos una nueva página de inicio de Core Web Vitals para que sea aún más fácil ver el rendimiento de su sitio de un vistazo. Agradecemos sus comentarios sobre todas las herramientas de CrUX, para compartir sus opiniones y preguntas, póngase en contacto con nosotros en la cuenta de Twitter [@ChromeUXReport](https://groups.google.com/a/chromium.org/g/chrome-ux-report) o en el [Grupo de Google](https://groups.google.com/a/chromium.org/g/chrome-ux-report).
 
 ### Chrome DevTools Performance panel
 
 **Debug Layout Shift events in the Experience section**
 
-The Chrome DevTools **Performance** panel has a new **[Experience section](https://developers.google.com/web/updates/2020/05/devtools#cls)** that can help you detect unexpected layout shifts. This is helpful for finding and fixing visual instability issues on your page that contribute to Cumulative Layout Shift.
+El **rendimiento** del panel Chrome DevTools tiene una nueva **[sección de Experiencia](https://developers.google.com/web/updates/2020/05/devtools#cls)** que puede ayudarle a detectar cambios de diseño inesperados. Esto es útil para encontrar y solucionar problemas de inestabilidad visual en su página que contribuyen al Cumulative Layout Shift.
 
-<figure class="w-figure">   {% Img src="image/admin/VMbZAgKCi5V6FiQyu631.png", alt="Cumulative Layout Shift displayed with red records in the Performance panel", width="800", height="517", class="w-screenshot w-screenshot--filled" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/VMbZAgKCi5V6FiQyu631.png", alt="Cumulative Layout Shift mostrado con registros rojos en el panel Rendimiento", width="800", height="517", class="w-screenshot w-screenshot--filled" %}</figure>
 
-Select a Layout Shift to view its details in the **Summary** tab. To visualize where the shift itself occurred, hover over the **Moved from** and **Moved to** fields.
+Seleccione un cambio de diseño para ver sus detalles en la pestaña **Resumen**. Para visualizar dónde se produjo el cambio per se, coloque el cursor sobre los campos  **Moved from** y **Moved to**.
 
-**Debug interaction readiness with Total Blocking Time in the footer**
+**Depuración para la disponibilidad de la interacción con Total Blocking Time en el pie de página**
 
-The Total Blocking Time (TBT) metric can be measured in lab tools and is an excellent proxy for First Input Delay. TBT measures the total amount of time between [First Contentful Paint (FCP)](/fcp/) and [Time to Interactive (TTI)](/tti/) where the main thread was blocked for long enough to prevent input responsiveness. Performance optimizations that improve TBT in the lab should improve FID in the field.
+La métrica Total Blocking Time (TBT) se puede medir en herramientas de laboratorio y es un excelente proxy para  First Input Delay. TBT mide la cantidad total de tiempo entre [First Contentful Paint (FCP)](/fcp/) y [Time to Interactive (TTI)](/tti/) donde el subproceso principal estuvo bloqueado durante el tiempo suficiente para evitar la respuesta de entrada. Las optimizaciones de rendimiento que mejoran el TBT en el laboratorio deberían mejorar el FID en el campo.
 
-<figure class="w-figure">   {% Img src="image/admin/WufuLpvrZfgbRn70C74V.png", alt="Total Blocking Time displayed in the footer of the DevTools performance panel", width="800", height="517", class="w-screenshot" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/WufuLpvrZfgbRn70C74V.png", alt="Total Blocking Time displayed se muestra en el pie de página del panel de rendimiento de DevTools", width="800", height="517", class="w-screenshot" %}</figure>
 
-TBT is now shown in the footer of the Chrome DevTools **Performance** panel when you measure page performance:
+TBT se muestra ahora en el pie de página del panel de **rendimiento** de Chrome DevTools cuando se mide el rendimiento de la página:
 
 {% Instruction 'devtools-performance', 'ol' %}
 
@@ -123,37 +121,37 @@ For more information, see [What's New In DevTools (Chrome 84)](https://developer
 
 El nuevo [Core Web Vitals Report](https://support.google.com/webmasters/answer/9205520) en Search Console le ayuda a identificar grupos de páginas de su sitio que requieren atención, según los datos del mundo real (de campo) de CrUX. El rendimiento de las URL se agrupa por estado, tipo de métrica y grupo de URL (grupos de páginas web similares).
 
-<figure class="w-figure">   {% Img src="image/admin/BjTUt0xdWXD9hrLsbhLK.png", alt="Search Console's new Core Web Vitals Report", width="800", height="1000", class="w-screenshot" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/BjTUt0xdWXD9hrLsbhLK.png", alt="Nuevo Core Web Vitals Report de Search Console", width="800", height="1000", class="w-screenshot" %}</figure>
 
-The report is based on the three Core Web Vitals metrics: LCP, FID, and CLS.  If a URL does not have a minimum amount of reporting data for these metrics, it's omitted from the report. Try the new report to get a holistic view of performance for your origin.
+El reporte se basa en las tres métricas de Core Web Vitals: LCP, FID y CLS.  Si una URL no tiene una cantidad mínima de datos para reportar estas métricas, se omite del reporte. Pruebe el nuevo reporte para obtener una visión global del rendimiento de su origen.
 
-Once you identify a type of page that has Core Web Vitals related issues, you can use PageSpeed Insights to learn about specific optimization suggestions for representative pages.
+Una vez que identifique un tipo de página que tenga problemas relacionados con Core Web Vitals, puede utilizar PageSpeed Insights para conocer sugerencias de optimización específicas para páginas representativas.
 
 #### web.dev
 
-[web.dev/measure](/measure/) allows you to measure the performance of your page over time, providing a prioritized list of guides and codelabs on how to improve. It's measurement is powered by PageSpeed Insights. The measure tool now also supports the Core Web Vitals metrics, as shown below:
+[web.dev/measure](/measure/) le permite medir el rendimiento de su página a lo largo del tiempo, al brindar una lista priorizada de normas y codelabs sobre cómo mejorar. Su medición es impulsada por PageSpeed Insights. La herramienta de medición ahora también es compatible con las métricas de Core Web Vitals, como se muestra a continuación:
 
-<figure class="w-figure">   {% Img src="image/admin/ryoV1T1PhxUmo9zdCsDe.png", alt="Measure Core Web Vitals metrics over time and get prioritized guidance with the web.dev measure tool", width="800", height="459", class="w-screenshot" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/ryoV1T1PhxUmo9zdCsDe.png", alt="Mida las métricas de Core Web Vitals a lo largo del tiempo y obtenga orientación priorizada con la herramienta de medición de web.dev", width="800", height="459", class="w-screenshot" %}</figure>
 
 ### Web Vitals extension
 
-The Web Vitals extension measures the three Core Web Vitals metrics in real-time for (desktop) Google Chrome. This is helpful for catching issues early on during your development workflow and as a diagnostic tool to assess performance of Core Web Vitals as you browse the web.
+La extensión Web Vitals mide las tres métricas de Core Web Vitals en tiempo real para Google Chrome (de escritorio). Esto es útil para detectar problemas en una fase temprana del flujo de trabajo de desarrollo y como herramienta de diagnóstico para evaluar el rendimiento de Core Web Vitals mientras se navega por la web.
 
-The extension is now available to install from the [Chrome Web Store](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en)! We hope you find it useful. We welcome any contributions to improve it as well as feedback on the project's [GitHub](https://github.com/GoogleChrome/web-vitals-extension/) repository.
+¡La extensión ya está disponible para su instalación desde [Chrome Web Store](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en)! Esperamos que le sea de utilidad. Agradecemos cualquier contribución para mejorarlo, así como los comentarios sobre el repositorio de [GitHub](https://github.com/GoogleChrome/web-vitals-extension/) del proyecto.
 
-<figure class="w-figure">   {% Img src="image/admin/woROdEmNV4jlHDPryjBQ.png", alt="Core Web Vitals displayed in real-time with the Web Vitals Chrome Extension", width="800", height="459", class="w-screenshot" %} </figure>
+<figure class="w-figure">{% Img src="image/admin/woROdEmNV4jlHDPryjBQ.png", alt="Core Web Vitals se muestra en tiempo real con la extensión de Chrome Web Vitals", width="800", height="459", class="w-captura de pantalla" %}</figure>
 
-#### Quick highlights
+#### Aspectos más destacados
 
-That's a wrap! What can you do next:
+¡Eso es un envoltorio! ¿Qué puede hacer a continuación?:
 
 - Use **Lighthouse** in DevTools to optimize your user experience and ensure you are setting yourself up for success with Core Web Vitals in the field.
-- Use **PageSpeed Insights** to compare your lab and field Core Web Vitals performance.
-- Try out the new **Chrome User Experience Report API** to easily access how well your origin and URL have performed against Core Web Vitals over the last 28 days.
-- Use the **Experience** section and footer in DevTools **Performance** panel to dive deep and debug against specific Core Web Vitals.
-- Use **Search Console's Core Web Vitals report** for a summary of how your origins are performing in the field.
-- Use the **Web Vitals Extension** to track a page's performance against Core Web Vitals in real-time.
+- Utilice **PageSpeed Insights** para comparar el rendimiento de Core Web Vitals en el laboratorio y en el campo.
+- Pruebe la nueva **API de Chrome User Experience Report** para acceder fácilmente a los resultados de su origen y su URL con respecto a Core Web Vitals durante los últimos 28 días.
+- Utilice la sección y el pie de página de **Experiencia** en el panel de **Rendimiento** de DevTools para profundizar y depurar contra Core Web Vitals específicos.
+- Utilice **el Core Web Vitals Report de Search Console** para obtener un resumen del rendimiento de sus orígenes en el campo.
+- Utilice la **extensión Web Vitals** para realizar un seguimiento del rendimiento de una página con respecto a Core Web Vitals en tiempo real.
 
-We will cover more about our Core Web Vitals tooling at [web.dev Live](/live/) in June. Sign up to get updates on the event!
+Hablaremos más sobre nuestras herramientas Core Web Vitals en [web.dev Live](/live/) en junio. ¡Regístrese para recibir información sobre el evento!
 
-~ by Elizabeth and Addy, WebPerf Janitors
+~ por Elizabeth y Addy, Conserjería de WebPerf
