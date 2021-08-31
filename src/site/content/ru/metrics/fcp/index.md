@@ -13,24 +13,24 @@ tags:
 
 {% Aside %} Первая отрисовка контента (FCP) — важная, ориентированная на пользователя метрика для измерения [воспринимаемой скорости загрузки,](/user-centric-performance-metrics/#types-of-metrics) так как она отмечает первую точку на временной шкале загрузки страницы, где пользователь может видеть появление контента на экране. Низкий показатель FCP убеждает пользователя в том, что загрузка [началась](/user-centric-performance-metrics/#questions). {% endAside %}
 
-## What is FCP?
+## Что такое FCP?
 
 Метрика FCP (Первая отрисовка контента) измеряет время с момента начала загрузки страницы до момента, когда какая-либо часть содержимого страницы отобразится на экране. Под «содержимым» в этой метрике понимается текст, изображения (включая фоновые изображения), `<svg>` или небелые элементы `<canvas>`.
 
-{% Img src="image/admin/3UhlOxRc0j8Vc4DGd4dt.png", alt="FCP timeline from google.com", width="800", height="311", linkTo=true %}
+{% Img src = "image / admin / 3UhlOxRc0j8Vc4DGd4dt.png", alt = "Временная шкала FCP с google.com", width = "800", height = "311", linkTo = true%}
 
 На приведенной выше временной шкале загрузки FCP происходит во втором фрейме, так как именно тогда первые элементы изображения и текст отображаются на экране.
 
 Заметно, что хотя некоторая часть контента была отрисована, но не вся. Это важное различие между *Первой* отрисовкой контента(FCP) и *[Скоростью загрузки основного контента (LCP)](/lcp/)*, цель метрики LCP — измерить время загрузки основного контента.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">   {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Good FCP values are 1.8 seconds or less, poor values are greater than 3.0 seconds and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src = "image / eqprBhZUGfb8WYnumQ9ljAxRrA72 / vQKpz0S2SGnnoXHMDidj.svg", alt = "Хорошие значения FCP не более 1,8 секунды, низкие значения больше 3,0 секунд, и все, что находится между ними, требует улучшения", width = "400", height "300", class = "w-screenshot w-screenshot - заполнено по всей ширине"%}</source></picture>
 
 ### Какое значение показателя FCP можно считать хорошим?
 
 Для обеспечения удобства работы пользователей сайты должны стремиться к тому, чтобы время до первой отрисовки контента составляло **1,8 секунды** или меньше. Чтобы убедиться, что вы достигли этой цели для большинства пользователей, рекомендуется в качестве порогового значения использовать **75-й процентиль** загрузки страниц, сегментированный по мобильным и настольным устройствам.
 
-## How to measure FCP
+## Как измерить FCP
 
 FCP можно измерить в [лабораторных](/user-centric-performance-metrics/#in-the-lab) или [полевых условиях](/user-centric-performance-metrics/#in-the-field) с помощью следующих инструментов:
 
@@ -69,7 +69,7 @@ new PerformanceObserver((entryList) => {
 
 Далее приведем различия между тем, что сообщает API, и тем, как рассчитывается метрика.
 
-#### Differences between the metric and the API
+#### Различия между метрикой и API
 
 - API отправит запись `first-contentful-paint` для страниц, загруженных в фоновых вкладках, но эти страницы следует игнорировать при вычислении FCP (время первой отрисовки нужно учитывать только в том случае, если страница всё время находилась на переднем плане).
 - API не сообщает о записях `first-contentful-paint`, когда страницы восстанавливаются функцией [back/forward cache](/bfcache/#impact-on-core-web-vitals), но в данных случаях следует измерять FCP, поскольку пользователи воспринимают такие посещения страниц как отдельные.
@@ -92,15 +92,15 @@ getFCP(console.log);
 
 Чтобы узнать, как улучшить FCP для конкретного сайта, можно запустить проверку производительности с помощью Lighthouse и обратить внимание на любые конкретные [возможности улучшения](/lighthouse-performance/#opportunities) или [диагностики](/lighthouse-performance/#diagnostics), предлагаемые проверкой.
 
-To learn how to improve FCP in general (for any site), refer to the following performance guides:
+Чтобы узнать, как улучшить FCP в целом (для любого сайта), обратитесь к следующим руководствам по производительности:
 
-- [Eliminate render-blocking resources](/render-blocking-resources/)
+- [Устранение ресурсов, блокирующих рендеринг](/render-blocking-resources/)
 - [Минимизация CSS-кода](/unminified-css/)
 - [Удаление неиспользуемого CSS-кода](/unused-css-rules/)
 - [Предварительное подключение к нужным источникам](/uses-rel-preconnect/)
 - [Уменьшение времени ответа сервера (TTFB)](/time-to-first-byte/)
 - [Уход от переадресации нескольких страниц](/redirects/)
-- [Preload key requests](/uses-rel-preload/)
+- [Предварительная загрузка ключевых запросов](/uses-rel-preload/)
 - [Уход от огромных нагрузок на сеть](/total-byte-weight/)
 - [Обслуживание статических объектов сайта с помощью эффективной политики кеширования](/uses-long-cache-ttl/)
 - [Уход от чрезмерного размера DOM](/dom-size/)
