@@ -7,9 +7,9 @@ date: 2019 年 11 月 7 日
 updated: 2020 年 6 月 19 日
 description: |2
 
-  This post introduces the First Input Delay (FID) metric and explains
+  この投稿では、First Input Delay（FID）メトリックを紹介し、説明します
 
-  how to measure it
+  それを測定する方法
 tags:
   - performance
   - metrics
@@ -17,7 +17,7 @@ tags:
 
 {% Aside %}First Input Delay (初回入力までの遅延時間、FID) は、[読み込みの応答性](/user-centric-performance-metrics/#types-of-metrics)を測定するための重要なユーザーを中心とした指標です。これは、応答のないページを操作する場合のユーザー体験を数値化したものであり、FID が短ければ短いほど、そのページがユーザーにとって[使いやすい](/user-centric-performance-metrics/#questions)ものであることが保証されます。{% endAside %}
 
-We all know how important it is to make a good first impression. It's important when meeting new people, and it's also important when building experiences on the web.
+良い第一印象を与えることがいかに重要かは誰もが知っています。新しい人と出会うとき、そしてウェブ上で体験を構築するときも重要です。
 
 Web 上では、第一印象の良し悪しがお客様がロイヤル ユーザーとなってくれるか、それとも離脱して二度と戻ってこないかの分かれ道となります。そして、一体何が良い印象としてお客様の中に残るのか、またこのサイトがユーザー対してどのような印象を与えているのかをいかに測定するかが課題となります。
 
@@ -29,12 +29,12 @@ Web API を使用してサイトのデザインがどの程度ユーザーに好
 
 First Input Delay (FID) 指標は、サイトのインタラクティブ性と応答性に関するユーザーの第一印象を測定する場合に役立ちます。
 
-## What is FID?
+## FIDとは何ですか？
 
 FID は、ユーザーが最初にページを操作したとき (リンクをクリックしたり、ボタンをタップしたり、JavaScript を使用して実装されたカスタム コントロールを使用したりしたとき) から、その操作に応じてブラウザーが実際にイベント ハンドラーの処理を開始するまでの時間を測定します。
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Good fid values are 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs improvement", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %} </source></picture>
+  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{％Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / Se4TiXIdp8jtLJVScWed.svg"、alt = "良いfid値は2.5秒、悪い値は4.0秒を超え、その間の値は改善が必要"、width = "400"、height = "300 "、class =" w-screenshot w-screenshot--filled width-full "％}</source></picture>
 
 ### FID における良いスコアとは？
 
@@ -72,7 +72,7 @@ FCP と TTI の間に、かなり長い期間に渡って (3 つの[長く時間
 
 この例では、たまたまメイン スレッドが最もビジーな時間帯の初期にユーザーがページにアクセスしました。もしもユーザーがもう少し早く (アイドル期間内に) ページにアクセスしていれば、ブラウザーはすぐに反応できたはずです。このような入力遅延のばらつきは、指標のレポートで FID 値の分布を確認することの重要性を示しています。この点については、後述する「FID データの分析とレポート」のセクションで詳しく説明します。
 
-### What if an interaction doesn't have an event listener?
+### インタラクションにイベントリスナーがない場合はどうなりますか？
 
 FID は、ブラウザーが入力イベントを受け取ってからメイン スレッドが次のアイドル期間に入るまでの差分を測定します。つまり、**イベント リスナーが登録されていない場合でも** FID は測定されるのです。その理由は、ユーザーによるインタラクションの多くはイベント リスナーを必要としませんが、実行のためにはメイン スレッドがアイドル状態であることは*必須である*からです。
 
@@ -98,7 +98,7 @@ FID は、読み込み時のページの応答性を測定するための指標�
 
 言い換えるならば、FID は [RAIL パフォーマンス モデル](https://developers.google.com/web/fundamentals/performance/rail)における R (応答性) に焦点を当てているのに対し、スクロールやズームは A (アニメーション) により強い関連性を持っており、それらのパフォーマンス品質は個別に評価される必要があります。
 
-### What if a user never interacts with your site?
+### ユーザーがサイトを操作したことがない場合はどうなりますか？
 
 すべてのユーザーが訪問するサイトで必ず操作を行うわけではありません。また、すべての操作が FID に関連しているわけでもありません (前のセクションで説明したとおりです)。さらには、ユーザーによって初回操作が悪いタイミング (メイン スレッドが長期間ビジー状態になっている時) に行われる場合もあれば、良いタイミング (メイン スレッドが完全にアイドル状態になっている時) に行われる場合もあります。
 
@@ -106,7 +106,7 @@ FID は、読み込み時のページの応答性を測定するための指標�
 
 FID をどのように追跡し、レポートし、分析するかについては、おそらくあなたが慣れ親しんできた他の指標とはかなり方法が異なるはずです。次のセクションでは、これらを実施する場合に考えられる最善の方法について説明します。
 
-### Why only consider the input delay?
+### なぜ入力遅延のみを考慮するのですか？
 
 先に述べたように、FID はイベント処理の "遅延" のみを測定します。イベントの処理時間そのものや、イベント ハンドラーの実行後にブラウザーが UI を更新するまでの時間については測定を行いません。
 
