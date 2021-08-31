@@ -25,7 +25,7 @@ Imagine you have a bunch of items you plan to buy during your next grocery trip.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'zYzrEOW',
-  tab: 'css,result'
+  tab: 'result'
 } %}
 
 ## Creating a List
@@ -65,7 +65,7 @@ And description lists are created with `<dl>`, however this list type does not u
 {% Codepen {
   user: 'web-dot-dev',
   id: 'WNOrZNG',
-  tab: 'css,result'
+  tab: 'result'
 } %}
 
 ## List Styles
@@ -83,7 +83,7 @@ There are three list-style properties you can use to style your example: `list-s
 {% Codepen {
   user: 'web-dot-dev',
   id: 'ExXPwxL',
-  tab: 'css,result'
+  tab: 'result'
 } %}
 
 ### `list-style-image`
@@ -99,15 +99,7 @@ Let's look at how we can add an image of each of our grocery items as the `list-
 } %}
 
 {% Aside %}
-This property is a bit limited in controlling the position, size, etc. of the bullets, so we recommend using the [background](https://developer.mozilla.org/en-US/docs/Web/CSS/background) family of properties for a more customizable approach.
-
-You can do this by removing the bullet, adding padding to the list item, then using background properties to customize the bullet, control size and position and more.
-
-{% Codepen {
-  user: 'web-dot-dev',
-  id: 'NWgxaPr',
-  tab: 'css,result'
-} %}
+This property is a bit limited in controlling the position, size, etc. of the bullets, so we recommend using the [`::marker`](#::marker-pseudo) property for a more customizable approach.
 {% endAside %}
 
 ### `list-style-type`
@@ -161,7 +153,7 @@ This is the most commonly used property of the list styles covered in this secti
 {% Codepen {
   user: 'web-dot-dev',
   id: 'eYRJGme',
-  tab: 'css,result'
+  tab: 'result'
 } %}
 
 So far, the examples have focused on styling an entire list and list items, but what about a more granular approach?
@@ -221,7 +213,7 @@ There are quite a few allowed CSS `::marker` Properties:
 {% Codepen {
   user: 'web-dot-dev',
   id: 'eYRJGNy',
-  tab: 'css,result'
+  tab: 'result'
 } %}
 
 {% Aside %}
@@ -246,8 +238,7 @@ While you can turn anything into a list-item view with `display`, you should not
 
 - [MDN Guide on Styling Lists](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_lists)
 - [Custom bullets with CSS ::marker](https://web.dev/css-marker-pseudo-element/)
-- [CSS Lists, Markers and Counters](https://www.smashingmagazine.com/2019/07/css-lists-markers-counters/) from [Smashing Magazine](https://www.smashingmagazine.com/)
-- [Counting With CSS Counters and CSS Grid](https://css-tricks.com/counting-css-counters-css-grid/) from [CSS-Tricks](https://css-tricks.com/)
-- [Using CSS Counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters) from [MDN](https://developer.mozilla.org/)
-- [The CSS Podcast: Lists][https://thecsspodcast.libsyn.com/030-lists]
+- [Smashing Magazine: CSS Lists, Markers and Counters](https://www.smashingmagazine.com/2019/07/css-lists-markers-counters/)
+- [MDN Using CSS Counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters)
 - [CSS Lists and Counters Module Level 3](https://www.w3.org/TR/css-lists-3/)
+- [CSS-Tricks: Counting With CSS Counters and CSS Grid](https://css-tricks.com/counting-css-counters-css-grid/)
