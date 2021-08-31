@@ -60,7 +60,7 @@ Cookie: promo_shown=1
 
 如果您在所选择的一系列热门网站上尝试此操作，您就会注意到大多数网站设置的 cookie 远不止三个。在大多数情况下，这些 cookie 会在每次向该域名发出请求时被发送，这会产生多种影响。对您的用户来说，上传带宽通常比下载更受限，因此，所有出站请求的开销都会使您的首字节时间发生延迟。请在 cookie 数量和大小的设置上做到保守。使用`Max-Age`属性来帮助确保 cookie 的停留时间不会超过所需时间。
 
-## What are first-party and third-party cookies?
+## 什么是第一方和第三方 cookie？
 
 如果再回到您之前查看的那几个网站，您可能会注意到不仅仅是您当前访问的域名有 cookie，许多域名都有 cookie。与当前网站的域名（即浏览器地址栏中显示的内容）相匹配的 cookie 被称为**第一方** cookie。同样，来自当前网站以外域名的 cookie 被称为**第三方** cookie。这不是一个绝对的标签，而是相对于用户上下文来决定的。同一个 cookie 可以是第一方的，也可以是第三方的，具体取决于用户当时所在的网站。
 
@@ -112,7 +112,7 @@ Set-Cookie: promo_shown=1; SameSite=Strict
 <p>Read the <a href="https://blog.example/blog/cat.html">article</a>.</p>
 ```
 
-And the cookie has been set as so:
+并且 cookie 已设置为：
 
 ```text
 Set-Cookie: promo_shown=1; SameSite=Lax
@@ -136,7 +136,7 @@ Set-Cookie: promo_shown=1; SameSite=Lax
 
 {% endAside %}
 
-## Changes to the default behavior without SameSite
+## 在没有 SameSite 的情况下更改默认行为
 
 虽然`SameSite`属性得到广泛支持，但遗憾的是该属性并未被开发者广泛采用。随处发送 cookie 的默认开放性意味着虽然所有用例都可以正常工作，但却会使用户容易受到 CSRF 和无意信息泄露的影响。为了鼓励开发者声明他们的意图并为用户提供更安全的体验，IETF 的[渐进式改善 cookie](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00) 提案列出了两大关键变化：
 
@@ -189,7 +189,7 @@ Chrome 应用的默认行为比显式的`SameSite=Lax`略宽松一些，因为 C
 
 {% endAside %}
 
-### `SameSite=None` must be secure
+### `SameSite=None`必须是安全的
 
 {% Compare 'worse', '已拒绝' %}
 
@@ -213,7 +213,7 @@ Set-Cookie: widget_session=abc123; SameSite=None; Secure
 
 {% CompareCaption %}
 
-You must ensure that you pair `SameSite=None` with the `Secure` attribute.
+您必须确保将`SameSite=None`与`Secure`属性配对。
 
 {% endCompareCaption %}
 
@@ -241,6 +241,6 @@ You must ensure that you pair `SameSite=None` with the `Secure` attribute.
 
 如需了解如何更新 cookie 来妥善处理对`SameSite=None`的这些更改，以及如何处理浏览器行为差异的更多详情，请访问后续文章 [SameSite cookie 配方](/samesite-cookie-recipes)。
 
-*Kind thanks for contributions and feedback from Lily Chen, Malte Ubl, Mike West, Rob Dodson, Tom Steiner, and Vivek Sekhar*
+*感谢 Lily Chen、Malte Ubl、Mike West、Rob Dodson、Tom Steiner 和 Vivek Sekhar 的贡献和反馈*
 
 *Cookie 首图作者：[Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) 上的 [Pille-Riin Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
