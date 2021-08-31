@@ -1,9 +1,8 @@
 ---
-title: Improving user privacy and developer experience with User-Agent Client Hints
+title: Повышение конфиденциальности пользователей и удобства разработчиков с помощью расширения User-Agent Client Hints
 subhead: |-
-  User-Agent Client Hints are a new expansion to the Client Hints API, that
- "enables developers to access information about a user's browser in a"
-  privacy-preserving and ergonomic way.
+  User-Agent Client Hints — это новое расширение API Client Hints, которое
+  позволяет разработчикам получать доступ к информации о браузере эргономичным способом с сохранением конфиденциальности пользователей.
 authors:
   - rowan_m
   - yoavweiss
@@ -22,45 +21,45 @@ feedback:
 
 {% YouTube 'f0YY0o2OAKA' %}
 
-Client Hints enable developers to actively request information about the user's device or conditions, rather than needing to parse it out of the User-Agent (UA) string. Providing this alternative route is the first step to eventually reducing User-Agent string granularity.
+Client Hints позволяют разработчикам активно запрашивать информацию об устройстве или условиях пользователя, вместо того, чтобы извлекать ее из строки User-Agent (UA). Предоставление этого альтернативного маршрута — первый шаг к уменьшению детализации строки User-Agent.
 
-Learn how to update your existing functionality that relies on parsing the User-Agent string to make use of User-Agent Client Hints instead.
+Узнайте, как обновить существующий функционал, основанный на анализе строки User-Agent, чтобы вместо этого использовать User-Agent Client Hints.
 
-{% Banner 'caution', 'body' %} If you are already using User-Agent Client Hints, pay attention to the upcoming changes. The header format is changing so the `Accept-CH` tokens exactly match the returned headers. Previously a site could have sent `Accept-CH: UA-Platform` to receive the `Sec-CH-UA-Platform` header and now that site should send `Accept-CH: Sec-CH-UA-Platform`. If you've already implemented User-Agent Client Hints, send both formats until the change has fully rolled out in stable Chromium. See [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ) for updates. {% endBanner %}
+{% Banner 'caution', 'body' %} Если вы уже используете User-Agent Client Hints, обратите внимание на предстоящие изменения. Формат заголовков меняется, чтобы токены `Accept-CH` точно соответствовали возвращаемым заголовкам. Ранее сайт мог отправлять `Accept-CH: UA-Platform`, чтобы получить заголовок `Sec-CH-UA-Platform`, а теперь сайт должен отправить `Accept-CH: Sec-CH-UA-Platform`.  Если вы уже внедрили расширение User-Agent Client Hints, отправляйте оба формата до тех пор, пока изменение не будет полностью развернуто в стабильной версии Chromium. См. обсуждение [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ). {% endBanner %}
 
-## Background
+## Предыстория
 
-When web browsers make requests they include information about the browser and its environment so that servers can enable analytics and customize the response. This was defined all the way back in 1996 (RFC 1945 for HTTP/1.0), where you can find the [original definition for the User-Agent string](https://tools.ietf.org/html/rfc1945#section-10.15), which includes an example:
+Когда веб-браузеры отправляют запросы, они включают информацию о браузере и его среде, чтобы серверы могли включить аналитику и настроить ответ. Это было определено еще в 1996 году в стандарте RFC 1945 для HTTP/1.0, там же можно найти [исходное определение для строки User-Agent](https://tools.ietf.org/html/rfc1945#section-10.15), которое включает пример:
 
 ```text
 User-Agent: CERN-LineMode/2.15 libwww/2.17b3
 ```
 
-This header was intended to specify, in order of significance, the product (e.g. browser or library) and a comment (e.g. version).
+Этот заголовок предназначался для указания в порядке значимости продукта (например, браузера или библиотеки) и комментария (например, версии).
 
 ### Состояние строки User-Agent
 
-Over the intervening *decades*, this string has accrued a variety of additional details about the client making the request (as well as cruft, due to backwards compatibility). We can see that when looking at Chrome's current User-Agent string:
+За прошедшие *десятилетия в* этой строке накопилось множество дополнительных сведений о клиенте, делающем запрос (а также мусор из-за сохранения совместимости с предыдущими версиями). Взглянем на текущую строку User-Agent из Chrome:
 
 ```text
 Mozilla/5.0 (Linux; Android 10; Pixel 3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4076.0 Mobile Safari/537.36
 ```
 
-The above string contains information about the user's operating system and version, the device model, the browser's brand and full version, enough clues to infer it's a mobile browser, and not to mention a number of references to other browsers for historical reasons.
+Приведенная выше строка содержит информацию об операционной системе пользователя и ее версии, модели устройства, марке и полной версии браузера, достаточно подсказок, чтобы сделать вывод о том, что это мобильный браузер, не говоря уже о ряде ссылок на другие браузеры по историческим причинам.
 
-The combination of these parameters with the sheer diversity of possible values means the User-Agent string could contain enough information to allow individual users to be uniquely identified. If you test your own browser at [AmIUnique](https://amiunique.org/), you can see just how closely **your** User-Agent string identifies **you**. The lower your resulting "Similarity ratio" is, the more unique your requests are, the easier it is for servers to covertly track you.
+Комбинация этих параметров с огромным разнообразием возможных значений означает, что строка User-Agent может содержать достаточно информации, чтобы можно было однозначно идентифицировать отдельных пользователей. Если вы протестируете свой браузер в [AmIUnique](https://amiunique.org/), вы увидите, насколько точно **ваша** строка User-Agent идентифицирует **вас**. Чем ниже ваш результирующий «коэффициент подобия», тем более уникальны ваши запросы, тем легче серверам скрыто вас отслеживать.
 
-The User-Agent string enables many legitimate [use cases](https://github.com/WICG/ua-client-hints/blob/main/README.md#use-cases), and serves an important purpose for developers and site owners. However, it is also critical that users' privacy is protected against covert tracking methods, and sending UA information by default goes against that goal.
+Строка User-Agent позволяет включать множество допустимых [вариантов использования](https://github.com/WICG/ua-client-hints/blob/main/README.md#use-cases), и важна для разработчиков и владельцев сайтов. Но не менее важно, чтобы конфиденциальность пользователей была защищена от скрытых методов отслеживания, и отправка информации UA по умолчанию идет вразрез с этой целью.
 
-There's also a need to improve web compatibility when it comes to the User-Agent string. It is unstructured, so parsing it results in unnecessary complexity, which is often the cause for bugs and site compatibility issues that hurt users. These issues also disproportionately hurt users of less common browsers, as sites may have failed to test against their configuration.
+Необходимо также улучшить веб-совместимость строки User-Agent. Она неструктурированна, поэтому её разбор затруднен, что часто является причиной неприятных для пользователей ошибок и проблем совместимости сайтов. Эти проблемы в несоразмерно большей степени  затрагивают пользователей менее распространенных браузеров, поскольку сайтам не всегда удается проверить их конфигурацию.
 
-## Introducing the new User-Agent Client Hints
+## Представляем новое расширение User-Agent Client Hints
 
-[User-Agent Client Hints](https://github.com/WICG/ua-client-hints#explainer-reducing-user-agent-granularity) enable access to the same information but in a more privacy-preserving way, in turn enabling browsers to eventually reduce the User-Agent string's default of broadcasting everything. [Client Hints](https://tools.ietf.org/html/draft-ietf-httpbis-client-hints) enforce a model where the server must ask the browser for a set of data about the client (the hints) and the browser applies its own policies or user configuration to determine what data is returned. This means that rather than exposing **all** the User-Agent information by default, access is now managed in an explicit and auditable fashion. Developers also benefit from a simpler API - no more regular expressions!
+Расширение [User-Agent Client Hints](https://github.com/WICG/ua-client-hints#explainer-reducing-user-agent-granularity) позволяет получить доступ к той же информации, но более конфиденциальным способом, что, в свою очередь, позволяет браузерам в конечном итоге сократить стандартную передачу данных в строке User-Agent. [Client Hints](https://tools.ietf.org/html/draft-ietf-httpbis-client-hints) применяет модель, в которой сервер должен запрашивать у браузера набор данных о клиенте (подсказки), а браузер применяет свои собственные политики или конфигурацию пользователя для определения того, какие данные будут возвращены. Это означает, что вместо того, чтобы раскрывать **все** данные User-Agent по умолчанию, доступ теперь управляется явным и контролируемым образом. Разработчики также выигрывают от более простого API — больше никаких регулярных выражений!
 
-The current set of Client Hints primarily describes the browser's display and connection capabilities. You can explore the details in [Automating Resource Selection with Client Hints](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints), but here's a quick refresher on the process.
+Текущий набор Client Hints в первую очередь описывает возможности браузера и подключения к нему. Вы можете ознакомиться с подробностями в статье [«Автоматизация выбора ресурсов с помощью Client Hints»](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints), но вот краткое описание процесса.
 
-The server asks for specific Client Hints via a header:
+Сервер запрашивает определенные Client Hints через заголовок:
 
 ⬇️ *Ответ от сервера*
 
@@ -74,7 +73,7 @@ Accept-CH: Viewport-Width, Width
 <meta http-equiv="Accept-CH" content="Viewport-Width, Width" />
 ```
 
-The browser can then choose to send the following headers back in subsequent requests:
+Затем браузер может выбрать, отправлять ли следующие заголовки обратно при последующих запросах:
 
 ⬆️ *Последующий запрос*
 
@@ -85,22 +84,22 @@ Width: 230
 
 Сервер может изменять свои ответы, например, отображая изображения с соответствующим разрешением.
 
-{% Aside %} There are ongoing discussions on enabling Client Hints on an initial request, but you should consider [responsive design](/responsive-web-design-basics) or progressive enhancement before going down this route. {% endAside %}
+{% Aside %} В настоящее время ведутся дискуссии о включении клиентских подсказок при первоначальном запросе, но прежде чем идти по этому пути, следует подумать об [отзывчивом дизайне](/responsive-web-design-basics) или прогрессивном улучшении. {% endAside %}
 
-User-Agent Client Hints expand the range of properties with the `Sec-CH-UA` prefix that can be specified via the `Accept-CH` server response header. For all the details, start with [the explainer](https://github.com/WICG/ua-client-hints/blob/main/README.md) and then dive into the [full proposal](https://wicg.github.io/ua-client-hints/).
+Спецификация User-Agent Client Hints расширяет диапазон свойств с помощью префикса `Sec-CH-UA`, который можно указать в заголовке ответа сервера `Accept-CH`. Чтобы узнать все подробности, начните с [пояснения](https://github.com/WICG/ua-client-hints/blob/main/README.md), а затем погрузитесь в [полное описание проекта](https://wicg.github.io/ua-client-hints/).
 
-{% Aside %} Client Hints are **only sent over secure connections**, so make sure you have [migrated your site to HTTPS](/why-https-matters). {% endAside %}
+{% Aside %} Client Hints отправляются **только через защищенные соединения**, поэтому убедитесь, что вы [перенесли свой сайт на HTTPS](/why-https-matters). {% endAside %}
 
-The new set of hints is available from Chromium 84, so let's explore how it all works.
+Новый набор подсказок доступен в Chromium 84, поэтому давайте рассмотрим, как всё это работает.
 
-## User-Agent Client Hints from Chromium 84
+## User-Agent Client Hints в Chromium 84
 
-User-Agent Client Hints will only be enabled gradually on Chrome Stable as [compatibility concerns](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285) are resolved. To force the functionality on for testing:
+User-Agent Client Hints будут постепенно включаться в стабильную версию Chrome по мере решения [проблем с совместимостью](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285). Чтобы включить эту функцию для тестирования:
 
-- Use Chrome 84 **beta** or equivalent.
-- Enable the `about://flags/#enable-experimental-web-platform-features` flag.
+- используйте **бета-версию** Chrome 84 или аналогичную;
+- включите флаг `about://flags/#enable-experimental-web-platform-features`.
 
-By default, the browser returns the browser brand, significant / major version, and an indicator if the client is a mobile device:
+По умолчанию браузер возвращает марку браузера, основную/старшую версию и индикатор, если клиент является мобильным устройством:
 
 ⬆️ *Все запросы*
 
@@ -109,29 +108,29 @@ Sec-CH-UA: "Chromium";v="84", "Google Chrome";v="84"
 Sec-CH-UA-Mobile: ?0
 ```
 
-{% Aside 'caution' %} These properties are more complex than just a single value, so [Structured Headers](https://httpwg.org/http-extensions/draft-ietf-httpbis-header-structure.html) are used for representing lists and booleans. {% endAside %}
+{% Aside 'caution' %} Эти свойства сложнее, чем просто одно значение, поэтому для представления списков и логических значений используются [структурированные заголовки](https://httpwg.org/http-extensions/draft-ietf-httpbis-header-structure.html). {% endAside %}
 
 ### Ответ User-Agent и заголовки запросов
 
-&lt;style&gt; .w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {     width: 28ch; }  .w-table-wrapper td {   padding: 4px 8px 4px 0; } &lt;/style&gt;
+&lt;style&gt; .w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) { width: 28ch; } .w-table-wrapper td { padding: 4px 8px 4px 0; } &lt;/style&gt;
 
-⬇️ Response `Accept-CH`<br>⬆️ Request header | ⬆️ Запрос<br> Пример значения | Описание
+⬇️Ответ `Accept-CH`<br><br>⬆️ Заголовок запроса | ⬆️ Запрос<br> Пример значения | Описание
 --- | --- | ---
 `Sec-CH-UA` | `"Chromium";v="84",`<br>`"Google Chrome";v="84"` | Список брендов браузеров и их основные версии.
-`Sec-CH-UA-Mobile` | `?1` | Boolean indicating if the browser is on a mobile device (`?1` for true) or not (`?0` for false).
-`Sec-CH-UA-Full-Version` | `"84.0.4143.2"` | The complete version for the browser.
-`Sec-CH-UA-Platform` | `"Android"` | The platform for the device, usually the operating system (OS).
-`Sec-CH-UA-Platform-Version` | `"10"` | The version for the platform or OS.
+`Sec-CH-UA-Mobile` | `?1` | Логическое значение, указывающее, находится ли браузер на мобильном устройстве ( `?1` — истина) или нет ( `?0` — ложь).
+`Sec-CH-UA-Full-Version` | `"84.0.4143.2"` | Полная версия браузера.
+`Sec-CH-UA-Platform` | `"Android"` | Платформа устройства, обычно операционная система (ОС).
+`Sec-CH-UA-Platform-Version` | `"10"` | Версия платформы или ОС.
 `Sec-CH-UA-Arch` | `"arm"` | Базовая архитектура устройства. Хотя это может не иметь отношения к отображению страницы, сайт может предложить загрузку, которая по умолчанию имеет правильный формат.
 `Sec-CH-UA-Model` | `"Pixel 3"` | Модель устройства.
 
-{% Aside 'gotchas' %} Privacy and compatibility considerations mean the value may be blank, not returned, or populated with a varying value. This is referred to as [GREASE](https://wicg.github.io/ua-client-hints/#grease). {% endAside %}
+{% Aside 'gotchas' %} По соображениям конфиденциальности и совместимости значение может быть пустым, не возвращаться или заполняться изменяющимся значением. Это называется [GREASE](https://wicg.github.io/ua-client-hints/#grease). {% endAside %}
 
 ### Пример обмена
 
-An example exchange would look like this:
+Обмен будет выглядеть следующим образом:
 
-⬆️ *Initial request from browser*<br> The browser is requesting the `/downloads` page from the site and sends its default basic User-Agent.
+⬆️ *Первоначальный запрос из браузера*<br> Браузер запрашивает страницу `/downloads` с сайта и отправляет свою основную строку User-Agent по умолчанию.
 
 ```text
 GET /downloads HTTP/1.1
@@ -162,7 +161,7 @@ Sec-CH-UA-Platform: "Android"
 
 ### JavaScript API
 
-Alongside the headers, the User-Agent can also be accessed in JavaScript via `navigator.userAgentData`. The default `Sec-CH-UA` and `Sec-CH-UA-Mobile` header information can be accessed via the `brands` and `mobile` properties, respectively:
+Наряду с заголовками, доступ к User-Agent можно получить в JavaScript через `navigator.userAgentData`. К информации заголовков по умолчанию `Sec-CH-UA` и `Sec-CH-UA-Mobile` можно получить доступ через свойства `brands` и `mobile` соответственно:
 
 ```js
 // Log the brand data
@@ -187,7 +186,7 @@ console.log(navigator.userAgentData.mobile);
 false;
 ```
 
-The additional values are accessed via the `getHighEntropyValues()` call. The "high entropy" term is a reference to [information entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory)), in other words - the amount of information that these values reveal about the user's browser. As with requesting the additional headers, it's down to the browser what values, if any, are returned.
+Доступ к дополнительным значениям осуществляется через вызов `getHighEntropyValues()`. Термин «высокая энтропия» относится к [информационной энтропии](https://en.wikipedia.org/wiki/Entropy_(information_theory)), другими словами — количеству информации, которую эти значения раскрывают о браузере пользователя. Как и в случае с запросом дополнительных заголовков, браузер решает, какие значения будут возвращены.
 
 ```js
 // Log the full user-agent data
@@ -207,15 +206,15 @@ navigator
 }
 ```
 
-### Demo
+### Запустите демоверсию
 
-You can try out both the headers and the JavaScript API on your own device at [user-agent-client-hints.glitch.me](https://user-agent-client-hints.glitch.me).
+Вы можете опробовать как заголовки, так и JavaScript API на своем устройстве на сайте [user-agent-client-hints.glitch.me](https://user-agent-client-hints.glitch.me).
 
-{% Aside %} Ensure you're using Chrome 84 Beta or equivalent with `about://flags/#enable-experimental-web-platform-features` enabled. {% endAside %}
+{% Aside %} Убедитесь, что вы используете версию Chrome 84 Beta или аналогичную с включенным флагом `about://flags/#enable-experimental-web-platform-features`. {% endAside %}
 
 ### Срок службы подсказки и сброс
 
-Hints specified via the `Accept-CH` header will be sent for the duration of the browser session or until a different set of hints are specified.
+Подсказки, указанные в заголовке `Accept-CH`, будут отправляться в течение всего сеанса работы браузера или до тех пор, пока не будет указан другой набор подсказок.
 
 Это означает, что если сервер отправляет:
 
@@ -225,7 +224,7 @@ Hints specified via the `Accept-CH` header will be sent for the duration of the 
 Accept-CH: Sec-CH-UA-Full-Version
 ```
 
-Then the browser will send the `Sec-CH-UA-Full-Version` header on all requests for that site until the browser is closed.
+Браузер будет отправлять заголовок `Sec-CH-UA-Full-Version` по всем запросам для этого сайта, пока браузер не будет закрыт.
 
 ⬆️ *Последующие запросы*
 
@@ -233,7 +232,7 @@ Then the browser will send the `Sec-CH-UA-Full-Version` header on all requests f
 Sec-CH-UA-Full-Version: "84.0.4143.2"
 ```
 
-However, if another `Accept-CH` header is received then that will **completely replace** the current hints the browser is sending.
+Однако, если будет получен заголовок `Accept-CH`, он **полностью заменит** текущие подсказки, отправляемые браузером.
 
 ⬇️ *Ответ*
 
@@ -247,21 +246,21 @@ Accept-CH: Sec-CH-UA-Platform
 Sec-CH-UA-Platform: "Android"
 ```
 
-The previously asked-for `Sec-CH-UA-Full-Version` **will not be sent**.
+Запрошенная ранее `Sec-CH-UA-Full-Version` **не будет отправлена**.
 
-It's best to think of the `Accept-CH` header as specifying the complete set of hints desired for that page, meaning the browser then sends the specified hints for all the subresources on that page. While hints will persist to the next navigation, the site should not rely or assume they will be delivered.
+Лучше всего думать о заголовке `Accept-CH` как об указании полного набора подсказок, предпочтительных для этой страницы, то есть браузер затем отправляет указанные подсказки для всех подресурсов на этой странице. Хотя подсказки будут сохраняться до следующей навигации, сайту не следует полагаться на них или предполагать, что они будут доставлены.
 
-{% Aside 'success' %} Always ensure you can still deliver a meaningful experience without this information. This is to enhance the user experience, not define it. That's why they're called "hints" and not "answers" or "requirements"! {% endAside%}
+{% Aside 'success' %} Следите за тем, чтобы и без этой информации вы могли предоставлять пользователю качественный опыт взаимодействия. Это сделано для улучшения пользовательского опыта, а не для его определения. Вот почему их называют «подсказками», а не «ответами» или «требованиями»! {% endAside%}
 
-You can also use this to effectively clear all hints being sent by the browser by sending a blank `Accept-CH` in the response. Consider adding this anywhere that the user is resetting preferences or signing out of your site.
+Вы также можете эффективно очистить все подсказки, отправляемые браузером, отправив в ответ `Accept-CH`. Подумайте о добавлении этого заголовка в любом месте, где пользователь сбрасывает настройки или выходит из вашего сайта.
 
-This pattern also matches how hints work via the `<meta http-equiv="Accept-CH" …>` tag. The requested hints will only be sent on requests initiated by the page and not on any subsequent navigation.
+Этот шаблон также соответствует тому, как работают подсказки через тег `<meta http-equiv="Accept-CH" ...>`. Запрашиваемые подсказки будут отправляться только на запросы, инициированные страницей, а не при последующей навигации.
 
-### Hint scope and cross-origin requests
+### Область применения подсказок и запросов между разными источниками
 
-By default, Client Hints will only be sent on same-origin requests. That means if you ask for specific hints on `https://example.com`, but the resources you want to optimize are on `https://downloads.example.com` they **will not** receive any hints.
+По умолчанию Client Hints отправляются только по запросам из одного источника. Это означает, что если вы запрашиваете конкретные подсказки на `https://example.com`, но ресурсы, которые вы хотите оптимизировать, находятся на `https://downloads.example.com` они **не** получат никаких подсказок.
 
-To allow hints on cross-origin requests each hint and origin must be specified by a `Feature-Policy` header. To apply this to a User-Agent Client Hint, you need to lowercase the hint and remove the `sec-` prefix. For example:
+Чтобы разрешить подсказки по запросам между разными источниками, каждая подсказка и источник должны быть указаны в заголовке `Feature-Policy`. Чтобы применить это к User-Agent Client Hint, нужно записать подсказку в нижнем регистре и удалить префикс `sec-`. Например:
 
 ⬇️ *Ответ от `example.com`*
 
@@ -271,7 +270,7 @@ Feature-Policy: ch-ua-platform downloads.example.com;
                 ch-dpr cdn.provider img.example.com
 ```
 
-⬆️ *Request to `downloads.example.com`*
+⬆️ *Запрос к `downloads.example.com`*
 
 ```text
 Sec-CH-UA-Platform: "Android"
@@ -283,24 +282,24 @@ Sec-CH-UA-Platform: "Android"
 DPR: 2
 ```
 
-## Where to use User-Agent Client Hints?
+## Где использовать User-Agent Client Hints?
 
-The quick answer is that you should refactor any instances where you are parsing either the User-Agent header or making use of any of the JavaScript calls that access the same information (i.e. `navigator.userAgent`, `navigator.appVersion`, or `navigator.platform`) to make use of User-Agent Client Hints instead.
+Быстрый ответ: вам следует провести рефакторинг любых экземпляров, где вы анализируете заголовок User-Agent или используете вызовы JavaScript, которые обращаются к той же информации (например, `navigator.userAgent`, `navigator.appVersion` или `navigator.platform`), чтобы вместо этого использовать User-Agent Client Hints.
 
-Taking this a step further, you should re-examine your use of User-Agent information, and replace it with other methods whenever possible. Often, you can accomplish the same goal by making use of progressive enhancement, feature detection, or [responsive design](/responsive-web-design-basics). The base problem with relying on the User-Agent data is that you are always maintaining a mapping between the property you're inspecting and the behavior it enables. It's a maintenance overhead to ensure that your detection is comprehensive and remains up-to-date.
+Если пойти еще дальше, то следует пересмотреть использование информации User-Agent и по возможности заменить ее другими методами. Часто можно достичь той же цели, используя прогрессивное улучшение, обнаружение особенностей или [отзывчивый дизайн](/responsive-web-design-basics). Основная проблема с использованием данных User-Agent  — вы всегда поддерживаете соответствие между проверяемым свойством и тем поведением, которое оно обеспечивает. Это накладные расходы на обслуживание, затрачиваемые на проверку того, является ли ваше обнаружение полным и актуальным.
 
-With these caveats in mind, the [User-Agent Client Hints repo lists some valid use cases](https://github.com/WICG/ua-client-hints#use-cases) for sites.
+С учетом этих предостережений в репозитории [User-Agent Client Hints перечислены некоторые допустимые варианты использования](https://github.com/WICG/ua-client-hints#use-cases) для сайтов.
 
 ## Что происходит со строкой User-Agent?
 
-The plan is to minimize the ability for covert tracking on the web by reducing the amount of identifying information exposed by the existing User-Agent string while not causing undue disruption on existing sites. Introducing User-Agent Client Hints now gives you a chance to understand and experiment with the new capability, before any changes are made to User-Agent strings.
+План: свести к минимуму возможность скрытого отслеживания в Интернете за счет уменьшения количества идентифицирующей информации, предоставляемой существующей строкой User-Agent, не вызывая при этом чрезмерных сбоев в работе существующих сайтов. Внедрение User-Agent Client Hints теперь дает вам возможность понять новую функциональность и поэкспериментировать с ней, прежде чем какие-либо изменения будут внесены в строки User-Agent.
 
-[Eventually](https://groups.google.com/a/chromium.org/d/msg/blink-dev/-2JIRNMWJ7s/u-YzXjZ8BAAJ), the information in the User-Agent string will be reduced so it maintains the legacy format while only providing the same high-level browser and significant version information as per the default hints. In Chromium, this change has been deferred until at least 2021 to provide additional time for the ecosystem to evaluate the new User Agent Client Hints capabilities.
+[В конечном итоге](https://groups.google.com/a/chromium.org/d/msg/blink-dev/-2JIRNMWJ7s/u-YzXjZ8BAAJ) информация в строке User-Agent будет сведена к минимуму, чтобы поддерживать устаревший формат, предоставляя только высокоуровневую информацию о браузере и старшей версии, как в подсказках по умолчанию. В Chromium это изменение было отложено как минимум до 2021 года, чтобы предоставить экосистеме дополнительное время для оценки новых возможностей ​User Agent Client Hints.
 
-You can test a version of this by enabling the `about://flags/#reduce-user-agent` flag from Chrome 93 (Note: this flag was named `about://flags/#freeze-user-agent` in versions Chrome 84 - 92). This will return a string with the historical entries for compatibility reasons, but with sanitized specifics. For example, something like:
+Вы можете протестировать эту версию, включив флаг `about://flags/#reduce-user-agent` из Chrome 93 (примечание: в версиях Chrome 84 –92 этот флаг назывался `about://flags/#freeze-user-agent`). Это вернет строку с историческими записями по соображениям совместимости, но с очищенными деталями. Например:
 
 ```text
 Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.0.0 Mobile Safari/537.36
 ```
 
-*Photo by [Sergey Zolkin](https://unsplash.com/@szolkin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/m9qMoh-scfE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+*Фото [Сергея Золкина](https://unsplash.com/@szolkin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) с [Unsplash](https://unsplash.com/photos/m9qMoh-scfE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
