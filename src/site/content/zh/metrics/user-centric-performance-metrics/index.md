@@ -1,6 +1,6 @@
 ---
 layout: post
-title: User-centric performance metrics
+title: 以用户为中心的性能指标
 authors:
   - philipwalton
 date: '2019-11-08'
@@ -22,7 +22,7 @@ tags:
 
 但仅仅因为某个指标基于客观标准并且能够进行定量测量，也并不一定意味着那些测量值就是有用的。
 
-## Defining metrics
+## 定义指标
 
 长久以来，网络性能都是通过<code>&lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event" data-md-type="link"&gt;load&lt;/a&gt;</code>事件进行测量的。然而，尽管<code>load</code>是页面生命周期中明确定义的时刻，但该时刻并不一定与用户在意的任何方面相对应。
 
@@ -47,7 +47,7 @@ tags:
   </tr>
   <tr>
     <td><strong>是否令人愉快？</strong></td>
-    <td>Are the interactions smooth and natural, free of lag and jank?</td>
+    <td>交互是否流畅自然，没有延迟和卡顿？</td>
   </tr>
 </table>
 
@@ -74,7 +74,7 @@ tags:
 
 要想真正了解您的网站为用户呈现的性能表现，唯一的方法就是在这些用户进行页面加载和页面交互时对页面性能进行实测。这种类型的测量通常被称为[真实用户监控](https://en.wikipedia.org/wiki/Real_user_monitoring)，或简称为 RUM。
 
-## Types of metrics
+## 指标类型
 
 还有其他几种类型的指标也与用户对性能的感知相关。
 
@@ -99,7 +99,7 @@ tags:
 
 在某些情况下，我们将引入新指标来查漏补缺，但在其他情况下，专门为您的网站量身定制的指标就是最佳指标。
 
-## Custom metrics
+## 自定义指标
 
 上方列出的性能指标有助于大致了解网络上大多数网站的性能特征。而且，这些指标还可以作为网站的一组通用指标，有利于与竞争对手进行性能比较。
 
@@ -107,11 +107,11 @@ tags:
 
 为了解决这种情况，Web 性能工作组还推出了一系列较低级别的标准化 API，可用于实现您自己的自定义指标：
 
-- [User Timing API](https://w3c.github.io/user-timing/)
-- [Long Tasks API](https://w3c.github.io/longtasks/)
-- [Element Timing API](https://wicg.github.io/element-timing/)
-- [Navigation Timing API](https://w3c.github.io/navigation-timing/)
-- [Resource Timing API](https://w3c.github.io/resource-timing/)
-- [Server timing](https://w3c.github.io/server-timing/)
+- [用户计时 API](https://w3c.github.io/user-timing/)
+- [长任务 API](https://w3c.github.io/longtasks/)
+- [元素计时 API](https://wicg.github.io/element-timing/)
+- [导航计时API](https://w3c.github.io/navigation-timing/)
+- [资源计时 API](https://w3c.github.io/resource-timing/)
+- [服务器计时](https://w3c.github.io/server-timing/)
 
 请参阅[自定义指标](/custom-metrics/)的相关指南，了解如何使用这些 API 来测量您网站的特定性能特征。
