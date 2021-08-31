@@ -8,10 +8,11 @@ height: 400
 ---
 
 The example below combines two performance techniques to load a third-party font
-as quickly as possible: use of inline font declarations and use of preconnect
-resource hints. Although this code snippet demonstrates how to load fonts from
-[Google Fonts](https://fonts.google.com/), these techniques also apply to other
-third-party font providers.
+as quickly as possible: use of inline font declarations and use of `preconnect`
+resource hints. Delivering fonts quickly not only makes text render faster - but
+it also helps prevent layout shifts. Although this code snippet demonstrates how
+to load fonts from [Google Fonts](https://fonts.google.com/), these techniques
+also apply to other third-party font providers.
 
 * **Inline font declarations**: Inlining `font-family`
   declarations in the main document, rather than including this information in

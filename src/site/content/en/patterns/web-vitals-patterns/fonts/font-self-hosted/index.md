@@ -8,17 +8,21 @@ height: 400
 ---
 
 Self-hosted fonts are font files that are served from your own servers - rather
-than those of a third-party font provider (for example, Google Fonts). The
-example below combines two performance techniques to deliver a self-hosted font
-as quickly as possible: use of inline font declarations and use of the WOFF2
-font format.
+than those of a third-party font provider (for example, Google Fonts).
+
+The example below combines two performance techniques to deliver a self-hosted
+font as quickly as possible: use of inline font declarations and use of the
+WOFF2 font format. Delivering fonts quickly not only makes text render faster -
+but it also helps prevent layout shifts. 
 
 * **Inline font declarations**: Inlining `@font-face` and `font-family`
   declarations in the main document, rather than including this information in
   an external stylesheet, allows the browser to determine which font files will
   be used on the page without having to wait for a separate stylesheet file to
   download. This is important because generally browsers will not download font
-  files until they know that they are used on the page.
+  files until they know that they are used on the page. In most situations,
+  inline font declarations are [preferable to using `preload` to load
+  fonts](https://web.dev/font-best-practices/#avoid-using-preload-to-load-fonts).
 
 * **WOFF2**: Of the modern font fonts, [WOFF2](https://caniuse.com/woff2) is the
   newest, has the widest browser support, and offers the best compression.
@@ -32,10 +36,6 @@ the filesize of a font. Tools for creating font subsets include
 [fontkit](https://github.com/foliojs/fontkit),
 [subfont](https://github.com/Munter/subfont), and
 [glyphhanger](https://github.com/zachleat/glyphhanger).
-
-This example does not use `preload` to load fonts. In most situations, inline
-font declarations are a [better alternative to using `preload` to load
-fonts](https://web.dev/font-best-practices/#avoid-using-preload-to-load-fonts).
 
 For more information on best practices for self-hosted fonts, see [Using
 self-hosted
