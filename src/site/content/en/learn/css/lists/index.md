@@ -30,7 +30,7 @@ Imagine you have a bunch of items you plan to buy during your next grocery trip.
 
 ## Creating a List
 
-The preceding list started with a semantic element, or `<ul>`, with children groceries list items, or `<li>`'s. If you inspect each `<li>` element you can see that they all have `display: list-item`, which is why the browser renders it with a `::marker` by default.
+The preceding list started with a semantic element, or `<ul>`, with grocery list items (`<li>` elements) as children. If you inspect each `<li>` element you can see that they all have `display: list-item`, which is why the browser renders a `::marker` by default.
 
 ```css
 li {
@@ -40,7 +40,7 @@ li {
 
 There are two other types of lists. 
 
-Ordered lists can be created with `<ol>`, in which case the list-items `::marker` be a number by default. 
+Ordered lists can be created with `<ol>`, in which case the list-item will display a number as the `::marker`. 
 
 ```html
 <ol>
@@ -117,7 +117,7 @@ The final option is to style the [`list-style-type`](https://developer.mozilla.o
 Now that we have all of these individual properties, we can use the [`list-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style) shorthand to set all of our list styles in one line:
 
 ```css
-list-style: <'list-style-type> || <'list-style-position> || <'list-style-image>
+list-style: <'list-style-type'> || <'list-style-position'> || <'list-style-image'>
 ```
 
 `list-style` allows you to declare combinations of one, two, or three of the `list-style` properties in any order. If `list-style-type` and `list-style-image` are both set, then` list-style-type` is used as a fallback if the image is unavailable.
@@ -177,7 +177,7 @@ If you inspect the list in DevTools, you can see a `::marker` element for each o
 }
 ```
 
-When you declare a list, each item is given a marker, despite there being no bullet point or roman numeral in your HTML. This is  a pseudo-element because the browser generates it for you, and provides a limited styling API to target it. [Learn more about the anatomy of the CSS bullet.](https://web.dev/css-marker-pseudo-element/) `::marker` currently has [limited support](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker#browser_compatibility) in Safari.
+When you declare a list, each item is given a marker, despite there being no bullet point or roman numeral in your HTML. This is  a pseudo-element because the browser generates it for you, and provides a limited styling API to target it. [Learn more about the anatomy of the CSS bullet.](/css-marker-pseudo-element/) `::marker` currently has [limited support](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker#browser_compatibility) in Safari.
 
 ### Marker Box
 
@@ -197,7 +197,7 @@ Note: ::marker elements precede any pseudo-elements that you may have inserted u
 
 ### Marker Styles
 
-Now that you have selected the marker, let's look at the styling properties available to this selector. You can learn more about [Custom bullets with CSS ::marker](https://web.dev/css-marker-pseudo-element/) on web.dev.
+Now that you have selected the marker, let's look at the styling properties available to this selector. You can learn more about [Custom bullets with CSS ::marker](/css-marker-pseudo-element/) on web.dev.
 
 There are quite a few allowed CSS `::marker` Properties:
 
@@ -237,7 +237,7 @@ While you can turn anything into a list-item view with `display`, you should not
 ## Resources
 
 - [MDN Guide on Styling Lists](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_lists)
-- [Custom bullets with CSS ::marker](https://web.dev/css-marker-pseudo-element/)
+- [Custom bullets with CSS ::marker](/css-marker-pseudo-element/)
 - [Smashing Magazine: CSS Lists, Markers and Counters](https://www.smashingmagazine.com/2019/07/css-lists-markers-counters/)
 - [MDN Using CSS Counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters)
 - [CSS Lists and Counters Module Level 3](https://www.w3.org/TR/css-lists-3/)
