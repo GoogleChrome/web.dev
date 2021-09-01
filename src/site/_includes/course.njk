@@ -55,8 +55,12 @@ inlineScripts:
             <div class="course-index font-mono">{{ loop.index0 | padStart(3, '0') }}</div>
           {% endif %}
         {% endfor %}
-        <h1 class="course-headline">{{ title | md }}</h1>
-        <p class="course-description">{{ description | md }}</p>
+        <h1 class="course-headline">{{ title | md | safe }}</h1>
+        <p class="course-description">
+          {# If authors use backticks in their description markdown we don't #}
+          {# want the code to have any border or background color. #}
+          <span class="unstyled-code">{{ description | md | safe }}</span>
+        </p>
         {% include 'partials/toc-inner.njk' %}
         <div class="course-copy flow">
           {% if audio %}
