@@ -327,7 +327,7 @@ Este concepto funciona utilizando el servidor para renderizar la aplicación en 
 
 - Mantener la misma aplicación renderizada en JavaScript en el servidor y el cliente puede aumentar la complejidad.
 - Ejecutar JavaScript para renderizar un archivo HTML en el servidor siempre aumentará los tiempos de respuesta del servidor (TTFB) en comparación con solo publicar páginas estáticas desde el servidor.
-- Puede parecer que se puede interactuar con una página renderizada por el servidor, pero no puede responder a ninguna entrada del usuario hasta que se haya ejecutado todo el JavaScript del lado del cliente. En resumen, puede hacer que el [**Time to Interactive: Tiempo de Interacción **](/tti/) (TTI) empeore.
+- Puede parecer que se puede interactuar con una página renderizada por el servidor, pero no puede responder a ninguna entrada del usuario hasta que se haya ejecutado todo el JavaScript del lado del cliente. En resumen, puede hacer que el [**Time to Interactive: Tiempo de Interacción**](/tti/) (TTI) empeore.
 
 ### Utilizar la renderización previa
 
