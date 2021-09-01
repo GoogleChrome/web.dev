@@ -55,8 +55,8 @@ inlineScripts:
             <div class="course-index font-mono">{{ loop.index0 | padStart(3, '0') }}</div>
           {% endif %}
         {% endfor %}
-        <h1 class="course-headline">{{ title }}</h1>
-        <p class="course-description">{{ description }}</p>
+        <h1 class="course-headline">{{ title | md }}</h1>
+        <p class="course-description">{{ description | md }}</p>
         {% include 'partials/toc-inner.njk' %}
         <div class="course-copy flow">
           {% if audio %}
