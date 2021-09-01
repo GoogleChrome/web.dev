@@ -449,7 +449,7 @@ from navigating to the URL specified by the `<a>` element's `href` attribute? Th
 `preventDefault()` will do for you. Consider this example:
 
 ```html
-<a id="avett" href="http://www.theavettbrothers.com">The Avett Brothers</a>
+<a id="avett" href="https://www.theavettbrothers.com/welcome">The Avett Brothers</a>
 ```
 
 ```js
@@ -484,7 +484,7 @@ list them all, and sometimes you have to just experiment to see. But briefly, he
   `addEventListener()` with `{ passive: false }`).
 
 - `document + keydown event`: `preventDefault()` for this combination is lethal. It renders the page
-  largely useless, preventing keyboard scrolling, tabbing, and keyboard highlighting
+  largely useless, preventing keyboard scrolling, tabbing, and keyboard highlighting.
 
 - `document + mousedown event`: `preventDefault()` for this combination will prevent text
   highlighting with the mouse and any other "default" action that one would invoke with a mouse
