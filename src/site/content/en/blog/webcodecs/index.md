@@ -388,6 +388,14 @@ The demo below shows how animation frames from a canvas are:
 
 {% Glitch 'new-webcodecs-blogpost-demo' %}
 
+### Other demos
+
+Also check out our other demos:
+- [Decoding gifs with ImageDecoder](https://imagedecoder.glitch.me/)
+- [Capture camera input to a file](https://w3c.github.io/webcodecs/samples/capture-to-file/capture-to-file.html)
+- [MP4 playback](https://w3c.github.io/webcodecs/samples/mp4-decode/)
+- [Other samples](https://w3c.github.io/webcodecs/samples/)
+
 ## Using the WebCodecs API {: #use }
 
 ## Feature detection
