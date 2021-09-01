@@ -480,7 +480,7 @@ list them all, and sometimes you have to just experiment to see. But briefly, he
   navigating to the URL specified in the `<a>` element's href attribute.
 
 - `document + mousewheel event`: `preventDefault()` for this combination prevents page scrolling
-  with the mousewheel (scrolling with keyboard would still work though) (NOTE: requires calling
+  with the mousewheel (scrolling with keyboard would still work though) (Note: requires calling
   `addEventListener()` with `{ passive: false }`).
 
 - `document + keydown event`: `preventDefault()` for this combination is lethal. It renders the page
