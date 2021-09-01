@@ -87,19 +87,13 @@ of the next hour.
 
 ### Manual deploys
 
-To manually deploy the site you'll need to be a member of one of these GitHub
-teams:
+To manually deploy the site you'll need to be a member of one of these Google teams:
 
-- @GoogleChrome/web-dev-admins
-- @GoogleChrome/web-dev-content
-- @GoogleChrome/web-dev-contributors
-- @GoogleChrome/web-dev-eng
-- @GoogleChrome/web-devrel
+- web.dev-eng
+- web.dev-owners
 
-1. Navigate to [the Deploy workflow in the Actions panel](https://github.com/GoogleChrome/web.dev/actions?query=workflow%3ADeploy).
-2. Click the **Run workflow** button. Make sure the branch says `main`, then click the green **Run workflow** button.
-
-![An expanded workflow popup with a green run workflow button inside of it.](https://user-images.githubusercontent.com/1066253/89584965-da6eb500-d7f1-11ea-8a43-d8b1abe2cd3b.png)
+1. Navigate to [the Cloud Build Triggers page](https://console.cloud.google.com/cloud-build/triggers?project=web-dev-production-1).
+2. Click the **RUN** button for the trigger named **Deploy**.
 
 ## Debugging 🐛
 
