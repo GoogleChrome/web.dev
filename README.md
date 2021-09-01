@@ -96,6 +96,8 @@ To manually deploy the site you'll need to be a member of one of these Google te
 2. Click the **RUN** button for the trigger named **Deploy**.
 3. In the side drawer that opens up, click the **RUN TRIGGER** button for the trigger for the **main** branch.
 
+*NOTE: web.dev auto deploys every hour if there is a new commit in the `main` branch. Manual deploys should only occur when a build fails or if auto deploys are disabled.*
+
 ## Debugging 🐛
 
 If you need to debug the site's build process:
