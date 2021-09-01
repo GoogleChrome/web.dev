@@ -36,3 +36,6 @@ steps:
     id: 'Algolia index site'
     entrypoint: npm
     args: ['run', 'algolia']
+
+options:
+ machineType: 'E2_HIGHCPU_8'
