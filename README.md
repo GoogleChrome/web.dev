@@ -94,6 +94,7 @@ To manually deploy the site you'll need to be a member of one of these Google te
 
 1. Navigate to [the Cloud Build Triggers page](https://console.cloud.google.com/cloud-build/triggers?project=web-dev-production-1).
 2. Click the **RUN** button for the trigger named **Deploy**.
+3. In the side drawer that opens up, click the **RUN TRIGGER** button for the trigger for the **main** branch.
 
 ## Debugging 🐛
 
