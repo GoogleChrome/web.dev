@@ -291,7 +291,11 @@ output `#C` element (with a screenshot as well):
 "click on document in bubbling phase"
 ```
 
-{% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/JHnXdV7TlCxzXIArq8i7.png", alt="Rendered view of the HTML code sample with the console visible that shows the event logging.", width="800", height="653" %}
+You can interactively play with this in the live demo below. Click on the `#C` element and observe the console output.
+
+<div style="height: 420px; width: 100%;">
+  <iframe src="https://silicon-brawny-cardinal.glitch.me/event-capturing-and-bubbling.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
+</div>
 
 ### `event.stopPropagation()`
 
@@ -327,6 +331,12 @@ It would result in the following output:
 "click on #B in capturing phase"
 ```
 
+You can interactively play with this in the live demo below. Click on the `#C` element in the live demo and observe the console output.
+
+<div style="height: 420px; width: 100%;">
+  <iframe src="https://silicon-brawny-cardinal.glitch.me/stop-propagation-capturing-B.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
+</div>
+
 How about stopping propagation at `#A` in the bubbling phase? That would result in the following
 output:
 
@@ -341,6 +351,12 @@ output:
 "click on #B in bubbling phase"
 "click on #A in bubbling phase"
 ```
+
+You can interactively play with this in the live demo below. Click on the `#C` element in the live demo and observe the console output.
+
+<div style="height: 420px; width: 100%;">
+  <iframe src="https://silicon-brawny-cardinal.glitch.me/stop-propagation-capturing-C.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
+</div>
 
 One more, just for fun. What happens if we call `stopPropagation()` in the _target phase_ for `#C`?
 Recall that the "target phase" is the name given to the period of time when the event is _at_ its
@@ -365,6 +381,12 @@ Note that the event handler for `#C` in which we log "click on #C in the capturi
 executes, but the one in which we log "click on #C in the bubbling phase" does not. This should make
 perfect sense. We called `stopPropagation()` _from_ the former, so that is the point at which the
 event's propagation will cease.
+
+You can interactively play with this in the live demo below. Click on the `#C` element in the live demo and observe the console output.
+
+<div style="height: 420px; width: 100%;">
+  <iframe src="https://silicon-brawny-cardinal.glitch.me/stop-propagation-bubbling-A.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
+</div>
 
 In any of these live demos, I encourage you to play around. Try clicking on the `#A` element only or
 the `body` element only. Try to predict what will happen and then observe if you are correct. At
@@ -426,6 +448,12 @@ The above example will result in the following console output:
 Note that the third event handler never runs due to the fact that the second event handler calls
 `e.stopImmediatePropagation()`. If we had instead called `e.stopPropagation()`, the third handler would still run.
 
+You can interactively play with this in the live demo below. Click on the `#A` element and observe the console output.
+
+<div style="height: 420px; width: 100%;">
+  <iframe src="https://silicon-brawny-cardinal.glitch.me/stop-propagation-bubbling-A.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
+</div>
+
 ### `event.preventDefault()`
 
 If `stopPropagation()` prevents an event from traveling "downwards" (capturing) or "upwards"
@@ -462,6 +490,13 @@ document.getElementById('avett').addEventListener(
   false,
 );
 ```
+
+You can interactively play with this in the live demo below. Click the link _The Avett Brothers_
+and observe the console output (and the fact that you are not redirected to the Avett Brothers website).
+
+<div style="height: 420px; width: 100%;">
+  <iframe src="https://silicon-brawny-cardinal.glitch.me/prevent-default.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
+</div>
 
 Normally, clicking the link labelled The Avett Brothers would result in browsing to
 `www.theavettbrothers.com`. In this case though, we've wired up a click event handler to the `<a>`
