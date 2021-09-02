@@ -18,6 +18,7 @@ design tokens into usage contexts to help you work with light and dark mode.
 <h2 id="design-tokens">Design tokens</h2>
 <p>Colors that are set with design tokens, which are located here: <code>src/site/_data/design/tokens.json</code>.</p>
 {% for group in design.tokens.colors %}
+  {% if group.group != 'Backgrounds' %}
   <h3>{{ group.group }}</h3>
   <div class="table-wrapper scrollbar">
     <table>
@@ -35,10 +36,10 @@ design tokens into usage contexts to help you work with light and dark mode.
           <tr>
             <td>
               <div class="cluster flex-align-center gutter-base" style="flex-wrap: nowrap">
-                <div class="design-system__swatch" style="background: {{ color.hsl }}" role="presentation"></div>
+                <div class="design-system__swatch" style="background: {{ color.value }}" role="presentation"></div>
                 <div>
                   <h4>{{ color.name }}</h4>
-                  <p class="color-mid-text font-mono text-base">{{ color.hex }} / {{ color.hsl }}</p>
+                  <p class="color-mid-text font-mono text-base">{{ color.value }}</p>
                 </div>
               </div>
             </td>
@@ -51,6 +52,7 @@ design tokens into usage contexts to help you work with light and dark mode.
       </tbody>
     </table>
   </div>
+  {% endif %}
 {% endfor %}
 
 <h2 id="theme-usage">Theme usage</h2>
