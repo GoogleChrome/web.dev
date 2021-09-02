@@ -293,7 +293,7 @@ output `#C` element (with a screenshot as well):
 
 You can interactively play with this in the live demo below. Click on the `#C` element and observe the console output.
 
-<div style="height: 420px; width: 100%;">
+<div style="height: 680px; width: 100%;">
   <iframe src="https://silicon-brawny-cardinal.glitch.me/event-capturing-and-bubbling.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 
@@ -333,7 +333,7 @@ It would result in the following output:
 
 You can interactively play with this in the live demo below. Click on the `#C` element in the live demo and observe the console output.
 
-<div style="height: 420px; width: 100%;">
+<div style="height: 680px; width: 100%;">
   <iframe src="https://silicon-brawny-cardinal.glitch.me/stop-propagation-capturing-B.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 
@@ -354,7 +354,7 @@ output:
 
 You can interactively play with this in the live demo below. Click on the `#C` element in the live demo and observe the console output.
 
-<div style="height: 420px; width: 100%;">
+<div style="height: 680px; width: 100%;">
   <iframe src="https://silicon-brawny-cardinal.glitch.me/stop-propagation-capturing-C.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 
@@ -384,7 +384,7 @@ event's propagation will cease.
 
 You can interactively play with this in the live demo below. Click on the `#C` element in the live demo and observe the console output.
 
-<div style="height: 420px; width: 100%;">
+<div style="height: 680px; width: 100%;">
   <iframe src="https://silicon-brawny-cardinal.glitch.me/stop-propagation-bubbling-A.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 
@@ -450,7 +450,7 @@ Note that the third event handler never runs due to the fact that the second eve
 
 You can interactively play with this in the live demo below. Click on the `#A` element and observe the console output.
 
-<div style="height: 420px; width: 100%;">
+<div style="height: 680px; width: 100%;">
   <iframe src="https://silicon-brawny-cardinal.glitch.me/stop-propagation-bubbling-A.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 
@@ -494,7 +494,7 @@ document.getElementById('avett').addEventListener(
 You can interactively play with this in the live demo below. Click the link _The Avett Brothers_
 and observe the console output (and the fact that you are not redirected to the Avett Brothers website).
 
-<div style="height: 420px; width: 100%;">
+<div style="height: 620px; width: 100%;">
   <iframe src="https://silicon-brawny-cardinal.glitch.me/prevent-default.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 
