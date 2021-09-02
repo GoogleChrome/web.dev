@@ -6,11 +6,13 @@
  * @returns {Promise<void>}
  */
 const fs = require('fs');
+const {execSync} = require('child_process');
 const writeVersion = async () => {
   if (process.env.ELEVENTY_ENV === 'prod') {
     // Verify dist directory exists
+    const version = execSync('git rev-parse HEAD').toString().trim();
     fs.mkdirSync('./dist', {recursive: true});
-    fs.writeFileSync('./dist/version', process.env.GITHUB_SHA || '');
+    fs.writeFileSync('./dist/version', version);
   }
 };
 
