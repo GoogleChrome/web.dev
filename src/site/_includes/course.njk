@@ -17,8 +17,8 @@ inlineScripts:
 {% set courseTitle = courseData.meta.title | i18n(locale) %}
 
 {#
-  Grab the navigation data for the course. These are the link that will appear
-  in the navigatino drawer.
+  Grab the navigation data for the course. These are the links that will appear
+  in the navigation drawer as well as in various places around the course.
 #}
 {% set pageNavigation = collections.all | navigation(courseData.toc) %}
 

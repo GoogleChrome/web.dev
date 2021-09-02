@@ -75,7 +75,7 @@ function mapPagesToTree(collection, map) {
  * or page navigation.
  * @param {EleventyCollectionItem[]} collection
  * @param {NavigationToC[]} toc
- * @return {NavigationItem[]}
+ * @return {{ tree: NavigationItem[], list: NavigationItem[] }}
  */
 module.exports = function navigation(collection, toc) {
   /** @type {Map<string, NavigationItem>} */
@@ -85,6 +85,7 @@ module.exports = function navigation(collection, toc) {
 
   // The map is ordered correctly, even considering nesting, so use it to set
   // next/previous links and anything else.
+  // The list only contains items with actual URLs.
   const list = [...map.values()];
   list.forEach((item, idx) => {
     item.counter = idx.toString().padStart(3, '0');
@@ -92,5 +93,5 @@ module.exports = function navigation(collection, toc) {
     item.next = list[idx + 1] || null;
   });
 
-  return tree;
+  return {tree, list};
 };
