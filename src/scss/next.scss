@@ -422,6 +422,37 @@ details:not([class]) summary + * {
 
 /// Form fields
 
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea {
+  display: block;
+  width: 100%;
+  background-color: get-utility-value('bg', 'core-bg');
+  color: get-utility-value('color', 'core-text');
+  border: 1px solid get-utility-value('color', 'stroke');
+  font: inherit;
+  padding: 0.8em;
+  line-height: 1;
+  border-radius: $global-radius-base;
+}
+
+textarea {
+  &:not([rows]) {
+    min-height: 12rem;
+  }
+
+  @include apply-utility('leading', 'short');
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea,
+select {
+  max-width: 40rem;
+}
+
 select {
   display: block;
   width: 100%;
@@ -449,6 +480,66 @@ select::-ms-expand {
 
 select:hover {
   background-color: get-utility-value('bg', 'accent-bg');
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  position: relative;
+  border: none;
+  cursor: pointer;
+  margin: 0px;
+  background-size: cover;
+  appearance: none;
+  -webkit-appearance: none;
+
+  /// A material design-style "click" state
+  &::before {
+    content: '';
+    display: block;
+    width: 2.5em;
+    height: 2.5em;
+    background: get-utility-value('bg', 'mid-bg');
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: opacity $global-transition-fade 50ms,
+      background $global-transition-fade, transform $global-transition-movement;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &:hover:focus::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  &:checked::before {
+    background: get-utility-value('bg', 'highlight-interact-bg');
+  }
+}
+
+input[type='checkbox'] {
+  width: min(1.13em, 18px);
+  height: min(1.13em, 18px);
+
+  @include apply-utility('bg', 'checkbox');
+}
+
+input[type='checkbox']:checked {
+  @include apply-utility('bg', 'checkbox-checked');
+}
+
+input[type='radio'] {
+  width: min(1.5em, 24px);
+  height: min(1.5em, 24px);
+
+  @include apply-utility('bg', 'radio');
+}
+
+input[type='radio']:checked {
+  @include apply-utility('bg', 'radio-checked');
 }
 
 /// Links

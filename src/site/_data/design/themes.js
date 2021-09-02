@@ -11,6 +11,8 @@
 module.exports = {
   colorKeys: {
     MODE: 'mode',
+    CHECKBOX: 'checkbox',
+    CHECKBOX_CHECKED: 'checkbox-checked',
     CORE_TEXT: 'core-text',
     CORE_BG: 'core-bg',
     DARK_BG: 'dark-bg',
@@ -42,6 +44,8 @@ module.exports = {
     QUATERNARY_BOX_TEXT: 'quaternary-box-text',
     SECONDARY_BOX_BG: 'secondary-box-bg',
     SECONDARY_BOX_TEXT: 'secondary-box-text',
+    RADIO: 'radio',
+    RADIO_CHECKED: 'radio-checked',
     REVERSED_BG: 'reversed-bg',
     REVERSED_TEXT: 'reversed-text',
     STATE_INFO_TEXT: 'state-info-text',
@@ -59,6 +63,8 @@ module.exports = {
   getDark() {
     return {
       MODE: 'dark',
+      CHECKBOX: 'backgrounds-checkbox-dark',
+      CHECKBOX_CHECKED: 'backgrounds-checkbox-dark-checked',
       CORE_TEXT: 'shades-light',
       CORE_BG: 'shades-dim',
       DARK_BG: 'shades-charcoal',
@@ -90,6 +96,8 @@ module.exports = {
       QUATERNARY_BOX_TEXT: 'core-quaternary-bright',
       SECONDARY_BOX_BG: 'core-secondary-dim',
       SECONDARY_BOX_TEXT: 'core-secondary-bright',
+      RADIO: 'backgrounds-radio-dark',
+      RADIO_CHECKED: 'backgrounds-radio-dark-checked',
       REVERSED_BG: 'shades-gray-glare',
       REVERSED_TEXT: 'shades-dark',
       STATE_INFO_TEXT: 'state-info-bright',
@@ -108,6 +116,8 @@ module.exports = {
   getLight() {
     return {
       MODE: 'light',
+      CHECKBOX: 'backgrounds-checkbox',
+      CHECKBOX_CHECKED: 'backgrounds-checkbox-checked',
       CORE_TEXT: 'shades-dark',
       CORE_BG: 'shades-light-bright',
       DARK_BG: 'shades-gray-glare',
@@ -137,6 +147,8 @@ module.exports = {
       PRIMARY_BOX_TEXT: 'core-primary',
       QUATERNARY_BOX_BG: 'core-quaternary-bright',
       QUATERNARY_BOX_TEXT: 'core-quaternary',
+      RADIO: 'backgrounds-radio',
+      RADIO_CHECKED: 'backgrounds-radio-checked',
       REVERSED_BG: 'shades-charcoal',
       REVERSED_TEXT: 'shades-light',
       SECONDARY_BOX_BG: 'core-secondary-bright',
