@@ -12,7 +12,7 @@
             <span class="font-mono">{{ (loop.index0 - 1) | padStart(3, '0') }}</span>
           </div>
 
-          <div class="course-pagination-control__title">{{ prev.page.data.title }}</div>
+          <div class="course-pagination-control__title">{{ prev.data.title }}</div>
         </a>
       {% endif %}
       {% if item.next %}
@@ -24,8 +24,8 @@
             {{ icon('arrow-forward', {label: 'next'}) }}
           </div>
 
-          <div class="course-pagination-control__title">{{ next.page.data.title }}</div>
-          <div class="course-pagination-control__desc">{{ next.page.data.description }}</div>
+          <div class="course-pagination-control__title">{{ next.data.title }}</div>
+          <div class="course-pagination-control__desc">{{ next.data.description }}</div>
         </a>
       {% endif %}
     {% endif %}
