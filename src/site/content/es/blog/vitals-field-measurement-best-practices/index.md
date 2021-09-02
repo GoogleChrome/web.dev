@@ -119,7 +119,7 @@ El código de análisis con frecuencia se ejecuta en respuesta a la entrada del 
 
 ### Utilice las API sin bloqueo
 
-API como <code>&lt;a href="https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon" data-md-type="link"&gt;sendBeacon()&lt;/a&gt;</code> y <code>&lt;a href="https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback" data-md-type="link"&gt;requestIdleCallback()&lt;/a&gt;</code> están diseñadas específicamente para ejecutar tareas no fundamentales de manera que no bloqueen las tareas fundamentales para el usuario.
+API como <code>[sendBeacon()](https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon)</code> y <code>[requestIdleCallback()](https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback)</code> están diseñadas específicamente para ejecutar tareas no fundamentales de manera que no bloqueen las tareas fundamentales para el usuario.
 
 Estas API son excelentes herramientas para usar en una biblioteca de análisis de RUM.
 
