@@ -82,14 +82,15 @@ pageScripts:
     {% endfor %}
   </nav>
   <div class="code-patterns-nav__filter">
-    <input type="text" placeholder="filter"/>
+    {# <input type="text" placeholder="filter"/> #}
   </div>
 </section>
 
 <section class="w-layout-container--wide code-patterns-main">
   <div>
-    {# Show patterns from current set (if set) or from the whole suite #}
+    {{ content | safe }}
 
+    {# Show patterns from current set (if set) or from the whole suite #}
     {% if currentPatternSet %}
 
       <h2> {{ currentPatternSet.title }} </h2>
@@ -144,7 +145,7 @@ pageScripts:
 
   <div class="code-patterns-nav--side">
     <div class="code-patterns-nav__filter">
-      <input type="text" placeholder="filter"/>
+      {# <input type="text" placeholder="filter"/> #}
     </div>
     <nav class="code-patterns-nav__sets">
       {% for setId, set in patterns.sets %}

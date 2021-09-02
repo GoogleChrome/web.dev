@@ -136,7 +136,7 @@ using this pattern:
     height="495"
   %}
   <figcaption class="w-figcaption">
-    Largest Contentful Paint distribution, for page loads with and without a service worker - 
+    Largest Contentful Paint distribution, for page loads with and without a service worker -
     <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a>
   </figcaption>
 </figure>
@@ -271,21 +271,21 @@ To optimize:
   [loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md) to
   load files asynchronously, which leverages `rel="preload"`and `onload`.
 
-      ```html
-      <link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
-      ```
+```html
+<link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
+```
 
-  <figure class="w-figure">
-    {% Img
-      src="image/admin/2fcwrkXQRQrM8w1qyy3P.png",
-      alt="Example of LCP improvement: Before and after deferring non-critical CSS",
-      width="800",
-      height="139"
-    %}
-    <figcaption class="w-figcaption">
-      Example of LCP improvement: Before and after deferring non-critical CSS
-    </figcaption>
-  </figure>
+<figure class="w-figure">
+  {% Img
+    src="image/admin/2fcwrkXQRQrM8w1qyy3P.png",
+    alt="Example of LCP improvement: Before and after deferring non-critical CSS",
+    width="800",
+    height="139"
+  %}
+  <figcaption class="w-figcaption">
+    Example of LCP improvement: Before and after deferring non-critical CSS
+  </figcaption>
+</figure>
 
 {% Aside %}
 For more details, refer to the [Defer non-critical
