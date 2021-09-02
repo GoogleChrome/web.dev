@@ -523,7 +523,7 @@ list them all, and sometimes you have to just experiment to see. But briefly, he
   highlighting with the mouse and any other "default" action that one would invoke with a mouse
   down.
 
-- `<input>` element + "keypress" event: `preventDefault()` for this combination will prevent characters typed by the user from reaching the input element (but please don't do this; there is rarely, if ever, a valid reason for it).
+- `<input>` element + "keypress" event: `preventDefault()` for this combination will prevent characters typed by the user from reaching the input element (but don't do this; there is rarely, if ever, a valid reason for it).
 
 - `document` + "contextmenu" event: `preventDefault()` for this combination prevents the native
   browser context menu from appearing when a user right-clicks or long-presses (or any other way in which a context menu might appear).
