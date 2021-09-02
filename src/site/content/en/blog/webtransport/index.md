@@ -21,15 +21,14 @@ feedback:
 ---
 
 {% Aside 'caution' %}
-This proposal continues to change during the origin trial period. There 
-may be a divergence between the browser implementation and the information in this 
-article.
+This proposal continues to change during the origin trial period, which is
+currently scheduled to run through Chrome 94. There may be a divergence between
+the browser implementation and the information in this article.
+
+In Chrome 95, we anticipate that WebTransport will only be available via enabling experimental features in the `about://flags` interface. During this period, further breaking changes will be implemented, prior to the anticipated enabling of WebTransport by default in Chrome 96.
 
 For the latest on this evolving proposal, please read refer to the
 [editor's draft of WebTransport](https://w3c.github.io/webtransport/).
-
-Once the proposal stabilizes, we will update this article and associated code
-samples with up to date information.
 {% endAside %}
 
 ## Background
@@ -67,8 +66,8 @@ WebTransport helps with similar use cases as QuicTransport, with the primary dif
 | 1. Create explainer                        | [Complete](https://github.com/w3c/webtransport/blob/main/explainer.md) |
 | 2. Create initial draft of specification   | [Complete](https://w3c.github.io/webtransport/) |
 | **3. Gather feedback and iterate design**  | [**In Progress**](#feedback) |
-| **4. Origin trial**                        | [**In Progress**](#register-for-ot) |
-| 5. Launch                                  | Not Started |
+| **4. Origin trial**                        | [**Through Chrome 94**](#register-for-ot) |
+| 5. Launch                                  | Planned for Chrome 96 |
 
 </div>
 
