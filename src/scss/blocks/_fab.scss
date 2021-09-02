@@ -1,0 +1,33 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/fab
+.fab {
+  position: relative;
+  padding: 1em;
+  border-radius: 3em;
+
+  @include button-base-styles();
+}
+
+.fab__label {
+  /// By default (small viewport), the
+  /// label is hidden
+  @extend .visually-hidden;
+
+  /// If this isn't a icon only context,
+  /// show the label where there is more space
+  @include media-query('md') {
+    .fab:not([data-icon-only]) & {
+      clip: none;
+      position: static;
+      width: unset;
+    }
+  }
+}
+
+/// Docked state
+.fab[data-docked] {
+  position: fixed;
+  bottom: $global-gutter;
+  right: $global-gutter;
+  z-index: 10;
+}

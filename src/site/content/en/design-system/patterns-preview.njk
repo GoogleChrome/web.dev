@@ -1,5 +1,6 @@
 ---
 title: 'Preview'
+CSS_ORIGIN: 'next'
 pagination:
   data: design.patterns.previews
   size: 1
@@ -11,18 +12,21 @@ permalink: '{{ item.previewUrl }}/index.html'
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="{{ helpers.hashForProd('/css/main.css') }}" />
-    <title>{{ item.data.title }} - Preview</title>
+    {% include 'partials/head.njk' %}
+
     <style>
-      [data-state='window'] .preview {
-        padding: 1em;
+      /* Extra padding for theme toggle */
+      body {
+        padding: 1rem 1rem 5rem 1rem;
       }
 
-      body {
-        padding: 0;
+      .theme-toggle {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
+        z-index: 10;
+        background: var(--color-mid-bg);
       }
     </style>
   </head>
@@ -30,7 +34,9 @@ permalink: '{{ item.previewUrl }}/index.html'
     <div class="preview">
       {{ item.rendered | safe }}
     </div>
-
+    <div class="theme-toggle">
+      {% include "partials/standard-theme-toggle.njk" %}
+    </div>
     <!-- Sets a specific state for windowed previews -->
     <script>
       const urlSearchParams = new URLSearchParams(window.location.search);

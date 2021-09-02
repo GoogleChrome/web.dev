@@ -1,5 +1,6 @@
 {
   "title": "Lists",
+  "summary": "All of these list patterns require no extra classes and style the correct semantic element.",
   "context": {
     "items": [
       "A standard ordered list",

@@ -7,6 +7,7 @@ authors:
   - samdutton
 description: Get the 2021 Scroll Survey Report plus words from the Chrome team about how this impacts priorities and plans for Chromium and the web.
 date: 2021-08-02
+updated: 2021-09-01
 thumbnail: image/80mq7dk16vVEg8BBhsVe42n6zn82/0yI4zjveGNiC1Kh8QzhV.jpg
 alt: The unveiling of the new Torah display at Trinity International University, photo by Taylor Wilcox.
 tags:
@@ -387,7 +388,7 @@ The features developers struggle to build include:
 ### Resources
 
 - [Scroll Survey
-  Report](https://drive.google.com/file/d/10WXTJHCZmH0rXEh3J7z3ki96-f9SHs_R/view?usp=sharing&resourcekey=0-5b1y_6rZDhyt6Tkbz3FCzA)
+  Report](https://storage.googleapis.com/web-dev-uploads/file/vS06HQ1YTsbMKSFTIPl2iogUQP73/QZopyELSk8T7IpsgOnRU.pdf)
 - [Survey Announcement](/2021-scroll-survey/)
 - [Mozilla DNA Reports](https://insights.developer.mozilla.org/)
 - [Compat2021: Eliminating five top compatibility pain points on the

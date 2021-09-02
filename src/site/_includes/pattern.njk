@@ -1,0 +1,17 @@
+---
+layout: pattern-page
+pageScripts:
+  - '/js/content.js'
+---
+
+{{ content | safe }}
+
+{% if page.url %}
+  {% set patternId = page.url | getRelativePath('/patterns/') %}
+{% endif %}
+
+{% if patternId %}
+  {% set pattern = patterns[patternId] %}
+{% endif %}
+
+{% CodePattern patternId %}

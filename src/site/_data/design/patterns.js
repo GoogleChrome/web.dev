@@ -15,7 +15,11 @@ const warning = chalk.black.bgYellow;
 const error = chalk.black.bgRed;
 
 // Set up custom nunjucks environment and add custom parts
-const nunjucksEnv = new nunjucks.Environment();
+const nunjucksEnv = new nunjucks.Environment(
+  new nunjucks.FileSystemLoader(
+    path.join(__basedir, 'src', 'site', '_includes'),
+  ),
+);
 
 nunjucksEnv.addFilter('md', md);
 

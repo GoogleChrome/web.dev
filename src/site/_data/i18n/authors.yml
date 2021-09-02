@@ -46,6 +46,12 @@ beaufortfrancois:
   description:
     en: Dives into Chromium source code
 
+cwallez:
+  title:
+    en: Corentin Wallez
+  description:
+    en: Graphics plumber at Google
+
 mathiasbynens:
   title:
     en: Mathias Bynens
@@ -1060,3 +1066,39 @@ npm:
   description:
     en: Software developer always looking for chocolates and games
     es: Programador siempre en busca de chocolates y juegos
+
+derekherman:
+  title:
+    en: Derek Herman
+  description:
+    en: CTO at XWP
+
+dero:
+  title:
+    en: Jaroslav Polakovič
+  description:
+    en: Senior Engineer at XWP
+
+jarhar:
+  title:
+    en: Joey Arhar
+  description:
+    en: Software Engineer on the Chrome DOM team
+
+majido:
+  title:
+    en: Majid Valipour
+  description:
+    en: Software Engineer on the Chrome team
+
+flackr:
+  title:
+    en: Robert Flack
+  description:
+    en: Software Engineer on the Chrome team
+
+dandclark:
+  title:
+    en: Dan Clark
+  description:
+    en: Developer on the Microsoft Edge Web Platform team

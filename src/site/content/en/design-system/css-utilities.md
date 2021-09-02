@@ -4,6 +4,26 @@ permalink: '/design-system/css-utilities/index.html'
 layout: 'design-system-documentation.njk'
 ---
 
+## All center
+
+Does what it says on the tin. It center-aligns text with `text-align` and uses
+`margin-inline: auto` to center align on the reading mode direction.
+
+```html
+<header class="all-center">
+  <h1>A page header</h1>
+  <p>
+    Donec ullamcorper nulla non metus auctor fringilla. Integer posuere erat a
+    ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam.
+    Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit
+    tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Duis
+    mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia
+    odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient
+    montes, nascetur ridiculus mus.
+  </p>
+</header>
+```
+
 ## Flow
 
 The flow utility provides flow and rhythm between direct sibling elements.
@@ -74,6 +94,27 @@ chunks/sections/regions of content.
 
 ```html
 <div class="region">I have consistent space now.</div>
+```
+
+## Scrollbar
+
+Provides a scrollbar only if there is overflow content. This utility only provides the scrollbar and **not** the rule which determines which direction scrolling occurs (`overflow-x`, `overflow-y`, `overflow`), so the element that this is applied to needs to deal with that.
+
+The scrollbar colors can be changed too by setting the following **on the element** or on a parent element that has a [higher specificity](https://web.dev/learn/css/specificity/) than `:root`.
+
+<dl>
+<dt><code>--scrollbar-bg</code></dt>
+<dd>The track/background color</dd>
+<dt><code>--scrollbar-fg</code></dt>
+<dd>The thumb/foreground color</dd>
+</dl>
+
+### Example
+
+```html
+<div class="table-wrapper scrollbar">
+  <table></table>
+</div>
 ```
 
 ## Visually hidden

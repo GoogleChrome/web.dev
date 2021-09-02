@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-07-29
+updated: 2021-08-25
 tags:
   - blog
   - capabilities
@@ -73,6 +73,16 @@ API to ensure that people can easily manage their files. See the
 There were a number of other
 [changes](https://github.com/WICG/file-system-access/blob/main/changes.md) that you can read up
 on. {% endAside %}
+
+## Browser support
+
+{% BrowserCompat 'api.Window.showOpenFilePicker' %}
+
+The File System Access API is currently supported on most Chromium browsers on Windows, macOS,
+Chrome OS, and Linux. A notable exception is Brave
+([brave/brave-browser#11407](https://github.com/brave/brave-browser/issues/11407)).
+Android support is planned; you can track progress by starring
+[crbug.com/1011535](https://crbug.com/1011535).
 
 ## Using the File System Access API {: #how-to-use }
 
@@ -189,7 +199,7 @@ async function getNewFileHandle() {
 }
 ```
 
-{% Aside 'gotcha' %} Sometimes processing the to-be-saved data takes some time after the user clicks
+{% Aside 'gotchas' %} Sometimes processing the to-be-saved data takes some time after the user clicks
 the **Save** button in your app. A common gotcha is to do this work _before_ the
 `showSaveFilePicker()` code has run, resulting in a
 `SecurityError Failed to execute 'showSaveFilePicker' on 'Window': Must be handling a user gesture to show a file picker.`.

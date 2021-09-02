@@ -144,7 +144,7 @@ if req['sec-fetch-mode'] == 'navigate' and req.method == 'GET'
     return True  # Allow this request
 ```
 {% Aside 'gotchas' %}
-The logic above protects your application's endpoints from being used as resources by other websites, but will permit top-level navigation and embedding (e.g. loading in an <iframe>). To further improve security, you can use Fetch Metadata headers to restrict cross-site navigations to only an allowed set of pages.
+The logic above protects your application's endpoints from being used as resources by other websites, but will permit top-level navigation and embedding (e.g. loading in an `<iframe>`). To further improve security, you can use Fetch Metadata headers to restrict cross-site navigations to only an allowed set of pages.
 {% endAside %}
 
 

@@ -1,30 +1,44 @@
 {
   "title": "Banners",
-  "summary": "Hidden in small viewports so increase the sample window size.",
+  "keyLinks": [
+    {
+      "label": "Sass File",
+      "url": "https://github.com/GoogleChrome/web.dev/tree/main/src/scss/blocks/_banner.scss"
+    }
+  ],
   "context": {
     "content": "Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.",
-    "modifier": "w-banner--neutral"
+    "utilities": {
+      "main": "bg-state-info-bg color-core-text"
+    }
   },
   "variants": [
     {
-      "name": "info",
-      "title": "Info",
-      "modifier": "w-banner--info"
+      "name": "lots-of-content",
+      "title": "Lots of content",
+      "context": {
+        "content": "Euismod tellus phasellus sapien mus enim curabitur eu at fermentum luctus curae dis cras ut magnis libero eros eget non scelerisque potenti dui aenean porttitor hac integer consectetur penatibus commodo nunc proin tincidunt tempus adipiscing volutpat ipsum justo hendrerit ultrices sit pulvinar ad magna ridiculus class lobortis maecenas orci semper"
+      }
     },
     {
       "name": "caution",
       "title": "Caution",
-      "modifier": "w-banner--caution"
+      "context": {
+        "utilities": {
+          "main": "bg-state-bad-bg color-core-text",
+          "button": "color-state-bad-text"
+        }
+      }
     },
     {
       "name": "warning",
       "title": "Warning",
-      "modifier": "w-banner--warning"
-    },
-    {
-      "name": "body",
-      "title": "Body",
-      "modifier": "w-banner--info w-banner--body"
+      "context": {
+        "utilities": {
+          "main": "bg-state-warn-bg color-core-text",
+          "button": "color-state-warn-text"
+        }
+      }
     }
   ]
 }

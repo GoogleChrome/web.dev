@@ -23,13 +23,13 @@
  */
 
 /**
- * @typedef {object} CourseProgress
+ * @typedef {object} Course
  * @property {string[]} pages
  * @property {string} percent
  */
 
-/** @type {CourseProgress} */
-const initialProgress = {pages: [], percent: '0'};
+/** @type {Course} */
+const initialCourse = {pages: [], percent: '0'};
 
 class CourseLinks extends HTMLElement {
   constructor() {
@@ -44,6 +44,22 @@ class CourseLinks extends HTMLElement {
   }
 
   /**
+   * Get the user's overall course progress from localstorage.
+   * This returns an object where each string key represents a different course.
+   * Example: {css: {pages: ['intro', ...], percent: 10}, pwa: {...}}
+   * @returns {{[courseName: string]: Course}}
+   */
+  getProgress = () => {
+    let progress;
+    try {
+      progress = JSON.parse(localStorage['webdev_course_progress']);
+    } catch (e) {
+      progress = {};
+    }
+    return progress;
+  };
+
+  /**
    * Called when the element's children are first parsed.
    * This will set attributes on the children so they render correctly
    * and will track the user's progress in GA.
@@ -53,44 +69,34 @@ class CourseLinks extends HTMLElement {
     const currentUrl = this.getAttribute('data-current');
     const courseKey = this.getAttribute('data-course-key');
 
-    // Grab the user's progress from localstorage using the data-course-key.
-    // If the user doesn't have any progress we'll initialize it for them.
-    let courseProgress;
-    try {
-      courseProgress = JSON.parse(localStorage['webdev_course_progress']);
-      courseProgress = courseProgress[courseKey];
-    } catch (e) {
-      courseProgress = {...initialProgress};
-    }
-
+    // Get the user's progress from localstorage and update it.
+    const progress = this.getProgress();
+    const course = progress[courseKey] || {...initialCourse};
     // Find every anchor that the user has already visited and set an attribute
     // on it so it renders a checkmark.
     children.forEach((child) => {
-      if (
-        courseProgress.pages &&
-        courseProgress.pages.indexOf(child.getAttribute('href')) > -1
-      ) {
+      if (course.pages && course.pages.includes(child.getAttribute('href'))) {
         child.setAttribute('data-complete', 'true');
       }
       return child;
     });
 
-    this.trackProgress(children, currentUrl, courseProgress, courseKey);
+    this.trackProgress(children, currentUrl, course, courseKey);
   };
 
   /**
    * Update the user's progress in localstorage and fire analytics.
    * @param {Element[]} children
    * @param {string} currentUrl
-   * @param {CourseProgress} courseProgress
+   * @param {Course} course
    * @param {string} courseKey
    */
-  trackProgress = (children, currentUrl, courseProgress, courseKey) => {
+  trackProgress = (children, currentUrl, course, courseKey) => {
     // Add the user's current page to the set of pages already visited.
     // We use a Set here to avoid duplicate pages.
     // We'll compare newPages to oldPages to figure out how far they
     // have progressed.
-    const oldPages = new Set(courseProgress.pages);
+    const oldPages = new Set(course.pages);
     oldPages.add(currentUrl);
     const newPages = Array.from(oldPages);
 
@@ -105,7 +111,7 @@ class CourseLinks extends HTMLElement {
     // Math.floor((13/21) * 10) * 10 == 60 (fire analytics event)
     // Note we're using integers to represent percents instead of decimals to
     // avoid issues with floating point arithmetic.
-    const oldPercent = parseInt(courseProgress.percent, 10);
+    const oldPercent = parseInt(course.percent, 10);
     const newPercent =
       Math.floor((newPages.length / children.length) * 10) * 10;
 
@@ -120,12 +126,26 @@ class CourseLinks extends HTMLElement {
 
     // Write everything back to localstorage using the data-course-key
     // to identify which course it came from.
-    localStorage['webdev_course_progress'] = JSON.stringify({
+    //
+    // If a user has visited multiple courses, then we need to preserve
+    // their progress, so we merge the new progress with their saved state.
+    let updatedProgress = this.getProgress();
+    updatedProgress = Object.assign({}, updatedProgress, {
       [courseKey]: {
         pages: newPages,
-        percent: newPercent.toString(),
+        percent: newPercent,
       },
     });
+
+    try {
+      localStorage['webdev_course_progress'] = JSON.stringify(updatedProgress);
+    } catch (e) {
+      // Fail gracefully with a console log.
+      // We don't want to cause a runtime error here and possibly disrupt
+      // the rest of the JS on the page since tracking progress isn't a
+      // critical feature.
+      console.warn(`Failed to write course status to localstorage.`);
+    }
   };
 }
 

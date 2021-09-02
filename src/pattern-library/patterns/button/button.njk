@@ -1,1 +1,10 @@
-<button class="w-button {{ data.modifier }}"{% if data.icon %} data-icon="{{ data.icon }}"{% endif %}>{{ data.text }}</button>
+<button 
+  class="button"
+  {% if data.type %}data-type="{{ data.type }}"{% endif %}
+  {% if data.attribute %}{{ data.attribute }}{% endif %}
+>
+  {% if data.icon %}
+    {% include "icons/" ~ data.icon %}
+  {% endif %}
+  {{ data.text }}
+</button>

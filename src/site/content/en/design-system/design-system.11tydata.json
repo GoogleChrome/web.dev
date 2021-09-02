@@ -1,4 +1,5 @@
 {
+  "CSS_ORIGIN": "next",
   "sideLinks": [
     {
       "text": "Welcome",
@@ -11,6 +12,10 @@
     {
       "text": "Typography",
       "url": "/design-system/typography/"
+    },
+    {
+      "text": "Pattern Library",
+      "url": "/design-system/pattern-library/"
     }
   ],
   "cssLinks": [

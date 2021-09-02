@@ -69,10 +69,6 @@ typings/
 # build artifacts
 dist
 
-# deploy scripts
-devsite.js
-local-devsite.js
-
 # DS_Store
 .DS_Store
 
@@ -84,6 +80,7 @@ entrypoint.hashmanifest.json
 # Temporary files
 .cache
 .tmp
+.cache
 .firebase
 firebase.json
 src/scss/_tokens.scss

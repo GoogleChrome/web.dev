@@ -4,6 +4,7 @@ subhead: An approach to standardizing common pattern matching use cases.
 authors:
   - jeffposnick
 date: 2021-07-22
+updated: 2021-08-04
 description: An approach to standardizing common pattern matching use cases.
 thumbnail: image/FNkVSAX8UDTTQWQkKftSgGe9clO2/YWhOUaN06kzk4mu93a1v.jpg
 tags:
@@ -137,6 +138,14 @@ const p = new URLPattern({
   baseURL: 'https://example.com',
 });
 ```
+
+{% Aside %}
+When passing a `baseURL` to the constructor, any aspects of the URL
+that are not provided are treated as if they were set to an empty string, _not_
+as a `'*'` wildcard. For instance,
+`new URLPattern({baseURL: 'https://example.com/'})` will create a `URLPattern`
+with `search`, `hash`, and other unspecified properties set to `''`.
+{% endAside %}
 
 All of these examples assume that your use case involves matching origins. If
 you're only interested in matching on the other portions of the URL, excluding
@@ -291,7 +300,7 @@ If you're familiar with the
 <code>[exec()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec)</code>
 method of a
 <code>[RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)</code>
-object, then the return values from <code>URLPattern.exec()</code> 
+object, then the return values from <code>URLPattern.exec()</code>
 method will look
 [very similar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges#examples)
 when it comes to representing anonymous and named groups.
@@ -318,7 +327,7 @@ when it comes to representing anonymous and named groups.
 - Regular expression groups must contain only ASCII characters. Regular
   expression syntax makes it difficult and unsafe to automatically encode
   Unicode characters in these groups. If you want to match a Unicode character
-  in a regular expression group,you need to percent encode it manually, like
+  in a regular expression group, you need to percent encode it manually, like
   `(caf%C3%A9)` to match `café`.
 
 In addition to encoding Unicode characters, `URLPattern` also performs URL
