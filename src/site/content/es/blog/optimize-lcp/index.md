@@ -151,13 +151,11 @@ Para optimizar:
 
 - Para cualquier CSS que no sea necesaria para la renderización inicial, utilice [loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md) para cargar los archivos de forma asincrónica, lo que aprovecha `rel="preload"` y `onload`.
 
-    ```
-    ```html
-    <link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
-    ```
-    ```
+```html
+<link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
+```
 
-    <figure class="w-figure">{% Img src="image/admin/2fcwrkXQRQrM8w1qyy3P.png", alt="Ejemplo de como mejorar LCP: antes y después de aplazar CSS no crítico", width="800", height="139" %} <figcaption class="w-figcaption"> Ejemplo de como mejorar LCP: antes y después de aplazar CSS no crítico </figcaption></figure>
+<figure class="w-figure">{% Img src="image/admin/2fcwrkXQRQrM8w1qyy3P.png", alt="Ejemplo de como mejorar LCP: antes y después de aplazar CSS no crítico", width="800", height="139" %} <figcaption class="w-figcaption"> Ejemplo de como mejorar LCP: antes y después de aplazar CSS no crítico </figcaption></figure>
 
 {% Aside %} Para obtener más información, consulte la guía [Retrasar CSS no crítico](/defer-non-critical-css/). {% endAside %}
 
