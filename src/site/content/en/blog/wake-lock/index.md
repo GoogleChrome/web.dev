@@ -85,10 +85,11 @@ Of course, there are plenty of other use cases:
 </div>
 
 {% Aside %}
-  Big thanks to the folks at Intel, specifically Mrunal Kapade, for implementing
-  this API. Chrome depends on a community of committers
-  working together to move the Chromium project forward. Not every Chromium
-  committer is a Googler, and these contributors deserve special recognition!
+  Big thanks to the folks at Intel, specifically Mrunal Kapade and Raphael Kubo
+  da Costa, for implementing this API. Chrome depends on a community of
+  committers working together to move the Chromium project forward. Not every
+  Chromium committer is a Googler, and these contributors deserve special
+  recognition!
 {% endAside %}
 
 ## Using the Screen Wake Lock API {: #use }
