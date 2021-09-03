@@ -2,9 +2,9 @@
 title: Cómo empezar a medir Web Vitals
 authors:
   - katiehempenius
-date: '2020-05-27'
-updated: 27-05-2020
-hero: image / admin / QxMJKZcue9RS5u05XxTE.png
+date: 2020-05-27
+updated: 2020-05-27
+hero: image/admin/QxMJKZcue9RS5u05XxTE.png
 alt: Gráfico mensual superpuesto con cronómetros etiquetados como LCP, FID y CLS.
 description: Aprenda a medir los Web Vitals de su sitio tanto en el mundo real como en entornos de laboratorio.
 tags:

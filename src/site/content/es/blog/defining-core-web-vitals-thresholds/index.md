@@ -4,9 +4,9 @@ subhead: La investigación y la metodología detrás de los umbrales de Core Web
 authors:
   - bmcquade
 description: La investigación y la metodología detrás de los umbrales de Core Web Vitals
-date: '2020-05-21'
-updated: 27-05-2020
-hero: image / admin / WNrgCVjmp8Gyc8EbZ9Jv.png
+date: 2020-05-21
+updated: 2020-05-27
+hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: La investigación y la metodología detrás de los umbrales de Core Web Vitals
 tags:
   - blog

@@ -3,8 +3,8 @@ layout: post
 title: Total Blocking Time (TBT)
 authors:
   - philipwalton
-date: '2019-11-07'
-updated: 15/06/2020
+date: 2019-11-07
+updated: 2020-06-15
 description: En esta publicación se presenta la métrica Total Blocking Time (TBT) y se explica como medirla
 tags:
   - performance

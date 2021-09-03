@@ -4,7 +4,7 @@ title: Time to Interactive (TTI)
 authors:
   - philipwalton
 date: '2019-11-07'
-updated: 15/06/2020
+updated: 2020-06-15
 description: En esta publicación se presenta la métrica Time to Interactive (TTI) y se explica como medirla
 tags:
   - performance

@@ -3,7 +3,7 @@ layout: post
 title: Métricas de rendimiento centradas en el usuario
 authors:
   - philipwalton
-date: '2019-11-08'
+date: 2019-11-08
 description: Las métricas de rendimiento centradas en el usuario son una herramienta fundamental para comprender y mejorar la experiencia de su sitio web de forma que beneficie a los usuarios reales.
 tags:
   - performance

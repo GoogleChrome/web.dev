@@ -4,9 +4,9 @@ subhead: Cómo medir Web Vitals con su herramienta de análisis actual.
 authors:
   - philipwalton
 description: Cómo medir Web Vitals con su herramienta de análisis actual
-date: '2020-05-27'
-updated: 21/07/2020
-hero: image / admin / WNrgCVjmp8Gyc8EbZ9Jv.png
+date: 2020-05-27
+updated: 2020-07-21
+hero: image/admin/WNrgCVjmp8Gyc8EbZ9Jv.png
 alt: Cómo medir Web Vitals con su herramienta de análisis actual
 tags:
   - blog

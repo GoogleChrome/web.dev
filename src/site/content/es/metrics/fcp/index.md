@@ -3,8 +3,8 @@ layout: post
 title: First Contentful Paint (FCP)
 authors:
   - philipwalton
-date: '2019-11-07'
-updated: '2021-01-18'
+date: 2019-11-07
+updated: 2021-01-18
 description: En esta publicación se presenta la métrica First Contentful Paint (FCP) y se explica como medirla
 tags:
   - performance
