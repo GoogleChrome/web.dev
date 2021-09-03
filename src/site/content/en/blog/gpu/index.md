@@ -7,7 +7,7 @@ authors:
   - beaufortfrancois
   - cwallez
 date: 2021-08-26
-updated: 2021-09-02
+updated: 2021-09-03
 hero: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/SN6GIsxmcINXJZKszOTr.jpeg
 thumbnail: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/SN6GIsxmcINXJZKszOTr.jpeg
 description: |
@@ -110,7 +110,7 @@ if ("gpu" in navigator) {
 ```
 
 {% Aside 'caution' %}
-The GPU adapter returned by `navigator.gpu.requestAdapter()` may be null.
+The GPU adapter returned by `navigator.gpu.requestAdapter()` may be `null`.
 {% endAside %}
 
 ### Get started {: #get-started }
