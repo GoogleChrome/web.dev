@@ -1,5 +1,40 @@
 {% from 'macros/icon.njk' import icon, svg with context %}
 
+{% macro renderItem(item, depth) %}
+  {%- set title = item.data.title or '' -%}
+  {%- if item.title -%}
+    {%- set title = item.title | i18n(locale) -%}
+  {%- endif -%}
+
+  {% if item.url %}
+    {# The isNew flag is used to display a 'NEW' badge next to content. #}
+    {% set isNew = false %}
+    {# Check to make sure the content was published after the course's #}
+    {# initial launch date (so everything doesn't say 'NEW' when we #}
+    {# first launch a course). #}
+    {% if item.data.date > courseData.meta.date %}
+      {# Only show the 'NEW' badge if content is less than thirty days old. #}
+      {% set isNew = item.data.date | isNewContent %}
+    {% endif %}
+    <a class="drawer-course__link" href="{{ item.url }}" style="--nest-indent: {{ depth }}"
+        {% if item.url == page.url %} data-active {% endif %}>
+      <span class="drawer-course__link-counter font-mono">{{ item.counter }}</span>
+      <span class="drawer-course__link-title gap-left-400"
+          {% if isNew %} data-badge="{{ 'i18n.common.new' | i18n(locale) }}" {% endif %}
+      >{{ title }}</span>
+      {{ icon('done', {className: 'drawer-course__link-check gap-left-auto'}) }}
+    </a>
+  {% elif title %}
+    {# This is just a heading for children. #}
+    <span class="drawer-course__heading">{{ title }}</span>
+  {% endif %}
+
+  {# Renders any nested children. #}
+  {% for c in item.children %}
+    {{ renderItem(c, depth + 1) }}
+  {% endfor %}
+{% endmacro %}
+
 <web-navigation-drawer class="drawer-course" type="standard">
   <nav data-drawer-container>
 
@@ -23,23 +58,8 @@
       <web-search class="drawer-course__search" results-id="search-course-results" tag="{{ searchTag }}"></web-search>
       <div class="drawer-course__scroll">
         <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
-          {% for item in pageNavigation %}
-            {# The isNew flag is used to display a 'NEW' badge next to content. #}
-            {% set isNew = false %}
-            {# Check to make sure the content was published after the course's #}
-            {# initial launch date (so everything doesn't say 'NEW' when we #}
-            {# first launch a course). #}
-            {% if item.page.data.date > courseData.meta.date %}
-              {# Only show the 'NEW' badge if content is less than thirty days old. #}
-              {% set isNew = item.page.data.date | isNewContent %}
-            {% endif %}
-          <a class="drawer-course__link" href="{{ item.url }}" {% if item.url == page.url %} data-active {% endif %}>
-            <span class="drawer-course__link-counter font-mono">{{ loop.index0 | padStart(3, '0') }}</span>
-            <span class="drawer-course__link-title gap-left-400"
-                {% if isNew %} data-badge="{{ 'i18n.common.new' | i18n(locale) }}" {% endif %}
-            >{{ item.page.data.title }}</span>
-            {{ icon('done', {className: 'drawer-course__link-check gap-left-auto'}) }}
-          </a>
+          {% for item in pageNavigation.tree %}
+            {{ renderItem(item, 0) }}
           {% endfor %}
         </course-links>
         <web-course-search-results class="drawer-course__search_results" id="search-course-results"></web-course-search-results>

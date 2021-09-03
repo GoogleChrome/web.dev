@@ -30,6 +30,12 @@
     }
   }
 
+  &__heading {
+    display: block;
+    min-height: 48px;
+    padding: 16px 24px;
+  }
+
   web-search {
     display: block;
     height: 48px;
@@ -78,6 +84,7 @@
     display: flex;
     min-height: 48px;
     padding: 16px 24px;
+    padding-left: calc(var(--nest-indent, 0) * 12px + 24px);
 
     &:hover {
       background-color: rgba($GREY_800, .03);

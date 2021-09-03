@@ -17,8 +17,8 @@ inlineScripts:
 {% set courseTitle = courseData.meta.title | i18n(locale) %}
 
 {#
-  Grab the navigation data for the course. These are the link that will appear
-  in the navigatino drawer.
+  Grab the navigation data for the course. These are the links that will appear
+  in the navigation drawer as well as in various places around the course.
 #}
 {% set pageNavigation = collections.all | navigation(courseData.toc) %}
 
@@ -50,9 +50,9 @@ inlineScripts:
     <div class="course-content display-flex justify-content-center">
       {% include 'partials/toc-side.njk' %}
       <main id="main">
-        {% for item in pageNavigation %}
+        {% for item in pageNavigation.list %}
           {% if item.url === page.url %}
-            <div class="course-index font-mono">{{ loop.index0 | padStart(3, '0') }}</div>
+            <div class="course-index font-mono">{{ item.counter }}</div>
           {% endif %}
         {% endfor %}
         <h1 class="course-headline">{{ title }}</h1>

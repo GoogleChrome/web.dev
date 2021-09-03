@@ -14,7 +14,7 @@
           <span class="gap-left-200 gap-right-200">·</span>
           {# Count up the number of pages in the course and display it as "n resources" #}
           {% set pages = collections.all | navigation(course.toc) %}
-          <span>{{ pages.length }} {{ 'i18n.learn.resources' | i18n(locale) }}</span>
+          <span>{{ pages.list.length }} {{ 'i18n.learn.resources' | i18n(locale) }}</span>
         </div>
         <a href="{{ course.meta.url }}">
           <img class="course-card__thumbnail" src="{{ course.meta.card }}">
