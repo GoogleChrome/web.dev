@@ -93,7 +93,7 @@ En la imagen de arriba, hay un elemento que ocupa la mitad de la ventana de visu
 
 La otra parte de la ecuación para la puntuación de cambio de diseño mide la distancia de desplazamiento en los elementos inestables, relacionadas con la ventana de visualización. La *fracción de distancia* es la distancia más grande que cualquier *elemento inestable* se ha desplazado en el marco (ya sea de forma horizontal o vertical) dividida por la mayor dimensión de la ventana de visualización (ancho o alto, el que sea mayor).
 
-{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASnfpVs2n9winu6mmzdk.png", alt="Ejemplo de fracción de distancia con un *elemento inestable* ", width="800", height="600", linkTo=true %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASnfpVs2n9winu6mmzdk.png", alt="Ejemplo de fracción de distancia con un *elemento inestable* ", width="800", height="600", linkTo=true %}
 
 En el ejemplo anterior, la dimensión más grande de la ventana de visualización es la altura, y el elemento inestable que se desplazó un 25% de la altura de la ventana, lo que hace que la *fracción de distancia sea* 0.25.
 

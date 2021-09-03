@@ -139,7 +139,7 @@ La extensión Web Vitals mide las tres métricas de Core Web Vitals en tiempo re
 
 ¡La extensión ya está disponible para su instalación desde [Chrome Web Store](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en)! Esperamos que le sea de utilidad. Agradecemos cualquier contribución para mejorarlo, así como los comentarios sobre el repositorio de [GitHub](https://github.com/GoogleChrome/web-vitals-extension/) del proyecto.
 
-<figure class="w-figure">{% Img src="image/admin/woROdEmNV4jlHDPryjBQ.png", alt="Core Web Vitals se muestra en tiempo real con la extensión de Chrome Web Vitals", width="800", height="459", class="w-captura de pantalla" %}</figure>
+<figure class="w-figure">{% Img src="image/admin/woROdEmNV4jlHDPryjBQ.png", alt="Core Web Vitals se muestra en tiempo real con la extensión de Chrome Web Vitals", width="800", height="459", class="w-screenshot" %}</figure>
 
 #### Aspectos más destacados
 

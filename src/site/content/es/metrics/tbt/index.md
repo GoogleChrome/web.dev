@@ -29,7 +29,7 @@ El *tiempo de bloqueo* de una tarea larga determinada es su duración superior a
 
 Por ejemplo, considere consultar el siguiente diagrama del subproceso principal del navegador durante la carga de la página:
 
-{% Img src="image/admin/clHG8Yv239lXsGWD6Iu6.svg", alt="Una línea de tiempo de tareas en el subproceso principal", width="800", height="156", linkTo = true %}
+{% Img src="image/admin/clHG8Yv239lXsGWD6Iu6.svg", alt="Una línea de tiempo de tareas en el subproceso principal", width="800", height="156", linkTo=true %}
 
 La línea de tiempo anterior tiene cinco tareas, tres de las cuales son tareas largas porque su duración supera los 50 ms. En el siguiente diagrama se muestra el tiempo de bloqueo para cada una de las tareas largas:
 

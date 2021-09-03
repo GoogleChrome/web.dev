@@ -50,7 +50,7 @@ En general, la demora de la entrada (también conocida como latencia de la entra
 
 Considere la siguiente línea de tiempo para cargar una página web normal:
 
-{% Img src = "image / admin / 9tm3f6pwlHMqNKuFvaP0.svg", alt = "Ejemplo de seguimiento de carga de páginas", width = "800", height = "260", linkTo = true%}
+{% Img src = "image/admin/9tm3f6pwlHMqNKuFvaP0.svg", alt = "Ejemplo de seguimiento de carga de páginas", width = "800", height = "260", linkTo = true %}
 
 En la visualización anterior se muestra una página que realiza un par de solicitudes de red para recursos (probablemente archivos CSS y JS) y, una vez que se terminan de descargar esos recursos, se procesan en el subproceso principal.
 

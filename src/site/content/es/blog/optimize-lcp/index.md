@@ -14,7 +14,7 @@ tags:
   - web-vitals
 ---
 
-{% ID de YouTube = 'AQqFZ5t8uNc', startTime = '1073'%}
+{% YouTube id='AQqFZ5t8uNc', startTime='1073' %}
 
 <blockquote>
   <p>No puedo ver ningún contenido útil. ¿Por qué tarda tanto en cargar? 😖</p>
@@ -148,7 +148,7 @@ Si utiliza un agrupador de módulos o una herramienta de compilación, incluya u
 - Para Gulp: [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css)
 - Para Rollup: [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter)
 
-<figure class="w-figure">{% Img src = "image/admin/vQXSKrY1Eq3CKkNbu9Td.png", al ="Ejemplo de mejora de LCP: antes y después de minificar CSS", width = "800", height = "139" %}<figcaption class="w-figcaption"> Ejemplo de mejora de LCP: antes y después de minificar CSS</figcaption></figure>
+<figure class="w-figure">{% Img src="image/admin/vQXSKrY1Eq3CKkNbu9Td.png", alt="Ejemplo de mejora de LCP: antes y después de minificar CSS", width="800", height="139" %}<figcaption class="w-figcaption"> Ejemplo de mejora de LCP: antes y después de minificar CSS</figcaption></figure>
 
 {% Aside %} Para obtener más información, consulte la guía [Minify CSS](/minify-css/). {% endAside %}
 
@@ -176,7 +176,7 @@ Para optimizar:
 
 Estilos integrados en el código de cualquier CSS de ruta crítica que se utilice para el contenido de la mitad superior de la página que lo incluya directamente en el `<head>.`
 
-<figure class="w-figure">{% Img src="image/admin/m0n0JsLpH9JsNnXywSwz.png", alt="CSS crítico con estilos integrados en el código", width="800", height="325", class="w-screenshot w-screenshot--lleno" %} <figcaption class="w-figcaption">CSS crítico con estilos integrados en el código</figcaption></figure>
+<figure class="w-figure">{% Img src="image/admin/m0n0JsLpH9JsNnXywSwz.png", alt="CSS crítico con estilos integrados en el código", width="800", height="325", class="w-screenshot w-screenshot--filled" %} <figcaption class="w-figcaption">CSS crítico con estilos integrados en el código</figcaption></figure>
 
 La inserción de estilos importantes elimina la necesidad de realizar una solicitud de ida y vuelta para obtener CSS crítico. Retrasar el resto minimiza el tiempo de bloqueo de CSS.
 
