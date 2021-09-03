@@ -23,7 +23,9 @@ tags:
 [First Input Delay: Demora de la primera entrada](/fid/) (FID) es una [métrica de Core Web Vitals](/vitals/) que captura la primera impresión del usuario sobre la interactividad y la capacidad de respuesta de un sitio. Mide el tiempo que transcurre desde que el usuario interactúa por primera vez con una página hasta el momento en que el navegador es capaz de responder a esa interacción. El FID es una [métrica de campo](/user-centric-performance-metrics/#in-the-field) y no se puede simular en un entorno de laboratorio. Es necesario tener **una interacción real con el usuario** para medir la demora en la respuesta.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)">{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / Se4TiXIdp8jtLJVScWed.svg", alt = "Los valores de fid correctos son 2,5 segundos, los valores deficientes son superiores a 4,0 segundos y cualquier valor intermedio debe mejorarse", width = "384", height = "96 ", class =" w-screenshot w-screenshot - ancho completo "%}</source></picture>
+  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Los valores de fid correctos son 2,5 segundos, los valores deficientes son superiores a 4,0 segundos y cualquier valor intermedio debe mejorarse", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+</picture>
 
 Para predecir la FID en el [laboratorio](/how-to-measure-speed/#lab-data-vs-field-data), recomendamos que se utilice el [Total Blocking Time: Tiempo de bloqueo total (TBT)](/tbt/). Ambas métricas miden cosas diferentes, pero las mejoras en el TBT generalmente coinciden con mejoras en la FID.
 

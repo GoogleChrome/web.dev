@@ -25,7 +25,9 @@ Uno de los factores que contribuyen a una mala experiencia de usuario es el tiem
 [Largest Contentful Paint : Despliegue del contenido más extenso](/lcp) (LCP) es una métrica de [Core Web Vitals](/vitals/) y mide cuándo se hace visible el elemento de contenido más grande en la ventana de visualización. Puede utilizarse para determinar cuándo el contenido principal de la página terminó la renderización en la pantalla.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)">{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / 9trpfS9wruEPGekHqBdn.svg", alt = "Los valores buenos de LCP son 2,5 segundos, los valores malos son superiores a 4,0 segundos y cualquier cosa intermedia necesita mejora", width = "384", height = "96 ", class =" w-screenshot w-screenshot - ancho completo "%}</source></picture>
+  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9trpfS9wruEPGekHqBdn.svg", alt="Los valores buenos de LCP son 2,5 segundos, los valores malos son superiores a 4,0 segundos y cualquier cosa intermedia necesita mejora", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
+</picture>
 
 Las causas más comunes de una LCP deficiente son:
 
@@ -75,7 +77,18 @@ Cuando se instala, un [service worker](https://developer.mozilla.org/en-US/docs/
 
 En la siguiente gráfica se muestra cómo se han reducido las distribuciones de LCP en un sitio utilizando este patrón:
 
-<figure class="w-figure">{% Img src = "image / admin / uB0Sm56R88MRF16voQ1k.png", alt = "Las distribuciones de Largest Contentful Paint antes y después de utilizar el almacenamiento en el caché de HTML", width = "800", height = "495"%}<figcaption class="w-figcaption"> La distribución Contentful Paint más grande, para cargas de páginas mediante, y sin utilizar, un service worker - <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a></figcaption></figure>
+<figure class="w-figure">
+  {% Img
+    src="image/admin/uB0Sm56R88MRF16voQ1k.png",
+    alt="Las distribuciones de Largest Contentful Paint antes y después de utilizar el almacenamiento en el caché de HTML",
+    width="800",
+    height="495"
+  %}
+  <figcaption class="w-figcaption">
+    La distribución Contentful Paint más grande, para cargas de páginas mediante, y sin utilizar, un service worker - 
+    <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a>
+  </figcaption>
+</figure>
 
 En la gráfica se muestra la distribución de la LCP de un solo sitio durante los últimos 28 días, segmentado por el estado del service worker. Observe cómo muchas más cargas de páginas tienen un valor de LCP más rápido después de que se introdujo el servicio de páginas HTML cache-first en el service worker (parte azul de la gráfica).
 
@@ -135,7 +148,7 @@ Si utiliza un agrupador de módulos o una herramienta de compilación, incluya u
 - Para Gulp: [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css)
 - Para Rollup: [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter)
 
-<figure class="w-figure">{% Img src = "image / admin / vQXSKrY1Eq3CKkNbu9Td.png", alt = "Ejemplo de mejora de LCP: antes y después de minificar CSS", width = "800", height = "139"%}<figcaption class="w-figcaption"> Ejemplo de mejora de LCP: antes y después de minificar CSS</figcaption></figure>
+<figure class="w-figure">{% Img src = "image/admin/vQXSKrY1Eq3CKkNbu9Td.png", al ="Ejemplo de mejora de LCP: antes y después de minificar CSS", width = "800", height = "139" %}<figcaption class="w-figcaption"> Ejemplo de mejora de LCP: antes y después de minificar CSS</figcaption></figure>
 
 {% Aside %} Para obtener más información, consulte la guía [Minify CSS](/minify-css/). {% endAside %}
 
