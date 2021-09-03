@@ -63,7 +63,7 @@ Hay una gran cantidad de causas frecuentes para que la FID y el TBT tengan punta
 
 A continuación, se muestran las puntuaciones del TBT antes y después de optimizar la carga de scripts en el origen para una aplicación. Al mover la costosa carga de scripts (y su ejecución) para un componente no esencial fuera de la ruta crítica, los usuarios pudieron interactuar con la página mucho tiempo antes.
 
-{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="Mejoras en la puntuación del TBT en Lighthouse después de optimizar el script en el origen"., width="800", height="148", class="w-screenshot" %}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TEIbBnIAyfzIoQtvXvMk.png", alt="Mejoras en la puntuación del TBT en Lighthouse después de optimizar el script en el origen", width="800", height="148", class="w-screenshot" %}
 
 ### La búsqueda de datos puede afectar muchos aspectos de la preparación para la interacción
 
