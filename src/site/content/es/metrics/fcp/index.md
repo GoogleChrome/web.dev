@@ -24,8 +24,8 @@ En la carga anterior de la línea de tiempo, FCP ocurre en el segundo marco, ya 
 Notará que, aunque se ha renderizado parte del contenido, no se ha renderizado todo. Esta es una distinción importante que se debe hacer entre *First* Contentful Paint (FCP) y *[Largest Contentful Paint (LCP)](/lcp/)*, cuyo objetivo es medir cuándo se terminó de cargar el contenido principal de la página.
 
 <picture>
-  <source srcset="{{ "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/V1mtKJenViYAhn05WxqR.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt=""Los buenos valores de FCP son 1,8 segundos o menos, los valores malos son superiores a 3,0 segundos y cualquier cosa intermedia necesita mejora", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  <source srcset="{{ "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/V1mtKJenViYAhn05WxqR.svg" | imgix }}" media="(min-width: 640px)" width="400" height="100">
+  {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/vQKpz0S2SGnnoXHMDidj.svg", alt="Los buenos valores de FCP son 1,8 segundos o menos, los valores malos son superiores a 3,0 segundos y cualquier cosa intermedia necesita mejora", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
 </picture>
 
 ### ¿Qué es una buena puntuación FCP?
