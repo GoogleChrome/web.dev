@@ -64,7 +64,12 @@ Si prueba esto en una selección de sitios populares, notará que la mayoría de
 
 Si regresa a la misma selección de sitios que veía antes, probablemente notó que había cookies para una gran variedad de dominios, no solo el que visitaba en ese momento. A las cookies que coinciden con el dominio del sitio actual, es decir, el que se muestra en la barra de direcciones del navegador, se les conoce como **cookies propias**. De manera similar, las cookies cuyos dominios son distintos al del sitio que se visita en ese momento se denominan cookies de **terceros**. Esta no es una una forma para denominarlas que pueda usarse en todos los casos, pero es relativa al contexto del usuario. Es decir, la misma cookie puede ser propia o de terceros, según el sitio donde se encuentre el usuario en ese momento.
 
-<figure class="w-figure">{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / zjXpDz2jAdXMT83Nm3IT.png", alt = "Se envían tres cookies a un navegador desde diferentes solicitudes en la misma página", width = "800", height = "346", style = "max -ancho: 60vw "%}<figcaption class="w-figcaption"> Las cookies pueden provenir de una gran variedad de dominios diferentes en una misma página.</figcaption></figure>
+<figure class="w-figure">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="Se envían tres cookies a un navegador desde diferentes solicitudes en la misma página", width="800", height="346", style="max-width: 60vw" %}
+  <figcaption class="w-figcaption">
+    Las cookies pueden provenir de una gran variedad de dominios diferentes en una misma página.
+  </figcaption>
+</figure>
 
 Para continuar con el ejemplo anterior, digamos que una de las publicaciones de su blog tiene la imagen de un gato particularmente asombroso y está alojada en `/blog/img/amazing-cat.png` . Debido a que es una imagen bastante sorprendente, otra persona la usa directamente en su sitio. Si un visitante estuvo en su blog y tiene la cookie `promo_shown` , cuando vea la imagen `amazing-cat.png` en el sitio de la otra persona, esa cookie **se enviará** en la solicitud de esa imagen. Esto no es particularmente útil para nadie, ya que `promo_shown` no se usa de ninguna forma en el sitio de esta otra persona, solo agrega una forma de sobrecargar la solicitud.
 
