@@ -50,9 +50,9 @@ inlineScripts:
     <div class="course-content display-flex justify-content-center">
       {% include 'partials/toc-side.njk' %}
       <main id="main">
-        {% for item in pageNavigation %}
+        {% for item in pageNavigation.list %}
           {% if item.url === page.url %}
-            <div class="course-index font-mono">{{ loop.index0 | padStart(3, '0') }}</div>
+            <div class="course-index font-mono">{{ item.counter }}</div>
           {% endif %}
         {% endfor %}
         <h1 class="course-headline">{{ title }}</h1>
