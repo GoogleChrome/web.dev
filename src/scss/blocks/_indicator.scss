@@ -1,0 +1,12 @@
+.indicator {
+  display: flex;
+  align-items: center;
+  font-size: get-size('size-0');
+  line-height: 0.9;
+  padding: 0.4em;
+  border-radius: 50%;
+  width: max-content;
+  aspect-ratio: 1/1;
+
+  @include apply-utility('font', 'mono');
+}
