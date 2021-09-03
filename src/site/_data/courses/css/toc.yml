@@ -7,12 +7,8 @@
 - url: /learn/css/color
 - url: /learn/css/sizing
 - url: /learn/css/layout
-- title: i18n.header.open_menu
-  sections:
-  - url: /learn/css/flexbox
-- title: i18n.header.about
+- url: /learn/css/flexbox
 - url: /learn/css/grid
-  title: i18n.header.live
 - url: /learn/css/logical-properties
 - url: /learn/css/spacing
 - url: /learn/css/pseudo-elements
