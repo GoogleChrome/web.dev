@@ -4,7 +4,7 @@ subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use
 authors:
   - samdutton
 date: 2020-04-08
-updated: 2021-08-20
+updated: 2021-09-03
 hero: image/admin/5F89q0kLUOLWvYtNJeWZ.jpg
 alt: A black-on-white printed sign saying Private, on a wooden wall.
 description: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback.
@@ -75,7 +75,7 @@ Enable an origin that trusts a user to issue them with cryptographic tokens whic
 Allow related domain names owned by the same entity to declare themselves as belonging to the same first party.
 * [Aggregated Reporting](https://github.com/csharrison/aggregate-reporting-api)<br>
 Provide privacy preserving mechanisms to support a variety of use cases such as view-through-conversion, brand, lift, and reach measurement.
-* [Attribution Reporting](https://github.com/csharrison/conversion-measurement-api)<br>
+* [Attribution Reporting](https://github.com/WICG/conversion-measurement-api)<br>
 Provide privacy preserving measurement of clicks and views with event-level and aggregate reports.
 * [FLoC](https://github.com/jkarlin/floc)<br>
 The browser groups together many users with similar browsing histories into a group (or "cohort"). Advertisers can select ads for this large group based on mass observations, but cannot recognize individual people in it.
