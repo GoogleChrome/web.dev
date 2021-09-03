@@ -7,7 +7,7 @@ description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
 date: 2020-09-14
-updated: 2021-07-19
+updated: 2021-09-02
 tags:
   - blog
   - capabilities
@@ -340,7 +340,7 @@ fullscreen:
 
 ```js
 try {
-  const primaryScreen = (await getScreens()).filter((screen) => screen.primary)[0];
+  const primaryScreen = (await getScreens()).screens.filter((screen) => screen.isPrimary)[0];
   await document.body.requestFullscreen({ screen: primaryScreen });
 } catch (err) {
   console.error(err.name, err.message);
