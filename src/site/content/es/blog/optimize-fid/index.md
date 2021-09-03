@@ -40,7 +40,7 @@ El navegador no puede responder a la mayoría de las entradas de los usuarios mi
 - [Utilice un trabajador web](#use-a-web-worker)
 - [Reduzca el tiempo de ejecución de JavaScript](#reduce-javascript-execution)
 
-## Divida las tareas largas {: # long-tasks}
+## Divida las tareas largas {: #long-tasks}
 
 Si ya intentó reducir la cantidad de procesos en JavaScript que se cargan en una sola página, quizás resulte útil dividir el código de ejecución prolongada en **tareas asincrónicas más pequeñas**.
 
@@ -87,7 +87,7 @@ Considere usar las siguientes bibliotecas para facilitar el uso de los trabajado
 
 {% Aside %} Para obtener más información sobre cómo los trabajadores web pueden ejecutar el código desde el subproceso principal, consulte [Cómo utilizar trabajadores web para ejecutar JavaScript desde el subproceso principal del navegador](/off-main-thread/). {% endAside %}
 
-### Reduzca el tiempo de ejecución de JavaScript {: # reduce-javascript-execution}
+### Reduzca el tiempo de ejecución de JavaScript {: #reduce-javascript-execution}
 
 Limitar la cantidad de JavaScript que hay en su página reduce la cantidad de tiempo que el navegador necesita para ejecutar el código en JavaScript. Esto aumenta la velocidad con que el navegador comienza a responder a las interacciones del usuario.
 

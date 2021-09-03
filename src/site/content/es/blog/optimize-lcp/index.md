@@ -36,7 +36,7 @@ Las causas más comunes de una LCP deficiente son:
 - [Tiempos de carga de recursos lentos](#slow-resource-load-times)
 - [Renderización del lado del cliente](#client-side-rendering)
 
-## Tiempos de respuesta lentos del servidor {: # slow-servers}
+## Tiempos de respuesta lentos del servidor {: #slow-servers}
 
 Cuanto más tarda un navegador en recibir el contenido del servidor, más tiempo tarda en renderizar cualquier cosa en la pantalla. Un tiempo de respuesta del servidor más rápido mejora directamente cada métrica de carga de la página, incluido el LCP.
 
@@ -201,7 +201,7 @@ Esto se puede lograr optimizando sus scripts de diferentes formas:
 
 {% Aside %} La guía [Optimizar First Input Delay](/optimize-fid/) cubre todas las técnicas necesarias para reducir el tiempo de bloqueo de JavaScript con un poco más de detalle. {% endAside %}
 
-## Tiempos de carga de recursos lentos {: # slow-resource-load-times}
+## Tiempos de carga de recursos lentos {: #slow-resource-load-times}
 
 Aunque un aumento en el tiempo de bloqueo de CSS o JavaScript se traduce directamente en un peor rendimiento, el tiempo que se tarda en cargar muchos otros tipos de recursos también puede afectar los tiempos de despliegue. Los tipos de elementos que afectan a LCP son:
 
@@ -308,7 +308,7 @@ El almacenamiento previo en el caché de recursos críticos mediante un service 
 
 {% Aside %} Eche un vistazo a la [confiabilidad de la red](/reliable/) para obtener más información sobre los service workers y Workbox. {% endAside %}
 
-## Representación del lado del cliente {: # client-side-rendering}
+## Representación del lado del cliente {: #client-side-rendering}
 
 Muchos sitios utilizan la lógica de JavaScript del lado del cliente para renderizar las páginas directamente en el navegador. Los frameworks y las librerías, como [React](https://reactjs.org/), [Angular](https://angular.io/) y [Vue](https://vuejs.org/), han facilitado la creación de aplicaciones de una sola página que manejan diferentes facetas de una página web completamente en el cliente y no en el servidor.
 
