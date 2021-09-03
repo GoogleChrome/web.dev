@@ -59,7 +59,9 @@ La ráfaga más grande es la ventana de sesión con la puntuación acumulada má
 Para proporcionar una buena experiencia de usuario, los sitios deben esforzarse por tener una puntuación CLS de **0.1** o menos. Para asegurarse de que está alcanzando este objetivo para la mayoría de sus usuarios, un buen umbral para medir es el **percentil 75** de cargas de página, segmentado en dispositivos móviles y de escritorio.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / uqclEgIlTHhwIgNTXN3Y.svg", alt = "Los valores de CLS buenos son inferiores a 0,1, los valores deficientes son superiores a 0,25 y cualquier valor intermedio debe mejorarse", width = "400", height = "300" , class = "w-screenshot w-screenshot - ancho completo completo"%}</source></picture>
+  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Los valores de CLS buenos son inferiores a 0,1, los valores deficientes son superiores a 0,25 y cualquier valor intermedio debe mejorarse", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+</picture>
 
 {% Aside %} Para obtener más información sobre la investigación y la metodología detrás de esta recomendación, consulte: [Definición de los umbrales de las métricas de Core Web Vitals](/defining-core-web-vitals-thresholds/) {% endAside %}
 
@@ -83,7 +85,7 @@ La [fracción de impacto](https://github.com/WICG/layout-instability#Impact-Frac
 
 La unión de las áreas visibles de todos *los elementos inestables* para el fotograma anterior *y* el fotograma actual, como una fracción del área total de la ventana de visualización, es la *fracción de impacto* para el fotograma actual.
 
-{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / BbpE9rFQbF8aU6iXN1U6.png", alt = "Ejemplo de fracción de impacto con un *elemento inestable* ", ancho = "800", alto = "600", linkTo = true%}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BbpE9rFQbF8aU6iXN1U6.png", alt="Ejemplo de fracción de impacto con un *elemento inestable* ", width="800", height="600", linkTo = true %}
 
 En la imagen de arriba, hay un elemento que ocupa la mitad de la ventana de visualización en un marco. Luego, en el siguiente marco, el elemento se desplaza hacia abajo en un 25% de la altura de la ventana de visualización. El rectángulo punteado rojo indica la unión del área visible del elemento en ambos marcos, que en este caso, es el 75% de la ventana de visualización total, por lo que su *fracción de impacto* es de `0.75`.
 
@@ -91,7 +93,7 @@ En la imagen de arriba, hay un elemento que ocupa la mitad de la ventana de visu
 
 La otra parte de la ecuación para la puntuación de cambio de diseño mide la distancia de desplazamiento en los elementos inestables, relacionadas con la ventana de visualización. La *fracción de distancia* es la distancia más grande que cualquier *elemento inestable* se ha desplazado en el marco (ya sea de forma horizontal o vertical) dividida por la mayor dimensión de la ventana de visualización (ancho o alto, el que sea mayor).
 
-{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / ASnfpVs2n9winu6mmzdk.png", alt = "Ejemplo de fracción de distancia con un *elemento inestable* ", width = "800", height = "600", linkTo = true%}
+{% Img src = "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ASnfpVs2n9winu6mmzdk.png", alt="Ejemplo de fracción de distancia con un *elemento inestable* ", width="800", height="600", linkTo=true %}
 
 En el ejemplo anterior, la dimensión más grande de la ventana de visualización es la altura, y el elemento inestable que se desplazó un 25% de la altura de la ventana, lo que hace que la *fracción de distancia sea* 0.25.
 
@@ -101,7 +103,7 @@ Entonces, en este ejemplo, la *fracción de impacto* es `0.75` y la *fracción d
 
 El siguiente ejemplo ilustra cómo la adición de contenido a un elemento existente afecta la puntuación de cambio de diseño:
 
-{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / xhN81DazXCs8ZawoCj0T.png", alt = "Ejemplo de cambio de diseño con *elementos inestables* y estables y un recorte en la ventana de visualización", width = "800", height = "600", linkTo = true%}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xhN81DazXCs8ZawoCj0T.png", alt="Ejemplo de cambio de diseño con *elementos inestables* y estables y un recorte en la ventana de visualización", width="800", height="600", linkTo=true %}
 
 El botón "¡Haz clic en mí!" se adjunta a la parte inferior de la casilla gris con texto negro, lo que empuja el cuadro verde con texto blanco hacia abajo (y parcialmente fuera de la ventana de visualización).
 
@@ -117,7 +119,7 @@ La puntuación de cambio de diseño es `0.5 x 0.14 = 0.07` .
 
 Este último ejemplo ilustra varios *elementos inestables* :
 
-{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / FdCETo2dLwGmzw0V5lNT.png", alt = "Ejemplo de cambio de diseño con varios *elementos inestables* y estables", ancho = "800", alto = "600", linkTo = true%}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FdCETo2dLwGmzw0V5lNT.png", alt="Ejemplo de cambio de diseño con varios *elementos inestables* y estables", width="800", height="600", linkTo=true %}
 
 En el primer marco de arriba, hay cuatro resultados de una solicitud de una API para animales, ordenados en orden alfabético. En el segundo marco, se agregan más resultados a la lista ordenada.
 

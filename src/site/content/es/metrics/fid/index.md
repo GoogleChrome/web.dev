@@ -30,7 +30,9 @@ La métrica First Input Delay (FID) ayuda a medir la primera impresión de su us
 FID mide el tiempo desde que un usuario interactúa por primera vez con una página (es decir, cuando hace clic en un enlace, pulsa un botón o utiliza un control personalizado impulsado por JavaScript) hasta el momento en que el navegador puede comenzar a procesar controladores de eventos como respuesta a esa interacción.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / Se4TiXIdp8jtLJVScWed.svg", alt = "Los valores de fid correctos son 2,5 segundos, los valores deficientes son superiores a 4,0 segundos y cualquier valor intermedio debe mejorarse", width = "400", height = "300 ", class =" w-screenshot w-screenshot - ancho completo "%}</source></picture>
+  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eXyvkqRHQZ5iG38Axh1Z.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="Los valores de fid correctos son 2,5 segundos, los valores deficientes son superiores a 4,0 segundos y cualquier valor intermedio debe mejorarse", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+</picture>
 
 ### ¿Qué es una buena puntuación FID?
 
@@ -56,13 +58,13 @@ Esto da como resultado periodos en los que el subproceso principal momentáneame
 
 Los retrasos prolongados en la primera entrada normalmente suceden entre el [First Contentful Paint: Primer despliegue de contenido (FCP)](/fcp/) y el [Time to Interactive: Momento para interactuar (TTI)](/tti/) porque la página procesó parte de su contenido, pero aún no es interactiva de forma confiable. Para ilustrar cómo puede suceder esto, se agregaron FCP y TTI a la línea de tiempo:
 
-{% Img src = "image / admin / 24Y3T5sWNuZD9fKhkuER.svg", alt = "Ejemplo de seguimiento de carga de páginas con FCP y TTI", width = "800", height = "340", linkTo = true%}
+{% Img src="image/admin/24Y3T5sWNuZD9fKhkuER.svg", alt="Ejemplo de seguimiento de carga de páginas con FCP y TTI", width="800", height="340", linkTo=true %}
 
 Es posible que haya notado que hay una buena cantidad de tiempo (que incluye tres [tareas largas](/custom-metrics/#long-tasks-api) ) entre FCP y TTI, si un usuario intenta interactuar con la página durante ese tiempo (por ejemplo, haga clic en un enlace), habrá una demora entre el momento en que el se recibe un clic y cuando el subproceso principal puede responder.
 
 Considere lo que sucedería si un usuario intenta interactuar con la página cuando está cerca de que inicie de la tarea más larga:
 
-{% Img src = "image / admin / krOoeuQ4TWCbt9t6v5Wf.svg", alt = "Ejemplo de seguimiento de carga de páginas con FCP, TTI y FID", width = "800", height = "380", linkTo = true%}
+{% Img src="image/admin/krOoeuQ4TWCbt9t6v5Wf.svg", alt="Ejemplo de seguimiento de carga de páginas con FCP, TTI y FID", width="800", height="380", linkTo=true %}
 
 Debido a que la entrada se produce mientras el navegador ejecuta una tarea, debe esperar hasta que la tarea se complete antes de que pueda responder a la entrada. El tiempo que debe esperar es el valor de FID para este usuario en esta página.
 
