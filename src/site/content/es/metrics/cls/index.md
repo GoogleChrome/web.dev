@@ -4,10 +4,9 @@ title: Cumulative Layout Shift (CLS)
 authors:
   - philipwalton
   - mihajlija
-date: '2019-06-11'
-updated: '2021-06-01'
-description: |2-
-
+date: 2019-06-11
+updated: 2021-06-01
+description: |
   Esta publicación presenta la métrica Cumulative Layout Shift (CLS) y explica cómo medirlo.
 tags:
   - performance

@@ -3,9 +3,9 @@ title: Explicación de las cookies de SameSite
 subhead: Mantenga protegido su sitio aprendiendo a establecer explícitamente sus cookies entre sitios.
 authors:
   - rowan_m
-date: '2019-05-07'
-updated: '2020-05-28'
-hero: image / admin / UTOC41rgCccAqVNbJlyK.jpg
+date: 2019-05-07
+updated: 2020-05-28
+hero: image/admin/UTOC41rgCccAqVNbJlyK.jpg
 description: Aprenda a marcar sus cookies para uso propio y de terceros con el atributo SameSite. Tambén puede mejorar la seguridad de su sitio utilizando los valores Lax y Strict de SameSite para mejorar la protección contra ataques de tipo CSRF. Especificar el nuevo atributo None le permite marcar explícitamente sus cookies para usarlas entre varios sitios.
 tags:
   - blog

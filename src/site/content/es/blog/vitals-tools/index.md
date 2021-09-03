@@ -4,10 +4,10 @@ subhead: Sus herramientas de desarrollo favoritas ahora pueden medir los Core We
 authors:
   - addyosmani
   - egsweeny
-date: '2020-05-28'
+date: 2020-05-28
 description: Lea sobre la recién anunciada compatibilidad de las medidas de Core Web Vitals con herramientas populares para desarrolladores web como Lighthouse, PageSpeed Insights, Chrome UX Report y muchas otras.
-hero: image / admin / wNtXgv1OE2OETdiSzi8l.png
-thumbnail: image / admin / KxBRBQe5CRZpCxNYyW2H.png
+hero: image/admin/wNtXgv1OE2OETdiSzi8l.png
+thumbnail: image/admin/KxBRBQe5CRZpCxNYyW2H.png
 alt: Logotipo de Chrome User Experience, logotipo de PageSpeed Insights, logotipo de Lighthouse, logotipo de Search Console, logotipo de Chrome DevTools, logotipo de la extensión Web Vitals.
 tags:
   - blog

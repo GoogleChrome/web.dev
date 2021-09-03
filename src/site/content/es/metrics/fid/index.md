@@ -3,8 +3,8 @@ layout: post
 title: First Input Delay (FID)
 authors:
   - philipwalton
-date: '2019-11-07'
-updated: '2020-06-19'
+date: 2019-11-07
+updated: 2020-06-19
 description: Esta publicación presenta la métrica First Input Delay (FID) y explica como medirla
 tags:
   - performance
