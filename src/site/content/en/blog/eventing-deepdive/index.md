@@ -451,7 +451,7 @@ Note that the third event handler never runs due to the fact that the second eve
 You can interactively play with this in the live demo below. Click on the `#A` element and observe the console output.
 
 <div style="height: 680px; width: 100%;">
-  <iframe src="https://silicon-brawny-cardinal.glitch.me/stop-propagation-bubbling-A.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
+  <iframe src="https://silicon-brawny-cardinal.glitch.me/stop-immediate-propagation.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 
 ### `event.preventDefault()`
