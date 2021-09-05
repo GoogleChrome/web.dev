@@ -135,7 +135,7 @@ Cross Origin Resource Sharing (CORS) or Cross Origin Resource Policy (CORP).
 
 ### Cross Origin Resource Sharing {: #cors }
 If a cross origin resource supports [Cross Origin Resource Sharing
-(CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), you may use the
+(CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)), you may use the
 [`crossorigin`
 attribute](https://developer.mozilla.org/docs/Web/HTML/Attributes/crossorigin)
 to load it to your web page without being blocked by COEP.
