@@ -19,9 +19,14 @@ declare global {
     url?: string,
     title?: string,
     children?: NavigationItem[],
-    page?: EleventyCollectionItem,
-    prev?: EleventyCollectionItem | null,
-    next?: EleventyCollectionItem | null,
+    data?: {
+      title: string,
+      description: string,
+      date: Date,
+    },
+    prev?: NavigationItem | null,
+    next?: NavigationItem | null,
+    counter?: string;
   }
 }
 
