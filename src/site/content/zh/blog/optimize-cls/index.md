@@ -199,7 +199,7 @@ img {
 
   <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/aA8IoNeQTCEudE45hYzh.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/xjCWjSv4Z3YB29jSDGae.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gtYqKkoEse47ErJPqVjg.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}<figcaption class="w-figcaption">有预留空间的嵌入。</figcaption></figure>
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2XaMbZBmUit1Vz8UBshH.png", alt="灯塔报告显示的在为该嵌入预留空间前/后对累积布局偏移的影响", width="800", height="148"%}<figcaption class="w-figcaption"> 灯塔 6.0 中为该嵌入预留空间对 CLS 的影响</figcaption></figure>
+<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2XaMbZBmUit1Vz8UBshH.png", alt="灯塔报告显示的在为该嵌入预留空间前/后对累积布局偏移的影响", width="800", height="148" %}<figcaption class="w-figcaption"> 灯塔 6.0 中为该嵌入预留空间对 CLS 的影响</figcaption></figure>
 
 要解决此问题，您可以通过使用占位符或后备回调符为嵌入预先计算足够的空间来最大程度减少 CLS。您可以在嵌入上采用下述工作流程：
 

@@ -25,9 +25,6 @@ tags:
 В этой статье мы рассмотрим, как оптимизировать распространенные причины смещений макета.
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)">{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / uqclEgIlTHhwIgNTXN3Y.svg", alt = "Хорошие значения CLS ниже 0,1, плохие значения больше 0,25 и все промежуточные значения требуют улучшения", width = "384", height = "96" , class = "w-screenshot w-screenshot - fill-width-full"%}</source></picture>
-
-<picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="Хорошие значения CLS ниже 0,1, плохие значения больше 0,25 и все промежуточные значения требуют улучшения", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
 </picture>
@@ -269,11 +266,11 @@ img {
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse) [6.0](https://github.com/GoogleChrome/lighthouse/releases) и более поздние версии включают поддержку измерения CLS в лабораторных условиях. В этом релизе также будут выделены узлы, вызывающие наибольшее смещение макета.
 
-{% Img src = "image / tcFciHGuF3MxnTr1y5ue01OGLBn2 / J11KOGFVAOjRMdihwX5t.jpg", alt = "Lighthouse 6.0 включает поддержку измерения CLS в разделе метрик", width = "800", height = "309"%}
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="Lighthouse 6.0 включает поддержку измерения CLS в разделе метрик", width="800", height="309" %}
 
 Панель [Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) в DevTools показывает смещения макета в разделе **Experience** в Chrome 84. Представление **Summary** для `Layout Shift` включает совокупную оценку сдвига макета, а также прямоугольное наложение, показывающее затронутые области.
 
-<figure class="w-figure">{% Img src = "image / admin / ApDKifKCRNGWI2SXSR1g.jpg", alt = "Записи Layout Shift отображаются на панели производительности Chrome DevTools при раскрытии раздела Experience", width = "800", height = "438"%}<figcaption class="w-figcaption"> После записи новой трассировки на панели Performance в разделе <b>Experience</b> появляется красная полоса, отображающая запись <code>Layout Shift</code> Щелкнув по этой записи, вы сможете просмотреть затронутые элементы (например, увидеть смещенные записи из/в).</figcaption></figure>
+<figure class="w-figure">{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="Записи Layout Shift отображаются на панели производительности Chrome DevTools при раскрытии раздела Experience", width="800", height="438" %}<figcaption class="w-figcaption"> После записи новой трассировки на панели Performance в разделе <b>Experience</b> появляется красная полоса, отображающая запись <code>Layout Shift</code> Щелкнув по этой записи, вы сможете просмотреть затронутые элементы (например, увидеть смещенные записи из/в).</figcaption></figure>
 
 Измерить реальные значений CLS, агрегированные на уровне источника, также можно с помощью отчета [Chrome User Experience Report](/chrome-ux-report-bigquery/). Данные CrUX CLS доступны через BigQuery, а также доступен [образец запроса](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql) для проверки производительности CLS.
 

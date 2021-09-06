@@ -105,7 +105,7 @@ tags:
 
 Chrome 开发者工具中的[代码覆盖率](https://developers.google.com/web/tools/chrome-devtools/coverage)选项卡能够告诉您网页上有多少未在使用的 JavaScript。
 
-{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="代码覆盖率选项卡。", width="800", height="559", class="w-screenshot w-screenshot--filled" % }
+{% Img src="image/admin/UNEigFiwsGu48rtXMZM4.png", alt="代码覆盖率选项卡。", width="800", height="559", class="w-screenshot w-screenshot--filled" %}
 
 要想精简未使用的 JavaScript：
 

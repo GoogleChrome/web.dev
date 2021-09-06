@@ -32,7 +32,7 @@ Cookie 是一种可用于向网站添加持久状态的方法。多年来，虽�
 Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="单次响应中从服务器发送到浏览器的三个 cookie", width="800", height="276", style="max-width: 60vw"%}<figcaption class="w-figcaption">服务器使用<code>Set-Cookie</code>标头设置 cookie。</figcaption></figure>
+<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jJ1fqcsAk9Ig3hManFBO.png", alt="单次响应中从服务器发送到浏览器的三个 cookie", width="800", height="276", style="max-width: 60vw" %}<figcaption class="w-figcaption">服务器使用<code>Set-Cookie</code>标头设置 cookie。</figcaption></figure>
 
 当您的读者查看的页面满足这些要求，即他们处于安全连接上且 cookie 还不到一个月，那么他们的浏览器将在其请求中发送此标头：
 
@@ -40,7 +40,7 @@ Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 Cookie: promo_shown=1
 ```
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="单次请求中从浏览器向服务器发送的三个 cookie", width="800", height="165", style="max-width: 60vw"%}<figcaption class="w-figcaption">您的浏览器会在<code>Cookie</code>标头中发回 cookie。</figcaption></figure>
+<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Rq21WQpOZFvfgS9bbjmc.png", alt="单次请求中从浏览器向服务器发送的三个 cookie", width="800", height="165", style="max-width: 60vw" %}<figcaption class="w-figcaption">您的浏览器会在<code>Cookie</code>标头中发回 cookie。</figcaption></figure>
 
 您还可以使用`document.cookie`在 JavaScript 中添加和读取该网站可用的 cookie。对`document.cookie`进行赋值将创建或覆盖一个带有该键的 cookie。例如，您可以在浏览器的 JavaScript 控制台中尝试以下操作：
 
@@ -64,7 +64,7 @@ Cookie: promo_shown=1
 
 如果再回到您之前查看的那几个网站，您可能会注意到不仅仅是您当前访问的域名有 cookie，许多域名都有 cookie。与当前网站的域名（即浏览器地址栏中显示的内容）相匹配的 cookie 被称为**第一方** cookie。同样，来自当前网站以外域名的 cookie 被称为**第三方** cookie。这不是一个绝对的标签，而是相对于用户上下文来决定的。同一个 cookie 可以是第一方的，也可以是第三方的，具体取决于用户当时所在的网站。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="三个 cookies 在同一页面的不同请求下被发送到浏览器", width="800", height="346", style="max-width: 60vw"%}<figcaption class="w-figcaption"> Cookie 可能来自同一个页面上的多个不同域名。</figcaption></figure>
+<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zjXpDz2jAdXMT83Nm3IT.png", alt="三个 cookies 在同一页面的不同请求下被发送到浏览器", width="800", height="346", style="max-width: 60vw" %}<figcaption class="w-figcaption"> Cookie 可能来自同一个页面上的多个不同域名。</figcaption></figure>
 
 继续上面的例子，假设您的一篇博文中有一张非常独特的猫的照片，而这张照片被托管在`/blog/img/amazing-cat.png`。因为照片十分令人惊叹，其他人直接在他们的网站上使用了该照片。如果访问者访问过您的博客并拥有`promo_shown` cookie，那么当他们在其他人的网站上浏览`amazing-cat.png`时，就会在图像请求中**发送**该 cookie。这对任何一方都不是特别有用，因为`promo_shown`在其他人的网站上不用于任何内容，只是增加了请求的开销。
 
@@ -128,7 +128,7 @@ Set-Cookie: promo_shown=1; SameSite=Lax
 
 最后，您还可以选择不指定值，而该做法在以前表示隐含地声明您希望在所有上下文中发送 cookie。在 [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03) 的最新一稿中，我们通过引入`SameSite=None`这个新的值来明确了这一点。这意味着您可以使用`None`来显式表示您有意希望在第三方上下文中发送 cookie。
 
-<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="三个根据相应上下文标记为 None、Lax 或 Strict 的 cookie", width="800", height="456", style="max-width: 60vw"%}<figcaption class="w-figcaption">将 cookie 的上下文显式标记为<code>None</code>、<code>Lax</code>或<code>Strict</code>。</figcaption></figure>
+<figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1MhNdg9exp0rKnHpwCWT.png", alt="三个根据相应上下文标记为 None、Lax 或 Strict 的 cookie", width="800", height="456", style="max-width: 60vw" %}<figcaption class="w-figcaption">将 cookie 的上下文显式标记为<code>None</code>、<code>Lax</code>或<code>Strict</code>。</figcaption></figure>
 
 {% Aside %}
 

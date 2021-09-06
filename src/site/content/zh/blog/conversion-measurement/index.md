@@ -340,7 +340,7 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
 
 {% endAside %}
 
-{% Aside '为您解惑' %}
+{% Aside 'gotchas' %}
 
 - 通过`window.open`或`window.location`导航产生的流将不符合归因条件。
 

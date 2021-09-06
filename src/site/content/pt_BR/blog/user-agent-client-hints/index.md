@@ -258,7 +258,7 @@ O `Sec-CH-UA-Full-Version` solicitado anteriormente **não será enviado**.
 
 É melhor pensar no cabeçalho `Accept-CH` como uma especificação do conjunto completo de dicas desejadas para aquela página, significando que o navegador então envia as dicas especificadas para todos os sub-recursos nessa página. Embora as dicas persistam até a próxima navegação, o site não deve confiar ou presumir que elas serão entregues.
 
-{% Aside 'success' %} Sempre garanta que você ainda possa proporcionar uma experiência significativa sem essas informações. Essas informações servem para aprimorar a experiência do usuário, não para defini-la. É por isso que são chamados de "dicas" e não "respostas" ou "requisitos"! {% endAside%}
+{% Aside 'success' %} Sempre garanta que você ainda possa proporcionar uma experiência significativa sem essas informações. Essas informações servem para aprimorar a experiência do usuário, não para defini-la. É por isso que são chamados de "dicas" e não "respostas" ou "requisitos"! {% endAside %}
 
 Você também pode limpar efetivamente todas as dicas enviadas pelo navegador, enviando um `Accept-CH` em branco na resposta. Considere utilizar isto sempre que o usuário estiver redefinindo as preferências ou saindo do seu site.
 
