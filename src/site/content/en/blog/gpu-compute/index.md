@@ -70,7 +70,7 @@ that will resolve with a GPU device you'll use to do some GPU computation.
 
 ```js
 const adapter = await navigator.gpu.requestAdapter();
-if (!adapter) return;
+if (!adapter) { return; }
 const device = await adapter.requestDevice();
 ```
 
@@ -236,8 +236,8 @@ point numbers. The first element is the number of rows, the second element the
 number of columns, and the rest is the actual numbers of the matrix.
 
 <figure class="w-figure">
-  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/IUv15DMl2yDwTGxeJNux.jpeg", alt="Simple representation of a matrix in JavaScript and it's equivalent in mathematical notation", width="800", height="158" %}
-  <figcaption>Simple representation of a matrix in JavaScript and it's equivalent in mathematical notation</figcaption>
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/IUv15DMl2yDwTGxeJNux.jpeg", alt="Simple representation of a matrix in JavaScript and its equivalent in mathematical notation", width="800", height="158" %}
+  <figcaption>Simple representation of a matrix in JavaScript and its equivalent in mathematical notation</figcaption>
 </figure>
 
 The three GPU buffers are storage buffers as we need to store and retrieve data in
@@ -248,7 +248,7 @@ reading once all GPU queue commands have all been executed.
 
 ```js
 const adapter = await navigator.gpu.requestAdapter();
-if (!adapter) return;
+if (!adapter) { return; }
 const device = await adapter.requestDevice();
 
 
