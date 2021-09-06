@@ -3,15 +3,15 @@ layout: post
 title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
-date: '2019-08-08'
-updated: '2020-06-17'
+date: 2019-08-08
+updated: 2020-06-17
 description: Esta publicación presenta la métrica de Largest Contentful Paint (LCP) y explica como medirla
 tags:
   - performance
   - metrics
 ---
 
-{% Aside %} La métrica Largest Contentful Paint: Despliegue del contenido más extenso (LCP) es una métrica importante centrada en el usuario para medir [la velocidad de carga percibida](/user-centric-performance-metrics/#types-of-metrics) porque marca el punto en la línea de tiempo de carga de la página cuando es probable que el contenido principal de la página se haya cargado. Un LCP rápido ayuda a asegurar al usuario que el la página sea [útil](/user-centric-performance-metrics/#questions) . {% endAside %}
+{% Aside %} La métrica Largest Contentful Paint: Despliegue del contenido más extenso (LCP) es una métrica importante centrada en el usuario para medir [la velocidad de carga percibida](/user-centric-performance-metrics/#types-of-metrics) porque marca el punto en la línea de tiempo de carga de la página cuando es probable que el contenido principal de la página se haya cargado. Un LCP rápido ayuda a asegurar al usuario que el la página sea [útil](/user-centric-performance-metrics/#questions). {% endAside %}
 
 Históricamente, ha sido un desafío para los desarrolladores web medir qué tan rápido se carga el contenido principal de una página web y es visible para los usuarios.
 
@@ -25,8 +25,10 @@ A veces, lo más simple es mejor. Según las discusiones del [Grupo de trabajo s
 
 La métrica Largest Contentful Paint: Despliegue del contenido más extenso (LCP) reporta el tiempo para renderizar una [imagen o el bloque de texto](#what-elements-are-considered) más grande visible dentro de la ventana de visualización, en relación con el momento en que la página [comenzó a cargarse](https://w3c.github.io/hr-time/#timeorigin-attribute).
 
-<picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src = "image / eqprBhZUGfb8WYnumQ9ljAxRrA72 / 8ZW8LQsagLih1ZZoOmMR.svg", alt = "Los buenos valores de LCP son 2,5 segundos, los valores malos son superiores a 4,0 segundos y cualquier cosa intermedia necesita mejora", width = "400", height = "300 ", class =" w-screenshot w-screenshot - ancho completo "%}</source></picture>
+  <picture>
+    <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/elqsdYqQEefWJbUM2qMO.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
+    {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/8ZW8LQsagLih1ZZoOmMR.svg", alt="Los buenos valores de LCP son 2,5 segundos, los valores malos son superiores a 4,0 segundos y cualquier cosa intermedia necesita mejora", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+  </picture>
 
 ### ¿Qué es una buena puntuación LCP?
 
@@ -98,15 +100,15 @@ A continuación, se muestran algunos ejemplos de situaciones en las que se prese
 
 {% Img src="image/admin/bsBm8poY1uQbq7mNvVJm.png", alt="Línea del tiempo de Largest Contentful Paint : Despliegue del contenido más extenso de cnn.com", width="800", height="311" %}
 
-{% Img src = "image / admin / xAvLL1u2KFRaqoZZiI71.png", alt = "Línea del tiempo de Largest Contentful Paint : Despliegue del contenido más extenso de techcrunch.com", width = "800", height = "311"%}
+{% Img src="image/admin/xAvLL1u2KFRaqoZZiI71.png", alt="Línea del tiempo de Largest Contentful Paint : Despliegue del contenido más extenso de techcrunch.com", width="800", height="311" %}
 
 En las dos líneas de tiempo anteriores, el elemento más extenso cambia conforme se carga el contenido. En el primer ejemplo, se agrega nuevo contenido al DOM y eso cambia el elemento más extenso. En el segundo ejemplo, el diseño cambia y el contenido que antes era el más grande se elimina de la ventana de visualización.
 
 Si bien a menudo ocurre que el contenido de carga tardía es más grande que el contenido que ya está en la página, ese no es necesariamente el caso. En los dos ejemplos siguientes se muestra que Largest Contentful Paint se presenta antes de que la página se cargue por completo.
 
-{% Img src = "image / admin / uJAGswhXK3bE6Vs4I5bP.png", alt = "Línea del tiempo de Largest Contentful Paint : Despliegue del contenido más extenso de instagram.com", width = "800", height = "311"%}
+{% Img src="image/admin/uJAGswhXK3bE6Vs4I5bP.png", alt="Línea del tiempo de Largest Contentful Paint : Despliegue del contenido más extenso de instagram.com", width="800", height="311" %}
 
-{% Img src = "image / admin / e0O2woQjZJ92aYlPOJzT.png", alt = "Línea del tiempo de Largest Contentful Paint : Despliegue del contenido más extenso de google.com", width = "800", height = "311"%}
+{% Img src="image/admin/e0O2woQjZJ92aYlPOJzT.png", alt="Línea del tiempo de Largest Contentful Paint : Despliegue del contenido más extenso de google.com", width="800", height="311" %}
 
 En el primer ejemplo, el logotipo de Instagram se carga relativamente pronto y sigue siendo el elemento más extenso, incluso cuando se muestran progresivamente otros contenidos. En el ejemplo de la página de resultados de búsqueda de Google, el elemento más grande es un párrafo de texto que se muestra antes de que terminen de cargarse las imágenes o el logotipo. Como todas las imágenes individuales son más pequeñas que este párrafo, sigue siendo el elemento más extenso durante todo el proceso de carga.
 

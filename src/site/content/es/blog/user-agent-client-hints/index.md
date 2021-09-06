@@ -4,9 +4,9 @@ subhead: Las sugerencias incluidas en el repositorio User-Agent Client Hints son
 authors:
   - rowan_m
   - yoavweiss
-date: '2020-06-25'
-updated: '2021-02-12'
-hero: "\timage/admin/xlg4t3uiTp0L5TBThFHQ.jpg"
+date: 2020-06-25
+updated: 2021-02-12
+hero: image/admin/xlg4t3uiTp0L5TBThFHQ.jpg
 thumbnail: image/admin/hgxRNa56Vb9o3QRwIrm9.jpg
 alt: Hay un gran variedad de tipos de huellas en la nieve. Eso nos da una pista de quién estuvo allí.
 tags:
@@ -23,7 +23,7 @@ Las sugerencias que se encuentran en Client Hints permiten a los desarrolladores
 
 Aprenda a actualizar las funciones existentes que se basan en analizar la cadena User-Agent para que en vez de ellas, se utilicen las sugerencias incluidas en el repositorio User-Agent Client Hints.
 
-{% Banner 'caution', 'body' %} Si ya utiliza el repositorio User-Agent Client Hints, ponga atención a los próximos cambios. El formato del encabezado está cambiando, de modo que los tokens `Accept-CH` coinciden exactamente con los encabezados devueltos. Anteriormente, un sitio habría enviado `Accept-CH: UA-Platform` para recibir el encabezado `Sec-CH-UA-Platform` y ahora ese sitio debería enviar `Accept-CH: Sec-CH-UA-Platform` . Si ya utiliza las sugerencias incluidas en User-Agent Client Hints, envíe ambos formatos hasta que la modificación se haya implementado completamente y de forma estable en Chromium. Consulte la conversación [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ) para conocer las actualizaciones recientes. {% endBanner %}
+{% Banner 'caution', 'body' %} Si ya utiliza el repositorio User-Agent Client Hints, ponga atención a los próximos cambios. El formato del encabezado está cambiando, de modo que los tokens `Accept-CH` coinciden exactamente con los encabezados devueltos. Anteriormente, un sitio habría enviado `Accept-CH: UA-Platform` para recibir el encabezado `Sec-CH-UA-Platform` y ahora ese sitio debería enviar `Accept-CH: Sec-CH-UA-Platform`. Si ya utiliza las sugerencias incluidas en User-Agent Client Hints, envíe ambos formatos hasta que la modificación se haya implementado completamente y de forma estable en Chromium. Consulte la conversación [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ) para conocer las actualizaciones recientes. {% endBanner %}
 
 ## Antecedentes
 
@@ -110,7 +110,15 @@ Sec-CH-UA-Mobile: ?0
 
 ### Respuestas de User-Agent y encabezados de solicitud
 
-&lt;style&gt; .w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) { width: 28ch; } .w-table-wrapper td { padding: 4px 8px 4px 0; } &lt;/style&gt;
+<style>
+.w-table-wrapper th:nth-of-type(1), .w-table-wrapper th:nth-of-type(2) {
+    width: 28ch;
+}
+
+.w-table-wrapper td {
+  padding: 4px 8px 4px 0;
+}
+</style>
 
 ⬇️ `Accept-CH`<br> ⬆️ Encabezado de solicitud | ⬆️ Solicitar<br> valor de ejemplo | Descripción
 --- | --- | ---
@@ -248,7 +256,7 @@ Sec-CH-UA-Platform: "Android"
 
 Lo mejor es pensar que el encabezado `Accept-CH` especifica el conjunto completo de sugerencias deseables para esa página, lo cual significa que el navegador envía las sugerencias que se especificaron para todos los subrecursos de dicha página. Si bien las sugerencias persisten hasta la siguiente navegación, el sitio no debe confiar ni asumir que se entregarán.
 
-{% Aside 'success' %} Siempre asegúrese de que puede ofrecer una experiencia significativa sin esta información. Pues se trata de mejorar la experiencia del usuario, no de definirla. ¡Por esta razón es que se llaman "sugerencias" y no "respuestas" o "requisitos"! {% endAside%}
+{% Aside 'success' %} Siempre asegúrese de que puede ofrecer una experiencia significativa sin esta información. Pues se trata de mejorar la experiencia del usuario, no de definirla. ¡Por esta razón es que se llaman "sugerencias" y no "respuestas" o "requisitos"! {% endAside %}
 
 También puede usarlo para eliminar de forma efectiva todas las sugerencias que se hayan enviado por el navegador mediante un `Accept-CH` en blanco en la respuesta. Considere incluir eso en cualquier lugar donde el usuario esté restableciendo sus preferencias o cerrando la sesión de su sitio.
 
@@ -256,7 +264,7 @@ Este patrón también coincide con el funcionamiento de las sugerencias a travé
 
 ### Objetivos de las sugerencias y solicitudes de tipo cross-origin
 
-De forma predeterminada, las sugerencias Client Hints solo se enviarán en solicitudes que tengan el mismo origen. Eso significa que si solicita sugerencias específicas en `https://example.com`, pero los recursos que desea optimizar están en `https://downloads.example.com`, los recursos**{nbsp}no** recibirán ninguna sugerencia.
+De forma predeterminada, las sugerencias Client Hints solo se enviarán en solicitudes que tengan el mismo origen. Eso significa que si solicita sugerencias específicas en `https://example.com`, pero los recursos que desea optimizar están en `https://downloads.example.com`, los recursos**no** recibirán ninguna sugerencia.
 
 Para permitir sugerencias en las solicitudes cross-origin, cada sugerencia y origen deben especificarse mediante un encabezado `Feature-Policy`. Si desea aplicar esto a un User-Agent Client Hint, debe poner la sugerencia en minúsculas y eliminar el prefijo `sec-` Por ejemplo:
 

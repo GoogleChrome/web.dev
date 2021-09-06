@@ -3,17 +3,15 @@ layout: post
 title: Una guía para habilitar el aislamiento de origen cruzado
 authors:
   - agektmr
-date: '2021-02-09'
-updated: '2021-05-06'
-subhead: |2-
-
-  El aislamiento de origen cruzado permite que una página web utilice funciones potentes como SharedArrayBuffer. Este artículo explica cómo habilitar aislamiento del origen cruzado en su sitio web.
+date: 2021-02-09
+updated: 2021-08-05
+subhead: El aislamiento de origen cruzado permite que una página web utilice funciones potentes como SharedArrayBuffer. Este artículo explica cómo habilitar aislamiento del origen cruzado en su sitio web.
 description: El aislamiento de origen cruzado permite que una página web utilice funciones potentes como SharedArrayBuffer. Este artículo explica cómo habilitar aislamiento del origen cruzado en su sitio web.
 tags:
   - security
 ---
 
-Esta guía le muestra cómo habilitar el aislamiento de origen cruzado. Se requiere aislamiento de origen cruzado si desea utilizar [`SharedArrayBuffer`](/monitor-total-page-memory-usage/), [ `performance.measureUserAgentSpecificMemory()`](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/), [high resolution timer with better precision](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/), o la API de autoperfilado de JS.
+Esta guía le muestra cómo habilitar el aislamiento de origen cruzado. Se requiere aislamiento de origen cruzado si desea utilizar [`SharedArrayBuffer`](/monitor-total-page-memory-usage/), [`performance.measureUserAgentSpecificMemory()`](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/), [high resolution timer with better precision](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/), o la API de autoperfilado de JS.
 
 Si tiene la intención de habilitar el aislamiento de origen cruzado, evalúe el impacto que esto tendrá en otros recursos de origen cruzado en su sitio web, como la ubicación de anuncios.
 

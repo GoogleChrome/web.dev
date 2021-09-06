@@ -3,10 +3,10 @@ title: Prácticas recomendadas de Referrer-Policy y Referer
 subhead: Prácticas recomendadas para establecer Referrer-Policy y utilizar Referrer en las solicitudes recibidas.
 authors:
   - maudn
-date: '2020-07-30'
-updated: '2020-09-23'
-hero: image / admin / kh2IMJFSJ3Cj6Zo8jEv5.jpg
-thumbnail: image / admin / kh2IMJFSJ3Cj6Zo8jEv5.jpg
+date: 2020-07-30
+updated: 2020-09-23
+hero: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
+thumbnail: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
 description: Considere la posibilidad de establecer una Referrer Policy de "strict-origin-when-cross-origin". Esto conserva gran parte de las funciones del Referrer, a la vez que mitiga el riesgo de filtrar datos de orígenes cruzados.
 tags:
   - blog
@@ -70,7 +70,7 @@ Aquí se muestra una descripción general de cómo las Referrer Policies restrin
 
 <figure class="w-figure">{% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="Diferentes Referrer Policies and their behaviour, según la seguridad y el contexto de origen cruzado", width="800", height="537" %}</figure>
 
-MDN proporciona una [lista completa de políticas y ejemplos de comportamiento](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Directives) .
+MDN proporciona una [lista completa de políticas y ejemplos de comportamiento](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Directives).
 
 Cosas a tener en cuenta:
 
@@ -160,7 +160,7 @@ La imagen se solicitará con una política `no-referrer-when-downgrade`, mientra
 
 También puede utilizar las herramientas para desarrolladores de Chrome, Edge o Firefox para ver la Referrer Policy que se utilizó en una solicitud específica. En el momento de escribir este artículo, Safari no muestra la `Referrer-Policy` pero sí muestra la `Referer` que se envió.
 
-<figure class="w-figure">{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="Una captura de pantalla del panel la red de Chrome DevTools, que muestra Referer y Referrer-Policy", width="800", height="416" %} <figcaption class="w-figcaption"> Chrome DevTools, panel de la <b>red</b> con una solicitud seleccionada. </figcaption></figure>
+<figure class="w-figure">{% Img src="image/admin/8Qlu6ZzSVgL2f9iYIplJ.jpg", alt="Una captura de pantalla del panel la red de Chrome DevTools, que muestra Referer y Referrer-Policy", width="800", height="416" %} <figcaption class="w-figcaption">Chrome DevTools, panel de la <b>red</b> con una solicitud seleccionada.</figcaption></figure>
 
 ## ¿Qué política debe establecer en su sitio web?
 
@@ -285,7 +285,7 @@ Utilice [Tokens CSRF](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_
 
 ### Registro de datos
 
-Asegúrese de proteger los datos personales o confidenciales de los usuarios que puedan estar en el `Referer` .
+Asegúrese de proteger los datos personales o confidenciales de los usuarios que puedan estar en el `Referer`.
 
 Si solo está utilizando el origen, verifique si el [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) podría ser una alternativa. Esto puede brindarle la información que necesita para fines de depuración de una manera más simple y sin necesidad de analizar al Referrer.
 
@@ -295,7 +295,7 @@ Los proveedores de pago pueden confiar en el `Referer` de las solicitudes recibi
 
 Por ejemplo:
 
-- El usuario hace clic en un botón **Comprar** `online-shop.example/cart/checkout` .
+- El usuario hace clic en un botón **Comprar** `online-shop.example/cart/checkout`.
 - `online-shop.example` redirecciona a `payment-provider.example` para administrar la transacción.
 - `payment-provider.example` verifica el `Referer` de esta solicitud con una lista de `Referer` permitidos establecidos por los comerciantes. Si no coincide con ninguna entrada de la lista, `payment-provider.example` rechaza la solicitud. Si coincide, el usuario puede continuar con la transacción.
 
@@ -318,7 +318,7 @@ Ningún `Referer` será visible en la solicitud para el proveedor de pago HTTPS,
 
 {% Aside %}
 
-Si su sitio web utiliza HTTP, [migre a HTTPS](/why-https-matters/) .
+Si su sitio web utiliza HTTP, [migre a HTTPS](/why-https-matters/).
 
 {% endAside %}
 
