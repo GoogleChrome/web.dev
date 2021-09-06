@@ -56,7 +56,7 @@ developer, mini apps are thus multi page apps.
 ## Mini app lifecycle
 
 A mini app must be registered with the super app by calling the globally defined `App()` method.
-Referring to the project structure outlined [before](/project-structure-lifecycle-and-bundling/#mini-app-project-structure), this happens in
+Referring to the project structure outlined [before](#mini-app-project-structure), this happens in
 `app.js`. The mini app lifecycle essentially consists of four events: `launch`, `show`, `hide`, and
 `error`. Handlers for these events can be passed to the `App()` method in the form of a
 configuration object, which can also contain a `globalData` property that holds data that should be
