@@ -1,9 +1,8 @@
 ---
 title: Get started with GPU Compute on the web 
 subhead: |
-  This article is about me playing with the experimental WebGPU API and sharing
-  my journey with web developers interested in performing data-parallel
-  computations using the GPU.
+  This post explores the experimental WebGPU API through examples and helps
+  you get started with performing data-parallel computations using the GPU.
 authors:
   - beaufortfrancois
 date: 2019-08-28
@@ -11,9 +10,8 @@ updated: 2021-09-06
 hero: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/AwjccGqafT2OOWqLGdDX.jpeg
 thumbnail: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/AwjccGqafT2OOWqLGdDX.jpeg
 description: |
-  This article is about me playing with the experimental WebGPU API and sharing
-  my journey with web developers interested in performing data-parallel
-  computations using the GPU.
+  This post explores the experimental WebGPU API through examples and helps
+  you get started with performing data-parallel computations using the GPU.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
