@@ -322,7 +322,7 @@ payment app appears in the Payment Request UI.
         </td>
         <td>
         Used to detect the app that acts as the OS-provided payment app.
-        Find more details at <a href="/native-payment-apps-overview">Android
+        Find more details at <a href="/android-payment-apps-developers-guide/">Android
         payment apps developer guide</a>.
         </td>
       </tr>

@@ -52,7 +52,7 @@ For example, this screenshot shows a page with two errors:
 
 In the example above, the first error comes from a web developer
 via a call to
-[`console.error()`](https://developers.google.com/web/tools/chrome-devtools/console/console-reference#error).
+[`console.error()`](https://developer.chrome.com/docs/devtools/console/api/#error).
 The second error comes from the browser and
 indicates that a variable used in one of the page's scripts does not exist.
 

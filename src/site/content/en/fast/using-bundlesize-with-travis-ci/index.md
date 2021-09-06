@@ -13,7 +13,7 @@ feedback:
 ---
 
 Using [bundlesize](https://github.com/siddharthkp/bundlesize) with [Travis
-CI](https://travis-ci.com/) lets you define performance budgets with minimal
+CI](https://travis-ci.org/) lets you define performance budgets with minimal
 setup and enforce them as part of your development workflow. Travis CI is a
 service that runs tests for your app in the cloud every time you push code to
 GitHub. You can [configure your

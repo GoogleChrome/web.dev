@@ -318,7 +318,7 @@ self.addEventListener('notificationclick', function (event) {
   <figcaption class="w-figcaption">On background-sync.</figcaption>
 </figure>
 
-[Background sync](/web/updates/2015/12/background-sync) is another feature built on top of
+[Background sync](https://developers.google.com/web/updates/2015/12/background-sync) is another feature built on top of
 Service Worker. It allows you to request background data synchronization as a one-off, or on an
 (extremely heuristic) interval. This happens even when the user doesn't have a tab open to your
 site. Only the Service Worker is woken up. You request permission to do this from a page and the user
@@ -763,7 +763,7 @@ before I hit "publish".
 
 - [Service Workers—an Introduction][sw_primer]
 - [Is Service Worker ready?][is_sw_ready]—track the implementation status across the main browsers
-- [JavaScript Promises—an Introduction](/web/fundamentals/getting-started/primers/promises) - guide
+- [JavaScript Promises—an Introduction](/promises) - guide
   to promises
 
 [ttt]: https://jakearchibald.github.io/trained-to-thrill/
