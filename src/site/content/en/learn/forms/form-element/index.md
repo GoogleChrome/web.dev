@@ -85,7 +85,7 @@ By default, form data is sent as a `GET` request,
 with the submitted data appended to the URL.
 If a user submits 'frog' in the example above, this results in a request to this URL:
 
-```
+```html
 https://example.com/animals?animal=frog
 ```
 
