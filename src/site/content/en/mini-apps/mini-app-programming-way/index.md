@@ -39,7 +39,7 @@ The [model–view–viewmodel](/mini-app-markup-styling-and-scripting/#markup-la
 separation of the development of the graphical user interface (the view) via a markup language from
 the development of the back-end logic (the model)—means the view is not dependent on any specific model platform.
 While there are some documented [disadvantages](https://docs.microsoft.com/en-us/archive/blogs/johngossman/advantages-and-disadvantages-of-m-v-vm) of the pattern, in general it works really well for applications of the complexity of mini apps.
-It can shine especially with rich templating libraries (see [next chapter](mini-app-example-project/)).
+It can shine especially with rich templating libraries (see [next chapter](/mini-app-example-project/)).
 
 ## Page-wise thinking
 
