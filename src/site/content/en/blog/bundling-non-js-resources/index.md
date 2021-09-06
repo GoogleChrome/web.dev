@@ -82,7 +82,10 @@ You might be wondering, why can't bundlers detect other common patterns—for ex
 
 The reason is that, unlike import statements, any dynamic requests are resolved relatively to the document itself, and not to the current JavaScript file. Let's say you have the following structure:
 
-- `index.html`: `<script src="src/main.js" type="module"></script>`
+- `index.html`
+  ```html
+  <script src="src/main.js" type="module"></script>
+  ```
 - `src/`
   -  `main.js`
   -  `module.wasm`
