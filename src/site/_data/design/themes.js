@@ -79,7 +79,7 @@ module.exports = {
       ACTION_BG: 'shades-dim',
       ACTION_BG_ALT: 'shades-dim',
       ACTION_BG_PRIMARY: 'core-primary-dim',
-      ACTION_BG_HOVER: 'shades-charcoal',
+      ACTION_BG_HOVER: 'shades-gray',
       ACTION_TEXT: 'core-primary-glare',
       ACTION_TEXT_PRIMARY: 'core-primary-bright',
       ACTION_TEXT_ALT: 'shades-light',
