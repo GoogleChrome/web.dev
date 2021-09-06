@@ -1,7 +1,7 @@
 ---
 title: Use forms to get data from users
 description: >
-  Learn the basics of using a form on the web with this introduction to the form element
+  Learn the basics of using a form on the web with this introduction to the form element.
 authors:
   - michaelscharnagl
 date: 2021-09-06
@@ -116,11 +116,11 @@ If the data is shareable, you can use the `GET` method.
 This way the data will be added to your browser history as it is included in the URL.
 Search forms often use this. This way you can bookmark a search result page.
 
-Now that you learned about the form element itself,
+Now that you have learned about the form element itself,
 it is time to learn about [form fields](/learn/forms/form-fields) to make the form interactive.
 
 {% Assessment 'form-element' %}
 
 ## Resources
 
-[The `<form>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+[The `<form>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form).

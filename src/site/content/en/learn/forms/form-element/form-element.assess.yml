@@ -7,7 +7,7 @@ questions:
     stem: What does the start tag of the `<form>` element look like?
     options:
       - content: "`</form>`"
-        rationale: "Almost, this is the end tag of the `<form>` element"
+        rationale: "Almost, this is the end tag of the `<form>` element."
       - content: "`<form-container>`"
         rationale: "Try again!"
       - content: "`<form>`"
@@ -17,12 +17,12 @@ questions:
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "1"
-    stem: What attribute can you use to define where the `<form>` is processed
+    stem: What attribute can you use to define where the `<form>` is processed?
     options:
       - content: "`where`"
         rationale: "Try again!"
       - content: "`action`"
-        rationale: "Yes, the `action` attribute defines where the `<form>` is processed"
+        rationale: "Yes, the `action` attribute defines where the `<form>` is processed."
       - content: "`href`"
         rationale: "Try again!"
       - content: "`url`"
