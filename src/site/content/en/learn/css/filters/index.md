@@ -227,7 +227,7 @@ changing the part of the color wheel it references. If you pass no argument, it 
 
 You can apply a curve-hugging drop shadow like you would in a design tool,
 such as Photoshop with
-[`drop-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/drop-shadow).
+[`drop-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow()).
 This shadow is applied to an alpha mask which makes it very useful for adding a shadow to a cutout image.
 The `drop-shadow` filter takes a shadow parameter which contains space separated offset-x, offset-y, blur and color values.
 It is almost identical to `box-shadow`,
