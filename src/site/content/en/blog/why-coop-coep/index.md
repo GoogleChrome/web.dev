@@ -156,7 +156,7 @@ headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#The_HTTP_respons
 
 ### Cross Origin Resource Policy {: #corp }
 [Cross Origin Resource Policy
-(CORP)](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_%28CORP%29)
+(CORP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))
 was originally introduced as an opt-in to protect your resources from being
 loaded by another origin. In the context of COEP, CORP can specify the resource
 owner's policy for who can load a resource.
