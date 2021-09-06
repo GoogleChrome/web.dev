@@ -284,6 +284,6 @@ anyone has encountered it - so don't hesitate to reach out:
   [`SameSite` updates page](https://www.chromium.org/updates/same-site).
 
 _Cookie hero image by
-[Calajay](https://unsplash.com/@calajay)
+[Calajay](https://unsplash.com/@calajay?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 on
 [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
