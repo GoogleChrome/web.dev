@@ -106,7 +106,7 @@ iteration** of the API. Things may change substantially in [future iterations](#
 
 This iteration of the API only supports **click-through conversion measurement**, but [view-through
 conversion
-measurement](https://github.com/WICG/conversion-measurement-api/blob/main/event_attribution_reporting.md) is under public incubation.
+measurement](https://github.com/WICG/conversion-measurement-api/blob/main/event_attribution_reporting_views.md) is under public incubation.
 
 ### How it works
 
