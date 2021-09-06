@@ -82,10 +82,10 @@ You might be wondering, why can't bundlers detect other common patterns—for ex
 
 The reason is that, unlike import statements, any dynamic requests are resolved relatively to the document itself, and not to the current JavaScript file. Let's say you have the following structure:
 
-- index.html: `<script src="src/main.js" type="module"></script>`
-- src/
-  -  main.js
-  -  module.wasm
+- `index.html`: `<script src="src/main.js" type="module"></script>`
+- `src/`
+  -  `main.js`
+  -  `module.wasm`
 
 If you want to load `module.wasm` from `main.js`, it might be tempting to use a relative path like `fetch('./module.wasm')`.
 
@@ -102,7 +102,7 @@ Replace `fetch('./module.wasm')` with `fetch(new URL('./module.wasm', import.met
 Following bundlers support the `new URL` scheme already:
 
 -  [Webpack v5](https://webpack.js.org/guides/asset-modules/#url-assets)
--  [Rollup](https://rollupjs.org/) (via plugins—[@web/rollup-plugin-import-meta-assets](https://modern-web.dev/docs/building/rollup-plugin-import-meta-assets/) for generic assets and [@surma/rollup-plugin-off-main-thread](https://github.com/surma/rollup-plugin-off-main-thread) for Workers specifically).
+-  [Rollup](https://rollupjs.org/) (Achieved via plugins—[@web/rollup-plugin-import-meta-assets](https://modern-web.dev/docs/building/rollup-plugin-import-meta-assets/) for generic assets and [@surma/rollup-plugin-off-main-thread](https://github.com/surma/rollup-plugin-off-main-thread) for Workers specifically.)
 -  [Parcel v2 (beta)](https://v2.parceljs.org/)
 -  [Vite](https://vitejs.dev/guide/assets.html#new-url-url-import-meta-url)
 
@@ -161,7 +161,7 @@ new URL('...', import.meta.url)
 await import.meta.resolve('...')
 ```
 
-It would also integrate better with import maps and custom resolvers as it would go through the same module resolution system as `import`. It would also be a stronger signal for bundlers too as it's a static syntax that doesn't depend on runtime APIs like `URL`.
+It would also integrate better with import maps and custom resolvers as it would go through the same module resolution system as `import`. It would be a stronger signal for bundlers too as it's a static syntax that doesn't depend on runtime APIs like `URL`.
 
 `import.meta.resolve` is already implemented [as an experiment in Node.js](https://nodejs.org/api/esm.html#esm_import_meta_resolve_specifier_parent) but there are still some [unresolved questions](https://github.com/WICG/import-maps/issues/79) about how it should work on the web.
 
