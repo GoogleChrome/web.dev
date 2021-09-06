@@ -418,7 +418,7 @@ Hero image from [Unsplash][hero-image], by [Jeremy Zero][hero-image-by].
 [w3ctag]: https://github.com/w3ctag/design-reviews/issues/605
 [chromestatus]: https://chromestatus.com/features/6232287446302720
 [hero-image]: https://unsplash.com/photos/bGYguEqV2lk
-[hero-image-by]: https://unsplash.com/@jeremy0
+[hero-image-by]: https://unsplash.com/@jeremybezanger
 [thomassteiner]: https://web.dev/authors/thomassteiner/
 [domenic]: https://web.dev/authors/domenic/
 [demo]: https://gigantic-honored-octagon.glitch.me/
