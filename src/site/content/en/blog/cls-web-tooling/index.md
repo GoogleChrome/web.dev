@@ -239,7 +239,7 @@ Good: [0-1.8s], Needs Improvement: (1.8s-3s), Poor: [3s-∞]
 
 We expect this change to reflect a smooth transition for most sites and encourage you to check out
 [Web Vitals](/vitals/) and
-[Optimize CLS](optimize-cls)
+[Optimize CLS](/optimize-cls)
 for tips and tricks on how to measure and optimize your layout shifts away.
 As always, feel free to reach out on the
 [web-vitals-feedback group](https://groups.google.com/g/web-vitals-feedback)
