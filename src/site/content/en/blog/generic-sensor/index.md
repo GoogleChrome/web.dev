@@ -271,7 +271,7 @@ sensor_rel.onreading = () => {
 sensorRel.start();
 ```
 
-**[BABYLON](http://doc.babylonjs.com/classes/3.0/abstractmesh#rotationquaternion-quaternion-classes-3-0-quaternion-)**
+**[BABYLON](https://doc.babylonjs.com/typedoc/classes/babylon.abstractmesh#rotationquaternion)**
 
 ```js
 const mesh = new BABYLON.Mesh.CreateCylinder('mesh', 0.9, 0.3, 0.6, 9, 1, scene);
