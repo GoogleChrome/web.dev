@@ -763,7 +763,7 @@ before I hit "publish".
 
 - [Service Workers—an Introduction][sw_primer]
 - [Is Service Worker ready?][is_sw_ready]—track the implementation status across the main browsers
-- [JavaScript Promises—an Introduction](/web/fundamentals/getting-started/primers/promises) - guide
+- [JavaScript Promises—an Introduction](/promises) - guide
   to promises
 
 [ttt]: https://jakearchibald.github.io/trained-to-thrill/
