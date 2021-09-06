@@ -14,7 +14,7 @@ authors:
 date: 2021-09-06
 # updated: 2021-09-06
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/AxswfecVWVJzh0shbahj.jpg
-alt:
+alt: Virtual keyboard on a mobile device.
 tags:
   - blog
   - capabilities
@@ -34,13 +34,14 @@ virtual keyboard, so the browser has to scroll it into view.
 
 Traditionally, browsers have dealt with this challenge on their own, but more complex applications
 may require more control over the browser's behavior. Examples include multi-screen mobile devices
-where the traditional approach results in "wasted" screen real estate if the virtual keyboard is
-displayed on just one screen segment, but where the available viewport is shrunk on both screens
-nonetheless.
+where the traditional approach would result in "wasted" screen real estate if the virtual keyboard
+is displayed on just one screen segment, but where the available viewport is shrunk on both screens
+nonetheless. The image below shows how the VirtualKeyboard API could be used to optimize the layout
+of the document dynamically to compensate for the virtual keyboard's presence.
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/RHEvtaZIcCCgoWuS5c3Z.png", alt="The traditional approach results in \"wasted\" screen real estate if the virtual keyboard is displayed on just one screen segment of a multi-screen device, but where the available viewport is shrunk on both screens nonetheless.", width="800", height="301" %}
 
-This is where the VirtualKeyboard API comes in. It consists of three parts:
+Situations like this is where the VirtualKeyboard API comes in. It consists of three parts:
 
 - The `VirtualKeyboard` interface on the `navigator` object for programmatic access to the virtual
   keyboard from JavaScript.
@@ -66,8 +67,9 @@ The VirtualKeyboard API adds a new interface `VirtualKeyboard` to the `navigator
 
 ### Opting in to the new virtual keyboard behavior
 
-To tell the browser that you are taking care of the virtual keyboard yourself, you need to first opt
-in to the new virtual keyboard behavior by setting the boolean property `overlaysContent` to `true`.
+To tell the browser that you are taking care of virtual keyboard occlusions yourself, you need to
+first opt in to the new virtual keyboard behavior by setting the boolean property `overlaysContent`
+to `true`.
 
 ```js
 navigator.virtualKeyboard.overlaysContent = true;
@@ -95,7 +97,8 @@ navigator.virtualKeyboard.hide();
 ### Being informed of geometry changes
 
 Whenever the virtual keyboard appears or disappears, the `geometrychanged` event is dispatched. The
-event's `target` property contains the new geometry of the virtual keyboard.
+event's `target` property contains the new geometry of the virtual keyboard inset as a
+[`DOMRect`](https://www.w3.org/TR/geometry-1/#domrect).
 
 ```js
 navigator.virtualKeyboard.addEventListener('geometrychanged', (event) => {
@@ -130,18 +133,30 @@ the virtual keyboard's appearance.
 The virtual keyboard insets are six environment variables that define a rectangle by its top, right,
 bottom, and left insets from the edge of the viewport. The width and height insets are calculated
 from the remaining insets for developer ergonomics. The default value of each keyboard inset is
-`"0px"` if a fallback value is not provided, else it gets updated when the `boundingRect` value
+`0px` if a fallback value is not provided, else it gets updated when the `boundingRect` value
 changes.
 
 ### The virtual keyboard policy
 
 Not always when an editable element is focused, the virtual keyboard should appear. An example is a
-spreadsheet application where the user can select a cell to be included in a formula of another
-cell. The `virtualkeyboardpolicy` is an attribute whose keywords are the strings `auto` and
+spreadsheet application where the user can tap a cell for its value to be included in a formula of
+another cell. The `virtualkeyboardpolicy` is an attribute whose keywords are the strings `auto` and
 `manual`. When specified on an element that is a `contenteditable` host, `auto` causes the
 corresponding editable element to automatically show the virtual keyboard when it is focused or
-tapped and `manual` decouples focus and tap on the editable element from changes in the virtual
+tapped, and `manual` decouples focus and tap on the editable element from changes in the virtual
 keyboard's current state.
+
+```html
+<!-- Do nothing on regular focus, but show the virtual keyboard on double-click. -->
+<div
+  contenteditable
+  virtualkeyboardpolicy="manual"
+  inputmode="text"
+  ondblclick="navigator.virtualKeyboard.show();"
+>
+  Double-click to edit.
+</div>
+```
 
 ## Demo
 
@@ -163,5 +178,7 @@ You can see some aspects of the VirtualKeyboard API in action in a
 
 ## Acknowledgements
 
-Hero image by [@freestocks](https://unsplash.com/@freestocks) on
+The VirtualKeyboard API was specified by Anupam Snigdha from Microsoft, with contributions from
+former editor Grisha Lyukshin, likewise from Microsoft. Hero image by
+[@freestocks](https://unsplash.com/@freestocks) on
 [Unsplash](https://unsplash.com/photos/mw6Onwg4frY).
