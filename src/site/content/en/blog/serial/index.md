@@ -603,11 +603,11 @@ Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 [Espruino Web IDE]: http://espruino.com/ide
 [Microsoft MakeCode]: https://www.microsoft.com/en-us/makecode
 [explainer]: https://github.com/reillyeon/serial/blob/gh-pages/EXPLAINER.md
-[spec]: https://reillyeon.github.io/serial/
+[spec]: https://github.com/reillyeon/serial/
 [default values]: https://reillyeon.github.io/serial/#dom-serialoptions
-[Streams API concepts]: https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts
-[ReadableStream]: https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream
-[WritableStream]: https://developer.mozilla.org/en-US/docs/Web/API/WritableStream
+[Streams API concepts]: https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts
+[ReadableStream]: https://developer.mozilla.org/docs/Web/API/ReadableStream
+[WritableStream]: https://developer.mozilla.org/docs/Web/API/WritableStream
 [unlocked]: https://streams.spec.whatwg.org/#lock
 [locked]: https://streams.spec.whatwg.org/#lock
 [output signals]: https://reillyeon.github.io/serial/#serialoutputsignals-dictionary
@@ -618,8 +618,8 @@ Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 [Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [security]: https://wicg.github.io/serial/#security
 [privacy]: https://wicg.github.io/serial/#privacy
-[transform stream]: https://developer.mozilla.org/en-US/docs/Web/API/TransformStream
-[transform streams]: https://developer.mozilla.org/en-US/docs/Web/API/TransformStream
+[transform stream]: https://developer.mozilla.org/docs/Web/API/TransformStream
+[transform streams]: https://developer.mozilla.org/docs/Web/API/TransformStream
 [issues]: https://github.com/wicg/serial/issues
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ESerial
 [cr-dev-twitter]: https://twitter.com/chromiumdev
