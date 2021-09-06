@@ -164,7 +164,7 @@ You can see some aspects of the VirtualKeyboard API in action in a
 [demo](https://virtualkeyboard.glitch.me/) on Glitch. Be sure to explore the
 [source code](https://glitch.com/edit/#!/virtualkeyboard) to see how it is implemented.
 While `geometrychange` events can be observed in the iframe embed, the actual virtual keyboard
-behavior requires opening the demo in its own [browser tab](https://virtualkeyboard.glitch.me/).
+behavior requires opening the demo [in its own browser tab](https://virtualkeyboard.glitch.me/).
 
 {% Glitch 'virtualkeyboard' %}
 
