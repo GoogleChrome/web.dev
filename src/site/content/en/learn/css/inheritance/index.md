@@ -136,7 +136,7 @@ but there are a lot that are.
 For reference, here is the entire list of inheritable properties,
 taken from the W3 reference of all CSS properties:
 
-- [azimuth](https://developer.mozilla.org/en-US/docs/Web/CSS/azimuth)
+- [azimuth](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/azimuth)
 - [border-collapse](https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse)
 - [border-spacing](https://developer.mozilla.org/en-US/docs/Web/CSS/border-spacing)
 - [caption-side](https://developer.mozilla.org/en-US/docs/Web/CSS/caption-side)
