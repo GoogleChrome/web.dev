@@ -489,7 +489,7 @@ with [WebAssembly SIMD](https://v8.dev/features/simd)!
 Google Earth is another notable service that's using WebAssembly threads for its [web
 version](https://earth.google.com/web/).
 
-[FFMPEG.WASM](https://ffmpegwasm.github.io/) is a WebAssembly version of a popular
+[FFMPEG.WASM](https://ffmpegwasm.netlify.app) is a WebAssembly version of a popular
 [FFmpeg](https://www.ffmpeg.org/) multimedia toolchain that uses WebAssembly threads to efficiently
 encode videos directly in the browser.
 
