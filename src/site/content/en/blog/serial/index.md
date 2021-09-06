@@ -602,7 +602,7 @@ Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 [Betaflight Configurator]: https://github.com/betaflight/betaflight-configurator
 [Espruino Web IDE]: http://espruino.com/ide
 [Microsoft MakeCode]: https://www.microsoft.com/en-us/makecode
-[explainer]: https://github.com/reillyeon/serial/blob/gh-pages/EXPLAINER.md
+[explainer]: https://github.com/reillyeon/serial/blob/main/EXPLAINER.md
 [spec]: https://github.com/reillyeon/serial/
 [default values]: https://reillyeon.github.io/serial/#dom-serialoptions
 [Streams API concepts]: https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts
