@@ -10,6 +10,3 @@ already been rendered. This issue is more prominent in situations where images
 are slow to load - for example, on a slow connection or when loading an image
 with a particularly large file size.
 
-To avoid layout shifts, it's important to indicate to the browser the dimensions
-that the image will be displayed at. This is done by setting the `width`
-and `height` attributes.

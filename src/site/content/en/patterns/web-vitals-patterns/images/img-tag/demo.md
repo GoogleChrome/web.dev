@@ -13,53 +13,28 @@ patternId: web-vitals-patterns/images/img-tag
         body {
             padding: 1em;
             font-family: system-ui;
-        }
-        h1 {
+            display: grid;
+            justify-items: center;
             text-align: center;
         }
-        .section {
-            margin: 1em;
-            padding: 1em;
-            background-color: #F5F5F5;
-        }
-        .cover {
-            object-fit: cover;
-            width: 100%
-        }
-        .contain {
-            object-fit: contain;
-            width: 100%
-        }
-        .fill {
-            object-fit: fill;
-            width: 100%;
-        }
-        .scale-down {
-            object-fit: scale-down;
-            width: 100%;
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
     <h1>&lt;img&gt; tag</h1>
-    <div class="section">
-        <h2>object-fit: cover</h2>
-        <p>Image fills container. If the image has a different aspect ratio than container, it will be cropped to fit.</p>
-        <img class="cover" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/DmZBhXhFnBS7tl8TW4Fn.jpg" width="800" height="533">
+        <img src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/1vlvQuXxUuQbpfr1owP8.jpeg" width="400" height="267" alt="Photo of dog on pink background">
     </div>
-    <div class="section">
-        <h2>object-fit: contain</h2>
-        <p>Image is displayed at its original aspect ratio. If the image has a different aspect ratio than its container, it will be displayed "letterbox" style.</p>
-        <img class="contain" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/DmZBhXhFnBS7tl8TW4Fn.jpg" width="800" height="533">
-    </div>
-    <div class="section">
-        <h2>object-fit: fill</h2>
-        <p>Image fills container. If image has a different aspect ratio than container, it will be stretched to fit.</p>
-        <img class="fill" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/DmZBhXhFnBS7tl8TW4Fn.jpg" width="800" height="533">
-    </div>
-    <div class="section">
-        <h2>object-fit: scale-down</h2>
-        <p>Image is displayed at either its original size or its "object-fit: contain" size - whichever of these is smaller.<p>
-        <img class="scale-down" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/DmZBhXhFnBS7tl8TW4Fn.jpg" width="800" height="533">
-    </div>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+        incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+        erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+        Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+        Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+        erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+        euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+        iaculis eu non diam phasellus.
+    </p>
 </body>
