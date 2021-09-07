@@ -267,7 +267,7 @@ module.exports = {
               data: {
                 title: variant.data.title,
                 extraSampleCSS:
-                  variant.data.extraSampleCSS || item.data.extraSampleCSS,
+                  variant.data.extraSampleCSS ?? item.data.extraSampleCSS,
               },
             },
           });

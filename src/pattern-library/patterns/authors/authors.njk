@@ -21,7 +21,7 @@
   </a>
   <div class="flow">
     <cite class="author__name">
-      <a href="{{ data.url }}" class="w-author__name-link">{{ data.name }}</a>
+      <a href="{{ data.url }}">{{ data.name }}</a>
     </cite>
     {% if data.bio %}
       <p class="author__bio">{{ data.bio }}</p>
@@ -29,7 +29,7 @@
     <ul class="author__links cluster" role="list">
       {% for link in data.links %}
       <li class="w-author__link-listdata">
-        <a href="{{ link.url }}" class="w-author__link">{{ link.text }}</a>
+        <a href="{{ link.url }}">{{ link.text }}</a>
       </li>
       {% endfor %}
     </ul>
