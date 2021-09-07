@@ -10,10 +10,18 @@ height: 400
 Self-hosted fonts are font files that are served from your own servers - rather
 than those of a third-party font provider (for example, Google Fonts).
 
+It is incredibly important to deliver fonts quickly: faster font delivery not
+only means that text will be visible to the user sooner - but it also has a
+large impact on whether a font causes layout shifts. If a font cannot be
+delivered before it is needed, there will typically be a layout shift when the
+font is swapped. The size of this layout shift can vary depending on how closely
+the fallback font matches the web font. To see this phenomena in action, view
+the demo and compare the layout shifts that occur on a fast connection versus a
+slow connection.
+
 The example below combines two performance techniques to deliver a self-hosted
 font as quickly as possible: use of inline font declarations and use of the
-WOFF2 font format. Delivering fonts quickly not only makes text render faster -
-but it also helps prevent layout shifts. 
+WOFF2 font format.
 
 * **Inline font declarations**: Inlining `@font-face` and `font-family`
   declarations in the main document, rather than including this information in

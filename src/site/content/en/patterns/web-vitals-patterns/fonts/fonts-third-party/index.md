@@ -7,10 +7,18 @@ updated: 2021-08-19
 height: 400
 ---
 
+It is incredibly important to deliver fonts quickly: faster font delivery not
+only means that text will be visible to the user sooner - but it also has a
+large impact on whether a font causes layout shifts. If a font cannot be
+delivered before it is needed, there will typically be a layout shift when the
+font is swapped. The size of this layout shift can vary depending on how closely
+the fallback font matches the web font. To see this phenomena in action, view
+the demo and compare the layout shifts that occur on a fast connection versus a
+slow connection.
+
 The example below combines two performance techniques to load a third-party font
 as quickly as possible: use of inline font declarations and use of `preconnect`
-resource hints. Delivering fonts quickly not only makes text render faster - but
-it also helps prevent layout shifts. Although this code snippet demonstrates how
+resource hints. Although this code snippet demonstrates how
 to load fonts from [Google Fonts](https://fonts.google.com/), these techniques
 also apply to other third-party font providers.
 
