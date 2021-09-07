@@ -11,8 +11,8 @@ description: |
   of the layout viewport with the virtual keyboard.
 authors:
   - thomassteiner
-date: 2021-09-06
-# updated: 2021-09-06
+date: 2021-09-09
+# updated: 2021-09-09
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/AxswfecVWVJzh0shbahj.jpg
 alt: Virtual keyboard on a mobile device.
 tags:
@@ -20,7 +20,7 @@ tags:
   - capabilities
 ---
 
-Devices like tablets or cellphones typically have a virtual keyboard that can be used to type text.
+Devices like tablets or cellphones typically have a virtual keyboard for typing text.
 Unlike a physical keyboard that is always present and always the same, a virtual keyboard appears
 and disappears, dependent on the user's actions, to which it can also adapt dynamically, for
 example, based on the
@@ -138,7 +138,7 @@ changes.
 
 ### The virtual keyboard policy
 
-Not always when an editable element is focused, the virtual keyboard should appear. An example is a
+Sometimes the virtual keyboard should not appear when an editable element is focused. An example is a
 spreadsheet application where the user can tap a cell for its value to be included in a formula of
 another cell. The `virtualkeyboardpolicy` is an attribute whose keywords are the strings `auto` and
 `manual`. When specified on an element that is a `contenteditable` host, `auto` causes the
@@ -160,7 +160,7 @@ keyboard's current state.
 
 ## Demo
 
-You can see some aspects of the VirtualKeyboard API in action in a
+You can see the VirtualKeyboard API in action in a
 [demo](https://virtualkeyboard.glitch.me/) on Glitch. Be sure to explore the
 [source code](https://glitch.com/edit/#!/virtualkeyboard) to see how it is implemented.
 While `geometrychange` events can be observed in the iframe embed, the actual virtual keyboard
