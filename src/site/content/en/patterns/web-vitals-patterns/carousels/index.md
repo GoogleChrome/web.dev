@@ -12,4 +12,4 @@ can have a significant impact on [LCP](https://web.dev/lcp). In addition, a
 surprising number of carousels use [non-composited
 animations](https://web.dev/non-composited-animations/) that can contribute to
 [Cumulative Layout Shift (CLS)](https://web.dev/cls). On pages with autoplaying
-carousels, this has the potential to cause infinite CLS.
+carousels, this has the potential to cause infinite layout shifts.
