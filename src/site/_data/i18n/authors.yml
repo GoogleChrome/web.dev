@@ -46,6 +46,12 @@ beaufortfrancois:
   description:
     en: Dives into Chromium source code
 
+cwallez:
+  title:
+    en: Corentin Wallez
+  description:
+    en: Graphics plumber at Google
+
 mathiasbynens:
   title:
     en: Mathias Bynens

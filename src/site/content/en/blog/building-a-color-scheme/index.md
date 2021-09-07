@@ -601,4 +601,6 @@ Community remixes section below.
 - [Color scheme Codepen starter](https://codepen.io/argyleink/pen/vYxrrpd)
 
 Community remixes
-Nothing to see here yet!
+- [@chris-kruining](https://github.com/chris-kruining) added a hue slider,
+  status colors and contrast modes for `no-preference`, `more` and `less`:
+  [demo](https://unifyned.com/colors.html).

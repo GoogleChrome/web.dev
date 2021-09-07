@@ -259,7 +259,7 @@ enhancement strategy, we enjoy the latest and greatest wherever possible, but wi
 behind. Best viewed in _any_ browser.
 
 Electron has served us well, but in 2020 and beyond, we can live without it. Oh, and for that
-objective of [@vjeux](https://github/com/vjeux): since the Android Play Store now accepts PWAs in a
+objective of [@vjeux](https://github.com/vjeux): since the Android Play Store now accepts PWAs in a
 container format called [Trusted Web Activity](/using-a-pwa-in-your-android-app/) and
 since the
 [Microsoft Store supports PWAs](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-edgehtml/microsoft-store),

@@ -8,7 +8,7 @@ description: |
   Working with media often requires changing the characteristics of media files.
   On this page, you'll learn about the tools used and how to install them quickly.
 date: 2017-06-09
-updated: 2021-07-05
+updated: 2021-08-30
 tags:
   - media
   - video
@@ -197,10 +197,17 @@ provided the instructions to get you set up quickly.
     docker build -t media-tools ./docker
     ```
 
-1. Run the image as an interactive shell:
+1. Run the image as an interactive shell. On Linux:
 
     ```bash
     docker run -w /media -v ${PWD}/media:/media -it --rm media-tools
+    /media #
+    ```
+
+    On Windows:
+
+    ```bash
+    docker run -w /media -v %cd%/media:/media -it --rm media-tools
     /media #
     ```
 

@@ -284,7 +284,7 @@ tasks that impact interactivity.
 ### Block network requests to see the before/after impact in Lighthouse
 
 Chrome DevTools supports [blocking network
-requests](https://developers.google.com/web/updates/2017/04/devtools-release-notes#block-requests)
+requests](https://developer.chrome.com/docs/devtools/network/#block)
 to see the impact of individual resources being removed or not being available. This can be helpful
 for understanding the cost individual scripts (e.g such as third-party embeds or trackers) have on
 metrics like Total Blocking Time (TBT) and Time to Interactive.

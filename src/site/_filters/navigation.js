@@ -15,41 +15,31 @@ const {join} = require('path');
  *  {title: 'Hello World', children: [{url: ...}, {url: ...}]}
  * ]
  * @param {NavigationToC[]} toc
- * @param {Map} map
+ * @param {Map<string, NavigationItem>} map url-based map of entries
  * @return {NavigationItem[]}
  */
 function buildTree(toc, map) {
+  /** @type {NavigationItem[]} */
   const tree = [];
-  // The list array is a convenience tool that we use so we can append next/prev
-  // references to each item once the tree is built.
-  // Using an array here avoids us needing to do a second recursive tree walk
-  // just to add those properties.
-  const list = [];
   for (const entry of toc) {
+    /** @type {NavigationItem} */
+    const item = {};
+
+    if (entry.sections?.length) {
+      item.children = buildTree(entry.sections, map);
+    }
     if (entry.url) {
-      const clone = {...entry};
       // EleventyCollection items always end in a trailing slash so we need
       // to ensure our urls have it if we want to use them as keys.
-      clone.url = join(clone.url, '/');
-      tree.push(clone);
-      // Only push nodes with urls into the list array.
-      // When we're navigating by next/prev we don't want to land on section
-      // headings.
-      list.push(clone);
-      map.set(clone.url, clone);
-    } else if (entry.title) {
-      const children = buildTree(entry.sections, map);
-      tree.push({
-        title: entry.title,
-        children,
-      });
+      item.url = join(entry.url, '/');
+      map.set(item.url, item);
     }
-  }
+    if (entry.title) {
+      item.title = entry.title;
+    }
 
-  list.forEach((/** @type {NavigationItem} */ item, idx) => {
-    item.prev = list[idx - 1] || null;
-    item.next = list[idx + 1] || null;
-  });
+    tree.push(item);
+  }
 
   return tree;
 }
@@ -59,23 +49,23 @@ function buildTree(toc, map) {
  * urls match a url in the tree. If we find a match then we add the page data
  * to the tree.
  * @param {EleventyCollectionItem[]} collection
- * @param {Map} map
+ * @param {Map<string, NavigationItem>} map
  */
 function mapPagesToTree(collection, map) {
   for (const item of collection) {
     const ref = map.get(item.url);
-    if (ref) {
-      // Copy the page data that we actually need.
-      // Don't clone the entire data object or you can easily run into
-      // circular reference issues if you try to use this data inside of
-      // page content.
-      ref.page = {
-        data: {
-          title: item.data.title,
-          description: item.data.description,
-        },
-      };
+    if (!ref) {
+      continue;
     }
+    // Copy the page data that we actually need.
+    // Don't clone the entire data object or you can easily run into
+    // circular reference issues if you try to use this data inside of
+    // page content.
+    ref.data = {
+      title: item.data.title,
+      description: item.data.description,
+      date: item.data.date,
+    };
   }
 }
 
@@ -85,11 +75,23 @@ function mapPagesToTree(collection, map) {
  * or page navigation.
  * @param {EleventyCollectionItem[]} collection
  * @param {NavigationToC[]} toc
- * @return {NavigationItem[]}
+ * @return {{ tree: NavigationItem[], list: NavigationItem[] }}
  */
 module.exports = function navigation(collection, toc) {
+  /** @type {Map<string, NavigationItem>} */
   const map = new Map();
   const tree = buildTree(toc, map);
   mapPagesToTree(collection, map);
-  return tree;
+
+  // The map is ordered correctly, even considering nesting, so use it to set
+  // next/previous links and anything else.
+  // The list only contains items with actual URLs.
+  const list = [...map.values()];
+  list.forEach((item, idx) => {
+    item.counter = idx.toString().padStart(3, '0');
+    item.prev = list[idx - 1] || null;
+    item.next = list[idx + 1] || null;
+  });
+
+  return {tree, list};
 };

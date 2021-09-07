@@ -38,7 +38,7 @@ Web Vitals metrics:
 
 {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/YvQK3wA9AQ2fmEuNSzKK.png", alt="Screenshot of a PageSpeed Insights report with conflicting lab and field data", width="800", height="509" %}
 
-Difference between tools is an understandable source of confusion for
+Differences between tools is an understandable source of confusion for
 developers. This post explains the main reasons these differences could
 exist—with specific examples covering each of the Core Web Vitals metrics—and
 what to do when you find differences on your pages.

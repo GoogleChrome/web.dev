@@ -89,7 +89,6 @@ const strip = require('./src/site/_filters/strip');
 const stripBlog = require('./src/site/_filters/strip-blog');
 const getPaths = require('./src/site/_filters/get-paths');
 const navigation = require('./src/site/_filters/navigation');
-const padStart = require('./src/site/_filters/pad-start');
 const {minifyJs} = require('./src/site/_filters/minify-js');
 const {cspHash, getHashList} = require('./src/site/_filters/csp-hash');
 
@@ -181,7 +180,6 @@ module.exports = function (config) {
   config.addFilter('strip', strip);
   config.addFilter('courseToc', courseToc);
   config.addFilter('updateSvgForInclude', updateSvgForInclude);
-  config.addFilter('padStart', padStart);
   config.addNunjucksAsyncFilter('minifyJs', minifyJs);
   config.addFilter('cspHash', cspHash);
 

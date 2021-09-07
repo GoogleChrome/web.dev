@@ -135,7 +135,7 @@ Cross Origin Resource Sharing (CORS) or Cross Origin Resource Policy (CORP).
 
 ### Cross Origin Resource Sharing {: #cors }
 If a cross origin resource supports [Cross Origin Resource Sharing
-(CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), you may use the
+(CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS), you may use the
 [`crossorigin`
 attribute](https://developer.mozilla.org/docs/Web/HTML/Attributes/crossorigin)
 to load it to your web page without being blocked by COEP.
@@ -152,11 +152,11 @@ prevents the image from being loaded unless it sets CORS headers.
 Similarly, you may fetch cross origin data through the `fetch()` method, which
 doesn't require special handling as long as the server responds with [the right
 HTTP
-headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#The_HTTP_response_headers).
+headers](https://developer.mozilla.org/docs/Web/HTTP/CORS#The_HTTP_response_headers).
 
 ### Cross Origin Resource Policy {: #corp }
 [Cross Origin Resource Policy
-(CORP)](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_%28CORP%29)
+(CORP)](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))
 was originally introduced as an opt-in to protect your resources from being
 loaded by another origin. In the context of COEP, CORP can specify the resource
 owner's policy for who can load a resource.
@@ -231,7 +231,7 @@ browsing context group unless the opener itself has a COOP of `same-origin`.
 
 {% Aside %}
 The
-[`noopener`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Window_features)
+[`noopener`](https://developer.mozilla.org/docs/Web/API/Window/open#Window_features)
 attribute has a similar effect to what you would expect from COOP except that it
 works only from the opener side. (You can't disassociate your window when it is opened
 by a third party.) When you attach `noopener` by doing something such as

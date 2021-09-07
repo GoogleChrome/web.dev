@@ -6,7 +6,7 @@ authors:
   - beaufortfrancois
   - thomassteiner
 date: 2018-11-05
-updated: 2021-06-21
+updated: 2021-09-06
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -292,9 +292,7 @@ In Chrome, the image must respond to certain criteria:
 
 {% Aside 'gotchas' %}
 The `description` and `screenshots` properties are currently used only in Chrome
-for Android when a user wants to install your app. The experimental flag
-`about://flags/#mobile-pwa-install-use-bottom-sheet` flag must be enabled in
-Chrome 90.
+for Android when a user wants to install your app.
 {% endAside %}
 
 ## Add the web app manifest to your pages {: #link-manifest }
