@@ -1,6 +1,7 @@
 ---
 title: Transitions
 description: >
+In this module, learn how to define transitions between states of an element. Use transitions to improve user experience by providing visual feedback to user interaction.
   
 audio:
   title: 'The CSS Podcast - 044: Transitions'
@@ -10,12 +11,6 @@ authors:
   - cambickel
 date: 2021-09-15
 ---
-
-# Transitions
-*In this module, learn how to define transitions between states of an element. Use transitions to improve user experience by providing visual feedback to user interaction.*
-
-
-[link to animated GIF]
 
 When interacting with a website, you might notice that many elements have **state**. For example, dropdowns can be in opened or closed states. Buttons might change color when focused or hovered. Modals appear and disappear.
 
