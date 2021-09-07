@@ -16,9 +16,6 @@ patternId: web-vitals-patterns/video/video
             padding: 1em;
             line-height: 1.5;
         }
-        i {
-            padding: 10px;
-        }
         video {
             max-width: 100%;
             height: auto;
@@ -31,7 +28,6 @@ patternId: web-vitals-patterns/video/video
     <video controls width="960" height="540" poster="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/3N9Da7li9rJxbooRM3hU.png">
         <source src="https://web-dev.imgix.net/video/j2RDdG43oidUy6AL6LovThjeX9c2/oHIJC3xKftkPdyClOFxw.mp4" type="video/mp4">
     </video>
-    <i>Chlorophytum comosum</i>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
         incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
