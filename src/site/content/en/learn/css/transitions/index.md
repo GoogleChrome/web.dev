@@ -33,7 +33,7 @@ To use transitions in CSS, you can use the various transition properties or the 
 ### transition-property
 The `transition-property` property specifies which style(s) to transition.
 
-```
+```css
 .my-element {
   transition-property: background-color;
 }
