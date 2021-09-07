@@ -1,14 +1,14 @@
 ---
 title: Lists
 description: >
-  A list, structurally, is composed of a list container element, like an `<ol>` or `<ul>`, and filled with list items, (`<li>`). In this module, you'll learn how to style all the parts of a list.
+  A list, structurally, is composed of a list container element filled with list items. In this module, you'll learn how to style all the parts of a list.
 audio:
   title: 'The CSS Podcast - 030: Lists'
   src: 'https://traffic.libsyn.com/secure/thecsspodcast/TCP030_v2.mp3?dest-id=1891556'
   thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - emmatwersky
-date: 2021-08-30
+date: 2021-09-15
 ---
 
 Imagine you have a bunch of items you plan to buy during your next grocery trip. One common way to represent this visually is a list—but how can you add styling to your grocery list?
