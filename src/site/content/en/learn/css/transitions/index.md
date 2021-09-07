@@ -131,7 +131,7 @@ The [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) CS
   tab: 'result'
 } %}
 
-Check out [our section on transforms](https://web.dev/learn/css/functions/#transforms) in the [Functions module](https://web.dev/learn/css/functions/).
+Check out [the section on transforms](https://web.dev/learn/css/functions/#transforms) in [our Functions module](https://web.dev/learn/css/functions/).
 
 ### Color
 Before, during, and after interaction, color can be a great indicator of state. For example, a button might change color if it's being hovered. This color change can provide feedback to the user that the button is clickable.
