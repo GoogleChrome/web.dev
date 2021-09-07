@@ -1,5 +1,5 @@
 :root {
-    --placeholder-primary: #bfbfbf;
+    --placeholder-primary: #eeeeee;
     --placeholder-secondary: #cccccc;
 }
 .grid {
@@ -14,10 +14,6 @@
     display: grid;
     gap: .5em;
 }
-.image-container {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-}
 .image-container img {
     width: 100%;
 }
@@ -27,17 +23,33 @@
     text-align: center;
     font-weight: bold;
 }
-@keyframes fade {
+.image-container {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    animation: placeholder ease-in-out 2s infinite;
+}
+@keyframes placeholder {
+    0% {
+        background-color: var(--placeholder-primary);
+    }
     50% {
-        opacity: .2;
+        background-color: var(--placeholder-secondary);
+    }
+    100% {
+        background-color: var(--placeholder-primary);
     }
 }
-.loading {
-    animation: fade ease-in-out 2s infinite;
+@keyframes fadeIn {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
 }
-.loading .image-container{
-    background-color: var(--placeholder-primary);
+.item.loaded .image-container {
+    animation: none;
 }
-.loading .text-container {
-    background-color: var(--placeholder-secondary);
+.item.loaded .image-container img{
+    animation: fadeIn linear .5s;
 }

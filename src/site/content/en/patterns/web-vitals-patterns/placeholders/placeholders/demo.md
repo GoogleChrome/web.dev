@@ -43,9 +43,9 @@ patternId: web-vitals-patterns/placeholders/placeholders
         .image-container {
             aspect-ratio: 1 / 1;
             overflow: hidden;
-            animation: fade ease-in-out 2s infinite;
+            animation: placeholder ease-in-out 2s infinite;
         }
-        @keyframes fade {
+        @keyframes placeholder {
             0% {
                 background-color: var(--placeholder-primary);
             }
@@ -56,8 +56,19 @@ patternId: web-vitals-patterns/placeholders/placeholders
                 background-color: var(--placeholder-primary);
             }
         }
-        .item.loaded .image-container, .item.loaded .text-container {
+        @keyframes fadeIn {
+            0% {
+                opacity: 0%;
+            }
+            100% {
+                opacity: 100%;
+            }
+        }
+        .item.loaded .image-container {
             animation: none;
+        }
+        .item.loaded .image-container img{
+            animation: fadeIn linear .5s;
         }
     </style>
 </head>
