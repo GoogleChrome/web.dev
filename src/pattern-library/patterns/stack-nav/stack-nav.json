@@ -1,5 +1,6 @@
 {
   "title": "Stack Nav",
+  "summary": "Block links with an active state for current page.",
   "keyLinks": [
     {
       "label": "Sass File",
@@ -29,5 +30,105 @@
         "active": false
       }
     ]
-  }
+  },
+  "variants": [
+    {
+      "name": "with-prefix",
+      "title": "With Prefix",
+      "context": {
+        "items": [
+          {
+            "text": "Lorem ipsum dolor",
+            "url": "#",
+            "active": false,
+            "prefix": "001"
+          },
+          {
+            "text": "Tristique Ornare Commodo",
+            "url": "#",
+            "active": true,
+            "prefix": "002"
+          },
+          {
+            "text": "Adipiscing Amet Ullamcorper",
+            "url": "#",
+            "active": false,
+            "prefix": "003"
+          },
+          {
+            "text": "Risus Adipiscing",
+            "url": "#",
+            "active": false,
+            "prefix": "004"
+          }
+        ]
+      }
+    },
+    {
+      "name": "with-icon",
+      "title": "With Icon",
+      "context": {
+        "items": [
+          {
+            "text": "Lorem ipsum dolor",
+            "url": "#",
+            "active": false,
+            "icon": "done.svg"
+          },
+          {
+            "text": "Tristique Ornare Commodo",
+            "url": "#",
+            "active": true,
+            "icon": "done.svg"
+          },
+          {
+            "text": "Adipiscing Amet Ullamcorper",
+            "url": "#",
+            "active": false
+          },
+          {
+            "text": "Risus Adipiscing",
+            "url": "#",
+            "active": false,
+            "icon": "done.svg"
+          }
+        ]
+      }
+    },
+    {
+      "name": "with-icon-and-prefix",
+      "title": "With Icon And Prefix",
+      "context": {
+        "items": [
+          {
+            "text": "Lorem ipsum dolor",
+            "url": "#",
+            "active": false,
+            "icon": "done.svg",
+            "prefix": "001"
+          },
+          {
+            "text": "Tristique Ornare Commodo",
+            "url": "#",
+            "active": true,
+            "icon": "done.svg",
+            "prefix": "002"
+          },
+          {
+            "text": "Adipiscing Amet Ullamcorper",
+            "url": "#",
+            "active": false,
+            "prefix": "003"
+          },
+          {
+            "text": "Risus Adipiscing",
+            "url": "#",
+            "active": false,
+            "icon": "done.svg",
+            "prefix": "004"
+          }
+        ]
+      }
+    }
+  ]
 }
