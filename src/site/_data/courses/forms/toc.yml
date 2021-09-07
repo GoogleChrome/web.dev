@@ -1,2 +1,9 @@
 - url: /learn/forms
-- url: /learn/forms/form-element
+- title: Learn Forms
+  sections:
+  - title: Get started with forms
+  - url: /learn/forms/form-element
+  - url: /learn/forms/form-fields
+  - url: /learn/forms/auto
+  - url: /learn/forms/validation
+  - url: /learn/forms/testing

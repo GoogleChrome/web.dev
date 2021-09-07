@@ -41,7 +41,7 @@ optional attributes defined in the start tag, and an end tag `</form>`.
 
 Between the start and end tag, you can include form elements like `<ìnput>` and `<textarea>`
 for different types of user input.
-You will learn more about [form elements](/learn/forms/form-elements) in the next module.
+You will learn more about [form elements](/learn/forms/form-fields) in the next module.
 
 {% Aside %}
 Use HTTPS to protect all websites and forms,
