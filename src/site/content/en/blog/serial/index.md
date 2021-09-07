@@ -602,16 +602,16 @@ Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 [Betaflight Configurator]: https://github.com/betaflight/betaflight-configurator
 [Espruino Web IDE]: http://espruino.com/ide
 [Microsoft MakeCode]: https://www.microsoft.com/en-us/makecode
-[explainer]: https://github.com/reillyeon/serial/blob/main/EXPLAINER.md
-[spec]: https://github.com/reillyeon/serial/
-[default values]: https://reillyeon.github.io/serial/#dom-serialoptions
+[explainer]: https://github.com/WICG/serial/blob/main/EXPLAINER.md
+[spec]: https://github.com/WICG/serial
+[default values]: https://wicg.github.io/serial/#serialoptions-dictionary
 [Streams API concepts]: https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts
 [ReadableStream]: https://developer.mozilla.org/docs/Web/API/ReadableStream
 [WritableStream]: https://developer.mozilla.org/docs/Web/API/WritableStream
 [unlocked]: https://streams.spec.whatwg.org/#lock
 [locked]: https://streams.spec.whatwg.org/#lock
-[output signals]: https://reillyeon.github.io/serial/#serialoutputsignals-dictionary
-[input signals]: https://reillyeon.github.io/serial/#serialinputsignals-dictionary
+[output signals]:https://wicg.github.io/serial/#serialoutputsignals-dictionary
+[input signals]: https://wicg.github.io/serial/#serialinputsignals-dictionary
 [BBC micro:bit]: https://microbit.org/
 [Google Developer codelab]: https://codelabs.developers.google.com/codelabs/web-serial
 [Serial API polyfill]: https://github.com/google/web-serial-polyfill
