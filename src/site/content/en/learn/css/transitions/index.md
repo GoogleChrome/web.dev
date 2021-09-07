@@ -1,7 +1,7 @@
 ---
 title: Transitions
 description: >
-In this module, learn how to define transitions between states of an element. Use transitions to improve user experience by providing visual feedback to user interaction.
+  In this module, learn how to define transitions between states of an element. Use transitions to improve user experience by providing visual feedback to user interaction.
   
 audio:
   title: 'The CSS Podcast - 044: Transitions'
