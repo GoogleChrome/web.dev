@@ -209,7 +209,7 @@ By setting different `transition` properties on hover/focus, it’s possible to 
 } %}
 
 ## Accessibility considerations
-CSS transitions are not for everyone. For some people, transitions and animations can cause motion sickness or discomfort. Thankfully, CSS has a media feature called `prefers-reduced-motion` that detects if a user has indicated a preference for less motion from their device.
+CSS transitions are not for everyone. For some people, transitions and animations can cause motion sickness or discomfort. Thankfully, CSS has a media feature called [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) that detects if a user has indicated a preference for less motion from their device.
 
 ```css
 /*
@@ -233,7 +233,7 @@ CSS transitions are not for everyone. For some people, transitions and animation
 }
 ```
 
-Check out our blog post for more information on `prefers-reduced-motion`: https://web.dev/prefers-reduced-motion/
+Check out our blog post ["prefers-reduced-motion: Sometimes less movement is more"](https://web.dev/prefers-reduced-motion/) for more information on this media feature.
 
 ## Performance considerations
 When working with CSS transitions, you may encounter performance issues if you add transitions for certain CSS properties. For example, when properties such as `width` or `height` change, they push content around on the rest of the page. This forces CSS to calculate new positions for every affected element for each frame of the transition. When possible, we recommend using properties like `transform` and `opacity` instead.
