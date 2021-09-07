@@ -267,7 +267,7 @@ Apart from several of the brand's other platforms like [Mail.ru](https://mail.ru
 [Atom browser](https://browser.ru/).
 
 <figure class="w-figure">
-  {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/tZJgYpdjurBVfhInqWRo.webp", alt="ALT_TEXT_HERE", width="460", height="948" %}
+  {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/tZJgYpdjurBVfhInqWRo.webp", alt="The Все аптеки mini app running in VK.", width="460", height="948" %}
   <figcaption class="w-figure">
     The Все аптеки mini app running in VK (Source: <a href="https://vk.com/mini-apps">VK</a>).
   </figcaption>
