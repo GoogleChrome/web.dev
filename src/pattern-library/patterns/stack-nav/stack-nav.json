@@ -129,6 +129,75 @@
           }
         ]
       }
+    },
+    {
+      "name": "with-suffix",
+      "title": "With Suffix",
+      "context": {
+        "items": [
+          {
+            "text": "Lorem ipsum dolor",
+            "url": "#",
+            "active": false,
+            "prefix": "001"
+          },
+          {
+            "text": "Tristique Ornare Commodo",
+            "url": "#",
+            "active": true,
+            "prefix": "002",
+            "suffix": "New!"
+          },
+          {
+            "text": "Adipiscing Amet Ullamcorper",
+            "url": "#",
+            "active": false,
+            "prefix": "003"
+          },
+          {
+            "text": "Risus Adipiscing",
+            "url": "#",
+            "active": false,
+            "prefix": "004"
+          }
+        ]
+      }
+    },
+    {
+      "name": "with-suffix-and-icon",
+      "title": "With Suffix and Icon",
+      "context": {
+        "items": [
+          {
+            "text": "Lorem ipsum dolor",
+            "url": "#",
+            "active": false,
+            "prefix": "001",
+            "icon": "done.svg"
+          },
+          {
+            "text": "Tristique Ornare Commodo",
+            "url": "#",
+            "active": true,
+            "prefix": "002",
+            "icon": "done.svg",
+            "suffix": "New!"
+          },
+          {
+            "text": "Adipiscing Amet Ullamcorper",
+            "url": "#",
+            "active": false,
+            "prefix": "003",
+            "suffix": "New!"
+          },
+          {
+            "text": "Risus Adipiscing",
+            "url": "#",
+            "active": false,
+            "prefix": "004"
+          }
+        ]
+      }
     }
   ]
 }

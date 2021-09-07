@@ -4,13 +4,18 @@
       <a class="repel" href="{{ item.url }}" {% if item.active %}aria-current="page"{% endif %}>
         <span class="cluster">
           {% if item.prefix %}
-          <span class="stack-nav__prefix">{{ item.prefix }}</span>
+          <span class="stack-nav__meta">{{ item.prefix }}</span>
           {% endif %}
           <span>{{ item.text }}</span>
         </span>
-        {% if item.icon %}
-          {% include "icons/" + item.icon %}
-        {% endif %}
+        <span class="cluster">
+          {% if item.suffix %}
+            <span class="stack-nav__meta">{{ item.suffix }}</span>
+          {% endif %}
+          {% if item.icon %}
+            {% include "icons/" + item.icon %}
+          {% endif %}
+        </span>
       </a>
     </li>
   {% endfor %}
