@@ -610,7 +610,7 @@ Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 [WritableStream]: https://developer.mozilla.org/docs/Web/API/WritableStream
 [unlocked]: https://streams.spec.whatwg.org/#lock
 [locked]: https://streams.spec.whatwg.org/#lock
-[output signals]:https://wicg.github.io/serial/#serialoutputsignals-dictionary
+[output signals]: https://wicg.github.io/serial/#serialoutputsignals-dictionary
 [input signals]: https://wicg.github.io/serial/#serialinputsignals-dictionary
 [BBC micro:bit]: https://microbit.org/
 [Google Developer codelab]: https://codelabs.developers.google.com/codelabs/web-serial
