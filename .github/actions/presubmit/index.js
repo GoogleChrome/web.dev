@@ -1,3 +1,12 @@
+/**
+ * @file This action checks if the `presubmit` label has been added to a Pull Request.
+ * If the label exists, then remove the label and allow the rest of the workflow the
+ * action belongs to to continue. If not fail the action causing the workflow to fail.
+ *
+ * This is done so we can execute a workflow only when the PR is ready for a more thorough
+ * review and testing.
+ */
+
 const core = require('@actions/core');
 const github = require('@actions/github');
 
