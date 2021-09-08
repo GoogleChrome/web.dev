@@ -1,0 +1,36 @@
+.card {
+  padding: $global-gutter;
+  border: 1px solid get-utility-value('color', 'stroke');
+  border-radius: $global-radius-base;
+  max-width: 40rem;
+
+  img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+}
+
+.card__content {
+  @include apply-utility('gap-top', 'size-1');
+
+  a:not([class]) {
+    color: currentColor;
+  }
+
+  a:not(:hover) {
+    text-decoration: none;
+  }
+
+  p {
+    @include apply-utility('color', 'mid-text');
+  }
+}
+
+.card__action {
+  display: inline-block;
+  text-transform: uppercase;
+
+  @include apply-utility('flow-space', 'size-1');
+  @include apply-utility('weight', 'medium');
+  @include apply-utility('leading', 'flat');
+}
