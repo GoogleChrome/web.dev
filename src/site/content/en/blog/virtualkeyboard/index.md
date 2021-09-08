@@ -156,6 +156,7 @@ You would typically use the environment variables as in the example below:
    * if the virtual keyboard is shown, else use the default fallback value of `0px`.
   margin-block-end: env(keyboard-inset-height);
 }
+```
 
 ### The virtual keyboard policy
 
