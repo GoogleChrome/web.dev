@@ -78,7 +78,7 @@ There are three list-style properties you can use to style your example: `list-s
 
 [`list-style-position`](https://developer.mozilla.org/docs/Web/CSS/list-style-position) allows you to move your bullet point to either `inside` or `outside` the list-item's contents. The default `outside` means the bullet point is not included in the list items contents while `inside` moves the first element among the list item's contents.
 
-{% Img src="image/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/qVlpVCrwKwbGjEJdmqh0.jpg", alt="A list with both outside and inside ::marker which shows that outside (default value) is not in the list-item and inside is inside the list-item content box", width="800", height="270" %}
+{% Img src="image/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/qVlpVCrwKwbGjEJdmqh0.jpg", alt="A list with both outside and inside ::marker which shows that outside (default value) is not in the list-item and inside is inside the list-item content box.", width="800", height="270" %}
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -160,9 +160,9 @@ So far, the examples have focused on styling an entire list and list items, but 
 
 ## ::marker pseudo
 
-The `list-item` marker element is the bullet, hyphen or roman numeral that helps indicate each list-item in your list.
+The `list-item` marker element is the bullet, hyphen, or roman numeral that helps indicate each item in your list.
 
-{% Img src="image/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/pOWTl4BYyJI7qgbMVeYu.jpg", alt="A list with three items which shows that each of the bullets are ::marker pseudo elements", width="800", height="395" %}
+{% Img src="image/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/pOWTl4BYyJI7qgbMVeYu.jpg", alt="A list with three items which shows that each of the bullets are ::marker pseudo elements.", width="800", height="395" %}
 
 If you inspect the list in DevTools, you can see a `::marker` element for each of the list items, despite not declaring any in HTML. If you inspect the `::marker` further, you'll see the browser default styling for it.
 
