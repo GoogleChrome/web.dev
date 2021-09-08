@@ -18,8 +18,8 @@ By default, CSS switches the style of these states instantly.
 
 Using CSS transitions, we can interpolate between the initial state and the target state of the element. The transition between the two enhances the user experience by providing visual direction, support, and hints about the cause and effect of the interaction.
 
-{% Aside ‘key-term’ %}
-“_Interpolation_ is the process of creating ‘in-between’ steps that smoothly transition from one state to another.”
+{% Aside 'key-term' %}
+"_Interpolation_ is the process of creating ‘in-between’ steps that smoothly transition from one state to another."
 {% endAside %}
 
 {% Codepen {
@@ -80,7 +80,7 @@ Our [module on CSS Animation](https://web.dev/learn/css/animations/#animation-ti
 
 You can use DevTools to experiment with different timing functions in real-time.
 
-{% Img src="image/eiKy1JcjHqPp3gaedjAQWjPJ8YK2/G06SHV4Dra1HqTAL9d6t.png", alt="Chrome DevTools visual transition timing editor", width="529", height="719" %}
+{% Img src="image/eiKy1JcjHqPp3gaedjAQWjPJ8YK2/G06SHV4Dra1HqTAL9d6t.png", alt="Chrome DevTools visual transition timing editor", width="264", height="359" %}
 
 ### transition-delay
 
@@ -217,7 +217,7 @@ By setting different `transition` properties on hover/focus, it’s possible to 
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'WNOrZNG',
+  id: 'OJgWMaO',
   tab: 'result'
 } %}
 
