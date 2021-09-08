@@ -29,9 +29,11 @@ Using CSS transitions, we can interpolate between the initial state and the targ
 } %}
 
 ## Transition properties
+
 To use transitions in CSS, you can use the various transition properties or the `transition` shorthand property. 
 
 ### transition-property
+
 The [`transition-property`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-property) property specifies which style(s) to transition.
 
 ```css
@@ -51,6 +53,7 @@ Optionally, you may use `transition-property: all` to indicate that every proper
 } %}
 
 ### transition-duration
+
 The [`transition-duration`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration) property is used to define the length of time that a transition will take to complete.
 
 {% Codepen {
@@ -62,6 +65,7 @@ The [`transition-duration`](https://developer.mozilla.org/en-US/docs/Web/CSS/tra
 `transition-duration` accepts time units, either in seconds (`s`) or milliseconds (`ms`) and defaults to `0s`.
 
 ### transition-timing-function
+
 Use the [`transition-timing-function`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function) property to vary the speed of a CSS transition over the course of the `transition-duration`.
 
 By default, CSS will transition your elements at a constant speed (`transition-timing-function: linear`). Linear transitions can end up looking somewhat artificial, though: in real life, objects have weight and can't stop and start instantly. Easing into or out of a transition can make your transitions more lively and natural.
@@ -79,6 +83,7 @@ You can use DevTools to experiment with different timing functions in real-time.
 {% Img src="image/eiKy1JcjHqPp3gaedjAQWjPJ8YK2/G06SHV4Dra1HqTAL9d6t.png", alt="Chrome DevTools visual transition timing editor", width="529", height="719" %}
 
 ### transition-delay
+
 Use the [`transition-delay`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-delay) property to specify the time at which a transition will start. If `transition-duration` is not specified, transitions will start instantly because the default value is `0s`. This property accepts a time unit, for example seconds (`s`) or milliseconds (`ms`).
 
 {% Codepen {
@@ -98,6 +103,7 @@ This property is useful for staggering transitions, achieved by setting a longer
 `transition-delay` is also useful for debugging. Setting the delay to a negative value can start a transition further into the timeline.
 
 ### shorthand: transition
+
 Like most CSS properties, there is a shorthand version. [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) combines `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`.
 
 ```css
@@ -114,6 +120,7 @@ Like most CSS properties, there is a shorthand version. [`transition`](https://d
 ```
 
 ## What can and can't transition?
+
 When writing CSS, you can specify which properties should have animated transitions. See [this MDN list of animatable CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties).
 
 In general, it's only possible to transition elements that can have a "middle state" between their start and final states. For example, it's impossible to add transitions for `font-family`, because it's unclear what the "middle state" between `serif` and `monospace` should look like. On the other hand, it is possible to add transitions for `font-size` because its unit is a length that can be interpolated between.
@@ -123,6 +130,7 @@ In general, it's only possible to transition elements that can have a "middle st
 Here are some common properties you can transition.
 
 ### Transform
+
 The [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) CSS property is commonly transitioned because it is a GPU-accelerated property that results in smoother animation that also consumes less battery. This property lets you arbitrarily scale, rotate, translate, or skew an element.
 
 {% Codepen {
@@ -134,6 +142,7 @@ The [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) CS
 Check out [the section on transforms](https://web.dev/learn/css/functions/#transforms) in [our Functions module](https://web.dev/learn/css/functions/).
 
 ### Color
+
 Before, during, and after interaction, color can be a great indicator of state. For example, a button might change color if it's being hovered. This color change can provide feedback to the user that the button is clickable.
 
 The `color`, `background-color`, and `border-color` properties are just a few places where color can
@@ -146,6 +155,7 @@ Color transitions do not usually need to be behind a [reduced motion](#reduced-m
 Check out [our module on color](https://web.dev/learn/css/color/).
 
 ### Shadows
+
 Shadows are often transitioned to indicate elevation change, like from user focus.
 
 {% Codepen {
@@ -157,6 +167,7 @@ Shadows are often transitioned to indicate elevation change, like from user focu
 Check out [our module on shadows](https://web.dev/learn/css/shadows/).
 
 ### Filters
+
 [`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) is a powerful CSS property that lets you add graphic effects on the fly. Transitioning between different `filter` states can create some pretty impressive results.
 
 {% Codepen {
@@ -168,6 +179,7 @@ Check out [our module on shadows](https://web.dev/learn/css/shadows/).
 Check out [our module on filters](https://web.dev/learn/css/filters/).
 
 ## Transition triggers
+
 Your CSS must include a change of state *and* an event that triggers that state change for CSS transitions to activate. A typical example of such a trigger is the `:hover` [pseudo-class](https://web.dev/learn/css/pseudo-classes/). This pseudo-class matches when the user hovers over an element with their cursor.
 
 Below is a list of some pseudo-classes and events that can trigger state changes in your elements.
@@ -184,6 +196,7 @@ Below is a list of some pseudo-classes and events that can trigger state changes
     JavaScript, CSS will transition eligible properties that have changed.
 
 ## Different transitions for enter/exit
+
 By setting different `transition` properties on hover/focus, it’s possible to create some interesting effects.
 
 ```css
@@ -209,6 +222,7 @@ By setting different `transition` properties on hover/focus, it’s possible to 
 } %}
 
 ## Accessibility considerations
+
 CSS transitions are not for everyone. For some people, transitions and animations can cause motion sickness or discomfort. Thankfully, CSS has a media feature called [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) that detects if a user has indicated a preference for less motion from their device.
 
 ```css
@@ -236,6 +250,7 @@ CSS transitions are not for everyone. For some people, transitions and animation
 Check out our blog post ["prefers-reduced-motion: Sometimes less movement is more"](https://web.dev/prefers-reduced-motion/) for more information on this media feature.
 
 ## Performance considerations
+
 When working with CSS transitions, you may encounter performance issues if you add transitions for certain CSS properties. For example, when properties such as `width` or `height` change, they push content around on the rest of the page. This forces CSS to calculate new positions for every affected element for each frame of the transition. When possible, we recommend using properties like `transform` and `opacity` instead.
 
 Check out our [guide on high-performance CSS animations](https://web.dev/animations-guide/) for a deep-dive on this topic.
