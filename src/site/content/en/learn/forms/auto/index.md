@@ -61,7 +61,7 @@ Do you have a field where users should enter their email address?
 Use `email` as a value for the `name`, `id`, and `type` attribute.
 Three hints for the browser that this is an email field.
 
-### The autocomplete attribute
+### The autocomplete attribute {: #autocomplete}
 
 There are other examples where it can still be hard for browsers to identify the data type solely from the `name`, `id`, and `type` attributes.
 You can help here by using the `autocomplete` attribute.

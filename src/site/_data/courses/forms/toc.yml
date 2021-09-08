@@ -1,5 +1,9 @@
-- url: /learn/forms/form-element
-- url: /learn/forms/form-fields
-- url: /learn/forms/auto
-- url: /learn/forms/validation
-- url: /learn/forms/testing
+- url: /learn/forms
+- title: i18n.courses.learn_forms
+  sections:
+  - title: i18n.courses.get_started_with_forms
+  - url: /learn/forms/form-element
+  - url: /learn/forms/form-fields
+  - url: /learn/forms/auto
+  - url: /learn/forms/validation
+  - url: /learn/forms/testing

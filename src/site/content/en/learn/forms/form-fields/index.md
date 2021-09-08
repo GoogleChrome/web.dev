@@ -16,7 +16,7 @@ elements that group fields, and buttons to submit a form.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'a4a252d5c8511f94c0f56cabd2e73178',
-  height: 300
+  height: 400
 } %}
 
 You see two `<input>` elements, `<input type="text">` and `<input type="file">`. Why do they look different?
@@ -57,7 +57,7 @@ It also provides a bigger target, since you can tap or click the label to set fo
 [Click the label](https://codepen.io/web-dot-dev/pen/3ce69644635734a084f45350993f4170) to try this out.
 {% endAside %}
 
-## Capturing user input
+## Capturing user input {: #input}
 
 As the name suggests, the `<input>` element is used to gather input from users.
 
@@ -80,7 +80,7 @@ the request includes this information as `mountain=Gutenberg`.
 the name of the form control to `hill`.
 If you did it right and submit the form, `hill` is visible in the URL.
 
-### The input type
+### The input type {: #type}
 
 There are different
 [types of form controls](https://developer.mozilla.org/docs/Web/HTML/Element/input#input_types).
