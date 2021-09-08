@@ -24,7 +24,8 @@ _Interpolation_ is the process of creating ‘in-between’ steps that smoothly 
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'zYzNrJV'
+  id: 'zYzNrJV',
+  height: 320
 } %}
 
 ## Transition properties
@@ -47,7 +48,8 @@ Optionally, you may use `transition-property: all` to indicate that every proper
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'VwWPeEj'
+  id: 'VwWPeEj',
+  height: 400
 } %}
 
 ### transition-duration
@@ -56,7 +58,8 @@ The [`transition-duration`](https://developer.mozilla.org/en-US/docs/Web/CSS/tra
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'wvegMYp'
+  id: 'wvegMYp',
+  height: 400
 } %}
 
 `transition-duration` accepts time units, either in seconds (`s`) or milliseconds (`ms`) and defaults to `0s`.
@@ -91,7 +94,8 @@ This property is useful for staggering transitions, achieved by setting a longer
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'yLXgeRQ'
+  id: 'yLXgeRQ',
+  height: 410
 } %}
 
 `transition-delay` is also useful for debugging. Setting the delay to a negative value can start a transition further into the timeline.
@@ -153,7 +157,8 @@ Shadows are often transitioned to indicate elevation change, like from user focu
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'gORgPQx'
+  id: 'gORgPQx',
+  height: 300
 } %}
 
 Check out [our module on shadows](https://web.dev/learn/css/shadows/).
@@ -164,7 +169,8 @@ Check out [our module on shadows](https://web.dev/learn/css/shadows/).
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'PojWZxJ'
+  id: 'PojWZxJ',
+  height: 350
 } %}
 
 Check out [our module on filters](https://web.dev/learn/css/filters/).
