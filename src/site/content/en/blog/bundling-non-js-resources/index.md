@@ -2,7 +2,7 @@
 title: Bundling non-JavaScript resources
 subhead: Learn how to import and bundle various types of assets from JavaScript.
 description: Learn how to import and bundle various types of assets from JavaScript in a way that works both in browsers and bundlers.
-date: 2021-09-07
+date: 2021-09-08
 hero: image/9oK23mr86lhFOwKaoYZ4EySNFp02/YxAYawQMtf7CTsT58dXD.jpg
 alt: Long rows of containers at a port.
 authors:
