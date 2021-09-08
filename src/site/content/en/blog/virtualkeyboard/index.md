@@ -81,14 +81,15 @@ You can programmatically show the virtual keyboard by calling its `show()` metho
 the focused element needs to be a form control (such as a `textarea` element), or be an editing host
 (for example, by using the
 [`contenteditable`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contentEditable)
-attribute). The method returns `undefined` but triggers a `geometrychanged` event.
+attribute). The method always returns `undefined` but triggers a `geometrychanged` event
+if the virtual keyboard previously was not shown.
 
 ```js
 navigator.virtualKeyboard.show();
 ```
 
-To hide the virtual keyboard, call the `hide()` method. The method returns `undefined` but triggers
-a `geometrychanged` event.
+To hide the virtual keyboard, call the `hide()` method. The method always returns `undefined` but triggers
+a `geometrychanged` event if the virtual keyboard previously was shown.
 
 ```js
 navigator.virtualKeyboard.hide();
@@ -99,6 +100,7 @@ navigator.virtualKeyboard.hide();
 Whenever the virtual keyboard appears or disappears, the `geometrychanged` event is dispatched. The
 event's `target` property contains the new geometry of the virtual keyboard inset as a
 [`DOMRect`](https://www.w3.org/TR/geometry-1/#domrect).
+The inset corresponds to the top, right, bottom, and/or left properties.
 
 ```js
 navigator.virtualKeyboard.addEventListener('geometrychanged', (event) => {
@@ -122,6 +124,8 @@ console.log('Virtual keyboard geometry:', x, y, width, height);
 
 The VirtualKeyboard API exposes a set of CSS environment variables that provide information about
 the virtual keyboard's appearance.
+They are modeled similar to the [`inset`](https://developer.mozilla.org/en-US/docs/Web/CSS/inset) CSS property,
+that is, corresponding to the top, right, bottom, and/or left properties.
 
 - `keyboard-inset-top`
 - `keyboard-inset-right`
@@ -135,6 +139,23 @@ bottom, and left insets from the edge of the viewport. The width and height inse
 from the remaining insets for developer ergonomics. The default value of each keyboard inset is
 `0px` if a fallback value is not provided, else it gets updated when the `boundingRect` value
 changes.
+
+You would typically use the environment variables as in the example below:
+
+```css
+.some-class {
+  /**
+   * Use a margin that corresponds to the virtual keyboard's height
+   * if the virtual keyboard is shown, else use the fallback value of `50px`.
+  margin-block-end: env(keyboard-inset-height, 50px);
+}
+
+.some-other-class {
+  /**
+   * Use a margin that corresponds to the virtual keyboard's height
+   * if the virtual keyboard is shown, else use the default fallback value of `0px`.
+  margin-block-end: env(keyboard-inset-height);
+}
 
 ### The virtual keyboard policy
 
