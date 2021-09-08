@@ -160,7 +160,7 @@ Here are the new queries we think developers will be most excited about:
 *   [prefers-reduced-motion](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion)
 *   [prefers-color-scheme](/prefers-color-scheme/)
 *   [prefers-contrast](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast)
-*   [prefers-reduced-transparency](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-transparency)
+*   [prefers-reduced-transparency](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-transparency)
 *   [forced-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors)
 *   [inverted-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/inverted-colors)
 
