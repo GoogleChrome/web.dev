@@ -76,7 +76,7 @@ There are three list-style properties you can use to style your example: `list-s
 
 ### `list-style-position`
 
-[`list-style-position`](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position) allows you to move your bullet point to either `inside` or `outside` the list-item's contents. The default `outside` means the bullet point is not included in the list items contents while `inside` moves the first element among the list item's contents.
+[`list-style-position`](https://developer.mozilla.org/docs/Web/CSS/list-style-position) allows you to move your bullet point to either `inside` or `outside` the list-item's contents. The default `outside` means the bullet point is not included in the list items contents while `inside` moves the first element among the list item's contents.
 
 {% Img src="image/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/qVlpVCrwKwbGjEJdmqh0.jpg", alt="A list with both outside and inside ::marker which shows that outside (default value) is not in the list-item and inside is inside the list-item content box", width="800", height="270" %}
 
@@ -88,7 +88,7 @@ There are three list-style properties you can use to style your example: `list-s
 
 ### `list-style-image`
 
-[`list-style-image`](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-image) allows you to replace your list's bullet points with images. This enables you to set an image such as an `url` or `none` to make your bullets an image, svg or gif even. You can also use any media type or even a data URI.
+[`list-style-image`](https://developer.mozilla.org/docs/Web/CSS/list-style-image) allows you to replace your list's bullet points with images. This enables you to set an image such as an `url` or `none` to make your bullets an image, svg or gif even. You can also use any media type or even a data URI.
 
 Let's look at how we can add an image of each of our grocery items as the `list-style-image`:
 
@@ -104,7 +104,7 @@ This property is a bit limited in controlling the position, size, etc. of the bu
 
 ### `list-style-type`
 
-The final option is to style the [`list-style-type`](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type) which changes the bullet points to known style keywords, custom strings, emojis and more. You can view all of the possible list style types [here](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type ).
+The final option is to style the [`list-style-type`](https://developer.mozilla.org/docs/Web/CSS/list-style-type) which changes the bullet points to known style keywords, custom strings, emojis and more. You can view all of the possible list style types [here](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type ).
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -114,7 +114,7 @@ The final option is to style the [`list-style-type`](https://developer.mozilla.o
 
 ### `list-style` shorthand
 
-Now that we have all of these individual properties, we can use the [`list-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style) shorthand to set all of our list styles in one line:
+Now that we have all of these individual properties, we can use the [`list-style`](https://developer.mozilla.org/docs/Web/CSS/list-style) shorthand to set all of our list styles in one line:
 
 ```css
 list-style: <'list-style-type'> || <'list-style-position'> || <'list-style-image'>
@@ -177,7 +177,7 @@ If you inspect the list in DevTools, you can see a `::marker` element for each o
 }
 ```
 
-When you declare a list, each item is given a marker, despite there being no bullet point or roman numeral in your HTML. This is  a pseudo-element because the browser generates it for you, and provides a limited styling API to target it. [Learn more about the anatomy of the CSS bullet.](/css-marker-pseudo-element/) `::marker` currently has [limited support](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker#browser_compatibility) in Safari.
+When you declare a list, each item is given a marker, despite there being no bullet point or roman numeral in your HTML. This is  a pseudo-element because the browser generates it for you, and provides a limited styling API to target it. [Learn more about the anatomy of the CSS bullet.](/css-marker-pseudo-element/) `::marker` currently has [limited support](https://developer.mozilla.org/docs/Web/CSS/::marker#browser_compatibility) in Safari.
 
 ### Marker Box
 
@@ -217,7 +217,7 @@ There are quite a few allowed CSS `::marker` Properties:
 } %}
 
 {% Aside %}
-In ordered lists, the bullets default to numbers. The `::marker` content value is a use case for [counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters) to create custom numbering.
+In ordered lists, the bullets default to numbers. The `::marker` content value is a use case for [counters](https://developer.mozilla.org/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters) to create custom numbering.
 {% endAside %}
 
 ## Display Type
@@ -236,9 +236,9 @@ While you can turn anything into a list-item view with `display`, you should not
 
 ## Resources
 
-- [MDN Guide on Styling Lists](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_lists)
+- [MDN Guide on Styling Lists](https://developer.mozilla.org/docs/Learn/CSS/Styling_text/Styling_lists)
 - [Custom bullets with CSS ::marker](/css-marker-pseudo-element/)
 - [Smashing Magazine: CSS Lists, Markers and Counters](https://www.smashingmagazine.com/2019/07/css-lists-markers-counters/)
-- [MDN Using CSS Counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters)
+- [MDN Using CSS Counters](https://developer.mozilla.org/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters)
 - [CSS Lists and Counters Module Level 3](https://www.w3.org/TR/css-lists-3/)
 - [CSS-Tricks: Counting With CSS Counters and CSS Grid](https://css-tricks.com/counting-css-counters-css-grid/)
