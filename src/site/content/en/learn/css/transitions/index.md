@@ -19,13 +19,12 @@ By default, CSS switches the style of these states instantly.
 Using CSS transitions, we can interpolate between the initial state and the target state of the element. The transition between the two enhances the user experience by providing visual direction, support, and hints about the cause and effect of the interaction.
 
 {% Aside 'key-term' %}
-"_Interpolation_ is the process of creating ‘in-between’ steps that smoothly transition from one state to another."
+_Interpolation_ is the process of creating ‘in-between’ steps that smoothly transition from one state to another.
 {% endAside %}
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'zYzNrJV',
-  tab: 'result'
+  id: 'zYzNrJV'
 } %}
 
 ## Transition properties
@@ -48,8 +47,7 @@ Optionally, you may use `transition-property: all` to indicate that every proper
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'VwWPeEj',
-  tab: 'result'
+  id: 'VwWPeEj'
 } %}
 
 ### transition-duration
@@ -58,8 +56,7 @@ The [`transition-duration`](https://developer.mozilla.org/en-US/docs/Web/CSS/tra
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'wvegMYp',
-  tab: 'result'
+  id: 'wvegMYp'
 } %}
 
 `transition-duration` accepts time units, either in seconds (`s`) or milliseconds (`ms`) and defaults to `0s`.
@@ -72,8 +69,7 @@ By default, CSS will transition your elements at a constant speed (`transition-t
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'QWgdyZx',
-  tab: 'result'
+  id: 'QWgdyZx'
 } %}
 
 Our [module on CSS Animation](https://web.dev/learn/css/animations/#animation-timing-function) has a good overview of timing functions.
@@ -88,16 +84,14 @@ Use the [`transition-delay`](https://developer.mozilla.org/en-US/docs/Web/CSS/tr
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'jOwyWep',
-  tab: 'result'
+  id: 'jOwyWep'
 } %}
 
 This property is useful for staggering transitions, achieved by setting a longer `transition-delay` for each subsequent element in a group.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'yLXgeRQ',
-  tab: 'result'
+  id: 'yLXgeRQ'
 } %}
 
 `transition-delay` is also useful for debugging. Setting the delay to a negative value can start a transition further into the timeline.
@@ -135,8 +129,7 @@ The [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) CS
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'GRErowE',
-  tab: 'result'
+  id: 'GRErowE'
 } %}
 
 Check out [the section on transforms](https://web.dev/learn/css/functions/#transforms) in [our Functions module](https://web.dev/learn/css/functions/).
@@ -160,8 +153,7 @@ Shadows are often transitioned to indicate elevation change, like from user focu
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'gORgPQx',
-  tab: 'result'
+  id: 'gORgPQx'
 } %}
 
 Check out [our module on shadows](https://web.dev/learn/css/shadows/).
@@ -172,8 +164,7 @@ Check out [our module on shadows](https://web.dev/learn/css/shadows/).
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'PojWZxJ',
-  tab: 'result'
+  id: 'PojWZxJ'
 } %}
 
 Check out [our module on filters](https://web.dev/learn/css/filters/).
@@ -217,8 +208,7 @@ By setting different `transition` properties on hover/focus, it’s possible to 
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'OJgWMaO',
-  tab: 'result'
+  id: 'OJgWMaO'
 } %}
 
 ## Accessibility considerations
