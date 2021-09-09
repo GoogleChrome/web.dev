@@ -19,7 +19,7 @@ TTI 指标测量页面从开始加载到主要子资源完成渲染，并能够�
 
 如需根据网页的[性能跟踪](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference)计算 TTI，请执行以下步骤：
 
-1. 先进行[ First Contentful Paint 首次内容绘制 (FCP) ](/fcp/)。
+1. 先进行[First Contentful Paint 首次内容绘制 (FCP)](/fcp/)。
 2. 沿时间轴正向搜索时长至少为 5 秒的安静窗口，其中，*安静窗口*的定义为：没有[长任务](/custom-metrics/#long-tasks-api)且不超过两个正在处理的网络 GET 请求。
 3. 沿时间轴反向搜索安静窗口之前的最后一个长任务，如果没有找到长任务，则在 FCP 步骤停止执行。
 4. TTI 是安静窗口之前最后一个长任务的结束时间（如果没有找到长任务，则与 FCP 值相同）。
@@ -48,7 +48,7 @@ TTI 指标最好[在实验室中](/user-centric-performance-metrics/#in-the-lab)
 - [灯塔](https://developers.google.com/web/tools/lighthouse/)
 - [WebPageTest 网页性能测试工具](https://www.webpagetest.org/)
 
-{% Aside %}虽然 TTI 可以在实际情况下进行测量，但我们不建议这样做，因为用户交互会影响您网页的 TTI，从而导致您的报告中出现大量差异。如需了解页面在实际情况中的交互性，您应该测量[ First Input Delay 首次输入延迟 (FID)](/fid/) 。{% endAside %}
+{% Aside %}虽然 TTI 可以在实际情况下进行测量，但我们不建议这样做，因为用户交互会影响您网页的 TTI，从而导致您的报告中出现大量差异。如需了解页面在实际情况中的交互性，您应该测量[First Input Delay 首次输入延迟 (FID)](/fid/) 。{% endAside %}
 
 ## 怎样算是良好的 TTI 分数？
 

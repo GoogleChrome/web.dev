@@ -18,7 +18,7 @@ tags:
   <p>我明明点击了，却什么也没发生！为什么我无法与这个页面交互？😢</p>
 </blockquote>
 
-[First Contentful Paint 首次内容绘制](/fcp/) (FCP) 和[ Largest Contentful Paint 最大内容绘制](/lcp/) (LCP) 都是测量内容在页面上完成视觉渲染（绘制）所需时间的指标。尽管这两项指标十分重要，但绘制时间并不能捕获*加载响应度*：或页面对用户交互的响应速度。
+[First Contentful Paint 首次内容绘制](/fcp/) (FCP) 和[Largest Contentful Paint 最大内容绘制](/lcp/) (LCP) 都是测量内容在页面上完成视觉渲染（绘制）所需时间的指标。尽管这两项指标十分重要，但绘制时间并不能捕获*加载响应度*：或页面对用户交互的响应速度。
 
 [首次输入延迟](/fid/) (FID) 是[核心 Web 指标](/vitals/)中的一项指标，可捕获用户对网站交互性和响应度的第一印象。该项指标测量从用户第一次与您的网站交互直到浏览器实际能够对交互作出响应的时间。FID 是一项[实际指标](/user-centric-performance-metrics/#in-the-field)，无法在实验室环境中进行模拟。该项指标需要**真实的用户交互**才能测量响应延迟。
 
@@ -27,7 +27,7 @@ tags:
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Se4TiXIdp8jtLJVScWed.svg", alt="好的fid 值为2.5 秒，差的值大于4.0 秒，中间的任何值都需要改进", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
   </picture>
 
-为了有助于在[实验室](/how-to-measure-speed/#lab-data-vs-field-data)中预测 FID，我们建议您测量[ Total Blocking Time 总阻塞时间 (TBT)](/tbt/)。虽然这两项指标的测量内容不同，但 TBT 的改进通常能够带来 FID 的相应改进。
+为了有助于在[实验室](/how-to-measure-speed/#lab-data-vs-field-data)中预测 FID，我们建议您测量[Total Blocking Time 总阻塞时间 (TBT)](/tbt/)。虽然这两项指标的测量内容不同，但 TBT 的改进通常能够带来 FID 的相应改进。
 
 糟糕的 FID 主要是由**繁重的 JavaScript 执行**导致的。优化您网页上 JavaScript 的解析、编译和执行方式将直接降低 FID。
 
@@ -53,7 +53,7 @@ tags:
 
 当您采用类似代码分割和分割长任务这样的最佳实践后，FID 应该会得到显著改善。虽然 TBT 不是一项实际指标，但该指标对于查看 Time To Interactive 可交互时间 (TTI) 和 FID 的最终改进进度非常有用。
 
-{% Aside %}如需了解更多信息，请查看[ JavaScript 长任务是否会延迟您的可交互时间？](/long-tasks-devtools/)。{% endAside %}
+{% Aside %}如需了解更多信息，请查看[JavaScript 长任务是否会延迟您的可交互时间？](/long-tasks-devtools/)。{% endAside %}
 
 ## 优化您的页面，做好交互准备
 
@@ -124,8 +124,8 @@ import('module.js').then((module) => {
 
 除了一般浏览器支持外，动态导入语法还可用于许多不同的构建系统。
 
-- 如果您使用[ webpack](https://webpack.js.org/guides/code-splitting/)、[Rollup ](https://medium.com/rollup/rollup-now-has-code-splitting-and-we-need-your-help-46defd901c82)或[ Parcel ](https://parceljs.org/code_splitting.html)模块打包器，请多加利用这些工具的动态导入支持。
-- [React](https://reactjs.org/docs/code-splitting.html#reactlazy)、[Angular ](https://angular.io/guide/lazy-loading-ngmodules)和[ Vue ](https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components)等客户端框架实现了抽象，使组件级的懒加载变得更加容易。
+- 如果您使用[webpack](https://webpack.js.org/guides/code-splitting/)、[Rollup](https://medium.com/rollup/rollup-now-has-code-splitting-and-we-need-your-help-46defd901c82)或[Parcel](https://parceljs.org/code_splitting.html)模块打包器，请多加利用这些工具的动态导入支持。
+- [React](https://reactjs.org/docs/code-splitting.html#reactlazy)、[Angular](https://angular.io/guide/lazy-loading-ngmodules)和[Vue](https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components)等客户端框架实现了抽象，使组件级的懒加载变得更加容易。
 
 {% Aside %}请查看[使用代码分割减少 JavaScript 有效负载](/reduce-javascript-payloads-with-code-splitting/)，了解代码分割的更多相关信息。{% endAside %}
 

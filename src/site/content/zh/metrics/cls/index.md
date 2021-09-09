@@ -64,7 +64,7 @@ CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-
 
 ## 布局偏移详情
 
-布局偏移由[布局不稳定性 API ](https://github.com/WICG/layout-instability)定义，只要可视区域中可见元素的起始位置（例如，元素在默认[书写模式](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)下的顶部和左侧位置）在两帧之间发生了变更，该 API 就会报告`layout-shift`条目。这样的元素被视为*不稳定元素*。
+布局偏移由[布局不稳定性 API](https://github.com/WICG/layout-instability)定义，只要可视区域中可见元素的起始位置（例如，元素在默认[书写模式](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)下的顶部和左侧位置）在两帧之间发生了变更，该 API 就会报告`layout-shift`条目。这样的元素被视为*不稳定元素*。
 
 请注意，只有当现有元素的起始位置发生变更时才算作布局偏移。如果将新元素添加到 DOM 或是现有元素更改大小，则不算作布局偏移，前提是元素的变更不会导致其他可见元素的起始位置发生改变。
 
@@ -102,11 +102,11 @@ CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/xhN81DazXCs8ZawoCj0T.png", alt="包含稳定和*不稳定元素*及可视区域剪裁的布局偏移示例", width="800", height="600", linkTo=true %}
 
-“点我！”按钮附加在了包含黑色字体文本的灰色框底部，将带有白色字体文本的绿色框下推（且一部分已在可视区域外）。
+"点我！"按钮附加在了包含黑色字体文本的灰色框底部，将带有白色字体文本的绿色框下推（且一部分已在可视区域外）。
 
 在这个示例中，灰色框的大小改变了，但起始位置没有改变，所以该灰色框不是一个*不稳定元素*。
 
-“点我！”按钮一开始并不在 DOM 中，所以它的起始位置也没有改变。
+"点我！"按钮一开始并不在 DOM 中，所以它的起始位置也没有改变。
 
 然而，绿色框的起始位置确实发生了变化，但由于绿色框的一部分已经在可视区域外，因此在计算*影响分数*时不考虑不可见区域。两帧中绿色框的可见区域集合（由红色虚线矩形框表示）与第一帧中绿色框的区域相同，为可视区域的 50%。*影响分数*为`0.5` 。
 
@@ -120,11 +120,11 @@ CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-
 
 在上面的第一帧中，有四个 API 请求的动物名称结果，按首字母顺序进行了排序。在第二帧中，更多的结果被添加到排序列表中。
 
-列表中第一项（“Cat”）的起始位置没有在两帧之间发生改变，因此是稳定的。同样，添加到列表中的新项目之前不在 DOM 中，因此这些项目的起始位置也没有改变。但“Dog”、“Horse”和“Zebra”这几项的起始位置都发生了改变，因此都是*不稳定元素*。
+列表中第一项（"Cat"）的起始位置没有在两帧之间发生改变，因此是稳定的。同样，添加到列表中的新项目之前不在 DOM 中，因此这些项目的起始位置也没有改变。但"Dog"、"Horse"和"Zebra"这几项的起始位置都发生了改变，因此都是*不稳定元素*。
 
 同理，红色虚线矩形框代表这三个*不稳定元素*前后两帧的区域集合，在本示例中，大约占可视区域面积的 38%（*影响分数*为`0.38` ）。
 
-箭头表示*不稳定元素*相对于起始位置的位移距离。由蓝色箭头表示的“Zebra”元素位移的距离最大，约为可视区域高度的 30%。因此本示例中的*距离分数*为`0.3` 。
+箭头表示*不稳定元素*相对于起始位置的位移距离。由蓝色箭头表示的"Zebra"元素位移的距离最大，约为可视区域高度的 30%。因此本示例中的*距离分数*为`0.3` 。
 
 布局偏移分数是`0.38 x 0.3 = 0.1172` 。
 
@@ -140,7 +140,7 @@ CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-
 
 在用户输入 500 毫秒内发生的布局偏移会带有[`hadRecentInput`](https://wicg.github.io/layout-instability/#dom-layoutshift-hadrecentinput)标志，便于在计算中排除这些偏移。
 
-{% Aside 'caution' %}`hadRecentInput`标志仅适用于不连续输入事件，如轻触、点击或按键操作。滚动、拖动或捏拉缩放手势等连续性交互操作不算作“最近输入”。更多详情请参阅[布局不稳定性规范](https://github.com/WICG/layout-instability#recent-input-exclusion)。{% endAside %}
+{% Aside 'caution' %}`hadRecentInput`标志仅适用于不连续输入事件，如轻触、点击或按键操作。滚动、拖动或捏拉缩放手势等连续性交互操作不算作"最近输入"。更多详情请参阅[布局不稳定性规范](https://github.com/WICG/layout-instability#recent-input-exclusion)。{% endAside %}
 
 #### 动画和过渡
 
@@ -219,7 +219,7 @@ new PerformanceObserver((entryList) => {
 
 {% Aside 'warning' %}
 
-上述代码说明了计算和记录 CLS 的基本方法。但是，要想准确测量 CLS，使之与[ Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX) 中的测量值相匹配，那么测量方式要更为复杂。详情请见下文：
+上述代码说明了计算和记录 CLS 的基本方法。但是，要想准确测量 CLS，使之与[Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX) 中的测量值相匹配，那么测量方式要更为复杂。详情请见下文：
 
 {% endAside %}
 
@@ -236,7 +236,7 @@ new PerformanceObserver((entryList) => {
 由于 CLS 的测量对象是整个页面生命周期，所以除了上述这些例外，该指标还有一些额外的复杂性：
 
 - 用户可能会在*很*长一段时间内（几天、几周、几个月）让一个选项卡保持打开状态。事实上，用户可能永远不会关闭该选项卡。
-- 在移动操作系统上，浏览器通常不会为后台选项卡运行页面卸载回调，因为这样很难报告“最终”值。
+- 在移动操作系统上，浏览器通常不会为后台选项卡运行页面卸载回调，因为这样很难报告"最终"值。
 
 为了应对这些情况，只要当页面处于后台时就应该报告 CLS，页面卸载时也是如此（[`visibilitychange`事件](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#event-visibilitychange)涵盖这两种情况）。而接收该数据的分析系统则需要在后端计算最终的 CLS 值。
 
@@ -258,15 +258,15 @@ getCLS(console.log);
 
 对于大多数网站来说，您可以通过遵循一些指导原则来避免所有的意外布局偏移：
 
-- **始终在您的图像和视频元素上包含尺寸属性，或者通过使用[ CSS 长宽比容器](https://css-tricks.com/aspect-ratio-boxes/)之类的方式预留所需的空间。**这种方法可以确保浏览器能够在加载图像期间在文档中分配正确的空间大小。请注意，您还可以使用[ unsized-media 功能策略](https://github.com/w3c/webappsec-feature-policy/blob/master/policies/unsized-media.md)在支持功能策略的浏览器中强制执行此行为。
+- **始终在您的图像和视频元素上包含尺寸属性，或者通过使用[CSS 长宽比容器](https://css-tricks.com/aspect-ratio-boxes/)之类的方式预留所需的空间。**这种方法可以确保浏览器能够在加载图像期间在文档中分配正确的空间大小。请注意，您还可以使用[unsized-media 功能策略](https://github.com/w3c/webappsec-feature-policy/blob/master/policies/unsized-media.md)在支持功能策略的浏览器中强制执行此行为。
 - **除非是对用户交互做出响应，否则切勿在现有内容的上方插入内容。**这样能够确保发生的任何布局偏移都在预期之内。
 - **首选转换动画，而不是触发布局偏移的属性动画。**动画过渡的目标是提供状态与状态之间的上下文连续性。
 
-如需深入了解如何改进 CLS，请参阅[优化 CLS ](/optimize-cls/)和[调试布局偏移](/debug-layout-shifts)。
+如需深入了解如何改进 CLS，请参阅[优化 CLS](/optimize-cls/)和[调试布局偏移](/debug-layout-shifts)。
 
 ## 其他资源
 
 - Google 发布商代码关于[最小化布局偏移](https://developers.google.com/doubleclick-gpt/guides/minimize-layout-shift)的指南
-- [安妮·沙利文 (Annie Sullivan) ](https://anniesullie.com/)与[史蒂夫·科比斯 (Steve Kobes) ](https://kobes.ca/)在[ #PerfMatters ](https://perfmattersconf.com/)上发表的演讲：[《了解累积布局偏移》](https://youtu.be/zIJuY-JCjqw)(2020)
+- [安妮·沙利文 (Annie Sullivan)](https://anniesullie.com/)与[史蒂夫·科比斯 (Steve Kobes)](https://kobes.ca/)在[#PerfMatters](https://perfmattersconf.com/)上发表的演讲：[《了解累积布局偏移》](https://youtu.be/zIJuY-JCjqw)(2020)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

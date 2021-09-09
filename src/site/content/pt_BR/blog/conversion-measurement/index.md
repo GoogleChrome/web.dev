@@ -200,7 +200,7 @@ Para evitar que o tempo de conversão seja usado para obter mais informações d
 
 Os relatórios podem não ser enviados exatamente nessas datas e horários programados: se o navegador não estiver em execução quando um relatório estiver programado para ser enviado, o relatório será enviado na inicialização do navegador - o que pode ocorrer dias ou semanas após o horário programado.
 
-Após a expiração (tempo de clique + `impressionexpiry`), nenhuma conversão é contada — `impressionexpiry` é a data e hora de corte depois da qual as conversões não podem mais ser contadas para este anúncio.
+Após a expiração (tempo de clique + `impressionexpiry`), nenhuma conversão é contada`impressionexpiry` é a data e hora de corte depois da qual as conversões não podem mais ser contadas para este anúncio.
 
 No Chrome, a programação de relatórios funciona da seguinte maneira:
 

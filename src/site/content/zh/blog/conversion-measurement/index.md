@@ -133,7 +133,7 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
 
 #### 使用事件转化测量 API
 
-<figure class="w-figure">{% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="图解：API 如何在避免跨站用户识别的情况下启用转化测量", width="800", height="643" %}<figcaption class="w-figcaption">cookie 图解中的“广告 ID”和“点击 ID”都是可以映射到详细数据的标识符。在这张图解中，标识符被称为“点击 ID”，因为该 API 仅支持点击型转化测量。</figcaption></figure>
+<figure class="w-figure">{% Img src="image/admin/X6sfyeKGncVm0LJSYJva.jpg", alt="图解：API 如何在避免跨站用户识别的情况下启用转化测量", width="800", height="643" %}<figcaption class="w-figcaption">cookie 图解中的"广告 ID"和"点击 ID"都是可以映射到详细数据的标识符。在这张图解中，标识符被称为"点击 ID"，因为该 API 仅支持点击型转化测量。</figcaption></figure>
 
 `adtech.example`无法使用跨站标识符，因此**无法跨站识别用户**。
 
@@ -335,7 +335,7 @@ Safari 使用的网络浏览器引擎 WebKit 有一个具有类似目标的提�
 
 {% Aside %} 关于示例的一些说明：
 
-- 尽管 API 目前仅支持点击型转化，但您会在 API 属性或 API 提案中看到“展示量”这个术语。这些名称可能会在 API 的未来迭代中更新。
+- 尽管 API 目前仅支持点击型转化，但您会在 API 属性或 API 提案中看到"展示量"这个术语。这些名称可能会在 API 的未来迭代中更新。
 - 广告并不一定要在 iframe 中，但本示例中的广告属于这一情况。
 
 {% endAside %}
@@ -470,7 +470,7 @@ app.get('/conversion', (req, res) => {
 
 ### 演示版
 
-请试用[演示版](https://goo.gle/demo-event-level-conversion-measurement-api)。确保遵循“开始之前”的说明。
+请试用[演示版](https://goo.gle/demo-event-level-conversion-measurement-api)。确保遵循"开始之前"的说明。
 
 有关演示版的任何问题，请在推特上 [@maudnals](https://twitter.com/maudnals?lang=en) 或 [@ChromiumDev！](https://twitter.com/ChromiumDev)
 

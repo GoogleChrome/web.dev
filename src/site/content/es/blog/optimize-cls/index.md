@@ -116,7 +116,7 @@ Los navegadores modernos ahora establecen la relación de aspecto predeterminada
 <img src="puppy.jpg" width="640" height="360" alt="Puppy with balloons" />
 ```
 
-... y las [hojas de estilo UA](https://developer.mozilla.org/docs/Web/CSS/Cascade#User-agent_stylesheets) de todos los navegadores agregan una [relación de aspecto predeterminada](https://html.spec.whatwg.org/multipage/rendering.html#attributes-for-embedded-content-and-images) basada en los atributos de `width` y `height`
+… y las [hojas de estilo UA](https://developer.mozilla.org/docs/Web/CSS/Cascade#User-agent_stylesheets) de todos los navegadores agregan una [relación de aspecto predeterminada](https://html.spec.whatwg.org/multipage/rendering.html#attributes-for-embedded-content-and-images) basada en los atributos de `width` y `height`
 
 ```css
 img {

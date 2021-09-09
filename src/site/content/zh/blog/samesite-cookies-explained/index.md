@@ -26,7 +26,7 @@ Cookie 是一种可用于向网站添加持久状态的方法。多年来，虽�
 
 每个 cookie 都是一对`key=value`，以及许多控制何时何地使用该 cookie 的属性。您可能已经使用这些属性设置过诸如过期日期或指示 cookie 应该仅通过 HTTPS 发送之类的内容。服务器通过在响应中发送命名合适的`Set-Cookie`标头来设置 cookie。您可以对 [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03#section-4.1) 进行深入研究来获取全部详情，但我会先在这里做一个快速回顾。
 
-假设您有一个博客，您想在其中向用户显示“最新消息”的宣传。用户可以选择不看这则宣传，然后在一段时间内，他们就不会再次看到这则宣传。您可以将用户的首选项存储在 cookie 中，并设置为在一个月（2,600,000 秒）后过期，并且仅通过 HTTPS 发送。该标头如下所示：
+假设您有一个博客，您想在其中向用户显示"最新消息"的宣传。用户可以选择不看这则宣传，然后在一段时间内，他们就不会再次看到这则宣传。您可以将用户的首选项存储在 cookie 中，并设置为在一个月（2,600,000 秒）后过期，并且仅通过 HTTPS 发送。该标头如下所示：
 
 ```text
 Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
@@ -68,7 +68,7 @@ Cookie: promo_shown=1
 
 继续上面的例子，假设您的一篇博文中有一张非常独特的猫的照片，而这张照片被托管在`/blog/img/amazing-cat.png`。因为照片十分令人惊叹，其他人直接在他们的网站上使用了该照片。如果访问者访问过您的博客并拥有`promo_shown` cookie，那么当他们在其他人的网站上浏览`amazing-cat.png`时，就会在图像请求中**发送**该 cookie。这对任何一方都不是特别有用，因为`promo_shown`在其他人的网站上不用于任何内容，只是增加了请求的开销。
 
-如果这样的效果并不是您的意图，那您为什么要这样做呢？正是这种机制允许网站在被用于第三方上下文时能够保持状态。例如，如果您在网站上嵌入了一个 YouTube 视频，那么访问者将在播放器中看到“稍后观看”选项。如果您的访问者已经登录了 YouTube，那么该会话将通过第三方 cookie 在嵌入式播放器中提供，也就意味着“稍后观看”按钮只会一次性保存视频，而不是提示他们进行登录或必须引导他们离开您的页面并回到 YouTube。
+如果这样的效果并不是您的意图，那您为什么要这样做呢？正是这种机制允许网站在被用于第三方上下文时能够保持状态。例如，如果您在网站上嵌入了一个 YouTube 视频，那么访问者将在播放器中看到"稍后观看"选项。如果您的访问者已经登录了 YouTube，那么该会话将通过第三方 cookie 在嵌入式播放器中提供，也就意味着"稍后观看"按钮只会一次性保存视频，而不是提示他们进行登录或必须引导他们离开您的页面并回到 YouTube。
 
 <figure class="w-figure">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u9chHBLm3i27yFRwHx5W.png", alt="在三个不同上下文中发送的相同 cookie", width="800", height="433", style="max-width: 60vw" %}<figcaption class="w-figcaption">访问不同页面时会发送第三方上下文中的 cookie。</figcaption></figure>
 
@@ -78,7 +78,7 @@ Cookie: promo_shown=1
 
 ## 用`SameSite`属性显式说明 cookie 的使用
 
-`SameSite` 属性（在 [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site-00) 中进行了定义）的引入使您能够声明您的 cookie 是否应限制为第一方或同站上下文。准确理解此处“站点”的含义将会非常有帮助。这里的站点是域名后缀和域名后缀之前部分的组合。例如， `www.web.dev`域名是`web.dev`站点的一部分。
+`SameSite` 属性（在 [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site-00) 中进行了定义）的引入使您能够声明您的 cookie 是否应限制为第一方或同站上下文。准确理解此处"站点"的含义将会非常有帮助。这里的站点是域名后缀和域名后缀之前部分的组合。例如， `www.web.dev`域名是`web.dev`站点的一部分。
 
 {% Aside 'key-term' %}
 

@@ -79,7 +79,7 @@ tags:
 
 启用跨域隔离将阻止您未明确选择加入的跨域资源进行加载，并且会阻止您的顶级文档与弹出窗口进行通信。
 
-由于跨域隔离要求所有子资源明确选择加入，所以我们一直在探索大规模部署`Cross-Origin-Resource-Policy`的方法。我们提出了相反方向的想法：[一种新的 COEP “无凭据”模式](https://github.com/mikewest/credentiallessness/)，允许通过剥离所有资源凭据来加载没有 CORP 标头的资源。我们正在研究该模式运作方式的具体细节，但我们希望这个模式能在确保子资源发送`Cross-Origin-Resource-Policy`标头方面为您减轻负担。
+由于跨域隔离要求所有子资源明确选择加入，所以我们一直在探索大规模部署`Cross-Origin-Resource-Policy`的方法。我们提出了相反方向的想法：[一种新的 COEP "无凭据"模式](https://github.com/mikewest/credentiallessness/)，允许通过剥离所有资源凭据来加载没有 CORP 标头的资源。我们正在研究该模式运作方式的具体细节，但我们希望这个模式能在确保子资源发送`Cross-Origin-Resource-Policy`标头方面为您减轻负担。
 
 此外，众所周知`Cross-Origin-Opener-Policy: same-origin`标头会破坏需要跨域窗口交互（例如 OAuth 和支付）的集成。为了缓解这个问题，我们正在探索通过[放宽条件](https://github.com/whatwg/html/issues/6364)来为`Cross-Origin-Opener-Policy: same-origin-allow-popups`启用跨域隔离。这样就可以让该标头与其打开的窗口进行通信。
 
@@ -113,5 +113,5 @@ tags:
 
 ## 资源
 
-- [使用 COOP 和 COEP 将您的网站“跨域隔离”](/coop-coep/)
+- [使用 COOP 和 COEP 将您的网站"跨域隔离"](/coop-coep/)
 - [安卓 Chrome 88 和桌面 Chrome 92 中的 SharedArrayBuffer 更新](https://developer.chrome.com/blog/enabling-shared-array-buffer/)

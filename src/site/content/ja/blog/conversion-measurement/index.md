@@ -119,7 +119,7 @@ Safari で使用される Web ブラウザー エンジンである  WebKit に�
 
 以下において、**クリック時間または表示時間のデータ**は、広告がユーザーに配信されてからクリックまたは表示されたときに `adtech.example` で利用できるデータです。変換が発生したときのデータは、**コンバージョン時間データ**です。
 
-**パブリッシャー **`news.example` と**広告主** `shoes.example` を見てみましょう。**アドテック プラットフォーム** `adtech.example` のサードパーティ スクリプトがパブリッシャー サイト `news.example` に存在しており、広告主 `shoes.example` の広告が含まれています。`shoes.example` には、コンバージョンを検出するための `adtech.example` が含まれています。
+**パブリッシャー** `news.example` と**広告主** `shoes.example` を見てみましょう。**アドテック プラットフォーム** `adtech.example` のサードパーティ スクリプトがパブリッシャー サイト `news.example` に存在しており、広告主 `shoes.example` の広告が含まれています。`shoes.example` には、コンバージョンを検出するための `adtech.example` が含まれています。
 
 `adtech.example` は Web ユーザーについてどのくらい学ぶことができますか？
 
@@ -480,7 +480,7 @@ app.get('/conversion', (req, res) => {
 - API と属性の命名は進化する可能性があります。
 - クリック データとコンバージョン データはエンコードを必要としなくなる可能性があります。
 - 変換データの 3 ビット制限は増減する可能性があります。
-- [より多くの機能が追加される可能性があります。そうした新機能をサポートするのに必要でれば、](#what-is-not-supported-in-this-iteration)**さらなるプライバシー保護 (ノイズ/ビット数の減少/その他の制限など) **が追加される可能性もあります。
+- [より多くの機能が追加される可能性があります。そうした新機能をサポートするのに必要でれば、](#what-is-not-supported-in-this-iteration)**さらなるプライバシー保護 (ノイズ/ビット数の減少/その他の制限など)** が追加される可能性もあります。
 
 新機能に関するディスカッションをフォローしたり、参加したりするには、プロポーザルの [GitHub リポジトリ](https://github.com/WICG/conversion-measurement-api/issues)を見てアイデアを送信してください。
 
@@ -501,7 +501,7 @@ API をローカルで、またはエンドユーザーを対象に実験する�
 新しい Conversion Measurement API がユース ケースをサポートし、開発者に優れた体験を提供するには、**皆さまからのフィードバックが欠かせません**。
 
 - Chrome の実装に関するバグを報告するには、[バグを開いてください](https://bugs.chromium.org/p/chromium/issues/entry?status=Unconfirmed&components=Internals%3EConversionMeasurement&description=Chrome%20Version%3A%20%28copy%20from%20chrome%3A%2F%2Fversion%29%0AOS%3A%20%28e.g.%20Win10%2C%20MacOS%2010.12%2C%20etc...%29%0AURLs%20%28if%20applicable%29%20%3A%0A%0AWhat%20steps%20will%20reproduce%20the%20problem%3F%0A%281%29%0A%282%29%0A%283%29%0A%0AWhat%20is%20the%20expected%20result%3F%0A%0A%0AWhat%20happens%20instead%3F%0A%0AIf%20applicable%2C%20include%20screenshots%2Finfo%20from%20chrome%3A%2F%2Fconversion-internals%20or%20relevant%20devtools%20errors.%0A)。
-- Chrome API のフィードバックを共有し、ユース ケースに関するディスカッションを行うには、新しい課題を作成するか、 [API プロポーザル リポジトリ](https://github.com/WICG/conversion-measurement-api/issues)に既存の課題に参加してください。[同様に、API プロポーザル リポジトリでは ](https://github.com/privacycg/private-click-measurement/issues)WebKit/Safari API とそのユース ケースに関するディスカッションを行えます。
+- Chrome API のフィードバックを共有し、ユース ケースに関するディスカッションを行うには、新しい課題を作成するか、 [API プロポーザル リポジトリ](https://github.com/WICG/conversion-measurement-api/issues)に既存の課題に参加してください。[同様に、API プロポーザル リポジトリでは] (https://github.com/privacycg/private-click-measurement/issues)WebKit/Safari API とそのユース ケースに関するディスカッションを行えます。
 - 広告の使用例について話し合い、業界の専門家と意見を交換するには、 [Improving Web Advertising Business Group](https://www.w3.org/community/web-adv/) に参加してください。 WebKit/Safari API に関するディスカッションについては、[プライバシー コミュニティ グループ](https://www.w3.org/community/privacycg/)に参加してください。
 
 ### 最新情報の確認をお忘れなく

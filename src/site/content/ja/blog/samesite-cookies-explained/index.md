@@ -161,7 +161,7 @@ Set-Cookie: promo_shown=1
 
 {% CompareCaption %}
 
-`SameSite` 属性が指定されていない Cookie を送信すると...
+`SameSite` 属性が指定されていない Cookie を送信すると…
 
 {% endCompareCaption %}
 

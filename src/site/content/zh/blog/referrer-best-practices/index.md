@@ -7,7 +7,7 @@ date: 2020-07-30
 updated: 2020-09-23
 hero: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
 thumbnail: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
-description: 可以考虑设置“strict-origin-when-cross-origin”的引荐来源政策。该政策保留了引荐来源的大部分用途，同时降低了跨域泄露数据的风险。
+description: 可以考虑设置"strict-origin-when-cross-origin"的引荐来源政策。该政策保留了引荐来源的大部分用途，同时降低了跨域泄露数据的风险。
 tags:
   - blog
   - security
@@ -24,7 +24,7 @@ feedback:
 
 {% Aside %}在我们开始之前：
 
-- 如果您不确定“网站”和“域”之间的区别，请查看[了解“同站”和“同域”](/same-site-same-origin/)。
+- 如果您不确定"网站"和"域"之间的区别，请查看[了解"同站"和"同域"](/same-site-same-origin/)。
 - 由于规范中的原始拼写错误，`Referer`标头缺少一个 R。JavaScript 和 DOM 中的`Referrer-Policy`标头和`referrer`的拼写是正确的。{% endAside %}
 
 ## 引荐来源和引荐来源政策 101
@@ -166,7 +166,7 @@ HTTP 标头和元元素都是页面级的。确定一个元素的有效政策时
 
 概述：显式设置隐私增强政策，例如`strict-origin-when-cross-origin`（或更严格的政策）。
 
-### 为什么要“显式”？
+### 为什么要"显式"？
 
 在未设置引荐来源政策的情况下将使用浏览器的默认政策。事实上，网站通常会遵循浏览器的默认政策，但这并不理想，因为：
 
@@ -175,7 +175,7 @@ HTTP 标头和元元素都是页面级的。确定一个元素的有效政策时
 
 ### 为什么要用`strict-origin-when-cross-origin`（或更严格的政策）？
 
-您需要一个安全的、增强隐私且有用的政策，其中，“有用”的含义取决于您对引荐来源的需求：
+您需要一个安全的、增强隐私且有用的政策，其中，"有用"的含义取决于您对引荐来源的需求：
 
 - **安全**：如果您的网站使用 HTTPS（[如果还未使用，请优先考虑迁移](/why-https-matters/)），则要杜绝网站的 URL 在非 HTTPS 请求中泄露。由于网络上的任何人都可以看到这些，这就会使您的用户面临中间人攻击。`no-referrer-when-downgrade`、`strict-origin-when-cross-origin`、`no-referrer`和`strict-origin`政策解决了这个问题。
 - **隐私增强**：对于跨域请求，`no-referrer-when-downgrade`会共享完整的 URL，因此并不能增强隐私。`strict-origin-when-cross-origin`和`strict-origin`只共享域，而`no-referrer`完全不共享任何信息。您因此可以将`strict-origin-when-cross-origin`、`strict-origin`和`no-referrer`作为隐私增强的选项。
@@ -332,7 +332,7 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 
 ## 资源
 
-- [理解“同站”和“同域”](/same-site-same-origin/)
+- [理解"同站"和"同域"](/same-site-same-origin/)
 - [新的安全标头：引荐来源政策 (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
 - [MDN 上的引荐来源政策](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
 - [引荐来源标头：MDN 上的隐私和安全问题](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns)

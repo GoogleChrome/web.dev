@@ -16,9 +16,9 @@ tags:
 
 {% YouTube id='AQqFZ5t8uNc', startTime='88' %}
 
-“我正准备点那里！为什么移走了？😭”
+"我正准备点那里！为什么移走了？😭"
 
-布局偏移可能会分散用户的注意力。想象一下，您已经开始阅读一篇文章，可是页面上的元素突然位移，让您措手不及，于是您不得不再次找到先前阅读的位置。这在网络上十分常见，包括在阅读新闻或尝试单击“搜索”或“添加到购物车”按钮时。这种体验在视觉上十分扎眼且令人郁闷。这些情况通常是由于另一个元素被突然添加到页面上或是突然调整了大小，使可见元素被迫移动位置而导致的。
+布局偏移可能会分散用户的注意力。想象一下，您已经开始阅读一篇文章，可是页面上的元素突然位移，让您措手不及，于是您不得不再次找到先前阅读的位置。这在网络上十分常见，包括在阅读新闻或尝试单击"搜索"或"添加到购物车"按钮时。这种体验在视觉上十分扎眼且令人郁闷。这些情况通常是由于另一个元素被突然添加到页面上或是突然调整了大小，使可见元素被迫移动位置而导致的。
 
 [累积布局偏移](/cls) (CLS)：[核心 Web 指标](/vitals)中的一项指标，通过计算未在用户输入 500 毫秒内发生的布局偏移的偏移分数总和来测量内容的不稳定性。该项指标查看可视区域中可见内容的位移量以及受影响元素的位移距离。
 
@@ -42,7 +42,7 @@ CLS 较差的最常见原因为：
 
 ## 无尺寸的图像 🌆
 
-**概述：**始终在您的图像和视频元素上包含`width`和`height`属性。或者通过使用[ CSS 长宽比容器](https://css-tricks.com/aspect-ratio-boxes/)预留所需的空间。这种方法可以确保浏览器能够在加载图像期间在文档中分配正确的空间大小。
+**概述：**始终在您的图像和视频元素上包含`width`和`height`属性。或者通过使用[CSS 长宽比容器](https://css-tricks.com/aspect-ratio-boxes/)预留所需的空间。这种方法可以确保浏览器能够在加载图像期间在文档中分配正确的空间大小。
 
   <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/10TEOBGBqZm1SEXE7KiC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}<figcaption class="w-figcaption">未指定宽度和高度的图像。</figcaption></figure>
 
@@ -58,7 +58,7 @@ CLS 较差的最常见原因为：
 <img src="puppy.jpg" width="640" height="360" alt="小狗与气球" />
 ```
 
-您可能会注意到，上方的`width`和`height`不包括单位。这些“像素”尺寸可以确保一块 640x360 的保留区域。无论图像的真实尺寸是否匹配，该图像都会被拉伸成保留区域的大小。
+您可能会注意到，上方的`width`和`height`不包括单位。这些"像素"尺寸可以确保一块 640x360 的保留区域。无论图像的真实尺寸是否匹配，该图像都会被拉伸成保留区域的大小。
 
 [响应式网页设计](https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/)得到引入后，开发者开始省略`width`和`height`，并取而代之开始使用 CSS 来调整图像大小：
 
@@ -89,7 +89,7 @@ img {
 <img src="puppy.jpg" width="640" height="360" alt="小狗与气球" />
 ```
 
-……而且所有浏览器的[ UA 样式表](https://developer.mozilla.org/docs/Web/CSS/Cascade#User-agent_stylesheets)都会根据元素现有的`width`和`height`属性添加[默认长宽比](https://html.spec.whatwg.org/multipage/rendering.html#attributes-for-embedded-content-and-images)：
+……而且所有浏览器的[UA 样式表](https://developer.mozilla.org/docs/Web/CSS/Cascade#User-agent_stylesheets)都会根据元素现有的`width`和`height`属性添加[默认长宽比](https://html.spec.whatwg.org/multipage/rendering.html#attributes-for-embedded-content-and-images)：
 
 ```css
 img {
@@ -161,7 +161,7 @@ img {
     - 换句话说，在加载广告标签库之前设置元素样式。
     - 如果要在内容流中放置广告，请通过预留广告位大小来确保消除偏移现象。如果这些广告在屏幕外进行加载，则*不应*导致布局偏移。
 - 在可视区域顶部附近放置非粘性广告时需要留心。
-    - 在下方的示例中，我们建议将广告移动到“世界视野”标志的下方，并确保为广告位预留足够的空间。
+    - 在下方的示例中，我们建议将广告移动到"世界视野"标志的下方，并确保为广告位预留足够的空间。
 - 如果在广告位可见时没有返回广告，请通过显示占位符来避免折叠预留空间。
 - 通过为广告位预留尽可能大的空间尺寸来消除偏移现象。
     - 这样虽然有效，但如果较小的广告创意填补了广告位，则可能会出现空白区域。
@@ -214,15 +214,15 @@ img {
 
 您可能已经在试图加载一个网站时经历过由于在可视区域顶部或底部弹出用户界面而导致的布局偏移。与广告类似，这通常是由横幅和表格导致的，这些横幅和表格会使页面的其余内容发生位移：
 
-- “订阅我们的新闻简报！”（喔，悠着点儿！我们才刚认识！）
+- "订阅我们的新闻简报！"（喔，悠着点儿！我们才刚认识！）
 
-- “相关内容”
+- "相关内容"
 
-- “安装我们的 [iOS/安卓] 应用程序”
+- "安装我们的 [iOS/安卓] 应用程序"
 
-- “我们仍在接受订单”
+- "我们仍在接受订单"
 
-- “《一般数据保护条例》通知”
+- "《一般数据保护条例》通知"
 
     <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/LEicZ7zHqGFrXl67Olve.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/XFvOHc2OB8vUD9GbpL2w.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PF9ulVHDQOvoWendb6ea.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}<figcaption class="w-figcaption">无预留空间的动态内容。</figcaption></figure>
 
@@ -231,17 +231,17 @@ img {
 在某些情况下，动态添加内容是用户体验的一个重要部分。例如，加载更多的产品到项目列表或更新实时反馈内容。在这些情况下，有几种方法可以避免意外布局偏移。
 
 - 在一个固定尺寸的容器中用新内容替换旧内容，或者使用轮播，在过渡后删除旧内容。请记得在过渡完成之前禁用任何链接和控件，防止在新内容进入时发生意外点击或触摸。
-- 让用户主动加载新内容，这样他们就不会对偏移（例如出现“加载更多”或“刷新”按钮）感到惊讶。我们建议在用户交互前预取内容，以便立即进行显示。这里需要提醒一下，在用户输入后 500 毫秒内发生的布局偏移不计入 CLS。
+- 让用户主动加载新内容，这样他们就不会对偏移（例如出现"加载更多"或"刷新"按钮）感到惊讶。我们建议在用户交互前预取内容，以便立即进行显示。这里需要提醒一下，在用户输入后 500 毫秒内发生的布局偏移不计入 CLS。
 - 无缝加载屏幕外的内容，并向用户叠加一个通知，说明内容已经可用（例如，显示一个 "向上滚动 "按钮）。
 
-<figure class="w-figure">   {% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="来自 Twitter 和 Chloé 网站的没有造成意外布局偏移的动态内容加载示例", width="800", height="458" %}   <figcaption class="w-figcaption">没有造成意外布局偏移的动态内容加载示例。左图：Twitter 上的实时内容加载。右图：Chloé 网站上的“加载更多”示例。欢迎查看 YNAP 团队如何<a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">在加载更多内容时对 CLS 进行优化</a>。</figcaption></figure>
+<figure class="w-figure">   {% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="来自 Twitter 和 Chloé 网站的没有造成意外布局偏移的动态内容加载示例", width="800", height="458" %}   <figcaption class="w-figcaption">没有造成意外布局偏移的动态内容加载示例。左图：Twitter 上的实时内容加载。右图：Chloé 网站上的"加载更多"示例。欢迎查看 YNAP 团队如何<a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">在加载更多内容时对 CLS 进行优化</a>。</figcaption></figure>
 
 ### 导致无样式文本闪烁 (FOUT)/不可见文本闪烁 (FOIT) 的网络字体 📝
 
 下载和渲染网络字体可能通过两种方式导致布局偏移：
 
 - 后备字体替换为新字体（FOUT：无样式文本闪烁）
-- 新字体完成渲染前显示“不可见”文本（FOIT：不可见文本闪烁）
+- 新字体完成渲染前显示"不可见"文本（FOIT：不可见文本闪烁）
 
 以下工具可以帮助您最大程度地减少这种情况：
 
@@ -253,7 +253,7 @@ img {
 - 在关键网络字体上使用`<link rel=preload>`：预加载的字体将有更大几率在首次绘制中出现，而在这种情况下将不会发生布局偏移。
 - 将`<link rel=preload>`和`font-display: optional`结合使用
 
-阅读[通过预加载可选字体来防止布局偏移和不可见文本闪烁 (FOIT) ](/preload-optional-fonts/)了解更多详情。
+阅读[通过预加载可选字体来防止布局偏移和不可见文本闪烁 (FOIT)](/preload-optional-fonts/)了解更多详情。
 
 ### 动画 🏃‍♀️
 
@@ -261,13 +261,13 @@ img {
 
 对 CSS 属性值的更改可能需要浏览器对这些更改做出反应。许多值都会触发重排、绘制和合成，例如`box-shadow`和`box-sizing`。很多 CSS 属性可以通过代价更小的方式进行更改。
 
-如需进一步了解哪些 CSS 属性会触发布局，请参阅[ CSS 触发器](https://csstriggers.com/)和[高性能动画](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)。
+如需进一步了解哪些 CSS 属性会触发布局，请参阅[CSS 触发器](https://csstriggers.com/)和[高性能动画](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)。
 
 ### 开发者工具 🔧
 
 我很高兴与大家分享可用于测量和调试累积布局偏移 (CLS) 的各种工具。
 
-[灯塔](https://developers.google.com/web/tools/lighthouse)[ 6.0 ](https://github.com/GoogleChrome/lighthouse/releases)及更高版本支持在实验室环境中测量 CLS。该版本还将突出显示导致最多布局偏移的节点。
+[灯塔](https://developers.google.com/web/tools/lighthouse)[6.0](https://github.com/GoogleChrome/lighthouse/releases)及更高版本支持在实验室环境中测量 CLS。该版本还将突出显示导致最多布局偏移的节点。
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/J11KOGFVAOjRMdihwX5t.jpg", alt="灯塔 6.0 支持在指标部分测量 CLS", width="800", height="309" %}
 
@@ -275,7 +275,7 @@ img {
 
 <figure class="w-figure">{% Img src="image/admin/ApDKifKCRNGWI2SXSR1g.jpg", alt="展开体验部分时，Chrome 开发者工具性能面板中显示出布局偏移记录", width="800", height="438" %}<figcaption class="w-figcaption">在性能面板中记录新的跟踪后，结果中的<b>体验</b>部分将填充一个显示<code>Layout Shift</code>记录的红色条。单击记录可以让您详细了解受影响的元素（例如，标记位移自/至条目）。</figcaption></figure>
 
-通过[ Chrome 用户体验报告](/chrome-ux-report-bigquery/)也可以测量在域级聚合下的真实 CLS。 CrUX CLS 数据可以通过 BigQuery 获得，并且可以使用[样本查询](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql)查看 CLS 性能 。
+通过[Chrome 用户体验报告](/chrome-ux-report-bigquery/)也可以测量在域级聚合下的真实 CLS。 CrUX CLS 数据可以通过 BigQuery 获得，并且可以使用[样本查询](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql)查看 CLS 性能 。
 
 以上就是本篇指南的全部内容。我希望这篇指南有助于让您的页面不再那么变化多端 :)
 

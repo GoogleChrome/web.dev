@@ -10,7 +10,7 @@ tags:
   - metrics
 ---
 
-Todos nós já ouvimos como o desempenho é importante. Mas quando falamos sobre desempenho — e sobre como tornar os sites "rápidos" — o que queremos dizer exatamente?
+Todos nós já ouvimos como o desempenho é importante. Mas quando falamos sobre desempenhoe sobre como tornar os sites "rápidos"o que queremos dizer exatamente?
 
 A verdade é que o desempenho é relativo:
 
@@ -28,7 +28,7 @@ Historicamente, o desempenho da web tem sido medido com o evento <code>[load](ht
 
 Por exemplo, um servidor pode responder com uma página mínima que "carrega" imediatamente, mas adia a busca de conteúdo e a exibição de qualquer coisa na página até vários segundos após o evento `load`. Embora tal página possa tecnicamente ter um tempo de carregamento rápido, esse tempo não corresponderia à forma como o usuário realmente percebe o carregamento da página.
 
-Nos últimos anos, membros da equipe do Chrome — em colaboração com o [W3C Web Performance Working Group](https://www.w3.org/webperf/) — têm trabalhado para padronizar um conjunto de novas APIs e métricas que medem com mais precisão como os usuários experimentam o desempenho de uma página web.
+Nos últimos anos, membros da equipe do Chromeem colaboração com o [W3C Web Performance Working Group](https://www.w3.org/webperf/)têm trabalhado para padronizar um conjunto de novas APIs e métricas que medem com mais precisão como os usuários experimentam o desempenho de uma página web.
 
 Para ajudar a garantir que as métricas sejam relevantes para os usuários, nós as organizamos em torno de algumas questões-chave:
 
@@ -58,7 +58,7 @@ As métricas de desempenho geralmente são medidas de duas maneiras:
 - **No laboratório:** usando ferramentas para simular o carregamento de uma página em um ambiente consistente e controlado
 - **No campo** : em usuários reais carregando e interagindo com uma página no mundo real
 
-Nenhuma dessas opções é necessariamente melhor ou pior do que a outra — na verdade, geralmente o ideal é usar as duas para garantir um bom desempenho.
+Nenhuma dessas opções é necessariamente melhor ou pior do que a outrana verdade, geralmente o ideal é usar as duas para garantir um bom desempenho.
 
 ### Em laboratório
 

@@ -78,7 +78,7 @@ Portanto, embora o tempo total gasto na execução de tarefas na thread principa
 
 A TBT é uma ótima métrica complementar para a TTI porque ajuda a quantificar o nível de não-interatividade de uma página antes que ela se torne interativa de forma confiável.
 
-A TTI considera uma página "confiavelmente interativa" se a thread principal estiver livre de tarefas longas por pelo menos cinco segundos. Isto significa que três tarefas de 51 ms espalhadas por 10 segundos podem atrasar a TTI em até uma única tarefa de 10 segundos — mas esses dois cenários seriam percebidos de forma muito diferente para um usuário tentando interagir com a página.
+A TTI considera uma página "confiavelmente interativa" se a thread principal estiver livre de tarefas longas por pelo menos cinco segundos. Isto significa que três tarefas de 51 ms espalhadas por 10 segundos podem atrasar a TTI em até uma única tarefa de 10 segundosmas esses dois cenários seriam percebidos de forma muito diferente para um usuário tentando interagir com a página.
 
 No primeiro caso, três tarefas de 51 ms teriam uma TBT de **3 ms**. Enquanto uma tarefa única de 10 segundos de duração teria uma TBT de **9.950 ms**. O maior valor da TBT no segundo caso quantifica a experiência pior.
 

@@ -269,7 +269,7 @@ Para definir alternativas, analise primeiro que parte do referenciador você est
 - Se você estiver usando o referenciador em um script que tem acesso de nível superior à página, `window.location.origin` é uma alternativa.
 - Se disponíveis, cabeçalhos como [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) e [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) fornecem a `Origin` ou descrevem se a solicitação é de origem cruzada, que pode ser exatamente o que você precisa.
 
-**Se você precisar de outros elementos da URL (caminho, parâmetros de query...):**
+**Se você precisar de outros elementos da URL (caminho, parâmetros de query…):**
 
 - Os parâmetros de solicitação podem fornecer o que seu caso de uso precisa e isto economiza o trabalho de processar o referenciador.
 - Se você estiver usando o referenciador num script que tem acesso de nível superior à página, `window.location.pathname` pode ser uma alternativa. Extraia apenas a seção da URL que contém o caminho e repasse como argumento, de forma que qualquer informação potencialmente sensível nos parâmetros da URL não seja passada adiante.

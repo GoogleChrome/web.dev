@@ -15,13 +15,13 @@ tags:
 
 ## 什么是 FCP？
 
-首次内容绘制 (FCP) 指标测量页面从开始加载到页面内容的任何部分在屏幕上完成渲染的时间。对于该指标，“内容”指的是文本、图像（包括背景图像）、`<svg>`元素或非白色的`<canvas>`元素。
+首次内容绘制 (FCP) 指标测量页面从开始加载到页面内容的任何部分在屏幕上完成渲染的时间。对于该指标，"内容"指的是文本、图像（包括背景图像）、`<svg>`元素或非白色的`<canvas>`元素。
 
 {% Img src="image/admin/3UhlOxRc0j8Vc4DGd4dt.png", alt="来自 google.com 的 FCP 时间轴", width="800", height="311", linkTo=true %}
 
 在上方的加载时间轴中，FCP 发生在第二帧，因为那是首批文本和图像元素在屏幕上完成渲染的时间点。
 
-您会注意到，虽然部分内容已完成渲染，但并非所有内容都已经完成渲染。这是*首次*内容绘制 (FCP) 与*[Largest Contentful Paint 最大内容绘制 (LCP) ](/lcp/)*（旨在测量页面的主要内容何时完成加载）之间的重要区别。
+您会注意到，虽然部分内容已完成渲染，但并非所有内容都已经完成渲染。这是*首次*内容绘制 (FCP) 与*[Largest Contentful Paint 最大内容绘制 (LCP)](/lcp/)*（旨在测量页面的主要内容何时完成加载）之间的重要区别。
 
 <picture>
   <source srcset="{{ "image/eqprBhZUGfb8WYnumQ9ljAxRrA72/V1mtKJenViYAhn05WxqR.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">

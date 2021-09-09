@@ -15,11 +15,11 @@ tags:
 
 长久以来，对于网页开发者来说，测量网页主要内容的加载速度和内容对用户的显示速度一直是一个挑战。
 
-诸如[ load（加载）](https://developer.mozilla.org/en-US/docs/Web/Events/load)或[ DOMContentLoaded（DOM 内容加载完毕）](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded)这样的旧有指标并不是很好，因为这些指标不一定与用户在屏幕上看到的内容相对应。而像[ First Contentful Paint 首次内容绘制 (FCP) ](/fcp/)这类以用户为中心的较新性能指标只会捕获加载体验最开始的部分。如果某个页面显示的是一段启动画面或加载指示，那么这些时刻与用户的关联性并不大。
+诸如[load（加载）](https://developer.mozilla.org/en-US/docs/Web/Events/load)或[DOMContentLoaded（DOM 内容加载完毕）](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded)这样的旧有指标并不是很好，因为这些指标不一定与用户在屏幕上看到的内容相对应。而像[First Contentful Paint 首次内容绘制 (FCP)](/fcp/)这类以用户为中心的较新性能指标只会捕获加载体验最开始的部分。如果某个页面显示的是一段启动画面或加载指示，那么这些时刻与用户的关联性并不大。
 
-我们以往推荐过一些性能指标，例如[ First Meaningful Paint 首次有效绘制 (FMP) ](/first-meaningful-paint/)和[ Speed Index 速度指数 (SI)](/speed-index/) （两个指标都包含在灯塔工具中），这些指标有助于捕获到更多初始绘制后的加载体验，但这些指标十分复杂、难以解释，而且常常出错，也就意味着这些指标仍然无法识别出页面主要内容加载完毕的时间点。
+我们以往推荐过一些性能指标，例如[First Meaningful Paint 首次有效绘制 (FMP)](/first-meaningful-paint/)和[Speed Index 速度指数 (SI)](/speed-index/) （两个指标都包含在灯塔工具中），这些指标有助于捕获到更多初始绘制后的加载体验，但这些指标十分复杂、难以解释，而且常常出错，也就意味着这些指标仍然无法识别出页面主要内容加载完毕的时间点。
 
-有时候简胜于繁。根据[ W3C Web 性能工作组](https://www.w3.org/webperf/)的讨论以及 Google 进行的研究，我们发现更准确地测量页面主要内容加载完毕的时间点的方法是查看最大元素完成渲染的时间点。
+有时候简胜于繁。根据[W3C Web 性能工作组](https://www.w3.org/webperf/)的讨论以及 Google 进行的研究，我们发现更准确地测量页面主要内容加载完毕的时间点的方法是查看最大元素完成渲染的时间点。
 
 ## 什么是 LCP？
 
@@ -38,12 +38,12 @@ tags:
 
 ### 哪些元素在考量范围内？
 
-根据当前[最大内容绘制 API ](https://wicg.github.io/largest-contentful-paint/)中的规定，最大内容绘制考量的元素类型为：
+根据当前[最大内容绘制 API](https://wicg.github.io/largest-contentful-paint/)中的规定，最大内容绘制考量的元素类型为：
 
 - `<img>`元素
 - 内嵌在`<svg>`元素内的`<image>`元素
 - `<video>`元素（使用封面图像）
-- 通过[`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url())函数（而非使用[ CSS 渐变](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)）加载的带有背景图像的元素
+- 通过[`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url())函数（而非使用[CSS 渐变](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)）加载的带有背景图像的元素
 - 包含文本节点或其他行内级文本元素子元素的[块级元素](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)。
 
 请注意，为了在初始阶段保持简洁，我们有意将元素限制在这几个有限的类型中。随着研究的深入，未来可能会添加其他元素（例如`<svg>` 、 `<video>`）。
@@ -68,7 +68,7 @@ tags:
 
 例如，在一个带有文本和首图的网页上，浏览器最初可能只渲染文本部分，并在此期间分发一个`largest-contentful-paint`条目，其`element`属性通常会引用一个`<p>`或`<h1>` 。随后，一旦首图完成加载，浏览器就会分发第二个`largest-contentful-paint`条目，其`element`属性将引用`<img>` 。
 
-需要注意的是，一个元素只有在渲染完成并且对用户可见后才能被视为最大内容元素。尚未加载的图像不会被视为“渲染完成”。 在[字体阻塞期](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display#The_font_display_timeline)使用网页字体的文本节点亦是如此。在这种情况下，较小的元素可能会被报告为最大内容元素，但一旦更大的元素完成渲染，就会通过另一个`PerformanceEntry`对象进行报告。
+需要注意的是，一个元素只有在渲染完成并且对用户可见后才能被视为最大内容元素。尚未加载的图像不会被视为"渲染完成"。 在[字体阻塞期](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display#The_font_display_timeline)使用网页字体的文本节点亦是如此。在这种情况下，较小的元素可能会被报告为最大内容元素，但一旦更大的元素完成渲染，就会通过另一个`PerformanceEntry`对象进行报告。
 
 除了延迟加载图像和字体之外，页面可能会在新内容可用时向 DOM 添加新元素。如果有任意一个新元素大于先前的最大内容元素，则浏览器还将报告一个新的`PerformanceEntry`。
 
@@ -175,7 +175,7 @@ getLCP(console.log);
 
 ### 如果最大元素并非最重要元素该怎么办？
 
-在某些情况下，页面上最重要的元素（或多个元素）并不是最大元素，而开发者可能更有兴趣测量前者的渲染时间。这时候可以使用[元素计时 API ](https://wicg.github.io/element-timing/)来实现，该 API 在关于[自定义指标](/custom-metrics/#element-timing-api)的文章中有所描述。
+在某些情况下，页面上最重要的元素（或多个元素）并不是最大元素，而开发者可能更有兴趣测量前者的渲染时间。这时候可以使用[元素计时 API](https://wicg.github.io/element-timing/)来实现，该 API 在关于[自定义指标](/custom-metrics/#element-timing-api)的文章中有所描述。
 
 ## 如何改进 LCP
 
@@ -197,6 +197,6 @@ LCP 主要受四个因素影响：
 
 ## 其他资源
 
-- [安妮·沙利文 (Annie Sullivan) ](https://perfnow.nl/)在[ performance.now() ](https://youtu.be/ctavZT87syI)上发表的演讲：[《从 Chrome 的性能监测工具中吸取的教训》](https://anniesullie.com/)(2019)
+- [安妮·沙利文 (Annie Sullivan)](https://perfnow.nl/)在[performance.now()](https://youtu.be/ctavZT87syI)上发表的演讲：[《从 Chrome 的性能监测工具中吸取的教训》](https://anniesullie.com/)(2019)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

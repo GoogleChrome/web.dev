@@ -47,7 +47,7 @@ Google 认为核心 Web 指标对一切网络体验都至关重要。因此，Go
 
 #### 核心 Web 指标的实测工具
 
-[Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)为每项核心 Web 指标收集匿名的真实用户测量数据。这些数据既能使网站所有者快速进行性能评估，而无需在页面上进行手动检测分析，也能同时为[ PageSpeed Insights 网页速度测量工具](https://developers.google.com/speed/pagespeed/insights/)和搜索控制台的[核心 Web 指标报告](https://support.google.com/webmasters/answer/9205520)等工具提供支持。
+[Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report)为每项核心 Web 指标收集匿名的真实用户测量数据。这些数据既能使网站所有者快速进行性能评估，而无需在页面上进行手动检测分析，也能同时为[PageSpeed Insights 网页速度测量工具](https://developers.google.com/speed/pagespeed/insights/)和搜索控制台的[核心 Web 指标报告](https://support.google.com/webmasters/answer/9205520)等工具提供支持。
 
 <div class="w-table-wrapper">
   <table>
@@ -86,9 +86,9 @@ Chrome 用户体验报告提供的数据带来了一种快速评估网站性能�
 
 每项核心 Web 指标都可以通过使用标准网页 API 在 JavaScript 中进行测量。
 
-测量所有核心 Web 指标，最简单的方法是使用[ web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript 库，这是一个围绕底层网页 API 的小型的、生产就绪的封装器，通过准确匹配每项指标在上方列出的所有 Google 工具中的报告方式来进行指标测量。
+测量所有核心 Web 指标，最简单的方法是使用[web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript 库，这是一个围绕底层网页 API 的小型的、生产就绪的封装器，通过准确匹配每项指标在上方列出的所有 Google 工具中的报告方式来进行指标测量。
 
-通过使用[ web-vitals ](https://github.com/GoogleChrome/web-vitals)库，测量每项指标就像调用单个函数一样简单（有关完整[用法](https://github.com/GoogleChrome/web-vitals#usage)和[ API ](https://github.com/GoogleChrome/web-vitals#api)详情，请参阅文档）：
+通过使用[web-vitals](https://github.com/GoogleChrome/web-vitals)库，测量每项指标就像调用单个函数一样简单（有关完整[用法](https://github.com/GoogleChrome/web-vitals#usage)和[API](https://github.com/GoogleChrome/web-vitals#api)详情，请参阅文档）：
 
 ```js
 import {getCLS, getFID, getLCP} from 'web-vitals';
@@ -105,13 +105,13 @@ getFID(sendToAnalytics);
 getLCP(sendToAnalytics);
 ```
 
-当您将网站配置为使用[ web-vitals ](https://github.com/GoogleChrome/web-vitals)库来测量您的核心 Web 指标数据并将其发送到分析端后，下一步是对数据进行汇总和报告，从而查看您的页面是否在至少 75% 的页面访问中都满足建议阈值。
+当您将网站配置为使用[web-vitals](https://github.com/GoogleChrome/web-vitals)库来测量您的核心 Web 指标数据并将其发送到分析端后，下一步是对数据进行汇总和报告，从而查看您的页面是否在至少 75% 的页面访问中都满足建议阈值。
 
 一些分析工具供应商已经内置了核心 Web 指标支持，但即使是那些没有内置支持的供应商也应该包含基本的自定义指标功能，让您能够使用他们的工具来测量核心 Web 指标。
 
 [Web 指标报告](https://github.com/GoogleChromeLabs/web-vitals-report)就是其中一个例子，它使网站所有者能够使用 Google 分析来测量他们的核心 Web 指标。了解使用其他分析工具测量核心 Web 指标的相关指南，请参阅[实测 Web 指标的最佳实践](/vitals-field-measurement-best-practices/)。
 
-您还可以使用[ Web 指标 Chrome 扩展程序](https://github.com/GoogleChrome/web-vitals-extension)来报告每项核心 Web 指标，且无需编写任何代码。该扩展程序使用[ web-vitals ](https://github.com/GoogleChrome/web-vitals)库来测量每一项指标，并在用户浏览网页时呈现给用户。
+您还可以使用[Web 指标 Chrome 扩展程序](https://github.com/GoogleChrome/web-vitals-extension)来报告每项核心 Web 指标，且无需编写任何代码。该扩展程序使用[web-vitals](https://github.com/GoogleChrome/web-vitals)库来测量每一项指标，并在用户浏览网页时呈现给用户。
 
 此扩展程序有助于您了解自己的网站、竞争对手的网站和整个网络的性能。
 
@@ -205,9 +205,9 @@ getLCP(sendToAnalytics);
 
 其他 Web 指标通常用作核心 Web 指标的代理或补充指标，有助于获取范围更广的体验或帮助诊断特定的问题。
 
-例如，[Time to First Byte 首字节时间 (TTFB) ](/time-to-first-byte/)和[ First Contentful Paint 首次内容绘制 (FCP) ](/fcp/)指标都是*加载*体验的重要方面，并且在诊断 LCP 问题方面（分别为[服务器响应时间](/overloaded-server/)过长或[阻塞渲染资源](/render-blocking-resources/)）都十分有用。
+例如，[Time to First Byte 首字节时间 (TTFB)](/time-to-first-byte/)和[First Contentful Paint 首次内容绘制 (FCP)](/fcp/)指标都是*加载*体验的重要方面，并且在诊断 LCP 问题方面（分别为[服务器响应时间](/overloaded-server/)过长或[阻塞渲染资源](/render-blocking-resources/)）都十分有用。
 
-同样，[总阻塞时间 (TBT) ](/tbt/)和[ Time to Interactive 可交互时间 (TTI) ](/tti/)等指标是实验室指标，对于捕获和诊断会对 FID 产生影响的潜在*交互性*问题至关重要。然而，这些指标不是核心 Web 指标的一部分，因为它们无法进行实际测量，也不反映以[用户为中心](/user-centric-performance-metrics/#how-metrics-are-measured)的结果。
+同样，[总阻塞时间 (TBT)](/tbt/)和[Time to Interactive 可交互时间 (TTI)](/tti/)等指标是实验室指标，对于捕获和诊断会对 FID 产生影响的潜在*交互性*问题至关重要。然而，这些指标不是核心 Web 指标的一部分，因为它们无法进行实际测量，也不反映以[用户为中心](/user-centric-performance-metrics/#how-metrics-are-measured)的结果。
 
 ## 不断发展的 Web 指标
 
