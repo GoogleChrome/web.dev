@@ -106,7 +106,7 @@ Following bundlers support the `new URL` scheme already:
 
 -  [Webpack v5](https://webpack.js.org/guides/asset-modules/#url-assets)
 -  [Rollup](https://rollupjs.org/) (Achieved via plugins—[@web/rollup-plugin-import-meta-assets](https://modern-web.dev/docs/building/rollup-plugin-import-meta-assets/) for generic assets and [@surma/rollup-plugin-off-main-thread](https://github.com/surma/rollup-plugin-off-main-thread) for Workers specifically.)
--  [Parcel v2 (beta)](https://v2.parceljs.org/)
+-  [Parcel v2 (beta)](https://v2.parceljs.org/languages/javascript/#url-dependencies)
 -  [Vite](https://vitejs.dev/guide/assets.html#new-url-url-import-meta-url)
 
 #### WebAssembly
