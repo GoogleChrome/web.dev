@@ -36,7 +36,7 @@ WOFF2 font format.
   newest, has the widest browser support, and offers the best compression.
   Because it uses Brotli, WOFF2 compresses 30% better than WOFF.
 
-To further improve performace, consider using [font
+To further improve performance, consider using [font
 subsetting](https://web.dev/reduce-webfont-size/#unicode-range-subsetting). Font
 subsetting is the practice of breaking a font file into smaller subsets -
 typically with the goal of removing unused glyphs. This can significantly reduce

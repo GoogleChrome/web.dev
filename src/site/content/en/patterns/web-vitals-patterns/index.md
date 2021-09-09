@@ -1,6 +1,9 @@
 ---
 layout: pattern-set
 title: Web Vitals patterns
-description: UX patterns are a frequent source of Core Web Vitals issues. These code samples show how to implement common UX patterns in a way that is Core Web Vitals friendly.
+description: A collection of common UX patterns optimized for Core Web Vitals.
+  This collection includes patterns that are often tricky to implement without
+  hurting your Core Web Vitals scores. You can use the code in these examples to
+  help ensure your projects stay on the right track.
 hero: image/j2RDdG43oidUy6AL6LovThjeX9c2/nVvvWiacDS8Z6DQWWuAY.png
 ---

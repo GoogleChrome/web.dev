@@ -1,4 +1,4 @@
 ---
 layout: patterns
 title: Patterns
-description: Core Web Vitals friendly implementations of common UX patterns.
+description: A collection of code snippets to help you optmize your web projects.

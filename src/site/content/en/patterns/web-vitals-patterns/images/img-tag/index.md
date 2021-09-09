@@ -18,7 +18,7 @@ allows the browser to reserve the correct amount of space for the image.
 
 * **Adjust image styling as needed:** Depending on the image's existing styling,
   adding `width` and `height` attributes may cause the image to render
-  differently. In may cases, this can be fixed by adding `height: auto` or
+  differently. In many cases, this can be fixed by adding `height: auto` or
   `width: auto` to the existing styling.
 
 | Previous CSS styling | Change to |

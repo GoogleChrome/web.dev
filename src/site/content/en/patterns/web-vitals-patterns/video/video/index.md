@@ -12,17 +12,17 @@ When optimizing video for Core Web Vitals make sure to set the `width` and
 also want to utilize the `poster` attribute.
 
 * **`width` and `height` attributes**: To prevent layout shifts, set the `width`
-  and `height` attribute on the `<video>` tag. This allows the browser to
+  and `height` attributes on the `<video>` tag. This allows the browser to
   determine the dimensions of the video (and reserve the correct amount of
   space) - without having to wait for the video to download.
 
 * **`poster` attribute (optional)**: The
   [`poster`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-poster)
-  attributes specifies the image that should be displayed while a video is
+  attribute specifies the image that should be displayed while a video is
   downloading. If a video is the LCP element, LCP is determined by the time that
   the poster image is rendered - rather than when the overall video loads. If
   this attribute is not specified, the browser will wait until the first frame
-  of the video is available, then uses this as the poster image; videos without
+  of the video is available, then use this as the poster image; videos without
   a `poster` attribute are currently [not considered for Largest Contentful
   Paint](https://web.dev/lcp/#what-elements-are-considered).
 
