@@ -144,7 +144,7 @@ By default, it will emit a JavaScript module that relies on the [WebAssembly ESM
 Instead, you can ask wasm-pack to emit a browser-compatible ES6 module via `--target web`:
 
 ```shell
-$ wasm-pack build –target web
+$ wasm-pack build --target web
 ```
 
 The output will use the described `new URL(..., import.meta.url)` pattern, and the Wasm file will be automatically discovered by bundlers as well.
