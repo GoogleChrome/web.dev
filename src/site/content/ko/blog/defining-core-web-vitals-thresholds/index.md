@@ -22,7 +22,6 @@ tags:
 
 각 Core Web Vitals 메트릭에는 성능을 "양호(good)", "개선 필요(needs improvement)" 또는 "나쁨(poor)"으로 분류하는 관련 임계값이 있습니다.
 
-<div class="w-stack w-stack--center w-stack--md">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="최대 콘텐츠풀 페인트 권장 임계값", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="최초 입력 지연 권장 임계값", width="400", height="350" %} {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="누적 레이아웃 이동 권장 임계값", width="400", height="350" %}</div>
 
 <div class="w-stack w-stack--center w-stack--md">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="최대 콘텐츠풀 페인트 권장 임계값", width="400", height="350" %}
