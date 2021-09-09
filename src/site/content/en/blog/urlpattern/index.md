@@ -4,7 +4,7 @@ subhead: An approach to standardizing common pattern matching use cases.
 authors:
   - jeffposnick
 date: 2021-07-22
-updated: 2021-08-04
+updated: 2021-09-07
 description: An approach to standardizing common pattern matching use cases.
 thumbnail: image/FNkVSAX8UDTTQWQkKftSgGe9clO2/YWhOUaN06kzk4mu93a1v.jpg
 tags:
@@ -35,7 +35,7 @@ something very close to it), and JavaScript developers can use modules like
 logic to their own code.
 
 <code>[URLPattern](https://github.com/WICG/urlpattern/blob/main/explainer.md#urlpattern)</code>
-is a proposed addition to the web platform that builds on the foundation created
+is an addition to the web platform that builds on the foundation created
 by these frameworks. Its goal is to standardize a routing pattern syntax,
 including support for wildcards, named token groups, regular expression groups,
 and group modifiers. <code>URLPattern</code> instances created with this syntax
@@ -355,15 +355,7 @@ other routing scenarios as well, either server-side or client-side.
 
 ## Browser support and polyfills
 
-We're letting developers know about `URLPattern` early, and would appreciate any
-[feedback](https://github.com/WICG/urlpattern/issues) based on the prerelease
-interface. This article will be kept up to date with information about browser
-support over time.
-
-`URLPattern` is not currently enabled by default in any browser, but Chrome and
-Chromium-based browsers like Edge partially support `URLPattern` starting with
-version 93. You can try it out by enabling the
-`#experimental-web-platform-features` flag in `about://flags`.
+`URLPattern` is enabled by default in Chrome and Edge version 95 and above.
 
 The
 <code>[urlpattern-polyfill](https://github.com/kenchris/urlpattern-polyfill)</code>
@@ -383,14 +375,14 @@ if (!(globalThis && 'URLPattern' in globalThis)) {
 
 ## Feedback and future plans
 
-Some aspects of `URLPattern` are [still being
+While the basic functionality for `URLPattern` has made it to Chrome and Edge,
+there are additions planned. Some aspects of `URLPattern` are [still being
 developed](https://github.com/WICG/urlpattern/blob/main/202012-update.md#whats-still-left-to-do),
 and there are a number of
 [open questions](https://github.com/WICG/urlpattern/blob/main/202012-update.md#open-questions)
 about specific behaviors that may still be refined. We encourage you to try out
-`URLPattern` early and provide any feedback via the
-[Discussions](https://github.com/WICG/urlpattern/discussions) feature in the
-associated GitHub repo.
+`URLPattern` and provide any feedback via a
+[GitHub issue](https://github.com/WICG/urlpattern/issues).
 
 ### Support for templating
 

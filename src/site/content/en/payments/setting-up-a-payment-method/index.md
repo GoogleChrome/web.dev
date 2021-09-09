@@ -200,7 +200,7 @@ documentation](https://github.com/w3c/payment-request-info/wiki/PaymentMethodPra
 
 ## Step 3: Serve a web app manifest
 
-A [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) is
+A [web app manifest](https://developer.mozilla.org/docs/Web/Manifest) is
 used to define a web app as the name suggests. It's a widely used manifest file
 to [define a Progressive Web App (PWA)](/add-manifest/).
 
@@ -290,7 +290,7 @@ payment app appears in the Payment Request UI.
       </tr>
       <tr>
         <td>
-          <code><a href="https://developer.mozilla.org/docs/Web/Manifest/serviceworker">serviceworker</a></code>
+          <code><a href="https://developer.mozilla.org/docs/Web/API/Service_Worker_API">serviceworker</a></code>
         </td>
         <td>
         Used to detect the service worker that runs as the web-based payment

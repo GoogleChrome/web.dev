@@ -4,6 +4,7 @@ const chalk = require('chalk');
 const nunjucks = require('nunjucks');
 const fs = require('fs');
 const path = require('path');
+const prettier = require('prettier');
 
 // Pull in filters
 const md = require('../../_filters/md');
@@ -116,9 +117,20 @@ module.exports = {
         );
       }
 
-      response.rendered = nunjucksEnv.renderString(response.markup, {
-        data: response.data.context || {},
-      });
+      // Render the pattern with nunjucks and then run it through
+      // prettier so format it correctly to make copy/paste easier
+      response.rendered = prettier
+        .format(
+          nunjucksEnv.renderString(response.markup, {
+            data: response.data.context || {},
+          }),
+          {
+            useTabs: false,
+            tabWidth: 2,
+            parser: 'html',
+          },
+        )
+        .replace(/^\s*\n/gm, ''); // Gets rid of blank lines (https://stackoverflow.com/q/16369642)
 
       if (fs.existsSync(path.resolve(patternPath, `${patternName}.md`))) {
         response.docs = fs.readFileSync(
