@@ -145,7 +145,7 @@ tags:
 
 - для webpack: [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin);
 - для Gulp: [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css);
-- для Rollup: [ rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter).
+- для Rollup: [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter).
 
 <figure class="w-figure">
   {% Img

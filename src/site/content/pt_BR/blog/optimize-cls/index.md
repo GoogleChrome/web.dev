@@ -230,7 +230,7 @@ Alguns sites podem descobrir que o recolhimento inicial do local pode reduzir de
   </figcaption>
 </figure>
 
-#### Reservar espaço para o local do anúncio estaticamente.
+#### Reservar espaço para o local do anúncio estaticamente
 
 Aplicar estilos estaticamente sobre elementos DOM de slot com os mesmos tamanhos passados para sua biblioteca de tags. Isto pode ajudar a garantir que a biblioteca não introduza mudanças de layout ao carregar. Se você não fizer isto, a biblioteca pode alterar o tamanho do elemento do slot após o layout da página.
 

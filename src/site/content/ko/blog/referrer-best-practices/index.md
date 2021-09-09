@@ -247,7 +247,7 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 
 `Referer`에는 비공개, 개인 또는 식별 데이터가 포함될 수 있으므로 그에 따라 취급해야 합니다.
 
-#### 수신하는 `Referer`는 달라질 수 있다는 점에 유의하세요.
+#### 수신하는 `Referer`는 달라질 수 있다는 점에 유의하세요
 
 들어오는 출처 간 요청의 리퍼러를 사용하면 몇 가지 제한이 따릅니다.
 

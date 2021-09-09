@@ -21,7 +21,7 @@ tags:
 
 虽然很难通过网页 API 来衡量用户对网站设计的喜爱程度，但网页 API 却可以轻松测量网站速度和响应度！
 
-用户对您的网站加载速度的第一印象可以通过[ First Contentful Paint 首次内容绘制 (FCP)](/fcp/)进行测量。但是，您的网站在屏幕上绘制像素的速度只是其中一部分，同样重要的还有当用户试图与这些像素进行交互时，您的网站响应度有多高！
+用户对您的网站加载速度的第一印象可以通过[First Contentful Paint 首次内容绘制 (FCP)](/fcp/)进行测量。但是，您的网站在屏幕上绘制像素的速度只是其中一部分，同样重要的还有当用户试图与这些像素进行交互时，您的网站响应度有多高！
 
 首次输入延迟 (FID) 指标有助于衡量您的用户对网站交互性和响应度的第一印象。
 
@@ -56,7 +56,7 @@ FID 测量从用户第一次与页面交互（例如当他们单击链接、点�
 
 这就导致主线程会阶段性地处于忙碌状态（在图中表示为米黄色[任务](https://html.spec.whatwg.org/multipage/webappapis.html#concept-task)块）。
 
-较长的首次输入延迟通常发生在[首次内容绘制 (FCP)](/fcp/)和[ Time to Interactive 可交互时间 (TTI)](/tti/)之间，因为在此期间，页面已经渲染出部分内容，但交互性还尚不可靠。为了说明这种情况的发生缘由，我们在时间轴中加入了 FCP 和 TTI：
+较长的首次输入延迟通常发生在[首次内容绘制 (FCP)](/fcp/)和[Time to Interactive 可交互时间 (TTI)](/tti/)之间，因为在此期间，页面已经渲染出部分内容，但交互性还尚不可靠。为了说明这种情况的发生缘由，我们在时间轴中加入了 FCP 和 TTI：
 
 {% Img src="image/admin/24Y3T5sWNuZD9fKhkuER.svg", alt="带有 FCP 和 TTI 的示例页面加载跟踪", width="800", height="340", linkTo=true %}
 
@@ -94,7 +94,7 @@ FID 是测量页面加载期间响应度的指标。因此，FID 只关注不连
 
 其他诸如滚动和缩放之类的交互属于连续操作，具有完全不同的性能约束（而且，浏览器通常能够通过在单独的线程上执行这些操作来隐藏延迟）。
 
-换句话说，FID 侧重于[ RAIL 性能模型](https://developers.google.com/web/fundamentals/performance/rail)中的 R（响应度），而滚动和缩放与 A（动画）更为相关，因此这些操作的性能质量应该单独进行评估。
+换句话说，FID 侧重于[RAIL 性能模型](https://developers.google.com/web/fundamentals/performance/rail)中的 R（响应度），而滚动和缩放与 A（动画）更为相关，因此这些操作的性能质量应该单独进行评估。
 
 ### 如果用户始终没有与您的网站进行交互怎么办？
 

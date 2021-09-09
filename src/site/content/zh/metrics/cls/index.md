@@ -55,7 +55,7 @@ CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-
 
 ### 怎样算是良好的 CLS 分数？
 
-为了提供良好的用户体验，网站应该努力将 CLS 分数控制在**0.1 **或以下。为了确保您能够在大部分用户的访问期间达成建议目标值，一个良好的测量阈值为页面加载的**第 75 个百分位数**，且该阈值同时适用于移动和桌面设备。
+为了提供良好的用户体验，网站应该努力将 CLS 分数控制在**0.1** 或以下。为了确保您能够在大部分用户的访问期间达成建议目标值，一个良好的测量阈值为页面加载的**第 75 个百分位数**，且该阈值同时适用于移动和桌面设备。
 
 <picture>
   <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好的 CLS 值低于 0.1，较差的值大于 0.25 并且介于两者之间的任何东西都需要改进", width="400", height="300" , class="w-screenshot w-screenshot--filled width-full" %}</source></picture>
