@@ -38,7 +38,7 @@ a WebXR App. Fortunately many frameworks provide a layer of abstraction on top
 of WebGL and WebGL2. Such frameworks include [three.js](https://threejs.org/),
 [babylonjs](https://www.babylonjs.com/), and
 [PlayCanvas](https://playcanvas.com/), while [A-Frame](https://aframe.io/) and
-[React 360](https://facebook.github.io/react-360/) are designed for interacting
+[React 360](https://github.com/facebookarchive/react-360) was designed for interacting
 with WebXR.
 
 This article is neither a WebGL nor a framework tutorial. It explains basics of

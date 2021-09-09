@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-06-03
-updated: 2021-08-05
+updated: 2021-09-08
 description: |
   After registering a PWA as a URL handler, when a user clicks on a hyperlink that matches
   one of the registered URL patterns, the registered PWA will open.
@@ -77,6 +77,12 @@ like Windows, macOS, and Linux. On Android, Chromium browsers install PWAs by ge
 [WebAPK](https://developers.google.com/web/fundamentals/integration/webapks), which can register a
 set of intent filters for all URLs within the scope of the app. This means that PWAs already handle
 associated URLs on Android at the operating system level using intent filters. {% endAside %}
+
+{% Aside 'caution' %} Support for the PWAs as URL Handlers feature is limited to the _default_
+browser per the operating system's settings. For example, Chrome can be set as the default browser
+by following these
+[instructions](https://support.google.com/chrome/answer/95417?hl=en&co=GENIE.Platform%3DDesktop).
+{% endAside %}
 
 ### The `"url_handlers"` web app manifest member
 

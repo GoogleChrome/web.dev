@@ -4,6 +4,14 @@
 .w-masthead-patterns__container {
   padding: 0 24px;
   margin: 64px auto;
+
+  .w-masthead-about__left {
+    text-align: center;
+
+    @include bp(md) {
+      text-align: left;
+    }
+  }
 }
 
 .code-patterns-main {
