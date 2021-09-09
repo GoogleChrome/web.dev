@@ -50,3 +50,4 @@ attributes on `<img>` and `<source>` tags that use `srcset`.
   Instead, you will need to style the corresponding `<img>` tag.
 * **Set the `width` and `height` attributes on the `<img>` tag:** These values
   should match the intrinsic size of the fallback image.
+  
