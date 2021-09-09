@@ -193,7 +193,7 @@ Below is a list of some pseudo-classes and events that can trigger state changes
 
 ## Different transitions for enter or exit
 
-By setting different `transition` properties on hover/focus, it’s possible to create some interesting effects.
+By setting different `transition` properties on hover/focus, it's possible to create some interesting effects.
 
 ```css
 .my-element {
