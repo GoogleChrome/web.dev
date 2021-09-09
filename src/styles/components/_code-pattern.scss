@@ -19,12 +19,16 @@
     grid-template-columns: minmax(0, 1fr);
 
     @include bp(md) {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-columns: 1fr 1fr;
     }
   }
 
   .code-pattern__assets {
     border: 1px solid $BORDER_COLOR;
+
+    @include bp(md) {
+      max-width: 426px; // Fix width to prevent the grid blowout (in Chrome 93)
+    }
   }
 
   web-tabs:not(:defined) {
