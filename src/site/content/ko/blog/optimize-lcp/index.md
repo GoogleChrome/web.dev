@@ -84,7 +84,6 @@ HTML이 고정적이며 모든 요청에 대해 변경할 필요가 없는 경�
     width="800",
     height="495"
   %}
-  <figcaption class="w-figcaption">페이지 로드 시 서비스 작업자 여부에 따른 최대 콘텐츠풀 분포 - <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a></figcaption>
 </figure>
 
 <figure class="w-figure">
