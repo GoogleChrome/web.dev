@@ -1,9 +1,10 @@
 {% from 'macros/icon.njk' import icon, svg with context %}
 
 {% macro renderItem(item, depth) %}
-  {%- set title = item.data.title or '' -%}
   {%- if item.title -%}
-    {%- set title = item.title | i18n(locale) -%}
+    {%- set title = (item.title | i18n(locale)) or '' -%}
+  {%- else -%}
+    {%- set title = item.data.title or '' -%}
   {%- endif -%}
 
   {% if item.url %}

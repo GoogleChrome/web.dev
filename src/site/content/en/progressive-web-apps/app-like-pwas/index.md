@@ -749,7 +749,7 @@ This article was reviewed by
 [Joe Medley](/authors/joemedley/),
 [Joshua Bell](https://github.com/inexorabletash),
 [Dion Almaer](https://blog.almaer.com/),
-[Ade Oshineye](http://www.oshineye.com/),
+[Ade Oshineye](https://blog.oshineye.com/),
 [Pete LePage](/authors/petelepage/),
 [Sam Thorogood](/authors/samthor/),
 [Reilly Grant](https://github.com/reillyeon),

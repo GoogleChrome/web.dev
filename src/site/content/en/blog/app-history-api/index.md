@@ -274,7 +274,7 @@ While for many sites the most common case will be when the user clicks a `<a hre
 
 ### Programmatic Navigation {: #programmatic-navigation }
 
-First is programmatic navigation, where navigation is caused by a method call inside youur client-side code.
+First is programmatic navigation, where navigation is caused by a method call inside your client-side code.
 
 You can call `appHistory.navigate('/another_page')` from anywhere in your code to cause a navigation.
 This will be handled by the centralized event handler registered on the "navigate" handler, and your centralized handler will be called synchronously.
@@ -418,7 +418,7 @@ Hero image from [Unsplash][hero-image], by [Jeremy Zero][hero-image-by].
 [w3ctag]: https://github.com/w3ctag/design-reviews/issues/605
 [chromestatus]: https://chromestatus.com/features/6232287446302720
 [hero-image]: https://unsplash.com/photos/bGYguEqV2lk
-[hero-image-by]: https://unsplash.com/@jeremy0
+[hero-image-by]: https://unsplash.com/@jeremybezanger
 [thomassteiner]: https://web.dev/authors/thomassteiner/
 [domenic]: https://web.dev/authors/domenic/
 [demo]: https://gigantic-honored-octagon.glitch.me/

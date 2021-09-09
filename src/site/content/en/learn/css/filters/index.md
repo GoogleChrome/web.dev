@@ -31,7 +31,7 @@ so let's have a quick run through what they all do and how to use them.
 Take care when placing text over images,
 that the text is still readable should the filter effect not be supported in a user's browser.
 For example, at the moment
-[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
+[`backdrop-filter`](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter)
 is not supported in Firefox,
 and so you should check that Firefox users aren't left with text they cannot easily read.
 {% endAside %}
@@ -39,7 +39,7 @@ and so you should check that Firefox users aren't left with text they cannot eas
 ## The `filter` property
 
 You can apply one or many of the following filters as a value for
-[`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter).
+[`filter`](https://developer.mozilla.org/docs/Web/CSS/filter).
 If you incorrectly apply a filter,
 the rest of the filters defined for `filter` will not work.
 
@@ -227,7 +227,7 @@ changing the part of the color wheel it references. If you pass no argument, it 
 
 You can apply a curve-hugging drop shadow like you would in a design tool,
 such as Photoshop with
-[`drop-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/drop-shadow).
+[`drop-shadow`](https://developer.mozilla.org/docs/Web/CSS/filter-function/drop-shadow()).
 This shadow is applied to an alpha mask which makes it very useful for adding a shadow to a cutout image.
 The `drop-shadow` filter takes a shadow parameter which contains space separated offset-x, offset-y, blur and color values.
 It is almost identical to `box-shadow`,
@@ -251,7 +251,7 @@ Learn more about the different types of shadows in the [shadows](/learn/css/shad
 
 The `url` filter allows you to apply an SVG filter from a linked SVG element or file.
 You can
-[read more about SVG filters here](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter)
+[read more about SVG filters here](https://developer.mozilla.org/docs/Web/SVG/Element/filter)
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -261,7 +261,7 @@ You can
 
 ## Backdrop filter
 
-The [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
+The [backdrop-filter](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter)
 property accepts all of the same filter function values as `filter`.
 The difference between `backdrop-filter` and `filter`
 is that the `backdrop-filter` property only applies the filters to the background,

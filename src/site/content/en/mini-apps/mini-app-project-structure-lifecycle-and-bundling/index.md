@@ -95,7 +95,7 @@ Similar to the app lifecycle, the page lifecycle, too, has lifecycle events that
 listen for and react upon. These core events are `load`, `show`, `ready`, `hide`, and `unload`. Some
 platforms offer additional events like `pulldownrefresh`. Setting up the event handlers happens in
 the `Page()` method that is defined for each page. For the `index` or the `other` pages from the
-project structure [before](/project-structure-lifecycle-and-bundling/#mini-app-project-structure), this would happen in `index.js` or
+project structure [before](#mini-app-project-structure), this would happen in `index.js` or
 `other.js` respectively.
 
 ```js

@@ -33,7 +33,7 @@ DevTools makes it easy to see the size of all network requests:
 
 {% Img src="image/admin/aq6QZj5p4KTuaWnUJnLC.png", alt="Network panel with bundle request", width="800", height="169", class="w-screenshot" %}
 
-The [Coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
+The [Coverage](https://developer.chrome.com/docs/devtools/coverage/)
 tab in DevTools will also tell you how much CSS and JS code in your application
 is unused.
 
