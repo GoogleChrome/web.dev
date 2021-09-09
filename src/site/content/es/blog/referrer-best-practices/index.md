@@ -7,7 +7,8 @@ date: 2020-07-30
 updated: 2020-09-23
 hero: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
 thumbnail: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
-description: Considere la posibilidad de establecer una Referrer Policy de "strict-origin-when-cross-origin". Esto conserva gran parte de las funciones del Referrer, a la vez que mitiga el riesgo de filtrar datos de orígenes cruzados.
+description: |
+  Considere la posibilidad de establecer una Referrer Policy de `strict-origin-when-cross-origin`. Esto conserva gran parte de las funciones del Referrer, a la vez que mitiga el riesgo de filtrar datos de orígenes cruzados.
 tags:
   - blog
   - security

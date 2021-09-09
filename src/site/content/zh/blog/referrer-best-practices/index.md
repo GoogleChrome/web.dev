@@ -7,7 +7,7 @@ date: 2020-07-30
 updated: 2020-09-23
 hero: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
 thumbnail: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
-description: 可以考虑设置"strict-origin-when-cross-origin"的引荐来源政策。该政策保留了引荐来源的大部分用途，同时降低了跨域泄露数据的风险。
+description: 可以考虑设置 `strict-origin-when-cross-origin` 的引荐来源政策。该政策保留了引荐来源的大部分用途，同时降低了跨域泄露数据的风险。
 tags:
   - blog
   - security
@@ -19,7 +19,7 @@ feedback:
 ## 概述
 
 - 意外的跨域信息泄露是网络用户隐私的绊脚石。一个保护性引荐来源政策可以提供帮助。
-- 可以考虑设置`strict-origin-when-cross-origin`的引荐来源政策。该政策保留了引荐来源的大部分用途，同时降低了跨域泄露数据的风险。
+- 可以考虑设置 `strict-origin-when-cross-origin` 的引荐来源政策。该政策保留了引荐来源的大部分用途，同时降低了跨域泄露数据的风险。
 - 不要使用引荐来源来防范跨站请求伪造 (CSRF)，而是用 [CSRF 令牌](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation)和其他标头作为额外的一层安全保障。
 
 {% Aside %}在我们开始之前：

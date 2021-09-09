@@ -22,11 +22,21 @@ tags:
 大多数情况下，这些体验只是令人恼火，但在某些情况下，却可能带来真正的破坏。
 
 <figure class="w-figure">
-  <video autoplay controls loop muted class="w-screenshot" poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png" width="658" height="510">
-    <source src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.webm" type="video/webm; codecs=vp8">
-    <source src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.mp4" type="video/mp4; codecs=h264">
-  </source></source></video>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">截屏视频说明了布局不稳定性会对用户产生怎样的负面影响。</figcaption></figure>
+  <video autoplay controls loop muted
+    class="w-screenshot"
+    poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
+    width="658" height="510">
+    <source
+      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.webm"
+      type="video/webm; codecs=vp8">
+    <source
+      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.mp4"
+      type="video/mp4; codecs=h264">
+  </video>
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    截屏视频说明了布局不稳定性会对用户产生怎样的负面影响。
+  </figcaption>
+</figure>
 
 页面内容的意外移动通常是由于异步加载资源，或者动态添加 DOM 元素到页面现有内容的上方。罪魁祸首可能是未知尺寸的图像或视频、实际渲染后比后备字体更大或更小的字体，或者是动态调整自身大小的第三方广告或小组件。
 
@@ -48,7 +58,7 @@ CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-
   <video controls autoplay loop muted class="w-screenshot" width="658" height="452">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/better-layout-shift-metric/session-window.mp4" type="video/mp4">
-  </source></source></video>
+  </video>
   <figcaption class="w-figcaption">会话窗口示例。蓝色竖条代表每个单次布局偏移的分数。</figcaption></figure>
 
 {% Aside 'caution' %} 此前，CLS 测量的是整个页面生命周期内发生的*所有单次布局偏移分数*的总和。如需了解哪些工具仍然按照原方式提供测量功能，请查看[网络工具集中不断发展的累积布局偏移](/cls-web-tooling) 。 {% endAside %}
@@ -58,9 +68,11 @@ CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-
 为了提供良好的用户体验，网站应该努力将 CLS 分数控制在**0.1** 或以下。为了确保您能够在大部分用户的访问期间达成建议目标值，一个良好的测量阈值为页面加载的**第 75 个百分位数**，且该阈值同时适用于移动和桌面设备。
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)" width="400" height="100">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好的 CLS 值低于 0.1，较差的值大于 0.25 并且介于两者之间的任何东西都需要改进", width="400", height="300" , class="w-screenshot w-screenshot--filled width-full" %}</source></picture>
+  <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好的 CLS 值低于 0.1，较差的值大于 0.25 并且介于两者之间的任何东西都需要改进", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
+</picture>
 
-{% Aside %}如需详细了解这些建议值背后的研究和方法论，请参阅：[定义核心 Web 指标的指标阈值](/defining-core-web-vitals-thresholds/) {% endAside %}
+{% Aside %} 如需详细了解这些建议值背后的研究和方法论，请参阅：[定义核心 Web 指标的指标阈值](/defining-core-web-vitals-thresholds/) {% endAside %}
 
 ## 布局偏移详情
 

@@ -7,7 +7,8 @@ date: 2020-07-30
 updated: 2020-09-23
 hero: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
 thumbnail: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
-description: Considere definir uma política de referenciamento de `strict-origin-when-cross-origin`. Ela retém grande parte da utilidade do referenciador, ao mesmo tempo que reduz o risco de vazamento de dados entre origens.
+description: |
+  Considere definir uma política de referenciamento de `strict-origin-when-cross-origin`. Ela retém grande parte da utilidade do referenciador, ao mesmo tempo que reduz o risco de vazamento de dados entre origens.
 tags:
   - blog
   - security

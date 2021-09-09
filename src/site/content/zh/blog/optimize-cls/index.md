@@ -25,9 +25,6 @@ tags:
 在本篇指南中，我们将介绍针对布局偏移常见成因的优化方式。
 
 <picture>
-  <source srcset="{{ " image imgix media="(min-width: 640px)">{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好的 CLS 值低于 0.1，较差的值大于 0.25 并且中间的任何值都需要改进", width="364", height="9 , class="w-screenshot w-screenshot--filled width-full" %}</source></picture>
-
-<picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好的 CLS 值低于 0.1，较差的值大于 0.25 并且中间的任何值都需要改进", width="384", height="96", class="w-screenshot w-screenshot--filled width-full" %}
 </picture>

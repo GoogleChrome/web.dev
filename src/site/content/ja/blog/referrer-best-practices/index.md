@@ -7,7 +7,8 @@ date: 2020-07-30
 updated: 2020-09-23
 hero: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
 thumbnail: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
-description: `strict-origin-when-cross-origin`のリファラーポリシーを設定をご検討ください。データのクロスオリジンが漏洩するリスクを軽減しながら、リファラーの有用性の多くを保持します。
+description: |
+  `strict-origin-when-cross-origin` のリファラーポリシーを設定をご検討ください。データのクロスオリジンが漏洩するリスクを軽減しながら、リファラーの有用性の多くを保持します。
 tags:
   - blog
   - security

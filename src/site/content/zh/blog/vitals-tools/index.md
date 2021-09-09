@@ -4,7 +4,7 @@ subhead: 您最喜欢的开发者工具现在已可以测量核心 Web 指标。
 authors:
   - addyosmani
   - egsweeny
-date: '2020-05-28'
+date: 2020-05-28
 description: 阅读最新发布的热门网络开发者工具支持核心 Web 指标测量的相关内容，其中包括灯塔、PageSpeed Insights 网页速度测量工具、Chrome 用户体验报告等众多工具。
 hero: image/admin/wNtXgv1OE2OETdiSzi8l.png
 thumbnail: image/admin/KxBRBQe5CRZpCxNYyW2H.png
@@ -17,11 +17,13 @@ tags:
 
 近期宣布的 [Web 指标](/vitals/)计划为网络质量信号提供统一指导，这些信号对于所有网站提供出色的网络用户体验至关重要。我们很高兴地宣布，**Google 为网络开发者提供的所有热门工具现在都支持核心 Web 指标的测量**，从而帮助您更轻松地诊断和修复用户体验问题。这些工具包括[灯塔](https://github.com/GoogleChrome/lighthouse)、[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)、[Chrome 开发者工具](https://developers.google.com/web/tools/chrome-devtools)、[搜索控制台](https://search.google.com/search-console/about)、[web.dev 测量工具](/measure/)、[Web 指标 Chrome 扩展程序](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma)和一个全新的 (!) [Chrome 用户体验报告](https://developers.google.com/web/tools/chrome-user-experience-report) API。
 
-由于 Google 搜索现在将核心 Web 指标作为评估[页面体验](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html)的基础，因此在最大程度上实现这些指标的可用性和可操作性就变得至关重要。
+由于 Google 搜索现在将核心 Web 指标作为评估 [页面体验](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html) 的基础，因此在最大程度上实现这些指标的可用性和可操作性就变得至关重要。
 
-<figure class="w-figure">{% Img src="image/admin/V00vjrHmwzljYo04f3d3.png", alt="支持各项核心 Web 指标的 Chrome 和搜索工具摘要", width="800", height="509", class="w-screenshot" ％}</figure>
+<figure class="w-figure">
+  {% Img src="image/admin/V00vjrHmwzljYo04f3d3.png", alt="支持各项核心 Web 指标的 Chrome 和搜索工具摘要", width="800", height="509", class="w-screenshot" %}
+</figure>
 
-{% Aside 'key-term' %}**实验室工具**可以用于深入了解*潜在用户*可能会如何体验您的网站，并提供可重现的结果，便于调试。**实际**工具可以深入了解您的*真实用户*是如何体验您的网站的。这类测量方式通常被称为真实用户监控 (RUM)。各个[实验室或实际工具](/how-to-measure-speed/#lab-data-vs-field-data)都为您的用户体验优化提供了独特的价值。{% endAside %}
+{% Aside 'key-term' %} **实验室工具**可以用于深入了解*潜在用户*可能会如何体验您的网站，并提供可重现的结果，便于调试。**实际**工具可以深入了解您的*真实用户*是如何体验您的网站的。这类测量方式通常被称为真实用户监控 (RUM)。各个[实验室或实际工具](/how-to-measure-speed/#lab-data-vs-field-data)都为您的用户体验优化提供了独特的价值。{% endAside %}
 
 要开启使用核心 Web 指标优化用户体验的旅程，您可以尝试以下工作流程：
 

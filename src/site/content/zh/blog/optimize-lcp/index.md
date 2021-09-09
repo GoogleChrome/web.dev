@@ -3,8 +3,8 @@ title: 优化 Largest Contentful Paint 最大内容绘制
 subhead: 如何更快地渲染您的主要内容。
 authors:
   - houssein
-date: '2020-05-05'
-updated: '2020-08-20'
+date: 2020-05-05
+updated: 2020-08-20
 hero: image/admin/qqTKhxUFqdLXnST2OFWN.jpg
 alt: 优化 LCP 横幅
 description: 最大内容绘制 (LCP) 可用于确定页面的主要内容何时在屏幕上完成渲染。了解如何通过改善缓慢的服务器响应速度、资源加载速度和客户端渲染速度来优化 LCP。

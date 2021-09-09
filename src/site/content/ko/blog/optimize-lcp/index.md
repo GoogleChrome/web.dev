@@ -14,7 +14,7 @@ tags:
   - web-vitals
 ---
 
-{% YouTube ID='AQqFZ5t8uNc', startTime='1073' %}
+{% YouTube id='AQqFZ5t8uNc', startTime='1073' %}
 
 <blockquote>
   <p>쓸 만한 콘텐츠가 보이지 않아요! 로드하는 데 왜 이렇게 오래 걸리는 거죠? 😖</p>

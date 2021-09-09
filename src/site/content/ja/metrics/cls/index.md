@@ -59,7 +59,7 @@ CLS は、ページの表示中に発生した[予期しない](/cls/#expected-v
 
 <picture>
   <source srcset="{{ "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9mWVASbWDLzdBUpVcjE1.svg" | imgix }}" media="(min-width: 640px)" width="400", height="100">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好なCLS値は0.1未満、不良な値は0.25を超え、その間の値は改善が必要", class="w-screenshot w-screenshot--filled width-full" %}
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/uqclEgIlTHhwIgNTXN3Y.svg", alt="良好なCLS値は0.1未満、不良な値は0.25を超え、その間の値は改善が必要", width="400", height="300", class="w-screenshot w-screenshot--filled width-full" %}
 </picture>
 
 {% Aside %}この推奨事項の根拠となる調査および方法論に関する詳細については、「[Core Web Vitals 指標のしきい値の定義](/defining-core-web-vitals-thresholds/)」を参照してください。{% endAside %}

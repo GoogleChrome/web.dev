@@ -7,7 +7,8 @@ date: 2020-07-30
 updated: 2020-09-23
 hero: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
 thumbnail: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
-description: `strict-origin-when-cross-origin`의 리퍼러 정책 설정을 고려하세요. 출처 간 데이터 누출 위험을 완화하면서 리퍼러의 유용성을 많은 부분 유지합니다.
+description: |
+  `strict-origin-when-cross-origin` 의 리퍼러 정책 설정을 고려하세요. 출처 간 데이터 누출 위험을 완화하면서 리퍼러의 유용성을 많은 부분 유지합니다.
 tags:
   - blog
   - security
@@ -130,7 +131,7 @@ MDN은 [정책 및 동작의 전체 예시 목록](https://developer.mozilla.org
 
 ## 리퍼러 정책 설정하기: 모범 사례
 
-`strict-origin-when-cross-origin`(또는 더 엄격)과 같은 개인정보 보호 강화 정책을 명시적으로 설정하세요. {% endAside %}
+{% Aside 'objective' %} `strict-origin-when-cross-origin`(또는 더 엄격)과 같은 개인정보 보호 강화 정책을 명시적으로 설정하세요. {% endAside %}
 
 사이트에 대해 리퍼러 정책을 설정하는 여러 가지 방법이 있습니다.
 
