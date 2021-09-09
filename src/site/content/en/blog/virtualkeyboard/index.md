@@ -136,9 +136,8 @@ that is, corresponding to the top, right, bottom, and/or left properties.
 
 The virtual keyboard insets are six environment variables that define a rectangle by its top, right,
 bottom, and left insets from the edge of the viewport. The width and height insets are calculated
-from the remaining insets for developer ergonomics. The default value of each keyboard inset is
-`0px` if a fallback value is not provided, else it gets updated when the `boundingRect` value
-changes.
+from the other insets for developer ergonomics. The default value of each keyboard inset is
+`0px` if a fallback value is not provided.
 
 You would typically use the environment variables as in the example below:
 
@@ -147,6 +146,7 @@ You would typically use the environment variables as in the example below:
   /**
    * Use a margin that corresponds to the virtual keyboard's height
    * if the virtual keyboard is shown, else use the fallback value of `50px`.
+   */
   margin-block-end: env(keyboard-inset-height, 50px);
 }
 
@@ -154,6 +154,7 @@ You would typically use the environment variables as in the example below:
   /**
    * Use a margin that corresponds to the virtual keyboard's height
    * if the virtual keyboard is shown, else use the default fallback value of `0px`.
+   */
   margin-block-end: env(keyboard-inset-height);
 }
 ```
