@@ -42,7 +42,7 @@ new Worker(workerUrl);
 
 When a bundler plugin finds an import with either an extension it recognizes or such an explicit custom scheme (`asset-url:` and `js-url:` in the example above), it adds the referenced asset to the build graph, copies it to the final destination, performs optimizations applicable for the asset's type and returns the final URL to be used during runtime.
 
-The benefits of this approach: reusing the JavaScript import syntax, guarantees that all URLs are static and relative to the current file, which makes locating such dependencies easy for the build system.
+The benefits of this approach: reusing the JavaScript import syntax guarantees that all URLs are static and relative to the current file, which makes locating such dependencies easy for the build system.
 
 However, it has one significant drawback: such code can't work directly in the browser, as the browser doesn't know how to handle those custom import schemes or extensions. This might be fine if you control all the code and rely on a bundler for development anyway, but it's increasingly common to use JavaScript modules directly in the browser, at least during development, to reduce the friction. Someone working on a small demo might not even need a bundler at all, even in production.
 
