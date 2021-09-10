@@ -70,7 +70,7 @@ Let's explore several case studies of global and local brands who adopted Core W
 
 ### Vodafone
 
-Vodafone (Italy) improved LCP by **31%** to achieve **8% more sales** ([Case Study](/vodafone))
+[Vodafone (Italy) improved LCP](/vodafone) by **31%** to achieve **8% more sales**.
 
 {% Img
 src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/OThyIjGk0YMLgXbvMbFT.png",
