@@ -148,7 +148,7 @@ width="800", height="360" %}
 - Reducing CLS from 1.65 to 0 significantly uplifted their domain rankings globally.
 - Reducing TTI + TBT by ~100% boosted the mCVR by 80-100% across global properties.
 - [Using RUM tools](/vitals-measurement-getting-started) helped capture the real world performance metrics in lower tier markets.
-- Adopting a [performance culture](/performance-budgets-101) is very important to avoid regression. This also enables tech gains such as optimized code, faster releases, componentization and fewer production issues.
+- Adopting a [performance culture](/performance-budgets-101) is very important to avoid regression. This also improves team productivity thanks to optimized code, faster releases, and fewer production issues.
 
 The case studies above show that you can achieve a lot
 by adopting best practices and implementing quick wins.
