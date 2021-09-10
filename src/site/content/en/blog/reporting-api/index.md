@@ -5,8 +5,8 @@ subhead: |
   Use the Reporting API to monitor your site and get security reports, deprecation reports, and more.
 authors:
   - maudn
-date: 2021-06-14
-updated: 2021-06-14
+date: 2021-09-22
+updated: 2021-09-22
 description: |
   Use the Reporting API to monitor your site and get security reports, deprecation reports, and more.
 hero: image/O2RNUyVSLubjvENAT3e7JSdqSOx1/PEgnzZFQVPhP2PyOnMm8.jpg
