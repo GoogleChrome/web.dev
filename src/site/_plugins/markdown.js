@@ -20,6 +20,11 @@ const site = require('../_data/site');
 
 const markdown = md({
   html: true,
+  // Converts all quotes to smart quotes.
+  // TODO: We need to update our old smart-quotes linter rule to make sure
+  // folks don't use smart quotes inside of code blocks. That can easily happen
+  // if you copy your code from Google Docs.
+  typographer: true,
 })
   // Let folks author definition lists using markdown syntax.
   .use(require('markdown-it-deflist'))
