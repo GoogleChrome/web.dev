@@ -70,7 +70,7 @@
     "terser": "^5.7.1",
     "unistore": "^3.4.1",
     "web-vitals": "^0.2.4",
-    "webdev-infra": "^1.0.23",
+    "webdev-infra": "^1.0.28",
     "wicg-inert": "^3.0.1"
   },
   "devDependencies": {
