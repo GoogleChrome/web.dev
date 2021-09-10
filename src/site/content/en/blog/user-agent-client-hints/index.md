@@ -31,15 +31,9 @@ Learn how to update your existing functionality that relies on parsing the
 User-Agent string to make use of User-Agent Client Hints instead.
 
 {% Banner 'caution', 'body' %}
-If you are already using User-Agent Client Hints, pay attention to this recent
-change. Since Chrome 90, the header format has changed so the `Accept-CH`
-tokens exactly match the returned headers. Previously a site could have sent
-`Accept-CH: UA-Platform` to receive the `Sec-CH-UA-Platform` header and now that
-site should send `Accept-CH: Sec-CH-UA-Platform`. If you've already implemented
-User-Agent Client Hints, it is now safe to remove the token without the
-`Sec-CH-` prefix. See [Intent to Remove: Rename User-Agent Client Hint ACCEPT-CH
-tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ)
-for more context.
+If you are already using User-Agent Client Hints, be aware that since Chrome 90
+the header format has changed so the Accept-CH tokens must exactly match the
+returned headers.
 {% endBanner %}
 
 ## Background
@@ -158,9 +152,6 @@ then dive into the [full proposal](https://wicg.github.io/ua-client-hints/).
 Client Hints are **only sent over secure connections**, so make sure you have
 [migrated your site to HTTPS](/why-https-matters).
 {% endAside %}
-
-The new set of hints is available from Chromium 84, so let's explore how it all
-works.
 
 ## User-Agent Client Hints from Chromium 89
 
@@ -352,13 +343,13 @@ replace** the current hints the browser is sending.
 ⬇️ _Response_
 
 ```text
-Accept-CH: Sec-CH-UA-Platform
+Accept-CH: Sec-CH-UA-Bitness
 ```
 
 ⬆️ _Subsequent requests_
 
 ```text
-Sec-CH-UA-Platform: "Android"
+Sec-CH-UA-Platform: "64"
 ```
 
 The previously asked-for `Sec-CH-UA-Full-Version` **will not be sent**.
