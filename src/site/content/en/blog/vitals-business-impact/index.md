@@ -141,7 +141,7 @@ width="800", height="360" %}
 #### Techniques
 
 - Fixing slots for page components and removing unoptimized tag insertion scripts [improved CLS](/optimize-cls).
-- [3P Script Optimization](/controlling-third-party-scripts) and building microservices with single responsibility principle reduced TTI & TBT significantly.
+- [Optimizing third-party scripts](/controlling-third-party-scripts) and building microservices with single responsibility principle significantly reduced TTI and TBT.
 
 #### Key learnings
 
