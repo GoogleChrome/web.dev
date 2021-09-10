@@ -49,7 +49,7 @@
             "title": "i18n.paths.learn_web_vitals.topics.best_practices",
             "pathItems": [
                 {
-                    "title": "UX patterns optimzed for Core Web Vitals",
+                    "title": "UX patterns optimized for Core Web Vitals",
                     "url": "/patterns/web-vitals-patterns"
                 },
                 "carousel-best-practices",
