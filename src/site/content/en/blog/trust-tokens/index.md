@@ -4,7 +4,7 @@ subhead: Trust Tokens is a new API to help combat fraud and distinguish bots fro
 authors:
   - samdutton
 date: 2020-06-22
-updated: 2021-08-23
+updated: 2021-09-10
 hero: image/admin/okxi2ttRG3h1Z4F3cylI.jpg
 thumbnail: image/admin/cTo0l2opcfNxg1TEjxSg.jpg
 alt: Black and white photograph of hand holding token
@@ -31,7 +31,9 @@ Find out more: [What's TrustTokenV3?](https://bit.ly/what-is-trusttokenv3).
 
 <br><br>
 
-{% YouTube 'WnCKlNE52tc' %}
+{% YouTube
+  id='bXB1Iwq6Eq4' 
+%}
 
 ## Summary
 
