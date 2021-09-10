@@ -20,19 +20,19 @@ patternId: web-vitals-patterns/placeholders/placeholders
             justify-items: center;
         }
         .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 1em;
             width: 100%;
-            max-width: 500px;
+            max-width: 650px;
             margin: 1em 0em;
         }
         .item {
             display: grid;
             gap: .5em;
-        }
-        .image-container img {
-            width: 100%;
+            width: 200px;
         }
         .text-container {
             font-size: 1em;
@@ -44,6 +44,9 @@ patternId: web-vitals-patterns/placeholders/placeholders
             aspect-ratio: 1 / 1;
             overflow: hidden;
             animation: placeholder ease-in-out 2s infinite;
+        }
+        .image-container img {
+            width: 100%;
         }
         @keyframes placeholder {
             0% {
@@ -83,11 +86,11 @@ patternId: web-vitals-patterns/placeholders/placeholders
             </div>
             <div class="text-container">Hats</div>
         </div>
-        <div class="item">
+        <div class="item empty">
             <div class="image-container">
-                <img src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/GMPpoERpp9aM5Rihk5F2.jpg">
+                <img src="">
             </div>
-            <div class="text-container">Watches</div>
+            <div class="text-container"></div>
         </div>
         <div class="item empty">
             <div class="image-container">
@@ -120,6 +123,10 @@ patternId: web-vitals-patterns/placeholders/placeholders
         });
         setTimeout(() => {
             const data = [
+                {
+                    description: "Watches",
+                    src: "https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/GMPpoERpp9aM5Rihk5F2.jpg"
+                },
                 {
                     description: "Shirt",
                     src:"https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/eM7KKuO6MQv43UWd0bSG.jpg"

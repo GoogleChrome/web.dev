@@ -1,5 +1,9 @@
 const data = [
     {
+        description: "Watches",
+        src: "https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/GMPpoERpp9aM5Rihk5F2.jpg"
+    },
+    {
         description: "Shirt",
         src: "shirt.jpg"
     },
