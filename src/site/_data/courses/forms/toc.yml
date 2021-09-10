@@ -1,7 +1,7 @@
 - url: /learn/forms
-- title: i18n.courses.learn_forms
+- title: i18n.courses.learn_forms.title
   sections:
-  - title: i18n.courses.get_started_with_forms
+  - title: i18n.courses.get_started_with_forms.title
   - url: /learn/forms/form-element
   - url: /learn/forms/form-fields
   - url: /learn/forms/auto
