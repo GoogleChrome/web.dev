@@ -33,8 +33,8 @@ explain exactly what each method does, when to use which one, and provide you wi
 working examples for you to explore. My goal is to end your confusion once and for all.
 
 Before we dive too deeply though, it's important to briefly touch on the two kinds of event handling
-possible in JavaScript (in all modern browsers that is — IE prior to version 9 did not support event
-capturing at all).
+possible in JavaScript (in all modern browsers that is—Internet Explorer prior to version 9 did not
+support event capturing at all).
 
 ### Eventing Styles (Capturing and Bubbling)
 
