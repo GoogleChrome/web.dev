@@ -27,7 +27,7 @@ JavaScript event handling is often straightforward. This is especially true when
 simple (relatively flat) HTML structure. Things get a bit more involved though when events are
 traveling (or propagating) through a hierarchy of elements. This is typically when developers reach
 for `stopPropagation()` and/or `preventDefault()` to solve the problems they're experiencing. If
-you've ever thought to yourself "I'll just try `preventDefault()` and if that doens't work I'll try
+you've ever thought to yourself "I'll just try `preventDefault()` and if that doesn't work I'll try
 `stopPropagation()` and if that doesn't work, I'll try both," then this article is for you! I will
 explain exactly what each method does, when to use which one, and provide you with a variety of
 working examples for you to explore. My goal is to end your confusion once and for all.
@@ -529,7 +529,7 @@ list them all, and sometimes you have to just experiment to see. But briefly, he
   down.
 
 - `<input>` element + "keypress" event: `preventDefault()` for this combination will prevent
-  characters typed by the user from reaching the input element (but please don't do this; there is
+  characters typed by the user from reaching the input element (but don't do this; there is
   rarely, if ever, a valid reason for it).
 
 - `document` + "contextmenu" event: `preventDefault()` for this combination prevents the native
