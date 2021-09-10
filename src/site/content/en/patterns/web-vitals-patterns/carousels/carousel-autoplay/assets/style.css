@@ -1,15 +1,11 @@
-body {
-    padding: 1em;
-    font-family: system-ui;
-    text-align: center;
-}
 #carousel {
     max-width: 1200px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    position: relative;
 }  
-.navigation {
+.slide-indicators {
     display: flex;
     justify-content: center;
 }
@@ -63,4 +59,25 @@ body {
 .slide img {
     height: 100%;
     width: auto;
+}
+.arrow {
+    color: #ffffff;
+    height: 20px;
+    width: 20px;
+    background-color: #000000;
+    position: absolute;
+    padding: 10px;
+    opacity: .3;
+    cursor: pointer;
+}
+.arrow.back {
+    left: 10px;
+    top: 10px;
+}
+.arrow.forward {
+    right: 10px;
+    top: 10px;
+}
+.arrow:hover {
+    opacity: 1;
 }

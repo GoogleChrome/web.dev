@@ -4,6 +4,10 @@ function autoplayCarousel() {
     const slideEl = carouselEl.querySelector(".slide");
     let slideWidth = slideEl.offsetWidth;
     // Add click handlers
+    document.querySelector("#back-button")
+        .addEventListener("click", () => navigate("backward"));
+    document.querySelector("#forward-button")
+        .addEventListener("click", () => navigate("forward"));
     document.querySelectorAll(".slide-indicator")
         .forEach((dot, index) => {
             dot.addEventListener("click", () => navigate(index));

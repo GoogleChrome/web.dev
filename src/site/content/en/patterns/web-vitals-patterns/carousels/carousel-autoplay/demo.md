@@ -19,8 +19,9 @@ patternId: web-vitals-patterns/carousels/carousel-autoplay
             display: flex;
             flex-direction: column;
             margin: 0 auto;
+            position: relative;
         }  
-        .navigation {
+        .slide-indicators {
             display: flex;
             justify-content: center;
         }
@@ -75,6 +76,27 @@ patternId: web-vitals-patterns/carousels/carousel-autoplay
             height: 100%;
             width: auto;
         }
+        .arrow {
+            color: #ffffff;
+            height: 20px;
+            width: 20px;
+            background-color: #000000;
+            position: absolute;
+            padding: 10px;
+            opacity: .3;
+            cursor: pointer;
+        }
+        .arrow.back {
+            left: 10px;
+            top: 10px;
+        }
+        .arrow.forward {
+            right: 10px;
+            top: 10px;
+        }
+        .arrow:hover {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -102,7 +124,9 @@ patternId: web-vitals-patterns/carousels/carousel-autoplay
                 <img width="1200" height="600" src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/G0aWgHwWJTPZus9YEMyH.jpg">
             </div>
         </div>
-        <div class="navigation">
+        <div id="back-button" class="arrow back">←</div>
+        <div id="forward-button" class="arrow forward">→</div>
+        <div class="slide-indicators">
             <div class="slide-indicator active"></div>
             <div class="slide-indicator"></div>
             <div class="slide-indicator"></div>
@@ -127,6 +151,10 @@ patternId: web-vitals-patterns/carousels/carousel-autoplay
             const slideEl = carouselEl.querySelector(".slide");
             let slideWidth = slideEl.offsetWidth;
             // Add click handlers
+            document.querySelector("#back-button")
+                .addEventListener("click", () => navigate("backward"));
+            document.querySelector("#forward-button")
+                .addEventListener("click", () => navigate("forward"));
             document.querySelectorAll(".slide-indicator")
                 .forEach((dot, index) => {
                     dot.addEventListener("click", () => navigate(index));
