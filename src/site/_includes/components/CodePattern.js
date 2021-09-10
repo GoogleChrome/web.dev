@@ -55,7 +55,7 @@ module.exports = (patternId, height) => {
     Math.max(...assetLines) * lineHeight + preMargin + tabListHeight;
   height = height || pattern.height || defaultHeight;
 
-  return `<div class="code-pattern flow flow-space-400">
+  return `<div class="code-pattern">
     <div class="code-pattern__content">
       <div class="code-pattern__demo">
         <iframe src="${pattern.demo}" title="Demo" height="${height}"></iframe>
@@ -65,14 +65,12 @@ module.exports = (patternId, height) => {
       </div>
     </div>
     <div class="code-pattern__meta">
-      <a href="${pattern.demo}" target="_blank">
-        <button
-          class="w-button w-button--with-icon w-button--primary"
-          data-icon="open_in_new"
-        >
-          Open demo
-        </button>
-      </a>
+      <a
+        href="${pattern.demo}"
+        target="_blank"
+        class="code-pattern__icon"
+        data-icon="open_in_new"
+      >Open demo</a>
     </div>
   </div>`;
 };
