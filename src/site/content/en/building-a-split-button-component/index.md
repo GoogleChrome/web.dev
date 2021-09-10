@@ -174,9 +174,10 @@ Add the primary button and the `.gui-popup-button` elements.
   <span class="gui-popup-button" aria-haspopup="true" aria-expanded="false" title="Open for more actions"></span>
 </div>
 ```
-
-Notice the aria attributes `aria-haspopup` and `aria-expanded`. These cues are
-critical for screen readers to be aware of the capability and state of split
+Notice that `.gui-popup-button` element is not of type/role **button** as it only
+interacts upon focus and no click events are needed.
+In addition, the aria attributes `aria-haspopup` and `aria-expanded` are
+critical cues for screen readers to be aware of the capability and state of split
 button experience. The `title` attribute is helpful for everyone.
 
 Add an `<svg>` icon and the `.gui-popup` container element. 
