@@ -19,7 +19,7 @@ jobs:
         uses: ./.github/actions/presubmit
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          is_presubmit: ${{ contains(github.event.pull_request.labels.*.name, 'presubmit') }}
+          is_presubmit: ${{ contains(github.event.pull_request.labels.*.name, '$-presubmit') }}
 
       - name: Run a production build of site
         run: npm run build

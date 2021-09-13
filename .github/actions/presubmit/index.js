@@ -1,5 +1,5 @@
 /**
- * @file This action checks if the `presubmit` label has been added to a Pull Request.
+ * @file This action checks if the `$-presubmit` label has been added to a Pull Request.
  * If the label exists, then remove the label and allow the rest of the workflow the
  * action belongs to to continue. If not fail the action causing the workflow to fail.
  *
@@ -10,12 +10,12 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-const LABEL = 'presubmit';
+const LABEL = '$-presubmit';
 
 /**
- * Checks if `presubmit` label is on PR.
- * If there is a `presubmit` label then remove the label and allow workflow to continue.
- * If there is no `presubmit` label fail the workflow.
+ * Checks if `$-presubmit` label is on PR.
+ * If there is a `$-presubmit` label then remove the label and allow workflow to continue.
+ * If there is no `$-presubmit` label fail the workflow.
  */
 async function run() {
   const githubToken = core.getInput('github_token', {required: true});
