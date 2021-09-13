@@ -78,11 +78,27 @@ class Snackbar extends BaseElement {
     `;
   }
 
+  get copiedTemplate() {
+    setTimeout(() => {
+      this.removeAttribute('open');
+      this.removeAttribute('type');
+    }, 3000);
+
+    return html`
+      <div class="web-snackbar__label" role="status">
+        Link copied to clipboard.
+      </div>
+    `;
+  }
+
   render() {
     let template;
     switch (this.type) {
       case 'cookies':
         template = this.cookiesTemplate;
+        break;
+      case 'copied':
+        template = this.copiedTemplate;
         break;
       default:
         break;

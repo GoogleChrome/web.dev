@@ -5,6 +5,7 @@ import lang from './utils/language';
 import {localStorage} from './utils/storage';
 import cookies from 'js-cookie';
 import {trackEvent} from './analytics';
+import './copy';
 
 export const clearSignedInState = store.action(() => {
   const {isSignedIn} = store.getState();
