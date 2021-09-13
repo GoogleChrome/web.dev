@@ -1,0 +1,22 @@
+{
+  "title": "Stats",
+  "context": {
+    "items": [
+      {
+        "stat": "30",
+        "sub": "%",
+        "desc": "Lower cost per conversion"
+      },
+      {
+        "stat": "13",
+        "sub": "%",
+        "desc": "Higher CTR"
+      },
+      {
+        "stat": "4",
+        "sub": "x",
+        "desc": "Faster load times"
+      }
+    ]
+  }
+}

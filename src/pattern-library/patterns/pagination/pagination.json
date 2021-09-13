@@ -1,0 +1,10 @@
+{
+  "title": "Pagination",
+  "context": {
+    "first": true,
+    "previous": true,
+    "items": ["1", "2", "3", "4", "...", "13"],
+    "next": true,
+    "last": true
+  }
+}

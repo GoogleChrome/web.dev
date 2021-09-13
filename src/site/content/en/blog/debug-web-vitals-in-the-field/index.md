@@ -134,7 +134,7 @@ function getCLSDebugTarget(entries) {
   const largestEntry = entries.reduce((a, b) => {
     return a && a.value > b.value ? a : b;
   });
-  if (largestEntry && largestEntry.sources && layoutShift.sources.length) {
+  if (largestEntry && largestEntry.sources && largestEntry.sources.length) {
     const largestSource = largestEntry.sources.reduce((a, b) => {
       return a.node && a.previousRect.width * a.previousRect.height >
           b.previousRect.width * b.previousRect.height ? a : b;

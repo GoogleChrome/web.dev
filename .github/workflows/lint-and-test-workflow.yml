@@ -23,7 +23,7 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install
         run: npm ci
-      
+
       # Checks to see if any files in the PR match one of the listed file types.
       # We can use this filter to decide whether or not to run linters or tests.
       # You can check if a file with a listed file type is in the PR by doing:
@@ -46,7 +46,7 @@ jobs:
               - '**/*.scss'
             njk:
               - '**/*.njk'
-      
+
       # Use the filter to check if files with a specific file type were changed
       # in the PR. If they were, run the relevant linters. Otherwise, skip.
 
@@ -54,10 +54,10 @@ jobs:
         if: ${{ steps.filter.outputs.md == 'true' }}
         run: npm run lint:md
 
-      - name: Lint JavaScript
-        if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' }}
-        run: npm run lint:js
-      
+      # - name: Lint JavaScript
+      #   if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' }}
+      #   run: npm run lint:js
+
       - name: Lint SCSS
         if: ${{ steps.filter.outputs.scss == 'true' }}
         run: npm run lint:scss

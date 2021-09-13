@@ -1,0 +1,27 @@
+http-203:
+  title:
+    en: 'HTTP 203'
+  description:
+    en: 'Google Developers Jake Archibald and Surma discuss their philosophies about web development and the various aspects of it, meanwhile dropping in lifehacks, lessons and some honest truths.'
+
+mother-language-day:
+  title:
+    en: 'Mother Language Day'
+  description:
+    en: 'February 21st is International Mother Language Day! To celebrate, each week we’ll be releasing a new video hosted by one of our team members in their mother language.'
+
+gui-challenges:
+  title:
+    en: GUI Challenges
+  description:
+    en: | 
+      There is no one way to solve interfaces challenges. 
+      In this series, we'll be challenging ourselves and each other 
+      to find multiple ways to solve interface challenges 
+      and expand the diversity of our skills.
+
+designing-in-the-browser:
+  title:
+    en: 'Designing in the Browser'
+  description:
+    en: 'Designing in the Browser explores the intersection of design and front-end development, teaching you how to build beautiful UIs with modern web standards in mind.'

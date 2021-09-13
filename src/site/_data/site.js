@@ -16,6 +16,7 @@
 
 const path = require('path');
 const locale = require('../../../shared/locale');
+const {PAGINATION_COUNT} = require('../_utils/constants');
 
 module.exports = {
   env: process.env.ELEVENTY_ENV || 'dev',
@@ -34,6 +35,7 @@ module.exports = {
   isBannerEnabled: false,
   banner: '',
   areCoursesEnabled: true,
+  paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
   gitlocalize: 'https://gitlocalize.com/repo/6062/',

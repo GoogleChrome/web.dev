@@ -49,11 +49,11 @@ renderData:
       {% endif %}
     </div>
     <div class="w-path-intro__learn">
-      <h2 class="w-headline--three no-link">What you'll learn</h2>
+      <h2 class="w-headline--three no-link">Table of Contents</h2>
       <ul class="w-icon-list">
         {% for topic in topics %}
           <li class="w-icon-list__item w-icon-list__item--check">
-            <a class="w-path-link" href="#{{ topic.title | slug }}">{{topic.title | i18n(locale)}}</a>
+            <a class="w-path-link" href="#{{ topic.title | i18n(locale) | slug }}">{{topic.title | i18n(locale)}}</a>
           </li>
 	      {% endfor %}
       </ul>

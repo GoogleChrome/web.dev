@@ -49,7 +49,7 @@ and it gives us a lot more flexibility when styling our interfaces.
 
 Block flow is the direction in which content blocks are placed.
 For example, if there are two paragraphs, the block flow is where the second paragraph will go.
-In an English document,the block flow is top-to-bottom.
+In an English document, the block flow is top-to-bottom.
 Think of this in the context of paragraphs of text following each other, top-to-bottom.
 
 <figure class="w-figure">
@@ -117,8 +117,8 @@ write a rule like this:
 }
 ```
 
-The flow-relative equivalents are `max-block-size` and `min-block-size`.
-You can also use `max-inline-size` and `min-inline-size` instead of `max-width` and `min-width`.
+The flow-relative equivalents are `max-inline-size` and `max-block-size`.
+You can also use `min-block-size` and `min-inline-size` instead of `min-height` and `min-width`.
 
 With logical properties,
 that max width and height rule would look like this:
@@ -204,7 +204,7 @@ using shorthand versions of the margin and padding properties.
   padding-block: 2em;
   margin-inline: 2em 0;
   position: relative;
-  inset: 0.2em 0 0 0;
+  inset-block: 0.2em 0;
 }
 ```
 

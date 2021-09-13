@@ -6,9 +6,13 @@ view_source:
   en: View source
   es: Ver fuente
 
-updates:
-  en: Updates
-  es: Actualizaciones
+related_content:
+  en: Related content
+  es: Contenido relevante
+
+chrome_updates:
+  en: Chrome updates
+  es: Chrome Actualizaciones
 
 web_fundamentals:
   en: Web Fundamentals
@@ -37,3 +41,7 @@ terms_and_privacy:
 community_guidelines:
   en: Community Guidelines
   es: Principios de la Comunidad
+
+shows:
+  en: Shows
+  es: Shows

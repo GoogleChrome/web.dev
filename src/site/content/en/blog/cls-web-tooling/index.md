@@ -95,14 +95,13 @@ as well as which tools still provide the ability to benchmark against the origin
         <td><a href="https://developers.google.com/speed/docs/insights/v5/get-started">
         PSI API</a></td>
         <td>1 June 2021</td>
-        <td>Available in the `lighthouseResult` as `totalCumulativeLayoutShift`. Not available in the field `loadingExperience` data</td>
+        <td>Available in the <code>lighthouseResult</code> as <code>totalCumulativeLayoutShift</code>. Not available in the field <code>loadingExperience</code> data</td>
       </tr>
       <tr>
         <td><a href="https://web.dev/chrome-ux-report-bigquery/">
         Chrome UX Report (CrUX) - BigQuery</a></td>
-        <td>8 June 2021</td>
-        <td>After 8 June 2021, available as
-        <code>experimental.uncapped_cumulative_layout_shift</code> (June 8 - Dec 14 2021)</td>
+        <td>202105 dataset, published 8 June 2021</td>
+        <td>Available as <code>experimental.uncapped_cumulative_layout_shift</code> through 202111</td>
       </tr>
       <tr>
         <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report/api/reference">
@@ -240,7 +239,7 @@ Good: [0-1.8s], Needs Improvement: (1.8s-3s), Poor: [3s-∞]
 
 We expect this change to reflect a smooth transition for most sites and encourage you to check out
 [Web Vitals](/vitals/) and
-[Optimize CLS](optimize-cls)
+[Optimize CLS](/optimize-cls)
 for tips and tricks on how to measure and optimize your layout shifts away.
 As always, feel free to reach out on the
 [web-vitals-feedback group](https://groups.google.com/g/web-vitals-feedback)

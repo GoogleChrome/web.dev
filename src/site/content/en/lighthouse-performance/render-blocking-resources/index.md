@@ -35,7 +35,7 @@ A `<link rel="stylesheet">` tag that:
 
 * Does not have a `disabled` attribute. When this attribute is present,
   the browser does not download the stylesheet.
-* Does not have a `media` attribute that matches the user's device.
+* Does not have a `media` attribute that matches the user's device specifically. `media="all"` is considered render-blocking.
 
 ## How to identify critical resources
 

@@ -1,0 +1,408 @@
+// First up: config
+@import 'config';
+
+// Disable util class generator because we'll render them at the end
+$generate-utility-classes: false;
+
+// Next: pull in gorko for design token and custom property generation
+@import '../../node_modules/gorko/gorko.scss';
+
+@import 'reset';
+@import 'fonts';
+
+/// GLOBAL VARIABLES
+/// Global variables that should be accessible in all authored CSS
+$global-gutter: map-get($gorko-space-scale, 'size-1');
+
+// NOTE: there are more design token-led global variables in _tokens.scss
+
+/// MIXINS
+@import 'mixins/button-base-styles';
+@import 'mixins/rounded-border';
+@import 'mixins/vertically-align-label';
+
+/// GLOBAL CSS
+/// Core CSS that is applicable to every page.
+/// https://cube.fyi/css.html
+
+body {
+  font-size: get-size('size-1');
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+
+  @include apply-utility('bg', 'core-bg');
+  @include apply-utility('color', 'core-text');
+  @include apply-utility('font', 'base');
+  @include apply-utility('leading', 'regular');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include apply-utility('font', 'brand');
+  @include apply-utility('leading', 'flat');
+  @include apply-utility('weight', 'regular');
+}
+
+h1 {
+  font-size: get-size('size-6');
+}
+
+h2 {
+  font-size: get-size('size-5');
+}
+
+h3 {
+  font-size: get-size('size-4');
+}
+
+h4 {
+  font-size: get-size('size-3');
+}
+
+h5,
+h6 {
+  font-size: get-size('size-2');
+}
+
+/// General typesetting
+
+p,
+li {
+  max-width: 70ch;
+}
+
+h1,
+h2,
+h3 {
+  max-width: 25ch;
+}
+
+/// Lists
+
+ul:not([class]),
+ol:not([class]) {
+  list-style: none;
+}
+
+ol:not([class]),
+ul:not([class]) {
+  li {
+    position: relative;
+
+    @include apply-utility('leading', 'short');
+  }
+
+  li + li {
+    margin-top: 1em;
+  }
+}
+
+ul:not([class]) {
+  // AB: I don't like how restrictive the marker pseudo-element is
+  // and we have some sizing and positioning that will benefit
+  // from a standard pseudo-element instead.
+  list-style: none;
+  padding-inline-start: 1rem;
+
+  li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    inset: 1ex 0 0 0;
+    width: 0.8ex;
+    height: 0.8ex;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  li {
+    padding-inline-start: 2ch;
+  }
+}
+
+ol:not([class]) {
+  counter-reset: ol-list;
+  padding-inline-start: 0.5rem;
+
+  li::before {
+    content: counter(ol-list);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    inset: 0 0 0 0;
+    border-radius: 50%;
+    font-size: 0.9em;
+    background: var(--color-accent-bg);
+    color: var(--color-accent-text);
+
+    @include apply-utility('weight', 'medium');
+  }
+
+  li {
+    counter-increment: ol-list;
+    padding-inline-start: 2.5rem;
+  }
+}
+
+dt {
+  @include apply-utility('weight', 'bold');
+}
+
+dt ~ dd {
+  margin-inline-start: 2ch;
+}
+
+dd + dt {
+  margin-top: 0.5em;
+}
+
+/// Blockquotes
+
+blockquote {
+  font-size: get-size('size-4');
+  text-align: center;
+
+  @include apply-utility('font', 'brand');
+  @include apply-utility('leading', 'short');
+}
+
+blockquote,
+blockquote > * {
+  margin-inline: auto;
+
+  @include apply-utility('measure', 'short');
+}
+
+/// @extend is *very* naughty if used unwisely
+/// However, we want child elements to flow without
+/// having to add a class so in this instance, it
+/// can slide
+blockquote {
+  @extend .flow;
+}
+
+/// <q> elements are ideal, but we need to make sure
+/// any element is styled as a quote
+blockquote > *::before {
+  content: open-quote;
+}
+
+blockquote > *::after {
+  content: close-quote;
+}
+
+/// It's best to reset content rather than
+/// add quotes only to the first-child, because
+/// quotes might actually be multiline
+blockquote > cite::before,
+blockquote > cite::after {
+  content: unset;
+}
+
+/// Make sure figcaptions are central with the blockquote
+/// when they appear in the same <figure> context.
+// Same applies to cites
+figure > blockquote ~ figcaption,
+blockquote cite {
+  margin-inline: auto;
+  display: block;
+  font-style: normal;
+  font-size: get-size('size-2');
+
+  @include apply-utility('weight', 'bold');
+  @include apply-utility('leading', 'flat');
+}
+
+/// Captions
+
+caption,
+figcaption {
+  margin-inline: auto;
+  font-style: italic;
+  text-align: center;
+
+  @include apply-utility('measure', 'short');
+  @include apply-utility('gap-top', 'size-1');
+}
+
+/// Tables
+
+table {
+  max-width: 100%;
+  min-width: 50%;
+  border-spacing: 0;
+
+  @include rounded-border();
+}
+
+th,
+td {
+  padding: 0.5em;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+th {
+  @include apply-utility('weight', 'medium');
+}
+
+tr td {
+  border-top: 1px solid var(--color-stroke);
+}
+
+caption {
+  caption-side: bottom;
+}
+
+table ul:not([class]),
+table ol:not([class]) {
+  margin: 0;
+}
+
+/// Cell alignment
+table[data-alignment='top'] {
+  th,
+  td {
+    vertical-align: top;
+  }
+}
+
+table[data-alignment='baseline'] {
+  th,
+  td {
+    vertical-align: top;
+  }
+}
+
+/// Separators
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-stroke);
+  max-width: 80rem;
+  margin-inline: 0;
+}
+
+// For the <hr /> itself and whatever element follows it,
+// have consistent space in flow contexts
+hr,
+hr + * {
+  --flow-space: #{get-size('size-6')};
+}
+
+/// Basic code
+
+code {
+  padding: 0.125em 0.25em;
+  background: var(--color-mid-bg);
+  border: 1px solid var(--color-stroke);
+  font-size: 0.9em;
+  hyphens: none;
+  tab-size: 2;
+  text-align: left;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+
+  @include apply-utility('font', 'mono');
+}
+
+pre > code {
+  display: block;
+  padding: get-size('size-1');
+  max-width: 80ch;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/// Links
+
+a:link {
+  color: var(--color-highlight-text);
+}
+
+a:visited {
+  color: var(--color-highlight-text-alt);
+}
+
+a:hover {
+  color: var(--color-highlight-text);
+  background: var(--color-highlight-interact-bg);
+}
+
+a:active {
+  filter: brightness(0.9);
+}
+
+/// General interactive states
+
+:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 4px;
+}
+
+:target {
+  scroll-margin-top: 2ex;
+}
+
+/// High contrast selection style
+::selection {
+  color: var(--color-core-bg);
+  background: var(--color-core-text);
+}
+
+/// Misc web components that need to be blocks
+web-copy-code {
+  display: block;
+}
+
+/// COMPOSITIONS
+@import 'compositions/auto-grid';
+@import 'compositions/cluster';
+@import 'compositions/repel';
+@import 'compositions/sidebar';
+@import 'compositions/switcher';
+
+/// BLOCKS
+@import 'blocks/aside';
+@import 'blocks/banner';
+@import 'blocks/brand';
+@import 'blocks/button';
+@import 'blocks/fab';
+@import 'blocks/label';
+@import 'blocks/numbered-headers';
+@import 'blocks/skip-link';
+@import 'blocks/stack-nav';
+@import 'blocks/status-list';
+@import 'blocks/table-wrapper';
+@import 'blocks/toggle-switch';
+
+/// UTILITY CLASSES
+@import 'utilities/all-center';
+@import 'utilities/flow';
+@import 'utilities/focus-ring';
+@import 'utilities/region';
+@import 'utilities/scrollbar';
+@import 'utilities/visually-hidden';
+@import 'utilities/wrapper';
+
+/// PAGES
+@import 'pages/design-system';
+
+// The prototype file is for temporary prototyping
+@import 'prototype';
+
+// Render gorko utilities
+@include generate-utility-classes();

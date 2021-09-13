@@ -1,0 +1,16 @@
+{
+  "title": "Block quotes",
+  "context": {
+    "quote": "Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.",
+    "cite": "Adipiscing Ornare"
+  },
+  "variants": [
+    {
+      "name": "no-cite",
+      "title": "No Cite",
+      "context": {
+        "cite": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Headline",
+  "summary": "A pattern to help you maintain semantic hierarchy and appropriate aesthetic for headings.",
+  "sort": "source",
+  "context": {
+    "text": "A headline is just a heading tag with utility classes",
+    "utilities": "text-size-6"
+  },
+  "variants": [
+    {
+      "name": "H2 styles",
+      "context": {
+        "utilities": "text-size-5"
+      }
+    },
+    {
+      "name": "H3 styles",
+      "context": {
+        "utilities": "text-size-4"
+      }
+    },
+    {
+      "name": "H4 styles",
+      "context": {
+        "utilities": "text-size-3"
+      }
+    },
+    {
+      "name": "Utility overriding look and feel",
+      "context": {
+        "utilities": "tt-upper color-highlight-text"
+      }
+    }
+  ]
+}

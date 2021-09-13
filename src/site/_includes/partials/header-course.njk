@@ -1,12 +1,18 @@
 {% from 'macros/icon.njk' import icon, svg with context %}
 
-<web-header class="header-course lg:display-none" role="navigation" style="--course-background: {{ courseData.meta.background }}">
+<web-header class="header-course lg:display-none" role="navigation" style="--course-background: url('{{ courseData.meta.background }}')">
   <button data-open-drawer-button class="w-button--svg w-button--round" aria-label="{{ 'i18n.header.open_menu' | i18n(locale) }}">
     {{ icon('menu') }}
     <span class="w-tooltip w-tooltip--left">{{ 'i18n.header.open_menu' | i18n(locale) }}</span>
   </button>
 
   <div class="header-course__title">
-    {{ svg(courseData.meta.logo, {label: courseData.meta.title | i18n(locale)}) }}
+    {% if courseData.meta.logo %}
+      {# The course logo is stored in src/images, but the svg macro uses
+      Nunjuck's include syntax. So we need to give it a relative path from
+      src/site/_includes to src/images. #}
+      {% set logo = helpers.join('../..', courseData.meta.logo) %}
+      {{ svg(logo, {label: courseData.meta.title | i18n(locale)}) }}
+    {% endif %}
   </div>
 </web-header>

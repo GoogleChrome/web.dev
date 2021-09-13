@@ -22,9 +22,9 @@ date: 2018-11-05
   {% if site.areCoursesEnabled %}
     <div class="sm:pad-left-500 sm:pad-right-500">
       <div class="learn-section gap-left-auto gap-right-auto">
-        <h3 id="courses" class="w-learn-heading">
+        <h3 id="{{ 'i18n.learn.courses' | i18n(locale) | slug }}" class="w-learn-heading">
           {{ 'i18n.learn.courses' | i18n(locale) }}
-          <a class="w-headline-link" href="#courses" aria-hidden="true">#</a>
+          <a class="w-headline-link" href="#{{ 'i18n.learn.courses' | i18n(locale) | slug }}" aria-hidden="true">#</a>
         </h3>
         {% include 'partials/course-cards.njk' %}
       </div>
@@ -35,9 +35,9 @@ date: 2018-11-05
 
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
-      <h3 id="frameworks" class="w-learn-heading">
+      <h3 id="{{ 'i18n.learn.performance' | i18n(locale) | slug }}" class="w-learn-heading">
         {{ 'i18n.learn.performance' | i18n(locale) }}
-        <a class="w-headline-link" href="#performance" aria-hidden="true">#</a>
+        <a class="w-headline-link" href="#{{ 'i18n.learn.performance' | i18n(locale) | slug }}" aria-hidden="true">#</a>
       </h3>
     </div>
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
@@ -48,9 +48,9 @@ date: 2018-11-05
   </section>
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
-      <h3 id="principles" class="w-learn-heading">
+      <h3 id="{{ 'i18n.learn.build_excellent' | i18n(locale) | slug }}" class="w-learn-heading">
         {{ 'i18n.learn.build_excellent' | i18n(locale) }}
-        <a class="w-headline-link" href="#principles" aria-hidden="true">#</a>
+        <a class="w-headline-link" href="#{{ 'i18n.learn.build_excellent' | i18n(locale) | slug }}" aria-hidden="true">#</a>
       </h3>
     </div>
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
@@ -61,9 +61,9 @@ date: 2018-11-05
   </section>
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
-      <h3 id="frameworks" class="w-learn-heading">
+      <h3 id="{{ 'i18n.learn.frameworks' | i18n(locale) | slug }}" class="w-learn-heading">
         {{ 'i18n.learn.frameworks' | i18n(locale) }}
-        <a class="w-headline-link" href="#frameworks" aria-hidden="true">#</a>
+        <a class="w-headline-link" href="#{{ 'i18n.learn.frameworks' | i18n(locale) | slug }}" aria-hidden="true">#</a>
       </h3>
     </div>
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
@@ -74,9 +74,9 @@ date: 2018-11-05
   </section>
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
-      <h3 id="lighthouse" class="w-learn-heading">
+      <h3 id="{{ 'i18n.learn.lighthouse' | i18n(locale) | slug }}" class="w-learn-heading">
         {{ 'i18n.learn.lighthouse' | i18n(locale) }}
-        <a class="w-headline-link" href="#lighthouse" aria-hidden="true">#</a>
+        <a class="w-headline-link" href="#{{ 'i18n.learn.lighthouse' | i18n(locale) | slug }}" aria-hidden="true">#</a>
       </h3>
     </div>
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
@@ -87,9 +87,9 @@ date: 2018-11-05
   </section>
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
-      <h3 id="exploration" class="w-learn-heading">
+      <h3 id="{{ 'i18n.learn.explorations' | i18n(locale) | slug }}" class="w-learn-heading">
         {{ 'i18n.learn.explorations' | i18n(locale) }}
-        <a class="w-headline-link" href="#explorations" aria-hidden="true">#</a>
+        <a class="w-headline-link" href="#{{ 'i18n.learn.explorations' | i18n(locale) | slug }}" aria-hidden="true">#</a>
       </h3>
     </div>
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">

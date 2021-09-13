@@ -7,6 +7,7 @@ authors:
   - maudn
   - arturjanc
 date: 2021-05-18
+updated: 2021-08-05
 hero: image/YLflGBAPWecgtKJLqCJHSzHqe2J2/E3BVnrBFNV6w2Uqxn3bQ.jpg
 alt: A keylock in front of compressed code
 description: |
@@ -773,9 +774,8 @@ Cross-Origin-Opener-Policy: unsafe-none
 
 {% Aside %}
 
-Features such as `SharedArrayBuffer`,
-`performance.measureUserAgentSpecificMemory()` or [JS Self Profiling
-API](https://wicg.github.io/js-self-profiling/) are disabled by default. Some
+Features such as `SharedArrayBuffer` or
+`performance.measureUserAgentSpecificMemory()` are disabled by default. Some
 browsers allow you to use them in "cross-origin isolated" contexts, which
 require you to set [COOP](#coop) and [COEP](#coep) headers.
 
@@ -950,9 +950,8 @@ compatibilities](https://caniuse.com/mdn-http_headers_content-length_cors_respon
 
 To reduce the ability of [Spectre-based
 attacks](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)) to
-steal cross-origin resources, features such as `SharedArrayBuffer`,
-`performance.measureUserAgentSpecificMemory()` or [JS Self Profiling
-API](https://wicg.github.io/js-self-profiling/) are disabled by default.
+steal cross-origin resources, features such as `SharedArrayBuffer` or
+`performance.measureUserAgentSpecificMemory()` are disabled by default.
 
 `Cross-Origin-Embedder-Policy: require-corp` prevents documents and workers from
 loading cross-origin resources such as images, scripts, stylesheets, iframes and

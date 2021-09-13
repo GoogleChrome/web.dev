@@ -201,31 +201,36 @@ arbitrary data using gzip.
 
 ### Feature detection
 
-If you provide a body object that the browser doesn't specifically handle, it
-will call `toString()` on the object and use the result as the body. If the
-browser doesn't support request streams, that means the request body becomes
-`"[object ReadableStream]"`–probably not what you want to send to the server.
-To avoid this, use feature detection:
-
 ```js
-const supportsRequestStreams = !new Request('', {
-  body: new ReadableStream(),
-  method: 'POST',
-}).headers.has('Content-Type');
+const supportsRequestStreamsP = (async () => {
+  const supportsStreamsInRequestObjects = !new Request('', {
+    body: new ReadableStream(),
+    method: 'POST',
+  }).headers.has('Content-Type');
 
-if (supportsRequestStreams) {
+  if (!supportsStreamsInRequestObjects) return false;
+
+  return fetch('data:a/a;charset=utf-8,', {
+    method: 'POST',
+    body: new ReadableStream(),
+  }).then(() => true, () => false);
+})();
+
+// Note: supportsRequestStreamsP is a promise.
+if (await supportsRequestStreamsP) {
   // …
 } else {
   // …
 }
 ```
 
-{% Aside %}
-This works because the browser adds a `Content-Type` header of
-`text/plain;charset=UTF-8` to the request if the body is text. The browser only
-treats the body as text if it _doesn't_ support request streams, otherwise it
-won't add a `Content-Type` header at all.
-{% endAside %}
+If you're curious, here's how the feature detection works:
+
+If the browser doesn't support a particular `body` type, it calls `toString()` on the object and uses the result as the body. So, if the browser doesn't support request streams, the request body becomes the string `"[object ReadableStream]"`. When a string is used as a body, it conveniently sets the `Content-Type` header to `text/plain;charset=UTF-8`. So, if that header is set, then we know the browser _doesn't_ support streams in request objects, and we can exit early.
+
+Unfortunately, Safari _does_ support streams in request objects, but _doesn't_ allow them to be used with `fetch`.
+
+To test that, we try `fetch` with a stream body. The test would be flakey and slow if it depended on the network, but thankfully a quirk in the spec allows for `POST` requests to be made to `data:` URLs. This is fast and works without a connection. Safari will reject this call because it doesn't support the stream body.
 
 ## Restrictions
 

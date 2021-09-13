@@ -18,7 +18,7 @@ const {html} = require('common-tags');
 
 /* eslint-disable require-jsdoc */
 
-module.exports = ({author, id, showSocialMedia = false}) => {
+module.exports = ({author, title, showSocialMedia = false}) => {
   if (!author) {
     throw new Error('Can not generate AuthorInfo without author object');
   }
@@ -86,7 +86,7 @@ module.exports = ({author, id, showSocialMedia = false}) => {
       style="display: flex; flex-direction: column; justify-content: center;"
     >
       <cite class="w-author__name">
-        <a class="w-author__name-link" href="/authors/${id}">${author.title}</a>
+        <a class="w-author__name-link" href="${author.href}">${title}</a>
       </cite>
       ${showSocialMedia && renderSocialMedia(author)}
     </div>

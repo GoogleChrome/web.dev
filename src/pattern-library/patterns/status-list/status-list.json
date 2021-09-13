@@ -1,0 +1,42 @@
+{
+  "title": "Status List",
+  "summary": "A simple state-based variant on an unordered or ordered list.",
+  "context": {
+    "icon": "check",
+    "items": [
+      {
+        "text": "Overview",
+        "url": "#"
+      },
+      {
+        "text": "Web Vitals Metrics",
+        "url": "#"
+      },
+      {
+        "text": "Measure Web Vitals",
+        "url": "#"
+      },
+      {
+        "text": "Debug Web Vitals",
+        "url": "#"
+      },
+      {
+        "text": "Improve Web Vitals",
+        "url": "#"
+      },
+      {
+        "text": "Best Practices",
+        "url": "#"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "name": "good",
+      "title": "Good state",
+      "context": {
+        "state": "good"
+      }
+    }
+  ]
+}

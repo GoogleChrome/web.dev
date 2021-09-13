@@ -1,0 +1,18 @@
+{
+  "title": "Card context",
+  "context": {
+    "date": "Jun 15, 2021",
+    "authors": [
+      {
+        "name": "Collin Dion Agata",
+        "url": "#",
+        "image": "/image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/ZpE2N6yjkaqQNcSiaxvR.jpeg"
+      },
+      {
+        "name": "Swetha Gopalakrishnan",
+        "url": "#",
+        "image": "/image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/Mpe7GGUwnUsy9Gx7UxZK.jpg"
+      }
+    ]
+  }
+}

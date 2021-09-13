@@ -1,0 +1,40 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/numbered-headers
+.numbered-headers {
+  --auto-grid-placement: auto-fit;
+  counter-reset: numbered-headers;
+}
+
+.numbered-headers__step {
+  counter-increment: numbered-headers;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/// The heading is a wrapper element which makes the horizontal
+/// view (using cluster) easier to achieve
+.numbered-headers__heading {
+  --gutter: 1em;
+  flex: auto;
+
+  &::before {
+    content: counter(numbered-headers);
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 2em;
+    height: 2em;
+    font-size: get-size('size-2');
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    margin-bottom: 1em;
+
+    @include apply-utility('weight', 'bold');
+    @include apply-utility('bg', 'mid-bg');
+  }
+}
+
+.numbered-headers__heading.cluster::before {
+  margin: 0;
+}

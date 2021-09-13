@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "3d": {
     "title": "3D",
     "description": "Our latest news, updates, and stories about 3D."
@@ -197,60 +198,6 @@
     "title": "Rendering"
   },
   "scale-on-web": {
-    "title": "Scale on web",
-    "description": "A collection of short case studies from India and Southeast Asia celebrating the success stories of Google partners across multiple aspects of modern web development. Learn how these partners achieved scale while building amazing web experiences and delighting their customers.",
-    "hero": {
-      "src": "/images/tags/scale-on-web.svg",
-      "width": 340,
-      "height": 177,
-      "heroOnly": true
-    }
-  },
-  "security": {
-    "title": "Security"
-  },
-  "seo": {
-    "title": "SEO",
-    "description": "Our latest news, updates, and stories about SEO."
-  },
-  "service-worker": {
-    "title": "Service Worker"
-  },
-  "storage": {
-    "title": "Storage"
-  },
-  "svg": {
-    "title": "SVG",
-    "description": "Our latest news, updates, and stories about SVG."
-  },
-  "testing": {
-    "title": "Testing"
-  },
-  "tools": {
-    "title": "Tools"
-  },
-  "ux": {
-    "title": "UX",
-    "description": "Our latest news, updates, and stories about UX."
-  },
-  "virtual-reality": {
-    "title": "Virtual Reality"
-  },
-  "webassembly": {
-    "title": "WebAssembly"
-  },
-  "web-app-manifest": {
-    "title": "Web App Manifest"
-  },
-  "web-bundles": {
-    "title": "Web Bundles"
-  },
-  "web-vitals": {
-    "title": "Web Vitals",
-    "description": "Our latest news, updates, and stories about Web Vitals."
-  },
-  "webxr": {
-    "title": "WebXR",
-    "description": "Our latest news, updates, and stories about WebXR."
+    "image": "image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cBy8xMTOQzYOt6Ru4C0e.svg"
   }
 }

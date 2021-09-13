@@ -5,7 +5,7 @@ subhead: Work on more than one document at a time with tabs in your Progressive 
 authors:
   - thomassteiner
 date: 2021-02-25
-updated: 2021-05-19
+updated: 2021-06-11
 description: |
   Tabbed application mode allows Progressive Web App developers to add a tabbed document interface
   to their standalone PWAs.
@@ -114,13 +114,6 @@ To use tabbed application mode, developers need to opt their apps in by setting 
   …
 }
 ```
-
-{% Aside 'warning' %}
-  The details of the potential `display_override` property's value (currently `"tabbed"`) are not final.
-  While you can try tabbed mode behind a flag, it will blindly apply to all sites and does not
-  currently care about the manifest. When you set `"display_override": ["tabbed"]`, it will just
-  be treated the same as `"display": "browser"`.
-{% endAside %}
 
 ### Trying tabbed application mode
 

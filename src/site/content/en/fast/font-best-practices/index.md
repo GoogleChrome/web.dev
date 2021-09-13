@@ -155,8 +155,9 @@ stylesheet to download.
 If your site loads fonts from a third-party site, it is highly recommended that
 you use the
 [`preconnect`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preconnect)
-resource hint to establish an early connection with the third-party origin.
-Resource hints should be placed in the `<head>` of the document.
+resource hint to establish early connection(s) with the third-party origin.
+Resource hints should be placed in the `<head>` of the document. The resource
+hint below sets up a connection for loading the font stylesheet.
 
 
 ```html
@@ -164,6 +165,30 @@ Resource hints should be placed in the `<head>` of the document.
   <link rel="preconnect" href="https://fonts.com">
 </head>
 ```
+
+To preconnect the connection that is used to download the font file, 
+add a separate `preconnect` resource hint that uses the `crossorigin`
+attribute. Unlike stylesheets, font files must be sent over a [CORS
+connection](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#what_requests_use_cors).
+
+```html
+<head>
+  <link rel="preconnect" href="https://fonts.com">
+  <link rel="preconnect" href="https://fonts.com" crossorigin>
+</head>
+```
+
+When using the `preconnect` resource hint, keep in mind that a font provider may
+serve stylesheets and fonts from separate origins. For example, this is how the
+`preconnect` resource hint would be used for Google Fonts.
+
+```html
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+```
+
 
 {% Aside %}
 
@@ -318,18 +343,19 @@ The idea behind **[variable
 {% Aside %}
 
 We often refer to "Times New Roman" and "Helvetica" as fonts. However,
-technically speaking, these are typefaces. A typeface is composed of fonts -
-each of these fonts represents a particular variation of the typeface (for
-example, italics, regular, bold). A font file contains a single font.
+technically speaking, these are font _families_. A family is composed of styles,
+which are particular variations of the typeface (for example, light, medium, 
+or bold italic). A font file contains a single style unless it is a variable font.
+A typeface is the underlying design, which can be expressed as digital fonts -
+and in physical type, like carved woodblocks or metal.
 
 {% endAside %}
 
 Not everyone will benefit from switching to variable fonts. [Variable
-fonts](/variable-fonts/) typically have larger file sizes than
-non-variable fonts. Sites that will see the largest improvement from using
-variable fonts are sites that use (and need to use) a variety of font styles and
-weights.
-
+fonts](/variable-fonts/) contain many styles, so typically have larger file
+sizes than individual non-variable fonts that only contain one style.
+Sites that will see the largest improvement from using variable fonts are 
+those that use (and need to use) a variety of font styles and weights.
 
 
 ## Font rendering

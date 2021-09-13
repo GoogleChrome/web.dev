@@ -15,10 +15,10 @@
  */
 
 const {individual} = require('../../../_collections/hooks/tags');
-const lang = require('../lang');
+const {lang} = require('../lang');
 
 module.exports = {
   pagination: {
-    before: (tags) => individual(tags, lang.lang),
+    before: (tags) => individual(tags, lang),
   },
 };

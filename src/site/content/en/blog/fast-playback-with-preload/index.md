@@ -127,7 +127,7 @@ list, duration, and so on) is desirable. Note that starting in [Chrome
 previously).
 
 
-```js
+```html
 <video id="video" preload="metadata" src="file.mp4" controls></video>
 
 <script>
@@ -144,7 +144,7 @@ Setting the `preload` attribute to `auto` indicates that the browser may cache
 enough data that complete playback is possible without requiring a stop for
 further buffering.
 
-```js
+```html
 <video id="video" preload="auto" src="file.mp4" controls></video>
 
 <script>
@@ -234,7 +234,7 @@ with the MSE JavaScript API, see [MSE basics][mse-basics].
 For the sake of simplicity, let's assume the entire video has been split into
 smaller files like `file_1.webm`, `file_2.webm`, `file_3.webm`, etc.
 
-```js
+```html
 <link rel="preload" as="fetch" href="https://cdn.com/file_1.webm">
 
 <video id="video" controls></video>
@@ -304,7 +304,7 @@ segments. Note that some middleware libraries such as [Google's Shaka
 Player][shaka-player], [JW Player][jw-player], and [Video.js][video-js] are
 built to handle this for you.
 
-```js
+```html
 <video id="video" controls></video>
 
 <script>

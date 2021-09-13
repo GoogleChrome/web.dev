@@ -147,4 +147,4 @@ The size of the new mobile background is **67% smaller** than the desktop one.
 
 In this guide you've learned to apply media queries to request background images tailored to specific screen sizes and save bytes when accessing the site on smaller devices, like mobile phones.
 You used the `@media` rule to implement a responsive background. This technique is widely supported by all browsers.
-A new CSS feature: [image-set()](https://drafts.csswg.org/css-images-4/#image-set-notation), can be used for the same purpose with fewer lines of code. At the time of this writing, this feature is not supported in all browsers, but you might want to keep an eye on how adoption evolves, as it can represent an interesting alternative to this technique.
+A new CSS feature: [image-set()](https://www.w3.org/TR/css-images-4/#image-set-notation), can be used for the same purpose with fewer lines of code. At the time of this writing, this feature is not supported in all browsers, but you might want to keep an eye on how adoption evolves, as it can represent an interesting alternative to this technique.

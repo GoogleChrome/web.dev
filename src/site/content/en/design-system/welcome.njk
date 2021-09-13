@@ -1,0 +1,82 @@
+---
+permalink: '/design-system/index.html'
+title: 'Welcome to the web.dev Design System'
+---
+
+{% extends "design-system.njk" %}
+{% set summary %}
+Homepage for explaining where stuff is, how stuff works. Probably want to add some nicely designed cards for main sections too.
+{% endset %}
+
+{% set content %}
+## Use the pattern generator 
+
+To prevent repetitive file creation, you can use the pattern generator to create a new pattern, or pattern's variant with a npm task.
+
+### Example
+
+Let's say you want a new pattern called "my-pattern":
+
+```bash
+npm run patterns:create -- -p my-pattern -n my-pattern -t My\ Pattern
+```
+
+This will create the following folder and file structure:
+
+```
+web.dev
+└── src/
+    └── pattern-library/
+        └── patterns/
+            └── my-pattern/
+                ├── my-pattern.njk
+                ├── my-pattern.json
+                └── my-pattern.md
+```
+
+Let's you want to create a variant of "my-pattern":
+
+```bash
+npm run patterns:create -- -p my-pattern/variants -n my-pattern-primary -t Primary
+```
+
+It'll result in this structure: 
+
+```
+web.dev
+└── src/
+    └── pattern-library/
+        └── patterns/
+            └── my-pattern/
+                ├── my-pattern.njk
+                ├── my-pattern.json
+                ├── my-pattern.md
+                └── variants/
+                    ├── my-pattern-primary.njk
+                    └── my-pattern-primary.json
+```
+
+### Arguments 
+
+There are 2 required arguments to pass in—`-p` and `-n`. The rest are optional. 
+
+{% Aside %}
+
+Make sure you add the `--` _after_ `npm run patterns:create` so the arguments get passed into the task.
+
+Also make sure you escape spaces with a `\`. 
+
+{% endAside %}
+
+- `-p` is the path from `src/pattern-library/patterns`
+- `-n` is the file name 
+- `-t` is the title. If this is not set, the `-n` will be used
+- `-sm` allows you to skip markup being generated if you are generating a variant
+
+{% endset %}
+
+{% block inner %}
+
+{{ content | md | safe }}
+
+{% endblock %}

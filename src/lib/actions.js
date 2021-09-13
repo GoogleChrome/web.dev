@@ -60,10 +60,11 @@ export const requestRunLighthouse = store.action((state, url) => {
   })();
 
   return p.catch((err) => {
-    console.warn('failed to run Lighthouse', url, err);
+    const errMsg = err.name === 'FetchError' ? err.name : err.toString();
+    console.warn('failed to run Lighthouse', url, errMsg);
 
     const update = {
-      lighthouseError: err.toString(),
+      lighthouseError: errMsg,
       activeLighthouseUrl: null,
     };
 

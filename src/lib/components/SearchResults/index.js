@@ -14,7 +14,7 @@ import './_styles.scss';
  * @extends {BaseElement}
  * @final
  */
-class SearchResults extends BaseElement {
+export class SearchResults extends BaseElement {
   static get properties() {
     return {
       // An array of algolia results.
@@ -112,7 +112,7 @@ class SearchResults extends BaseElement {
       const selected = this.renderRoot.querySelector(
         '.web-search-popout__link--active',
       );
-      selected.scrollIntoView();
+      selected.scrollIntoView({block: 'nearest'});
       this.dispatchEvent(new CustomEvent('resultselect', {detail: {selected}}));
     });
   }
@@ -129,11 +129,7 @@ class SearchResults extends BaseElement {
   render() {
     if (!this.showHits) {
       return html`
-        <div
-          id="web-search-popout__list"
-          role="listbox"
-          aria-hidden="true"
-        ></div>
+        <div id="${this.id}-list" role="listbox" aria-hidden="true"></div>
       `;
     }
 
@@ -169,11 +165,7 @@ class SearchResults extends BaseElement {
     return html`
       <div class="web-search-popout">
         <div class="web-search-popout__heading">Results</div>
-        <ul
-          id="web-search-popout__list"
-          class="web-search-popout__list"
-          role="listbox"
-        >
+        <ul id="${this.id}-list" class="web-search-popout__list" role="listbox">
           ${this.itemsTemplate}
         </ul>
       </div>
@@ -191,17 +183,11 @@ class SearchResults extends BaseElement {
         return html``;
       }
 
-      let title = hit._highlightResult.title.value;
-      // Escape any html entities in the title except for <strong> tags.
-      // Algolia sends back <strong> tags in the title which help highlight
-      // the characters that match what the user has typed.
-      title = allowHtml(escapeHtml(title), 'strong');
-      // Strip backticks as they look a bit ugly in the results.
-      title = title.replace(/`/g, '');
+      const title = this.formatAlgoliaValue(hit._highlightResult.title.value);
       return html`
         <li class="web-search-popout__item">
           <a
-            id="web-search-popout__link--${idx}"
+            id="${this.id}-link-${idx}"
             class="web-search-popout__link ${idx === this.cursor
               ? 'web-search-popout__link--active'
               : ''}"
@@ -214,6 +200,16 @@ class SearchResults extends BaseElement {
       `;
     });
   }
+
+  formatAlgoliaValue(value) {
+    // Escape any html entities in the title except for <strong> tags.
+    // Algolia sends back <strong> tags in the title which help highlight
+    // the characters that match what the user has typed.
+    value = allowHtml(escapeHtml(value), 'strong');
+    // Strip backticks as they look a bit ugly in the results.
+    return value.replace(/`/g, '');
+  }
+
   /* eslint-enable indent */
 }
 

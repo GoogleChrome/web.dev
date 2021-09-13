@@ -5,7 +5,7 @@ description: |
   Learn how Lighthouse generates the overall Performance score for your page.
 subhead: How Lighthouse calculates your overall Performance score
 date: 2019-09-19
-updated: 2021-02-26
+updated: 2021-06-04
 ---
 
 In general, only [metrics](/lighthouse-performance/#metrics)
@@ -55,6 +55,45 @@ The metric scores are not visible in the report, but are calculated under the ho
   </figcaption>
 </figure>
 
+### Lighthouse 8
+
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Audit</th>
+        <th>Weight</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="/first-contentful-paint/">First Contentful Paint</a></td>
+        <td>10%</td>
+      </tr>
+      <tr>
+        <td><a href="/speed-index/">Speed Index</a></td>
+        <td>10%</td>
+      </tr>
+      <tr>
+        <td><a href="/lcp/">Largest Contentful Paint</a></td>
+        <td>25%</td>
+      </tr>
+      <tr>
+        <td><a href="/interactive/">Time to Interactive</a></td>
+        <td>10%</td>
+      </tr>
+      <tr>
+        <td><a href="/lighthouse-total-blocking-time/">Total Blocking Time</a></td>
+        <td>30%</td>
+      </tr>
+      <tr>
+        <td><a href="/cls/">Cumulative Layout Shift</a></td>
+        <td>15%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 ### Lighthouse 6
 
 <div class="w-table-wrapper">
@@ -89,42 +128,6 @@ The metric scores are not visible in the report, but are calculated under the ho
       <tr>
         <td><a href="/cls/">Cumulative Layout Shift</a></td>
         <td>5%</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
-### Lighthouse 5
-
-<div class="w-table-wrapper">
-  <table>
-    <thead>
-      <tr>
-        <th>Audit</th>
-        <th>Weight</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a href="/first-contentful-paint/">First Contentful Paint</a></td>
-        <td>20%</td>
-      </tr>
-      <tr>
-        <td><a href="/speed-index/">Speed Index</a></td>
-        <td>27%</td>
-      </tr>
-      <tr>
-        <td><a href="/first-meaningful-paint/">First Meaningful Paint</a></td>
-        <td>7%</td>
-      </tr>
-      <tr>
-        <td><a href="/interactive/">Time to Interactive</a></td>
-        <td>33%</td>
-      </tr>
-      <tr>
-        <td><a href="/first-cpu-idle/">First CPU Idle</a></td>
-        <td>13%</td>
       </tr>
     </tbody>
   </table>
@@ -178,6 +181,41 @@ In the Lighthouse report, the **Opportunities** section has detailed suggestions
 <!--
 We don't think users care about the historical scoring rubrics, but we'd still prefer to keep them around because X
 ## Historical versions
+
+### Lighthouse 5
+
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Audit</th>
+        <th>Weight</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="/first-contentful-paint/">First Contentful Paint</a></td>
+        <td>20%</td>
+      </tr>
+      <tr>
+        <td><a href="/speed-index/">Speed Index</a></td>
+        <td>27%</td>
+      </tr>
+      <tr>
+        <td><a href="/first-meaningful-paint/">First Meaningful Paint</a></td>
+        <td>7%</td>
+      </tr>
+      <tr>
+        <td><a href="/interactive/">Time to Interactive</a></td>
+        <td>33%</td>
+      </tr>
+      <tr>
+        <td><a href="/first-cpu-idle/">First CPU Idle</a></td>
+        <td>13%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ### Lighthouse 3 and 4
 

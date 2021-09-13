@@ -248,7 +248,7 @@ To enable the password-toggle button and show users information about password c
 (The CSS is already in place from step 2. Take a look, to see how the password-toggle button is 
 styled and positioned.)
 
-* Would an [icon]((https://material.io/resources/icons/?icon=visibility)) work better than text to 
+* Would an [icon](https://material.io/resources/icons/?icon=visibility) work better than text to 
 toggle password display? Try [Discount Usability Testing](https://www.nngroup.com/articles/discount-usability-20-years/) 
 with a small group of friends or colleagues.
 

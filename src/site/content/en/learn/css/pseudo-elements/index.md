@@ -83,12 +83,17 @@ Once a `::before` or `::after` element has been created,
 you can style it however you want with no limits.
 You can only insert a `::before` or `::after` element to an element that will accept child elements
 ([elements with a document tree](https://www.w3.org/TR/CSS21/generate.html)),
-so elements such as `<img />`, `<video>`, `<button`> and `<input>` won't work.
+so elements such as `<img />`, `<video>` and `<input>` won't work.
 
 {% Codepen {
   user: 'web-dot-dev',
   id: 'GRrEYrg'
 } %}
+
+{% Aside 'gotchas' %}
+`input[type="checkbox"]` is an exception. 
+It is allowed to have pseudo-element children.
+{% endAside %}
 
 ## `::first-letter`
 
@@ -202,6 +207,7 @@ Only a small subset of CSS properties are supported for `::marker`:
 - `content`
 - `white-space`
 - `font` properties
+- `animation` and `transition` properties
 
 You can change the marker symbol, using the `content` property. You can use this to set a plus and minus symbol for the closed and empty states of a `<summary>` element, for example.
 
@@ -245,10 +251,8 @@ p:nth-of-type(2)::selection {
 
 As with other pseudo-elements, only a subset of CSS properties are allowed:
 
-- `color` and `caret-color`
+- `color`
 - `background-color` but **not** `background-image`
-- `cursor`
-- `outline`
 - `text` properties
 
 ## `::placeholder`

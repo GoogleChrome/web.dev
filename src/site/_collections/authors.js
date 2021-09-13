@@ -13,8 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const yaml = require('js-yaml');
+const fs = require('fs');
+const path = require('path');
+
 /** @type AuthorsData */
 const authorsData = require('../_data/authorsData.json');
+const authorsYaml = yaml.safeLoad(
+  fs.readFileSync(
+    path.join(__dirname, '..', '_data', 'i18n', 'authors.yml'),
+    'utf-8',
+  ),
+);
 const {livePosts} = require('../_filters/live-posts');
 const {sortByUpdated} = require('../_utils/sort-by-updated');
 
@@ -36,39 +46,16 @@ module.exports = (collections) => {
   /** @type Authors */
   const authors = {};
 
-  Object.keys(authorsData).forEach((key) => {
-    const authorData = authorsData[key];
-    const title = [authorData.name.given, authorData.name.family]
-      .filter((s) => s && s.length)
-      .join(' ');
-    const description =
-      authorData.descriptions && authorData.descriptions.en
-        ? authorData.descriptions.en
-        : `Our latest news, updates, and stories by ${title}.`;
+  Object.keys(authorsYaml).forEach((key) => {
+    const authorData = authorsData[key] || {};
     const href = `/authors/${key}/`;
+    let elements = [];
+    let date, updated;
     const image = authorData.image || PLACEHOLDER_IMG;
-
-    /** @type AuthorsItem */
-    const author = {
-      ...authorData,
-      data: {
-        alt: title,
-        hero: image,
-        subhead: description,
-        title,
-      },
-      description,
-      elements: [],
-      href,
-      image,
-      key,
-      title,
-      url: href,
-    };
 
     // Get posts
     if (collections) {
-      author.elements = collections
+      elements = collections
         .getFilteredByGlob('**/*.md')
         .filter(
           (item) =>
@@ -81,21 +68,38 @@ module.exports = (collections) => {
 
     // Limit posts for percy
     if (process.env.PERCY) {
-      author.elements = author.elements.slice(-6);
+      elements = elements.slice(-6);
     }
+
+    // Set created on date and updated date to be used for indexing to detect updates
+    if (elements.length > 0) {
+      date = elements.slice(-1).pop().data.date;
+      const tempUpdated = elements.slice(0, 1).pop().data.date;
+      if (date !== tempUpdated) {
+        updated = tempUpdated;
+      }
+    }
+
+    /** @type AuthorsItem */
+    const author = {
+      ...authorData,
+      data: {
+        date,
+        hero: image,
+        updated,
+      },
+      description: `i18n.authors.${key}.description`,
+      elements,
+      href,
+      image,
+      key,
+      title: `i18n.authors.${key}.title`,
+      url: href,
+    };
 
     // If author has no posts, point to their Twitter
     if (author.elements.length === 0 && author.twitter) {
       author.href = `https://twitter.com/${author.twitter}`;
-    }
-
-    // Set created on date and updated date
-    if (author.elements.length > 0) {
-      author.data.date = author.elements.slice(-1).pop().data.date;
-      const updated = author.elements.slice(0, 1).pop().data.date;
-      if (author.data.date !== updated) {
-        author.data.updated = updated;
-      }
     }
 
     if (author.elements.length > 0 || !collections || author.twitter) {

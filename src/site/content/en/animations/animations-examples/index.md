@@ -62,9 +62,7 @@ and watch how the box of the element transforms during its journey into the air,
 as it spins, and then returns to the start position.
 
 <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/triangle.mp4" type="video/webm">
-  </video>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/STzIqse0ekWT49oJbwX5.mp4", controls=true, autoplay=true, loop=true, muted=true, class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Video showing how we can track the path of the triangle in Chrome DevTools.
   </figcaption>
@@ -224,9 +222,7 @@ You will then see a visualization of the animations being used,
 and the properties that are being animated.
 
 <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/animation-circle-firefox-devtools.mp4" type="video/webm">
-  </video>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/FuxnywlwqojS8YVMCmKC.mp4", controls=true, autoplay=true, loop=true, muted=true, class="w-screenshot" %}
   <figcaption class="w-figcaption">
     With the ::before pseudo-element selected we can see which properties are animating.
   </figcaption>
@@ -286,9 +282,7 @@ Open Chrome DevTools and select one of the elements with a class of `plane`.
 The sphere is made up of a set of rotating planes and spokes.
 
 <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/3d-sphere-plane.mp4" type="video/webm">
-  </video>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/8lA3linRM6SqufzlUlJR.mp4", controls=true, autoplay=true, loop=true, muted=true, class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The plane appears to be rotating.
   </figcaption>
@@ -335,9 +329,7 @@ they use an animation which uses transform to scale and translate them.
 This creates the pulsing effect.
 
 <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/3d-sphere-dot.mp4" type="video/webm">
-  </video>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/JoLi8L3VW9nUG25sEvkZ.mp4", controls=true, autoplay=true, loop=true, muted=true, class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The dot rotates with the sphere and pulses.
   </figcaption>

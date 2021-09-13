@@ -61,18 +61,17 @@ class LanguageSelect extends BaseStateElement {
     )
       .filter((link) => link['hreflang'])
       .map((link) => link['hreflang']);
-    const langList = lang.supportedLanguages.filter((lang) =>
-      languageVersions.includes(lang),
+    const currentLang = document.documentElement.lang;
+    const langList = lang.supportedLanguages.filter(
+      (language) =>
+        languageVersions.includes(language) || language === currentLang,
     );
-    if (!langList.length) {
-      return '';
-    }
     return html`
       <div class="w-display-flex">
         <label class="w-visually-hidden" for="preferred-language">
           Choose language
         </label>
-        <select id="preferred-language" @change=${this.onChange}>
+        <select id="preferred-language" @change="${this.onChange}">
           ${langList.map((language) => this.renderOption(language))}
         </select>
       </div>

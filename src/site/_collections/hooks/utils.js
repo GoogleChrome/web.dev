@@ -18,12 +18,13 @@
  * Reusable hooks for authors and tags
  */
 
+const {PAGINATION_COUNT} = require('../../_utils/constants');
 const addPagination = require('../../_utils/add-pagination');
 const filterByLang = require('../../_filters/filter-by-lang');
 
 /**
- * @param {AuthorsItem[]|TagsItem[]} items
- * @return {TODO[]}
+ * @param {VirtualCollectionItem[]} items
+ * @return {VirtualCollectionItem[]}
  */
 const feed = (items) => {
   const filteredFeed = [];
@@ -34,7 +35,10 @@ const feed = (items) => {
 
   for (const item of items) {
     if (item.elements.length > 0) {
-      filteredFeed.push(item);
+      filteredFeed.push({
+        ...item,
+        elements: item.elements.slice(0, PAGINATION_COUNT),
+      });
     }
   }
 
@@ -42,7 +46,7 @@ const feed = (items) => {
 };
 
 /**
- * @param {AuthorsItem[]|TagsItem[]} items
+ * @param {VirtualCollectionItem[]} items
  * @param {string} href
  * @param {string[]} testItems
  * @return {Paginated[]}
@@ -62,7 +66,7 @@ const index = (items, href, testItems) => {
 };
 
 /**
- * @param {AuthorsItem[]|TagsItem[]} items
+ * @param {VirtualCollectionItem[]} items
  * @param {string} lang
  * @return {Paginated[]}
  */

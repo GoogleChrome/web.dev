@@ -317,12 +317,12 @@ as the space that is shared between the items is shared out _after_ each item is
 max-content size.
 So a large item will gain more space.
 To force all of the items to be a consistent size and ignore the size of the content change
-`flex:auto` to `flex: 1`. in the demo.
+`flex:auto` to `flex: 1` in the demo.
 
 This unpacks to:
 
 - `flex-grow: 1`: items can grow larger than their `flex-basis`.
-- `flex-shrink: 0`: items can't shrink smaller than their `flex-basis`.
+- `flex-shrink: 1`: items can shrink smaller than their `flex-basis`.
 - `flex-basis: 0`: items have a base size of `0`.
 
 Using `flex: 1` says that all items have zero size,

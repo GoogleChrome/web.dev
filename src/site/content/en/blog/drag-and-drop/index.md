@@ -4,7 +4,7 @@ authors:
   - ericbidelman
   - rachelandrew
 date: 2010-09-30
-updated: 2020-07-29
+updated: 2021-08-30
 description: >
   The HTML5 Drag and Drop (DnD) API means that we can make
   almost any element on our page draggable. In this post we’ll explain
@@ -104,8 +104,8 @@ function handleDragStart(e) {
 
   let items = document.querySelectorAll('.container .box');
   items.forEach(function(item) {
-    item.addEventListener('dragstart', handleDragStart, false);
-    item.addEventListener('dragend', handleDragEnd, false);
+    item.addEventListener('dragstart', handleDragStart);
+    item.addEventListener('dragend', handleDragEnd);
   });
 ```
 
@@ -173,11 +173,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   let items = document.querySelectorAll('.container .box');
   items.forEach(function(item) {
-    item.addEventListener('dragstart', handleDragStart, false);
-    item.addEventListener('dragover', handleDragOver, false);
-    item.addEventListener('dragenter', handleDragEnter, false);
-    item.addEventListener('dragleave', handleDragLeave, false);
-    item.addEventListener('dragend', handleDragEnd, false);
+    item.addEventListener('dragstart', handleDragStart);
+    item.addEventListener('dragover', handleDragOver);
+    item.addEventListener('dragenter', handleDragEnter);
+    item.addEventListener('dragleave', handleDragLeave);
+    item.addEventListener('dragend', handleDragEnd);
+    item.addEventListener('drop', handleDrop);
   });
 });
 ```
@@ -216,6 +217,20 @@ function handleDrop(e) {
   e.stopPropagation(); // stops the browser from redirecting.
   return false;
 }
+```
+
+Be sure to register the new handler in amongst the other handlers:
+
+```js/7-7
+  let items = document.querySelectorAll('.container .box');
+  items.forEach(function(item) {
+    item.addEventListener('dragstart', handleDragStart);
+    item.addEventListener('dragover', handleDragOver);
+    item.addEventListener('dragenter', handleDragEnter);
+    item.addEventListener('dragleave', handleDragLeave);
+    item.addEventListener('dragend', handleDragEnd);
+    item.addEventListener('drop', handleDrop);
+  });
 ```
 
 If you run the code at this point,

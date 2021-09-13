@@ -1,0 +1,25 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/stack-nav
+.stack-nav {
+  padding: 0;
+
+  a {
+    display: block;
+    line-height: 1;
+    padding: 1rem $global-gutter;
+    text-decoration: none;
+
+    @include apply-utility('bg', 'action-bg-alt');
+    @include apply-utility('color', 'action-text-alt');
+    @include vertically-align-label();
+  }
+
+  a:hover {
+    @include apply-utility('bg', 'action-bg-hover');
+  }
+
+  a[aria-current='page'] {
+    @include apply-utility('bg', 'active-bg');
+    @include apply-utility('color', 'active-text');
+  }
+}

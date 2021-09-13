@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @import '../tools/breakpoints';
 @import '../tools/mixins';
 
@@ -10,7 +12,7 @@
 //
 // =============================================================================
 
-$DISC_SHADOW: rgba(0, 0, 0, .25);
+$DISC_SHADOW: rgba(0, 0, 0, 0.25);
 $NUMBERED_COUNTER_SIZE_LARGE: 48px;
 $NUMBERED_COUNTER_SIZE_MEDIUM: 40px;
 $NUMBERED_COUNTER_SIZE_SMALL: 32px;
@@ -33,7 +35,7 @@ $NUMBERED_COUNTER_SIZE_SMALL: 32px;
   content: counter(numbered-headers);
   counter-increment: numbered-headers;
   display: block;
-  font-size: $NUMBERED_COUNTER_SIZE_SMALL / 2;
+  font-size: math.div($NUMBERED-COUNTER-SIZE-SMALL, 2);
   font-weight: 600;
   height: $NUMBERED_COUNTER_SIZE_SMALL;
   line-height: $NUMBERED_COUNTER_SIZE_SMALL;
@@ -42,7 +44,7 @@ $NUMBERED_COUNTER_SIZE_SMALL: 32px;
   width: $NUMBERED_COUNTER_SIZE_SMALL;
 
   @include bp(sm) {
-    font-size: $NUMBERED_COUNTER_SIZE_LARGE / 2;
+    font-size: math.div($NUMBERED-COUNTER-SIZE-LARGE, 2);
     height: $NUMBERED_COUNTER_SIZE_LARGE;
     line-height: $NUMBERED_COUNTER_SIZE_LARGE;
     min-width: $NUMBERED_COUNTER_SIZE_LARGE;
@@ -62,7 +64,7 @@ $NUMBERED_COUNTER_SIZE_SMALL: 32px;
 }
 
 .w-numbered-header--vertical::before {
-  font-size: $NUMBERED_COUNTER_SIZE_MEDIUM / 2;
+  font-size: math.div($NUMBERED-COUNTER-SIZE-MEDIUM, 2);
   height: $NUMBERED_COUNTER_SIZE_MEDIUM;
   line-height: $NUMBERED_COUNTER_SIZE_MEDIUM;
   margin-bottom: 18px;

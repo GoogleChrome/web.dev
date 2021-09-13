@@ -1,0 +1,38 @@
+<div class="w-author">
+  <a href="{{ data.url }}">
+    <img
+      alt="{{ data.name }}"
+      height="64"
+      src="https://web-dev.imgix.net/{{
+        data.image
+      }}?auto=format&amp;fit=crop&amp;h=64&amp;w=64"
+      width="64"
+      loading="lazy"
+      decoding="async"
+      sizes="(min-width: 64px) 64px, calc(100vw - 48px)"
+      srcset="
+        https://web-dev.imgix.net/{{ data.image }}?fit=crop&amp;h=64&amp;w=64&amp;auto=format&amp;dpr=1&amp;q=75,
+        https://web-dev.imgix.net/{{ data.image }}?fit=crop&amp;h=64&amp;w=64&amp;auto=format&amp;dpr=2&amp;q=50 2x,
+        https://web-dev.imgix.net/{{ data.image }}?fit=crop&amp;h=64&amp;w=64&amp;auto=format&amp;dpr=3&amp;q=35 3x,
+        https://web-dev.imgix.net/{{ data.image }}?fit=crop&amp;h=64&amp;w=64&amp;auto=format&amp;dpr=4&amp;q=23 4x,
+        https://web-dev.imgix.net/{{ data.image }}?fit=crop&amp;h=64&amp;w=64&amp;auto=format&amp;dpr=5&amp;q=20 5x
+      "
+      class="w-author__image"
+    />
+  </a>
+  <div
+    class="w-author__info"
+    style="display: flex; flex-direction: column; justify-content: center"
+  >
+    <cite class="w-author__name">
+      <a href="{{ data.url }}" class="w-author__name-link">{{ data.name }}</a>
+    </cite>
+    <ul class="w-author__link-list">
+      {% for link in data.links %}
+      <li class="w-author__link-listdata">
+        <a href="{{ link.url }}" class="w-author__link">{{ link.text }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

@@ -18,7 +18,7 @@ By using landmark elements,
 you can dramatically improve the navigation experience on your site
 for users of assistive technology.
 Learn more in Deque University's
-[HTML 5 and ARIA Landmarks](https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html).
+[HTML 5 and ARIA Landmarks](https://dequeuniversity.com/rules/axe/4.1/landmark-one-main).
 
 ## How to manually check landmarks
 

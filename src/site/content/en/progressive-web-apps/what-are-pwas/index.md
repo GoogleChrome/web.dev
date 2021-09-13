@@ -58,7 +58,7 @@ experience that feels like a platform-specific application.
 The web is quite capable in its own right today. For example, you can build a hyper-local
 video chat app using WebRTC, geolocation, and push notifications. You can make
 that app installable and take those conversations virtual with WebGL and WebVR.
-With the introduction of Web Assembly, developers can tap into other ecosystems,
+With the introduction of WebAssembly, developers can tap into other ecosystems,
 like C, C++, and Rust, and bring decades of work and capabilities to the web
 too. [Squoosh.app](https://squoosh.app/), for instance, leverages this for its
 advanced image compression.
@@ -70,7 +70,7 @@ file system access, media controls, app badging, and full clipboard support. All
 of these capabilities are built with the web's secure, user-centric permission
 model, ensuring that going to a website is never a scary proposition for users.
 
-Between modern APIs, Web Assembly, and new and upcoming APIs, web applications
+Between modern APIs, WebAssembly, and new and upcoming APIs, web applications
 are more capable than ever, and those capabilities are only growing.
 
 ### Reliable

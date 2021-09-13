@@ -407,7 +407,7 @@ queries and scoped styles are so important. They give you the opportunity to
 silo component styles from page layout and global styles, and user styles,
 enabling more resilient responsive design. This means you can now design macro
 layouts using page-based media queries, including screen-spanning nuances. At
-the same time using micro layouts with container queries on the components,and
+the same time using micro layouts with container queries on the components, and
 add user-preference based media queries to customize user experiences based on
 their unique preferences and need.
 

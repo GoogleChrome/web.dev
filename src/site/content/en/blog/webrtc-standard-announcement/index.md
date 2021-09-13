@@ -61,7 +61,7 @@ WebRTC supports various audio codecs, with Opus being the most used and versatil
 implementations are required to support both Google's free-to-use VP8 video codec and H.264 for
 processing video. WebRTC connections are always encrypted, which is achieved through two existing
 protocols: DTLS and SRTP.  WebRTC leans heavily on existing standards and technologies, from video
-codecs (VP8,H264), network traversal (ICE), transport (RTP, SCTP), to media description protocols
+codecs (VP8, H264), network traversal (ICE), transport (RTP, SCTP), to media description protocols
 (SDP). This is tied together in over 50 RFCs.
 
 ## Use cases: when it's a matter of milliseconds {: #use-cases }
@@ -70,7 +70,7 @@ WebRTC is widely used in time-critical applications such as remote surgery, syst
 remote control of autonomous cars, and voice or video calls built on UDP where buffering is not
 possible. Nearly all browser-based video callings services from companies such as Google, Facebook,
 Cisco, RingCentral, and Jitsi use WebRTC. Google Stadia and NVIDIA GeForce NOW use WebRTC to get the
-stream of gameplay from the cloud to the web browser without perceivable delay. 
+stream of gameplay from the cloud to the web browser without perceivable delay.
 
 ## Pandemic puts focus on video calling performance {: #performance }
 

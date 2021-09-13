@@ -8,7 +8,7 @@
   @include bp(md) {
     color: $PRIMARY_TEXT_COLOR;
 
-    &.w-toc__active,
+    &.w-scroll-spy__active,
     &:hover {
       color: $WEB_PRIMARY_COLOR;
     }
@@ -17,12 +17,6 @@
 
 @mixin TOC_PADDING {
   padding: 0 24px;
-}
-
-.w-toc__border {
-  border-left: 3px solid $WEB_PRIMARY_COLOR;
-  margin-left: -24px;
-  padding-left: 21px;
 }
 
 main.w-toc-open {
@@ -39,6 +33,27 @@ main.w-toc-open {
 
 web-table-of-contents {
   display: none;
+
+  h2 {
+    line-height: 32px;
+  }
+
+  .w-scroll-spy__active {
+    position: relative;
+    display: inline-block;
+  }
+
+  .w-scroll-spy__active::before {
+    content: '';
+    display: inline-block;
+    border-left: 3px solid $WEB_PRIMARY_COLOR;
+    margin-left: -24px;
+    padding-left: 21px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
   &[opened] {
     background-color: $WHITE;
@@ -112,6 +127,10 @@ web-table-of-contents-button {
 
   @include bp(sm) {
     height: calc(100% - 32px);
+  }
+
+  a {
+    display: inline-block;
   }
 }
 

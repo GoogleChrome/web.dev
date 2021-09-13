@@ -4,7 +4,7 @@ title: A guide to enable cross-origin isolation
 authors:
   - agektmr
 date: 2021-02-09
-updated: 2021-05-06
+updated: 2021-08-05
 subhead: |
   Cross-origin isolation enables a web page to use powerful features such as
   SharedArrayBuffer. This article explains how to enable cross-origin
@@ -20,10 +20,9 @@ tags:
 This guide shows you how to enable cross-origin isolation. Cross-origin
 isolation is required if you want to use
 [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer),
-[`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/),
-[high resolution timer with better
-precision](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/),
-or the JS Self-Profiling API.
+[`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/)
+or [high resolution timer with better
+precision](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/).
 
 If you intend to enable cross-origin isolation, evaluate the impact this will
 have on other cross-origin resources on your website, such as ad placements.
@@ -138,7 +137,8 @@ from being able to communicate with popup windows.
 We've been exploring ways to deploy `Cross-Origin-Resource-Policy` at scale, as
 cross-origin isolation requires all subresources to explicitly opt-in. And we
 have come up with the idea of going in the opposite direction: [a new COEP
-"credentialless" mode](https://github.com/mikewest/credentiallessness/) that
+"credentialless"
+mode](https://developer.chrome.com/blog/coep-credentialless-origin-trial/) that
 allows loading resources without the CORP header by stripping all their
 credentials. We are figuring out the details of how it should work, but we hope
 this will lighten your burden of making sure the subresources are sending the
@@ -173,13 +173,15 @@ cross-origin resources:
 2. Set the `crossorigin` attribute in the HTML tag on top-level document if the
    resource is served with [CORS](/cross-origin-resource-sharing/) (for example,
    `<img src="example.jpg" crossorigin>`).
-3. If cross-origin resources loaded into iframes involve another layer of
+4. If you want to use powerful features such as `SharedArrayBuffer` inside a
+   loaded iframe, append `allow="cross-origin-isolated"` to the `<iframe>`. 
+4. If cross-origin resources loaded into iframes involve another layer of
    iframes, recursively apply steps described in this section before moving
    forward.
-4. Once you confirm that all cross-origin resources are opted-in, set the
+5. Once you confirm that all cross-origin resources are opted-in, set the
    `Cross-Origin-Embedder-Policy: require-corp` header on the cross-origin
    resources loaded into iframes.
-5. Make sure there are no cross-origin popup windows that require communication
+6. Make sure there are no cross-origin popup windows that require communication
    through `postMessage()`. There's no way to keep them working when
    cross-origin isolation is enabled. You can move the communication to another
    document that isn't cross-origin isolated, or use a different communication

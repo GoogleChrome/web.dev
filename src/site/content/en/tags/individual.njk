@@ -1,12 +1,13 @@
 ---
-layout: default
+layout: tags-individual
 title: Tags
 permalink: /{{lang}}/{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
 description: Our latest news, updates, and stories for developers
 renderData:
-  title: "{{ paged.title or title }}"
-  description: "{{ paged.description or description }}"
+  title: "{{ paged.title | i18n(locale) or title }}"
+  description: "{{ paged.description | i18n(locale) or description }}"
   rss: "{{ paged.href }}feed.xml"
+  hero: "{{ paged.data.hero }}"
 pagination:
   data: collections.tags
   size: 1
@@ -14,25 +15,3 @@ pagination:
   resolve: values
   addAllPagesToCollections: true
 ---
-{# *-landing-page classes are a holdover from devsite. #}
-{# It would be great to remove them as part of the v1 migration. #}
-<div class="tags-landing-page">
-  {# Make sure Actions are first in the tab order. #}
-  <div class="w-actions">
-    {% include 'partials/subscribe-action.njk' %}
-  </div>
-
-  <div class="w-layout-container w-pb--non">
-    <header class="w-page-header">
-      {% if paged.hero -%}
-        <img src="{{paged.hero.src}}" alt="" class="w-tags-page__image" width="{{paged.hero.width}}" height="{{paged.hero.height}}">
-      {%- endif %}
-      <h1 class="w-page-header__headline w-tags-page-header__headline {{'w-visually-hidden' if paged.hero.heroOnly}}">{{ renderData.title }}</h1>
-      <p class="w-page-header__copy">{{ renderData.description | safe }}</p>
-      <a href="{{ renderData.rss }}" target="_blank" class="w-tags-page__rss">
-        <img src="/images/icons/rss.svg" alt="RSS Feed" width="32" height="32">
-      </a>
-    </header>
-  </div>
-  {% include 'partials/paged.njk' %}
-</div>

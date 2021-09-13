@@ -40,12 +40,13 @@ class EventSchedule extends HTMLElement {
     /** @type import('../Tabs').Tabs */
     this._tabsElement = null;
 
-    // This just creates an element, we're not yet making it part of the DOM, so it's allowed here
-    // in the constructor.
+    // This just creates an element, we're not yet making it part of the DOM,
+    // so it's allowed here in the constructor.
 
-    this._modalElement = /** @type import('../EventScheduleModal').EventScheduleModal */ (document.createElement(
-      'web-event-schedule-modal',
-    ));
+    this._modalElement =
+      /** @type import('../EventScheduleModal').EventScheduleModal */ (
+        document.createElement('web-event-schedule-modal')
+      );
     this._modalElement.className = 'web-modal';
     this._modalElement.open = false;
     this._modalElement.addEventListener('close-modal', this.onCloseModal);

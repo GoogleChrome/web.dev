@@ -84,7 +84,7 @@ rendered frame to the next. (See below for details on how individual [layout
 shift scores](#layout-shift-score) are calculated.)
 
 A burst of layout shifts, known as a [_session
-window_](evolving-cls/#why-a-session-window), is when one or more individual
+window_](/evolving-cls/#why-a-session-window), is when one or more individual
 layout shifts occur in rapid succession with less than 1-second in between each
 shift and a maximum of 5 seconds for the total window duration.
 
@@ -288,6 +288,9 @@ content that moves gradually and naturally from one position to the next can
 often help the user better understand what's going on, and guide them between
 state changes.
 
+Be sure to respect [`prefers-reduced-motion`](/prefers-reduced-motion/) browser settings, as some site visitors
+can experience ill effects or attention issues from animation.
+
 CSS [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
 property allows you to animate elements without triggering layout shifts:
 
@@ -441,6 +444,13 @@ for a complete example of how to measure CLS in JavaScript.
 {% endAside %}
 
 ## How to improve CLS
+
+{% Banner 'info', 'body' %}
+  **New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for
+  implementations of common UX patterns optimized for Core Web Vitals. This
+  collection includes patterns that are often tricky to implement without layout
+  shifts.
+{% endBanner %}
 
 For most websites, you can avoid all unexpected layout shifts by sticking to a
 few guiding principles:

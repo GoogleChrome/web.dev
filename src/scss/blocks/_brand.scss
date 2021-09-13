@@ -1,0 +1,26 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/brand
+.brand {
+  --gutter: 0.5rem;
+
+  svg {
+    width: 100%;
+    max-width: 8rem;
+  }
+
+  /// Sets the text color to be themeable
+  /// If the logo SVG changes, make sure this
+  /// pseudo-class is still accurate
+  svg > path:last-child {
+    fill: var(--color-brand-text);
+  }
+}
+
+.brand__byline {
+  font-size: get-size('size-2');
+  transform: translateY(-0.05ex); // Optical adjustment
+
+  @include apply-utility('font', 'brand');
+  @include apply-utility('leading', 'flat');
+  @include apply-utility('weight', 'medium');
+}

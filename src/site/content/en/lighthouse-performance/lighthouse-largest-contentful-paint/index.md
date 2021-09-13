@@ -5,6 +5,7 @@ description: |
   Learn about Lighthouse's Largest Contentful Paint metric and
   how to measure and optimize it.
 date: 2020-01-10
+updated: 2021-06-04
 web_lighthouse:
   - largest-contentful-paint
 ---
@@ -16,7 +17,7 @@ Each metric captures some aspect of page load speed.
 Lighthouse displays LCP in seconds:
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ptlIzgrai0ufjmZQv5Gz.png", alt="A screenshot of the Lighthouse Largest Contentful Paint audit", width="800", height="594", class="w-screenshot" %}
+  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/NcBzUBQFmSzhZaxshxLS.png", alt="A screenshot of the Lighthouse Largest Contentful Paint audit", width="800", height="592", class="w-screenshot" %}
 </figure>
 
 ## What LCP measures

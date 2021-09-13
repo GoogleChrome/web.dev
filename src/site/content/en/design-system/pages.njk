@@ -1,0 +1,21 @@
+---
+title: 'Page'
+pagination:
+  data: design.pages
+  size: 1
+  addAllPagesToCollections: true
+  alias: item
+permalink: '{{ item.link }}/index.html'
+pageScripts:
+  - '/js/design-system.js'
+---
+
+{% set pageTitle = item.title %}
+
+<!--prettier-ignore-->
+{% extends "design-system.njk" %}
+{% from 'macros/design-system-pattern.njk' import designSystemPattern with context %}
+
+{% block inner %}
+  {{ designSystemPattern(item.url, null, null, 'tall') }} 
+{% endblock %}

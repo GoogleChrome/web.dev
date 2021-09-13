@@ -43,7 +43,7 @@ $BORDER_COLOR: $GREY_300;
     padding: 2px;
     position: absolute;
     right: 1px;
-    speak: none;
+    speak: never;
     top: 50%;
     transform: translateY(-50%);
     transition: background $TRANSITION_SPEED;

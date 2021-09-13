@@ -7,6 +7,7 @@ description: |
 web_lighthouse:
   - total-blocking-time
 date: 2019-10-09
+updated: 2021-06-04
 ---
 
 Total Blocking Time (TBT) is one of the metrics tracked in the **Performance** section
@@ -15,7 +16,7 @@ of the Lighthouse report. Each metric captures some aspect of page load speed.
 The Lighthouse report displays TBT in milliseconds:
 
 <figure class="w-figure">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5mK1Vac6rk9cJHMNfZh2.jpg", alt="A screenshot of the Lighthouse Total Blocking Time audit", width="800", height="556", class="w-screenshot" %}
+  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wk3OTIdxFPoUImDCnjic.png", alt="A screenshot of the Lighthouse Total Blocking Time audit", width="800", height="592", class="w-screenshot" %}
 </figure>
 
 ## What TBT measures
@@ -29,8 +30,9 @@ the blocking portion would be 20&nbsp;ms.
 
 ## How Lighthouse determines your TBT score
 
-Your TBT score is a comparison of your page's TBT time and TBT times for the top 10,000 sites
-when loaded on mobile devices. The top site data includes 404 pages.
+Your TBT score is a comparison of your page's TBT time and TBT times millions of real sites
+when loaded on mobile devices. See [How metric scores are determined](/performance-scoring/#metric-scores)
+to learn how Lighthouse score thresholds are set.
 
 This table shows how to interpret your TBT score:
 
@@ -44,11 +46,11 @@ This table shows how to interpret your TBT score:
     </thead>
     <tbody>
       <tr>
-        <td>0–300</td>
+        <td>0–200</td>
         <td>Green (fast)</td>
       </tr>
       <tr>
-        <td>300-600</td>
+        <td>200-600</td>
         <td>Orange (moderate)</td>
       </tr>
       <tr>
@@ -87,6 +89,7 @@ In general, the most common causes of long tasks are:
 
 - [Source code for **Total Blocking Time** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/total-blocking-time.js)
 - [Are long JavaScript tasks delaying your Time to Interactive?][long tasks]
+- [Optimize First Input Delay][optimize fid]
 - [First Contentful Paint][fcp]
 - [Time to Interactive][tti]
 - [Reduce JavaScript payloads with code splitting][split]
@@ -94,6 +97,7 @@ In general, the most common causes of long tasks are:
 - [Efficiently load third-party resources][3p]
 
 [long tasks]: /long-tasks-devtools
+[optimize fid]: /optimize-fid
 [fcp]: /first-contentful-paint/
 [tti]: /interactive/
 [split]: /reduce-javascript-payloads-with-code-splitting/

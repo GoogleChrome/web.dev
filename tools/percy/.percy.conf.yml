@@ -5,6 +5,9 @@ snapshot:
     iframe {
       display: none !important;
     }
+    img.shows-card {
+      display: none !important;
+    }
     video {
       visibility: hidden !important;
     }

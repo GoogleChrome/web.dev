@@ -1,0 +1,7 @@
+<ul class="status-list" data-state="{{ data.state }}">
+  {% for item in data.items %}
+    <li>
+      <a href="{{ item.url }}">{{ item.text }}</a>
+    </li>
+  {% endfor %}
+</ul>

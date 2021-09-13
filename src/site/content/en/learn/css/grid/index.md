@@ -62,8 +62,8 @@ Grid comes with a bunch of new terminology as it's the first time CSS has had a 
 
 A grid is made up of lines,
 which run horizontally and vertically.
-If your grid has three columns,
-it will have four column lines including the one after the last column.
+If your grid has four columns,
+it will have five column lines including the one after the last column.
 
 Lines are numbered starting from 1,
 with the numbering following the writing mode and script direction of the component.
@@ -644,7 +644,7 @@ footer {
 }
 ```
 
-The name can be anything you like other than the keyword `span`.
+The name can be anything you like other than the keywords `auto` and `span`.
 Once all of your items are named,
 use the
 [`grid-template-areas`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas)
@@ -804,7 +804,7 @@ instead the items are being moved around inside the defined area.
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'rNjjMVd',
+  id: 'YzZOOXB',
   height: 650
 } %}
 
