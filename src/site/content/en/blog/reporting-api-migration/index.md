@@ -40,8 +40,6 @@ _Reporting API v1_. {% endAside %}
 (`Reporting-Endpoints`), but keep the legacy header around for some time (`Report-To`).
 **See [Migration: example code](#migration:-example-code).**
 
-
-
 **If you're adding reporting functionality to your site just now**: use only the new header
 (`Reporting-Endpoints`).
 
@@ -66,7 +64,6 @@ If you use [Network Error Logging](https://w3c.github.io/network-error-logging/)
 A new mechanism for Network Error Logging will be developed. Once that becomes available, switch from Reporting API v0 to that new mechanism.
 should be used. At the time of this writing, this new mechanism is not shipped yet.
 
-
 ## Demo and code
 
 - [Demo site: new reporting API (v1)](https://reporting-api-demo.glitch.me)
@@ -84,8 +81,9 @@ should be used. At the time of this writing, this new mechanism is not shipped y
   Report-To: { group: "main-endpoint", "max_age": 86400, "endpoints": [ { "url": ... }, { "url": ... }] }, { group: "default-endpoint", "max_age": 86400, "endpoints": [ { "url": ... }, { "url": ... }] }
   ```
 
-  {% CompareCaption %} v0 uses the `Report-To` header to configure **named endpoint groups**. {%
-  endCompareCaption %}
+  {% CompareCaption %}
+  v0 uses the `Report-To` header to configure **named endpoint groups**.
+  {% endCompareCaption %}
 
   {% endCompare %}
 
@@ -95,8 +93,11 @@ should be used. At the time of this writing, this new mechanism is not shipped y
   Reporting-Endpoints: main-endpoint="https://reports.example/main", default="https://reports.example/default"
   ```
 
-  {% CompareCaption %} v1 uses the `Reporting-Endpoints` header to configure **named endpoints**. {%
-  endCompareCaption %} {% endCompare %}
+  {% CompareCaption %}
+  v1 uses the `Reporting-Endpoints` header to configure **named
+  endpoints**.
+  {% endCompareCaption %}
+  {% endCompare %}
 
 - The scope of the report is different.
 
@@ -112,8 +113,7 @@ should be used. At the time of this writing, this new mechanism is not shipped y
   With v1, you need to set the `Reporting-Endpoints` header on all responses that might generate
   reports. {% endCompare %}
 
-- Both APIs support the same report types, with one exception: v1 does not support **Network Error
-  reports**. Read more in the [migration steps](#migration-steps).
+- Both APIs support the same report types, with one exception: v1 does not support **Network Error reports**. Read more in the [migration steps](#migration-steps).
 - v0 is not and will not be supported across browsers. v1 is more likely to be supported across
   multiple browsers in the future.
 
@@ -373,8 +373,7 @@ Reporting-Endpoints: main-endpoint="https://reports.example/main", default="http
 
 {% CompareCaption %}
 
-This is what your code can look like in the future, once most Chrome and Edge clients have been
-updated and support the API v1.
+This is what your code can look like in the future, once most Chrome and Edge clients have been updated and support the API v1.
 
 {% endCompareCaption %}
 
@@ -421,8 +420,8 @@ app.get("/page1", (request, response) => {
 });
 ```
 
-{% CompareCaption %} With v1, you need to set the `Reporting-Endpoints` header on all responses that
-might generate reports. {% endCompareCaption %}
+{% CompareCaption %} With v1, you need to set the `Reporting-Endpoints` header on all
+responses that might generate reports. {% endCompareCaption %}
 
 {% endCompare %}
 
@@ -464,8 +463,7 @@ However, in this example the Reporting API v0 is used (`Report-To` header). Migr
 
 {% endCompare %}
 
-{% Compare 'better', 'New code, with `report-uri` *and* the `report-to` directive with the
-`Reporting-Endpoints` (v1) header' %}
+{% Compare 'better', 'New code, with `report-uri` *and* the `report-to` directive with the `Reporting-Endpoints` (v1) header' %}
 
 ```http
 Content-Security-Policy: ...; report-uri https://reports.example/main; report-to main-endpoint
@@ -488,11 +486,11 @@ visitors have upgraded to 96+ browser versions, remove `Report-To`.
 
 ## Further reading
 
-- [Monitor your web application with the Reporting API](/reporting-api) (main post on the Reporting
-  API)
+- [Monitor your web application with the Reporting API](/reporting-api) (main post on the Reporting API)
 - [Specification: legacy Reporting API (v0)](https://www.w3.org/TR/reporting/)
 - [Specification: new Reporting API (v1)](https://w3c.github.io/reporting/)
 
 _Hero image by [Nine Koepfer / @enka80](https://unsplash.com/@enka80) on
-[Unsplash](https://unsplash.com/photos/tJC6I9S3nBw), edited._ _With many thanks to Ian Clevelland,
-Eiji Kitamura and Milica Mihajlija for their reviews and suggestions on this article._
+[Unsplash](https://unsplash.com/photos/tJC6I9S3nBw), edited._ _With many thanks to Ian
+Clevelland, Eiji Kitamura and Milica Mihajlija for their reviews and suggestions on this
+article._

@@ -337,8 +337,8 @@ that the framed site would have to make.
 
 {% Aside 'gotchas' %}
 
-In Chrome DevTools, you'll see a console error or warning pop-up for violations that are
-committed by third-party script but also by third-party iframes.
+In Chrome DevTools, you'll see a console error or warning pop up for violations that are
+committed by third-party scripts but also by third-party iframes.
 
 {% endAside %}
 
@@ -453,6 +453,8 @@ want to receive intervention, deprecation and crash reports.
 - **Deprecation**, **intervention**, and **crash** reports are only sent to the endpoint
   named `default`. If the `Reporting-Endpoints` header defines no `default` endpoint,
   reports of this type won't ever be sent (although they will be generated).
+- Relative paths are not supported; an endpoint URLs must start with a slash (`/`).
+- Cross-origin URLs are supported, but in that case credentials are not sent with the reports.
 - `default` is **not** a fallback endpoint. For example, if you set up `report-to my-endpoint` for
   `Document-Policy` and omit to define `my-endpoint` in `Reporting-Endpoints`,
   `Document-Policy` violations reports of this type won't ever be sent (although they will
