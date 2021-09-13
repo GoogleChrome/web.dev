@@ -562,7 +562,7 @@ document.addEventListener('mousewheel', preventEverything, { capture: true, pass
 I don't really know why you'd ever want to do this (except maybe to play a joke on someone), but it
 is useful to think about what's happening here, and realize why it creates the situation it does.
 
-All events originate at the document, so in this snippet, we're stopping, dead in their tracks, all
+All events originate at `window`, so in this snippet, we're stopping, dead in their tracks, all
 `click`, `keydown`, `mousedown`, `contextmenu`, and `mousewheel` events from ever getting to any
 elements that might be listening for them. We also call `stopImmediatePropagation` so that any
 handlers wired up to the document after this one, will be thwarted as well.
