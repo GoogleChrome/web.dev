@@ -360,7 +360,7 @@ output:
 You can interactively play with this in the live demo below. Click on the `#C` element in the live demo and observe the console output.
 
 <div style="height: 680px; width: 100%;">
-  <iframe src="https://silicon-brawny-cardinal.glitch.me/stop-propagation-capturing-C.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
+  <iframe src="https://silicon-brawny-cardinal.glitch.me/stop-propagation-bubbling-A.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 
 One more, just for fun. What happens if we call `stopPropagation()` in the _target phase_ for `#C`?
@@ -390,7 +390,7 @@ event's propagation will cease.
 You can interactively play with this in the live demo below. Click on the `#C` element in the live demo and observe the console output.
 
 <div style="height: 680px; width: 100%;">
-  <iframe src="https://silicon-brawny-cardinal.glitch.me/stop-propagation-bubbling-A.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
+  <iframe src="https://silicon-brawny-cardinal.glitch.me/stop-propagation-capturing-C.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 
 In any of these live demos, I encourage you to play around. Try clicking on the `#A` element only or
