@@ -100,9 +100,9 @@ Indent using two spaces.
 Always use straight quotes. (Readers often copy code directly from the site, and smart quotes can break code.)
 
 {% Compare 'worse' %}
-`const imagemin = require(‘imagemin’);`
+<code>const imagemin = require(‘imagemin’);</code>
 {% endCompare %}
 
 {% Compare 'better' %}
-`const imagemin = require('imagemin');`
+<code>const imagemin = require('imagemin');</code>
 {% endCompare %}

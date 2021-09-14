@@ -213,7 +213,7 @@ Along with case operators,
 you have access to operators that match portions of strings inside attribute values.
 
 ```css
-/* A href that contains “example.com” */
+/* A href that contains "example.com" */
 [href*='example.com'] {
   color: red;
 }
