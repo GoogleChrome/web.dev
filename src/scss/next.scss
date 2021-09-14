@@ -13,6 +13,7 @@ $generate-utility-classes: false;
 /// GLOBAL VARIABLES
 /// Global variables that should be accessible in all authored CSS
 $global-gutter: map-get($gorko-space-scale, 'size-1');
+$global-stroke: 1px solid get-utility-value('color', 'stroke');
 
 // NOTE: there are more design token-led global variables in _tokens.scss
 
@@ -327,6 +328,220 @@ pre > code {
   -webkit-overflow-scrolling: touch;
 }
 
+/// Sub and sup
+sub,
+sup {
+  font-size: 0.6em;
+  vertical-align: baseline;
+}
+
+sup {
+  position: relative;
+  top: -1ex;
+}
+
+/// Details and summary
+details:not([class]) {
+  @extend .flow;
+
+  --flow-space: 0.5em;
+
+  max-width: 75ch;
+  border-block: 1px solid get-utility-value('bg', 'stroke');
+  padding: 1.3rem 0.5rem 1.6rem 0.5rem;
+}
+
+details:not([class]) summary {
+  position: relative;
+  font-size: get-size('size-3');
+  list-style: none;
+  cursor: pointer;
+
+  @include apply-utility('color', 'action-text');
+  @include apply-utility('weight', 'regular');
+  @include apply-utility('leading', 'flat');
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  /// A custom marker
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+  }
+
+  &::before {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: get-utility-value('bg', 'highlight-interact-bg');
+    inset-inline-end: 0;
+    inset-block-start: -2px;
+  }
+
+  &::after {
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    inset-block-start: 9px;
+    inset-inline-end: 12px;
+    transform: rotate(45deg);
+  }
+
+  /// The marker handles our focus state for us
+  &:focus {
+    outline: none;
+
+    &::before {
+      outline: 1px solid currentColor;
+    }
+  }
+
+  &:hover {
+    &::before {
+      filter: invert(0.05);
+    }
+  }
+}
+
+details[open]:not([class]) summary {
+  &::after {
+    inset-block-start: 11px;
+    transform: rotate(-135deg);
+  }
+}
+
+details:not([class]) summary + * {
+  @include apply-utility('flow-space', 'size-1');
+}
+
+/// Form fields
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea {
+  display: block;
+  width: 100%;
+  background-color: get-utility-value('bg', 'core-bg');
+  color: get-utility-value('color', 'core-text');
+  border: 1px solid get-utility-value('color', 'stroke');
+  font: inherit;
+  padding: 0.8em;
+  line-height: 1;
+  border-radius: $global-radius-base;
+}
+
+textarea {
+  &:not([rows]) {
+    min-height: 12rem;
+  }
+
+  @include apply-utility('leading', 'short');
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea,
+select {
+  max-width: 40rem;
+}
+
+select {
+  display: block;
+  width: 100%;
+  background-color: get-utility-value('bg', 'core-bg');
+  color: get-utility-value('color', 'core-text');
+  // Use an escaped svg to add a small grey arrow to the end of the select
+  // sass-lint:disable quotes
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10L12 15L17 10H7Z' fill='%235F6368'/%3E%3C/svg%3E%0A");
+  // Set the width of the arrow background image and let the height default to auto
+  background-size: 1.5em;
+  background-position: right 0.5em top 50%;
+  background-repeat: no-repeat;
+  border: $global-stroke;
+  border-radius: $global-radius-base;
+  font: inherit;
+  line-height: 1.1;
+  padding: 1em 3em 1em 0.8em;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:hover {
+  background-color: get-utility-value('bg', 'accent-bg');
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  position: relative;
+  border: none;
+  cursor: pointer;
+  margin: 0px;
+  background-size: cover;
+  appearance: none;
+  -webkit-appearance: none;
+
+  /// A material design-style "click" state
+  &::before {
+    content: '';
+    display: block;
+    width: 2.5em;
+    height: 2.5em;
+    background: get-utility-value('bg', 'mid-bg');
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: opacity $global-transition-fade 50ms,
+      background $global-transition-fade, transform $global-transition-movement;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &:hover:focus::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  &:checked::before {
+    background: get-utility-value('bg', 'highlight-interact-bg');
+  }
+}
+
+input[type='checkbox'] {
+  width: min(1.13em, 18px);
+  height: min(1.13em, 18px);
+
+  @include apply-utility('bg', 'checkbox');
+}
+
+input[type='checkbox']:checked {
+  @include apply-utility('bg', 'checkbox-checked');
+}
+
+input[type='radio'] {
+  width: min(1.5em, 24px);
+  height: min(1.5em, 24px);
+
+  @include apply-utility('bg', 'radio');
+}
+
+input[type='radio']:checked {
+  @include apply-utility('bg', 'radio-checked');
+}
+
 /// Links
 
 a:link {
@@ -377,20 +592,28 @@ web-copy-code {
 
 /// BLOCKS
 @import 'blocks/aside';
+@import 'blocks/author';
 @import 'blocks/banner';
 @import 'blocks/brand';
+@import 'blocks/browser-compat';
 @import 'blocks/button';
+@import 'blocks/compare';
 @import 'blocks/fab';
+@import 'blocks/indicator';
 @import 'blocks/label';
 @import 'blocks/numbered-headers';
+@import 'blocks/pagination';
 @import 'blocks/skip-link';
 @import 'blocks/stack-nav';
+@import 'blocks/stats';
 @import 'blocks/status-list';
 @import 'blocks/table-wrapper';
 @import 'blocks/toggle-switch';
+@import 'blocks/tooltip';
 
 /// UTILITY CLASSES
 @import 'utilities/all-center';
+@import 'utilities/avatar';
 @import 'utilities/flow';
 @import 'utilities/focus-ring';
 @import 'utilities/region';
