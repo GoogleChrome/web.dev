@@ -1,19 +1,9 @@
 name: Lighthouse CI
 
-# By default, runs when a pull_request's activity type is opened, synchronize,
-# or reopened and on main so comparisons to ancestors can be made.
 on:
   push:
     branches:
       - main
-  pull_request:
-    paths:
-      - '**.js'
-      - '!src/site/_data/contributors.js'
-      - '!src/site/_data/countries.js'
-      - 'package.json'
-      - '**.njk'
-      - '**.scss'
 
 jobs:
   lhci:
