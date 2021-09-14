@@ -24,7 +24,7 @@
   }
 
   a:hover {
-    @include apply-utility('bg', 'action-bg-hover');
+    @include apply-utility('bg', 'accent-bg');
   }
 
   svg {

@@ -214,6 +214,12 @@ surma:
   description:
     en: Our latest news, updates, and stories by Surma.
 
+stephenstchur:
+  title:
+    en: Stephen Stchur
+  description:
+    en: Our latest news, updates, and stories by Stephen Stchur.
+
 samthor:
   title:
     en: Sam Thorogood
@@ -1102,3 +1108,9 @@ dandclark:
     en: Dan Clark
   description:
     en: Developer on the Microsoft Edge Web Platform team
+
+michaelscharnagl:
+  title:
+    en: Michael Scharnagl
+  description:
+    en: Freelance front-end web developer

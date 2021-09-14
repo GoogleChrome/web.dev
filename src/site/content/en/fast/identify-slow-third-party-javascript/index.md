@@ -60,7 +60,7 @@ The Lighthouse [Avoid enormous network payloads](/total-byte-weight) audit ident
 
 ## Block network requests in Chrome DevTools
 
-Chrome DevTools [network request blocking](https://developers.google.com/web/updates/2017/04/devtools-release-notes#block-requests) allows you to see how your page behaves when a particular script, stylesheet, or other resource isn't available. After you identify third-party scripts that you suspect affect performance, measure how your load time changes by blocking the requests to those scripts.
+Chrome DevTools [network request blocking](https://developer.chrome.com/docs/devtools/network/#block) allows you to see how your page behaves when a particular script, stylesheet, or other resource isn't available. After you identify third-party scripts that you suspect affect performance, measure how your load time changes by blocking the requests to those scripts.
 
 To enable request blocking:
 {% Instruction 'devtools-network', 'ol' %}

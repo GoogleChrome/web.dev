@@ -222,6 +222,10 @@
     "glitch": "samthor",
     "image": "image/admin/XQIDJD6narW2eA4d141g.jpg"
   },
+  "stephenstchur": {
+    "country": "US",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/117HjdRQMScu0EouANUl.jpg"
+  },
   "rachelandrew": {
     "country": "GB",
     "homepage": "https://rachelandrew.co.uk/",
@@ -999,5 +1003,10 @@
     "github": "dandclark",
     "country": "US",
     "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/lYPo8w4ZwA465hg323uT.jpg"
+  },
+  "michaelscharnagl": {
+    "twitter": "justmarkup",
+    "country": "DE",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/OZvyDgCkUQAIA87UJV7A.jpg"
   }
 }
