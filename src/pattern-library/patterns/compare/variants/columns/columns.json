@@ -5,12 +5,12 @@
       {
         "type": "worse",
         "label": "Don’t",
-        "code": "```Bad code example```"
+        "content": "```Bad code example```"
       },
       {
         "type": "better",
         "label": "Do",
-        "code": "```good code example```"
+        "content": "```good code example```"
       }
     ]
   }

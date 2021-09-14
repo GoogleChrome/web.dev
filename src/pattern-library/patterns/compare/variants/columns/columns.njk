@@ -1,15 +1,16 @@
-<div class="switcher">
+<div class="w-columns">
   {% for item in data.items %}
-  <figure class="compare flow" data-type="{{ item.type }}">
-    <pre class="compare__code">{{ item.code | md | safe }}</pre>
-    <figcaption class="compare__caption">
-      <p class="compare__label">
-        {{ item.label }}
-      </p>
-      {% if item.caption %}
-        <p>— {{ item.caption | md | safe }}</p>
-      {% endif %}
+  <figure class="w-compare">
+    <p class="w-compare__label w-compare__label--{{ item.type }}">
+      {{ item.label }}
+    </p>
+    {{ item.content | md | safe }}
+
+    {% if item.caption %}
+    <figcaption class="w-compare__caption">
+      <p>{{ item.caption | md | safe }}</p>
     </figcaption>
+    {% endif %}
   </figure>
   {% endfor %}
 </div>

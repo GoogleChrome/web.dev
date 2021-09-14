@@ -1,8 +1,0 @@
-{
-  "title": "Textarea",
-  "context": {
-    "id": "myInput",
-    "label": "Message",
-    "name": "myInput"
-  }
-}

@@ -1,0 +1,43 @@
+<header class="w-author-page-header w-page-header">
+  <img
+    alt="{{ data.name }}"
+    class="w-author-page__image"
+    height="192"
+    src="https://web-dev.imgix.net{{ data.image }}?auto=format"
+    width="192"
+    loading="lazy"
+    decoding="async"
+    sizes="(min-width: 481px) 192px, 128px"
+    srcset="
+      https://web-dev.imgix.net{{ data.image }}?auto=format&amp;w=128 128w,
+      https://web-dev.imgix.net{{ data.image }}?auto=format&amp;w=146 146w,
+      https://web-dev.imgix.net{{ data.image }}?auto=format&amp;w=166 166w,
+      https://web-dev.imgix.net{{ data.image }}?auto=format&amp;w=190 190w,
+      https://web-dev.imgix.net{{ data.image }}?auto=format&amp;w=216 216w,
+      https://web-dev.imgix.net{{ data.image }}?auto=format&amp;w=246 246w,
+      https://web-dev.imgix.net{{ data.image }}?auto=format&amp;w=281 281w,
+      https://web-dev.imgix.net{{ data.image }}?auto=format&amp;w=320 320w,
+      https://web-dev.imgix.net{{ data.image }}?auto=format&amp;w=365 365w,
+      https://web-dev.imgix.net{{ data.image }}?auto=format&amp;w=384 384w
+    "
+  />
+  <h1 class="w-author-page-header__headline w-page-header__headline">
+    {{ data.name }}
+  </h1>
+  <p class="w-page-header__copy">
+    {{ data.bio }}
+  </p>
+  <div class="w-author-page__links">
+    {% for item in data.links %}
+    <a href="{{ item.url }}" class="w-author-page__link" target="_blank">
+      <img
+        alt="{{ item.text }}"
+        class="w-author-page__icon"
+        height="32"
+        src="{{ item.icon }}"
+        width="32"
+      />
+    </a>
+    {% endfor %}
+  </div>
+</header>

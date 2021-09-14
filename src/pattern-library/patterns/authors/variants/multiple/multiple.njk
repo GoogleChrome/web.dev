@@ -1,7 +1,7 @@
-<div class="cluster">
+<div class="w-authors">
   {% for item in data.items %}
-  <div class="author">
-    <a class="avatar" href="{{ item.url }}">
+  <div class="w-author">
+    <a href="{{ item.url }}">
       <img
         alt="{{ item.name }}"
         height="64"
@@ -19,15 +19,19 @@
           https://web-dev.imgix.net/{{ item.image }}?fit=crop&amp;h=64&amp;w=64&amp;auto=format&amp;dpr=4&amp;q=23 4x,
           https://web-dev.imgix.net/{{ item.image }}?fit=crop&amp;h=64&amp;w=64&amp;auto=format&amp;dpr=5&amp;q=20 5x
         "
+        class="w-author__image"
       />
     </a>
-    <div class="flow">
-      <cite class="author__name">
+    <div
+      class="w-author__info"
+      style="display: flex; flex-direction: column; justify-content: center"
+    >
+      <cite class="w-author__name">
         <a href="{{ item.url }}" class="w-author__name-link">{{ item.name }}</a>
       </cite>
-      <ul class="author__links cluster" role="list">
+      <ul class="w-author__link-list">
         {% for link in item.links %}
-        <li class="w-author__link-listdata">
+        <li class="w-author__link-listitem">
           <a href="{{ link.url }}" class="w-author__link">{{ link.text }}</a>
         </li>
         {% endfor %}

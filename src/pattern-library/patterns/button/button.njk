@@ -5,9 +5,6 @@
 >
   {% if data.icon %}
     {% include "icons/" ~ data.icon %}
-    <span>{{ data.text }}</span>
-  {% else %}
-  {{ data.text }}
   {% endif %}
-  
+  {{ data.text }}
 </button>

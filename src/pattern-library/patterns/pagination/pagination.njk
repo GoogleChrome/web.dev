@@ -1,15 +1,46 @@
-<nav class="pagination" aria-label="Pagination {{ data.statusText }}">
-  <div class="pagination__container">
-  {% if data.prev %}
-    <a class="button" href="#">{{ data.prev }}</a>
+<nav class="w-pagination">
+  {% if data.first %}
+  <a
+    class="w-pagination__link w-pagination__arrow w-pagination__arrow--first"
+    aria-label="First Page"
+    href="#"
+  ></a>
   {% endif %}
-  </div>
-  <div class="pagination__status" role="presentation" aria-hidden="true">
-    {{ data.statusText }}
-  </div>
-  <div class="pagination__container">
+  {% if data.previous %}
+  <a
+    class="w-pagination__link w-pagination__arrow w-pagination__arrow--previous"
+    aria-label="Previous Page"
+    href="#"
+  ></a>
+  {% endif %}
+  {% for item in data.items %}
+    {% if item == '...' %}
+
+    <span class="w-pagination__spacer">…</span>
+    {% else %}
+
+    <a
+      href="#"
+      class="w-pagination__link"
+      aria-label="Page {{ item }}"
+      {% if loop.index == 1 %}aria-current="page"{% endif %}
+      >{{ item}}
+    </a>
+    {% endif %}
+  {% endfor %}
   {% if data.next %}
-    <a class="button" href="#">{{ data.next }}</a>
+  <a
+    href="#"
+    class="w-pagination__link w-pagination__arrow w-pagination__arrow--next"
+    aria-label="Next Page"
+  >
+  </a>
   {% endif %}
-  </div>
+  {% if data.last %}
+  <a
+    href="#"
+    class="w-pagination__link w-pagination__arrow w-pagination__arrow--last"
+    aria-label="Last Page"
+  ></a>
+  {% endif %}
 </nav>

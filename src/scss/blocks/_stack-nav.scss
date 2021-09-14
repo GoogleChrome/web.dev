@@ -15,7 +15,7 @@
   }
 
   a:hover {
-    @include apply-utility('bg', 'accent-bg');
+    @include apply-utility('bg', 'action-bg-hover');
   }
 
   a[aria-current='page'] {

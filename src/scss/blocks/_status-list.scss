@@ -37,9 +37,7 @@
     transform: translateY(-50%) rotate(-45deg);
   }
 
-  /// The default state, by proxy, is good, but it results in simpler
-  /// code if we start with a cross, then modify that to become a checkmark
-  &:not([data-state='bad']) {
+  &[data-state='good'] {
     li::before,
     li::after {
       background: get-utility-value('color', 'state-good-text');
