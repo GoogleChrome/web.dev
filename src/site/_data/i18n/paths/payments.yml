@@ -8,6 +8,12 @@ overview:
   en: Web Payments aims to provide frictionless payment experience on the web. Learn how it works, its benefits, and get ready to integrate your payment app with Web Payments.
 
 topics:
+  basics:
+    en: Basics
+
+  web_payments:
+    en: Web Payments
+
   integrate_web_payments_into_your_payment_app:
     en: Integrate Web Payments into your payment app
 
