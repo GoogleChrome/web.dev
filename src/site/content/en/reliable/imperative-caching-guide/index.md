@@ -133,7 +133,7 @@ self.addEventListener('message', (event) => {
 });
 ```
 
-The `{type : ‘MSG_ID'}` attribute is not absolutely required, but it is one way to allow the page to
+The `{type : 'MSG_ID'}` attribute is not absolutely required, but it is one way to allow the page to
 send different types of instructions to the service worker (i.e. 'to prefetch' vs. 'to clear
 storage').  The service worker can branch into different execution paths based on this flag.
 
