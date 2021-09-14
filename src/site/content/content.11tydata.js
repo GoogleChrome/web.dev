@@ -6,7 +6,9 @@ module.exports = {
       // Add the following tags if necessary
       const originTrials = 'origin-trials';
 
-      if (!Array.isArray(data.tags)) {
+      if (typeof data.tags === 'string') {
+        data.tags = [data.tags];
+      } else if (!Array.isArray(data.tags)) {
         data.tags = [];
       }
 
