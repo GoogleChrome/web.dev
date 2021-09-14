@@ -13,16 +13,22 @@ exports.scheduledFirestoreExport = functions.pubsub
   .onRun(() => {
     const projectId = process.env.GCP_PROJECT || process.env.GCLOUD_PROJECT;
     const databaseName = client.databasePath(projectId, '(default)');
+    const collectionIds = [];
 
     return client
       .exportDocuments({
         name: databaseName,
         outputUriPrefix: bucket,
-        collectionIds: [],
+        collectionIds,
       })
       .then((responses) => {
         const response = responses[0];
         console.log(`Operation Name: ${response['name']}`);
+        console.log(
+          `Successfully backed up ${
+            collectionIds.length === 0 ? 'all' : collectionIds.join(', ')
+          } Firestore Collections for ${projectId}`,
+        );
       })
       .catch((err) => {
         console.error(err);
