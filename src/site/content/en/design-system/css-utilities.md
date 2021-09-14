@@ -144,7 +144,7 @@ of `display: none`, without the a11y issues.
 
 ```html
 <p class="visually-hidden">
-  You can’t see me, but a screen reader can still access me
+  You can't see me, but a screen reader can still access me
 </p>
 ```
 
