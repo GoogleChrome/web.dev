@@ -1,9 +1,7 @@
 if ('clipboard' in navigator && 'writeText' in navigator.clipboard) {
   document.addEventListener('click', async (event) => {
     if (
-      // @ts-ignore
-      !event.target.classList ||
-      // @ts-ignore
+      !(event.target instanceof Element) ||
       !event.target.classList.contains('w-headline-link')
     ) {
       return;
