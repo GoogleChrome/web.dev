@@ -1,5 +1,6 @@
-<button class="w-button--icon" data-icon="{{ data.icon }}">
-  <span class="w-tooltip {{ data.modifier }}" role="tooltip">{{
-    data.tooltip
-  }}</span>
-</button>
+<div class="tooltip" data-alignment="{{ data.modifier }}">
+  <button class="fab" aria-labelledby="{{ data.tooltipID }}">
+    {% include "icons/plus.svg" %}  
+  </button>
+  <span class="tooltip__content" role="tooltip" id="{{ data.tooltipID }}">{{ data.tooltip }}</span>
+</div>
