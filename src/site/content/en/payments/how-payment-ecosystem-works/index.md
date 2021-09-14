@@ -8,7 +8,7 @@ authors:
 date: 2018-09-10
 updated: 2021-09-14
 description: |
-Learn more about who is involved in the Web Payments ecosystem, how they interact with each other, and how you can participate.```
+Learn more about who is involved in the Web Payments ecosystem, how they interact with each other, and how you can participate.
 tags:
   - payments
 feedback:
