@@ -390,16 +390,16 @@ to display these results on each pull request.
         runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v1
-          - name: Use Node.js 10.x
+          - name: Use Node.js 12.x
             uses: actions/setup-node@v1
             with:
-              node-version: 10.x
+              node-version: 12.x
           - name: npm install
             run: |
               npm install
           - name: run Lighthouse CI
             run: |
-              npm install -g @lhci/cli@0.3.x
+              npm install -g @lhci/cli@0.8.x
               lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
     ```
 
@@ -472,8 +472,21 @@ The steps below explain how to set up a status check for Lighthouse CI.
 6.  Set the **Name** field to `LHCI_GITHUB_APP_TOKEN` and set the **Value**
     field to the token that you copied in the last step and then click the **Add
     secret** button.
+    
+7.  Expose the `LHCI_GITHUB_APP_TOKEN` secret to the environment of LHCI in 
+    GitHub Actions.
+  
+    ```yaml
+          - name: run Lighthouse CI
+            env:
+              LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+            run: |
+              npm install -g @lhci/cli@0.8.x
+              lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
+    ```
+    
 
-7.  The status check is ready for use. To test it, [create a new pull
+8.  The status check is ready for use. To test it, [create a new pull
     request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
     or push a commit to an existing pull request.
 
