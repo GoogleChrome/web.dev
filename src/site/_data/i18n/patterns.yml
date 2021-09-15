@@ -5,3 +5,7 @@ all_patterns:
 other_patterns:
   en: Other patterns
   es: Otros patrones
+
+all:
+  en: All
+  es: Todos

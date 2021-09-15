@@ -135,6 +135,11 @@ pageScripts:
       {# <input type="text" placeholder="filter"/> #}
     </div>
     <nav class="code-patterns-nav__sets">
+      {% if currentPatternSet %}
+        <a href="/patterns/{{patternSuite.id}}">All</a>
+      {% else %}
+        <a class="selected" href="/patterns/{{patternSuite.id}}">All</a>
+      {% endif %}
       {% for setId, set in patterns.sets %}
         {% if set.suite == patternSuite.id %}
           {% if setId == currentPatternSet.id %}
