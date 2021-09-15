@@ -1,11 +1,10 @@
-name: Lint and test
+name: Lint
 
-# By default, runs when a pull request is opened, synchronized, or reopened.
 on: pull_request
 
 jobs:
-  lint_and_test:
-    name: Lint and test
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
     env:
       NODE_OPTIONS: --max_old_space_size=4096
@@ -34,12 +33,8 @@ jobs:
               - '**/*.js'
             json:
               - '**/*.json'
-            yml:
-              - '**/*.yml'
             scss:
               - '**/*.scss'
-            njk:
-              - '**/*.njk'
 
       # Use the filter to check if files with a specific file type were changed
       # in the PR. If they were, run the relevant linters. Otherwise, skip.
@@ -48,15 +43,10 @@ jobs:
         if: ${{ steps.filter.outputs.md == 'true' }}
         run: npm run lint:md
 
-      # - name: Lint JavaScript
-      #   if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' }}
-      #   run: npm run lint:js
+      - name: Lint JavaScript
+        if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' }}
+        run: npm run lint:js
 
       - name: Lint SCSS
         if: ${{ steps.filter.outputs.scss == 'true' }}
         run: npm run lint:scss
-
-      # Only run tests if the PR touches behavior related files.
-      - name: Test
-        if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' || steps.filter.outputs.yml == 'true' || steps.filter.outputs.njk == 'true'}}
-        run: npm run test
