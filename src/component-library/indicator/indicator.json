@@ -1,0 +1,29 @@
+{
+  "title": "Indicator",
+  "keyLinks": [
+    {
+      "label": "Sass File",
+      "url": "https://github.com/GoogleChrome/web.dev/tree/main/src/scss/blocks/_indicator.scss"
+    }
+  ],
+  "context": {
+    "count": "99",
+    "utilities": "bg-state-info-bg color-state-info-text"
+  },
+  "variants": [
+    {
+      "name": "success",
+      "title": "Success state",
+      "context": {
+        "utilities": "bg-state-good-bg color-state-good-text"
+      }
+    },
+    {
+      "name": "error",
+      "title": "Error state",
+      "context": {
+        "utilities": "bg-state-bad-bg color-state-bad-text"
+      }
+    }
+  ]
+}

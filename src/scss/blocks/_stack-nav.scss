@@ -1,25 +1,65 @@
-/// PATTERN LIBRARY LOCATION
-/// https://web.dev/design-system/pattern/stack-nav
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/stack-nav
 .stack-nav {
   padding: 0;
+}
+
+.stack-nav {
+  --gutter: 0.5rem #{$global-gutter};
 
   a {
-    display: block;
-    line-height: 1;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    line-height: 1.1;
     padding: 1rem $global-gutter;
     text-decoration: none;
 
     @include apply-utility('bg', 'action-bg-alt');
     @include apply-utility('color', 'action-text-alt');
-    @include vertically-align-label();
+
+    &:not([class]) {
+      display: block; // For if there's no composition class added
+    }
   }
 
   a:hover {
-    @include apply-utility('bg', 'action-bg-hover');
+    @include apply-utility('bg', 'accent-bg');
+  }
+
+  svg {
+    width: 0.9em;
+    height: 0.9em;
+    flex: none;
+
+    @include apply-utility('color', 'mid-text');
   }
 
   a[aria-current='page'] {
     @include apply-utility('bg', 'active-bg');
     @include apply-utility('color', 'active-text');
+
+    svg {
+      color: currentColor;
+    }
   }
+}
+
+.stack-nav__meta {
+  transform: translateY(0.1ex); /// optical adjustment
+  flex: none;
+
+  @include apply-utility('color', 'mid-text');
+  @include apply-utility('font', 'mono');
+  @include apply-utility('text', 'size-0');
+
+  [aria-current='page'] & {
+    color: currentColor;
+  }
+}
+
+.stack-nav__heading {
+  font-size: get-size('size-2');
+  padding-inline-start: $global-gutter;
+
+  @include apply-utility('gap-top', 'size-1');
 }

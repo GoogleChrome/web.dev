@@ -1,0 +1,13 @@
+<ul class="stats auto-grid {{ data.utilities }}">
+  {% for item in data.items %}
+  <div class="stats__item flow">
+    <p class="font-brand text-size-6">
+      {{ item.stat }}
+      {% if item.sub %}
+      <sub>{{ item.sub }}</sub>
+      {% endif %}
+    </p>
+    <p>{{ item.desc }}</p>
+  </div>
+  {% endfor %}
+</ul>
