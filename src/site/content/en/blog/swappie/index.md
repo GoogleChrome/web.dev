@@ -25,7 +25,7 @@ an uptick in mobile revenue.
 
 <div class="w-stats">
   <div class="w-stat">
-    <p class="w-stat__figure">40<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__figure">42<sub class="w-stat__sub">%</sub></p>
     <p class="w-stat__desc">Increase in revenue coming from mobile visitors</p>
   </div>
   <div class="w-stat">
