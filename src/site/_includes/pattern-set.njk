@@ -115,7 +115,7 @@ pageScripts:
           {% for patternId, pattern in patterns.patterns %}
             {% if pattern.set == patternSetId %}
               {% Details %}
-                {% DetailsSummary %}
+                {% DetailsSummary 'h3' %}
                 {{pattern.title}}
                 {% endDetailsSummary %}
                 {% CodePattern pattern.id %}
@@ -138,7 +138,7 @@ pageScripts:
           {% endif %}
           {% set first = false %}
           {% Details %}
-            {% DetailsSummary %}
+            {% DetailsSummary 'h3' %}
             {{pattern.title}}
             {% endDetailsSummary %}
             {% CodePattern pattern.id %}
