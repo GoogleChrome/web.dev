@@ -121,10 +121,10 @@ pageScripts:
                 {{pattern.title}}
                 {% endDetailsSummary %}
                 {% CodePattern pattern.id %}
-                <p>{{ pattern.description | safe }}
-                <br>
-                <a href="/patterns/{{pattern.id}}">Learn more</a>
-                <p>
+                {% if pattern.description %}
+                  <p>{{ pattern.description | safe }}</p>
+                {% endif %}
+                <p class="code-patterns__more"><a href="/patterns/{{pattern.id}}">Learn more</a></p>
               {% endDetails %}
             {% endif %}
           {% endfor %}
@@ -144,10 +144,10 @@ pageScripts:
             {{pattern.title}}
             {% endDetailsSummary %}
             {% CodePattern pattern.id %}
-            <p>{{ pattern.description | safe }}
-            <br>
-            <a href="/patterns/{{pattern.id}}">Learn more</a>
-            <p>
+            {% if pattern.description %}
+              <p class="code-patterns__description">{{ pattern.description | safe }}</p>
+            {% endif %}
+            <p class="code-patterns__more"><a href="/patterns/{{pattern.id}}">Learn more</a></p>
           {% endDetails %}
         {% endif %}
       {% endfor %}

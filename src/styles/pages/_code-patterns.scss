@@ -19,8 +19,15 @@
 
   .w-details > p:first-of-type {
     // Reset forced details margin.
-    @include w-article-text();
+    @include w-body-text();
+    margin: 18px 0 0 0;
   }
+}
+
+
+.code-patterns__more {
+  @include w-body-text();
+  margin: 0;
 }
 
 .code-patterns-nav--top {
