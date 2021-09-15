@@ -1,6 +1,6 @@
 ---
 pagination:
-  data: design.patterns.items
+  data: design.components.items
   size: 1
   addAllPagesToCollections: true
   alias: item
@@ -9,9 +9,9 @@ pageScripts:
   - '/js/design-system.js'
 ---
 
-{% from 'macros/design-system-pattern.njk' import designSystemPattern with context %}
+{% from 'macros/design-system-component.njk' import designSystemComponent with context %}
 
-{% set pageTitle = item.data.title ~ ' - Pattern' %}
+{% set pageTitle = item.data.title ~ ' - Component' %}
 {% extends "design-system.njk" %}
 
 {% block inner %}
@@ -25,7 +25,7 @@ pageScripts:
   {% endif %}
 
   <div class="region"> 
-   {{ designSystemPattern(item.previewUrl, item.markup, item.rendered) }} 
+   {{ designSystemComponent(item.previewUrl, item.markup, item.rendered) }} 
   </div>
 
   {% if item.docs %}
@@ -50,7 +50,7 @@ pageScripts:
     {% for variant in item.variants %}
     <h3 id="{{ variant.data.title | slug }}">{{ variant.data.title }}</h3>
     <div class="flow-space-size-1">
-      {{ designSystemPattern(variant.previewUrl, variant.markup, variant.rendered) }} 
+      {{ designSystemComponent(variant.previewUrl, variant.markup, variant.rendered) }} 
     </div>
     {% endfor %}
   {% endif %}

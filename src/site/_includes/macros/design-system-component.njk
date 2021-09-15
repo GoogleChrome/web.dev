@@ -1,5 +1,5 @@
 <!-- The design-system top-level class is the scss/pages/_design-system.scss page -->
-{% macro designSystemPattern(previewUrl, markup, rendered, size) %}
+{% macro designSystemComponent(previewUrl, markup, rendered, size) %}
 <div class="flow">
   <iframe class="design-system__preview-frame" src="{{ previewUrl }}?state=window" data-size="{{ size if size else 'standard' }}"></iframe>
   <div class="box-flex flex-justify-end">

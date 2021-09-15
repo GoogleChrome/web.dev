@@ -41,9 +41,9 @@
               <li>{{ stackLink(link.url, page.url, link.text)}}</li>
             {% endfor %}
           </ul>
-          <h2 class="text-size-3 pad-inline-size-1 flow-space-size-2">Patterns</h2>
+          <h2 class="text-size-3 pad-inline-size-1 flow-space-size-2">Component Library</h2>
           <ul class="stack-nav" role="list">
-            {% for item in design.patterns.items %}
+            {% for item in design.components.items %}
               <li>{{ stackLink(item.url, page.url, item.data.title) }}</li>
             {% endfor %}
           </ul>

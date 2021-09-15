@@ -28,9 +28,9 @@ nunjucksEnv.addFilter('md', md);
 let processedItems = [];
 
 module.exports = {
-  // Grabs all patterns that it can find at the root level then builds up a dataset,
+  // Grabs all components that it can find at the root level then builds up a dataset,
   // rendered markup, view markup and docs. Lastly, it finds any variants and makes
-  // those part of the pattern, too
+  // those part of the component, too
   get items() {
     // @ts-ignore
 
@@ -39,42 +39,43 @@ module.exports = {
       return processedItems;
     }
 
-    const basePath = path.join(__basedir, 'src', 'pattern-library', 'patterns');
+    const basePath = path.join(__basedir, 'src', 'component-library');
 
-    // Gets pattern paths, excluding hidden files/folders
-    const getPatternPaths = (refPath) => {
+    // Gets component paths, excluding hidden files/folders
+    const getComponentPaths = (refPath) => {
       return fs
         .readdirSync(refPath)
-        .filter((item) => !/(^|\/)\.[^/.]/g.test(item));
+        .filter((item) => !/(^|\/)\.[^/.]/g.test(item)) // Hidden
+        .filter((item) => !/[^\\]*\.(\w+)$/.test(item)); // detect file
     };
 
-    // Parses out the pattern name from the last segment in its path
-    const getPatternName = (patternPath) => {
-      const pathParts = patternPath.split('/').filter((x) => x.length);
+    // Parses out the component name from the last segment in its path
+    const getComponentName = (componentPath) => {
+      const pathParts = componentPath.split('/').filter((x) => x.length);
       return pathParts[pathParts.length - 1];
     };
 
-    const patterns = getPatternPaths(basePath);
+    const components = getComponentPaths(basePath);
 
     // For creating a result collection
     const result = [];
 
-    // This is used for both patterns and variants to grab markup, data and docs
-    const buildPattern = (
-      patternPath,
-      patternName,
+    // This is used for both components and variants to grab markup, data and docs
+    const buildComponent = (
+      componentPath,
+      componentName,
       parentPath = null,
       parentName = null,
       contextData = null,
     ) => {
       const response = {};
 
-      // Attempt to load markup from the pass patternPath and patternName first,
+      // Attempt to load markup from the pass componentPath and componentName first,
       // but if that can’t be found, attempt to load from the parent instead, if
       // its details have been passed in
-      if (fs.existsSync(path.resolve(patternPath, `${patternName}.njk`))) {
+      if (fs.existsSync(path.resolve(componentPath, `${componentName}.njk`))) {
         response.markup = fs.readFileSync(
-          path.resolve(patternPath, `${patternName}.njk`),
+          path.resolve(componentPath, `${componentName}.njk`),
           'utf8',
         );
       } else {
@@ -92,7 +93,7 @@ module.exports = {
       if (!response.markup.length) {
         console.log(
           warning(
-            `Markup file, ${patternName}.njk wasn’t found, so this pattern (${patternPath}) can’t be built up`,
+            `Markup file, ${componentName}.njk wasn’t found, so this component (${componentPath}) can’t be built up`,
           ),
         );
         return null;
@@ -106,18 +107,18 @@ module.exports = {
       }
       // If not, we look for a data file
       else if (
-        fs.existsSync(path.resolve(patternPath, `${patternName}.json`))
+        fs.existsSync(path.resolve(componentPath, `${componentName}.json`))
       ) {
-        response.data = buildPatternData(
+        response.data = buildComponentData(
           fs.readFileSync(
-            path.resolve(patternPath, `${patternName}.json`),
+            path.resolve(componentPath, `${componentName}.json`),
             'utf8',
           ),
-          path.resolve(patternPath, `${patternName}.json`),
+          path.resolve(componentPath, `${componentName}.json`),
         );
       }
 
-      // Render the pattern with nunjucks and then run it through
+      // Render the component with nunjucks and then run it through
       // prettier so format it correctly to make copy/paste easier
       response.rendered = prettier
         .format(
@@ -132,9 +133,9 @@ module.exports = {
         )
         .replace(/^\s*\n/gm, ''); // Gets rid of blank lines (https://stackoverflow.com/q/16369642)
 
-      if (fs.existsSync(path.resolve(patternPath, `${patternName}.md`))) {
+      if (fs.existsSync(path.resolve(componentPath, `${componentName}.md`))) {
         response.docs = fs.readFileSync(
-          path.resolve(patternPath, `${patternName}.md`),
+          path.resolve(componentPath, `${componentName}.md`),
           'utf8',
         );
       }
@@ -143,75 +144,80 @@ module.exports = {
     };
 
     // Take data input and attempt to parse as JSON
-    const buildPatternData = (input, filePath) => {
+    const buildComponentData = (input, filePath) => {
       try {
         return JSON.parse(input);
       } catch (ex) {
         console.log(
           error(
-            `Pattern data was malformed and couldn’t be parsed (${filePath})`,
+            `Component data was malformed and couldn’t be parsed (${filePath})`,
           ),
         );
         return {};
       }
     };
 
-    // Loop each patterns folder, attempt to grab all the things and return
+    // Loop each components folder, attempt to grab all the things and return
     // back a fully formed object to use
-    patterns.forEach((item) => {
-      const patternRoot = path.resolve(basePath, item);
-      const patternName = getPatternName(patternRoot);
-      const patternResponse = buildPattern(patternRoot, patternName);
-      const patternVariantsRoot = path.resolve(patternRoot, 'variants');
-      const patterVariantsData = patternResponse.data.variants || [];
+    components.forEach((item) => {
+      const componentRoot = path.resolve(basePath, item);
+      const componentName = getComponentName(componentRoot);
+      const componentResponse = buildComponent(componentRoot, componentName);
+      const componentVariantsRoot = path.resolve(componentRoot, 'variants');
+      const componentVariantsData = componentResponse.data.variants || [];
 
-      // Error will have been logged in buildPattern, but this is
+      // Error will have been logged in buildComponent, but this is
       // not an acceptable response.
-      if (!patternResponse) {
+      if (!componentResponse) {
         return;
       }
 
-      // Urls for pattern page and preview
-      patternResponse.url = `/design-system/pattern/${patternName}/`;
-      patternResponse.previewUrl = `/design-system/preview/${patternName}/`;
+      // Urls for component page and preview
+      componentResponse.url = `/design-system/component/${componentName}/`;
+      componentResponse.previewUrl = `/design-system/preview/${componentName}/`;
 
       // An empty container for variants for if one or the other methods of loading
       // them results in nothing
-      patternResponse.variants = [];
+      componentResponse.variants = [];
 
-      // If this pattern has a variants folder
+      // If this component has a variants folder
       // run the whole process on all that can be found
-      if (fs.existsSync(patternVariantsRoot)) {
-        const variants = getPatternPaths(patternVariantsRoot);
+      if (fs.existsSync(componentVariantsRoot)) {
+        const variants = getComponentPaths(componentVariantsRoot);
 
-        patternResponse.variants = variants.map((variant) => {
-          const variantRoot = path.resolve(patternVariantsRoot, variant);
-          const variantName = getPatternName(variantRoot);
+        componentResponse.variants = variants.map((variant) => {
+          const variantRoot = path.resolve(componentVariantsRoot, variant);
+          const variantName = getComponentName(variantRoot);
 
           return {
             ...{
               name: variantName,
-              previewUrl: `/design-system/preview/${patternName}/${variantName}/`,
+              previewUrl: `/design-system/preview/${componentName}/${variantName}/`,
             },
-            ...buildPattern(variantRoot, variantName, patternRoot, patternName),
+            ...buildComponent(
+              variantRoot,
+              variantName,
+              componentRoot,
+              componentName,
+            ),
           };
         });
       }
 
-      // If variants are defined in the root pattern's config,
-      // we need to render them too, using the root pattern's markup
-      if (patterVariantsData.length) {
+      // If variants are defined in the root component's config,
+      // we need to render them too, using the root component's markup
+      if (componentVariantsData.length) {
         const dataVariantItems = [];
 
-        patterVariantsData.forEach((variant) => {
+        componentVariantsData.forEach((variant) => {
           dataVariantItems.push({
             ...{
               name: variant.name,
-              previewUrl: `/design-system/preview/${patternName}/${variant.name}/`,
+              previewUrl: `/design-system/preview/${componentName}/${variant.name}/`,
             },
-            ...buildPattern(patternRoot, patternName, null, null, {
+            ...buildComponent(componentRoot, componentName, null, null, {
               title: variant.title || variant.name,
-              context: {...patternResponse.data.context, ...variant.context}, // Merge existing context with variant context so we don't have to repeat ourselves a lot
+              context: {...componentResponse.data.context, ...variant.context}, // Merge existing context with variant context so we don't have to repeat ourselves a lot
             }),
           });
         });
@@ -220,47 +226,47 @@ module.exports = {
         // check that a file-based one wasn't already made,
         // then add it to the collection
         dataVariantItems.forEach((variantItem) => {
-          const existingPattern = patternResponse.variants.find(
+          const existingComponent = componentResponse.variants.find(
             (x) => x.name === variantItem.name,
           );
 
-          // Variant data files take priority, so if a rendered pattern exists, bail on this iteration
-          if (existingPattern) {
+          // Variant data files take priority, so if a rendered component exists, bail on this iteration
+          if (existingComponent) {
             console.log(
               warning(
-                `The variant, ${variantItem.name} was already processed with a data file, which takes priority over variants defined in the root pattern’ (${patternName}) data file`,
+                `The variant, ${variantItem.name} was already processed with a data file, which takes priority over variants defined in the root component’ (${componentName}) data file`,
               ),
             );
             return;
           }
 
-          patternResponse.variants.push(variantItem);
+          componentResponse.variants.push(variantItem);
         });
       }
 
-      // Lastly, sort variants by name if pattern hasn't
+      // Lastly, sort variants by name if component hasn't
       // specifically defined source order sorting
-      if (patternResponse.data.sort !== 'source') {
-        if (patternResponse.variants) {
-          patternResponse.variants = patternResponse.variants.sort((a, b) =>
+      if (componentResponse.data.sort !== 'source') {
+        if (componentResponse.variants) {
+          componentResponse.variants = componentResponse.variants.sort((a, b) =>
             a.name.localeCompare(b.name),
           );
         }
       }
 
-      result.push(patternResponse);
+      result.push(componentResponse);
     });
 
     processedItems = result;
     return result;
   },
 
-  // Returns a flat array of all patterns and variants
+  // Returns a flat array of all components and variants
   get previews() {
     const response = [];
 
     this.items.forEach((item) => {
-      // Slice only what's needed from root pattern
+      // Slice only what's needed from root component
       response.push({
         previewUrl: item.previewUrl,
         data: {

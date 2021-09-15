@@ -32,7 +32,7 @@
     "lint:scss": "sass-lint -v -q",
     "lint:types": "tsc --noEmit",
     "lint": "npm-run-all lint:md lint:scss lint:js",
-    "patterns:create": "node src/pattern-library/pattern-generator.js",
+    "patterns:create": "node src/components/pattern-generator.js",
     "percy": "PERCY=true npm-run-all build --parallel --race start snapshots",
     "postinstall": "npm ci --prefix functions",
     "rollup": "rollup -c",
@@ -46,7 +46,7 @@
     "updated": "node ./tools/update-updated/index.js",
     "version-check": "node version-check.js",
     "watch:eleventy": "chokidar \"src/site/**/*\" -c \"npm run eleventy\"",
-    "watch:patterns": "chokidar \"src/pattern-library/**/*\" -c \"npm run eleventy\"",
+    "watch:patterns": "chokidar \"src/components/**/*\" -c \"npm run eleventy\"",
     "watch:gulp": "npx gulp build --silent && gulp watch --silent",
     "watch:rollup": "chokidar \"src/lib/**/*.{js,scss}\" --silent -c \"npm run rollup\"",
     "watch:test:lib": "TEST_MODE=dev npm-run-all clean rollup --parallel watch:rollup karma"
