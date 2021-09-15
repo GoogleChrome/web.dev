@@ -4,8 +4,8 @@ subhead: Finding correlation between site performance and business metrics was t
 authors:
   - linahansson
 date: 2021-09-15
-hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/RGBijMQ3wnOYwbfHEq6U.png
-thumbnail: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/fifBy7btTQMthCDbUHTt.png
+hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/2aneaEewLLPNYYAUXXck.png
+thumbnail: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/6Qu0JTWldoS9Uo6dzH3P.png
 alt: The Swappie logo.
 description: |
   This case study explains how Swappie team increased conversions
