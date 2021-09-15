@@ -1,8 +1,9 @@
 ---
 layout: pattern-set
 title: Web Vitals patterns
-description: A collection of code snippets to help you optmize your web projects.
-hero: image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dYAbN2LdttJ1qYk1gssh.svg
+description: A collection of common UX patterns optimized for Core Web Vitals.
+  This collection includes patterns that are often tricky to implement without
+  hurting your Core Web Vitals scores. You can use the code in these examples to
+  help ensure your projects stay on the right track.
+hero: image/j2RDdG43oidUy6AL6LovThjeX9c2/nVvvWiacDS8Z6DQWWuAY.png
 ---
-
-This is a placeholder file for Web Vitals patterns.

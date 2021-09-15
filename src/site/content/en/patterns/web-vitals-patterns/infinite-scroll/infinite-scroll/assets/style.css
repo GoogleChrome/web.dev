@@ -1,0 +1,48 @@
+:root {
+    --active-button-primary: #0080ff;
+    --active-button-font:#ffffff;
+    --disabled-button-primary: #f5f5f5;
+    --disabled-button-secondary: #c4c4c4;
+    --disabled-button-font: #000000;
+}
+#infinite-scroll-container {
+    position: relative;
+}
+#sentinel {
+    position: absolute;
+    bottom: 150vh;
+}
+#infinite-scroll-button {
+    cursor: pointer;
+    border: none;
+    padding: 1em;
+    width: 100%;
+    font-size: 1em;
+}
+#infinite-scroll-button:enabled {
+    color: var(--active-button-font);
+    background-color: var(--active-button-primary)
+}
+#infinite-scroll-button:disabled {
+    color: var(--disabled-button-font);
+    background-color: var(--disabled-button-primary);
+    cursor: not-allowed;
+    animation: 3s ease-in-out infinite loadingAnimation;
+}
+#infinite-scroll-button:enabled .disabled-text {
+    display: none;
+}
+#infinite-scroll-button:disabled .active-text {
+    display: none;
+}
+@keyframes loadingAnimation {
+    0% {
+        background-color: var(--disabled-button-primary);
+    }
+    50% {
+        background-color: var(--disabled-button-secondary);
+    }
+    100% {
+        background-color: var(--disabled-button-primary);
+    }
+}
