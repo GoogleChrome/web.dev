@@ -14,7 +14,8 @@ $toggle-switch-decor-ratio: 0.8;
 
 .toggle-switch__input {
   opacity: 0;
-  position: absolute;
+  // Yup, the global input styles have some pretty high specificity
+  position: absolute !important;
   inset: 50% 0 0 0;
   transform: translateY(-50%);
 }
