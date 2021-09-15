@@ -6,14 +6,15 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    paths:
-      - '**.js'
-      - '!src/site/_data/contributors.js'
-      - '!src/site/_data/countries.js'
-      - 'package.json'
-      - '**.njk'
-      - '**.scss'
+# TODO: disabled for test
+#  pull_request:
+#    paths:
+#      - '**.js'
+#      - '!src/site/_data/contributors.js'
+#      - '!src/site/_data/countries.js'
+#      - 'package.json'
+#      - '**.njk'
+#      - '**.scss'
 
 jobs:
   lhci:
