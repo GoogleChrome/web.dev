@@ -10,6 +10,8 @@ pageScripts:
   /patterns/ -> PatternSuites -> PatternSets -> Patterns
 #}
 
+{% from 'macros/code-pattern.njk' import codePattern with context %}
+
 {% if page.url %}
   {% set patternSetId = page.url | getRelativePath('/patterns/') %}
 {% else %}
@@ -90,18 +92,11 @@ pageScripts:
   <div>
     {# Show patterns from current set (if set) or from the whole suite #}
     {% if currentPatternSet %}
+      <h2 class="w-headline--two">{{ currentPatternSet.title }}</h2>
+      {{ currentPatternSet.content | safe }}
       {% for patternId, pattern in patterns.patterns %}
         {% if pattern.set == currentPatternSet.id %}
-          {% Details %}
-            {% DetailsSummary %}
-            {{pattern.title}}
-            {% endDetailsSummary %}
-            {% CodePattern pattern.id %}
-            <p>{{ pattern.description | safe }}
-            <br>
-            <a href="/patterns/{{pattern.id}}">Learn more</a>
-            <p>
-          {% endDetails %}
+          {{ codePattern(pattern) }}
         {% endif %}
       {% endfor %}
 
@@ -114,16 +109,7 @@ pageScripts:
           {{ patternSet.content | safe }}
           {% for patternId, pattern in patterns.patterns %}
             {% if pattern.set == patternSetId %}
-              {% Details %}
-                {% DetailsSummary 'h3' %}
-                {{pattern.title}}
-                {% endDetailsSummary %}
-                {% CodePattern pattern.id %}
-                {% if pattern.description %}
-                  <p>{{ pattern.description | safe }}</p>
-                {% endif %}
-                <p class="code-patterns__more"><a href="/patterns/{{pattern.id}}">Learn more</a></p>
-              {% endDetails %}
+              {{ codePattern(pattern) }}
             {% endif %}
           {% endfor %}
         {% endif %}
@@ -137,16 +123,7 @@ pageScripts:
             <h2>{{ "i18n.patterns.other_patterns" | i18n(locale) }}</h2>
           {% endif %}
           {% set first = false %}
-          {% Details %}
-            {% DetailsSummary 'h3' %}
-            {{pattern.title}}
-            {% endDetailsSummary %}
-            {% CodePattern pattern.id %}
-            {% if pattern.description %}
-              <p class="code-patterns__description">{{ pattern.description | safe }}</p>
-            {% endif %}
-            <p class="code-patterns__more"><a href="/patterns/{{pattern.id}}">Learn more</a></p>
-          {% endDetails %}
+          {{ codePattern(pattern) }}
         {% endif %}
       {% endfor %}
 
