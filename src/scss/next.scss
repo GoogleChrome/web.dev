@@ -17,6 +17,9 @@ $global-stroke: 1px solid get-utility-value('color', 'stroke');
 
 // NOTE: there are more design token-led global variables in _tokens.scss
 
+/// FUNCTIONS
+@import 'functions/get-space';
+
 /// MIXINS
 @import 'mixins/button-base-styles';
 @import 'mixins/rounded-border';
@@ -597,16 +600,19 @@ web-copy-code {
 @import 'blocks/brand';
 @import 'blocks/browser-compat';
 @import 'blocks/button';
+@import 'blocks/card';
 @import 'blocks/compare';
 @import 'blocks/fab';
 @import 'blocks/indicator';
 @import 'blocks/label';
 @import 'blocks/numbered-headers';
 @import 'blocks/pagination';
+@import 'blocks/prose';
 @import 'blocks/skip-link';
 @import 'blocks/stack-nav';
 @import 'blocks/stats';
 @import 'blocks/status-list';
+@import 'blocks/syntax-highlighting';
 @import 'blocks/table-wrapper';
 @import 'blocks/toggle-switch';
 @import 'blocks/tooltip';

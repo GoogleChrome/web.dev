@@ -1,7 +1,7 @@
 {% from 'macros/icon.njk' import icon, svg with context %}
 
 {% macro stackLink(url, pageUrl, text) %}
-  <a href="{{ url }}" {% if url == pageUrl %}aria-current="page"{% endif %}>{{ text }}</a> 
+  <a class="repel" href="{{ url }}" {% if url == pageUrl %}aria-current="page"{% endif %}>{{ text }}</a> 
 {% endmacro %}
 
 <!DOCTYPE html>
