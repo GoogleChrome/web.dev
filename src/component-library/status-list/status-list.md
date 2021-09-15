@@ -1,1 +1,1 @@
-By default, this pattern is in an error (bad) state. To switch the icon to checkmarks, add a `data-state="success"` to the pattern instance.
+By default, this pattern is in a success (good) state. To switch the icon to crosses, add a `data-state="bad"` to the pattern instance.
