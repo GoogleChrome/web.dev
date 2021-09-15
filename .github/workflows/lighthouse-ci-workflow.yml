@@ -6,19 +6,20 @@ on:
   push:
     branches:
       - main
-# TODO: disabled for test
-#  pull_request:
-#    paths:
-#      - '**.js'
-#      - '!src/site/_data/contributors.js'
-#      - '!src/site/_data/countries.js'
-#      - 'package.json'
-#      - '**.njk'
-#      - '**.scss'
+  pull_request:
+    paths:
+      - '**.js'
+      - '!src/site/_data/contributors.js'
+      - '!src/site/_data/countries.js'
+      - 'package.json'
+      - '**.njk'
+      - '**.scss'
 
 jobs:
   lhci:
     runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: --max_old_space_size=4096
     steps:
       - name: Checkout
         uses: actions/checkout@v2
