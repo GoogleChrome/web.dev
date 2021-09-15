@@ -173,6 +173,7 @@ module.exports = {
       }
 
       // Urls for component page and preview
+      componentResponse.handle = componentName;
       componentResponse.url = `/design-system/component/${componentName}/`;
       componentResponse.previewUrl = `/design-system/preview/${componentName}/`;
 
@@ -192,6 +193,7 @@ module.exports = {
           return {
             ...{
               name: variantName,
+              handle: componentName + '-' + variantName,
               previewUrl: `/design-system/preview/${componentName}/${variantName}/`,
             },
             ...buildComponent(
@@ -208,11 +210,11 @@ module.exports = {
       // we need to render them too, using the root component's markup
       if (componentVariantsData.length) {
         const dataVariantItems = [];
-
         componentVariantsData.forEach((variant) => {
           dataVariantItems.push({
             ...{
               name: variant.name,
+              handle: componentName + '-' + variant.name,
               previewUrl: `/design-system/preview/${componentName}/${variant.name}/`,
             },
             ...buildComponent(componentRoot, componentName, null, null, {
@@ -269,10 +271,10 @@ module.exports = {
       // Slice only what's needed from root component
       response.push({
         previewUrl: item.previewUrl,
-        data: {
-          title: item.data.title,
-        },
+        data: item.data,
         rendered: item.rendered,
+        markup: item.markup,
+        handle: item.handle,
       });
 
       if (item.variants) {
@@ -283,5 +285,39 @@ module.exports = {
     });
 
     return response;
+  },
+
+  // Takes a handle, tries to match that with a component or variant then
+  // applies passed data if available
+  render(handle, data = null) {
+    const item = this.previews.find((item) => item.handle === handle);
+
+    if (!item) {
+      console.log(error(`Component, “${handle}” couldn’t be found`));
+      return '';
+    }
+
+    let renderData = {};
+
+    // First, check there is context, if so, apply passed data with spreaders
+    // so that the context data that is not passed still applies. This is because
+    // often, elements that define look and feel are in context
+    if (item.data.context) {
+      renderData = item.data.context;
+
+      if (data) {
+        renderData = {...renderData, ...data};
+      }
+    }
+
+    // If there’s no context data but there is passed data, go ahead and
+    // set that as the render data
+    else if (data) {
+      renderData = data;
+    }
+
+    return nunjucksEnv.renderString(item.markup, {
+      data: renderData,
+    });
   },
 };
