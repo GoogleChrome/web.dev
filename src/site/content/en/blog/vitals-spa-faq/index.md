@@ -36,12 +36,12 @@ of the technology. While this is not possible in every case today (due to
 limitations in the web platform), we are [actively working on closing those
 gaps](#what-is-google-doing-to-ensure-mpas-do-not-have-an-unfair-advantage-compared-to-spas).
 
-## FAQ
+## Frequently asked questions
 
 ### Do Core Web Vitals metrics include SPA route transitions?
 
 No. Each of the Core Web Vitals metrics is measured relative to the current,
-top-level page navigation. In other words, if a page dynamically loads new
+top-level page navigation. If a page dynamically loads new
 content and updates the URL of the page in the address bar, it will have no
 effect on how the Core Web Vitals metrics are measured. Metric values are not
 reset, and the URL associated with each metric measurement is the URL the user
