@@ -6,6 +6,7 @@ subhead: |
 authors:
   - sahel
 date: 2020-07-17
+updated: 2021-09-14
 description: |
   Learn how to modify your Android payment app to provide the user's selected shipping address as well as contact information when the merchant has requested them via the Payment Request API.
 tags:
@@ -13,6 +14,14 @@ tags:
 feedback:
   - api
 ---
+
+{% Aside 'warning' %}
+
+Shipping and address support in [the Payment Request API is removed from the
+specification](https://github.com/w3c/payment-request/pull/955) and is no longer
+functional in Android payment apps.
+
+{% endAside %}
 
 Entering shipping address and contact information through a web form can be a
 cumbersome experience for customers. It can cause errors and lower conversion

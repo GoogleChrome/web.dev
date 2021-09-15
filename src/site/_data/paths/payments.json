@@ -31,8 +31,7 @@
         {
           "title": "i18n.paths.payments.topics.build_an_android_payment_app",
           "pathItems": [
-            "android-payment-apps-developers-guide",
-            "android-payment-apps-delegation"
+            "android-payment-apps-developers-guide"
           ]
         },
         {
