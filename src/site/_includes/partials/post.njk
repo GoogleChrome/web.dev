@@ -47,8 +47,15 @@
   <div class="w-layout-container--narrow w-post-content">
     <header class="w-article-header">
       {% if 'blog' in tags %}
+        {# Display blog breadcrumbs #}
         <div class="w-post-breadcrumbs">
           {% Breadcrumbs {title: 'All articles', slug: 'blog'} %}
+        </div>
+      {% elif crumbs %}
+        {# Display other breadcrumbs #}
+        {% from 'macros/breadcrumbs.njk' import breadcrumbs with context %}
+        <div class="w-post-breadcrumbs">
+          {{ breadcrumbs(crumbs) }}
         </div>
       {% endif %}
 
