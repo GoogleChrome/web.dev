@@ -5,5 +5,5 @@ description: A collection of common UX patterns optimized for Core Web Vitals.
   This collection includes patterns that are often tricky to implement without
   hurting your Core Web Vitals scores. You can use the code in these examples to
   help ensure your projects stay on the right track.
-hero: image/j2RDdG43oidUy6AL6LovThjeX9c2/nVvvWiacDS8Z6DQWWuAY.png
+hero: image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/3cdwkL2YaZUHKp0skzlR.svg
 ---
