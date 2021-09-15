@@ -51,18 +51,8 @@ jobs:
             packageJson:
               - 'package.json'
 
-      # Use the filter to check if files with a specific file type were changed
-      # in the PR. If they were, run the relevant linters. Otherwise, skip.
-
-      - name: Lint JavaScript
-        if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' }}
-        run: npm run lint:js
-
-      - name: Lint SCSS
-        if: ${{ steps.filter.outputs.scss == 'true' }}
-        run: npm run lint:scss
-
       # Only run tests if the PR touches behavior related files.
+
       - name: Test
         if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' || steps.filter.outputs.yml == 'true' || steps.filter.outputs.njk == 'true'}}
         run: npm run test

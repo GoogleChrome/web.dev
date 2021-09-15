@@ -18,8 +18,6 @@ describe('Build test', function () {
       );
     } else {
       try {
-        // This copies everything except for images because gulp will try to
-        // optimize those during a prod build which slows things right down.
         await exec('ELEVENTY_ENV=prod npm run build');
       } catch (err) {
         assert.fail(err);
