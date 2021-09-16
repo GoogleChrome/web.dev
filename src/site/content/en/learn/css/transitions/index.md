@@ -59,8 +59,7 @@ The [`transition-duration`](https://developer.mozilla.org/docs/Web/CSS/transitio
 {% Codepen {
   user: 'web-dot-dev',
   id: 'wvegMYp',
-  height: 400,
-  tab: 'css,result',
+  height: 400
 } %}
 
 `transition-duration` accepts time units, either in seconds (`s`) or milliseconds (`ms`) and defaults to `0s`.
