@@ -16,6 +16,14 @@ feedback:
   - api
 ---
 
+{% Aside 'warning' %}
+
+Shipping and address support in [the Payment Request API is removed from the
+specification](https://github.com/w3c/payment-request/pull/955) and is no longer
+functional in web-based payment apps.
+
+{% endAside %}
+
 Once [a web-based payment app receives a payment request and initiates a payment
 transaction](/orchestrating-payment-transactions), the service worker will act
 as the hub for communication between the merchant and the payment app. This post

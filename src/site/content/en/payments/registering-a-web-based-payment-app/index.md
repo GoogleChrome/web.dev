@@ -200,14 +200,6 @@ contains details about the instrument.
           A supported payment method identifier.
         </td>
       </tr>
-      <tr>
-        <td>
-          <code>capabilities</code>
-        </td>
-        <td>
-          Sets the <a href="https://w3c.github.io/payment-handler/#capabilities-example">payment method specific parameters as an object</a>.
-        </td>
-      </tr>
     </tbody>
   </table>
 </div>
