@@ -1,9 +1,8 @@
 ask_question:
-  en: Have a question about using this feature? You can get help by
-      <a href="https://stackoverflow.com/questions/ask?tags=<TAG>">asking a question on Stack Overflow</a>, or
-      <a href="https://stackoverflow.com/search?q=%5B<TAG>%5D+is%3Aquestion">browsing a list of questions</a>
-      asked by other developers.
-  es: ¿Tiene alguna pregunta sobre el uso de esta función? Puede obtener ayuda
-         <a href="https://stackoverflow.com/questions/ask?tags=<TAG> "> hacer una pregunta sobre Stack Overflow </a>, o
-         <a href="https://stackoverflow.com/search?q=%5B<TAG>% 5D + es% 3Aquestion "> navegando por una lista de preguntas </a>
-         preguntado por otros desarrolladores.
+  en: Have a question about using this feature? You can get help by <a href="https://stackoverflow.com/questions/ask?tags=<TAG>">asking a question on Stack Overflow</a>, or <a href="https://stackoverflow.com/search?q=%5B<TAG>%5D+is%3Aquestion">browsing a list of questions</a> asked by other developers.
+  es: ¿Tiene alguna pregunta sobre el uso de esta función? Puede obtener ayuda <a href="https://stackoverflow.com/questions/ask?tags=<TAG> "> hacer una pregunta sobre Stack Overflow </a>, o <a href="https://stackoverflow.com/search?q=%5B<TAG>% 5D + es% 3Aquestion "> navegando por una lista de preguntas </a> preguntado por otros desarrolladores.
+  ja: この機能の使用方法について質問がある場合は、<a href="https://stackoverflow.com/questions/ask?tags=<TAG>">Stack Overflow で質問をしたり</a>、<a href="https://stackoverflow.com/search?q=%5B<TAG>%5D+is%3Aquestion">他の開発者から寄せられた質問のリストを確認したり</a>することにより、ヒントを得ることができます。
+  ko: 이 기능 사용에 대해 질문이 있나요? <a href="https://stackoverflow.com/questions/ask?tags=<TAG>스택 오버플로에서 질문</a>을 하거나 <a href="https://stackoverflow.com/search?q=%5B<TAG>%5D+is%3Aquestion">다른 개발자들이 이미 올린 질문 목록을 검색</a>하여 도움을 받을 수 있습니다.
+  pt: Tem alguma dúvida sobre como usar este recurso? Você pode obter ajuda <a href="https://stackoverflow.com/questions/ask?tags=<TAG>">fazendo uma pergunta no Stack Overflow</a> ou <a href="https://stackoverflow.com/search?q=%5B<TAG>%5D+is%3Aquestion">navegando numa lista de perguntas</a> feitas por outros desenvolvedores.
+  ru: Возник вопрос по поводу этой функции? Вы можете <a href="https://stackoverflow.com/questions/ask?tags=<TAG>">задать его на сайте Stack Overflow</a> или <a href="https://stackoverflow.com/search?q=%5B<TAG>%5D+is%3Aquestion">просмотреть список вопросов</a> от других разработчиков.
+  zh: 对此功能的使用有疑问？您可以通过<a href="https://stackoverflow.com/questions/ask?tags=<TAG>">在 Stack Overflow 上提出问题</a>，或<a href="https://stackoverflow.com/search?q=%5B<TAG>%5D+is%3Aquestion">浏览其他开发者提出的问题列表</a>来获得帮助。
