@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: <img> tag
-description: Use the width and height attributes to avoid layout shifts
+description: This image loads without causing layout shifts.
 date: 2021-08-17
 updated: 2021-08-17
 height: 400

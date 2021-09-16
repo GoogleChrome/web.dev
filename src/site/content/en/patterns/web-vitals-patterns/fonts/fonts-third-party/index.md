@@ -1,7 +1,10 @@
 ---
 layout: pattern
 title: Third-party fonts
-description: Load fonts quickly as possible
+description:
+  The demo combines two performance techniques to load a
+  third-party font as quickly as possible&#58; use of inline font declarations
+  and use of preconnect resource hints.
 date: 2021-08-19
 updated: 2021-08-19
 height: 400
@@ -37,5 +40,3 @@ also apply to other third-party font providers.
   the code snippet below, the first resource hint sets up a connection for
   downloading the font stylesheet; the second resource hint sets up a connection
   for downloading font files.
-
-For more information, see [Best practices for fonts](https://web.dev/font-best-practices/).

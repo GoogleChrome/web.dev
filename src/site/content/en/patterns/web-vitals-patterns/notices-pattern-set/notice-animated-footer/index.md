@@ -1,7 +1,8 @@
 ---
 layout: pattern
 title: Animated footer
-description: No-layout shift animated footer
+description: This banner slides-in from the bottom of the page
+  without causing layout shifts.
 date: 2021-08-18
 updated: 2021-08-18
 height: 300

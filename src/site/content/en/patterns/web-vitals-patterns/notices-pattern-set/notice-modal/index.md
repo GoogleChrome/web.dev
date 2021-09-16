@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: Modal
-description: Display a notice as a modal
+description: Modals can be used as an alternative to banner notices.
 date: 2021-08-10
 height: 300
 ---
