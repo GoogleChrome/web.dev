@@ -147,7 +147,7 @@ The `color`, `background-color`, and `border-color` properties are just a few pl
 be transitioned upon interaction.
 
 {% Aside %}
-Color transitions do not usually need to be behind a [reduced motion](#reduced-motion) preference. Use your best judgment.
+Color transitions do not usually need to be behind a [reduced motion](#accessibility-considerations) preference. Use your best judgment.
 {% endAside %}
 
 Check out [our module on color](/learn/css/color/).
