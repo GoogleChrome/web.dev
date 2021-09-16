@@ -1,7 +1,8 @@
 ---
 layout: pattern
 title: Sticky footer
-description: Display a notice as a sticky footer
+description: This sticky footer banner does not cause layout shifts when it
+  is inserted into the page.
 date: 2021-08-10
 height: 300
 ---

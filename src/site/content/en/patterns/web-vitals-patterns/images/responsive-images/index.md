@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: Responsive images and art direction
-description: Use the width and height attributes to avoid layout shifts
+description: These responsive images load without causing layout shifts.
 date: 2021-08-17
 updated: 2021-08-17
 height: 400

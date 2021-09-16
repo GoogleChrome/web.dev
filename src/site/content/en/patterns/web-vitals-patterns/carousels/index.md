@@ -13,3 +13,6 @@ surprising number of carousels use [non-composited
 animations](https://web.dev/non-composited-animations/) that can contribute to
 [Cumulative Layout Shift (CLS)](https://web.dev/cls). On pages with autoplaying
 carousels, this has the potential to cause infinite layout shifts.
+
+To learn about performance and UX best practices for carousels, see
+[Carousel Best Practices](https://web.dev/carousel-best-practices/).
