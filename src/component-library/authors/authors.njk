@@ -1,0 +1,37 @@
+<div class="author">
+  <a class="avatar" href="{{ data.url }}">
+    <img
+      alt="{{ data.name }}"
+      height="64"
+      src="https://web-dev.imgix.net/{{
+        data.image
+      }}?auto=format&amp;fit=crop&amp;h=64&amp;w=64"
+      width="64"
+      loading="lazy"
+      decoding="async"
+      sizes="(min-width: 64px) 64px, calc(100vw - 48px)"
+      srcset="
+        https://web-dev.imgix.net/{{ data.image }}?fit=crop&amp;h=64&amp;w=64&amp;auto=format&amp;dpr=1&amp;q=75,
+        https://web-dev.imgix.net/{{ data.image }}?fit=crop&amp;h=64&amp;w=64&amp;auto=format&amp;dpr=2&amp;q=50 2x,
+        https://web-dev.imgix.net/{{ data.image }}?fit=crop&amp;h=64&amp;w=64&amp;auto=format&amp;dpr=3&amp;q=35 3x,
+        https://web-dev.imgix.net/{{ data.image }}?fit=crop&amp;h=64&amp;w=64&amp;auto=format&amp;dpr=4&amp;q=23 4x,
+        https://web-dev.imgix.net/{{ data.image }}?fit=crop&amp;h=64&amp;w=64&amp;auto=format&amp;dpr=5&amp;q=20 5x
+      "
+    />
+  </a>
+  <div class="flow">
+    <cite class="author__name">
+      <a href="{{ data.url }}">{{ data.name }}</a>
+    </cite>
+    {% if data.bio %}
+      <p class="author__bio">{{ data.bio }}</p>
+    {% endif %}
+    <ul class="author__links cluster" role="list">
+      {% for link in data.links %}
+      <li class="w-author__link-listdata">
+        <a href="{{ link.url }}">{{ link.text }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
