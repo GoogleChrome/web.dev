@@ -206,7 +206,7 @@
 
   @include bp(md) {
     flex-direction: row;
-    padding: 72px 24px;
+    padding: 0 24px 72px;
   }
 }
 
@@ -214,11 +214,16 @@
   flex: 1;
   text-align: center;
 
+  h1 {
+    font-size: 48px;
+  }
+
   @include bp(md) {
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-right: 24px;
   }
 }
 
@@ -227,13 +232,14 @@
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   margin-bottom: 18px;
   order: -1;
 
   @include bp(md) {
     margin-bottom: 0;
     order: initial;
+    align-items: flex-end;
   }
 }
 
