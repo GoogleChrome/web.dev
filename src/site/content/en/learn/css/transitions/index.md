@@ -59,7 +59,8 @@ The [`transition-duration`](https://developer.mozilla.org/docs/Web/CSS/transitio
 {% Codepen {
   user: 'web-dot-dev',
   id: 'wvegMYp',
-  height: 400
+  height: 400,
+  tab: 'css,result',
 } %}
 
 `transition-duration` accepts time units, either in seconds (`s`) or milliseconds (`ms`) and defaults to `0s`.
@@ -77,7 +78,7 @@ By default, CSS will transition your elements at a constant speed (`transition-t
 
 Our [module on CSS Animation](/learn/css/animations/#animation-timing-function) has a good overview of timing functions.
 
-You can use DevTools to experiment with different timing functions in real-time.
+You can use [DevTools](https://developer.chrome.com/docs/devtools/css/animations/) to experiment with different timing functions in real-time.
 
 {% Img src="image/eiKy1JcjHqPp3gaedjAQWjPJ8YK2/G06SHV4Dra1HqTAL9d6t.png", alt="Chrome DevTools visual transition timing editor.", width="264", height="359" %}
 
