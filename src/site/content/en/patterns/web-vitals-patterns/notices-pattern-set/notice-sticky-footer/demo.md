@@ -1,0 +1,266 @@
+---
+patternId: notice-sticky-footer
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sticky Footer Demo</title>
+    <style>
+        body {
+            font-family: system-ui;
+            padding: 2em;
+            overscroll-behavior-y: none;
+            background-color: #f4f4f4;
+        }
+        .banner {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .close-button {
+            background: transparent;
+            border: none;
+            padding: 1em;
+            font-size: 1em;
+            position: absolute;
+            right: 0;
+            top: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="banner" class="banner">
+        <button id="close-button" class="close-button" aria-label="close" tabindex="0">✕</button>
+        <div>
+            <h1>Notice</h1>
+            Lorem ipsum dolor sit amet.
+        </div>
+    </div>
+    <script>
+        document.getElementById("close-button").onclick = () => {
+            document.getElementById("banner").style = "display: none";
+        }
+    </script>
+    <div class="filler">
+        <h1>Sticky Footer</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Maecenas volutpat blandit aliquam etiam 
+            erat velit. Integer eget aliquet nibh praesent. Sit amet mattis vulputate enim nulla. 
+            Faucibus nisl tincidunt eget nullam non. Sem fringilla ut morbi tincidunt augue. 
+            Sed id semper risus in hendrerit gravida rutrum quisque non. Blandit aliquam etiam 
+            erat velit scelerisque in dictum non consectetur. Et ultrices neque ornare aenean 
+            euismod. Dignissim sodales ut eu sem integer vitae justo. Justo eget magna fermentum 
+            iaculis eu non diam phasellus.
+        </p>
+    </div>
+</body>

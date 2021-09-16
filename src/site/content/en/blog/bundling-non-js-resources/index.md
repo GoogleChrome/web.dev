@@ -42,7 +42,7 @@ new Worker(workerUrl);
 
 When a bundler plugin finds an import with either an extension it recognizes or such an explicit custom scheme (`asset-url:` and `js-url:` in the example above), it adds the referenced asset to the build graph, copies it to the final destination, performs optimizations applicable for the asset's type and returns the final URL to be used during runtime.
 
-The benefits of this approach: reusing the JavaScript import syntax, guarantees that all URLs are static and relative to the current file, which makes locating such dependencies easy for the build system.
+The benefits of this approach: reusing the JavaScript import syntax guarantees that all URLs are static and relative to the current file, which makes locating such dependencies easy for the build system.
 
 However, it has one significant drawback: such code can't work directly in the browser, as the browser doesn't know how to handle those custom import schemes or extensions. This might be fine if you control all the code and rely on a bundler for development anyway, but it's increasingly common to use JavaScript modules directly in the browser, at least during development, to reduce the friction. Someone working on a small demo might not even need a bundler at all, even in production.
 
@@ -106,7 +106,7 @@ Following bundlers support the `new URL` scheme already:
 
 -  [Webpack v5](https://webpack.js.org/guides/asset-modules/#url-assets)
 -  [Rollup](https://rollupjs.org/) (Achieved via plugins—[@web/rollup-plugin-import-meta-assets](https://modern-web.dev/docs/building/rollup-plugin-import-meta-assets/) for generic assets and [@surma/rollup-plugin-off-main-thread](https://github.com/surma/rollup-plugin-off-main-thread) for Workers specifically.)
--  [Parcel v2 (beta)](https://v2.parceljs.org/)
+-  [Parcel v2 (beta)](https://v2.parceljs.org/languages/javascript/#url-dependencies)
 -  [Vite](https://vitejs.dev/guide/assets.html#new-url-url-import-meta-url)
 
 #### WebAssembly

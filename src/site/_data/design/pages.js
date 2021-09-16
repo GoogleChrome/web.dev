@@ -1,4 +1,4 @@
-// Key pages to monitor in the design system and pattern library
+// Key pages to monitor in the design system and component library
 const linkBase = '/design-system/page';
 
 module.exports = [

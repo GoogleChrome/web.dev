@@ -1,0 +1,18 @@
+/// GET SPACE FUNCTION
+///
+/// Function tries to match the passed $ratio-key with the $gorko-space-scale. Returns null
+/// if it can’t find a match.
+///
+/// @param {string} $ratio-key - The size ratio that you want to get
+///
+@function get-space($ratio-key) {
+  $response: map-get($gorko-space-scale, $ratio-key);
+
+  @if ($response) {
+    @return $response;
+  }
+
+  @warn #{'Space "' + $ratio-key + '" not found in $gorko-space-scale'};
+
+  @return null;
+}

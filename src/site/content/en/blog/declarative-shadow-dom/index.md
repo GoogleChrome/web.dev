@@ -253,7 +253,7 @@ be identical. Finally, the impact of repeated similar shadow roots on network tr
 relatively small due to the effects of compression.
 
 In the future, it might be possible to revisit shared shadow roots. If the DOM gains support for
-[built-in templating](https://w3c.github.io/webcomponents/proposals/Template-Instantiation.html),
+[built-in templating](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Template-Instantiation.md),
 Declarative Shadow Roots could be treated as templates that are instantiated in order to construct
 the shadow root for a given element. The current Declarative Shadow DOM design allows for this
 possibility to exist in the future by limiting shadow root association to a single element.

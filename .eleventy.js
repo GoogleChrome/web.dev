@@ -104,7 +104,7 @@ const {updateSvgForInclude} = require('webdev-infra/filters/svg');
 const {toc: courseToc} = require('webdev-infra/filters/toc');
 
 // Creates a global variable for the current __dirname to make including and
-// working with files in the pattern library a little easier
+// working with files in the component library a little easier
 global.__basedir = __dirname;
 
 module.exports = function (config) {

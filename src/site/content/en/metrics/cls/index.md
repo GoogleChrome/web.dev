@@ -445,6 +445,13 @@ for a complete example of how to measure CLS in JavaScript.
 
 ## How to improve CLS
 
+{% Banner 'info', 'body' %}
+  **New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for
+  implementations of common UX patterns optimized for Core Web Vitals. This
+  collection includes patterns that are often tricky to implement without layout
+  shifts.
+{% endBanner %}
+
 For most websites, you can avoid all unexpected layout shifts by sticking to a
 few guiding principles:
 
