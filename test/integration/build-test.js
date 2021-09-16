@@ -12,14 +12,18 @@ describe('Build test', function () {
     this.timeout(0);
 
     console.log('Running npm run build...');
-    try {
-      // This copies everything except for images because gulp will try to
-      // optimize those during a prod build which slows things right down.
-      await exec('ELEVENTY_ENV=prod npm run build');
-    } catch (err) {
-      assert.fail(err);
+    if (fs.existsSync('./dist')) {
+      console.log(
+        '`dist` folder already exists, build completed. Starting tests.',
+      );
+    } else {
+      try {
+        await exec('ELEVENTY_ENV=prod npm run build');
+      } catch (err) {
+        assert.fail(err);
+      }
+      console.log('Build completed. Starting tests.');
     }
-    console.log('Build completed. Starting tests.');
 
     [
       'feed.xml',

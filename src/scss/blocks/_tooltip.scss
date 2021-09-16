@@ -1,0 +1,56 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/tooltip
+$tooltip-aligned-side-space: calc(100% + 1rem);
+.tooltip {
+  position: relative;
+  width: max-content;
+}
+
+.tooltip__content {
+  display: block;
+  width: max-content;
+  text-transform: none;
+  position: absolute;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.3em 0.5em 0.4em;
+  border-radius: 2px;
+  position: absolute;
+  top: $tooltip-aligned-side-space;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+
+  @include apply-utility('color', 'reversed-text');
+  @include apply-utility('bg', 'reversed-bg');
+  @include apply-utility('font', 'base');
+  @include apply-utility('weight', 'regular');
+}
+
+.tooltip:focus-within .tooltip__content,
+.tooltip:hover .tooltip__content {
+  opacity: 1;
+  transition: opacity $global-transition-fade;
+  visibility: visible;
+  z-index: 10;
+}
+
+/// ALIGNMENT EXCEPTIONS
+.tooltip[data-alignment='left'] {
+  .tooltip__content {
+    top: 50%;
+    right: $tooltip-aligned-side-space;
+    left: auto;
+    transform: translateY(-50%);
+  }
+}
+
+.tooltip[data-alignment='right'] {
+  .tooltip__content {
+    top: 50%;
+    left: $tooltip-aligned-side-space;
+    right: auto;
+    transform: translateY(-50%);
+  }
+}
