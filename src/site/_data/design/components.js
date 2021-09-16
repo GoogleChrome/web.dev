@@ -293,31 +293,12 @@ module.exports = {
     const item = this.previews.find((item) => item.handle === handle);
 
     if (!item) {
-      console.log(error(`Component, “${handle}” couldn’t be found`));
+      console.log(error(`Component, "${handle}" couldn't be found`));
       return '';
     }
 
-    let renderData = {};
-
-    // First, check there is context, if so, apply passed data with spreaders
-    // so that the context data that is not passed still applies. This is because
-    // often, elements that define look and feel are in context
-    if (item.data.context) {
-      renderData = item.data.context;
-
-      if (data) {
-        renderData = {...renderData, ...data};
-      }
-    }
-
-    // If there’s no context data but there is passed data, go ahead and
-    // set that as the render data
-    else if (data) {
-      renderData = data;
-    }
-
-    return nunjucksEnv.renderString(item.markup, {
-      data: renderData,
-    });
+    // Passed data overwrites any context data.
+    const renderData = {...item.data.context, ...data};
+    return nunjucksEnv.renderString(item.markup, {data: renderData});
   },
 };
