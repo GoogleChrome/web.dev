@@ -2,11 +2,9 @@
 /// https://web.dev/design-system/pattern/prose
 .prose {
   @extend .flow;
+  @extend .wrapper;
 
   --flow-space: #{get-space('size-1')};
-
-  margin-inline: auto;
-  width: max-content;
 
   /// Add more space to elements that follow figures etc
   pre + *,
