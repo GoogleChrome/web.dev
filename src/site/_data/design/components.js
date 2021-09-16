@@ -20,6 +20,7 @@ const nunjucksEnv = new nunjucks.Environment(
   new nunjucks.FileSystemLoader(
     path.join(__basedir, 'src', 'site', '_includes'),
   ),
+  {autoescape: false},
 );
 
 nunjucksEnv.addFilter('md', md);
@@ -298,7 +299,12 @@ module.exports = {
     }
 
     // Passed data overwrites any context data.
+    // Regex: https://stackoverflow.com/a/59357436
     const renderData = {...item.data.context, ...data};
-    return nunjucksEnv.renderString(item.markup, {data: renderData});
+    return nunjucksEnv
+      .renderString(item.markup, {data: renderData})
+      .replace(/\>[\r\n ]+\</g, '><')
+      .replace(/(<.*?>)|\s+/g, (m, $1) => ($1 ? $1 : ' '))
+      .trim();
   },
 };

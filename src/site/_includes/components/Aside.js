@@ -1,3 +1,5 @@
+/* global __designSystemComponents */
+
 /*
  * Copyright 2019 Google LLC
  *
@@ -14,6 +16,7 @@
  * limitations under the License.
  */
 const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
+const isDesignSystemContext = require('../../../lib/utils/is-design-system-context');
 
 /**
  * @this {EleventyPage}
@@ -22,6 +25,33 @@ function Aside(content, type = 'note') {
   const locale = getLocaleFromPath(this.page && this.page.filePathStem);
 
   let prefix;
+
+  // Renders the new aside
+  if (isDesignSystemContext(this.page.filePathStem)) {
+    switch (type) {
+      case 'codelab':
+        prefix = `${i18n(`i18n.common.try_it`, locale)}!`;
+        break;
+
+      case 'key-term':
+        prefix = i18n(`i18n.common.key_term`, locale);
+        break;
+
+      case 'note':
+        break;
+
+      default:
+        prefix = i18n(`i18n.common.${type}`, locale);
+        break;
+    }
+
+    return __designSystemComponents.render(`aside-${type}`, {
+      title: prefix,
+      content,
+    });
+  }
+
+  // Renders the old aside
   switch (type) {
     case 'note':
       prefix = '';
