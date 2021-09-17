@@ -214,6 +214,8 @@ redirects:
   - source: /image-size-responsive
     destination: /image-aspect-ratio
 
+# Redirect for misconfigured Lighthouse report
+
   # Redirects for Handbook refactors
 
   - source: /handbook/tags
