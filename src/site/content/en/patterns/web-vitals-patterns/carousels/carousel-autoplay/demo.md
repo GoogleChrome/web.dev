@@ -70,11 +70,14 @@ patternId: web-vitals-patterns/carousels/carousel-autoplay
             scroll-snap-align: center;
             position: relative;
             min-width: 100%;
-            aspect-ratio: 2 / 1;
+            padding-top: 50%;
         }
         .slide img {
             height: 100%;
             width: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         .arrow {
             color: #ffffff;
