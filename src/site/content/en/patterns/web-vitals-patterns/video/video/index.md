@@ -1,7 +1,8 @@
 ---
 layout: pattern
 title: Video
-description: Optimize video tags for Core Web Vitals
+description: This video loads without causing layout shifts and
+  displays a poster image.
 date: 2021-08-19
 updated: 2021-08-19
 height: 500

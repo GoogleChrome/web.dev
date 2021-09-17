@@ -1,5 +1,5 @@
 ---
-title: JavaScript Eventing Deep Dive
+title: JavaScript eventing deep dive
 subhead:
   '`preventDefault` and `stopPropagation`: when to use which and what exactly each method does.'
 authors:
@@ -21,7 +21,7 @@ origin_trial:
   url: https://developer.chrome.com/origintrials/#/view_trial/-6682215947110973439
 ---
 
-### Event.stopPropagation() and Event.preventDefault()
+## Event.stopPropagation() and Event.preventDefault()
 
 JavaScript event handling is often straightforward. This is especially true when dealing with a
 simple (relatively flat) HTML structure. Things get a bit more involved though when events are
@@ -36,7 +36,7 @@ Before we dive too deeply though, it's important to briefly touch on the two kin
 possible in JavaScript (in all modern browsers that is—Internet Explorer prior to version 9 did not
 support event capturing at all).
 
-### Eventing Styles (Capturing and Bubbling)
+## Eventing styles (capturing and bubbling)
 
 All modern browsers support event capturing, but it is very rarely used by developers.
 Interestingly, it was the only form of eventing that Netscape originally supported. Netscape's
@@ -58,7 +58,7 @@ default value for `capture` is `false`, meaning event bubbling will be used.
 [`EventTarget.addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener).
 {% endAside %}
 
-#### Event Capturing
+### Event capturing
 
 What does it mean if your event handler is "listening in the capturing phase?" To understand this,
 we need to know how events originate and how they travel. The following is true of _all_ events,
@@ -135,7 +135,7 @@ period of time when the event is _at_ the target, is known as the "target phase.
 event handler will fire, the browser will console.log "#C was clicked" and then we're done, right?
 _Wrong!_ We're not done at all. The process continues, but now it changes to the bubbling phase.
 
-#### Event Bubbling
+### Event bubbling
 
 The browser will ask:
 
@@ -302,7 +302,7 @@ You can interactively play with this in the live demo below. Click on the `#C` e
   <iframe src="https://silicon-brawny-cardinal.glitch.me/event-capturing-and-bubbling.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 
-### `event.stopPropagation()`
+## `event.stopPropagation()`
 
 With an understanding of where events originate and how they travel (i.e. propagate) through the DOM
 in both the capturing phase and the bubbling phase, we can now turn our attention to
@@ -314,7 +314,7 @@ begin with). Events like `focus`, `blur`, `load`, `scroll`, and a few others fal
 category. You can call `stopPropagation()` but nothing interesting will happen, since these events
 don't propagate.
 
-### But what does stopPropagation do?
+## But what does `stopPropagation` do?
 
 It does, pretty much, just what it says. When you call it, the event will, from that point, cease
 propagating to any elements it would otherwise travel to. This is true of _both_ directions
@@ -397,7 +397,7 @@ In any of these live demos, I encourage you to play around. Try clicking on the 
 the `body` element only. Try to predict what will happen and then observe if you are correct. At
 this point, you should be able to predict pretty accurately.
 
-### `event.stopImmediatePropagation()`
+## `event.stopImmediatePropagation()`
 
 What is this strange, and not oft-used method? It's similar to `stopPropagation`, but rather than
 stopping an event from traveling to descendents (capturing) or ancestors (bubbling), this method
@@ -457,7 +457,7 @@ would still run.
   <iframe src="https://silicon-brawny-cardinal.glitch.me/stop-immediate-propagation.html" loading="lazy" style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 
-### `event.preventDefault()`
+## `event.preventDefault()`
 
 If `stopPropagation()` prevents an event from traveling "downwards" (capturing) or "upwards"
 (bubbling), what then, does `preventDefault()` do? It sounds like it does something similar. Does
@@ -539,7 +539,7 @@ list them all, and sometimes you have to just experiment to see. But briefly, he
 This is not an exhaustive list by any means, but hopefully it gives you a good idea of how
 `preventDefault()` can be used.
 
-### A fun practical joke?
+## A fun practical joke?
 
 What happens if you `stopPropagation()` _and_ `preventDefault()` in the capturing phase, starting at
 the document? Hilarity ensues! The following code snippet will render any web page just about
@@ -574,7 +574,7 @@ But we also call `preventDefault()`, which you'll recall prevents the default _a
 default actions (like mousewheel scroll, keyboard scroll or highlight or tabbing, link clicking,
 context menu display, etc.) are all prevented, thus leaving the page in a fairly useless state.
 
-## Live Demos
+## Live demos
 
 To explore all the examples from this article again in one place, check out the embedded demo
 below.
