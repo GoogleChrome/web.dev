@@ -116,7 +116,7 @@ patternId: web-vitals-patterns/infinite-scroll/infinite-scroll
         </button>
         <div class="footer">Privacy Policy | About Us | Corporate | Like & Subscribe</div>
     </div>
-    <script>
+    {% set script %}
         function infiniteScroll() {
             //------- Demo setup code -------------------------------------------------------
             const setupDemo = (() => {
@@ -214,6 +214,7 @@ patternId: web-vitals-patterns/infinite-scroll/infinite-scroll
             listObserver.observe(loadingButtonEl);
         }
         infiniteScroll();
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
 </body>
 </html>

@@ -117,7 +117,7 @@ patternId: web-vitals-patterns/placeholders/placeholders
             <div class="text-container"></div>
         </div>
     </div>
-    <script>
+    {% set script %}
         document.querySelector("button").addEventListener("click", ()=> {
             window.location.reload();
         });
@@ -152,5 +152,6 @@ patternId: web-vitals-patterns/placeholders/placeholders
                 }
             });
         }, 3000);
-    </script>
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
 </body>
