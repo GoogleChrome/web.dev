@@ -41,8 +41,8 @@ patternId: web-vitals-patterns/placeholders/placeholders
             font-weight: bold;
         }
         .image-container {
-            aspect-ratio: 1 / 1;
-            overflow: hidden;
+            width: 200px;
+            height: 200px;
             animation: placeholder ease-in-out 2s infinite;
         }
         .image-container img {
