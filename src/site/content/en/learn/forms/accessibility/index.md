@@ -43,7 +43,7 @@ Built-in form elements provide a lot of built-in features. Let's have a look at 
 {% Codepen {
   user: 'web-dot-dev',
   id: '2f56a723b5045ea990d38c2c170c3037',
-  height: 350
+  height: 450
 } %}
 
 Visually, the `<input>` (the first one in the example) and the `<div>` look the same.
@@ -132,6 +132,7 @@ In addition to color, use an icon, or prefix your error messages with the error 
   <strong>Error:</strong>Please use at least eight characters.
 </span>
 ```
+
 ## Help users to navigate your form
 
 You can change the visual order of form controls with CSS.
