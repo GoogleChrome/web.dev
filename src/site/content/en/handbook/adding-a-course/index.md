@@ -93,7 +93,7 @@ Create the following files:
 The `meta.yml` file defines important information about your course such as its
 publish date, title, etc.
 
-The `toc.yml` specifies your courses' table of contents. Take a look at the
+The `toc.yml` specifies your course's table of contents. Take a look at the
 [Learn CSS toc.yml](https://github.com/GoogleChrome/web.dev/blob/main/src/site/_data/courses/css/toc.yml) for an example.
 
 A simple, linear course could look like:
