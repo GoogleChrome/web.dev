@@ -79,7 +79,7 @@ you can use [CSS logical properties](/en-US/docs/Web/CSS/CSS_Logical_Properties)
 The input has a border thickness of `1px` on all sides,
 except on the left side, where the border is `4px` thick.
 Now, edit the CodePen and change the writing system to right to left
-by adding `dir=”rtl”` to the `<main>` element
+by adding `dir="rtl"` to the `<main>` element
 
 {% Aside %}
 The `dir` attribute indicates the direction of an element's text.
