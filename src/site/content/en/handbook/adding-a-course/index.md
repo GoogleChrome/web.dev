@@ -10,7 +10,7 @@ description: |
 
 Create a new directory in `src/site/content/en/learn/`. The name of this
 directory will be your `projectKey` which you'll use later. This will also be
-your courses' url. For example, the directory `src/site/content/en/css` has a
+your course's url. For example, the directory `src/site/content/en/css` has a
 `projectKey` of `css` and is accessible at [web.dev/learn/css](https://web.dev/learn/css).
 
 Add an `index.md` to the root of this directory. This will be your course's
