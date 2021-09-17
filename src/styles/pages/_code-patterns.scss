@@ -1,30 +1,40 @@
 @import '../settings/colors';
 @import '../tools/breakpoints';
 
-.w-masthead-patterns__container {
-  padding: 0 24px;
-  margin: 64px auto;
-
-  .w-masthead-about__left {
-    text-align: center;
-
-    @include bp(md) {
-      text-align: left;
-    }
-  }
-}
-
 .code-patterns-main {
   display: flex;
   flex-direction: column-reverse;
+
+  p {
+    @include w-body-text();
+  }
+
+  h3 {
+    font-weight: normal;
+  }
 
   @include bp(md) {
     flex-direction: row;
 
     h2:first-child {
-      margin-top: 0;
+      margin-top: 32px;
     }
   }
+
+  .code-pattern {
+    margin: 32px 0;
+  }
+
+  .w-details > p:first-of-type {
+    // Reset forced details margin.
+    @include w-body-text();
+    margin: 18px 0 0;
+  }
+}
+
+.code-patterns__more {
+  @include w-body-text();
+  margin: 0 0 32px;
 }
 
 .code-patterns-nav--top {
@@ -41,6 +51,7 @@
 
   .code-patterns-nav__filter {
     width: 150px;
+    margin-top: 32px;
   }
 
   .code-patterns-nav__sets {
@@ -76,7 +87,7 @@
 
   @include bp(lg) {
     display: block;
-    margin-left: 1rem;
+    margin-left: 32px;
   }
 
   .code-patterns-nav__sets {
