@@ -60,7 +60,7 @@ Later in this module find out how to
 [change the default error messages with JavaScript](#javascript).
 {% endAside %}
 
-You already learned that you can use many more types, for example, `email`.
+You already learned that you can use many more types, for example, `type="email"`.
 Let's have a look at a required email input.
 
 {% Codepen {
@@ -196,7 +196,8 @@ Wouldn't it be great to adapt the appearance of the element when this happens?
   height: 300
 } %}
 
-You can use the `:invalid` pseudo-class to add styles to invalid form controls.
+You can use the `:invalid` [pseudo-class](/learn/css/pseudo-classes/)
+to add styles to invalid form controls.
 In addition, there is also the `:valid` pseudo-class for styling valid form elements.
 
 {% Aside %}
@@ -216,7 +217,7 @@ Invalid form fields are already marked as `:invalid` before user interaction,
 which may confuse users. The `:user-invalid` pseudo-class solves this issue,
 as the styles are only applied after user interaction.
 
-Learn more about `:user-invalid`.
+Learn more about [`:user-invalid`](https://developer.mozilla.org/docs/Web/CSS/:user-invalid).
 {% endAside %}
 
 ## Validation with JavaScript {: #javascript}
