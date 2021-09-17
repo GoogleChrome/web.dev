@@ -13,7 +13,7 @@ directory will be your `projectKey` which we'll use later. This will also be
 your courses' url. For example, the directory `src/site/content/en/css` has a
 `projectKey` of `css` and is accessible at [web.dev/learn/css](https://web.dev/learn/css).
 
-Add an `index.md` to the root of this directory. This will be your courses'
+Add an `index.md` to the root of this directory. This will be your course's
 landing page. You can [copy the one from Learn CSS](https://github.com/GoogleChrome/web.dev/blob/main/src/site/content/en/learn/css/index.md) as a starter.
 
 Finally, add an `11tydata.js` file in this directory. The file name should match
