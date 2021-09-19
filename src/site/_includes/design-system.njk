@@ -1,7 +1,7 @@
 {% from 'macros/icon.njk' import icon, svg with context %}
 
 {% macro stackLink(url, pageUrl, text) %}
-  <a href="{{ url }}" {% if url == pageUrl %}aria-current="page"{% endif %}>{{ text }}</a> 
+  <a class="repel" href="{{ url }}" {% if url == pageUrl %}aria-current="page"{% endif %}>{{ text }}</a> 
 {% endmacro %}
 
 <!DOCTYPE html>
@@ -41,9 +41,9 @@
               <li>{{ stackLink(link.url, page.url, link.text)}}</li>
             {% endfor %}
           </ul>
-          <h2 class="text-size-3 pad-inline-size-1 flow-space-size-2">Patterns</h2>
+          <h2 class="text-size-3 pad-inline-size-1 flow-space-size-2">Component Library</h2>
           <ul class="stack-nav" role="list">
-            {% for item in design.patterns.items %}
+            {% for item in design.components.items %}
               <li>{{ stackLink(item.url, page.url, item.data.title) }}</li>
             {% endfor %}
           </ul>

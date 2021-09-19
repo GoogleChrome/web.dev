@@ -16,6 +16,11 @@ tags:
 
 {% Banner 'caution', 'body' %} **1 de junio de 2021:** la implementación de CLS cambió. Para obtener más información sobre las razones detrás del cambio, consulte [Evolución de la métrica CLS](/evolving-cls) . {% endBanner %}
 
+{% Banner 'info', 'body' %}
+  **New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for 
+  implementations of common UX patterns optimized for Core Web Vitals.
+{% endBanner %}
+
 {% Aside 'key-term' %} Cumulative Layout Shift: Cambio Acumulativo del diseño (CLS)  es una métrica importante centrada en el usuario para medir [la estabilidad visual](/user-centric-performance-metrics/#types-of-metrics) porque ayuda a cuantificar la frecuencia con la que los usuarios experimentan cambios de diseño inesperados; un CLS bajo ayuda a garantizar que la página sea [agradable](/user-centric-performance-metrics/#questions) . {% endAside %}
 
 ¿Alguna vez ha leído un artículo en línea cuando algo cambia repentinamente en la página? Sin previo aviso, el texto se mueve y perdiste tu lugar. O incluso peor: estás a punto de pulsar un enlace o un botón, pero en el instante antes de que aterrice su dedo, BOOM, ¡el enlace se mueve y termina haciendo clic en algo más!

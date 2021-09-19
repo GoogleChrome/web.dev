@@ -1,0 +1,42 @@
+setLeader: Test your knowledge of form elements
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: How do you connect a `<label>` to a form control?
+    options:
+      - content: "`for='color'` on the `<label>`, and `name='color'` on the `<input>`."
+        rationale: "Try again!"
+      - content: "`for='color'` on the `<label>`, and `id='color'` on the `<input>`."
+        rationale: "Correct!"
+      - content: "`id='color'` on the `<label>`, and `for='color'` on the `<input>`."
+        rationale: "Try again!"
+      - content: "`name='color'` on the `<label>`, and `for='color` on the `<input>`."
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: What do you use for a multi-line form control?
+    options:
+      - content: "`<input>` element with `type='multi-line'`."
+        rationale: "Try again!"
+      - content: "The `<text>` element."
+        rationale: "Try again!"
+      - content: "The `<textarea>` element."
+        rationale: "🎉"
+      - content: "`<input>` element with `type='long'`."
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0,1,2,3"
+    stem: How can you submit a form?
+    options:
+      - content: "Clicking a `<button>` element."
+        rationale: "Correct, this is one option."
+      - content: "Using the `ENTER` key."
+        rationale: "Correct, this is one option."
+      - content: "Clicking an `<input>` element with `type='submit'`."
+        rationale: "Correct, this is one option."
+      - content: "All of the above."
+        rationale: "Correct, all answers are possible options to submit a form."
