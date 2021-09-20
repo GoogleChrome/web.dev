@@ -166,8 +166,6 @@ module.exports = function (config) {
       ),
     ];
 
-    global.__designSystemComponents = require('./src/site/_data/design/components');
-
     return global.__designSystemPaths;
   });
 
