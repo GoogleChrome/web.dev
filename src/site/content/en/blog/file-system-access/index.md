@@ -538,7 +538,8 @@ access to a file's content. There is an ongoing
 [origin trial](https://developer.chrome.com/origintrials/#/view_trial/3378825620434714625) starting
 in Chromium&nbsp;95 and ending in Chromium&nbsp;98 (February 23, 2022) for simplifying how such
 files can be accessed by exposing two new methods as part of the origin private file system:
-`createAccessHandle()` (asynchronous) and `createSyncAccessHandle()` (synchronous) that are both
+`createAccessHandle()` (asynchronous read and write operations) and `createSyncAccessHandle()`
+(synchronous read and write operations) that are both
 exposed on `FileSystemFileHandle`.
 
 ```js
