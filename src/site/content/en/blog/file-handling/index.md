@@ -7,15 +7,14 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-updated: 2021-07-29
+updated: 2021-09-22
 tags:
   - blog
   - capabilities
+  - chrome95
   - file-handling
 hero: image/admin/tf0sUZX6G7AM8PvU1t0B.jpg
 alt: Binders in many colors.
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/-6682215947110973439
 ---
 
 {% Aside %} The File Handling API is part of the [capabilities project](/fugu-status/) and is
@@ -43,29 +42,13 @@ Examples of sites that may use this API include:
 | ---------------------------------------- | ------------------------ |
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | Not started              |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. **Origin trial**                      | **[In progress][ot]**    |
-| 5. Launch                                | Not started              |
+| 3. Gather feedback & iterate on design   | Complete                 |
+| 4. Origin trial                          | Complete                 |
+| 5. **Launch**                            | Chrome 95                |
 
 </div>
 
 ## How to use the File Handling API {: #use }
-
-### Enabling via about://flags
-
-To experiment with the File Handling API locally, without an origin trial token, enable the
-`#file-handling-api` flag in `about://flags`.
-
-### Enabling support during the origin trial phase
-
-Starting in Chromium&nbsp;92, the File Handling API will be available as an origin trial in
-Chromium. The origin trial is expected to end in Chromium&nbsp;94 (October 13, 2021).
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ### Progressive enhancement
 
@@ -198,7 +181,7 @@ transparency, and ergonomics.
 
 To ensure user trust and the safety of users' files when the File Handling API is used to open a file,
 a permission prompt will be shown before a PWA can view a file. This permission prompt will be shown
-right after the user selects the PWA to open a file, so that the permission is tightly coupled to the 
+right after the user selects the PWA to open a file, so that the permission is tightly coupled to the
 action of opening a file using the PWA, making it more understandable and relevant.
 
 This permission will show every time until the user clicks to **Allow** or **Block** file handling
@@ -308,4 +291,3 @@ The File Handling API was specified by [Eric Willigers](https://github.com/ericw
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]:
   https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[ot]: https://developer.chrome.com/origintrials/#/view_trial/-6682215947110973439
