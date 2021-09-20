@@ -534,7 +534,7 @@ await root.removeEntry('Old Stuff', { recursive: true });
 
 The [Storage Foundation API](/storage-foundation/) API provides access to a special kind of file
 that is highly optimized for performance, for example, by offering in-place and exclusive write
-access to a file's content. There is an ongoing
+access to a file's content. There is an
 [origin trial](https://developer.chrome.com/origintrials/#/view_trial/3378825620434714625) starting
 in Chromium&nbsp;95 and ending in Chromium&nbsp;98 (February 23, 2022) for simplifying how such
 files can be accessed by exposing two new methods as part of the origin private file system:

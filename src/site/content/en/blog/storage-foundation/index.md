@@ -31,7 +31,7 @@ origin_trial:
 [capabilities project](https://web.dev/fugu-status/) and is currently in development. This post will
 be updated as the implementation progresses. {% endAside %}
 
-{% Aside %} There is an ongoing effort to bring the Storage Foundation API closer together with the
+{% Aside %} There is an ongoing effort to bring the Storage Foundation API closer to the
 origin private file system of the File System Access API. For more information, read
 [Accessing Storage Foundation API files from the origin private file system](/file-system/access/#accessing-storage-foundation-api-files-from-the-origin-private-file-system). {% endAside %}
 
