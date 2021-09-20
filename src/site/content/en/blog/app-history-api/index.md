@@ -290,7 +290,7 @@ Their signatures aren't modified in any way (i.e., they won't now return a `Prom
 
 {% endAside %}
 
-The `AppHistory.navigate()` method returns an `AppHistoryResult` that contains two `Promise` instances under `.committed` and `.finished`.
+The `AppHistory.navigate()` method returns a object which contains two `Promise` instances in `{ committed, finished }`.
 This allows the invoker can wait until either the transition is "committed" (the visible URL has changed and a new `AppHistoryEntry` is available) or "finished" (all promises passed to `transitionWhile()` are complete&mdash;or rejected, due to failure or being preempted by another navigation).
 
 The `navigate` method also has an optional options object which controls how the navigation will occur.
@@ -318,7 +318,7 @@ In fact, it will always be `undefined` in those cases.
   </figcaption>
 </figure>
 
-The `AppHistory` interface also has a number of other navigation methods, all which return an `AppHistoryResult`.
+The `AppHistory` interface also has a number of other navigation methods, all which return an object containing `{ committed, finished }`.
 I've already mentioned `goTo()` (which accepts a `key` that denotes a specific entry in the user's history) and `navigate()`.
 It also includes `back()`, `forward()` and `reload()`.
 These methods are all handled—just like `navigate()`—by the centralized "navigate" event handler.
