@@ -19,8 +19,7 @@ feedback:
   - api
 ---
 
-The origin trial is and request streams are available starting Chrome 95. This
-means you can start a request before you have the whole body available.
+From Chrome 95, you can start a request before you have the whole body available by using the streams API.
 
 You could use this to:
 
