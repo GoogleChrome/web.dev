@@ -418,12 +418,14 @@ options, you can also choose to build your own SXG generator.
 
   The [NGINX SXG module](https://github.com/google/nginx-sxg-module) generates
   and serves SXGs. Sites that already use NGINX should consider using this
-  module over Web Packager Server.
-
-  The NGINX SXG module only works with `CanSignHttpExchanges` certificates.
-  Setup instructions can be found
+  module over Web Packager Server. Setup instructions can be found
   [here](/how-to-set-up-signed-http-exchanges/).
 
+- Envoy SXG Filter
+
+  The [Envoy SXG Filter](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/sxg_filter)
+  generates and serves SXGs. Sites that already use Envoy should consider using
+  this module over Web Packager Server.
 
 - `libsxg`
 
