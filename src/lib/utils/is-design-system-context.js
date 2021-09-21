@@ -1,4 +1,5 @@
 /* global __designSystemPaths */
 
-// Attempts to find passed path in generated design system compatible paths
-module.exports = (path) => __designSystemPaths.includes(path);
+// Attempts to find passed path in generated design system
+// compatible paths, which are a Set
+module.exports = (path) => __designSystemPaths.has(path);
