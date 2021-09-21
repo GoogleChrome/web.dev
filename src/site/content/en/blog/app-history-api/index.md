@@ -4,6 +4,7 @@ subhead: "Standardizing client-side routing through a brand new API which comple
 authors:
   - samthor
 date: 2021-08-25
+updated: 2021-09-20
 hero: image/QMjXarRXcMarxQddwrEdPvHVM242/aDcKXxmGtrMVmwZK43Ta.jpg
 alt: "Sculpture adorning the General Post Office, Sydney, Australia"
 description: "Learn about the App History API, a new API which adds improved functionality to build single-page applications."
@@ -223,7 +224,7 @@ const { key } = appHistory.current;
 backToHomeButton.onclick = () => appHistory.goTo(key);
 
 // Navigate away, but the button will always work.
-await appHistory.navigate('/another_url');
+await appHistory.navigate('/another_url').finished;
 ```
 
 ### State
@@ -289,8 +290,10 @@ Their signatures aren't modified in any way (i.e., they won't now return a `Prom
 
 {% endAside %}
 
-The `AppHistory.navigate()` method returns a `Promise`, so the invoker can wait until the transition is complete (or is rejected due to failure or being preempted by another navigation).
-It also has an optional options object which controls how the navigation will occur.
+The `AppHistory.navigate()` method returns an `AppHistoryResult` that contains two `Promise` instances under `.committed` and `.finished`.
+This allows the invoker can wait until either the transition is "committed" (the visible URL has changed and a new `AppHistoryEntry` is available) or "finished" (all promises passed to `transitionWhile()` are complete&mdash;or rejected, due to failure or being preempted by another navigation).
+
+The `navigate` method also has an optional options object which controls how the navigation will occur.
 These options will allow you to `replace` the current URL, set a new immutable `state` (to be made available via `AppHistoryEntry.getState()`), and configure `AppHistoryNavigateEvent.info`.
 
 The `info` property is worth calling out.
@@ -315,7 +318,7 @@ In fact, it will always be `undefined` in those cases.
   </figcaption>
 </figure>
 
-The `AppHistory` interface also has a number of other navigation methods.
+The `AppHistory` interface also has a number of other navigation methods, all which return an `AppHistoryResult`.
 I've already mentioned `goTo()` (which accepts a `key` that denotes a specific entry in the user's history) and `navigate()`.
 It also includes `back()`, `forward()` and `reload()`.
 These methods are all handled—just like `navigate()`—by the centralized "navigate" event handler.
