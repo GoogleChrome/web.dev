@@ -299,12 +299,7 @@ module.exports = {
     }
 
     // Passed data overwrites any context data.
-    // Regex removes whitespace and minifies: https://stackoverflow.com/a/59357436
     const renderData = {...item.data.context, ...data};
-    return nunjucksEnv
-      .renderString(item.markup, {data: renderData})
-      .replace(/\>[\r\n ]+\</g, '><')
-      .replace(/(<.*?>)|\s+/g, (m, $1) => ($1 ? $1 : ' '))
-      .trim();
+    return nunjucksEnv.renderString(item.markup, {data: renderData});
   },
 };
