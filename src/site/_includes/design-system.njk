@@ -55,17 +55,14 @@
           </ul>
         </nav>
         <div class="pad-size-1">
-          <div class="wrapper flow">
+          <article class="prose">
             <h1>{{ pageTitle if pageTitle else title }}</h1>
             {% if summary %}
               {{ summary | md | safe }}
             {% endif %}
-
-            <div class="flow">
-              {% block inner %}
-              {% endblock %}
-            </div>
-          </div>
+            {% block inner %}
+            {% endblock %}
+          </article>
         </div>
       </div>
     </div>
