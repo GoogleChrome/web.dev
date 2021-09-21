@@ -9,7 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-06-16
-updated: 2021-06-30
+updated: 2021-09-20
 description: |
   The Storage Foundation API is a storage API that resembles a basic file system,
   with direct access to stored data through buffers and offsets. It gives
@@ -30,6 +30,10 @@ origin_trial:
 {% Aside %} The Storage Foundation API is part of the
 [capabilities project](https://web.dev/fugu-status/) and is currently in development. This post will
 be updated as the implementation progresses. {% endAside %}
+
+{% Aside %} There is an ongoing effort to bring the Storage Foundation API closer to the
+origin private file system of the File System Access API. For more information, read
+[Accessing Storage Foundation API files from the origin private file system](/file-system/access/#accessing-storage-foundation-api-files-from-the-origin-private-file-system). {% endAside %}
 
 The web platform increasingly offers developers the tools they need to build fined-tuned
 high-performance applications for the web. Most notably,

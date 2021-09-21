@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-08-25
+updated: 2021-09-20
 tags:
   - blog
   - capabilities
@@ -71,8 +71,8 @@ API to ensure that people can easily manage their files. See the
 `Window.chooseFileSystemEntries()` that has been replaced with the three specialized methods
 `Window.showOpenFilePicker()`, `Window.showSaveFilePicker()`, and `Window.showDirectoryPicker()`.
 There were a number of other
-[changes](https://github.com/WICG/file-system-access/blob/main/changes.md) that you can read up
-on. {% endAside %}
+[changes](https://github.com/WICG/file-system-access/blob/main/changes.md) that you can read up on.
+{% endAside %}
 
 ## Browser support
 
@@ -80,9 +80,8 @@ on. {% endAside %}
 
 The File System Access API is currently supported on most Chromium browsers on Windows, macOS,
 Chrome OS, and Linux. A notable exception is Brave
-([brave/brave-browser#11407](https://github.com/brave/brave-browser/issues/11407)).
-Android support is planned; you can track progress by starring
-[crbug.com/1011535](https://crbug.com/1011535).
+([brave/brave-browser#11407](https://github.com/brave/brave-browser/issues/11407)). Android support
+is planned; you can track progress by starring [crbug.com/1011535](https://crbug.com/1011535).
 
 ## Using the File System Access API {: #how-to-use }
 
@@ -199,8 +198,8 @@ async function getNewFileHandle() {
 }
 ```
 
-{% Aside 'gotchas' %} Sometimes processing the to-be-saved data takes some time after the user clicks
-the **Save** button in your app. A common gotcha is to do this work _before_ the
+{% Aside 'gotchas' %} Sometimes processing the to-be-saved data takes some time after the user
+clicks the **Save** button in your app. A common gotcha is to do this work _before_ the
 `showSaveFilePicker()` code has run, resulting in a
 `SecurityError Failed to execute 'showSaveFilePicker' on 'Window': Must be handling a user gesture to show a file picker.`.
 Instead, get the file handle first, and only _after_ obtaining the file handle start processing the
@@ -529,6 +528,36 @@ const fileHandle = await root.getFileHandle('Untitled.txt', { create: true });
 const dirHandle = await root.getDirectoryHandle('New Folder', { create: true });
 // Recursively remove a directory.
 await root.removeEntry('Old Stuff', { recursive: true });
+```
+
+## Accessing Storage Foundation API files from the origin private file system
+
+The [Storage Foundation API](/storage-foundation/) API provides access to a special kind of file
+that is highly optimized for performance, for example, by offering in-place and exclusive write
+access to a file's content. There is an
+[origin trial](https://developer.chrome.com/origintrials/#/view_trial/3378825620434714625) starting
+in Chromium&nbsp;95 and ending in Chromium&nbsp;98 (February 23, 2022) for simplifying how such
+files can be accessed by exposing two new methods as part of the origin private file system:
+`createAccessHandle()` (asynchronous read and write operations) and `createSyncAccessHandle()`
+(synchronous read and write operations) that are both
+exposed on `FileSystemFileHandle`.
+
+```js
+// Asynchronous access in all contexts:
+const handle = await file.createAccessHandle({ mode: 'in-place' });
+await handle.writable.getWriter().write(buffer);
+const reader = handle.readable.getReader({ mode: 'byob' });
+// Assumes seekable streams, and SharedArrayBuffer support are available
+await reader.read(buffer, { at: 1 });
+```
+
+```js
+// (Read and write operations are synchronous,
+// but obtaining the handle is asynchronous.)
+// Synchronous access exclusively in Worker contexts
+const handle = await file.createSyncAccessHandle();
+const writtenBytes = handle.write(buffer);
+const readBytes = handle.read(buffer, { at: 1 });
 ```
 
 ## Polyfilling
