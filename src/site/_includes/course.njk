@@ -38,32 +38,37 @@ CSS_ORIGIN: 'next'
 
 <a class="skip-link button" data-type="primary" href="#main">Skip to main</a>
 
-<div class="display-flex direction-column lg:direction-row">
+<div class="sidebar">
 
-  {% include 'partials/header-course.njk' %}
-  {% include 'partials/navigation-drawer-course.njk' %}
+  <div>
+    {% include 'partials/header-course.njk' %}
+    {% include 'partials/navigation-drawer-course.njk' %}
+  </div>
 
   <div class="flex-1 min-width-0">
-    {% include 'partials/course-app-bar.njk' %}
-
+    <div hidden>
+      {% include 'partials/course-app-bar.njk' %}
+    </div>
     <div class="sticky-observer"></div>
 
-    <div class="course-content display-flex justify-content-center">
+    <div class="sidebar flex-dir-rev">
       {% include 'partials/toc-side.njk' %}
       <main id="main">
-        {% for item in pageNavigation.list %}
-          {% if item.url === page.url %}
-            <div class="course-index font-mono">{{ item.counter }}</div>
-          {% endif %}
-        {% endfor %}
-        <h1 class="course-headline">{{ title | md | safe }}</h1>
-        <p class="course-description">
-          {# If authors use backticks in their description markdown we don't #}
-          {# want the code to have any border or background color. #}
-          <span class="unstyled-code">{{ description | md | safe }}</span>
-        </p>
-        {% include 'partials/toc-inner.njk' %}
-        <div class="course-copy flow">
+        <div class="wrapper flow">
+          {% for item in pageNavigation.list %}
+            {% if item.url === page.url %}
+              <div class="eyebrow">{{ item.counter }}</div>
+            {% endif %}
+          {% endfor %}
+          <h1 class="course-headline">{{ title | md | safe }}</h1>
+          <p class="course-description">
+            {# If authors use backticks in their description markdown we don't #}
+            {# want the code to have any border or background color. #}
+            <span class="unstyled-code">{{ description | md | safe }}</span>
+          </p>
+          {% include 'partials/toc-inner.njk' %}
+        </div>
+        <div class="prose">
           {% if audio %}
             {% include 'partials/course-audio.njk' %}
           {% endif %}

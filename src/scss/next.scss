@@ -118,8 +118,8 @@ ul:not([class]) {
     display: block;
     position: absolute;
     inset: 1ex 0 0 0;
-    width: 0.8ex;
-    height: 0.8ex;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: currentColor;
   }
@@ -410,6 +410,10 @@ details:not([class]) summary {
       filter: invert(0.05);
     }
   }
+}
+
+[class*='text-'] > details:not([class]) summary {
+  font-size: inherit;
 }
 
 details[open]:not([class]) summary {
