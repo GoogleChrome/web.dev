@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-06-29
-updated: 2021-02-26
+updated: 2021-09-21
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 hero: image/admin/pErOjllBUXhnj68qOhfr.jpg
 alt: A person holding a phone.
@@ -48,8 +48,7 @@ Here is an example of a simple sign-in form that demonstrates all of the best pr
   `<label>`, and `<button>`.
 * [Label each input with a `<label>`](#label).
 * Use element attributes to [access built-in browser
-  features](#element-attributes): `type`, `name`, `autocomplete`, `required`,
-  `autofocus`.
+  features](#element-attributes): `type`, `name`, `autocomplete`, `required`.
 * Give input `name` and `id` attributes stable values that don't change
 between page loads or website deployments.
 * Put sign-in [in its own &lt;form&gt; element](#single-form).
@@ -211,17 +210,6 @@ password if necessary.
 
 This is where the magic really happens!
 Browsers have multiple helpful built-in features that use input element attributes.
-
-### Help users start faster {: #autofocus }
-
-Add an `autofocus` attribute to the first input in your sign-in form. That makes
-it clear where to start and, on desktop at least, means users don't have to
-select the input to start typing.
-
-<figure class="w-figure">
-  {% Img src="image/admin/27x2icJSXCMdfWOjVAdR.png", alt="Screenshot showing form input with autofocus.", width="500", height="451", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Autofocus provides clear visual focus on desktop.</figcaption>
-</figure>
 
 ## Keep passwords private—but enable users to see them if they want {: #show-password }
 
