@@ -47,36 +47,37 @@ CSS_ORIGIN: 'next'
     {% include 'partials/navigation-drawer-course.njk' %}
   </div>
 
-  <div class="flex-1 min-width-0">
+  <div class="course__main">
     <div hidden>
       {% include 'partials/course-app-bar.njk' %}
     </div>
     <div class="sticky-observer"></div>
-
-    <div class="sidebar flex-dir-rev">
-      {% include 'partials/toc-side.njk' %}
-      <main id="main">
-        <div class="wrapper flow">
-          {% for item in pageNavigation.list %}
-            {% if item.url === page.url %}
-              <div class="eyebrow">{{ item.counter }}</div>
+    <div class="wrapper">
+      <div class="sidebar flex-dir-rev">
+        {% include 'partials/toc-side.njk' %}
+        <main id="main">
+          <div class="wrapper flow">
+            {% for item in pageNavigation.list %}
+              {% if item.url === page.url %}
+                <div class="eyebrow">{{ item.counter }}</div>
+              {% endif %}
+            {% endfor %}
+            <h1 class="course-headline">{{ title | md | safe }}</h1>
+            <p class="course-description">
+              {# If authors use backticks in their description markdown we don't #}
+              {# want the code to have any border or background color. #}
+              <span class="unstyled-code">{{ description | md | safe }}</span>
+            </p>
+            {% include 'partials/toc-inner.njk' %}
+          </div>
+          <div class="prose">
+            {% if audio %}
+              {% include 'partials/course-audio.njk' %}
             {% endif %}
-          {% endfor %}
-          <h1 class="course-headline">{{ title | md | safe }}</h1>
-          <p class="course-description">
-            {# If authors use backticks in their description markdown we don't #}
-            {# want the code to have any border or background color. #}
-            <span class="unstyled-code">{{ description | md | safe }}</span>
-          </p>
-          {% include 'partials/toc-inner.njk' %}
-        </div>
-        <div class="prose">
-          {% if audio %}
-            {% include 'partials/course-audio.njk' %}
-          {% endif %}
-          {{ content | safe }}
-        </div>
-      </main>
+            {{ content | safe }}
+          </div>
+        </main>
+      </div>
     </div>
 
     {% include 'partials/course-pagination.njk' %}

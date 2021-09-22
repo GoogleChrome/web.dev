@@ -304,7 +304,7 @@ hr + * {
   --flow-space: #{get-size('size-6')};
 }
 
-/// Basic code
+/// Code
 
 code {
   padding: 0.125em 0.25em;
@@ -330,6 +330,28 @@ pre > code {
   overflow-x: auto;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
+}
+
+// It's not uncommon to have code in markdown headings.
+// In these cases we should remove the border.
+// There is also a utility class, .unstyled-code, that can be used
+// if we're using <code> blocks in new contexts.
+// For example: <span class="unstyled-code">{{ description | md | safe }}</span>
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+.unstyled-code code {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  margin: 0;
+  padding: 0;
+  white-space: normal;
 }
 
 /// Sub and sup
