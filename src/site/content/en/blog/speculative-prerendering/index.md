@@ -214,7 +214,7 @@ that could improve prerendering.
     proposed HTML element that enables seamless and instant navigations between
     pages. It would allow you to display the prerendered content as shown.
 
-    ```text
+    ```js
         <portal id="myPortal" src="https://example.com/"></portal>
     ```
 
