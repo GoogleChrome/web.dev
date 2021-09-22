@@ -2,10 +2,12 @@
 {% if tocContents %}
   {% from 'macros/icon.njk' import icon with context %}
 
-  <details data-type="inner" role="navigation" aria-label="{{ 'i18n.toc.on_this_page' | i18n(locale) }}">
-    <summary>
-      {{ 'i18n.toc.on_this_page' | i18n(locale) }}
-    </summary>
-    <div class="toc__wrapper flow-recursive">{{ tocContents | safe }}</div>
-  </details>
+  <div class="xl:hidden-yes">
+    <details data-type="inner" role="navigation" aria-label="{{ 'i18n.toc.on_this_page' | i18n(locale) }}">
+      <summary>
+        {{ 'i18n.toc.on_this_page' | i18n(locale) }}
+      </summary>
+      <div class="toc">{{ tocContents | safe }}</div>
+    </details>
+  </div>
 {% endif %}
