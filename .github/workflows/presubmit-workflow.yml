@@ -23,7 +23,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           is_presubmit: ${{ contains(github.event.pull_request.labels.*.name, '$-presubmit') }}
 
-      - name: Run a production build of site
+      - name: Run a staging build of site
         run: npm run build
         env:
           ELEVENTY_ENV: staging
