@@ -300,11 +300,11 @@ included in this trial.
  </script>
 ```
 
-    {% Aside %}
+{% Aside %}
     If multiple rules are specified, Chrome always prerenders based on the
     first rule. The score property is not used. Rules may be added, but the
     removal of rule sets is ignored.
-    {% endAside %}
+{% endAside %}
 
 -  **Restricted APIs**: APIs that can disrupt the UI such as
     Geolocation, Web Serial, Notifications, Web MIDI, and Idle Detection, are
