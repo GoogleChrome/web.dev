@@ -7,3 +7,15 @@ draft: true
 ---
 
 Use `place-contents: center` to center an element within its parent.
+
+First specify grid as the display method, and then write `place-items: center` on the same element. `place-items` is a shorthand to set both `align-items` and `justify-items` at once. By setting it to `center`, both `align-items` and `justify-items` are set to `center`.
+
+```
+.parent {
+  display: grid;
+  place-items: center;
+}
+```
+
+This enables the content to be perfectly centered within the parent, regardless of intrinsic size.
+
