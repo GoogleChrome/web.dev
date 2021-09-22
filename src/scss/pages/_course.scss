@@ -89,6 +89,11 @@ $course-side-vert-space: 20px;
   position: relative;
 }
 
+.course__toc {
+  position: sticky;
+  top: get-space('size-1');
+}
+
 /// STYLES TAKEN FROM OLD CSS
 web-search.course__search {
   display: block;

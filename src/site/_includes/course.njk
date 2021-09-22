@@ -47,13 +47,13 @@ CSS_ORIGIN: 'next'
     {% include 'partials/navigation-drawer-course.njk' %}
   </div>
 
-  <div class="course__main">
+  <div class="course__main region">
     <div hidden>
       {% include 'partials/course-app-bar.njk' %}
     </div>
     <div class="sticky-observer"></div>
     <div class="wrapper">
-      <div class="sidebar flex-dir-rev">
+      <div class="sidebar flex-align-start flex-dir-rev">
         {% include 'partials/toc-side.njk' %}
         <main id="main">
           <div class="wrapper flow">

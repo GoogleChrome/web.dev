@@ -108,6 +108,14 @@ $gorko-config: (
     'output': 'standard',
     'property': '--gutter',
   ),
+  'hidden': (
+    'items': (
+      'yes': 'none',
+      'no': 'revert',
+    ),
+    'output': 'responsive',
+    'property': 'display',
+  ),
   'leading': (
     'items': (
       'flat': '1.2',
@@ -167,6 +175,8 @@ $gorko-config: (
     'property': 'font-weight',
   ),
   'breakpoints': (
-    'md': '(min-width: 37em)',
+    'md': '(min-width: 50em)',
+    'lg': '(min-width: 80em)',
+    'xl': '(min-width: 95em)',
   ),
 );
