@@ -26,7 +26,7 @@
         {% if isNew %}
           <span class="stack-nav__meta tt-upper color-action-text">{{ 'i18n.common.new' | i18n(locale) }}</span>
         {% endif %}
-        {{ icon('done', {className: 'drawer-course__link-check'}) }}
+        {{ icon('done') }}
       </span>
     </a>
   {% elif title %}
@@ -41,37 +41,33 @@
 {% endmacro %}
 
 <web-navigation-drawer type="standard">
-  <nav data-drawer-container>
+  <nav data-drawer-container class="course__drawer flow">
+    <div class="course__header" style="--course-background: url('{{ courseData.meta.background }}')">
+      <button data-drawer-close-button class="fab tooltip" aria-label="{{ 'i18n.common.close' | i18n(locale) }}" data-icon-only>
+        {{ icon('close') }}
+        <span class="tooltip__content">{{ 'i18n.common.close' | i18n(locale) }}</span>
+      </button>
 
-    <div class="flow flow-space-base">
-      <div class="drawer-course__header" style="--course-background: url('{{ courseData.meta.background }}')">
-        <button data-drawer-close-button class="w-button--svg w-button--round" aria-label="{{ 'i18n.common.close' | i18n(locale) }}">
-          {{ icon('close') }}
-          <span class="w-tooltip">{{ 'i18n.common.close' | i18n(locale) }}</span>
-        </button>
-
-        <div class="drawer-course__title">
-          {% if courseData.meta.logo %}
-            {# The course logo is stored in src/images, but the svg macro uses
-            Nunjuck's include syntax. So we need to give it a relative path from
-            src/site/_includes to src/images. #}
-            {% set logo = helpers.join('../..', courseData.meta.logo) %}
-            {{ svg(logo, {label: courseData.meta.title | i18n(locale)}) }}
-          {% endif %}
-        </div>
-      </div>
-      <web-search class="drawer-course__search" results-id="search-course-results" tag="{{ searchTag }}"></web-search>
-      <div class="drawer-course__scroll">
-        <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
-          <ul class="stack-nav">
-          {% for item in pageNavigation.tree %}
-            <li>{{ renderItem(item, 0) }}</li>
-          {% endfor %}
-          </ul>
-        </course-links>
-        <web-course-search-results class="drawer-course__search_results" id="search-course-results"></web-course-search-results>
+      <div class="course__side-title">
+        {% if courseData.meta.logo %}
+          {# The course logo is stored in src/images, but the svg macro uses
+          Nunjuck's include syntax. So we need to give it a relative path from
+          src/site/_includes to src/images. #}
+          {% set logo = helpers.join('../..', courseData.meta.logo) %}
+          {{ svg(logo, {label: courseData.meta.title | i18n(locale)}) }}
+        {% endif %}
       </div>
     </div>
-
+    <web-search class="course__search" results-id="search-course-results" tag="{{ searchTag }}"></web-search>
+    <div class="course__over-scroll">
+      <course-links data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
+        <ul class="stack-nav">
+        {% for item in pageNavigation.tree %}
+          <li>{{ renderItem(item, 0) }}</li>
+        {% endfor %}
+        </ul>
+      </course-links>
+    </div>
+    <web-course-search-results class="course__search-results" id="search-course-results"></web-course-search-results>
   </nav>
 </web-navigation-drawer>

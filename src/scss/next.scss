@@ -13,6 +13,7 @@ $generate-utility-classes: false;
 /// GLOBAL VARIABLES
 /// Global variables that should be accessible in all authored CSS
 $global-gutter: map-get($gorko-space-scale, 'size-1');
+$global-gutter-narrow: 1.25rem;
 $global-stroke: 1px solid get-utility-value('color', 'stroke');
 
 // NOTE: there are more design token-led global variables in _tokens.scss
@@ -632,6 +633,7 @@ web-copy-code {
 @import 'utilities/wrapper';
 
 /// PAGES
+@import 'pages/course';
 @import 'pages/design-system';
 
 // The prototype file is for temporary prototyping
