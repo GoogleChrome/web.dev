@@ -72,6 +72,14 @@
           {% if updated %} <span class="w-author__separator">•</span> {{ 'i18n.common.updated' | i18n((locale)) }} <time>{{ updated | prettyDate }}</time> {% endif %}
         </div>
       {% endif %}
+
+      {% set languageListHtml %}{% LanguageList page.url, lang %}{% endset %}
+      {% if languageListHtml %}
+      <div class="w-layout-container--narrow w-post-signpost">
+        {{ languageListHtml | safe }}
+      </div>
+      {% endif %}
+
       {% SignPosts page.fileSlug %}
 
       {% if authors %}
