@@ -32,7 +32,7 @@
     "lint:scss": "sass-lint -v -q",
     "lint:types": "tsc --noEmit",
     "lint": "npm-run-all lint:md lint:scss lint:js",
-    "patterns:create": "node src/components/pattern-generator.js",
+    "patterns:create": "node src/component-library/pattern-generator.js",
     "percy": "PERCY=true npm-run-all build --parallel --race start snapshots",
     "postinstall": "npm ci --prefix functions",
     "rollup": "rollup -c",
