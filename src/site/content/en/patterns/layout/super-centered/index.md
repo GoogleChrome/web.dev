@@ -2,7 +2,7 @@
 layout: pattern
 title: Super Centered
 description: Centering a child div in one line of code
-date: 2021-09-20
+date: 2021-10-20
 draft: true
 ---
 

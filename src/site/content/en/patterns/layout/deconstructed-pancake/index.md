@@ -2,7 +2,7 @@
 layout: pattern
 title: Deconstructed Pancake
 description: Create a layout that stretches to fit the space, and snaps to the next line at a minimum size.
-date: 2021-09-20
+date: 2021-10-20
 draft: true
 ---
 
