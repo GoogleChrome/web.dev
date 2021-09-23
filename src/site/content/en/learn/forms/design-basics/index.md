@@ -148,7 +148,7 @@ You can define different sizes for different pointing devices,
 for example, a mouse, using the  `pointer` CSS media feature.
 
 ```css
-// has a pointing device, for example, a mouse
+// pointer device, for example, a mouse
 @media (pointer: fine) {
   input[type="checkbox"] {
     width: 15px;
