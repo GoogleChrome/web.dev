@@ -8,7 +8,7 @@ questions:
     options:
       - content: "Using the `<description>` element."
         rationale: "Try again!"
-      - content: "Using the `<label> element."
+      - content: "Using the `<label>` element."
         rationale: "🎉"
       - content: "Using the `description` attribute."
         rationale: "Try again!"
