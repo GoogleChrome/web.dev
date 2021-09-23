@@ -361,21 +361,18 @@ These tools support specific technology stacks. If you are already using a
 platform supported by one of these tools, you may find it easier to set up than
 a general-purpose tool.
 
-- `sxg-rs`
+- [`cloudflare_worker`](https://github.com/google/sxg-rs/tree/main/cloudflare_worker)
+  runs on [Cloudflare Workers](https://workers.cloudflare.com/).
 
-  [`sxg-rs`](https://github.com/google/sxg-rs) is a serverless function that
-  can run on various platforms, including Cloudflare Workers and
-  Fastly Compute@Edge.
+- [`fastly_compute`](https://github.com/google/sxg-rs/tree/main/fastly_compute)
+  runs on [Fastly
+  Compute@Edge](https://www.fastly.com/products/edge-compute/serverless).
 
-- NGINX SXG Module
-
-  The [NGINX SXG module](https://github.com/google/nginx-sxg-module) generates
+- [NGINX SXG module](https://github.com/google/nginx-sxg-module) generates
   and serves SXGs for sites using [nginx](https://nginx.org/). Setup
   instructions can be found [here](/how-to-set-up-signed-http-exchanges/).
 
-- Envoy SXG Filter
-
-  The [Envoy SXG
+- [Envoy SXG
   Filter](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/sxg_filter)
   generates and serves SXGs for sites using
   [Envoy](https://www.envoyproxy.io/).
@@ -413,22 +410,17 @@ Packager](/signed-exchanges-webpackager).
 
 These libraries could be used to build your own SXG generator:
 
-- `sxg-rs`
+- [`sxg_rs`](https://github.com/google/sxg-rs/tree/main/sxg_rs) is a Rust library for
+  generating SXGs. It is the most featureful, and is used as the basis for the
+  `cloudflare_worker` and `fastly_compute` tools.
 
-  [`sxg-rs`](https://github.com/google/sxg-rs) includes a Rust library for
-  generating SXGs. It includes features suited towards running as a serverless
-  function.
-
-- `libsxg`
-
-  [`libsxg`](https://github.com/google/libsxg) is a minimal, C-based library for
+- [`libsxg`](https://github.com/google/libsxg) is a minimal C library for
   generating SXGs. It is used as the basis for the NGINX SXG module and the
   Envoy SXG Filter.
 
-- `go/signed-exchange`
-
-  [`go/signed-exchange`](https://github.com/WICG/webpackage/tree/main/go/signedexchange)
-  is a Go library provided by the webpackage specification as a [reference
+- [`go/signed-exchange`](https://github.com/WICG/webpackage/tree/main/go/signedexchange)
+  is a minimal Go library provided by the webpackage specification as a
+  [reference
   implementation](https://en.wikipedia.org/wiki/Reference_implementation) of
   generating SXGs. It is used as the basis for its reference CLI tool,
   [`gen-signedexchange`](https://github.com/WICG/webpackage/tree/main/go/signedexchange)
