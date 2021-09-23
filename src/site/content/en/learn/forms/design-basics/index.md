@@ -174,7 +174,7 @@ To make it straightforward for users to find out which form control needs their 
 display error messages next to the form control they refer to.
 When displaying errors on form submission, make sure to navigate to the first invalid form control.
 
-### How does your user know what data to enter?
+### Make it clear to users what data to enter
 
 Make sure users understand how to enter valid data.
 Do they need to enter at least eight characters? Tell them.
