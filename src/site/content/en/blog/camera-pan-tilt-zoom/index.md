@@ -225,12 +225,12 @@ Thanks to [Rijubrata Bhaumik] and [Eero Häkkinen] at Intel for their work on th
 spec and the implementation.
 Hero image by [Christina @ wocintechchat.com] on [Unsplash].
 
-[mandatory constraints]: https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints#Specifying_a_range_of_values:~:text=mandatory
-[`MediaStream`]: https://developer.mozilla.org/en-US/docs/Web/API/MediaStream
-[Permissions API]: https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API
+[mandatory constraints]: https://developer.mozilla.org/docs/Web/API/Media_Streams_API/Constraints#Specifying_a_range_of_values:~:text=mandatory
+[`MediaStream`]: https://developer.mozilla.org/docs/Web/API/MediaStream
+[Permissions API]: https://developer.mozilla.org/docs/Web/API/Permissions_API
 [UVC controls]: https://www.usb.org/document-library/video-class-v15-document-set
 [PTZ advanced constraints]: https://bugs.chromium.org/p/chromium/issues/detail?id=1126045
-[Page Visibility API]: https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
+[Page Visibility API]: https://developer.mozilla.org/docs/Web/API/Page_Visibility_API
 [demo]: https://ptz.glitch.me/
 [check out the source code]: https://glitch.com/edit/#!/ptz?path=public%2Fscript.js
 [run Chrome with the switch]: https://www.chromium.org/developers/how-tos/run-chromium-with-flags

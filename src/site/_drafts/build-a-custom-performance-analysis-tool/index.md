@@ -91,7 +91,7 @@ And the output should look like this:
 ![image](step2_result.png)
 
 Instead of measuring the sum of the full page loads, you can also sum up FCP if you like, or whatever else you consider most meaningful.
-Now you'll inject JavaScript into the pages loaded via Puppeteer to extract the sum of [long tasks](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API): tasks that take 50 milliseconds or more. Define a function to be executed for new documents to measure long tasks and track them on a global variable:
+Now you'll inject JavaScript into the pages loaded via Puppeteer to extract the sum of [long tasks](https://developer.mozilla.org/docs/Web/API/Long_Tasks_API): tasks that take 50 milliseconds or more. Define a function to be executed for new documents to measure long tasks and track them on a global variable:
 
 ```js
 page.evaluateOnNewDocument(function() {

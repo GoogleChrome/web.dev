@@ -79,7 +79,7 @@ be used for fingerprinting.
 {% Aside 'key-term' %}
 **Fingerprinting** enables sites to identify and track individual users by getting data about their 
 device, operating system, and browser setup (such as language preferences,
-[user agent](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/userAgent), and available 
+[user agent](https://developer.mozilla.org/docs/Web/API/NavigatorID/userAgent), and available 
 fonts) or changes in device state. This may be done on the server by checking request headers or on 
 the client with JavaScript.
 

@@ -147,7 +147,7 @@ const bgSyncPlugin = new workbox.backgroundSync.Plugin('offlineQueryQueue', {
 
 The code does the following:
 
-- `workbox.backgroundSync.Plugin` contains the logic to add failed requests to a queue so they can be retried later. These requests will be persisted in [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).
+- `workbox.backgroundSync.Plugin` contains the logic to add failed requests to a queue so they can be retried later. These requests will be persisted in [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API).
 - `maxRetentionTime` indicates the amount of time a request may be retried. In this case we have chosen 60 minutes (after which it will be discarded).
 - `onSync` is the most important part of this code. This callback will be called when connection is back so that queued requests are retrieved and then fetched from the network.
 - The network response is added to the `offline-search-responses` cache, appending the `&notification=true` query param, so that this cache entry can be picked up when a user clicks on the notification.

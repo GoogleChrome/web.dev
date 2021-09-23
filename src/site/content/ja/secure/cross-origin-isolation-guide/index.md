@@ -69,7 +69,7 @@ Chrome 92 以降、`SharedArrayBuffer` を使用する機能は、クロスオ�
 
 ## クロスオリジンアイソレーションの影響を分析する{：#analysis}
 
-クロスオリジンアイソレーションを有効にすることがサイトに与える影響を何も破損せずに評価できたら非常に便利だと思いませんか？[`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) および [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) ヘッダーを使用すると、それを実際に行うことができます。
+クロスオリジンアイソレーションを有効にすることがサイトに与える影響を何も破損せずに評価できたら非常に便利だと思いませんか？[`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) および [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) ヘッダーを使用すると、それを実際に行うことができます。
 
 1. トップレベルドキュメントで[`Cross-Origin-Opener-Policy-Report-Only: same-origin`](/coop-coep/#1.-set-the-cross-origin-opener-policy:-same-origin-header-on-the-top-level-document) を設定します。名前から分かるように、このヘッダーは、`COOP: same-origin` がサイトに与えると**思われる**影響に関するレポートのみを送信します。ポップアップウィンドウとの通信が無効化されることはありません。
 2. レポートを設定し、レポートを受信して保存するようにウェブサーバーを設定します。

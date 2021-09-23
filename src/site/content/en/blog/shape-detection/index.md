@@ -32,7 +32,7 @@ feedback:
 ## What is the Shape Detection API? {: #what }
 
 With APIs like
-[`navigator.mediaDevices.getUserMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
+[`navigator.mediaDevices.getUserMedia`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
 and the Chrome for Android
 [photo picker](https://bugs.chromium.org/p/chromium/issues/detail?id=656015),
 it has become fairly easy to capture images or live video data from device
@@ -159,7 +159,7 @@ overview of the different platforms.
   attempts to call `detect()` will fail with a new
   `SecurityError` [`DOMException`](https://heycam.github.io/webidl/#idl-DOMException).
   If your image origin supports CORS, you can use the
-  [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)
+  [`crossorigin`](https://developer.mozilla.org/docs/Web/HTML/CORS_settings_attributes)
   attribute to request CORS access.
 {% endAside %}
 
@@ -308,7 +308,7 @@ thread. So don't rely on realtime detection, but rather allow for some
 time for the detector to do its work.
 
 If you are a fan of
-[Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API),
+[Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API),
 you'll be happy to know that detectors are exposed there as well.
 Detection results are serializable and can thus be passed from the worker
 to the main app via `postMessage()`. The [demo][demo] shows this in action.

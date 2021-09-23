@@ -291,7 +291,7 @@ Task manager video courtesy of
 [cr-status]: https://www.chromestatus.com/feature/4636879949398016
 [issues]: https://github.com/w3c/wake-lock/issues
 [wicg-discourse]: https://discourse.wicg.io/t/wake-lock-api-suppressing-power-management-screensavers/769
-[page-visibility-api]: https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
-[visibility-change]: https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilitychange_event
+[page-visibility-api]: https://developer.mozilla.org/docs/Web/API/Page_Visibility_API
+[visibility-change]: https://developer.mozilla.org/docs/Web/API/Document/visibilitychange_event
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EWakeLock
 [cr-dev-twitter]: https://twitter.com/chromiumdev

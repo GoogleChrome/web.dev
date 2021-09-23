@@ -32,7 +32,7 @@ The files in the sample project most relevant to this codelab are:
 
 A service worker (even an empty one, like the current `service-worker.js` file)
 won't be used unless it's
-[registered](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/register)
+[registered](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
 first. You can do this via a call to:
 
 ```js
@@ -47,7 +47,7 @@ Before you add that code, though, there are a couple of points to take into
 account.
 
 First, not every browser
-[supports](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API#Browser_compatibility)
+[supports](https://developer.mozilla.org/docs/Web/API/Service_Worker_API#Browser_compatibility)
 service workers. This is particularly true for older versions of browsers that
 don't automatically update. So it's a best practice to call
 `navigator.serviceWorker.register()` conditionally, after checking whether
@@ -92,7 +92,7 @@ Your `service-worker.js` file is where all the logic for your service worker
 implementation would normally go. You'd use a mix of the service worker
 [lifecycle events](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle),
 the
-[Cache Storage API](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage),
+[Cache Storage API](https://developer.mozilla.org/docs/Web/API/CacheStorage),
 and knowledge about your web app's network traffic to create a perfectly crafted
 service worker, ready to handle all of your web app's requests.
 

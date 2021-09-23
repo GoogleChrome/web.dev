@@ -15,7 +15,7 @@ tags:
 
 歴史的に見ても、Web ページのメイン コンテンツがどの程度早く読み込まれ、ユーザーに対して表示されるかを測定することは Web 開発者にとっての大きな課題でした。
 
-[load](https://developer.mozilla.org/en-US/docs/Web/Events/load) や [DOMContentLoaded](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) のような古い指標は、ユーザーが画面上で見ているものとは必ずしも一致しないため、 適切ではありません。また、[First Contentful Paint (視覚コンテンツの初期表示時間、FCP)](/fcp/) のようなユーザーを中心とした新しいパフォーマンス指標は、読み込みエクスペリエンスのごく初期の部分しかキャプチャできません。特にページにスプラッシュ スクリーンや読み込みインジケーターなどが表示されている場合には、この瞬間的な出来事はユーザーにとってあまり意味がありません。
+[load](https://developer.mozilla.org/docs/Web/Events/load) や [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) のような古い指標は、ユーザーが画面上で見ているものとは必ずしも一致しないため、 適切ではありません。また、[First Contentful Paint (視覚コンテンツの初期表示時間、FCP)](/fcp/) のようなユーザーを中心とした新しいパフォーマンス指標は、読み込みエクスペリエンスのごく初期の部分しかキャプチャできません。特にページにスプラッシュ スクリーンや読み込みインジケーターなどが表示されている場合には、この瞬間的な出来事はユーザーにとってあまり意味がありません。
 
 過去には、初期表示後の読み込みエクスペリエンスを把握するために [First Meaningful Paint (意味のある視覚コンテンツの初期表示時間、FMP)](/first-meaningful-paint/) や [Speed Index (スピード インデックス、SI)](/speed-index/) といったパフォーマンス指標を推奨してきました。しかしながら、これらの指標は複雑で説明が難しく、間違っている場合も多かったため、これらを使用してページのメイン コンテンツがいつ読み込まれたかを特定することはできませんでした。
 
@@ -43,32 +43,32 @@ Largest Contentful Paint (LCP) 指標は、ビューポート内に表示され�
 - `<img>` 要素
 - `<svg>` 要素内の `<image>` 要素
 - `<video>` 要素 (ポスター画像が使用されます)
-- ([CSS グラデーション](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)とは対照的に、) [`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients) 関数を介して読み込まれた背景画像が含まれている要素
-- テキスト ノードやその他のインラインレベルのテキスト要素の子要素を含む[ブロックレベル](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)要素。
+- ([CSS グラデーション](https://developer.mozilla.org/docs/Web/CSS/CSS_Images/Using_CSS_gradients)とは対照的に、) [`url()`](https://developer.mozilla.org/docs/Web/CSS/CSS_Images/Using_CSS_gradients) 関数を介して読み込まれた背景画像が含まれている要素
+- テキスト ノードやその他のインラインレベルのテキスト要素の子要素を含む[ブロックレベル](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)要素。
 
 なお、要素をこのように限定したのは、最初に考え方をシンプルにするという意図があったためです。研究が進むにつれて、追加の要素 (`<svg>`、`<video>` など) が今後追加されていく可能性があります。
 
 ### 要素のサイズはどのようにして決定されますか？
 
-Largest Contentful Paint としてレポートされる要素のサイズは、通常ビューポート内でユーザーに対して表示されるサイズとなります。要素がビューポートからはみ出していたり、要素の一部が切り取られていたり、画面に表示されない[オーバーフロー](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)が発生したりしているような場合、そういった部分は要素のサイズには含まれません。
+Largest Contentful Paint としてレポートされる要素のサイズは、通常ビューポート内でユーザーに対して表示されるサイズとなります。要素がビューポートからはみ出していたり、要素の一部が切り取られていたり、画面に表示されない[オーバーフロー](https://developer.mozilla.org/docs/Web/CSS/overflow)が発生したりしているような場合、そういった部分は要素のサイズには含まれません。
 
-[本来のサイズ](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size)からリサイズされた画像要素については、表示されたサイズと本来のサイズのうち、いずれか小さい方がレポートされます。たとえば、本来のサイズよりもはるかに小さいサイズへと縮小された画像については、表示されたサイズのみがレポートされ、逆に大きなサイズへと引き伸ばされたり拡大されたりした画像については、本来のサイズのみがレポートされます。
+[本来のサイズ](https://developer.mozilla.org/docs/Glossary/Intrinsic_Size)からリサイズされた画像要素については、表示されたサイズと本来のサイズのうち、いずれか小さい方がレポートされます。たとえば、本来のサイズよりもはるかに小さいサイズへと縮小された画像については、表示されたサイズのみがレポートされ、逆に大きなサイズへと引き伸ばされたり拡大されたりした画像については、本来のサイズのみがレポートされます。
 
 テキスト要素については、そのテキスト ノードのサイズ (すべてのテキスト ノードを包含する最小の長方形) のみが考慮されます。
 
 あらゆる要素において、CSS を介して適用されているマージン、パディング、ボーダーはすべて考慮されません。
 
-{% Aside %}どのテキスト ノードがどの要素に属しているかについての判断は時に難しいものとなり、特にインライン要素やプレーン テキスト ノードだけでなくブロックレベル要素も子要素として含んでいる要素については、特に難しくなります。この場合に重要となるのは、すべてのテキスト ノードは最も近いブロックレベルの祖先要素に属している (そして、その要素にのみ属している) という点です。[仕様](https://wicg.github.io/element-timing/#set-of-owned-text-nodes)では、各テキスト ノードはその[包含ブロック](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block)を生成する要素に属するとして定義されています。{% endAside %}
+{% Aside %}どのテキスト ノードがどの要素に属しているかについての判断は時に難しいものとなり、特にインライン要素やプレーン テキスト ノードだけでなくブロックレベル要素も子要素として含んでいる要素については、特に難しくなります。この場合に重要となるのは、すべてのテキスト ノードは最も近いブロックレベルの祖先要素に属している (そして、その要素にのみ属している) という点です。[仕様](https://wicg.github.io/element-timing/#set-of-owned-text-nodes)では、各テキスト ノードはその[包含ブロック](https://developer.mozilla.org/docs/Web/CSS/Containing_block)を生成する要素に属するとして定義されています。{% endAside %}
 
 ### 最大視覚コンテンツはどのタイミングでレポートされますか？
 
 Web ページは段階的に読み込まれる場合が多く、その結果としてページ内で最も大きい要素が変更される可能性があります。
 
-こういった変更の可能性に対応するため、ブラウザーは最初のフレームを描画した直後に、最大のコンテンツ要素を特定する `largest-contentful-paint` タイプの [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry) をディスパッチします。しかしながら、後続するフレームのレンダリング後に最大のコンテンツ要素が変更されるたびに、別の [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry) をディスパッチします。
+こういった変更の可能性に対応するため、ブラウザーは最初のフレームを描画した直後に、最大のコンテンツ要素を特定する `largest-contentful-paint` タイプの [`PerformanceEntry`](https://developer.mozilla.org/docs/Web/API/PerformanceEntry) をディスパッチします。しかしながら、後続するフレームのレンダリング後に最大のコンテンツ要素が変更されるたびに、別の [`PerformanceEntry`](https://developer.mozilla.org/docs/Web/API/PerformanceEntry) をディスパッチします。
 
 たとえば、テキストとヒーロー画像があるページでは、ブラウザーはテキストを最初にレンダリングします。その時点でブラウザーは `largest-contentful-paint` エントリをディスパッチしますが、その `element` プロパティはおそらく `<p>` または `<h1>` を参照するはずです。その後、ヒーロー画像の読み込みが完了すると 2 番目の `largest-contentful-paint` エントリがディスパッチされ、その `element` プロパティは `<img>` を参照するはずです。
 
-重要なのは、ある要素についてレンダリングが完了し、ユーザーに対して表示された時点で初めて、その要素は最大のコンテンツ要素としてみなされるという点です。まだ読み込まれていない画像は、"レンダリングされた" とはみなされません。また、[フォント ブロック期](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display#The_font_display_timeline)に Web フォントを使用するテキスト ノードについても同様です。このような場合に、比較的サイズが小さい要素が最大のコンテンツ要素としてレポートされる可能性がありますが、よりサイズの大きい要素のレンダリングが完了すれば、別の `PerformanceEntry` オブジェクトを介してすぐにその要素がレポートされます。
+重要なのは、ある要素についてレンダリングが完了し、ユーザーに対して表示された時点で初めて、その要素は最大のコンテンツ要素としてみなされるという点です。まだ読み込まれていない画像は、"レンダリングされた" とはみなされません。また、[フォント ブロック期](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display#The_font_display_timeline)に Web フォントを使用するテキスト ノードについても同様です。このような場合に、比較的サイズが小さい要素が最大のコンテンツ要素としてレポートされる可能性がありますが、よりサイズの大きい要素のレンダリングが完了すれば、別の `PerformanceEntry` オブジェクトを介してすぐにその要素がレポートされます。
 
 遅れて読み込まれる画像やフォントに加えて、新しいコンテンツが利用可能になったタイミングでページが新しい要素を DOM に追加する場合があります。こういった新しい要素のいずれかがそれまでの最大のコンテンツ要素よりもサイズが大きくなる場合、新しい `PerformanceEntry` もレポートされます。
 
@@ -84,9 +84,9 @@ Web ページは段階的に読み込まれる場合が多く、その結果と�
 
 #### 読み込み時間とレンダリング時間
 
-セキュリティ上の理由から、[`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin) ヘッダーを持たないクロスオリジン画像では画像のレンダリングのタイムスタンプは公開されません。その代わりに、読み込み時間のみが公開されます (この情報はその他多くの Web API を介してすでに公開されているためです)。
+セキュリティ上の理由から、[`Timing-Allow-Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin) ヘッダーを持たないクロスオリジン画像では画像のレンダリングのタイムスタンプは公開されません。その代わりに、読み込み時間のみが公開されます (この情報はその他多くの Web API を介してすでに公開されているためです)。
 
-以下の[使用例](#measure-lcp-in-javascript)では、レンダリング時間が利用できない要素の処理方法について示しています。ただし、可能な限り[`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin) ヘッダーを設定することを常に推奨しています。そうすることで、指標はより正確になります。
+以下の[使用例](#measure-lcp-in-javascript)では、レンダリング時間が利用できない要素の処理方法について示しています。ただし、可能な限り[`Timing-Allow-Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin) ヘッダーを設定することを常に推奨しています。そうすることで、指標はより正確になります。
 
 ### 要素のレイアウトやサイズの変更は、どのように処理されますか？
 
@@ -133,7 +133,7 @@ LCP は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 
 ### JavaScript を使用して LCP を測定する
 
-JavaScript を使用した LCP の測定には、[Largest Contentful Paint API](https://wicg.github.io/largest-contentful-paint/) を使用することができます。以下の例では、`largest-contentful-paint` エントリをリッスンしてコンソールにログを記録する [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) の作成方法を示しています。
+JavaScript を使用した LCP の測定には、[Largest Contentful Paint API](https://wicg.github.io/largest-contentful-paint/) を使用することができます。以下の例では、`largest-contentful-paint` エントリをリッスンしてコンソールにログを記録する [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) の作成方法を示しています。
 
 ```js
 new PerformanceObserver((entryList) => {

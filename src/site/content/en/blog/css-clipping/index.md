@@ -83,10 +83,10 @@ The `clip-path` property does not require the element to be floated.
 
 The full list of basic shapes is:
 
-- [`inset()`](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/Basic_Shapes#inset)
-- [`circle()`](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/Basic_Shapes#circle)
-- [`ellipse()`](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/Basic_Shapes#ellipse)
-- [`polygon()`](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/Basic_Shapes#polygon)
+- [`inset()`](https://developer.mozilla.org/docs/Web/CSS/CSS_Shapes/Basic_Shapes#inset)
+- [`circle()`](https://developer.mozilla.org/docs/Web/CSS/CSS_Shapes/Basic_Shapes#circle)
+- [`ellipse()`](https://developer.mozilla.org/docs/Web/CSS/CSS_Shapes/Basic_Shapes#ellipse)
+- [`polygon()`](https://developer.mozilla.org/docs/Web/CSS/CSS_Shapes/Basic_Shapes#polygon)
 
 ### `inset()`
 
@@ -171,7 +171,7 @@ then copy and paste the code into your own project.
 
 ## Shapes from box values
 
-Also defined in CSS Shapes are shapes from [box values](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/From_box_values).
+Also defined in CSS Shapes are shapes from [box values](https://developer.mozilla.org/docs/Web/CSS/CSS_Shapes/From_box_values).
 These relate to the CSS Box Model -- the content box, padding box, border box,
 and margin box with keyword values of `content-box`, `border-box`, `padding-box`, and `margin-box`.
 

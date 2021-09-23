@@ -68,7 +68,7 @@ In the next section, you'll learn how to apply an optimization to load different
 
 ## Use media queries
 
-Using media queries is a common technique to declare stylesheets that will only apply to certain media or device types. They are implemented by using [@media rules](https://developer.mozilla.org/en-US/docs/Web/CSS/@media), which let you define a set of breakpoints, where specific styles are defined.
+Using media queries is a common technique to declare stylesheets that will only apply to certain media or device types. They are implemented by using [@media rules](https://developer.mozilla.org/docs/Web/CSS/@media), which let you define a set of breakpoints, where specific styles are defined.
 When the conditions defined by the `@media` rule are met (for example, a certain screen width), the group of styles defined inside the breakpoint will be applied.
 
 The following steps can be used to apply media queries to [the site](https://use-media-queries-unoptimized.glitch.me/) so that different images are used, depending on the maximum width of the device requesting the page.

@@ -63,7 +63,7 @@ you'll actually implement and maintain.
   </table>
 </div>
 
-[`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
+[`font-display`](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display)
 is an API for specifying font display strategy. `swap` tells the browser that
 text using this font should be displayed immediately using a system font. Once
 the custom font is ready, the system font is swapped out.

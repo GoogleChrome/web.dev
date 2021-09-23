@@ -73,9 +73,9 @@ Image CDNs offer tens, and in some cases hundreds, of different image transforma
 There tends to be an objectively best setting for performance transformations, so some image CDNs support an "auto" mode for these transformations. For example, instead of specifying that images be transformed to the WebP format, you could allow the CDN to automatically select and serve the optimal format. Signals that an image CDN can use to determine the best way to transform an image include:
 
 * [Client hints](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints) (for example, viewport width, DPR, and image width)
-* The [`Save-Data`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data) header
-* The [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) request header
-* The [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API)
+* The [`Save-Data`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Save-Data) header
+* The [User-Agent](https://developer.mozilla.org/docs/Web/HTTP/Headers/User-Agent) request header
+* The [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API)
 
 For example, the image CDN might serve JPEG XR to an Edge browser, WebP to a Chrome browser, and JPEG to a very old browser. Auto settings are popular because they allow you to take advantage of image CDNs' significant expertise in optimizing images without the need for code changes to adopt new technologies once they're supported by the image CDN.
 

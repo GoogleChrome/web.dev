@@ -50,8 +50,8 @@ the request. If there's a match, the response is read from the cache, which
 eliminates both the network latency and the data costs that the transfer incurs.
 
 The HTTP Cache's behavior is controlled by a combination of
-[request headers](https://developer.mozilla.org/en-US/docs/Glossary/Request_header) and
-[response headers](https://developer.mozilla.org/en-US/docs/Glossary/Response_header).
+[request headers](https://developer.mozilla.org/docs/Glossary/Request_header) and
+[response headers](https://developer.mozilla.org/docs/Glossary/Response_header).
 In an ideal scenario, you'll have control over both the code for your
 web application (which will determine the request headers) and your web server's
 configuration (which will determine the response headers).
@@ -75,10 +75,10 @@ HTTP caching for you, without extra effort.
 {% Aside %}
 Developers who do need more control over the HTTP Cache in their web application
 have an alternative—you can "drop down" a level, and manually use the [Fetch
-API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), passing it
-[`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request) objects
+API](https://developer.mozilla.org/docs/Web/API/Fetch_API), passing it
+[`Request`](https://developer.mozilla.org/docs/Web/API/Request) objects
 with specific
-[`cache`](https://developer.mozilla.org/en-US/docs/Web/API/Request/cache)
+[`cache`](https://developer.mozilla.org/docs/Web/API/Request/cache)
 overrides set. That's beyond the scope of this guide, though!
 {% endAside %}
 
@@ -173,7 +173,7 @@ of assigning hash fingerprints to your asset URLs.
 
 {% Aside %}
 You can also add the [`immutable`
-property](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Revalidation_and_reloading)
+property](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control#Revalidation_and_reloading)
 to your `Cache-Control` header as a further optimization, though it [will be
 ignored](https://www.keycdn.com/blog/cache-control-immutable#browser-support) in
 some browsers.

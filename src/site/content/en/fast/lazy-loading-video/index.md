@@ -25,7 +25,7 @@ different solution.
 
 For videos where playback is initiated by the user (i.e., videos that _don't_
 autoplay), specifying the [`preload`
-attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-preload)
+attribute](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-preload)
 on the `<video>` element may be desirable:
 
 ```html
@@ -100,7 +100,7 @@ about lazy-loading it? To start, modify your `<video>` markup accordingly:
 ```
 
 You'll notice the addition of the [`poster`
-attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-poster),
+attribute](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster),
 which lets you specify a placeholder to occupy the `<video>` element's space
 until the video is lazy-loaded. As with the [`<img>` lazy-loading examples](/lazy-loading-images/),
  stash the video URL in the `data-src` attribute on each `<source>`

@@ -170,7 +170,7 @@ Thanks to [James Hollyer], [Thomas Steiner], [Joe Medley], [Kayce Basques], and
 [Google Stadia]: https://en.wikipedia.org/wiki/Google_Stadia
 [Nvidia GeForce Now]: https://en.wikipedia.org/wiki/GeForce_Now
 [well supported across browsers]: https://caniuse.com/?search=pointerlock
-[Browser compatibility]: https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API#Browser_compatibility
+[Browser compatibility]: https://developer.mozilla.org/docs/Web/API/Pointer_Lock_API#Browser_compatibility
 [sample]: https://unadjusted-movement.glitch.me/
 [check out the source code]: https://glitch.com/edit/#!/unadjusted-movement?path=script.js
 [James Hollyer]: https://github.com/jameshollyergoogle

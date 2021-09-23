@@ -355,7 +355,7 @@ forefront of international layout, and it's apparent it's underutilized or
 misunderstood.
 
 Areas to focus on:
-1. [`touch-action`](https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action)
+1. [`touch-action`](https://developer.mozilla.org/docs/Web/CSS/touch-action)
 1. [Logical properties](/learn/css/logical-properties/)
 
 ### APIs

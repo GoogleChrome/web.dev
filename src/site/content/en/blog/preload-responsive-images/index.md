@@ -43,7 +43,7 @@ Depending on your site's structure, that could mean significantly faster image d
 
 {% Aside %}
 
-Responsive images are [supported in all modern browsers](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Browser_compatibility) while preloading them is [supported only in Chromium-based browsers](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#Browser_compatibility).
+Responsive images are [supported in all modern browsers](https://developer.mozilla.org/docs/Web/HTML/Element/img#Browser_compatibility) while preloading them is [supported only in Chromium-based browsers](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility).
 
 {% endAside %}
 
@@ -104,7 +104,7 @@ An alternative way to avoid the problem would be to use a markup-based carousel 
 
 ### Preloading background images using image-set
 
-If you have different background images for different screen densities, you can specify them in your CSS with the `image-set` syntax. The browser can then choose which one to display based on the screen's [DPR](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio).
+If you have different background images for different screen densities, you can specify them in your CSS with the `image-set` syntax. The browser can then choose which one to display based on the screen's [DPR](https://developer.mozilla.org/docs/Web/API/Window/devicePixelRatio).
 
 ```css
 background-image: image-set( "cat.png" 1x, "cat-2x.png" 2x);
@@ -154,7 +154,7 @@ Of course, nothing captures the visual difference quite like a filmstrip compari
 
 ## Preload and `<picture>`?
 
-If you're familiar with responsive images, you may be wondering "What about [`<picture>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)?".
+If you're familiar with responsive images, you may be wondering "What about [`<picture>`](https://developer.mozilla.org/docs/Web/HTML/Element/picture)?".
 
 The Web Performance Working Group is talking about adding a preload equivalent for `srcset` and `sizes`, but not the `<picture>` element, which tackles the ["art direction"](/codelab-art-direction/) use-case.
 

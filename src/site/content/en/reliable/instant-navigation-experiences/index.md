@@ -26,7 +26,7 @@ Having to go against the network each time the user navigates to a new page unfo
 
 To speed up these requests, if you can anticipate the user's action, you can request these pages and assets beforehand and keep them in the cache for a short period of time until the user clicks on these links. This technique is called [prefetching](/link-prefetch/) and it's commonly implemented by adding `<link rel="prefetch">` tags to pages, indicating the resource to prefetch.
 
-In this guide we'll explore different ways in which [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) can be used as a complement of traditional prefetching techniques.
+In this guide we'll explore different ways in which [service workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) can be used as a complement of traditional prefetching techniques.
 
 ## Production cases
 
@@ -40,7 +40,7 @@ Prefetched files are requested at the "Lowest" priority and stored in the [HTTP 
 
 Using service worker caching can help you extend the lifetime of prefetch resources beyond the five-minute window.
 
-For example, Italian sports portal [Virgilio Sport](https://sport.virgilio.it/) uses service workers to prefetch the most popular posts in their home page. They also use the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) to avoid prefetching for users that are on a 2G connection.
+For example, Italian sports portal [Virgilio Sport](https://sport.virgilio.it/) uses service workers to prefetch the most popular posts in their home page. They also use the [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API) to avoid prefetching for users that are on a 2G connection.
 
 <figure class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bqiSoliDKZ9SR1NX2Ek3.png", alt="Virgilio Sport logo.", width="340", height="100" %}

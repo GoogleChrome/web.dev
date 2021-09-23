@@ -18,11 +18,11 @@ page and the service worker.
 For example: in a podcast PWA one could build a feature to let the user [download episodes for
 offline consumption](/app-like-pwas/#proactive-background-downloading) and allow the
 service worker to keep the page regularly informed about the progress, so the [main
-thread](https://developer.mozilla.org/en-US/docs/Glossary/Main_thread) can update the UI.
+thread](https://developer.mozilla.org/docs/Glossary/Main_thread) can update the UI.
 
 In this guide we'll explore the different ways of implementing a **two-way** communication between
-the [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) and [service
-worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) context, by exploring
+the [Window](https://developer.mozilla.org/docs/Web/API/Window) and [service
+worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) context, by exploring
 different APIs, the [Workbox library](https://developers.google.com/web/tools/workbox), as well as
 some advanced cases.
 
@@ -70,7 +70,7 @@ addEventListener('message', (event) => {
 ```
 
 Under the hood the library uses a browser API that we'll review in the next section: [Message
-Channel](https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API), but abstracts many
+Channel](https://developer.mozilla.org/docs/Web/API/Channel_Messaging_API), but abstracts many
 implementation details, making it easier to use, while leveraging the [wide browser
 support](https://caniuse.com/mdn-api_messagechannel_port1) this API has.
 
@@ -104,9 +104,9 @@ Differences:
 
 ### Broadcast Channel API {: #broadcast-channel-api }
 
-The [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
+The [Broadcast Channel API](https://developer.mozilla.org/docs/Web/API/Broadcast_Channel_API)
 allows basic communication between browsing contexts via [BroadcastChannel
-objects](https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel).
+objects](https://developer.mozilla.org/docs/Web/API/BroadcastChannel).
 
 To implement it, first, each context has to instantiate a `BroadcastChannel` object with the same ID
 and send and receive messages from it:
@@ -148,8 +148,8 @@ yet](https://caniuse.com/?search=broadcastchannel).
 
 ### Client API {: #channel-api }
 
-The [Client API](https://developer.mozilla.org/en-US/docs/Web/API/Client) allows you to obtain a
-reference to all the [`WindowClient`](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient) objects representing the active tabs that the service worker is controlling.
+The [Client API](https://developer.mozilla.org/docs/Web/API/Client) allows you to obtain a
+reference to all the [`WindowClient`](https://developer.mozilla.org/docs/Web/API/WindowClient) objects representing the active tabs that the service worker is controlling.
 
 Since the page is controlled by a single service worker, it listens to and sends messages to the
 active service worker directly via the `serviceWorker` interface:
@@ -180,10 +180,10 @@ self.addEventListener('message', (event) => {
 ```
 
 To communicate back with any of its clients, the service worker obtains an array of
-[`WindowClient`](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient) objects by executing
+[`WindowClient`](https://developer.mozilla.org/docs/Web/API/WindowClient) objects by executing
 methods such as
-[`Clients.matchAll()`](https://developer.mozilla.org/en-US/docs/Web/API/Clients/matchAll) and
-[`Clients.get()`](https://developer.mozilla.org/en-US/docs/Web/API/Clients/get). Then it can
+[`Clients.matchAll()`](https://developer.mozilla.org/docs/Web/API/Clients/matchAll) and
+[`Clients.get()`](https://developer.mozilla.org/docs/Web/API/Clients/get). Then it can
 `postMessage()` any of them:
 
 ```javascript
@@ -213,11 +213,11 @@ HTTP 203](https://www.youtube.com/watch?v=9UNwHmagedE&feature=youtu.be&t=697) to
 
 ### Message Channel {: #message-channel }
 
-[Message Channel](https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API) requires
+[Message Channel](https://developer.mozilla.org/docs/Web/API/Channel_Messaging_API) requires
 defining and passing a port from one context to another to establish a **two-way** communication
 channel.
 
-To initialize the channel, the page instantiates a [`MessageChannel`](https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel/MessageChannel) object and uses it
+To initialize the channel, the page instantiates a [`MessageChannel`](https://developer.mozilla.org/docs/Web/API/MessageChannel/MessageChannel) object and uses it
 to send a port to the registered service worker. The page also implements an `onmessage` listener on
 it to receive messages from the other context:
 

@@ -100,7 +100,7 @@ markup.
 
 You might be tempted to wrap inputs in a `<div>` and handle input data
 submission purely with JavaScript. It's generally better to use a plain old
-[`<form>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+[`<form>`](https://developer.mozilla.org/docs/Web/HTML/Element/form)
 element. This makes your site accessible to screenreaders and other assistive
 devices, enables a range of built-in browser features, makes it simpler to build
 basic functional sign-in for older browsers, and can still work even if
@@ -116,7 +116,7 @@ sign-in and search on the same page, you should use two form elements.
 
 ### Use `<label>` {: #label }
 
-To label an input, use a [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)!
+To label an input, use a [`<label>`](https://developer.mozilla.org/docs/Web/HTML/Element/label)!
 
 ```html
 <label for="email">Email</label>
@@ -155,7 +155,7 @@ mobile device to see for yourself.
 
 ### Use `<button>` {: #button }
 
-Use [`<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+Use [`<button>`](https://developer.mozilla.org/docs/Web/HTML/Element/button)
 for buttons! Button elements provide accessible behaviour and built-in form
 submission functionality, and they can easily be styled. There's no point in
 using a `<div>` or some other element pretending to be a button.

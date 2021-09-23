@@ -285,10 +285,10 @@ adjusting any incoming fonts to match.
 If generic scaling of glyphs isn't enough adjustment for your design or loading
 strategies, here are some finer tuning options that work along with
 `size-adjust`. The
-[`ascent-override`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override),
-[`descent-override`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/descent-override),
+[`ascent-override`](https://developer.mozilla.org/docs/Web/CSS/@font-face/ascent-override),
+[`descent-override`](https://developer.mozilla.org/docs/Web/CSS/@font-face/descent-override),
 and
-[`line-gap-override`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/line-gap-override)
+[`line-gap-override`](https://developer.mozilla.org/docs/Web/CSS/@font-face/line-gap-override)
 properties are currently implemented in Chromium 87+, and Firefox 89+.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/R0VZLOdnHUWpAomfMK3g.png",
@@ -384,7 +384,7 @@ resources:
 - [CSS Fonts Level 5
   Spec](https://drafts.csswg.org/css-fonts-5/#size-adjust-desc)
 - [Size Adjust on
-  MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/size-adjust)
+  MDN](https://developer.mozilla.org/docs/Web/CSS/@font-face/size-adjust)
 - [Seamless swap @font-face
   generator](https://deploy-preview-15--upbeat-shirley-608546.netlify.app/perfect-ish-font-fallback/?font=Montserrat)
 - [Cumulative Layout Shift (CLS) on web.dev](https://web.dev/cls/)

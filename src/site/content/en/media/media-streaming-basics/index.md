@@ -151,10 +151,10 @@ though before we get to far ahead you will first need to learn how to
 [Prepare media files for the web], and that's up next.
 
 [bitrates]: /bitrate/
-[Range]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range
+[Range]: https://developer.mozilla.org/docs/Web/HTTP/Headers/Range
 [The &lt;video> and &lt;source> tags]: /video-and-source-tags/#specify-start-and-end-times
 [add media to a web page]: /add-media/
-[DASH]: https://developer.mozilla.org/en-US/docs/Web/HTML/DASH_Adaptive_Streaming_for_HTML_5_Video
+[DASH]: https://developer.mozilla.org/docs/Web/HTML/DASH_Adaptive_Streaming_for_HTML_5_Video
 [HLS]: https://developer.apple.com/documentation/http_live_streaming
 [support for HLS]: https://caniuse.com/http-live-streaming
 [don't support native DASH]: https://caniuse.com/mpeg-dash

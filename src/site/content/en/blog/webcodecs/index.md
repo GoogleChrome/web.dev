@@ -20,10 +20,10 @@ feedback:
 ---
 
 Modern web technologies provide ample ways to work with video.
-[Media Stream API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API),
-[Media Recording API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API),
-[Media Source API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API),
- and [WebRTC API](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API) add up
+[Media Stream API](https://developer.mozilla.org/docs/Web/API/MediaStream_Recording_API),
+[Media Recording API](https://developer.mozilla.org/docs/Web/API/MediaStream_Recording_API),
+[Media Source API](https://developer.mozilla.org/docs/Web/API/Media_Source_Extensions_API),
+ and [WebRTC API](https://developer.mozilla.org/docs/Web/API/WebRTC_API) add up
 to a rich tool set for recording, transferring, and playing video streams.
 While solving certain high-level tasks, these APIs don't let web
 programmers work with individual components of a video stream such as frames
@@ -69,11 +69,11 @@ either consume or produce frames. Video encoders convert frames into encoded
 chunks. Video decoders do the opposite.
 
 Also `VideoFrame` plays nicely with other Web APIs by being a [`CanvasImageSource`](https://html.spec.whatwg.org/multipage/canvas.html#canvasimagesource) and having a [constructor](https://www.w3.org/TR/webcodecs/#dom-videoframe-videoframe) that accepts `CanvasImageSource`.
-So it can be used in functions like [`drawImage()`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage) and[`texImage2D()`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texImage2D). Also it can be constructed from canvases, bitmaps, video elements and other video frames.
+So it can be used in functions like [`drawImage()`](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage) and[`texImage2D()`](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D). Also it can be constructed from canvases, bitmaps, video elements and other video frames.
 
 
 WebCodecs API works well in tandem with the classes from [Insertable Streams API](https://w3c.github.io/mediacapture-transform/)
-which connect WebCodecs to [media stream tracks](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack).
+which connect WebCodecs to [media stream tracks](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack).
 - `MediaStreamTrackProcessor` breaks media tracks into individual frames.
 - `MediaStreamTrackGenerator` creates a media track from a stream of frames.
 
@@ -86,7 +86,7 @@ they might clutter the main thread and thus make the website less responsive.
 Therefore it is preferable to move handling of individual frames and encoded chunks into a
 web worker.
 
-To help with that, [ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)
+To help with that, [ReadableStream](https://developer.mozilla.org/docs/Web/API/ReadableStream)
 provides a convenient way to automatically transfer all frames coming from a media
 track to the worker. For example, `MediaStreamTrackProcessor` can be used to obtain a
 `ReadableStream` for a media stream track coming from the web camera. After that
@@ -94,7 +94,7 @@ the stream is transferred to a web worker where frames are read one by one and q
 into a `VideoEncoder`.
 
 With [`HTMLCanvasElement.transferControlToOffscreen`](https://developers.google.com/web/updates/2018/08/offscreen-canvas#unblock_main_thread) even rendering can be done off the main thread. But if all the high level tools turned
-out to be inconvenient, `VideoFrame` itself is [transferable](https://developer.mozilla.org/en-US/docs/Web/API/Transferable) and may be
+out to be inconvenient, `VideoFrame` itself is [transferable](https://developer.mozilla.org/docs/Web/API/Transferable) and may be
 moved between workers.
 
 ## WebCodecs in action
@@ -115,7 +115,7 @@ const cnv = document.createElement('canvas');
 …
 let frame_from_canvas = new VideoFrame(cnv, { timestamp: 0 });
 ```
-+ Use `MediaStreamTrackProcessor` to pull frames from a [`MediaStreamTrack`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack)
++ Use `MediaStreamTrackProcessor` to pull frames from a [`MediaStreamTrack`](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack)
 ```js
   const stream = await navigator.mediaDevices.getUserMedia({ … });
   const track = stream.getTracks()[0];
@@ -130,7 +130,7 @@ let frame_from_canvas = new VideoFrame(cnv, { timestamp: 0 });
       let frame_from_camera = result.value;
   }
 ```
-+ Create a frame from its binary pixel representation in a [`BufferSource`](https://developer.mozilla.org/en-US/docs/Web/API/BufferSource)
++ Create a frame from its binary pixel representation in a [`BufferSource`](https://developer.mozilla.org/docs/Web/API/BufferSource)
 ```js
   const pixelSize = 4;
   const init = {timestamp: 0, codedWidth: 320, codedHeight: 200, format: 'RGBA'};
@@ -296,7 +296,7 @@ decoder.configure(config);
 
 Once the decoder is initialized, you can start feeding it with `EncodedVideoChunk` objects.
 To create a chunk, you'll need:
-- A [`BufferSource`](https://developer.mozilla.org/en-US/docs/Web/API/BufferSource) of encoded video data
+- A [`BufferSource`](https://developer.mozilla.org/docs/Web/API/BufferSource) of encoded video data
 - the chunk's start timestamp in microseconds (media time of the first encoded frame in the chunk)
 - the chunk's type, one of:
   - `key` if the chunk can be decoded independently from previous chunks
@@ -407,8 +407,8 @@ if ('VideoEncoder' in window) {
   // WebCodecs API is supported.
 }
 ```
-Keep in mind that WebCodecs API is only available in [secure contexts](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts),
-so detection will fail if [`self.isSecureContext`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/isSecureContext) is false.
+Keep in mind that WebCodecs API is only available in [secure contexts](https://developer.mozilla.org/docs/Web/Security/Secure_Contexts),
+so detection will fail if [`self.isSecureContext`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/isSecureContext) is false.
 
 ## Feedback {: #feedback }
 
