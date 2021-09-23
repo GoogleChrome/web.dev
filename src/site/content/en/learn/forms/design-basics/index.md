@@ -156,7 +156,7 @@ for example, a mouse, using the  `pointer` CSS media feature.
   }
 }
 
-// pointing device of limited accuracy, for example, a touch-based device
+// pointer device of limited accuracy, for example, a touch-based device
 @media (pointer: coarse) {
   input[type="checkbox"] {
     width: 30px;
