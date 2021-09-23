@@ -186,8 +186,7 @@ Do they need to enter at least eight characters? Tell them.
 <span id="password-minlength">Enter at least eight characters</span>
 ```
 
-{% Aside %}
-Make it clear to users which fields are required.
+### Make it clear to users which fields are required.
 
 ```html
 <label for="name">Name (required)</label>
