@@ -181,8 +181,7 @@ Do they need to enter at least eight characters? Tell them.
 
 ```html
 <label for="password">Password (required)</label>
-<input required minlength="8" type="password" id="password"
-  name="password" aria-describedby="password-minlength">
+<input required minlength="8" type="password" id="password" name="password" aria-describedby="password-minlength">
 <span id="password-minlength">Enter at least eight characters</span>
 ```
 
