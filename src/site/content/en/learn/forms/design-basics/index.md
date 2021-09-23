@@ -200,7 +200,6 @@ Learn more about
 If most fields are required,
 it's also
 [an option to indicate the optional fields](https://www.lukew.com/ff/entry.asp?725).
-{% endAside %}
 
 How can you connect error messages to form controls to make them accessible for screen readers?
 You can learn about this in [the next module](/learn/forms/accessibility).
