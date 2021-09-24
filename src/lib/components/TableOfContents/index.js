@@ -27,6 +27,7 @@ class TableOfContents extends BaseStateElement {
   static get properties() {
     return {
       opened: {type: Boolean, reflect: true},
+      i18n: {type: Object},
     };
   }
 
@@ -35,6 +36,7 @@ class TableOfContents extends BaseStateElement {
     this.tocActiveClass = 'w-toc__active';
     this.tocBorderClass = 'w-toc__border';
     this.tocVisibleClass = 'w-toc__visible';
+    this.i18n = {};
   }
 
   connectedCallback() {
@@ -60,9 +62,11 @@ class TableOfContents extends BaseStateElement {
     const content = /** @type TemplateStringsArray */ (
       /** @type ReadonlyArray<string> */ ([this.tocHTML])
     );
+    const in_this_article = this.i18n.in_this_article;
+    const title = in_this_article[this.locale] || in_this_article['en'];
     return html`
       <div class="w-toc__label">
-        <span>In this article</span>
+        <span>${title}</span>
         <button
           class="w-button w-button--secondary w-button--icon"
           data-icon="close"
@@ -82,8 +86,9 @@ class TableOfContents extends BaseStateElement {
     this.observer.disconnect();
   }
 
-  onStateChanged({isTocOpened}) {
+  onStateChanged({isTocOpened, currentLanguage}) {
     this.opened = isTocOpened;
+    this.locale = currentLanguage;
   }
 }
 
