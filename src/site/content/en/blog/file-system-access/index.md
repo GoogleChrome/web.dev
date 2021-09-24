@@ -542,7 +542,7 @@ files can be accessed by exposing two new methods as part of the origin private 
 (synchronous read and write operations) that are both
 exposed on `FileSystemFileHandle`.
 
-{% aside %} There exists no way of accessing a file stored through Storage Foundation API using
+{% aside %} There exists no way of accessing a file stored through the Storage Foundation API using
 the Origin Private File System, and vice versa. {% endAside %}
 
 ```js
