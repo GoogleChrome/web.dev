@@ -35,7 +35,7 @@ folders on the user's device. Beyond reading and writing files, the File System 
 the ability to open a directory and enumerate its contents.
 
 {% Aside %} The File System Access API—despite the similar name—is distinct from the
-[`FileSystem`](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem) interface exposed by the
+[`FileSystem`](https://developer.mozilla.org/docs/Web/API/FileSystem) interface exposed by the
 [File and Directory Entries API](https://wicg.github.io/entries-api/#api-domfilesystem), which
 documents the types and operations made available by browsers to script when a hierarchy of files
 and directories are dragged and dropped onto a page or selected using form elements or equivalent
@@ -134,10 +134,10 @@ needed to save changes back to the file, or to perform any other file operations
 Now that you have a handle to a file, you can get the file's properties, or access the file itself.
 For now, I'll simply read its contents. Calling `handle.getFile()` returns a [`File`][file-api-spec]
 object, which contains a blob. To get the data from the blob, call one of [its
-methods][blob-methods], ([`slice()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/slice),
-[`stream()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/stream),
-[`text()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/text), or
-[`arrayBuffer()`](https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer)).
+methods][blob-methods], ([`slice()`](https://developer.mozilla.org/docs/Web/API/Blob/slice),
+[`stream()`](https://developer.mozilla.org/docs/Web/API/Blob/stream),
+[`text()`](https://developer.mozilla.org/docs/Web/API/Blob/text), or
+[`arrayBuffer()`](https://developer.mozilla.org/docs/Web/API/Blob/arrayBuffer)).
 
 ```js
 const file = await fileHandle.getFile();
@@ -470,15 +470,15 @@ await directoryHandle.removeEntry('Old Stuff', { recursive: true });
 ### Drag and drop integration
 
 The
-[HTML Drag and Drop interfaces](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+[HTML Drag and Drop interfaces](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API)
 enable web applications to accept
-[dragged and dropped files](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop)
+[dragged and dropped files](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop)
 on a web page. During a drag and drop operation, dragged file and directory items are associated
 with file entries and directory entries respectively. The `DataTransferItem.getAsFileSystemHandle()`
 method returns a promise with a `FileSystemFileHandle` object if the dragged item is a file, and a
 promise with a `FileSystemDirectoryHandle` object if the dragged item is a directory. The listing
 below shows this in action. Note that the Drag and Drop interface's
-[`DataTransferItem.kind`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/kind)
+[`DataTransferItem.kind`](https://developer.mozilla.org/docs/Web/API/DataTransferItem/kind)
 will be `"file"` for both files _and_ directories, whereas the File System Access API's
 [`FileSystemHandle.kind`](https://wicg.github.io/file-system-access/#dom-filesystemhandle-kind) will
 be `"file"` for files and `"directory"` for directories.
@@ -725,7 +725,7 @@ The File System Access API spec was written by
   https://docs.google.com/document/d/1NJFd-EWdUlQ7wVzjqcgXewqC5nzv_qII4OvlDtK6SE8/edit
 [wicg-discourse]: https://discourse.wicg.io/t/writable-file-api/1433
 [file-api-spec]: https://w3c.github.io/FileAPI/
-[blob-methods]: https://developer.mozilla.org/en-US/docs/Web/API/Blob
+[blob-methods]: https://developer.mozilla.org/docs/Web/API/Blob
 [showopenfilepicker]: https://wicg.github.io/file-system-access/#api-showopenfilepicker
 [showsavefilepicker]: https://wicg.github.io/file-system-access/#api-showsavefilepicker
 [showdirectorypicker]: https://wicg.github.io/file-system-access/#api-showdirectorypicker
@@ -736,8 +736,8 @@ The File System Access API spec was written by
 [removeentry]: https://wicg.github.io/file-system-access/#dom-filesystemdirectoryhandle-removeentry
 [resolve]: https://wicg.github.io/file-system-access/#api-filesystemdirectoryhandle-resolve
 [fs-writer]: https://wicg.github.io/file-system-access/#filesystemwriter
-[blob]: https://developer.mozilla.org/en-US/docs/Web/API/Blob
-[buffersource]: https://developer.mozilla.org/en-US/docs/Web/API/BufferSource
+[blob]: https://developer.mozilla.org/docs/Web/API/Blob
+[buffersource]: https://developer.mozilla.org/docs/Web/API/BufferSource
 [fs-file-handle]: https://wicg.github.io/file-system-access/#api-filesystemfilehandle
 [fs-dir-handle]: https://wicg.github.io/file-system-access/#api-filesystemdirectoryhandle
 [powerful-apis]:
@@ -757,7 +757,7 @@ The File System Access API spec was written by
   https://developers.google.com/web/updates/2011/08/Downloading-resources-in-HTML5-a-download
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [fs-writablestream]: https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream
-[writable-stream]: https://developer.mozilla.org/en-US/docs/Web/API/WritableStream
+[writable-stream]: https://developer.mozilla.org/docs/Web/API/WritableStream
 [spec-resolve]: https://wicg.github.io/file-system-access/#api-filesystemdirectoryhandle-resolve
 [spec-issameentry]: https://wicg.github.io/file-system-access/#api-filesystemhandle-issameentry
 [spec-seek]: https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream-seek

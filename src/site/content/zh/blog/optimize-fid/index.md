@@ -80,7 +80,7 @@ tags:
 
 ## 使用 Web Worker
 
-被阻塞的主线程是输入延迟的主要原因之一。[Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Worker)能够让 JavaScript 在后台线程上运行。将非用户界面操作移动到单独的工作线程上可以缩减主线程阻塞时间，从而改善 FID。
+被阻塞的主线程是输入延迟的主要原因之一。[Web Worker](https://developer.mozilla.org/docs/Web/API/Worker)能够让 JavaScript 在后台线程上运行。将非用户界面操作移动到单独的工作线程上可以缩减主线程阻塞时间，从而改善 FID。
 
 请考虑使用以下库来使您更轻松地在网站上使用 Web Worker：
 

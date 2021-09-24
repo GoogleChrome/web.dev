@@ -406,7 +406,7 @@ Hero image from [Unsplash][hero-image], by [Jeremy Zero][hero-image-by].
 
 [clunky-history-api]: https://html5doctor.com/interview-with-ian-hickson-html-editor/#:~:text=My%20biggest%20mistake%E2%80%A6there%20are%20so%20many%20to%20choose%20from!%20pushState()%20is%20my%20favourite%20mistake
 [scroll-restoration]: https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration
-[image map]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map
+[image map]: https://developer.mozilla.org/docs/Web/HTML/Element/map
 [back-forward-discuss]: https://github.com/WICG/app-history/issues/32
 [loading-crbug]: https://bugs.chromium.org/p/chromium/issues/detail?id=1241202
 [abortable-fetch]: https://developers.google.com/web/updates/2017/09/abortable-fetch

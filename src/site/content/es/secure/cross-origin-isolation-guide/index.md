@@ -64,7 +64,7 @@ Consulte un ejemplo de implementación aquí: [https://first-party-test.glitch.m
 
 ## Cómo analizar el impacto del aislamiento de origen cruzado {: #analysis}
 
-¿No sería fantástico si pudiera evaluar el impacto que tendría la habilitación del aislamiento de origen cruzado en su sitio sin realmente interrumpir nada? Los encabezados HTTP [`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) y [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) permiten hacer precisamente eso.
+¿No sería fantástico si pudiera evaluar el impacto que tendría la habilitación del aislamiento de origen cruzado en su sitio sin realmente interrumpir nada? Los encabezados HTTP [`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) y [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) permiten hacer precisamente eso.
 
 1. Establezca [`Cross-Origin-Opener-Policy-Report-Only: same-origin`](/coop-coep/#1.-set-the-cross-origin-opener-policy:-same-origin-header-on-the-top-level-document) en su documento de nivel superior. Como su nombre lo indica, este encabezado solo envía informes sobre el impacto que `COOP: same-origin` **tendría** en su sitio. En realidad, no deshabilitará la comunicación con las ventanas emergentes.
 2. Establezca los informes y configure un servidor web para recibir y guardar los informes.

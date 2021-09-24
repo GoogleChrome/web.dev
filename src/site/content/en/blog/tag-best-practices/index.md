@@ -210,9 +210,9 @@ Pixels became popular largely because at one time they were one of the cheapest
 and most reliable ways to make a HTTP request in situations where the server
 response is not relevant ( for example, when sending data to analytics
 providers). The
-[`navigator.sendBeacon()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon)
+[`navigator.sendBeacon()`](https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon)
 and [`fetch()
-keepalive`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#parameters)
+keepalive`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/fetch#parameters)
 APIs are designed to address this same use case but are arguably more reliable
 than pixels. 
 
@@ -220,10 +220,10 @@ than pixels.
 
 The `sendBeacon()` and `fetch() keepalive` APIs will both still work in
 situations where the browser is
-[unloading](https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event)
+[unloading](https://developer.mozilla.org/docs/Web/API/Window/unload_event)
 the page: for example, both of these APIs can be used to track outbound link
 clicks. By contrast, techniques like pixels and
-[`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+[`XMLHttpRequest`](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)
 would likely fail in those cases.
 
 {% endAside %}
@@ -236,7 +236,7 @@ it is worth considering using one of these APIs.
 ##### `sendBeacon()`
 
 The
-[`navigator.sendBeacon()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon)
+[`navigator.sendBeacon()`](https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon)
 API is designed for sending small amounts of data to web servers in situations
 where the server response does not matter.
 
@@ -258,9 +258,9 @@ not support setting custom headers. It is
 
 ##### `fetch() keepalive`
 
-[`keepalive`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#parameters)
+[`keepalive`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/fetch#parameters)
 is a flag that allows the [Fetch
-API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to
+API](https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch) to
 be used to make non-blocking requests like event reporting and analytics. It is
 used by including `keepalive: true` in the parameters passed to `fetch()`.
 

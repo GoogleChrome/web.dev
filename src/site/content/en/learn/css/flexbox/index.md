@@ -442,7 +442,7 @@ and the items line up at the end of the container and the spare space is placed 
 You can also distribute the space between the items with `justify-content: space-between`.
 
 Try some of the values in the demo,
-and [see MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) for the full set of
+and [see MDN](https://developer.mozilla.org/docs/Web/CSS/justify-content) for the full set of
 possible values.
 
 {% Codepen {
@@ -544,7 +544,7 @@ Use any of the following values to align the item:
 - `stretch`
 - `baseline`
 
-See [the full list of values on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self).
+See [the full list of values on MDN](https://developer.mozilla.org/docs/Web/CSS/align-self).
 
 The next demo has a single line of flex items with `flex-direction: row`.
 The last item defines the height of the flex container.
@@ -628,7 +628,7 @@ If you need to align something it's a great way to do it.
 
 ## Resources
 
-- [MDN CSS Flexible Box Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout) includes a series of detailed guides with examples.
+- [MDN CSS Flexible Box Layout](https://developer.mozilla.org/docs/Web/CSS/CSS_Flexible_Box_Layout) includes a series of detailed guides with examples.
 - [CSS Tricks Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [What Happens When You Create a Flexbox Flex Container](https://www.smashingmagazine.com/2018/08/flexbox-display-flex-container/)
 - [Everything You Need To Know About Alignment In Flexbox](https://www.smashingmagazine.com/2018/08/flexbox-alignment/)

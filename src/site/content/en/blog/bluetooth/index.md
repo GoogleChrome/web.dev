@@ -547,7 +547,7 @@ Hero image by [SparkFun Electronics from Boulder, USA].
 [receive GATT Notifications]: #notifications
 [Bluetooth device gets disconnected]: #disconnect
 [read and write to Bluetooth descriptors]: #descriptors
-[Browser compatibility]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API#Browser_compatibility
+[Browser compatibility]: https://developer.mozilla.org/docs/Web/API/Web_Bluetooth_API#Browser_compatibility
 [origin trial]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
 [Web Bluetooth Security Model]: https://medium.com/@jyasskin/the-web-bluetooth-security-model-666b4e7eed2
 [secure contexts]: https://w3c.github.io/webappsec-secure-contexts/#intro

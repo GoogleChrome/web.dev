@@ -90,7 +90,7 @@ new arrowFunction();
 
 With instance methods, if you want to ensure `this` always refers to the class instance, the best
 way is to use arrow functions and [class
-fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields):
+fields](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Public_class_fields):
 
 ```js
 class Whatever {
@@ -372,7 +372,7 @@ console.log(someFunction() === undefined);
 
 In this case, the value of `this` is undefined. `'use strict'` isn't needed in the function if the
 parent scope is in [strict
-mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) (and all
+mode](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode) (and all
 modules are in strict mode).
 
 {% Aside 'warning' %}
@@ -399,7 +399,7 @@ details](https://mathiasbynens.be/notes/globalthis#terminology), including why i
 
 {% Aside 'warning' %} Avoid using `this` to reference the global object (yes, I'm still calling it
 that). Instead, use
-[`globalThis`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis),
+[`globalThis`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/globalThis),
 which is much more explicit. {% endAside %}
 
 ## Phew!

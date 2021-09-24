@@ -15,7 +15,7 @@ tags:
 
 {% YouTube '5eBar5TI71M' %}
 
-CSS [Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini) is an umbrella term that
+CSS [Houdini](https://developer.mozilla.org/docs/Web/Houdini) is an umbrella term that
 describes a series of low-level browser APIs that give developers much more control and power over
 the styles they write.
 
@@ -24,7 +24,7 @@ the styles they write.
 </figure>
 
 Houdini enables more semantic CSS with the [Typed Object
-Model](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API/Guide). Developers can
+Model](https://developer.mozilla.org/docs/Web/API/CSS_Typed_OM_API/Guide). Developers can
 define advanced CSS custom properties with syntax, default values, and inheritance through the
 [Properties and Values API](/at-property/).
 

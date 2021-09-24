@@ -39,7 +39,7 @@ application, including its:
 * App icon
 * Theme color
 
-The [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+The [MDN documentation](https://developer.mozilla.org/docs/Web/Manifest)
 covers all the properties that can be changed in detail.
 
 ## Modify the default manifest
@@ -108,5 +108,5 @@ To find out if all the properties are working correctly in this example:
 2. If you would like users to install the application on their device, modify
    the manifest file (or create one if you are not using CRA) with any
    properties that you like. The
-   [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+   [MDN documentation](https://developer.mozilla.org/docs/Web/Manifest)
    explains all the required and optional attributes.

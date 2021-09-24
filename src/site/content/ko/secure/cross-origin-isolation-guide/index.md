@@ -64,7 +64,7 @@ Chrome 92부터 출처 간 격리 없이는 `SharedArrayBuffer`를 사용하는 
 
 ## 출처 간 격리의 영향 분석 {: #analysis}
 
-실제로 어떤 부분도 건드리지 않고 출처 간 격리를 활성화했을 때 사이트에 미치는 영향을 평가할 수 있다면 좋지 않을까요? [`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) 및 [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) HTTP 헤더를 사용하면 그렇게 할 수 있습니다.
+실제로 어떤 부분도 건드리지 않고 출처 간 격리를 활성화했을 때 사이트에 미치는 영향을 평가할 수 있다면 좋지 않을까요? [`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) 및 [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) HTTP 헤더를 사용하면 그렇게 할 수 있습니다.
 
 1. 최상위 문서에서 [`Cross-Origin-Opener-Policy-Report-Only: same-origin`](/coop-coep/#1.-set-the-cross-origin-opener-policy:-same-origin-header-on-the-top-level-document)을 설정합니다. 이름에서 알 수 있듯이 이 헤더는 `COOP: same-origin`이 사이트에 **잠재적으로 미칠** 영향에 대한 보고서만 보냅니다. 실제로 팝업 창과의 통신을 중단시키지 않습니다.
 2. 보고를 설정하고 보고서를 수신하고 저장하도록 웹 서버를 구성합니다.

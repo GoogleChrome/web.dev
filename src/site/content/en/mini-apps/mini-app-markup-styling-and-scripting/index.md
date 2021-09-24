@@ -93,7 +93,7 @@ Page({
 ### Templates
 
 Rather than requiring the imperative
-[cloning of the `content` of an HTML template](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTemplateElement/content),
+[cloning of the `content` of an HTML template](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/content),
 WXML templates can be used declaratively via the `is` attribute that links to a template definition.
 
 ```html
@@ -164,7 +164,7 @@ Since components (see [later](/mini-app-components/)) do not use shadow DOM, sty
 into all components. The common stylesheet file organization is to have one root stylesheet for
 global styles, and individual per-page stylesheets specific to each page of the mini app. Styles can
 be imported with an `@import` rule that behaves like the
-[`@import`](https://developer.mozilla.org/en-US/docs/Web/CSS/@import) CSS at-rule. Like in HTML,
+[`@import`](https://developer.mozilla.org/docs/Web/CSS/@import) CSS at-rule. Like in HTML,
 styles can also be declared inline, including dynamic text interpolation (see
 [before](/mini-app-markup-styling-and-scripting/#data-binding)).
 
@@ -185,13 +185,13 @@ operating system with an older WebView implementation (see [later](/mini-app-pro
 documentation of the super app providers explicitly mentions that their scripting languages are not
 to be confused with and are distinct from JavaScript. This statement, however, refers mostly just to
 the way modules work, that is, that they do not support standard
-[ES Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) yet.
+[ES Modules](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules) yet.
 
 As mentioned [before](/mini-app-markup-styling-and-scripting/#markup-languages), the mini app programming concept is the
 [model-view-viewmodel](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) (MVVM).
 The logic layer and the view layer run on different threads, which means the user interface does not
 get blocked by long-running operations. In web terms, you can think of scripts running in a
-[Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers).
+[Web Worker](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers).
 
 WeChat's scripting language is called
 [WXS](https://developers.weixin.qq.com/miniprogram/en/dev/reference/wxs/), Alipay's

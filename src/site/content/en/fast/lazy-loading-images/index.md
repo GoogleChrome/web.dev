@@ -42,7 +42,7 @@ and to fetch other images when the user scrolls near them.
 {% endAside %}
 
 See the `loading` field of MDN's
-[browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Browser_compatibility)
+[browser compatibility](https://developer.mozilla.org/docs/Web/HTML/Element/img#Browser_compatibility)
 table for details of browser support.
 If the browser does not support lazy-loading then the attribute will be ignored
 and images will load immediately, as normal.
@@ -143,12 +143,12 @@ requirements may be such that browser compatibility is critical. [You _can_
 polyfill Intersection Observer
 support](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) (and
 this would be easiest), but you could also fall back to code using
-[`scroll`](https://developer.mozilla.org/en-US/docs/Web/Events/scroll),
-[`resize`](https://developer.mozilla.org/en-US/docs/Web/Events/resize), and
+[`scroll`](https://developer.mozilla.org/docs/Web/Events/scroll),
+[`resize`](https://developer.mozilla.org/docs/Web/Events/resize), and
 possibly
-[`orientationchange`](https://developer.mozilla.org/en-US/docs/Web/Events/orientationchange)
+[`orientationchange`](https://developer.mozilla.org/docs/Web/Events/orientationchange)
 event handlers in concert with
-[`getBoundingClientRect`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+[`getBoundingClientRect`](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect)
 to determine whether an element is in the viewport.
 
 Assuming the same markup pattern from before,
@@ -182,7 +182,7 @@ requirement.
 
 While `<img>` tags are the most common way of using images on web pages, images
 can also be invoked via the CSS
-[`background-image`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
+[`background-image`](https://developer.mozilla.org/docs/Web/CSS/background-image)
 property (and other properties). Browser-level lazy-loading does not apply to CSS background images,
 so you need to consider other methods if you have background images to lazy-load.
 

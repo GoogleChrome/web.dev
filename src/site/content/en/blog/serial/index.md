@@ -168,7 +168,7 @@ Input and output streams in the Web Serial API are handled by the Streams API.
 
 {% Aside %}
 If streams are new to you, check out [Streams API
-concepts](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts).
+concepts](https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts).
 This article barely scratches the surface of streams and stream handling.
 {% endAside %}
 

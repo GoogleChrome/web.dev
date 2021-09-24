@@ -76,7 +76,7 @@ This is the CSS for `flower_photo.jpg`:
 
 `50vw` sets the CSS width of `flower_photo.jpg` to "half the width of
 the browser."
-([1vw](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units)
+([1vw](https://developer.mozilla.org/docs/Learn/CSS/Introduction_to_CSS/Values_and_units)
 is equal to 1% the width of the browser).
 
 The ideal size for this image would depend on the device it is being viewed on,

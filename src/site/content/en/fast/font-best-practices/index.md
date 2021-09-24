@@ -41,10 +41,10 @@ lifecycle works and provides corresponding best practices.
 ## Font loading
 
 Before diving into best practices for font loading it's important to understand
-how [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)
+how [`@font-face`](https://developer.mozilla.org/docs/Web/CSS/@font-face)
 works and how this impacts font loading.
 
-The [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)
+The [`@font-face`](https://developer.mozilla.org/docs/Web/CSS/@font-face)
 declaration is an essential part of working with any web font. At a minimum, it
 declares the name that will be used to refer to the font and indicates the
 location of the corresponding font file.
@@ -79,7 +79,7 @@ the page contained a `<h1>` element.
 
 {% Aside %}
     Other ways of loading a font are the
-    [`preload`](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
+    [`preload`](https://developer.mozilla.org/docs/Web/HTML/Preloading_content)
     resource hint and the [Font Loading
     API](/optimize-webfont-loading/#the-font-loading-api).
 {% endAside %}
@@ -154,7 +154,7 @@ stylesheet to download.
 
 If your site loads fonts from a third-party site, it is highly recommended that
 you use the
-[`preconnect`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preconnect)
+[`preconnect`](https://developer.mozilla.org/docs/Web/HTML/Link_types/preconnect)
 resource hint to establish early connection(s) with the third-party origin.
 Resource hints should be placed in the `<head>` of the document. The resource
 hint below sets up a connection for loading the font stylesheet.
@@ -169,7 +169,7 @@ hint below sets up a connection for loading the font stylesheet.
 To preconnect the connection that is used to download the font file, 
 add a separate `preconnect` resource hint that uses the `crossorigin`
 attribute. Unlike stylesheets, font files must be sent over a [CORS
-connection](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#what_requests_use_cors).
+connection](https://developer.mozilla.org/docs/Web/HTTP/CORS#what_requests_use_cors).
 
 ```html
 <head>
@@ -205,7 +205,7 @@ early in the document as possible.
 #### Avoid using preload to load fonts
 
 Generally speaking, using the
-[`preload`](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
+[`preload`](https://developer.mozilla.org/docs/Web/HTML/Preloading_content)
 resource hint to load fonts should be avoided. Although `preload` is highly
 effective at making fonts discoverable early in the page load process, this
 comes at the cost of taking away browser resources from the loading of other
@@ -270,7 +270,7 @@ particularly challenging.
 
 **Unicode-range and font subsetting:** `@font-face` is often used in
    conjunction with the
-   [`unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range)
+   [`unicode-range`](https://developer.mozilla.org/docs/Web/CSS/@font-face/unicode-range)
    descriptor. `unicode-range` informs the browser which characters a font can
    be used for.
 
@@ -380,7 +380,7 @@ impact LCP, FCP, and layout stability.
 
 #### Choose an appropriate `font-display` strategy
 
-[`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
+[`font-display`](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display)
 informs the browser how it should proceed with text rendering when the
 associated web font has not loaded. It is defined per font-face.
 

@@ -18,7 +18,7 @@ tags:
 
 ## Web components
 
-[Web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components/) started with the
+[Web components](https://developer.mozilla.org/docs/Web/Web_Components/) started with the
 promise of letting developers piece them together and build great apps on top of them. Examples of
 such atomic components are GitHub's [time-elements](https://github.com/github/time-elements), Stefan
 Judis' [web-vitals-element](https://github.com/stefanjudis/web-vitals-element), or, shameless plug,
