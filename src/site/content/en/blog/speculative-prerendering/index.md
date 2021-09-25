@@ -3,8 +3,8 @@ title: Bringing instant page-loads to the browser through speculative prerenderi
 subhead: Learn more about speculative prerendering in the browser and how to participate in Chrome origin trial.
 date: 2021-09-24
 authors:
-  - addyosmani
   - leenasohoni
+  - addyosmani
 description: |
   This article focuses on speculative prefetching and prerendering. Learn more about
   how they're used, the drawbacks of the current implementations,  popular external
