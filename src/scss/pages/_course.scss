@@ -5,6 +5,8 @@ $course-side-vert-space: 20px;
 .course {
   --sidebar-target-width: 22rem;
 
+  gap: 0;
+
   .stack-nav {
     margin-block: 0;
   }
@@ -94,7 +96,11 @@ $course-side-vert-space: 20px;
   top: get-space('size-1');
 }
 
-/// STYLES TAKEN FROM OLD CSS
+.course__main {
+  padding-block-start: get-space('size-3');
+}
+
+/// STYLES FOR EXISTING, UN-TOUCHED ELEMENTS
 web-search.course__search {
   display: block;
   height: $course-search-height;

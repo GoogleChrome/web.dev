@@ -31,7 +31,8 @@
   }
 
   /// Beats the specificity of the :link global style
-  &:link {
+  &:link,
+  &:visited {
     color: currentColor;
   }
 }
