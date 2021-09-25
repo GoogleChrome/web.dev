@@ -10,6 +10,8 @@ description: |
   how they're used, the drawbacks of the current implementations,  popular external
   libraries that implement sophisticated speculation, and the origin trial that bring same-origin
   speculative prerendering to the browser.
+hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/NDg4DvtC6Hkbly4MyGkZ.jpeg
+alt: Motorcycle on a highway
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - origin-trial
