@@ -355,29 +355,29 @@ lists the certificate authorities that can issue this type of certificate.
 Certificates for SXGs are only available through a commercial certificate
 authority.
 
-### Platform-specific tooling
+### Platform-specific SXG tooling
 
 These tools support specific technology stacks. If you are already using a
 platform supported by one of these tools, you may find it easier to set up than
 a general-purpose tool.
 
-- [`cloudflare_worker`](https://github.com/google/sxg-rs/tree/main/cloudflare_worker)
+- [`sxg-rs/cloudflare_worker`](https://github.com/google/sxg-rs/tree/main/cloudflare_worker)
   runs on [Cloudflare Workers](https://workers.cloudflare.com/).
 
-- [`fastly_compute`](https://github.com/google/sxg-rs/tree/main/fastly_compute)
+- [`sxg-rs/fastly_compute`](https://github.com/google/sxg-rs/tree/main/fastly_compute)
   runs on [Fastly
   Compute@Edge](https://www.fastly.com/products/edge-compute/serverless).
 
 - [NGINX SXG module](https://github.com/google/nginx-sxg-module) generates
-  and serves SXGs for sites using [nginx](https://nginx.org/). Setup
+  and serves SXGs for sites that use [nginx](https://nginx.org/). Setup
   instructions can be found [here](/how-to-set-up-signed-http-exchanges/).
 
 - [Envoy SXG
   Filter](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/sxg_filter)
-  generates and serves SXGs for sites using
+  generates and serves SXGs for sites that use
   [Envoy](https://www.envoyproxy.io/).
 
-### General-purpose tooling
+### General-purpose SXG tooling
 
 #### Web Packager CLI
 
