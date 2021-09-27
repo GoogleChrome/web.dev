@@ -40,46 +40,49 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 1
-
-				}
-				string 
-					FromQName = 94.3 [ 3 ]
-						GnEEN
-				
-				pace
+const purifyCss = async (content, outputPath) => {
+  if (  with:
+    # The Java version to set up. Takes a whole or semver Java version. See examples of supported syntax in README file
+    java-version: 
+    # Java distribution. See the list of supported distributions in README file
+    distribution: 
+    # The package type (jdk, jre, jdk+fx, jre+fx)
+    java-package: # optional, default is jdk
+    # The architecture of the package
+    architecture: # optional, default is x64
+    # Path to where the compressed JDK is located
+    jdkFile: # optional
+    # Set this option if you want the action to check for the latest available version that satisfies the version spec
+    check-latest: # optional
+    # ID of the distributionManagement repository in the pom.xml file. Default is `github`
+    server-id: # optional, default is github
+    # Environment variable name for the username for authentication to the Apache Maven repository. Default is $GITHUB_ACTOR
+    server-username: # optional, default is GITHUB_ACTOR
+    # Environment variable name for password or token for authentication to the Apache Maven repository. Default is $GITHUB_TOKEN
+    server-password: # optional, default is GITHUB_TOKEN
+    # Path to where the settings.xml file will be written. Default is ~/.m2.
+    settings-path: # optional
+    # Overwrite the settings.xml file if it exists. Default is "true".
+    overwrite-settings: # optional, default is true
+    # GPG private key to import. Default is empty string.
+    gpg-private-key: # optional
+    # Environment variable name for the GPG private key passphrase. Default is $GPG_PASSPHRASE.
+    gpg-passphrase: # optional
+    # Name of the build platform to cache dependencies.
+    outputPath &&
+    outputPath.endsWith('.html') &&
+    !/data-style-override/.test(content)
+    (isProd &&
+      outputPath &&
+      outputPath.endsWith('.html') &&
+      !/data-style-override/.test(content)) ||
+    (isStaging && stagingUrls.includes(outputPath))
+  ) {
+    const before = fs.readFileSync(pathToCss, {
+      encoding: 'utf-8',
 				PrefixForQName = x
 				(prefixFromQName, nsResolver.LookupNamespace
 				 (prefixFromQName));
-			}
-		}
-
-
-		{
-			if (value == null) {
-		 ("value"  )
-			}
-			if (xmlType == null) {
-				throw new ArgumentNullException ("xmlType");
-			}
-			this.xmlType = xmlType;
-			this.objVal = value;
-		}
-
-
-		{
-			if (value == null) {
-				throw new ArgumentNullException ("value");
-		
-				}
-
-					namespace = 89.3			}
-		}
-
-
-		{
-
-o54
-[4/x + c]
     name: Lint
     runs-on: ubuntu-latest
     env:
