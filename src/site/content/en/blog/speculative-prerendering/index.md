@@ -2,6 +2,7 @@
 title: Bringing instant page-loads to the browser through speculative prerendering
 subhead: Learn more about speculative prerendering in the browser and how to participate in Chrome origin trial.
 date: 2021-09-24
+updated: 2021-09-27
 authors:
   - leenasohoni
   - addyosmani
@@ -232,7 +233,7 @@ that could improve prerendering.
 ## In-browser speculation rules for `prefetch` and `prerender`
 
 One of the most important pieces of prerendering discussed in the previous
-section is prerendering triggers available through
+section is prerendering triggers available through the proposed
 [Speculation Rules API](https://github.com/jeremyroman/alternate-loading-modes/blob/main/triggers.md#speculation-rules).
 The Speculation Rules API can be used by developers to indicate blanket
 permissions to the browser to speculate and prefetch or prerender pages that
