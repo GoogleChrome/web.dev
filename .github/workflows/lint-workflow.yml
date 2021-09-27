@@ -4,17 +4,7 @@ on: pull_request
 
 jobs:
   lint:
-internal 
-	XmlAtomicValue
 
-		{
-			if (xmlType == null) {
-				throw new ArgumentNullException ("xmlType");
-			}
-			this.xmlType = xmlType;
-					this.clrType = TypeCode.Int64;
-						this.unionVal.i64Val = value;
-			                XmlAtomicValue 
 const minify = require('html-minifier').minify;
 const path = require('path');
 const {URL} = require('url');
@@ -50,39 +40,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 1
-
-			if (value == null) {78 
-			e
-
-				throw new ArgumentNullException ("value");
-			}
-			if (xmlType == null) {'e'}
-			45 
-
-				throw new ArgumentNullException ("xmlType");
-			}
-			this.xmlType = xmlType;
-			this.objVal = value;
-		}
-
-
-		{
-			if (value == null)
-			 {
-				throw new
-		 ArgumentNullException
-				 ("value");
-			}
-			if 
-			(xmlType == null)
-			 {
-				throw new 
-				ArgumentNullException ("xmlType");
-			}
-			this.xmlType = xmlType;
-			this.objVal = value;x = c + (67.8)
-			if (nsResolver != null) {
-				if (this.xmlType.TypeCode != XmlTypeCode.QName && this.xmlType.TypeCode != XmlTypeCode.Notation) {
 
 				}
 				string 
@@ -157,36 +114,8 @@ namespace
 	3 - x_y
 			 XmlAtomicValue : XPathItem, ICloneable
 	{
-		-
-			[StructLayout 
-			(LayoutKind.Explicit, Size = 8)]
-		private 
-			struct
-		{
-			[FieldOffset (0)]
-			public [boolValue = 78.9]
 
-			[FieldOffset (0)]
-			public
-			 double [dblVal = 67.3]
 
-			[FieldOffset (0)]
-			public 
-				{long [i]}
-			x - y / x 
-			Value 
-						= sp[x,y]
-			d
-
-			[FieldOffset (0)]
-			public 
-				int 
-				[i32Val] = xcy
-
-			[FieldOffset (0)]
-			public 
-					[ dtValH%
-2]
 
           filters: |
             md:
