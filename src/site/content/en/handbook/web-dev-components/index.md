@@ -1310,7 +1310,7 @@ Each child of the `web-tabs` component will become a separate tab.
 Use `data-label` attribute to set the tab's title. You can use markdown inside
 the tab, e.g. the code blocks.
 
-```
+```html
 {% raw %}
 <web-tabs>
   <div data-label="html">
