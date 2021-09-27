@@ -253,15 +253,20 @@ defined as follows:
 <script type="speculationrules">
    {
      "prerender": [
-       {"source": "list",
-        "urls": ["/page/2"],
-        "score": 0.5},
-       {"source": "document",
-        "if_href_matches": ["https://*.wikipedia.org/**"],
-        "if_not_selector_matches": [".restricted-section *"],
-        "score": 0.1}
+       {
+         "source": "list",
+         "urls": ["/page/2"],
+         "score": 0.5
+       },
+       {
+         "source": "document",
+         "if_href_matches": ["https://*.wikipedia.org/**"],
+         "if_not_selector_matches": [".restricted-section *"],
+         "score": 0.1
+       }
      ]
    }
+</script>
 ```
 
 Here, two types of rules have been defined for the `prerender` resource hint. 
@@ -302,7 +307,7 @@ included in this trial.
        {"source": "list", "urls": ["https://a.test/foo"]}
      ]
    }
- </script>
+</script>
 ```
 
 {% Aside %}
