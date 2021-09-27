@@ -8,7 +8,7 @@ authors:
 description: |
   This article focuses on speculative prefetching and prerendering. Learn more about
   how they're used, the drawbacks of the current implementations,  popular external
-  libraries that implement sophisticated speculation, and the origin trial that bring same-origin
+  libraries that implement sophisticated speculation, and the origin trial that brings same-origin
   speculative prerendering to the browser.
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/NDg4DvtC6Hkbly4MyGkZ.jpeg
 alt: Motorcycle on a highway
@@ -34,7 +34,7 @@ might be required.
 This article focuses on speculative prefetching and prerendering. Learn more about
 how they're used, the drawbacks of the current implementations, and popular external
 libraries that implement sophisticated speculation. Enhancements that bring same-origin
-speculative prerendering to the browser are under developed and you can learn more about
+speculative prerendering to the browser are under development and you can learn more about
 their design and participate in
 [Chrome origin trial](https://developer.chrome.com/origintrials/#/view_trial/1325184190353768449).
 
