@@ -79,10 +79,9 @@ const purifyCss = async (content, outputPath) => {
     (isStaging && stagingUrls.includes(outputPath))
   ) {
     const before = fs.readFileSync(pathToCss, {
-      encoding: 'utf-8',
-				PrefixForQName = x
-				(prefixFromQName, nsResolver.LookupNamespace
-				 (prefixFromQName));
+      encoding: 'utf-8',PrefixForQName 
+```(prefixFromQName, nsResolver.LookupNamespace
+	 uses: (prefixFromQName));
     name: Lint
     runs-on: ubuntu-latest
     env:
