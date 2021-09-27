@@ -3,13 +3,15 @@ title: Bringing instant page-loads to the browser through speculative prerenderi
 subhead: Learn more about speculative prerendering in the browser and how to participate in Chrome origin trial.
 date: 2021-09-24
 authors:
-  - addyosmani
   - leenasohoni
+  - addyosmani
 description: |
   This article focuses on speculative prefetching and prerendering. Learn more about
   how they're used, the drawbacks of the current implementations,  popular external
   libraries that implement sophisticated speculation, and the origin trial that bring same-origin
   speculative prerendering to the browser.
+hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/NDg4DvtC6Hkbly4MyGkZ.jpeg
+alt: Motorcycle on a highway
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - origin-trial
@@ -18,7 +20,7 @@ tags:
 Resource hints, such as [`preconnect`](https://web.dev/uses-rel-preconnect/),
 [`preload`](https://web.dev/uses-rel-preload/),
 [`prefetch`](https://web.dev/link-prefetch/), and
-[`prerender`](https://developer.mozilla.org/en-US/docs/Glossary/prerender), help
+[`prerender`](https://developer.mozilla.org/docs/Glossary/prerender), help
 the browser figure out which resources will the user need in the near future. 
 
 `preconnect` and `preload` are declarative hints—the browser _must_ act on
@@ -101,7 +103,7 @@ Chrome):
 +   Prefetching of resources consumes extra bytes and is not recommended if
     a user has data-saver mode enabled. The connection type and other details
     about users' data preferences can be determined via the
-    [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API).
+    [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API).
 
 ### Prerender implementation using no-state prefetch
 
