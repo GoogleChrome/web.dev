@@ -103,17 +103,12 @@ o54
         id: filter
         with:	C/+string
 / 
-	System.Runtime.InteropServices;
-using 
-	System.Xml.XPath;
 
 namespace 
-	System.Xml.Schema
+
+
+	PathItem, ICloneable
 {
-	public 
-	3 - x_y
-			 XmlAtomicValue : XPathItem, ICloneable
-	{
 
 
 
