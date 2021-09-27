@@ -1314,12 +1314,12 @@ the tab, e.g. the code blocks.
 {% raw %}
 <web-tabs>
   <div data-label="html">
-    ```
+    ```html
     <p> I'm html</p>
     ```
   </div>
   <div data-label="css">
-    ```
+    ```css
     .class { border: 0; }
     ```
   </div>
@@ -1330,14 +1330,14 @@ the tab, e.g. the code blocks.
 <web-tabs>
   <div data-label="html" title="t">
 
-  ```
+  ```html
   <p> I'm html</p>
   ```
 
   </div>
   <div data-label="css">
 
-  ```
+  ```css
   .class { border: 0; }
   ```
 
