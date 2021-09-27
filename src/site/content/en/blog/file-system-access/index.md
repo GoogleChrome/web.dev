@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-09-20
+updated: 2021-09-24
 tags:
   - blog
   - capabilities
@@ -530,7 +530,7 @@ const dirHandle = await root.getDirectoryHandle('New Folder', { create: true });
 await root.removeEntry('Old Stuff', { recursive: true });
 ```
 
-## Accessing Storage Foundation API files from the origin private file system
+## Accessing files optimized for performance from the origin private file system
 
 The [Storage Foundation API](/storage-foundation/) API provides access to a special kind of file
 that is highly optimized for performance, for example, by offering in-place and exclusive write
@@ -541,6 +541,9 @@ files can be accessed by exposing two new methods as part of the origin private 
 `createAccessHandle()` (asynchronous read and write operations) and `createSyncAccessHandle()`
 (synchronous read and write operations) that are both
 exposed on `FileSystemFileHandle`.
+
+{% Aside %} There exists no way of accessing a file stored through the Storage Foundation API using
+the Origin Private File System, and vice versa. {% endAside %}
 
 ```js
 // Asynchronous access in all contexts:
