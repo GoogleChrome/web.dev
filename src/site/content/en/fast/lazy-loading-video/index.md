@@ -150,9 +150,10 @@ and you can lazy-load that content.
 
 The following libraries can help you to lazy-load video:
 
-- [lozad.js](https://github.com/ApoorvSaxena/lozad.js) is a super lightweight
-option that uses Intersection Observer only. As such, it's highly performant,
-but will need to be polyfilled before you can use it on older browsers.
+- [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) and 
+[lozad.js](https://github.com/ApoorvSaxena/lozad.js) are super lightweight options 
+that use Intersection Observer only. As such, they are highly performant, but
+will need to be polyfilled before you can use them on older browsers.
 - [yall.js](https://github.com/malchata/yall.js) is a library that uses
 Intersection Observer and falls back to event handlers. It's compatible with IE11
 and major browsers.
