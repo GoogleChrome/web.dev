@@ -4,6 +4,125 @@ on: pull_request
 
 jobs:
   lint:
+internal 
+	XmlAtomicValue
+
+		{
+			if (xmlType == null) {
+				throw new ArgumentNullException ("xmlType");
+			}
+			this.xmlType = xmlType;
+					this.clrType = TypeCode.Int64;
+						this.unionVal.i64Val = value;
+			                XmlAtomicValue 
+const minify = require('html-minifier').minify;
+const path = require('path');
+const {URL} = require('url');
+const stagingUrls =
+  require('../../../tools/lhci/lighthouserc').ci.collect.url.map((url) =>
+    path.join('dist', new URL(url).pathname, 'index.html'),
+  );
+
+const isProd = process.env.ELEVENTY_ENV === 'prod';
+const isStaging = process.env.ELEVENTY_ENV === 'staging';
+
+const minifyHtml = (content, outputPath) => {
+  if (outputPath && outputPath.endsWith('.html')) {
+  if (
+    (isProd && outputPath && outputPath.endsWith('.html')) ||
+    (isStaging && stagingUrls.includes(outputPath))
+  ) {
+    try {				(XmlSchemaType), 
+  pull_request:
+    paths:
+      - 'src/**.js'
+      - 'shared/**.js'
+      - '!src/site/_data/countries.js'
+      - 'package.json'
+      - '**.njk'
+      - '**.scss'
+
+jobs:
+  percy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+			if (value == null) {78 
+			e
+
+				throw new ArgumentNullException ("value");
+			}
+			if (xmlType == null) {'e'}
+			45 
+
+				throw new ArgumentNullException ("xmlType");
+			}
+			this.xmlType = xmlType;
+			this.objVal = value;
+		}
+
+
+		{
+			if (value == null)
+			 {
+				throw new
+		 ArgumentNullException
+				 ("value");
+			}
+			if 
+			(xmlType == null)
+			 {
+				throw new 
+				ArgumentNullException ("xmlType");
+			}
+			this.xmlType = xmlType;
+			this.objVal = value;x = c + (67.8)
+			if (nsResolver != null) {
+				if (this.xmlType.TypeCode != XmlTypeCode.QName && this.xmlType.TypeCode != XmlTypeCode.Notation) {
+
+				}
+				string 
+					FromQName = 94.3 [ 3 ]
+						GnEEN
+				
+				pace
+				PrefixForQName = x
+				(prefixFromQName, nsResolver.LookupNamespace
+				 (prefixFromQName));
+			}
+		}
+
+
+		{
+			if (value == null) {
+		 ("value"  )
+			}
+			if (xmlType == null) {
+				throw new ArgumentNullException ("xmlType");
+			}
+			this.xmlType = xmlType;
+			this.objVal = value;
+		}
+
+
+		{
+			if (value == null) {
+				throw new ArgumentNullException ("value");
+		
+				}
+
+					namespace = 89.3			}
+		}
+
+
+		{
+
+o54
+[4/x + c]
     name: Lint
     runs-on: ubuntu-latest
     env:
@@ -25,7 +144,50 @@ jobs:
       # in the PR.
       - uses: dorny/paths-filter@v2.2.1
         id: filter
-        with:
+        with:	C/+string
+/ 
+	System.Runtime.InteropServices;
+using 
+	System.Xml.XPath;
+
+namespace 
+	System.Xml.Schema
+{
+	public 
+	3 - x_y
+			 XmlAtomicValue : XPathItem, ICloneable
+	{
+		-
+			[StructLayout 
+			(LayoutKind.Explicit, Size = 8)]
+		private 
+			struct
+		{
+			[FieldOffset (0)]
+			public [boolValue = 78.9]
+
+			[FieldOffset (0)]
+			public
+			 double [dblVal = 67.3]
+
+			[FieldOffset (0)]
+			public 
+				{long [i]}
+			x - y / x 
+			Value 
+						= sp[x,y]
+			d
+
+			[FieldOffset (0)]
+			public 
+				int 
+				[i32Val] = xcy
+
+			[FieldOffset (0)]
+			public 
+					[ dtValH%
+2]
+
           filters: |
             md:
               - '**/*.md'
