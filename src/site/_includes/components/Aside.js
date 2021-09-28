@@ -21,12 +21,11 @@ const fs = require('fs');
 const path = require('path');
 
 /* NOTE: This component is in a transition period to support both new design system contexts
-and the existing system. Once the new design system has been *fully* rolled out, this component 
-can be cleaned up with the following: 
+and the existing system. Once the new design system has been *fully* rolled out, this component
+can be cleaned up with the following:
 
 1. The isDesignSystemContext conditional can be removed and code in that block should run as normal
 2. Everything from the '/// DELETE THIS WHEN ROLLOUT COMPLETE' comment *downwards* can be removed
-
 */
 
 /**
