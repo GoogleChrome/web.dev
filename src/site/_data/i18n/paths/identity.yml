@@ -27,46 +27,46 @@ overview:
 
 topics:
   understand_authentication_basics:
-    en: How browsers render animations
-    es: Cómo los navegadores renderizan animaciones
-    ja: ブラウザーがアニメーションをレンダリングする際の仕組み
-    ko: 브라우저에서 애니메이션을 렌더링하는 방법
-    pt: Como os navegadores renderizam animações
-    ru: Как происходит отрисовка анимации в браузере
-    zh: 浏览器呈现动画的方式
+    en: Understand authentication basics
+    es: CUnderstand authentication basics
+    ja: Understand authentication basics
+    ko: Understand authentication basics
+    pt: Understand authentication basics
+    ru: Understand authentication basics
+    zh: Understand authentication basics
 
   build_authentication_systems_with_modern_APIs:
-    en: Build animations with CSS
-    es: Crea animaciones con CSS
-    ja: CSS を使用してアニメーションを作成する
-    ko: CSS로 애니메이션 빌드
-    pt: Crie animações com CSS
-    ru: Создание анимаций с помощью CSS
-    zh: 使用 CSS 构建动画
+    en: Build authentication systems with modern APIs
+    es: Build authentication systems with modern APIs
+    ja: Build authentication systems with modern APIs
+    ko: Build authentication systems with modern APIs
+    pt: Build authentication systems with modern APIs
+    ru: Build authentication systems with modern APIs
+    zh: Build authentication systems with modern APIs
 
   strenghten_security_with_two-factor_authentication:
-    en: Build animations with JavaScript
-    es: Crea animaciones con JavaScript
-    ja: JavaScript を使用してアニメーションを作成する
-    ko: JavaScript로 애니메이션 빌드
-    pt: Crie animações com JavaScript
-    ru: Создание анимаций с помощью JavaScript
-    zh: 使用 JavaScript 构建动画
+    en: Strengthen security with two-factor authentication
+    es: Strengthen security with two-factor authentication
+    ja: Strengthen security with two-factor authentication
+    ko: Strengthen security with two-factor authentication
+    pt: Strengthen security with two-factor authentication
+    ru: Strengthen security with two-factor authentication
+    zh: Strengthen security with two-factor authentication
 
   build_advanced_authentication_systems:
-    en: Build animations with JavaScript
-    es: Crea animaciones con JavaScript
-    ja: JavaScript を使用してアニメーションを作成する
-    ko: JavaScript로 애니메이션 빌드
-    pt: Crie animações com JavaScript
-    ru: Создание анимаций с помощью JavaScript
-    zh: 使用 JavaScript 构建动画
+    en: Build advanced authentication systems
+    es: Build advanced authentication systems
+    ja: Build advanced authentication systems
+    ko: Build advanced authentication systems
+    pt: Build advanced authentication systems
+    ru: Build advanced authentication systems
+    zh: Build advanced authentication systems
 
   build_authentication_with_identity_federation:
-    en: Build animations with JavaScript
-    es: Crea animaciones con JavaScript
-    ja: JavaScript を使用してアニメーションを作成する
-    ko: JavaScript로 애니메이션 빌드
-    pt: Crie animações com JavaScript
-    ru: Создание анимаций с помощью JavaScript
-    zh: 使用 JavaScript 构建动画
+    en: Build authentication with identity federation
+    es: Build authentication with identity federation
+    ja: Build authentication with identity federation
+    ko: Build authentication with identity federation
+    pt: Build authentication with identity federation
+    ru: Build authentication with identity federation
+    zh: Build authentication with identity federation
