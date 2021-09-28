@@ -2,13 +2,13 @@
 layout: post
 title: How the payment ecosystem works
 subhead: |
-  Learn who are involved in the Web Payments ecosystem, how they interact each other and how you can get involved.
+  Learn more about who is involved in the Web Payments ecosystem, how they interact with each other, and how you can participate.
 authors:
   - agektmr
 date: 2018-09-10
 updated: 2021-09-14
 description: |
-  Learn who are involved in the Web Payments ecosystem, how they interact each other and how you can get involved.
+Learn more about who is involved in the Web Payments ecosystem, how they interact with each other, and how you can participate.```
 tags:
   - payments
 feedback:
@@ -34,7 +34,7 @@ _Web Payments_ comprises multiple web standards:
 *   **Payment Method Identifiers:** The [Payment Method
     Identifiers](/setting-up-a-payment-method/#step-1:-provide-the-payment-method-identifier)
     defines how strings (`https://google.com/pay`,
-    `https://apple.com/apple-pay`, etc.) can be used to identify a payment
+    `https://apple.com/apple-pay`, and so on) can be used to identify a payment
     method. Along with standardized payment method identifiers, it allows anyone
     to define their own payment method with URL-based payment method
     identifiers.
@@ -44,7 +44,7 @@ _Web Payments_ comprises multiple web standards:
     manifest, describing how a payment method participates in the payment
     ecosystem, and how such files are to be used.
 
-## How the Payment Request Process Works
+## How the payment request process works
 
 There are typically four participants in an online transaction.
 
@@ -98,7 +98,7 @@ There are typically four participants in an online transaction.
     methods of payment specified by [**the Payment Method
     Identifiers**](/setting-up-a-payment-method/#step-1:-provide-the-payment-method-identifier).
     The payment methods can include credit card numbers saved to the browser, or
-    payment handlers like Google Pay, Samsung Pay, etc. The Merchant can
+    payment handlers such as Google Pay, Samsung Pay, and similar. The Merchant can
     optionally request the customer's shipping address and contact information.
 1.  If the customer chooses a payment method like Google Pay, Chrome launches
     either a platform-native payment app or a web-based payment app. This step
@@ -115,13 +115,13 @@ There are typically four participants in an online transaction.
     customer's bank or credit card issuer to the merchant, and then returns a
     success or failure result to the merchant website.
 1.  The merchant website notifies the customer of the success or failure of the
-    transaction and displays the next step, e.g., shipping the purchased item.
+    transaction and displays the next step, for example, shipping the purchased item.
 
 ## Caveat: PSP Reliance
 
 If you are a merchant and want to accept credit card payments, PSPs are an
 important link in the payment processing chain. Implementing the Payment Request
-API does not obviate the need for a PSP.
+API does not remove the need for a PSP.
 
 Merchants usually rely on a third-party PSP to perform payment processing for
 convenience and expense reasons. This is primarily because most PSPs maintain
@@ -145,7 +145,7 @@ Thus, delegating payment processing to a PCI DSS-compliant PSP both simplifies
 the merchant site's requirements and ensures payment information integrity for
 the customer.
 
-## Next Up
+## Next up
 
 Learn about the Payment Request API's fields and methods in [How the Payment
 Request API

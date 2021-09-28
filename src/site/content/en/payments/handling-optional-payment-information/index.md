@@ -205,7 +205,7 @@ payment details](#reflect-the-updated-payment-details).
 Once the merchant finishes updating the payment details, the promises returned
 from `.changePaymentMethod()`, will resolve with a
 [`PaymentRequestDetailsUpdate`](https://w3c.github.io/payment-handler/#the-paymentrequestdetailsupdate)
-object. The payment handler can use the result to reflect updated total price to
+object. The payment handler can use the result to reflect updated total price in
 the UI.
 
 {% Aside %}

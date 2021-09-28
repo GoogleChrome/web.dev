@@ -1,21 +1,20 @@
 ---
 layout: post
-title: Web Payments Overview
+title: Web Payments overview
 subhead: |
-  Learn the concept of the Web Payments and how it works at a high level.
+  Learn more about Web Payments and how they work.
 authors:
   - agektmr
 date: 2018-09-10
 updated: 2021-09-14
 description: |
-  Learn the concept of the Web Payments and how it works at a high level.
+  Learn more about Web Payments and how they work.
 tags:
   - payments
 feedback:
   - api
 ---
 
-## Introduction
 
 Web Payments is an emerging web standard being developed by the W3C to
 simplify online payments and enable a broader set of players to participate
@@ -25,7 +24,7 @@ browser on any device, payment method, or payment service provider. This
 flexibility enables development simplicity, deployment consistency, and future
 compatibility with emerging payment technologies.
 
-Benefits of Web Payments:
+## Benefits of Web Payments
 
 **For consumers**, they simplify checkout flow, by making it a few taps instead
 of typing small characters many times on a virtual keyboard.
@@ -40,24 +39,24 @@ web with relatively easy integration.
 the ability of businesses to serve more customers with a better developer
 experience and more secure solutions.
 
-## 3 principles
+## Three principles of Web Payments
 
 <section style="display:flex;background-color:#f7f7f7;padding-bottom:32px;">
   <div style="min-width:50%;padding-top:32px;">
     {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/voaNzDaJcKQFBwtuFem7.png", alt="Standard and Open", width="800", height="508" %}
   </div>
   <div style="min-width:50%">
-    <h3>Standard and Open</h3>
+    <h3>Standard and open</h3>
     Web Payments are an open payment standard for the web platform for the first time
-    in history. They are available for any players to implement.</div>
+    in history. They are available for anyone to implement.</div>
 </section>
 <section style="display:flex;padding-bottom:32px;">
   <div style="min-width:50%">
-    <h3>Easy and Consistent</h3>
+    <h3>Easy and consistent</h3>
     Web Payments make checkout easy for the user, by reusing stored 
 payments and address information and removing the need for the user to fill in checkout forms. 
 Since the UI is implemented by the browser natively, users see a familiar and consistent checkout 
-experience on any website that makes use of the standard.</div>
+experience on any website that uses the standard.</div>
   <div style="min-width:50%;padding-top:32px;">
     {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/DXwSsz8wgEO3ffCT2s15.png", alt="Easy and Consistent", width="800", height="508" %}
   </div>
@@ -67,12 +66,12 @@ experience on any website that makes use of the standard.</div>
     {% Img src="image/YLflGBAPWecgtKJLqCJHSzHqe2J2/9ksUqSzpIvHLiazAoyTk.png", alt="Secure and Flexible", width="800", height="508" %}
   </div>
   <div style="min-width:50%">
-    <h3>Secure and Flexible</h3>
+    <h3>Secure and flexible</h3>
     Web Payments provide industry-leading payment technology to the 
 web, and can easily integrate a secure payment solution.</div>
 </section>
 
-## Next Up
+## Next up
 
 Learn [How payment ecosystem works](/how-payment-ecosystem-works) with Web
 Payments.

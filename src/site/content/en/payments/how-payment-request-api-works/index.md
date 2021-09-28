@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How Payment Request API Works
+title: How Payment Request API works
 subhead: |
   Learn how the Payment Request API works at a high level.
 authors:
@@ -22,7 +22,7 @@ the customer to provide payment information and, optionally, other information
 such as shipping preference. You can achieve this easily and quickly using the
 [Payment Request API (PR API)](https://w3c.github.io/payment-request/).
 
-## Basic Structure
+## Basic structure
 
 Constructing a `PaymentRequest` object requires two parameters: _payment
 methods_ and _payment details_. In addition, a third _payment options_ parameter
@@ -34,7 +34,7 @@ const request = new PaymentRequest(paymentMethods, paymentDetails);
 
 Let's look at how each parameter is built and used.
 
-### Payment Methods
+### Payment methods
 
 The first parameter, _paymentMethods_, is a list of supported payment methods in
 an array variable. Each element in the array comprises two components,
@@ -45,7 +45,7 @@ Identifier](/setting-up-a-payment-method/#step-1:-provide-the-payment-method-ide
 such as `https://bobpay.xyz/pay`. The existence and content of `data` depends on
 the content of `supportedMethods` and payment app provider's design. 
 
-Both of these information should be provided by the payment app provider.
+Both pieces of information should be provided by the payment app provider.
 
 ```javascript
 // Supported payment methods
@@ -57,7 +57,7 @@ const paymentMethods = [{
 }];
 ```
 
-### Payment Details
+### Payment details
 
 The second parameter, _paymentDetails_, is passed as an object and specifies
 payment details for the transaction. It contains the required value `total`,
@@ -81,7 +81,7 @@ const paymentDetails = {
 };
 ```
 
-## The `show()` Method
+## The `show()` method
 
 After setting the two parameters and creating the `request` object as shown
 above, you can call the `show()` method, which displays the payment app user
@@ -104,6 +104,6 @@ Finally, you may close the Payment Request UI by completing the process with
 `response.complete('success')` or `response.complete('fail')` depending on the
 result that the PSP returns.
 
-## Next Up
+## Next up
 
 Learn more about [Web Payments](/payments/).
