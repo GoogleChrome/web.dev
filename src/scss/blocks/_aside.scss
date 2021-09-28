@@ -6,8 +6,7 @@
   @extend .flow;
 
   padding: $global-gutter;
-  max-width: 35rem;
-  margin-inline: auto;
+  max-width: 50rem;
   border-radius: $global-radius-large;
 
   @include apply-utility('bg', 'mid-bg'); // For if no BG utility is added
