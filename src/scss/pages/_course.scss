@@ -126,7 +126,8 @@ web-search.course__search {
     /// scrollable links section was causing scrolling *havoc*. This keeps it out of there,
     /// but maintains the layout structure of its siblings. Luckily, we know how big they are,
     /// how many there are and what the spacing between them is, so it's only partially "magic numbers"
-    top: #{($course-side-vert-space * 2) + $course-search-height + $course-header-height};
+    top: #{$course-side-vert-space + $course-search-height +
+      $course-header-height};
     left: 0;
     bottom: 0;
     width: 100%;
@@ -157,5 +158,9 @@ web-search.course__search {
     margin: 0;
 
     @include apply-utility('color', 'mid-text');
+  }
+
+  .web-course-search__no-results {
+    text-align: center;
   }
 }
