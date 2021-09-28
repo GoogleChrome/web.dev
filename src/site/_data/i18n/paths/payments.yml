@@ -26,6 +26,12 @@ overview:
   zh: Web 付款旨在提供流畅的的网络付款体验。了解 Web 付款的运作方式及益处，并准备好将您的付款应用与 Web 付款整合。
 
 topics:
+  basics:
+    en: Basics
+
+  web_payments:
+    en: Web Payments
+
   integrate_web_payments_into_your_payment_app:
     en: Integrate Web Payments into your payment app
     es: Integra Web Payments a su aplicación de pago

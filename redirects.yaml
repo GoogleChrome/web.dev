@@ -206,10 +206,15 @@ redirects:
   - source: /android-payment-apps-overview
     destination: /android-payment-app-developers-guide
 
+  - source: /payment-request-basic-card-deprecation
+    destination: https://chromestatus.com/feature/5730051011117056
+
   # Redirect for misconfigured Lighthouse report
 
   - source: /image-size-responsive
     destination: /image-aspect-ratio
+
+# Redirect for misconfigured Lighthouse report
 
   # Redirects for Handbook refactors
 
