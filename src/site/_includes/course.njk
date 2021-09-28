@@ -63,14 +63,14 @@ CSS_ORIGIN: 'next'
               {% endif %}
             {% endfor %}
             <h1 class="course-headline">{{ title | md | safe }}</h1>
-            <p class="course-description">
+            <p>
               {# If authors use backticks in their description markdown we don't #}
               {# want the code to have any border or background color. #}
-              <span class="unstyled-code">{{ description | md | safe }}</span>
+              <em class="unstyled-code">{{ description | md | safe }}</em>
             </p>
             {% include 'partials/toc-inner.njk' %}
           </div>
-          <div class="prose">
+          <div class="prose gap-top-size-2">
             {% if audio %}
               {% include 'partials/course-audio.njk' %}
             {% endif %}
