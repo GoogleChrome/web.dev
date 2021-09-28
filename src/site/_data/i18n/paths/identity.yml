@@ -1,0 +1,72 @@
+title:
+  en: Identity
+  es: Identity
+  ja: Identity
+  ko: Identity
+  pt: Identity
+  ru: Identity
+  zh: Identity
+
+description:
+  en: Understand and build advanced authentication systems.
+  es: Understand and build advanced authentication systems.
+  ja: Understand and build advanced authentication systems.
+  ko: Understand and build advanced authentication systems.
+  pt: Understand and build advanced authentication systems.
+  ru: Understand and build advanced authentication systems.
+  zh: Understand and build advanced authentication systems.
+
+overview:
+  en: A curated collection of high-quality resources that will help you understand authentication basics and how to build your own authentication systems with modern APIs.
+  es: A curated collection of high-quality resources that will help you understand authentication basics and how to build your own authentication systems with modern APIs.
+  ja: A curated collection of high-quality resources that will help you understand authentication basics and how to build your own authentication systems with modern APIs.
+  ko: A curated collection of high-quality resources that will help you understand authentication basics and how to build your own authentication systems with modern APIs.
+  pt: A curated collection of high-quality resources that will help you understand authentication basics and how to build your own authentication systems with modern APIs.
+  ru: A curated collection of high-quality resources that will help you understand authentication basics and how to build your own authentication systems with modern APIs.
+  zh: A curated collection of high-quality resources that will help you understand authentication basics and how to build your own authentication systems with modern APIs.
+
+topics:
+  understand_authentication_basics:
+    en: How browsers render animations
+    es: Cómo los navegadores renderizan animaciones
+    ja: ブラウザーがアニメーションをレンダリングする際の仕組み
+    ko: 브라우저에서 애니메이션을 렌더링하는 방법
+    pt: Como os navegadores renderizam animações
+    ru: Как происходит отрисовка анимации в браузере
+    zh: 浏览器呈现动画的方式
+
+  build_authentication_systems_with_modern_APIs:
+    en: Build animations with CSS
+    es: Crea animaciones con CSS
+    ja: CSS を使用してアニメーションを作成する
+    ko: CSS로 애니메이션 빌드
+    pt: Crie animações com CSS
+    ru: Создание анимаций с помощью CSS
+    zh: 使用 CSS 构建动画
+
+  strenghten_security_with_two-factor_authentication:
+    en: Build animations with JavaScript
+    es: Crea animaciones con JavaScript
+    ja: JavaScript を使用してアニメーションを作成する
+    ko: JavaScript로 애니메이션 빌드
+    pt: Crie animações com JavaScript
+    ru: Создание анимаций с помощью JavaScript
+    zh: 使用 JavaScript 构建动画
+
+  build_advanced_authentication_systems:
+    en: Build animations with JavaScript
+    es: Crea animaciones con JavaScript
+    ja: JavaScript を使用してアニメーションを作成する
+    ko: JavaScript로 애니메이션 빌드
+    pt: Crie animações com JavaScript
+    ru: Создание анимаций с помощью JavaScript
+    zh: 使用 JavaScript 构建动画
+
+  build_authentication_with_identity_federation:
+    en: Build animations with JavaScript
+    es: Crea animaciones con JavaScript
+    ja: JavaScript を使用してアニメーションを作成する
+    ko: JavaScript로 애니메이션 빌드
+    pt: Crie animações com JavaScript
+    ru: Создание анимаций с помощью JavaScript
+    zh: 使用 JavaScript 构建动画
