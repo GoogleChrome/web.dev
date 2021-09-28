@@ -27,6 +27,7 @@ declare global {
     prev?: NavigationItem | null,
     next?: NavigationItem | null,
     counter?: string;
+    counterAll?: string;
   }
 }
 

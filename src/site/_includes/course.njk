@@ -52,7 +52,7 @@ inlineScripts:
       <main id="main">
         {% for item in pageNavigation.list %}
           {% if item.url === page.url %}
-            <div class="course-index font-mono">{{ item.counter }}</div>
+            <div class="course-index font-mono">{{ item.counter }} / {{ item.counterAll }}</div>
           {% endif %}
         {% endfor %}
         <h1 class="course-headline">{{ title | md | safe }}</h1>

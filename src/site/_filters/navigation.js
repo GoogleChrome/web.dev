@@ -87,8 +87,10 @@ module.exports = function navigation(collection, toc) {
   // next/previous links and anything else.
   // The list only contains items with actual URLs.
   const list = [...map.values()];
+  const counterAll = list.length.toString().padStart(3, '0');
   list.forEach((item, idx) => {
     item.counter = idx.toString().padStart(3, '0');
+    item.counterAll = counterAll;
     item.prev = list[idx - 1] || null;
     item.next = list[idx + 1] || null;
   });
