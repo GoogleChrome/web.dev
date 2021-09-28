@@ -38,9 +38,9 @@ feedback:
 ## Referer and Referrer-Policy 101
 
 HTTP requests may include the optional [`Referer`
-header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), which indicates the
+header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referer), which indicates the
 origin or web page URL the request was made from. The [`Referrer-Policy`
-header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) defines what data
+header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy) defines what data
 is made available in the `Referer` header.
 
 In the example below, the `Referer` header includes the complete URL of the page on `site-one` from
@@ -106,7 +106,7 @@ header and `document.referrer`:
 </figure>
 
 MDN provides a [full list of policies and behavior
-examples](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Directives).
+examples](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Directives).
 
 Things to note:
 
@@ -180,7 +180,7 @@ There are different ways to set referrer policies for your site:
 
 - As an HTTP header
 - Within your
-  [HTML](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML)
+  [HTML](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML)
 - From JavaScript on a [per-request
   basis](https://javascript.info/fetch-api#referrer-referrerpolicy)
 
@@ -360,8 +360,8 @@ To define alternatives, analyze first what part of the referrer you're using.
 - If you're using the referrer in a script that has top-level access to the page,
   `window.location.origin` is an alternative.
 - If available, headers like
-  [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) and
-  [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) give
+  [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) and
+  [`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site) give
   you the `Origin` or describe whether the request is cross-origin, which may be exactly what you need.
 
 **If you need other elements of the URL (path, query parameters…):**
@@ -393,9 +393,9 @@ tokens](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forger
 as your primary protection. For extra protection, use
 [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)—and instead
 of `Referer`, use headers such as
-[`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) (available on POST and
+[`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) (available on POST and
 CORS requests) and
-[`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) (if
+[`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site) (if
 available).
 
 ### Logging
@@ -403,7 +403,7 @@ available).
 Make sure to protect users' personal or sensitive data that may be in the `Referer`.
 
 If you're only using the origin, check if the
-[`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) header could be an
+[`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) header could be an
 alternative. This may give you the information that you need for debugging purposes in a simpler way
 and without needing to parse the referrer.
 
@@ -482,9 +482,9 @@ David Van Cleve, Mike West, Sam Dutton, Rowan Merewood, Jxck and Kayce Basques._
 - [A new security header: Referrer Policy
   (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
 - [Referrer-Policy on
-  MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
+  MDN](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy)
 - [Referer header: privacy and security concerns on
-  MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
+  MDN](https://developer.mozilla.org/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
 - [Chrome change: Blink intent to
   implement](https://groups.google.com/a/chromium.org/d/msg/blink-dev/aBtuQUga1Tk/n4BLwof4DgAJ)
 - [Chrome change: Blink intent to

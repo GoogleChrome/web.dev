@@ -114,7 +114,7 @@ You can finally start the idle detection by calling the
 `IdleDetector`'s `start()` method.
 It takes an object with the desired idle `threshold` in milliseconds
 and an optional `signal` with an
-[`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
+[`AbortSignal`](https://developer.mozilla.org/docs/Web/API/AbortSignal)
 to abort idle detection as parameters.
 
 ```js
@@ -142,8 +142,8 @@ try {
 ```
 
 You can abort the idle detection by calling the
-[`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)'s
-[`abort()`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort)
+[`AbortController`](https://developer.mozilla.org/docs/Web/API/AbortController)'s
+[`abort()`](https://developer.mozilla.org/docs/Web/API/AbortController/abort)
 method.
 
 ```js

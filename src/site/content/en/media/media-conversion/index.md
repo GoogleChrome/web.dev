@@ -273,5 +273,5 @@ Now that we hopefully have a good grasp on how to convert files, we can build on
 what we've learned in this article and go learn about
 [Media encryption](/media-encryption/) next.
 
-[web-standards-based]: https://developer.mozilla.org/en-US/docs/Web/HTML/DASH_Adaptive_Streaming_for_HTML_5_Video
+[web-standards-based]: https://developer.mozilla.org/docs/Web/HTML/DASH_Adaptive_Streaming_for_HTML_5_Video
 [Apple's standard]: https://developer.apple.com/streaming/

@@ -274,7 +274,7 @@ function wasFIDBeforeDCL(fidEntry) {
   the `DOMContentLoaded` event may not be a useful signal. Instead, you can
   consider using the `load` event or—if there's a particular script you know
   takes a while to execute—you can use the [Resource
-  Timing](https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API)
+  Timing](https://developer.mozilla.org/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API)
   entry for that script.
 {% endAside %}
 

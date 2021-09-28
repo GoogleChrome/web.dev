@@ -58,7 +58,7 @@ height="440" %}
 
 Now you know what a keyframe is,
 that knowledge should help you understand how the CSS
-[`@keyframes`](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) rule works.
+[`@keyframes`](https://developer.mozilla.org/docs/Web/CSS/@keyframes) rule works.
 Here is a basic rule with two states.
 
 ```css
@@ -73,7 +73,7 @@ Here is a basic rule with two states.
 ```
 
 The first part to note is the
-[custom ident](https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident)
+[custom ident](https://developer.mozilla.org/docs/Web/CSS/custom-ident)
 (custom identifier)—or in more human terms, the name of the keyframes rule.
 This rule's identifier is `my-animation`.
 The custom identifier works like a function name. Which, as you learned in the [functions module](/learn/css/functions),
@@ -129,7 +129,7 @@ This means you have 2 positions inside your keyframes rule to represent the chan
 ## The `animation` properties
 
 To use your `@keyframes` in a CSS rule, define various animation properties _or_, use the
-[`animation`](https://developer.mozilla.org/en-US/docs/Web/CSS/animation) shorthand property.
+[`animation`](https://developer.mozilla.org/docs/Web/CSS/animation) shorthand property.
 
 ### `animation-duration`
 
@@ -139,7 +139,7 @@ To use your `@keyframes` in a CSS rule, define various animation properties _or_
 }
 ```
 
-The [animation-duration](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration)
+The [animation-duration](https://developer.mozilla.org/docs/Web/CSS/animation-duration)
 property defines how long the `@keyframes` timeline should be. It should be a time value.
 It defaults to 0 seconds, which means the animation still runs,
 but it'll be too quick for you to see.
@@ -154,7 +154,7 @@ making the animation run at variable speeds over the course of `animation-durati
 and if a value is calculated beyond that of the value defined in `@keyframes`, make the element appear to bounce.
 
 There are several keywords available as presets in CSS, which are used as the value for
-[animation-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function):
+[animation-timing-function](https://developer.mozilla.org/docs/Web/CSS/animation-timing-function):
 `linear`, `ease`, `ease-in`, `ease-out`, `ease-in-out`.
 
 ```css
@@ -233,7 +233,7 @@ which means it ends one step earlier than `end`.
 }
 ```
 
-The [animation-iteration-count](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count)
+The [animation-iteration-count](https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count)
 property defines how many times the `@keyframes` timeline should run.
 By default, this is 1,
 which means that when the animation reaches the end of your timeline,
@@ -264,7 +264,7 @@ which is how the "pulser" demo from the start of this lesson works.
 ```
 
 You can set which direction the timeline runs over your keyframes with
-[animation-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction):
+[animation-direction](https://developer.mozilla.org/docs/Web/CSS/animation-direction):
 
 - `normal`: the default value, which is forwards.
 - `reverse`: runs backwards over your timeline.
@@ -284,7 +284,7 @@ You can set which direction the timeline runs over your keyframes with
 }
 ```
 
-The [animation-delay](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay)
+The [animation-delay](https://developer.mozilla.org/docs/Web/CSS/animation-delay)
 property defines how long to wait before starting the animation.
 Like the `animation-duration` property, this accepts a time value.
 
@@ -305,7 +305,7 @@ For example, if your animation is 10 seconds long and you set `animation-delay` 
 }
 ```
 
-The [animation-play-state](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state)
+The [animation-play-state](https://developer.mozilla.org/docs/Web/CSS/animation-play-state)
 property allows you to play and pause the animation.
 The default value is `running` and if you set it to `paused`, it will pause the animation.
 
@@ -317,7 +317,7 @@ The default value is `running` and if you set it to `paused`, it will pause the 
 
 ### `animation-fill-mode`
 
-The [animation-fill-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode)
+The [animation-fill-mode](https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode)
 property defines which values in your `@keyframes` timeline persist before the animation starts or after it ends.
 The default value is `none` which means when the animation is complete, the values in your timeline are discarded.
 Other options are:
@@ -357,7 +357,7 @@ which lets you define the animation properties in the following order:
 Users can define in their operating system that they prefer to reduce motion
 experienced when they interact with applications and websites.
 This preference can be detected using the
-[prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
+[prefers-reduced-motion](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion)
 media query.
 
 ```css

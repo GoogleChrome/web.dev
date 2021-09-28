@@ -43,7 +43,7 @@ The following pseudo-classes apply due to an interaction a user has with your pa
 If a user has a pointing device like a mouse or trackpad,
 and they place it over an element,
 you can hook on to that state with
-[`:hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover) to apply styles.
+[`:hover`](https://developer.mozilla.org/docs/Web/CSS/:hover) to apply styles.
 This is a useful way to hint that an element can be interacted with.
 
 {% Codepen {
@@ -69,7 +69,7 @@ this state is when the click starts and hasn't yet been released.
 
 If an element can receive focus—like a `<button>`—
 you can react to that state with the
-[`:focus`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus) pseudo-class.
+[`:focus`](https://developer.mozilla.org/docs/Web/CSS/:focus) pseudo-class.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -77,7 +77,7 @@ you can react to that state with the
 } %}
 
 You can also react if a child element of your element receives focus with
-[`:focus-within`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within).
+[`:focus-within`](https://developer.mozilla.org/docs/Web/CSS/:focus-within).
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -99,7 +99,7 @@ This CSS removes the default browser focus ring when an element receives focus,
 which presents an accessibility issue for users who navigate a web page with a keyboard.
 If there is no focus style,
 they won't be able to keep track of where focus currently is when using the <kbd>tab</kbd> key.
-With [`:focus-visible`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
+With [`:focus-visible`](https://developer.mozilla.org/docs/Web/CSS/:focus-visible)
 you can present a focus style when an element receives focus via the keyboard,
 while also using the `outline: none` rule to prevent it when a pointer device interacts with it.
 
@@ -121,7 +121,7 @@ button:focus-visible {
 
 ### `:target`
 
-The [`:target`](https://developer.mozilla.org/en-US/docs/Web/CSS/:target)
+The [`:target`](https://developer.mozilla.org/docs/Web/CSS/:target)
 pseudo-class selects an element that has an `id` matching a URL fragment.
 Say you have the following HTML:
 
@@ -151,14 +151,14 @@ such as the main content on a website, via a skip link.
 
 ### `:link`
 
-The [`:link`](https://developer.mozilla.org/en-US/docs/Web/CSS/:link)
+The [`:link`](https://developer.mozilla.org/docs/Web/CSS/:link)
 pseudo-class can be applied to any `<a>` element that has a `href` value that **hasn't been** visited yet.
 `:visited`
 
 You can style a link that's already been visited by the user using the
-[`:visited`](https://developer.mozilla.org/en-US/docs/Web/CSS/:visited) pseudo-class.
+[`:visited`](https://developer.mozilla.org/docs/Web/CSS/:visited) pseudo-class.
 This is the opposite state to `:link` but you have fewer CSS properties to use for
-[security reasons](https://developer.mozilla.org/en-US/docs/Web/CSS/Privacy_and_the_:visited_selector).
+[security reasons](https://developer.mozilla.org/docs/Web/CSS/Privacy_and_the_:visited_selector).
 You can only style `color`, `background-color`,
 `border-color`, `outline-color` and the color of SVG `fill` and `stroke`.
 
@@ -199,8 +199,8 @@ in the various states that these elements might be in during interaction with th
 If a form element,
 such as a `<button>` is disabled by the browser,
 you can hook on to that state with the
-[`:disabled`](https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled) pseudo-class.
-The [`:enabled`](https://developer.mozilla.org/en-US/docs/Web/CSS/:enabled)
+[`:disabled`](https://developer.mozilla.org/docs/Web/CSS/:disabled) pseudo-class.
+The [`:enabled`](https://developer.mozilla.org/docs/Web/CSS/:enabled)
 pseudo-class is available for the opposite state,
 though form elements are also `:enabled` by default,
 therefore you might not find yourself reaching for this pseudo-class.
@@ -213,7 +213,7 @@ therefore you might not find yourself reaching for this pseudo-class.
 
 ### `:checked` and `:indeterminate`
 
-The [`:checked`](https://developer.mozilla.org/en-US/docs/Web/CSS/:checked)
+The [`:checked`](https://developer.mozilla.org/docs/Web/CSS/:checked)
 pseudo-class is available when a supporting form element,
 such as a checkbox or radio button is in a checked state.
 
@@ -226,7 +226,7 @@ such as a checkbox or radio button is in a checked state.
 The `:checked` state is a binary(true or false) state,
 but checkboxes do have an in-between state when they are neither checked or unchecked.
 This is known as the
-[`:indeterminate`](https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate) state.
+[`:indeterminate`](https://developer.mozilla.org/docs/Web/CSS/:indeterminate) state.
 
 An example of this state is when you have a "select all" control that checks all checkboxes in a group.
 If the user was to then uncheck one of these checkboxes,
@@ -245,7 +245,7 @@ A common use case is to give it a striped appearance to indicate it's unknown ho
 ### `:placeholder-shown`
 
 If a form field has a `placeholder` attribute and **no value**,
-the [`:placeholder-shown`](https://developer.mozilla.org/en-US/docs/Web/CSS/:placeholder-shown)
+the [`:placeholder-shown`](https://developer.mozilla.org/docs/Web/CSS/:placeholder-shown)
 pseudo-class can be used to attach styles to that state.
 As soon as there is content in the field,
 whether it has a `placeholder` or not,
@@ -254,9 +254,9 @@ this state will no longer apply.
 ### Validation states
 
 You can respond to HTML form validation with pseudo-classes such as
-[`:valid`](https://developer.mozilla.org/en-US/docs/Web/CSS/:valid),
-[`:invalid`](https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid) and
-[`:in-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/:in-range).
+[`:valid`](https://developer.mozilla.org/docs/Web/CSS/:valid),
+[`:invalid`](https://developer.mozilla.org/docs/Web/CSS/:invalid) and
+[`:in-range`](https://developer.mozilla.org/docs/Web/CSS/:in-range).
 The `:valid` and `:invalid` pseudo-classes are useful for contexts
 such as an email field that has a `pattern` that needs to be matched,
 for it to be a valid field.
@@ -280,10 +280,10 @@ such as a numeric input *and* the value is within those bounds.
 
 With HTML forms,
 you can determine that a field is required with the `required` attribute.
-The [`:required`](https://developer.mozilla.org/en-US/docs/Web/CSS/:required)
+The [`:required`](https://developer.mozilla.org/docs/Web/CSS/:required)
 pseudo-class will be available for required fields.
 Fields that are not required can be selected with the
-[`:optional`](https://developer.mozilla.org/en-US/docs/Web/CSS/:optional) pseudo-class.
+[`:optional`](https://developer.mozilla.org/docs/Web/CSS/:optional) pseudo-class.
 
 {% Aside %}
 It's not a good idea to rely solely on color to signify state changes—
@@ -301,8 +301,8 @@ There is a group of pseudo-classes that select items based on where they are in 
 
 If you want to find the first or last item,
 you can use
-[`:first-child`](https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child) and
-[`:last-child`](https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child).
+[`:first-child`](https://developer.mozilla.org/docs/Web/CSS/:first-child) and
+[`:last-child`](https://developer.mozilla.org/docs/Web/CSS/:last-child).
 These pseudo-classes will return either the first or last element in a group of sibling elements.
 
 {% Codepen {
@@ -314,7 +314,7 @@ These pseudo-classes will return either the first or last element in a group of 
 
 You can also select elements that have no siblings,
 with the
-[`:only-child`](https://developer.mozilla.org/en-US/docs/Web/CSS/:only-child) pseudo-class.
+[`:only-child`](https://developer.mozilla.org/docs/Web/CSS/:only-child) pseudo-class.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -324,8 +324,8 @@ with the
 ### `:first-of-type` and `:last-of-type`
 
 You can select the
-[`:first-of-type`](https://developer.mozilla.org/en-US/docs/Web/CSS/:first-of-type) and
-[`:last-of-type`](https://developer.mozilla.org/en-US/docs/Web/CSS/:last-of-type) which at first,
+[`:first-of-type`](https://developer.mozilla.org/docs/Web/CSS/:first-of-type) and
+[`:last-of-type`](https://developer.mozilla.org/docs/Web/CSS/:last-of-type) which at first,
 look like they do the same thing as `:first-child` and `:last-child`, but consider this HTML:
 
 ```html
@@ -366,8 +366,8 @@ so with this rule, it will be colored red.
 ### `nth-child` and `nth-of-type`
 
 You're not limited to first and last children and types either.
-The [`nth-child`](https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child) and
-[`nth-of-type`](https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-of-type)
+The [`nth-child`](https://developer.mozilla.org/docs/Web/CSS/:nth-child) and
+[`nth-of-type`](https://developer.mozilla.org/docs/Web/CSS/:nth-of-type)
 pseudo-classes allow you to specify an element that is at a certain index.
 The indexing in CSS selectors starts at 1.
 
@@ -411,7 +411,7 @@ You can play around with this sort of selector on this
 ### `only-of-type`
 
 Lastly, you can find the only element of a certain type in a group of siblings with
-[`:only-of-type`](https://developer.mozilla.org/en-US/docs/Web/CSS/:only-of-type).
+[`:only-of-type`](https://developer.mozilla.org/docs/Web/CSS/:only-of-type).
 This is useful if you want to select lists with only one item,
 or if you want to find the only bold element in a paragraph.
 
@@ -429,7 +429,7 @@ and there is a pseudo-class for that too.
 ### `:empty`
 
 If an element has no children, the
-[`:empty`](https://developer.mozilla.org/en-US/docs/Web/CSS/:empty) pseudo-class applies to them.
+[`:empty`](https://developer.mozilla.org/docs/Web/CSS/:empty) pseudo-class applies to them.
 Children aren't just HTML elements or text nodes though: they can also be whitespace,
 which can be confusing when you're debugging the following HTML and wondering why it isn't working with `:empty`:
 
@@ -485,7 +485,7 @@ you might think to write a selector list like this:
 }
 ```
 
-With the [`:is()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:is)
+With the [`:is()`](https://developer.mozilla.org/docs/Web/CSS/:is)
 pseudo-class, you can write a more compact version:
 
 ```css
@@ -504,7 +504,7 @@ it will ignore the invalid selector, but use those which are valid.
 ### `:not()`
 
 You can also exclude items with the
-[`:not()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:not) pseudo-class.
+[`:not()`](https://developer.mozilla.org/docs/Web/CSS/:not) pseudo-class.
 For example, you can use it to style all links that don't have a `class` attribute.
 
 ```css

@@ -52,7 +52,7 @@ To improve navigation, insert a `prefetch` tag in the landing page to prefetch t
 </head>
 ```
 
-The `as` attribute is optional but recommended; it helps the browser set the right headers and determine whether the resource is already in the cache.  Example values for this attribute include: `document`, `script`, `style`, `font`, `image`, and [others](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes).
+The `as` attribute is optional but recommended; it helps the browser set the right headers and determine whether the resource is already in the cache.  Example values for this attribute include: `document`, `script`, `style`, `font`, `image`, and [others](https://developer.mozilla.org/docs/Web/HTML/Element/link#Attributes).
 
 To verify that prefetching is working:
 
@@ -67,7 +67,7 @@ Now when the landing page loads, the `product-details.html` page loads too, but 
 
 {% Img src="image/admin/LDkU6zNbFU7GhPuUcaCR.png", alt="Network panel showing product-details.html prefetched.", width="800", height="172", class="w-screenshot" %}
 
-The page is kept in the [HTTP cache](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching) for five minutes, after which the normal [`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) rules for the document apply. In this case, `product-details.html` has  a `cache-control` header with a value of `public, max-age=0`, which means that the page is kept for a total of five minutes.
+The page is kept in the [HTTP cache](https://developer.mozilla.org/docs/Web/HTTP/Caching) for five minutes, after which the normal [`Cache-Control`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control) rules for the document apply. In this case, `product-details.html` has  a `cache-control` header with a value of `public, max-age=0`, which means that the page is kept for a total of five minutes.
 
 ### Reevaluate performance
 
@@ -85,7 +85,7 @@ This is approximately a 98% reduction compared to the previous version, which to
 
 ## Extra credit: Use `prefetch` as a progressive enhancement
 
-Prefetching is best implemented as a progressive enhancement for the users who are browsing on fast connections. You can use the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) to check the network conditions and based on that dynamically inject prefetch tags. That way, you can minimize data consumption and save costs for users on slow or expensive data plans.
+Prefetching is best implemented as a progressive enhancement for the users who are browsing on fast connections. You can use the [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API) to check the network conditions and based on that dynamically inject prefetch tags. That way, you can minimize data consumption and save costs for users on slow or expensive data plans.
 
 To implement adaptive prefetching, first remove the `<link rel="prefetch">` tag from `views/index.html`:
 
@@ -120,7 +120,7 @@ function injectLinkPrefetchIn4g(url) {
 
 The function works as follows:
 
-- It checks the [effectiveType](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/effectiveType) property of the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) to determine if the user is on a 4G (or faster) connection.
+- It checks the [effectiveType](https://developer.mozilla.org/docs/Web/API/NetworkInformation/effectiveType) property of the [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API) to determine if the user is on a 4G (or faster) connection.
 - If that condition is fulfilled, it generates a `<link>` tag with `prefetch` as the type of hint, passes the URL that will be prefetched in the `href` attribute, and indicates that the resource is an HTML `document` in the `as` attribute.
 - Finally, it injects the script dynamically in the `head` of the page.
 

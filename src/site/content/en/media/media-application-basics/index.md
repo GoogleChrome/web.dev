@@ -252,7 +252,7 @@ learning the basic concepts, next up [Media streaming basics](/media-streaming-b
 [Zencoder]: https://en.wikipedia.org/wiki/Zencoder
 [Amazon Elastic Encoder]: https://aws.amazon.com/elastictranscoder
 [Google Transcoder API]: https://cloud.google.com/transcoder/docs
-[DASH]: https://developer.mozilla.org/en-US/docs/Web/HTML/DASH_Adaptive_Streaming_for_HTML_5_Video
+[DASH]: https://developer.mozilla.org/docs/Web/HTML/DASH_Adaptive_Streaming_for_HTML_5_Video
 [HLS]: https://developer.apple.com/documentation/http_live_streaming
 [Shaka Packager documentation]: https://google.github.io/shaka-packager/html/
 [FFmpeg questions on Stack Overflow]: https://stackoverflow.com/questions/tagged/ffmpeg

@@ -20,7 +20,7 @@ CSS to restyle it. Just remember to keep your keyboard users in mind!
 
 ## Use `:focus` to always show a focus indicator
 
-The [`:focus`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus)
+The [`:focus`](https://developer.mozilla.org/docs/Web/CSS/:focus)
 pseudo-class is applied any time an element is focused, regardless of the input
 device (mouse, keyboard, stylus, etc.) or method used to focus it. For example, 
 the `<div>` below has a `tabindex` which makes it focusable. It also has a
@@ -67,7 +67,7 @@ Firefox and Safari the element does not receive focus when you click on it.
 
 {% Aside %}
 See the
-[MDN reference for `<button>` focus behavior](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#Clicking_and_focus)
+[MDN reference for `<button>` focus behavior](https://developer.mozilla.org/docs/Web/HTML/Element/button#Clicking_and_focus)
 for a summary of which browsers and operating systems will apply focus to
 `<button>` elements.
 {% endAside %}
@@ -78,7 +78,7 @@ on different devices to ensure your focus styles are acceptable to your users.
 ## Use `:focus-visible` to selectively show a focus indicator
 
 The new
-[`:focus-visible`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
+[`:focus-visible`](https://developer.mozilla.org/docs/Web/CSS/:focus-visible)
 pseudo-class is applied any time that an element receives focus and the 
 browser determines via heuristics that displaying a focus indicator would be 
 beneficial to the user. In particular, if the most recent user interaction 
@@ -110,7 +110,7 @@ button:focus-visible {
 ## Use `:focus-within` to style the parent of a focused element
 
 The
-[`:focus-within`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within)
+[`:focus-within`](https://developer.mozilla.org/docs/Web/CSS/:focus-within)
 pseudo-class is applied to an element either when the element itself receives
 focus or when another element inside that element receives focus.
 

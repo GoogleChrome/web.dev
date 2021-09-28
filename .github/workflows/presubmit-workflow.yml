@@ -23,10 +23,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           is_presubmit: ${{ contains(github.event.pull_request.labels.*.name, '$-presubmit') }}
 
-      - name: Run a production build of site
+      - name: Run a staging build of site
         run: npm run build
         env:
-          ELEVENTY_ENV: prod
+          ELEVENTY_ENV: staging
 
       # Checks to see if any files in the PR match one of the listed file types.
       # We can use this filter to decide whether or not to run linters or tests.

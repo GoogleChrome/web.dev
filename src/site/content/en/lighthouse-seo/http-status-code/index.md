@@ -9,9 +9,9 @@ web_lighthouse:
   - http-status-code
 ---
 
-Servers provide a three-digit [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+Servers provide a three-digit [HTTP status code](https://developer.mozilla.org/docs/Web/HTTP/Status)
 for each resource request they receive. Status codes in the 400s and 500s
-[indicate that there's an error](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#Client_error_responses)
+[indicate that there's an error](https://developer.mozilla.org/docs/Web/HTTP/Status#Client_error_responses)
 with the requested resource. If a search engine encounters a status code error
 when it's **crawling** a web page, it may not index that page properly.
 
@@ -55,6 +55,6 @@ complicated. Learn how to [fix sneaky 404s in an Express application](/codelab-f
 ## Resources
 
 - [Source code for **Page has unsuccessful HTTP status code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/http-status-code.js)
-- [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+- [HTTP response status codes](https://developer.mozilla.org/docs/Web/HTTP/Status)
 
 {% CodelabsCallout 'codelab-fix-sneaky-404', lang %}

@@ -74,7 +74,7 @@ Há muitas alternativas diferentes de usar cache no servidor; a escolha depende 
 
 ### Servindo páginas HTML usando cache-first
 
-Quando instalado, um [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) é executado em segundo plano do navegador e pode interceptar solicitações do servidor. Este nível de controle de cache programático permite armazenar em cache parte ou todo o conteúdo de uma página HTML e apenas atualizar o cache quando o conteúdo for alterado.
+Quando instalado, um [service worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) é executado em segundo plano do navegador e pode interceptar solicitações do servidor. Este nível de controle de cache programático permite armazenar em cache parte ou todo o conteúdo de uma página HTML e apenas atualizar o cache quando o conteúdo for alterado.
 
 O gráfico a seguir mostra como as distribuições de LCP foram reduzidas em um site usando este padrão:
 
@@ -224,9 +224,9 @@ Embora um aumento no tempo de bloqueio do CSS ou JavaScript resulte diretamente 
 
 - Elementos `<img>`
 - `<image>` dentro de um elemento `<svg>`
-- `<video>` (a imagem [poster](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-poster) é usada para medir a LCP)
-- Um elemento com uma imagem de plano de fundo carregada por meio da [`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url()) (em oposição a um gradiente CSS)
-- [Elementos de nível de bloco](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) contendo nós de texto ou outros elementos de texto inline
+- `<video>` (a imagem [poster](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster) é usada para medir a LCP)
+- Um elemento com uma imagem de plano de fundo carregada por meio da [`url()`](https://developer.mozilla.org/docs/Web/CSS/url()) (em oposição a um gradiente CSS)
+- [Elementos de nível de bloco](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements) contendo nós de texto ou outros elementos de texto inline
 
 O tempo que leva para carregar esses elementos, se renderizados acima da dobra, terá um efeito direto na LCP. Seguem algumas técnicas para garantir que esses arquivos sejam carregados o mais rápido possível:
 
@@ -264,7 +264,7 @@ Melhorar o tempo que leva para carregar e renderizar esses tipos de imagens irá
 
 Às vezes, recursos importantes que são declarados ou usados num determinado arquivo CSS ou JavaScript podem ser baixados mais tarde do que você gostaria, como uma fonte escondida num dos muitos arquivos CSS de uma aplicação.
 
-Se você sabe que um determinado recurso deve ser priorizado, use `<link rel="preload">` para baixá-lo mais cedo. [Muitos tipos de recursos](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded) podem ser pré-carregados, mas primeiro você deve se concentrar no [pré-carregamento de ativos essenciais](/preload-critical-assets/), como fontes, imagens ou vídeos acima da dobra e CSS ou JavaScript de importância crítica.
+Se você sabe que um determinado recurso deve ser priorizado, use `<link rel="preload">` para baixá-lo mais cedo. [Muitos tipos de recursos](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded) podem ser pré-carregados, mas primeiro você deve se concentrar no [pré-carregamento de ativos essenciais](/preload-critical-assets/), como fontes, imagens ou vídeos acima da dobra e CSS ou JavaScript de importância crítica.
 
 ```html
 <link rel="preload" as="script" href="script.js" />

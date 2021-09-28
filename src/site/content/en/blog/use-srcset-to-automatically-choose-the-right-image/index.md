@@ -38,7 +38,7 @@ weight is images. That's a great opportunity for optimization!
 ## tl;dr
 * Don't save images larger than their display size.
 * Save multiple sizes for each image and use the
-[`srcset`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset)
+[`srcset`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-srcset)
 attribute to enable the browser to choose the smallest.
 The `w` value tells the browser the width of each version:
 

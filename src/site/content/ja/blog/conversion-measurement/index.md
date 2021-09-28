@@ -43,7 +43,7 @@ tags:
 
 ### なぜこれが必要なのですか？
 
-今日、広告コンバージョンの測定は、多くの場合、 [サードパーティ Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies) に依存しています。**しかし、ブラウザーはこれらへのアクセスを制限しています。**
+今日、広告コンバージョンの測定は、多くの場合、 [サードパーティ Cookie](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Third-party_cookies) に依存しています。**しかし、ブラウザーはこれらへのアクセスを制限しています。**
 
 [Chromeは、サードパーティ Cookie のサポートを段階的に廃止することを](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)計画しており[、ユーザーが選択した場合に](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en) Cookie をブロックする方法を提供します。 Safari は[サードパーティ Cookie](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/) をブロックし、Firefox は[既知のサードパーティ追跡 Cookie をブロックし](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default)、また Edge は[追跡防止を提供します](https://support.microsoft.com/en-us/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention)。
 

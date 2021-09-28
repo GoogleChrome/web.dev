@@ -14,7 +14,7 @@ The [manifest](/add-manifest) for a [Progressive Web App](/what-are-pwas/) (PWA)
 which indicates the URL to be loaded when the user launches the app.
 
 If the browser doesn't receive an
-[HTTP&nbsp;200 response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#Successful_responses)
+[HTTP&nbsp;200 response](https://developer.mozilla.org/docs/Web/HTTP/Status#Successful_responses)
 when accessing an app from the `start_url`,
 either the `start_url` isn't correct, or the page isn't accessible offline.
 This causes problems for users who have installed the app to their devices.

@@ -34,7 +34,7 @@ To follow along or play with these demos on your own, check out the Glitch embed
   </video>
 </figure>
 
-For the  first 'single-line' layout, let's solve the biggest mystery in all of the CSS land: centering things. I want you to know that it's easier than you think with [`place-items: center`](https://developer.mozilla.org/en-US/docs/Web/CSS/place-items).
+For the  first 'single-line' layout, let's solve the biggest mystery in all of the CSS land: centering things. I want you to know that it's easier than you think with [`place-items: center`](https://developer.mozilla.org/docs/Web/CSS/place-items).
 
 First specify `grid` as the `display` method, and then write `place-items: center` on the same element. `place-items` is a shorthand to set both `align-items` and `justify-items` at once. By setting it to `center`, both `align-items` and `justify-items` are set to  `center`.
 
@@ -59,7 +59,7 @@ Next we have the deconstructed pancake! This is a common layout for marketing si
 
 By using Flexbox for this effect, you won't need media queries to adjust the placement of these elements when the screen resizes.
 
-The [`flex`](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) shorthand stands for: `flex: <flex-grow> <flex-shrink> <flex-basis>`.
+The [`flex`](https://developer.mozilla.org/docs/Web/CSS/flex) shorthand stands for: `flex: <flex-grow> <flex-shrink> <flex-basis>`.
 
 Because of this, if you want your boxes to fill out to their `<flex-basis>` size, shrink on smaller sizes, but not *stretch* to fill any additional space, write: `flex: 0 1 <flex-basis>`. In this case, your `<flex-basis>` is `150px` so it looks like:
 
@@ -100,7 +100,7 @@ Now, as you increase or decrease the screen size,  these flex items both shrink 
   </video>
 </figure>
 
-This demo takes advantage of the [minmax](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax) function for grid layouts. What we're doing here is setting the minimum sidebar size to be `150px`, but on larger screens, letting that stretch out to `25%`. The sidebar will always take up `25%` of its parent's horizontal space until that `25%` becomes smaller than `150px`.
+This demo takes advantage of the [minmax](https://developer.mozilla.org/docs/Web/CSS/minmax) function for grid layouts. What we're doing here is setting the minimum sidebar size to be `150px`, but on larger screens, letting that stretch out to `25%`. The sidebar will always take up `25%` of its parent's horizontal space until that `25%` becomes smaller than `150px`.
 
 Add this as a value of grid-template-columns with the following value:
 `minmax(150px, 25%) 1fr`. The item in the first column (the sidebar in this case) gets a `minmax` of `150px` at `25%`, and the second item (the `main` section here) takes up the rest of the space as a single `1fr` track.
@@ -120,7 +120,7 @@ Add this as a value of grid-template-columns with the following value:
   </video>
 </figure>
 
-Unlike the Deconstructed Pancake, this example does not wrap its children when the screen size changes. Commonly referred to as a [sticky footer](https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Sticky_footers), this layout is often used for both websites and apps, across mobile applications (the footer is commonly a toolbar), and websites (single page applications often use this global layout).
+Unlike the Deconstructed Pancake, this example does not wrap its children when the screen size changes. Commonly referred to as a [sticky footer](https://developer.mozilla.org/docs/Web/CSS/Layout_cookbook/Sticky_footers), this layout is often used for both websites and apps, across mobile applications (the footer is commonly a toolbar), and websites (single page applications often use this global layout).
 
 Adding `display: grid` to the component will give you a single column grid, however the main area will only be as tall as the content with the footer below it.
 

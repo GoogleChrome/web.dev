@@ -27,7 +27,7 @@ height="411" %}
 
 You might initially think that you're going to need to export an image from your design tool for this,
 but you can use a
-[`linear-gradient`](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient())
+[`linear-gradient`](https://developer.mozilla.org/docs/Web/CSS/linear-gradient())
 instead.
 
 {% Codepen {
@@ -42,7 +42,7 @@ right up to impressive artwork by mixing and repeating multiple gradients.
 
 ## Linear gradient
 
-The [`linear-gradient()`](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient())
+The [`linear-gradient()`](https://developer.mozilla.org/docs/Web/CSS/linear-gradient())
 function generates an image of two or more colors, progressively.
 It takes multiple arguments, but in its simplest configuration,
 you can pass some colors like this and it will automatically split them evenly, while blending them.
@@ -109,7 +109,7 @@ and you can layer gradients on top of each other by separating each gradient wit
 ## Radial gradient
 
 To create a gradient that radiates in a circular fashion, the
-[`radial-gradient()`](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient())
+[`radial-gradient()`](https://developer.mozilla.org/docs/Web/CSS/radial-gradient())
 function steps in to help.
 It's similar to `linear-gradient()`,
 but instead of specifying an angle, you optionally specify a position and ending shape.
@@ -167,7 +167,7 @@ and goes around in a 360 degree circle.
   height: 400
 } %}
 
-The [`conic-gradient()`](https://developer.mozilla.org/en-US/docs/Web/CSS/conic-gradient())
+The [`conic-gradient()`](https://developer.mozilla.org/docs/Web/CSS/conic-gradient())
 function accepts position and angle arguments.
 
 By default, the angle is 0 degrees which starts at the top, in the center.
@@ -200,9 +200,9 @@ A good use case for this capability, with conic gradients is rendering pie chart
 
 Each type of gradient has a repeating type, too.
 These are
-[`repeating-linear-gradient()`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient()),
-[`repeating-radial-gradient()`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient()) and
-[`repeating-conic-gradient()`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-conic-gradient()).
+[`repeating-linear-gradient()`](https://developer.mozilla.org/docs/Web/CSS/repeating-linear-gradient()),
+[`repeating-radial-gradient()`](https://developer.mozilla.org/docs/Web/CSS/repeating-radial-gradient()) and
+[`repeating-conic-gradient()`](https://developer.mozilla.org/docs/Web/CSS/repeating-conic-gradient()).
 They are similar to the non-repeating functions and take the same arguments.
 The difference is that if the defined gradient can be repeated to fill the box,
 based on both of their sizes, it will.
@@ -247,7 +247,7 @@ For example, you can mix multiple linear-gradients together, or two linear-gradi
 ## Resources
 
 - [Conic.css](https://www.conic.style/) - a useful collection of conic gradients
-- [MDN guide to gradients](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)
+- [MDN guide to gradients](https://developer.mozilla.org/docs/Web/CSS/CSS_Images/Using_CSS_gradients)
 - [Gradient generator](https://www.colorzilla.com/gradient-editor/)
 
 {% Assessment 'gradients' %}

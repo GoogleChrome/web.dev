@@ -1,21 +1,63 @@
 title:
   en: Content handbook
+  es: Manual de contenido
+  ja: コンテンツハンドブック
+  ko: 콘텐츠 핸드북
+  pt: Manual de conteúdo
+  ru: Руководство по созданию контента
+  zh: 内容手册
 
 description:
   en: Create great content for web.dev.
+  es: Crear un gran contenido para web.dev.
+  ja: web.dev に関する優れたコンテンツを作成しましょう。
+  ko: web.dev를 위한 훌륭한 콘텐츠를 제작하세요.
+  pt: Crie um ótimo conteúdo para o web.dev.
+  ru: Создавайте качественный контент для web.dev.
+  zh: 为 web.dev 创建精彩的内容。
 
 overview:
   en: This handbook helps contributors to web.dev create effective, engaging content and get it published as easily as possible. This is a living document that will evolve as we learn more about what works.
+  es: Este manual ayuda a que los colaboradores de web.dev creen contenido eficaz y atractivo y lo publiquen con la mayor facilidad posible. Se trata de un documento en dinámico que evolucionará conforme aprendamos más sobre lo que funciona.
+  ja: このハンドブックは、web.dev に貢献してくださるユーザーの皆さまが効果的かつ魅力的なコンテンツを作成し、それを可能な限り簡単に公開できるようにサポートするために作成されました。効果的な手法を学習しながら進化していく、生きたドキュメントです。
+  ko: 이 핸드북은 web.dev에 기여하는 사람들이 효과적이고 매력적인 콘텐츠를 제작하고 이를 가능한 한 쉽게 게시할 수 있도록 도와줍니다. 효과적인 것으로 확인된 부분을 더욱 보완해 나가는 살아 있는 문서입니다.
+  pt: Este manual ajuda os colaboradores do web.dev a criar conteúdo eficaz e envolvente e a publicá-lo com a maior facilidade possível. Este é um documento vivo que evoluirá à medida que aprendemos mais sobre o que funciona.
+  ru: Это руководство о том, как создавать качественный и интересный контент для сайта web.dev и с легкостью публиковать его. Документ будет дорабатываться по мере необходимости.
+  zh: 这本手册能够帮助 web.dev 的贡献者创建有效且具有吸引力的的内容，并尽可能轻松地发布这些内容。该手册是一个动态文档，将随着我们对有效方法的进一步了解而不断发展。
 
 topics:
   content_process:
     en: Content process
+    es: Procesamiento de contenido
+    ja: コンテンツのプロセス
+    ko: 콘텐츠 프로세스
+    pt: Processo de conteúdo
+    ru: Процесс публикации контента
+    zh: 内容流程
 
   content_guidelines:
     en: Content guidelines
+    es: Directrices de contenido
+    ja: コンテンツのガイドライン
+    ko: 콘텐츠 가이드라인
+    pt: Diretrizes de conteúdo
+    ru: Рекомендации по созданию контента
+    zh: 内容准则
 
   web_dev_markup:
     en: web.dev markup
+    es: marcado de web.dev
+    ja: web.dev のマークアップ
+    ko: web.dev 마크업
+    pt: Marcação web.dev
+    ru: Разметка web.dev
+    zh: web.dev 标记
 
   content_infrastructure:
     en: Content infrastructure
+    es: Infraestructura del contenido
+    ja: コンテンツのインフラストラクチャ
+    ko: 콘텐츠 인프라
+    pt: Infraestrutura de conteúdo
+    ru: Инфраструктура размещения контента
+    zh: 内容基础架构

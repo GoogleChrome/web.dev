@@ -1,0 +1,29 @@
+setLeader: Test your knowledge of internationalization and localization
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: How do you invoke the correct pronunciation for screen readers?
+    options:
+      - content: "With the `lang` attribute."
+        rationale: "🎉"
+      - content: "With the `hreflang` attribute."
+        rationale: "Try again!"
+      - content: "Adding a description with what language is used."
+        rationale: "Try again!"
+      - content: "With the `language` attribute."
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: How can you change the writing system on your website?
+    options:
+      - content: "With the `direction` attribute."
+        rationale: "Try again!"
+      - content: "With the `dir` attribute."
+        rationale: "🎉"
+      - content: "Using CSS logical properties."
+        rationale: "Try again!"
+      - content: "Using the `<link>` element."
+        rationale: "Try again!"

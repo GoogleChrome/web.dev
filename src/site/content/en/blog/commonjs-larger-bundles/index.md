@@ -87,7 +87,7 @@ $ cd dist && ls -lah
 
 Notice that **the bundle is 625KB**. If we look into the output, we'll find all the functions from `utils.js` plus a lot of modules from [`lodash`](https://lodash.com/)**. Although we do not use `lodash` in `index.js` it's part of the output**, which adds a lot of extra weight to our production assets.
 
-Now let us change the module format to [ECMAScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) and try again. This time, `utils.js` would look like this:
+Now let us change the module format to [ECMAScript modules](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import) and try again. This time, `utils.js` would look like this:
 
 ```javascript
 export const add = (a, b) => a + b;

@@ -290,7 +290,7 @@ Their signatures aren't modified in any way (i.e., they won't now return a `Prom
 
 {% endAside %}
 
-The `AppHistory.navigate()` method returns an `AppHistoryResult` that contains two `Promise` instances under `.committed` and `.finished`.
+The `AppHistory.navigate()` method returns a object which contains two `Promise` instances in `{ committed, finished }`.
 This allows the invoker can wait until either the transition is "committed" (the visible URL has changed and a new `AppHistoryEntry` is available) or "finished" (all promises passed to `transitionWhile()` are complete&mdash;or rejected, due to failure or being preempted by another navigation).
 
 The `navigate` method also has an optional options object which controls how the navigation will occur.
@@ -318,7 +318,7 @@ In fact, it will always be `undefined` in those cases.
   </figcaption>
 </figure>
 
-The `AppHistory` interface also has a number of other navigation methods, all which return an `AppHistoryResult`.
+The `AppHistory` interface also has a number of other navigation methods, all which return an object containing `{ committed, finished }`.
 I've already mentioned `goTo()` (which accepts a `key` that denotes a specific entry in the user's history) and `navigate()`.
 It also includes `back()`, `forward()` and `reload()`.
 These methods are all handled—just like `navigate()`—by the centralized "navigate" event handler.
@@ -406,7 +406,7 @@ Hero image from [Unsplash][hero-image], by [Jeremy Zero][hero-image-by].
 
 [clunky-history-api]: https://html5doctor.com/interview-with-ian-hickson-html-editor/#:~:text=My%20biggest%20mistake%E2%80%A6there%20are%20so%20many%20to%20choose%20from!%20pushState()%20is%20my%20favourite%20mistake
 [scroll-restoration]: https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration
-[image map]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map
+[image map]: https://developer.mozilla.org/docs/Web/HTML/Element/map
 [back-forward-discuss]: https://github.com/WICG/app-history/issues/32
 [loading-crbug]: https://bugs.chromium.org/p/chromium/issues/detail?id=1241202
 [abortable-fetch]: https://developers.google.com/web/updates/2017/09/abortable-fetch

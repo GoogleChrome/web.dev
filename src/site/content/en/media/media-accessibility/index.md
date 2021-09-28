@@ -176,10 +176,10 @@ on your web page, you might wonder about more complex use cases. Next up, you'll
 lean about [Media frameworks](/media-frameworks/) and how they can help you add
 videos to your web page while providing advanced features.
 
-[`<track>`]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track
+[`<track>`]: https://developer.mozilla.org/docs/Web/HTML/Element/track
 [view on Glitch]: https://track-demonstration.glitch.me
 [source]: https://glitch.com/edit/#!/track-demonstration
-[WebVTT file]: https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API
+[WebVTT file]: https://developer.mozilla.org/docs/Web/API/WebVTT_API
 [Live WebVTT Validator]: https://quuz.org/webvtt/
 [many services]: https://www.google.com/search?q=webvtt+services
 [WebVTT specification]: https://w3c.github.io/webvtt/

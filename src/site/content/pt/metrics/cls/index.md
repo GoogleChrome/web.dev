@@ -66,7 +66,7 @@ Para fornecer uma boa experiência ao usuário, os sites devem se esforçar para
 
 ## Mudanças de layout em detalhes
 
-As mudanças de layout são definidas pela [API de instabilidade de layout](https://github.com/WICG/layout-instability), que relata entradas `layout-shift` sempre que um elemento visível na viewport muda sua posição inicial (por exemplo, sua posição superior e esquerda no [modo de escrita](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) default) entre dois quadros. Esses elementos são considerados *elementos instáveis*.
+As mudanças de layout são definidas pela [API de instabilidade de layout](https://github.com/WICG/layout-instability), que relata entradas `layout-shift` sempre que um elemento visível na viewport muda sua posição inicial (por exemplo, sua posição superior e esquerda no [modo de escrita](https://developer.mozilla.org/docs/Web/CSS/writing-mode) default) entre dois quadros. Esses elementos são considerados *elementos instáveis*.
 
 Observe que as mudanças de layout ocorrem apenas quando os elementos existentes mudam sua posição inicial. Se um novo elemento for adicionado ao DOM ou um elemento existente mudar de tamanho, isto não conta como uma mudança de layout - desde que a mudança não faça com que outros elementos visíveis mudem sua posição inicial.
 
@@ -148,7 +148,7 @@ As mudanças de layout que ocorrem dentro de 500 milissegundos da entrada do usu
 
 Animações e transições, quando bem feitas, são uma ótima maneira de atualizar o conteúdo da página sem surpreender o usuário. O conteúdo que muda abrupta e inesperadamente na página quase sempre cria uma experiência ruim para o usuário. Mas o conteúdo que se move de forma gradual e natural de uma posição para a seguinte pode, muitas vezes, ajudar o usuário a entender melhor o que está acontecendo e guiá-lo entre as mudanças de estado.
 
-A propriedade [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) do CSS permite animar elementos sem acionar mudanças de layout:
+A propriedade [`transform`](https://developer.mozilla.org/docs/Web/CSS/transform) do CSS permite animar elementos sem acionar mudanças de layout:
 
 - Em vez de alterar as propriedades `height` e `width`, use `transform: scale()`.
 - Para mover os elementos, evite alterar as propriedades `top` , `right` , `bottom` ou `left` e, em vez disso, use `transform: translate()`.
@@ -174,7 +174,7 @@ A CLS pode ser medida [em laboratório](/user-centric-performance-metrics/#in-th
 
 ### Medição da CLS em JavaScript
 
-Para medir a CLS em JavaScript, você pode usar a [API Layout Instability](https://github.com/WICG/layout-instability). O exemplo a seguir mostra como criar um [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) que escuta as entradas `layout-shift`, as agrupa em sessões registra o valor máximo da sessão sempre que ela mudar.
+Para medir a CLS em JavaScript, você pode usar a [API Layout Instability](https://github.com/WICG/layout-instability). O exemplo a seguir mostra como criar um [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que escuta as entradas `layout-shift`, as agrupa em sessões registra o valor máximo da sessão sempre que ela mudar.
 
 ```js
 let clsValue = 0;

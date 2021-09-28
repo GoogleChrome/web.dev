@@ -43,7 +43,7 @@ Para medir la eficacia de las campañas publicitarias, los anunciantes y los edi
 
 ### ¿Por qué es necesario esto?
 
-Hoy en día, la evaluación las conversiones de los anuncios con frecuencia se basa en [cookies de terceros](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies). **Pero los navegadores están restringiendo el acceso a las mismas.**
+Hoy en día, la evaluación las conversiones de los anuncios con frecuencia se basa en [cookies de terceros](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Third-party_cookies). **Pero los navegadores están restringiendo el acceso a las mismas.**
 
 Chrome planea [eliminar la compatibilidad con las cookies de terceros](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html) y [ofrece a los usuarios formas de bloquearlas si así lo desean](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en). Safari [bloquea las cookies de terceros](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/), Firefox [bloquea las cookies de seguimiento conocidas de terceros](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default), y Edge [ofrece prevención de seguimiento](https://support.microsoft.com/en-us/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention).
 

@@ -100,7 +100,7 @@ If you want, you can instruct the form to use a `POST` request by changing the m
 ```
 
 Using `POST`, the data is included in the
-[body of the request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST#example).
+[body of the request](https://developer.mozilla.org/docs/Web/HTTP/Methods/POST#example).
 
 The data will not be visible in the URL and can only be accessed from a frontend or backend script.
 
@@ -123,4 +123,4 @@ it is time to learn about [form fields](/learn/forms/form-fields) to make the fo
 
 ## Resources
 
-[The `<form>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form).
+[The `<form>` element](https://developer.mozilla.org/docs/Web/HTML/Element/form).

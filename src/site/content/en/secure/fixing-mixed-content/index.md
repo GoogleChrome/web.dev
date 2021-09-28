@@ -138,8 +138,8 @@ Response header:
 `Content-Security-Policy-Report-Only: default-src https: 'unsafe-inline' 'unsafe-eval'; report-uri https://example.com/reportingEndpoint`
 
 {% Aside %}
-The [report-uri](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri) response header is being deprecated in favor of
-[report-to](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to).
+The [report-uri](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri) response header is being deprecated in favor of
+[report-to](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to).
 Browser support for `report-to` is currently limited to Chrome and Edge.
 You can provide both headers, in which case `report-uri` will be ignored if the browser supports `report-to`.
 {% endAside %}

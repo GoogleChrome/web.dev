@@ -202,7 +202,7 @@ and `autocomplete="tel"`. You can also help password managers by using different
 values in sign-up and sign-in forms, for the `form` element itself, as well as any `input`, `select`
 and `textarea` elements.
 
-You should also use the appropriate [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email)
+You should also use the appropriate [`type` attribute](https://developer.mozilla.org/docs/Web/HTML/Element/input/email)
 to provide the right keyboard on mobile and enable basic built-in validation by the browser.
 You can find out more from [Payment and address form best practices](/payment-and-address-form-best-practices#type).
 
@@ -373,7 +373,7 @@ Also make sure to use `autocomplete="username"` for usernames.
 
 {% Aside 'caution' %}
 As with personal names, ensure that usernames aren't restricted to characters from the [Latin
-alphabet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes#Types:~:text=Latin%20alphabet). [Payment and address form best practices](/payment-and-address-form-best-practices#unicode-matching)
+alphabet](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes#Types:~:text=Latin%20alphabet). [Payment and address form best practices](/payment-and-address-form-best-practices#unicode-matching)
 explains how and why to validate using Unicode letter matching.
 {% endAside %}
 
@@ -386,7 +386,7 @@ open source projects](https://www.browserstack.com/open-source) on a range of de
 ## Implement analytics and Real User Monitoring {: #analytics-rum}
 
 You need [field data as well as lab data](/how-to-measure-speed/#lab-data-vs-field-data)
-to understand how users experience your sign-up forms. Analytics and [Real User Monitoring](https://developer.mozilla.org/en-US/docs/Web/Performance/Rum-vs-Synthetic#Real_User_Monitoring)
+to understand how users experience your sign-up forms. Analytics and [Real User Monitoring](https://developer.mozilla.org/docs/Web/Performance/Rum-vs-Synthetic#Real_User_Monitoring)
 (RUM) provide data for the actual experience of your users, such as how long sign-up pages take to
 load, which UI components users interact with (or not) and how long it takes users to complete
 sign-up.

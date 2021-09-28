@@ -22,11 +22,11 @@ tags:
 ## Background
 
 In the context of the
-[Media Capture and Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API)
-the [`MediaStreamTrack`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack)
+[Media Capture and Streams API](https://developer.mozilla.org/docs/Web/API/Media_Streams_API)
+the [`MediaStreamTrack`](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack)
 interface represents a single media track within a stream; typically, these are audio or video
 tracks, but other track types may exist.
-[`MediaStream`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream) objects consist of
+[`MediaStream`](https://developer.mozilla.org/docs/Web/API/MediaStream) objects consist of
 zero or more `MediaStreamTrack` objects, representing various audio or video tracks. Each
 `MediaStreamTrack` may have one or more channels. The channel represents the smallest unit of a
 media stream, such as an audio signal associated with a given speaker, like left or right in a

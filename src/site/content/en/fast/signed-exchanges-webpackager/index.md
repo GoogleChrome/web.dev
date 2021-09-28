@@ -178,7 +178,7 @@ used with signed exchanges.
         like this: `CertURLBase = 'https://mysite.com/'`. However, for local
         testing, `CertURLBase = 'data:'` can be used to instruct `webpkgserver`
         to use a [data
-        URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)
+        URL](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)
         to inline the certificate in the `cert-url` field. For local testing,
         this is the most conveninent way to serve the SXG certificate.
     *   Change the line `Domain = 'example.org'` to reflect the domain that you

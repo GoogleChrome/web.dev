@@ -99,7 +99,7 @@ missing.
 
 The Service Worker may be killed while levels 11–20 download since it's finished handling events,
 meaning they won't be cached. In future the
-[Web Periodic Background Synchronization API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API)
+[Web Periodic Background Synchronization API](https://developer.mozilla.org/docs/Web/API/Web_Periodic_Background_Synchronization_API)
 will handle cases like this, and larger downloads such as movies. That API is currently only
 supported on Chromium forks.
 
@@ -343,10 +343,10 @@ self.addEventListener('sync', function (event) {
 
 Your origin is given a certain amount of free space to do what it wants with. That free space is
 shared between all origin storage:
-[(local) Storage](https://developer.mozilla.org/en-US/docs/Web/API/Storage),
-[IndexedDB](https://developer.mozilla.org/en-US/docs/Glossary/IndexedDB),
+[(local) Storage](https://developer.mozilla.org/docs/Web/API/Storage),
+[IndexedDB](https://developer.mozilla.org/docs/Glossary/IndexedDB),
 [File System Access](/file-system-access/), and of course
-[Caches](https://developer.mozilla.org/en-US/docs/Web/API/Cache).
+[Caches](https://developer.mozilla.org/docs/Web/API/Cache).
 
 The amount you get isn't spec'd. It will differ depending on device and storage conditions. You can
 find out how much you've got via:
@@ -365,7 +365,7 @@ under storage pressure. Unfortunately the browser can't tell the difference betw
 want to keep at all costs, and the game you don't really care about.
 
 To work around this, use the
-[StorageManager](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager) interface:
+[StorageManager](https://developer.mozilla.org/docs/Web/API/StorageManager) interface:
 
 ```js
 // From a page:
@@ -769,4 +769,4 @@ before I hit "publish".
 [ttt]: https://jakearchibald.github.io/trained-to-thrill/
 [is_sw_ready]: https://jakearchibald.github.io/isserviceworkerready/
 [sw_primer]: /service-workers-cache-storage/
-[caches_api]: https://developer.mozilla.org/en-US/docs/Web/API/Cache
+[caches_api]: https://developer.mozilla.org/docs/Web/API/Cache

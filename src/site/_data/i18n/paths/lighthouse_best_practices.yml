@@ -1,27 +1,81 @@
 title:
   en: Best Practices audits
+  es: Auditorías de las prácticas recomendadas
+  ja: 監査のベストプラクティス
+  ko: 모범 사례 감사
+  pt: Auditorias de práticas recomendadas
+  ru: Аудиты соблюдения рекомендаций
+  zh: 最佳做法审核
 
 description:
   en: Improve code health of your web page following these best practices
+  es: Mejore el estado del código de su página web siguiendo estas prácticas recomendadas
+  ja: 以下のベストプラクティスに従って Web ページのコードの健全性を改善します。
+  ko: 다음 모범 사례에 따라 웹 페이지의 코드 상태를 개선하세요.
+  pt: Melhore a qualidade do código da sua página web seguindo essas práticas recomendadas
+  ru: Повысьте качество кода своей веб-страницы, следуя этим рекомендациям
+  zh: 遵循这些最佳做法，改善您网页的代码健康状况
 
 overview:
   en: These checks highlight opportunities to improve the overall code health of your web app.
+  es: Estas revisiones destacan las oportunidades de mejorar el estado general del código de su aplicación web.
+  ja: これらを確認することにより、Web アプリのコードの健全性を全体的に向上させるために必要となる改善項目を浮き彫りにします。
+  ko: 이러한 검사는 웹 앱의 전반적인 코드 상태를 개선할 수 있는 기회를 드러내 줍니다.
+  pt: Essas verificações destacam oportunidades para melhorar a qualidade geral do código da sua aplicação web.
+  ru: Эти тесты позволяют выявить возможности для повышения общего качества кода вашего веб-приложения.
+  zh: 这些检查突出了可以改善您的 Web 应用整体代码健康状况的机会。
 
 topics:
   general_best_practices:
     en: General best practices
+    es: Mejores prácticas generales
+    ja: 一般的なベストプラクティス
+    ko: 일반적인 모범 사례
+    pt: Práticas recomendadas gerais
+    ru: Общие рекомендации
+    zh: 常见的最佳做法
 
   make_your_page_fast:
     en: Make your page fast
+    es: Haga que su página sea rápida
+    ja: ページを高速化する
+    ko: 페이지를 빠르게 만들기
+    pt: Deixe a sua página rápida
+    ru: Ускорение работы страницы
+    zh: 使您的网页变快
 
   make_your_page_secure:
     en: Make your page secure
+    es: Haga que su página sea segura
+    ja: ページのセキュリティを向上させる
+    ko: 페이지를 안전하게 만들기
+    pt: Deixe sua página segura
+    ru: Повышение безопасности страницы
+    zh: 使您的网页安全
 
   create_a_good_user_experience:
     en: Create a good user experience
+    es: Crear una buena experiencia de usuario
+    ja: 優れたユーザーエクスペリエンスを作り上げる
+    ko: 훌륭한 사용자 경험 만들기
+    pt: Crie uma boa experiência de usuário
+    ru: Повышение удобства пользователей
+    zh: 创造良好的用户体验
 
   avoid_deprecated_technologies:
     en: Avoid deprecated technologies
+    es: Evitar tecnologías obsoletas
+    ja: 非推奨の技術の使用を避ける
+    ko: 더 이상 사용되지 않는 기술 피하기
+    pt: Evite tecnologias obsoletas
+    ru: Отказ от устаревших технологий
+    zh: 避免已弃用的技术
 
   diagnostic_audits:
     en: Diagnostic audits
+    es: Auditorias de diagnóstico
+    ja: 診断的監査
+    ko: 진단 감사
+    pt: Auditorias de diagnóstico
+    ru: Диагностические аудиты
+    zh: 诊断性审核
