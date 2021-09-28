@@ -1,0 +1,51 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/prose
+.prose {
+  @extend .flow;
+  @extend .wrapper;
+
+  --flow-space: #{get-space('size-1')};
+
+  /// Add more space to elements that follow figures etc
+  pre + *,
+  figure + *,
+  h2,
+  h3 {
+    --flow-space: #{get-space('size-2')};
+  }
+
+  /// Main headings should have less space for their
+  /// immediate sibling
+  h2 + *,
+  h3 + * {
+    --flow-space: 1rem;
+  }
+
+  /// Keeps figures at a reasonable size and makes sure
+  /// their content fills them
+  figure {
+    max-width: 50rem;
+
+    > * {
+      width: 100%;
+    }
+  }
+
+  figcaption {
+    max-width: 60ch;
+  }
+
+  /// An anchor that starts with a hash is a
+  /// skip link, so it needs to be visually hidden
+  /// until focused or hovered
+  a[href^='#'] {
+    font-size: 0.7em;
+    text-decoration: none;
+    color: transparent;
+  }
+
+  :hover a[href^='#'],
+  a[href^='#']:focus {
+    @include apply-utility('color', 'mid-text');
+  }
+}

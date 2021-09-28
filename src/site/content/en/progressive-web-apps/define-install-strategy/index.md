@@ -59,7 +59,7 @@ Once a PWA meets the [installability criteria](/install-criteria/), most browser
   </figcaption>
 </figure>
 
-While that may be enough for some experiences, if your goal is to drive installations of your PWA, we highly recommend you listen for the [`BeforeInstallPromptEvent`](https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent), and follow the [patterns for promoting the installation](/promote-install/) of your PWA.
+While that may be enough for some experiences, if your goal is to drive installations of your PWA, we highly recommend you listen for the [`BeforeInstallPromptEvent`](https://developer.mozilla.org/docs/Web/API/BeforeInstallPromptEvent), and follow the [patterns for promoting the installation](/promote-install/) of your PWA.
 
 
 ## Prevent your PWA from cannibalizing your platform-specific app install rate
@@ -115,7 +115,7 @@ On the web, it's possible to obtain device signals and approximately map them to
 
 #### Using JavaScript APIs
 
-Using JavaScript APIs like [navigator.hardwareConcurrency](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency), [navigator.deviceMemory](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory), and [navigator.connection](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection) you can get information about the device CPU, memory and network status respectively. For example:
+Using JavaScript APIs like [navigator.hardwareConcurrency](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency), [navigator.deviceMemory](https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory), and [navigator.connection](https://developer.mozilla.org/docs/Web/API/Navigator/connection) you can get information about the device CPU, memory and network status respectively. For example:
 
 ```javascript
 const deviceCategory = req.get('Device-Memory') < 1 ? 'lite' : 'full';`
@@ -123,7 +123,7 @@ const deviceCategory = req.get('Device-Memory') < 1 ? 'lite' : 'full';`
 
 #### Using client hints
 
-Device signals can be also inferred in HTTP request headers, through [client hints](https://developer.mozilla.org/en-US/docs/Glossary/Client_hints). Here's how you can implement the previous code for device memory with client hints:
+Device signals can be also inferred in HTTP request headers, through [client hints](https://developer.mozilla.org/docs/Glossary/Client_hints). Here's how you can implement the previous code for device memory with client hints:
 
 First, tell the browser you are interested in receiving device memory hints in the header of the HTTP response for any first-party request:
 

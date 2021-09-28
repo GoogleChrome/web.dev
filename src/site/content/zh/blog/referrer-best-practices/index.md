@@ -29,7 +29,7 @@ feedback:
 
 ## 引荐来源和引荐来源政策 101
 
-HTTP 请求可能包含可选的[`Referer`标头](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer)，该标头指示发出请求的域或网页 URL。[`Referrer-Policy`标头](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)定义了在`Referer`标头中可用的数据。
+HTTP 请求可能包含可选的[`Referer`标头](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referer)，该标头指示发出请求的域或网页 URL。[`Referrer-Policy`标头](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy)定义了在`Referer`标头中可用的数据。
 
 在下方的示例中，`Referer`标头包含发出请求的`site-one`上页面的完整 URL。
 
@@ -70,7 +70,7 @@ URL #6 是一个[功能性 URL](https://www.w3.org/TR/capability-urls/)。不要
 
 <figure class="w-figure">{% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="不同安全性和跨域上下文情况下的不同引荐来源政策及其行为。", width="800", height="537" %}</figure>
 
-MDN 提供了[完整的政策和行为示例列表](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Directives)。
+MDN 提供了[完整的政策和行为示例列表](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Directives)。
 
 注意事项：
 
@@ -132,7 +132,7 @@ MDN 提供了[完整的政策和行为示例列表](https://developer.mozilla.or
 有多种方法可以为您的网站设置引荐来源政策：
 
 - 作为 HTTP 标头
-- 在您的 [HTML](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML) 中
+- 在您的 [HTML](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML) 中
 - [基于每个请求](https://javascript.info/fetch-api#referrer-referrerpolicy)，来源于 JavaScript
 
 您可以为不同的页面、请求或元素设置不同的政策。
@@ -265,7 +265,7 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 **如果您只需要域（`https://site-one.example`）：**
 
 - 如果您在对页面有顶级访问权限的脚本中使用引荐来源，那么`window.location.origin`是一种替代方案。
-- 在可用的情况下，如[`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin)和[`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site)这样的标头可以为您提供`Origin`或描述请求是否为跨域，这可能正是您所需要的。
+- 在可用的情况下，如[`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin)和[`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site)这样的标头可以为您提供`Origin`或描述请求是否为跨域，这可能正是您所需要的。
 
 **如果您需要 URL 的其他元素（路径、查询参数……）：**
 
@@ -281,13 +281,13 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 
 请注意，请求发射器始终可以通过设置一个`no-referrer`政策来决定不发送引荐来源（恶意行为者甚至可以伪造引荐来源）。
 
-将 [CSRF 令牌](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation)作为您的主要保护措施。要想获得额外保护，请使用[SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)，同时使用诸如[`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin)（可用于 POST 和 CORS 请求）和[`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site)（如果可用）这样的标头，而不是`Referer`。
+将 [CSRF 令牌](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation)作为您的主要保护措施。要想获得额外保护，请使用[SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)，同时使用诸如[`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin)（可用于 POST 和 CORS 请求）和[`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site)（如果可用）这样的标头，而不是`Referer`。
 
 ### 日志记录
 
 请确保可能在`Refer`中的用户的个人数据或敏感数据得到保护。
 
-如果您只使用域，请检查[`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin)标头是否可以作为替代方案。在调试方面，这可能会以更简单的方式为您提供所需信息，而无需解析引荐来源。
+如果您只使用域，请检查[`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin)标头是否可以作为替代方案。在调试方面，这可能会以更简单的方式为您提供所需信息，而无需解析引荐来源。
 
 ### 付款
 
@@ -334,8 +334,8 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 
 - [理解"同站"和"同域"](/same-site-same-origin/)
 - [新的安全标头：引荐来源政策 (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
-- [MDN 上的引荐来源政策](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
-- [引荐来源标头：MDN 上的隐私和安全问题](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
+- [MDN 上的引荐来源政策](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy)
+- [引荐来源标头：MDN 上的隐私和安全问题](https://developer.mozilla.org/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
 - [Chrome 更改：Blink 引擎有意向实现](https://groups.google.com/a/chromium.org/d/msg/blink-dev/aBtuQUga1Tk/n4BLwof4DgAJ)
 - [Chrome 更改：Blink 引擎有意向运送](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/lqFuqwZDDR8)
 - [Chrome 更改：状态条目](https://www.chromestatus.com/feature/6251880185331712)

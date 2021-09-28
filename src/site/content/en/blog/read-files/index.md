@@ -272,21 +272,21 @@ function readFile(file) {
 
 Hero image by Vincent Botta from [Unsplash](https://unsplash.com/photos/bv_rJXpNU9I)
 
-[mdn-file-input]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
-[mdn-file-input-attributes]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#Additional_attributes
-[mdn-filelist]: https://developer.mozilla.org/en-US/docs/Web/API/FileList
-[mdn-file]: https://developer.mozilla.org/en-US/docs/Web/API/File
-[mdn-dragover]: https://developer.mozilla.org/en-US/docs/Web/API/Document/dragover_event
-[mdn-drop]: https://developer.mozilla.org/en-US/docs/Web/API/Document/drop_event
+[mdn-file-input]: https://developer.mozilla.org/docs/Web/HTML/Element/input/file
+[mdn-file-input-attributes]: https://developer.mozilla.org/docs/Web/HTML/Element/input/file#Additional_attributes
+[mdn-filelist]: https://developer.mozilla.org/docs/Web/API/FileList
+[mdn-file]: https://developer.mozilla.org/docs/Web/API/File
+[mdn-dragover]: https://developer.mozilla.org/docs/Web/API/Document/dragover_event
+[mdn-drop]: https://developer.mozilla.org/docs/Web/API/Document/drop_event
 [file-system-access]: /file-system-access/
-[mdn-filereader]: https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+[mdn-filereader]: https://developer.mozilla.org/docs/Web/API/FileReader
 [mdn-filereader-as-buffer]: https://developer.mozilla.org/docs/Web/API/FileReader/readAsArrayBuffer
 [mdn-filereader-as-dataurl]: https://developer.mozilla.org/docs/Web/API/FileReader/readAsDataURL
 [mdn-filereader-as-text]: https://developer.mozilla.org/docs/Web/API/FileReader/readAsText
-[mdn-filereader-progress]: https://developer.mozilla.org/en-US/docs/Web/API/FileReader/progress_event
-[mdn-stoppropagation]: https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation
-[mdn-preventdefault]: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
-[mdn-webkitdirectory]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/webkitdirectory
+[mdn-filereader-progress]: https://developer.mozilla.org/docs/Web/API/FileReader/progress_event
+[mdn-stoppropagation]: https://developer.mozilla.org/docs/Web/API/Event/stopPropagation
+[mdn-preventdefault]: https://developer.mozilla.org/docs/Web/API/Event/preventDefault
+[mdn-webkitdirectory]: https://developer.mozilla.org/docs/Web/API/HTMLInputElement/webkitdirectory
 [glitch-read-image]: https://read-image-file.glitch.me/
 [glitch-input-demo]: https://input-type-file.glitch.me/
 [glitch-drag-and-drop]: https://custom-drag-and-drop.glitch.me/

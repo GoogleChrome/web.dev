@@ -288,7 +288,7 @@ measure precisely how much extra money your PWA generated.
 [pwa-case-studies]: https://www.pwastats.com/
 [precache-app]: /service-workers-cache-storage/
 [wb-precache]: /precache-with-workbox/
-[mdn-webpush]: https://developer.mozilla.org/en-US/docs/Web/API/Push_API/Best_Practices
+[mdn-webpush]: https://developer.mozilla.org/docs/Web/API/Push_API/Best_Practices
 [ten-things-we-know]: https://www.google.com/about/philosophy.html
 [horror-movie]: https://blog.hubspot.com/marketing/mobile-website-load-faster
 [deloitte-study]: https://www2.deloitte.com/ie/en/pages/consulting/articles/milliseconds-make-millions.html
@@ -312,4 +312,4 @@ measure precisely how much extra money your PWA generated.
 [dgc-web-push]: https://developers.google.com/web/fundamentals/push-notifications/
 [carrefour-45x]: https://useinsider.com/case-studies/carrefour/
 [cache-resources]: /service-workers-cache-storage/
-[mdn-web-push]: https://developer.mozilla.org/en-US/docs/Web/API/Push_API/Best_Practices
+[mdn-web-push]: https://developer.mozilla.org/docs/Web/API/Push_API/Best_Practices

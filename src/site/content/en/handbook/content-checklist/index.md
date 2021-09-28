@@ -48,7 +48,7 @@ as much as possible. For example, a single page of content should not try to be 
 tutorial and an explainer.
 
 Reference documentation pages are not allowed on web.dev. Reference
-documentation is better suited for a site like [MDN](https://developer.mozilla.org/en-US/).
+documentation is better suited for a site like [MDN](https://developer.mozilla.org/).
 
 ### The content is unique {: #unique }
 

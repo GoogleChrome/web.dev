@@ -1,15 +1,57 @@
 title:
   en: Easily discoverable
+  es: Fácilmente visualizable
+  ja: 検索で簡単に見つかるようにする
+  ko: 쉽게 발견 가능
+  pt: Facilmente encontrável
+  ru: Обеспечение видимости сайта
+  zh: 能够被轻松发现
 
 description:
   en: Ensure users can find your site easily through search.
+  es: Asegúrese de que los usuarios puedan encontrar su sitio fácilmente a través de las búsquedas.
+  ja: ユーザーが検索を介してあなたのサイトを簡単に見つけられるようにしましょう。
+  ko: 사용자가 검색을 통해 내 사이트를 쉽게 찾을 수 있도록 하세요.
+  pt: Garanta que os usuários consigam encontrar seu site facilmente por meio de uma busca.
+  ru: Позаботьтесь о том, чтобы пользователи легко находили ваш сайт в поиске.
+  zh: 确保用户可以通过搜索轻松找到您的网站。
 
 overview:
   en: |
     Making your content discoverable matters because it's how you get more relevant users viewing your content. If a search engine has trouble seeing your page, you're possibly missing out on a source of traffic.
 
     By making sure search engines can find and automatically understand your content, you are improving the visibility of your site for relevant searches. This is called SEO, or search engine optimization, which can result in more interested users coming to your site. Audit your site and check the SEO results to see how well search engines can surface your content.
+  es: |
+    Es importante hacer que su contenido sea detectable porque así consigue que más usuarios destacados vean su contenido. Si un motor de búsqueda tiene problemas para ver su página, podría estar perdiendo una fuente de tráfico.
+
+    Al asegurarse de que los motores de búsqueda pueden encontrar y comprender automáticamente su contenido, está mejorando la visibilidad de su sitio cuando se realizan búsquedas. Esto se llama SEO, Posicionamiento en buscadores u Optimización de motores de búsqueda, que puede dar lugar a que más usuarios interesados lleguen a su sitio. Audite su sitio web y verifique los resultados de SEO para ver cómo los motores de búsqueda pueden mostrar su contenido.
+  ja: |
+    コンテンツを検索結果に表示されやすくすることは、より多くの関連ユーザーにコンテンツを閲覧してもらうために重要です。検索エンジンがあなたのページを見つけ出すことができなければ、トラフィックの源泉を逃すことになってしまう可能性があります。
+
+    検索エンジンがあなたのコンテンツを見つけ出し、自動的に内容を理解できるようにすることにより、ユーザーの検索結果でのあなたのサイトの可視性を高めることができます。これは SEO (検索エンジン最適化) と呼ばれ、これを実施することにより興味を持ったユーザーがより多くあなたのサイトを訪問してくれるようになります。あなたのサイトを監査し、SEO の結果を確認して、検索エンジンがあなたのコンテンツをどの程度カバーできているのかを確認しましょう。
+  ko: |
+    콘텐츠를 검색 가능하게 만드는 것은 관련성이 더욱 높은 사용자가 콘텐츠를 보게 된다는 점에서 중요성이 큽니다. 검색 엔진에 페이지가 잘 드러나지 않으면 트래픽 소스를 놓치고 있을 수 있습니다.
+
+    검색 엔진이 해당 콘텐츠를 찾고 자동으로 이해할 수 있도록 하면 관련 검색에서 사이트의 가시성이 향상됩니다. 이를 SEO 또는 검색 엔진 최적화라고 하며 관심을 가진 더 많은 사용자가 사이트를 방문하도록 유도할 수 있습니다. 사이트를 감사하고 SEO 결과를 확인하여 검색 엔진이 해당 콘텐츠를 얼마나 잘 보여줄 수 있는지 확인하세요.
+  pt: |
+    Deixar seu conteúdo encontrável é importante porque é assim que você consegue que usuários mais relevantes visualizem seu conteúdo. Se um mecanismo de busca tiver problemas para acessar sua página, você pode estar perdendo uma fonte de tráfego.
+
+    Ao garantir que os mecanismos de busca consigam encontrar e entender automaticamente seu conteúdo, você estará melhorando a visibilidade do seu site para pesquisas relevantes. Isto se chama SEO, ou otimização do mecanismo de pesquisa (search engine optimization), o que pode resultar em mais usuários interessados chegando ao seu site. Faça uma auditoria no seu site e verifique os resultados de SEO para conhecer a capacidade dos mecanismos de busca em mostrar seu conteúdo.
+  ru: |
+    Старайтесь облегчить обнаружение вашего контента, чтобы его чаще просматривали заинтересованные пользователи. Если поисковые системы не могут проиндексировать вашу страницу, возможно, вы упускаете важный источник трафика.
+
+    Позволив поисковым системам находить и автоматически обрабатывать ваш контент, вы повышаете видимость вашего сайта по релевантным запросам. Это называется «SEO» или «поисковая оптимизация», и с ее помощью можно привлечь на сайт больше заинтересованных пользователей. Проведите аудит своего сайта и ознакомьтесь с результатами SEO, чтобы узнать, насколько хорошо поисковые системы обнаруживают размещенный вами контент.
+  zh: |
+    使您的内容能够被发现十分重要，因为只有这样，才能让更多相关用户查看您的内容。如果搜索引擎无法看到您的网页，那么您就有可能错失一大流量来源。
+
+    通过确保搜索引擎可以找到并自动理解您的内容，您可以提高网站在相关搜索中的可见度。这称为 SEO 或搜索引擎优化，该优化可以促使更多感兴趣的用户访问您的网站。对您的网站进行审核并检查 SEO 结果，了解搜索引擎对您的内容的呈现情况。
 
 topics:
   how_search_works_and_how_to_measure_discoverability:
     en: How search works and how to measure discoverability
+    es: Cómo funciona la búsqueda y cómo medir la capacidad de visualización
+    ja: 検索の仕組みと見つけやすさの測定方法
+    ko: 검색 작동 방식 및 검색 가능성을 측정하는 방법
+    pt: Como funciona a busca e como medir a capacidade de descoberta
+    ru: Как работает поиск и как измерить легкость обнаружения страницы
+    zh: 搜索的运作方式以及衡量曝光度的方式

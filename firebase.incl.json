@@ -1,4 +1,7 @@
 {
+  "functions": {
+    "predeploy": "npm --prefix \"$RESOURCE_DIR\" ci"
+  },
   "hosting": {
     "public": "dist",
     "headers": [

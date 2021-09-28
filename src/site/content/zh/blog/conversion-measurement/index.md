@@ -43,7 +43,7 @@ tags:
 
 ### 为什么需要这个 API？
 
-如今，广告转化测量通常依赖于[第三方 cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies)。**但是浏览器正在限制获取这些 cookie。**
+如今，广告转化测量通常依赖于[第三方 cookie](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Third-party_cookies)。**但是浏览器正在限制获取这些 cookie。**
 
 Chrome 计划[逐步停止对第三方 cookie 的支持，](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)并[为用户提供阻止这些 cookie 的方法和选项](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en)。Safari [阻止第三方 cookie](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/)，Firefox [阻止已知的第三方跟踪 cookie](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default)，而 Edge [提供反跟踪功能](https://support.microsoft.com/en-us/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention)。
 

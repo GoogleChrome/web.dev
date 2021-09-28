@@ -440,8 +440,8 @@ computer photo by [Athul Cyriac Ajay] on Unsplash.
 [format]: https://gist.github.com/beaufortfrancois/583424dfef66be1ade86231fd1a260c7
 [the USB ID Repository]: http://www.linux-usb.org/usb-ids.html
 [HID usage tables document]: https://usb.org/document-library/hid-usage-tables-12
-[`DataView`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView
-[`BufferSource`]: https://developer.mozilla.org/en-US/docs/Web/API/BufferSource
+[`DataView`]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView
+[`BufferSource`]: https://developer.mozilla.org/docs/Web/API/BufferSource
 [web.dev/hid-examples]: /hid-examples/
 [Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [Security and Privacy Considerations]: https://wicg.github.io/webhid/#security-and-privacy

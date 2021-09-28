@@ -104,7 +104,7 @@ const {updateSvgForInclude} = require('webdev-infra/filters/svg');
 const {toc: courseToc} = require('webdev-infra/filters/toc');
 
 // Creates a global variable for the current __dirname to make including and
-// working with files in the pattern library a little easier
+// working with files in the component library a little easier
 global.__basedir = __dirname;
 
 module.exports = function (config) {
@@ -151,6 +151,20 @@ module.exports = function (config) {
   // to quickly find collection items without looping.
   config.addCollection('memoized', (collection) => {
     return memoize(collection.getAll());
+  });
+
+  // Filters through all collection items and finds content that has
+  // CSS_ORIGIN set to 'next'. This allows shortcodes to determine if we
+  // are in a design system context or a legacy context
+  config.addCollection('designSystemGlobals', (collection) => {
+    global.__designSystemPaths = new Set(
+      collection
+        .getAll()
+        .filter(({data}) => data.CSS_ORIGIN === 'next')
+        .map(({filePathStem}) => filePathStem),
+    );
+
+    return global.__designSystemPaths;
   });
 
   // ----------------------------------------------------------------------------

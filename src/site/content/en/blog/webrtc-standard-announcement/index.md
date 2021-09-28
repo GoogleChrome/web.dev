@@ -47,13 +47,13 @@ adopt their services to different browser implementations and specification chan
 
 ## Architecture and functionality {: #architecture }
 
-The [`RTCPeerConnection` API](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection) is
+The [`RTCPeerConnection` API](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection) is
 the central part of the WebRTC specification. `RTCPeerConnection` deals with connecting two
 applications on different endpoints to communicate using a peer-to-peer protocol. The `PeerConnection`
 API interacts closely with
-[`getUserMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) for
+[`getUserMedia`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia) for
 accessing camera and microphone, and
-[`getDisplayMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia) for
+[`getDisplayMedia`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia) for
 capturing screen content. WebRTC allows you to send and receive streams that include audio and/or
 video content, as well as arbitrary binary data through the `DataChannel`. The media functionality for
 processing, encoding, and decoding audio and video provides the core of any WebRTC implementation.

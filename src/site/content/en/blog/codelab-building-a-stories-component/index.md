@@ -120,7 +120,7 @@ want to interact with. We'll be working mobile-first today.
 For our `<div class="stories">` container we want a horizontal scrolling container.
 We can achieve this by:
 
-* Making the container a [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
+* Making the container a [Grid](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout)
 * Setting each child to fill the row track
 * Making the width of each child the width of a mobile device viewport
 

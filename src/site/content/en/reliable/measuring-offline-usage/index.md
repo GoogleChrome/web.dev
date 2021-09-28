@@ -28,8 +28,8 @@ offline usage analytics.
 ## The pitfalls of the online and offline browser events
 
 The obvious solution for tracking offline usage is to create event listeners for the
-[`online`](https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event) and
-[`offline`](https://developer.mozilla.org/en-US/docs/Web/API/Window/offline_event) events (which
+[`online`](https://developer.mozilla.org/docs/Web/API/Window/online_event) and
+[`offline`](https://developer.mozilla.org/docs/Web/API/Window/offline_event) events (which
 [many browsers support](https://caniuse.com/#feat=online-status)) and to put your analytics tracking
 logic in those listeners. Unfortunately, there are several problems and limitations with this
 approach:
@@ -46,7 +46,7 @@ approach:
     no way to track that. The ability to track offline drop-offs is critical data for building a
     case about why your site needs a better offline mode.
 +   The `online` event is not very reliable as it
-    [only knows about network access](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine),
+    [only knows about network access](https://developer.mozilla.org/docs/Web/API/NavigatorOnLine/onLine),
     not internet access. Therefore a user might still be offline, and sending the tracking ping can
     still fail.
 +   Even if the user still stays on the current page while being offline, none of the other
@@ -128,7 +128,7 @@ can be configured to inform the page about failed requests by sending a message 
 import { setCatchHandler } from 'workbox-routing';
 
 setCatchHandler(({ event }) => {
-  // https://developer.mozilla.org/en-US/docs/Web/API/Client/postMessage
+  // https://developer.mozilla.org/docs/Web/API/Client/postMessage
   event.waitUntil(async function () {
     // Exit early if we don't have access to the client.
     // Eg, if it's cross-origin.

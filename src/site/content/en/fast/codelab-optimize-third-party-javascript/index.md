@@ -78,9 +78,9 @@ However, the D3 script is included in the page's `<head>`, which blocks the pars
 
 Two magic attributes can unblock the parser when added to the script tag:
 
-* [`async`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async) ensures that scripts download in the background and execute **at the first opportunity** after they finish downloading.
+* [`async`](https://developer.mozilla.org/docs/Web/HTML/Element/script#attr-async) ensures that scripts download in the background and execute **at the first opportunity** after they finish downloading.
 
-* [`defer`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer) ensures that scripts download in the background and execute **after parsing** is completely finished.
+* [`defer`](https://developer.mozilla.org/docs/Web/HTML/Element/script#attr-defer) ensures that scripts download in the background and execute **after parsing** is completely finished.
 
 Since this chart is not really critical to the overall page and will most likely be below the fold, use `defer` to make sure there's no parser blocking.
 
@@ -109,7 +109,7 @@ Scripts with the `defer` attribute execute in the order in which they were speci
 
 All resources that are below the fold are good candidates for [lazy-loading](/efficiently-load-third-party-javascript/#lazy-load-third-party-resources).
 
-The sample app has a YouTube video embedded in an [iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe). To check out how many requests the page makes and which come from the embedded YouTube iframe:
+The sample app has a YouTube video embedded in an [iframe](https://developer.mozilla.org/docs/Web/HTML/Element/iframe). To check out how many requests the page makes and which come from the embedded YouTube iframe:
 
 {% Instruction 'preview', 'ol' %}
 {% Instruction 'devtools-network', 'ol' %}
@@ -133,7 +133,7 @@ The new sorting reveals that there are additional requests to Google domains. In
 
 By waiting to lazy-load the video until a user scrolls down to that section of the page, you cut the number of requests the page initially makes. This approach saves users' data and speeds up the initial load.
 
-One way to implement lazy-loading is by using the [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), a browser API that notifies you when an element enters or exits the browser's viewport.
+One way to implement lazy-loading is by using the [Intersection Observer](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API), a browser API that notifies you when an element enters or exits the browser's viewport.
 
 ### Step 1: Prevent video from loading initially
 
@@ -143,7 +143,7 @@ To lazy-load the video iframe, you must first prevent it from loading in the usu
 <iframe width="560" height="315" data-src="https://www.youtube.com/embed/lS9D6w1GzGY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-`data-src` is a [data attribute](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes), which allows you to store extra information on standard HTML elements. A data attribute can be named anything, as long as it starts with "data-".
+`data-src` is a [data attribute](https://developer.mozilla.org/docs/Learn/HTML/Howto/Use_data_attributes), which allows you to store extra information on standard HTML elements. A data attribute can be named anything, as long as it starts with "data-".
 
 An iframe without a `src` simply won't load.
 
@@ -178,7 +178,7 @@ const element = document.querySelector('iframe');
 observer.observe(element);
 ```
 
-`callback` receives a list of [`IntersectionObserverEntry`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry) objects and the [`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver) object itself. Each entry contains a [`target`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/target) element and properties that describe its dimensions, position, the time it entered the viewport, and more. One of the properties of `IntersectionObserverEntry` is [`isIntersecting`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/isIntersecting)—a boolean value that equals `true` when the element enters the viewport.
+`callback` receives a list of [`IntersectionObserverEntry`](https://developer.mozilla.org/docs/Web/API/IntersectionObserverEntry) objects and the [`IntersectionObserver`](https://developer.mozilla.org/docs/Web/API/IntersectionObserver) object itself. Each entry contains a [`target`](https://developer.mozilla.org/docs/Web/API/IntersectionObserverEntry/target) element and properties that describe its dimensions, position, the time it entered the viewport, and more. One of the properties of `IntersectionObserverEntry` is [`isIntersecting`](https://developer.mozilla.org/docs/Web/API/IntersectionObserverEntry/isIntersecting)—a boolean value that equals `true` when the element enters the viewport.
 
 In this example, the `target` is the `iframe`. `isIntersecting` equals `true` when `target` enters the viewport. To see this in action, replace `callback` with the following function:
 
@@ -196,7 +196,7 @@ let observer = new IntersectionObserver(function(entries, observer) {
 
 Try scrolling up and down. You should see the value of `isIntersecting` change and the target element logged to the console.
 
-To load the video when the user scrolls to its position, use `isIntersecting` as a condition to run a `loadElement` function, which gets the value from the `iframe` element's `data-src` and sets it as the `iframe` element's `src` attribute. That replacement triggers the loading of the video. Then, once the video is loaded, call the [`unobserve`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/unobserve) method on the `observer` to stop watching the target element:
+To load the video when the user scrolls to its position, use `isIntersecting` as a condition to run a `loadElement` function, which gets the value from the `iframe` element's `data-src` and sets it as the `iframe` element's `src` attribute. That replacement triggers the loading of the video. Then, once the video is loaded, call the [`unobserve`](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/unobserve) method on the `observer` to stop watching the target element:
 
 ```js/6-13,15-18/2-5
 let observer = new IntersectionObserver(function (entries, observer) {
@@ -229,7 +229,7 @@ Now scroll down the page and keep an eye on the **Network** panel. When you get 
 {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/bJHFfNjxvIthfRWeidbx.mp4", autoplay=true, loop=true, muted=true, playsinline=true %}
 
 {% Aside %}
-In this example, the element is loaded when it enters the viewport, which you can see happening in the video above. You can avoid that delay and create a smoother user experience by loading elements a little before they enter the viewport. To do that, use the [`rootMargin`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Creating_an_intersection_observer) property to define margins around the target element, which effectively grows (or shrinks) the area that triggers the `isIntersecting` change.
+In this example, the element is loaded when it enters the viewport, which you can see happening in the video above. You can avoid that delay and create a smoother user experience by loading elements a little before they enter the viewport. To do that, use the [`rootMargin`](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API#Creating_an_intersection_observer) property to define margins around the target element, which effectively grows (or shrinks) the area that triggers the `isIntersecting` change.
 {% endAside %}
 
 ## Preconnect to required origins

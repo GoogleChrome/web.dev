@@ -19,7 +19,7 @@ customize](https://codepen.io/GeoffreyCrofte/pen/BiHzp). It feels as if it's
 a choice between few or no custom styles, or resetting input styles and
 build it up from scratch. Building it up from scratch ends up being much more
 work than anticipated. It can also lead to forgotten styles for element states
-([indeterminate](https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate),
+([indeterminate](https://developer.mozilla.org/docs/Web/CSS/:indeterminate),
 I'm looking at you), and the loss of built-in accessibility features. 
 To fully recreate what the browser provides may be more
 work than you're looking to take on.

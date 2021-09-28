@@ -26,8 +26,8 @@ Historically, it's been a challenge for web developers to measure how quickly
 the main content of a web page loads and is visible to users.
 
 Older metrics like
-[load](https://developer.mozilla.org/en-US/docs/Web/Events/load) or
-[DOMContentLoaded](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded)
+[load](https://developer.mozilla.org/docs/Web/Events/load) or
+[DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded)
 are not good because they don't necessarily correspond to what the user sees on
 their screen. And newer, user-centric performance metrics like [First Contentful
 Paint (FCP)](/fcp/) only capture the very beginning of the loading experience.
@@ -81,10 +81,10 @@ considered for Largest Contentful Paint are:
 * `<image>` elements inside an `<svg>` element
 * `<video>` elements (the poster image is used)
 * An element with a background image loaded via the
-  [`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url()) function
+  [`url()`](https://developer.mozilla.org/docs/Web/CSS/url()) function
   (as opposed to a
-  [CSS gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients))
-* [Block-level](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)
+  [CSS gradient](https://developer.mozilla.org/docs/Web/CSS/CSS_Images/Using_CSS_gradients))
+* [Block-level](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
   elements containing text nodes or other inline-level text elements children.
 
 Note, restricting the elements to this limited set was intentional in order to
@@ -96,11 +96,11 @@ keep things simple in the beginning. Additional elements (e.g. `<svg>`,
 The size of the element reported for Largest Contentful Paint is typically the
 size that's visible to the user within the viewport. If the element extends
 outside of the viewport, or if any of the element is clipped or has non-visible
-[overflow](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow), those
+[overflow](https://developer.mozilla.org/docs/Web/CSS/overflow), those
 portions do not count toward the element's size.
 
 For image elements that have been resized from their [intrinsic
-size](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size), the
+size](https://developer.mozilla.org/docs/Glossary/Intrinsic_Size), the
 size that gets reported is either the visible size or the intrinsic size,
 whichever is smaller. For example, images that are shrunk down to a much
 smaller than their intrinsic size will only report the size they're displayed
@@ -121,7 +121,7 @@ considered.
   In [spec
   terms](https://wicg.github.io/element-timing/#set-of-owned-text-nodes):
   each text node belongs to the element that generates its [containing
-  block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block).
+  block](https://developer.mozilla.org/docs/Web/CSS/Containing_block).
 {% endAside %}
 
 ### When is largest contentful paint reported?
@@ -130,11 +130,11 @@ Web pages often load in stages, and as a result, it's possible that the largest
 element on the page might change.
 
 To handle this potential for change, the browser dispatches a
-[`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)
+[`PerformanceEntry`](https://developer.mozilla.org/docs/Web/API/PerformanceEntry)
 of type `largest-contentful-paint` identifying the largest contentful element
 as soon as the browser has painted the first frame. But then, after rendering
 subsequent frames, it will dispatch another
-[`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)
+[`PerformanceEntry`](https://developer.mozilla.org/docs/Web/API/PerformanceEntry)
 any time the largest contentful element changes.
 
 For example, on a page with text and a hero image the browser may initially just
@@ -148,7 +148,7 @@ It's important to note that an element can only be considered the largest
 contentful element once it has rendered and is visible to the user. Images that
 have not yet loaded are not considered "rendered". Neither are text nodes using
 web fonts during the [font block
-period](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display#The_font_display_timeline).
+period](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display#The_font_display_timeline).
 In such cases a smaller element may be reported as the largest contentful
 element, but as soon as the larger element finishes rendering, it'll be
 reported via another  `PerformanceEntry` object.
@@ -189,14 +189,14 @@ For analysis purposes, you should only report the most recently dispatched
 
 For security reasons, the render timestamp of images is not exposed for
 cross-origin images that lack the
-[`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin)
+[`Timing-Allow-Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin)
 header. Instead, only their load time is exposed (since this is already exposed
 via many other web APIs).
 
 The [usage example](#measure-lcp-in-javascript)
 below shows how to handle elements whose render time is not available. But,
 when possible, it's always recommended to set the
-[`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin)
+[`Timing-Allow-Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin)
 header, so your metrics will be more accurate.
 
 ### How are element layout and size changes handled?
@@ -273,7 +273,7 @@ available in the following tools:
 To measure LCP in JavaScript, you can use the [Largest Contentful Paint
 API](https://wicg.github.io/largest-contentful-paint/). The following example
 shows how to create a
-[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
 that listens for `largest-contentful-paint` entries and logs them to the
 console.
 

@@ -882,7 +882,7 @@ Access-Control-Allow-Credentials: true
   `https://example.com` can access the contents of the response. Resources meant
   to be readable by any site can set this header to `*`, in which case the
   browser will only require the request to be made [without
-  credentials](https://developer.mozilla.org/en-US/docs/Web/API/Request/credentials#value).
+  credentials](https://developer.mozilla.org/docs/Web/API/Request/credentials#value).
 * `Access-Control-Allow-Credentials: true` indicates that requests which carry
   credentials (cookies) are allowed to load the resource. Otherwise,
   authenticated requests will be rejected even if the requesting origin is

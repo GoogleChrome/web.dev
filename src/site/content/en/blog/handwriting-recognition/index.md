@@ -169,7 +169,7 @@ you send too many feature queries. {% endAside %}
 
 Within your application, you should offer an input area where the user makes their handwritten
 entries. For performance reasons, it is recommended to implement this with the help of a
-[canvas object](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial). The exact
+[canvas object](https://developer.mozilla.org/docs/Web/API/Canvas_API/Tutorial). The exact
 implementation of this part is out of scope for this article, but you may refer to the [demo](#demo)
 to see how it can be done.
 
@@ -185,7 +185,7 @@ object containing different hints to fine-tune the recognition algorithm. All hi
   (`graphemeSet`)
 
 The Handwriting Recognition API plays well with
-[Pointer Events](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events) which provide an
+[Pointer Events](https://developer.mozilla.org/docs/Web/API/Pointer_events) which provide an
 abstract interface to consume input from any pointing device. The pointer event arguments contain
 the type of pointer being used. This means you can use pointer events to determine the input type
 automatically. In the following example, the drawing for handwriting recognition is automatically

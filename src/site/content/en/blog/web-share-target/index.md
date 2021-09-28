@@ -293,4 +293,4 @@ and let us know where and how you're using it.
 [wicg-discourse]: https://discourse.wicg.io/t/web-share-target-api-for-websites-to-receive-shared-content/1854
 [manifest]:/add-manifest/
 [installability]:https://developers.google.com/web/fundamentals/app-install-banners/#criteria
-[encoding]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype
+[encoding]:https://developer.mozilla.org/docs/Web/HTML/Element/form#attr-enctype

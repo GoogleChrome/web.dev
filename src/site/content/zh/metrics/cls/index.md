@@ -76,7 +76,7 @@ CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-
 
 ## 布局偏移详情
 
-布局偏移由[布局不稳定性 API](https://github.com/WICG/layout-instability)定义，只要可视区域中可见元素的起始位置（例如，元素在默认[书写模式](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)下的顶部和左侧位置）在两帧之间发生了变更，该 API 就会报告`layout-shift`条目。这样的元素被视为*不稳定元素*。
+布局偏移由[布局不稳定性 API](https://github.com/WICG/layout-instability)定义，只要可视区域中可见元素的起始位置（例如，元素在默认[书写模式](https://developer.mozilla.org/docs/Web/CSS/writing-mode)下的顶部和左侧位置）在两帧之间发生了变更，该 API 就会报告`layout-shift`条目。这样的元素被视为*不稳定元素*。
 
 请注意，只有当现有元素的起始位置发生变更时才算作布局偏移。如果将新元素添加到 DOM 或是现有元素更改大小，则不算作布局偏移，前提是元素的变更不会导致其他可见元素的起始位置发生改变。
 
@@ -158,7 +158,7 @@ CLS 测量整个页面生命周期内发生的所有[意外](/cls/#expected-vs.-
 
 动画和过渡如果做得好，确实是一个在更新页面内容时不让用户感到突兀的好方法。页面内容突然发生意外偏移几乎无一例外会造成糟糕的用户体验。但如果内容从一个位置逐步又自然地移动到下一个位置，这通常有助于用户更好地明白当前状况，并引导他们适应状态之间的变化。
 
-CSS [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)属性使您能够在不触发布局偏移的情况下为元素设置动画：
+CSS [`transform`](https://developer.mozilla.org/docs/Web/CSS/transform)属性使您能够在不触发布局偏移的情况下为元素设置动画：
 
 - 用`transform: scale()`来替代和调整`height`和`width`属性。
 - 如需使元素能够四处移动，可以用`transform: translate()`来替代和调整`top`、`right`、`bottom`或`left`属性。
@@ -186,7 +186,7 @@ CLS 可以进行[实验室](/user-centric-performance-metrics/#in-the-lab)测量
 
 ### 在 JavaScript 中测量 CLS
 
-要在 JavaScript 中测量 CLS，您可以使用[布局不稳定性 API](https://github.com/WICG/layout-instability)。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)来侦听意外`layout-shift`条目、将条目按会话分组、记录最大会话值，并在最大会话值发生改变时更新记录。
+要在 JavaScript 中测量 CLS，您可以使用[布局不稳定性 API](https://github.com/WICG/layout-instability)。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)来侦听意外`layout-shift`条目、将条目按会话分组、记录最大会话值，并在最大会话值发生改变时更新记录。
 
 ```js
 let clsValue = 0;

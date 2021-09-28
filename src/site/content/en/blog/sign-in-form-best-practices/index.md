@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-06-29
-updated: 2021-02-26
+updated: 2021-09-21
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 hero: image/admin/pErOjllBUXhnj68qOhfr.jpg
 alt: A person holding a phone.
@@ -48,8 +48,7 @@ Here is an example of a simple sign-in form that demonstrates all of the best pr
   `<label>`, and `<button>`.
 * [Label each input with a `<label>`](#label).
 * Use element attributes to [access built-in browser
-  features](#element-attributes): `type`, `name`, `autocomplete`, `required`,
-  `autofocus`.
+  features](#element-attributes): `type`, `name`, `autocomplete`, `required`.
 * Give input `name` and `id` attributes stable values that don't change
 between page loads or website deployments.
 * Put sign-in [in its own &lt;form&gt; element](#single-form).
@@ -101,7 +100,7 @@ markup.
 
 You might be tempted to wrap inputs in a `<div>` and handle input data
 submission purely with JavaScript. It's generally better to use a plain old
-[`<form>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+[`<form>`](https://developer.mozilla.org/docs/Web/HTML/Element/form)
 element. This makes your site accessible to screenreaders and other assistive
 devices, enables a range of built-in browser features, makes it simpler to build
 basic functional sign-in for older browsers, and can still work even if
@@ -117,7 +116,7 @@ sign-in and search on the same page, you should use two form elements.
 
 ### Use `<label>` {: #label }
 
-To label an input, use a [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)!
+To label an input, use a [`<label>`](https://developer.mozilla.org/docs/Web/HTML/Element/label)!
 
 ```html
 <label for="email">Email</label>
@@ -156,7 +155,7 @@ mobile device to see for yourself.
 
 ### Use `<button>` {: #button }
 
-Use [`<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+Use [`<button>`](https://developer.mozilla.org/docs/Web/HTML/Element/button)
 for buttons! Button elements provide accessible behaviour and built-in form
 submission functionality, and they can easily be styled. There's no point in
 using a `<div>` or some other element pretending to be a button.
@@ -211,17 +210,6 @@ password if necessary.
 
 This is where the magic really happens!
 Browsers have multiple helpful built-in features that use input element attributes.
-
-### Help users start faster {: #autofocus }
-
-Add an `autofocus` attribute to the first input in your sign-in form. That makes
-it clear where to start and, on desktop at least, means users don't have to
-select the input to start typing.
-
-<figure class="w-figure">
-  {% Img src="image/admin/27x2icJSXCMdfWOjVAdR.png", alt="Screenshot showing form input with autofocus.", width="500", height="451", class="w-screenshot" %}
-  <figcaption class="w-figcaption">Autofocus provides clear visual focus on desktop.</figcaption>
-</figure>
 
 ## Keep passwords private—but enable users to see them if they want {: #show-password }
 

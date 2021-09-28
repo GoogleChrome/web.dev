@@ -67,7 +67,7 @@ tags:
 
 ## 分析跨域隔离的影响 {:#analysis}
 
-如果能在不进行任何破坏的情况下就可以评估启用跨域隔离对您的网站的影响，那该多好啊？[`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy)和[`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) HTTP 标头恰恰能帮助您实现这一愿望。
+如果能在不进行任何破坏的情况下就可以评估启用跨域隔离对您的网站的影响，那该多好啊？[`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy)和[`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) HTTP 标头恰恰能帮助您实现这一愿望。
 
 1. 在您的顶级文档上设置[`Cross-Origin-Opener-Policy-Report-Only: same-origin`](/coop-coep/#1.-set-the-cross-origin-opener-policy:-same-origin-header-on-the-top-level-document)。正如标头名称所示，该标头只发送有关`COOP: same-origin`**将会**对您网站产生的影响的报告，而不会实际弹出窗口来禁止通信。
 2. 设置报告内容并配置一个网络服务器来接收和保存报告。

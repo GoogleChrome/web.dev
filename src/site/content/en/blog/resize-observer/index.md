@@ -66,10 +66,10 @@ ro.observe(someElement);
 ### What is being reported?
 
 Generally, a
-[`ResizeObserverEntry`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry)
+[`ResizeObserverEntry`](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry)
 reports the content box of an element through a property called
 `contentRect`, which returns a
-[`DOMRectReadOnly`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly)
+[`DOMRectReadOnly`](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly)
 object. The content box is the box in which content can be placed. It is
 the border box minus the padding.
 
@@ -98,7 +98,7 @@ they can support elements that have multiple fragments, which occur in
 multi-column scenarios. For now, these arrays will only contain one element.
 
 Platform support for these properties is limited, but [Firefox already
-supports](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry#Browser_compatibility)
+supports](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry#Browser_compatibility)
 the first two.
 
 ### When is it being reported?

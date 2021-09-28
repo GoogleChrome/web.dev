@@ -72,7 +72,7 @@ endAside %}
 ### Why is this needed?
 
 Today, ad conversion measurement often relies on [third-party
-cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies). **But
+cookies](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Third-party_cookies). **But
 browsers are restricting access to these.**
 
 Chrome plans on [phasing out support for third-party

@@ -213,7 +213,7 @@ Hero image via [Maxime Rossignol](https://unsplash.com/@maxoor) on
 [Unsplash](https://unsplash.com/photos/ukOCJ09jpgc).
 
 [WebGPU]: https://gpuweb.github.io/gpuweb/
-[WebGL]: https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API
+[WebGL]: https://developer.mozilla.org/docs/Web/API/WebGL_API
 [W3C's "GPU for the Web" Community Group]: https://www.w3.org/community/gpu/
 [Babylon.js Playground]: https://playground.babylonjs.com/#XCNL7Y
 [Get started with GPU Compute on the web]: /gpu-compute/
@@ -225,7 +225,7 @@ Hero image via [Maxime Rossignol](https://unsplash.com/@maxoor) on
 [Safari]: https://webkit.org/blog/9528/webgpu-and-wsl-in-safari/
 [Firefox]: https://hacks.mozilla.org/2020/04/experimental-webgpu-in-firefox/
 [Dawn]: https://dawn.googlesource.com/dawn
-[WebAssembly]: https://developer.mozilla.org/en-US/docs/WebAssembly
+[WebAssembly]: https://developer.mozilla.org/docs/WebAssembly
 [Emscripten]: https://emscripten.org/
 [Wgpu]: https://sotrh.github.io/learn-wgpu/#what-is-wgpu
 [Veloren]: https://veloren.net/devblog-125/

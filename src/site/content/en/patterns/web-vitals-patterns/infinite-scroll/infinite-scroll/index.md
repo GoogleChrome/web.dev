@@ -1,13 +1,15 @@
 ---
 layout: pattern
 title: Infinite scroll
-description: Avoid layout shifts when using infinite scroll
+description: In this implementation of infinite scroll there
+  are never any layout shifts - regardless of how long it takes the server to
+  respond with new content.
 date: 2021-08-18
 updated: 2021-08-18
 height: 500
 ---
 
-This infinite scroll example is designed to ensure that there are never any
+This infinite scroll implementation is designed to ensure that there are never any
 layout shifts - regardless of how long it takes the server to respond with new content.
 
 One of the most common issues with many infinite scroll implementations is that
@@ -31,7 +33,7 @@ any unexpected layout shifts.
 **Implementation**
 
 The [Intersection Observer
-API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API)
 is a performant way of monitoring the position and visibility of page
 elements. This design is implemented using two separate intersertion observers:
 - `listObserver` observes the position of the `#infinite-scroll-button` that is
