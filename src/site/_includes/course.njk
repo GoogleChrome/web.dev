@@ -61,7 +61,7 @@ CSS_ORIGIN: 'next'
               {% endif %}
             {% endfor %}
             <h1 class="course-headline">{{ title | md | safe }}</h1>
-            <p>
+            <p class="color-mid-text">
               {# If authors use backticks in their description markdown we don't #}
               {# want the code to have any border or background color. #}
               <em class="unstyled-code">{{ description | md | safe }}</em>
