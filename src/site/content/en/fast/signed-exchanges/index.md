@@ -336,17 +336,11 @@ Learn how to serve AMP using signed exchanges on
 
 ## Tooling
 
-This section discusses the tooling options and technical requirements of SXGs.
-
-At a high level, implementing SXGs consists of generating the SXG corresponding
-to a given URL and then serving that SXG to users. To generate a SXG you will
-need a certificate that can sign SXGs.
+Implementing SXGs consists of generating the SXG corresponding to a given URL
+and then serving that SXG to requestors (usually crawlers). To generate a SXG
+you will need a certificate that can sign SXGs.
 
 ### Certificates
-
-Certificates associate an entity with a [public
-key](https://en.wikipedia.org/wiki/Public-key_cryptography). Signing a SXG with
-a certificate allows the content to be associated with the entity.
 
 Production use of SXGs requires a certificate that supports the
 `CanSignHttpExchanges` extension. Per
@@ -356,23 +350,39 @@ days and require that the requesting domain have a [DNS CAA
 record](https://en.wikipedia.org/wiki/DNS_Certification_Authority_Authorization)
 configured.
 
-This [page](https://github.com/google/webpackager/wiki/Certificate-Authorities)
-lists the [certificate
-authorities](https://en.wikipedia.org/wiki/Certificate_authority) that can issue
-this type of certificate. Certificates for SXGs are only available through a
-commercial certificate authority.
+[This page](https://github.com/google/webpackager/wiki/Certificate-Authorities)
+lists the certificate authorities that can issue this type of certificate.
+Certificates for SXGs are only available through a commercial certificate
+authority.
 
-### Web Packager
+### Platform-specific SXG tooling
 
-[Web Packager](https://github.com/google/webpackager) is an open-source,
-Go-based tool that is the de facto tooling for generating ("packaging") signed
-exchanges. You can use it to manually create SXGs, or as a server that
-automatically creates and serves SXGs. Web Packager is currently in
-[alpha](https://github.com/google/webpackager#limitations).
+These tools support specific technology stacks. If you are already using a
+platform supported by one of these tools, you may find it easier to set up than
+a general-purpose tool.
 
-### Web Packager CLI
+- [`sxg-rs/cloudflare_worker`](https://github.com/google/sxg-rs/tree/main/cloudflare_worker)
+  runs on [Cloudflare Workers](https://workers.cloudflare.com/).
 
-The Web Packager CLI generates a SXG corresponding to a given URL.
+- [`sxg-rs/fastly_compute`](https://github.com/google/sxg-rs/tree/main/fastly_compute)
+  runs on [Fastly
+  Compute@Edge](https://www.fastly.com/products/edge-compute/serverless).
+
+- [NGINX SXG module](https://github.com/google/nginx-sxg-module) generates
+  and serves SXGs for sites that use [nginx](https://nginx.org/). Setup
+  instructions can be found [here](/how-to-set-up-signed-http-exchanges/).
+
+- [Envoy SXG
+  Filter](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/sxg_filter)
+  generates and serves SXGs for sites that use
+  [Envoy](https://www.envoyproxy.io/).
+
+### General-purpose SXG tooling
+
+#### Web Packager CLI
+
+The [Web Packager CLI](https://github.com/google/webpackager) generates a SXG
+corresponding to a given URL.
 
 ```shell
 webpackager \
@@ -385,7 +395,7 @@ Once the SXG file has been generated, upload it to your server and serve it with
 the `application/signed-exchange;v=b3` MIME type. In addition, you will need to
 serve the SXG certificate as `application/cert-chain+cbor`.
 
-### Web Packager Server
+#### Web Packager Server
 
 The [Web Packager
 server](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md),
@@ -396,54 +406,25 @@ serve the SXG in response. For instructions on setting up the Web Packager
 server, see [How to set up signed exchanges using Web
 Packager](/signed-exchanges-webpackager).
 
-In production, `webpkgserver` should not use a public endpoint. Instead, the
-frontend web server should forward SXG requests to `webpkgserver`. These
-[recommendations](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md#running-behind-front-end-edge-server)
-contain more information on running `webpkgserver` behind a frontend edge
-server.
+### Libraries
 
-### Other tooling
+These libraries could be used to build your own SXG generator:
 
-This section lists tooling alternatives to Web Packager. In addition to these
-options, you can also choose to build your own SXG generator.
+- [`sxg_rs`](https://github.com/google/sxg-rs/tree/main/sxg_rs) is a Rust library for
+  generating SXGs. It is the most featureful SXG tool and is used as the basis for the
+  `cloudflare_worker` and `fastly_compute` tools.
 
+- [`libsxg`](https://github.com/google/libsxg) is a minimal C library for
+  generating SXGs. It is used as the basis for the NGINX SXG module and the
+  Envoy SXG Filter.
 
-- `sxg-rs`
-
-  [`sxg-rs`](https://github.com/google/sxg-rs) is a collection of tools for generating SXGs using various serverless platforms.
-  Cloudflare Workers and Fastly Compute@Edge, and a Rust library that could be
-  adapted to other serverless platforms.
-
-- NGINX SXG Module
-
-  The [NGINX SXG module](https://github.com/google/nginx-sxg-module) generates
-  and serves SXGs. Sites that already use NGINX should consider using this
-  module over Web Packager Server. Setup instructions can be found
-  [here](/how-to-set-up-signed-http-exchanges/).
-
-- Envoy SXG Filter
-
-  The [Envoy SXG Filter](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/sxg_filter)
-  generates and serves SXGs. Sites that already use Envoy should consider using
-  this module over Web Packager Server.
-
-- `libsxg`
-
-  [`libsxg`](https://github.com/google/libsxg) is a minimal, C-based library for
-  generating SXGs. `libsxg` can be used to build an SXG generator that
-  integrates into other pluggable servers. The NGINX SXG module is built on top
-  of `libsxg`.
-
-
-- `gen-signedexchange`
-
-  [`gen-signedexchange`](https://github.com/WICG/webpackage/tree/main/go/signedexchange)
-  is a tool provided by the webpackage specification as a [reference
+- [`go/signed-exchange`](https://github.com/WICG/webpackage/tree/main/go/signedexchange)
+  is a minimal Go library provided by the webpackage specification as a
+  [reference
   implementation](https://en.wikipedia.org/wiki/Reference_implementation) of
-  generating SXGs. Due to its limited feature set, `gen-signedexchange` is
-  useful for trying out SXGs, but impractical for larger-scale and production
-  use.
-
+  generating SXGs. It is used as the basis for its reference CLI tool,
+  [`gen-signedexchange`](https://github.com/WICG/webpackage/tree/main/go/signedexchange)
+  and the more featureful Web Packager tools.
 
 ## Conclusion
 
