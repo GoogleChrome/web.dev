@@ -411,7 +411,7 @@ Packager](/signed-exchanges-webpackager).
 These libraries could be used to build your own SXG generator:
 
 - [`sxg_rs`](https://github.com/google/sxg-rs/tree/main/sxg_rs) is a Rust library for
-  generating SXGs. It is the most featureful, and is used as the basis for the
+  generating SXGs. It is the most featureful SXG tool and is used as the basis for the
   `cloudflare_worker` and `fastly_compute` tools.
 
 - [`libsxg`](https://github.com/google/libsxg) is a minimal C library for
