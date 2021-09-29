@@ -130,7 +130,7 @@ defaulting to `"none"`. The following values are supported:
   arbitrarily navigated away from. Sites should be aware that they are opting into such behavior by
   choosing this option. This option works best for "read-only" sites that do not hold user data in
   memory, such as music players. If the page being navigated away from has a
-  [`beforeunload` event](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload),
+  [`beforeunload` event](https://developer.mozilla.org/docs/Web/API/WindowEventHandlers/onbeforeunload),
   the user would see the prompt before the navigation completes.
 
 {% Aside %} There is discussion about adding options that do not open

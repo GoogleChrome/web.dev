@@ -53,14 +53,14 @@ app](https://ericbidelman.tumblr.com/post/149032341876/observing-your-web-app))
 because I found it fascinating how many APIs there are for monitoring the
 "stuff" that happens in a web app. For example, there are APIs that can observe
 information about the DOM:
-[`ResizeObserver`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver),
-[`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver),
-[`MutationObserver`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).
-[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+[`ResizeObserver`](https://developer.mozilla.org/docs/Web/API/ResizeObserver),
+[`IntersectionObserver`](https://developer.mozilla.org/docs/Web/API/IntersectionObserver),
+[`MutationObserver`](https://developer.mozilla.org/docs/Web/API/MutationObserver).
+[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
 captures performance measurements. And methods like
-[`window.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror)
+[`window.onerror`](https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onerror)
 and
-[`window.onunhandledrejection`](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunhandledrejection)
+[`window.onunhandledrejection`](https://developer.mozilla.org/docs/Web/API/WindowEventHandlers/onunhandledrejection)
 even let us know when something goes wrong.
 
 However, there are other types of warnings which are not captured by the

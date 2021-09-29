@@ -42,7 +42,7 @@ fetched late:
 
 {% Img src="image/admin/tgcMfl3HJLmdoERFn7Ji.png", alt="Lighthouse: Preload key requests audit", width="745", height="97", class="w-screenshot" %}
 
-[**Preload**](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
+[**Preload**](https://developer.mozilla.org/docs/Web/HTML/Preloading_content)
 is a declarative fetch request that tells the browser to request a resource as
 soon as possible. Preload critical resources by adding a `<link>` tag with
 `rel="preload"` to the head of your HTML document:

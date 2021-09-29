@@ -14,17 +14,17 @@ tags:
 
 ## Background
 
-[ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+[ES modules](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules)
 have been a developer favorite for a while now. In addition to a
 [number of other benefits](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/),
 they offer the promise of a universal module format where shared code can be
 released once and run in browsers and in alternative runtimes like
 [Node.js](https://nodejs.org/en/). While
-[all modern browsers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#import)
+[all modern browsers](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules#import)
 offer some ES module support, they don't all offer support _everywhere_ that
 code can be run. Specifically, support for importing ES modules inside of a
 browser's
-[service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+[service worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 is just starting to become more widely available.
 
 This article details the current state of ES module support in service workers
@@ -47,16 +47,16 @@ Scripts imported via ES modules can trigger the service worker
 flow if their contents change, matching the
 [behavior](https://developers.google.com/web/updates/2019/09/fresher-sw#checks_for_updates_to_imported_scripts)
 of
-<code>[importScripts()](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts)</code>.
+<code>[importScripts()](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts)</code>.
 
 ## Current limitations
 
 ### Static imports only
 
 ES modules can be imported in one of two ways: either
-[statically](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import),
+[statically](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import),
 using the `import ... from '...'` syntax, or
-[dynamically](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports),
+[dynamically](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports),
 using the `import()` method. Inside of a service worker, only the static
 syntax is currently supported.
 
@@ -86,7 +86,7 @@ has been supported in Chrome and Edge since
 Both static and dynamic ES module imports are supported in dedicated workers.
 
 Chrome and Edge have supported ES modules in
-[shared workers](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker)
+[shared workers](https://developer.mozilla.org/docs/Web/API/SharedWorker)
 since [version 83](https://chromestatus.com/feature/5169440012369920), but no
 other browser offers support at this time.
 
@@ -161,7 +161,7 @@ service worker script through an
 service worker that includes all of the module code inline, and will work in
 older browsers. Alternatively, if the modules you're attempting to import are
 already available bundled in
-[IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) or
+[IIFE](https://developer.mozilla.org/docs/Glossary/IIFE) or
 [UMD](https://github.com/umdjs/umd) formats, you can import them using
 `importScripts()`.
 

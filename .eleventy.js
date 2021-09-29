@@ -48,6 +48,7 @@ const IFrame = require('./src/site/_includes/components/IFrame');
 const {Img, generateImgixSrc} = require('./src/site/_includes/components/Img');
 const Instruction = require('./src/site/_includes/components/Instruction');
 const Label = require('./src/site/_includes/components/Label');
+const LanguageList = require('./src/site/_includes/components/LanguageList');
 const Meta = require('./src/site/_includes/components/Meta');
 const PathCard = require('./src/site/_includes/components/PathCard');
 const SignPosts = require('./src/site/_includes/components/SignPosts');
@@ -223,6 +224,7 @@ module.exports = function (config) {
   config.addShortcode('Img', Img);
   config.addShortcode('Instruction', Instruction);
   config.addPairedShortcode('Label', Label);
+  config.addShortcode('LanguageList', LanguageList);
   config.addShortcode('Meta', Meta);
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('SignPosts', SignPosts);

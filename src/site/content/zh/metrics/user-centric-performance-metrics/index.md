@@ -24,7 +24,7 @@ tags:
 
 ## 定义指标
 
-长久以来，网络性能都是通过<code>[load](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event)</code>事件进行测量的。然而，尽管<code>load</code>是页面生命周期中明确定义的时刻，但该时刻并不一定与用户在意的任何方面相对应。
+长久以来，网络性能都是通过<code>[load](https://developer.mozilla.org/docs/Web/API/Window/load_event)</code>事件进行测量的。然而，尽管<code>load</code>是页面生命周期中明确定义的时刻，但该时刻并不一定与用户在意的任何方面相对应。
 
 例如，服务器可以用一个可以立即"加载"的最小页面来进行响应，然后延迟获取内容并在页面上延迟显示任何内容，直到`load`事件触发的几秒钟后。虽然这样的页面或许确实具备较快的加载时间，但这与用户实际体验页面加载的方式不符。
 

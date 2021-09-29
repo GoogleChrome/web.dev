@@ -51,7 +51,7 @@ FCP は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 
 ### JavaScript を使用して FCP を測定する
 
-JavaScript を使用した FCP の測定には、[Paint Timing API](https://w3c.github.io/paint-timing/) を使用することができます。以下の例では、`first-contentful-paint` という名前の `paint` エントリをリッスンし、コンソールにログを記録する [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) の作成方法を示しています。
+JavaScript を使用した FCP の測定には、[Paint Timing API](https://w3c.github.io/paint-timing/) を使用することができます。以下の例では、`first-contentful-paint` という名前の `paint` エントリをリッスンし、コンソールにログを記録する [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) の作成方法を示しています。
 
 ```js
 new PerformanceObserver((entryList) => {

@@ -21,9 +21,9 @@ tags:
 
 With the new CSS module scripts feature, you can load CSS style sheets with `import` statements,
 just like [JavaScript
-modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). The style sheets
+modules](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules). The style sheets
 can then be applied to documents or [shadow
-roots](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot) in the same manner as
+roots](https://developer.mozilla.org/docs/Web/API/ShadowRoot) in the same manner as
 [constructable
 stylesheets](https://developers.google.com/web/updates/2019/02/constructable-stylesheets). This can
 be more convenient and [more
@@ -41,7 +41,7 @@ bug](https://bugs.webkit.org/show_bug.cgi?id=227967), respectively.
 ## Prerequisites
 
 - Familiarity with [JavaScript
-  modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
+  modules](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules).
 - Familiarity with [constructable
   stylesheets](https://developers.google.com/web/updates/2019/02/constructable-stylesheets).
 
@@ -69,7 +69,7 @@ CSS modules also have some of the same benefits as JavaScript modules.
   still only be fetched, instantiated, and parsed a single time.
 - **Consistent order of evaluation:** when the importing JavaScript is running, it can rely on the
   stylesheet it imports having already been fetched and parsed.
-- **Security:** modules are fetched with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+- **Security:** modules are fetched with [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS)
   and use strict MIME-type checking.
 
 ## Import Assertions (what's with the '`assert`'?)
@@ -107,7 +107,7 @@ CSSStyleSheet is the default export of the module, so it's accessed at `cssModul
 
 ## `@import` rules not yet allowed
 
-Currently CSS [`@import` rules](https://developer.mozilla.org/en-US/docs/web/css/@import) don't work
+Currently CSS [`@import` rules](https://developer.mozilla.org/docs/web/css/@import) don't work
 in constructable stylesheets, including CSS module scripts. If `@import` rules are present in a
 constructable stylesheet, those rules will be ignored.
 

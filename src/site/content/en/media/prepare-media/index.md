@@ -54,7 +54,7 @@ We've selected these values for speedy web playback on mobile devices.
 
 Next, let's get started with [Containers and codecs](/containers-and-codecs/).
 
-[DASH]: https://developer.mozilla.org/en-US/docs/Web/HTML/DASH_Adaptive_Streaming_for_HTML_5_Video
+[DASH]: https://developer.mozilla.org/docs/Web/HTML/DASH_Adaptive_Streaming_for_HTML_5_Video
 [HLS]: https://developer.apple.com/documentation/http_live_streaming
 [glocken.mov]: https://storage.googleapis.com/web-dev-assets/prepare-media/glocken.mov
 [Rathaus-Glockenspiel]: https://en.wikipedia.org/wiki/Rathaus-Glockenspiel

@@ -65,7 +65,7 @@ You add all of these points up to calculate a selector's overall specificity.
 
 ### Universal selector
 
-A [universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) (`*`)
+A [universal selector](https://developer.mozilla.org/docs/Web/CSS/Universal_selectors) (`*`)
 has **no specificity** and gets **0 points**.
 This means that any rule with 1 or more points will override it
 
@@ -77,8 +77,8 @@ This means that any rule with 1 or more points will override it
 
 ### Element or pseudo-element selector
 
-An [element](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) (type)
-or [pseudo-element](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
+An [element](https://developer.mozilla.org/docs/Web/CSS/Type_selectors) (type)
+or [pseudo-element](https://developer.mozilla.org/docs/Web/CSS/Pseudo-elements)
 selector gets **1 point of specificity** .
 
 #### Type selector
@@ -99,9 +99,9 @@ div {
 
 ### Class, pseudo-class, or attribute selector
 
-A [class](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors),
-[pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) or
-[attribute](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) selector gets **10 points of specificity**.
+A [class](https://developer.mozilla.org/docs/Web/CSS/Class_selectors),
+[pseudo-class](https://developer.mozilla.org/docs/Web/CSS/Pseudo-classes) or
+[attribute](https://developer.mozilla.org/docs/Web/CSS/Attribute_selectors) selector gets **10 points of specificity**.
 
 #### Class selector
 
@@ -127,7 +127,7 @@ A [class](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors),
 }
 ```
 
-The [`:not()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:not)
+The [`:not()`](https://developer.mozilla.org/docs/Web/CSS/:not)
 pseudo-class itself adds nothing to the specificity calculation.
 However, the selectors passed in as arguments do get added to the specificity calculation.
 
@@ -142,7 +142,7 @@ because it has one type selector (`div`) and one class _inside_ the `:not()`.
 
 ### ID selector
 
-An [ID](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors)
+An [ID](https://developer.mozilla.org/docs/Web/CSS/ID_selectors)
 selector gets **100 points of specificity**,
 as long as you use an ID selector (`#myID`) and not an attribute selector (`[id="myID"]`).
 
@@ -377,6 +377,6 @@ To do so it must match the specificity of another selector that targets the same
 
 - [CSS SpeciFISHity](http://specifishity.com)
 - [Specificity Calculator](https://specificity.keegan.st)
-- [MDN Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
+- [MDN Specificity](https://developer.mozilla.org/docs/Web/CSS/Specificity)
 - [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/)
 - [Another Specificity Calculator](https://polypane.app/css-specificity-calculator)

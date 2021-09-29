@@ -55,8 +55,8 @@ of a build process that already took place.
 When responding to requests for URLs that don't contain versioning info, make
 sure you add `Cache-Control: no-cache` to your response messages. Along with
 that, setting one of two additional response headers is recommended: either
-[`Last-Modified`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified)
-or [`ETag`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag). The
+[`Last-Modified`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Last-Modified)
+or [`ETag`](https://developer.mozilla.org/docs/Web/HTTP/Headers/ETag). The
 `index.html` falls into this category. You can break this down into two steps.
 
 First, the `Last-Modified` and `ETag` headers are controlled by the
@@ -112,7 +112,7 @@ request is for a versioned URL, and if so, add the `Cache-Control:
 max-age=31536000` header.
 
 The most robust way of doing this is to use a
-[regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+[regular expression](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions)
 to see whether the asset being requested matches a specific pattern that you
 know the hashes fall into. In the case of this sample project, it's always eight
 characters from the set of digits 0–9 and the lowercase letters a–f (i.e.
@@ -181,7 +181,7 @@ like the following:
 
 The first row is for the HTML document that you navigated to. This is properly
 served with `Cache-Control: no-cache`. The HTTP response status for that request
-is a [`304`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304). This
+is a [`304`](https://developer.mozilla.org/docs/Web/HTTP/Status/304). This
 means that the browser knew not to use the cached HTML immediately, but instead
 made an HTTP request to the web server, using the `Last-Modified` and `ETag`
 information to see if there was any update to the HTML that it already had in
@@ -195,7 +195,7 @@ HTTP 304 response."
 
 The next two rows are for the versioned JavaScript and CSS assets. You should
 see them served with `Cache-Control: max-age=31536000`, and the HTTP status for
-each is [`200`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200).
+each is [`200`](https://developer.mozilla.org/docs/Web/HTTP/Status/200).
 Because of the configuration used, there is no actual request being made to the
 Node.js server, and clicking on the entry will show you additional detail,
 including that the response came "(from disk cache)".

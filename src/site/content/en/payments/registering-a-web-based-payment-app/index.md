@@ -6,7 +6,7 @@ subhead: |
 authors:
   - agektmr
 date: 2020-07-17
-updated: 2020-07-20
+updated: 2021-09-14
 description: |
   Learn how to register a web-based payment app to a customers' browser. You'll also learn how to debug them.
 tags:
@@ -23,9 +23,8 @@ requests from a merchant, launches the payment app, and mediates the
 communication with the merchant.
 
 To configure a web-based payment app, you need to register available payment
-methods, delegation options, and a service worker. You can configure your
-web-based payment app declaratively with a web app manifest or imperatively with
-JavaScript.
+methods, and a service worker. You can configure your web-based payment app
+declaratively with a web app manifest or imperatively with JavaScript.
 
 {% include 'content/payments/browser-compatibility.njk' %}
 
@@ -41,8 +40,6 @@ The following properties in the web app manifest are relevant for web-based paym
     * `src`
     * `scope`
     * `use_cache`
-* `payment`
-    * `supported_delegations`
 
 Check out [Setting up a payment
 method](/setting-up-a-payment-method/#step-3:-serve-a-web-app-manifest)
@@ -203,14 +200,6 @@ contains details about the instrument.
           A supported payment method identifier.
         </td>
       </tr>
-      <tr>
-        <td>
-          <code>capabilities</code>
-        </td>
-        <td>
-          Sets the <a href="https://w3c.github.io/payment-handler/#capabilities-example">payment method specific parameters as an object</a>. As of July 2020, basic-card is the only payment method that accepts capabilities.
-        </td>
-      </tr>
     </tbody>
   </table>
 </div>
@@ -220,56 +209,6 @@ Chrome ignores the `name` and `icons` properties. It respects the [web app
 manifest](/setting-up-a-payment-method/#step-3:-serve-a-web-app-manifest)'s
 respective properties instead, but other browsers may behave differently.
 {% endAside %}
-
-### Enable delegations
-
-Entering shipping address and contact information through a web form can be a
-cumbersome experience for customers. It can cause errors and lower conversion
-rate.
-
-That's why the Payment Request API supports a feature to request shipping
-address and contact information. This provides multiple benefits:
-
-* Users can pick the right address with just a few taps.
-* The address is always returned in [the standardized
-  format](https://w3c.github.io/payment-request/#paymentaddress-interface).
-* Submitting an incorrect address is less likely.
-
-Payment apps can integrate this functionality to offer a more unified payment
-experience. This is called *delegation*.
-
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.mp4" type="video/mp4">
-  </video>
-  <figcaption class="w-figcaption">
-    Checkout flow with a web-based payment app.
-  </figcaption>
-</figure>
-
-Web-based payment apps can declare their support for delegation using the web
-app manifest's `payment.supported_delegations` field or through JavaScript.
-
-To let the browser know that the payment app accepts a delegation, use
-[`PaymentManager.enableDelegations()`](https://w3c.github.io/payment-handler/#enabledelegations-method).
-
-{% Label %}[payment handler] payment app's landing page{% endLabel %}
-
-```js
-…
- await registration.paymentManager.enableDelegations([
-  'shippingAddress', 'payerName'
-]);
-…
-```
-
-You can declare supported delegation options as an array of strings:
-
-* `shippingAddress`: The payment handler can provide a shipping address.
-* `payerName`: The payment handler can provide the payer's name.
-* `payerPhone`: The payment handler can provide the payer's phone number.
-* `payerEmail`: The payment handler can provide the payer's address.
 
 ## Debugging a web-based payment app
 
@@ -340,9 +279,9 @@ to the service worker that handles payments.
 
 ## Next steps
 
-You learned how to register a service worker, set payment instruments, and
-define delegation availability for a web-based payment app. The next step is to
-learn how the service worker can orchestrate a payment transaction at runtime.
+You learned how to register a service worker, set payment instruments for a
+web-based payment app. The next step is to learn how the service worker can
+orchestrate a payment transaction at runtime.
 
 * [Orchestrating payment transactions with a service
   worker](/orchestrating-payment-transactions)

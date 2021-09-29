@@ -80,7 +80,7 @@ track which highlights metric moments, such as Layout Shift (LS) shown above.</f
 
 [Field metrics](/vitals-field-measurement-best-practices/), such as those found in the [Chrome UX
 Report](https://developers.google.com/web/tools/chrome-user-experience-report) or
-[RUM](https://developer.mozilla.org/en-US/docs/Web/Performance/Rum-vs-Synthetic), do not have this
+[RUM](https://developer.mozilla.org/docs/Web/Performance/Rum-vs-Synthetic), do not have this
 limitation and are a valuable complement to lab data as they reflect the experience real users
 have. Field data can't offer the kinds of diagnostic information you get in the lab, so the two go
 hand in hand.

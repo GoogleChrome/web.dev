@@ -680,7 +680,7 @@ Here's the list of logical properties used:
 {% Aside 'gotchas' %} 
 The popup element is positioned with `left` and `top` and
 would need to be adjusted for writing modes like
-[`vertical-rl`](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode).
+[`vertical-rl`](https://developer.mozilla.org/docs/Web/CSS/writing-mode).
 {% endAside %}
 
 ## JavaScript
@@ -759,7 +759,7 @@ popupButtons.on('keyup', e => {
 
 If the popup button sees any `Escape` key presses, it removes focus from itself
 with
-[`blur()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/blur).
+[`blur()`](https://developer.mozilla.org/docs/Web/API/HTMLElement/blur).
 
 ### Split button clicks
 

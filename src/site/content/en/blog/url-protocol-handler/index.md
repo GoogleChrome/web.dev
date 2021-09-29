@@ -48,7 +48,7 @@ mechanism (e.g., its network location).
 ## Background on the `registerProtocolHandler()` method
 
 The secure-content-only `Navigator` method
-[`registerProtocolHandler()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler)
+[`registerProtocolHandler()`](https://developer.mozilla.org/docs/Web/API/Navigator/registerProtocolHandler)
 lets sites register their ability to open or handle particular URL schemes. Therefore, sites need to
 call the method like so: `navigator.registerProtocolHandler(scheme, url)`. The two parameters are
 defined as follows:

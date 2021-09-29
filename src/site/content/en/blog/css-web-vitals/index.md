@@ -239,9 +239,9 @@ After:
 
 {% Aside %}
 Another approach to loading images is to use the
-[`srcset`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset)
+[`srcset`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/srcset)
 and
-[`sizes`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes)
+[`sizes`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/sizes)
 attributes in conjunction with specifying `width` and `height` attributes. This
 has the additional performance advantage of allowing you to serve different
 sized images to different devices. For more information, see [Serve responsive
@@ -269,7 +269,7 @@ By default, Chromium-based and Firefox browsers will [block text rendering for
 up to 3 seconds](https://developers.google.com/web/updates/2016/02/font-display)
 if the associated web font has not loaded; Safari will block text rendering
 indefinitely. The [block
-period](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display#the_font_display_timeline)
+period](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display#the_font_display_timeline)
 begins when the browser requests a web font. If the font has still not loaded by
 the end of the block period, the browser will render the text using a fallback
 font and swap in the web font once available.
@@ -385,9 +385,9 @@ shifts. There are two types of animations that you should avoid using:
 [animations that trigger layout](/animations-guide/#triggers) and
 "animation-like" effects that move page elements. Typically these animations can
 be replaced with more performant equivalents by using CSS properties like
-[`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform),
-[`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity), and
-[`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter). For more
+[`transform`](https://developer.mozilla.org/docs/Web/CSS/transform),
+[`opacity`](https://developer.mozilla.org/docs/Web/CSS/opacity), and
+[`filter`](https://developer.mozilla.org/docs/Web/CSS/filter). For more
 information, see [How to create high-performance CSS
 animations](/animations/).
 
@@ -412,7 +412,7 @@ identifying non-performant animations.
 The Lighthouse "Avoid non-composited animations" audit only identifies
 non-performant _CSS animations_; JavaScript-driven animations (for example,
 using
-[`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval)
+[`setInterval()`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setInterval)
 to "animate" an element) are bad for performance but will not be flagged by this
 audit.
 

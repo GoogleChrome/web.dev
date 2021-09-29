@@ -69,7 +69,7 @@ periods](https://w3c.github.io/requestidlecallback/#idle-periods).
 You create a `PerformanceObserver` by passing it a callback to be run whenever
 new performance entries are dispatched. Then you tell the observer what types of
 entries to listen for via the
-[`observe()`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver/observe)
+[`observe()`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/observe)
 method:
 
 ```js
@@ -134,9 +134,9 @@ Prior to the Performance Observer API, developers could access performance
 entries using the following three methods defined on the
 [`performance`](https://w3c.github.io/performance-timeline/) object:
 
-- [`getEntries()`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/getEntries)
-- [`getEntriesByName()`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/getEntriesByName)
-- [`getEntriesByType()`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/getEntriesByType)
+- [`getEntries()`](https://developer.mozilla.org/docs/Web/API/Performance/getEntries)
+- [`getEntriesByName()`](https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByName)
+- [`getEntriesByType()`](https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByType)
 
 While these APIs are still supported, their usage is not recommended because
 they don't allow you to listen for when new entries are emitted. In addition,
@@ -206,7 +206,7 @@ higher-level metrics are built on top of the Long Tasks API themselves (such as
 (TBT)](/lighthouse-total-blocking-time/)).
 
 To determine when long tasks happen, you can use
-[PerformanceObserver](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+[PerformanceObserver](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
 and register to observe entries of type `longtask`:
 
 ```js

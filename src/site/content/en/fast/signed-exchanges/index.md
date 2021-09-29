@@ -61,7 +61,7 @@ faster page loads to users.
 
 An SXG is encapsulated in a [binary-encoded](https://cbor.io/) file that has two
 primary components: an HTTP exchange and a
-[signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Security).
+[signature](https://developer.mozilla.org/docs/Glossary/Signature/Security).
 The HTTP exchange consists of a request URL, content negotiation information,
 and an HTTP response.
 
@@ -142,7 +142,7 @@ SXGs are the first part of the Web Packaging spec that Chromium-based browsers w
 Initially, the primary use case of SXGs will likely be as a delivery mechanism
 for a page's main document. For this use case, a SXG could be referenced using
 the `<link>` or `<a>` tags, as well as the [`Link`
-header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link). Like
+header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Link). Like
 other resources, a SXG can be loaded by entering its URL in the browser's
 address bar.
 
@@ -164,7 +164,7 @@ substitution](https://github.com/WICG/webpackage/blob/main/explainers/signed-exc
 ### Content negotiation
 
 [Content
-negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation)
+negotiation](https://developer.mozilla.org/docs/Web/HTTP/Content_negotiation)
 is a mechanism for serving different representations of the same resource at the
 same URL depending on the capabilities and preferences of a client—for example,
 serving the gzip version of a resource to some clients but the Brotli version to
@@ -172,9 +172,9 @@ others. Content negotiation makes it possible to serve both SXG and non-SXG
 representations of the same content depending on a browser's capabilities.
 
 Web browsers use the
-[`Accept`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept)
+[`Accept`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept)
 request header to communicate the [MIME
-types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
+types](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
 they support. If a browser supports SXGs, the MIME type
 `application/signed-exchange` will automatically be included in this list of
 values.
@@ -194,7 +194,7 @@ application/signed-exchange;v=b3;q=0.9
 The `application/signed-exchange;v=b3;q=0.9` portion of this string informs the
 web server that Chrome supports SXGs—specifically, version `b3`. The last part
 `q=0.9` indicates the
-[q-value](https://developer.mozilla.org/en-US/docs/Glossary/Quality_values).
+[q-value](https://developer.mozilla.org/docs/Glossary/Quality_values).
 
 The `q-value` expresses a browser's relative preference for a particular format
 using a decimal scale from `0` to `1`, with `1` representing the highest
@@ -224,7 +224,7 @@ Accept: /(^|,)\s\*application\/signed-exchange\s\*;\s\*v=[[:alnum:]\_-]+\s\*(,|$
 Note that the subexpression `(,|$)` matches headers where the `q-value` for SXG
 has been omitted; this omission implies a `q-value` of `1` for SXG. Although an
 `Accept` header could theoretically contain the substring `q=1`, [in
-practice](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation/List_of_default_Accept_values)
+practice](https://developer.mozilla.org/docs/Web/HTTP/Content_negotiation/List_of_default_Accept_values)
 browsers don't explicitly list a format's `q-value` when it has the default
 value of `1`.
 
@@ -273,7 +273,7 @@ improvements by serving content as SXG.
 
 Google Search will now crawl, cache, and prefetch SXGs when applicable. Google
 and other search engines sometimes
-[prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
+[prefetch](https://developer.mozilla.org/docs/Web/HTTP/Link_prefetching_FAQ)
 content that the user is likely to visit—for example, the page corresponding to
 the first search result. SXGs are particularly well suited to prefetching
 because of their privacy benefits over non-SXG formats.
@@ -295,7 +295,7 @@ prefetching is an example of the concept of privacy-preserving prefetching.
 #### Crawling
 
 The
-[`Accept`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation)
+[`Accept`](https://developer.mozilla.org/docs/Web/HTTP/Content_negotiation)
 header sent by the Google Search crawler expresses an equal preference for
 `text/html` and `application/signed-exchange`. As described in the [previous
 section](#best-practices), sites that wish to use SXGs should serve them when

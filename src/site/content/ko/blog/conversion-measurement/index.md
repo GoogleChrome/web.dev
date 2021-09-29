@@ -43,7 +43,7 @@ tags:
 
 ### 왜 필요한가?
 
-현재, 광고 전환 측정을 위해 [제3자 쿠키](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies)가 사용되는 경우가 많습니다. **그러나 브라우저가 이에 대한 액세스를 제한하고 있습니다.**
+현재, 광고 전환 측정을 위해 [제3자 쿠키](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Third-party_cookies)가 사용되는 경우가 많습니다. **그러나 브라우저가 이에 대한 액세스를 제한하고 있습니다.**
 
 Chrome은 [제3자 쿠키에 대한 지원을 단계적으로 중단](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)[할 계획이며 사용자가 원하는 경우 이를 차단할 수 있는 방법을 제공합니다](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en). Safari는 [제3자 쿠키를 차단](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/)하고, Firefox는 [알려진 제3자 추적 쿠키를 차단](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default)하며, Edge는 [추적 방지 기능](https://support.microsoft.com/en-us/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention)을 제공합니다.
 

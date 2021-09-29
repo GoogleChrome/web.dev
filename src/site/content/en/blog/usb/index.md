@@ -348,7 +348,7 @@ Thanks to [Joe Medley] for reviewing this article.
 [origin trial]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
 [secure contexts]: https://w3c.github.io/webappsec/specs/powerfulfeatures/#intro
 [TLS]: https://en.wikipedia.org/wiki/Transport_Layer_Security
-[feature policy]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy
+[feature policy]: https://developer.mozilla.org/docs/Web/HTTP/Feature_Policy
 [Promises]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
 [Promises tutorial]: /promises
 [Arrow functions]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions
@@ -359,11 +359,11 @@ Thanks to [Joe Medley] for reviewing this article.
 [sketches]: http://www.arduino.cc/en/Tutorial/Sketch
 [WebUSB Arduino library]: https://github.com/webusb/arduino/tree/gh-pages/library/WebUSB
 [landing page URL]: https://wicg.github.io/webusb/#webusb-platform-capability-descriptor
-[DataView]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView
+[DataView]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView
 [WebLight project]: https://github.com/sowbug/weblight
 [udev rule]: https://www.freedesktop.org/software/systemd/man/udev.html
 [member]: https://wiki.debian.org/SystemGroups
-[Shared Worker]: https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker
+[Shared Worker]: https://developer.mozilla.org/docs/Web/API/SharedWorker
 [Service Worker]: https://jakearchibald.github.io/isserviceworkerready/resources.html
 [#webusb]: https://twitter.com/search?q=%23webusb&src=typed_query&f=live
 [Joe Medley]: https://github.com/jpmedley
