@@ -25,7 +25,7 @@ This proposal continues to change during the origin trial period. There
 may be a divergence between the browser implementation and the information in this 
 article.
 
-For the latest on this evolving proposal, please read refer to the
+For the latest on this evolving proposal, read refer to the
 [editor's draft of WebTransport](https://w3c.github.io/webtransport/).
 
 Once the proposal stabilizes, we will update this article and associated code
@@ -328,6 +328,6 @@ You can use the [web-transport-dev Google Group](https://groups.google.com/a/chr
 
 ## Acknowledgements
 
-This article incorporates information from the [WebTransport Explainer](https://github.com/wicg/web-transport/blob/master/explainer.md), [draft specification](https://wicg.github.io/web-transport/), and [related design docs](https://docs.google.com/document/d/1UgviRBnZkMUq4OKcsAJvIQFX6UCXeCbOtX_wMgwD_es/edit#). Thank you to the respective authors for providing that foundation.
+This article incorporates information from the [WebTransport Explainer](https://github.com/w3c/webtransport/blob/main/explainer.md), [draft specification](https://wicg.github.io/web-transport/), and [related design docs](https://docs.google.com/document/d/1UgviRBnZkMUq4OKcsAJvIQFX6UCXeCbOtX_wMgwD_es/edit#). Thank you to the respective authors for providing that foundation.
 
 _The hero image on this post is by [Robin Pierre](https://unsplash.com/photos/dPgPoiUIiXk) on Unsplash._
