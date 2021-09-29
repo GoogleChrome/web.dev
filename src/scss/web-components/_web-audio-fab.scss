@@ -1,16 +1,19 @@
+/// WEB AUDIO FAB
+/// Styles mainly pulled from existing styles and refactored
+/// with new system elements
 web-audio-fab {
   border-radius: 50%;
-  bottom: 12px;
   box-shadow: 0px 8px 12px 6px rgba(60, 64, 67, 0.15),
     0px 4px 4px rgba(60, 64, 67, 0.3);
   display: block;
   height: 56px;
+  width: 56px;
   opacity: 0;
   pointer-events: none;
   position: fixed;
-  right: 12px;
-  transition: opacity $TRANSITION_SPEED $TRANSITION_EASE;
-  width: 56px;
+  right: $global-gutter;
+  bottom: $global-gutter;
+  transition: opacity $global-transition-bounce;
   z-index: 1;
 
   &[showing] {
@@ -23,6 +26,9 @@ web-audio-fab {
   &__button {
     border-radius: 50%;
     cursor: pointer;
+    padding: 0;
+    margin: 0;
+    border: 0;
   }
 
   &__thumbnail {
@@ -32,7 +38,7 @@ web-audio-fab {
 
   &__equalizer-container {
     align-items: center;
-    background-color: $WHITE;
+    background-color: #fff;
     border-radius: 50%;
     bottom: 0;
     box-shadow: 0px 8px 12px 6px rgba(60, 64, 67, 0.15),
@@ -46,7 +52,7 @@ web-audio-fab {
   }
 
   &__equalizer {
-    fill: $WEB_PRIMARY_COLOR;
+    fill: get-color('core-primary');
 
     &-left {
       animation: equalizer-morph 1s linear 0.1s infinite;
