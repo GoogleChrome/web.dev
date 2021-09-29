@@ -6,3 +6,7 @@
   - url: /learn/forms/auto
   - url: /learn/forms/validation
   - url: /learn/forms/testing
+  - title: i18n.courses.general_best_practice.title
+  - url: /learn/forms/design-basics
+  - url: /learn/forms/accessibility
+  - url: /learn/forms/internationalization
