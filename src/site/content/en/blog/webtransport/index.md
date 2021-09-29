@@ -5,7 +5,7 @@ authors:
   - jeffposnick
 description: WebTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
 date: 2020-06-08
-updated: 2021-02-23
+updated: 2021-09-29
 hero: image/admin/Wh6q6ughWxUYcu4iOutU.jpg
 hero_position: center
 alt: |
@@ -291,7 +291,7 @@ The [WebTransport draft specification](https://wicg.github.io/web-transport/) in
 
 ### WebTransport in Chrome's DevTools
 
-Unfortunately, [Chrome's DevTools](https://developers.google.com/web/tools/chrome-devtools) support for WebTransport is not ready for the start of the origin trial. You can "star" [this Chrome issue](https://bugs.chromium.org/p/chromium/issues/detail?id=1069742) to be notified about updates on the DevTools interface.
+Unfortunately, [Chrome's DevTools](https://developers.google.com/web/tools/chrome-devtools) support for WebTransport is not ready for the start of the origin trial. You can "star" [this Chrome issue](https://bugs.chromium.org/p/chromium/issues/detail?id=1152290) to be notified about updates on the DevTools interface.
 
 ## Privacy and security considerations
 
