@@ -638,6 +638,7 @@ web-copy-code {
 @import 'blocks/pagination';
 @import 'blocks/preview-pagination';
 @import 'blocks/prose';
+@import 'blocks/site-footer';
 @import 'blocks/skip-link';
 @import 'blocks/stack-nav';
 @import 'blocks/stats';
@@ -667,6 +668,9 @@ web-copy-code {
 
 // The prototype file is for temporary prototyping
 @import 'prototype';
+
+// Temporary rollout patches
+@import 'rollout';
 
 // Render gorko utilities
 @include generate-utility-classes();
