@@ -24,3 +24,6 @@ improve_article:
   pt-BR: Melhorar o artigo
   ru: Улучшить статью
   zh-CN: 完善文章
+
+available_in:
+  en: Available in  # Refers to language, e.g. in "available in English"
