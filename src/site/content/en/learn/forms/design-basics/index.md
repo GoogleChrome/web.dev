@@ -166,7 +166,7 @@ for example, a mouse, using the  `pointer` CSS media feature.
 ```
 
 Learn more about the
-[`pointer` CSS media feature](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer).
+[`pointer` CSS media feature](https://developer.mozilla.org/docs/Web/CSS/@media/pointer).
 
 ### Show errors where they happen
 
