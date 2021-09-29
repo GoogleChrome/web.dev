@@ -125,7 +125,7 @@ module.exports = function (config) {
     wrapper: 'div',
     wrapperClass: 'w-toc__list',
     ul: true,
-    flat: true,
+    flat: false,
   });
 
   // ----------------------------------------------------------------------------
