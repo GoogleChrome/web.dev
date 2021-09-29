@@ -31,7 +31,7 @@
       "pathItems": [
       {
         "title": "Set up a biometric re-authentication functionality with WebAuthn",
-        "url": "https://developers.google.com/codelabs/webauthn-reauth/#0"
+        "url": "https://codelabs.developers.google.com/codelabs/webauthn-reauth/"
       }
       ]
     },
