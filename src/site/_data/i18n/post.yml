@@ -25,5 +25,5 @@ improve_article:
   ru: Улучшить статью
   zh-CN: 完善文章
 
-translated_to:
-  en: Translated to
+available_in:
+  en: Available in  # Refers to language, e.g. in "available in English"

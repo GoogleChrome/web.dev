@@ -13,7 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const {getTranslatedUrls} = require('../../_filters/urls');
+const path = require('path');
+const {getTranslatedUrls, getDefaultUrl} = require('../../_filters/urls');
 const {i18n} = require('../../_filters/i18n');
 const {languageNames} = require('../../../../shared/locale');
 
@@ -28,9 +29,19 @@ module.exports = (url, lang) => {
         href="${href}">
       ${languageNames[langhref[0]]}</a>`;
     });
-  const translatedTo = i18n('i18n.post.translated_to', lang);
+
+  if (langhrefs.length) {
+    const enHref = path.join('/', 'i18n', 'en', getDefaultUrl(url));
+    langhrefs.push(`<a class="w-post-signpost__link"
+        translate="no"
+        lang="en"
+        href="${enHref}">
+      ${languageNames['en']}</a>`);
+  }
+
+  const availableIn = i18n('i18n.post.available_in', lang);
   return langhrefs.length
-    ? `<span class="w-post-signpost__title">${translatedTo}:
+    ? `<span class="w-post-signpost__title">${availableIn}:
     ${langhrefs.join(', ')}</span>`
     : '';
 };
