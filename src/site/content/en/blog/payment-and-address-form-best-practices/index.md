@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-12-09
-updated: 2021-09-30
+updated: 2021-09-29
 description: Maximize conversions by helping your users complete address and payment forms as quickly and easily as possible.
 hero: image/admin/dbYeeV2PCRZNY6RRvQd2.jpg
 thumbnail: image/admin/jy8z8lRuLmmnyytD5xwl.jpg
