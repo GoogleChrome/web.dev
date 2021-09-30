@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Sign-up form best practices
 subhead: Help your users sign up, log in and manage their account details with a minimum of fuss.
 authors:
@@ -11,7 +12,6 @@ hero: image/admin/YfAltWqxvie1SP19BxBj.jpg
 thumbnail: image/admin/7bDPvFWBMFIMynoqDpMc.jpg
 alt: Clipboard with handwritten page showing list of vegetables sown.
 tags:
-  - blog
   - forms
   - identity
   - layout

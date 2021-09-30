@@ -1,4 +1,5 @@
 ---
+layout: post
 title: SMS OTP form best practices
 subhead: Learn how to optimize your SMS OTP form and improve user experience.
 authors:
@@ -14,7 +15,6 @@ description: |
   best practices to build an SMS OTP form with great user experience.
 
 tags:
-  - blog # blog is a required tag for the article to show up in the blog.
   - identity
   - security
   - forms

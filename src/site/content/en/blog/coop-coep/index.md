@@ -17,7 +17,7 @@ authors:
 hero: image/admin/Rv8gOTwZwxr2Z7b13Ize.jpg
 alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2021-08-05
+updated: 2021-09-28
 tags:
   - blog
   - security
@@ -245,7 +245,9 @@ Here is what you need to do depending on the nature of the resource:
 {% Aside 'gotchas' %}
 You can enable cross-origin isolation on a document embedded within an iframe by
 applying `allow="cross-origin-isolated"` feature policy to the `<iframe>` tag
-and meeting the same conditions described in this document.
+and meeting the same conditions described in this document. Note that entire
+chain of the documents including parent frames and child frames must be
+cross-origin isolated as well.
 {% endAside %}
 
 {% Aside 'key-term' %}

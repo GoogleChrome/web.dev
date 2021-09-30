@@ -30,7 +30,9 @@ async function BrowserCompat(feature) {
 
   if (data[feature] && data[feature].support) {
     compatIcons = browsers.map((browser) => {
-      const support = data[feature].support[browser];
+      const support = Array.isArray(data[feature].support[browser])
+        ? data[feature].support[browser][0]
+        : data[feature].support[browser];
       const isSupported = support.version_added && !support.version_removed;
       const version = isSupported ? support.version_added : '\u00D7'; // small x
       const ariaSupported = isSupported

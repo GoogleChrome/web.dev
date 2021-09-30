@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Help users change passwords easily by adding a well-known URL for changing passwords
 subhead: Redirect a request to `/.well-known/change-password` to the change-passwords URL
 authors:
@@ -10,7 +11,6 @@ alt: Neon lights shaped into various symbols that are commonly used in passwords
 description: |
   By redirecting requests to /.well-known/change-password to the change password URL, you can let users update their passwords easier than before.
 tags:
-  - blog # blog is a required tag for the article to show up in the blog.
   - identity
   - security
 feedback:

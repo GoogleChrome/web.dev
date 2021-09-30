@@ -1,0 +1,42 @@
+setLeader: Test your knowledge of designing forms
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: How do you describe a form control?
+    options:
+      - content: "Using the `<description>` element."
+        rationale: "Try again!"
+      - content: "Using the `<label>` element."
+        rationale: "🎉"
+      - content: "Using the `description` attribute."
+        rationale: "Try again!"
+      - content: "Using the `placeholder` attribute."
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: What's the recommended tap target size?
+    options:
+      - content: "16px"
+        rationale: "Try again!"
+      - content: "48px"
+        rationale: "🎉"
+      - content: "31,5px"
+        rationale: "Try again!"
+      - content: "Big enough to tap it with a potato."
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: Where should you place error messages?
+    options:
+      - content: "Next to the form control"
+        rationale: "🎉"
+      - content: "At the top of the `<form>`."
+        rationale: "Try again!"
+      - content: "Never show error messages."
+        rationale: "Try again!"
+      - content: "Wherever you want."
+        rationale: "Try again!"
