@@ -56,7 +56,7 @@
       ]
     },
     {
-      "title": "i18n.paths.secure.topics.monitor_security_violations",
+      "title": "i18n.paths.secure.topics.monitor_security_violations_deprecations",
       "pathItems": ["reporting-api", "reporting-api-migration"]
     }
   ]

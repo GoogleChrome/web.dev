@@ -93,7 +93,7 @@ the API. Check the [migration guide](/reporting-api-migration/#network-error-log
       </tr>
       <tr>
         <td>Deprecation warning</td>
-        <td>The page is using an API that is deprecated, directly or via a top-level third-party script.
+        <td>The page is using an API that is deprecated or will be deprecated, directly or via a top-level third-party script.
         </td>
       </tr>
       <tr>
