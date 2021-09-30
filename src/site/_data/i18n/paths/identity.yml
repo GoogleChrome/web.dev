@@ -1,72 +1,24 @@
 title:
   en: Identity
-  es: Identity
-  ja: Identity
-  ko: Identity
-  pt: Identity
-  ru: Identity
-  zh: Identity
 
 description:
   en: Understand and build advanced authentication systems.
-  es: Understand and build advanced authentication systems.
-  ja: Understand and build advanced authentication systems.
-  ko: Understand and build advanced authentication systems.
-  pt: Understand and build advanced authentication systems.
-  ru: Understand and build advanced authentication systems.
-  zh: Understand and build advanced authentication systems.
 
 overview:
   en: A curated collection of high-quality resources that will help you understand authentication basics and how to build your own authentication systems with modern APIs.
-  es: A curated collection of high-quality resources that will help you understand authentication basics and how to build your own authentication systems with modern APIs.
-  ja: A curated collection of high-quality resources that will help you understand authentication basics and how to build your own authentication systems with modern APIs.
-  ko: A curated collection of high-quality resources that will help you understand authentication basics and how to build your own authentication systems with modern APIs.
-  pt: A curated collection of high-quality resources that will help you understand authentication basics and how to build your own authentication systems with modern APIs.
-  ru: A curated collection of high-quality resources that will help you understand authentication basics and how to build your own authentication systems with modern APIs.
-  zh: A curated collection of high-quality resources that will help you understand authentication basics and how to build your own authentication systems with modern APIs.
-
+  
 topics:
   understand_authentication_basics:
     en: Understand authentication basics
-    es: CUnderstand authentication basics
-    ja: Understand authentication basics
-    ko: Understand authentication basics
-    pt: Understand authentication basics
-    ru: Understand authentication basics
-    zh: Understand authentication basics
-
+ 
   build_authentication_systems_with_modern_APIs:
     en: Build authentication systems with modern APIs
-    es: Build authentication systems with modern APIs
-    ja: Build authentication systems with modern APIs
-    ko: Build authentication systems with modern APIs
-    pt: Build authentication systems with modern APIs
-    ru: Build authentication systems with modern APIs
-    zh: Build authentication systems with modern APIs
 
   strenghten_security_with_two-factor_authentication:
     en: Strengthen security with two-factor authentication
-    es: Strengthen security with two-factor authentication
-    ja: Strengthen security with two-factor authentication
-    ko: Strengthen security with two-factor authentication
-    pt: Strengthen security with two-factor authentication
-    ru: Strengthen security with two-factor authentication
-    zh: Strengthen security with two-factor authentication
 
   build_advanced_authentication_systems:
     en: Build advanced authentication systems
-    es: Build advanced authentication systems
-    ja: Build advanced authentication systems
-    ko: Build advanced authentication systems
-    pt: Build advanced authentication systems
-    ru: Build advanced authentication systems
-    zh: Build advanced authentication systems
-
+    
   build_authentication_with_identity_federation:
     en: Build authentication with identity federation
-    es: Build authentication with identity federation
-    ja: Build authentication with identity federation
-    ko: Build authentication with identity federation
-    pt: Build authentication with identity federation
-    ru: Build authentication with identity federation
-    zh: Build authentication with identity federation
