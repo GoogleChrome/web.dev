@@ -10,3 +10,7 @@
   - url: /learn/forms/design-basics
   - url: /learn/forms/accessibility
   - url: /learn/forms/internationalization
+  - url: /learn/forms/security-privacy
+  - url: /learn/forms/autofill
+  - title: i18n.courses.testing_monitoring.title
+  - url: /learn/forms/cross-platform-testing
