@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Verify phone numbers on the web with the WebOTP API
 subhead: Help users with OTPs received through SMS
 authors:
@@ -13,7 +14,6 @@ description: |
   WebOTP API simplifies the OTP workflow for users.
 
 tags:
-  - blog # blog is a required tag for the article to show up in the blog.
   - identity
   - capabilities
   - otp
