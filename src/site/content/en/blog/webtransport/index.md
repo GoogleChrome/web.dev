@@ -5,7 +5,7 @@ authors:
   - jeffposnick
 description: WebTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
 date: 2020-06-08
-updated: 2021-02-23
+updated: 2021-09-29
 hero: image/admin/Wh6q6ughWxUYcu4iOutU.jpg
 hero_position: center
 alt: |
@@ -25,7 +25,7 @@ This proposal continues to change during the origin trial period. There
 may be a divergence between the browser implementation and the information in this 
 article.
 
-For the latest on this evolving proposal, please read refer to the
+For the latest on this evolving proposal, read the
 [editor's draft of WebTransport](https://w3c.github.io/webtransport/).
 
 Once the proposal stabilizes, we will update this article and associated code
@@ -291,7 +291,7 @@ The [WebTransport draft specification](https://wicg.github.io/web-transport/) in
 
 ### WebTransport in Chrome's DevTools
 
-Unfortunately, [Chrome's DevTools](https://developers.google.com/web/tools/chrome-devtools) support for WebTransport is not ready for the start of the origin trial. You can "star" [this Chrome issue](https://bugs.chromium.org/p/chromium/issues/detail?id=1069742) to be notified about updates on the DevTools interface.
+Unfortunately, [Chrome's DevTools](https://developers.google.com/web/tools/chrome-devtools) support for WebTransport is not ready for the start of the origin trial. You can "star" [this Chrome issue](https://bugs.chromium.org/p/chromium/issues/detail?id=1152290) to be notified about updates on the DevTools interface.
 
 ## Privacy and security considerations
 
@@ -328,6 +328,6 @@ You can use the [web-transport-dev Google Group](https://groups.google.com/a/chr
 
 ## Acknowledgements
 
-This article incorporates information from the [WebTransport Explainer](https://github.com/wicg/web-transport/blob/master/explainer.md), [draft specification](https://wicg.github.io/web-transport/), and [related design docs](https://docs.google.com/document/d/1UgviRBnZkMUq4OKcsAJvIQFX6UCXeCbOtX_wMgwD_es/edit#). Thank you to the respective authors for providing that foundation.
+This article incorporates information from the [WebTransport Explainer](https://github.com/w3c/webtransport/blob/main/explainer.md), [draft specification](https://wicg.github.io/web-transport/), and [related design docs](https://docs.google.com/document/d/1UgviRBnZkMUq4OKcsAJvIQFX6UCXeCbOtX_wMgwD_es/edit#). Thank you to the respective authors for providing that foundation.
 
 _The hero image on this post is by [Robin Pierre](https://unsplash.com/photos/dPgPoiUIiXk) on Unsplash._
