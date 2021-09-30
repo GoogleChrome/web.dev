@@ -18,6 +18,15 @@ import {html} from 'lit-element';
 import {BaseStateElement} from '../BaseStateElement';
 import {openToC, closeToC} from '../../actions';
 
+// @ts-ignore converted at build time
+import * as i18n from '../../../site/_data/i18n/toc.yml';
+
+// TODO: move this helper out to a common file (handles lang, which isn't actually dynamic)
+const i18nHelper = (key) => {
+  const lang = document.documentElement.getAttribute('lang');
+  return i18n[key][lang] ?? i18n[key]['en'] ?? '?';
+};
+
 /**
  * Element that renders table of contents.
  * @extends {BaseStateElement}
@@ -72,7 +81,7 @@ class TableOfContents extends BaseStateElement {
         <button
           class="w-button w-button--secondary w-button--icon"
           data-icon="close"
-          aria-label="Close Table of Contents"
+          aria-label="${i18nHelper('close-toc')}"
           @click="${closeToC}"
         ></button>
       </div>
@@ -85,7 +94,6 @@ class TableOfContents extends BaseStateElement {
   disconnectedCallback() {
     super.disconnectedCallback();
     closeToC();
-    this.observer.disconnect();
   }
 
   onStateChanged({isTocOpened}) {

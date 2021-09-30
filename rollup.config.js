@@ -21,6 +21,9 @@ const istanbul = require('rollup-plugin-istanbul');
 // A Rollup plugin which loads virtual modules from memory.
 const virtual = require('@rollup/plugin-virtual');
 
+// A Rollup plugin which loads converts YAML to ES modules. Use to import i18n strings.
+const yaml = require('@rollup/plugin-yaml');
+
 /**
  * Virtual imports made available to all bundles. Used for site config and globals.
  */
@@ -54,6 +57,8 @@ const plugins = [
   nodeResolve(),
   // @ts-ignore
   commonjs(),
+  // @ts-ignore
+  yaml(),
 ];
 const devConfig = {
   input: ['./src/lib/app.js', ...pages],
