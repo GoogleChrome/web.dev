@@ -388,8 +388,8 @@ need to lowercase the hint and remove the `sec-` prefix. For example:
 
 ```text
 Accept-CH: Sec-CH-UA-Platform-Version, DPR
-Permissions-Policy: ch-ua-platform-version downloads.example.com;
-                    ch-dpr cdn.provider img.example.com
+Permissions-Policy: ch-ua-platform-version=(self "downloads.example.com"),
+                    ch-dpr=(self "cdn.provider" "img.example.com");
 ```
 
 ⬆️ _Request to `downloads.example.com`_
