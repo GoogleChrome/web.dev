@@ -77,23 +77,23 @@ the API. Check the [migration guide](/reporting-api-migration/#network-error-log
     <tbody>
       <tr>
         <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">CSP</a> violation (Level 3 only)</td>
-        <td>You've set a <code>Content-Security-Policy</code> on your site, but one of your pages is trying to load a script that's not allowed by your CSP.</td>
+        <td>You've set a <code>Content-Security-Policy</code> on one of your pages, but the page is trying to load a script that's not allowed by your CSP.</td>
       </tr>
       <tr>
         <td><a href="/why-coop-coep/#coop">COOP</a> violation</td>
-        <td>You've set a <code>Cross-Origin-Opener-Policy</code> on your site, but a cross-origin window is trying to interact directly with your document.</td>
+        <td>You've set a <code>Cross-Origin-Opener-Policy</code> on a page, but a cross-origin window is trying to interact directly with the document.</td>
       </tr>
       <tr>
         <td><a href="/why-coop-coep/#coep">COEP</a> violation</td>
-        <td>You've set a <code>Cross-Origin-Embedder-Policy</code> on your site, but a page on your site includes a cross-origin iframe that has not opted into being loaded by cross-origin documents.</td>
+        <td>You've set a <code>Cross-Origin-Embedder-Policy</code> on a page, but the document includes a cross-origin iframe that has not opted into being loaded by cross-origin documents.</td>
       </tr>
       <tr>
         <td>Document Policy violation</td>
-        <td>Your site has a document policy that prevents usage of <code>document.write</code>, but a script on your page tries to use <code>document.write</code>.</td>
+        <td>The page has a document policy that prevents usage of <code>document.write</code>, but a script tries to use <code>document.write</code>.</td>
       </tr>
       <tr>
         <td>Deprecation warning</td>
-        <td>Your site is using an API that is deprecated, directly or via a top-level third-party script.
+        <td>The page is using an API that is deprecated, directly or via a top-level third-party script.
         </td>
       </tr>
       <tr>
