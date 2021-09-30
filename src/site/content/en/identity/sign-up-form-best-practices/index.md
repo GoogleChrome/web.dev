@@ -12,7 +12,6 @@ hero: image/admin/YfAltWqxvie1SP19BxBj.jpg
 thumbnail: image/admin/7bDPvFWBMFIMynoqDpMc.jpg
 alt: Clipboard with handwritten page showing list of vegetables sown.
 tags:
-  - blog
   - forms
   - identity
   - layout

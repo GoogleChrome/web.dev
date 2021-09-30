@@ -11,7 +11,6 @@ description: Use cross-platform browser features to build sign-in forms that are
 hero: image/admin/pErOjllBUXhnj68qOhfr.jpg
 alt: A person holding a phone.
 tags:
-  - blog
   - forms
   - identity
   - layout

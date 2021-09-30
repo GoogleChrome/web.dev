@@ -11,7 +11,6 @@ alt: Neon lights shaped into various symbols that are commonly used in passwords
 description: |
   By redirecting requests to /.well-known/change-password to the change password URL, you can let users update their passwords easier than before.
 tags:
-  - blog # blog is a required tag for the article to show up in the blog.
   - identity
   - security
 feedback:
