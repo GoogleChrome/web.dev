@@ -68,10 +68,10 @@ downloaded too:
 ## How automatic prefetching works
 
 Next.js prefetches only links that appear in the viewport and uses the [Intersection
-Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API)
 to detect them. It also disables prefetching when the network connection is slow
 or when users have
-[`Save-Data`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data)
+[`Save-Data`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Save-Data)
 turned on. Based on these checks, Next.js dynamically injects [`<link
 rel="preload">`](/preload-critical-assets/) tags to download components for
 subsequent navigations.

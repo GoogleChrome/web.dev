@@ -22,14 +22,14 @@ these recommendations.
 
 All of the CSS properties that this guide recommends have good cross-browser support.
 
-* [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#Browser_compatibility)
-* [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity#Browser_compatibility)
-* [`will-change`](https://developer.mozilla.org/en-US/docs/Web/CSS/will-change#Browser_compatibility)
+* [`transform`](https://developer.mozilla.org/docs/Web/CSS/transform#Browser_compatibility)
+* [`opacity`](https://developer.mozilla.org/docs/Web/CSS/opacity#Browser_compatibility)
+* [`will-change`](https://developer.mozilla.org/docs/Web/CSS/will-change#Browser_compatibility)
 
 ## Move an element {: #move }
 
 To move an element, use the `translate` or `rotation` keyword values of the
-[`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) property.
+[`transform`](https://developer.mozilla.org/docs/Web/CSS/transform) property.
 
 For example to slide an item into view, use `translate`.
 
@@ -72,7 +72,7 @@ Items can also be rotated, in the example below 360 degrees.
 ## Resize an element {: #resize }
 
 To resize an element, use the `scale` keyword value of the
-[`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) property.
+[`transform`](https://developer.mozilla.org/docs/Web/CSS/transform) property.
 
 ```css
 .animate {
@@ -93,7 +93,7 @@ To resize an element, use the `scale` keyword value of the
 
 ## Change an element's visibility {: #visibility }
 
-To show or hide an element, use [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity).
+To show or hide an element, use [`opacity`](https://developer.mozilla.org/docs/Web/CSS/opacity).
 
 ```css
 .animate {
@@ -143,7 +143,7 @@ by placing elements on a new layer they can be repainted without also requiring 
 
 Browsers will often make good decisions about which items should be placed on a new layer,
 but you can manually force layer creation with the
-[`will-change`](https://developer.mozilla.org/en-US/docs/Web/CSS/will-change) property.
+[`will-change`](https://developer.mozilla.org/docs/Web/CSS/will-change) property.
 As the name suggests, this property tells the browser that this element is going to be changed in some way.
 
 {% Aside 'caution' %}
@@ -258,15 +258,15 @@ animation is causing the browser to do layout work.
 
 #### Firefox DevTools {: #layout-firefox }
 
-In Firefox DevTools the [Waterfall](https://developer.mozilla.org/en-US/docs/Tools/Performance/Waterfall)
+In Firefox DevTools the [Waterfall](https://developer.mozilla.org/docs/Tools/Performance/Waterfall)
 can help you to understand where the browser is spending time.
 
 1. Open the **Performance** panel.
 1. In the panel Start Recording Performance while your animation is happening.
 1. Stop the recording and inspect the **Waterfall** tab.
 
-If you see entries for [**Recalculate Style**](https://developer.mozilla.org/en-US/docs/Tools/Performance/Scenarios/Animating_CSS_properties)
-then the browser is having to begin at the start of the [rendering waterfall](https://developer.mozilla.org/en-US/docs/Tools/Performance/Scenarios/Animating_CSS_properties).
+If you see entries for [**Recalculate Style**](https://developer.mozilla.org/docs/Tools/Performance/Scenarios/Animating_CSS_properties)
+then the browser is having to begin at the start of the [rendering waterfall](https://developer.mozilla.org/docs/Tools/Performance/Scenarios/Animating_CSS_properties).
 
 <figure>
   <img class="w-screenshot w-screenshot--filled"
@@ -346,7 +346,7 @@ in Chrome DevTools can help.
 
 #### Firefox DevTools {: #paint-firefox }
 
-1. Open **Settings** and add a Toolbox button for [Toggle paint flashing](https://developer.mozilla.org/en-US/docs/Tools/Paint_Flashing_Tool).
+1. Open **Settings** and add a Toolbox button for [Toggle paint flashing](https://developer.mozilla.org/docs/Tools/Paint_Flashing_Tool).
 1. On the page you want to inspect, toggle the button on and move your mouse or scroll to see highlighted areas.
 
 

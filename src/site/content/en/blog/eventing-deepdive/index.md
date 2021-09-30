@@ -55,7 +55,7 @@ Note that the `options` object is optional, as is its `capture` property. If eit
 default value for `capture` is `false`, meaning event bubbling will be used.
 
 {% Aside %} For more details about `addEventListener`, including its legacy syntax, see
-[`EventTarget.addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener).
+[`EventTarget.addEventListener`](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener).
 {% endAside %}
 
 ### Event capturing

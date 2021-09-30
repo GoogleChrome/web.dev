@@ -417,7 +417,7 @@ get('story.json').then(function(response) {
 
 The response is JSON, but we're currently receiving it as plain text. We
 could alter our get function to use the JSON
-[`responseType`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#responseType),
+[`responseType`](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest#responseType),
 but we could also solve it in promises land:
 
 ```js
@@ -760,7 +760,7 @@ There's also `Promise.reject(val)`, which creates a promise that rejects with
 the value you give it (or undefined).
 
 We can tidy up the above code using
-[`array.reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce):
+[`array.reduce`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce):
 
 ```js
 // Loop through our chapter urls
@@ -956,9 +956,9 @@ written as if it were synchronous, but without blocking the main thread. You can
 read more about that in [my async functions article](/async-functions). There's
 widespread support for both Promises and async functions in the major browsers.
 You can find the details in MDN's
-[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 and [async
-function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function)
 reference.
 
 Many thanks to Anne van Kesteren, Domenic Denicola, Tom Ashworth, Remy Sharp,

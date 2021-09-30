@@ -17,9 +17,9 @@ feedback:
 
 With responsive design evolving and becoming increasingly nuanced, CSS itself is
 constantly evolving and providing authors increased control. The
-[`min()`](https://developer.mozilla.org/en-US/docs/Web/CSS/min),
-[`max()`](https://developer.mozilla.org/en-US/docs/Web/CSS/max), and
-[`clamp()`](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp) functions,
+[`min()`](https://developer.mozilla.org/docs/Web/CSS/min),
+[`max()`](https://developer.mozilla.org/docs/Web/CSS/max), and
+[`clamp()`](https://developer.mozilla.org/docs/Web/CSS/clamp) functions,
 now supported in all modern browsers, are among the latest tools in making
 authoring websites and apps more dynamic and responsive.
 
@@ -116,7 +116,7 @@ satisfactory length of line for a single-column page set in a serifed text face
 in a text size."
 
 To ensure that your text blocks are not narrower than 45 characters or wider
-than 75 characters, use `clamp()` and the `ch` (0-width [character advance](https://developer.mozilla.org/en-US/docs/Web/CSS/length))
+than 75 characters, use `clamp()` and the `ch` (0-width [character advance](https://developer.mozilla.org/docs/Web/CSS/length))
 unit:
 
 ```css
@@ -240,7 +240,7 @@ supported, and could be just what you're looking for to help you build
 responsive UIs. For more resources, check out:
 
 - [CSS Values and Units on
-  MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
+  MDN](https://developer.mozilla.org/docs/Learn/CSS/Building_blocks/Values_and_units)
 - [CSS Values and Units Level 4 Spec](https://www.w3.org/TR/css-values-4/)
 - [CSS Tricks on Article on Inner-Element Width](https://css-tricks.com/using-max-for-an-inner-element-max-width/)
 - [min(), max(), clamp() Overview by Ahmad Shadeed](https://ishadeed.com/article/css-min-max-clamp/)

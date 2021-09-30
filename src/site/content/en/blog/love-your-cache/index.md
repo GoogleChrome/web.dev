@@ -117,7 +117,7 @@ Instead of `max-age=0,must-revalidate`, you could also specify `no-cache`: this
 is equivalent. However, `no-cache` is a confusing name, because it could be
 interpreted as "never cache this file"—even though that's not the case. For some
 heavy reading, see
-[Cache-Control on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Directives).
+[Cache-Control on MDN](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control#Directives).
 {% endAside %}
 
 This validation process is relatively cheap in terms of bytes transferred—if a

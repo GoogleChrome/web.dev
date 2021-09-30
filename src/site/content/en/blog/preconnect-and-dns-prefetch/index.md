@@ -22,7 +22,7 @@ Before the browser can request a resource from a server, it must establish a con
 
 * Encrypt the connection for security.
 
-In each of these steps the browser sends a piece of data to a server, and the server sends back a response. That journey, from origin to destination and back, is called a [round trip](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT)).
+In each of these steps the browser sends a piece of data to a server, and the server sends back a response. That journey, from origin to destination and back, is called a [round trip](https://developer.mozilla.org/docs/Glossary/Round_Trip_Time_(RTT)).
 
 Depending on network conditions, a single round trip might take a significant amount of time. The connection setup process might involve up to three round trips—and more in unoptimized cases.
 
@@ -92,7 +92,7 @@ Preconnecting is only effective for domains other than the origin domain, so you
 Only preconnect to critical domains you will use soon because the browser closes any connection that isn't used within 10 seconds. Unnecessary preconnecting can delay other important resources, so limit the number of preconnected domains and [test the impact preconnecting makes](https://andydavies.me/blog/2019/08/07/experimenting-with-link-rel-equals-preconnect-using-custom-script-injection-in-webpagetest/).
 {% endAside %}
 
-You can also initiate a preconnect via the [`Link` HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link):
+You can also initiate a preconnect via the [`Link` HTTP header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Link):
 
 `Link: <https://example.com/>; rel=preconnect`
 

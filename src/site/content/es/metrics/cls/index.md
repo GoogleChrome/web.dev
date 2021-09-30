@@ -72,7 +72,7 @@ Para proporcionar una buena experiencia de usuario, los sitios deben esforzarse 
 
 ## Cambios de diseño en detalle
 
-Los cambios de diseño se definen mediante la [API de inestabilidad de diseño](https://github.com/WICG/layout-instability), que informa las entradas de `layout-shift` cada vez que un elemento visible dentro de la ventana gráfica cambia su posición de inicio (por ejemplo, la parte superior y la posición izquierda en el [modo de escritura](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) predeterminado) entre dos fotogramas. Estos elementos se consideran *elementos inestables*.
+Los cambios de diseño se definen mediante la [API de inestabilidad de diseño](https://github.com/WICG/layout-instability), que informa las entradas de `layout-shift` cada vez que un elemento visible dentro de la ventana gráfica cambia su posición de inicio (por ejemplo, la parte superior y la posición izquierda en el [modo de escritura](https://developer.mozilla.org/docs/Web/CSS/writing-mode) predeterminado) entre dos fotogramas. Estos elementos se consideran *elementos inestables*.
 
 Tenga en cuenta que los cambios de diseño solo ocurren cuando los elementos actuales cambian su posición inicial. Si se agrega un nuevo elemento al DOM o un elemento existente cambia de tamaño, no cuenta como un cambio de diseño, siempre que el cambio no haga que otros elementos visibles cambien su posición inicial.
 
@@ -154,7 +154,7 @@ Los cambios de diseño que ocurren después de 500 milisegundos desde que inici�
 
 Las animaciones y las transiciones, cuando se hacen bien, son una excelente manera de actualizar el contenido de la página sin sorprender al usuario. El contenido que cambia abrupta e inesperadamente en la página casi siempre crea una mala experiencia de usuario. Pero el contenido que se mueve de forma gradual y natural de una posición a la siguiente con frecuencia puede ayudar al usuario a comprender mejor lo que está sucediendo y guiarlo entre los cambios de estado.
 
-CSS [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) le permite animar elementos sin activar cambios de diseño:
+CSS [`transform`](https://developer.mozilla.org/docs/Web/CSS/transform) le permite animar elementos sin activar cambios de diseño:
 
 - En vez de cambiar las propiedades de `height` y `width` utilice `transform: scale()`.
 - Para desplazar elementos, evite cambiar las `top`, `right`, `bottom` o `left` y en vez de eso utilice `transform: translate()`.
@@ -180,7 +180,7 @@ CLS se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 
 ### Medir CLS en JavaScript
 
-Para medir CLS en JavaScript, puede utilizar la [API de inestabilidad de diseño](https://github.com/WICG/layout-instability) . El siguiente ejemplo muestra cómo crear un [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) que atiende las entradas inesperadas de `layout-shift`, las agrupa en sesiones y registra el valor máximo de la sesión cada vez que cambia.
+Para medir CLS en JavaScript, puede utilizar la [API de inestabilidad de diseño](https://github.com/WICG/layout-instability) . El siguiente ejemplo muestra cómo crear un [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que atiende las entradas inesperadas de `layout-shift`, las agrupa en sesiones y registra el valor máximo de la sesión cada vez que cambia.
 
 ```js
 let clsValue = 0;

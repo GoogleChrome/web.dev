@@ -98,8 +98,8 @@ This approach is not optimal, but it is a start and a good compromise.
 
 To optimize further,
 Netzwelt used
-[Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) and the
-[Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API)
+[Intersection Observer](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API) and the
+[Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API)
 to control ad placements and reduce layout shifts.
 Different ad positions and lazy loading strategies are used depending on
 scroll position and network connection quality,

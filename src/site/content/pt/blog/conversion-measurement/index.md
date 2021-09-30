@@ -43,7 +43,7 @@ Para medir a eficácia das campanhas publicitárias, os anunciantes e editores p
 
 ### Por que ela é necessária?
 
-Hoje, a medição de conversão de anúncios geralmente depende [de cookies de terceiros](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies). **Mas os navegadores estão restringindo o acesso a eles.**
+Hoje, a medição de conversão de anúncios geralmente depende [de cookies de terceiros](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Third-party_cookies). **Mas os navegadores estão restringindo o acesso a eles.**
 
 O Chrome planeja [descontinuar o suporte para cookies de terceiros](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html) e [oferece maneiras para que os usuários os bloqueiem, se desejarem](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en). O Safari [bloqueia cookies de terceiros](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/), o Firefox [bloqueia cookies de rastreamento de terceiros conhecidos](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default) e o Edge [oferece prevenção de rastreamento](https://support.microsoft.com/en-us/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention).
 

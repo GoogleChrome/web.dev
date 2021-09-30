@@ -147,7 +147,7 @@ At a minimum, one of these headers typically needs to be set in order for a reso
 *   `Cache-Control: s-maxage=`
 *   `Expires`
 
-In addition, although it does not impact if or how a resource is cached by a CDN, it is good practice to also set the [`Cache-Control: immutable`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Revalidation_and_reloading) directive.`Cache-Control: immutable` indicates that a resource "will not be updated during its freshness lifetime". As a result, the browser will not revalidate the resource when serving it from the browser cache, thereby eliminating an unnecessary server request. Unfortunately, this directive is only [supported](https://caniuse.com/#feat=mdn-http_headers_cache-control_immutable) by Firefox and Safari - it is not supported by Chromium-based browsers. This [issue](https://bugs.chromium.org/p/chromium/issues/detail?id=611416) tracks Chromium support for `Cache-Control: immutable`. Starring this issue can help encourage support for this feature.
+In addition, although it does not impact if or how a resource is cached by a CDN, it is good practice to also set the [`Cache-Control: immutable`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control#Revalidation_and_reloading) directive.`Cache-Control: immutable` indicates that a resource "will not be updated during its freshness lifetime". As a result, the browser will not revalidate the resource when serving it from the browser cache, thereby eliminating an unnecessary server request. Unfortunately, this directive is only [supported](https://caniuse.com/#feat=mdn-http_headers_cache-control_immutable) by Firefox and Safari - it is not supported by Chromium-based browsers. This [issue](https://bugs.chromium.org/p/chromium/issues/detail?id=611416) tracks Chromium support for `Cache-Control: immutable`. Starring this issue can help encourage support for this feature.
 
 For a more detailed explanation of HTTP caching, refer to [Prevent unnecessary network requests with the HTTP Cache](/http-cache/).
 
@@ -173,14 +173,14 @@ By default, CDNs take query params into consideration when caching a resource. H
 
 #### Vary
 
-The [Vary](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) response header informs caches that the server response corresponding to a particular URL can vary depending on the headers set on the request (for example, the [Accept-Language](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language) or [Accept-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding) request headers). As a result, it instructs a CDN to cache these responses separately. The Vary header is not widely supported by CDNs and may result in an otherwise cacheable resource not being served from a cache.
+The [Vary](https://developer.mozilla.org/docs/Web/HTTP/Headers/Vary) response header informs caches that the server response corresponding to a particular URL can vary depending on the headers set on the request (for example, the [Accept-Language](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Language) or [Accept-Encoding](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Encoding) request headers). As a result, it instructs a CDN to cache these responses separately. The Vary header is not widely supported by CDNs and may result in an otherwise cacheable resource not being served from a cache.
 
 Although the Vary header can be a useful tool, inappropriate usage hurts CHR. In addition, if you do use `Vary`, normalizing request headers will help improve CHR. For example, without normalization the request headers `Accept-Language: en-US` and `Accept-Language: en-US,en;q=0.9` would result in two separate cache entries, even though their contents would likely be identical.
 
 
 #### Cookies
 
-Cookies are set on requests via the [`Cookie`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cookie) header; they are set on responses via the `Set-Cookie` header. Unnecessary use of [`Set-Cookie`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) header should be avoided given that caches will typically not cache server responses containing this header.
+Cookies are set on requests via the [`Cookie`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cookie) header; they are set on responses via the `Set-Cookie` header. Unnecessary use of [`Set-Cookie`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie) header should be avoided given that caches will typically not cache server responses containing this header.
 
 
 ## Performance features

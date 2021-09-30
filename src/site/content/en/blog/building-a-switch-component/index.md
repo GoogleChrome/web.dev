@@ -124,19 +124,19 @@ height="80" %}
 ```
 
 `<input type="checkbox">` comes prebuilt with an
-[API](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox)
-and [state](https://developer.mozilla.org/en-US/docs/Web/CSS/:checked). The
+[API](https://developer.mozilla.org/docs/Web/HTML/Element/input/checkbox)
+and [state](https://developer.mozilla.org/docs/Web/CSS/:checked). The
 browser manages the
-[`checked`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#checked)
+[`checked`](https://developer.mozilla.org/docs/Web/HTML/Element/input/checkbox#checked)
 property and [input
-events](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement#input_events)
+events](https://developer.mozilla.org/docs/Web/API/HTMLElement#input_events)
 such as `oninput`and `onchanged`. 
 
 ## Layouts
 
 [Flexbox](/learn/css/flexbox/),
 [grid](/learn/css/grid/), and [custom
-properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) are critical
+properties](https://developer.mozilla.org/docs/Web/CSS/--*) are critical
 in maintaining the styles of this component. They centralize values, give names
 to otherwise ambiguous calculations or areas, and enable a small custom property
 API for easy component customizations.
@@ -438,7 +438,7 @@ think it worked out great:
 
 A custom property called `--isLTR` initially holds a value of `1`, meaning it's
 `true` since our layout is left-to-right by default. Then, using the CSS
-pseudo class [`:dir()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:dir),
+pseudo class [`:dir()`](https://developer.mozilla.org/docs/Web/CSS/:dir),
 the value is set to `-1` when the component is within a right-to-left layout. 
 
 Put `--isLTR` into action by using it within a `calc()` inside of a transform:

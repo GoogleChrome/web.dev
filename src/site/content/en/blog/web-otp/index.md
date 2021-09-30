@@ -66,7 +66,7 @@ recycle phone numbers to new users after an account is closed. While SMS OTP is
 useful to verify a phone number for the use cases above, we recommend using
 additional and stronger forms of authentication (such as multiple factors and
 the [Web Authentication
-API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API) to
+API](https://developer.mozilla.org/docs/Web/API/Web_Authentication_API) to
 establish new sessions for these users.
 {% endAside %}
 
@@ -468,7 +468,7 @@ re-authentication since phone numbers can be hijacked and recycled by carriers.
 WebOTP is a convenient re-auth and recovery mechanism, but services should
 combine it with additional factors, such as a knowledge challenge, or use the
 [Web Authentication
-API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
+API](https://developer.mozilla.org/docs/Web/API/Web_Authentication_API)
 for strong authentication.
 
 ### Where do I report bugs in Chrome's implementation?

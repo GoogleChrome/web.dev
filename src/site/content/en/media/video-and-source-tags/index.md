@@ -364,8 +364,8 @@ Now that you know how to add media to your web page it's time to learn about
 impaired, or when playing the audio is not a viable option.
 
 [prepared a video file]: /prepare-media/
-[`<video>`]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-[`<source>`]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source
+[`<video>`]: https://developer.mozilla.org/docs/Web/HTML/Element/video
+[`<source>`]: https://developer.mozilla.org/docs/Web/HTML/Element/source
 [YouTube]: https://www.youtube.com/
 [Vimeo]: https://vimeo.com
 [Media file basics]: /media-file-basics/

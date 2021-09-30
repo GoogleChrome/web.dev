@@ -64,7 +64,7 @@ tags:
 
 ## Анализ влияния межсайтовой изоляции {: #analysis}
 
-Правда было бы здорово оценивать влияние межсайтовой изоляции, не нарушая работу сайта? Именно это позволяют сделать HTTP-заголовки [`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) и [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy).
+Правда было бы здорово оценивать влияние межсайтовой изоляции, не нарушая работу сайта? Именно это позволяют сделать HTTP-заголовки [`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) и [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy).
 
 1. Задайте заголовок [`Cross-Origin-Opener-Policy-Report-Only: same-origin`](/coop-coep/#1.-set-the-cross-origin-opener-policy:-same-origin-header-on-the-top-level-document) в документе верхнего уровня. Как следует из названия, этот заголовок только лишь отправляет отчеты о влиянии, которое `COOP: same-origin` **может** оказать на сайт, но не отключает связь с всплывающими окнами.
 2. Настройте функцию отчетности и веб-сервер для получения и сохранения отчетов.

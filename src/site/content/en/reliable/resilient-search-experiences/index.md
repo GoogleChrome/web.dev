@@ -46,7 +46,7 @@ The page also prompts the user to opt-in for notifications, to receive a link to
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TqDtqgbKOsxRFnr2lNSy.png", alt="A screenshot of the background retry interface in Google Search.", width="257", height="475" %}
 </figure>
 
-When the user performs a search, the service worker allows the query to be deferred and sent to Google's servers as soon as the device goes back online by using the [Background Sync API](https://developers.google.com/web/updates/2015/12/background-sync), and to inform the user of the result by using the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API).
+When the user performs a search, the service worker allows the query to be deferred and sent to Google's servers as soon as the device goes back online by using the [Background Sync API](https://developers.google.com/web/updates/2015/12/background-sync), and to inform the user of the result by using the [Push API](https://developer.mozilla.org/docs/Web/API/Push_API).
 
 {% Img src="image/admin/ZZItVQMLUPmVbwJlfDck.png", alt="A screenshot of the offline flow in Google Search.", width="800", height="436" %}
 
@@ -91,7 +91,7 @@ const bgSyncPlugin = new workbox.backgroundSync.Plugin('offlineQueryQueue', {
 
 The plugin receives the following parameters:
 
-- `offlineQueryQueue`: The name of the queue that will be used to persist the failed requests in [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).
+- `offlineQueryQueue`: The name of the queue that will be used to persist the failed requests in [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API).
 - `maxRetentionTime`: The amount of time in minutes a request may be retried, after which point they will be discarded.
 - `onSync`: The callback that will be triggered when the connection is recovered. At that point, each failed request can be dequeued and processed, by calling `queue.shiftRequest()`.
 
@@ -112,7 +112,7 @@ As a result, when the user goes offline while searching, the query is automatica
 
 ## Conclusion
 
-In this article you learned how to implement a search experience capable of responding gracefully to offline scenarios, by combining the [Background Sync API](https://developers.google.com/web/updates/2015/12/background-sync) and the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API).
+In this article you learned how to implement a search experience capable of responding gracefully to offline scenarios, by combining the [Background Sync API](https://developers.google.com/web/updates/2015/12/background-sync) and the [Push API](https://developer.mozilla.org/docs/Web/API/Push_API).
 We used Workbox to show how to implement this feature, as it simplifies the process, but the same can be achieved by writing vanilla service worker code.
 
 In the code samples we focused on the core part of the feature: how requests are intercepted and managed by the service worker. For a step-by-step guide on how to implement this functionality, including the offline page and the notification logic, check out the codelab at the end of this article.

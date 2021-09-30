@@ -28,6 +28,7 @@ class TableOfContents extends BaseStateElement {
     return {
       opened: {type: Boolean, reflect: true},
       i18n: {type: Object},
+      openAt: {type: Number, reflect: true},
     };
   }
 
@@ -37,6 +38,7 @@ class TableOfContents extends BaseStateElement {
     this.tocBorderClass = 'w-toc__border';
     this.tocVisibleClass = 'w-toc__visible';
     this.i18n = {};
+    this.openAt = 0;
   }
 
   connectedCallback() {
@@ -46,6 +48,10 @@ class TableOfContents extends BaseStateElement {
     // super.connectedCallback();
     if (this.hasAttribute('opened')) {
       openToC();
+    } else if (this.hasAttribute('openAt')) {
+      if (document.documentElement.clientWidth >= this.openAt) {
+        openToC();
+      }
     }
 
     super.connectedCallback();

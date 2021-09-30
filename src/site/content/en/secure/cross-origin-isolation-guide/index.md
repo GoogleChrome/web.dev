@@ -104,8 +104,8 @@ See an example implementation here:
 
 Wouldn't it be great if you could assess the impact that enabling cross-origin
 isolation would have on your site without actually breaking anything? The
-[`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) and
-[`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) 
+[`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) and
+[`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) 
 HTTP headers allow you to do just that.
 
 1. Set [`Cross-Origin-Opener-Policy-Report-Only:

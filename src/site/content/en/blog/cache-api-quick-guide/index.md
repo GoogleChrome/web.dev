@@ -198,14 +198,14 @@ with a value of a different type.
         Interprets the bytes of the body as an HTML form, encoded either as
         <code>multipart/form-data</code> or
         <code>application/x-www-form-urlencoded</code>. Returns a
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">FormData</a>
+        <a href="https://developer.mozilla.org/docs/Web/API/FormData">FormData</a>
         object, or throws a <code>TypeError</code> if the data cannot be parsed.
       </td>
     </tr>
     <tr>
       <td><code>body</code></td>
       <td>
-        Returns a <a href="https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream">ReadableStream</a>
+        Returns a <a href="https://developer.mozilla.org/docs/Web/API/ReadableStream">ReadableStream</a>
         for the body data.
       </td>
     </tr>
@@ -346,7 +346,7 @@ To delete a cache, call `caches.delete(name)`. This function returns a
 Thanks to Mat Scales who wrote the original version of this article, which
 first appeared on WebFundamentals.
 
-[mdn-cache]: https://developer.mozilla.org/en-US/docs/Web/API/Cache
+[mdn-cache]: https://developer.mozilla.org/docs/Web/API/Cache
 [caniuse-cache]: https://caniuse.com/#feat=mdn-api_cache
-[mdn-request]: https://developer.mozilla.org/en-US/docs/Web/API/Request
-[mdn-response]: https://developer.mozilla.org/en-US/docs/Web/API/Response
+[mdn-request]: https://developer.mozilla.org/docs/Web/API/Request
+[mdn-response]: https://developer.mozilla.org/docs/Web/API/Response

@@ -30,7 +30,7 @@ feedback:
 
 ## 리퍼러 및 리퍼러 정책 A부터 Z까지
 
-HTTP 요청에는 요청이 이루어진 출처 또는 웹 페이지 URL을 나타내는 [`Referer`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) 헤더가 포함될 수 있습니다. [`Referrer-Policy` 헤더](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)는 `Referer` 헤더에서 사용할 수 있는 데이터를 정의합니다.
+HTTP 요청에는 요청이 이루어진 출처 또는 웹 페이지 URL을 나타내는 [`Referer`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referer) 헤더가 포함될 수 있습니다. [`Referrer-Policy` 헤더](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy)는 `Referer` 헤더에서 사용할 수 있는 데이터를 정의합니다.
 
 아래 예에서 `Referer` 헤더에는 요청이 이루어진 `site-one`에 있는 페이지의 전체 URL이 포함됩니다.
 
@@ -71,7 +71,7 @@ URL #6은 [기능 URL](https://www.w3.org/TR/capability-urls/)입니다. 의도�
 
 <figure class="w-figure">{% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="보안 및 출처 간 컨텍스트에 따라 다른 리퍼러 정책 및 동작", width="800", height="537" %}</figure>
 
-MDN은 [정책 및 동작의 전체 예시 목록](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Directives)을 제공합니다.
+MDN은 [정책 및 동작의 전체 예시 목록](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Directives)을 제공합니다.
 
 참고 사항:
 
@@ -136,7 +136,7 @@ MDN은 [정책 및 동작의 전체 예시 목록](https://developer.mozilla.org
 사이트에 대해 리퍼러 정책을 설정하는 여러 가지 방법이 있습니다.
 
 - HTTP 헤더로
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML) 내에서
+- [HTML](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML) 내에서
 - [요청이 있을 시](https://javascript.info/fetch-api#referrer-referrerpolicy) JavaScript에서
 
 페이지, 요청 또는 요소마다 다른 정책을 설정할 수 있습니다.
@@ -269,7 +269,7 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 **출처(`https://site-one.example`)만 필요한 경우:**
 
 - 페이지에 대한 최상위 액세스 권한이 있는 스크립트에서 리퍼러를 사용하는 경우 `window.location.origin`이 대안입니다.
-- 가능한 경우, [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) 및 [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site)와 같은 헤더가 `Origin`을 제공하거나, 정확하게 원하는 바 대로 요청이 출처 간인지 여부를 설명합니다.
+- 가능한 경우, [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) 및 [`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site)와 같은 헤더가 `Origin`을 제공하거나, 정확하게 원하는 바 대로 요청이 출처 간인지 여부를 설명합니다.
 
 **URL의 다른 요소(경로, 쿼리 매개변수…)가 필요한 경우:**
 
@@ -285,13 +285,13 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 
 요청 이미터는 `no-referrer` 정책을 설정하여 언제든지 리퍼러를 보내지 않도록 결정할 수 있습니다(악의적인 행위자는 리퍼러를 도용할 수도 있음).
 
-[CSRF 토큰](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation)을 기본 보호 수단으로 사용하세요. 보호 수준을 더욱 높이기 위해 [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)를 사용하고 `Referer` 대신 [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin)(POST 및 CORS 요청에서 사용 가능) 및 [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site)(사용 가능한 경우)와 같은 헤더를 사용하세요.
+[CSRF 토큰](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation)을 기본 보호 수단으로 사용하세요. 보호 수준을 더욱 높이기 위해 [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)를 사용하고 `Referer` 대신 [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin)(POST 및 CORS 요청에서 사용 가능) 및 [`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site)(사용 가능한 경우)와 같은 헤더를 사용하세요.
 
 ### 로깅
 
 `Referer`에 있을 수 있는 사용자의 개인 데이터 또는 민감한 데이터를 보호해야 합니다.
 
-출처만 사용하는 경우 [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) 헤더가 대안이 될 수 있는지 확인하세요. 이렇게 하면 리퍼러를 구문 분석할 필요 없이 더 간단한 방법으로 디버깅에 필요한 정보를 얻을 수 있습니다.
+출처만 사용하는 경우 [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) 헤더가 대안이 될 수 있는지 확인하세요. 이렇게 하면 리퍼러를 구문 분석할 필요 없이 더 간단한 방법으로 디버깅에 필요한 정보를 얻을 수 있습니다.
 
 ### 결제
 
@@ -338,8 +338,8 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 
 - ["same-site" 및 "same-origin" 이해하기](/same-site-same-origin/)
 - [새로운 보안 헤더: 리퍼러 정책(2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
-- [MDN의 리퍼러 정책](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
-- [리퍼러 헤더: MDN의 개인정보 및 보안 문제](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
+- [MDN의 리퍼러 정책](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy)
+- [리퍼러 헤더: MDN의 개인정보 및 보안 문제](https://developer.mozilla.org/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
 - [Chrome 변경: 구현 의도 간단히 알아보기](https://groups.google.com/a/chromium.org/d/msg/blink-dev/aBtuQUga1Tk/n4BLwof4DgAJ)
 - [Chrome 변경: 배송 의도 간단히 알아보기](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/lqFuqwZDDR8)
 - [Chrome 변경: 상태 항목](https://www.chromestatus.com/feature/6251880185331712)

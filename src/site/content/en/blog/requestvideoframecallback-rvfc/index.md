@@ -31,11 +31,11 @@ or synchronization with external audio sources.
 ## Difference with requestAnimationFrame()
 
 Operations like drawing a video frame to a canvas via
-[`drawImage()`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage)
+[`drawImage()`](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage)
 made through this API will be synchronized as a best effort
 with the frame rate of the video playing on screen.
 Different from
-[`window.requestAnimationFrame()`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame),
+[`window.requestAnimationFrame()`](https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame),
 which usually fires about 60 times per second,
 `requestVideoFrameCallback()` is bound to the actual video frame rate—with an important
 [exception](https://wicg.github.io/video-rvfc/#ref-for-update-the-rendering③:~:text=Note%3A%20The%20effective%20rate%20at%20which,browser%20would%20fire%20callbacks%20at%2060hz.):
@@ -87,7 +87,7 @@ const doSomethingWithTheFrame = (now, metadata) => {
 video.requestVideoFrameCallback(doSomethingWithTheFrame);
 ```
 
-In the callback, `now` is a [`DOMHighResTimeStamp`](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp)
+In the callback, `now` is a [`DOMHighResTimeStamp`](https://developer.mozilla.org/docs/Web/API/DOMHighResTimeStamp)
 and `metadata` is a [`VideoFrameMetadata`](https://wicg.github.io/video-rvfc/#dictdef-videoframemetadata)
 dictionary with the following properties:
 

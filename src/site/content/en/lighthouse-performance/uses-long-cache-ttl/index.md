@@ -31,7 +31,7 @@ Lighthouse considers a resource cacheable
 if all the following conditions are met:
 
 - The resource is a font, image, media file, script, or stylesheet.
-- The resource has a `200`, `203`, or `206` [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+- The resource has a `200`, `203`, or `206` [HTTP status code](https://developer.mozilla.org/docs/Web/HTTP/Status).
 - The resource doesn't have an explicit no-cache policy.
 
 When a page fails the audit,
@@ -145,4 +145,4 @@ See [Browser Caching](https://wordpress.org/support/article/optimization/#browse
 
 - [Source code for **Serve static assets with an efficient cache policy** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js)
 - [Cache-Control specification](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
-- [Cache-Control (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control)
+- [Cache-Control (MDN)](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control)

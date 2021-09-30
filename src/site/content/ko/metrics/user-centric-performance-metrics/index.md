@@ -24,7 +24,7 @@ tags:
 
 ## 메트릭 정의
 
-일반적으로 웹 성능은 <code>[load](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event)</code> 이벤트로 측정되곤 합니다. 그러나 <code>load</code>가 페이지 수명 주기에서 잘 정의된 순간이라고 하더라도, 사용자가 관심을 갖는 부분과 반드시 일치하는 것은 아닙니다.
+일반적으로 웹 성능은 <code>[load](https://developer.mozilla.org/docs/Web/API/Window/load_event)</code> 이벤트로 측정되곤 합니다. 그러나 <code>load</code>가 페이지 수명 주기에서 잘 정의된 순간이라고 하더라도, 사용자가 관심을 갖는 부분과 반드시 일치하는 것은 아닙니다.
 
 예를 들어 한 서버가 즉시 "로드"되는 최소 페이지로 응답한 다음, `load` 이벤트가 발생한 후 몇 초가 지날 때까지 페이지에 콘텐츠를 가져오고 표시하는 것을 지연시킬 수 있습니다. 이러한 페이지는 기술적으로는 로드 시간이 빨라지지만, 사용자가 실제로 페이지 로드를 경험하는 방식과는 일치하지 않습니다.
 

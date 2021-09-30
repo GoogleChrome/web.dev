@@ -251,4 +251,4 @@ perhaps for a typo in a class or element name or some invalid CSS.
 ## Resources
 
 - [A highly interactive explainer of the cascade](https://wattenberger.com/blog/css-cascade)
-- [MDN cascade reference](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
+- [MDN cascade reference](https://developer.mozilla.org/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
