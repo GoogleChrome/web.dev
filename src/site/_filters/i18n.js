@@ -61,6 +61,24 @@ const walk = (dir) => {
 const data = {i18n: walk(path.join(__dirname, '..', '_data', 'i18n'))};
 
 /**
+ * Flattens the i18n yaml object to contain only translations from given locale.
+ * @param {Object} obj Object with i18n translations (from _data/i18n).
+ * @param {string} locale A locale prefix (example: 'en', 'pl')
+ * @return {Object|string}
+ */
+const getTranslation = function (obj, locale) {
+  const out = {};
+  for (const prop in obj) {
+    if (typeof obj[prop] === 'string') {
+      return obj[locale] ?? obj[defaultLocale];
+    } else {
+      out[prop] = getTranslation(obj[prop], locale);
+    }
+  }
+  return out;
+};
+
+/**
  * Looks for the i18n string that matches the path and locale.
  * @param {string} path A dot separated path
  * @param {string} [locale] A locale prefix (example: 'en', 'pl')
@@ -69,7 +87,7 @@ const data = {i18n: walk(path.join(__dirname, '..', '_data', 'i18n'))};
 const i18n = (path, locale = defaultLocale) => {
   locale = locale.split('_')[0];
   try {
-    const out = get(data, path)[locale] ?? get(data, path)[defaultLocale];
+    const out = getTranslation(get(data, path), locale);
     if (out !== undefined) {
       return out;
     }

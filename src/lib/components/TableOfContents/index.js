@@ -68,8 +68,7 @@ class TableOfContents extends BaseStateElement {
     const content = /** @type TemplateStringsArray */ (
       /** @type ReadonlyArray<string> */ ([this.tocHTML])
     );
-    const in_this_article = this.i18n.in_this_article;
-    const title = in_this_article[this.locale] || in_this_article['en'];
+    const title = this.i18n.in_this_article || 'In this article';
     return html`
       <div class="w-toc__label">
         <span>${title}</span>
