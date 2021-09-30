@@ -146,7 +146,7 @@ width="800", height="360" %}
 #### Key learnings
 
 - Reducing CLS from 1.65 to 0 significantly uplifted their domain rankings globally.
-- Reducing TTI + TBT by ~100% boosted the mCVR by 80-100% across global properties.
+- Reducing TTI from around 8&nbsp;s to  around 4&nbsp;s and TBT from around 1200&nbsp;ms to around 700&nbsp;ms contributed to an 80-100% increase in mCVR across global properties.
 - [Using RUM tools](/vitals-measurement-getting-started) helped capture the real world performance metrics in lower tier markets.
 - Adopting a [performance culture](/performance-budgets-101) is very important to avoid regression. This also improves team productivity thanks to optimized code, faster releases, and fewer production issues.
 
