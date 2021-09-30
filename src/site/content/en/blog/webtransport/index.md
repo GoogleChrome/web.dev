@@ -25,7 +25,7 @@ This proposal continues to change during the origin trial period. There
 may be a divergence between the browser implementation and the information in this 
 article.
 
-For the latest on this evolving proposal, read refer to the
+For the latest on this evolving proposal, read the
 [editor's draft of WebTransport](https://w3c.github.io/webtransport/).
 
 Once the proposal stabilizes, we will update this article and associated code
