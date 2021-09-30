@@ -100,7 +100,7 @@ If you're curious how the on-screen keyboard works for another `type`, try `type
 alt="Two screenshots of an input element with type='tel' on iOS and Android, showing how the type attribute changes the on-screen keyboard.", width="800", height="696" %}
 
 Imagine that you filled out a long form,
-and you're ready to submit it. But... where is the Submit button?
+and you're ready to submit it. But where is the **Submit** button?
 It may be behind the browser toolbar, located at the bottom of the screen.
 One way to ensure that buttons are visible is to use the `env()` CSS function.
 Learn how to
