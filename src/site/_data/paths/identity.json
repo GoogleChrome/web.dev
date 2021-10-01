@@ -1,6 +1,6 @@
 {
   "slug": "identity",
-  "cover": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/QwTmV0WdfA3nGmhXGyB8.svg",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/LHnKunuy8B0KRVYCv1nj.svg",
   "title": "i18n.paths.identity.title",
   "updated": "September 30, 2021",
   "description": "i18n.paths.identity.description",
@@ -23,7 +23,7 @@
     {
       "title": "i18n.paths.identity.topics.strenghten_security_with_two-factor_authentication",
       "pathItems": [
-        "sms-otp-form"   
+        "sms-otp-form"
       ]
     },
     {
