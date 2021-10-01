@@ -381,21 +381,21 @@ want to optimize are on `https://downloads.example.com` they **will not**
 receive any hints.
 
 To allow hints on cross-origin requests each hint and origin must be specified
-by a `Feature-Policy` header. To apply this to a User-Agent Client Hint, you
+by a `Permissions-Policy` header. To apply this to a User-Agent Client Hint, you
 need to lowercase the hint and remove the `sec-` prefix. For example:
 
 ⬇️ _Response from `example.com`_
 
 ```text
-Accept-CH: Sec-CH-UA-Platform, DPR
-Feature-Policy: ch-ua-platform downloads.example.com;
-                ch-dpr cdn.provider img.example.com
+Accept-CH: Sec-CH-UA-Platform-Version, DPR
+Permissions-Policy: ch-ua-platform-version=(self "downloads.example.com"),
+                    ch-dpr=(self "cdn.provider" "img.example.com");
 ```
 
 ⬆️ _Request to `downloads.example.com`_
 
 ```text
-Sec-CH-UA-Platform: "Android"
+Sec-CH-UA-Platform-Version: "10"
 ```
 
 ⬆️ _Requests to `cdn.provider` or `img.example.com`_
