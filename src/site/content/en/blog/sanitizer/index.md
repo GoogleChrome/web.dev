@@ -7,7 +7,7 @@ description: |
 
 # A list of authors. Supports more than one.
 authors:
-  - Jack J
+  - jackjey
 
 date: 2019-10-31
 # Add an updated date to your post if you edit in the future.
