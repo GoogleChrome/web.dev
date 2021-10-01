@@ -325,12 +325,12 @@ The [Sanitizer API](https://wicg.github.io/sanitizer-api/) has learned from the 
 ## How to enable the Sanitizer API
 
 
-### Enabling via chrome://flags or CLI option
+### Enabling via about://flags or CLI option
 
 
 #### Chrome
 
-Chrome is in the process of implementing the Sanitizer API, and when Chrome 93 is released, you can try out the behavior by enabling `chrome://flags/#enable-experimental-web-platform-features`. In earlier versions of the Canary/Dev channel, you can enable it via `--enable-blink-features=SanitizerAPI` and try it out for yourself right now. More details about using a flag can be found [here](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
+Chrome is in the process of implementing the Sanitizer API, and when Chrome 93 is released, you can try out the behavior by enabling `about://flags/#enable-experimental-web-platform-features`. In earlier versions of the Canary/Dev channel, you can enable it via `--enable-blink-features=SanitizerAPI` and try it out for yourself right now. More details about using a flag can be found [here](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
 
 
 #### Firefox
