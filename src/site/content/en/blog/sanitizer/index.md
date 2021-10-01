@@ -4,72 +4,14 @@ subhead: Safe DOM manipulation with the Sanitizer API
 description: |
   The new Sanitizer API aims to build a robust processor for arbitrary strings to be safely inserted into a page.
   This article introduces the API, and explains its usage.
-
-# A list of authors. Supports more than one.
 authors:
   - jackjey
-
 date: 2021-10-01
-# Add an updated date to your post if you edit in the future.
-# updated: 2019-11-01
-
-# Add the scheduled flag if you'd like your post to automatically go live
-# during a future date. Posts will deploy at 7am PST / 15:00 UTC.
-# Example: A post with `date: 2050-01-01`, `scheduled: true`, will go live at
-# 7am PST, January 1st, 2050.
-# If you don't use the scheduled flag then setting a future date has no effect.
-# scheduled: true
-
-# !!! IMPORTANT: If your post does not contain a hero image it will not appear
-# on the homepage.
-# Hero images should be 3200 x 960.
 hero: image/PV7xjXdOKHP8LWt9XhstsToJeK82/R2KGdIHv2lBRDS9vs8q1.jpg
-# You can adjust the fit of your hero image with this property.
-# Values: contain | cover (default)
-# hero_fit: contain
-
-# You can adjust the position of your hero image with this property.
-# Values: top | bottom | center (default)
-# hero_position: bottom
-
-# You can provide an optional cropping of your hero image to be used as a
-# thumbnail. Note the alt text will be the same for both the thumbnail and
-# the hero.
-# thumbnail: thumbnail.jpg
-
 alt: Sanitizing a desk with Sanitizer
-
-
-# You can provide a custom thumbnail and description for social media cards.
-# Thumbnail images should be 896 x 480.
-# If no social thumbnail is provided then the post will attempt to fallback to
-# the post's thumbnail or hero from above. It will also reuse the alt.
-# social:
-#   google:
-#     title: A title for Google search card.
-#     description: A description for Google search card.
-#     thumbnail: google_thumbnail.jpg
-#     alt: Provide an alt for your thumbnail.
-#   facebook:
-#     title: A title for Facebook card.
-#     description: A description for Facebook card.
-#     thumbnail: facebook_thumbnail.jpg
-#     alt: Provide an alt for your thumbnail.
-#   twitter:
-#     title: A title for Twitter card.
-#     description: A description for Twitter card.
-#     thumbnail: twitter_thumbnail.jpg
-#     alt: Provide an alt for your thumbnail.
-
-
 tags:
-  - blog # blog is a required tag for the article to show up in the blog.
+  - blog
   - security
-
-# You can provide an optional Stack Overflow tag to be used at the end of the
-# post in an "Ask on Stack Overflow" note.
-# Find the official list of tags at https://stackoverflow.com/tags.
-# stack_overflow_tag: service-worker
 ---
 
 
