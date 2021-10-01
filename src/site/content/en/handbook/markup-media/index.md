@@ -151,3 +151,15 @@ Use the {% raw %}`{% YouTube %}`{% endraw %} shortcode to embed a YouTube video.
 ```
 
 {% YouTube "qPD2yc8BoDk" %}
+
+Use the {% raw %}`{% YouTubePlaylist %}`{% endraw %} shortcode to embed a YouTube
+playlist iframe.
+
+```md
+{% raw %}{% YouTubePlaylist 'PLNYkxOF6rcICntazGfSVKSj5EwuR9w5Nv' %}
+
+<!-- You can pass allow, src, style and title as options in a second param -->
+{% YouTubePlaylist 'PLNYkxOF6rcICntazGfSVKSj5EwuR9w5Nv', {title: "My title"} %}{% endraw %}
+```
+
+{% YouTubePlaylist 'PLNYkxOF6rcICntazGfSVKSj5EwuR9w5Nv', {title: "My title"} %}
