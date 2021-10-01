@@ -101,7 +101,7 @@ What the developer wants to do here is not **Escaping**, but **Sanitizing**.
 
 The difference between "**Escape**" and "**Sanitize**" is as follows
 
-Escape: replace HTML special characters with [HTML Entity](https://developer.mozilla.org/en-US/docs/Glossary/Entity).
+Escape: replace HTML special characters with [HTML Entity](https://developer.mozilla.org/docs/Glossary/Entity).
 
 Sanitize: remove semantically harmful parts (such as script execution) from HTML string.
 
@@ -135,7 +135,7 @@ $div.setHTML(user_input, sanitizer) // <div><em>hello world</em><img src=""></di
 
 ```
 
-It is worth noting that `setHTML()` is defined on `[Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)`. Being a method of Element, the context to parse is self-explanatory (`<div>` in this case), the parsing is done once internally, and the result is directly expanded into the DOM.
+It is worth noting that `setHTML()` is defined on `[Element](https://developer.mozilla.org/docs/Web/API/Element)`. Being a method of Element, the context to parse is self-explanatory (`<div>` in this case), the parsing is done once internally, and the result is directly expanded into the DOM.
 
 If you don't want to expand directly into the DOM, you can also get the result as an `HTMLElement`.
 
@@ -377,4 +377,4 @@ Webkit: see the response on [webkit mailing lists](https://lists.webkit.org/pipe
 - Spec: <https://wicg.github.io/sanitizer-api/>
 - Repos: <https://github.com/WICG/sanitizer-api>
 - FAQ: <https://github.com/WICG/sanitizer-api/blob/main/faq.md>
-- MDN: <https://developer.mozilla.org/en-US/docs/Web/API/HTML_Sanitizer_API>
+- MDN: <https://developer.mozilla.org/docs/Web/API/HTML_Sanitizer_API>
