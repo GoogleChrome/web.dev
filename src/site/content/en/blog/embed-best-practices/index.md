@@ -32,7 +32,7 @@ Embeds are frequently used in the following:
 * Organizations with active Twitter or social media accounts embed feeds from these accounts to their web pages to engage and reach out to more people.
 * Restaurant, park, and event venue pages often embed maps.
 
-Third-party embeds are typically loaded in [`<iframe>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) elements on the page. Third-party providers offer HTML snippets often consisting of an `<iframe>` that pulls in a page composed of markup, scripts, and stylesheets. Some providers also use a script snippet that dynamically injects an `<iframe>` to pull other content in. This can make the third-party embeds heavy and affect the performance of the page by delaying its first-party content. 
+Third-party embeds are typically loaded in [`<iframe>`](https://developer.mozilla.org/docs/Web/HTML/Element/iframe) elements on the page. Third-party providers offer HTML snippets often consisting of an `<iframe>` that pulls in a page composed of markup, scripts, and stylesheets. Some providers also use a script snippet that dynamically injects an `<iframe>` to pull other content in. This can make the third-party embeds heavy and affect the performance of the page by delaying its first-party content. 
 
 ## Performance impact of third-party embeds
 
@@ -141,7 +141,7 @@ _[lazysizes](https://github.com/aFarkas/lazysizes)_ is a fast, SEO-friendly lazy
 ```
 Similarly, lazysizes may be used with iframes for other third-party embeds.
 
-Note that _lazysizes_ uses the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to detect when an element becomes visible. 
+Note that _lazysizes_ uses the [Intersection Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API) to detect when an element becomes visible. 
 
 
 #### Using data-lazy in Facebook
@@ -244,7 +244,7 @@ You can build a custom click-to-load facade using the _Import on Interaction_ pa
 
 * Chat widget facade
 
-    [React-live-chat-loader](https://github.com/calibreapp/react-live-chat-loader) loads a button that looks like a chat embed instead of the embed itself. It can be used with various chat provider platforms such as Intercom, Help Scout, Messenger, and so on. The look-alike widget is much lighter than the chat-widget and loads faster. It can be replaced by the actual chat widget when the user hovers or clicks on the button or if the page has been idle for a long time. The [Postmark case study](https://wildbit.com/blog/2020/09/30/getting-postmark-lighthouse-performance-score-to-100) explains how they implemented react-live-chat-loader and performance improvements they achieved..
+    [React-live-chat-loader](https://github.com/calibreapp/react-live-chat-loader) loads a button that looks like a chat embed instead of the embed itself. It can be used with various chat provider platforms such as Intercom, Help Scout, Messenger, and so on. The look-alike widget is much lighter than the chat-widget and loads faster. It can be replaced by the actual chat widget when the user hovers or clicks on the button or if the page has been idle for a long time. The [Postmark case study](https://wildbit.com/blog/2020/09/30/getting-postmark-lighthouse-performance-score-to-100) explains how they implemented react-live-chat-loader and performance improvements they achieved.
 
     {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/zPQ21UocTuIb0qpNabiD.png", alt="Postmark chat widget", class="w-screenshot", width="400", height="200" %} 
 
