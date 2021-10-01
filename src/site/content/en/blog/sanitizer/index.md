@@ -370,7 +370,7 @@ Webkit: see the response on [webkit mailing lists](https://lists.webkit.org/pipe
 
 ### References
 
-- Spec: <https://wicg.github.io/sanitizer-api/>
-- Repos: <https://github.com/WICG/sanitizer-api>
-- FAQ: <https://github.com/WICG/sanitizer-api/blob/main/faq.md>
-- MDN: <https://developer.mozilla.org/docs/Web/API/HTML_Sanitizer_API>
+- Spec: [HTML Sanitizer API](https://wicg.github.io/sanitizer-api/)
+- Repos: [WICG/sanitizer-api](https://github.com/WICG/sanitizer-api)
+- FAQ: [WICG/sanitizer-api](https://github.com/WICG/sanitizer-api/blob/main/faq.md)
+- MDN: [HTML Sanitizer API \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Sanitizer_API)
