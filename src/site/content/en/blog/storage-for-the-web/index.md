@@ -10,8 +10,8 @@ tags:
   - blog
   - progressive-web-apps
   - storage
-  - indexeddb
-  - cachestorage
+  # - indexeddb
+  # - cachestorage
   - memory
 hero: image/admin/c8u2hKEFoFfgTsmcKeuK.jpg
 alt: Stack of shipping containers

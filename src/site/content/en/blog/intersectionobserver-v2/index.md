@@ -12,7 +12,7 @@ date: 2019-02-15
 updated: 2021-02-26
 tags:
   - blog
-  - intersectionobserver
+  # - intersectionobserver
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/wUCO2CgK5UOz6URpXEtd.jpeg
 alt: Eye of a cat looking through a gap in a fence.
 ---

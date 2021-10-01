@@ -10,9 +10,9 @@ hero: image/admin/xlg4t3uiTp0L5TBThFHQ.jpg
 thumbnail: image/admin/hgxRNa56Vb9o3QRwIrm9.jpg
 alt: 눈 속의 다양한 발자국. 누가 거기에 있었는지에 대한 힌트.
 tags:
-  - 블로그
-  - 개인정보보호
-  - 보안
+  - blog
+  - privacy
+  - security
 feedback:
   - API
 ---

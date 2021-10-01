@@ -18,12 +18,12 @@ tags:
   - identity
   - security
   - forms
-  - otp
+  # - otp
 ---
 
 {% YouTube 'sU4MpWYrGSI' %}
 
-Asking a user to provide the OTP (one time password) delivered via SMS is a common 
+Asking a user to provide the OTP (one time password) delivered via SMS is a common
 way to confirm a user's phone number. There are a few use cases for SMS OTP:
 
 * **Two-factor authentication.** In addition to username and password, SMS OTP can be
@@ -52,8 +52,8 @@ itself is not phishing resistant](https://youtu.be/kGGMgEfSzMw?t=1133).
 If you are looking for better security, consider using
 [WebAuthn](https://www.w3.org/TR/webauthn-2/). Learn more about it from the talk
 "[What's new in sign-up & sign-in](https://goo.gle/webauthn-video)" at the
-Chrome Dev Summit 2019 and build a reauthentication experience using a biometric 
-sensor with "[Build your first WebAuthn app](https://goo.gle/WebAuthnReauthCodelab)" 
+Chrome Dev Summit 2019 and build a reauthentication experience using a biometric
+sensor with "[Build your first WebAuthn app](https://goo.gle/WebAuthnReauthCodelab)"
 codelab.
 {% endAside %}
 
@@ -72,7 +72,7 @@ To provide the best user experience with the SMS OTP, follow these steps:
 
 Using a form with an `<input>` element is the most important best practice you
 can follow because it works in all browsers. Even if other suggestions from
-this post don't work in some browser, the user will still be able to enter and submit the OTP 
+this post don't work in some browser, the user will still be able to enter and submit the OTP
 manually.
 
 ```html
@@ -91,7 +91,7 @@ browser functionality.
 ### `type="text"`
 
 Since OTPs are usually five or six digit numbers, using
-`type="number"` for an input field might seem intuitive because it changes the mobile 
+`type="number"` for an input field might seem intuitive because it changes the mobile
 keyboard to numbers only. This is not recommended because the browser expects an
 input field to be a countable number rather than a sequence of multiple numbers,
 which can cause unexpected behavior. Using `type="number"` causes up and down
@@ -104,10 +104,10 @@ that job.
 
 ### `inputmode="numeric"`
 
-Use [`inputmode="numeric"`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/inputmode) 
+Use [`inputmode="numeric"`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/inputmode)
 to change the mobile keyboard to numbers only.
 
-Some websites use `type="tel"` for OTP input fields since it also 
+Some websites use `type="tel"` for OTP input fields since it also
 turns the mobile keyboard to numbers only (including `*` and `#`) when
 focused. This hack was used in the past when `inputmode="numeric"`
 wasn't widely supported. Since [Firefox started supporting
@@ -116,15 +116,15 @@ there's no need to use the semantically incorrect `type="tel"` hack.
 
 ### `autocomplete="one-time-code"`
 
-[`autocomplete`](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete) 
-attribute lets developers specify what permission the browser 
-has to provide autocomplete assistance and informs the browser about the 
+[`autocomplete`](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete)
+attribute lets developers specify what permission the browser
+has to provide autocomplete assistance and informs the browser about the
 type of information expected in the field.
 
-With `autocomplete="one-time-code"` whenever a user receives an SMS message while a 
+With `autocomplete="one-time-code"` whenever a user receives an SMS message while a
 form is open, the operating system will parse the OTP in the SMS heuristically and
-the keyboard will suggest the OTP for the user to enter. It works only on Safari 12 and 
-later on iOS, iPadOS, and macOS, but we strongly recommend using it, because it is an 
+the keyboard will suggest the OTP for the user to enter. It works only on Safari 12 and
+later on iOS, iPadOS, and macOS, but we strongly recommend using it, because it is an
 easy way to improve the SMS OTP experience on those platforms.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
@@ -146,10 +146,10 @@ Optional attributes:
 
 * [`pattern`](https://developer.mozilla.org/docs/Web/HTML/Attributes/pattern)
   specifies the format that the entered OTP must match. Use regular expressions to specify
-  the matching pattern, for example, `\d{6}` constrains the OTP to a six digit string. Learn more about the 
-  `pattern` attribute in [Use JavaScript for more complex real-time validation] 
+  the matching pattern, for example, `\d{6}` constrains the OTP to a six digit string. Learn more about the
+  `pattern` attribute in [Use JavaScript for more complex real-time validation]
   (https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_javascript_for_more_complex_real-time_validation)
-  
+
 * [`required`](https://developer.mozilla.org/docs/Web/HTML/Attributes/required)
   indicates that a field is required.
 
@@ -160,9 +160,9 @@ point.
 
 ## Format the SMS text {: #format }
 
-Enhance the user experience of entering an OTP by aligning with 
-[the origin-bound one-time codes delivered via SMS](https://wicg.github.io/sms-one-time-codes/) 
-specification. 
+Enhance the user experience of entering an OTP by aligning with
+[the origin-bound one-time codes delivered via SMS](https://wicg.github.io/sms-one-time-codes/)
+specification.
 
 The format rule is simple: Finish the SMS message with the receiver domain
 preceded with `@` and the OTP preceded with `#`.
@@ -174,8 +174,8 @@ Your OTP is 123456
 @web-otp.glitch.me #123456
 ```
 
-Using a standard format for OTP messages makes extraction 
-of codes from them easier and more reliable. Associating OTP codes with 
+Using a standard format for OTP messages makes extraction
+of codes from them easier and more reliable. Associating OTP codes with
 websites makes it harder to trick users into providing a code to malicious sites.
 
 {% Aside %}
@@ -195,8 +195,8 @@ of WebOTP API post](/web-otp/#format).
 
 Using this format provides a couple of benefits:
 
-* The OTP will be bound to the domain. If the user is on domains other than 
-  the one specified in the SMS message, the OTP suggestion won't appear. 
+* The OTP will be bound to the domain. If the user is on domains other than
+  the one specified in the SMS message, the OTP suggestion won't appear.
   This also mitigates the risk of phishing attacks and potential account hijacks.
 * Browser will now be able to reliably extract the OTP without depending on
   mysterious and flaky heuristics.

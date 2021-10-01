@@ -14,7 +14,7 @@ alt: |
 tags:
   - blog
   - capabilities
-  - wake-lock
+  # - wake-lock
 feedback:
   - api
 ---

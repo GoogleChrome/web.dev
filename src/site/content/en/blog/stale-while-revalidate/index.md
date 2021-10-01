@@ -9,8 +9,8 @@ hero: image/admin/skgQgcT3q8fdBGGNL3o1.jpg
 alt: A photograph of a half-painted wall.
 tags:
   - blog
-  - speed
-  - caching
+  # - speed
+  # - caching
 feedback:
   - api
 ---

@@ -12,7 +12,7 @@ alt: Aerial view of shipping containers.
 codelabs: codelab-optimize-third-party-javascript
 tags:
   - performance
-  - third-party
+  # - third-party
   - javascript
 ---
 

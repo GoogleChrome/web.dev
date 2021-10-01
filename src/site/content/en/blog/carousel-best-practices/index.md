@@ -9,7 +9,7 @@ date: 2021-01-26
 hero: image/admin/i7tjE04MYo7xJOZKkyQI.jpg
 tags:
   - blog
-  - fast
+  # - fast
   - performance
   - web-vitals
 ---

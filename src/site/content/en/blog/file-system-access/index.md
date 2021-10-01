@@ -16,7 +16,7 @@ updated: 2021-09-24
 tags:
   - blog
   - capabilities
-  - file
+  # - file
   - file-system
 hero: image/admin/qn7E0q1EWJUqdzsuHwx4.jpg
 alt: Image of hard disk platters

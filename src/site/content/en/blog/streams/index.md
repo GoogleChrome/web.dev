@@ -13,7 +13,7 @@ alt: A forest stream with colored fallen leaves.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
-  - streams
+  # - streams
 ---
 
 The Streams API allows you to programmatically access streams of data received over the network
@@ -472,7 +472,7 @@ parameter:
   Unlike queuing strategies for other stream types, a queuing strategy for a readable byte stream
   does not have a `size(chunk)` function. The size of each chunk is always determined by its
   `byteLength` property.
-{% endAside %}  
+{% endAside %}
 
 {% Aside %}
   If no `queuingStrategy` is supplied, the default used is one with a `highWaterMark` of `0`.

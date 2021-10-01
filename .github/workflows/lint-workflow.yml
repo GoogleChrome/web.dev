@@ -52,8 +52,8 @@ jobs:
           tags_yml: src/site/_data/i18n/tags.yml
           posts_path: src/site/content
           ignore_tags: |
-            - 'blog'
-            - 'test-post'
+            blog
+            test-post
 
       - name: Lint JavaScript
         if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' }}

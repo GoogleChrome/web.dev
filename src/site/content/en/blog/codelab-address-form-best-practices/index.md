@@ -8,7 +8,7 @@ date: 2020-12-09
 updated: 2020-12-09
 description: Learn best practices for address forms.
 tags:
-  - ecommerce
+  # - ecommerce
   - forms
   - identity
   - layout

@@ -14,7 +14,7 @@ date: 2014-14-15
 updated: 2021-07-05
 tags:
   - media
-  - video
+  # - video
 ---
 
 You've properly [prepared a video file] for the web. You've given it correct

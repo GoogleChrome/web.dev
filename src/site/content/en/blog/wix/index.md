@@ -16,7 +16,7 @@ hero: image/BrQidfK9jaQyIHwdw91aVpkPiib2/HNGPDotyTYOuPE0YxLQ9.jpg
 alt: "A fast train (source: https://unsplash.com/photos/60VrGk-bfeA)"
 tags:
   - blog
-  - fast
+  # - fast
   - performance
   - web-vitals
   - case-study

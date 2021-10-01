@@ -11,7 +11,7 @@ date: 2017-06-09
 updated: 2021-08-30
 tags:
   - media
-  - video
+  # - video
 ---
 
 Working with media often requires changing the characteristics of media files,

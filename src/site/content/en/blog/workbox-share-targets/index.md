@@ -14,7 +14,7 @@ alt: Two pairs of hands holding a cup of tomatoes.
 tags:
   - blog
   - capabilities
-  - workbox
+  # - workbox
   - test-post
 feedback:
   - api

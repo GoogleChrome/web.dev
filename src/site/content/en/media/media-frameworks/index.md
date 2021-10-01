@@ -11,7 +11,7 @@ date: 2021-07-05
 updated: 2021-07-05
 tags:
   - media
-  - video
+  # - video
 ---
 
 There are several ways to add media to a web page. Previously you learned how to

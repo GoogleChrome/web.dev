@@ -7,12 +7,12 @@ description: Details of Chrome's and other browsers' plans to remove AppCache.
 date: 2020-05-18
 updated: 2021-08-23
 tags:
-  - appcache
+  # - appcache
   - blog
-  - chrome84
-  - deprecation
-  - origin-trial
-  - removal
+  # - chrome84
+  # - deprecation
+  - origin-trials
+  # - removal
   - service-worker
 hero: image/admin/YDs2H4gLPhIwPMjPtc8o.jpg
 alt: An old-fashioned storage container.

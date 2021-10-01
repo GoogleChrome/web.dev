@@ -16,7 +16,7 @@ updated: 2020-07-10
 tags:
   - blog
   - capabilities
-  - fugu
+  # - fugu
   - progressive-web-apps
 hero: image/admin/0uSwSmGHmPXimU3dz8Xa.jpg
 alt: An image of a fish.

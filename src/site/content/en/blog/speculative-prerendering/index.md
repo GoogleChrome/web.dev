@@ -15,22 +15,22 @@ hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/NDg4DvtC6Hkbly4MyGkZ.jpeg
 alt: Motorcycle on a highway
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - origin-trial
+  - origin-trials
 ---
 
 Resource hints, such as [`preconnect`](https://web.dev/uses-rel-preconnect/),
 [`preload`](https://web.dev/uses-rel-preload/),
 [`prefetch`](https://web.dev/link-prefetch/), and
 [`prerender`](https://developer.mozilla.org/docs/Glossary/prerender), help
-the browser figure out which resources will the user need in the near future. 
+the browser figure out which resources will the user need in the near future.
 
 `preconnect` and `preload` are declarative hints—the browser _must_ act on
 them, so use them when you are sure that a resource will be required during the
-next load.  
+next load.
 
 `prefetch` and `prerender` are speculative hints—use these to recommend that
-the browser should fetch a certain resource because there's a high chance it 
-might be required. 
+the browser should fetch a certain resource because there's a high chance it
+might be required.
 
 This article focuses on speculative prefetching and prerendering. Learn more about
 how they're used, the drawbacks of the current implementations, and popular external
@@ -53,7 +53,7 @@ rely on this knowledge of the user's behavior. Developers speculate which page
 When developers include a `prefetch` hint on page A to tell the browser that it
 can fetch either page B or specific resources on page B in advance, the browser
 can fetch those resources while it is idle without affecting the processing of
-page A. 
+page A.
 
 The syntax for using `prefetch` in the origin page (page A of our example)  is as
 follows:
@@ -83,7 +83,7 @@ The syntax for using `prerender` in the origin page is as follows:
 ```
 
 `prerender` behavior, however, is still not clearly defined or [universally
-implemented](https://caniuse.com/link-rel-prerender). 
+implemented](https://caniuse.com/link-rel-prerender).
 
 {% BrowserCompat 'html.elements.link.rel.prerender' %}
 
@@ -96,8 +96,8 @@ Chrome):
     subresources such as stylesheets or scripts that would be required by the
     next page.
 +   The prefetched resources are stored in the HTTP Cache if they are
-    cacheable. 
-+   Chrome keeps the cached items for 5 minutes. 
+    cacheable.
++   Chrome keeps the cached items for 5 minutes.
 +   When the resources are requested or required they are retrieved from the
     cache. However, if they have not finished loading the partially loaded
     resource is picked up by Chrome to continue loading it.
@@ -116,7 +116,7 @@ deprecated in favour of a
 which fetches resources in advance but it does not execute JavaScript or render
 any part of the page in advance. Originally prerender consumed around 100 MiB of
 memory and could potentially disrupt UI when certain components like media were
-prerendered.  
+prerendered.
 
 The current implementation using a no-state prefetch consumes significantly
 lower memory of around 45 MiB, while still reducing page load times. The fetch
@@ -127,7 +127,7 @@ that is isolated from the visible tabs and cannot disrupt UI. The no-state
 prefetch process caches the resources required but does not render them. It also
 does not modify the state of the browser except when updating the DNS cache and
 the cookie store. The new renderer is killed after all subresources are loaded.
-A new renderer is created to render the page when the user requests it. 
+A new renderer is created to render the page when the user requests it.
 
 With a no-state prefetch implementation for prerender, the goal of instant page
 loads still eludes us. Before exploring how we can achieve instant page loads,
@@ -139,12 +139,12 @@ logic for prefetch which may also be relevant to the prerender implementation.
 Developers have insight into how people use their site and use that knowledge to
 decide what should be prefetched or prerendered. These usage trends tend to
 evolve over time, so developers need to update their resource hints based on the
-latest analytics data available for the site. 
+latest analytics data available for the site.
 
 There are also libraries such as quicklink and guess.js, that use heuristics to
 determine which resources should be prefetched at runtime. With these,
 developers don't need to guess what should be prefetched. The libraries take the
-decision based on available data. 
+decision based on available data.
 
 ### Quicklink
 
@@ -155,7 +155,7 @@ Network Information API to determine the type of connection and if the
 data-saver mode is enabled. Quicklink is a lightweight library that you can use
 with both [multiple-page apps](https://mini-ecomm-quicklink.glitch.me/) and
 [single-page apps](https://create-react-app-quicklink.glitch.me/) to [speed up
-navigations](https://web.dev/quicklink/). 
+navigations](https://web.dev/quicklink/).
 
 ### Guess.js
 
@@ -172,12 +172,12 @@ additional tooling would be required to support that.
 
 The current prerendering implementations do not address several constraints.
 Following are some of the limitations that were discussed and proposed solutions
-that could improve prerendering. 
+that could improve prerendering.
 
 +   **Triggers**: Currently `<link rel="prerender"> `is the only trigger
     available to enable prerendering in the browser. For every link on the page
     which is eligible for prerendering, an additional resource hint needs to be
-    included in the document during development. 
+    included in the document during development.
 
     Since `prerender` requirements may change, the proposed solution should
     allow users to specify blanket triggers for links that match certain
@@ -208,7 +208,7 @@ that could improve prerendering.
     The prerendering browsing context should be similar to an invisible tab
     and should impose additional restrictions. All disruptive APIs like playing
     media or permission prompts that may disrupt UI should be disabled in this
-    browsing context. 
+    browsing context.
 
     The prerendering browsing context may also be activated. Activation
     should take place when the user navigates to a prerendered page. When
@@ -237,14 +237,14 @@ section is prerendering triggers available through the proposed
 [Speculation Rules API](https://github.com/jeremyroman/alternate-loading-modes/blob/main/triggers.md#speculation-rules).
 The Speculation Rules API can be used by developers to indicate blanket
 permissions to the browser to speculate and prefetch or prerender pages that
-match the specified criteria. 
+match the specified criteria.
 
 The rules help the browser identify an initial set of pages that the website
 thinks would interest the user. The browser can then apply additional heuristics
 based on device or network characteristics, page structure, viewport, the
 location of the cursor, past activity on the page, and so on to decide which
 pages to prerender or prefetch. Thus, speculation logic like implemented by
-QuickLink or Guess.js may be implemented by the browser itself. 
+QuickLink or Guess.js may be implemented by the browser itself.
 
 Speculation rules may be specified as a JSON object within an inline script tag
 or an external resource. For example, speculation rules for `prerender` may be
@@ -270,7 +270,7 @@ defined as follows:
 </script>
 ```
 
-Here, two types of rules have been defined for the `prerender` resource hint. 
+Here, two types of rules have been defined for the `prerender` resource hint.
 
 +   _List rules_ apply to the `list` of given `urls`. The `score`
     value is used to indicate how likely the user is to navigate to one of
@@ -279,7 +279,7 @@ Here, two types of rules have been defined for the `prerender` resource hint.
 
 +   _Document rules_ apply to a `document` implying that all link
     elements within a page are open to speculation by the browser. The subset
-    of link elements may be chosen by including the  
+    of link elements may be chosen by including the
     `if_href_matches` or `if_not_href_matches` and
     `if_selector_matches` or `if_not_selector_matches` filters.
 
@@ -299,7 +299,7 @@ included in this trial.
 -  **Triggers**: Certain features from the Speculation Rules API may be
     used to specify triggers to prerender same-origin URLs. Only the "list
     rules" format is supported at present. Also, only one prerender is allowed
-    per page for pages with the same origin. 
+    per page for pages with the same origin.
 
 ```html
 <script type="speculationrules">
@@ -357,7 +357,7 @@ differentiated by the `prerender` keyword.
 After prerendering, the next step is activation. To check if it was indeed the
 prerendered page that was activated upon navigation and no new page load
 occurred, you can open _Dev Tools_ console after the navigation occurs. Execute
-the following script and check the value of `activationStart` in the console. 
+the following script and check the value of `activationStart` in the console.
 
 ```js
 let activationStart = performance.getEntriesByType('navigation')[0].activationStart;
@@ -365,7 +365,7 @@ console.log(activationStart);
 ```
 
 A non-zero value for `activationStart` would imply the prerendered page was
-activated. 
+activated.
 
 #### Was it instantaneous?
 
@@ -410,7 +410,7 @@ available options to check if a prerender takes place.
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/FKQOzMjXpwRZAarD0RET.png", alt="Prerendering demo on Glitch.", width="800", height="489" %}
 
 You can also compare the transitions for each case by clicking on the link for
-the page. 
+the page.
 
 
 <div class="w-columns">
@@ -442,7 +442,7 @@ and see how well it works for your specific use cases. If you have any feedback 
 [to the Github repo](https://github.com/jeremyroman/alternate-loading-modes/issues).
 
 There is also an ongoing trial for using
-[Speculation Rules for Prefetch](https://developer.chrome.com/origintrials/#/view_trial/4576783121315266561). 
+[Speculation Rules for Prefetch](https://developer.chrome.com/origintrials/#/view_trial/4576783121315266561).
 Sign-up for this trial if you would like
 to replace your existing `prefetch` hints with browser supported speculative
 prefetch.

@@ -9,7 +9,7 @@ alt: A labyrinth.
 description: Learn about the latest optimizations implemented in JavaScript frameworks in collaboration with project Aurora.
 tags:
   - blog
-  - angular
+  # - angular
   - web-vitals
 ---
 

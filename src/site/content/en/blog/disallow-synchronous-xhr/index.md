@@ -15,7 +15,7 @@ hero: image/admin/DF5rqLYGcuCpQZv1vXKS.jpg
 alt: Roadblock barricades
 tags:
   - blog
-  - deprecation
+  # - deprecation
 ---
 
 It's common for a page or app to have unsubmitted analytics or other data at the

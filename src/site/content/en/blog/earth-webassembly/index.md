@@ -12,8 +12,8 @@ description: |
 tags:
   - blog
   - webassembly
-  - Earth
-  - Web App
+  # - Earth
+  # - Web App
   - case-study
 ---
 
