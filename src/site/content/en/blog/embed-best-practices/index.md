@@ -16,16 +16,14 @@ tags:
 ---
 
 Many sites use third-party embeds to create an engaging user experience by delegating some sections of a web page to another content provider. The most common examples of third-party content embeds are video players, social-media feeds, maps, and advertisements. 
-
 Third-party content can impact the performance of a page in many ways. It can be render-blocking, contend with other critical resources for network and bandwidth, or affect the Core Web Vitals metrics. Third-party embeds may also cause layout shifts as they load. This article discusses performance best practices that you can use when loading third-party embeds, efficient loading techniques, and the Layout Shift Terminator tool that helps to reduce layout shifts for popular embeds.
 
 ## What is an embed
-
 A third-party embed is any content displayed on your site that is: 
 * Not authored by you
 * Served from third-party servers
 
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/zPQ21UocTuIb0qpNabiD.png", alt="Type of embeds", class="w-screenshot", width="400", height="200" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/Sa5xRfSvd3uSYMgxY0CK.png", alt="Types of embeds", width="591", height="352" %}
 
 Embeds are frequently used in the following:
 * Websites related to sports, news, entertainment, and fashion use videos to augment textual content.
@@ -42,7 +40,7 @@ Many popular embeds include over 100 KB of JavaScript, sometimes even going up t
 
 It is a good practice to periodically audit the performance impact of your embeds and third-party code because embed source code may change. You can use this opportunity to remove any redundant code.
 
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/zPQ21UocTuIb0qpNabiD.png", alt="Impact of third-party code", class="w-screenshot", width="400", height="200" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/WektrXQsgQPMWy2hxQ4E.png", alt="Reduce the impact of third-party code", width="800", height="738" %}
 
 ## Loading best practices
 
@@ -168,8 +166,8 @@ While interactive embeds add value to the page, many users may not interact with
     </thead>
     <tbody>
       <tr>
-        <td>{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/zPQ21UocTuIb0qpNabiD.png", alt="Map embed", class="w-screenshot", width="400", height="200" %}</td>
-        <td>{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/zPQ21UocTuIb0qpNabiD.png", alt="Map facade", class="w-screenshot", width="400", height="200" %}</td>
+        <td>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/Cn0x7aeqCw7M0X5b4L1P.png", alt="A map embed", width="800", height="725" %}</td>
+        <td>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/f8z9MfvgIFiBkCLA1Qud.png", alt="A map facade", width="800", height="541" %}</td>
       </tr>
     </tbody>
     <caption>Embed vs Facade.</caption>
@@ -182,7 +180,7 @@ A [facade](https://web.dev/third-party-facades/) is a static element that looks 
 
 Static images can be used instead of map embeds where you might not need to make the map interactive. You can zoom in on the area of interest on the map, capture an image, and use this instead of the interactive map embed. You can also use _DevTools **Capture node screenshot** _functionality_ _to capture a screenshot of the embedded `iframe` element, as shown below.
 
-{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/zPQ21UocTuIb0qpNabiD.png", alt="Capture node screenshot", class="w-screenshot", width="400", height="200" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/EJvMAEUmF3QNUDGBgfNR.png", alt="Capture node screenshot", width="400", height="500" %}
 
 DevTools captures the image as a  `png`, but you can also consider converting it to <code>[WebP format for better performance](https://web.dev/serve-images-webp/)</code>.
 
@@ -232,8 +230,8 @@ You can build a custom click-to-load facade using the _Import on Interaction_ pa
     <table>
     <tbody>
       <tr>
-        <td>{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/zPQ21UocTuIb0qpNabiD.png", alt="lite-youtube custom element", class="w-screenshot", width="400", height="20" %}</td>
-        <td>{% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/zPQ21UocTuIb0qpNabiD.png", alt="actual youtube embed", class="w-screenshot", width="400", height="200" %}</td>
+        <td>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/EcTxjLs9SUb1ofALN8rA.png", alt="Lite YouTube embed", width="800", height="521" %}</td>
+        <td>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/cYG1NJqM8ZoLkYOi6xFJ.png", alt="Actual YouTube embed", width="800", height="502" %}</td>
       </tr>
     </tbody>
     <caption>YouTube click-to-load</caption>
@@ -246,7 +244,7 @@ You can build a custom click-to-load facade using the _Import on Interaction_ pa
 
     [React-live-chat-loader](https://github.com/calibreapp/react-live-chat-loader) loads a button that looks like a chat embed instead of the embed itself. It can be used with various chat provider platforms such as Intercom, Help Scout, Messenger, and so on. The look-alike widget is much lighter than the chat-widget and loads faster. It can be replaced by the actual chat widget when the user hovers or clicks on the button or if the page has been idle for a long time. The [Postmark case study](https://wildbit.com/blog/2020/09/30/getting-postmark-lighthouse-performance-score-to-100) explains how they implemented react-live-chat-loader and performance improvements they achieved.
 
-    {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/zPQ21UocTuIb0qpNabiD.png", alt="Postmark chat widget", class="w-screenshot", width="400", height="200" %} 
+   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/XyJON43TV8h1qWNZV1Ev.png", alt="Postmark chat widget", width="800", height="389" %}
 
 ### **Remove or replace embeds with links**
 
@@ -306,7 +304,7 @@ Layout Shift Terminator:
 * Sizes a min-height wrapper around the embed markup using media queries (and container queries) until the embed initializes (after which the min-height styles are removed).
 * Generates an optimized embed snippet that can be copy/pasted where you would otherwise be including the embed in your page.
 
- {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/zPQ21UocTuIb0qpNabiD.png", alt="Layout shift terminator", class="w-screenshot", width="400", height="200" %} 
+ {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/lJrW6vxuf1G80XUmvXBT.png", alt="Layour shift Terminal", width="800", height="740" %}
 
 Try out the Layout Shift Terminator, and feel free to leave any feedback on [GitHub](https://github.com/GoogleChromeLabs/layout-shift-terminator). The tool is in a beta state and aims to improve over time with further refinements.
 
