@@ -1,21 +1,22 @@
 ---
 title: Best practices for using third-party embeds
 subhead: An overview of techniques to load popular third-party embeds efficiently.  
-date: 2021-10-01
-updated: 2021-10-01
+date: 2021-10-03
+updated: 2021-10-03
 authors:
   - leenasohoni
   - addyosmani
   - katiehempenius
 description: |
   This article discusses performance best practices that you can use when loading third-party embeds, efficient loading techniques and the Layout Shift Terminator tool that helps to reduce layout shifts for popular embeds.
-hero: 
-alt: 
+hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/aeToz7Hb1mx63bHBXTDx.jpeg
+alt: A phone with a YouTube play button
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
 ---
 
 Many sites use third-party embeds to create an engaging user experience by delegating some sections of a web page to another content provider. The most common examples of third-party content embeds are video players, social-media feeds, maps, and advertisements. 
+
 Third-party content can impact the performance of a page in many ways. It can be render-blocking, contend with other critical resources for network and bandwidth, or affect the Core Web Vitals metrics. Third-party embeds may also cause layout shifts as they load. This article discusses performance best practices that you can use when loading third-party embeds, efficient loading techniques, and the Layout Shift Terminator tool that helps to reduce layout shifts for popular embeds.
 
 ## What is an embed
