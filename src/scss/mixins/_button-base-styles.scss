@@ -85,7 +85,6 @@
   }
 
   &:hover {
-    transform: translateY(-0.15em);
     box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 10%),
       0px 8px 8px 1px rgb(0 0 0 / 7%), 0px 3px 8px 2px rgb(0 0 0 / 8%);
     transition: transform $global-transition-movement,
