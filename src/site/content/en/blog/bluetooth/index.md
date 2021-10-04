@@ -5,7 +5,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2015-07-21
-updated: 2021-05-07
+updated: 2021-10-01
 hero: image/admin/CME5IVhdn0pngs7jAlFX.jpg
 thumbnail: image/admin/1J1OTu90a2oH8wFogKnF.jpg
 alt: A Bluetooth chip on a coin
@@ -494,6 +494,13 @@ Bluetooth devices: status, services, characteristics, and descriptors.
 
 I also recommend checking out the official [How to file Web Bluetooth bugs]
 page as debugging Bluetooth can be hard sometimes.
+
+{% Aside 'caution' %}
+Reading and writing to Bluetooth characteristics in parallel may raise errors
+depending on the platform. I strongly suggest you manually queue GATT operation
+requests when appropriate. See ["GATT operation in progress - how to handle
+it?"](https://github.com/WebBluetoothCG/web-bluetooth/issues/188).
+{% endAside %}
 
 ## What's next
 
