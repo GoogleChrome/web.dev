@@ -1,8 +1,8 @@
 ---
 title: Best practices for using third-party embeds
 subhead: An overview of techniques to load popular third-party embeds efficiently.  
-date: 2021-10-03
-updated: 2021-10-03
+date: 2021-10-05
+updated: 2021-10-05
 authors:
   - leenasohoni
   - addyosmani
@@ -12,7 +12,9 @@ description: |
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/aeToz7Hb1mx63bHBXTDx.jpeg
 alt: A phone with a YouTube play button
 tags:
-  - blog # blog is a required tag for the article to show up in the blog.
+  - blog 
+  - performance
+  - web-vitals
 ---
 
 Many sites use third-party embeds to create an engaging user experience by delegating some sections of a web page to another content provider. The most common examples of third-party content embeds are video players, social-media feeds, maps, and advertisements. 
@@ -20,6 +22,7 @@ Many sites use third-party embeds to create an engaging user experience by deleg
 Third-party content can impact the performance of a page in many ways. It can be render-blocking, contend with other critical resources for network and bandwidth, or affect the Core Web Vitals metrics. Third-party embeds may also cause layout shifts as they load. This article discusses performance best practices that you can use when loading third-party embeds, efficient loading techniques, and the Layout Shift Terminator tool that helps reduce layout shifts for popular embeds.
 
 ## What is an embed
+
 A third-party embed is any content displayed on your site that is: 
 * Not authored by you
 * Served from third-party servers
@@ -53,7 +56,7 @@ In a well-designed page, the key first-party content will be the focus of the pa
 
 For the best user experience, the main content should load quickly and before any other supporting content. For example, the news text on a news page should load before embeds for a Twitter feed or advertisements. 
 
-Requests for third-party embeds can get in the way of loading first-party content, so the position of a third-party script tag is important. Scripts can affect the loading sequence because the DOM construction pauses while scripts are executed. Place third-party script tags after the key first-party tags and [use `async` or `defer`](https://web.dev/efficiently-load-third-party-javascript/#use-async-or-defer) attributes to load them asynchronously.
+Requests for third-party embeds can get in the way of loading first-party content, so the position of a third-party script tag is important. Scripts can affect the loading sequence because the DOM construction pauses while scripts are executed. Place third-party script tags after the key first-party tags and [use `async` or `defer`](/efficiently-load-third-party-javascript/#use-async-or-defer) attributes to load them asynchronously.
 
 
 ```html
@@ -69,12 +72,12 @@ Requests for third-party embeds can get in the way of loading first-party conten
 
 Since third-party content usually comes after the primary content, it may not be visible in the viewport when the page loads. In that case, downloading third-party resources may be deferred until the user scrolls down to that part of the page. This not only helps optimize the initial page load but also reduces the download costs for users on fixed data plans and slow network connections. 
 
-Delaying the download of content until it is actually needed is called [lazy-loading](https://web.dev/lazy-loading-best-practices/). Depending on the requirements and the type of embed, you can use different lazy-loading techniques explained below.
+Delaying the download of content until it is actually needed is called [lazy-loading](/lazy-loading-best-practices/). Depending on the requirements and the type of embed, you can use different lazy-loading techniques explained below.
 
 
 #### Native lazy-loading for `<iframe>`
 
-For third-party embeds loaded through `<iframe>` elements, you can use browser-level lazy-loading to defer loading offscreen iframes until users scroll near them. The [loading attribute for `<iframe>` is available in Chrome 77](https://web.dev/iframe-lazy-loading/) and above and has [also been introduced](https://caniuse.com/loading-lazy-attr) to other Chromium-based browsers. 
+For third-party embeds loaded through `<iframe>` elements, you can use browser-level lazy-loading to defer loading offscreen iframes until users scroll near them. The [loading attribute for `<iframe>` is available in Chrome 77](/iframe-lazy-loading/) and above and has [also been introduced](https://caniuse.com/loading-lazy-attr) to other Chromium-based browsers. 
 
 ```html
 <iframe src="https://example.com"
@@ -90,7 +93,7 @@ The loading attribute supports the following values:
 * `eager`: Loads the iframe immediately. Use if the iframe is not a good candidate for lazy-loading. If the `loading` attribute has not been specified, this is the default behavior—except in [Lite mode](https://support.google.com/chrome/answer/2392284?hl=en&co=GENIE.Platform%3DAndroid).
 * `auto`: The browser determines whether to lazy-load this frame.
 
-Browsers that don’t support the `loading` attribute ignore it, so you can apply native lazy-loading as a progressive enhancement. Browsers that support the attribute may have different implementations for the [distance-from-viewport](https://web.dev/browser-level-image-lazy-loading/#distance-from-viewport-thresholds) threshold (the distance at which the iframe starts loading).
+Browsers that don’t support the `loading` attribute ignore it, so you can apply native lazy-loading as a progressive enhancement. Browsers that support the attribute may have different implementations for the [distance-from-viewport](/browser-level-image-lazy-loading/#distance-from-viewport-thresholds) threshold (the distance at which the iframe starts loading).
 
 Following are some ways in which you can lazy load iframes for different types of embeds.
 
@@ -118,6 +121,7 @@ Following are some ways in which you can lazy load iframes for different types o
    loading="lazy">
 </iframe>
 ```
+
 #### lazysizes library
 
 Because browsers use an embed’s distance-from-viewport, in addition to signals like [effective connection type](https://googlechrome.github.io/samples/network-information/) and Lite-mode, to decide when an iframe should be loaded, native lazy-loading can be inconsistent. If you need better control on the distance thresholds or you want to provide a consistent lazy-loading experience across browsers, you can use the [lazysizes](https://github.com/aFarkas/lazysizes) library. 
@@ -159,7 +163,7 @@ While interactive embeds add value to the page, many users may not interact with
 
 <div class="w-columns">
   <figure class="w-figure">
-    {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/Cn0x7aeqCw7M0X5b4L1P.png", alt="A map embed", width="800", height="725", class=w-screenshot"" %}
+    {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/Cn0x7aeqCw7M0X5b4L1P.png", alt="A map embed", width="800", height="725", class="w-screenshot" %}
     <figcaption class="w-figcaption">
       A map embed with a zoom in and out feature.
     </figcaption>
@@ -180,7 +184,7 @@ Static images can be used instead of map embeds where you might not need to make
 
 {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/EJvMAEUmF3QNUDGBgfNR.png", alt="Capture node screenshot", width="400", height="500", class="w-screenshot" %}
 
-DevTools captures the image as a  `png`, but you can also consider converting it to <code>[WebP format for better performance](https://web.dev/serve-images-webp/)</code>.
+DevTools captures the image as a  `png`, but you can also consider converting it to <code>[WebP format for better performance](/serve-images-webp/)</code>.
 
 
 #### Use dynamic images as facades
@@ -222,21 +226,24 @@ You can build a custom click-to-load facade using the _import on interaction_ pa
     ```
 	Following is a comparison between the lite-youtube-embed and the actual embed.
 
-	<div class="w-table-wrapper">
-    <table>
-    <tbody>
-      <tr>
-        <td>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/EcTxjLs9SUb1ofALN8rA.png", alt="Lite YouTube embed", width="800", height="521" %}</td>
-        <td>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/cYG1NJqM8ZoLkYOi6xFJ.png", alt="Actual YouTube embed", width="800", height="502" %}</td>
-      </tr>
-    </tbody>
-    <caption>YouTube click-to-load</caption>
-    </table>
-    </div>
+  <div class="w-columns">
+    <figure class="w-figure">
+      {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/EcTxjLs9SUb1ofALN8rA.png", alt="Lite YouTube embed", width="800", height="521" %}
+      <figcaption class="w-figcaption">
+        A lite-YouTube embed
+      </figcaption>
+    </figure>
+    <figure class="w-figure">
+      {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/cYG1NJqM8ZoLkYOi6xFJ.png", alt="Actual YouTube embed", width="800", height="502" %}
+      <figcaption class="w-figcaption">
+        A YouTube embed
+      </figcaption>
+    </figure>
+  </div>
 
     Other similar facades available for YouTube and Vimeo players are [lite-youtube](https://github.com/justinribeiro/lite-youtube), [lite-vimeo-embed](https://github.com/luwes/lite-vimeo-embed), and [lite-vimeo](https://github.com/slightlyoff/lite-vimeo).
 
-* Chat widget facade
++ Chat widget facade
 
     [React-live-chat-loader](https://github.com/calibreapp/react-live-chat-loader) loads a button that looks like a chat embed instead of the embed itself. It can be used with various chat provider platforms such as Intercom, Help Scout, Messenger, and so on. The look-alike widget is much lighter than the chat-widget and loads faster. It can be replaced by the actual chat widget when the user hovers or clicks on the button or if the page has been idle for a long time. The [Postmark case study](https://wildbit.com/blog/2020/09/30/getting-postmark-lighthouse-performance-score-to-100) explains how they implemented react-live-chat-loader and performance improvements they achieved.
 
