@@ -210,7 +210,7 @@ $div.innerHTML = sanitized
 // `<em>hello world</em><img src="">`
 ```
 
-This can be an alternative when the Sanitizer API is not implemented on the browser.
+DOMPurify can serve as a fallback when the Sanitizer API is not implemented in the browser.
 
 DOMPurify implementation has a couple of downsides. If a string is returned, then the input string is parsed twice, by DOMPurify and `.innerHTML`. This double parsing wastes processing time, but can also lead to interesting vulnerabilities caused by cases where the result of the second parsing is different from the first.
 
