@@ -13,11 +13,11 @@ alt: |
 tags:
   - blog
   - audio
-  - caching
+  # - caching
   - media
   - offline
   - service-worker
-  - video
+  # - video
 feedback:
   - api
 ---

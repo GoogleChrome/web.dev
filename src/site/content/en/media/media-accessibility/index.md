@@ -13,7 +13,7 @@ date: 2020-08-20
 updated: 2021-07-05
 tags:
   - media
-  - video
+  # - video
   - accessibility
 ---
 

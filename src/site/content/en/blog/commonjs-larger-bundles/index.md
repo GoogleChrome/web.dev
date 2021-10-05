@@ -14,8 +14,8 @@ tags:
   - blog
   - javascript
   - modules
-  - commonjs
-  - tree-shaking
+  # - commonjs
+  # - tree-shaking
 ---
 
 In this post, we'll look into what CommonJS is and why it's making your JavaScript bundles larger than necessary.

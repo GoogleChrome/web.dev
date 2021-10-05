@@ -17,10 +17,10 @@ description: |
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - css
-  - dark-mode
-  - dark-theme
-  - prefers-color-scheme
-  - color-scheme
+  # - dark-mode
+  # - dark-theme
+  # - prefers-color-scheme
+  # - color-scheme
 feedback:
   - api
 ---

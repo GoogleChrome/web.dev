@@ -20,7 +20,7 @@ tags:
   - blog
   - progressive-web-apps
   - service-worker
-  - chrome80
+  # - chrome80
 feedback:
   - api
 ---

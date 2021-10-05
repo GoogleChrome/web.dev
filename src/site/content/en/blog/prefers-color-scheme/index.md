@@ -16,10 +16,10 @@ description: |
   to offer users a way to override their operating system level preference on specific web pages.
 tags:
   - blog
-  - dark-mode
-  - dark-theme
-  - prefers-color-scheme
-  - color-scheme
+  # - dark-mode
+  # - dark-theme
+  # - prefers-color-scheme
+  # - color-scheme
   - css
 feedback:
   - api

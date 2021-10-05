@@ -14,7 +14,7 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - media
   - audio
-  - video
+  # - video
 feedback:
   - api
 ---

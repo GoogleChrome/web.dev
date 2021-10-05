@@ -15,7 +15,7 @@ description: |
   continue accumulating those API changes.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - payment
+  # - payment
 feedback:
   - api
 ---

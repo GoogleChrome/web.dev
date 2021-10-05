@@ -16,7 +16,7 @@ date: 2017-09-18
 updated: 2021-02-17
 tags:
   - blog
-  - sensors
+  # - sensors
   - devices
   - capabilities
 hero: image/admin/2AGc7aV66zc69fiqNJBZ.jpg

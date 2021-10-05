@@ -11,7 +11,7 @@ alt: Yellow and black warnings wall
 description: This article describes Conformance, a methodology used in frameworks within Google, and how we plan on open-sourcing it to the JavaScript framework ecosystem
 tags:
   - blog
-  - aurora
+  # - aurora
 ---
 
 In our [introductory blog post](/aurora), we covered how we've learned a lot while

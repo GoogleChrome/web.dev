@@ -18,8 +18,8 @@ tags:
   - blog
   - progressive-web-apps
   - capabilities
-  - file-system
-  - file-system-access
+  # - file-system
+  # - file-system-access
 feedback:
   - api
 ---

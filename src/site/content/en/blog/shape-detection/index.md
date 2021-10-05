@@ -10,9 +10,8 @@ tags:
   - blog
   - capabilities
   - origin-trials
-  - shape-detection
+  # - shape-detection
   - progressive-web-apps
-  - webapp
 hero: image/admin/pcEIwc0D09iF7BPo3TT1.jpg
 alt: QR code being scanned by a mobile phone
 origin-trial:

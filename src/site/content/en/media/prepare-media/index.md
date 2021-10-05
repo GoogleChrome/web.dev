@@ -11,7 +11,7 @@ date: 2017-06-30
 updated: 2021-07-05
 tags:
   - media
-  - video
+  # - video
 ---
 
 Now that we've introduced you to the [applications](/media-application-basics/)

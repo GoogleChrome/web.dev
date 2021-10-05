@@ -13,7 +13,7 @@ tags:
   - css
   - dom
   - javascript
-  - animation
+  - animations
 ---
 
 In this post I want to share thinking on ways to solve split text animations and

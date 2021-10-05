@@ -15,9 +15,9 @@ description: |
   This allows your app to apply backpressure to received messages.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - backpressure
-  - websocket
-  - websocketstream
+  # - backpressure
+  # - websocket
+  # - websocketstream
   - capabilities
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/1977080236415647745

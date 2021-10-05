@@ -16,8 +16,8 @@ description: |
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - case-study
-  - reliable
-  - e-commerce
+  # - reliable
+  # - e-commerce
   - test-post
   - performance
 ---
