@@ -8,7 +8,7 @@ authors:
   - addyosmani
   - katiehempenius
 description: |
-  This article discusses performance best practices that you can use when loading third-party embeds, efficient loading techniques and the Layout Shift Terminator tool that helps to reduce layout shifts for popular embeds.
+  This article discusses performance best practices that you can use when loading third-party embeds, efficient loading techniques and the Layout Shift Terminator tool that helps reduce layout shifts for popular embeds.
 hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/aeToz7Hb1mx63bHBXTDx.jpeg
 alt: A phone with a YouTube play button
 tags:
@@ -17,7 +17,7 @@ tags:
 
 Many sites use third-party embeds to create an engaging user experience by delegating some sections of a web page to another content provider. The most common examples of third-party content embeds are video players, social-media feeds, maps, and advertisements. 
 
-Third-party content can impact the performance of a page in many ways. It can be render-blocking, contend with other critical resources for network and bandwidth, or affect the Core Web Vitals metrics. Third-party embeds may also cause layout shifts as they load. This article discusses performance best practices that you can use when loading third-party embeds, efficient loading techniques, and the Layout Shift Terminator tool that helps to reduce layout shifts for popular embeds.
+Third-party content can impact the performance of a page in many ways. It can be render-blocking, contend with other critical resources for network and bandwidth, or affect the Core Web Vitals metrics. Third-party embeds may also cause layout shifts as they load. This article discusses performance best practices that you can use when loading third-party embeds, efficient loading techniques, and the Layout Shift Terminator tool that helps reduce layout shifts for popular embeds.
 
 ## What is an embed
 A third-party embed is any content displayed on your site that is: 
@@ -35,19 +35,19 @@ Third-party embeds are typically loaded in [`<iframe>`](https://developer.mozill
 
 ## Performance impact of third-party embeds
 
-Many popular embeds include over 100 KB of JavaScript, sometimes even going up to 2 MB. They take more time to load and keep the main thread busy when executing. Performance monitoring tools such as [Lighthouse](https://developers.google.com/web/tools/lighthouse/) and [Chrome DevTools](https://developer.chrome.com/docs/devtools/) help to [measure the impact of third-party embeds on performance](https://web.dev/identify-slow-third-party-javascript/).
+Many popular embeds include over 100&nbsp;KB of JavaScript, sometimes even going up to 2&nbsp;MB. They take more time to load and keep the main thread busy when executing. Performance monitoring tools such as [Lighthouse](https://developers.google.com/web/tools/lighthouse/) and [Chrome DevTools](https://developer.chrome.com/docs/devtools/) help to [measure the impact of third-party embeds on performance](/identify-slow-third-party-javascript/).
 
-[Reduce the impact of third-party code](https://web.dev/third-party-summary/) Lighthouse audit shows the list of third-party providers a page uses, with size and main-thread blocking time. The audit is available through Chrome DevTools under the Lighthouse tab.
+[Reduce the impact of third-party code](/third-party-summary/) Lighthouse audit shows the list of third-party providers a page uses, with size and main-thread blocking time. The audit is available through Chrome DevTools under the Lighthouse tab.
 
 It is a good practice to periodically audit the performance impact of your embeds and third-party code because embed source code may change. You can use this opportunity to remove any redundant code.
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/WektrXQsgQPMWy2hxQ4E.png", alt="Reduce the impact of third-party code", width="800", height="738" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/WektrXQsgQPMWy2hxQ4E.png", alt="Reduce the impact of third-party code", width="800", height="738", class="w-screenshot" %}
 
 ## Loading best practices
 
 Third-party embeds can negatively impact performance, but they also offer important functionalities. To efficiently use third-party embeds and reduce their performance impact, follow the guidelines below.
 
-### **Script ordering**
+### Script ordering
 
 In a well-designed page, the key first-party content will be the focus of the page, while the third-party embeds will occupy side-bars or appear after the first-party content. 
 
@@ -65,7 +65,7 @@ Requests for third-party embeds can get in the way of loading first-party conten
 </head>
 ```
 
-### **Lazy-loading**
+### Lazy-loading
 
 Since third-party content usually comes after the primary content, it may not be visible in the viewport when the page loads. In that case, downloading third-party resources may be deferred until the user scrolls down to that part of the page. This not only helps optimize the initial page load but also reduces the download costs for users on fixed data plans and slow network connections. 
 
@@ -87,14 +87,14 @@ For third-party embeds loaded through `<iframe>` elements, you can use browser-l
 The loading attribute supports the following values:
 
 * `lazy`: Indicates that the browser should defer loading the iframe. The browser will load the iframe when it is nearing the viewport. Use if the iframe is a good candidate for lazy-loading.
-* `eager`: Loads the iframe immediately. Use if the iframe is not a good candidate for lazy-loading. If the `loading` attribute has not been specified, this is the default behavior - except in [Lite mode](https://support.google.com/chrome/answer/2392284?hl=en&co=GENIE.Platform%3DAndroid).
+* `eager`: Loads the iframe immediately. Use if the iframe is not a good candidate for lazy-loading. If the `loading` attribute has not been specified, this is the default behavior—except in [Lite mode](https://support.google.com/chrome/answer/2392284?hl=en&co=GENIE.Platform%3DAndroid).
 * `auto`: The browser determines whether to lazy-load this frame.
 
 Browsers that don’t support the `loading` attribute ignore it, so you can apply native lazy-loading as a progressive enhancement. Browsers that support the attribute may have different implementations for the [distance-from-viewport](https://web.dev/browser-level-image-lazy-loading/#distance-from-viewport-thresholds) threshold (the distance at which the iframe starts loading).
 
 Following are some ways in which you can lazy load iframes for different types of embeds.
 
-* YouTube videos: To lazy-load a YouTube video player iframe,  include the `loading` attribute to the embed code provided by YouTube. Lazy loading the YouTube embed can save approximately 500 KB on the initial page load.
+* YouTube videos: To lazy-load a YouTube video player iframe,  include the `loading` attribute to the embed code provided by YouTube. Lazy loading the YouTube embed can save approximately 500&nbsp;KB on the initial page load.
 
 ```html
 <iframe src="https://www.youtube.com/embed/aKydtOXW8mI"
@@ -122,7 +122,7 @@ Following are some ways in which you can lazy load iframes for different types o
 
 Because browsers use an embed’s distance-from-viewport, in addition to signals like [effective connection type](https://googlechrome.github.io/samples/network-information/) and Lite-mode, to decide when an iframe should be loaded, native lazy-loading can be inconsistent. If you need better control on the distance thresholds or you want to provide a consistent lazy-loading experience across browsers, you can use the [lazysizes](https://github.com/aFarkas/lazysizes) library. 
 
-_[lazysizes](https://github.com/aFarkas/lazysizes)_ is a fast, SEO-friendly lazy loader for both images and iframes. Once you have downloaded the component, it can be used with an iframe for a YouTube embed as follows.
+[lazysizes](https://github.com/aFarkas/lazysizes) is a fast, SEO-friendly lazy loader for both images and iframes. Once you have downloaded the component, it can be used with an iframe for a YouTube embed as follows.
 
 
 ```html
@@ -140,7 +140,7 @@ _[lazysizes](https://github.com/aFarkas/lazysizes)_ is a fast, SEO-friendly lazy
 ```
 Similarly, lazysizes may be used with iframes for other third-party embeds.
 
-Note that _lazysizes_ uses the [Intersection Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API) to detect when an element becomes visible. 
+Note that lazysizes uses the [Intersection Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API) to detect when an element becomes visible. 
 
 
 #### Using data-lazy in Facebook
@@ -150,38 +150,35 @@ Facebook provides different types of [social plugins](https://developers.faceboo
 
 #### Lazy-loading Instagram feeds
 
-Instagram provides a block of markup and a script as part of the embed. The script injects an `<iframe>` into the page. Lazy-loading this `<iframe>` can improve performance as the embed can be over 100 KB gzipped in size. Many Instagram plugins for WordPress sites like [WPZoom](https://wordpress.org/plugins/instagram-widget-by-wpzoom/) and [Elfsight](https://www.mapledesign.co.uk/tech-blog/elfsight-instagram-feed-performance/) provide the lazy-loading option.
+Instagram provides a block of markup and a script as part of the embed. The script injects an `<iframe>` into the page. Lazy-loading this `<iframe>` can improve performance as the embed can be over 100&nbsp;KB gzipped in size. Many Instagram plugins for WordPress sites like [WPZoom](https://wordpress.org/plugins/instagram-widget-by-wpzoom/) and [Elfsight](https://www.mapledesign.co.uk/tech-blog/elfsight-instagram-feed-performance/) provide the lazy-loading option.
 
 
-### **Replace embeds with facades**
+### Replace embeds with facades
 
 While interactive embeds add value to the page, many users may not interact with them. For example, not every user browsing a restaurant page will click, expand, scroll, and navigate the map embed. Similarly, not every user to a telecom service providers page will interact with the chatbot. In these cases, you can avoid loading or lazy-loading the embed altogether by displaying a facade in its place. 
 
-<div class="w-table-wrapper">
-  <table>
-    <thead>
-      <tr>
-        <th>A map embed with a zoom in/out feature</th>
-        <th>A map facade that is an image</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/Cn0x7aeqCw7M0X5b4L1P.png", alt="A map embed", width="800", height="725" %}</td>
-        <td>{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/f8z9MfvgIFiBkCLA1Qud.png", alt="A map facade", width="800", height="541" %}</td>
-      </tr>
-    </tbody>
-    <caption>Embed vs Facade.</caption>
-  </table>
+<div class="w-columns">
+  <figure class="w-figure">
+    {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/Cn0x7aeqCw7M0X5b4L1P.png", alt="A map embed", width="800", height="725", class=w-screenshot"" %}
+    <figcaption class="w-figcaption">
+      A map embed with a zoom in and out feature.
+    </figcaption>
+  </figure>
+  <figure class="w-figure">
+    {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/f8z9MfvgIFiBkCLA1Qud.png", alt="A map facade", width="800", height="541", class="w-screenshot" %}
+    <figcaption class="w-figcaption">
+      A map facade that is an image.
+    </figcaption>
+  </figure>
 </div>
 
-A [facade](https://web.dev/third-party-facades/) is a static element that looks similar to the actual embedded third-party but is not functional and, therefore, much less taxing on the page load. Following are a few strategies to load such embeds optimally while still providing some value to the user.
+A [facade](/third-party-facades/) is a static element that looks similar to the actual embedded third-party but is not functional and, therefore, much less taxing on the page load. Following are a few strategies to load such embeds optimally while still providing some value to the user.
 
 #### Use static images as facades
 
-Static images can be used instead of map embeds where you might not need to make the map interactive. You can zoom in on the area of interest on the map, capture an image, and use this instead of the interactive map embed. You can also use _DevTools **Capture node screenshot** _functionality_ _to capture a screenshot of the embedded `iframe` element, as shown below.
+Static images can be used instead of map embeds where you might not need to make the map interactive. You can zoom in on the area of interest on the map, capture an image, and use this instead of the interactive map embed. You can also use DevTools **Capture node screenshot** functionality to capture a screenshot of the embedded `iframe` element, as shown below.
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/EJvMAEUmF3QNUDGBgfNR.png", alt="Capture node screenshot", width="400", height="500" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/EJvMAEUmF3QNUDGBgfNR.png", alt="Capture node screenshot", width="400", height="500", class="w-screenshot" %}
 
 DevTools captures the image as a  `png`, but you can also consider converting it to <code>[WebP format for better performance](https://web.dev/serve-images-webp/)</code>.
 
@@ -190,8 +187,7 @@ DevTools captures the image as a  `png`, but you can also consider converting it
 
 This technique allows you to generate images corresponding to an interactive embed at run time. Following are some of the tools that allow you to generate static versions of embeds on your pages.
 
-+ Maps Static API
-    The Google [Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview) service generates a map based on the URL parameters included in a standard HTTP request and returns the map as an image you can display on your web page. The URL needs to include the Google Maps API key and must be placed in the `<img>` tag on the page as the `src` attribute. 
+- **Maps Static API**: The Google [Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview) service generates a map based on the URL parameters included in a standard HTTP request and returns the map as an image you can display on your web page. The URL needs to include the Google Maps API key and must be placed in the `<img>` tag on the page as the `src` attribute. 
 
     The [Static map maker](https://staticmapmaker.com/google/) tool helps to configure the parameters required for the URL and gives you the code for the image element in real-time.
 
@@ -203,20 +199,19 @@ This technique allows you to generate images corresponding to an interactive emb
     </a>
     ```
 
-+ Twitter screenshots
-    Similar to map screenshots, this concept allows you to dynamically embed a Twitter screenshot instead of the live feed. [Tweetpik](https://tweetpik.com/) is one of the tools that can be used to take screenshots of tweets. Tweetpik API accepts the URL of the tweet and returns an image with its contents. The API also accepts parameters to customize the background, colors, borders, and dimensions of the image.
+- **Twitter screenshots**: Similar to map screenshots, this concept allows you to dynamically embed a Twitter screenshot instead of the live feed. [Tweetpik](https://tweetpik.com/) is one of the tools that can be used to take screenshots of tweets. Tweetpik API accepts the URL of the tweet and returns an image with its contents. The API also accepts parameters to customize the background, colors, borders, and dimensions of the image.
 
 #### Use click-to-load to enhance facades
 
-The click-to-load concept combines lazy-loading and facades. The page initially loads with the facade. When the user interacts with the static placeholder by clicking on it, the third-party embed is loaded. This is also known as the [Import on Interaction](https://addyosmani.com/blog/import-on-interaction/) pattern and can be implemented using the following steps.
+The click-to-load concept combines lazy-loading and facades. The page initially loads with the facade. When the user interacts with the static placeholder by clicking on it, the third-party embed is loaded. This is also known as the [import on interaction](https://addyosmani.com/blog/import-on-interaction/) pattern and can be implemented using the following steps.
 
-1. On page load: facade or static element is included on the page.
-2. On mouseover: facade preconnects to the third-party embed provider.
-3. On Click: the facade is replaced by the third-party product.
+1. On page load: Facade or static element is included on the page.
+2. On mouseover: Facade preconnects to the third-party embed provider.
+3. On click: The facade is replaced by the third-party product.
 
 Facades may be used with third-party embeds for video players, chat widgets, authentication services, and social media widgets. YouTube video embeds that are just images with a play button are facades that we come across frequently. The actual video loads only when you click on the image. 
 
-You can build a custom click-to-load facade using the _Import on Interaction_ pattern or use one of the following open source facades available for different types of embeds.
+You can build a custom click-to-load facade using the _import on interaction_ pattern or use one of the following open source facades available for different types of embeds.
 
 + YouTube facade
 
@@ -239,15 +234,15 @@ You can build a custom click-to-load facade using the _Import on Interaction_ pa
     </table>
     </div>
 
-    Similar other facades also available for YouTube and Vimeo players are [lite-youtube](https://github.com/justinribeiro/lite-youtube), [lite-vimeo-embed](https://github.com/luwes/lite-vimeo-embed), and [lite-vimeo](https://github.com/slightlyoff/lite-vimeo).
+    Other similar facades available for YouTube and Vimeo players are [lite-youtube](https://github.com/justinribeiro/lite-youtube), [lite-vimeo-embed](https://github.com/luwes/lite-vimeo-embed), and [lite-vimeo](https://github.com/slightlyoff/lite-vimeo).
 
 * Chat widget facade
 
     [React-live-chat-loader](https://github.com/calibreapp/react-live-chat-loader) loads a button that looks like a chat embed instead of the embed itself. It can be used with various chat provider platforms such as Intercom, Help Scout, Messenger, and so on. The look-alike widget is much lighter than the chat-widget and loads faster. It can be replaced by the actual chat widget when the user hovers or clicks on the button or if the page has been idle for a long time. The [Postmark case study](https://wildbit.com/blog/2020/09/30/getting-postmark-lighthouse-performance-score-to-100) explains how they implemented react-live-chat-loader and performance improvements they achieved.
 
-   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/XyJON43TV8h1qWNZV1Ev.png", alt="Postmark chat widget", width="800", height="389" %}
+   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/XyJON43TV8h1qWNZV1Ev.png", alt="Postmark chat widget", width="800", height="389", class="w-screenshot" %}
 
-### **Remove or replace embeds with links**
+### Remove or replace embeds with links
 
 If you find that some third-party embeds result in poor loading performance and using any of the techniques above is not an option, the simplest thing that you can do is remove the embed entirely. If you still want your users to be able to access the content in the embed, you can provide a link to it with `target="_blank"` so that the user can click and view it in another tab. 
 
@@ -256,7 +251,7 @@ If you find that some third-party embeds result in poor loading performance and 
 
 While dynamically loading embedded content can improve the loading performance of a page, it can sometimes cause unexpected movement of page content. This is known as layout shift. 
 
-Since visual stability is important to guarantee a smooth user experience, [Cumulative Layout Shift (CLS)](https://web.dev/cls/) measures how often those shifts happen and how disruptive they are.
+Since visual stability is important to guarantee a smooth user experience, [Cumulative Layout Shift (CLS)](/cls/) measures how often those shifts happen and how disruptive they are.
 
 Layout shifts can be avoided by reserving space during page load for elements that are going to be dynamically loaded later. The browser can determine the space to be reserved if it knows the width and height of the elements. You can ensure this by specifying the `width` and `height` attributes of iframes or by setting a fixed size for static elements where the third-party embed will be loaded. For example, an iframe for a YouTube embed should have width and height specified as follows.
 
@@ -291,7 +286,7 @@ This information can be used to set the size of the containing element to ensure
 </div>
 ```
 
-### **Layout Shift Terminator**
+### Layout Shift Terminator
 
 Since third-party embeds often omit the dimensions (width, height) for the final content they render, they can cause significant layout shifts on a page. This problem can be tricky to address without manually inspecting the final sizes using DevTools at a variety of different viewport sizes. 
 
