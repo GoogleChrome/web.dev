@@ -2,38 +2,33 @@
  * @file This action checks if the tags used in posts exist in the
  * yaml file that defines all supported tags.
  */
+const core = require('@actions/core');
+const fs = require('fs');
+const glob = require('fast-glob');
+const matter = require('gray-matter');
+const yaml = require('js-yaml');
+const path = require('path');
 
 function run() {
-  const core = require('@actions/core');
-  const fs = require('fs');
-  const glob = require('glob');
-  const matter = require('gray-matter');
-  const yaml = require('js-yaml');
-  const path = require('path');
-
-  const tagsYmlPath = path.join(
-    process.cwd(),
-    core.getInput('tags_yml', {required: true}),
-  );
+  const tagsYmlInput = core.getInput('tags_yml', {required: true});
+  const tagsYmlPath = path.join(process.cwd(), tagsYmlInput);
   /** @type {{[tag: string]: any}} */
   const tags = yaml.load(fs.readFileSync(tagsYmlPath, 'utf-8')) || {};
-  const postsGlob = path.join(
-    process.cwd(),
-    core.getInput('posts_path', {required: true}),
-    '{**/*,*}.md',
-  );
-  const postsPaths = glob.sync(postsGlob, {});
-  const ignoreTags = core.getMultilineInput('ignore_tags', {required: false});
-  let tagErrorCount = 0;
-
   if (Object.keys(tags).length === 0) {
-    core.setFailed('No tags from tags yaml found');
+    core.setFailed(`No tags found, check file "${tagsYmlInput}"`);
   }
 
+  const postsPathInput = core.getInput('posts_path', {required: true});
+  const postsGlob = path.join(process.cwd(), postsPathInput, '{**/*,*}.md');
+  const postsPaths = glob.sync(postsGlob, {});
+
+  const ignoreTags = core.getMultilineInput('ignore_tags', {required: false});
   // Add tags to ignore to our tags master list
   for (const ignoreTag of ignoreTags) {
     tags[ignoreTag] = true;
   }
+
+  let tagErrorCount = 0;
 
   // Validate all posts to see if there are any invalid tags
   for (const postPath of postsPaths) {
@@ -66,8 +61,4 @@ function run() {
   }
 }
 
-// Install dependencies
-require('child_process').spawnSync('npm', ['install'], {
-  cwd: __dirname,
-});
 run();
