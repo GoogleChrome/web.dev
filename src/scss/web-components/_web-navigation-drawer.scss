@@ -83,9 +83,9 @@ web-navigation-drawer[open] [data-drawer-container] {
 }
 
 web-navigation-drawer[animating] [data-drawer-container] {
-  // transition: transform $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
+  transition: transform $global-transition-movement;
 }
 
 web-navigation-drawer[open][animating] [data-drawer-container] {
-  // transition: transform $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
+  transition: transform $global-transition-movement;
 }

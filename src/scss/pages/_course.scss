@@ -129,6 +129,12 @@ $course-side-vert-space: 20px;
 /// RESPONSIVE STYLES
 .course {
   @include media-query('lg') {
+    --web-navigation-drawer-width: 100%;
+
+    > .sidebar {
+      gap: 0;
+    }
+
     web-header {
       display: none;
       pointer-events: none;
