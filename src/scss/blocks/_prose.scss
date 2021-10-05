@@ -15,6 +15,10 @@
     display: none;
   }
 
+  > img {
+    width: 100%;
+  }
+
   /// Add more space to elements that follow figures etc
   pre + *,
   figure + *,
