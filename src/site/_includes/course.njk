@@ -54,19 +54,23 @@ CSS_ORIGIN: 'next'
         <div class="sidebar flex-align-start flex-dir-rev">
           {% include 'partials/toc-side.njk' %}
           <main id="main">
-            <div class="wrapper flow">
-              {% for item in pageNavigation.list %}
-                {% if item.url === page.url %}
-                  <div class="eyebrow">{{ item.counter }}</div>
+            <div class="prose">
+              <div class="course__intro flow">
+                {% for item in pageNavigation.list %}
+                  {% if item.url === page.url %}
+                    <div class="eyebrow">{{ item.counter }}</div>
+                  {% endif %}
+                {% endfor %}
+                <h1>{{ title | md | safe }}</h1>
+                {% if description %}
+                <div class="color-mid-text unstyled-code">
+                  {# If authors use backticks in their description markdown we don't #}
+                  {# want the code to have any border or background color. #}
+                  {{ description | md | safe }}
+                </div>
                 {% endif %}
-              {% endfor %}
-              <h1 class="course-headline">{{ title | md | safe }}</h1>
-              <p class="color-mid-text">
-                {# If authors use backticks in their description markdown we don't #}
-                {# want the code to have any border or background color. #}
-                <em class="unstyled-code">{{ description | md | safe }}</em>
-              </p>
-              {% include 'partials/toc-inner.njk' %}
+                {% include 'partials/toc-inner.njk' %}
+              </div>
             </div>
             <div class="prose gap-top-size-2">
               {% if audio %}
@@ -84,23 +88,3 @@ CSS_ORIGIN: 'next'
     </div>
   </div>
 </div>
-
-{# This little script just watches a sentinel element using an
-IntersectionObserver so we can add a "stuck" state to our course-app-bar and
-have it display a bottom border. #}
-{% set stickyObserver %}
-const target = document.querySelector('.sticky-observer');
-const callback = (entries, observer) => {
-  entries.forEach(entry => {
-    const appBar = document.querySelector('.course-app-bar');
-    if (entry.isIntersecting) {
-      appBar.removeAttribute('data-stuck');
-    } else {
-      appBar.setAttribute('data-stuck', '');
-    }
-  });
-};
-const observer = new IntersectionObserver(callback);
-observer.observe(target);
-{% endset %}
-<script>{{ stickyObserver | minifyJs | cspHash | safe }}</script>

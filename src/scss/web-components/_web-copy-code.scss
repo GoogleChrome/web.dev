@@ -1,6 +1,6 @@
 web-copy-code {
   display: block;
-  max-width: 48rem;
+  max-width: $global-prose-element-max-width;
   position: relative;
 
   &:active,

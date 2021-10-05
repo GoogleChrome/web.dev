@@ -16,6 +16,9 @@ $global-gutter: map-get($gorko-space-scale, 'size-1');
 $global-gutter-narrow: 1.25rem;
 $global-stroke: 1px solid get-utility-value('color', 'stroke');
 
+/// Elements that feature in prose contexts need to have a consistent max width
+$global-prose-element-max-width: 50rem;
+
 // NOTE: there are more design token-led global variables in _tokens.scss
 
 /// FUNCTIONS
@@ -326,7 +329,6 @@ code {
 pre > code {
   display: block;
   padding: get-size('size-1');
-  max-width: 80ch;
   overflow-x: auto;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
@@ -372,14 +374,14 @@ details:not([class]) {
 
   --flow-space: 0.5em;
 
-  max-width: 75ch;
+  max-width: $global-prose-element-max-width;
   border-block: 1px solid get-utility-value('bg', 'stroke');
-  padding: 1.3rem 0.5rem 1.6rem 0.5rem;
+  padding: 1rem 0.5rem 1.2rem 0.5rem;
 }
 
 details:not([class]) summary {
   position: relative;
-  font-size: get-size('size-3');
+  font-size: get-size('size-2');
   list-style: none;
   cursor: pointer;
 
@@ -401,8 +403,8 @@ details:not([class]) summary {
   }
 
   &::before {
-    width: 35px;
-    height: 35px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background: get-utility-value('bg', 'highlight-interact-bg');
     inset-inline-end: 0;
@@ -410,12 +412,12 @@ details:not([class]) summary {
   }
 
   &::after {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-bottom: 2px solid currentColor;
     border-right: 2px solid currentColor;
-    inset-block-start: 9px;
-    inset-inline-end: 12px;
+    inset-block-start: 7px;
+    inset-inline-end: 10px;
     transform: rotate(45deg);
   }
 
@@ -570,6 +572,11 @@ input[type='radio'] {
 
 input[type='radio']:checked {
   @include apply-utility('bg', 'radio-checked');
+}
+
+/// Media
+video {
+  max-width: 100%;
 }
 
 /// Links

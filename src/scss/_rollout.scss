@@ -5,3 +5,7 @@
 .w-visually-hidden {
   @extend .visually-hidden;
 }
+
+.w-table-wrapper {
+  @extend .table-wrapper;
+}

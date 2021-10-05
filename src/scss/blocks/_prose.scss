@@ -6,6 +6,15 @@
 
   --flow-space: #{get-space('size-1')};
 
+  > * {
+    margin-inline: auto;
+    max-width: $global-prose-element-max-width;
+  }
+
+  p:empty {
+    display: none;
+  }
+
   /// Add more space to elements that follow figures etc
   pre + *,
   figure + *,
@@ -21,10 +30,11 @@
     --flow-space: 1rem;
   }
 
-  /// Keeps figures at a reasonable size and makes sure
-  /// their content fills them
-  figure {
-    max-width: 50rem;
+  /// Keeps figures and embeds at a reasonable size and
+  /// makes sure their content fills them
+  figure,
+  iframe {
+    max-width: $global-prose-element-max-width;
 
     > * {
       width: 100%;
@@ -38,7 +48,7 @@
   /// An anchor that starts with a hash is a
   /// skip link, so it needs to be visually hidden
   /// until focused or hovered
-  a[href^='#'] {
+  :is(h2, h3, h4, h5, h6) a[href^='#'] {
     font-size: 0.7em;
     text-decoration: none;
     color: transparent;

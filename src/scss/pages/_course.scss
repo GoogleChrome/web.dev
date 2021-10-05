@@ -126,6 +126,14 @@ $course-side-vert-space: 20px;
   top: get-space('size-1');
 }
 
+.course__intro {
+  max-width: $global-prose-element-max-width;
+
+  p {
+    font-style: italic;
+  }
+}
+
 /// RESPONSIVE STYLES
 .course {
   @include media-query('lg') {
