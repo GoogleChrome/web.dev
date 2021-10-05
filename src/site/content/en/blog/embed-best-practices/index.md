@@ -163,16 +163,16 @@ While interactive embeds add value to the page, many users may not interact with
 
 <div class="w-columns">
   <figure class="w-figure">
-    {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/Cn0x7aeqCw7M0X5b4L1P.png", alt="A map embed", width="800", height="725", class="w-screenshot" %}
     <figcaption class="w-figcaption">
       A map embed with a zoom in and out feature.
     </figcaption>
+    {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/Cn0x7aeqCw7M0X5b4L1P.png", alt="A map embed", width="800", height="725", class="w-screenshot" %}
   </figure>
   <figure class="w-figure">
-    {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/f8z9MfvgIFiBkCLA1Qud.png", alt="A map facade", width="800", height="541", class="w-screenshot" %}
     <figcaption class="w-figcaption">
       A map facade that is an image.
     </figcaption>
+    {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/f8z9MfvgIFiBkCLA1Qud.png", alt="A map facade", width="800", height="541", class="w-screenshot" %}
   </figure>
 </div>
 
