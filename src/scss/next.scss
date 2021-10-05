@@ -521,6 +521,7 @@ input[type='radio'] {
   cursor: pointer;
   margin: 0px;
   background-size: cover;
+  flex: none;
   appearance: none;
   -webkit-appearance: none;
 
@@ -613,6 +614,11 @@ a:active {
 ::selection {
   color: var(--color-core-bg);
   background: var(--color-core-text);
+}
+
+/// If an element is [hidden] it needs to be max priority
+[hidden] {
+  display: none !important;
 }
 
 /// Misc web components that need to be blocks
