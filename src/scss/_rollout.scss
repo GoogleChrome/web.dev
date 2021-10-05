@@ -14,6 +14,7 @@
   display: block;
   max-width: $global-prose-element-max-width;
   margin-inline: auto !important;
+  margin-block: 2em !important;
 
   @include apply-utility('bg', 'mid-bg');
 }
@@ -36,6 +37,10 @@ web-tabs .web-tabs__tab[aria-selected='true']::after {
 
 .web-question__content {
   padding: $global-gutter !important;
+
+  [data-role='stimulus'] {
+    @extend .flow;
+  }
 }
 
 .web-tabs__text-label {

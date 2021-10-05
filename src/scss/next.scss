@@ -240,6 +240,10 @@ figcaption {
 
   @include apply-utility('measure', 'short');
   @include apply-utility('gap-top', 'size-1');
+
+  code {
+    white-space: nowrap;
+  }
 }
 
 /// Tables

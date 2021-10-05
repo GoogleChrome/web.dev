@@ -46,7 +46,8 @@ $course-side-vert-space: 20px;
     top: 0;
     left: 0;
     z-index: 10;
-    padding: 0.5rem $global-gutter;
+    /// Shorter left pad accounts for the burger menu button
+    padding: 0.5rem $global-gutter 0.5rem 1rem;
     box-shadow: 0 0 10px rgba(0 0 0 / 20%);
     background-position: top right;
     background-size: auto 100%;
@@ -87,6 +88,7 @@ $course-side-vert-space: 20px;
   background-image: var(--course-background);
   background-position: top right;
   background-repeat: no-repeat;
+  background-color: get-utility-value('bg', 'img-backdrop');
   display: flex;
   align-items: start;
   flex: none;

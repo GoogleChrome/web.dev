@@ -19,14 +19,16 @@
   pre + *,
   figure + *,
   h2,
-  h3 {
+  h3,
+  h4 {
     --flow-space: #{get-space('size-2')};
   }
 
   /// Main headings should have less space for their
   /// immediate sibling
   h2 + *,
-  h3 + * {
+  h3 + *,
+  h4 + * {
     --flow-space: 1rem;
   }
 
