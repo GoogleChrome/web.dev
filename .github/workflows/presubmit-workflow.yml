@@ -1,13 +1,34 @@
 name: Presubmit
 on:
   pull_request:
-    types: [labeled,opened,reopened,synchronize]
+    types: [labeled, opened, reopened, synchronize]
 jobs:
-  presubmit:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      isPresubmit: ${{ steps.presubmit.outputs.isPresubmit }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Install dependencies
+        run: npm ci --prefix .github/actions/presubmit
+
+      - name: Check if presubmit
+        id: presubmit
+        uses: ./.github/actions/presubmit
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          is_presubmit: ${{ contains(github.event.pull_request.labels.*.name, '$-presubmit') }}
+
+  test:
+    needs: check
+    if: ${{ needs.check.outputs.isPresubmit == 'true' }}
     runs-on: ubuntu-latest
     env:
       NODE_OPTIONS: --max_old_space_size=4096
-    name:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -16,12 +37,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Check if presubmit
-        uses: ./.github/actions/presubmit
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          is_presubmit: ${{ contains(github.event.pull_request.labels.*.name, '$-presubmit') }}
 
       - name: Run a staging build of site
         run: npm run build
