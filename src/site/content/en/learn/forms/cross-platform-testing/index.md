@@ -92,6 +92,10 @@ on your phone and tap in the telephone number field.
 Notice that numbers are shown by default on the on-screen keyboard,
 along with other characters you may need for a telephone number.
 Use `type="tel"` to get an on-screen keyboard optimized for filling telephone numbers.
+
+{% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/nX50IOaBUCP8mcHqr3CT.jpg",
+alt="Two screenshots of an input element with type='tel' on iOS and Android, showing how the type attribute changes the on-screen keyboard.", width="800", height="696" %}
+
 Use a phone to [try it out for yourself](https://codepen.io/web-dot-dev/pen/88f1ffed62ef6bdd513351823b7aaa0f),
 and see if you can easily enter every character needed to fill out a telephone number.
 If you're curious how the on-screen keyboard works for another `type`, try `type="email"` in the demo.
