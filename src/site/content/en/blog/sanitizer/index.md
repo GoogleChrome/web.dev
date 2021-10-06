@@ -228,6 +228,7 @@ The [Sanitizer API](https://wicg.github.io/sanitizer-api/) improves upon the DOM
 
 
 ## API status and browser support
+
 The Sanitizer API is under discussion in the standardization process and Chrome is in the process of implementing it.
 
 <div class="w-table-wrapper">
@@ -267,6 +268,16 @@ Mozilla: Considers this proposal [worth prototyping](https://mozilla.github.io/s
 
 Webkit: See the response on the [WebKit mailing list](https://lists.webkit.org/pipermail/webkit-dev/2021-March/031731.html).
 
+
+### Browser compatibility
+
+The Sanitizer API is under discussion in the standardization process. The implementation status of other browsers is as follows
+
+Mozilla: considers this proposal as [worth prototyping](https://mozilla.github.io/standards-positions/#sanitizer-api), and they are [actively implementing](https://groups.google.com/g/mozilla.dev.platform/c/C4EHeQlaMbU).
+
+Webkit: see the response on [webkit mailing lists](https://lists.webkit.org/pipermail/webkit-dev/2021-March/031731.html).
+
+
 ## How to enable the Sanitizer API
 
 
@@ -302,16 +313,6 @@ If you find any bugs or unexpected behavior in Chrome's implementation, [file a 
 ### Demo
 
 To see the Sanitizer API in action check out the [Sanitizer API Playground](https://sanitizer-api.dev/) by [Mike West](https://twitter.com/mikewest):
-
-
-
-### Browser compatibility
-
-The Sanitizer API is under discussion in the standardization process. The implementation status of other browsers is as follows
-
-Mozilla: considers this proposal as [worth prototyping](https://mozilla.github.io/standards-positions/#sanitizer-api), and they are [actively implementing](https://groups.google.com/g/mozilla.dev.platform/c/C4EHeQlaMbU).
-
-Webkit: see the response on [webkit mailing lists](https://lists.webkit.org/pipermail/webkit-dev/2021-March/031731.html).
 
 
 ### References
