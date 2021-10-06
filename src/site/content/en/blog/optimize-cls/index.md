@@ -283,7 +283,7 @@ Take note of the dimensions and style a placeholder for the embed accordingly. Y
 
 **Summary:** Avoid inserting new content above existing content, unless in response to a user interaction. This ensures any layout shifts that occur are expected.
 
-You've probably experienced layout shifts due to UI that pops-in at the top or bottom of the viewport when you're trying to load a site. Similar to ads, this often this happens with banners and forms that shift the rest of the page's content:
+You've probably experienced layout shifts due to UI that pops-in at the top or bottom of the viewport when you're trying to load a site. Similar to ads, this often happens with banners and forms that shift the rest of the page's content:
 
 - "Sign-up to our newsletter!" (whoa, slow down! we just met!)
 - "Related content"
