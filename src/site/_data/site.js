@@ -34,7 +34,7 @@ module.exports = {
   thumbnail: 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vU99HKzIf5EUPnzGVPf1.png',
   isBannerEnabled: true,
   banner:
-    'PWA Summit: a virtual conference to help everyone succeed with PWAs is on Oct 6 & 7. Get your [free ticket](https://pwasummit.org/register) today!',
+    'PWA Summit: a virtual conference to help everyone succeed with PWAs is streaming today. [Join the live stream](https://www.youtube.com/watch?v=qbh_u2hvIjg)!',
   areCoursesEnabled: true,
   paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
