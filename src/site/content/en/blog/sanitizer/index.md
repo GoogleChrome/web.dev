@@ -227,7 +227,8 @@ Learn more about how the Sanitizer API parses strings and determines context in 
 The [Sanitizer API](https://wicg.github.io/sanitizer-api/) improves upon the DOMPurify approach and is designed to eliminate the need for double parsing and to clarify the parsing context.
 
 
-## Current status
+## API status and browser support
+The Sanitizer API is under discussion in the standardization process and Chrome is in the process of implementing it.
 
 <div class="w-table-wrapper">
   <table>
@@ -243,7 +244,7 @@ The [Sanitizer API](https://wicg.github.io/sanitizer-api/) improves upon the DOM
         <td><a href="https://github.com/WICG/sanitizer-api/blob/main/README.md">Complete</a></td>
       </tr>
       <tr>
-        <td>2. Create draft of specification</td>
+        <td>2. Create specification draft</td>
         <td><a href="https://wicg.github.io/sanitizer-api/">Complete</a></td>
       </tr>
       <tr>
@@ -251,8 +252,8 @@ The [Sanitizer API](https://wicg.github.io/sanitizer-api/) improves upon the DOM
         <td><a href="https://docs.google.com/document/d/1kBpk-dhCukPphfH_8vkOgdUDcM9bqVuhsK0pRZzwapM/edit?resourcekey=0-4tFsd4s6aLbvvr2ys_9F4A#Feedback">In progress</a></td>
       </tr>
       <tr>
-        <td>4. Origin trial</td>
-        <td><a href="https://groups.google.com/a/chromium.org/g/blink-dev/c/OrWQnXVQJ0A/m/TbF-0Dw3BQAJ">Ready for Trial</a></td>
+        <td>4. Chrome origin trial</td>
+        <td><a href="https://groups.google.com/a/chromium.org/g/blink-dev/c/OrWQnXVQJ0A/m/TbF-0Dw3BQAJ">Ready for trial</a></td>
       </tr>
       <tr>
         <td>5. Launch</td>
@@ -262,6 +263,9 @@ The [Sanitizer API](https://wicg.github.io/sanitizer-api/) improves upon the DOM
   </table>
 </div>
 
+Mozilla: Considers this proposal [worth prototyping](https://mozilla.github.io/standards-positions/#sanitizer-api), and is [actively implementing it](https://groups.google.com/g/mozilla.dev.platform/c/C4EHeQlaMbU).
+
+Webkit: See the response on the [WebKit mailing list](https://lists.webkit.org/pipermail/webkit-dev/2021-March/031731.html).
 
 ## How to enable the Sanitizer API
 
@@ -312,7 +316,7 @@ Webkit: see the response on [webkit mailing lists](https://lists.webkit.org/pipe
 
 ### References
 
-- Spec: [HTML Sanitizer API](https://wicg.github.io/sanitizer-api/)
-- Repos: [WICG/sanitizer-api](https://github.com/WICG/sanitizer-api)
-- FAQ: [WICG/sanitizer-api](https://github.com/WICG/sanitizer-api/blob/main/faq.md)
-- MDN: [HTML Sanitizer API \| MDN](https://developer.mozilla.org/docs/Web/API/HTML_Sanitizer_API)
+- [HTML Sanitizer API specification](https://wicg.github.io/sanitizer-api/)
+- [WICG/sanitizer-api repo](https://github.com/WICG/sanitizer-api)
+- [Sanitizer API FAQ](https://github.com/WICG/sanitizer-api/blob/main/faq.md)
+- [HTML Sanitizer API reference documentation on MDN](https://developer.mozilla.org/docs/Web/API/HTML_Sanitizer_API)
