@@ -356,7 +356,7 @@ The [Performance panel](https://developers.google.com/web/tools/chrome-devtools/
   <figcaption class="w-figcaption">After recording a new trace in the Performance panel, the <b>Experience</b> section of the results is populated with a red-tinted bar displaying a <code>Layout Shift</code> record. Clicking the record allows you to drill down into impacted elements (e.g. note the moved from/to entries).</figcaption>
 </figure>
 
-Measuring real-world CLS aggregated at an origin-level is also possible using the [Chrome User Experience Report](/chrome-ux-report-bigquery/). CrUX CLS data is available via BigQuery and a [sample query](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql) to look at CLS performance is available to use.
+Measuring real-world CLS aggregated at an origin-level is also possible using the [Chrome User Experience Report](/chrome-ux-report-bigquery/). CrUX CLS data is available via BigQuery and a [sample query](https://github.com/GoogleChrome/CrUX/blob/main/sql/cls-summary.sql) to look at CLS performance is available to use.
 
 That's it for this guide. I hope it helps keep your pages just a little less shifty :)
 
