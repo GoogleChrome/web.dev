@@ -1,6 +1,7 @@
 ---
 title: Safe DOM manipulation with the Sanitizer API
-subhead: Safe DOM manipulation with the Sanitizer API
+subhead: |
+  The new Sanitizer API aims to build a robust processor for arbitrary strings to be safely inserted into a page.
 description: |
   The new Sanitizer API aims to build a robust processor for arbitrary strings to be safely inserted into a page.
   This article introduces the API, and explains its usage.
