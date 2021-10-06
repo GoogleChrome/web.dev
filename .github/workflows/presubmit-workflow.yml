@@ -23,7 +23,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           is_presubmit: ${{ contains(github.event.pull_request.labels.*.name, '$-presubmit') }}
 
-  test:
+  presubmit:
     needs: check
     if: ${{ needs.check.outputs.isPresubmit == 'true' }}
     runs-on: ubuntu-latest
