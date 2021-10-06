@@ -24,7 +24,7 @@ To mitigate that risk, the new [Sanitizer API](https://wicg.github.io/sanitizer-
 $div.setHTML(`<em>hello world</em><img src="" onerror=alert(0)>`, new Sanitizer())
 ```
 
-## Escaping user input contents
+## Escaping user input
 
 When inserting user input, query strings, cookie contents, and so on, into the DOM, the strings must be escaped properly. Particular attention should be paid to the DOM manipulation via [`.innerHTML`](https://developer.mozilla.org/docs/Web/API/Element/innerHTML), where unescaped strings are a typical source of XSS.
 
