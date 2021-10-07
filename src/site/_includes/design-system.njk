@@ -58,7 +58,7 @@
           <article class="prose">
             <h1>{{ pageTitle if pageTitle else title }}</h1>
             {% if summary %}
-              {{ summary | md | safe }}
+              <p>{{ summary | md | safe }}</p>
             {% endif %}
             {% block inner %}
             {% endblock %}
