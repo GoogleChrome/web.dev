@@ -4,7 +4,7 @@
   "keyLinks": [
     {
       "label": "Sass file",
-      "url": "https://github.com/GoogleChrome/web.dev/blob/main/src/styles/components/_button.scss"
+      "url": "https://github.com/GoogleChrome/web.dev/blob/main/src/scss/blocks/_button.scss"
     }
   ],
   "context": {
