@@ -21,11 +21,13 @@ Groupe Renault is a French multinational automobile manufacturer with a presence
 ## Measuring the business impact of Core Web Vitals
 
 ### Measurement in Google Analytics
+
 Working with fifty-five, its global data partner, Renault set up the [web-vitals](https://github.com/GoogleChrome/web-vitals) library, which allows sending to Google Analytics all the Web Vitals metrics from real users in a way that accurately matches how they're measured by Chrome and reported to other Google tools.
 
 The following analysis showcases a dataset captured using these tools over four months between December 2020 and March 2021.
 
 ### Optimized LCP strongly correlates with user engagement and business metrics
+
 The teams have identified a particularly strong correlation between a low Largest Contentful Paint (LCP) and favorable bounce rates and conversion rates, shown in the visualization below.
 
 {% Img src="image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/A3ghcv1u3qxQKjgnb5Ru.png", alt="A chart showing a negative correlation between LCP and bounce rate and conversion rate.", width="782", height="372" %}
@@ -81,6 +83,7 @@ Since early 2020, in the brand's top 5 European markets, the number of visitors 
 Here is how they've approached it.
 
 ### A central optimization of the SPA
+
 From a platform standpoint, performance has been a priority for years and including Core Web Vitals (CWV) as key metrics was a smooth process. Central teams have set up a comprehensive monitoring solution (with [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) and [Chrome UX Report API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference)) and established a performance culture across the organization. There were several strategies to optimize their Single Page Application, including:
 
 +   [Server side rendering (SSR)](https://developers.google.com/web/updates/2019/02/rendering-on-the-web) to ensure a fast First Contentful Paint (FCP). 
@@ -110,6 +113,7 @@ Performance requires constant monitoring as various technical teams can impact i
 {% endBlockquote %}
 
 ## Local guidelines promoting performance optimization as a shared responsibility
+
 Performance is communicated as both a global (central) and local responsibility. Teams have put together a series of best practices that local content owners are meant to follow. Here are a few examples from these guidelines:
 
 -  Optimize local Google Tag Manager container to improve site performance. for example conditionally trigger certain tags.
