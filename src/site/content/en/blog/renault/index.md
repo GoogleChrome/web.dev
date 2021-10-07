@@ -3,6 +3,7 @@ title: How Renault improved its bounce and conversion rates by measuring and opt
 subhead: The team analyzed data from 10 million visits on its landing pages and found a strong correlation between Largest Contentful Paint and conversion rate.
 authors:
   - antoinebisch
+  - tcoustillac
 date: 2021-10-07
 hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/PHqBoMdg3WgcQWWIIkWj.jpg
 alt: Renault Group logo.
