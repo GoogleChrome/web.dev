@@ -189,6 +189,7 @@ You probably don’t want to use this method unless you have good reason to. Mos
 {% endAside %}
 
 ### Using `PerformanceObserver`
+
 Manually polling the performance entry buffer is fine in cases where you need to do some light analysis. However, working with a large number of performance entries can introduce excessive main thread work. It’s also difficult to know when new entries get added, so you’ll likely want to use a `PerformanceObserver` to listen for performance entries as they’re added to the buffer:
 
 ```javascript
