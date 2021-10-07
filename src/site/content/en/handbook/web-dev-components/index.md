@@ -245,6 +245,10 @@ the ID is `api.BackgroundFetchEvent`:
 
 {% BrowserCompat 'api.BackgroundFetchEvent' %}
 
+BrowserCompat is an asynchronous shortcode, because it relies on external data
+to work. Using it in another shortcode (e.g. `Details`) will not work
+as expected.
+
 ## Buttons
 
 In general, you shouldn't need to add buttons to your posts.
