@@ -43,7 +43,7 @@ Interestingly, as the website runs as a Single Page Application (SPA), all these
 This dataset not only shows the negative correlation between LCP and business metrics, but also highlights performance discrepancies among the best performing landing pages. In the context of this website, getting LCP under 1 second leads to large increases in conversions and reductions in bounce.
 {% endBlockquote %}
 
-1 second LCP improvement can equate a 14 percentage points (ppt) decrease in bounce rate and 13% increase in conversions.
+1 second LCP improvement can lead to a 14 percentage points (ppt) decrease in bounce rate and 13% increase in conversions.
 
 <div class="w-table-wrapper">
   <table>
