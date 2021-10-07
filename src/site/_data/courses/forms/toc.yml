@@ -13,4 +13,19 @@
   - url: /learn/forms/security-privacy
   - url: /learn/forms/autofill
   - title: i18n.courses.testing_monitoring.title
+  - url: /learn/forms/usability-testing
   - url: /learn/forms/cross-platform-testing
+  - url: /learn/forms/data
+  - title: i18n.courses.elements_attributes.title
+  - url: /learn/forms/form
+  - url: /learn/forms/fields
+  - url: /learn/forms/attributes
+  - title: i18n.courses.styling.title
+  - url: /learn/forms/styling
+  - url: /learn/forms/styling-form-controls
+  - title: i18n.courses.javascript.title
+  - url: /learn/forms/javascript
+  - title: i18n.courses.form_types.title
+  - url: /learn/forms/identity
+  - url: /learn/forms/payment
+  - url: /learn/forms/address
