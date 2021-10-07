@@ -8,11 +8,13 @@ description: |
 authors:
   - jackjey
 date: 2021-10-06
+updated: 2021-10-07
 hero: image/PV7xjXdOKHP8LWt9XhstsToJeK82/R2KGdIHv2lBRDS9vs8q1.jpg
 alt: Sanitizing a desk with Sanitizer
 tags:
   - blog
   - security
+  - chrome93
 ---
 
 
@@ -279,7 +281,7 @@ Webkit: See the response on the [WebKit mailing list](https://lists.webkit.org/p
 
 #### Chrome
 
-Chrome is in the process of implementing the Sanitizer API, and when Chrome 93 is released, you can try out the behavior by enabling `about://flags/#enable-experimental-web-platform-features` flag. In earlier versions of Chrome Canary and Dev channel, you can enable it via `--enable-blink-features=SanitizerAPI` and try it out right now. Check out the [instructions for how to run Chrome with flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
+Chrome is in the process of implementing the Sanitizer API. In Chrome 93 or later, you can try out the behavior by enabling `about://flags/#enable-experimental-web-platform-features` flag. In earlier versions of Chrome Canary and Dev channel, you can enable it via `--enable-blink-features=SanitizerAPI` and try it out right now. Check out the [instructions for how to run Chrome with flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
 
 
 #### Firefox
