@@ -1,0 +1,16 @@
+setLeader: Test your knowledge of autofill
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: What autocomplete value should you use for the password field in a sign-up form?
+    options:
+      - content: "`autocomplete='password'`"
+        rationale: "Try again!"
+      - content: "`autocomplete='off'`"
+        rationale: "Try again!"
+      - content: "`autocomplete='new-password'`"
+        rationale: "🎉"
+      - content: "`autocomplete='current-password'`"
+        rationale: "Try again!"
