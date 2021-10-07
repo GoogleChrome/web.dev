@@ -63,7 +63,7 @@ This dataset not only shows the negative correlation between LCP and business me
         <td>-14 ppt bounce rate</td>
       </tr>
       <tr>
-        <td>LCP under 1.6&nbsp;s</td>
+        <td>LCP above 1.6&nbsp;s</td>
         <td>-5 ppt bounce rate</a></td>
       </tr>
     </tbody>
