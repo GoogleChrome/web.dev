@@ -39,16 +39,13 @@ module.exports = (id, options) => {
       'encrypted-media; gyroscope; picture-in-picture',
     src: `https://www.youtube.com/embed/videoseries?list=${id}`,
     style: iframeStyle.join(''),
-    title: 'IFrame content',
+    title: 'Youtube Playlist',
   };
-  if (options && options.constructor === {}.constructor) {
-    iframeProps = {...iframeProps, ...options};
-  }
+  iframeProps = {...iframeProps, ...options};
   const {allow, src, style, title} = iframeProps;
   return `
     <div class="youtube">
       <iframe
-        src="https://www.youtube.com/embed/videoseries?list=PLNYkxOF6rcICntazGfSVKSj5EwuR9w5Nv"
         allow="${allow}"
         loading="lazy"
         src="${src}"
