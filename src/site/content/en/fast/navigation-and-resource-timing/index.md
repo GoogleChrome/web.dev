@@ -8,12 +8,10 @@ alt: A photo of a fallow field in late fall, with many hay bales strewn about.
 authors:
   - jlwagner
 tags:
-  - navigation-timing
-  - resource-timing
   - performance
-  - field-data
-  - rum
-  - performanceobserver
+  - javascript
+  - metrics
+  - network
 date: 2021-10-08
 ---
 
