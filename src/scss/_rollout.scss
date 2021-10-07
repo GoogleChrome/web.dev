@@ -11,16 +11,18 @@
 }
 
 .w-callout {
-  display: block;
   max-width: $global-prose-element-max-width;
-  margin-inline: auto !important;
-  margin-block: 2em !important;
 
   @include apply-utility('bg', 'mid-bg');
 }
 
 .w-callout__lockup::before {
   display: none;
+}
+
+web-response-mc {
+  display: block;
+  margin-block-start: get-size('base');
 }
 
 /// These overly specific selectors are unfortunately going to have to
@@ -43,6 +45,28 @@ web-tabs .web-tabs__tab[aria-selected='true']::after {
   }
 }
 
+.web-assessment__launcher {
+  padding: $global-gutter-narrow;
+  @include apply-utility('bg', 'mid-bg');
+
+  .web-assessment__open {
+    @extend .button;
+
+    width: max-content;
+    margin-block-start: get-space('base');
+
+    &:hover {
+      @include apply-utility('bg', 'accent-bg');
+    }
+  }
+}
+
+.web-assessment__close {
+  @extend .button;
+
+  padding: 0.5rem;
+}
+
 .web-tabs__text-label {
   color: get-utility-value('color', 'core-text') !important;
 }
@@ -58,4 +82,11 @@ web-tabs .web-tabs__tab[aria-selected='true']::after {
 
 .web-select-group__option-content {
   padding-inline-start: $global-gutter-narrow;
+}
+
+/// RESPONSIVE OVERRIDES
+@include media-query('md') {
+  web-assessment.w-callout {
+    margin-inline: auto !important;
+  }
 }
