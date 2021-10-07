@@ -12,7 +12,7 @@ date: 2021-07-05
 updated: 2021-07-05
 tags:
   - media
-  - video
+  # - video
 ---
 
 [Progressive Web Apps] bring a lot of features previously reserved for native

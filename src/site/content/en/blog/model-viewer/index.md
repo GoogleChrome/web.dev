@@ -17,7 +17,7 @@ tags:
   - augmented-reality
   - virtual-reality
   - webxr
-  - model-viewer
+  # - model-viewer
 feedback:
   - api
 ---

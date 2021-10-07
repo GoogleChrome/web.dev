@@ -17,7 +17,7 @@ description: |
   and/or bring it to the user's attention.
 tags:
   - blog
-  - text-fragments
+  # - text-fragments
   - capabilities
 feedback:
   - api

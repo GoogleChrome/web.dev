@@ -10,8 +10,8 @@ updated: 2021-07-29
 tags:
   - blog
   - capabilities
-  - input
-  - clipboard
+  # - input
+  # - clipboard
 hero: image/admin/aA9eqo0ZZNHFcFJGUGQs.jpg
 alt: Clipboard with shopping list
 feedback:

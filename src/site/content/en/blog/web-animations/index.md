@@ -11,7 +11,7 @@ description: Wrangling your web animations is about to get much easier.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - animations
-  - chrome84
+  # - chrome84
   - javascript
 feedback:
   - api

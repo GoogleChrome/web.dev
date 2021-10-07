@@ -8,8 +8,8 @@ hero: image/admin/wRrDtHNikUNqgdDewvYG.jpg
 date: 2020-10-06
 updated: 2020-05-04
 tags:
-  - 블로그
-  - 개인정보 보호
+  - blog
+  - privacy
 ---
 
 {% Banner 'caution', 'body' %} Conversion Measurement API는 *Attribution Reporting API*로 이름이 바뀌고 더 많은 기능을 제공합니다.

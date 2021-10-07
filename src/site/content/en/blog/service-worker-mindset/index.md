@@ -12,9 +12,9 @@ description: |
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - service-worker
-  - PWA
+  - progressive-web-apps
   - offline
-  - caching
+  # - caching
 ---
 
 Service workers are powerful and absolutely worth learning. They let you deliver an entirely new level of experience to your users. Your site can load _instantly_. It can work _offline_. It can be installed as a platform-specific app and feel every bit as polished—but with the reach and freedom of the web.

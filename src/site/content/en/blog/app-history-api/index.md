@@ -86,7 +86,7 @@ If you've ever written the routing for your own SPA using the History API, you m
 ```js
 function updatePage(event) {
   event.preventDefault();  // we're handling this link
-  window.location.pushState(null, '', event.target.href);
+  window.history.pushState(null, '', event.target.href);
   // TODO: set up page based on new URL
 }
 const links = [...document.querySelectorAll('a[href]')];

@@ -16,8 +16,8 @@ description: |
   compelling marketplace progressive web app.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - e-commerce
-  - reliable
+  # - e-commerce
+  # - reliable
   - case-study
   - performance
   - progressive-web-apps

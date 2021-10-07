@@ -12,7 +12,7 @@ date: 2020-06-19
 updated: 2021-07-05
 tags:
   - media
-  - video
+  # - video
 ---
 
 In this article you will learn about media file basics such as the concepts of a

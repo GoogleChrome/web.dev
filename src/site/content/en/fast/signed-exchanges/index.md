@@ -406,13 +406,13 @@ serve the SXG in response. For instructions on setting up the Web Packager
 server, see [How to set up signed exchanges using Web
 Packager](/signed-exchanges-webpackager).
 
-### Libraries
+### SXG libraries
 
 These libraries could be used to build your own SXG generator:
 
 - [`sxg_rs`](https://github.com/google/sxg-rs/tree/main/sxg_rs) is a Rust library for
-  generating SXGs. It is the most featureful SXG tool and is used as the basis for the
-  `cloudflare_worker` and `fastly_compute` tools.
+  generating SXGs. It is the most featureful SXG library and is used as the
+  basis for the `cloudflare_worker` and `fastly_compute` tools.
 
 - [`libsxg`](https://github.com/google/libsxg) is a minimal C library for
   generating SXGs. It is used as the basis for the NGINX SXG module and the

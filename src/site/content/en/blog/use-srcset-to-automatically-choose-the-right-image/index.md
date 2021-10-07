@@ -7,13 +7,13 @@ date: 2019-06-24
 description: Use srcset to automatically choose the right image size.
 tags:
   - blog
-  - top tips
+  # - top tips
   - images
   - performance
-  - responsive design
-  - responsive images
-  - srcset
-  - sizes
+  # - responsive design
+  # - responsive images
+  # - srcset
+  # - sizes
 codelabs:
   - codelab-art-direction
   - codelab-density-descriptors

@@ -8,7 +8,7 @@ updated: 2021-08-05
 subhead: 출처 간 격리를 이용하면 웹 페이지에서 SharedArrayBuffer와 같은 강력한 기능을 사용할 수 있습니다. 이 문서에서는 웹사이트에서 출처 간 격리를 이용하는 방법을 설명합니다.
 description: 출처 간 격리를 이용하면 웹 페이지에서 SharedArrayBuffer와 같은 강력한 기능을 사용할 수 있습니다. 이 문서에서는 웹사이트에서 출처 간 격리를 이용하는 방법을 설명합니다.
 tags:
-  - 보안
+  - security
 ---
 
 이 가이드에서는 출처 간 격리를 이용하는 방법을 보여줍니다. [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), [`performance.measureUserAgentSpecificMemory()`](/monitor-total-page-memory-usage/), [높은 정밀도의 고해상도 타이머](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/) 또는 JS Self-Profiling API를 사용하려면 출처 간 격리가 필요합니다.

@@ -35,6 +35,8 @@ jobs:
               - '**/*.json'
             scss:
               - '**/*.scss'
+            tags:
+              - 'src/site/_data/i18n/tags.yml'
 
       # Use the filter to check if files with a specific file type were changed
       # in the PR. If they were, run the relevant linters. Otherwise, skip.
@@ -42,6 +44,16 @@ jobs:
       - name: Lint Markdown
         if: ${{ steps.filter.outputs.md == 'true' }}
         run: npm run lint:md
+
+      - name: Lint Tags
+        if: ${{ steps.filter.outputs.tags == 'true' || steps.filter.outputs.md == 'true' }}
+        uses: ./.github/actions/lint-tags
+        with:
+          tags_yml: src/site/_data/i18n/tags.yml
+          posts_path: src/site/content
+          ignore_tags: |
+            blog
+            test-post
 
       - name: Lint JavaScript
         if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' }}

@@ -12,7 +12,7 @@ description: |
   the device is.
 tags:
   - blog
-  - PROXX
+  # - PROXX
   - games
 ---
 

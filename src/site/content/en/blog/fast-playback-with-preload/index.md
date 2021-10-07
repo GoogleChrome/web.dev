@@ -13,7 +13,7 @@ date: 2017-08-17
 updated: 2020-11-16
 tags:
   - media
-  - video
+  # - video
   - performance
   - network
 ---

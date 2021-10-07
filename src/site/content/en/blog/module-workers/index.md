@@ -12,8 +12,8 @@ description: |
   thread while keeping the ergonomic and performance benefits of standard JavaScript modules.
 tags:
   - blog
-  - web-workers
-  - javascript-modules
+  # - web-workers
+  # - javascript-modules
   - modules
 feedback:
   - api

@@ -13,7 +13,7 @@ date: 2021-07-05
 updated: 2021-07-05
 tags:
   - media
-  - video
+  # - video
 ---
 
 In this article, you are going to learn about the more advanced concept of media

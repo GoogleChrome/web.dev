@@ -13,7 +13,7 @@ tags:
   - web-vitals
 ---
 
-{% Banner 'caution', 'body' %} **2021 年 6 月 1 日：**CLS 的实现方式已发生变更。进一步了解变更原因，请查看[不断发展 CLS 指标](/evolving-cls)。 {% endBanner %}
+{% Banner 'caution', 'body' %} **2021 年 6 月 1 日**：CLS 的实现方式已发生变更。进一步了解变更原因，请查看[不断发展 CLS 指标](/evolving-cls)。 {% endBanner %}
 
 {% Aside 'key-term' %} 累积布局偏移 (CLS) 是测量[视觉稳定性](/user-centric-performance-metrics/#types-of-metrics)的一个以用户为中心的重要指标，因为该项指标有助于量化用户经历意外布局偏移的频率，较低的 CLS 有助于确保一个页面是[令人愉悦的](/user-centric-performance-metrics/#questions)。 {% endAside %}
 

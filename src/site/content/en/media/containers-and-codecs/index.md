@@ -12,7 +12,7 @@ date: 2017-06-30
 updated: 2021-07-05
 tags:
   - media
-  - video
+  # - video
 ---
 
 To support multiple browsers, you'll need to use FFmpeg to convert your `.mov`
