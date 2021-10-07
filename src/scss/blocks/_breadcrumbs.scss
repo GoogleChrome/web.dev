@@ -21,6 +21,8 @@
 
 .breadcrumbs__list {
   padding: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 
   &,
   li {
@@ -30,6 +32,8 @@
   }
 
   li {
+    flex: none;
+
     @include apply-utility('color', 'mid-text');
   }
 

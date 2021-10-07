@@ -77,8 +77,8 @@
     color: transparent;
   }
 
-  :hover a[href^='#'],
-  a[href^='#']:focus {
+  :is(h2, h3, h4, h5, h6) :hover a[href^='#'],
+  :is(h2, h3, h4, h5, h6) a[href^='#']:focus {
     @include apply-utility('color', 'mid-text');
   }
 }
