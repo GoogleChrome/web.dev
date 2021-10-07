@@ -188,5 +188,5 @@ Learn more about [implementing a show password option](https://technology.blog.g
 ## Resources
 
 - [FormData](https://developer.mozilla.org/docs/Web/API/FormData)
-- [Constraint Validation API](https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation)
+- [Constraint Validation API](https://developer.mozilla.org/docs/Web/API/Constraint_validation)
 - [`<input type="password">`](https://developer.mozilla.org/docs/Web/HTML/Element/input/password)
