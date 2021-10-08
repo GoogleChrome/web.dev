@@ -1,8 +1,8 @@
 web-audio-fab {
   border-radius: 50%;
   bottom: 12px;
-  box-shadow: 0px 8px 12px 6px rgba(60, 64, 67, 0.15),
-    0px 4px 4px rgba(60, 64, 67, 0.3);
+  // prettier-ignore
+  box-shadow: 0px 8px 12px 6px rgba(60, 64, 67, 0.15), 0px 4px 4px rgba(60, 64, 67, 0.3);
   display: block;
   height: 56px;
   opacity: 0;
@@ -35,8 +35,8 @@ web-audio-fab {
     background-color: $WHITE;
     border-radius: 50%;
     bottom: 0;
-    box-shadow: 0px 8px 12px 6px rgba(60, 64, 67, 0.15),
-      0px 4px 4px rgba(60, 64, 67, 0.3);
+    // prettier-ignore
+    box-shadow: 0px 8px 12px 6px rgba(60, 64, 67, 0.15), 0px 4px 4px rgba(60, 64, 67, 0.3);
     display: flex;
     height: 24px;
     justify-content: center;
