@@ -5,7 +5,7 @@ authors:
   - tcoustillac
   - antoinebisch
   - cédricbazureau
-date: 2021-10-07
+date: 2021-10-08
 hero: image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/PHqBoMdg3WgcQWWIIkWj.jpg
 alt: Renault Group logo.
 description: |
