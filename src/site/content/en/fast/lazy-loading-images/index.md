@@ -2,7 +2,7 @@
 layout: post
 title: Lazy-loading images
 authors:
-  - jeremywagner
+  - jlwagner
   - rachelandrew
 date: 2019-08-16
 updated: 2020-06-09
