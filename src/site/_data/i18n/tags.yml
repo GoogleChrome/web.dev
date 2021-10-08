@@ -196,6 +196,24 @@ cast:
     ru: Последние новости и статьи о Cast.
     zh: 我们关于 Cast 的最新资讯、动态和故事。
 
+chrome93:
+  title:
+    en: Chrome 93
+    es: Chrome 93
+    ja: Chrome 93
+    ko: Chrome 93
+    pt: Chrome 93
+    ru: Chrome 93
+    zh: Chrome 93
+  description:
+    en: Articles about features shipping in Chrome 93.
+    es: Artículos sobre el envío de funciones en Chrome 93.
+    ja: Chrome93で出荷される機能に関する記事。
+    ko: Chrome 93에서 제공되는 기능에 대한 문서입니다.
+    pt: Artigos sobre envio de recursos no Chrome 93.
+    ru: Статьи о функциях, поставляемых в Chrome 93.
+    zh: 有關 Chrome 93 中提供的功能的文章。
+
 chrome-ux-report:
   title:
     en: Chrome UX Report
