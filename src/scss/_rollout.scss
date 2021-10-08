@@ -12,8 +12,7 @@
 
 .w-callout {
   max-width: $global-prose-element-max-width;
-
-  @include apply-utility('bg', 'mid-bg');
+  border: 1px solid get-utility-value('color', 'stroke');
 }
 
 .w-callout__lockup::before {
@@ -65,6 +64,10 @@ web-tabs .web-tabs__tab[aria-selected='true']::after {
   @extend .button;
 
   padding: 0.5rem;
+}
+
+.web-assessment__button {
+  @extend .button;
 }
 
 .web-tabs__text-label {
