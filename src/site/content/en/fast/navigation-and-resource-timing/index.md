@@ -50,7 +50,7 @@ Gathering and analyzing navigation and resource timings is sort of like archeolo
 
 <figure class="w-figure">
 {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/BxgZyzAEyFnk846wvzNa.png", alt="A diagram of network timings as shown in Chrome's DevTools. The timings depicted are for request queueing, connection negotiation, the request itself, and the response in color-coded bars.", width="800", height="583" %}
-  <figcaption>A visualization of a network request in the [network panel of Chrome's DevTools](https://developer.chrome.com/docs/devtools/network/).</figcaption>
+  <figcaption>A visualization of a network request in the <a href="https://developer.chrome.com/docs/devtools/network/" rel="noopener">network panel of Chrome's DevTools</a></figcaption>
 </figure>
 
 The life of a network request has distinct phases, such as DNS lookup, connection establishment, TLS negotiation, and so on. These timings are represented as a [`DOMHighResTimestamp`](https://developer.mozilla.org/docs/Web/API/DOMHighResTimeStamp). Depending on your browser, the granularity of timings may be down to the microsecond, or be rounded up to milliseconds. Let's examine these phases in detail, and how they relate to Navigation Timing and Resource Timing.
