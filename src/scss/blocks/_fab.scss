@@ -7,6 +7,11 @@
   flex: none;
 
   @include button-base-styles();
+
+  /// Ensures the hover state doesn't overflow;
+  &::after {
+    border-radius: 3em;
+  }
 }
 
 .fab__label {
