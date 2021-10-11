@@ -1,0 +1,28 @@
+/// SITE FOOTER
+/// The main, global footer that is on each page
+.site-footer {
+  padding: $global-gutter;
+
+  /// There's a few lists, so we set globally
+  ul {
+    padding: 0;
+  }
+}
+
+.site-footer__primary-nav {
+  --auto-grid-placement: auto-fit;
+
+  li + li {
+    margin-top: 0.5rem;
+  }
+}
+
+.site-footer__brand-nav {
+  border-block: 1px solid get-utility-value('color', 'stroke');
+  padding: get-space('base') 0;
+  margin: get-space('size-2') 0;
+
+  img {
+    display: block;
+  }
+}

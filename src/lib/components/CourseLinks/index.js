@@ -65,7 +65,7 @@ class CourseLinks extends HTMLElement {
    * and will track the user's progress in GA.
    */
   onSlotChange = () => {
-    const children = Array.from(this.children);
+    const children = Array.from(this.querySelectorAll('a'));
     const currentUrl = this.getAttribute('data-current');
     const courseKey = this.getAttribute('data-course-key');
 

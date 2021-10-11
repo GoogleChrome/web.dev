@@ -6,25 +6,58 @@
 
   --flow-space: #{get-space('size-1')};
 
+  > * {
+    margin-inline: auto;
+    max-width: $global-prose-element-max-width;
+  }
+
+  p:empty {
+    display: none;
+  }
+
+  > img {
+    width: 100%;
+  }
+
+  /// Reduce the size of headings in this context
+  h1 {
+    font-size: get-size('size-5');
+  }
+
+  h2 {
+    font-size: get-size('size-4');
+  }
+
+  h3 {
+    font-size: get-size('size-3');
+  }
+
+  h4 {
+    font-size: get-size('size-2');
+  }
+
   /// Add more space to elements that follow figures etc
   pre + *,
   figure + *,
   h2,
-  h3 {
+  h3,
+  h4 {
     --flow-space: #{get-space('size-2')};
   }
 
   /// Main headings should have less space for their
   /// immediate sibling
   h2 + *,
-  h3 + * {
+  h3 + *,
+  h4 + * {
     --flow-space: 1rem;
   }
 
-  /// Keeps figures at a reasonable size and makes sure
-  /// their content fills them
-  figure {
-    max-width: 50rem;
+  /// Keeps figures and embeds at a reasonable size and
+  /// makes sure their content fills them
+  figure,
+  iframe {
+    max-width: $global-prose-element-max-width;
 
     > * {
       width: 100%;
@@ -38,14 +71,14 @@
   /// An anchor that starts with a hash is a
   /// skip link, so it needs to be visually hidden
   /// until focused or hovered
-  a[href^='#'] {
+  :is(h2, h3, h4, h5, h6) a[href^='#'] {
     font-size: 0.7em;
     text-decoration: none;
     color: transparent;
   }
 
-  :hover a[href^='#'],
-  a[href^='#']:focus {
+  :is(h2, h3, h4, h5, h6) :hover a[href^='#'],
+  :is(h2, h3, h4, h5, h6) a[href^='#']:focus {
     @include apply-utility('color', 'mid-text');
   }
 }

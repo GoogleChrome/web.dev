@@ -13,7 +13,11 @@ $generate-utility-classes: false;
 /// GLOBAL VARIABLES
 /// Global variables that should be accessible in all authored CSS
 $global-gutter: map-get($gorko-space-scale, 'size-1');
+$global-gutter-narrow: 1.25rem;
 $global-stroke: 1px solid get-utility-value('color', 'stroke');
+
+/// Elements that feature in prose contexts need to have a consistent max width
+$global-prose-element-max-width: 50rem;
 
 // NOTE: there are more design token-led global variables in _tokens.scss
 
@@ -118,8 +122,8 @@ ul:not([class]) {
     display: block;
     position: absolute;
     inset: 1ex 0 0 0;
-    width: 0.8ex;
-    height: 0.8ex;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: currentColor;
   }
@@ -236,6 +240,10 @@ figcaption {
 
   @include apply-utility('measure', 'short');
   @include apply-utility('gap-top', 'size-1');
+
+  code {
+    white-space: nowrap;
+  }
 }
 
 /// Tables
@@ -303,7 +311,7 @@ hr + * {
   --flow-space: #{get-size('size-6')};
 }
 
-/// Basic code
+/// Code
 
 code {
   padding: 0.125em 0.25em;
@@ -325,10 +333,31 @@ code {
 pre > code {
   display: block;
   padding: get-size('size-1');
-  max-width: 80ch;
   overflow-x: auto;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
+}
+
+// It's not uncommon to have code in markdown headings.
+// In these cases we should remove the border.
+// There is also a utility class, .unstyled-code, that can be used
+// if we're using <code> blocks in new contexts.
+// For example: <span class="unstyled-code">{{ description | md | safe }}</span>
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+.unstyled-code code {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  margin: 0;
+  padding: 0;
+  white-space: normal;
 }
 
 /// Sub and sup
@@ -349,14 +378,14 @@ details:not([class]) {
 
   --flow-space: 0.5em;
 
-  max-width: 75ch;
+  max-width: $global-prose-element-max-width;
   border-block: 1px solid get-utility-value('bg', 'stroke');
-  padding: 1.3rem 0.5rem 1.6rem 0.5rem;
+  padding: 1rem 0.5rem 1.2rem 0.5rem;
 }
 
 details:not([class]) summary {
   position: relative;
-  font-size: get-size('size-3');
+  font-size: get-size('size-2');
   list-style: none;
   cursor: pointer;
 
@@ -378,8 +407,8 @@ details:not([class]) summary {
   }
 
   &::before {
-    width: 35px;
-    height: 35px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background: get-utility-value('bg', 'highlight-interact-bg');
     inset-inline-end: 0;
@@ -387,12 +416,12 @@ details:not([class]) summary {
   }
 
   &::after {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-bottom: 2px solid currentColor;
     border-right: 2px solid currentColor;
-    inset-block-start: 9px;
-    inset-inline-end: 12px;
+    inset-block-start: 7px;
+    inset-inline-end: 10px;
     transform: rotate(45deg);
   }
 
@@ -410,6 +439,10 @@ details:not([class]) summary {
       filter: invert(0.05);
     }
   }
+}
+
+[class*='text-'] > details:not([class]) summary {
+  font-size: inherit;
 }
 
 details[open]:not([class]) summary {
@@ -492,6 +525,7 @@ input[type='radio'] {
   cursor: pointer;
   margin: 0px;
   background-size: cover;
+  flex: none;
   appearance: none;
   -webkit-appearance: none;
 
@@ -545,6 +579,11 @@ input[type='radio']:checked {
   @include apply-utility('bg', 'radio-checked');
 }
 
+/// Media
+video {
+  max-width: 100%;
+}
+
 /// Links
 
 a:link {
@@ -581,6 +620,11 @@ a:active {
   background: var(--color-core-text);
 }
 
+/// If an element is [hidden] it needs to be max priority
+[hidden] {
+  display: none !important;
+}
+
 /// Misc web components that need to be blocks
 web-copy-code {
   display: block;
@@ -595,27 +639,38 @@ web-copy-code {
 
 /// BLOCKS
 @import 'blocks/aside';
+@import 'blocks/audio-player';
 @import 'blocks/author';
 @import 'blocks/banner';
 @import 'blocks/brand';
+@import 'blocks/breadcrumbs';
 @import 'blocks/browser-compat';
 @import 'blocks/button';
 @import 'blocks/card';
 @import 'blocks/compare';
+@import 'blocks/eyebrow';
 @import 'blocks/fab';
 @import 'blocks/indicator';
 @import 'blocks/label';
 @import 'blocks/numbered-headers';
 @import 'blocks/pagination';
+@import 'blocks/preview-pagination';
 @import 'blocks/prose';
+@import 'blocks/site-footer';
 @import 'blocks/skip-link';
 @import 'blocks/stack-nav';
 @import 'blocks/stats';
 @import 'blocks/status-list';
 @import 'blocks/syntax-highlighting';
 @import 'blocks/table-wrapper';
+@import 'blocks/toc';
 @import 'blocks/toggle-switch';
 @import 'blocks/tooltip';
+
+/// WEB COMPONENTS
+@import 'web-components/web-audio-fab';
+@import 'web-components/web-copy-code';
+@import 'web-components/web-navigation-drawer';
 
 /// UTILITY CLASSES
 @import 'utilities/all-center';
@@ -628,10 +683,14 @@ web-copy-code {
 @import 'utilities/wrapper';
 
 /// PAGES
+@import 'pages/course';
 @import 'pages/design-system';
 
 // The prototype file is for temporary prototyping
 @import 'prototype';
+
+// Temporary rollout patches
+@import 'rollout';
 
 // Render gorko utilities
 @include generate-utility-classes();

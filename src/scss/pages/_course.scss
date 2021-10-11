@@ -1,0 +1,228 @@
+$course-header-height: 144px;
+$course-search-height: 48px;
+$course-side-vert-space: 20px;
+
+.course {
+  /// For the sidebar composition
+  --sidebar-target-width: 22rem;
+
+  --sidebar-content-min-width: 70%;
+
+  /// For the navigation drawer web component
+  --web-navigation-drawer-width: 22rem;
+
+  .stack-nav {
+    margin-block: 0;
+  }
+
+  // Hides the check icon when item is not complete yet
+  .stack-nav a:not([data-complete='true']) {
+    svg {
+      display: none;
+    }
+  }
+
+  // Complete items have slightly dimmed look and feel
+  .stack-nav a[data-complete='true']:not([aria-current='page']) {
+    @include apply-utility('color', 'mid-text');
+
+    /// Hides any "NEW" meta elements
+    .stack-nav__meta:last-of-type {
+      display: none;
+    }
+  }
+
+  // Allows the sidebar elements to place and flex themselves
+  web-navigation-drawer > * {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  web-header {
+    --cluster-vertical-alignment: center;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    /// Shorter left pad accounts for the burger menu button
+    padding: 0.5rem $global-gutter 0.5rem 1rem;
+    box-shadow: 0 0 10px rgba(0 0 0 / 20%);
+    background-position: top right;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-image: var(--course-background);
+
+    /// Background image is supplied as an inline style, as a custom property,
+    /// so we only want to set the color here
+    background-color: get-utility-value('bg', 'core-bg');
+
+    /// Targets the logo
+    > svg[role='img'] {
+      display: block;
+      width: 6rem;
+      height: auto;
+    }
+  }
+
+  // Allows this element to scroll independently
+  // Learn: https://piccalil.li/tutorial/build-a-responsive-media-browser-with-css/
+  course-links {
+    flex-basis: 0;
+  }
+}
+
+.course__sidebar {
+  --flow-space: #{$course-side-vert-space};
+
+  outline: 1px solid get-utility-value('color', 'stroke');
+  max-height: 100vh;
+  overflow: hidden;
+  gap: 0;
+
+  @include apply-utility('bg', 'core-bg');
+}
+
+.course__header {
+  background-image: var(--course-background);
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-color: get-utility-value('bg', 'img-backdrop');
+  display: flex;
+  align-items: start;
+  flex: none;
+
+  /// These magic numbers ensure display and alignment
+  /// of decorative elements
+  height: $course-header-height;
+  padding: 0 1rem;
+  gap: 0.5rem;
+
+  /// Add a touch of top space to the close button to increase tap accuracy
+  .fab {
+    margin-block-start: $global-gutter-narrow;
+  }
+}
+
+.course__side-title {
+  height: 40px;
+  margin: auto 0 20px;
+
+  > svg {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.course__over-scroll {
+  flex: auto;
+  overflow: auto;
+  // sass-lint:disable no-misspelled-properties
+  overscroll-behavior: contain;
+  position: relative;
+}
+
+.course__toc {
+  position: sticky;
+  top: get-space('size-1');
+}
+
+.course__intro {
+  max-width: $global-prose-element-max-width;
+
+  p {
+    font-style: italic;
+  }
+}
+
+/// RESPONSIVE STYLES
+.course {
+  @include media-query('lg') {
+    --web-navigation-drawer-width: 100%;
+
+    > .sidebar {
+      gap: 0;
+    }
+
+    web-header {
+      display: none;
+      pointer-events: none;
+    }
+
+    .course__sidebar {
+      position: sticky;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+/// STYLES FOR EXISTING, UN-TOUCHED ELEMENTS
+web-search.course__search {
+  display: block;
+  height: $course-search-height;
+  padding: 0 $global-gutter-narrow;
+
+  .web-search__input-wrapper {
+    display: flex;
+  }
+
+  .web-search__open-btn,
+  .web-search__close-btn,
+  &[expanded] .web-search__close-btn {
+    display: none;
+  }
+}
+
+.web-search-popout {
+  height: 100%;
+  padding-top: 0;
+}
+
+.course {
+  .web-search-popout {
+    position: absolute;
+
+    /// Andy: Gosh I hate this so much but making the search results a part of the partially
+    /// scrollable links section was causing scrolling *havoc*. This keeps it out of there,
+    /// but maintains the layout structure of its siblings. Luckily, we know how big they are,
+    /// how many there are and what the spacing between them is, so it's only partially "magic numbers"
+    top: #{$course-side-vert-space + $course-search-height +
+      $course-header-height};
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    @include apply-utility('bg', 'mid-bg');
+  }
+
+  .web-search-popout__list {
+    max-height: 100%;
+    padding: 0;
+    margin: 0;
+
+    li + li {
+      margin-top: get-space('base');
+    }
+  }
+
+  .web-search-popout__link {
+    --flow-space: 0.5rem;
+
+    text-decoration: none;
+
+    @include apply-utility('color', 'core-text');
+  }
+
+  .web-search-popout__snippet {
+    font-size: get-size('size-0');
+    margin: 0;
+
+    @include apply-utility('color', 'mid-text');
+  }
+
+  .web-course-search__no-results {
+    text-align: center;
+  }
+}
