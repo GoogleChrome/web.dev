@@ -361,17 +361,17 @@ These tools support specific technology stacks. If you are already using a
 platform supported by one of these tools, you may find it easier to set up than
 a general-purpose tool.
 
-- [Automatic Signed
-  Exchanges](https://blog.cloudflare.com/automatic-signed-exchanges/) is
-  available for Cloudflare Pro, Business, Enterprise, and Advanced Platform
-  Optimization customers. It manages certificates for you.
-
 - [`sxg-rs/cloudflare_worker`](https://github.com/google/sxg-rs/tree/main/cloudflare_worker)
   runs on [Cloudflare Workers](https://workers.cloudflare.com/).
 
 - [`sxg-rs/fastly_compute`](https://github.com/google/sxg-rs/tree/main/fastly_compute)
   runs on [Fastly
   Compute@Edge](https://www.fastly.com/products/edge-compute/serverless).
+
+- [Automatic Signed
+  Exchanges](https://blog.cloudflare.com/automatic-signed-exchanges/) is a
+  Cloudflare feature that automatically acquires certificates and generates
+  Signed Exchanges.
 
 - [NGINX SXG module](https://github.com/google/nginx-sxg-module) generates
   and serves SXGs for sites that use [nginx](https://nginx.org/). Setup
