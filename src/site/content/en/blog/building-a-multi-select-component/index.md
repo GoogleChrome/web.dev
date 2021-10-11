@@ -13,7 +13,6 @@ tags:
   - css
   - dom
   - javascript
-  - interaction
 ---
 
 In this post I want to share thinking on a way to build a multi-select component. Try the
