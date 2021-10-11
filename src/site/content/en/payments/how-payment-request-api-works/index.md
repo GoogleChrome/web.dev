@@ -119,10 +119,10 @@ request.show().then(response => {
 
 {% Aside %}
 
-`basic-card` payment method is deprecated from Chrome 100. If none of the
-specified payment methods is supported on the browser, it will throw
-`NotSupportedError`. Make sure to check the payment method availability with
-`canMakePayment()` in advance.
+`basic-card` payment method is deprecated from Chrome 100. If the browser doesn't
+support any of the specified payment methods, it will throw
+`NotSupportedError`. Make sure to first check the payment method availability with
+`canMakePayment()`.
 
 {% endAside %}
 
