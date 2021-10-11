@@ -83,11 +83,11 @@ const paymentDetails = {
 
 ## Check whether the payment method is available
 
-Before invoking payment procedure, the merchant can check whether the user and
-the environment is ready to make payment.
+Before invoking the payment procedure, the merchant can check whether the user and
+the environment are ready for making a payment.
 
-By calling `canMakePayment()`, you can check whether the browser supports at
-least one payment method specified in the object and ready to use.
+Calling `canMakePayment()` checks if the browser supports at
+least one payment method specified in the object.
 
 ```js
 request.canMakePayment().then(result => {
