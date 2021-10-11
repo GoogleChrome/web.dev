@@ -6,7 +6,7 @@ subhead: |
 authors:
   - agektmr
 date: 2018-09-10
-updated: 2021-09-14
+updated: 2021-10-12
 description: |
   Learn how the Payment Request API works at a high level.
 tags:
@@ -81,6 +81,29 @@ const paymentDetails = {
 };
 ```
 
+## Check whether the payment method is available
+
+Before invoking payment procedure, the merchant can check whether the user and
+the environment is ready to make payment.
+
+By calling `canMakePayment()`, you can check whether the browser supports at
+least one payment method specified in the object and ready to use.
+
+```js
+request.canMakePayment().then(result => {
+  if (result) {
+    // This browser supports the specified payment method.
+  } else {
+    // This browser does NOT support the specified payment method.
+  }
+}).catch(e => {
+  // An exception
+});
+```
+
+Learn more at [PaymentRequest.canMakePayment() - Web APIs |
+MDN](https://developer.mozilla.org/docs/Web/API/PaymentRequest/canMakePayment)
+
 ## The `show()` method
 
 After setting the two parameters and creating the `request` object as shown
@@ -94,6 +117,15 @@ request.show().then(response => {
   response.complete('success');
 });
 ```
+
+{% Aside %}
+
+`basic-card` payment method is deprecated from Chrome 100. If none of the
+specified payment methods is supported on the browser, it will throw
+`NotSupportedError`. Make sure to check the payment method availability with
+`canMakePayment()` in advance.
+
+{% endAside %}
 
 How payment app user interface will look is completely up to the payment app
 provider. After the customer agrees to make a payment, a JSON object is passed
