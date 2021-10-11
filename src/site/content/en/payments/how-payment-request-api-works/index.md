@@ -101,8 +101,7 @@ request.canMakePayment().then(result => {
 });
 ```
 
-Learn more at [PaymentRequest.canMakePayment() - Web APIs |
-MDN](https://developer.mozilla.org/docs/Web/API/PaymentRequest/canMakePayment)
+Learn more about [PaymentRequest.canMakePayment() on MDN](https://developer.mozilla.org/docs/Web/API/PaymentRequest/canMakePayment)
 
 ## The `show()` method
 
