@@ -36,7 +36,7 @@ This way, you don't forget to add it.
 Adding the labels first also helps you to focus on the form's goals–what data do I need here?
 Once this is clear, you can focus on helping the user enter data and complete the form.
 
-{% Aside %}
+{% Aside 'caution' %}
 Never misuse the `placeholder` attribute as a label.
 The placeholder is meant for giving a hint about the type of data you should enter,
 not for describing a form control.
@@ -67,7 +67,7 @@ and help users to understand what data is needed faster.
 
 ## Label position
 
-With [CSS](/learn/forms/css/styling),
+With [CSS](/learn/forms/styling),
 you can position a label on the top, bottom, left, and right of a form control.
 Where do you place it?
 
@@ -82,7 +82,7 @@ Good form design can
 [significantly reduce form abandonment rates](https://baymard.com/blog/checkout-flow-average-form-fields).
 Help users enter data by using the appropriate element and input type
 There are various
-[form elements and input types](/learn/forms/form-elements) you can choose from.
+[form elements and input types](/learn/forms/fields) you can choose from.
 To offer the best UX, use the most suitable element and input type for your use case.
 If the user should fill in multiple lines of text, use the `<textarea>` element.
 Where they need to accept your site's terms and conditions, use `<input type="checkbox">`.

@@ -16,7 +16,7 @@ Everybody wants to use your form. Learn how to make your form accessible and usa
 
 ## Ensure users understand the purpose of a form field
 
-There are many [form controls](/learn/forms/form-fields) you can choose from.
+There are many [form controls](/learn/forms/fields) you can choose from.
 What do they all have in common?
 Every form control must have an associated `<label>` element.
 The `<label>` element describes the purpose of a form control.
@@ -66,7 +66,7 @@ an `<input>` does that by default.
 
 Built-in form elements have other features.
 For example, with appropriate form elements and the correct `inputmode` or `type`,
-a virtual keyboard shows all needed characters at a first glance.
+an on-screen keyboard shows all needed characters at a first glance.
 Using the `inputmode` attribute on a `<div>` cannot do that.
 
 ## Ensure users are aware of the expected data format
@@ -153,6 +153,11 @@ You can override it with the
 Whatever styles you use inside `:focus`,
 always make sure the visual difference between the default state and the focus state is recognizable.
 
+{% Aside %}
+If you want to remove the default `:focus` styles but still show focus indicators for keyboard users,
+you can use the [`:focus-visible`](/style-focus/#use-:focus-visible-to-selectively-show-a-focus-indicator) CSS pseudo-class.
+{% endAside %}
+
 Learn more about
 [designing focus indicators](https://www.sarasoueidan.com/blog/focus-indicators/).
 
@@ -171,7 +176,7 @@ Accessibility reviews are great, testing with real users is even better.
 
 Learn more about doing an
 [accessibility review](https://developers.google.com/web/fundamentals/accessibility/how-to-review)
-and how to [test with real users](/learn/forms/test/usability).
+and how to [test with real users](/learn/forms/usability-testing).
 
 ## Resources
 

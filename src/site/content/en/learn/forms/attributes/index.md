@@ -11,7 +11,7 @@ HTML element attributes can enhance your `<form>` and form controls.
 
 ## Help users fill in form controls
 
-To make it easier for users to fill in forms, 
+To make it easier for users to fill out forms, 
 use an appropriate `type` attribute for your `<input>` elements. 
 
 Browsers display a user interface as appropriate for the `type`, 

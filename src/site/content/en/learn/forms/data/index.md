@@ -78,7 +78,7 @@ After some days, it's now time to measure how effective the change was.
 
 Did the bounce rate decrease for your form? 
 Great, now look at the goal funnel to see which parts improved. 
-Are a high proportion of users still leaving before they fill out the postal code, for example? 
+Are a high proportion of users still leaving before they fill in the postal code, for example? 
 Adapt your goal funnel steps if necessary, deploy further changes, 
 and analyze your form again until you are happy with the outcome.
 

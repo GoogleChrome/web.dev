@@ -78,16 +78,14 @@ autocomplete should be used (`autocomplete="off"`) or what encoding should be us
 The data should be sent as a `POST` request, and the URL where the data will be processed should be `/color`. 
 
 {% Details %}
-{% DetailsSummary %}
-Show form
-{% endDetailsSummary %}
+{% DetailsSummary 'h3' %} Show form {% endDetailsSummary %}
 One possible solution is using this form:
 
 ```html
 <form method="post" action="/color">
     <label for="color">What is your favorite color?</label>
     <input type="text" name="color" id="color">
-    <button>Submit</button>
+    <button>Save</button>
 </form>
 ```
 
@@ -102,7 +100,7 @@ You can click the **Submit** button, or press `Enter` while using any form contr
 Use an actionable name for your **Submit** button, 
 for example, 'Proceed to Payment' or 'Save Changes', rather than just 'Submit'. 
 
-Don't disable the Submit button while still awaiting valid user input, 
+Don't disable the **Submit** button while still awaiting valid user input, 
 but consider disabling it once the form has been submitted, 
 preventing multiple requests to your server.
 
@@ -115,12 +113,12 @@ As long as you don't use `type="button"` it works as a **Submit** button.
 Another option is to use `<input type="submit" value="Submit">`.
 
 {% Aside %}
-You can use the `enterkeyhint` attribute to change the label of the enter key for on-screen keyboards. 
+You can use the `enterkeyhint` attribute to change the label of the `Enter` key for on-screen keyboards. 
 This helps make it clearer for users what happens when they submit the current form.
 {% endAside %}
 
 The third option is to use `<input type="image" alt="Submit" src="submit.png">`, 
-to create a graphical Submit button. 
+to create a graphical **Submit** button. 
 However, now that you can create graphical buttons with CSS, it's not recommended to use `type="image"`.
 
 {% Aside %}

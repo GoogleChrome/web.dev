@@ -105,7 +105,7 @@ Use `autocomplete="email"` for the email field,
 and `autocomplete="current-password"` for a current password field.
 
 To help users manually fill in their account details, use `type="email"` 
-for the email field to show the appropriate virtual keyboard on mobile devices. 
+for the email field to show the appropriate on-screen keyboard on mobile devices. 
 
 Use the `required` attribute for your email and password field so you can warn of invalid values when the user submits the form. 
 Consider using [real-time validation](https://web.dev/learn/forms/javascript), 
@@ -133,7 +133,7 @@ Test your sign-in and sign-up forms regularly with real people to make sure that
 Use analytics and [real user measurement (RUM)](/user-centric-performance-metrics/) to collect field data, 
 and tools such as [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 
 and [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) to run tests yourself. 
-Learn more about [testing for usability](/learn/forms/test/usability) and 
+Learn more about [testing for usability](/learn/forms/usability-testing) and 
 [gathering analytics data](/learn/forms/test/data).
 
 Ensure your forms work in different browsers and on different platforms. 

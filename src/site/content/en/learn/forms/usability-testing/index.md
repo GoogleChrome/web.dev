@@ -57,7 +57,7 @@ Ask them to fill out your form.
 Are they able to locate the form from the homepage? 
 Are they able to successfully submit the form? 
 Ask them about their experience. 
-As they fill in the form, ask them to explain what they're doing and any issues they encounter.
+As they fill out the form, ask them to explain what they're doing and any issues they encounter.
 
 ## Ensure your form is accessible
 

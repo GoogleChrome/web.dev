@@ -57,7 +57,8 @@ There are many possible values for `autocomplete`. Let's have a look at addresse
 {% Codepen {
   user: 'web-dot-dev',
   id: 'f6eac7a585a34d0c2de36a365eaa8662',
-  height: 600
+  height: 600,
+  tab: 'result,html'
 } %}
 
 Does your browser already have an address saved for you? 
@@ -138,7 +139,7 @@ Learn more about
 [multifactor authentication](https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html).
 {% endAside %}
 
-## Help users fill out their credit card information
+## Help users fill in their credit card information
 
 On many e-commerce websites, you can use your credit card to purchase products. 
 Sites may use third-party payment platforms that provide their own forms, 
@@ -159,7 +160,7 @@ a `<select>` for the payment card dates,
 instead of custom elements, to ensure autocomplete is available.
 
 Learn more about 
-[helping users to avoid re-entering payment data](/payment-and-address-form-best-practices/#payment-form-autocomplete).
+[helping users to avoid re-entering payment data](/learn/forms/payment/#help-users-enter-their-payment-details).
 
 ## Ensure autofill works for your fields
 
@@ -198,7 +199,7 @@ For more information, see the
 [W3C accessibility guidelines](https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html)
 {% endAside %}
 
-Another use case is a honeypot field (see [previous module](/learn/forms/security-privacy)). 
+Another use case is a honeypot field (see [previous module](/learn/forms/security-privacy/#a-honeypot)). 
 Even though the field isn't visible, browsers may autofill it with the rest of the fields. 
 Turning autofill off ensures a real user isn't identified as a bot, 
 due to the field being completed automatically.

@@ -160,7 +160,8 @@ How can you safely output the data? To prevent
 and ensure all data is safe to include in HTML, you must sanitize data before output.
 
 Learn more about
-[sanitizing data before output](https://benhoyt.com/writings/dont-sanitize-do-escape/).
+[sanitizing data before output](https://benhoyt.com/writings/dont-sanitize-do-escape/), and
+how to use the [Sanitizer API](/sanitizer/).
 
 ## Ensure all submissions come from real people
 
@@ -188,7 +189,8 @@ The best spam protection is useless if it makes the form unusable for real peopl
 {% Codepen {
   user: 'web-dot-dev',
   id: 'c8e82763c4ce344eb23dfd3ef621b662',
-  height: 400
+  height: 400,
+  tab: 'html,result'
 } %}
 
 Another option is to use a so-called 'honeypot': a visually hidden form field.
