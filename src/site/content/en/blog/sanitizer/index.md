@@ -316,3 +316,7 @@ To see the Sanitizer API in action check out the [Sanitizer API Playground](http
 - [WICG/sanitizer-api repo](https://github.com/WICG/sanitizer-api)
 - [Sanitizer API FAQ](https://github.com/WICG/sanitizer-api/blob/main/faq.md)
 - [HTML Sanitizer API reference documentation on MDN](https://developer.mozilla.org/docs/Web/API/HTML_Sanitizer_API)
+
+---
+
+Photo by [Towfiqu barbhuiya](https://unsplash.com/@towfiqu999999) on [Unsplash](https://unsplash.com/photos/-9gPKrsbGmc).
