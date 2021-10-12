@@ -1,3 +1,5 @@
+/// SITE FOOTER
+/// The main, global header that is on each page
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -24,7 +26,8 @@
   padding: 1.5em $global-gutter-narrow;
   text-decoration: none;
 
-  &:link {
+  &:link,
+  &:visited {
     @include apply-utility('color', 'mid-text');
   }
 
@@ -60,7 +63,7 @@
 .site-header [data-drawer-close-button] {
   position: absolute;
   z-index: 1;
-  inset: $global-gutter-narrow auto auto 0.2rem;
+  inset: $global-gutter-narrow $global-gutter auto auto;
 }
 
 .site-header web-navigation-drawer:not([open]) {
