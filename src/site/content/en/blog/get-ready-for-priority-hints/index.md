@@ -5,7 +5,7 @@ authors:
   - jlwagner
   - yoavweiss
 description: Priority Hints are a new feature in Chrome that allows developers to reprioritize resource requests for better performance. Learn more about its implementation, use cases, and how you can participate in its second origin trial.
-date: 2020-10-14
+date: 2020-10-20
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/CEHDGorcLctbzphb7Ydk.jpg
 hero_position: center
 alt: A photo of the Gare Du Nord train station platform in Paris, France.
