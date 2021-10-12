@@ -33,8 +33,8 @@ If unsure, mention this in your content proposal and we can help you work it out
 The writing style guide hosted on web.dev is your reference for style, voice, and tone across both sites. 
 There are some technical differences in terms of components you have access to when formatting your post:
 
--  [Web.dev components](/handbook/web-dev-components/)
--  [Developer.chrome.com components](https://developer.chrome.com/docs/handbook/components/)
+-  [web.dev components](/handbook/web-dev-components/)
+-  [developer.chrome.com components](https://developer.chrome.com/docs/handbook/components/)
 
 ## How to format your draft
 
@@ -59,7 +59,7 @@ This order helps you avoid:
 * Multiple content reviews because you changed the structure.
 * Multiple copy edits because your content reviewers requested wording changes.
 
-Expect each review step to take as much as a weak. All parties are juggling competing priorities. 
+Expect each review step to take as much as a week. All parties are juggling competing priorities. 
 
 ## Key writing tips
 
