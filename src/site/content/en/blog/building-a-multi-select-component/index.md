@@ -33,7 +33,7 @@ In this post I want to share thinking on a way to build a multi-select component
 
 If you prefer video, here's a YouTube version of this post:
 
-{% YouTube 'jmLdZY_Lo1k' %}
+{% YouTube 'x0aCdLDZ8BM' %}
 
 ## Overview
 
