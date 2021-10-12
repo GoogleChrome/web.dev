@@ -43,6 +43,24 @@ Make a copy of this [template](https://docs.google.com/document/d/1lgaNIEnXZf-RB
 Your initial reviews will take place in the document as it is an easier place for structural changes than Github. 
 You can also share your document with any members of your team who need to sign off on the content before publication.
 
+## The general procedure
+
+A good general order of operations looks like this:
+
+1. Write your outline.
+1. Get technical writer feedback on your structure.
+1. Draft your article.
+1. Get a content review from technical experts or other interested parties.
+1. Revise your article as needed.
+1. Get a copy edit for typos, grammar issues, and other needed corrections from the technical writer.
+
+This order helps you avoid:
+
+* Multiple content reviews because you changed the structure.
+* Multiple copy edits because your content reviewers requested wording changes.
+
+Expect each review step to take as much as a weak. All parties are juggling competing priorities. 
+
 ## Key writing tips
 
 We don't expect you to memorize the style guide. 
