@@ -54,7 +54,7 @@ multiple>`](https://developer.mozilla.org/docs/Web/HTML/Attributes/multiple)
 for touch users. 
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/784yEixWzAhzh8GqUhLM.png",
-alt="comparison screenshot showing desktop light and dark with a sidebar of
+alt="Comparison screenshot showing desktop light and dark with a sidebar of
 checkboxes vs mobile iOS and Android with a multi-select element.", width="800",
 height="434" %}
 
@@ -116,7 +116,7 @@ element and given a
 [`<legend>`](https://developer.mozilla.org/docs/Web/HTML/Element/legend).
 When HTML is structured this way, screen readers and
 [FormData](https://developer.mozilla.org/docs/Web/API/FormData) will
-automatically connect the dots.
+automatically understand the relationship of the elements.
 
 ```html
 <form>
@@ -225,7 +225,7 @@ This element will read aloud changes made to the contents. We can update the
 contents with [CSS
 counters](https://developer.mozilla.org/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters)
 as users interact with the checkboxes. To do that we first need to create a
-counter with a name at a parent scope to the inputs and state element.
+counter with a name on a parent element of the inputs and state element.
 
 ```css
 aside {
@@ -251,7 +251,7 @@ element is empty and awaiting values. Since CSS is maintaining the tally in
 memory, the
 [`counter()`](https://developer.mozilla.org/docs/Web/CSS/counter())
 function allows accessing the value from [pseudo
-element](https://web.dev/learn/css/pseudo-elements/) contents:
+element](/learn/css/pseudo-elements/) contents:
 
 ```css
 aside #applied-filters::before {
@@ -359,7 +359,7 @@ The default styling and layout of a `<fieldset>` with a `<legend>` is unique:
 Normally, to space my child elements I'd use the `gap` property, but the unique
 positioning of the `<legend>` makes it difficult to create an evenly spaced set
 of children. Instead of `gap`, the [adjacent sibling
-selector](https://web.dev/learn/css/selectors/#next-sibling-combinator) and
+selector](/learn/css/selectors/#next-sibling-combinator) and
 `margin-block-start` are used.
 
 ```css
@@ -501,7 +501,7 @@ Altogether this work completes the announcement "2 filters giving 25 results".
 %}
 
 Now our excellent assistive technology experience will be delivered to all the
-users, despite their input type.
+users, however they interact with it.
 
 ## Conclusion
 
