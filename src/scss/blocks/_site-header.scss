@@ -35,13 +35,53 @@
   &[aria-current='page'] {
     @include apply-utility('color', 'core-text');
   }
+
+  &:only-of-type {
+    padding-inline: 0.8em;
+  }
+}
+
+.site-header__nav {
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 4.5rem 0 0 0;
+  min-width: 16rem;
+
+  a {
+    display: block;
+  }
 }
 
 .site-header__actions {
-  display: flex;
-  align-items: center;
+  --gutter: 0.5rem;
+}
 
-  // Even though the link provides space, it's handy to
-  // have a touch of gap to prevent accidental clicking
-  gap: 0 0.2rem;
+.site-header [data-drawer-close-button] {
+  position: absolute;
+  z-index: 1;
+  inset: $global-gutter-narrow auto auto 0.2rem;
+}
+
+.site-header web-navigation-drawer:not([open]) {
+  [data-drawer-close-button] {
+    display: none;
+  }
+}
+
+@include media-query('lg') {
+  .site-header__nav {
+    display: flex;
+    height: unset;
+    min-width: unset;
+    padding: unset;
+
+    a {
+      display: inline-block;
+    }
+  }
+
+  web-navigation-drawer[animating] [data-drawer-container] {
+    transition: none;
+  }
 }
