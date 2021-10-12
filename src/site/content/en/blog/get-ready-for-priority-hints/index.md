@@ -22,15 +22,15 @@ tags:
 
 Resource loading is a key aspect of web performance, and the need for new web platform features that give developers more control over how resources are loaded is greater than ever. One experiment in providing this control is [Priority Hints](https://wicg.github.io/priority-hints/), which lets developers tell the browser how to prioritize the loading of select resources.
 
-When a browser downloads a resource, it's assigned a priority. [By default](/prioritize-resources/#default-priorities-in-the-browser), priorities depend on the resource type, and—in Chromium, at least—the location of the resource reference in the document. Some examples of how this works in Chromium are:
+When a browser downloads a resource, it's assigned a priority. [By default](/prioritize-resources/#default-priorities-in-the-browser), priorities depend on the resource type, and&mdash;in Chromium, at least&mdash;the location of the resource reference in the document. Some examples of how this works in Chromium are:
 
 - CSS loaded by a `<link>` element in the `<head>` will be assigned the highest priority, as it blocks rendering.
-- Images are initially given low priority, but may have their priority boosted if they’re in the viewport once layout happens.
+- Images are initially given low priority, but may have their priority boosted if they're in the viewport once layout happens.
 - A `<script>` loaded at the end of the document may receive a priority assignment of medium or low, but this can be influenced by [`defer`](https://developer.mozilla.org/docs/Web/HTML/Element/script#attr-defer) and [`async`](https://developer.mozilla.org/docs/Web/HTML/Element/script#attr-async).
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Bs4SGqH4rrDTiyy1p6Tz.png", alt="A list of downloaded resources as shown in the network panel of Chrome's DevTools. There are three columns for the resource name, size, and priority.", width="800", height="158" %}
-  <figcaption>A list of resources and their corresponding priorities in the network panel of Chrome’s DevTools.</figcaption>
+  <figcaption>A list of resources and their corresponding priorities in the network panel of Chrome's DevTools.</figcaption>
 </figure>
 
 Historically, developers had little control over resource priority beyond [modifying the critical rendering path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path) until [`rel=preload`](/preload-critical-assets/) came around, which changes the discovery order of a resource by telling the browser about it before it would ordinarily be discovered.
@@ -49,7 +49,7 @@ Priority Hints can be set for resources in HTML by specifying an `importance` at
 The `importance` attribute accepts one of three values:
 
 - `high`: The resource may be given higher priority, provided the browser's own heuristics don't prevent that from happening.
-- `low`: The resource may be deprioritized—again, if the browser's heuristics permit.
+- `low`: The resource may be deprioritized&mdash;again, if the browser's heuristics permit.
 - `auto`: The browser decides which priority is appropriate. This is the default.
 
 Because `<link>` elements are affected by `importance`, this means priority can be changed not only for stylesheets, but also for `rel=preload` hints:
@@ -78,11 +78,11 @@ Priority Hints in its current form does not affect `<iframe>` elements. If you n
 
 ## How can I tell when Priority Hints work?
 
-One of the more direct methods for finding out if Priority Hints are working is to use [WebPageTest](https://webpagetest.org/). After profiling a page in WebPageTest, you can click any of the requests in the waterfall view for more information, including the request’s priority:
+One of the more direct methods for finding out if Priority Hints are working is to use [WebPageTest](https://webpagetest.org/). After profiling a page in WebPageTest, you can click any of the requests in the waterfall view for more information, including the request's priority:
 
 <figure>
-{% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Uro7wt442sJ7inG46tXq.png", alt="The request details modal dialog in WebPageTest. It is on top of the network waterfall diagram, and displays information such as the request URL, the hostname, and—relevantly—the request's priority.", width="800", height="485" %}
-  <figcaption>A request’s priority can be found in WebPageTest by clicking on it in the waterfall view.</figcaption>
+{% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Uro7wt442sJ7inG46tXq.png", alt="The request details modal dialog in WebPageTest. It is on top of the network waterfall diagram, and displays information such as the request URL, the hostname, and&mdash;relevantly&mdash;the request's priority.", width="800", height="485" %}
+  <figcaption>A request's priority can be found in WebPageTest by clicking on it in the waterfall view.</figcaption>
 </figure>
 
 With this information, you can tinker with priority hints on various resources and observe the effects, including the impact on core web vitals and other performance metrics.
@@ -97,9 +97,9 @@ Default resource priorities vary. Once you modify them, the effects may become a
 
 [Largest Contentful Paint (LCP)](/lcp/) is a perceptual performance metric that tracks when the largest piece of content paints on a page. The largest piece of content may be a [hero image](https://en.wikipedia.org/wiki/Hero_image).
 
-Because hero images tend to be large in terms of dimensions, they also tend to be large in terms of file size. Various optimization techniques—[including alternative formats](/uses-webp-images/)—can go a long way in reducing LCP, but Priority Hints may help even more.
+Because hero images tend to be large in terms of dimensions, they also tend to be large in terms of file size. Various optimization techniques&mdash;[including alternative formats](/uses-webp-images/)&mdash;can go a long way in reducing LCP, but Priority Hints may help even more.
 
-Initially, image requests in Chromium are low priority. Once page layout is finished, priority may change for those requests. However, that initial prioritization may deprive a high-value image asset of bandwidth until the layout has been applied. Reprioritization may also not work well in some scenarios, such as when an H2 server suffers from buffer bloat. By giving a hero image an `importance` attribute value of `"high"`, the browser doesn’t have to wait until the layout has been applied to the page before reprioritizing the request for it.
+Initially, image requests in Chromium are low priority. Once page layout is finished, priority may change for those requests. However, that initial prioritization may deprive a high-value image asset of bandwidth until the layout has been applied. Reprioritization may also not work well in some scenarios, such as when an H2 server suffers from buffer bloat. By giving a hero image an `importance` attribute value of `"high"`, the browser doesn't have to wait until the layout has been applied to the page before reprioritizing the request for it.
 
 For example, the [Google Flights](https://www.google.com/travel/flights) homepage has a large hero image. When `importance="high"` is applied to it, its LCP on a simulated 4G connection goes [from 2.7 seconds to 2 seconds](https://www.webpagetest.org/video/compare.php?tests=211006_AiDcG3_40871b05d6040112a05be4524565cf5d%2C211006_BiDcHR_bebed947f1b6607f2d97e8a899fdc36b&thumbSize=200&ival=100&end=visual).
 
@@ -114,7 +114,7 @@ Bear in mind that WebPageTest is a tool that gathers lab data. Insufficient data
 
 Script resource priorities vary in Chromium depending on a `<script>` element's location in the DOM, and whether the script has `async` or `defer` attributes. That means when you place blocking scripts in the footer rather than in the document `<head>`, you're implicitly telling the browser that your script is less important than other resources.
 
-Let’s say you’re loading a critical script in a non-blocking way, so you've given it an `async` attribute to ensure it runs as soon as it’s available. This works for scripts that provide interactivity, but shouldn't block rendering. Alternatively, you might have a blocking script at the bottom of the page, but at the same time, it shouldn’t always run before other async scripts, and can therefore be deprioritized.
+Let's say you're loading a critical script in a non-blocking way, so you've given it an `async` attribute to ensure it runs as soon as it's available. This works for scripts that provide interactivity, but shouldn't block rendering. Alternatively, you might have a blocking script at the bottom of the page, but at the same time, it shouldn't always run before other async scripts, and can therefore be deprioritized.
 
 There are hacks to work around some of these heuristics, but Priority Hints deal with these issues in a clear and declarative way. So, if you wanted to prioritize an async script, you could indicate:
 
@@ -130,7 +130,7 @@ Similarly, for a blocking script at the end of the document, you could give the 
 
 ### Deprioritizing fetches
 
-Say you have a number of `fetch()` calls that fire around the same time. Because fetches are given high priority, they'll contend with one another—and other high priority requests—if enough of them occur concurrently. To get around this, you could specify an `importance` of `low` on fetches for non-critical data:
+Say you have a number of `fetch()` calls that fire around the same time. Because fetches are given high priority, they'll contend with one another&mdash;and other high priority requests&mdash;if enough of them occur concurrently. To get around this, you could specify an `importance` of `low` on fetches for non-critical data:
 
 ```javascript
 // Important user data (high by default)
@@ -161,7 +161,7 @@ The key word is _hint_. The browser has the final say in prioritization. The bro
 A good way to think about Priority Hints is to compare them to `rel=preload`: Where `rel=preload` has more readily observable effects, Priority Hints are more nuanced. If you don't notice any difference when using them, it could be for any number of reasons, such as:
 
 * Resource priorities ensure that critical resources get to the browser before non-critical ones. Yet, that only helps in environments where bottlenecks exist. That happens often with HTTP/1.X, where the number of simultaneous connections are limited. This also happens with HTTP/2, but more so on low-bandwidth connections. High bandwidth HTTP/2 connections are less likely to recognize an obvious benefit from better resource prioritization.
-* HTTP/2 servers and their prioritization implementations are imperfect. [Pat Meenan](https://twitter.com/patmeenan) wrote about [common hurdles](https://blog.cloudflare.com/http-2-prioritization-with-nginx/) and how to fix them. [Andy Davies](https://twitter.com/andydavies) has run tests to see which CDNs and services are [getting it right](https://github.com/andydavies/http2-prioritization-issues#current-status). Generally, if you see that HTTP/2 prioritization is not having the impact you expect it to have, your server’s HTTP/2 implementation may not be as effective as another’s.
+* HTTP/2 servers and their prioritization implementations are imperfect. [Pat Meenan](https://twitter.com/patmeenan) wrote about [common hurdles](https://blog.cloudflare.com/http-2-prioritization-with-nginx/) and how to fix them. [Andy Davies](https://twitter.com/andydavies) has run tests to see which CDNs and services are [getting it right](https://github.com/andydavies/http2-prioritization-issues#current-status). Generally, if you see that HTTP/2 prioritization is not having the impact you expect it to have, your server's HTTP/2 implementation may not be as effective as another's.
 * The browser either ignored the hint you gave it, or you attempted to set a priority for a resource that would have been the same as the browser's original choice.
 
 Priority Hints are a fine-tuning optimization. If you haven't looked at other techniques like image optimization, code splitting, `rel=preload`, and so forth, try those things before you go all-in on Priority Hints.
