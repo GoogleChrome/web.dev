@@ -1,0 +1,47 @@
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $global-gutter;
+  border-bottom: 1px solid get-utility-value('color', 'stroke');
+  line-height: 1;
+
+  @include apply-utility('font', 'brand');
+}
+
+.site-header__brand {
+  display: block;
+  width: 140px;
+  height: 31px;
+
+  &:hover {
+    background: none;
+  }
+}
+
+.site-header__link {
+  display: inline-block;
+  padding: 1.5em $global-gutter-narrow;
+  text-decoration: none;
+
+  &:link {
+    @include apply-utility('color', 'mid-text');
+  }
+
+  &:hover {
+    @include apply-utility('bg', 'mid-bg');
+  }
+
+  &[aria-current='page'] {
+    @include apply-utility('color', 'core-text');
+  }
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+
+  // Even though the link provides space, it's handy to
+  // have a touch of gap to prevent accidental clicking
+  gap: 0 0.2rem;
+}
