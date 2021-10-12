@@ -11,11 +11,11 @@ Most of the following information is relevant to both sites.
 
 ## Planning
 
-1. Decide if your post should appear on [web.dev](https://web.dev) or [developer.chrome.com](https://developer.chrome.com). [More about the right site for your post](/handbook/writing-blog-posts#which-site).
+1. Decide if you want your post on [web.dev](https://web.dev) or [developer.chrome.com](https://developer.chrome.com). [More about the right site for your post](/handbook/writing-blog-posts#which-site).
 1. If you're a Googler or have access to a Googler, use the [content proposal form][form] to submit
    your new content request. If you don't have access to a Googler, use the
    [content issue template](https://github.com/GoogleChrome/web.dev/issues/new?template=propose-new-content.md).
-1. The team will take a look to see if the idea fits with the goals of the relevant site. If the idea is approved, it will be assigned a reviewer.
+1. The team will evaluate the proposal's suitability for the goals of the relevant site. If the idea is approved, it will be assigned a reviewer.
 
 {% Aside 'caution' %}
 If the piece you'd like to publish is time sensitive, make sure to submit the issue at least **one month** before the target publication date so there's enough time to move it through the writing process.
@@ -29,7 +29,7 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
 1. [How to write blog posts for web.dev and developer.chrome.com](/handbook/writing-blog-posts) has an overview of our process and tips for writing great blog posts.
 1. **After your content proposal is approved**, create a copy of the
    [content template][template] to draft your content.
-1. Self-review your content with the [content checklist](/handbook/content-checklist) to find and fix
+1. Review your content with the [content checklist](/handbook/content-checklist) to find and fix
    common problems. The more of these problems you fix yourself, the faster your review will go.
 1. When your first draft is ready, leave a comment in your GitHub issue and ask for a review.
 

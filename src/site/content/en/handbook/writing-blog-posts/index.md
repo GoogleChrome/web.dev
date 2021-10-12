@@ -6,21 +6,21 @@ description: |
   Practical information and writing tips to get you started.
 ---
 
-This guide is written for folk who are not primarily tech writers, 
+This guide is written for people who are not primarily tech writers, 
 but want to write a post for [web.dev](https://web.dev) or [developer.chrome.com](https://developer.chrome.com). 
 It links to some of our key writing information, 
-explains our process, and provides some tips for writing technical blog posts.
+explains our process, and provides tips for writing technical blog posts.
 
 ## Getting started
 
 The [Quick Start Guide](/handbook/quick-start/) 
-is an overview of how to propose your new content. 
-The content form will ask you whether the post should be posted to web.dev or developer.chrome.com.
+is an overview of proposing your new content. 
+The content form asks you whether the post should be posted to web.dev or developer.chrome.com.
 
 ### Does this post live on web.dev or developer.chrome.com? {: #which-site}
 
 The two sites serve different audiences. 
-If your post is about a core web platform feature that is not Chrome specific, 
+If your post is about a web platform feature that is not Chrome specific, 
 and is implemented, or in the process of being implemented in other browsers, 
 then it can be posted to web.dev.
 
@@ -59,7 +59,7 @@ They give you an idea of what the editor will be looking for.
 
 A good length for posts on web.dev is around 1000 to 1500 words. 
 If you find that you are writing much more than that, 
-it might be that the article can be broken down into two or more pieces dealing with various parts of the topic. 
+it might be that the article can be split into two or more pieces dealing with various parts of the topic. 
 Ask your editor for advice on this. 
 Also, see the tips below and consider whether you are over-explaining basic concepts.
 
@@ -73,8 +73,8 @@ and that style guide details are followed.
 Working with a tech writer means that you don't need to worry about every detail of the style guide. 
 It also means, however, that your carefully crafted post might come back covered in suggestions and comments. 
 This can be a bit of a shock the first time it happens. 
-A document covered in suggestions doesn't mean that you did a bad job, 
-the majority of these changes will be copy-edits to follow the style guide and you can approve those and move on.
+A document covered in suggestions doesn't mean that you did a bad job. 
+The majority of these changes will be copy-edits to follow the style guide and you can approve those and move on.
 
 {% Aside %}  
 You will generally be assigned a tech writer familiar with your subject matter, 
@@ -107,16 +107,17 @@ add a link, or assume it is understood.
 ### Write an outline
 
 Putting together an outline for your post is a good first step. 
-It will help you to organize your thoughts on the subject matter. 
+It helps you to organize your thoughts on the subject. 
 An outline also helps you to see how much material you have to cover. 
-Posts on web.dev tend to be relatively short. 
-If you have a lot of material to cover, consider how to break down this content. 
+
+Posts on web.dev tend to be short. 
+If you have a lot of material to cover, consider how to break it down. 
 You could write an overview, then write more detailed pieces on specific parts of the feature later. 
 Or, it might be that there is already a good introduction to the subject available on the web; 
 therefore, your post could go into more detail on a particular part of the feature and link to the third-party overview.
 
 An outline doesn't need to be anything fancy. 
-A list of the main headings with a brief description of what you will cover in that section is all it takes.
+A list of the main headings with a brief description of what you will cover in each section is all it takes.
 
 If you share this outline with the tech writer working with you, 
 they can make suggestions and help you to decide what to cover. 
@@ -140,6 +141,7 @@ When there are prerequisites for knowledge (over and above HTML, CSS, and JavaSc
 When creating a code example, ask the question, 
 "How can I demonstrate this feature in the simplest possible way?" 
 Good code examples have a lot in common with the reduced test case.
+They rarely resemble production code.
 
 For inline code examples, check out the [tips in the handbook](https://web.dev/handbook/write-code-samples/).
 
@@ -153,6 +155,7 @@ Making your demo look pretty isn't the most important thing.
 
 Ensure that any dependencies have at least the same browser support as the thing you are demonstrating. 
 Otherwise the reader may be confused as to why the demo doesn't work.
+If you're writing about a new feature, state which browsers it currently works on in both the article and the demo.
 
 {%Aside%}  
 If you want to include a fully worked demo, 
@@ -160,31 +163,33 @@ include that as a link and use it as a chance to show off the feature.
 {%endAside%} 
 
 While reducing things to the minimum needed is always the goal, 
-take care that this doesn't leave a copy and pasteable example that misses out something important to make the code secure. 
+take care that this doesn't leave a copy and pasteable example that misses something important to making the code secure. 
 In particular, avoid creating live examples on CodePen or Glitch with security or similar issues. 
 You do not know where they might end up.
 
-If you want to avoid writing out validation or other code, 
+If you want to avoid writing validation or other code, 
 adding the example as inline code with a comment indicating the position of the required additional code makes the intention clear.
 
 ### Share knowledge that's not in the docs
 
-Hopefully, there is already documentation on MDN or elsewhere for your feature. 
-The aim of your post should not be to document but to give extra information. 
+Hopefully, there is already a reference on MDN or elsewhere for your feature. 
+The aim of your post should not be to write an exhaustive reference but to give extra information and best practices. 
 That might be in the format of sharing cool use cases, 
 providing tips from one developer to another, 
 or explaining how some features work together. 
 Suppose you find yourself detailing each method of an interface or every value of a CSS property. 
-In that case, you are writing documentation and not an article, 
+In that case, you are writing reference and not an article, 
 and there are better venues for docs.
 
 Instead, write about what these methods or values can do, show examples, 
 then link to the docs where the reader can explore how to take those examples further.
 
+If no reference is available, but you think there should be, contact jmedley@ who can assist you in creating it.
+
 ### Think about different ways to share information with components
 
 On web.dev there are several interesting components. 
-Considering these while you are writing can help you avoid presenting the reader with a wall of text. For example:
+Using these in your article will avoid presenting readers with a wall of text. For example:
 
 -  Add extra information or warn people with the aside component: [aside on web.dev](/handbook/web-dev-components/#asides), [aside on developer.chrom.com](https://developer.chrome.com/docs/handbook/components/#asides). 
 -  Contrast code examples with the compare component: [compare on web.dev](https://web.dev/handbook/web-dev-components/#compare), [compare on developer.chrome.com](https://developer.chrome.com/docs/handbook/components/#compare).
@@ -197,12 +202,12 @@ While directly copying is well understood as plagiarism,
 technical articles often indirectly draw on other people's work. 
 Perhaps you watched a conference talk or video, 
 read some blog posts, 
-and even asked many questions in a forum where someone gave you a lot of help. 
+and even asked questions in a forum where someone gave you help. 
 Mentioning these sources strengthens your article. 
 Referencing shows that you have done your research, 
 gives readers the chance to find out more from other people, 
 and ensures that other folks get credit for their work.
 
-If you directly quote or paraphrase someone, then you can link in the text. 
+If you directly quote or paraphrase someone, then include a link in the text. 
 If there is not a good place to add a link inline, 
 add the piece to a resources or credits section at the end of the article.
