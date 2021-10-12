@@ -67,8 +67,10 @@ mobile. It saves space by collapsing an entire sidebar of checkboxes into a
 `<select>` built-in overlay touch experience. It helps input accuracy by showing
 a large touch overlay experience provided by the system.
 
-{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/hox09QWcjlL9wemzO1EI.png",
-alt="ALT_TEXT_HERE", width="800", height="483" %}
+{% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/hox09QWcjlL9wemzO1EI.png", alt="A
+screenshot preview of the multi-select element in Chrome on Android, iPhone and
+iPad. The iPad and iPhone have the multi-select toggled open, and each get a
+unique experience optimized for the screen size.", width="800", height="483" %}
 
 #### Keyboard and gamepad
 
