@@ -319,4 +319,4 @@ To see the Sanitizer API in action check out the [Sanitizer API Playground](http
 
 ---
 
-Photo by [Towfiqu barbhuiya](https://unsplash.com/@towfiqu999999) on [Unsplash](https://unsplash.com/photos/-9gPKrsbGmc)
+Photo by [Towfiqu barbhuiya](https://unsplash.com/@towfiqu999999) on [Unsplash](https://unsplash.com/photos/-9gPKrsbGmc).
