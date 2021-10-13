@@ -5,8 +5,8 @@ subhead: |
   A new version of the Reporting API is available. It's more private and more likely to be supported across browsers.
 authors:
   - maudn
-date: 2021-09-22
-updated: 2021-09-22
+date: 2021-10-19
+updated: 2021-10-19
 description: |
   A new version of the Reporting API is available. It's more private and more likely to be supported across browsers. This post goes over how to migrate to the new version of the Reporting API.
 hero: image/O2RNUyVSLubjvENAT3e7JSdqSOx1/PYEe5UP3bVYzPMXdQc0X.jpg

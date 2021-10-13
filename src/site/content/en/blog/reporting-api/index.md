@@ -5,8 +5,8 @@ subhead: |
   Use the Reporting API to monitor security violations, deprecated API calls, and more.
 authors:
   - maudn
-date: 2021-09-22
-updated: 2021-09-22
+date: 2021-10-19
+updated: 2021-10-19
 description: |
   Use the Reporting API to monitor security violations, deprecated API calls, and more.
 hero: image/O2RNUyVSLubjvENAT3e7JSdqSOx1/PEgnzZFQVPhP2PyOnMm8.jpg
