@@ -53,6 +53,17 @@
     --flow-space: 1rem;
   }
 
+  /// Details gets more surrounding space, but the inner elements
+  /// should all be equal
+  details,
+  details + * {
+    --flow-space: #{get-space('size-2')};
+  }
+
+  details > * {
+    --flow-space: #{get-space('size-1')};
+  }
+
   /// Keeps figures and embeds at a reasonable size and
   /// makes sure their content fills them
   figure,
