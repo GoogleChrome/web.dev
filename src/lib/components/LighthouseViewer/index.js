@@ -34,12 +34,8 @@ class LighthouseViewer extends BaseStateElement {
     features.initFeatures(lighthouseReport);
   };
 
-
   onStateChanged() {
-    const {
-      lighthouseResult,
-      lighthouseError,
-    } = store.getState();
+    const {lighthouseResult, lighthouseError} = store.getState();
     if (lighthouseResult && lighthouseResult.run) {
       this.generateReport(lighthouseResult.run, this.container);
     }

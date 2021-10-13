@@ -1,4 +1,5 @@
-const PSI_API = 'https://pagespeedonline.googleapis.com/pagespeedonline/v5/runPagespeed';
+const PSI_API =
+  'https://pagespeedonline.googleapis.com/pagespeedonline/v5/runPagespeed';
 const API_KEY = 'AIzaSyCWNar-IbOaQT1WX_zfAjUxG01x7xErbSc';
 
 /**
@@ -19,7 +20,7 @@ export async function runPsi(url) {
   const params = new URLSearchParams();
   params.append('url', url);
   params.append('key', API_KEY);
-  for (let category of categories) {
+  for (const category of categories) {
     params.append('category', category);
   }
   const requestUrl = `${PSI_API}?${params.toString()}`;

@@ -1,6 +1,10 @@
 import {html} from 'lit-element';
 import {BaseStateElement} from '../BaseStateElement';
-import {requestRunLighthouse, requestRunPSI, setLighthouseError} from '../../actions';
+import {
+  requestRunLighthouse,
+  requestRunPSI,
+  setLighthouseError,
+} from '../../actions';
 import '../UrlChooser';
 
 /**
@@ -66,7 +70,7 @@ class UrlChooserContainer extends BaseStateElement {
   }
 
   onError(e) {
-    setLighthouseError(e.detail)
+    setLighthouseError(e.detail);
   }
 }
 
