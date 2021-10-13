@@ -60,7 +60,7 @@ to show an optimized on-screen keyboard for entering numbers.
 {% Aside 'caution' %}  
 Use `type="number"` only for incremental fields, 
 for example, the quantity of a product. 
-Browsers show an up/down arrow for `type="number"`` 
+Browsers show an up/down arrow for `type="number"` 
 which makes no sense for payment card numbers.   
 {% endAside %}
 
@@ -94,9 +94,10 @@ Ensure users only enter numbers for the card number and security code.
 Use `pattern="[0-9 ]+"` to allow users to include spaces when entering a card number, 
 since this is how the numbers are displayed on the physical cards. 
 
-Consider using [real-time validation](/learn/forms/javascript), 
+Consider using [real-time validation](/learn/forms/javascript#ensure-users-are-notified-about-errors-in-real-time), 
 to help users correct invalid data even before filling out the complete payment `<form>`.
 
 ## Resources
 
--  [Payment and address forms best practices](/payment-and-address-form-best-practices). 
+-  [Payment and address forms best practices](/payment-and-address-form-best-practices).
+-  [Web Payments](/payments/).

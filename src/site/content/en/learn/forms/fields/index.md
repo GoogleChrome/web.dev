@@ -63,7 +63,7 @@ All modern browsers provide custom interfaces for selecting dates in the form of
 
 ### Help users select an option
 
-To ensure users can select or unselect one possible option, use `type="checkbox"``. 
+To ensure users can select or unselect one possible option, use `type="checkbox"`. 
 Do you want to offer multiple options? 
 Depending on your use case, there are various alternatives. 
 First, let's look at possible solutions if users should only be able to choose a single option.
@@ -136,7 +136,7 @@ To enable users to upload and submit files, use `<input>` with `type="file"`.
 } %}
 
 {% Aside %}
-An `<input>` of type `file' can also allow multiple uploads at once. 
+An `<input>` of type `file` can also allow multiple uploads at once. 
 You can also specify which file formats are allowed.
 
 Learn more about [`<input type="file">`](https://developer.mozilla.org/docs/Web/HTML/Element/input/file).

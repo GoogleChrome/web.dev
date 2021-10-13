@@ -116,6 +116,7 @@ This is the purpose of the `<textarea>` element.
 <label for="comment">Comment</label>
 <textarea id="comment" name="comment"></textarea>
 ```
+
 ## Pick from a list of options
 
 How do you give users a list of options to select from?

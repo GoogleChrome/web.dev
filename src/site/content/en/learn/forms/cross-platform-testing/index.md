@@ -106,7 +106,7 @@ alt="Two screenshots of an input element with type='tel' on iOS and Android, sho
 Imagine that you filled out a long form,
 and you're ready to submit it. But where is the **Submit** button?
 It may be behind the browser toolbar, located at the bottom of the screen.
-One way to ensure that buttons are visible is to use the `env()` CSS function.
+One way to ensure that buttons are visible is to use the [`env()`](https://developer.mozilla.org/docs/Web/CSS/env()) CSS function.
 Learn how to
 [ensure buttons aren't obscured by device user interfaces](https://developer.mozilla.org/docs/Web/CSS/env()#using_env_to_ensure_buttons_are_not_obscured_by_device_ui).
 

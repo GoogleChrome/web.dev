@@ -12,18 +12,17 @@ In this module, you learn how a form works, and when to use a form.
 
 ## Should you use a `<form>` element?
 
-You don't always need to put form controls in a `<form>`element. 
+You don't always need to put form controls in a `<form>` element. 
 For example, you might provide a `<select>` element for users to choose a product category. 
 You don't need a `<form>` element here, as you're not storing or processing data on your backend.
 
 However, in most cases when you store or process data from users, 
 you should use the `<form>` element. 
-As you will learn in this module, sing a `<form>` gives you a lot of built-in functionality from browsers  
-that you would otherwise have to build yourself. 
+As you will learn in this module, using a `<form>` gives you a lot of built-in functionality from browsers that you would otherwise have to build yourself. 
 A `<form>` also has many accessibility features built-in by default. 
 If you want to avoid a page reload when a user submits a form, 
 you can still use the `<form>` element, but enhance it with 
-[JavaScript](/learn/forms/javascript). 
+[JavaScript](/learn/forms/javascript#ensure-users-can-submit-a-form-without-leaving-a-page). 
 
 {% Aside %}
 It's possible to implement form functionality with JavaScript, 
@@ -50,7 +49,7 @@ The `<form>` is a container for interactive form controls.
 
 ## How does form submission work?
 
-When you submit a `<form>`, the browser checks the`<form>` attributes. 
+When you submit a `<form>`, the browser checks the `<form>` attributes. 
 The data is sent as a `GET` or `POST` request according to the `method` attribute. 
 If no `method` attribute is present, 
 the request is made to the current page using a `GET` request.
