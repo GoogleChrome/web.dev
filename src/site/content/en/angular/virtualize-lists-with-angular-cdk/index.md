@@ -15,7 +15,7 @@ alt: Stacks of vinyl records.
 description: |
   Learn how to make large lists more responsive by implementing virtual scrolling with the Angular Component Dev Kit.
 tags:
-  - angular
+  # - angular
   - performance
 feedback:
   - api

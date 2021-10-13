@@ -26,7 +26,7 @@ Implement the following practices to ensure that your CSP can't be bypassed. If 
 
 To target XSS, a CSP should include the `script-src`, `object-src`, and `base-uri` directives. The CSP should also be free of syntax errors.
 
-`script-src` and `object-src` secures a page from unsafe scripts and unsafe plugins respectively. Alternatively, `default-src` can be used to configure a broad policy in place of [many directives](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/default-src) including `script-src` and `object-src`.
+`script-src` and `object-src` secures a page from unsafe scripts and unsafe plugins respectively. Alternatively, `default-src` can be used to configure a broad policy in place of [many directives](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/default-src) including `script-src` and `object-src`.
 
 `base-uri` prevents the injection of unauthorized `<base>` tags which can be used to redirect all relative URLs (like scripts) to an attacker-controlled domain.
 

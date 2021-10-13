@@ -9,7 +9,7 @@ updated: 2021-02-23
 tags:
   - blog
   - capabilities
-  - contacts
+  # - contacts
 hero: image/admin/K1IN7zWIjFLjZzJ4Us3J.jpg
 alt: Telephone on yellow background.
 feedback:

@@ -61,7 +61,7 @@ Unused preloads trigger a Console warning in Chrome, approximately 3 seconds aft
 {% Img src="image/admin/z4FbCezjXHxaIhq188TU.png", alt="Chrome DevTools Console warning about unused preloaded resources.", width="800", height="228", class="w-screenshot" %}
 
 {% Aside %}
-[`preload` is supported](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#Browser_compatibility) in all modern browsers.
+[`preload` is supported](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility) in all modern browsers.
 {% endAside %}
 
 ## Use cases
@@ -95,14 +95,14 @@ The simplest way to implement `preload` is to add a `<link>` tag to the `<head>`
 </head>
 ```
 
-Supplying the `as` attribute helps the browser set the priority of the prefetched resource according to its type, set the right headers, and determine whether the resource already exists in the cache. Accepted values for this attribute include: `script`, `style`, `font`, `image`, and [others](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes).
+Supplying the `as` attribute helps the browser set the priority of the prefetched resource according to its type, set the right headers, and determine whether the resource already exists in the cache. Accepted values for this attribute include: `script`, `style`, `font`, `image`, and [others](https://developer.mozilla.org/docs/Web/HTML/Element/link#Attributes).
 
 {% Aside %}
 Take a look at the [Chrome Resource Priorities and Scheduling](https://docs.google.com/document/d/1bCDuq9H1ih9iNjgzyAL0gpwNFiEP4TZS-YLRp_RuMlc/edit) document to learn more about how the browser prioritizes different types of resources.
 {% endAside %}
 
 {% Aside 'caution' %}
-Omitting the `as` attribute, or having an invalid value is equivalent to an [XHR request,](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) where the browser doesn't know what it is fetching so it can't determine the correct priority. It can also cause some resources, such as scripts, to be fetched twice.
+Omitting the `as` attribute, or having an invalid value is equivalent to an [XHR request,](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) where the browser doesn't know what it is fetching so it can't determine the correct priority. It can also cause some resources, such as scripts, to be fetched twice.
 {% endAside %}
 
 Some types of resources, such as fonts, are loaded in [anonymous mode](https://www.w3.org/TR/css-fonts-3/#font-fetching-requirements). For those you must set the `crossorigin` attribute with `preload`:
@@ -115,13 +115,13 @@ Some types of resources, such as fonts, are loaded in [anonymous mode](https://w
 Fonts preloaded without the `crossorigin` attribute will be fetched twice!
 {% endAside %}
 
-`<link>` elements also accept a [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-type), which contains the [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) of the linked resource. The browsers use the value of the `type` attribute to make sure that resources get preloaded only if their file type is supported. If a browser doesn't support the specified resource type, it will ignore the `<link rel="preload">`.
+`<link>` elements also accept a [`type` attribute](https://developer.mozilla.org/docs/Web/HTML/Element/link#attr-type), which contains the [MIME type](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types) of the linked resource. The browsers use the value of the `type` attribute to make sure that resources get preloaded only if their file type is supported. If a browser doesn't support the specified resource type, it will ignore the `<link rel="preload">`.
 
 {% Aside 'codelab' %}
 [Improve the performance of a page by preloading web fonts](/codelab-preload-web-fonts).
 {% endAside %}
 
-You can also preload any type of resource via the [`Link` HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link):
+You can also preload any type of resource via the [`Link` HTTP header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Link):
 
 `Link: </css/style.css>; rel="preload"; as="style"`
 

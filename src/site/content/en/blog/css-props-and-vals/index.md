@@ -17,7 +17,7 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - houdini
   - css
-  - Chrome78
+  # - Chrome78
 feedback:
   - api
 ---
@@ -107,7 +107,7 @@ Initial value of the custom property.
 Taking a closer look at `syntax`. There are a number of [valid
 options](https://drafts.css-houdini.org/css-properties-values-api/#supported-names)
 ranging from numbers to colors to
-[`<custom-ident>`](https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident)
+[`<custom-ident>`](https://developer.mozilla.org/docs/Web/CSS/custom-ident)
 types. These syntaxes can also be modified by using the following values
 
 * Appending `+` signifies that it accepts a space-separated list of values of

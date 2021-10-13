@@ -78,7 +78,7 @@ Scroll snapping is the act of adjusting the scroll offset of a scroll container
 to be at a preferred **snap position** once the scroll operation finishes.
 
 A scroll container may be opted into scroll snapping by using the
-[`scroll-snap-type`](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type)
+[`scroll-snap-type`](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type)
 property. This tells the browser that it should consider snapping this scroll
 container to the snap positions produced by its descendants.  `scroll-snap-type`
 determines the axis on which scrolling occurs: `x`, `y`, or `both`, and the
@@ -211,7 +211,7 @@ The product page has a fixed position top header. The design also asked for some
 of the top section to remain visible when the scroll container is snapped in order
 to provide a design cue to users about the content above.
 
-The [`scroll-padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding)
+The [`scroll-padding`](https://developer.mozilla.org/docs/Web/CSS/scroll-padding)
 property is a new css property that can be used to adjust the effective
 viewable region of the scroll container, or snapport, which
 is used when calculating scroll snap alignments. The property defines an inset
@@ -221,7 +221,7 @@ was added to the top, which instructs the browser to consider a lower position,
 scroll snapping. When snapping, the start edge of the snap target element will
 become flushed with this new position, thus leaving space above.
 
-The [`scroll-margin`](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding)
+The [`scroll-margin`](https://developer.mozilla.org/docs/Web/CSS/scroll-padding)
 property defines the outset amount used to adjust the snap target
 effective box similar to how `scroll-padding` functions on the snap scroll
 container.

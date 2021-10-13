@@ -30,7 +30,7 @@ Using the appropriate form control helps you build better forms.
 {% Aside %}
 The default styles of form controls differ between browsers,
 operating systems, and platforms.
-You will learn in a later module how to [style forms](/learn/forms/css/styling) cross-platform.
+You will learn in a later module how to [style forms](/learn/forms/styling) cross-platform.
 {% endAside %}
 
 ## Labels for form elements
@@ -85,7 +85,7 @@ If you did it right and submit the form, `hill` is visible in the URL.
 There are different
 [types of form controls](https://developer.mozilla.org/docs/Web/HTML/Element/input#input_types).
 Based on the `type` attribute, the browser renders different user interfaces,
-shows different virtual keyboards, uses different validation rules, and more.
+shows different on-screen keyboards, uses different validation rules, and more.
 Let's see how to change the type.
 
 {% Codepen {
@@ -116,6 +116,7 @@ This is the purpose of the `<textarea>` element.
 <label for="comment">Comment</label>
 <textarea id="comment" name="comment"></textarea>
 ```
+
 ## Pick from a list of options
 
 How do you give users a list of options to select from?
@@ -150,8 +151,8 @@ If you submit the form using this `<select>` without changing the selection,
 the request will include `color=orange`. But how does the browser know which option should be used?
 
 The browser uses the first option in the list, unless:
-One option has the `selected` attribute.
-The user chooses another option.
+- One option has the `selected` attribute.
+- The user chooses another option.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -167,7 +168,8 @@ This becomes the default, regardless of the order in which option elements are d
 {% Codepen {
   user: 'web-dot-dev',
   id: '5324a9e3d1c3c695932ee95378b63436',
-  height: 300
+  height: 300,
+  tab: 'html,result'
 } %}
 
 ## Grouping form controls
@@ -204,13 +206,13 @@ The first option is to use a `<button>` element.
 <button>Submit</button>
 ```
 
-After a user clicks the submit button,
+After a user clicks the **Submit** button,
 the browser makes a request to the URL specified in the form element's
 [action attribute](/learn/forms/form-element#where-is-the-data-processed)
 with all data from the form controls.
 
 {% Aside 'warning' %}
-Every `<button>` element inside a form works as a submit button by default.
+Every `<button>` element inside a form works as a **Submit** button by default.
 Sometimes you don't want this, for example,
 when using a `<button>` to toggle visibility for a password field.
 To disable the default behavior, you can add `type="button"` to the `<button>`.
@@ -222,10 +224,10 @@ The input renders like a button.
 Instead of using a label element to describe the input, use the `value` attribute to label the button.
 
 ```html
-<input type="submit" value="Submit form">
+<input type="submit" value="Submit">
 ```
 
-In addition, a form can also be submitted by using the `ENTER` key when a form field has focus.
+In addition, a form can also be submitted by using the `ENTER` key when a form field has focus. 
 
 {% Assessment 'form-fields' %}
 

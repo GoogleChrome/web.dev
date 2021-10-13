@@ -20,7 +20,7 @@ tags:
   - blog
   - progressive-web-apps
   - service-worker
-  - chrome80
+  # - chrome80
 feedback:
   - api
 ---
@@ -205,14 +205,14 @@ the event you should take network conditions and available storage into
 consideration and download different amounts of data in response. You can use
 the following resources to help:
 
-* [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API)
+* [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API)
 * [Detecting data saver mode](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/#detecting_the_save-data_setting)
 * [Estimating available storage](https://developers.google.com/web/updates/2017/08/estimating-available-storage-space)
 
 ### Permissions
 
 After the service worker is installed, use the [Permissions
-API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API) to query
+API](https://developer.mozilla.org/docs/Web/API/Permissions_API) to query
 for `periodic-background-sync`. You can do this from either a window or a
 service worker context.
 

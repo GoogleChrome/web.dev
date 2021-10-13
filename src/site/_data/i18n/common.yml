@@ -1,55 +1,143 @@
 note:
   en: Note
+  es: Nota
+  ja: メモ
+  ko: 메모
+  pt: Observação
+  ru: Примечание
+  zh: 注意
 
 caution:
   en: Caution
+  es: Precaución
+  ja: 注意
+  ko: 주의
+  pt: Cuidado
+  ru: Внимание
+  zh: 小心
 
 warning:
   en: Warning
+  es: Advertencia
+  ja: 警告
+  ko: 경고
+  pt: Aviso
+  ru: Предупреждение
+  zh: 警告
 
 success:
   en: Success
+  es: Éxito
+  ja: 成功
+  ko: 성공
+  pt: Sucesso
+  ru: Успех
+  zh: 成功
 
 objective:
   en: Objective
+  es: Objetivo
+  ja: 目的
+  ko: 목적
+  pt: Objetivo
+  ru: Цель
+  zh: 目标
 
 try_it:
   en: Try it
+  es: Pruebelo
+  ja: お試しください
+  ko: 시도하기
+  pt: Experimente
+  ru: Попробуйте
+  zh: 请尝试
 
 key_term:
   en: Key Term
+  es: Término clave
+  ja: 重要な用語
+  ko: 핵심 용어
+  pt: Termo chave
+  ru: Ключевой термин
+  zh: 重要词汇
 
 gotchas:
   en: Gotchas
   es: Gotchas
+  ja: 問題の原因
+  ko: 갓차
+  pt: Pegadinhas
+  ru: Обратите внимание
+  zh: 问题
 
 do:
   en: Do
   es: Hacer
+  ja: すべきこと
+  ko: 허용
+  pt: Faça
+  ru: Правильно
+  zh: 正确做法
 
 dont:
   en: Don't
   es: No hagas
+  ja: してはいけないこと
+  ko: 금지
+  pt: Não faça
+  ru: Неправильно
+  zh: 错误做法
 
 close:
   en: Close
   es: Cerrar
+  ja: 閉じる
+  ko: 닫기
+  pt: Fechar
+  ru: Закрыть
+  zh: 关闭
 
 next:
   en: Next
   es: Contiguo
+  ja: 次へ
+  ko: 다음
+  pt: Avançar
+  ru: Далее
+  zh: 下一课
 
 prev:
   en: Prev # Short for "previous"
   es: Previo
+  ja: 前へ
+  ko: 이전
+  pt: Voltar
+  ru: Назад
+  zh: 上一课
 
 new:
   en: new
+  es: nuevo
+  ja: 新着
+  ko: 신규
+  pt: novo
+  ru: новое
+  zh: 新
 
 updated:
   en: Updated
   es: Actualizado
+  ja: 更新済み
+  ko: 업데이트됨
+  pt: Atualizado
+  ru: Обновлено
+  zh: 更新日期
 
 share:
   en: Share
   es: Compartir
+  ja: 共有する
+  ko: 공유
+  pt: Compartilhar
+  ru: Поделиться
+  zh: 分享

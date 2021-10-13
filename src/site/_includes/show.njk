@@ -9,7 +9,7 @@ layout: default
       <time>{{ data.date | prettyDate }}</time>
     </div>
     <div class="w-layout-container--narrow w-post-signpost">
-      <span class="w-post-signpost__title">Appears in:</span>
+      <span class="w-post-signpost__title">{{ 'i18n.post.appears_in' | i18n(locale) }}:</span>
         <a class="w-post-signpost__link" href="{{ data.parent.url }}">{{ data.parent.title | i18n(locale) }}</a >
     </div>
   </header>

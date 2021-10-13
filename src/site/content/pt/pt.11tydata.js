@@ -18,6 +18,7 @@ module.exports = function () {
     allPaths['fast'],
     allPaths['reliable'],
     allPaths['secure'],
+    allPaths['identity'],
   ].filter(livePaths);
 
   return {

@@ -51,7 +51,7 @@ FCP se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 
 ### Medir FCP en JavaScript
 
-Para medir FCP en JavaScript, puede utilizar la [API de Paint Timing](https://w3c.github.io/paint-timing/). En el siguiente ejemplo se muestra cómo crear un [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) que capta una entrada de `paint` con el nombre `first-contentful-paint` y la registra en la consola.
+Para medir FCP en JavaScript, puede utilizar la [API de Paint Timing](https://w3c.github.io/paint-timing/). En el siguiente ejemplo se muestra cómo crear un [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que capta una entrada de `paint` con el nombre `first-contentful-paint` y la registra en la consola.
 
 ```js
 new PerformanceObserver((entryList) => {

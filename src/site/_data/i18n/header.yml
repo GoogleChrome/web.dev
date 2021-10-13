@@ -1,23 +1,53 @@
 learn:
   en: Learn
   es: Aprender
+  ja: 学習する
+  ko: 배우기
+  pt: Aprender
+  ru: Обучение
+  zh: 学习
 
 measure:
   en: Measure
   es: Medir
+  ja: 測定する
+  ko: 측정
+  pt: Medir
+  ru: Измерение
+  zh: 衡量
 
 blog:
   en: Blog
   es: Blog
+  ja: ブログ
+  ko: 블로그
+  pt: Blog
+  ru: Блог
+  zh: 博客
 
 about:
   en: About
   es: About
+  ja: 概要
+  ko: 정보
+  pt: Sobre
+  ru: О сайте
+  zh: 关于
 
 live:
   en: Live
   es: Live
+  ja: ライブ
+  ko: 라이브
+  pt: Produção
+  ru: Live
+  zh: 直播
 
 open_menu:
   en: Open menu
   es: Abrir menú
+  ja: メニューを開く
+  ko: 메뉴 열기
+  pt: Abrir menu
+  ru: Открыть меню
+  zh: 打开菜单

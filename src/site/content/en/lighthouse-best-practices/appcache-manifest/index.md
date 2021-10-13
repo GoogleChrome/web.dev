@@ -38,7 +38,7 @@ For example, this markup causes the audit to fail:
 To pass this audit,
 remove the manifest from your page,
 and use the
-[Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache)
+[Cache API](https://developer.mozilla.org/docs/Web/API/Cache)
 via a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers/)
 instead.
 
@@ -55,5 +55,5 @@ offline.
 ## Resources
 
 - [Source code for **Uses Application Cache** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/appcache-manifest.js)
-- MDN's [Cache](https://developer.mozilla.org/en-US/docs/Web/API/Cache) page
+- MDN's [Cache](https://developer.mozilla.org/docs/Web/API/Cache) page
 - [Current page does not respond with a 200 when offline](/works-offline)

@@ -1,18 +1,54 @@
 title:
   en: Devices
+  es: Dispositivos
+  ja: デバイス
+  ko: 장치
+  pt: Dispositivos
+  ru: Устройства
+  zh: 设备
 
 description:
   en: Connecting hardware devices to the web
+  es: Conexión de dispositivos de hardware a la web
+  ja: ハードウェア デバイスを Web に接続する
+  ko: 웹에 하드웨어 장치 연결
+  pt: Conexão de dispositivos de hardware à web
+  ru: Взаимодействие с устройствами на веб-страницах
+  zh: 将硬件设备连接到网络
 
 overview:
   en: Learn to communicate with hardware devices over Bluetooth, USB, NFC, Serial, and HID from a website.
+  es: Aprenda a comunicarse con dispositivos de hardware mediante Bluetooth, USB, NFC, Serial y HID desde un sitio web.
+  ja: Bluetooth、USB、NFC、シリアル接続、HID を介して Web サイトからハードウェアデバイスへと通信を行う方法について説明します。
+  ko: 웹사이트에서 Bluetooth, USB, NFC, 직렬 및 HID를 통해 하드웨어 장치와 통신하는 방법을 알아봅니다.
+  pt: Aprenda a se comunicar com dispositivos de hardware através de Bluetooth, USB, NFC, Serial e HID a partir de um site.
+  ru: Узнайте, как реализовать на сайте взаимодействие с устройствами посредством Bluetooth, USB, NFC, последовательного порта или HID.
+  zh: 学会从网站上通过蓝牙、USB、NFC、串行和 HID 与硬件设备进行通信。
 
 topics:
   introduction:
     en: Introduction
+    es: Introducción
+    ja: はじめに
+    ko: 소개
+    pt: Introdução
+    ru: Введение
+    zh: 介绍
 
   api_guides:
     en: API guides
+    es: Guías de la API
+    ja: API ガイド
+    ko: API 가이드
+    pt: Guias de API
+    ru: Руководства по API
+    zh: API 指南
 
   advanced_topics:
     en: Advanced topics
+    es: Temas avanzados
+    ja: 高度なトピック
+    ko: 고급 주제
+    pt: Tópicos avançados
+    ru: Продвинутые темы
+    zh: 高级主题

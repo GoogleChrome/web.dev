@@ -14,7 +14,7 @@ alt: Two pairs of hands holding a cup of tomatoes.
 tags:
   - blog
   - capabilities
-  - workbox
+  # - workbox
   - test-post
 feedback:
   - api
@@ -116,7 +116,7 @@ can send them somewhere with a fetch request. You can even use the other
 manifest options, maybe serving a page with some query parameters for the other
 shared items or storing the data and pointers to the media in the [Cache Storage
 API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api)
-or [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).
+or [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API).
 
 You can try it out on the sample app [Fugu
 Journal](https://fugu-journal.web.app/) and see its service worker

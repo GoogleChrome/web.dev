@@ -44,7 +44,7 @@ tags:
 
 ### Зачем это нужно?
 
-Сегодня для измерения конверсии рекламы часто используются [сторонние файлы cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies). **Однако браузеры ограничивают доступ к ним.**
+Сегодня для измерения конверсии рекламы часто используются [сторонние файлы cookie](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Third-party_cookies). **Однако браузеры ограничивают доступ к ним.**
 
 Chrome планирует [отказаться от поддержки сторонних файлов cookie](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html) и [предлагает пользователям заблокировать их](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en). Safari [блокирует сторонние файлы cookie](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/), Firefox [блокирует известные сторонние файлы cookie отслеживания](https://blog.mozilla.org/blog/2019/09/03/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default), а Edge [предлагает предотвращение отслеживания](https://support.microsoft.com/en-us/help/4533959/microsoft-edge-learn-about-tracking-prevention?ocid=EdgePrivacySettings-TrackingPrevention).
 

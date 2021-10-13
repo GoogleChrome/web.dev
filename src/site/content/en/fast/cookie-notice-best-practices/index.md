@@ -65,7 +65,7 @@ cookie notices.
 #### Load cookie notices scripts asynchronously
 
 Cookie notice scripts should be loaded asynchronously. To do this, add the
-[`async`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async)
+[`async`](https://developer.mozilla.org/docs/Web/HTML/Element/script#attr-async)
 attribute to the script tag.
 
 ```html
@@ -118,7 +118,7 @@ therefore separate resource hints.
 #### Preload cookie notices as appropriate
 
 Some sites would benefit from using the
-[`preload`](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
+[`preload`](https://developer.mozilla.org/docs/Web/HTML/Preloading_content)
 resource hint to load their cookie notice script. The `preload` resource hint
 informs the browser to initiate an early request for the specified resource.
 
@@ -172,7 +172,7 @@ loading of cookie notice scripts:
 *   Caching and serving third-party cookie notice scripts from your own servers
     can improve the delivery speed of these resources.
 *   Using [service
-    workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+    workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API/Using_Service_Workers)
     can allow you more control over the [fetching and caching of
     third-party
     scripts](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)

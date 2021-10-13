@@ -99,9 +99,11 @@ Indent using two spaces.
 
 Always use straight quotes. (Readers often copy code directly from the site, and smart quotes can break code.)
 
+<!--lint disable no-smart-quotes-->
 {% Compare 'worse' %}
 `const imagemin = require(‘imagemin’);`
 {% endCompare %}
+<!--lint enable no-smart-quotes-->
 
 {% Compare 'better' %}
 `const imagemin = require('imagemin');`

@@ -66,7 +66,7 @@ When running this script be aware that:
 
 
 *   The `buffered: true` option indicates that the
-    [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+    [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
     should check the browser's [performance entry
     buffer](https://www.w3.org/TR/performance-timeline-2/#dfn-performance-entry-buffer)
     for performance entries that were created before the observer's
@@ -121,7 +121,7 @@ debugging layout shifts:
 |`value`| The `value` property reports the [layout shift score](/cls/#layout-shift-score) for a particular layout shift.|
 |`hadRecentInput`| The `hadRecentInput` property indicates whether a layout shift occurred within 500 milliseconds of user input.|
 |`startTime`| The `startTime` property indicates when a layout shift occurred. `startTime` is indicated in milliseconds and is measured relative to the [time that the page load was initiated](https://www.w3.org/TR/hr-time-2/#sec-time-origin).|
-|`duration`| The `duration` property will always be set to `0`. This property is inherited from the [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry) interface (the `LayoutShift` interface extends the `PerformanceEntry` interface). However, the concept of duration does not apply to layout shift events, so it is set to `0`. For information on the `PerformanceEntry` interface, refer to the [spec](https://w3c.github.io/performance-timeline/#the-performanceentry-interface).|
+|`duration`| The `duration` property will always be set to `0`. This property is inherited from the [`PerformanceEntry`](https://developer.mozilla.org/docs/Web/API/PerformanceEntry) interface (the `LayoutShift` interface extends the `PerformanceEntry` interface). However, the concept of duration does not apply to layout shift events, so it is set to `0`. For information on the `PerformanceEntry` interface, refer to the [spec](https://w3c.github.io/performance-timeline/#the-performanceentry-interface).|
 
 {% Aside %}
 The [Web Vitals
@@ -416,7 +416,7 @@ Some animation effects can [trigger
 layout](https://gist.github.com/paulirish/5d52fb081b3570c81e3a). A common
 example of this is when DOM elements are 'animated' by incrementing properties
 like `top` or `left` rather than using CSS's
-[`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+[`transform`](https://developer.mozilla.org/docs/Web/CSS/transform)
 property. Read [How to create high-performance CSS animations](/animations-guide/)
 for more information.
 

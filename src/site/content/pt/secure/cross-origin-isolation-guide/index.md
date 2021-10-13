@@ -64,7 +64,7 @@ Veja um exemplo de implementação aqui: [https://first-party-test.glitch.me](ht
 
 ## Analise o impacto do isolamento de origem cruzada {: #analysis}
 
-Não seria ótimo se você pudesse avaliar o impacto que a ativação do isolamento de origem cruzada teria em seu site sem realmente quebrar nada? Os cabeçalhos HTTP [`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) e [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) permitem que você faça exatamente isso.
+Não seria ótimo se você pudesse avaliar o impacto que a ativação do isolamento de origem cruzada teria em seu site sem realmente quebrar nada? Os cabeçalhos HTTP [`Cross-Origin-Opener-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) e [`Cross-Origin-Embedder-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) permitem que você faça exatamente isso.
 
 1. Defina [`Cross-Origin-Opener-Policy-Report-Only: same-origin`](/coop-coep/#1.-set-the-cross-origin-opener-policy:-same-origin-header-on-the-top-level-document) em seu documento de nível superior. Como o nome indica, este cabeçalho apenas envia relatórios sobre o impacto que `COOP: same-origin` **teria** em seu site - ele não desabilitará a comunicação com janelas pop-up.
 2. Configure relatórios e configure um servidor web para receber e salvar os relatórios.

@@ -17,7 +17,7 @@ alt: A 3D image of a shark.
 tags:
   - blog
   - 3d
-  - model-viewer
+  # - model-viewer
   - augmented-reality
   - virtual-reality
   - webxr

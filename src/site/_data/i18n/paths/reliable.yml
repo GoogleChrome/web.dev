@@ -1,24 +1,72 @@
 title:
   en: Network reliability
+  es: Confiabilidad de la red
+  ja: ネットワークの安定性
+  ko: 네트워크 안정성
+  pt: Confiabilidade da rede
+  ru: Надежность соединения
+  zh: 网络可靠性
 
 description:
   en: See consistent, reliable performance regardless of network quality.
+  es: Vea un rendimiento constante y confiable independientemente de la calidad de la red.
+  ja: ネットワークの品質に関わらず、一貫して安定したパフォーマンスを実現しましょう。
+  ko: 네트워크 품질에 관계없이 일관되고 안정적인 성능을 확인하세요.
+  pt: Perceba um desempenho consistente e confiável, independente da qualidade da rede.
+  ru: Стабильная и надежная производительность вне зависимости от качества соединения.
+  zh: 在任何网络质量下都能呈现稳定可靠的性能。
 
 overview:
   en: The modern web gives you access to a diverse global audience with a range of devices and network connections. In this section you'll learn how to provide a consistently reliable experience to all your users, wherever and however they access the internet.
+  es: La web moderna le da acceso a una audiencia global diversa con una variedad de dispositivos y conexiones de red. En esta sección aprenderá a proporcionar una experiencia confiable y constante a todos sus usuarios, independientemente de dónde y cómo accedan a Internet.
+  ja: 最新の Web 環境においては、多種多様なデバイスおよびネットワーク接続を利用している世界中のユーザーへとリーチすることが可能になっています。このセクションでは、インターネットにアクセスする場所や方法に関わらず、すべてのユーザーに一貫して安定した質の高いユーザーエクスペリエンスを提供する方法について説明します。
+  ko: 최신 웹을 사용하면 다양한 장치와 네트워크 연결을 통해 전 세계의 다양한 대상에게 접근할 수 있습니다. 이 섹션에서는 인터넷에 액세스하는 위치와 방식에 관계없이 모든 사용자에게 지속적으로 안정적인 환경을 제공하는 방법을 알아봅니다.
+  pt: A web moderna oferece acesso a um público global diversificado com uma variedade de dispositivos e conexões de rede. Nesta seção, você aprenderá como fornecer uma experiência consistentemente confiável a todos os seus usuários, independente de onde e como eles acessam a internet.
+  ru: Современный Интернет позволяет охватить глобальную аудиторию, состоящую из самых разных людей с различными устройствами и типами соединения. В этом разделе вы узнаете, как обеспечить стабильную работу сайта для всех пользователей, независимо от их местонахождения и типа соединения.
+  zh: 现代网络使您能够接触到全球范围内使用各种设备和网络连接的广泛受众。在本部分中，您将了解如何为您所有的用户提供稳定可靠的体验（无论他们在何处以何种方式访问互联网）。
 
 topics:
   how_to_measure_network_reliability:
     en: How to measure network reliability
+    es: Cómo medir la confiabilidad de la red
+    ja: ネットワークの安定性の測定方法
+    ko: 네트워크 안정성을 측정하는 방법
+    pt: Como medir a confiabilidade da rede
+    ru: Как измерить надежность соединения
+    zh: 如何衡量网络可靠性
 
   the_options_in_your_caching_toolbox:
     en: The options in your caching toolbox
+    es: Las opciones en su caja de herramientas de caché
+    ja: キャッシングツールボックスのオプション
+    ko: 캐싱 도구 상자의 옵션
+    pt: As opções na sua caixa de ferramentas de cache
+    ru: Возможности кеширования
+    zh: 您的缓存工具箱中的选项
 
   how_caching_strategies_work:
     en: How caching strategies work
+    es: Cómo funcionan las estrategias del caché
+    ja: キャッシング戦略の仕組み
+    ko: 캐싱 전략의 작동 방식
+    pt: Como as estratégias de cache funcionam
+    ru: Принципы работы стратегий кеширования
+    zh: 缓存策略的运作方式
 
   advanced_patterns:
     en: Advanced patterns
+    es: Patrones avanzados
+    ja: 高度なパターン
+    ko: 고급 패턴
+    pt: Padrões avançados
+    ru: Продвинутые решения
+    zh: 高级模式
 
   communicate_with_workers:
     en: Communicate with workers
+    es: Comunicación con los trabajadores
+    ja: Worker との通信
+    ko: 작업자와의 의사 소통
+    pt: Comunique-se com workers
+    ru: Взаимодействие с воркерами
+    zh: 与工作进程通信

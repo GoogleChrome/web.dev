@@ -29,9 +29,9 @@ feedback on. Try it out using the [experimental flag](#detection-support) or [po
 
 [Shadow DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom)
 is one of the three Web Components standards, rounded out by
-[HTML templates](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots)
+[HTML templates](https://developer.mozilla.org/docs/Web/Web_Components/Using_templates_and_slots)
 and
-[Custom Elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements).
+[Custom Elements](https://developer.mozilla.org/docs/Web/Web_Components/Using_custom_elements).
 Shadow DOM provides a way to scope CSS styles to a specific DOM subtree and isolate that subtree
 from the rest of the document. The `<slot>` element gives us a way to control where the children
 of a Custom Element should be inserted within its Shadow Tree. These features combined enable a
@@ -123,7 +123,7 @@ Passing the `includeShadowRoots:true` option serializes the entire subtree of an
 `<template shadowroot>` syntax.
 
 In order to preserve encapsulation semantics, any
-[closed shadow roots](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/mode) within an
+[closed shadow roots](https://developer.mozilla.org/docs/Web/API/ShadowRoot/mode) within an
 element will not be serialized by default. To include closed shadow roots in the serialized HTML,
 an array of references to those shadow roots can be passed via a new `closedRoots` option:
 

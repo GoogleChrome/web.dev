@@ -102,7 +102,7 @@ you kick off the subscription process, the browser makes a network request
 to a web service known as a push service, which you'll also learn more about later.
 
 Assuming that the subscription was successful, the browser returns a
-[`PushSubscription`](https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription)
+[`PushSubscription`](https://developer.mozilla.org/docs/Web/API/PushSubscription)
 object. You'll need to store this data long-term.
 Usually this is done by sending the information to a server that you control,
 and then having the server store it in a database.
@@ -242,9 +242,9 @@ as a notification.
   to learn how to build a server that manages subscriptions and sends web push protocol
   requests.
 
-[1]: https://developer.mozilla.org/en-US/docs/Web/API/Push_API
-[3]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+[1]: https://developer.mozilla.org/docs/Web/API/Push_API
+[3]: https://developer.mozilla.org/docs/Web/API/Service_Worker_API
 [4]: /web/fundamentals/push-notifications
 [5]: /web/fundamentals/push-notifications/subscribing-a-user
-[requestPermission]: https://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission
-[showNotification]: https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification
+[requestPermission]: https://developer.mozilla.org/docs/Web/API/Notification/requestPermission
+[showNotification]: https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification

@@ -1,0 +1,25 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/pagination
+.pagination {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, max-content) 1fr;
+  align-items: center;
+  gap: 0 $global-gutter;
+}
+
+.pagination__status {
+  display: none;
+  padding: 0.3em 0.8em;
+
+  @include apply-utility('bg', 'mid-bg');
+}
+
+.pagination__container:last-child {
+  text-align: right;
+}
+
+@include media-query('md') {
+  .pagination__status {
+    display: inline-block;
+  }
+}

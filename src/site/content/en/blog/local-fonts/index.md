@@ -30,7 +30,7 @@ development. This post will be updated as the implementation progresses. {% endA
 ## Web safe fonts
 
 If you have been doing web development long enough, you may remember the so-called
-[web safe fonts](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#Web_safe_fonts).
+[web safe fonts](https://developer.mozilla.org/docs/Learn/CSS/Styling_text/Fundamentals#Web_safe_fonts).
 These fonts are known to be available on nearly all instances of the most used operating systems
 (namely Windows, macOS, the most common Linux distributions, Android, and iOS). In the early 2000s,
 Microsoft even spearheaded an
@@ -40,7 +40,7 @@ objective that _"whenever you visit a Web site that specifies them, you'll see p
 site designer intended"_. Yes, this included sites set in
 [Comic Sans MS](https://docs.microsoft.com/en-us/typography/font-list/comic-sans-ms). Here is a
 classic web safe font stack (with the ultimate fallback of whatever
-[`sans-serif`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#<generic-name>:~:text=sans%2Dserif,-Glyphs)
+[`sans-serif`](https://developer.mozilla.org/docs/Web/CSS/font-family#<generic-name>:~:text=sans%2Dserif,-Glyphs)
 font) might look like this:
 
 ```css
@@ -52,10 +52,10 @@ body {
 ## Web fonts
 
 The days where web safe fonts really mattered are long gone. Today, we have
-[web fonts](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts), some of
+[web fonts](https://developer.mozilla.org/docs/Learn/CSS/Styling_text/Web_fonts), some of
 which are even [variable fonts](/variable-fonts/) that we can tweak further by changing the values
 for the various exposed axes. You can use web fonts by declaring an
-[`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) block at the start of
+[`@font-face`](https://developer.mozilla.org/docs/Web/CSS/@font-face) block at the start of
 the CSS, which specifies the font file(s) to download:
 
 ```css
@@ -66,7 +66,7 @@ the CSS, which specifies the font file(s) to download:
 ```
 
 After this, you can then use the custom web font by specifying the
-[`font-family`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family), as normal:
+[`font-family`](https://developer.mozilla.org/docs/Web/CSS/font-family), as normal:
 
 ```css
 body {
@@ -77,11 +77,11 @@ body {
 ## Local fonts as fingerprint vector
 
 Most web fonts come from, well, the web. An interesting fact, though, is that the
-[`src`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src) property in the
+[`src`](https://developer.mozilla.org/docs/Web/CSS/@font-face/src) property in the
 `@font-face` declaration, apart from the
-[`url()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src#Values:~:text=%3Curl%3E%20%5B%20format(%20%3Cstring%3E%23%20)%20%5D%3F,-Specifies>)
+[`url()`](<https://developer.mozilla.org/docs/Web/CSS/@font-face/src#Values:~:text=%3Curl%3E%20%5B%20format(%20%3Cstring%3E%23%20)%20%5D%3F,-Specifies>)
 function, also accepts a
-[`local()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src#format():~:text=downloaded.-,%3Cfont%2Dface%2Dname%3E>)
+[`local()`](<https://developer.mozilla.org/docs/Web/CSS/@font-face/src#format():~:text=downloaded.-,%3Cfont%2Dface%2Dname%3E>)
 function. This allows custom fonts to be loaded (surprise!) locally. If the user happens to have
 _FlamboyantSansSerif_ installed on their operating system, the local copy will be used rather than
 it being downloaded:

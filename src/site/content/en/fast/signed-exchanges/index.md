@@ -61,7 +61,7 @@ faster page loads to users.
 
 An SXG is encapsulated in a [binary-encoded](https://cbor.io/) file that has two
 primary components: an HTTP exchange and a
-[signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Security).
+[signature](https://developer.mozilla.org/docs/Glossary/Signature/Security).
 The HTTP exchange consists of a request URL, content negotiation information,
 and an HTTP response.
 
@@ -142,7 +142,7 @@ SXGs are the first part of the Web Packaging spec that Chromium-based browsers w
 Initially, the primary use case of SXGs will likely be as a delivery mechanism
 for a page's main document. For this use case, a SXG could be referenced using
 the `<link>` or `<a>` tags, as well as the [`Link`
-header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link). Like
+header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Link). Like
 other resources, a SXG can be loaded by entering its URL in the browser's
 address bar.
 
@@ -164,7 +164,7 @@ substitution](https://github.com/WICG/webpackage/blob/main/explainers/signed-exc
 ### Content negotiation
 
 [Content
-negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation)
+negotiation](https://developer.mozilla.org/docs/Web/HTTP/Content_negotiation)
 is a mechanism for serving different representations of the same resource at the
 same URL depending on the capabilities and preferences of a client—for example,
 serving the gzip version of a resource to some clients but the Brotli version to
@@ -172,9 +172,9 @@ others. Content negotiation makes it possible to serve both SXG and non-SXG
 representations of the same content depending on a browser's capabilities.
 
 Web browsers use the
-[`Accept`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept)
+[`Accept`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept)
 request header to communicate the [MIME
-types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
+types](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
 they support. If a browser supports SXGs, the MIME type
 `application/signed-exchange` will automatically be included in this list of
 values.
@@ -194,7 +194,7 @@ application/signed-exchange;v=b3;q=0.9
 The `application/signed-exchange;v=b3;q=0.9` portion of this string informs the
 web server that Chrome supports SXGs—specifically, version `b3`. The last part
 `q=0.9` indicates the
-[q-value](https://developer.mozilla.org/en-US/docs/Glossary/Quality_values).
+[q-value](https://developer.mozilla.org/docs/Glossary/Quality_values).
 
 The `q-value` expresses a browser's relative preference for a particular format
 using a decimal scale from `0` to `1`, with `1` representing the highest
@@ -224,7 +224,7 @@ Accept: /(^|,)\s\*application\/signed-exchange\s\*;\s\*v=[[:alnum:]\_-]+\s\*(,|$
 Note that the subexpression `(,|$)` matches headers where the `q-value` for SXG
 has been omitted; this omission implies a `q-value` of `1` for SXG. Although an
 `Accept` header could theoretically contain the substring `q=1`, [in
-practice](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation/List_of_default_Accept_values)
+practice](https://developer.mozilla.org/docs/Web/HTTP/Content_negotiation/List_of_default_Accept_values)
 browsers don't explicitly list a format's `q-value` when it has the default
 value of `1`.
 
@@ -273,7 +273,7 @@ improvements by serving content as SXG.
 
 Google Search will now crawl, cache, and prefetch SXGs when applicable. Google
 and other search engines sometimes
-[prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
+[prefetch](https://developer.mozilla.org/docs/Web/HTTP/Link_prefetching_FAQ)
 content that the user is likely to visit—for example, the page corresponding to
 the first search result. SXGs are particularly well suited to prefetching
 because of their privacy benefits over non-SXG formats.
@@ -295,7 +295,7 @@ prefetching is an example of the concept of privacy-preserving prefetching.
 #### Crawling
 
 The
-[`Accept`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation)
+[`Accept`](https://developer.mozilla.org/docs/Web/HTTP/Content_negotiation)
 header sent by the Google Search crawler expresses an equal preference for
 `text/html` and `application/signed-exchange`. As described in the [previous
 section](#best-practices), sites that wish to use SXGs should serve them when
@@ -336,17 +336,11 @@ Learn how to serve AMP using signed exchanges on
 
 ## Tooling
 
-This section discusses the tooling options and technical requirements of SXGs.
-
-At a high level, implementing SXGs consists of generating the SXG corresponding
-to a given URL and then serving that SXG to users. To generate a SXG you will
-need a certificate that can sign SXGs.
+Implementing SXGs consists of generating the SXG corresponding to a given URL
+and then serving that SXG to requestors (usually crawlers). To generate a SXG
+you will need a certificate that can sign SXGs.
 
 ### Certificates
-
-Certificates associate an entity with a [public
-key](https://en.wikipedia.org/wiki/Public-key_cryptography). Signing a SXG with
-a certificate allows the content to be associated with the entity.
 
 Production use of SXGs requires a certificate that supports the
 `CanSignHttpExchanges` extension. Per
@@ -356,23 +350,39 @@ days and require that the requesting domain have a [DNS CAA
 record](https://en.wikipedia.org/wiki/DNS_Certification_Authority_Authorization)
 configured.
 
-This [page](https://github.com/google/webpackager/wiki/Certificate-Authorities)
-lists the [certificate
-authorities](https://en.wikipedia.org/wiki/Certificate_authority) that can issue
-this type of certificate. Certificates for SXGs are only available through a
-commercial certificate authority.
+[This page](https://github.com/google/webpackager/wiki/Certificate-Authorities)
+lists the certificate authorities that can issue this type of certificate.
+Certificates for SXGs are only available through a commercial certificate
+authority.
 
-### Web Packager
+### Platform-specific SXG tooling
 
-[Web Packager](https://github.com/google/webpackager) is an open-source,
-Go-based tool that is the de facto tooling for generating ("packaging") signed
-exchanges. You can use it to manually create SXGs, or as a server that
-automatically creates and serves SXGs. Web Packager is currently in
-[alpha](https://github.com/google/webpackager#limitations).
+These tools support specific technology stacks. If you are already using a
+platform supported by one of these tools, you may find it easier to set up than
+a general-purpose tool.
 
-### Web Packager CLI
+- [`sxg-rs/cloudflare_worker`](https://github.com/google/sxg-rs/tree/main/cloudflare_worker)
+  runs on [Cloudflare Workers](https://workers.cloudflare.com/).
 
-The Web Packager CLI generates a SXG corresponding to a given URL.
+- [`sxg-rs/fastly_compute`](https://github.com/google/sxg-rs/tree/main/fastly_compute)
+  runs on [Fastly
+  Compute@Edge](https://www.fastly.com/products/edge-compute/serverless).
+
+- [NGINX SXG module](https://github.com/google/nginx-sxg-module) generates
+  and serves SXGs for sites that use [nginx](https://nginx.org/). Setup
+  instructions can be found [here](/how-to-set-up-signed-http-exchanges/).
+
+- [Envoy SXG
+  Filter](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/sxg_filter)
+  generates and serves SXGs for sites that use
+  [Envoy](https://www.envoyproxy.io/).
+
+### General-purpose SXG tooling
+
+#### Web Packager CLI
+
+The [Web Packager CLI](https://github.com/google/webpackager) generates a SXG
+corresponding to a given URL.
 
 ```shell
 webpackager \
@@ -385,7 +395,7 @@ Once the SXG file has been generated, upload it to your server and serve it with
 the `application/signed-exchange;v=b3` MIME type. In addition, you will need to
 serve the SXG certificate as `application/cert-chain+cbor`.
 
-### Web Packager Server
+#### Web Packager Server
 
 The [Web Packager
 server](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md),
@@ -396,52 +406,25 @@ serve the SXG in response. For instructions on setting up the Web Packager
 server, see [How to set up signed exchanges using Web
 Packager](/signed-exchanges-webpackager).
 
-In production, `webpkgserver` should not use a public endpoint. Instead, the
-frontend web server should forward SXG requests to `webpkgserver`. These
-[recommendations](https://github.com/google/webpackager/blob/main/cmd/webpkgserver/README.md#running-behind-front-end-edge-server)
-contain more information on running `webpkgserver` behind a frontend edge
-server.
+### SXG libraries
 
-### Other tooling
+These libraries could be used to build your own SXG generator:
 
-This section lists tooling alternatives to Web Packager. In addition to these
-options, you can also choose to build your own SXG generator.
+- [`sxg_rs`](https://github.com/google/sxg-rs/tree/main/sxg_rs) is a Rust library for
+  generating SXGs. It is the most featureful SXG library and is used as the
+  basis for the `cloudflare_worker` and `fastly_compute` tools.
 
+- [`libsxg`](https://github.com/google/libsxg) is a minimal C library for
+  generating SXGs. It is used as the basis for the NGINX SXG module and the
+  Envoy SXG Filter.
 
-- `sxg-rs`
-
-  [`sxg-rs`](https://github.com/google/sxg-rs) is a collection of tools for generating SXGs using various serverless platforms.
-  Cloudflare Workers and Fastly Compute@Edge, and a Rust library that could be
-  adapted to other serverless platforms.
-
-- NGINX SXG Module
-
-  The [NGINX SXG module](https://github.com/google/nginx-sxg-module) generates
-  and serves SXGs. Sites that already use NGINX should consider using this
-  module over Web Packager Server.
-
-  The NGINX SXG module only works with `CanSignHttpExchanges` certificates.
-  Setup instructions can be found
-  [here](/how-to-set-up-signed-http-exchanges/).
-
-
-- `libsxg`
-
-  [`libsxg`](https://github.com/google/libsxg) is a minimal, C-based library for
-  generating SXGs. `libsxg` can be used to build an SXG generator that
-  integrates into other pluggable servers. The NGINX SXG module is built on top
-  of `libsxg`.
-
-
-- `gen-signedexchange`
-
-  [`gen-signedexchange`](https://github.com/WICG/webpackage/tree/main/go/signedexchange)
-  is a tool provided by the webpackage specification as a [reference
+- [`go/signed-exchange`](https://github.com/WICG/webpackage/tree/main/go/signedexchange)
+  is a minimal Go library provided by the webpackage specification as a
+  [reference
   implementation](https://en.wikipedia.org/wiki/Reference_implementation) of
-  generating SXGs. Due to its limited feature set, `gen-signedexchange` is
-  useful for trying out SXGs, but impractical for larger-scale and production
-  use.
-
+  generating SXGs. It is used as the basis for its reference CLI tool,
+  [`gen-signedexchange`](https://github.com/WICG/webpackage/tree/main/go/signedexchange)
+  and the more featureful Web Packager tools.
 
 ## Conclusion
 

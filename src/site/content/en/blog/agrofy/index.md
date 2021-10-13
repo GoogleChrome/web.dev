@@ -58,7 +58,7 @@ focused on LCP, [CLS](/cls/) (another Core Web Vitals metric),
 and [FCP](/fcp/). Specific optimizations included:
 
 +   Lazy loading all non-visible elements with the
-    [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API).
+    [Intersection Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API).
 +   Delivering static resources faster with a [content delivery
     network](/content-delivery-networks/).
 +   [Lazy loading images](/browser-level-image-lazy-loading/)

@@ -17,17 +17,21 @@
       {# Only show the 'NEW' badge if content is less than thirty days old. #}
       {% set isNew = item.data.date | isNewContent %}
     {% endif %}
-    <a class="drawer-course__link" href="{{ item.url }}" style="--nest-indent: {{ depth }}"
-        {% if item.url == page.url %} data-active {% endif %}>
-      <span class="drawer-course__link-counter font-mono">{{ item.counter }}</span>
-      <span class="drawer-course__link-title gap-left-400"
-          {% if isNew %} data-badge="{{ 'i18n.common.new' | i18n(locale) }}" {% endif %}
-      >{{ title }}</span>
-      {{ icon('done', {className: 'drawer-course__link-check gap-left-auto'}) }}
+    <a class="repel" href="{{ item.url }}" {% if item.url == page.url %}aria-current="page"{% endif %}>
+      <span class="cluster">
+        <span class="stack-nav__meta">{{ item.counter }}</span>
+        <span>{{ title }}</span>
+      </span>
+      <span class="cluster">
+        {% if isNew %}
+          <span class="stack-nav__meta tt-upper color-action-text">{{ 'i18n.common.new' | i18n(locale) }}</span>
+        {% endif %}
+        {{ icon('done') }}
+      </span>
     </a>
   {% elif title %}
     {# This is just a heading for children. #}
-    <span class="drawer-course__heading">{{ title }}</span>
+    <h3 class="stack-nav__heading">{{ title }}</h3>
   {% endif %}
 
   {# Renders any nested children. #}
@@ -36,36 +40,34 @@
   {% endfor %}
 {% endmacro %}
 
-<web-navigation-drawer class="drawer-course" type="standard">
-  <nav data-drawer-container>
+<web-navigation-drawer type="standard">
+  <nav data-drawer-container class="course__drawer flow">
+    <div class="course__header" style="--course-background: url('{{ courseData.meta.background }}')">
+      <button data-drawer-close-button class="fab tooltip" aria-label="{{ 'i18n.common.close' | i18n(locale) }}" data-icon-only>
+        {{ icon('close') }}
+        <span class="tooltip__content">{{ 'i18n.common.close' | i18n(locale) }}</span>
+      </button>
 
-    <div class="drawer-course__contents flow flow-space-300">
-      <div class="drawer-course__header" style="--course-background: url('{{ courseData.meta.background }}')">
-        <button data-drawer-close-button class="w-button--svg w-button--round" aria-label="{{ 'i18n.common.close' | i18n(locale) }}">
-          {{ icon('close') }}
-          <span class="w-tooltip">{{ 'i18n.common.close' | i18n(locale) }}</span>
-        </button>
-
-        <div class="drawer-course__title">
-          {% if courseData.meta.logo %}
-            {# The course logo is stored in src/images, but the svg macro uses
-            Nunjuck's include syntax. So we need to give it a relative path from
-            src/site/_includes to src/images. #}
-            {% set logo = helpers.join('../..', courseData.meta.logo) %}
-            {{ svg(logo, {label: courseData.meta.title | i18n(locale)}) }}
-          {% endif %}
-        </div>
-      </div>
-      <web-search class="drawer-course__search" results-id="search-course-results" tag="{{ searchTag }}"></web-search>
-      <div class="drawer-course__scroll">
-        <course-links class="drawer-course__links scrollbar" data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
-          {% for item in pageNavigation.tree %}
-            {{ renderItem(item, 0) }}
-          {% endfor %}
-        </course-links>
-        <web-course-search-results class="drawer-course__search_results" id="search-course-results"></web-course-search-results>
+      <div class="course__side-title">
+        {% if courseData.meta.logo %}
+          {# The course logo is stored in src/images, but the svg macro uses
+          Nunjuck's include syntax. So we need to give it a relative path from
+          src/site/_includes to src/images. #}
+          {% set logo = helpers.join('../..', courseData.meta.logo) %}
+          {{ svg(logo, {label: courseData.meta.title | i18n(locale)}) }}
+        {% endif %}
       </div>
     </div>
-
+    <web-search class="course__search" results-id="search-course-results" tag="{{ searchTag }}" i18n="{{ i18n.search | dump }}"></web-search>
+    <div class="course__over-scroll">
+      <course-links data-current="{{ page.url }}" data-course-key="{{ projectKey }}">
+        <ul class="stack-nav">
+        {% for item in pageNavigation.tree %}
+          <li>{{ renderItem(item, 0) }}</li>
+        {% endfor %}
+        </ul>
+      </course-links>
+    </div>
+    <web-course-search-results class="course__search-results" id="search-course-results"></web-course-search-results>
   </nav>
 </web-navigation-drawer>

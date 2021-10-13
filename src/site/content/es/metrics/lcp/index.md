@@ -15,7 +15,7 @@ tags:
 
 Históricamente, ha sido un desafío para los desarrolladores web medir qué tan rápido se carga el contenido principal de una página web y es visible para los usuarios.
 
-Las métricas más antiguas como [load: carga](https://developer.mozilla.org/en-US/docs/Web/Events/load) o [DOMContentLoaded](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) no son buenas porque no corresponden necesariamente con lo que el usuario ve en su pantalla. Y las métricas de rendimiento más nuevas y centradas en el usuario, como [First Contentful Paint (FCP),](/fcp/) solo capturan el comienzo de la experiencia de carga. Si una página muestra una pantalla de bienvenida o muestra un indicador de carga, este momento no es muy relevante para el usuario.
+Las métricas más antiguas como [load: carga](https://developer.mozilla.org/docs/Web/Events/load) o [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) no son buenas porque no corresponden necesariamente con lo que el usuario ve en su pantalla. Y las métricas de rendimiento más nuevas y centradas en el usuario, como [First Contentful Paint (FCP),](/fcp/) solo capturan el comienzo de la experiencia de carga. Si una página muestra una pantalla de bienvenida o muestra un indicador de carga, este momento no es muy relevante para el usuario.
 
 En el pasado, recomendamos métricas de rendimiento como [First Meaningful Paint: Primer despliegue significativo (FMP)](/first-meaningful-paint/) y [Speed Index: Índice de velocidad (SI)](/speed-index/) (ambas disponibles en Lighthouse) para ayudar a capturar más de la experiencia de carga después del despliegue inicial, pero estas métricas son complejas y difíciles de explicar, y a menudo incorrectas, lo que significa que todavía no identifican cuándo se carga el contenido principal de la página.
 
@@ -43,32 +43,32 @@ Como se especifica actualmente en la [API de Largest Contentful Paint](https://w
 - `<img>` elementos
 - `<image>` elementos dentro de un elemento `<svg>`
 - `<video>` elementos (se utiliza la imagen del cartel)
-- Un elemento con una imagen de segundo plano que se carga a través de la función [`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url()) (a diferencia de un [gradiente CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients))
-- Elementos a [nivel de bloque](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) que contienen nodos de texto u otros elementos secundarios de texto con estilos integrados en el código.
+- Un elemento con una imagen de segundo plano que se carga a través de la función [`url()`](https://developer.mozilla.org/docs/Web/CSS/url()) (a diferencia de un [gradiente CSS](https://developer.mozilla.org/docs/Web/CSS/CSS_Images/Using_CSS_gradients))
+- Elementos a [nivel de bloque](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements) que contienen nodos de texto u otros elementos secundarios de texto con estilos integrados en el código.
 
 Tenga en cuenta que restringir los elementos a este conjunto limitado fue intencional para mantener las cosas sencillas al principio. Es posible que se agreguen elementos adicionales (por ejemplo, `<svg>` , `<video>` ) en el futuro, conforme se realicen más investigaciones.
 
 ### ¿Cómo se determina el tamaño de un elemento?
 
-El tamaño del elemento reportado por Largest Contentful Paint normalmente es el tamaño que es visible para el usuario dentro de la ventana de visualización. Si el elemento se extiende fuera de la ventana de visualización, o si alguno de los elementos está recortado o tiene un [desbordamiento](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow) no visible, esas porciones no se toman en cuenta en el tamaño del elemento.
+El tamaño del elemento reportado por Largest Contentful Paint normalmente es el tamaño que es visible para el usuario dentro de la ventana de visualización. Si el elemento se extiende fuera de la ventana de visualización, o si alguno de los elementos está recortado o tiene un [desbordamiento](https://developer.mozilla.org/docs/Web/CSS/overflow) no visible, esas porciones no se toman en cuenta en el tamaño del elemento.
 
-Para los elementos de imagen que cambiaron de tamaño de su [tamaño intrínseco](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size), el tamaño que se informa es el tamaño visible o el tamaño intrínseco, el que sea menor. Por ejemplo, las imágenes que se reducen a un tamaño mucho más pequeño que su tamaño intrínseco solo informarán el tamaño en el que se muestran, mientras que las imágenes que se estiran o expanden a un tamaño mayor solo informarán sus tamaños intrínsecos.
+Para los elementos de imagen que cambiaron de tamaño de su [tamaño intrínseco](https://developer.mozilla.org/docs/Glossary/Intrinsic_Size), el tamaño que se informa es el tamaño visible o el tamaño intrínseco, el que sea menor. Por ejemplo, las imágenes que se reducen a un tamaño mucho más pequeño que su tamaño intrínseco solo informarán el tamaño en el que se muestran, mientras que las imágenes que se estiran o expanden a un tamaño mayor solo informarán sus tamaños intrínsecos.
 
 Para los elementos de texto, solo se considera el tamaño de sus nodos de texto (el rectángulo más pequeño que abarca todos los nodos de texto).
 
 Para todos los elementos, no se considera ningún margen, relleno o borde aplicado por medio de CSS.
 
-{% Aside %} Determinar qué nodos de texto pertenecen a qué elementos a veces puede ser complicado, especialmente para elementos cuyos elementos secundarios incluyen elementos de estilos integrados en el código y nodos de texto sin formato, pero también elementos a nivel de bloque. El punto clave es que cada nodo de texto pertenece (y solo a) su elemento ancestro de nivel de bloque más cercano. En [términos de especificaciones](https://wicg.github.io/element-timing/#set-of-owned-text-nodes) : cada nodo de texto pertenece al elemento que genera su [bloque contenedor](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block). {% endAside %}
+{% Aside %} Determinar qué nodos de texto pertenecen a qué elementos a veces puede ser complicado, especialmente para elementos cuyos elementos secundarios incluyen elementos de estilos integrados en el código y nodos de texto sin formato, pero también elementos a nivel de bloque. El punto clave es que cada nodo de texto pertenece (y solo a) su elemento ancestro de nivel de bloque más cercano. En [términos de especificaciones](https://wicg.github.io/element-timing/#set-of-owned-text-nodes) : cada nodo de texto pertenece al elemento que genera su [bloque contenedor](https://developer.mozilla.org/docs/Web/CSS/Containing_block). {% endAside %}
 
 ### ¿Cuándo se reporta largest contentful pain?
 
 Las páginas web a menudo se cargan en etapas y, como resultado, es posible que el elemento más grande de la página cambie.
 
-Para manejar este potencial de cambio, el navegador envía un [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry) del tipo `largest-contentful-paint` que identifica el elemento de contenido más extenso tan pronto como el navegador haya desplegado el primer marco. Pero entonces, después de renderizar los marcos subsiguientes, enviará otra [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry) cada vez que haya cambios en el elemento de contenido más extenso.
+Para manejar este potencial de cambio, el navegador envía un [`PerformanceEntry`](https://developer.mozilla.org/docs/Web/API/PerformanceEntry) del tipo `largest-contentful-paint` que identifica el elemento de contenido más extenso tan pronto como el navegador haya desplegado el primer marco. Pero entonces, después de renderizar los marcos subsiguientes, enviará otra [`PerformanceEntry`](https://developer.mozilla.org/docs/Web/API/PerformanceEntry) cada vez que haya cambios en el elemento de contenido más extenso.
 
 Por ejemplo, en una página con texto y una imagen hero, el navegador inicialmente puede renderizar solo el texto, en este momento enviará una entrada `largest-contentful-paint` cuya propiedad `element` probablemente llamará a un `<p>` o `<h1>`. Más adelante, una vez que la imagen hero termine de cargarse, se enviaría una segunda entrada `largest-contentful-paint` y su propiedad `element` podría llamar a `<img>`.
 
-Es importante tener en cuenta que un elemento solo puede considerarse el elemento de contenido más grande una vez que se haya renderizado y sea visible para el usuario. Las imágenes que aún no se han cargado no se consideran "renderizadas". Tampoco los nodos de texto utilizan fuentes web durante el [periodo de bloqueo de fuentes](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display#The_font_display_timeline). En tales casos, un elemento más pequeño se puede reportar como el elemento de contenido más extenso, pero tan pronto como el elemento más extenso termine de renderizarse, se reportará por medio de otro objeto `PerformanceEntry`.
+Es importante tener en cuenta que un elemento solo puede considerarse el elemento de contenido más grande una vez que se haya renderizado y sea visible para el usuario. Las imágenes que aún no se han cargado no se consideran "renderizadas". Tampoco los nodos de texto utilizan fuentes web durante el [periodo de bloqueo de fuentes](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display#The_font_display_timeline). En tales casos, un elemento más pequeño se puede reportar como el elemento de contenido más extenso, pero tan pronto como el elemento más extenso termine de renderizarse, se reportará por medio de otro objeto `PerformanceEntry`.
 
 Además de las imágenes y fuentes de carga tardía, una página puede agregar nuevos elementos al DOM conforme el nuevo contenido esté disponible. Si alguno de estos nuevos elementos es más grande que el elemento de contenido más extenso anterior, también se reportará un nuevo `PerformanceEntry`.
 
@@ -84,9 +84,9 @@ Con fines de análisis, solo debe reportar el último `PerformanceEntry` enviado
 
 #### Tiempo de carga vs.tiempo de renderizado
 
-Por motivos de seguridad, la marca de tiempo para renderizar imágenes no se expone para las imágenes de origen cruzado que carecen del encabezado [`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin) En cambio, solo se expone su tiempo de carga (ya que esto ya se expone por medio de muchas otras API web).
+Por motivos de seguridad, la marca de tiempo para renderizar imágenes no se expone para las imágenes de origen cruzado que carecen del encabezado [`Timing-Allow-Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin) En cambio, solo se expone su tiempo de carga (ya que esto ya se expone por medio de muchas otras API web).
 
-El siguiente [ejemplo de uso](#measure-lcp-in-javascript) muestra cómo manejar elementos cuyo tiempo de renderizado no está disponible. Pero, cuando sea posible, siempre se recomienda configurar el [`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin), para que sus métricas sean más precisas.
+El siguiente [ejemplo de uso](#measure-lcp-in-javascript) muestra cómo manejar elementos cuyo tiempo de renderizado no está disponible. Pero, cuando sea posible, siempre se recomienda configurar el [`Timing-Allow-Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin), para que sus métricas sean más precisas.
 
 ### ¿Cómo se manejan los cambios de tamaño y diseño de los elementos?
 
@@ -133,7 +133,7 @@ LCP se puede medir [en el laboratorio](/user-centric-performance-metrics/#in-the
 
 ### Cómo medir LCP en JavaScript
 
-Para medir LCP en JavaScript, puede utilizar la [API de Largest Contentful Paint](https://wicg.github.io/largest-contentful-paint/). En el siguiente ejemplo se muestra cómo crear un [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) que capte las entradas de `largest-contentful-paint` y las registre en la consola.
+Para medir LCP en JavaScript, puede utilizar la [API de Largest Contentful Paint](https://wicg.github.io/largest-contentful-paint/). En el siguiente ejemplo se muestra cómo crear un [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) que capte las entradas de `largest-contentful-paint` y las registre en la consola.
 
 ```js
 new PerformanceObserver((entryList) => {

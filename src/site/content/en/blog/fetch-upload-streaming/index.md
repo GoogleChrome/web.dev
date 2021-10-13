@@ -92,7 +92,7 @@ connection, you'll get fewer, larger 'chunks' of data. If you're on a slow
 connection, you'll get more, smaller chunks.
 
 If you want to convert the bytes into text, you can use
-[`TextDecoder`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder/decode),
+[`TextDecoder`](https://developer.mozilla.org/docs/Web/API/TextDecoder/decode),
 or the newer transform stream if your [target browsers support
 it](https://caniuse.com/#feat=mdn-api_textdecoderstream):
 

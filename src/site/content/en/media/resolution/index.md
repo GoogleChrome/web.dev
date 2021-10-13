@@ -10,7 +10,7 @@ date: 2017-06-30
 updated: 2021-07-05
 tags:
   - media
-  - video
+  # - video
 ---
 
 In the previous articles you learned how to change the

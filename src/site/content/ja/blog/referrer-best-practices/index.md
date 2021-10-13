@@ -30,7 +30,7 @@ feedback:
 
 ## リファラーとリファラーポリシー 101
 
-HTTP リクエストには、リクエストの発信元または Web ページの URL を示す [`Referer` ヘッダーが含まれる場合があります。](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) [`Referrer-Policy` ヘッダーは、](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)`Referer` ヘッダーで使用できるデータを定義します。
+HTTP リクエストには、リクエストの発信元または Web ページの URL を示す [`Referer` ヘッダーが含まれる場合があります。](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referer) [`Referrer-Policy` ヘッダーは、](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy)`Referer` ヘッダーで使用できるデータを定義します。
 
 以下の例では、`Referer` ヘッダーには、リクエストの発信元となる `site-one` のページの完全な URL が含まれています。
 
@@ -79,7 +79,7 @@ URL＃6 は[機能 URL](https://www.w3.org/TR/capability-urls/) で、意図し�
   {% Img src="image/admin/BIHWDY60CI317O7IzmQs.jpg", alt="セキュリティとクロスオリジンコンテキストに応じた、さまざまなリファラーポリシーとその動作。", width="800", height="537" %}
 </figure>
 
-MDN で、 [ポリシーと動作の例の完全なリスト](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Directives)が提供されています。
+MDN で、 [ポリシーと動作の例の完全なリスト](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Directives)が提供されています。
 
 注意事項：
 
@@ -144,7 +144,7 @@ MDN で、 [ポリシーと動作の例の完全なリスト](https://developer.
 サイトのリファラーポリシーを設定するには、さまざまな方法があります。
 
 - HTTP ヘッダーとして設定する
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML) 内で設定する
+- [HTML](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML) 内で設定する
 - [リクエストごとに](https://javascript.info/fetch-api#referrer-referrerpolicy) JavaScript から設定する
 
 ページ、リクエスト、要素ごとに異なるポリシーを設定できます。
@@ -282,7 +282,7 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 **オリジンのみが必要な場合 (`https://site-one.example`)：**
 
 - ページへのトップレベルのアクセス権を持つスクリプトでリファラーを使用している場合は、`window.location.origin` が代わりとなります。
-- [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) や [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) などのヘッダーを使用できる場合には、`Origin` を取得できたり、リクエストがクロスオリジンかどうかを説明できたりします。それがまさに必要となものである場合もあります。
+- [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) や [`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site) などのヘッダーを使用できる場合には、`Origin` を取得できたり、リクエストがクロスオリジンかどうかを説明できたりします。それがまさに必要となものである場合もあります。
 
 **URL の他の要素 (パス、クエリパラメータなど) が必要な場合：**
 
@@ -298,13 +298,13 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 
 リクエストの発信元は、`no-referrer`ポリシーを設定すれば、いつでもリファラーを送信しないようにすることができます。(悪意のあるアクターはリファラーに対してスプーフィングを実行できる可能性すらあります)。
 
-[CSRF トークン](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation)を主な保護として使用します。保護を強化するには [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites) を使用し、`Referer` の代わりに [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) (POST および CORS リクエストで利用可能) や (利用可能な場合は) [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) などのヘッダーを使用します。
+[CSRF トークン](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation)を主な保護として使用します。保護を強化するには [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites) を使用し、`Referer` の代わりに [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) (POST および CORS リクエストで利用可能) や (利用可能な場合は) [`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site) などのヘッダーを使用します。
 
 ### ロギング
 
 `Referer` 含まれている可能性のあるユーザーの個人データまたは機密データを必ず保護してください。
 
-オリジンのみを使用している場合は、[`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) ヘッダーを代替として使用できるかどうかを確認してください。そうすることで、わざわざリファラーを解析せずに、デバッグに必要な情報をより簡単に得られる場合があります。
+オリジンのみを使用している場合は、[`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) ヘッダーを代替として使用できるかどうかを確認してください。そうすることで、わざわざリファラーを解析せずに、デバッグに必要な情報をより簡単に得られる場合があります。
 
 ### 支払い
 
@@ -351,8 +351,8 @@ Web サイトに HTTP を使用している場合は、 [HTTPS に移行しま�
 
 - [「同一サイト」と「同一オリジン」を理解する](/same-site-same-origin/)
 - [新しいセキュリティヘッダー：リファラーポリシー (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
-- MDN の[リファラーポリシー](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
-- MDN の[リファラーヘッダー：プライバシーとセキュリティの懸念](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
+- MDN の[リファラーポリシー](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy)
+- MDN の[リファラーヘッダー：プライバシーとセキュリティの懸念](https://developer.mozilla.org/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
 - [Chrome の変更：Blink Intent to Implement](https://groups.google.com/a/chromium.org/d/msg/blink-dev/aBtuQUga1Tk/n4BLwof4DgAJ)
 - [Chrome の変更：Blink Intent to Ship](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/lqFuqwZDDR8)
 - [Chrome の変更：ステータスエントリ](https://www.chromestatus.com/feature/6251880185331712)

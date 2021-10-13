@@ -48,6 +48,7 @@ const IFrame = require('./src/site/_includes/components/IFrame');
 const {Img, generateImgixSrc} = require('./src/site/_includes/components/Img');
 const Instruction = require('./src/site/_includes/components/Instruction');
 const Label = require('./src/site/_includes/components/Label');
+const LanguageList = require('./src/site/_includes/components/LanguageList');
 const Meta = require('./src/site/_includes/components/Meta');
 const PathCard = require('./src/site/_includes/components/PathCard');
 const SignPosts = require('./src/site/_includes/components/SignPosts');
@@ -55,6 +56,7 @@ const StackOverflow = require('./src/site/_includes/components/StackOverflow');
 const Tooltip = require('./src/site/_includes/components/Tooltip');
 const {Video} = require('./src/site/_includes/components/Video');
 const {YouTube} = require('webdev-infra/shortcodes/YouTube');
+const YouTubePlaylist = require('./src/site/_includes/components/YouTubePlaylist');
 
 // Collections
 const authors = require('./src/site/_collections/authors');
@@ -104,7 +106,7 @@ const {updateSvgForInclude} = require('webdev-infra/filters/svg');
 const {toc: courseToc} = require('webdev-infra/filters/toc');
 
 // Creates a global variable for the current __dirname to make including and
-// working with files in the pattern library a little easier
+// working with files in the component library a little easier
 global.__basedir = __dirname;
 
 module.exports = function (config) {
@@ -124,7 +126,7 @@ module.exports = function (config) {
     wrapper: 'div',
     wrapperClass: 'w-toc__list',
     ul: true,
-    flat: true,
+    flat: false,
   });
 
   // ----------------------------------------------------------------------------
@@ -151,6 +153,20 @@ module.exports = function (config) {
   // to quickly find collection items without looping.
   config.addCollection('memoized', (collection) => {
     return memoize(collection.getAll());
+  });
+
+  // Filters through all collection items and finds content that has
+  // CSS_ORIGIN set to 'next'. This allows shortcodes to determine if we
+  // are in a design system context or a legacy context
+  config.addCollection('designSystemGlobals', (collection) => {
+    global.__designSystemPaths = new Set(
+      collection
+        .getAll()
+        .filter(({data}) => data.CSS_ORIGIN === 'next')
+        .map(({filePathStem}) => filePathStem),
+    );
+
+    return global.__designSystemPaths;
   });
 
   // ----------------------------------------------------------------------------
@@ -209,6 +225,7 @@ module.exports = function (config) {
   config.addShortcode('Img', Img);
   config.addShortcode('Instruction', Instruction);
   config.addPairedShortcode('Label', Label);
+  config.addShortcode('LanguageList', LanguageList);
   config.addShortcode('Meta', Meta);
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('SignPosts', SignPosts);
@@ -216,6 +233,7 @@ module.exports = function (config) {
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('Video', Video);
   config.addShortcode('YouTube', YouTube);
+  config.addShortcode('YouTubePlaylist', YouTubePlaylist);
   config.addShortcode('includeRaw', includeRaw);
 
   // This table is used for the web.dev/LIVE event, and should be taken down

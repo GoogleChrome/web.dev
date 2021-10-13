@@ -200,7 +200,7 @@ or wrapped onto multiple rows as the available space decreases.
   height: 220
 } %}
 
-[Read more about Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox).
+[Read more about Flexbox](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Flexbox).
 
 #### CSS Grid Layout {: #grid }
 
@@ -227,7 +227,7 @@ with a minimum size of `200px`.
 
 {% Glitch 'grid-as-many-as-fit' %}
 
-[Read more about CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
+[Read more about CSS Grid Layout](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Grids)
 
 #### Multiple-column layout {: #multicol }
 
@@ -240,7 +240,7 @@ In the demo below, you can see that columns are added if there is room for anoth
   path: 'style.css'
 } %}
 
-[Read more about Multicol](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Multiple-column_Layout)
+[Read more about Multicol](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Multiple-column_Layout)
 
 ## Use CSS media queries for responsiveness {: #media-queries }
 
@@ -303,10 +303,10 @@ and we can test for the following things.
 
 All of these features have excellent browser support,
 for more details including browser support information see
-[width](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width),
-[height](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/height),
-[orientation](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation), and
-[aspect-ratio](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/aspect-ratio) on MDN.
+[width](https://developer.mozilla.org/docs/Web/CSS/@media/width),
+[height](https://developer.mozilla.org/docs/Web/CSS/@media/height),
+[orientation](https://developer.mozilla.org/docs/Web/CSS/@media/orientation), and
+[aspect-ratio](https://developer.mozilla.org/docs/Web/CSS/@media/aspect-ratio) on MDN.
 
 {% Aside 'note' %}
 The specification did include tests for `device-width` and `device-height`. These have been deprecated and should be avoided.
@@ -334,10 +334,10 @@ such as a regular desktop computer and a phone or tablet.
 {% Glitch 'media-query-pointer' %}
 
 These newer features have good support in all modern browsers. Find out more on the MDN pages for
-[hover](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover),
-[any-hover](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover),
-[pointer](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer),
-[any-pointer](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-pointer).
+[hover](https://developer.mozilla.org/docs/Web/CSS/@media/hover),
+[any-hover](https://developer.mozilla.org/docs/Web/CSS/@media/any-hover),
+[pointer](https://developer.mozilla.org/docs/Web/CSS/@media/pointer),
+[any-pointer](https://developer.mozilla.org/docs/Web/CSS/@media/any-pointer).
 
 #### Using `any-hover` and `any-pointer`
 

@@ -66,7 +66,7 @@ CLS は、ページの表示中に発生した[予期しない](/cls/#expected-v
 
 ## レイアウト シフトの詳細
 
-レイアウト シフトは [Layout Instability API](https://github.com/WICG/layout-instability) によって定義されており、ビューポート内に表示されている要素が 2 つのフレーム間で開始位置 (たとえば、デフォルトの [writing-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) での top と left) を変更すると、`layout-shift` エントリがレポートされます。こういった要素は、*不安定な要素*としてみなされます。
+レイアウト シフトは [Layout Instability API](https://github.com/WICG/layout-instability) によって定義されており、ビューポート内に表示されている要素が 2 つのフレーム間で開始位置 (たとえば、デフォルトの [writing-mode](https://developer.mozilla.org/docs/Web/CSS/writing-mode) での top と left) を変更すると、`layout-shift` エントリがレポートされます。こういった要素は、*不安定な要素*としてみなされます。
 
 レイアウト シフトは、既存の要素がその開始位置を変更する場合にのみ発生することにご注意ください。新しい要素が DOM に追加されたり、既存の要素のサイズが変更されたりしても、その変更が表示されている他の要素の開始位置の変更を引き起こさない限りはレイアウト シフトとしてカウントされません。
 
@@ -148,7 +148,7 @@ layout shift score = impact fraction * distance fraction
 
 アニメーションやトランジションは、上手に使用することでユーザーを驚かせることなくページ上のコンテンツを更新することができる優れた手法です。ページ上でコンテンツが突然何の前触れもなく移動してしまえば、ユーザーはほとんどの場合に悪印象を抱いてしまいます。しかしながら、ある位置から目的の位置へと少しづつ自然に移動するようなコンテンツは、ユーザーにとっては何が起こっているのかを理解しやすいですし、状態が変化している間にユーザーを誘導することもできます。
 
-CSS の [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) プロパティを使用すれば、レイアウト シフトを発生させることなく要素をアニメーション化することができます。
+CSS の [`transform`](https://developer.mozilla.org/docs/Web/CSS/transform) プロパティを使用すれば、レイアウト シフトを発生させることなく要素をアニメーション化することができます。
 
 - `height` プロパティや `width` プロパティを変更するのではなく、`transform: scale()` を使用します。
 - 要素を移動させる場合には、`top`、`right`、`bottom`、`left` の各プロパティを変更するのではなく、`transform: translate()` を使用します。
@@ -174,7 +174,7 @@ CLS は[ラボ環境](/user-centric-performance-metrics/#in-the-lab)または[�
 
 ### JavaScript を使用して CLS を測定する
 
-JavaScript を使用した CLS の測定には、[Layout Instability API](https://github.com/WICG/layout-instability) を使用することができます。以下の例では、予期しない `layout-shift` エントリをリッスンしてセッションごとに分類し、変更が発生するたびにセッションの最大値をログとして記録する [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) の作成方法を示しています。
+JavaScript を使用した CLS の測定には、[Layout Instability API](https://github.com/WICG/layout-instability) を使用することができます。以下の例では、予期しない `layout-shift` エントリをリッスンしてセッションごとに分類し、変更が発生するたびにセッションの最大値をログとして記録する [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) の作成方法を示しています。
 
 ```js
 let clsValue = 0;

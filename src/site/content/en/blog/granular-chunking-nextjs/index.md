@@ -11,7 +11,7 @@ description: |
 tags:
   - blog
   - performance
-  - frameworks
+  # - frameworks
 ---
 
 Chrome is [collaborating](/advancing-framework-ecosystem-cds-2019/) with tooling and

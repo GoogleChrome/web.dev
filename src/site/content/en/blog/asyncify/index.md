@@ -82,8 +82,8 @@ need to read data from some storage.
 ## Asynchronous model of the web
 
 The web has a variety of different storage options you could map to, such as in-memory storage (JS
-objects), [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage),
-[IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), server-side storage,
+objects), [`localStorage`](https://developer.mozilla.org/docs/Web/API/Window/localStorage),
+[IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API), server-side storage,
 and a new [File System Access API](https://web.dev/file-system-access/).
 
 However, only two of those APIs—the in-memory storage and the `localStorage`—can be used
@@ -366,7 +366,7 @@ You can find it on Github at
 under the name [`asyncify-wasm`](https://www.npmjs.com/package/asyncify-wasm).
 
 It simulates a standard [WebAssembly instantiation
-API](https://developer.mozilla.org/en-US/docs/WebAssembly), but under its own namespace. The only
+API](https://developer.mozilla.org/docs/WebAssembly), but under its own namespace. The only
 difference is that, under a regular WebAssembly API you can only provide synchronous functions as
 imports, while under the Asyncify wrapper, you can provide asynchronous imports as well:
 

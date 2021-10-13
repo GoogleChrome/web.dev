@@ -16,7 +16,7 @@ updated: 2020-07-10
 tags:
   - blog
   - capabilities
-  - fugu
+  # - fugu
   - progressive-web-apps
 hero: image/admin/0uSwSmGHmPXimU3dz8Xa.jpg
 alt: An image of a fish.
@@ -131,7 +131,7 @@ as a stand-alone application.
 ## Progressive enhancement
 
 With this out of the way, it's time to talk about *progressive enhancement*.
-The MDN Web Docs Glossary [defines](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement)
+The MDN Web Docs Glossary [defines](https://developer.mozilla.org/docs/Glossary/Progressive_Enhancement)
 the concept as follows:
 
 {% Blockquote 'MDN contributors' %}
@@ -140,9 +140,9 @@ essential content and functionality to as many users as possible, while
 delivering the best possible experience only to users of the most modern
 browsers that can run all the required code.
 
-[Feature detection](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)
+[Feature detection](https://developer.mozilla.org/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)
 is generally used to determine whether browsers can handle more modern functionality,
-while [polyfills](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill)
+while [polyfills](https://developer.mozilla.org/docs/Glossary/Polyfill)
 are often used to add missing features with JavaScript.
 
 […]
@@ -150,7 +150,7 @@ are often used to add missing features with JavaScript.
 Progressive enhancement is a useful technique that allows web developers to focus
 on developing the best possible websites while making those websites work
 on multiple unknown user agents.
-[Graceful degradation](https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation)
+[Graceful degradation](https://developer.mozilla.org/docs/Glossary/Graceful_degradation)
 is related, but is not the same thing and is often seen as going in the opposite direction
 to progressive enhancement.
 In reality, both approaches are valid and can often complement one another.
@@ -166,7 +166,7 @@ In reality, both approaches are valid and can often complement one another.
 Starting each greeting card from scratch can be really cumbersome.
 So why not have a feature that allows users to import an image, and start from there?
 With a traditional approach, you'd have used an
-[`<input type=file>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file)
+[`<input type=file>`](https://developer.mozilla.org/docs/Web/HTML/Element/input/file)
 element to make this happen.
 First, you'd create the element, set its `type` to `'file'` and add MIME types to the `accept` property,
 and then programmatically "click" it and listen for changes.
@@ -189,7 +189,7 @@ const importImage = async () => {
 When there's an *import* feature, there probably should be an *export* feature
 so users can save their greeting cards locally.
 The traditional way of saving files is to create an anchor link
-with a [`download`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#download)
+with a [`download`](https://developer.mozilla.org/docs/Web/HTML/Element/a#download)
 attribute and with a blob URL as its `href`.
 You'd also programmatically "click" it to trigger the download,
 and, to prevent memory leaks, hopefully not forget to revoke the blob object URL.
@@ -734,7 +734,7 @@ Note how in the service worker, instead of a dynamic `import()`
 (that isn't supported in a service worker context
 [yet](https://github.com/w3c/ServiceWorker/issues/1356#issuecomment-433411852)),
 I use the classic
-[`importScripts()`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts).
+[`importScripts()`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/importScripts).
 
 ```js
 // In the client:
@@ -876,7 +876,7 @@ The [Idle Detection API](/idle-detection/) allows the app to detect user idle ti
 If the user is idle for too long, the app resets to the initial state
 and clears the canvas.
 This API is currently gated behind the
-[notifications permission](https://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission),
+[notifications permission](https://developer.mozilla.org/docs/Web/API/Notification/requestPermission),
 since a lot of production use cases of idle detection are notifications-related,
 for example, to only send a notification to a device the user is currently actively using.
 

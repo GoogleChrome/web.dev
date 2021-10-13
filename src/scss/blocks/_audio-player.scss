@@ -1,0 +1,32 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/audio-player
+.audio-player {
+  --cluster-vertical-alignment: flex-start;
+
+  padding: get-space('base');
+  flex-wrap: nowrap;
+
+  @include apply-utility('bg', 'mid-bg');
+
+  audio {
+    width: 100%;
+
+    &::-webkit-media-controls-panel {
+      padding: 0 0.5rem;
+    }
+
+    &::-webkit-media-controls-enclosure {
+      border-radius: $global-radius-base;
+      background: rgb(255 255 255 / 0.7);
+    }
+  }
+
+  img {
+    transform: translateY(0.5ex);
+  }
+}
+
+.audio-player__inner {
+  --flow-space: 0.5em;
+  flex: auto;
+}

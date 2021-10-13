@@ -114,10 +114,10 @@ use:
 
 
 The `<img>` tag's
-[`src`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-src),
-[`srcset`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset),
+[`src`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-src),
+[`srcset`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-srcset),
 and
-[`sizes`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes)
+[`sizes`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-sizes)
 attributes all interact to achieve this end result.
 
 ### The "src" attribute
@@ -198,7 +198,7 @@ to learn how to do this.
 
 In addition to all the extra credit already listed (images are complex!), you
 can also use these same concepts for
-[art direction](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction).
+[art direction](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction).
 Art direction is the practice of serving completely different looking images
 (rather than different versions of the same image) to different viewports. You
 can learn more in the [Art Direction code lab](/codelab-art-direction).
