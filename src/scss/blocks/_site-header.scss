@@ -1,4 +1,4 @@
-/// SITE FOOTER
+/// SITE HEADER
 /// The main, global header that is on each page
 .site-header {
   display: flex;
@@ -57,6 +57,15 @@
 
 .site-header__actions {
   --gutter: 0.5rem;
+}
+
+.site-header__search {
+  position: relative;
+  min-width: 2.5rem;
+
+  /// ALL STYLES RELATED TO THE SEARCH WEB COMPONENTS
+  /// ARE CURRENTLY IN scss/_rollout.scss UNTIL FULL
+  /// ROLLOUT IS COMPLETE
 }
 
 .site-header [data-drawer-close-button] {

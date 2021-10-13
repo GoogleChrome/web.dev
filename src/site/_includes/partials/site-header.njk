@@ -24,10 +24,9 @@
     </nav>
   </web-navigation-drawer>
   <div class="site-header__actions cluster">
-    <button class="fab tooltip color-core-text">
-      {{ icon('search') }}
-      <span class="tooltip__content">{{ 'i18n.search.search' | i18n(locale) }}</span>
-    </button>
-    <a class="site-header__link" href="#">Sign in</a>
+    <div class="site-header__search">
+      <web-search results-id="search-main-results" i18n="{{ i18n.search | dump }}"></web-search>
+      <web-search-results id="search-main-results"></web-search-results>
+    </div>
   </div>
 </web-header>
