@@ -265,5 +265,5 @@ properties, check out:
 
 - [The CSS Containment Spec](http://drafts.csswg.org/css-contain/)
 - [MDN Docs on CSS
-  Containment](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Containment)
+  Containment](https://developer.mozilla.org/docs/Web/CSS/CSS_Containment)
 - [CSSWG Drafts](https://github.com/w3c/csswg-drafts)

@@ -92,7 +92,7 @@ const productionConfig = {
 const testConfig = {
   input: 'test/unit/src/lib/index.js',
   output: {
-    dir: 'dist/test',
+    dir: '.tmp/test',
     format: 'iife',
     name: 'test',
   },

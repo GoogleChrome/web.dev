@@ -38,7 +38,7 @@ useful.
 ## Defining metrics
 
 Historically, web performance has been measured with the
-<code>[load](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event)</code>
+<code>[load](https://developer.mozilla.org/docs/Web/API/Window/load_event)</code>
 event. However, even though <code>load</code> is a well-defined moment in a
 page's lifecycle, that moment doesn't necessarily correspond with anything the
 user cares about.

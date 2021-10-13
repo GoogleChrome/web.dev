@@ -20,7 +20,7 @@ with a laptop on slow coffee-shop Wi-Fi, it's a different story.
 
 One way to deal with this is by adapting which assets you're serving to users
 based on the quality of their connection. This is now possible with the
-[Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API)
+[Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API)
 which enables web applications to access information about the user's network.
 
 {% Aside %}
@@ -95,7 +95,7 @@ and allow you to communicate the browser's connection type to servers.
 
 {% Aside %}
 You can access Network Information API inside
-[Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker)
+[Service Workers](https://developer.mozilla.org/docs/Web/API/ServiceWorker)
 to adapt to situations when users are offline.
 {% endAside %}
 

@@ -1,7 +1,10 @@
 ---
 layout: pattern
 title: Self-hosted fonts
-description: Load fonts quickly as possible
+description:
+  This demo combines two performance techniques to deliver
+  a self-hosted font as quickly as possible&#58; use of inline font declarations
+  and use of the WOFF2 font format.
 date: 2021-08-19
 updated: 2021-08-19
 height: 400

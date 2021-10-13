@@ -58,16 +58,16 @@ experience to users' constraints can include:
 The signals you can use for adaptive loading are:
 
 * Network—for fine-tuning data transfer to use less bandwidth (via
-  [`navigator.connection.effectiveType`](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/effectiveType)).
+  [`navigator.connection.effectiveType`](https://developer.mozilla.org/docs/Web/API/NetworkInformation/effectiveType)).
   You can also leverage the user's Data Saver preferences (via
   [`navigator.connection.saveData`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data#detecting_the_save-data_setting)).
 
 * Memory—for reducing memory consumption on low-end devices (via
-  [`navigator.deviceMemory`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory)).
+  [`navigator.deviceMemory`](https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory)).
 
 * CPU core count—for limiting costly JavaScript execution and reducing CPU
   intensive logic when a device can't handle it well (via
-  [`navigator.hardwareConcurrency`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency)).
+  [`navigator.hardwareConcurrency`](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency)).
 
 
 There are two places where you can make a decision about what to serve to users:
@@ -106,10 +106,10 @@ network effective type changes.
 
 React Adaptive Loading Hooks & Utilities are implemented using web platform APIs
 ([Network
-Information](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API),
+Information](https://developer.mozilla.org/docs/Web/API/Network_Information_API),
 [Device Memory](https://developers.google.com/web/updates/2017/12/device-memory)
 and [Hardware
-Concurrency](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency)).
+Concurrency](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency)).
 You can use the same APIs to apply adaptive loading concepts to other frameworks
 and libraries, such as
 [Angular](https://netbasal.com/connection-aware-components-in-angular-3a66bb0bab6f),

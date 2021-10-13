@@ -1,0 +1,18 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/indicator
+.indicator {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: get-size('size-0');
+  line-height: 0.9;
+  padding: 0.4em;
+  border-radius: 50%;
+  width: max-content;
+  min-width: 1.6rem;
+  min-height: 1.6rem;
+
+  @include apply-utility('font', 'mono');
+}

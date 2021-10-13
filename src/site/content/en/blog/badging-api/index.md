@@ -10,7 +10,7 @@ tags:
   - blog
   - capabilities
   - progressive-web-apps
-  - badging
+  # - badging
   - notifications
 hero: image/admin/AFvb0uBtN7ZX9qToptEo.jpg
 alt: Neon sign with heart and zero

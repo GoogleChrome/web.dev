@@ -119,10 +119,10 @@ performance.
       </li>
       <li>
         Uses a combination of web platform APIs (such as the
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API">
+        <a href="https://developer.mozilla.org/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API">
           Resource Timing API
         </a> and the
-        <code><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing">Server-Timing</a></code>
+        <code><a href="https://developer.mozilla.org/docs/Web/HTTP/Headers/Server-Timing">Server-Timing</a></code>
         header), the <a href="https://developers.google.com/speed/docs/insights/v5/get-started">
           PageSpeed Insights (PSI) API</a>, and
         <a href="https://developers.google.com/web/tools/chrome-user-experience-report">

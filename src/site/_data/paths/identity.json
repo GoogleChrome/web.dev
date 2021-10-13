@@ -1,0 +1,52 @@
+{
+  "slug": "identity",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/LHnKunuy8B0KRVYCv1nj.svg",
+  "title": "i18n.paths.identity.title",
+  "updated": "September 30, 2021",
+  "description": "i18n.paths.identity.description",
+  "overview": "i18n.paths.identity.overview",
+  "topics": [
+    {
+      "title": "i18n.paths.identity.topics.understand_authentication_basics",
+      "pathItems": [
+      "sign-in-form-best-practices",
+      "sign-up-form-best-practices"
+      ]
+    },
+    {
+      "title": "i18n.paths.identity.topics.build_authentication_systems_with_modern_APIs",
+      "pathItems": [
+        "web-otp",
+        "change-password-url"
+      ]
+    },
+    {
+      "title": "i18n.paths.identity.topics.strenghten_security_with_two-factor_authentication",
+      "pathItems": [
+        "sms-otp-form"
+      ]
+    },
+    {
+      "title": "i18n.paths.identity.topics.build_advanced_authentication_systems",
+      "pathItems": [
+      {
+        "title": "Set up a biometric re-authentication functionality with WebAuthn",
+        "url": "https://codelabs.developers.google.com/codelabs/webauthn-reauth/"
+      }
+      ]
+    },
+    {
+      "title": "i18n.paths.identity.topics.build_authentication_with_identity_federation",
+      "pathItems": [
+      {
+        "title": "Use OAuth 2.0 to access Google APIs",
+        "url": "https://developers.google.com/identity/protocols/oauth2"
+      },
+      {
+        "title": "Set up OpenID Connect compliant OAuth 2.0",
+        "url": "https://developers.google.com/identity/protocols/oauth2/openid-connect"
+      }
+      ]
+    }
+  ]
+}

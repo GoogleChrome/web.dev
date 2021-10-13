@@ -14,7 +14,7 @@ description: |
   dramatically increase user engagement and keep file size low.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - twa
+  # - twa
   - case-study
 ---
 
@@ -80,7 +80,7 @@ of the platform-specific and web app worlds:
 Running in Chrome also has a number of handy perks.
 For example, TWAs share Chrome's storage,
 including cookies, passwords, and anything stored using the
-[Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API).
+[Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API).
 One benefit of this setup is that users stay logged in
 across the browser and the TWA app.
 

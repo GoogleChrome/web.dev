@@ -1,4 +1,5 @@
 !/.*
+.tmp/*
 dist/*
 types/*
 /src/site/content/en/patterns/**

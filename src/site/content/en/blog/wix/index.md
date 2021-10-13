@@ -16,7 +16,7 @@ hero: image/BrQidfK9jaQyIHwdw91aVpkPiib2/HNGPDotyTYOuPE0YxLQ9.jpg
 alt: "A fast train (source: https://unsplash.com/photos/60VrGk-bfeA)"
 tags:
   - blog
-  - fast
+  # - fast
   - performance
   - web-vitals
   - case-study
@@ -224,7 +224,7 @@ validate that the content hasn't changed. This is done using [HTTP
 ETag](https://en.wikipedia.org/wiki/HTTP_ETag), which is basically an identifier
 assigned to a specific version of an HTML resource. If the content is still the
 same, a [304 Not
-Modified](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304) response
+Modified](https://developer.mozilla.org/docs/Web/HTTP/Status/304) response
 is sent by our servers to the client, without a body.
 
 <figure class="w-figure">

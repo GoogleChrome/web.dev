@@ -125,7 +125,7 @@ critical path, users were able to interact with the page much sooner.
 ## Use a web worker
 
 A blocked main thread is one of the main causes of input delay. [Web
-workers](https://developer.mozilla.org/en-US/docs/Web/API/Worker) make it possible to run JavaScript
+workers](https://developer.mozilla.org/docs/Web/API/Worker) make it possible to run JavaScript
 on a background thread. Moving non-UI operations to a separate worker thread can cut down main
 thread blocking time and consequently improve FID.
 

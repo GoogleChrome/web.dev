@@ -12,7 +12,7 @@ thumbnail: image/admin/c8D4Cj94qLbosd7ptE7Q.jpg
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
-  - frameworks
+  # - frameworks
 ---
 
 Chrome is an active contributor to the web framework ecosystem and our talk at Chrome Dev Summit

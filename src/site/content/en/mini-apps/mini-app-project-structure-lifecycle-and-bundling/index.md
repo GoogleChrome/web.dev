@@ -24,7 +24,7 @@ overall idea, though, is the same for all super app providers. The project struc
 
 - A root file `app.js` that initializes the mini app.
 - A configuration file `app.json` that _roughly_ corresponds to a
-  [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest).
+  [web app manifest](https://developer.mozilla.org/docs/Web/Manifest).
 - An optional common style sheet file `app.css` with shared default styles.
 - A `project.config.json` file that contains build information.
 

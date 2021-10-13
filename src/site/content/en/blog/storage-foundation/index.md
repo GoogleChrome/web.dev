@@ -9,7 +9,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-06-16
-updated: 2021-06-30
+updated: 2021-09-24
 description: |
   The Storage Foundation API is a storage API that resembles a basic file system,
   with direct access to stored data through buffers and offsets. It gives
@@ -31,9 +31,13 @@ origin_trial:
 [capabilities project](https://web.dev/fugu-status/) and is currently in development. This post will
 be updated as the implementation progresses. {% endAside %}
 
+{% Aside %} There is an ongoing effort to bring the Storage Foundation API closer to the
+origin private file system of the File System Access API. For more information, read
+[Accessing files optimized for performance from the origin private file system](/file-system/access/#accessing-files-optimized-for-performance-from-the-origin-private-file-system). {% endAside %}
+
 The web platform increasingly offers developers the tools they need to build fined-tuned
 high-performance applications for the web. Most notably,
-[WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly) (Wasm) has opened the door to
+[WebAssembly](https://developer.mozilla.org/docs/WebAssembly) (Wasm) has opened the door to
 fast and powerful web applications, while technologies like [Emscripten](https://emscripten.org/)
 now allow developers to reuse tried and tested code on the web. To truly leverage this potential,
 developers must have the same power and flexibility when it comes to storage.
@@ -56,24 +60,24 @@ specific use-cases in mind.
 
 - Some of these options clearly do not overlap with this proposal as they only allow very small
   amounts of data to be stored, like
-  [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies), or the
-  [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) consisting of
+  [cookies](https://developer.mozilla.org/docs/Web/HTTP/Cookies), or the
+  [Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API) consisting of
   the `sessionStorage` and the `localStorage` mechanisms.
 - Other options are already deprecated for various reasons like the
-  [File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API/Introduction)
+  [File and Directory Entries API](https://developer.mozilla.org/docs/Web/API/File_and_Directory_Entries_API/Introduction)
   or [WebSQL](https://www.w3.org/TR/webdatabase/).
 - The [File System Access API](/file-system-access/) has a similar API surface, but its use is to
   interface with the client's file system and provide access to data that may be outside of the
   origin's or even the browser's ownership. This different focus comes with stricter security
   considerations and higher performance costs.
-- The [IndexedDB API](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) can be used as
+- The [IndexedDB API](https://developer.mozilla.org/docs/Web/API/IndexedDB_API) can be used as
   a backend for some of the Storage Foundation API's use-cases. For example, Emscripten includes
   [IDBFS](https://emscripten.org/docs/api_reference/Filesystem-API.html), an IndexedDB-based
   persistent file system. However, since IndexedDB is fundamentally a key-value store, it comes with
   significant performance limitations. Furthermore, directly accessing subsections of a file is even
   more difficult and slower under IndexedDB.
 - Finally, the
-  [CacheStorage interface](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage) is widely
+  [CacheStorage interface](https://developer.mozilla.org/docs/Web/API/CacheStorage) is widely
   supported and is tuned for storing large-sized data such as web application resources, but the
   values are immutable.
 
@@ -167,7 +171,7 @@ faster, less reliable variant would be useful. {% endAside %}
   A `NativeIOReadResult` is an object that consists of two entries:
 
   - `buffer`: An
-    [`ArrayBufferView`](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView), which is
+    [`ArrayBufferView`](https://developer.mozilla.org/docs/Web/API/ArrayBufferView), which is
     the result of transferring the buffer passed to `read()`. It is of the same type and length as
     source buffer.
   - `readBytes`: The number of bytes that were successfully read into `buffer`. This may be less
@@ -182,7 +186,7 @@ faster, less reliable variant would be useful. {% endAside %}
   A `NativeIOWriteResult` is an object that consists of two entries:
 
   - `buffer`: An
-    [`ArrayBufferView`](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView) which is
+    [`ArrayBufferView`](https://developer.mozilla.org/docs/Web/API/ArrayBufferView) which is
     the result of transferring the buffer passed to `write()`. It is of the same type and length as
     the source buffer.
   - `writtenBytes`: The number of bytes that were successfully written into `buffer`. This may be

@@ -1,21 +1,63 @@
 title:
   en: Performance audits
+  es: Auditorías de rendimiento
+  ja: パフォーマンスの監査
+  ko: 성능 감사
+  pt: Auditorias de desempenho
+  ru: Аудиты производительности
+  zh: 性能审核
 
 description:
   en: Measure performance and find opportunities to speed up page loads.
+  es: Mida el rendimiento y encuentre oportunidades para acelerar la carga de las páginas.
+  ja: パフォーマンスを測定し、ページの読み込みを高速化するために必要な改善項目を見つけ出します。
+  ko: 성능을 측정하고 페이지 로드 속도를 높일 수 있는 기회를 찾으세요.
+  pt: Meça o desempenho e encontre oportunidades para acelerar o carregamento das páginas.
+  ru: Измерьте производительность, и найдите способы ускорить загрузку страниц.
+  zh: 衡量性能并寻找机会加快网页加载速度。
 
 overview:
   en: These checks ensure that your page is optimized for users to be able to see and interact with page content.
+  es: Estas revisiones garantizan que su página esté optimizada para que los usuarios puedan ver e interactuar con el contenido de la misma.
+  ja: これらを確認することにより、ユーザーがページ内のコンテンツを閲覧したり操作したりすることができるようにページが最適化されているかどうかを確認することができます。
+  ko: 이러한 검사는 사용자가 페이지 콘텐츠를 보고 상호 작용하는 데 페이지가 최적화되었는지 확인합니다.
+  pt: Essas verificações garantem que sua página seja otimizada para que os usuários possam ver e interagir com o conteúdo da página.
+  ru: Эти тесты позволяют убедиться, что ваша страница оптимизирована для просмотра контента и взаимодействия с ним.
+  zh: 这些检查可以确保您的网页已经过优化，使用户能够看到网页内容并与之互动。
 
 topics:
   performance_audit_scoring:
     en: Performance audit scoring
+    es: Puntuación de la auditoría de rendimiento
+    ja: パフォーマンスの監査スコア
+    ko: 성능 감사 점수
+    pt: Pontuação da auditoria de desempenho
+    ru: Оценка результатов аудита производительности
+    zh: 性能审核得分
 
   metrics:
     en: Metrics
+    es: Métricas
+    ja: 指標
+    ko: 메트릭
+    pt: Métricas
+    ru: Показатели
+    zh: 指标
 
   opportunities:
     en: Opportunities
+    es: Oportunidades
+    ja: 改善項目
+    ko: 기회
+    pt: Oportunidades
+    ru: Возможности
+    zh: 机会
 
   diagnostics:
     en: Diagnostics
+    es: Diagnósticos
+    ja: 診断
+    ko: 진단
+    pt: Diagnóstico
+    ru: Диагностика
+    zh: 诊断

@@ -13,7 +13,7 @@ related_post: fix-http-status-codes
 
 Single Page Apps can show different content without loading a new page. To do
 so, they use click handlers on links and the History API. The [History
-API](https://developer.mozilla.org/en-US/docs/Web/API/History) allows to
+API](https://developer.mozilla.org/docs/Web/API/History) allows to
 manipulate the browser session history. This way we can update the URL when
 showing a different page (usually called a "view" in Single Page Apps). It also
 makes sure the browser's back button still works as expected.

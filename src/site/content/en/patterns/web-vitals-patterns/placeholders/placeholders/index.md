@@ -1,7 +1,8 @@
 ---
 layout: pattern
 title: Placeholders
-description: Reserve space for future page content
+description: These placeholders provide users with a visual indication that
+  new content is loading; they also help prevent layout shifts.
 date: 2021-08-23
 updated: 2021-08-23
 height: 700

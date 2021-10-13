@@ -96,7 +96,7 @@ and response pair.
 
 The first row of the new entries represents a request with a type of `fetch`,
 which corresponds to the
-[way the web app requests data](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+[way the web app requests data](https://developer.mozilla.org/docs/Web/API/Fetch_API)
 from the Wikipedia API.
 
 The following rows all are images (`png` or `jpeg`) associated with the

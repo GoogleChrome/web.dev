@@ -77,7 +77,7 @@ A continuación, se muestran las puntuaciones del TBT antes y después de optimi
 
 ## Utilice un trabajador web
 
-Un subproceso principal bloqueado es una de las principales causas de que haya retrasos en la entrada. Los [trabajadores web](https://developer.mozilla.org/en-US/docs/Web/API/Worker) hacen posible ejecutar JavaScript en subprocesos en segundo plano. Mover las operaciones que no se efectúan en la interfaz del usuario hacia un subproceso del trabajo independiente, puede reducir el tiempo de bloqueo del subproceso principal y, en consecuencia, mejorar la FID.
+Un subproceso principal bloqueado es una de las principales causas de que haya retrasos en la entrada. Los [trabajadores web](https://developer.mozilla.org/docs/Web/API/Worker) hacen posible ejecutar JavaScript en subprocesos en segundo plano. Mover las operaciones que no se efectúan en la interfaz del usuario hacia un subproceso del trabajo independiente, puede reducir el tiempo de bloqueo del subproceso principal y, en consecuencia, mejorar la FID.
 
 Considere usar las siguientes bibliotecas para facilitar el uso de los trabajadores web en su sitio:
 

@@ -13,3 +13,5 @@ Paint (LCP)](https://web.dev/lcp).
 In addition, fonts can cause [layout
 shifts](https://web.dev/debug-layout-shifts). These layout shifts occur when a
 web font and its fallback font take up different amounts of space on the page.
+
+For more information, see [Best practices for fonts](https://web.dev/font-best-practices/).

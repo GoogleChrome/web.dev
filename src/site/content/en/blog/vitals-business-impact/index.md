@@ -12,6 +12,7 @@ authors:
   - saurabhrajpal
   - swethagopalakrishnan
 date: 2021-05-18
+updated: 2021-09-30
 hero: image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/m80oUd2zASInyKJJ7QNc.png
 # thumbnail: image/admin/i2nyfqyVr4XWqilOxPrY.png
 alt: LCP, FID, CLS.
@@ -70,7 +71,7 @@ Let's explore several case studies of global and local brands who adopted Core W
 
 ### Vodafone
 
-Vodafone (Italy) improved LCP by **31%** to achieve **8% more sales**.
+[Vodafone (Italy) improved LCP](/vodafone) by **31%** to achieve **8% more sales**.
 
 {% Img
 src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/OThyIjGk0YMLgXbvMbFT.png",
@@ -129,16 +130,37 @@ to monitor progress and impact across teams.
 - Experimented with different rendering techniques
 (for example, SSR LCP element vs SSR above the fold content vs Full client-side rendering).
 
+### Redbus
+
+CWV fixes contributed to 80-100% mobile conversion rates(mCVR) and significant domain ranking uplift across Redbus’s global market properties.
+
+{% Img 
+src="image/akX10MMTHtVhXYWSgqNknjak5KQ2/1988aZMNJ7viKhj8U3aS.png", 
+alt="192% domain ranking uplift in Columbia", 
+width="800", height="360" %}
+
+#### Techniques
+
+- Fixing slots for page components and removing unoptimized tag insertion scripts [improved CLS](/optimize-cls).
+- [Optimizing third-party scripts](/controlling-third-party-scripts) and building microservices with single responsibility principle significantly reduced TTI and TBT.
+
+#### Key learnings
+
+- Reducing CLS from 1.65 to 0 significantly uplifted their domain rankings globally.
+- Reducing TTI from around 8&nbsp;s to  around 4&nbsp;s and TBT from around 1200&nbsp;ms to around 700&nbsp;ms contributed to an 80-100% increase in mCVR across global properties.
+- [Using RUM tools](/vitals-measurement-getting-started) helped capture the real world performance metrics in lower tier markets.
+- Adopting a [performance culture](/performance-budgets-101) is very important to avoid regression. This also improves team productivity thanks to optimized code, faster releases, and fewer production issues.
+
 The case studies above show that you can achieve a lot
 by adopting best practices and implementing quick wins.
 Here are a few more real-world examples of this point.
 
-{% Img
-src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/hIDblcgodY2P2ltWd9nt.png",
-alt="GEDI saw 77% reduction in CLS and 8% reduction in bounce rate,
-Lazada saw 3xLCP and 16.9 increase in conversion rate on mobile,
-GYAO saw 3.1x LCP and 108% improvement in click-thorugh rate",
-width="800", height="447" %}
+{% Img 
+src="image/akX10MMTHtVhXYWSgqNknjak5KQ2/zqcmwjQjSsuTqswQOxqR.png", 
+alt="Netzwelt saw 18 percent increase ads revenue,
+Lazada saw 3x LCP and 16.9 percent increase in conversion rate on mobile,
+GYAO saw 3.1x LCP and 108 percent improvement in click-through rate", 
+width="800", height="437" %}
 
 The above results were achieved by grabbing low hanging fruit such as:
 
@@ -196,9 +218,10 @@ to audit your website and get actionable recommendations immediately.
 
 There are several more global brands which have also benefited from investing in Core Web Vitals.
 
-{% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/awVh5EYicG4VRqOWb3au.png",
-alt="",
-width="800", height="424" %}
+{% Img 
+src="image/akX10MMTHtVhXYWSgqNknjak5KQ2/uKMplYNMdeDswi14lWhM.png", 
+alt="", 
+width="800", height="400" %}
 
 - Tencent Video saw **70% better CTR** for videos by passing Core Web Vitals.
 - Cdiscount improved all 3 metrics which contributed to **6% revenue uplift** in their Black Friday sale.
@@ -206,11 +229,12 @@ width="800", height="424" %}
 - Nykaa found that a 40% improvement in LCP led to **28% more organic traffic** from T2/T3 cities.
 - NIKKEI STYLE's 18% LCP improvement resulted in **9% more pageviews per session**.
 - <a href="/ndtv">NDTV gained a **50% better bounce rate** after halving LCP, along with other product changes.</a>.
-- <a href="/agrofy/">Full case studyAgrofy Market's 70% better LCP correlated to **76% reduction in load abandonment**.</a>.
+- <a href="/agrofy/">Agrofy Market's 70% better LCP correlated to **76% reduction in load abandonment**.</a>.
 - Flipkart achieved **2.6% reduction in bounce rate** by improving Core Web Vitals metrics.
 - Ameba Manga improved the **number of comics read by 2-3 times** by improving the CLS score 10 times.
 - <a href="/yahoo-japan-news/">Yahoo! Japan fixed CLS which led to a 98% reduction in poor pages and **15% uplift in page views per session**.</a>.
 - AliExpress improved CLS by 10 times and LCP by double, which translated to **15% lesser bounce rates**.
+- GEDI saw 77% reduction in CLS and an **8% reduction in bounce rate**.
 
 ## How can you get started now?
 

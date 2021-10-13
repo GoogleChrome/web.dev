@@ -12,7 +12,7 @@ description: |
 wf_blink_components: Blink>Performance
 tags:
   - blog
-  - e-commerce
+  # - e-commerce
   - performance
 ---
 

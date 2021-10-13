@@ -12,7 +12,7 @@ date: 2019-02-15
 updated: 2021-02-26
 tags:
   - blog
-  - intersectionobserver
+  # - intersectionobserver
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/wUCO2CgK5UOz6URpXEtd.jpeg
 alt: Eye of a cat looking through a gap in a fence.
 ---
@@ -34,7 +34,7 @@ and many more.
 {% YouTube 'kW_atFXMG98' %}
 
 For the full details, check out the
-[Intersection Observer docs on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API),
+[Intersection Observer docs on MDN](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API),
 but as a short reminder, this is what the Intersection Observer&nbsp;v1 API looks like in the most
 basic case:
 
@@ -63,7 +63,7 @@ the element's visual display has been modified by visual effects like `transform
 
 For an element in the top-level document, this information can be determined by analyzing
 the DOM via JavaScript, for example via
-[`DocumentOrShadowRoot.elementFromPoint()`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/elementFromPoint)
+[`DocumentOrShadowRoot.elementFromPoint()`](https://developer.mozilla.org/docs/Web/API/DocumentOrShadowRoot/elementFromPoint)
 and then digging deeper.
 In contrast, the same information cannot be obtained if the element in question is
 located in a third-party iframe.
@@ -92,9 +92,9 @@ completely transparent when you (pretend-involuntarily) clicked it.
 Intersection Observer&nbsp;v2 introduces the concept of tracking the actual "visibility" of a target
 element as a human being would define it.
 By setting an option in the
-[`IntersectionObserver` constructor](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver),
+[`IntersectionObserver` constructor](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/IntersectionObserver),
 intersecting
-[`IntersectionObserverEntry`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry)
+[`IntersectionObserverEntry`](https://developer.mozilla.org/docs/Web/API/IntersectionObserverEntry)
 instances will then contain a new boolean field named `isVisible`.
 A `true` value for `isVisible` is a strong guarantee from the underlying implementation
 that the target element is completely unoccluded by other content

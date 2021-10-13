@@ -192,7 +192,7 @@ Inspecting the WebView on a real device via [about://inspect/#devices](about://i
 reveals that WeChat DevTools was deliberately hiding the truth. Where WeChat DevTools showed an
 `<image>`, the actual thing I am looking at is a custom element called `<wx-image>` with a `<div>`
 as its only child. It is interesting to note that this custom element does not use
-[Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM). More on
+[Shadow DOM](https://developer.mozilla.org/docs/Web/Web_Components/Using_shadow_DOM). More on
 these components [later](/mini-app-components/).
 
 <figure class="w-figure">

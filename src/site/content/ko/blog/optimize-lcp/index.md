@@ -73,7 +73,7 @@ HTML이 고정적이며 모든 요청에 대해 변경할 필요가 없는 경�
 
 ### HTML 페이지 캐시 우선 제공
 
-설치되면 [서비스 작업자](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)가 브라우저 백그라운드에서 실행되고 서버의 요청을 가로챌 수 있습니다. 이 수준의 프로그래밍 방식 캐시 제어를 사용하면 HTML 페이지 콘텐츠의 일부 또는 전체를 캐시하고 콘텐츠가 변경된 경우에만 캐시를 업데이트할 수 있습니다.
+설치되면 [서비스 작업자](https://developer.mozilla.org/docs/Web/API/Service_Worker_API)가 브라우저 백그라운드에서 실행되고 서버의 요청을 가로챌 수 있습니다. 이 수준의 프로그래밍 방식 캐시 제어를 사용하면 HTML 페이지 콘텐츠의 일부 또는 전체를 캐시하고 콘텐츠가 변경된 경우에만 캐시를 업데이트할 수 있습니다.
 
 다음 차트는 이 패턴을 사용하여 사이트에서 LCP 분포가 어떻게 감소했는지 보여줍니다.
 
@@ -250,9 +250,9 @@ CSS 또는 JavaScript 차단 시간이 증가는 성능 저하에 직접적 영�
 
 - `<img>` 요소
 - `<svg>` 요소 내부의 `<image>`
-- `<video>` 요소([포스터](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-poster) 이미지는 LCP 측정에 사용됨)
-- [`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url()) 함수를 통해 로드된 배경 이미지가 있는 요소<a>(CSS 그라데이션</a>과는 대조적임)
-- 텍스트 노드 또는 기타 인라인 수준 텍스트 요소를 포함하는 [블록 수준 요소](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)
+- `<video>` 요소([포스터](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster) 이미지는 LCP 측정에 사용됨)
+- [`url()`](https://developer.mozilla.org/docs/Web/CSS/url()) 함수를 통해 로드된 배경 이미지가 있는 요소<a>(CSS 그라데이션</a>과는 대조적임)
+- 텍스트 노드 또는 기타 인라인 수준 텍스트 요소를 포함하는 [블록 수준 요소](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
 
 스크롤 없이 볼 수 있는 상태로 렌더링된 경우 이러한 요소를 로드하는 데 걸리는 시간은 LCP에 직접적인 영향을 미칩니다. 이러한 파일이 가능한 한 빨리 로드되도록 하는 몇 가지 방법이 있습니다.
 
@@ -290,7 +290,7 @@ CSS 또는 JavaScript 차단 시간이 증가는 성능 저하에 직접적 영�
 
 특정 CSS 또는 JavaScript 파일에서 선언되거나 사용되는 중요한 리소스는 애플리케이션의 수많은 CSS 파일 중 하나에 저장된 글꼴처럼 생각보다 늦게 가져오게 될 수 있습니다.
 
-특정 리소스에 우선순위를 지정해야 하는 경우 `<link rel="preload">`를 사용해 더 빨리 가져옵니다. [다양한 유형의 리소스](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded)를 미리 로드할 수 있지만 먼저 글꼴, 스크롤 없이 볼 수 있는 이미지 또는 동영상, 중요한 경로 CSS 또는 JavaScript와 같은 [중요한 자산을 미리 로드](/preload-critical-assets/)하는 데 집중해야 합니다.
+특정 리소스에 우선순위를 지정해야 하는 경우 `<link rel="preload">`를 사용해 더 빨리 가져옵니다. [다양한 유형의 리소스](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded)를 미리 로드할 수 있지만 먼저 글꼴, 스크롤 없이 볼 수 있는 이미지 또는 동영상, 중요한 경로 CSS 또는 JavaScript와 같은 [중요한 자산을 미리 로드](/preload-critical-assets/)하는 데 집중해야 합니다.
 
 ```html
 <link rel="preload" as="script" href="script.js" />

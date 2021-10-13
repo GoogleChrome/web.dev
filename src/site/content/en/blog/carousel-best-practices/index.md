@@ -9,7 +9,7 @@ date: 2021-01-26
 hero: image/admin/i7tjE04MYo7xJOZKkyQI.jpg
 tags:
   - blog
-  - fast
+  # - fast
   - performance
   - web-vitals
 ---
@@ -119,7 +119,7 @@ layout shifts in carousels:
   usually caused by updating the layout-inducing properties of DOM elements.
   Examples of some of these properties include: `left`, `top`, `width`, and
   `marginTop`. To avoid layout shifts, instead use the CSS
-  [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+  [`transform`](https://developer.mozilla.org/docs/Web/CSS/transform)
   property to transition these elements. This
   [demo](https://glitch.com/~basic-carousel) shows how to use `transform` to
   build a basic carousel.
@@ -145,9 +145,9 @@ carousels:
 - **Scrolling:** Some carousels allow users to use scrolling to navigate through
   carousel slides. If an element's start position changes but its scroll offset
   (that is,
-  [`scrollLeft`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft)
+  [`scrollLeft`](https://developer.mozilla.org/docs/Web/API/Element/scrollLeft)
   or
-  [`scrollTop`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop))
+  [`scrollTop`](https://developer.mozilla.org/docs/Web/API/Element/scrollTop))
   changes by the same amount (but in the opposite direction) this is not
   considered a layout shift provided that they occur in the same frame.
 
@@ -166,7 +166,7 @@ like jQuery.
 
 However, dependng on the type of carousel you are building, you may not need
 JavaScript at all. The new [Scroll
-Snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap) API
+Snap](https://developer.mozilla.org/docs/Web/CSS/CSS_Scroll_Snap) API
 makes it possible to implement carousel-like transitions using only HTML and
 CSS.
 
@@ -184,7 +184,7 @@ Carousels often contain some of a site's largest images, so it can be worth your
 time to make sure that these images are fully optimized. Choosing the right
 image format and compression level, [using an image CDN](/image-cdns), and
 [using srcset to serve multiple image
-versions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap) are
+versions](https://developer.mozilla.org/docs/Web/CSS/CSS_Scroll_Snap) are
 all techniques that can reduce the transfer size of images.
 
 
@@ -214,7 +214,7 @@ These are the key points to understanding how LCP calculation works for carousel
     intrinsic size, whichever is smaller](/lcp)." Thus, if an autoplaying
     carousel displays images at a consistent size, but contains images of
     varying [intrinsic
-    sizes](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size)
+    sizes](https://developer.mozilla.org/docs/Glossary/Intrinsic_Size)
     that are smaller than the display size, the LCP element may change as new
     slides are displayed. In this case, if all images are displayed at the same
     size, the image with the largest intrinsic size will be considered the LCP

@@ -10,8 +10,8 @@ updated: 2021-07-29
 tags:
   - blog
   - capabilities
-  - input
-  - clipboard
+  # - input
+  # - clipboard
 hero: image/admin/aA9eqo0ZZNHFcFJGUGQs.jpg
 alt: Clipboard with shopping list
 feedback:
@@ -42,7 +42,7 @@ block the page. Safari recently announced  [support for it in version
 level of support in place. As of this writing, Firefox only supports text; and
 image support is limited to PNGs in some browsers. If you're interested in using
 the API,
-[consult a browser support table](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard#Browser_compatibility)
+[consult a browser support table](https://developer.mozilla.org/docs/Web/API/Clipboard#Browser_compatibility)
 before proceeding.
 
 {% Aside %}
@@ -77,15 +77,15 @@ method, which also lets you copy images to the clipboard. Like `writeText()`, it
 is asynchronous and returns a Promise.
 
 To write an image to the clipboard, you need the image as a
-[`blob`](https://developer.mozilla.org/en-US/docs/Web/API/blob). One way to do
+[`blob`](https://developer.mozilla.org/docs/Web/API/blob). One way to do
 this is by requesting the image from a server using `fetch()`, then calling
-[`blob()`](https://developer.mozilla.org/en-US/docs/Web/API/Body/blob) on the
+[`blob()`](https://developer.mozilla.org/docs/Web/API/Body/blob) on the
 response.
 
 Requesting an image from the server may not be desirable or possible for a
 variety of reasons. Fortunately, you can also draw the image to a canvas and
 call the canvas'
-[`toBlob()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)
+[`toBlob()`](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob)
 method.
 
 Next, pass an array of `ClipboardItem` objects as a parameter to the `write()`
@@ -131,7 +131,7 @@ try {
 
 In the case where a user initiates a clipboard copy, non-textual data is
 provided as a Blob for you. The
-[`copy` event](https://developer.mozilla.org/en-US/docs/Web/API/Document/copy_event)
+[`copy` event](https://developer.mozilla.org/docs/Web/API/Document/copy_event)
 includes a `clipboardData` property with the items already in the right format,
 eliminating the need to manually create a Blob. Call `preventDefault()` to
 prevent the default behavior in favor of your own logic, then copy contents to
@@ -184,7 +184,7 @@ for the returned Promise to resolve:
 
 The `navigator.clipboard.read()` method is also asynchronous and returns a
 Promise. To read an image from the clipboard, obtain a list of
-[`ClipboardItem`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem)
+[`ClipboardItem`](https://developer.mozilla.org/docs/Web/API/ClipboardItem)
 objects, then iterate over them.
 
 Each `ClipboardItem` can hold its contents in different types, so you'll need to
@@ -260,7 +260,7 @@ match style** or **Paste without formatting**.
 
 The following example shows how to do this. This example uses `fetch()` to obtain
 image data, but it could also come from a
-[`<canvas>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)
+[`<canvas>`](https://developer.mozilla.org/docs/Web/HTML/Element/canvas)
 or the [File System Access API](/file-system-access/).
 
 ```js
@@ -422,7 +422,7 @@ The first example demonstrates moving text on and off the clipboard.
 
 To try the API with images use this demo. Recall that only PNGs are supported
 and only in
-[a few browsers](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API#browser_compatibility).
+[a few browsers](https://developer.mozilla.org/docs/Web/API/Clipboard_API#browser_compatibility).
 
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe
@@ -437,19 +437,19 @@ and only in
 
 Chrome is actively working on expanding the Asynchronous Clipboard API with
 simplified events aligned with the
-[Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API).
+[Drag and Drop API](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API).
 Because of potential risks Chrome is
 treading carefully. To stay up to date on Chrome's progress, watch this article
 and our [blog](/blog/) for updates.
 
 For now, support for the Clipboard API is available in
-[a number of browsers](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard#Browser_compatibility).
+[a number of browsers](https://developer.mozilla.org/docs/Web/API/Clipboard#Browser_compatibility).
 
 Happy copying and pasting!
 
 ## Related links
 
-* [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API)
+* [MDN](https://developer.mozilla.org/docs/Web/API/Clipboard_API)
 
 ## Acknowledgements
 

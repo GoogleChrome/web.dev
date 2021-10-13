@@ -10,6 +10,8 @@ pageScripts:
   /patterns/ -> PatternSuites -> PatternSets -> Patterns
 #}
 
+{% from 'macros/code-pattern.njk' import codePattern with context %}
+
 {% if page.url %}
   {% set patternSetId = page.url | getRelativePath('/patterns/') %}
 {% else %}
@@ -44,17 +46,17 @@ pageScripts:
   {{ breadcrumbs(crumbs) }}
 </section>
 
-<header class="w-masthead-about">
-  <div class="w-masthead-about__container w-masthead-patterns__container">
-    <div class="w-masthead-about__left">
-      <h1 class="w-headline--two w-font-weight--medium w-mt--non">
+<header class="w-masthead-patterns">
+  <div class="w-masthead-patterns__container w-layout-container--wide">
+    <div class="w-masthead-patterns__left">
+      <h1 class="w-headline--two">
         {{ patternSuite.title }}
       </h1>
       <p>
         {{ patternSuite.description }}
       </p>
     </div>
-    <div class="w-masthead-about__right">
+    <div class="w-masthead-patterns__right">
       {% Img
           height=220,
           width=330,
@@ -90,16 +92,11 @@ pageScripts:
   <div>
     {# Show patterns from current set (if set) or from the whole suite #}
     {% if currentPatternSet %}
-
-      <h2> {{ currentPatternSet.title }} </h2>
+      <h2 class="w-headline--two">{{ currentPatternSet.title }}</h2>
       {{ currentPatternSet.content | safe }}
       {% for patternId, pattern in patterns.patterns %}
         {% if pattern.set == currentPatternSet.id %}
-          <div class="flow">
-            <h3 id="{{pattern.id}}"><a href="/patterns/{{pattern.id}}">{{pattern.title}}</a></h3>
-            {{ pattern.content | safe }}
-            {% CodePattern pattern.id %}
-          </div>
+          {{ codePattern(pattern) }}
         {% endif %}
       {% endfor %}
 
@@ -108,15 +105,11 @@ pageScripts:
       {# Patterns in PatternSets that belong to the current suite #}
       {% for patternSetId, patternSet in patterns.sets %}
         {% if patternSet.suite == patternSuite.id %}
-          <h2> {{ patternSet.title }} </h2>
+          <h2 class="w-headline--two">{{ patternSet.title }}</h2>
           {{ patternSet.content | safe }}
           {% for patternId, pattern in patterns.patterns %}
             {% if pattern.set == patternSetId %}
-              <div class="flow">
-                <h3 id="{{pattern.id}}"><a href="/patterns/{{pattern.id}}">{{pattern.title}}</a></h3>
-                {{ pattern.content | safe }}
-                {% CodePattern pattern.id %}
-              </div>
+              {{ codePattern(pattern) }}
             {% endif %}
           {% endfor %}
         {% endif %}
@@ -128,13 +121,10 @@ pageScripts:
         {% if pattern.set == patternSuite.id %}
           {% if first %}
             <h2>{{ "i18n.patterns.other_patterns" | i18n(locale) }}</h2>
+            {{ patternSet.content | safe }}
           {% endif %}
           {% set first = false %}
-          <div class="flow">
-            <h3 id="{{pattern.id}}"><a href="/patterns/{{pattern.id}}">{{pattern.title}}</a></h3>
-            {{ pattern.content | safe }}
-            {% CodePattern pattern.id %}
-          </div>
+          {{ codePattern(pattern) }}
         {% endif %}
       {% endfor %}
 
@@ -146,6 +136,11 @@ pageScripts:
       {# <input type="text" placeholder="filter"/> #}
     </div>
     <nav class="code-patterns-nav__sets">
+      {% if currentPatternSet %}
+        <a href="/patterns/{{patternSuite.id}}">All</a>
+      {% else %}
+        <a class="selected" href="/patterns/{{patternSuite.id}}">All</a>
+      {% endif %}
       {% for setId, set in patterns.sets %}
         {% if set.suite == patternSuite.id %}
           {% if setId == currentPatternSet.id %}

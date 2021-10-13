@@ -66,7 +66,7 @@ CLS는 페이지의 전체 수명 동안 발생하는 모든 [예기치 않은](
 
 ## 레이아웃 이동 상세 정보
 
-레이아웃 이동은 [Layout Instability API](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)가 정의하는 것으로, 뷰포트 내의 가시적 요소가 두 프레임 사이에서 시작 위치가 변경될 때마다(예: 기본 [쓰기 모드](https://github.com/WICG/layout-instability) 의 상단 및 왼쪽 위치) `layout-shift` 항목을 보고합니다. 그리고 이러한 요소는 *불안정 요소*로 간주됩니다.
+레이아웃 이동은 [Layout Instability API](https://developer.mozilla.org/docs/Web/CSS/writing-mode)가 정의하는 것으로, 뷰포트 내의 가시적 요소가 두 프레임 사이에서 시작 위치가 변경될 때마다(예: 기본 [쓰기 모드](https://github.com/WICG/layout-instability) 의 상단 및 왼쪽 위치) `layout-shift` 항목을 보고합니다. 그리고 이러한 요소는 *불안정 요소*로 간주됩니다.
 
 레이아웃 이동은 기존 요소가 시작 위치를 변경할 때만 발생합니다. 새 요소가 DOM에 추가되거나 기존 요소의 크기가 변경되면 변경으로 인해 다른 가시적 요소의 시작 위치가 변경되지 않는 한 레이아웃 이동으로 간주되지 않습니다.
 
@@ -148,7 +148,7 @@ layout shift score = impact fraction * distance fraction
 
 제대로 된 애니메이션 및 전환은 사용자를 놀라게 하지 않고서도 페이지의 콘텐츠를 업데이트할 수 있는 좋은 방법입니다. 페이지에서 갑자기 예기치 않게 콘텐츠가 이동하는 경우는 거의 항상 좋지 않은 사용자 경험으로 이어집니다 그러나 한 위치에서 다음 위치로 점진적이고 자연스럽게 이동하는 콘텐츠는 사용자가 상황을 더 잘 이해하고, 사용자에게 상태의 변경을 안내하는 데 도움이 됩니다.
 
-CSS [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) 속성을 사용하면 레이아웃 이동을 트리거하지 않고 요소에 애니메이션을 적용할 수 있습니다.
+CSS [`transform`](https://developer.mozilla.org/docs/Web/CSS/transform) 속성을 사용하면 레이아웃 이동을 트리거하지 않고 요소에 애니메이션을 적용할 수 있습니다.
 
 - `height` 및 `width` 속성을 변경하는 대신 `transform: scale()`을 사용하세요.
 - 요소를 이동하려면 `top` , `right` , `bottom` 또는 `left` 속성을 변경하는 것은 피하고, 대신 `transform: translate()`를 사용하세요.
@@ -174,7 +174,7 @@ CLS는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 
 ### JavaScript에서 CLS 측정
 
-JavaScript에서 CLS를 측정하려면 [Layout Instability API를](https://github.com/WICG/layout-instability) 사용할 수 있습니다. 다음 예시에서는 예기치 않은 `layout-shift` 항목을 수신 대기하고, 세션으로 그룹화하고, 변경될 때마다 최대 세션 값을 기록하는 [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) 를 생성하는 방법을 보여줍니다.
+JavaScript에서 CLS를 측정하려면 [Layout Instability API를](https://github.com/WICG/layout-instability) 사용할 수 있습니다. 다음 예시에서는 예기치 않은 `layout-shift` 항목을 수신 대기하고, 세션으로 그룹화하고, 변경될 때마다 최대 세션 값을 기록하는 [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) 를 생성하는 방법을 보여줍니다.
 
 ```js
 let clsValue = 0;

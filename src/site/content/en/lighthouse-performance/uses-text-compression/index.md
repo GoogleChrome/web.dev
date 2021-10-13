@@ -46,7 +46,7 @@ Enable text compression on the server(s) that served these responses in order to
 pass this audit.
 
 When a browser requests a resource, it will use the
-[`Accept-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding)
+[`Accept-Encoding`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Encoding)
 HTTP request header to indicate what compression algorithms it supports.
 
 ```text
@@ -58,7 +58,7 @@ If the browser supports [Brotli](https://opensource.googleblog.com/2015/09/intro
 other compression algorithms. Search for `how to enable Brotli compression in <X>`, where
 `<X>` is the name of your server. As of June 2020 Brotli is supported in all major browsers except
 Internet Explorer, desktop Safari, and Safari on iOS. See
-[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding#Browser_compatibility)
+[Browser compatibility](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Encoding#Browser_compatibility)
 for updates.
 
 Use GZIP as a fallback to Brotli. GZIP is supported in all major browsers,
@@ -66,7 +66,7 @@ but is less efficient than Brotli. See [Server Configs](https://github.com/h5bp/
 for examples.
 
 Your server should return the
-[`Content-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding)
+[`Content-Encoding`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Encoding)
 HTTP response header to indicate what compression algorithm it used.
 
 ```text

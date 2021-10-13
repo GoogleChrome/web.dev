@@ -10,7 +10,7 @@ date: 2020-05-06
 
 [Maskable icons][guide] is a new icon format that ensures that your PWA icon looks
 great on all Android devices. On newer Android devices, PWA icons that don't follow
-the maskable icon format are a given a white background. When you use a maskable
+the maskable icon format are given a white background. When you use a maskable
 icon, it ensures that the icon takes up all of the space that Android provides for it.
 
 ## How the Lighthouse maskable icon audit fails

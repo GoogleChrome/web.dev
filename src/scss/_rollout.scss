@@ -1,0 +1,95 @@
+/// ROLLOUT PATCHES
+/// These styles must be removed when the rollout is complete.
+/// They tweak existing, difficult to change, elements but should
+/// be completely useless once those elements have been changed
+.w-visually-hidden {
+  @extend .visually-hidden;
+}
+
+.w-table-wrapper {
+  @extend .table-wrapper;
+}
+
+.w-callout {
+  max-width: $global-prose-element-max-width;
+  border: 1px solid get-utility-value('color', 'stroke');
+}
+
+.w-callout__lockup::before {
+  display: none;
+}
+
+web-response-mc {
+  display: block;
+  margin-block-start: get-size('base');
+}
+
+/// These overly specific selectors are unfortunately going to have to
+/// stay until we can either: rip the CSS out of the web components or
+/// get into the web component CSS safely and refactor
+.web-assessment__lockup,
+web-tabs .web-tabs__tab[aria-selected='true'] {
+  color: #{get-utility-value('color', 'state-good-text')} !important;
+}
+
+web-tabs .web-tabs__tab[aria-selected='true']::after {
+  background: #{get-utility-value('color', 'state-good-text')} !important;
+}
+
+.web-question__content {
+  padding: $global-gutter !important;
+
+  [data-role='stimulus'] {
+    @extend .flow;
+  }
+}
+
+.web-assessment__launcher {
+  padding: $global-gutter-narrow;
+  @include apply-utility('bg', 'mid-bg');
+
+  .web-assessment__open {
+    @extend .button;
+
+    width: max-content;
+    margin-block-start: get-space('base');
+
+    &:hover {
+      @include apply-utility('bg', 'accent-bg');
+    }
+  }
+}
+
+.web-assessment__close {
+  @extend .button;
+
+  padding: 0.5rem;
+}
+
+.web-assessment__button {
+  @extend .button;
+}
+
+.web-tabs__text-label {
+  color: get-utility-value('color', 'core-text') !important;
+}
+
+/// The assesment component recreates inputs, so we need to pull that out
+.web-select-group__input {
+  opacity: 1 !important;
+}
+
+.web-select-group__selector {
+  display: none !important;
+}
+
+.web-select-group__option-content {
+  padding-inline-start: $global-gutter-narrow;
+}
+
+/// RESPONSIVE OVERRIDES
+@include media-query('md') {
+  web-assessment.w-callout {
+    margin-inline: auto !important;
+  }
+}

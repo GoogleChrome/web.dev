@@ -123,7 +123,7 @@ Click **View App** to see your styled sign-up form. Then click **View Source** t
 
 * Try adjusting `padding`, `margin`, and `font-size` to suit your test devices.
 
-* The CSS is mobile-first. [Media queries](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries) 
+* The CSS is mobile-first. [Media queries](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Media_queries) 
 are used to apply CSS rules for viewports that are at least `400px` wide, and then again for 
 viewports that are at least `500px` wide. Are these [breakpoints](https://www.browserstack.com/guide/responsive-design-breakpoints) 
 adequate? How should you choose breakpoints for forms?
@@ -186,7 +186,7 @@ complete missing data and sets focus. That's because you added the `require` att
 inputs. Now try submitting with a password that has less than eight characters. The browser warns that 
 the password isn't long enough and sets focus on the password input because of the `minlength="8"` 
 attribute. The same works for `pattern` (used for the name input) and other 
-[validation constraints](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation). 
+[validation constraints](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5/Constraint_validation). 
 The browser does all this automatically, without needing any extra code.
 
 Using the `autocomplete` value `name` for the **Full name** input makes sense, but what about the 

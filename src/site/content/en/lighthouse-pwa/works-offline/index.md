@@ -22,7 +22,7 @@ Learn more in the [What is network reliability and how do you measure it?](/netw
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that don't respond with an
-[HTTP 200 response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#Successful_responses)
+[HTTP 200 response](https://developer.mozilla.org/docs/Web/HTTP/Status#Successful_responses)
 when offline:
 
 <figure class="w-figure">
@@ -30,7 +30,7 @@ when offline:
 </figure>
 
 Lighthouse emulates an offline connection using the [Chrome Remote Debugging Protocol](https://github.com/ChromeDevTools/devtools-protocol)
-and then attempts to retrieve the page using [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest).
+and then attempts to retrieve the page using [`XMLHttpRequest`](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest).
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 

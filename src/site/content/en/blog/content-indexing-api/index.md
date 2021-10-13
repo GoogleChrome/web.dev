@@ -10,9 +10,9 @@ tags:
   - blog
   - capabilities
   - service-worker
-  - chrome80
-  - index
-  - caching
+  # - chrome80
+  # - index
+  # - caching
 hero: image/admin/tuIkBEm2DdHBYy62dDac.jpg
 alt: Index cards in a filing cabinet.
 feedback:
@@ -33,7 +33,7 @@ of the current state of your network connection. Technologies like [service
 workers](https://developers.google.com/web/fundamentals/primers/service-workers),
 the [Cache Storage
 API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api),
-and [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
+and [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API)
 provide you with the building blocks for storing and serving data when folks
 interact directly with a PWA. But building a high-quality, offline-first PWA is
 only part of the story. If folks don't realize that a web app's content is
@@ -133,11 +133,11 @@ belonging to a completely different domain into the content index.
 The Content Indexing API supports three operations: adding, listing, and
 removing metadata. These methods are exposed from a new property, `index`, that
 has been added to the
-<code>[ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration)</code>
+<code>[ServiceWorkerRegistration](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration)</code>
 interface.
 
 The first step in indexing content is getting a reference to the current
-[`ServiceWorkerRegistration`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration). Using <code>[navigator.serviceWorker.ready](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/ready)</code> is the most straightforward way:
+[`ServiceWorkerRegistration`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration). Using <code>[navigator.serviceWorker.ready](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/ready)</code> is the most straightforward way:
 
 ```js
 const registration = await navigator.serviceWorker.ready;
@@ -151,7 +151,7 @@ if ('index' in registration) {
 If you're making calls to the Content Indexing API from within a service worker,
 rather than inside a web page, you can refer to the `ServiceWorkerRegistration`
 directly via `registration`. It will [already be
-defined](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/registration)
+defined](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/registration)
 as part of the `ServiceWorkerGlobalScope.`
 
 ### Adding to the index {: #adding-items }
@@ -276,7 +276,7 @@ self.addEventListener('contentdelete', (event) => {
   interaction with the browser's built-in user interface. It is _not_ fired when
   `registration.index.delete()` is called. If your web app triggers the index
   deletion using that API method, it should also [clean up cached
-  content](https://developer.mozilla.org/en-US/docs/Web/API/Cache/delete) at the
+  content](https://developer.mozilla.org/docs/Web/API/Cache/delete) at the
   same time.
 {% endAside %}
 

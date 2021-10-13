@@ -75,7 +75,7 @@ This is an example of a detached window. The popup window was closed, but our co
 to it that prevents the browser from being able to destroy it and reclaim that memory.
 
 When a page calls `window.open()` to create a new browser window or tab, a
-[`Window`](https://developer.mozilla.org/en-US/docs/Web/API/Window) object is returned that
+[`Window`](https://developer.mozilla.org/docs/Web/API/Window) object is returned that
 represents the window or tab. Even after such a window has been closed or the user has navigated it
 away, the `Window` object returned from `window.open()` can still be used to access information
 about it. This is one type of detached window: because JavaScript code can still potentially access
@@ -399,9 +399,9 @@ let timer = setInterval(() => {
 
 {% Aside %}
 `WeakRef` is a new feature of the JavaScript language,
-[available in desktop Firefox since version 79](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef#Browser_compatibility)
+[available in desktop Firefox since version 79](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakRef#Browser_compatibility)
 and
-[Chromium-based browsers since version 84](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef#Browser_compatibility).
+[Chromium-based browsers since version 84](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakRef#Browser_compatibility).
 Since it's not yet widely-supported, this solution is better suited to tracking down and debugging
 issues rather than fixing them for production.
 {% endAside %}
@@ -532,10 +532,10 @@ Hopefully some of the suggestions in this article help with finding and fixing m
 have another technique for debugging detached windows or this article helped uncover leaks in your
 app, I'd love to know! You can find me on Twitter [@\_developit](https://twitter.com/_developit).
 
-[performance-memory-api]: https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory
+[performance-memory-api]: https://developer.mozilla.org/docs/Web/API/Performance/memory
 [performance-measurememory]: /monitor-total-page-memory-usage/
-[postmessage]: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
+[postmessage]: https://developer.mozilla.org/docs/Web/API/Window/postMessage
 [finalizationregistry]: https://v8.dev/features/weak-references#:~:text=FinalizationRegistry
-[weakref]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef
-[noopener]: https://developer.mozilla.org/en-US/docs/Web/API/Window/open#noopener
+[weakref]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakRef
+[noopener]: https://developer.mozilla.org/docs/Web/API/Window/open#noopener
 [rel-noopener]: /external-anchors-use-rel-noopener/

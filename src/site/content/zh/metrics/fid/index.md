@@ -127,7 +127,7 @@ FID 是一个只能进行[实际](/user-centric-performance-metrics/#in-the-fiel
 
 ### 在 JavaScript 中测量 FID
 
-要在 JavaScript 中测量 FID，您可以使用[事件计时 API](https://wicg.github.io/event-timing)。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)来侦听[`first-input`](https://wicg.github.io/event-timing/#sec-performance-event-timing)条目并记录在控制台中：
+要在 JavaScript 中测量 FID，您可以使用[事件计时 API](https://wicg.github.io/event-timing)。以下示例说明了如何创建一个[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)来侦听[`first-input`](https://wicg.github.io/event-timing/#sec-performance-event-timing)条目并记录在控制台中：
 
 ```js
 new PerformanceObserver((entryList) => {

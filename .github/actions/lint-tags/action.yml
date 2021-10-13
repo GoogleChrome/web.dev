@@ -1,0 +1,14 @@
+name: Lint Tags
+description: "Lint tags in posts"
+inputs:
+  tags_yml:
+    description: "Path of yaml that stores all valid tags"
+    required: true
+  posts_path:
+    description: "Path of posts to review"
+    required: true
+  ignore_tags:
+    description: "Tags to ignore"
+runs:
+  using: "node12"
+  main: "index.js"

@@ -66,7 +66,7 @@ classes, IDs, and other attributes which may be added to an HTML tag.
 
 ### Universal selector
 
-A [universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors)—also known as a wildcard—matches any element.
+A [universal selector](https://developer.mozilla.org/docs/Web/CSS/Universal_selectors)—also known as a wildcard—matches any element.
 
 ```css
 * {
@@ -78,7 +78,7 @@ This rule causes every HTML element on the page to have hotpink text.
 
 ### Type selector
 
-A [type selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors)
+A [type selector](https://developer.mozilla.org/docs/Web/CSS/Type_selectors)
 matches a HTML element directly.
 
 ```css
@@ -93,7 +93,7 @@ This rule causes every `<section>` element to have `2em` of `padding` on all sid
 
 A HTML element can have one or more items defined in their `class` attribute.
 The
-[class selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors)
+[class selector](https://developer.mozilla.org/docs/Web/CSS/Class_selectors)
 matches any element that has that class applied to it.
 
 ```html
@@ -136,7 +136,7 @@ You can read more [in the specification](https://www.w3.org/TR/CSS21/syndata.htm
 
 An HTML element with an `id` attribute should be the only element on a page with that ID value.
 You select elements with an
-[ID selector](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) like this:
+[ID selector](https://developer.mozilla.org/docs/Web/CSS/ID_selectors) like this:
 
 ```css
 #rad {
@@ -165,7 +165,7 @@ avoid applying styles with the `id` selector as it means you can't re-use those 
 
 You can look for elements that have a certain HTML attribute,
 or have a certain value for an HTML attribute,
-using the [attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors).
+using the [attribute selector](https://developer.mozilla.org/docs/Web/CSS/Attribute_selectors).
 Instruct CSS to look for attributes by wrapping the selector with square brackets (`[ ]`).
 
 ```css
@@ -213,7 +213,7 @@ Along with case operators,
 you have access to operators that match portions of strings inside attribute values.
 
 ```css
-/* A href that contains “example.com” */
+/* A href that contains "example.com" */
 [href*='example.com'] {
   color: red;
 }
@@ -494,7 +494,7 @@ For more on this, see the [specificity module](/learn/css/specificity).
 
 ## Resources
 
-- [CSS selectors reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+- [CSS selectors reference](https://developer.mozilla.org/docs/Web/CSS/CSS_Selectors)
 - [Interactive selectors game](https://flukeout.github.io/)
-- [Pseudo-class and pseudo-elements reference](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements)
+- [Pseudo-class and pseudo-elements reference](https://developer.mozilla.org/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements)
 - [A tool that translates CSS selectors into plain-english explainers](https://kittygiraudel.github.io/selectors-explained/)
