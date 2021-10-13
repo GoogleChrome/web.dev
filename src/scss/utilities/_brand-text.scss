@@ -1,0 +1,5 @@
+/// The brand-text class applies a dark/light theme to branding elements
+/// This class is found directly on SVG path elements
+.brand-text {
+  fill: get-utility-value('color', 'mid-text');
+}
