@@ -4,16 +4,16 @@
 # are, it will give them a "New" badge. However, when you first launch a course
 # you don't want every entry to have a "New" badge, so anything that existed
 # on or before this date will not receive the "New" badge.
-date: 2021-08-11
+date: 2021-11-03
 url: /learn/forms/
 draft: true
 title: i18n.courses.learn_forms.title
 description: i18n.courses.learn_forms.description
 # This is the logo that appears in the navigation drawer and header.
-logo: '/images/courses/css/logo.svg'
+logo: 'image/kheDArv5csY6rvQUJDbWRscckLr1/HEB0skMd9Haz8V4FR5DY.svg'
 # This is used to provide the background for the navigation drawer and header.
-background: '/images/courses/css/background.svg'
+background: 'image/kheDArv5csY6rvQUJDbWRscckLr1/DnqCLcSMFj4nivkshWDv.svg'
 # This provides the cover image for the card on /learn/
-card: '/images/courses/css/card.svg'
+card: 'image/kheDArv5csY6rvQUJDbWRscckLr1/uf32zA7gyRsYZasbagfe.svg'
 # This is used for the social media thumbnail.
-thumbnail: 'image/foR0vJZKULb5AGJExlazy1xYDgI2/VmeHSQWK5LExsQQ0gUxh.svg'
+thumbnail: 'image/kheDArv5csY6rvQUJDbWRscckLr1/n5XVLEqt8NTQQGAANqLJ.png'
