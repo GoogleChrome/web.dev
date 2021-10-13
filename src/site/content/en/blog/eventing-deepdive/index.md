@@ -17,8 +17,6 @@ tags:
   - blog
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/tPQ30G1QPF3ETAVf1Q40.jpg
 alt: Binders in many colors.
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/-6682215947110973439
 ---
 
 ## Event.stopPropagation() and Event.preventDefault()
