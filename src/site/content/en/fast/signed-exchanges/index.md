@@ -368,6 +368,11 @@ a general-purpose tool.
   runs on [Fastly
   Compute@Edge](https://www.fastly.com/products/edge-compute/serverless).
 
+- [Automatic Signed
+  Exchanges](https://blog.cloudflare.com/automatic-signed-exchanges/) is a
+  Cloudflare feature that automatically acquires certificates and generates
+  Signed Exchanges.
+
 - [NGINX SXG module](https://github.com/google/nginx-sxg-module) generates
   and serves SXGs for sites that use [nginx](https://nginx.org/). Setup
   instructions can be found [here](/how-to-set-up-signed-http-exchanges/).
