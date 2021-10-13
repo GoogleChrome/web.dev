@@ -10,10 +10,10 @@ draft: true
 title: i18n.courses.learn_forms.title
 description: i18n.courses.learn_forms.description
 # This is the logo that appears in the navigation drawer and header.
-logo: 'image/kheDArv5csY6rvQUJDbWRscckLr1/HEB0skMd9Haz8V4FR5DY.svg'
+logo: '/images/courses/forms/logo.svg'
 # This is used to provide the background for the navigation drawer and header.
-background: 'image/kheDArv5csY6rvQUJDbWRscckLr1/DnqCLcSMFj4nivkshWDv.svg'
+background: '/images/courses/forms/background.svg'
 # This provides the cover image for the card on /learn/
-card: 'image/kheDArv5csY6rvQUJDbWRscckLr1/uf32zA7gyRsYZasbagfe.svg'
+card: '/images/courses/forms/card.svg'
 # This is used for the social media thumbnail.
 thumbnail: 'image/kheDArv5csY6rvQUJDbWRscckLr1/n5XVLEqt8NTQQGAANqLJ.png'
