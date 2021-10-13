@@ -621,8 +621,8 @@ browser is currently sending the report `Queued`: The browser has sent the repor
 hasn't confirmed that it has received it
 
 {% Aside 'gotchas' %} Because the report is sent out-of-band by the browser itself and not by a
-certain site, **the `POST` requests with the reports are **not** visible in the Network panel of
-your Developer Tools.** {% endAside %}
+certain site, the `POST` requests with the reports are **not** visible in the Network panel of
+your Developer Tools. {% endAside %}
 
 To answer this, try the following:
 
