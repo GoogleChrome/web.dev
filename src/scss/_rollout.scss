@@ -154,6 +154,21 @@ web-tabs .web-tabs__tab[aria-selected='true']::after {
   @include apply-utility('color', 'mid-text');
 }
 
+/// Strong-arm the Google branded dialog
+.site-header .w-profile-dialog__account:link,
+.site-header .w-profile-dialog__account:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-header .w-profile-dialog__account:hover {
+  background: #4d90fe;
+}
+
+.site-header .w-profile-dialog__privacy:hover {
+  background: none;
+}
+
 /// RESPONSIVE OVERRIDES
 @include media-query('md') {
   web-assessment.w-callout {
