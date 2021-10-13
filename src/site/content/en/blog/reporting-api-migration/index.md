@@ -58,11 +58,10 @@ Keep reading for details and example code!
 {% Banner 'caution', 'body' %}
 
 If you use [Network Error Logging](https://w3c.github.io/network-error-logging/), continue using
-`Report-To` (v0) because Network Error Logging isn't supported in the Reporting API v1. 
+`Report-To` (v0) because Network Error Logging isn't supported in the Reporting API v1.
 {% endBanner %}
 
 A new mechanism for Network Error Logging will be developed. Once that becomes available, switch from Reporting API v0 to that new mechanism.
-should be used. At the time of this writing, this new mechanism is not shipped yet.
 
 ## Demo and code
 
@@ -70,6 +69,27 @@ should be used. At the time of this writing, this new mechanism is not shipped y
 - [Code](https://glitch.com/edit/#!/reporting-api-demo) for the demo site
 
 ## Differences between v0 and v1
+
+{% Aside 'gotchas' %}
+The **legacy** Reporting API uses the `Report-To` header, and the `report-to` directive in other headers.
+
+Legacy API:
+
+```http
+Report-To: ...
+Document-Policy: ...; report-to my-endpoint
+```
+
+The **new** Reporting API uses the `Reporting-Enpoints` header, and also **the same `report-to` directive** in other headers
+
+New API:
+
+```http
+Reporting-Endpoints: ...
+Document-Policy: ...; report-to my-endpoint
+```
+
+{% endAside %}
 
 ### What's changing
 
@@ -287,19 +307,12 @@ violation reports can be configured:
   Chrome, Firefox, Safari and Edge. Reports are sent with the content-type `application/csp-report`
   and have a format that's specific to CSP. These reports are called "CSP Level 2 Reports" and do
   **not** rely on the Reporting API.
-- With the Reporting API, that is via `Report-To` header (v0, legacy) or better, with the
+- With the Reporting API, that is via `Report-To` header (legacy) or the newer
   `Reporting-Endpoints` (v1). This is supported in Chrome and Edge only. Report requests have the
   same format as other Reporting API requests, and the same content-type `application/reports+json`.
 
 Using the first approach (only `report-uri`) is [no longer
-recommended](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri).
-
-Using the Reporting API also has a few benefits ✅:
-
-- You're using a single way to set up reporting for all report types.
-- You can use a generic endpoint because all report requests generated via the Reporting API have
-  the same format.
-- In the future, you'll be able to access debugging tooling for the Reporting API v1.
+recommended](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri) and using the second approach has a few benefits. In particular, it enables you to using a single way to set up reporting for all report types as well as to set a generic endpoint (because all report requests generated via the Reporting API⏤CSP **and** others⏤ have the same format `application/reports+json`).
 
 However, [only a few browsers support
 `report-to`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to).
@@ -310,17 +323,15 @@ is present. In a browser which recognizes only `report-uri`, only `report-uri` w
 
 1. **Step 1 (do now)**: If you haven't added it yet, add `report-to` alongside `report-uri`.
    Browsers that support only `report-uri` (Firefox) will use `report-uri`, and browsers that also
-   support `report-to`(Chrome, Edge) will use `report-to`.
+   support `report-to`(Chrome, Edge) will use `report-to`. To specify the named endpoints you'll use
+   in `report-to`, use both headers `Report-To` and `Reporting-Endpoints`. This ensures that you get
+   reports from both older and newer Chrome and Edge clients.
 
-2. **Step 2 (do now)**: To specify the named endpoints you'll use in `report-to`, use both headers
-   `Report-To` and `Reporting-Endpoints`. This ensures that you get reports from both older and
-   newer Chrome and Edge clients.
-
-3. **Step 3 (start later):** Once all or most of your users have updated to later Chrome or Edge
+2. **Step 3 (start later):** Once all or most of your users have updated to later Chrome or Edge
    installs (96 and later), remove `Report-To` (v0) and keep only `Reporting-Endpoints`. Keep
    `report-uri` so you still get reports for browsers that only support it.
 
-See code examples in the [migration cookbook](#csp-reporting-migration).
+See code examples for these steps in [CSP reporting migration](#csp-reporting-migration).
 
 ### Migration: example code
 
@@ -334,7 +345,7 @@ to Reporting API v1. What you do need is to migrate from the legacy `Report-To` 
 
 If you're using the legacy Reporting API (v0) to get violation reports for a CSP
 (`Content-Security-Policy` header), you may need to tweak your `Content-Security-Policy` as part of
-your migration to the new Reporting API (v1). 
+your migration to the new Reporting API (v1).
 
 #### Basic migration
 
