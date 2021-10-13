@@ -191,7 +191,7 @@ the API. Check the [migration guide](/reporting-api-migration/#network-error-log
       </tr>
       <tr>
         <td>Intervention</td>
-        <td>Your site is trying to do something that the browser decides not to honor, for security, performance or user experience reasons. Example in Chrome: your site uses <a href="https://developers.google.com/web/updates/2016/08/removing-document-write"><code>document.write</code> on slow networks</a> or calls <code>navigator.vibrate</code> in a cross-origin frame that the user hasn't interacted with yet.</td>
+        <td>The page is trying to do something that the browser decides not to honor, for security, performance or user experience reasons. Example in Chrome: the page uses <a href="https://developers.google.com/web/updates/2016/08/removing-document-write"><code>document.write</code> on slow networks</a> or calls <code>navigator.vibrate</code> in a cross-origin frame that the user hasn't interacted with yet.</td>
       </tr>
       <tr>
         <td>Crash</td>
