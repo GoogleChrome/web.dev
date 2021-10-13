@@ -2,4 +2,10 @@
 /// This class is found directly on SVG path elements
 .brand-text {
   fill: get-utility-value('color', 'mid-text');
+
+  /// In very small contexts, the logo takes up a lot of space, so we
+  /// use just the logomark instead
+  @include media-query('xs') {
+    display: none;
+  }
 }

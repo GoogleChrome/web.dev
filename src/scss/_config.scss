@@ -175,6 +175,7 @@ $gorko-config: (
     'property': 'font-weight',
   ),
   'breakpoints': (
+    'xs': '(max-width: 25em)',
     'md': '(min-width: 50em)',
     'lg': '(min-width: 80em)',
     'xl': '(min-width: 106em)',

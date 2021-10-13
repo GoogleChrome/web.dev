@@ -142,9 +142,25 @@ web-tabs .web-tabs__tab[aria-selected='true']::after {
   transition: width $global-transition-movement;
 }
 
+/// SITE HEADER SIGN IN
+.site-header .w-profile-signin {
+  display: inline-block;
+  padding: 1.5em $global-gutter-narrow;
+  text-decoration: none;
+  text-transform: none;
+  font: inherit;
+  flex: none;
+
+  @include apply-utility('color', 'mid-text');
+}
+
 /// RESPONSIVE OVERRIDES
 @include media-query('md') {
   web-assessment.w-callout {
     margin-inline: auto !important;
+  }
+
+  web-profile-switcher-container {
+    margin-left: 0 !important;
   }
 }
