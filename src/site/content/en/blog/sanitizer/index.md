@@ -29,7 +29,7 @@ $div.setHTML(`<em>hello world</em><img src="" onerror=alert(0)>`, new Sanitizer(
 
 ## Escaping user input
 
-When inserting user input, query strings, cookie contents, and so on, into the DOM, the strings must be escaped properly. Particular attention should be paid to the DOM manipulation via [`.innerHTML`](https://developer.mozilla.org/docs/Web/API/Element/innerHTML), where unescaped strings are a typical source of XSS.
+When inserting user input, query strings, cookie contents, and so on, into the DOM, the strings must be escaped properly. Particular attention should be paid to DOM manipulation via [`.innerHTML`](https://developer.mozilla.org/docs/Web/API/Element/innerHTML), where unescaped strings are a typical source of XSS.
 
 ```js
 const user_input = `<em>hello world</em><img src="" onerror=alert(0)>`
@@ -45,9 +45,10 @@ The best thing to do here is not _escaping_, but _sanitizing_.
 
 ### The difference between escaping and sanitizing
 
-Escaping refer to replacing special HTML characters with [HTML Entities](https://developer.mozilla.org/docs/Glossary/Entity).
+Escaping refers to replacing special HTML characters with [HTML Entities](https://developer.mozilla.org/docs/Glossary/Entity).
 
 Sanitizing refers to removing semantically harmful parts (such as script execution) from HTML strings.
+
 ### Example
 In the previous example, `<img onerror>` causes the error handler to be executed, but if the `onerror` handler was removed, it would be possible to safely expand it in the DOM while leaving `<em>` intact.
 
@@ -203,7 +204,7 @@ The Sanitizer API is designed to be safe by default. This means that no matter h
 
 ### Comparison with DomPurify
 
-[DOMPurify](https://github.com/cure53/DOMPurify) is a well-known library that offers sanitization functionality. The main difference between the Sanitizier API and DOMPurify is that DOMPurify may return the result of the sanitization as a string, which you need to expand into a DOM via `.innerHTML`.
+[DOMPurify](https://github.com/cure53/DOMPurify) is a well-known library that offers sanitization functionality. The main difference between the Sanitizer API and DOMPurify is that DOMPurify returns the result of the sanitization as a string, which you need to write into a DOM element via `.innerHTML`.
 
 
 ```js
@@ -215,7 +216,7 @@ $div.innerHTML = sanitized
 
 DOMPurify can serve as a fallback when the Sanitizer API is not implemented in the browser.
 
-DOMPurify implementation has a couple of downsides. If a string is returned, then the input string is parsed twice, by DOMPurify and `.innerHTML`. This double parsing wastes processing time, but can also lead to interesting vulnerabilities caused by cases where the result of the second parsing is different from the first.
+The DOMPurify implementation has a couple of downsides. If a string is returned, then the input string is parsed twice, by DOMPurify and `.innerHTML`. This double parsing wastes processing time, but can also lead to interesting vulnerabilities caused by cases where the result of the second parsing is different from the first.
 
 {% Aside 'caution' %}
 Learn more about the Securitum research on the DOMPurify vulnerability: [Mutation XSS via namespace confusion](https://research.securitum.com/mutation-xss-via-mathml-mutation-dompurify-2-0-17-bypass/).
@@ -269,7 +270,7 @@ The Sanitizer API is under discussion in the standardization process and Chrome 
 
 Mozilla: Considers this proposal [worth prototyping](https://mozilla.github.io/standards-positions/#sanitizer-api), and is [actively implementing it](https://groups.google.com/g/mozilla.dev.platform/c/C4EHeQlaMbU).
 
-Webkit: See the response on the [WebKit mailing list](https://lists.webkit.org/pipermail/webkit-dev/2021-March/031731.html).
+WebKit: See the response on the [WebKit mailing list](https://lists.webkit.org/pipermail/webkit-dev/2021-March/031731.html).
 
 
 
@@ -282,7 +283,6 @@ Webkit: See the response on the [WebKit mailing list](https://lists.webkit.org/p
 #### Chrome
 
 Chrome is in the process of implementing the Sanitizer API. In Chrome 93 or later, you can try out the behavior by enabling `about://flags/#enable-experimental-web-platform-features` flag. In earlier versions of Chrome Canary and Dev channel, you can enable it via `--enable-blink-features=SanitizerAPI` and try it out right now. Check out the [instructions for how to run Chrome with flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
-
 
 #### Firefox
 
