@@ -58,7 +58,7 @@ Imagine you have a comment form. When a reader adds a comment and submits the fo
 it would be ideal if they could immediately see the comment without a page refresh.
 
 To achieve this, listen to the `onsubmit` event, then use `event.preventDefault()` to prevent the default behavior, 
-and send the `FormData` using the Fetch API.
+and send the `FormData` using the [Fetch API](https://developer.mozilla.org/docs/Web/API/Fetch_API).
 
 {% Aside %}
 `FormData` is a set of key/value pairs representing form fields and their values. 

@@ -12,18 +12,17 @@ In this module, you learn how a form works, and when to use a form.
 
 ## Should you use a `<form>` element?
 
-You don't always need to put form controls in a `<form>`element. 
+You don't always need to put form controls in a `<form>` element. 
 For example, you might provide a `<select>` element for users to choose a product category. 
 You don't need a `<form>` element here, as you're not storing or processing data on your backend.
 
 However, in most cases when you store or process data from users, 
 you should use the `<form>` element. 
-As you will learn in this module, sing a `<form>` gives you a lot of built-in functionality from browsers  
-that you would otherwise have to build yourself. 
+As you will learn in this module, using a `<form>` gives you a lot of built-in functionality from browsers that you would otherwise have to build yourself. 
 A `<form>` also has many accessibility features built-in by default. 
 If you want to avoid a page reload when a user submits a form, 
 you can still use the `<form>` element, but enhance it with 
-[JavaScript](/learn/forms/javascript). 
+[JavaScript](/learn/forms/javascript#ensure-users-can-submit-a-form-without-leaving-a-page). 
 
 {% Aside %}
 It's possible to implement form functionality with JavaScript, 
@@ -50,7 +49,7 @@ The `<form>` is a container for interactive form controls.
 
 ## How does form submission work?
 
-When you submit a `<form>`, the browser checks the`<form>` attributes. 
+When you submit a `<form>`, the browser checks the `<form>` attributes. 
 The data is sent as a `GET` or `POST` request according to the `method` attribute. 
 If no `method` attribute is present, 
 the request is made to the current page using a `GET` request.
@@ -78,16 +77,14 @@ autocomplete should be used (`autocomplete="off"`) or what encoding should be us
 The data should be sent as a `POST` request, and the URL where the data will be processed should be `/color`. 
 
 {% Details %}
-{% DetailsSummary %}
-Show form
-{% endDetailsSummary %}
+{% DetailsSummary 'h3' %} Show form {% endDetailsSummary %}
 One possible solution is using this form:
 
 ```html
 <form method="post" action="/color">
     <label for="color">What is your favorite color?</label>
     <input type="text" name="color" id="color">
-    <button>Submit</button>
+    <button>Save</button>
 </form>
 ```
 
@@ -102,7 +99,7 @@ You can click the **Submit** button, or press `Enter` while using any form contr
 Use an actionable name for your **Submit** button, 
 for example, 'Proceed to Payment' or 'Save Changes', rather than just 'Submit'. 
 
-Don't disable the Submit button while still awaiting valid user input, 
+Don't disable the **Submit** button while still awaiting valid user input, 
 but consider disabling it once the form has been submitted, 
 preventing multiple requests to your server.
 
@@ -115,12 +112,12 @@ As long as you don't use `type="button"` it works as a **Submit** button.
 Another option is to use `<input type="submit" value="Submit">`.
 
 {% Aside %}
-You can use the `enterkeyhint` attribute to change the label of the enter key for on-screen keyboards. 
+You can use the `enterkeyhint` attribute to change the label of the `Enter` key for on-screen keyboards. 
 This helps make it clearer for users what happens when they submit the current form.
 {% endAside %}
 
 The third option is to use `<input type="image" alt="Submit" src="submit.png">`, 
-to create a graphical Submit button. 
+to create a graphical **Submit** button. 
 However, now that you can create graphical buttons with CSS, it's not recommended to use `type="image"`.
 
 {% Aside %}

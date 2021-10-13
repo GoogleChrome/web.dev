@@ -12,7 +12,7 @@ date: 2021-10-07
 To provide the best possible user experience, 
 make sure to use the element and element `type` that's most appropriate for the data the user is entering. 
 
-### Help users fill out text
+### Help users fill in text
 
 To provide users with a form field for inserting text, use the `<input>` element. 
 It's the best choice for single words and short texts. 
@@ -32,7 +32,7 @@ Learn more about [why disabling resize on `<textarea>` is bad for UX](https://ca
 
 ### Ensure users enter data in the correct format
 
-Do you want to help users fill out a telephone number? 
+Do you want to help users fill in a telephone number? 
 Change the `type` attribute to `type="tel"` for the `<input>`. 
 Users on mobile devices get an adapted on-screen keyboard, 
 ensuring they can enter the telephone number faster and more easily.
@@ -46,10 +46,10 @@ that it's a well-formatted email address.
 Learn more about the different [input types](https://developer.mozilla.org/docs/Web/HTML/Element/input#input_types). 
 These also provide built-in [validation features](/learn/forms/validation).
 
-### Help users fill out dates
+### Help users fill in dates
 
 When do you want to start your next trip? 
-To help users fill out dates, use `type="date"`. 
+To help users fill in dates, use `type="date"`. 
 Some browsers show the format as a placeholder such as `yyyy-mm-dd`, 
 demonstrating how to enter the date.
 
@@ -63,7 +63,7 @@ All modern browsers provide custom interfaces for selecting dates in the form of
 
 ### Help users select an option
 
-To ensure users can select or unselect one possible option, use `type="checkbox"``. 
+To ensure users can select or unselect one possible option, use `type="checkbox"`. 
 Do you want to offer multiple options? 
 Depending on your use case, there are various alternatives. 
 First, let's look at possible solutions if users should only be able to choose a single option.
@@ -112,7 +112,7 @@ Use a `<select>` element, `<datalist>` element,
 [multi-select custom element](https://github.com/samdutton/multi-input), or build something completely different.
 {% endAside %}
 
-### Ensure users can fill out different types of data
+### Ensure users can fill in different types of data
 
 There are even more input types you can use for specific use cases.
 
@@ -136,7 +136,7 @@ To enable users to upload and submit files, use `<input>` with `type="file"`.
 } %}
 
 {% Aside %}
-An `<input>` of type `file' can also allow multiple uploads at once. 
+An `<input>` of type `file` can also allow multiple uploads at once. 
 You can also specify which file formats are allowed.
 
 Learn more about [`<input type="file">`](https://developer.mozilla.org/docs/Web/HTML/Element/input/file).
@@ -155,7 +155,7 @@ For example, you can use multiple `<input>` elements with `type="checkbox"` or a
 Learn more about [choosing between listboxes and dropdown lists](https://www.nngroup.com/articles/listbox-dropdown/).
 
 In general, make sure to 
-[test your form with real users](/learn/forms/test/usability) to find the best form element and type.
+[test your form with real users](/learn/forms/usability-testing) to find the best form element and type.
 
 {% Assessment 'fields' %}
 

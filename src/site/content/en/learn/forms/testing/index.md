@@ -193,7 +193,7 @@ Looking at RUM data shows you how real users interact with your site.
 {% endAside %}
 
 You can also set up more advanced analytics reports.
-Want to track how many users click Submit?
+Want to track how many users click the **Submit** button?
 You can define and integrate
 [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events) to analyze this.
 

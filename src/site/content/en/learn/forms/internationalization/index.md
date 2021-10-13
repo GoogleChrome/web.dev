@@ -68,7 +68,7 @@ Some scripts are written from left to right, and some from right to left.
 ### Make spacing independent of writing systems
 
 To ensure your form works for different writing systems,
-you can use [CSS logical properties](/en-US/docs/Web/CSS/CSS_Logical_Properties).
+you can use [CSS logical properties](https://developer.mozilla.org/docs/Web/CSS/CSS_Logical_Properties).
 
 {% Codepen {
   user: 'web-dot-dev',

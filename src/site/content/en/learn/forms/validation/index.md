@@ -54,10 +54,11 @@ This happens because of the `required` attribute.
 Different browsers use different text for error messages.
 The wording is also dependent on the browser language of the user.
 If you use Safari and your preferred browser language is German,
-you get a completely different error message than a user in Chrome with English as their chosen browser language.
+you get a different error message than a user in Chrome with English as their chosen browser language.
 
-Later in this module find out how to
-[change the default error messages with JavaScript](#javascript).
+Find out how to
+[change the default error messages with JavaScript](#javascript)
+later in this module.
 {% endAside %}
 
 You already learned that you can use many more types, for example, `type="email"`.
@@ -92,11 +93,10 @@ How would you instruct the browser that a user must enter at least eight charact
 
 Give the demo a try.
 After your change, you should not be able to submit the form if you enter less than eight characters.
-Small hint: there is an HTML attribute you can use, and its name may be hidden somewhere in the demo.
 
 {% Details %}
 
-{% DetailsSummary %} Toggle answer {% endDetailsSummary %}
+{% DetailsSummary 'h3' %} Toggle answer {% endDetailsSummary %}
 
 ```html
 <label for="password">Password (required)</label>
@@ -107,11 +107,11 @@ The name of the attribute is `minlength`.
 Set the value to `8` and you have the desired validation rule.
 If you want the opposite, use `maxlength`.
 
-{% endDetails %}
-
 {% Aside %}
 For numerical input types use `min` and `max` to achieve the same result.
 {% endAside %}
+
+{% endDetails %}
 
 ## Communicate your validation rules
 
@@ -141,20 +141,12 @@ It's called `pattern`, and you can define a
 Here, only lowercase letters are allowed;
 the user has to enter at least two characters, and not more than twenty.
 
-{% Codepen {
-  user: 'web-dot-dev',
-  id: '0901d502bbe2cc7c4aa0bd73068ddd96',
-  height: 300
-} %}
-
 How would you change the `pattern` to also allow uppercase letters?
 [Try it out](https://codepen.io/web-dot-dev/pen/bc12240b7cb5b52076621d73a8a29cf6).
 
 {% Details %}
 
-{% DetailsSummary %}
-Reveal answer
-{% endDetailsSummary %}
+{% DetailsSummary 'h3' %} Toggle answer {% endDetailsSummary %}
 
 The correct answer is `pattern="[A-z]{4,20}"`.
 
@@ -173,7 +165,8 @@ Show the user that a field is mandatory before they interact with your form.
 {% Codepen {
   user: 'web-dot-dev',
   id: '5a5de1e7dbdcdba86d19e30d42291a27',
-  height: 300
+  height: 300,
+  tab: 'css,result'
 } %}
 
 You can style `required` fields with the `:required` CSS pseudo class.
@@ -209,7 +202,7 @@ It's impossible for them to see if there was an error or success. Add text or an
 {% endAside %}
 
 There are more ways to adapt your styles based on validation.
-In the module about [CSS](/learn/forms/css/styling) you will learn more about styling forms.
+In the module about [CSS](/learn/forms/styling) you will learn more about styling forms.
 
 {% Aside %}
 In practice `:invalid` is tricky to work with.
@@ -261,7 +254,7 @@ You see the default error messages again.
 
 There is much more you can do with the Constraint Validation API.
 You’ll find a detailed look at using
-[validation with JavaScript](/learn/forms/javascript) in a later module.
+[validation with JavaScript](/learn/forms/javascript#validation-with-javascript) in a later module.
 
 How to validate in real-time
 You can add real-time validation in JavaScript by listening to the `onblur` event of a form control,
@@ -277,7 +270,7 @@ Click the form field in the demo, enter "web" and click somewhere else on the pa
 You see the native error message for `minlength` below the form field.
 
 Learn more about implementing
-[real-time validation with JavaScript](/learn/forms/javascript#realtime) in an upcoming module.
+[real-time validation with JavaScript](/learn/forms/javascript#ensure-users-are-notified-about-errors-in-real-time) in an upcoming module.
 
 {% Assessment 'validation' %}
 

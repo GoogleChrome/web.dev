@@ -4,7 +4,7 @@ questions:
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "1"
-    stem: What attribute can you use to change the label of the enter key on an on-screen  keyboard?
+    stem: What attribute can you use to change the label of the `Enter` key on an on-screen  keyboard?
     options:
       - content: "`enterkey`"
         rationale: "Try again!"
@@ -19,9 +19,9 @@ questions:
     correctAnswers: "0"
     stem: What's the difference between the `value` property and `getAttribute('value')`?
     options:
-      - content: "The `value` property returns the current value, `getAttribute('value')` returns the initial value.`"
+      - content: "The `value` property returns the current value, `getAttribute('value')` returns the initial value."
         rationale: "🎉"
-      - content: "The `value` property returns the initial value, `getAttribute('value')` returns the current value.`"
+      - content: "The `value` property returns the initial value, `getAttribute('value')` returns the current value."
         rationale: "Try again!"
       - content: "There is no difference."
         rationale: "Try again!"

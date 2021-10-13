@@ -47,21 +47,21 @@ Send a confirmation email instead.
 ### Help users fill in their account details
 
 You can help users fill in their account details by using the appropriate `autocomplete` attribute. 
-Use `autocomplete="email"` for the email field, and `autocomplete="new-password" for a new-password field. 
+Use `autocomplete="email"` for the email field, and `autocomplete="new-password"` for a new-password field. 
 
 Learn more about [autofilling input controls](/learn/forms/autofill).
 
 {% Aside 'warning' %}  
 Don't disallow pasting into password fields. 
 It's annoying for users, encourages passwords that are memorable and less secure, 
-and makes it harder for password managers to suggest and autofill a secure password
+and makes it harder for password managers to suggest and autofill a secure password.
 
 Learn more about why you should always 
 [allow pasting passwords](https://www.ncsc.gov.uk/blog-post/let-them-paste-passwords).  
 {% endAside %}
 
 You can also help users enter a secure password by offering a reveal-password `<button>`.  
-Learn more about the [reveal-password pattern](/learn/forms/javascript).
+Learn more about the [reveal-password pattern](/learn/forms/javascript#ensure-users-can-see-the-password-they-entered).
 
 ### Ensure your sign-up form is secure
 
@@ -105,10 +105,10 @@ Use `autocomplete="email"` for the email field,
 and `autocomplete="current-password"` for a current password field.
 
 To help users manually fill in their account details, use `type="email"` 
-for the email field to show the appropriate virtual keyboard on mobile devices. 
+for the email field to show the appropriate on-screen keyboard on mobile devices. 
 
 Use the `required` attribute for your email and password field so you can warn of invalid values when the user submits the form. 
-Consider using [real-time validation](https://web.dev/learn/forms/javascript), 
+Consider using [real-time validation](/learn/forms/javascript#ensure-users-are-notified-about-errors-in-real-time), 
 to help users correct invalid data even before filling out the complete `<form>`.
 
 ### Ensure users can see the password they entered
@@ -125,7 +125,7 @@ by showing a `<button>` to toggle the visibility of the entered text.
 } %}
 
 Learn more about 
-[implementing a password-reveal `<button>`](/learn/forms/javascript/#ensure-users-can-see-their-entered-password).
+[implementing a password-reveal `<button>`](/learn/forms/javascript/#ensure-users-can-see-the-password-they-entered).
 
 ## Ensure your sign-in and sign-up forms are usable
 
@@ -133,8 +133,8 @@ Test your sign-in and sign-up forms regularly with real people to make sure that
 Use analytics and [real user measurement (RUM)](/user-centric-performance-metrics/) to collect field data, 
 and tools such as [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 
 and [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) to run tests yourself. 
-Learn more about [testing for usability](/learn/forms/test/usability) and 
-[gathering analytics data](/learn/forms/test/data).
+Learn more about [testing for usability](/learn/forms/usability-testing) and 
+[gathering analytics data](/learn/forms/data).
 
 Ensure your forms work in different browsers and on different platforms. 
 Test your form on different screen sizes, using only your keyboard, 

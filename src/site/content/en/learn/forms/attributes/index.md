@@ -11,13 +11,13 @@ HTML element attributes can enhance your `<form>` and form controls.
 
 ## Help users fill in form controls
 
-To make it easier for users to fill in forms, 
+To make it easier for users to fill out forms, 
 use an appropriate `type` attribute for your `<input>` elements. 
 
 Browsers display a user interface as appropriate for the `type`, 
 such as a date picker for an `<input>` of type `date`. 
 Browsers on mobile devices show an adapted on-screen keyboard, 
-such as a telephone number keypad for `type="tel`.
+such as a telephone number keypad for `type="tel"`.
 
 Some `<input>` types also change validation rules for an element when its form is submitted. 
 `<input type="url">`, for example, is only valid if it's not empty and the value is a URL.
@@ -58,7 +58,7 @@ including screen reader users and people with cognitive impairments. Therefore, 
 ## Ensure users can submit a form
 
 Say, you fill out a `<form>`, click the **Submit** button, but nothing happens. 
-The issue may be that the button has been disabled with the `disable` attribute. 
+The issue may be that the button has been disabled with the `disabled` attribute. 
 It's a common pattern to disable the **Submit** button until the form is valid.
 
 In theory, this sounds sensible, but you shouldn't disable a **Submit** button while waiting on complete and valid user input. 
@@ -73,7 +73,7 @@ Use the `value` attribute to show values already completed.
 
 ```html
 <label for="name">Name</label>
-<input value="Michael" name="name" id="name" type="text">
+<input value="Hilda" name="name" id="name" type="text">
 ```
 
 There are multiple  ways to retrieve the value of a form control in JavaScript. 
