@@ -300,7 +300,7 @@ See code examples in the [migration cookbook](#basic-migration).
 
 ### Migration steps for CSP reporting
 
-There are two ways [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
+There are two ways [Content-Security-Policy](https://developer.mozilla.org/docs/Web/HTTP/CSP)
 violation reports can be configured:
 
 - With the CSP header alone via the `report-uri` directive. This has wide browser support, across
@@ -312,10 +312,10 @@ violation reports can be configured:
   same format as other Reporting API requests, and the same content-type `application/reports+json`.
 
 Using the first approach (only `report-uri`) is [no longer
-recommended](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri) and using the second approach has a few benefits. In particular, it enables you to using a single way to set up reporting for all report types as well as to set a generic endpoint (because all report requests generated via the Reporting API⏤CSP **and** others⏤ have the same format `application/reports+json`).
+recommended](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri) and using the second approach has a few benefits. In particular, it enables you to using a single way to set up reporting for all report types as well as to set a generic endpoint (because all report requests generated via the Reporting API⏤CSP **and** others⏤ have the same format `application/reports+json`).
 
 However, [only a few browsers support
-`report-to`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to).
+`report-to`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to).
 Thus it's recommended that you keep `report-uri` alongside the Reporting API approach (`Report-To`
 or better, `Reporting-Endpoints`) in order to get CSP violation reports from multiple browsers. In a
 browser which recognizes `report-uri` and `report-to`, `report-uri` will be ignored if `report-to`
@@ -445,7 +445,7 @@ Content-Security-Policy: ...; report-uri https://reports.example/main
 ```
 
 {% CompareCaption %} Using only `report-uri` is [no longer
-recommended](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri).
+recommended](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri).
 If your code looks like above, migrate. See the 'New code' examples below (in green). {%
 endCompareCaption %}
 
@@ -462,9 +462,9 @@ Report-To: main-endpoint="https://reports.example/main"
 {% CompareCaption %} This is better: this code uses `report-to`, the newer replacement to
 `report-uri`. Note that keeping both `report-uri` and `report-to` makes sense because several
 browsers don't support
-[`report-to`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to)
+[`report-to`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to)
 but support
-[`report-uri`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri),
+[`report-uri`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri),
 although it's deprecated.
 
 However, in this example the Reporting API v0 is used (`Report-To` header). Migrate to v1: see the
@@ -486,7 +486,7 @@ Report-To: ...
 
 Keep the `report-uri` directive alongide the `report-to` directive until the `report-to` directive
 is supported across browsers. See the [browser compatibility
-table](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to).
+table](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to).
 
 Keep `Report-To` alongside `Reporting-Endpoints` temporarily. Once most of your Chrome and Edge
 visitors have upgraded to 96+ browser versions, remove `Report-To`.
