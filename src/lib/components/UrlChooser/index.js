@@ -40,7 +40,7 @@ class UrlChooser extends BaseElement {
             class="lh-input"
             name="url"
             placeholder="Enter a web page URL"
-            pattern="https?://.*"
+            pattern="https?://.+"
             minlength="7"
             @keyup="${this.onUrlKeyup}"
           />
@@ -125,9 +125,8 @@ class UrlChooser extends BaseElement {
     // Even if the user isn't switching URLs, fix and verify the saved URL which is inserted into
     // the <input /> inside this element.
     this.fixUpUrl();
-    if (!this._urlInput.validity.valid) {
-      const detail =
-        'Invalid URL. Please enter a full URL starting with https://.';
+    if (!this._urlInput.value || !this._urlInput.validity.valid) {
+      const detail = 'Invalid URL.';
       const event = new CustomEvent('web-error', {bubbles: true, detail});
       this.dispatchEvent(event);
       return;
@@ -160,6 +159,9 @@ class UrlChooser extends BaseElement {
    */
   fixUpUrl() {
     let url = this._urlInput.value.trim();
+    if (!url) {
+      return;
+    }
     if (!url.startsWith('https://') && !url.startsWith('http://')) {
       url = `http://${url}`;
     }

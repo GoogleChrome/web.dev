@@ -1,0 +1,36 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/tools/mixins';
+
+
+web-lighthouse-viewer {
+  .lh-root {
+    --report-background-color: transparent;
+  }
+
+  .lh-topbar {
+    display: none;
+  }
+
+  .lh-error-msg {
+    color: $RED_600;
+    max-width: 100%;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+
+    &:empty {
+      display: none;
+    }
+
+    &::before {
+      @include font-material-icon();
+      content: 'info';
+      margin-right: 8px;
+      font-size: 20px;
+
+      // Disabled as `alt` is a new property only supported in Safari.
+      // scss-lint:disable PropertySpelling
+      alt: '';
+    }
+  }
+}
