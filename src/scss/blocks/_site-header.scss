@@ -86,6 +86,14 @@
 }
 
 @include media-query('lg') {
+  .site-header web-navigation-drawer {
+    transition: opacity 100ms;
+  }
+
+  .site-header[class*='expanded'] web-navigation-drawer {
+    opacity: 0;
+  }
+
   .site-header__nav {
     display: flex;
     height: unset;

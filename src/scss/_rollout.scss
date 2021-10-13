@@ -139,7 +139,6 @@ web-tabs .web-tabs__tab[aria-selected='true']::after {
 .site-header web-search[expanded] .web-search__input-wrapper,
 .site-header web-search-results {
   width: clamp(16rem, 40vw, 25rem);
-  transition: width $global-transition-movement;
 }
 
 /// SITE HEADER SIGN IN
