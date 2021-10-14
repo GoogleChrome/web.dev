@@ -394,7 +394,7 @@ can have only one URL per endpoint.
 
 #### Observing all pages
 
-{% Compare 'worse', 'Legacy code (with v0), for example with express' %}
+{% Compare 'worse', 'Legacy code (with v0), for example with Express' %}
 
 ```javascript
 app.get("/", (request, response) => {
@@ -412,7 +412,7 @@ for `"/"` are used for all responses, for example for `page1`. {% endCompareCapt
 
 {% endCompare %}
 
-{% Compare 'better', 'New code (with v1), for example with express' %}
+{% Compare 'better', 'New code (with v1), for example with Express' %}
 
 ```javascript
 // Use a middleware to set the reporting endpoint(s) for *all* requests.
@@ -450,7 +450,7 @@ endCompareCaption %}
 
 {% endCompare %}
 
-{% Compare 'worse', 'Better legacy code, with report-uri *and* the report-to directive with the
+{% Compare 'worse', 'Better legacy code, with report-uri and the report-to directive with the
 Report-To (v0) header' %}
 
 ```http
@@ -472,7 +472,7 @@ Still, this could be better: this codes uses the Reporting API v0 (`Report-To` h
 
 {% endCompare %}
 
-{% Compare 'better', 'New code, with `report-uri` *and* the `report-to` directive with the `Reporting-Endpoints` (v1) header' %}
+{% Compare 'better', 'New code, with report-uri and the report-to directive with the Reporting-Endpoints (v1) header' %}
 
 ```http
 Content-Security-Policy: ...; report-uri https://reports.example/main; report-to main-endpoint
