@@ -4,24 +4,22 @@ title: Streaming requests with the fetch API
 authors:
   - jakearchibald
 description: >
-  Chrome 85 has an experimental implementation of streaming uploads, which you
-  can use on live sites using the origin trial.
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/-7680889164480380927
+  Chrome now supports upload streaming as of version 95, which means
+  you can start a request before you have the whole body available.
 date: 2020-07-22
-updated: 2020-07-22
+updated: 2021-09-22
 hero: image/admin/9U7u4C7WCGbrdHm3181W.jpg
 alt: A canoe pointed up stream.
 tags:
   - blog
+  - chrome95
   - network
   - service-worker
 feedback:
   - api
 ---
 
-Chrome 85 has an experimental implementation of request streams, meaning you can
-start making a request before you have the whole body available.
+From Chrome 95, you can start a request before you have the whole body available by using the streams API.
 
 You could use this to:
 
@@ -33,24 +31,6 @@ You could use this to:
 
 But since this is a low-level web platform feature, don't be limited by _my_ ideas.
 Maybe you can think of a much more exciting use-case for request streaming.
-
-## Try out request streams
-
-### Enabling via about://flags {: #enable-flags }
-
-Try out request streams in Chrome 85 by flipping an experimental flag:
-`enable-experimental-web-platform-features`.
-
-### Enabling support during the origin trial phase
-
-Fetch request streams are available in an origin trial as of Chrome 85. The
-origin trial is expected to end in Chrome 87.
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ## Demo {: #demo }
 
@@ -125,7 +105,7 @@ await fetch(url, {
 ```
 
 Previously, you needed the whole body ready to go before you could start the
-request, but now in Chrome 85 you can provide your own `ReadableStream` of data:
+request, but now in Chrome 95 you can provide your own `ReadableStream` of data:
 
 ```js
 function wait(milliseconds) {
