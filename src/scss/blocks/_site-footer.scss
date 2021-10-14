@@ -9,12 +9,17 @@
     padding: 0;
   }
 
-  a:link {
+  li a:link,
+  li a:visited {
     @include apply-utility('color', 'mid-text');
-  }
 
-  a:visited {
-    color: currentColor;
+    &:not(:hover) {
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: none;
+    }
   }
 }
 
