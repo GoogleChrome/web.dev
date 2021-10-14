@@ -45,6 +45,10 @@ body {
   @include apply-utility('leading', 'regular');
 }
 
+main {
+  flex: auto;
+}
+
 h1,
 h2,
 h3,

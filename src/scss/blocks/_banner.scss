@@ -11,8 +11,6 @@
 }
 
 .banner__content {
-  max-width: 60vw;
-
   @include apply-utility('leading', 'short');
 }
 
