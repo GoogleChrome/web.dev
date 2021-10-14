@@ -460,14 +460,13 @@ Report-To: main-endpoint="https://reports.example/main"
 ```
 
 {% CompareCaption %} This is better: this code uses `report-to`, the newer replacement to
-`report-uri`. Note that keeping both `report-uri` and `report-to` makes sense because several
+`report-uri`. It still keeps `report-uri` around for backwards compatibility; several
 browsers don't support
 [`report-to`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to)
-but support
-[`report-uri`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri),
-although it's deprecated.
+but do support
+[`report-uri`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri).
 
-However, in this example the Reporting API v0 is used (`Report-To` header). Migrate to v1: see the
+Still, this could be better: this codes uses the Reporting API v0 (`Report-To` header). Migrate to v1: see the
 'New code' examples below (in green).
 
 {% endCompareCaption %}
@@ -503,5 +502,5 @@ visitors have upgraded to 96+ browser versions, remove `Report-To`.
 
 _Hero image by [Nine Koepfer / @enka80](https://unsplash.com/@enka80) on
 [Unsplash](https://unsplash.com/photos/tJC6I9S3nBw), edited._ _With many thanks to Ian
-Clevelland, Eiji Kitamura and Milica Mihajlija for their reviews and suggestions on this
+Clelland, Eiji Kitamura and Milica Mihajlija for their reviews and suggestions on this
 article._
