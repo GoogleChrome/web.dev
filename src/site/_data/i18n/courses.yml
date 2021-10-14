@@ -151,3 +151,20 @@ form_types:
     pt: "to do."
     ru: "to do."
     zh: "to do."
+learn_design:
+  title:
+    en: Learn Responsive Design!
+    es: "to do."
+    ja: "to do."
+    ko: "to do."
+    pt: "to do."
+    ru: "to do."
+    zh: "to do."
+  description:
+    en: "[TODO]: ..."
+    es: "[TODO]: ..."
+    ja: "[TODO]: ..."
+    ko: "[TODO]: ..."
+    pt: "[TODO]: ..."
+    ru: "[TODO]: ..."
+    zh: "[TODO]: ..."
