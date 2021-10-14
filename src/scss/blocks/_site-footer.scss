@@ -3,7 +3,6 @@
 .site-footer {
   padding: $global-gutter;
   border-block-start: 1px solid get-utility-value('color', 'stroke');
-  margin-block-start: get-space('size-2');
 
   /// There's a few lists, so we set globally
   ul {
