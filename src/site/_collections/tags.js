@@ -20,6 +20,7 @@ const path = require('path');
 /** @type TagsData */
 const tagsData = require('../_data/tagsData.json');
 // The i18n for this file exposes top-level object keys of valid tags.
+// We use this only to fetch valid tags from the object's keys.
 const supportedTags = /** @type {{[tag: string]: unknown}} */ (
   YAML.load(
     fs.readFileSync(path.join(__dirname, '../_data/i18n/tags.yml'), 'utf-8'),
@@ -58,22 +59,19 @@ function createChromeTag(key) {
 /**
  *
  * @param {string} key
- * @param {TODO} tagData
+ * @param {TagsDataItem} tagData
  * @returns {TagsItem}
  */
 function createTag(key, tagData = {}) {
   const href = `/tags/${key}/`;
-  let date, updated;
   const image = tagData.image;
 
   /** @type TagsItem */
   const tag = {
     ...tagData,
     data: {
-      date,
       hero: image,
       tags: [key],
-      updated,
     },
     description: `i18n.tags.${key}.description`,
     elements: [],
@@ -116,8 +114,7 @@ module.exports = (collections) => {
         tag.startsWith('chrome-'),
       );
 
-      while (chromeTags.length) {
-        const chromeTag = chromeTags.shift();
+      for (const chromeTag of chromeTags) {
         if (!tags[chromeTag]) {
           tags[chromeTag] = createChromeTag(chromeTag);
         }

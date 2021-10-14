@@ -19,7 +19,7 @@ declare global {
     /**
      * When the first post was created.
      */
-    date: Date;
+    date?: Date;
     /**
      * Hero image of element.
      */
