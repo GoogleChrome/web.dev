@@ -7,12 +7,18 @@
     width: 100%;
     max-width: 8rem;
   }
+}
 
-  /// Sets the text color to be themeable
-  /// If the logo SVG changes, make sure this
-  /// pseudo-class is still accurate
-  svg > path:last-child {
-    fill: var(--color-brand-text);
+/// Sets the text color to be themeable
+/// If the logo SVG changes, make sure this
+/// pseudo-class is still accurate
+.brand__text {
+  fill: get-utility-value('color', 'mid-text');
+
+  /// In very small contexts, the logo takes up a lot of space, so we
+  /// use just the logomark instead
+  @include media-query('xs') {
+    display: none;
   }
 }
 
