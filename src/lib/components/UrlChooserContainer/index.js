@@ -19,7 +19,7 @@ class UrlChooserContainer extends BaseStateElement {
       active: {type: Boolean},
       hasError: {type: Boolean},
       // TODO: Temporary field. Remove when we stop supporting both LH and PSI.
-      shouldRunPsi: {type: Boolean},
+      shouldRunPsi: {type: Boolean, attribute: 'should-run-psi'},
     };
   }
 

@@ -1,5 +1,6 @@
 const PSI_API =
   'https://pagespeedonline.googleapis.com/pagespeedonline/v5/runPagespeed';
+// This is referrer-restricted key, safe to be stored on the client.
 const API_KEY = 'AIzaSyCWNar-IbOaQT1WX_zfAjUxG01x7xErbSc';
 
 /**
@@ -24,7 +25,7 @@ export async function runPsi(url) {
     params.append('category', category);
   }
   const requestUrl = `${PSI_API}?${params.toString()}`;
-  const resp = await fetch(`${requestUrl}`, {
+  const resp = await fetch(requestUrl, {
     method: 'GET',
   });
   const r = await resp.json();
