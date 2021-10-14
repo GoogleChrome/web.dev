@@ -1,0 +1,22 @@
+.reel {
+  display: flex;
+  height: auto;
+  gap: 0 $global-gutter;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.reel > * {
+  flex-basis: var(--reel-item-width, 33.333%);
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.reel > *:last-child {
+  scroll-snap-align: end;
+}
+
+.reel.scrollbar {
+  padding-block-end: get-space('size-1');
+}
