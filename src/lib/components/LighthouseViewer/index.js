@@ -43,7 +43,7 @@ class LighthouseViewer extends BaseStateElement {
     return;
   }
 
- firstUpdated() {
+  firstUpdated() {
     this.container = this.querySelector('.lighthouse-viewer');
   }
 }
