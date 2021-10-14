@@ -4,7 +4,7 @@ subhead: Best practices to set your Referrer-Policy and use the referrer in inco
 authors:
   - maudn
 date: 2020-07-30
-updated: 2020-09-23
+updated: 2021-10-14
 hero: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
 thumbnail: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
 description: |
@@ -122,7 +122,7 @@ Things to note:
 
 ## Default referrer policies in browsers
 
-_As of July 2020_
+_As of October 2021_
 
 **If no referrer policy is set, the browser's default policy will be used.**
 
@@ -138,36 +138,31 @@ _As of July 2020_
       <tr>
         <td>Chrome</td>
         <td>
-          Planning to switch to <code>strict-origin-when-cross-origin</code> in <a href="https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default">version 85</a> (previously <code>no-referrer-when-downgrade</code>)
+          The default is <code>strict-origin-when-cross-origin</code>.
         </td>
       </tr>
       <tr>
         <td>Firefox</td>
         <td>
-          <ul>
-            <li><code>strict-origin-when-cross-origin</code> (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1589074">see closed bug</a>)</li>
-            <li><code>strict-origin-when-cross-origin</code> in Private Browsing and for trackers</li>
-          </ul>
+        The default is <code>strict-origin-when-cross-origin</code>.<br>
+        Starting from <a href="https://blog.mozilla.org/security/2021/10/05/firefox-93-features-an-improved-smartblock-and-new-referrer-tracking-protections/">version 93</a>, the less restrictive referrer policies <code>no-referrer-when-downgrade</code>, <code>origin-when-cross-origin</code>, and <code>unsafe-url</code> are ignored for cross-site requests: Firefox always trims the referrer for cross-site requests, regardless of the website's policy.
         </td>
       </tr>
       <tr>
         <td>Edge</td>
         <td>
-          <ul>
-            <li><code>no-referrer-when-downgrade</code></li>
-            <li><a href="https://github.com/privacycg/proposals/issues/13">Experimenting</a> with <code>strict-origin-when-cross-origin</code>
-            </li>
-          </ul>
+          The default is <code>no-referrer-when-downgrade</code>.<br> Edge has been <a href="https://github.com/privacycg/proposals/issues/13">experimenting</a> with <code>strict-origin-when-cross-origin</code> as a default.
         </td>
       </tr>
       <tr>
         <td>Safari</td>
         <td>
-          Similar to <code>strict-origin-when-cross-origin</code>. See
+          The default is similar to <code>strict-origin-when-cross-origin</code>, with some specificities. See
           <a href="https://webkit.org/blog/9661/preventing-tracking-prevention-tracking/">Preventing Tracking Prevention Tracking</a> for details.
         </td>
       </tr>
     </tbody>
+
   </table>
 </div>
 
