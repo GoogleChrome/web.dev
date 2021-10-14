@@ -11,6 +11,7 @@
 
   li a:link,
   li a:visited {
+    font-size: get-size('size-0');
     @include apply-utility('color', 'mid-text');
 
     &:not(:hover) {
