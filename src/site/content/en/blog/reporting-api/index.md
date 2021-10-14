@@ -59,7 +59,7 @@ You decide to monitor your site in order to know when these policies are violate
 you want to keep an eye on deprecated or soon-to-be-deprecated APIs your codebase may be using.
 
 To do so, you configure a `Reporting-Endpoints` header, and map these endpoint names via the
-`'report-to'` directive in your policies where needed.
+`report-to` directive in your policies where needed.
 
 ```http
 Reporting-Endpoints: main-endpoint="https://reports.example/main", default="https://reports.example/default"
@@ -115,7 +115,7 @@ server nor by your site).
 
 The endpoint(s) receive(s) these reports.
 
-You can now access the reports on these endpoints and monitor what went wrong. You're ready start
+You can now access the reports on these endpoints and monitor what went wrong. You're ready to start
 troubleshooting to solve the problem that's affecting your users.
 
 {% Details %}
@@ -211,7 +211,7 @@ has a permission policy to prevent microphone usage, and a script requests audio
 
 ## Reports
 
-### What do reports look like?
+### What do reports look like? {: #report-format}
 
 The browser sends reports to the endpoint you've configured, in requests that look as follows:
 
@@ -299,13 +299,23 @@ Here's the data you can find in each of these reports:
   </table>
 </div>
 
-### When and how does the browser send reports?
+#### Credentialed reports
 
-**Reports are delivered out-of-band from your site**, meaning that the browser controls when reports
-are sent to your endpoint(s). It captures, queues, and sends reports automatically at a suitable
-time.
+Reporting endpoints that are same-origin with the reporting page will also receive the credentials
+(cookies) in these requests. This gives the endpoint useful additional context about the report; for
+example, whether a given user’s account is triggering errors consistently, or if a certain sequence
+of actions taken on other pages is triggering a report on this page.
 
-This means that there's little to no performance concern when using the Reporting API, and there's
+{% Aside %} For **same-origin endpoints**, this doesn't leak any new information to the reporting
+endpoint that it could not obtain in other ways. **Cross-origin endpoints** do not receive
+credentials. This is a security measure and can't be changed. {% endAside %}
+
+### When and how does the browser send reports? {: #report-timing}
+
+**Reports are delivered out-of-band from your site**: the browser controls when they're sent to the
+configured endpoint(s). It captures, queues, and sends reports automatically at a suitable time.
+
+This means that there's little to no performance concern when using the Reporting API. There's
 also no way to control when the browser sends queued reports.
 
 Reports are sent with a delay⏤up to a minute⏤to increase the chances to send reports in batches.
@@ -316,14 +326,12 @@ work, or if the user is on a slow and/or congested network at the time.
 {% Aside %} When you're debugging locally, you can turn off this delay for convenience. See
 [how](#save-time). {% endAside %}
 
-### What reports are sent?
+### What gets reported?
 
-If you've set up `Reporting-Endpoints` and a few policies on your page:
-
-- Reports that are generated due to violations or deprecations happening on your page **will** be
+- Reports that are generated due to violations or deprecations happening **on your page** will be
   sent to the endpoint(s) you've configured. This includes violations committed by third-party
   scripts running on your page.
-- Violations or deprecations that happened in a cross-origin iframe embedded in your page will
+- Violations or deprecations that happened **in a cross-origin iframe embedded in your page** will
   **not** be reported to your endpoint(s) (at least not by default). An iframe could set up its own
   reporting and even report to your site's⏤that is, the first-party's⏤reporting service; but that's
   up to the framed site.
@@ -331,8 +339,8 @@ If you've set up `Reporting-Endpoints` and a few policies on your page:
 {% Aside 'gotchas' %}
 
 In Chrome DevTools, you'll see a console error or warning pop up for violations that are committed
-by third-party scripts _and_ third-party iframes. Not all of these will translate to reports being
-sent to your endpoint.
+by third-party scripts _and_ third-party iframes. Not all of these will translate into reports being
+sent to your endpoint: the former will, the latter won't.
 
 {% endAside %}
 
@@ -386,7 +394,7 @@ Read the [migration guide](/reporting-api-migration/#network-error-logging) for 
 
 ## Using the Reporting API
 
-### Step 1: Decide where reports should be sent
+### Decide where reports should be sent
 
 You have two options:
 
@@ -403,7 +411,7 @@ Some examples of report collector services are:
 If you know of other solutions, please [open an
 issue](https://github.com/GoogleChrome/web.dev/issues) to let us know, and we'll update this post!
 
-**Beside pricing, a few aspects should be considered when selecting a report collector as a
+**Beside pricing, ask yourself the following questions when selecting a report collector as a
 service:** 🧐
 
 - Does this collector support all report types? For example, not all reporting endpoint solutions
@@ -415,14 +423,15 @@ service:** 🧐
 
 #### Option 2: Build and operate your own report collector
 
-Building your own server that receives reports isn't that trivial. To get started, you can use our
+Building your own server that receives reports isn't that trivial. To get started, you can fork our
 lightweight boilerplate. It's built with express and can receive and display reports.
+Don't use it as-in in production, but feel free to use it for a quick prototype.
 
 1. Head over to the [boilerplate report collector](https://glitch.com/edit/#!/reports-endpoint).
 
-1. {% Instruction 'remix' %}
+2. {% Instruction 'remix' %}
 
-1. You now have your clone! You can customize it for your own purposes.
+3. You now have your clone! You can customize it for your own purposes.
 
 If you're not using the boilerplate and are building your own server from scratch:
 
@@ -445,9 +454,7 @@ In this case, set multiple endpoints as follows:
 Reporting-Endpoints: endpoint-1="https://reports-collector.example", endpoint-2="https://my-custom-endpoint.example"
 ```
 
-### Step 2: Configure the `Reporting-Endpoints` header
-
-#### Configure the header
+### Configure the `Reporting-Endpoints` header
 
 Set a `Reporting-Endpoints` response header. Its value must be one or a series of comma-separated
 key-value pairs:
@@ -456,12 +463,21 @@ key-value pairs:
 Reporting-Endpoints: main-endpoint="https://reports.example/main", default="https://reports.example/default"
 ```
 
-- Each key can be a name of your choice, such as `main-endpoint` or `endpoint-1`. You can decide to
-  set different named endpoints for different report types⏤for example, `my-coop-endpoint`,
-  `my-csp-endpoint`. With this, you can route reports to different endpoints depending on their
-  type.
-- If you want to receive **intervention**, **deprecation** and/or **crash** reports, set an endpoint
-  named `default`.
+If you're migrating from the legacy Reporting API to the new Reporting API, it may make sense to
+set **both** `Reporting-Endpoints` and `Report-To`. See details in the [migration
+guide](/reporting-api-migration/#migration-steps). In particular, if you're using reporting for
+`Content-Security-Policy` violations via the `report-uri` directive only, check the [Migration
+steps for CSP reporting](/reporting-api-migration/#migration-steps-for-csp-reporting).
+
+#### Keys (endpoint names)
+
+Each key can be a name of your choice, such as `main-endpoint` or `endpoint-1`. You can decide to
+set different named endpoints for different report types⏤for example, `my-coop-endpoint`,
+`my-csp-endpoint`. With this, you can route reports to different endpoints depending on their
+type.
+
+If you want to receive **intervention**, **deprecation** and/or **crash** reports, set an endpoint
+named `default`.
 
 {% Aside 'gotchas' %}
 
@@ -472,15 +488,17 @@ Reporting-Endpoints: main-endpoint="https://reports.example/main", default="http
 
 {% endAside %}
 
-- Each value is a URL of your choice, where the reports will be sent to; the URL to set here depends
-  on what you've decided in Step 1.
-- If you're migrating from the legacy Reporting API to the new Reporting API, it may make sense to
-  set **both** `Reporting-Endpoints` and `Report-To`. See details in the [migration
-  guide](/reporting-api-migration/#migration-steps). In particular, if you're using reporting for
-  `Content-Security-Policy` violations via the `report-uri` directive only, check the [Migration
-  steps for CSP reporting](/reporting-api-migration/#migration-steps-for-csp-reporting).
+#### Values (URLs)
 
-##### Examples
+Each value is a URL of your choice, where the reports will be sent to; the URL to set here depends
+on what you've decided in Step 1.
+
+An endpoint URL:
+
+- Must start with a slash (`/`). Relative paths are **not** supported.
+- Can be cross-origin; but in that case [credentials are not sent with the reports](#credentialed-reports).
+
+#### Examples
 
 ```http
 Reporting-Endpoints: my-coop-endpoint="https://reports.example/coop", my-csp-endpoint="https://reports.example/csp", default="https://reports.example/default"
@@ -493,31 +511,37 @@ Reporting-Endpoints: main-endpoint="https://reports.example/main", default="http
 Report-To: ..
 ```
 
-##### What's a valid endpoint URL?
-
-An endpoint URL:
-
-- Must start with a slash (`/`). Relative paths are **not** supported.
-- Can be cross-origin; but in that case credentials are **not** sent with the reports.
-
-##### Where to set the header?
+#### Where to set the header?
 
 In the new Reporting API⏤the one that is covered in this post⏤ reports are scoped to **documents**.
 This means that for one given origin, different documents (`site.example/page1` and
 `site.example/page2`) can send reports to different endpoints.
 
-If you're migrating from the legacy Reporting API to the new Reporting API, check the [migration
-guide](/reporting-api-migration).
+To receive report for violations that take place on any page of your site, set the header as a middleware on all responses.
+Here's an example in Express:
 
-#### Edit your policies
+```javascript
+app.use(function (request, response, next) {
+  // Set up the Reporting API
+  response.set(
+    'Reporting-Endpoints',
+    `main-endpoint="${REPORTING_ENDPOINT_MAIN}", default="${REPORTING_ENDPOINT_DEFAULT}"`,
+  );
+  next();
+});
+```
 
-Add a `report-to` directive to each policy for which you wish to receive violation reports; the
+{% Aside %} This is different from the legacy Reporting API (`Report-To` header), where you could
+set an "ambient" endpoint for one page, and automatically get reports for any page on the same
+origin. If you're migrating from the legacy Reporting API to the new Reporting API, check the
+[migration guide](/reporting-api-migration). {% endAside %}
+
+### Edit your policies
+
+Now that the `Reporting-Endpoint` header is configured, add a `report-to` directive to each policy for which you wish to receive violation reports; the
 value of the directive should be one of the named endpoints you've configured.
 
-This is not needed for **deprecation**, **intervention** and **crash** reports. These reports are
-generated as long as a `default` endpoint is set up, and they're sent to this `default` endpoint.
-
-Example
+#### Example
 
 ```http
 # Content-Security-Policy violations and Document-Policy violations will be sent to main-endpoint
@@ -532,7 +556,10 @@ the same header structure. Depending on the policy, the right syntax may be
 [demo](https://glitch.com/edit/#!/reporting-api-demo?path=server.js%3A1%3A0) for code examples. {%
 endBanner %}
 
-#### Example code
+This is not needed for **deprecation**, **intervention** and **crash** reports. These reports are
+generated as long as a `default` endpoint is set up, and they're sent to this `default` endpoint.
+
+### Example code
 
 To see all this in context, below is an example Node server that uses Express and brings together
 all the pieces discussed in this article. It shows how to configure reporting for several different
@@ -551,7 +578,8 @@ report types and displays the results.
 
 ### Intentionally generate reports
 
-When debugging, you may want to intentionally violate your policies in order to receive reports. To
+When setting up the Reporting API, you'll likely need to intentionally violate your policies in order to check if reports are generated and sent as expected.
+To
 see example code that violates policies and does other bad things that will generate reports of all
 types, check out the [demo](#demo-and-code).
 
@@ -571,40 +599,51 @@ YOUR_PATH/TO/EXECUTABLE/Chrome --short-reporting-delay
 See [How to run Chromium with
 flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags). {% endAside %}
 
-### Troubleshooting
+### Use DevTools
 
-Are reports not showing up as expected in your endpoint? Here are a few tips to troubleshoot this.
+In Chrome, use DevTools to see the reports that have been sent or will be sent.
 
-#### Is the report generated?
-
-In Chrome, use DevTools to see the reports that have been generated.
-
-As of October 2021, this DevTools feature is experimental. To use it, follow these steps:
+As of October 2021, this feature is experimental. To use it, follow these steps:
 
 1. Use Chrome version **96** and newer (check by typing `chrome://version` in your browser)
-1. Type or paste `chrome://flags/#enable-experimental-web-platform-features` in Chrome's URL bar.
-1. Click **Enabled**.
-1. Restart your browser.
-1. Open Chrome DevTools.
-1. In Chrome DevTools, open the Settings. Under Experiments, click **Enable Reporting API panel in
+2. Type or paste `chrome://flags/#enable-experimental-web-platform-features` in Chrome's URL bar.
+3. Click **Enabled**.
+4. Restart your browser.
+5. Open Chrome DevTools.
+6. In Chrome DevTools, open the Settings. Under Experiments, click **Enable Reporting API panel in
    the Application panel**.
-1. Reload DevTools.
-1. Reload your page. Reports generated by the page DevTools is open in will be listed in Chrome
+7. Reload DevTools.
+8. Reload your page. Reports generated by the page DevTools is open in will be listed in Chrome
    DevTools' **Application** panel, under **Reporting API**.
 
 <figure class="w-figure">
 {% Img src="image/O2RNUyVSLubjvENAT3e7JSdqSOx1/SW8VwLk0GDY26pclz1RH.png", alt="Screenshot of DevTools listing the reports", width="800", height="566" %}
   <figcaption class="w-figcaption">
-    See generated reports in Chrome DevTools.
+    Chrome DevTools display the reports generated on your page and their status.
   </figcaption>
 </figure>
 
-Reports that show up in this list have been correctly generated.
+The **Status** column tells you if the report has been successfully sent:
 
-Does the report you expect show up in this list? If not:
+- `Success`: The
+  browser has sent the report and the endpoint replied with a success code (`200`)
+- `Pending`: The
+  browser is currently sending the report
+- `Queued`: The browser has sent the report but the endpoint
+  hasn't confirmed that it has received it
 
-- This may mean that `report-to` in your policy is misconfigured, making it impossible to generate a
-  report. Head over to [Configure the policies](#step-2-configure-the-reporting-endpoints-header) to
+### Troubleshooting
+
+Are reports not generated or not sent as expected to your endpoint?
+Here are a few tips to troubleshoot this.
+
+#### Reports are not generated
+
+Reports that show up in DevTools have been correctly generated.
+If the report you expect does **not** show up in this list:
+
+- Check `report-to` in your policies. If this is misconfigured, a
+  report won't be generated. Head over to [Configure the policies](#step-2-configure-the-reporting-endpoints-header) to
   fix this. An additional way to troubleshoot this is to check the DevTools console in Chrome: if an
   error pops up in the console for the violation you expected, this means your policy is probably
   properly configured.
@@ -613,25 +652,20 @@ Does the report you expect show up in this list? If not:
   that violates a policy and hence generates a report, this report will show up only if you open the
   iframe in its own window and open DevTools for that window.
 
-#### Is the report generated, but not properly sent or received?
+#### Reports are generated but not sent or not received
 
-You can check if the report has been successfully sent in DevTools's status column: `Success`: The
-browser has sent the report and the endpoint replied with a success code (`200`) `Pending`: The
-browser is currently sending the report `Queued`: The browser has sent the report but the endpoint
-hasn't confirmed that it has received it
+What if you can see a report in DevTools, but your endpoint doesn't receive it?
 
 {% Aside 'gotchas' %} Because the report is sent out-of-band by the browser itself and not by a
-certain site, the `POST` requests with the reports are **not** visible in the Network panel of
+certain site, the `POST` requests with the reports are not displayed in the **Network** panel of
 your Developer Tools. {% endAside %}
-
-To answer this, try the following:
 
 - Make sure to use [short delays](#save-time). Maybe the reason you can't see a report is because it
   hasn't been sent yet!
 - Check your `Reporting-Endpoints` header configuration. If there's an issue with it, a report that
   has been generated correctly will not be sent. In DevTools, the report's status will remain
   `Queued` (it might jump to `Pending`, and then quickly back to `Queued` when a delivery attempt is
-  made). Some common mistakes that may cause this:
+  made) in this case. Some common mistakes that may cause this:
 
   - The endpoint is used but not configured. Example:
 
@@ -639,7 +673,7 @@ To answer this, try the following:
 
     ```http
     Cross-Origin-Embedder-Policy: "require-corp;report-to='coep-endpoint'"
-    Reporting-Endpoints: default= "https://reports.example/default",
+    Reporting-Endpoints: default="https://reports.example/default"
     ```
 
     {% CompareCaption %}
@@ -659,9 +693,9 @@ To answer this, try the following:
   details](#step-2-configure-the-reporting-endpoints-header).
 
 - Make sure that your endpoint is CORS-configured. One common mistake is setting up an endpoint that
-  doesn't support CORS preflight requests.
+  doesn't support CORS preflight requests
 
-- Check that your endpoint itself can handle incoming requests. To do so, instead of generating
+- Check that your endpoint can handle incoming requests. To do so, instead of generating
   reports manually, you can emulate the browser by sending to your endpoint requests that look like
   what the browser would send. Run the following:
 
@@ -672,16 +706,19 @@ curl --header "Content-Type: application/reports+json" \
   YOUR_ENDPOINT
 ```
 
-Your endpoint should answer with `200 OK` or similar, and should receive the reports. If not,
+Your endpoint should respond with `200 OK` or similar, and should receive the reports. If it doesn't,
 there's an issue with the endpoint's configuration.
 
 ## Related reporting mechanisms
 
 ### Report-Only
 
+- Enforcement mode
+- Reporting mode
+
 CSP, COOP and COEP headers each have a `Report-Only` variant:
 [`Content-Security-Policy-Report-Only`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy-Report-Only),
-[`Cross-Origin-Embedder-Policy-Report-Only`](https://web.dev/coop-coep/#group) and
+[`Cross-Origin-Embedder-Policy-Repsort-Only`](https://web.dev/coop-coep/#group) and
 [`Cross-Origin-Opener-Policy-Report-Only`](https://web.dev/coop-coep/#group). Both the main headers
 and their `Report-Only` variant are configured using `report-to`. Once `report-to` is configured,
 you need to specify endpoints.
@@ -698,8 +735,7 @@ warnings.
 Both `ReportingObserver` and the `Reporting-Enpoints` header are part of the same Reporting API
 spec, but they enable slightly different uses cases.
 
-`ReportingObserver` can surface client-side warnings such as deprecations and browser interventions;
-**the reports will look the same as the ones generated via `Reporting-Endpoints`**. However, unlike
+`ReportingObserver` can surface client-side warnings such as deprecations and browser interventions; the reports will look the same as the ones generated via `Reporting-Endpoints`. However, unlike
 `Reporting-Endpoints`, `ReportingObserver` doesn't capture any other types of reports, such as CSP
 or COOP/COEP violations.
 
@@ -710,12 +746,11 @@ Use `ReportingObserver` if:
   attach a callback to a violation event).
 - You want to attach additional information to a report to aid in debugging.
 
-Note that with `ReportingObserver`, reports are not automatically sent to a server (unless you
-choose to do so in the callback).
+Another difference is that `ReportingObserver` is configured only client-side:
+you can use it even if you have no control over server-side headers and can't set `Reporting-Endpoints`.
 
-Another point to highlight is that `ReportingObserver` is configured only client-side, which means
-you can use it event if you have no control over server-side headers⏤you can't do that with
-Reporting API.
+Note that with `ReportingObserver`, reports are not automatically sent to a server unless you
+choose to do so in a callback.
 
 ## Further reading
 
