@@ -209,7 +209,7 @@ If no reference is available, but you think there should be, contact jmedley@ wh
 On web.dev there are several interesting components. 
 Using these in your article will avoid presenting readers with a wall of text. For example:
 
--  Add extra information or warn people with the aside component: [aside on web.dev](/handbook/web-dev-components/#asides), [aside on developer.chrom.com](https://developer.chrome.com/docs/handbook/components/#asides). 
+-  Add extra information or warn people with the aside component: [aside on web.dev](/handbook/web-dev-components/#asides), [aside on developer.chrome.com](https://developer.chrome.com/docs/handbook/components/#asides). 
 -  Contrast code examples with the compare component: [compare on web.dev](https://web.dev/handbook/web-dev-components/#compare), [compare on developer.chrome.com](https://developer.chrome.com/docs/handbook/components/#compare).
 -  Add [browser compatibility information on web.dev](https://web.dev/handbook/web-dev-components/#browsercompat).
 
