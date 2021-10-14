@@ -7,8 +7,7 @@ authors:
   - maudn
 date: 2021-10-19
 updated: 2021-10-19
-description: |
-  A new version of the Reporting API is available. It's more private and more likely to be supported across browsers. This post goes over how to migrate to the new version of the Reporting API.
+description: A new version of the Reporting API is available. The new API is leaner and more likely to be supported across browsers.
 hero: image/O2RNUyVSLubjvENAT3e7JSdqSOx1/PYEe5UP3bVYzPMXdQc0X.jpg
 alt: |
   A person and their refection on wet sand, symbolizing the migration from the legacy to the new Reporting API.
@@ -22,11 +21,11 @@ tags:
 API (v1). If you're new to the Reporting API or need detailed usage examples, head over to the [main
 post on the Reporting API](/reporting-api) instead. {% endBanner %}
 
-The Reporting API informs you about errors that happen across your site as visitors use it. It gives
+The [Reporting API](/reporting-api) informs you about errors that happen across your site as visitors use it. It gives
 you visibility on browser interventions, browser crashes, Content-Security-Policy violations,
 COOP/COEP violations, deprecation warnings and more.
 
-**A new version of the Reporting API is available. It's more private, and more likely to be
+**A new version of the Reporting API is available. The new API is leaner and more likely to be
 supported across browsers.**
 
 {% Aside %} The legacy Reporting API is named _Reporting API v0_. The new Reporting API is named
@@ -71,7 +70,7 @@ A new mechanism for Network Error Logging will be developed. Once that becomes a
 ## Differences between v0 and v1
 
 {% Aside 'gotchas' %}
-The **legacy** Reporting API uses the `Report-To` header, and the `report-to` directive in other headers.
+The **legacy** Reporting API (v0) uses the `Report-To` header, and the `report-to` directive in other headers.
 
 Legacy API:
 
@@ -80,7 +79,7 @@ Report-To: ...
 Document-Policy: ...; report-to my-endpoint
 ```
 
-The **new** Reporting API uses the `Reporting-Enpoints` header, and also **the same `report-to` directive** in other headers
+The **new** Reporting API (v1) uses the `Reporting-Enpoints` header, and also **the same `report-to` directive** in other headers.
 
 New API:
 
@@ -140,10 +139,10 @@ Document-Policy: ...; report-to my-endpoint
 ### What remains unchanged
 
 - The format and structure of the reports is unchanged.
-- The request sent by the browser to the endpoint remains a POST request of "Content-type"
+- The request sent by the browser to the endpoint remains a `POST` request of `Content-type`
   `application/reports+json`.
 - Mapping certain endpoints to certain report types is supported in both v0 and v1.
-- The role of the default endpoint is unchanged.
+- The role of the `default` endpoint is unchanged.
 - The Reporting API v1 has no impact on the [`ReportingObserver`](/reporting-observer).
   `ReportingObserver` continues getting access to all observable reports, and their format is
   identical.
@@ -231,7 +230,7 @@ All differences between v0 and v1
 If you've set up your own server as a reporting endpoint, or if you're developing or maintaining a
 report collector as a service, expect more traffic to that endpoint.
 
-Reports aren't batched with the Reporting API v1 as they are with the Reporting API v0. Therefore,
+This is because reports aren't batched with the Reporting API v1 as they are with the Reporting API v0. Therefore,
 as application developers start migrating to the Reporting API v1, the **number of reports** will
 remain similar, but the **volume of requests** to the endpoint server will increase.
 
@@ -312,7 +311,7 @@ violation reports can be configured:
   same format as other Reporting API requests, and the same content-type `application/reports+json`.
 
 Using the first approach (only `report-uri`) is [no longer
-recommended](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri) and using the second approach has a few benefits. In particular, it enables you to using a single way to set up reporting for all report types as well as to set a generic endpoint (because all report requests generated via the Reporting API⏤CSP **and** others⏤ have the same format `application/reports+json`).
+recommended](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri) and using the second approach has a few benefits. In particular, it enables you to using a single way to set up reporting for all report types as well as to set a generic endpoint (because all report requests generated via the Reporting API⏤CSP **and** others⏤have the same format `application/reports+json`.
 
 However, [only a few browsers support
 `report-to`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to).
@@ -438,7 +437,7 @@ responses that might generate reports. {% endCompareCaption %}
 
 #### CSP reporting migration
 
-{% Compare 'worse', 'Legacy code, with `report-uri` only' %}
+{% Compare 'worse', 'Legacy code, with report-uri only' %}
 
 ```http
 Content-Security-Policy: ...; report-uri https://reports.example/main
@@ -446,21 +445,21 @@ Content-Security-Policy: ...; report-uri https://reports.example/main
 
 {% CompareCaption %} Using only `report-uri` is [no longer
 recommended](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri).
-If your code looks like above, migrate. See the 'New code' examples below (in green). {%
+If your code looks like above, migrate. See the New code examples below (in green). {%
 endCompareCaption %}
 
 {% endCompare %}
 
-{% Compare 'worse', 'Better legacy code, with `report-uri` *and* the `report-to` directive with the
-`Report-To` (v0) header' %}
+{% Compare 'worse', 'Better legacy code, with report-uri *and* the report-to directive with the
+Report-To (v0) header' %}
 
 ```http
 Content-Security-Policy: ...; report-uri https://reports.example/main; report-to main-endpoint
 Report-To: main-endpoint="https://reports.example/main"
 ```
 
-{% CompareCaption %} This is better: this code uses `report-to`, the newer replacement to
-`report-uri`. It still keeps `report-uri` around for backwards compatibility; several
+{% CompareCaption %} This is better: this code uses report-to, the newer replacement to
+report-uri. It still keeps report-uri around for backwards compatibility; several
 browsers don't support
 [`report-to`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to)
 but do support
