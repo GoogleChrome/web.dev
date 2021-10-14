@@ -32,14 +32,15 @@ can be cleaned up with the following:
 /**
  * Render a Details panel preview as an HTML string.
  * @param {string[]} contentArr Array of content split at new lines.
+ * @param {string} classNames String of CSS class names that are applied to summary
  * @return {string}
  */
-function renderPreview(contentArr, tokens = 'w-details__preview') {
+function renderPreview(contentArr, classNames = 'w-details__preview') {
   if (!contentArr.length) return '';
 
   const preview = contentArr.join('\n');
 
-  return html`<p class="${tokens}">${md.renderInline(preview)}</p>`;
+  return html`<p class="${classNames}">${md.renderInline(preview)}</p>`;
 }
 
 function DetailsSummary(content, headingLevel = 'h2') {
