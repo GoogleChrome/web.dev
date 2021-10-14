@@ -1,3 +1,6 @@
+/// The skip link is visually hidden when it is not focused.
+/// It exists so when a user hits tab on load, they can quickly
+/// skip to the main content of the site—avoiding navigation etc
 .skip-link {
   z-index: 10;
   width: max-content;
