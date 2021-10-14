@@ -1,7 +1,9 @@
 .skip-link {
   z-index: 10;
   width: max-content;
-  inset: $global-gutter 0 0 $global-gutter;
+  inset: $global-gutter-narrow auto auto $global-gutter;
+  position: absolute;
+  flex: none;
 
   /// Please avoid using @extend where possible
   /// In this context, it's fine because this
