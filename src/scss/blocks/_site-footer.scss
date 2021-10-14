@@ -2,10 +2,20 @@
 /// The main, global footer that is on each page
 .site-footer {
   padding: $global-gutter;
+  border-block-start: 1px solid get-utility-value('color', 'stroke');
+  margin-block-start: get-space('size-2');
 
   /// There's a few lists, so we set globally
   ul {
     padding: 0;
+  }
+
+  a:link {
+    @include apply-utility('color', 'mid-text');
+  }
+
+  a:visited {
+    color: currentColor;
   }
 }
 
@@ -20,7 +30,7 @@
 .site-footer__brand-nav {
   border-block: 1px solid get-utility-value('color', 'stroke');
   padding: get-space('base') 0;
-  margin: get-space('size-2') 0;
+  margin: get-space('size-1') 0;
 
   img {
     display: block;

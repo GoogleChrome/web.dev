@@ -88,6 +88,10 @@
 @include media-query('md') {
   .site-header web-navigation-drawer {
     transition: opacity 100ms;
+
+    &::before {
+      display: none;
+    }
   }
 
   .site-header[class*='expanded'] web-navigation-drawer {
