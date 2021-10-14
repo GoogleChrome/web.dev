@@ -35,6 +35,7 @@ declare global {
     elements: EleventyCollectionItem[];
     href: string;
     key: string;
+    overrideTitle?: string;
     title: string;
     url: string;
   }

@@ -19,7 +19,7 @@ tags:
   - blog
   - security
   - cookies
-  # - chrome80
+  - chrome-80
   - test-post
 feedback:
   - api
