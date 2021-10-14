@@ -826,7 +826,7 @@ mdiblasio:
     ru: Последние новости и статьи от Michael DiBlasio.
     zh: Michael DiBlasio 撰写我们的最新资讯、动态和故事。
 
-jeremywagner:
+jlwagner:
   title:
     en: Jeremy Wagner
     es: Jeremy Wagner
@@ -3381,7 +3381,7 @@ jackjey:
     pt: Jack é um engenheiro que trabalha para web
     ru: Jack - инженер, работающий в Интернете.
     zh: Jack是一个为网络工作的工程师。
-    
+
 tcoustillac:
   title:
     en: Thierry Coustillac
@@ -3399,3 +3399,9 @@ tcoustillac:
     pt: Nossas últimas notícias, atualizações e histórias por Thierry Coustillac.
     ru: Последние новости и статьи от Thierry Coustillac.
     zh: Thierry Coustillac 撰写我们的最新资讯、动态和故事。
+
+cédricbazureau:
+  title:
+    en: Cédric Bazureau
+  description:
+    en: Cédric Bazureau is a lead developer at Renault.

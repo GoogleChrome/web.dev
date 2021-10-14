@@ -97,7 +97,7 @@ Use `type="tel"` to get an on-screen keyboard optimized for filling telephone nu
 alt="Two screenshots of an input element with type='tel' on iOS and Android, showing how the type attribute changes the on-screen keyboard.", width="800", height="696" %}
 
 Use a phone to [try it out for yourself](https://codepen.io/web-dot-dev/pen/88f1ffed62ef6bdd513351823b7aaa0f),
-and see if you can easily enter every character needed to fill out a telephone number.
+and see if you can easily enter every character needed to fill in a telephone number.
 If you're curious how the on-screen keyboard works for another `type`, try `type="email"` in the demo.
 
 {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/nX50IOaBUCP8mcHqr3CT.jpg",
@@ -106,7 +106,7 @@ alt="Two screenshots of an input element with type='tel' on iOS and Android, sho
 Imagine that you filled out a long form,
 and you're ready to submit it. But where is the **Submit** button?
 It may be behind the browser toolbar, located at the bottom of the screen.
-One way to ensure that buttons are visible is to use the `env()` CSS function.
+One way to ensure that buttons are visible is to use the [`env()`](https://developer.mozilla.org/docs/Web/CSS/env()) CSS function.
 Learn how to
 [ensure buttons aren't obscured by device user interfaces](https://developer.mozilla.org/docs/Web/CSS/env()#using_env_to_ensure_buttons_are_not_obscured_by_device_ui).
 
@@ -118,7 +118,7 @@ Your friend has a tablet? Borrow it and test your form there as well.
 
 Does some styling look different in one browser?
 You can learn how to ensure your
-[styles work across platforms](/learn/forms/css/styling) in a later module.
+[styles work across platforms](/learn/forms/styling) in a later module.
 
 [BrowserStack](https://www.browserstack.com) offers free test accounts for open source projects,
 and [Browserling](https://www.browserling.com) offers a free trial to test on different browsers,

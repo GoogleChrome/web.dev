@@ -23,11 +23,11 @@
     <div class="flex-auto box-flex flex-dir-column">
       <div class="sidebar flex-auto">
         <nav class="flow bg-mid-bg pad-block-size-1" aria-label="design system">
-          <div class="brand cluster pad-inline-size-1">
+          <div class="brand cluster pad-inline-base">
             {{ svg('../../images/lockup.svg', {label: 'web.dev'}) }}
             <p class="brand__byline">Design System</p>
           </div>
-          <div class="pad-inline-size-1">
+          <div class="pad-inline-base">
             {% include "partials/standard-theme-toggle.njk" %}
           </div>
           <ul class="stack-nav flow-space-size-2" role="list">
@@ -35,19 +35,19 @@
               <li>{{ stackLink(link.url, page.url, link.text)}}</li>
             {% endfor %}
           </ul>
-          <h2 class="text-size-3 pad-inline-size-1 flow-space-size-2">CSS</h2>
+          <h2 class="text-size-3 pad-inline-base flow-space-size-2">CSS</h2>
           <ul class="stack-nav" role="list">
             {% for link in cssLinks %}
               <li>{{ stackLink(link.url, page.url, link.text)}}</li>
             {% endfor %}
           </ul>
-          <h2 class="text-size-3 pad-inline-size-1 flow-space-size-2">Component Library</h2>
+          <h2 class="text-size-3 pad-inline-base flow-space-size-2">Component Library</h2>
           <ul class="stack-nav" role="list">
             {% for item in design.components.items %}
               <li>{{ stackLink(item.url, page.url, item.data.title) }}</li>
             {% endfor %}
           </ul>
-          <h2 class="text-size-3 pad-inline-size-1 flow-space-size-2">Pages</h2>
+          <h2 class="text-size-3 pad-inline-base flow-space-size-2">Pages</h2>
           <ul class="stack-nav" role="list">
             {% for item in design.pages %}
               <li>{{ stackLink(item.link, page.url, item.title) }}</li>
@@ -58,7 +58,7 @@
           <article class="prose">
             <h1>{{ pageTitle if pageTitle else title }}</h1>
             {% if summary %}
-              {{ summary | md | safe }}
+              <p>{{ summary | md | safe }}</p>
             {% endif %}
             {% block inner %}
             {% endblock %}

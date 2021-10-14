@@ -120,7 +120,7 @@ prerendered.
 
 The current implementation using a no-state prefetch consumes significantly
 lower memory of around 45 MiB, while still reducing page load times. The fetch
-is triggered by a link element with a `prerender` resource hint. The no-fetch
+is triggered by a link element with a `prerender` resource hint. The no-state
 prefetch is carried out in a new dedicated
 [renderer](https://www.chromium.org/developers/design-documents/multi-process-architecture)
 that is isolated from the visible tabs and cannot disrupt UI. The no-state

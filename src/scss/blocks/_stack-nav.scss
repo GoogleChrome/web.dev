@@ -1,6 +1,7 @@
 /// COMPONENT LIBRARY LOCATION
 /// https://web.dev/design-system/component/stack-nav
-.stack-nav {
+.stack-nav,
+.stack-nav__list {
   padding: 0;
 }
 
@@ -10,8 +11,9 @@
   a {
     flex-wrap: nowrap;
     align-items: flex-start;
-    line-height: 1.1;
-    padding: 1rem $global-gutter;
+    font-size: 0.9em;
+    line-height: 1.2;
+    padding: 1.2em $global-gutter-narrow;
     text-decoration: none;
 
     @include apply-utility('bg', 'action-bg-alt');
@@ -27,8 +29,8 @@
   }
 
   svg {
-    width: 0.9em;
-    height: 0.9em;
+    width: 1rem;
+    height: 1rem;
     flex: none;
 
     @include apply-utility('color', 'mid-text');
@@ -42,15 +44,26 @@
       color: currentColor;
     }
   }
+
+  .cluster {
+    --gutter: 0.5rem 1.2rem;
+
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  .cluster:last-of-type {
+    --gutter: 0.5rem 0.8rem;
+  }
 }
 
 .stack-nav__meta {
-  transform: translateY(0.1ex); /// optical adjustment
+  transform: translateY(0.45ex); /// optical adjustment
   flex: none;
+  font-size: 0.8em;
 
   @include apply-utility('color', 'mid-text');
   @include apply-utility('font', 'mono');
-  @include apply-utility('text', 'size-0');
 
   [aria-current='page'] & {
     color: currentColor;
@@ -59,7 +72,7 @@
 
 .stack-nav__heading {
   font-size: get-size('size-2');
-  padding-inline-start: $global-gutter;
+  padding-inline-start: $global-gutter-narrow;
 
   @include apply-utility('gap-top', 'size-1');
 }

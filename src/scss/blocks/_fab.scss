@@ -2,10 +2,16 @@
 /// https://web.dev/design-system/component/fab
 .fab {
   position: relative;
-  padding: 1em;
+  padding: 0.8em;
   border-radius: 3em;
+  flex: none;
 
   @include button-base-styles();
+
+  /// Ensures the hover state doesn't overflow;
+  &::after {
+    border-radius: 3em;
+  }
 }
 
 .fab__label {

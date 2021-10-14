@@ -1,0 +1,16 @@
+---
+layout: 'base'
+CSS_ORIGIN: 'next'
+---
+{# This is the standard layout that most pages will use. #}
+<a href="#main" class="skip-link button" data-type="primary">Skip to content</a>
+{% include 'partials/site-header.njk' %}
+<main id="main">
+  {% if show_banner %}
+    {% include 'partials/banner.njk' %}
+  {% endif %}
+  <div class="wrapper region">
+    {{ content | safe }}
+  </div>
+</main>
+{% include 'partials/site-footer.njk' %}

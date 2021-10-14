@@ -229,7 +229,7 @@ Accept-CH: Sec-CH-UA-Full-Version
 
 ⬆️ _Subsequent requests_<br> The browser grants the server access to the
 additional information and sends the extra hints back in all subsequent
-responses.
+requests.
 
 ```text
 GET /downloads/app1 HTTP/1.1

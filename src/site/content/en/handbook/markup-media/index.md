@@ -28,12 +28,6 @@ Googlers access, so signing in with a personal account will fail.
 If you're not a Googler, reach out to your Google contact to see about getting
 access to the CDN.
 
-{% Aside 'caution' %}
-There are different uploaders for web.dev and developer.chrome.com:
-* [web.dev uploader](https://web-dev-uploads.web.app/uploader)
-* [developer.chrome.com uploader](https://chrome-gcs-uploader.web.app/)
-{% endAside %}
-
 ### Choose a file
 
 Upload a high quality image (jpg or png if you need alpha transparency). Our
@@ -151,3 +145,15 @@ Use the {% raw %}`{% YouTube %}`{% endraw %} shortcode to embed a YouTube video.
 ```
 
 {% YouTube "qPD2yc8BoDk" %}
+
+Use the {% raw %}`{% YouTubePlaylist %}`{% endraw %} shortcode to embed a YouTube
+playlist iframe.
+
+```md
+{% raw %}{% YouTubePlaylist 'PLNYkxOF6rcICntazGfSVKSj5EwuR9w5Nv' %}
+
+<!-- You can pass allow, src, style and title as options in a second param -->
+{% YouTubePlaylist 'PLNYkxOF6rcICntazGfSVKSj5EwuR9w5Nv', {title: "My title"} %}{% endraw %}
+```
+
+{% YouTubePlaylist 'PLNYkxOF6rcICntazGfSVKSj5EwuR9w5Nv', {title: "My title"} %}

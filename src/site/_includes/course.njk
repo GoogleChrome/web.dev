@@ -4,6 +4,7 @@ pageScripts:
   - '/js/course.js'
 inlineScripts:
   - '../../lib/components/CourseLinks/index.js'
+CSS_ORIGIN: 'next'
 ---
 
 {% from 'macros/audio-fab.njk' import audioFab %}
@@ -35,64 +36,55 @@ inlineScripts:
   {{- content | courseToc | safe -}}
 {% endset %}
 
-<a class="skip-link w-button" href="#main">Skip to main</a>
+<a class="skip-link button" data-type="primary" href="#main">Skip to main</a>
 
-<div class="display-flex direction-column lg:direction-row">
-
+<div class="course">
   {% include 'partials/header-course.njk' %}
-  {% include 'partials/navigation-drawer-course.njk' %}
 
-  <div class="flex-1 min-width-0">
-    {% include 'partials/course-app-bar.njk' %}
+  <div class="sidebar">
 
-    <div class="sticky-observer"></div>
-
-    <div class="course-content display-flex justify-content-center">
-      {% include 'partials/toc-side.njk' %}
-      <main id="main">
-        {% for item in pageNavigation.list %}
-          {% if item.url === page.url %}
-            <div class="course-index font-mono">{{ item.counter }}</div>
-          {% endif %}
-        {% endfor %}
-        <h1 class="course-headline">{{ title | md | safe }}</h1>
-        <p class="course-description">
-          {# If authors use backticks in their description markdown we don't #}
-          {# want the code to have any border or background color. #}
-          <span class="unstyled-code">{{ description | md | safe }}</span>
-        </p>
-        {% include 'partials/toc-inner.njk' %}
-        <div class="course-copy flow">
-          {% if audio %}
-            {% include 'partials/course-audio.njk' %}
-          {% endif %}
-          {{ content | safe }}
-        </div>
-      </main>
+    <div class="course__sidebar">
+      {% include 'partials/navigation-drawer-course.njk' %}
     </div>
 
-    {% include 'partials/course-pagination.njk' %}
+    <div class="course__main">
+      {% include 'partials/course-app-bar.njk' %}
+      <div class="sticky-observer"></div>
+      <div class="wrapper gap-top-size-2">
+        <div class="sidebar flex-align-start flex-dir-rev">
+          {% include 'partials/toc-side.njk' %}
+          <main id="main">
+            <div class="prose">
+              <div class="course__intro flow">
+                {% for item in pageNavigation.list %}
+                  {% if item.url === page.url %}
+                    <div class="eyebrow">{{ item.counter }}</div>
+                  {% endif %}
+                {% endfor %}
+                <h1>{{ title | md | safe }}</h1>
+                {% if description %}
+                <div class="color-mid-text unstyled-code">
+                  {# If authors use backticks in their description markdown we don't #}
+                  {# want the code to have any border or background color. #}
+                  {{ description | md | safe }}
+                </div>
+                {% endif %}
+                {% include 'partials/toc-inner.njk' %}
+              </div>
+            </div>
+            <div class="prose gap-top-size-2">
+              {% if audio %}
+                {% include 'partials/course-audio.njk' %}
+              {% endif %}
+              {{ content | safe }}
+            </div>
+          </main>
+        </div>
+      </div>
 
-    {% include 'partials/footer.njk' %}
+      {% include 'partials/course-pagination.njk' %}
+
+      {% include 'partials/site-footer.njk' %}
+    </div>
   </div>
 </div>
-
-{# This little script just watches a sentinel element using an
-IntersectionObserver so we can add a "stuck" state to our course-app-bar and
-have it display a bottom border. #}
-{% set stickyObserver %}
-const target = document.querySelector('.sticky-observer');
-const callback = (entries, observer) => {
-  entries.forEach(entry => {
-    const appBar = document.querySelector('.course-app-bar');
-    if (entry.isIntersecting) {
-      appBar.removeAttribute('data-stuck');
-    } else {
-      appBar.setAttribute('data-stuck', '');
-    }
-  });
-};
-const observer = new IntersectionObserver(callback);
-observer.observe(target);
-{% endset %}
-<script>{{ stickyObserver | minifyJs | cspHash | safe }}</script>

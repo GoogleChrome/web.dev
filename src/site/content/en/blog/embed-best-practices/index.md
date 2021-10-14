@@ -27,7 +27,7 @@ A third-party embed is any content displayed on your site that is:
 * Not authored by you
 * Served from third-party servers
 
-{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/Sa5xRfSvd3uSYMgxY0CK.png", alt="Types of embeds", width="591", height="352" %}
+{% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/dCZLV028zHN1JQIm66wx.jpeg", alt="Multiple offscreen embeds are shown, which could be lazy-loaded", width="800", height="450" %}
 
 Embeds are frequently used in the following:
 * Websites related to sports, news, entertainment, and fashion use videos to augment textual content.
