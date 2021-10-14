@@ -3,7 +3,7 @@ module.exports = function () {
   // e.g. A course with a key of 'a11y' would have a corresponding
   // _data/courses/a11y directory.
   const projectKey = 'design';
-  
+
   return {
     layout: 'course',
     projectKey,
@@ -31,6 +31,10 @@ module.exports = function () {
         if (process.env.ELEVENTY_ENV === 'prod') {
           return false;
         }
+
+        // Because we're overriding the permalink here, we need to explicitly
+        // remove the /en/ from the path. Normally this is handled in
+        // src/site/content/content.11tydata.js) but this supersedes it.
         return (data.page.filePathStem + '.html').replace(/^\/en\//, '/');
       },
     },
