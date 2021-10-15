@@ -214,6 +214,24 @@ chrome93:
     ru: Статьи о функциях, поставляемых в Chrome 93.
     zh: 有關 Chrome 93 中提供的功能的文章。
 
+  chrome95:
+    title:
+      en: Chrome 95
+      es: Chrome 95
+      ja: Chrome 95
+      ko: Chrome 95
+      pt: Chrome 95
+      ru: Chrome 95
+      zh: Chrome 95
+    description:
+      en: Articles about features shipping in Chrome 95.
+      es: Artículos sobre el envío de funciones en Chrome 95.
+      ja: Chrome95で出荷される機能に関する記事。
+      ko: Chrome 95에서 제공되는 기능에 대한 문서입니다.
+      pt: Artigos sobre envio de recursos no Chrome 95.
+      ru: Статьи о функциях, поставляемых в Chrome 95.
+      zh: 有關 Chrome 95 中提供的功能的文章。
+
 chrome-ux-report:
   title:
     en: Chrome UX Report
