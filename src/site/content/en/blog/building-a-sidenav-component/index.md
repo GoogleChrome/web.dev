@@ -301,7 +301,7 @@ sidenav.addEventListener('keyup', event => {
 ##### Browser history
 
 In order to prevent the open and close interaction from stacking multiple
-entries into the browser history, add the following Javascript inline to
+entries into the browser history, add the following JavaScript inline to
 the close button:
 
 ```html
