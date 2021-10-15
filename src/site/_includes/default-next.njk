@@ -9,8 +9,6 @@ CSS_ORIGIN: 'next'
   {% if show_banner %}
     {% include 'partials/banner.njk' %}
   {% endif %}
-  <div class="wrapper region">
-    {{ content | safe }}
-  </div>
+  {{ content | safe }}
 </main>
 {% include 'partials/site-footer.njk' %}
