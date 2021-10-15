@@ -679,7 +679,7 @@ The **Status** column tells you if a report has been successfully sent.
     <tbody>
       <tr>
         <td><code>Success</code></td>
-        <td>The browser has sent the report and the endpoint replied with a success code (<code>200</code> or other successful response code).</td>
+        <td>The browser has sent the report and the endpoint replied with a success code (<code>200</code> or another success response code <code>2xx</code>).</td>
       </tr>
       <tr>
         <td><code>Pending</code></td>
@@ -687,10 +687,19 @@ The **Status** column tells you if a report has been successfully sent.
       </tr>
       <tr>
         <td><code>Queued</code></td>
-        <td>The browser had not yet tried to send the report, or it has and this failed, or it has
-  already given up trying to send it.</td>
-      </tr>
-    </tbody>
+        <td>The report has been generated and the browser is not currently trying to send it. A report appears as <code>Queued</code> in one of these two cases:
+        <ul>
+          <li>The report is new and the browser is waiting to see if more reports arrive before trying to send it.</li>
+          <li>The report is not new; the browser has already tried to send this report and has failed, and is waiting before trying again.</li>
+        </ul>
+        </td>
+        </tr>
+        <tr>
+        <td><code>MarkedForRemoval</code></td>
+        <td>After retrying for a while (<code>Queued</code>), the browser has stopped trying to send the report and will soon remove it from its list of reports to send.</td>
+        </tr>
+        </tbody>
+
   </table>
 </div>
 
@@ -773,7 +782,7 @@ your Developer Tools. {% endAside %}
       YOUR_ENDPOINT
     ```
 
-    Your endpoint should respond with a success code (`200` or another success code). If it doesn't,
+    Your endpoint should respond with a success code (`200` or another success response code `2xx`). If it doesn't,
     there's an issue with its configuration.
 
 ## Related reporting mechanisms
