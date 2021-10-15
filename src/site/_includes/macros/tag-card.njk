@@ -3,7 +3,7 @@
 #}
 {% macro tagCard(tag) %}
 
-{% set title = tag.title | i18n(locale) %}
+{% set title = tag.overrideTitle or tag.title | i18n(locale) %}
 {% set description = tag.description | i18n(locale) %}
 {% set url = tag.url %}
 {% set data = tag.data %}

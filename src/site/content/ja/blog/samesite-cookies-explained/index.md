@@ -11,7 +11,7 @@ tags:
   - blog
   - security
   - cookies
-  # - chrome80
+  - chrome-80
 feedback:
   - api
 ---

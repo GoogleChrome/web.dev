@@ -48,12 +48,6 @@ jobs:
       - name: Lint Tags
         if: ${{ steps.filter.outputs.tags == 'true' || steps.filter.outputs.md == 'true' }}
         uses: ./.github/actions/lint-tags
-        with:
-          tags_yml: src/site/_data/i18n/tags.yml
-          posts_path: src/site/content
-          ignore_tags: |
-            blog
-            test-post
 
       - name: Lint JavaScript
         if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' }}

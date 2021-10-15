@@ -14,7 +14,7 @@ alt: Sanitizing a desk with Sanitizer
 tags:
   - blog
   - security
-  - chrome93
+  - chrome-93
 ---
 
 

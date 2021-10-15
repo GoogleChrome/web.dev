@@ -10,7 +10,7 @@ const yaml = require('js-yaml');
 const path = require('path');
 
 function run() {
-  const tagsYmlInput = core.getInput('tags_yml', {required: true});
+  const tagsYmlInput = 'src/site/_data/i18n/tags.yml';
   const tagsYmlPath = path.join(process.cwd(), tagsYmlInput);
   /** @type {{[tag: string]: any}} */
   const tags = yaml.load(fs.readFileSync(tagsYmlPath, 'utf-8')) || {};
@@ -18,11 +18,11 @@ function run() {
     core.setFailed(`No tags found, check file "${tagsYmlInput}"`);
   }
 
-  const postsPathInput = core.getInput('posts_path', {required: true});
+  const postsPathInput = 'src/site/content';
   const postsGlob = path.join(process.cwd(), postsPathInput, '{**/*,*}.md');
   const postsPaths = glob.sync(postsGlob, {});
 
-  const ignoreTags = core.getMultilineInput('ignore_tags', {required: false});
+  const ignoreTags = ['blog', 'test-post'];
   // Add tags to ignore to our tags master list
   for (const ignoreTag of ignoreTags) {
     tags[ignoreTag] = true;
@@ -44,7 +44,7 @@ function run() {
     }
 
     for (const tag of data.tags) {
-      if (!(tag in tags)) {
+      if (!(tag in tags) && !tag.startsWith('chrome-')) {
         tagErrorCount++;
         core.warning(
           `ERROR IN FILE: ${postPath.replace(

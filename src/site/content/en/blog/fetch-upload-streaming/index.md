@@ -12,6 +12,7 @@ hero: image/admin/9U7u4C7WCGbrdHm3181W.jpg
 alt: A canoe pointed up stream.
 tags:
   - blog
+  - chrome-95
   - network
   - service-worker
 feedback:
