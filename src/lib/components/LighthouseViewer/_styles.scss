@@ -23,11 +23,11 @@ web-lighthouse-viewer {
     }
 
     &::before {
-      @include font-material-icon();
-      content: 'info';
+      content: url(/images/icons/info.svg);
+      width: 24px;
+      height: 24px;
       margin-right: 8px;
-      font-size: 20px;
-
+      display: inline-block;
       // Disabled as `alt` is a new property only supported in Safari.
       // scss-lint:disable PropertySpelling
       alt: '';

@@ -52,12 +52,14 @@ class UrlChooser extends BaseElement {
             data-action="click"
             aria-label="Remove URL"
             @click=${this.onClearInput}
-          ></button>
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+          </button>
         </div>
         <div class="lh-controls">
           <button
             ?disabled=${this.disabled}
-            class="w-button w-button--secondary gc-analytics-event"
+            class="w-button w-button--secondary gc-analytics-event button"
             data-category="web.dev"
             data-label="measure, switch url"
             data-action="click"
@@ -67,7 +69,8 @@ class UrlChooser extends BaseElement {
           </button>
           <button
             ?disabled=${this.disabled}
-            class="w-button w-button--primary gc-analytics-event"
+            class="w-button w-button--primary gc-analytics-event button"
+            data-type="primary"
             data-category="web.dev"
             data-label="measure, run audit"
             data-action="click"
