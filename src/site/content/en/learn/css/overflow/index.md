@@ -23,7 +23,7 @@ There are two different clipping options, `text-overflow` will help with individ
 
 ## Single line overflow with `text-overflow`
 
-Use the [`text-overflow`](https://developer.mozilla.org/docs/Web/CSS/text-overflow) property on any element that contains text node(s), for example a paragraph, `<p>`. It specifies how the text appears when it doesn’t fit in the available space of the element. All viewable HTML text on a page is in [text nodes](https://developer.mozilla.org/en-US/docs/Web/API/Text). To use `text-overflow` you need a single unwrapped line of text, so you must also set `overflow` to `hidden` and have a `white-space` value that prevents wrapping.
+Use the [`text-overflow`](https://developer.mozilla.org/docs/Web/CSS/text-overflow) property on any element that contains text node(s), for example a paragraph, `<p>`. It specifies how the text appears when it doesn’t fit in the available space of the element. All viewable HTML text on a page is in [text nodes](https://developer.mozilla.org/docs/Web/API/Text). To use `text-overflow` you need a single unwrapped line of text, so you must also set `overflow` to `hidden` and have a `white-space` value that prevents wrapping.
 
 ```css
 p {
@@ -83,7 +83,7 @@ The `overflow-x` property controls overflow along the horizontal axis of the dev
 
 ### Logical properties for scroll direction
 
-[`overflow-inline`](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-inline) and [`overflow-block`](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-block) set the overflow based on the document direction and writing mode. 
+[`overflow-inline`](https://developer.mozilla.org/docs/Web/CSS/overflow-inline) and [`overflow-block`](https://developer.mozilla.org/docs/Web/CSS/overflow-block) set the overflow based on the document direction and writing mode. 
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -95,7 +95,7 @@ The `overflow-x` property controls overflow along the horizontal axis of the dev
 
 ### The `overflow` shorthand
 
-The [`overflow`](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow) shorthand sets both 'overflow-x’ and 'overflow-y’ styles in one line:
+The [`overflow`](https://developer.mozilla.org/docs/Web/CSS/overflow) shorthand sets both 'overflow-x’ and 'overflow-y’ styles in one line:
 
 ```css
 overflow: hidden scroll;
