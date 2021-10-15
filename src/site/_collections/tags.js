@@ -96,10 +96,12 @@ module.exports = (collections) => {
   }
 
   /** @type Tags */
-  const tags = Object.keys(supportedTags).reduce((tagsObj, tag) => {
-    tagsObj[tag] = createTag(tag, tagsData[tag]);
-    return tagsObj;
-  }, {});
+  const tags = Object.fromEntries(
+    Object.keys(supportedTags).map((tag) => [
+      tag,
+      createTag(tag, tagsData[tag]),
+    ]),
+  );
 
   const posts = collections
     .getFilteredByGlob('**/*.md')
