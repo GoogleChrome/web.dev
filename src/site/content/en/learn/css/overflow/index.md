@@ -15,7 +15,7 @@ When content extends beyond its parent, there are many options for how you can h
 
 {% Codepen {
   user: 'web-dot-dev',
-  Id: ‘LYjEjWZ’,
+  id: ‘LYjEjWZ’,
   tab: 'result'
 } %}
 
@@ -121,7 +121,7 @@ Now let’s take a closer look at the [values and keywords](https://developer.mo
 {% Codepen {
   user: 'web-dot-dev',
   id: ‘gORZaaa’,
-  tab: 'css,result'
+  tab: 'result'
 } %}
 
 {% Aside %}
@@ -189,7 +189,7 @@ Finally, [`overscroll-behavior`](https://developer.mozilla.org/docs/Web/CSS/over
 {% Codepen {
   user: 'web-dot-dev',
   id: ‘powqJQe’,
-  tab: 'css,result'
+  tab: 'result'
 } %}
 
 ## Resources
