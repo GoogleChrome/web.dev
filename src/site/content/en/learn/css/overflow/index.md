@@ -15,7 +15,7 @@ When content extends beyond its parent, there are many options for how you can h
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: ‘LYjEjWZ’,
+  id: 'LYjEjWZ',
   tab: 'result'
 } %}
 
@@ -35,7 +35,7 @@ p {
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: ‘rNwQXyN’,
+  id: 'rNwQXyN',
   tab: 'result'
 } %}
 
@@ -49,7 +49,7 @@ Overflow properties are set on an element to control what happens when its child
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: ‘KKvwvXE’,
+  id: 'KKvwvXE',
   tab: 'result'
 } %}
 
@@ -57,7 +57,7 @@ You can think of the overflow in two parts. The parent element has a firmly cons
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: ‘xxrmxOm’,
+  id: 'xxrmxOm',
   tab: 'result'
 } %}
 
@@ -67,7 +67,7 @@ The `overflow-y` property controls physical overflow along the vertical axis of 
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: ‘qBjLBKW’,
+  id: 'qBjLBKW',
   tab: 'css,result'
 } %}
 
@@ -77,7 +77,7 @@ The `overflow-x` property controls overflow along the horizontal axis of the dev
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: ‘YzQdzoG’,
+  id: 'YzQdzoG',
   tab: 'css,result'
 } %}
 
@@ -87,7 +87,7 @@ The `overflow-x` property controls overflow along the horizontal axis of the dev
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: ‘gORZVmx’,
+  id: 'gORZVmx',
   tab: 'css,result'
 } %}
 
@@ -120,7 +120,7 @@ Now let’s take a closer look at the [values and keywords](https://developer.mo
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: ‘gORZaaa’,
+  id: 'gORZaaa',
   tab: 'result'
 } %}
 
@@ -138,7 +138,7 @@ Scroll bars take up space within the padding box and can compete for space if `i
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: ‘BaReoEV’,
+  id: 'BaReoEV',
   tab: 'result'
 } %}
 
@@ -178,7 +178,7 @@ This is especially useful when used with the [prefers-reduced-motion](https://de
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: ‘oNwJgae’,
+  id: 'oNwJgae',
   tab: 'result'
 } %}
 
@@ -188,7 +188,7 @@ Finally, [`overscroll-behavior`](https://developer.mozilla.org/docs/Web/CSS/over
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: ‘powqJQe’,
+  id: 'powqJQe',
   tab: 'result'
 } %}
 
