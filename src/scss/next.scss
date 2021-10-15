@@ -61,21 +61,18 @@ h6 {
 }
 
 h1 {
-  font-size: get-size('size-6');
-}
-
-h2 {
   font-size: get-size('size-5');
 }
 
-h3 {
+h2 {
   font-size: get-size('size-4');
 }
 
-h4 {
+h3 {
   font-size: get-size('size-3');
 }
 
+h4,
 h5,
 h6 {
   font-size: get-size('size-2');
