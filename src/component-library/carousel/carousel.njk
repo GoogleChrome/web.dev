@@ -1,0 +1,10 @@
+<div class="carousel">
+  <div class="carousel__track reel scrollbar" data-scroll="snap">
+    {% for item in data.items %}
+    {# Note, this is just a temporary style until more relevant cards are built #}
+    <div class="region bg-mid-bg pad-inline-size-1">{{ item }}</div>
+    {% endfor %}
+  </div>
+  <button class="carousel__control" data-direction="prev">Back</button>
+  <button class="carousel__control" data-direction="next">Forward</button>
+</div>
