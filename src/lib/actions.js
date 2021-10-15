@@ -32,7 +32,9 @@ export const requestRunPSI = store.action((state, url) => {
       lighthouseError: null,
     });
     const run = await runPsi(url);
+    const auditedOn = new Date(run.fetchTime);
     state = store.getState(); // might change during runLighthouse
+    await saveUserUrl(url, auditedOn); // write the url to Firestore
     return {
       userUrl: url,
       activeLighthouseUrl: null,
