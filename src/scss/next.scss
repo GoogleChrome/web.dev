@@ -384,6 +384,10 @@ details {
   text-align: left;
 }
 
+details + details {
+  border-block-start: none;
+}
+
 details summary {
   position: relative;
   font-size: get-size('size-2');
