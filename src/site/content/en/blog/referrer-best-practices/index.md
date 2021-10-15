@@ -145,7 +145,7 @@ _As of October 2021_
         <td>Firefox</td>
         <td>
         The default is <code>strict-origin-when-cross-origin</code>.<br>
-        Starting from <a href="https://blog.mozilla.org/security/2021/10/05/firefox-93-features-an-improved-smartblock-and-new-referrer-tracking-protections/">version 93</a>, the less restrictive referrer policies <code>no-referrer-when-downgrade</code>, <code>origin-when-cross-origin</code>, and <code>unsafe-url</code> are ignored for cross-site requests: Firefox always trims the referrer for cross-site requests, regardless of the website's policy.
+        Starting from <a href="https://blog.mozilla.org/security/2021/10/05/firefox-93-features-an-improved-smartblock-and-new-referrer-tracking-protections/">version 93</a>, for Strict Tracking Protection and Private Browsing users: the less restrictive referrer policies <code>no-referrer-when-downgrade</code>, <code>origin-when-cross-origin</code>, and <code>unsafe-url</code> are ignored for cross-site requests, meaning that the referrer is always trimmed for cross-site requests, regardless of the website's policy.
         </td>
       </tr>
       <tr>
