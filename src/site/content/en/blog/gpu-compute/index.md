@@ -278,7 +278,7 @@ const secondMatrix = new Float32Array([
   7, 8
 ]);
 
-const gpuBufferSecondMatrix = device.createBufferMapped({
+const gpuBufferSecondMatrix = device.createBuffer({
   mappedAtCreation: true,
   size: secondMatrix.byteLength,
   usage: GPUBufferUsage.STORAGE,
