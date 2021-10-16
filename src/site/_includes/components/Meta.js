@@ -13,19 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-const path = require('path');
+const {html} = require('common-tags');
+const {generateImgixSrc} = require('./Img');
 const site = require('../../_data/site');
 const strip = require('../../_filters/strip');
-const {html} = require('common-tags');
+const {getTranslatedUrls} = require('../../_filters/urls');
+
+const i18nRegex = /i18n\/\w+\//;
 
 module.exports = (locale, page, collections, renderData = {}) => {
   const forbiddenCharacters = [{searchValue: /"/g, replaceValue: '&quot;'}];
   const pageData = {
-    ...collections.all.find((item) => item.fileSlug === page.fileSlug).data,
+    ...collections.all.find((item) => item.fileSlug === page.fileSlug)?.data,
     ...renderData,
+    page,
   };
-  const pageUrl = pageData.canonicalUrl;
+  const pageUrl = pageData.page.url;
+  const canonical = new URL(pageUrl, site.url).href;
 
   /**
    * Find post meta data associated with a social media platform.
@@ -54,18 +58,11 @@ module.exports = (locale, page, collections, renderData = {}) => {
     let thumbnail = social.thumbnail || social.hero;
     const alt = social.alt || site.name;
 
-    // If the page doesn't have social media images, a hero, or a thumbnail,
-    // fallback to using the site's default thumbnail.
-    // Return a full path to the image using our image CDN.
-    if (!thumbnail) {
-      thumbnail = new URL(site.thumbnail, site.imageCdn);
-    } else {
-      thumbnail = new URL(path.join(pageUrl, thumbnail), site.imageCdn);
-    }
-    thumbnail.searchParams.set('auto', 'format');
-    thumbnail.searchParams.set('fit', 'max');
-    thumbnail.searchParams.set('w', 1200);
-    thumbnail = thumbnail.toString();
+    thumbnail = generateImgixSrc(thumbnail || site.thumbnail, {
+      fit: 'max',
+      w: 1200,
+      fm: 'auto',
+    });
 
     return {title, description, thumbnail, alt};
   }
@@ -94,7 +91,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
     return html`
       <meta property="og:locale" content="${locale}" />
       <meta property="og:type" content="${type}" />
-      <meta property="og:url" content="${new URL(pageUrl, site.url).href}" />
+      <meta property="og:url" content="${canonical}" />
       <meta property="og:site_name" content="${site.title}" />
       <meta property="og:title" content="${meta.title}" />
       <meta property="og:description" content="${meta.description}" />
@@ -106,21 +103,53 @@ module.exports = (locale, page, collections, renderData = {}) => {
 
   function renderTwitterMeta() {
     const meta = getMetaByPlatform('twitter');
+    /**
+     * We replace the `<` and `>` characters for Twitter because HTML tags
+     * get rendered as HTML and therefore do not show up on Twitter cards.
+     * So in order to render the tag correctly, we replace them with pointing
+     * angle quotation marks. While we considered using the HTML entities
+     * `&lt;` and `&gt;`, Twitter seems to render them as `<` and `>` anyway.
+     */
+    const htmlCharacters = [
+      {searchValue: /</g, replaceValue: '&lsaquo;'},
+      {searchValue: />/g, replaceValue: '&rsaquo;'},
+    ];
+    const title = strip(meta.title, htmlCharacters);
+    const description = strip(meta.description, htmlCharacters);
+
     return html`
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="${meta.title}" />
-      <meta name="twitter:description" content="${meta.description}" />
+      <meta name="twitter:title" content="${title}" />
+      <meta name="twitter:description" content="${description}" />
       <meta name="twitter:image" content="${meta.thumbnail}" />
     `;
   }
 
+  function renderHreflangMeta() {
+    if (!pageUrl) {
+      // This can happen when a page is not intended to be included in the final
+      // output, e.g. has a permalink: false.
+      return;
+    }
+    const url = pageUrl.startsWith('/i18n/')
+      ? pageUrl.replace(i18nRegex, '')
+      : pageUrl;
+
+    // Find i18n equivalents of the current url and check if they exist.
+    const langhrefs = getTranslatedUrls(pageUrl).map((langhref) => {
+      const href = new URL(langhref[1], site.url).href;
+      return `<link rel="alternate" hreflang="${langhref[0]}" href="${href}" />`;
+    });
+    // If some i18n equivalents are found, add also the default language (en).
+    if (langhrefs.length) {
+      const enHref = new URL(url, site.url).href;
+      langhrefs.push(`<link rel="alternate" hreflang="en" href="${enHref}" />`);
+    }
+    return langhrefs.join('\n');
+  }
+
   function renderCanonicalMeta() {
-    return html`
-      <link
-        rel="canonical"
-        href="${pageData.canonical ? pageData.canonical : site.url + pageUrl}"
-      />
-    `;
+    return html` <link rel="canonical" href="${canonical}" />`;
   }
 
   function renderRSS() {
@@ -147,6 +176,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
       || (pageData.path && pageData.path.description), forbiddenCharacters)}" />
 
     ${renderCanonicalMeta()}
+    ${renderHreflangMeta()}
     ${renderGoogleMeta()}
     ${renderFacebookMeta()}
     ${renderTwitterMeta()}

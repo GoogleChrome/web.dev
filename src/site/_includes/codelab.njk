@@ -1,7 +1,9 @@
 ---
-layout: layout
+layout: default
 permalink: "/{{lang}}/{{page.fileSlug}}/index.html"
 show_banner: false
+pageScripts:
+  - '/js/content.js'
 ---
 
 <div class="codelab-landing-page">
@@ -16,7 +18,7 @@ show_banner: false
       {% if date %}
         <div class="w-author__published">
           <time>{{date | prettyDate}}</time>
-          {% if updated %} <span class="w-author__separator">•</span> Updated <time>{{ updated | prettyDate }}</time> {% endif %}
+          {% if updated %} <span class="w-author__separator">•</span> {{ 'i18n.common.updated' | i18n(locale) }} <time>{{ updated | prettyDate }}</time> {% endif %}
         </div>
       {% endif %}
 
@@ -24,9 +26,10 @@ show_banner: false
         <div class="w-authors w-mt--xl w-pt--sm">
           {% for author in authors %}
             {% Author {
-              id: author,
+              id: authorKey,
               author: collections.authors[author],
-              showSocialMedia: true
+              showSocialMedia: true,
+              locale: locale
               }
             %}
           {% endfor %}

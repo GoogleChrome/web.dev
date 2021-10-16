@@ -12,7 +12,7 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - media-queries
   - css
-hero: hero.jpg
+hero: image/admin/LI2vYKZwQ98w3MLtUF8V.jpg
 alt: Time-lapse of woman in a train
 feedback:
   - api
@@ -32,7 +32,7 @@ many moving targets, I fail to focus on anything, and end up lost and with a fee
 visual overload, almost like staring at an anthill 🐜.
 
 <figure>
-  <img src="ice-skating.jpg" width="580" height="320" alt="Throng of feet of ice skating people">
+  {% Img src="image/admin/JA5v1s8gSBk70eJBB8xW.jpg", alt="Throng of feet of ice skating people", width="580", height="320" %}
   <figcaption>Visual overload in real life.</figcaption>
 </figure>
 
@@ -88,12 +88,10 @@ unnecessary animations.
 
 <div class="w-columns">
   <figure>
-    <img src="macos-reduce-motion.png" width="398" height="300"
-         alt="A screenshot of the macOS settings screen with the 'Reduce motion' checkbox checked.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/KwuLNPefeDzUfR17EUtr.png", alt="A screenshot of the macOS settings screen with the 'Reduce motion' checkbox checked.", width="398", height="300" %}
   </figure>
   <figure>
-    <img src="android-remove-animations.png" width="287" height="300"
-         alt="A screenshot of the Android settings screen with the 'Remove animations' checkbox checked.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qed7yE6FKVQ5YXHn0TbJ.png", alt="A screenshot of the Android settings screen with the 'Remove animations' checkbox checked.", width="287", height="300" %}
   </figure>
 </div>
 
@@ -164,7 +162,7 @@ load conditionally via the `media` attribute on the `link` element&nbsp;😎:
 
 To illustrate how to work with `prefers-reduced-motion` with JavaScript, let's imagine I have
 defined a complex animation with the
-[Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API). While
+[Web Animations API](https://developer.mozilla.org/docs/Web/API/Web_Animations_API). While
 CSS rules will be dynamically triggered by the browser when the user preference changes, for
 JavaScript animations I have to listen for changes myself, and then manually stop my potentially
 in-flight animations (or restart them if the user lets me):
@@ -205,9 +203,7 @@ reveal animations are gone, and just the regular scrolling motion is left. The s
 shows the demo in action:
 
 <figure>
-  <video muted playsinline controls poster="prefers-reduced-motion.png">
-    <source src="https://storage.googleapis.com/web-dev-assets/prefers-reduced-motion/prefers-reduced-motion.mp4" type="video/mp4">
-  </video>
+  {% Video src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/zWs45QPPI9C8CjF813Zx.mp4", muted=true, playsinline=true, controls=true, poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CQAw3Ee43Dcv0JOsm9fl.png" %}
   <figcaption>Video of the
     <a href="https://prefers-reduced-motion.glitch.me"><code>prefers-reduced-motion</code> demo</a>
     app
@@ -262,10 +258,10 @@ out there (use at your own risk!) that allow for this.
 The way this works is that the CSS above overrides the durations of all animations and transitions
 to such a short time that they are not noticeable anymore. As some websites depend on an animation
 to be run in order to work correctly (maybe because a certain step depends on the firing of the
-[`animationend` event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationend_event)),
+[`animationend` event](https://developer.mozilla.org/docs/Web/API/HTMLElement/animationend_event)),
 the more radical `animation: none !important;` approach wouldn't work. Even the above hack is not
 guaranteed to succeed on all websites (for example, it can't stop motion that was initiated via the
-[Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API)),
+[Web Animations API](https://developer.mozilla.org/docs/Web/API/Web_Animations_API)),
 so be sure to deactivate it when you notice breakage.
 
 ## Related Links

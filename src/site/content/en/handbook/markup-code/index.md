@@ -50,13 +50,7 @@ Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 ````
 
-For terminal commands, set the language to `bash` and omit leading `$` signs:
-
-````markdown
-```bash
-npm install left-pad
-```
-````
+For terminal commands, set the language to `bash` and omit leading `$` signs.
 
 ## Code highlighting
 Highlight lines in a code block by adding a slash and the zero-indexed line numbers after the language name. For example, here's what `html/4-5` looks like:
@@ -105,9 +99,11 @@ Indent using two spaces.
 
 Always use straight quotes. (Readers often copy code directly from the site, and smart quotes can break code.)
 
+<!--lint disable no-smart-quotes-->
 {% Compare 'worse' %}
 `const imagemin = require(‘imagemin’);`
 {% endCompare %}
+<!--lint enable no-smart-quotes-->
 
 {% Compare 'better' %}
 `const imagemin = require('imagemin');`

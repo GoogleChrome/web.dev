@@ -22,7 +22,7 @@ via keyboard, which is frustrating for users who rely on assistive technologies.
 Lighthouse flags elements that have a `tabindex` value greater than `0`:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="tabindex.png" alt="Lighthouse audit showing some elements have a tabindex value greater than 0">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fj9urW8nMfivHXbT1TSr.png", alt="Lighthouse audit showing some elements have a tabindex value greater than 0", width="800", height="206", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

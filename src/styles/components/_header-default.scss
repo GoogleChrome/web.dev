@@ -1,0 +1,168 @@
+// This represent the margin from the surrounding elements which needs to
+// be factored in when we're calculating the final width and translate
+// position for this element's expanded state.
+$WEB_SEARCH_MARGIN: 16px;
+
+// This accounts for the width of the close button which we display on mobile.
+// We need to offset the results popout by this amount so it doesn't appear
+// to extend past the search input field.
+$WEB_CLOSE_BUTTON_WIDTH: 45px;
+
+.header-default {
+  position: fixed;
+  top: 0;
+
+  [data-open-drawer-button] {
+    margin: 0 8px 0 -8px;
+
+    @include bp(md) {
+      display: none;
+    }
+  }
+
+  &__middle {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    /// This is used by web-search during its animation.
+    /// web-search is >200% the width of its parent. When focused it will
+    /// transition to completely fill the width of .header-default__middle.
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__links {
+    display: none;
+    flex: 1;
+    height: 100%;
+    line-height: 20px;
+    min-width: 50%;
+    padding-left: 48px;
+
+    @include bp(md) {
+      display: flex;
+    }
+  }
+
+  &__link {
+    align-items: center;
+    color: $PRIMARY_TEXT_COLOR;
+    display: flex;
+    font-weight: 500;
+    margin: 0;
+    padding: 0 16px;
+    position: relative;
+
+    &[active] {
+      box-shadow: 0 -2px 0 $WEB_PRIMARY_COLOR inset;
+    }
+
+    @include bp(lg) {
+      padding: 0 24px;
+    }
+  }
+
+  &__link:hover,
+  &__link:focus,
+  &__link:active {
+    outline: 0;
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    background-color: rgba($PRIMARY_TEXT_COLOR, .04);
+  }
+
+  &__link:focus {
+    background-color: rgba($PRIMARY_TEXT_COLOR, .12);
+  }
+
+  &__link:active {
+    background-color: rgba($PRIMARY_TEXT_COLOR, .16);
+  }
+
+  &__link[data-active]::after {
+    background: $WEB_PRIMARY_COLOR;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  web-search {
+    flex: 1;
+
+    .web-search__input-wrapper {
+      @include bp(md) {
+        max-width: calc(200% - #{$WEB_SEARCH_MARGIN} * 2);
+        min-width: calc(200% - #{$WEB_SEARCH_MARGIN} * 2);
+        // Display a minimum of 200px of search bar.
+        transform: translateX(calc(50% - 200px + #{$WEB_SEARCH_MARGIN}));
+        transition: var(--web-search-animation-time) transform;
+        width: calc(200% - #{$WEB_SEARCH_MARGIN} * 2);
+        display: flex;
+      }
+    }
+
+    .web-search__open-btn,
+    .web-search__close-btn {
+      @include bp(md) {
+        display: none;
+      }
+    }
+  }
+
+  web-search[expanded] {
+    .web-search__input-wrapper {
+      @include bp(md) {
+        transform: translate(calc(-50% + #{$WEB_SEARCH_MARGIN}));
+      }
+    }
+  }
+
+  .web-search-popout {
+    border-top: 1px solid #ddd;
+    box-shadow: 0 1px 2px 0 rgba($GREY_800, .3), 0 2px 6px 2px rgba($GREY_800, .15);
+    left: 0;
+    padding: 16px 0;
+    position: absolute;
+    top: 55px;
+    width: calc(100% - #{$WEB_CLOSE_BUTTON_WIDTH});
+
+    @include bp(md) {
+      left: calc(#{$WEB_SEARCH_MARGIN} * 2);
+      width: calc(100% - #{$WEB_SEARCH_MARGIN} * 2);
+    }
+  }
+}
+
+web-header.web-header--has-expanded-search {
+  .header-default__logo-link {
+    display: none;
+
+    @include bp(md) {
+      display: inline;
+    }
+  }
+
+  .header-default__middle {
+    overflow: visible;
+  }
+
+  web-profile-switcher-container {
+    display: none;
+
+    @include bp(md) {
+      display: flex;
+    }
+  }
+}
+
+// Move main down 64px to account for the fixed positioning of the header.
+.header-default ~ main {
+  margin-top: $WEB_HEADER_HEIGHT;
+}

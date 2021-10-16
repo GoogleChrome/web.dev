@@ -5,8 +5,8 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-11-26
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+hero: image/admin/8cpTXMJGUfcdNXLc6obE.jpg
+thumbnail: image/admin/kA7qbVPt0ovuNzReFanO.jpg
 alt: Gamer girl is playing FPS online video game on her computer
 description: |
   Web apps can now disable mouse acceleration when capturing pointer events.
@@ -32,7 +32,7 @@ physical motion, slow or fast, results in the same rotation. This results in a
 better gaming experience and higher accuracy according to professional gamers.
 
 <figure class="w-figure">
-  <img src="./mouse-properties-dialog.png" class="w-screenshot" alt="Screenshot of the pointer motion control in Windows 10 settings.">
+  {% Img src="image/admin/4x9YZ7nC3SJMN9FI46zN.png", alt="Screenshot of the pointer motion control in Windows 10 settings.", width="800", height="260", class="w-screenshot" %}
   <figcaption class="w-figcaption">Pointer motion control in Windows 10 settings.</figcaption>
 </figure>
 
@@ -170,7 +170,7 @@ Thanks to [James Hollyer], [Thomas Steiner], [Joe Medley], [Kayce Basques], and
 [Google Stadia]: https://en.wikipedia.org/wiki/Google_Stadia
 [Nvidia GeForce Now]: https://en.wikipedia.org/wiki/GeForce_Now
 [well supported across browsers]: https://caniuse.com/?search=pointerlock
-[Browser compatibility]: https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API#Browser_compatibility
+[Browser compatibility]: https://developer.mozilla.org/docs/Web/API/Pointer_Lock_API#Browser_compatibility
 [sample]: https://unadjusted-movement.glitch.me/
 [check out the source code]: https://glitch.com/edit/#!/unadjusted-movement?path=script.js
 [James Hollyer]: https://github.com/jameshollyergoogle

@@ -9,8 +9,8 @@ description: >
   How JD.ID increased its overall mobile conversion rate (mCVR) by 53%, mCVR
   for installed users by 200%, and daily active users by 26%.
 date: 2020-11-24
-hero: hero.png
-thumbnail: thumbnail.png
+hero: image/admin/WubpgpQSHBG8nMqJ7ms4.png
+thumbnail: image/admin/6l2nf0jG3h1DkTiqEbjv.png
 alt: Various icons related to the concept of an e-commerce site.
 tags:
   - blog
@@ -32,7 +32,7 @@ increase its overall mobile conversion rate (mCVR) by 53%, its mCVR for
 installed users by 200%, and its daily active users by 26%, putting it on course
 to becoming the most popular and trusted e-commerce company in the country.  
 
-![Screenshots of a user installing the JD.ID PWA](install.jpg)
+{% Img src="image/admin/0nJBxHM0wbQKuAVnCAEX.jpg", alt="Screenshots of a user installing the JD.ID PWA", width="800", height="480" %}
 
 ## Highlighting the opportunity
 
@@ -89,7 +89,7 @@ experience and enhance the branding for the website. They also added a [web app
 manifest](/add-manifest/) which enables users to easily install
 the web app on their mobile device. 
 
-![A screenshot of the offline fallback page](offline.jpg)
+{% Img src="image/admin/bE0afj8wH2XUmZdKH28R.jpg", alt="A screenshot of the offline fallback page", width="800", height="480" %}
 
 ### Push notifications
 
@@ -98,7 +98,7 @@ with
 [Firebase Cloud Messaging for Web](https://firebase.google.com/docs/cloud-messaging/js/client),
 applying them specifically during product sale promotional events.
 
-![Screenshots of enabling push notifications](push.jpg)
+{% Img src="image/admin/aTQmYAWe65pkwoaatfcp.jpg", alt="Screenshots of enabling push notifications", width="800", height="480" %}
 
 ## Overall business results
 
@@ -112,9 +112,7 @@ applying them specifically during product sale promotional events.
     </li>
   </ul>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="impact.png"
-        alt="The impact statistics.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/j6cgF8sQt5IH2XcISQsk.png", alt="The impact statistics.", width="800", height="870", class="w-screenshot" %}
   </figure>
 </div>
 

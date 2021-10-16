@@ -5,26 +5,25 @@ authors:
   - jeffposnick
 description: Details of Chrome's and other browsers' plans to remove AppCache.
 date: 2020-05-18
-updated: 2020-05-18
-scheduled: true
+updated: 2021-08-23
 tags:
-  - appcache
+  # - appcache
   - blog
-  - chrome84
-  - deprecation
-  - origin-trial
-  - removal
+  - chrome-84
+  # - deprecation
+  - origin-trials
+  # - removal
   - service-worker
-hero: hero.jpg
+hero: image/admin/YDs2H4gLPhIwPMjPtc8o.jpg
 alt: An old-fashioned storage container.
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/1776670052997660673
 ---
 
-Following up on [previous announcements](https://blog.chromium.org/2020/01/appcache-scope-restricted.html), support for [AppCache](https://developer.mozilla.org/docs/Web/HTML/Using_the_application_cache) will be removed from Chrome and other Chromium-based browsers. We encourage developers to migrate off of AppCache now, rather than waiting any longer.
+Following up on [previous announcements](https://blog.chromium.org/2020/01/appcache-scope-restricted.html), support for [AppCache](https://developer.mozilla.org/docs/Web/API/Window/applicationCache) will be removed from Chrome and other Chromium-based browsers. We encourage developers to migrate off of AppCache now, rather than waiting any longer.
 
-[Service workers](https://developers.google.com/web/fundamentals/primers/service-workers), 
-which are widely supported in current browsers, offer an alternative to providing the offline 
+[Service workers](https://developers.google.com/web/fundamentals/primers/service-workers),
+which are widely supported in current browsers, offer an alternative to providing the offline
 experience that AppCache had offered. See [Migration strategies](#migration-strategies).
 
 ## Timeline
@@ -56,26 +55,22 @@ A "deprecated" feature still exists, but logs warning messages discouraging use.
     <tr>
     <td><a href="https://blog.chromium.org/2020/01/appcache-scope-restricted.html">AppCache scope restriction</a>
     </td>
-    <td>Chrome 80 (February 2020)
-    </td>
+    <td>Chrome 80 (February 2020)</td>
     </tr>
     <tr>
     <td>"Reverse" origin trial begins
     </td>
-    <td>Chrome 84 (<a href="https://chromiumdash.appspot.com/schedule">estimated July 2020</a>)
-    </td>
+    <td>Chrome 84 (July 2020)</td>
     </tr>
     <tr>
     <td><a href="https://groups.google.com/a/chromium.org/g/blink-dev/c/FvM-qo7BfkI/m/AvxoE6JpBgAJ">Removal from secure contexts</a>, except for those opted-in to the origin trial
     </td>
-    <td>Chrome 85 (<a href="https://chromiumdash.appspot.com/schedule">estimated August 2020</a>)
-    </td>
+    <td>Chrome 85 (August 2020)</td>
     </tr>
     <tr>
     <td>Complete removal from secure contexts for everyone, with completion of origin trial
     </td>
-    <td>Chrome 90 (<a href="https://chromiumdash.appspot.com/schedule">estimated April 2021</a>)
-    </td>
+    <td>October 5th, 2021 (roughly Chrome 95)</td>
     </tr>
   </table>
 </div>
@@ -86,7 +81,7 @@ This timeline applies to Chrome on **all platforms other than iOS**. There is al
 
 ## Origin trial
 
-The timeline lists two upcoming milestones for removal. Beginning with Chrome 85, AppCache will no longer be available in Chrome by default. Developers who require additional time to migrate off of AppCache can [sign up](https://developers.chrome.com/origintrials/#/register_trial/1776670052997660673) for a "reverse" [origin trial](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md) to extend the availability of AppCache for their web apps. The origin trial will start in Chrome 84 (in advance of the default removal in Chrome 85), and will be active through Chrome 89. Starting with Chrome 90, AppCache will be fully removed for everyone, even those who had signed up for the origin trial.
+The timeline lists two upcoming milestones for removal. Beginning with Chrome 85, AppCache will no longer be available in Chrome by default. Developers who require additional time to migrate off of AppCache can [sign up](https://developers.chrome.com/origintrials/#/register_trial/1776670052997660673) for a "reverse" [origin trial](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md) to extend the availability of AppCache for their web apps. The origin trial will start in Chrome 84 (in advance of the default removal in Chrome 85), and will be active through October 5th, 2021 (roughly Chrome 95). At that point, AppCache will be fully removed for everyone, even those who had signed up for the origin trial.
 
 {% Aside %}
 Why are we calling this a "reverse" origin trial? Normally, an origin trial allows developers to opt-in to early access to new functionality before it has shipped by default in Chrome. In this case, we're allowing developers to opt-in to using legacy technology even after it's been removed from Chrome, but only temporarily.
@@ -150,15 +145,15 @@ Adding the origin trial token to your AppCache manifests indicates that each man
 
 While the "reverse" origin trial officially starts with Chrome 84, you can [sign up](https://developers.chrome.com/origintrials/#/register_trial/1776670052997660673) for the origin trial today and add the tokens to your HTML and AppCache manifests. As your web app's audience gradually upgrades to Chrome 84, any tokens that you've already added will go into effect.
 
-Once you've added a token to your AppCache manifest, visit `chrome://appcache-internals` to confirm that your local instance of Chrome (version 84 or later) has properly associated the origin trial token with your manifest's cached entries. If your origin trial is recognized, you should see a field with `Token Expires: Tue Apr 06 2021...` on that page, associated with your manifest:
+Once you've added a token to your AppCache manifest, visit `about://appcache-internals` to confirm that your local instance of Chrome (version 84 or later) has properly associated the origin trial token with your manifest's cached entries. If your origin trial is recognized, you should see a field with `Token Expires: Tue Apr 06 2021...` on that page, associated with your manifest:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="appcache-token.jpg" alt="chrome://appcache-internals interface showing a recognized token." width="550">
+  {% Img src="image/admin/Xid94kdPT5yGbQzBL4at.jpg", alt="about://appcache-internals interface showing a recognized token.", width="550", height="203", class="w-screenshot" %}
 </figure>
 
 ## Testing prior to removal
 
-We strongly encourage you to migrate off of AppCache as soon as is feasible. If you want to test removal of AppCache on your web apps, use the `chrome://flags/#app-cache` [flag](https://www.chromium.org/developers/how-tos/run-chromium-with-flags) to simulate its removal. This flag is available starting with Chrome 84.
+We strongly encourage you to migrate off of AppCache as soon as is feasible. If you want to test removal of AppCache on your web apps, use the `about://flags/#app-cache` [flag](https://www.chromium.org/developers/how-tos/run-chromium-with-flags) to simulate its removal. This flag is available starting with Chrome 84.
 
 ## Migration strategies {: #migration-strategies }
 

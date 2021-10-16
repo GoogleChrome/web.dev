@@ -14,82 +14,105 @@
  * limitations under the License.
  */
 
-const path = require('path');
 const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const yaml = require('js-yaml');
+const fs = require('fs');
 
 const toc = require('eleventy-plugin-toc');
-const resourcePath = require('./src/build/resource-path');
-const markdownIt = require('markdown-it');
-const markdownItAnchor = require('markdown-it-anchor');
-const markdownItAttrs = require('markdown-it-attrs');
+const markdown = require('./src/site/_plugins/markdown');
 
-const componentsDir = 'src/site/_includes/components';
-const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
-const Aside = require(`./${componentsDir}/Aside`);
-const Assessment = require(`./${componentsDir}/Assessment`);
-const Author = require(`./${componentsDir}/Author`);
-const AuthorCard = require(`./${componentsDir}/AuthorCard`);
-const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
-const Banner = require(`./${componentsDir}/Banner`);
-const Blockquote = require(`./${componentsDir}/Blockquote`);
-const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
-const CodelabsCallout = require(`./${componentsDir}/CodelabsCallout`);
-const Compare = require(`./${componentsDir}/Compare`);
-const CompareCaption = require(`./${componentsDir}/CompareCaption`);
-const Details = require(`./${componentsDir}/Details`);
-const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
-const EventTable = require(`./${componentsDir}/EventTable`);
-const Glitch = require(`./${componentsDir}/Glitch`);
-const Hero = require(`./${componentsDir}/Hero`);
-const IFrame = require(`./${componentsDir}/IFrame`);
-const Instruction = require(`./${componentsDir}/Instruction`);
-const Label = require(`./${componentsDir}/Label`);
-const Meta = require(`./${componentsDir}/Meta`);
-const PathCard = require(`./${componentsDir}/PathCard`);
-const PostCard = require(`./${componentsDir}/PostCard`);
-const SignPosts = require(`./${componentsDir}/SignPosts`);
-const Tooltip = require(`./${componentsDir}/Tooltip`);
-const YouTube = require(`./${componentsDir}/YouTube`);
+const ArticleNavigation = require('./src/site/_includes/components/ArticleNavigation');
+const Aside = require('./src/site/_includes/components/Aside');
+const Assessment = require('./src/site/_includes/components/Assessment');
+const Author = require('./src/site/_includes/components/Author');
+const AuthorInfo = require('./src/site/_includes/components/AuthorInfo');
+const AuthorsDate = require('./src/site/_includes/components/AuthorsDate');
+const Banner = require('./src/site/_includes/components/Banner');
+const Blockquote = require('./src/site/_includes/components/Blockquote');
+const Breadcrumbs = require('./src/site/_includes/components/Breadcrumbs');
+const BrowserCompat = require('./src/site/_includes/components/BrowserCompat');
+const CodelabsCallout = require('./src/site/_includes/components/CodelabsCallout');
+const CodePattern = require('./src/site/_includes/components/CodePattern');
+const Codepen = require('./src/site/_includes/components/Codepen');
+const Compare = require('./src/site/_includes/components/Compare');
+const CompareCaption = require('./src/site/_includes/components/CompareCaption');
+const Details = require('./src/site/_includes/components/Details');
+const DetailsSummary = require('./src/site/_includes/components/DetailsSummary');
+const EventTable = require('./src/site/_includes/components/EventTable');
+const Glitch = require('./src/site/_includes/components/Glitch');
+const Hero = require('./src/site/_includes/components/Hero');
+const includeRaw = require('./src/site/_includes/components/includeRaw');
+const IFrame = require('./src/site/_includes/components/IFrame');
+const {Img, generateImgixSrc} = require('./src/site/_includes/components/Img');
+const Instruction = require('./src/site/_includes/components/Instruction');
+const Label = require('./src/site/_includes/components/Label');
+const LanguageList = require('./src/site/_includes/components/LanguageList');
+const Meta = require('./src/site/_includes/components/Meta');
+const PathCard = require('./src/site/_includes/components/PathCard');
+const SignPosts = require('./src/site/_includes/components/SignPosts');
+const StackOverflow = require('./src/site/_includes/components/StackOverflow');
+const Tooltip = require('./src/site/_includes/components/Tooltip');
+const {Video} = require('./src/site/_includes/components/Video');
+const {YouTube} = require('webdev-infra/shortcodes/YouTube');
+const YouTubePlaylist = require('./src/site/_includes/components/YouTubePlaylist');
 
-const collectionsDir = 'src/site/_collections';
-const authors = require(`./${collectionsDir}/authors`);
-const blogPostsDescending = require(`./${collectionsDir}/blog-posts-descending`);
-const newsletters = require(`./${collectionsDir}/newsletters`);
+// Collections
+const authors = require('./src/site/_collections/authors');
+const blogPostsDescending = require('./src/site/_collections/blog-posts-descending');
+const newsletters = require('./src/site/_collections/newsletters');
+const pages = require('./src/site/_collections/pages');
 const {
   postsWithLighthouse,
-} = require(`./${collectionsDir}/posts-with-lighthouse`);
-const tags = require(`./${collectionsDir}/tags`);
+} = require('./src/site/_collections/posts-with-lighthouse');
+const shows = require('./src/site/_collections/shows');
+const tags = require('./src/site/_collections/tags');
 
-const filtersDir = 'src/site/_filters';
-const consoleDump = require(`./${filtersDir}/console-dump`);
-const {memoize, findByUrl} = require(`./${filtersDir}/find-by-url`);
-const pathSlug = require(`./${filtersDir}/path-slug`);
-const containsTag = require(`./${filtersDir}/contains-tag`);
-const expandAuthors = require(`./${filtersDir}/expand-authors`);
-const findTags = require(`./${filtersDir}/find-tags`);
-const githubLink = require(`./${filtersDir}/github-link`);
-const gitlocalizeLink = require(`./${filtersDir}/gitlocalize-link`);
-const htmlDateString = require(`./${filtersDir}/html-date-string`);
-const md = require(`./${filtersDir}/md`);
-const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
-const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
-const prettyDate = require(`./${filtersDir}/pretty-date`);
-const removeDrafts = require(`./${filtersDir}/remove-drafts`);
-const slugify = require(`./${filtersDir}/slugify`);
-const strip = require(`./${filtersDir}/strip`);
-const stripBlog = require(`./${filtersDir}/strip-blog`);
-const stripQueryParamsDev = require(`./${filtersDir}/strip-query-params-dev`);
-const getPaths = require(`./${filtersDir}/get-paths`);
+// Filters
+const consoleDump = require('./src/site/_filters/console-dump');
+const {i18n} = require('./src/site/_filters/i18n');
+const {getRelativePath} = require('./src/site/_filters/urls');
+const {memoize, findByUrl} = require('./src/site/_filters/find-by-url');
+const pathSlug = require('./src/site/_filters/path-slug');
+const containsTag = require('./src/site/_filters/contains-tag');
+const expandAuthors = require('./src/site/_filters/expand-authors');
+const githubLink = require('./src/site/_filters/github-link');
+const gitlocalizeLink = require('./src/site/_filters/gitlocalize-link');
+const htmlDateString = require('./src/site/_filters/html-date-string');
+const isNewContent = require('./src/site/_filters/is-new-content');
+const md = require('./src/site/_filters/md');
+const pagedNavigation = require('./src/site/_filters/paged-navigation');
+const postsLighthouseJson = require('./src/site/_filters/posts-lighthouse-json');
+const prettyDate = require('./src/site/_filters/pretty-date');
+const removeDrafts = require('./src/site/_filters/remove-drafts');
+const slugify = require('./src/site/_filters/slugify');
+const strip = require('./src/site/_filters/strip');
+const stripBlog = require('./src/site/_filters/strip-blog');
+const getPaths = require('./src/site/_filters/get-paths');
+const navigation = require('./src/site/_filters/navigation');
+const {minifyJs} = require('./src/site/_filters/minify-js');
+const {cspHash, getHashList} = require('./src/site/_filters/csp-hash');
 
-const transformsDir = 'src/site/_transforms';
-const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
-const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
+const disableLazyLoad = require('./src/site/_transforms/disable-lazy-load');
+const {purifyCss} = require('./src/site/_transforms/purify-css');
+const {minifyHtml} = require('./src/site/_transforms/minify-html');
+
+// Shared dependencies between web.dev and developer.chrome.com
+const {updateSvgForInclude} = require('webdev-infra/filters/svg');
+// TODO: We should migrate all of our ToCs over to using this filter which we
+// wrote for d.c.c. Currently we're also using eleventy-plugin-toc on articles
+// but this one seems to work better.
+const {toc: courseToc} = require('webdev-infra/filters/toc');
+
+// Creates a global variable for the current __dirname to make including and
+// working with files in the component library a little easier
+global.__basedir = __dirname;
 
 module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
   const isProd = process.env.ELEVENTY_ENV === 'prod';
+  const isStaging = process.env.ELEVENTY_ENV === 'staging';
 
   // ----------------------------------------------------------------------------
   // PLUGINS
@@ -103,48 +126,13 @@ module.exports = function (config) {
     wrapper: 'div',
     wrapperClass: 'w-toc__list',
     ul: true,
-    flat: true,
+    flat: false,
   });
 
   // ----------------------------------------------------------------------------
   // MARKDOWN
   // ----------------------------------------------------------------------------
-  const markdownItOptions = {
-    html: true,
-  };
-  const markdownItAnchorOptions = {
-    level: 2,
-    permalink: true,
-    permalinkClass: 'w-headline-link',
-    permalinkSymbol: '#',
-    slugify,
-  };
-  const markdownItAttrsOpts = {
-    leftDelimiter: '{:',
-    rightDelimiter: '}',
-    allowedAttributes: ['id', 'class', /^data-.*$/],
-  };
-
-  const mdLib = markdownIt(markdownItOptions)
-    .use(markdownItAnchor, markdownItAnchorOptions)
-    .use(markdownItAttrs, markdownItAttrsOpts)
-    .disable('code');
-
-  // custom renderer rules
-  const fence = mdLib.renderer.rules.fence;
-
-  const rules = {
-    fence: (tokens, idx, options, env, slf) => {
-      const fenced = fence(tokens, idx, options, env, slf);
-      return `<web-copy-code>${fenced}</web-copy-code>`;
-    },
-    table_close: () => '</table>\n</div>',
-    table_open: () => '<div class="w-table-wrapper">\n<table>\n',
-  };
-
-  mdLib.renderer.rules = {...mdLib.renderer.rules, ...rules};
-
-  config.setLibrary('md', mdLib);
+  config.setLibrary('md', markdown);
 
   // ----------------------------------------------------------------------------
   // NON-11TY FILES TO WATCH
@@ -157,7 +145,9 @@ module.exports = function (config) {
   config.addCollection('authors', authors);
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('newsletters', newsletters);
+  config.addCollection('pages', pages);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
+  config.addCollection('shows', shows);
   config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
@@ -165,28 +155,49 @@ module.exports = function (config) {
     return memoize(collection.getAll());
   });
 
+  // Filters through all collection items and finds content that has
+  // CSS_ORIGIN set to 'next'. This allows shortcodes to determine if we
+  // are in a design system context or a legacy context
+  config.addCollection('designSystemGlobals', (collection) => {
+    global.__designSystemPaths = new Set(
+      collection
+        .getAll()
+        .filter(({data}) => data.CSS_ORIGIN === 'next')
+        .map(({filePathStem}) => filePathStem),
+    );
+
+    return global.__designSystemPaths;
+  });
+
   // ----------------------------------------------------------------------------
   // FILTERS
   // ----------------------------------------------------------------------------
   config.addFilter('consoleDump', consoleDump);
+  config.addFilter('i18n', i18n);
+  config.addFilter('getRelativePath', getRelativePath);
   config.addFilter('findByUrl', findByUrl);
-  config.addFilter('findTags', findTags);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
   config.addFilter('expandAuthors', expandAuthors);
   config.addFilter('githubLink', githubLink);
   config.addFilter('gitlocalizeLink', gitlocalizeLink);
   config.addFilter('htmlDateString', htmlDateString);
+  config.addFilter('imgix', generateImgixSrc);
+  config.addFilter('isNewContent', isNewContent);
   config.addFilter('md', md);
+  config.addFilter('navigation', navigation);
   config.addFilter('pagedNavigation', pagedNavigation);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('slugify', slugify);
   config.addFilter('stripBlog', stripBlog);
-  config.addFilter('stripQueryParamsDev', stripQueryParamsDev);
   config.addFilter('getPaths', getPaths);
   config.addFilter('strip', strip);
+  config.addFilter('courseToc', courseToc);
+  config.addFilter('updateSvgForInclude', updateSvgForInclude);
+  config.addNunjucksAsyncFilter('minifyJs', minifyJs);
+  config.addFilter('cspHash', cspHash);
 
   // ----------------------------------------------------------------------------
   // SHORTCODES
@@ -195,12 +206,15 @@ module.exports = function (config) {
   config.addPairedShortcode('Aside', Aside);
   config.addShortcode('Assessment', Assessment);
   config.addShortcode('Author', Author);
-  config.addShortcode('AuthorCard', AuthorCard);
   config.addShortcode('AuthorInfo', AuthorInfo);
+  config.addShortcode('AuthorsDate', AuthorsDate);
   config.addPairedShortcode('Banner', Banner);
   config.addPairedShortcode('Blockquote', Blockquote);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
+  config.addNunjucksAsyncShortcode('BrowserCompat', BrowserCompat);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
+  config.addShortcode('Codepen', Codepen);
+  config.addShortcode('CodePattern', CodePattern);
   config.addPairedShortcode('Compare', Compare);
   config.addPairedShortcode('CompareCaption', CompareCaption);
   config.addPairedShortcode('Details', Details);
@@ -208,14 +222,19 @@ module.exports = function (config) {
   config.addShortcode('Glitch', Glitch);
   config.addShortcode('Hero', Hero);
   config.addShortcode('IFrame', IFrame);
+  config.addShortcode('Img', Img);
   config.addShortcode('Instruction', Instruction);
   config.addPairedShortcode('Label', Label);
+  config.addShortcode('LanguageList', LanguageList);
   config.addShortcode('Meta', Meta);
   config.addShortcode('PathCard', PathCard);
-  config.addShortcode('PostCard', PostCard);
   config.addShortcode('SignPosts', SignPosts);
+  config.addShortcode('StackOverflow', StackOverflow);
   config.addShortcode('Tooltip', Tooltip);
+  config.addShortcode('Video', Video);
   config.addShortcode('YouTube', YouTube);
+  config.addShortcode('YouTubePlaylist', YouTubePlaylist);
+  config.addShortcode('includeRaw', includeRaw);
 
   // This table is used for the web.dev/LIVE event, and should be taken down
   // when the event is over or we no longer use it.
@@ -228,25 +247,9 @@ module.exports = function (config) {
     config.addTransform('disable-lazy-load', disableLazyLoad);
   }
 
-  if (isProd) {
-    config.addTransform('responsive-images', responsiveImages);
-  }
-
-  // ----------------------------------------------------------------------------
-  // CHECKS
-  // ----------------------------------------------------------------------------
-  if (isProd) {
-    // We generate the paths to our JS and CSS entrypoints as a side-effect
-    // of their build scripts, so make sure they exist in prod builds.
-    ['css', 'js'].forEach((name) => {
-      try {
-        resourcePath(name);
-      } catch (e) {
-        throw new Error(
-          `could not find valid JSON path inside src/site/_data/: ${name} (${e})`,
-        );
-      }
-    });
+  if (isProd || isStaging) {
+    config.addTransform('purifyCss', purifyCss);
+    config.addTransform('minifyHtml', minifyHtml);
   }
 
   // ----------------------------------------------------------------------------
@@ -256,14 +259,25 @@ module.exports = function (config) {
   config.setDataDeepMerge(true);
   config.setUseGitIgnore(false);
 
-  // https://www.11ty.io/docs/config/#configuration-options
-  const targetLang = process.env.ELEVENTY_LANG || '';
+  // Make .yml files work in the _data directory.
+  config.addDataExtension('yml', (contents) => yaml.safeLoad(contents));
+
+  // Make CSP hashes accessible to firebase config.
+  if (isProd) {
+    config.on('afterBuild', () => {
+      fs.writeFileSync(
+        'dist/script-hash-list.json',
+        JSON.stringify(getHashList()),
+      );
+    });
+  }
+
   return {
     dir: {
-      input: path.join('src/site/content/', targetLang),
+      input: 'src/site/content/', // we use a string path with the forward slash since windows doesn't like the paths generated from path.join
       output: 'dist',
-      data: targetLang ? '../../_data' : '../_data',
-      includes: targetLang ? '../../_includes' : '../_includes',
+      data: '../_data',
+      includes: '../_includes',
     },
     templateFormats: ['njk', 'md'],
     htmlTemplateEngine: 'njk',

@@ -12,6 +12,10 @@ module.exports = function removeDrafts(topics, lang) {
   return topics.reduce((accumulator, topic) => {
     // Remove draft posts from a topic.
     const posts = topic.pathItems.filter((slug) => {
+      if (typeof slug === 'object' && slug.url) {
+        // This is an external link.
+        return true;
+      }
       const post = findByUrl(`/${lang}/${slug}/`);
       return post && !post.data.draft;
     });

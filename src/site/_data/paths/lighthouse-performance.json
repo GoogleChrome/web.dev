@@ -1,16 +1,16 @@
 {
   "slug": "lighthouse-performance",
-  "cover": "/images/collections/lighthouse-performance.svg",
-  "title": "Performance audits",
-  "description": "Measure performance and find opportunities to speed up page loads.",
-  "overview": "These checks ensure that your page is optimized for users to be able to see and interact with page content.",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/wpGZrgY08B0x6jbLnWPU.svg",
+  "title": "i18n.paths.lighthouse_performance.title",
+  "description": "i18n.paths.lighthouse_performance.description",
+  "overview": "i18n.paths.lighthouse_performance.overview",
   "topics": [
     {
-      "title": "Performance audit scoring",
+      "title": "i18n.paths.lighthouse_performance.topics.performance_audit_scoring",
       "pathItems": ["performance-scoring"]
     },
     {
-      "title": "Metrics",
+      "title": "i18n.paths.lighthouse_performance.topics.metrics",
       "pathItems": [
         "first-contentful-paint",
         "first-meaningful-paint",
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "title": "Opportunities",
+      "title": "i18n.paths.lighthouse_performance.topics.opportunities",
       "pathItems": [
         "render-blocking-resources",
         "uses-responsive-images",
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "title": "Diagnostics",
+      "title": "i18n.paths.lighthouse_performance.topics.diagnostics",
       "pathItems": [
         "total-byte-weight",
         "uses-long-cache-ttl",

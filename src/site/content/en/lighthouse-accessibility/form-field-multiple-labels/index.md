@@ -23,8 +23,7 @@ and others will read both labels.
 flags form elements that have more than one label:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="form-field-multiple-labels.png"
-    alt="Lighthouse audit showing form elements with multiple labels">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/XO2Y33NoSzSis8zNH8kv.png", alt="Lighthouse audit showing form elements with multiple labels", width="800", height="259", class="w-screenshot" %}
 </figure>
 
 There are several common scenarios that cause this audit to fail:

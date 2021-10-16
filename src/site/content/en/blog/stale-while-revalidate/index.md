@@ -5,12 +5,12 @@ authors:
   - jeffposnick
 date: 2019-07-18
 description: stale-while-revalidate helps developers balance between immediacy—loading cached content right away—and freshness—ensuring updates to the cached content are used in the future.
-hero: hero.jpg
+hero: image/admin/skgQgcT3q8fdBGGNL3o1.jpg
 alt: A photograph of a half-painted wall.
 tags:
   - blog
-  - speed
-  - caching
+  # - speed
+  # - caching
 feedback:
   - api
 ---
@@ -40,7 +40,7 @@ Let's break down `stale-while-revalidate` into two parts: the idea that a cached
 response might be stale, and the process of revalidation.
 
 First, how does the browser know whether a cached response is "stale"? A
-[`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control)
+[`Cache-Control`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control)
 response header that contains `stale-while-revalidate` should also contain
 `max-age`, and the number of seconds specified via `max-age` is what determines
 staleness. Any cached response newer than `max-age` is considered fresh, and
@@ -101,7 +101,7 @@ revalidation will depend on getting a response back from the network.
 Here's a breakdown of those three distinct states, along with the window of time
 in which each of them apply for our example:
 
-![A diagram illustrating the information from the previous section.](s-w-r-diagram.svg)
+{% Img src="image/admin/C8lg2FSEqhTKR6WmYky3.svg", alt="A diagram illustrating the information from the previous section.", width="719", height="370" %}
 
 ## What are the common use cases?
 
@@ -158,7 +158,7 @@ If you're using a service worker and also have `stale-while-revalidate` enabled
 for some responses via a `Cache-Control` header, then the service worker will,
 in general, have "first crack" at responding to a request. If the service worker
 decides not to respond, or if in the process of generating a response it makes a
-network request using [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API),
+network request using [`fetch()`](https://developer.mozilla.org/docs/Web/API/Fetch_API),
 then the behavior configured via the `Cache-Control` header will end up going
 into effect.
 

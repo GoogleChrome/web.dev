@@ -6,7 +6,7 @@ authors:
 date: 2020-03-25
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-06-27
-hero: hero.png
+hero: image/admin/3Mgu37qU0P4fVdI4NTxM.png
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom
@@ -18,7 +18,7 @@ description: |
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - security
-  - trusted-types
+  # - trusted-types
 feedback:
   - api
 ---
@@ -32,7 +32,7 @@ give you the tools to write, security
 review, and maintain applications free of DOM XSS vulnerabilities by making the dangerous web API
 functions secure by default. Trusted Types are supported in Chrome 83, and
 a [polyfill](https://github.com/w3c/webappsec-trusted-types#polyfill) is available
-for other browsers. See [Browser compatibility](https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types#Browser_compatibility) for up-to-date
+for other browsers. See [Browser compatibility](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types#browser_compatibility) for up-to-date
 cross-browser support information.
 
 {% Aside 'key-term' %}
@@ -66,15 +66,15 @@ You might already recognize some of them, as browsers vendors and [web framework
 these features for security reasons.
 
   * **Script manipulation**:<br>
-    [`<script src>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-src) and setting text content of [`<script>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script) elements.
+    [`<script src>`](https://developer.mozilla.org/docs/Web/HTML/Element/script#attr-src) and setting text content of [`<script>`](https://developer.mozilla.org/docs/Web/HTML/Element/script) elements.
   * **Generating HTML from a string**:<br>
 
-    [`innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML), [`outerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/outerHTML),[`insertAdjacentHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML),
-    [`<iframe> srcdoc`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#attr-srcdoc),
-    [`document.write`](https://developer.mozilla.org/en-US/docs/Web/API/Document/write), [`document.writeln`](https://developer.mozilla.org/en-US/docs/Web/API/Document/writeln),
-    and [`DOMParser.parseFromString`](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser#DOMParser.parseFromString)
+    [`innerHTML`](https://developer.mozilla.org/docs/Web/API/Element/innerHTML), [`outerHTML`](https://developer.mozilla.org/docs/Web/API/Element/outerHTML),[`insertAdjacentHTML`](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentHTML),
+    [`<iframe> srcdoc`](https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-srcdoc),
+    [`document.write`](https://developer.mozilla.org/docs/Web/API/Document/write), [`document.writeln`](https://developer.mozilla.org/docs/Web/API/Document/writeln),
+    and [`DOMParser.parseFromString`](https://developer.mozilla.org/docs/Web/API/DOMParser#DOMParser.parseFromString)
   * **Executing plugin content**:<br>
-    [`<embed src>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed#attr-src), [`<object data>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object#attr-data) and [`<object codebase>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object#attr-codebase)
+    [`<embed src>`](https://developer.mozilla.org/docs/Web/HTML/Element/embed#attr-src), [`<object data>`](https://developer.mozilla.org/docs/Web/HTML/Element/object#attr-data) and [`<object codebase>`](https://developer.mozilla.org/docs/Web/HTML/Element/object#attr-codebase)
   * **Runtime JavaScript code compilation**: <br>
     `eval`, `setTimeout`, `setInterval`, `new Function()`
 
@@ -137,7 +137,7 @@ Now all the violations are reported to `//my-csp-endpoint.example`,
 but the website continues to work. The next section explains how `//my-csp-endpoint.example` works.
 
 {% Aside 'caution' %}
-Trusted Types are only available in a [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts)
+Trusted Types are only available in a [secure context](https://developer.mozilla.org/docs/Web/Security/Secure_Contexts)
 like HTTPS and `localhost`.
 {% endAside %}
 
@@ -260,7 +260,7 @@ Sometimes you can't change the offending code. For example, this is the case if 
 ```javascript
 if (window.trustedTypes && trustedTypes.createPolicy) { // Feature testing
   trustedTypes.createPolicy('default', {
-    createHTML: (string, sink) => DOMPurify.sanitize(string, {RETURN_TRUSTED_TYPE: true});
+    createHTML: (string, sink) => DOMPurify.sanitize(string, {RETURN_TRUSTED_TYPE: true})
   });
 }
 ```

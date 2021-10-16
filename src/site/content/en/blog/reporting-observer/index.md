@@ -5,7 +5,7 @@ authors:
   - ericbidelman
 date: 2019-08-21
 updated: 2020-05-27
-hero: hero.jpg
+hero: image/admin/LbRdd1MCPC2zKv6ptamD.jpg
 alt: Apollo Mission Control Center.
 description: |
   `ReportingObserver` lets you know when your site uses a deprecated API or runs
@@ -53,14 +53,14 @@ app](https://ericbidelman.tumblr.com/post/149032341876/observing-your-web-app))
 because I found it fascinating how many APIs there are for monitoring the
 "stuff" that happens in a web app. For example, there are APIs that can observe
 information about the DOM:
-[`ResizeObserver`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver),
-[`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver),
-[`MutationObserver`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).
-[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+[`ResizeObserver`](https://developer.mozilla.org/docs/Web/API/ResizeObserver),
+[`IntersectionObserver`](https://developer.mozilla.org/docs/Web/API/IntersectionObserver),
+[`MutationObserver`](https://developer.mozilla.org/docs/Web/API/MutationObserver).
+[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
 captures performance measurements. And methods like
-[`window.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror)
+[`window.onerror`](https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onerror)
 and
-[`window.onunhandledrejection`](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunhandledrejection)
+[`window.onunhandledrejection`](https://developer.mozilla.org/docs/Web/API/WindowEventHandlers/onunhandledrejection)
 even let us know when something goes wrong.
 
 However, there are other types of warnings which are not captured by the
@@ -69,9 +69,7 @@ existing APIs. When your site uses a deprecated API or runs up against a
 them:
 
 <figure class="w-figure">
-  <img src="./consolewarnings.png"
-       class="w-screenshot" alt="DevTools Console warnings for deprecations and interventions."
-       title="DevTools Console warnings for deprecations and interventions.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/VJmhfngEVxQBSc9im0pg.png", alt="DevTools Console warnings for deprecations and interventions.", width="800", height="79", class="w-screenshot" %}
   <figcaption>Browser-initiated warnings in the DevTools Console.</figcaption>
 </figure>
 
@@ -203,7 +201,7 @@ that goes wrong in your app:
 - [W3c spec][reportingobserver]
 - [chromestatus.com entry][chromestatus]
 
-[Hero image](https://unsplash.com/photos/6SyrBaRjLJ4) by 
+[Hero image](https://unsplash.com/photos/6SyrBaRjLJ4) by
 [Sieuwert Otterloo](https://unsplash.com/@sieuwert)
 on [Unsplash](https://unsplash.com).
 

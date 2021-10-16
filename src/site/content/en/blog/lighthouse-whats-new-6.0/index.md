@@ -4,7 +4,7 @@ subhead: New metrics, Performance score update, new audits, and more.
 authors:
   - cjamcl
 date: 2020-05-19
-hero: lighthouse-logo.svg
+hero: image/admin/93kZL2w49CLIc514qojJ.svg
 alt: Lighthouse logo.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -19,14 +19,14 @@ helps developers with opportunities and diagnostics to improve the user experien
 It's available in Chrome DevTools, npm (as a Node module and a CLI), or as a browser extension (in
 [Chrome](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) and
 [Firefox](https://addons.mozilla.org/en-US/firefox/addon/google-lighthouse/)). It powers many Google
-services, including [web.dev/measure](https://web.dev/measure/) and [PageSpeed
+services, including [web.dev/measure](/measure/) and [PageSpeed
 Insights](https://developers.google.com/speed/pagespeed/insights/).
 
 Lighthouse 6.0 is available immediately on npm and in [Chrome
 Canary](https://www.google.com/chrome/canary/). Other Google services that leverage Lighthouse will
 get the update by the end of the month. It will land in Chrome Stable in Chrome 84 (mid-July).
 
-To try the Lighthouse Node CLI, use the following commands:  
+To try the Lighthouse Node CLI, use the following commands:
 ```bash
 npm install -g lighthouse
 lighthouse https://www.example.com --view
@@ -51,12 +51,12 @@ the highlights in this article.
 ## New metrics {: #new-metrics }
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="lighthouse-new-metrics.png" alt="Lighthouse 6.0 metrics." width="600">
+  {% Img src="image/admin/Yo1oNtdfEF4PhD7zHDHQ.png", alt="Lighthouse 6.0 metrics.", width="600", height="251", class="w-screenshot" %}
 </figure>
 
 Lighthouse 6.0 introduces three new metrics to the report. Two of these new metrics–Largest
 Contentful Paint (LCP) and Cumulative Layout Shift (CLS)–are lab implementations of [Core Web
-Vitals](https://web.dev/vitals/).
+Vitals](/vitals/).
 
 ### Largest Contentful Paint (LCP) {: #lcp }
 
@@ -89,12 +89,12 @@ TBT measures the total amount of time between First Contentful Paint (FCP) and T
 (TTI). It is a companion metric to TTI and it brings more nuance to quantifying main thread activity
 that blocks a user's ability to interact with your page.
 
-Additionally, TBT correlates well with the field metric [First Input Delay](https://web.dev/fid/)
+Additionally, TBT correlates well with the field metric [First Input Delay](/fid/)
 (FID), which is a Core Web Vital.
 
 ## Performance score update  {: #score }
 
-The [performance score in Lighthouse](https://web.dev/performance-scoring/) is calculated from a
+The [performance score in Lighthouse](/performance-scoring/) is calculated from a
 weighted blend of multiple metrics to summarize a page's speed. The 6.0 performance score formula
 follows.
 
@@ -197,7 +197,7 @@ For comparison, here is version 5 scoring:
 </tbody>
 </table>
 
-![Lighthouse scoring changes between versions 5 and 6.](lighthouse-weight-changes.png)
+{% Img src="image/admin/gJnkac5fOfjOvmeLXdPO.png", alt="Lighthouse scoring changes between versions 5 and 6.", width="800", height="165" %}
 
 Some highlights of scoring changes between Lighthouse versions 5 and 6:
 
@@ -245,7 +245,7 @@ performance score. While the average performance score of the test corpus in ver
 Bug fixes to the underlying metric computation can result in different scores. This affects
 relatively few sites but can have sizable impact in certain situations. Overall, about 8% of sites
 experienced a score improvement due to metric implementation changes and about 4% of sites saw a score
-decrease due to metric implementation changes. Approximately 88% of sites were unaffected by these fixes. 
+decrease due to metric implementation changes. Approximately 88% of sites were unaffected by these fixes.
 
 Individual score curve changes also impacted the overall score shifts although very slightly. We
 periodically ensure that the score curve aligns with the observed metrics in the [HTTPArchive
@@ -261,7 +261,7 @@ you explore performance scoring. The calculator also gives you a comparison betw
 with your results populated.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="lighthouse-scorecalc.png" alt="Lighthouse Score Calculator." width="600">
+  {% Img src="image/admin/N8cRFUnM526m3fB4GQVf.png", alt="Lighthouse Score Calculator.", width="600", height="319", class="w-screenshot" %}
   <figcaption class="w-figcaption">Huge thanks to <a href="https://twitter.com/anatudor">Ana Tudor</a> for the gauge upgrade!</figcaption>
 </figure>
 
@@ -271,7 +271,7 @@ with your results populated.
 
 We are leveraging [DevTools code
 coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) in a new audit: [**Unused
-JavaScript**](https://web.dev/remove-unused-code/).
+JavaScript**](/remove-unused-code/).
 
 This audit isn't _entirely_ new: it was [added in
 mid-2017](https://github.com/GoogleChrome/lighthouse/issues/1852#issuecomment-306900595), but
@@ -284,24 +284,24 @@ it by default.
 Lighthouse uses the wonderful [axe-core](https://github.com/dequelabs/axe-core) library to power the
 accessibility category. In Lighthouse 6.0, we've added the following audits:
 
--  [aria-hidden-body](https://web.dev/aria-hidden-body/)
--  [aria-hidden-focus](https://web.dev/aria-hidden-focus/)
--  [aria-input-field-name](https://web.dev/aria-input-field-name/)
--  [aria-toggle-field-name](https://web.dev/aria-toggle-field-name/)
--  [form-field-multiple-labels](https://web.dev/form-field-multiple-labels/)
--  [heading-order](https://web.dev/heading-order/)
--  [duplicate-id-active](https://web.dev/duplicate-id-active/)
--  [duplicate-id-aria](https://web.dev/duplicate-id-aria/)
+-  [aria-hidden-body](/aria-hidden-body/)
+-  [aria-hidden-focus](/aria-hidden-focus/)
+-  [aria-input-field-name](/aria-input-field-name/)
+-  [aria-toggle-field-name](/aria-toggle-field-name/)
+-  [form-field-multiple-labels](/form-field-multiple-labels/)
+-  [heading-order](/heading-order/)
+-  [duplicate-id-active](/duplicate-id-active/)
+-  [duplicate-id-aria](/duplicate-id-aria/)
 
 ### Maskable icon {: #maskable-icon }
 
-[Maskable icons](https://web.dev/maskable-icon/) is a new icon format that makes icons for your PWA
+[Maskable icons](/maskable-icon/) is a new icon format that makes icons for your PWA
 look great across all types of devices. To help your PWA look as good as possible, we've introduced
 a new audit to check if your manifest.json supports this new format.
 
 ### Charset declaration {: #charset }
 
-The [meta charset element](https://web.dev/charset/) declares what character encoding should be used
+The [meta charset element](/charset/) declares what character encoding should be used
 to interpret an HTML document. If this element is missing, or if it is declared late in the
 document, browsers employ a number of heuristics to guess which encoding should be used. If a
 browser guesses incorrectly, and a late meta charset element is found, the parser generally throws
@@ -310,7 +310,7 @@ audit verifies the page has a valid character encoding and it's defined early an
 
 ## Lighthouse CI {: #ci }
 
-At [CDS last November](https://web.dev/lighthouse-evolution-cds-2019/#lighthouse-ci-alpha-release)
+At [CDS last November](/lighthouse-evolution-cds-2019/#lighthouse-ci-alpha-release)
 we announced [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci), the open source Node
 CLI and server that tracks Lighthouse results on every commit in your continuous integration
 pipeline, and we've come a long way since the alpha release. Lighthouse CI now has support
@@ -331,19 +331,15 @@ Start using Lighthouse CI on your project today by following our
 </style>
 
 <figure class="w-figure w-figure--inline-left">
-  <a href="lighthouse-ci-1.png" target="_blank">
-    <img class="w-screenshot" src="lighthouse-ci-1.png" alt="Lighthouse CI." width="600">
-  </a>
+  {% Img src="image/admin/sXnTzewqGuc84MOCzFJe.png", alt="Lighthouse CI.", width="600", height="413", linkTo=true, class="w-screenshot" %}
 </figure>
+
 <figure class="w-figure w-figure--inline-left">
-  <a href="lighthouse-ci-2.png" target="_blank">
-    <img class="w-screenshot" src="lighthouse-ci-2.png" alt="Lighthouse CI." width="600">
-  </a>
+  {% Img src="image/admin/uGT7AUJEQeqK1vlKySLb.png", alt="Lighthouse CI.", width="600", height="412", linkTo=true, class="w-screenshot" %}
 </figure>
+
 <figure class="w-figure">
-  <a href="lighthouse-ci-3.png" target="_blank">
-    <img class="w-screenshot" src="lighthouse-ci-3.png" alt="Lighthouse CI." width="600">
-  </a>
+  {% Img src="image/admin/ZR48KZebW43eyAvB1RkT.png", alt="Lighthouse CI.", width="600", height="354", linkTo=true, class="w-screenshot" %}
 </figure>
 
 ## Renamed Chrome DevTools panel {: #devtools }
@@ -354,7 +350,7 @@ Depending on your DevTools window size, the panel is probably behind the `»` bu
 the tab to change the order.
 
 To quickly reveal the panel with the [Command
-menu](https://developers.google.com/web/tools/chrome-devtools/command-menu): 
+menu](https://developers.google.com/web/tools/chrome-devtools/command-menu):
 
 1. {% Instruction 'devtools', 'none' %}
 1. {% Instruction 'devtools-command', 'none' %}
@@ -383,9 +379,7 @@ but here are all the changes detectable by a webpage:
 As of Chrome 81, Moto G4 is also available in the Chrome DevTools device emulation list.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" 
-       src="lighthouse-motog4.png" 
-       alt="Chrome DevTools device emulation list with Moto G4 included.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wMyHDbxs49CTJ831UBp7.png", alt="Chrome DevTools device emulation list with Moto G4 included.", width="800", height="653", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 ## Browser extension {: #extension }
@@ -416,7 +410,7 @@ extension](https://addons.mozilla.org/en-US/firefox/addon/google-lighthouse/)!
 
 ## Budgets {: #budgets }
 
-Lighthouse 5.0 introduced [performance budgets](https://web.dev/performance-budgets-101/) which
+Lighthouse 5.0 introduced [performance budgets](/performance-budgets-101/) which
 supported adding thresholds for
 [how much of each resource type](https://github.com/GoogleChrome/lighthouse/blob/master/docs/performance-budgets.md#resource-budgets)
 (such as scripts, images, or css) a page can serve.
@@ -454,15 +448,13 @@ Lighthouse has begun experimenting with collecting source maps to power new feat
 -  Displaying the original source code for report items with a "source location".
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="lighthouse-sourcemaps-unusedjs.png" alt="Unused JavaScript showing modules from source maps." width="600">
-  <figcaption class="w-caption">
-    The Unused JavaScript audit using source maps to show unused code in specific bundled modules.
-  </figcaption>
+  {% Img src="image/admin/iZPhM3KNQebgwCsgXTuf.png", alt="Unused JavaScript showing modules from source maps.", width="600", height="566", class="w-screenshot" %}
+  <figcaption class="w-figcaption">The Unused JavaScript audit using source maps to show unused code in specific bundled modules.</figcaption>
 </figure>
 
 These features will be enabled by default in a future version of Lighthouse. For now, you can view
-Lighthouse's experimental audits with the following CLI flag:  
-  
+Lighthouse's experimental audits with the following CLI flag:
+
 ```bash
 lighthouse https://web.dev --view --preset experimental
 ```
@@ -479,7 +471,7 @@ What can you do next?
 -  Use the Node CLI: `npm install -g lighthouse && lighthouse https://yoursite.com --view`.
 -  Get [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci#lighthouse-ci) running with
    your project.
--  Review the [Lighthouse audit documentation](https://web.dev/learn/#lighthouse).
+-  Review the [Lighthouse audit documentation](/learn/#lighthouse).
 -  Have fun making the web better!
 
 We're passionate about the web and we love working with the developer community to build tooling to

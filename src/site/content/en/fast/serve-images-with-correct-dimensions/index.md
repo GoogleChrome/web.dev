@@ -62,12 +62,12 @@ provides information about the displays of many common devices.
 The DevTools Elements panel can be used to determine what size an image is
 displayed at.
 
-<img src="./elements-panel.png" alt="DevTools element's panel" class="w-screenshot">
+{% Img src="image/admin/pKQa0Huu0KGInOekdz6M.png", alt="DevTools element's panel", width="800", height="364" %}
 
 ### The "Better" approach
 
 For images with sizing based on…
-- **Absolute units:** Use [srcset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-srcset) and [sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-sizes) attributes to serve different images to different display densities. (Read the guide on Responsive Images [here](/serve-responsive-images).)
+- **Absolute units:** Use [srcset](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-srcset) and [sizes](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-sizes) attributes to serve different images to different display densities. (Read the guide on Responsive Images [here](/serve-responsive-images).)
 
 "Display density" refers to the fact that different displays have different
 densities of pixels. All other things being equal, a high pixel density
@@ -90,8 +90,8 @@ best for it.
 the guide [here](/serve-responsive-images).)
 
 An image that works across all devices will be unnecessarily large for
-smaller devices. Responsive image techniques, specifically [srcset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-srcset")
-and [sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-sizes), allow you to specify multiple image versions and for the device to choose
+smaller devices. Responsive image techniques, specifically [srcset](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-srcset")
+and [sizes](https://developer.mozilla.org/docs/Web/HTML/Element/source#attr-sizes), allow you to specify multiple image versions and for the device to choose
 the size that works best for it.
 
 ## Resize images

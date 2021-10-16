@@ -167,9 +167,9 @@ module.exports = (type, listStyle = 'ul') => {
       // prettier-ignore
       instruction = html`
         ${shared.devtools}
-        ${bullet}Click the **Audits** tab.
-        ${bullet}Select the **${substitution}** checkbox.
-        ${bullet}Click **Run audits**.
+        ${bullet}Click the **Lighthouse** tab.
+        ${bullet}Make sure the **${substitution}** checkbox is selected in the *Categories* list.
+        ${bullet}Click the **Generate report** button.
       `;
       break;
 

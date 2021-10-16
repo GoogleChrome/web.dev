@@ -20,8 +20,7 @@ Lighthouse flags pages that have third-party code that blocks the [main thread] 
 longer:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="third-party-summary.png"
-       alt="A screenshot of the Lighthouse Reduce the impact of third-party code audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Q7GdvYGsSGwIjdWvNhTE.png", alt="A screenshot of the Lighthouse Reduce the impact of third-party code audit", width="800", height="481", class="w-screenshot" %}
 </figure>
 
 A third-party script is any script hosted on a domain that's different than the domain of the URL
@@ -41,4 +40,4 @@ optimization strategies.
 - [Source code for **Reduce the impact of third-party code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/third-party-summary.js)
 - [Loading Third-party JavaScript](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/)
 
-[main thread]: https://developer.mozilla.org/en-US/docs/Glossary/Main_thread
+[main thread]: https://developer.mozilla.org/docs/Glossary/Main_thread

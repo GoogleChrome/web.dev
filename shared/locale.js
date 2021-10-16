@@ -21,12 +21,29 @@ const defaultLocale = 'en';
 const isProd = Boolean(process.env.GAE_APPLICATION);
 const contentDir = isProd ? '../dist' : '../src/site/content';
 const dirs = fs.readdirSync(path.join(__dirname, contentDir));
+// @ts-ignore
 const supportedLocales = dirs.filter((dir) => localeCode.validate(dir));
 
 const isSupportedLocale = (locale) => supportedLocales.indexOf(locale) > -1;
+
+/**
+ * A map of supported language codes to their full names.
+ * @const
+ */
+const languageNames = {
+  en: 'English',
+  pl: 'Polski',
+  es: 'Español',
+  ko: '한국어',
+  zh: '中文',
+  ru: 'Rусский',
+  pt: 'Português',
+  ja: '日本語',
+};
 
 module.exports = {
   defaultLocale,
   supportedLocales,
   isSupportedLocale,
+  languageNames,
 };

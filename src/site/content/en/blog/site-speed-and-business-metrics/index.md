@@ -6,10 +6,10 @@ description: Leverage A/B testing to evaluate the impact of site speed on your b
 authors:
   - msdikla
   - martinschierle
-  - bpj 
+  - bpj
 date: 2020-07-17
 # updated: 2020-07-17
-hero: hero.jpeg
+hero: image/admin/YwyFi7zlQ4LjXilIiD3y.jpeg
 tags:
   - blog
   - performance
@@ -31,16 +31,16 @@ few.
 
 Even though the case for speed is clear, many companies still struggle with
 prioritizing work that will improve their site speed since they do not know
-exactly how it affects **their** users and as a result **their** business. 
+exactly how it affects **their** users and as a result **their** business.
 
 In the absence of data, it is easy to delay site speed work and focus on other
 tasks. A common scenario is having some people in the company recognize the
 importance of site speed and yet not be able to build a case for it and convince
-multiple stakeholders to invest accordingly. 
+multiple stakeholders to invest accordingly.
 
 This article provides high-level guidance on how to leverage A/B testing to
 evaluate the impact of site speed on business metrics therefore enabling more
-effective decision-making on the matter. 
+effective decision-making on the matter.
 
 ## Step 1: Pick a page to A/B test
 
@@ -68,7 +68,7 @@ drive the page selection process:
     journey which is analyzed using a funnel. For example, users on an
     e-commerce website will have to navigate through a home page, category
     pages, product pages, and a checkout page to complete a purchase. If you're
-    optimizing for conversions, one of those pages would be a good candidate. 
+    optimizing for conversions, one of those pages would be a good candidate.
 
 *   The page should have a singular purpose. Unless your site has a very
     specific mission, it's usually best to avoid using the homepage for your
@@ -86,7 +86,7 @@ drive the page selection process:
     Report](https://support.google.com/analytics/answer/1205784) or [Search
     Console Core Web Vitals
     report](https://support.google.com/webmasters/answer/9205520) to see which
-    of your pages are slowest. 
+    of your pages are slowest.
 *   The page should be relatively stable. Don't update pages (anything that
     would impact business metrics) until the test is complete. The fewer
     external factors there are to consider, the cleaner the analysis will be.
@@ -135,7 +135,7 @@ First Ad Click".
 ## Step 3: Create speed performance variants
 
 In this stage you will implement changes to create a faster version of the page
-to be tested against the current version. 
+to be tested against the current version.
 
 A couple of things to keep in mind:
 
@@ -169,7 +169,7 @@ options.
 *   Remove non-critical JavaScript code that does not impact the user experience
     and which you can do without for the purpose of the test (for example,
     certain third-party libraries)
-*   Implement [browser-level lazy loading](/native-lazy-loading/) which isn't supported
+*   Implement [browser-level lazy loading](/browser-level-image-lazy-loading/) which isn't supported
     by all browsers but may still improve performance significantly where
     supported
 *   Remove non-critical analytics tags or load them asynchronously
@@ -231,7 +231,7 @@ Example
 Example of AB testing  performance changes on a given product detail page (PDP)
 via server-side testing:
 
-![Server side testing diagram](test-server-side.jpg)
+{% Img src="image/admin/xQWUEAAfowEg0wjmVsrm.jpg", alt="Server side testing diagram", width="800", height="230" %}
 
 The request goes to the backend, which distributes the users to the two
 different versions of the page. While this is in general a good setup, it often
@@ -240,7 +240,7 @@ needs IT resources to set up the server-side split.
 Here is an example of a client side testing setup, using the prior page (the
 homepage in the diagram below) to run the testing JavaScript:
 
-![Client side testing diagram](test-client-side.jpg)
+{% Img src="image/admin/tX6XL3IoZBVdJXCPAE1E.jpg", alt="Client side testing diagram", width="800", height="337" %}
 
 The testing JavaScript manipulates the outgoing link to give the two test groups
 of users links to the two versions of the PDP in question. This is easy to setup
@@ -335,7 +335,7 @@ you'll be able to prioritize accordingly.
 
 If you can't identify a correlation, take a look at the caveats below and assess
 whether similar tests should be run elsewhere on the site (for example, through
-the entire purchase funnel or on a different type of page). 
+the entire purchase funnel or on a different type of page).
 
 **Caveats**
 

@@ -4,14 +4,16 @@ title: Add a web app manifest
 authors:
   - petelepage
   - beaufortfrancois
+  - thomassteiner
 date: 2018-11-05
-updated: 2020-05-28
+updated: 2021-09-06
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
   device or desktop.
 tags:
   - progressive-web-apps
+  - web-app-manifest
 feedback:
   - api
 ---
@@ -22,20 +24,20 @@ desktop or mobile device. A typical manifest file includes the app name, the
 icons the app should use, and the URL that should be opened when the
 app is launched.
 
-Manifest files are [supported](https://developer.mozilla.org/en-US/docs/Web/Manifest#Browser_compatibility) in Chrome, Edge, Firefox, UC Browser, Opera,
+Manifest files are [supported](https://developer.mozilla.org/docs/Web/Manifest#Browser_compatibility) in Chrome, Edge, Firefox, UC Browser, Opera,
 and the Samsung browser. Safari has partial support.
 
-## Create the manifest.webmanifest file {: #create }
+## Create the manifest file {: #create }
 
-The manifest file can have any name, but is commonly named
-`manifest.webmanifest` and served from the root (your website's top-level
-directory).
+The manifest file can have any name, but is commonly named `manifest.json` and
+served from the root (your website's top-level directory). The specification
+suggests the extension should be `.webmanifest`, but browsers also support
+`.json` extensions, which is may be easier for developers to understand.
 
 ```json
 {
   "short_name": "Weather",
   "name": "Weather: Do I need an umbrella?",
-  "description": "Weather forecast information",
   "icons": [
     {
       "src": "/images/icons-192.png",
@@ -67,6 +69,19 @@ directory).
       "description": "View weather information for tomorrow",
       "url": "/tomorrow?source=pwa",
       "icons": [{ "src": "/images/tomorrow.png", "sizes": "192x192" }]
+    }
+  ],
+  "description": "Weather forecast information",
+  "screenshots": [
+    {
+      "src": "/images/screenshot1.png",
+      "type": "image/png",
+      "sizes": "540x720"
+    },
+    {
+      "src": "/images/screenshot2.jpg",
+      "type": "image/jpg",
+      "sizes": "540x720"
     }
   ]
 }
@@ -141,9 +156,7 @@ be made to launch full screen.
           app. The app runs in its own window, separate from the browser, and
           hides standard browser UI elements like the URL bar.
           <figure class="w-figure">
-            <img class="w-screenshot"
-                src="standalone-pwa-window.png"
-                alt="An example of a PWA window with standalone display.">
+            {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/XdBsDeRZozIyXyiXA59n.png", alt="An example of a PWA window with standalone display.", width="800", height="196", class="w-screenshot" %}
           </figure>
         </td>
       </tr>
@@ -154,9 +167,7 @@ be made to launch full screen.
           user a minimal set of UI elements for controlling navigation (such
           as back and reload).
           <figure class="w-figure">
-            <img class="w-screenshot"
-                src="minimal-ui-pwa-window.png"
-                alt="An example of a PWA window with minimal-ui display.">
+            {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/trPwjcMio7tBKGBNoT9u.png", alt="An example of a PWA window with minimal-ui display.", width="800", height="196", class="w-screenshot" %}
           </figure>
         </td>
       </tr>
@@ -167,6 +178,45 @@ be made to launch full screen.
     </tbody>
   </table>
 </div>
+
+#### `display_override` {: #display-override }
+
+Web apps can choose how they are displayed by setting a `display` mode in their manifest as
+[explained above](#display). Browsers are *not* required to support all display modes, but they
+*are* required to support the
+[spec-defined fallback chain](https://w3c.github.io/manifest/#dfn-fallback-display-mode)
+(`"fullscreen"` → `"standalone"` → `"minimal-ui"` → `"browser"`). If they don't support a given
+mode, they fall back to the next display mode in the chain. This inflexible behavior can be
+problematic in rare cases, for example, a developer cannot request `"minimal-ui"` without being
+forced back into the `"browser"` display mode when `"minimal-ui"` is not supported.
+Another problem is that the current behavior makes it impossible to introduce new display
+modes in a backward compatible way, since explorations like tabbed application mode don't have a
+natural place in the fallback chain.
+
+These problems are solved by the `display_override` property, which the browser considers *before*
+the `display` property. Its value is a sequence of strings that are considered in the listed order, and the
+first supported display mode is applied. If none are supported, the browser falls back to evaluating
+the `display` field.
+
+In the example below, the display mode fallback chain would be as follows.
+(The details of `"window-control-overlay"` are out-of-scope for this article.)
+
+1. `"window-control-overlay"` (First, look at `display_override`.)
+1. `"minimal-ui"`
+1. `"standalone"` (When `display_override` is exhausted, evaluate `display`.)
+1. `"minimal-ui"` (Finally, use the `display` fallback chain.)
+1. `"browser"`
+
+```json
+{
+  "display_override": ["window-control-overlay", "minimal-ui"],
+  "display": "standalone",
+}
+```
+
+{% Aside %}
+  The browser will not consider `display_override` unless `display` is also present.
+{% endAside %}
 
 #### `scope` {: #scope }
 
@@ -201,10 +251,20 @@ the app's preview in task switchers. The `theme_color` should match the
 `meta` theme color specified in your document head.
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-      src="theme_color-pwa-window.png"
-      alt="An example of a PWA window with custom theme_color.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8mkBdT3O0FZLo0PUppvv.png", alt="An example of a PWA window with custom theme_color.", width="800", height="196", class="w-screenshot" %}
 </figure>
+
+As of Chromium&nbsp;93 and Safari&nbsp;15, you can adjust this color based on a
+media query with the `media` attribute of the `meta` theme color element. The
+first one that matches will be picked. For example, you could have one color for
+light mode and another one for dark mode. At the time of writing, you can't
+define those in your manifest. See [w3c/manifest#975 GitHub
+issue](https://github.com/w3c/manifest/issues/975).
+
+```html
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="black">
+```
 
 #### `shortcuts` {: #shortcuts }
 
@@ -212,13 +272,36 @@ The `shortcuts` property is an array of [app shortcut](/app-shortcuts) objects
 whose goal is to provide quick access to key tasks within your app. Each member
 is a dictionary that contains at least a `name` and a `url`.
 
+#### `description` {: #description }
+
+The `description` property describes the purpose of your app.
+
+#### `screenshots` {: #screenshots }
+
+The `screenshots` property is an array of image objects, representing your app
+in common usage scenarios. Each object must include the `src`, a `sizes`
+property, and the `type` of image.
+
+In Chrome, the image must respond to certain criteria:
+
+* Width and height must be at least 320px and at most 3840px.
+* The maximum dimension can't be more than 2.3 times as long as the minimum
+  dimension.
+* Screenshots must have the same aspect ratio.
+* Only JPEG and PNG image formats are supported.
+
+{% Aside 'gotchas' %}
+The `description` and `screenshots` properties are currently used only in Chrome
+for Android when a user wants to install your app.
+{% endAside %}
+
 ## Add the web app manifest to your pages {: #link-manifest }
 
 After creating the manifest, add a `<link>` tag to all the pages of your
 Progressive Web App. For example:
 
 ```html
-<link rel="manifest" href="/manifest.webmanifest">
+<link rel="manifest" href="/manifest.json">
 ```
 
 {% Aside 'gotchas' %}
@@ -233,9 +316,7 @@ To verify your manifest is setup correctly, use the **Manifest** pane in the
 **Application** panel of Chrome DevTools.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled"
-       src="lh-manifest.png"
-       alt="The application panel in Chrome Devtools with the manifest tab selected.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FpIOY0Ak6FAA5xMuB9IT.png", alt="The application panel in Chrome Devtools with the manifest tab selected.", width="800", height="601", class="w-screenshot w-screenshot--filled" %}
 </figure>
 
 This pane provides a human-readable version of many of your manifest's
@@ -270,5 +351,7 @@ you can provide additional icons for pixel perfection.
 There are several additional properties that can be added to the web app
 manifest. Refer to the [MDN Web App Manifest documentation][mdn-manifest]
 for more information.
+You can learn more about `display_override` in the
+[explainer](https://github.com/WICG/display-override/blob/master/explainer.md).
 
-[mdn-manifest]: https://developer.mozilla.org/en-US/docs/Web/Manifest
+[mdn-manifest]: https://developer.mozilla.org/docs/Web/Manifest

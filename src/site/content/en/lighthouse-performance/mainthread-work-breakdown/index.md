@@ -12,7 +12,7 @@ web_lighthouse:
 
 The browser's [renderer process](https://developers.google.com/web/updates/2018/09/inside-browser-part3)
 is what turns your code into a web page that your users can interact with.
-By default, the [main thread](https://developer.mozilla.org/en-US/docs/Glossary/Main_thread)
+By default, the [main thread](https://developer.mozilla.org/docs/Glossary/Main_thread)
 of the renderer process typically handles most code:
 it parses the HTML and builds the DOM, parses the CSS and applies the specified styles,
 and parses, evaluates, and executes the JavaScript.
@@ -29,7 +29,7 @@ flags pages that keep the main thread busy for longer than 4&nbsp;seconds
 during load:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="mainthread-work-breakdown.png" alt="A screenshot of the Lighthouse Minimize main thread work audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kcHYoy1vfoJX76JVyM9T.png", alt="A screenshot of the Lighthouse Minimize main thread work audit", width="800", height="408", class="w-screenshot" %}
 </figure>
 
 To help you identify the sources of main thread load,
@@ -82,5 +82,5 @@ as the page loads.
 ## Resources
 
 - [Source code for **Minimize main thread work** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/mainthread-work-breakdown.js)
-- [Main thread (MDN)](https://developer.mozilla.org/en-US/docs/Glossary/Main_thread)
+- [Main thread (MDN)](https://developer.mozilla.org/docs/Glossary/Main_thread)
 - [Inside look at modern web browser (part 3)](https://developers.google.com/web/updates/2018/09/inside-browser-part3)

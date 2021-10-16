@@ -14,7 +14,7 @@ all animated GIFs, along with estimated savings in seconds
 achieved by converting these GIFs to video:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="efficient-animated-content.png" alt="A screenshot of the Lighthouse Use video formats for animated content audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MTfWMspCIMjREn2rpwlG.png", alt="A screenshot of the Lighthouse Use video formats for animated content audit", width="800", height="235", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
@@ -49,6 +49,7 @@ run the following command in your console:
 `ffmpeg -i my-animation.gif -c vp9 -b:v 0 -crf 41 my-animation.webm`
 
 ## Replace the GIF image with a video
+
 Animated GIFs have three key traits that a video needs to replicate:
 
 - They play automatically.
@@ -63,6 +64,19 @@ Luckily, you can recreate these behaviors using the `<video>` element.
   <source src="my-animation.mp4" type="video/mp4">  
 </video>  
 ```
+
+## Use a service that converts GIFs to HTML5 videos
+
+Many [image CDNs](/image-cdns/) support GIF to HTML5 video conversion. You upload a
+GIF to the image CDN, and the image CDN returns an HTML5 video.
+
+## Stack-specific guidance
+
+### AMP
+
+For animated content, use
+[`amp-anim`](https://amp.dev/documentation/components/amp-anim/) to minimize CPU
+usage when the content is offscreen.
 
 ## Resources
 

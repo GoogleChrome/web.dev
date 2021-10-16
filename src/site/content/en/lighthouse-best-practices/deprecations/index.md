@@ -18,7 +18,7 @@ after they're removed causes errors on your site.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages that call deprecated APIs:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="deprecations.png" alt="Lighthouse audit shows usage of deprecated APIs">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zsb1AOPs5Bua46tKX8Ot.png", alt="Lighthouse audit shows usage of deprecated APIs", width="800", height="247", class="w-screenshot" %}
 </figure>
 
 Lighthouse includes all deprecated API warnings that Chrome logs

@@ -9,23 +9,28 @@ description: |
 Self-assessments provide opportunities for users
 to check their understanding of concepts covered in your post.
 
-{% Assessment page, 'self-assessment' %}
+{% Assessment 'self-assessment' %}
 
 1. [Start a self-assessment](#start-a-self-assessment)
-1. [Question set parameters](#question-set-parameters)
-1. [Question anatomy and parameters](#question-anatomy-and-parameters)
 1. [Response types](#response-types)
     - [Multiple-choice](#multiple-choice)
     - [Think-and-checks](#think-and-checks)
     - [Composite questions](#composite-questions)
+1. [Question set parameters](#question-set-parameters)
+1. [Question anatomy and parameters](#question-anatomy-and-parameters)
 1. [Multiple sets in one post](#multiple-sets-in-one-post)
+1. [Example assessment](#example-assessment)
+1. [API](#api)
+    - [TargetAssessment](#targetassessment)
+    - [TargetAssessmentQuestion](#targetassessmentquestion)
+    - [TargetAssessmentOption](#targetassessmentoption)
 
 ## Start a self-assessment
 
 To include a self-assessment in your post:
-1. Add this short code to your post where you want the self-assessment to appear:
+1. Add this shortcode to your post where you want the self-assessment to appear:
     ```html
-    {% raw %}{% Assessment page, 'my-first-self-assessment' %}{% endraw %}
+    {% raw %}{% Assessment 'my-first-self-assessment' %}{% endraw %}
     ```
 1. Copy `my-first-self-assessment.assess.yml` in `src/site/_drafts/_template-self-assessment`
    to your post's directory.
@@ -34,6 +39,89 @@ To include a self-assessment in your post:
 1. Update the argument in the short code to match the new file name.
 1. Using the YAML template as a starting point,
    follow the instructions below to create your question set.
+
+## Response types
+
+### Multiple-choice
+The multiple-choice response type lets users respond to a question
+by selecting from an array of options,
+which can include MarkDown or images.
+(But not both! Overstuffing your options can make them artificially hard.)
+
+{% Aside 'warning' %}
+To help ensure that users understand what selecting an option will do,
+don't include links or any other interactive elements in a multiple-choice option.
+{% endAside %}
+
+{% Details %}
+
+{% DetailsSummary 'h4' %}
+multiple-choice.assess.yml
+{% endDetailsSummary %}
+
+```yml
+{% include './multiple-choice.assess.yml' %}
+```
+
+{% endDetails %}
+
+{% Assessment 'multiple-choice' %}
+
+### Think-and-checks
+Think-and-checks let you present a stimulus of some kind
+(for example, a code sample) and ask a question about it.
+Users can formulate a mental response and then check it.
+
+Since think-and-checks don't have any options to submit,
+there's no need to provide `cardinality` or `correctAnswers` keys.
+
+{% Aside 'caution' %}
+Since think-and-checks don't provide a way for users to select
+and validate an actual response,
+it's generally better to use any other [response type](#response-types) instead.
+{% endAside %}
+
+{% Details %}
+
+{% DetailsSummary 'h4' %}
+think-and-check.assess.yml
+{% endDetailsSummary %}
+
+```yml
+{% include './think-and-check.assess.yml' %}
+```
+
+{% endDetails %}
+
+{% Assessment 'think-and-check' %}
+
+### Composite questions
+You can include more than one response component in a single question.
+
+To do that, add a `components` key to the question object
+and then include all question data _except_ the stimulus in each component object.
+(Each question can have only one stimulus.)
+
+{% Aside 'caution' %}
+Use composite questions judiciously.
+The more response components there are, the harder the question is.
+It's better to break up a multi-part question into separate questions
+unless the parts are truly interdependent.
+{% endAside %}
+
+{% Details %}
+
+{% DetailsSummary 'h4' %}
+composite.assess.yml
+{% endDetailsSummary %}
+
+```yml
+{% include './composite.assess.yml' %}
+```
+
+{% endDetails %}
+
+{% Assessment 'composite' %}
 
 ## Question set parameters
 
@@ -150,77 +238,6 @@ For image options,
 see which layout best balances legibility and screen real estate.
 {% endAside %}
 
-## Response types
-
-### Multiple-choice
-The multiple-choice response type lets users respond to a question
-by selecting from an array of options,
-which can include MarkDown or images.
-(But not both! Overstuffing your options can make them artificially hard.)
-
-{% Aside 'warning' %}
-To help ensure that users understand what selecting an option will do,
-don't include links or any other interactive elements in a multiple-choice option.
-{% endAside %}
-
-### Think-and-checks
-Think-and-checks let you present a stimulus of some kind
-(for example, a code sample) and ask a question about it.
-Users can formulate a mental response and then check it.
-
-Since think-and-checks don't have any options to submit,
-there's no need to provide `cardinality` or `correctAnswers` keys.
-
-{% Aside 'caution' %}
-Since think-and-checks don't provide a way for users to select
-and validate an actual response,
-it's generally better to use any other [response type](#response-types) instead.
-{% endAside %}
-
-### Composite questions
-You can include more than one response component in a single question.
-
-To do that, add a `components` key to the question object
-and then include all question data _except_ the stimulus in each component object.
-(Each question can have only one stimulus.)
-
-Here's an example:
-```yaml
-- stimulus: "![Webby](./webby.png)"
-  components:
-    - type: multiple-choice
-      cardinality: "1"
-      correctAnswers: "1"
-      stem: Who's this Webby I've heard so much about?
-      options:
-        - content: A sentient system icon run amok
-          rationale: Like this helpful little being would ever go amok.
-        - content: The best darn mascot you could hope for
-          rationale: Webby is _everything_.
-        - content: Spiderman's lesser known sidekick
-          rationale: |
-            I really don't see Webby swinging around
-            on those small (but _adorable_) arms.
-    - type: multiple-choice
-      cardinality: "1"
-      correctAnswers: "2"
-      stem: How awesome is Webby?
-      options:
-        - content: Pretty awesome
-          rationale: Nope.
-        - content: The awesomest
-          rationale: Close but no.
-        - content: OMG 🤯
-          rationale: It was always you, Webby.
-```
-
-{% Aside 'caution' %}
-Use composite questions judiciously.
-The more response components there are, the harder the question is.
-It's better to break up a multi-part question into separate questions
-unless the parts are truly interdependent.
-{% endAside %}
-
 ## Multiple sets in one post
 To include another set in your post,
 create a second `*.assess.yml` file and
@@ -229,6 +246,25 @@ You can add as many assessments as you want as long as each has a unique name.
 For example:
 
 ```html
-{% raw %}{% Assessment page, 'first-assessment' %}
-{% Assessment page, 'second-assessment' %}{% endraw %}
+{% raw %}{% Assessment 'first-assessment' %}
+{% Assessment 'second-assessment' %}{% endraw %}
+```
+
+## API
+
+The `*.assess.yml` file can be broken down into the following types:
+
+### TargetAssessment
+```typescript
+{% include '../../../../../../types/site/_includes/components/Assessment/TargetAssessment.d.ts' %}
+```
+
+### TargetAssessmentQuestion
+```typescript
+{% include '../../../../../../types/site/_includes/components/Assessment/TargetAssessmentQuestion.d.ts' %}
+```
+
+### TargetAssessmentOption
+```typescript
+{% include '../../../../../../types/site/_includes/components/Assessment/TargetAssessmentOption.d.ts' %}
 ```

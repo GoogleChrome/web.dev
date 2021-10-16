@@ -22,7 +22,7 @@ contain properly ordered `<dt>` and `<dd>` groups,
 `<script>`, or `<template>` elements:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="definition-list.png" alt="Lighthouse audit showing definition lists do not contain properly ordered <dt> and <dd> groups, <script>, or <template> elements">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7PIfPwOqBuptPXkECl2J.png", alt="Lighthouse audit showing definition lists do not contain properly ordered <dt> and <dd> groups, <script>, or <template> elements", width="800", height="223", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

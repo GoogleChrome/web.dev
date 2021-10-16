@@ -1,18 +1,18 @@
 {
   "slug": "accessible",
-  "cover": "/images/collections/accessible.svg",
-  "title": "Accessible to all",
-  "description": "Build a site that works for all of your users.",
-  "overview": "All users should be able to access your content. In this section you'll learn how to provide a robust experience to your users that accounts for their context and any situational, temporary, or permanent disabilities.",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/kIvqNJ7Z62umTO31nYhk.svg",
+  "title": "i18n.paths.accessible.title",
+  "description": "i18n.paths.accessible.description",
+  "overview": "i18n.paths.accessible.overview",
   "topics": [
     {
-      "title": "Understand the diverse needs of users",
+      "title": "i18n.paths.accessible.topics.understand_the_diverse_needs_of_users",
       "pathItems": [
         "what-is-accessibility"
       ]
     },
     {
-      "title": "Make your site keyboard accessible",
+      "title": "i18n.paths.accessible.topics.make_your_site_keyboard_accessible",
       "pathItems": [
         "keyboard-access",
         "use-semantic-html",
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "title": "Understand semantics and basic screen reader support",
+      "title": "i18n.paths.accessible.topics.understand_semantics_and_basic_screen_reader_support",
       "pathItems": [
         "semantics-and-screen-readers",
         "headings-and-landmarks",
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "title": "Create a design and CSS that supports users with different needs",
+      "title": "i18n.paths.accessible.topics.create_a_design_and_css_that_supports_users_with_different_needs",
       "pathItems": [
         "accessible-tap-targets",
         "color-and-contrast-accessibility",

@@ -54,7 +54,7 @@ observers for the "Pacifico" and "Roboto" font families:
 If you're ever unsure what font face observers you need to create, just look for
 the `font-family` declarations in your CSS. Pass the `font-family` name of these declarations to
 `FontFaceObserver()`. There is no need to create a font observer for
-[fallback fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#%3Cgeneric-name%3E).
+[fallback fonts](https://developer.mozilla.org/docs/Web/CSS/font-family#%3Cgeneric-name%3E).
 
 For example, if your CSS was:
 
@@ -77,7 +77,7 @@ robotoObserver.load().then(function(){
 
 `robotoObserver.load()` is a promise that resolves when the font loads.
 
-The demo site uses two different fonts, so you need to use [`Promise.all()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
+The demo site uses two different fonts, so you need to use [`Promise.all()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
 to wait until both fonts have loaded.
 
 - Add this promise to your script, right below the FontFaceObservers that you
@@ -165,4 +165,4 @@ html.fonts-loaded .text {
 If the page looks like this, then you've successfully implemented Font Face
 Observer and gotten rid of the "Flash of Invisible Text."
 
-![A heading in a cursive font.](./fancy-header.png)
+{% Img src="image/admin/st2aEbPzhPIwyJiobkgO.png", alt="A heading in a cursive font.", width="572", height="246" %}

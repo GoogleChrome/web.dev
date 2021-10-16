@@ -3,7 +3,7 @@ title: Detached window memory leaks
 subhead: |
   Find and fix tricky memory leaks caused by detached windows.
 date: 2020-09-29
-hero: hero.jpg
+hero: image/admin/Dnk2j14tUTNqqSYN8FHj.jpg
 alt: Cat contemplating how to fix a leak
 authors:
   - developit
@@ -75,7 +75,7 @@ This is an example of a detached window. The popup window was closed, but our co
 to it that prevents the browser from being able to destroy it and reclaim that memory.
 
 When a page calls `window.open()` to create a new browser window or tab, a
-[`Window`](https://developer.mozilla.org/en-US/docs/Web/API/Window) object is returned that
+[`Window`](https://developer.mozilla.org/docs/Web/API/Window) object is returned that
 represents the window or tab. Even after such a window has been closed or the user has navigated it
 away, the `Window` object returned from `window.open()` can still be used to access information
 about it. This is one type of detached window: because JavaScript code can still potentially access
@@ -223,9 +223,7 @@ information about objects, including their size and a list of the variables and 
 reference them.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./heap-snapshot.png" width="762"
-       alt="A screenshot of a heap snapshot in Chrome DevTools showing the references that retain
-       a large object.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4tBcZ7lZEqkmonijrOGa.png", alt="A screenshot of a heap snapshot in Chrome DevTools showing the references that retain a large object.", width="762", height="419", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     A heap snapshot showing the references that retain a large object.
   </figcaption>
@@ -263,10 +261,7 @@ but taking a heap snapshot is a manual process. Another way to check for memory 
 the currently used JavaScript heap size from the [`performance.memory` API][performance-memory-api]:
 
 <figure class="w-figure">
-  <img src="./performance-memory.png"
-       class="w-screenshot"
-       alt="A screenshot of a section of the Chrome DevTools user interface."
-       width="621">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TIypz58ucRgAnnNu1LwR.png", alt="A screenshot of a section of the Chrome DevTools user interface.", width="621", height="394" %}
   <figcaption class="w-figcaption">
     Checking the used JS heap size in DevTools as a popup is created, closed and unreferenced.
   </figcaption>
@@ -274,7 +269,7 @@ the currently used JavaScript heap size from the [`performance.memory` API][perf
 
 The `performance.memory` API only provides information about the JavaScript heap size, which means
 it doesn't include memory used by the popup's document and resources. To get the full picture, we'd
-need to use the new [`performance.measureMemory()` API][performance-measurememory] currently being
+need to use the new [`performance.measureUserAgentSpecificMemory()` API][performance-measurememory] currently being
 trialled in Chrome.
 
 ## Solutions for avoiding detached window leaks {: #solutions }
@@ -404,9 +399,9 @@ let timer = setInterval(() => {
 
 {% Aside %}
 `WeakRef` is a new feature of the JavaScript language,
-[available in desktop Firefox since version 79](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef#Browser_compatibility)
+[available in desktop Firefox since version 79](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakRef#Browser_compatibility)
 and
-[Chromium-based browsers since version 84](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef#Browser_compatibility).
+[Chromium-based browsers since version 84](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakRef#Browser_compatibility).
 Since it's not yet widely-supported, this solution is better suited to tracking down and debugging
 issues rather than fixing them for production.
 {% endAside %}
@@ -537,10 +532,10 @@ Hopefully some of the suggestions in this article help with finding and fixing m
 have another technique for debugging detached windows or this article helped uncover leaks in your
 app, I'd love to know! You can find me on Twitter [@\_developit](https://twitter.com/_developit).
 
-[performance-memory-api]: https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory
-[performance-measurememory]: https://web.dev/monitor-total-page-memory-usage/
-[postmessage]: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
+[performance-memory-api]: https://developer.mozilla.org/docs/Web/API/Performance/memory
+[performance-measurememory]: /monitor-total-page-memory-usage/
+[postmessage]: https://developer.mozilla.org/docs/Web/API/Window/postMessage
 [finalizationregistry]: https://v8.dev/features/weak-references#:~:text=FinalizationRegistry
-[weakref]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef
-[noopener]: https://developer.mozilla.org/en-US/docs/Web/API/Window/open#noopener
-[rel-noopener]: https://web.dev/external-anchors-use-rel-noopener/
+[weakref]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakRef
+[noopener]: https://developer.mozilla.org/docs/Web/API/Window/open#noopener
+[rel-noopener]: /external-anchors-use-rel-noopener/

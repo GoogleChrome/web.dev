@@ -5,21 +5,21 @@ subhead: Strategies to measure performance at each stage in the purchase funnel.
 authors:
   - martinschierle
 date: 2019-05-31
-hero: hero.jpg
+hero: image/admin/7DmRrgsxnlS4GNPCyW0Q.jpg
 alt: A row of shopping carts.
 description: |
   Learn what impact website performance has on different parts of the e-commerce funnel
 tags:
   - blog
   - performance
-  - ecommerce
+  # - ecommerce
 ---
 
 The different steps of a purchase funnel are prone to performance issues in
 different ways, and therefore need different measurement and optimizations:
 
 <figure class="w-figure">
-  <img src="./funnel.png" alt="A conversion funnel going from discover to engage to convert to re-engage." style="max-width: 600px; width: 100%;">
+  {% Img src="image/admin/87cAGdJAnPggf8Yt58ID.png", alt="A conversion funnel going from discover to engage to convert to re-engage.", width="800", height="399" %}
   <figcaption class="w-figcaption">
     A conversion funnel.
   </figcaption>
@@ -95,21 +95,21 @@ There are two convenient ways of doing this:
 ### WebPageTest
 
 [WebPageTest](https://www.webpagetest.org/) offers a very flexible [scripting
-solution](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md).
+solution](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md).
 The basic idea is to:
 
 +   Tell WebPageTest to navigate through the pages of the flow with the
-    [`navigate`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#navigate)
+    [`navigate`](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md#navigate)
     command.
 +   If needed script the clicking of buttons via
-    [`clickAndWait`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#clickandwait)
+    [`clickAndWait`](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md#clickandwait)
     commands and fill text fields via
-    [`setValue`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#selectvalue).
+    [`setValue`](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md#selectvalue).
     For testing of Single Page Applications use `clickAndWait` rather than
     `navigate` commands for all steps after the first, as `navigate` will do a
     full load instead of the lightweight virtual page load.
 +   Make sure to combine the different steps of the flow in the analysis via
-    [`combineSteps`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#combinesteps)
+    [`combineSteps`](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md#combinesteps)
     to produce a single overall result report for the complete flow.
 
 Such a script could look like this:
@@ -135,7 +135,7 @@ controlled through the Node API
 start the browser through Puppeteer, navigate to the landing page through the
 [goto](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagegotourl-options)
 function,
-[inject Javascript](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageevaluatepagefunction-args)
+[inject JavaScript](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageevaluatepagefunction-args)
 to fill fields or
 [click](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageclickselector-options)
 buttons and proceed through the funnel through further
@@ -182,7 +182,7 @@ an eye on this though, and a great lab test tool for repeat visits is
 direct repeat visit:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./webpagetest_repeat.png" alt="The WebPageTest homepage form for auditing a site. The repeat view option is highlighted.">
+  {% Img src="image/admin/6eHzqWl6gaKjL39n8Dwh.png", alt="The WebPageTest homepage form for auditing a site. The repeat view option is highlighted.", width="800", height="650", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--center">
     Webpagetest offers options to test first load and repeat load as well
   </figcaption>
@@ -193,7 +193,7 @@ analytics package of choice to segment your performance metrics by user type.
 Here is an example of such a report in Google Analytics:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./ga_speed_repeat.png" alt="A Google Analytics dashboard shows a number of fields being added to a custom report.">
+  {% Img src="image/admin/pSxM9xuJKho7RjOn4aDK.png", alt="A Google Analytics dashboard shows a number of fields being added to a custom report.", width="800", height="444", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--center">
     A Google Analytics custom report can be used to report speed metrics for new and returning users.
   </figcaption>

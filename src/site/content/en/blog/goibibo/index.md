@@ -2,12 +2,12 @@
 title: How Goibibo's PWA improved conversions by 60%
 subhead: Bridging the gap between web and iOS/Android experiences to delight users.
 date: 2020-09-29
-hero: hero.png
-thumbnail: thumbnail.png
+hero: image/admin/373gEGS1WasAvqbvVoH9.png
+thumbnail: image/admin/i2nyfqyVr4XWqilOxPrY.png
 alt: An illustration of a smartphone next to the text "Scale on web"
 description: >
   Learn how Goibibo, India’s top online travel company, achieved a 60% increase in
-  conversions by building reliable user experiences between their PWA and iOS/Android apps. 
+  conversions by building reliable user experiences between their PWA and iOS/Android apps.
 tags:
   - blog
   - case-study
@@ -36,9 +36,7 @@ apps, Goibibo achieved a 60% increase in conversions (compared to their previous
 In their journey to improve user experience, Goibibo noticed a few trends:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled w-figure--inline-right"
-      src="mobile.png" 
-      alt="Goibibo's PWA.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/0dmwrJViuhgA3I4IDCkj.png", alt="Goibibo's PWA.", width="800", height="1624", class="w-screenshot w-screenshot--filled w-figure--inline-right" %}
 </figure>
 
 * With users either already shifted or quickly shifting to mobile, their initial strategy
@@ -48,7 +46,7 @@ In their journey to improve user experience, Goibibo noticed a few trends:
 
 * There were significant drop offs at the payment stage of the PWA compared to their
   iOS/Android apps. This was when they decided to invest in their PWA with the goal of letting
-  users experience the same UX on their PWA as on their iOS/Android apps.  
+  users experience the same UX on their PWA as on their iOS/Android apps.
 
 * They also noticed nearly 20% of their users were starting a session on the web and
   converting on the app. This reiterated their belief that a chunk of users will go untapped
@@ -65,25 +63,20 @@ In their journey to improve user experience, Goibibo noticed a few trends:
     in forms on behalf of others hassle-free.
   </p>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="seamless.png"
-        alt="Impact: 20% of users chose the seamless Goibibo experience.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Pdqx8qyXbwzzS8ivNS3l.png", alt="Impact: 20% of users chose the seamless Goibibo experience.", width="800", height="360", class="w-screenshot" %}
   </figure>
 </div>
 
-### Web OTP {: #web-otp }
+### WebOTP {: #web-otp }
 
 <div class="w-columns">
   <p>
     Because secure authentication is a big challenge in India, Goibibo
-    used the <a href="/web-otp/">Web OTP (One-Time Password) API</a>
+    used the <a href="/web-otp/">WebOTP (One-Time Password) API</a>
     to reduce sign-in friction on their PWA.
   </p>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="logins.png" 
-        alt="Impact: 20% increase in their mobile web logged-in users;
-              25% drop in OTP retry API calls during sign up.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Nf0NeE3sSFOrYleAsxVd.png", alt="Impact: 20% increase in their mobile web logged-in users; 25% drop in OTP retry API calls during sign up.", width="800", height="526", class="w-screenshot" %}
   </figure>
 </div>
 
@@ -96,9 +89,7 @@ In their journey to improve user experience, Goibibo noticed a few trends:
     details, train availability, and so on.
   </p>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="web-share.png" 
-        alt="Impact: 5% of new sessions came from Web Share API.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/u5pl2i6MHBkDZESQRHXR.png", alt="Impact: 5% of new sessions came from Web Share API.", width="800", height="356", class="w-screenshot" %}
   </figure>
 </div>
 
@@ -111,9 +102,7 @@ In their journey to improve user experience, Goibibo noticed a few trends:
     customized content.
   </p>
   <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="conversions.png" 
-        alt="Impact: Retargeted users converted 4x more compared to normal user base.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/baFHO5RXsOVdE6qiT0AR.png", alt="Impact: Retargeted users converted 4x more compared to normal user base.", width="800", height="414", class="w-screenshot" %}
   </figure>
 </div>
 
@@ -128,20 +117,14 @@ In their journey to improve user experience, Goibibo noticed a few trends:
 </style>
 
 <figure class="w-figure">
-  <img class="w-screenshot"
-       src="funnel.png"
-       id="funnel"
-       alt="1. Web Share improved returning user percentage
-            2. Contact Picker enhanced user experience, making it easier for guests to book
-            3. Web OTP reduced friction during transactions, resulting in less time spent on OTP screen and less retry API calls
-            4. Push notifications improved conversions of retargeted users">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rsENPcTITCviudxIhPU1.png", alt="1. Web Share improved returning user percentage 2. Contact Picker enhanced user experience, making it easier for guests to book 3. WebOTP reduced friction during transactions, resulting in less time spent on OTP screen and less retry API calls 4. Push notifications improved conversions of retargeted users", width="711", height="627", class="w-screenshot" %}
 </figure>
 
 ## Overall business results {: #results }
 
 +   Iterations to PWA interfaces resulted in a 60% jump in conversion rate (compared to the
     previous mobile web flow) and delighted users.
-+   [New web capabilities](https://web.dev/fugu-status/) improved UX and caused a 20% increase
++   [New web capabilities](/fugu-status/) improved UX and caused a 20% increase
     in logged-in users (who convert 6x more).
 
 <blockquote>

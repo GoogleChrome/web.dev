@@ -19,9 +19,12 @@ guidance about how to use them effectively.
 1. [Asides](#asides)
 1. [Banners](#banners)
 1. [Block quotes](#blockquotes)
+1. [Browser Compatibility](#browsercompat)
 1. [Buttons](#buttons)
 1. [Callouts](#callouts)
 1. [Checkbox](#checkbox)
+1. [Code pattern](#codepattern)
+1. [Codepen](#codepen)
 1. [Columns](#columns)
 1. [Code](#code)
 1. [Compare](#compare)
@@ -33,6 +36,7 @@ guidance about how to use them effectively.
 1. [Lists](#lists)
 1. [Stats](#stats)
 1. [Tables](#tables)
+1. [Tabs](#tabs)
 1. [Tooltips](#tooltips)
 1. [Video](#video)
 
@@ -225,6 +229,22 @@ a massa sit amet ullamcorper.
 a massa sit amet ullamcorper.
 {% endBlockquote %}
 
+## Browser compatibility table {: #browsercompat }
+
+With the `BrowserCompat` shortcode, you can embed an
+[MDN - Browser Compatibility Data](https://github.com/mdn/browser-compat-data/)
+widget in your post. You have to pass in the dot-separated feature ID,
+as used on [BCD Schema](https://github.com/mdn/browser-compat-data), e.g. for
+[Web/API/BackgroundFetchEvent](https://developer.mozilla.org/docs/Web/API/BackgroundFetchEvent)
+the ID is `api.BackgroundFetchEvent`:
+
+
+```text
+{% raw %}{% BrowserCompat 'api.BackgroundFetchEvent' %}{% endraw %}
+```
+
+{% BrowserCompat 'api.BackgroundFetchEvent' %}
+
 ## Buttons
 
 In general, you shouldn't need to add buttons to your posts.
@@ -318,6 +338,59 @@ element, and add the `w-ml--l` class to the label. See below:
 </div>
 ```
 
+## Code pattern {: #codepattern }
+
+A component that displays a demo and code snippets side by side,
+organized in tabs.
+
+Component height is determined by the code snippet with the most
+code lines.
+
+To change the component height, specify the height value in pixels
+in the shortcode.
+
+```text
+{% raw %}{% CodePattern 'pattern-id', optional-height-in-px %}{% endraw %}
+```
+
+{% CodePattern 'example-set/example-pattern', 500 %}
+
+You can embed one of the existing patterns (from `/content/en/patterns/`
+directory) or add a new one. Check out the
+[examples and documentation](/patterns/example-set/) on how to write new
+code patterns.
+
+
+## Codepen {: #codepen }
+
+If you don't want to use your personal account, you can use the
+**web-dev-codepen-external** account to create a Codepen. Speak to a member of
+the tech writing team to get access to the login and password.
+
+```md
+{% raw %}{% Codepen {
+  user: 'robdodson',
+  id: 'GRroyyX',
+  height: 300,
+  theme: 'dark',
+  tab: 'css,result',
+  allow: ['geolocation']
+} %}{% endraw %}
+```
+
+{% Codepen {
+  user: 'robdodson',
+  id: 'GRroyyX',
+  height: 300,
+  theme: 'dark',
+  tab: 'css,result',
+  allow: ['geolocation']
+} %}
+
+```typescript
+{% include '../../../../../../types/site/_includes/components/Codepen.d.ts' %}
+```
+
 ## Columns
 
 Any elements can be placed in a two-column layout
@@ -342,13 +415,13 @@ by wrapping them in a `<div class="w-columns">` element:
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img src="./image-small.png" alt="">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
     <figcaption class="w-figcaption">
       Small image.
     </figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="./image-small.png" alt="">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
     <figcaption class="w-figcaption">
       Small image.
     </figcaption>
@@ -824,27 +897,45 @@ for unordered lists.
 
 ### Ordered list
 
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-   sit amet ullamcorper.
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-   sit amet ullamcorper.
+```md
+1. Lorem ipsum dolor sit amet…
+1. Lorem ipsum dolor sit amet…
+1. Lorem ipsum dolor sit amet…
+```
 
-   <figure class="w-figure">
-     <img class="w-screenshot w-screenshot--filled" src="./image-screenshot.png" alt="">
-     <figcaption class="w-figcaption">
-       Filled screenshot.
-     </figcaption>
-   </figure>
-
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-   sit amet ullamcorper.
+1. Lorem ipsum dolor sit amet…
+1. Lorem ipsum dolor sit amet…
+1. Lorem ipsum dolor sit amet…
 
 ### Unordered list
 
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
+```md
+- Lorem ipsum dolor sit amet…
+- Lorem ipsum dolor sit amet…
+- Lorem ipsum dolor sit amet…
+```
+
+- Lorem ipsum dolor sit amet…
+- Lorem ipsum dolor sit amet…
+- Lorem ipsum dolor sit amet…
+
+### Definition list
+
+```md
+First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
+```
+
+First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
 
 ## Stats
 Use the Stats component to call out important statistics
@@ -917,7 +1008,7 @@ corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!
 ## Tables
 
 Use the markup below to create a table.
-Do _not_ use Markdown synatx;
+Do _not_ use Markdown syntax;
 it doesn't include the wrapper element needed
 to ensure correct whitespace around the table.
 
@@ -1211,6 +1302,48 @@ assumenda perspiciatis.
   </table>
 </div>
 
+## Tabs
+
+Use `web-tabs` web component to display content that refers to different
+platforms or languages.
+Each child of the `web-tabs` component will become a separate tab.
+Use `data-label` attribute to set the tab's title. You can use markdown inside
+the tab, e.g. the code blocks.
+
+```html
+{% raw %}
+<web-tabs>
+  <div data-label="html">
+    ```html
+    <p> I'm html</p>
+    ```
+  </div>
+  <div data-label="css">
+    ```css
+    .class { border: 0; }
+    ```
+  </div>
+</web-tabs>
+{% endraw %}
+```
+
+<web-tabs>
+  <div data-label="html" title="t">
+
+  ```html
+  <p> I'm html</p>
+  ```
+
+  </div>
+  <div data-label="css">
+
+  ```css
+  .class { border: 0; }
+  ```
+
+  </div>
+</web-tabs>
+
 ## Tooltips
 
 Use tooltips to provide information about UI controls
@@ -1263,4 +1396,4 @@ by adding a `left` or `right` argument to the shortcode:
 </button>
 
 ## Video / YouTube {: #video }
-See the [Images and video](/handbook/markup-media#video) post.
+See the [Images and video](/handbook/markup-media) post.

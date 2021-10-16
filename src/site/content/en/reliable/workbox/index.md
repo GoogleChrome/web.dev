@@ -13,8 +13,8 @@ feedback:
 ---
 
 Two APIs play a crucial role in building reliable web apps:
-[Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
-and [Cache Storage](https://developer.mozilla.org/en-US/docs/Web/API/Cache). But
+[Service Worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API)
+and [Cache Storage](https://developer.mozilla.org/docs/Web/API/Cache). But
 using them effectively—without introducing subtle bugs or bumping into edge
 cases—can be a challenge. For example, errors in your service worker code can
 cause caching problems; users might be shown out-of-date content or broken
@@ -79,8 +79,7 @@ Workbox automatically detects when you're running a development version of your
 website on `localhost`, and turns on debug logging in your browser's JavaScript
 console.
 
-<img class="w-screenshot" src="./workbox-logging.png"
-  alt="Workbox logging to the DevTools console">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/gvsGSU3urfjl52jRcj3j.png", alt="Workbox logging to the DevTools console", width="800", height="438", class="w-screenshot" %}
 
 By following along with the log messages, you can get to the root of any
 configuration or invalidation problems much more quickly than if you were going
@@ -95,9 +94,9 @@ missing from certain browsers.
 +  The
     [`workbox-broadcast-cache-update module`](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update)
     uses the
-    [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
+    [Broadcast Channel API](https://developer.mozilla.org/docs/Web/API/Broadcast_Channel_API)
     when available, and falls back to a
-    [`postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)-based
+    [`postMessage()`](https://developer.mozilla.org/docs/Web/API/Window/postMessage)-based
     implementation on browsers that lack support.
 +  The
     [workbox-background-sync module](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync)

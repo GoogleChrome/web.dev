@@ -5,8 +5,8 @@ authors:
   - beaufortfrancois
   - jungkees
 date: 2020-05-20
-updated: 2020-11-16
-hero: hero.jpg
+updated: 2021-10-12
+hero: image/admin/1ekafMZjtzcd0G3TLQJ4.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
 tags:
@@ -20,11 +20,6 @@ feedback:
 To improve users' productivity and facilitate re-engagement with key tasks, the
 web platform now supports app shortcuts. They allow web developers to provide
 quick access to a handful of common actions that users need frequently.
-
-{% Aside %}
-At the time of writing, app shortcuts are available on Android (Chrome 84) and
-Windows (Chrome 85 and Edge 85).
-{% endAside %}
 
 This article will teach you how to define those app shortcuts. Additionally,
 you'll learn some associated best practices.
@@ -41,12 +36,12 @@ The app shortcuts menu is invoked by right-clicking the app icon in the taskbar
 launcher icon on Android.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./app-shortcuts-menu-android.png" alt="Screenshot of an app shortcuts menu opened on Android">
+  {% Img src="image/admin/F4TsJNfRJNJSt2ZpqVAy.png", alt="Screenshot of an app shortcuts menu opened on Android", width="800", height="420", class="w-screenshot" %}
   <figcaption class="w-figcaption">App shortcuts menu opened on Android</figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./app-shortcuts-menu-windows.png" alt="Screenshot of an app shortcuts menu opened on Windows">
+  {% Img src="image/admin/RoF6k7Aw6WNvaEcsgIcb.png", alt="Screenshot of an app shortcuts menu opened on Windows", width="800", height="420", class="w-screenshot" %}
   <figcaption class="w-figcaption">App shortcuts menu opened on Windows</figcaption>
 </figure>
 
@@ -151,7 +146,7 @@ To verify your app shortcuts are setup correctly, use the **Manifest** pane in t
 **Application** panel of DevTools.
 
 <figure class="w-figure">
-  <img src="./app-shortcuts-devtools.png" alt="Screenshot of app shortcuts in DevTools">
+  {% Img src="image/admin/rEL0r8lEfYHlsj0ylLSL.png", alt="Screenshot of app shortcuts in DevTools", width="800", height="534" %}
   <figcaption class="w-figcaption">App shortcuts shown in DevTools</figcaption>
 </figure>
 
@@ -163,7 +158,7 @@ App shortcuts may not be available right away to all users because Progressive
 Web App updates are capped to once a day.  Find out more about
 [how Chrome handles updates to the web app manifest].
 
-## Best practises
+## Best practices
 
 ### Order app shortcuts by priority
 
@@ -172,6 +167,11 @@ app shortcuts appearing first in the `shortcuts` array as the limit on the
 number of app shortcuts displayed varies depending on the platform. Chrome and
 Edge on Windows for instance limit the number of app shortcuts to 10 while
 Chrome for Android only takes the first 4 app shortcuts into account.
+
+{% Aside %}
+Chrome 92 for Android 7 now allow only 3 app shortcuts. A shortcut to the site
+settings was added, taking one of the available shortcut slots for the app.
+{% endAside %}
 
 ### Use distinct app shortcut names
 
@@ -187,8 +187,13 @@ You should annotate app shortcuts `url` entries like you would do with
 
 ## Browser support
 
-App shortcuts are available on Android (Chrome 84) and Windows (Chrome 85 and
-Edge 85). More desktop platform support will follow.
+App shortcuts are available on Android (Chrome 84), Windows (Chrome 85 and
+Edge 85), Chrome OS (Chrome 92), macOS and Linux (Chrome 96 and Edge 96).
+
+<figure class="w-figure">
+  {% Img src="image/vvhSqZboQoZZN9wBvoXq72wzGAf1/6KgvySxUcryuD0gwXa0u.png",alt="Screenshot of an app shortcuts menu opened on Chrome OS", width="800", height="450", class="w-screenshot" %}
+  <figcaption class="w-figcaption">App shortcuts menu opened on Chrome OS</figcaption>
+</figure>
 
 ## Trusted Web Activity support
 
@@ -231,7 +236,7 @@ Check out the [app shortcuts sample] and its [source].
 * Blink Component: [`UI>Browser>WebAppInstalls`]
 
 [Progressive Web Apps]: /progressive-web-apps/
-[What does it take to be installable?]: https://web.dev/install-criteria/
+[What does it take to be installable?]: /install-criteria/
 [scope]: /add-manifest/#scope
 [web app manifest]: /add-manifest
 [web app manifest icons]: /add-manifest/#icons

@@ -53,7 +53,7 @@ overcome the issues of imprecise scrolling. In other words, scroll snapping:
 Paginated articles and image carousels are two common use cases for scroll
 snaps.
 <figure class="w-figure">
-  <img src="./css-scroll-snap-example.png" alt="Example of CSS scroll snap.">
+  {% Img src="image/admin/MzdzDJ2j4jJtfAYgg9e6.png", alt="Example of CSS scroll snap.", width="800", height="356" %}
   <figcaption class="w-figcaption">Example of CSS scroll snap. At the end of
     scrolling an image's horizontal center is aligned with the horizontal center
     of the scroll container.
@@ -87,10 +87,10 @@ consider these shortcomings when trying to make a dynamic experience that
 supports actions such as adding, removing, or moving content.
 
 A common fix for this is to add listeners that execute a programmatic scroll via
-Javascript to force snapping to execute whenever any of these mentioned layout
+JavaScript to force snapping to execute whenever any of these mentioned layout
 changes happen. This workaround can be ineffective when the user expects the
 scroller to snap back to the same content as before. Any further handling with
-Javascript seems to almost defeat the purpose of this CSS feature.
+JavaScript seems to almost defeat the purpose of this CSS feature.
 
 ## Built-in support for re-snapping after layout changes in Chrome 81
 The mentioned shortcomings no longer exist in Chrome 81: scrollers will remain

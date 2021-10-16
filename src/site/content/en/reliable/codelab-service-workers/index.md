@@ -32,7 +32,7 @@ The files in the sample project most relevant to this codelab are:
 
 A service worker (even an empty one, like the current `service-worker.js` file)
 won't be used unless it's
-[registered](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/register)
+[registered](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
 first. You can do this via a call to:
 
 ```js
@@ -47,7 +47,7 @@ Before you add that code, though, there are a couple of points to take into
 account.
 
 First, not every browser
-[supports](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API#Browser_compatibility)
+[supports](https://developer.mozilla.org/docs/Web/API/Service_Worker_API#Browser_compatibility)
 service workers. This is particularly true for older versions of browsers that
 don't automatically update. So it's a best practice to call
 `navigator.serviceWorker.register()` conditionally, after checking whether
@@ -92,7 +92,7 @@ Your `service-worker.js` file is where all the logic for your service worker
 implementation would normally go. You'd use a mix of the service worker
 [lifecycle events](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle),
 the
-[Cache Storage API](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage),
+[Cache Storage API](https://developer.mozilla.org/docs/Web/API/CacheStorage),
 and knowledge about your web app's network traffic to create a perfectly crafted
 service worker, ready to handle all of your web app's requests.
 
@@ -125,18 +125,17 @@ files, it's time to visit the Live version of your sample project, and observe
 the service worker in action.
 
 {% Instruction 'preview' %}
-{% Instruction 'devtools' %}
 {% Instruction 'devtools-console', 'ul' %}
 
 You should see something like the following log messages,
 showing that the service worker has been installed and activated:
 
-<img class="screenshot" src="./sw-installed-activated.png" alt="Shows service worker is installed and activated.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qN2ZoovNYzp7wZHvqY9c.png", alt="Shows service worker is installed and activated.", width="800", height="88", class="screenshot" %}
 
 Then visit the **Applications** tab, and select the **Service Workers** panel.
 You should see something like the following:
 
-<img class="screenshot" src="./sw-panel.png" alt="Shows service worker details in service worker panel.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/2jTU0nCScsyvHqhb3ajQ.png", alt="Shows service worker details in service worker panel.", width="800", height="386", class="screenshot" %}
 
 This lets you know that there's a service worker with a source URL of
 `service-worker.js`, for the web app `solar-donkey.glitch.me`, that's currently
@@ -194,7 +193,7 @@ After making that change, return to the Live version of your sample app, and
 reload the page with the DevTools Application tab still open. You should see
 something like the following:
 
-<img class="screenshot" src="./two-sw-versions.png" alt="Shows two versions of service worker installed.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/5zmK7uePWyZ4JMxXAEYd.png", alt="Shows two versions of service worker installed.", width="800", height="454", class="screenshot" %}
 
 This shows that there are two versions of your service worker installed at this
 point. The previous version, which was already activated, is running and in

@@ -2,7 +2,7 @@
 layout: post
 title: Lazy-loading best practices
 authors:
-  - jeremywagner
+  - jlwagner
   - rachelandrew
 date: 2019-08-16
 updated: 2020-06-11
@@ -157,14 +157,12 @@ lazy-load images, consider offering `<noscript>` markup that will show images in
 case JavaScript is unavailable. The simplest possible fallback example involves
 using `<noscript>` elements to serve images if JavaScript is turned off:
 
-```html
 <!-- An image that eventually gets lazy-loaded by JavaScript -->
 <img class="lazy" src="placeholder-image.jpg" data-src="image-to-lazy-load.jpg" alt="I'm an image!">
 <!-- An image that is shown if JavaScript is turned off -->
 <noscript>
   <img src="image-to-lazy-load.jpg" alt="I'm an image!">
 </noscript>
-```
 
 If JavaScript is turned off, users will see _both_ the placeholder image and the
 image contained with the `<noscript>` elements. To get around this, place

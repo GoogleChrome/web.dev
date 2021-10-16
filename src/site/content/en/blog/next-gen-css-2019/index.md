@@ -13,7 +13,7 @@ authors:
 date: 2019-12-05
 updated: 2020-09-24
 
-hero: hero.png
+hero: image/admin/FRL8ZuF0ng2d37BufMOj.png
 # You can adjust the fit of your hero image with this property.
 # Values: contain | cover (default)
 hero_fit: contain
@@ -87,7 +87,7 @@ You can also find demos for all the features we discuss on our
 
 ## Scroll Snap
 
-[Scroll Snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap/Basic_concepts) lets you define snap points as the user scrolls your content vertically, horizontally, or  both. It offers built-in scroll inertia and deceleration, and it's touch enabled.
+[Scroll Snap](https://developer.mozilla.org/docs/Web/CSS/CSS_Scroll_Snap/Basic_concepts) lets you define snap points as the user scrolls your content vertically, horizontally, or  both. It offers built-in scroll inertia and deceleration, and it's touch enabled.
 
 This sample code sets up horizontal scrolling in a `<section>` element with snap points aligned to the left sides of child `<picture>` elements:
 
@@ -126,7 +126,7 @@ While scroll snap supports vertical snapping, be cautious when using it at the p
 
 ## `:focus-within`
 
-[`:focus-within`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within) addresses a long-standing accessibility issue: there are many cases when focusing a child element should affect the presentation of a parent element so that the UI is accessible to users of assistive technologies.
+[`:focus-within`](https://developer.mozilla.org/docs/Web/CSS/:focus-within) addresses a long-standing accessibility issue: there are many cases when focusing a child element should affect the presentation of a parent element so that the UI is accessible to users of assistive technologies.
 
 For example, if you have a dropdown menu with several items, the menu should remain visible while any of the items has focus. Otherwise, the menu disappears for keyboard users.
 
@@ -140,7 +140,7 @@ For example, if you have a dropdown menu with several items, the menu should rem
 }
 ```
 
-![An illustration showing the difference in behavior between focus and focus-within.](./menu-focus.png)
+{% Img src="image/admin/NmLEz3wQMUv0QYIuhv2c.png", alt="An illustration showing the difference in behavior between focus and focus-within.", width="800", height="559" %}
 
 Try tabbing through the focusable elements in the demo below. You'll notice that the menus remain visible as you focus on the menu items:
 
@@ -153,16 +153,16 @@ Try tabbing through the focusable elements in the demo below. You'll notice that
 
 [New media queries](https://drafts.csswg.org/mediaqueries-5/#environment-blending) give us powerful ways to adjust the user experience of our apps based on a user's device preferences. Basically, the browser serves as a proxy for system-level preferences that we can respond to in our CSS using the `prefers-*` group of media queries:
 
-![A diagram showing media queries interpreting system-level user preferences.](./prefers-media-queries.png)
+{% Img src="image/admin/f5Y9OhN3VMQz8nZMcZar.png", alt="A diagram showing media queries interpreting system-level user preferences.", width="800", height="400" %}
 
 Here are the new queries we think developers will be most excited about:
 
 *   [prefers-reduced-motion](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion)
-*   [prefers-color-scheme](https://web.dev/prefers-color-scheme/)
-*   [prefers-contrast](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast)
-*   [prefers-reduced-transparency](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-transparency)
-*   [forced-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors)
-*   [inverted-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/inverted-colors)
+*   [prefers-color-scheme](/prefers-color-scheme/)
+*   [prefers-contrast](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-contrast)
+*   [prefers-reduced-transparency](https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-transparency)
+*   [forced-colors](https://developer.mozilla.org/docs/Web/CSS/@media/forced-colors)
+*   [inverted-colors](https://developer.mozilla.org/docs/Web/CSS/@media/inverted-colors)
 
 These queries are a huge win for accessibility. Previously we had no way to know, for example, that a user had set their OS to high-contrast mode. If you wanted to provide a high-contrast mode for a web app that remained true to your brand, you had to ask users to choose it from UI within your app. Now you can detect the high-contrast setting from the OS using `prefers-contrast`.
 
@@ -183,9 +183,9 @@ In Chrome Canary, you can test CSS that uses `prefers-reduced-motion` or `prefer
 
 ## Logical properties
 
-[Logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties) solve a problem that has gained visibility as more developers tackle internationalization. Many layout properties like `margin` and `padding` assume a language that is read top-to-bottom and left-to-right.
+[Logical properties](https://developer.mozilla.org/docs/Web/CSS/CSS_Logical_Properties) solve a problem that has gained visibility as more developers tackle internationalization. Many layout properties like `margin` and `padding` assume a language that is read top-to-bottom and left-to-right.
 
-![A diagram showing traditional CSS layout properties.](./legacy-layout.png)
+{% Img src="image/admin/mLz4eB2iG7yGUJ92DA0D.png", alt="A diagram showing traditional CSS layout properties.", width="800", height="559" %}
 
 When designing pages for multiple languages with varying writing modes, developers have had to adjust all those properties individually across multiple elements, which quickly becomes a maintainability nightmare.
 
@@ -196,7 +196,7 @@ Logical properties let you maintain layout integrity across translations and wri
 
 These dimension names apply to all logical layout properties. So, for example, in English, `block-start` is the same as `top`, and `inline-end` is the same as `right`.
 
-![A diagram showing new CSS logical layout properties.](./logical-layout.png)
+{% Img src="image/admin/NcIz3jADhMnRMqRTUPKr.png", alt="A diagram showing new CSS logical layout properties.", width="800", height="559" %}
 
 With logical properties, you can automatically update your layout for other languages by simply changing the `writing-mode` and `direction` properties for your page rather than updating dozens of layout properties on individual elements.
 
@@ -209,7 +209,7 @@ You can see how logical properties work in the demo below by setting the `writin
 
 ## `position: sticky`
 
-An element with [`position: sticky`](https://developer.mozilla.org/en-US/docs/Web/CSS/position#Sticky_positioning) remains in block flow until it starts to go offscreen,
+An element with [`position: sticky`](https://developer.mozilla.org/docs/Web/CSS/position#Sticky_positioning) remains in block flow until it starts to go offscreen,
 at which point it stops scrolling with the rest of the page
 and sticks to the position specified by the element's `top` value.
 The space allocated for that element remains in the flow,
@@ -252,7 +252,7 @@ Like Sticky Slide, the sticky elements in this demo are cousins. However, they'v
 
 ## `backdrop-filter`
 
-The [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter) property lets you apply graphical effects to the area _behind_ an element rather than to the element itself. This makes lots of cool effects that were previously only achievable using complicated CSS and JavaScript hacks doable with one line of CSS.
+The [`backdrop-filter`](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter) property lets you apply graphical effects to the area _behind_ an element rather than to the element itself. This makes lots of cool effects that were previously only achievable using complicated CSS and JavaScript hacks doable with one line of CSS.
 
 For example, this demo uses `backdrop-filter` to achieve OS-style blurring:
 
@@ -261,11 +261,11 @@ For example, this demo uses `backdrop-filter` to achieve OS-style blurring:
   (<a href='https://codepen.io/una'>@una</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-We already have a [great post about `backdrop-filter`](https://web.dev/backdrop-filter/), so head there for more info.
+We already have a [great post about `backdrop-filter`](/backdrop-filter/), so head there for more info.
 
 ## `:is()`
 
-While the [`:is()` pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:is) is actually over ten years old, it still doesn't see as much use as we think it deserves. It takes a comma-separated list of selectors as its argument and matches any selectors in that list. That flexibility makes it incredibly handy and can significantly reduce the amount of CSS you ship.
+While the [`:is()` pseudo-class](https://developer.mozilla.org/docs/Web/CSS/:is) is actually over ten years old, it still doesn't see as much use as we think it deserves. It takes a comma-separated list of selectors as its argument and matches any selectors in that list. That flexibility makes it incredibly handy and can significantly reduce the amount of CSS you ship.
 
 Here's a quick example:
 
@@ -303,9 +303,9 @@ article > :is(h1,h2,h3,h4,h5,h6) {
 
 ## `gap`
 
-[CSS grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) has had [`gap`](https://developer.mozilla.org/en-US/docs/Web/CSS/gap) (previously `grid-gap`) for some time. By specifying the internal spacing of a containing element rather than the spacing around child elements, `gap` solves many common layout issues. For example, with gap, you don't have to worry about margins on child elements causing unwanted whitespace around the edges of a containing element:
+[CSS grid layout](https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout) has had [`gap`](https://developer.mozilla.org/docs/Web/CSS/gap) (previously `grid-gap`) for some time. By specifying the internal spacing of a containing element rather than the spacing around child elements, `gap` solves many common layout issues. For example, with gap, you don't have to worry about margins on child elements causing unwanted whitespace around the edges of a containing element:
 
-![Illustration showing how the gap property avoids unintended spacing around edges of a container element.](./gap.png)
+{% Img src="image/admin/Jzlzz2MdQmMGudZxcvZk.png", alt="Illustration showing how the gap property avoids unintended spacing around edges of a container element.", width="800", height="846" %}
 
 Even better news: `gap` is coming to flexbox, bringing all the same spacing perks that grid has:
 
@@ -324,15 +324,15 @@ Right now, only FireFox supports `gap` in flex layouts, but play around with thi
 
 ## CSS Houdini
 
-[Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini) is a set of low-level APIs for the browser's rendering engine that lets you tell the browser how to interpret custom CSS. In other words, it gives you access to the [CSS Object Model](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model), letting you _extend_ CSS via Javascript. This has several benefits:
+[Houdini](https://developer.mozilla.org/docs/Web/Houdini) is a set of low-level APIs for the browser's rendering engine that lets you tell the browser how to interpret custom CSS. In other words, it gives you access to the [CSS Object Model](https://developer.mozilla.org/docs/Web/API/CSS_Object_Model), letting you _extend_ CSS via JavaScript. This has several benefits:
 
 *   It gives you much more power to create custom CSS features.
 *   It's easier to separate rendering concerns from application logic.
 *   It's more performant than the CSS polyfilling we currently do with JavaScript since the browser will no longer have to parse scripts and do a second rendering cycle; Houdini code is parsed in the first rendering cycle.
 
-![Illustration showing how Houdini works compared to traditional JavaScript polyfills.](houdini.png)
+{% Img src="image/admin/Lh9zGq0HWW4amjfHbpRQ.png", alt="Illustration showing how Houdini works compared to traditional JavaScript polyfills.", width="800", height="599" %}
 
-Houdini is an umbrella name for [several APIs](https://developer.mozilla.org/en-US/docs/Web/Houdini#The_Houdini_APIs). If you want more information about them and their current status, take a look at [Is Houdini Ready Yet?](https://ishoudinireadyyet.com/) In our talk, we covered the Properties and Values API, the Paint API, and the Animation Worklet because they're currently the most supported. We could easily dedicate a full post to each of these exciting APIs, but, for now, check out our talk for an overview and some cool demos that start to give a sense of what you can do with the APIs.
+Houdini is an umbrella name for [several APIs](https://developer.mozilla.org/docs/Web/Houdini#The_Houdini_APIs). If you want more information about them and their current status, take a look at [Is Houdini Ready Yet?](https://ishoudinireadyyet.com/) In our talk, we covered the Properties and Values API, the Paint API, and the Animation Worklet because they're currently the most supported. We could easily dedicate a full post to each of these exciting APIs, but, for now, check out our talk for an overview and some cool demos that start to give a sense of what you can do with the APIs.
 
 ## Overflow
 

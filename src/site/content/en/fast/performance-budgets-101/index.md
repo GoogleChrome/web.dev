@@ -35,14 +35,14 @@ We've already mentioned a few things you can include in a performance budget suc
 However, these numbers don't tell you much about the user experience. Two pages with the same number of requests or same weight can render differently depending on the order in which resources get requested. If a [critical resource](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) like a hero image or a stylesheet on one of the pages is loaded late in the process, the users will wait longer to see something useful and perceive the page as slower. If on the other page the most important parts load quickly, they may not even notice if the rest of the page doesn't.
 
 <figure class="w-figure">
-  <img src="./progressive-page-rendering.png" alt="Image of progressive page rendering based on the critical-path" class="w-screenshot">
+  {% Img src="image/admin/U0QhA82KFyED4r1y3tAq.png", alt="Image of progressive page rendering based on the critical-path", width="611", height="300" %}
 </figure>
 
 This is why it's important to keep track of another type of metric.
 
 ### Milestone timings ⏱️
 
-Milestone timings mark events that happen during page load, such as [DOMContentLoaded](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) or [load](https://developer.mozilla.org/en-US/docs/Web/Events/load) event. The most useful timings are [user-centric performance metrics](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics) that tell you something about the experience of loading a page. These metrics are available through [browser APIs](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) and as part of [Lighthouse](https://developers.google.com/web/tools/lighthouse/) reports.
+Milestone timings mark events that happen during page load, such as [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded) or [load](https://developer.mozilla.org/docs/Web/Events/load) event. The most useful timings are [user-centric performance metrics](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics) that tell you something about the experience of loading a page. These metrics are available through [browser APIs](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices) and as part of [Lighthouse](https://developers.google.com/web/tools/lighthouse/) reports.
 
 [First Contentful Paint (FCP)](/first-contentful-paint) measures when the browser displays the first bit of content from the DOM, like text or images.
 
@@ -76,7 +76,7 @@ You should have a budget in place for different types of pages on your site sinc
 
 ## Add performance budgets to your build process
 
-![Webpack, bundlesize and Lighthouse logos](./performance-budgeting-tools.png)
+{% Img src="image/admin/YKJcgI9Yd8qEZM0nzPuv.png", alt="Webpack, bundlesize and Lighthouse logos", width="800", height="267" %}
 
 Choosing a tool for this will depend a lot on the scale of your project and resources that you can dedicate to the task. There are a few open-source tools that can help you add budgeting to your build process:
 

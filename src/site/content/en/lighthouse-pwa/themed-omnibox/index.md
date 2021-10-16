@@ -25,7 +25,7 @@ for updates.
 flags pages that don't apply a theme to the address bar:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="themed-omnibox.png" alt="Lighthouse audit showing address bar isn't themed to the page's colors">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/YadFSuw8denjl1hhnvFs.png", alt="Lighthouse audit showing address bar isn't themed to the page's colors", width="800", height="98", class="w-screenshot" %}
 </figure>
 
 The audit fails if Lighthouse doesn't find a `theme-color` meta tag in the page's
@@ -72,7 +72,7 @@ Set the property to any valid CSS color value:
 }
  ```
 
-The browser will set the the address bar color of every page of your app
+The browser will set the address bar color of every page of your app
 according to the manifest's `theme_color`.
 
 ## Resources

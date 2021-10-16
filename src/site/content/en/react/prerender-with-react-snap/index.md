@@ -3,7 +3,7 @@ layout: post
 title: Pre-render routes with react-snap
 subhead: |
   Not server-side rendering but still want to speed up the performance of your React site? Try pre-rendering!
-hero: hero-prerender-with-react-snap.jpg
+hero: image/admin/LTvlmRgA6MLec9QT4Tsv.jpg
 date: 2019-04-29
 description: |
   react-snap is a third-party library that pre-renders pages on your site into
@@ -24,7 +24,7 @@ Here's a comparison of the same application with and without pre-rendering
 loaded on a simulated 3G connection and mobile device:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./compare.gif" alt="A side by side loading comparison. The version using pre-rendering loads 4.2 seconds faster.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/t5OiDw1VGxrbqbcxMh3J.gif", alt="A side by side loading comparison. The version using pre-rendering loads 4.2 seconds faster.", width="600", height="435", class="w-screenshot" %}
 </figure>
 
 {% Aside %}
@@ -113,7 +113,7 @@ each route that is crawled. You can take a look at what the HTML payload looks
 like by clicking the URL of the HTML request and then clicking the **Previews**
 tab within Chrome DevTools.
 
-<img class="w-screenshot" src="./preview-html.png" alt="A before and after comparison. The after shot shows content has rendered.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l5U36PBU7H7Boswn5Gfq.png", alt="A before and after comparison. The after shot shows content has rendered.", width="800", height="450", class="w-screenshot" %}
 
 {% Aside %}
   `react-snap` can be used for other frameworks than React! This includes Vue
@@ -144,7 +144,7 @@ following in your `package.json` file:
 
 Taking a look at the response preview in Chrome DevTools will now show the styled page with critical CSS inlined.
 
-<img class="w-screenshot" src="./preview-critical-css-inline.png" alt="A before and after comparison. The after shot shows content has rendered and is styled because of inlined critical CSS.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/sgxwVZfvpYchXnn1mQrY.png", alt="A before and after comparison. The after shot shows content has rendered and is styled because of inlined critical CSS.", width="800", height="450", class="w-screenshot" %}
 
 {% Aside 'caution' %}
   The `inlineCSS` option is still experimental. It is worth double-checking to

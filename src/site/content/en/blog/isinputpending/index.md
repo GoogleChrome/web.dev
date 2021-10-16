@@ -7,7 +7,7 @@ description: >
   A new JavaScript API that may help you avoid the trade-off between
   load performance and input responsiveness.
 date: 2020-11-19
-hero: hero.jpg
+hero: image/admin/Jlg1NJbRJnJN4VgubXh4.jpg
 alt: A traffic sign that says 'GIVE WAY'.
 tags:
   - blog
@@ -22,11 +22,11 @@ feedback:
 ---
 
 Loading fast is hard. Sites that leverage JS to render their content currently
-have to make a trade-off between load performance and input 
+have to make a trade-off between load performance and input
 responsiveness: either perform all the work needed for display
 all at once (better load performance, worse input responsiveness), or
-chunk the work into smaller tasks in order to remain responsive to 
-input and paint (worse load performance, better input 
+chunk the work into smaller tasks in order to remain responsive to
+input and paint (worse load performance, better input
 responsiveness).
 
 To eliminate the need to make this trade-off, Facebook proposed and implemented
@@ -44,13 +44,13 @@ No other browser has signaled an intent to ship the API.
 
 {% Aside %}
   For the full background, check out our Facebook Engineering blog post,
-  [Faster input events with Facebook's first browser API 
+  [Faster input events with Facebook's first browser API
   contribution](https://engineering.fb.com/developer-tools/isinputpending-api/).
 {% endAside %}
 
 Most work in today's JS ecosystem gets done on a single thread: the main thread.
 This provides a robust execution model to developers, but the user experience
-(responsiveness in particular) can suffer drastically if script executes for a long 
+(responsiveness in particular) can suffer drastically if script executes for a long
 time. If the page is doing a lot of work while an input event is fired,
 for instance, the page won't handle the click input event until after that work
 completes.
@@ -69,8 +69,7 @@ loading time of the page gets slowed down. And if we yield too often, the page
 loads too slowly. If we yield less often, it takes longer for the browser to
 respond to user events, and people get frustrated. Not fun.
 
-![A diagram showing that when you run long JS tasks, the browser has less time
-to dispatch events.](diagram.png)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/C2JMVL3EhgBqne5DkrhN.png", alt="A diagram showing that when you run long JS tasks, the browser has less time to dispatch events.", width="800", height="450" %}
 
 At Facebook, we wanted to see what things would look like if we came up with a
 new approach for loading that would eliminate this frustrating trade-off. We
@@ -79,9 +78,7 @@ for `isInputPending()`. The `isInputPending()` API is the first to use the conce
 interrupts for user inputs on the web, and allows for JavaScript to be
 able to check for input without yielding to the browser.
 
-![A diagram showing that isInputPending() allows your JS to check if there's
-pending user input, without completely yielding execution back to the
-browser.](legend.png)
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6Et3ZusgDbXrdTIfenRD.png", alt="A diagram showing that isInputPending() allows your JS to check if there's pending user input, without completely yielding execution back to the browser.", width="800", height="450" %}
 
 Since there was interest in the API, we partnered with our colleagues at Chrome
 to implement and ship the feature in Chromium. With help from the Chrome
@@ -145,8 +142,8 @@ By introducing a call to `navigator.scheduling.isInputPending()`, we're able to
 respond to input quicker while still ensuring that our display-blocking work
 executes uninterrupted otherwise. If we're not interested in handling anything
 other than input (e.g. painting) until work is complete, we can handily increase
-the length of `QUANTUM` as well.  
-  
+the length of `QUANTUM` as well.
+
 By default, "continuous" events are not returned from `isInputPending()`. These
 include `mousemove`, `pointermove`, and others. If you're interested in yielding for
 these as well, no problem. By providing a dictionary to `isInputPending()` with

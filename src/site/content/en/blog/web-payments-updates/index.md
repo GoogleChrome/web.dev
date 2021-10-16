@@ -6,7 +6,7 @@ authors:
   - danyao
   - agektmr
 date: 2019-06-13
-hero: hero.jpg
+hero: image/admin/BBvuUcrVtDPtSK0R1x3v.jpg
 alt: Transfering money from a phone
 description: |
   Since the launch of the Payment Request API in Chrome 53 and the Payment
@@ -15,7 +15,7 @@ description: |
   continue accumulating those API changes.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - payment
+  # - payment
 feedback:
   - api
 ---

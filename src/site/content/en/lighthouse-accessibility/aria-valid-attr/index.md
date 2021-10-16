@@ -27,7 +27,7 @@ to interact with it as the developer intended.
 flags invalid ARIA attributes:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="aria-valid-attr.png" alt="Lighthouse audit showing ARIA attribute has invalid value">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bsTxrfOgA2pNnmdMpP0H.png", alt="Lighthouse audit showing ARIA attribute has invalid value", width="800", height="185", class="w-screenshot" %}
 </figure>
 
 Lighthouse uses the

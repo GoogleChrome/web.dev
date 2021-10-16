@@ -12,29 +12,30 @@ describe('Build test', function () {
     this.timeout(0);
 
     console.log('Running npm run build...');
-    try {
-      await exec('ELEVENTY_ENV=prod npm run build');
-    } catch (err) {
-      assert.fail(err);
+    if (fs.existsSync('./dist')) {
+      console.log(
+        '`dist` folder already exists, build completed. Starting tests.',
+      );
+    } else {
+      try {
+        await exec('ELEVENTY_ENV=prod npm run build');
+      } catch (err) {
+        assert.fail(err);
+      }
+      console.log('Build completed. Starting tests.');
     }
-    console.log('Build completed. Starting tests.');
 
     [
-      path.join('en', 'feed.xml'),
-      path.join('en', 'index.html'),
-      path.join('en', 'authors', 'addyosmani', 'feed.xml'),
-      path.join('en', 'tags', 'progressive-web-apps', 'feed.xml'),
-      path.join('images', 'favicon.ico'),
-      path.join('images', 'lockup.svg'),
-      '_redirects.yaml',
-      'app.css',
-      'algolia.json',
-      'bootstrap.js',
+      'feed.xml',
+      'index.html',
+      path.join('authors', 'addyosmani', 'feed.xml'),
+      path.join('tags', 'progressive-web-apps', 'feed.xml'),
+      path.join('css', 'main.css'),
+      'pages.json',
       'manifest.webmanifest',
-      'nuke-sw.js',
+      'sw.js',
       'robots.txt',
       'sitemap.xml',
-      'sw.js',
     ].forEach((file) =>
       assert.ok(
         fs.existsSync(path.join(dist, file)),
@@ -42,26 +43,29 @@ describe('Build test', function () {
       ),
     );
 
-    const contents = fs.readdirSync(dist);
-
-    // Check that there's a Rollup-generated file with the given name that looks
-    // like `[name]-[hash].js`.
-    ['app', 'measure', 'newsletter', 'default'].forEach((chunked) => {
-      const re = new RegExp(`^${chunked}-\\w+\\.js$`);
+    const contents = fs.readdirSync(path.join(dist, 'js'));
+    // Check that there's a Rollup-generated file for all of our entrypoints.
+    [
+      'app.js',
+      'measure.js',
+      'newsletter.js',
+      'default.js',
+      'content.js',
+    ].forEach((file) => {
       assert(
-        contents.find((file) => re.test(file)),
-        `Could not find Rollup output: ${chunked}`,
+        contents.find((item) => item === file),
+        `Could not find Rollup output: ${file}`,
       );
     });
 
     // Check that there's NOT a web.dev/LIVE partial. We confirm that partials
     // are generally created above, in the list of common checks.
     assert(
-      !fs.existsSync(path.join(dist, 'en/live/index.json')),
+      !fs.existsSync(path.join(dist, 'live/index.json')),
       'web.dev/LIVE partial should not exist',
     );
     assert(
-      fs.existsSync(path.join(dist, 'en/live/index.html')),
+      fs.existsSync(path.join(dist, 'live/index.html')),
       'web.dev/LIVE page should exist',
     );
   });

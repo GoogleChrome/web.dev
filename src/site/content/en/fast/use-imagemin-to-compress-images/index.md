@@ -27,11 +27,11 @@ to the average user.
     <thead>
       <tr>
         <th>
-          <p><img src=./20kb.jpg width="100%"></p>
+          <p>{% Img src="image/admin/LRE2JJAuShXTjQF5ZSaR.jpg", alt="", width="376", height="250" %}</p>
           20 KB
         </th>
         <th>
-          <p><img src=./12kb.jpg width="100%"></p>
+          <p>{% Img src="image/admin/u9hncwN4TsT7zw2ObU10.jpg", alt="", width="376", height="250" %}</p>
           12 KB
         </th>
       </tr>
@@ -45,7 +45,7 @@ to the average user.
 Run Lighthouse to check for opportunities to improve page load by compressing images.
 These opportunities are listed under "Efficiently encode images":
 
-![image](./efficient-encoding.png)
+{% Img src="image/admin/LnIukPEZHuVJwBtuJ7mc.png", alt="image", width="800", height="552" %}
 
 {% Aside %}
 Lighthouse currently reports on opportunities to compress images in JPEG format

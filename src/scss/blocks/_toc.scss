@@ -1,0 +1,26 @@
+.toc {
+  font-size: get-size('size-0');
+
+  a {
+    @include apply-utility('color', 'mid-text');
+  }
+}
+
+.toc__list {
+  list-style: none;
+  padding: 0;
+
+  li + li {
+    margin-top: 0.5rem;
+  }
+}
+
+.toc__list .toc__list {
+  padding-inline-start: $global-gutter-narrow;
+  border-inline-start: 1px solid get-utility-value('color', 'stroke');
+  margin-block: 0.5rem;
+}
+
+.w-scroll-spy__active {
+  @include apply-utility('weight', 'bold');
+}

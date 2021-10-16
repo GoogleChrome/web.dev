@@ -1,0 +1,41 @@
+{
+  "functions": {
+    "predeploy": "npm --prefix \"$RESOURCE_DIR\" ci"
+  },
+  "hosting": {
+    "public": "dist",
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "**/!(*.*)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          },
+          {
+            "key": "Surrogate-Control",
+            "value": "max-age=600"
+          }
+        ]
+      }
+    ],
+    "i18n": {
+      "root": "/i18n"
+    },
+    "redirects": []
+  },
+  "emulators": {
+    "hosting": {
+      "port": 8080
+    }
+  }
+}

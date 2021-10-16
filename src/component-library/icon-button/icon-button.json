@@ -1,0 +1,17 @@
+{
+  "title": "Icon Button",
+  "context": {
+    "tooltip": "close",
+    "icon": "close",
+    "modifiers": ""
+  },
+  "variants": [
+    {
+      "name": "rounded",
+      "title": "Rounded",
+      "context": {
+        "modifiers": "w-button--round"
+      }
+    }
+  ]
+}

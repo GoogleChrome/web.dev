@@ -3,7 +3,7 @@ title: Establish network connections early to improve perceived page speed
 subhead: |
     Learn about rel=preconnect and rel=dns-prefetch resource hints and how to use them.
 date: 2019-07-30
-hero: adams-creation.jpg
+hero: image/admin/Dyccd1RLN0fzhjPXswmL.jpg
 alt: Adam's Creation by Michelangelo on Sistine Chapel ceiling
 authors:
   - mihajlija
@@ -22,7 +22,7 @@ Before the browser can request a resource from a server, it must establish a con
 
 * Encrypt the connection for security.
 
-In each of these steps the browser sends a piece of data to a server, and the server sends back a response. That journey, from origin to destination and back, is called a [round trip](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT)).
+In each of these steps the browser sends a piece of data to a server, and the server sends back a response. That journey, from origin to destination and back, is called a [round trip](https://developer.mozilla.org/docs/Glossary/Round_Trip_Time_(RTT)).
 
 Depending on network conditions, a single round trip might take a significant amount of time. The connection setup process might involve up to three round trips—and more in unoptimized cases.
 
@@ -42,7 +42,7 @@ Informing the browser of your intention is as simple as adding a `<link>` tag to
 <link rel="preconnect" href="https://example.com">
 ```
 
-![A diagram showing how the download doesn't start for a while after the connection is established.](preconnect.png)
+{% Img src="image/admin/988BgvmiVEAp2YVKt2jq.png", alt="A diagram showing how the download doesn't start for a while after the connection is established.", width="800", height="539" %}
 
 You can speed up the load time by 100–500 ms by establishing early connections to important third-party origins. These numbers might seem small, but they make a difference in how [users perceive web page performance](https://developers.google.com/web/fundamentals/performance/rail#ux).
 
@@ -57,14 +57,14 @@ chrome.com [improved Time To Interactive](https://twitter.com/addyosmani/status/
 Due to versioned dependencies, you sometimes end up in a situation where you know you'll be requesting a resource from a particular CDN, but not the exact path for it.
 
 <figure class="w-figure">
-<img src="versioned-url.png" style="max-width:450px" alt="A url of a script with the version name.">
+{% Img src="image/admin/PsP4qymb1gIp8Ip2sD9W.png", alt="A url of a script with the version name.", width="450", height="50" %}
 <figcaption>An example of a versioned URL.</figcaption>
 </figure>
 
 The other common case is loading images from an [image CDN](/image-cdns), where the exact path for an image depends on media queries or runtime feature checks on the user's browser.
 
 <figure class="w-figure">
-<img src="image-cdn-url.png" alt="An image CDN URL with the parameters size=300x400 and quality=auto.">
+{% Img src="image/admin/Xx4ai7tzSq12DJsQXaL1.png", alt="An image CDN URL with the parameters size=300x400 and quality=auto.", width="800", height="52" %}
 <figcaption>An example of an image CDN URL.</figcaption>
 </figure>
 
@@ -92,7 +92,7 @@ Preconnecting is only effective for domains other than the origin domain, so you
 Only preconnect to critical domains you will use soon because the browser closes any connection that isn't used within 10 seconds. Unnecessary preconnecting can delay other important resources, so limit the number of preconnected domains and [test the impact preconnecting makes](https://andydavies.me/blog/2019/08/07/experimenting-with-link-rel-equals-preconnect-using-custom-script-injection-in-webpagetest/).
 {% endAside %}
 
-You can also initiate a preconnect via the [`Link` HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link):
+You can also initiate a preconnect via the [`Link` HTTP header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Link):
 
 `Link: <https://example.com/>; rel=preconnect`
 
@@ -110,9 +110,9 @@ If you omit the `crossorigin` attribute, the browser only performs the DNS looku
 
 ## Resolve domain name early with `rel=dns-prefetch`
 
-You remember sites by their names, but servers remember them by IP addresses. This is why the domain name system (DNS) exists. The browser uses DNS to convert the site name to an IP address. This process — [domain name resolution](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/)— is the first step in establishing a connection.
+You remember sites by their names, but servers remember them by IP addresses. This is why the domain name system (DNS) exists. The browser uses DNS to convert the site name to an IP address. This process—[domain name resolution](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/)— is the first step in establishing a connection.
 
-If a page needs to make connections to many third-party domains, preconnecting all of them is counterproductive. The `preconnect` hint is best used for only the most critical connections. For all the rest, use  `<link rel=dns-prefetch>` to save time on the first step, the DNS lookup, which usually takes around [20–120 ms](https://www.keycdn.com/support/reduce-dns-lookups).
+If a page needs to make connections to many third-party domains, preconnecting all of them is counterproductive. The `preconnect` hint is best used for only the most critical connections. For all the rest, use `<link rel=dns-prefetch>` to save time on the first step, the DNS lookup, which usually takes around [20–120 ms](https://www.keycdn.com/support/reduce-dns-lookups).
 
 DNS resolution is initiated similarly to `preconnect`: by adding a `<link>` tag to the `<head>` of the document.
 

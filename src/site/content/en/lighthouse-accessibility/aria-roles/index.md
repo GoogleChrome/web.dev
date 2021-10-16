@@ -23,7 +23,7 @@ or interact with it as the developer intended.
 flags ARIA roles with invalid values:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="aria-roles.png" alt="Lighthouse audit showing ARIA role has invalid values">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8Qd5Rfq5WUWJa1ZF6z0A.png", alt="Lighthouse audit showing ARIA role has invalid values", width="800", height="185", class="w-screenshot" %}
 </figure>
 
 Lighthouse uses the

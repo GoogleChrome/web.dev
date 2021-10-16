@@ -1,3 +1,7 @@
+@use 'sass:list';
+
+@use 'sass:math';
+
 @import '../settings/colors';
 @import '../settings/global';
 @import '../settings/type';
@@ -21,44 +25,33 @@
 //    to 'none'.
 // @param {?string=} $inset - Renders an inset shadow if value is 'inset'
 //    and $level is 2.
+
+// prettier-ignore
 @mixin elevation($level, $inset: null) {
   @if $level == 0 {
     border: 1px solid $GREY_300;
     box-shadow: none;
-
   } @else if $level == 1 {
-    box-shadow:
-    0 1px 2px 0 rgba($GREY_800, .3),
-    0 1px 3px 1px rgba($GREY_800, .15);
-
+    box-shadow: 0 1px 2px 0 rgba($GREY_800, 0.3),
+    0 1px 3px 1px rgba($GREY_800, 0.15);
   } @else if $level == 2 {
     @if $inset == 'inset' {
-      box-shadow:
-      0 1px 2px 0 rgba($GREY_800, .3),
-      0 2px 6px 2px rgba($GREY_800, .15),
-      inset 0 4px 6px -4px rgba($GREY_500, .5);
-
+      box-shadow: 0 1px 2px 0 rgba($GREY_800, 0.3),
+      0 2px 6px 2px rgba($GREY_800, 0.15),
+      inset 0 4px 6px -4px rgba($GREY_500, 0.5);
     } @else {
-      box-shadow:
-      0 1px 2px 0 rgba($GREY_800, .3),
-      0 2px 6px 2px rgba($GREY_800, .15);
+      box-shadow: 0 1px 2px 0 rgba($GREY_800, 0.3),
+      0 2px 6px 2px rgba($GREY_800, 0.15);
     }
-
   } @else if $level == 3 {
-    box-shadow:
-    0 1px 3px 0 rgba($GREY_800, .3),
-    0 4px 8px 3px rgba($GREY_800, .15);
-
+    box-shadow: 0 1px 3px 0 rgba($GREY_800, 0.3),
+    0 4px 8px 3px rgba($GREY_800, 0.15);
   } @else if $level == 4 {
-    box-shadow:
-    0 2px 3px 0 rgba($GREY_800, .3),
-    0 6px 10px 4px rgba($GREY_800, .15);
-
+    box-shadow: 0 2px 3px 0 rgba($GREY_800, 0.3),
+    0 6px 10px 4px rgba($GREY_800, 0.15);
   } @else if $level == 5 {
-    box-shadow:
-    0 4px 4px 0 rgba($GREY_800, .3),
-    0 8px 12px 6px rgba($GREY_800, .15);
-
+    box-shadow: 0 4px 4px 0 rgba($GREY_800, 0.3),
+    0 8px 12px 6px rgba($GREY_800, 0.15);
   } @else {
     box-shadow: none;
   }
@@ -69,7 +62,11 @@
 // @param {?string=} $size - Width of the scrollbar in pixels
 // @param {?string=} $thumbColor - Color of the scrollbar thumb
 // @param {?string=} $trackColor - Color of the scrollbar track
-@mixin scrollbars($size: 10px, $thumbColor: $GREY_600, $trackColor: transparent) {
+@mixin scrollbars(
+  $size: 10px,
+  $thumbColor: $GREY_600,
+  $trackColor: transparent
+) {
   & {
     // Sass Lint doesn't recognize these shiny new properties
     // sass-lint:disable-block no-misspelled-properties
@@ -79,14 +76,14 @@
 
   &::-webkit-scrollbar {
     height: $size;
-    width:  $size;
+    width: $size;
   }
 
   &::-webkit-scrollbar-thumb {
     background: $thumbColor;
     background-clip: padding-box;
-    border: $size / 4 solid $trackColor;
-    border-radius: $size / 2;
+    border: math.div($size, 4) solid $trackColor;
+    border-radius: math.div($size, 2);
   }
 
   &::-webkit-scrollbar-thumb:hover {
@@ -119,7 +116,7 @@
   color: $WEB_PRIMARY_COLOR;
   cursor: pointer;
   display: inline-flex;
-  font: 500 .875rem/2.25rem $PRIMARY_FONT;
+  font: 500 0.875rem/2.25rem $PRIMARY_FONT;
   height: 56px;
   justify-content: center;
   letter-spacing: 1px;
@@ -138,7 +135,9 @@
 
 // Mixin for exposing hover styles only on devices that support hover
 @mixin hover() {
-  @media (hover: hover) { @content; }
+  @media (hover: hover) {
+    @content;
+  }
 }
 
 // Mixin for styling typography via maps containing required integer values for
@@ -160,10 +159,10 @@
 
   // Print font styles in shorthand syntax.
   // sass-lint:disable-block indentation
-  font: $font_weight #{$font_size}px / #{calculate_unitless_line_height(
+  font: $font_weight list.slash(#{$font_size}px, calculate_unitless_line_height(
       $line_height,
       $font_size
-    )} $font_family;
+    )) $font_family;
   // sass-lint:enable-block indentation
 
   // Add letter-spacing if it's defined in the map.
@@ -212,6 +211,48 @@
   -moz-osx-font-smoothing: $moz;
   -webkit-font-smoothing: $webkit;
   text-rendering: $rendering;
+}
+
+// Sets font styles.
+@mixin font-setup($size, $height, $weight: false, $rem: true) {
+  @if $rem {
+    font-size: px-to-rem($size);
+  } @else {
+    font-size: px-to-em($size);
+  }
+
+  line-height: math.div($height, $size);
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+// Sets a flexible font size
+//
+// @param {length()} $sm - List of lengths, in px, representing font size and line height of the smallest size
+// @param {length()} $md - List of lengths, in px, representing font size and line height of the medium size
+// @param {length()} $lg - List of lengths, in px, representing font size and line height of the largest size
+// @param {number | boolean} $weight - Font weight, or false
+@mixin flex-font($sm, $md, $lg, $weight: false) {
+  // Setup basic font styling from medium size
+  @include font-setup(nth($md, 1), nth($md, 2), $weight);
+
+  // Determine scaling factor so that the large font size is reached at 1024px
+  $font-scale: math.div(nth($lg, 1), 10.24px) * 1vw;
+  // Set up clamp function
+  $font-clamp: clamp(
+    #{px-to-em(nth($sm, 1))},
+    #{$font-scale},
+    #{px-to-em(nth($lg, 1))}
+  );
+
+  // Check for support for clamp function
+  @supports (font-size: $font-clamp) {
+    // Set font size to clamp
+    font-size: $font-clamp;
+    // Set line height to ratio of largest line height to font size (unitless number)
+    line-height: math.div(nth($lg, 2), nth($lg, 1));
+  }
 }
 
 // -----------------------------------------------------------------------------
@@ -353,13 +394,13 @@
 }
 
 @mixin w-overlay-hover {
-  background-color: rgba($GREY_900, .04);
+  background-color: rgba($GREY_900, 0.04);
 }
 
 @mixin w-overlay-focus {
-  background-color: rgba($GREY_900, .12);
+  background-color: rgba($GREY_900, 0.12);
 }
 
 @mixin w-overlay-active {
-  background-color: rgba($GREY_900, .16);
+  background-color: rgba($GREY_900, 0.16);
 }

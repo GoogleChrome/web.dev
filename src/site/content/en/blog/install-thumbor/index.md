@@ -4,7 +4,7 @@ subhead: Thumbor can be used for free to resize, compress, and transform images 
 authors:
   - katiehempenius
 date: 2019-08-14
-hero: hero.jpg
+hero: image/admin/prjXX7rGf0hOFVZVoxUe.jpg
 alt: A pile of photos.
 description: |
   Instructions on how to install Thumbor. Thumbor is an open-source image CDN and can be used for free to resize, compress, and transform images.
@@ -18,16 +18,13 @@ Image CDNs make it easy to dynamically optimize the aesthetics and performance o
 
 This guide explains how to install Thumbor on your own server. Once installed, you'll be able to use Thumbor as an API for transforming your images.
 
-
 ## Intro
 
 You'll be installing Thumbor on a VM running Ubuntu 16.04. Ubuntu 16.04 is a very common image and these instructions are intended to work on any cloud provider. Creating a VM might sound like more work than installing Thumbor on your local machine, but the minutes that you take to create a VM will probably save you hours or days of frustration trying to get Thumbor to properly install on your local machine. Although easy to use, Thumbor is notoriously difficult to install but these instructions simplify the process. If dependencies download quickly, the installation can be completed in 5 to 10 minutes.
 
-
 ## Prerequisites
 
 This post assumes that you know how to create a Ubuntu 16.04 LTS VM on a cloud platform like [Google Cloud](https://cloud.google.com/compute/docs/instances/create-start-instance), [AWS,](https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/) or [Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?toc=%2Fazure%2Fvirtual-machines%2Flinux%2Ftoc.json) and how to use command line tools to set up the VM.
-
 
 ## Install Thumbor Dependencies
 
@@ -86,7 +83,6 @@ thumbor --log-level debug
 
 Thumbor is now running.
 
-
 ## Open Firewall Port
 
 By default, Thumbor runs on port 8888. If your VM's IP address is `12.123.12.122`, then you would access Thumbor from the web browser at `http://12.123.12.123:8888/.../$IMAGE`.
@@ -105,10 +101,9 @@ http://YOUR_VIRTUAL_MACHINE:8888/unsafe/100x100/https://web.dev/install-thumbor/
 
 Note that this URL uses HTTP. Thumbor uses HTTP by default but can be [configured](https://thumbor.readthedocs.io/en/latest/image_loader.html) to use HTTPS.
 
-
 You should see an image that is 100 pixels wide by 100 pixels tall. Thumbor has taken the image `hero.jpg` and size specified in the URL string and served the result. You can replace the image in the URL string (i.e., `https://web.dev/install-thumbor/hero.jpg`) with any other image (e.g., `https://your-site.com/cat.jpg`) and Thumbor will resize that image too.
 
-The [Optimize images with Thumbor](https://web.dev/use-thumbor/#thumbor-url-format) article has more information on using the Thumbor API. In particular, you may be interested in [setting up a Thumbor configuration file](https://web.dev/use-thumbor/#appendix:-thumbor.conf). 
+The [Optimize images with Thumbor](/use-thumbor/#thumbor-url-format) article has more information on using the Thumbor API. In particular, you may be interested in [setting up a Thumbor configuration file](/use-thumbor/#appendix:-thumbor.conf).
 
 ## Appendix: Configuring Systemd
 
@@ -157,6 +152,7 @@ WantedBy=multi-user.target
 ```bash
 sudo systemctl start thumbor.service
 ```
+
 Note: If Thumbor is currently running, you should stop it before attempting to start Thumbor using `systemctl`.
 
 Next, "enable" Thumbor. This means that Thumbor will automatically start on boot.
@@ -174,5 +170,5 @@ systemctl status thumbor.service
 If you've successfully set up thumbor.service to use `systemd`, the [status](https://www.freedesktop.org/software/systemd/man/systemctl.html#status%20PATTERN%E2%80%A6%7CPID%E2%80%A6%5D) should show that it is enabled and active.
 
 <figure class="w-figure">
-  <img src="./systemd.jpg" alt="Systemctl displaying the status of Thumbor" class="w-screenshot">
+  {% Img src="image/admin/e04pxe6uE090ewJ3WWPX.jpg", alt="Systemctl displaying the status of Thumbor", width="466", height="164", class="w-screenshot" %}
 </figure>

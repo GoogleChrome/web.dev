@@ -4,7 +4,7 @@ title: Document does not have a meta description
 description: |
   Learn about the "Document does not have a meta description" Lighthouse audit.
 date: 2019-05-02
-updated: 2019-08-21
+updated: 2021-04-08
 web_lighthouse:
   - meta-description
 ---
@@ -20,7 +20,7 @@ traffic.
 without a meta description:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot" src="meta-description.png" alt="Lighthouse audit showing the document doesn't have a meta description">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dtMQ12xujHMJGuEwZ413.png", alt="Lighthouse audit showing the document doesn't have a meta description", width="800", height="74", class="w-screenshot w-screenshot" %}
 </figure>
 
 The audit fails if:
@@ -36,13 +36,13 @@ Lighthouse doesn't evaluate the quality of your description.
 Add a `<meta name=description>` element to the `<head>` of each of your pages:
 
 ```html
-<meta name="Description" content="Put your description here.">
+<meta name="description" content="Put your description here.">
 ```
 
 If appropriate, include clearly tagged facts in the descriptions. For example:
 
 ```html
-<meta name="Description" content="Author: A.N. Author,
+<meta name="description" content="Author: A.N. Author,
     Illustrator: P. Picture, Category: Books, Price: $17.99,
     Length: 784 pages">
 ```

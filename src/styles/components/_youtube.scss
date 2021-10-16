@@ -5,13 +5,15 @@
 //
 // =============================================================================
 
-.w-youtube {
+.youtube {
   padding-top: 56.25%;
   position: relative;
   width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.w-youtube__embed {
+lite-youtube {
   height: 100%;
   left: 50%;
   position: absolute;

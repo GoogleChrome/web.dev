@@ -1,19 +1,26 @@
-module.exports = (authorSlugs = [], authorsCollection) => {
+const {i18n} = require('./i18n');
+
+/**
+ *
+ * @param {string[]} authorSlugs
+ * @param {Authors} authorsCollection
+ * @param {string} [lang]
+ * @returns
+ */
+module.exports = (authorSlugs = [], authorsCollection, lang) => {
   return authorSlugs
-    .map((authorKey) => {
+    .reduce((authors, authorKey) => {
       const profile = authorsCollection[authorKey];
 
       if (!profile) {
-        throw new Error(
-          `Author '${authorKey}' does not exist in '_data/authorsData.json'.`,
-        );
+        console.log(`Author '${authorKey}'pages`);
+      } else if (profile.twitter) {
+        authors.push(`@${profile.twitter}`);
+      } else {
+        authors.push(i18n(profile.title, lang));
       }
 
-      if (profile.twitter) {
-        return `@${profile.twitter}`;
-      }
-
-      return profile.title;
-    })
+      return authors;
+    }, [])
     .join(' | ');
 };

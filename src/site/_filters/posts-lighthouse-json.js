@@ -55,7 +55,7 @@ module.exports = (posts) => {
       id: post.fileSlug, // e.g. "test-post"
       lighthouse: toArray(post.data.web_lighthouse),
       title: escapeHtml(post.data.title),
-      url: post.data.canonicalUrl,
+      url: post.url,
     };
 
     const host = post.data.postHost[out.id];

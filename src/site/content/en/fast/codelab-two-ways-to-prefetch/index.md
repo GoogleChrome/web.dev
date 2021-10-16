@@ -31,7 +31,7 @@ First establish the baseline performance:
 
 The `product-details.html` page takes about 600 ms to load:
 
-<img class="w-screenshot" src="./network-panel-one.png" alt="Network panel showing load times for product-details.html">
+{% Img src="image/admin/MVpybZcY1aF8slLFgJ0n.png", alt="Network panel showing load times for product-details.html", width="800", height="186", class="w-screenshot" %}
 
 ## Prefetch the product page with `<link rel="prefetch">`
 
@@ -52,7 +52,7 @@ To improve navigation, insert a `prefetch` tag in the landing page to prefetch t
 </head>
 ```
 
-The `as` attribute is optional but recommended; it helps the browser set the right headers and determine whether the resource is already in the cache.  Example values for this attribute include: `document`, `script`, `style`, `font`, `image`, and [others](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes).
+The `as` attribute is optional but recommended; it helps the browser set the right headers and determine whether the resource is already in the cache.  Example values for this attribute include: `document`, `script`, `style`, `font`, `image`, and [others](https://developer.mozilla.org/docs/Web/HTML/Element/link#Attributes).
 
 To verify that prefetching is working:
 
@@ -65,9 +65,9 @@ To verify that prefetching is working:
 
 Now when the landing page loads, the `product-details.html` page loads too, but at the lowest priority:
 
-<img class="w-screenshot" src="./network-panel-two.png" alt="Network panel showing product-details.html prefetched.">
+{% Img src="image/admin/LDkU6zNbFU7GhPuUcaCR.png", alt="Network panel showing product-details.html prefetched.", width="800", height="172", class="w-screenshot" %}
 
-The page is kept in the [HTTP cache](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching) for five minutes, after which the normal [`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) rules for the document apply. In this case, `product-details.html` has  a `cache-control` header with a value of `public, max-age=0`, which means that the page is kept for a total of five minutes.
+The page is kept in the [HTTP cache](https://developer.mozilla.org/docs/Web/HTTP/Caching) for five minutes, after which the normal [`Cache-Control`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control) rules for the document apply. In this case, `product-details.html` has  a `cache-control` header with a value of `public, max-age=0`, which means that the page is kept for a total of five minutes.
 
 ### Reevaluate performance
 
@@ -81,11 +81,11 @@ Take a look at the **Network** panel. There are two differences compared to the 
 
 This is approximately a 98% reduction compared to the previous version, which took about 600 ms.
 
-<img class="w-screenshot" src="./network-panel-three.png" alt="Network panel showing product-details.html retrieved from prefetch cache.">
+{% Img src="image/admin/gJZPsifaqFPozkhnMznX.png", alt="Network panel showing product-details.html retrieved from prefetch cache.", width="800", height="223", class="w-screenshot" %}
 
 ## Extra credit: Use `prefetch` as a progressive enhancement
 
-Prefetching is best implemented as a progressive enhancement for the users who are browsing on fast connections. You can use the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) to check the network conditions and based on that dynamically inject prefetch tags. That way, you can minimize data consumption and save costs for users on slow or expensive data plans.
+Prefetching is best implemented as a progressive enhancement for the users who are browsing on fast connections. You can use the [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API) to check the network conditions and based on that dynamically inject prefetch tags. That way, you can minimize data consumption and save costs for users on slow or expensive data plans.
 
 To implement adaptive prefetching, first remove the `<link rel="prefetch">` tag from `views/index.html`:
 
@@ -96,7 +96,7 @@ To implement adaptive prefetching, first remove the `<link rel="prefetch">` tag 
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-	   <link rel="prefetch" href="/product-details.html" as="document"> 
+	   <link rel="prefetch" href="/product-details.html" as="document">
 	   ...
 	</head>
 ```
@@ -104,23 +104,23 @@ To implement adaptive prefetching, first remove the `<link rel="prefetch">` tag 
 Then add the following code to `public/script.js` to declare a function that dynamically injects the `prefetch` tag when the user is on a fast connection:
 
 ```js/0-14/
-function injectLinkPrefetchIn4g(url) { 
-	if (window.navigator.connection.effectiveType === '4g') { 
-		//generate link prefetch tag 
-		const linkTag = document.createElement('link'); 
-		linkTag.rel = 'prefetch'; 
-		linkTag.href = url; 
-		linkTag.as = 'document'; 
+function injectLinkPrefetchIn4g(url) {
+	if (window.navigator.connection.effectiveType === '4g') {
+		//generate link prefetch tag
+		const linkTag = document.createElement('link');
+		linkTag.rel = 'prefetch';
+		linkTag.href = url;
+		linkTag.as = 'document';
 
-		//inject tag in the head of the document 
-		document.head.appendChild(linkTag); 
-	} 
+		//inject tag in the head of the document
+		document.head.appendChild(linkTag);
+	}
 }
 ```
 
 The function works as follows:
 
-- It checks the [effectiveType](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/effectiveType) property of the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) to determine if the user is on a 4G (or faster) connection.
+- It checks the [effectiveType](https://developer.mozilla.org/docs/Web/API/NetworkInformation/effectiveType) property of the [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API) to determine if the user is on a 4G (or faster) connection.
 - If that condition is fulfilled, it generates a `<link>` tag with `prefetch` as the type of hint, passes the URL that will be prefetched in the `href` attribute, and indicates that the resource is an HTML `document` in the `as` attribute.
 - Finally, it injects the script dynamically in the `head` of the page.
 
@@ -160,7 +160,7 @@ The landing page now prefetches `product-details.html` only on fast connections.
 
 You should see `product-details.html` in the Network panel:
 
-<img class="w-screenshot" src="./network-panel-four.png" alt="Network panel showing product-details.html prefetched.">
+{% Img src="image/admin/NCoFDNGs0iSfBkDjiwzd.png", alt="Network panel showing product-details.html prefetched.", width="800", height="201", class="w-screenshot" %}
 
 To verify that the product page isn't prefetched on slow connections:
 
@@ -169,7 +169,7 @@ To verify that the product page isn't prefetched on slow connections:
 
 The **Network** panel should include only the resources for the landing page without `product-details.html`:
 
-<img class="w-screenshot" src="./network-panel-five.png" alt="Network panel showing product-details.html not being prefetched.">
+{% Img src="image/admin/xpHuregNQIEKrVylhG3G.png", alt="Network panel showing product-details.html not being prefetched.", width="800", height="171", class="w-screenshot" %}
 
 ## Prefetch the stylesheet for the product page with the HTTP `Link` header
 
@@ -193,11 +193,11 @@ app.get('/', function(request, response) {
 
 The `style-product.css` is now prefetched at the lowest priority after the landing page loads:
 
-<img class="w-screenshot" src="./network-panel-six.png" alt="Network panel showing style-product.css prefetched.">
+{% Img src="image/admin/Memd8AIP4Yr5dhGGi240.png", alt="Network panel showing style-product.css prefetched.", width="800", height="205", class="w-screenshot" %}
 
 To navigate to the product page, click **Buy now**. Take a look at the **Network** panel:
 
-<img class="w-screenshot" src="./network-panel-seven.png" alt="Network panel showing style-product.css retrieved from prefetch cache.">
+{% Img src="image/admin/12tQkKKPqx4JjaWofEYK.png", alt="Network panel showing style-product.css retrieved from prefetch cache.", width="800", height="223", class="w-screenshot" %}
 
 The `style-product.css` file is retrieved from the "prefetch cache" and it took only 12 ms to load.
 

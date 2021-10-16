@@ -4,7 +4,7 @@ subhead: A game of proximity, inspired by minesweeper.
 authors:
   - kosamari
 date: 2019-05-09
-hero: hero.jpg
+hero: image/admin/cQAxElnaPyIPqlB9wkrb.jpg
 alt: a logo image of PROXX.
 description: |
   PROXX as a minesweeper-like game built as a PWA. It works on a vast variety
@@ -12,7 +12,7 @@ description: |
   the device is.
 tags:
   - blog
-  - PROXX
+  # - PROXX
   - games
 ---
 
@@ -48,8 +48,7 @@ application:
   - Consistent 60fps animation
 
 <figure class="w-figure w-figure--fullbleed">
-  <img class="w-screenshot" src="pixelbook.jpg"
-       alt="A pixelbook running PROXX" class="screenshot">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ka9f7OrsFGjsulY1QoYe.jpg", alt="A pixelbook running PROXX", width="800", height="445", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     PROXX on a pixelbook.
   </figcaption>
@@ -75,7 +74,7 @@ to HTML and saved as index.html
 ## Canvas for animation, (invisible) DOM For accessibility
 
 We render the game graphics in a canvas using
-[WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API). One canvas
+[WebGL](https://developer.mozilla.org/docs/Web/API/WebGL_API). One canvas
 is responsible for the background animation and another one canvas for the game
 grid on top. We also have an HTML table with buttons for accessibility reasons,
 that is on top of both of these canvases, but is made invisible (opacity: 0).
@@ -107,8 +106,7 @@ different input interface (d-pad and number keys, no touchscreen), we also
 implemented key-based interface.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="featurephone.jpg"
-       alt="A man playing PROXX on a yellow feature phone" class="screenshot">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zk0lWvjbZ0V2Shz53d42.jpg", alt="A man playing PROXX on a yellow feature phone", width="800", height="512", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     PROXX on a feature phone.
   </figcaption>

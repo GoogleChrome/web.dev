@@ -7,7 +7,7 @@ subhead: |
 authors:
   - jeffposnick
 date: 2020-07-13
-hero: hero.jpg
+hero: image/admin/YekhsmFaDpnxwhG14CQv.jpg
 alt: Picture of a compass.
 description: |
   Navigation requests are requests for HTML made whenever you enter a new URL in the navigation bar,
@@ -87,7 +87,7 @@ those URLs being revalidated independently of each other.
 
 A single-page architecture is frequently used by modern web applications. In it, client-side
 JavaScript modifies the HTML in response to user actions. This model uses the [History
-API](https://developer.mozilla.org/en-US/docs/Web/API/History_API) to modify the current URL as the
+API](https://developer.mozilla.org/docs/Web/API/History_API) to modify the current URL as the
 user interacts with the web app, leading to what's effectively a "simulated" navigation. While
 subsequent navigations might be "fake", the initial navigation is real, and it's still important to
 make sure that it isn't blocked on the network.

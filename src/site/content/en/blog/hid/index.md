@@ -5,26 +5,24 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2020-09-17
-hero: hero.jpg
-thumbnail: thumbnail.jpg
+updated: 2021-02-27
+hero: image/admin/05NRg2Lw0w5Rv6TToabY.jpg
+thumbnail: image/admin/AfLwyZZbL7bh4S4RikYi.jpg
 alt: Elgato Stream Deck photo.
 description: |
   The WebHID API allows websites to access alternative auxiliary keyboards and exotic gamepads.
-origin_trial:
-    url: https://developers.chrome.com/origintrials/#/view_trial/1074108511127863297
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
   - devices
 feedback:
   - api
+stack_overflow_tag: webhid
 ---
 
-{% Aside %}
-The WebHID API is part of the [Capabilities project](/fugu-status/) and is
-currently in development. This post will be updated as the implementation
-progresses.
+{% Aside 'success' %}
+The WebHID API, part of the [capabilities project](/fugu-status/), launched in
+Chrome&nbsp;89.
 {% endAside %}
 
 There is a long tail of human interface devices (HIDs), such as alternative
@@ -57,10 +55,10 @@ of specific devices.
 | Step                                         | Status                       |
 | -------------------------------------------- | ---------------------------- |
 | 1. Create explainer                          | [Complete][explainer]        |
-| 2. Create initial draft of specification     | [In Progress][spec]          |
-| **3. Gather feedback & iterate on design**   | [**In Progress**](#feedback) |
-| **4. Origin trial**                          | [**In Progress**](#ot)       |
-| 5. Launch                                    | Not started                  |
+| 2. Create initial draft of specification     | [Complete][spec]             |
+| 3. Gather feedback & iterate on design       | [Complete](#feedback)        |
+| 4. Origin trial                              | [Complete][ot]               |
+| **5. Launch**                                | **Complete**                 |
 
 </div>
 
@@ -118,25 +116,6 @@ indication of the high-level category of the device or report.
 
 ## Using the WebHID API {: #use }
 
-### Enabling via chrome://flags
-
-To experiment with the WebHID API locally on all desktop platforms, without an
-origin trial token, enable the `#experimental-web-platform-features` flag in
-`chrome://flags`.
-
-### Enabling support during the origin trial phase
-
-The WebHID API is available on all desktop platforms (Chrome OS, Linux, macOS,
-and Windows) as an origin trial in Chrome&nbsp;86. The origin trial is expected
-to end just before Chrome&nbsp;89 moves to stable in February 2021. The API can
-also be enabled using a flag.
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #ot }
-
-{% include 'content/origin-trial-register.njk' %}
-
 ### Feature detection {: #feature-detection }
 
 To check if the WebHID API is supported, use:
@@ -191,9 +170,8 @@ const devices = await navigator.hid.getDevices();
 ```
 
 <figure class="w-figure">
-  <img src="./webhid-prompt.jpg" class="w-screenshot" alt="Screenshot of a HID device prompt on a website.">
-  <figcaption class="w-figcaption">User prompt for selecting a Nintendo Switch Joy-Con.
-</figcaption>
+  {% Img src="image/admin/gaZo8LxG3Y8eU2VirlZ4.jpg", alt="Screenshot of a HID device prompt on a website.", width="800", height="513", class="w-screenshot" %}
+  <figcaption class="w-figcaption">User prompt for selecting a Nintendo Switch Joy-Con.</figcaption>
 </figure>
 
 A `HIDDevice` object contains USB vendor and product identifiers for device
@@ -237,12 +215,12 @@ await device.open();
 
 Once the HID connection has been established, you can handle incoming input
 reports by listening to the `"inputreport"` events from the device. Those events
-contains the HID data as a [`DataView`] object (`data`), the HID device it belongs
+contain the HID data as a [`DataView`] object (`data`), the HID device it belongs
 to (`device`), and the 8-bit report ID associated with the input report
 (`reportId`).
 
 <figure class="w-figure">
-  <img src="./joycon-switch-photo.jpg" class="w-screenshot" alt="Red and blue nintendo switch photo.">
+  {% Img src="image/admin/Hr4EXZcunl7r2TJwVvQ8.jpg", alt="Red and blue nintendo switch photo.", width="800", height="575", class="w-screenshot" %}
   <figcaption class="w-figcaption">Nintendo Switch Joy-Con devices.</figcaption>
 </figure>
 
@@ -299,7 +277,7 @@ HID data. Unlike input and output reports, feature reports are not received or
 sent by the application on a regular basis.
 
 <figure class="w-figure">
-  <img src="./laptop-keyboard-photo.jpg" class="w-screenshot" alt="Black and silver laptop computer photo.">
+  {% Img src="image/admin/QJiKwOCVAtUsAWUnqLxi.jpg", alt="Black and silver laptop computer photo.", width="800", height="575", class="w-screenshot" %}
   <figcaption class="w-figcaption">Laptop keyboard</figcaption>
 </figure>
 
@@ -367,13 +345,18 @@ navigator.hid.addEventListener("disconnect", event => {
 
 ## Dev Tips {: #dev-tips }
 
-Debugging HID in Chrome is easy with the internal page, `chrome://device-log`
+Debugging HID in Chrome is easy with the internal page, `about://device-log`
 where you can see all HID and USB device related events in one single place.
 
 <figure class="w-figure">
-  <img src="./device-log-page-screenshot.jpg" class="w-screenshot" alt="Screenshot of the internal page to debug HID.">
+  {% Img src="image/admin/zwpr1W7oDsRw0DKsFQ9D.jpg", alt="Screenshot of the internal page to debug HID.", width="800", height="575", class="w-screenshot" %}
   <figcaption class="w-figcaption">Internal page in Chrome to debug HID.</figcaption>
 </figure>
+
+## Browser support {: #browser-support }
+
+The WebHID API is available on all desktop platforms (Chrome OS, Linux, macOS,
+and Windows) in Chrome 89.
 
 ## Demos {: #demos }
 
@@ -392,12 +375,14 @@ To understand the security tradeoffs, check out the [Security and Privacy
 Considerations] section of the WebHID spec.
 
 On top of this, Chrome inspects the usage of each top-level collection and if a
-top-level collection has a protected usage (.e.g. generic keyboard, mouse), then
+top-level collection has a protected usage (e.g. generic keyboard, mouse), then
 a website won't be able to send and receive any reports defined in that
 collection. The full list of protected usages is [publicly available].
 
 Note that security-sensitive HID devices (such as FIDO HID devices used for
-stronger authentication) are also blocked in Chrome. See the [blocklist] file.
+stronger authentication) are also blocked in Chrome. See the [USB blocklist] and
+[HID blocklist] files.
+
 
 ## Feedback {: #feedback }
 
@@ -428,13 +413,13 @@ Are you planning to use the WebHID API? Your public support helps the Chrome
 team prioritize features and shows other browser vendors how critical it is to
 support them.
 
-Send a Tweet to [@ChromiumDev][cr-dev-twitter] with `#WebHID` and let us know
+Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+[`#WebHID`](https://twitter.com/search?q=%23WebHID&src=typed_query&f=live) and let us know
 where and how you're using it.
 
 ## Helpful links {: #helpful }
 
 * [Specification][spec]
-* [Origin Trial][ot]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
 * Blink Component: [`Blink>HID`](https://chromestatus.com/features#component%3ABlink%3EHID)
@@ -442,7 +427,7 @@ where and how you're using it.
 ## Acknowledgements
 
 Thanks to [Matt Reynolds] and [Joe Medley] for their reviews of this article.
-Red and blue nintendo switch photo by [Sara Kurfeß], and black and silver laptop
+Red and blue Nintendo Switch photo by [Sara Kurfeß], and black and silver laptop
 computer photo by [Athul Cyriac Ajay] on Unsplash.
 
 [Capabilities project]: /fugu-status/
@@ -455,13 +440,14 @@ computer photo by [Athul Cyriac Ajay] on Unsplash.
 [format]: https://gist.github.com/beaufortfrancois/583424dfef66be1ade86231fd1a260c7
 [the USB ID Repository]: http://www.linux-usb.org/usb-ids.html
 [HID usage tables document]: https://usb.org/document-library/hid-usage-tables-12
-[`DataView`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView
-[`BufferSource`]: https://developer.mozilla.org/en-US/docs/Web/API/BufferSource
+[`DataView`]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/DataView
+[`BufferSource`]: https://developer.mozilla.org/docs/Web/API/BufferSource
 [web.dev/hid-examples]: /hid-examples/
 [Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [Security and Privacy Considerations]: https://wicg.github.io/webhid/#security-and-privacy
 [publicly available]: https://source.chromium.org/chromium/chromium/src/+/master:services/device/public/cpp/hid/hid_usage_and_page.cc
-[blocklist]: https://source.chromium.org/chromium/chromium/src/+/master:chrome/browser/usb/usb_blocklist.cc
+[USB blocklist]: https://source.chromium.org/chromium/chromium/src/+/master:chrome/browser/usb/usb_blocklist.cc
+[HID blocklist]: https://source.chromium.org/chromium/chromium/src/+/master:services/device/public/cpp/hid/hid_blocklist.cc
 [issues]: https://github.com/wicg/webhid/issues
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EHID
 [cr-dev-twitter]: https://twitter.com/chromiumdev

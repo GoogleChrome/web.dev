@@ -1,0 +1,11 @@
+.learn-section {
+  max-width: 512px;
+
+  @include bp(md) {
+    max-width: 960px;
+  }
+
+  @include bp(lg) {
+    max-width: 1320px;
+  }
+}

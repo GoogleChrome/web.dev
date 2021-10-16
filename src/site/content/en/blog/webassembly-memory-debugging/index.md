@@ -3,7 +3,7 @@ title: Debugging memory leaks in WebAssembly using Emscripten
 subhead: While JavaScript is fairly forgiving in cleaning up after itself, static languages are definitely not…
 description: Learn how to use WebAssembly to bring libraries, written in other languages, to the Web in a safe and idiomatic manner.
 date: 2020-08-13
-hero: hero.jpg
+hero: image/admin/b6lB9C3Fz4es4D2rPAxC.jpg
 alt: A WebAssembly-branded hose leaking water onto the street.
 authors:
   - rreverser
@@ -244,7 +244,7 @@ exited and all the temporary C++ objects were freed by the time we run those che
 
 This gives us a report like the following in the console:
 
-<img class="w-screenshot" src="leak1-nodbg.png" alt="Screenshot of a message &quot;Direct leak of 12 bytes&quot; coming from an anonymous wasm-function[…].">
+{% Img src="image/admin/6gm8BJfm97IWnBD5vYBc.png", alt="Screenshot of a message &quot;Direct leak of 12 bytes&quot; coming from an anonymous wasm-function[…].", width="768", height="239", class="w-screenshot" %}
 
 Uh-oh, there are some small leaks, but the stacktrace is not very helpful as all the function names
 are mangled. Let's recompile with a basic debugging info to preserve them:
@@ -268,7 +268,7 @@ emcc \
 
 This looks much better:
 
-<img class="w-screenshot" src="leak1-dbg.png" alt="Screenshot of a message &quot;Direct leak of 12 bytes&quot; coming from a `GenericBindingType<RawImage>::toWireType` function">
+{% Img src="image/admin/mISFSSAJBklHqRj8WcaC.png", alt="Screenshot of a message &quot;Direct leak of 12 bytes&quot; coming from a `GenericBindingType<RawImage>::toWireType` function", width="768", height="271", class="w-screenshot" %}
 
 Some parts of the stacktrace still look obscure as they point to Emscripten internals, but we can
 tell that the leak is coming from a `RawImage` conversion to "wire type" (to a JavaScript value) by
@@ -319,7 +319,7 @@ The leak goes away as expected.
 Building other Squoosh codecs with sanitizers reveals both similar as well as some new issues. For
 example, I've got this error in MozJPEG bindings:
 
-<img class="w-screenshot" src="out-of-bounds.png" alt="Screenshot of a message &quot;memory access out of bounds&quot; coming from a `jpeg_start_compress` function">
+{% Img src="image/admin/ArR34HLUVjU5violfalT.png", alt="Screenshot of a message &quot;memory access out of bounds&quot; coming from a `jpeg_start_compress` function", width="768", height="174", class="w-screenshot" %}
 
 Here, it's not a leak, but us writing to a memory outside of the allocated boundaries 😱
 
@@ -375,7 +375,7 @@ runs? Then a single call with a sanitizer would not report them as problematic.
 Let's try and process the image a couple of times by randomly clicking at different quality levels
 in the UI. Indeed, now we get the following report:
 
-<img class="w-screenshot" src="leak2.png" alt="Screenshot of a message &quot;Direct leak of 262144 bytes&quot; coming from a `jpeg_finish_compress` function">
+{% Img src="image/admin/3X5eGopvZ9m5mxySmoWj.png", alt="Screenshot of a message &quot;Direct leak of 262144 bytes&quot; coming from a `jpeg_finish_compress` function", width="768", height="265", class="w-screenshot" %}
 
 262,144 bytes—looks like the whole sample image is leaked from `jpeg_finish_compress`!
 

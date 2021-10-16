@@ -7,8 +7,8 @@ description: >
 authors:
   - jeffposnick
 date: 2020-12-10
-thumbnail: thumbnail.png
-hero: hero.png
+thumbnail: image/admin/XwmqHMJ27IY2gatiI6Ly.png
+hero: image/admin/KW5Rgyo01HyimeALdCZD.png
 alt: The Workbox logo.
 tags:
   - blog
@@ -50,8 +50,8 @@ But what if you wanted to go beyond those common caching scenarios? Let's cover
 writing your own custom caching strategies.
 [Workbox v6](https://github.com/GoogleChrome/workbox/releases/tag/v6.0.0) offers
 a new [`Strategy` base class](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-strategies.Strategy) that sits in front of lower-level APIs, like
-[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and
-[Cache Storage](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage).
+[Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) and
+[Cache Storage](https://developer.mozilla.org/docs/Web/API/CacheStorage).
 You can extend the `Strategy` base class, and then implement your own logic in
 the [`_handle()` method](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-strategies.Strategy#_handle).
 
@@ -306,7 +306,7 @@ When writing your own plugin, you'll only implement callbacks for the limited
 number of events that match your purpose—there's no need to add in callbacks for
 _all_ of the possible events. Additionally, it's up to you whether you implement
 your plugin as an
-<code>[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)</code>
+<code>[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)</code>
 with properties that match the lifecycle event names, or as a class that exposes
 methods with those names.
 

@@ -1,0 +1,41 @@
+setLeader: Test your knowledge of focus
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,2,3,5"
+    stem: Which of the following are automatically focusable elements?
+    options:
+      - content: "`<a>`"
+        rationale: "🎉"
+      - content: "`<p>`"
+        rationale: "Try again!"
+      - content: "`<button>`"
+        rationale: "🎉"
+      - content: "`<input>`"
+        rationale: "🎉"
+      - content: "`<output>`"
+        rationale: "Try again!"
+      - content: "`<select>`"
+        rationale: "🎉"
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "0,1,3"
+    stem: Which of the following input devices can set focus?
+    options:
+      - content: Gamepad
+        rationale: "Gamepads often send keyboard events when their buttons are
+        pressed."
+      - content: Keyboard
+        rationale: "Definitely causes focus when used to navigate the web."
+      - content: Mouse
+        rationale: "A mouse requires vision and no longer puts focus on elements
+        when used. All browsers used to put focus on things like buttons when
+        clicked, but that has changed."
+      - content: Assistive technology (screen reader, switch, etc)
+        rationale: "Definitely causes focus when used to navigate the web."
+      - content: A potato
+        rationale: "Sorry, while a potato can be used as a pointer on touch
+        screens, it does not cause focus after interacting with on screen
+        inputs."

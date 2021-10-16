@@ -5,7 +5,7 @@ description: |
   Learn how Lighthouse generates the overall Performance score for your page.
 subhead: How Lighthouse calculates your overall Performance score
 date: 2019-09-19
-updated: 2020-06-12
+updated: 2021-06-04
 ---
 
 In general, only [metrics](/lighthouse-performance/#metrics)
@@ -48,12 +48,51 @@ The metric scores are not visible in the report, but are calculated under the ho
 
 <figure class="w-figure">
   <a href="https://googlechrome.github.io/lighthouse/scorecalc/">
-    <img src="./score-calc.png" alt="Lighthouse scoring calculator webapp" style="max-width: 600px;">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/rLftIdSA8JJYruHOHrOn.png", alt="Lighthouse scoring calculator webapp", width="600", height="414" %}
   </a>
   <figcaption class="w-figcaption">
     Explore scoring with the <a href="https://googlechrome.github.io/lighthouse/scorecalc/">Lighthouse scoring calculator</a>
   </figcaption>
 </figure>
+
+### Lighthouse 8
+
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Audit</th>
+        <th>Weight</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="/first-contentful-paint/">First Contentful Paint</a></td>
+        <td>10%</td>
+      </tr>
+      <tr>
+        <td><a href="/speed-index/">Speed Index</a></td>
+        <td>10%</td>
+      </tr>
+      <tr>
+        <td><a href="/lcp/">Largest Contentful Paint</a></td>
+        <td>25%</td>
+      </tr>
+      <tr>
+        <td><a href="/interactive/">Time to Interactive</a></td>
+        <td>10%</td>
+      </tr>
+      <tr>
+        <td><a href="/lighthouse-total-blocking-time/">Total Blocking Time</a></td>
+        <td>30%</td>
+      </tr>
+      <tr>
+        <td><a href="/cls/">Cumulative Layout Shift</a></td>
+        <td>15%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ### Lighthouse 6
 
@@ -95,6 +134,54 @@ The metric scores are not visible in the report, but are calculated under the ho
 </div>
 
 
+
+### How metric scores are determined {: #metric-scores }
+
+Once Lighthouse is done gathering the performance metrics (mostly reported in milliseconds), it converts each raw metric value into a metric score from 0 to 100 by looking where the metric value falls on its Lighthouse scoring distribution. The scoring distribution is
+a log-normal distribution derived from the performance metrics of real website performance
+data on [HTTP Archive](https://httparchive.org/).
+
+For example, Largest Contentful Paint (LCP) measures when a user perceives that the
+largest content of a page is visible. The metric value for LCP represents the time duration between
+the user initiating the page load and the page rendering its primary content. Based on real
+website data, top-performing sites render LCP in about 1,220ms, so that metric value is mapped to
+a score of 99.
+
+Going a bit deeper, the Lighthouse scoring curve model uses HTTPArchive data to determine two control points that then set the shape of a [log-normal](https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law) curve. The 25th percentile of HTTPArchive data becomes a score of 50 (the median control point), and the 8th percentile becomes a score of 90 (the good/green control point). While exploring the scoring curve plot below, note that between 0.50 and 0.92, there's a near-linear relationship between metric value and score. Around a score of 0.96 is the "point of diminishing returns" as above it, the curve pulls away, requiring increasingly more metric improvement to improve an already high score.
+
+
+<figure class="w-figure">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/y321cWrLLbuY4SHlvYCc.png", alt="Image of the scoring curve for TTI", width="600", height="329" %}
+  <figcaption class="w-figcaption">
+    <a href="https://www.desmos.com/calculator/o98tbeyt1t">Explore the scoring curve for TTI</a>.
+  </figcaption>
+</figure>
+
+
+### How desktop vs mobile is handled {: #desktop }
+
+As mentioned above, the score curves are determined from real performance data. Prior to Lighthouse v6, all score curves were based on mobile performance data, however a desktop Lighthouse run would use that. In practice, this led to artificially inflated desktop scores.  Lighthouse v6 fixed this bug by using specific desktop scoring. While you certainly can expect overall changes in your perf score from 5 to 6, any scores for desktop will be significantly different.
+
+### How scores are color-coded {: #color-coding }
+
+The metrics scores and the perf score are colored according to these ranges:
+
+* 0 to 49 (red): Poor
+* 50 to 89 (orange): Needs Improvement
+* 90 to 100 (green): Good
+
+To provide a good user experience, sites should strive to have a good score (90-100). A "perfect" score of 100 is extremely challenging to achieve and not expected. For example, taking a score from 99 to 100 needs about the same amount of metric improvement that would take a 90 to 94.
+
+### What can developers do to improve their performance score?
+First, use the [Lighthouse scoring calculator](https://googlechrome.github.io/lighthouse/scorecalc/) to help understand what thresholds you should be aiming for achieving a certain Lighthouse performance score.
+
+In the Lighthouse report, the **Opportunities** section has detailed suggestions and documentation on how to implement them. Additionally, the **Diagnostics** section lists additional guidance that developers can explore to further improve their performance.
+
+
+<!--
+We don't think users care about the historical scoring rubrics, but we'd still prefer to keep them around because X
+## Historical versions
+
 ### Lighthouse 5
 
 <div class="w-table-wrapper">
@@ -129,55 +216,6 @@ The metric scores are not visible in the report, but are calculated under the ho
     </tbody>
   </table>
 </div>
-
-
-
-### How metric scores are determined {: #metric-scores }
-
-Once Lighthouse is done gathering the performance metrics (mostly reported in milliseconds), it converts each raw metric value into a metric score from 0 to 100 by looking where the metric value falls on its Lighthouse scoring distribution. The scoring distribution is
-a log-normal distribution derived from the performance metrics of real website performance
-data on [HTTP Archive](https://httparchive.org/).
-
-For example, Largest Contentful Paint (LCP) measures when a user perceives that the
-largest content of a page is visible. The metric value for LCP represents the time duration between
-the user initiating the page load and the page rendering its primary content. Based on real
-website data, top-performing sites render LCP in about 1,220ms, so that metric value is mapped to
-a score of 99.
-
-Going a bit deeper, the Lighthouse scoring curve model uses HTTPArchive data to determine two control points that then set the shape of a [log-normal](https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law) curve. The 25th percentile of HTTPArchive data becomes a score of 50 (the median control point), and the 8th percentile becomes a score of 90 (the good/green control point). While exploring the scoring curve plot below, note that between 0.50 and 0.92, there's a near-linear relationship between metric value and score. Around a score of 0.96 is the "point of diminishing returns" as above it, the curve pulls away, requiring increasingly more metric improvement to improve an already high score.
-
-
-<figure class="w-figure">
-  <img src="./scoring-curve.png" alt="Image of the scoring curve for TTI" style="max-width: 600px;">
-  <figcaption class="w-figcaption">
-    <a href="https://www.desmos.com/calculator/o98tbeyt1t">Explore the scoring curve for TTI</a>.
-  </figcaption>
-</figure>
-
-
-### How desktop vs mobile is handled {: #desktop }
-
-As mentioned above, the score curves are determined from real performance data. Prior to Lighthouse v6, all score curves were based on mobile performance data, however a desktop Lighthouse run would use that. In practice, this led to artificially inflated desktop scores.  Lighthouse v6 fixed this bug by using specific desktop scoring. While you certainly can expect overall changes in your perf score from 5 to 6, any scores for desktop will be significantly different.
-
-### How scores are color-coded {: #color-coding }
-
-The metrics scores and the perf score are colored according to these ranges:
-
-* 0 to 49 (red): Poor
-* 50 to 89 (orange): Needs Improvement
-* 90 to 100 (green): Good
-
-To provide a good user experience, sites should strive to have a good score (90-100). A "perfect" score of 100 is extremely challenging to achieve and not expected. For example, taking a score from 99 to 100 needs about the same amount of metric improvement that would take a 90 to 94.
-
-### What can developers do to improve their performance score?
-First, use the [Lighthouse scoring calculator](https://googlechrome.github.io/lighthouse/scorecalc/) to help understand what thresholds you should be aiming for achieving a certain Lighthouse performance score.
-
-In the Lighthouse report, the **Opportunities** section has detailed suggestions and documentation on how to implement them. Additionally, the **Diagnostics** section lists additional guidance that developers can explore to further improve their performance.
-
-
-<!--
-We don't think users care about the historical scoring rubrics, but we'd still prefer to keep them around because X
-## Historical versions
 
 ### Lighthouse 3 and 4
 

@@ -4,14 +4,14 @@ subhead: Learn basic video. Increase engagement.
 authors:
   - dougsillars
 date: 2019-09-03
-hero: hero.jpg
+hero: image/admin/ZzDrBdBMFxBtALr0uCz6.jpg
 alt: A description of the hero image for screen reader users.
 description: |
   Research shows that web video lead to higher engagement and sales. Even if you haven't added video to your sites yet, it's just a matter of time until you do.
 tags:
   - media
   - blog
-  - video
+  # - video
 ---
 
 Are you thinking about adding video to your website? As devices and network
@@ -67,7 +67,7 @@ here](https://developers.google.com/web/fundamentals/media/manipulating/applicat
 In the example above, the first choice is the WebM format ([which can be encoded
 with VP8 or VP9 codecs](https://www.webmproject.org/about/)), and is supported
 (at the time of writing) by 78% of [global
-users](https://caniuse.com/#search=webm). The second choice is the the H.265
+users](https://caniuse.com/#search=webm). The second choice is the H.265
 codec of mp4, which is supported on [iOS and newer
 Macs](https://caniuse.com/#search=h265). These codecs are newer and have
 improved data compression, while delivering the same quality video as older
@@ -157,14 +157,14 @@ window before the video starts playing:
 ```
 
 <figure class="w-figure">
-  <img src="no-poster.png" alt="A video without a poster shows a black screen before it starts.">
+  {% Img src="image/admin/g25bdsYqmAWM39KhjGTj.png", alt="A video without a poster shows a black screen before it starts.", width="478", height="269" %}
 </figure>
 {% Compare 'worse', 'No poster image' %}
   A video without a poster shows a black screen before it starts.
 {% endCompare %}
 
 <figure class="w-figure">
-  <img src="poster.png" alt="A video with a poster is much more engaging.">
+  {% Img src="image/admin/QVLwk1zEOzqllD8eY3pc.png", alt="A video with a poster is much more engaging.", width="478", height="269" %}
 </figure>
 {% Compare 'better', 'With a poster image' %}
   A video with a poster is much more engaging.

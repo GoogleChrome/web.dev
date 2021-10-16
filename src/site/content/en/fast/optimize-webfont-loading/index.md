@@ -39,7 +39,7 @@ before it knows which font resources it needs in order to render the text.
 As a result, font requests are delayed well after other critical resources,
 and the browser may be blocked from rendering text until the resource is fetched.
 
-<img src="./font-crp.png"  alt="Font critical rendering path">
+{% Img src="image/admin/NgSTa9SirmikQAq1G5fN.png", alt="Font critical rendering path", width="800", height="303" %}
 
 1. The browser requests the HTML document.
 1. The browser begins parsing the HTML response and constructing the DOM.
@@ -75,7 +75,7 @@ You still need to consider how browsers behave when rendering text that uses a `
 
 In the post [Avoid invisible text during font loading](/avoid-invisible-text/) you can see that default browser behavior is not consistent.
 However, you can tell modern browsers how you want them to behave by using
-[`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display).
+[`font-display`](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display).
 
 Similar to the existing font timeout behaviors that some browsers implement,
 `font-display` segments the lifetime of a font download into three major periods:
@@ -123,9 +123,9 @@ To work with the `font-display` property, add it to your `@font-face` rules:
 
 For more information on preloading fonts, and the `font-display` property, see the following posts:
 
-- [Avoid invisible text during font loading](https://web.dev/avoid-invisible-text/)
+- [Avoid invisible text during font loading](/avoid-invisible-text/)
 - [Controlling font performance using font-display](https://developers.google.com/web/updates/2016/02/font-display)
-- [Prevent layout shifting and flashes of invisibile text (FOIT) by preloading optional fonts](https://web.dev/preload-optional-fonts/)
+- [Prevent layout shifting and flashes of invisibile text (FOIT) by preloading optional fonts](/preload-optional-fonts/)
 
 ### The Font Loading API
 
@@ -191,8 +191,8 @@ and an [optimal Cache-Control policy](https://developers.google.com/web/fundamen
 If your web application uses a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers/),
 serving font resources with a [cache-first strategy](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-then-network) is appropriate for most use cases.
 
-You should not store fonts using [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-or [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API);
+You should not store fonts using [`localStorage`](https://developer.mozilla.org/docs/Web/API/Window/localStorage)
+or [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API);
 each of those has its own set of performance issues.
 The browser's HTTP cache provides the best and most robust mechanism to deliver font resources to the browser.
 
@@ -214,6 +214,6 @@ can help automate the process of making sure that you're following web font opti
 
 The following audits can help you make sure that your pages are continuing to follow web font optimization best practices over time:
 
-* [Preload key requests](https://web.dev/uses-rel-preload/)
-* [Uses inefficient cache policy on static assets](https://web.dev/uses-long-cache-ttl/)
-* [All text remains visible during WebFont loads](https://web.dev/font-display/)
+* [Preload key requests](/uses-rel-preload/)
+* [Uses inefficient cache policy on static assets](/uses-long-cache-ttl/)
+* [All text remains visible during WebFont loads](/font-display/)

@@ -1,0 +1,35 @@
+{
+  "title": "Page context",
+  "context": {
+    "name": "Rachel Andrew",
+    "bio": "Freelance writer and editor. CSS Working Group Invited Expert.",
+    "image": "/image/admin/dUAN2DEXHRT6G6iPrIby.jpg",
+    "links": [
+      {
+        "url": "https://rachelandrew.co.uk/",
+        "text": "Homepage",
+        "icon": "/images/icons/language.svg"
+      },
+      {
+        "url": "https://twitter.com/rachelandrew",
+        "text": "Twitter",
+        "icon": "/images/icons/twitter.svg"
+      },
+      {
+        "url": "https://github.com/rachelandrew",
+        "text": "GitHub",
+        "icon": "/images/icons/github.svg"
+      },
+      {
+        "url": "https://glitch.com/@rachelandrew",
+        "text": "Glitch",
+        "icon": "/images/icons/glitch.svg"
+      },
+      {
+        "url": "/authors/rachelandrew/feed.xml",
+        "text": "RSS Feed",
+        "icon": "/images/icons/rss.svg"
+      }
+    ]
+  }
+}

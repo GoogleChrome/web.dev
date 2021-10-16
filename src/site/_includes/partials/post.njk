@@ -1,3 +1,4 @@
+{% from 'macros/tag-chips.njk' import tagChips with context %}
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
 <div class="guide-landing-page">
@@ -6,7 +7,7 @@
     {# Use first found path as a default path. #}
     {% set path = paths[postPaths[0]] %}
   {% endif %}
-  {% set safeTitle = title | md | safe %}
+  {% set safeTitle = title | trim | md | safe %}
 
   {% if hero %}
     {% Hero {
@@ -29,7 +30,7 @@
 
   {# Make sure Actions are first in the tab order. #}
   <div class="w-actions">
-    <share-action authors="{{ authors | expandAuthors(collections.authors) }}"
+    <share-action authors="{{ authors | expandAuthors(collections.authors, lang) }}"
       class="gc-analytics-event w-actions__fab w-actions__fab--share"
       data-category="web.dev"
       data-label="share"
@@ -38,7 +39,7 @@
       tabindex="0"
       role="button"
     >
-      <span>Share</span>
+      <span>{{ 'i18n.common.share' | i18n(locale) }}</span>
     </share-action>
     {% include 'partials/subscribe-action.njk' %}
   </div>
@@ -46,8 +47,15 @@
   <div class="w-layout-container--narrow w-post-content">
     <header class="w-article-header">
       {% if 'blog' in tags %}
+        {# Display blog breadcrumbs #}
         <div class="w-post-breadcrumbs">
           {% Breadcrumbs {title: 'All articles', slug: 'blog'} %}
+        </div>
+      {% elif crumbs %}
+        {# Display other breadcrumbs #}
+        {% from 'macros/breadcrumbs.njk' import breadcrumbs with context %}
+        <div class="w-post-breadcrumbs">
+          {{ breadcrumbs(crumbs) }}
         </div>
       {% endif %}
 
@@ -61,18 +69,28 @@
       {% if date %}
         <div class="w-author__published">
           <time>{{date | prettyDate}}</time>
-          {% if updated %} <span class="w-author__separator">•</span> Updated <time>{{ updated | prettyDate }}</time> {% endif %}
+          {% if updated %} <span class="w-author__separator">•</span> {{ 'i18n.common.updated' | i18n((locale)) }} <time>{{ updated | prettyDate }}</time> {% endif %}
         </div>
       {% endif %}
+
+      {% set languageListHtml %}{% LanguageList page.url, lang %}{% endset %}
+      {% if languageListHtml %}
+      <div class="w-layout-container--narrow w-post-signpost">
+        {{ languageListHtml | safe }}
+      </div>
+      {% endif %}
+
       {% SignPosts page.fileSlug %}
 
       {% if authors %}
         <div class="w-authors w-mt--xl w-pt--sm">
           {% for author in authors %}
             {% Author {
-              id: author,
+              id: authorKey,
               author: collections.authors[author],
-              showSocialMedia: true}
+              showSocialMedia: true,
+              locale: locale
+              }
             %}
           {% endfor %}
         </div>
@@ -81,30 +99,30 @@
 
     {% if draft and site.env === 'dev' %}
       <div class="w-banner w-banner--warning w-banner--body">
-        🚨 This post is a draft! 🚨
+        {{ 'i18n.post.is_draft' | i18n(locale) }}
       </div>
     {% endif %}
 
     {{ content | safe }}
 
-    <div class="w-chips">
-      {% for tag in tags | findTags %}
-        <a class="w-chip" href="{{ tag.href }}">{{ tag.title }}</a>
-      {% endfor %}
-    </div>
+    {% if stack_overflow_tag %}
+      {% StackOverflow stack_overflow_tag %}
+    {% endif %}
+
+    {{ tagChips(tags) }}
 
     <div class="w-post-github-link w-mt--l w-mb--l">
       <span class="w-mr--sm">
         {% if updated %}
-        Last updated: <time>{{ updated | prettyDate }}</time>
+        {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ updated | prettyDate }}</time>
         {% else %}
-        Last updated: <time>{{ date | prettyDate }}</time>
+        {{ 'i18n.post.last_updated' | i18n(locale) }}: <time>{{ date | prettyDate }}</time>
         {% endif %}
       </span>
       <a
         href="{{ page.inputPath | githubLink }}"
       >
-        Improve article
+        {{ 'i18n.post.improve_article' | i18n(locale) }}
       </a>
       {# Hide suggest translation for now. #} {#
       <a href="#">Suggest translation</a> #}
@@ -113,7 +131,8 @@
     {% if codelabs %}
       {% CodelabsCallout codelabs, lang %}
     {% endif %}
-    <web-feedback additional-questions="{{ feedback }}"></web-feedback>
+    {# TODO: We've removed the feedback widget for now as it's noisy and unhelpful. #}
+    {# <web-feedback additional-questions="{{ feedback }}"></web-feedback> #}
   </div>
 
   {% if 'blog' in tags %}

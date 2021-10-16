@@ -64,7 +64,7 @@ As a first step, you need to understand what would be the opportunity after mini
 
 The resulting report shows that up to **16&nbsp;KB** can be saved from the **animate.css** file:
 
-<img class="screenshot" width="700px" height="150px" src="./lighthouse-unoptimized.png" alt="Lighthouse: Minify CSS opportunity.">
+{% Img src="image/admin/RFMk5OMAIvOlkUZJTsh4.png", alt="Lighthouse: Minify CSS opportunity.", width="800", height="172", class="screenshot" %}
 
 Now inspect the content of the CSS:
 
@@ -74,7 +74,7 @@ Now inspect the content of the CSS:
 1. Select the **Disable cache** checkbox.
 {% Instruction 'reload-app', 'ol' %}
 
-<img class="w-screenshot" width="700px" height="120px" src="./cdt-css-unoptimized.png" alt="DevTools CSS unoptimized trace">
+{% Img src="image/admin/WgneNAyftk8jneyXxMih.png", alt="DevTools CSS unoptimized trace", width="800", height="138", class="w-screenshot" %}
 
 The page is requesting two CSS files, of **1.9KB** and **76.2KB** respectively.
 
@@ -83,7 +83,7 @@ The page is requesting two CSS files, of **1.9KB** and **76.2KB** respectively.
 
 Note that the stylesheet contains characters for whitespaces and indentation:
 
-<img class="w-screenshot" width="700px" height="120px" src="./cdt-css-unoptimized-res.png" alt="DevTools CSS unoptimized response">
+{% Img src="image/admin/UEB5Xxe5IHhGtMx3XfKD.png", alt="DevTools CSS unoptimized response", width="800", height="286", class="w-screenshot" %}
 
 Next, you'll add some webpack plugins to your build process to minify these files.
 
@@ -160,7 +160,7 @@ To inspect the size and content of the files:
 1. Select the **Disable cache** checkbox if it isn't already.
 {% Instruction 'reload-app', 'ol' %}
 
-<img class="w-screenshot" width="700px" height="120px" src="./cdt-css-optimized.png" alt="DevTools CSS unoptimized response">
+{% Img src="image/admin/id5kWwB3NilmVPWPTM59.png", alt="DevTools CSS unoptimized response", width="800", height="130", class="w-screenshot" %}
 
 You can inspect these files, and see that the new versions don't contain any whitespaces. Both files are much smaller, in particular, the [animate.css](http://fav-kitties-animated-min.glitch.me/animate.css) has been reduced in **~26%**, saving **~20KB**!
 
@@ -173,7 +173,7 @@ As a final step:
 
 The report doesn't show "Minify CSS" as "Opportunity" anymore, and has now moved to "Passed Audits" section:
 
-<img class="w-screenshot" width="700px" height="150px" src="./lighthouse-optimized.png" alt="Lighthouse Passed Audits for optimized page.">
+{% Img src="image/admin/zegn2qIHYYK58w1GhgYd.png", alt="Lighthouse Passed Audits for optimized page.", width="800", height="163", class="w-screenshot" %}
 
 Since CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources), if you apply minification on sites that use large CSS files, you can see improvements on metrics like [First Contentful Paint](/first-contentful-paint).
 

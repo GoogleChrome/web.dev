@@ -7,7 +7,7 @@ updated: 2019-08-29
 authors:
   - adamargyle
   - joemedley
-hero: hero.jpg
+hero: image/admin/ltK4SNRultTnkbimOySm.jpg
 alt: A view through a rain-covered foggy window.
 description: |
   Learn how to add background effects like blurring and transparency to UI
@@ -15,17 +15,15 @@ description: |
 tags:
   - blog
   - css
-  - backdrop-filter
+  # - backdrop-filter
 feedback:
   - api
 ---
 Translucence, blurring, and other effects are useful ways of creating depth while keeping the context of the background content. They support a host of use cases such as frosted glass, video overlays, translucent navigation headers, inappropriate image censoring, image loading, and so on. You may recognize these effects from two popular operating systems: [Windows 10](https://i.kinja-img.com/gawker-media/image/upload/s--9RLXARU4--/c_scale,dpr_2.0,f_auto,fl_progressive,q_80,w_800/trgz8yivyyqrpcnwscu5.png) and [iOS](https://static.businessinsider.com/image/51fd2822eab8eae16e00000b-750.jpg).
 
 <figure class="w-figure">
-  <img src="weather_app.jpg" alt="An example of a frosted glass effect.">
-  <figcaption class="w-figcaption">
-    An example of a frosted glass effect. <a href="https://dribbble.com/shots/733714-Weather-App?list=tags&tag=android" target="_blank" rel="noopener noreferrer">Source</a>.
-  </figcaption>
+  {% Img src="image/admin/mEc6bdwB2ZX6VSXvyJEn.jpg", alt="An example of a frosted glass effect.", width="400", height="300" %}
+  <figcaption class="w-figcaption">An example of a frosted glass effect. <a href="https://dribbble.com/shots/733714-Weather-App?list=tags&tag=android" target="_blank" rel="noopener noreferrer">Source</a>.</figcaption>
 </figure>
 
 Historically, these techniques were difficult to implement on the web, requiring less than perfect [hacks or workarounds](https://stackoverflow.com/questions/38145368/css-workaround-to-backdrop-filter). In recent years both [Safari](https://webkit.org/blog/3632/introducing-backdrop-filters/) and Edge have provided these capabilities through the `background-filter` (and alternatively, the `-webkit-backdrop-filter`) property, which dynamically blends foreground and background colors based on filter functions. Now Chrome supports `background-filter`, starting in version 76.
@@ -54,7 +52,8 @@ CSS `backdrop-filter` applies one or more effects to an element that is transluc
 
 <div class="w-columns">
 {% Compare 'worse', 'No foreground transparency' %}
-![A triangle superimposed on a circle. The circle can't be seen through the triangle.](./transparency-off.png)
+{% Img src="image/admin/LOqxvB3qqVkbZBmxMmKS.png", alt="A triangle superimposed on a circle. The circle can't be seen through the triangle.", width="480", height="283" %}
+
 ```css
 .frosty-glass-pane {
   backdrop-filter: blur(2px);
@@ -63,7 +62,8 @@ CSS `backdrop-filter` applies one or more effects to an element that is transluc
 {% endCompare %}
 
 {% Compare 'better', 'Foreground transparency' %}
-![A triangle superimposed on a circle. The triangle is translucent, allowing the circle to be seen through it.](./transparency-on.png)
+{% Img src="image/admin/VbyjpS6Td39E4FudeiVg.png", alt="A triangle superimposed on a circle. The triangle is translucent, allowing the circle to be seen through it.", width="480", height="283" %}
+
 ```css/1
 .frosty-glass-pane {
   opacity: .9;
@@ -75,11 +75,11 @@ CSS `backdrop-filter` applies one or more effects to an element that is transluc
 
 The image on the left shows how overlapping elements would be rendered if `backdrop-filter` were not used or supported. The image on the right applies a blurring effect using `backdrop-filter`. Notice that it uses `opacity` in addition to `backdrop-filter`. Without `opacity`, there would be nothing to apply blurring to. It almost goes without saying that if `opacity` is set to `1` (fully opaque) there will be no effect on the background.
 
-The `backdrop-filter` property is like CSS [filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) in that all your favorite [filter functions](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Filter_functions) are supported: `blur()`, `brightness()`, `contrast()`, `opacity()`, `drop-shadow()`, and so on. It also supports the `url()` function if you want to use an external image as the filter, as well as the keywords `none`, `inherit`, `initial`, and `unset`. There are explanations for all of this on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter), including descriptions of syntax, filters, and values.
+The `backdrop-filter` property is like CSS [filters](https://developer.mozilla.org/docs/Web/CSS/filter) in that all your favorite [filter functions](https://developer.mozilla.org/docs/Web/CSS/filter#Filter_functions) are supported: `blur()`, `brightness()`, `contrast()`, `opacity()`, `drop-shadow()`, and so on. It also supports the `url()` function if you want to use an external image as the filter, as well as the keywords `none`, `inherit`, `initial`, and `unset`. There are explanations for all of this on [MDN](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter), including descriptions of syntax, filters, and values.
 
-When `backdrop-filter` is set to anything other than `none`, the browser creates a new [stacking context](https://www.w3.org/TR/CSS21/zindex.html). A [containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) may also be created, but only if the element has absolute and fixed position descendants.
+When `backdrop-filter` is set to anything other than `none`, the browser creates a new [stacking context](https://www.w3.org/TR/CSS21/zindex.html). A [containing block](https://developer.mozilla.org/docs/Web/CSS/Containing_block) may also be created, but only if the element has absolute and fixed position descendants.
 
-You can combine filters for rich and clever effects, or use just one filter for more subtle or precise effects. You can even combine them with [SVG filters](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter).
+You can combine filters for rich and clever effects, or use just one filter for more subtle or precise effects. You can even combine them with [SVG filters](https://developer.mozilla.org/docs/Web/SVG/Element/filter).
 
 ## Feature detection and fallback
 
@@ -168,7 +168,7 @@ This example shows how to blur a semi-transparent background to make text readab
 
 ### Text contrast on dynamic backgrounds
 
-As stated earlier, `backdrop-filter` allows performant effects that would be difficult or impossible on the web. An example of this is changing a background in respone to an animation. In this example, `backdrop-filter` maintains the high contrast between the text and its background in spite of what's going on behind the text. It starts with the default background color `darkslategray` and uses `backdrop-filter` to invert the colors after the transformation.
+As stated earlier, `backdrop-filter` allows performant effects that would be difficult or impossible on the web. An example of this is changing a background in response to an animation. In this example, `backdrop-filter` maintains the high contrast between the text and its background in spite of what's going on behind the text. It starts with the default background color `darkslategray` and uses `backdrop-filter` to invert the colors after the transformation.
 
 ```css
 .container::before {
@@ -199,6 +199,6 @@ More than 560 of you have upvoted the [Chromium bug](https://crbug.com/497522) o
 ### Additional resources
 - [Specification](https://drafts.fxtf.org/filter-effects-2/#BackdropFilterProperty)
 - [Chrome Platform Status](https://www.chromestatus.com/feature/5679432723333120)
-- [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
+- [MDN](https://developer.mozilla.org/docs/Web/CSS/backdrop-filter)
 - [`background-filter` at CSS Tricks](https://css-tricks.com/the-backdrop-filter-css-property/)
 - [Samples on Codepen](https://codepen.io/tag/backdrop-filter/#)

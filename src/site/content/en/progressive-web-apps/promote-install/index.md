@@ -20,8 +20,7 @@ they can install a PWA, so it can be helpful to provide an in-app experience
 that you can use to promote and enable installation of your PWA.
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="simple-button_mobile-crop.png"
-      alt="Screenshot of simple install button in PWA.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PtJp54jasjOYyh9Soqzu.png", alt="Screenshot of simple install button in PWA.", width="800", height="368" %}
   <figcaption class="w-figcaption">
     A simple install button provided within your PWA.
   </figcaption>
@@ -62,15 +61,13 @@ installable. For example, desktop Chrome shows an install button in the omnibox.
 
 <div class="w-columns">
   <figure class="w-figure" id="browser-install-promo">
-    <img src="how-does-it-work_desktop.png"
-        alt="Screenshot of omnibox with install indicator visible.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/zIfRss5zOrZ49c4VdJ52.png", alt="Screenshot of omnibox with install indicator visible.", width="800", height="307" %}
     <figcaption class="w-figcaption">
       Browser provided install promotion (desktop)
     </figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="how-does-it-work_mobile.png"
-        alt="Screenshot of browser provided install promotion.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kRjcsxlHDZa9Nqg2Fpei.png", alt="Screenshot of browser provided install promotion.", width="800", height="307" %}
     <figcaption class="w-figcaption">
       Browser provided install promotion (mobile)
     </figcaption>
@@ -106,7 +103,7 @@ other important functionality and is out of the way of the user's journey
 through your application.
 
 <figure class="w-figure">
-  <img src="simple-button_desktop.png" alt="Custom install button">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/kv0x9hxZ0TLVaIiP4Bqx.png", alt="Custom install button", width="800", height="448" %}
   <figcaption class="w-figcaption">
     Simple install button
   </figcaption>
@@ -122,7 +119,7 @@ menu. Headers may be `position:fixed` or not depending on your site's
 functionality and user needs.
 
 <figure class="w-figure">
-  <img src="elevated-install_desktop.png" alt="Custom install button in header">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GPJdkXcpNLR30r2zo7RR.png", alt="Custom install button in header", width="800", height="448" %}
   <figcaption class="w-figcaption">
     Custom install button in header
   </figcaption>
@@ -135,7 +132,7 @@ so make sure your installation call to action is appropriately sized, of greater
 importance than other possible header content, and unintrusive.
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="elevated-install_mobile.png" alt="Custom install button in header">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/L01AoSoy7LNk1ttMMax0.png", alt="Custom install button in header", width="800", height="430" %}
   <figcaption class="w-figcaption">
     Custom install button in header
   </figcaption>
@@ -157,7 +154,7 @@ Make sure you:
 ### Navigation menu {: #nav }
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="nav.png" alt="Custom install button in nav menu">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aT7NHi8lbsZW8TOm3Gaw.png", alt="Custom install button in nav menu", width="800", height="1117" %}
   <figcaption class="w-figcaption">
     Add an install button/promotion in a slide out navigation menu.
   </figcaption>
@@ -182,7 +179,7 @@ so this is one place where it is appropriate to go large with promoting
 the benefits of installing your PWA.
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="landing.png" alt="Custom install prompt on landing page">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7q09M12HFxgIiWhKPGma.png", alt="Custom install prompt on landing page", width="800", height="1117" %}
   <figcaption class="w-figcaption">
     Custom install prompt on landing page
   </figcaption>
@@ -206,7 +203,7 @@ Make sure you:
 ### Install banner {: #banner }
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="banner.png" alt="Custom install banner at top of page.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7fLCQQhdk2OzrQD3Xh4E.png", alt="Custom install banner at top of page.", width="800", height="1000" %}
   <figcaption class="w-figcaption">
     A dismissible banner at the top of the page.
   </figcaption>
@@ -239,7 +236,7 @@ patterns don't interrupt the user flow, and are typically automatically
 dismissed if ignored by the user.
 
 <figure class="w-figure">
-  <img src="temporary-ui_desktop.png" alt="Custom install banner as snackbar.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/6DySYRtyegazEfMcWXQL.png", alt="Custom install banner as snackbar.", width="800", height="448" %}
   <figcaption class="w-figcaption">
     A dismissible snackbar indicating the PWA is installable.
   </figcaption>
@@ -254,7 +251,7 @@ the user before using this pattern, for example, repeat visits, a user sign
 in, or similar conversion event.
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="temporary-ui_mobile.png" alt="Custom install banner as snackbar.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/d8dwdIe1rYSgd0JdCGtt.png", alt="Custom install banner as snackbar.", width="800", height="424" %}
   <figcaption class="w-figcaption">
     A dismissible snackbar indicating the PWA is installable.
   </figcaption>
@@ -279,7 +276,7 @@ your PWA. The user is clearly engaged with your content, and a conversion
 often signals that the user will engage with your services again.
 
 <figure class="w-figure">
-  <img src="after-conversion_desktop.png" alt="Screenshot of install promotion after conversion.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/DrepSPFAm64d5cvTFoXe.png", alt="Screenshot of install promotion after conversion.", width="800", height="448" %}
   <figcaption class="w-figcaption">
     Install promotion after user has completed purchase.
   </figcaption>
@@ -288,7 +285,7 @@ often signals that the user will engage with your services again.
 ### Booking or checkout journey {: #journey }
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="after-conversion_mobile.png" alt="Install promotion after a user journey.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bOYZM2UiWK5itVSpjKWO.png", alt="Install promotion after a user journey.", width="800", height="1419" %}
   <figcaption class="w-figcaption">
     Install promotion after a user journey.
   </figcaption>
@@ -319,7 +316,7 @@ This promotion is a special case of the [journey](#journey) promotional
 pattern where the promotion card can be more prominent.
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="sign-up.png" alt="Custom install button on the sign up page.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/PQXqSqtwRSwyELdJMjtd.png", alt="Custom install button on the sign up page.", width="800", height="1117" %}
   <figcaption class="w-figcaption">
     Custom install button on the sign up page.
   </figcaption>
@@ -354,7 +351,7 @@ An in-feed install promotion appears between news articles or other lists of
 information cards in your PWA.
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="in-feed.png" alt="Install promotion within content feed.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/LS5qSE2vicfjRBBkA47a.png", alt="Install promotion within content feed.", width="800", height="1000" %}
   <figcaption class="w-figcaption">
     Install promotion within content feed.
   </figcaption>

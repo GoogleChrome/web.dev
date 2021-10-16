@@ -12,8 +12,8 @@ authors:
   - bingler
   - rowan_m
 date: 2020-11-20
-hero: schemeful-samesite-hero.jpg
-thumbnail: schemeful-samesite-thumbnail.jpg
+hero: image/admin/UMxBPy0AKAfbzxwgTroV.jpg
+thumbnail: image/admin/3J33n1o98vnkO6fdDFwP.jpg
 alt: Two separate plates of cookies. The plates represent the different
   schemes, HTTP and HTTPS. The cookies represent cookies.
 tags:
@@ -36,7 +36,7 @@ Same-Site](https://mikewest.github.io/cookie-incrementalism/draft-west-cookie-in
 modifies the definition of a (web)site from just the registrable domain to the
 scheme + registrable domain. You can find more details and examples in
 [Understanding "same-site" and
-"same-origin"](https://web.dev/same-site-same-origin/#%22schemeful-same-site%22).
+"same-origin"](/same-site-same-origin/#%22schemeful-same-site%22).
 
 {% Aside 'key-term' %}
 This means that the insecure HTTP version of a site, for example,
@@ -62,7 +62,7 @@ considered a temporary solution in the migration towards full HTTPS.
 
 You can enable these changes for testing in both Chrome and Firefox.
 
-- From Chrome 86, enable `chrome://flags/#schemeful-same-site`. Track progress
+- From Chrome 86, enable `about://flags/#schemeful-same-site`. Track progress
   on the [Chrome Status
   page](https://chromestatus.com/feature/5096179480133632).
 - From Firefox 79, set `network.cookie.sameSite.schemeful` to `true` via
@@ -71,7 +71,7 @@ You can enable these changes for testing in both Chrome and Firefox.
 
 One of the main reasons for the change to `SameSite=Lax` as the default for
 cookies was to protect against [Cross-Site Request Forgery
-(CSRF)](https://developer.mozilla.org/en-US/docs/Glossary/CSRF). However,
+(CSRF)](https://developer.mozilla.org/docs/Glossary/CSRF). However,
 insecure HTTP traffic still presents an opportunity for network attackers to
 tamper with cookies that will then be used on the secure HTTPS version of the
 site. Creating this additional cross-site boundary between schemes provides
@@ -94,10 +94,7 @@ Navigating between cross-scheme versions of a website (for example, linking from
 navigation which means `SameSite=Strict` cookies will be blocked.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="cross-scheme-navigation.png" alt="A cross-scheme navigation
-  triggered by following a link on the insecure HTTP version of a site to the
-  secure HTTPS version. SameSite=Strict cookies blocked, SameSite=Lax and
-  SameSite=None; Secure cookies are allowed.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yDViqKg9eeEeAEiCNqe4.png", alt="A cross-scheme navigation triggered by following a link on the insecure HTTP version of a site to the secure HTTPS version. SameSite=Strict cookies blocked, SameSite=Lax and SameSite=None; Secure cookies are allowed.", width="800", height="342" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Cross-scheme navigation from HTTP to HTTPS.
   </figcaption>
@@ -142,7 +139,7 @@ navigation which means `SameSite=Strict` cookies will be blocked.
 
 {% Aside 'warning' %}
 All major browsers block [active mixed
-content](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content)
+content](https://developer.mozilla.org/docs/Web/Security/Mixed_content)
 such as scripts or iframes. Additionally, browsers including
 [Chrome](https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html)
 and [Firefox](https://groups.google.com/g/mozilla.dev.platform/c/F163Jz32oYY)
@@ -165,10 +162,7 @@ be loaded on a secure page, all cookies will be blocked on these requests as
 third-party or cross-site cookies require `Secure`.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="cross-scheme-subresource.png" alt="A cross-scheme subresource
-  resulting from a resource from the secure HTTPS version of the site being
-  included on the insecure HTTP version. SameSite=Strict and SameSite=Lax
-  cookies blocked, and SameSite=None; Secure cookies are allowed.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/GgR6Yln1f9JGkt04exRC.png", alt="A cross-scheme subresource resulting from a resource from the secure HTTPS version of the site being included on the insecure HTTP version. SameSite=Strict and SameSite=Lax cookies blocked, and SameSite=None; Secure cookies are allowed.", width="800", height="285" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     An HTTP page including a cross-scheme subresource via HTTPS.
   </figcaption>
@@ -229,11 +223,7 @@ entering any sensitive information into the form.
 {% endAside %}
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="cross-scheme-form-submission.png" alt="A cross-scheme form
-  submission resulting from a form on the insecure HTTP version of the site
-  being submitted to the secure HTTPS version. SameSite=Strict and
-  SameSite=Lax cookies blocked, and SameSite=None; Secure cookies are
-  allowed.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ud9LkDeGJUWHObifD718.png", alt="A cross-scheme form submission resulting from a form on the insecure HTTP version of the site being submitted to the secure HTTPS version. SameSite=Strict and SameSite=Lax cookies blocked, and SameSite=None; Secure cookies are allowed.", width="800", height="376" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Cross-scheme form submission from HTTP to HTTPS.
   </figcaption>
@@ -320,7 +310,7 @@ It's possible that some of your links and subresources still point to insecure
 URLs.
 
 One way to fix this issue is to use [HTTP
-Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
+Strict-Transport-Security](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security)
 (HSTS) and the `includeSubDomain` directive. With HSTS + `includeSubDomain` even
 if one of your pages accidentally includes an insecure link the browser will
 automatically use the secure version instead.

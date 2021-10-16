@@ -2,7 +2,7 @@
 layout: post
 title: Lazy-loading images
 authors:
-  - jeremywagner
+  - jlwagner
   - rachelandrew
 date: 2019-08-16
 updated: 2020-06-09
@@ -24,11 +24,11 @@ The most common lazy-loading candidates are images as used in `<img>` elements.
 With inline images we have three options for lazy-loading,
 which may be used in combination for the best compatibility across browsers:
 
-- [Using browser-level lazy-loading](#images-inline-native)
+- [Using browser-level lazy-loading](#images-inline-browser-level)
 - [Using Intersection Observer](#images-inline-intersection-observer)
 - [Using scroll and resize event handlers](#images-inline-event-handlers)
 
-### Using browser-level lazy-loading {: #images-inline-native }
+### Using browser-level lazy-loading {: #images-inline-browser-level }
 
 Chrome and Firefox both support lazy-loading with the `loading` attribute.
 This attribute can be added to `<img>` elements, and also to `<iframe>` elements.
@@ -42,7 +42,7 @@ and to fetch other images when the user scrolls near them.
 {% endAside %}
 
 See the `loading` field of MDN's
-[browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Browser_compatibility)
+[browser compatibility](https://developer.mozilla.org/docs/Web/HTML/Element/img#Browser_compatibility)
 table for details of browser support.
 If the browser does not support lazy-loading then the attribute will be ignored
 and images will load immediately, as normal.
@@ -52,7 +52,7 @@ and save users loading images that they may not ever scroll to.
 If you have large numbers of images and want to be sure that users of browsers without support for lazy-loading benefit
 you will need to combine this with one of the methods explained next.
 
-To learn more, check out [Browser-level lazy-loading for the web](/native-lazy-loading/).
+To learn more, check out [Browser-level lazy-loading for the web](/browser-level-image-lazy-loading/).
 
 ### Using Intersection Observer {: #images-inline-intersection-observer }
 
@@ -143,12 +143,12 @@ requirements may be such that browser compatibility is critical. [You _can_
 polyfill Intersection Observer
 support](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) (and
 this would be easiest), but you could also fall back to code using
-[`scroll`](https://developer.mozilla.org/en-US/docs/Web/Events/scroll),
-[`resize`](https://developer.mozilla.org/en-US/docs/Web/Events/resize), and
+[`scroll`](https://developer.mozilla.org/docs/Web/Events/scroll),
+[`resize`](https://developer.mozilla.org/docs/Web/Events/resize), and
 possibly
-[`orientationchange`](https://developer.mozilla.org/en-US/docs/Web/Events/orientationchange)
+[`orientationchange`](https://developer.mozilla.org/docs/Web/Events/orientationchange)
 event handlers in concert with
-[`getBoundingClientRect`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+[`getBoundingClientRect`](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect)
 to determine whether an element is in the viewport.
 
 Assuming the same markup pattern from before,
@@ -182,7 +182,7 @@ requirement.
 
 While `<img>` tags are the most common way of using images on web pages, images
 can also be invoked via the CSS
-[`background-image`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
+[`background-image`](https://developer.mozilla.org/docs/Web/CSS/background-image)
 property (and other properties). Browser-level lazy-loading does not apply to CSS background images,
 so you need to consider other methods if you have background images to lazy-load.
 
@@ -274,7 +274,11 @@ into `src` and/or `srcset` attributes, respectively. It uses Intersection
 Observer (which you can polyfill), and can be extended with [a number of
 plugins](https://github.com/aFarkas/lazysizes#available-plugins-in-this-repo) to
 do things like lazy-load video. [Find out more about using lazysizes](/use-lazysizes-to-lazyload-images/).
-- [lozad.js](https://github.com/ApoorvSaxena/lozad.js) is a super lightweight
+- [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) is a
+  lightweight option for lazy-loading images, background images, videos, iframes,
+  and scripts. It leverages Intersection Observer, supports responsive images, and
+  enables browser-level lazy loading.
+- [lozad.js](https://github.com/ApoorvSaxena/lozad.js) is a another lightweight
 option that uses Intersection Observer only. As such, it's highly performant,
 but will need to be polyfilled before you can use it on older browsers.
 - [yall.js](https://github.com/malchata/yall.js) is a library that uses

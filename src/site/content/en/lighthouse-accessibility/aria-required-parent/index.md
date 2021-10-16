@@ -26,7 +26,7 @@ rather than the intended control.
 flags ARIA child roles that aren't contained by the required parent:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="aria-required-parent.png" alt="Lighthouse audit showing ARIA role missing required parent role">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ENzj3jYUVvSR3n23aC6M.png", alt="Lighthouse audit showing ARIA role missing required parent role", width="800", height="206", class="w-screenshot" %}
 </figure>
 
 Lighthouse uses the

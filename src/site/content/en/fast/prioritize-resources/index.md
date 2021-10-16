@@ -15,8 +15,7 @@ feedback:
 
 Not every byte that is sent down the wire to the browser has the same degree of importance,
 and the browser knows this.
-Browsers have heuristics that attempt to make a best-guess at the most important resources to load first
-— such as CSS before scripts and images.
+Browsers have heuristics that attempt to make a best-guess at the most important resources to load first—such as CSS before scripts and images.
 
 That said, as with any heuristic, it doesn't always work out;
 the browser might make the wrong decision,
@@ -39,8 +38,7 @@ Here's what it looks like:
 
 
 <figure class="w-figure">
-    <img src="./res-prio-priorities.png" class="w-screenshot"
-    alt="An example of how priorities are displayed in Chrome Developer Tools">
+    {% Img src="image/admin/oqcdfVAVj2RajVWfs6ap.png", alt="An example of how priorities are displayed in Chrome Developer Tools", width="800", height="249", class="w-screenshot" %}
   <figcaption>
     The <b>Priority</b> column, which is hidden by default (see
     <a href="https://developers.google.com/web/tools/chrome-devtools/network/reference#columns">

@@ -33,8 +33,7 @@ playback while in another app. Platform-specific applications feel like _part_ o
 device they run on.
 
 <figure class="w-figure">
-  <img src="./capabilities-reach.svg" style="max-width: 100%;"
-    alt="A graph illustrating the relative capabilites and reach of platform-specific apps, with high capabilities, web apps, with high reach, and progressive web apps, which have both high capabilities and high reach."/>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1DKtUFjXLJbiiruKA9P1.svg", alt="A graph illustrating the relative capabilites and reach of platform-specific apps, with high capabilities, web apps, with high reach, and progressive web apps, which have both high capabilities and high reach.", width="370", height="367" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Capabilities vs. reach of platform-specific apps, web app, and progressive web apps.
   </figcaption>
@@ -59,7 +58,7 @@ experience that feels like a platform-specific application.
 The web is quite capable in its own right today. For example, you can build a hyper-local
 video chat app using WebRTC, geolocation, and push notifications. You can make
 that app installable and take those conversations virtual with WebGL and WebVR.
-With the introduction of Web Assembly, developers can tap into other ecosystems,
+With the introduction of WebAssembly, developers can tap into other ecosystems,
 like C, C++, and Rust, and bring decades of work and capabilities to the web
 too. [Squoosh.app](https://squoosh.app/), for instance, leverages this for its
 advanced image compression.
@@ -71,7 +70,7 @@ file system access, media controls, app badging, and full clipboard support. All
 of these capabilities are built with the web's secure, user-centric permission
 model, ensuring that going to a website is never a scary proposition for users.
 
-Between modern APIs, Web Assembly, and new and upcoming APIs, web applications
+Between modern APIs, WebAssembly, and new and upcoming APIs, web applications
 are more capable than ever, and those capabilities are only growing.
 
 ### Reliable

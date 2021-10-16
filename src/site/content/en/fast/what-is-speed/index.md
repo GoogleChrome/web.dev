@@ -18,11 +18,11 @@ It's common to hear people talk in terms of their website loading in x.xx second
 
 Rather than measuring load with just one metric, you should time each moment during the experience that affects the user's perception of load speed. When a user navigates to a web page, they're typically looking for certain types of feedback:
 
-<img src="./speed-feedback.png" alt="Image of feedback user is typically looking for">
+{% Img src="image/admin/NGX9WC2BXTRY6FP5TTGl.png", alt="Image of feedback user is typically looking for", width="800", height="185" %}
 
 Traditional performance metrics like load time or DOMContentLoaded time are unreliable, since their occurrence may or may not correspond with these feedback milestones. So, [additional metrics](/lighthouse-performance/#metrics) have emerged that could be used to understand when a page delivers this feedback to its users:
 
-<img src="./speed-metrics.png" alt="Image of speed metrics">
+{% Img src="image/admin/tz1aubGGvefskjcPfjBQ.png", alt="Image of speed metrics", width="800", height="654" %}
 
 It's important to understand the different insights offered by these metrics, then establish the ones that are important to your user experience. Some brands even define additional custom metrics specific to the expectations people have of their service. In the case of Pinterest, users want to see images, so they defined a custom metric, [Pinner Wait Time](https://www.youtube.com/watch?v=Xryhxi45Q5M), that combines Time to Interactive and Above the Fold Image load times.
 

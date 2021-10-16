@@ -1,13 +1,13 @@
 {
   "slug": "reliable",
-  "cover": "/images/collections/reliable.svg",
-  "title": "Network reliability",
+  "cover": "image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/9K5gvnLRtD0yyiJM2r0c.svg",
+  "title": "i18n.paths.reliable.title",
   "updated": "July 17, 2020",
-  "description": "See consistent, reliable performance regardless of network quality.",
-  "overview": "The modern web gives you access to a diverse global audience with a range of devices and network connections. In this section you'll learn how to provide a consistently reliable experience to all your users, wherever and however they access the internet.",
+  "description": "i18n.paths.reliable.description",
+  "overview": "i18n.paths.reliable.overview",
   "topics": [
     {
-      "title": "How to measure network reliability",
+      "title": "i18n.paths.reliable.topics.how_to_measure_network_reliability",
       "pathItems": [
         "network-connections-unreliable",
         "identify-resources-via-network-panel",
@@ -15,7 +15,7 @@
       ]
     },
     {
-      "title": "The options in your caching toolbox",
+      "title": "i18n.paths.reliable.topics.the_options_in_your_caching_toolbox",
       "pathItems": [
         "http-cache",
         "love-your-cache",
@@ -26,7 +26,7 @@
       ]
     },
     {
-      "title": "How caching strategies work",
+      "title": "i18n.paths.reliable.topics.how_caching_strategies_work",
       "pathItems": [
         "offline-cookbook",
         "precache-with-workbox",
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "title": "Advanced patterns",
+      "title": "i18n.paths.reliable.topics.advanced_patterns",
       "pathItems": [
         "resilient-search-experiences",
         "instant-navigation-experiences",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "title": "Communicate with workers",
+      "title": "i18n.paths.reliable.topics.communicate_with_workers",
       "pathItems": [
         "workers-overview",
         "imperative-caching-guide",

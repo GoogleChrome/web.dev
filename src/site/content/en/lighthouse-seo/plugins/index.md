@@ -22,7 +22,7 @@ Also, most mobile devices don't support plugins, which
 that use plugins:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot" src="plugins.png" alt="Lighthouse audit showing document uses plugins">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/lL85pZVbdytWgeGIL8wB.png", alt="Lighthouse audit showing document uses plugins", width="800", height="163", class="w-screenshot w-screenshot" %}
 </figure>
 
 Lighthouse checks the page for elements that commonly represent plugins:
@@ -51,12 +51,12 @@ known to represent plugin content:
 ## Don't use plugins to display your content
 
 To convert plugin-based content to HTML, refer to guidance for that
-plugin. For example, MDN explains [how to convert Flash video to HTML5 video](https://developer.mozilla.org/en-US/docs/Plugins/Flash_to_HTML5/Video).
+plugin. For example, MDN explains [how to convert Flash video to HTML5 video](https://developer.mozilla.org/docs/Plugins/Flash_to_HTML5/Video).
 
 ## Resources
 
 - [Source code for **Document uses plugins** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/plugins.js)
 - [Unplayable content on mobile devices](https://developers.google.com/search/mobile-sites/mobile-seo/common-mistakes#unplayable-content)
-- [Flash video to HTML5 video](https://developer.mozilla.org/en-US/docs/Plugins/Flash_to_HTML5/Video)
+- [Flash video to HTML5 video](https://developer.mozilla.org/docs/Plugins/Flash_to_HTML5/Video)
 
 {% include 'content/lighthouse-seo/scoring.njk' %}

@@ -24,13 +24,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*", "types/**/*"],
-  "exclude": [
-    ".github",
-    ".vscode",
-    "dist",
-    "node_modules",
-    "test",
-    "./*.js"
-  ]
+  "include": ["src/**/*", "types/**/*", "*.js"],
+  "exclude": [".github", ".vscode", "dist", "node_modules", "test"]
 }

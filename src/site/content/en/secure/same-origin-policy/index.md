@@ -60,7 +60,7 @@ cross-origin resource is blocked.
     <tr>
       <td>iframes</td>
       <td>
-        Cross-origin embedding is usually permitted (depending on the <code><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options" rel="noopener">X-Frame-Options</a></code> directive), but cross-origin reading (such as using JavaScript to access a document in an iframe) isn't.
+        Cross-origin embedding is usually permitted (depending on the <code><a href="https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options" rel="noopener">X-Frame-Options</a></code> directive), but cross-origin reading (such as using JavaScript to access a document in an iframe) isn't.
       </td>
     </tr>
     <tr>
@@ -101,12 +101,12 @@ cross-origin resource is blocked.
 [See how the same-origin policy works when accessing data inside an iframe](/codelab-same-origin-iframe).
 {% endAside %}
 
-{% Assessment page, 'self-assessment' %}
+{% Assessment 'self-assessment' %}
 
 ### How to prevent Clickjacking
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="./clickjacking.png" alt="clickjacking">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/jFXSbDjBonhdGD65rCc1.png", alt="clickjacking", width="800", height="408" %}
   <figcaption class="w-figcaption">
     Figure: Clickjacking mechanism illustrated in 3 separate layers (base site,
     iframed site, transparent button).
@@ -120,11 +120,11 @@ attackers.
 
 To block other sites from embedding your site in an iframe, add a content
 security policy with [`frame-ancestors`
-directive](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors)
+directive](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors)
 to the HTTP headers.
 
 Alternatively, you can add `X-Frame-Options` to the HTTP headers see
-[MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options)
+[MDN](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options)
 for list of options.
 
 ## Wrap up

@@ -1,0 +1,31 @@
+@import '../settings/colors';
+@import '../settings/dimensions';
+@import '../settings/global';
+@import '../tools/breakpoints';
+@import '../tools/mixins';
+
+// =============================================================================
+// HEADER
+//
+// This styles the header. The header Web Component is just a holder for HTML
+// that's fixed to the top of the page.
+//
+// =============================================================================
+
+web-header {
+  align-items: center;
+  background: $WHITE;
+  box-shadow: 0 1px 2px 0 rgba($GREY_800, .3), 0 2px 6px 2px rgba($GREY_800, .15);
+  color: $PRIMARY_TEXT_COLOR;
+  contain: layout;
+  display: flex;
+  font-size: 14px;
+  height: $WEB_HEADER_HEIGHT;
+  padding: 0 24px;
+  width: 100%;
+  z-index: 200;
+
+  @media print {
+    display: none;
+  }
+}

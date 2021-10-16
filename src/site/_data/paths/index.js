@@ -14,13 +14,17 @@ const metrics = require('./metrics.json');
 const notifications = require('./notifications.json');
 const payments = require('./payments.json');
 const progressiveWebApps = require('./progressive-web-apps.json');
+const miniApps = require('./mini-apps.json');
 const react = require('./react.json');
 const reliable = require('./reliable.json');
 const secure = require('./secure.json');
+const animations = require('./animations.json');
+const identity = require('./identity.json');
 
 module.exports = {
   accessible,
   angular,
+  animations,
   devices,
   discoverable,
   fast,
@@ -30,6 +34,7 @@ module.exports = {
   'lighthouse-performance': lighthousePerformance,
   'lighthouse-pwa': lighthousePwa,
   'lighthouse-seo': lighthouseSeo,
+  identity,
   media,
   metrics,
   notifications,
@@ -38,4 +43,5 @@ module.exports = {
   react,
   reliable,
   secure,
+  'mini-apps': miniApps,
 };

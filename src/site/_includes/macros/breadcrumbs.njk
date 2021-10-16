@@ -1,0 +1,49 @@
+{#
+  @typedef {Array.<string>} BreadcrumbLink - 2-el array with a title and
+    an url for a breadcrumb link.
+#}
+
+{#
+  Displays breadcrumbs element.
+  @param {Array.<BreadcrumbLink>} crumbs
+#}
+{% macro breadcrumbs(crumbs) %}
+
+<ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      {{site.titleVariation}}
+    </a>
+  </li>
+
+  {% for crumb in crumbs %}
+    <svg
+      class="w-breadcrumbs__icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      aria-hidden="true"
+    >
+      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+    </svg>
+    <li class="w-breadcrumbs__crumb">
+      <a
+        class="w-breadcrumbs__link gc-analytics-event"
+        data-category="web.dev"
+        data-label="post, path breadcrumb"
+        data-action="click"
+        href="{{crumb[1]}}"
+      >
+        {{crumb[0]}}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+{% endmacro %}

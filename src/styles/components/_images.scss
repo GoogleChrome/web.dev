@@ -63,6 +63,11 @@
 .w-figure--screenshot > img {
   background-color: $GREY_50;
   padding: 16px;
+
+  // This ensures image size fits to content width with padding(16 * 2)
+  // while specifying `box-sizing: content-box;` in .w-screenshot
+  max-width: calc(100% - 32px);
+  margin-left: 0;
 }
 
 .w-screenshot + .w-screenshot,

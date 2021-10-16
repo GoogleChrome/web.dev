@@ -6,7 +6,7 @@ authors:
   - joemedley
 date: 2016-10-07
 updated: 2020-05-26
-hero: hero.jpg
+hero: image/admin/WJ69aw9UMPwsc7ShYvif.jpg
 alt: Growing plants in boxes.
 description: |
   `ResizeObserver` notifies you  when an element’s content rectangle changes
@@ -66,16 +66,15 @@ ro.observe(someElement);
 ### What is being reported?
 
 Generally, a
-[`ResizeObserverEntry`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry)
+[`ResizeObserverEntry`](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry)
 reports the content box of an element through a property called
 `contentRect`, which returns a
-[`DOMRectReadOnly`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly)
+[`DOMRectReadOnly`](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly)
 object. The content box is the box in which content can be placed. It is
 the border box minus the padding.
 
 <figure class="w-figure">
-  <img src="./contentbox.png" 
-       alt="A diagram of the CSS box model.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/CKxpe8LNq2CMPFdtLtVK.png", alt="A diagram of the CSS box model.", width="727", height="562" %}
 </figure>
 
 It's important to note that while `ResizeObserver` *reports* both the dimensions
@@ -99,7 +98,7 @@ they can support elements that have multiple fragments, which occur in
 multi-column scenarios. For now, these arrays will only contain one element.
 
 Platform support for these properties is limited, but [Firefox already
-supports](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry#Browser_compatibility)
+supports](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry#Browser_compatibility)
 the first two.
 
 ### When is it being reported?

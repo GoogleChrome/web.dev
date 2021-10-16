@@ -2,7 +2,7 @@
 title: Faster web navigation with predictive prefetching
 subhead: Learn about predictive prefetching and how Guess.js implements it.
 date: 2019-07-08
-hero: predictive-prefetching-header.png
+hero: image/admin/1jRaJzDtk6w4vYxbqDn3.png
 alt: Guess.js logo
 authors:
   - mgechev
@@ -23,7 +23,7 @@ In my [Faster Web Navigation with Predictive Prefetching](https://www.youtube.co
 
 Web apps are slow, and JavaScript is among the most expensive resources that you ship. Waiting for a slow web app to load can frustrate your users and decrease conversions.
 
-![Slow web apps are stressful.](guess-0.png)
+{% Img src="image/admin/Ex1RhD84fTzpNwYM6Ocy.png", alt="Slow web apps are stressful.", width="800", height="438" %}
 
 Lazy-loading is an efficient technique to reduce the bytes of JavaScript that you're transferring over the wire. You can use several techniques to lazy-load JavaScript, including:
 
@@ -43,7 +43,7 @@ Prefetching allows the browser to download and cache resources that the user is 
 
 Predictive prefetching solves these problems by using a report of users' navigational patterns to determine what assets to prefetch.
 
-![Prefetching example](guess-1.png)
+{% Img src="image/admin/vkK5KhZKhSo6bDIBuVrn.png", alt="Prefetching example", width="800", height="517" %}
 
 ## Predictive prefetching with Guess.js
 

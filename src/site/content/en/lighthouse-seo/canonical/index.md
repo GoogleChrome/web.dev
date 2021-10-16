@@ -36,7 +36,7 @@ Using canonical links has many advantages:
 with an invalid canonical link:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot" src="canonical.png" alt="Lighthouse audit showing document with invalid canonical link">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/TLhOThFgDllifsEEeOH3.png", alt="Lighthouse audit showing document with invalid canonical link", width="800", height="76", class="w-screenshot w-screenshot" %}
 </figure>
 
 A page fails this audit if any of the following conditions are met:

@@ -157,8 +157,8 @@ class SparklineChart extends BaseElement {
 
     const PADDING = 3;
 
-    const scoreHoverRectWidth = this.scoreElement_.getBoundingClientRect()
-      .width;
+    const scoreHoverRectWidth =
+      this.scoreElement_.getBoundingClientRect().width;
     const x = Math.max(
       PADDING,
       Math.min(
@@ -574,9 +574,8 @@ class SparklineChart extends BaseElement {
     this.cursorElement_ = this.renderRoot.querySelector('.sl-cursor');
     this.scoreElement_ = this.renderRoot.querySelector('.sl-caption');
     this.announcerElement_ = this.querySelector('.sr-announcer');
-    this.scoreValueText_ = this.scoreElement_.querySelector(
-      '.sl-caption--value',
-    );
+    this.scoreValueText_ =
+      this.scoreElement_.querySelector('.sl-caption--value');
     this.scoreDateText_ = this.scoreElement_.querySelector('.sl-caption--date');
   }
 }

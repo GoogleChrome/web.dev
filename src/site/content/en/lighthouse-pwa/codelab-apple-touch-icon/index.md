@@ -41,8 +41,7 @@ In the **PWA Optimized** section, Lighthouse reports that the example app [doesn
 Apple touch icon](/apple-touch-icon).
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="lighthouse.png"
-       alt="Does not provide a valid apple-touch-icon">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/MTeobnXovn2UGJW1lhQ9.png", alt="Does not provide a valid apple-touch-icon", width="800", height="283", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     The <b>Does not provide a valid apple-touch-icon</b> audit
   </figcaption>
@@ -56,7 +55,7 @@ the example app to your iOS device's home screen when an Apple touch icon hasn't
 1. Open Safari for iOS.
 1. Open the URL of your example app. This is the URL like `https://example.glitch.me` that you
    noted earlier.
-1. Tap **Share** <img style="height:1.2em;vertical-align:top;" src="share.png"/>  >
+1. Tap **Share** {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/79A8XsdBaHeLGY5Wdm1J.png", alt="Apple Share Button", width="46", height="60", style="height:1.2em;width:0.92em;vertical-align:top;" %}  >
    **Add to Home Screen**. You'll probably have to swipe left to see this option.
 1. Tap **Add**.
 
@@ -64,8 +63,7 @@ Because the site hasn't specified an Apple touch icon, iOS just generates an ico
 from the page's content.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="before.png"
-       alt="An auto-generated home screen icon.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mjkYYf7Fjpm4EwzMJ7Xc.png", alt="An auto-generated home screen icon.", width="640", height="1136", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     An auto-generated home screen icon.
   </figcaption>
@@ -92,8 +90,7 @@ from the page's content.
   **Does not provide a valid `apple-touch-icon`** audit now passes.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="after.png"
-       alt="The Apple touch icon.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Z8nauimUFUDPY8HJDGER.png", alt="The Apple touch icon.", width="640", height="1136", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     The Apple touch icon.
   </figcaption>

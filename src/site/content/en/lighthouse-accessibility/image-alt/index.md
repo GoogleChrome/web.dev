@@ -18,7 +18,7 @@ Decorative elements can be ignored with an empty alt attribute.
 Lighthouse flags `<img>` elements that don't have `alt` attributes:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="image-alt.png" alt="Lighthouse audit showing <img> elements do not have alt attributes">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/hb8ypHK5xwmtUZwdxyQG.png", alt="Lighthouse audit showing <img> elements do not have alt attributes", width="800", height="206", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
@@ -49,8 +49,8 @@ give it an empty `alt=""` attribute to remove it from the accessibility tree:
 You can also use ARIA labels to describe your images, for example,
 `<img aria-label="Audits set-up in Chrome DevTools" src="...">`
 See also
-[Using the aria-label attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) and
-[Using the aria-labelledby attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute).
+[Using the aria-label attribute](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) and
+[Using the aria-labelledby attribute](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute).
 {% endAside %}
 
 ## Tips for writing effective `alt` text

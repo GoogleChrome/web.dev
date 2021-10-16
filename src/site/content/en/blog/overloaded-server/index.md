@@ -5,7 +5,7 @@ subhead: |
 authors:
   - katiehempenius
 date: 2020-03-31
-hero: hero.jpg
+hero: image/admin/5fmiwGShxNngW0sOeKvf.jpg
 description: |
   How to determine a server's bottleneck, quickly fix the bottleneck, improve server performance, and prevent regressions.
 tags:
@@ -69,9 +69,9 @@ Further reading:
 
 Look for ways to more aggressively cache content. If a resource can be served from an HTTP cache (whether it's the browser cache or a CDN), then it doesn't need to be requested from the origin server, which reduces server load.
 
-HTTP headers like [`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control), [`Expires`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires), and [`ETag`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) indicate how a resource should be cached by an HTTP cache. Auditing and fixing these headers will improve caching.
+HTTP headers like [`Cache-Control`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control), [`Expires`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Expires), and [`ETag`](https://developer.mozilla.org/docs/Web/HTTP/Headers/ETag) indicate how a resource should be cached by an HTTP cache. Auditing and fixing these headers will improve caching.
 
-Although [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) can also be used for caching, they utilize a separate [cache](https://developer.mozilla.org/en-US/docs/Web/API/Cache) and are a supplement, rather than a replacement, for proper HTTP caching. For this reason, when handling an overloaded server, efforts should be focused on optimizing HTTP caching.
+Although [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) can also be used for caching, they utilize a separate [cache](https://developer.mozilla.org/docs/Web/API/Cache) and are a supplement, rather than a replacement, for proper HTTP caching. For this reason, when handling an overloaded server, efforts should be focused on optimizing HTTP caching.
 
 #### Diagnose
 
@@ -81,7 +81,7 @@ Run [Lighthouse](https://developers.google.com/web/tools/lighthouse) and look at
 
 #### Fix
 
-Set the [`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) header's `max-age` directive to the appropriate number of seconds.
+Set the [`Cache-Control`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control) header's `max-age` directive to the appropriate number of seconds.
 
 Instructions:
 *   [NGINX](http://nginx.org/en/docs/http/ngx_http_headers_module.html)
@@ -116,9 +116,7 @@ CDNs benefit from scale, so operating your own CDN rarely makes sense. A basic C
 Identify resources that are not being served from a CDN (but should be) by running [WebPageTest](https://webpagetest.org/). On the results page, click on the square above 'Effective use of CDN' to see the list of resources that should be served from a CDN.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="effective-use-of-cdn.jpg"
-       alt="Arrow pointing to the 'Effective use of CDN' button" class="screenshot"
-       width="300">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/awCu4XpFI9IQ1bfhIaWJ.jpg", alt="Arrow pointing to the 'Effective use of CDN' button", width="300", height="109", class="w-screenshot" %}
   <figcaption class="w-figcaption w-figcaption--center">
    WebPageTest results
   </figcaption>
@@ -127,9 +125,9 @@ Identify resources that are not being served from a CDN (but should be) by runni
 #### Fix
 
 If a resource is not being cached by the CDN, check that the following conditions are met:
-*   It has a [`Cache-Control: public`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Cacheability) header.
-*   It has a [`Cache-Control: s-maxage`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Expiration), [`Cache-Control: max-age`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Expiration), or [`Expires`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires) header.
-*   It has a [`Content-Length`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length), [`Content-Range`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Range), or [`Transfer-Encoding header`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Transfer-Encoding).
+*   It has a [`Cache-Control: public`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control#Cacheability) header.
+*   It has a [`Cache-Control: s-maxage`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control#Expiration), [`Cache-Control: max-age`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control#Expiration), or [`Expires`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Expires) header.
+*   It has a [`Content-Length`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Length), [`Content-Range`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Range), or [`Transfer-Encoding header`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Transfer-Encoding).
 
 
 ### Scale compute resources
@@ -138,7 +136,7 @@ The decision to scale compute resources should be made carefully. Although it is
 
 #### Diagnose
 
-A high [Time To First Byte](https://web.dev/time-to-first-byte/) (TTFB) can be a sign that a server is nearing its capacity. You can find this information in the Lighthouse [Reduce server response times (TTFB)](https://developers.google.com/web/tools/lighthouse/audits/ttfb) audit.
+A high [Time To First Byte](/time-to-first-byte/) (TTFB) can be a sign that a server is nearing its capacity. You can find this information in the Lighthouse [Reduce server response times (TTFB)](https://developers.google.com/web/tools/lighthouse/audits/ttfb) audit.
 
 To investigate further, use a monitoring tool to assess CPU usage. If current or anticipated CPU usage exceeds 80% you should consider increasing your servers.
 
@@ -179,9 +177,9 @@ Lighthouse has a variety of audits that flag potential image optimizations. Alte
 Relevant Lighthouse audits:
 *   [Properly size images](https://developers.google.com/web/tools/lighthouse/audits/oversized-images)
 *   [Defer offscreen images](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images)
-*   [Efficiently encode images](https://web.dev/uses-optimized-images/)
+*   [Efficiently encode images](/uses-optimized-images/)
 *   [Serve images in next-gen formats](https://developers.google.com/web/tools/lighthouse/audits/webp)
-*   [Use video formats for animated content](https://web.dev/efficient-animated-content/)
+*   [Use video formats for animated content](/efficient-animated-content/)
 
 Chrome DevTools workflow:
 - [Log network activity](https://developers.google.com/web/tools/chrome-devtools/network#load)
@@ -197,14 +195,14 @@ Focus your time on Identifying large and frequently loaded images and manually o
 Things to keep in mind:
 *   Size: Images should be no larger than necessary.
 *   Compression: Generally speaking, a quality level of 80-85 will have a minimal effect on image quality while yielding a 30-40% reduction in file size.
-*   Format: Use JPEGs for photos rather than PNG; use MP4 for [animated content](https://web.dev/replace-gifs-with-videos/) rather than GIF.
+*   Format: Use JPEGs for photos rather than PNG; use MP4 for [animated content](/replace-gifs-with-videos/) rather than GIF.
 
 *If you have more time…*
 
 Consider setting up an image CDN if images make up a substantial portion of your site. Image CDNs are designed for serving and optimizing images and they will offload image serving from the origin server. Setting up an image CDN is straightforward but requires updating existing image URLs to point at the image CDN.
 
 Further reading:
-*   [Use image CDNs to optimize images](https://web.dev/image-cdns/#optimize-your-images)
+*   [Use image CDNs to optimize images](/image-cdns/#optimize-your-images)
 *   [images.guide](https://images.guide/)
 
 
@@ -214,13 +212,13 @@ Minification removes unnecessary characters from JavaScript and CSS.
 
 #### Diagnose
 
-Use the [Minify CSS](https://developers.google.com/web/tools/lighthouse/audits/minify-css) and [Minify JavaScript](https://web.dev/unminified-javascript/) Lighthouse audits to identify resources that are in need of minification.
+Use the [Minify CSS](https://developers.google.com/web/tools/lighthouse/audits/minify-css) and [Minify JavaScript](/unminified-javascript/) Lighthouse audits to identify resources that are in need of minification.
 
 #### Fix
 
 If you have limited time, focus on minifying your JavaScript. Most sites have more JavaScript than CSS, so this will be more impactful.
-*   [Minify JavaScript](https://web.dev/reduce-network-payloads-using-text-compression/)
-*   [Minify CSS](https://web.dev/minify-css/)
+*   [Minify JavaScript](/reduce-network-payloads-using-text-compression/)
+*   [Minify CSS](/minify-css/)
 
 
 ## Monitor

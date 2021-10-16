@@ -16,6 +16,14 @@ tags:
   - payments
 ---
 
+{% Aside 'warning' %}
+
+Shipping and address support in [the Payment Request API is removed from the
+specification](https://github.com/w3c/payment-request/pull/955) and is no longer
+functional.
+
+{% endAside %}
+
 Web Payments APIs are dedicated payment features built into the browser
 for the first time. With Web Payments, merchant integration with payment apps
 becomes simpler while the customer experience gets streamlined and more secure.
@@ -32,27 +40,19 @@ The process involves 6 steps:
 2. The merchant shows a payment button.
 3. The customer presses the payment button.
 
-    ![A diagram of a cheese shop website with a BobPay (payment app)
-    button.](123.svg)
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/NQIh5tt5wsQFC5yKLCaU.svg", alt="A diagram of a cheese shop website with a BobPay (payment app) button.", width="786", height="298" %}
 
 4. The browser launches the payment app.
 
-    ![A diagram of the cheese shop website with BobPay app launched in a modal.
-    The modal shows shipping options and total cost.](4.svg)
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IHztIcfJKeWDUIkugTkb.svg", alt="A diagram of the cheese shop website with BobPay app launched in a modal. The modal shows shipping options and total cost.", width="671", height="366" %}
 
-5. If the customer changes any details (such as shipping options or their
-   address), the merchant updates the transaction details reflecting the change.
-
-    ![A diagram showing the customer choosing a different shipping option in
-    BobPay app modal. A second diagram showing the merchant updating the total
-    cost displayed in BobPay.](5.svg)
+5. If the customer changes payment method, the merchant updates the transaction
+   details reflecting the change.
 
 6. After the customer confirms the purchase, the merchant validates the payment
    and completes the transaction.
 
-    ![A diagram showing the customer pressing the "Pay" button in BobPay,
-    followed by a diagram of the cheese shop page showing "Payment
-    accepted".](6.svg)
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/9Q6VqimbOxJ3ZXHvB8ry.svg", alt="A diagram showing the customer pressing the \"Pay\" button in BobPay, followed by a diagram of the cheese shop page showing \"Payment accepted\".", width="778", height="708" %}
 
 ## Step 1: The merchant initiates a payment transaction
 
@@ -63,14 +63,6 @@ object. This object includes important information about the transaction:
 
 * Acceptable payment methods and their data to process the transaction.
 * Details, such as the total price (required) and information about the items.
-* Options in which merchants can request shipping information such as a shipping
-  address and a shipping option.
-* Merchants can also request the billing address, the payer's name, email, and
-  phone number.
-* Merchants can also include optional [shipping
-  type](https://developers.google.com/web/fundamentals/payments/merchant-guide/deep-dive-into-payment-request#changing_the_shipping_type)
-  (`shipping`, `delivery`, or `pickup`) in the `PaymentRequest`. The payment app
-  can use that as a hint to display the correct labels in its UI.
 
 ```js
 const request = new PaymentRequest([{
@@ -87,13 +79,6 @@ const request = new PaymentRequest([{
     label: 'Total due',
     amount: { currency: 'USD', value : '22.15' }
   }
-}, {
-  requestShipping: true,
-  requestBillingAddress: true,
-  requestPayerEmail: true,
-  requestPayerPhone: true,
-  requestPayerName: true,
-  shippingType: 'delivery'
 });
 ```
 
@@ -209,21 +194,18 @@ passed to the `PaymentRequest` object in Step 1, which includes the following:
 
 * Payment method data
 * Total price
-* Payment options
 
 The payment app uses the transaction information to label its UI.
 
 ## Step 5: How a merchant can update the transaction details depending on customer's actions
 
 Customers have an option to change the transaction details such as payment
-method and shipping option in the payment app. While the customer makes changes,
-the merchant receives the change events and updates the transaction details.
+method in the payment app. While the customer makes changes, the merchant
+receives the change events and updates the transaction details.
 
 There are four types of events a merchant can receive:
 
 * Payment method change event
-* Shipping address change event
-* Shipping option change event
 * Merchant validation event
 
 ### Payment method change event
@@ -241,61 +223,6 @@ request.addEventListener('paymentmethodchange', e => {
   });
 });
 ```
-
-### Shipping address change event
-
-A payment app can optionally provide the customer's shipping address. This is
-convenient for customers because they don't have to manually enter any details
-into a form and they can store their shipping address in their prefered payment
-apps, rather than on multiple different merchant websites.
-
-If a customer updates their shipping address in a payment app after the
-transaction has been initiated, a shipping address change event will be emitted
-to the merchant. This helps the merchant determine the shipping cost based on
-the new address, update the total price, and return it back to the payment app.
-
-```js
-request.addEventListener('shippingaddresschange', e => {
-  e.updateWith({
-    // Update the details
-  });
-});
-```
-
-If the merchant can't ship to the updated address, they can provide an error
-message by adding an error parameter to the transaction details returned to the
-payment app.
-
-{% Aside %}
-Merchants don't receive customers' full shipping address until they've
-authorized the payment.
-{% endAside %}
-
-### Shipping option change event
-
-A merchant can offer multiple shipping options to the customer and can delegate
-that choice to the payment app. The shipping options are displayed as a list of
-prices and service names the customer can select from. For example:
-
-* Standard shipping - Free
-* Express shipping - $5
-
-When a customer updates the shipping option in a payment app, a shipping option
-change event will be emitted to the merchant. The merchant can then determine
-the shipping cost, update the total price, and return it back to the payment
-app.
-
-```js
-request.addEventListener('shippingoptionchange', e => {
-  e.updateWith({
-    // Update the details
-  });
-});
-```
-
-The merchant can modify the shipping options dynamically based on the customer's
-shipping address as well. This is useful when a merchant wants to offer
-different sets of shipping options for domestic and international customers.
 
 ### Merchant validation event
 
@@ -325,9 +252,6 @@ returns a promise that resolves to a
 The `PaymentResponse` object includes the following information:
 
 * Payment result details
-* Shipping address
-* Shipping option
-* Contact information
 
 At this point, the browser UI may still show a loading indicator meaning that
 the transaction is not completed yet.
@@ -354,7 +278,7 @@ they can either:
 ```js
 async function doPaymentRequest() {
   try {
-    const request = new PaymentRequest(methodData, details, options);
+    const request = new PaymentRequest(methodData, details);
     const response = await request.show();
     await validateResponse(response);
   } catch (err) {

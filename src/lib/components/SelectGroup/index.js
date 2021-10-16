@@ -47,9 +47,7 @@ class SelectGroup extends BaseElement {
         class="web-select-group ${this.prefix}"
         ?columns="${this.columns}"
       >
-        <div class="web-select-group__options-wrapper">
-          ${this.selectors}
-        </div>
+        <div class="web-select-group__options-wrapper">${this.selectors}</div>
       </fieldset>
     `;
   }
@@ -79,9 +77,7 @@ class SelectGroup extends BaseElement {
           value="${i}"
         />
         <span class="web-select-group__selector ${selectorClass}"></span>
-        <span class="web-select-group__option-content">
-          ${content}
-        </span>
+        <span class="web-select-group__option-content">${content}</span>
       </label>
     `;
   }

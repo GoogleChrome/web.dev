@@ -23,7 +23,7 @@ break the role, but it should still be fixed.
 flags mismatches between ARIA roles and `aria-*` attributes:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="aria-allowed-attr.png" alt="Lighthouse audit showing an ARIA list role with an unsupported checked attribute">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/cvvXT1n2vOJrdhotI58T.png", alt="Lighthouse audit showing an ARIA list role with an unsupported checked attribute", width="800", height="206", class="w-screenshot" %}
 </figure>
 
 Lighthouse uses the

@@ -26,12 +26,12 @@ import lang from '../../utils/language';
 class LanguageSelect extends BaseStateElement {
   static get properties() {
     return {
-      currentLanguage: {type: String},
+      current: {type: String},
     };
   }
 
   onStateChanged({currentLanguage}) {
-    this.currentLanguage = currentLanguage;
+    this.current = currentLanguage;
   }
 
   onChange(e) {
@@ -44,27 +44,34 @@ class LanguageSelect extends BaseStateElement {
       return '';
     }
     languageName = languageName.toUpperCase();
-    return this.currentLanguage === language
+    return this.current === language
       ? html`
           <option value="${language}" selected>
             ${languageName} (${language})
           </option>
         `
       : html`
-          <option value="${language}">
-            ${languageName} (${language})
-          </option>
+          <option value="${language}">${languageName} (${language})</option>
         `;
   }
 
   render() {
-    const langList = lang.supportedLanguages;
+    const languageVersions = Array.from(
+      document.querySelectorAll('link[rel="alternate"]'),
+    )
+      .filter((link) => link['hreflang'])
+      .map((link) => link['hreflang']);
+    const currentLang = document.documentElement.lang;
+    const langList = lang.supportedLanguages.filter(
+      (language) =>
+        languageVersions.includes(language) || language === currentLang,
+    );
     return html`
       <div class="w-display-flex">
         <label class="w-visually-hidden" for="preferred-language">
           Choose language
         </label>
-        <select id="preferred-language" @change=${this.onChange}>
+        <select id="preferred-language" @change="${this.onChange}">
           ${langList.map((language) => this.renderOption(language))}
         </select>
       </div>

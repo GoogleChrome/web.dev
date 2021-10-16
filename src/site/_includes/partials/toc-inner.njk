@@ -1,0 +1,13 @@
+{# This is used inline with body contents as the TOC on small screens. #}
+{% if tocContents %}
+  {% from 'macros/icon.njk' import icon with context %}
+
+  <div class="xl:hidden-yes flow-space-size-1">
+    <details data-type="inner" role="navigation" aria-label="{{ 'i18n.toc.on_this_page' | i18n(locale) }}">
+      <summary>
+        {{ 'i18n.toc.on_this_page' | i18n(locale) }}
+      </summary>
+      <div class="toc">{{ tocContents | safe }}</div>
+    </details>
+  </div>
+{% endif %}

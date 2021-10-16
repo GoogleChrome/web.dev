@@ -20,7 +20,7 @@ noindex: true
 Lighthouse flags duplicate IDs found in a page:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="duplicate-id.png" alt="Lighthouse audit showing ID attributes on the page are not unique">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/wB9as7xizO7s5ScR1B0s.png", alt="Lighthouse audit showing ID attributes on the page are not unique", width="800", height="206", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

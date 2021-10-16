@@ -1,0 +1,17 @@
+{
+  "title": "Table of contents",
+  "context": {
+    "label": "In this article",
+    "heading": {
+      "text": "Blibli's PWA generates 10x more revenue per user than their previous mobile website",
+      "url": "#"
+    },
+    "items": [
+      {"text": "Highlighting the opportunity", "url": "#"},
+      {"text": "The approach they used", "url": "#"},
+      {"text": "User flow", "url": "#"},
+      {"text": "Set performance budgets", "url": "#"},
+      {"text": "Overall business results", "url": "#"}
+    ]
+  }
+}

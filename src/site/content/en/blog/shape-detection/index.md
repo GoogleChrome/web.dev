@@ -5,15 +5,14 @@ authors:
   - thomassteiner
 description: The Shape Detection API detects faces, barcodes, and text in images.
 date: 2019-01-07
-updated: 2020-12-14
+updated: 2021-02-23
 tags:
   - blog
   - capabilities
   - origin-trials
-  - shape-detection
+  # - shape-detection
   - progressive-web-apps
-  - webapp
-hero: hero.jpg
+hero: image/admin/pcEIwc0D09iF7BPo3TT1.jpg
 alt: QR code being scanned by a mobile phone
 origin-trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919
@@ -32,7 +31,7 @@ feedback:
 ## What is the Shape Detection API? {: #what }
 
 With APIs like
-[`navigator.mediaDevices.getUserMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
+[`navigator.mediaDevices.getUserMedia`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
 and the Chrome for Android
 [photo picker](https://bugs.chromium.org/p/chromium/issues/detail?id=656015),
 it has become fairly easy to capture images or live video data from device
@@ -133,7 +132,7 @@ of use cases for all three features.
 
 If you want to experiment with the Shape Detection API locally,
 enable the `#enable-experimental-web-platform-features`
-flag in `chrome://flags`.
+flag in `about://flags`.
 
 The interfaces of all three detectors, `FaceDetector`, `BarcodeDetector`, and
 `TextDetector`, are similar. They all provide a single asynchronous method
@@ -159,7 +158,7 @@ overview of the different platforms.
   attempts to call `detect()` will fail with a new
   `SecurityError` [`DOMException`](https://heycam.github.io/webidl/#idl-DOMException).
   If your image origin supports CORS, you can use the
-  [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)
+  [`crossorigin`](https://developer.mozilla.org/docs/Web/HTML/CORS_settings_attributes)
   attribute to request CORS access.
 {% endAside %}
 
@@ -308,7 +307,7 @@ thread. So don't rely on realtime detection, but rather allow for some
 time for the detector to do its work.
 
 If you are a fan of
-[Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API),
+[Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API),
 you'll be happy to know that detectors are exposed there as well.
 Detection results are serializable and can thus be passed from the worker
 to the main app via `postMessage()`. The [demo][demo] shows this in action.
@@ -356,9 +355,10 @@ Planning to use the Shape Detection API on your site? Your public support
 helps us to prioritize features, and shows other browser vendors how
 critical it is to support them.
 
-* Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
-* Send a Tweet to [@ChromiumDev][cr-dev-twitter] with `#shapedetection` and
-  let us know where and how you're using it.
+* Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
+* Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+  [`#ShapeDetection`](https://twitter.com/search?q=%23ShapeDetection&src=typed_query&f=live)
+  and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 

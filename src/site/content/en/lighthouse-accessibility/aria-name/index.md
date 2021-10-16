@@ -28,8 +28,7 @@ flags custom ARIA items whose names
 aren't accessible to assistive technologies:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="aria-toggle-field-name.png"
-    alt="Lighthouse audit showing custom toggle elements without accessible names">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/Dnruhkr4IKtq0Pi9Pgny.png", alt="Lighthouse audit showing custom toggle elements without accessible names", width="800", height="259", class="w-screenshot" %}
 </figure>
 
 There are 7 audits that check for accessible names, each one covers a different
@@ -46,7 +45,7 @@ that have any of the following ARIA roles but don't have accessible names will c
 | `aria-tooltip-name` | `tooltip` |
 | `aria-treeitem-name` | `treeitem` |
 
-{% include 'content/lighthouse-accessibility/use-native.njk' %}
+{% include 'content/lighthouse-accessibility/use-built-in.njk' %}
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
@@ -67,7 +66,7 @@ to assistive technology users:
 Using the [clip pattern](https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/) you can hide the inner text on screen, but still have it announced by assistive technology. This can be especially handy if you translate your pages for localization.
 
 ```html
-<a href="https://web.dev/accessible">Learn more <span class="visually-hidden">about accessibility on web.dev</span></a>
+<a href="/accessible">Learn more <span class="visually-hidden">about accessibility on web.dev</span></a>
 ```
 
 ### Option 2: Add an `aria-label` attribute to the element

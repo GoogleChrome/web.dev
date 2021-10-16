@@ -1,0 +1,90 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% if CSS_ORIGIN === 'next' %}
+  {% include "partials/theme-script.njk" %}
+  {# hashForProd() will cache bust the css in dev with a random string. #}
+  <link rel="stylesheet" href="{{ helpers.hashForProd('/css/next.css') }}">
+{% else %}
+  {% if process.env.ELEVENTY_ENV === 'prod' %}
+    {# CSS will be injected by purify-css transform. #}
+    <!-- __PURGECSS_INJECT -->
+  {% else %}
+    {# hashForProd() will cache bust the css in dev with a random string. #}
+    <link rel="stylesheet" href="{{ helpers.hashForProd('/css/main.css') }}">
+  {% endif %}
+
+  <link rel="preload" as="font" crossorigin href="/fonts/material-icons/regular.woff2">
+{% endif %}
+
+<link rel="preload" as="font" crossorigin href="/fonts/google-sans/regular/latin.woff2">
+<link rel="preload" as="font" crossorigin href="/fonts/google-sans/bold/latin.woff2">
+
+<meta name="theme-color" content="#fff"/>
+
+{% if noindex or draft -%}
+  <meta name="robots" content="noindex" />
+{%- endif %}
+{% if offline %}
+  <meta name="offline" content="true" />
+{%- endif %}
+
+{% Meta locale, page, collections, renderData %}
+
+<link rel="manifest" href="/manifest.webmanifest" />
+{# Include default icon even though we have a manifest #}
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
+
+{# Include the GA object so we can start queuing events. #}
+{% include 'partials/analytics.njk' %}
+
+{% for item in inlineScripts %}
+  {% set inlineScript %}
+    {% includeRaw item %}
+  {% endset %}
+  <script>{{ inlineScript | minifyJs | cspHash | safe }}</script>
+{% endfor %}
+
+{# Sourced scripts cannot be authorized by a CSP hash individually, so we need
+to use an inline script loader for any sourced scripts. #}
+{# This works because the CSP includes the 'strict-dynamic' keyword, allowing
+the children of an authorized script to run. #}
+{% set scriptLoader %}
+function loadScript(url, type) {
+  const s = document.createElement('script');
+  s.src = url;
+  if (type) {
+    s.type = type;
+  }
+  if (type === 'module') {
+    s.async = false; // Preserve load order.
+    const pre = document.createElement('link');
+    pre.rel = 'modulepreload';
+    pre.href = url;
+    document.head.append(pre);
+    // We use DOMContentLoaded as the loader script is running sync, and inserting a module script here doesn't defer. This brings back normal type="module" behavior.
+    window.addEventListener('DOMContentLoaded', () => {
+      document.head.append(s);
+    });
+  } else {
+    document.head.append(s);
+  }
+}
+loadScript('{{ helpers.hashForProd('/js/app.js') }}', 'module');
+{# Add a facility for pages to declare an array of script paths. #}
+{# If no scripts are declared we will use the default page script. #}
+{# default.js loads the basic set of custom elements that all pages need. #}
+{% for item in pageScripts %}
+  loadScript('{{ helpers.hashForProd(item) }}', 'module');
+{% else %}
+  loadScript('{{ helpers.hashForProd('/js/default.js') }}', 'module');
+{% endfor %}
+{# {% if process.env.ELEVENTY_ENV === 'prod' %} #}
+  loadScript('https://www.google-analytics.com/analytics.js', null);
+{# {% endif %} #}
+{% endset %}
+<script>{{ scriptLoader | minifyJs | cspHash | safe }}</script>

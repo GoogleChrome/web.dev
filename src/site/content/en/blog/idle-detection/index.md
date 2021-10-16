@@ -8,23 +8,16 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2020-12-07
+updated: 2021-08-25
 tags:
   - blog
-  - idle-detection
+  # - idle-detection
   - capabilities
-hero: hero.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80
+hero: image/admin/FXoKxeVCmPgEStieWKm2.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80
 alt: Abandoned computer on a bed with someone's leg next to it.
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/551690954352885761
 feedback:
   - api
 ---
-{% Aside %}
-The Idle Detection API is part of the
-[capabilities project](https://developers.google.com/web/updates/capabilities)
-and is currently in development. This post will be updated as the implementation progresses.
-{% endAside %}
 
 ## What is the Idle Detection API? {: #what }
 
@@ -50,30 +43,14 @@ can limit these calculations to moments when the user interacts with their devic
 | Step                                     | Status                   |
 | ---------------------------------------- | ------------------------ |
 | 1. Create explainer                      | [Complete][explainer]    |
-| 2. Create initial draft of specification | Not started              |
+| 2. Create initial draft of specification | [Complete][specification]|
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | Complete                 |
-| 5. Launch                                | Not started              |
+| 4. Origin trial                          | Completed                |
+| 5. **Launch**                            | **Chromium 94**            |
 
 </div>
 
 ## How to use the Idle Detection API {: #use }
-
-### Enabling via chrome://flags
-
-To experiment with the Idle Detection API locally, without an origin trial token, enable the
-`#enable-experimental-web-platform-features` flag in `chrome://flags`.
-
-{% Aside %}
-  An origin trial for this feature ran from Chrome&nbsp;84 to Chrome&nbsp;86.
-  We are still coordinating with our partners to figure out when they will be ready to deploy code
-  to a wider audience using this feature.
-  We will not be enabling the origin trial in Chrome&nbsp;87 and will update this article
-  when a new milestone has been chosen, likely Chrome&nbsp;88.
-  Interested developers can continue to test out the API locally,
-  including the permission changes landed in Chrome&nbsp;87,
-  by flipping the [flag](#enabling-via-chrome:flags).
-{% endAside %}
 
 ### Feature detection
 
@@ -137,7 +114,7 @@ You can finally start the idle detection by calling the
 `IdleDetector`'s `start()` method.
 It takes an object with the desired idle `threshold` in milliseconds
 and an optional `signal` with an
-[`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
+[`AbortSignal`](https://developer.mozilla.org/docs/Web/API/AbortSignal)
 to abort idle detection as parameters.
 
 ```js
@@ -165,8 +142,8 @@ try {
 ```
 
 You can abort the idle detection by calling the
-[`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)'s
-[`abort()`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort)
+[`AbortController`](https://developer.mozilla.org/docs/Web/API/AbortController)'s
+[`abort()`](https://developer.mozilla.org/docs/Web/API/AbortController/abort)
 method.
 
 ```js
@@ -176,14 +153,20 @@ console.log('IdleDetector is stopped.');
 
 ### DevTools support
 
-Starting in Chrome&nbsp;86, you can emulate idle events in Chrome DevTools without actually being idle.
+Starting in Chromium&nbsp;94, you can emulate idle events in DevTools without actually being idle.
 In DevTools, open the **Sensors** tab and look for **Emulate Idle Detector state**.
 You can see the various options in the video below.
 
 <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="./devtools.mp4" type="video/mp4">
-  </video>
+  {% Video
+    src="video/tcFciHGuF3MxnTr1y5ue01OGLBn2/2OEuuTRnBdDoxARFejNN.mp4",
+    controls=true,
+    autoplay=true,
+    loop=true,
+    muted=true,
+    class="w-screenshot",
+    playsinline=true
+  %}
   <figcaption class="w-figcaption">
     Idle Detector state emulation in DevTools.
   </figcaption>
@@ -201,7 +184,7 @@ You can see the Idle Detection API in action with the [Ephemeral Canvas demo][de
 contents after 60 seconds of inactivity. You could imagine this being deployed in a department
 store for kids to doodle on.
 
-![Ephemeral Canvas demo](demo.png)
+{% Img src="image/admin/n0ysuaHUCcrRRf4b7pU0.png", alt="Ephemeral Canvas demo", width="800", height="953" %}
 
 ### Polyfilling
 
@@ -255,13 +238,15 @@ simple instructions for reproducing, and enter `Blink>Input` in the **Components
 Are you planning to use the Idle Detection API? Your public support helps the Chrome team to
 prioritize features and shows other browser vendors how critical it is to support them.
 
-Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
-Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#idledetection` hashtag
-and let us know where and how you're using it.
+- Share how you plan to use it on the [WICG Discourse thread][wicg-discourse].
+- Send a tweet to [@ChromiumDev][cr-dev-twitter] using the hashtag
+  [`#IdleDetection`](https://twitter.com/search?q=%23IdleDetection&src=typed_query&f=live)
+  and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 
 - [Public explainer][explainer]
+- [Draft specification][specification]
 - [Idle Detection API Demo][demo] | [Idle Detection API Demo source][demo-source]
 - [Tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
@@ -280,11 +265,11 @@ The hero image is by [Fernando Hernandez](https://unsplash.com/@_ferh97) on
 [issues]: https://github.com/samuelgoto/idle-detection/issues
 [demo]: https://idle-detection.glitch.me/
 [demo-source]: https://glitch.com/edit/#!/idle-detection
-[explainer]: https://github.com/samuelgoto/idle-detection/blob/master/README.md
+[explainer]: https://github.com/wicg/idle-detection/blob/master/README.md
+[specification]: https://wicg.github.io/idle-detection
 [wicg-discourse]: https://discourse.wicg.io/t/idle-detection-api/2959
 [cr-bug]: https://crbug.com/878979
 [cr-status]: https://chromestatus.com/feature/4590256452009984
 [blink-component]: https://chromestatus.com/features#component%3ABlink%3EInput
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[ot]: https://developers.chrome.com/origintrials/#/view_trial/551690954352885761

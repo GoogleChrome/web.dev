@@ -4,7 +4,7 @@ title: How to provide your own in-app install experience
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2020-06-17
+updated: 2021-05-19
 description: |
   Use the beforeinstallprompt event to provide a custom, seamless, in-app
   install experience for your users.
@@ -23,8 +23,7 @@ In addition to the [browser provided install experience](/promote-install/#brows
 it's possible to provide your own custom install flow, directly within your app.
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="spotify-custom-install.png"
-       alt="Install App button provided in the Spotify PWA">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/SW3unIBfyMRTZNK0DRIw.png", alt="Install App button provided in the Spotify PWA", width="491", height="550" %}
   <figcaption class="w-figcaption">
     "Install App" button provided in the Spotify PWA
   </figcaption>
@@ -54,11 +53,11 @@ in-app install flow:
 
 {% Aside %}
   The `beforeinstallprompt` event, and the `appinstalled` event have been moved
-  from the Web App Manifest spec to their own
+  from the web app manifest spec to their own
   [incubator](https://github.com/WICG/beforeinstallprompt). The Chrome team
   remains committed to supporting them, and has no plans to remove or deprecate
-  support. **web.dev continues to recommend using them to provide a customized
-  install experience.**
+  support. Google's Web DevRel team continues to recommend using them to provide a customized
+  install experience.
 {% endAside %}
 
 ### Listen for the `beforeinstallprompt` event {: #beforeinstallprompt }
@@ -69,6 +68,7 @@ event, and update your user interface to indicate that the user can install
 your PWA. This is highlighted below.
 
 ```js
+// Initialize deferredPrompt for use later to show browser install prompt.
 let deferredPrompt;
 
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -78,6 +78,8 @@ window.addEventListener('beforeinstallprompt', (e) => {
   deferredPrompt = e;
   // Update UI notify the user they can install the PWA
   showInstallPromotion();
+  // Optionally, send analytics event that PWA install promo was shown.
+  console.log(`'beforeinstallprompt' event was fired.`);
 });
 ```
 
@@ -97,19 +99,17 @@ in the `deferredPrompt` variable). It shows the user a modal install dialog,
 asking them to confirm they want to install your PWA.
 
 ```js
-buttonInstall.addEventListener('click', (e) => {
+buttonInstall.addEventListener('click', async () => {
   // Hide the app provided install promotion
-  hideMyInstallPromotion();
+  hideInstallPromotion();
   // Show the install prompt
   deferredPrompt.prompt();
   // Wait for the user to respond to the prompt
-  deferredPrompt.userChoice.then((choiceResult) => {
-    if (choiceResult.outcome === 'accepted') {
-      console.log('User accepted the install prompt');
-    } else {
-      console.log('User dismissed the install prompt');
-    }
-  });
+  const { outcome } = await deferredPrompt.userChoice;
+  // Optionally, send analytics event with outcome of user choice
+  console.log(`User response to the install prompt: ${outcome}`);
+  // We've used the prompt, and can't use it again, throw it away
+  deferredPrompt = null;
 });
 ```
 
@@ -133,9 +133,13 @@ whenever your PWA is installed, no matter what mechanism is used to install
 your PWA.
 
 ```js
-window.addEventListener('appinstalled', (evt) => {
-  // Log install to analytics
-  console.log('INSTALL: Success');
+window.addEventListener('appinstalled', () => {
+  // Hide the app-provided install promotion
+  hideInstallPromotion();
+  // Clear the deferredPrompt so it can be garbage collected
+  deferredPrompt = null;
+  // Optionally, send analytics event to indicate successful install
+  console.log('PWA was installed');
 });
 ```
 
@@ -155,17 +159,15 @@ this yet, so you must check `navigator.standalone`, it returns a boolean
 indicating whether the browser is running in standalone mode.
 
 ```js
-window.addEventListener('DOMContentLoaded', () => {
-  let displayMode = 'browser tab';
-  if (navigator.standalone) {
-    displayMode = 'standalone-ios';
+function getPWADisplayMode() {
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+  if (document.referrer.startsWith('android-app://')) {
+    return 'twa';
+  } else if (navigator.standalone || isStandalone) {
+    return 'standalone';
   }
-  if (window.matchMedia('(display-mode: standalone)').matches) {
-    displayMode = 'standalone';
-  }
-  // Log launch display mode to analytics
-  console.log('DISPLAY_MODE_LAUNCH:', displayMode);
-});
+  return 'browser';
+}
 ```
 
 ### Track when the display mode changes
@@ -174,15 +176,13 @@ To track if the user changes between `standalone`, and `browser tab`, listen for
 changes to the `display-mode` media query.
 
 ```js
-window.addEventListener('DOMContentLoaded', () => {
-  window.matchMedia('(display-mode: standalone)').addListener((evt) => {
-    let displayMode = 'browser tab';
-    if (evt.matches) {
-      displayMode = 'standalone';
-    }
-    // Log display mode change to analytics
-    console.log('DISPLAY_MODE_CHANGED', displayMode);
-  });
+window.matchMedia('(display-mode: standalone)').addEventListener('change', (evt) => {
+  let displayMode = 'browser';
+  if (evt.matches) {
+    displayMode = 'standalone';
+  }
+  // Log display mode change to analytics
+  console.log('DISPLAY_MODE_CHANGED', displayMode);
 });
 ```
 
@@ -201,16 +201,6 @@ PWA, use conditional CSS:
 
 ## Updating your app's icon and name
 
-### Chrome on Android
-
-On Android, when your PWA is launched, Chrome will check the currently
-installed manifest against the live manifest. If an update is required, it
-will be [queued and updated][update-flow] once the device is plugged in and
-connected to Wi-Fi.
-
-### Chrome on Desktop
-
-On Desktop, the manifest is not automatically updated, but this is planned for
-a future update.
-
-[update-flow]: https://developers.google.com/web/fundamentals/integration/webapks#update-webapk
+What if you need to update your app name, or provide new icons?
+Check out [How Chrome handles updates to the web app manifest](/manifest-updates/)
+to see when and how are those changes are reflected in Chrome.

@@ -3,10 +3,6 @@
 $MODAL_CONTENT_PADDING: 1.5rem;
 $MODAL_ANIMATION_DURATION: 150ms;
 
-.web-modal__overflow-hidden {
-  overflow: hidden;
-}
-
 @keyframes fadein {
   0% {
     opacity: 0;
@@ -95,7 +91,7 @@ $MODAL_ANIMATION_DURATION: 150ms;
   }
 
   &[animatable] {
-    animation: $MODAL_ANIMATION_DURATION / 2 linear reverse fadein;
+    animation: $MODAL_ANIMATION_DURATION * 0.5 linear reverse fadein;
   }
 
   &[animatable][open] {
@@ -104,7 +100,7 @@ $MODAL_ANIMATION_DURATION: 150ms;
     .web-modal__container {
       animation:
         $MODAL_ANIMATION_DURATION cubic-bezier(0,0,.2,1) scaleup,
-        $MODAL_ANIMATION_DURATION / 2 linear fadein;
+        $MODAL_ANIMATION_DURATION * 0.5 linear fadein;
     }
   }
 

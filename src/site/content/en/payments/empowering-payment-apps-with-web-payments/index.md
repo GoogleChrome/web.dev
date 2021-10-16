@@ -92,10 +92,6 @@ security.
 * **Standards:** The protocol and data format for exchanging information with
   merchants is standardized and doesn't require deep integration.
 
-* **Dynamic price updates:** Merchants can dynamically change the shipping cost
-  based on the shipping address selected in the payment app, without deep
-  integration.
-
 ###  Stricter security
 
 * [Sideloading](https://en.wikipedia.org/wiki/Sideloading) prevention when
@@ -164,7 +160,7 @@ Here's how they compare to Web Payments:
       <td>✔</td>
     </tr>
     <tr>
-      <td>Native app integration</td>
+      <td>Platform-specific app integration</td>
       <td>✔</td>
       <td></td>
       <td></td>

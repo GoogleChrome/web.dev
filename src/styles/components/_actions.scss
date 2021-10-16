@@ -119,7 +119,7 @@ $W_FAB_LARGE_RADIUS: 28px;
 //------------------------------------------------------------------------------
 
 .w-actions__fab--share::before {
-  background-image: url('../images/icons/share_white.svg');
+  background-image: url('/images/icons/share_white.svg');
 }
 
 //------------------------------------------------------------------------------
@@ -140,7 +140,7 @@ $W_FAB_LARGE_RADIUS: 28px;
 }
 
 .w-actions__fab--subscribe::before {
-  background-image: url('../images/icons/subscribe.svg');
+  background-image: url('/images/icons/subscribe.svg');
 }
 
 .w-actions__fab--subscribe:hover::after {

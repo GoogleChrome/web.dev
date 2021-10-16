@@ -13,7 +13,7 @@ The Opportunities section of your Lighthouse report
 flags the third level of requests in your critical request chain as preload candidates:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="uses-rel-preload.png" alt="A screenshot of the Lighthouse Preload key requests audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/fvwBQLvwfogd6ukq4vTZ.png", alt="A screenshot of the Lighthouse Preload key requests audit", width="800", height="214", class="w-screenshot" %}
 </figure>
 
 ## How Lighthouse flags determines preload candidates
@@ -41,9 +41,7 @@ the potential savings for each resource is 200ms since `app.js` is no longer a b
 Preloading requests can make your pages load faster.
 
 <figure>
-  <img src="before.png"
-       alt="Without preload links, styles.css and ui.js are requested only after
-            app.js has been downloaded, parsed, and executed."/>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/OiT1gArpZxNliikhBgx7.png", alt="Without preload links, styles.css and ui.js are requested only after app.js has been downloaded, parsed, and executed.", width="800", height="486" %}
   <figcaption>
     Without preload links, <code>styles.css</code> and
     <code>ui.js</code> are requested only after <code>app.js</code> has been downloaded,
@@ -71,9 +69,7 @@ as soon as possible.
 ```
 
 <figure>
-  <img src="after.png"
-       alt="With preload links, styles.css and ui.js are requested at the same time
-            as app.js."/>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/tJLJXH2qXcrDBUfsSAK5.png", alt="With preload links, styles.css and ui.js are requested at the same time as app.js.", width="800", height="478" %}
   <figcaption>
     With preload links, <code>styles.css</code> and
     <code>ui.js</code> are requested at the same time as <code>app.js</code>.
@@ -86,13 +82,25 @@ for more guidance.
 ### Browser compatibility
 
 As of June 2020 preloading is supported in Chromium-based browsers. See
-[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#Browser_compatibility)
+[Browser compatibility](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility)
 for updates.
 
 ### Build tool support for preloading {: #tools }
 
 See [Tooling.Report's Preloading Assets](https://bundlers.tooling.report/non-js-resources/html/preload-assets/?utm_source=web.dev&utm_campaign=lighthouse&utm_medium=uses-rel-preload)
 page.
+
+## Stack-specific guidance
+
+### Angular
+
+[Preload routes](/route-preloading-in-angular/) ahead of time to speed up navigation.
+
+### Magento
+
+[Modify your themes's
+layout](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)
+and add `<link rel=preload>` tags.
 
 ## Resources
 

@@ -35,7 +35,7 @@ it's generally best to avoid access keys because of their limitations:
 Lighthouse flags pages with duplicate access keys:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="accesskeys.png" alt="Lighthouse: Access keys are not unique">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/mLy4tlasmsksLtgGk79t.png", alt="Lighthouse: Access keys are not unique", width="800", height="206", class="w-screenshot" %}
 </figure>
 
 For example, these links both have `g` as their access key:

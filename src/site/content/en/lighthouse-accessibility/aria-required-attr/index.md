@@ -25,7 +25,7 @@ assistive technology users won't be able to successfully interact with them.
 flags ARIA roles that don't have the required states and properties:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="aria-required-attr.png" alt="Lighthouse audit showing ARIA role missing required states and properties">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EF8Fjn4V8r1rR6JoZtIc.png", alt="Lighthouse audit showing ARIA role missing required states and properties", width="800", height="185", class="w-screenshot" %}
 </figure>
 
 Lighthouse uses the

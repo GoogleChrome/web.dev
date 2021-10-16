@@ -5,9 +5,6 @@ description: |
   guidance and analysis from web.dev.
 date: 2018-11-05
 i18n:
-  banner_blm_html: |
-    Google is committed to advancing racial equity for Black communities.
-    <a href="https://google.com/racialequity" target="_blank" rel="noopener">See how</a>.
   headline: Let's build the future of the web
   subheadline: |
     Get the web's modern capabilities on your own sites and apps with useful
@@ -25,8 +22,4 @@ i18n:
     Learn more about a topic, and practice your skills with a hands-on
     codelab.
   see_topics: See all topics
-  save_cta: Save your progress
-  save_subheadline: |
-    See how your website performs over time, and keep track as you learn on
-    your own schedule.
 ---

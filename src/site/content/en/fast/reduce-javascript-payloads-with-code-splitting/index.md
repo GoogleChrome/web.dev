@@ -28,7 +28,7 @@ multiple pieces and only send what's necessary at the very beginning.
 Lighthouse displays a failed audit when a significant amount of time is taken to
 execute all the JavaScript on a page.
 
-<img class="w-screenshot" src="./reduce-javascript-payloads-with-code-splitting-2.png" alt="A failing Lighthouse audit showing scripts taking too long to execute.">
+{% Img src="image/admin/p0Ahh3pzXog3jPdDp6La.png", alt="A failing Lighthouse audit showing scripts taking too long to execute.", width="797", height="100", class="w-screenshot" %}
 
 Split the JavaScript bundle to only send the code needed for the initial route when the
 user loads an application. This minimizes the amount of script that needs to be

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+const {defaultLocale} = require('../_data/site');
+const defaultLocaleRegExp = new RegExp(`^/${defaultLocale}`);
 let memo;
 
 /**
@@ -33,11 +35,12 @@ const memoize = (collection) => {
   memo = {};
   collection.forEach((item) => {
     if (item.url) {
-      if (memo[item.url]) {
-        throw new Error(`Found duplicate post url: '${item.url}'`);
+      const url = item.url.replace(defaultLocaleRegExp, '');
+      if (memo[url]) {
+        throw new Error(`Found duplicate post url: '${url}'`);
       }
 
-      memo[item.url] = item;
+      memo[url] = item;
     }
   });
 
@@ -60,6 +63,7 @@ const findByUrl = (url) => {
     throw new Error('No collection has been memoized yet.');
   }
 
+  url = url.replace(defaultLocaleRegExp, '');
   return memo[url];
 };
 

@@ -21,7 +21,7 @@ with a title attribute.
 Lighthouse flags `<frame>` and `<iframe>` elements that don't have titles:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="frame-title.png" alt="Lighthouse audit showing frame or iframe doesn't have a title element">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vlHxWKrB3ESjPfmLbuwL.png", alt="Lighthouse audit showing frame or iframe doesn't have a title element", width="800", height="185", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

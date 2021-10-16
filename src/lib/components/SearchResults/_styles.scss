@@ -1,0 +1,42 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/tools/mixins';
+
+// This represent the margin from the surrounding elements which needs to
+// be factored in when we're calculating the final width and translate
+// position for this element's expanded state.
+$WEB_SEARCH_MARGIN: 16px;
+
+// This accounts for the width of the close button which we display on mobile.
+// We need to offset the results popout by this amount so it doesn't appear
+// to extend past the search input field.
+$WEB_CLOSE_BUTTON_WIDTH: 45px;
+
+.web-search-popout {
+  background: white;
+  padding: 16px 0;
+  position: absolute;
+}
+
+.web-search-popout__heading {
+  color: $GREY_700;
+  font-size: 12px;
+  padding: 0 24px;
+}
+
+.web-search-popout__list {
+  list-style: none;
+  max-height: 50vh;
+  overflow: auto;
+}
+
+.web-search-popout__link {
+  color: $PRIMARY_TEXT_COLOR;
+  display: block;
+  padding: 8px 24px;
+}
+
+.web-search-popout__link:hover,
+.web-search-popout__link--active {
+  background: $GREY_200;
+}
+

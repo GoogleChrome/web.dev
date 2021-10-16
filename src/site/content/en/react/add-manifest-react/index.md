@@ -3,8 +3,9 @@ layout: post
 title: Add a web app manifest with Create React App
 subhead: |
   A web app manifest is included into Create React App by default and allows anyone to install your React application on their device.
-hero: hero-add-manifest-react.jpg
+hero: image/admin/pOjpReVK54kUJP6nZMwn.jpg
 date: 2019-04-29
+updated: 2021-05-19
 description: |
   Create React App includes a web app manifest by default. Modifying this file
   will allow you to change how your application is displayed when installed on
@@ -15,7 +16,7 @@ authors:
 
 {% Aside %}
   If you don't know how web app manifest files work, refer to the
-  [Add a Web App Manifest](/add-manifest) guide first.
+  [Add a web app manifest](/add-manifest) guide first.
 {% endAside %}
 
 Create React App (CRA) includes a web app manifest by default. Modifying this
@@ -23,22 +24,22 @@ file will allow you to change how your application is displayed when installed
 on the user's device.
 
 <figure class="w-figure">
-  <img src="./icon-home-screen.png" alt="A progressive web app icon on a mobile phone's home screen">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/yra3Y2jPf2tS5ELxJdAK.png", alt="A progressive web app icon on a mobile phone's home screen", width="317", height="640" %}
 </figure>
 
 ## Why is this useful?
 
 Web app manifest files provide the capability to change how an installed
-application will look like on a device home screen. By modifying properties in
-the JSON file, you can modify a number of details in your application, including
-its:
+application will look like on the user's desktop or mobile device. By modifying
+properties in the JSON file, you can modify a number of details in your
+application, including its:
 
 * Name
 * Description
 * App icon
 * Theme color
 
-The [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+The [MDN documentation](https://developer.mozilla.org/docs/Web/Manifest)
 covers all the properties that can be changed in detail.
 
 ## Modify the default manifest
@@ -54,6 +55,16 @@ In CRA, a default manifest file, `/public/manifest.json` is included automatical
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
@@ -63,7 +74,7 @@ In CRA, a default manifest file, `/public/manifest.json` is included automatical
 }
 ```
 
-This allows anybody to install the device to their home screen and see some
+This allows anybody to install the application on their device and see some
 default details of the application. The HTML file, `public/index.html`, also
 includes a `<link>` element to load the manifest.
 
@@ -87,7 +98,7 @@ To find out if all the properties are working correctly in this example:
 {% Instruction 'devtools-application' %}
 -  In the **Application** panel, click the **Manifest** tab.
 
-<img class="w-screenshot w-screenshot--filled" src="./devtools.png" alt="DevTool's Manifest tab shows the properties from the app manifest file.">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/IpK9fr3O0zEX1GJXq9mw.png", alt="DevTool's Manifest tab shows the properties from the app manifest file.", width="800", height="695", class="w-screenshot w-screenshot--filled" %}
 
 ## Conclusion
 
@@ -97,5 +108,5 @@ To find out if all the properties are working correctly in this example:
 2. If you would like users to install the application on their device, modify
    the manifest file (or create one if you are not using CRA) with any
    properties that you like. The
-   [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+   [MDN documentation](https://developer.mozilla.org/docs/Web/Manifest)
    explains all the required and optional attributes.

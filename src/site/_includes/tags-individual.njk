@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<div>
+  {# Make sure Actions are first in the tab order. #}
+  <div class="w-actions">
+    {% include 'partials/subscribe-action.njk' %}
+  </div>
+
+  <div class="w-layout-container w-pb--non">
+    <header class="w-page-header">
+      {% if paged.data.hero %}
+        {% Img
+          src=paged.data.hero,
+          alt=renderData.title,
+          height="192",
+          width="192",
+          class="w-tags-page__image",
+          sizes="(min-width: 481px) 192px, 128px",
+          options={minWidth: 128}
+      %}
+      {% endif %}
+      <h1 class="w-page-header__headline w-tags-page-header__headline {{'w-visually-hidden' if paged.hero.heroOnly}}">{{ renderData.title }}</h1>
+      <p class="w-page-header__copy">{{ renderData.description | safe }}</p>
+      <a href="{{ renderData.rss }}" target="_blank" class="w-tags-page__rss">
+        <img src="/images/icons/rss.svg" alt="RSS Feed" width="32" height="32">
+      </a>
+    </header>
+  </div>
+  {% include 'partials/paged.njk' %}
+  <div class="w-layout-container">
+    <div class="w-text--center">
+      <a class="w-button" href="/tags">
+        {{ 'i18n.paths.tags.see_more' | i18n(locale) }}
+      </a>
+    </div>
+  </div>
+</div>

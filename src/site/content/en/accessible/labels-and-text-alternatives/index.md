@@ -35,7 +35,7 @@ It's easy to check an element's accessible name using Chrome's DevTools:
 1. In the **Computed Properties** dropdown, look for the **Name** property.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./devtools-name.png" alt="">
+  {% Img src="image/admin/38c68DmamTCqt2LFxTmu.png", alt="", width="800", height="471", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     DevTools accessibility pane showing the computed name for a button.
   </figcaption>
@@ -142,7 +142,7 @@ that need accessible names and links to explanations for how to add them.
 ## Label documents and frames
 
 Every page should have a
-[`title`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
+[`title`](https://developer.mozilla.org/docs/Web/HTML/Element/title)
 element that briefly explains what the page is about. The `title` element gives
 the page its accessible name. When a screen reader enters the page, this is the
 first text that is announced.
@@ -180,7 +180,7 @@ lets the user decide if they wish to enter the frame or bypass it.
 ## Include text alternatives for images and objects
 
 An `img` should always be accompanied by an
-[`alt`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Attributes)
+[`alt`](https://developer.mozilla.org/docs/Web/HTML/Element/img#Attributes)
 attribute to give the image its accessible name. If the image fails to load, the
 `alt` text is used as a placeholder so users have a sense of what the image was
 trying to convey.
@@ -255,14 +255,14 @@ name.
 <button>Book Room</button>
 ```
 
-![A mobile form with a 'Book Room' button.](./button-label.png)
+{% Img src="image/admin/tcIDzNpCHS9AlfwflQjI.png", alt="A mobile form with a 'Book Room' button.", width="800", height="269" %}
 
 One common exception to this rule is icon buttons. An icon button may use an
 image or an icon font to provide the text content for the button. For example,
 the buttons used in a What You See Is What You Get (WYSIWYG) editor to format
 text are typically just graphic symbols:
 
-![A left align icon button.](./icon-button.png)
+{% Img src="image/admin/ZmQ77kLPbqd5iFOmn4SU.png", alt="A left align icon button.", width="800", height="269" %}
 
 When working with icon buttons, it can be helpful to give them an explicit
 accessible name using the `aria-label` attribute. `aria-label` overrides any
@@ -297,7 +297,7 @@ of the links on the page. If links are full of repetitive filler text, these
 shortcuts become much less useful:
 
 <figure class="w-figure">
-  <img src="./vo.jpg" alt="VoiceOver's links menu filled with the word 'here'.">
+  {% Img src="image/admin/IPxS2dwHMyGRvGxGi5n2.jpg", alt="VoiceOver's links menu filled with the word 'here'.", width="519", height="469" %}
   <figcaption class="w-figcaption">
     Example of VoiceOver, a screen reader for macOS, showing the navigate by
     links menu.
@@ -331,8 +331,7 @@ the element has a role of checkbox, is in a checked state, and is named "Receive
 promotional offers?" like in the VoiceOver example below:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./promo-offers.png"
-  alt="VoiceOver text output showing 'Receive promotional offers?'">
+  {% Img src="image/admin/WklT2ymrCmceyrGUNizF.png", alt="VoiceOver text output showing 'Receive promotional offers?'", width="640", height="174", class="w-screenshot" %}
 </figure>
 
-{% Assessment page, 'self-assessment' %}
+{% Assessment 'self-assessment' %}

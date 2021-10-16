@@ -38,7 +38,7 @@ const initialState = {
   currentUrl: window.location.pathname,
   currentLanguage: document.documentElement.getAttribute('lang'),
   isOffline: Boolean(getMeta('offline')),
-  isSideNavExpanded: false,
+  isNavigationDrawerOpen: false,
   isModalOpen: false,
   isSearchExpanded: false,
 
@@ -54,8 +54,6 @@ const initialState = {
   // Handle hiding/showing the snackbar.
   showingSnackbar: false,
   snackbarType: null,
-
-  userPreferredLanguage: '',
 
   // Used to override the current time for web.dev/LIVE testing.
   timeOffset,

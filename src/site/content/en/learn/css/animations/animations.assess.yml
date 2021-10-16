@@ -1,0 +1,49 @@
+setLeader: Test your knowledge of animations
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: The **name or custom identifier** of a `@keyframes` animation is case sensitive?
+    options:
+      - content: "True"
+        rationale: "🎉"
+      - content: "False"
+        rationale: "CSS does not allow 2 animations to have the same name, but
+        it does allow `SWOOP` and `swoop` to coexist."
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: The keywords `from` and `to` are the same as
+    options:
+      - content: "`start` and `end`."
+        rationale: "Try again!"
+      - content: "`0%` and `100%`."
+        rationale: "`from` is the same as `0%` and `to` is the same as 100%."
+      - content: "`0` and `1`"
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: The `animation-timing-function` is also commonly known as
+    options:
+      - content: Dynamic timing
+        rationale: "Try again!"
+      - content: Delay
+        rationale: "Try again!"
+      - content: Easing
+        rationale: "🎉"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: What is the minimum number of keyframes required inside a `@keyframes` animation?
+    options:
+      - content: "1"
+        rationale: "The browser will take the current state of the element as a
+        keyframe, so at minimum, 1 keyframe is required."
+      - content: "2"
+        rationale: "Try again!"
+      - content: "3"
+        rationale: "Try again!"
+      - content: "4"
+        rationale: "Try again!"

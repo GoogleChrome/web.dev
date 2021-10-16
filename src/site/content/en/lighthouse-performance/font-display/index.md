@@ -20,7 +20,7 @@ causing a [flash of invisible text (FOIT)](/avoid-invisible-text).
 flags any font URLs that may flash invisible text:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="font-display.png" alt="A screenshot of the Lighthouse Ensure text remains visible during webfont loads audit">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/251Gbh9tn89GDJY289zZ.png", alt="A screenshot of the Lighthouse Ensure text remains visible during webfont loads audit", width="800", height="430", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
@@ -42,7 +42,7 @@ you can avoid FOIT in most modern browsers:
 }
 ```
 
-The [font-display API](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
+The [font-display API](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display)
 specifies how a font is displayed.
 `swap` tells the browser that text using the font should be displayed immediately using a system font.
 Once the custom font is ready, it replaces the system font.
@@ -51,14 +51,14 @@ for more information.)
 
 ### Preload web fonts
 
-Use `<link rel="preload">` to fetch your font files earlier. Learn more:
+Use `<link rel="preload" as="font">` to fetch your font files earlier. Learn more:
 
 * [Preload web fonts to improve loading speed (codelab)](/codelab-preload-web-fonts/)
 * [Prevent layout shifting and flashes of invisibile text (FOIT) by preloading optional fonts](/preload-optional-fonts/)
 
 ### Google Fonts
 
-Add the `&display=swap` [parameter](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL#Basics_anatomy_of_a_URL) to the end of your Google Fonts URL:
+Add the `&display=swap` [parameter](https://developer.mozilla.org/docs/Learn/Common_questions/What_is_a_URL#Basics_anatomy_of_a_URL) to the end of your Google Fonts URL:
 ```html
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 ```
@@ -72,6 +72,16 @@ so you may need to do a bit more work to fix the invisible text problem.
   Check out the [Avoid flash of invisible text codelab](/codelab-avoid-invisible-text)
   to learn how to avoid FOIT across all browsers.
 {% endAside %}
+
+## Stack-specific guidance
+
+### Drupal
+
+Specify `@font-display` when defining custom fonts in your theme.
+
+### Magento
+
+Specify `@font-display` when [defining custom fonts](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/using-fonts.html).
 
 ## Resources
 

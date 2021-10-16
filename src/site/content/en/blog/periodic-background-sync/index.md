@@ -7,7 +7,7 @@ authors:
   - joemedley
 date: 2019-11-10
 updated: 2020-08-18
-hero: hero.jpg
+hero: image/admin/Bz7MndcsUGPLAnQwIMfJ.jpg
 alt: Colorful airplanes flying in sync
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/4048736065006075905
@@ -20,7 +20,7 @@ tags:
   - blog
   - progressive-web-apps
   - service-worker
-  - chrome80
+  - chrome-80
 feedback:
   - api
 ---
@@ -118,7 +118,7 @@ Before using it, make sure that:
 
 ## Concepts and usage
 
-Periodic background sync lets you show fresh content when a progessive web app
+Periodic background sync lets you show fresh content when a progressive web app
 or service worker-backed page is launched. It does this by downloading data in
 the background when the app or page is not being used. This prevents the app's
 content from refreshing after launch while it's being viewed. Better yet, it
@@ -152,7 +152,7 @@ Furthermore, since Chrome doesn't want unused or seldom used web apps to gratuit
 consume battery or data, Chrome designed periodic background sync such that
 developers will have to earn it by providing value to their users. Concretely,
 Chrome is using a [site engagement score](https://www.chromium.org/developers/design-documents/site-engagement)
-(`chrome://site-engagement/`) to determine if and how often periodic background syncs can happen
+(`about://site-engagement/`) to determine if and how often periodic background syncs can happen
 for a given web app. In other words, a `periodicsync` event won't be fired at all unless the engagement
 score is greater than zero, and its value affects the frequency at which the
 `periodicsync` event fires. This ensures that the only apps syncing in the
@@ -205,14 +205,14 @@ the event you should take network conditions and available storage into
 consideration and download different amounts of data in response. You can use
 the following resources to help:
 
-* [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API)
+* [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API)
 * [Detecting data saver mode](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/#detecting_the_save-data_setting)
 * [Estimating available storage](https://developers.google.com/web/updates/2017/08/estimating-available-storage-space)
 
 ### Permissions
 
 After the service worker is installed, use the [Permissions
-API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API) to query
+API](https://developer.mozilla.org/docs/Web/API/Permissions_API) to query
 for `periodic-background-sync`. You can do this from either a window or a
 service worker context.
 
@@ -363,7 +363,7 @@ background sync, and unregistering. To obtain information about these events,
 click **Start recording**.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="1-record.png" alt="The record button in DevTools" style="max-width: 75%">
+  {% Img src="image/admin/wcl5Bm6Pe9xn5Dps6IN6.png", alt="The record button in DevTools", width="708", height="90", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     The record button in DevTools
   </figcaption>
@@ -373,8 +373,7 @@ While recording, entries will appear in DevTools corresponding to events, with
 context and metadata logged for each.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="2-record-result.png" alt="An example of recorded periodic background sync data"
-       style="max-width: 75%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/m92Art0OwiM0VyI7czFB.png", alt="An example of recorded periodic background sync data", width="800", height="357", class="w-screenshot", style="max-width: 75%" %}
   <figcaption class="w-figcaption">
     An example of recorded periodic background sync data
   </figcaption>
@@ -399,9 +398,7 @@ event to use, and to trigger it as many times as you'd like.
 {% endAside %}
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="3-sw-panel.png"
-       alt="The 'Service Workers' section of the Application panel shows a 'Periodic Sync'
-            text field and button." style="max-width: 90%">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ5QdjwaRDP42cHqW98W.png", alt="The 'Service Workers' section of the Application panel shows a 'Periodic Sync' text field and button.", width="800", height="321", class="w-screenshot", style="max-width: 90%" %}
 </figure>
 
 ## Using the DevTools interface
@@ -409,8 +406,6 @@ event to use, and to trigger it as many times as you'd like.
 Starting in Chrome 81, you'll see a **Periodic Background Sync** section in the
 DevTools *Application* panel.
 
-   <figure class="w-figure">
-     <img class="w-screenshot" src="7-panel.png"
-          alt="The Application panel showing the Periodic Background Sync section"
-          style="max-width: 75%">
-   </figure>
+<figure class="w-figure">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/eYJtJfZ9Qo145lUQe4Ur.png", alt="The Application panel showing the Periodic Background Sync section", width="382", height="253", class="w-screenshot", style="max-width: 75%" %}
+</figure>

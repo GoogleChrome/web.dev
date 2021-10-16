@@ -7,12 +7,12 @@ authors:
   - thomassteiner
 date: 2020-11-03
 updated: 2020-11-04
-hero: hero.jpg
+hero: image/admin/nnmBquEmUtTIh89pkhvp.jpg
 alt: The hands of a person playing the Chrome dino game on a game console.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
-  - gamepad
+  # - gamepad
   - devices
 ---
 
@@ -21,16 +21,14 @@ Chrome's offline page easter egg is one of the worst-kept secrets in history
 If you press the <kbd>space</kbd> key or, on mobile devices, tap the dinosaur,
 the offline page becomes a playable arcade game.
 You might be aware that you do not actually have to go offline
-when you feel like playing: in Chrome, you can just navigate to `chrome://dino`, or,
+when you feel like playing: in Chrome, you can just navigate to `about://dino`, or,
 for the geek in you, browse to
-`chrome://network-error/-106`.
+`about://network-error/-106`.
 But did you know that there are currently
 [270 million Chrome dino games played every month](https://www.blog.google/products/chrome/chrome-dino#jump-content:~:text=There%20are%20currently%20270%20million%20games%20played%20every%20month)?
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled"
-       src="dino.png"
-       alt="Chrome's offline page with the Chrome dino game.">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/BQ9zVNGfI0PjH6LTwxj5.png", alt="Chrome's offline page with the Chrome dino game.", width="800", height="647", class="w-screenshot w-screenshot--filled" %}
   <figcaption class="w-figcaption">
     Press the space bar to play!
   </figcaption>
@@ -104,9 +102,7 @@ The schematic overview below, taken
 shows the mapping and the arrangement of the buttons and axes on a generic gamepad.
 
 <figure class="w-figure">
-  <img src="gamepad.svg"
-       alt="Schematic overview of the button and axes mappings of a common gamepad."
-  >
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/qy6OxKmPAE5dpfLCMhZt.svg", alt="Schematic overview of the button and axes mappings of a common gamepad.", width="800", height="566" %}
   <figcaption class="w-figcaption">
     Visual representation of a standard gamepad layout
     (<a href="https://w3c.github.io/gamepad/#fig-visual-representation-of-a-standard-gamepad-layout:~:text=Figure%201%20Visual%20representation%20of%20a%20standard%20gamepad%20layout.">Source</a>).
@@ -234,7 +230,7 @@ Dual-rumble effects are defined by four parameters:
 
 ```js
 // This assumes a `Gamepad` as the value of the `gamepad` variable.
-const vibrate = (gamepad, delay = 0, duration = 100, weak = 1.0, strong = 1.0) {
+const vibrate = (gamepad, delay = 0, duration = 100, weak = 1.0, strong = 1.0) => {
   if (!('vibrationActuator' in gamepad)) {
     return;
   }

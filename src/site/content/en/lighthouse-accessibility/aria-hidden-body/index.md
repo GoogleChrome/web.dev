@@ -21,8 +21,7 @@ element hides your entire web page from assistive technology users.
 flags pages whose `<body>` element has an `aria-hidden="true"` attribute:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="aria-hidden-body.png"
-  alt="Lighthouse audit showing that a page's body element has the aria-hidden attribute">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/enyVVcLr73lIw7qMyndR.png", alt="Lighthouse audit showing that a page's body element has the aria-hidden attribute", width="800", height="206", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

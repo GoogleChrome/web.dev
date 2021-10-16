@@ -3,35 +3,31 @@ layout: post
 title: Resolution
 authors:
   - joemedley
+  - derekherman
 description: |
   Resolution is the amount of information in a frame of video.
 date: 2017-06-30
-updated: 2020-08-27
+updated: 2021-07-05
 tags:
   - media
-  - video
+  # - video
 ---
 
-In previous sections I showed you how to change a media file's [codec,
-containers](/containers-and-codecs), and [bitrate](/bitrate). This page
-covers resolution. Then I'll move on to [adding them to a web
-page](/add-media).
+In the previous articles you learned how to change the
+[containers, codecs](/containers-and-codecs/), and [bitrate](/bitrate/) of the
+[glocken.mov] media file. This article focuses on changing the resolution.
 
-_Resolution_ is the amount of information in a single frame of video, given as
+**Resolution** is the amount of information in a single frame of video, given as
 the number of logical pixels in each dimension. For example, a resolution of
 1920 by 1080 works out to 1080 stacked horizontal lines, each of which is one
 logical pixel high and 1920 logical pixels wide. This resolution is frequently
 abbreviated 1080p because technically the width can vary. The dimensions 1080 by
-1920 produce an [aspect
-ratio](https://en.wikipedia.org/wiki/Aspect_ratio_(image)) of 16:9, which is the
-ratio of movie screens and modern television sets. By the way this is the
-resolution defined as [full
-HD](https://www.google.com/search?q=what+is+hd+resolution&oq=what+is+hd+resolution&aqs=chrome.0.0l6.3183j0j8&sourceid=chrome&ie=UTF-8#q=full+hd+resolution).
+1920 produce an [aspect ratio] of 16:9, which is the ratio of movie screens and
+modern television sets. By the way this is the resolution defined as [full HD].
 
-[YouTube recommends](https://support.google.com/youtube/answer/6375112) the
-following resolutions for video uploads, all in the 16:9 aspect ratio. There's
-nothing specific to YouTube about this list. It's just a list of common 16:9
-video resolutions.
+[YouTube recommends] the following resolutions for video uploads, all in the 16:9
+aspect ratio. There's nothing specific to YouTube about this list. It's just a
+list of common 16:9 video resolutions.
 
 | Abbreviation | Dimensions |
 | ------------ | ---------- |
@@ -44,18 +40,48 @@ video resolutions.
 | 240p | 426 x 240 |
 
 Which one should you use? That depends on your application. For simple embedding
-you may chose a single resolution. If you're preparing files for DASH or HLS,
-you may chose one, several, or all. Fortunately, this is one of the simplest
-transformations you'll make with FFmpeg.
+you may decide to chose only a single resolution. If you're preparing files for
+DASH or HLS, you may chose one, several, or all. Fortunately, this is one of the
+simplest transformations you'll make with FFmpeg.
+
+If you don't have FFmpeg installed read
+[Media application basics](/media-application-basics/#installing-applications-with-docker)
+to get it set up with Docker.
+
+1. MP4
+
+    ```bash
+    /media # ffmpeg -i glocken.mov -b:v 350k -b:a 64k -s 1280x720 glocken_3g_720p.mp4
+    ```
+
+1. WebM
+
+    ```bash
+    /media # ffmpeg -i glocken.mov -b:v 350k -b:a 64k -s 1280x720 glocken_3g_720p.webm
+    ```
+
+The following files should now exist:
 
 ```bash
-ffmpeg -i glocken.webm -s 640x360 glocken_640x360.webm
+/media # ls -l
+-rw-r--r-- 1 root root  12080306 Mar  7 12:16 glocken.mov
+-rwx------ 1 root root    531117 Mar  7 13:42 glocken_3g.mp4
+-rwx------ 1 root root    706119 Mar  7 13:46 glocken_3g.webm
+-rwx------ 1 root root    539414 Mar  7 14:15 glocken_3g_720p.mp4
+-rwx------ 1 root root    735930 Mar  7 14:19 glocken_3g_720p.webm
 ```
 
 It's worth reiterating that you should start from the highest resolution and
 bitrate file you have available. If you're upgrading an older site, you'll want
 to find your original camera or other high resolution sources and convert from
-that rather than from your older web site files (for example, flv or f4v files).
+that rather than from older web files.
 
-Now that your files are prepared, it's time to [add them to a web
-page](/add-media).
+Now that your files are prepared, you can either [add them to a web page](/add-media/)
+as they are now or dive a bit deeper and continue to learn more command line options
+by reading the [Media conversion](/media-conversion/) page, and then close out the
+section with [Media encryption](/media-encryption/).
+
+[glocken.mov]: https://storage.googleapis.com/web-dev-assets/prepare-media/glocken.mov
+[aspect ratio]: https://en.wikipedia.org/wiki/Aspect_ratio_(image)
+[full HD]:https://en.wikipedia.org/wiki/1080p
+[YouTube recommends]: https://support.google.com/youtube/answer/6375112

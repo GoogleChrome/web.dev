@@ -19,7 +19,7 @@ which provides no information to users about what the button does.
 Lighthouse flags buttons that don't have text content or an `aria-label` property:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="button-name.png" alt="Lighthouse audit showing buttons do not have an accessible name">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/evoQAq4c1CBchwNMl9Uq.png", alt="Lighthouse audit showing buttons do not have an accessible name", width="800", height="206", class="w-screenshot" %}
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

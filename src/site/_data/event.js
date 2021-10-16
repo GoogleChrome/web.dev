@@ -155,7 +155,7 @@ const days = [
         blurb:
           "Let's take a look at the latest and greatest features in Chrome's DevTools!",
         abstract: [
-          "Let's take a look at the latest and greatest features in Chrome's DevTools. We'll cover how you can use the Performance Panel to assess your page load metrics, how you can locate issues with your pages, debug your Web Assembly, and even emulate color vision deficiencies.",
+          "Let's take a look at the latest and greatest features in Chrome's DevTools. We'll cover how you can use the Performance Panel to assess your page load metrics, how you can locate issues with your pages, debug your WebAssembly, and even emulate color vision deficiencies.",
         ],
         videoId: '6yrJZHqJe2k',
       },

@@ -29,9 +29,7 @@ module.exports = (content, source) => {
   return html`
     <blockquote>
       ${content}
-      <cite>
-        ${md.renderInline(source)}
-      </cite>
+      <cite>${md.renderInline(source)}</cite>
     </blockquote>
   `;
 };

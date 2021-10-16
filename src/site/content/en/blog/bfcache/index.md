@@ -7,7 +7,7 @@ authors:
   - philipwalton
 date: 2020-11-10
 updated: 2020-11-10
-hero: hero.png
+hero: image/admin/Qoeb8x3a11BdGgRzYJbY.png
 alt: Back and forward buttons
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -26,7 +26,7 @@ can reap the benefits.
 ## Browser compatibility
 
 bfcache has been supported in both
-[Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/1.5/Using_Firefox_1.5_caching)
+[Firefox](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/1.5/Using_Firefox_1.5_caching)
 and [Safari](https://webkit.org/blog/427/webkit-page-cache-i-the-basics/) for
 many years, across desktop and mobile.
 
@@ -55,7 +55,7 @@ loads:
       <td>
         A new request is initiated to load the previous page, and, depending
         on how well that page has been <a
-        href="https://web.dev/reliable/#the-options-in-your-caching-toolbox">
+        href="/reliable/#the-options-in-your-caching-toolbox">
         optimized</a> for repeat visits, the browser might have to re-download,
         re-parse, and re-execute some (or all) of resources it just downloaded.
       </td>
@@ -109,7 +109,7 @@ resume processing tasks when (or if) the page is restored from the bfcache.
 In some cases this is fairly low-risk (for example, timeouts or promises), but
 in other cases it might lead to very confusing or unexpected behavior. For
 example, if the browser pauses a task that's required as part of an [IndexedDB
-transaction](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction),
+transaction](https://developer.mozilla.org/docs/Web/API/IDBTransaction),
 it can affect other open tabs in the same origin (since the same IndexedDB
 databases can be accessed by multiple tabs simultaneously). As a result,
 browsers will generally not attempt to cache pages in the middle of an IndexedDB
@@ -128,7 +128,7 @@ measurement](#implications-for-analytics-and-performance-measurement)
 accordingly.
 
 The primary events used to observe bfcache are the [page transition
-events](https://developer.mozilla.org/en-US/docs/Web/API/PageTransitionEvent)—`pageshow`
+events](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent)—`pageshow`
 and `pagehide`—which have been around as long as bfcache has and are supported
 in pretty much [all browsers in use
 today](https://caniuse.com/page-transition-events).
@@ -136,7 +136,7 @@ today](https://caniuse.com/page-transition-events).
 The newer [Page
 Lifecycle](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
 events—`freeze` and `resume`—are also dispatched when pages go in or out of the
-bfcache, as well as in some other situations. For, example when a background tab
+bfcache, as well as in some other situations. For example when a background tab
 gets frozen to minimize CPU usage. Note, the Page Lifecycle events are currently
 only supported in Chromium-based browsers.
 
@@ -145,7 +145,7 @@ only supported in Chromium-based browsers.
 The `pageshow` event fires right after the `load` event when the page is
 initially loading and any time the page is restored from bfcache. The `pageshow`
 event has a
-<code>[persisted](https://developer.mozilla.org/en-US/docs/Web/API/PageTransitionEvent/persisted)</code>
+<code>[persisted](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent/persisted)</code>
 property which will be <code>true</code> if the page was restored from bfcache
 (and <code>false</code> if not). You can use the <code>persisted</code> property
 to distinguish regular page loads from bfcache restores. For example:
@@ -309,24 +309,24 @@ onAllChangesSaved(() => {
 
 ### Avoid window.opener references
 
-In some browsers (including Chrome, as of version 86) if a page was opened using
-<code>[window.open()](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)</code>
-or from a link with
-<code>[target=_blank](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target)</code>—without
+In some browsers (including Chromium-based browsers) if a page was opened using
+<code>[window.open()](https://developer.mozilla.org/docs/Web/API/Window/open)</code>
+or (in [Chromium-based browsers prior to version 88](https://crbug.com/898942)) from a link with
+<code>[target=_blank](https://developer.mozilla.org/docs/Web/HTML/Element/a#target)</code>—without
 specifying
-<code>[rel="noopener"](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener)</code>—then
+<code>[rel="noopener"](https://developer.mozilla.org/docs/Web/HTML/Link_types/noopener)</code>—then
 the opening page will have a reference to the window object of the opened page.
 
 In addition to [being a security
 risk](https://mathiasbynens.github.io/rel-noopener/), a page with a non-null
-<code>[window.opener](https://developer.mozilla.org/en-US/docs/Web/API/Window/opener)</code>
+<code>[window.opener](https://developer.mozilla.org/docs/Web/API/Window/opener)</code>
 reference cannot safely be put into the bfcache because that could break any
 pages attempting to access it.
 
 As a result, it's best to avoid creating `window.opener` references by using
 `rel="noopener"` whenever possible. If your site requires opening a window and
 controlling it through
-<code>[window.postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)</code>
+<code>[window.postMessage()](https://developer.mozilla.org/docs/Web/API/Window/postMessage)</code>
 or directly referencing the window object, neither the opened window nor the
 opener will be eligible for bfcache.
 
@@ -348,13 +348,13 @@ As a result, most browsers will not attempt to put a page in bfcache in the
 following scenarios:
 
 *   Pages with an unfinished [IndexedDB
-    transaction](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction)
+    transaction](https://developer.mozilla.org/docs/Web/API/IDBTransaction)
 *   Pages with in-progress
-    [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or
-    [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+    [fetch()](https://developer.mozilla.org/docs/Web/API/Fetch_API) or
+    [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)
 *   Pages with an open
-    [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) or
-    [WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API)
+    [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSocket) or
+    [WebRTC](https://developer.mozilla.org/docs/Web/API/WebRTC_API)
     connection
 
 If your page is using any of these APIs, it's best to always close connections
@@ -511,8 +511,8 @@ the navigation was fast!
 
 Tools like the [Chrome User Experience
 Report](https://developers.google.com/web/tools/chrome-user-experience-report),
-that collect and report on the Core Web Vitals metrics will soon be updated to
-treat bfcache restores as separate page visits in the dataset.
+that collect and report on the Core Web Vitals metrics treat bfcache restores as
+separate page visits in their dataset.
 
 And while there aren't (yet) dedicated web performance APIs for measuring these
 metrics after bfcache restores, their values can be approximated using existing
@@ -527,7 +527,7 @@ web APIs.
     polyfill](https://github.com/GoogleChromeLabs/first-input-delay)) in the
     `pageshow` event, and report FID as the delay of the first input after the
     bfcache restore.
-*   For [Cumulative Layout Shift (CLS)](/fid/), you can continue to keep using
+*   For [Cumulative Layout Shift (CLS)](/cls/), you can continue to keep using
     your existing Performance Observer; all you have to do is reset the current
     CLS value to 0.
 
@@ -548,7 +548,7 @@ library](https://github.com/GoogleChrome/web-vitals/pull/87).
 ## Additional Resources
 
 *   [Firefox
-    Caching](https://developer.mozilla.org/en-US/Firefox/Releases/1.5/Using_Firefox_1.5_caching)
+    Caching](https://developer.mozilla.org/Firefox/Releases/1.5/Using_Firefox_1.5_caching)
     _(bfcache in Firefox)_
 *   [Page Cache](https://webkit.org/blog/427/webkit-page-cache-i-the-basics/)
     _(bfcache in Safari)_

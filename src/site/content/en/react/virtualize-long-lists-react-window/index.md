@@ -3,7 +3,7 @@ layout: post
 title: Virtualize large lists with react-window
 subhead: |
   Super large tables and lists can slow down your site's performance signficantly. Virtualization can help!
-hero: hero-virtualize-long-lists-react-window.jpg
+hero: image/admin/CVkKShuaQw4CfZBg3Eub.jpg
 date: 2019-04-29
 description: |
   react-window is a library that allows large lists to be rendered efficiently.
@@ -39,7 +39,7 @@ when the user continues to scroll. This improves both the rendering and
 scrolling performance of the list.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./window-diagram.jpg" alt="Window of content in a virtualized list">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/aWscOPGSFKVAIkgnUplQ.jpg", alt="Window of content in a virtualized list", width="578", height="525", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Moving "window" of content in a virtualized list
   </figcaption>
@@ -168,7 +168,7 @@ or grids. In this context, the "window" of visible content changes as the user
 scrolls horizontally **and** vertically.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./window-diagram-grid.jpg" alt="Moving window of content in a virtualized grid is two-dimensional">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/1j2qoGW8bFzBNiOzaJKZ.jpg", alt="Moving window of content in a virtualized grid is two-dimensional", width="739", height="516", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Moving "window" of content in a virtualized grid is two-dimensional
   </figcaption>
@@ -208,7 +208,7 @@ calculations and DOM mutations slower.
 The following diagram might help summarize this:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./difference-in-scrolling.jpg" alt="Difference in scrolling between a regular and virtualized list">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dKuKVjP02xWxO9LPoOuc.jpg", alt="Difference in scrolling between a regular and virtualized list", width="800", height="531", class="w-screenshot" %}
   <figcaption class="w-figcaption">
     Difference in scrolling between a regular and virtualized list
   </figcaption>

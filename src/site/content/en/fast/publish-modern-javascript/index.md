@@ -2,7 +2,7 @@
 layout: post
 title: Publish, ship, and install modern JavaScript for faster applications
 subhead: Improve performance by turning on modern JavaScript dependencies and output.
-hero: hero.jpg
+hero: image/admin/UQbMiPKbXL1EDjtWsLju.jpg
 authors:
   - houssein
   - developit
@@ -13,7 +13,7 @@ description: |
   are already transpiled to ES5. This guide demonstrates how to publish modern packages
   to npm, and how to install and optimally bundle modern JavaScript packages.
 date: 2020-12-10
-updated: 2020-12-10
+updated: 2020-12-16
 codelabs:
   - codelab-serve-modern-code
 tags:
@@ -28,9 +28,7 @@ a simple web-based tool that calculates the size and performance improvement a
 site could achieve by delivering modern JavaScript syntax.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="./estimator-screenshot.png"
-       alt="EStimator.dev analysis showing a website could be 9% faster with modern JavaScript."
-       width="800">
+  {% Img src="image/admin/FHHnXqdjdsC6PNSSnnC4.png", alt="EStimator.dev analysis showing a website could be 9% faster with modern JavaScript.", width="800", height="785" %}
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     EStimator.dev
   </figcaption>
@@ -438,6 +436,13 @@ There are also higher-level build tools that favor convention and defaults over
 configuration, like [Parcel], [Snowpack], [Vite] and [WMR]. Most of these tools
 assume npm dependencies may contain modern syntax, and will transpile them to
 the appropriate syntax level(s) when building for production.
+
+In addition to dedicated plugins for webpack and Rollup, modern JavaScript
+bundles with legacy fallbacks can be added to any project using
+[devolution](https://github.com/theKashey/devolution). Devolution is a
+standalone tool that transforms the output from a build system to produce legacy
+JavaScript variants, allowing bundling and transformations to assume a modern
+output target.
 
 ## Conclusion
 

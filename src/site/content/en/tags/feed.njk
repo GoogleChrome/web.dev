@@ -2,12 +2,12 @@
 renderData:
   metadata:
     author: Google Developers
-    category: "{{ paged.title }}"
+    category: "{{ paged.title | i18n(locale) }}"
     icon: https://web.dev/images/social.png
     id: https://web.dev/
     logo: https://web.dev/images/shared/rss-banner.png
-    subtitle: "{{ paged.description }}"
-    title: "{{ paged.title }} on web.dev"
+    subtitle: "{{ paged.description | i18n(locale) }}"
+    title: "{{ paged.overrideTitle or paged.title | i18n(locale) }} on web.dev"
     url: https://web.dev{{ paged.href }}feed.xml
 noindex: true
 permalink: "/{{lang}}{{ paged.href }}feed.xml"
@@ -33,17 +33,17 @@ pagination:
   <subtitle>{{ renderData.metadata.subtitle }}</subtitle>
   {% for post in paged.elements -%}
   {#  absoluteUrl comes from 11ty RSS Plugin (@see https://www.11ty.dev/docs/plugins/rss/) #}
-  {% set absolutePostUrl -%}{{ post.data.canonicalUrl | url | absoluteUrl(renderData.metadata.url) }}{%- endset %}
+  {% set absolutePostUrl -%}{{ post.url | url | absoluteUrl(renderData.metadata.url) }}{%- endset %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
     <updated>{{ post.date | rssDate }}</updated>
     <id>{{ absolutePostUrl }}</id>
-    <content type="html">{{ post.templateContent | replace("web-copy-code", "div") | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    <content type="text/html" mode="escaped">{{ post.templateContent | replace("web-copy-code", "div") | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
     {% for entry in post.data.authors %}
-    {%- set author =  collections.authors[entry] -%}
+    {%- set author = collections.authors[entry] -%}
     <author>
-      <name>{{ author.title }}</name>
+      <name>{{ author.title | i18n(locale) }}</name>
     </author>
     {%- endfor %}
   </entry>

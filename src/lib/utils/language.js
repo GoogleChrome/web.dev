@@ -10,7 +10,13 @@
  */
 const languageNames = {
   en: 'English',
-  pl: 'Polish',
+  pl: 'Polski',
+  es: 'Español',
+  ko: '한국어',
+  zh: '中文',
+  ru: 'Rусский',
+  pt: 'Português',
+  ja: '日本語',
 };
 
 /**
@@ -34,15 +40,9 @@ function isValidLanguage(lang) {
   return supportedLanguages.indexOf(lang) > -1;
 }
 
-function getLanguageFromPath(path) {
-  const parts = path.split('/');
-  return isValidLanguage(parts[1]) && parts[1];
-}
-
 export default {
   languageNames,
   defaultLanguage,
   isValidLanguage,
   supportedLanguages,
-  getLanguageFromPath,
 };

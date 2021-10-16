@@ -1,0 +1,12 @@
+name: Presubmit
+description: "Check if presubmit label exists and continue build if it does"
+inputs:
+  github_token:
+    description: "Token provided by GitHub"
+    required: true
+  is_presubmit:
+    description: "Boolean if presubmit tag exists"
+    required: true
+runs:
+  using: "node12"
+  main: "index.js"

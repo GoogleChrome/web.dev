@@ -4,11 +4,11 @@ title: Make it installable
 authors:
   - petelepage
 date: 2018-11-05
-updated: 2020-02-28
+updated: 2021-02-12
 description: |
   In this codelab, learn how to make a site installable using the
   beforeinstallprompt event.
-glitch: make-it-installable
+glitch: make-it-installable?path=script.js
 related_post: customize-install
 tags:
   - progressive-web-apps
@@ -25,8 +25,8 @@ It also has an install button that is hidden by default.
 
 When the browser fires the `beforeinstallprompt` event, that's the indication
 that the Progressive Web App can be installed and an install button can be shown
-to the user. The `beforeinstallprompt` event is fired when the PWA meets the
-criteria for installability.
+to the user. The `beforeinstallprompt` event is fired when the PWA meets [the
+installability criteria](/install-criteria/).
 
 {% Instruction 'remix', 'ol' %}
 1. Add a `beforeinstallprompt` event handler to the `window` object.
@@ -61,7 +61,7 @@ event. Calling `prompt()` is done in the install button click handler because
 Code:
 
 ```js
-butInstall.addEventListener('click', () => {
+butInstall.addEventListener('click', async () => {
   console.log('👍', 'butInstall-clicked');
   const promptEvent = window.deferredPrompt;
   if (!promptEvent) {
@@ -71,14 +71,13 @@ butInstall.addEventListener('click', () => {
   // Show the install prompt.
   promptEvent.prompt();
   // Log the result
-  promptEvent.userChoice.then((result) => {
-    console.log('👍', 'userChoice', result);
-    // Reset the deferred prompt variable, since
-    // prompt() can only be called once.
-    window.deferredPrompt = null;
-    // Hide the install button.
-    divInstall.classList.toggle('hidden', true);
-  });
+  const result = await promptEvent.userChoice;
+  console.log('👍', 'userChoice', result);
+  // Reset the deferred prompt variable, since
+  // prompt() can only be called once.
+  window.deferredPrompt = null;
+  // Hide the install button.
+  divInstall.classList.toggle('hidden', true);
 });
 ```
 
@@ -98,6 +97,8 @@ Code:
 ```js
 window.addEventListener('appinstalled', (event) => {
   console.log('👍', 'appinstalled', event);
+  // Clear the deferredPrompt so it can be garbage collected
+  window.deferredPrompt = null;
 });
 ```
 
@@ -107,5 +108,5 @@ Congratulations, you app is now installable!
 
 Here are some additional things that you can do:
 
-+  [Detecting if your app is launched from the home screen](https://developers.google.com/web/fundamentals/app-install-banners/#detect-mode)
-+  [How to show the native app install prompt instead](https://developers.google.com/web/fundamentals/app-install-banners/native)
++  [Detect if your app is launched from the home screen](/customize-install/#detect-mode)
++  [Show the operating system's app install prompt instead](https://developers.google.com/web/fundamentals/app-install-banners/native)

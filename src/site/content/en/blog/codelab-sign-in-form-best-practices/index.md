@@ -134,9 +134,7 @@ built-in password-management features.
    operating system might show stored emails above the keyboard. All of this happens because the `type="email"` attribute is applied to an `<input>` element.
 
   <figure class="w-figure">
-    <img class="w-screenshot w-screenshot--filled" 
-         src="email-keyboard.png" 
-         alt="The default email keyboard on iOS.">
+    {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dUtDcvYy1RMzEYBi7Ce0.png", alt="The default email keyboard on iOS.", width="800", height="1504", class="w-screenshot w-screenshot--filled" %}
   </figure>
 
 4. Type some text into the password input. 

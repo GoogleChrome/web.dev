@@ -11,7 +11,7 @@ tags:
 
 Include a self-assessment in your post using this short code:
 
-{% Assessment page, 'my-first-self-assessment' %}
+{% Assessment 'my-first-self-assessment' %}
 
 Rename the file and the shortcode argument
 so it conveys the topic of your assessment.

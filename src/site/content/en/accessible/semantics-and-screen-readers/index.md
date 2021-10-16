@@ -23,7 +23,7 @@ Before diving into semantics, it's helpful to understand another term:
 the opportunity to perform an action. A classic example is the teapot:
 
 <figure class="w-figure">
-  <img src="./teapot.png" alt="" style="max-width: 400px;">
+  {% Img src="image/admin/EXqR31Kq3mosH6jv6jiG.png", alt="", width="640", height="446" %}
   <figcaption class="w-figcaption">
     A teapot's handle is a natural affordance.
   </figcaption>
@@ -116,4 +116,4 @@ and explore its position in the accessibility tree.
 Once you know a bit about semantics and how they aid screen reader navigation,
 you can't help but look at the pages you build differently. In the next section,
 we'll take a step back and consider how the entire outline of a page can be
-conveyed using effective headings and landmarks.
+conveyed using effective [headings and landmarks](/headings-and-landmarks/).

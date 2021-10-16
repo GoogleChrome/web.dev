@@ -1,0 +1,143 @@
+/// PATTERN LIBRARY LOCATION
+/// https://web.dev/design-system/pattern/card
+.card {
+  /// Flex layout allows the content to grow so where you have a grid
+  /// of cards, the actions will all be aligned
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  padding: $global-gutter;
+  border: 1px solid get-utility-value('color', 'stroke');
+  border-radius: $global-radius-base;
+  max-width: 40rem;
+  text-decoration: none;
+
+  // This lets text keep its selectable state
+  a:not([class*='action']),
+  p,
+  h2,
+  h3,
+  h4 {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:hover {
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 10%),
+      0px 8px 8px 1px rgb(0 0 0 / 7%), 0px 3px 8px 2px rgb(0 0 0 / 8%);
+    transition: transform $global-transition-movement,
+      box-shadow $global-transition-movement, background $global-transition-fade;
+
+    @include apply-utility('bg', 'mid-bg');
+
+    /// Because the card has a whole-card hover state, we want to kick out
+    /// individual hover styles
+    a {
+      text-decoration: none;
+      background: none;
+    }
+  }
+
+  &:link {
+    @include apply-utility('color', 'core-text');
+  }
+
+  img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    margin-inline: auto;
+  }
+}
+
+.card__content {
+  flex: auto;
+  @include apply-utility('gap-top', 'size-1');
+
+  a:not([class]) {
+    color: currentColor;
+  }
+
+  a:not(:hover) {
+    text-decoration: none;
+  }
+
+  p,
+  li {
+    @include apply-utility('color', 'mid-text');
+  }
+}
+
+.card__action {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  @include apply-utility('flow-space', 'size-1');
+  @include apply-utility('weight', 'medium');
+  @include apply-utility('leading', 'flat');
+  @include apply-utility('gap-top', 'size-1');
+
+  /// This breakout element allows the whole card to be hovered
+  /// More: https://piccalil.li/tutorial/create-a-semantic-break-out-button-to-make-an-entire-element-clickable/
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.card__avatars {
+  --gutter: 0.5rem;
+
+  img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+  }
+}
+
+.card__authors {
+  --gutter: 1ex;
+
+  padding: 0;
+  flex: auto;
+
+  // All hover styles are reset on .card:hover,
+  // but we want these to behave independently
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.card__meta {
+  font-size: 0.9em;
+  padding: 0;
+  margin: 0 0 1em 0;
+
+  &,
+  li {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  li + li::before {
+    content: '·';
+    display: block;
+  }
+
+  li:first-of-type {
+    position: relative;
+
+    @include apply-utility('color', 'highlight-text');
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: get-utility-value('color', 'highlight-text');
+      position: absolute;
+      inset: -1ex 0 0 0;
+    }
+  }
+}

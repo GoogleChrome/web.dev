@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Accessibility auditing with react-axe and eslint-plugin-jsx-a11y
-hero: hero-accessibility-auditing-react.jpg
+hero: image/admin/CYDdWUK4iah3Xe8yEfoR.jpg
 subhead: |
   Your React site is not progressive if it's not accessible. Auditing during development can help you spot any issues.
 date: 2019-04-29
@@ -79,7 +79,7 @@ To enable pre-configured linting provided by CRA:
 
 Some common accessibility issues will now show up.
 
-![Image accessibility warning in linter](./img-a11y-lint.png)
+{% Img src="image/admin/n8Da1iOU3XCpu7avccaS.png", alt="Image accessibility warning in linter", width="800", height="500" %}
 
 To check for even more accessibility rules, modify the file to automatically
 include all the recommended rules by the plugin:
@@ -98,7 +98,7 @@ If you would like an even stricter subset of rules, switch to strict mode:
 }
 ```
 
-![Label accessibility error in linter](./label-a11y-lint.png)
+{% Img src="image/admin/LVsEpuH55MeHaY7RIpl3.png", alt="Label accessibility error in linter", width="800", height="500" %}
 
 The project
 [documentation](https://github.com/evcohen/eslint-plugin-jsx-a11y#difference-between-recommended-and-strict-mode)
@@ -139,7 +139,7 @@ unnecessarily included in the final production bundle.
 Now when you run the application during development, issues are surfaced
 directly to the Chrome DevTools console.
 
-<img class="w-screenshot w-screenshot--filled" src="./react-axe-devtools.png" alt="React Axe in Chrome DevTools">
+{% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/7kiPTpXD47VBf83n6mqz.png", alt="React Axe in Chrome DevTools", width="800", height="430", class="w-screenshot w-screenshot--filled" %}
 
 A severity level is also assigned for each violation. These levels are:
 

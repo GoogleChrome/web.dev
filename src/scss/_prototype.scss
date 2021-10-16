@@ -1,0 +1,12 @@
+.temp-box {
+  max-width: max-content;
+  padding: 4rem;
+  border-radius: $global-radius-base;
+  background: var(--color-action-bg);
+  color: var(--color-action-text);
+}
+
+// For now, I'm just going to visually hide the site footer because it's getting in my way
+.w-footer {
+  display: none;
+}

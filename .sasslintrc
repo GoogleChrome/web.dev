@@ -20,19 +20,11 @@
     "attribute-quotes": 2,
     "brace-style": 2,
     "border-zero": 2,
-    "class-name-format": [
-      2,
-      {
-        "convention": "^(w|web)-.+",
-        "convention-explanation": "Classes must be namedspaced with w-* or web-* prefix."
-      }
-    ],
     "declarations-before-nesting": 2,
     "empty-line-between-blocks": 2,
     "final-newline": 2,
     "hex-notation": 2,
     "indentation": 2,
-    "leading-zero": 2,
     "no-css-comments": 2,
     "no-debug": 2,
     "no-mergeable-selectors": 2,
@@ -45,13 +37,6 @@
     "shorthand-values": 2,
     "single-line-per-selector": 2,
     "space-after-comma": 2,
-    "space-around-operator": 2,
-    "variable-name-format": [
-      2,
-      {
-        "convention": "^[_A-Z0-9]+$",
-        "convention-explanation": "Variable names should be in $SCREAMING_SNAKE_CASE"
-      }
-    ]
+    "space-around-operator": 2
   }
 }

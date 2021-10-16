@@ -22,13 +22,9 @@ $CHEVRON_MARGIN: 12px;
   font: inherit;
   list-style: none;
 
-  // scss-lint thinks this is a pseudo class instead of a psuedo element
-  // and complains about the two colons.
-  // scss-lint:disable all
-  &::-webkit-details-marker {
+  &::marker {
     display: none;
   }
-  // scss-lint:enable all
 
   &:focus {
     outline: none;
@@ -45,7 +41,8 @@ $CHEVRON_MARGIN: 12px;
     box-shadow: 0 0 0 1px $FOCUS_COLOR;
   }
 
-  .js-focus-visible &:focus:not(.focus-visible) .w-details__header::after { // sass-lint:disable-line class-name-format
+  .js-focus-visible &:focus:not(.focus-visible) .w-details__header::after {
+    // sass-lint:disable-line class-name-format
     box-shadow: none;
   }
 
@@ -59,7 +56,7 @@ $CHEVRON_MARGIN: 12px;
 .w-details__header {
   color: $WEB_PRIMARY_COLOR_600;
   margin: 0;
-  padding: .75rem #{$CHEVRON_SIZE + $CHEVRON_MARGIN + 4px} .75rem 0;
+  padding: 0.75rem #{$CHEVRON_SIZE + $CHEVRON_MARGIN + 4px} 0.75rem 0;
   position: relative;
 
   &::after {
@@ -71,10 +68,10 @@ $CHEVRON_MARGIN: 12px;
     padding: 2px;
     position: absolute;
     right: 1px;
-    speak: none;
+    speak: never;
     top: 50%;
     transform: translateY(-50%);
-    transition: background .2s;
+    transition: background 0.2s;
     visibility: visible;
   }
 
@@ -84,7 +81,7 @@ $CHEVRON_MARGIN: 12px;
     }
 
     &::after {
-      padding: .25em;
+      padding: 0.25em;
     }
   }
 }
@@ -100,12 +97,12 @@ $CHEVRON_MARGIN: 12px;
 
 .w-details__header:only-child {
   line-height: 1.5rem;
-  padding: .375rem #{$CHEVRON_SIZE + $CHEVRON_MARGIN + 4px} .375rem 0;
+  padding: 0.375rem #{$CHEVRON_SIZE + $CHEVRON_MARGIN + 4px} 0.375rem 0;
 }
 
 h2.w-details__header:only-child {
   line-height: 1.3333em;
-  padding: .75rem #{$CHEVRON_SIZE + $CHEVRON_MARGIN + 4px} .75rem 0;
+  padding: 0.75rem #{$CHEVRON_SIZE + $CHEVRON_MARGIN + 4px} 0.75rem 0;
 }
 
 .w-details > p:first-of-type {
@@ -126,12 +123,12 @@ h2.w-details__header:only-child {
     color: $GREY_700;
     content: 'Read more';
     display: block;
-    font-size: .7222em;
+    font-size: 0.7222em;
     font-weight: 500;
     line-height: 2.13333;
-    padding-top: .75rem;
+    padding-top: 0.75rem;
     text-transform: uppercase;
-    transition: color .2s;
+    transition: color 0.2s;
   }
 }
 

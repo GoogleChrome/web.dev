@@ -44,7 +44,7 @@ but it addresses all of these concerns and is always a better choice for display
 If you are sure an image is the correct option, you should carefully select the right kind of image for the job.
 
 <figure class="w-figure">
-  <img src="./vector-raster-zoom.png" alt="Zoomed-in vector and raster images">
+  {% Img src="image/admin/dJuB2DQcbhtwD5VdPVlR.png", alt="Zoomed-in vector and raster images", width="585", height="313" %}
   <figcaption>Zoomed-in vector image (L) raster image (R)</figcaption>
 </figure>
 
@@ -76,7 +76,7 @@ A single CSS pixel may correspond directly to a single device pixel, or may be b
 What's the point? Well, the more device pixels there are, the finer the detail of the displayed content on the screen.
 
 <figure class="w-figure">
-  <img src="./css-vs-device-pixels.png" alt="Three images showing the difference between CSS pixels and device pixels.">
+  {% Img src="image/admin/oQV7qJ9fUMkYsKlUMrL4.png", alt="Three images showing the difference between CSS pixels and device pixels.", width="470", height="205" %}
   <figcaption class="w-figcaption">The difference between CSS pixels and device pixels.</figcaption>
 </figure>
 

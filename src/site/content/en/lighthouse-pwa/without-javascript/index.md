@@ -27,7 +27,7 @@ flags pages that don't contain _some_ content
 when JavaScript is unavailable:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="without-javascript.png" alt="Lighthouse audit showing page doesn't contain some content when JS is unavailable">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/durRW9Bh687rjFAIgF7P.png", alt="Lighthouse audit showing page doesn't contain some content when JS is unavailable", width="800", height="120", class="w-screenshot" %}
 </figure>
 
 Lighthouse disables JavaScript on the page and then inspects the page's HTML. If
@@ -56,7 +56,7 @@ when JavaScript is disabled, even if the content is just an alert to the user
 that JavaScript is required to use the page.
 
 For pages that absolutely must rely on JavaScript, one approach is to use a
-[`<noscript>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript)
+[`<noscript>`](https://developer.mozilla.org/docs/Web/HTML/Element/noscript)
 element to alert the user that JavaScript is required for the page. This is
 better than a blank page because the blank page leaves users uncertain
 about whether there's a problem with the page, their browsers, or their

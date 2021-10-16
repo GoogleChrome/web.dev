@@ -15,20 +15,10 @@
  */
 
 declare global {
-  export interface AuthorsItem extends AuthorsDataItem {
-    data: {
-      alt?: string;
-      hero?: string;
-      canonicalUrl: string;
-      subhead: string;
-      title: string;
-    };
-    description: string;
-    elements: TODO[];
-    href: string;
-    key: string;
-    title: string;
+  export interface AuthorsItem extends VirtualCollectionItem, AuthorsDataItem {
+    data?: VirtualDataField;
   }
+
   export interface Authors {
     [key: string]: AuthorsItem;
   }

@@ -56,5 +56,18 @@
 .w-banner--body {
   display: block;
   font: inherit;
-  padding: 24px;
+  padding: 8px;
+
+  > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  > * + * {
+    margin-top: 24px;
+  }
+
+  @include bp(md) {
+    padding: 24px;
+  }
 }

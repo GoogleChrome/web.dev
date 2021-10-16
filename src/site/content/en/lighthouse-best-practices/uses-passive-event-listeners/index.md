@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Does not use passive listeners to improve scrolling performance
+title: Use passive listeners to improve scrolling performance
 description: |
   Learn how to improve your page's scrolling responsiveness by avoiding
   passive event listeners.
@@ -29,7 +29,7 @@ Most browsers support passive event listeners. See
 flags event listeners that may delay page scrolling:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="uses-passive-event-listeners.png" alt="Lighthouse audit shows page doesn't use passive event listeners to improve scrolling performance">
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/a59Rk7aCUDvyKNqqoYRJ.png", alt="Lighthouse audit shows page doesn't use passive event listeners to improve scrolling performance", width="800", height="213", class="w-screenshot" %}
 </figure>
 
 Lighthouse uses the following process
@@ -58,7 +58,7 @@ just add the flag. For example:
 document.addEventListener('touchstart', onTouchStart, {passive: true});
 ```
 
-If you're supporting [older browsers that don't support passive event listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Browser_compatibility),
+If you're supporting [older browsers that don't support passive event listeners](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener#Browser_compatibility),
 you'll need to use feature detection or a polyfill. See the
 [Feature Detection](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection)
 section of the WICG [Passive event listeners](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md)

@@ -33,7 +33,7 @@ Using a Guest window gives you a clean testing environment without any Chrome
 extensions that could interfere with the audit.
 {% endAside %}
 
-![Lighthouse panel in Chrome DevTools](./lighthouse-audits-panel.png)
+{% Img src="image/admin/VUtkCadH9vjnKSzGzd0S.png", alt="Lighthouse panel in Chrome DevTools", width="800", height="637" %}
 
 Let's take a highly specialized search engine, doggos.io, as an example. Doggos.io aims to index all dog-related things on the internet, and its most important pages are the home and results pages. Here are the FCP and TTI numbers measured for the site on desktop and mobile.
 
@@ -97,7 +97,7 @@ If you are not sure which sites to look at, here are a few tools to try:
 2. [Alexa's similar sites](https://www.alexa.com/find-similar-sites) feature
 3. [SimilarWeb](https://www.similarweb.com)
 
-<img class="w-screenshot" src="./google-search-related-keyword.png" alt="Screenshot of Google search with the related keyword">
+{% Img src="image/admin/EzpGvSgVJYC2y3rsnHRk.png", alt="Screenshot of Google search with the related keyword", width="775", height="336", class="w-screenshot" %}
 
 
 For a realistic picture, try to **find 10 or so competitors**.
@@ -144,7 +144,7 @@ Create a chart with FCP and TTI times for all the similar websites and highlight
 </div>
 
 <figure>
-  <img class="w-screenshot" src="./doggo-at-a-computer.jpg" alt="Doggo at a computer">
+  {% Img src="image/admin/Mfzr0dmMxHij9KrJraHD.jpg", alt="Doggo at a computer", width="800", height="600", class="w-screenshot" %}
   <figcaption>
     Doggos.io seems to be doing okay on the FCP metric but seriously lagging behind in TTI
   </figcaption>
@@ -284,7 +284,7 @@ Here are a few examples based on TTI budgets:
   The recommended sizes are for the critical-path resources.
 {% endAside %}
 
-Defining a budget based on quantity metrics is a tricky business. An e-commerce website with loads of product photos is very different from a news portal which is mostly text. If you have ads or analytics on your site, that increases the amount of Javascript you're shipping.
+Defining a budget based on quantity metrics is a tricky business. An e-commerce website with loads of product photos is very different from a news portal which is mostly text. If you have ads or analytics on your site, that increases the amount of JavaScript you're shipping.
 
 Use the table above as a starting point and adjust based on the type of content you are working with. Define what your pages will include, review your research and take an educated guess for individual asset sizes. For example, if you are building a website with a lot of images, put stricter limits to JS size.
 
@@ -303,7 +303,7 @@ Ask yourself what level of interaction you expect on your site. If it's a news w
 Find out exactly what part of your audience browses on desktop vs. on mobile devices and prioritize accordingly. One way to figure this out is to check what your audience is doing on competitors' websites, through the [Chrome User Experience report](https://developers.google.com/web/updates/2018/08/chrome-ux-report-dashboard) dashboard.
 
 <figure class="w-figure">
-  <img src="./chrome-user-experience-report.png" alt="Device distribution data from Chrome User Experience report">
+  {% Img src="image/admin/ycZwOrFNzjdjquriM9rJ.png", alt="Device distribution data from Chrome User Experience report", width="800", height="530" %}
   <figcaption class="w-figcaption">
     Device distribution data from Chrome User Experience report
   </figcaption>

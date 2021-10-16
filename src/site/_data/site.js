@@ -16,6 +16,7 @@
 
 const path = require('path');
 const locale = require('../../../shared/locale');
+const {PAGINATION_COUNT} = require('../_utils/constants');
 
 module.exports = {
   env: process.env.ELEVENTY_ENV || 'dev',
@@ -30,15 +31,15 @@ module.exports = {
   subscribe: 'https://web.dev/newsletter',
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
-  thumbnail: '/images/social.png',
+  thumbnail: 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vU99HKzIf5EUPnzGVPf1.png',
   isBannerEnabled: true,
   banner:
-    'We had fun hosting thousands of developers at Chrome Dev Summit 2020! You can now watch all the sessions at [goo.gle/cds20-sessions](https://goo.gle/cds20-sessions).',
-  // Note that the imageCdn value is only used when we do a production build
-  // of the site. Otherwise all image paths are local. This means you can
-  // develop locally without having to mess with the CDN at all.
-  imageCdn: 'https://webdev.imgix.net',
-  gitlocalize: 'https://gitlocalize.com/repo/3847/',
+    'The countdown to Chrome Dev Summit 2021 is on! Visit [goo.gle/cds2021](https://goo.gle/cds2021) and request an invite to participate in workshops, learning lounges and office hours.',
+  areCoursesEnabled: true,
+  paginationCount: PAGINATION_COUNT,
+  imgixDomain: 'web-dev.imgix.net',
+  bucket: 'web-dev-uploads',
+  gitlocalize: 'https://gitlocalize.com/repo/6062/',
   analytics: {
     ids: {
       prod: 'UA-126406676-2',
@@ -52,7 +53,7 @@ module.exports = {
       SIGNED_IN: 'dimension1',
       TRACKING_VERSION: 'dimension5',
     },
-    version: 3,
+    version: 4,
   },
   firebase: {
     prod: {

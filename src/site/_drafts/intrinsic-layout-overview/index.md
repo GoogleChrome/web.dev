@@ -7,7 +7,7 @@ description: Intrinsic layout starts with healthy layout strategies that respond
 alt: A full page design is shown alluding to a large amount of layout work
 web_lighthouse: N/A
 date: 2019-06-10
-hero: hero.jpg
+hero: image/admin/qJ1nZhqmZbdu7HDxqXhM.jpg
 hero_position: top
 tags:
   - blog

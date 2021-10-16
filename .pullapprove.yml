@@ -1,0 +1,165 @@
+# pullapprove lets you configure which individuals or teams should be able
+# to review and approve pull requests.
+#
+# If a user or team's name is prefixed with a ~ then they won't be assigned
+# as a reviewer, but they still have the power to approve. This helps cut
+# down on notification spam.
+
+version: 3
+
+# Global conditions that apply to all pull requests.
+# https://docs.pullapprove.com/config/pullapprove-conditions/
+pullapprove_conditions:
+# Don't tag in any reviewers if the PR is work in progress.
+- condition: '"WIP" not in title'
+  unmet_status: pending
+  explanation: 'Work in progress'
+- condition: 'not draft'
+  unmet_status: pending
+  explanation: 'Draft PR'
+
+groups:
+  # Learn CSS
+  # Handles any changes related to the Learn CSS course
+  learncss:
+    reviewers:
+      users:
+      - una
+      - argyleink
+      teams:
+      - ~web-dev-content
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    reviews:
+      # Assign all reviewers.
+      request: 99
+    conditions:
+      - >
+        glob('src/site/content/en/learn/css/**/*.md') in files or
+        glob('src/site/content/en/learn/css/**/*.yml') in files or
+        glob('src/site/_data/courses/css/**/*.yml') in files
+
+  # Capabilities/Fugu
+  capabilities:
+    reviewers:
+      users:
+      - jpmedley
+      teams:
+      - ~web-dev-content
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    conditions:
+      - '"[Fugu]" in title or "[Capabilities]" in title or "fugu" in labels or "capabilities" in labels'
+
+  # PWA
+  pwa:
+    reviewers:
+      users:
+      - jpmedley
+      teams:
+      - ~web-dev-content
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    conditions:
+      - '"[PWA]" in title or "pwa" in labels'
+
+  # Media
+  media:
+    reviewers:
+      users:
+      - jpmedley
+      teams:
+      - ~web-dev-content
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    conditions:
+      - '"[Media]" in title or "media" in labels'
+
+  # Vitals
+  vitals:
+    reviewers:
+      users:
+      - mihajlija
+      teams:
+      - ~web-dev-content
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    conditions:
+      - '"[CWV]" in title or "[Vitals]" in title or "vitals" in labels'
+
+  # Privacy/Security
+  privacy_security:
+    reviewers:
+      users:
+      - mihajlija
+      teams:
+      - ~web-dev-content
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    conditions:
+      - '"[Privacy]" in title or "[Security]" in title or "privacy/security" in labels'
+      # dependabot prefixes its PRs with [Security] but we want the eng team to handle these.
+      - "'dependabot' not in author.username"
+
+  # Identity
+  identity:
+    reviewers:
+      users:
+      - mihajlija
+      teams:
+      - ~web-dev-content
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    conditions:
+      - '"[Identity]" in title or "identity" in labels'
+
+  # Content
+  # Handles any changes related to site content.
+  content:
+    reviewers:
+      teams:
+      - ~web-dev-content
+      - ~web-dev-eng
+      - ~web-dev-approvers
+    conditions:
+      # Only fall through to this group if the review has not been handled by
+      # one of the prior teams.
+      - 'len(groups.active) == 0'
+      - >
+        files.include('src/site/content/*') or
+        files.include('src/images/authors/*') or
+        files.include('src/site/_data/i18n/*') or
+        files.include('src/site/_data/authorsData.json') or
+        files.include('src/site/_data/tagsData.json') or
+        files.include('src/site/_data/paths/*.json') or
+        files.include('redirects.yaml')
+
+  # Code
+  # Handles any changes to programmatic files.
+  code:
+    reviewers:
+      teams:
+      - web-dev-eng
+    reviews:
+      # The number of people who should be requested for review at any given
+      # time. Default is 1.
+      request: 2
+    conditions:
+      # Only tag the eng team if the review has not been handled by
+      # one of the prior teams.
+      - 'len(groups.active) == 0'
+      # The engineering team is the default owner for any code related files.
+      - >
+        contains_any_globs(files, [
+          '**/*.js',
+          '**/*.css',
+          '**/*.scss',
+          '**/*.html',
+          '**/*.htm',
+          '**/*.njk',
+          '**/*.toml',
+          '**/*.sh'
+        ]) or
+        files.include('*.yaml').exclude('redirects.yaml') or
+        files.include('*.yml').exclude('src/site/_data/i18n/*') or
+        files.include('*.json').exclude('src/site/_data/authorsData.json').exclude('src/site/_data/tagsData.json').exclude('src/site/_data/paths/*.json')

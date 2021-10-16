@@ -6,7 +6,7 @@ authors:
 date: 2019-09-19
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-06-27
-hero: hero.jpg
+hero: image/admin/H6F7W8nUez3vaOv8hD8i.jpg
 alt: A black screen shows development work..
 
 description:
@@ -17,7 +17,7 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - houdini
   - css
-  - Chrome78
+  - chrome-78
 feedback:
   - api
 ---
@@ -107,7 +107,7 @@ Initial value of the custom property.
 Taking a closer look at `syntax`. There are a number of [valid
 options](https://drafts.css-houdini.org/css-properties-values-api/#supported-names)
 ranging from numbers to colors to
-[`<custom-ident>`](https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident)
+[`<custom-ident>`](https://developer.mozilla.org/docs/Web/CSS/custom-ident)
 types. These syntaxes can also be modified by using the following values
 
 * Appending `+` signifies that it accepts a space-separated list of values of

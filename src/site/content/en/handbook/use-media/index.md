@@ -47,7 +47,7 @@ Not all images need captions. If there's a preceding sentence describing the ima
 {% Compare 'better', 'OK' %}
 Let's look at a web app that uses JavaScript to render a collection of cat images entirely in the browser:
 
-![Image of a code sample next to the mobile site that it renders.](spa-kittens.png)
+{% Img src="image/admin/tdiMrqek791ayJmw72di.png", alt="Image of a code sample next to the mobile site that it renders.", width="800", height="447" %}
 {% endCompare %}
 
 ## Video
