@@ -61,21 +61,18 @@ h6 {
 }
 
 h1 {
-  font-size: get-size('size-6');
-}
-
-h2 {
   font-size: get-size('size-5');
 }
 
-h3 {
+h2 {
   font-size: get-size('size-4');
 }
 
-h4 {
+h3 {
   font-size: get-size('size-3');
 }
 
+h4,
 h5,
 h6 {
   font-size: get-size('size-2');
@@ -377,17 +374,21 @@ sup {
 }
 
 /// Details and summary
-details:not([class]) {
+details {
   @extend .flow;
 
   --flow-space: 0.5em;
 
-  max-width: $global-prose-element-max-width;
   border-block: 1px solid get-utility-value('bg', 'stroke');
   padding: 1rem 0.5rem 1.2rem 0.5rem;
+  text-align: left;
 }
 
-details:not([class]) summary {
+details + details {
+  border-block-start: none;
+}
+
+details summary {
   position: relative;
   font-size: get-size('size-2');
   list-style: none;
@@ -445,18 +446,20 @@ details:not([class]) summary {
   }
 }
 
-[class*='text-'] > details:not([class]) summary {
+/// Let a details element inherit a parent's font-size
+/// if it feature a font size utility class
+[class*='text-'] > details summary {
   font-size: inherit;
 }
 
-details[open]:not([class]) summary {
+details[open] summary {
   &::after {
     inset-block-start: 11px;
     transform: rotate(-135deg);
   }
 }
 
-details:not([class]) summary + * {
+details summary + * {
   @include apply-utility('flow-space', 'size-1');
 }
 

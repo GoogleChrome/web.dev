@@ -10,7 +10,7 @@ tags:
   - blog
   - capabilities
   - service-worker
-  # - chrome80
+  - chrome-80
   # - index
   # - caching
 hero: image/admin/tuIkBEm2DdHBYy62dDac.jpg

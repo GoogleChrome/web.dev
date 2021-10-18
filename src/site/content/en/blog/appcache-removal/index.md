@@ -9,7 +9,7 @@ updated: 2021-08-23
 tags:
   # - appcache
   - blog
-  # - chrome84
+  - chrome-84
   # - deprecation
   - origin-trials
   # - removal

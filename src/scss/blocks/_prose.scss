@@ -19,23 +19,6 @@
     width: 100%;
   }
 
-  /// Reduce the size of headings in this context
-  h1 {
-    font-size: get-size('size-5');
-  }
-
-  h2 {
-    font-size: get-size('size-4');
-  }
-
-  h3 {
-    font-size: get-size('size-3');
-  }
-
-  h4 {
-    font-size: get-size('size-2');
-  }
-
   /// Add more space to elements that follow figures etc
   pre + *,
   figure + *,
