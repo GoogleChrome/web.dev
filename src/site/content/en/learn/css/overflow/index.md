@@ -83,7 +83,7 @@ The `overflow-x` property controls overflow along the horizontal axis of the dev
 
 ### Logical properties for scroll direction
 
-[`overflow-inline`](https://developer.mozilla.org/docs/Web/CSS/overflow-inline) and [`overflow-block`](https://developer.mozilla.org/docs/Web/CSS/overflow-block) set the overflow based on the document direction and writing mode. 
+The [`overflow-inline`](https://developer.mozilla.org/docs/Web/CSS/overflow-inline) and [`overflow-block`](https://developer.mozilla.org/docs/Web/CSS/overflow-block) properties set the overflow based on the document direction and writing mode. 
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -95,7 +95,7 @@ The `overflow-x` property controls overflow along the horizontal axis of the dev
 
 ### The `overflow` shorthand
 
-The [`overflow`](https://developer.mozilla.org/docs/Web/CSS/overflow) shorthand sets both 'overflow-x’ and 'overflow-y’ styles in one line:
+The [`overflow`](https://developer.mozilla.org/docs/Web/CSS/overflow) shorthand sets both `overflow-x` and `overflow-y` styles in one line:
 
 ```css
 overflow: hidden scroll;
@@ -105,7 +105,7 @@ If two keywords are specified, the first applies to `overflow-x` and the second 
 
 #### values
 
-Now let’s take a closer look at the [values and keywords](https://developer.mozilla.org//docs/Web/CSS/overflow#values) available for the `overflow` properties we have introduced.
+Let's take a closer look at the [values and keywords](https://developer.mozilla.org//docs/Web/CSS/overflow#values) available for the `overflow` properties.
 
 `overflow: visible` (default)
 : Without setting the property, `overflow: visible` is the default value for the web. This ensures that content is never unintentionally hidden and follows the core tenets of "never hide content" or "safe layouts of precise layouts".
@@ -148,9 +148,9 @@ Scroll bars take up space within the padding box and can compete for space if `i
 
 ### root-scroller vs implicit-scroller
 
-You may notice that some scrollers have a pull-to-refresh behavior, especially when developing for mobile and hybrid applications. There is only ever one :root scroller on a page, treated as an implicit-scroller. This scroller may have the bouncing behavior but there is inconsistency across platforms and it is missing newer scrollbar features like highlighting.
+You may notice that some scrollers have a pull-to-refresh behavior and other special behaviors, especially when developing for mobile and hybrid applications. This scroll behavior happens on the root scroller. There is only ever one root scroller on a page. By default, the [documentElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement) is the page's root scroller, however, by changing which element is the root scroller, the special behaviors can be applied to scrollers other than the documentElement, we call this new scroller the implicit root scroller.
 
-To create a root-scroller, you can use something called *scroller promotion* by positioning a container as fixed, ensuring it covers the entire viewport and is z-index on top with a scroller. See how to create a root-scroller here.
+To create a root-scroller, you can use something called *scroller promotion* by positioning a container as fixed, ensuring it covers the entire viewport and is z-index on top with a scroller. See how to create a root-scroller [here](https://codepen.io/web-dot-dev/pen/dyzPzwz).
 
 <figure class="w-figure">
   {% Video
@@ -170,7 +170,7 @@ To create a root-scroller, you can use something called *scroller promotion* by 
 
 `scroll-behavior` allows you to opt into browser-controlled scrolling to elements. This allows you to specify how in-page navigation like `.scrollTo()` or links are handled.
 
-This is especially useful when used with the [prefers-reduced-motion](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion) to specify scroll behavior based on user preference.
+This is especially useful when used with [prefers-reduced-motion](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion) to specify scroll behavior based on user preference.
 
 ```css
 @media (prefers-reduced-motion) {
@@ -188,7 +188,7 @@ This is especially useful when used with the [prefers-reduced-motion](https://de
 
 ### overscroll-behavior
 
-Finally, [`overscroll-behavior`](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior) allows you to prevent overflow scrolling leaking into a parent container (called scroll chaining). If you’ve ever reached the end of a modal overlay, then continued scrolling and had the page behind the overlay move, this is the scroll chaining, or bubbling up to the parent scroll container. `overscroll-behavior` allows you to control this behavior.
+If you’ve ever reached the end of a modal overlay, then continued scrolling and had the page behind the overlay move, this is the scroll chaining, or bubbling up to the parent scroll container. The [`overscroll-behavior`](https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior) property allows you to prevent overflow scrolling leaking into a parent container (called scroll chaining).
 
 {% Codepen {
   user: 'web-dot-dev',
