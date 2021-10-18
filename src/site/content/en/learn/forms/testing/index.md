@@ -4,12 +4,12 @@ description: >
   In this module, you learn how to test and analyze your forms.
 authors:
   - michaelscharnagl
-date: 2021-09-17
+date: 2021-10-18
 ---
 
 In previous modules, you learned how to build a form,
 help users avoid re-entering data,
-and validate form controls.
+and how to validate form data.
 How can you now make sure the form is usable?
 You can test and analyze your form to answer this question.
 
@@ -24,15 +24,13 @@ Then try only using your keyboard.
 Next, test it on a phone.
 You have now tested your form with different input methods (keyboard, touch, and mouse),
 different screen sizes,
-different browsers and different operating systems (OS).
+different browsers and different operating systems.
 
-Do you have more devices you can test on?
-Test it there also.
-The more different devices, browsers, browser versions, and OS you can test on, the better.
+Do you have more devices you can test on? Test your form on all of them.
+The more different devices, browsers, browser versions, and operating systems you can test on, the better!
 
 You can also use a test service to test your form on lots of different browsers,
-different browser versions, different devices, and different OS.
-
+different browser versions, different devices, and different operating systems. 
 [BrowserStack](https://www.browserstack.com) offers free test accounts for open source projects,
 to enable testing on different browsers, devices and operating systems.
 
@@ -54,7 +52,7 @@ These questions help you build even better forms.
 {% Aside %}
 People from all over the world will use your form.
 Do you have an address field in your form?
-Google the city you always wanted to visit, and search for a restaurant there.
+Google a city you always wanted to visit, and search for a restaurant there.
 Now enter the address of the restaurant in your address field.
 The format of the address may be totally different from the address format where you live.
 Test with different data to ensure your form can handle diverse formats.
@@ -179,17 +177,19 @@ You can use an analytics tool. Let's have a look at one and how this works.
 
 One tool you can use is
 [Google Analytics](https://developers.google.com/analytics) (GA).
-After setting it up, you get a JavaScript snippet you have to include in your site.
-From this point on, you see how people use your site.
+After setting it up, you get a JavaScript snippet you include in each page on your site.
+From this point on, you can find out how people use your site.
 
-How many visit the URL with your form?
+How many people visit the page with your form on it?
 How many fill out the form and move to the next page?
-You get answers to this in your analytics tool.
-This is also called Real User Monitoring (RUM).
+You get answers to these questions by using analytics tools.
 
 {% Aside %}
+Monitoring the real-world experience of your users is sometimes called Real User Monitoring 
+(RUM).
+
 RUM collects performance metrics directly from the end user's browser.
-Looking at RUM data shows you how real users interact with your site.
+RUM data shows you how your site performs, and how real users interact with it.
 {% endAside %}
 
 You can also set up more advanced analytics reports.
@@ -197,9 +197,9 @@ Want to track how many users click the **Submit** button?
 You can define and integrate
 [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events) to analyze this.
 
-A wide range of analytics tools are available.
+A wide range of analytics tools is available.
 Some are minimalistic, some offer a lot of options for individualization.
-Try some out to find the best for your needs.
+Try out a range of tools to find the best for your needs.
 
 {% Assessment 'testing' %}
 
