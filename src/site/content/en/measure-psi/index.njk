@@ -23,13 +23,13 @@ draft: true
 </section>
 
 <section class="bg-mid-bg">
-  <div class="wrapper region">
+  <div class="wrapper region" data-size="narrow">
     <web-url-chooser-container should-run-psi></web-url-chooser-container>
-    <web-lighthouse-viewer></web-lighthouse-viewer>
+    <web-lighthouse-viewer class="region"></web-lighthouse-viewer>
   </div>
 </section>
 
-<section class="numbered-headers auto-grid wrapper region">
+<section class="numbered-headers cluster wrapper region" data-size="narrow">
   <div class="numbered-headers__step">
     <div class="numbered-headers__heading 1">
       <h3 class="text-size-3">Run tests on your site</h3>
@@ -50,7 +50,7 @@ draft: true
   </div>
 </section>
 
-<section class="flow all-center wrapper region">
+<section class="flow all-center wrapper region" data-size="narrow">
   <h2 class="no-link w-headline--two w-font-weight--medium">
     How your site is measured
   </h2>
@@ -62,26 +62,26 @@ draft: true
   </p>
 </section>
 
-<section class="wrapper region all-center" class="bg-mid-bg">
-  <details {{ data.state | safe }}>
+<section class="wrapper region all-center" class="bg-mid-bg" data-size="narrow">
+  <details class="bg-mid-bg">
     <summary>
       FAQ question 1
     </summary>
       FAQ Answer 1
   </details>
-  <details {{ data.state | safe }}>
+  <details class="bg-mid-bg">
     <summary>
       FAQ question 2
     </summary>
       FAQ Answer 1
   </details>
-  <details {{ data.state | safe }}>
+  <details class="bg-mid-bg">
     <summary>
       FAQ question 3
     </summary>
       FAQ Answer 1
   </details>
-  <details {{ data.state | safe }}}>
+  <details class="bg-mid-bg">
     <summary>
       FAQ question 4
     </summary>
