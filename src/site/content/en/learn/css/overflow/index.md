@@ -105,7 +105,7 @@ If two keywords are specified, the first applies to `overflow-x` and the second 
 
 #### values
 
-Let's take a closer look at the [values and keywords](https://developer.mozilla.org//docs/Web/CSS/overflow#values) available for the `overflow` properties.
+Let's take a closer look at the [values and keywords](https://developer.mozilla.org/docs/Web/CSS/overflow#values) available for the `overflow` properties.
 
 `overflow: visible` (default)
 : Without setting the property, `overflow: visible` is the default value for the web. This ensures that content is never unintentionally hidden and follows the core tenets of "never hide content" or "safe layouts of precise layouts".
@@ -148,7 +148,7 @@ Scroll bars take up space within the padding box and can compete for space if `i
 
 ### root-scroller vs implicit-scroller
 
-You may notice that some scrollers have a pull-to-refresh behavior and other special behaviors, especially when developing for mobile and hybrid applications. This scroll behavior happens on the root scroller. There is only ever one root scroller on a page. By default, the [documentElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement) is the page's root scroller, however, by changing which element is the root scroller, the special behaviors can be applied to scrollers other than the documentElement, we call this new scroller the implicit root scroller.
+You may notice that some scrollers have a pull-to-refresh behavior and other special behaviors, especially when developing for mobile and hybrid applications. This scroll behavior happens on the root scroller. There is only ever one root scroller on a page. By default, the [documentElement](https://developer.mozilla.org/docs/Web/API/Document/documentElement) is the page's root scroller, however, by changing which element is the root scroller, the special behaviors can be applied to scrollers other than the documentElement, we call this new scroller the implicit root scroller.
 
 To create a root scroller, you can use something called *scroller promotion* by positioning a container as fixed, ensuring it covers the entire viewport and is z-index on top with a scroller. See how to create a root scroller [here](https://codepen.io/web-dot-dev/pen/dyzPzwz).
 
