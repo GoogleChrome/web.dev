@@ -7,9 +7,11 @@ web-lighthouse-viewer {
 
   .lh-root {
     --report-background-color: transparent;
+    --score-icon-size: 12px;
   }
 
-  .lh-topbar {
+  .lh-topbar,
+  .lh-sticky-header {
     display: none;
   }
 
@@ -36,21 +38,49 @@ web-lighthouse-viewer {
     }
   }
 
-  .lh-gauge__wrapper {
-    color: inherit;
+  .lh-gauge__wrapper--average {
+    color: var(--color-average);
+  }
+  .lh-gauge__wrapper--fail {
+    color: var(--color-fail);
+  }
+  .lh-gauge__wrapper--pass {
+    color: var(--color-pass);
+  }
+
+  .lh-metricfilter__radio {
+    width: 0;
   }
 
   .lh-expandable-details {
     padding: 0;
     border-block: 0;
+  }
 
-    summary {
-      color: inherit;
-      font-size: inherit;
-      &::before {
-        display: none;
-      }
+  summary {
+    color: inherit;
+    font-size: inherit;
+
+    &::before,
+      &::after {
+      display: none;
     }
+  }
 
+  code {
+    border: 0;
+  }
+
+  .lh-audit--fail {
+    --score-icon-size: 12px;
+  }
+
+  .lh-audit--informative {
+    --score-icon-size: 12px;
+  }
+
+  details.lh-clump {
+    border-block: 0;
+    padding: 0;
   }
 }
