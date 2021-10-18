@@ -4,3 +4,12 @@
   margin-top: 0;
   padding-left: 32px;
 };
+
+.w-learn__collections-heading {
+  display: flex;
+  flex-flow: row wrap;
+
+  .w-learn__collections-spacer {
+    flex: 1 1 auto
+  }
+}

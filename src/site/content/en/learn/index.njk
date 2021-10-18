@@ -5,6 +5,8 @@ description: |
   Learn best practices for the modern web and hone your skills with hands-on
   codelabs.
 date: 2018-11-05
+pageScripts:
+  - '/js/learn.js'
 ---
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
@@ -19,83 +21,53 @@ date: 2018-11-05
     </header>
   </div>
 
-  {% if site.areCoursesEnabled %}
-    <div class="sm:pad-left-500 sm:pad-right-500">
-      <div class="learn-section gap-left-auto gap-right-auto">
-        <h3 id="{{ 'i18n.learn.courses' | i18n(locale) | slug }}" class="w-learn-heading">
-          {{ 'i18n.learn.courses' | i18n(locale) }}
-          <a class="w-headline-link" href="#{{ 'i18n.learn.courses' | i18n(locale) | slug }}" aria-hidden="true">#</a>
-        </h3>
-        {% include 'partials/course-cards.njk' %}
-      </div>
+  <div class="sm:pad-left-500 sm:pad-right-500">
+    <div class="learn-section gap-left-auto gap-right-auto">
+      <h3 id="{{ 'i18n.learn.courses' | i18n(locale) | slug }}" class="w-learn-heading">
+        {{ 'i18n.learn.courses' | i18n(locale) }}
+        <a class="w-headline-link" href="#{{ 'i18n.learn.courses' | i18n(locale) | slug }}" aria-hidden="true">#</a>
+      </h3>
+      {% include 'partials/course-cards.njk' %}
     </div>
+  </div>
 
-    <hr class="gap-top-400 gap-bottom-700">
-  {% endif %}
+  <hr class="gap-top-400 gap-bottom-700">
 
   <section class="w-grid">
-    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
-      <h3 id="{{ 'i18n.learn.performance' | i18n(locale) | slug }}" class="w-learn-heading">
-        {{ 'i18n.learn.performance' | i18n(locale) }}
-        <a class="w-headline-link" href="#{{ 'i18n.learn.performance' | i18n(locale) | slug }}" aria-hidden="true">#</a>
-      </h3>
-    </div>
-    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
-      {% for collection in learn.performance %}
-        {% PathCard collection, lang %}
+    <div class="w-learn__collections-heading">
+      <h2 id="{{ 'i18n.learn.collections' | i18n(locale) | slug }}" class="w-learn-heading">
+        {{ 'i18n.learn.collections' | i18n(locale) }}
+        <a class="w-headline-link" href="#{{ 'i18n.learn.collections' | i18n(locale) | slug }}" aria-hidden="true">#</a>
+      </h2>
+
+      <span class="w-learn__collections-spacer"></span>
+
+      {% set filterItems = [{title: 'i18n.common.all' | i18n(locale)}] %}
+      {% for category, paths in learn %}
+        {% set i18nTitle = 'i18n.learn.' + category %}
+        {% set filterItems = (filterItems.push({title: i18nTitle | i18n(locale), id: i18nTitle | i18n(locale) | slug}), filterItems) %}
       {% endfor %}
+
+      <web-learn-filter filters="{{filterItems | dump}}"></web-learn-filter>
     </div>
   </section>
-  <section class="w-grid">
-    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
-      <h3 id="{{ 'i18n.learn.build_excellent' | i18n(locale) | slug }}" class="w-learn-heading">
-        {{ 'i18n.learn.build_excellent' | i18n(locale) }}
-        <a class="w-headline-link" href="#{{ 'i18n.learn.build_excellent' | i18n(locale) | slug }}" aria-hidden="true">#</a>
-      </h3>
-    </div>
-    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
-      {% for path in learn.paths %}
-        {% PathCard path, lang %}
-      {% endfor %}
-    </div>
-  </section>
-  <section class="w-grid">
-    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
-      <h3 id="{{ 'i18n.learn.frameworks' | i18n(locale) | slug }}" class="w-learn-heading">
-        {{ 'i18n.learn.frameworks' | i18n(locale) }}
-        <a class="w-headline-link" href="#{{ 'i18n.learn.frameworks' | i18n(locale) | slug }}" aria-hidden="true">#</a>
-      </h3>
-    </div>
-    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
-      {% for framework in learn.frameworks %}
-        {% PathCard framework, lang %}
-      {% endfor %}
-    </div>
-  </section>
-  <section class="w-grid">
-    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
-      <h3 id="{{ 'i18n.learn.lighthouse' | i18n(locale) | slug }}" class="w-learn-heading">
-        {{ 'i18n.learn.lighthouse' | i18n(locale) }}
-        <a class="w-headline-link" href="#{{ 'i18n.learn.lighthouse' | i18n(locale) | slug }}" aria-hidden="true">#</a>
-      </h3>
-    </div>
-    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
-      {% for audit in learn.audits %}
-        {% PathCard audit, lang %}
-      {% endfor %}
-    </div>
-  </section>
-  <section class="w-grid">
-    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
-      <h3 id="{{ 'i18n.learn.explorations' | i18n(locale) | slug }}" class="w-learn-heading">
-        {{ 'i18n.learn.explorations' | i18n(locale) }}
-        <a class="w-headline-link" href="#{{ 'i18n.learn.explorations' | i18n(locale) | slug }}" aria-hidden="true">#</a>
-      </h3>
-    </div>
-    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
-      {% for exploration in learn.explorations %}
-        {% PathCard exploration, lang %}
-      {% endfor %}
-    </div>
+
+  <section id="learning-paths">
+    {% for category, paths in learn %}
+      {% set i18nTitle = 'i18n.learn.' + category %}
+      <section id="{{ i18nTitle | i18n(locale) | slug }}" class="w-grid">
+        <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
+          <h3 class="w-learn-heading">
+            {{ i18nTitle | i18n(locale) }}
+            <a class="w-headline-link" href="#{{ i18nTitle | i18n(locale) | slug }}" aria-hidden="true">#</a>
+          </h3>
+        </div>
+        <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+          {% for path in paths %}
+            {% PathCard path, lang %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
   </section>
 </div>
