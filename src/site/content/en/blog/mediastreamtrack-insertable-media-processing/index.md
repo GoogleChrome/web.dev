@@ -7,7 +7,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-04
-updated: 2021-08-24
+updated: 2021-10-18
 description: |
   Insertable streams for MediaStreamTrack is about exposing the content of a MediaStreamTrack
   as a stream that can be manipulated or used to generate new content.
@@ -111,8 +111,6 @@ A `MediaStreamTrackGenerator` object likewise exposes one property, `writable`, 
 written to `writable`, the frame's `close()` method is automatically invoked, so that its media
 resources are no longer accessible from JavaScript.
 
-In the `MediaStream` model, apart from media, which flows from sources to sinks, there are also
-control signals that flow in the opposite direction (i.e., from sinks to sources via the track).
 A `MediaStreamTrackGenerator` is a track for which a custom
 source can be implemented by writing media frames to its `writable` field.
 
@@ -175,9 +173,7 @@ origin-tainted data apply. For example, data from cross-origin resources cannot 
 existing restrictions on accessing such resources (e.g., it is not possible to access the pixels of
 a cross-origin image or video element). In addition, access to media data from cameras, microphones,
 or screens is subject to user authorization. The media data this API exposes is already available
-through other APIs. In addition to the media data, this API exposes some control signals such as
-requests for new frames. These signals are intended as hints and do not pose a significant security
-risk.
+through other APIs.
 
 ## Feedback
 
@@ -227,8 +223,8 @@ This article was reviewed by Harald Alvestrand, [Joe Medley](https://github.com/
 [Chris Montgomery](https://unsplash.com/@cwmonty) on
 [Unsplash](https://unsplash.com/photos/smgTvepind4).
 
-[spec]: https://w3c.github.io/mediacapture-transform/
-[explainer]: https://github.com/w3c/mediacapture-transform/blob/main/explainer.md
-[github]: https://github.com/w3c/mediacapture-transform/
+[spec]: https://alvestrand.github.io/mediacapture-transform/
+[explainer]: https://github.com/alvestrand/mediacapture-transform/blob/main/explainer.md
+[github]: https://github.com/alvestrand/mediacapture-transform
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [ot]: https://developer.chrome.com/origintrials/#/view_trial/-7811493553674125311
