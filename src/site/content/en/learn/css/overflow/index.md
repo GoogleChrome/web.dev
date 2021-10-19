@@ -9,6 +9,8 @@ audio:
 authors:
   - emmatwersky
 date: 2021-11-01
+tags:
+  - css
 ---
 
 When content extends beyond its parent, there are many options for how you can handle it. You can scroll to add additional space, clip the overflowing edges, indicate the cut-off with an ellipsis, and so much more. Overflow is especially important to consider when developing for phone applications and multiple screen sizes.
@@ -195,6 +197,8 @@ If you’ve ever reached the end of a modal overlay, then continued scrolling an
   id: 'powqJQe',
   tab: 'result'
 } %}
+
+{% Assessment 'overflow' %}
 
 ## Resources
 
