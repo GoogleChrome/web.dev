@@ -35,7 +35,6 @@ module.exports = {
   isBannerEnabled: true,
   banner:
     'The countdown to Chrome Dev Summit 2021 is on! Visit [goo.gle/cds2021](https://goo.gle/cds2021) and request an invite to participate in workshops, learning lounges and office hours.',
-  areCoursesEnabled: true,
   paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',

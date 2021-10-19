@@ -28,7 +28,7 @@ const data = require('../content/en/learn/learn.11tydata.js')();
 module.exports = function () {
   const out = {};
 
-  const paths = data.learn.paths;
+  const paths = data.learn.build_excellent;
   paths.forEach((path) => {
     path.topics.forEach((topic) => {
       (topic.pathItems || []).forEach((id) => {
