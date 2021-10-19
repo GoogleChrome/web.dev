@@ -47,7 +47,7 @@ an `<input>`, `<select>`, `<textarea>` or `<button>`.
 Sometimes **form field** is used to refer to form controls, 
 in particular elements for text entry: `<input>` and `<textarea>`.
 
-## Here's what you'll learn:
+## Here's what you'll learn
 
 {% include 'partials/course-index.njk' %}
 
