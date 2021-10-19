@@ -44,18 +44,13 @@ class UrlChooserContainer extends BaseStateElement {
   }
 
   onStateChanged(state) {
-    // TODO: Temporary logic. Remove when we stop supporting both LH and PSI.
-    if (this.shouldRunPsi) {
-      // In PSI request we don't support signed-in and stored urls.
-      this.url = state.activeLighthouseUrl;
-    } else {
-      // As userUrl can change (a signed-in user can modify it in another browser
-      // window), _prefer_ any URL that's currently being run through Lighthouse.
-      // This will prevent e.g. "foo.com" (after a user has hit "Run Audit") being
-      // replaced by "bar.com" (which is run in another browser window), and then
-      // results being approprtioned to the wrong URL.
-      this.url = state.activeLighthouseUrl || state.userUrl;
-    }
+    // As userUrl can change (a signed-in user can modify it in another browser
+    // window), _prefer_ any URL that's currently being run through Lighthouse.
+    // This will prevent e.g. "foo.com" (after a user has hit "Run Audit") being
+    // replaced by "bar.com" (which is run in another browser window), and then
+    // results being approprtioned to the wrong URL.
+
+    this.url = state.activeLighthouseUrl || state.userUrl;
     this.active = state.activeLighthouseUrl !== null;
     this.hasError = Boolean(state.lighthouseError);
   }

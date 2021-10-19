@@ -31,8 +31,13 @@ class UrlChooser extends BaseElement {
 
   render() {
     return html`
-      <div class="lh-report-header-enterurl">
-        <div class="lh-enterurl lh-enterurl--selected">${this.url}</div>
+      <div
+        class="lh-report-header-enterurl ${this.disabled ? 'lh-running' : ''}"
+      >
+        <div class="lh-enterurl lh-enterurl--selected">
+          <div class="lh-enterurl__url">${this.url}</div>
+          <web-progress-bar></web-progress-bar>
+        </div>
         <div class="lh-enterurl lh-enterurl--switch">
           <input
             ?disabled=${this.disabled}
