@@ -41,7 +41,7 @@ You also need to specify which fields are mandatory.
 } %}
 
 Try to submit this form without entering any data.
-Do you see an error message attached to the input telling you that the field is required?
+Do you see an error message attached to the `<input>` telling you that the field is required?
 
 This happens because of the `required` attribute.
 
@@ -62,7 +62,7 @@ later in this module.
 {% endAside %}
 
 You already learned that you can use many more types, for example, `type="email"`.
-Let's have a look at a required email input.
+Let's have a look at a required email `<input>`.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -74,10 +74,10 @@ Try to submit this form without entering any data.
 Is there any difference from the demo before?
 Now insert your name in the email field and try to submit.
 You see a different error message. How is that possible?
-That's because the value you entered isn't a valid email address.
+You get a different message because the value you entered isn't a valid email address.
 
 The `required` attribute tells the browser that the field is mandatory.
-The browser also tests if the entered data matches the format of the type.
+The browser also tests if the entered data matches the format of the `type`.
 The email field shown in the example is only valid if it's not empty and if the entered data is a valid email address.
 
 ## Help the user enter the correct format
@@ -148,7 +148,7 @@ How would you change the `pattern` to also allow uppercase letters?
 
 {% DetailsSummary 'h3' %} Toggle answer {% endDetailsSummary %}
 
-The correct answer is `pattern="[A-z]{4,20}"`.
+The correct answer is `pattern="[A-z]{2,20}"`.
 
 {% endDetails %}
 

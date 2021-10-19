@@ -1,10 +1,10 @@
 ---
 title: The form element in depth
 description: >
-  Learn all about the `<form>` element, when you should use a form, and how a form works in detail.
+  Learn all about the form element, when you should use a form, and how a form works in detail.
 authors:
   - michaelscharnagl
-date: 2021-10-07
+date: 2021-10-18
 ---
 
 In a previous module, you learned [how to use the `<form>` element](/learn/forms/form-element). 

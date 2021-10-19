@@ -34,7 +34,7 @@ questions:
     options:
       - content: "Clicking a `<button>` element."
         rationale: "Correct, this is one option."
-      - content: "Using the `ENTER` key."
+      - content: "Using the `Enter` key."
         rationale: "Correct, this is one option."
       - content: "Clicking an `<input>` element with `type='submit'`."
         rationale: "Correct, this is one option."
