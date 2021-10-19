@@ -236,6 +236,8 @@ You do this by adding the property `display: list-item`. One example of using `d
 
 While you can turn anything into a list-item view with `display`, you should not use this instead of using correct list markup, if the content you are styling really is a list. Changing the visual appearance of an item to a list item does not change how accessibility services read and recognize the item, so it will not be read as a list item to screen readers or switch devices. You should always use semantic markup and create lists with `<li>` whenever possible.
 
+{% Assessment 'lists' %}
+
 ## Resources
 
 - [MDN Guide on Styling Lists](https://developer.mozilla.org/docs/Learn/CSS/Styling_text/Styling_lists)
