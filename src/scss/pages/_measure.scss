@@ -8,3 +8,11 @@
     }
   }
 }
+
+.measure-steps {
+  --cluster-vertical-alignment: top;
+
+  .numbered-headers__heading {
+    flex: initial;
+  }
+}
