@@ -1,0 +1,16 @@
+setLeader: Test your knowledge of lists
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: The default `flex-direction` is
+    options:
+      - content: "`row`"
+        rationale: "By default, flexbox will fit items into a row, lining them
+        up at the start. With wrapping turned on, it will continue creating rows
+        for children to flow within."
+      - content: "`column`"
+        rationale: "Setting flex-direction to column is a great way to stack
+        elements, but it is not the default value."
