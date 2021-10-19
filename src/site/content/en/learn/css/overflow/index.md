@@ -19,7 +19,7 @@ When content extends beyond its parent, there are many options for how you can h
   tab: 'result'
 } %}
 
-There are two different clipping options, `text-overflow` will help with individual lines of text, and the `overflow` properties will help control overflow in the box model.
+There are two different clipping options in CSS; `text-overflow` will help with individual lines of text, and the `overflow` properties will help control overflow in the box model.
 
 ## Single line overflow with `text-overflow`
 
@@ -103,7 +103,7 @@ overflow: hidden scroll;
 
 If two keywords are specified, the first applies to `overflow-x` and the second to `overflow-y`. Otherwise, both `overflow-x` and `overflow-y` use the same value.
 
-#### values
+#### Values
 
 Let's take a closer look at the [values and keywords](https://developer.mozilla.org/docs/Web/CSS/overflow#values) available for the `overflow` properties.
 
