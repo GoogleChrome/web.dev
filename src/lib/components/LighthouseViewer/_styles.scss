@@ -4,6 +4,7 @@
 
 web-lighthouse-viewer {
   display: block;
+  min-height: 45px;
 
   .lh-root {
     --report-background-color: transparent;
@@ -21,21 +22,18 @@ web-lighthouse-viewer {
     font-weight: 500;
     display: inline-flex;
     align-items: center;
+    margin: 6px 0;
+    height: 24px;
 
-    &:empty {
-      display: none;
+    svg {
+      width: 18px;
+      height: 18px;
+      margin-right: 6px;
     }
+  }
 
-    &::before {
-      content: url(/images/icons/info.svg);
-      width: 24px;
-      height: 24px;
-      margin-right: 8px;
-      display: inline-block;
-      // Disabled as `alt` is a new property only supported in Safari.
-      // scss-lint:disable PropertySpelling
-      alt: '';
-    }
+  .lighthouse-viewer:empty {
+    padding: 0;
   }
 
   .lh-gauge__wrapper--average {
