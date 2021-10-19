@@ -233,7 +233,7 @@ The importance attribute accepts one of three values:
 Here are a few examples of using the importance attribute in markup and script.
 
 ```html
-<!-- We don’t want a high priority for this above-the-fold image -->
+<!-- We don't want a high priority for this above-the-fold image -->
 <img src="/images/in_viewport_but_not_important.svg" importance="low" alt="I'm an unimportant image!">
 
 <!-- We want to initiate an early fetch for a resource, but also deprioritize it -->
