@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  padding: $global-gutter;
+  padding: $global-gutter-narrow;
   border: 1px solid get-utility-value('color', 'stroke');
   border-radius: $global-radius-large;
   max-width: 40rem;
@@ -47,8 +47,12 @@
     @include apply-utility('color', 'core-text');
   }
 
+  &:link:hover {
+    @include apply-utility('bg', 'highlight-interact-bg');
+  }
+
   img {
-    aspect-ratio: 16/9;
+    height: 15rem;
     object-fit: cover;
     margin-inline: auto;
   }

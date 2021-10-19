@@ -5,7 +5,9 @@
 }
 
 .card__content {
+  --flow-space: 0.3rem;
   flex: auto;
+
   @include apply-utility('gap-top', 'size-1');
 
   a:not([class]) {
@@ -80,6 +82,7 @@
     display: block;
   }
 
+  /// Adds a little line above the first item
   li:first-of-type {
     position: relative;
 
@@ -91,7 +94,12 @@
       height: 2px;
       background: get-utility-value('color', 'highlight-text');
       position: absolute;
-      inset: -1ex 0 0 0;
+      inset: -0.5ex 0 0 0;
     }
   }
+}
+
+.card__header {
+  width: 100%;
+  margin-bottom: get-space('size-1');
 }
