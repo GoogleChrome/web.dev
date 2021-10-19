@@ -106,7 +106,7 @@ This property is a bit limited in controlling the position, size, etc. of the bu
 
 ### `list-style-type`
 
-The final option is to style the [`list-style-type`](https://developer.mozilla.org/docs/Web/CSS/list-style-type) which changes the bullet points to known style keywords, custom strings, emojis and more. You can view all of the possible list style types [here](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type ).
+The final option is to style the [`list-style-type`](https://developer.mozilla.org/docs/Web/CSS/list-style-type) which changes the bullet points to known style keywords, custom strings, emojis and more. You can view all of the possible list style types [here](https://developer.mozilla.org/docs/Web/CSS/list-style-type ).
 
 {% Codepen {
   user: 'web-dot-dev',
