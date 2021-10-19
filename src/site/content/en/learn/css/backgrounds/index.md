@@ -30,7 +30,7 @@ One of the simplest effects you can apply to a background layer is setting the [
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'MWveEMR',
+  id: 'GRvqQZZ',
   tab: 'result'
 } %}
 
