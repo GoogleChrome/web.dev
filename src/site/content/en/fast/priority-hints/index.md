@@ -4,7 +4,7 @@ title: Optimizing resource loading with Priority Hints
 authors:
   - addyosmani
 description: Priority hints indicate the relative importance of resources to the browser. They can enable optimal loading and improve Core Web Vitals.
-subtitle: description: Priority hints indicate the relative importance of resources to the browser. They can enable optimal loading and improve Core Web Vitals.
+subhead: Priority hints indicate the relative importance of resources to the browser. They can enable optimal loading and improve Core Web Vitals.
 date: 2021-10-20
 hero: image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/WqBkrvs5LRwPIfrSOQyz.jpg
 alt: A photo of a brown wooden plank fence, with a signboard attached to it. The signboard reads "this way", with an arrow pointing to the right.
@@ -12,14 +12,6 @@ tags:
   - performance
   - network
 ---
-
-# Optimizing resource loading with Priority Hints
-
-Contributors: Leena Sohoni-Kasture,   
-Hero image: [https://unsplash.com/photos/6gQjPGx1uQw](https://unsplash.com/photos/6gQjPGx1uQw)
-
-**Subtitle**: Priority hints indicate the relative importance of resources to the browser. They can enable optimal loading and improve Core Web Vitals.   
-------------------------------------------------------------------------------------------------------------------------------
 
 When a browser parses a web page and begins to discover and download resources such as images, scripts, or CSS, it assigns them a fetch `priority` in an attempt to download resources in an optimal order. These priorities can depend on the kind of resource and where it is in the document. For example, in-viewport images may have a `High` priority while the priority for early `<link>` loaded, render-blocking CSS in the `<head>` could be `Very High`. Browsers are pretty good at assigning priorities that work well but may not be optimal in all cases.
 
@@ -31,8 +23,7 @@ In this article, we'll discuss Priority Hints and the `importance` attribute, wh
   <figcaption>Priority Hints improving Largest Contentful Paint from 2.6s => 1.9s in a test of Google Flights</figcaption>
 </figure>
 
-**tl;dr**
-
+**tl;dr**  
 **A few key areas where priority hints can help:**
 
 - Boost the priority of the LCP image by specifying `importance="high"` on the image element, causing LCP to happen sooner.
@@ -93,17 +84,17 @@ The following table considers such factors to show how most resources are curren
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td>CSS\*\*\* (early\*\*)</td>
+        <td>CSS*** (early**)</td>
         <td>&nbsp;</td>
-        <td>CSS\*\*\* (late\*\*)</td>
+        <td>CSS*** (late**)</td>
         <td>&nbsp;</td>
         <td>CSS (mismatch)</td>
       </tr>
       <tr>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td>Script (early\*\* or not from preload scanner)</td>
-        <td>Script (\*\*late)</td>
+        <td>Script (early** or not from preload scanner)</td>
+        <td>Script (**late)</td>
         <td>Script (async)</td>
         <td>&nbsp;</td>
       </tr>
@@ -158,7 +149,7 @@ The following table considers such factors to show how most resources are curren
       <tr>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td>Preload\*</td>
+        <td>Preload*</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
@@ -174,7 +165,7 @@ The following table considers such factors to show how most resources are curren
       <tr>
         <td>&nbsp;</td>
         <td>XHR (sync)</td>
-        <td>XHR/fetch\* (async)</td>
+        <td>XHR/fetch* (async)</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
@@ -190,9 +181,9 @@ The following table considers such factors to show how most resources are curren
     </tbody>
     <caption>
       <p><strong>Notes:</strong></p>
-      <p>\* Preload using as <code>&quot;as&quot;</code> or fetch using <code>&quot;type&quot;</code> use the priority of the type they are requesting (e.g., preload <code>as=&quot;stylesheet&quot;</code> will use Highest priority). With no <code>&quot;as&quot;</code>, they will behave like an XHR.</p>
-      <p\*\* &quot;"Early&quot; is defined as being requested before any non-preloaded images have been requested (&quot;late&quot; is after).</p>
-      <p>\*\*\* CSS where the media type doesn't match is not fetched by the preload scanner and is only processed when the main parser reaches it, which usually means it will be fetched very late and with a &quot;late&quot; priority.</p>
+      <p>* Preload using as <code>&quot;as&quot;</code> or fetch using <code>&quot;type&quot;</code> use the priority of the type they are requesting (e.g., preload <code>as=&quot;stylesheet&quot;</code> will use Highest priority). With no <code>&quot;as&quot;</code>, they will behave like an XHR.</p>
+      <p** &quot;"Early&quot; is defined as being requested before any non-preloaded images have been requested (&quot;late&quot; is after).</p>
+      <p>*** CSS where the media type doesn't match is not fetched by the preload scanner and is only processed when the main parser reaches it, which usually means it will be fetched very late and with a &quot;late&quot; priority.</p>
     </caption>
   </table>
 </div>
@@ -224,13 +215,11 @@ These techniques help to control the browser's priority computation, thereby imp
 
 Sometimes these handles may not be enough to prioritize resources optimally for your application. We can think of the following scenarios where priority hints could be helpful.
 
-1.  You have several above-the-fold images, but all of them need not have the same priority. For example, in an image carousel, only the first visible image needs a higher priority compared to the others.
-2.  Hero images inside the viewport start at a low priority. After the layout is complete, Chrome discovers they are in the viewport and boosts their priority (unfortunately, dev tools only shows the final priority - WebPageTest will show both). This usually adds a significant delay to loading the image. Providing the priority hint in markup lets the image start at a high priority and start loading much earlier.  
-
-Note that preload is still required for the early discovery of LCP images included as CSS backgrounds and can be combined with priority hints by including the importance='high' on the preload, otherwise it will still start with the default "Low" priority for images.
-3.  Declaring scripts as `async` or `defer` tells the browser to load them asynchronously. However, as seen in the figure above, these scripts are also assigned a "low" priority. You may want to bump up their priority while ensuring asynchronous download, particularly for any scripts that are critical for the user experience.
-4.  You may use the JavaScript `[fetch()](https://developers.google.com/web/updates/2015/03/introduction-to-fetch)` API to fetch resources or data asynchronously. Fetch is assigned a high priority by the browser. There may be situations where you do not want all your fetches to be executed with high priority and prefer using different priority hints instead. This can be helpful when running background API calls and mixing them with API calls that are responding to user input, like with autocomplete. The background API calls can be tagged as low priority and the interactive API calls marked as high priority.
-5.  The browser assigns CSS and fonts a high priority, but all such resources may not be equally important or required for LCP. You can use priority hints to lower the priority of some of these resources.
+1. You have several above-the-fold images, but all of them need not have the same priority. For example, in an image carousel, only the first visible image needs a higher priority compared to the others.
+2. Hero images inside the viewport start at a low priority. After the layout is complete, Chrome discovers they are in the viewport and boosts their priority (unfortunately, dev tools only shows the final priority - WebPageTest will show both). This usually adds a significant delay to loading the image. Providing the priority hint in markup lets the image start at a high priority and start loading much earlier.<br><br>Note that preload is still required for the early discovery of LCP images included as CSS backgrounds and can be combined with priority hints by including the importance='high' on the preload, otherwise it will still start with the default "Low" priority for images.
+3. Declaring scripts as `async` or `defer` tells the browser to load them asynchronously. However, as seen in the figure above, these scripts are also assigned a "low" priority. You may want to bump up their priority while ensuring asynchronous download, particularly for any scripts that are critical for the user experience.
+4. You may use the JavaScript `[fetch()](https://developers.google.com/web/updates/2015/03/introduction-to-fetch)` API to fetch resources or data asynchronously. Fetch is assigned a high priority by the browser. There may be situations where you do not want all your fetches to be executed with high priority and prefer using different priority hints instead. This can be helpful when running background API calls and mixing them with API calls that are responding to user input, like with autocomplete. The background API calls can be tagged as low priority and the interactive API calls marked as high priority.
+5. The browser assigns CSS and fonts a high priority, but all such resources may not be equally important or required for LCP. You can use priority hints to lower the priority of some of these resources.
 
 ## The `importance` attribute
 
@@ -304,7 +293,7 @@ You can apply the `importance` attribute to different resources as shown in the 
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td>CSS\*\*\* (early\*\*)</td>
+        <td>CSS*** (early**)</td>
         <td>⬆◉</td>
         <td>⬇</td>
         <td>&nbsp;</td>
@@ -312,7 +301,7 @@ You can apply the `importance` attribute to different resources as shown in the 
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td>CSS\*\*\* (late\*\*)</td>
+        <td>CSS*** (late**)</td>
         <td>&nbsp;</td>
         <td>⬆</td>
         <td>◉</td>
@@ -320,7 +309,7 @@ You can apply the `importance` attribute to different resources as shown in the 
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td>Script (early\*\* or not from preload scanner)</td>
+        <td>Script (early** or not from preload scanner)</td>
         <td>&nbsp;</td>
         <td>⬆◉</td>
         <td>&nbsp;</td>
@@ -328,7 +317,7 @@ You can apply the `importance` attribute to different resources as shown in the 
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td>Script\*\*\* (late\*\*)</td>
+        <td>Script*** (late**)</td>
         <td>&nbsp;</td>
         <td>⬆</td>
         <td>◉</td>
@@ -408,7 +397,7 @@ You can apply the `importance` attribute to different resources as shown in the 
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td>XHR/fetch\* (async)</td>
+        <td>XHR/fetch* (async)</td>
         <td>&nbsp;</td>
         <td>⬆◉</td>
         <td>&nbsp;</td>
@@ -416,7 +405,7 @@ You can apply the `importance` attribute to different resources as shown in the 
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td>Preload\*</td>
+        <td>Preload*</td>
         <td>&nbsp;</td>
         <td>⬆◉</td>
         <td>&nbsp;</td>
@@ -450,12 +439,12 @@ You can apply the `importance` attribute to different resources as shown in the 
     </tbody>
     <caption>
       <p><strong>Notes:</strong></p>
-      <p>\* Preload using as <code>&quot;as&quot;</code> or fetch using <code>&quot;type&quot;</code> use the priority of the type they are requesting (e.g., preload <code>as=&quot;stylesheet&quot;</code> will use Highest priority). With no <code>&quot;as&quot;</code>, they will behave like an XHR.</p>
-      <p\*\* &quot;"Early&quot; is defined as being requested before any non-preloaded images have been requested (&quot;late&quot; is after).</p>
-      <p>\*\*\* CSS where the media type doesn't match is not fetched by the preload scanner and is only processed when the main parser reaches it, which usually means it will be fetched very late and with a &quot;late&quot; priority.</p>
+      <p>* Preload using as <code>&quot;as&quot;</code> or fetch using <code>&quot;type&quot;</code> use the priority of the type they are requesting (e.g., preload <code>as=&quot;stylesheet&quot;</code> will use Highest priority). With no <code>&quot;as&quot;</code>, they will behave like an XHR.</p>
+      <p** &quot;"Early&quot; is defined as being requested before any non-preloaded images have been requested (&quot;late&quot; is after).</p>
+      <p>*** CSS where the media type doesn't match is not fetched by the preload scanner and is only processed when the main parser reaches it, which usually means it will be fetched very late and with a &quot;late&quot; priority.</p>
       <p>
-        ◉: <code>importance=&quot;auto&quot;</code>
-        ⬆: <code>importance=&quot;high&quot;</code>
+        ◉: <code>importance=&quot;auto&quot;</code><br>
+        ⬆: <code>importance=&quot;high&quot;</code><br>
         ⬇: <code>importance=&quot;low&quot;</code>
       </p>
     </caption>
@@ -466,13 +455,13 @@ You can apply the `importance` attribute to different resources as shown in the 
 
 You can use the `importance` attribute to address scenarios where you may need priority hints.
 
-1. **Increase the priority of the LCP image**  
+#### Increase the priority of the LCP image
 
 You can specify `importance="high"` to boost the priority of the LCP or other critical images.
 
 ```html
 <img src="lcp-image.jpg" importance="high">
-```  
+```
 
 The following comparison shows the Google Flights page with an LCP background image loaded with and without priority hints. With the priority set to high, the [LCP improved from 2.6s to 1.9s](https://www.webpagetest.org/video/compare.php?tests=211006_AiDcG3_40871b05d6040112a05be4524565cf5d%2C211006_BiDcHR_bebed947f1b6607f2d97e8a899fdc36b&thumbSize=200&ival=100&end=visual).
 
@@ -481,7 +470,7 @@ The following comparison shows the Google Flights page with an LCP background im
   <figcaption>An experiment conducted using Cloudflare workers to rewrite the Google Flights page to use priority hints.</figcaption>
 </figure>
 
-2. **Lower the priority of above-the-fold images**  
+#### Lower the priority of above-the-fold images
 
 You can use the `importance` attribute to lower the priority of above-the-fold images that may not be important for example in an image carousel.
 
@@ -492,7 +481,7 @@ You can use the `importance` attribute to lower the priority of above-the-fold i
   <img src="img/carousel-3.jpg" importance="low">
   <img src="img/carousel-4.jpg" importance="low">
 </ul>
-```  
+```
 
 In an earlier experiment with the [Oodle](https://github.com/google/oodle-demo) app, we used this to lower the priority of images that do not appear on load. It helped to cut down the load time by 2 seconds.
 
@@ -500,9 +489,9 @@ In an earlier experiment with the [Oodle](https://github.com/google/oodle-demo) 
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Tn4OkGpqPbrSQtd1j3GV.png", alt="A side-by-side comparison of Priority Hints when used on the Oodle app's image carousel. On the left, the browser sets default priorities for carousel images, but downloads and paints those images around two seconds slower than the example on the right, which sets a higher priority on only the first carousel image.", width="800", height="460" %}
 </figure>
 
-3. **Lower the priority of preloaded resources**  
+#### Lower the priority of preloaded resources
 
-To stop preloaded resources from competing with other critical resources, you could provide a hint to reduce their priority. You can use this technique with images, scripts, and CSS.  
+To stop preloaded resources from competing with other critical resources, you could provide a hint to reduce their priority. You can use this technique with images, scripts, and CSS.
 
 ```html
 <!-- Lower priority only for non-critical preloaded scripts -->
@@ -512,22 +501,24 @@ To stop preloaded resources from competing with other critical resources, you co
 <!-- Preload CSS and hero images without blocking other resources -->
 <link rel="preload" as="style" href="theme.css" importance="low" onload="this.rel=stylesheet">
 ```
-4. **Reprioritize scripts**  
 
-Scripts required to make some parts of the page interactive are essential but should not block other resources. You can mark these as async with high priority.  
+#### Reprioritize scripts
+
+Scripts required to make some parts of the page interactive are essential but should not block other resources. You can mark these as async with high priority.
 
 ```html
 <script src="async_but_important.js" async importance="high"></script>
-```  
+```
 
-Scripts cannot be marked as async if they rely on specific DOM states. However if they are lower down on the page, they may be downloaded with a lower priority as shown.  
+Scripts cannot be marked as async if they rely on specific DOM states. However if they are lower down on the page, they may be downloaded with a lower priority as shown.
 
 ```html
 <script src="blocking_but_unimportant.js" importance="low"></script>
 ```
-5. **Lower the priority for non-critical data fetches**  
 
-The browser executes `fetch` with a high priority. If you have multiple fetches that may be fired simultaneously, you can use the high default priority for the more critical data fetches and lower it for less critical data.  
+#### Lower the priority for non-critical data fetches
+
+The browser executes `fetch` with a high priority. If you have multiple fetches that may be fired simultaneously, you can use the high default priority for the more critical data fetches and lower it for less critical data.
 
 ```javascript
 // Important validation data (high by default)
@@ -536,6 +527,7 @@ let authenticate = await fetch('/user');
 // Less important content data (suggested low)
 let suggestedContent = await fetch('/content/suggested', {importance: 'low'});
 ```
+
 ## Priority Hints implementation notes
 
 Priority hints can improve performance in specific use cases, as discussed above. We want to use the Origin Trial as an opportunity to get a better insight into the real impact of the change. It is essential we set clear expectations for quality feedback.
@@ -543,7 +535,8 @@ Priority hints can improve performance in specific use cases, as discussed above
 - The `importance` attribute is a hint and not a directive. The browser will try to respect the developer's preference. It is also possible that the browser will apply its preferences for resource priority as deemed necessary in case of conflicts.
 - Priority hints should not be confused with a preload. They are both distinct because:
     - Preload is a mandatory fetch and not a hint.
-    - It is easier to observe and measure the effects of a preload.  
+    - It is easier to observe and measure the effects of a preload.
+
   Priority hints can complement preloads by increasing the granularity of prioritization. If you had already specified a preload at the top of the page for an LCP image, then a "high" priority hint may not result in significant gains. However, if the preload was after other less important resources, then a high-priority hint can boost the LCP. If a critical image is a CSS background image, you should preload it with `importance = "high"`.
 - The noticeable gains due to prioritization will be more relevant in environments where more resources contend for the available network bandwidth. This is possible for HTTP/1.x connections where parallel downloads are not possible or in low bandwidth HTTP/2 connections. Prioritization can resolve bottlenecks in these conditions.
 - CDNs do [not uniformly implement HTTP/2 prioritization](https://github.com/andydavies/http2-prioritization-issues#cdns--cloud-hosting-services). Even if the browser communicates the priority suggested using priority hints; the CDN may not reprioritize resources in the required order. This makes testing of priority hints difficult. The priorities are applied both internally within the browser and with protocols that support prioritization (HTTP/2 and HTTP/3) so it is still worth using even for just the internal browser prioritization independent of CDN or origin support.
