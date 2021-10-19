@@ -51,7 +51,7 @@
     @include apply-utility('bg', 'highlight-interact-bg');
   }
 
-  img {
+  > img {
     height: 15rem;
     object-fit: cover;
     margin-inline: auto;

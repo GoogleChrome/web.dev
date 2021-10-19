@@ -103,3 +103,12 @@
   width: 100%;
   margin-bottom: get-space('size-1');
 }
+
+.card__logo {
+  height: 34px;
+}
+
+/// EXCEPTIONS
+.card[data-style='branded'] {
+  max-width: 25rem;
+}
