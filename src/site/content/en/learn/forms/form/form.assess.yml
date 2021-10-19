@@ -36,7 +36,7 @@ questions:
         rationale: "Try again!"
       - content: "Press `Enter`."
         rationale: "Try again!"
-      - content: "Click on an `<input type="image">`."
+      - content: "Click on an `<input type=\"image\">`."
         rationale: "Try again!"
       - content: "All the above."
         rationale: "🎉"
