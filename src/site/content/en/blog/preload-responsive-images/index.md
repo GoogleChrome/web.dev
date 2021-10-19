@@ -183,7 +183,7 @@ Because responsive preload has no notion of "order" or "first match", the breakp
 ```html
 <link rel="preload" href="small_cat.jpg" as="image" media="(max-width: 400px)">
 <link rel="preload" href="medium_cat.jpg" as="image" media="(min-width: 400.1px) and (max-width: 800px)">
-<link rel="preload" href="large_cat.jpg" as="image" media="(min-width: 800.1px)">
+<link rel="preload" href="huge_cat.jpg" as="image" media="(min-width: 800.1px)">
 ```
 
 ## Summary
