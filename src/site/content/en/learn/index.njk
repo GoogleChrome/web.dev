@@ -33,23 +33,18 @@ pageScripts:
 
   <hr class="gap-top-400 gap-bottom-700">
 
-  <section class="w-grid">
-    <div class="w-learn__collections-heading">
-      <h2 id="{{ 'i18n.learn.collections' | i18n(locale) | slug }}" class="w-learn-heading">
-        {{ 'i18n.learn.collections' | i18n(locale) }}
-        <a class="w-headline-link" href="#{{ 'i18n.learn.collections' | i18n(locale) | slug }}" aria-hidden="true">#</a>
-      </h2>
+  <section class="w-grid w-learn__collections-heading">
+    <h2 id="{{ 'i18n.learn.collections' | i18n(locale) | slug }}" class="w-learn-heading">
+      {{ 'i18n.learn.collections' | i18n(locale) }}
+      <a class="w-headline-link" href="#{{ 'i18n.learn.collections' | i18n(locale) | slug }}" aria-hidden="true">#</a>
+    </h2>
 
-      <span class="w-learn__collections-spacer"></span>
-
-      {% set filterItems = [{title: 'i18n.common.all' | i18n(locale)}] %}
-      {% for category, paths in learn %}
-        {% set i18nTitle = 'i18n.learn.' + category %}
-        {% set filterItems = (filterItems.push({title: i18nTitle | i18n(locale), id: i18nTitle | i18n(locale) | slug}), filterItems) %}
-      {% endfor %}
-
-      <web-learn-filter filters="{{filterItems | dump}}"></web-learn-filter>
-    </div>
+    {% set filterItems = [{title: 'i18n.common.all' | i18n(locale)}] %}
+    {% for category, paths in learn %}
+      {% set i18nTitle = 'i18n.learn.' + category %}
+      {% set filterItems = (filterItems.push({title: i18nTitle | i18n(locale), id: i18nTitle | i18n(locale) | slug}), filterItems) %}
+    {% endfor %}
+    <web-learn-filter filters="{{filterItems | dump}}"></web-learn-filter>
   </section>
 
   <section id="learning-paths">
