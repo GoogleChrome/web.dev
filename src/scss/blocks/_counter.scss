@@ -4,7 +4,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0.4rem 0.6rem;
+  padding: 0.4rem 0.6rem 0.4rem 0.6rem;
   border-radius: 2em;
   line-height: 1;
   font-size: get-size('size-0');
@@ -16,6 +16,7 @@
     fill: currentColor;
     width: 1.4em;
     height: 1.4em;
+    transform: translateY(-1px); // Optical adjustment
   }
 }
 
