@@ -30,7 +30,7 @@ One of the simplest effects you can apply to a background layer is setting the [
 
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'XWgRRMQ',
+  id: 'MWveEMR',
   tab: 'result'
 } %}
 
@@ -142,8 +142,6 @@ You cannot use keywords associated with the same axis simultaneously.
 
 The `background-position` property also has a convenient one value shorthand; the omitted value resolves to `50%`.  Here’s an example that demonstrates this using the keywords the `background-position` property accepts:
 
-
-Demo Variant 2 (No dynamic controls)
 {% Codepen {
   user: 'web-dot-dev',
   id: 'YzxWQqx',
