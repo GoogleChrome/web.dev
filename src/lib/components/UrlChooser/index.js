@@ -69,7 +69,7 @@ class UrlChooser extends BaseElement {
         <div class="lh-controls">
           <button
             ?disabled=${this.disabled}
-            class="w-button w-button--secondary gc-analytics-event button"
+            class="w-button w-button--secondary gc-analytics-event"
             data-category="web.dev"
             data-label="measure, switch url"
             data-action="click"
@@ -79,7 +79,7 @@ class UrlChooser extends BaseElement {
           </button>
           <button
             ?disabled=${this.disabled}
-            class="w-button w-button--primary gc-analytics-event button"
+            class="w-button w-button--primary gc-analytics-event"
             data-type="primary"
             data-category="web.dev"
             data-label="measure, run audit"
