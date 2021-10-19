@@ -1,53 +1,7 @@
 /// PATTERN LIBRARY LOCATION
 /// https://web.dev/design-system/pattern/card
 .card {
-  /// Flex layout allows the content to grow so where you have a grid
-  /// of cards, the actions will all be aligned
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  padding: $global-gutter;
-  border: 1px solid get-utility-value('color', 'stroke');
-  border-radius: $global-radius-base;
-  max-width: 40rem;
-  text-decoration: none;
-
-  // This lets text keep its selectable state
-  a:not([class*='action']),
-  p,
-  h2,
-  h3,
-  h4 {
-    position: relative;
-    z-index: 1;
-  }
-
-  &:hover {
-    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 10%),
-      0px 8px 8px 1px rgb(0 0 0 / 7%), 0px 3px 8px 2px rgb(0 0 0 / 8%);
-    transition: transform $global-transition-movement,
-      box-shadow $global-transition-movement, background $global-transition-fade;
-
-    @include apply-utility('bg', 'mid-bg');
-
-    /// Because the card has a whole-card hover state, we want to kick out
-    /// individual hover styles
-    a {
-      text-decoration: none;
-      background: none;
-    }
-  }
-
-  &:link {
-    @include apply-utility('color', 'core-text');
-  }
-
-  img {
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    margin-inline: auto;
-  }
+  @include card-base-styles();
 }
 
 .card__content {
