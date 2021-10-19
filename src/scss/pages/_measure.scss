@@ -1,0 +1,14 @@
+$course-header-height: 144px;
+$course-search-height: 48px;
+$course-side-vert-space: 20px;
+
+.measure-faq {
+  details {
+    border-left: 1px solid var(--color-stroke);
+    border-right: 1px solid var(--color-stroke);
+
+    summary {
+      color: inherit;
+    }
+  }
+}
