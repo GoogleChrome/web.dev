@@ -265,11 +265,19 @@ It accepts 3 keywords: `scroll`, `fixed`, and `local`.
 
 Once the space of the background layer images originally takes up needs to be scrolled (or rendered) offscreen, images within the background layer stay fixed in the original position the background layer enabled them to be until the entire layer is scrolled off screen by the viewport.
 
-{% Codepen { user: 'web-dot-dev', id: 'MWoozvN', tab: 'result' } %}
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'MWoozvN',
+  tab: 'result'
+} %}
 
 `local` : The use of this keyboard enables the position of background images to be fixed relative to the element’s contents. Background images now move along the space they occupy as that space renders inside and outside the bounds of the CSS box (usually due to scrolling, 2D, or 3D transformations).
 
-
+{% Codepen {
+  user: 'web-dot-dev',
+  id: 'WNExZmK',
+  tab: 'result'
+} %}
 
 ## Background Origin
 The `background-origin` property enables you to modify the area of backgrounds associated with a particular box. The values the property accepts correspond to the `border-box` , `padding-box`, and `content-box` regions of a box .
