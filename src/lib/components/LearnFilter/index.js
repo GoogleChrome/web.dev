@@ -8,6 +8,7 @@ import {BaseElement} from '../BaseElement';
 class LearnFilter extends BaseElement {
   static get properties() {
     return {
+      active: {type: String},
       filters: {type: Array},
     };
   }
@@ -22,26 +23,22 @@ class LearnFilter extends BaseElement {
     this.active = id;
     const children = document.getElementById('learning-paths').children;
     for (const child of children) {
-      child.classList.remove('hidden');
-      if (!id) {
-        child.classList.remove('hidden');
-      } else {
-        id === child.id
-          ? child.classList.remove('hidden')
-          : child.classList.add('hidden');
-      }
+      !id || id === child.id
+        ? child.classList.remove('hidden')
+        : child.classList.add('hidden');
     }
   }
 
   render() {
     const filtersMap = (filter) =>
       html`<button
-        class="w-chip"
+        class="w-chip${this.active === filter.id ? ' w-chip__active' : ''}"
         type="button"
         @click="${() => this.setActive(filter.id)}"
       >
         ${filter.title}
       </button>`;
+
     return html`<div class="w-chips">${this.filters.map(filtersMap)}</div>`;
   }
 }
