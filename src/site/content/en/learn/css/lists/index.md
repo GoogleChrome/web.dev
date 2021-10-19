@@ -9,6 +9,8 @@ audio:
 authors:
   - emmatwersky
 date: 2021-09-15
+tags:
+  - css
 ---
 
 Imagine you have a bunch of items you plan to buy during your next grocery trip. One common way to represent this visually is a list—but how can you add styling to your grocery list?
