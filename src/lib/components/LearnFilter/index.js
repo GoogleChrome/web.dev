@@ -15,7 +15,9 @@ class LearnFilter extends BaseElement {
 
   constructor() {
     super();
+    /** @type {{id?: string, title: string}[]} */
     this.filters = [];
+    /** @type {string|undefined} */
     this.active = undefined;
   }
 
@@ -23,9 +25,7 @@ class LearnFilter extends BaseElement {
     this.active = id;
     const children = document.getElementById('learning-paths').children;
     for (const child of children) {
-      !id || id === child.id
-        ? child.classList.remove('hidden')
-        : child.classList.add('hidden');
+      child.classList.toggle('hidden', !id || id === child.id);
     }
   }
 

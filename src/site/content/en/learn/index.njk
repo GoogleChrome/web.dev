@@ -41,20 +41,20 @@ pageScripts:
 
     {% set filterItems = [{title: 'i18n.common.all' | i18n(locale)}] %}
     {% for category, paths in learn %}
-      {% set i18nTitle = 'i18n.learn.' + category %}
-      {% set filterItems = (filterItems.push({title: i18nTitle | i18n(locale), id: i18nTitle | i18n(locale) | slug}), filterItems) %}
+      {% set i18nKey = 'i18n.learn.' + category %}
+      {% set filterItems = (filterItems.push({title: i18nKey | i18n(locale), id: i18nKey | i18n(locale) | slug}), filterItems) %}
     {% endfor %}
     <web-learn-filter filters="{{filterItems | dump}}"></web-learn-filter>
   </section>
 
   <section id="learning-paths">
     {% for category, paths in learn %}
-      {% set i18nTitle = 'i18n.learn.' + category %}
-      <section id="{{ i18nTitle | i18n(locale) | slug }}" class="w-grid">
+      {% set i18nKey = 'i18n.learn.' + category %}
+      <section id="{{ i18nKey | i18n(locale) | slug }}" class="w-grid">
         <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
           <h3 class="w-learn-heading">
-            {{ i18nTitle | i18n(locale) }}
-            <a class="w-headline-link" href="#{{ i18nTitle | i18n(locale) | slug }}" aria-hidden="true">#</a>
+            {{ i18nKey | i18n(locale) }}
+            <a class="w-headline-link" href="#{{ i18nKey | i18n(locale) | slug }}" aria-hidden="true">#</a>
           </h3>
         </div>
         <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
