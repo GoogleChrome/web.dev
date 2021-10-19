@@ -73,7 +73,7 @@ Dependiendo de su cadena de herramientas, hay muchas maneras diferentes de aplic
 
 ### Publicar las páginas HTML en cache-first
 
-Cuando se instala, un [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) se ejecuta en segundo plano del navegador y puede interceptar las solicitudes del servidor. Este nivel de control programático del caché permite almacenar en el caché parte o todo el contenido de la página HTML y solo actualizar el caché cuando el contenido cambió.
+Cuando se instala, un [service worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) se ejecuta en segundo plano del navegador y puede interceptar las solicitudes del servidor. Este nivel de control programático del caché permite almacenar en el caché parte o todo el contenido de la página HTML y solo actualizar el caché cuando el contenido cambió.
 
 En la siguiente gráfica se muestra cómo se han reducido las distribuciones de LCP en un sitio utilizando este patrón:
 
@@ -207,9 +207,9 @@ Aunque un aumento en el tiempo de bloqueo de CSS o JavaScript se traduce directa
 
 - `<img>` elementos
 - `<image>` elementos dentro de un elemento `<svg>`
-- `<video>` elementos (la imagen del [cartel](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-poster) se utilizan para medir LCP)
-- Un elemento con una imagen de segundo plano que se carga a través de la función [`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url()) (a diferencia de un <a>gradiente CSS</a>)
-- Elementos a [nivel de bloque](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) que contienen nodos de texto u otros elementos de texto con estilos integrados en el código.
+- `<video>` elementos (la imagen del [cartel](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster) se utilizan para medir LCP)
+- Un elemento con una imagen de segundo plano que se carga a través de la función [`url()`](https://developer.mozilla.org/docs/Web/CSS/url()) (a diferencia de un <a>gradiente CSS</a>)
+- Elementos a [nivel de bloque](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements) que contienen nodos de texto u otros elementos de texto con estilos integrados en el código.
 
 El tiempo que se tarda en cargar estos elementos si se renderizan en la mitad superior de la página tendrá un efecto directo en LCP. Hay algunas formas de garantizar que estos archivos se carguen lo más rápido posible:
 
@@ -239,7 +239,7 @@ Mejorar el tiempo que se tarda en cargar y renderizar este tipo de imágenes ace
 
 A veces, los recursos importantes que se declaran o utilizan en un determinado archivo CSS o JavaScript pueden recuperarse más tarde de lo que le gustaría, como una fuente escondida en uno de los muchos archivos CSS de una aplicación.
 
-Si sabe que un recurso en particular debe ser prioritario, utilice `<link rel="preload">` para recuperarlo antes. [Se pueden precargar muchos tipos de recursos](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded), pero debería centrarse primero en [precargar activos críticos](/preload-critical-assets/), como fuentes, imágenes o videos en la mitad superior de la página, y CSS o JavaScript de ruta crítica.
+Si sabe que un recurso en particular debe ser prioritario, utilice `<link rel="preload">` para recuperarlo antes. [Se pueden precargar muchos tipos de recursos](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded), pero debería centrarse primero en [precargar activos críticos](/preload-critical-assets/), como fuentes, imágenes o videos en la mitad superior de la página, y CSS o JavaScript de ruta crítica.
 
 ```html
 <link rel="preload" as="script" href="script.js" />

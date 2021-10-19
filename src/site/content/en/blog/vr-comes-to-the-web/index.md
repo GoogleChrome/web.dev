@@ -69,7 +69,7 @@ I'll explain a few basics of using the WebXR Device API. If you need more depth
 than I've provided, check out the Immersive Web Working Group's [WebXR
 samples](https://immersive-web.github.io/webxr-samples/) or [MDN's growing
 reference
-materials](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API).
+materials](https://developer.mozilla.org/docs/Web/API/WebXR_Device_API).
 If you're familiar with early versions of the WebXR Device API, you should
 glance over all of this material. There have been changes.
 
@@ -95,7 +95,7 @@ detection to test for `XRSystem` (via `navigator.xr`) and make a call to
 In the example below, I've indicated that I
 want a virtual reality session with the `'immersive-vr'` session type. The
 [other session
-types](https://developer.mozilla.org/en-US/docs/Web/API/XR/isSessionSupported#Syntax)
+types](https://developer.mozilla.org/docs/Web/API/XR/isSessionSupported#Syntax)
 are `'immersive-ar'` and `'inline'`. An inline session is for presenting content
 within HTML and is mainly used for teaser content. The [Immersive AR
 Session](https://immersive-web.github.io/webxr-samples/immersive-ar-session.html)
@@ -145,9 +145,9 @@ web page can be reset when the user exits.
 
 I'll also need a `<canvas>` element to draw my scene on. It needs to be an
 XR-compatible
-[WebGLRenderingContext](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext)
+[WebGLRenderingContext](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext)
 or
-[WebGL2RenderingContext](https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext).
+[WebGL2RenderingContext](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext).
 All drawing is done using them or a WebGL-based framework such as
 [Three.js](https://threejs.org/).
 
@@ -159,7 +159,7 @@ Once I'm in a session, I need a way of determining where things are in virtual
 reality. I'll need a reference space. A `'local-floor'` reference space is one
 where the origin is located near the viewer and the y-axis is 0 at floor level
 and is not expected to move. There are [other types of reference
-spaces](https://developer.mozilla.org/en-US/docs/Web/API/XRSession/requestReferenceSpace),
+spaces](https://developer.mozilla.org/docs/Web/API/XRSession/requestReferenceSpace),
 but that is a more complicated topic than I can go into here. I save the
 reference space to a variable because I'll need it when I draw to the screen.
 

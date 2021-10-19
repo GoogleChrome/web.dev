@@ -46,7 +46,7 @@ This post includes several versions of a sample app that consists of a simple
 page with one button. When you click the button, you get to see a cute puppy. As
 you move through each version of the app, you'll see how dynamic imports are
 different from [static
-imports](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+imports](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import)
 and how to work with them.
 
 In the first version of the app, the puppy lives in `components/Puppy.js`. To

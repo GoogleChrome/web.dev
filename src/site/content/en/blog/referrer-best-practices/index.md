@@ -4,7 +4,7 @@ subhead: Best practices to set your Referrer-Policy and use the referrer in inco
 authors:
   - maudn
 date: 2020-07-30
-updated: 2020-09-23
+updated: 2021-10-14
 hero: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
 thumbnail: image/admin/kh2IMJFSJ3Cj6Zo8jEv5.jpg
 description: |
@@ -38,9 +38,9 @@ feedback:
 ## Referer and Referrer-Policy 101
 
 HTTP requests may include the optional [`Referer`
-header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), which indicates the
+header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referer), which indicates the
 origin or web page URL the request was made from. The [`Referrer-Policy`
-header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) defines what data
+header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy) defines what data
 is made available in the `Referer` header.
 
 In the example below, the `Referer` header includes the complete URL of the page on `site-one` from
@@ -106,7 +106,7 @@ header and `document.referrer`:
 </figure>
 
 MDN provides a [full list of policies and behavior
-examples](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Directives).
+examples](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Directives).
 
 Things to note:
 
@@ -122,7 +122,7 @@ Things to note:
 
 ## Default referrer policies in browsers
 
-_As of July 2020_
+_As of October 2021_
 
 **If no referrer policy is set, the browser's default policy will be used.**
 
@@ -138,36 +138,31 @@ _As of July 2020_
       <tr>
         <td>Chrome</td>
         <td>
-          Planning to switch to <code>strict-origin-when-cross-origin</code> in <a href="https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default">version 85</a> (previously <code>no-referrer-when-downgrade</code>)
+          The default is <code>strict-origin-when-cross-origin</code>.
         </td>
       </tr>
       <tr>
         <td>Firefox</td>
         <td>
-          <ul>
-            <li><code>strict-origin-when-cross-origin</code> (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1589074">see closed bug</a>)</li>
-            <li><code>strict-origin-when-cross-origin</code> in Private Browsing and for trackers</li>
-          </ul>
+        The default is <code>strict-origin-when-cross-origin</code>.<br>
+        Starting from <a href="https://blog.mozilla.org/security/2021/10/05/firefox-93-features-an-improved-smartblock-and-new-referrer-tracking-protections/">version 93</a>, for Strict Tracking Protection and Private Browsing users: the less restrictive referrer policies <code>no-referrer-when-downgrade</code>, <code>origin-when-cross-origin</code>, and <code>unsafe-url</code> are ignored for cross-site requests, meaning that the referrer is always trimmed for cross-site requests, regardless of the website's policy.
         </td>
       </tr>
       <tr>
         <td>Edge</td>
         <td>
-          <ul>
-            <li><code>no-referrer-when-downgrade</code></li>
-            <li><a href="https://github.com/privacycg/proposals/issues/13">Experimenting</a> with <code>strict-origin-when-cross-origin</code>
-            </li>
-          </ul>
+          The default is <code>no-referrer-when-downgrade</code>.<br> Edge has been <a href="https://github.com/privacycg/proposals/issues/13">experimenting</a> with <code>strict-origin-when-cross-origin</code> as a default.
         </td>
       </tr>
       <tr>
         <td>Safari</td>
         <td>
-          Similar to <code>strict-origin-when-cross-origin</code>. See
+          The default is similar to <code>strict-origin-when-cross-origin</code>, with some specificities. See
           <a href="https://webkit.org/blog/9661/preventing-tracking-prevention-tracking/">Preventing Tracking Prevention Tracking</a> for details.
         </td>
       </tr>
     </tbody>
+
   </table>
 </div>
 
@@ -180,7 +175,7 @@ There are different ways to set referrer policies for your site:
 
 - As an HTTP header
 - Within your
-  [HTML](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML)
+  [HTML](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy#Integration_with_HTML)
 - From JavaScript on a [per-request
   basis](https://javascript.info/fetch-api#referrer-referrerpolicy)
 
@@ -360,8 +355,8 @@ To define alternatives, analyze first what part of the referrer you're using.
 - If you're using the referrer in a script that has top-level access to the page,
   `window.location.origin` is an alternative.
 - If available, headers like
-  [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) and
-  [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) give
+  [`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) and
+  [`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site) give
   you the `Origin` or describe whether the request is cross-origin, which may be exactly what you need.
 
 **If you need other elements of the URL (path, query parameters…):**
@@ -393,9 +388,9 @@ tokens](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forger
 as your primary protection. For extra protection, use
 [SameSite](/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)—and instead
 of `Referer`, use headers such as
-[`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) (available on POST and
+[`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) (available on POST and
 CORS requests) and
-[`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) (if
+[`Sec-Fetch-Site`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Fetch-Site) (if
 available).
 
 ### Logging
@@ -403,7 +398,7 @@ available).
 Make sure to protect users' personal or sensitive data that may be in the `Referer`.
 
 If you're only using the origin, check if the
-[`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) header could be an
+[`Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin) header could be an
 alternative. This may give you the information that you need for debugging purposes in a simpler way
 and without needing to parse the referrer.
 
@@ -482,9 +477,9 @@ David Van Cleve, Mike West, Sam Dutton, Rowan Merewood, Jxck and Kayce Basques._
 - [A new security header: Referrer Policy
   (2017)](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)
 - [Referrer-Policy on
-  MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
+  MDN](https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy)
 - [Referer header: privacy and security concerns on
-  MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
+  MDN](https://developer.mozilla.org/docs/Web/Security/Referer_header:_privacy_and_security_concerns)
 - [Chrome change: Blink intent to
   implement](https://groups.google.com/a/chromium.org/d/msg/blink-dev/aBtuQUga1Tk/n4BLwof4DgAJ)
 - [Chrome change: Blink intent to

@@ -5,11 +5,17 @@
   margin-left: auto;
   margin-right: auto;
   width: 90rem; // For no clamp support
-  width: clamp(16rem, 90vw, 90rem);
+  width: clamp(16rem, 95vw, 90rem);
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: $global-gutter;
   padding-right: $global-gutter;
   position: relative;
+}
+
+.wrapper[data-size='narrow'] {
+  width: 50rem; // For no clamp support
+  width: clamp(16rem, 95vw, 50rem);
+  padding-inline: 0;
 }

@@ -19,15 +19,15 @@ and more happy users!
 There are a number of built-in interactive elements with proper semantics and
 keyboard support. The ones most developers use are:
 
-- [`<a>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
-- [`<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+- [`<a>`](https://developer.mozilla.org/docs/Web/HTML/Element/a)
+- [`<button>`](https://developer.mozilla.org/docs/Web/HTML/Element/button)
 - [`<input>` (and its many
-    types)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types)
-- [`<select>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select)
-- [`<textarea>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)
+    types)](https://developer.mozilla.org/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types)
+- [`<select>`](https://developer.mozilla.org/docs/Web/HTML/Element/select)
+- [`<textarea>`](https://developer.mozilla.org/docs/Web/HTML/Element/textarea)
 
 In addition, elements with the
-[`contenteditable`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable)
+[`contenteditable`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/contenteditable)
 attribute are sometimes used for freeform text entry.
 
 It's easy to overlook the built-in keyboard support that these elements offer.
@@ -99,7 +99,7 @@ should you choose?
 - If clicking on the element will _navigate_ the user to a new page then use
   `<a>`. This includes single page web apps that load new content and update
   the URL using the
-  [History API](https://developer.mozilla.org/en-US/docs/Web/API/History).
+  [History API](https://developer.mozilla.org/docs/Web/API/History).
 
 The reason for this is that buttons and links are announced differently by
 screen readers. Using the correct element helps screen reader users know which

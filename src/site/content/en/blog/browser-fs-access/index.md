@@ -18,8 +18,8 @@ tags:
   - blog
   - progressive-web-apps
   - capabilities
-  - file-system
-  - file-system-access
+  # - file-system
+  # - file-system-access
 feedback:
   - api
 ---
@@ -40,13 +40,13 @@ The moment you look closer, though, all that glitters is not gold.
 ### Opening files
 
 As a developer, you can open and read files via the
-[`<input type="file">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file)
+[`<input type="file">`](https://developer.mozilla.org/docs/Web/HTML/Element/input/file)
 element.
 In its simplest form, opening a file can look something like the code sample below.
-The `input` object gives you a [`FileList`](https://developer.mozilla.org/en-US/docs/Web/API/FileList),
+The `input` object gives you a [`FileList`](https://developer.mozilla.org/docs/Web/API/FileList),
 which in the case below consists of just one
-[`File`](https://developer.mozilla.org/en-US/docs/Web/API/File).
-A `File` is a specific kind of [`Blob`](https://developer.mozilla.org/en-US/docs/Web/API/Blob),
+[`File`](https://developer.mozilla.org/docs/Web/API/File).
+A `File` is a specific kind of [`Blob`](https://developer.mozilla.org/docs/Web/API/Blob),
 and can be used in any context that a Blob can.
 
 ```js
@@ -65,7 +65,7 @@ const openFile = async () => {
 ### Opening directories
 
 For opening folders (or directories), you can set the
-[`<input webkitdirectory>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-webkitdirectory)
+[`<input webkitdirectory>`](https://developer.mozilla.org/docs/Web/HTML/Element/input#attr-webkitdirectory)
 attribute.
 Apart from that, everything else works the same as above.
 Despite its vendor-prefixed name,
@@ -75,10 +75,10 @@ Despite its vendor-prefixed name,
 
 For saving a file, traditionally, you are limited to *downloading* a file,
 which works thanks to the
-[`<a download>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-download:~:text=download)
+[`<a download>`](https://developer.mozilla.org/docs/Web/HTML/Element/a#attr-download:~:text=download)
 attribute.
 Given a Blob, you can set the anchor's `href` attribute to a `blob:` URL that you can get from the
-[`URL.createObjectURL()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL)
+[`URL.createObjectURL()`](https://developer.mozilla.org/docs/Web/API/URL/createObjectURL)
 method.
 {% Aside 'caution' %}
 To prevent memory leaks, always revoke the URL after the download.
@@ -188,7 +188,7 @@ library is my answer to this challenge.
 
 Since the File System Access API is still likely to change in the future,
 the browser-fs-access API is not modeled after it.
-That is, the library is not a [polyfill](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill),
+That is, the library is not a [polyfill](https://developer.mozilla.org/docs/Glossary/Polyfill),
 but rather a [ponyfill](https://github.com/sindresorhus/ponyfill).
 You can (statically or dynamically) exclusively import whatever functionality you need to keep your app as small as possible.
 The available methods are the aptly named

@@ -1,2 +1,5 @@
 {{ audioFab(audio.thumbnail) }}
-{{ audioPlayer(audio.title, audio.src, audio.thumbnail) }}
+<figure>
+  {{ audioPlayer(audio.title, audio.src, audio.thumbnail) }}
+  <figcaption class="visually-hidden">An audio version of this module</figcaption>
+</figure>

@@ -29,11 +29,11 @@ By default, these keys are not available to the web application because they are
 
 ## Using the Keyboard Lock API
 
-The [`Keyboard` interface](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard) of the Keyboard API provides functions that toggle capturing of key presses from the physical keyboard as well as getting information about the used [keyboard layout](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/getLayoutMap).
+The [`Keyboard` interface](https://developer.mozilla.org/docs/Web/API/Keyboard) of the Keyboard API provides functions that toggle capturing of key presses from the physical keyboard as well as getting information about the used [keyboard layout](https://developer.mozilla.org/docs/Web/API/Keyboard/getLayoutMap).
 
 ### Prerequisite
 
-There are two different types of full screen available in modern browsers: JavaScript-initiated via the [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API) and user-initiated via a keyboard shortcut. The Keyboard Lock API is only available when [JavaScript-initiated full screen](https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullscreen) is active.
+There are two different types of full screen available in modern browsers: JavaScript-initiated via the [Fullscreen API](https://developer.mozilla.org/docs/Web/API/Fullscreen_API) and user-initiated via a keyboard shortcut. The Keyboard Lock API is only available when [JavaScript-initiated full screen](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen) is active.
 Here's an example of JavaScript-initiated full screen:
 
 ```js
@@ -56,7 +56,7 @@ if ('keyboard' in navigator && 'lock' in navigator.keyboard) {
 
 ### Locking the keyboard
 
-The [`lock()`](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/lock) method of the `Keyboard` interface returns a promise after enabling the capture of key presses for any or all of the keys on the physical keyboard. This method can only capture keys that are granted access by the underlying operating system. The `lock()` method takes an array of one or more key codes to lock. If no key codes are provided, all keys will be locked. A list of valid key code values is available in the [UI Events KeyboardEvent code Values](https://www.w3.org/TR/uievents-code/#keyboard-key-codes) spec.
+The [`lock()`](https://developer.mozilla.org/docs/Web/API/Keyboard/lock) method of the `Keyboard` interface returns a promise after enabling the capture of key presses for any or all of the keys on the physical keyboard. This method can only capture keys that are granted access by the underlying operating system. The `lock()` method takes an array of one or more key codes to lock. If no key codes are provided, all keys will be locked. A list of valid key code values is available in the [UI Events KeyboardEvent code Values](https://www.w3.org/TR/uievents-code/#keyboard-key-codes) spec.
 
 #### Capturing all keys
 
@@ -93,7 +93,7 @@ document.addEventListener('keydown', (e) => {
 
 ### Unlocking the keyboard
 
-The [`unlock()`](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/unlock) method unlocks all keys captured by the `lock()` method and returns synchronously.
+The [`unlock()`](https://developer.mozilla.org/docs/Web/API/Keyboard/unlock) method unlocks all keys captured by the `lock()` method and returns synchronously.
 
 ```js
 navigator.keyboard.unlock();
@@ -112,7 +112,7 @@ You can test the Keyboard Lock API by running the [demo](https://keyboard-lock.g
 
 ## Security Considerations
 
-One concern with this API is that it could be used to grab all of the keys and (in conjunction with the [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API) and the [PointerLock API](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API)) prevent the user from exiting the web page. To prevent this, the spec requires the browser to provide a way for the user to exit from keyboard lock even if all of the keys are requested by the API. In Chrome, this escape hatch is a long (two second) <kbd>Esc</kbd> key press to trigger an exit from Keyboard Lock.
+One concern with this API is that it could be used to grab all of the keys and (in conjunction with the [Fullscreen API](https://developer.mozilla.org/docs/Web/API/Fullscreen_API) and the [PointerLock API](https://developer.mozilla.org/docs/Web/API/Pointer_Lock_API)) prevent the user from exiting the web page. To prevent this, the spec requires the browser to provide a way for the user to exit from keyboard lock even if all of the keys are requested by the API. In Chrome, this escape hatch is a long (two second) <kbd>Esc</kbd> key press to trigger an exit from Keyboard Lock.
 
 ## Helpful links
 

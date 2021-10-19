@@ -44,7 +44,7 @@ use cases **imperative caching**.
 ## Production case {: #production-case }
 
 1-800-Flowers.com implemented **imperative caching** (prefetching) with service workers via
-[`postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage) to prefetch the
+[`postMessage()`](https://developer.mozilla.org/docs/Web/API/Worker/postMessage) to prefetch the
 top items in category pages to speed up subsequent navigation to product detail pages.
 
 <figure class="w-figure">
@@ -56,10 +56,10 @@ They use a mixed approach to decide which items to prefetch:
 - At page load time they ask the servicer worker to retrieve the JSON data for the top 9 items, and
   add the resulting response objects to the cache.
 - For the remaining items, they listen to the [`mouseover`
-  ](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event) event, so that, when a
+  ](https://developer.mozilla.org/docs/Web/API/Element/mouseover_event) event, so that, when a
   user moves the cursor on top of an item, they can trigger a fetch for the resource on "demand".
 
-They use the [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) to store JSON
+They use the [Cache API](https://developer.mozilla.org/docs/Web/API/Cache) to store JSON
 responses:
 
 <figure class="w-figure">
@@ -92,7 +92,7 @@ registration, checking for activation, or thinking about the underlying communic
 wb.messageSW({"type": "PREFETCH", "payload": {"urls": ["/data1.json", "data2.json"]}}); });
 ```
 
-The service worker implements a [`message`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/message_event) handler to
+The service worker implements a [`message`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event) handler to
 listen to these messages. It can optionally return a response, although, in cases like these, it's
 not necessary:
 
@@ -122,7 +122,7 @@ navigator.serviceWorker.controller.postMessage({
   payload: 'some data to perform the task',
 });
 ```
-The service worker implements a [`message`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/message_event) handler to
+The service worker implements a [`message`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event) handler to
 listen to these messages.
 
 ```javascript
@@ -133,7 +133,7 @@ self.addEventListener('message', (event) => {
 });
 ```
 
-The `{type : ‘MSG_ID'}` attribute is not absolutely required, but it is one way to allow the page to
+The `{type : 'MSG_ID'}` attribute is not absolutely required, but it is one way to allow the page to
 send different types of instructions to the service worker (i.e. 'to prefetch' vs. 'to clear
 storage').  The service worker can branch into different execution paths based on this flag.
 
@@ -170,7 +170,7 @@ Delegating these types of operations to the service worker has the following adv
 
 ### Prefetch product detail pages {: #prefetch-product-detail-pages }
 
-First use [`postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage) on
+First use [`postMessage()`](https://developer.mozilla.org/docs/Web/API/Worker/postMessage) on
 the service worker interface and pass an array of URLs to cache:
 
 ```javascript
@@ -185,7 +185,7 @@ navigator.serviceWorker.controller.postMessage({
 });
 ```
 
-In the service worker, implement a [`message`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/message_event) handler to
+In the service worker, implement a [`message`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event) handler to
 intercept and process messages sent by any active tab:
 
 ```javascript
@@ -266,7 +266,7 @@ handling. The sky's the limit.
 immediately needed, so it needs to be applied thoughtfully; only prefetch resources when you are
 confident that users will need them. Avoid prefetching when users are on slow connections.
 You can detect that with the [Network Information
-API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API). {% endAside %}
+API](https://developer.mozilla.org/docs/Web/API/Network_Information_API). {% endAside %}
 
 ## Conclusion {: #conclusion }
 

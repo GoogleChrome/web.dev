@@ -14,8 +14,8 @@ pageScripts:
 
 <!--prettier-ignore-->
 {% extends "design-system.njk" %}
-{% from 'macros/design-system-pattern.njk' import designSystemPattern with context %}
+{% from 'macros/design-system-component.njk' import designSystemComponent with context %}
 
 {% block inner %}
-  {{ designSystemPattern(item.url, null, null, 'tall') }} 
+  {{ designSystemComponent(item.url, null, null, null, 'tall') }} 
 {% endblock %}

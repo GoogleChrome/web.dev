@@ -15,9 +15,21 @@
  */
 
 const minify = require('html-minifier').minify;
+const path = require('path');
+const {URL} = require('url');
+const stagingUrls =
+  require('../../../tools/lhci/lighthouserc').ci.collect.url.map((url) =>
+    path.join('dist', new URL(url).pathname, 'index.html'),
+  );
+
+const isProd = process.env.ELEVENTY_ENV === 'prod';
+const isStaging = process.env.ELEVENTY_ENV === 'staging';
 
 const minifyHtml = (content, outputPath) => {
-  if (outputPath && outputPath.endsWith('.html')) {
+  if (
+    (isProd && outputPath && outputPath.endsWith('.html')) ||
+    (isStaging && stagingUrls.includes(outputPath))
+  ) {
     try {
       content = minify(content, {
         removeAttributeQuotes: true,

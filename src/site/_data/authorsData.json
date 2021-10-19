@@ -222,6 +222,10 @@
     "glitch": "samthor",
     "image": "image/admin/XQIDJD6narW2eA4d141g.jpg"
   },
+  "stephenstchur": {
+    "country": "US",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/117HjdRQMScu0EouANUl.jpg"
+  },
   "rachelandrew": {
     "country": "GB",
     "homepage": "https://rachelandrew.co.uk/",
@@ -268,11 +272,6 @@
     "github": "mdiblasio",
     "glitch": "mdiblasio",
     "image": "image/admin/CO9R6GSKlH794WHxbpQD.jpg"
-  },
-  "jeremywagner": {
-    "github": "malchata",
-    "twitter": "malchata",
-    "image": "image/admin/VUpz95xT3Znav1EP6ikP.jpg"
   },
   "gmimani": {
     "github": "garimamimani",
@@ -1006,5 +1005,35 @@
     "linkedin": "KevinLozandier",
     "country": "US",
     "image": "image/admin/ecKzFuXSShBZ0BOyQmgS.jpg"
+  "michaelscharnagl": {
+    "twitter": "justmarkup",
+    "country": "DE",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/OZvyDgCkUQAIA87UJV7A.jpg"
+  },
+  "leenasohoni":{
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/VXCjCzLEGWApTkZkNZkR.JPG"
+  },
+  "jackjey": {
+    "github": "JackJey",
+    "image": "image/PV7xjXdOKHP8LWt9XhstsToJeK82/O5CMzBRhiNQelJ5Rkzv0.jpg"
+  },
+  "tcoustillac": {
+    "github": "tcoustil",
+    "homepage": "https://www.linkedin.com/in/tcoustillac/",
+    "country": "FR",
+    "image": "image/16kgsueJSCPH4556d9XWWWENbk12/N6sroCi4an6S9ak9XttX.jpg"
+  },
+  "jlwagner": {
+    "github": "malchata",
+    "twitter": "malchata",
+    "homepage": "https://jeremy.codes/",
+    "country": "US",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/2qO19NkWfYnvHe2zLkhG.jpg"
+  },
+  "cédricbazureau": {
+    "github": "cbazureau",
+    "homepage": "https://cedric.bazureau.com/",
+    "country": "FR",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/vGr2SOy8UdaSj4LvhcxH.jpg"
   }
 }

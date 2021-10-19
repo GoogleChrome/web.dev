@@ -1,0 +1,1 @@
+The authors pattern supports one or many authors that have one of many links associated with them. To render multiple authors in a group, use [the cluster](https://web.dev/design-system/css-compositions/#cluster) layout composition.

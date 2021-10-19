@@ -52,10 +52,9 @@ informed decision.
 
 ## Use @babel/preset-env
 
-Transpiling code usually results in a file that is larger than the
-original larger file sizes than their original forms. By minimizing the amount of
-compilation that you do you can reduce the size of your bundles to improve the
-performance of a web page.
+Transpiling code usually results in a file that is larger in file size than
+their original forms. By minimizing the amount of compilation that you do you
+can reduce the size of your bundles to improve the performance of a web page.
 
 Instead of including specific plugins to selectively compile certain language
 features you are using, Babel provides a number of presets that bundles plugins

@@ -19,12 +19,12 @@ feedback:
 ---
 
 Since Chromium 69 (September 3rd 2018),
-[logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties) and values have helped
+[logical properties](https://developer.mozilla.org/docs/Web/CSS/CSS_Logical_Properties) and values have helped
 developers maintain control of their international layouts through logical, rather
 than physical, direction and dimension styles. In Chromium 87, shorthands and
 offsets have shipped to make these logical properties and values a bit easier to write.
 This catches Chromium up to Firefox, which has had support for the shorthands
-[since 66](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/66).
+[since 66](https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/66).
 Safari has them ready in their [tech preview](https://webkit.org/blog/11300/release-notes-for-safari-technology-preview-114/).
 
 <figure class="w-figure">
@@ -72,7 +72,7 @@ top and bottom, but **also** akin to a Japanese reader as right and left. Writte
 Normal flow is when the webpage is part of this multi-directionality intentionally.
 When page content updates according to document direction changes, the layout and its
 elements are considered in flow. Read more about "in" and "out" of flow
-[on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout) or in the
+[on MDN](https://developer.mozilla.org/docs/Web/CSS/CSS_Flow_Layout) or in the
 [CSS Display Module spec](https://drafts.csswg.org/css-display-3/#out-of-flow). While logical properties
 are not required to be in flow, they do much of the heavy lifting for you as directionality changes.
 Flow implies direction, which letters, words and content need to travel along.
@@ -123,8 +123,8 @@ tell you about all of the new logical properties features landing in Chromium 87
 
 ### Margin shorthands
 No new abilities shipped, but some super handy shorthands did: <br>
-[`margin-block`](https://developer.mozilla.org/en-US/docs/Web/CSS/margin-block) and
-[`margin-inline`](https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline).
+[`margin-block`](https://developer.mozilla.org/docs/Web/CSS/margin-block) and
+[`margin-inline`](https://developer.mozilla.org/docs/Web/CSS/margin-inline).
 
 {% Glitch 'margin-logical-shorthand' %}
 
@@ -170,8 +170,8 @@ margin-inline: 4ch 2ch;
 
 ### Padding shorthands
 No new abilities shipped, but more super handy shorthands did: <br>
-[`padding-block`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding-block) and
-[`padding-inline`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding-inline).
+[`padding-block`](https://developer.mozilla.org/docs/Web/CSS/padding-block) and
+[`padding-inline`](https://developer.mozilla.org/docs/Web/CSS/padding-inline).
 
 {% Glitch 'padding-logical-shorthand' %}
 
@@ -295,7 +295,7 @@ inset-inline: 10px 20px;
 {% endCompare %}
 </div>
 
-Further reading and a [full list of inset shorthand and longhand](https://developer.mozilla.org/en-US/docs/Web/CSS/inset)
+Further reading and a [full list of inset shorthand and longhand](https://developer.mozilla.org/docs/Web/CSS/inset)
 is available on MDN.
 
 ### Border shorthands
@@ -361,7 +361,7 @@ border-inline-width: 1px 1px;
 {% endCompare %}
 </div>
 
-Further reading and a [full list of border shorthand and longhand](https://developer.mozilla.org/en-US/docs/Web/CSS/border-block)
+Further reading and a [full list of border shorthand and longhand](https://developer.mozilla.org/docs/Web/CSS/border-block)
 is available on MDN.
 
 ## Logical property `<figure>` example
@@ -507,7 +507,7 @@ html {
 It's a tough one! Cast your vote, voice your opinion, we want to hear from you.
 
 Want to learn or study logical properties more? Here's a detailed reference,
-along with guides and examples, [on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties) 🤓
+along with guides and examples, [on MDN](https://developer.mozilla.org/docs/Web/CSS/CSS_Logical_Properties) 🤓
 
 ## Feedback
 

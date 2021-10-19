@@ -17,7 +17,7 @@ tags:
   - augmented-reality
   - virtual-reality
   - webxr
-  - model-viewer
+  # - model-viewer
 feedback:
   - api
 ---
@@ -140,7 +140,7 @@ auto-rotate poster="assets/poster2.png"></model-viewer>
 The component handles some types of [responsive design](/responsive-web-design-basics), scaling for both mobile
 and desktop. It can also manage multiple instances on a page and uses
 [Intersection
-Observer](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver)
+Observer](https://developer.mozilla.org/docs/Web/API/IntersectionObserver)
 to conserve battery power and GPU cycles when a model isn't visible.
 
 <figure class="w-figure">

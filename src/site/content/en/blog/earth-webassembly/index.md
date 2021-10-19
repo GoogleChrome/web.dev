@@ -12,8 +12,8 @@ description: |
 tags:
   - blog
   - webassembly
-  - Earth
-  - Web App
+  # - Earth
+  # - Web App
   - case-study
 ---
 
@@ -61,6 +61,6 @@ Safari has a strong implementation of WebAssembly, but it lacks full support for
 ## Looking forward to more adoption of WebAssembly features
 It's been a long road to make Earth available on the web. About six years ago, we started with an initial [asm.js](http://asmjs.org/)-based internal demo that was maintained and expanded over the years. It was then converted into a WebAssembly build of Earth, as WebAssembly became the W3C adopted standard.
 
-We still have a ways to go for WebAssembly and Earth. Specifically, we'd like to move to the LLVM backend using Emscripten (the toolchain to generate WebAssembly out of C++ code). This change will enable future SIMD support, as well as stronger debugging tools like source maps for source-language code. Other things we hope to see are adoption of [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) and full support for dynamic memory allocation in WebAssembly. But we know we're on the right track: WebAssembly is the long-term future for Earth on the web.
+We still have a ways to go for WebAssembly and Earth. Specifically, we'd like to move to the LLVM backend using Emscripten (the toolchain to generate WebAssembly out of C++ code). This change will enable future SIMD support, as well as stronger debugging tools like source maps for source-language code. Other things we hope to see are adoption of [OffscreenCanvas](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas) and full support for dynamic memory allocation in WebAssembly. But we know we're on the right track: WebAssembly is the long-term future for Earth on the web.
 
 Please take a moment to try our [beta](https://g.co/earth/beta). Let us know how it works for you by leaving feedback directly in Earth.

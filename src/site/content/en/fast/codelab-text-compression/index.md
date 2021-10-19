@@ -171,7 +171,7 @@ compression algorithm. Unlike minification which ends up providing perfectly
 valid code, compressed code needs to be _decompressed_ before being used.
 
 With every HTTP request and response, browsers and web servers can add
-[headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) to include
+[headers](https://developer.mozilla.org/docs/Web/HTTP/Headers) to include
 additional information about the asset being fetched or received. This can be
 seen in the `Headers` tab within the DevTools Network panel where three types
 are shown:

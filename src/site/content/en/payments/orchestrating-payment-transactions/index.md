@@ -6,6 +6,7 @@ subhead: |
 authors:
   - agektmr
 date: 2020-08-31
+updated: 2021-09-14
 description: |
   Once a web-based payment app is registered, it's ready to accept payment requests from merchants. This article teaches you how to orchestrate a payment transaction from a service worker during runtime.
 tags:
@@ -115,20 +116,6 @@ Use this to construct a UI to let the customer know the total amount to pay.
         <td><code>instrumentKey</code></td>
         <td>
           The instrument key selected by the user. This reflects the <code><a href="https://w3c.github.io/payment-handler/#paymentinstruments-interface">instrumentKey</a></code> you provided in advance. An empty string indicates that the user did not specify any instruments.
-        </td>
-      </tr>
-      <tr>
-        <td><code>paymentOptions</code></td>
-        <td>
-          The <code><a href="https://w3c.github.io/payment-request/#dom-paymentoptions">PaymentOptions</a></code> object provided to the Payment Request API by the merchant. Indicates whether the merchant is requesting shipping with <code>requestShipping</code>, the type of shipping with <code>shippingType</code>, billing address with <code>requestBillingAddress</code>, payer's email, name, phone respectively with <code>requestPayerEmail</code>, <code>requestPayerName</code>, <code>requestPayerPhone</code>.
-Use this to determine what information to include in the <code><a href="https://w3c.github.io/payment-handler/#paymenthandlerresponse-dictionary">PaymentHandlerResponse</a></code> on a payment authorization.
-        </td>
-      </tr>
-      <tr>
-        <td><code>shippingOptions</code></td>
-        <td>
-          The <code>shippingOptions</code> property of the <code><a href="https://w3c.github.io/payment-request/#paymentdetailsbase-dictionary">PaymentDetailsUpdate</a></code> provided to the Payment Request API.
-Use this to construct a UI to let the customer select a shipping option.
         </td>
       </tr>
     </tbody>
@@ -260,7 +247,7 @@ self.addEventListener('message', async e => {
     switch (e.data.type) {
       // `WINDOW_IS_READY` is a frontend's ready state signal
       case 'WINDOW_IS_READY':
-        const { total, paymentOptions, shippingOptions } = payment_request_event;
+        const { total } = payment_request_event;
 …
 ```
 
@@ -276,9 +263,7 @@ the payment request, but you can pass more details if you like.
 ```js
 …
         // Pass the payment details to the frontend
-        postMessage('PAYMENT_IS_READY', {
-          total, paymentOptions, shippingOptions
-        });
+        postMessage('PAYMENT_IS_READY', { total });
         break;
 …
 ```
@@ -288,16 +273,14 @@ the payment request, but you can pass more details if you like.
 {% endLabel %}
 
 ```js
-let paymentOptions;
 let total;
-let shippingOptions;
 
 navigator.serviceWorker.addEventListener('message', async e => {
   switch (e.data.type) {
       case 'PAYMENT_IS_READY':
-        ({ total, paymentOptions, shippingOptions } = e.data);
+        ({ total } = e.data);
         // Update the UI
-        renderHTML(total, paymentOptions, shippingOptions);
+        renderHTML(total);
         break;
 …
 ```
@@ -330,37 +313,6 @@ object.
         <td><code>details</code></td>
         <td>
           The payment method specific data that provides necessary information for the merchant to process payment.
-If <code>PaymentRequestEvent.paymentOptions.requestBillingAddress === true</code>, append the billing address as a <code>PaymentAddress</code> object as part of this.
-        </td>
-      </tr>
-      <tr>
-        <td><code>payerName</code></td>
-        <td>
-          If <code>PaymentRequestEvent.paymentOptions.requestPayerName === true</code>, provide the payer's name.
-        </td>
-      </tr>
-      <tr>
-        <td><code>payerEmail</code></td>
-        <td>
-          If <code>PaymentRequestEvent.paymentOptions.requestPayerEmail === true</code>, provide the payer's email address.
-        </td>
-      </tr>
-      <tr>
-        <td><code>payerPhone</code></td>
-        <td>
-          If <code>PaymentRequestEvent.paymentOptions.requestPayerPhone === true</code>, provide the payer's phone number.
-        </td>
-      </tr>
-      <tr>
-        <td><code>shippingAddress</code></td>
-        <td>
-          If <code>PaymentRequestEvent.paymentOptions.requestShipping === true</code>, provide the customer's shipping address with a <code><a href="https://w3c.github.io/payment-request/#paymentaddress-interface">PaymentAddress</a></code> object.
-        </td>
-      </tr>
-      <tr>
-        <td><code>shippingOption</code></td>
-        <td>
-          If <code>PaymentRequestEvent.paymentOptions.requestShipping</code>, provide the identifier of the customer's selected shipping option.
         </td>
       </tr>
     </tbody>
@@ -373,17 +325,9 @@ If <code>PaymentRequestEvent.paymentOptions.requestBillingAddress === true</code
 
 ```js
   const paymentMethod = …
-  const shippingOptionId = …
-  const shippingAddress = …
-  const contacts = …
 
   postMessage('PAYMENT_AUTHORIZED', {
     paymentMethod,              // Payment method identifier
-    shippingOptionId,           // Shipping option id
-    shippingAddress,            // shipping address object
-    payerName: contacts.name,   // Payer name
-    payerPhone: contacts.phone, // Payer Phone
-    payerEmail: contacts.email, // Payer Email
   });
 ```
 
@@ -405,23 +349,6 @@ self.addEventListener('message', async e => {
         const response = {
           methodName: e.data.paymentMethod,
           details: { id: 'put payment credential here' },
-        }
-        let { paymentOptions } = payment_request_event;
-        if (paymentOptions.requestBillingAddress) {
-          response.details.billingAddress = e.data.methodData.billingAddress;
-        }
-        if (paymentOptions.requestShipping) {
-          response.shippingAddress = e.data.shippingAddress;
-          response.shippingOption = e.data.shippingOptionId;
-        }
-        if (paymentOptions.requestPayerEmail) {
-          response.payerEmail = e.data.payerEmail;
-        }
-        if (paymentOptions.requestPayerName) {
-          response.payerName = e.data.payerName;
-        }
-        if (paymentOptions.requestPayerPhone) {
-          response.payerPhone = e.data.payerPhone;
         }
         resolver.resolve(response);
         // Don't forget to initialize.

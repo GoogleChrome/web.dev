@@ -261,7 +261,7 @@ performance impact of reduced bandwidth.
   to learn how to collaborate with and get buy-in from other departments.
 * [Use standardized lazy-loading for images](/browser-level-image-lazy-loading/) to
   minimize requests for images that people may never actually see. [Browser
-  compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Browser_compatibility)
+  compatibility](https://developer.mozilla.org/docs/Web/HTML/Element/img#Browser_compatibility)
   is not 100% but the feature can be treated as a progressive enhancement. In
   other words, if a certain browser doesn't support standardized lazy-loading, the
   image should load as it normally does.

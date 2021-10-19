@@ -4,7 +4,7 @@ subhead: How to integrate with hardware media keys, customize media notification
 authors:
   - beaufortfrancois
 date: 2020-03-06
-updated: 2021-07-01
+updated: 2021-09-28
 hero: image/admin/IhujMvzGa5Mf0aNWYRXW.jpg
 thumbnail: image/admin/Q6CqQNLucogBCxGMsSU2.jpg
 description: |
@@ -14,7 +14,7 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - media
   - audio
-  - video
+  # - video
 feedback:
   - api
 ---
@@ -34,30 +34,24 @@ this article.
   <figcaption class="w-figcaption">Media hub on desktop, media notification on mobile, and a wearable device.</figcaption>
 </figure>
 
-## Cross-browser support
-
-At the time of writing, Chrome is the only browser that supports the Media
-Session API both on desktop and mobile. Firefox has partial support for the
-Media Session API on desktop behind a flag, and Samsung Internet also has
-partial support. See [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/MediaSession#Browser_compatibility)
-for up-to-date information.
-
 ## About the Media Session API
 
 The Media session API provides several benefits and capabilities:
 
 - Hardware media keys are supported.
-- Media notifications are customized on mobile, Chrome OS, and paired wearable device.
+- Media notifications are customized on mobile, desktop, and paired wearable device.
 - The [media hub] is available on desktop.
 - Lock screen media controls are available on [Chrome OS] and mobile.
 - Picture-in-Picture window controls are available for both [audio playback]
   and [video conferencing].
 - Assistant integration on mobile is available.
 
+{% BrowserCompat 'api.MediaSession' %}
+
 A few examples will illustrate some of these points.
 
 <b>Example 1:</b> If users press the "next track" media key of their keyboard,
-web developers can handle this user action whether Chrome is in the foreground
+web developers can handle this user action whether the browser is in the foreground
 or the background.
 
 <b>Example 2:</b> If users listen to a podcast on the web while their device
@@ -89,7 +83,7 @@ media controls, in this case a media notification on mobile.
 
 When a website is playing audio or video, users automatically get media
 notifications either in the notification tray on mobile, or the media hub on
-desktop. Chrome does its best to show appropriate information by using the
+desktop. The browser does its best to show appropriate information by using the
 document's title and the largest icon image it can find. With the Media Session
 API, it's possible to customize the media notification with some richer media
 metadata such as the title, artist name, album name, and artwork as shown below.
@@ -217,7 +211,7 @@ won't be shown unless the proper action handler is set.
     width="800",
     height="450"
   %}
-  <figcaption class="w-figcaption">Now Playing widget in macOS Big Sur (requires Chrome 91).</figcaption>
+  <figcaption class="w-figcaption">Now Playing widget in macOS Big Sur.</figcaption>
 </figure>
 
 ### Play / pause

@@ -76,15 +76,15 @@ of supporting these features.
 <!-- note "..." is used in the url for "For…of loop" -->
 The following ES2015 features are used in the application:
 
-+  [Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-+  [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-+  [For…of loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
-+  [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring)
++  [Arrow functions](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
++  [Template literals](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Template_literals)
++  [For…of loop](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for...of)
++  [Destructuring assignment](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring)
 <!-- lint enable no-repeat-punctuation -->
 
 The following ES2017 feature is used as well:
 
-+  [Async functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
++  [Async functions](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function)
 
 Feel free to dive into the source code in `src/index.js` to see how all of this
 is used.
@@ -97,7 +97,7 @@ understand. It does this in two ways:
 
 + **Polyfills** are included to emulate newer ES2015+ functions so that their APIs
 can be used even if it is not supported by the browser. Here is an example of a
-[polyfill](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes#Polyfill)
+[polyfill](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/includes#Polyfill)
 of the `Array.includes` method.
 + **Plugins** are used to transform ES2015 code (or later) into older ES5 syntax.
 Since these are syntax related changes (such as arrow functions), they cannot be emulated with polyfills.

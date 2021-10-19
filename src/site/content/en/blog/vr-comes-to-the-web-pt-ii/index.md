@@ -23,7 +23,7 @@ tags:
 Recently, I published [Virtual reality comes to the
 web](/vr-comes-to-the-web/), an article that introduced basic
 concepts behind the [WebXR Device
-API](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API). I
+API](https://developer.mozilla.org/docs/Web/API/WebXR_Device_API). I
 also provided instructions for requesting, entering, and ending an XR session.
 
 This article describes the frame loop, which is a user-agent controlled
@@ -38,7 +38,7 @@ a WebXR App. Fortunately many frameworks provide a layer of abstraction on top
 of WebGL and WebGL2. Such frameworks include [three.js](https://threejs.org/),
 [babylonjs](https://www.babylonjs.com/), and
 [PlayCanvas](https://playcanvas.com/), while [A-Frame](https://aframe.io/) and
-[React 360](https://facebook.github.io/react-360/) are designed for interacting
+[React 360](https://github.com/facebookarchive/react-360) was designed for interacting
 with WebXR.
 
 This article is neither a WebGL nor a framework tutorial. It explains basics of
@@ -157,7 +157,7 @@ Because steps 1 and 2a were covered in the previous article, I'll start at step
 It probably goes without saying. To draw anything in AR or VR, I need to know
 where the viewer is and where they're looking. The viewer's position and
 orientation are provided by an [XRViewerPose
-object](https://developer.mozilla.org/en-US/docs/Web/API/XRViewerPose). I
+object](https://developer.mozilla.org/docs/Web/API/XRViewerPose). I
 get the viewer's pose by calling `XRFrame.getViewerPose()` on the current
 animation frame. I pass it the reference space I acquired when I set up the
 session. The values returned by this object are always relative to the reference
@@ -311,7 +311,7 @@ top](#what-this-article-is-not).
 
 This is not the end of WebXR updates or articles. You can find a [reference for
 all of WebXR's interfaces and
-members](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API)
+members](https://developer.mozilla.org/docs/Web/API/WebXR_Device_API)
 at MDN. For upcoming enhancements to the interfaces themselves, follow
 individual features on [Chrome
 Status](https://www.chromestatus.com/features#WebXR).

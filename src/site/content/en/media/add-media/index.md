@@ -10,7 +10,7 @@ date: 2020-06-19
 updated: 2021-07-05
 tags:
   - media
-  - video
+  # - video
 ---
 
 In this section you'll learn how to embed a media file in a web page using the

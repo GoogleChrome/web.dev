@@ -71,7 +71,7 @@ You can enable these changes for testing in both Chrome and Firefox.
 
 One of the main reasons for the change to `SameSite=Lax` as the default for
 cookies was to protect against [Cross-Site Request Forgery
-(CSRF)](https://developer.mozilla.org/en-US/docs/Glossary/CSRF). However,
+(CSRF)](https://developer.mozilla.org/docs/Glossary/CSRF). However,
 insecure HTTP traffic still presents an opportunity for network attackers to
 tamper with cookies that will then be used on the secure HTTPS version of the
 site. Creating this additional cross-site boundary between schemes provides
@@ -139,7 +139,7 @@ navigation which means `SameSite=Strict` cookies will be blocked.
 
 {% Aside 'warning' %}
 All major browsers block [active mixed
-content](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content)
+content](https://developer.mozilla.org/docs/Web/Security/Mixed_content)
 such as scripts or iframes. Additionally, browsers including
 [Chrome](https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html)
 and [Firefox](https://groups.google.com/g/mozilla.dev.platform/c/F163Jz32oYY)
@@ -310,7 +310,7 @@ It's possible that some of your links and subresources still point to insecure
 URLs.
 
 One way to fix this issue is to use [HTTP
-Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
+Strict-Transport-Security](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security)
 (HSTS) and the `includeSubDomain` directive. With HSTS + `includeSubDomain` even
 if one of your pages accidentally includes an insecure link the browser will
 automatically use the secure version instead.

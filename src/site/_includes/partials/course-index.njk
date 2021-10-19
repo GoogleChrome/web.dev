@@ -8,7 +8,7 @@
       {%- set title = item.title | i18n(locale) -%}
     {%- endif -%}
 
-    <h2 class="gap-bottom-0"><a href="{{ item.url }}">{{ title }}</a></h2>
+    <h3><a href="{{ item.url }}">{{ title }}</a></h3>
     <p>{{ item.data.description }}</p>
   {%- endif -%}
 {%- endfor -%}

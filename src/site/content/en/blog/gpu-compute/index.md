@@ -6,7 +6,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2019-08-28
-updated: 2021-09-06
+updated: 2021-10-18
 hero: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/AwjccGqafT2OOWqLGdDX.jpeg
 thumbnail: image/vvhSqZboQoZZN9wBvoXq72wzGAf1/AwjccGqafT2OOWqLGdDX.jpeg
 description: |
@@ -278,7 +278,7 @@ const secondMatrix = new Float32Array([
   7, 8
 ]);
 
-const gpuBufferSecondMatrix = device.createBufferMapped({
+const gpuBufferSecondMatrix = device.createBuffer({
   mappedAtCreation: true,
   size: secondMatrix.byteLength,
   usage: GPUBufferUsage.STORAGE,

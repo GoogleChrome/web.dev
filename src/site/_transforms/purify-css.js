@@ -18,7 +18,15 @@ const fs = require('fs');
 /* eslint-disable node/no-unpublished-require */
 const PurgeCSS = require('purgecss').PurgeCSS;
 const csso = require('csso');
+const path = require('path');
+const {URL} = require('url');
+const stagingUrls =
+  require('../../../tools/lhci/lighthouserc').ci.collect.url.map((url) =>
+    path.join('dist', new URL(url).pathname, 'index.html'),
+  );
 const pathToCss = 'dist/css/main.css';
+const isProd = process.env.ELEVENTY_ENV === 'prod';
+const isStaging = process.env.ELEVENTY_ENV === 'staging';
 
 /**
  * Inlines all of the page's CSS into the <head>
@@ -26,9 +34,11 @@ const pathToCss = 'dist/css/main.css';
 
 const purifyCss = async (content, outputPath) => {
   if (
-    outputPath &&
-    outputPath.endsWith('.html') &&
-    !/data-style-override/.test(content)
+    (isProd &&
+      outputPath &&
+      outputPath.endsWith('.html') &&
+      !/data-style-override/.test(content)) ||
+    (isStaging && stagingUrls.includes(outputPath))
   ) {
     const before = fs.readFileSync(pathToCss, {
       encoding: 'utf-8',
