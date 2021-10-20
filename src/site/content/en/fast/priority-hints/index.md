@@ -13,6 +13,7 @@ alt: A photo of a brown wooden plank fence, with a signboard attached to it. The
 tags:
   - performance
   - network
+  - blog
 ---
 
 When a browser parses a web page and begins to discover and download resources such as images, scripts, or CSS, it assigns them a fetch `priority` in an attempt to download resources in an optimal order. These priorities can depend on the kind of resource and where it is in the document. For example, in-viewport images may have a `High` priority while the priority for early `<link>` loaded, render-blocking CSS in the `<head>` could be `Very High`. Browsers are pretty good at assigning priorities that work well but may not be optimal in all cases.
@@ -29,7 +30,7 @@ In this article, we'll discuss Priority Hints and the `importance` attribute, wh
 **A few key areas where priority hints can help:**
 
 - Boost the priority of the LCP image by specifying `importance="high"` on the image element, causing LCP to happen sooner.
-- Increase the priority of `async` scripts using better semantics than the current hack that is commonly used (inserting a <link rel="preload"> for the `async` script). 
+- Increase the priority of `async` scripts using better semantics than the current hack that is commonly used (inserting a <link rel="preload"> for the `async` script).
 - Decrease the priority of late-body scripts to allow for better sequencing with images.
 
 Historically, developers have had some, but limited, influence over resource priority using [preload](/uses-rel-preload/) and [preconnect](/uses-rel-preconnect/). Priority Hints complement these [Resource Hints](https://www.w3.org/TR/resource-hints/), but it's essential to understand where they all fit in. Preload lets you tell the browser about critical resources you want to load early before they are discovered naturally. This is especially useful for not easily discoverable resources, such as fonts included in stylesheets, background images, or resources loaded from a script. Preconnect helps warm up connections to cross-origin servers and can help improve metrics like [Time-to-first-byte](/time-to-first-byte/) and is useful when you know an origin but not necessarily the exact URL of a resource that will be needed.  
