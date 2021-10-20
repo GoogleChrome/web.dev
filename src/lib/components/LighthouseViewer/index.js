@@ -40,6 +40,10 @@ class LighthouseViewer extends BaseStateElement {
     `;
   }
 
+  /**
+   * @param {Object} lighthouseReport
+   * @param {Element} container Html element where the report will be rendered.
+   */
   generateReport = (lighthouseReport, container) => {
     const dom = new DOM(document);
     const renderer = new ReportRenderer(dom);
