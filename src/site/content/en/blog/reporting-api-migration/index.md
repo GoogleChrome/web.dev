@@ -69,27 +69,6 @@ A new mechanism for Network Error Logging will be developed. Once that becomes a
 
 ## Differences between v0 and v1
 
-{% Aside 'gotchas' %}
-The **legacy** Reporting API (v0) uses the `Report-To` header, and the `report-to` directive in other headers.
-
-Legacy API:
-
-```http
-Report-To: ...
-Document-Policy: ...; report-to my-endpoint
-```
-
-The **new** Reporting API (v1) uses the `Reporting-Enpoints` header, and also **the same `report-to` directive** in other headers.
-
-New API:
-
-```http
-Reporting-Endpoints: ...
-Document-Policy: ...; report-to my-endpoint
-```
-
-{% endAside %}
-
 ### What's changing
 
 - The API surface is different.
@@ -98,10 +77,11 @@ Document-Policy: ...; report-to my-endpoint
 
   ```http
   Report-To: { group: "main-endpoint", "max_age": 86400, "endpoints": [ { "url": ... }, { "url": ... }] }, { group: "default-endpoint", "max_age": 86400, "endpoints": [ { "url": ... }, { "url": ... }] }
+  Document-Policy: ...; report-to main-endpoint
   ```
 
   {% CompareCaption %}
-  v0 uses the `Report-To` header to configure **named endpoint groups**.
+  v0 uses the `Report-To` header to configure **named endpoint groups**, and the `report-to` directive in other headers to reference these endpoint groups.
   {% endCompareCaption %}
 
   {% endCompare %}
@@ -110,11 +90,12 @@ Document-Policy: ...; report-to my-endpoint
 
   ```http
   Reporting-Endpoints: main-endpoint="https://reports.example/main", default="https://reports.example/default"
+  Document-Policy: ...; report-to main-endpoint
   ```
 
   {% CompareCaption %}
   v1 uses the `Reporting-Endpoints` header to configure **named
-  endpoints**.
+  endpoints**. Like v0, it uses the `report-to` directive in other headers to reference these endpoint groups.
   {% endCompareCaption %}
   {% endCompare %}
 
