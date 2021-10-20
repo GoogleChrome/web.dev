@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog
 title: Minify CSS
 authors:
   - demianrenzulli
