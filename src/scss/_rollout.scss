@@ -183,7 +183,7 @@ web-url-chooser {
   /// Temporary button styles, as the class "button" cannot be safely added as it used by the old css.
   .w-button {
     text-transform: uppercase;
-    letter-spacing: .03ch;
+    letter-spacing: 0.03ch;
     border-radius: 3px;
     padding: 1.4em 1em;
     display: inline-flex;
@@ -199,7 +199,7 @@ web-url-chooser {
     line-height: 1.2;
   }
 
-  .w-button[data-type="primary"] {
+  .w-button[data-type='primary'] {
     border-color: var(--color-action-bg-primary);
     background: var(--color-action-bg-primary);
     color: var(--color-action-text-primary);
@@ -211,4 +211,9 @@ web-url-chooser {
     transform: none !important;
     cursor: not-allowed !important;
   }
+}
+
+/// Measure page overrides
+[should-run-psi] web-url-chooser .lh-controls .w-button {
+  flex: none;
 }

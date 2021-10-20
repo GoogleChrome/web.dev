@@ -1,10 +1,32 @@
 .measure-faq {
   details {
-    border-left: 1px solid var(--color-stroke);
-    border-right: 1px solid var(--color-stroke);
+    border-inline: 1px solid var(--color-stroke);
+    padding-inline: 1rem;
 
     summary {
       color: inherit;
+
+      @include apply-utility('font', 'brand');
+
+      &::before {
+        border: 1px solid var(--color-stroke);
+
+        @include apply-utility('bg', 'core-bg');
+      }
+
+      &::after {
+        @include apply-utility('color', 'action-text');
+      }
+    }
+
+    &:first-of-type {
+      border-top-right-radius: $global-radius-large;
+      border-top-left-radius: $global-radius-large;
+    }
+
+    &:last-of-type {
+      border-bottom-right-radius: $global-radius-large;
+      border-bottom-left-radius: $global-radius-large;
     }
   }
 }
