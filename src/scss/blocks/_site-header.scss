@@ -69,7 +69,7 @@
   /// ROLLOUT IS COMPLETE
 }
 
-.cluster {
+.site-header .cluster {
   flex-wrap: nowrap;
 }
 
@@ -123,5 +123,18 @@
       box-shadow: none;
       transform: none;
     }
+  }
+}
+
+@include media-query('lg') {
+  /// Although the nav is centered, via flexbox, it doesn't look
+  /// optically centered, thanks to elements that vertically follow
+  /// it. This transform creates that optical adjustment
+  web-navigation-drawer[type='standard'] [data-drawer-container] {
+    transform: translateX(-1.75rem);
+  }
+
+  .site-header__link {
+    padding: 1.5em 2em;
   }
 }
