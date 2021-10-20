@@ -832,6 +832,12 @@ monetization:
     ru: Последние новости и статьи о монетизации.
     zh: 我们关于创收的最新资讯、动态和故事。
 
+monitoring:
+  title:
+    en: Monitoring
+  description:
+    en: Our latest news, updates, and stories about Monitoring.
+
 network:
   title:
     en: Network
