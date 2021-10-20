@@ -70,3 +70,6 @@ topics:
     pt: Proteja os usuários de rastreamento
     ru: Защита пользователей от отслеживания
     zh: 保护用户免受跟踪
+
+  monitor_security_violations_deprecations:
+    en: Monitor security violations and deprecations
