@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post
 title: Optimizing resource loading with Priority Hints
 authors:
   - leenasohoni
@@ -13,6 +13,7 @@ alt: A photo of a brown wooden plank fence, with a signboard attached to it. The
 tags:
   - performance
   - network
+  - blog
 ---
 
 When a browser parses a web page and begins to discover and download resources such as images, scripts, or CSS, it assigns them a fetch `priority` in an attempt to download resources in an optimal order. These priorities can depend on the kind of resource and where it is in the document. For example, in-viewport images may have a `High` priority while the priority for early `<link>` loaded, render-blocking CSS in the `<head>` could be `Very High`. Browsers are pretty good at assigning priorities that work well but may not be optimal in all cases.

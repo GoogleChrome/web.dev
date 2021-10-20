@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post
 title: Assessing loading performance in the field with Navigation Timing and Resource Timing
 subhead: Learn the basics of using the Navigation and Resource Timing APIs to assess loading performance in the field.
 description: Learn the basics of using the Navigation and Resource Timing APIs to assess loading performance in the field.
@@ -12,6 +12,7 @@ tags:
   - javascript
   - metrics
   - network
+  - blog
 date: 2021-10-08
 ---
 
