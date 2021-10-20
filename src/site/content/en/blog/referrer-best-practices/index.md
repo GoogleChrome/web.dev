@@ -151,7 +151,7 @@ _As of October 2021_
       <tr>
         <td>Edge</td>
         <td>
-          The default is <code>no-referrer-when-downgrade</code>.<br> Edge has been <a href="https://github.com/privacycg/proposals/issues/13">experimenting</a> with <code>strict-origin-when-cross-origin</code> as a default.
+          The default is <code>strict-origin-when-cross-origin</code>.
         </td>
       </tr>
       <tr>
