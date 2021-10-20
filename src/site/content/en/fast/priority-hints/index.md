@@ -21,22 +21,22 @@ In this article, we'll discuss Priority Hints and the `importance` attribute, wh
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UQ60oFwWrVCPbFYx3pJY.png", alt="A filmstrip view comparing two tests of the Google Flights homepage. At bottom, Priority Hints are used to boost the priority of the hero image, resulting in a 0.7 second decrease in LCP.
-", width="800", height="400" %}
-  <figcaption>Priority Hints improving Largest Contentful Paint from 2.6s => 1.9s in a test of Google Flights</figcaption>
+", width="800", height="400", class="w-screenshot" %}
+  <figcaption>Priority Hints improving Largest Contentful Paint from 2.6&nbsp;s to 1.9&nbsp;s in a test of Google Flights</figcaption>
 </figure>
 
-**tl;dr**  
+## Summary
 **A few key areas where priority hints can help:**
 
 - Boost the priority of the LCP image by specifying `importance="high"` on the image element, causing LCP to happen sooner.
-- Increase the priority of async scripts using better semantics than the current hack that is commonly used. (inserting a link preload for the async script)
+- Increase the priority of `async` scripts using better semantics than the current hack that is commonly used (inserting a <link rel="preload"> for the `async` script). 
 - Decrease the priority of late-body scripts to allow for better sequencing with images.
 
 Historically, developers have had some, but limited, influence over resource priority using [preload](/uses-rel-preload/) and [preconnect](/uses-rel-preconnect/). Priority Hints complement these [Resource Hints](https://www.w3.org/TR/resource-hints/), but it's essential to understand where they all fit in. Preload lets you tell the browser about critical resources you want to load early before they are discovered naturally. This is especially useful for not easily discoverable resources, such as fonts included in stylesheets, background images, or resources loaded from a script. Preconnect helps warm up connections to cross-origin servers and can help improve metrics like [Time-to-first-byte](/time-to-first-byte/) and is useful when you know an origin but not necessarily the exact URL of a resource that will be needed.  
 
 Priority hints are a markup-based signal (available through the `importance` attribute) that developers can use to indicate the importance of a particular resource. You can also use these hints via JavaScript and the [Fetch API](https://developers.google.com/web/updates/2015/03/introduction-to-fetch) to influence the priority of resource fetches made for data. Priority hints can also complement preload. Take a Largest Contentful Paint image, which, when preloaded, will still get a low priority. If it is pushed back by other early low-priority resources, using Priority Hints can still help how soon the image gets loaded.  
 
-Priority Hints are an [experimental feature](https://www.chromestatus.com/feature/5273474901737472) available as an [Origin Trial](https://developer.chrome.com/origintrials/#/view_trial/365917469723852801). We hope that developers will try it and provide their feedback. You can also try out Priority Hints via a flag in Chrome.
+Priority Hints are an [experimental feature](https://www.chromestatus.com/feature/5273474901737472) available as an [origin trial](https://developer.chrome.com/origintrials/#/view_trial/365917469723852801). We hope that developers will try it and provide their feedback. You can also try out Priority Hints via a flag in Chrome.
 
 ## Resource priority
 
@@ -44,7 +44,7 @@ The resource download sequence depends on the browser's assigned priority for ev
 
 - CSS, fonts, scripts, images, and third-party resources are assigned different priorities.
 - The location or order in which you reference resources in the document also affects the priority of resources.
-- The [preload](/uses-rel-preload/) resource hint helps the browser to discover a resource faster and thus load it before the document loads it and affects priority.
+- The [`preload`](/uses-rel-preload/) resource hint helps the browser to discover a resource faster and thus load it before the document loads it and affects priority.
 - Priority computation changes for [`async` or `defer`](/efficiently-load-third-party-javascript/#use-async-or-defer) scripts.
 
 The following table considers such factors to show how most resources are currently prioritized and sequenced in Chrome.
@@ -196,10 +196,9 @@ The browser downloads resources with the same computed priority in the order the
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Lwm9jwJF5sQ3gQ7PHSs1.png", alt="A screenshot of assets listed in the network tab of Chrome's DevTools. The columns read, from left to right: name, status, type, initiator, size, time, and priority.", width="800", height="263" %}
-  <figcaption>Priority for resource type = &quot;font&quot; on BBC news detail page</figcaption>
+  <figcaption>Priority for resource <code>type = &quot;font&quot;</code> on BBC news detail page</figcaption>
 </figure>
 
-Priority for resource type = "font" on BBC news detail page
 
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/K5U3maOt2TFBbtScW7TY.png", alt="A screenshot of assets listed in the network tab of Chrome's DevTools. The columns read, from left to right: name, status, type, initiator, size, time, and priority.", width="800", height="175" %}
