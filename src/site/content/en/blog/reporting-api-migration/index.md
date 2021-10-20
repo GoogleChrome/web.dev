@@ -37,7 +37,7 @@ _Reporting API v1_. {% endAside %}
 
 **If you already have reporting functionality for your site**: migrate to v1 by using the new header
 (`Reporting-Endpoints`), but keep the legacy header around for some time (`Report-To`).
-**See [Migration: example code](#migration:-example-code).**
+See [Migration: example code](#migration:-example-code).
 
 **If you're adding reporting functionality to your site just now**: use only the new header
 (`Reporting-Endpoints`).
@@ -215,8 +215,8 @@ All differences between v0 and v1
       </tr>
       <tr>
         <td>Support for load balancing / priorities</td>
-        <td>Yes ✔</td>
-        <td>No  ✘
+        <td>Yes</td>
+        <td>No
         </td>
       </tr>
     </tbody>
