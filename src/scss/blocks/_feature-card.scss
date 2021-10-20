@@ -1,0 +1,48 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/feature-card
+.feature-card {
+  position: relative;
+  aspect-ratio: 16/9;
+  justify-content: space-between;
+
+  @include card-base-styles();
+
+  &:link,
+  &:visited {
+    color: get-color('shades-dark');
+  }
+
+  > img {
+    position: absolute;
+    inset: 0 0 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $global-radius-large;
+    z-index: 0;
+  }
+
+  > :not(img) {
+    z-index: 1;
+  }
+}
+
+.feature-card__eyebrow {
+  font-size: get-size('base');
+}
+
+.feature-card__title {
+  font-size: get-size('size-2');
+  max-width: 50%;
+  line-height: 1.4;
+}
+
+/// EXCEPTIONS
+
+/// Light text version
+.feature-card[data-theme='light'] {
+  &:link,
+  &:visited {
+    color: get-color('shades-light-bright');
+  }
+}

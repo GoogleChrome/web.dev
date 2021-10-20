@@ -2,6 +2,14 @@
 /// https://web.dev/design-system/pattern/card
 .card {
   @include card-base-styles();
+
+  &:hover {
+    @include apply-utility('bg', 'mid-bg');
+  }
+
+  &:link:hover {
+    @include apply-utility('bg', 'highlight-interact-bg');
+  }
 }
 
 .card__content {

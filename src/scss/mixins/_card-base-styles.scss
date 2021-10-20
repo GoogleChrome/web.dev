@@ -33,8 +33,6 @@
       border-color $global-transition-fade;
     border-color: get-utility-value('bg', 'mid-bg');
 
-    @include apply-utility('bg', 'mid-bg');
-
     /// Because the card has a whole-card hover state, we want to kick out
     /// individual hover styles
     a {
@@ -45,10 +43,6 @@
 
   &:link {
     @include apply-utility('color', 'core-text');
-  }
-
-  &:link:hover {
-    @include apply-utility('bg', 'highlight-interact-bg');
   }
 
   > img {
