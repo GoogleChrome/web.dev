@@ -2,7 +2,9 @@
 layout: post
 title: Optimizing resource loading with Priority Hints
 authors:
+  - leenasohoni
   - addyosmani
+  - patmeenan
 description: Priority hints indicate the relative importance of resources to the browser. They can enable optimal loading and improve Core Web Vitals.
 subhead: Priority hints indicate the relative importance of resources to the browser. They can enable optimal loading and improve Core Web Vitals.
 date: 2021-10-20
@@ -179,14 +181,16 @@ The following table considers such factors to show how most resources are curren
         <td>&nbsp;</td>
       </tr>
     </tbody>
-    <caption>
-      <p><strong>Notes:</strong></p>
-      <p>* Preload using as <code>&quot;as&quot;</code> or fetch using <code>&quot;type&quot;</code> use the priority of the type they are requesting (e.g., preload <code>as=&quot;stylesheet&quot;</code> will use Highest priority). With no <code>&quot;as&quot;</code>, they will behave like an XHR.</p>
-      <p** &quot;"Early&quot; is defined as being requested before any non-preloaded images have been requested (&quot;late&quot; is after).</p>
-      <p>*** CSS where the media type doesn't match is not fetched by the preload scanner and is only processed when the main parser reaches it, which usually means it will be fetched very late and with a &quot;late&quot; priority.</p>
-    </caption>
   </table>
 </div>
+
+{% Aside %}
+\* Preload using `"as"` or fetch using `"type"` use the priority of the type they are requesting (e.g., preload `as="stylesheet"` will use Highest priority). With no `"as"`, they will behave like an XHR.
+
+\*\* "Early" is defined as being requested before any non-preloaded images have been requested ("late" is after).
+
+\*\*\* CSS where the media type doesn't match is not fetched by the preload scanner and is only processed when the main parser reaches it, which usually means it will be fetched very late and with a "late" priority.
+{% endAside %}
 
 The browser downloads resources with the same computed priority in the order they are discovered. You can check the priority assigned to different resources when loading a page under the Chrome Dev Tools/Networks tab. (Ensure that you check the priority column by right-clicking on the table headings).
 
@@ -437,19 +441,20 @@ You can apply the `importance` attribute to different resources as shown in the 
         <td>&nbsp;</td>
       </tr>
     </tbody>
-    <caption>
-      <p><strong>Notes:</strong></p>
-      <p>* Preload using as <code>&quot;as&quot;</code> or fetch using <code>&quot;type&quot;</code> use the priority of the type they are requesting (e.g., preload <code>as=&quot;stylesheet&quot;</code> will use Highest priority). With no <code>&quot;as&quot;</code>, they will behave like an XHR.</p>
-      <p** &quot;"Early&quot; is defined as being requested before any non-preloaded images have been requested (&quot;late&quot; is after).</p>
-      <p>*** CSS where the media type doesn't match is not fetched by the preload scanner and is only processed when the main parser reaches it, which usually means it will be fetched very late and with a &quot;late&quot; priority.</p>
-      <p>
-        ◉: <code>importance=&quot;auto&quot;</code><br>
-        ⬆: <code>importance=&quot;high&quot;</code><br>
-        ⬇: <code>importance=&quot;low&quot;</code>
-      </p>
-    </caption>
   </table>
 </div>
+
+{% Aside %}
+\* Preload using `"as"` or fetch using `"type"` use the priority of the type they are requesting (e.g., preload `as="stylesheet"` will use Highest priority). With no `"as"`, they will behave like an XHR.
+
+\*\* "Early" is defined as being requested before any non-preloaded images have been requested ("late" is after).
+
+\*\*\* CSS where the media type doesn't match is not fetched by the preload scanner and is only processed when the main parser reaches it, which usually means it will be fetched very late and with a "late" priority.
+
+◉: `importance="auto"`  
+⬆: `importance="high"`  
+⬇: `importance="low"`
+{% endAside %}
 
 ### Use cases
 
@@ -466,7 +471,7 @@ You can specify `importance="high"` to boost the priority of the LCP or other cr
 The following comparison shows the Google Flights page with an LCP background image loaded with and without priority hints. With the priority set to high, the [LCP improved from 2.6s to 1.9s](https://www.webpagetest.org/video/compare.php?tests=211006_AiDcG3_40871b05d6040112a05be4524565cf5d%2C211006_BiDcHR_bebed947f1b6607f2d97e8a899fdc36b&thumbSize=200&ival=100&end=visual).
 
 <figure>
-  {% Video src="video/1L2RBhCLSnXjCnSlevaDjy3vba73/BCngJfoVOy0YbUz8wFrM.mp4" %}
+  {% Video src="video/1L2RBhCLSnXjCnSlevaDjy3vba73/BCngJfoVOy0YbUz8wFrM.mp4", autoplay=true, muted=true, playsinline=true, loop=true, controls=true %}
   <figcaption>An experiment conducted using Cloudflare workers to rewrite the Google Flights page to use priority hints.</figcaption>
 </figure>
 
