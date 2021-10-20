@@ -21,15 +21,24 @@ class LearnFilter extends BaseElement {
     this.active = undefined;
   }
 
+  /**
+   * @param {string|undefined} id
+   */
   setActive(id) {
     this.active = id;
-    const children = document.getElementById('learning-paths').children;
-    for (const child of children) {
-      child.classList.toggle('hidden', !id || id === child.id);
+
+    const learningPathsElement = document.getElementById('learning-paths');
+    if (!learningPathsElement) {
+      return;
+    }
+
+    for (const child of learningPathsElement.children) {
+      child.classList.toggle('hidden', id && id !== child.id);
     }
   }
 
   render() {
+    /** @type {(filter: {id?: string, title: string}) => any} */
     const filtersMap = (filter) =>
       html`<button
         class="w-chip${this.active === filter.id ? ' w-chip__active' : ''}"
