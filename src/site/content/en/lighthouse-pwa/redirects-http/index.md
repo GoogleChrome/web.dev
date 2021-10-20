@@ -42,6 +42,7 @@ make sure that all unsecure HTTP traffic to your site is redirected to HTTPS:
   * [Express](https://stackoverflow.com/a/31144924/1669860)
 
 ## Resources
+
 - [Source code for **Does not redirect HTTP traffic to HTTPS** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects-http.js)
 - [Does not use HTTPS](/is-on-https)
 - [Document does not have a valid `rel=canonical`](/canonical)
