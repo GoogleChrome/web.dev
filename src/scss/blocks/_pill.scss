@@ -9,12 +9,13 @@
   border-radius: 2em;
   border: none;
   background: transparent;
-  font-size: get-size('size-0');
+  font-size: get-size('base');
   text-decoration: none;
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
 
+  @include apply-utility('bg', 'mid-bg');
   @include apply-utility('font', 'brand');
 
   &:hover,
