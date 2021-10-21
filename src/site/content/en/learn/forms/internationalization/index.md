@@ -4,7 +4,7 @@ description: >
   In this module, you learn how to be prepared for international data formats, and how to plan your form for localization.
 authors:
   - michaelscharnagl
-date: 2021-10-20
+date: 2021-11-03
 ---
 
 If you're reading this, you're using the World Wide Web.
