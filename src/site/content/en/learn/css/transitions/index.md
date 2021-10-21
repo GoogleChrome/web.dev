@@ -249,3 +249,5 @@ Check out our blog post [prefers-reduced-motion: Sometimes less movement is more
 When working with CSS transitions, you may encounter performance issues if you add transitions for certain CSS properties. For example, when properties such as `width` or `height` change, they push content around on the rest of the page. This forces CSS to calculate new positions for every affected element for each frame of the transition. When possible, we recommend using properties like `transform` and `opacity` instead.
 
 Check out our [guide on high-performance CSS animations](/animations-guide/) for a deep-dive on this topic.
+
+{% Assessment 'transitions' %}
