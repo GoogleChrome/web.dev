@@ -1,0 +1,47 @@
+.hero {
+  padding: get-space('size-3') 0;
+
+  @include apply-utility('bg', 'mid-bg');
+
+  .feature-card {
+    --flow-space: #{get-space('size-1')};
+    max-width: 35rem;
+    margin-inline-start: auto;
+  }
+}
+
+.hero__eyebrow {
+  @include apply-utility('color', 'mid-text');
+}
+
+.hero__content {
+  margin-block-start: get-space('size-2');
+  max-width: 40ch;
+
+  h1 {
+    font-size: get-size('size-4');
+  }
+
+  .button {
+    --flow-space: #{get-space('size-2')};
+  }
+}
+
+.hero__columns {
+  --gutter: #{get-space('size-2')} #{$global-gutter};
+}
+
+/// EXCEPTIONS
+.hero[data-type='event'] {
+  background: unset;
+}
+
+.hero[data-type='event'] .hero__columns {
+  --switcher-vertical-alignment: stretch;
+}
+
+.hero[data-type='event'] .hero__columns > :first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
