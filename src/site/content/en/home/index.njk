@@ -64,7 +64,7 @@ patterns:
           <span aria-hidden="true" class="hero__eyebrow">{{ intro.eyebrow }}</span>
           <div class="hero__content flow">
             <img src="{{ intro.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ intro.imageWidth }}" height="{{ intro.imageHeight }}" />
-            <h1>{{ intro.title }}</h1>
+            <h1 class="hero__title">{{ intro.title }}</h1>
             {{ intro.summary | md | safe }}
             <a class="button" data-type="primary" href="{{ intro.buttonUrl }}">{{ intro.buttonText }}</a>
           </div>
@@ -89,7 +89,7 @@ patterns:
           <div>
             <span aria-hidden="true" class="hero__eyebrow">{{ event.eyebrow }}</span>
             <div class="hero__content flow">
-              <h1>{{ event.title }}</h1>
+              <h2 class="hero__title">{{ event.title }}</h2>
               {{ event.summary | md | safe }}
               <div class="cluster gutter-base flow-space-size-2">
                 <a class="button" data-type="primary" href="{{ event.primaryButtonUrl }}">{{ event.primaryButtonText }}</a>

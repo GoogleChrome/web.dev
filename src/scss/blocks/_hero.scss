@@ -1,3 +1,5 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/hero
 .hero {
   padding: get-space('size-3') 0;
 
@@ -6,7 +8,6 @@
   .feature-card {
     --flow-space: #{get-space('size-1')};
     max-width: 35rem;
-    margin-inline-start: auto;
   }
 }
 
@@ -28,6 +29,7 @@
 }
 
 .hero__columns {
+  --switcher-target-container-width: 50rem;
   --gutter: #{get-space('size-2')} #{$global-gutter};
 }
 
@@ -44,4 +46,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+/// RESPONSIVE ADJUSTMENTS
+@include media-query('lg') {
+  .hero {
+    .feature-card {
+      margin-inline-start: auto;
+    }
+  }
 }
