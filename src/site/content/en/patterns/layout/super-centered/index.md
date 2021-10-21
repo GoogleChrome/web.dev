@@ -18,4 +18,3 @@ First specify grid as the display method, and then write `place-items: center` o
 ```
 
 This enables the content to be perfectly centered within the parent, regardless of intrinsic size.
-
