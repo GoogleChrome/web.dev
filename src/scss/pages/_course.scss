@@ -163,6 +163,9 @@ web-search.course__search {
   display: block;
   height: $course-search-height;
   padding: 0 $global-gutter-narrow;
+  // Prevent this from being squished by flex grow around us.
+  // This ensures that the search box doesn't grow as it appears.
+  min-height: $course-search-height;
 
   .web-search__input-wrapper {
     display: flex;
