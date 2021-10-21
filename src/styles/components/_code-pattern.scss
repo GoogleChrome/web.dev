@@ -1,0 +1,77 @@
+@import '../settings/colors';
+@import '../tools/mixins';
+@import '../tools/breakpoints';
+
+// =============================================================================
+// CODE PATTERN component
+//
+// A component that displays the code and a demo side by side.
+//
+// =============================================================================
+
+.code-pattern {
+  width: 100%;
+
+  --primary-color: $WEB_PRIMARY_COLOR;
+
+  .code-pattern__content {
+    display: grid;
+    gap: 1rem; // sass-lint:disable-line no-misspelled-properties
+    grid-template-columns: minmax(0, 1fr);
+
+    @include bp(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .code-pattern__assets {
+    border: 1px solid $BORDER_COLOR;
+
+    @include bp(md) {
+      max-width: 426px; // Fix width to prevent the grid blowout (in Chrome 93)
+    }
+  }
+
+  .code-pattern__meta {
+    padding-top: 0.5rem;
+  }
+
+  .code-pattern__icon::before {
+    @include font-material-icon();
+    content: attr(data-icon);
+    display: inline-block;
+    speak: never;
+    vertical-align: middle;
+    margin-right: 6px;
+    font-size: 1.1rem;
+  }
+
+  web-tabs:not(:defined) {
+    display: none;
+  }
+
+  web-tab {
+    height: 100%;
+  }
+
+  pre {
+    border: 0;
+    background: 0;
+    height: 100%;
+    margin: 0;
+  }
+
+  iframe {
+    background-color: $WHITE;
+    border: 1px solid $BORDER_COLOR;
+    width: 100%;
+    resize: both;
+    position: relative;
+    z-index: 1;
+  }
+
+  web-tabs {
+    height: 100%;
+    width: 100%;
+  }
+}

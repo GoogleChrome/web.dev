@@ -43,6 +43,12 @@
     "github": "beaufortfrancois",
     "image": "image/admin/mXjY3z3JmrispGtu9yn6.jpg"
   },
+  "cwallez": {
+    "country": "FR",
+    "twitter": "DaKangz",
+    "github": "Kangz",
+    "image": "image/vvhSqZboQoZZN9wBvoXq72wzGAf1/mYkUaoNpythq50oIFiQh.jpeg"
+  },
   "mathiasbynens": {
     "country": "DE",
     "homepage": "https://mathiasbynens.be/",
@@ -216,6 +222,10 @@
     "glitch": "samthor",
     "image": "image/admin/XQIDJD6narW2eA4d141g.jpg"
   },
+  "stephenstchur": {
+    "country": "US",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/117HjdRQMScu0EouANUl.jpg"
+  },
   "rachelandrew": {
     "country": "GB",
     "homepage": "https://rachelandrew.co.uk/",
@@ -262,11 +272,6 @@
     "github": "mdiblasio",
     "glitch": "mdiblasio",
     "image": "image/admin/CO9R6GSKlH794WHxbpQD.jpg"
-  },
-  "jeremywagner": {
-    "github": "malchata",
-    "twitter": "malchata",
-    "image": "image/admin/VUpz95xT3Znav1EP6ikP.jpg"
   },
   "gmimani": {
     "github": "garimamimani",
@@ -525,6 +530,11 @@
     "country": "US",
     "image": "image/admin/ODlAdqZG7UsfQlYO7D37.jpg"
   },
+  "patmeenan": {
+    "twitter": "patmeenan",
+    "country": "US",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ownYNba1FYga5v97gKRF.jpg"
+  },
   "sebabenz": {
     "twitter": "sebabenz",
     "country": "DE",
@@ -544,7 +554,7 @@
     "country": "DE",
     "twitter": "maudnals",
     "github": "maudnals",
-    "image": "image/admin/F620GZorjY0JjKas3p3J.jpg"
+    "image": "image/O2RNUyVSLubjvENAT3e7JSdqSOx1/9ORwve80jFiyYnPvNcWF.jpg"
   },
   "morss": {
     "twitter": "benmorss",
@@ -788,7 +798,10 @@
     "image": "image/admin/eXpk44oNMpOnNPLrMOMm.jpg"
   },
   "antoinebisch": {
+    "country": "GB",
+    "linkedin": "https://www.linkedin.com/in/antoinebisch/",
     "github": "antoinebisch",
+    "twitter": "AntoineBisch",
     "country": "UK",
     "image": "image/admin/xCDa34tJbhKRgr8pj5BJ.jpg"
   },
@@ -957,5 +970,76 @@
     "github": "npm1",
     "twitter": "NicPenaM",
     "image": "image/kns0INkO77RkiEStzHWYrugyWj32/SCSIEb0Qtv6tPWel5tfd.jpeg"
+  },
+  "derekherman": {
+    "country": "US",
+    "github": "derekherman",
+    "twitter": "derekherman",
+    "image": "image/8L1ESx211yWBm8uNAgqvUc2GwNk1/Co3mEQ34Z8eAw6lPGx5o.jpg"
+  },
+  "dero": {
+    "country": "CZ",
+    "github": "dero",
+    "twitter": "dero_name",
+    "image": "image/8L1ESx211yWBm8uNAgqvUc2GwNk1/wj3d5QqXh3gIUuR7Ob7w.jpg"
+  },
+  "jarhar": {
+    "github": "josepharhar",
+    "twitter": "josepharhar",
+    "image": "image/ahMMPwVRwAdp0gFdY0zZnncYdsm1/3i0rkOVNKJImIy1UWvyC.jpeg"
+  },
+  "majido": {
+    "github": "majido",
+    "twitter": "majido",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/0uSIZyBE7DIwZ3bGnPgz.jpg"
+  },
+  "flackr": {
+    "twitter": "flackrw",
+    "github": "flackr",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/OoCXp829hcVrzCEmjzSd.jpg"
+  },
+  "dandclark": {
+    "twitter": "dandclark1",
+    "github": "dandclark",
+    "country": "US",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/lYPo8w4ZwA465hg323uT.jpg"
+  },
+  "michaelscharnagl": {
+    "twitter": "justmarkup",
+    "country": "DE",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/OZvyDgCkUQAIA87UJV7A.jpg"
+  },
+  "leenasohoni":{
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/VXCjCzLEGWApTkZkNZkR.JPG"
+  },
+  "jackjey": {
+    "github": "JackJey",
+    "image": "image/PV7xjXdOKHP8LWt9XhstsToJeK82/O5CMzBRhiNQelJ5Rkzv0.jpg"
+  },
+  "tcoustillac": {
+    "github": "tcoustil",
+    "homepage": "https://www.linkedin.com/in/tcoustillac/",
+    "country": "FR",
+    "image": "image/16kgsueJSCPH4556d9XWWWENbk12/N6sroCi4an6S9ak9XttX.jpg"
+  },
+  "jlwagner": {
+    "github": "malchata",
+    "twitter": "malchata",
+    "homepage": "https://jeremy.codes/",
+    "country": "US",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/2qO19NkWfYnvHe2zLkhG.jpg"
+  },
+  "cédricbazureau": {
+    "github": "cbazureau",
+    "homepage": "https://cedric.bazureau.com/",
+    "country": "FR",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/vGr2SOy8UdaSj4LvhcxH.jpg"
+  },
+  "adactio": {
+    "github": "adactio",
+    "twitter": "adactio",
+    "homepage": "https://adactio.com/",
+    "country": "UK",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/rM22MifxkT2kdFSUjioP.jpeg"
   }
 }

@@ -69,9 +69,9 @@ Further reading:
 
 Look for ways to more aggressively cache content. If a resource can be served from an HTTP cache (whether it's the browser cache or a CDN), then it doesn't need to be requested from the origin server, which reduces server load.
 
-HTTP headers like [`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control), [`Expires`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires), and [`ETag`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) indicate how a resource should be cached by an HTTP cache. Auditing and fixing these headers will improve caching.
+HTTP headers like [`Cache-Control`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control), [`Expires`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Expires), and [`ETag`](https://developer.mozilla.org/docs/Web/HTTP/Headers/ETag) indicate how a resource should be cached by an HTTP cache. Auditing and fixing these headers will improve caching.
 
-Although [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) can also be used for caching, they utilize a separate [cache](https://developer.mozilla.org/en-US/docs/Web/API/Cache) and are a supplement, rather than a replacement, for proper HTTP caching. For this reason, when handling an overloaded server, efforts should be focused on optimizing HTTP caching.
+Although [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) can also be used for caching, they utilize a separate [cache](https://developer.mozilla.org/docs/Web/API/Cache) and are a supplement, rather than a replacement, for proper HTTP caching. For this reason, when handling an overloaded server, efforts should be focused on optimizing HTTP caching.
 
 #### Diagnose
 
@@ -81,7 +81,7 @@ Run [Lighthouse](https://developers.google.com/web/tools/lighthouse) and look at
 
 #### Fix
 
-Set the [`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) header's `max-age` directive to the appropriate number of seconds.
+Set the [`Cache-Control`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control) header's `max-age` directive to the appropriate number of seconds.
 
 Instructions:
 *   [NGINX](http://nginx.org/en/docs/http/ngx_http_headers_module.html)
@@ -125,9 +125,9 @@ Identify resources that are not being served from a CDN (but should be) by runni
 #### Fix
 
 If a resource is not being cached by the CDN, check that the following conditions are met:
-*   It has a [`Cache-Control: public`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Cacheability) header.
-*   It has a [`Cache-Control: s-maxage`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Expiration), [`Cache-Control: max-age`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Expiration), or [`Expires`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires) header.
-*   It has a [`Content-Length`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length), [`Content-Range`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Range), or [`Transfer-Encoding header`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Transfer-Encoding).
+*   It has a [`Cache-Control: public`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control#Cacheability) header.
+*   It has a [`Cache-Control: s-maxage`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control#Expiration), [`Cache-Control: max-age`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control#Expiration), or [`Expires`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Expires) header.
+*   It has a [`Content-Length`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Length), [`Content-Range`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Range), or [`Transfer-Encoding header`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Transfer-Encoding).
 
 
 ### Scale compute resources

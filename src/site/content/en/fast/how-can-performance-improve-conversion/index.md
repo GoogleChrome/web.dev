@@ -12,7 +12,7 @@ description: |
 tags:
   - blog
   - performance
-  - e-commerce
+  # - e-commerce
 ---
 
 In our other e-commerce guides you have learned about [what you should measure
@@ -48,7 +48,7 @@ After getting users to your site, you need to keep them engaged with your conten
   </figcaption>
 </figure>
 
-Besides various UX best practices, a smooth, fast and responsive experience is key here. While optimizing a website for discovery means optimizing for first load, optimizing for engagement means fast navigations and fast repeat loads. Analyze at which steps of the flow users drop out, and then relate back to speed metrics for these navigations. This can be analyzed for example via [WebPageTest](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#sample-scripts), [Puppeteer](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md) or via the Chrome DevTools [Record](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#record) feature. We will show you more examples of those in the following guides.
+Besides various UX best practices, a smooth, fast and responsive experience is key here. While optimizing a website for discovery means optimizing for first load, optimizing for engagement means fast navigations and fast repeat loads. Analyze at which steps of the flow users drop out, and then relate back to speed metrics for these navigations. This can be analyzed for example via [WebPageTest](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md#sample-scripts), [Puppeteer](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md) or via the Chrome DevTools [Record](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#record) feature. We will show you more examples of those in the following guides.
 
 ## Conversion
 

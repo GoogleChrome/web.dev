@@ -297,7 +297,7 @@ module.exports = [
     'ST: S\u00e3o Tom\u00e9 and Pr\u00edncipe',
     'S\u00e3o Tom\u00e9 and Pr\u00edncipe',
   ],
-  ['TW: Taiwan', 'Taiwan (\u53f0\u6e7e)'],
+  ['TW: Taiwan', 'Taiwan (\u53f0\u7063)'],
   [
     'TJ: Tajikistan',
     'Tajikistan (\u062a\u0627\u062c\u06cc\u06a9\u0633\u062a\u0627\u0646)',

@@ -69,10 +69,14 @@ const data = {i18n: walk(path.join(__dirname, '..', '_data', 'i18n'))};
 const i18n = (path, locale = defaultLocale) => {
   locale = locale.split('_')[0];
   try {
-    return get(data, path)[locale] || get(data, path)[defaultLocale];
+    const out = get(data, path)[locale] ?? get(data, path)[defaultLocale];
+    if (out !== undefined) {
+      return out;
+    }
   } catch (err) {
-    throw new Error(`Could not find i18n result for ${path}`);
+    // ignore, throw below
   }
+  throw new Error(`Could not find i18n result for: ${path}`);
 };
 
 /**

@@ -4,7 +4,7 @@ authors:
   - ericbidelman
   - rachelandrew
 date: 2010-09-30
-updated: 2020-07-29
+updated: 2021-08-30
 description: >
   The HTML5 Drag and Drop (DnD) API means that we can make
   almost any element on our page draggable. In this post we’ll explain
@@ -43,7 +43,7 @@ with each column having the `draggable` attribute set to `true`.
 ```
 
 Here's the CSS for my container and box elements.
-Note that the only CSS related to DnD functionality is the [`cursor: move`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) property.
+Note that the only CSS related to DnD functionality is the [`cursor: move`](https://developer.mozilla.org/docs/Web/CSS/cursor) property.
 The rest of the code just controls the layout and styling of the container and box elements.
 
 ```css/11
@@ -70,13 +70,13 @@ To add the DnD functionality we need to use the JavaScript API.
 
 There are a number of different events to attach to for monitoring the entire drag and drop process.
 
-* [`dragstart`](https://developer.mozilla.org/en-US/docs/Web/API/Document/dragstart_event)
-* [`drag`](https://developer.mozilla.org/en-US/docs/Web/API/Document/drag_event)
-* [`dragenter`](https://developer.mozilla.org/en-US/docs/Web/API/Document/dragenter_event)
-* [`dragleave`](https://developer.mozilla.org/en-US/docs/Web/API/Document/dragleave_event)
-* [`dragover`](https://developer.mozilla.org/en-US/docs/Web/API/Document/dragover_event)
-* [`drop`](https://developer.mozilla.org/en-US/docs/Web/API/Document/drop_event)
-* [`dragend`](https://developer.mozilla.org/en-US/docs/Web/API/Document/dragend_event)
+* [`dragstart`](https://developer.mozilla.org/docs/Web/API/Document/dragstart_event)
+* [`drag`](https://developer.mozilla.org/docs/Web/API/Document/drag_event)
+* [`dragenter`](https://developer.mozilla.org/docs/Web/API/Document/dragenter_event)
+* [`dragleave`](https://developer.mozilla.org/docs/Web/API/Document/dragleave_event)
+* [`dragover`](https://developer.mozilla.org/docs/Web/API/Document/dragover_event)
+* [`drop`](https://developer.mozilla.org/docs/Web/API/Document/drop_event)
+* [`dragend`](https://developer.mozilla.org/docs/Web/API/Document/dragend_event)
 
 To handle the DnD flow, you need some kind of source element (where the drag originates),
 the data payload (what you're trying to drop),
@@ -104,8 +104,8 @@ function handleDragStart(e) {
 
   let items = document.querySelectorAll('.container .box');
   items.forEach(function(item) {
-    item.addEventListener('dragstart', handleDragStart, false);
-    item.addEventListener('dragend', handleDragEnd, false);
+    item.addEventListener('dragstart', handleDragStart);
+    item.addEventListener('dragend', handleDragEnd);
   });
 ```
 
@@ -173,11 +173,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   let items = document.querySelectorAll('.container .box');
   items.forEach(function(item) {
-    item.addEventListener('dragstart', handleDragStart, false);
-    item.addEventListener('dragover', handleDragOver, false);
-    item.addEventListener('dragenter', handleDragEnter, false);
-    item.addEventListener('dragleave', handleDragLeave, false);
-    item.addEventListener('dragend', handleDragEnd, false);
+    item.addEventListener('dragstart', handleDragStart);
+    item.addEventListener('dragover', handleDragOver);
+    item.addEventListener('dragenter', handleDragEnter);
+    item.addEventListener('dragleave', handleDragLeave);
+    item.addEventListener('dragend', handleDragEnd);
+    item.addEventListener('drop', handleDrop);
   });
 });
 ```
@@ -218,9 +219,23 @@ function handleDrop(e) {
 }
 ```
 
+Be sure to register the new handler in amongst the other handlers:
+
+```js/7-7
+  let items = document.querySelectorAll('.container .box');
+  items.forEach(function(item) {
+    item.addEventListener('dragstart', handleDragStart);
+    item.addEventListener('dragover', handleDragOver);
+    item.addEventListener('dragenter', handleDragEnter);
+    item.addEventListener('dragleave', handleDragLeave);
+    item.addEventListener('dragend', handleDragEnd);
+    item.addEventListener('drop', handleDrop);
+  });
+```
+
 If you run the code at this point,
 the item will not drop to the new location.
-To achieve this you need to use the [`DataTransfer`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer) object.
+To achieve this you need to use the [`DataTransfer`](https://developer.mozilla.org/docs/Web/API/DataTransfer) object.
 
 The `dataTransfer` property is where all the DnD magic happens.
 It holds the piece of data sent in a drag action.
@@ -277,14 +292,14 @@ Drag and release the A column on top of the B column and notice how they change 
 The `dataTransfer` object exposes properties to provide visual feedback to the user during the drag process.
 These properties can also be used to control how each drop target responds to a particular data type.
 
-* [`dataTransfer.effectAllowed`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/effectAllowed) restricts what 'type of drag' the user can perform on the element.
+* [`dataTransfer.effectAllowed`](https://developer.mozilla.org/docs/Web/API/DataTransfer/effectAllowed) restricts what 'type of drag' the user can perform on the element.
 It is used in the drag-and-drop processing model to initialize the `dropEffect` during the `dragenter` and `dragover` events.
 The property can be set to the following values: `none`, `copy`, `copyLink`, `copyMove`, `link`, `linkMove`, `move`, `all`, and `uninitialized`.
-* [`dataTransfer.dropEffect`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/dropEffect) controls the feedback that the user is given during the `dragenter` and `dragover` events.
+* [`dataTransfer.dropEffect`](https://developer.mozilla.org/docs/Web/API/DataTransfer/dropEffect) controls the feedback that the user is given during the `dragenter` and `dragover` events.
 When the user hovers over a target element,
 the browser's cursor will indicate what type of operation is going to take place (e.g. a copy, a move, etc.).
 The effect can take on one of the following values:  `none`, `copy`, `link`, `move`.
-* [`e.dataTransfer.setDragImage(imgElement, x, y)`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/setDragImage)
+* [`e.dataTransfer.setDragImage(imgElement, x, y)`](https://developer.mozilla.org/docs/Web/API/DataTransfer/setDragImage)
 means that instead of using the browser's default 'ghost image' feedback,
 you can optionally set a drag icon.
 
@@ -317,7 +332,7 @@ You can find more information about this in [Custom drag-and-drop](/read-files/#
 ## More resources
 
 * [The Drag and Drop Specification](https://html.spec.whatwg.org/multipage/dnd.html#dnd)
-* [MDN HTML Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+* [MDN HTML Drag and Drop API](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API)
 * [How To Make A Drag-and-Drop File Uploader With Vanilla JavaScript](https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/)
 * [Creating a Parking Game With the HTML Drag and Drop API](https://css-tricks.com/creating-a-parking-game-with-the-html-drag-and-drop-api/)
 * [How To Use The HTML Drag-and-Drop API In React](https://www.smashingmagazine.com/2020/02/html-drag-drop-api-react/)

@@ -1,4 +1,13 @@
-module.exports = (authorSlugs = [], authorsCollection) => {
+const {i18n} = require('./i18n');
+
+/**
+ *
+ * @param {string[]} authorSlugs
+ * @param {Authors} authorsCollection
+ * @param {string} [lang]
+ * @returns
+ */
+module.exports = (authorSlugs = [], authorsCollection, lang) => {
   return authorSlugs
     .reduce((authors, authorKey) => {
       const profile = authorsCollection[authorKey];
@@ -8,7 +17,7 @@ module.exports = (authorSlugs = [], authorsCollection) => {
       } else if (profile.twitter) {
         authors.push(`@${profile.twitter}`);
       } else {
-        authors.push(profile.title);
+        authors.push(i18n(profile.title, lang));
       }
 
       return authors;

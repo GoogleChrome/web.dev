@@ -11,7 +11,7 @@ description: |
 tags:
   - media
   - blog
-  - video
+  # - video
 ---
 
 Are you thinking about adding video to your website? As devices and network

@@ -4,7 +4,7 @@ subhead: Learn how to avoid sudden layout shifts to improve user-experience
 authors:
   - addyosmani
 date: 2020-05-05
-updated: 2020-08-20
+updated: 2021-08-17
 hero: image/admin/74TRx6aETydsBGa2IZ7R.png
 description: |
   Cumulative Layout Shift (CLS) is a metric that quantifies how often users experience sudden shifts in page content. In this guide, we'll cover optimizing common causes of CLS such as images and iframes without dimensions or dynamic content.
@@ -283,7 +283,7 @@ Take note of the dimensions and style a placeholder for the embed accordingly. Y
 
 **Summary:** Avoid inserting new content above existing content, unless in response to a user interaction. This ensures any layout shifts that occur are expected.
 
-You've probably experienced layout shifts due to UI that pops-in at the top or bottom of the viewport when you're trying to load a site. Similar to ads, this often this happens with banners and forms that shift the rest of the page's content:
+You've probably experienced layout shifts due to UI that pops-in at the top or bottom of the viewport when you're trying to load a site. Similar to ads, this often happens with banners and forms that shift the rest of the page's content:
 
 - "Sign-up to our newsletter!" (whoa, slow down! we just met!)
 - "Related content"
@@ -299,6 +299,20 @@ You've probably experienced layout shifts due to UI that pops-in at the top or b
   </figure>
 
 If you need to display these types of UI affordances, reserve sufficient space in the viewport for it in advance (for example, using a placeholder or skeleton UI) so that when it loads, it does not cause content in the page to surprisingly shift around.
+
+In some cases adding content dynamically is an important part of user experience. For example, when loading more products to a list of items or when updating live feed content. There are several ways to avoid unexpected layout shifts in those cases:
+
+*   Replace the old content with the new content within a fixed size container or use a carousel and remove the old content after the transition. Remember to disable any links and controls until the transition has completed to prevent accidental clicks or taps while the new content is coming in.
+*   Have the user initiate the load of new content, so they are not surprised by the shift (for example with a "Load more" or "Refresh" button). It's recommended to prefetch the content before the user interaction so that it shows up immediately. As a reminder, layout shifts that occur within 500&nbsp;ms of user input are not counted towards CLS.
+*   Seamlessly load the content offscreen and overlay a notice to the user that it's available (for example, with a "Scroll up" button).
+
+
+<figure class="w-figure">
+  {% Img src="image/OcYv93SYnIg1kfTihK6xqRDebvB2/TjsYVkcDf03ZOVCcsizv.png", alt="Examples of dynamic content loading without causing unexpected layout shifts from Twitter and the Chloé website", width="800", height="458" %}
+  <figcaption class="w-figcaption">
+    Examples of dynamic content loading without causing unexpected layout shifts. Left: Live feed content loading on Twitter. Right: "Load More" example on Chloé website. Check out how the YNAP team <a href="https://medium.com/ynap-tech/how-to-optimize-for-cls-when-having-to-load-more-content-3f60f0cf561c">optimized for CLS when loading more content</a>.
+  </figcaption>
+</figure>
 
 ### Web fonts causing FOUT/FOIT 📝
 
@@ -342,7 +356,7 @@ The [Performance panel](https://developers.google.com/web/tools/chrome-devtools/
   <figcaption class="w-figcaption">After recording a new trace in the Performance panel, the <b>Experience</b> section of the results is populated with a red-tinted bar displaying a <code>Layout Shift</code> record. Clicking the record allows you to drill down into impacted elements (e.g. note the moved from/to entries).</figcaption>
 </figure>
 
-Measuring real-world CLS aggregated at an origin-level is also possible using the [Chrome User Experience Report](/chrome-ux-report-bigquery/). CrUX CLS data is available via BigQuery and a [sample query](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql) to look at CLS performance is available to use.
+Measuring real-world CLS aggregated at an origin-level is also possible using the [Chrome User Experience Report](/chrome-ux-report-bigquery/). CrUX CLS data is available via BigQuery and a [sample query](https://github.com/GoogleChrome/CrUX/blob/main/sql/cls-summary.sql) to look at CLS performance is available to use.
 
 That's it for this guide. I hope it helps keep your pages just a little less shifty :)
 

@@ -5,11 +5,14 @@ pretranslate:
     - "permalink"
     - "noindex"
     - "date"
+    - "updated"
     - "override"
     - "codelabs"
     - "tags"
     - "authors"
     - "offline"
+    - "hero"
+    - "thumbnail"
 
     ignore_patterns:
      - !ruby/regexp /{%\s?([a-zA-Z0-9\.\-\?\'\"\,\!\s\/]*)\s?%}/

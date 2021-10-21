@@ -4,7 +4,7 @@ subhead: The Web Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2021-03-03
+updated: 2021-08-18
 hero: image/admin/PMOws2Au6GPLq9sXSSqw.jpg
 thumbnail: image/admin/8diipQ5aHdP03xNuFNp7.jpg
 alt: |
@@ -168,7 +168,7 @@ Input and output streams in the Web Serial API are handled by the Streams API.
 
 {% Aside %}
 If streams are new to you, check out [Streams API
-concepts](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts).
+concepts](https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts).
 This article barely scratches the surface of streams and stream handling.
 {% endAside %}
 
@@ -602,24 +602,24 @@ Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 [Betaflight Configurator]: https://github.com/betaflight/betaflight-configurator
 [Espruino Web IDE]: http://espruino.com/ide
 [Microsoft MakeCode]: https://www.microsoft.com/en-us/makecode
-[explainer]: https://github.com/reillyeon/serial/blob/gh-pages/EXPLAINER.md
-[spec]: https://reillyeon.github.io/serial/
-[default values]: https://reillyeon.github.io/serial/#dom-serialoptions
-[Streams API concepts]: https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts
-[ReadableStream]: https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream
-[WritableStream]: https://developer.mozilla.org/en-US/docs/Web/API/WritableStream
+[explainer]: https://github.com/WICG/serial/blob/main/EXPLAINER.md
+[spec]: https://github.com/WICG/serial
+[default values]: https://wicg.github.io/serial/#serialoptions-dictionary
+[Streams API concepts]: https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts
+[ReadableStream]: https://developer.mozilla.org/docs/Web/API/ReadableStream
+[WritableStream]: https://developer.mozilla.org/docs/Web/API/WritableStream
 [unlocked]: https://streams.spec.whatwg.org/#lock
 [locked]: https://streams.spec.whatwg.org/#lock
-[output signals]: https://reillyeon.github.io/serial/#serialoutputsignals-dictionary
-[input signals]: https://reillyeon.github.io/serial/#serialinputsignals-dictionary
+[output signals]: https://wicg.github.io/serial/#serialoutputsignals-dictionary
+[input signals]: https://wicg.github.io/serial/#serialinputsignals-dictionary
 [BBC micro:bit]: https://microbit.org/
 [Google Developer codelab]: https://codelabs.developers.google.com/codelabs/web-serial
 [Serial API polyfill]: https://github.com/google/web-serial-polyfill
 [Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[security]: https://github.com/reillyeon/serial/blob/gh-pages/EXPLAINER.md#security-considerations
-[privacy]: https://github.com/reillyeon/serial/blob/gh-pages/EXPLAINER.md#privacy-considerations
-[transform stream]: https://developer.mozilla.org/en-US/docs/Web/API/TransformStream
-[transform streams]: https://developer.mozilla.org/en-US/docs/Web/API/TransformStream
+[security]: https://wicg.github.io/serial/#security
+[privacy]: https://wicg.github.io/serial/#privacy
+[transform stream]: https://developer.mozilla.org/docs/Web/API/TransformStream
+[transform streams]: https://developer.mozilla.org/docs/Web/API/TransformStream
 [issues]: https://github.com/wicg/serial/issues
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ESerial
 [cr-dev-twitter]: https://twitter.com/chromiumdev

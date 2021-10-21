@@ -12,7 +12,7 @@ description: |
 tags:
   - blog
   - performance
-  - ecommerce
+  # - ecommerce
 ---
 
 The different steps of a purchase funnel are prone to performance issues in
@@ -95,21 +95,21 @@ There are two convenient ways of doing this:
 ### WebPageTest
 
 [WebPageTest](https://www.webpagetest.org/) offers a very flexible [scripting
-solution](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md).
+solution](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md).
 The basic idea is to:
 
 +   Tell WebPageTest to navigate through the pages of the flow with the
-    [`navigate`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#navigate)
+    [`navigate`](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md#navigate)
     command.
 +   If needed script the clicking of buttons via
-    [`clickAndWait`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#clickandwait)
+    [`clickAndWait`](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md#clickandwait)
     commands and fill text fields via
-    [`setValue`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#selectvalue).
+    [`setValue`](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md#selectvalue).
     For testing of Single Page Applications use `clickAndWait` rather than
     `navigate` commands for all steps after the first, as `navigate` will do a
     full load instead of the lightweight virtual page load.
 +   Make sure to combine the different steps of the flow in the analysis via
-    [`combineSteps`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#combinesteps)
+    [`combineSteps`](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/scripting.md#combinesteps)
     to produce a single overall result report for the complete flow.
 
 Such a script could look like this:

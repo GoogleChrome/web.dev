@@ -25,7 +25,7 @@ built-in support for these features. So exciting!
 
 One of the most exciting additions to CSS within the Houdini umbrella is the
 [Properties and Values
-API](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Properties_and_Values_API).
+API](https://developer.mozilla.org/docs/Web/API/CSS_Properties_and_Values_API).
 This API supercharges your CSS custom properties (also commonly referred to as
 CSS variables) by giving them semantic meaning (defined by a syntax) and even
 fallback values, enabling CSS testing.
@@ -211,7 +211,7 @@ more about CSS Houdini and the Properties and Values API, check out these
 resources:
 
 - [Is Houdini Ready Yet?](http://ishoudinireadyyet.com/)
-- [MDN Houdini Reference](https://developer.mozilla.org/en-US/docs/Web/Houdini)
+- [MDN Houdini Reference](https://developer.mozilla.org/docs/Web/Houdini)
 - [Smarter custom properties with Houdini's new API](/css-props-and-vals/)
 - [Houdini CSSWG Issue Queue](https://github.com/w3c/css-houdini-drafts/issues)
 

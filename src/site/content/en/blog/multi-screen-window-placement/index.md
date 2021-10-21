@@ -7,7 +7,7 @@ description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
 date: 2020-09-14
-updated: 2021-07-19
+updated: 2021-09-02
 tags:
   - blog
   - capabilities
@@ -78,13 +78,13 @@ origin trial in Chromium. This second origin trial is expected to end in Chromiu
 ### The problem
 
 The time-tested approach to controlling windows,
-[`Window.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open), is unfortunately
+[`Window.open()`](https://developer.mozilla.org/docs/Web/API/Window/open), is unfortunately
 unaware of additional screens. While some aspects of this API seem a little archaic, such as its
-[`windowFeatures`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Parameters:~:text=title.-,windowFeatures)
+[`windowFeatures`](https://developer.mozilla.org/docs/Web/API/Window/open#Parameters:~:text=title.-,windowFeatures)
 `DOMString` parameter, it has nevertheless served us well over the years. To specify a window's
-[position](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Position), you can pass the
+[position](https://developer.mozilla.org/docs/Web/API/Window/open#Position), you can pass the
 coordinates as `left` and `top` (or `screenX` and `screenY` respectively) and pass the desired
-[size](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Size:~:text=well.-,Size) as
+[size](https://developer.mozilla.org/docs/Web/API/Window/open#Size:~:text=well.-,Size) as
 `width` and `height` (or `innerWidth` and `innerHeight` respectively). For example, to open a
 400×300 window at 50 pixels from the left and 50 pixels from the top, this is the code that you
 could use:
@@ -98,8 +98,8 @@ const popup = window.open(
 ```
 
 You can get information about the current screen by looking at the
-[`window.screen`](https://developer.mozilla.org/en-US/docs/Web/API/Window/screen) property, which
-returns a [`Screen`](https://developer.mozilla.org/en-US/docs/Web/API/Screen) object. This is the
+[`window.screen`](https://developer.mozilla.org/docs/Web/API/Window/screen) property, which
+returns a [`Screen`](https://developer.mozilla.org/docs/Web/API/Screen) object. This is the
 output on my MacBook Pro 13″:
 
 ```js
@@ -167,7 +167,7 @@ if ('getScreens' in window) {
 
 Before I can use the Multi-Screen Window Placement API, I must ask the user for permission to do so.
 The new `window-placement` permission can be queried with the
-[Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API) like so:
+[Permissions API](https://developer.mozilla.org/docs/Web/API/Permissions_API) like so:
 
 ```js
 let granted = false;
@@ -329,18 +329,18 @@ firstScreen.addEventListener('change', async (event) => {
 ### New fullscreen options
 
 Until now, you could request that elements be displayed in fullscreen mode via the aptly named
-[`requestFullScreen()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullscreen)
+[`requestFullScreen()`](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
 method. The method takes an `options` parameter where you can pass
-[`FullscreenOptions`](https://developer.mozilla.org/en-US/docs/Web/API/FullscreenOptions). So far,
+[`FullscreenOptions`](https://developer.mozilla.org/docs/Web/API/FullscreenOptions). So far,
 its only property has been
-[`navigationUI`](https://developer.mozilla.org/en-US/docs/Web/API/FullscreenOptions/navigationUI).
+[`navigationUI`](https://developer.mozilla.org/docs/Web/API/FullscreenOptions/navigationUI).
 The Multi-Screen Window Placement API adds a new `screen` property that allows you to determine
 which screen to start the fullscreen view on. For example, if you want to make the primary screen
 fullscreen:
 
 ```js
 try {
-  const primaryScreen = (await getScreens()).filter((screen) => screen.primary)[0];
+  const primaryScreen = (await getScreens()).screens.filter((screen) => screen.isPrimary)[0];
   await document.body.requestFullscreen({ screen: primaryScreen });
 } catch (err) {
   console.error(err.name, err.message);

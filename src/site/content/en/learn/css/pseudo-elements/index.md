@@ -50,8 +50,8 @@ and in this lesson you're going to learn which pseudo-elements are available and
 ## `::before` and `::after`
 
 Both the
-[`::before`](https://developer.mozilla.org/en-US/docs/Web/CSS/::before) and
-[`::after`](https://developer.mozilla.org/en-US/docs/Web/CSS/::after)
+[`::before`](https://developer.mozilla.org/docs/Web/CSS/::before) and
+[`::after`](https://developer.mozilla.org/docs/Web/CSS/::after)
 pseudo-elements create a child element inside an element **only** if you define a `content` property.
 
 ```css
@@ -71,7 +71,7 @@ You can add an image `url`,
 which will insert an image at its original dimensions,
 so you won't be able to resize it.
 You can also insert a
-[`counter`](https://developer.mozilla.org/en-US/docs/Web/CSS/counter()).
+[`counter`](https://developer.mozilla.org/docs/Web/CSS/counter()).
 
 {% Aside 'key-term' %}
 You can create a named counter and then increment it,
@@ -83,18 +83,23 @@ Once a `::before` or `::after` element has been created,
 you can style it however you want with no limits.
 You can only insert a `::before` or `::after` element to an element that will accept child elements
 ([elements with a document tree](https://www.w3.org/TR/CSS21/generate.html)),
-so elements such as `<img />`, `<video>`, `<button>` and `<input>` won't work.
+so elements such as `<img />`, `<video>` and `<input>` won't work.
 
 {% Codepen {
   user: 'web-dot-dev',
   id: 'GRrEYrg'
 } %}
 
+{% Aside 'gotchas' %}
+`input[type="checkbox"]` is an exception. 
+It is allowed to have pseudo-element children.
+{% endAside %}
+
 ## `::first-letter`
 
 We met this pseudo-element at the start of the lesson.
 It is worth being aware that not all CSS properties can be used when targeting
-[`::first-letter`](https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter).
+[`::first-letter`](https://developer.mozilla.org/docs/Web/CSS/::first-letter).
 The available properties are:
 
 - `color`
@@ -123,7 +128,7 @@ Therefore, it won't work if you try to add it to an element that has `display: i
 
 ## `::first-line`
 
-The [`::first-line`](https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line)
+The [`::first-line`](https://developer.mozilla.org/docs/Web/CSS/::first-line)
 pseudo-element will let you style the first line of text
 only if the element with `::first-line` applied has a `display` value of `block`,
 `inline-block`, `list-item`, `table-caption` or `table-cell`.
@@ -153,7 +158,7 @@ there's only a subset of CSS properties you can use:
 If you have an element that is presented in full screen mode,
 such as a `<dialog>` or a `<video>`,
 you can style the backdrop—the space between the element and the rest of the page—with the
-[`::backdrop`](https://developer.mozilla.org/en-US/docs/Web/CSS/::backdrop) pseudo-element:
+[`::backdrop`](https://developer.mozilla.org/docs/Web/CSS/::backdrop) pseudo-element:
 
 
 ```css
@@ -171,7 +176,7 @@ The `::backdrop` pseudo-element is supported in all major browsers apart from Sa
 
 ## `::marker`
 
-The [`::marker`](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker)
+The [`::marker`](https://developer.mozilla.org/docs/Web/CSS/::marker)
 pseudo-element lets you style the bullet or number for a list item or the arrow of a `<summary>` element.
 
 ```css
@@ -214,7 +219,7 @@ You can change the marker symbol, using the `content` property. You can use this
 
 ## `::selection`
 
-The [`::selection`](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection)
+The [`::selection`](https://developer.mozilla.org/docs/Web/CSS/::selection)
 pseudo-element allows you to style how selected text looks.
 
 ```css
@@ -254,7 +259,7 @@ As with other pseudo-elements, only a subset of CSS properties are allowed:
 
 You can add a helper hint to form elements,
 such as `<input>` with a `placeholder` attribute.
-The [`::placeholder`](https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder)
+The [`::placeholder`](https://developer.mozilla.org/docs/Web/CSS/::placeholder)
 pseudo-element allows you to style that text.
 
 ```css
@@ -284,7 +289,7 @@ Form elements must be labelled or they will be inaccessible.
 ## `::cue`
 
 Last in this tour of pseudo-elements is the
-[`::cue`](https://developer.mozilla.org/en-US/docs/Web/CSS/::cue) pseudo-element.
+[`::cue`](https://developer.mozilla.org/docs/Web/CSS/::cue) pseudo-element.
 This allows you to style the WebVTT cues,
 which are the captions of a `<video>` element.
 

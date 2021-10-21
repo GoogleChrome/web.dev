@@ -13,7 +13,7 @@ description:
 tags:
   - blog
   - augmented-reality
-  - hit-test
+  # - hit-test
   - virtual-reality
   - webxr
 ---
@@ -303,7 +303,7 @@ function onSelect(event) {
 The best way to get a handle on this is to step through the [sample
 code](https://immersive-web.github.io/webxr-samples/immersive-ar-session.html) or
 try out the
-[codelab](https://codelabs.developers.google.com/codelabs/ar-with-webxr). I hope
+[codelab](https://codelabs.developers.google.com/ar-with-webxr). I hope
 I've given you enough background to make sense of both.
 
 We're not done building immersive web APIs, not by a long shot. We'll publish

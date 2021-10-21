@@ -4,7 +4,7 @@ title: Other mini app runtime environments
 authors:
   - thomassteiner
 date: 2021-03-03
-# updated: 2021-03-03
+updated: 2021-09-07
 description: |
   This chapter presents a number of runtime environments for mini apps that are not mobile devices.
 tags:
@@ -255,6 +255,21 @@ with no installation required.
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vM5d0wK5fCQSV0VyP7HA.png", alt="The Atom Tickets mini app running in Snapchat showing three snapchat users reserving their seats in a movie theater.", width="320", height="470" %}
   <figcaption class="w-figure">
    The Atom Tickets mini app running in Snapchat (Source: <a href="https://minis.snapchat.com/">Snap</a>).
+  </figcaption>
+</figure>
+
+### VK Mini Apps
+
+The Russian social networking platform [VK](https://vk.com/mini-apps) runs a [mini app program](https://vk.com/mini-apps)
+that allows developers to [build](https://vk.com/dev/vk_apps_docs) mini apps that tie in deeply with the social network.
+VK mini apps work on both VK's platform-specific mobile apps, as well as on the desktop website.
+Apart from several of the brand's other platforms like [Mail.ru](https://mail.ru/), VK mini apps are also integrated in the
+[Atom browser](https://browser.ru/).
+
+<figure class="w-figure">
+  {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/tZJgYpdjurBVfhInqWRo.webp", alt="The Все аптеки mini app running in VK.", width="460", height="948" %}
+  <figcaption class="w-figure">
+    The Все аптеки mini app running in VK (Source: <a href="https://vk.com/mini-apps">VK</a>).
   </figcaption>
 </figure>
 

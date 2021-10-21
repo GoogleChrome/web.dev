@@ -289,7 +289,7 @@ Also ensure that focus is always visible, whether by allowing the default focus 
 
 {% Aside %}
 You may also be interested in the roving `tabindex` or `aria-activedescendant` approaches,
-[covered over on MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets#Technique_1_Roving_tabindex).
+[covered over on MDN](https://developer.mozilla.org/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets#Technique_1_Roving_tabindex).
 {% endAside %}
 
 ### Using autofocus
@@ -300,7 +300,7 @@ when the page is loaded.
 [all web form controls](https://html.spec.whatwg.org/multipage/forms.html#association-of-controls-and-forms),
 including buttons.
 To autofocus elements in your own custom UI components,
-call the [`focus()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement.focus) method,
+call the [`focus()`](https://developer.mozilla.org/docs/Web/API/HTMLElement.focus) method,
 supported on all HTML elements that can be focused
 (for example, `document.querySelector('myButton').focus()`).
 

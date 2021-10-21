@@ -11,7 +11,7 @@ web_lighthouse:
 ---
 
 Many search engines rank pages based on how mobile-friendly they are.
-Without a [viewport meta tag](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag),
+Without a [viewport meta tag](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag),
 mobile devices render pages at typical desktop screen widths and then scale the
 pages down, making them difficult to read.
 
@@ -62,4 +62,4 @@ Here's what each key-value pair does:
 
 - [Source code for **Has a `<meta name="viewport">` tag with `width` or `initial-scale`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/viewport.js)
 - [Responsive Web Design Basics](https://developers.google.com/web/fundamentals/design-and-ux/responsive/#set-the-viewport)
-- [Using the viewport meta tag to control layout on mobile browsers](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag)
+- [Using the viewport meta tag to control layout on mobile browsers](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag)

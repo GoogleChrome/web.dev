@@ -251,7 +251,7 @@ user to interact with your page. You can measure FID with the following tools.
 To measure FID in JavaScript, you can use the [Event Timing
 API](https://wicg.github.io/event-timing). The following example shows how to
 create a
-[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
 that listens for
 [`first-input`](https://wicg.github.io/event-timing/#sec-performance-event-timing)
 entries and logs them to the console:

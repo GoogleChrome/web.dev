@@ -13,275 +13,290 @@
 # "/foo/index.html", the static file will always win.
 
 redirects:
+  # Policies
 
-# Policies
+  - source: /policies
+    destination: https://policies.google.com/
 
-- source: /policies
-  destination: https://policies.google.com/
+  # Newsletter
 
-# Newsletter
+  - source: /subscribe
+    destination: /newsletter
 
-- source: /subscribe
-  destination: /newsletter
+  # Pre-v1 redirects
 
-# Pre-v1 redirects
+  - source: /fast/using-lighthouse-ci-to-set-a-performance-budget
+    destination: /fast/using-lighthouse-bot-to-set-a-performance-budget
 
-- source: /fast/using-lighthouse-ci-to-set-a-performance-budget
-  destination: /fast/using-lighthouse-bot-to-set-a-performance-budget
+  - source: /fast/defer-unused-css
+    destination: /fast/defer-non-critical-css
 
-- source: /fast/defer-unused-css
-  destination: /fast/defer-non-critical-css
+  # Pre-v1 codelabs
 
-# Pre-v1 codelabs
+  - source: /reliable/http-cache/codelab-http-cache
+    destination: /codelab-http-cache
 
-- source: /reliable/http-cache/codelab-http-cache
-  destination: /codelab-http-cache
+  - source: /fast/serve-images-webp/codelab-serve-images-webp
+    destination: /codelab-serve-images-webp
 
-- source: /fast/serve-images-webp/codelab-serve-images-webp
-  destination: /codelab-serve-images-webp
+  - source: /fast/remove-unused-code/codelab-remove-unused-code
+    destination: /codelab-remove-unused-code
 
-- source: /fast/remove-unused-code/codelab-remove-unused-code
-  destination: /codelab-remove-unused-code
+  - source: /fast/serve-responsive-images/codelab-art-direction
+    destination: /codelab-art-direction
 
-- source: /fast/serve-responsive-images/codelab-art-direction
-  destination: /codelab-art-direction
+  - source: /fast/serve-responsive-images/codelab-art-direction
+    destination: /codelab-art-direction
 
-- source: /fast/serve-responsive-images/codelab-art-direction
-  destination: /codelab-art-direction
+  - source: /secure/same-origin-policy/codelab-same-origin-fetch
+    destination: /codelab-same-origin-fetch
 
-- source: /secure/same-origin-policy/codelab-same-origin-fetch
-  destination: /codelab-same-origin-fetch
+  - source: /secure/same-origin-policy/codelab-same-origin-iframe
+    destination: /codelab-same-origin-iframe
 
-- source: /secure/same-origin-policy/codelab-same-origin-iframe
-  destination: /codelab-same-origin-iframe
+  - source: /fast/avoid-invisible-text/codelab-avoid-invisible-text
+    destination: /codelab-avoid-invisible-text
 
-- source: /fast/avoid-invisible-text/codelab-avoid-invisible-text
-  destination: /codelab-avoid-invisible-text
+  - source: /fast/preload-critical-assets/codelab-preload-web-fonts
+    destination: /codelab-preload-web-fonts
 
-- source: /fast/preload-critical-assets/codelab-preload-web-fonts
-  destination: /codelab-preload-web-fonts
+  - source: /fast/serve-responsive-images/codelab-density-descriptors
+    destination: /codelab-density-descriptors
 
-- source: /fast/serve-responsive-images/codelab-density-descriptors
-  destination: /codelab-density-descriptors
+  - source: /discoverable/fix-http-status-codes/codelab-fix-sneaky-404
+    destination: /codelab-fix-sneaky-404
 
-- source: /discoverable/fix-http-status-codes/codelab-fix-sneaky-404
-  destination: /codelab-fix-sneaky-404
+  - source: /installable/discover-installable/codelab-make-installable
+    destination: /codelab-make-installable
 
-- source: /installable/discover-installable/codelab-make-installable
-  destination: /codelab-make-installable
+  - source: /fast/use-imagemin-to-compress-images/codelab-imagemin-gulp
+    destination: /codelab-imagemin-gulp
 
-- source: /fast/use-imagemin-to-compress-images/codelab-imagemin-gulp
-  destination: /codelab-imagemin-gulp
+  - source: /fast/use-imagemin-to-compress-images/codelab-imagemin-grunt
+    destination: /codelab-imagemin-grunt
 
-- source: /fast/use-imagemin-to-compress-images/codelab-imagemin-grunt
-  destination: /codelab-imagemin-grunt
+  - source: /fast/preload-critical-assets/codelab-preload-critical-assets
+    destination: /codelab-preload-critical-assets
 
-- source: /fast/preload-critical-assets/codelab-preload-critical-assets
-  destination: /codelab-preload-critical-assets
+  - source: /fast/replace-gifs-with-videos/codelab-replace-gifs-with-video
+    destination: /codelab-replace-gifs-with-video
 
-- source: /fast/replace-gifs-with-videos/codelab-replace-gifs-with-video
-  destination: /codelab-replace-gifs-with-video
+  - source: /fast/use-imagemin-to-compress-images/codelab-imagemin-webpack
+    destination: /codelab-imagemin-webpack
 
-- source: /fast/use-imagemin-to-compress-images/codelab-imagemin-webpack
-  destination: /codelab-imagemin-webpack
+  - source: /reliable/service-workers-cache-storage/codelab-service-workers
+    destination: /codelab-service-workers
 
-- source: /reliable/service-workers-cache-storage/codelab-service-workers
-  destination: /codelab-service-workers
+  - source: /fast/serve-modern-code-to-modern-browsers/codelab-serve-modern-code
+    destination: /codelab-serve-modern-code
 
-- source: /fast/serve-modern-code-to-modern-browsers/codelab-serve-modern-code
-  destination: /codelab-serve-modern-code
+  - source: /fast/serve-responsive-images/codelab-specifying-multiple-slot-widths
+    destination: /codelab-specifying-multiple-slot-widths
 
-- source: /fast/serve-responsive-images/codelab-specifying-multiple-slot-widths
-  destination: /codelab-specifying-multiple-slot-widths
+  - source: /fast/reduce-javascript-payloads-with-code-splitting/codelab-code-splitting
+    destination: /codelab-code-splitting
 
-- source: /fast/reduce-javascript-payloads-with-code-splitting/codelab-code-splitting
-  destination: /codelab-code-splitting
+  - source: /reliable/identify-resources-via-network-panel/codelab-explore-network-panel
+    destination: /codelab-explore-network-panel
 
-- source: /reliable/identify-resources-via-network-panel/codelab-explore-network-panel
-  destination: /codelab-explore-network-panel
+  - source: /fast/reduce-network-payloads-using-text-compression/codelab-text-compression
+    destination: /codelab-text-compression
 
-- source: /fast/reduce-network-payloads-using-text-compression/codelab-text-compression
-  destination: /codelab-text-compression
+  - source: /fast/use-lazysizes-to-lazyload-images/codelab-use-lazysizes-to-lazyload-images
+    destination: /codelab-use-lazysizes-to-lazyload-images
 
-- source: /fast/use-lazysizes-to-lazyload-images/codelab-use-lazysizes-to-lazyload-images
-  destination: /codelab-use-lazysizes-to-lazyload-images
+  - source: /fast/serve-images-with-correct-dimensions/codelab-serve-images-correct-dimensions
+    destination: /codelab-serve-images-correct-dimensions
 
-- source: /fast/serve-images-with-correct-dimensions/codelab-serve-images-correct-dimensions
-  destination: /codelab-serve-images-correct-dimensions
+  - source: /fast/reduce-network-payloads-using-text-compression/codelab-text-compression-brotli
+    destination: /codelab-text-compression-brotli
 
-- source: /fast/reduce-network-payloads-using-text-compression/codelab-text-compression-brotli
-  destination: /codelab-text-compression-brotli
+  - source: /fast/incorporate-performance-budgets-into-your-build-tools/codelab-setting-performance-budgets-with-webpack
+    destination: /codelab-setting-performance-budgets-with-webpack
 
-- source: /fast/incorporate-performance-budgets-into-your-build-tools/codelab-setting-performance-budgets-with-webpack
-  destination: /codelab-setting-performance-budgets-with-webpack
+  # Redirect all pre-v1 paths to the project root.
+  # Before: web.dev/fast/remove-unused-code
+  # After: web.dev/remove-unused-code
 
-# Redirect all pre-v1 paths to the project root.
-# Before: web.dev/fast/remove-unused-code
-# After: web.dev/remove-unused-code
+  - source: /accessible/:part
+    destination: /:part
 
-- source: /accessible/:part
-  destination: /:part
+  - source: /discoverable/:part
+    destination: /:part
 
-- source: /discoverable/:part
-  destination: /:part
+  - source: /fast/:part
+    destination: /:part
 
-- source: /fast/:part
-  destination: /:part
+  - source: /installable/:part
+    destination: /:part
 
-- source: /installable/:part
-  destination: /:part
+  - source: /reliable/:part
+    destination: /:part
 
-- source: /reliable/:part
-  destination: /:part
+  - source: /secure/:part
+    destination: /:part
 
-- source: /secure/:part
-  destination: /:part
+  # Some Google search results indexed the page with `en/`, so we'll redirect it for now
+  - source: /en/:part
+    destination: /:part
 
-# Some Google search results indexed the page with `en/`, so we'll redirect it for now
-- source: /en/:part
-  destination: /:part
+  # Redirect duplicative /discoverable URLs to /lighthouse-seo
 
-# Redirect duplicative /discoverable URLs to /lighthouse-seo
+  - source: /write-descriptive-text
+    destination: /lighthouse-seo
 
-- source: /write-descriptive-text
-  destination: /lighthouse-seo
+  - source: /tell-search-translated-pages-equal
+    destination: /hreflang
 
-- source: /tell-search-translated-pages-equal
-  destination: /hreflang
+  - source: /tell-search-engine-canonical-url
+    destination: /canonical
 
-- source: /tell-search-engine-canonical-url
-  destination: /canonical
+  - source: /remove-code-blocking-indexing
+    destination: /is-crawlable
+  - source: /is-crawable
+    destination: /is-crawlable
 
-- source: /remove-code-blocking-indexing
-  destination: /is-crawlable
-- source: /is-crawable
-  destination: /is-crawlable
+  - source: /fix-http-status-codes
+    destination: /http-status-code
 
-- source: /fix-http-status-codes
-  destination: /http-status-code
+  - source: /remove-browser-plugins
+    destination: /plugins
 
-- source: /remove-browser-plugins
-  destination: /plugins
+  - source: /fix-robot-errors
+    destination: /robots-txt
 
-- source: /fix-robot-errors
-  destination: /robots-txt
+  - source: /fix-small-fonts
+    destination: /font-size
 
-- source: /fix-small-fonts
-  destination: /font-size
+  - source: /fix-viewport-tag
+    destination: /viewport
 
-- source: /fix-viewport-tag
-  destination: /viewport
+  # Redirect older metrics docs
 
-# Redirect older metrics docs
+  - source: /layout-instability-api
+    destination: /cls
 
-- source: /layout-instability-api
-  destination: /cls
+  - source: /largest-contentful-paint
+    destination: /lcp
 
-- source: /largest-contentful-paint
-  destination: /lcp
+  - source: /web-vitals
+    destination: /vitals
 
-- source: /web-vitals
-  destination: /vitals
+  - source: /si
+    destination: /speed-index
 
-# Redirects Progressive Web App content
+  # Redirects Progressive Web App content
 
-- source: /pwa
-  destination: /progressive-web-apps/
+  - source: /pwa
+    destination: /progressive-web-apps/
 
-- source: /installable
-  destination: /progressive-web-apps/#installable
+  - source: /installable
+    destination: /progressive-web-apps/#installable
 
-- source: /discover-installable
-  destination: /progressive-web-apps/#installable
+  - source: /discover-installable
+    destination: /progressive-web-apps/#installable
 
-# Redirect for spec name changes
+  # Redirect for spec name changes
 
-- source: /sms-receiver-api-announcement
-  destination: /web-otp
+  - source: /sms-receiver-api-announcement
+    destination: /web-otp
 
-# Redirect /payments content
+  # Redirect /payments content
 
-- source: /android-payment-apps-overview
-  destination: /android-payment-app-developers-guide
+  - source: /android-payment-apps-overview
+    destination: /android-payment-app-developers-guide
+
+  - source: /payment-request-basic-card-deprecation
+    destination: https://chromestatus.com/feature/5730051011117056
+
+  # Redirect for misconfigured Lighthouse report
+
+  - source: /image-size-responsive
+    destination: /image-aspect-ratio
 
 # Redirect for misconfigured Lighthouse report
 
-- source: /image-size-responsive
-  destination: /image-aspect-ratio
+  # Redirects for Handbook refactors
 
-# Redirects for Handbook refactors
+  - source: /handbook/tags
+    destination: /handbook/yaml-front-matter/#tags
 
-- source: /handbook/tags
-  destination: /handbook/yaml-front-matter/#tags
+  # Redirect to unified clipobard article
 
-# Redirect to unified clipobard article
+  - source: /image-support-for-async-clipboard
+    destination: /async-clipboard
 
-- source: /image-support-for-async-clipboard
-  destination: /async-clipboard
+  # Redirect for renamed Native File System API
+  - source: /native-file-system
+    destination: /file-system-access
+  - source: /browser-nativefs
+    destination: /browser-fs-access
 
-# Redirect for renamed Native File System API
-- source: /native-file-system
-  destination: /file-system-access
-- source: /browser-nativefs
-  destination: /browser-fs-access
+  # Redirect to follow consistent Fugu API naming scheme
 
-# Redirect to follow consistent Fugu API naming scheme
+  - source: /wakelock
+    destination: /wake-lock
 
-- source: /wakelock
-  destination: /wake-lock
+  # Redirects for performance content
 
-# Redirects for performance content
+  - source: /native-lazy-loading
+    destination: /browser-level-image-lazy-loading
 
-- source: /native-lazy-loading
-  destination: /browser-level-image-lazy-loading
+  # Redirects for vanity URLs
+  - source: /scale-on-web
+    destination: /tags/scale-on-web
 
-# Redirects for vanity URLs
-- source: /scale-on-web
-  destination: /tags/scale-on-web
+  # Redirect for the renamed WebTransport API.
+  - source: /quictransport
+    destination: /webtransport
 
-# Redirect for the renamed WebTransport API.
-- source: /quictransport
-  destination: /webtransport
+  # Redirect for consolidated Lighthouse audit for a11y names.
+  - source: /aria-toggle-field-name
+    destination: /aria-name
+  - source: /aria-input-field-name
+    destination: /aria-name
 
-# Redirect for consolidated Lighthouse audit for a11y names.
-- source: /aria-toggle-field-name
-  destination: /aria-name
-- source: /aria-input-field-name
-  destination: /aria-name
+  # Temporary redirect for CORS-RFC1918 guidance on DevTools.
+  # Remove once the actual article is published.
+  - source: /cors-rfc1918-guide
+    destination: /cors-rfc1918-feedback
 
-# Temporary redirect for CORS-RFC1918 guidance on DevTools.
-# Remove once the actual article is published.
-- source: /cors-rfc1918-guide
-  destination: /cors-rfc1918-feedback
+  # Redirect for style guide alignment
+  - source: /debugging-layout-shifts
+    destination: /debug-layout-shifts
 
-# Redirect for style guide alignment
-- source: /debugging-layout-shifts
-  destination: /debug-layout-shifts
+  # Vanity urls for Learn CSS course
+  - source: /learncss
+    destination: /learn/css
 
-# Vanity urls for Learn CSS course
-- source: /learncss
-  destination: /learn/css
+  - source: /learnCSS
+    destination: /learn/css
 
-- source: /learnCSS
-  destination: /learn/css
+  # Changes for upcoming video...
+  - source: /whats-new-web-vitals-2021
+    destination: /vitals
+    type: 302
 
-# Changes for upcoming video...
-- source: /whats-new-web-vitals-2021
-  destination: /vitals
-  type: 302
+  # Redirect for security headers quick reference.
+  - source: /security-headers-cheat-sheet
+    destination: /security-headers
 
-# Redirect for security headers quick reference.
-- source: /security-headers-cheat-sheet
-  destination: /security-headers
+  # Redirects for Media content
+  - source: /media-cheat-sheet
+    destination: /media-conversion
 
-# Redirects to https://developer.chrome.com/.
-- source: /browser-flags/
-  destination: https://developer.chrome.com/blog/browser-flags/
-- source: /origin-trials/
-  destination: https://developer.chrome.com/blog/origin-trials/
-- source: /third-party-origin-trials/
-  destination: https://developer.chrome.com/blog/third-party-origin-trials/
+  # Redirects to https://developer.chrome.com/.
+  - source: /browser-flags/
+    destination: https://developer.chrome.com/blog/browser-flags/
+  - source: /origin-trials/
+    destination: https://developer.chrome.com/blog/origin-trials/
+  - source: /third-party-origin-trials/
+    destination: https://developer.chrome.com/blog/third-party-origin-trials/
 
-# Redirect for Aurora
-- source: /aurora
-  destination: /introducing-aurora
+  # Redirect for Aurora
+  - source: /aurora
+    destination: /introducing-aurora
+
+  # Design system
+  - source: /design-system/component/action
+    destination: /design-system/component/fab

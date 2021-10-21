@@ -68,7 +68,7 @@ In the next section, you'll learn how to apply an optimization to load different
 
 ## Use media queries
 
-Using media queries is a common technique to declare stylesheets that will only apply to certain media or device types. They are implemented by using [@media rules](https://developer.mozilla.org/en-US/docs/Web/CSS/@media), which let you define a set of breakpoints, where specific styles are defined.
+Using media queries is a common technique to declare stylesheets that will only apply to certain media or device types. They are implemented by using [@media rules](https://developer.mozilla.org/docs/Web/CSS/@media), which let you define a set of breakpoints, where specific styles are defined.
 When the conditions defined by the `@media` rule are met (for example, a certain screen width), the group of styles defined inside the breakpoint will be applied.
 
 The following steps can be used to apply media queries to [the site](https://use-media-queries-unoptimized.glitch.me/) so that different images are used, depending on the maximum width of the device requesting the page.
@@ -147,4 +147,4 @@ The size of the new mobile background is **67% smaller** than the desktop one.
 
 In this guide you've learned to apply media queries to request background images tailored to specific screen sizes and save bytes when accessing the site on smaller devices, like mobile phones.
 You used the `@media` rule to implement a responsive background. This technique is widely supported by all browsers.
-A new CSS feature: [image-set()](https://drafts.csswg.org/css-images-4/#image-set-notation), can be used for the same purpose with fewer lines of code. At the time of this writing, this feature is not supported in all browsers, but you might want to keep an eye on how adoption evolves, as it can represent an interesting alternative to this technique.
+A new CSS feature: [image-set()](https://www.w3.org/TR/css-images-4/#image-set-notation), can be used for the same purpose with fewer lines of code. At the time of this writing, this feature is not supported in all browsers, but you might want to keep an eye on how adoption evolves, as it can represent an interesting alternative to this technique.

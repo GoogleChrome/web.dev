@@ -119,7 +119,7 @@ cross-browser, progressive methodology.
   [Progressive Enhancement: What It Is, And How To Use It?](https://www.smashingmagazine.com/2009/04/progressive-enhancement-what-it-is-and-how-to-use-it/)
   gives a practical introduction and links to more advanced topics.
 * MDN has an article titled
-  [Implementing feature detection](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)
+  [Implementing feature detection](https://developer.mozilla.org/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)
   that talks about how to detect a feature  by directly querying it.
 
 {% endDetails %}

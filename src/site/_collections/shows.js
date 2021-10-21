@@ -33,6 +33,8 @@ module.exports = async () => {
   for (const key of keys) {
     const showData = showsData[key];
     const href = path.join('/', 'shows', key, '/');
+    const title = `i18n.shows.${key}.title`;
+    const description = `i18n.shows.${key}.description`;
     /**
      * Instead of calling the YouTube API here, the playlist information is handled by GoogleChromeLabs/chrome-gcs-uploader
      * This is so:
@@ -55,6 +57,10 @@ module.exports = async () => {
       v.data.date = new Date(v.data.date);
       v.url = path.join(href, v.data.videoId, '/');
       v.data.lang = defaultLocale;
+      v.data.parent = {
+        title,
+        url: href,
+      };
       return v;
     });
     if (elements.length === 0) {
@@ -68,11 +74,11 @@ module.exports = async () => {
         date: elements[elements.length - 1].date,
         hero: elements[0].data.thumbnail,
       },
-      description: `i18n.shows.${key}.description`,
+      description,
       elements,
       href,
       key,
-      title: `i18n.shows.${key}.title`,
+      title,
       url: href,
     };
 

@@ -123,7 +123,7 @@ brings all the libaom improvements mentioned in the above.
 Note: [libheif](https://github.com/strukturag/libheif)
 is another popular open source AVIF muxer and parser,
 used in
-[ImageMagick](https://imagemagick.org/index.php),
+[ImageMagick](https://imagemagick.org/),
 [libvips](https://github.com/libvips/libvips), and the
 [sharp](https://sharp.pixelplumbing.com/) Node.js module.
 

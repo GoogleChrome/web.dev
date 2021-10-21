@@ -14,6 +14,5 @@ import '../components/TableOfContents';
 import '../components/TableOfContentsButton';
 import '../components/Tabs';
 import '../components/CopyCode';
-import '../components/Feedback';
 
 import '../components/base';

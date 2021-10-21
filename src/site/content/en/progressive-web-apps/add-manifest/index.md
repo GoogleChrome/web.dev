@@ -6,7 +6,7 @@ authors:
   - beaufortfrancois
   - thomassteiner
 date: 2018-11-05
-updated: 2021-06-21
+updated: 2021-10-20
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -24,7 +24,7 @@ desktop or mobile device. A typical manifest file includes the app name, the
 icons the app should use, and the URL that should be opened when the
 app is launched.
 
-Manifest files are [supported](https://developer.mozilla.org/en-US/docs/Web/Manifest#Browser_compatibility) in Chrome, Edge, Firefox, UC Browser, Opera,
+Manifest files are [supported](https://developer.mozilla.org/docs/Web/Manifest#Browser_compatibility) in Chrome, Edge, Firefox, UC Browser, Opera,
 and the Samsung browser. Safari has partial support.
 
 ## Create the manifest file {: #create }
@@ -94,6 +94,21 @@ suggests the extension should be `.webmanifest`, but browsers also support
 You must provide at least the `short_name` or `name` property. If both are
 provided, `short_name` is used on the user's home screen, launcher, or other
 places where space may be limited. `name` is used when the app is installed.
+
+{% Aside %}
+Operating systems usually expect to have a title for each app window. This
+title is displayed in various window-switching surfaces such as
+<kbd>alt</kbd>+<kbd>tab</kbd>, overview mode, and the shelf window list.
+
+For PWAs running in standalone mode, Chromium will prepend the `short_name`
+(or, if `short_name` is not set, alternatively the `name`) to what is
+specified in the `<title>` of the HTML document to prevent disguies attacks
+where standalone apps might try to be mistaken, for example, for operating
+system dialogs.
+
+In consequence, developers shoould _not_ repeat the
+application name in the `<title>` when the app is running in standalone mode.
+{% endAside %}
 
 #### `icons` {: #icons }
 
@@ -292,9 +307,7 @@ In Chrome, the image must respond to certain criteria:
 
 {% Aside 'gotchas' %}
 The `description` and `screenshots` properties are currently used only in Chrome
-for Android when a user wants to install your app. The experimental flag
-`about://flags/#mobile-pwa-install-use-bottom-sheet` flag must be enabled in
-Chrome 90.
+for Android when a user wants to install your app.
 {% endAside %}
 
 ## Add the web app manifest to your pages {: #link-manifest }
@@ -356,4 +369,4 @@ for more information.
 You can learn more about `display_override` in the
 [explainer](https://github.com/WICG/display-override/blob/master/explainer.md).
 
-[mdn-manifest]: https://developer.mozilla.org/en-US/docs/Web/Manifest
+[mdn-manifest]: https://developer.mozilla.org/docs/Web/Manifest

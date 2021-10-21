@@ -8,7 +8,7 @@ date: 2020-12-09
 updated: 2020-12-09
 description: Learn best practices for payment forms.
 tags:
-  - ecommerce
+  # - ecommerce
   - forms
   - identity
   - layout
@@ -129,7 +129,7 @@ later in the codelab.)
 The CSS is mobile-first:
 
 * The default CSS is for viewports less than `400px` wide.
-* [Media queries](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries) are
+* [Media queries](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Media_queries) are
 used to override the default for viewports that are at least `400px` wide, and then again for
 viewports that are at least `500px` wide. This should work well for smaller phones, mobile devices
 with larger screens, and on desktop.
@@ -239,7 +239,7 @@ Try submitting the payment form with an empty field. The browser prompts to comp
 data. Now add a letter to the value in the **Card number** field and try submitting the form. The
 browser warns that value is invalid. This happens because you used the `pattern` attribute to
 specify valid values for a field. The same works for `maxlength` and other
-[validation constraints](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation)
+[validation constraints](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5/Constraint_validation)
 No JavaScript required.
 
 Your payment form should now look this:

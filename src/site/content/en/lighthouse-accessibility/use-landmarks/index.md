@@ -18,7 +18,7 @@ By using landmark elements,
 you can dramatically improve the navigation experience on your site
 for users of assistive technology.
 Learn more in Deque University's
-[HTML 5 and ARIA Landmarks](https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html).
+[HTML 5 and ARIA Landmarks](https://dequeuniversity.com/rules/axe/4.1/landmark-one-main).
 
 ## How to manually check landmarks
 
@@ -58,7 +58,7 @@ to visualize your page structure and catch sections that aren't contained in lan
 - Use landmarks to convey the structure of your page.
   For example, the `<main>` element should include all content directly related
   to the page's main idea, so there should only be one per page.
-  See [MDN's summary of content sectioning elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Content_sectioning)
+  See [MDN's summary of content sectioning elements](https://developer.mozilla.org/docs/Web/HTML/Element#Content_sectioning)
   to learn how to use each landmark.
 - Use landmarks judiciously. Having too many landmarks can actually
   make navigation _more_ difficult for assistive technology users because

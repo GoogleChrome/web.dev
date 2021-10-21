@@ -126,7 +126,7 @@ operating system, whether it's on desktop or mobile, users can set a preference
 for light, dark, or auto themes, which change depending on the time of day.
 
 If you set up your page using [CSS custom
-properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*), swapping
+properties](https://developer.mozilla.org/docs/Web/CSS/--*), swapping
 color values is made straightforward. You can quickly update your color theme
 values, such as `backgroundColor` and `textOnPrimary` to dynamically adjust to
 the new theme within the media query.
@@ -407,7 +407,7 @@ queries and scoped styles are so important. They give you the opportunity to
 silo component styles from page layout and global styles, and user styles,
 enabling more resilient responsive design. This means you can now design macro
 layouts using page-based media queries, including screen-spanning nuances. At
-the same time using micro layouts with container queries on the components,and
+the same time using micro layouts with container queries on the components, and
 add user-preference based media queries to customize user experiences based on
 their unique preferences and need.
 

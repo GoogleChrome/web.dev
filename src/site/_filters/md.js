@@ -16,7 +16,13 @@ module.exports = (content, opts) => {
     md.set(opts);
   }
 
-  return content.split('\n').length > 1
-    ? md.render(content)
-    : md.renderInline(content);
+  let inline = !content.includes('\n');
+
+  // If there's quite a bit of content, we want to make sure
+  // it's marked up for readability purposes
+  if (inline && content.length > 200) {
+    inline = false;
+  }
+
+  return inline ? md.renderInline(content) : md.render(content);
 };

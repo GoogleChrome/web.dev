@@ -168,7 +168,7 @@ There is no need to switch to the app just to skip forward or backward.
   Like that, users can make use of the hardware media keys on their physical keyboards, headphones, or even control the web app
   from the software media keys on their smartwatches.
   An additional idea to smooth seeking operations is to send a
-  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API">vibration pattern</a>
+  <a href="https://developer.mozilla.org/docs/Web/API/Vibration_API">vibration pattern</a>
   when the user seeks over a significant part of the content, for example, passing the opening credits or a chapter boundary.
 {% endDetails %}
 
@@ -225,7 +225,7 @@ Other iOS applications and even websites or emails can integrate with the Podcas
 {% endDetailsSummary %}
   Handling fully custom URL schemes is not yet possible, but there is ongoing work on a proposal for
   <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/URLProtocolHandler/explainer.md">URL Protocol Handling</a>
-  for PWAs. Currently, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler"><code>registerProtocolHandler()</code></a> with a <code>web+</code> scheme prefix is the best alternative.
+  for PWAs. Currently, <a href="https://developer.mozilla.org/docs/Web/API/Navigator/registerProtocolHandler"><code>registerProtocolHandler()</code></a> with a <code>web+</code> scheme prefix is the best alternative.
 {% endDetails %}
 
 ## Local file system integration
@@ -267,19 +267,19 @@ There is a more subtle thing that is self-evident for an iOS application like Po
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  By leveraging the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select"><code>user-select</code></a>
-  CSS property with the value of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select#Syntax:~:text=none,-The"><code>none</code></a>,
+  By leveraging the <a href="https://developer.mozilla.org/docs/Web/CSS/user-select"><code>user-select</code></a>
+  CSS property with the value of <a href="https://developer.mozilla.org/docs/Web/CSS/user-select#Syntax:~:text=none,-The"><code>none</code></a>,
   you can protect UI elements from being accidentally selected.
   Be sure, though, to not abuse this property for making <em>app contents</em> unselectable.
   It should only be used for UI elements like button texts, etc.
-  The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#<generic-name>:~:text=system%2Dui,-Glyphs"><code>system-ui</code></a>
-  value for the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"><code>font-family</code></a> CSS property allows you to
+  The <a href="https://developer.mozilla.org/docs/Web/CSS/font-family#<generic-name>:~:text=system%2Dui,-Glyphs"><code>system-ui</code></a>
+  value for the <a href="https://developer.mozilla.org/docs/Web/CSS/font-family"><code>font-family</code></a> CSS property allows you to
   specify the default UI font of the system to be used for your app.
   Finally, your app can obey to the user's color scheme preference by respecting their <a href="/prefers-color-scheme/"><code>prefers-color-scheme</code></a> choice, with an optional <a href="https://github.com/GoogleChromeLabs/dark-mode-toggle">dark mode toggle</a>
   to override it.
   Another thing to decide on might be what the browser should do when reaching
   the boundary of a scrolling area, for example, to implement custom <em>pull to refresh</em>.
-  This is possible with the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior"><code>overscroll-behavior</code></a> CSS property.
+  This is possible with the <a href="https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior"><code>overscroll-behavior</code></a> CSS property.
 {% endDetails %}
 
 ## Customized title bar
@@ -322,7 +322,7 @@ In-app animations are snappy and smooth in Podcasts. For example, when I open th
   Performant animations on the web are certainly possible if you take into account a number of best practices
   outlined in the article <a href="https://developers.google.com/web/fundamentals/design-and-ux/animations/animations-and-performance">Animations and Performance</a>.
   Scroll animations as commonly seen in paginated content or media carousels can be massively improved by using the <a href="https://developers.google.com/web/updates/2018/07/css-scroll-snap">CSS Scroll Snap</a> feature.
-  For full control, you can use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API">Web Animations API</a>.
+  For full control, you can use the <a href="https://developer.mozilla.org/docs/Web/API/Web_Animations_API">Web Animations API</a>.
 {% endDetails %}
 
 ## Content surfaced outside of app
@@ -576,7 +576,7 @@ The table below shows a compact overview of all features and provides a list of 
             </li>
             <li>
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler"
+                href="https://developer.mozilla.org/docs/Web/API/Navigator/registerProtocolHandler"
                 ><code>registerProtocolHandler()</code></a
               >
             </li>
@@ -602,12 +602,12 @@ The table below shows a compact overview of all features and provides a list of 
           <ul>
             <li>
               <a
-                href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select#Syntax:~:text=none,-The"
+                href="https://developer.mozilla.org/docs/Web/CSS/user-select#Syntax:~:text=none,-The"
                 ><code>user-select: none</code></a
               >
             </li>
             <li>
-              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"
+              <a href="https://developer.mozilla.org/docs/Web/CSS/font-family"
                 ><code>font-family: system-ui</code></a
               >
             </li>
@@ -651,7 +651,7 @@ The table below shows a compact overview of all features and provides a list of 
               >
             </li>
             <li>
-              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API"
+              <a href="https://developer.mozilla.org/docs/Web/API/Web_Animations_API"
                 >Web Animations API</a
               >
             </li>
@@ -749,7 +749,7 @@ This article was reviewed by
 [Joe Medley](/authors/joemedley/),
 [Joshua Bell](https://github.com/inexorabletash),
 [Dion Almaer](https://blog.almaer.com/),
-[Ade Oshineye](http://www.oshineye.com/),
+[Ade Oshineye](https://blog.oshineye.com/),
 [Pete LePage](/authors/petelepage/),
 [Sam Thorogood](/authors/samthor/),
 [Reilly Grant](https://github.com/reillyeon),

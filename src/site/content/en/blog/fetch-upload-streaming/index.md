@@ -4,24 +4,22 @@ title: Streaming requests with the fetch API
 authors:
   - jakearchibald
 description: >
-  Chrome 85 has an experimental implementation of streaming uploads, which you
-  can use on live sites using the origin trial.
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/-7680889164480380927
+  Chrome now supports upload streaming as of version 95, which means
+  you can start a request before you have the whole body available.
 date: 2020-07-22
-updated: 2020-07-22
+updated: 2021-09-22
 hero: image/admin/9U7u4C7WCGbrdHm3181W.jpg
 alt: A canoe pointed up stream.
 tags:
   - blog
+  - chrome-95
   - network
   - service-worker
 feedback:
   - api
 ---
 
-Chrome 85 has an experimental implementation of request streams, meaning you can
-start making a request before you have the whole body available.
+From Chrome 95, you can start a request before you have the whole body available by using the streams API.
 
 You could use this to:
 
@@ -33,24 +31,6 @@ You could use this to:
 
 But since this is a low-level web platform feature, don't be limited by _my_ ideas.
 Maybe you can think of a much more exciting use-case for request streaming.
-
-## Try out request streams
-
-### Enabling via about://flags {: #enable-flags }
-
-Try out request streams in Chrome 85 by flipping an experimental flag:
-`enable-experimental-web-platform-features`.
-
-### Enabling support during the origin trial phase
-
-Fetch request streams are available in an origin trial as of Chrome 85. The
-origin trial is expected to end in Chrome 87.
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ## Demo {: #demo }
 
@@ -92,7 +72,7 @@ connection, you'll get fewer, larger 'chunks' of data. If you're on a slow
 connection, you'll get more, smaller chunks.
 
 If you want to convert the bytes into text, you can use
-[`TextDecoder`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder/decode),
+[`TextDecoder`](https://developer.mozilla.org/docs/Web/API/TextDecoder/decode),
 or the newer transform stream if your [target browsers support
 it](https://caniuse.com/#feat=mdn-api_textdecoderstream):
 
@@ -125,7 +105,7 @@ await fetch(url, {
 ```
 
 Previously, you needed the whole body ready to go before you could start the
-request, but now in Chrome 85 you can provide your own `ReadableStream` of data:
+request, but now in Chrome 95 you can provide your own `ReadableStream` of data:
 
 ```js
 function wait(milliseconds) {
@@ -201,31 +181,36 @@ arbitrary data using gzip.
 
 ### Feature detection
 
-If you provide a body object that the browser doesn't specifically handle, it
-will call `toString()` on the object and use the result as the body. If the
-browser doesn't support request streams, that means the request body becomes
-`"[object ReadableStream]"`–probably not what you want to send to the server.
-To avoid this, use feature detection:
-
 ```js
-const supportsRequestStreams = !new Request('', {
-  body: new ReadableStream(),
-  method: 'POST',
-}).headers.has('Content-Type');
+const supportsRequestStreamsP = (async () => {
+  const supportsStreamsInRequestObjects = !new Request('', {
+    body: new ReadableStream(),
+    method: 'POST',
+  }).headers.has('Content-Type');
 
-if (supportsRequestStreams) {
+  if (!supportsStreamsInRequestObjects) return false;
+
+  return fetch('data:a/a;charset=utf-8,', {
+    method: 'POST',
+    body: new ReadableStream(),
+  }).then(() => true, () => false);
+})();
+
+// Note: supportsRequestStreamsP is a promise.
+if (await supportsRequestStreamsP) {
   // …
 } else {
   // …
 }
 ```
 
-{% Aside %}
-This works because the browser adds a `Content-Type` header of
-`text/plain;charset=UTF-8` to the request if the body is text. The browser only
-treats the body as text if it _doesn't_ support request streams, otherwise it
-won't add a `Content-Type` header at all.
-{% endAside %}
+If you're curious, here's how the feature detection works:
+
+If the browser doesn't support a particular `body` type, it calls `toString()` on the object and uses the result as the body. So, if the browser doesn't support request streams, the request body becomes the string `"[object ReadableStream]"`. When a string is used as a body, it conveniently sets the `Content-Type` header to `text/plain;charset=UTF-8`. So, if that header is set, then we know the browser _doesn't_ support streams in request objects, and we can exit early.
+
+Unfortunately, Safari _does_ support streams in request objects, but _doesn't_ allow them to be used with `fetch`.
+
+To test that, we try `fetch` with a stream body. The test would be flakey and slow if it depended on the network, but thankfully a quirk in the spec allows for `POST` requests to be made to `data:` URLs. This is fast and works without a connection. Safari will reject this call because it doesn't support the stream body.
 
 ## Restrictions
 

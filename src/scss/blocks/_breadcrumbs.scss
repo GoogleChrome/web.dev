@@ -1,0 +1,55 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/breadcrumbs
+.breadcrumbs {
+  padding-inline: $global-gutter;
+
+  a {
+    color: currentColor;
+  }
+
+  a svg {
+    display: block;
+    width: 120px;
+    height: auto;
+
+    // This is the text within the SVG
+    .brand-primary {
+      fill: get-utility-value('color', 'mid-text');
+    }
+  }
+}
+
+.breadcrumbs__list {
+  padding: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &,
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0 $global-gutter-narrow;
+  }
+
+  li {
+    flex: none;
+
+    @include apply-utility('color', 'mid-text');
+  }
+
+  li + li::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(45deg);
+    opacity: 0.8;
+  }
+
+  a:hover {
+    background: transparent;
+    text-decoration: none;
+  }
+}

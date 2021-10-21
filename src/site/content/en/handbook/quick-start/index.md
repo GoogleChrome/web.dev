@@ -3,17 +3,19 @@ layout: handbook
 title: Quick start guide
 date: 2020-02-11
 description: |
-  How to create and publish content on web.dev.
+  How to create and publish content on web.dev and developer.chrome.com.
 ---
 
-Content creation for web.dev has three phases: planning, writing, and publishing.
+Content creation for web.dev and developer.chrome.com has three phases: planning, writing, and publishing. 
+Most of the following information is relevant to both sites.
 
 ## Planning
 
+1. Decide if you want your post on [web.dev](https://web.dev) or [developer.chrome.com](https://developer.chrome.com). [More about the right site for your post](/handbook/writing-blog-posts#which-site).
 1. If you're a Googler or have access to a Googler, use the [content proposal form][form] to submit
    your new content request. If you don't have access to a Googler, use the
    [content issue template](https://github.com/GoogleChrome/web.dev/issues/new?template=propose-new-content.md).
-1. The web.dev team will take a look to see if the idea fits with the goals of the site. If the idea is approved, it will be assigned a reviewer.
+1. The team will evaluate the proposal's suitability for the goals of the relevant site. If the idea is approved, it will be assigned a reviewer.
 
 {% Aside 'caution' %}
 If the piece you'd like to publish is time sensitive, make sure to submit the issue at least **one month** before the target publication date so there's enough time to move it through the writing process.
@@ -24,9 +26,10 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
 1. Read the [Content guidelines](/handbook/#content-guidelines) to understand how to create high-quality
    content. The higher the quality of your content, the less time and energy you'll have to spend
    incorporating feedback.
+1. [How to write blog posts for web.dev and developer.chrome.com](/handbook/writing-blog-posts) has an overview of our process and tips for writing great blog posts.
 1. **After your content proposal is approved**, create a copy of the
-   [web.dev content template][template] to draft your content.
-1. Self-review your content with the [web.dev content checklist](/handbook/content-checklist) to find and fix
+   [content template][template] to draft your content.
+1. Review your content with the [content checklist](/handbook/content-checklist) to find and fix
    common problems. The more of these problems you fix yourself, the faster your review will go.
 1. When your first draft is ready, leave a comment in your GitHub issue and ask for a review.
 
@@ -35,9 +38,10 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
 1. After you get approval from a web.dev team member that your content can be published on the site,
    submit a GitHub pull request.
 1. Check out the [web.dev markup section](/handbook/#web.dev-markup) to learn how to make your markdown squeaky clean.
-   In particular, check out the [web.dev components](/handbook/web-dev-components/) guide
+   In particular, check out the [web.dev components](/handbook/web-dev-components/) or 
+   [developer.chrome.com components](https://developer.chrome.com/docs/handbook/components/) guide
    to discover UI elements that can make your content more engaging or aesthetically pleasing.
-1. Once your PR is merged, the content will be deployed to the site immediately.
+1. Once your PR is merged, the content will be deployed to the site immediately, and appear live after around an hour.
 
 ## Organizing content
 

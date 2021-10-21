@@ -1,0 +1,31 @@
+---
+layout: default
+pageScripts:
+  - '/js/content.js'
+---
+
+{% if page.url %}
+  {% set patternId = page.url | getRelativePath('/patterns/') %}
+{% else %}
+  {% set patternId = null %}
+{% endif %}
+
+{% if patternId %}
+  {% set pattern = patterns.patterns[patternId] %}
+{% else %}
+  {% set pattern = null %}
+{% endif %}
+
+{% if pattern %}
+  {% set allPatternsName = 'i18n.patterns.all_patterns' | i18n(locale) %}
+  {% set patternSet = patterns.sets[pattern.set] %}
+  {% set crumbs = [
+    [allPatternsName, '/patterns/'],
+    [patternSet.title, '/patterns/' + pattern.set + '/']
+  ] %}
+{% else %}
+  {% set patternSet = null %}
+  {% set crumbs = null %}
+{% endif %}
+
+{% include 'partials/post.njk' %}

@@ -9,5 +9,6 @@ import './Header';
 import './LanguageSelect';
 import './NavigationDrawer';
 import './SnackbarContainer';
+import './ThemeToggle';
 import './Search';
 import './SearchResults';

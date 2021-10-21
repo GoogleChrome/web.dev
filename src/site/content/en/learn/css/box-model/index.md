@@ -149,7 +149,7 @@ so is usually the most variably sized area.
 
 The **padding box** surrounds the content box
 and is the space created by
-the [`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding) property.
+the [`padding`](https://developer.mozilla.org/docs/Web/CSS/padding) property.
 Because padding is inside the box, the background of the box will be visible in the space that
 it creates.
 If our box has overflow rules set, such as `overflow: auto` or `overflow: scroll`,
@@ -158,20 +158,20 @@ the scrollbars will occupy this space too.
 <figure class="w-figure">
 {% Codepen {
   user: 'web-dot-dev',
-  id: 'bGNmgGW'
+  id: 'BaReoEV'
 } %}
 </figure>
 
 The **border box** surrounds the padding box and its space is occupied by the `border` value.
 The border box is the bounds of your box and the **border edge** is the limit of what you can
-visually see. The [`border`](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
+visually see. The [`border`](https://developer.mozilla.org/docs/Web/CSS/border)
 property is used to visually frame an element.
 
 The final area, the **margin box**, is the space around your box,
 defined by the `margin` rule on your box.
 Properties such as
-[`outline`](https://developer.mozilla.org/en-US/docs/Web/CSS/outline) and
-[`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
+[`outline`](https://developer.mozilla.org/docs/Web/CSS/outline) and
+[`box-shadow`](https://developer.mozilla.org/docs/Web/CSS/box-shadow)
 occupy this space too because they are painted on top,
 so they don't affect the size of our box.
 You could have an `outline-width` of `200px` on our box and everything inside and including the
@@ -314,8 +314,8 @@ developers often add this rule to resets and normalizers,
 
 ## Resources
 
-- [Introduction to the box model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
-- [What are browser developer tools?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)
+- [Introduction to the box model](https://developer.mozilla.org/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+- [What are browser developer tools?](https://developer.mozilla.org/docs/Learn/Common_questions/What_are_browser_developer_tools)
 
 ### User agent stylesheets
 

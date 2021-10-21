@@ -11,7 +11,7 @@ thumbnail: image/vS06HQ1YTsbMKSFTIPl2iogUQP73/uuUsTCsp9q1zdbN8Lsyw.png
 tags:
   - blog
   - css
-  - color
+  # - color
 ---
 
 In this post I want to share thinking on ways to manage multiple color schemes
@@ -39,10 +39,10 @@ If you prefer video, here's a YouTube version of this post:
 We'll build an accessible color system with custom properties and `calc()`, to
 make a webpage that's adaptive to user preferences while keeping the authoring
 experience minimal. We start with a base brand color and build a system of
-variants from it: 2 text colors, 4 surface colors and a matching shadow. 
+variants from it: 2 text colors, 4 surface colors and a matching shadow.
 
 This guide begins with defining all of the colors for each color scheme up
-front. Not until the very end are they used to change the page. 
+front. Not until the very end are they used to change the page.
 
 ### The Brand
 
@@ -80,7 +80,7 @@ hsl saturation and lightness amounts.
 ## Light theme
 
 Each color variant will be marked with its matching scheme, in this case, each
-is appended with `-light`. 
+is appended with `-light`.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/SS3ejtV78NsBGaNEjZhY.png",
 alt="preview of the light theme end results", width="800", height="480" %}
@@ -101,7 +101,7 @@ without any calculations:
 
 Next, the essentials of a color scheme need text colors. In a light theme, text
 should be very dark. Notice how the lightness of the following colors is low,
-well under 50%. 
+well under 50%.
 
 ```css
 * {
@@ -111,16 +111,16 @@ well under 50%.
 ```
 
 `--text1-light`, since it's very dark at 10% lightness, keeps the heavy 100%
-saturation so the brand color can still peek through into the dark dark navy. 
+saturation so the brand color can still peek through into the dark dark navy.
 
-{% Aside %} 
+{% Aside %}
 Most users wouldn't be able to tell you it's not black, but they
 will notice it feels harmonious somehow. **The secret** is to reserve black and
-white exclusively for brightest highlights and darkest shadows. 
+white exclusively for brightest highlights and darkest shadows.
 {% endAside %}
 
 `--text2-light`, it's not quite as dark as the 1st color, which is good as it's
-a secondary color, and it's also much less saturated. 
+a secondary color, and it's also much less saturated.
 
 ### Surface colors
 
@@ -143,7 +143,7 @@ the saturation, so the light greys don't look too tinted.
 variants, for interactive moments like `:focus` or `:hover` or to create the
 appearance of paper layers. In these scenarios, it's nice to transition
 `--surface2-light` on hover to `--surface3-light`, so a hover results in an
-increase of contrast (99% lightness to 92% lightness; making it darker). 
+increase of contrast (99% lightness to 92% lightness; making it darker).
 
 ### Shadows
 
@@ -151,7 +151,7 @@ Shadows within a color scheme are above and beyond, but add a lifelike nature to
 the effect and help it stand out from unrealistic black based shadows. To do
 this, the color of the shadow will use the hue custom property, be slightly
 saturated with the hue but still very dark. Essentially building a very dark
-slightly blue shadow. 
+slightly blue shadow.
 
 ```css
 * {
@@ -163,9 +163,9 @@ slightly blue shadow.
 `--surface-shadow-light` is not wrapped in an hsl function. This is because the
 `--shadow-strength` value will be combined to create some opacity, and CSS needs
 the pieces in order to perform calculations. Skip to the [rad shadow
-section](#rad-shadow) to learn more. 
+section](#rad-shadow) to learn more.
 
-### Light colors all together 
+### Light colors all together
 
 No need to hunt around to find how any of the light colors are made, they are
 all in one place in the CSS.
@@ -185,10 +185,10 @@ all in one place in the CSS.
 ```
 
 <figure class="w-figure">
-  {% Img 
+  {% Img
     src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/f0H9hh4Qi0aQ61hZwOlU.png",
-    alt="screenshot of the light colors all together", 
-    width="800", height="144" 
+    alt="screenshot of the light colors all together",
+    width="800", height="144"
   %}
   <figcaption class="w-figure">
     <a href="https://codepen.io/argyleink/pen/WNpyypP">Sandbox on CodePen</a>
@@ -200,7 +200,7 @@ all in one place in the CSS.
 Most brands don't begin with a dark theme, it's a variant of their primary,
 usually lighter, theme. Users, on the other hand, often choose a dark theme for
 different contexts, like night time. These factors have led me to keeping two
-things in mind with dark themes: 
+things in mind with dark themes:
 
 1. Users will generally be in the dark while using this theme, so test in the
    dark.
@@ -214,12 +214,12 @@ alt="preview of the end result of the dark theme", width="800", height="486" %}
 
 The light theme used the 3 brand hsl color channels values without alteration,
 the dark theme does not. The saturation is cut in half and the lightness reduced
-a relative 50%. 
+a relative 50%.
 
 ```css
 * {
   --brand-dark: hsl(
-    var(--brand-hue) 
+    var(--brand-hue)
     calc(var(--brand-saturation) / 2)
     calc(var(--brand-lightness) / 1.5)
   );
@@ -229,7 +229,7 @@ a relative 50%.
 ### Text colors
 
 In a dark theme, the text colors should be light. The following colors have high
-values for lightness, putting them closer to white. 
+values for lightness, putting them closer to white.
 
 ```css
 * {
@@ -310,7 +310,7 @@ alt="preview of the end results from the dim theme", width="800", height="485"
 ```css
 * {
   --brand-dim: hsl(
-    var(--brand-hue) 
+    var(--brand-hue)
     calc(var(--brand-saturation) / 1.25)
     calc(var(--brand-lightness) / 1.25)
   );
@@ -377,7 +377,7 @@ highlest lightness in the dark surfaces is 25%. That's 40% of lightness
 breathing room between them. In the light theme, there's 55% breathing room in
 the light theme. Keeping lightness differences between text and surface colors
 at around 40-50% can help keep color contrast ratios high, while also being a
-subtle lever to adjust in case scores are poor. 
+subtle lever to adjust in case scores are poor.
 
 I call it "bump bump til ya pass", which is the interaction of bumping the
 lightness value until a tool shows I'm passing.
@@ -395,7 +395,7 @@ lightness value until a tool shows I'm passing.
   </figcaption>
 </figure>
 
-Each of the themes created in this challenge pass contrast scores. The dim color scheme has the lowest contrast of them, but still passes the minimum requirements. To help others on the team use good contrasting colors, it's a good idea to create a classname that pairs a surface color with an accessible text color. 
+Each of the themes created in this challenge pass contrast scores. The dim color scheme has the lowest contrast of them, but still passes the minimum requirements. To help others on the team use good contrasting colors, it's a good idea to create a classname that pairs a surface color with an accessible text color.
 
 ```css
 .surface1 {
@@ -420,9 +420,9 @@ Each of the themes created in this challenge pass contrast scores. The dim color
 ```
 
 <figure class="w-figure">
-  {% Img 
-    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/zrOv3KCNHU8lXELRTkvF.png", 
-    alt="Screenshot of the dim surface and text pairings", 
+  {% Img
+    src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/zrOv3KCNHU8lXELRTkvF.png",
+    alt="Screenshot of the dim surface and text pairings",
     width="800", height="560"
   %}
   <figcaption class="w-figure">
@@ -436,7 +436,7 @@ The themes use a utility class called `.rad-shadow`. This shadow was generated
 at this [Smooth Shadow](https://shadows.brumm.af/) tool, which I appreciate very
 much. I took its generated snippet and customized it with my own colors and,
 opacity calculations. The reason for this was to create a shadow I could adjust
-within each color scheme. 
+within each color scheme.
 
 {% Img src="image/vS06HQ1YTsbMKSFTIPl2iogUQP73/cAjKit2v0f5dOQnUebCK.png",
 alt="each shadow next to each other", width="800", height="477" %}
@@ -470,7 +470,7 @@ between all the shadows of the design.
 
 ## Using of the color schemes
 
-With the predefining of colors complete, it's time to turn them into 
+With the predefining of colors complete, it's time to turn them into
 scheme agnostic properties. What I mean is, as a CSS
 author inside this color scheme project, one should rarely need to access a
 specific color scheme's value. I want to make it easy to stay within the theme.
@@ -550,7 +550,7 @@ color scheme contexts.
 ```css
 [color-scheme="dark"] {
   color-scheme: dark;
-  
+
   --brand: var(--brand-dark);
   --text1: var(--text1-dark);
   --text2: var(--text2-dark);
@@ -601,4 +601,6 @@ Community remixes section below.
 - [Color scheme Codepen starter](https://codepen.io/argyleink/pen/vYxrrpd)
 
 Community remixes
-Nothing to see here yet!
+- [@chris-kruining](https://github.com/chris-kruining) added a hue slider,
+  status colors and contrast modes for `no-preference`, `more` and `less`:
+  [demo](https://unifyned.com/colors.html).

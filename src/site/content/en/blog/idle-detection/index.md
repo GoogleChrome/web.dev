@@ -8,23 +8,16 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2021-02-23
+updated: 2021-08-25
 tags:
   - blog
-  - idle-detection
+  # - idle-detection
   - capabilities
 hero: image/admin/FXoKxeVCmPgEStieWKm2.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80
 alt: Abandoned computer on a bed with someone's leg next to it.
-origin_trial:
-  url: https://developer.chrome.com/origintrials/#/view_trial/551690954352885761
 feedback:
   - api
 ---
-{% Aside %}
-The Idle Detection API is part of the
-[capabilities project](https://developers.google.com/web/updates/capabilities)
-and is currently in development. This post will be updated as the implementation progresses.
-{% endAside %}
 
 ## What is the Idle Detection API? {: #what }
 
@@ -52,32 +45,12 @@ can limit these calculations to moments when the user interacts with their devic
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | [Complete][specification]|
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | [In progress][ot]        |
-| 5. Launch                                | Not started              |
+| 4. Origin trial                          | Completed                |
+| 5. **Launch**                            | **Chromium 94**            |
 
 </div>
 
 ## How to use the Idle Detection API {: #use }
-
-### Enabling via about://flags
-
-To experiment with the Idle Detection API locally, without an origin trial token, enable the
-`#enable-experimental-web-platform-features` flag in `about://flags`.
-
-### Enabling support during the origin trial phase
-
-Starting in Chrome 88, the Idle Detection API is available as an origin trial in Chrome.
-The origin trial is expected to end in Chrome 90 (May 19, 2021).
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
-
-{% Aside %}
-  An earlier origin trial for this feature ran from Chrome&nbsp;84 to Chrome&nbsp;86.
-{% endAside %}
 
 ### Feature detection
 
@@ -141,7 +114,7 @@ You can finally start the idle detection by calling the
 `IdleDetector`'s `start()` method.
 It takes an object with the desired idle `threshold` in milliseconds
 and an optional `signal` with an
-[`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
+[`AbortSignal`](https://developer.mozilla.org/docs/Web/API/AbortSignal)
 to abort idle detection as parameters.
 
 ```js
@@ -169,8 +142,8 @@ try {
 ```
 
 You can abort the idle detection by calling the
-[`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)'s
-[`abort()`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort)
+[`AbortController`](https://developer.mozilla.org/docs/Web/API/AbortController)'s
+[`abort()`](https://developer.mozilla.org/docs/Web/API/AbortController/abort)
 method.
 
 ```js
@@ -180,7 +153,7 @@ console.log('IdleDetector is stopped.');
 
 ### DevTools support
 
-Starting in Chrome&nbsp;86, you can emulate idle events in Chrome DevTools without actually being idle.
+Starting in Chromium&nbsp;94, you can emulate idle events in DevTools without actually being idle.
 In DevTools, open the **Sensors** tab and look for **Emulate Idle Detector state**.
 You can see the various options in the video below.
 
@@ -300,4 +273,3 @@ The hero image is by [Fernando Hernandez](https://unsplash.com/@_ferh97) on
 [blink-component]: https://chromestatus.com/features#component%3ABlink%3EInput
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[ot]: https://developer.chrome.com/origintrials/#/view_trial/551690954352885761

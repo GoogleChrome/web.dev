@@ -35,6 +35,7 @@
 .w-card-base__with--cover::before {
   @include bp(md) {
     background-color: transparent;
+    content: none;
     margin-bottom: 0px;
   }
 }

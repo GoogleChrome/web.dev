@@ -11,7 +11,7 @@ hero: image/1L2RBhCLSnXjCnSlevaDjy3vba73/6GPqQDYxZnVq8qF6DJ02.jpeg
 alt: "A Lighthouse illuminating the sea"
 tags:
   - blog
-  - fast
+  # - fast
   - performance
   - web-vitals
 ---
@@ -26,7 +26,7 @@ it against any web page, public or requiring authentication. You can also find L
 [PageSpeed
 Insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fstore.google.com),
 [CI](https://github.com/GoogleChrome/lighthouse-ci) and
-[WebPageTest](https://www.webpagetest.org/easy). 
+[WebPageTest](https://www.webpagetest.org/easy).
 
 Lighthouse 7.x includes new features like element screenshots, for easier visual inspection of
 parts of your UI impacting user-experience metrics (e.g. what nodes are contributing to layout
@@ -34,8 +34,8 @@ shift).
 
 
 <figure class="w-figure">
-<video muted autoplay loop>      
-<source type="video/mp4" src="https://storage.googleapis.com/web-dev-uploads/video/1L2RBhCLSnXjCnSlevaDjy3vba73/3G0x4Z1dmOcsusG7j1LE.mp4" type="video/mp4" width="1920" height="1080">    
+<video muted autoplay loop>
+<source type="video/mp4" src="https://storage.googleapis.com/web-dev-uploads/video/1L2RBhCLSnXjCnSlevaDjy3vba73/3G0x4Z1dmOcsusG7j1LE.mp4" type="video/mp4" width="1920" height="1080">
 </video>
 </figure>
 
@@ -58,7 +58,7 @@ These metrics reflect loading, layout stability, and interaction readiness. Othe
 Core Web Vitals (CWV)](https://developer.chrome.com/devsummit/sessions/future-of-core-web-vitals/) are there too.
 
 The "Metrics" section of the Lighthouse report includes lab versions of these metrics. You can use
-this as a summary view of what aspects of user-experience require your attention. 
+this as a summary view of what aspects of user-experience require your attention.
 
 <figure class="w-figure">
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/VkLhdNb3fxtfttFZ1S6E.png", alt="Lighthouse peformance metrics", width="800", height="485" %}
@@ -80,7 +80,7 @@ track which highlights metric moments, such as Layout Shift (LS) shown above.</f
 
 [Field metrics](/vitals-field-measurement-best-practices/), such as those found in the [Chrome UX
 Report](https://developers.google.com/web/tools/chrome-user-experience-report) or
-[RUM](https://developer.mozilla.org/en-US/docs/Web/Performance/Rum-vs-Synthetic), do not have this
+[RUM](https://developer.mozilla.org/docs/Web/Performance/Rum-vs-Synthetic), do not have this
 limitation and are a valuable complement to lab data as they reflect the experience real users
 have. Field data can't offer the kinds of diagnostic information you get in the lab, so the two go
 hand in hand.
@@ -90,7 +90,7 @@ hand in hand.
 ### Identify the Largest Contentful Paint element
 
 LCP is a measurement of perceived loading experience. It marks the point during page load when the
-primary–or "largest"–content has loaded and is visible to the user. 
+primary–or "largest"–content has loaded and is visible to the user.
 
 Lighthouse has a "Largest Contentful Paint element" audit that identifies what element was the
 largest contentful paint. Hovering over the element will highlight it in the main browser window.
@@ -120,7 +120,7 @@ Sullivan useful for quickly identifying the LCP element with a red rectangle in 
 
 To improve the Largest Contentful Paint, [preload](/preload-responsive-images/) your critical hero
 images if they are being discovered late by the browser. A late discovery can happen if a
-JavaScript bundle needs to be loaded before the image is discoverable.  
+JavaScript bundle needs to be loaded before the image is discoverable.
 
 <figure class="w-figure">
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/K9EPBZdSFoyXVDHoDjTx.png", alt="Preload the largest contentful paint image", width="800", height="489" %}
@@ -138,22 +138,22 @@ Can you preload responsive images? [Yes](/preload-responsive-images/#imagesrcset
 Let's say we have a responsive hero image as specified using `srcset` and `sizes` below:
 
 ```html
-<img src="lighthouse.jpg"   
-          srcset="lighthouse_400px.jpg 400w,   
-                  lighthouse_800px.jpg 800w,   
+<img src="lighthouse.jpg"
+          srcset="lighthouse_400px.jpg 400w,
+                  lighthouse_800px.jpg 800w,
                   lighthouse_1600px.jpg 1600w" sizes="50vw" alt="A helpful
-Lighthouse">  
+Lighthouse">
 ```
 
 Thanks to the `imagesrcset` and `imagesizes` attributes added to the `link` attribute, we can
 preload a responsive image using the same image selection logic used by `srcset` and `sizes`:
 
-```html 
-<link rel="preload" as="image" href="lighthouse.jpg"   
-           imagesrcset="lighthouse_400px.jpg 400w,   
-                        lighthouse_800px.jpg 800w,   
+```html
+<link rel="preload" as="image" href="lighthouse.jpg"
+           imagesrcset="lighthouse_400px.jpg 400w,
+                        lighthouse_800px.jpg 800w,
                         lighthouse_1600px.jpg 1600w"
-imagesizes="50vw">  
+imagesizes="50vw">
 ```
 
 Will the audit also highlight preload opportunities if the LCP image is defined via a CSS
@@ -166,7 +166,7 @@ discovered at a waterfall depth of three or more.
 
 Cumulative Layout Shift is a measurement of visual stability. It quantifies how much a page's
 content visually shifts around. Lighthouse has an audit for debugging CLS called "Avoid large
-layout shifts". 
+layout shifts".
 
 This audit highlights DOM elements that contribute the most to shifts of the page. In the Element
 column to the left you will see the list of these DOM elements and to the right, their overall CLS
@@ -235,7 +235,7 @@ Remember that ads are one of the
 [largest](/optimize-cls/#ads-embeds-and-iframes-without-dimensions) contributors to layout shifts
 on the web. It's important to:
 
-+   Take care when placing non-sticky ads near the top of the viewport 
++   Take care when placing non-sticky ads near the top of the viewport
 +   Eliminate shifts by reserving the largest possible size for the ad slot
 
 ### Avoid non-composited animations
@@ -257,7 +257,7 @@ animations](/non-composited-animations/) audit.
 First Input measures the time from when a user first interacts with a page (e.g. when they click a
 link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is
 actually able to begin processing event handlers in response to that interaction. Long JavaScript
-Tasks can impact this metric and the proxy for this metric, Total Blocking Time. 
+Tasks can impact this metric and the proxy for this metric, Total Blocking Time.
 
 <figure class="w-figure">
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/LqBCtAXdByd4fBzoNc1K.png", alt="Audit for avoiding long main thread tasks", width="800", height="485" %}
@@ -266,7 +266,7 @@ Tasks can impact this metric and the proxy for this metric, Total Blocking Time.
 Lighthouse includes an [Avoid long main-thread tasks](/long-tasks-devtools/) audit which lists the
 longest tasks on the main thread. This can be helpful for identifying the worst contributors to
 input delay. In the left column we can see the URL of scripts responsible for long main-thread
-tasks. 
+tasks.
 
 To the right we can see the duration of these tasks. As a reminder, Long Tasks are tasks which
 execute for longer than 50 milliseconds. This is considered to block the main thread long enough to
@@ -284,7 +284,7 @@ tasks that impact interactivity.
 ### Block network requests to see the before/after impact in Lighthouse
 
 Chrome DevTools supports [blocking network
-requests](https://developers.google.com/web/updates/2017/04/devtools-release-notes#block-requests)
+requests](https://developer.chrome.com/docs/devtools/network/#block)
 to see the impact of individual resources being removed or not being available. This can be helpful
 for understanding the cost individual scripts (e.g such as third-party embeds or trackers) have on
 metrics like Total Blocking Time (TBT) and Time to Interactive.
@@ -306,7 +306,7 @@ it. Here we'll do this for the Intersection Observer polyfill.
 </figure>
 
 Next we can re-run Lighthouse. This time we can see our performance score has improved (70/100) as
-has Total Blocking Time (400ms => 300ms). 
+has Total Blocking Time (400ms => 300ms).
 
 <figure class="w-figure">
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/LiaMMxvy4prpFBIuSgfo.png", alt="The after view of blocking costly network requests", width="800", height="508" %}
@@ -323,7 +323,7 @@ One pattern to improve performance of such widgets is to [lazy-load them on user
 interaction](https://addyosmani.com/blog/import-on-interaction/). This can be done by rendering a
 lightweight preview of the widget (a facade) and only load the full version if a user interacts
 with it. Lighthouse has an audit that will recommend third-party resources which can be
-[lazy-loaded with a facade](/third-party-facades/), such as YouTube video embeds.  
+[lazy-loaded with a facade](/third-party-facades/), such as YouTube video embeds.
 
 <figure class="w-figure">
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/iciXy3oVlPH7VuwN7toy.png", alt="Audit highlighting that some costly third party resources can be replaced", width="800", height="483" %}
@@ -331,7 +331,7 @@ with it. Lighthouse has an audit that will recommend third-party resources which
 
 As a reminder, Lighthouse will [highlight third-party code](/third-party-summary/) that blocks the main thread for over 250ms. This can surface all kinds of third-party scripts (including ones authored by Google) that may be worth better deferring or lazy-loading if what they render requires scrolling to view it.
 
-<figure class="w-figure"> 
+<figure class="w-figure">
   {% Img src="image/1L2RBhCLSnXjCnSlevaDjy3vba73/K0Oxmu1XEN2P3NQIknyH.png", alt="Reduce the cost of third-party JavaScript audit", width="800", height="556" %}
 </figure>
 

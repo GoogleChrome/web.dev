@@ -19,7 +19,7 @@ tags:
   - blog
   - security
   - cookies
-  - chrome80
+  - chrome-80
   - test-post
 feedback:
   - api
@@ -129,10 +129,10 @@ tracking pixels and personalizing content.
 
 This also applies to requests initiated from your JavaScript by `fetch` or
 `XMLHttpRequest`. If `fetch()` is called with the
-[`credentials: 'include'` option](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Sending_a_request_with_credentials_included)
+[`credentials: 'include'` option](https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch#Sending_a_request_with_credentials_included)
 this is a good indication that cookies may well be expected on those requests.
 For `XMLHttpRequest` you should look for instances of the
-[`withCredentials` property](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials)
+[`withCredentials` property](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/withCredentials)
 being set to `true`. This is a good indication that cookies may well be expected
 on those requests. Those cookies will need to be appropriately marked to be
 included in cross-site requests.
@@ -284,6 +284,6 @@ anyone has encountered it - so don't hesitate to reach out:
   [`SameSite` updates page](https://www.chromium.org/updates/same-site).
 
 _Cookie hero image by
-[Cayla1](https://unsplash.com/@calya1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+[Calajay](https://unsplash.com/@calajay)
 on
-[Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
+[Unsplash](https://unsplash.com)_

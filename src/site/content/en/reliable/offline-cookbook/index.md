@@ -99,7 +99,7 @@ missing.
 
 The Service Worker may be killed while levels 11–20 download since it's finished handling events,
 meaning they won't be cached. In future the
-[Web Periodic Background Synchronization API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API)
+[Web Periodic Background Synchronization API](https://developer.mozilla.org/docs/Web/API/Web_Periodic_Background_Synchronization_API)
 will handle cases like this, and larger downloads such as movies. That API is currently only
 supported on Chromium forks.
 
@@ -260,7 +260,7 @@ This is very similar to HTTP's [stale-while-revalidate](https://www.mnot.net/blo
   <figcaption class="w-figcaption">On push message.</figcaption>
 </figure>
 
-The [Push API](/web/fundamentals/push-notifications) is another feature built on top of
+The [Push API](https://developers.google.com/web/fundamentals/push-notifications) is another feature built on top of
 Service Worker. This allows the Service Worker to be awoken in response to a message from the OS's
 messaging service. This happens even when the user doesn't have a tab open to your site. Only the
 Service Worker is woken up. You request permission to do this from a page and the user will be
@@ -318,7 +318,7 @@ self.addEventListener('notificationclick', function (event) {
   <figcaption class="w-figcaption">On background-sync.</figcaption>
 </figure>
 
-[Background sync](/web/updates/2015/12/background-sync) is another feature built on top of
+[Background sync](https://developers.google.com/web/updates/2015/12/background-sync) is another feature built on top of
 Service Worker. It allows you to request background data synchronization as a one-off, or on an
 (extremely heuristic) interval. This happens even when the user doesn't have a tab open to your
 site. Only the Service Worker is woken up. You request permission to do this from a page and the user
@@ -343,10 +343,10 @@ self.addEventListener('sync', function (event) {
 
 Your origin is given a certain amount of free space to do what it wants with. That free space is
 shared between all origin storage:
-[(local) Storage](https://developer.mozilla.org/en-US/docs/Web/API/Storage),
-[IndexedDB](https://developer.mozilla.org/en-US/docs/Glossary/IndexedDB),
+[(local) Storage](https://developer.mozilla.org/docs/Web/API/Storage),
+[IndexedDB](https://developer.mozilla.org/docs/Glossary/IndexedDB),
 [File System Access](/file-system-access/), and of course
-[Caches](https://developer.mozilla.org/en-US/docs/Web/API/Cache).
+[Caches](https://developer.mozilla.org/docs/Web/API/Cache).
 
 The amount you get isn't spec'd. It will differ depending on device and storage conditions. You can
 find out how much you've got via:
@@ -365,7 +365,7 @@ under storage pressure. Unfortunately the browser can't tell the difference betw
 want to keep at all costs, and the game you don't really care about.
 
 To work around this, use the
-[StorageManager](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager) interface:
+[StorageManager](https://developer.mozilla.org/docs/Web/API/StorageManager) interface:
 
 ```js
 // From a page:
@@ -763,10 +763,10 @@ before I hit "publish".
 
 - [Service Workers—an Introduction][sw_primer]
 - [Is Service Worker ready?][is_sw_ready]—track the implementation status across the main browsers
-- [JavaScript Promises—an Introduction](/web/fundamentals/getting-started/primers/promises) - guide
+- [JavaScript Promises—an Introduction](/promises) - guide
   to promises
 
 [ttt]: https://jakearchibald.github.io/trained-to-thrill/
 [is_sw_ready]: https://jakearchibald.github.io/isserviceworkerready/
 [sw_primer]: /service-workers-cache-storage/
-[caches_api]: https://developer.mozilla.org/en-US/docs/Web/API/Cache
+[caches_api]: https://developer.mozilla.org/docs/Web/API/Cache

@@ -183,7 +183,7 @@ Access-Control-Allow-Credentials: true
 ## Preflight requests for complex HTTP calls
 
 If a web app needs a complex HTTP request, the browser adds a **[preflight
-request](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#preflighted_requests)** to the front of the request chain.
+request](https://developer.mozilla.org/docs/Web/HTTP/CORS#preflighted_requests)** to the front of the request chain.
 
 The CORS specification defines a **complex request** as
 

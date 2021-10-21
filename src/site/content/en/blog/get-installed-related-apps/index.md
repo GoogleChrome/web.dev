@@ -10,7 +10,7 @@ description: |
   to check whether your iOS/Android/desktop app or PWA is installed on the
   user's device.
 date: 2018-12-20
-updated: 2021-02-23
+updated: 2021-09-16
 tags:
   - blog
   - capabilities
@@ -417,6 +417,7 @@ browser vendors how critical it is to support them.
 ## Helpful links {: #helpful }
 
 * [Public explainer for `getInstalledRelatedApps()` API][explainer]
+* [Spec draft][spec]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
 * Blink Component: [`Mobile>WebAPKs`](https://chromestatus.com/features#component%3A%20Mobile%3EWebAPKs)
@@ -429,7 +430,8 @@ for testing Windows apps, and Rayan Kanso for help with the Chrome details.
 [spec]: https://wicg.github.io/get-installed-related-apps/spec/
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=895854
 [cr-status]: https://www.chromestatus.com/feature/5695378309513216
-[explainer]: https://github.com/WICG/get-installed-related-apps/blob/master/EXPLAINER.md
+[explainer]: https://github.com/WICG/get-installed-related-apps/blob/main/EXPLAINER.md
+[spec]: https://wicg.github.io/get-installed-related-apps/spec/
 [wicg-discourse]: https://discourse.wicg.io/t/proposal-get-installed-related-apps-api/1602
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Mobile%3EWebAPKs
 [cr-dev-twitter]: https://twitter.com/chromiumdev

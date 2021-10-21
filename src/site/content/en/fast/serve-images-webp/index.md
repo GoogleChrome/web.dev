@@ -120,8 +120,8 @@ serve WebP to newer browsers and a fallback image to older browsers:
 ```
 
 The
-[`<picture>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture),
-[`<source>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source),
+[`<picture>`](https://developer.mozilla.org/docs/Web/HTML/Element/picture),
+[`<source>`](https://developer.mozilla.org/docs/Web/HTML/Element/source),
 and `<img>` tags, including how they are ordered relative to each other, all
 interact to achieve this end result.
 
@@ -139,7 +139,7 @@ The browser uses the first listed source that's in a format it supports. If the 
 
 - The `<source>` tag for the "preferred" image format (in this case that is WebP) should be listed first, before other `<source>` tags.
 
-- The value of the `type` attribute should be the MIME type corresponding to the image format. An image's [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types) and its file extension are often similar, but they aren't necessarily the same thing (e.g. `.jpg` vs. `image/jpeg`).
+- The value of the `type` attribute should be the MIME type corresponding to the image format. An image's [MIME type](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types) and its file extension are often similar, but they aren't necessarily the same thing (e.g. `.jpg` vs. `image/jpeg`).
 
 {% endAside %}
 

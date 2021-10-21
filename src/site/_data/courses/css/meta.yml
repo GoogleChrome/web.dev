@@ -9,9 +9,11 @@ url: /learn/css/
 draft: false
 title: i18n.courses.learn_css.title
 description: i18n.courses.learn_css.description
-# This path should be relative to the _include folder.
-logo: '../../../images/courses/css/logo.svg'
+# This is the logo that appears in the navigation drawer and header.
+logo: '/images/courses/css/logo.svg'
 # This is used to provide the background for the navigation drawer and header.
-background: "url('/images/courses/css/background.svg')"
+background: '/images/courses/css/background.svg'
+# This provides the cover image for the card on /learn/
+card: '/images/courses/css/card.svg'
 # This is used for the social media thumbnail.
-thumbnail: 'image/foR0vJZKULb5AGJExlazy1xYDgI2/VmeHSQWK5LExsQQ0gUxh.svg'
+thumbnail: 'image/foR0vJZKULb5AGJExlazy1xYDgI2/N5mplhgLlq9qzABgyYKQ.png'

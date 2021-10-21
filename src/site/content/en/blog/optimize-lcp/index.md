@@ -120,7 +120,7 @@ caching:
 ### Serve HTML pages cache-first
 
 When installed, a [service
-worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API)
 runs in the browser background and can intercept requests from the server. This
 level of programmatic cache control makes it possible to cache some or all of
 the HTML page's content and only update the cache when the content has changed.
@@ -136,7 +136,7 @@ using this pattern:
     height="495"
   %}
   <figcaption class="w-figcaption">
-    Largest Contentful Paint distribution, for page loads with and without a service worker - 
+    Largest Contentful Paint distribution, for page loads with and without a service worker -
     <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a>
   </figcaption>
 </figure>
@@ -271,21 +271,21 @@ To optimize:
   [loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md) to
   load files asynchronously, which leverages `rel="preload"`and `onload`.
 
-      ```html
-      <link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
-      ```
+```html
+<link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
+```
 
-  <figure class="w-figure">
-    {% Img
-      src="image/admin/2fcwrkXQRQrM8w1qyy3P.png",
-      alt="Example of LCP improvement: Before and after deferring non-critical CSS",
-      width="800",
-      height="139"
-    %}
-    <figcaption class="w-figcaption">
-      Example of LCP improvement: Before and after deferring non-critical CSS
-    </figcaption>
-  </figure>
+<figure class="w-figure">
+  {% Img
+    src="image/admin/2fcwrkXQRQrM8w1qyy3P.png",
+    alt="Example of LCP improvement: Before and after deferring non-critical CSS",
+    width="800",
+    height="139"
+  %}
+  <figcaption class="w-figcaption">
+    Example of LCP improvement: Before and after deferring non-critical CSS
+  </figcaption>
+</figure>
 
 {% Aside %}
 For more details, refer to the [Defer non-critical
@@ -366,12 +366,12 @@ also affect paint times. The types of elements that affect LCP are:
 - `<img>` elements
 - `<image>` elements inside an `<svg>` element
 - `<video>` elements (the
-  [poster](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-poster)
+  [poster](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-poster)
   image is used to measure LCP)
 - An element with a background image loaded via the
-  [`url()`](<https://developer.mozilla.org/en-US/docs/Web/CSS/url()>) function
+  [`url()`](<https://developer.mozilla.org/docs/Web/CSS/url()>) function
   (as opposed to a CSS gradient)
-- [Block-level](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)
+- [Block-level](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements)
   elements containing text nodes or other inline-level text elements
 
 The time it takes to load these elements if rendered above-the-fold will have a
@@ -424,7 +424,7 @@ deep in one of the many CSS files of an application.
 
 If you know that a particular resource should be prioritized, use `<link
 rel="preload">` to fetch it sooner. [Many types of
-resources](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded)
+resources](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded)
 can be preloaded, but you should first focus on [preloading critical
 assets](/preload-critical-assets/), such as fonts, above-the-fold images or
 videos, and critical-path CSS or JavaScript.

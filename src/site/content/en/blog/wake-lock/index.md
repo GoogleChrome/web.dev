@@ -14,7 +14,7 @@ alt: |
 tags:
   - blog
   - capabilities
-  - wake-lock
+  # - wake-lock
 feedback:
   - api
 ---
@@ -85,10 +85,11 @@ Of course, there are plenty of other use cases:
 </div>
 
 {% Aside %}
-  Big thanks to the folks at Intel, specifically Mrunal Kapade, for implementing
-  this API. Chrome depends on a community of committers
-  working together to move the Chromium project forward. Not every Chromium
-  committer is a Googler, and these contributors deserve special recognition!
+  Big thanks to the folks at Intel, specifically Mrunal Kapade and Raphael Kubo
+  da Costa, for implementing this API. Chrome depends on a community of
+  committers working together to move the Chromium project forward. Not every
+  Chromium committer is a Googler, and these contributors deserve special
+  recognition!
 {% endAside %}
 
 ## Using the Screen Wake Lock API {: #use }
@@ -290,7 +291,7 @@ Task manager video courtesy of
 [cr-status]: https://www.chromestatus.com/feature/4636879949398016
 [issues]: https://github.com/w3c/wake-lock/issues
 [wicg-discourse]: https://discourse.wicg.io/t/wake-lock-api-suppressing-power-management-screensavers/769
-[page-visibility-api]: https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
-[visibility-change]: https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilitychange_event
+[page-visibility-api]: https://developer.mozilla.org/docs/Web/API/Page_Visibility_API
+[visibility-change]: https://developer.mozilla.org/docs/Web/API/Document/visibilitychange_event
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EWakeLock
 [cr-dev-twitter]: https://twitter.com/chromiumdev

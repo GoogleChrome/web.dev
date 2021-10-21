@@ -1,0 +1,58 @@
+@import '../settings/colors';
+
+.browser-compat {
+  display: flex;
+  align-items: center;
+  color: $GREY_700;
+
+  .browser-compat__icon {
+    height: 24px;
+    width: 24px;
+    margin-left: 24px;
+    margin-right: 6px;
+    display: inline-block;
+    background: content-box no-repeat transparent;
+  }
+
+  .browser-compat__version {
+    display: block;
+    width: 20px;
+    line-height: 20px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .browser-compat__version.browser-compat--false {
+    background: $GOOGLE_RED_100;
+    color: $GOOGLE_RED_900;
+  }
+
+  .browser-compat__version.browser-compat--true {
+    background: $GREEN_100;
+    color: $GREEN_900;
+  }
+
+  .browser-compat__link {
+    margin-left: 24px;
+  }
+
+  .browser-compat--chrome {
+    background-image: url('/images/icons/chrome.svg');
+  }
+
+  .browser-compat--firefox {
+    background-image: url('/images/icons/firefox.svg');
+  }
+
+  .browser-compat--edge {
+    background-image: url('/images/icons/edge.svg');
+  }
+
+  .browser-compat--safari {
+    background-image: url('/images/icons/safari_24x24.png');
+  }
+}

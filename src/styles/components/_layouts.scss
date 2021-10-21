@@ -12,7 +12,8 @@
 // -----------------------------------------------------------------------------
 
 .w-layout-container,
-.w-layout-container--narrow {
+.w-layout-container--narrow ,
+.w-layout-container--wide {
   box-sizing: content-box;
   margin: 0 auto;
   overflow: visible;
@@ -26,6 +27,9 @@
 .w-layout-container { max-width: 960px; }
 // Article pages have a narrower, single column layout.
 .w-layout-container--narrow { max-width: 800px; }
+// Code Pattern pages have a wide layout for side-by-side code and demo display.
+.w-layout-container--wide{ max-width: 1016px; }
+
 
 // A configurable auto-fit grid that can be used for multi-column layouts.
 // Resizing the container will cause the grid children to wrap but will

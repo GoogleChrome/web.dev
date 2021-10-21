@@ -1,6 +1,6 @@
 /// ROUNDED BORDER
 /// This mixin applies a border on all sides with
-// consistent color and radius by default
+/// consistent color and radius by default
 @mixin rounded-border(
   $size: $global-radius-base,
   $color: var(--color-stroke),

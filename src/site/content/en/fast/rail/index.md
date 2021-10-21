@@ -165,7 +165,7 @@ input within 50&nbsp;ms.
 
 * Use idle time to complete deferred work. For example, for the initial page
   load, load as little data as possible, then use [idle
-  time](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback)
+  time](https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback)
   to load the rest.
 
 * Perform work during idle time in 50&nbsp;ms or less. Any longer, and you risk

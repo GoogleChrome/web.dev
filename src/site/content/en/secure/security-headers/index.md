@@ -7,6 +7,7 @@ authors:
   - maudn
   - arturjanc
 date: 2021-05-18
+updated: 2021-08-05
 hero: image/YLflGBAPWecgtKJLqCJHSzHqe2J2/E3BVnrBFNV6w2Uqxn3bQ.jpg
 alt: A keylock in front of compressed code
 description: |
@@ -773,9 +774,8 @@ Cross-Origin-Opener-Policy: unsafe-none
 
 {% Aside %}
 
-Features such as `SharedArrayBuffer`,
-`performance.measureUserAgentSpecificMemory()` or [JS Self Profiling
-API](https://wicg.github.io/js-self-profiling/) are disabled by default. Some
+Features such as `SharedArrayBuffer` or
+`performance.measureUserAgentSpecificMemory()` are disabled by default. Some
 browsers allow you to use them in "cross-origin isolated" contexts, which
 require you to set [COOP](#coop) and [COEP](#coep) headers.
 
@@ -882,7 +882,7 @@ Access-Control-Allow-Credentials: true
   `https://example.com` can access the contents of the response. Resources meant
   to be readable by any site can set this header to `*`, in which case the
   browser will only require the request to be made [without
-  credentials](https://developer.mozilla.org/en-US/docs/Web/API/Request/credentials#value).
+  credentials](https://developer.mozilla.org/docs/Web/API/Request/credentials#value).
 * `Access-Control-Allow-Credentials: true` indicates that requests which carry
   credentials (cookies) are allowed to load the resource. Otherwise,
   authenticated requests will be rejected even if the requesting origin is
@@ -950,9 +950,8 @@ compatibilities](https://caniuse.com/mdn-http_headers_content-length_cors_respon
 
 To reduce the ability of [Spectre-based
 attacks](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)) to
-steal cross-origin resources, features such as `SharedArrayBuffer`,
-`performance.measureUserAgentSpecificMemory()` or [JS Self Profiling
-API](https://wicg.github.io/js-self-profiling/) are disabled by default.
+steal cross-origin resources, features such as `SharedArrayBuffer` or
+`performance.measureUserAgentSpecificMemory()` are disabled by default.
 
 `Cross-Origin-Embedder-Policy: require-corp` prevents documents and workers from
 loading cross-origin resources such as images, scripts, stylesheets, iframes and

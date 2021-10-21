@@ -23,7 +23,7 @@ To continue to build your CSS skillset, here are some additional resources to ex
 
 ## Additional resources
 
-- [CSS Documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [CSS Documentation on MDN](https://developer.mozilla.org/docs/Web/CSS)
 - [Listen to the CSS Podcast](https://thecsspodcast.libsyn.com)
 - [CSS articles on web.dev](https://web.dev/tags/css/)
 - [How To Learn CSS - Smashing Magazine](https://www.smashingmagazine.com/2019/01/how-to-learn-css/)

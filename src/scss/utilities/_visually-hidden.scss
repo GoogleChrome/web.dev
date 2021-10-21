@@ -1,12 +1,10 @@
 /// VISUALLY HIDDEN UTILITY
-/// If you hide an element with display: none, it can also hide it
-/// from assistive technology, such as screen readers.
-/// This utility allows you to get the effect of display: none,
-/// without the a11y issues
+/// Info: https://web.dev/design-system/css-utilities/#visually-hidden
+
 .visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
-  height: auto;
+  height: 0;
   margin: 0;
   overflow: hidden;
   padding: 0;

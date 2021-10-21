@@ -1,3 +1,5 @@
+/* global __basedir */
+
 /*
  * Copyright 2019 Google LLC
  *
@@ -14,6 +16,17 @@
  * limitations under the License.
  */
 const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
+const isDesignSystemContext = require('../../../lib/utils/is-design-system-context');
+const fs = require('fs');
+const path = require('path');
+
+/* NOTE: This component is in a transition period to support both new design system contexts
+and the existing system. Once the new design system has been *fully* rolled out, this component
+can be cleaned up with the following:
+
+1. The isDesignSystemContext conditional can be removed and code in that block should run as normal
+2. Everything from the '/// DELETE THIS WHEN ROLLOUT COMPLETE' comment *downwards* can be removed
+*/
 
 /**
  * @this {EleventyPage}
@@ -21,6 +34,99 @@ const {i18n, getLocaleFromPath} = require('../../_filters/i18n');
 function Aside(content, type = 'note') {
   const locale = getLocaleFromPath(this.page && this.page.filePathStem);
 
+  /// UN-FENCE CODE IN THIS BLOCK WHEN ROLLOUT COMPLETE
+  if (isDesignSystemContext(this.page.filePathStem)) {
+    // CSS utility classes that vary per aside type
+    const utilities = {
+      main: '',
+      title: '',
+      icon: '',
+      body: '',
+    };
+
+    // These two get populated based on type
+    let title = '';
+    let icon = '';
+
+    // If an icon is required, it grabs the SVG source with fs
+    // because in a shortcode, we have no access to includes etc
+    const getIcon = () => {
+      if (!icon.length) {
+        return '';
+      }
+
+      return fs.readFileSync(
+        path.join(__basedir, 'src', 'site', '_includes', 'icons', icon),
+        'utf8',
+      );
+    };
+
+    // Generate all the configurations per aside type
+    switch (type) {
+      case 'note':
+      default:
+        utilities.title = 'color-state-info-text';
+        utilities.main = 'bg-state-info-bg color-state-info-text';
+        break;
+
+      case 'caution':
+        utilities.title = 'color-state-bad-text';
+        utilities.main = 'bg-state-bad-bg color-state-bad-text';
+        icon = 'error.svg';
+        title = i18n(`i18n.common.${type}`, locale);
+        break;
+
+      case 'warning':
+        utilities.icon = 'color-state-warn-text';
+        utilities.main = 'bg-state-warn-bg color-core-text';
+        icon = 'warning.svg';
+        title = i18n(`i18n.common.${type}`, locale);
+        break;
+
+      case 'success':
+        utilities.main = 'bg-state-good-bg color-state-good-text';
+        icon = 'done.svg';
+        title = i18n(`i18n.common.${type}`, locale);
+        break;
+
+      case 'objective':
+        utilities.main = 'bg-state-good-bg color-state-good-text';
+        icon = 'done.svg';
+        title = i18n(`i18n.common.${type}`, locale);
+        break;
+
+      case 'gotchas':
+        icon = 'lightbulb.svg';
+        title = i18n(`i18n.common.gotchas`, locale);
+        utilities.main = 'bg-tertiary-box-bg color-tertiary-box-text';
+        break;
+
+      case 'key-term':
+        icon = 'highlighter.svg';
+        title = i18n(`i18n.common.key_term`, locale);
+        utilities.main = 'color-secondary-box-text bg-secondary-box-bg';
+        break;
+
+      case 'codelab':
+        icon = 'code.svg';
+        title = i18n(`i18n.common.try_it`, locale);
+        utilities.main = 'bg-quaternary-box-bg color-quaternary-box-text';
+        break;
+    }
+
+    return `<aside class="aside flow ${utilities.main}">
+${
+  title.length
+    ? `<p class="cluster ${utilities.title}">
+${getIcon()}<strong>${title}</strong></p>`
+    : ''
+}
+<div class="${utilities.body} flow">
+${content}
+</div></aside>`;
+  }
+
+  /// DELETE THIS WHEN ROLLOUT COMPLETE
   let prefix;
   switch (type) {
     case 'note':

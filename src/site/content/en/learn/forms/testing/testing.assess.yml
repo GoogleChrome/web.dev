@@ -1,0 +1,29 @@
+setLeader: Test your knowledge of testing forms
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "2"
+    correctAnswers: "1,2"
+    stem: What is field data?
+    options:
+      - content: "Data collected on a field."
+        rationale: "Try again!"
+      - content: "Data from real users."
+        rationale: "🎉"
+      - content: "Data from real conditions."
+        rationale: "🎉"
+      - content: "Data collected in a lab."
+        rationale: "Try again!"
+  - type: multiple-choice
+    cardinality: "2"
+    correctAnswers: "0,3"
+    stem: 'RUM collects metrics from:'
+    options:
+      - content: "real users"
+        rationale: "🎉"
+      - content: "pre-selected users"
+        rationale: "Try again"
+      - content: "pre-defined browsers"
+        rationale: "Try again"
+      - content: "browsers from end users"
+        rationale: "🎉"

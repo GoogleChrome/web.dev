@@ -7,12 +7,14 @@ authors:
   - thomassteiner
   - amandabaker
 date: 2021-04-22
-updated: 2021-05-19
+updated: 2021-08-06
 description: |
   With the Window Controls Overlay feature, developers can customize the title bar of installed PWAs
   so that their PWAs feel more like apps.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/KEHQXWqr6s7VnEfTqVOC.jpeg
 alt: Kid drawing, crafting, and painting rocks.
+origin_trial:
+  url: https://developer.chrome.com/origintrials/#/view_trial/-9105152546636300287
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - progressive-web-apps
@@ -61,7 +63,7 @@ developers to place custom content in what was previously the browser-controlled
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | Not started              |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | Not started              |
+| 4. **Origin trial**                      | [**In progress**][ot]    |
 | 5. Launch                                | Not started              |
 
 </div>
@@ -73,8 +75,8 @@ To experiment with Window Controls Overlay locally, without an origin trial toke
 
 ### Enabling support during the origin trial phase
 
-Starting in Chrome&nbsp;92, Window Controls Overlay will be available as an origin trial in Chrome.
-The origin trial is expected to end in Chrome&nbsp;94 (expected in July 2021).
+Starting in Chrome&nbsp;93, Window Controls Overlay will be available as an origin trial in Chrome.
+The origin trial is expected to end in Chrome&nbsp;95 (expected in November 10, 2021).
 
 {% include 'content/origin-trials.njk' %}
 
@@ -205,7 +207,7 @@ position, too, based on the platform. This means that the linear gradient backgr
 be dynamically adapted to run from `#131313`→`maroon` or `maroon`→`#131313`→`maroon`, so that it
 blends in with the title bar's `maroon` background color that is determined by
 `<meta name="theme-color" content="maroon">`. This can be achieved by querying the
-[`getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+[`getBoundingClientRect()`](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect)
 API on the `navigator.windowControlsOverlay` property.
 
 ```js
@@ -304,7 +306,7 @@ if ('windowControlsOverlay' in navigator) {
 
 Rather than assigning a function to `ongeometrychange`, you can also add an event listener to
 `windowControlsOverlay` like below. You can read up on the difference between the two on
-[MDN](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers).
+[MDN](https://developer.mozilla.org/docs/Web/Guide/Events/Event_handlers).
 
 ```js
 navigator.windowControlsOverlay.addEventListener(
@@ -379,7 +381,7 @@ Enabling the window controls overlay and draggable regions do not pose considera
 other than feature detection. However, due to differing sizes and positions of the window controls
 buttons across operating systems, the JavaScript API for
 <code>navigator.<wbr>windowControlsOverlay.<wbr>getBoundingClientRect()</code> will return a
-[`DOMRect`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect) whose position and dimensions
+[`DOMRect`](https://developer.mozilla.org/docs/Web/API/DOMRect) whose position and dimensions
 will reveal information about the operating system upon which the browser is running. Currently,
 developers can already discover the OS from the user agent string, but due to fingerprinting
 concerns, there is discussion about freezing the UA string and unifying OS versions. There is an
@@ -448,3 +450,4 @@ Hero image by [Sigmund](https://unsplash.com/@sigmund) on
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [issues]: https://github.com/WICG/window-controls-overlay/issues
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[ot]: https://developer.chrome.com/origintrials/#/view_trial/-9105152546636300287

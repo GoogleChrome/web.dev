@@ -12,10 +12,13 @@
 
   &__header {
     background-image: var(--course-background);
-    background-position: right;
+    background-position: top right;
     background-repeat: no-repeat;
-    background-size: 294px;
-    display: flex;
+    display: grid;
+    // The width of the first column ensures that the left edge of the
+    // logo stays left aligned with the page titles in the course-links
+    // section.
+    grid-template-columns: 3.25rem 1fr;
     height: 144px;
     padding: 24px 16px 0;
   }
@@ -28,6 +31,12 @@
       height: 100%;
       width: auto;
     }
+  }
+
+  &__heading {
+    display: block;
+    min-height: 48px;
+    padding: 16px 24px;
   }
 
   web-search {
@@ -78,6 +87,7 @@
     display: flex;
     min-height: 48px;
     padding: 16px 24px;
+    padding-left: calc(var(--nest-indent, 0) * 12px + 24px);
 
     &:hover {
       background-color: rgba($GREY_800, .03);

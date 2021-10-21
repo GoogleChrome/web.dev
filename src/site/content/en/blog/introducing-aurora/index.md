@@ -12,7 +12,7 @@ alt: Night sky
 description: This article introduces Aurora, a Chrome initiative to collaborate closely with open-source frameworks
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - aurora
+  # - aurora
 ---
 
 On the Chrome team, we care about user experience and a thriving web ecosystem.

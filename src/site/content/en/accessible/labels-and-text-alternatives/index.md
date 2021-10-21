@@ -142,7 +142,7 @@ that need accessible names and links to explanations for how to add them.
 ## Label documents and frames
 
 Every page should have a
-[`title`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
+[`title`](https://developer.mozilla.org/docs/Web/HTML/Element/title)
 element that briefly explains what the page is about. The `title` element gives
 the page its accessible name. When a screen reader enters the page, this is the
 first text that is announced.
@@ -180,7 +180,7 @@ lets the user decide if they wish to enter the frame or bypass it.
 ## Include text alternatives for images and objects
 
 An `img` should always be accompanied by an
-[`alt`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Attributes)
+[`alt`](https://developer.mozilla.org/docs/Web/HTML/Element/img#Attributes)
 attribute to give the image its accessible name. If the image fails to load, the
 `alt` text is used as a placeholder so users have a sense of what the image was
 trying to convey.

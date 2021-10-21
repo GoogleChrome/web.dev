@@ -216,6 +216,7 @@ We can use `IntersectionObserver` and `MutationObserver` to set
 the correct sizes inline for each element. [Alex Russell](https://twitter.com/slightlylate) explains
 how this works in [`content-visibility` without jittery scrollbars](https://infrequently.org/2020/12/content-visibility-scroll-fix/), and [Resize-Resilient `content-visibility` Fixes](https://infrequently.org/2020/12/resize-resilient-deferred-rendering/).
 {% endAside %}
+
 ## Hiding content with `content-visibility: hidden`
 
 What if you want to keep the content unrendered regardless of whether or not it
@@ -264,5 +265,5 @@ properties, check out:
 
 - [The CSS Containment Spec](http://drafts.csswg.org/css-contain/)
 - [MDN Docs on CSS
-  Containment](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Containment)
+  Containment](https://developer.mozilla.org/docs/Web/CSS/CSS_Containment)
 - [CSSWG Drafts](https://github.com/w3c/csswg-drafts)

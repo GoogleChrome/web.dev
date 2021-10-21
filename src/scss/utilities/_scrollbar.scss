@@ -1,0 +1,32 @@
+/// SCROLLBAR UTILITY
+/// Info: https://web.dev/design-system/css-utilities/#scrollbar
+
+/// Theme colors are applied high up with low specificity because
+/// we need something and use the references a lot in the code
+:root {
+  --scrollbar-bg: #{get-utility-value('bg', 'mid-bg')};
+  --scrollbar-fg: #{get-utility-value('color', 'mid-text')};
+}
+
+.scrollbar {
+  scrollbar-color: var(--scrollbar-bg) var(--scrollbar-fg);
+}
+
+.scrollbar::-webkit-scrollbar {
+  height: 1rem;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-fg);
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-fg);
+  background-image: linear-gradient(
+    var(--scrollbar-fg) 0,
+    var(--scrollbar-fg) 0.25rem,
+    var(--scrollbar-bg) 0.25rem,
+    var(--scrollbar-bg) 0.75rem,
+    var(--scrollbar-fg) 0.75rem
+  );
+}

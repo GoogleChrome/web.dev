@@ -14,7 +14,7 @@ description: |
   given by Kevin Schaaf of the Polymer Project and Caridy Patiño of Salesforce.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - web-components
+  # - web-components
 ---
 
 
@@ -143,7 +143,7 @@ More resources:
 
 *   [open-wc.org](https://open-wc.org/) features great getting started information, as well as tips and default configurations for build and development tooling.
 *   [Web Fundamentals](https://developers.google.com/web/fundamentals/web-components/) provides primers on the basic web components APIs, and best practices for designing web components.
-*   [MDN](https://developer.mozilla.org/en-US/docs/Web/Web_Components) provides reference docs for the web components APIs, plus some tutorials. \
+*   [MDN](https://developer.mozilla.org/docs/Web/Web_Components) provides reference docs for the web components APIs, plus some tutorials. \
 
 _Hero image by Jason Tuinstra on Unsplash._
 

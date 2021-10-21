@@ -19,9 +19,11 @@ guidance about how to use them effectively.
 1. [Asides](#asides)
 1. [Banners](#banners)
 1. [Block quotes](#blockquotes)
+1. [Browser Compatibility](#browsercompat)
 1. [Buttons](#buttons)
 1. [Callouts](#callouts)
 1. [Checkbox](#checkbox)
+1. [Code pattern](#codepattern)
 1. [Codepen](#codepen)
 1. [Columns](#columns)
 1. [Code](#code)
@@ -34,6 +36,7 @@ guidance about how to use them effectively.
 1. [Lists](#lists)
 1. [Stats](#stats)
 1. [Tables](#tables)
+1. [Tabs](#tabs)
 1. [Tooltips](#tooltips)
 1. [Video](#video)
 
@@ -226,6 +229,22 @@ a massa sit amet ullamcorper.
 a massa sit amet ullamcorper.
 {% endBlockquote %}
 
+## Browser compatibility table {: #browsercompat }
+
+With the `BrowserCompat` shortcode, you can embed an
+[MDN - Browser Compatibility Data](https://github.com/mdn/browser-compat-data/)
+widget in your post. You have to pass in the dot-separated feature ID,
+as used on [BCD Schema](https://github.com/mdn/browser-compat-data), e.g. for
+[Web/API/BackgroundFetchEvent](https://developer.mozilla.org/docs/Web/API/BackgroundFetchEvent)
+the ID is `api.BackgroundFetchEvent`:
+
+
+```text
+{% raw %}{% BrowserCompat 'api.BackgroundFetchEvent' %}{% endraw %}
+```
+
+{% BrowserCompat 'api.BackgroundFetchEvent' %}
+
 ## Buttons
 
 In general, you shouldn't need to add buttons to your posts.
@@ -318,6 +337,29 @@ element, and add the `w-ml--l` class to the label. See below:
   <label for="sub-newsletter" class="w-ml--l">Add me to the web.dev mailing list.</label>
 </div>
 ```
+
+## Code pattern {: #codepattern }
+
+A component that displays a demo and code snippets side by side,
+organized in tabs.
+
+Component height is determined by the code snippet with the most
+code lines.
+
+To change the component height, specify the height value in pixels
+in the shortcode.
+
+```text
+{% raw %}{% CodePattern 'pattern-id', optional-height-in-px %}{% endraw %}
+```
+
+{% CodePattern 'example-set/example-pattern', 500 %}
+
+You can embed one of the existing patterns (from `/content/en/patterns/`
+directory) or add a new one. Check out the
+[examples and documentation](/patterns/example-set/) on how to write new
+code patterns.
+
 
 ## Codepen {: #codepen }
 
@@ -1259,6 +1301,48 @@ assumenda perspiciatis.
     </tbody>
   </table>
 </div>
+
+## Tabs
+
+Use `web-tabs` web component to display content that refers to different
+platforms or languages.
+Each child of the `web-tabs` component will become a separate tab.
+Use `data-label` attribute to set the tab's title. You can use markdown inside
+the tab, e.g. the code blocks.
+
+```html
+{% raw %}
+<web-tabs>
+  <div data-label="html">
+    ```html
+    <p> I'm html</p>
+    ```
+  </div>
+  <div data-label="css">
+    ```css
+    .class { border: 0; }
+    ```
+  </div>
+</web-tabs>
+{% endraw %}
+```
+
+<web-tabs>
+  <div data-label="html" title="t">
+
+  ```html
+  <p> I'm html</p>
+  ```
+
+  </div>
+  <div data-label="css">
+
+  ```css
+  .class { border: 0; }
+  ```
+
+  </div>
+</web-tabs>
 
 ## Tooltips
 

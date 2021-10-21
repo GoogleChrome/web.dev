@@ -72,7 +72,7 @@ endAside %}
 ### Why is this needed?
 
 Today, ad conversion measurement often relies on [third-party
-cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies). **But
+cookies](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Third-party_cookies). **But
 browsers are restricting access to these.**
 
 Chrome plans on [phasing out support for third-party
@@ -106,7 +106,7 @@ iteration** of the API. Things may change substantially in [future iterations](#
 
 This iteration of the API only supports **click-through conversion measurement**, but [view-through
 conversion
-measurement](https://github.com/WICG/conversion-measurement-api/blob/main/event_attribution_reporting.md) is under public incubation.
+measurement](https://github.com/WICG/conversion-measurement-api/blob/main/event_attribution_reporting_views.md) is under public incubation.
 
 ### How it works
 

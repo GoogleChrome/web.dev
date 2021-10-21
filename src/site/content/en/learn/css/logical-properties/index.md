@@ -49,7 +49,7 @@ and it gives us a lot more flexibility when styling our interfaces.
 
 Block flow is the direction in which content blocks are placed.
 For example, if there are two paragraphs, the block flow is where the second paragraph will go.
-In an English document,the block flow is top-to-bottom.
+In an English document, the block flow is top-to-bottom.
 Think of this in the context of paragraphs of text following each other, top-to-bottom.
 
 <figure class="w-figure">

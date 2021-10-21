@@ -39,7 +39,7 @@ Chrome DevTools includes a couple tools
 to help you track down the cause of errors:
 
 - Below the text of each error, the DevTools Console shows the
-  [call stack](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack)
+  [call stack](https://developer.mozilla.org/docs/Glossary/Call_stack)
   that caused the problematic code to execute.
 - A link at the top-right of each error shows you the code
   that caused the error.
@@ -52,7 +52,7 @@ For example, this screenshot shows a page with two errors:
 
 In the example above, the first error comes from a web developer
 via a call to
-[`console.error()`](https://developers.google.com/web/tools/chrome-devtools/console/console-reference#error).
+[`console.error()`](https://developer.chrome.com/docs/devtools/console/api/#error).
 The second error comes from the browser and
 indicates that a variable used in one of the page's scripts does not exist.
 
@@ -73,7 +73,7 @@ If you can't find solutions to your problem,
 try asking a question on [Stack Overflow](https://stackoverflow.com).
 
 If you can't fix an error, consider wrapping it in
-a [`try…catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) statement
+a [`try…catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) statement
 to explicitly indicate in the code that you're aware of the issue.
 You can also use the `catch` block to handle the error more gracefully.
 
@@ -82,4 +82,4 @@ You can also use the `catch` block to handle the error more gracefully.
 - [Source code for **Browser errors were logged to the console** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/errors-in-console.js)
 - [Console Overview](https://developers.google.com/web/tools/chrome-devtools/console/)
 - [Stack Overflow](https://stackoverflow.com/)
-- [try…catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
+- [try…catch](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch)

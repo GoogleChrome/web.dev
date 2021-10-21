@@ -42,8 +42,8 @@ so it appears to have a transparent background.
 
 You can use most of the blend modes available in a design tool with CSS,
 using the
-[`mix-blend-mode`](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode) or the
-[`background-blend-mode`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode) properties.
+[`mix-blend-mode`](https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode) or the
+[`background-blend-mode`](https://developer.mozilla.org/docs/Web/CSS/background-blend-mode) properties.
 The `mix-blend-mode` applies blending to a whole element
 and the `background-blend-mode` applies blending to the background of an element.
 
@@ -348,7 +348,7 @@ It creates a color with the luminosity of the source color and the hue and satur
 
 ## The `isolation` property
 
-If you set the [`isolation`](https://developer.mozilla.org/en-US/docs/Web/CSS/isolation)
+If you set the [`isolation`](https://developer.mozilla.org/docs/Web/CSS/isolation)
 property to have a value of `isolate`,
 it will create a new stacking context,
 which will prevent it from blending with a backdrop layer.

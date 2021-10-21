@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Web Vitals
-subhead: Métricas esenciales para un sitio saludable
 description: Métricas esenciales para un sitio saludable
 hero: image/admin/BHaoqqR73jDWe6FL2kfw.png
 authors:
@@ -12,7 +11,6 @@ tags:
   - metrics
   - performance
   - web-vitals
-translated: 2021-05-05
 ---
 
 Asegurar una calidad de experiencia de usuario óptima es clave para el éxito a largo plazo de cualquier sitio web. Tanto para un propietario de un negocio, especialista de marketing o desarrollador, Web Vitals pueden ayudarle a cuantificar la experiencia de su sitio e identificar oportunidades para mejorar.
@@ -31,11 +29,7 @@ Los Core Web Vitals son el subconjunto de Web Vitals que se aplica a todas las p
 
 Las métricas que componen los Core Web Vitals [evolucionarán](#evolving-web-vitals) con el tiempo. El conjunto actual en el 2020 se centra en tres aspectos de la experiencia del usuario: *carga* , *interactividad* y *estabilidad visual*, e incluye las siguientes métricas (y sus respectivos umbrales):
 
-<div class="w-stack w-stack--center w-stack--md">
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Recomendaciones de umbral para LCP", width="400", height="350" %}
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="Recomendaciones de umbral para FID", width="400", height="350" %}
-  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Recomendaciones de umbral para CLS", width="400", height="350" %}
-</div>
+<div class="w-stack w-stack--center w-stack--md">   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/ZZU8Z7TMKXmzZT2mCjJU.svg", alt="Recomendaciones de umbral para LCP", width="400", height="350" %}   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/iHYrrXKe4QRcb2uu8eV8.svg", alt="Recomendaciones de umbral para FID", width="400", height="350" %}   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dgpDFckbHwwOKdIGDa3N.svg", alt="Recomendaciones de umbral para CLS", width="400", height="350" %} </div>
 
 - **[Largest Contentful Paint (LCP)](/lcp/)** : se refiere al tiempo para el despliegue del contenido más extenso, LCP por sus siglas en inglés, mide el rendimiento de *carga.* Para proporcionar una buena experiencia de usuario, el LCP debe producirse dentro de los **2,5 segundos desde** que la página comienza a cargarse.
 - **[First Input Delay (FID)](/fid/)**: se refiere a la demora para la primera entrada, FID por sus siglas en inglés, mide la *interactividad*. Para proporcionar una buena experiencia de usuario, las páginas deben tener un FID de menos de **100 milisegundos**.
@@ -64,7 +58,7 @@ El [Chrome User Experience Report (Informe de experiencia del usuario de Chrome)
       <td>CLS</td>
     </tr>
     <tr>
-      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report" class="">Chrome User Experience Report</a></td>
+      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
@@ -76,7 +70,7 @@ El [Chrome User Experience Report (Informe de experiencia del usuario de Chrome)
       <td>✔</td>
     </tr>
     <tr>
-      <td><a href="https://support.google.com/webmasters/answer/9205520" class="">Search Console (Core Web Vitals Report)</a></td>
+      <td><a href="https://support.google.com/webmasters/answer/9205520">Search Console (Core Web Vitals Report)</a></td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
@@ -101,7 +95,7 @@ import {getCLS, getFID, getLCP} from 'web-vitals';
 
 function sendToAnalytics(metric) {
   const body = JSON.stringify(metric);
-  // Usa `navigator.sendBeacon()` si esta disponible, sino va a usar `fetch()` en su lugar.
+  // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
   (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }

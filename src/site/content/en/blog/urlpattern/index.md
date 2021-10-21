@@ -4,6 +4,7 @@ subhead: An approach to standardizing common pattern matching use cases.
 authors:
   - jeffposnick
 date: 2021-07-22
+updated: 2021-09-07
 description: An approach to standardizing common pattern matching use cases.
 thumbnail: image/FNkVSAX8UDTTQWQkKftSgGe9clO2/YWhOUaN06kzk4mu93a1v.jpg
 tags:
@@ -23,7 +24,7 @@ display.
 While there is no one definitive standard, web developers have gravitated
 towards a common syntax for expressing URL routing patterns that share a lot in
 common with
-[regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions),
+[regular expressions](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions),
 but with some domain-specific additions like tokens for matching path segments.
 Popular server-side frameworks like
 [Express](https://expressjs.com/en/guide/routing.html) and
@@ -34,12 +35,12 @@ something very close to it), and JavaScript developers can use modules like
 logic to their own code.
 
 <code>[URLPattern](https://github.com/WICG/urlpattern/blob/main/explainer.md#urlpattern)</code>
-is a proposed addition to the web platform that builds on the foundation created
+is an addition to the web platform that builds on the foundation created
 by these frameworks. Its goal is to standardize a routing pattern syntax,
 including support for wildcards, named token groups, regular expression groups,
 and group modifiers. <code>URLPattern</code> instances created with this syntax
 can perform common routing tasks, like matching against full URLs or a URL
-<code>[pathname](https://developer.mozilla.org/en-US/docs/Web/API/URL/pathname)</code>,
+<code>[pathname](https://developer.mozilla.org/docs/Web/API/URL/pathname)</code>,
 and returning information about the token and group matches.
 
 Another benefit to providing URL matching directly in the web platform is that a
@@ -70,12 +71,12 @@ home on GitHub.
 
 The syntax of `URLPattern` is a superset of what `path-to-regexp` supports, as
 `URLPattern` supports a uncommon feature among routing libraries: matching
-[origins](https://developer.mozilla.org/en-US/docs/Web/API/URL/origin),
+[origins](https://developer.mozilla.org/docs/Web/API/URL/origin),
 including wildcards in hostnames. Most other routing libraries just deal with
-the [pathname](https://developer.mozilla.org/en-US/docs/Web/API/URL/pathname),
+the [pathname](https://developer.mozilla.org/docs/Web/API/URL/pathname),
 and occasionally the
-[search](https://developer.mozilla.org/en-US/docs/Web/API/URL/search) or
-[hash](https://developer.mozilla.org/en-US/docs/Web/API/URL/hash) portion of a
+[search](https://developer.mozilla.org/docs/Web/API/URL/search) or
+[hash](https://developer.mozilla.org/docs/Web/API/URL/hash) portion of a
 URL. They never have to check the origin portion of a URL, as they're only used
 for same-origin routing within a self-contained web app.
 
@@ -137,6 +138,14 @@ const p = new URLPattern({
   baseURL: 'https://example.com',
 });
 ```
+
+{% Aside %}
+When passing a `baseURL` to the constructor, any aspects of the URL
+that are not provided are treated as if they were set to an empty string, _not_
+as a `'*'` wildcard. For instance,
+`new URLPattern({baseURL: 'https://example.com/'})` will create a `URLPattern`
+with `search`, `hash`, and other unspecified properties set to `''`.
+{% endAside %}
 
 All of these examples assume that your use case involves matching origins. If
 you're only interested in matching on the other portions of the URL, excluding
@@ -288,12 +297,12 @@ whose names correspond to each group name.
 
 {% Aside %}
 If you're familiar with the
-<code>[exec()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec)</code>
+<code>[exec()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec)</code>
 method of a
-<code>[RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)</code>
-object, then the return values from <code>URLPattern.exec()</code> 
+<code>[RegExp](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions)</code>
+object, then the return values from <code>URLPattern.exec()</code>
 method will look
-[very similar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges#examples)
+[very similar](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges#examples)
 when it comes to representing anonymous and named groups.
 {% endAside %}
 
@@ -303,13 +312,13 @@ when it comes to representing anonymous and named groups.
 
 - Named groups, like `:café`, can contain Unicode characters. The rules used for
   valid
-  [JavaScript identifiers](https://developer.mozilla.org/en-US/docs/Glossary/Identifier)
+  [JavaScript identifiers](https://developer.mozilla.org/docs/Glossary/Identifier)
   apply to named groups.
 
 - Text within a pattern will be automatically encoded according to the same
   rules used for URL encoding of that particular component. Unicode characters
   within `pathname` will be
-  [percent-encoded](https://developer.mozilla.org/en-US/docs/Glossary/percent-encoding),
+  [percent-encoded](https://developer.mozilla.org/docs/Glossary/percent-encoding),
   so a `pathname` pattern like `/café` is normalized to `/caf%C3%A9`
   automatically. Unicode characters in the `hostname` are automatically encoded
   using [Punycode](https://en.wikipedia.org/wiki/Punycode), rather than
@@ -318,7 +327,7 @@ when it comes to representing anonymous and named groups.
 - Regular expression groups must contain only ASCII characters. Regular
   expression syntax makes it difficult and unsafe to automatically encode
   Unicode characters in these groups. If you want to match a Unicode character
-  in a regular expression group,you need to percent encode it manually, like
+  in a regular expression group, you need to percent encode it manually, like
   `(caf%C3%A9)` to match `café`.
 
 In addition to encoding Unicode characters, `URLPattern` also performs URL
@@ -327,13 +336,13 @@ collapsed to the equivalent `/foo/bar`.
 
 When in doubt about how a given input pattern has been normalized, inspect the
 constructed `URLPattern` instance using your browser's
-[DevTools](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools).
+[DevTools](https://developer.mozilla.org/docs/Learn/Common_questions/What_are_browser_developer_tools).
 
 ## Putting it all together
 
 The Glitch demo embedded below illustrates a core use case of `URLPattern`
 inside of a service worker's
-<code>[fetch event handler](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers#custom_responses_to_requests)</code>,
+<code>[fetch event handler](https://developer.mozilla.org/docs/Web/API/Service_Worker_API/Using_Service_Workers#custom_responses_to_requests)</code>,
 mapping specific patterns to asynchronous functions that could generate a
 response to network requests. The concepts in this example could be applied to
 other routing scenarios as well, either server-side or client-side.
@@ -346,15 +355,7 @@ other routing scenarios as well, either server-side or client-side.
 
 ## Browser support and polyfills
 
-We're letting developers know about `URLPattern` early, and would appreciate any
-[feedback](https://github.com/WICG/urlpattern/issues) based on the prerelease
-interface. This article will be kept up to date with information about browser
-support over time.
-
-`URLPattern` is not currently enabled by default in any browser, but Chrome and
-Chromium-based browsers like Edge partially support `URLPattern` starting with
-version 93. You can try it out by enabling the
-`#experimental-web-platform-features` flag in `about://flags`.
+`URLPattern` is enabled by default in Chrome and Edge version 95 and above.
 
 The
 <code>[urlpattern-polyfill](https://github.com/kenchris/urlpattern-polyfill)</code>
@@ -374,14 +375,14 @@ if (!(globalThis && 'URLPattern' in globalThis)) {
 
 ## Feedback and future plans
 
-Some aspects of `URLPattern` are [still being
+While the basic functionality for `URLPattern` has made it to Chrome and Edge,
+there are additions planned. Some aspects of `URLPattern` are [still being
 developed](https://github.com/WICG/urlpattern/blob/main/202012-update.md#whats-still-left-to-do),
 and there are a number of
 [open questions](https://github.com/WICG/urlpattern/blob/main/202012-update.md#open-questions)
 about specific behaviors that may still be refined. We encourage you to try out
-`URLPattern` early and provide any feedback via the
-[Discussions](https://github.com/WICG/urlpattern/discussions) feature in the
-associated GitHub repo.
+`URLPattern` and provide any feedback via a
+[GitHub issue](https://github.com/WICG/urlpattern/issues).
 
 ### Support for templating
 

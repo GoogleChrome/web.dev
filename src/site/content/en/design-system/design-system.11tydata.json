@@ -1,4 +1,6 @@
 {
+  "noindex": true,
+  "CSS_ORIGIN": "next",
   "sideLinks": [
     {
       "text": "Welcome",
@@ -11,6 +13,10 @@
     {
       "text": "Typography",
       "url": "/design-system/typography/"
+    },
+    {
+      "text": "Spacing",
+      "url": "/design-system/spacing/"
     }
   ],
   "cssLinks": [

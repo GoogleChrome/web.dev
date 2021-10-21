@@ -16,7 +16,7 @@ date: 2017-09-18
 updated: 2021-02-17
 tags:
   - blog
-  - sensors
+  # - sensors
   - devices
   - capabilities
 hero: image/admin/2AGc7aV66zc69fiqNJBZ.jpg
@@ -48,8 +48,8 @@ provides a ready-to-use four-by-four rotation matrix based on the data obtained 
 accelerometer, gyroscope, and magnetometer.
 
 You might think that the web platform already provides sensor data and you are absolutely right! For
-instance, [`DeviceMotion`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent) and
-[`DeviceOrientation`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent)
+instance, [`DeviceMotion`](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent) and
+[`DeviceOrientation`](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent)
 events expose motion sensor data. So why do we need a new API?
 
 Comparing to the existing interfaces, Generic Sensor API provides a great number of advantages:
@@ -175,7 +175,7 @@ sensor in detail.
   </figcaption>
 </figure>
 
-The [`Accelerometer`](https://developer.mozilla.org/en-US/docs/Web/API/Accelerometer) sensor
+The [`Accelerometer`](https://developer.mozilla.org/docs/Web/API/Accelerometer) sensor
 measures acceleration of a device hosting the sensor on three axes (X, Y, and Z). This sensor is an
 inertial sensor, meaning that when the device is in linear free fall, the total measured
 acceleration would be 0 m/s<sup>2</sup>, and when a device lying flat on a table, the acceleration
@@ -189,7 +189,7 @@ orientation. Quite often, accelerometer measurements are combined with data from
 create fusion sensors, such as, orientation sensors.
 
 The
-[`LinearAccelerationSensor`](https://developer.mozilla.org/en-US/docs/Web/API/LinearAccelerationSensor)
+[`LinearAccelerationSensor`](https://developer.mozilla.org/docs/Web/API/LinearAccelerationSensor)
 measures acceleration that is applied to the device hosting the sensor, excluding the contribution
 of gravity. When a device is at rest, for instance lying flat on the table, the sensor would measure
 ≈ 0 m/s<sup>2</sup> acceleration on three axes.
@@ -214,7 +214,7 @@ of acceleration along the device's X, Y, and Z axis due to gravity.
   </figcaption>
 </figure>
 
-The [`Gyroscope`](https://developer.mozilla.org/en-US/docs/Web/API/Gyroscope) sensor measures
+The [`Gyroscope`](https://developer.mozilla.org/docs/Web/API/Gyroscope) sensor measures
 angular velocity in radians per second around the device's local X, Y, and Z axis. Most consumer
 devices have mechanical ([MEMS](https://en.wikipedia.org/wiki/Microelectromechanical_systems))
 gyroscopes, which are inertial sensors that measure rotation rate based on
@@ -233,19 +233,19 @@ therefore, might consume more power compared to other sensors.
 </figure>
 
 The
-[`AbsoluteOrientationSensor`](https://developer.mozilla.org/en-US/docs/Web/API/AbsoluteOrientationSensor)
+[`AbsoluteOrientationSensor`](https://developer.mozilla.org/docs/Web/API/AbsoluteOrientationSensor)
 is a fusion sensor that measures rotation of a device in relation to the Earth's coordinate system,
 while the
-[`RelativeOrientationSensor`](https://developer.mozilla.org/en-US/docs/Web/API/RelativeOrientationSensor)
+[`RelativeOrientationSensor`](https://developer.mozilla.org/docs/Web/API/RelativeOrientationSensor)
 provides data representing rotation of a device hosting motion sensors in relation to a stationary
 reference coordinate system.
 
 All modern 3D JavaScript frameworks support [quaternions](https://en.wikipedia.org/wiki/Quaternion)
 and [rotation matrices](https://en.wikipedia.org/wiki/Rotation_matrix) to represent rotation;
 however, if you use WebGL directly, the `OrientationSensor` conveniently has both a
-[`quaternion` property](https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensor/quaternion)
+[`quaternion` property](https://developer.mozilla.org/docs/Web/API/OrientationSensor/quaternion)
 and a
-[`populateMatrix()` method](https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensor/populateMatrix).
+[`populateMatrix()` method](https://developer.mozilla.org/docs/Web/API/OrientationSensor/populateMatrix).
 Here are few snippets:
 
 **[three.js](https://threejs.org/docs/index.html#api/core/Object3D.quaternion)**
@@ -271,7 +271,7 @@ sensor_rel.onreading = () => {
 sensorRel.start();
 ```
 
-**[BABYLON](http://doc.babylonjs.com/classes/3.0/abstractmesh#rotationquaternion-quaternion-classes-3-0-quaternion-)**
+**[BABYLON](https://doc.babylonjs.com/typedoc/classes/babylon.abstractmesh#rotationquaternion)**
 
 ```js
 const mesh = new BABYLON.Mesh.CreateCylinder('mesh', 0.9, 0.3, 0.6, 9, 1, scene);

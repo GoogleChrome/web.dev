@@ -53,11 +53,7 @@ class CourseSearchResults extends SearchResults {
 
     return html`
       <div class="web-course-search web-search-popout">
-        <ul
-          id="${this.id}-list"
-          class="web-search-popout__list scrollbar"
-          role="listbox"
-        >
+        <ul id="${this.id}-list" class="web-search-popout__list" role="listbox">
           ${this.itemsTemplate}
         </ul>
       </div>
@@ -80,15 +76,15 @@ class CourseSearchResults extends SearchResults {
         <li class="web-search-popout__item">
           <a
             id="${this.id}-link-${idx}"
-            class="web-search-popout__link ${idx === this.cursor
+            class="web-search-popout__link flow ${idx === this.cursor
               ? 'web-search-popout__link--active'
               : ''}"
             aria-selected="${idx === this.cursor}"
             tabindex="-1"
             href="${hit.url}"
           >
-            <span class="web-search-popout__title">${unsafeHTML(title)}</span>
-            <p class="web-search-popout__snippet">${unsafeHTML(snippet)}</p>
+            <h3 class="text-size-1">${unsafeHTML(title)}</h3>
+            <p class="text-size-0 color-mid-text">${unsafeHTML(snippet)}</p>
           </a>
         </li>
       `;
