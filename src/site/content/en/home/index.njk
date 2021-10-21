@@ -56,6 +56,9 @@ patterns:
   buttonUrl: '/patterns/'
 ---
 
+{% from 'macros/icon.njk' import icon with context %}
+
+
 <div class="homepage">
   <header class="hero">
     <div class="wrapper">
@@ -104,5 +107,43 @@ patterns:
       </div>
     </section>
   {% endif %}
+
+  <div class="homepage__section">
+    <div class="wrapper">
+      <div class="all-center flow">
+        <h2>{{ courses.title }}</h2>
+        <p>{{ courses.summary }}</h2>
+        <div>
+          <a href="/learn" class="button">See all</a>
+        </div>
+      </div>
+      <div class="reel scrollbar gap-top-size-2" data-scroll="snap">
+        {# TODO: wire this up with proper course data #}
+        <a href="#" class="card" data-style="branded">
+          <div class="card__header repel">
+            <p class="color-mid-text">Course</p>
+            <div class="counter t-bg-highlights-purple t-color-shades-light-bright">
+              <span class="counter__content">24</span>
+              {{ icon('mortarboard') }}
+            </div>
+          </div>
+          <img src="/images/courses/css/card-brand.svg" alt="Learn CSS branding" />
+          <div class="card__content flow">
+            <h3 class="visually-hidden">Learn CSS</h3>
+            <img
+              class="card__logo"
+              src="/images/courses/css/logo.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <p class="text-size-0">
+              Let’s gleefully breakdown complex aspects of CSS into digestible episodes
+              covering everything from accessibility to z-index.
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 

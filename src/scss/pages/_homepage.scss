@@ -1,0 +1,7 @@
+.homepage__section {
+  padding-block-end: get-space('size-3');
+
+  &:not(:first-of-type) {
+    padding-block-start: get-space('size-3');
+  }
+}

@@ -1,7 +1,7 @@
 /// COMPONENT LIBRARY LOCATION
 /// https://web.dev/design-system/component/hero
 .hero {
-  padding: get-space('size-3') 0;
+  padding-block: get-space('size-3');
 
   @include apply-utility('bg', 'mid-bg');
 
