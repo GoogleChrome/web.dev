@@ -167,7 +167,7 @@ Use only your keyboard, use a screen reader (such as
 [NVDA](https://www.nvaccess.org/) on Windows or
 [VoiceOver](https://en.wikipedia.org/wiki/VoiceOver) on Mac),
 or zoom the page to 200%.
-Always test your forms on different devices,
+Always test your forms on different platforms,
 especially devices or settings you don't use every day.
 Do you know someone using a screen reader,
 or someone using text enlargement software? Ask them to fill out your form.
