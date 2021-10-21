@@ -6,7 +6,7 @@ hero: image/tcFciHGuF3MxnTr1y5ue01OGLBn2/dYAbN2LdttJ1qYk1gssh.svg
 draft: true
 ---
 
-## Oveview
+## Overview
 
 I'll write something up here soon!
 

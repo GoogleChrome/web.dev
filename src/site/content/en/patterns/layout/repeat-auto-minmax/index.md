@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: RAM (Repeat, Auto, Minmax)
-description: TBD
+description: A responsive layout with automatically-placed and flexible children.
 date: 2021-10-20
 draft: true
 ---

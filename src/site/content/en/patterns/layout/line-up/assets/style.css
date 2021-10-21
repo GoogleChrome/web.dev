@@ -1,5 +1,4 @@
-.parent {
-  height: auto;
+.container {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
