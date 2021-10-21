@@ -7,7 +7,6 @@ authors:
   - samdutton
   - rachelandrew
   - robdodson
-  - samthor
   - jiwoong
 date: 2021-11-03
 --- 
