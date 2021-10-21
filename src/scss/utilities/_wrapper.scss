@@ -13,3 +13,9 @@
   padding-right: $global-gutter;
   position: relative;
 }
+
+.wrapper[data-size='narrow'] {
+  width: 62rem; // For no clamp support
+  width: clamp(16rem, 95vw, 62rem);
+  padding-inline: 0;
+}

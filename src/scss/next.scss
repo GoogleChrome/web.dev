@@ -45,6 +45,10 @@ body {
   @include apply-utility('leading', 'regular');
 }
 
+main {
+  flex: auto;
+}
+
 h1,
 h2,
 h3,
@@ -57,21 +61,18 @@ h6 {
 }
 
 h1 {
-  font-size: get-size('size-6');
-}
-
-h2 {
   font-size: get-size('size-5');
 }
 
-h3 {
+h2 {
   font-size: get-size('size-4');
 }
 
-h4 {
+h3 {
   font-size: get-size('size-3');
 }
 
+h4,
 h5,
 h6 {
   font-size: get-size('size-2');
@@ -87,7 +88,7 @@ li {
 h1,
 h2,
 h3 {
-  max-width: 25ch;
+  max-width: 30ch;
 }
 
 /// Lists
@@ -373,17 +374,21 @@ sup {
 }
 
 /// Details and summary
-details:not([class]) {
+details {
   @extend .flow;
 
   --flow-space: 0.5em;
 
-  max-width: $global-prose-element-max-width;
   border-block: 1px solid get-utility-value('bg', 'stroke');
   padding: 1rem 0.5rem 1.2rem 0.5rem;
+  text-align: left;
 }
 
-details:not([class]) summary {
+details + details {
+  border-block-start: none;
+}
+
+details summary {
   position: relative;
   font-size: get-size('size-2');
   list-style: none;
@@ -441,18 +446,20 @@ details:not([class]) summary {
   }
 }
 
-[class*='text-'] > details:not([class]) summary {
+/// Let a details element inherit a parent's font-size
+/// if it feature a font size utility class
+[class*='text-'] > details summary {
   font-size: inherit;
 }
 
-details[open]:not([class]) summary {
+details[open] summary {
   &::after {
     inset-block-start: 11px;
     transform: rotate(-135deg);
   }
 }
 
-details:not([class]) summary + * {
+details summary + * {
   @include apply-utility('flow-space', 'size-1');
 }
 
@@ -650,6 +657,7 @@ web-copy-code {
 @import 'blocks/compare';
 @import 'blocks/eyebrow';
 @import 'blocks/fab';
+@import 'blocks/icon-button';
 @import 'blocks/indicator';
 @import 'blocks/label';
 @import 'blocks/numbered-headers';
@@ -657,6 +665,7 @@ web-copy-code {
 @import 'blocks/preview-pagination';
 @import 'blocks/prose';
 @import 'blocks/site-footer';
+@import 'blocks/site-header';
 @import 'blocks/skip-link';
 @import 'blocks/stack-nav';
 @import 'blocks/stats';
@@ -685,6 +694,7 @@ web-copy-code {
 /// PAGES
 @import 'pages/course';
 @import 'pages/design-system';
+@import 'pages/measure';
 
 // The prototype file is for temporary prototyping
 @import 'prototype';

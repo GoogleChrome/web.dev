@@ -34,25 +34,6 @@ web-navigation-drawer {
   }
 }
 
-web-navigation-drawer[type='standard'] {
-  @include media-query('lg') {
-    align-self: flex-start;
-    position: sticky;
-    pointer-events: auto;
-    top: 0;
-    width: auto;
-
-    [data-drawer-container] {
-      box-shadow: none;
-      transform: none;
-    }
-
-    [data-drawer-close-button] {
-      visibility: hidden;
-    }
-  }
-}
-
 // This is the scrim that appears behind the navigation drawer when it is
 // expanded.
 web-navigation-drawer::before {

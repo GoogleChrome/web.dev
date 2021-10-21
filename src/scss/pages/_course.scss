@@ -47,7 +47,7 @@ $course-side-vert-space: 20px;
     left: 0;
     z-index: 10;
     /// Shorter left pad accounts for the burger menu button
-    padding: 0.5rem $global-gutter 0.5rem 1rem;
+    padding: 0.8rem $global-gutter 0.8rem 1rem;
     box-shadow: 0 0 10px rgba(0 0 0 / 20%);
     background-position: top right;
     background-size: auto 100%;
@@ -163,6 +163,9 @@ web-search.course__search {
   display: block;
   height: $course-search-height;
   padding: 0 $global-gutter-narrow;
+  // Prevent this from being squished by flex grow around us.
+  // This ensures that the search box doesn't grow as it appears.
+  min-height: $course-search-height;
 
   .web-search__input-wrapper {
     display: flex;
@@ -224,5 +227,25 @@ web-search.course__search {
 
   .web-course-search__no-results {
     text-align: center;
+  }
+
+  /// Responsive adjustments for navigation drawer
+  web-navigation-drawer[type='standard'] {
+    @include media-query('lg') {
+      align-self: flex-start;
+      position: sticky;
+      pointer-events: auto;
+      top: 0;
+      width: auto;
+
+      [data-drawer-container] {
+        box-shadow: none;
+        transform: none;
+      }
+
+      [data-drawer-close-button] {
+        visibility: hidden;
+      }
+    }
   }
 }

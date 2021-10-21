@@ -6,7 +6,7 @@ authors:
   - beaufortfrancois
   - thomassteiner
 date: 2018-11-05
-updated: 2021-09-06
+updated: 2021-10-20
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -94,6 +94,21 @@ suggests the extension should be `.webmanifest`, but browsers also support
 You must provide at least the `short_name` or `name` property. If both are
 provided, `short_name` is used on the user's home screen, launcher, or other
 places where space may be limited. `name` is used when the app is installed.
+
+{% Aside %}
+Operating systems usually expect to have a title for each app window. This
+title is displayed in various window-switching surfaces such as
+<kbd>alt</kbd>+<kbd>tab</kbd>, overview mode, and the shelf window list.
+
+For PWAs running in standalone mode, Chromium will prepend the `short_name`
+(or, if `short_name` is not set, alternatively the `name`) to what is
+specified in the `<title>` of the HTML document to prevent disguies attacks
+where standalone apps might try to be mistaken, for example, for operating
+system dialogs.
+
+In consequence, developers shoould _not_ repeat the
+application name in the `<title>` when the app is running in standalone mode.
+{% endAside %}
 
 #### `icons` {: #icons }
 

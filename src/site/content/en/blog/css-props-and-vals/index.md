@@ -17,7 +17,7 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - houdini
   - css
-  # - Chrome78
+  - chrome-78
 feedback:
   - api
 ---
