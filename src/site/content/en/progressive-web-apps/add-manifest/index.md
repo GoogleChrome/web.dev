@@ -40,6 +40,11 @@ suggests the extension should be `.webmanifest`, but browsers also support
   "name": "Weather: Do I need an umbrella?",
   "icons": [
     {
+      "src": "/images/icons-vector.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
       "src": "/images/icons-192.png",
       "type": "image/png",
       "sizes": "192x192"
