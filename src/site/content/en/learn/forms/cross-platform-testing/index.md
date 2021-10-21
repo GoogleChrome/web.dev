@@ -100,7 +100,7 @@ Use a phone to [try it out for yourself](https://codepen.io/web-dot-dev/pen/88f1
 and see if you can easily enter every character needed to fill in a telephone number.
 If you're curious how the on-screen keyboard works for another `type`, try `type="email"` in the demo.
 
-## Make sure buttons aren't hidden
+## Make sure form buttons aren't hidden
 
 Imagine that you filled out a long form,
 and you're ready to submit it. But where is the **Submit** button?
