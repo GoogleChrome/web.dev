@@ -26,7 +26,7 @@ In addition, tapping or clicking the `<label>` focuses the associated form contr
 making it a larger target.
 
 {% Aside %}
-The next time you add a form control, try adding the `<label>` first. Think about the purpose of the 
+The next time you add a form control, add the `<label>` first. Think about the purpose of the 
   form control, and describe the purpose to the user. Make it easy for people to enter valid data 
   quickly and accurately.
 {% endAside %}
