@@ -12,7 +12,7 @@ draft: true
   </video>
 </figure>
 
-This demo takes advantage of the [minmax](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax) function for grid layouts. What we're doing here is setting the minimum sidebar size to be `100px`, but on larger screens, letting that stretch out to `25%`. The sidebar will always take up `25%` of its parent's horizontal space until that `25%` becomes smaller than `100px`.
+This demo takes advantage of the [minmax](https://developer.mozilla.org/docs/Web/CSS/minmax) function for grid layouts. What we're doing here is setting the minimum sidebar size to be `100px`, but on larger screens, letting that stretch out to `25%`. The sidebar will always take up `25%` of its parent's horizontal space until that `25%` becomes smaller than `100px`.
 
 Add this as a value of grid-template-columns with the following value:
 `minmax(100px, 25%) 1fr`. The item in the first column (the sidebar in this case) gets a `minmax` of `100px` at `25%`, and the second item (the `main` section here) takes up the rest of the space as a single `1fr` track.

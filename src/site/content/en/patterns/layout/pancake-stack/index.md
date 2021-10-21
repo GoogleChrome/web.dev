@@ -12,7 +12,7 @@ draft: true
   </video>
 </figure>
 
-Unlike the Deconstructed Pancake, this example does not wrap its children when the screen size changes. Commonly referred to as a [sticky footer](https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Sticky_footers), this layout is often used for both websites and apps, across mobile applications (the footer is commonly a toolbar), and websites (single page applications often use this global layout).
+Unlike the Deconstructed Pancake, this example does not wrap its children when the screen size changes. Commonly referred to as a [sticky footer](https://developer.mozilla.org/docs/Web/CSS/Layout_cookbook/Sticky_footers), this layout is often used for both websites and apps, across mobile applications (the footer is commonly a toolbar), and websites (single page applications often use this global layout).
 
 Adding `display: grid` to the component will give you a single column grid, however the main area will only be as tall as the content with the footer below it.
 

@@ -10,7 +10,7 @@ This is a common layout for marketing sites, for example, which may have a row o
 
 By using Flexbox for this effect, you won't need media queries to adjust the placement of these elements when the screen resizes.
 
-The [flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) shorthand stands for: `flex: <flex-grow> <flex-shrink> <flex-basis>`.
+The [flex](https://developer.mozilla.org/docs/Web/CSS/flex) shorthand stands for: `flex: <flex-grow> <flex-shrink> <flex-basis>`.
 
 ## `flex-grow` Stretching
 
