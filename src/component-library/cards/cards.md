@@ -12,3 +12,8 @@ example](#with-a-visually-hidden-heading)), it's recommended that you remove
 the [flow utility](/design-system/css-utilities/#flow) from `.card__content`
 and add the [visually hidden
 utility](/design-system/css-utilities/#visually-hidden) to your heading.
+
+### Feature cards
+
+There’s an [example feature card in the variants](#feature-card). More detail
+can be found on the [feature card section](/design-system/component/feature-card/).

@@ -98,6 +98,17 @@ $gorko-config: (
     'output': 'standard',
     'property': 'font-family',
   ),
+  'gap-inline': (
+    'items':
+      map-merge(
+        $gorko-space-scale,
+        (
+          'auto': 'auto',
+        )
+      ),
+    'output': 'standard',
+    'property': 'margin-inline',
+  ),
   'gap-top': (
     'items': $gorko-space-scale,
     'output': 'standard',
