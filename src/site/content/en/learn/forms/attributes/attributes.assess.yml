@@ -4,7 +4,7 @@ questions:
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "1"
-    stem: What attribute can you use to change the label of the `Enter` key on an on-screen  keyboard?
+    stem: What attribute can you use to change the label of the `Enter` key on an on-screen keyboard?
     options:
       - content: "`enterkey`"
         rationale: "Try again!"
