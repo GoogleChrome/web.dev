@@ -4,7 +4,7 @@ description: >
   In this module, you learn how to use JavaScript to enhance your forms.
 authors:
   - michaelscharnagl
-date: 2021-10-07
+date: 2021-11-03
 ---
 
 ## Respond to form events
@@ -37,7 +37,7 @@ if (event.target.checked) {
 {% Aside 'caution' %}
 Make sure your form is still usable 
 [if JavaScript isn't available](https://kryogenix.org/code/browser/everyonehasjs.html). 
-The core experience should be the same for all users, and JavaScript only be used as an enhancement.
+The core experience should be the same for all users, with JavaScript used only as an enhancement.
 {% endAside %}
 
 Let's look at the 
@@ -116,7 +116,7 @@ Make sure to translate and localize your error messages if you have a multi-lang
 
 The built-in HTML features for form validation are great for notifying users 
 about invalid form fields before the data is sent to your backend. 
-Wouldn't it be great to notify users after they leave a form field?
+Wouldn't it be great to notify users as soon as they leave a form field?
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -142,18 +142,19 @@ Help users to enter their password, by showing a `<button>` to toggle the visibi
   height: 300
 } %}
 
-[Try out the demo](https://codepen.io/web-dot-dev/pen/bd8577c5380c436dba2788c7a2c8652a). Toggle the visibility of the entered text, by using the reveal `<button>`. 
-How does this work? Clicking on 'Show password', 
+[Try out the demo](https://codepen.io/web-dot-dev/pen/bd8577c5380c436dba2788c7a2c8652a). Toggle the 
+visibility of the entered text, by using the **Show Password** `<button>`. 
+How does this work? Clicking on **Show Password**, 
 changes the `type` attribute of the password field from `type="password"` to `type="text"`, 
-and the `<button>` text changes to 'Hide password'.
+and the `<button>` text changes to 'Hide Password'.
 
 {% Aside 'codelab' %}
-[Try to improve the reveal `<button>`](https://codepen.io/web-dot-dev/pen/bd8577c5380c436dba2788c7a2c8652a). 
+[Try to improve the **Show Password** `<button>`](https://codepen.io/web-dot-dev/pen/bd8577c5380c436dba2788c7a2c8652a). 
 Where would you position the `<button>`? 
 Could you use only an icon and still make sure the `<button>` is accessible?
 {% endAside %}
 
-It's important to make the reveal password button accessible. 
+It's important to make the **Show Password** button accessible. 
 Connect the `<button>` with the `<input type="password">` using the `aria-controls` attribute. 
 
 {% Aside 'caution' %}

@@ -4,7 +4,7 @@ description: >
   Learn how to implement form controls with CSS.
 authors:
   - michaelscharnagl
-date: 2021-10-07
+date: 2021-11-03
 ---
 
 In this module you learn how to style `<form>` elements, and how to match your other site styles. 
@@ -57,7 +57,7 @@ To show the arrow of your choice, define the arrow as a `background`.
 
 {% Aside %}
 To ensure the best cross-browser compatibility, 
-you also must include the prefixed versions of `appearance`, `-moz-appearance` and `-webkit-appearance`. 
+you must also include the prefixed versions of `appearance`: `-moz-appearance` and `-webkit-appearance`. 
 
 [Learn more about vendor prefixes](https://developer.mozilla.org/docs/Glossary/Vendor_Prefix#css_prefixes).
 {% endAside %}
@@ -66,7 +66,7 @@ You should also change the `font-size` to at least `1rem`
 (which for most browsers has a default value of 16px) for your `<select>` element. 
 This prevents a page zoom on iOS Safari when a form control is focused.
 
-You can, of course, also change the colors to match your brand colors. 
+You can, of course, also change the element colors to match your brand colors. 
 After adding some more styles for spacing, `:hover`, and `:focus`, 
 the appearance of the `<select>` element is now consistent between browsers. 
 
@@ -101,12 +101,11 @@ The appearance of `<input type="checkbox">` and `<input type="radio">` varies ac
 } %}
 
 Open the [demo](https://codepen.io/web-dot-dev/pen/74d28931d0c0e9aacc89f62380f365e4) on various browsers to see the difference. 
-Let's see how to make sure checkboxes and radio boxes look the same cross-browser, 
-and match your brand.
+Let's see how to make sure that checkboxes and radio buttons match your brand and look the same cross-browser.
 
 You can't style `<input type="checkbox">` and `<input type="radio">` directly, 
 but there is a workaround. 
-First, hide the default checkbox and radio box visually.
+First, hide the default checkbox and radio button visually.
 
 ```css
 input[type="radio"],
@@ -121,7 +120,7 @@ to only hide the elements visually,
 and to ensure they are still present in the 
 [accessibility tree](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree). 
 
-To show your custom checkboxes and radio boxes, you have different options. 
+To show your custom checkboxes and radio buttons, you have different options. 
 You use the `:before` CSS pseudo-element and the CSS `background` property, or use inline SVG images. 
 
 ```css
@@ -141,12 +140,11 @@ input[type="radio"]:checked + label:before {
 ```
 
 {% Aside %}
-Styled form controls must be easy to understand and use. 
-People are used to a checkbox that looks like a checkbox, 
-and you should make it easy for users to identify a checkbox. 
+Styled form controls must be easy to understand and use. People are used to a checkbox that looks 
+like a checkbox, so make sure when you style a form control that users still understand how to use it. 
 {% endAside %}
 
-There are a lot of possibilities with CSS to ensure checkboxes and radio boxes match your brand styles.
+There are a lot of possibilities with CSS to ensure checkboxes and radio buttons match your brand styles.
 
 {% Codepen {
   user: 'web-dot-dev',

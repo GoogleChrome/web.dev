@@ -6,7 +6,7 @@ questions:
     correctAnswers: "1"
     stem: How can you remove platform-native styling of form controls?
     options:
-      - content: "Using`revert: all;`."
+      - content: "Using `revert: all;`."
         rationale: "Try again!"
       - content: "Using `appearance: none;`."
         rationale: "🎉"
