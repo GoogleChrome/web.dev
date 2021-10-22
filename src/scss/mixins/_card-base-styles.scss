@@ -14,6 +14,8 @@
   max-width: 40rem;
   text-decoration: none;
 
+  @include apply-utility('bg', 'core-bg');
+
   // This lets text keep its selectable state
   a:not([class*='action']),
   p,
