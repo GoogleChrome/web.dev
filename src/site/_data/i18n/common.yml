@@ -151,3 +151,6 @@ all:
 
 see_all:
   en: See all
+
+more: 
+  en: More

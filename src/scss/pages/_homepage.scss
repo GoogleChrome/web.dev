@@ -15,6 +15,10 @@
   padding-block: get-space('size-3');
 }
 
+.homepage .repel {
+  --repel-vertical-alignment: stretch;
+}
+
 /// Specific overrides for the page-speed hero that are not consistent
 /// with the main hero pattern
 @include media-query('lg') {
