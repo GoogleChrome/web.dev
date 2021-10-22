@@ -27,17 +27,18 @@ In this article, we'll discuss Priority Hints and the `importance` attribute, wh
 </figure>
 
 ## Summary
+
 **A few key areas where priority hints can help:**
 
 - Boost the priority of the LCP image by specifying `importance="high"` on the image element, causing LCP to happen sooner.
-- Increase the priority of `async` scripts using better semantics than the current hack that is commonly used (inserting a <link rel="preload"> for the `async` script).
+- Increase the priority of `async` scripts using better semantics than the current hack that is commonly used (inserting a <code>&lt;link rel="preload"&gt;</code> for the `async` script).
 - Decrease the priority of late-body scripts to allow for better sequencing with images.
 
 Historically, developers have had some, but limited, influence over resource priority using [preload](/uses-rel-preload/) and [preconnect](/uses-rel-preconnect/). Priority Hints complement these [Resource Hints](https://www.w3.org/TR/resource-hints/), but it's essential to understand where they all fit in. Preload lets you tell the browser about critical resources you want to load early before they are discovered naturally. This is especially useful for not easily discoverable resources, such as fonts included in stylesheets, background images, or resources loaded from a script. Preconnect helps warm up connections to cross-origin servers and can help improve metrics like [Time-to-first-byte](/time-to-first-byte/) and is useful when you know an origin but not necessarily the exact URL of a resource that will be needed.  
 
 Priority hints are a markup-based signal (available through the `importance` attribute) that developers can use to indicate the importance of a particular resource. You can also use these hints via JavaScript and the [Fetch API](https://developers.google.com/web/updates/2015/03/introduction-to-fetch) to influence the priority of resource fetches made for data. Priority hints can also complement preload. Take a Largest Contentful Paint image, which, when preloaded, will still get a low priority. If it is pushed back by other early low-priority resources, using Priority Hints can still help how soon the image gets loaded.  
 
-Priority Hints are an [experimental feature](https://www.chromestatus.com/feature/5273474901737472) available as an [origin trial](https://developer.chrome.com/origintrials/#/view_trial/365917469723852801). We hope that developers will try it and provide their feedback. You can also try out Priority Hints via a flag in Chrome.
+Priority Hints are an [experimental feature](https://www.chromestatus.com/feature/5273474901737472) available as an [origin trial](https://developer.chrome.com/origintrials/#/view_trial/365917469723852801) in Chrome 96+ (Chrome Beta at the time of writing, Chrome Stable in four weeks). We hope that developers will try it and provide their feedback. The feature being able to stick around depends on developer feedback. You can also try out Priority Hints via a flag in Chrome.
 
 ## Resource priority
 
@@ -222,7 +223,7 @@ Sometimes these handles may not be enough to prioritize resources optimally for 
 1. You have several above-the-fold images, but all of them need not have the same priority. For example, in an image carousel, only the first visible image needs a higher priority compared to the others.
 2. Hero images inside the viewport start at a low priority. After the layout is complete, Chrome discovers they are in the viewport and boosts their priority (unfortunately, dev tools only shows the final priority - WebPageTest will show both). This usually adds a significant delay to loading the image. Providing the priority hint in markup lets the image start at a high priority and start loading much earlier.<br><br>Note that preload is still required for the early discovery of LCP images included as CSS backgrounds and can be combined with priority hints by including the importance='high' on the preload, otherwise it will still start with the default "Low" priority for images.
 3. Declaring scripts as `async` or `defer` tells the browser to load them asynchronously. However, as seen in the figure above, these scripts are also assigned a "low" priority. You may want to bump up their priority while ensuring asynchronous download, particularly for any scripts that are critical for the user experience.
-4. You may use the JavaScript `[fetch()](https://developers.google.com/web/updates/2015/03/introduction-to-fetch)` API to fetch resources or data asynchronously. Fetch is assigned a high priority by the browser. There may be situations where you do not want all your fetches to be executed with high priority and prefer using different priority hints instead. This can be helpful when running background API calls and mixing them with API calls that are responding to user input, like with autocomplete. The background API calls can be tagged as low priority and the interactive API calls marked as high priority.
+4. You may use the JavaScript [`fetch()`](https://developers.google.com/web/updates/2015/03/introduction-to-fetch) API to fetch resources or data asynchronously. Fetch is assigned a high priority by the browser. There may be situations where you do not want all your fetches to be executed with high priority and prefer using different priority hints instead. This can be helpful when running background API calls and mixing them with API calls that are responding to user input, like with autocomplete. The background API calls can be tagged as low priority and the interactive API calls marked as high priority.
 5. The browser assigns CSS and fonts a high priority, but all such resources may not be equally important or required for LCP. You can use priority hints to lower the priority of some of these resources.
 
 ## The `importance` attribute
@@ -454,6 +455,8 @@ You can apply the `importance` attribute to different resources as shown in the 
 ◉: `importance="auto"`  
 ⬆: `importance="high"`  
 ⬇: `importance="low"`
+
+Images within the viewport start at low priority and then at layout time are boosted to high. By tagging it in markup using `importance`, it can start at high immediately and load much faster.
 {% endAside %}
 
 ### Use cases
