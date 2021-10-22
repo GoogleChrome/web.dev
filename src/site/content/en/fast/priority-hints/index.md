@@ -27,6 +27,7 @@ In this article, we'll discuss Priority Hints and the `importance` attribute, wh
 </figure>
 
 ## Summary
+
 **A few key areas where priority hints can help:**
 
 - Boost the priority of the LCP image by specifying `importance="high"` on the image element, causing LCP to happen sooner.
@@ -37,7 +38,7 @@ Historically, developers have had some, but limited, influence over resource pri
 
 Priority hints are a markup-based signal (available through the `importance` attribute) that developers can use to indicate the importance of a particular resource. You can also use these hints via JavaScript and the [Fetch API](https://developers.google.com/web/updates/2015/03/introduction-to-fetch) to influence the priority of resource fetches made for data. Priority hints can also complement preload. Take a Largest Contentful Paint image, which, when preloaded, will still get a low priority. If it is pushed back by other early low-priority resources, using Priority Hints can still help how soon the image gets loaded.  
 
-Priority Hints are an [experimental feature](https://www.chromestatus.com/feature/5273474901737472) available as an [origin trial](https://developer.chrome.com/origintrials/#/view_trial/365917469723852801). We hope that developers will try it and provide their feedback. You can also try out Priority Hints via a flag in Chrome.
+Priority Hints are an [experimental feature](https://www.chromestatus.com/feature/5273474901737472) available as an [origin trial](https://developer.chrome.com/origintrials/#/view_trial/365917469723852801) in Chrome 96+ (Chrome Beta at the time of writing, Chrome Stable in four weeks). We hope that developers will try it and provide their feedback. The feature being able to stick around depends on developer feedback. You can also try out Priority Hints via a flag in Chrome.
 
 ## Resource priority
 
@@ -454,6 +455,8 @@ You can apply the `importance` attribute to different resources as shown in the 
 ◉: `importance="auto"`  
 ⬆: `importance="high"`  
 ⬇: `importance="low"`
+
+Images within the viewport start at low priority and then at layout time are boosted to high. By tagging it in markup using `importance`, it can start at high immediately and load much faster.
 {% endAside %}
 
 ### Use cases
