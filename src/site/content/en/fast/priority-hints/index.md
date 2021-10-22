@@ -30,7 +30,7 @@ In this article, we'll discuss Priority Hints and the `importance` attribute, wh
 **A few key areas where priority hints can help:**
 
 - Boost the priority of the LCP image by specifying `importance="high"` on the image element, causing LCP to happen sooner.
-- Increase the priority of `async` scripts using better semantics than the current hack that is commonly used (inserting a <link rel="preload"> for the `async` script).
+- Increase the priority of `async` scripts using better semantics than the current hack that is commonly used (inserting a <code>&lt;link rel="preload"&gt;</code> for the `async` script).
 - Decrease the priority of late-body scripts to allow for better sequencing with images.
 
 Historically, developers have had some, but limited, influence over resource priority using [preload](/uses-rel-preload/) and [preconnect](/uses-rel-preconnect/). Priority Hints complement these [Resource Hints](https://www.w3.org/TR/resource-hints/), but it's essential to understand where they all fit in. Preload lets you tell the browser about critical resources you want to load early before they are discovered naturally. This is especially useful for not easily discoverable resources, such as fonts included in stylesheets, background images, or resources loaded from a script. Preconnect helps warm up connections to cross-origin servers and can help improve metrics like [Time-to-first-byte](/time-to-first-byte/) and is useful when you know an origin but not necessarily the exact URL of a resource that will be needed.  
