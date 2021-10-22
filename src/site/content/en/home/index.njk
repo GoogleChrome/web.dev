@@ -24,14 +24,26 @@ intro:
       eyebrow: 'Show'
       url: '#'
       background: '/images/feature-cards/design-in-the-browser.jpg'
+pageSpeed: 
+  eyebrow: 'Page Speed Insights'
+  title: 'Measure page quality with PageSpeed Insights'
+  summary: |
+    See how well your website performs. Then, get tips to improve your user experience.
+  image: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/6Ye3EKc6quNaopPrigno.png'
+  imageWidth: '546'
+  imageHeight: '421'
+  primaryButtonText: 'Try Page Speed Insights'
+  primaryButtonUrl: '/measure'
+  secondaryButtonText: 'Learn more'
+  secondaryButtonUrl: '#'
 event: 
   eyebrow: 'Event'
   title: 'Chrome Dev Summit 2021'
   summary: |
     Join the Chrome team for our two-day summit on the latest techniques for building the modern Web.
   image: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/k25FHfpYLo9LQLvYT413.png'
-  imageWidth: '800'
-  imageHeight: '728'
+  imageWidth: '530'
+  imageHeight: '483'
   primaryButtonText: 'Request an invite'
   primaryButtonUrl: '#'
   secondaryButtonText: 'Add to calendar'
@@ -86,9 +98,9 @@ patterns:
   </header>
 
   {% if event %}
-    <section class="hero" data-type="event">
+    <article class="hero" data-type="event">
       <div class="wrapper">
-        <div class="hero__columns switcher">
+        <div class="hero__columns flex-dir-rev switcher">
           <div>
             <span aria-hidden="true" class="hero__eyebrow">{{ event.eyebrow }}</span>
             <div class="hero__content flow">
@@ -105,16 +117,37 @@ patterns:
           </div>
         </div>
       </div>
-    </section>
+    </article>
   {% endif %}
+  <hr />
+  <article class="hero bg-core-bg homepage__page-speed-hero">
+    <div class="wrapper">
+      <div class="hero__columns switcher">
+        <div>
+          <span aria-hidden="true" class="hero__eyebrow">{{ pageSpeed.eyebrow }}</span>
+          <div class="hero__content flow gap-top-size-5">
+            <h1 class="hero__title">{{ pageSpeed.title }}</h1>
+            {{ pageSpeed.summary | md | safe }}
+            <div class="cluster gutter-base flow-space-size-2">
+              <a class="button" data-type="primary" href="{{ pageSpeed.primaryButtonUrl }}">{{ pageSpeed.primaryButtonText }}</a>
+              <a class="button" data-type="secondary" href="{{ pageSpeed.secondaryButtonUrl }}">{{ pageSpeed.secondaryButtonText }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="flow">
+          <img src="{{ pageSpeed.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ pageSpeed.imageWidth }}" height="{{ pageSpeed.imageHeight }}" />
+        </div>
+      </div>
+    </div>
+  </article>
 
   <div class="homepage__section bg-mid-bg">
     <div class="wrapper">
-      <div class="all-center flow">
-        <h2>{{ courses.title }}</h2>
+      <div class="headline all-center flow">
+        <h2 class="headline__title">{{ courses.title }}</h2>
         <p>{{ courses.summary }}</p>
-        <div>
-          <a href="/learn" class="button">See all</a>
+        <div class="headline__action">
+          <a href="/learn">{{ 'i18n.common.see_all' | i18n(locale) }}</a>
         </div>
       </div>
       <div class="reel scrollbar gap-top-size-2" data-scroll="snap">

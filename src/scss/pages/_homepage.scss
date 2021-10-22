@@ -1,3 +1,26 @@
+.homepage {
+  // Creates a pencil line for the one case where there's a border
+  hr {
+    margin: 0;
+    width: 100%;
+    max-width: unset;
+  }
+
+  hr + * {
+    --flow-space: unset;
+  }
+}
+
 .homepage__section {
   padding-block: get-space('size-3');
+}
+
+/// Specific overrides for the page-speed hero that are not consistent
+/// with the main hero pattern
+@include media-query('lg') {
+  .homepage__page-speed-hero {
+    .hero__content {
+      margin-block-start: get-space('size-4');
+    }
+  }
 }

@@ -2,6 +2,10 @@
 /// https://web.dev/design-system/component/headline
 .headline {
   --flow-space: #{get-space('base')};
+
+  p {
+    @include apply-utility('color', 'mid-text');
+  }
 }
 
 .headline__title {
