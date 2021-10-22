@@ -110,7 +110,7 @@ As long as you don't use `type="button"` it works as a **Submit** button.
 Another option is to use `<input type="submit" value="Submit">`.
 
 {% Aside %}
-You can use the [`enterkeyhint`](https://web.dev/payment-and-address-form-best-practices/#:~:text=enterkeyhint) 
+You can use the [`enterkeyhint`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/enterkeyhint)
 attribute to change the label of the `Enter` key for on-screen keyboards. This helps make it clearer 
 for users what happens when they submit the current form.
 {% endAside %}
