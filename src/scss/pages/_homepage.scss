@@ -19,12 +19,74 @@
   --repel-vertical-alignment: stretch;
 }
 
+/// Specific cards for shows and podcasts
+.homepage__shows {
+  display: flex;
+  flex-direction: column;
+  gap: $global-gutter;
+
+  &:link,
+  &:visited {
+    color: get-color('shades-light');
+  }
+}
+
+.homepage__show {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  border: 0;
+  overflow: hidden;
+  aspect-ratio: 0.84;
+  min-height: 400px;
+  padding: $global-gutter;
+  border-radius: $global-radius-large;
+  text-decoration: none;
+
+  > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .flow {
+    position: relative;
+    z-index: 1;
+  }
+}
+
 /// Specific overrides for the page-speed hero that are not consistent
 /// with the main hero pattern
 @include media-query('lg') {
   .homepage__page-speed-hero {
     .hero__content {
       margin-block-start: get-space('size-4');
+    }
+  }
+
+  .homepage__shows {
+    flex-direction: row;
+    gap: 0;
+    max-width: 75rem;
+    margin-inline: auto;
+  }
+
+  .homepage__show {
+    max-width: unset;
+    width: 50%;
+
+    &:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
   }
 }

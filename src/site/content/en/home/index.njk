@@ -214,5 +214,18 @@ patterns:
       </div>
     </div>
   </div>
+
+  <div class="homepage__section bg-core-bg">
+    <div class="wrapper">
+      <div class="headline all-center flow">
+        <h2 class="headline__title">{{ podcasts.title }}</h2>
+        <p>{{ podcasts.summary }}</p>
+        <div class="headline__action">
+          <a href="/podcasts/">{{ 'i18n.common.see_all' | i18n(locale) }}</a>
+        </div>
+      </div>
+      {% include "./podcasts.njk" %}
+    </div>
+  </div>
 </div>
 
