@@ -118,7 +118,7 @@ There are more input types for specific use cases.
 
 There is an `<input>` of type `color` to provide users with a color picker in supported browsers, 
 and there are various other types as well. To ensure users can enter their password, use `<input>` 
-with `type="password"`. Every character entered is obscured by an asterisk ("\*") or a dot ("•"), 
+with `type="password"`. Every character entered is obscured by an asterisk ("*") or a dot ("•"), 
 to ensure the password can't be read. 
 
 Do you want to include a unique security token in the form data? 
