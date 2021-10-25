@@ -94,7 +94,7 @@ Let's see how to build a sign-in form to ensure users can easily sign in to your
 Make the location of sign-up and sign-in buttons obvious. 
 Ensure your form is usable on touch devices:
 
--  The [tap target size](https://web.dev/accessible-tap-targets/) of buttons is at least 48px.
+-  The [tap target size](/accessible-tap-targets/) of buttons is at least 48px.
 -  The `font-size` of your form elements is big enough (`20px` is about right on mobile).
 -  There is enough space (`margin`) between form controls, and that inputs are large enough (use at least `padding: 15px` on mobile).
 
