@@ -1,6 +1,9 @@
 <article class="hero bg-core-bg homepage__page-speed-hero">
   <div class="wrapper">
-    <div class="hero__columns switcher">
+    <div class="hero__columns switcher flex-dir-rev">
+      <div class="flow">
+        <img src="{{ pageSpeed.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ pageSpeed.imageWidth }}" height="{{ pageSpeed.imageHeight }}" />
+      </div>
       <div>
         <span aria-hidden="true" class="hero__eyebrow">{{ pageSpeed.eyebrow }}</span>
         <div class="hero__content flow gap-top-size-5">
@@ -11,9 +14,6 @@
             <a class="button" data-type="secondary" href="{{ pageSpeed.secondaryButtonUrl }}">{{ pageSpeed.secondaryButtonText }}</a>
           </div>
         </div>
-      </div>
-      <div class="flow">
-        <img src="{{ pageSpeed.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ pageSpeed.imageWidth }}" height="{{ pageSpeed.imageHeight }}" />
       </div>
     </div>
   </div>

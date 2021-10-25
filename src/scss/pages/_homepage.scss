@@ -40,6 +40,7 @@
   overflow: hidden;
   aspect-ratio: 0.84;
   min-height: 400px;
+  max-width: 100%;
   padding: $global-gutter;
   border-radius: $global-radius-large;
   text-decoration: none;
@@ -79,7 +80,6 @@
   --gutter: #{get-space('size-2')};
 
   .card {
-    flex-basis: 33.333%;
     border: none;
     font-size: 0.9em;
     padding: get-space('size-1');
@@ -116,6 +116,12 @@
     &:last-child {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+    }
+  }
+
+  .homepage__patterns {
+    .card {
+      flex-basis: 33.333%;
     }
   }
 }

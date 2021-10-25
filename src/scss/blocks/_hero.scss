@@ -30,7 +30,7 @@
 
 .hero__columns {
   --switcher-target-container-width: 50rem;
-  --gutter: #{get-space('size-2')};
+  --gutter: #{get-space('size-3')} #{get-space('size-2')};
 }
 
 /// EXCEPTIONS
