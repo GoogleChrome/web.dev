@@ -4,7 +4,7 @@ description: >
   Learn how to build user-friendly forms.
 authors:
   - michaelscharnagl
-date: 2021-09-23
+date: 2021-11-03
 ---
 
 In the first section, you learned how to build a basic form.
@@ -16,7 +16,7 @@ and why a well-implemented user interface (UI) can make a big difference.
 
 Filling out forms can be time-consuming and frustrating.
 It doesn't have to be.
-To guarantee a great UX, make sure the UI is intuitive to use.
+To guarantee a great UX, make sure the UI is intuitive.
 Ensure you deliver optimal form structure and graphic design (layout, spacing, font size and color),
 and logical UI (such as label wording and appropriate input types).
 Let's have a look at how you can improve your form and make it easy to use.
@@ -33,7 +33,7 @@ Do you want to add a new form control to your form?
 Start by adding the label for the new field.
 This way, you don't forget to add it.
 
-Adding the labels first also helps you to focus on the form's goals–what data do I need here?
+Adding labels first also helps you to focus on the form's goals–what data do I need here?
 Once this is clear, you can focus on helping the user enter data and complete the form.
 
 {% Aside 'caution' %}
@@ -59,7 +59,7 @@ Or you could describe it like this:
 <label for="email">Email address</label>
 ```
 
-### Which description do you choose?
+Which description do you choose?
 
 For our example, the wording 'Email address' is preferred,
 since short labels are easier to scan, reduce visual clutter,
@@ -177,7 +177,7 @@ When displaying errors on form submission, make sure to navigate to the first in
 ### Make it clear to users what data to enter
 
 Make sure users understand how to enter valid data.
-Do they need to enter at least eight characters? Tell them.
+Do they need to enter at least eight characters for a password? Tell them.
 
 ```html
 <label for="password">Password (required)</label>
@@ -189,15 +189,12 @@ Do they need to enter at least eight characters? Tell them.
 
 ```html
 <label for="name">Name (required)</label>
-<input name="name" id="name">
+<input name="name" id="name" required>
 ```
 
-Learn more about
-[indicating required fields](https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/).
-
-If most fields are required,
-it's also
-[an option to indicate the optional fields](https://www.lukew.com/ff/entry.asp?725).
+If a field is mandatory, make it obvious! [The Anatomy of Accessible Forms](https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/) explains alternatives for indicating 
+required fields. If most fields in a form are required, it may be better to 
+[indicate optional fields](https://www.lukew.com/ff/entry.asp?725).
 
 How can you connect error messages to form controls to make them accessible for screen readers?
 You can learn about this in [the next module](/learn/forms/accessibility).
@@ -210,3 +207,4 @@ You can learn about this in [the next module](/learn/forms/accessibility).
 - [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
 - [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 - [Baymard Institute: E-Commerce UX Research](https://baymard.com/blog)
+- [Don't Make Me Think](https://en.wikipedia.org/wiki/Don%27t_Make_Me_Think) 

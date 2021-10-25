@@ -4,7 +4,7 @@ description: >
   How to build inclusive forms.
 authors:
   - michaelscharnagl
-date: 2021-09-17
+date: 2021-11-03
 ---
 
 The form you build is for people.
@@ -26,9 +26,9 @@ In addition, tapping or clicking the `<label>` focuses the associated form contr
 making it a larger target.
 
 {% Aside %}
-Try this, the next time you add a form control,
-add the `<label>` first. Think about the purpose of the form control,
-and describe the purpose to the user. Make it easy for people to fill in the needed data.
+The next time you add a form control, add the `<label>` first. Think about the purpose of the 
+  form control, and describe the purpose to the user. Make it easy for people to enter valid data 
+  quickly and accurately.
 {% endAside %}
 
 ## Use meaningful HTML to access built-in browser features
@@ -49,16 +49,16 @@ Built-in form elements provide a lot of built-in features. Let's have a look at 
 Visually, the `<input>` (the first one in the example) and the `<div>` look the same.
 You can even insert text for both, as the `<div>` has a
 [`contenteditable`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/contenteditable) attribute.
-There are lots of differences, though, between using an appropriate element (`<input>`), and a `<div>` looking like an `<input>`.
+There are lots of differences, though, between using an appropriate `<input>` element and a `<div>` 
+  looking like an `<input>`.
 
 A screen reader user doesn't recognize the `<div>` as an input element,
 and isn't able to complete the form.
 All the screen reader user hears is 'Name',
 with no indication that the element is a form control for adding text.
 
-Clicking on `<div>Name</div>` doesn't focus the other `<div>`,
-even though both are connected the same way as the `<label>` and the `<input>`,
-using the `for` and `id` attribute.
+Clicking on `<div>Name</div>` doesn't focus the `<div>` that goes with it, whereas the `<label>` and 
+  the `<input>` are connected by using the `for` and `id` attributes.
 
 After submitting the form, the data entered in the `<div>` isn't included in the request.
 While attaching the data with JavaScript is possible,
@@ -66,8 +66,8 @@ an `<input>` does that by default.
 
 Built-in form elements have other features.
 For example, with appropriate form elements and the correct `inputmode` or `type`,
-an on-screen keyboard shows all needed characters at a first glance.
-Using the `inputmode` attribute on a `<div>` cannot do that.
+an on-screen keyboard shows appropriate characters. Using the `inputmode` attribute on a `<div>` 
+  cannot do that.
 
 ## Ensure users are aware of the expected data format
 
@@ -90,16 +90,15 @@ and an `id` on the error message with the same value, to connect both.
 ## Help users find the error message for a form control
 
 In a previous module about [validation](/learn/forms/validation),
-you learned how to show error messages in case of invalid entry.
+you learned how to show error messages in case of invalid data entry.
 
 ```html
 <label for="name">Name</label>
 <input type="text" name="name" id="name" required>
 ```
 
-For example, if the entered data is invalid,
-the `required` attribute shows an error message next to the form control.
-Screen readers also announce the error message.
+For example, if a field has a `required` attribute, and invalid data is entered, the browser shows 
+an error message next to the form control when the form is submitted. Screen readers also announce the error message.
 
 You can also define your own error message:
 
@@ -168,8 +167,8 @@ Use only your keyboard, use a screen reader (such as
 [NVDA](https://www.nvaccess.org/) on Windows or
 [VoiceOver](https://en.wikipedia.org/wiki/VoiceOver) on Mac),
 or zoom the page to 200%.
-Always test your forms,
-especially with devices or settings you don't use every day.
+Always test your forms on different platforms,
+especially devices or settings you don't use every day.
 Do you know someone using a screen reader,
 or someone using text enlargement software? Ask them to fill out your form.
 Accessibility reviews are great, testing with real users is even better.
