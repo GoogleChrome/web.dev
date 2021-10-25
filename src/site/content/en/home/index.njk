@@ -188,7 +188,7 @@ patterns:
           <a href="/tags/case-study/">{{ 'i18n.common.see_all' | i18n(locale) }}</a>
         </div>
       </div>
-      <div class="repel gap-top-size-2">
+      <div class="repel gap-top-size-2 wrapper">
       {% for item in collections['case-study'] %}
         {# For some reason, splice() was messing up the data... #}
         {% if loop.index <= 2 %}

@@ -57,6 +57,19 @@
     position: relative;
     z-index: 1;
   }
+
+  /// Assures the focus ring isn't clipped
+  &:focus {
+    z-index: 1;
+  }
+
+  &:hover,
+  &:focus {
+    > img {
+      transform: scale(1.05);
+      transition: transform $global-transition-movement;
+    }
+  }
 }
 
 /// Specific overrides for the page-speed hero that are not consistent

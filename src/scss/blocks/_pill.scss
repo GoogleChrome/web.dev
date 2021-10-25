@@ -5,7 +5,7 @@
   vertical-align: middle;
   font-size: get-size('size-0');
   line-height: 1;
-  padding: 0.4rem 0.6rem 0.4rem 0.6rem;
+  padding: 0.4rem 0.6rem 0.35rem 0.6rem;
   border-radius: 2em;
   border: 1px solid var(--color-stroke);
   background: transparent;
@@ -16,6 +16,11 @@
   -webkit-appearance: none;
 
   @include apply-utility('font', 'brand');
+
+  &:link,
+  &:visited {
+    @include apply-utility('color', 'core-text');
+  }
 
   &:hover,
   &[data-state='active'],
