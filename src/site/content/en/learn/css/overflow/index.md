@@ -41,10 +41,6 @@ p {
   tab: 'result'
 } %}
 
-{% Aside %}
-Some values like `fade`, custom strings, and the two value syntax are currently supported only in Firefox.
-{% endAside %}
-
 ## Using overflow properties
 
 Overflow properties are set on an element to control what happens when its children need more space than it has available. This can be intentional, like in an interactive map like Google Maps, where a user pans around a large image clipped to a specific size. It can also be unintentional like in a chat application where the user types a lengthy message that doesn’t fit in the text bubble. 
