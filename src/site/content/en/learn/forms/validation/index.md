@@ -4,7 +4,7 @@ description: >
   Learn how to validate your forms on the frontend.
 authors:
   - michaelscharnagl
-date: 2021-09-16
+date: 2021-11-03
 ---
 
 Browsers have built-in features for validation to check that users have entered data in the correct format.
