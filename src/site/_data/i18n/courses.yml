@@ -25,129 +25,45 @@ learn_forms:
     ru: Изучаем формы!
     zh: 学习表单！
   description:
-    en: "[TODO]: ..."
-    es: "[TODO]: ..."
-    ja: "[TODO]: ..."
+    en: "A course about HTML forms to help you improve your web developer expertise."
     ko: "[할 일]: ..."
-    pt: "[TODO]: ..."
-    ru: "[TODO]: ..."
-    zh: "[TODO]: ..."
 get_started_with_forms:
   title:
     en: Get started with forms
-    es: Get started with forms
-    ja: Get started with forms
-    ko: Get started with forms
-    pt: Get started with forms
-    ru: Get started with forms
-    zh: Get started with forms
   description:
     en: "to do."
-    es: "to do."
-    ja: "to do."
-    ko: "to do."
-    pt: "to do."
-    ru: "to do."
-    zh: "to do."
 general_best_practice:
   title:
     en: General best practice
-    es: Get started with forms
-    ja: Get started with forms
-    ko: Get started with forms
-    pt: Get started with forms
-    ru: Get started with forms
-    zh: Get started with forms
   description:
     en: "to do."
-    es: "to do."
-    ja: "to do."
-    ko: "to do."
-    pt: "to do."
-    ru: "to do."
-    zh: "to do."
 testing_monitoring:
   title:
     en: Testing and monitoring
-    es: to do
-    ja: to do
-    ko: to do
-    pt: to do
-    ru: to do
-    zh: to do
   description:
     en: "to do."
-    es: "to do."
-    ja: "to do."
-    ko: "to do."
-    pt: "to do."
-    ru: "to do."
-    zh: "to do."
 elements_attributes:
   title:
     en: Elements and attributes
-    es: to do
-    ja: to do
-    ko: to do
-    pt: to do
-    ru: to do
-    zh: to do
   description:
     en: "to do."
-    es: "to do."
-    ja: "to do."
-    ko: "to do."
-    pt: "to do."
-    ru: "to do."
-    zh: "to do."
 styling:
   title:
     en: CSS
-    es: to do
-    ja: to do
-    ko: to do
-    pt: to do
-    ru: to do
-    zh: to do
   description:
     en: "to do."
-    es: "to do."
-    ja: "to do."
-    ko: "to do."
-    pt: "to do."
-    ru: "to do."
-    zh: "to do."
 javascript:
   title:
     en: JavaScript
-    es: to do
-    ja: to do
-    ko: to do
-    pt: to do
-    ru: to do
-    zh: to do
   description:
     en: "to do."
-    es: "to do."
-    ja: "to do."
-    ko: "to do."
-    pt: "to do."
-    ru: "to do."
-    zh: "to do."
 form_types:
   title:
     en: Specific form types
-    es: to do
-    ja: to do
-    ko: to do
-    pt: to do
-    ru: to do
-    zh: to do
   description:
     en: "to do."
-    es: "to do."
-    ja: "to do."
-    ko: "to do."
-    pt: "to do."
-    ru: "to do."
-    zh: "to do."
+learn_design:
+  title:
+    en: Learn Responsive Design!
+  description:
+    en: "[TODO]: ..."

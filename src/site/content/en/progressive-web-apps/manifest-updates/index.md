@@ -51,6 +51,7 @@ Once installed, all fields from the new manifest (except `name`, `short_name`,
 * `scope`
 * `shortcuts`
 * `theme_color`
+* `file_handlers`
 
 {% Aside 'caution' %}
 Changes to `name`, `short_name`, `icons` and `start_url` are **not**

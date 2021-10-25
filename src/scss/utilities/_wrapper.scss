@@ -15,7 +15,7 @@
 }
 
 .wrapper[data-size='narrow'] {
-  width: 50rem; // For no clamp support
-  width: clamp(16rem, 95vw, 50rem);
+  width: 62rem; // For no clamp support
+  width: clamp(16rem, 95vw, 62rem);
   padding-inline: 0;
 }

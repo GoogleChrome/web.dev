@@ -4,7 +4,7 @@ description: >
   Learn all about the form element, when you should use a form, and how a form works in detail.
 authors:
   - michaelscharnagl
-date: 2021-10-18
+date: 2021-11-03
 ---
 
 In a previous module, you learned [how to use the `<form>` element](/learn/forms/form-element). 
@@ -25,9 +25,8 @@ you can still use the `<form>` element, but enhance it with
 [JavaScript](/learn/forms/javascript#ensure-users-can-submit-a-form-without-leaving-a-page). 
 
 {% Aside %}
-It's possible to implement form functionality with JavaScript, 
-but even by implementing all the built-in features of a native `<form>`, 
-and attempting to make it as accessible as a `<form>`, it may not be as robust. 
+It's possible to replicate form functionality with JavaScript, but a purely script-based approach is 
+unlikely to be as robust, accessible and future-proof as a built-in `<form>`.
 
 Find out [why not everybody has JavaScript](https://kryogenix.org/code/browser/everyonehasjs.html).
 {% endAside %}
@@ -49,10 +48,9 @@ The `<form>` is a container for interactive form controls.
 
 ## How does form submission work?
 
-When you submit a `<form>`, the browser checks the `<form>` attributes. 
-The data is sent as a `GET` or `POST` request according to the `method` attribute. 
-If no `method` attribute is present, 
-the request is made to the current page using a `GET` request.
+When you submit a `<form>`, the browser checks the `<form>` attributes. The data is sent as a `GET` 
+  or `POST` request according to the `method` attribute. If no `method` attribute is present, a 
+  `GET` request is made to the URL of the current page.
 
 How can you access and process the form data? 
 The submitted data can be handled by JavaScript on the frontend using a `GET` request, 
@@ -112,11 +110,12 @@ As long as you don't use `type="button"` it works as a **Submit** button.
 Another option is to use `<input type="submit" value="Submit">`.
 
 {% Aside %}
-You can use the `enterkeyhint` attribute to change the label of the `Enter` key for on-screen keyboards. 
-This helps make it clearer for users what happens when they submit the current form.
+You can use the [`enterkeyhint`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/enterkeyhint)
+attribute to change the label of the `Enter` key for on-screen keyboards. This helps make it clearer 
+for users what happens when they submit the current form.
 {% endAside %}
 
-The third option is to use `<input type="image" alt="Submit" src="submit.png">`, 
+A third option is to use `<input type="image" alt="Submit" src="submit.png">`, 
 to create a graphical **Submit** button. 
 However, now that you can create graphical buttons with CSS, it's not recommended to use `type="image"`.
 
