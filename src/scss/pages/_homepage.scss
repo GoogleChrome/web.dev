@@ -72,6 +72,22 @@
   }
 }
 
+/// Code patterns section
+.homepage__patterns {
+  --cluster-horizontal-alignment: center;
+  --cluster-vertical-alignment: stretch;
+  --gutter: #{get-space('size-2')};
+
+  .card {
+    flex-basis: 33.333%;
+    border: none;
+    font-size: 0.9em;
+    padding: get-space('size-1');
+
+    @include apply-utility('bg', 'mid-bg');
+  }
+}
+
 /// Specific overrides for the page-speed hero that are not consistent
 /// with the main hero pattern
 @include media-query('lg') {

@@ -13,7 +13,6 @@
 }
 
 .card__content {
-  --flow-space: 0.3rem;
   flex: auto;
 
   @include apply-utility('gap-top', 'size-1');
