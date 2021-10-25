@@ -6,7 +6,7 @@ authors:
   - beaufortfrancois
   - thomassteiner
 date: 2018-11-05
-updated: 2021-10-20
+updated: 2021-10-25
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -61,14 +61,24 @@ suggests the extension should be `.webmanifest`, but browsers also support
       "short_name": "Today",
       "description": "View weather information for today",
       "url": "/today?source=pwa",
-      "icons": [{ "src": "/images/today.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/images/today.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "How's weather tomorrow?",
       "short_name": "Tomorrow",
       "description": "View weather information for tomorrow",
       "url": "/tomorrow?source=pwa",
-      "icons": [{ "src": "/images/tomorrow.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/images/tomorrow.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ],
   "description": "Weather forecast information",
@@ -83,7 +93,62 @@ suggests the extension should be `.webmanifest`, but browsers also support
       "type": "image/jpg",
       "sizes": "540x720"
     }
-  ]
+  ],
+  "translations": {
+    "de": {
+      "short_name": "Wetter",
+      "name": "Wetter: Brauche ich heute einen Regenschirm?",
+      "icons": [
+        {
+          "src": "/images/icons-192-de.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "/images/icons-512-de.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        }
+      ],
+      "shortcuts": [
+        {
+          "name": "Wie wird das Wetter heute?",
+          "short_name": "Heute",
+          "description": "Wetterinformationen für heute",
+          "icons": [
+            {
+              "src": "/images/today-de.png",
+              "sizes": "192x192"
+            }
+          ]
+        },
+        {
+          "name": "Wie wird das Wetter morgen?",
+          "short_name": "Morgen",
+          "description": "Wetterinformationen für morgen",
+          "icons": [
+            {
+              "src": "/images/tomorrow-de.png",
+              "sizes": "192x192"
+            }
+          ]
+        }
+      ],
+      "description": "Wetterberichte",
+      "screenshots": [
+        {
+          "src": "/images/screenshot1-de.png",
+          "type": "image/png",
+          "sizes": "540x720"
+        },
+        {
+          "src": "/images/screenshot2-de.jpg",
+          "type": "image/jpg",
+          "sizes": "540x720"
+        }
+      ]
+    }
+  }
 }
 ```
 
@@ -308,6 +373,29 @@ In Chrome, the image must respond to certain criteria:
 {% Aside 'gotchas' %}
 The `description` and `screenshots` properties are currently used only in Chrome
 for Android when a user wants to install your app.
+{% endAside %}
+
+#### `translations` {: #translations }
+
+The `translations` property maps locale strings to objects containing the translations.
+When the browser language matches a language present in the translations entry, those
+fields can be used instead of the top-level fields. If none of the provided languages
+match, the top-level fields can be used. Check out the [example](#create) above to see
+how an application could provide a German translation of its manifest. The following
+properties are localizable:
+
+- `dir`
+- `name`
+- `short_name`
+- `description`
+- `icons`
+- `screenshots`
+- `shortcuts`
+
+{% Aside %}
+If your app supports many languages, the manifest file can become quite large and
+repetitive. A future extension of the spec might allow for providing a URL that points
+to a separate JSON file containing the translations.
 {% endAside %}
 
 ## Add the web app manifest to your pages {: #link-manifest }
