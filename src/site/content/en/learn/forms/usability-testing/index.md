@@ -25,8 +25,8 @@ First, you need to find people who can test your form.
 Ask family members, friends, and colleagues to test your form. 
 
 {% Aside %}
-Testing doesn't have to be complex. 
-To improve your forms you don't need a usability lab and complex reporting methodologies!
+Testing doesn't have to be difficult. To improve your forms you don't need a usability lab and 
+complex reporting methodologies!
 
 Testing with one single other person is likely to help you improve your forms. 
 Testing with two or more is even better. Take simple notes and make changes accordingly.

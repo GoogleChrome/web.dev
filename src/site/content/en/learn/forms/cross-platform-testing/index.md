@@ -4,11 +4,11 @@ description: >
   Ensure your form works with different devices, browsers, platforms, and different contexts.
 authors:
   - michaelscharnagl
-date: 2021-09-30
+date: 2021-11-03
 ---
 
 You can fill out a form in many ways.
-People use your form on their smartphone while standing in a crowded bus,
+People might use your form on their smartphone while standing in a crowded bus,
 or with a screen reader, or from an old laptop.
 Let's see how you can ensure your form works on different devices, and in different contexts.
 
@@ -91,7 +91,7 @@ Open
 on your phone and tap in the telephone number field.
 Notice that numbers are shown by default on the on-screen keyboard,
 along with other characters you may need for a telephone number.
-Use `type="tel"` to get an on-screen keyboard optimized for filling telephone numbers.
+Use `type="tel"` to get an on-screen keyboard optimized for entering telephone numbers.
 
 {% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/nX50IOaBUCP8mcHqr3CT.jpg",
 alt="Two screenshots of an input element with type='tel' on iOS and Android, showing how the type attribute changes the on-screen keyboard.", width="800", height="696" %}
@@ -100,8 +100,7 @@ Use a phone to [try it out for yourself](https://codepen.io/web-dot-dev/pen/88f1
 and see if you can easily enter every character needed to fill in a telephone number.
 If you're curious how the on-screen keyboard works for another `type`, try `type="email"` in the demo.
 
-{% Img src="image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/nX50IOaBUCP8mcHqr3CT.jpg",
-alt="Two screenshots of an input element with type='tel' on iOS and Android, showing how the type attribute changes the on-screen keyboard.", width="800", height="696" %}
+## Make sure form buttons aren't hidden
 
 Imagine that you filled out a long form,
 and you're ready to submit it. But where is the **Submit** button?
