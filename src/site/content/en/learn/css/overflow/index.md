@@ -152,11 +152,11 @@ Scroll bars take up space within the padding box and can compete for space if `i
 
 You may notice that some scrollers have a pull-to-refresh behavior and other special behaviors, especially when developing for mobile and hybrid applications. This scroll behavior happens on the root scroller. There is only ever one root scroller on a page. By default, the [documentElement](https://developer.mozilla.org/docs/Web/API/Document/documentElement) is the page's root scroller, however, by changing which element is the root scroller, the special behaviors can be applied to scrollers other than the documentElement, we call this new scroller the implicit root scroller.
 
-To create a root scroller, you can use something called *scroller promotion* by positioning a container as fixed, ensuring it covers the entire viewport and is z-index on top with a scroller. See how to create a root scroller [here](https://codepen.io/web-dot-dev/pen/dyzPzwz).
+To create a root scroller, you can use something called *scroller promotion* by positioning a container as fixed, ensuring it covers the entire viewport and is z-index on top with a scroller. Experience a root scroller vs a nested implicit scroller [here](https://cdpn.io/web-dot-dev/debug/dyzPzwz).
 
 <figure class="w-figure">
   {% Video
-    src="video/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/xiuLMQBtTCQ5prev1nMQ.mp4",
+    src="video/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/sn1cOusFy18gRkZroAET.mp4",
     autoplay="true",
     loop="true",
     width="380",
@@ -175,7 +175,7 @@ To create a root scroller, you can use something called *scroller promotion* by 
 This is especially useful when used with [prefers-reduced-motion](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion) to specify scroll behavior based on user preference.
 
 ```css
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: no-preference) {
   .scroll-view {
     scroll-behavior: auto;
   }
