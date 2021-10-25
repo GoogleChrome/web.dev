@@ -1,7 +1,7 @@
 ---
 title: Form attributes in depth
 description: >
-  Learn all about form attributes, how to modify the layout of on-screen keyboards, activate built-in validation, and more.
+  Learn all about form attributes: how to modify the layout of on-screen keyboards, activate built-in validation, and more.
 authors:
   - michaelscharnagl
 date: 2021-11-03
@@ -14,7 +14,7 @@ HTML element attributes can enhance your `<form>` and form controls.
 To make it easier for users to fill out forms, 
 use an appropriate `type` attribute for your `<input>` elements. 
 
-Browsers display a user interface as appropriate for the `type`, 
+Browsers display a user interface appropriate for the `type`, 
 such as a date picker for an `<input>` of type `date`. 
 Browsers on mobile devices show an adapted on-screen keyboard, 
 such as a telephone number keypad for `type="tel"`.
@@ -29,12 +29,13 @@ The first option is to use the `type` attribute, as mentioned above.
 
 Another option is the `inputmode` attribute supported on 
 [Android and iOS](https://caniuse.com/?search=inputmode). 
-In contrast to the `type` attribute, the `inputmode` attribute only affects the appearance of the on-screen keyboard. 
-A good option if you want to keep the default user interface and the default validation rules of an `<input>`, 
-but still want an optimized on-screen keyboard.
+In contrast to the `type` attribute, the `inputmode` attribute only changes the on-screen keyboard 
+provided, not the behavior of the element itself. Using `inputmode` is a good option if you want to 
+keep the default user interface and the default validation rules of an `<input>`, but still want an 
+optimized on-screen keyboard.
 
 {% Aside 'caution' %}
-Use `type="number"` only for incremental fields, for example, the quantity of a product. 
+Use `type="number"` only for incremental fields such as the quantity of a product. 
 Browsers show an up/down arrow for `type="number"` which makes no sense for telephone numbers, 
 payment card or account numbers. 
 For telephone numbers, use `type="tel"`. For other numbers, use `inputmode="numeric` to get a numeric on-screen keyboard.
@@ -44,7 +45,7 @@ For telephone numbers, use `type="tel"`. For other numbers, use `inputmode="nume
 alt="Two screenshots of Android phones, showing a keyboard appropriate for entering an email addresses (using type=email) and for entering a telephone number (with type=tel).", width="800", height="696" %}
 
 You can change the `Enter` key on on-screen keyboards with the `enterkeyhint` attribute. 
-For example, `enterkeyhint="'next"` or `enterkeyhint="done"` changes the button label to an appropriate icon. 
+For example, `enterkeyhint="next"` or `enterkeyhint="done"` changes the button label to an appropriate icon. 
 This helps make it clearer for users what happens when they submit the current form.
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/QoY8Oynpw0CqjPACtCdG.png",
@@ -61,9 +62,12 @@ Say, you fill out a `<form>`, click the **Submit** button, but nothing happens.
 The issue may be that the button has been disabled with the `disabled` attribute. 
 It's a common pattern to disable the **Submit** button until the form is valid.
 
-In theory, this sounds sensible, but you shouldn't disable a **Submit** button while waiting on complete and valid user input. 
-However, you may disable the **Submit** button once a user has tapped or clicked on it and the form is not yet processed. 
-Learn more about [disabled buttons](https://www.smashingmagazine.com/2021/08/frustrating-design-patterns-disabled-buttons/#when-disabled-buttons-and-states-work-well).
+In theory this sounds sensible, but you shouldn't disable a **Submit** button while waiting on 
+complete and valid user input. Instead, highlight invalid data when it's entered, and highlight 
+problematic fields to the user when they submit the form. 
+
+However, you may want to disable the **Submit** button once the form is successfully submitted, but 
+not yet processed. Learn more about [disabled buttons](https://www.smashingmagazine.com/2021/08/frustrating-design-patterns-disabled-buttons/#when-disabled-buttons-and-states-work-well).
 
 ## Help users by showing the data they previously entered
 
@@ -87,7 +91,7 @@ and using `getAttribute()` always returns the initial value.
 [Try it out](https://codepen.io/web-dot-dev/pen/20359edfc39a65c291c3c186a33ab0db?editors=0011)! 
 Change the text of the name field and watch the console. 
 Notice how the `value` property returns the currently visible text, 
-while `getAttribute('value')` always returns the inital value.
+while `getAttribute('value')` always returns the initial value.
 
 Learn more about the difference between 
 [DOM attributes and DOM properties](https://stackoverflow.com/questions/6003819/what-is-the-difference-between-properties-and-attributes-in-html/6004028#6004028).
@@ -112,7 +116,7 @@ The value of the `placeholder` attribute is a hint for what kind of information 
 <input type="text" name="name" id="name" placeholder="Karin">
 ```
 
-This may confuser users, 
+This may confuse users, 
 as it may seem illogical why a form control appears to be already prefilled. 
 In addition, adding a placeholder can make it difficult to see which form fields still need to be completed. 
 Furthermore, the default style of placeholder text can be hard to read.
@@ -143,6 +147,8 @@ use the `minlength` attribute.
 To disallow any value with more than a maximum number of characters, 
 use the `maxlength` attribute. 
 For numeric input types such as `<input type="number">`, use the `min` and `max` attribute instead.
+
+Find out more about validation: [Help users enter the right data in forms](/learn/forms/validation/).
 
 {% Assessment 'attributes' %}
 

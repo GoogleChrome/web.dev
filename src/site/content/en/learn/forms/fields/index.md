@@ -114,14 +114,12 @@ Use a `<select>` element, `<datalist>` element,
 
 ### Ensure users can fill in different types of data
 
-There are even more input types you can use for specific use cases.
+There are more input types for specific use cases.
 
-There is an `<input>` of type `color`, offering users a color picker in supported browsers, 
-and various other types.
-
-To ensure users can enter their password, 
-use `<input>` with `type="password"`. 
-Every character entered is obscured by an asterisk ("*") or a dot ("•"), to ensure the password can't be read. 
+There is an `<input>` of type `color` to provide users with a color picker in supported browsers, 
+and there are various other types as well. To ensure users can enter their password, use `<input>` 
+with `type="password"`. Every character entered is obscured by an asterisk ("*") or a dot ("•"), 
+to ensure the password can't be read. 
 
 Do you want to include a unique security token in the form data? 
 Use `<input>` with `type="hidden"`. 
@@ -147,10 +145,10 @@ where no built-in element or type is suitable.
 
 ## Help users fill out your form
 
-There are many form elements and types, but when do you choose which?
+There are many form elements and types, but which one should you choose?
 
 For some use cases, it's straightforward to choose the appropriate element and type, 
-such as `<input type="date">`. For others, it depends. 
+such as `<input type="date">`. For others, it depends. 
 For example, you can use multiple `<input>` elements with `type="checkbox"` or a `<select>` element. 
 Learn more about [choosing between listboxes and dropdown lists](https://www.nngroup.com/articles/listbox-dropdown/).
 
