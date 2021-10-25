@@ -66,7 +66,7 @@ The Display P3 Canvas API is being further built upon to enable [high dynamic ra
 
 Photoshop is a famously large and feature-rich application, with hundreds of UI elements supporting dozens of workflows. The app is built by multiple teams using a variety of tools and development practices, but its disparate parts need to come together into a cohesive, high-performing whole.
 
-To meet this challenge, Adobe turned to [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) and the [Lit library](https://lit.dev). Photoshop's UI elements come from Adobe's [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) library, a lightweight, performant implementation of the Adobe design system that works with any framework, or no framework at all.
+To meet this challenge, Adobe turned to [Web Components](https://developer.mozilla.org/docs/Web/Web_Components) and the [Lit library](https://lit.dev). Photoshop's UI elements come from Adobe's [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) library, a lightweight, performant implementation of the Adobe design system that works with any framework, or no framework at all.
 
 What's more, the entire Photoshop app is built using Lit-based Web Components. Leaning on the browser's built-in component model and Shadow DOM encapsulation, the team found it easy to cleanly integrate a few "islands" of React code provided by other Adobe teams.
 
