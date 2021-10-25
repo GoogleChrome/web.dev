@@ -55,7 +55,7 @@ Be sure to check out the [authoritative guide on how to utilize WebAssembly Debu
 
 ## High performance storage
 
-Given how large Photoshop documents can be, a critical need for Photoshop is the ability to dynamically move data from on-disk to in-memory as the user pans around. On other platforms, this is accomplished usually through memory mapping via [`mmap`](https://en.wikipedia.org/wiki/Mmap), but this hasn't been performantly possible on the web—that is until origin private file system access handles were developed and shipped! You can read how to leverage this new API [in the documentation](https://web.dev/file-system-access/#accessing-files-optimized-for-performance-from-the-origin-private-file-system). Adobe also reached out to Apple and Mozilla to advocate for the API, and Safari is planning to ship it.
+Given how large Photoshop documents can be, a critical need for Photoshop is the ability to dynamically move data from on-disk to in-memory as the user pans around. On other platforms, this is accomplished usually through memory mapping via [`mmap`](https://en.wikipedia.org/wiki/Mmap), but this hasn't been performantly possible on the web—that is until origin private file system access handles were developed and shipped! You can read how to leverage this new API [in the documentation](https://web.dev/file-system-access/#accessing-files-optimized-for-performance-from-the-origin-private-file-system).
 
 ## P3 color space for canvas
 
@@ -75,3 +75,5 @@ What's more, the entire Photoshop app is built using Lit-based Web Components. L
 The launch of the Photoshop beta is just the beginning, and we've got several performance and feature improvements already underway as Photoshop tracks towards their full launch after this beta. Adobe isn't stopping with Photoshop and plans to aggressively expand [Creative Cloud](https://www.adobe.com/creativecloud.html) to the web, making it a primary platform for both creative content creation and collaboration. This will enable millions of first-time creators to tell their story and benefit from innovative workflows on the web.
 
 As Adobe continues to push the boundaries of what's possible, the Chrome team will continue our collaboration to drive the web forward for Adobe and the vibrant web developer ecosystem in general. As other browsers also catch up on these modern browser capabilities, we're excited to see Adobe make their products available there as well. Stay tuned for future updates as we continue to push the web forward!
+
+You can learn more about accessing Photoshop on the web (beta) in the [Adobe Help Center](https://helpx.adobe.com/photoshop/using/photoshop-web-faq.html).
