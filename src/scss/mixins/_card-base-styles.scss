@@ -36,7 +36,8 @@
     border-color: get-utility-value('bg', 'mid-bg');
   }
 
-  &:link {
+  &:link,
+  &:visited {
     @include apply-utility('color', 'core-text');
   }
 
