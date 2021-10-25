@@ -70,10 +70,6 @@ To meet this challenge, Adobe turned to [Web Components](https://developer.mozil
 
 What's more, the entire Photoshop app is built using Lit-based Web Components. Leaning on the browser's built-in component model and Shadow DOM encapsulation, the team found it easy to cleanly integrate a few "islands" of React code provided by other Adobe teams.
 
-## Trying out Adobe Photoshop on the web
-
-If you have a [Photoshop subscription](https://www.adobe.com/products/photoshop/pricing-info.html), be sure to try out the beta on the [Adobe Photoshop](https://photoshop.adobe.com/) landing page and let Adobe know about your experience in the [community forum](https://community.adobe.com/t5/photoshop-beta/ct-p/ct-photoshop-beta?page=1&sort=latest_replies&tabid=all&profile.language=en).
-
 ## What's next for Adobe on the web
 
 The launch of the Photoshop beta is just the beginning, and we've got several performance and feature improvements already underway as Photoshop tracks towards their full launch after this beta. Adobe isn't stopping with Photoshop and plans to aggressively expand [Creative Cloud](https://www.adobe.com/creativecloud.html) to the web, making it a primary platform for both creative content creation and collaboration. This will enable millions of first-time creators to tell their story and benefit from innovative workflows on the web.
