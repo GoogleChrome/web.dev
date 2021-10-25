@@ -74,7 +74,7 @@ to help users understand which elements belong together.
 The `margin` CSS property increases space between elements, 
 and the `padding` property increases space around the element's content.
 
-For the general layout, use [Flexbox](https://web.dev/learn/css/flexbox/) or [Grid](https://web.dev/learn/css/grid/). 
+For the general layout, use [Flexbox](/learn/css/flexbox/) or [Grid](/learn/css/grid/). 
 Learn more about [CSS layout methods](/learn/css/layout/).
 
 ## Ensure form controls look like form controls
