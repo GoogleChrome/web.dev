@@ -118,7 +118,8 @@ function Aside(content, type = 'note') {
 ${
   title.length
     ? `<p class="cluster ${utilities.title}">
-${getIcon()}<strong>${title}</strong></p>`
+<span class="aside__icon box-block ${utilities.icon}">${getIcon()}</span>
+<strong>${title}</strong></p>`
     : ''
 }
 <div class="${utilities.body} flow">

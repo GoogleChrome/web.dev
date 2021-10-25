@@ -243,7 +243,7 @@ patterns:
             {# Don't display draft suite cards in prod, and don't display
               sets that have a parent suite #}
           {% else %}
-          <a href="/patterns/{{ set.id }}"" class="card">
+          <a href="/patterns/{{ set.id }}" class="card">
             {% Img src=set.hero, alt=set.title, width="354", height="240", params={fit: 'center', h: '240', w: '354'} %}
             <div class="card__content flow gap-top-size-2">
               <h3 class="card__heading text-size-3">{{ set.title }}</h3>
@@ -255,5 +255,6 @@ patterns:
       </div>
     </div>
   </div>
+  {% include 'partials/subscribe-next.njk' %}
 </div>
 
