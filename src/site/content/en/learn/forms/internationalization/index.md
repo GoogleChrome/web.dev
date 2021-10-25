@@ -107,8 +107,9 @@ Learn more about [logical properties](/learn/css/logical-properties/).
 Say you have a form where the user should fill in their name.
 How would you add the field to your form?
 
-You could add one field for the first name and one for the surname. However, some people have a 
-single name, or don't use only a first name and surname—so how should they fill in the surname field?
+You could add one field for the first name and one for the surname. However, names are different 
+around the world: for example, some people don't have a surname—so how should they fill in the 
+surname field?
 
 To make it quick and easy to enter names—and to ensure everybody can enter their name, whatever the 
 format—use a single form field for names wherever possible.
