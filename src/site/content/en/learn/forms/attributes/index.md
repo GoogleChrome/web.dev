@@ -4,7 +4,7 @@ description: >
   Learn all about form attributes, how to modify the layout of on-screen keyboards, activate built-in validation, and more.
 authors:
   - michaelscharnagl
-date: 2021-10-07
+date: 2021-11-03
 ---
 
 HTML element attributes can enhance your `<form>` and form controls.
