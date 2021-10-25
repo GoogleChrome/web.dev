@@ -1,0 +1,27 @@
+<div class="homepage__section bg-core-bg">
+  <div class="wrapper">
+    <div class="headline all-center flow">
+      <h2 class="headline__title">{{ patterns.title }}</h2>
+      <p>{{ patterns.summary }}</p>
+      <div class="headline__action">
+        <a href="/patterns/">{{ 'i18n.common.see_all' | i18n(locale) }}</a>
+      </div>
+    </div>
+    <div class="homepage__patterns cluster gap-top-size-3"> 
+      {% for setId, set in patterns.sets %}
+        {% if (site.env == 'prod' and set.draft) or set.suite %}
+          {# Don't display draft suite cards in prod, and don't display
+            sets that have a parent suite #}
+        {% else %}
+        <a href="/patterns/{{ set.id }}" class="card">
+          {% Img src=set.hero, alt=set.title, width="354", height="240", params={fit: 'center', h: '240', w: '354'} %}
+          <div class="card__content flow gap-top-size-2">
+            <h3 class="card__heading text-size-3">{{ set.title }}</h3>
+            <p class="color-mid-text">{{ set.description }}</p>
+          </div>
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+{% if event %}
+  <article class="hero" data-type="event">
+    <div class="wrapper">
+      <div class="hero__columns flex-dir-rev switcher">
+        <div>
+          <span aria-hidden="true" class="hero__eyebrow">{{ event.eyebrow }}</span>
+          <div class="hero__content flow">
+            <h2 class="hero__title">{{ event.title }}</h2>
+            {{ event.summary | md | safe }}
+            <div class="cluster gutter-base flow-space-size-2">
+              <a class="button" data-type="primary" href="{{ event.primarybuttonurl }}">{{ event.primarybuttontext }}</a>
+              <a class="button" data-type="secondary" href="{{ event.secondarybuttonurl }}">{{ event.secondarybuttontext }}</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="{{ event.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ event.imagewidth }}" height="{{ event.imageheight }}" />
+        </div>
+      </div>
+    </div>
+  </article>
+{% endif %}

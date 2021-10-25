@@ -1,18 +1,30 @@
-<div class="homepage__shows gap-top-size-3">
-  <a class="homepage__show" href="https://web.dev/shows/designing-in-the-browser/">
-    {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/XXZm5qRstbVipZB9op3U.jpg", alt="Designer Vs Developer artwork", width="800", height="947", loading="lazy", class="homepage__show-bg" %}
-    <div class="flow t-color-shades-light-bright">
-      <p>Show</p>
-      <h3 class="text-size-4">Designing in the browser</h3>
-      <p>Designing in the Browser explores the intersection of design and front-end development, teaching you how to build beautiful UIs with modern web standards in mind.</p>
+<div class="homepage__section bg-core-bg">
+  <div class="wrapper">
+    <div class="headline all-center flow">
+      <h2 class="headline__title">{{ podcasts.title }}</h2>
+      <p>{{ podcasts.summary }}</p>
+      <div class="headline__action">
+        <a href="/podcasts/">{{ 'i18n.common.see_all' | i18n(locale) }}</a>
+      </div>
     </div>
-  </a>
-  <a class="homepage__show" href="https://pod.link/thecsspodcast">
-    {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ipfeeYVWUsDER4LRnUkf.jpg", alt="Designer Vs Developer artwork", width="800", height="947", loading="lazy", class="homepage__show-bg" %}
-    <div class="flow t-color-shades-light-bright">
-      <p>Podcast</p>
-      <h3 class="text-size-4">The CSS Podcast</h3>
-      <p>Cascading Style Sheets (CSS) is the web’s core styling language. For web developers, It’s one of the quickest technologies to get started.</p>
+    <div class="homepage__shows gap-top-size-3">
+      <a class="homepage__show" href="https://web.dev/shows/designing-in-the-browser/">
+        {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/XXZm5qRstbVipZB9op3U.jpg", alt="Designer Vs Developer artwork", width="800", height="947", loading="lazy", class="homepage__show-bg" %}
+        <div class="flow t-color-shades-light-bright">
+          <p>Show</p>
+          <h3 class="text-size-4">Designing in the browser</h3>
+          <p>Designing in the Browser explores the intersection of design and front-end development, teaching you how to build beautiful UIs with modern web standards in mind.</p>
+        </div>
+      </a>
+      <a class="homepage__show" href="https://pod.link/thecsspodcast">
+        {% Img src="image/VbAJIREinuYvovrBzzvEyZOpw5w1/ipfeeYVWUsDER4LRnUkf.jpg", alt="Designer Vs Developer artwork", width="800", height="947", loading="lazy", class="homepage__show-bg" %}
+        <div class="flow t-color-shades-light-bright">
+          <p>Podcast</p>
+          <h3 class="text-size-4">The CSS Podcast</h3>
+          <p>Cascading Style Sheets (CSS) is the web’s core styling language. For web developers, It’s one of the quickest technologies to get started.</p>
+        </div>
+      </a>
     </div>
-  </a>
+  </div>
 </div>
+
