@@ -62,6 +62,7 @@
     "image-size": "^0.9.3",
     "iso-639-1": "^2.1.0",
     "js-cookie": "^2.2.1",
+    "lighthouse-viewer": "^0.1.19",
     "lit-element": "^2.2.0",
     "lit-html": "^1.2.1",
     "lodash.get": "^4.4.2",

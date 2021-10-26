@@ -7,7 +7,7 @@ renderData:
     id: https://web.dev/
     logo: https://web.dev/images/shared/rss-banner.png
     subtitle: "{{ paged.description | i18n(locale) }}"
-    title: "{{ paged.title | i18n(locale) }} on web.dev"
+    title: "{{ paged.overrideTitle or paged.title | i18n(locale) }} on web.dev"
     url: https://web.dev{{ paged.href }}feed.xml
 noindex: true
 permalink: "/{{lang}}{{ paged.href }}feed.xml"

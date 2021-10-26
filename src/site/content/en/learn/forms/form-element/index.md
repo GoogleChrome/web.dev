@@ -52,7 +52,7 @@ Find out more: [Secure connections with HTTPS](/secure/#secure-connections-with-
 
 ## Where is the data processed?
 
-When the form is submitted (for example, when the user clicks the **Submit** button),
+When a form is submitted (for example, when the user clicks the **Submit** button),
 the browser makes a request.
 A script can respond to that request and process the data.
 
@@ -90,7 +90,7 @@ and process data from the form.
 
 By default, form data is sent as a `GET` request,
 with the submitted data appended to the URL.
-If a user submits 'frog' in the example above, this results in a request to this URL:
+If a user submits 'frog' in the example above, the browser makes a request to the following URL:
 
 ```html
 https://example.com/animals?animal=frog
@@ -103,7 +103,7 @@ If you want, you can instruct the form to use a `POST` request by changing the m
 ```html
 <form method="post">
 ...
-</form
+</form>
 ```
 
 Using `POST`, the data is included in the
@@ -123,8 +123,8 @@ If the data is shareable, you can use the `GET` method.
 This way the data will be added to your browser history as it is included in the URL.
 Search forms often use this. This way you can bookmark a search result page.
 
-Now that you have learned about the form element itself,
-it is time to learn about [form fields](/learn/forms/form-fields) to make the form interactive.
+Now that you've learned about the form element itself, it's time to learn about 
+[form fields](/learn/forms/form-fields) to make your forms interactive.
 
 {% Assessment 'form-element' %}
 

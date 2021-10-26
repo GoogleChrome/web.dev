@@ -4,7 +4,7 @@ description: >
   An overview of the various form elements you can choose from to build your form.
 authors:
   - michaelscharnagl
-date: 2021-09-06
+date: 2021-10-18
 ---
 
 To make a form interactive, you need to add form elements.
@@ -49,12 +49,12 @@ To describe form controls, use a `<label>` for each form control.
 The `for` attribute on the label element matches the `id` attribute on the input.
 
 {% Aside %}
-Connect every form control with a `<label>` element,
-rather than adding instruction text using some other HTML element.
-This makes the form control accessible to screen readers.
-It also provides a bigger target, since you can tap or click the label to set focus on the control.
+Describe every form control with a `<label>` rather than using some other HTML element.
+This makes the form control accessible to screen readers, and provides a bigger target, since you 
+can tap or click the label to set focus on the control.
 
-[Click the label](https://codepen.io/web-dot-dev/pen/3ce69644635734a084f45350993f4170) to try this out.
+[Click the label](https://codepen.io/web-dot-dev/pen/3ce69644635734a084f45350993f4170) in our demo 
+to try this out.
 {% endAside %}
 
 ## Capturing user input {: #input}
@@ -78,15 +78,15 @@ the request includes this information as `mountain=Gutenberg`.
 
 [Try to change](https://codepen.io/web-dot-dev/pen/a9ec1be360c53c5284da27a92fbd7248)
 the name of the form control to `hill`.
-If you did it right and submit the form, `hill` is visible in the URL.
+If you do this correctly, and submit the form, `hill` is visible in the URL.
 
 ### The input type {: #type}
 
 There are different
-[types of form controls](https://developer.mozilla.org/docs/Web/HTML/Element/input#input_types).
-Based on the `type` attribute, the browser renders different user interfaces,
-shows different on-screen keyboards, uses different validation rules, and more.
-Let's see how to change the type.
+[types of form controls](https://developer.mozilla.org/docs/Web/HTML/Element/input#input_types), all 
+with useful built-in features that work across different browsers and platforms. Based on the `type` 
+attribute, the browser renders different user interfaces, shows different on-screen keyboards, uses 
+different validation rules, and more. Let's see how to change the type.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -99,8 +99,8 @@ The checkbox also comes with additional attributes.
 You can set the `selected` attribute, to show it as selected.
 
 {% Aside %}
-The default value for type is text.
-If you want a text input, you can also completely remove the type attribute.
+The default value for `type` is `text`. This means that if you simply want a text `<input>`, you can 
+leave out the `type` attribute.
 {% endAside %}
 
 There are various other [types](/learn/forms/fields) you can choose.
@@ -120,11 +120,11 @@ This is the purpose of the `<textarea>` element.
 ## Pick from a list of options
 
 How do you give users a list of options to select from?
-You can use a `select` element to achieve this.
+You can use a `<select>` element to achieve this.
 
 {% Aside %}
-If you want a text input with additional predefined options,
-you can also use an `input` element together with the
+If you want to enable text input with additional predefined options,
+you can also use an `<input>` element together with the 
 [datalist element](https://developer.mozilla.org/docs/Web/HTML/Element/datalist).
 You can try out datalist examples [here](https://simpl.info/datalist/).
 {% endAside %}
@@ -151,7 +151,7 @@ If you submit the form using this `<select>` without changing the selection,
 the request will include `color=orange`. But how does the browser know which option should be used?
 
 The browser uses the first option in the list, unless:
-- One option has the `selected` attribute.
+- One `<option>` element has the `selected` attribute.
 - The user chooses another option.
 
 {% Codepen {
@@ -163,7 +163,7 @@ The browser uses the first option in the list, unless:
 ## Pre-select an option
 
 With the `selected` attribute you can pre-select one option.
-This becomes the default, regardless of the order in which option elements are defined.
+This becomes the default, regardless of the order in which `<option>` elements are defined.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -189,11 +189,11 @@ Sometimes you need to group form controls. You can use the `<fieldset>` element 
 ```
 Did you notice the `<legend>` element inside the `<fieldset>` element? What do you think it is used for?
 
-If your answer is to describe the group of form controls, you're right.
+If your answer is "to describe the group of form controls", you're right!
 
 Every `<fieldset>` element requires a `<legend>` element,
 just as every form control needs an associated `<label>` element.
-It also has to be the very first element in the `<fieldset>`.
+The `<legend>` also has to be the very first element in the `<fieldset>`.
 After the `<legend>` element, you can define the form controls which should be part of the group.
 
 ## Submitting a form
@@ -207,35 +207,36 @@ The first option is to use a `<button>` element.
 ```
 
 After a user clicks the **Submit** button,
-the browser makes a request to the URL specified in the form element's
+the browser makes a request to the URL specified in the `<form>` element's
 [action attribute](/learn/forms/form-element#where-is-the-data-processed)
 with all data from the form controls.
 
 {% Aside 'warning' %}
 Every `<button>` element inside a form works as a **Submit** button by default.
-Sometimes you don't want this, for example,
+
+Sometimes you don't want this: for example,
 when using a `<button>` to toggle visibility for a password field.
-To disable the default behavior, you can add `type="button"` to the `<button>`.
+To disable the default **Submit** behavior, you can add `type="button"` to the `<button>`.
 This tells the browser that the `<button>` should not submit the form.
 {% endAside %}
 
 You can also use an `<input>` element with `type="submit"` instead of a `<button>` element.
-The input renders like a button.
-Instead of using a label element to describe the input, use the `value` attribute to label the button.
+The input looks and behaves just like a `<button>`. Instead of using a `<label>` element to describe 
+the `<input>`, use the `value` attribute instead.
 
 ```html
 <input type="submit" value="Submit">
 ```
 
-In addition, a form can also be submitted by using the `ENTER` key when a form field has focus. 
+In addition, a form can also be submitted by using the `Enter` key when a form field has focus. 
 
 {% Assessment 'form-fields' %}
 
 ## Resources
 
-- [The label element.](https://developer.mozilla.org/docs/Web/HTML/Element/label)
-- [The input element.](https://developer.mozilla.org/docs/Web/HTML/Element/input)
-- [The textarea element.](https://developer.mozilla.org/docs/Web/HTML/Element/textarea)
-- [The select element.](https://developer.mozilla.org/docs/Web/HTML/Element/select)
-- [The fieldset element.](https://developer.mozilla.org/docs/Web/HTML/Element/fieldset)
-- [The button element.](https://developer.mozilla.org/docs/Web/HTML/Element/button)
+- [The label element](https://developer.mozilla.org/docs/Web/HTML/Element/label)
+- [The input element](https://developer.mozilla.org/docs/Web/HTML/Element/input)
+- [The textarea element](https://developer.mozilla.org/docs/Web/HTML/Element/textarea)
+- [The select element](https://developer.mozilla.org/docs/Web/HTML/Element/select)
+- [The fieldset element](https://developer.mozilla.org/docs/Web/HTML/Element/fieldset)
+- [The button element](https://developer.mozilla.org/docs/Web/HTML/Element/button)

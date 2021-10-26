@@ -1,7 +1,7 @@
 {% from 'macros/icon.njk' import icon, svg with context %}
 
 <web-header class="cluster" role="navigation" style="--course-background: url('{{ courseData.meta.background }}')">
-  <button data-open-drawer-button class="fab tooltip" aria-label="{{ 'i18n.header.open_menu' | i18n(locale) }}">
+  <button data-open-drawer-button class="icon-button tooltip" data-alignment="right">
     {{ icon('menu') }}
     <span class="tooltip__content">{{ 'i18n.header.open_menu' | i18n(locale) }}</span>
   </button>

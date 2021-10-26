@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2021-09-24
+updated: 2021-10-18
 tags:
   - blog
   - capabilities
@@ -532,7 +532,7 @@ await root.removeEntry('Old Stuff', { recursive: true });
 
 ## Accessing files optimized for performance from the origin private file system
 
-The [Storage Foundation API](/storage-foundation/) API provides access to a special kind of file
+The origin private file system provides optional access to a special kind of file
 that is highly optimized for performance, for example, by offering in-place and exclusive write
 access to a file's content. There is an
 [origin trial](https://developer.chrome.com/origintrials/#/view_trial/3378825620434714625) starting
@@ -541,9 +541,6 @@ files can be accessed by exposing two new methods as part of the origin private 
 `createAccessHandle()` (asynchronous read and write operations) and `createSyncAccessHandle()`
 (synchronous read and write operations) that are both
 exposed on `FileSystemFileHandle`.
-
-{% Aside %} There exists no way of accessing a file stored through the Storage Foundation API using
-the Origin Private File System, and vice versa. {% endAside %}
 
 ```js
 // Asynchronous access in all contexts:

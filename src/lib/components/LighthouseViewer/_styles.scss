@@ -1,0 +1,83 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/tools/mixins';
+
+web-lighthouse-viewer {
+  display: block;
+  min-height: 45px;
+
+  .lh-root {
+    --report-background-color: transparent;
+    --score-icon-size: 12px;
+  }
+
+  .lh-topbar,
+  .lh-sticky-header {
+    display: none;
+  }
+
+  .lh-error-msg {
+    color: $RED_600;
+    max-width: 100%;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    margin: 6px 0;
+    height: 24px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      margin-right: 6px;
+    }
+  }
+
+  .lighthouse-viewer:empty {
+    padding: 0;
+  }
+
+  .lh-gauge__wrapper--average {
+    color: var(--color-average);
+  }
+  .lh-gauge__wrapper--fail {
+    color: var(--color-fail);
+  }
+  .lh-gauge__wrapper--pass {
+    color: var(--color-pass);
+  }
+
+  .lh-metricfilter__radio {
+    width: 0;
+  }
+
+  .lh-expandable-details {
+    padding: 0;
+    border-block: 0;
+  }
+
+  summary {
+    color: inherit;
+    font-size: inherit;
+
+    &::before,
+      &::after {
+      display: none;
+    }
+  }
+
+  code {
+    border: 0;
+  }
+
+  .lh-audit--fail {
+    --score-icon-size: 12px;
+  }
+
+  .lh-audit--informative {
+    --score-icon-size: 12px;
+  }
+
+  details.lh-clump {
+    border-block: 0;
+    padding: 0;
+  }
+}
