@@ -39,11 +39,11 @@ Emscripten is a fully-featured toolchain that not only helps you compile your C+
 
 Emscripten has been capable of bringing most parts of Photoshop to the web for a while, but it wasn't necessarily fast enough. We have continually worked with Adobe to figure out where bottlenecks are and improve Emscripten. Photoshop depends upon multithreading. Bringing dynamic [multithreading](https://emscripten.org/docs/porting/pthreads.html) to WebAssembly was a critical requirement.
 
-Also, exception-based error handling is very common in C++, but wasn't well supported in Emscripten and WebAssembly. We have worked with the [WebAssembly Working Group](https://www.w3.org/wasm/) in the W3C to improve the WebAssembly standard and the tooling around it to bring C++ exceptions to WebAssembly.
+Also, exception-based error handling is very common in C++, but wasn't well supported in Emscripten and WebAssembly. We have worked with the [WebAssembly Community Group](https://www.w3.org/community/webassembly/) in the W3C to improve the WebAssembly standard and the tooling around it to bring C++ exceptions to WebAssembly.
 
 Emscripten doesn't just work on large applications, but also lets you port libraries or smaller projects! For example, you can see [how you can compile the popular OpenCV library](https://docs.opencv.org/3.4/d4/da1/tutorial_js_setup.html) to the web through Emscripten.
 
-Lastly, WebAssembly offers advanced performance primitives such as [SIMD instructions](https://emscripten.org/docs/porting/simd.html) which dramatically improve your web app performance. For example, [Adobe Halide](https://halide-lang.org/) is essential to Adobe's performance, and here SIMD provides a 3–4× speedup on average and in some cases a 80–160× speedup.
+Lastly, WebAssembly offers advanced performance primitives such as [SIMD instructions](https://emscripten.org/docs/porting/simd.html) which dramatically improve your web app performance. For example, [Halide](https://halide-lang.org/) is essential to Adobe's performance, and here SIMD provides a 3–4× speedup on average and in some cases a 80–160× speedup.
 
 ## WebAssembly debugging
 
@@ -55,7 +55,7 @@ Be sure to check out the [authoritative guide on how to utilize WebAssembly Debu
 
 ## High performance storage
 
-Given how large Photoshop documents can be, a critical need for Photoshop is the ability to dynamically move data from on-disk to in-memory as the user pans around. On other platforms, this is accomplished usually through memory mapping via [`mmap`](https://en.wikipedia.org/wiki/Mmap), but this hasn't been performantly possible on the web—that is until origin private file system access handles were developed and shipped! You can read how to leverage this new API [in the documentation](https://web.dev/file-system-access/#accessing-files-optimized-for-performance-from-the-origin-private-file-system).
+Given how large Photoshop documents can be, a critical need for Photoshop is the ability to dynamically move data from on-disk to in-memory as the user pans around. On other platforms, this is accomplished usually through memory mapping via [`mmap`](https://en.wikipedia.org/wiki/Mmap), but this hasn't been performantly possible on the web—that is until origin private file system access handles were developed and implemented as an origin trial! You can read how to leverage this new API [in the documentation](https://web.dev/file-system-access/#accessing-files-optimized-for-performance-from-the-origin-private-file-system).
 
 ## P3 color space for canvas
 
