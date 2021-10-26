@@ -30,7 +30,7 @@ Images not only affect performance, but also business. The number of images on a
 
 1. **Unsized images hurt CLS**: Images served without their size specified can cause layout instability and contribute to a high Cumulative Layout Shift ([CLS](/cls/)). Setting the `width` and `height` attributes on [img](/patterns/web-vitals-patterns/images/img-tag/) elements can help to prevent layout shifts. For example:
 
-    ```
+    ```html
     <img src="flower.jpg" width="360" height="240">
     ```
 
@@ -41,7 +41,7 @@ Images not only affect performance, but also business. The number of images on a
 
 2. **Large images can hurt LCP**: The larger the file size of an image, the longer it will take to download. A large image could be the “hero” image for the page or the most significant element in the viewport responsible for triggering the Largest Contentful Paint ([LCP](/lcp/)). An image that is part of the critical content and takes a long time to download will delay the LCP. 
 
-    In many cases, developers can reduce image sizes through better compression and the use of [responsive](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#how_do_you_create_responsive_images) images. The `srcset` and `sizes` attributes of the `<img>` element help to provide image files with different sizes. The browser can then choose the right one depending on the screen size and resolution.
+    In many cases, developers can reduce image sizes through better compression and the use of [responsive](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#how_do_you_create_responsive_images) images. The `srcset` and `sizes` attributes of the `<img>` element help to provide image files with different sizes. The browser can then choose the right one depending on the screen size and resolution.
 
 3. **Poor image compression can hurt LCP: **Modern image formats like [AVIF](/compress-images-avif/) or [WebP](/serve-images-webp/) can provide better compression than commonly used JPEG and PNG formats. Better compression reduces the file size by 25% to 50% in some cases for the same quality of the image. This reduction leads to faster downloads with less data consumption. The app should [serve modern image formats](/uses-webp-images/) to browsers that support these formats.
 
@@ -62,7 +62,7 @@ Teams can evaluate the performance cost due to the issues listed previously and 
 
 4. **Markup overload**: Solutions for including the image size or `srcset` for different sizes require additional markup for every image, which can be tedious. The `srcset` attribute was introduced in 2014 but is [used by only 26.5%](https://almanac.httparchive.org/en/2020/media#srcset) of the websites today. When using `srcset`, developers have to create images in various sizes. Tools such as [just-gimme-an-img](https://just-gimme-an-img.vercel.app/) can help but have to be used manually for every image.
 
-5. **Browser support: **Modern image formats like AVIF and WebP create smaller image files but need special handling on browsers that don’t support them. Developers have to use strategies like [content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation) or the <code>[<picture>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)</code> element so that images are served to all browsers.
+5. **Browser support: **Modern image formats like AVIF and WebP create smaller image files but need special handling on browsers that don’t support them. Developers have to use strategies like [content negotiation](https://developer.mozilla.org/docs/Web/HTTP/Content_negotiation) or the <code>[<picture>](https://developer.mozilla.org/docs/Web/HTML/Element/picture)</code> element so that images are served to all browsers.
 
 6. <strong>Lazy loading complications</strong>: There are multiple techniques and libraries available to implement lazy-loading for below-the-fold images. Picking the best one can be a challenge. Developers may also not know the best distance from the “fold” to load deferred images. Different viewport sizes on devices can further complicate this.
 
@@ -76,7 +76,7 @@ The opportunities available to optimize images and the challenges in implementin
 Over the last year, we have worked with the [Next.js](https://nextjs.org/) framework to design and [implement](https://github.com/vercel/next.js/blob/canary/packages/next/client/image.tsx) their [Image component](https://nextjs.org/docs/api-reference/next/image). It can be used as a drop-in replacement for the existing `<img>` elements in Next.js apps as follows.
 
 
-```
+```js
 // Before with <img> element:
 
  function Logo() {
@@ -100,7 +100,7 @@ The component tries to address image-related problems generically through a rich
 As discussed previously, unsized images cause layout shifts and contribute to CLS. When using the Next.js Image component, developers _must_ provide an image size using the `width` and `height` attributes to prevent any layout shifts. If the size is unknown, developers must use [layout mode](https://nextjs.org/docs/api-reference/next/image#layout) = fill to serve an unsized image that sits inside a sized container. Alternatively you can use static image imports to retrieve the size of the actual image on the hard drive at build time and include it in the image.
 
 
-```
+```js
 // Image component with width and height specified
 <Image src="/logo.jpg" alt="logo" height="200" width="100" />
 
@@ -142,7 +142,7 @@ The following comparison shows how the layout mode can be used to control the si
    </thead>
    <tbody>
       <tr>
-         <td colspan="2" ><strong>Layout = Intrinsic: </strong>Scales down to fit the container's width on smaller viewports. Does not scale up beyond the image’s intrinsic size on a larger viewport. Container width is at 100%
+         <td colspan="2" ><strong>Layout = Intrinsic:</strong>Scales down to fit the container's width on smaller viewports. Does not scale up beyond the image’s intrinsic size on a larger viewport. Container width is at 100%
          </td>
       </tr>
       <tr>
@@ -154,7 +154,7 @@ The following comparison shows how the layout mode can be used to control the si
          </td>
       </tr>
       <tr>
-         <td colspan="2" ><strong>Layout - Fixed: </strong>Image is not responsive. Width and height are fixed similar to `<img>` element irrespective of the device where it is rendered.
+         <td colspan="2" ><strong>Layout - Fixed:</strong>Image is not responsive. Width and height are fixed similar to `<img>` element irrespective of the device where it is rendered.
          </td>
       </tr>
       <tr>
@@ -166,7 +166,7 @@ The following comparison shows how the layout mode can be used to control the si
          </td>
       </tr>
       <tr>
-         <td colspan="2" ><strong>Layout = Responsive: </strong>Scale down or scale up depending on the width of the container on different viewports, maintaining aspect ratio.
+         <td colspan="2" ><strong>Layout = Responsive:</strong>Scale down or scale up depending on the width of the container on different viewports, maintaining aspect ratio.
          </td>
       </tr>
       <tr>
@@ -178,7 +178,7 @@ The following comparison shows how the layout mode can be used to control the si
          </td>
       </tr>
       <tr>
-         <td colspan="2" ><strong>Layout = Fill: </strong>Width and height stretched to fill the parent container. (Parent `<div>` width is set to 300*500 in this example)
+         <td colspan="2" ><strong>Layout = Fill:</strong>Width and height stretched to fill the parent container. (Parent `<div>` width is set to 300*500 in this example)
          </td>
       </tr>
       <tr>
@@ -201,8 +201,8 @@ The Image component provides a built-in, performant [lazy loading](https://nextj
 
 
 
-1. Specify the [loading](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading) attribute: This is easy to implement but currently [unsupported](https://caniuse.com/?search=loading) on some browsers.
-2. Use the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API): Building a custom lazy-loading solution requires effort and a thoughtful design and implementation. Developers may not always have the time for this.
+1. Specify the [loading](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-loading) attribute: This is easy to implement but currently [unsupported](https://caniuse.com/?search=loading) on some browsers.
+2. Use the [Intersection Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API): Building a custom lazy-loading solution requires effort and a thoughtful design and implementation. Developers may not always have the time for this.
 3. Import a third-party library to lazy-load images: Additional effort may be required to evaluate and integrate a suitable third-party library for lazy loading.
 
 In the Next.js Image component, loading is set to “lazy” by default. Lazy loading is implemented using the IntersectionObserver which is [available on most modern browsers](https://caniuse.com/?search=IntersectionObserver).  Developers are not required to do anything extra to enable it. They can disable it if needed for specific images.
@@ -213,7 +213,7 @@ In the Next.js Image component, loading is set to “lazy” by default. Lazy lo
 Quite often, LCP elements are images, and large images can delay LCP. It is a good idea to [preload critical images](/preload-critical-assets/). When using an `<img>` element, the preload hint may be included in the HTML head as follows.
 
 
-```
+```html
 <link rel="preload" as="image" href="important.png">
 ```
 
@@ -223,7 +223,7 @@ Preload tells the browser to start loading the image as soon as possible.
 An image component provided by a particular framework allows the component to integrate intelligently in the loading sequence of that framework. In the case of the Next.js Image component, developers can indicate an image that is a good candidate for preload using the [priority](https://nextjs.org/docs/api-reference/next/image#priority) attribute of the images component. 
 
 
-```
+```html
 <Image src="/hero.jpg" alt="hero" height="400" width="200" priority />
 ```
 
@@ -238,7 +238,7 @@ Image CDNs work great for optimizing images and serving responsive images at the
 The Next.js Image component treats image CDN usage as the default, using a simple [loader architecture](https://nextjs.org/docs/api-reference/next/image#loader). The following example shows that the loader allows for configuration of the CDN in the Next.js config file.
 
 
-```
+```js
  module.exports = {
    images: {
      loader: 'imgix',
