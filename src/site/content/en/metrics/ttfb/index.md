@@ -13,7 +13,6 @@ tags:
   - web-vitals
 ---
 
-# Time to First Byte (TTFB)
 
 {% Aside %}
 Time to First Byte (TTFB) is a foundational metric for measuring connection setup time and web server responsiveness in both the lab and the field. It helps identify when a web server is too slow to respond to requests. In the case of navigation requests&mdash;that is, requests for an HTML document&mdash;it precedes every other meaningful loading performance metric.
@@ -26,7 +25,7 @@ TTFB is a metric that measures the time between the request for a resource and w
 <figure>
   {% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ccT8ltSPrTri3tz7AA3h.png", alt="A diagram of network request timings. The phases from left to right are Redirect (which overlaps with Prompt for Unload), Cache, DNS, TCP, Request, Response, Processing, and Load. The associated timings are redirectStart and redirectEnd (which overlap with the Prompt for Unload's unloadEventStart and unloadEventEnd), fetchStart, domainLookupStart, domainLookupEnd, connectStart, secureConnectionStart, connectEnd, requestStart, responseStart, responseEnd, domInteractive, domContentLoadedEventStart, domContentLoadedEventEnd, domComplete, loadEventStart, and loadEventEnd.", width="800", height="337" %}
   <figcaption>
-    A diagram of network request phases and their associated timings. TTFB measures the elapsed time between `startTime` and `responseStart`.
+    A diagram of network request phases and their associated timings. TTFB measures the elapsed time between <code>startTime</code> and <code>responseStart</code>.
   </figcaption>
 </figure>
 
@@ -131,9 +130,9 @@ Use the [Server-Timing API](https://developer.mozilla.org/docs/Web/HTTP/Headers/
 
 Other opportunities to improve high TTFB times and related perceptual delays include:
 
-- [Avoid multiple page redirects](/redirects/)
-- [Preconnect to required origins](/uses-rel-preconnect/) for cross-origin resources
-- Submit your origin to the [HSTS preload list](https://hstspreload.org/) to eliminate HTTP-to-HTTPS redirect latency
-- [Use HTTP/2](/uses-http2/) or [HTTP/3](https://en.wikipedia.org/wiki/HTTP/3)
-- Consider [predictive prefetching](/predictive-prefetching/) for fast page navigations for users who have not specified [a preference for reduced data usage](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-data)
-- Use server-side generation (SSG) for markup instead of SSR where possible and appropriate
+- [Avoid multiple page redirects](/redirects/).
+- [Preconnect to required origins](/uses-rel-preconnect/) for cross-origin resources.
+- Submit your origin to the [HSTS preload list](https://hstspreload.org/) to eliminate HTTP-to-HTTPS redirect latency.
+- [Use HTTP/2](/uses-http2/) or [HTTP/3](https://en.wikipedia.org/wiki/HTTP/3).
+- Consider [predictive prefetching](/predictive-prefetching/) for fast page navigations for users who have not specified [a preference for reduced data usage](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-data).
+- Use server-side generation (SSG) for markup instead of SSR where possible and appropriate.
