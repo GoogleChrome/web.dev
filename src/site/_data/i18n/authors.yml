@@ -3447,3 +3447,39 @@ patmeenan:
     pt: Nossas últimas notícias, atualizações e histórias por Patrick Meenan.
     ru: Последние новости и статьи от Patrick Meenan.
     zh: Patrick Meenan 撰写我们的最新资讯、动态和故事。
+
+karaerickson:
+  title:
+    en: Kara Erickson
+    es: Kara Erickson
+    ja: Kara Erickson
+    ko: Kara Erickson
+    pt: Kara Erickson
+    ru: Kara Erickson
+    zh: Kara Erickson
+  description:
+    en: Software Engineer on the Aurora team at Chrome.
+    es: Ingeniera de software en el equipo de Aurora en Chrome.
+    ja: ChromeのAuroraチームのソフトウェアエンジニア。
+    ko: Chrome에서 Aurora 팀의 소프트웨어 엔지니어입니다.
+    pt: Engenheiro de software da equipe Aurora no Chrome.
+    ru: Инженер-программист в команде Aurora в Chrome.
+    zh: Chrome 公司 Aurora 团队的软件工程师。
+
+alexcastle:
+  title:
+    en: Alex Castle
+    es: Alex Castle
+    ja: Alex Castle
+    ko: Alex Castle
+    pt: Alex Castle
+    ru: Alex Castle
+    zh: Alex Castle
+  description:
+    en: Software Engineer on the Aurora team at Chrome.
+    es: Ingeniero de software en el equipo de Aurora en Chrome.
+    ja: ChromeのAuroraチームのソフトウェアエンジニア。
+    ko: Chrome에서 Aurora 팀의 소프트웨어 엔지니어입니다.
+    pt: Engenheiro de software da equipe Aurora no Chrome.
+    ru: Инженер-программист в команде Aurora в Chrome.
+    zh: Chrome 公司 Aurora 团队的软件工程师。
