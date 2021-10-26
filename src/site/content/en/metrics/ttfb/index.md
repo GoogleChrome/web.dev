@@ -42,7 +42,7 @@ Reducing latency in connection setup time and on the backend will contribute to 
 
 ### What is a good TTFB score?
 
-Due to the wide variation of network and application backend stacks, an arbitrary number can't be placed on what consists of a "good" TTFB score. Because TTFB precedes [user-centric](/user-centric-performance-metrics/) metrics such as [First Contentful Paint (FCP)](/fcp/) and [Largest Contentful Paint (FCP)](/lcp/), it's recommended that your server responds to navigation requests quickly enough so that the **75th percentile** of users experience an [FCP within the "good" threshold](/fcp/#what-is-a-good-fcp-score).
+Due to the wide variation of network and application backend stacks, an arbitrary number can't be placed on what consists of a "good" TTFB score. Because TTFB precedes [user-centric metrics](/user-centric-performance-metrics/) such as [First Contentful Paint (FCP)](/fcp/) and [Largest Contentful Paint (FCP)](/lcp/), it's recommended that your server responds to navigation requests quickly enough so that the **75th percentile** of users experience an [FCP within the "good" threshold](/fcp/#what-is-a-good-fcp-score).
 
 ## How to measure TTFB
 
@@ -108,7 +108,7 @@ new PerformanceObserver((entryList) => {
 });
 ```
 
-The above code snippet is similar to the one used to measure the TTFB for a navigation request, except instead of querying for `'navigation'` entries, you query for `'resource'` entries instead. It also accounts for the fact that some resources loaded from the primary origin may return a value of `0`, since the connection is already open or instantaneously retrieved from a cache.
+The above code snippet is similar to the one used to measure the TTFB for a navigation request, except instead of querying for `'navigation'` entries, you query for `'resource'` entries instead. It also accounts for the fact that some resources loaded from the primary origin may return a value of `0`, since the connection is already open, or a resource is instantaneously retrieved from a cache.
 
 {% Aside 'gotchas' %}
 TTFB for cross-origin requests will not be measurable in the field if cross-origin servers fail to set a [`Timing-Allow-Origin` header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin).
@@ -122,13 +122,11 @@ TTFB for cross-origin requests will not be measurable in the field if cross-orig
 - Web servers with insufficient memory that can lead to [thrashing](https://en.wikipedia.org/wiki/Memory_paging#Thrashing)
 - Unoptimized database tables
 - Suboptimal database server configuration
-- Potentially costly application backend work, such as server-side rendering (SSR)
-- Use server-side generation (SSG) for markup instead of SSR where possible and appropriate
 
-Minimizing TTFB is often done by choosing a suitable hosting provider with infrastructure to ensure high uptime and responsiveness. This, in combination with a CDN, can help.
+Minimizing TTFB is often done by choosing a suitable hosting provider with infrastructure to ensure high uptime and responsiveness. This&mdash;in combination with a CDN&mdash;can help.
 
 {% Aside %}
-Use the [Server-Timing API](https://developer.mozilla.org/docs/Web/HTTP/Headers/Server-Timing) to gather additional field data on the performance of various application backend processes. This can help identify opportunities for improvement you might otherwise miss.
+Use the [Server-Timing API](https://developer.mozilla.org/docs/Web/HTTP/Headers/Server-Timing) to gather additional field data on the performance of application backend processes. This can help identify opportunities for improvements that might otherwise go unnoticed.
 {% endAside %}
 
 Other opportunities to improve high TTFB times and related perceptual delays include:
@@ -138,3 +136,4 @@ Other opportunities to improve high TTFB times and related perceptual delays inc
 - Submit your origin to the [HSTS preload list](https://hstspreload.org/) to eliminate HTTP-to-HTTPS redirect latency
 - [Use HTTP/2](/uses-http2/) or [HTTP/3](https://en.wikipedia.org/wiki/HTTP/3)
 - Consider [predictive prefetching](/predictive-prefetching/) for fast page navigations for users who have not specified [a preference for reduced data usage](https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-data)
+- Use server-side generation (SSG) for markup instead of SSR where possible and appropriate
