@@ -48,7 +48,7 @@ class LearnFilter extends BaseElement {
     const filtersMap = (filter) =>
       html`<button
         class="pill"
-        data-state="${this.active === filter.id ? 'active' : 'inactive'}
+        data-state="${this.active === filter.id ? 'active' : 'inactive'}"
         type="button"
         @click="${() => this.setActive(filter.id)}"
       >
