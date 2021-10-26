@@ -2,7 +2,7 @@
 /// https://web.dev/design-system/component/feature-card
 .feature-card {
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 16/9;
   justify-content: space-between;
 
   @include card-base-styles();
@@ -44,12 +44,5 @@
   &:link,
   &:visited {
     color: get-color('shades-light-bright');
-  }
-}
-
-/// RESPONSIVE ADJUSTMENTS
-@include media-query('md') {
-  .feature-card {
-    aspect-ratio: 16/9;
   }
 }

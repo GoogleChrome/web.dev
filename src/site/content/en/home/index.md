@@ -14,10 +14,10 @@ intro:
   imageHeight: '210'
   featureCards:
     - theme: 'dark'
-      title: 'Making their web app installable resulted in increased traffic'
-      eyebrow: 'Web vitals'
+      title: 'Welcome to Google Chrome Dev Summit 2021'
+      eyebrow: 'Event'
       url: '#'
-      background: '/images/feature-cards/web-vitals-feature.png'
+      background: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/v6J407myhxv2V4uwzF0u.png?auto=format'
     - theme: 'light'
       title: 'Designing in the browser using Dev Tools for design'
       eyebrow: 'Show'
