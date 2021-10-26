@@ -32,32 +32,32 @@ CSS_ORIGIN: 'next'
   </header>
   {# Hero ends #}
   
-  {# Event starts #}
-  {% if event %}
-    <article class="hero" data-type="event">
+  {# Promo panel starts #}
+  {% if promoPanel %}
+    <article class="hero" data-type="promo">
       <div class="wrapper">
         <div class="hero__columns flex-dir-rev switcher">
           <div>
-            <span aria-hidden="true" class="hero__eyebrow">{{ event.eyebrow }}</span>
+            <span aria-hidden="true" class="hero__eyebrow">{{ promoPanel.eyebrow }}</span>
             <div class="hero__content flow">
-              <h2 class="hero__title">{{ event.title }}</h2>
-              {{ event.summary | md | safe }}
+              <h2 class="hero__title">{{ promoPanel.title }}</h2>
+              {{ promoPanel.summary | md | safe }}
               <div class="cluster gutter-base flow-space-size-2">
-                <a class="button" data-type="primary" href="{{ event.primaryButtonUrl }}">{{ event.primaryButtonText }}</a>
-                <a class="button" data-type="secondary" href="{{ event.secondaryButtonUrl }}">{{ event.secondaryButtonText }}</a>
+                <a class="button" data-type="primary" href="{{ promoPanel.primaryButtonUrl }}">{{ promoPanel.primaryButtonText }}</a>
+                <a class="button" data-type="secondary" href="{{ promoPanel.secondaryButtonUrl }}">{{ promoPanel.secondaryButtonText }}</a>
               </div>
             </div>
           </div>
           <div>
-            <img src="{{ event.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ event.imageWidth }}" height="{{ event.imageHeight }}" />
+            <img src="{{ promoPanel.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ promoPanel.imageWidth }}" height="{{ promoPanel.imageHeight }}" />
           </div>
         </div>
       </div>
     </article>
+    <hr />
   {% endif %}
-  {# Event ends #}
+  {# Promo panel ends #}
   
-  <hr />
   
   {# Page speed starts #}
   <article class="hero bg-core-bg homepage__page-speed-hero">

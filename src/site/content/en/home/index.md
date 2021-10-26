@@ -12,8 +12,8 @@ intro:
   image: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/B9KWrQo39fXbKSVYjz1e.svg'
   imageWidth: '330'
   imageHeight: '210'
-  featureCards: 
-    - theme: 'dark'	
+  featureCards:
+    - theme: 'dark'
       title: 'Making their web app installable resulted in increased traffic'
       eyebrow: 'Web vitals'
       url: '#'
@@ -23,7 +23,7 @@ intro:
       eyebrow: 'Show'
       url: '#'
       background: '/images/feature-cards/design-in-the-browser.jpg'
-pageSpeed: 
+pageSpeed:
   eyebrow: 'Page Speed Insights'
   title: 'Measure page quality with PageSpeed Insights'
   summary: |
@@ -34,18 +34,6 @@ pageSpeed:
   primaryButtonText: 'Try Page Speed Insights'
   primaryButtonUrl: '/measure'
   secondaryButtonText: 'Learn more'
-  secondaryButtonUrl: '#'
-event: 
-  eyebrow: 'Event'
-  title: 'Chrome Dev Summit 2021'
-  summary: |
-    Join the Chrome team for our two-day summit on the latest techniques for building the modern Web.
-  image: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/k25FHfpYLo9LQLvYT413.png'
-  imageWidth: '530'
-  imageHeight: '483'
-  primaryButtonText: 'Request an invite'
-  primaryButtonUrl: '#'
-  secondaryButtonText: 'Add to calendar'
   secondaryButtonUrl: '#'
 courses:
   title: 'Featured Courses'
@@ -60,7 +48,7 @@ podcasts:
   summary: 'Level up your web development skills by listening to podcasts from Google Developers'
   buttonText: 'See all'
   buttonUrl: '/podcasts/'
-patterns: 
+patterns:
   title: 'Patterns'
   summary: 'A collection of code snippets to help you optmize your web projects.'
   buttonText: 'See all'

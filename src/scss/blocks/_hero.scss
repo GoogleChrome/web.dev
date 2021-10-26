@@ -34,15 +34,15 @@
 }
 
 /// EXCEPTIONS
-.hero[data-type='event'] {
+.hero[data-type='promo'] {
   background: unset;
 }
 
-.hero[data-type='event'] .hero__columns {
+.hero[data-type='promo'] .hero__columns {
   --switcher-vertical-alignment: stretch;
 }
 
-.hero[data-type='event'] .hero__columns > :first-child {
+.hero[data-type='promo'] .hero__columns > :first-child {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
