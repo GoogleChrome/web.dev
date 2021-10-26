@@ -111,7 +111,7 @@ new PerformanceObserver((entryList) => {
 The above code snippet is similar to the one used to measure the TTFB for a navigation request, except instead of querying for `'navigation'` entries, you query for `'resource'` entries instead. It also accounts for the fact that some resources loaded from the primary origin may return a value of `0`, since the connection is already open or instantaneously retrieved from a cache.
 
 {% Aside 'gotchas' %}
-TTFB for cross-origin requests will not be measurable in the field if cross-origin servers fail to set a [`Timing-Allow-Origin` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin).
+TTFB for cross-origin requests will not be measurable in the field if cross-origin servers fail to set a [`Timing-Allow-Origin` header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin).
 {% endAside %}
 
 ## How to improve TTFB
