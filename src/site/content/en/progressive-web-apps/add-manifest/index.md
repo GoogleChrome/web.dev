@@ -6,7 +6,7 @@ authors:
   - beaufortfrancois
   - thomassteiner
 date: 2018-11-05
-updated: 2021-10-20
+updated: 2021-10-21
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -39,6 +39,11 @@ suggests the extension should be `.webmanifest`, but browsers also support
   "short_name": "Weather",
   "name": "Weather: Do I need an umbrella?",
   "icons": [
+    {
+      "src": "/images/icons-vector.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
     {
       "src": "/images/icons-192.png",
       "type": "image/png",
@@ -121,11 +126,22 @@ include the `src`, a `sizes` property, and the `type` of image. To use
 icons on Android, you'll also need to add `"purpose": "any maskable"` to the
 `icon` property.
 
-For Chrome, you must provide at least a 192x192 pixel icon, and a 512x512
+For Chromium, you must provide at least a 192x192 pixel icon, and a 512x512
 pixel icon. If only those two icon sizes are provided, Chrome will
 automatically scale the icons to fit the device. If you'd prefer to scale your
 own icons, and adjust them for pixel-perfection, provide icons in increments
 of 48dp.
+
+{% Aside %}
+Chromium-based browsers also support SVG icons that can be scaled arbitrarily
+without looking pixelated and that support advanced features like
+[being responsive to `prefers-color-scheme`](https://blog.tomayac.com/2021/07/21/dark-mode-web-app-manifest-app-icons/),
+with the important caveat that the icons do not update live, but remain in the
+state they were in at install time.
+
+To be on the safe side, you should always specify a rasterized icon as a
+fallback for browsers that do not support SVG icons.
+{% endAside %}
 
 #### `start_url` {: #start-url }
 
