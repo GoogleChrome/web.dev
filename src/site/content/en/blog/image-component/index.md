@@ -25,30 +25,30 @@ The [Aurora](/introducing-aurora/) team worked with [Next.js](https://nextjs.org
 
 Images not only affect performance, but also business. The number of images on a page was the second [greatest predictor of conversions](https://almanac.httparchive.org/en/2019/page-weight#bigger-complex-pages-can-be-bad-for-your-business) of users visiting websites. Sessions in which users converted had 38% fewer images than sessions where they did not convert. Lighthouse lists multiple [opportunities](/fast/#optimize-your-images) to optimize images and improve [web vitals](/vitals/) as part of its best practices audit. Some of the common areas where images can affect core web vitals, and user experience are as follows.
 
-1. **Unsized images hurt CLS**: Images served without their size specified can cause layout instability and contribute to a high Cumulative Layout Shift ([CLS](/cls/)). Setting the `width` and `height` attributes on [img](/patterns/web-vitals-patterns/images/img-tag/) elements can help to prevent layout shifts. For example:
-
+- **Unsized images hurt CLS**: Images served without their size specified can cause layout instability and contribute to a high Cumulative Layout Shift ([CLS](/cls/)). Setting the `width` and `height` attributes on [img](/patterns/web-vitals-patterns/images/img-tag/) elements can help to prevent layout shifts. For example:  
+  
 ```html
 <img src="flower.jpg" width="360" height="240">
-```
-
+```  
+  
 The width and height should be set such that the aspect ratio of the rendered image is close to its natural aspect ratio. A significant [difference in the aspect ratio](/image-aspect-ratio/) can result in the image looking distorted. A relatively new property that allows you to specify [aspect-ratio in CSS](/aspect-ratio/) can help to size images responsively while preventing CLS.
-2. **Large images can hurt LCP**: The larger the file size of an image, the longer it will take to download. A large image could be the "hero" image for the page or the most significant element in the viewport responsible for triggering the Largest Contentful Paint ([LCP](/lcp/)). An image that is part of the critical content and takes a long time to download will delay the LCP.  
+- **Large images can hurt LCP**: The larger the file size of an image, the longer it will take to download. A large image could be the "hero" image for the page or the most significant element in the viewport responsible for triggering the Largest Contentful Paint ([LCP](/lcp/)). An image that is part of the critical content and takes a long time to download will delay the LCP.  
   
 In many cases, developers can reduce image sizes through better compression and the use of [responsive](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#how_do_you_create_responsive_images) images. The `srcset` and `sizes` attributes of the `<img>` element help to provide image files with different sizes. The browser can then choose the right one depending on the screen size and resolution.
-3. **Poor image compression can hurt LCP**: Modern image formats like [AVIF](/compress-images-avif/) or [WebP](/serve-images-webp/) can provide better compression than commonly used JPEG and PNG formats. Better compression reduces the file size by 25% to 50% in some cases for the same quality of the image. This reduction leads to faster downloads with less data consumption. The app should [serve modern image formats](/uses-webp-images/) to browsers that support these formats.
-4. **Loading unnecessary images hurts LCP**: Images below the fold or not in the viewport are not displayed to the user when the page is loaded. They can be deferred so that they do not contribute to the LCP and delay it. [Lazy-loading](/lazy-loading-images/) can be used to load such images later as the user scrolls towards them.
+- **Poor image compression can hurt LCP**: Modern image formats like [AVIF](/compress-images-avif/) or [WebP](/serve-images-webp/) can provide better compression than commonly used JPEG and PNG formats. Better compression reduces the file size by 25% to 50% in some cases for the same quality of the image. This reduction leads to faster downloads with less data consumption. The app should [serve modern image formats](/uses-webp-images/) to browsers that support these formats.
+- **Loading unnecessary images hurts LCP**: Images below the fold or not in the viewport are not displayed to the user when the page is loaded. They can be deferred so that they do not contribute to the LCP and delay it. [Lazy-loading](/lazy-loading-images/) can be used to load such images later as the user scrolls towards them.
 
 ## Optimization challenges
 
 Teams can evaluate the performance cost due to the issues listed previously and implement best practice solutions to overcome them. However, this often does not happen in practice, and inefficient images continue to slow down the web. Possible reasons for this include:
 
-1. **Priorities**: Web developers usually tend to focus on code, JavaScript, and data optimization. As such, they may not be aware of issues with images or how to optimize them. Images created by designers or uploaded by users may not be high in the list of priorities.
-2. **Out-of-the-box solution**: Even if developers are aware of the nuances of image optimization, the absence of an all-in-one out-of-the-box solution for their framework or tech-stack may be a deterrent.
-3. **Dynamic images**: In addition to static images that are part of the application, dynamic images are uploaded by users or sourced from external databases or CMS's. It may be challenging to define the size of such images where the source of the image is dynamic.
-4. **Markup overload**: Solutions for including the image size or `srcset` for different sizes require additional markup for every image, which can be tedious. The `srcset` attribute was introduced in 2014 but is [used by only 26.5%](https://almanac.httparchive.org/en/2020/media#srcset) of the websites today. When using `srcset`, developers have to create images in various sizes. Tools such as [just-gimme-an-img](https://just-gimme-an-img.vercel.app/) can help but have to be used manually for every image.
-5. **Browser support**: Modern image formats like AVIF and WebP create smaller image files but need special handling on browsers that don't support them. Developers have to use strategies like [content negotiation](https://developer.mozilla.org/docs/Web/HTTP/Content_negotiation) or the [<picture>](https://developer.mozilla.org/docs/Web/HTML/Element/picture) element so that images are served to all browsers.
-6. **Lazy loading complications**: There are multiple techniques and libraries available to implement lazy-loading for below-the-fold images. Picking the best one can be a challenge. Developers may also not know the best distance from the "fold" to load deferred images. Different viewport sizes on devices can further complicate this.
-7. **Changing landscape**: As browsers start supporting new HTML or CSS features to enhance performance, it may be difficult for developers to evaluate each of them. For example, Chrome is introducing the [Priority Hints](/priority-hints) feature as an [Origin Trial](/blog/origin-trials/). It can be used to boost the priority of specific images on the page. Overall, developers would find it easier if such enhancements were evaluated and implemented at the component level.
+- **Priorities**: Web developers usually tend to focus on code, JavaScript, and data optimization. As such, they may not be aware of issues with images or how to optimize them. Images created by designers or uploaded by users may not be high in the list of priorities.
+- **Out-of-the-box solution**: Even if developers are aware of the nuances of image optimization, the absence of an all-in-one out-of-the-box solution for their framework or tech-stack may be a deterrent.
+- **Dynamic images**: In addition to static images that are part of the application, dynamic images are uploaded by users or sourced from external databases or CMS's. It may be challenging to define the size of such images where the source of the image is dynamic.
+- **Markup overload**: Solutions for including the image size or `srcset` for different sizes require additional markup for every image, which can be tedious. The `srcset` attribute was introduced in 2014 but is [used by only 26.5%](https://almanac.httparchive.org/en/2020/media#srcset) of the websites today. When using `srcset`, developers have to create images in various sizes. Tools such as [just-gimme-an-img](https://just-gimme-an-img.vercel.app/) can help but have to be used manually for every image.
+- **Browser support**: Modern image formats like AVIF and WebP create smaller image files but need special handling on browsers that don't support them. Developers have to use strategies like [content negotiation](https://developer.mozilla.org/docs/Web/HTTP/Content_negotiation) or the [<picture>](https://developer.mozilla.org/docs/Web/HTML/Element/picture) element so that images are served to all browsers.
+- **Lazy loading complications**: There are multiple techniques and libraries available to implement lazy-loading for below-the-fold images. Picking the best one can be a challenge. Developers may also not know the best distance from the "fold" to load deferred images. Different viewport sizes on devices can further complicate this.
+- **Changing landscape**: As browsers start supporting new HTML or CSS features to enhance performance, it may be difficult for developers to evaluate each of them. For example, Chrome is introducing the [Priority Hints](/priority-hints) feature as an [Origin Trial](/blog/origin-trials/). It can be used to boost the priority of specific images on the page. Overall, developers would find it easier if such enhancements were evaluated and implemented at the component level.
 
 ## Image component as a solution
 
@@ -58,13 +58,11 @@ Over the last year, we have worked with the [Next.js](https://nextjs.org/) frame
 
 ```js
 // Before with <img> element:
-
 function Logo() {
   return <img src="/logo.jpg" alt="logo" height="200" width="100" />
 }
 
 // After with image component:
- 
 import Image from 'next/image'
 
 function Logo() {
@@ -172,11 +170,11 @@ The following comparison shows how the layout mode can be used to control the si
 
 ### Provide built-in lazy-loading
 
-The Image component provides a built-in, performant [lazy loading](https://nextjs.org/docs/api-reference/next/image#loading) solution as a default. When using the `<img>` element, there are a few native options for lazy loading, but they all have drawbacks that make them tricky to use. For example, one might: 
+The Image component provides a built-in, performant [lazy loading](https://nextjs.org/docs/api-reference/next/image#loading) solution as a default. When using the `<img>` element, there are a few native options for lazy loading, but they all have drawbacks that make them tricky to use. A developer might adopt one of the following lazy loading approaches:
 
-1. Specify the [`loading`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-loading) attribute: This is easy to implement but currently [unsupported](https://caniuse.com/?search=loading) on some browsers.
-2. Use the [Intersection Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API): Building a custom lazy-loading solution requires effort and a thoughtful design and implementation. Developers may not always have the time for this.
-3. Import a third-party library to lazy-load images: Additional effort may be required to evaluate and integrate a suitable third-party library for lazy loading.
+- Specify the [`loading`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-loading) attribute: This is easy to implement but currently [unsupported](https://caniuse.com/?search=loading) on some browsers.
+- Use the [Intersection Observer API](https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API): Building a custom lazy-loading solution requires effort and a thoughtful design and implementation. Developers may not always have the time for this.
+- Import a third-party library to lazy-load images: Additional effort may be required to evaluate and integrate a suitable third-party library for lazy loading.
 
 In the Next.js Image component, loading is set to `"lazy"` by default. Lazy loading is implemented using Intersection Observer, which is [available on most modern browsers](https://caniuse.com/?search=IntersectionObserver). Developers are not required to do anything extra to enable it, but they can disable it when needed.
 
