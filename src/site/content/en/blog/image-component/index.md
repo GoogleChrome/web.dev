@@ -33,19 +33,17 @@ Images not only affect performance, but also business. The number of images on a
     ```html
     <img src="flower.jpg" width="360" height="240">
     ```
-
-
-
-    The width and height should be set such that the aspect ratio of the rendered image is close to its natural aspect ratio. A significant [difference in the aspect ratio](/image-aspect-ratio/) can result in the image looking distorted. A relatively new property that allows you to specify [aspect-ratio in CSS](/aspect-ratio/) can help to size images responsively while preventing CLS.
+    
+The width and height should be set such that the aspect ratio of the rendered image is close to its natural aspect ratio. A significant [difference in the aspect ratio](/image-aspect-ratio/) can result in the image looking distorted. A relatively new property that allows you to specify [aspect-ratio in CSS](/aspect-ratio/) can help to size images responsively while preventing CLS.
 
 
 2. **Large images can hurt LCP**: The larger the file size of an image, the longer it will take to download. A large image could be the “hero” image for the page or the most significant element in the viewport responsible for triggering the Largest Contentful Paint ([LCP](/lcp/)). An image that is part of the critical content and takes a long time to download will delay the LCP. 
 
     In many cases, developers can reduce image sizes through better compression and the use of [responsive](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#how_do_you_create_responsive_images) images. The `srcset` and `sizes` attributes of the `<img>` element help to provide image files with different sizes. The browser can then choose the right one depending on the screen size and resolution.
 
-3. **Poor image compression can hurt LCP: **Modern image formats like [AVIF](/compress-images-avif/) or [WebP](/serve-images-webp/) can provide better compression than commonly used JPEG and PNG formats. Better compression reduces the file size by 25% to 50% in some cases for the same quality of the image. This reduction leads to faster downloads with less data consumption. The app should [serve modern image formats](/uses-webp-images/) to browsers that support these formats.
+3. **Poor image compression can hurt LCP**: Modern image formats like [AVIF](/compress-images-avif/) or [WebP](/serve-images-webp/) can provide better compression than commonly used JPEG and PNG formats. Better compression reduces the file size by 25% to 50% in some cases for the same quality of the image. This reduction leads to faster downloads with less data consumption. The app should [serve modern image formats](/uses-webp-images/) to browsers that support these formats.
 
-4. **Loading unnecessary images hurts LCP: **Images below the fold or not in the viewport are not displayed to the user when the page is loaded. They can be deferred so that they do not contribute to the LCP and delay it. [Lazy-loading](/lazy-loading-images/) can be used to load such images later as the user scrolls towards them.
+4. **Loading unnecessary images hurts LCP**: Images below the fold or not in the viewport are not displayed to the user when the page is loaded. They can be deferred so that they do not contribute to the LCP and delay it. [Lazy-loading](/lazy-loading-images/) can be used to load such images later as the user scrolls towards them.
 
 
 ## Optimization challenges
