@@ -62,11 +62,11 @@ Teams can evaluate the performance cost due to the issues listed previously and 
 
 4. **Markup overload**: Solutions for including the image size or `srcset` for different sizes require additional markup for every image, which can be tedious. The `srcset` attribute was introduced in 2014 but is [used by only 26.5%](https://almanac.httparchive.org/en/2020/media#srcset) of the websites today. When using `srcset`, developers have to create images in various sizes. Tools such as [just-gimme-an-img](https://just-gimme-an-img.vercel.app/) can help but have to be used manually for every image.
 
-5. **Browser support: **Modern image formats like AVIF and WebP create smaller image files but need special handling on browsers that don’t support them. Developers have to use strategies like [content negotiation](https://developer.mozilla.org/docs/Web/HTTP/Content_negotiation) or the [<picture>](https://developer.mozilla.org/docs/Web/HTML/Element/picture) element so that images are served to all browsers.
+5. **Browser support**:Modern image formats like AVIF and WebP create smaller image files but need special handling on browsers that don’t support them. Developers have to use strategies like [content negotiation](https://developer.mozilla.org/docs/Web/HTTP/Content_negotiation) or the [<picture>](https://developer.mozilla.org/docs/Web/HTML/Element/picture) element so that images are served to all browsers.
 
-6. <strong>Lazy loading complications</strong>: There are multiple techniques and libraries available to implement lazy-loading for below-the-fold images. Picking the best one can be a challenge. Developers may also not know the best distance from the “fold” to load deferred images. Different viewport sizes on devices can further complicate this.
+6. **Lazy loading complications**: There are multiple techniques and libraries available to implement lazy-loading for below-the-fold images. Picking the best one can be a challenge. Developers may also not know the best distance from the “fold” to load deferred images. Different viewport sizes on devices can further complicate this.
 
-7. <strong>Changing landscape</strong>: As browsers start supporting new HTML or CSS features to enhance performance, it may be difficult for developers to evaluate each of them. For example, Chrome is introducing the [Priority Hints](/priority-hints) feature as an Origin Trial. It can be used to boost the priority of specific images on the page. Overall, developers would find it easier if such enhancements were evaluated and implemented at the component level.
+7. **Changing landscape**: As browsers start supporting new HTML or CSS features to enhance performance, it may be difficult for developers to evaluate each of them. For example, Chrome is introducing the [Priority Hints](/priority-hints) feature as an Origin Trial. It can be used to boost the priority of specific images on the page. Overall, developers would find it easier if such enhancements were evaluated and implemented at the component level.
 
 
 ## Image component as a solution
@@ -128,7 +128,7 @@ To make images responsive across devices, developers must set the `srcset` and `
 
 3. `layout` attribute in each image: This is used to indicate how to use the `deviceSizes` and `imageSizes` properties for each image. The supported values for layout mode are `fixed`, `fill`, `intrinsic` and `responsive`
 
-When an image is requested with layout modes _responsive_ or _fill, _Next.js identifies the image to be served based on the size of the device requesting the page and sets the `srcset` and `sizes `in the image appropriately. 
+When an image is requested with layout modes _responsive_ or _fill, _Next.js identifies the image to be served based on the size of the device requesting the page and sets the `srcset` and `sizes` in the image appropriately. 
 
 The following comparison shows how the layout mode can be used to control the size of the image on different screens. We have used a [demo image](https://image-component.nextjs.gallery/layout-intrinsic) shared in the Next.js docs, viewed on a phone and a standard laptop.
 
@@ -142,7 +142,7 @@ The following comparison shows how the layout mode can be used to control the si
    </thead>
    <tbody>
       <tr>
-         <td colspan="2" ><strong>Layout=Intrinsic:</strong>Scales down to fit the container's width on smaller viewports. Does not scale up beyond the image’s intrinsic size on a larger viewport. Container width is at 100%
+         <td colspan="2" >Layout = Intrinsic: Scales down to fit the container's width on smaller viewports. Does not scale up beyond the image’s intrinsic size on a larger viewport. Container width is at 100%
          </td>
       </tr>
       <tr>
@@ -154,7 +154,7 @@ The following comparison shows how the layout mode can be used to control the si
          </td>
       </tr>
       <tr>
-         <td colspan="2" ><strong>Layout=Fixed:</strong>Image is not responsive. Width and height are fixed similar to `<img>` element irrespective of the device where it is rendered.
+         <td colspan="2" >Layout = Fixed: Image is not responsive. Width and height are fixed similar to `<img>` element irrespective of the device where it is rendered.
          </td>
       </tr>
       <tr>
@@ -166,7 +166,7 @@ The following comparison shows how the layout mode can be used to control the si
          </td>
       </tr>
       <tr>
-         <td colspan="2" ><strong>Layout=Responsive:</strong>Scale down or scale up depending on the width of the container on different viewports, maintaining aspect ratio.
+         <td colspan="2" >Layout = Responsive: Scale down or scale up depending on the width of the container on different viewports, maintaining aspect ratio.
          </td>
       </tr>
       <tr>
@@ -178,7 +178,7 @@ The following comparison shows how the layout mode can be used to control the si
          </td>
       </tr>
       <tr>
-         <td colspan="2" ><strong>Layout=Fill:</strong>Width and height stretched to fill the parent container. (Parent `<div>` width is set to 300*500 in this example)
+         <td colspan="2" >Layout = Fill: Width and height stretched to fill the parent container. (Parent `<div>` width is set to 300*500 in this example)
          </td>
       </tr>
       <tr>
