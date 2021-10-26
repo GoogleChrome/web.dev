@@ -1,7 +1,6 @@
 ---
-layout: 'default-next'
+layout: 'homepage-next'
 permalink: '/home-new/index.html'
-CSS_ORIGIN: 'next'
 title: 'web.dev'
 intro:
   eyebrow: 'About web.dev'
@@ -67,17 +66,3 @@ patterns:
   buttonText: 'See all'
   buttonUrl: '/patterns/'
 ---
-
-<div class="homepage">
-  {% include "./intro.njk" %}
-  {% include "./event.njk" %}
-  <hr />
-  {% include "./page-speed.njk" %}
-  {% include "./courses.njk" %}
-  {% include "./case-studies.njk" %}
-  {% include "./patterns.njk" %}
-  {% include "./podcasts.njk" %}
-
-  {% include 'partials/subscribe-next.njk' %}
-</div>
-
