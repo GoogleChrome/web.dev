@@ -38,7 +38,7 @@ want to sample colors from the entire device's screen (for example, from a diffe
 and not just from the current browser tab. There isn't a browser-supplied eyedropper tool that web
 apps can use for their own needs.
 
-The [`<input type="color">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color)
+The [`<input type="color">`](https://developer.mozilla.org/docs/Web/HTML/Element/input/color)
 element comes close. On Chromium-based browsers running on desktop devices, it provides a helpful
 eyedropper in the color picker drop down. However, using this means your app would have to customize
 it with CSS, and wrap it in a bit of JavaScript to make it available to other parts of your app.
@@ -102,7 +102,7 @@ changes in a substantial way. Maybe a popup dialog appears and requires the inpu
 eyedropper mode should be stopped at that point.
 
 To cancel the eyedropper, you can use an
-[AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)'s signal and
+[AbortController](https://developer.mozilla.org/docs/Web/API/AbortController)'s signal and
 pass it to the `open()` method.
 
 ```js
