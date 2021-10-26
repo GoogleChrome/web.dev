@@ -1,0 +1,21 @@
+.learn {
+  .card {
+    width: 380px;
+  }
+
+  .headline,
+  .hero {
+    padding-bottom: 3em;
+    padding-top: 3em;
+  }
+
+  .learn__collection {
+    border-block-start: 1px solid var(--color-stroke);
+    padding-bottom: 2em;
+    padding-top: 2em;
+
+    &.visually-hidden {
+      display: none;
+    }
+  }
+}

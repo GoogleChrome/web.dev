@@ -30,13 +30,14 @@ class LearnFilter extends BaseElement {
   setActive(id) {
     this.active = id;
 
-    const learningPathsElement = document.getElementById('learning-paths');
-    if (!learningPathsElement) {
+    const learCollectionsElement =
+      document.getElementById('learn__collections');
+    if (!learCollectionsElement) {
       return;
     }
 
-    for (const child of learningPathsElement.children) {
-      child.classList.toggle('hidden', !!id && id !== child.id);
+    for (const child of learCollectionsElement.children) {
+      child.classList.toggle('visually-hidden', !!id && id !== child.id);
     }
   }
 
@@ -46,13 +47,14 @@ class LearnFilter extends BaseElement {
     /** @type {(filter: {id?: string, title: string}) => any} */
     const filtersMap = (filter) =>
       html`<button
-        class="w-chip${this.active === filter.id ? ' w-chip__active' : ''}"
+        class="pill"
+        data-state="${this.active === filter.id ? 'active' : 'inactive'}
         type="button"
         @click="${() => this.setActive(filter.id)}"
       >
         ${filter.title}
       </button>`;
-    return html`<div class="w-chips">${filters.map(filtersMap)}</div>`;
+    return html`<div class="cluster">${filters.map(filtersMap)}</div>`;
   }
 }
 
