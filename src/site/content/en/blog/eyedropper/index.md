@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Picking colors of any pixel on the screen with the EyeDropper API
+subhead: >
+  The EyeDropper API enables authors to use a browser-supplied eyedropper in the construction of
+  custom color pickers.
 authors:
   - patrickbrosset
   - thomassteiner
@@ -10,6 +13,9 @@ description: >
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/6Gl4RG1zitlgmpMZviDD.jpg
 alt: A pipette.
 date: 2021-10-26
+tags:
+  - capabilities
+  - progressive-web-apps
 ---
 
 {% Aside %} The EyeDropper API is part of the [capabilities project](/fugu-status/) and is currently
