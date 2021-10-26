@@ -15,7 +15,7 @@ Over the last three years, Chrome has been working to empower web applications t
 
 {% Img src="image/8WbTDNrhLsU0El80frMBGE4eMCD3/kfFAUTzDHzvE3hXISyQO.png", alt="The Photoshop web app running in a browser with an image showing an elephant on the canvas and the 'selection tools' menu item open. ", width="800", height="500" %}
 
-In this post, we'd like to share for the first time the details of how our collaboration is extending Photoshop to the web. You can use all the APIs Adobe used and more in your own apps as well. Be sure to check out our [web capabilities related blog posts](https://web.dev/tags/capabilities/) for inspiration and watch our [API tracker](https://fugu-tracker.web.app/) for the latest and greatest we're working on.
+In this post, we'd like to share for the first time the details of how our collaboration is extending Photoshop to the web. You can use all the APIs Adobe used and more in your own apps as well. Be sure to check out our [web capabilities related blog posts](/tags/capabilities/) for inspiration and watch our [API tracker](https://fugu-tracker.web.app/) for the latest and greatest we're working on.
 
 ## Why Photoshop came to the web
 
