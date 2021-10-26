@@ -231,21 +231,21 @@ When [Leboncoin](https://www.leboncoin.fr/) [migrated their legacy JavaScript fr
 
 Anyone creating a Next.js app can benefit from using the Next.js Image component for optimization. However, if you want to build similar performance abstractions for another framework or CMS, the following are a few lessons we learned along the way that could be helpful.
 
-### Safety valves can cause more harm than good.
+### Safety valves can cause more harm than good
 
 In an early release of the Next.js Image component, we provided a `unsized` attribute that allowed developers to bypass the sizing requirement, and use images with unspecified dimensions. We thought this would be a necessary in instances where it was impossible to know the image's height or width in advance. However, we noticed users recommending the `unsized` attribute in GitHub issues as a catch-all solution to problems with the sizing requirement, even in cases where they could solve the problem in ways that didn't worsen CLS. We subsequently deprecated and removed the `unsized` attribute.
 
-### Separate useful friction from pointless annoyance.
+### Separate useful friction from pointless annoyance
 
 The requirement for sizing an image is an example of "useful friction." It restricts the use of the component, but it provides outsized performance benefits in exchange. Users will readily accept the constraint if they have a clear picture of the potential performance benefits. Therefore, it is worthwhile to explain this tradeoff in the documentation and other published material about the component. 
 
 However, you can find workarounds for such friction without sacrificing performance. For example, during the development of the Next.js Image component, we received complaints that it was annoying to look up sizes for locally stored images. We added [static image imports](https://nextjs.org/docs/basic-features/image-optimization#image-imports), which streamline this process by automatically retrieving dimensions for local images at build time using a Babel plugin.
 
-### Strike a balance between convenience features and performance optimizations.
+### Strike a balance between convenience features and performance optimizations
 
 If your image component does nothing but impose "useful friction" on its users, developers will tend to not want to use it. We found that although performance features like image sizing and automatic generation of `srcset` values were the most important. Developer-facing convenience features like automatic lazy loading and [built-in blurry placeholders](https://nextjs.org/docs/api-reference/next/image#placeholder) also drove interest in the Next.js Image component. 
 
-### Set a roadmap for features to drive adoption.
+### Set a roadmap for features to drive adoption
 
 Building a solution that works perfectly for all situations is very difficult. It can be tempting to design something that works well for 75% of people and then tell the other 25% that "in these cases, this component isn't for you."
 
