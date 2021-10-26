@@ -16,6 +16,7 @@ date: 2021-10-26
 tags:
   - capabilities
   - progressive-web-apps
+  - blog
 ---
 
 {% Aside %} The EyeDropper API is part of the [capabilities project](/fugu-status/) and is currently
