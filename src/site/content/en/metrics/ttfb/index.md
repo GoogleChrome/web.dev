@@ -42,7 +42,7 @@ Reducing latency in connection setup time and on the backend will contribute to 
 
 ### What is a good TTFB score?
 
-Due to the wide variation of network and application backend stacks, an arbitrary number can’t be placed on what consists of a “good” TTFB score. Because TTFB precedes [user-centric](/user-centric-performance-metrics/) metrics such as [First Contentful Paint (FCP)](/fcp/) and [Largest Contentful Paint (FCP)](/lcp/), it’s recommended that your server responds to navigation requests quickly enough so that the **75th percentile** of users experience an [FCP within the “good” threshold](/fcp/#what-is-a-good-fcp-score).
+Due to the wide variation of network and application backend stacks, an arbitrary number can't be placed on what consists of a "good" TTFB score. Because TTFB precedes [user-centric](/user-centric-performance-metrics/) metrics such as [First Contentful Paint (FCP)](/fcp/) and [Largest Contentful Paint (FCP)](/lcp/), it's recommended that your server responds to navigation requests quickly enough so that the **75th percentile** of users experience an [FCP within the "good" threshold](/fcp/#what-is-a-good-fcp-score).
 
 ## How to measure TTFB
 
@@ -55,7 +55,7 @@ TTFB can be measured in [the lab](/user-centric-performance-metrics/#in-the-lab)
 
 ### Lab tools
 
-- In the [network panel](https://developer.chrome.com/docs/devtools/network/) of Chrome’s DevTools
+- In the [network panel](https://developer.chrome.com/docs/devtools/network/) of Chrome's DevTools
 - [WebPageTest](https://www.webpagetest.org/)
 
 ### Measure TTFB in JavaScript
