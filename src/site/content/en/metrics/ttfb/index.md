@@ -116,7 +116,7 @@ TTFB for cross-origin requests will not be measurable in the field if cross-orig
 
 ## How to improve TTFB
 
-[Improving TTFB](/ttfb/) is largely dependent on your hosting provider and backend application stack. High TTFB values could be due to one or more of the following problems:
+Improving TTFB is largely dependent on your hosting provider and backend application stack. High TTFB values could be due to one or more of the following problems:
 
 - Hosting services with inadequate infrastructure to handle high traffic loads
 - Web servers with insufficient memory that can lead to [thrashing](https://en.wikipedia.org/wiki/Memory_paging#Thrashing)
