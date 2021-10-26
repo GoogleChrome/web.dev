@@ -19,6 +19,17 @@
   --repel-vertical-alignment: stretch;
 }
 
+.homepage__case-studies {
+  --switcher-vertical-alignment: stretch;
+
+  max-width: 70rem;
+  margin-inline: auto;
+
+  > * {
+    max-width: unset;
+  }
+}
+
 /// Specific cards for shows and podcasts
 .homepage__shows {
   display: flex;

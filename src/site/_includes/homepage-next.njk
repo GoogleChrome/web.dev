@@ -132,7 +132,7 @@ CSS_ORIGIN: 'next'
           <a href="/tags/case-study/">{{ 'i18n.common.see_all' | i18n(locale) }}</a>
         </div>
       </div>
-      <div class="repel gap-top-size-2">
+      <div class="homepage__case-studies switcher gap-top-size-2">
       {% for item in collections['case-study'] %}
         {# For some reason, splice() was messing up the data... #}
         {% if loop.index <= 2 %}
@@ -144,7 +144,7 @@ CSS_ORIGIN: 'next'
             </h3>
             <p>{{ item.data.description }}</p>
           </div>    
-          <div class="card__tags cluster" aria-label="tags for this case study">
+          <div class="card__tags cluster gap-top-size-1" aria-label="tags for this case study">
             {% for tagKey in item.data.tags or [] %}
               {% if tagKey in collections.tags %}
                 {% set tag = collections.tags[tagKey] %}
