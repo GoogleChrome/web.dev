@@ -136,7 +136,7 @@ The decision to scale compute resources should be made carefully. Although it is
 
 #### Diagnose
 
-A high [Time To First Byte](/time-to-first-byte/) (TTFB) can be a sign that a server is nearing its capacity. You can find this information in the Lighthouse [Reduce server response times (TTFB)](https://developers.google.com/web/tools/lighthouse/audits/ttfb) audit.
+A high [Time To First Byte](/ttfb/) (TTFB) can be a sign that a server is nearing its capacity. You can find this information in the Lighthouse [Reduce server response times (TTFB)](https://developers.google.com/web/tools/lighthouse/audits/ttfb) audit.
 
 To investigate further, use a monitoring tool to assess CPU usage. If current or anticipated CPU usage exceeds 80% you should consider increasing your servers.
 

@@ -189,7 +189,7 @@ post is published/modified.
 #### Reducing complexities
 
 Implementing caching improved performance substantially, mostly on the
-[TTFB](/time-to-first-byte/) and [FCP](/fcp/) phases, and improved our
+[TTFB](/ttfb/) and [FCP](/fcp/) phases, and improved our
 reliability by serving the content from a location closer to the end user.
 
 However, the need to modify the HTML for each response introduced an unnecessary

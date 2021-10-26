@@ -100,7 +100,7 @@ FCP の (あらゆるサイトに共通する) 一般的な改善方法につい
 - [CSS を圧縮する](/unminified-css/)
 - [使用されていない CSS を削除する](/unused-css-rules/)
 - [必要なオリジンに事前接続する](/uses-rel-preconnect/)
-- [サーバーの応答時間 (TTFB) を短縮する](/time-to-first-byte/)
+- [サーバーの応答時間 (TTFB) を短縮する](/ttfb/)
 - [複数のページ リダイレクトを避ける](/redirects/)
 - [キー リクエストを事前に読み込む](/uses-rel-preload/)
 - [過大なネットワーク ペイロードを回避する](/total-byte-weight/)

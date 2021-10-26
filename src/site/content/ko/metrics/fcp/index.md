@@ -100,7 +100,7 @@ JavaScript에서 FCP를 측정하는 방법에 대한 전체 예제는 [`getFCP(
 - [CSS 축소](/unminified-css/)
 - [사용하지 않는 CSS 제거](/unused-css-rules/)
 - [필요한 원본에 사전 연결](/uses-rel-preconnect/)
-- [서버 응답 시간 단축(TTFB)](/time-to-first-byte/)
+- [서버 응답 시간 단축(TTFB)](/ttfb/)
 - [여러 페이지 리디렉션 방지](/redirects/)
 - [핵심 요청 사전 로드](/uses-rel-preload/)
 - [막대한 네트워크 페이로드 방지](/total-byte-weight/)
