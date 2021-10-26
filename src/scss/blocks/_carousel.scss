@@ -1,0 +1,23 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/carousel
+.carousel {
+  display: grid;
+  grid-template-columns: 2rem 1fr 2rem;
+  gap: $global-gutter-narrow;
+  align-items: center;
+
+  .icon-button:not(:hover) {
+    @include apply-utility('color', 'mid-text');
+  }
+}
+
+/// Allows inner hover states to show
+.carousel__track {
+  padding: 1rem 0.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .carousel__track {
+    scroll-behavior: smooth;
+  }
+}

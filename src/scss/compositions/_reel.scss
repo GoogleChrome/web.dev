@@ -32,6 +32,7 @@
   scroll-snap-align: start;
 }
 
-.reel[data-scroll='snap'] > *:last-child {
+.reel[data-scroll='snap'] > *:last-child,
+.reel[data-scroll='snap'] > *:first-child {
   scroll-snap-align: end;
 }
