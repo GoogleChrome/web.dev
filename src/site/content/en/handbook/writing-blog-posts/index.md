@@ -2,6 +2,7 @@
 layout: handbook
 title: How to write blog posts for web.dev and developer.chrome.com
 date: 2021-10-11
+update: 2021-10-27
 description: |
   Practical information and writing tips to get you started.
 ---
@@ -80,6 +81,13 @@ If you find that you are writing much more than that,
 it might be that the article can be split into two or more pieces dealing with various parts of the topic. 
 Ask your editor for advice on this. 
 Also, see the tips below and consider whether you are over-explaining basic concepts.
+
+### Article content
+
+Your article should follow a standard rhetorical structure.
+The introduction should introduce the concepts to be discussed, establish the context of your article, and alude to required background knowledge.
+The body should epxlain the most import aspects of you subject.
+Conclusions vary, but the may include a recapitulation of your subject, calls to action, or requests for feedback.
 
 ## Working with an editor
 
