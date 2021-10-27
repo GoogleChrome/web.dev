@@ -29,4 +29,5 @@
   - url: /learn/forms/identity
   - url: /learn/forms/payment
   - url: /learn/forms/address
-- url: /learn/forms/conclusion
+  - title: i18n.courses.wrap_up.title
+  - url: /learn/forms/conclusion
