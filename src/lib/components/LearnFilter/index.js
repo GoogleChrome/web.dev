@@ -30,13 +30,13 @@ class LearnFilter extends BaseElement {
   setActive(id) {
     this.active = id;
 
-    const learCollectionsElement =
+    const learnCollectionsElement =
       document.getElementById('learn__collections');
-    if (!learCollectionsElement) {
+    if (!learnCollectionsElement) {
       return;
     }
 
-    for (const child of learCollectionsElement.children) {
+    for (const child of learnCollectionsElement.children) {
       child.classList.toggle('hidden-yes', !!id && id !== child.id);
     }
   }
