@@ -1,0 +1,62 @@
+.about__pod {
+  --cluster-horizontal-alignment: center;
+
+  padding: $global-gutter;
+  border-radius: $global-radius-large;
+  box-shadow: 2px 14px 24px rgba(0, 0, 0, 0.1);
+  max-width: 68rem;
+  margin-inline: auto;
+  text-align: center;
+
+  @include apply-utility('bg', 'core-bg');
+
+  p {
+    max-width: 45ch;
+  }
+
+  h2,
+  p {
+    margin-inline: auto;
+  }
+
+  a:link,
+  a:visited {
+    @include apply-utility('font', 'brand');
+    @include apply-utility('color', 'action-text');
+
+    &:not(:hover) {
+      text-decoration: none;
+    }
+  }
+
+  > svg {
+    display: block;
+  }
+}
+
+.about__pod-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-block-start: get-space('base');
+  gap: $global-gutter;
+
+  img {
+    margin-inline: auto;
+  }
+}
+
+@include media-query('md') {
+  .about__pod {
+    --cluster-horizontal-alignment: start;
+    text-align: left;
+
+    h2,
+    p {
+      margin-inline-start: 0;
+    }
+  }
+
+  .about__pod-columns {
+    grid-template-columns: 20rem 1fr;
+  }
+}

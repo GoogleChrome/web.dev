@@ -16,7 +16,7 @@ CSS_ORIGIN: 'next'
           <a href="{{ intro.buttonUrl }}">{{ intro.buttonText }}</a>
         </div>
       </header>
-      <div class="flow">
+      <div class="flow gap-top-size-2 flow-space-size-1">
         {% for item in pods %}
         <article class="about__pod">
           {{ svg('../../images/' + item.brand , {label: item.alt}) }}
@@ -24,12 +24,12 @@ CSS_ORIGIN: 'next'
             <div>
               {% Img src=item.decor.src, alt="", width=item.decor.width, height=item.decor.height %}
             </div>
-            <div class="flow">
+            <div class="flow flow-space-base">
               <h2 class="text-size-3">{{ item.title }}</h2>
               <p class="color-mid-text">{{ item.summary }}</p>
               <div class="cluster flow-space-size-1">
                 {% for action in item.actions %}
-                  <a class="button" href="{{ action.url }}">{{ action.text }}</a>
+                  <a href="{{ action.url }}">{{ action.text }}</a>
                 {% endfor %}
               </div>
             </div>
