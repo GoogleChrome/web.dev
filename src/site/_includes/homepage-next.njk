@@ -30,7 +30,7 @@ CSS_ORIGIN: 'next'
     </div>
   </header>
   {# Hero ends #}
-  
+
   {# Promo panel starts #}
   {% if promoPanel %}
     <article class="hero" data-type="promo">
@@ -53,12 +53,11 @@ CSS_ORIGIN: 'next'
         </div>
       </div>
     </article>
-    <hr />
   {% endif %}
   {# Promo panel ends #}
-  
-  
+
   {# Page speed starts #}
+  {# <hr />
   <article class="hero bg-core-bg homepage__page-speed-hero">
     <div class="wrapper">
       <div class="hero__columns switcher" data-direction="rev">
@@ -78,9 +77,9 @@ CSS_ORIGIN: 'next'
         </div>
       </div>
     </div>
-  </article>
+  </article> #}
   {# Page speed ends #}
-  
+
   {# Courses start #}
   <div class="homepage__section bg-mid-bg">
     <div class="wrapper">
@@ -120,7 +119,7 @@ CSS_ORIGIN: 'next'
     </div>
   </div>
   {# Courses end #}
-  
+
   {# Case studies start #}
   <div class="homepage__section">
     <div class="wrapper">
@@ -142,7 +141,7 @@ CSS_ORIGIN: 'next'
               <a href="{{ item.url }}">{{ item.data.title }}</a>
             </h3>
             <p>{{ item.data.description }}</p>
-          </div>    
+          </div>
           <div class="card__tags cluster gap-top-size-1" aria-label="tags for this case study">
             {% for tagKey in item.data.tags or [] %}
               {% if tagKey in collections.tags %}
@@ -158,7 +157,7 @@ CSS_ORIGIN: 'next'
     </div>
   </div>
   {# Case studies end #}
-  
+
   {# Patterns start #}
   <div class="homepage__section bg-core-bg">
     <div class="wrapper">
@@ -169,7 +168,7 @@ CSS_ORIGIN: 'next'
           <a href="/patterns/">{{ 'i18n.common.see_all' | i18n(locale) }}</a>
         </div>
       </div>
-      <div class="homepage__patterns cluster gap-top-size-3"> 
+      <div class="homepage__patterns cluster gap-top-size-3">
         {% for setId, set in patterns.sets %}
           {% if (site.env == 'prod' and set.draft) or set.suite %}
             {# Don't display draft suite cards in prod, and don't display
@@ -188,7 +187,7 @@ CSS_ORIGIN: 'next'
     </div>
   </div>
   {# Patterns end #}
-  
+
   {# Podcasts start #}
   <div class="homepage__section bg-core-bg">
     <div class="wrapper">
