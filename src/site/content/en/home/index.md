@@ -50,4 +50,6 @@ patterns:
   summary: 'A collection of code snippets to help you optmize your web projects.'
   buttonText: 'See all'
   buttonUrl: '/patterns/'
+draft: true
+noindex: true
 ---
