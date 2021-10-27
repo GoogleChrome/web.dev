@@ -26,7 +26,7 @@ in development. This post will be updated as the implementation progresses. {% e
 ## What is the EyeDropper API? {: #what }
 
 Many creative applications allow users to pick colors from parts of the app window or even from the
-entire screen, typically using a pipette metaphor.
+entire screen, typically using an eyedropper metaphor.
 
 Photoshop, for example, lets users sample colors from the canvas so they don't have to guess a color
 and risk getting it wrong. PowerPoint also has an eyedropper tool,
