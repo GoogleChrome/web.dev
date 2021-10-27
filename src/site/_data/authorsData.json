@@ -227,7 +227,7 @@
     "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/117HjdRQMScu0EouANUl.jpg"
   },
   "rachelandrew": {
-    "country": "GB",
+    "country": "UK",
     "homepage": "https://rachelandrew.co.uk/",
     "twitter": "rachelandrew",
     "github": "rachelandrew",
@@ -326,6 +326,12 @@
     "twitter": "argyleink",
     "glitch": "argyleink",
     "image": "image/admin/jdQIxAJrGuFOtwmuDfIn.jpg"
+  },
+  "emmatwersky": {
+    "homepage": "https://twerske.dev",
+    "github": "twerske",
+    "twitter": "twerske",
+    "image": "image/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/9oW5Nx95erxvoGHcKHL6.jpg"
   },
   "lunalu": {
     "country": "Canada",
@@ -544,6 +550,11 @@
     "twitter": "_shu",
     "country": "US",
     "image": "image/admin/KxIs73yjsWwzEPHQaHEA.jpg"
+  },
+  "nabeelalshamma": {
+    "image" : "image/8WbTDNrhLsU0El80frMBGE4eMCD3/gZlM5s1kj09oCG5h2buz.jpeg",
+    "github": "alshamma",
+    "linkedin": "https://www.linkedin.com/in/alshamma/"
   },
   "nattestad": {
     "twitter": "fractorious",
@@ -798,11 +809,10 @@
     "image": "image/admin/eXpk44oNMpOnNPLrMOMm.jpg"
   },
   "antoinebisch": {
-    "country": "GB",
+    "country": "UK",
     "linkedin": "https://www.linkedin.com/in/antoinebisch/",
     "github": "antoinebisch",
     "twitter": "AntoineBisch",
-    "country": "UK",
     "image": "image/admin/xCDa34tJbhKRgr8pj5BJ.jpg"
   },
   "anniesullie": {
@@ -1047,5 +1057,11 @@
     "twitter": "patrickbrosset",
     "github": "captainbrosset",
     "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/9qyg3BRTavzYs9eFNS0F.jpeg"
+  },
+  "karaerickson": {
+    "image": "image/IypihH3o5cSpEMVp5i08dp69otp2/Az2VaHZ4nQ6ovvTvzCD3.jpeg"
+  },
+  "alexcastle": {
+    "image": "image/IypihH3o5cSpEMVp5i08dp69otp2/ofc2dLwuNURvRIMvTdIv.jpeg"
   }
 }
