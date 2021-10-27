@@ -9,7 +9,7 @@ authors:
   - thomassteiner
 description: >
   Creative application developers can use the EyeDropper API to implement a picker that allows users
-  to select colors from pixels on their screen, including outside the browser.
+  to select colors from pixels on their screen, including those outside the browser.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/6Gl4RG1zitlgmpMZviDD.jpg
 alt: A pipette.
 date: 2021-10-26
@@ -29,7 +29,7 @@ Many creative applications allow users to pick colors from parts of the app wind
 entire screen, typically using a pipette metaphor.
 
 Photoshop, for example, lets users sample colors from the canvas so they don't have to guess a color
-that might be a little bit different from the actual color. PowerPoint also has an eyedropper tool
+and risk getting it wrong. PowerPoint also has an eyedropper tool,
 useful when setting the outline or fill color of a shape. Even Chromium DevTools has an eyedropper
 you can use when editing colors in the CSS styles panel so you don't have to remember or copy the
 color code from somewhere else.
@@ -60,7 +60,7 @@ The EyeDropper API fills this gap by providing a way to sample colors from the s
 | 2. Create initial draft of specification | [Complete][spec]         |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
 | 4. Origin trial                          | Complete                 |
-| 5. **Launch**                            | **Complete**             |
+| 5. **Launch**                            | **Chromium&nbsp;95**<br/>(Desktop only.)             |
 
 ## How to use the EyeDropper API {: #use }
 
@@ -79,13 +79,13 @@ version&nbsp;95.
 
 ### Using the API
 
-To use the API, you need to first create an `EyeDropper` object and then call its `open()` method.
+To use the API, create an `EyeDropper` object and then call its `open()` method.
 
 ```js
 const eyeDropper = new EyeDropper();
 ```
 
-The `open()` method returns a promise that resolves when the user has selected a pixel on the
+The `open()` method returns a promise that resolves after the user selects a pixel on the
 screen, and the resolved value provides access to the pixel's color in sRGBHex format (`#RRGGBB`).
 The promise is rejected if the user leaves the eyedropper mode by pressing the <kbd>esc</kbd> key.
 
@@ -104,7 +104,7 @@ changes in a substantial way. Maybe a popup dialog appears and requires the inpu
 eyedropper mode should be stopped at that point.
 
 To cancel the eyedropper, you can use an
-[AbortController](https://developer.mozilla.org/docs/Web/API/AbortController)'s signal and
+[AbortController](https://developer.mozilla.org/docs/Web/API/AbortController) object's signal and
 pass it to the `open()` method.
 
 ```js
@@ -151,9 +151,9 @@ the list at the bottom that matches the colored square at the top.
 Behind this seemingly simple web API hides a potentially harmful privacy and security concern. What
 if a malicious website could start seeing pixels from your screen?
 
-In order to address this concern, the API specification calls out the following measures:
+To address this concern, the API specification requires the following measures:
 
-- First, the API doesn't actually let the eyedropper mode start without user intent. The open method
+- First, the API doesn't actually let the eyedropper mode start without user intent. The `open()` method
   can only be called in response to a user action (like a button click).
 - Second, no pixel information can be retrieved without user intent again. The promise returned by
   `open()` only resolves to a color value in response to a user action (clicking on a pixel). So the
@@ -173,7 +173,7 @@ The Chromium team wants to hear about your experiences with the EyeDropper API.
 
 Is there something about the API that doesn't work like you expected? Or are there missing methods
 or properties that you need to implement your idea? Have a question or comment on the security
-model? File a spec issue on the corresponding [GitHub repo][issues], or add your thoughts to an
+model? File a spec issue on the API's [GitHub repo][issues], or add your thoughts to an
 existing issue.
 
 ### Report a problem with the implementation
