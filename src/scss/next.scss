@@ -565,6 +565,12 @@ input[type='radio'] {
   }
 }
 
+/// Optical adjustment helps align labels
+input[type='checkbox'] + label,
+input[type='radio'] + label {
+  transform: translateY(-0.5ex);
+}
+
 input[type='checkbox'] {
   width: min(1.13em, 18px);
   height: min(1.13em, 18px);
@@ -660,6 +666,8 @@ web-copy-code {
 @import 'blocks/eyebrow';
 @import 'blocks/fab';
 @import 'blocks/feature-card';
+@import 'blocks/headline';
+@import 'blocks/hero';
 @import 'blocks/icon-button';
 @import 'blocks/indicator';
 @import 'blocks/label';
@@ -684,6 +692,7 @@ web-copy-code {
 @import 'web-components/web-audio-fab';
 @import 'web-components/web-copy-code';
 @import 'web-components/web-navigation-drawer';
+@import 'web-components/web-subscribe';
 
 /// UTILITY CLASSES
 @import 'utilities/all-center';
@@ -698,6 +707,7 @@ web-copy-code {
 /// PAGES
 @import 'pages/course';
 @import 'pages/design-system';
+@import 'pages/homepage';
 @import 'pages/measure';
 
 // The prototype file is for temporary prototyping

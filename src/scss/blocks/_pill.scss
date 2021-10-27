@@ -5,9 +5,9 @@
   vertical-align: middle;
   font-size: get-size('size-0');
   line-height: 1;
-  padding: 0.4rem 0.6rem 0.4rem 0.6rem;
+  padding: 0.4rem 0.6rem 0.35rem 0.6rem;
   border-radius: 2em;
-  border: none;
+  border: 1px solid var(--color-stroke);
   background: transparent;
   font-size: get-size('base');
   text-decoration: none;
@@ -15,13 +15,19 @@
   appearance: none;
   -webkit-appearance: none;
 
-  @include apply-utility('bg', 'mid-bg');
   @include apply-utility('font', 'brand');
+
+  &:link,
+  &:visited {
+    @include apply-utility('color', 'core-text');
+  }
 
   &:hover,
   &[data-state='active'],
   &[aria-current='page'] {
-    @include apply-utility('color', 'action-text');
-    @include apply-utility('bg', 'highlight-interact-bg');
+    border-color: get-utility-value('bg', 'action-bg-primary');
+
+    @include apply-utility('color', 'action-text-primary');
+    @include apply-utility('bg', 'action-bg-primary');
   }
 }

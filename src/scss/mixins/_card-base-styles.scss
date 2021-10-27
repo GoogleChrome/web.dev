@@ -11,8 +11,10 @@
   padding: $global-gutter-narrow;
   border: 1px solid get-utility-value('color', 'stroke');
   border-radius: $global-radius-large;
-  max-width: 40rem;
+  max-width: 37rem;
   text-decoration: none;
+
+  @include apply-utility('bg', 'core-bg');
 
   // This lets text keep its selectable state
   a:not([class*='action']),
@@ -32,20 +34,14 @@
       box-shadow $global-transition-movement, background $global-transition-fade,
       border-color $global-transition-fade;
     border-color: get-utility-value('bg', 'mid-bg');
-
-    /// Because the card has a whole-card hover state, we want to kick out
-    /// individual hover styles
-    a {
-      text-decoration: none;
-      background: none;
-    }
   }
 
-  &:link {
+  &:link,
+  &:visited {
     @include apply-utility('color', 'core-text');
   }
 
-  > img {
+  > img:not([class]) {
     height: 15rem;
     object-fit: cover;
     margin-inline: auto;

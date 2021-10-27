@@ -11,10 +11,16 @@
   overflow: hidden;
 
   @include apply-utility('bg', 'action-bg');
-  @include apply-utility('color', 'action-text');
   @include apply-utility('weight', 'medium');
   @include apply-utility('leading', 'flat');
+  @include apply-utility('font', 'brand');
   @include vertically-align-label();
+
+  &,
+  &:link,
+  &:visited {
+    @include apply-utility('color', 'action-text');
+  }
 
   & svg {
     width: 1.5em;
@@ -42,12 +48,16 @@
     border-color: get-utility-value('bg', 'action-bg-primary');
 
     @include apply-utility('bg', 'action-bg-primary');
-    @include apply-utility('color', 'action-text-primary');
+
+    &,
+    &:link,
+    &:visited {
+      @include apply-utility('color', 'action-text-primary');
+    }
   }
 
   &[data-type='secondary'] {
     border: 1px solid get-utility-value('color', 'stroke');
-    @include apply-utility('color', 'mid-text');
   }
 
   /// DISABLED STATE

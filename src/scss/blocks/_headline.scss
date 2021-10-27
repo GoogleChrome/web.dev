@@ -1,0 +1,23 @@
+/// COMPONENT LIBRARY LOCATION
+/// https://web.dev/design-system/component/headline
+.headline {
+  --flow-space: #{get-space('base')};
+
+  p {
+    @include apply-utility('color', 'mid-text');
+  }
+}
+
+.headline__title {
+  font-size: get-size('size-4');
+}
+
+.headline__action {
+  --flow-space: #{get-space('size-1')};
+
+  :link,
+  :visited {
+    @include apply-utility('font', 'brand');
+    @include apply-utility('color', 'mid-text');
+  }
+}
