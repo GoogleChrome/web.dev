@@ -62,6 +62,13 @@ form_types:
     en: Specific form types
   description:
     en: "to do."
+
+wrap_up:
+  title:
+    en: Wrap up
+  description:
+    en: "Title for the section with the conclusion of the course"
+
 learn_design:
   title:
     en: Learn Responsive Design!
