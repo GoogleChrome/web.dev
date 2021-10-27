@@ -21,7 +21,7 @@ featureCard:
 pickedCaseStudyUrl: '/mainline-mensware/'
 pickedCaseStudyTheme: 'light'
 pageSpeed:
-  eyebrow: 'Page Speed Insights'
+  eyebrow: 'PageSpeed Insights'
   title: 'Measure page quality with PageSpeed Insights'
   summary: |
     See how well your website performs. Then, get tips to improve your user experience.
