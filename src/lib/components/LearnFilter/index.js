@@ -37,7 +37,7 @@ class LearnFilter extends BaseElement {
     }
 
     for (const child of learCollectionsElement.children) {
-      child.classList.toggle('visually-hidden', !!id && id !== child.id);
+      child.classList.toggle('hidden-yes', !!id && id !== child.id);
     }
   }
 

@@ -9,6 +9,10 @@
 
     padding-block-end: get-space('size-2');
   }
+
+  .pill {
+    min-width: 4rem;
+  }
 }
 
 @include media-query('md') {
