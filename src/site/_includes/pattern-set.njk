@@ -120,7 +120,6 @@ pageScripts:
       {% for patternId, pattern in patterns.patterns %}
         {% if pattern.set == patternSuite.id %}
           {% if first %}
-            <h2>{{ "i18n.patterns.other_patterns" | i18n(locale) }}</h2>
             {{ patternSet.content | safe }}
           {% endif %}
           {% set first = false %}
