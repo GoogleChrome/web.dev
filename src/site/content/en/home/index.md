@@ -18,6 +18,16 @@ featureCard:
   eyebrow: 'Event'
   url: '#'
   background: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/v6J407myhxv2V4uwzF0u.png?auto=format'
+promoPanel:
+  title: 'Chrome Dev Summit 2021'
+  summary: 'Join the Chrome team for our two-day summit on the latest techniques for building the modern Web.'
+  primaryButtonUrl: 'TBD'
+  primaryButtonText: 'TBD'
+  secondaryButtonUrl: 'TBD'
+  secondaryButtonText: 'TBD'
+  image: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/KwS4L954TzN3KK3pWmtA.svg'
+  imageWidth: '530'
+  imageHeight: '483'
 pickedCaseStudyUrl: '/mainline-mensware/'
 pickedCaseStudyTheme: 'light'
 pageSpeed:
