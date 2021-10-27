@@ -35,7 +35,7 @@ CSS_ORIGIN: 'next'
   {% if promoPanel %}
     <article class="hero" data-type="promo">
       <div class="wrapper">
-        <div class="hero__columns flex-dir-rev switcher">
+        <div class="hero__columns switcher" data-direction="rev">
           <div>
             <span aria-hidden="true" class="hero__eyebrow">{{ promoPanel.eyebrow }}</span>
             <div class="hero__content flow">
@@ -61,7 +61,7 @@ CSS_ORIGIN: 'next'
   {# Page speed starts #}
   <article class="hero bg-core-bg homepage__page-speed-hero">
     <div class="wrapper">
-      <div class="hero__columns switcher flex-dir-rev">
+      <div class="hero__columns switcher" data-direction="rev">
         <div class="flow">
           <img src="{{ pageSpeed.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ pageSpeed.imageWidth }}" height="{{ pageSpeed.imageHeight }}" />
         </div>

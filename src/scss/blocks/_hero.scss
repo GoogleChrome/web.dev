@@ -48,10 +48,21 @@
   justify-content: space-between;
 }
 
+/// Reversed columns
+.hero__columns[data-direction='rev'] {
+  flex-direction: row-reverse;
+}
+
 /// RESPONSIVE ADJUSTMENTS
 @include media-query('lg') {
   .hero {
     .feature-card {
+      margin-inline-start: auto;
+    }
+  }
+
+  .hero__columns[data-direction='rev'] {
+    > :first-child > * {
       margin-inline-start: auto;
     }
   }
