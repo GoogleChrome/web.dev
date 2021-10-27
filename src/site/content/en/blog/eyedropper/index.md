@@ -159,7 +159,7 @@ To address this concern, the API specification requires the following measures:
   `open()` only resolves to a color value in response to a user action (clicking on a pixel). So the
   eyedropper cannot be used in the background without the user noticing it.
 - To help users notice the eyedropper mode easily, browsers are required to make the mode obvious.
-  This is why the normal mouse cursor disappears after a short delay and the big magnifying glass
+  This is why the normal mouse cursor disappears after a short delay and the dedicated user interface
   appears instead. There's also a delay between when the eyedropper mode starts and when the user
   can select a pixel to ensure the user has had time to see the magnifying glass.
 - Finally, users are able to cancel the eyedropper mode at any time (by pressing the <kbd>esc</kbd>
