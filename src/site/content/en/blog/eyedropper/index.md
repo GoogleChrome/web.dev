@@ -12,7 +12,7 @@ description: >
   to select colors from pixels on their screen, including those outside the browser.
 hero: image/8WbTDNrhLsU0El80frMBGE4eMCD3/6Gl4RG1zitlgmpMZviDD.jpg
 alt: A pipette.
-date: 2021-10-26
+date: 2021-10-27
 tags:
   - capabilities
   - progressive-web-apps
