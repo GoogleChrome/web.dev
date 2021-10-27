@@ -4,14 +4,13 @@ description: >
   In this module, you learn how to style forms.
 authors:
   - michaelscharnagl
-date: 2021-10-07
+date: 2021-11-03
 ---
 
 ## Help users use your form with their preferred browser
 
-To ensure people can use your form, use the elements built for the job, 
-such as `<input>`, `<textarea>`, `<select>`, and `<button>`. 
-This is the baseline for a usable form.
+To ensure that your form is accessible to as many people as possible, use the elements built for the 
+job: `<input>`, `<textarea>`, `<select>`, and `<button>`. This is the baseline for a usable form.
 
 {% Codepen {
   user: 'web-dot-dev',
@@ -19,10 +18,10 @@ This is the baseline for a usable form.
   height: 300
 } %}
 
-The default browser styles don't look great, let's change that.
+The default browser styles don't look great! Let's change that.
 
 {% Aside %}
-Progressive enhancement (PE) is a strategy that provides a baseline of essential content and features for as many users as possible. 
+Progressive enhancement is a strategy that provides a baseline of essential content and features for as many users as possible. 
 It ensures the best possible experience for users on modern browsers.
 
 You start with content, use 
@@ -51,11 +50,11 @@ Increase the `font-size` and `line-height` to improve readability.
 ``` 
 
 {% Aside %}
-Use relative units like `em` (relative to the base size of the parent's element) or `rem` 
-(relative to the base size of the document) for the font size, 
-to ensure the size responds to user preference. 
-You can change the base `font-size` and all elements with a relative `font-size` automatically. 
-For `line-height` use a unitless value, to keep the line height relative to the font size.
+For `font-size` use relative units such as `em` (relative to the base size of the element's parent) 
+or `rem` (relative to the base size of the document) to ensure that size responds to user preference. 
+Users can change the base `font-size` and all elements with a relative `font-size` will adjust 
+automatically. For `line-height` use a [unitless value](https://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/) 
+such as `1.5`, to keep the line height relative to the font size.
 
 Learn more about 
 [pixels vs. relative units in CSS](https://www.24a11y.com/2019/pixels-vs-relative-units-in-css-why-its-still-a-big-deal/).
@@ -75,7 +74,7 @@ to help users understand which elements belong together.
 The `margin` CSS property increases space between elements, 
 and the `padding` property increases space around the element's content.
 
-For the general layout, use Flexbox or Grid. 
+For the general layout, use [Flexbox](/learn/css/flexbox/) or [Grid](/learn/css/grid/). 
 Learn more about [CSS layout methods](/learn/css/layout/).
 
 ## Ensure form controls look like form controls
@@ -85,7 +84,7 @@ For example, style `<input>` elements with a solid border.
 
 {% Aside %}
 The default `<input>` border color is too light in many browsers. 
-The lack of contrast makes it hard for some users to see the `<input>`. 
+The lack of contrast can make the element hard to see, especially on mobile. 
 [Open this demo](https://codepen.io/web-dot-dev/pen/9d0576454b3b2d0fc001addab70d25bc) in Chrome on Android to see the default styles.
 {% endAside %}
 
@@ -118,7 +117,7 @@ and override or remove the default `border` styles.
 In modern browsers, you can style a `<button>` like any other element, 
 so you should always use a semantic `<button>`, or `<input type="submit">`. 
 Using the element built for the job provides many built-in usability and accessibility 
-benefits that you won't get when using a generic element, for example, a `<div>`. 
+benefits that you won't get when using a generic element such as a `<div>`. 
 You'll learn about the built-in features in other modules.
 
 Learn more about 

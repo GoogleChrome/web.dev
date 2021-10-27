@@ -4,13 +4,13 @@ description: >
   Learn all about autofill and the autocomplete attribute.
 authors:
   - michaelscharnagl
-date: 2021-10-06
+date: 2021-11-03
 ---
 
 Having to re-enter your address for the tenth time is tiring. 
 Browsers, and you, as a developer, can help users enter data faster, and avoid re-entering data. 
-This module teaches you how autofill works, 
-and how `autocomplete` and other element attributes can ensure browsers offer appropriate autofill options.
+This module teaches you how autofill works, and how `autocomplete` and other element attributes can 
+ensure that browsers offer appropriate autofill options.
 
 ## How does autofill work?
 
@@ -22,7 +22,7 @@ but still something you do often.
 Over time, you fill out many forms, 
 and you often fill in the same data. 
 One way to help users fill out forms faster is by offering them the option 
-to automatically fill in form fields with previously entered data: autofill. 
+to automatically fill in form fields with previously entered data. That's autofill. 
 
 How do browsers know what data to autofill? 
 Let's have a look at an example form field to find out.
@@ -77,7 +77,7 @@ There are values for `country`, `postal-code`, and
 You can define multiple values separated by a space for `autocomplete`. 
 Say, you have a form with a shipping address and another form for a billing address. 
 To tell the browser which is the postal code for the billing address, 
-you can use `autocomplete="billing postal-code"`. 
+you can use `autocomplete="billing postal-code"`. 
 For the shipping address, use `shipping` as the first value.
 {% endAside %}
 
@@ -86,7 +86,7 @@ For the shipping address, use `shipping` as the first value.
 Many people aren't good at remembering passwords. 
 The 
 [most common password](https://en.wikipedia.org/wiki/List_of_the_most_common_passwords) is '123456', 
-followed by other easy-to-remember phrases. 
+followed by other easy-to-remember combinations. 
 How can you use secure and unique passwords without remembering them all? 
 
 Browsers have built-in passwords managers to generate, save, and fill in passwords for you. 
@@ -120,12 +120,11 @@ to tell browsers to offer the option to fill in previously saved passwords for t
 You can set up two-factor authentication on many websites. 
 In addition to the password, a one-time code is sent via SMS or a two-factor authentication app. 
 
-Wouldn't it be great if the code you received in the SMS is suggested on the on-screen keyboard, 
-and you can directly select it to fill in the value? 
-On Safari 14 or later, you can use 
+Wouldn't it be great if the code you received in the SMS message was suggested by the on-screen keyboard, 
+and you could directly select it to fill in the value? On Safari 14 or later, you can use 
 [`autocomplete="one-time-code"`](https://developer.apple.com/documentation/security/password_autofill/enabling_password_autofill_on_an_html_input_element) to achieve this. 
 On Chrome on Android, you can use the 
-[WebOTP API](/web-otp) to achieve this imperatively.
+[WebOTP API](/web-otp) to achieve this with JavaScript.
 
 Learn more about how to verify phone numbers on the web with the 
 [SMS OTP form best practices](/sms-otp-form/).
@@ -152,7 +151,7 @@ to ensure browsers offer the correct autofill options.
 There are values for the credit card number `cc-number`, credit card expiration date `cc-exp`, 
 and [all other information needed](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete#values) for a credit card payment.
 
-Use a single input for numbers, 
+Use a single input for numbers 
 such as credit card numbers and telephone numbers, 
 to ensure browsers offer autofill. 
 Use standard form elements, for example, 
@@ -162,7 +161,7 @@ instead of custom elements, to ensure autocomplete is available.
 Learn more about 
 [helping users to avoid re-entering payment data](/learn/forms/payment/#help-users-enter-their-payment-details).
 
-## Ensure autofill works for your fields
+## Ensure autofill works for all your fields
 
 In addition to addresses, account information, and credit card information, 
 there are many more fields where browsers can help users with autofill. 
@@ -199,7 +198,7 @@ For more information, see the
 [W3C accessibility guidelines](https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html)
 {% endAside %}
 
-Another use case is a honeypot field (see [previous module](/learn/forms/security-privacy/#a-honeypot)). 
+Another use case for `autocomplete="off"` is a honeypot field (see [previous module](/learn/forms/security-privacy/#a-honeypot)). 
 Even though the field isn't visible, browsers may autofill it with the rest of the fields. 
 Turning autofill off ensures a real user isn't identified as a bot, 
 due to the field being completed automatically.

@@ -4,7 +4,7 @@ description: >
   In this module, you learn how to be prepared for international data formats, and how to plan your form for localization.
 authors:
   - michaelscharnagl
-date: 2021-09-17
+date: 2021-11-03
 ---
 
 If you're reading this, you're using the World Wide Web.
@@ -18,7 +18,7 @@ Let's see how you can make sure your form works with different languages.
 
 The first step to make your site localization-ready is to define the language attribute `lang` on the `<html>` element.
 This attribute enables screen readers to invoke the correct pronunciation,
-and helps browsers offer a translation of the page if the defined language is not the browser language.
+and helps browsers offer a translation of the page if the defined language is not the default browser language.
 
 ```html
 <html lang="en-us">
@@ -35,7 +35,7 @@ You can add `<link>` elements in your site's  `<head>` describing the alternate 
 <link rel="alternate" title="Title in German" href="https://example.com/de/form" hreflang="de">
 ```
 
-## Help users speaking another language use your form
+## Help users who speak another language to use your form
 
 You can't translate your form into every language,
 but you can ensure translation tools can translate it for you.
@@ -107,27 +107,29 @@ Learn more about [logical properties](/learn/css/logical-properties/).
 Say you have a form where the user should fill in their name.
 How would you add the field to your form?
 
-You could add one field for the first name and one for the surname.
-However some people do not have a surname, how should they fill in the surname field?
+You could add one field for the first name and one for the surname. However, names are different 
+around the world: for example, some people don't have a surname—so how should they fill in the 
+surname field?
 
-To ensure everybody can enter their name, use only one form field for names.
+To make it quick and easy to enter names—and to ensure everybody can enter their name, whatever the 
+format—use a single form field for names wherever possible.
 
 Learn more about [personal names](https://www.w3.org/International/questions/qa-personal-names).
 
 If you have a name with [non-Latin characters](/payment-and-address-form-best-practices/#unicode-matching),
-you may have encountered the issue that your name is reported as `invalid` in some forms.
-You should not assume that a name only consists of Latin characters,
-and allow all possible characters.
+you may have encountered the issue that your name is reported as `invalid` in some forms. When you 
+build forms, make sure to allow all possible characters—and do not assume that a name only consists 
+of Latin characters.
 
 ## Allow a variety of address formats
 
-The address of the headquarters of Google is 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States.
+The headquarters of Google is at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States.
 
-It contains the street number, street, city, state, postal code, and country.
+This address includes the street number, street, city, state, postal code, and country.
 In your country, the address format may be totally different.
 How can you ensure everybody can enter their address in your form?
 
-One way is to use generic inputs.
+One way is to use generic inputs. 
 
 {% Codepen {
   user: 'web-dot-dev',

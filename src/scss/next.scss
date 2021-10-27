@@ -26,6 +26,7 @@ $global-prose-element-max-width: 50rem;
 
 /// MIXINS
 @import 'mixins/button-base-styles';
+@import 'mixins/card-base-styles';
 @import 'mixins/rounded-border';
 @import 'mixins/vertically-align-label';
 
@@ -655,13 +656,16 @@ web-copy-code {
 @import 'blocks/button';
 @import 'blocks/card';
 @import 'blocks/compare';
+@import 'blocks/counter';
 @import 'blocks/eyebrow';
 @import 'blocks/fab';
+@import 'blocks/feature-card';
 @import 'blocks/icon-button';
 @import 'blocks/indicator';
 @import 'blocks/label';
 @import 'blocks/numbered-headers';
 @import 'blocks/pagination';
+@import 'blocks/pill';
 @import 'blocks/preview-pagination';
 @import 'blocks/prose';
 @import 'blocks/site-footer';

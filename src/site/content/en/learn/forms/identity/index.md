@@ -4,7 +4,7 @@ description: >
   Learn how to build secure and accessible sign-up and sign-in forms, and find out how to help users change their account settings.
 authors:
   - michaelscharnagl
-date: 2021-10-11
+date: 2021-11-03
 ---
 
 {% Aside 'warning' %}  
@@ -23,8 +23,8 @@ Learn more about
 The sign-up form is often the first interaction with a form on your website. 
 Good sign-up form design is critical, and a secure form is essential. 
 
-{% Aside 'caution' %}  
-Only implement a sign-up form if you really need to. 
+{% Aside %}  
+Only require sign-up if you really need to. 
 If you only want to store information between navigations, 
 consider [using client-side storage](/storage-for-the-web/). 
 For checkout forms, add a guest checkout by default. 
@@ -91,10 +91,10 @@ Let's see how to build a sign-in form to ensure users can easily sign in to your
   height: 450  
 } %}
 
-Make the location of the sign-in form obvious. 
+Make the location of sign-up and sign-in buttons obvious. 
 Ensure your form is usable on touch devices:
 
--  The [tap target size](https://web.dev/accessible-tap-targets/) of a button is at least 48px.
+-  The [tap target size](/accessible-tap-targets/) of buttons is at least 48px.
 -  The `font-size` of your form elements is big enough (`20px` is about right on mobile).
 -  There is enough space (`margin`) between form controls, and that inputs are large enough (use at least `padding: 15px` on mobile).
 
@@ -108,8 +108,9 @@ To help users manually fill in their account details, use `type="email"`
 for the email field to show the appropriate on-screen keyboard on mobile devices. 
 
 Use the `required` attribute for your email and password field so you can warn of invalid values when the user submits the form. 
-Consider using [real-time validation](/learn/forms/javascript#ensure-users-are-notified-about-errors-in-real-time), 
-to help users correct invalid data even before filling out the complete `<form>`.
+Consider using [real-time validation](/learn/forms/javascript#ensure-users-are-notified-about-errors-in-real-time) 
+to help users correct invalid data as soon as they have entered it, rather than waiting for form 
+submission.
 
 ### Ensure users can see the password they entered
 
@@ -166,7 +167,7 @@ Ask users for the current password before changing it,
 and send an email about a password change with the option to revert and lock the account.  
 
 Add the option to request a new password, 
-and consider using a [well-known URL](/change-password-url/) for requesting a new password.
+and consider providing a [`.well-known` URL](/change-password-url/) for requesting a new password.
 
 ## Resources
 

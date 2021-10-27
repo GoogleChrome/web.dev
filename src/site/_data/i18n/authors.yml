@@ -1006,6 +1006,12 @@ adamargyle:
     ru: Developer Advocate по вопросам Chrome
     zh: 负责 Chrome 的开发技术推广工程师
 
+emmatwersky:
+  title:
+    en: Emma Twersky
+  description:
+    en: Developer Relations Engineer for Angular
+
 lunalu:
   title:
     en: Luna Lu
@@ -1707,6 +1713,24 @@ syg:
     pt: Nossas últimas notícias, atualizações e histórias por Shu-yu Guo.
     ru: Последние новости и статьи от Shu-yu Guo.
     zh: Shu-yu Guo 撰写我们的最新资讯、动态和故事。
+
+nabeelalshamma:
+  title:
+    en: Nabeel Al-Shamma
+    es: Nabeel Al-Shamma
+    ja: Nabeel Al-Shamma
+    ko: Nabeel Al-Shamma
+    pt: Nabeel Al-Shamma
+    ru: Nabeel Al-Shamma
+    zh: Nabeel Al-Shamma
+  description:
+    en: Principal Scientist at Adobe
+    es: Principal Scientist at Adobe
+    ja: Principal Scientist at Adobe
+    ko: Principal Scientist at Adobe
+    pt: Principal Scientist at Adobe
+    ru: Principal Scientist at Adobe
+    zh: Principal Scientist at Adobe
 
 nattestad:
   title:
@@ -3435,3 +3459,39 @@ firt:
     en: Maximiliano Firtman
   description:
     en:  Author of Hacking Web Performance from O'Reilly
+karaerickson:
+  title:
+    en: Kara Erickson
+    es: Kara Erickson
+    ja: Kara Erickson
+    ko: Kara Erickson
+    pt: Kara Erickson
+    ru: Kara Erickson
+    zh: Kara Erickson
+  description:
+    en: Software Engineer on the Aurora team at Chrome.
+    es: Ingeniera de software en el equipo de Aurora en Chrome.
+    ja: ChromeのAuroraチームのソフトウェアエンジニア。
+    ko: Chrome에서 Aurora 팀의 소프트웨어 엔지니어입니다.
+    pt: Engenheiro de software da equipe Aurora no Chrome.
+    ru: Инженер-программист в команде Aurora в Chrome.
+    zh: Chrome 公司 Aurora 团队的软件工程师。
+
+alexcastle:
+  title:
+    en: Alex Castle
+    es: Alex Castle
+    ja: Alex Castle
+    ko: Alex Castle
+    pt: Alex Castle
+    ru: Alex Castle
+    zh: Alex Castle
+  description:
+    en: Software Engineer on the Aurora team at Chrome.
+    es: Ingeniero de software en el equipo de Aurora en Chrome.
+    ja: ChromeのAuroraチームのソフトウェアエンジニア。
+    ko: Chrome에서 Aurora 팀의 소프트웨어 엔지니어입니다.
+    pt: Engenheiro de software da equipe Aurora no Chrome.
+    ru: Инженер-программист в команде Aurora в Chrome.
+    zh: Chrome 公司 Aurora 团队的软件工程师。
+  

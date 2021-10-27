@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-04-08
-updated: 2020-06-16
+updated: 2021-10-19
 hero: image/admin/rOe3wxcy28m5DCKcHv7E.jpg
 alt: Pigeons on a wall with a sharp black and white contrast in the background.
 description: |
@@ -148,14 +148,6 @@ The following values are currently supported:
 In this list, `light` represents a light color scheme,
 with light background colors and dark foreground colors,
 whereas `dark` represents the opposite, with dark background colors and light foreground colors.
-
-{% Aside 'warning' %}
-  Previously, the specification allowed an additional value `light only`
-  that indicated that the element had to be rendered with a light color scheme if possible,
-  even if the user's preference is for a different color scheme.
-  Authors *should not* use this value, and should instead ensure their page renders well
-  with whatever color scheme the user prefers.
-{% endAside %}
 
 For all elements, rendering with a color scheme should cause the colors used
 in all browser-provided UI for the element to match with the intent of the color scheme.

@@ -487,7 +487,7 @@ type](https://www.w3.org/TR/navigation-timing-2/#sec-performance-navigation-type
 continue to monitor your performance within these navigation types—even if the
 overall distribution skews negative. This approach is recommended for
 non-user-centric page load metrics like [Time to First Byte
-(TTFB)](/time-to-first-byte/).
+(TTFB)](/ttfb/).
 
 For user-centric metrics like the [Core Web Vitals](/vitals/), a better option
 is to report a value that more accurately represents what the user experiences.
