@@ -3454,6 +3454,12 @@ patmeenan:
     ru: Последние новости и статьи от Patrick Meenan.
     zh: Patrick Meenan 撰写我们的最新资讯、动态和故事。
 
+firt:
+  title:
+    en: Maximiliano Firtman
+  description:
+    en:  Author of Hacking Web Performance from O'Reilly
+
 patrickbrosset:
   title:
     en: Patrick Brosset
