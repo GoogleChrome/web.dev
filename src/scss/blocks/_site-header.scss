@@ -109,11 +109,11 @@
     }
   }
 
-  web-navigation-drawer[animating] [data-drawer-container] {
+  .site-header web-navigation-drawer[animating] [data-drawer-container] {
     transition: none;
   }
 
-  web-navigation-drawer[type='standard'] {
+  .site-header web-navigation-drawer[type='standard'] {
     position: static;
     pointer-events: auto;
     top: 0;
@@ -130,7 +130,7 @@
   /// Although the nav is centered, via flexbox, it doesn't look
   /// optically centered, thanks to elements that vertically follow
   /// it. This transform creates that optical adjustment
-  web-navigation-drawer[type='standard'] [data-drawer-container] {
+  .site-header web-navigation-drawer[type='standard'] [data-drawer-container] {
     transform: translateX(-1.75rem);
   }
 
