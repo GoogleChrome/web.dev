@@ -96,13 +96,12 @@
   .about__pod-columns {
     grid-template-columns: 20rem 1fr;
   }
-}
 
-@include media-query('lg') {
   .about__columns {
     flex-direction: row;
-    align-items: end;
+    align-items: flex-end;
     justify-content: space-between;
+    column-gap: get-space('size-2');
   }
 
   .about__article {
