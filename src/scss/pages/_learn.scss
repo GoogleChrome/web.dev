@@ -1,21 +1,20 @@
 .learn {
-  .card {
-    width: 380px;
-  }
-
-  .headline,
-  .hero {
-    padding-bottom: 3em;
-    padding-top: 3em;
-  }
-
   .learn__collection {
     border-block-start: 1px solid var(--color-stroke);
-    padding-bottom: 2em;
-    padding-top: 2em;
+    padding-block: get-space('size-1');
+  }
 
-    &.visually-hidden {
-      display: none;
+  .auto-grid {
+    --gutter: #{get-space('size-2')};
+
+    padding-block-end: get-space('size-2');
+  }
+}
+
+@include media-query('md') {
+  .learn {
+    .auto-grid {
+      --auto-grid-min-item-size: 22rem;
     }
   }
 }
