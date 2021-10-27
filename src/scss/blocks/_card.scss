@@ -13,7 +13,6 @@
 }
 
 .card__content {
-  --flow-space: 0.3rem;
   flex: auto;
 
   @include apply-utility('gap-top', 'size-1');
@@ -114,6 +113,18 @@
 
 .card__logo {
   height: 34px;
+}
+
+.card__hero {
+  width: 100%;
+  aspect-ratio: 5/3;
+  object-fit: cover;
+  border-radius: $global-radius-large;
+}
+
+.card__tags {
+  --gutter: 0.5rem;
+  margin-block-start: get-space('base');
 }
 
 /// EXCEPTIONS
