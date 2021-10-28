@@ -25,7 +25,7 @@ pods:
       height: '175'
   - title: 'Innovating to push the web forward'
     summary: 'Chrome’s mission is to help people get the most out of the web by building the most innovative browser possible.'
-    brand: 'lockup-chrome.svg'
+    brand: 'lockup-chrome-dev.svg'
     alt: 'Google Chrome'
     actions:
       - text: 'Chrome Developers'
