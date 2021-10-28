@@ -8,7 +8,7 @@ questions:
     stem: The Cascade can be used for...
     options:
       - content: "Resolving conflicts when multiple styles apply to an element."
-        rationale: "This is one of it's primary goals, conflict resolution."
+        rationale: "This is one of its primary goals, conflict resolution."
       - content: "Ensuring there's only one style value for each property at draw time."
         rationale: "The text can only be one color, and The Cascade is a way of
         determining which it should be."
