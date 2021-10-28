@@ -123,18 +123,14 @@
   margin-block-start: get-space('base');
 }
 
-.card__logo {
-  min-height: 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-}
-
 /// EXCEPTIONS
 .card[data-style='branded'] {
   max-width: 25rem;
   min-width: 22rem;
+
+  > img {
+    height: unset;
+  }
 
   &:hover {
     @include apply-utility('bg', 'core-bg');
@@ -146,8 +142,5 @@
 @include media-query('xs') {
   .card[data-style='branded'] {
     min-width: 16rem;
-    > img {
-      height: 8rem;
-    }
   }
 }
