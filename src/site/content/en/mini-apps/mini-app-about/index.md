@@ -18,7 +18,7 @@ tags:
 
 ## Building blocks and compatibility
 
-Mini apps are small (commonly [2–4MB](https://www.w3.org/2021/10/MiniApp-Overview-breakout.pdf))
+Mini apps are small (commonly [2-4&nbsp;MB](https://www.w3.org/2021/10/MiniApp-Overview-breakout.pdf))
 apps that require a
 [super app](/mini-app-super-apps/#for-mini-apps-you-need-super-apps)
 to run. What they have in
