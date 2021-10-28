@@ -14,10 +14,10 @@ intro:
   imageHeight: '210'
 featureCard:
   theme: 'dark'
-  title: 'Welcome to Google Chrome Dev Summit 2021'
-  eyebrow: 'Event'
-  url: '#'
-  background: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/v6J407myhxv2V4uwzF0u.png?auto=format'
+  title: 'Explore our structured learning paths to learn new skills'
+  eyebrow: 'Learn'
+  url: '/learn'
+  background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/yJSJQfrrK4pVh44yuMZV.svg'
 promoPanel:
   title: 'Chrome Dev Summit 2021'
   summary: 'Join the Chrome team for our two-day summit on the latest techniques for building the modern Web.'
