@@ -77,10 +77,8 @@
 
   &:hover,
   &:focus {
-    > img {
-      transform: scale(1.05);
-      transition: transform $global-transition-movement;
-    }
+    filter: brightness(115%);
+    transition: filter $global-transition-fade;
   }
 }
 
