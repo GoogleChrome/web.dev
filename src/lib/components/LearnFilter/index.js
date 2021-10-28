@@ -33,7 +33,7 @@ class LearnFilter extends BaseElement {
     }
 
     for (const child of learningPathsElement.children) {
-      child.classList.toggle('hidden', id && id !== child.id);
+      child.classList.toggle('hidden', !!id && id !== child.id);
     }
   }
 
