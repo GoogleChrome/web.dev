@@ -63,6 +63,7 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
+    transition: transform $global-transition-movement;
   }
 
   .flow {
@@ -79,7 +80,6 @@
   &:focus {
     > img {
       transform: scale(1.05);
-      transition: transform $global-transition-movement;
     }
   }
 }
