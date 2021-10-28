@@ -1,9 +1,10 @@
 ---
 layout: default-next
-title: Measure powered by PageSpeed Insights
+title: Measure page quality
 description: |
-  See how well your website performs. Then, get tips to improve your user
-  experience.
+  Test your website in a lab environment powered by PageSpeed Insights.
+  Then, get tips and recommendations to improve your user experience.
+  For field performance, see the PageSpeed Insights tool.
 date: 2021-10-13
 pageScripts:
   - '/js/measure.js'
@@ -66,27 +67,33 @@ noindex: true
   <section class="wrapper region measure-faq" class="bg-mid-bg" data-size="narrow">
     <details class="bg-mid-bg">
       <summary>
-        FAQ question 1
+        What is the data source powering the Measure tool?
       </summary>
-      <p>FAQ Answer 1</p>
+      <p>
+        Measure tool uses Lighthouse data from  the PageSpeed Insights API.
+        Learn more about PageSpeed Insights in the
+        <a href="https://developers.google.com/speed/docs/insights/v5/about?hl=en-US&utm_source=PSI&utm_medium=incoming-link&utm_campaign=PSI#faq)">
+        official FAQs</a>
+      </p>
     </details>
     <details class="bg-mid-bg">
       <summary>
-        FAQ question 2
+        How does Measure tool differ from PageSpeed Insights?
       </summary>
-      <p>FAQ Answer 1</p>
-    </details>
-    <details class="bg-mid-bg">
-      <summary>
-        FAQ question 3
-      </summary>
-      <p>FAQ Answer 1</p>
-    </details>
-    <details class="bg-mid-bg">
-      <summary>
-        FAQ question 4
-      </summary>
-      <p>FAQ Answer 1</p>
+      <p>
+        Measure tool  measures the overall quality of a web page in a lab
+        environment (using Lighthouse). It gives insights about multiple
+        quality categories from Lighthouse, including Performance, Accessibility
+        and SEO. PageSpeed Insights (PSI) is performance focused,
+        using both lab (Lighthouse) and field (Chrome UX Report) data
+        to provide a summary of performance.
+        Furthermore, PSI provides origin level insights in the field,
+        whereas web.dev/measure is intended to deep-dive into a single
+        URL in the lab.
+      </p>
+      <p>
+        Use PSI when you want to measure and optimize your Core Web Vitals, and use web.dev/measure when optimizing a broader set of quality signals about a page.
+      </p>
     </details>
 
   </section>
