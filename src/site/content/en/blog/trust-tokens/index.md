@@ -1,10 +1,10 @@
 ---
 title: Getting started with Trust Tokens
-subhead: Trust Tokens is a new API to help combat fraud and distinguish bots from real humans, without passive tracking.
+subhead: Trust Tokens is a new API to enable a website to convey a limited amount of information from one browsing context to another (for example, across sites) to help combat fraud, without passive tracking.
 authors:
   - samdutton
 date: 2020-06-22
-updated: 2021-08-23
+updated: 2021-10-28
 hero: image/admin/okxi2ttRG3h1Z4F3cylI.jpg
 thumbnail: image/admin/cTo0l2opcfNxg1TEjxSg.jpg
 alt: Black and white photograph of hand holding token
