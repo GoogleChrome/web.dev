@@ -40,7 +40,7 @@ CSS_ORIGIN: 'next'
             <span aria-hidden="true" class="hero__eyebrow">{{ promoPanel.eyebrow }}</span>
             <div class="hero__content flow">
               <h2 class="hero__title">{{ promoPanel.title }}</h2>
-              {{ promoPanel.summary | md | safe }}
+              <p>{{ promoPanel.summary }}</p>
               <div class="cluster gutter-base flow-space-size-2">
                 <a class="button" data-type="primary" href="{{ promoPanel.primaryButtonUrl }}">{{ promoPanel.primaryButtonText }}</a>
                 <a class="button" data-type="secondary" href="{{ promoPanel.secondaryButtonUrl }}">{{ promoPanel.secondaryButtonText }}</a>
