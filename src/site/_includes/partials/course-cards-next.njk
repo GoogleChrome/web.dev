@@ -7,6 +7,7 @@
   {% for course in coursesArr|sort(true, false, 'meta.date') %}
     {% if course.meta and not course.meta.draft %}
       <a href="{{ course.meta.url }}" class="card" data-style="branded">
+        <h3 class="visually-hidden">{{ course.meta.title }}</h3>
         <div class="card__header repel">
           <p class="color-mid-text">Course</p>
           <div class="counter t-bg-highlights-{{ course.meta.highlight }} t-color-shades-light-bright">
@@ -17,13 +18,13 @@
         </div>
         <img src="{{ course.meta.decor }}" alt="{{ course.meta.title }} branding" />
         <div class="card__content flow">
-          <h3 class="visually-hidden">{{ course.meta.title }}</h3>
-          <img
-            class="card__logo"
-            src="{{ course.meta.logo }}"
-            alt=""
-            aria-hidden="true"
-          />
+          <div class="card__logo">
+            <img
+              src="{{ course.meta.logo }}"
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
           <p class="text-size-0">{{ course.meta.description | i18n(locale) }}</p>
         </div>
       </a>
