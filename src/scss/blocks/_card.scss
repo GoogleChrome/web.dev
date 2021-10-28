@@ -140,3 +140,14 @@
     @include apply-utility('bg', 'core-bg');
   }
 }
+
+/// These cards are way too wide and tall for really small screens
+/// so these little adjustments help that, without affecting other screens
+@include media-query('xs') {
+  .card[data-style='branded'] {
+    min-width: 16rem;
+    > img {
+      height: 8rem;
+    }
+  }
+}

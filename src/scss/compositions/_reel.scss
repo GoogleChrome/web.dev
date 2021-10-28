@@ -5,10 +5,9 @@
 /// Add an attribute of data-scroll="snap" to the element
 /// to enable scroll snapping
 .reel {
-  --reel-space: 1.25rem;
+  --reel-space: 2rem;
   display: flex;
   height: auto;
-  width: fit-content;
   max-width: 100%;
   margin-inline: auto;
 
@@ -42,7 +41,8 @@
   scroll-snap-align: start;
 }
 
-.reel[data-scroll='snap'] > *:last-child,
-.reel[data-scroll='snap'] > *:first-child {
-  scroll-snap-align: end;
+@include media-query('lg') {
+  .reel {
+    justify-content: center;
+  }
 }

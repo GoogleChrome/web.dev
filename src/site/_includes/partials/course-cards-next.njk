@@ -1,6 +1,6 @@
 {% from 'macros/icon.njk' import svg with context %}
 
-<nav class="reel scrollbar" data-scroll="snap" aria-label="available courses">
+<nav class="reel scrollbar" aria-label="available courses">
   {# Convert the courses object into an array of objects. #}
   {% set coursesArr = helpers.values(courses) %}
   {# Sort courses by descending date order (most recent comes first) #}
