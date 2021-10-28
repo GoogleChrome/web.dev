@@ -9,7 +9,7 @@
       <a href="{{ course.meta.url }}" class="card" data-style="branded">
         <div class="card__header repel">
           <p class="color-mid-text">Course</p>
-          <div class="counter t-bg-highlights-purple t-color-shades-light-bright">
+          <div class="counter t-bg-highlights-{{ course.meta.highlight }} t-color-shades-light-bright">
             {% set pages = collections.all | navigation(course.toc) %}
             <span class="counter__content" aria-label="{{ pages.list.length }} {{ 'i18n.learn.resources' | i18n(locale) }}">{{ pages.list.length }}</span>
             {{ icon('mortarboard') }}

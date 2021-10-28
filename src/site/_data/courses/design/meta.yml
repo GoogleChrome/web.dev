@@ -17,3 +17,5 @@ background: '/images/courses/design/background.svg'
 card: '/images/courses/design/card.svg'
 # This is used for the social media thumbnail.
 thumbnail: 'image/kheDArv5csY6rvQUJDbWRscckLr1/KxnwWklPxOyH9uK87KG8.svg'
+# This is used to color the card module count
+highlight: 'green'
