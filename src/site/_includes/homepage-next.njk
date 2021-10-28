@@ -90,7 +90,9 @@ CSS_ORIGIN: 'next'
           <a href="/learn">{{ 'i18n.common.see_all' | i18n(locale) }}</a>
         </div>
       </div>
-      {% include "partials/course-cards-next.njk" %}
+      <div class="gap-top-size-2">
+        {% include "partials/course-cards-next.njk" %}
+      </div>
     </div>
   </div>
   {# Courses end #}

@@ -126,4 +126,9 @@
 /// EXCEPTIONS
 .card[data-style='branded'] {
   max-width: 25rem;
+  min-width: 22rem;
+
+  &:hover {
+    @include apply-utility('bg', 'core-bg');
+  }
 }

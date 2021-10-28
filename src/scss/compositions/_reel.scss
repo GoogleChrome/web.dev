@@ -7,7 +7,13 @@
 .reel {
   display: flex;
   height: auto;
+  width: max-content;
+  max-width: 100%;
+  margin-inline: auto;
   gap: 0 $global-gutter;
+
+  /// Padding allows child element hover states to show
+  padding: 0.5rem;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
