@@ -1,13 +1,14 @@
 ---
 layout: 'about-next'
+draft: true
+noindex: true
 permalink: '/about-new/index.html'
 title: 'About web.dev'
 intro:
   title: 'Building a better web, together'
   summary: |
     Google believes in an open, accessible, private, and secure web. We want to help developers take advantage of the latest modern technologies to build amazing user experiences for everyone.
-  buttonText: 'Google’s contributions'
-  buttonUrl: '#'
+  sectionHeading: 'Google’s contributions'
 pods:
   - title: 'Providing guidance for modern web development'
     summary: 'web.dev’s mission is to help developers build best-in-class web experiences on any browser.'
@@ -42,9 +43,6 @@ otherResources:
     width: '330'
     height: '210'
   pairs:
-    - title: 'Web Fundamentals'
-      link: '#'
-      summary: 'Donec id elit non mi porta gravida at eget metus.'
     - title: 'Chrome Updates'
       link: '#'
       summary: 'Donec id elit non mi porta gravida at eget metus.'

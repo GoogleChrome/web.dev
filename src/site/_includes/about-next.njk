@@ -12,8 +12,8 @@ CSS_ORIGIN: 'next'
       <header class="headline all-center flow">
         <h1 class="headline__title">{{ intro.title }}</h1>
         {{ intro.summary | md | safe }}
-        <div class="headline__action">
-          <a href="{{ intro.buttonUrl }}">{{ intro.buttonText }}</a>
+        <div class="headline__action all-center">
+          <h2 class="text-size-1">{{ intro.sectionHeading }}</h2>
         </div>
       </header>
       <div class="flow gap-top-size-2 flow-space-size-1">
@@ -43,7 +43,7 @@ CSS_ORIGIN: 'next'
 
   {# Other resources start #}
   <div class="region">
-    <div class="wrapper">
+    <div class="wrapper" data-size="narrow">
       <div class="about__columns">
         <article class="about__article flow">
           {% Img src=otherResources.decor.src, alt="", width=otherResources.decor.width, height=otherResources.decor.height %}
