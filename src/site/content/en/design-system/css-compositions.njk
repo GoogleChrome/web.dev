@@ -126,6 +126,79 @@ configurable grid item sizes.</p>
   <div class="bg-mid-bg pad-size-1">Item 8</div>
 </div>
 
+
+<h2 id="reel">Reel</h2>
+<p><code>.reel</code></p>
+
+<p>The Reel provides a scrollable, overflow container. To add a scrollbar, you apply the <a href="/design-system/css-utilities/#scrollbar"><code>.scrollbar</code> utility</a>, which provides consistent scrollbars where needed.</p>
+
+<h3>Configuration</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Default value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>--reel-item-width</code></td>
+      <td><code>33.333%</code> (one third_</td>
+      <td>This defines the size of each child element.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Exceptions</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exception</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>.reel[data-scroll='snap']</code></td>
+      <td>Enables scroll snapping</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Examples</h3>
+
+<div class="reel">
+  <div class="region bg-mid-bg pad-inline-size-1">Item</div>
+  <div class="region bg-mid-bg pad-inline-size-1">Item</div>
+  <div class="region bg-mid-bg pad-inline-size-1">Item</div>
+  <div class="region bg-mid-bg pad-inline-size-1">Item</div>
+  <div class="region bg-mid-bg pad-inline-size-1">Item</div>
+</div>
+
+<h4>With scrollbar</h4>
+
+<div class="reel scrollbar">
+  <div class="region bg-mid-bg pad-inline-size-1">Item</div>
+  <div class="region bg-mid-bg pad-inline-size-1">Item</div>
+  <div class="region bg-mid-bg pad-inline-size-1">Item</div>
+  <div class="region bg-mid-bg pad-inline-size-1">Item</div>
+  <div class="region bg-mid-bg pad-inline-size-1">Item</div>
+</div>
+
+<h4>With scroll snapping</h4>
+
+<div class="reel scrollbar" data-scroll="snap">
+  <div class="region bg-mid-bg pad-inline-size-1">Item</div>
+  <div class="region bg-mid-bg pad-inline-size-1">Item</div>
+  <div class="region bg-mid-bg pad-inline-size-1">Item</div>
+  <div class="region bg-mid-bg pad-inline-size-1">Item</div>
+  <div class="region bg-mid-bg pad-inline-size-1">Item</div>
+</div>
+
+
 <h2 id="repel">Repel</h2>
 <p>A little layout that pushes items away from each other where
 there is space in the viewport and stacks on small viewports.</p>

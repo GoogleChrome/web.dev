@@ -111,10 +111,6 @@
   margin-bottom: get-space('size-1');
 }
 
-.card__logo {
-  height: 34px;
-}
-
 .card__hero {
   width: 100%;
   aspect-ratio: 5/3;
@@ -130,4 +126,21 @@
 /// EXCEPTIONS
 .card[data-style='branded'] {
   max-width: 25rem;
+  min-width: 22rem;
+
+  > img {
+    height: unset;
+  }
+
+  &:hover {
+    @include apply-utility('bg', 'core-bg');
+  }
+}
+
+/// These cards are way too wide and tall for really small screens
+/// so these little adjustments help that, without affecting other screens
+@include media-query('xs') {
+  .card[data-style='branded'] {
+    min-width: 16rem;
+  }
 }
