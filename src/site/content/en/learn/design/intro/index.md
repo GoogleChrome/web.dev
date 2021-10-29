@@ -210,9 +210,6 @@ By default mobile browsers assumed that 980 pixels was the width that people wer
 So even if you used a liquid layout, 
 the browser would apply a width of 980 pixels and then scale the rendered web page down to the actual width of the screen.
 
-{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/sima7HqHEplJimfHTT8U.png", 
-alt="A mobile device displaying a page of text scaled down to an uncomfortable degree.", width="800", height="1533" %}
-
 If you're using responsive design you need to tell the browser not to do that scaling. 
 You can do that with a `meta` element in the `head` of the web page:
 
@@ -228,7 +225,10 @@ The second value is `initial-scale=1`.
 This tells the browser how much or how little scaling to do. 
 With a responsive design, you don't want the browser to do any scaling at all.
 
-{% Img src="image/KT4TDYaWOHYfN59zz6Rc0X4k4MH3/RpcYenf45XvI1owIKVYO.png", alt="A mobile device displaying a page of text with no scaling applied.", width="800", height="1533" %}
+<figure class="w-figure">
+{% Img src="image/kheDArv5csY6rvQUJDbWRscckLr1/HahSW2IXIkGux7cMCMpE.png", alt="Images of two mobile phones containing text, one appearing zoomed out due to not having the meta tag in place.", width="800", height="748" %}
+  <figcaption class="w-figcaption">The phone on the left shows how the layout looks before the meta tag is in place, when compared to the layout on the right.</figcaption>
+</figure>
 
 With that `meta` element in place, your web pages are ready to be responsive.
 
