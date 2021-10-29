@@ -13,11 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const bcd = require('@mdn/browser-compat-data');
-const {AssetCache} = require('@11ty/eleventy-cache-assets');
 
-// Flatten a tree of data into a flat object (prep for lookup by key).
-function walk(obj, prefix) {
+const bcd = require('@mdn/browser-compat-data');
+
+// TODO: can we import the whole /types node in JS?
+/** @typedef {import('@mdn/browser-compat-data/types').CompatStatement} CompatStatement */
+/** @typedef {import('@mdn/browser-compat-data/types').PrimaryIdentifier} PrimaryIdentifier */
+
+/**
+ * Flatten a tree of data into a flat object (prep for lookup by key).
+ *
+ * @param {PrimaryIdentifier} obj
+ * @param {string} prefix
+ * @return {{[id: string]: CompatStatement}}
+ */
+function walk(obj, prefix = '') {
+  /** @type {{[id: string]: CompatStatement}} */
   const result = {};
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === 'object' && value !== null) {
@@ -32,13 +43,11 @@ function walk(obj, prefix) {
   return result;
 }
 
+let cachedBcd;
+
 module.exports = async function () {
-  const asset = new AssetCache('bcd_data');
-  if (asset.isCacheValid('1d')) {
-    return asset.getCachedValue();
+  if (!cachedBcd) {
+    cachedBcd = walk(bcd);
   }
-  delete bcd.browsers;
-  const data = walk(bcd, '');
-  await asset.save(data, 'json');
-  return asset.getCachedValue();
+  return cachedBcd;
 };
