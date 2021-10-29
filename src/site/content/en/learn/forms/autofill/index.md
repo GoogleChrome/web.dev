@@ -109,9 +109,6 @@ To ensure a secure sign-up form it may be better to use a
 [third-party identity provider](/sign-up-form-best-practices/#federated-login), 
 instead of building your own 
 [authentication](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html) system.
-
-Find out more about implementing 
-[third-party identity providers](/sign-up-form-best-practices/#federated-login).
 {% endAside %}
 
 On the sign-in form, you can use `autocomplete="current-password"` 

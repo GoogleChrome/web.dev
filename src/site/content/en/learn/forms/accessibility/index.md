@@ -43,7 +43,8 @@ Built-in form elements provide a lot of built-in features. Let's have a look at 
 {% Codepen {
   user: 'web-dot-dev',
   id: '2f56a723b5045ea990d38c2c170c3037',
-  height: 450
+  height: 450,
+  tab: 'html,result'
 } %}
 
 Visually, the `<input>` (the first one in the example) and the `<div>` look the same.
@@ -79,7 +80,8 @@ How can you ensure users also know about the validation rule? Tell them.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'b03a4c83688c1b02ab12f9873f1f6614',
-  height: 350
+  height: 350,
+  tab: 'html,result'
 } %}
 
 Add information about the expected format directly beneath the form control.
@@ -105,7 +107,8 @@ You can also define your own error message:
 {% Codepen {
   user: 'web-dot-dev',
   id: 'b7ed22a0539f9beef4dc03380f51f224',
-  height: 300
+  height: 300,
+  tab: 'html,result'
 } %}
 
 This example needs more changes to connect the error message to the form control.

@@ -69,7 +69,8 @@ You can help here by using the `autocomplete` attribute.
 {% Codepen {
   user: 'web-dot-dev',
   id: '9a2262c52b978968f6ce181f32357f31',
-  height: 300
+  height: 300,
+  tab: 'html,result'
 } %}
 
 Have you entered a name before in the browser you're using?

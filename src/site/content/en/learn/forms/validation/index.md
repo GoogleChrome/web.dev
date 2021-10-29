@@ -186,7 +186,8 @@ Wouldn't it be great to adapt the appearance of the element when this happens?
 {% Codepen {
   user: 'web-dot-dev',
   id: 'd6bb0f27d1faac3ffd3b594a81fad396',
-  height: 300
+  height: 300,
+  tab: 'css,result'
 } %}
 
 You can use the `:invalid` [pseudo-class](/learn/css/pseudo-classes/)
@@ -247,7 +248,7 @@ This example shows the message `Please enter your name.` if the input is invalid
   height: 300
 } %}
 
-Open the demo in different browsers,
+[Open the demo](https://codepen.io/web-dot-dev/pen/7ea31257d7cd8fc28792c7f5cdaba97b) in different browsers,
 you should see the same message everywhere.
 Now, try to remove the JavaScript and try again.
 You see the default error messages again.
@@ -263,10 +264,12 @@ and validate the input immediately when a user leaves a form field.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'b7ed22a0539f9beef4dc03380f51f224',
-  height: 300
+  height: 300,
+  tab: 'js,result'
 } %}
 
-Click the form field in the demo, enter "web" and click somewhere else on the page.
+Click the form field in the [demo](https://codepen.io/web-dot-dev/pen/b7ed22a0539f9beef4dc03380f51f224), 
+enter "web" and click somewhere else on the page.
 You see the native error message for `minlength` below the form field.
 
 Learn more about implementing
