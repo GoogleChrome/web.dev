@@ -9,16 +9,19 @@ class LearnFilter extends BaseElement {
   static get properties() {
     return {
       active: {type: String},
+      all: {type: String},
       filters: {type: Array},
     };
   }
 
   constructor() {
     super();
-    /** @type {{id?: string, title: string}[]} */
-    this.filters = [];
     /** @type {string|undefined} */
     this.active = undefined;
+    /** @type {string} */
+    this.all = 'All';
+    /** @type {{id: string, title: string}[]} */
+    this.filters = [];
   }
 
   /**
@@ -38,6 +41,8 @@ class LearnFilter extends BaseElement {
   }
 
   render() {
+    const filters = [{title: this.all}, ...this.filters];
+
     /** @type {(filter: {id?: string, title: string}) => any} */
     const filtersMap = (filter) =>
       html`<button
@@ -47,8 +52,7 @@ class LearnFilter extends BaseElement {
       >
         ${filter.title}
       </button>`;
-
-    return html`<div class="w-chips">${this.filters.map(filtersMap)}</div>`;
+    return html`<div class="w-chips">${filters.map(filtersMap)}</div>`;
   }
 }
 
