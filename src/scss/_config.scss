@@ -88,6 +88,14 @@ $gorko-config: (
     'output': 'responsive',
     'property': 'justify-content',
   ),
+  'flex-wrap': (
+    'items': (
+      'yes': 'wrap',
+      'no': 'nowrap'
+    ),
+    'output': 'responsive',
+    'property': 'flex-wrap'
+  ),
   'flow-space': (
     'items': $gorko-space-scale,
     'output': 'standard',
