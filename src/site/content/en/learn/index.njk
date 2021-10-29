@@ -1,5 +1,5 @@
 ---
-layout: default-next
+layout: default
 title: Learn
 description: |
   Learn best practices for the modern web and hone your skills with hands-on
@@ -8,58 +8,36 @@ date: 2018-11-05
 pageScripts:
   - '/js/learn.js'
 ---
+{# *-landing-page classes are a holdover from devsite. #}
+{# It would be great to remove them as part of the v1 migration. #}
+<div class="learn-landing-page">
 
-<div class="learn">
-  {# Hero starts #}
-  <header class="region">
-    <div class="wrapper">
-      {# Note: this needs replacing with the new headline pattern once the new homepage is merged #}
-      <div class="all-center flow">
-        <h1 class="text-size-4">{{ title }}</h1>
-        <p>{{ 'i18n.learn.header' | i18n(locale) }}</p>
-      </div>
-    </div>
-  </header>
-  {# Hero ends #}
-
-  {# Courses start #}
-  <div class="wrapper">
-    <h2 id="{{ 'i18n.learn.courses' | i18n(locale) | slug }}" class="text-size-3">{{ 'i18n.learn.courses' | i18n(locale) }}</h2>
+  <div class="w-layout-container">
+    <header class="w-page-header">
+      <h1 class="w-page-header__headline">{{ title }}</h1>
+      <p class="w-page-header__copy">
+        {{ 'i18n.learn.header' | i18n(locale) }}
+      </p>
+    </header>
   </div>
 
-  <div class="bg-mid-bg region gap-top-size-1">
-    <div class="wrapper">
-      <div class="reel">
-        {% set coursesArr = helpers.values(courses) %}
-        {% for course in coursesArr|sort(true, false, 'meta.date') %}
-          {% if not course.meta.draft %}
-            <a href="{{ course.meta.url }}" class="card bg-core-bg" data-style="branded">
-              <div class="card__header repel">
-                <p class="color-mid-text">Course</p>
-                <div class="counter t-bg-highlights-purple t-color-shades-light-bright">
-                  {% set pages = collections.all | navigation(course.toc) %}
-                  <span class="counter__content">{{ pages.list.length }}</span>
-                  {% include 'icons/mortarboard.svg' %}
-                </div>
-              </div>
-              <img src="{{ course.meta.decor }}" alt="{{ course.meta.title | i18n(locale) }}" />
-              <div class="card__content flow">
-                <h3 class="card__heading text-size-2">{{ course.meta.title | i18n(locale) }}</h2>
-                <p class="text-size-0">{{ course.meta.description | i18n(locale) }}</p>
-              </div>
-            </a>
-          {% endif %}
-        {% endfor %}
-      </div>
+  <div class="sm:pad-left-500 sm:pad-right-500">
+    <div class="learn-section gap-left-auto gap-right-auto">
+      <h3 id="{{ 'i18n.learn.courses' | i18n(locale) | slug }}" class="w-learn-heading">
+        {{ 'i18n.learn.courses' | i18n(locale) }}
+        <a class="w-headline-link" href="#{{ 'i18n.learn.courses' | i18n(locale) | slug }}" aria-hidden="true">#</a>
+      </h3>
+      {% include 'partials/course-cards.njk' %}
     </div>
   </div>
-  {# Courses end #}
 
+  <hr class="gap-top-400 gap-bottom-700">
 
-  {# Collections start #}
-  <div class="wrapper">
-    <div class="pad-block-size-1 repel">
-      <h2 id="{{ 'i18n.learn.collections' | i18n(locale) | slug }}" class="text-size-3">{{ 'i18n.learn.collections' | i18n(locale) }}</h2>
+  <section class="w-grid w-learn__collections-heading">
+    <h2 id="{{ 'i18n.learn.collections' | i18n(locale) | slug }}" class="w-learn-heading">
+      {{ 'i18n.learn.collections' | i18n(locale) }}
+      <a class="w-headline-link" href="#{{ 'i18n.learn.collections' | i18n(locale) | slug }}" aria-hidden="true">#</a>
+    </h2>
 
     {% set filterItems = [] %}
     {% for category, paths in learn %}
@@ -69,33 +47,22 @@ pageScripts:
     <web-learn-filter all="{{'i18n.common.all' | i18n(locale)}}" filters="{{filterItems | dump}}"></web-learn-filter>
   </section>
 
-  <div id="learn__collections">
+  <section id="learning-paths">
     {% for category, paths in learn %}
       {% set i18nKey = 'i18n.learn.' + category %}
-      <div id="{{ i18nKey | i18n(locale) | slug }}" class="learn__collection">
-        <div class="wrapper flow">
-          <h2 id="{{ 'i18n.learn.collections' | i18n(locale) | slug }}" class="text-size-2">{{ i18nKey | i18n(locale) }}</h2>
-          <div class="auto-grid gap-top-size-2">
-            {% for path in paths %}
-              <a href="/{{ path.slug }}" class="card">
-                <div class="card__header repel">
-                  <p class="color-mid-text">Collection</p>
-                  <div class="counter" data-layout="flush">
-                    <span class="counter__content">{{ path.topics.length }}</span>
-                    {% include 'icons/mortarboard.svg' %}
-                  </div>
-                </div>
-                <img src="{{ path.cover | imgix }}" alt="{{ path.title | i18n(locale) }}" />
-                <div class="card__content flow">
-                  <h3 class="card__heading text-size-2">{{ path.title | i18n(locale) }}</h2>
-                  <p class="text-size-0">{{ path.description | i18n(locale) }}</p>
-                </div>
-              </a>
-            {% endfor %}
-          </div>
+      <section id="{{ i18nKey | i18n(locale) | slug }}" class="w-grid">
+        <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
+          <h3 class="w-learn-heading">
+            {{ i18nKey | i18n(locale) }}
+            <a class="w-headline-link" href="#{{ i18nKey | i18n(locale) | slug }}" aria-hidden="true">#</a>
+          </h3>
         </div>
-      </div>
+        <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+          {% for path in paths %}
+            {% PathCard path, lang %}
+          {% endfor %}
+        </div>
+      </section>
     {% endfor %}
-  </div>
-  {# Collections end #}
+  </section>
 </div>

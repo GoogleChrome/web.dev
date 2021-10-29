@@ -31,12 +31,14 @@ class LearnFilter extends BaseElement {
     this.active = id;
 
     const learnCollectionsElement =
-      document.getElementById('learn__collections');
+      document.getElementById('learn__collections') ||
+      document.getElementById('learning-paths');
     if (!learnCollectionsElement) {
       return;
     }
 
     for (const child of learnCollectionsElement.children) {
+      child.classList.toggle('hidden', !!id && id !== child.id);
       child.classList.toggle('hidden-yes', !!id && id !== child.id);
     }
   }
@@ -47,14 +49,15 @@ class LearnFilter extends BaseElement {
     /** @type {(filter: {id?: string, title: string}) => any} */
     const filtersMap = (filter) =>
       html`<button
-        class="pill"
+        class="pill w-chip${this.active === filter.id ? ' w-chip__active' : ''}"
         data-state="${this.active === filter.id ? 'active' : 'inactive'}"
         type="button"
         @click="${() => this.setActive(filter.id)}"
       >
         ${filter.title}
       </button>`;
-    return html`<div class="cluster">${filters.map(filtersMap)}</div>`;
+
+    return html`<div class="w-chips cluster">${filters.map(filtersMap)}</div>`;
   }
 }
 
