@@ -211,7 +211,7 @@ module.exports = function (config) {
   config.addPairedShortcode('Banner', Banner);
   config.addPairedShortcode('Blockquote', Blockquote);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
-  config.addNunjucksAsyncShortcode('BrowserCompat', BrowserCompat);
+  config.addNunjucksShortcode('BrowserCompat', BrowserCompat);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addShortcode('Codepen', Codepen);
   config.addShortcode('CodePattern', CodePattern);

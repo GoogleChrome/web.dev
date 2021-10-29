@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const bcd = require('@mdn/browser-compat-data');
+const {AssetCache} = require('@11ty/eleventy-cache-assets');
 
 // TODO: can we import the whole /types node in JS?
 /** @typedef {import('@mdn/browser-compat-data/types').CompatStatement} CompatStatement */
@@ -43,11 +43,31 @@ function walk(obj, prefix = '') {
   return result;
 }
 
+/** @type {{[id: string]: CompatStatement}|undefined} */
 let cachedBcd;
 
-module.exports = async function () {
+module.exports = function () {
+  // nb. Parsing this file every time takes ~150ms on an i9 (and results in ~9mb of JSON). So using
+  // the cache is a speedup but perhaps less than you think...
+
   if (!cachedBcd) {
-    cachedBcd = walk(bcd);
+    const asset = new AssetCache('bcd_data');
+    if (asset.isCacheValid('1d')) {
+      // eleventy-cache-assets exposes the raw path.
+      // Internally it's doing require() too, but it's wrapped in a Promise,
+      // so do this synchronously.
+      cachedBcd = require(asset.getCachedContentsPath('json'));
+    } else {
+      const bcd = require('@mdn/browser-compat-data');
+      cachedBcd = walk(bcd);
+
+      // Don't wait for the save, since we're trying to be sync.
+      // The plugin does this with "fs.promises", so we can't block.
+      asset.save(cachedBcd, 'json').catch((err) => {
+        console.warn('failed to update cached bcd', err);
+      });
+    }
   }
+
   return cachedBcd;
 };
