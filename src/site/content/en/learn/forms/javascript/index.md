@@ -20,8 +20,7 @@ How can you only show the relevant `<input>` element?
 {% Codepen {
   user: 'web-dot-dev',
   id: '8e1e7a38790c75c267a978efa1d8e937',
-  height: 300,
-  tab: 'javascript, result'
+  height: 350
 } %}
 
 You can use JavaScript to reveal an `<input>` only when the associated `<input type="radio">` is currently selected.
@@ -68,8 +67,8 @@ You can add all your form fields to the `FormData` object, or only send some for
 {% Codepen {
   user: 'web-dot-dev',
   id: 'b499a861d7b1fee74464a690cf0ff97e',
-  height: 300,
-  tab: 'result, console'
+  height: 400,
+  tab: 'js,result'
 } %}
 
 Your backend script can check if a `POST` request appears to be from the browser 
@@ -105,7 +104,8 @@ to define your own error messages.
 {% Codepen {
   user: 'web-dot-dev',
   id: '7ea31257d7cd8fc28792c7f5cdaba97b',
-  height: 300
+  height: 300,
+  tab: 'js,result'
 } %}
 
 {% Aside %}
@@ -122,7 +122,7 @@ Wouldn't it be great to notify users as soon as they leave a form field?
   user: 'web-dot-dev',
   id: 'b7ed22a0539f9beef4dc03380f51f224',
   height: 300,
-  tab: 'javascript, result'
+  tab: 'js,result'
 } %}
 
 Listen for the 

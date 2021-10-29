@@ -142,7 +142,8 @@ Add the `multiple` attribute if users should be able to upload multiple files.
 {% Codepen {
   user: 'web-dot-dev',
   id: '6a600920c65a81e55576c6b52b4e5efa',
-  height: 300
+  height: 300,
+  tab: 'html,result'
 } %}
 
 One more change is needed to ensure users can upload files—set the `enctype` attribute on your form. 
