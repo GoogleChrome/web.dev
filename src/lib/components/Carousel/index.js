@@ -17,6 +17,12 @@
 import {BaseElement} from '../BaseElement';
 
 class Carousel extends BaseElement {
+  static get properties() {
+    return {
+      interval: {type: Number},
+    };
+  }
+
   constructor() {
     super();
 
@@ -27,7 +33,7 @@ class Carousel extends BaseElement {
     /** @type {number} */
     this._index = 0;
     /** @type {number} */
-    this._interval = 10000;
+    this.interval = 0;
     /** @type {HTMLElement[]} */
     this._items = [];
     /** @type {HTMLButtonElement} */
@@ -39,6 +45,7 @@ class Carousel extends BaseElement {
 
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
+    this._scroll = this._scroll.bind(this);
   }
 
   connectedCallback() {
@@ -54,12 +61,20 @@ class Carousel extends BaseElement {
       ...this._carouselTrack.children,
     ]);
 
+    this._items.forEach((v, i) => v.setAttribute('data-index', '' + i));
+
     this._previousButton = this.querySelector('button[data-direction="prev"]');
     this._previousButton.addEventListener('click', this.previous);
     this._nextButton = this.querySelector('button[data-direction="next"]');
     this._nextButton.addEventListener('click', this.next);
 
-    this.moveSlide(0);
+    this._items.forEach((e, i) =>
+      e.addEventListener('focusin', () => this.moveSlide(i - this._index)),
+    );
+
+    this._carouselTrack.addEventListener('scroll', this._scroll);
+
+    this.moveSlide(0, false);
   }
 
   disconnectedCallback() {
@@ -69,6 +84,31 @@ class Carousel extends BaseElement {
     if (this._nextButton)
       this._nextButton.removeEventListener('click', this.next);
     if (this._timeout) clearTimeout(this._timeout);
+    this._items.forEach((e) => e.parentElement.removeChild(e));
+    if (this._carouselTrack)
+      this._carouselTrack.removeEventListener('scroll', this._scroll);
+  }
+
+  moveSlide(increment, scroll = true) {
+    const elementCount = this._items.length;
+    let newIndex = this._index + increment;
+
+    if (newIndex < 0) {
+      newIndex = elementCount - 1;
+    } else if (newIndex >= elementCount) {
+      newIndex = 0;
+    }
+
+    if (newIndex === this._index) return;
+    if (this._timeout) clearTimeout(this._timeout);
+
+    this._items.forEach((e, i) => e.classList.toggle('active', i === newIndex));
+    this._index = newIndex;
+    this._active = this._items[this._index];
+    if (this.interval === 0) this._active.focus({preventScroll: true});
+    if (scroll) this._carouselTrack.scrollTo(this._active.offsetLeft, 0);
+
+    this._setTimeout();
   }
 
   next() {
@@ -79,28 +119,27 @@ class Carousel extends BaseElement {
     this.moveSlide(-1);
   }
 
-  /**
-   * @param {number} increment
-   */
-  moveSlide(increment) {
-    if (this._timeout) {
-      clearTimeout(this._timeout);
+  _scroll() {
+    for (const item of this._items) {
+      const overflow =
+        (this._carouselTrack.parentElement.clientWidth -
+          this._carouselTrack.clientWidth) /
+        2;
+
+      if (
+        this._carouselTrack.scrollLeft + overflow <=
+        item.offsetLeft + item.offsetWidth
+      ) {
+        const index = parseInt(item.getAttribute('data-index'), 10);
+        return this.moveSlide(index - this._index, false);
+      }
     }
+  }
 
-    const elementCount = this._items.length;
-    let newIndex = this._index + increment;
-
-    if (newIndex < 0) {
-      newIndex = elementCount - 1;
-    } else if (newIndex >= elementCount) {
-      newIndex = 0;
+  _setTimeout() {
+    if (this.interval > 0) {
+      this._timeout = setTimeout(this.next, this.interval);
     }
-
-    this._items.forEach((e, i) => e.classList.toggle('active', i === newIndex));
-    this._index = newIndex;
-    this._active = this._items[this._index];
-    this._carouselTrack.scrollTo(this._active.offsetLeft, 0);
-    this._timeout = setTimeout(this.next, this._interval);
   }
 }
 

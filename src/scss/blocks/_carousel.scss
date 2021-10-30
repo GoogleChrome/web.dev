@@ -6,8 +6,30 @@
   gap: $global-gutter-narrow;
   align-items: center;
 
-  .icon-button:not(:hover) {
-    @include apply-utility('color', 'mid-text');
+  .icon-button {
+    height: 36px;
+    width: 36px;
+
+    &:focus-visible {
+      outline: none;
+
+      > svg {
+        border-radius: 100%;
+        border: 2px solid var(--color-focus-ring);
+        height: 36px;
+        padding: 4px;
+        width: 36px;
+      }
+    }
+
+    &:not(:hover) {
+      @include apply-utility('color', 'mid-text');
+    }
+
+    > svg {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 
