@@ -40,7 +40,7 @@ const setup = async () => {
   filter.setAttribute('filters', JSON.stringify(filterFilters));
 
   const learningPathsElement = document.createElement('div');
-  learningPathsElement.setAttribute('id', 'learning-paths');
+  learningPathsElement.setAttribute('id', 'learn__collections');
   for (const collectionId of collectionIds) {
     const learningPathsElementChild = document.createElement('div');
     learningPathsElementChild.setAttribute('id', collectionId);
@@ -64,13 +64,13 @@ describe('LearnFilter', function () {
     const [filter, learningPathsElement] = await setup();
     try {
       /** @type {HTMLButtonElement} */
-      const allButton = filter.querySelector('button.w-chip');
+      const allButton = filter.querySelector('button.pill');
       allButton.click();
 
       let notHidden = 0;
 
       for (const child of learningPathsElement.children) {
-        notHidden += +!child.classList.contains('hidden');
+        notHidden += +!child.classList.contains('hidden-yes');
       }
       assert(notHidden === collectionIds.length, 'no element should be hidden');
     } finally {
@@ -83,14 +83,14 @@ describe('LearnFilter', function () {
     const [filter, learningPathsElement] = await setup();
     try {
       /** @type {NodeListOf<HTMLButtonElement>} */
-      const buttons = filter.querySelectorAll('button.w-chip');
+      const buttons = filter.querySelectorAll('button.pill');
       const button = buttons.item(2);
       button.click();
 
       let notHidden = 0;
 
       for (const child of learningPathsElement.children) {
-        notHidden += +!child.classList.contains('hidden');
+        notHidden += +!child.classList.contains('hidden-yes');
       }
 
       assert(notHidden === 1, 'only one element should be shown');
