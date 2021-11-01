@@ -4,9 +4,8 @@ permalink: '/home-new/index.html'
 title: 'web.dev'
 intro:
   eyebrow: 'About web.dev'
-  title: 'Guides and tools for the modern web'
-  summary: |
-    Whether you already have a website or you're just getting started, learn to build for the modern web at web.dev.
+  title: "Let's build the future of the web, together"
+  summary: 'Take advantage of the latest modern technologies to build amazing web experiences for everyone'
   buttonText: 'Learn more'
   buttonUrl: '/about/'
   image: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/B9KWrQo39fXbKSVYjz1e.svg'
@@ -14,17 +13,17 @@ intro:
   imageHeight: '210'
 featureCard:
   theme: 'dark'
-  title: 'Explore our structured learning paths to learn new skills'
+  title: 'Explore structured learning paths to learn new skills'
   eyebrow: 'Learn'
   url: '/learn'
   background: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/yJSJQfrrK4pVh44yuMZV.svg'
 promoPanel:
   title: 'Chrome Dev Summit 2021'
-  summary: 'Join the Chrome team for our two-day summit on the latest techniques for building the modern Web.'
-  primaryButtonUrl: 'TBD'
-  primaryButtonText: 'TBD'
-  secondaryButtonUrl: 'TBD'
-  secondaryButtonText: 'TBD'
+  summary: 'Join the Chrome team for workshops, office hours, and learning lounges taking place throughout November.'
+  primaryButtonUrl: 'https://events.withgoogle.com/chrome-dev-summit-2021/registrations/new/details/'
+  primaryButtonText: 'REQUEST AN INVITE'
+  secondaryButtonUrl: 'https://developer.chrome.com/devsummit/schedule/'
+  secondaryButtonText: 'VIEW SCHEDULE'
   image: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/KwS4L954TzN3KK3pWmtA.svg'
   imageWidth: '530'
   imageHeight: '483'
