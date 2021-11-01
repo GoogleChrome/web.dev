@@ -178,7 +178,7 @@ dd + dt {
 /// Blockquotes
 
 blockquote {
-  font-size: get-size('size-4');
+  font-size: get-size('size-3');
   text-align: center;
 
   @include apply-utility('font', 'brand');
@@ -202,11 +202,11 @@ blockquote {
 
 /// <q> elements are ideal, but we need to make sure
 /// any element is styled as a quote
-blockquote > *::before {
+blockquote > *:not(:last-child)::before {
   content: open-quote;
 }
 
-blockquote > *::after {
+blockquote > *:not(:last-child)::after {
   content: close-quote;
 }
 
