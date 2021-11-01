@@ -19,6 +19,7 @@ import {BaseElement} from '../BaseElement';
 class Carousel extends BaseElement {
   static get properties() {
     return {
+      // Allows for the carousel to automatically transition between slides when a `interval` is set.
       interval: {type: Number},
     };
   }
@@ -26,8 +27,6 @@ class Carousel extends BaseElement {
   constructor() {
     super();
 
-    /** @type {HTMLElement} */
-    this._active = undefined;
     /** @type {HTMLElement} */
     this._carouselTrack = undefined;
     /** @type {number} */
@@ -45,7 +44,7 @@ class Carousel extends BaseElement {
 
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
-    this._scroll = this._scroll.bind(this);
+    this._onScroll = this._onScroll.bind(this);
   }
 
   connectedCallback() {
@@ -72,23 +71,26 @@ class Carousel extends BaseElement {
       e.addEventListener('focusin', () => this.moveSlide(i - this._index)),
     );
 
-    this._carouselTrack.addEventListener('scroll', this._scroll);
+    this._carouselTrack.addEventListener('scroll', this._onScroll);
 
     this.moveSlide(0, false);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    if (this._previousButton)
-      this._previousButton.removeEventListener('click', this.previous);
-    if (this._nextButton)
-      this._nextButton.removeEventListener('click', this.next);
-    if (this._timeout) clearTimeout(this._timeout);
-    this._items.forEach((e) => e.parentElement.removeChild(e));
-    if (this._carouselTrack)
-      this._carouselTrack.removeEventListener('scroll', this._scroll);
+    this._previousButton?.removeEventListener('click', this.previous);
+    this._nextButton?.removeEventListener('click', this.next);
+    window.clearTimeout(this._timeout);
+    this._items.forEach((e) => e.removeChild(e));
+    this._carouselTrack?.removeEventListener('scroll', this._onScroll);
   }
 
+  /**
+   * Sets the new current slide index and scrolls to it if necessary.
+   *
+   * @param {number} increment How many items to move by
+   * @param {boolean} scroll Whether to move the user's viewport.
+   */
   moveSlide(increment, scroll = true) {
     const elementCount = this._items.length;
     let newIndex = this._index + increment;
@@ -99,16 +101,23 @@ class Carousel extends BaseElement {
       newIndex = 0;
     }
 
-    if (newIndex === this._index) return;
+    if (newIndex === this._index) {
+      return;
+    }
     if (this._timeout) clearTimeout(this._timeout);
 
     this._items.forEach((e, i) => e.classList.toggle('active', i === newIndex));
     this._index = newIndex;
-    this._active = this._items[this._index];
-    if (this.interval === 0) this._active.focus({preventScroll: true});
-    if (scroll) this._carouselTrack.scrollTo(this._active.offsetLeft, 0);
+    const active = this._items[this._index];
+    if (this.interval === 0) {
+      active.focus({preventScroll: true});
+    } else {
+      this._timeout = setTimeout(this.next, this.interval);
+    }
 
-    this._setTimeout();
+    if (scroll) {
+      this._carouselTrack.scrollTo(active.offsetLeft, 0);
+    }
   }
 
   next() {
@@ -119,7 +128,12 @@ class Carousel extends BaseElement {
     this.moveSlide(-1);
   }
 
-  _scroll() {
+  /**
+   * Event listener function that determines which element a user has scrolled to.
+   *
+   * @returns {void}
+   */
+  _onScroll() {
     for (const item of this._items) {
       const overflow =
         (this._carouselTrack.parentElement.clientWidth -
@@ -133,12 +147,6 @@ class Carousel extends BaseElement {
         const index = parseInt(item.getAttribute('data-index'), 10);
         return this.moveSlide(index - this._index, false);
       }
-    }
-  }
-
-  _setTimeout() {
-    if (this.interval > 0) {
-      this._timeout = setTimeout(this.next, this.interval);
     }
   }
 }
