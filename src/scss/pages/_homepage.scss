@@ -35,8 +35,6 @@
   display: flex;
   flex-direction: column;
   gap: $global-gutter;
-  width: max-content;
-  margin-inline: auto;
 
   &:link,
   &:visited {
@@ -102,6 +100,11 @@
 }
 
 @include media-query('md') {
+  .homepage__shows {
+    width: max-content;
+    margin-inline: auto;
+  }
+
   .homepage__show {
     max-width: 40rem;
     min-height: 500px;
@@ -122,7 +125,6 @@
     gap: 0;
     width: unset;
     max-width: 75rem;
-    margin-inline: auto;
   }
 
   .homepage__show {
