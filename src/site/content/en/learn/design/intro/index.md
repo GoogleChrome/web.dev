@@ -79,8 +79,8 @@ The browser generates a crawlbar—the horizontal equivalent of a scrollbar—an
 </figure>
 
 {% Codepen {
- user: 'adactio',
- id: 'KKqBPPy',
+ user: 'web-dot-dev',
+ id: 'RwZjwoQ',
  height: 500,
  theme: 'dark',
  tab: 'result'
@@ -114,8 +114,8 @@ On a narrow screen, the user would have to move the whole page left and right to
 
 <figure class="w-figure">
 {% Codepen {
- user: 'adactio',
- id: 'WNOKexX',
+ user: 'web-dot-dev',
+ id: 'YzxEzpE',
  height: 500,
  theme: 'dark',
  tab: 'result'
@@ -166,8 +166,8 @@ But given the variety of device sizes, chances are the layout will look less tha
 
 <figure class="w-figure">
 {% Codepen {
- user: 'adactio',
- id: 'jOwpNgX',
+ user: 'web-dot-dev',
+ id: 'oNeoNYw',
  height: 500,
  theme: 'dark',
  tab: 'result'
@@ -182,8 +182,8 @@ If adaptive layouts are a mashup of media queries and fixed-width layouts, respo
 
 <figure class="w-figure">
 {% Codepen {
- user: 'adactio',
- id: 'VwWBKPV',
+ user: 'web-dot-dev',
+ id: 'JjyOjbE',
  height: 500,
  theme: 'dark',
  tab: 'result'
