@@ -12,7 +12,7 @@ draft: true
   </video>
 </figure>
 
-For this seventh example, combine some of the concepts you've already learned about to create a responsive layout with automatically-placed and flexible children. Pretty neat. The key terms to remember here are `repeat`, `auto-(fit|fill)`, and `minmax()'`, which you remember by the acronym RAM.
+For this seventh example, combine some of the concepts you've already learned about to create a responsive layout with automatically-placed and flexible children. Pretty neat. The key terms to remember here are `repeat`, `auto-(fit|fill)`, and `minmax()`, which you remember by the acronym RAM.
 
 All together, it looks like:
 
