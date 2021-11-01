@@ -5,7 +5,8 @@ title: 'web.dev'
 intro:
   eyebrow: 'About web.dev'
   title: "Let's build the future of the web, together"
-  summary: 'Take advantage of the latest modern technologies to build amazing web experiences for everyone'
+  summary: |
+    'Take advantage of the latest modern technologies to build amazing web experiences for everyone'
   buttonText: 'Learn more'
   buttonUrl: '/about/'
   image: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/B9KWrQo39fXbKSVYjz1e.svg'
