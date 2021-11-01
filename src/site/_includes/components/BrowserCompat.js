@@ -23,9 +23,9 @@ const browsers = ['chrome', 'firefox', 'edge', 'safari'];
  * @this {EleventyPage}
  * @param {string} feature Feature id compatible with caniuse.com.
  */
-async function BrowserCompat(feature) {
+function BrowserCompat(feature) {
   const locale = getLocaleFromPath(this.page && this.page.filePathStem);
-  const data = await bcd();
+  const data = bcd();
   let compatIcons = [];
 
   if (data[feature] && data[feature].support) {
