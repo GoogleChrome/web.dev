@@ -2,7 +2,9 @@
 /// https://web.dev/design-system/pattern/compare
 .compare {
   --compare-highlight-color: #{get-utility-value('color', 'state-info-text')};
-  --flow-space: #{get-space('base')};
+
+  /// It's really important than this space is controlled, regardless of context
+  --flow-space: #{get-space('base')} !important;
 }
 
 .compare__label {
