@@ -93,7 +93,7 @@ pageScripts:
     {# Show patterns from current set (if set) or from the whole suite #}
     {% if currentPatternSet %}
       <h2 class="w-headline--two">{{ currentPatternSet.title }}</h2>
-      {{ currentPatternSet.content | safe }}
+      {{ content | safe }}
       {% for patternId, pattern in patterns.patterns %}
         {% if pattern.set == currentPatternSet.id %}
           {{ codePattern(pattern) }}
@@ -106,6 +106,7 @@ pageScripts:
       {% for patternSetId, patternSet in patterns.sets %}
         {% if patternSet.suite == patternSuite.id %}
           <h2 class="w-headline--two">{{ patternSet.title }}</h2>
+          {# This will not render any shortcodes within the patternset content! #}
           {{ patternSet.content | safe }}
           {% for patternId, pattern in patterns.patterns %}
             {% if pattern.set == patternSetId %}
@@ -120,7 +121,7 @@ pageScripts:
       {% for patternId, pattern in patterns.patterns %}
         {% if pattern.set == patternSuite.id %}
           {% if first %}
-            {{ patternSet.content | safe }}
+            {{ content | safe }}
           {% endif %}
           {% set first = false %}
           {{ codePattern(pattern) }}
