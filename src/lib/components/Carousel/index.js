@@ -39,7 +39,7 @@ class Carousel extends BaseElement {
     this._nextButton = undefined;
     /** @type {HTMLButtonElement} */
     this._previousButton = undefined;
-    /** @type {NodeJS.Timeout} */
+    /** @type {number} */
     this._timeout = undefined;
 
     this.next = this.next.bind(this);
@@ -112,7 +112,7 @@ class Carousel extends BaseElement {
     if (this.interval === 0) {
       active.focus({preventScroll: true});
     } else {
-      this._timeout = setTimeout(this.next, this.interval);
+      this._timeout = window.setTimeout(this.next, this.interval);
     }
 
     if (scroll) {
@@ -130,8 +130,6 @@ class Carousel extends BaseElement {
 
   /**
    * Event listener function that determines which element a user has scrolled to.
-   *
-   * @returns {void}
    */
   _onScroll() {
     for (const item of this._items) {
