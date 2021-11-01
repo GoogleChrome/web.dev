@@ -21,7 +21,7 @@
 
   /// Add more space to elements that follow figures etc
   pre + *,
-  figure + *,
+  figure:not([class*='flow']) + *,
   h2,
   h3,
   h4 {
