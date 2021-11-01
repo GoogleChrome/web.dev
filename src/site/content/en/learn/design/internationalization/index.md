@@ -95,8 +95,8 @@ label {
 {% endCompare %}
 
 {% Codepen {
- user: 'adactio',
- id: 'bGRzoxX',
+ user: 'web-dot-dev',
+ id: 'gOxXOLK',
  height: 300,
  theme: 'dark',
  tab: 'css,result'
@@ -108,8 +108,8 @@ You can mimic the effect of seeing your pages in a right-to-left language by usi
 A value of `ltr` means "left to right." A value of "rtl" means "right to left."
 
 {% Codepen {
- user: 'adactio',
- id: 'xxrMYJX',
+ user: 'web-dot-dev',
+ id: 'mdMqdOx',
  height: 300,
  theme: 'dark',
  tab: 'html,result'
