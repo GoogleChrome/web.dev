@@ -40,9 +40,3 @@
 .reel[data-scroll='snap'] > * {
   scroll-snap-align: start;
 }
-
-@include media-query('lg') {
-  .reel {
-    justify-content: center;
-  }
-}
