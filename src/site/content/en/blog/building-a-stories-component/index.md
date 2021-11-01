@@ -114,7 +114,7 @@ Let's breakdown that `grid` layout:
 
 * We explicitly fill the viewport on mobile with `100vh` and `100vw` and constrain the size on desktop
 * `/` separates our row and column templates
-* `auto-flow` translates to [`grid-auto-flow: column`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow)
+* `auto-flow` translates to [`grid-auto-flow: column`](https://developer.mozilla.org/docs/Web/CSS/grid-auto-flow)
 * The autoflow template is `100%`, which in this case is whatever the scroll window width is
 
 {% Aside %}
@@ -319,7 +319,7 @@ element.scrollIntoView({
 ```
 
 Safari was the only browser not to support `behavior: 'smooth'` here. Check out
-[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView#Browser_compatibility)
+[Browser compatibility](https://developer.mozilla.org/docs/Web/API/Element/scrollIntoView#Browser_compatibility)
 for updates.
 
 ## Hands-on

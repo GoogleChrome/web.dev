@@ -13,7 +13,7 @@ tags:
   - blog
   - css
   - layout
-  - internationalization
+  - intl
 ---
 
 Centering in CSS is a notorious challenge, fraught with jokes and mockery. 2020

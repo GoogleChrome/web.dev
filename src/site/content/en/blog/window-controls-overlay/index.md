@@ -207,7 +207,7 @@ position, too, based on the platform. This means that the linear gradient backgr
 be dynamically adapted to run from `#131313`→`maroon` or `maroon`→`#131313`→`maroon`, so that it
 blends in with the title bar's `maroon` background color that is determined by
 `<meta name="theme-color" content="maroon">`. This can be achieved by querying the
-[`getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+[`getBoundingClientRect()`](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect)
 API on the `navigator.windowControlsOverlay` property.
 
 ```js
@@ -306,7 +306,7 @@ if ('windowControlsOverlay' in navigator) {
 
 Rather than assigning a function to `ongeometrychange`, you can also add an event listener to
 `windowControlsOverlay` like below. You can read up on the difference between the two on
-[MDN](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers).
+[MDN](https://developer.mozilla.org/docs/Web/Guide/Events/Event_handlers).
 
 ```js
 navigator.windowControlsOverlay.addEventListener(
@@ -381,7 +381,7 @@ Enabling the window controls overlay and draggable regions do not pose considera
 other than feature detection. However, due to differing sizes and positions of the window controls
 buttons across operating systems, the JavaScript API for
 <code>navigator.<wbr>windowControlsOverlay.<wbr>getBoundingClientRect()</code> will return a
-[`DOMRect`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect) whose position and dimensions
+[`DOMRect`](https://developer.mozilla.org/docs/Web/API/DOMRect) whose position and dimensions
 will reveal information about the operating system upon which the browser is running. Currently,
 developers can already discover the OS from the user agent string, but due to fingerprinting
 concerns, there is discussion about freezing the UA string and unifying OS versions. There is an

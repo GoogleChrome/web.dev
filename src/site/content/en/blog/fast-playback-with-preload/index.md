@@ -13,7 +13,7 @@ date: 2017-08-17
 updated: 2020-11-16
 tags:
   - media
-  - video
+  # - video
   - performance
   - network
 ---
@@ -298,7 +298,7 @@ function preloadFirstSegmentSupported() {
 
 Before we dive into the [Cache API][cache-api] and service workers, let's see
 how to manually buffer a video with MSE. The example below assumes that your web
-server supports HTTP [`Range`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range)
+server supports HTTP [`Range`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Range)
 requests but this would be pretty similar with file
 segments. Note that some middleware libraries such as [Google's Shaka
 Player][shaka-player], [JW Player][jw-player], and [Video.js][video-js] are
@@ -593,15 +593,15 @@ requests.
 [shakaplayer]: https://github.com/google/shaka-player/blob/master/docs/tutorials/service-worker.md
 [sample-media-app]: https://github.com/GoogleChrome/sample-media-pwa
 [ranged-response.js]: https://github.com/GoogleChrome/sample-media-pwa/blob/master/src/client/scripts/ranged-response.js
-[cache-api]: https://developer.mozilla.org/en-US/docs/Web/API/Cache
+[cache-api]: https://developer.mozilla.org/docs/Web/API/Cache
 [yet]: https://github.com/whatwg/fetch/issues/144
 [shaka-player]: https://github.com/google/shaka-player
 [jw-player]: https://developer.jwplayer.com/
 [video-js]: http://videojs.com/
 [network-info-sample]: https://googlechrome.github.io/samples/network-information/
 [fast-light]: https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data
-[mse-basics]: https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API
+[mse-basics]: https://developer.mozilla.org/docs/Web/API/Media_Source_Extensions_API
 [preload]: /video-and-source-tags/#preload
 [thats-a-known-fact]: https://www.digitaltrends.com/web/buffer-rage/
-[browser-compatibility]: https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#Browser_compatibility
+[browser-compatibility]: https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility
 [android-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=612909

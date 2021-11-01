@@ -19,6 +19,7 @@
   & svg {
     width: 1.5em;
     height: 1.5em;
+    fill: currentColor;
   }
 
   & svg + * {
@@ -70,6 +71,7 @@
     background-position: center;
     transition: background 0.8s;
     opacity: 0.2;
+    // border-radius: 50%;
   }
 
   &:hover::after {
@@ -83,7 +85,6 @@
   }
 
   &:hover {
-    transform: translateY(-0.15em);
     box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 10%),
       0px 8px 8px 1px rgb(0 0 0 / 7%), 0px 3px 8px 2px rgb(0 0 0 / 8%);
     transition: transform $global-transition-movement,

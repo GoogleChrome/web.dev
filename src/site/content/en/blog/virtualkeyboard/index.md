@@ -24,7 +24,7 @@ Devices like tablets or cellphones typically have a virtual keyboard for typing 
 Unlike a physical keyboard that is always present and always the same, a virtual keyboard appears
 and disappears, dependent on the user's actions, to which it can also adapt dynamically, for
 example, based on the
-[`inputmode`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode)
+[`inputmode`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/inputmode)
 attribute.
 
 This flexibility comes at the price that the browser's layout engine has to be informed of the
@@ -80,7 +80,7 @@ navigator.virtualKeyboard.overlaysContent = true;
 You can programmatically show the virtual keyboard by calling its `show()` method. For this to work,
 the focused element needs to be a form control (such as a `textarea` element), or be an editing host
 (for example, by using the
-[`contenteditable`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contentEditable)
+[`contenteditable`](https://developer.mozilla.org/docs/Web/API/HTMLElement/contentEditable)
 attribute). The method always returns `undefined` but triggers a `geometrychanged` event
 if the virtual keyboard previously was not shown.
 
@@ -124,7 +124,7 @@ console.log('Virtual keyboard geometry:', x, y, width, height);
 
 The VirtualKeyboard API exposes a set of CSS environment variables that provide information about
 the virtual keyboard's appearance.
-They are modeled similar to the [`inset`](https://developer.mozilla.org/en-US/docs/Web/CSS/inset) CSS property,
+They are modeled similar to the [`inset`](https://developer.mozilla.org/docs/Web/CSS/inset) CSS property,
 that is, corresponding to the top, right, bottom, and/or left properties.
 
 - `keyboard-inset-top`

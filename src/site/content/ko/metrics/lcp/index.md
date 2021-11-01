@@ -15,7 +15,7 @@ tags:
 
 일반적으로 웹 개발자가 웹 페이지의 메인 콘텐츠가 얼마나 빨리 로드되어 사용자에게 표시되는지 측정하는 것은 어려운 일입니다.
 
-[load](https://developer.mozilla.org/en-US/docs/Web/Events/load) 또는 [DOMContentLoaded](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded)와 같은 오래된 메트릭은 사용자가 화면에서 보는 것과 반드시 일치하지는 않기 때문에 적절하다고 볼 수 없습니다. 또한, [First Contentful Paint(최초 콘텐츠풀 페인트, FCP)](/fcp/) 와 같은 새로운 사용자 중심 성능 메트릭은 로딩 경험의 시작 부분만을 포착합니다. 페이지에 시작 화면이 표시되거나 로딩 표시기를 표시되는 순간은 사용자와 큰 관련이 있다고 볼 수 없습니다.
+[load](https://developer.mozilla.org/docs/Web/Events/load) 또는 [DOMContentLoaded](https://developer.mozilla.org/docs/Web/Events/DOMContentLoaded)와 같은 오래된 메트릭은 사용자가 화면에서 보는 것과 반드시 일치하지는 않기 때문에 적절하다고 볼 수 없습니다. 또한, [First Contentful Paint(최초 콘텐츠풀 페인트, FCP)](/fcp/) 와 같은 새로운 사용자 중심 성능 메트릭은 로딩 경험의 시작 부분만을 포착합니다. 페이지에 시작 화면이 표시되거나 로딩 표시기를 표시되는 순간은 사용자와 큰 관련이 있다고 볼 수 없습니다.
 
 이전에는 초기 페인트 후의 더 많은 로딩 경험을 포착할 수 있도록 Lighthouse에서 사용 가능한 [First Meaningful Paint(유의미한 최초 페인트, FMP)](/first-meaningful-paint/) 및 [Speed Index(속도 인덱스, SI)](/speed-index/)와 같은 성능 메트릭을 권장했지만 이러한 메트릭은 복잡하고 설명하기 어려우며, 잘못된 경우도 많습니다. 즉 페이지의 메인 콘텐츠가 로드된 시점을 식별하지 못한다는 것입니다.
 
@@ -43,32 +43,32 @@ tags:
 - `<img>` 요소
 - `<svg>` 요소 내부의 `<image>`
 - `<video>` 요소(포스터 이미지 사용)
-- [`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url()) 함수를 통해 로드된 배경 이미지가 있는 요소[(CSS 그라데이션](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)과는 대조적임)
-- 텍스트 노드 또는 기타 인라인 수준 텍스트 하위 요소를 포함하는 [블록 수준](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) 요소
+- [`url()`](https://developer.mozilla.org/docs/Web/CSS/url()) 함수를 통해 로드된 배경 이미지가 있는 요소[(CSS 그라데이션](https://developer.mozilla.org/docs/Web/CSS/CSS_Images/Using_CSS_gradients)과는 대조적임)
+- 텍스트 노드 또는 기타 인라인 수준 텍스트 하위 요소를 포함하는 [블록 수준](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements) 요소
 
 요소를 이렇게 제한한 이유는 처음부터 단순하게 작업을 진행하기 위한 의도적인 선택입니다. 이후 더 많은 연구가 수행되면 추가 요소(예: `<svg>`, `<video>`)가 추가될 수도 있습니다.
 
 ### 요소의 크기는 어떻게 결정되나요?
 
-최대 콘텐츠풀 페인트에 대해 보고된 요소의 크기는 일반적으로 뷰포트 내에서 사용자에게 표시되는 크기입니다. 요소가 뷰포트 외부로 확장되거나, 요소가 잘리거나, 보이지 않는 [오버플로](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)가 있는 경우 해당 부분은 요소 크기에 포함되지 않습니다.
+최대 콘텐츠풀 페인트에 대해 보고된 요소의 크기는 일반적으로 뷰포트 내에서 사용자에게 표시되는 크기입니다. 요소가 뷰포트 외부로 확장되거나, 요소가 잘리거나, 보이지 않는 [오버플로](https://developer.mozilla.org/docs/Web/CSS/overflow)가 있는 경우 해당 부분은 요소 크기에 포함되지 않습니다.
 
-[기본 크기](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size)에서 크기가 조정된 이미지 요소의 경우 가시적 크기 또는 기본 크기 중 더 작은 것이 보고됩니다. 예를 들어 기본 크기보다 훨씬 작게 축소된 이미지는 표시된 만큼의 크기가, 더 크게 늘어나거나 확장된 경우에는 기본 크기만 보고됩니다.
+[기본 크기](https://developer.mozilla.org/docs/Glossary/Intrinsic_Size)에서 크기가 조정된 이미지 요소의 경우 가시적 크기 또는 기본 크기 중 더 작은 것이 보고됩니다. 예를 들어 기본 크기보다 훨씬 작게 축소된 이미지는 표시된 만큼의 크기가, 더 크게 늘어나거나 확장된 경우에는 기본 크기만 보고됩니다.
 
 텍스트 요소의 경우 텍스트 노드의 크기만 고려됩니다(모든 텍스트 노드를 포함하는 가장 작은 직사각형).
 
 모든 요소에 대해 CSS를 통해 적용된 여백, 안쪽 여백, 테두리는 고려되지 않습니다.
 
-{% Aside %} 어떤 텍스트 노드가 어떤 요소에 속하는지 결정하는 건 꽤 까다로울 수 있습니다. 특히 하위 요소가 인라인 요소와 일반 텍스트 노드를 포함하면서 블록 수준 요소까지 포함하는 경우에는 더욱 그렇습니다. 여기서 요점은 모든 텍스트 노드가 가장 가까운 블록 수준 상위 요소에만 속한다는 것입니다. [사양 측면](https://wicg.github.io/element-timing/#set-of-owned-text-nodes)에서 각 텍스트 노드는 [포함하는 블록](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block)을 생성하는 요소에 속합니다. {% endAside %}
+{% Aside %} 어떤 텍스트 노드가 어떤 요소에 속하는지 결정하는 건 꽤 까다로울 수 있습니다. 특히 하위 요소가 인라인 요소와 일반 텍스트 노드를 포함하면서 블록 수준 요소까지 포함하는 경우에는 더욱 그렇습니다. 여기서 요점은 모든 텍스트 노드가 가장 가까운 블록 수준 상위 요소에만 속한다는 것입니다. [사양 측면](https://wicg.github.io/element-timing/#set-of-owned-text-nodes)에서 각 텍스트 노드는 [포함하는 블록](https://developer.mozilla.org/docs/Web/CSS/Containing_block)을 생성하는 요소에 속합니다. {% endAside %}
 
 ### 최대 콘텐츠풀 페인트는 언제 보고되나요?
 
 웹 페이지는 단계적으로 로드되는 경우가 많으며, 그 결과 페이지의 최대 요소가 변경될 수 있습니다.
 
-이러한 변경 가능성을 처리하기 위해 브라우저는 브라우저가 첫 번째 프레임을 그리는 즉시 최대 콘텐츠 요소를 식별하는 `largest-contentful-paint` 유형의 [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)를 디스패치합니다. 그러나 이후 프레임이 렌더링된 후에는 최대 콘텐츠풀 요소가 변경될 때마다 또 다른 [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)를 디스패치합니다.
+이러한 변경 가능성을 처리하기 위해 브라우저는 브라우저가 첫 번째 프레임을 그리는 즉시 최대 콘텐츠 요소를 식별하는 `largest-contentful-paint` 유형의 [`PerformanceEntry`](https://developer.mozilla.org/docs/Web/API/PerformanceEntry)를 디스패치합니다. 그러나 이후 프레임이 렌더링된 후에는 최대 콘텐츠풀 요소가 변경될 때마다 또 다른 [`PerformanceEntry`](https://developer.mozilla.org/docs/Web/API/PerformanceEntry)를 디스패치합니다.
 
 예를 들어, 텍스트와 대표 이미지가 있는 페이지인 경우 브라우저는 처음에는 텍스트만 렌더링할 수 있습니다. 이 시점에서 브라우저는 `element` 속성이 `<p>` 또는 `<h1>`를 참조할 가능성이 있는 `largest-contentful-paint` 항목을 디스패치합니다. 이후 대표 이미지 로드가 완료되면 두 번째 `largest-contentful-paint` 항목이 디스패치되고 `element` 속성은 `<img>`를 참조하게 됩니다.
 
-요소는 렌더링된 후 사용자에게 표시되고 나서야 최대 콘텐츠풀 요소로 간주될 수 있다는 점에 유의해야 합니다. 아직 로드되지 않은 이미지는 "렌더링"된 것으로 간주되지 않습니다. [글꼴 차단 기간](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display#The_font_display_timeline) 동안 웹 글꼴을 사용하는 텍스트 노드도 마찬가지입니다. 이러한 경우 더 작은 요소가 최대 콘텐츠풀 요소로 보고될 수 있지만 더 큰 요소가 렌더링을 완료하는 즉시 다른 `PerformanceEntry` 오브젝트를 통해 보고됩니다.
+요소는 렌더링된 후 사용자에게 표시되고 나서야 최대 콘텐츠풀 요소로 간주될 수 있다는 점에 유의해야 합니다. 아직 로드되지 않은 이미지는 "렌더링"된 것으로 간주되지 않습니다. [글꼴 차단 기간](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display#The_font_display_timeline) 동안 웹 글꼴을 사용하는 텍스트 노드도 마찬가지입니다. 이러한 경우 더 작은 요소가 최대 콘텐츠풀 요소로 보고될 수 있지만 더 큰 요소가 렌더링을 완료하는 즉시 다른 `PerformanceEntry` 오브젝트를 통해 보고됩니다.
 
 이미지와 글꼴을 늦게 로드하는 것 외에도, 페이지는 새 콘텐츠를 사용할 수 있게 되면 DOM에 새 요소를 추가할 수 있습니다. 이러한 새 요소 중 하나가 이전의 최대 콘텐츠풀 요소보다 큰 경우에도 새 `PerformanceEntry`가 보고됩니다.
 
@@ -84,9 +84,9 @@ tags:
 
 #### 로드 시간 vs. 렌더링 시간
 
-[`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin) 헤더가 없는 교차 출처 이미지의 경우 이미지의 렌더링 타임스탬프가 노출되지 않고 대신 로드 시간만 노출됩니다. 이는 다른 여러 가지 API에 이미 노출되어 있는 부분이기 때문입니다.
+[`Timing-Allow-Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin) 헤더가 없는 교차 출처 이미지의 경우 이미지의 렌더링 타임스탬프가 노출되지 않고 대신 로드 시간만 노출됩니다. 이는 다른 여러 가지 API에 이미 노출되어 있는 부분이기 때문입니다.
 
-[아래 사용 예시](#measure-lcp-in-javascript)에서는 렌더링 시간을 사용할 수 없는 요소를 처리하는 방법을 보여줍니다. 하지만 가능하다면 언제나 [`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin) 헤더를 설정하는 것이 좋습니다. 그래야 메트릭이 더욱 정확해지기 때문입니다.
+[아래 사용 예시](#measure-lcp-in-javascript)에서는 렌더링 시간을 사용할 수 없는 요소를 처리하는 방법을 보여줍니다. 하지만 가능하다면 언제나 [`Timing-Allow-Origin`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin) 헤더를 설정하는 것이 좋습니다. 그래야 메트릭이 더욱 정확해지기 때문입니다.
 
 ### 요소 레이아웃 및 크기 변경은 어떻게 처리되나요?
 
@@ -133,7 +133,7 @@ LCP는 [실험실](/user-centric-performance-metrics/#in-the-lab)이나 [현장]
 
 ### JavaScript에서 LCP 측정
 
-JavaScript에서 LCP를 측정하려면 [Largest Contentful Paint API](https://wicg.github.io/largest-contentful-paint/)를 사용할 수 있습니다. 다음 예시에서는 `largest-contentful-paint` 항목을 수신 대기하고 콘솔에 기록하는 [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)를 작성하는 방법을 확인하실 수 있습니다.
+JavaScript에서 LCP를 측정하려면 [Largest Contentful Paint API](https://wicg.github.io/largest-contentful-paint/)를 사용할 수 있습니다. 다음 예시에서는 `largest-contentful-paint` 항목을 수신 대기하고 콘솔에 기록하는 [`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)를 작성하는 방법을 확인하실 수 있습니다.
 
 ```js
 new PerformanceObserver((entryList) => {

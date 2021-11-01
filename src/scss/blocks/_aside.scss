@@ -6,12 +6,10 @@
   @extend .flow;
 
   padding: $global-gutter;
-  max-width: 35rem;
-  margin-inline: auto;
+  max-width: $global-prose-element-max-width;
   border-radius: $global-radius-large;
 
   @include apply-utility('bg', 'mid-bg'); // For if no BG utility is added
-  @include apply-utility('leading', 'short');
 
   a {
     color: currentColor;

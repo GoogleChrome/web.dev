@@ -1,0 +1,42 @@
+setLeader: Test your knowledge of the form element
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: '1'
+    correctAnswers: '0'
+    stem: What value for `enctype` is needed to submit files?
+    options:
+      - content: '`multipart/form-data`'
+        rationale: '🎉'
+      - content: '`multipart/form-files`'
+        rationale: 'Try again!'
+      - content: '`form-data`'
+        rationale: 'Try again!'
+      - content: '`form-files`'
+        rationale: 'Try again!'
+  - type: multiple-choice
+    cardinality: '1'
+    correctAnswers: '1'
+    stem: Is it possible to send user data without a `<form>`
+    options:
+      - content: 'No'
+        rationale: 'Try again!'
+      - content: 'Yes, with JavaScript.'
+        rationale: '🎉'
+      - content: 'Yes, with Flash.'
+        rationale: 'Try again!'
+      - content: 'Yes, with HTML5.'
+        rationale: 'Try again!'
+  - type: multiple-choice
+    cardinality: '1'
+    correctAnswers: '3'
+    stem: How can you submit a `<form>`?
+    options:
+      - content: "Click on a `<button>`."
+        rationale: "Try again!"
+      - content: "Press `Enter`."
+        rationale: "Try again!"
+      - content: "Click on an `<input type=\"image\">`."
+        rationale: "Try again!"
+      - content: "All the above."
+        rationale: "🎉"

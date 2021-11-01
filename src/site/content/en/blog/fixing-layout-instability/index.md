@@ -8,8 +8,8 @@ description: |
   A walkthrough of using WebPageTest to identify and fix layout instability issues.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - webdev
-  - webpagetest
+  # - webdev
+  # - webpagetest
   - ux
 ---
 

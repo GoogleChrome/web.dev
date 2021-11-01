@@ -31,7 +31,7 @@ Thanks to [CSS `::marker`](https://www.w3.org/TR/css-lists-3/#marker-pseudo) we 
 
 ## Browser compatibilty
 
-`::marker` is supported in Firefox for desktop and Android, desktop Safari and iOS Safari (but only the `color` and `font-*` properties, see [Bug 204163](https://bugs.webkit.org/show_bug.cgi?id=204163)), and Chromium-based desktop and Android browsers. See MDN's [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker#Browser_compatibility) table for updates.
+`::marker` is supported in Firefox for desktop and Android, desktop Safari and iOS Safari (but only the `color` and `font-*` properties, see [Bug 204163](https://bugs.webkit.org/show_bug.cgi?id=204163)), and Chromium-based desktop and Android browsers. See MDN's [Browser compatibility](https://developer.mozilla.org/docs/Web/CSS/::marker#Browser_compatibility) table for updates.
 
 ## Pseudo-elements
 Consider the following essential HTML unordered list:
@@ -283,7 +283,7 @@ li::marker {
 </div>
 
 **Changing numbered lists**
-What about an `<ol>` though? The marker on an ordered list item is a number and not a bullet by default. In CSS these are called [Counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters), and they're quite powerful. They even have properties to set and reset where the number starts and ends, or switching them to roman numerals. Can we style that? Yep, and we can even use the marker content value to build our own numbering presentation.
+What about an `<ol>` though? The marker on an ordered list item is a number and not a bullet by default. In CSS these are called [Counters](https://developer.mozilla.org/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters), and they're quite powerful. They even have properties to set and reset where the number starts and ends, or switching them to roman numerals. Can we style that? Yep, and we can even use the marker content value to build our own numbering presentation.
 
 ```css
 li::marker {
@@ -312,6 +312,6 @@ You can find out more about ::marker from:
 
 - [CSS Lists, Markers and Counters](https://www.smashingmagazine.com/2019/07/css-lists-markers-counters/) from [Smashing Magazine](https://www.smashingmagazine.com/)
 - [Counting With CSS Counters and CSS Grid](https://css-tricks.com/counting-css-counters-css-grid/) from [CSS-Tricks](https://css-tricks.com/)
-- [Using CSS Counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters) from [MDN](https://developer.mozilla.org/)
+- [Using CSS Counters](https://developer.mozilla.org/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters) from [MDN](https://developer.mozilla.org/)
 
 It's great to get access to something which has been hard to style. You might wish that you could style other automatically generated elements. You might be frustrated with `<details>` or the search input autocomplete indicator, things that are not implemented in the same way across browsers. One way to share what you need is by creating a want at [https://webwewant.fyi](https://webwewant.fyi).

@@ -1,27 +1,99 @@
 http-203:
   title:
     en: 'HTTP 203'
+    es: 'HTTP 203'
+    ja: 'HTTP 203'
+    ko: 'HTTP 203'
+    pt: 'HTTP 203'
+    ru: 'HTTP 203'
+    zh: 'HTTP 203'
   description:
     en: 'Google Developers Jake Archibald and Surma discuss their philosophies about web development and the various aspects of it, meanwhile dropping in lifehacks, lessons and some honest truths.'
+    es: 'Los desarrolladores de Google, Jake Archibald y Surma, discuten sus filosofías sobre el desarrollo web y los diversos aspectos del mismo, mientras expresan consejos prácticos, lecciones y algunas verdades honestas.'
+    ja: 'Google の開発者である Jake Archibald と Surma が、ライフハックや教訓、そして率直な事実を交えながら、Web 開発の様々な側面についてそれぞれの哲学を語り合います。'
+    ko: 'Google 개발자인 Jake Archibald와 Surma가 웹 개발과 웹 개발의 다양한 측면에 대한 자신들의 의견을 나눕니다. 생활을 편리하게 만들어주는 도구, 교훈 및 숨겨둔 진실에 대한 이야기도 함께 들어볼 수 있습니다.'
+    pt: 'Os desenvolvedores Google Jake Archibald e Surma discutem suas filosofias sobre o desenvolvimento web e seus vários aspectos, enquanto ensinam macetes, lições e algumas verdades honestas.'
+    ru: 'Разработчики Google Джейк Арчибальд и Сурма обсуждают свои взгляды на веб-разработку и различные ее аспекты, а также делятся наставлениями, откровениями и лайфхаками.'
+    zh: 'Google 开发者 Jake Archibald 和 Surma 就他们关于网络开发及其各个方面的理念展开讨论，同时还介绍了生活小窍门、经验教训和一些中肯的事实。'
 
 mother-language-day:
   title:
     en: 'Mother Language Day'
+    es: 'Día de la Lengua Materna'
+    ja: '国際母語デー'
+    ko: '모국어의 날'
+    pt: 'Dia da Língua Materna'
+    ru: 'День родного языка'
+    zh: '母语日'
   description:
     en: 'February 21st is International Mother Language Day! To celebrate, each week we’ll be releasing a new video hosted by one of our team members in their mother language.'
+    es: '¡El 21 de febrero es el Día Internacional de la Lengua Materna! Para celebrarlo, cada semana publicaremos un nuevo vídeo presentado por uno de los miembros de nuestro equipo en su lengua materna.'
+    ja: '2 月 21 日は国際母語デーです。これを記念して、チームメンバーの 1 人がそれぞれの母語を用いてホストを務める新しい動画を毎週公開します。'
+    ko: '2월 21일은 세계 모국어의 날입니다! 이를 축하하기 위해 매주 우리 팀원 중 한 명이 자신의 모국어로 진행하는 새로운 비디오를 공개할 예정입니다.'
+    pt: '21 de fevereiro é o Dia Internacional da Língua Materna! Para comemorar, todas as semanas lançaremos um novo vídeo hospedado por um de nossos membros da equipe em seu idioma materno.'
+    ru: '21 февраля — Международный день родного языка. Чтобы его отметить, мы будем еженедельно публиковать новое видео от одного из участников нашей команды на его родном языке.'
+    zh: '2 月 21 日是国际母语日！为庆祝母语日，我们每周都会发布一个新视频，并由我们的一位团队成员用他们的母语主持。'
 
 gui-challenges:
   title:
     en: GUI Challenges
+    es: Desafíos de la Interfaz gráfica de usuario (GUI)
+    ja: GUI の課題
+    ko: GUI 챌린지
+    pt: Desafios da GUI
+    ru: Трудности в интерфейсах
+    zh: 图形用户界面挑战
   description:
-    en: | 
+    en: |
       There is no one way to solve interfaces challenges. 
       In this series, we'll be challenging ourselves and each other 
       to find multiple ways to solve interface challenges 
       and expand the diversity of our skills.
+    es: |
+      No hay una sola manera de resolver los desafíos de las interfaces.
+      En esta serie, nos desafiaremos a nosotros mismos y a los demás
+      para encontrar varias formas de resolver los desafíos de la interfaz
+      y ampliar la diversidad de nuestras habilidades.
+    ja: |
+      インターフェースに関する課題を解決する方法は、1 つではありません。
+      このシリーズではインターフェイスに関する課題を解決するための
+      方法を複数見つけ出し、多彩なスキルを身につけるために、
+      自分自身に、そしてお互いに挑戦していきます。
+    ko: |
+      인터페이스 문제를 해결하는 단 한 가지 방법은 없습니다. 
+      이 시리즈에서는 인터페이스 문제를 해결하는 여러 가지 방법을 찾고
+      우리가 가진 기술의 다양성을 확장하기 위해
+      스스로, 그리고 서로 간에 도전을 제기할 것입니다.
+    pt: |
+      Não há uma única maneira de resolver os desafios das interfaces.
+      Nesta série, estaremos desafiando a nós mesmos e uns aos outros
+      para encontrar diferentes maneiras de resolver os desafios das interfaces
+      e expandir a diversidade de nossas habilidades.
+    ru: |
+      Для проблем при разработке интерфейсов нет единого решения.
+      В этой серии мы будем испытывать себя и своих коллег и искать
+      различные способы решения задач, возникающих при создании
+      интерфейсов, чтобы расширить многообразие наших навыков.
+    zh: |
+      解决界面挑战的方法远不止一种。
+      在本系列中，我们将挑战自我、挑战彼此，
+      找到多种解决界面问题的方法，
+      并扩大我们的技能多样性。
 
 designing-in-the-browser:
   title:
     en: 'Designing in the Browser'
+    es: 'Diseñando en el navegador'
+    ja: 'ブラウザーでのデザイン'
+    ko: '브라우저에서 디자인하기'
+    pt: 'Design no navegador'
+    ru: 'Дизайн в браузере'
+    zh: '在浏览器中进行设计'
   description:
     en: 'Designing in the Browser explores the intersection of design and front-end development, teaching you how to build beautiful UIs with modern web standards in mind.'
+    es: 'Diseñando en el navegador explora la intersección entre el diseño y el desarrollo front-end, lo que le enseña a crear hermosas interfaces de usuario al tomar en cuenta los estándares web modernos.'
+    ja: 'ブラウザーでのデザインでは、デザインとフロントエンド開発の共通点を模索し、 最新の Web 標準を念頭に置いた美しい UI を構築する方法について解説します。'
+    ko: '''브라우저에서 디자인하기''는 디자인과 프런트 엔드 개발의 교차점을 탐색하고 최신 웹 표준을 염두에 두고 아름다운 UI를 구축하는 방법을 알려줍니다.'
+    pt: 'O design no navegador explora a interseção entre design e o desenvolvimento front-end, ensinando você a construir belas interfaces do usuário de acordo com os mais modernos padrões da web.'
+    ru: 'Шоу «Дизайн в браузере» рассматривает проблемы на пересечении дизайна и фронтенд-разработки и учит создавать красивые интерфейсы с использованием современных веб-стандартов.'
+    zh: '《在浏览器中进行设计》探索了设计和前端开发的交叉点，会教您如何构建符合现代网络标准的美观界面。'

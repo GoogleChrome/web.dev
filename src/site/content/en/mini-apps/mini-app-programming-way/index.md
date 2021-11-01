@@ -55,7 +55,7 @@ In that case, each page by definition strictly only loads what it needs to funct
 
 Mini apps have [no visible build process](/mini-app-project-structure-lifecycle-and-bundling/#the-build-process).
 On the web, modern build tools like [Snowpack](https://www.snowpack.dev/) leverage JavaScript's built-in
-[module system](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+[module system](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import)
 (known as ESM) to avoid unnecessary work and stay fast no matter how big a project grows.
 While it is early days for technologies like [Web Bundles](/web-bundles/), it is something that can be easily added
 to the build process.

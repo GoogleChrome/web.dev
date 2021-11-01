@@ -19,7 +19,7 @@ description: |
 tags:
   - blog
   - performance
-  - ads
+  # - ads
 ---
 
 If you're like most publishers on the web, your business offers a simple value

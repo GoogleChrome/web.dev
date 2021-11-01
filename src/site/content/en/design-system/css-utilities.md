@@ -157,3 +157,11 @@ center of the page.
 ```html
 <div class="wrapper">I am centered and have a nice, consistent gutter.</div>
 ```
+
+You can add an [exception](https://cube.fyi/exception.html) to create a narrow
+wrapper, too. Add `data-size="narrow"` to the element and it will have a reduced
+width and **no gutter**.
+
+```html
+<div class="wrapper" data-size="narrow">I am a reduced width wrapper</div>
+```

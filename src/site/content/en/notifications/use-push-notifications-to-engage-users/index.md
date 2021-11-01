@@ -30,13 +30,13 @@ The look-and-feel of notifications varies between platforms. For example:
   <figcaption class="w-figcaption">A notification on a MacBook.</figcaption>
 </figure>
 
-Traditionally, web browsers had to initiate the exchange of information between server and client by making a request. [Web push technology](https://developer.mozilla.org/en-US/docs/Web/API/Push_API), on the other hand, lets you configure your server to send notifications when it makes sense for your app. A push service creates unique URLs for each subscribed service worker. Sending messages to a service worker's URL raises events on that service worker, prompting it to display a notification.
+Traditionally, web browsers had to initiate the exchange of information between server and client by making a request. [Web push technology](https://developer.mozilla.org/docs/Web/API/Push_API), on the other hand, lets you configure your server to send notifications when it makes sense for your app. A push service creates unique URLs for each subscribed service worker. Sending messages to a service worker's URL raises events on that service worker, prompting it to display a notification.
 
 Push notifications can help users to get the most out of your app by prompting them to re-open it and use it based on the latest information.
 
 ## Creating and sending notifications
 
-Create notifications using the [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API). A `Notification` object has a `title` string and an `options` object. For example:
+Create notifications using the [Notifications API](https://developer.mozilla.org/docs/Web/API/Notifications_API). A `Notification` object has a `title` string and an `options` object. For example:
 
 ```js
 let title = 'Hi!';

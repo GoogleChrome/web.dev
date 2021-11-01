@@ -51,6 +51,8 @@ class Search extends BaseStateElement {
       query: {type: String},
       // Tag to filter the search results by.
       tag: {type: String},
+      // Translations for strings displayed by this component
+      i18n: {type: Object},
     };
   }
 
@@ -64,6 +66,7 @@ class Search extends BaseStateElement {
     this.expanded = false;
     this.locale = 'en';
     this.resultsEl;
+    this.i18n = {};
 
     // On smaller screens we don't do an animation so it's ok for us to fire off
     // actions immediately. On larger screens we need to wait for the searchbox
@@ -117,11 +120,17 @@ class Search extends BaseStateElement {
   }
 
   render() {
+    const i18n = this.i18n;
+    const locale = this.locale;
+    const placeholder = i18n.search[locale] || i18n.search['en'];
+    const open_search = i18n.open_search[locale] || i18n.open_search['en'];
+    const all_articles = i18n.all_articles[locale] || i18n.all_articles['en'];
+    const close_search = i18n.close_search[locale] || i18n.close_search['en'];
     return html`
       <button
         class="web-search__open-btn"
         @click="${this.onOpenSearch}"
-        aria-label="Open search"
+        aria-label="${open_search}"
       >
         <svg
           class="web-search__search-icon"
@@ -164,8 +173,8 @@ class Search extends BaseStateElement {
           autocomplete="off"
           aria-autocomplete="list"
           aria-controls="${this.resultsEl.id}-list"
-          aria-label="All articles"
-          placeholder="Search"
+          aria-label="${all_articles}"
+          placeholder="${placeholder}"
           @keydown="${this.onKeyDown}"
           @input="${this.onInput}"
           @focusin="${this.onFocusIn}"
@@ -175,7 +184,7 @@ class Search extends BaseStateElement {
       <button
         @click="${this.onCloseSearch}"
         class="web-search__close-btn"
-        aria-label="Close search"
+        aria-label="${close_search}"
       >
         <svg
           class="web-search__close-icon"

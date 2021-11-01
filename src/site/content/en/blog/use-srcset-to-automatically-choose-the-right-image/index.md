@@ -7,13 +7,13 @@ date: 2019-06-24
 description: Use srcset to automatically choose the right image size.
 tags:
   - blog
-  - top tips
+  # - top tips
   - images
   - performance
-  - responsive design
-  - responsive images
-  - srcset
-  - sizes
+  # - responsive design
+  # - responsive images
+  # - srcset
+  # - sizes
 codelabs:
   - codelab-art-direction
   - codelab-density-descriptors
@@ -38,7 +38,7 @@ weight is images. That's a great opportunity for optimization!
 ## tl;dr
 * Don't save images larger than their display size.
 * Save multiple sizes for each image and use the
-[`srcset`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset)
+[`srcset`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-srcset)
 attribute to enable the browser to choose the smallest.
 The `w` value tells the browser the width of each version:
 

@@ -8,9 +8,9 @@ height: 400
 ---
 
 [Responsive
-images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+images](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
 are often implemented using the
-[`srcset`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset)
+[`srcset`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-srcset)
 attribute. The `srcset` attribute is a comma-separated list of image filenames
 and their
 [width](https://html.spec.whatwg.org/multipage/images.html#width-descriptor) or
@@ -46,7 +46,7 @@ attributes on `<img>` and `<source>` tags that use `srcset`.
 * **Adjust image styling:** If you need to adjust image styling, keep in mind
   that adding styling to a `<source>` tag will have no effect - a `<source>` tag
   is an [empty
-  element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source).
+  element](https://developer.mozilla.org/docs/Web/HTML/Element/source).
   Instead, you will need to style the corresponding `<img>` tag.
 * **Set the `width` and `height` attributes on the `<img>` tag:** These values
   should match the intrinsic size of the fallback image.

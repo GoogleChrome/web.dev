@@ -25,7 +25,7 @@ specific patterns of window and service worker communication.
 ## How workers can improve your website {: #how-workers-can-improve-your-website }
 
 The browser uses a single thread (the [main
-thread](https://developer.mozilla.org/en-US/docs/Glossary/Main_thread)) to run all the JavaScript in
+thread](https://developer.mozilla.org/docs/Glossary/Main_thread)) to run all the JavaScript in
 a web page, as well as to perform tasks like rendering the page and performing garbage collection.
 Running excessive JavaScript code can block the main thread, delaying the browser from performing
 these tasks and leading to a poor user experience.
@@ -53,15 +53,15 @@ In this post you'll learn about two different types of workers (web workers and 
 
 ### Similarities {: #similarities }
 
-[Web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+[Web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers)
 and [service
-workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 are two types of workers available to websites. They have some things in common:
 
 - Both run in a secondary thread, allowing JavaScript code to execute without blocking the main
   thread and the user interface.
-- They don't have access to the [`Window`](https://developer.mozilla.org/en-US/docs/Web/API/Window)
-  and [`Document`](https://developer.mozilla.org/en-US/docs/Web/API/Document) objects, so they can't
+- They don't have access to the [`Window`](https://developer.mozilla.org/docs/Web/API/Window)
+  and [`Document`](https://developer.mozilla.org/docs/Web/API/Document) objects, so they can't
   interact with the DOM directly, and they have limited access to browser APIs.
 
 ### Differences {: #differences }
@@ -70,12 +70,12 @@ One might think that most things that can be delegated to a web worker can be do
 worker and vice versa, but there are important differences between them:
 
 - Unlike web workers, service workers allow you to intercept network requests (via the
-  [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent) event) and to listen for Push
+  [`fetch`](https://developer.mozilla.org/docs/Web/API/FetchEvent) event) and to listen for Push
   API events in the background (via the
-  [`push`](https://developer.mozilla.org/en-US/docs/Web/API/PushEvent) event).
+  [`push`](https://developer.mozilla.org/docs/Web/API/PushEvent) event).
 - A page can spawn multiple web workers, but a single service worker controls all the active tabs
   under the
-  [scope](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/scope) it was
+  [scope](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/scope) it was
   registered with.
 - The lifespan of the web worker is tightly coupled to the tab it belongs to, while the [service
   worker's

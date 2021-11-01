@@ -39,7 +39,7 @@ CLS 较差的最常见原因为：
 
 ## 无尺寸的图像 🌆
 
-**概述：**始终在您的图像和视频元素上包含`width`和`height`属性。或者通过使用[CSS 长宽比容器](https://css-tricks.com/aspect-ratio-boxes/)预留所需的空间。这种方法可以确保浏览器能够在加载图像期间在文档中分配正确的空间大小。
+**概述**：始终在您的图像和视频元素上包含`width`和`height`属性。或者通过使用[CSS 长宽比容器](https://css-tricks.com/aspect-ratio-boxes/)预留所需的空间。这种方法可以确保浏览器能够在加载图像期间在文档中分配正确的空间大小。
 
   <figure class="w-figure">{% Video src=["video/tcFciHGuF3MxnTr1y5ue01OGLBn2/10TEOBGBqZm1SEXE7KiC.webm", "video/tcFciHGuF3MxnTr1y5ue01OGLBn2/WOQn6K6OQcoElRw0NCkZ.mp4"], poster="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/8wKRITUkK3Zrp5jvQ1Xw.jpg", controls=true, loop=true, muted=true, class="w-screenshot" %}<figcaption class="w-figcaption">未指定宽度和高度的图像。</figcaption></figure>
 
@@ -207,7 +207,7 @@ img {
 
 ### 动态内容 📐
 
-**概述：**除非是对用户交互做出响应，否则避免在现有内容的上方插入内容。这样能够确保任何布局偏移的发生都在预期之内。
+**概述**：除非是对用户交互做出响应，否则避免在现有内容的上方插入内容。这样能够确保任何布局偏移的发生都在预期之内。
 
 您可能已经在试图加载一个网站时经历过由于在可视区域顶部或底部弹出用户界面而导致的布局偏移。与广告类似，这通常是由横幅和表格导致的，这些横幅和表格会使页面的其余内容发生位移：
 
@@ -254,7 +254,7 @@ img {
 
 ### 动画 🏃‍♀️
 
-**概述：**倾向于选择`transform`动画，而不是触发布局偏移的属性动画。
+**概述**：倾向于选择`transform`动画，而不是触发布局偏移的属性动画。
 
 对 CSS 属性值的更改可能需要浏览器对这些更改做出反应。许多值都会触发重排、绘制和合成，例如`box-shadow`和`box-sizing`。很多 CSS 属性可以通过代价更小的方式进行更改。
 

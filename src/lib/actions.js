@@ -1,6 +1,7 @@
 import {store} from './store';
 import {saveUserUrl} from './fb';
 import {runLighthouse, fetchReports} from './lighthouse-service';
+import {runPsi} from './psi-service';
 import lang from './utils/language';
 import {localStorage} from './utils/storage';
 import cookies from 'js-cookie';
@@ -19,6 +20,57 @@ export const clearSignedInState = store.action(() => {
       lighthouseError: null,
     };
   }
+});
+
+export const requestRunPSI = store.action((state, url) => {
+  const p = (async () => {
+    // Only write the user's URL preference to `activeLighthouseUrl` here before running
+    // Lighthouse. The `userUrl` field inside state is not "safe" in that it can be replaced by
+    // Firestore at any point. This ensures that results are never approportioned to the wrong URL.
+    store.setState({
+      activeLighthouseUrl: url,
+      lighthouseError: null,
+    });
+    const run = await runPsi(url);
+    const auditedOn = new Date(run.fetchTime);
+    state = store.getState(); // might change during runLighthouse
+    await saveUserUrl(url, auditedOn); // write the url to Firestore
+    return {
+      userUrl: url,
+      activeLighthouseUrl: null,
+      lighthouseResult: {
+        url,
+        run,
+      },
+    };
+  })();
+
+  return p.catch((err) => {
+    const errMsg = err.name === 'FetchError' ? err.name : err.toString();
+    console.warn('failed to run PSI', url, errMsg);
+
+    const update = {
+      lighthouseError: errMsg,
+      activeLighthouseUrl: null,
+    };
+
+    // If the previous result was for a different URL, clear it so there's not confusion about
+    // what the error is being shown for.
+    const {psiResult} = store.getState();
+    if (psiResult && psiResult.url !== url) {
+      update.psiResult = null;
+    }
+
+    return update;
+  });
+});
+
+export const setLighthouseError = store.action((_, errMsg) => {
+  const update = {
+    lighthouseError: errMsg,
+  };
+  store.setState(update);
+  return update;
 });
 
 export const requestRunLighthouse = store.action((state, url) => {

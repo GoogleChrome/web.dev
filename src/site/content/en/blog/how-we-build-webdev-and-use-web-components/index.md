@@ -138,7 +138,7 @@ This cuts down on the number of bytes our users need before the site is enhanced
 
 ### Web Components
 
-[Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
+[Web Components](https://developer.mozilla.org/docs/Web/Web_Components)
 are custom elements which encapsulate runtime functionality provided in JavaScript, and are identified by custom names like `<web-codelab>`.
 The design lends itself well to largely static sites like web.dev: your browser manages an element's lifecycle as a site's HTML is updated, correctly informing any elements when they are attached or detached from the page.
 And antiquated browsers just ignore Web Components altogether and render whatever is left in the DOM.

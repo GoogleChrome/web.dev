@@ -29,13 +29,13 @@ In regions like emerging markets, this phenomenon is even more common, not only 
 
 [Adaptive loading](/adaptive-loading-cds-2019/) is a web performance pattern that lets you adapt your site based on the user's network and device conditions.
 
-The adaptive loading pattern is made possible by [service workers](/service-workers-cache-storage/), the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API), the [Hardware Concurrency API](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency), and the [Device Memory API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory). In this guide we explore how you can use service workers and the Network Information API to achieve an adaptive loading strategy.
+The adaptive loading pattern is made possible by [service workers](/service-workers-cache-storage/), the [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API), the [Hardware Concurrency API](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency), and the [Device Memory API](https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory). In this guide we explore how you can use service workers and the Network Information API to achieve an adaptive loading strategy.
 
 ## Production case
 
 [Terra](https://www.terra.com.br/) is one of the biggest media companies in Brazil. It has a large user base, coming from a wide variety of devices and networks.
 
-To provide a more reliable experience to all their users, Terra combines service workers and the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) to deliver lower quality images to users on 2G or 3G connections.
+To provide a more reliable experience to all their users, Terra combines service workers and the [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API) to deliver lower quality images to users on 2G or 3G connections.
 
 <figure class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/EQst12doZ2b8CLO0MtO5.png", alt="A screenshot of Terra's home page connected to different image qualities according to the connection type.", width="734", height="381" %}
@@ -47,7 +47,7 @@ As is the case with many publishers, Terra serves [AMP](https://amp.dev/) versio
 
 Taking that into consideration, Terra decided to start serving AMP versions of their pages not only to users coming from search engines, but also to those navigating their site in 3G connections or slower.
 
-To achieve that, they use the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) in the service worker to detect if the request comes from 3G or slower. If that's the case, they change the URL of the page to request the AMP version of the page instead.
+To achieve that, they use the [Network Information API](https://developer.mozilla.org/docs/Web/API/Network_Information_API) in the service worker to detect if the request comes from 3G or slower. If that's the case, they change the URL of the page to request the AMP version of the page instead.
 
 <figure class="w-figure">
   {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/4kfDfkeIzxVXLoaTylug.png", alt="A screenshot of Terra's article page connected to different image qualities according to the connection type.", width="741", height="379" %}
@@ -61,7 +61,7 @@ In this section we'll explore how [Workbox](/workbox/) can be used to implement 
 
 Workbox provides several [runtime caching strategies](/runtime-caching-with-workbox/) out of the box. They are used to indicate how the service worker generates a response after receiving a `fetch` event.
 
-For example, in a [Cache First](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network) strategy the [`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request) will be fulfilled using the cached response (if available). If there isn't a cached response, the `Request` will be fulfilled by a network request and the response will be cached.
+For example, in a [Cache First](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network) strategy the [`Request`](https://developer.mozilla.org/docs/Web/API/Request) will be fulfilled using the cached response (if available). If there isn't a cached response, the `Request` will be fulfilled by a network request and the response will be cached.
 
 ```javascript
 import {registerRoute} from 'workbox-routing';
@@ -109,7 +109,7 @@ const adaptiveLoadingPlugin = {
 The previous code does the following:
 
 - Implements a `requestWillFetch()` callback: This is called whenever a network request is about to be made, so you can alter the `Request`.
-- Checks the connection type, by using the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency). Based on the status of the network, it creates a new URL part, indicating the quality of the image to fetch (e.g. `q_30` for 3G users).
+- Checks the connection type, by using the [Network Information API](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency). Based on the status of the network, it creates a new URL part, indicating the quality of the image to fetch (e.g. `q_30` for 3G users).
 - Creates a new URL based on the dynamic `newPart` value, and returns the new `Request` to be made, based on that URL.
 
 Next, pass the plugin to a `cacheFirst` strategy containing a regular expression to match image URLs (e.g. `/img/`):
@@ -175,4 +175,4 @@ The previous code does the following:
 
 ## Explore more adaptive loading strategies
 
-You can go beyond this, by mapping device signals, like [hardware concurrency](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency) and [device memory](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory) to device categories and then serving different assets depending on the device type (low-, mid- or high-end).
+You can go beyond this, by mapping device signals, like [hardware concurrency](https://developer.mozilla.org/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency) and [device memory](https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory) to device categories and then serving different assets depending on the device type (low-, mid- or high-end).

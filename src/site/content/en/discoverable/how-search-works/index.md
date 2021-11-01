@@ -65,7 +65,7 @@ the same content.
 
 ## Serving the most useful results
 
-Search engines do more work then just matching the query to keywords in the
+Search engines do more work than just matching the query to keywords in the
 index. To give useful results, they might consider context, alternative wording,
 location of the user, and more. For example, "silicon valley" might refer to the
 geographic region or the TV show. But if the query is "silicon valley cast",

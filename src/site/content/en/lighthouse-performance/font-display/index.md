@@ -42,7 +42,7 @@ you can avoid FOIT in most modern browsers:
 }
 ```
 
-The [font-display API](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
+The [font-display API](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display)
 specifies how a font is displayed.
 `swap` tells the browser that text using the font should be displayed immediately using a system font.
 Once the custom font is ready, it replaces the system font.
@@ -58,7 +58,7 @@ Use `<link rel="preload" as="font">` to fetch your font files earlier. Learn mor
 
 ### Google Fonts
 
-Add the `&display=swap` [parameter](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL#Basics_anatomy_of_a_URL) to the end of your Google Fonts URL:
+Add the `&display=swap` [parameter](https://developer.mozilla.org/docs/Learn/Common_questions/What_is_a_URL#Basics_anatomy_of_a_URL) to the end of your Google Fonts URL:
 ```html
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 ```

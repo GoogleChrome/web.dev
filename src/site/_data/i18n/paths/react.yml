@@ -1,15 +1,45 @@
 title:
   en: React
+  es: React
+  ja: React
+  ko: 반응
+  pt: React
+  ru: React
+  zh: React
 
 description:
   en: Build performant and progressive React applications.
+  es: Crea aplicaciones de React progresivas y de alto rendimiento.
+  ja: 優れたパフォーマンスを発揮するプログレッシブ React アプリケーションを構築しましょう。
+  ko: 성능이 뛰어나고 진보적인 React 애플리케이션을 구축하세요.
+  pt: Crie aplicações React progressivas e de alto desempenho.
+  ru: Создавайте прогрессивные и производительные приложения на основе React.
+  zh: 构建高性能与渐进式 React 应用。
 
 overview:
   en: In this section you'll learn how to use built-in APIs and third-party libraries to improve the performance of your React applications.
+  es: En esta sección aprenderá a utilizar las API integradas y las bibliotecas de terceros para mejorar el rendimiento de sus aplicaciones de React.
+  ja: このセクションでは、組み込みの API やサードパーティ製ライブラリを使用して React アプリケーションのパフォーマンスを向上させる方法について説明します。
+  ko: 이 섹션에서는 내장 API 및 타사 라이브러리를 사용하여 React 애플리케이션의 성능을 개선하는 방법을 알아봅니다.
+  pt: Nesta seção, você aprenderá a usar APIs internas e bibliotecas de terceiros para melhorar o desempenho de suas aplicações React.
+  ru: В этом разделе вы узнаете, как повысить производительность приложений на основе React с помощью встроенных API и сторонних библиотек.
+  zh: 在本部分中，您将了解如何使用内置 API 和第三方库来提升您的 React 应用的性能。
 
 topics:
   next_js:
     en: Next.js
+    es: Next.js
+    ja: Next.js
+    ko: Next.js
+    pt: Next.js
+    ru: Next.js
+    zh: Next.js
 
   create_react_app:
     en: Create React App
+    es: Create React App
+    ja: React アプリを構築する
+    ko: React 앱 만들기
+    pt: Criação de uma aplicação React
+    ru: Создание приложения на основе React
+    zh: 创建 React 应用

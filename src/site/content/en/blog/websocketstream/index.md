@@ -15,9 +15,9 @@ description: |
   This allows your app to apply backpressure to received messages.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - backpressure
-  - websocket
-  - websocketstream
+  # - backpressure
+  # - websocket
+  # - websocketstream
   - capabilities
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/1977080236415647745
@@ -28,7 +28,7 @@ feedback:
 
 ### The WebSocket API
 
-The [WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
+The [WebSocket API](https://developer.mozilla.org/docs/Web/API/WebSockets_API)
 provides a JavaScript interface to the [WebSocket protocol](https://tools.ietf.org/html/rfc6455),
 which makes it possible to open a two-way interactive communication session
 between the user's browser and a server.
@@ -37,11 +37,11 @@ without polling the server for a reply.
 
 ### The Streams API
 
-The [Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API)
+The [Streams API](https://developer.mozilla.org/docs/Web/API/Streams_API)
 allows JavaScript to programmatically access streams of data chunks received over the network
 and process them as desired.
 An important concept in the context of streams is
-[backpressure](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts#Backpressure).
+[backpressure](https://developer.mozilla.org/docs/Web/API/Streams_API/Concepts#Backpressure).
 This is the process by which a single stream or a pipe chain
 regulates the speed of reading or writing.
 When the stream itself or a stream later in the pipe chain is still busy
@@ -53,7 +53,7 @@ it sends a signal backwards through the chain to slow delivery as appropriate.
 #### Applying backpressure to received messages is impossible
 
 With the current WebSocket API, reacting to a message happens in
-[`WebSocket.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onmessage),
+[`WebSocket.onmessage`](https://developer.mozilla.org/docs/Web/API/WebSocket/onmessage),
 an `EventHandler` called when a message is received from the server.
 
 Let's assume you had an application that needs to perform heavy data crunching operations
@@ -87,11 +87,11 @@ become unresponsive due to 100% CPU usage, or both.
 #### Applying backpressure to sent messages is non-ergonomic
 
 Applying backpressure to sent messages is possible, but involves polling the
-[`WebSocket.bufferedAmount`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/bufferedAmount)
+[`WebSocket.bufferedAmount`](https://developer.mozilla.org/docs/Web/API/WebSocket/bufferedAmount)
 property, which is inefficient and non-ergonomic.
 This read-only property returns the number of bytes of data that have been queued
 using calls to
-[`WebSocket.send()`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/send),
+[`WebSocket.send()`](https://developer.mozilla.org/docs/Web/API/WebSocket/send),
 but not yet transmitted to the network.
 This value resets to zero once all queued data has been sent,
 but if you keep calling `WebSocket.send()`,
@@ -136,23 +136,23 @@ in a modern JavaScript world.
 You start by constructing a new `WebSocketStream` and passing it the URL of the WebSocket server.
 Next, you wait for the `connection` to be established,
 which results in a
-[`ReadableStream`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/ReadableStream)
+[`ReadableStream`](https://developer.mozilla.org/docs/Web/API/ReadableStream/ReadableStream)
 and/or a
-[`WritableStream`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream/WritableStream).
+[`WritableStream`](https://developer.mozilla.org/docs/Web/API/WritableStream/WritableStream).
 
 By calling the
-[`ReadableStream.getReader()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/getReader)
+[`ReadableStream.getReader()`](https://developer.mozilla.org/docs/Web/API/ReadableStream/getReader)
 method, you finally obtain a
-[`ReadableStreamDefaultReader`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader),
-which you can then [`read()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader/read)
+[`ReadableStreamDefaultReader`](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader),
+which you can then [`read()`](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/read)
 data from until the stream is done, that is, until it returns an object of the form
 `{value: undefined, done: true}`.
 
 Accordingly, by calling the
-[`WritableStream.getWriter()`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream/getWriter)
+[`WritableStream.getWriter()`](https://developer.mozilla.org/docs/Web/API/WritableStream/getWriter)
 method, you finally obtain a
-[`WritableStreamDefaultWriter`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter),
-which you can then [`write()`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/write)
+[`WritableStreamDefaultWriter`](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter),
+which you can then [`write()`](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write)
 data to.
 
 ```js
@@ -184,7 +184,7 @@ will only proceed if it is safe to do so.
 The second argument to WebSocketStream is an option bag to allow for future extension.
 Currently the only option is `protocols`,
 which behaves the same as the
-[second argument to the WebSocket constructor](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/WebSocket#Parameters:~:text=respond.-,protocols):
+[second argument to the WebSocket constructor](https://developer.mozilla.org/docs/Web/API/WebSocket/WebSocket#Parameters:~:text=respond.-,protocols):
 
 ```js
 const chatWSS = new WebSocketStream(CHAT_URL, {protocols: ['chat', 'chatv2']});
@@ -203,14 +203,14 @@ const {readable, writable, protocol, extensions} = await chatWSS.connection;
 ### Information about closed WebSocketStream connection
 
 The information that was available from the
-[`WebSocket.onclose`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onclose) and
-[`WebSocket.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onerror) events
+[`WebSocket.onclose`](https://developer.mozilla.org/docs/Web/API/WebSocket/onclose) and
+[`WebSocket.onerror`](https://developer.mozilla.org/docs/Web/API/WebSocket/onerror) events
 in the WebSocket API is now available via the `WebSocketStream.closed` promise.
 The promise rejects in the event of an unclean close,
 otherwise it resolves to the code and reason sent by the server.
 
 All possible status codes and their meaning is explained in the
-[list of `CloseEvent` status codes](https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent#Status_codes).
+[list of `CloseEvent` status codes](https://developer.mozilla.org/docs/Web/API/CloseEvent#Status_codes).
 
 ```js
 const {code, reason} = await chatWSS.closed;
@@ -219,8 +219,8 @@ const {code, reason} = await chatWSS.closed;
 ### Closing a WebSocketStream connection
 
 A WebSocketStream can be closed with an
-[`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController).
-Therefore, pass an [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
+[`AbortController`](https://developer.mozilla.org/docs/Web/API/AbortController).
+Therefore, pass an [`AbortSignal`](https://developer.mozilla.org/docs/Web/API/AbortSignal)
 to the `WebSocketStream` constructor.
 
 ```js
@@ -231,7 +231,7 @@ setTimeout(() => controller.abort(), 1000);
 
 As an alternative, you can also use the `WebSocketStream.close()` method,
 but its main purpose is to permit specifying the
-[code](https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent#Status_codes)
+[code](https://developer.mozilla.org/docs/Web/API/CloseEvent#Status_codes)
 and reason which is sent to the server.
 
 ```js
@@ -244,7 +244,7 @@ Chrome is currently the only browser to implement the WebSocketStream API.
 For interoperability with the classic WebSocket API,
 applying backpressure to received messages is not possible.
 Applying backpressure to sent messages is possible, but involves polling the
-[`WebSocket.bufferedAmount`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/bufferedAmount)
+[`WebSocket.bufferedAmount`](https://developer.mozilla.org/docs/Web/API/WebSocket/bufferedAmount)
 property, which is inefficient and non-ergonomic.
 
 #### Feature detection

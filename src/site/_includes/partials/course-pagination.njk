@@ -8,32 +8,31 @@
   {{- title -}}
 {% endmacro %}
 
-<nav class="course-pagination" aria-label="pagination">
+<h2 class="visually-hidden">Next and previous lessons</h2>
+<nav class="preview-pagination gap-top-size-2" aria-label="pagination">
   {% for item in pageNavigation.list %}
     {% if item.url === page.url %}
       {% if item.prev %}
         {% set prev = item.prev %}
-        <a href="{{ prev.url }}" class="course-pagination-control" data-prev>
-          <div class="course-pagination-control__top display-flex align-center">
+        <a class="preview-pagination__item flow" href="{{ prev.url }}" data-dir="prev">
+          <div class="preview-pagination__meta cluster">
             {{ icon('arrow-back', {label: 'previous'}) }}
-            <span class="font-mono display-none md:display-inline case-upper">{{ 'i18n.common.prev' | i18n(locale) }}</span>
-            <span class="font-mono">{{ prev.counter }}</span>
+            <span>{{ 'i18n.common.prev' | i18n(locale) }}</span>
+            <span>{{ prev.counter }}</span>
           </div>
-
-          <div class="course-pagination-control__title">{{ preferredTitle(prev) }}</div>
+          <h3 class="preview-pagination__heading">{{ preferredTitle(prev) }}</h3>
         </a>
       {% endif %}
       {% if item.next %}
         {% set next = item.next %}
-        <a href="{{ next.url }}" class="course-pagination-control" data-next>
-          <div class="course-pagination-control__top display-flex align-center">
-            <span class="font-mono case-upper">{{ 'i18n.common.next' | i18n(locale) }}</span>
-            <span class="font-mono">{{ next.counter }}</span>
+        <a class="preview-pagination__item flow" href="{{ next.url }}" data-dir="next">
+          <div class="preview-pagination__meta cluster">
             {{ icon('arrow-forward', {label: 'next'}) }}
+            <span>{{ 'i18n.common.next' | i18n(locale) }}</span>
+            <span>{{ next.counter }}</span>
           </div>
-
-          <div class="course-pagination-control__title">{{ preferredTitle(next) }}</div>
-          <div class="course-pagination-control__desc">{{ next.data.description }}</div>
+          <h3 class="preview-pagination__heading">{{ preferredTitle(next) }}</h3>
+          <p>{{ next.data.description }}</p>
         </a>
       {% endif %}
     {% endif %}

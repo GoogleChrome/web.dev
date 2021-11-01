@@ -74,7 +74,7 @@ A), and 50% was sent to the baseline page (version B). Version A and version B b
 clicks and 34K visits per day. As mentioned before, the only difference between version A and
 version B was that version A was optimized for Web Vitals. There were no functional or visual
 differences between the two versions other than that. Vodafone used the
-[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) API to
+[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver) API to
 measure LCP on real user sessions and sent the
 [field data](https://www.searchenginejournal.com/google-explains-why-field-data-is-more-reliable-than-lab-data/372404/)
 to their analytics provider.

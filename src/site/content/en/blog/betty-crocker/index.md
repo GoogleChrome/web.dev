@@ -17,7 +17,7 @@ description: |
 tags:
   - blog
   - case-study
-  - wake-lock
+  # - wake-lock
   - capabilities
 ---
 For nearly a century, Betty Crocker has been America's source for modern cooking instruction

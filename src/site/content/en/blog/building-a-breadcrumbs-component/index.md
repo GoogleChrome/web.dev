@@ -157,9 +157,9 @@ without them due to the well structured markup. {% endAside %}
 ```
 
 It's appropriate to use the
-[`<nav>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav) element
+[`<nav>`](https://developer.mozilla.org/docs/Web/HTML/Element/nav) element
 for site navigation, which has an implicit ARIA [role of
-navigation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Navigation_Role). 
+navigation](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/Navigation_Role). 
 In testing, I noticed that having the `role` attribute changed the way a
 screen reader interacted with the element, it was actually announced as
 navigation, and so I've chosen to add it.
@@ -167,7 +167,7 @@ navigation, and so I've chosen to add it.
 #### Icons
 
 When an icon is repeated on a page, the SVG
-[`<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use) element
+[`<use>`](https://developer.mozilla.org/docs/Web/SVG/Element/use) element
 means that you can define the `path` once, and use it for all instances of the
 icon. This prevents the same path information from being repeated, causing
 larger documents and the potential of path inconsistency. 

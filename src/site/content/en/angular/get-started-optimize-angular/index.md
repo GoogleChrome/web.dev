@@ -11,7 +11,7 @@ description: |
 authors:
   - mgechev
 tags:
-  - angular
+  # - angular
 ---
 
 ## What's Angular?

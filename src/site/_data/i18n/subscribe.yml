@@ -1,39 +1,89 @@
 subscribe:
   en: subscribe
   es: suscribir
+  ja: サブスクライブする
+  ko: 구독
+  pt: assinar
+  ru: подписаться
+  zh: 订阅
 
 no_javascript:
   en: It seems like you have JavaScript disabled or it failed to load. After you submit the form, press the back button to return to the site.
   es: Parece que tiene JavaScript deshabilitado o no se pudo cargar. Después de enviar el formulario, presione el botón Atrás para regresar al sitio.
+  ja: JavaScript が無効になっているか、読み込みに失敗したようです。フォームの送信後、戻るボタンを押してサイトに戻ってください。
+  ko: JavaScript가 비활성화되었거나 로드에 실패한 것 같습니다. 양식을 제출한 후 뒤로 버튼을 눌러 사이트로 돌아가세요.
+  pt: Parece que você desabilitou o JavaScript ou ele não foi carregado. Depois de enviar o formulário, pressione o botão "voltar" para retornar ao site.
+  ru: Похоже, у вас отключен JavaScript или код не загрузился. После отправки формы нажмите «Назад», чтобы вернуться на сайт.
+  zh: 您似乎已停用 JavaScript 或 JavaScript 加载失败。在您提交表单后，请按“后退”按钮返回到网站。
 
 first_name:
   en: First Name
   es: Nombre
+  ja: 名前
+  ko: 이름
+  pt: Nome
+  ru: Имя
+  zh: 名字
 
 last_name:
   en: Last Name
   es: Apellido
+  ja: 苗字
+  ko: 성
+  pt: Sobrenome
+  ru: Фамилия
+  zh: 姓氏
 
 your_email:
   en: Your Email
   es: Tu email
+  ja: メールアドレス
+  ko: 귀하의 이메일
+  pt: Seu e-mail
+  ru: Ваш электронный адрес
+  zh: 您的电子邮件
 
 country:
   en: Country
   es: País
+  ja: 国
+  ko: 국가
+  pt: País
+  ru: Страна
+  zh: 国家/地区
 
 language:
   en: Language
   es: Idioma
+  ja: 言語
+  ko: 언어
+  pt: Idioma
+  ru: Язык
+  zh: 语言
 
 notice:
   en: Don't worry, no spam here! Your information will only be used for web.dev and Chrome related updates and our emails are typically no more than 1-2 times a month. You can unsubscribe anytime.
   es: ¡No te preocupes, no hay spam aquí! Su información solo se utilizará para web.dev y actualizaciones relacionadas con Chrome y nuestros correos electrónicos no suelen recibir más de 1 a 2 veces al mes. Puede anular su suscripción en cualquier momento.
+  ja: 迷惑メールを送信することはありませんので、ご安心ください。お客様の情報は web.dev や Chrome に関連する最新情報の提供にのみ使用され、メールは通常 1 か月に 1 回から 2 回しか送信されません。配信の停止は、いつでも可能です。
+  ko: 걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련 업데이트에만 사용되며 당사에서 보내는 이메일은 일반적으로 한 달에 1-2회를 넘지 않습니다. 언제든지 구독을 취소할 수 있습니다.
+  pt: Não se preocupe, aqui não tem spam! Suas informações apenas serão usadas para atualizações relacionadas ao web.dev e ao Chrome e geralmente não enviamos e-mail mais que 1-2 vezes por mês. Você pode cancelar sua inscrição a qualquer momento.
+  ru: Мы не рассылаем спам. Ваши данные будут использоваться только для отправки новостей, связанных с web.dev и Chrome (как правило, не больше 1–2 писем в месяц). Отписаться можно в любой момент.
+  zh: 无需担心垃圾邮件！我们只会将您的信息用于 web.dev 和 Chrome 的相关动态，且我们每月发送的电子邮件数量不会超过 1-2 封。您可以随时退订。
 
 add_me:
   en: Add me to the web.dev mailing list.
   es: Agrégame a la lista de correo web.dev.
+  ja: web.dev メーリングリストに参加します。
+  ko: web.dev 수신자 목록에 추가해주세요.
+  pt: Adicione-me à lista de discussão web.dev.
+  ru: Подписаться на рассылку web.dev.
+  zh: 将我加入 web.dev 邮寄名单。
 
 i_accept_terms:
   en: I accept Google's <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms and Conditions</a> and acknowledge that my information will be used in accordance with Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.
   es: Acepto los <a href="https://policies.google.com/terms" target="_blank" rel="noopener"> Términos y condiciones </a> de Google y reconozco que mi información se utilizará de acuerdo con con la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener"> Política de privacidad </a> de Google.
+  ja: Google の<a href="https://policies.google.com/terms" target="_blank" rel="noopener">利用規約</a>に同意し、Google の<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">プライバシーポリシー</a>に基づいて自身の情報が使用されることを認めます。
+  ko: 본인은 Google의 <a href="https://policies.google.com/terms" target="_blank" rel="noopener">이용 약관</a>에 동의하며 본인의 정보가 Google의 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">개인정보보호 정책</a>에 따라 이용된다는 것을 인정합니다.
+  pt: Aceito os <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Termos e Condições</a> do Google e reconheço que minhas informações serão usadas de acordo com a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade</a> do Google.
+  ru: Я принимаю <a href="https://policies.google.com/terms" target="_blank" rel="noopener">условия использования</a> Google и соглашаюсь, что моя информация будет использоваться в соответствии с <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a> Google.
+  zh: 我接受 Google 的<a href="https://policies.google.com/terms" target="_blank" rel="noopener">条款</a>，并知悉 Google 将会遵照<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">隐私权政策</a>使用我的信息。

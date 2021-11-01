@@ -80,7 +80,7 @@ JavaScript に大きく依存している Web アプリケーションで FID �
 
 ## Web Worker を使用する
 
-メイン スレッドのブロックは、入力遅延を引き起こす主な原因の 1 つです。[Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Worker) は、JavaScript をバックグラウンドのスレッドで実行できるようにします。UI 以外の処理を別のワーカー スレッドに移すことでメイン スレッドのブロック時間を短縮し、結果的に FID を改善させることができます。
+メイン スレッドのブロックは、入力遅延を引き起こす主な原因の 1 つです。[Web Worker](https://developer.mozilla.org/docs/Web/API/Worker) は、JavaScript をバックグラウンドのスレッドで実行できるようにします。UI 以外の処理を別のワーカー スレッドに移すことでメイン スレッドのブロック時間を短縮し、結果的に FID を改善させることができます。
 
 運営するサイトで Web Worker をより簡単にご利用いただくために、以下のライブラリの使用をご検討ください。
 

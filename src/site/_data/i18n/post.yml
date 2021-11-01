@@ -1,11 +1,32 @@
 is_draft:
   en: 🚨 This post is a draft! 🚨
   es: 🚨 ¡Esta publicación es un borrador! 🚨
+  ja: '🚨 この投稿は下書きです！ 🚨'
+  ko: '🚨 이 게시물은 초안입니다! 🚨'
+  pt-BR: '🚨 Este post é um rascunho!🚨'
+  ru: '🚨 Эта публикация — черновик! 🚨'
+  zh-CN: '🚨 本篇文章为草稿！ 🚨'
 
 last_updated:
   en: Last updated
   es: Última actualización
+  ja: 最終更新
+  ko: 마지막 업데이트
+  pt-BR: Última atualização
+  ru: Последнее обновление
+  zh-CN: 最近更新
 
 improve_article:
   en: Improve article
   es: Mejorar el artículo
+  ja: 記事を改善する
+  ko: 기사 개선하기
+  pt-BR: Melhorar o artigo
+  ru: Улучшить статью
+  zh-CN: 完善文章
+
+appears_in:
+  en: Appears in
+
+available_in:
+  en: Available in  # Refers to language, e.g. in "available in English"

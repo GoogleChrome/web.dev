@@ -51,12 +51,12 @@ known to represent plugin content:
 ## Don't use plugins to display your content
 
 To convert plugin-based content to HTML, refer to guidance for that
-plugin. For example, MDN explains [how to convert Flash video to HTML5 video](https://developer.mozilla.org/en-US/docs/Plugins/Flash_to_HTML5/Video).
+plugin. For example, MDN explains [how to convert Flash video to HTML5 video](https://developer.mozilla.org/docs/Plugins/Flash_to_HTML5/Video).
 
 ## Resources
 
 - [Source code for **Document uses plugins** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/plugins.js)
 - [Unplayable content on mobile devices](https://developers.google.com/search/mobile-sites/mobile-seo/common-mistakes#unplayable-content)
-- [Flash video to HTML5 video](https://developer.mozilla.org/en-US/docs/Plugins/Flash_to_HTML5/Video)
+- [Flash video to HTML5 video](https://developer.mozilla.org/docs/Plugins/Flash_to_HTML5/Video)
 
 {% include 'content/lighthouse-seo/scoring.njk' %}
