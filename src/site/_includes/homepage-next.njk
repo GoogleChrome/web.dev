@@ -19,7 +19,7 @@ CSS_ORIGIN: 'next'
           </div>
         </div>
         <div class="flow">
-          <a class="feature-card" href="{{ featureCard.url }}" data-theme="{{ featureCard.theme }}">
+          <a class="feature-card" href="{{ featureCard.url }}" data-theme="{{ featureCard.theme }}" data-treatment="illustration">
             <span class="feature-card__eyebrow">{{ featureCard.eyebrow }}</span>
             <h3 class="{{ 'visually-hidden' if featureCard.hiddenTitle else 'feature-card__title' }}">{{ featureCard.title }}</h3>
             <img class="feature-card__background" loading="lazy" alt="" aria-hidden="true" src="{{ featureCard.background }}" />

@@ -88,14 +88,26 @@
 .homepage__patterns {
   --cluster-horizontal-alignment: center;
   --cluster-vertical-alignment: stretch;
-  --gutter: #{get-space('size-2')};
 
   .card {
     border: none;
     font-size: 0.9em;
+    max-width: 25rem;
     padding: get-space('size-1');
 
     @include apply-utility('bg', 'mid-bg');
+  }
+}
+
+@include media-query('md') {
+  .homepage__shows {
+    width: max-content;
+    margin-inline: auto;
+  }
+
+  .homepage__show {
+    max-width: 40rem;
+    min-height: 500px;
   }
 }
 
@@ -111,8 +123,8 @@
   .homepage__shows {
     flex-direction: row;
     gap: 0;
+    width: unset;
     max-width: 75rem;
-    margin-inline: auto;
   }
 
   .homepage__show {
@@ -127,12 +139,6 @@
     &:last-child {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-    }
-  }
-
-  .homepage__patterns {
-    .card {
-      flex-basis: 33.333%;
     }
   }
 }
