@@ -103,37 +103,6 @@ However, the flexbox version requires more CSS.
 Each column has a separate rule to describe how much space it should take up. 
 In the grid example, that same information is encapsulated in one rule for the containing element.
 
-## Stickiness
-
-Layouts aren't just for large screens. 
-You could apply a very different layout for small screens. 
-A common pattern on mobile interfaces is to have a menu bar that stays anchored to the viewport even when the user is scrolling through the page content. In this situation, you could declare a media query that only applies below a certain width. 
-But only apply this when there's enough height available for it to feel comfortable.
-
-```css
-@media (max-width: 45em) and (min-height: 20em) {
-  body {
-    display: flex;
-    flex-direction: column;
-    min-block-size: 100%;
-  }
-  main {
-    flex: 1 1 0;
-    overflow-block: scroll;
-  }
-}
-```
-
-{% Codepen {
- user: 'web-dot-dev',
- id: 'wvqqEZr',
- height: 500,
- theme: 'dark',
- tab: 'result'
-} %}
-
-In this case, [flexbox](/learn/css/flexbox/) is a handy tool because you're only dealing with one dimension: vertical layout. If you're dealing with two dimensions—vertical and horizontal—then [grid](/learn/css/grid/) is better suited.
-
 ## Do you need a media query?
 
 You might not always need to use a media query. 
