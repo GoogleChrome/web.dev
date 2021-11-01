@@ -1,7 +1,7 @@
 ---
 title: JavaScript
 description: >
-  In this module, you learn how to use JavaScript to enhance your forms.
+  Find out how to use JavaScript to enhance your forms.
 authors:
   - michaelscharnagl
 date: 2021-11-03
