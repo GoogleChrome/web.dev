@@ -2,8 +2,7 @@
 layout: pattern
 title: Clamping Card
 description: Sets an absolute min and max size, and an actual size for the card.
-date: 2021-10-20
-draft: true
+date: 2021-11-03
 ---
 
 <figure class='w-figure'>

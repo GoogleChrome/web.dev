@@ -2,8 +2,7 @@
 layout: pattern
 title: Aspect Ratio Image Card
 description: Maintains the aspect ratio of an image in a card, while letting you resize the card.
-date: 2021-10-20
-draft: true
+date: 2021-11-03
 ---
 
 <figure class='w-figure'>

@@ -2,8 +2,7 @@
 layout: pattern
 title: 12-Span Grid
 description: A grid broken up into 12 segments where you can place areas onto the tracks evenly.
-date: 2021-10-20
-draft: true
+date: 2021-11-03
 height: 400
 ---
 

@@ -2,8 +2,7 @@
 layout: pattern
 title: Pancake Stack
 description: Commonly referred to as a sticky footer, this layout is often used for both websites and apps.
-date: 2021-10-20
-draft: true
+date: 2021-11-03
 ---
 
 <figure class='w-figure'>

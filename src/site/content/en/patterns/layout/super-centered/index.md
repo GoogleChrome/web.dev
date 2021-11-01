@@ -2,8 +2,7 @@
 layout: pattern
 title: Super Centered
 description: Centering a child div in one line of code
-date: 2021-10-20
-draft: true
+date: 2021-11-03
 ---
 
 Use `place-items: center` to center an element within its parent.

@@ -2,8 +2,7 @@
 layout: pattern
 title: Sidebar Says
 description: A layout where the sidebar is given a minimum and maximum safe area size, and the rest of the content fills the available space.
-date: 2021-10-20
-draft: true
+date: 2021-11-03
 ---
 
 <figure class='w-figure'>

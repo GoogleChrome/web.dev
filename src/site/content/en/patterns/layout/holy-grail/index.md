@@ -2,8 +2,7 @@
 layout: pattern
 title: Holy Grail Layout
 description: Classic layout with a header, footer, and two sidebars flanking a main content area.
-date: 2021-10-20
-draft: true
+date: 2021-11-03
 ---
 
 <figure class='w-figure'>

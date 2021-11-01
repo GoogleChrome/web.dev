@@ -2,8 +2,7 @@
 layout: pattern
 title: Deconstructed Pancake
 description: Create a layout that stretches to fit the space, and snaps to the next line at a minimum size.
-date: 2021-10-20
-draft: true
+date: 2021-11-03
 ---
 
 This is a common layout for marketing sites, for example, which may have a row of 3 items, usually with an image, title, and then some text, describing some features of a product. On smaller screens, you'll want those to stack nicely, and expand as you increase the screen size.
