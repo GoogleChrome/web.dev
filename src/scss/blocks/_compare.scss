@@ -40,3 +40,16 @@
 .compare[data-type='worse'] {
   --compare-highlight-color: #{get-utility-value('color', 'state-bad-text')};
 }
+
+/// PROSE RULES
+/// for longform text contexts
+
+/// Adds spacing around compare and compare groups
+.prose > *:not(.compare) + .compare,
+.prose > .compare + .compare {
+  margin-block-start: get-space('size-2');
+}
+
+.prose > .compare + *:not(.compare) {
+  margin-block-start: get-space('size-3');
+}
