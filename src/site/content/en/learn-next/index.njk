@@ -8,6 +8,7 @@ date: 2021-10-29
 pageScripts:
   - '/js/learn.js'
 ---
+{% from 'macros/icon.njk' import icon with context %}
 
 <div class="learn">
   {# Hero starts #}
@@ -26,31 +27,9 @@ pageScripts:
   <div class="wrapper">
     <h2 id="{{ 'i18n.learn.courses' | i18n(locale) | slug }}" class="text-size-3">{{ 'i18n.learn.courses' | i18n(locale) }}</h2>
   </div>
-
   <div class="bg-mid-bg region gap-top-size-1">
     <div class="wrapper">
-      <div class="reel">
-        {% set coursesArr = helpers.values(courses) %}
-        {% for course in coursesArr|sort(true, false, 'meta.date') %}
-          {% if not course.meta.draft %}
-            <a href="{{ course.meta.url }}" class="card bg-core-bg" data-style="branded">
-              <div class="card__header repel">
-                <p class="color-mid-text">Course</p>
-                <div class="counter t-bg-highlights-purple t-color-shades-light-bright">
-                  {% set pages = collections.all | navigation(course.toc) %}
-                  <span class="counter__content">{{ pages.list.length }}</span>
-                  {% include 'icons/mortarboard.svg' %}
-                </div>
-              </div>
-              <img src="{{ course.meta.decor }}" alt="{{ course.meta.title | i18n(locale) }}" />
-              <div class="card__content flow">
-                <h3 class="card__heading text-size-2">{{ course.meta.title | i18n(locale) }}</h2>
-                <p class="text-size-0">{{ course.meta.description | i18n(locale) }}</p>
-              </div>
-            </a>
-          {% endif %}
-        {% endfor %}
-      </div>
+      {% include "partials/course-cards-next.njk" %}
     </div>
   </div>
   {# Courses end #}
