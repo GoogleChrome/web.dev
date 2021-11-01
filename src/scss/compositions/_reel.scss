@@ -5,16 +5,25 @@
 /// Add an attribute of data-scroll="snap" to the element
 /// to enable scroll snapping
 .reel {
+  --reel-space: 2rem;
   display: flex;
   height: auto;
-  gap: 0 $global-gutter;
+  max-width: 100%;
+  margin-inline: auto;
+
+  /// Padding allows child element hover states to show
+  padding: 0.5rem;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 .reel > * {
-  flex-basis: var(--reel-item-width, 33.333%);
+  flex-basis: var(--reel-item-width, calc(33.333% - var(--reel-space)));
   flex-shrink: 0;
+}
+
+.reel > * + * {
+  margin-inline-start: var(--reel-space);
 }
 
 /// Adds extra space if the reel has a scrollbar
@@ -32,7 +41,8 @@
   scroll-snap-align: start;
 }
 
-.reel[data-scroll='snap'] > *:last-child,
-.reel[data-scroll='snap'] > *:first-child {
-  scroll-snap-align: end;
+@include media-query('lg') {
+  .reel {
+    justify-content: center;
+  }
 }
