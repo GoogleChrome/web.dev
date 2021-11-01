@@ -1,4 +1,4 @@
-<script>
+{% set inlineScript %}
   // A global function that the theme toggle can use to apply the current theme.
   window.applyThemeSetting = function(override) {
     const currentSetting = override || localStorage.getItem('user-color-scheme');
@@ -8,5 +8,6 @@
       document.documentElement.setAttribute('data-user-theme', currentSetting);
     }
   };
-  window.applyThemeSetting();
-</script>
+window.applyThemeSetting();
+{% endset %}
+<script>{{ inlineScript | minifyJs | cspHash | safe }}</script>
