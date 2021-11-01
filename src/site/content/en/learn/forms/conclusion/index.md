@@ -21,7 +21,7 @@ To continue to build your HTML forms knowledge, here are some additional resourc
 
 ## Additional resources
 
-- [HTML forms guide on MDN]([https://developer.mozilla.org/en-US/docs/Learn/Forms](https://developer.mozilla.org/en-US/docs/Learn/Forms))
+- [HTML forms guide on MDN](https://developer.mozilla.org/docs/Learn/Forms)
 - [Learn CSS](/learn/css)
 - [WebAIM: Creating Accessible Forms](https://webaim.org/techniques/forms)
 - [Payment and address forms best practices](/payment-and-address-form-best-practices)

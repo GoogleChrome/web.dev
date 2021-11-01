@@ -67,7 +67,7 @@ and help users to understand what data is needed faster.
 
 ## Label position
 
-With [CSS](/learn/forms/styling),
+With [CSS](/learn/css),
 you can position a label on the top, bottom, left, and right of a form control.
 Where do you place it?
 
@@ -105,7 +105,7 @@ and not submit a form.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'c369bda56ae3bc88aa0116614f79e40d',
-  height: 450
+  height: 400
 } %}
 
 ### Help users navigate forms

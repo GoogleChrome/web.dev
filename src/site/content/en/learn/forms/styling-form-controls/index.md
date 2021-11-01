@@ -97,7 +97,7 @@ The appearance of `<input type="checkbox">` and `<input type="radio">` varies ac
 {% Codepen {
   user: 'web-dot-dev',
   id: '74d28931d0c0e9aacc89f62380f365e4',
-  height: 300
+  height: 400
 } %}
 
 Open the [demo](https://codepen.io/web-dot-dev/pen/74d28931d0c0e9aacc89f62380f365e4) on various browsers to see the difference. 
@@ -149,7 +149,7 @@ There are a lot of possibilities with CSS to ensure checkboxes and radio buttons
 {% Codepen {
   user: 'web-dot-dev',
   id: '433b6d50b9d7d706e31ee5a638790c3d',
-  height: 300
+  height: 400
 } %}
 
 Learn more about 

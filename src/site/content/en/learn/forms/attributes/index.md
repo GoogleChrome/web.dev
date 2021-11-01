@@ -38,7 +38,7 @@ optimized on-screen keyboard.
 Use `type="number"` only for incremental fields such as the quantity of a product. 
 Browsers show an up/down arrow for `type="number"` which makes no sense for telephone numbers, 
 payment card or account numbers. 
-For telephone numbers, use `type="tel"`. For other numbers, use `inputmode="numeric` to get a numeric on-screen keyboard.
+For telephone numbers, use `type="tel"`. For other numbers, use `inputmode="numeric"` to get a numeric on-screen keyboard.
 {% endAside %}
 
 {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/bi7J9Z1TLP4IsQLyhbQm.jpg",

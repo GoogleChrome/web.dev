@@ -83,7 +83,8 @@ using the `type` or `inputmode` attributes.
 {% Codepen {
   user: 'web-dot-dev',
   id: '88f1ffed62ef6bdd513351823b7aaa0f',
-  height: 300
+  height: 300,
+  tab: 'html,result'
 } %}
 
 Open
@@ -98,7 +99,7 @@ alt="Two screenshots of an input element with type='tel' on iOS and Android, sho
 
 Use a phone to [try it out for yourself](https://codepen.io/web-dot-dev/pen/88f1ffed62ef6bdd513351823b7aaa0f),
 and see if you can easily enter every character needed to fill in a telephone number.
-If you're curious how the on-screen keyboard works for another `type`, try `type="email"` in the demo.
+If you're curious how the on-screen keyboard works for another `type`, try `type="email"` in the [demo](https://codepen.io/web-dot-dev/pen/88f1ffed62ef6bdd513351823b7aaa0f).
 
 ## Make sure form buttons aren't hidden
 

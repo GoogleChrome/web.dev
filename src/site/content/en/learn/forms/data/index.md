@@ -13,7 +13,7 @@ and get notified about new issues.
 ## Ensure you identify issues, problems, and goals
 
 As a first step, you need a way to identify issues and goals. 
-One way is to use [analytics](https://analytics.google.com/analytics/web/#/) 
+One way is to use [analytics](/learn/forms/testing/#analytics) 
 to get an overview of where your form may need improvements. 
 
 After analytics is up and running for your site, 
@@ -28,7 +28,7 @@ for example, the form may be too complicated, or it's unclear what data should b
 Always respect the privacy of your users, with analytics data as well as form data. 
 Collect the minimum amount of data you require and be transparent with your users about what data you are collecting. 
 There are also 
-[privacy and data protection laws](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) that you must follow. 
+[privacy and data protection laws](/learn/forms/security-privacy/#help-users-access-their-personal-data) that you must follow. 
 In some countries, you need consent from a user before you can collect data. 
 {% endAside %}
 

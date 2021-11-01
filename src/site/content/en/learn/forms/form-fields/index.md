@@ -16,7 +16,8 @@ elements that group fields, and buttons to submit a form.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'a4a252d5c8511f94c0f56cabd2e73178',
-  height: 400
+  height: 400,
+  tab: 'html,result'
 } %}
 
 You see two `<input>` elements, `<input type="text">` and `<input type="file">`. Why do they look different?

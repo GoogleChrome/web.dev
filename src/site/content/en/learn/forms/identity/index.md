@@ -76,7 +76,7 @@ especially if you store personal or sensitive data.
 explain how to implement multi-factor authentication.
 
 Ensure users don't use compromised passwords. 
-For example, use the API from [Have I Been Pwned](https://haveibeenpwned.com/API/v3) 
+For example, use the API from [Have I Been Pwned](https://haveibeenpwned.com/API/) 
 to detect compromised passwords, 
 and suggest your users fill in a different new password, 
 or warn them if their password becomes compromised.
@@ -88,7 +88,7 @@ Let's see how to build a sign-in form to ensure users can easily sign in to your
 {% Codepen {  
   user: 'web-dot-dev',  
   id: '89610184f6c51990ab9484b593e1d951',  
-  height: 450  
+  height: 500  
 } %}
 
 Make the location of sign-up and sign-in buttons obvious. 
