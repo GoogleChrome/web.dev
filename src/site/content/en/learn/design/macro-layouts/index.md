@@ -28,8 +28,8 @@ This single column default ordering is what smaller screens will get.
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'JjJxvvY',
+ user: 'web-dot-dev',
+ id: 'oNeePOX',
  height: 500,
  theme: 'dark',
  tab: 'result'
@@ -62,8 +62,8 @@ logical properties don't work in media queries yet.
 {% endAside %}
 
 {% Codepen {
- user: 'adactio',
- id: 'eYRxKJN',
+ user: 'web-dot-dev',
+ id: 'vYJJzMK',
  height: 500,
  theme: 'dark',
  tab: 'result'
@@ -92,8 +92,8 @@ The styles would look like this:
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'qBXdVqJ',
+ user: 'web-dot-dev',
+ id: 'gOxxdym',
  height: 500,
  theme: 'dark',
  tab: 'result'
@@ -125,8 +125,8 @@ But only apply this when there's enough height available for it to feel comforta
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'KKqjqWL',
+ user: 'web-dot-dev',
+ id: 'wvqqEZr',
  height: 500,
  theme: 'dark',
  tab: 'result'
@@ -156,8 +156,8 @@ Instead, you can apply rules so that the cards themselves automatically take up 
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'yLXdbQG',
+ user: 'web-dot-dev',
+ id: 'QWMMVPm',
  height: 500,
  theme: 'dark',
  tab: 'result'
@@ -182,8 +182,8 @@ If you want to line up rows and columns, then use grid.
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'zYdGPjJ',
+ user: 'web-dot-dev',
+ id: 'abyyaMg',
  height: 500,
  theme: 'dark',
  tab: 'result'
