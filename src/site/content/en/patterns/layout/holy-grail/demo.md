@@ -1,6 +1,5 @@
 ---
 patternId: layout/holy-grail
-draft: true
 layout: demo
 ---
 

@@ -1,6 +1,5 @@
 ---
 patternId: layout/sidebar-says
-draft: true
 layout: demo
 ---
 

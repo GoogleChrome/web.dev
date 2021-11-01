@@ -3,7 +3,6 @@ layout: pattern
 title: Pancake Stack
 description: Commonly referred to as a sticky footer, this layout is often used for both websites and apps.
 date: 2021-10-20
-draft: true
 ---
 
 <figure class='w-figure'>
@@ -16,7 +15,7 @@ Unlike the Deconstructed Pancake, this example does not wrap its children when t
 
 Adding `display: grid` to the component will give you a single column grid, however the main area will only be as tall as the content with the footer below it.
 
-To make the footer stick to the bottom,  add: 
+To make the footer stick to the bottom,  add:
 
 ```css/2
 .parent {
