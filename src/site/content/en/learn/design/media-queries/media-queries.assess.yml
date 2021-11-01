@@ -37,7 +37,7 @@ questions:
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "2"
-    stem: To prevent the browser from scaling a design on mobile, use?
+    stem: What would you use to prevent the browser from scaling a design on mobile?
     options:
       - content: "`width: 100%`"
         rationale: "Try again!"
@@ -52,7 +52,7 @@ questions:
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "2"
-    stem: To style a page when the browser window is *above* `720px`, use..?
+    stem: Which media query applies when the browser window is *above* `720px`.
     options:
       - content: "`@media (width: 720px)`"
         rationale: "Try again! This media query is only when the browser window is equal to `720px`."

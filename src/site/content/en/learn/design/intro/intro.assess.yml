@@ -9,7 +9,7 @@ questions:
       - content: "true"
         rationale: "It's unsafe to bet on fixed width design in 2021."
       - content: "false"
-        rationale: "🎉 Correct! The amount of screen sizes is far too large too assume visitors will come from one size."
+        rationale: "🎉 Correct! The number of possible screen sizes is too great to assume visitors will come from one size."
   - type: multiple-choice
     cardinality: "2+"
     correctAnswers: "0,2"
@@ -20,7 +20,7 @@ questions:
       - content: "Average screens"
         rationale: "Try again. Liquid layouts do well on average sized screens."
       - content: "Wide screens"
-        rationale: "🎉 Correct! The extreme size of a wide, or even ultrawide, display can make liquid layouts appear stretches out to uncomfortable reading lengths."
+        rationale: "🎉 The extreme size of a wide, or even ultrawide, display can make liquid layouts appear stretches out to uncomfortable reading lengths."
       - content: "Short screens"
         rationale: "Try again. Short screens generally do not struggle to support liquid layouts."
       - content: "Tall screens"
