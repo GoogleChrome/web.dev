@@ -12,7 +12,7 @@ draft: true
   </video>
 </figure>
 
-Here's where we get into some techniques with [less browser support](https://caniuse.com/#feat=css-math-functions), but have some really exciting implications for layouts and responsive UI design. In this demo, you are setting the width using clamp like so: `width: clamp(<min>, <actual>, <max>)`.
+In this demo, you are setting the width using clamp like so: `width: clamp(<min>, <actual>, <max>)`.
 
 This sets an absolute min and max size, and an actual size. With values, that can look like:
 

@@ -28,5 +28,3 @@ To maintain a 16 x 9 aspect ratio without this property, you'd need to use a [`p
   aspect-ratio: 1 / 1;
 }
 ```
-
-While this feature is still up and coming, it it a good one to know about as it resolves a lot of developer strife that I have faced many times myself, especially when it comes to video and iframes.
