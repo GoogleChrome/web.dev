@@ -102,7 +102,7 @@ getFCP(console.log);
 - [缩小 CSS](/unminified-css/)
 - [移除未使用的 CSS](/unused-css-rules/)
 - [预连接到所需的来源](/uses-rel-preconnect/)
-- [减少服务器响应时间 (TTFB)](/time-to-first-byte/)
+- [减少服务器响应时间 (TTFB)](/ttfb/)
 - [避免多个页面重定向](/redirects/)
 - [预加载关键请求](/uses-rel-preload/)
 - [避免巨大的网络负载](/total-byte-weight/)

@@ -4,7 +4,7 @@ title: What are mini apps?
 authors:
   - thomassteiner
 date: 2021-03-03
-# updated: 2021-03-03
+updated: 2021-10-28
 description: |
   This chapter introduces the concept of mini apps and provides examples of their look and feel.
 tags:
@@ -18,7 +18,8 @@ tags:
 
 ## Building blocks and compatibility
 
-Mini apps are small (commonly less than 4MB) apps that require a
+Mini apps are small (commonly [2-4&nbsp;MB](https://www.w3.org/2021/10/MiniApp-Overview-breakout.pdf))
+apps that require a
 [super app](/mini-app-super-apps/#for-mini-apps-you-need-super-apps)
 to run. What they have in
 common, independent of the super app, is that they are built with ("dialects" of) the web

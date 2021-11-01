@@ -1,0 +1,29 @@
+setLeader: Test your knowledge of internationalization.
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "3"
+    stem: In English, the physical `right` side of a box, is logically which side?
+    options:
+      - content: "`block-start`"
+        rationale: "Try again! In English this is `top`"
+      - content: "`block-end`"
+        rationale: "Try again! In English this is `bottom`"
+      - content: "`inline-start`"
+        rationale: "Try again! In English this is `left`"
+      - content: "`inline-end`"
+        rationale: "🎉"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "1"
+    stem: Which attribute should you add to your HTML to make it more meaningful for internationalization?
+    options:
+      - content: "`english`"
+        rationale: "Try again!"
+      - content: "`lang`"
+        rationale: "🎉 This signals to the browsers which language the document is in, which assists in setting the writing mode, document direction and translations."
+      - content: "`language`"
+        rationale: "Try again!"
+      - content: "`i18n`"
+        rationale: "Try again!"

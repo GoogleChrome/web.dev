@@ -39,12 +39,12 @@ pageScripts:
       <a class="w-headline-link" href="#{{ 'i18n.learn.collections' | i18n(locale) | slug }}" aria-hidden="true">#</a>
     </h2>
 
-    {% set filterItems = [{title: 'i18n.common.all' | i18n(locale)}] %}
+    {% set filterItems = [] %}
     {% for category, paths in learn %}
       {% set i18nKey = 'i18n.learn.' + category %}
       {% set filterItems = (filterItems.push({title: i18nKey | i18n(locale), id: i18nKey | i18n(locale) | slug}), filterItems) %}
     {% endfor %}
-    <web-learn-filter filters="{{filterItems | dump}}"></web-learn-filter>
+    <web-learn-filter all="{{'i18n.common.all' | i18n(locale)}}" filters="{{filterItems | dump}}"></web-learn-filter>
   </section>
 
   <section id="learning-paths">

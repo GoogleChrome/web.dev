@@ -4,7 +4,7 @@ description: >
   Learn how to make your forms secure and keep your users' data private.
 authors:
   - michaelscharnagl
-date: 2021-09-30
+date: 2021-11-03
 ---
 
 When you create a form, you work with user data.
@@ -45,11 +45,10 @@ Learn more about
 ## Help users to keep their data private
 
 In the first module, you learned about two possible ways to transfer data:
-using a `GET` request and using a `POST` request. With a `GET` request,
-form data is included as a
-[query string](https://en.wikipedia.org/wiki/Query_string) in the request URL.
+using a `GET` request and using a `POST` request. 
 
-If you submit a form that uses a `GET` request,
+With a `GET` request, form data is included as a [query string](https://en.wikipedia.org/wiki/Query_string) 
+in the request URL. If you submit a form that uses a `GET` request,
 the browser adds the request URL including form data to your browsing history.
 Convenient if you want to look up past form submissions,
 for example for a search form. Not great at all,
@@ -65,7 +64,7 @@ With regard to privacy, this is less than ideal.
 Again, everyone with access to your browser is able to read this information.
 You should only store encrypted values for personal data.
 
-## Ensure users can safely sign up and sign in on your site
+## Ensure users can safely sign up and sign in
 
 User account [authentication](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
 is a complex issue in terms of privacy and security.
@@ -102,7 +101,7 @@ GDPR sets guidelines for the collection and processing of personal information f
 Consent is required to process personal data,
 users can request personal information that you store at any time,
 and you have to officially announce data leaks.
-A good thing for the user, as this ensures their privacy is respected. Learn more about
+A good thing for the user, as this helps to ensure that their privacy is respected. Learn more about
 [GDPR](https://www.smashingmagazine.com/2018/02/gdpr-for-web-developers/).
 
 Make sure your users know how you plan to process personal data.
@@ -142,16 +141,10 @@ Find out more:
 
 ## Ensure all data is in good shape
 
-In a previous module, you already learned about
-[validation on the frontend](/learn/forms/validation).
-As a next step, you should validate the data again
-[on the backend](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html)
-before saving the data in your database.
-
-Validation on the frontend is great,
-but users might still be able to submit invalid data.
-Backend validation catches these attempts,
-making sure no invalid data is saved in your database.
+In a previous module, you learned about [validation on the frontend](/learn/forms/validation). 
+Frontend validation is important, but users might still be able to submit invalid data. As a next 
+step, you must also validate the data [on the backend](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html)
+before saving the data in your database. This ensures that no invalid data is saved in your database. 
 
 Validation helps to ensure that the data format is valid,
 but you should still not trust data entered by users.
@@ -159,9 +152,8 @@ How can you safely output the data? To prevent
 [Cross Site Scripting](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html) (XSS),
 and ensure all data is safe to include in HTML, you must sanitize data before output.
 
-Learn more about
-[sanitizing data before output](https://benhoyt.com/writings/dont-sanitize-do-escape/), and
-how to use the [Sanitizer API](/sanitizer/).
+Learn more about [sanitizing data before output](https://benhoyt.com/writings/dont-sanitize-do-escape/) 
+and, where possible, use the [Sanitizer API](/sanitizer/).
 
 ## Ensure all submissions come from real people
 
@@ -172,7 +164,7 @@ The first option is to use a service such as
 [reCAPTCHA](https://www.google.com/recaptcha/about/),
 to distinguish between real people and bots.
 This requires you to include a JavaScript snippet on your page,
-and add some attributes to your **Submit** button.
+and add extra attributes to your **Submit** button.
 
 reCAPTCHA performs various checks to find out if you are a human.
 For example, it may ask you to identify images.
@@ -194,12 +186,13 @@ The best spam protection is useless if it makes the form unusable for real peopl
 } %}
 
 Another option is to use a so-called 'honeypot': a visually hidden form field.
-Humans will not recognize this field,
-and ignore it, while bots will fill it in.
-On the backend, your processing script checks if this field was completed.
+Humans won't see a honeypot field, but bots will fill it in.
+On the backend, your processing script can check if the field was completed.
 If it was, the submission was probably from a bot, and you can ignore it.
-It is important to not only hide the form field visually,
-but to also hide it for screen readers.
+
+{% Aside 'caution' %}
+Make sure to hide a honeypot field for screen readers, by using the ` aria-hidden="true"` attribute.
+{% endAside %}
 
 There are also services like
 [Akismet](https://akismet.com), which can help you with spam protection.

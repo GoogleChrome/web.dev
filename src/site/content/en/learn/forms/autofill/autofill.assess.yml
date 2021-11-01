@@ -6,11 +6,11 @@ questions:
     correctAnswers: "2"
     stem: What autocomplete value should you use for the password field in a sign-up form?
     options:
-      - content: "`autocomplete='password'`"
+      - content: "`autocomplete=\"password\"`"
         rationale: "Try again!"
-      - content: "`autocomplete='off'`"
+      - content: "`autocomplete=\"off\"`"
         rationale: "Try again!"
-      - content: "`autocomplete='new-password'`"
+      - content: "`autocomplete=\"new-password\"`"
         rationale: "🎉"
-      - content: "`autocomplete='current-password'`"
+      - content: "`autocomplete=\"current-password\"`"
         rationale: "Try again!"

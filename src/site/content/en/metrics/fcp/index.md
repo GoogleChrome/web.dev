@@ -156,7 +156,7 @@ performance guides:
 - [Minify CSS](/unminified-css/)
 - [Remove unused CSS](/unused-css-rules/)
 - [Preconnect to required origins](/uses-rel-preconnect/)
-- [Reduce server response times (TTFB)](/time-to-first-byte/)
+- [Reduce server response times (TTFB)](/ttfb/)
 - [Avoid multiple page redirects](/redirects/)
 - [Preload key requests](/uses-rel-preload/)
 - [Avoid enormous network payloads](/total-byte-weight/)

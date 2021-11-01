@@ -32,11 +32,11 @@ questions:
     correctAnswers: '3'
     stem: How can you submit a `<form>`?
     options:
-      - content: 'Click on a `<button>`.'
-        rationale: 'Try again!'
-      - content: 'Press `Enter`.'
-        rationale: 'Try again!'
-      - content: 'Click on an `<input type="image">`.'
-        rationale: 'Try again!'
-      - content: 'All the above.'
-        rationale: '🎉'
+      - content: "Click on a `<button>`."
+        rationale: "Try again!"
+      - content: "Press `Enter`."
+        rationale: "Try again!"
+      - content: "Click on an `<input type=\"image\">`."
+        rationale: "Try again!"
+      - content: "All the above."
+        rationale: "🎉"

@@ -5,8 +5,9 @@ subhead: What it takes to change icons, shortcuts, colors, and other metadata fo
 authors:
   - petelepage
   - ajara
+  - beaufortfrancois
 date: 2020-10-14
-updated: 2021-04-05
+updated: 2021-10-26
 description: What it takes to change icons, shortcuts, colors, and other metadata in your web app manifest for your PWA.
 tags:
   - progressive-web-apps
@@ -76,10 +77,12 @@ includes detailed information about all of the PWAs installed on the device,
 and can help you understand when the manifest was last updated, how often
 it's updated, and more.
 
-To manually force Chrome to check for an updated manifest, restart Chrome
-(use `about://restart`), this resets the timer so that Chrome will check for
-an updated manifest when the PWA is next launched. Then launch the PWA.
-After closing the PWA, it should be updated with the new manifest properties.
+To manually force Chrome to check for an updated manifest, you can either launch
+Chrome with the [command line flag][flag] `--disable-manifest-update-throttle`
+or restart Chrome (use `about://restart`), this resets the timer so that Chrome
+will check for an updated manifest when the PWA is next launched. Then launch
+the PWA. After closing the PWA, it should be updated with the new manifest
+properties.
 
 ### References {: #cr-desktop-ref }
 
@@ -142,5 +145,6 @@ The PWA usually updates within a few minutes, once the update has completed,
 
 * [`UpdateReason` enum][update-enum] for Chrome on Android
 
+[flag]: https://www.chromium.org/developers/how-tos/run-chromium-with-flags
 [updatable-manifest-doc]: https://docs.google.com/document/d/1twU_yAoTDp4seZMmqrDzJFQtrM7Z60jXHkXjMIO2VpM/preview
 [update-enum]: https://cs.chromium.org/chromium/src/chrome/browser/android/webapk/webapk.proto?l=35

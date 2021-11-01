@@ -100,7 +100,7 @@ Para saber como melhorar a FCP em geral (para qualquer site), consulte os seguin
 - [Minifique o CSS](/unminified-css/)
 - [Remova o CSS não utilizado](/unused-css-rules/)
 - [Pré-conecte a origens necessárias](/uses-rel-preconnect/)
-- [Reduza os tempos de resposta do servidor (TTFB)](/time-to-first-byte/)
+- [Reduza os tempos de resposta do servidor (TTFB)](/ttfb/)
 - [Evite múltiplos redirecionamentos de página](/redirects/)
 - [Pré-carregue solicitações importantes](/uses-rel-preload/)
 - [Evite enormes cargas de rede](/total-byte-weight/)

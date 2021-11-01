@@ -1,6 +1,6 @@
 /// REGION UTILITY
 /// Info: https://web.dev/design-system/css-utilities/#region
 .region {
-  padding-top: var(--region-space, #{get-size('size-5')});
-  padding-bottom: var(--region-space, #{get-size('size-5')});
+  padding-top: var(--region-space, #{get-space('size-3')});
+  padding-bottom: var(--region-space, #{get-space('size-3')});
 }

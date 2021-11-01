@@ -4,7 +4,7 @@ description: >
   An overview of the various form elements you can choose from to build your form.
 authors:
   - michaelscharnagl
-date: 2021-10-18
+date: 2021-11-03
 ---
 
 To make a form interactive, you need to add form elements.
@@ -16,7 +16,8 @@ elements that group fields, and buttons to submit a form.
 {% Codepen {
   user: 'web-dot-dev',
   id: 'a4a252d5c8511f94c0f56cabd2e73178',
-  height: 400
+  height: 400,
+  tab: 'html,result'
 } %}
 
 You see two `<input>` elements, `<input type="text">` and `<input type="file">`. Why do they look different?
