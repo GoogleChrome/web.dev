@@ -4,8 +4,8 @@
 .wrapper {
   margin-left: auto;
   margin-right: auto;
-  width: 80rem; // For no clamp support
-  width: clamp(16rem, 95vw, 80rem);
+  width: 85rem; // For no clamp support
+  width: clamp(16rem, 95vw, 85rem);
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
