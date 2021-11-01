@@ -1,7 +1,7 @@
 ---
 layout: pattern-set
 title: Layout Patterns
-description: A collection of common layout patterns using CSS Grid and Flexbox.
+description: A collection of layout patterns built using modern CSS APIs that will help you build common interfaces such as cards, dynamic grid areas, and full-page layouts.
 hero: image/HodOHWjMnbNw56hvNASHWSgZyAf2/PRyD1Ad1GtT6IZLqWtu1.svg
 draft: true
 ---
