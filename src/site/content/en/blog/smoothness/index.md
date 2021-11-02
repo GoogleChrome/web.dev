@@ -275,8 +275,8 @@ render everything after a large scroll, like a finger fling. This is commonly
 known as _checkerboarding_.
 
 With each frame rendering opportunity, it's possible to track how much of the
-latest visual updates actually got to the screen. This is broadly known as
-_frame throughput_.
+latest visual updates actually got to the screen. Measuring the ability to do so
+over many frames (or time) is broadly known as _frame throughput_.
 
 If the GPU is really bogged down, the browser (or platform) may even begin to
 throttle the rate at which it attempts visual updates and thus decreases
@@ -336,7 +336,7 @@ ensure a steady frame rate) may technically be perfectly smooth in terms of
 animation frames, all while failing to load high quality game assets into the
 scene or exhibiting rendering artifacts.
 
-And of course, a site can just have some really lame animations :)
+And of course, a site can just have some really lame animations 🙂
 
 <img
 src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Under-Construction-Bulldozer.gif"
@@ -509,8 +509,8 @@ vsync boundaries, and color coded based on status. There is still not full
 visualization for all the nuances outlined above, but we're planning to add more
 in the near future.
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/xZTBWc5Ox2cKhSSaK9rS.png",
-alt="Frame viewer in Chrome DevTools", width="800", height="138" %}
+{% Img src="image/nM10iAStORWg0YlDbPc2czmpRRr2/ou89sgoFeg2481KVUWmF.png",
+alt="Frame viewer in Chrome DevTools", width="800", height="148" %}
 
 ### Chrome tracing
 
