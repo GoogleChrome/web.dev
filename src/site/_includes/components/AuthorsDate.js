@@ -27,6 +27,16 @@ const {i18n} = require('../../_filters/i18n');
 const authorsCollectionFn = require('../../_collections/authors');
 const {defaultLocale} = require('../../_data/site');
 
+const isDesignSystemContext = require('../../../lib/utils/is-design-system-context');
+
+/* NOTE: This component is in a transition period to support both new design system contexts
+and the existing system. Once the new design system has been *fully* rolled out, this component
+can be cleaned up with the following:
+
+1. The isDesignSystemContext conditional can be removed and code in that block should run as normal
+2. Everything from the '/// DELETE THIS WHEN ROLLOUT COMPLETE' comment *downwards* can be removed
+*/
+
 /**
  *
  * @param {string} locale
@@ -34,9 +44,17 @@ const {defaultLocale} = require('../../_data/site');
  * @param {Date} [updated]
  * @returns {string}
  */
-const renderDate = (locale, date, updated) => {
+const renderDate = (locale, date, updated, isDesignSystem) => {
   let result = '';
 
+  if (isDesignSystem) {
+    // prettier-ignore
+    return html`
+      <time>${(+updated) ? `${i18n('i18n.common.updated', locale)}: ${prettyDate(updated)}` : prettyDate(date)}</time>
+    `;
+  }
+
+  /// DELETE BELOW THIS LINE
   // nb. +date checks for valid dates, not just non-null dates
   if (+updated) {
     result += html`
@@ -62,11 +80,32 @@ const renderDate = (locale, date, updated) => {
  * @param {Array<TODO>} pairs
  * @returns {string}
  */
-const renderAuthorImages = (limit, pairs) => {
+const renderAuthorImages = (limit, pairs, isDesignSystem) => {
   if (!pairs.length || pairs.length > limit) {
     return ''; // don't render images if we have none, or too many
   }
 
+  if (isDesignSystem) {
+    return pairs
+      .map(({info}) => {
+        const img = Img({
+          src: info.image,
+          alt: info.title,
+          width: '40',
+          height: '40',
+          class: '',
+          params: {
+            fit: 'crop',
+            h: '40',
+            w: '40',
+          },
+        });
+        return html` <a class="avatar" href="${info.href}">${img}</a> `;
+      })
+      .reverse();
+  }
+
+  /// DELETE BELOW THIS LINE
   const inner = pairs
     .map(({info}) => {
       const img = Img({
@@ -92,9 +131,21 @@ const renderAuthorImages = (limit, pairs) => {
   return html` <div class="w-author__image--row">${inner}</div> `;
 };
 
-const renderAuthorNames = (pairs) => {
+const renderAuthorNames = (pairs, isDesignSystem) => {
   if (!pairs.length) {
     return; // don't render if no authors
+  }
+
+  if (isDesignSystem) {
+    // prettier-ignore
+    return html`
+      <div
+        class="card__authors flow-space-base"
+        aria-label="authors"
+      >
+        ${pairs.map(({info}) => `<a href="${info.href}">${info.title}</a>`).join(', ')}
+      </div>
+    `;
   }
 
   const inner = pairs
@@ -115,10 +166,10 @@ const renderAuthorNames = (pairs) => {
  * @param {Authors} [authorsCollection]
  * @return {string}
  */
-const renderAuthorsDate = (
+function renderAuthorsDate(
   {authors, date, images = 2, updated, locale = defaultLocale},
   authorsCollection = authorsCollectionFn(),
-) => {
+) {
   const pairs = (authors || []).map((id) => {
     const author = authorsCollection[id];
     if (!author) {
@@ -146,14 +197,28 @@ const renderAuthorsDate = (
     };
   });
 
+  if (isDesignSystemContext(this.page ? this.page.filePathStem : '')) {
+    return html`
+      <div class="card__avatars cluster color-mid-text">
+        ${renderAuthorImages(images, pairs, true)}
+        <div class="flow flow-space-size-0">
+          ${renderAuthorNames(pairs, true)}
+          ${renderDate(locale, date, updated, true)}
+        </div>
+      </div>
+    `;
+  }
+
+  /// DELETE BELOW THIS LINE
   return html`
     <div class="w-authors__card">
-      ${renderAuthorImages(images, pairs)}
+      ${renderAuthorImages(images, pairs, false)}
       <div class="w-authors__card--holder">
-        ${renderAuthorNames(pairs)} ${renderDate(locale, date, updated)}
+        ${renderAuthorNames(pairs, false)}
+        ${renderDate(locale, date, updated, false)}
       </div>
     </div>
   `;
-};
+}
 
 module.exports = renderAuthorsDate;

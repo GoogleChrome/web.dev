@@ -1,0 +1,61 @@
+---
+layout: default-next
+---
+
+{% from 'macros/icon.njk' import icon with context %}
+
+<div class="landing-page">
+  {# Hero starts #}
+  <header class="region bg-mid-bg">
+    <div class="wrapper">
+      <div class="headline all-center flow">
+        <h2 class="headline__title">{{ title }}</h2>
+        <p>{{ description }}</p>
+        {% if headlineAction %}
+          <div class="headline__action">
+            <a href="{{ headlineAction.url }}">{{ headlineAction.text }}</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+  {# Hero ends #}
+  
+  <div class="region">
+    <div class="wrapper auto-grid">
+      {% for item in paged.elements %}
+        {% set image = item.data.thumbnail or item.data.hero or null %}
+       {% set authors = item.data.authors or [] %}
+
+        <article class="card">
+          {% if image %}
+            <a href="{{ item.url }}" aria-hidden="true">
+              {% Img src=image, alt="", width="570", height="330", class="card__hero" %}
+            </a>
+          {% endif %}
+          <div class="card__content flow">
+            <h2 class="card__heading text-size-3">
+              <a href="{{ item.url }}">{{ item.data.title }}</a>
+            </h2>
+            <p>{{ item.data.subhead }}</p>
+          </div>
+
+          <div class="gap-top-size-1">
+            {% AuthorsDate authors=authors, date=item.date, updated=item.data.updated, locale=data.locale %}
+          </div>
+          <div class="card__tags cluster gap-top-base" aria-label="tags for this case study">
+            {% for tagKey in item.data.tags or [] %}
+              {% if tagKey in collections.tags %}
+                {% set tag = collections.tags[tagKey] %}
+                <a class="pill" href="{{ tag.url }}">{{ tag.overrideTitle or tag.title | i18n(locale) }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+    <div class="wrapper gap-top-size-3">
+      {% include "partials/pagination-next.njk" %}
+    </div>
+  </div>
+</div>

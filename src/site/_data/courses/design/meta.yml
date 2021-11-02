@@ -6,7 +6,7 @@
 # on or before this date will not receive the "New" badge.
 date: 2021-11-03
 url: /learn/design/
-draft: true
+draft: false
 title: i18n.courses.learn_design.title
 description: i18n.courses.learn_design.description
 # This is the logo that appears in the navigation drawer and header.
