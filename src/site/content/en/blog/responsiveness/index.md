@@ -221,7 +221,7 @@ web pages that have a lot of interactions and may be more likely to have large
 outliers. We've identified two potential high-quantile approximation strategies
 we like:
 
-- **Option 1:** keep track of the largest interaction over budget. After every
+- **Option 1:** Keep track of the largest interaction over budget. After every
   50 interactions, discard the largest and replace it with the next largest.
 - **Option 2:** Compute the largest 10 interactions over budget and choose a
   value from that list depending on the total number of interactions. Given N
