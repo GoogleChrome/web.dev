@@ -43,7 +43,7 @@ data from the [HTTP Archive](https://httparchive.org).
 For example, if your Max Potential FID score in Lighthouse is green, it means
 that your page performs better than 90% of real websites.
 
-This table shows how to interpret your TBT score:
+This table shows how to interpret your Max Potential FID score:
 
 <div class="w-table-wrapper">
   <table>
