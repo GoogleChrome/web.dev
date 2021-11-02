@@ -9,7 +9,9 @@ audio:
   thumbnail: image/foR0vJZKULb5AGJExlazy1xYDgI2/ECDb0qa4TB7yUsHwBic8.png
 authors:
   - cambickel
-date: 2021-09-15
+date: 2021-11-02
+tags:
+  - css
 ---
 
 When interacting with a website, you might notice that many elements have _state_. For example, dropdowns can be in opened or closed states. Buttons might change color when focused or hovered. Modals appear and disappear.
