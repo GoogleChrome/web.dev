@@ -82,6 +82,8 @@ This is the simplest flow. When opened, the report shows a summary view with onl
 
 {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/kb0RiS8uXSLoDq8nDlxa.png", alt="A Lighthouse flow report showing a single navigation", width="800", height="333", class="w-screenshot" %}
 
+{% Video src="video/MtjnObpuceYe3ijODN3a79WrxLU2/hQc2raJUj4DGJDoG6Nte.mov", alt="A Lighthouse flow report showing a single navigation", width="800", height="434", class="w-screenshot", controls="true" %}
+
 [See the report live](https://chalk-confused-roundworm.glitch.me).
 
 As is typical with Lighthouse, this is a page load with any cache or local storage cleared, but real users visiting a site will have a mixture of visits with cold and warm caches, and there can be a large performance difference between a cold load like this and a user returning to the page with a still-warm cache.
@@ -179,6 +181,8 @@ The resulting report shows that results are generally good, but there may be som
 
 {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/4OnCFHNkZtIpNsLSw0e3.png", alt="A Lighthouse flow report showing a set of snapshots taken", width="800", height="433", class="w-screenshot" %}
 
+[See the report live](https://ivy-cloudy-blackcurrant.glitch.me).
+
 ## Timespans
 
 One of the biggest differences between performance results [in the field](https://web.dev/user-centric-performance-metrics/#in-the-field) (like from CrUX) and [in the lab](https://web.dev/user-centric-performance-metrics/#in-the-lab) (like from Lighthouse) is the lack of user input. This is where a timespan—the last user flow mode—can help.
@@ -187,7 +191,14 @@ A timespan runs Lighthouse audits over some period of time, which may or may not
 
 To demonstrate this, here is a [test site](https://pie-charmed-treatment.glitch.me) that simulates ads being injected into an article during scroll without space having been reserved for them. In a long series of cards, an occasional red square is added when its slot enters the viewport. Since space was not reserved for these red squares, the cards below them are shifted out of the way, causing layout shifts.
 
-A regular Lighthouse navigation will have a CLS of 0, but once scrolled, the page will have problematic layout shifts and the CLS value will rise. The following script will produce a user flow report with both actions, to show the difference.
+A regular Lighthouse navigation will have a CLS of 0. However, once scrolled, the page will have problematic layout shifts and the CLS value will rise.
+
+<figure class="w-figure">
+  {% Video src="video/MtjnObpuceYe3ijODN3a79WrxLU2/Qi6B5SNt6Xk7rZ3055DO.mov", muted="true", width="360", height="640", class="w-screenshot", controls="true" %}
+  <figcaption class="w-figcaption"><a href="https://pie-charmed-treatment.glitch.me">Try the demo site</a>.</figcaption>
+</figure>
+
+The following script will produce a user flow report with both actions, to show the difference.
 
 ```js
 async function captureReport() {
@@ -229,18 +240,20 @@ captureReport();
 
 This generates a report comparing a regular navigation to a timespan which contains both a navigation and scrolling afterwards:
 
-{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/ZJ9cxFLAgBiuPLtWfxrp.png", alt="A Lighthouse flow report showing a set of snapshots taken", width="800", height="367", class="w-screenshot" %}
+{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wAkMF4T9IxpS82vODMdY.png", alt="A Lighthouse flow report showing a set of snapshots taken", width="800", height="367", class="w-screenshot" %}
+
+[See the report live](https://abaft-burnt-title.glitch.me).
 
 Digging into each step, the navigation-only step shows a CLS of 0. Great site!
 
 <figure class="w-figure">
-{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/DXhm8mMKioloxJDbH4Ri.png", alt="The Lighthouse report covering only page navigation with all green metrics", width="400", height="332", class="w-screenshot" %}
+{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/ZAKscmqryi5KVWOMiB5y.png", alt="The Lighthouse report covering only page navigation with all green metrics", width="400", height="364", class="w-screenshot" %}
 </figure>
 
 However the "Navigate and scroll" step tells a different story. Currently only Total Blocking Time and Cumulative Layout Shift are available in timespans, but the lazy-loaded content on this page clearly tanks the CLS for the site.
 
 <figure class="w-figure">
-{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/86pVHK9TH9Lq98vHWRUO.png", alt="The Lighthouse report covering page navigation and scrolling with a failing CLS", width="400", height="329", class="w-screenshot" %}
+{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/8tCyVELstYqtDFX3TunI.png", alt="The Lighthouse report covering page navigation and scrolling with a failing CLS", width="400", height="305", class="w-screenshot" %}
 </figure>
 
 Formerly Lighthouse would not be able to identify this problematic CLS behavior, though it would almost certainly show up in the experience of real users. Performance testing over scripted interactions improves lab fidelity significantly.
