@@ -223,7 +223,7 @@ we like:
 
 - **Option 1:** keep track of the largest interaction over budget. After every
   50 interactions, discard the largest and replace it with the next largest.
-- **Option 2:** compute the largest 10 interactions over budget and choose a
+- **Option 2:** Compute the largest 10 interactions over budget and choose a
   value from that list depending on the total number of interactions. Given N
   total interactions, select the (N / 50 + 1)th largest value, or the 10th value
   for pages with more than 500 interactions.
