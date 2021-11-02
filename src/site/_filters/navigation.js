@@ -69,6 +69,8 @@ function mapPagesToTree(collection, map) {
       title: item.data.title,
       description: item.data.description,
       date: item.data.date,
+      // @ts-ignore
+      placeholder: item.data.placeholder,
     };
   }
 }

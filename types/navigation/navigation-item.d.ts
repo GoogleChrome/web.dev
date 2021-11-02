@@ -23,6 +23,7 @@ declare global {
       title: string,
       description: string,
       date: Date,
+      placeholder: string,
     },
     prev?: NavigationItem | null,
     next?: NavigationItem | null,
