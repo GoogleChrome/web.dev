@@ -146,7 +146,9 @@ stage of the rendering pipeline. If your callback function isn't called at the
 time you expect it, that means a paint wasn't executed, and one or more frames
 were skipped. By polling and counting how often rAF is called, you can compute a
 sort of "frames per second" (fps) metric.
-
+{% Aside 'warning' %}
+ The following code is an anti-pattern and is strongly discouraged!
+{% endAside %}
 ```js
 let frameTimes = [];
 function pollFramesPerSecond(now) {
