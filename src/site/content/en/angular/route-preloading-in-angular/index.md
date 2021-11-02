@@ -12,7 +12,7 @@ description: |
 authors:
   - mgechev
 tags:
-  - angular
+  # - angular
   - performance
 feedback:
   - api

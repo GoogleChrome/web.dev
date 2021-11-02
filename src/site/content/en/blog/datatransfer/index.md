@@ -18,10 +18,10 @@ tags:
 ---
 
 You might have heard about the
-[DataTransfer API](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer) before, that is
+[DataTransfer API](https://developer.mozilla.org/docs/Web/API/DataTransfer) before, that is
 part of the
-[HTML5 Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
-and [Clipboard events](https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event). It can
+[HTML5 Drag and Drop API](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API)
+and [Clipboard events](https://developer.mozilla.org/docs/Web/API/Element/copy_event). It can
 be used to transfer data between source and receiving targets. This API
 [ready to use](https://caniuse.com/mdn-api_datatransfer_setdata) in all modern desktop browsers.
 
@@ -51,7 +51,7 @@ below show drag-drop interactions, but the process for copy-paste is similar. If
 you are unfamiliar with the Drag and Drop API, there's a great article
 [explaining HTML5 Drag and Drop](https://web.dev/drag-and-drop/) that details the ins and outs.
 
-By providing [MIME-type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) keyed data, you are able to freely interact with external applications.
+By providing [MIME-type](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types) keyed data, you are able to freely interact with external applications.
 Most WYSIWYG editors, text editors, and browsers respond to the "primitive" mime-types used in the
 example below.
 
@@ -93,7 +93,7 @@ Three MIME-types are widely supported across applications:
 
 The widespread adoption of `text/html` by WYSIWYG editors makes it very useful. Like in HTML
 documents, you can embed resources by using
-[Data URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) or publicly
+[Data URLs](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) or publicly
 accessible URLs. This works well with exporting visuals (for example from a canvas) to editors like
 Google Docs.
 

@@ -1,0 +1,11 @@
+{% if data.tooltip %}
+<button class="icon-button tooltip" aria-labelledby="icon-button-toolip">
+  {% include "icons/close.svg" %}
+  <span class="tooltip__content" id="icon-button-toolip">{{ data.tooltip }}</span>
+</button>
+{% else %}
+
+<button class="icon-button" aria-label="{{ data.label }}">
+  {% include "icons/close.svg" %}
+</button>
+{% endif %}

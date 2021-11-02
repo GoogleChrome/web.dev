@@ -24,7 +24,7 @@ overall idea, though, is the same for all super app providers. The project struc
 
 - A root file `app.js` that initializes the mini app.
 - A configuration file `app.json` that _roughly_ corresponds to a
-  [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest).
+  [web app manifest](https://developer.mozilla.org/docs/Web/Manifest).
 - An optional common style sheet file `app.css` with shared default styles.
 - A `project.config.json` file that contains build information.
 
@@ -95,7 +95,7 @@ Similar to the app lifecycle, the page lifecycle, too, has lifecycle events that
 listen for and react upon. These core events are `load`, `show`, `ready`, `hide`, and `unload`. Some
 platforms offer additional events like `pulldownrefresh`. Setting up the event handlers happens in
 the `Page()` method that is defined for each page. For the `index` or the `other` pages from the
-project structure [before](/project-structure-lifecycle-and-bundling/#mini-app-project-structure), this would happen in `index.js` or
+project structure [before](#mini-app-project-structure), this would happen in `index.js` or
 `other.js` respectively.
 
 ```js

@@ -149,7 +149,7 @@ Service worker subscribed to push.  Endpoint: https://fcm.googleapis.com/fcm/sen
 1. Open the Glitch Logs by clicking **Tools** and then clicking **Logs**. You
    should see `/add-subscription` followed by some data. `/add-subscription` is
    the URL that the client sends a
-   [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)
+   [POST](https://developer.mozilla.org/docs/Web/HTTP/Methods/POST)
    request to when it wants to subscribe to push notifications. The data that
    follows is the client's subscription information that you need to save.
 1. Open `server.js`.

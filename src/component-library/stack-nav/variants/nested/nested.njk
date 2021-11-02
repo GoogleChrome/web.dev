@@ -1,0 +1,37 @@
+<div class="stack-nav">
+  <ul role="list" class="stack-nav__list">
+    {% for item in data.topItems %}
+      <li>
+        <a class="repel" href="{{ item.url }}" {% if item.active %}aria-current="page"{% endif %}>
+          <span class="cluster">
+            {% if item.prefix %}
+            <span class="stack-nav__meta">{{ item.prefix }}</span>
+            {% endif %}
+            <span>{{ item.text }}</span>
+          </span>
+          {% if item.icon %}
+            {% include "icons/" + item.icon %}
+          {% endif %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  <h3 class="stack-nav__heading">{{ data.heading }}</h3>
+  <ul role="list" class="stack-nav__list">
+    {% for item in data.headedItems %}
+      <li>
+        <a class="repel" href="{{ item.url }}" {% if item.active %}aria-current="page"{% endif %}>
+          <span class="cluster">
+            {% if item.prefix %}
+            <span class="stack-nav__meta">{{ item.prefix }}</span>
+            {% endif %}
+            <span>{{ item.text }}</span>
+          </span>
+          {% if item.icon %}
+            {% include "icons/" + item.icon %}
+          {% endif %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

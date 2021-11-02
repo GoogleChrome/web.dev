@@ -1,0 +1,41 @@
+/* Set containment on parent */
+.container {
+  container: inline-size;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* Base Styles */
+.visual {
+  aspect-ratio: 1 / 1;
+}
+
+.desc {
+  display: none;
+}
+
+.card {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* Responsive styles */
+
+/* 2-column grid layout at >=350px */
+@container (min-width: 350px) {
+  .card {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+  }
+}
+
+/* Display description at >=500px */
+@container (min-width: 500px) {
+  .desc {
+    display: block;
+  }
+}

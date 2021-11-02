@@ -13,8 +13,8 @@ related_post: resilient-search-experiences
 
 This codelab shows you how to implement a resilient search experience with Workbox. The demo app it uses contains a search box that calls a server endpoint, and redirects the user to a basic HTML page.
 
-{% Aside %} 
-This codelab uses [Chrome DevTools](https://www.google.com/chrome/). Download Chrome if you don't already have it. 
+{% Aside %}
+This codelab uses [Chrome DevTools](https://www.google.com/chrome/). Download Chrome if you don't already have it.
 {% endAside %}
 
 ## Measure
@@ -44,12 +44,12 @@ Usually you would need to instruct Workbox to add this file to the precache list
 For simplicity, we've already done it for you. The following code at `public/sw.js` does that:
 
 ```javascript
-const FALLBACK_HTML_URL = ‘/index_offline.html’;
+const FALLBACK_HTML_URL = '/index_offline.html';
 …
 workbox.precaching.precacheAndRoute([FALLBACK_HTML_URL]);
 ```
 
-{% Aside %} 
+{% Aside %}
 To learn more about how to integrate Workbox with build tools, check out the [webpack Workbox plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) and the [Gulp Workbox plugin](https://developers.google.com/web/tools/workbox/guides/codelabs/gulp).
 {% endAside %}
 
@@ -147,9 +147,9 @@ const bgSyncPlugin = new workbox.backgroundSync.Plugin('offlineQueryQueue', {
 
 The code does the following:
 
-- `workbox.backgroundSync.Plugin` contains the logic to add failed requests to a queue so they can be retried later. These requests will be persisted in [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).
+- `workbox.backgroundSync.Plugin` contains the logic to add failed requests to a queue so they can be retried later. These requests will be persisted in [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API).
 - `maxRetentionTime` indicates the amount of time a request may be retried. In this case we have chosen 60 minutes (after which it will be discarded).
-- `onSync` is the most important part of this code. This callback will be called when connection is back so that queued requests are retrieved and then fetched from the network. 
+- `onSync` is the most important part of this code. This callback will be called when connection is back so that queued requests are retrieved and then fetched from the network.
 - The network response is added to the `offline-search-responses` cache, appending the `&notification=true` query param, so that this cache entry can be picked up when a user clicks on the notification.
 
 To integrate background sync with your service, define a [NetworkOnly](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#network_only) strategy for requests to the search URL (`/search_action`) and pass the previously defined `bgSyncPlugin`. Add the following code to the bottom of `public/sw.js`:

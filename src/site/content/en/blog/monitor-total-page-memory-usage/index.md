@@ -372,7 +372,7 @@ improved the API.
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=1049093
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [cr-status]: https://www.chromestatus.com/feature/5685965186138112
-[cross-origin-isolation]: https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated
+[cross-origin-isolation]: https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated
 [demo-source]: https://glitch.com/edit/#!/performance-measure-memory?path=script.js:1:0
 [demo]: https://performance-measure-memory.glitch.me/
 [explainer]: https://github.com/WICG/performance-measure-memory
@@ -385,6 +385,6 @@ improved the API.
 [numeric-separators]: https://v8.dev/features/numeric-separators
 [ot]: https://developers.chrome.com/origintrials/#/view_trial/1281274093986906113
 [poisson]: https://en.wikipedia.org/wiki/Poisson_point_process
-[security-error]: https://developer.mozilla.org/en-US/docs/Web/API/DOMException#exception-SecurityError
+[security-error]: https://developer.mozilla.org/docs/Web/API/DOMException#exception-SecurityError
 [site-isolation]: https://developers.google.com/web/updates/2018/07/site-isolation
 [webperfs]: https://www.w3.org/community/webperfs/

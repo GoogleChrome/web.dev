@@ -134,7 +134,7 @@ TBT](/lighthouse-total-blocking-time) for usage details.
 ## What is a good TBT score?
 
 To provide a good user experience, sites should strive to have a Total Blocking
-Time of less than **300 milliseconds** when tested on **average mobile
+Time of less than **200 milliseconds** when tested on **average mobile
 hardware**.
 
 For details on how your page's TBT affects your Lighthouse performance score,

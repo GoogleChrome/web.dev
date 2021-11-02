@@ -1,0 +1,10 @@
+<section class="numbered-headers">
+  {% for step in data.steps %}
+    <div class="numbered-headers__step">
+      <div class="numbered-headers__heading {{ data.utilities.heading }}">
+        <h3 class="text-size-3">{{ step.title }}</h3>
+      </div>
+      <p>{{ step.summary }}</p>
+    </div>
+  {% endfor %}
+</section>

@@ -13,7 +13,7 @@ const languageNames = {
   pl: 'Polski',
   es: 'Español',
   ko: '한국어',
-  zn: 'Chinese',
+  zh: '中文',
   ru: 'Rусский',
   pt: 'Português',
   ja: '日本語',

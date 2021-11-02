@@ -1,0 +1,157 @@
+---
+patternId: web-vitals-patterns/placeholders/placeholders
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Placeholder demo</title>
+    <style>
+        :root {
+            --placeholder-primary: #eeeeee;
+            --placeholder-secondary: #cccccc;
+        }
+        body {
+            padding: 1em;
+            font-family: system-ui;
+            display: grid;
+            justify-items: center;
+        }
+        .grid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1em;
+            width: 100%;
+            max-width: 650px;
+            margin: 1em 0em;
+        }
+        .item {
+            display: grid;
+            gap: .5em;
+            width: 200px;
+        }
+        .text-container {
+            font-size: 1em;
+            height: 1.5em;
+            text-align: center;
+            font-weight: bold;
+        }
+        .image-container {
+            width: 200px;
+            height: 200px;
+            animation: placeholder ease-in-out 2s infinite;
+        }
+        .image-container img {
+            width: 100%;
+        }
+        @keyframes placeholder {
+            0% {
+                background-color: var(--placeholder-primary);
+            }
+            50% {
+                background-color: var(--placeholder-secondary);
+            }
+            100% {
+                background-color: var(--placeholder-primary);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0%;
+            }
+            100% {
+                opacity: 100%;
+            }
+        }
+        .item.loaded .image-container {
+            animation: none;
+        }
+        .item.loaded .image-container img{
+            animation: fadeIn linear .5s;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Placeholders</h1>
+    <button>Reload</button>
+    <div class="grid">
+        <div class="item">
+            <div class="image-container">
+                <img src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/LiTG3VL5E1mRXiYgjCjc.jpg">
+            </div>
+            <div class="text-container">Hats</div>
+        </div>
+        <div class="item empty">
+            <div class="image-container">
+                <img src="">
+            </div>
+            <div class="text-container"></div>
+        </div>
+        <div class="item empty">
+            <div class="image-container">
+                <img src="">
+            </div>
+            <div class="text-container"></div>
+        </div>
+        <div class="item empty">
+            <div class="image-container">
+                <img src="">
+            </div>
+            <div class="text-container"></div>
+        </div>
+        <div class="item empty">
+            <div class="image-container">
+                <img src="">
+            </div>
+            <div class="text-container"></div>
+        </div>
+        <div class="item empty">
+            <div class="image-container">
+                <img src="">
+            </div>
+            <div class="text-container"></div>
+        </div>
+    </div>
+    {% set script %}
+        document.querySelector("button").addEventListener("click", ()=> {
+            window.location.reload();
+        });
+        setTimeout(() => {
+            const data = [
+                {
+                    description: "Watches",
+                    src: "https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/GMPpoERpp9aM5Rihk5F2.jpg"
+                },
+                {
+                    description: "Shirt",
+                    src:"https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/eM7KKuO6MQv43UWd0bSG.jpg"
+                },
+                {
+                    description: "Shorts",
+                    src:"https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/CXdSCe7iBNHX1SQGR9Xd.jpg"
+                },
+                {
+                    description: "Sunglasses",
+                    src:"https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/sSJWeg59fl3ObQurc50r.jpg"
+                },
+                {
+                    description: "Shoes",
+                    src:"https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/4d94KXdGWwPr9lBa4ui9.jpg"
+                }
+            ];
+            document.querySelectorAll(".item.empty").forEach((el, index) => {
+                if(data[index]){
+                    el.classList = "item loaded";
+                    el.querySelector("img").src = data[index].src;
+                    el.querySelector(".text-container").innerHTML = data[index].description;
+                }
+            });
+        }, 3000);
+    {% endset %}
+    <script>{{ script | minifyJs | cspHash | safe }}</script>
+</body>

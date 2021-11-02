@@ -7,12 +7,12 @@ description: Details of Chrome's and other browsers' plans to remove AppCache.
 date: 2020-05-18
 updated: 2021-08-23
 tags:
-  - appcache
+  # - appcache
   - blog
-  - chrome84
-  - deprecation
-  - origin-trial
-  - removal
+  - chrome-84
+  # - deprecation
+  - origin-trials
+  # - removal
   - service-worker
 hero: image/admin/YDs2H4gLPhIwPMjPtc8o.jpg
 alt: An old-fashioned storage container.
@@ -20,7 +20,7 @@ origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/1776670052997660673
 ---
 
-Following up on [previous announcements](https://blog.chromium.org/2020/01/appcache-scope-restricted.html), support for [AppCache](https://developer.mozilla.org/docs/Web/HTML/Using_the_application_cache) will be removed from Chrome and other Chromium-based browsers. We encourage developers to migrate off of AppCache now, rather than waiting any longer.
+Following up on [previous announcements](https://blog.chromium.org/2020/01/appcache-scope-restricted.html), support for [AppCache](https://developer.mozilla.org/docs/Web/API/Window/applicationCache) will be removed from Chrome and other Chromium-based browsers. We encourage developers to migrate off of AppCache now, rather than waiting any longer.
 
 [Service workers](https://developers.google.com/web/fundamentals/primers/service-workers),
 which are widely supported in current browsers, offer an alternative to providing the offline

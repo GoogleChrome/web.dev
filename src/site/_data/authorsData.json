@@ -222,8 +222,12 @@
     "glitch": "samthor",
     "image": "image/admin/XQIDJD6narW2eA4d141g.jpg"
   },
+  "stephenstchur": {
+    "country": "US",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/117HjdRQMScu0EouANUl.jpg"
+  },
   "rachelandrew": {
-    "country": "GB",
+    "country": "UK",
     "homepage": "https://rachelandrew.co.uk/",
     "twitter": "rachelandrew",
     "github": "rachelandrew",
@@ -268,11 +272,6 @@
     "github": "mdiblasio",
     "glitch": "mdiblasio",
     "image": "image/admin/CO9R6GSKlH794WHxbpQD.jpg"
-  },
-  "jeremywagner": {
-    "github": "malchata",
-    "twitter": "malchata",
-    "image": "image/admin/VUpz95xT3Znav1EP6ikP.jpg"
   },
   "gmimani": {
     "github": "garimamimani",
@@ -327,6 +326,12 @@
     "twitter": "argyleink",
     "glitch": "argyleink",
     "image": "image/admin/jdQIxAJrGuFOtwmuDfIn.jpg"
+  },
+  "emmatwersky": {
+    "homepage": "https://twerske.dev",
+    "github": "twerske",
+    "twitter": "twerske",
+    "image": "image/dQwiPAoChjTYzXYCNg6U6Tsnr3x1/9oW5Nx95erxvoGHcKHL6.jpg"
   },
   "lunalu": {
     "country": "Canada",
@@ -531,6 +536,11 @@
     "country": "US",
     "image": "image/admin/ODlAdqZG7UsfQlYO7D37.jpg"
   },
+  "patmeenan": {
+    "twitter": "patmeenan",
+    "country": "US",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/ownYNba1FYga5v97gKRF.jpg"
+  },
   "sebabenz": {
     "twitter": "sebabenz",
     "country": "DE",
@@ -541,6 +551,11 @@
     "country": "US",
     "image": "image/admin/KxIs73yjsWwzEPHQaHEA.jpg"
   },
+  "nabeelalshamma": {
+    "image" : "image/8WbTDNrhLsU0El80frMBGE4eMCD3/gZlM5s1kj09oCG5h2buz.jpeg",
+    "github": "alshamma",
+    "linkedin": "https://www.linkedin.com/in/alshamma/"
+  },
   "nattestad": {
     "twitter": "fractorious",
     "country": "US",
@@ -550,7 +565,7 @@
     "country": "DE",
     "twitter": "maudnals",
     "github": "maudnals",
-    "image": "image/admin/F620GZorjY0JjKas3p3J.jpg"
+    "image": "image/O2RNUyVSLubjvENAT3e7JSdqSOx1/9ORwve80jFiyYnPvNcWF.jpg"
   },
   "morss": {
     "twitter": "benmorss",
@@ -794,11 +809,10 @@
     "image": "image/admin/eXpk44oNMpOnNPLrMOMm.jpg"
   },
   "antoinebisch": {
-    "country": "GB",
+    "country": "UK",
     "linkedin": "https://www.linkedin.com/in/antoinebisch/",
     "github": "antoinebisch",
     "twitter": "AntoineBisch",
-    "country": "UK",
     "image": "image/admin/xCDa34tJbhKRgr8pj5BJ.jpg"
   },
   "anniesullie": {
@@ -1006,5 +1020,62 @@
     "homepage": "https://cambickel.com",
     "country": "US",
     "image": "image/eiKy1JcjHqPp3gaedjAQWjPJ8YK2/qTCSbuHdDVtzqMKnDUJx.jpg"
+  },
+  "michaelscharnagl": {
+    "twitter": "justmarkup",
+    "homepage": "https://justmarkup.com",
+    "country": "DE",
+    "image": "image/ZDZVuXt6QqfXtxkpXcPGfnygYjd2/OZvyDgCkUQAIA87UJV7A.jpg"
+  },
+  "leenasohoni":{
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/VXCjCzLEGWApTkZkNZkR.JPG"
+  },
+  "jackjey": {
+    "github": "JackJey",
+    "image": "image/PV7xjXdOKHP8LWt9XhstsToJeK82/O5CMzBRhiNQelJ5Rkzv0.jpg"
+  },
+  "tcoustillac": {
+    "github": "tcoustil",
+    "homepage": "https://www.linkedin.com/in/tcoustillac/",
+    "country": "FR",
+    "image": "image/16kgsueJSCPH4556d9XWWWENbk12/N6sroCi4an6S9ak9XttX.jpg"
+  },
+  "jlwagner": {
+    "github": "malchata",
+    "twitter": "malchata",
+    "homepage": "https://jeremy.codes/",
+    "country": "US",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/2qO19NkWfYnvHe2zLkhG.jpg"
+  },
+  "cédricbazureau": {
+    "github": "cbazureau",
+    "homepage": "https://cedric.bazureau.com/",
+    "country": "FR",
+    "image": "image/vgdbNJBYHma2o62ZqYmcnkq3j0o1/vGr2SOy8UdaSj4LvhcxH.jpg"
+  },
+  "adactio": {
+    "github": "adactio",
+    "twitter": "adactio",
+    "homepage": "https://adactio.com/",
+    "country": "UK",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/rM22MifxkT2kdFSUjioP.jpeg"
+  },
+  "firt": {
+    "github": "firtman",
+    "twitter": "firt",
+    "homepage": "https://firt.dev",
+    "country": "AR",
+    "image": "image/kheDArv5csY6rvQUJDbWRscckLr1/TJnzoAklhouTpv6YVNn8.jpeg"
+  },
+  "patrickbrosset": {
+    "twitter": "patrickbrosset",
+    "github": "captainbrosset",
+    "image": "image/8WbTDNrhLsU0El80frMBGE4eMCD3/9qyg3BRTavzYs9eFNS0F.jpeg"
+  },
+  "karaerickson": {
+    "image": "image/IypihH3o5cSpEMVp5i08dp69otp2/Az2VaHZ4nQ6ovvTvzCD3.jpeg"
+  },
+  "alexcastle": {
+    "image": "image/IypihH3o5cSpEMVp5i08dp69otp2/ofc2dLwuNURvRIMvTdIv.jpeg"
   }
 }

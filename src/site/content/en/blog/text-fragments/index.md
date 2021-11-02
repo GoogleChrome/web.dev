@@ -17,7 +17,7 @@ description: |
   and/or bring it to the user's attention.
 tags:
   - blog
-  - text-fragments
+  # - text-fragments
   - capabilities
 feedback:
   - api
@@ -48,8 +48,8 @@ document.querySelectorAll('[id]').forEach((el) => {
 ```
 
 I can place a deep link to any element highlighted with a red box thanks to the
-[fragment identifier](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Fragment)
-which I then use in the [hash](https://developer.mozilla.org/en-US/docs/Web/API/URL/hash) of the
+[fragment identifier](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Fragment)
+which I then use in the [hash](https://developer.mozilla.org/docs/Web/API/URL/hash) of the
 page's URL. Assuming I wanted to deep link to the _Give us feedback in our
 [Product Forums](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)_ box in the
 aside, I could do so by handcrafting the URL
@@ -112,25 +112,25 @@ time of writing, Safari and Firefox have not publicly signaled an intent to impl
 See [Related links](#related-links) for pointers to the Safari and Firefox discussions.
 
 {% Aside 'success' %} These links used to not work when served across
-[client-side redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Alternative_way_of_specifying_redirections)
+[client-side redirects](https://developer.mozilla.org/docs/Web/HTTP/Redirections#Alternative_way_of_specifying_redirections)
 that some common services like Twitter use. This issue was tracked as
 [crbug.com/1055455](https://crbug.com/1055455) and is now fixed. Regular
-[HTTP redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Principle) always
+[HTTP redirects](https://developer.mozilla.org/docs/Web/HTTP/Redirections#Principle) always
 worked fine. {% endAside %}
 
 For [security](#security) reasons, the feature requires links to be opened in a
-[`noopener`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener) context.
+[`noopener`](https://developer.mozilla.org/docs/Web/HTML/Link_types/noopener) context.
 Therefore, make sure to include
-[`rel="noopener"`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-rel) in your
+[`rel="noopener"`](https://developer.mozilla.org/docs/Web/HTML/Element/a#attr-rel) in your
 `<a>` anchor markup or add
-[`noopener`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#noopener) to your
+[`noopener`](https://developer.mozilla.org/docs/Web/API/Window/open#noopener) to your
 `Window.open()` list of window functionality features.
 
 ### `textStart`
 
 In its simplest form, the syntax of Text Fragments is as follows: The hash symbol `#` followed by
 `:~:text=` and finally `textStart`, which represents the
-[percent-encoded](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
+[percent-encoded](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
 text I want to link to.
 
 ```bash
@@ -246,7 +246,7 @@ directive syntax.
 ```
 
 Each of `prefix-`, `textStart`, `textEnd`, and `-suffix` will only match text within a single
-[block-level element](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements),
+[block-level element](https://developer.mozilla.org/docs/Web/HTML/Block-level_elements#Elements),
 but full `textStart,textEnd` ranges _can_ span multiple blocks. For example,
 `:~:text=The quick,lazy dog` will fail to match in the following example, because the starting
 string "The quick" does not appear within a single, uninterrupted block-level element:
@@ -354,8 +354,8 @@ search engines) to avoid serving text fragments links to browsers that do not su
 ### Styling text fragments
 
 By default, browsers style text fragments the same way they style
-[`mark`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark) (typically black on yellow,
-the CSS [system colors](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#system_colors)
+[`mark`](https://developer.mozilla.org/docs/Web/HTML/Element/mark) (typically black on yellow,
+the CSS [system colors](https://developer.mozilla.org/docs/Web/CSS/color_value#system_colors)
 for `mark`). The user-agent stylesheet contains CSS that looks like this:
 
 ```css

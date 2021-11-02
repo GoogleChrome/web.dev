@@ -48,8 +48,8 @@ conditions.
 ## Reliable is achievable
 
 The good news is that the modern web platform provides technologies—such as
-[service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) and the
-[Cache Storage API](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage)—that
+[service workers](https://developer.mozilla.org/docs/Web/API/Service_Worker_API) and the
+[Cache Storage API](https://developer.mozilla.org/docs/Web/API/CacheStorage)—that
 can serve as the building blocks for creating reliable web applications. They
 allow you to write code which sits between your web app and the network. In
 many cases, you can bypass the network entirely, and instead use previously

@@ -134,7 +134,7 @@ Layout shifts are defined by the [Layout Instability
 API](https://github.com/WICG/layout-instability), which reports `layout-shift`
 entries any time an element that is visible within the viewport changes its
 start position (for example, its top and left position in the default [writing
-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)) between
+mode](https://developer.mozilla.org/docs/Web/CSS/writing-mode)) between
 two frames. Such elements are considered _unstable elements_.
 
 Note that layout shifts only occur when existing elements change their start
@@ -291,7 +291,7 @@ state changes.
 Be sure to respect [`prefers-reduced-motion`](/prefers-reduced-motion/) browser settings, as some site visitors
 can experience ill effects or attention issues from animation.
 
-CSS [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+CSS [`transform`](https://developer.mozilla.org/docs/Web/CSS/transform)
 property allows you to animate elements without triggering layout shifts:
 
 * Instead of changing the `height` and `width` properties, use `transform:
@@ -332,7 +332,7 @@ available in the following tools:
 To measure CLS in JavaScript, you can use the [Layout Instability
 API](https://github.com/WICG/layout-instability). The following example shows
 how to create a
-[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+[`PerformanceObserver`](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
 that listens for unexpected `layout-shift` entries, groups them into sessions,
 and logs the maximum session value any time it changes.
 
@@ -444,6 +444,13 @@ for a complete example of how to measure CLS in JavaScript.
 {% endAside %}
 
 ## How to improve CLS
+
+{% Banner 'info', 'body' %}
+  **New:** Check out [Web Vitals Patterns](/patterns/web-vitals-patterns) for
+  implementations of common UX patterns optimized for Core Web Vitals. This
+  collection includes patterns that are often tricky to implement without layout
+  shifts.
+{% endBanner %}
 
 For most websites, you can avoid all unexpected layout shifts by sticking to a
 few guiding principles:

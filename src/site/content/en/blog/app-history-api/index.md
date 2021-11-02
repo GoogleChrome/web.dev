@@ -4,6 +4,7 @@ subhead: "Standardizing client-side routing through a brand new API which comple
 authors:
   - samthor
 date: 2021-08-25
+updated: 2021-09-20
 hero: image/QMjXarRXcMarxQddwrEdPvHVM242/aDcKXxmGtrMVmwZK43Ta.jpg
 alt: "Sculpture adorning the General Post Office, Sydney, Australia"
 description: "Learn about the App History API, a new API which adds improved functionality to build single-page applications."
@@ -85,7 +86,7 @@ If you've ever written the routing for your own SPA using the History API, you m
 ```js
 function updatePage(event) {
   event.preventDefault();  // we're handling this link
-  window.location.pushState(null, '', event.target.href);
+  window.history.pushState(null, '', event.target.href);
   // TODO: set up page based on new URL
 }
 const links = [...document.querySelectorAll('a[href]')];
@@ -223,7 +224,7 @@ const { key } = appHistory.current;
 backToHomeButton.onclick = () => appHistory.goTo(key);
 
 // Navigate away, but the button will always work.
-await appHistory.navigate('/another_url');
+await appHistory.navigate('/another_url').finished;
 ```
 
 ### State
@@ -274,7 +275,7 @@ While for many sites the most common case will be when the user clicks a `<a hre
 
 ### Programmatic Navigation {: #programmatic-navigation }
 
-First is programmatic navigation, where navigation is caused by a method call inside youur client-side code.
+First is programmatic navigation, where navigation is caused by a method call inside your client-side code.
 
 You can call `appHistory.navigate('/another_page')` from anywhere in your code to cause a navigation.
 This will be handled by the centralized event handler registered on the "navigate" handler, and your centralized handler will be called synchronously.
@@ -289,8 +290,10 @@ Their signatures aren't modified in any way (i.e., they won't now return a `Prom
 
 {% endAside %}
 
-The `AppHistory.navigate()` method returns a `Promise`, so the invoker can wait until the transition is complete (or is rejected due to failure or being preempted by another navigation).
-It also has an optional options object which controls how the navigation will occur.
+The `AppHistory.navigate()` method returns a object which contains two `Promise` instances in `{ committed, finished }`.
+This allows the invoker can wait until either the transition is "committed" (the visible URL has changed and a new `AppHistoryEntry` is available) or "finished" (all promises passed to `transitionWhile()` are complete&mdash;or rejected, due to failure or being preempted by another navigation).
+
+The `navigate` method also has an optional options object which controls how the navigation will occur.
 These options will allow you to `replace` the current URL, set a new immutable `state` (to be made available via `AppHistoryEntry.getState()`), and configure `AppHistoryNavigateEvent.info`.
 
 The `info` property is worth calling out.
@@ -315,7 +318,7 @@ In fact, it will always be `undefined` in those cases.
   </figcaption>
 </figure>
 
-The `AppHistory` interface also has a number of other navigation methods.
+The `AppHistory` interface also has a number of other navigation methods, all which return an object containing `{ committed, finished }`.
 I've already mentioned `goTo()` (which accepts a `key` that denotes a specific entry in the user's history) and `navigate()`.
 It also includes `back()`, `forward()` and `reload()`.
 These methods are all handled—just like `navigate()`—by the centralized "navigate" event handler.
@@ -403,7 +406,7 @@ Hero image from [Unsplash][hero-image], by [Jeremy Zero][hero-image-by].
 
 [clunky-history-api]: https://html5doctor.com/interview-with-ian-hickson-html-editor/#:~:text=My%20biggest%20mistake%E2%80%A6there%20are%20so%20many%20to%20choose%20from!%20pushState()%20is%20my%20favourite%20mistake
 [scroll-restoration]: https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration
-[image map]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map
+[image map]: https://developer.mozilla.org/docs/Web/HTML/Element/map
 [back-forward-discuss]: https://github.com/WICG/app-history/issues/32
 [loading-crbug]: https://bugs.chromium.org/p/chromium/issues/detail?id=1241202
 [abortable-fetch]: https://developers.google.com/web/updates/2017/09/abortable-fetch

@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-06-03
-updated: 2021-08-05
+updated: 2021-09-14
 description: |
   After registering a PWA as a URL handler, when a user clicks on a hyperlink that matches
   one of the registered URL patterns, the registered PWA will open.
@@ -17,6 +17,8 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
   - progressive-web-apps
+origin_trial:
+  url: https://developer.chrome.com/origintrials/#/view_trial/-5376172055173529599
 ---
 
 {% Aside %} PWAs as URL Handlers is part of the [capabilities project](https://web.dev/fugu-status/)
@@ -60,7 +62,7 @@ Examples of sites that may use this API include:
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | Not started              |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | Not started              |
+| 4. **Origin trial**                      | **[In progress][ot]**    |
 | 5. Launch                                | Not started              |
 
 </div>
@@ -72,11 +74,28 @@ Examples of sites that may use this API include:
 To experiment with PWAs as URL Handlers locally, without an origin trial token, enable the
 `#enable-desktop-pwas-url-handling` flag in `about://flags`.
 
+### Enabling support during the origin trial phase
+
+Starting in Chromium&nbsp;94, Progressive Web Apps as URL Handlers is available as an origin trial in
+Chromium. The origin trial is expected to end in Chromium&nbsp;97 (January 26, 2022).
+
+{% include 'content/origin-trials.njk' %}
+
+### Register for the origin trial {: #register-for-ot }
+
+{% include 'content/origin-trial-register.njk' %}
+
 {% Aside %} Support for the PWAs as URL Handlers feature is limited to desktop operating systems
 like Windows, macOS, and Linux. On Android, Chromium browsers install PWAs by generating a
 [WebAPK](https://developers.google.com/web/fundamentals/integration/webapks), which can register a
 set of intent filters for all URLs within the scope of the app. This means that PWAs already handle
 associated URLs on Android at the operating system level using intent filters. {% endAside %}
+
+{% Aside 'caution' %} Support for the PWAs as URL Handlers feature is limited to the _default_
+browser per the operating system's settings. For example, Chrome can be set as the default browser
+by following these
+[instructions](https://support.google.com/chrome/answer/95417?hl=en&co=GENIE.Platform%3DDesktop).
+{% endAside %}
 
 ### The `"url_handlers"` web app manifest member
 
@@ -286,3 +305,4 @@ Hero image by [Bryson Hammer](https://unsplash.com/@trhammerhead) on
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]:
   https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[ot]: https://developer.chrome.com/origintrials/#/view_trial/-5376172055173529599

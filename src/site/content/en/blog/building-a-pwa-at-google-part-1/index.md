@@ -92,7 +92,7 @@ state](#global-state).
 
 ### Avoid accessing IndexedDB during initialization {: #idb }
 
-Don't read [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) when
+Don't read [IndexedDB](https://developer.mozilla.org/docs/Web/API/IndexedDB_API) when
 initializing your service worker script, or else you can get into this undesired situation:
 
 1. User has web app with IndexedDB (IDB) version N
@@ -125,7 +125,7 @@ Because service workers exist in a different context, many symbols you might exp
 present. A lot of our code ran in both a `window` context, as well as a service worker context (such
 as logging, flags, syncing, etc.). Code needs to be defensive about the services it uses, such as
 local storage or cookies. You can use
-[`globalThis`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis)
+[`globalThis`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/globalThis)
 to refer to the global object in a manner which will work across all contexts. Also use data stored
 in global variables sparingly, as there is no guarantee as to when the script will be terminated and
 the state evicted.

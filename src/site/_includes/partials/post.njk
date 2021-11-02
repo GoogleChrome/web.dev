@@ -39,7 +39,7 @@
       tabindex="0"
       role="button"
     >
-      <span>Share</span>
+      <span>{{ 'i18n.common.share' | i18n(locale) }}</span>
     </share-action>
     {% include 'partials/subscribe-action.njk' %}
   </div>
@@ -47,8 +47,15 @@
   <div class="w-layout-container--narrow w-post-content">
     <header class="w-article-header">
       {% if 'blog' in tags %}
+        {# Display blog breadcrumbs #}
         <div class="w-post-breadcrumbs">
           {% Breadcrumbs {title: 'All articles', slug: 'blog'} %}
+        </div>
+      {% elif crumbs %}
+        {# Display other breadcrumbs #}
+        {% from 'macros/breadcrumbs.njk' import breadcrumbs with context %}
+        <div class="w-post-breadcrumbs">
+          {{ breadcrumbs(crumbs) }}
         </div>
       {% endif %}
 
@@ -65,6 +72,14 @@
           {% if updated %} <span class="w-author__separator">•</span> {{ 'i18n.common.updated' | i18n((locale)) }} <time>{{ updated | prettyDate }}</time> {% endif %}
         </div>
       {% endif %}
+
+      {% set languageListHtml %}{% LanguageList page.url, lang %}{% endset %}
+      {% if languageListHtml %}
+      <div class="w-layout-container--narrow w-post-signpost">
+        {{ languageListHtml | safe }}
+      </div>
+      {% endif %}
+
       {% SignPosts page.fileSlug %}
 
       {% if authors %}

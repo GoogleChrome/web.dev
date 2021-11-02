@@ -24,11 +24,11 @@ automatically falls back to alternative implementations
 of features that are missing from certain browsers:
 
 - The [`workbox-broadcast-cache-update`](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update)
-  module uses the [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
+  module uses the [Broadcast Channel API](https://developer.mozilla.org/docs/Web/API/Broadcast_Channel_API)
   if possible and falls back to a
-  [`postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
+  [`postMessage()`](https://developer.mozilla.org/docs/Web/API/Window/postMessage)
   implementation.
-- The [`workbox-background-sync`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
+- The [`workbox-background-sync`](https://developer.mozilla.org/docs/Web/API/Window/postMessage)
   module uses the [Background Sync API](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync)
   if possible and falls back to retrying queued events
   each time the service worker starts up.

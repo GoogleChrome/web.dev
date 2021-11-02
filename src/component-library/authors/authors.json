@@ -1,0 +1,33 @@
+{
+  "title": "Authors",
+  "keyLinks": [
+    {
+      "label": "Sass Block",
+      "url": "https://github.com/GoogleChrome/web.dev/tree/main/src/scss/blocks/_author.scss"
+    },
+    {
+      "label": "Avatar Utility",
+      "url": "https://github.com/GoogleChrome/web.dev/tree/main/src/scss/utilities/_avatar.scss"
+    }
+  ],
+  "context": {
+    "url": "#",
+    "name": "Collin Dion Agata",
+    "bio": "Massa gravida tempus placerat sapien venenatis conubia odio donec montes nisl feugiat.",
+    "image": "image/sQ51XsLqKMgSQMCZjIN0B7hlBO02/ZpE2N6yjkaqQNcSiaxvR.jpeg",
+    "links": [
+      {
+        "text": "Twitter",
+        "url": "https://twitter.com/CollinDion"
+      },
+      {
+        "text": "Another link",
+        "url": "#"
+      },
+      {
+        "text": "Last link that's longer",
+        "url": "#"
+      }
+    ]
+  }
+}

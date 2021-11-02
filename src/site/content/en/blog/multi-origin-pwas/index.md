@@ -19,7 +19,7 @@ tags:
 
 ## Background
 
-In the past, there were some advantages to using multi-origin architectures, but for Progressive Web Apps, that approach presents many challenges. In particular, the [same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy), imposes restrictions for sharing things like service workers and caches, permissions, and for achieving a standalone experience across multiple origins. This article will describe the good and bad uses of multiple origins, and explain the challenges and workarounds for building Progressive Web Apps in multi-origin sites.
+In the past, there were some advantages to using multi-origin architectures, but for Progressive Web Apps, that approach presents many challenges. In particular, the [same-origin policy](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy), imposes restrictions for sharing things like service workers and caches, permissions, and for achieving a standalone experience across multiple origins. This article will describe the good and bad uses of multiple origins, and explain the challenges and workarounds for building Progressive Web Apps in multi-origin sites.
 
 ## Good and bad uses of multiple origins
 
@@ -29,7 +29,7 @@ There are a few legitimate reasons for sites to employ a multi-origin architectu
 
 Let's look at the useful reasons first:
 
-- **Localization / Language:** Using a [country-code top-level domain](https://developer.mozilla.org/en-US/docs/Glossary/TLD), to separate sites to be served in different countries (e.g. `https://www.google.com.ar`), or using subdomains to divide sites targeted to different locations (e.g.: `https://newyork.craigslist.org`) or to offer content for a specific language (e.g. `https://en.wikipedia.org`).
+- **Localization / Language:** Using a [country-code top-level domain](https://developer.mozilla.org/docs/Glossary/TLD), to separate sites to be served in different countries (e.g. `https://www.google.com.ar`), or using subdomains to divide sites targeted to different locations (e.g.: `https://newyork.craigslist.org`) or to offer content for a specific language (e.g. `https://en.wikipedia.org`).
 
 - **Independent webapps:** Using different subdomains to provide experiences whose purpose differs considerably from the site on the main origin. For example, in a news site, the crosswords webapp could be intentionally served from `https://crosswords.example.com`, and installed and used as an independent PWA, without having to share any resources or functionality with the main website.
 
@@ -53,13 +53,13 @@ For those cases where migrating to a single origin is not possible, what follows
 
 ## Challenges and Workarounds for PWAs across different origins
 
-When building a website on multiple origins, providing a unified PWA experience is challenging, mostly because of the [same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy), which imposes a number of constraints. Let's look at them one at a time.
+When building a website on multiple origins, providing a unified PWA experience is challenging, mostly because of the [same-origin policy](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy), which imposes a number of constraints. Let's look at them one at a time.
 
 ### Service workers
 
 The origin of the service worker script URL has to be the same as the origin of the page calling [register()](https://w3c.github.io/ServiceWorker/#navigator-service-worker-register). This means that, for example, a page at `https://www.example.com` can't call `register()` with a service worker url at `https://section.example.com`.
 
-Another consideration is that a service worker can only control pages hosted under the origin and path it belongs to. This means that, if the service worker is hosted at `https://www.example.com` it can only control URLs from that origin (according to the path defined in the [scope parameter](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/register#Parameters)), but won't control any page in other subdomains such as, for example, those in `https://section.example.com`.
+Another consideration is that a service worker can only control pages hosted under the origin and path it belongs to. This means that, if the service worker is hosted at `https://www.example.com` it can only control URLs from that origin (according to the path defined in the [scope parameter](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register#Parameters)), but won't control any page in other subdomains such as, for example, those in `https://section.example.com`.
 
 In this case, the only workaround is to use multiple service workers (one per origin).
 
@@ -78,7 +78,7 @@ Here are some things you can do to manage caches properly in scenarios like this
 - **Keep service worker installation lightweight:** If you are maintaining multiple service workers, avoid making users pay a big installation cost every time they navigate to a new origin. In other words: only pre-cache resources that are absolutely necessary.
 
 {% Aside 'gotchas' %}
-Once the service worker is active and running, the same-origin policy also restricts cross-origin requests made **_inside_** service workers. Fortunately this has a recommended workaround, which is to use [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) (as explained [here](https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api#cross-origin_requests)). Using the [no-cors mode](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) when fetching resources inside the service worker is not recommended.
+Once the service worker is active and running, the same-origin policy also restricts cross-origin requests made **_inside_** service workers. Fortunately this has a recommended workaround, which is to use [CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS) (as explained [here](https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api#cross-origin_requests)). Using the [no-cors mode](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) when fetching resources inside the service worker is not recommended.
 {% endAside %}
 
 ### Permissions
@@ -108,7 +108,7 @@ While navigating in a standalone window, the browser will behave differently whe
 In most cases, there's no solution for this, but a workaround can be applied for small parts of the experience that are hosted in subdomains (for example: login workflows):
 
 1. The new URL, `https://login.example.com`, could open inside a full screen iframe.
-1. Once the task is completed inside the iframe (for example, the login process), [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) can be used, to pass any resulting information from the iframe back to the parent page.
+1. Once the task is completed inside the iframe (for example, the login process), [postMessage()](https://developer.mozilla.org/docs/Web/API/Window/postMessage) can be used, to pass any resulting information from the iframe back to the parent page.
 1. As a final step, once the message is received by the main page, the listeners can be unregistered, and the iframe finally be removed from the DOM.
 
 {% Aside 'caution' %}

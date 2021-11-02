@@ -1,0 +1,20 @@
+<section class="hero" data-type="promo">
+  <div class="wrapper">
+    <div class="hero__columns switcher">
+      <div>
+        <span aria-hidden="true" class="hero__eyebrow">{{ data.eyebrow }}</span>
+        <div class="hero__content flow">
+          <h1 class="hero__title">{{ data.title }}</h1>
+          {{ data.summary | md | safe }}
+          <div class="cluster gutter-base flow-space-size-2">
+            <a class="button" data-type="primary" href="{{ data.primaryButtonUrl }}">{{ data.primaryButtonText }}</a>
+            <a class="button" data-type="secondary" href="{{ data.secondaryButtonUrl }}">{{ data.secondaryButtonText }}</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="{{ data.image }}" alt="" aria-hidden="true" class="hero__decor" width="{{ data.imageWidth }}" height="{{ data.imageHeight }}" />
+      </div>
+    </div>
+  </div>
+</section>

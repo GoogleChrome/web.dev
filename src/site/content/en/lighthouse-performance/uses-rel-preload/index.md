@@ -82,7 +82,7 @@ for more guidance.
 ### Browser compatibility
 
 As of June 2020 preloading is supported in Chromium-based browsers. See
-[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#Browser_compatibility)
+[Browser compatibility](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility)
 for updates.
 
 ### Build tool support for preloading {: #tools }

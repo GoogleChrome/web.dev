@@ -66,10 +66,14 @@ const getDeployedVersion = () => {
     return;
   }
 
-  // This just waits for the build to be kicked off, not for its completion (it
-  // returns a LROperation).
-  await client.runBuildTrigger({
-    projectId: process.env.PROJECT_ID,
-    triggerId: deployTriggerId,
-  });
+  try {
+    // This just waits for the build to be kicked off, not for its completion (it
+    // returns a LROperation).
+    await client.runBuildTrigger({
+      projectId: process.env.PROJECT_ID,
+      triggerId: deployTriggerId,
+    });
+  } catch (e) {
+    errors.report(e);
+  }
 })();

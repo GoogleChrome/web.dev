@@ -1010,8 +1010,8 @@ descriptors and Microsoft OS descriptors can be found in these projects:
 [WebUSB API]: https://wicg.github.io/webusb
 [Access USB Devices on the Web]: /usb
 [`getUserMedia()`]: https://html5rocks.com/en/tutorials/getusermedia/intro/
-[KeyboardEvents]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
-[PointerEvents]: https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events
+[KeyboardEvents]: https://developer.mozilla.org/docs/Web/API/KeyboardEvent
+[PointerEvents]: https://developer.mozilla.org/docs/Web/API/Pointer_events
 [Gamepad]: /gamepad
 [WebHID]: /hid
 [WebUSB Platform Capability descriptor]: https://wicg.github.io/webusb/#webusb-platform-capability-descriptor

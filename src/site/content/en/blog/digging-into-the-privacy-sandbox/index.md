@@ -33,7 +33,7 @@ Websites use services from other companies to provide analytics, serve video and
 
 However, when you visit a website you may not be aware of the third parties involved and what they're doing with your data. Even publishers and web developers may not understand the entire third-party supply chain.
 
-Ad selection, conversion measurement, and other use cases currently rely on establishing stable cross-site user identity. Historically this has been done with [third-party cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies), but browsers have begun to restrict access to these cookies. There has also been an [increase in the use of other mechanisms](https://github.com/bslassey/privacy-budget/issues/6) for cross-site user tracking, such as covert browser storage, device fingerprinting, and requests for personal information such as email addresses.
+Ad selection, conversion measurement, and other use cases currently rely on establishing stable cross-site user identity. Historically this has been done with [third-party cookies](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Third-party_cookies), but browsers have begun to restrict access to these cookies. There has also been an [increase in the use of other mechanisms](https://github.com/bslassey/privacy-budget/issues/6) for cross-site user tracking, such as covert browser storage, device fingerprinting, and requests for personal information such as email addresses.
 
 This is a dilemma for the web. How can legitimate third-party use cases be supported without enabling users to be tracked across sites?
 

@@ -11,7 +11,7 @@ description: |
 tags:
   - blog
   - performance
-  - frameworks
+  # - frameworks
 ---
 
 Chrome is [collaborating](/advancing-framework-ecosystem-cds-2019/) with tooling and
@@ -133,7 +133,7 @@ property.
 
 In an average of three runs of multiple trials on a single web page, the
 [`load`](https://developer.mozilla.org/docs/Web/API/Window/load_event),
-[start-render](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Quick%20Start%20Guide.md#start-render)
+[start-render](https://github.com/WPO-Foundation/webpagetest-docs/blob/main/src/getting-started.md#start-render)
 and [First Contentful Paint](/fcp) times all remained about the same when varying the max initial
 request count (from 5 to 15). Interestingly enough, we noticed a slight performance overhead only
 after splitting aggressively to hundreds of requests.

@@ -31,8 +31,13 @@ class UrlChooser extends BaseElement {
 
   render() {
     return html`
-      <div class="lh-report-header-enterurl">
-        <div class="lh-enterurl lh-enterurl--selected">${this.url}</div>
+      <div
+        class="lh-report-header-enterurl ${this.disabled ? 'lh-running' : ''}"
+      >
+        <div class="lh-enterurl lh-enterurl--selected">
+          <div class="lh-enterurl__url">${this.url}</div>
+          <web-progress-bar></web-progress-bar>
+        </div>
         <div class="lh-enterurl lh-enterurl--switch">
           <input
             ?disabled=${this.disabled}
@@ -40,7 +45,7 @@ class UrlChooser extends BaseElement {
             class="lh-input"
             name="url"
             placeholder="Enter a web page URL"
-            pattern="https?://.*"
+            pattern="https?://.+"
             minlength="7"
             @keyup="${this.onUrlKeyup}"
           />
@@ -52,7 +57,14 @@ class UrlChooser extends BaseElement {
             data-action="click"
             aria-label="Remove URL"
             @click=${this.onClearInput}
-          ></button>
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"
+              />
+            </svg>
+          </button>
         </div>
         <div class="lh-controls">
           <button
@@ -68,6 +80,7 @@ class UrlChooser extends BaseElement {
           <button
             ?disabled=${this.disabled}
             class="w-button w-button--primary gc-analytics-event"
+            data-type="primary"
             data-category="web.dev"
             data-label="measure, run audit"
             data-action="click"
@@ -125,9 +138,8 @@ class UrlChooser extends BaseElement {
     // Even if the user isn't switching URLs, fix and verify the saved URL which is inserted into
     // the <input /> inside this element.
     this.fixUpUrl();
-    if (!this._urlInput.validity.valid) {
-      const detail =
-        'Invalid URL. Please enter a full URL starting with https://.';
+    if (!this._urlInput.value || !this._urlInput.validity.valid) {
+      const detail = 'Invalid URL.';
       const event = new CustomEvent('web-error', {bubbles: true, detail});
       this.dispatchEvent(event);
       return;
@@ -160,6 +172,9 @@ class UrlChooser extends BaseElement {
    */
   fixUpUrl() {
     let url = this._urlInput.value.trim();
+    if (!url) {
+      return;
+    }
     if (!url.startsWith('https://') && !url.startsWith('http://')) {
       url = `http://${url}`;
     }

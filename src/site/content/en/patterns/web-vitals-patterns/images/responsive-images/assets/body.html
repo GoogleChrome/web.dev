@@ -1,0 +1,16 @@
+<!-- Using density descriptors -->
+<img width="480" height="330"
+    srcset="cat-1x.jpg, cat-2x.jpg 2x, cat-3x.jpg 3x"
+    src="cat-1x.jpg"
+    alt="Photo of a cat on a green background">
+<!-- Using width descriptors -->    
+<img width="256" height="128"
+    srcset="dog-256w.jpg 256w, dog-512w.jpg 512w, dog-1028w.jpg 1028w"
+    src="dog-256w.jpg"
+    alt="Photo of a dog on a orange background">
+<!-- Picture tag -->
+<picture>
+    <source media="(max-width: 720px)" width="600" height="300" srcset="newyork-rectangle.jpg" />
+    <source media="(min-width: 721px)" width="600" height="600" srcset="newyork-square-1x.jpg, newyork-square-2x.jpg 2x, newyork-square-3x.jpg 3x" />
+    <img src="newyork-rectangle.jpg" width="600" height="300" alt="Photo of the Empire State Building">
+</picture>

@@ -14,7 +14,7 @@ description: |
   Portals to improve user experience across your site.
 tags:
   - blog
-  - portals
+  # - portals
   - ux
 feedback:
   - api

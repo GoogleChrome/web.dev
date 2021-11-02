@@ -52,10 +52,10 @@ and value of these two functional pseudo selectors.
 
 The `:is` and `:where` pseudo-classes are supported in Chromium (>=88), Firefox
 (>= 78) and Safari (>=14). See MDN's [browser
-compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/:where#Browser_compatibility)
+compatibility](https://developer.mozilla.org/docs/Web/CSS/:where#Browser_compatibility)
 table for more information. Some older browser versions support the `:is()`
 selector as `:matches()` or `-webkit-any()`. For more information see the
-[`:is()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:is) page on MDN.
+[`:is()`](https://developer.mozilla.org/docs/Web/CSS/:is) page on MDN.
 
 ## Meet `:is()` and `:where()`
 
@@ -133,7 +133,7 @@ Normally, when using a `,` to create a list of selectors,
 if any of the selectors are invalid, all of the selectors are invalidated and
 the list will fail to match elements. That is to say they are not forgiving of
 errors. `:is()` and `:where()` though [are
-forgiving](https://developer.mozilla.org/en-US/docs/Web/CSS/:is#forgiving_selector_parsing),
+forgiving](https://developer.mozilla.org/docs/Web/CSS/:is#forgiving_selector_parsing),
 and can [get you out of a
 bind](https://css-tricks.com/almanac/selectors/i/is/#forgiving-selector-lists)!
 {% endAside %}

@@ -1,18 +1,60 @@
 title:
   en: Web Payments
+  es: Web Payments
+  ja: Web Payments
+  ko: 웹 결제
+  pt: Web Payments
+  ru: Веб-платежи
+  zh: Web 付款
 
 description:
   en: Build the next generation of payments on the web.
+  es: Crea la próxima generación de pagos en la web.
+  ja: Web の世界における次世代の支払い方法を構築しましょう。
+  ko: 웹에서 차세대 결제를 구축하세요.
+  pt: Crie a próxima geração de pagamentos na web.
+  ru: Создавайте сайты с поддержкой оплаты нового поколения.
+  zh: 构建下一代网络付款。
 
 overview:
   en: Web Payments aims to provide frictionless payment experience on the web. Learn how it works, its benefits, and get ready to integrate your payment app with Web Payments.
+  es: El objetivo de Web Payments es ofrecer una experiencia de pago sin complicaciones en la web. Aprenda cómo funciona, sus ventajas y prepárese para integrar su aplicación de pago con Web Payments.
+  ja: Web Payments は、Web 上でスムーズな支払いエクスペリエンスを提供することを目的としています。Web Payments の仕組みやメリットを理解し、あなたの決済アプリを Web Payments と統合する準備を始めましょう。
+  ko: 웹 결제는 웹에서 마찰 없는 결제 경험을 제공하는 데 목적을 둡니다. 웹 결제의 작동 방식과 이점에 대해 알아보고 웹 결제와의 결제 앱 통합을 준비하세요.
+  pt: O Web Payments tem como objetivo fornecer uma experiência de pagamento descomplicada na web. Saiba como funciona, seus benefícios e prepare-se para integrar seu aplicativo de pagamento ao Web Payments.
+  ru: Веб-платежи призваны обеспечить удобную оплату в Интернете. Узнайте, как они работают, каковы их преимущества, и подготовьтесь к интеграции веб-платежей в ваше платежное приложение.
+  zh: Web 付款旨在提供流畅的的网络付款体验。了解 Web 付款的运作方式及益处，并准备好将您的付款应用与 Web 付款整合。
 
 topics:
+  basics:
+    en: Basics
+
+  web_payments:
+    en: Web Payments
+
   integrate_web_payments_into_your_payment_app:
     en: Integrate Web Payments into your payment app
+    es: Integra Web Payments a su aplicación de pago
+    ja: Web Payments をあなたの支払いアプリに統合する
+    ko: 웹 결제를 결제 앱에 통합
+    pt: Integre o Web Payments a seu aplicativo de pagamento
+    ru: Интеграция веб-платежей в платежное приложение
+    zh: 将 Web 付款集成到您的付款应用中
 
   build_an_android_payment_app:
     en: Build an Android payment app
+    es: Crea una aplicación de pago para Android
+    ja: Android で支払いアプリを構築する
+    ko: Android 결제 앱 빌드
+    pt: Crie um aplicativo de pagamento Android
+    ru: Создание платежного приложения для Android
+    zh: 构建一个 Android 付款应用
 
   build_a_web_based_payment_app:
     en: Build a web-based payment app
+    es: Crea una aplicación de pago basada en la web
+    ja: Web ベースの支払いアプリを構築する
+    ko: 웹 기반 결제 앱 구축
+    pt: Crie uma aplicação de pagamento baseada na web
+    ru: Создание платежного веб-приложения
+    zh: 构建一个 Web 付款应用
