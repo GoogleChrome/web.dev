@@ -300,7 +300,7 @@ Declarative animations, or user-input-driven animations, are clearer to define
 than JavaScript-driven animations implemented as periodic updates to animatable
 style properties.
 
-Even with `requestAnimationFrame()`, which is designed for animations, you
+Even with `requestAnimationFrame()` you
 cannot always assume that every rAF call is necessarily producing a visual
 update or animation. For example, using rAF polling just to track frame rate
 (as shown above) should not itself affect smoothness measurements since there is
