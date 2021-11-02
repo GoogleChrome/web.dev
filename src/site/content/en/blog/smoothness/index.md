@@ -4,6 +4,8 @@ subhead: Learn about measuring animations, how to think about animation frames, 
 description: Learn about measuring animations, how to think about animation frames, and overall page smoothness.
 authors:
   - mmocny
+  - behdadb
+  - jonross
 date: 2021-11-03
 hero: image/eqprBhZUGfb8WYnumQ9ljAxRrA72/Q32j8dRRdKSaxYaAYiNP.jpeg
 alt: A silky smooth surface
