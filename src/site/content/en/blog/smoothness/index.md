@@ -76,9 +76,8 @@ the greater are the costs and it's less likely to be smooth. (See [Rendering
 performance](https://developers.google.com/web/fundamentals/performance/rendering)
 for more details.)
 
-So, while it can sometimes be convenient to animate layout properties, there are
-costs to doing so—even if not immediately apparent. Animations should, wherever
-possible, be defined in terms of composite property changes.
+While it can be convenient to animate layout properties, there are
+costs to doing so, even if those costs aren't immediately apparent. Animations should be defined in terms of composite property changes wherever possible.
 
 Defining [declarative CSS animations or using Web
 Animations](https://developers.google.com/web/fundamentals/design-and-ux/animations/css-vs-javascript),
