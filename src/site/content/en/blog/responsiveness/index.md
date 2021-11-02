@@ -142,19 +142,19 @@ using on the following thresholds for each event type:
   <table>
     <tr>
       <th>Interaction type</th>
-      <th style="text-align: right">Budget threshold</th>
+      <th>Budget threshold</th>
     </tr>
     <tr>
       <td>Click/tap</td>
-      <td style="text-align: right">100 ms</td>
+      <td>100 ms</td>
     </tr>
     <tr>
       <td>Drag</td>
-      <td style="text-align: right">100 ms</td>
+      <td>100 ms</td>
     </tr>
     <tr>
       <td>Keyboard</td>
-      <td style="text-align: right">50 ms</td>
+      <td>50 ms</td>
     </tr>
   </table>
 </div>
@@ -280,6 +280,8 @@ new PerformanceObserver((entries) => {
       });
     }
   }
+// Set the `durationThreshold` to 50 to capture keyboard interactions
+// that are over-budget (the default `durationThreshold` is 100).
 }).observe({type: 'event', buffered: true, durationThreshold: 50});
 ```
 
