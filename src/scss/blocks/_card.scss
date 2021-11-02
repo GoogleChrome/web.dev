@@ -52,12 +52,10 @@
 
 .card__avatars {
   --gutter: 0.5rem;
+  --flow-space: 0.5rem;
+  --avatar-size: 2rem;
 
-  img {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-  }
+  font-size: get-size('size-0');
 }
 
 .card__authors {
@@ -115,7 +113,7 @@
   width: 100%;
   aspect-ratio: 5/3;
   object-fit: cover;
-  border-radius: $global-radius-large;
+  border-radius: $global-radius-base;
 }
 
 .card__tags {
