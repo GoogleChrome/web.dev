@@ -106,8 +106,7 @@ pageScripts:
       {% for patternSetId, patternSet in patterns.sets %}
         {% if patternSet.suite == patternSuite.id %}
           <h2 class="w-headline--two">{{ patternSet.title }}</h2>
-          {# This will not render any shortcodes within the patternset content! #}
-          {{ patternSet.content | safe }}
+          {{ patternSet.rawContent | siteRender | safe }}
           {% for patternId, pattern in patterns.patterns %}
             {% if pattern.set == patternSetId %}
               {{ codePattern(pattern) }}
