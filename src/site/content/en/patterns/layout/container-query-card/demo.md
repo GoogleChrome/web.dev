@@ -1,6 +1,5 @@
 ---
 patternId: layout/container-query-card
-draft: true
 layout: demo
 ---
 

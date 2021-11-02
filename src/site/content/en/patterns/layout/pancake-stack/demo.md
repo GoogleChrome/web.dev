@@ -1,6 +1,5 @@
 ---
 patternId: layout/pancake-stack
-draft: true
 layout: demo
 ---
 

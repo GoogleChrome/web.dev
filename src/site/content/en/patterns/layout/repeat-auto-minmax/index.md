@@ -2,8 +2,7 @@
 layout: pattern
 title: RAM (Repeat, Auto, Minmax)
 description: A responsive layout with automatically-placed and flexible children.
-date: 2021-10-20
-draft: true
+date: 2021-11-03
 ---
 
 <figure class='w-figure'>
@@ -23,9 +22,9 @@ All together, it looks like:
 }
 ```
 
-You are using repeat again, but this time, using the `auto-fit` keyword instead of an explicit numeric value. This enables auto-placement of these child elements. These children also have a base minimum value of `150px` with a maximum value `1fr`, meaning on smaller screens, they will take up the full `1fr` width, and as they reach `150px` wide each, they will start to flow onto the same line.
+You are using `repeat()` again, but this time, using the `auto-fit` keyword instead of an explicit numeric value. This enables auto-placement of these child elements. These children have a base minimum value of `150px` with a maximum value `1fr`, meaning on smaller screens, they will take up the full `1fr` width, and as they reach `150px` wide each, they will start to flow onto the same line.
 
-With `auto-fit`, the boxes will stretch as their horizontal size exceeds 150px to fill the entire remaining space. However, if you change this to `auto-fill`, they will not stretch when their base size in the minmax function is exceeded:
+With `auto-fit`, any completely empty tracks will collapse to `0` and the filled tracks will grow to take up their space. However, if you change this to `auto-fill`, empty tracks will take up the same amount of space they would do if filled:
 
 <figure class='w-figure'>
   <video controls autoplay loop muted playsinline class='w-screenshot'>
