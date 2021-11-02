@@ -449,8 +449,8 @@ The mental model should move from:
 2. Detecting missing and important animation updates, to
 3. *Percentage Dropped* over a given time period.
 
-Put another way, what matters is: the proportion of time waiting for important
-updates. We think this matches the natural way users experience the smoothness
+What matters is: _the proportion of time waiting for important
+updates_. We think this matches the natural way users experience the smoothness
 of web content in practice. So far, we have been using the following as an
 initial set of metrics:
 
