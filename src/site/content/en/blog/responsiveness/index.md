@@ -60,8 +60,9 @@ between these two events. To measure the latency of the key press interaction,
 we could use `max(keydown duration, keyup duration)` or `sum(keydown duration,
 keyup duration) - duration overlap`:
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/F55OBEhX6VvNEApTjldU.svg",
-alt="ALT_TEXT_HERE", width="800", height="424" %}
+{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/F55OBEhX6VvNEApTjldU.svg", alt="A
+diagram showing interaction latency based on event durations", width="800",
+height="424" %}
 
 There are pros and cons of each approach, and we'd like to collect more data and
 [feedback](#feedback) before finalizing a latency definition.
