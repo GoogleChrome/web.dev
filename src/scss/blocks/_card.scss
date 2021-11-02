@@ -15,7 +15,9 @@
 .card__content {
   flex: auto;
 
-  @include apply-utility('gap-top', 'size-1');
+  &:not(:first-child) {
+    @include apply-utility('gap-top', 'size-1');
+  }
 
   a:not([class]) {
     color: currentColor;
@@ -52,12 +54,10 @@
 
 .card__avatars {
   --gutter: 0.5rem;
+  --flow-space: 0.5rem;
+  --avatar-size: 2rem;
 
-  img {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-  }
+  font-size: get-size('size-0');
 }
 
 .card__authors {
@@ -65,12 +65,6 @@
 
   padding: 0;
   flex: auto;
-
-  // All hover styles are reset on .card:hover,
-  // but we want these to behave independently
-  a:hover {
-    text-decoration: underline;
-  }
 }
 
 .card__meta {
@@ -114,8 +108,8 @@
 .card__hero {
   width: 100%;
   aspect-ratio: 5/3;
-  object-fit: contain;
-  border-radius: $global-radius-large;
+  object-fit: cover;
+  border-radius: $global-radius-base;
 }
 
 .card__tags {

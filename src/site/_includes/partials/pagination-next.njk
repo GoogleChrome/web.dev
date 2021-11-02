@@ -1,0 +1,15 @@
+<nav class="pagination" aria-label="pagination">
+  <div class="pagination__container">
+    {% if paged.index + 1 > 1 %}
+      <a class="button" href="{{ paged.href }}{{ paged.index }}">Previous</a>
+    {% endif %}
+  </div>
+  <div class="pagination__status" role="presentation" aria-hidden="true">
+    Page {{ paged.index + 1 }} of {{ paged.pages }} 
+  </div>
+  <div class="pagination__container">
+    {% if (paged.index + 2) < (paged.pages) %}
+      <a class="button" href="{{ paged.href }}{{ paged.index + 2 }}">Next</a>
+    {% endif %}
+  </div>
+</nav>
