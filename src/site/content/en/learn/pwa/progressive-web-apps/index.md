@@ -69,7 +69,7 @@ whereas web apps represent the best of reach.
 Progressive Web Apps sit at the intersection of the capabilities of platform apps and the reach of web apps.
 A Progressive Web App includes features from both worlds.
 
-<div class="w-columns">
+<div class="switcher">
 <div>
 
 ### Web
@@ -200,16 +200,24 @@ Always plan your PWA to work without capabilities offering fallback solutions an
 
 On top of the classic web platform support, let's check the support for basic app functionality, such as icon installation and offline abilities.
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">97<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Offline-ready browsers</p>
+<ul class="stats auto-grid bg-state-good-bg color-state-good-text">
+  <div class="stats__item flow">
+    <p class="font-brand text-size-6">
+      97
+      <sub>%</sub>
+    </p>
+    <p>Offline-ready browsers</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">88<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Web users can install a PWA</p>
+  <div class="stats__item flow">
+    <p class="font-brand text-size-6">
+      88
+      <sub>%</sub>
+    </p>
+    <p>Web users can install a PWA</p>
   </div>
-</div>
+</ul>
+
+_Data sourced from StatCounter and Can I Use._
 
 ### Desktop and laptops
 
