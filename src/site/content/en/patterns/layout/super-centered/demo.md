@@ -1,6 +1,5 @@
 ---
 patternId: layout/super-centered
-draft: true
 layout: demo
 ---
 

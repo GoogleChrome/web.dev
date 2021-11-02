@@ -1,14 +1,13 @@
 ---
 layout: pattern
-title: Container Query Card ⚠️
-description: Card that intrinsicly owns its independent style logic and is styled based on its parent's inline width.
-date: 2021-10-20
-draft: true
+title: Container query card ⚠️
+description: Card that owns its independent style logic and is styled based on its parent's inline width.
+date: 2021-11-03
 height: 500
 ---
 
 {% Aside 'warning' %}
-This demo uses an experimental web technology that is not currently supported in all browsers. To try it out, open Chrome Canary and enable the #enable-container-queries flag.
+This demo uses an experimental web technology that is not currently supported in all browsers. To try it out, open Chrome Canary and enable the `#enable-container-queries` flag.
 {% endAside %}
 
 This demo uses [container queries](https://developer.mozilla.org/docs/Web/CSS/CSS_Container_Queries) to create an intrinsic, responsive card. The card goes from a single-column layout at more narrow sizes to a two-column layout when it is at wider sizes.

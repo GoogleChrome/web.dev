@@ -2,7 +2,7 @@
 title: Learn PWA
 authors:
   - firt
-description: TODO
+description: A course that breaks down every aspect of modern progressive web app development.
 date: 2021-11-03
 ---
 

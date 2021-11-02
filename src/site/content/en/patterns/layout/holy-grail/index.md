@@ -1,9 +1,8 @@
 ---
 layout: pattern
-title: Holy Grail Layout
+title: Holy grail layout
 description: Classic layout with a header, footer, and two sidebars flanking a main content area.
-date: 2021-10-20
-draft: true
+date: 2021-11-03
 ---
 
 <figure class='w-figure'>
@@ -16,7 +15,7 @@ For this classic holy grail layout, there is a header, footer, left sidebar, rig
 
 To write this entire grid using a single line of code, use the `grid-template` property. This enables you to set both the rows and columns at the same time.
 
-The property and value pair is: `grid-template: auto 1fr auto / auto 1fr auto`. The slash in between the first and second space-separated lists is the break between rows and columns.
+The property and value pair is: `grid-template: auto 1fr auto / auto 1fr auto`. The slash between the first and second space-separated lists is the break between rows and columns.
 
 ```css/2
 .parent {

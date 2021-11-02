@@ -1,9 +1,8 @@
 ---
 layout: pattern
-title: Pancake Stack
+title: Pancake stack
 description: Commonly referred to as a sticky footer, this layout is often used for both websites and apps.
-date: 2021-10-20
-draft: true
+date: 2021-11-03
 ---
 
 <figure class='w-figure'>
@@ -12,7 +11,7 @@ draft: true
   </video>
 </figure>
 
-Unlike the Deconstructed Pancake, this example does not wrap its children when the screen size changes. Commonly referred to as a [sticky footer](https://developer.mozilla.org/docs/Web/CSS/Layout_cookbook/Sticky_footers), this layout is often used for both websites and apps, across mobile applications (the footer is commonly a toolbar), and websites (single page applications often use this global layout).
+Unlike the [deconstructed pancake](/patterns/layout/deconstructed-pancake), this example does not wrap its children when the screen size changes. Commonly referred to as a [sticky footer](https://developer.mozilla.org/docs/Web/CSS/Layout_cookbook/Sticky_footers), this layout is used for both websites and apps, across mobile applications (the footer is commonly a toolbar), and websites—in particular single page applications.
 
 Adding `display: grid` to the component will give you a single column grid, however the main area will only be as tall as the content with the footer below it.
 
@@ -25,4 +24,4 @@ To make the footer stick to the bottom,  add:
 }
 ```
 
-This sets the header and footer content to automatically take the size of its children, and applies the remaining space (`1fr`) to the main area, while the `auto` sized row will take the size of the minimum content of its children, so as that content increases in size, the row itself will grow to adjust.
+This sets the header and footer content to automatically take the size of their children, and applies the remaining space (`1fr`) to the main area, while the `auto` sized row will take the size of the minimum content of its children, so as that content increases in size, the row itself will grow to adjust.
