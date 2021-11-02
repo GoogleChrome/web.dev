@@ -4,7 +4,7 @@ subhead: How to integrate with hardware media keys, customize media notification
 authors:
   - beaufortfrancois
 date: 2020-03-06
-updated: 2021-09-28
+updated: 2021-11-02
 hero: image/admin/IhujMvzGa5Mf0aNWYRXW.jpg
 thumbnail: image/admin/Q6CqQNLucogBCxGMsSU2.jpg
 description: |
@@ -18,6 +18,8 @@ tags:
 feedback:
   - api
 ---
+
+{% YouTube 'Ft6diPReUAU' %}
 
 To let users know what's currently playing in their browser and control it
 without returning to the page that launched it, the Media Session API has been
