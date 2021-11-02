@@ -132,8 +132,8 @@ Or using separate stylesheets:
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'QWgxXdP',
+ user: 'web-dot-dev',
+ id: 'qBXVowV',
  height: 500,
  theme: 'dark',
  tab: 'result'
@@ -184,8 +184,8 @@ Use the word `and` to combine your media queries:
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'Pojxrep',
+ user: 'web-dot-dev',
+ id: 'GRvOxaw',
  height: 500,
  theme: 'dark',
  tab: 'result'
@@ -212,8 +212,8 @@ Using the `column-count` property, the text is divided into two columns from tha
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'dyRwZxG',
+ user: 'web-dot-dev',
+ id: 'oNeodgd',
  height: 500,
  theme: 'dark',
  tab: 'result'
@@ -240,8 +240,8 @@ Those breakpoints were chosen based on the amount of content.
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'mdwaprw',
+ user: 'web-dot-dev',
+ id: 'JjyOvdM',
  height: 1000,
  theme: 'dark',
  tab: 'result'

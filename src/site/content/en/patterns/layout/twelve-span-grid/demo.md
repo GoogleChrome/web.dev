@@ -1,6 +1,5 @@
 ---
 patternId: layout/twelve-span-grid
-draft: true
 layout: demo
 ---
 

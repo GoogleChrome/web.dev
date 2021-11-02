@@ -1,6 +1,5 @@
 ---
 patternId: layout/line-up
-draft: true
 layout: demo
 ---
 

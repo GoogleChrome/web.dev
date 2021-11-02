@@ -1,6 +1,5 @@
 ---
 patternId: layout/repeat-auto-minmax
-draft: true
 layout: demo
 ---
 

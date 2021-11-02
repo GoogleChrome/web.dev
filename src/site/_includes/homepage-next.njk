@@ -108,26 +108,34 @@ CSS_ORIGIN: 'next'
         </div>
       </div>
       <div class="homepage__case-studies switcher gap-top-size-2">
-      {% for item in collections['case-study'] %}
-        {# For some reason, splice() was messing up the data... #}
-        {% if loop.index <= 2 %}
-        <article class="card">
-          {% Img src=item.data.hero, alt=item.data.alt, width="570", height="330", class="card__hero" %}
-          <div class="card__content flow">
-            <h3 class="card__heading text-size-3">
-              <a href="{{ item.url }}">{{ item.data.title }}</a>
-            </h3>
-            <p>{{ item.data.description }}</p>
-          </div>
-          <div class="card__tags cluster gap-top-size-1" aria-label="tags for this case study">
-            {% for tagKey in item.data.tags or [] %}
-              {% if tagKey in collections.tags %}
-                {% set tag = collections.tags[tagKey] %}
-                <a class="pill" href="{{ tag.url }}">{{ tag.overrideTitle or tag.title | i18n(locale) }}</a>
-              {% endif %}
-            {% endfor %}
-          </div>
-        </article>
+      {% set cardCount = 0 %}
+      {% for item in collections['case-study'] | reverse %}
+        {% if cardCount <= 1 %}
+          {% if item.data.hero %}
+            {% if not item.data.alt %}
+              {% set alt = '' %}
+            {% else %}
+              {% set alt = item.data.alt %}
+            {% endif %}
+            <article class="card">
+              {% Img src=item.data.hero, alt=item.data.alt, width="570", height="330", class="card__hero" %}
+              <div class="card__content flow">
+                <h3 class="card__heading text-size-3">
+                  <a href="{{ item.url }}">{{ item.data.title }}</a>
+                </h3>
+                <p>{{ item.data.description }}</p>
+              </div>
+              <div class="card__tags cluster gap-top-size-1" aria-label="tags for this case study">
+                {% for tagKey in item.data.tags or [] %}
+                  {% if tagKey in collections.tags %}
+                    {% set tag = collections.tags[tagKey] %}
+                    <a class="pill" href="{{ tag.url }}">{{ tag.overrideTitle or tag.title | i18n(locale) }}</a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </article>
+            {% set cardCount = cardCount + 1 %}
+          {% endif %}
         {% endif %}
       {% endfor %}
       </div>

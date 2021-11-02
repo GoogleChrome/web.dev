@@ -1,6 +1,5 @@
 ---
 patternId: layout/deconstructed-pancake
-draft: true
 layout: demo
 ---
 

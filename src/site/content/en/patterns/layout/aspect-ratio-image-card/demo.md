@@ -1,6 +1,5 @@
 ---
 patternId: layout/aspect-ratio-image-card
-draft: true
 layout: demo
 ---
 

@@ -52,8 +52,8 @@ h1::after {
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'WNOLWvz',
+ user: 'web-dot-dev',
+ id: 'rNzYvxm',
  height: 200,
  theme: 'dark',
  tab: 'result'
@@ -93,8 +93,8 @@ But the image never gets larger than 200 pixels.
 ```
 
 {% Codepen {
- user: 'adactio',
- id: 'rNwXepq',
+ user: 'web-dot-dev',
+ id: 'qBXVYZo',
  height: 300,
  theme: 'dark',
  tab: 'result'
@@ -224,8 +224,8 @@ This demo won't work in every browser. In Google Chrome you can find the `#enabl
 {% endAside %}
 
 {% Codepen {
- user: 'adactio',
- id: 'bGRXqBX',
+ user: 'web-dot-dev',
+ id: 'RwZjyRv',
  height: 500,
  theme: 'dark',
  tab: 'result'
