@@ -196,7 +196,7 @@ But this is not the whole story! Consider the following example:
 **TODO(mmocny): add video link.**
 
 This video shows a page that periodically injects long tasks onto the main
-thread. These long tasks completely ruin the ability for the page to provide
+thread. These long tasks completely ruin the ability of the page to provide
 certain types of visual updates, and you can see a corresponding drop of
 `requestAnimationFrame()` reported FPS to 0.
 
