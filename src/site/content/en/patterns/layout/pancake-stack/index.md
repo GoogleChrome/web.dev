@@ -15,7 +15,7 @@ Unlike the [deconstructed pancake](/patterns/layout/deconstructed-pancake), this
 
 Adding `display: grid` to the component will give you a single column grid, however the main area will only be as tall as the content with the footer below it.
 
-To make the footer stick to the bottom,  add: 
+To make the footer stick to the bottom,  add:
 
 ```css/2
 .parent {

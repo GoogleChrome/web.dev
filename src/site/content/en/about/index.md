@@ -1,8 +1,5 @@
 ---
 layout: 'about-next'
-draft: true
-noindex: true
-permalink: '/about-new/index.html'
 title: 'About web.dev'
 intro:
   title: 'Building a better web, together'
