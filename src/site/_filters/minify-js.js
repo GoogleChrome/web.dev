@@ -31,7 +31,7 @@ function minifyJs(code, callback) {
 
   minify(code)
     .then((result) => {
-      callback(result.code);
+      callback(null, result.code);
     })
     .catch((err) => {
       console.error('Terser error: ', err);
