@@ -2,9 +2,11 @@
 layout: default-next
 title: Measure page quality
 description: |
-  Test your website in a lab environment powered by PageSpeed Insights.
-  Then, get tips and recommendations to improve your user experience.
-  For field performance, see the PageSpeed Insights tool.
+  Test your pages in a lab environment powered by PageSpeed Insights.
+  Then get tips and recommendations to improve your user experience.
+  For field performance, see the
+  [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+  tool.
 date: 2021-10-13
 pageScripts:
   - '/js/measure.js'
@@ -19,7 +21,7 @@ noindex: true
       {{ title }}
     </h1>
     {% if description %}
-      <p class="flow-space-base color-mid-text">{{ description }}</p>
+      <p class="flow-space-base color-mid-text">{{ description | md | safe }}</p>
     {% endif %}
   </header>
 </section>
@@ -67,10 +69,10 @@ noindex: true
   <section class="wrapper region measure-faq" class="bg-mid-bg" data-size="narrow">
     <details class="bg-mid-bg">
       <summary>
-        What is the data source powering the Measure tool?
+        What is the data source powering the web.dev/measure tool?
       </summary>
       <p>
-        Measure tool uses Lighthouse data from the PageSpeed Insights API.
+        web.dev/measure uses Lighthouse data from the PageSpeed Insights API.
         Learn more about PageSpeed Insights in the
         <a href="https://developers.google.com/speed/docs/insights/v5/about?hl=en-US&utm_source=PSI&utm_medium=incoming-link&utm_campaign=PSI#faq)">
         official FAQs</a>
@@ -78,7 +80,7 @@ noindex: true
     </details>
     <details class="bg-mid-bg">
       <summary>
-        How does Measure tool differ from PageSpeed Insights?
+        How does web.dev/measure tool tool differ from PageSpeed Insights?
       </summary>
       <p>
         Measure tool measures the overall quality of a web page in a
