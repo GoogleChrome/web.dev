@@ -103,23 +103,23 @@ that consists of four interactions:
   <table>
     <tr>
       <th>Interaction</th>
-      <th style="text-align: right">Latency</th>
+      <th>Latency</th>
     </tr>
     <tr>
       <td>Click</td>
-      <td style="text-align: right">120 ms</td>
+      <td>120 ms</td>
     </tr>
     <tr>
       <td>Click</td>
-      <td style="text-align: right">20 ms</td>
+      <td>20 ms</td>
     </tr>
     <tr>
       <td>Key press</td>
-      <td style="text-align: right">60 ms</td>
+      <td>60 ms</td>
     </tr>
     <tr>
       <td>Key press</td>
-      <td style="text-align: right">80 ms</td>
+      <td>80 ms</td>
     </tr>
   </table>
 </div>
