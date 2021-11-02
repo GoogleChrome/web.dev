@@ -50,6 +50,8 @@ class LighthouseViewer extends BaseStateElement {
     renderer.renderReport(lighthouseReport, container);
     const features = new ReportUIFeatures(dom);
     features.initFeatures(lighthouseReport);
+    // Force remove dark theme support untill whole of web.dev supports it.
+    this.varsEl.classList.remove('dark');
   };
 
   onStateChanged() {
@@ -63,6 +65,7 @@ class LighthouseViewer extends BaseStateElement {
 
   firstUpdated() {
     this.container = this.querySelector('.lighthouse-viewer');
+    this.varsEl = this.querySelector('.lh-vars');
   }
 }
 
