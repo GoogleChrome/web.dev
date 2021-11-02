@@ -161,7 +161,7 @@ requestAnimationFrame(pollFramesPerSecond);
 
 Using `requestAnimationFrame()` polling is not a good idea for several reasons:
 
-- Every interested party (or script) has to set up its own polling loop.
+- Every script has to set up its own polling loop.
 - It can block the critical path.
 - Even if the rAF polling function is _fast_, when used continuously it can
   prevent `requestIdleCallback()` from being able to schedule long idle blocks
