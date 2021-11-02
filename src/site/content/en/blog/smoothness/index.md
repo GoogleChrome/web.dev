@@ -261,8 +261,8 @@ visual updates, like animations, but that can only happen if animations are driv
 
 ### Missing paint updates
 
-Another type of partial update is when media like images are simply not done
-painting (decoding and rasterizing) in time for frame presentation.
+Another type of partial update is when media like images have not finished
+decoding and rasterizing in time for frame presentation.
 
 Or, even if a page is perfectly static, browsers may still fall behind rendering
 visual updates during rapid scrolling. That is because the pixel renditions of
