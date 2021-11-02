@@ -15,16 +15,15 @@ tags:
   - web-vitals
 ---
 
-You've probably experienced pages that "stutter" or "freeze"
-during scrolling or animations. We like to say that these experiences are not
-_smooth_. To address these types of issues, the Chrome team has
-been working on adding more support to our lab tooling for animation detection,
-as well making steady improvements to the rendering pipeline diagnostics within
-Chromium.
+You've probably experienced pages that "stutter" or "freeze" during scrolling or
+animations. We like to say that these experiences are not _smooth_. To address
+these types of issues, the Chrome team has been working on adding more support
+to our lab tooling for animation detection, as well making steady improvements
+to the rendering pipeline diagnostics within Chromium.
 
-We'd like to share some recent progress, offer concrete tooling guidance,
-and discuss ideas for future animation smoothness metrics. As always, we
-would love to hear your [feedback](#feedback).
+We'd like to share some recent progress, offer concrete tooling guidance, and
+discuss ideas for future animation smoothness metrics. As always, we would love
+to hear your [feedback](#feedback).
 
 This post will cover three main topics:
 
@@ -34,9 +33,9 @@ This post will cover three main topics:
 
 ## What are animations?
 
-Animations bring content to life! By making content move, especially in
-response to user interactions, animations can make an experience feel more
-natural, understandable, and fun.
+Animations bring content to life! By making content move, especially in response
+to user interactions, animations can make an experience feel more natural,
+understandable, and fun.
 
 But poorly implemented animations, or just adding too many animations, can
 degrade the experience and make it decidedly not fun at all. We've probably all
@@ -68,20 +67,22 @@ While there are many ways to define animations, they all fundamentally work via
 one of the following:
 
 - Adjusting <strong style="font-weight:700;color:#6251A2">layout</strong>
-   properties.
+  properties.
 - Adjusting <strong style="font-weight:700;color:#78A55A">paint</strong>
-   properties.
+  properties.
 - Adjusting <strong style="font-weight:700;color:#78A55A">composite</strong>
-   properties.
+  properties.
 
 Because these stages are sequential, it is important to define animations in
-terms of properties that are further down the pipeline. The earlier the update happens in the process,
-the greater are the costs and it's less likely to be smooth. (See [Rendering
+terms of properties that are further down the pipeline. The earlier the update
+happens in the process, the greater are the costs and it's less likely to be
+smooth. (See [Rendering
 performance](https://developers.google.com/web/fundamentals/performance/rendering)
 for more details.)
 
-While it can be convenient to animate layout properties, there are
-costs to doing so, even if those costs aren't immediately apparent. Animations should be defined in terms of composite property changes wherever possible.
+While it can be convenient to animate layout properties, there are costs to
+doing so, even if those costs aren't immediately apparent. Animations should be
+defined in terms of composite property changes wherever possible.
 
 Defining [declarative CSS animations or using Web
 Animations](https://developers.google.com/web/fundamentals/design-and-ux/animations/css-vs-javascript),
@@ -94,14 +95,14 @@ have performance limits. That's why it is always important to measure!
 ## What are animation frames?
 
 Updates to the visual representation of a page take time to appear. A visual
-change will lead to a new animation frame, which is eventually
-rendered on the user's display.
+change will lead to a new animation frame, which is eventually rendered on the
+user's display.
 
-Displays update on some interval, so visual updates are
-batched. Many displays update on a fixed interval of time, such as 60 times a
-second (that is 60&nbsp;Hz). Some more modern displays can offer higher refresh rates
-(90-120&nbsp;Hz are becoming common). Often these displays can actively adapt between
-refresh rates as needed, or even offer fully variable frame rates.
+Displays update on some interval, so visual updates are batched. Many displays
+update on a fixed interval of time, such as 60 times a second (that is
+60&nbsp;Hz). Some more modern displays can offer higher refresh rates
+(90-120&nbsp;Hz are becoming common). Often these displays can actively adapt
+between refresh rates as needed, or even offer fully variable frame rates.
 
 The goal for any application, like a game or a browser, is to process all these
 batched visual updates and produce a visually complete animation frame within
@@ -135,22 +136,26 @@ Some examples:
   requiring too much GPU memory.
 - Defining overly complex CSS styles or web animations.
 - Using design anti-patterns that disable fast rendering optimizations.
-- Too much JS work on the main thread, leading to long tasks that block visual updates.
+- Too much JS work on the main thread, leading to long tasks that block visual
+  updates.
 
 But how can you know when an animation frame has missed its deadline and caused
 a dropped frame?
 
 One possible method is using
 [`requestAnimationFrame()`](https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame)
-polling, however it has several downsides. `requestAnimationFrame()`, or "rAF", tells the browser that you wish to
-perform an animation and asks for an opportunity to do so before the next paint
-stage of the rendering pipeline. If your callback function isn't called at the
-time you expect it, that means a paint wasn't executed, and one or more frames
-were skipped. By polling and counting how often rAF is called, you can compute a
-sort of "frames per second" (FPS) metric.
+polling, however it has several downsides. `requestAnimationFrame()`, or "rAF",
+tells the browser that you wish to perform an animation and asks for an
+opportunity to do so before the next paint stage of the rendering pipeline. If
+your callback function isn't called at the time you expect it, that means a
+paint wasn't executed, and one or more frames were skipped. By polling and
+counting how often rAF is called, you can compute a sort of "frames per second"
+(FPS) metric.
+
 {% Aside 'warning' %}
- The following code is an anti-pattern and is strongly discouraged!
+  The following code is an anti-pattern and is strongly discouraged!
 {% endAside %}
+
 ```js
 let frameTimes = [];
 function pollFramesPerSecond(now) {
@@ -161,26 +166,25 @@ function pollFramesPerSecond(now) {
 requestAnimationFrame(pollFramesPerSecond);
 ```
 
-
 Using `requestAnimationFrame()` polling is not a good idea for several reasons:
 
 - Every script has to set up its own polling loop.
 - It can block the critical path.
-- Even if the rAF polling is fast, it can
-  prevent `requestIdleCallback()` from being able to schedule long idle blocks when used continuously
-  (blocks that exceed a single frame).
+- Even if the rAF polling is fast, it can prevent `requestIdleCallback()` from
+  being able to schedule long idle blocks when used continuously (blocks that
+  exceed a single frame).
 - Similarly, lack of long idle-blocks prevents the browser from scheduling other
-  long running tasks (such as longer garbage collection and other background or speculative
-  work).
-- If polling is toggled on and off, then you'll miss cases where frame budget has
-  been exceeded.
+  long running tasks (such as longer garbage collection and other background or
+  speculative work).
+- If polling is toggled on and off, then you'll miss cases where frame budget
+  has been exceeded.
 - Polling will report false-positives in cases where the browser is using
   variable update frequency (for example, due to power or visibility status).
 - And most importantly, it doesn't actually capture all types of animation
   updates!
 
-Too much work on the main thread can impact the ability to see
-animation frames. Check out the [Jank
+Too much work on the main thread can impact the ability to see animation frames.
+Check out the [Jank
 Sample](https://googlechrome.github.io/devtools-samples/jank/) to see how a rAF
 driven animation, once there is too much work on the main thread (such as
 layout), will lead to dropped frames and fewer rAF callbacks, and lower FPS.
@@ -213,10 +217,9 @@ driven entirely by the compositor.
 
 This is an example that simultaneously contains many dropped frames on the main
 thread, yet still has many successfully-delivered frames of scrolling on the
-compositor thread. Once the long task
-is complete, the main thread paint update has no visual change to offer anyway. rAF polling
-suggested a frame drop to 0, but _visually_, a user wouldn't be able to notice a
-difference!
+compositor thread. Once the long task is complete, the main thread paint update
+has no visual change to offer anyway. rAF polling suggested a frame drop to 0,
+but _visually_, a user wouldn't be able to notice a difference!
 
 For animation frames, the story is not that simple.
 
@@ -244,21 +247,21 @@ some criteria we're thinking about and would love to get feedback on:
 
 ### Main and compositor thread updates
 
-Animation frame updates are not boolean. It is not the case that
-frames may only be fully dropped or fully presented. There are many reasons why
-an animation frame may be _partially_ _presented_. In other words, it can
-simultaneously have _some stale content_ while also having _some new visual
-updates_ which are presented.
+Animation frame updates are not boolean. It is not the case that frames may only
+be fully dropped or fully presented. There are many reasons why an animation
+frame may be _partially_ _presented_. In other words, it can simultaneously have
+_some stale content_ while also having _some new visual updates_ which are
+presented.
 
-The most common example of this is when the browser is unable to produce a new main
-thread update within frame deadline but does have a new compositor thread update
-(such as the threaded scrolling example from earlier).
+The most common example of this is when the browser is unable to produce a new
+main thread update within frame deadline but does have a new compositor thread
+update (such as the threaded scrolling example from earlier).
 
 One important reason why using declarative animations to animate composite
-properties is recommended is that doing so enables an animation to
-be driven entirely by the compositor thread even when the main thread is busy.
-These types of animations can continue to produce visual
-updates efficiently and in parallel.
+properties is recommended is that doing so enables an animation to be driven
+entirely by the compositor thread even when the main thread is busy. These types
+of animations can continue to produce visual updates efficiently and in
+parallel.
 
 On the other hand, there may be cases where a main thread update finally becomes
 available for presentation, but only after missing several frame deadlines. Here
@@ -267,7 +270,8 @@ the browser will have _some_ new update, but it may not be _the very latest_.
 Broadly speaking, we consider frames that contain some new visual updates,
 without all new visual updates, as a _partial frame_. Partial frames are fairly
 common. Ideally, partial updates would at least include the most important
-visual updates, like animations, but that can only happen if animations are driven by the compositor thread.
+visual updates, like animations, but that can only happen if animations are
+driven by the compositor thread.
 
 ### Missing paint updates
 
@@ -533,11 +537,13 @@ document.
 Through trace events you can definitively determine:
 
 - Which animations are running (using events named `TrackerValidation`).
-- Getting the exact timeline of animation frame (using events named `PipelineReporter`).
+- Getting the exact timeline of animation frame (using events named
+  `PipelineReporter`).
 - For janky animation updates, figure out exactly what is blocking your
   animation from running faster (using the event breakdowns within
   "PipelineReporter" events).
-- For input-driven animations, see how long it takes to get a visual update (using events named `EventLatency`).
+- For input-driven animations, see how long it takes to get a visual update
+  (using events named `EventLatency`).
 
 {% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/O0vDMhhaob9bllU0xRVy.png",
 alt="Chrome Tracing pipeline reporter", width="800", height="138" %}
