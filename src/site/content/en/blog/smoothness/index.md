@@ -138,14 +138,14 @@ Some examples:
 But how can you know when an animation frame has slipped its deadline and caused
 a dropped frame?
 
-You may be aware of one method:
+One possible method is using
 [`requestAnimationFrame()`](https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame)
-polling. `requestAnimationFrame()`, or "rAF", tells the browser that you wish to
+polling, however it has several downsides. `requestAnimationFrame()`, or "rAF", tells the browser that you wish to
 perform an animation and asks for an opportunity to do so before the next paint
 stage of the rendering pipeline. If your callback function isn't called at the
 time you expect it, that means a paint wasn't executed, and one or more frames
 were skipped. By polling and counting how often rAF is called, you can compute a
-sort of "frames per second" (fps) metric.
+sort of "frames per second" (FPS) metric.
 {% Aside 'warning' %}
  The following code is an anti-pattern and is strongly discouraged!
 {% endAside %}
