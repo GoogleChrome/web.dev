@@ -15,7 +15,7 @@ For this classic holy grail layout, there is a header, footer, left sidebar, rig
 
 To write this entire grid using a single line of code, use the `grid-template` property. This enables you to set both the rows and columns at the same time.
 
-The property and value pair is: `grid-template: auto 1fr auto / auto 1fr auto`. The slash in between the first and second space-separated lists is the break between rows and columns.
+The property and value pair is: `grid-template: auto 1fr auto / auto 1fr auto`. The slash between the first and second space-separated lists is the break between rows and columns.
 
 ```css/2
 .parent {
