@@ -69,7 +69,7 @@
     "nunjucks": "^3.2.3",
     "pretty-ms": "^7.0.0",
     "strip-comments": "^2.0.1",
-    "terser": "^5.7.1",
+    "terser": "^5.9.0",
     "unistore": "^3.4.1",
     "web-vitals": "^0.2.4",
     "webdev-infra": "^1.0.28",
