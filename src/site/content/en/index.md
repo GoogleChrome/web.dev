@@ -8,9 +8,9 @@ intro:
     Take advantage of the latest modern technologies to build amazing web experiences for everyone.
   buttonText: 'Learn more'
   buttonUrl: '/about/'
-  image: 'https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/B9KWrQo39fXbKSVYjz1e.svg'
-  imageWidth: '330'
-  imageHeight: '210'
+  image: 'https://web-dev.imgix.net/image/jxu1OdD7LKOGIDU7jURMpSH2lyK2/zrBPJq27O4Hs8haszVnK.svg'
+  imageWidth: '333'
+  imageHeight: '240'
 featureCard:
   theme: 'dark'
   title: 'Explore structured learning paths to learn new skills'
