@@ -134,7 +134,7 @@ Some examples:
 - Too much JS work on the main thread, leading to long tasks that block certain
   visual updates.
 
-But how can you know when an animation frame has slipped its deadline and caused
+But how can you know when an animation frame has missed its deadline and caused
 a dropped frame?
 
 One possible method is using
