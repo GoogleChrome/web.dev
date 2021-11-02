@@ -197,7 +197,7 @@ function renderAuthorsDate(
     };
   });
 
-  if (isDesignSystemContext(this.page.filePathStem)) {
+  if (isDesignSystemContext(this.page ? this.page.filePathStem : '')) {
     return html`
       <div class="card__avatars cluster color-mid-text">
         ${renderAuthorImages(images, pairs, true)}
