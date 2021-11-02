@@ -319,10 +319,10 @@ Finally, detecting animations and animation frame updates is still only part of
 the story because it only captures the quantity of animation updates, not the
 quality.
 
-For example, you may see a perfectly steady stream of 60&nbsp;fps while watching a
-video. Technically, this is perfectly smooth. But the video itself may have a
-low bit rate, or even issues with network buffering. This isn't captured by
-animation smoothness metrics directly, yet may still be quite jarring to the
+For example, you may see a steady framerate of of 60&nbsp;fps while watching a
+video. Technically, this is perfectly smooth, but the video itself may have a
+low bit rate, or issues with network buffering. This isn't captured by
+animation smoothness metrics directly, yet may still be jarring to the
 user.
 
 Or, a game which leverages `<canvas>` (perhaps even using techniques like
