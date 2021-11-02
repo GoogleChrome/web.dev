@@ -71,8 +71,8 @@ one of the following:
    properties.
 
 Because these stages are sequential, it is important to define animations in
-terms of properties further down this pipeline. The earlier the update, the
-greater the costs and the less likely it is to be smooth. (See [rendering
+terms of properties that are further down the pipeline. The earlier the update happens in the process,
+the greater are the costs and it's less likely to be smooth. (See [Rendering
 performance](https://developers.google.com/web/fundamentals/performance/rendering)
 for more details.)
 
