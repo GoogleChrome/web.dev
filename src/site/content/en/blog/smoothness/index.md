@@ -159,9 +159,6 @@ function pollFramesPerSecond(now) {
 requestAnimationFrame(pollFramesPerSecond);
 ```
 
-{% Aside 'warning' %}
-  The code above is an anti pattern and is strongly discouraged!
-{% endAside %}
 
 Using `requestAnimationFrame()` polling is not a good idea for several reasons:
 
