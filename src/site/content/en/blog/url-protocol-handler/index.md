@@ -6,7 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2021-05-11
-updated: 2021-10-29
+updated: 2021-11-02
 description: |
   After registering a PWA as a protocol handler, when a user clicks on a hyperlink with a specific
   scheme such as mailto, bitcoin, or web+music from a browser or a platform-specific app,
@@ -194,19 +194,14 @@ as the URL of an iframe.
 Just like with `registerProtocolHandler()` there is an allowlist of protocols that apps can register
 to handle.
 
-### Default protocol handlers
-
-Registration of PWA protocol handlers will not take over the default handler for a protocol.
-Instead, the next time the protocol is invoked, an operating system disambiguation dialog will
-prompt the user to either keep using the default handler or select the newly registered handler.
-
 ### Consent prompt
 
 On the first launch of the PWA due to an invoked protocol, the user will be presented with a
 permission dialog. This dialog will display the app name and origin of the app, and ask the user if
 the app is allowed to handle links from the protocol. If a user rejects the permission dialog, the
 registered protocol handler will be ignored by the operating system. To unregister the protocol
-handler, the user needs to uninstall the PWA that registered it.
+handler, the user needs to uninstall the PWA that registered it. The browser will also unregister
+the protocol handler if the user selects "Remember my choice" and selects "Disallow".
 
 ## Feedback
 
