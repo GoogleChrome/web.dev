@@ -163,8 +163,8 @@ Using `requestAnimationFrame()` polling is not a good idea for several reasons:
 
 - Every script has to set up its own polling loop.
 - It can block the critical path.
-- Even if the rAF polling function is _fast_, when used continuously it can
-  prevent `requestIdleCallback()` from being able to schedule long idle blocks
+- Even if the rAF polling is fast, it can
+  prevent `requestIdleCallback()` from being able to schedule long idle blocks when used continuously
   (blocks that exceed a single frame).
 - Similarly, lack of long idle-blocks prevents the browser from scheduling other
   long running tasks (such as longer garbage collection and other background or speculative
