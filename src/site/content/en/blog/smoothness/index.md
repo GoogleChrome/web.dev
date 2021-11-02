@@ -43,10 +43,12 @@ degrade the experience and make it decidedly not fun at all. We've probably all
 interacted with an interface which just added too many "helpful" transition
 effects, which actually become hostile to experience when they perform poorly.
 
-You can read plenty more about [Animations](/animations/), including how to
+{% Aside %}
+Learn more about [animations](/animations/), including how to
 [create performant animations](/animations-guide/) and how to [inspect
 animations using developer
 tooling](https://developer.chrome.com/docs/devtools/css/animations/).
+{% endAside %}
 
 ### How do animations work?
 
