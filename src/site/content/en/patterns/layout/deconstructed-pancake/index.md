@@ -6,7 +6,7 @@ date: 2021-10-20
 draft: true
 ---
 
-This is a common layout for marketing sites, for example, which may have a row of 3 items, usually with an image, title, and then some text, describing some features of a product. On smaller screens, you'll want those to stack nicely, and expand as you increase the screen size.
+This is a common layout for marketing sites, for example, which may have a row of three items, usually with an image, title, and then some text, describing some features of a product. On smaller screens, you'll want those to stack nicely, and expand as you increase the screen size.
 
 By using Flexbox for this effect, you won't need media queries to adjust the placement of these elements when the screen resizes.
 
