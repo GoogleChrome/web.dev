@@ -18,7 +18,7 @@ Congratulations! You've made it to the end! We'll be adding more modules to this
 - [LearnCSS](/learn/css)
 - [CSS Documentation on MDN](https://developer.mozilla.org/docs/Web/CSS)
 - [Listen to the CSS Podcast](https://thecsspodcast.libsyn.com)
-- [CSS articles on web.dev](https://web.dev/tags/css/)
+- [CSS articles on web.dev](/tags/css/)
 - [CSS-Tricks](https://css-tricks.com/tag/css/)
 - [Layout Land - Youtube](https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag)
 
