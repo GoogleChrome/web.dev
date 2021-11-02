@@ -1,7 +1,7 @@
 ---
 title: Styling forms
 description: >
-  In this module, you learn how to style forms.
+  Style forms using CSS, while ensuring they remain usable and readable for everyone.
 authors:
   - michaelscharnagl
 date: 2021-11-03

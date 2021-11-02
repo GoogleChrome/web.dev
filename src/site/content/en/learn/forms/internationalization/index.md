@@ -1,7 +1,7 @@
 ---
 title:  Internationalization and localization
 description: >
-  In this module, you learn how to be prepared for international data formats, and how to plan your form for localization.
+  Be prepared for international data formats, and learn how to plan your form for localization.
 authors:
   - michaelscharnagl
 date: 2021-11-03
@@ -31,8 +31,10 @@ How can you make sure search engines and browsers know about the translated vers
 You can add `<link>` elements in your site's  `<head>` describing the alternate versions.
 
 ```html
-<link rel="alternate" title="The form element" href="https://example.com/en/form" hreflang="en">
-<link rel="alternate" title="Das Formularelement" href="https://example.com/de/form" hreflang="de">
+<link rel="alternate" title="The form element" 
+  href="https://example.com/en/form" hreflang="en">
+<link rel="alternate" title="Das Formularelement" 
+  href="https://example.com/de/form" hreflang="de">
 ```
 
 ## Help users who speak another language to use your form
