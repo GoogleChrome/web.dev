@@ -70,6 +70,10 @@ web-tabs .web-tabs__tab[aria-selected='true']::after {
   @extend .button;
 }
 
+[state='completed'] .web-question__cta::before {
+  display: none;
+}
+
 .web-tabs__text-label {
   color: get-utility-value('color', 'core-text') !important;
 }
