@@ -89,9 +89,9 @@ have performance limits. That's why it is always important to measure!
 
 ## What are animation frames?
 
-Updates to the visual representation of a page take time to appear. Visual
-changes will eventually lead to a new animation frame, which is eventually
-presented to the user via their display.
+Updates to the visual representation of a page take time to appear. A visual
+change will lead to a new animation frame, which is eventually
+rendered on the user's display.
 
 Generally, displays can only update at certain intervals, so visual updates are
 batched. Many displays update on a fixed interval of time, such as 60 times a
