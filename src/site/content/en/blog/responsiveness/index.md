@@ -77,8 +77,8 @@ There are pros and cons of each approach, and we'd like to collect more data and
 
 {% Aside %}
   For keyboard interactions, we usually measure the `keydown` and `keyup`. But
-  for IME, such as input methods for Chinese and Japanese, we measure the input
-  events between a `compositionstart` and a `compositionend`.
+  for IME, such as input methods for Chinese and Japanese, we measure the
+  `input` events between a `compositionstart` and a `compositionend`.
 {% endAside %}
 
 ## Aggregate all interactions per page
@@ -287,7 +287,7 @@ new PerformanceObserver((entries) => {
 
 {% Aside 'caution' %}
   There are currently [a few
-  bugs](https://bugs.chromium.org/p/chromium/issues/list?q=label:responsiveness-bugs)
+  bugs](https://bugs.chromium.org/p/chromium/issues/list?q=label:proj-responsiveness-bugs)
   in Chrome that affect accuracy of the reported interaction timestamps. We are
   working to fix these bugs as soon as possible, and we recommend developers
   test these strategies in Chrome Canary to get the most accurate results.
