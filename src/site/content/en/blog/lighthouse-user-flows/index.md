@@ -14,19 +14,21 @@ tags:
   - lighthouse
 ---
 
-Lighthouse is a fantastic tool for testing performance and best practices during initial page load. However, it's traditionally been difficult to use Lighthouse to analyze other aspects of the life of a page. Page loads with a warm cache, or an activated Service Worker, or during user interactions are all scenarios that have been difficult to test using Lighthouse.
+Lighthouse is a fantastic tool for testing performance and best practices during initial page load. However, it's traditionally been difficult to use Lighthouse to analyze other aspects of the life of a page, such as:
 
-This means that Lighthouse can miss vital information. Core Web Vitals are based on all page loads, not just cold loads, and metrics like Cumulative Layout Shift (CLS) are measured the entire time a page is open.
+- Page loads with a warm cache
+- Pages with an activated Service Worker
+- Accounting for potential user interactions
+
+This means that Lighthouse can miss vital information. Core Web Vitals are based on _all_ page loads, not just those with an empty cache. Additionally, metrics like Cumulative Layout Shift (CLS) are measurable for the entire time a page is open.
 
 Lighthouse has a new user flow API that allows lab testing at any point within a page's lifespan. [Puppeteer](https://github.com/puppeteer/puppeteer) is used to script page loads and trigger synthetic user interactions, and Lighthouse can be invoked in multiple ways to capture key insights during those interactions. This means that performance can be measured during page load and during interactions with the page. Accessibility checks can be run in CI not just on the initial view, but deep within your checkout flow to make sure nothing regresses.
 
-Almost any Puppeteer script written to ensure a working user flow can now have Lighthouse inserted at any or every step to check performance and best practices throughout.
+Almost any Puppeteer script written to ensure a working user flow can now have Lighthouse inserted at any point to measure performance and best practices throughout. This tutorial will walk through the new Lighthouse modes that can measure different parts of user flows: navigations, snapshots, and timespans.
 
-This tutorial will walk through the new Lighthouse modes that can measure different parts of user flows: navigations, snapshots, and timespans.
+## Setup
 
-## Set up
-
-The user flow APIs are still in preview, but they are available in Lighthouse today. To try out the demos below, you'll need a relatively recent version of Node (14+). Create an empty directory and in it run
+The user flow APIs are still in preview, but they are available in Lighthouse today. To try out the demos below, you'll need Node version 14 or later. Create an empty directory and in it run
 
 ```shell
 # Default to ES modules.
@@ -76,7 +78,7 @@ async function captureReport() {
 captureReport();
 ```
 
-This is the simplest "flow". When opened, the report shows a summary view with only the single step; clicking on that step will reveal a traditional Lighthouse report for that navigation.
+This is the simplest flow. When opened, the report shows a summary view with only the single step. Clicking on that step will reveal a traditional Lighthouse report for that navigation.
 
 {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/kb0RiS8uXSLoDq8nDlxa.png", alt="A Lighthouse flow report showing a single navigation", width="800", height="333", class="w-screenshot" %}
 
