@@ -394,10 +394,10 @@ the tech writing team to get access to the login and password.
 ## Columns
 
 Any elements can be placed in a two-column layout
-by wrapping them in a `<div class="w-columns">` element:
+by wrapping them in a `<div class="switcher">` element:
 
 ```html
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     <img src="./image-small.png" alt="">
     <figcaption class="w-figcaption">
@@ -413,7 +413,7 @@ by wrapping them in a `<div class="w-columns">` element:
 </div>
 ```
 
-<div class="w-columns">
+<div class="switcher">
   <figure class="w-figure">
     {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/amwrx4HVBEVTEzQspIWw.png", alt="", width="800", height="155" %}
     <figcaption class="w-figcaption">
@@ -945,65 +945,94 @@ about a product or service discussed in a post.
 Include no more than four statistics in a single Stats component
 to avoid layout issues.
 
+[Stats component in the pattern library](https://web.dev/design-system/component/stats/).
+
 ```html
 <div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
+<ul class="stats auto-grid bg-state-good-bg color-state-good-text">
+  <div class="stats__item flow">
+    <p class="font-brand text-size-6">
+      30
+      <sub>%</sub>
+    </p>
+    <p>Lower cost per conversion</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher CTR</p>
+  <div class="stats__item flow">
+    <p class="font-brand text-size-6">
+      13
+      <sub>%</sub>
+    </p>
+    <p>Higher CTR</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">4<sub class="w-stat__sub">×</sub></p>
-    <p class="w-stat__desc">Faster load times</p>
+  <div class="stats__item flow">
+    <p class="font-brand text-size-6">
+      4
+      <sub>x</sub>
+    </p>
+    <p>Faster load times</p>
   </div>
-</div>
+</ul>
 ```
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
+<ul class="stats auto-grid bg-state-good-bg color-state-good-text">
+  <div class="stats__item flow">
+    <p class="font-brand text-size-6">
+      30
+      <sub>%</sub>
+    </p>
+    <p>Lower cost per conversion</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher CTR</p>
+  <div class="stats__item flow">
+    <p class="font-brand text-size-6">
+      13
+      <sub>%</sub>
+    </p>
+    <p>Higher CTR</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">4<sub class="w-stat__sub">×</sub></p>
-    <p class="w-stat__desc">Faster load times</p>
+  <div class="stats__item flow">
+    <p class="font-brand text-size-6">
+      4
+      <sub>x</sub>
+    </p>
+    <p>Faster load times</p>
   </div>
-</div>
+</ul>
+
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, numquam
+laboriosam reprehenderit aliquam possimus natus magnam nulla illo blanditiis
+corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!
+
+<ul class="stats auto-grid bg-state-good-bg color-state-good-text">
+  <div class="stats__item flow">
+    <p class="font-brand text-size-6">
+      30
+      <sub>%</sub>
+    </p>
+    <p>Lower cost per conversion</p>
+  </div>
+  <div class="stats__item flow">
+    <p class="font-brand text-size-6">
+      13
+      <sub>%</sub>
+    </p>
+    <p>Higher CTR</p>
+  </div>
+</ul>
 
 
 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, numquam
 laboriosam reprehenderit aliquam possimus natus magnam nulla illo blanditiis
 corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!
 
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
+<ul class="stats auto-grid bg-state-good-bg color-state-good-text">
+  <div class="stats__item flow">
+    <p class="font-brand text-size-6">
+      4
+      <sub>x</sub>
+    </p>
+    <p>Faster load times</p>
   </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher CTR</p>
-  </div>
-</div>
-
-
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, numquam
-laboriosam reprehenderit aliquam possimus natus magnam nulla illo blanditiis
-corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!
-
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
-  </div>
-</div>
+</ul>
 
 ## Tables
 
