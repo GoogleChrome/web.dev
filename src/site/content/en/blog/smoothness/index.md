@@ -187,7 +187,7 @@ driven animation, once there is too much work on the main thread work (i.e.
 layout) will lead to dropped frames and fewer rAF callbacks, and lower fps.
 
 When the main thread becomes bogged down, visual updates begin to stutter.
-**Jank!**
+That's jank!
 
 Many measurement tools have focused extensively on the ability for the main
 thread to yield in a timely manner, and for animation frames to run smoothly.
