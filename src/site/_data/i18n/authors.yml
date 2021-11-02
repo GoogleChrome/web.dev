@@ -3518,4 +3518,16 @@ alexcastle:
     ko: Chrome에서 Aurora 팀의 소프트웨어 엔지니어입니다.
     pt: Engenheiro de software da equipe Aurora no Chrome.
     ru: Инженер-программист в команде Aurora в Chrome.
-    zh: Chrome 公司 Aurora 团队的软件工程师。
+    zh: Chrome 公司 Aurora 团队的软件工程师
+
+behdadb:
+  title:
+    en: Behdad Bakhshinategh
+  description:
+    en: Software Engineer
+
+jonross:
+  title:
+    en: Jonathan Ross
+  description:
+    en: Software Engineer
