@@ -20,7 +20,7 @@
 
     /// We're hiding the text (see _brand.scss), so shrink the svg to adjust
     @include media-query('xs') {
-      margin-right: -95px;
+      margin-inline-end: -95px;
     }
   }
 }
