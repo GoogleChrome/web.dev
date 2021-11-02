@@ -349,10 +349,81 @@ Because frames may be partially presented, or dropped frames may happen in ways
 that do not affect smoothness, we have begun to think of each frame as having a
 completeness or smoothness score.
 
-Here are the ways in which we interpret the state of a single animation frame:
+Here are the spectrum of ways in which we interpret the state of a single
+animation frame, ordered from best to worst case:
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/E0O8AhtBfv1XPdgTSNxX.svg",
-alt="States of a single animation frame", width="800", height="427" %}
+<div class="w-table-wrapper">
+  <table>
+    <tr>
+      <td style="width:12em"><strong style="background:#BCD5AC;padding:0.25em;">
+        No Update Desired</strong>
+      </td>
+      <td>Idle time, repeat of the previous frame</td>
+    </tr>
+    <tr>
+      <td><strong style="background:#BCD5AC;padding:0.25em;">
+        Fully presented</strong>
+      </td>
+      <td>The main thread update was either committed within deadline, or no
+      main thread update was desired</td>
+    </tr>
+    <tr>
+      <td><strong style="background:#BCD5AC;padding:0.25em;">
+        Partially presented</strong>
+      </td>
+      <td>Compositor only; the delayed main thread update had no visual
+      change</td>
+    </tr>
+    <tr>
+      <td><strong style="background:#DCE9D5;padding:0.25em;">
+        Partially presented</strong>
+      </td>
+      <td>Compositor only; the main thread had a visual update, but that
+      update did not include an animation that affects smoothness</td>
+    </tr>
+    <tr>
+      <td><strong style="background:#E9ECC2;padding:0.25em;">
+        Partially presented</strong>
+      </td>
+      <td>Compositor only; the main thread had a visual update that affects
+      smoothness, but a previously stale frame arrived and was used instead</td>
+    </tr>
+    <tr>
+      <td><strong style="background:#FDF2D0;padding:0.25em;">
+        Partially presented</strong>
+      </td>
+      <td>Compositor only; without the desired main update, and the
+      compositor update has an animation that affects smoothness</td>
+    </tr>
+    <tr>
+      <td><strong style="background:#EECDCD;padding:0.25em;">
+        Partially presented</strong>
+      </td>
+      <td>Compositor only but the compositor update does not have an
+      animation that affects smoothness</td>
+    </tr>
+    <tr>
+      <td><strong style="background:#EECDCD;padding:0.25em;">
+        Dropped frame</strong>
+      </td>
+      <td>No update. There was no compositor update desired, and main was
+      delayed</td>
+    </tr>
+    <tr>
+      <td><strong style="background:#DE9D9B;padding:0.25em;">
+        Dropped frame</strong>
+      </td>
+      <td>A compositor update was desired, but it was delayed</td>
+    </tr>
+    <tr>
+      <td><strong style="background:#DE9D9B;padding:0.25em;">
+        Stale frame</strong>
+      </td>
+      <td>An update was desired, it was produced by the renderer, but the
+      GPU still did not present it before the vsync deadline</td>
+    </tr>
+  </table>
+</div>
 
 It's possible to turn these states into somewhat of a score. And perhaps one way
 to interpret this score is to consider it a _probability_ of being observable by
