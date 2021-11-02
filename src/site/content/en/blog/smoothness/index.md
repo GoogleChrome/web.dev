@@ -192,15 +192,22 @@ Many measurement tools have focused extensively on the ability for the main
 thread to yield in a timely manner, and for animation frames to run smoothly.
 But this is not the whole story! Consider the following example:
 
-**TODO(mmocny): add video link.**
+{% Video
+  src="video/nM10iAStORWg0YlDbPc2czmpRRr2/xkdE00Gizsks9ytPkP6r.mov",
+  class="w-screenshot",
+  autoplay="true",
+  controls="true",
+  loop="true",
+  muted="true"
+%}
 
-This video shows a page that periodically injects long tasks onto the main
+The video above shows a page that periodically injects long tasks onto the main
 thread. These long tasks completely ruin the ability of the page to provide
-certain types of visual updates, and you can see a corresponding drop of
-`requestAnimationFrame()` reported FPS to 0.
+certain types of visual updates, and you can see in the top-left corner a
+corresponding drop of `requestAnimationFrame()` reported FPS to 0.
 
-And yet, the page continues to scroll smoothly. This is because on modern
-browsers, [scrolling is often
+And yet, despite these long tasks, the page continues to scroll smoothly. This
+is because on modern browsers, [scrolling is often
 threaded](https://blogs.windows.com/msedgedev/2017/03/08/scrolling-on-the-web/#:~:text=The%20multithreaded%20web),
 driven entirely by the compositor.
 
