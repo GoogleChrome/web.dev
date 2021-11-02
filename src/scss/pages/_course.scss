@@ -32,6 +32,11 @@ $course-side-vert-space: 20px;
     }
   }
 
+  // Placeholder items have slightly dimmed look and feel
+  .is-placeholder span {
+    @include apply-utility('color', 'mid-text');
+  }
+
   // Allows the sidebar elements to place and flex themselves
   web-navigation-drawer > * {
     display: flex;

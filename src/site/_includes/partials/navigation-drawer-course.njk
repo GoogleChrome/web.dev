@@ -10,6 +10,7 @@
   {% if item.url %}
     {# The isNew flag is used to display a 'NEW' badge next to content. #}
     {% set isNew = false %}
+    {% set isPlaceholder= false %}
     {# Check to make sure the content was published after the course's #}
     {# initial launch date (so everything doesn't say 'NEW' when we #}
     {# first launch a course). #}
@@ -17,7 +18,11 @@
       {# Only show the 'NEW' badge if content is less than thirty days old. #}
       {% set isNew = item.data.date | isNewContent %}
     {% endif %}
-    <a class="repel" href="{{ item.url }}" {% if item.url == page.url %}aria-current="page"{% endif %}>
+    {% if item.data.placeholder %}
+      {# Set disabled style #}
+      {% set isDisabledClass = 'is-placeholder' %}
+    {% endif %}
+    <a class="repel {{isDisabledClass}}" {% if item.url == page.url %}aria-current="page"{% endif %} {% if item.data.placeholder != true %} href="{{ item.url }}" {% endif %}>
       <span class="cluster">
         <span class="stack-nav__meta">{{ item.counter }}</span>
         <span>{{ title }}</span>
@@ -25,6 +30,9 @@
       <span class="cluster">
         {% if isNew %}
           <span class="stack-nav__meta tt-upper color-action-text">{{ 'i18n.common.new' | i18n(locale) }}</span>
+        {% endif %}
+        {% if item.data.placeholder %}
+          <span class="stack-nav__meta tt-upper color-action-text">{{ 'Coming Soon' }}</span>
         {% endif %}
         {{ icon('done') }}
       </span>
