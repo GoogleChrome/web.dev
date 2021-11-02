@@ -80,11 +80,10 @@ captureReport();
 
 This is the simplest flow. When opened, the report shows a summary view with only the single step. Clicking on that step will reveal a traditional Lighthouse report for that navigation.
 
-{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/kb0RiS8uXSLoDq8nDlxa.png", alt="A Lighthouse flow report showing a single navigation", width="800", height="333", class="w-screenshot" %}
-
-{% Video src="video/MtjnObpuceYe3ijODN3a79WrxLU2/hQc2raJUj4DGJDoG6Nte.mov", alt="A Lighthouse flow report showing a single navigation", width="800", height="434", class="w-screenshot", controls="true" %}
-
-[See the report live](https://chalk-confused-roundworm.glitch.me).
+<figure class="w-figure">
+  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/kb0RiS8uXSLoDq8nDlxa.png", alt="A Lighthouse flow report showing a single navigation", width="800", height="333", class="w-screenshot" %}
+  <figcaption class="w-figcaption"><a href="https://chalk-confused-roundworm.glitch.me">See the report live</a></figcaption>
+</figure>
 
 As is typical with Lighthouse, this is a page load with any cache or local storage cleared, but real users visiting a site will have a mixture of visits with cold and warm caches, and there can be a large performance difference between a cold load like this and a user returning to the page with a still-warm cache.
 
@@ -121,9 +120,10 @@ captureReport();
 
 The resulting flow report looks something like this:
 
-{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/4i28YDRuSaCxxJxtzigX.png", alt="A Lighthouse flow report showing two navigations, one cold and one warm, which has a higher performance score", width="800", height="400", class="w-screenshot" %}
-
-[See the report live](https://energetic-pattern-polish.glitch.me).
+<figure class="w-figure">
+  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/4i28YDRuSaCxxJxtzigX.png", alt="A Lighthouse flow report showing two navigations, one cold and one warm, which has a higher performance score", width="800", height="400", class="w-screenshot" %}
+  <figcaption class="w-figcaption"><a href="https://energetic-pattern-polish.glitch.me">See the report live</a></figcaption>
+</figure>
 
 The combination of cold and warm loads offers a fuller picture of what real users are experiencing. If you have a site where users load many pages in the same visit, this may be able to give you a more realistic look at what they're experiencing in the field.
 
@@ -179,9 +179,10 @@ captureReport();
 
 The resulting report shows that results are generally good, but there may be some accessibility criteria that need to be checked out manually:
 
-{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/4OnCFHNkZtIpNsLSw0e3.png", alt="A Lighthouse flow report showing a set of snapshots taken", width="800", height="433", class="w-screenshot" %}
-
-[See the report live](https://ivy-cloudy-blackcurrant.glitch.me).
+<figure class="w-figure">
+  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/4OnCFHNkZtIpNsLSw0e3.png", alt="A Lighthouse flow report showing a set of snapshots taken", width="800", height="433", class="w-screenshot" %}
+  <figcaption class="w-figcaption"><a href="https://ivy-cloudy-blackcurrant.glitch.me">See the report live</a></figcaption>
+</figure>
 
 ## Timespans
 
@@ -195,7 +196,7 @@ A regular Lighthouse navigation will have a CLS of 0. However, once scrolled, th
 
 <figure class="w-figure">
   {% Video src="video/MtjnObpuceYe3ijODN3a79WrxLU2/Qi6B5SNt6Xk7rZ3055DO.mov", muted="true", width="360", height="640", class="w-screenshot", controls="true" %}
-  <figcaption class="w-figcaption"><a href="https://pie-charmed-treatment.glitch.me">Try the demo site</a>.</figcaption>
+  <figcaption class="w-figcaption"><a href="https://pie-charmed-treatment.glitch.me">Try the demo site</a></figcaption>
 </figure>
 
 The following script will produce a user flow report with both actions, to show the difference.
@@ -240,9 +241,10 @@ captureReport();
 
 This generates a report comparing a regular navigation to a timespan which contains both a navigation and scrolling afterwards:
 
-{% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wAkMF4T9IxpS82vODMdY.png", alt="A Lighthouse flow report showing a set of snapshots taken", width="800", height="367", class="w-screenshot" %}
-
-[See the report live](https://abaft-burnt-title.glitch.me).
+<figure class="w-figure">
+  {% Img src="image/MtjnObpuceYe3ijODN3a79WrxLU2/wAkMF4T9IxpS82vODMdY.png", alt="A Lighthouse flow report showing a set of snapshots taken", width="800", height="367", class="w-screenshot" %}
+  <figcaption class="w-figcaption"><a href="https://abaft-burnt-title.glitch.me">See the report live</a></figcaption>
+</figure>
 
 Digging into each step, the navigation-only step shows a CLS of 0. Great site!
 
