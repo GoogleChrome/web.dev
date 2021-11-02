@@ -224,8 +224,8 @@ There are many reasons why long tasks are bad—and these are captured
 The above example showcases that there is more to the story than just
 `requestAnimationFrame()`.
 
-So when do animation updates, and animation frames, actually matter?  Here are
-some criteria that we think about, and we'd love to get feedback on:
+So when do animation updates and animation frames matter?  Here are
+some criteria we're thinking about and would love to get feedback on:
 
 - Main and compositor thread updates
 - Missing paint updates
