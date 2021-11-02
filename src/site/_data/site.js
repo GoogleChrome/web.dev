@@ -32,9 +32,8 @@ module.exports = {
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
   thumbnail: 'image/tcFciHGuF3MxnTr1y5ue01OGLBn2/vU99HKzIf5EUPnzGVPf1.png',
-  isBannerEnabled: true,
-  banner:
-    'The countdown to Chrome Dev Summit 2021 is on! Visit [goo.gle/cds2021](https://goo.gle/cds2021) and request an invite to participate in workshops, learning lounges and office hours.',
+  isBannerEnabled: false,
+  banner: '',
   paginationCount: PAGINATION_COUNT,
   imgixDomain: 'web-dev.imgix.net',
   bucket: 'web-dev-uploads',
