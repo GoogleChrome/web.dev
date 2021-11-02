@@ -1,26 +1,34 @@
 ---
-layout: default
+layout: default-next
 ---
 {% from 'macros/author-card.njk' import authorCard with context %}
-<div>
-  {# Make sure Actions are first in the tab order. #}
-  <div class="w-actions">
-    {% include 'partials/subscribe-action.njk' %}
-  </div>
 
-  <div class="w-layout-container w-pb--non">
-    <header class="w-page-header">
-      <h1 class="w-page-header__headline">{{ title }}</h1>
-      <p class="w-page-header__copy">{{ description }}</p>
-    </header>
-  </div>
-  <section class="w-grid">
-    <div class="w-grid__columns w-grid__columns--three" role="list">
+<div class="authors">
+{# @TODO fix subscribe button #}
+ {# <div class="w-actions">
+    {% include 'partials/subscribe-action.njk' %}
+  </div> #}
+
+  {# Hero starts #}
+  <header class="region">
+    <div class="wrapper">
+      <div class="headline all-center flow">
+        <h1 class="headline__title">{{ title }}</h1>
+        <p>{{ description }}</p>
+      </div>
+    </div>
+  </header>
+  {# Hero ends #}
+
+  {# Authors start #}
+  <div class="wrapper flow">
+    <div class="auto-grid gap-top-size-2">
       {% for author in paged.elements %}
         {{ authorCard(author) }}
       {% endfor %}
     </div>
-  </section>
+  </div>
+  {# Authors end #}
 
-  {% include 'pagination.njk' %}
+  {% include 'pagination-next.njk' %}
 </div>
