@@ -1,7 +1,7 @@
 ---
 title: Towards an animation smoothness metric
-subhead: Learn a bit about measuring animations, how to think about animation frames, and overall page smoothness.
-description: Learn a bit about measuring animations, how to think about animation frames, and overall page smoothness.
+subhead: Learn about measuring animations, how to think about animation frames, and overall page smoothness.
+description: Learn about measuring animations, how to think about animation frames, and overall page smoothness.
 authors:
   - mmocny
 date: 2021-11-03
@@ -26,15 +26,15 @@ would love to hear your [feedback](#feedback).
 
 This post will cover three main topics:
 
-1. A quick look at animations and animation frames.
-2. Our current thoughts on measuring overall animation smoothness.
-3. A few practical suggestions for you to leverage in lab tooling today.
+- A quick look at animations and animation frames.
+- Our current thoughts on measuring overall animation smoothness.
+- A few practical suggestions for you to leverage in lab tooling today.
 
 ## What are animations?
 
 Animations bring content to life! By making content move, especially in
 response to user interactions, animations can make an experience feel more
-natural, understandable, and fun!
+natural, understandable, and fun.
 
 But poorly implemented animations, or just adding too many animations, can
 degrade the experience and make it decidedly not fun at all. We've probably all
@@ -48,7 +48,7 @@ tooling](https://developer.chrome.com/docs/devtools/css/animations/).
 
 ### How do animations work?
 
-As a quick recap: the [Rendering Pipeline](/animations-overview/#pipeline)
+As a quick recap, the [rendering pipeline](/animations-overview/#pipeline)
 consists of a few, **sequential** stages:
 
 1. <strong style="font-weight:700;color:#6251A2">Style:</strong> Calculate the
@@ -61,14 +61,14 @@ consists of a few, **sequential** stages:
    layers to the screen.
 
 While there are many ways to define animations, they all fundamentally work via
-one of:
+one of the following:
 
-1. Adjusting <strong style="font-weight:700;color:#6251A2">layout</strong>
-   properties
-2. Adjusting <strong style="font-weight:700;color:#78A55A">paint</strong>
-   properties
-3. Adjusting <strong style="font-weight:700;color:#78A55A">composite</strong>
-   properties
+- Adjusting <strong style="font-weight:700;color:#6251A2">layout</strong>
+   properties.
+- Adjusting <strong style="font-weight:700;color:#78A55A">paint</strong>
+   properties.
+- Adjusting <strong style="font-weight:700;color:#78A55A">composite</strong>
+   properties.
 
 Because these stages are sequential, it is important to define animations in
 terms of properties further down this pipeline. The earlier the update, the
@@ -96,8 +96,8 @@ presented to the user via their display.
 
 Generally, displays can only update at certain intervals, so visual updates are
 batched. Many displays update on a fixed interval of time, such as 60 times a
-second (i.e. 60hz). Some more modern displays can offer higher refresh rates
-(90-120hz are becoming common). Often these displays can actively adapt between
+second (that is 60&nbsp;Hz). Some more modern displays can offer higher refresh rates
+(90-120&nbsp;Hz are becoming common). Often these displays can actively adapt between
 refresh rates as needed, or even offer fully variable frame rates.
 
 The goal for any application, like a game or a browser, is to process all these
@@ -120,7 +120,7 @@ updates to show smooth motion.
 
 ## What impacts animation frames?
 
-Web Developers can greatly impact the ability of a browser to quickly and
+Web developers can greatly impact the ability of a browser to quickly and
 efficiently render and present visual updates!
 
 Some examples:
@@ -130,7 +130,7 @@ Some examples:
 - [Using too many
   layers](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
   requiring too much GPU memory.
-- Defining overly-complex CSS styles or web animations.
+- Defining overly complex CSS styles or web animations.
 - Using design anti-patterns that disable fast rendering optimizations.
 - Too much JS work on the main thread, leading to long tasks that block certain
   visual updates.
@@ -163,18 +163,18 @@ requestAnimationFrame(pollFramesPerSecond);
 
 Using `requestAnimationFrame()` polling is not a good idea for several reasons:
 
-- Every interested party/script has to set up its own polling loop.
+- Every interested party (or script) has to set up its own polling loop.
 - It can block the critical path.
-- Even if the rAF polling function is "fast", when used continuously it can
+- Even if the rAF polling function is _fast_, when used continuously it can
   prevent `requestIdleCallback()` from being able to schedule long idle blocks
-  (i.e. blocks that exceed a single frame).
+  (blocks that exceed a single frame).
 - Similarly, lack of long idle-blocks prevents the browser from scheduling other
-  long running tasks (e.g. longer GC's and other background or speculative
+  long running tasks (such as longer garbage collection and other background or speculative
   work).
-- If polling is toggled on/off, then you'll miss cases where frame budget has
+- If polling is toggled on and off, then you'll miss cases where frame budget has
   been exceeded.
 - Polling will report false-positives in cases where the browser is using
-  variable update frequency (e.g. due to power, visibility status, etc.).
+  variable update frequency (for example, due to power or visibility status).
 - And most importantly, it doesn't actually capture all types of animation
   updates!
 
@@ -196,7 +196,7 @@ But this is not the whole story! Consider the following example:
 This video shows a page that periodically injects long tasks onto the main
 thread. These long tasks completely ruin the ability for the page to provide
 certain types of visual updates, and you can see a corresponding drop of
-`requestAnimationFrame()` reported fps to 0.
+`requestAnimationFrame()` reported FPS to 0.
 
 And yet, the page continues to scroll smoothly. This is because on modern
 browsers, [scrolling is often
@@ -213,7 +213,7 @@ difference!
 As you can see, for animation frames, the story is just not that simple.
 
 {% Aside %}
-  Note: there are many reasons why long tasks are bad—and these are captured
+There are many reasons why long tasks are bad—and these are captured
   with [dedicated performance APIs](/custom-metrics/), such as the Long Tasks
   API or the Event Timing API. Yet, there are also features, such as
   [`isInputPending()`](/isinputpending/), where long tasks during idle periods
@@ -221,20 +221,20 @@ As you can see, for animation frames, the story is just not that simple.
 {% endAside %}
 
 
-## Animation frames: _updates that matter_
+## Animation frames: Updates that matter
 
-Hopefully the above example showcases that there is more to the story than just
+The above example showcases that there is more to the story than just
 `requestAnimationFrame()`.
 
 So when do animation updates, and animation frames, actually matter?  Here are
 some criteria that we think about, and we'd love to get feedback on:
 
-1. Main and Compositor thread updates
-2. Missing paint updates
-3. Detecting animations
-4. Quality vs quantity
+- Main and compositor thread updates
+- Missing paint updates
+- Detecting animations
+- Quality versus quantity
 
-### Main and Compositor thread updates
+### Main and compositor thread updates
 
 First of all, animation frame updates are not boolean. It is not the case that
 frames may only be fully dropped or fully presented. There are many reasons why
@@ -244,7 +244,7 @@ updates_ which are presented.
 
 The most common example of this is when the browser is unable to produce a new main
 thread update within frame deadline but does have a new compositor thread update
-(e.g. the threaded scrolling example from earlier).
+(such as the threaded scrolling example from earlier).
 
 One important reason why using declarative animations to animate composite
 properties is so recommended, is precisely because that enables an animation to
@@ -264,7 +264,7 @@ visual updates, like animations, but that can only happen if animations are driv
 ### Missing paint updates
 
 Another type of partial update is when media like images are simply not done
-painting (e.g. decoding and rasterizing) in time for frame presentation.
+painting (decoding and rasterizing) in time for frame presentation.
 
 Or, even if a page is perfectly static, browsers may still fall behind rendering
 visual updates during rapid scrolling. That is because the pixel renditions of
@@ -309,20 +309,20 @@ update or animation. For example, using rAF polling just to track frame rate
 no visual update.
 
 {% Aside %}
-  **Note:** animation detection in tooling, as well as the specifics of
+  Animation detection in tooling, as well as the specifics of
   animation implementations in browsers, continually evolves and improves.
   Chrome recently moved [background-color
   animations](https://developer.chrome.com/blog/hardware-accelerated-animations/#whats-coming-next)
-  from main thread to compositor!
+  from the main thread to the compositor!
 {% endAside %}
 
-### Quality vs. quantity
+### Quality versus quantity
 
 Finally, detecting animations and animation frame updates is still only part of
 the story because it only captures the quantity of animation updates, not the
 quality.
 
-For example, you may see a perfectly steady stream of 60fps while watching a
+For example, you may see a perfectly steady stream of 60&nbsp;fps while watching a
 video. Technically, this is perfectly smooth. But the video itself may have a
 low bit rate, or even issues with network buffering. This isn't captured by
 animation smoothness metrics directly, yet may still be quite jarring to the
@@ -430,7 +430,7 @@ to interpret this score is to consider it a _probability_ of being observable by
 the user. A single dropped frame may not be very observable, but a sequence of
 many dropped frames affecting smoothness in a row sure is!
 
-## Putting it all together: a Percent Dropped Frames metric
+## Putting it all together: A Percent Dropped Frames metric
 
 While it can sometimes be necessary to dive deep into the state of each
 animation frame, it's also useful to just assign a quick "at a glance" score for
