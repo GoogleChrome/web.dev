@@ -234,7 +234,7 @@ some criteria we're thinking about and would love to get feedback on:
 
 ### Main and compositor thread updates
 
-First of all, animation frame updates are not boolean. It is not the case that
+Animation frame updates are not boolean. It is not the case that
 frames may only be fully dropped or fully presented. There are many reasons why
 an animation frame may be _partially_ _presented_. In other words, it can
 simultaneously have _some stale content_ while also having _some new visual
