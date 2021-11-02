@@ -30,8 +30,8 @@ responsiveness of their pages.
 
 ## Measure interaction latency
 
-As a review, the [First Input Delay (FID)](/fid/) metric captures the
-[delay](/fid/#fid-in-detail) portion of input latency. That is, the time between
+As a review, the [First Input Delay (FID) metric captures the
+delay portion](/fid/#fid-in-detail) of input latency. That is, the time between
 when the user interacts with the page to the time when the event handlers are
 able to run.
 
@@ -60,7 +60,7 @@ between these two events. To measure the latency of the key press interaction,
 we could use `max(keydown duration, keyup duration)` or `sum(keydown duration,
 keyup duration) - duration overlap`:
 
-{% Img src="image/eqprBhZUGfb8WYnumQ9ljAxRrA72/F55OBEhX6VvNEApTjldU.svg", alt="A
+{% Img src="image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/td8jMQBTjyR34ZO1QBvp.svg", alt="A
 diagram showing interaction latency based on event durations", width="800",
 height="424" %}
 
