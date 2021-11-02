@@ -83,7 +83,7 @@ Defining [declarative CSS animations or using Web
 Animations](https://developers.google.com/web/fundamentals/design-and-ux/animations/css-vs-javascript),
 and ensuring you [animate composite
 properties](https://developer.chrome.com/blog/hardware-accelerated-animations/),
-is a great initial step to ensuring smooth and efficient animations. But still,
+is a great first step to ensuring smooth and efficient animations. But still,
 this alone does not guarantee smoothness because even efficient web animations
 have performance limits. That's why it is always important to measure!
 
