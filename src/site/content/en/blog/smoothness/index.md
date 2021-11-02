@@ -131,8 +131,7 @@ Some examples:
   requiring too much GPU memory.
 - Defining overly complex CSS styles or web animations.
 - Using design anti-patterns that disable fast rendering optimizations.
-- Too much JS work on the main thread, leading to long tasks that block certain
-  visual updates.
+- Too much JS work on the main thread, leading to long tasks that block visual updates.
 
 But how can you know when an animation frame has missed its deadline and caused
 a dropped frame?
