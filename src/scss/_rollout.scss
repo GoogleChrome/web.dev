@@ -212,8 +212,3 @@ web-url-chooser {
     cursor: not-allowed !important;
   }
 }
-
-/// Measure page overrides
-[should-run-psi] web-url-chooser .lh-controls .w-button {
-  flex: none;
-}

@@ -394,6 +394,7 @@ details summary {
   font-size: get-size('size-2');
   list-style: none;
   cursor: pointer;
+  padding-right: get-space('size-1'); // Prevent overlap with ::before element
 
   @include apply-utility('color', 'action-text');
   @include apply-utility('weight', 'regular');
