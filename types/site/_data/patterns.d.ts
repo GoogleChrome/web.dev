@@ -27,11 +27,12 @@ declare global {
     layout: string;
     title: string;
     description: string;
-    content: string;
     assets: CodePatternAssets;
     demo: string;
     suite: string;
     height: number;
+    rawContent: string;
+    set: string;
   }
   export interface CodePatterns {
     [key: string]: CodePattern;
@@ -40,7 +41,9 @@ declare global {
     id: string;
     title: string;
     description: string;
-    content: string;
+    hero: string;
+    draft: boolean;
+    rawContent: string;
     suite: string;
   }
   export interface CodePatternSets {

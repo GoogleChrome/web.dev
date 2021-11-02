@@ -5,6 +5,7 @@
 
   a {
     color: currentColor;
+    overflow: hidden; // Prevents the selected SVG from highlighting on click
   }
 
   a svg {
@@ -16,12 +17,18 @@
     .brand-primary {
       fill: get-utility-value('color', 'mid-text');
     }
+
+    /// We're hiding the text (see _brand.scss), so shrink the svg to adjust
+    @include media-query('xs') {
+      margin-inline-end: -95px;
+    }
   }
 }
 
 .breadcrumbs__list {
-  padding: 0;
+  margin: 0 -1em;
   overflow-x: auto;
+  padding: 1em;
   -webkit-overflow-scrolling: touch;
 
   &,

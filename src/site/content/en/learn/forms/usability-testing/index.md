@@ -1,7 +1,7 @@
 ---
 title: How to test forms for usability
 description: >
-  In this module, you learn about usability testing and how to ensure your form works well for all your users.
+  Discover how to do usability testing and ensure your form works well for all your users.
 authors:
   - michaelscharnagl
 date: 2021-11-03

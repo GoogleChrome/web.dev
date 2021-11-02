@@ -1,7 +1,7 @@
 ---
 title: Test your forms
 description: >
-  In this module, you learn how to test and analyze your forms.
+  Learn how to test and analyze your forms.
 authors:
   - michaelscharnagl
 date: 2021-11-03

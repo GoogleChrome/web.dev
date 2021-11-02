@@ -11,7 +11,7 @@ date: 2021-10-20
   </video>
 </figure>
 
-With the `aspect-ratio` property, as you resize the card, the green visual block maintains this 16 x 9 aspect ratio. We are Respecting the Aspect Ratio with `aspect-ratio: 16 / 9`.
+With the `aspect-ratio` property, as you resize the card, the green visual block maintains this 16 x 9 aspect ratio. We are respecting the aspect ratio with `aspect-ratio: 16 / 9`.
 
 ```css/1
 .video {

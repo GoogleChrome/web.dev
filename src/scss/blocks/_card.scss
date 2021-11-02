@@ -114,7 +114,7 @@
 .card__hero {
   width: 100%;
   aspect-ratio: 5/3;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: $global-radius-large;
 }
 

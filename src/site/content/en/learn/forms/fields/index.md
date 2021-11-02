@@ -1,7 +1,7 @@
 ---
 title: Form fields in depth
 description: >
-  In this module, you learn what form fields you can choose from, and how to choose the right form element.
+  Learn about the different form fields you can use, and how to choose the right form element.
 authors:
   - michaelscharnagl
 date: 2021-11-03
