@@ -39,7 +39,7 @@ When you arrange these individual page-level components,
 you're designing a macro layout: a high-level view of your page. 
 Using media queries, you can supply rules in CSS describing how this view should adjust to different screen sizes.
 
-{% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/3KENjI9FiNARctTiKDak.mp4" %}
+{% Video src="video/HodOHWjMnbNw56hvNASHWSgZyAf2/3KENjI9FiNARctTiKDak.mp4", autoplay=true, controls=true, loop=true %}
 
 ## Grid
 
