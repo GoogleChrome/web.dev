@@ -13,15 +13,15 @@ tags:
   - web-vitals
 ---
 
-We've all suffered from poor experiences where a page will "stutter" or "freeze"
+You've probably experienced pages that "stutter" or "freeze"
 during scrolling or animations. We like to say that these experiences are not
-_smooth_. In an attempt to address these types of issues, the Chrome team has
+_smooth_. To address these types of issues, the Chrome team has
 been working on adding more support to our lab tooling for animation detection,
 as well making steady improvements to the rendering pipeline diagnostics within
 Chromium.
 
-We'd like to share some recent progress, offer some concrete tooling guidance,
-and discuss some ideas for future animation smoothness metrics. As always, we
+We'd like to share some recent progress, offer concrete tooling guidance,
+and discuss ideas for future animation smoothness metrics. As always, we
 would love to hear your [feedback](#feedback).
 
 This post will cover three main topics:
