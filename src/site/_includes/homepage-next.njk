@@ -118,7 +118,9 @@ CSS_ORIGIN: 'next'
               {% set alt = item.data.alt %}
             {% endif %}
             <article class="card">
-              {% Img src=item.data.hero, alt=item.data.alt, width="570", height="330", class="card__hero" %}
+              <a href="{{ item.url }}" aria-hidden="true">
+                {% Img src=item.data.thumb or item.data.hero, alt=item.data.alt, width="570", height="330", class="card__hero" %}
+              </a>
               <div class="card__content flow">
                 <h3 class="card__heading text-size-3">
                   <a href="{{ item.url }}">{{ item.data.title }}</a>
