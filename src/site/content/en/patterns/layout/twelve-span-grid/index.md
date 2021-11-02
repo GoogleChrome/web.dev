@@ -1,9 +1,8 @@
 ---
 layout: pattern
-title: 12-Span Grid
+title: 12-span grid
 description: A grid broken up into 12 segments where you can place areas onto the tracks evenly.
-date: 2021-10-20
-draft: true
+date: 2021-11-03
 height: 400
 ---
 
@@ -26,7 +25,7 @@ Another classic: the 12-span grid. You can quickly write grids in CSS with the `
 }
 ```
 
-Now you have a 12 column track grid, we can place our children on the grid. One way to do this would be to place them using grid lines. For example, `grid-column: 1 / 13` would span all the way from the first line to the last (13th) and span 12 columns. `grid-column: 1 / 5;` would span the first four.
+Now you have a 12 column track grid, you can place child elements on the grid. One way to do this would be to place them using grid lines. For example, `grid-column: 1 / 13` would span all the way from the first line to the last (13th) and span 12 columns. `grid-column: 1 / 5;` would span the first four.
 
 <figure class='w-figure'>
   <video controls autoplay loop muted playsinline class='w-screenshot'>

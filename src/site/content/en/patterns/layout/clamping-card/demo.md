@@ -1,6 +1,5 @@
 ---
 patternId: layout/clamping-card
-draft: true
 layout: demo
 ---
 
