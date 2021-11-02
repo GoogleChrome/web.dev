@@ -179,11 +179,11 @@ Using `requestAnimationFrame()` polling is not a good idea for several reasons:
 - And most importantly, it doesn't actually capture all types of animation
   updates!
 
-You can see how too much work on the main thread can impact the ability to see
-animation frames. You can play with the [Jank
+Too much work on the main thread can impact the ability to see
+animation frames. Check out the [Jank
 Sample](https://googlechrome.github.io/devtools-samples/jank/) to see how a rAF
-driven animation, once there is too much work on the main thread work (i.e.
-layout) will lead to dropped frames and fewer rAF callbacks, and lower fps.
+driven animation, once there is too much work on the main thread (such as
+layout), will lead to dropped frames and fewer rAF callbacks, and lower FPS.
 
 When the main thread becomes bogged down, visual updates begin to stutter.
 That's jank!
