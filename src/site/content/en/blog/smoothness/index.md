@@ -245,9 +245,9 @@ thread update within frame deadline but does have a new compositor thread update
 (such as the threaded scrolling example from earlier).
 
 One important reason why using declarative animations to animate composite
-properties is so recommended, is precisely because that enables an animation to
-be driven entirely by the compositor thread even when the main thread is blocked
-processing tasks! These types of animations can continue to produce visual
+properties is recommended is that doing so enables an animation to
+be driven entirely by the compositor thread even when the main thread is busy.
+These types of animations can continue to produce visual
 updates efficiently and in parallel.
 
 On the other hand, there may be cases where a main thread update finally becomes
