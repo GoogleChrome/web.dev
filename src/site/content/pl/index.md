@@ -1,6 +1,5 @@
 ---
 layout: 'homepage-next'
-permalink: '/home-new/index.html'
 title: 'web.dev'
 intro:
   eyebrow: 'About web.dev'
