@@ -167,32 +167,32 @@ over-budget amounts would be as follows:
   <table>
     <tr>
       <th>Interaction</th>
-      <th style="text-align: right">Latency</th>
-      <th style="text-align: right">Latency over budget</th>
+      <th>Latency</th>
+      <th>Latency over budget</th>
     </tr>
     <tr>
       <td>Click
     </td>
-      <td style="text-align: right">120 ms</td>
-      <td style="text-align: right">20 ms</td>
+      <td>120 ms</td>
+      <td>20 ms</td>
     </tr>
     <tr>
       <td>Click
     </td>
-      <td style="text-align: right">20 ms</td>
-      <td style="text-align: right">0 ms</td>
+      <td>20 ms</td>
+      <td>0 ms</td>
     </tr>
     <tr>
       <td>Key press
     </td>
-      <td style="text-align: right">60 ms</td>
-      <td style="text-align: right">10 ms</td>
+      <td>60 ms</td>
+      <td>10 ms</td>
     </tr>
     <tr>
       <td>Key press
     </td>
-      <td style="text-align: right">80 ms</td>
-      <td style="text-align: right">30 ms</td>
+      <td>80 ms</td>
+      <td>30 ms</td>
     </tr>
   </table>
 </div>
